@@ -2,6 +2,6 @@
 <RCC version="1.0">
   <qresource>
     <file>alsa_plugin_ru.qm</file>
-    <file>alsa_pluign_uk_UA.qm</file>
+    <file>alsa_plugin_uk_UA.qm</file>
   </qresource>
 </RCC>
