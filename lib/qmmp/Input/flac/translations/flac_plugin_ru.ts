@@ -123,7 +123,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="283"/>
         <source>Album:</source>
-        <translation>Алюбом:</translation>
+        <translation>Альбом:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="293"/>
