@@ -4,5 +4,6 @@
     <file>qmmp_ru.qm</file>
     <file>qmmp_tr.qm</file>
     <file>qmmp_zh_CN.qm</file>
+    <file>qmmp_uk_UA.qm</file>
   </qresource>
 </RCC>

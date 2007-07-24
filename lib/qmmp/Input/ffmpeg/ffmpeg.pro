@@ -19,7 +19,8 @@ QMAKE_LIBDIR += ../../../
 LIBS += -lqmmp -L/usr/lib -I/usr/include
 DEFINES += __STDC_CONSTANT_MACROS
 PKGCONFIG += libavcodec libavformat
-TRANSLATIONS = translations/ffmpeg_plugin_ru.ts
+TRANSLATIONS = translations/ffmpeg_plugin_ru.ts \
+               translations/ffmpeg_plugin_uk_UA.ts
 RESOURCES = translations/translations.qrc
 target.path = /lib/qmmp/Input
 INSTALLS += target

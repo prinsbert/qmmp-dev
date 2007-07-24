@@ -2,5 +2,6 @@
 <RCC version="1.0">
   <qresource>
     <file>ffmpeg_plugin_ru.qm</file>
+    <file>ffmpeg_plugin_uk_UA.qm</file>
   </qresource>
 </RCC>
