@@ -20,7 +20,8 @@ DESTDIR = ../
 TEMPLATE = lib
 LIBS += -lqmmp
 PKGCONFIG += jack samplerate
-TRANSLATIONS = translations/jack_plugin_ru.ts
+TRANSLATIONS = translations/jack_plugin_ru.ts \
+               translations/jack_plugin_uk_UA.ts
 RESOURCES = translations/translations.qrc
 target.path = /lib/qmmp/Output
 INSTALLS += target

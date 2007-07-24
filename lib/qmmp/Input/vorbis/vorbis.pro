@@ -23,7 +23,8 @@ TEMPLATE = lib
 QMAKE_LIBDIR += ../../../
 LIBS += -lqmmp -L/usr/lib
 PKGCONFIG += taglib ogg vorbisfile vorbis
-TRANSLATIONS = translations/vorbis_plugin_ru.ts
+TRANSLATIONS = translations/vorbis_plugin_ru.ts \
+               translations/vorbis_plugin_uk_UA.ts
 RESOURCES = translations/translations.qrc
 target.path = /lib/qmmp/Input
 INSTALLS += target

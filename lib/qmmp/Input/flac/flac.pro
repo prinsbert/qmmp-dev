@@ -23,7 +23,8 @@ TEMPLATE = lib
 QMAKE_LIBDIR += ../../../
 LIBS += -lqmmp -L/usr/lib -I/usr/include
 PKGCONFIG += taglib flac
-TRANSLATIONS = translations/flac_plugin_ru.ts
+TRANSLATIONS = translations/flac_plugin_ru.ts \
+               translations/flac_plugin_uk_UA.ts
 RESOURCES = translations/translations.qrc
 target.path = /lib/qmmp/Input
 INSTALLS += target

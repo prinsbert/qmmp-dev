@@ -20,7 +20,8 @@ DESTDIR = ../
 TEMPLATE = lib
 LIBS += -lqmmp -lasound
 FORMS += settingsdialog.ui
-TRANSLATIONS = translations/alsa_plugin_ru.ts
+TRANSLATIONS = translations/alsa_plugin_ru.ts \
+               translations/alsa_plugin_uk_UA.ts
 RESOURCES = translations/translations.qrc
 target.path = /lib/qmmp/Output
 INSTALLS += target
