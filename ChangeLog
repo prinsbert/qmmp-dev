@@ -91,3 +91,5 @@ Version 0.1.2
 * added custom close action (Vladimir Kuznetsov)
 * fixed and improved cmake scripts
 * fixed "Delete" hotkey in Russian translation
+* added current song position navigation with Left/Right cursor buttons
+* added main menu popup on main display
