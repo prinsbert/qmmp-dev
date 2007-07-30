@@ -104,6 +104,6 @@ Version 0.1.3
 * fixed russian translation in the flac plugin
 * added current song position navigation with Left/Right cursor buttons (Vladimir Kuznetsov)
 * added main menu popup on main display (Vladimir Kuznetsov)
-* added menu for right title button (Vladimir Kuznetsov)
+* added menu for left title button (Vladimir Kuznetsov)
 * added custom library directory (for qmake only)
 
