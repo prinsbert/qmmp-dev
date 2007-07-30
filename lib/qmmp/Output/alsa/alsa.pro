@@ -23,5 +23,10 @@ FORMS += settingsdialog.ui
 TRANSLATIONS = translations/alsa_plugin_ru.ts \
                translations/alsa_plugin_uk_UA.ts
 RESOURCES = translations/translations.qrc
-target.path = /lib/qmmp/Output
+
+isEmpty (LIB_DIR){
+LIB_DIR = /lib
+}
+
+target.path = $$LIB_DIR/qmmp/Output
 INSTALLS += target

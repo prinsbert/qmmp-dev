@@ -30,7 +30,10 @@ qt \
 thread
 
 TEMPLATE = lib
-target.path = /lib
+
+isEmpty (LIB_DIR){
+LIB_DIR = /lib
+}
+
+target.path = $$LIB_DIR/qmmp/Input
 INSTALLS += target
-
-
