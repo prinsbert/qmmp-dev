@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="tr">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -233,17 +234,17 @@
     <message>
         <location filename="../configdialog.ui" line="506"/>
         <source>Action On Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapatılınca</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="518"/>
         <source>Hide to tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem Çekmecesine Sakla</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="525"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Çık</translation>
     </message>
 </context>
 <context>
@@ -610,7 +611,7 @@
     <message>
         <location filename="../playlist.cpp" line="144"/>
         <source>Del</source>
-        <translation type="unfinished"></translation>
+        <translation>Del</translation>
     </message>
 </context>
 <context>
