@@ -162,7 +162,7 @@ DecoderFactory *Decoder::findFactory(const QString& source)
 FileTag *Decoder::createTag(const QString& source)
 {
     DecoderFactory *fact = Decoder::findFactory(source);
-    if (fact)
+    if (fact && QFile::exists(source))
     {
         return fact->createTag(source);
     }
