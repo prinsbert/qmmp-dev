@@ -3,5 +3,6 @@
   <qresource>
     <file>ffmpeg_plugin_ru.qm</file>
     <file>ffmpeg_plugin_uk_UA.qm</file>
+    <file>ffmpeg_plugin_zh_CN.qm</file>
   </qresource>
 </RCC>

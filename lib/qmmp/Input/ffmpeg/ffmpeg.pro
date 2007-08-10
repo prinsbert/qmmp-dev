@@ -20,7 +20,8 @@ LIBS += -lqmmp -L/usr/lib -I/usr/include
 DEFINES += __STDC_CONSTANT_MACROS
 PKGCONFIG += libavcodec libavformat
 TRANSLATIONS = translations/ffmpeg_plugin_ru.ts \
-               translations/ffmpeg_plugin_uk_UA.ts
+               translations/ffmpeg_plugin_uk_UA.ts \
+	       translations/ffmpeg_plugin_zh_CN.ts
 RESOURCES = translations/translations.qrc
 
 isEmpty (LIB_DIR){

@@ -3,5 +3,6 @@
   <qresource>
     <file>alsa_plugin_ru.qm</file>
     <file>alsa_plugin_uk_UA.qm</file>
+    <file>alsa_plugin_zh_CN.qm</file>
   </qresource>
 </RCC>
