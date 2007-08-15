@@ -189,7 +189,7 @@
     <message>
         <location filename="../configdialog.ui" line="456"/>
         <source>Show tooltip</source>
-        <translation>显示工具栏</translation>
+        <translation>显示工具提示</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="463"/>

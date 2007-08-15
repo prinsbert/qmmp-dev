@@ -21,7 +21,7 @@
     <message>
         <location filename="../outputalsafactory.cpp" line="49"/>
         <source>Writen by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>作者： Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="83"/>
         <source>Mixer device:</source>
-        <translation>混频设备</translation>
+        <translation>混频设备：</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="100"/>
