@@ -22,7 +22,8 @@ LIBS += -lqmmp -lasound
 FORMS += settingsdialog.ui
 TRANSLATIONS = translations/alsa_plugin_ru.ts \
                translations/alsa_plugin_uk_UA.ts \
-	       translations/alsa_plugin_zh_CN.ts
+	       translations/alsa_plugin_zh_CN.ts \
+               translations/alsa_plugin_zh_TW.ts
 RESOURCES = translations/translations.qrc
 
 isEmpty (LIB_DIR){

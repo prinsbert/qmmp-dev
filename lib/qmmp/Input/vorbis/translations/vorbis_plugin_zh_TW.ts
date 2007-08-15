@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS><TS version="1.1" language="zh_TW">
+<defaultcodec></defaultcodec>
+<context>
+    <name>DecoderVorbisFactory</name>
+    <message>
+        <location filename="../decodervorbisfactory.cpp" line="21"/>
+        <source>Ogg Vorbis Plugin</source>
+        <translation>Ogg Vorbis 插件</translation>
+    </message>
+    <message>
+        <location filename="../decodervorbisfactory.cpp" line="34"/>
+        <source>Ogg Vorbis Files</source>
+        <translation>Ogg Vorbis 檔案</translation>
+    </message>
+    <message>
+        <location filename="../decodervorbisfactory.cpp" line="64"/>
+        <source>About Ogg Vorbis Audio Plugin</source>
+        <translation>關于 Ogg Vorbis 聲訊插件</translation>
+    </message>
+    <message>
+        <location filename="../decodervorbisfactory.cpp" line="65"/>
+        <source>Qmmp Ogg Vorbis Audio Plugin</source>
+        <translation>Qmmp Ogg Vorbis 聲訊插件</translation>
+    </message>
+    <message>
+        <location filename="../decodervorbisfactory.cpp" line="66"/>
+        <source>Writen by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
+        <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+    </message>
+    <message>
+        <location filename="../decodervorbisfactory.cpp" line="68"/>
+        <source>Source code based on mq3 progect</source>
+        <translation>來源碼基于 mq3 項目</translation>
+    </message>
+</context>
+<context>
+    <name>DetailsDialog</name>
+    <message>
+        <location filename="../detailsdialog.cpp" line="54"/>
+        <source>Hz</source>
+        <translation>Hz</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="265"/>
+        <source>Save</source>
+        <translation>儲存</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="275"/>
+        <source>Track number:</source>
+        <translation>軌迹：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="288"/>
+        <source>Year:</source>
+        <translation>年代：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="298"/>
+        <source>Genre:</source>
+        <translation>流派：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="308"/>
+        <source>Comment:</source>
+        <translation>備注：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="318"/>
+        <source>Album:</source>
+        <translation>專輯：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="328"/>
+        <source>Artist:</source>
+        <translation>兿術家：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="338"/>
+        <source>Title:</source>
+        <translation>標題：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="222"/>
+        <source>Close</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="162"/>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="192"/>
+        <source>File size:</source>
+        <translation>檔案大小：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="77"/>
+        <source>Sample rate:</source>
+        <translation>取様率：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="212"/>
+        <source>File path:</source>
+        <translation>檔案路徑：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="31"/>
+        <source>Ogg Vorbis Info</source>
+        <translation>Ogg Vorbis 資訊</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="60"/>
+        <source>Length:</source>
+        <translation>長度：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="97"/>
+        <source>Channels:</source>
+        <translation>音響通道：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="120"/>
+        <source>Bit Rate</source>
+        <translation>位速率</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="152"/>
+        <source>Minimum:</source>
+        <translation>最小位速率：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="169"/>
+        <source>Maximum:</source>
+        <translation>最大位速率：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="179"/>
+        <source>Nominal:</source>
+        <translation>名義位速率：</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="250"/>
+        <source>Ogg Vorbis Tag</source>
+        <translation>Ogg Vorbis 標簽</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="62"/>
+        <source>kbps</source>
+        <translation>kbps</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="63"/>
+        <source>KB</source>
+        <translation>KB</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.ui" line="13"/>
+        <source>Details</source>
+        <translation>詳細資料</translation>
+    </message>
+</context>
+</TS>

@@ -4,5 +4,6 @@
     <file>mpc_plugin_ru.qm</file>
     <file>mpc_plugin_uk_UA.qm</file>
     <file>mpc_plugin_zh_CN.qm</file>
+    <file>mpc_plugin_zh_TW.qm</file>
   </qresource>
 </RCC>

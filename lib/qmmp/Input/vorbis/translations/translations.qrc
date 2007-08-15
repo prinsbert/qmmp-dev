@@ -4,5 +4,6 @@
     <file>vorbis_plugin_ru.qm</file>
     <file>vorbis_plugin_uk_UA.qm</file>
     <file>vorbis_plugin_zh_CN.qm</file>
+     <file>vorbis_plugin_zh_TW.qm</file>
   </qresource>
 </RCC>

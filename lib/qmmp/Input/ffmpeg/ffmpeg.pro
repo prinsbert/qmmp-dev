@@ -21,7 +21,8 @@ DEFINES += __STDC_CONSTANT_MACROS
 PKGCONFIG += libavcodec libavformat
 TRANSLATIONS = translations/ffmpeg_plugin_ru.ts \
                translations/ffmpeg_plugin_uk_UA.ts \
-	       translations/ffmpeg_plugin_zh_CN.ts
+	       translations/ffmpeg_plugin_zh_CN.ts \
+               translations/ffmpeg_plugin_zh_TW.ts
 RESOURCES = translations/translations.qrc
 
 isEmpty (LIB_DIR){

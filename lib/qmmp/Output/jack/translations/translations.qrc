@@ -4,5 +4,6 @@
     <file>jack_plugin_ru.qm</file>
     <file>jack_plugin_uk_UA.qm</file>
     <file>jack_plugin_zh_CN.qm</file>
+    <file>jack_plugin_zh_TW.qm</file>
   </qresource>
 </RCC>

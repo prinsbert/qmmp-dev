@@ -126,7 +126,8 @@ RESOURCES = images/images.qrc \
 TRANSLATIONS = translations/qmmp_ru.ts \
 	       translations/qmmp_tr.ts \
 	       translations/qmmp_zh_CN.ts \
-	       translations/qmmp_uk_UA.ts
+	       translations/qmmp_uk_UA.ts \
+               translations/qmmp_zh_TW.ts
 TEMPLATE = app
 script.files += ../bin/qmmp
 script.path = /bin 

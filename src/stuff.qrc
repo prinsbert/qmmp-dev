@@ -3,17 +3,20 @@
   <qresource>
     <file>../COPYING</file>
     <file>html/about_en.html</file>
-    <file>html/about_zh_CN.html</file>
-    <file>html/authors_uk_UA.txt</file>
-    <file>html/thanks_ru.txt</file>
     <file>html/about_ru.html</file>
-    <file>html/authors_en.txt</file>
-    <file>html/authors_zh_CN.txt</file>
-    <file>html/thanks_uk_UA.txt</file>
+    <file>html/about_zh_CN.html</file>
+    <file>html/about_zh_TW.html</file>
     <file>html/about_uk_UA.html</file>
+    <file>html/authors_en.txt</file>
     <file>html/authors_ru.txt</file>
+    <file>html/authors_zh_CN.txt</file>
+    <file>html/authors_zh_TW.txt</file>
+    <file>html/authors_uk_UA.txt</file>
     <file>html/thanks_en.txt</file>
+    <file>html/thanks_ru.txt</file>
     <file>html/thanks_zh_CN.txt</file>
+    <file>html/thanks_zh_TW.txt</file>
+    <file>html/thanks_uk_UA.txt</file>
     <file>default/balance.png</file>
     <file>default/eqmain.png</file>
     <file>default/numbers.png</file>
