@@ -1,9 +1,9 @@
 #ifndef _QMMP_VERSION_H
 #define _QMMP_VERSION_H
 
-#define QMMP_VERSION 0.1.3
+#define QMMP_VERSION 0.1.4
 
-#define QMMP_STR_VERSION "0.1.3"
+#define QMMP_STR_VERSION "0.1.4"
 
 #define TCPSERVER_PORT_NUMBER 33000
 
