@@ -14,7 +14,6 @@
 #include <QObject>
 
 
-#include "fileinfo.h"
 #include "filetag.h"
 
 class QObject;
