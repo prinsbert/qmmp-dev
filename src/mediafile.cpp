@@ -29,11 +29,13 @@ MediaFile::MediaFile(QString path)
     m_selected = FALSE;
     m_current = FALSE;
     m_path = path;
-    m_tag = Decoder::createTag(path);
+    m_tag = 0;
     //format
     QSettings settings ( QDir::homePath() +"/.qmmp/qmmprc", QSettings::IniFormat );
     QString format = settings.value("PlayList/title_format", "%p - %t").toString();
     bool use_meta = settings.value ("PlayList/load_metadata", TRUE).toBool();
+    if(use_meta)
+        m_tag = Decoder::createTag(path);
     if (use_meta && m_tag && !m_tag->isEmpty())
     {
         m_year = m_tag->year();
