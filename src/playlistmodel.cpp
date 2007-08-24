@@ -189,16 +189,16 @@ QList <QString> PlayListModel::getTimes ( int b,int l )
 
 bool PlayListModel::isSelected ( int row )
 {
-    if (m_files.count() > row && row >= 0)
-        return m_files.at ( row )->isSelected();
-
-    return false;
+	if(m_files.count() > row && row >= 0)
+      return m_files.at ( row )->isSelected();
+	
+	return false;
 }
 
 void PlayListModel::setSelected ( int row, bool yes )
 {
-    if (m_files.count() > row && row >= 0)
-        m_files.at ( row )->setSelected ( yes );
+	if(m_files.count() > row && row >= 0)
+    	m_files.at ( row )->setSelected ( yes );
 }
 
 void PlayListModel::removeSelected()
@@ -239,7 +239,7 @@ void PlayListModel::removeSelection(bool inverted)
     if (!m_files.isEmpty())
         m_currentItem = m_files.at(m_current);
 
-    if (select_after_delete >= m_files.count())
+    if(select_after_delete >= m_files.count())
         select_after_delete = m_files.count() - 1;
 
     setSelected(select_after_delete,true);
@@ -269,7 +269,7 @@ void PlayListModel::showDetails()
     {
         if ( m_files.at ( i )->isSelected() )
         {
-            DecoderFactory *fact = Decoder::findByPath ( m_files.at ( i )->path() );
+            DecoderFactory *fact = Decoder::findFactory ( m_files.at ( i )->path() );
             if ( fact )
                 fact->showDetails ( 0, m_files.at ( i )->path() );
 
@@ -306,15 +306,15 @@ void PlayListModel::readSettings()
     int preload = (files.count() < 100) ? files.count() : 100;
 
     for (int i = 0;i < preload;i++)
-    {
+	 {
         load(new MediaFile(files.takeAt(0)));
-    }
+	 }
 
 
     if (files.isEmpty())
-        return;
+       return;
 
-    FileLoader* f_loader = createFileLoader();
+	 FileLoader* f_loader = createFileLoader();
 
     f_loader->setFilesToLoad(files);
     //f_loader->start(QThread::IdlePriority);
@@ -337,9 +337,7 @@ void PlayListModel::addFile(const QString& path)
 {
     if (path.isEmpty ())
         return;
-    if (path.startsWith("http://"))
-        load(new MediaFile(path));
-    else if (Decoder::supports(path))
+    if (Decoder::supports(path))
         load(new MediaFile(path));
 
     m_play_state->prepare();
@@ -370,24 +368,6 @@ void PlayListModel::addDirectory(const QString& s)
     f_loader->start(QThread::IdlePriority);
 }
 
-void PlayListModel::addFileList(const QStringList &l)
-{
-//    qWarning("void// PlayListModel::addFileList(const QStringList &l)");
-    foreach(QString str,l)
-    {
-        QFileInfo f_info(str);
-        if (f_info.exists())
-        {
-            if (f_info.isDir())
-                addDirectory(str);
-            else
-                addFile(str);
-        }
-        // Do processing the rest of events to avoid GUI freezing
-        QApplication::processEvents(QEventLoop::AllEvents,10);
-    }
-}
-
 bool PlayListModel::setFileList(const QStringList & l)
 {
     bool model_cleared = FALSE;
@@ -406,7 +386,7 @@ bool PlayListModel::setFileList(const QStringList & l)
             else
                 addFile(str);
         }
-        // Do processing the rest of events to avoid GUI freezing
+        // Do the processing the rest of events to avoid GUI freezing
         QApplication::processEvents(QEventLoop::AllEvents,10);
     }
 
@@ -537,24 +517,24 @@ void PlayListModel::addToQueue()
     QList<MediaFile*> selected_items = getSelectedItems();
     foreach(MediaFile* file,selected_items)
     {/*
-                if (isQueued(file))
-                    m_queued_songs.removeAt(m_queued_songs.indexOf(file));
-                else
-                    m_queued_songs.append(file);
-                 */
-        setQueued(file);
+        if (isQueued(file))
+            m_queued_songs.removeAt(m_queued_songs.indexOf(file));
+        else
+            m_queued_songs.append(file);
+		 */
+		 setQueued(file);
     }
     emit listChanged();
 }
 
 void PlayListModel::setQueued(MediaFile* file)
 {
-    if (isQueued(file))
-        m_queued_songs.removeAt(m_queued_songs.indexOf(file));
-    else
-        m_queued_songs.append(file);
-
-    emit listChanged();
+	if (isQueued(file))
+		m_queued_songs.removeAt(m_queued_songs.indexOf(file));
+	else
+		m_queued_songs.append(file);
+	
+	emit listChanged();
 }
 
 bool PlayListModel::isQueued(MediaFile* f) const
@@ -790,9 +770,9 @@ void PlayListModel::savePlaylist(const QString & f_name)
 
 void PlayListModel::loadExternalPlaylistFormats()
 {
-    QDir pluginsDir (QDir::homePath()+"/.qmmp/plugins/PlaylistFormats");
-    //pluginsDir.cdUp();
-    //pluginsDir.cd("plugins/PlaylistFormats");
+    QDir pluginsDir (qApp->applicationDirPath());
+    pluginsDir.cdUp();
+    pluginsDir.cd("Plugins/PlaylistFormats");
     foreach (QString fileName, pluginsDir.entryList(QDir::Files))
     {
         QPluginLoader loader(pluginsDir.absoluteFilePath(fileName));
