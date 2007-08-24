@@ -34,7 +34,7 @@ public:
     enum Type { Decoding, Stopped, Finished, Error };
 
     DecoderState(const DecoderState &st)
-            : m_type(t), m_error_msg(0)
+            : m_error_msg(0)
     {
         m_type = st.type();
         if (m_type == Error)
