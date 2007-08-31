@@ -292,7 +292,7 @@ void PlayListModel::readSettings()
     QByteArray line;
     m_files.clear();
 
-    while ( !file.atEnd () )
+    while (!file.atEnd ())
     {
         line = file.readLine();
         files <<  QString::fromUtf8 ( line ).trimmed ();
@@ -306,15 +306,18 @@ void PlayListModel::readSettings()
     int preload = (files.count() < 100) ? files.count() : 100;
 
     for (int i = 0;i < preload;i++)
-	 {
+    {
         load(new MediaFile(files.takeAt(0)));
-	 }
-
+    }
 
     if (files.isEmpty())
-       return;
+    {
+        doCurrentVisibleRequest ();
+        return;
+    }
 
-	 FileLoader* f_loader = createFileLoader();
+    FileLoader* f_loader = createFileLoader();
+    connect(f_loader, SIGNAL(finished ()), SLOT(doCurrentVisibleRequest ()));
 
     f_loader->setFilesToLoad(files);
     //f_loader->start(QThread::IdlePriority);
