@@ -114,7 +114,7 @@ contains(CONFIG,XSPF_PLUGIN){
 }
 
 QT += network
-TARGET = ../bin/qmmp.real
+TARGET = ../bin/qmmp
 CONFIG += thread release \
 warn_on
 QMAKE_LIBDIR += ../lib
@@ -129,7 +129,7 @@ TRANSLATIONS = translations/qmmp_ru.ts \
 	       translations/qmmp_uk_UA.ts \
 	       translations/qmmp_cs.ts
 TEMPLATE = app
-script.files += ../bin/qmmp
+#script.files += ../bin/qmmp
 script.path = /bin 
 target.path = /bin
-INSTALLS += target script
+INSTALLS += target
