@@ -1,9 +1,13 @@
 #ifndef __constants_h
 #define __constants_h
 
-#define VERSION "0.1.3"
+#ifdef Q_OS_UNIX
+#include "config.h"
+#endif
 
-#if defined(Q_OS_UNIX)
+#define VERSION "0.1.4"
+
+#ifndef LIB_DIR
 #define LIB_DIR "/lib"
 #endif
 
