@@ -54,7 +54,8 @@ HEADERS += mainwindow.h \
            jumptotrackdialog.h \
            aboutdialog.h \
            timeindicator.h \
- keyboardmanager.h
+           keyboardmanager.h \
+	   skinreader.h
 SOURCES += mainwindow.cpp \
            mp3player.cpp \
            fileloader.cpp \
@@ -99,7 +100,8 @@ SOURCES += mainwindow.cpp \
 	   jumptotrackdialog.cpp \
 	   aboutdialog.cpp \
            timeindicator.cpp \
- keyboardmanager.cpp
+           keyboardmanager.cpp \
+	   skinreader.cpp
 contains(CONFIG,XSPF_PLUGIN){
     message(*********************************************)
     message(*  XSPF support will be compiled as plugin  *)

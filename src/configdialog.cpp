@@ -33,6 +33,7 @@
 
 #include "skin.h"
 #include "pluginitem.h"
+#include "skinreader.h"
 #include "configdialog.h"
 
 ConfigDialog::ConfigDialog ( QWidget *parent )
@@ -51,6 +52,8 @@ ConfigDialog::ConfigDialog ( QWidget *parent )
     ui.listWidget->setIconSize ( QSize ( 69,29 ) );
     m_skin = Skin::getPointer();
     readSettings();
+    SkinReader reader;
+    reader.updateCache();
     loadSkins();
     loadPluginsInfo();
     loadFonts();
@@ -116,8 +119,9 @@ void ConfigDialog::loadSkins()
     m_skinList << fileInfo;
 
     findSkins(QDir::homePath() +"/.qmmp/skins");
-    connect ( ui.listWidget, SIGNAL ( itemClicked ( QListWidgetItem* ) ),
-              this, SLOT ( changeSkin() ) );
+    findSkins(QDir::homePath() +"/.qmmp/cache/skins");
+    connect (ui.listWidget, SIGNAL (itemClicked (QListWidgetItem* )),
+              this, SLOT ( changeSkin()));
 }
 
 void ConfigDialog::findSkins(const QString &path)

@@ -73,6 +73,7 @@ SET(libsrc_SRCS
   aboutdialog.cpp
   timeindicator.cpp
   keyboardmanager.cpp
+  skinreader.cpp
 )
 
 SET(libsrc_MOC_HDRS
@@ -122,6 +123,7 @@ SET(libsrc_MOC_HDRS
   aboutdialog.h
   timeindicator.h
   keyboardmanager.h
+  skinreader.h
 )
 
 SET(libsrc_RCCS images/images.qrc stuff.qrc translations/qmmp_locales.qrc)
