@@ -141,10 +141,6 @@ SET(libsrc_UIS
   aboutdialog.ui
 )
 
-#SET(src_FILES
-#  ../bin/qmmp
-#)
-
 QT4_WRAP_UI(libsrc_UIS_H ${libsrc_UIS})
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
@@ -154,5 +150,5 @@ ADD_EXECUTABLE(qmmp ${libsrc_SRCS} ${libsrc_MOC_SRCS} ${libsrc_UIS_H}
   ${libsrc_RCC_SRCS})
 target_link_libraries(qmmp ${QT_LIBRARIES} -lqmmp)
 install(TARGETS qmmp DESTINATION bin PERMISSIONS WORLD_EXECUTE OWNER_READ OWNER_WRITE)
-#install(FILES ${src_FILES} DESTINATION bin PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ 
-#WORLD_EXECUTE WORLD_READ)
+install(FILES qmmp.desktop DESTINATION share/applications PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ)
+install(FILES images/qmmp.xpm DESTINATION share/pixmaps PERMISSIONS OWNER_WRITE OWNER_READ GROUP_READ WORLD_READ)

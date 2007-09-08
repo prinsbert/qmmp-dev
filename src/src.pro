@@ -129,7 +129,9 @@ TRANSLATIONS = translations/qmmp_ru.ts \
 	       translations/qmmp_uk_UA.ts \
 	       translations/qmmp_cs.ts
 TEMPLATE = app
-#script.files += ../bin/qmmp
-script.path = /bin 
+desktop.files += qmmp.desktop
+icons.files += images/qmmp.xpm
+desktop.path = /share/applications
+icons.path = /share/pixmaps 
 target.path = /bin
-INSTALLS += target
+INSTALLS += target desktop icons
