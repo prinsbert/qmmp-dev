@@ -3,7 +3,7 @@
 # Thanks to Matthias Saou for his explanations on http://freshrpms.net/docs/fight.html
 
 Name: qmmp
-Version: 0.1.2
+Version: 0.1.4
 Release: %mkrel 1
 #Vendor: 
 Copyright: GPL
@@ -11,7 +11,7 @@ Summary: Qt-based multimedia player
 Group: Multimedia
 #Packager: 
 BuildRoot:  %{_tmppath}/%{name}-root 
-Source: http://www.ylsoftware.com/files/qmmp-0.1.2.tar.bz2
+Source: http://www.ylsoftware.com/files/qmmp-0.1.4.tar.bz2
 Requires: libflac8
 Requires: libmad0
 Requires: jackit

@@ -93,7 +93,7 @@ Version 0.1.2
 * fixed "Delete" hotkey in Russian translation
 
 Version 0.1.3
-* added Chinese Simplified translation (l on)
+* added Chinese Simplified translation (lon)
 * added Ukrainian translation (Gennadi Motsyo)
 * added codings fix for command line (Vladimir Kuznetsov)
 * fixed next song selection after deletion selected (Vladimir Kuznetsov)
@@ -107,3 +107,29 @@ Version 0.1.3
 * added menu for left title button (Vladimir Kuznetsov)
 * added custom library directory (for qmake only)
 
+Version 0.1.3.1
+* fixed library install path when using qmake
+
+Version 0.1.4
+* redesigned command line interface (Vladimir Kuznetsov)
+* added packed skin support
+* xdg menu support (thanks to Gennadi Motsyo and Karel Volný)
+* added custom library path
+* added current song saving
+* removed wrapper from installation
+* added Czech translation (Karel Volný)
+* added Chinese Traditional translation (lon)
+* updated Chinese SiSimplified translation (lon)
+* updated Turkish translation (Mustafa GUNAY)
+* fixed Russian Translation
+* updated icons
+* fixed cmake scripts (Yuriy Zhuravlev)
+* reduced wakeups number
+* fixed interface freezing when skiping broken entries
+* fixed skin parsing
+* fixed segmentation fault when trying to show details dialog with invalid file path
+* fixed codepage saving in the mpeg plugin
+* fixed some bugs in the ffmpeg plugin
+* added qt4.3-specific fixes
+* fixed metadata disabling
+* fixed freezing when seeking
