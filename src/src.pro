@@ -1,5 +1,5 @@
 # ???? ?????? ? KDevelop ?????????? qmake.
-# ------------------------------------------- 
+# -------------------------------------------
 # ?????????? ???????????? ???????? ???????? ???????: ./src
 # ???? - ??????????:  ../bin/mp3player
 
@@ -46,9 +46,7 @@ HEADERS += mainwindow.h \
            playlistformat.h \
            playlistcontrol.h \
            version.h \
-           tcpserver.h \
            qmmpstarter.h \
-           guard.h \
            eqpreset.h \
            preseteditor.h \
            jumptotrackdialog.h \
@@ -93,8 +91,6 @@ SOURCES += mainwindow.cpp \
 	   playlistformat.cpp \
 	   playlistcontrol.cpp \
 	   qmmpstarter.cpp \
-	   tcpserver.cpp \
-	   guard.cpp \
            eqpreset.cpp \
            preseteditor.cpp \
 	   jumptotrackdialog.cpp \
@@ -134,6 +130,6 @@ TEMPLATE = app
 desktop.files += qmmp.desktop
 icons.files += images/qmmp.xpm
 desktop.path = /share/applications
-icons.path = /share/pixmaps 
+icons.path = /share/pixmaps
 target.path = /bin
 INSTALLS += target desktop icons
