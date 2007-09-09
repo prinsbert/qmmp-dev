@@ -19,16 +19,17 @@
  ***************************************************************************/
 
 #include <QApplication>
-#include <QTcpSocket>
+#include <QNetworkInterface>
+#include <QUdpSocket>
+
 
 #include <unistd.h>
 
 #include "mainwindow.h"
 #include "version.h"
 #include "qmmpstarter.h"
-#include "guard.h"
 
-QMMPStarter::QMMPStarter(int argc,char ** argv,QObject* parent) : QObject(parent),mw(0)
+QMMPStarter::QMMPStarter(int argc,char ** argv,QObject* parent) : QObject(parent),mw(NULL)
 {	
 	QStringList tmp;
 	for(int i = 1;i < argc;i++)
@@ -59,27 +60,25 @@ QMMPStarter::QMMPStarter(int argc,char ** argv,QObject* parent) : QObject(parent
 		qFatal("QMMP: Unknown command...");
 		exit(1);
 	}
-	
-	if(Guard::exists(QApplication::applicationFilePath()))
-	{
-		m_tcpSocket = new QTcpSocket(this);
-		connect(m_tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)),
-				this, SLOT(displayError(QAbstractSocket::SocketError)));
-		connect(m_tcpSocket, SIGNAL(connected()),this, SLOT(writeCommand()));
-		
-		m_tcpSocket->connectToHost("127.0.0.1",TCPSERVER_PORT_NUMBER + getuid());
-		
-	}
-	else
-	{
-		Guard::create(QApplication::applicationFilePath());
-		QStringList arg_l = argString.split("\n", QString::SkipEmptyParts);
-		mw = new MainWindow(arg_l,0);
-	}
+        
+    m_udpSocket = new QUdpSocket(this);
+    connect(m_udpSocket, SIGNAL(error(QAbstractSocket::SocketError)),
+            this, SLOT(displayError(QAbstractSocket::SocketError)));
+    
+    if(m_udpSocket->bind(QHostAddress::LocalHost,LISTEN_PORT_BASE + getuid()))
+    {
+        qDebug("binded");
+        connect(m_udpSocket, SIGNAL(readyRead()),this, SLOT(readCommand()));
+        QStringList arg_l = argString.split("\n", QString::SkipEmptyParts);
+        mw = new MainWindow(arg_l,0);
+    }
+    else writeCommand();
+
 }
 
 void QMMPStarter::displayError(QAbstractSocket::SocketError socketError)
 {
+    
 	switch (socketError) 
 	{
 		case QAbstractSocket::RemoteHostClosedError:
@@ -91,44 +90,59 @@ void QMMPStarter::displayError(QAbstractSocket::SocketError socketError)
 			qWarning("The connection was refused by the peer. ");
 			break;
 		default:
-			qWarning("The following error: %s:",qPrintable(m_tcpSocket->errorString()));
+			qWarning("%s:",qPrintable(m_udpSocket->errorString()));
+            qWarning("It seems that another version of QMMP is already running ...\n");
 	}
-
-	Guard::create(QApplication::applicationFilePath());
-	mw = new MainWindow(argString.split("\n", QString::SkipEmptyParts),0);
 }
 
 QMMPStarter::~ QMMPStarter()
 {
-	if(mw)
-	{
-		Guard::destroy(QApplication::applicationFilePath());
-		delete mw;
-	}
+	if(mw) delete mw;
 }
 
 void QMMPStarter::writeCommand()
 {
 	if(!argString.isEmpty())
 	{
+        QList<QNetworkInterface> interfaces = QNetworkInterface::allInterfaces();
+        foreach(QNetworkInterface ni, interfaces)
+        {
+         //   qWarning(qPrintable(ni.name()));
+            if(ni.flags() & QNetworkInterface::IsLoopBack && !(ni.flags() & QNetworkInterface::IsUp))
+                qWarning("Warning: Loopback interface on this machine is disabled, command will be not executed...");
+        }
+
 		char buf[PATH_MAX + 1];
 		QString workingDir = QString(getcwd(buf,PATH_MAX)) + "\n";
 		
 		QByteArray barray;
 		barray.append(workingDir);
 		barray.append(argString);
-		
-		m_tcpSocket->write(barray);
-		m_tcpSocket->flush();
+        m_udpSocket->writeDatagram ( barray,QHostAddress::LocalHost,LISTEN_PORT_BASE + getuid());
 	}
 	else
 	{
-		qWarning("It seems that another version of application is already running ...\n");
 		printUsage();
 	}
 	
-	m_tcpSocket->close();
-	QApplication::quit();
+	m_udpSocket->close();
+    exit(0);
+}
+
+void QMMPStarter::readCommand()
+{
+    while (m_udpSocket->hasPendingDatagrams()) {
+        QByteArray inputArray;
+        inputArray.resize(m_udpSocket->pendingDatagramSize());
+        m_udpSocket->readDatagram(inputArray.data(), inputArray.size());
+
+        QStringList slist = QString(inputArray).split("\n",QString::SkipEmptyParts);
+        QString cwd = slist.takeAt(0);
+        if(mw)
+        {
+            mw->processCommandArgs(slist,cwd);
+        }
+    }
 }
 
 void QMMPStarter::printUsage()

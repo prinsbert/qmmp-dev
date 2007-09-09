@@ -39,7 +39,6 @@
 #include "eqwidget.h"
 #include "mainvisual.h"
 #include  "playlistformat.h"
-#include "tcpserver.h"
 #include "jumptotrackdialog.h"
 #include "aboutdialog.h"
 
@@ -132,10 +131,6 @@ MainWindow::MainWindow(const QStringList& args, QWidget *parent)
     connect ( m_skin, SIGNAL ( skinChanged() ), this, SLOT ( updateSkin() ) );
     updateEQ();
     updateSkin();
-
-    // Starting the TcpServer
-
-    new TcpServer(this);
 
     m_playListModel->readSettings();
     char buf[PATH_MAX + 1];

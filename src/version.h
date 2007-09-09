@@ -5,6 +5,6 @@
 
 #define QMMP_STR_VERSION "0.1.4"
 
-#define TCPSERVER_PORT_NUMBER 33000
+#define LISTEN_PORT_BASE 33000
 
 #endif

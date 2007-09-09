@@ -26,13 +26,14 @@
 #include <QStringList>
 
 class QTcpSocket;
+class QUdpSocket;
 class MainWindow;
 
 
 /*!
  *	QMMPStarter represents wrapper object that is responsible
  * for proper QMMP initialization(only one instance of running 
- * MainWindow) and passing command line args to the TcpServer.
+ * MainWindow) and passing command line args to application.
  * @author Vladimir Kuznetsov <vovanec@gmail.com>
  */
 class QMMPStarter : public QObject
@@ -51,6 +52,8 @@ protected slots:
 	  * Passes command args to the running TCP server
 	  */
 	 void writeCommand();
+     
+     void readCommand();
 private:
 	/*!
 	 * Prints usage
@@ -63,7 +66,8 @@ private:
 	 void printVersion();
 private:
 	 MainWindow* mw;
-	 QTcpSocket* m_tcpSocket;
+	 //QTcpSocket* m_tcpSocket;
+     QUdpSocket* m_udpSocket;
 	 QString argString;
 };
 
