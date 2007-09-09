@@ -66,8 +66,7 @@ private:
 	 void printVersion();
 private:
 	 MainWindow* mw;
-	 //QTcpSocket* m_tcpSocket;
-     QUdpSocket* m_udpSocket;
+         QUdpSocket* m_udpSocket;
 	 QString argString;
 };
 
