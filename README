@@ -3,7 +3,7 @@ Qmmp - Qt-based multimedia player
 This program is an audio-player, written with help of Qt library.
 
 Main opportunities:
-- unpacked winamp skins support 
+- winamp and xmms skins support 
 - plugins support
 - MPEG1 layer 1/2/3 support
 - Ogg Vorbis support
@@ -22,6 +22,7 @@ Requirements:
 - Flac >= 1.1.3 (Optional)
 - libmpcdec >= 1.2.6 (Optional)
 - Jack >= 0.102.5 (Optional)
+- libsamplerate >= 0.1.2 (Optional)
 
 Build:
 qmake-qt4 && make
