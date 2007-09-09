@@ -65,8 +65,6 @@ SET(libsrc_SRCS
   playlistformat.cpp
   playlistcontrol.cpp
   qmmpstarter.cpp
-  tcpserver.cpp
-  guard.cpp
   eqpreset.cpp
   preseteditor.cpp
   jumptotrackdialog.cpp
@@ -114,9 +112,7 @@ SET(libsrc_MOC_HDRS
   playlistformat.h
   playlistcontrol.h
   version.h
-  tcpserver.h
   qmmpstarter.h
-  guard.h
   eqpreset.h
   preseteditor.h
   jumptotrackdialog.h
