@@ -29,7 +29,8 @@ PKGCONFIG += taglib mad
 TRANSLATIONS = translations/mad_plugin_ru.ts \
                translations/mad_plugin_uk_UA.ts \
 	       translations/mad_plugin_zh_CN.ts \
-	       translations/mad_plugin_zh_TW.ts
+	       translations/mad_plugin_zh_TW.ts \
+               translations/mad_plugin_cs.ts
 RESOURCES = translations/translations.qrc
 
 isEmpty (LIB_DIR){
