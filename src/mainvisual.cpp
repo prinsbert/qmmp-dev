@@ -67,26 +67,16 @@ void MainVisual::setVisual ( VisualBase *newvis )
         vis->resize ( size() );
 }
 
-/*void MainVisual::configChanged ( QSettings &settings )
-{
-    fps = 20;
-    timer->stop();
-    timer->start ( 1000 / fps );
-    if ( vis )
-        vis->configChanged ( settings );
-}*/
-
 void MainVisual::prepare()
 {
-    //nodes.setAutoDelete(TRUE);
-    nodes.clear();  //TODO memory leak??
-    //nodes.setAutoDelete(FALSE);
+    while (!nodes.isEmpty())
+        delete nodes.takeFirst();
 }
 
 void MainVisual::add ( Buffer *b, unsigned long w, int c, int p )
 {
-    if(!timer->isActive ())
-        return; 
+    if (!timer->isActive ())
+        return;
     long len = b->nbytes, cnt;
     short *l = 0, *r = 0;
 
