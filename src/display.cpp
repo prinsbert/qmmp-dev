@@ -78,7 +78,7 @@ MainDisplay::MainDisplay ( QWidget *parent )
     posbar = new PositionBar ( this );
     posbar->move ( 16,72 );
     //connect(posbar, SIGNAL(sliderMoved(int)), SLOT(setTime(int)));
-    MainVisual* vis = new MainVisual ( this,"" );
+    MainVisual* vis = new MainVisual (this);
     vis->setGeometry ( 24,39,75,20 );
     vis->show();
 
