@@ -303,7 +303,9 @@ void OutputALSA::run()
                 else if (m == -EAGAIN)
                 {
                     //usleep(500);
+                    mutex()->unlock();
                     snd_pcm_wait(pcm_handle, 500);
+                    mutex()->lock();
                 }
                 else if (m == -EPIPE)
                 {
