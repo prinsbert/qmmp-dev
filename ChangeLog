@@ -133,3 +133,12 @@ Version 0.1.4
 * added qt4.3-specific fixes
 * fixed metadata disabling
 * fixed freezing when seeking
+
+Version 0.1.5
+* updated Czech translation (Karel Volný)
+* added Brazilian Portuguese translation (Klaos Lacerda and Bruno Gonçalves)
+* fixed memory leak
+* fixed build with Qt-4.2
+* fixed file permissions
+* faster seek speed when use alsa plugin as output
+
