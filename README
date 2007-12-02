@@ -24,8 +24,12 @@ Requirements:
 - Jack >= 0.102.5 (Optional)
 - libsamplerate >= 0.1.2 (Optional)
 
+
+Configure:
+qmake-qt4
+
 Build:
-qmake-qt4 && make
+make
 
 Installation:
 make install INSTALL_ROOT=/usr/local
@@ -58,7 +62,11 @@ cmake ./ -D CMAKE_INSTALL_PREFIX=custom_path
 
 Attention! By default all modules are enabled.
 
+Changing shared library install path (needed by some 64-bit distributions).
+By default, all libraries and plugins will be installed in $(INSTALL PREFIX)/lib. You can change "lib" 
+to "lib64" by running qmake-qt4 or cmake with special parameter:
+qmake-qt4 LIB_DIR=/lib64
+or
+cmake ./ -D LIB_DIR=lib64
 
 All patches, bug reports, ideas etc. send to forkotov02@hotmail.ru.
-
-
