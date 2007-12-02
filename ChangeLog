@@ -140,5 +140,7 @@ Version 0.1.5
 * fixed memory leak
 * fixed build with Qt-4.2
 * fixed file permissions
-* faster seek speed when use alsa plugin as output
+* faster seek speed while using alsa plugin as output
+* changed playlist background color
+* fixed freezing
 
