@@ -27,62 +27,62 @@
 <context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../ui_settingsdialog.h" line="221"/>
+        <location filename="../settingsdialog.ui" line="13"/>
         <source>ALSA Plugin Settings</source>
         <translation>Nastavení pluginu ALSA</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="226"/>
+        <location filename="../settingsdialog.ui" line="29"/>
         <source>Device Settings</source>
         <translation>Nastavení zařízení</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="222"/>
+        <location filename="../settingsdialog.ui" line="41"/>
         <source>Audio device</source>
         <translation>Zvukové zařízení</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="223"/>
+        <location filename="../settingsdialog.ui" line="58"/>
         <source>Mixer</source>
         <translation>Mixér</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="224"/>
+        <location filename="../settingsdialog.ui" line="73"/>
         <source>Mixer card:</source>
         <translation>Zvuková karta:</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="225"/>
+        <location filename="../settingsdialog.ui" line="83"/>
         <source>Mixer device:</source>
         <translation>Ovládání hlasitosti:</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="230"/>
+        <location filename="../settingsdialog.ui" line="100"/>
         <source>Advanced Settings</source>
         <translation>Pokročilá nastavení</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="227"/>
+        <location filename="../settingsdialog.ui" line="112"/>
         <source>Soundcard</source>
         <translation>Zvuková karta</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="228"/>
+        <location filename="../settingsdialog.ui" line="176"/>
         <source>Buffer time (ms):</source>
         <translation>Velikost bufferu (ms):</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="229"/>
+        <location filename="../settingsdialog.ui" line="186"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Délka periody (ms):</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="231"/>
+        <location filename="../settingsdialog.ui" line="229"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../ui_settingsdialog.h" line="232"/>
+        <location filename="../settingsdialog.ui" line="236"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
