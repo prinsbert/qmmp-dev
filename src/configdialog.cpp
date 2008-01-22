@@ -120,6 +120,7 @@ void ConfigDialog::loadSkins()
 
     findSkins(QDir::homePath() +"/.qmmp/skins");
     findSkins(QDir::homePath() +"/.qmmp/cache/skins");
+    findSkins(qApp->applicationDirPath()+"/../share/qmmp/skins");
     connect (ui.listWidget, SIGNAL (itemClicked (QListWidgetItem* )),
               this, SLOT ( changeSkin()));
 }
