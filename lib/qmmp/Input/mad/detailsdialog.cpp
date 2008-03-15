@@ -48,13 +48,13 @@ DetailsDialog::DetailsDialog(QWidget *parent, const QString &path)
     QSettings settings(QDir::homePath()+"/.qmmp/qmmprc", QSettings::IniFormat);
     settings.beginGroup("MAD");
     QTextCodec *codec_v1 =
-        QTextCodec::codecForName(settings.value("ID3v1_encoding","UTF-8" )
+        QTextCodec::codecForName(settings.value("ID3v1_encoding","ISO-8859-1" )
                                  .toByteArray ());
     QTextCodec *codec_v2 =
         QTextCodec::codecForName(settings.value("ID3v2_encoding","UTF-8" )
                                  .toByteArray ());
     if (!codec_v1)
-        codec_v1 = QTextCodec::codecForName ("UTF-8");
+        codec_v1 = QTextCodec::codecForName ("ISO-8859-1");
     if (!codec_v2)
         codec_v2 = QTextCodec::codecForName ("UTF-8");
     settings.endGroup();
@@ -120,6 +120,8 @@ void DetailsDialog::loadID3v1Tag()
     if (f.ID3v1Tag())
     {
         bool utf = m_codec->name().contains("UTF");
+        if(utf)
+            m_codec = QTextCodec::codecForName ("UTF-8");
         TagLib::String title = f.ID3v1Tag()->title();
         TagLib::String artist = f.ID3v1Tag()->artist();
         TagLib::String album = f.ID3v1Tag()->album();
@@ -149,6 +151,8 @@ void DetailsDialog::loadID3v2Tag()
     if (f.ID3v2Tag())
     {
         bool utf = m_codec->name().contains("UTF");
+        if(utf)
+            m_codec = QTextCodec::codecForName ("UTF-8");
         TagLib::String title = f.ID3v2Tag()->title();
         TagLib::String artist = f.ID3v2Tag()->artist();
         TagLib::String album = f.ID3v2Tag()->album();
