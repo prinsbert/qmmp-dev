@@ -326,6 +326,10 @@ void Skin::loadPLEdit()
             break;
         }
     }
+    if(!m_pledit_txt.keys().contains("mbbg"))
+        m_pledit_txt["mbbg"] = m_pledit_txt["normalbg"];
+    if(!m_pledit_txt.keys().contains("mbfg"))
+        m_pledit_txt["mbfg"] = m_pledit_txt["normal"];
 
 }
 
