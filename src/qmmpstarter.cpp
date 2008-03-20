@@ -67,7 +67,7 @@ QMMPStarter::QMMPStarter(int argc,char ** argv,QObject* parent) : QObject(parent
     
     if(m_udpSocket->bind(QHostAddress::LocalHost,LISTEN_PORT_BASE + getuid()))
     {
-        qDebug("binded");
+        qDebug("bound");
         connect(m_udpSocket, SIGNAL(readyRead()),this, SLOT(readCommand()));
         QStringList arg_l = argString.split("\n", QString::SkipEmptyParts);
         mw = new MainWindow(arg_l,0);
