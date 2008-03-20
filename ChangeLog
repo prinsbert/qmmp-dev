@@ -144,3 +144,14 @@ Version 0.1.5
 * changed playlist background color
 * fixed freezing
 
+Version 0.1.6
+* fixed desktop file
+* fixed russian translation
+* added "$PREFIX/share/qmmp/skins" to skin search paths
+* fixed skin parsing
+* fixed possible GPL violation
+* tar.bz2 skins support
+* using ISO-8859-1 encoding for id3v1 tags by default
+* fixed loading playlists with double extensions
+
+
