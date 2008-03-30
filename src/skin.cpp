@@ -395,17 +395,16 @@ void Skin::loadVisColor()
     if ( path.isNull () )
     {
         qDebug ( "Skin: Cannot find viscolor.txt" );
-        return;
+        path = ":/default/viscolor.txt";
     }
 
 
-    QFile file ( path );
+    QFile file (path);
 
-    if ( !file.open ( QIODevice::ReadOnly | QIODevice::Text ) )
-        return;
+    file.open (QIODevice::ReadOnly | QIODevice::Text);
 
     int j = 0;
-    while ( !file.atEnd () && j<24 )
+    while ( !file.atEnd () && j<24 && file.isOpen ())
     {
         j++;
         QByteArray line = file.readLine ();
