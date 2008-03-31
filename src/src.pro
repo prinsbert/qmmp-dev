@@ -126,7 +126,8 @@ TRANSLATIONS = translations/qmmp_ru.ts \
 	       translations/qmmp_zh_CN.ts \
 	       translations/qmmp_uk_UA.ts \
 	       translations/qmmp_cs.ts \
-	       translations/qmmp_pt_BR.ts
+	       translations/qmmp_pt_BR.ts \
+               translations/qmmp_de.ts
 TEMPLATE = app
 desktop.files += qmmp.desktop
 icons.files += images/qmmp.xpm
