@@ -1,12 +1,12 @@
 FORMS += detailsdialog.ui 
 HEADERS += decoderffmpegfactory.h \
            tag.h \
-	   detailsdialog.h \
+           detailsdialog.h \
            decoder_ffmpeg.h
 SOURCES += tag.cpp \
-	   detailsdialog.cpp \
+           detailsdialog.cpp \
            decoder_ffmpeg.cpp \
-	   decoderffmpegfactory.cpp
+           decoderffmpegfactory.cpp
 DESTDIR = ../
 QMAKE_CLEAN = ../libffmpeg.so
 INCLUDEPATH += ../../../
@@ -21,9 +21,10 @@ DEFINES += __STDC_CONSTANT_MACROS
 PKGCONFIG += libavcodec libavformat
 TRANSLATIONS = translations/ffmpeg_plugin_ru.ts \
                translations/ffmpeg_plugin_uk_UA.ts \
-	       translations/ffmpeg_plugin_zh_CN.ts \
+               translations/ffmpeg_plugin_zh_CN.ts \
                translations/ffmpeg_plugin_zh_TW.ts \
-               translations/ffmpeg_plugin_cs.ts
+               translations/ffmpeg_plugin_cs.ts \
+               translations/ffmpeg_plugin_de.ts
 RESOURCES = translations/translations.qrc
 
 isEmpty (LIB_DIR){

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="uk">
-<defaultcodec></defaultcodec>
 <context>
     <name>DecoderMADFactory</name>
     <message>
@@ -42,17 +41,17 @@
 <context>
     <name>DetailsDialog</name>
     <message>
-        <location filename="../detailsdialog.cpp" line="79"/>
+        <location filename="../detailsdialog.cpp" line="84"/>
         <source>Hz</source>
         <translation>Гц</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="106"/>
+        <location filename="../detailsdialog.cpp" line="111"/>
         <source>Yes</source>
         <translation type="unfinished">Так</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="108"/>
+        <location filename="../detailsdialog.cpp" line="113"/>
         <source>No</source>
         <translation type="unfinished">Ні</translation>
     </message>
@@ -162,7 +161,7 @@
         <translation type="unfinished">Шлях до файлу:</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="95"/>
+        <location filename="../detailsdialog.cpp" line="100"/>
         <source>KB</source>
         <translation>Кб</translation>
     </message>
@@ -172,7 +171,7 @@
         <translation type="unfinished">Інформація</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="77"/>
+        <location filename="../detailsdialog.cpp" line="82"/>
         <source>kbps</source>
         <translation>Кб/с</translation>
     </message>
@@ -190,47 +189,42 @@
         <translation type="unfinished">Версія тегів за умовчанням:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../settingsdialog.ui" line="65"/>
         <source>ID3v1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="67"/>
+        <location filename="../settingsdialog.ui" line="70"/>
         <source>ID3v2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="90"/>
+        <location filename="../settingsdialog.ui" line="93"/>
         <source>Enable ID3v1</source>
         <translation type="unfinished">Використовувати ID3v1</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="97"/>
+        <location filename="../settingsdialog.ui" line="100"/>
         <source>Enable ID3v2</source>
         <translation type="unfinished">Використовувати ID3v2</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="112"/>
+        <location filename="../settingsdialog.ui" line="115"/>
         <source>ID3v1 encoding:</source>
         <translation type="unfinished">Кодування ID3v1:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="165"/>
-        <source>Default</source>
-        <translation type="unfinished">За умовчанням</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="154"/>
+        <location filename="../settingsdialog.ui" line="151"/>
         <source>ID3v2 encoding:</source>
         <translation type="unfinished">Кодування ID3v2:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="212"/>
+        <location filename="../settingsdialog.ui" line="203"/>
         <source>OK</source>
         <translation type="unfinished">Застосувати</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="219"/>
+        <location filename="../settingsdialog.ui" line="210"/>
         <source>Cancel</source>
         <translation type="unfinished">Відміна</translation>
     </message>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="pl">
+<!DOCTYPE TS><TS version="1.1" language="de">
 <context>
     <name>DecoderMADFactory</name>
     <message>
@@ -10,22 +10,22 @@
     <message>
         <location filename="../decodermadfactory.cpp" line="39"/>
         <source>MPEG Files</source>
-        <translation>Soubory MPEG</translation>
+        <translation>MPEG Dateien</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="68"/>
         <source>About MPEG Audio Plugin</source>
-        <translation>O pluginu MPEG</translation>
+        <translation>Über MPEG Audio Plugin</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="69"/>
         <source>Qmmp MPEG Audio Plugin</source>
-        <translation>Vstupní plugin Qmmp MPEG</translation>
+        <translation>Qmmp MPEG Audio Plugin</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="70"/>
         <source>Compiled against libmad version:</source>
-        <translation>Zkompilováno s libmad verze</translation>
+        <translation>Kompiliert gegen libmad version:</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="74"/>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../decodermadfactory.cpp" line="76"/>
         <source>Source code based on mq3 progect</source>
-        <translation>Zdrojový kód je založen na projektu mq3</translation>
+        <translation>Quellcode basiert auf mq3 Projekt</translation>
     </message>
 </context>
 <context>
@@ -58,27 +58,27 @@
     <message>
         <location filename="../detailsdialog.cpp" line="111"/>
         <source>Yes</source>
-        <translation>Ano</translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="113"/>
         <source>No</source>
-        <translation>Ne</translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="13"/>
         <source>Details</source>
-        <translation>Podrobnosti</translation>
+        <translation>Details</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="31"/>
         <source>MPEG Info</source>
-        <translation>Informace MPEG</translation>
+        <translation>MPEG Info</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="59"/>
         <source>File size:</source>
-        <translation>Velikost souboru:</translation>
+        <translation>Dateigröße:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="164"/>
@@ -88,12 +88,12 @@
     <message>
         <location filename="../detailsdialog.ui" line="76"/>
         <source>Sample rate:</source>
-        <translation>Vzorkovací frekvence:</translation>
+        <translation>Abtastrate:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="86"/>
         <source>Bit rate:</source>
-        <translation>Datový tok:</translation>
+        <translation>Bitrate:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="117"/>
@@ -103,7 +103,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="137"/>
         <source>Mode:</source>
-        <translation>Režim:</translation>
+        <translation>Modus:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="147"/>
@@ -113,7 +113,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="171"/>
         <source>Original:</source>
-        <translation>Originál:</translation>
+        <translation>Original:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="192"/>
@@ -123,27 +123,27 @@
     <message>
         <location filename="../detailsdialog.ui" line="442"/>
         <source>Save</source>
-        <translation>Uložit</translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="351"/>
         <source>Track number:</source>
-        <translation>Číslo stopy:</translation>
+        <translation>Titelnummer:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="364"/>
         <source>Year:</source>
-        <translation>Rok:</translation>
+        <translation>Jahr:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="374"/>
         <source>Genre:</source>
-        <translation>Žánr:</translation>
+        <translation>Genre:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="384"/>
         <source>Comment:</source>
-        <translation>Komentář:</translation>
+        <translation>Kommentar:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="394"/>
@@ -153,17 +153,17 @@
     <message>
         <location filename="../detailsdialog.ui" line="404"/>
         <source>Artist:</source>
-        <translation>Umělec:</translation>
+        <translation>Künstler:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="414"/>
         <source>Title:</source>
-        <translation>Název:</translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="321"/>
         <source>Close</source>
-        <translation>Zavřít</translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="336"/>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="452"/>
         <source>File path:</source>
-        <translation>Cesta k souboru:</translation>
+        <translation>Dateipfad:</translation>
     </message>
 </context>
 <context>
@@ -181,17 +181,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="13"/>
         <source>MPEG Plugin Settings</source>
-        <translation>Nastavení pluginu MPEG</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="25"/>
-        <source>ID3 Tags</source>
-        <translation>ID3 tagy</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Default tag version:</source>
-        <translation>Výchozí verze tagu:</translation>
+        <translation>MPEG Plugin Settings</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="65"/>
@@ -204,24 +194,14 @@
         <translation>ID3v2</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="93"/>
-        <source>Enable ID3v1</source>
-        <translation>Povolit ID3v1</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="100"/>
-        <source>Enable ID3v2</source>
-        <translation>Povolit ID3v2</translation>
-    </message>
-    <message>
         <location filename="../settingsdialog.ui" line="115"/>
         <source>ID3v1 encoding:</source>
-        <translation>Kódování ID3v1:</translation>
+        <translation>ID3v1 Kodierung:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="151"/>
         <source>ID3v2 encoding:</source>
-        <translation>Kódování ID3v2:</translation>
+        <translation>ID3v2 Kodierung:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="203"/>
@@ -231,7 +211,27 @@
     <message>
         <location filename="../settingsdialog.ui" line="210"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="25"/>
+        <source>ID3 Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="45"/>
+        <source>Default tag version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="93"/>
+        <source>Enable ID3v1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="100"/>
+        <source>Enable ID3v2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

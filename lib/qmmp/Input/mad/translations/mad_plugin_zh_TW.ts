@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="zh_TW">
-<defaultcodec></defaultcodec>
 <context>
     <name>DecoderMADFactory</name>
     <message>
@@ -42,17 +41,17 @@
 <context>
     <name>DetailsDialog</name>
     <message>
-        <location filename="../detailsdialog.cpp" line="79"/>
+        <location filename="../detailsdialog.cpp" line="84"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="106"/>
+        <location filename="../detailsdialog.cpp" line="111"/>
         <source>Yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="108"/>
+        <location filename="../detailsdialog.cpp" line="113"/>
         <source>No</source>
         <translation>否</translation>
     </message>
@@ -162,7 +161,7 @@
         <translation>檔案路徑：</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="95"/>
+        <location filename="../detailsdialog.cpp" line="100"/>
         <source>KB</source>
         <translation>KB</translation>
     </message>
@@ -172,7 +171,7 @@
         <translation>詳細資料</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="77"/>
+        <location filename="../detailsdialog.cpp" line="82"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
@@ -190,47 +189,42 @@
         <translation>預設標簽版本：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../settingsdialog.ui" line="65"/>
         <source>ID3v1</source>
         <translation>ID3v1</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="67"/>
+        <location filename="../settingsdialog.ui" line="70"/>
         <source>ID3v2</source>
         <translation>ID3v2</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="90"/>
+        <location filename="../settingsdialog.ui" line="93"/>
         <source>Enable ID3v1</source>
         <translation>啓用 ID3v1</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="97"/>
+        <location filename="../settingsdialog.ui" line="100"/>
         <source>Enable ID3v2</source>
         <translation>啓用 ID3v2</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="112"/>
+        <location filename="../settingsdialog.ui" line="115"/>
         <source>ID3v1 encoding:</source>
         <translation>ID3v1 編碼：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="165"/>
-        <source>Default</source>
-        <translation>預設</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="154"/>
+        <location filename="../settingsdialog.ui" line="151"/>
         <source>ID3v2 encoding:</source>
         <translation>ID3v2 編碼：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="212"/>
+        <location filename="../settingsdialog.ui" line="203"/>
         <source>OK</source>
         <translation>確定</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="219"/>
+        <location filename="../settingsdialog.ui" line="210"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>

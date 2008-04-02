@@ -41,17 +41,17 @@
 <context>
     <name>DetailsDialog</name>
     <message>
-        <location filename="../detailsdialog.cpp" line="79"/>
+        <location filename="../detailsdialog.cpp" line="84"/>
         <source>Hz</source>
         <translation>Гц</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="106"/>
+        <location filename="../detailsdialog.cpp" line="111"/>
         <source>Yes</source>
         <translation>Есть</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="108"/>
+        <location filename="../detailsdialog.cpp" line="113"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
@@ -161,7 +161,7 @@
         <translation>Путь к файлу:</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="95"/>
+        <location filename="../detailsdialog.cpp" line="100"/>
         <source>KB</source>
         <translation>Кб</translation>
     </message>
@@ -171,7 +171,7 @@
         <translation>Информация</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="77"/>
+        <location filename="../detailsdialog.cpp" line="82"/>
         <source>kbps</source>
         <translation>Кб/с</translation>
     </message>
@@ -189,47 +189,42 @@
         <translation>Версия тегов по умолчанию:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../settingsdialog.ui" line="65"/>
         <source>ID3v1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="67"/>
+        <location filename="../settingsdialog.ui" line="70"/>
         <source>ID3v2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="90"/>
+        <location filename="../settingsdialog.ui" line="93"/>
         <source>Enable ID3v1</source>
         <translation>Использовать ID3v1</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="97"/>
+        <location filename="../settingsdialog.ui" line="100"/>
         <source>Enable ID3v2</source>
         <translation>Использовать ID3v2</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="112"/>
+        <location filename="../settingsdialog.ui" line="115"/>
         <source>ID3v1 encoding:</source>
         <translation>Кодировка ID3v1:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="165"/>
-        <source>Default</source>
-        <translation>По-умолчанию</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="154"/>
+        <location filename="../settingsdialog.ui" line="151"/>
         <source>ID3v2 encoding:</source>
         <translation>Кодировка ID3v2:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="212"/>
+        <location filename="../settingsdialog.ui" line="203"/>
         <source>OK</source>
         <translation>Применить</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="219"/>
+        <location filename="../settingsdialog.ui" line="210"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
