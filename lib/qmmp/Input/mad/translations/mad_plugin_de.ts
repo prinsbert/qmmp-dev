@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="de">
+<defaultcodec></defaultcodec>
 <context>
     <name>DecoderMADFactory</name>
     <message>
@@ -216,22 +217,22 @@
     <message>
         <location filename="../settingsdialog.ui" line="25"/>
         <source>ID3 Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3 Tags</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="45"/>
         <source>Default tag version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard Tag-Version:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="93"/>
         <source>Enable ID3v1</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v1 benutzen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="100"/>
         <source>Enable ID3v2</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v2 benutzen</translation>
     </message>
 </context>
 </TS>

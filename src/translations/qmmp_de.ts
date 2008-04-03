@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="de">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -133,7 +134,7 @@
     <message>
         <location filename="../configdialog.ui" line="49"/>
         <source>Skins</source>
-        <translation>Symbolthema</translation>
+        <translation>Skins</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="80"/>
@@ -148,7 +149,7 @@
     <message>
         <location filename="../configdialog.ui" line="114"/>
         <source>Playlist:</source>
-        <translation>Wiedergabeliste:</translation>
+        <translation>Playlist:</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="150"/>
@@ -193,7 +194,7 @@
     <message>
         <location filename="../configdialog.ui" line="294"/>
         <source>Input</source>
-        <translation>Eingabe</translation>
+        <translation>Dekoder</translation>
     </message>
     <message>
         <location filename="../configdialog.ui" line="323"/>
@@ -412,7 +413,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="523"/>
         <source>&amp;Queue</source>
-        <translation>&amp;Warteschlange</translation>
+        <translation>Warteschlan&amp;ge</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="523"/>
@@ -422,7 +423,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="525"/>
         <source>&amp;Jump To File</source>
-        <translation>&amp;Springe zu Titel</translation>
+        <translation>Springe zu &amp;Titel</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="525"/>
@@ -437,12 +438,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="527"/>
         <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
+        <translation>Strg+P</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="529"/>
         <source>&amp;About</source>
-        <translation>Ü&amp;ber</translation>
+        <translation>Übe&amp;r</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="532"/>
@@ -452,7 +453,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="532"/>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation>Strg+Q</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="613"/>
@@ -480,7 +481,7 @@
     <message>
         <location filename="../playlist.cpp" line="132"/>
         <source>F</source>
-        <translation>F</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="137"/>
@@ -490,7 +491,7 @@
     <message>
         <location filename="../playlist.cpp" line="138"/>
         <source>D</source>
-        <translation>D</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="143"/>
@@ -580,7 +581,7 @@
     <message>
         <location filename="../playlist.cpp" line="242"/>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation>Strg+A</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="249"/>
@@ -590,7 +591,7 @@
     <message>
         <location filename="../playlist.cpp" line="250"/>
         <source>Shift+N</source>
-        <translation>Shift+N</translation>
+        <translation>Umschalt+N</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="256"/>
@@ -610,7 +611,7 @@
     <message>
         <location filename="../playlist.cpp" line="262"/>
         <source>Shift+S</source>
-        <translation>Shift+S</translation>
+        <translation>Umschalt+S</translation>
     </message>
 </context>
 <context>
