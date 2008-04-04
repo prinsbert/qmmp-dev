@@ -39,6 +39,7 @@ public:
     virtual void showSettings(QWidget *parent) = 0;
     virtual void showAbout(QWidget *parent) = 0;
     virtual QTranslator *createTranslator(QObject *parent) = 0;
+    virtual bool hasSettings() = 0;
 };
 
 Q_DECLARE_INTERFACE(OutputFactory, "OutputFactory/1.0")

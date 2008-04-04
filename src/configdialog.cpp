@@ -49,6 +49,9 @@ ConfigDialog::ConfigDialog ( QWidget *parent )
     connect ( ui.preferencesButton, SIGNAL ( clicked() ), SLOT (showPluginSettings()));
     connect ( ui.informationButton, SIGNAL ( clicked() ), SLOT (showPluginInfo()));
     connect ( this, SIGNAL(accepted()),SLOT(saveSettings()));
+    connect (ui.inputPluginTable, SIGNAL(cellPressed(int, int)), SLOT(updateButtons()));
+    connect (ui.outputPluginTable, SIGNAL(cellPressed(int, int)), SLOT(updateButtons()));
+    connect (ui.pluginsTab, SIGNAL(currentChanged(int)), SLOT(updateButtons()));
     ui.listWidget->setIconSize ( QSize ( 69,29 ) );
     m_skin = Skin::getPointer();
     readSettings();
@@ -65,7 +68,7 @@ ConfigDialog::~ConfigDialog()
     while (!m_outputPluginItems.isEmpty())
         delete m_outputPluginItems.takeFirst();
     while (!m_inputPluginItems.isEmpty())
-        delete m_outputPluginItems.takeFirst();
+        delete m_inputPluginItems.takeFirst();
 }
 
 void ConfigDialog::readSettings()
@@ -162,6 +165,7 @@ void ConfigDialog::loadPluginsInfo()
     for ( int i = 0; i < decoders->count (); ++i )
     {
         InputPluginItem *item = new InputPluginItem(this,decoders->at(i),files.at(i));
+        m_inputPluginItems.append(item);
         QCheckBox* checkBox = new QCheckBox ( ui.inputPluginTable );
         connect(checkBox, SIGNAL(toggled(bool)), item, SLOT(setSelected(bool)));
         checkBox->setChecked(item->isSelected());
@@ -337,4 +341,29 @@ void ConfigDialog::saveSettings()
     settings.setValue ("Tray/hide_on_close",ui.hideToTrayRadioButton->isChecked());
 }
 
-
+void ConfigDialog::updateButtons()
+{
+    bool preferences = FALSE;
+    switch ( ( int ) ui.pluginsTab -> currentIndex () )
+    {
+    case 0:
+    {
+        int row = ui.inputPluginTable->currentRow ();
+        if (m_inputPluginItems.isEmpty() || row < 0)
+            break;
+        DecoderFactory *factory = m_inputPluginItems.at(row)->factory();
+        preferences = factory->hasSettings();
+        break;
+    }
+    case 1:
+    {
+        int row = ui.outputPluginTable->currentRow ();
+        if (m_outputPluginItems.isEmpty() || row < 0 )
+            break;
+        OutputFactory *factory = m_outputPluginItems.at(row)->factory();
+        preferences = factory->hasSettings();
+        break;
+    }
+    }
+    ui.preferencesButton->setEnabled(preferences);
+}

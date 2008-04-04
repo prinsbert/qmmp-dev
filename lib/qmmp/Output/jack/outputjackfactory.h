@@ -42,7 +42,7 @@ public:
     void showSettings(QWidget* parent);
     void showAbout(QWidget *parent);
     QTranslator *createTranslator(QObject *parent);
-
+    bool hasSettings() {return FALSE;};
 };
 
 #endif

@@ -52,6 +52,7 @@ private slots:
     void showPluginInfo();
     void addTitleString( QAction * );
     void saveSettings();
+    void updateButtons();
 
 private:
     void readSettings();
