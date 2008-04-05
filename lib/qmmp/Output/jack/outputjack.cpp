@@ -99,7 +99,7 @@ bool OutputJACK::initialize()
         m_inited = TRUE;
     m_inited = TRUE;
     m_configure = FALSE;
-    jack_options_t options = JackNullOption;
+    jack_options_t options = JackNoStartServer;
     jack_status_t status;
     jack_client_t *client = jack_client_open ("test_qmmp", options, &status, NULL);
     if (client == NULL)
