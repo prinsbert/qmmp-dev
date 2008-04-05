@@ -277,7 +277,7 @@
     <message>
         <location filename="../eqwidget.cpp" line="264"/>
         <source>&amp;Clear</source>
-        <translation>&amp;Leeren</translation>
+        <translation>L&amp;eeren</translation>
     </message>
     <message>
         <location filename="../eqwidget.cpp" line="293"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>X</source>
-        <translation>X</translation>
+        <translation>W</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="519"/>
@@ -378,7 +378,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="519"/>
         <source>C</source>
-        <translation>C</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="520"/>
@@ -388,7 +388,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="520"/>
         <source>V</source>
-        <translation>V</translation>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
@@ -398,7 +398,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
         <source>Z</source>
-        <translation>Z</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="522"/>
@@ -408,7 +408,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="522"/>
         <source>B</source>
-        <translation>B</translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="523"/>
@@ -418,7 +418,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="523"/>
         <source>Q</source>
-        <translation>Q</translation>
+        <translation>G</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="525"/>
@@ -428,7 +428,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="525"/>
         <source>J</source>
-        <translation>J</translation>
+        <translation>T</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="527"/>
@@ -438,12 +438,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="527"/>
         <source>Ctrl+P</source>
-        <translation>Strg+P</translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="529"/>
         <source>&amp;About</source>
-        <translation>Übe&amp;r</translation>
+        <translation>Übe&amp;r Qmmp</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="532"/>
@@ -453,7 +453,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="532"/>
         <source>Ctrl+Q</source>
-        <translation>Strg+Q</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="613"/>
@@ -601,7 +601,7 @@
     <message>
         <location filename="../playlist.cpp" line="257"/>
         <source>O</source>
-        <translation>O</translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="261"/>
