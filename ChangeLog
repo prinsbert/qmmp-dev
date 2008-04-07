@@ -152,6 +152,8 @@ Version 0.1.6
 * fixed possible GPL violation
 * tar.bz2 skins support
 * using ISO-8859-1 encoding for id3v1 tags by default
-* fixed loading playlists with double extensions
-
-
+* fixed load playlists with double extensions
+* added German translation (Stefan Koelling)
+* improved settings dialog
+* added localization for standart Qt dialogs
+* show more debug information

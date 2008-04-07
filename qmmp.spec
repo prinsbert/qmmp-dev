@@ -6,7 +6,7 @@
 
 
 Name:		qmmp
-Version:	0.1.5
+Version:	0.1.6
 %if %{fedora_build}
 Release:	1%{?dist}
 %else
@@ -79,6 +79,10 @@ make
 
 
 %changelog
+
+* Mon Apr 7 2008 Ilya Kotov <forkotov02@newmail.ru> 0.1.6-1
+- 0.1.6
+
 * Fri Dec 7 2007 Ilya Kotov <forkotov02@newmail.ru> 0.1.5-1
 - 0.1.5
 - mandriva support
