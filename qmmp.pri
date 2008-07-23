@@ -8,7 +8,7 @@ OBJECTS_DIR=./.build/obj
 #Version
 
 QMMP_VERSION = 0.2.0
-CONFIG += SVN_VERSION
+#CONFIG += SVN_VERSION
 
 
 #Comment/uncomment this if you want to change plugins list
