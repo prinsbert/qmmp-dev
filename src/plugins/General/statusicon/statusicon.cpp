@@ -54,7 +54,7 @@ StatusIcon::StatusIcon(Control *control, QObject *parent)
     settings.endGroup();
     m_enabled = FALSE;
     QTimer::singleShot(200, this, SLOT(enable()));
-
+    m_state = General::Stopped;
 }
 
 
@@ -63,6 +63,7 @@ StatusIcon::~StatusIcon()
 
 void StatusIcon::setState(const uint &state)
 {
+    m_state = state;
     switch ((uint) state)
     {
     case General::Playing:
@@ -105,6 +106,13 @@ void StatusIcon::trayActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if (reason == QSystemTrayIcon::Trigger)
         m_control->toggleVisibility();
+    else if (reason == QSystemTrayIcon::MiddleClick)
+    {
+        if(m_state == General::Stopped)
+            m_control->play();
+        else
+            m_control->pause();
+    }
 }
 
 void StatusIcon::enable()
