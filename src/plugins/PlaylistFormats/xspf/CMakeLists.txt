@@ -23,12 +23,12 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 SET(QT_INCLUDES
   ${QT_INCLUDES}
-  ${CMAKE_CURRENT_BINARY_DIR}/../../../
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../../
 )
 
 # libqmmpui
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../qmmpui)
 
 SET(libxspfplaylistformat_SRCS
     xspfplaylistformat.cpp

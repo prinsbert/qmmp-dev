@@ -24,11 +24,11 @@ ELSE(SVN_VERSION)
 ADD_DEFINITIONS(-DQMMP_STR_VERSION=\\\"${QMMP_VERSION}\\\")
 ENDIF(SVN_VERSION)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 
 # libqmmp & libqmmpui
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/../)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../)
 
 link_directories(${CMAKE_INSTALL_PREFIX}/lib)
 link_directories(${CMAKE_INSTALL_PREFIX}/lib64)

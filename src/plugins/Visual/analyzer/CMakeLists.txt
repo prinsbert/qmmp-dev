@@ -14,16 +14,16 @@ ADD_DEFINITIONS(-DQT_NO_DEBUG)
 ADD_DEFINITIONS(-DQT_SHARED)
 ADD_DEFINITIONS(-DQT_THREAD)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 SET(QT_INCLUDES
   ${QT_INCLUDES}
-  ${CMAKE_CURRENT_BINARY_DIR}/../../../
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../../
 )
 
 # libqmmp
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../qmmp)
 
 SET(libanalyzer_SRCS
     analyzer.cpp

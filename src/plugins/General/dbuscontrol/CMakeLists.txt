@@ -25,8 +25,8 @@ ADD_DEFINITIONS(-DQT_THREAD)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # libqmmpui
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../qmmpui)
 
 SET(libdbuscontrol_SRCS
     dbuscontrol.cpp

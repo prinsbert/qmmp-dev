@@ -36,7 +36,7 @@ MESSAGE(FATAL_ERROR "Could NOT find lrelease executable")
 ENDIF(QT_LRELEASE_EXECUTABLE)
 
 MESSAGE(STATUS "Generating translations ...")
-execute_process(COMMAND find ${CMAKE_CURRENT_BINARY_DIR} -name *.ts COMMAND xargs ${QT_LRELEASE_EXECUTABLE} -silent)
+execute_process(COMMAND find ${CMAKE_CURRENT_SOURCE_DIR} -name *.ts COMMAND xargs ${QT_LRELEASE_EXECUTABLE} -silent)
 
 SET(LIB_DIR "lib" CACHE STRING "library path")
 add_subdirectory(src/qmmp)
@@ -68,7 +68,7 @@ ADD_CUSTOM_COMMAND(
     COMMAND find
     ARGS ${CMAKE_CURRENT_BINARY_DIR} -name \"*.cmake\" | xargs rm -rf
     COMMAND find
-    ARGS ${CMAKE_CURRENT_BINARY_DIR} -name "*.qm" | xargs rm -rf
+    ARGS ${CMAKE_CURRENT_SOURCE_DIR} -name "*.qm" | xargs rm -rf
     COMMAND rm
     ARGS -rf ${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt
     TARGET  distclean
