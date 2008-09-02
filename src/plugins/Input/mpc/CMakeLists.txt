@@ -67,6 +67,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(MPC_FOUND)
 ADD_LIBRARY(mpc SHARED ${libmpc_SRCS} ${libmpc_MOC_SRCS} ${libmpc_UIS_H}
   ${libmpc_RCC_SRCS})
+add_dependencies(mpc qmmp)
 target_link_libraries(mpc ${QT_LIBRARIES} -lqmmp -lmpcdec ${TAGLIB_LDFLAGS} ${TAGLIB_CFLAGS})
 install(TARGETS mpc DESTINATION ${LIB_DIR}/qmmp/Input)
 ENDIF(MPC_FOUND)

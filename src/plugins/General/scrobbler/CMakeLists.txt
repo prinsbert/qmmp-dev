@@ -64,5 +64,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(scrobbler SHARED ${libscrobbler_SRCS} ${libscrobbler_MOC_SRCS} ${libscrobbler_UIS_H}
   ${libscrobbler_RCC_SRCS})
+add_dependencies(scrobbler qmmpui)
 target_link_libraries(scrobbler ${QT_LIBRARIES} -lqmmpui)
 install(TARGETS scrobbler DESTINATION ${LIB_DIR}/qmmp/General)

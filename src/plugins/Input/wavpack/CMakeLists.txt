@@ -64,6 +64,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(WAVPACK_FOUND)
 ADD_LIBRARY(wavpack SHARED ${libwavpack_SRCS} ${libwavpack_MOC_SRCS} ${libwavpack_UIS_H}
   ${libwavpack_RCC_SRCS})
+add_dependencies(wavpack qmmp)
 target_link_libraries(wavpack ${QT_LIBRARIES} -lqmmp ${WAVPACK_LDFLAGS} ${WAVPACK_CLAGS})
 install(TARGETS wavpack DESTINATION ${LIB_DIR}/qmmp/Input)
 ENDIF(WAVPACK_FOUND)

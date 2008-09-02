@@ -48,5 +48,6 @@ QT4_WRAP_CPP(libxspfplaylistformat_MOC_SRCS ${libxspfplaylistformat_MOC_HDRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(xspfplaylistformat SHARED ${libxspfplaylistformat_SRCS} ${libxspfplaylistformat_MOC_SRCS})
+add_dependencies(xspfplaylistformat qmmpui)
 target_link_libraries(xspfplaylistformat ${QT_LIBRARIES} -lqmmpui)
 install(TARGETS xspfplaylistformat DESTINATION ${LIB_DIR}/qmmp/PlaylistFormats)

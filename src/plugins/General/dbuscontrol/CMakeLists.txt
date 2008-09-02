@@ -55,5 +55,6 @@ QT4_WRAP_CPP(libdbuscontrol_MOC_SRCS ${libdbuscontrol_MOC_HDRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(dbuscontrol SHARED ${libdbuscontrol_SRCS} ${libdbuscontrol_MOC_SRCS} ${libdbuscontrol_RCC_SRCS})
+add_dependencies(dbuscontrol qmmpui)
 target_link_libraries(dbuscontrol ${QT_LIBRARIES} -lqmmpui)
 install(TARGETS dbuscontrol DESTINATION ${LIB_DIR}/qmmp/General)
