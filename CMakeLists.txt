@@ -38,7 +38,7 @@ ENDIF(QT_LRELEASE_EXECUTABLE)
 MESSAGE(STATUS "Generating translations ...")
 execute_process(COMMAND find ${CMAKE_CURRENT_SOURCE_DIR} -name *.ts COMMAND xargs ${QT_LRELEASE_EXECUTABLE} -silent)
 
-SET(LIB_DIR "lib" CACHE STRING "library path")
+SET(LIB_DIR "lib${LIB_SUFFIX}" CACHE STRING "library path")
 add_subdirectory(src/qmmp)
 add_subdirectory(src/qmmpui)
 add_subdirectory(src/ui)
