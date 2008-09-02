@@ -24,7 +24,7 @@ SET(QT_INCLUDES
 
 # libqmmpui
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../qmmpui)
+link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 
 SET(libstatusicon_SRCS
     settingsdialog.cpp

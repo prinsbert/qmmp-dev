@@ -23,7 +23,7 @@ SET(QT_INCLUDES
 
 # libqmmp
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../qmmp)
+link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 # libjack and samplerate
 pkg_check_modules(JACK jack samplerate)
