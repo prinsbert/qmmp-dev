@@ -58,6 +58,8 @@ PlayListItem::PlayListItem(const QString& path) : SongInfo(), m_flag(FREE)
 
 PlayListItem::~PlayListItem()
 {
+    if(m_tag)
+        delete m_tag;
 }
 
 void PlayListItem::setSelected(bool yes)
