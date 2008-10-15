@@ -465,7 +465,10 @@ bool PlayListModel::setFileList(const QStringList & l)
             if (f_info.isDir())
                 addDirectory(str);
             else
+            {
                 addFile(str);
+                loadPlaylist(str);    
+            }
         }
         // Do processing the rest of events to avoid GUI freezing
         QApplication::processEvents(QEventLoop::AllEvents,10);
@@ -831,7 +834,6 @@ void PlayListModel::loadPlaylist(const QString & f_name)
         QFile file(f_name);
         if (file.open(QIODevice::ReadOnly))
         {
-            clear();
             addFiles(prs->decode(QTextStream(&file).readAll()));
             file.close();
         }
