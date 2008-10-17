@@ -178,11 +178,12 @@ void Output::removeVisual (Visual *v)
 
 void Output::processCloseEvent(Visual *v, QCloseEvent *event)
 {
-    if (event->spontaneous () && m_vis_map.key(v))
+    if (m_vis_map.key(v))
     {
         VisualFactory *factory = m_vis_map.key(v);
         m_vis_map.remove(factory);
-        Visual::setEnabled(factory, FALSE);
+        if(event->spontaneous())
+            Visual::setEnabled(factory, FALSE);
         dispatch(OutputState::VisualRemoved);
     }
 }
