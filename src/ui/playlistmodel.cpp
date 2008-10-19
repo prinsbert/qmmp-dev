@@ -834,7 +834,13 @@ void PlayListModel::loadPlaylist(const QString & f_name)
         QFile file(f_name);
         if (file.open(QIODevice::ReadOnly))
         {
-            addFiles(prs->decode(QTextStream(&file).readAll()));
+            QStringList list = prs->decode(QTextStream(&file).readAll());
+            for (int i = 0; i < list.size(); ++i)
+            {
+                if (QFileInfo(list.at(i)).isRelative() && !list.at(i).contains("://"))
+                    QString path = list[i].prepend(QFileInfo(f_name).canonicalPath () + QDir::separator ());
+            }
+            addFiles(list);
             file.close();
         }
         else
