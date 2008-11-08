@@ -39,9 +39,9 @@ public:
 
     virtual ~SRConverter();
 
-    const ulong process(char *in_data, const ulong size, char **out_data);
+    ulong process(char *in_data, const ulong size, char **out_data);
     void configure(ulong freq, int chan, int res);
-    const ulong frequency();
+    ulong frequency();
 
 private:
     void freeSRC();

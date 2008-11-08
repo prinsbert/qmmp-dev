@@ -54,10 +54,10 @@ public:
     const QString album () const;
     const QString comment () const;
     const QString genre () const;
-    const uint year () const;
-    const uint track () const;
-    const uint length () const;
-    const bool isEmpty () const;
+    uint year () const;
+    uint track () const;
+    uint length () const;
+    bool isEmpty () const;
 
 private:
     QMap <uint, QString> m_strValues;

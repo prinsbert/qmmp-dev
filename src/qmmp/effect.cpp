@@ -41,17 +41,17 @@ void Effect::configure(ulong freq, int chan, int res)
 
 }
 
-const ulong Effect::frequency()
+ulong Effect::frequency()
 {
     return m_freq;
 }
 
-const int Effect::channels()
+int Effect::channels()
 {
     return m_chan;
 }
 
-const int Effect::resolution()
+int Effect::resolution()
 {
     return m_res;
 }

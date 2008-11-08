@@ -57,7 +57,7 @@ SRConverter::~SRConverter()
     }
 }
 
-const ulong SRConverter::process(char *in_data, const ulong size, char **out_data)
+ulong SRConverter::process(char *in_data, const ulong size, char **out_data)
 {
     if (m_isSrcAlloc)
     {
@@ -114,7 +114,7 @@ void SRConverter::configure(ulong freq, int chan, int res)
     }
 }
 
-const ulong SRConverter::frequency()
+ulong SRConverter::frequency()
 {
     return m_overSamplingFs;
 }

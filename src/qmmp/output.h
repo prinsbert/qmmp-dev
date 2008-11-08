@@ -117,11 +117,11 @@ public:
     {
         return m_type;
     }
-    const int leftVolume() const
+    const int &leftVolume() const
     {
         return m_left;
     }
-    const int rightVolume() const
+    const int &rightVolume() const
     {
         return m_right;
     }

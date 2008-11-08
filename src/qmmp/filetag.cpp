@@ -79,22 +79,22 @@ const QString FileTag::genre () const
     return m_strValues[GENRE];
 }
 
-const uint FileTag::year () const
+uint FileTag::year () const
 {
     return m_numValues[YEAR];
 }
 
-const uint FileTag::track () const
+uint FileTag::track () const
 {
     return m_numValues[TRACK];
 }
 
-const uint FileTag::length () const
+uint FileTag::length () const
 {
     return m_numValues[LENGTH];
 }
 
-const bool FileTag::isEmpty () const
+bool FileTag::isEmpty () const
 {
     return m_strValues.isEmpty();
 }
