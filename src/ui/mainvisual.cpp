@@ -96,6 +96,7 @@ void MainVisual::clear()
         delete m_nodes.takeFirst();
     if (m_vis)
         m_vis->clear();
+    m_pixmap = m_bg;
     update();
 }
 
