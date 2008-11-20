@@ -225,7 +225,7 @@ void OutputPulseAudio::uninitialize()
     m_frequency = -1;
     m_channels = -1;
     m_precision = -1;
-    if (!m_connection)
+    if (m_connection)
     {
         qDebug("OutputPulseAudio: closing connection");
         pa_simple_free(m_connection);
