@@ -68,7 +68,6 @@ private slots:
     void processCommand(uint command);
 
 private:
-    void connectSignals(General*);
     QMap <GeneralFactory*, General*> m_generals;
     SongInfo m_songInfo;
     Control* m_control;
