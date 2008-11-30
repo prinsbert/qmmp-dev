@@ -200,6 +200,7 @@ void OutputOSS::reset()
 
 void OutputOSS::openMixer()
 {
+#if SOUND_VERSION < 0x040000
     if (m_mixer_fd != -1)
         return;
 
@@ -213,6 +214,7 @@ void OutputOSS::openMixer()
 	      arg(m_mixer_device));
 	return;
     }
+#endif
 }
 
 void OutputOSS::pause()
@@ -427,18 +429,24 @@ void OutputOSS::setVolume(int l, int r)
     int v, devs;
     long cmd;
 
-        ioctl(m_mixer_fd, SOUND_MIXER_READ_DEVMASK, &devs);
-        if ((devs & SOUND_MASK_PCM) && (m_master == false))
-            cmd = SOUND_MIXER_WRITE_PCM;
-        else if ((devs & SOUND_MASK_VOLUME) && (m_master == true))
-            cmd = SOUND_MIXER_WRITE_VOLUME;
-        else
+#if SOUND_VERSION < 0x040000
+    ioctl(m_mixer_fd, SOUND_MIXER_READ_DEVMASK, &devs);
+    if ((devs & SOUND_MASK_PCM) && (m_master == false))
+	cmd = SOUND_MIXER_WRITE_PCM;
+    else if ((devs & SOUND_MASK_VOLUME) && (m_master == true))
+        cmd = SOUND_MIXER_WRITE_VOLUME;
+    else
         {
             //close(mifd);
             return;
         }
-        v = (r << 8) | l;
-        ioctl(m_mixer_fd, cmd, &v);
+    v = (r << 8) | l;
+    ioctl(m_mixer_fd, cmd, &v);
+#else
+     cmd=SNDCTL_DSP_SETPLAYVOL;
+     v = (r << 8) | l;
+     ioctl(m_audio_fd, cmd, &v);
+#endif
 }
 
 void OutputOSS::volume(int *ll,int *rr)
@@ -447,10 +455,11 @@ void OutputOSS::volume(int *ll,int *rr)
     *rr = 0;
     int  cmd;
     int v, devs;
-
+#if SOUND_VERSION < 0x040000
     ioctl(m_mixer_fd, SOUND_MIXER_READ_DEVMASK, &devs);
     if ((devs & SOUND_MASK_PCM) && (m_master == 0))
         cmd = SOUND_MIXER_READ_PCM;
+
     else if ((devs & SOUND_MASK_VOLUME) && (m_master == 1))
         cmd = SOUND_MIXER_READ_VOLUME;
     else
@@ -464,4 +473,11 @@ void OutputOSS::volume(int *ll,int *rr)
     *rr = (*rr > 100) ? 100 : *rr;
     *ll = (*ll < 0) ? 0 : *ll;
     *rr = (*rr < 0) ? 0 : *rr;
+#else
+   cmd=SNDCTL_DSP_GETPLAYVOL;
+   if(ioctl(m_audio_fd, cmd, &v) == -1)
+        v=vol;
+   *rr = (v & 0xFF00) >> 8;
+   *ll = (v & 0x00FF);
+#endif
 }
