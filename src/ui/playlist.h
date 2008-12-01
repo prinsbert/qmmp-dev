@@ -57,6 +57,9 @@ class PlayList : public QWidget
         PlayListItem *currentItem();
         ListWidget* listWidget() const{return m_listWidget;}
 
+    public slots:
+        void updateList();
+
     signals:
         void play();
         void next();

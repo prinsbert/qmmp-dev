@@ -402,7 +402,7 @@ void MainWindow::showDecoderState(const DecoderState &st)
                 m_generalHandler->setSongInfo(info);
             }
             m_playlist->currentItem()->updateTags(st.tag());
-            m_playlist->listWidget()->updateList();
+            m_playlist->updateList();
         }
         break;
     }
@@ -413,7 +413,7 @@ void MainWindow::changeTitle(const QString &title)
 {
     if (m_playlist->currentItem())
         m_playlist->currentItem()->setText(title);
-    m_playlist->listWidget()->updateList();
+    m_playlist->updateList();
     SongInfo info;
     info.setValue(SongInfo::TITLE, title);
     info.setValue(SongInfo::STREAM, TRUE);

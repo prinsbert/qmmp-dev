@@ -468,6 +468,12 @@ void PlayList::setInfo (const OutputState &st,int length_current, int length_tot
     }
 }
 
+void PlayList::updateList()
+{
+    m_listWidget->updateList();
+    m_titleBar->showCurrent();
+}
+
 PlayListItem *PlayList::currentItem()
 {
     if ( m_playListModel )
