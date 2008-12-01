@@ -36,5 +36,7 @@ isEmpty (LIB_DIR){
 LIB_DIR = /lib
 }
 
+DEFINES += HAVE_SYS_SOUNDCARD_H
+
 target.path = $$LIB_DIR/qmmp/Output
 INSTALLS += target

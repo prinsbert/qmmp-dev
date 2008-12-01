@@ -20,6 +20,13 @@
  ***************************************************************************/
 
 #include <QApplication>
+extern "C"{
+#ifdef HAVE_SYS_SOUNDCARD_H
+#include <sys/soundcard.h>
+#else
+#include <soundcard.h>
+#endif
+}
 
 #include "outputoss.h"
 #include <qmmp/constants.h>
