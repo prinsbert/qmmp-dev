@@ -125,7 +125,11 @@ bool Output::isEnabled(OutputFactory* factory)
         return FALSE;
     QString name = files.at(factories->indexOf(factory)).section('/',-1);
     QSettings settings (QDir::homePath() +"/.qmmp/qmmprc", QSettings::IniFormat);
+#ifdef Q_OS_LINUX
     return name == settings.value("Output/plugin_file", "libalsa.so").toString();
+#else
+    return name == settings.value("Output/plugin_file", "liboss.so").toString();
+#endif
 }
 
 Output::Output (QObject* parent) : QThread (parent), r (stackSize())
