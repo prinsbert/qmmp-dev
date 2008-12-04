@@ -248,7 +248,7 @@ void OutputALSA::pause()
 {
     if (!m_play)
         return;
-    m_pause = (m_pause) ? FALSE : TRUE;
+    m_pause = !m_pause;
     OutputState::Type state = m_pause ? OutputState::Paused: OutputState::Playing;
     dispatch(state);
 }

@@ -63,7 +63,7 @@ private:
 
     bool m_inited, m_pause, m_play, m_userStop, m_master;
     long m_totalWritten, m_currentSeconds, m_bps;
-    int stat;
+    OutputState::Type stat;
     int m_rate, m_frequency, m_channels, m_precision;
 
     bool do_select;

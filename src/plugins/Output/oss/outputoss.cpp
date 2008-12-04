@@ -226,7 +226,7 @@ void OutputOSS::openMixer()
 
 void OutputOSS::pause()
 {
-    m_pause = (m_pause) ? FALSE : TRUE;
+    m_pause = !m_pause;
 }
 
 void OutputOSS::post()
@@ -359,9 +359,8 @@ void OutputOSS::run()
 	    mutex()->unlock();
 
 	    {
-		stat = m_pause ? OutputState::Paused : OutputState::Buffering;
-		OutputState e((OutputState::Type) stat);
-		dispatch(e);
+		stat = m_pause ? OutputState::Paused : OutputState::Playing;
+		dispatch(stat);
 	    }
 
 	    recycler()->cond()->wakeOne();
@@ -392,7 +391,9 @@ void OutputOSS::run()
 			     FD_ISSET(m_audio_fd, &afd)))) {
 	    l = qMin(int(2048), int(b->nbytes - n));
 	    if (l > 0) {
+                mutex()->unlock();
 		m = write(m_audio_fd, b->data + n, l);
+                mutex()->lock();
 		n += m;
 
 		status();
