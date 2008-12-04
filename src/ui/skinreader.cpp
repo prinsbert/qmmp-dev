@@ -200,9 +200,8 @@ void SkinReader::unzip(const QString &from, const QString &to, bool preview)
     }
     else
     {
-        args << "-j" << "-o" << "-d" << to << from;
-        m_process->start("unzip", args);
-        m_process->waitForFinished();
+        args << "-j" << "-o" << "-qq" << "-d" << to << from;
+        QProcess::execute("unzip", args);
     }
 }
 
