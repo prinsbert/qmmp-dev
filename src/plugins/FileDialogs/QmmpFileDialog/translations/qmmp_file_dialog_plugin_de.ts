@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
-<defaultcodec></defaultcodec>
 <context>
     <name>QmmpFileDialog</name>
     <message>
@@ -34,22 +33,22 @@
         <translation>Dialog nach Hinzufügen schließen</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="168"/>
+        <location filename="../qmmpfiledialog.ui" line="177"/>
         <source>File name:</source>
         <translation>Dateiname:</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="184"/>
+        <location filename="../qmmpfiledialog.ui" line="193"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="191"/>
+        <location filename="../qmmpfiledialog.ui" line="200"/>
         <source>Files of type:</source>
         <translation>Dateien des Typs:</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="217"/>
+        <location filename="../qmmpfiledialog.ui" line="226"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
@@ -84,27 +83,27 @@ Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
 <context>
     <name>QmmpFileDialogImpl</name>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="215"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="240"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="228"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="253"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="240"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="269"/>
         <source>Directories</source>
         <translation>Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="384"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="438"/>
         <source>already exists.</source>
         <translation>existiert bereits.</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="385"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="439"/>
         <source>Do you want to replace it?</source>
         <translation>Möchten Sie das Verzeichnis ersetzen?</translation>
     </message>

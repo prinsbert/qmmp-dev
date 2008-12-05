@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="zh_CN">
-<defaultcodec></defaultcodec>
 <context>
     <name>QmmpFileDialog</name>
     <message>
@@ -34,22 +33,22 @@
         <translation>关闭对话并打开已添加</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="168"/>
+        <location filename="../qmmpfiledialog.ui" line="177"/>
         <source>File name:</source>
         <translation>文件名：</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="184"/>
+        <location filename="../qmmpfiledialog.ui" line="193"/>
         <source>Add</source>
         <translation>添加</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="191"/>
+        <location filename="../qmmpfiledialog.ui" line="200"/>
         <source>Files of type:</source>
         <translation>文件类型：</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="217"/>
+        <location filename="../qmmpfiledialog.ui" line="226"/>
         <source>Close</source>
         <translation>关闭</translation>
     </message>
@@ -84,27 +83,27 @@ Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
 <context>
     <name>QmmpFileDialogImpl</name>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="215"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="240"/>
         <source>Add</source>
         <translation>添加</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="228"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="253"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="240"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="269"/>
         <source>Directories</source>
         <translation>目录</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="384"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="438"/>
         <source>already exists.</source>
         <translation>早已存在。</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="385"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="439"/>
         <source>Do you want to replace it?</source>
         <translation>您想替换它吗？</translation>
     </message>

@@ -33,22 +33,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="168"/>
+        <location filename="../qmmpfiledialog.ui" line="177"/>
         <source>File name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="184"/>
+        <location filename="../qmmpfiledialog.ui" line="193"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="191"/>
+        <location filename="../qmmpfiledialog.ui" line="200"/>
         <source>Files of type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.ui" line="217"/>
+        <location filename="../qmmpfiledialog.ui" line="226"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -81,27 +81,27 @@ Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
 <context>
     <name>QmmpFileDialogImpl</name>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="215"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="240"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="228"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="253"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="240"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="269"/>
         <source>Directories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="384"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="438"/>
         <source>already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="385"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="439"/>
         <source>Do you want to replace it?</source>
         <translation type="unfinished"></translation>
     </message>
