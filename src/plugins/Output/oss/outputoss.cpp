@@ -482,9 +482,9 @@ void OutputOSS::volume(int *ll,int *rr)
     *ll = (*ll < 0) ? 0 : *ll;
     *rr = (*rr < 0) ? 0 : *rr;
 #else
-   cmd=SNDCTL_DSP_GETPLAYVOL;
+   cmd = SNDCTL_DSP_GETPLAYVOL;
    if(ioctl(m_audio_fd, cmd, &v) == -1)
-        v=vol;
+        v = 0;
    *rr = (v & 0xFF00) >> 8;
    *ll = (v & 0x00FF);
 #endif
