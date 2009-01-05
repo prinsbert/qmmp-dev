@@ -57,11 +57,13 @@ QStringList XSPFPlaylistFormat::decode(const QString & contents)
 
     while (!child.isNull())
     {
-        QString str = QUrl(child.firstChildElement("location").text()).toString(QUrl::RemoveScheme);
-        out << str;
+        QUrl url (child.firstChildElement("location").text());
+        if (url.scheme() == "file")  //remove scheme for local files only
+            out << url.toString(QUrl::RemoveScheme);
+        else
+            out << url.toString();
         child = child.nextSiblingElement();
     }
-
     return out;
 }
 
@@ -87,7 +89,11 @@ QString XSPFPlaylistFormat::encode(const QList< SongInfo * > & files)
         QDomElement track = doc.createElement("track");
 
         QDomElement ch = doc.createElement("location");
-        QDomText text = doc.createTextNode(/*QString("file://") + */QFileInfo(f->path()).absoluteFilePath());
+        QDomText text;
+        if (f->path().contains("://"))
+            text = doc.createTextNode(f->path());
+        else  //append protocol
+            text = doc.createTextNode(QString("file://") + QFileInfo(f->path()).absoluteFilePath());
         ch.appendChild(text);
         track.appendChild(ch);
 
