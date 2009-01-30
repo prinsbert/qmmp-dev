@@ -121,7 +121,7 @@ PlayListItem* PlayListModel::currentItem()
     if ( m_items.isEmpty() )
         return 0;
     else
-        return m_items.at ( qMin(m_items.size() - 1, m_current));
+        return m_items.at (qMin(m_items.size() - 1, m_current));
 }
 
 int PlayListModel::currentRow()

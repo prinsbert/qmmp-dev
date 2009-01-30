@@ -63,6 +63,7 @@ MainWindow::MainWindow(const QStringList& args, BuiltinCommandLineOption* option
     m_option_manager = option_manager;
 
     setWindowIcon(QIcon(":/32x32/qmmp.png"));
+    setWindowTitle("Qmmp");
 
     m_skin = new Skin(this);
     Dock *dock = new Dock(this);
