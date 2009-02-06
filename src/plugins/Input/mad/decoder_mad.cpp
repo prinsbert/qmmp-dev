@@ -410,7 +410,7 @@ void DecoderMAD::flush(bool final)
 
 void DecoderMAD::run()
 {
-    int skip_frames = 1; //skip first frame
+    int skip_frames = 0;
     mutex()->lock();
 
     if (! inited)
@@ -488,7 +488,17 @@ void DecoderMAD::run()
             if (mad_frame_decode(&frame, &stream) == -1)
             {
                 if (stream.error == MAD_ERROR_LOSTSYNC)
+                {
+                    //skip ID3v2 tag
+                    uint tagSize = findID3v2((uchar *)stream.this_frame,
+                                             (ulong) (stream.bufend - stream.this_frame));
+                    if (tagSize > 0)
+                    {
+                        mad_stream_skip(&stream, tagSize);
+                        qDebug("DecoderMAD: %d bytes skipped", tagSize);
+                    }
                     continue;
+                }
 
                 if (stream.error == MAD_ERROR_BUFLEN)
                     break;
@@ -562,7 +572,7 @@ void DecoderMAD::run()
 
 }
 
-uint DecoderMAD::findID3v2(uchar *data, uint size) //retuns ID3v2 tag size
+uint DecoderMAD::findID3v2(uchar *data, ulong size) //retuns ID3v2 tag size
 {
     if (size < 10)
         return 0;
