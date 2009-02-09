@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2009 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -59,7 +59,7 @@ QStringList XSPFPlaylistFormat::decode(const QString & contents)
     {
         QUrl url (child.firstChildElement("location").text());
         if (url.scheme() == "file")  //remove scheme for local files only
-            out << url.toString(QUrl::RemoveScheme);
+            out << QUrl::fromPercentEncoding(url.toString(QUrl::RemoveScheme).toAscii());
         else
             out << url.toString();
         child = child.nextSiblingElement();
@@ -74,7 +74,7 @@ QString XSPFPlaylistFormat::encode(const QList< SongInfo * > & files)
     QDomDocument doc;
     QDomElement root = doc.createElement("playlist");
     root.setAttribute("version",QString("1"));
-    root.setAttribute("xmlns",QString("http://xspf.org/ns/0"));
+    root.setAttribute("xmlns",QString("http://xspf.org/ns/0/"));
 
     QDomElement creator = doc.createElement("creator");
     QDomText text = doc.createTextNode("qmmp-" + QString(QMMP_STR_VERSION));
@@ -91,9 +91,10 @@ QString XSPFPlaylistFormat::encode(const QList< SongInfo * > & files)
         QDomElement ch = doc.createElement("location");
         QDomText text;
         if (f->path().contains("://"))
-            text = doc.createTextNode(f->path());
+            text = doc.createTextNode(QUrl::toPercentEncoding(f->path(), ":/"));
         else  //append protocol
-            text = doc.createTextNode(QString("file://") + QFileInfo(f->path()).absoluteFilePath());
+            text = doc.createTextNode(QUrl::toPercentEncoding(QString("file://") +
+                                      QFileInfo(f->path()).absoluteFilePath(), ":/"));
         ch.appendChild(text);
         track.appendChild(ch);
 
@@ -102,12 +103,28 @@ QString XSPFPlaylistFormat::encode(const QList< SongInfo * > & files)
         ch.appendChild(text);
         track.appendChild(ch);
 
+        ch = doc.createElement("creator");
+        text = doc.createTextNode(f->artist());
+        ch.appendChild(text);
+        track.appendChild(ch);
+
+        ch = doc.createElement("annotation");
+        text = doc.createTextNode(f->comment());
+        ch.appendChild(text);
+        track.appendChild(ch);
+
+        ch = doc.createElement("album");
+        text = doc.createTextNode(f->album());
+        ch.appendChild(text);
+        track.appendChild(ch);
+
         ch = doc.createElement("trackNum");
         text = doc.createTextNode(QString::number(counter));
         ch.appendChild(text);
         track.appendChild(ch);
 
-        ch = doc.createElement("year");
+        ch = doc.createElement("meta");
+        ch.setAttribute("rel", "year");
         text = doc.createTextNode(QString::number(f->year()));
         ch.appendChild(text);
         track.appendChild(ch);
