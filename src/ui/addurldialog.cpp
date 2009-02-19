@@ -39,8 +39,6 @@ AddUrlDialog::AddUrlDialog( QWidget * parent, Qt::WindowFlags f) : QDialog(paren
     m_history = settings.value("URLDialog/history").toStringList();
     urlComboBox->addItems(m_history);
     m_http = new QHttp(this);
-    connect(m_http, SIGNAL(done (bool)), SLOT(readResponse(bool)));
-
     //use global proxy settings
     if (settings.value ("Proxy/use_proxy", FALSE).toBool())
     {
@@ -94,6 +92,7 @@ void AddUrlDialog::accept( )
             QUrl url(s);
             m_http->setHost(url.host(), url.port(80));
             m_http->get(url.path());
+            connect(m_http, SIGNAL(done (bool)), SLOT(readResponse(bool)));
             addButton->setEnabled(FALSE);
             return;
         }
@@ -104,6 +103,7 @@ void AddUrlDialog::accept( )
 
 void AddUrlDialog::readResponse(bool error)
 {
+    disconnect(m_http, SIGNAL(done (bool)));
     if (error)
         QMessageBox::critical (this, tr("Error"), m_http->errorString ());
     else
@@ -112,8 +112,8 @@ void AddUrlDialog::readResponse(bool error)
         PlaylistFormat* prs = PlaylistParser::instance()->findByPath(s);
         if (prs)
             m_model->addFiles(prs->decode(m_http->readAll()));
+        QDialog::accept();
     }
-    QDialog::accept();
 }
 
 void AddUrlDialog::setModel( PlayListModel *m )
