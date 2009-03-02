@@ -64,7 +64,8 @@ private:
     bool m_inited, m_pause, m_play, m_userStop, m_master;
     long m_totalWritten, m_currentSeconds, m_bps;
     OutputState::Type stat;
-    int m_rate, m_frequency, m_channels, m_precision;
+    long m_frequency;
+    int m_rate, m_channels, m_precision;
 
     bool do_select;
     int m_audio_fd, m_mixer_fd;

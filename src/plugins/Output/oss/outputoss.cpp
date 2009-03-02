@@ -157,7 +157,6 @@ void OutputOSS::configure(long freq, int chan, int prec, int rate)
             break;
 
         }
-
         if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
             qWarning("OutputOSS: can't set audio format");
         /*if(ioctl(m_audio_fd, SNDCTL_DSP_SAMPLESIZE, &prec) == -1)
@@ -168,10 +167,12 @@ void OutputOSS::configure(long freq, int chan, int prec, int rate)
             qWarning("OutputOSS: can't set number of channels");
         if (chan != m_channels)
             qWarning("OutputOSS: can't set number of channels, using %d instead", m_channels);
-        if (ioctl(m_audio_fd, SNDCTL_DSP_SPEED, &freq) == -1)
-            qWarning("OutputOSS: can't set audio format");
+        if (ioctl(m_audio_fd, SNDCTL_DSP_SPEED, &m_frequency) == -1)
+            qWarning("OutputOSS: can't set frequency");
+        if(m_frequency != freq)
+            qWarning("OutputOSS: can't set frequency, using %d instead", m_frequency);
     }
-
+    sync();
     m_rate = rate;
 }
 
