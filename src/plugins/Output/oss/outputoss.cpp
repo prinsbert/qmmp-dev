@@ -194,12 +194,12 @@ void OutputOSS::reset()
         return;
     }
 
-    int flags;
+    /*int flags;
     if ((flags = fcntl(m_audio_fd, F_GETFL, 0)) > 0)
     {
         flags &= O_NDELAY;
         fcntl(m_audio_fd, F_SETFL, flags);
-    }
+    }*/
 
     fd_set afd;
     FD_ZERO(&afd);
