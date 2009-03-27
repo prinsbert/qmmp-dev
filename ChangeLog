@@ -242,3 +242,12 @@ Version 0.2.3
 * fixed notification bug
 * fixed critical bug in the settings dialog
 * removed duplicate --next command line option (Adrian Knoth)
+
+Version 0.2.4
+* fixed xspf parsing (thanks to Sebastian Pipping)
+* fixed playlist downloading
+* fixed url dialog bug
+* some oss fxes
+* musepack sv8 support
+* fixed noise at beginning of some mp3 files 
+* overwriting equalizer presets with the same names 
