@@ -265,7 +265,7 @@ bool DecoderMAD::findHeader()
             {
                 //skip ID3v2 tag
                 uint tagSize = findID3v2((uchar *)stream.this_frame,
-                                         (uint) stream.bufend - (uint) stream.this_frame);
+                                         (ulong) (stream.bufend - stream.this_frame));
                 if (tagSize > 0)
                 {
                     mad_stream_skip(&stream, tagSize);
