@@ -173,75 +173,75 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../configdialog.cpp" line="219"/>
-        <location filename="../configdialog.cpp" line="249"/>
-        <location filename="../configdialog.cpp" line="281"/>
-        <location filename="../configdialog.cpp" line="314"/>
-        <location filename="../configdialog.cpp" line="347"/>
+        <location filename="../configdialog.cpp" line="220"/>
+        <location filename="../configdialog.cpp" line="250"/>
+        <location filename="../configdialog.cpp" line="282"/>
+        <location filename="../configdialog.cpp" line="315"/>
+        <location filename="../configdialog.cpp" line="348"/>
         <source>Enabled</source>
         <translation>Включён</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="219"/>
-        <location filename="../configdialog.cpp" line="249"/>
-        <location filename="../configdialog.cpp" line="281"/>
-        <location filename="../configdialog.cpp" line="314"/>
-        <location filename="../configdialog.cpp" line="347"/>
+        <location filename="../configdialog.cpp" line="220"/>
+        <location filename="../configdialog.cpp" line="250"/>
+        <location filename="../configdialog.cpp" line="282"/>
+        <location filename="../configdialog.cpp" line="315"/>
+        <location filename="../configdialog.cpp" line="348"/>
         <source>Description</source>
         <translation>Описание</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="219"/>
-        <location filename="../configdialog.cpp" line="249"/>
-        <location filename="../configdialog.cpp" line="281"/>
-        <location filename="../configdialog.cpp" line="314"/>
-        <location filename="../configdialog.cpp" line="347"/>
-        <location filename="../configdialog.cpp" line="536"/>
+        <location filename="../configdialog.cpp" line="220"/>
+        <location filename="../configdialog.cpp" line="250"/>
+        <location filename="../configdialog.cpp" line="282"/>
+        <location filename="../configdialog.cpp" line="315"/>
+        <location filename="../configdialog.cpp" line="348"/>
+        <location filename="../configdialog.cpp" line="537"/>
         <source>Filename</source>
         <translation>Имя файла</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="531"/>
+        <location filename="../configdialog.cpp" line="532"/>
         <source>Artist</source>
         <translation>Исполнитель</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="532"/>
+        <location filename="../configdialog.cpp" line="533"/>
         <source>Album</source>
         <translation>Альбом</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="533"/>
+        <location filename="../configdialog.cpp" line="534"/>
         <source>Title</source>
         <translation>Название</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="534"/>
+        <location filename="../configdialog.cpp" line="535"/>
         <source>Tracknumber</source>
         <translation>Номер трека</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="535"/>
+        <location filename="../configdialog.cpp" line="536"/>
         <source>Genre</source>
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="537"/>
+        <location filename="../configdialog.cpp" line="538"/>
         <source>Filepath</source>
         <translation>Путь к файлу</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="538"/>
+        <location filename="../configdialog.cpp" line="539"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="539"/>
+        <location filename="../configdialog.cpp" line="540"/>
         <source>Year</source>
         <translation>Год</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="540"/>
+        <location filename="../configdialog.cpp" line="541"/>
         <source>Comment</source>
         <translation>Комментарий</translation>
     </message>
@@ -351,12 +351,12 @@
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="181"/>
+        <location filename="../configdialog.cpp" line="182"/>
         <source>Archived skin</source>
         <translation>Упакованная тема</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="201"/>
+        <location filename="../configdialog.cpp" line="202"/>
         <source>Unarchived skin</source>
         <translation>Распакованная тема</translation>
     </message>
@@ -465,12 +465,12 @@
         <translation type="obsolete">Показывать полный путь для потоков</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="657"/>
+        <location filename="../configdialog.cpp" line="659"/>
         <source>Select Skin Files</source>
         <translation>Выберите файлы обложек</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="658"/>
+        <location filename="../configdialog.cpp" line="660"/>
         <source>Skin files</source>
         <translation>Файлы обложек</translation>
     </message>

@@ -173,75 +173,75 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../configdialog.cpp" line="219"/>
-        <location filename="../configdialog.cpp" line="249"/>
-        <location filename="../configdialog.cpp" line="281"/>
-        <location filename="../configdialog.cpp" line="314"/>
-        <location filename="../configdialog.cpp" line="347"/>
+        <location filename="../configdialog.cpp" line="220"/>
+        <location filename="../configdialog.cpp" line="250"/>
+        <location filename="../configdialog.cpp" line="282"/>
+        <location filename="../configdialog.cpp" line="315"/>
+        <location filename="../configdialog.cpp" line="348"/>
         <source>Enabled</source>
         <translation>Etkinleştirildi</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="219"/>
-        <location filename="../configdialog.cpp" line="249"/>
-        <location filename="../configdialog.cpp" line="281"/>
-        <location filename="../configdialog.cpp" line="314"/>
-        <location filename="../configdialog.cpp" line="347"/>
+        <location filename="../configdialog.cpp" line="220"/>
+        <location filename="../configdialog.cpp" line="250"/>
+        <location filename="../configdialog.cpp" line="282"/>
+        <location filename="../configdialog.cpp" line="315"/>
+        <location filename="../configdialog.cpp" line="348"/>
         <source>Description</source>
         <translation>Açıklama</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="219"/>
-        <location filename="../configdialog.cpp" line="249"/>
-        <location filename="../configdialog.cpp" line="281"/>
-        <location filename="../configdialog.cpp" line="314"/>
-        <location filename="../configdialog.cpp" line="347"/>
-        <location filename="../configdialog.cpp" line="536"/>
+        <location filename="../configdialog.cpp" line="220"/>
+        <location filename="../configdialog.cpp" line="250"/>
+        <location filename="../configdialog.cpp" line="282"/>
+        <location filename="../configdialog.cpp" line="315"/>
+        <location filename="../configdialog.cpp" line="348"/>
+        <location filename="../configdialog.cpp" line="537"/>
         <source>Filename</source>
         <translation>Dosya adı</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="531"/>
+        <location filename="../configdialog.cpp" line="532"/>
         <source>Artist</source>
         <translation>Sanatçı</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="532"/>
+        <location filename="../configdialog.cpp" line="533"/>
         <source>Album</source>
         <translation>Albüm</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="533"/>
+        <location filename="../configdialog.cpp" line="534"/>
         <source>Title</source>
         <translation>Başlık</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="534"/>
+        <location filename="../configdialog.cpp" line="535"/>
         <source>Tracknumber</source>
         <translation>Parça Numarası</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="535"/>
+        <location filename="../configdialog.cpp" line="536"/>
         <source>Genre</source>
         <translation>Tarz</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="537"/>
+        <location filename="../configdialog.cpp" line="538"/>
         <source>Filepath</source>
         <translation>Dosya yolu</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="538"/>
+        <location filename="../configdialog.cpp" line="539"/>
         <source>Date</source>
         <translation>Tarih</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="539"/>
+        <location filename="../configdialog.cpp" line="540"/>
         <source>Year</source>
         <translation>Yıl</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="540"/>
+        <location filename="../configdialog.cpp" line="541"/>
         <source>Comment</source>
         <translation>Yorum</translation>
     </message>
@@ -351,12 +351,12 @@
         <translation>Kapat</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="181"/>
+        <location filename="../configdialog.cpp" line="182"/>
         <source>Archived skin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="201"/>
+        <location filename="../configdialog.cpp" line="202"/>
         <source>Unarchived skin</source>
         <translation type="unfinished"></translation>
     </message>
@@ -461,12 +461,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="657"/>
+        <location filename="../configdialog.cpp" line="659"/>
         <source>Select Skin Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="658"/>
+        <location filename="../configdialog.cpp" line="660"/>
         <source>Skin files</source>
         <translation type="unfinished"></translation>
     </message>
