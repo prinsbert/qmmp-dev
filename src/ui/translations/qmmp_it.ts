@@ -673,132 +673,132 @@
 <context>
     <name>MainVisual</name>
     <message>
-        <location filename="../mainvisual.cpp" line="294"/>
+        <location filename="../mainvisual.cpp" line="293"/>
         <source>Visualization Mode</source>
         <translation>Modo visualizzazione</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="297"/>
+        <location filename="../mainvisual.cpp" line="296"/>
         <source>Analyzer</source>
         <translation>Analizzatore</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="298"/>
+        <location filename="../mainvisual.cpp" line="297"/>
         <source>Scope</source>
         <translation>Oscilloscopio</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="299"/>
+        <location filename="../mainvisual.cpp" line="298"/>
         <source>Off</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="306"/>
+        <location filename="../mainvisual.cpp" line="305"/>
         <source>Analyzer Mode</source>
         <translation>Modo analizzatore</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="309"/>
+        <location filename="../mainvisual.cpp" line="308"/>
         <source>Normal</source>
         <translation>Normale</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="310"/>
+        <location filename="../mainvisual.cpp" line="309"/>
         <source>Fire</source>
         <translation>Fuoco</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="311"/>
+        <location filename="../mainvisual.cpp" line="310"/>
         <source>Vertical Lines</source>
         <translation>Linee verticali</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="312"/>
+        <location filename="../mainvisual.cpp" line="311"/>
         <source>Lines</source>
         <translation>Linee</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="313"/>
+        <location filename="../mainvisual.cpp" line="312"/>
         <source>Bars</source>
         <translation>Barre</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="326"/>
+        <location filename="../mainvisual.cpp" line="325"/>
         <source>Peaks</source>
         <translation>Picchi</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="330"/>
+        <location filename="../mainvisual.cpp" line="329"/>
         <source>Refresh Rate</source>
         <translation>Velocità di aggiornamento</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="333"/>
+        <location filename="../mainvisual.cpp" line="332"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="334"/>
+        <location filename="../mainvisual.cpp" line="333"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="335"/>
+        <location filename="../mainvisual.cpp" line="334"/>
         <source>10 fps</source>
         <translation>10 fps</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="336"/>
+        <location filename="../mainvisual.cpp" line="335"/>
         <source>5 fps</source>
         <translation>5 fps</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="343"/>
+        <location filename="../mainvisual.cpp" line="342"/>
         <source>Analyzer Falloff</source>
         <translation>Ricaduta analizzatore</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="346"/>
-        <location filename="../mainvisual.cpp" line="360"/>
+        <location filename="../mainvisual.cpp" line="345"/>
+        <location filename="../mainvisual.cpp" line="359"/>
         <source>Slowest</source>
         <translation>Molto lenta</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="347"/>
-        <location filename="../mainvisual.cpp" line="361"/>
+        <location filename="../mainvisual.cpp" line="346"/>
+        <location filename="../mainvisual.cpp" line="360"/>
         <source>Slow</source>
         <translation>Lenta</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="348"/>
-        <location filename="../mainvisual.cpp" line="362"/>
+        <location filename="../mainvisual.cpp" line="347"/>
+        <location filename="../mainvisual.cpp" line="361"/>
         <source>Medium</source>
         <translation>Media</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="349"/>
-        <location filename="../mainvisual.cpp" line="363"/>
+        <location filename="../mainvisual.cpp" line="348"/>
+        <location filename="../mainvisual.cpp" line="362"/>
         <source>Fast</source>
         <translation>Rapida</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="350"/>
-        <location filename="../mainvisual.cpp" line="364"/>
+        <location filename="../mainvisual.cpp" line="349"/>
+        <location filename="../mainvisual.cpp" line="363"/>
         <source>Fastest</source>
         <translation>Molto veloce</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="357"/>
+        <location filename="../mainvisual.cpp" line="356"/>
         <source>Peaks Falloff</source>
         <translation>Ricadua picchi</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="370"/>
+        <location filename="../mainvisual.cpp" line="369"/>
         <source>Background</source>
         <translation>Sfondo</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="371"/>
+        <location filename="../mainvisual.cpp" line="370"/>
         <source>Transparent</source>
         <translation>Transparente</translation>
     </message>
