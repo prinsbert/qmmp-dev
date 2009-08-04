@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="tr_TR">
 <context>
     <name>DecoderMADFactory</name>
     <message>
         <location filename="../decodermadfactory.cpp" line="87"/>
         <source>MPEG Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG Eklentisi</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="90"/>
         <source>MPEG Files</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG Dosyaları</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="210"/>
         <source>About MPEG Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG Ses Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="211"/>
         <source>Qmmp MPEG Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp MPEG Ses Eklentisi</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="212"/>
         <source>Compiled against libmad version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Derlendiği libmad sürümü:</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="216"/>
         <source>Writen by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazan: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="217"/>
         <source>Source code based on mq3 progect</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaynak kodu mq3 projesi temellidir</translation>
     </message>
 </context>
 <context>
@@ -44,85 +44,85 @@
     <message>
         <location filename="../detailsdialog.cpp" line="113"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="115"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="131"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>KB</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="138"/>
         <location filename="../detailsdialog.cpp" line="142"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Evet</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="140"/>
         <location filename="../detailsdialog.cpp" line="144"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Hayır</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="157"/>
         <location filename="../detailsdialog.ui" line="224"/>
         <source>ID3v1 Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v1 Etiketi</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="163"/>
         <source>ID3v2 Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v2 Etiketi</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="167"/>
         <source>APE Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>APE Etiketi</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="20"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detaylar</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="28"/>
         <source>File path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya konumu:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="55"/>
         <source>Tag Choice</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket Seçimi</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="61"/>
         <source>ID3v1</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v1</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="68"/>
         <source>ID3v2</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v2</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="75"/>
         <source>APE</source>
-        <translation type="unfinished"></translation>
+        <translation>APE</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="91"/>
         <source>MPEG Info</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG Bilgisi</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="97"/>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="110"/>
@@ -133,92 +133,92 @@
         <location filename="../detailsdialog.ui" line="195"/>
         <location filename="../detailsdialog.ui" line="212"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="117"/>
         <source>Bit rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bit oranı:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="134"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnekleme oranı:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="151"/>
         <source>File size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya boyutu:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="168"/>
         <source>Mode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mod:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="185"/>
         <source>Copyright:</source>
-        <translation type="unfinished"></translation>
+        <translation>Telif Hakkı:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="202"/>
         <source>Original:</source>
-        <translation type="unfinished"></translation>
+        <translation>Orijinal:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="248"/>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="274"/>
         <source>Artist:</source>
-        <translation type="unfinished"></translation>
+        <translation>Artist:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="300"/>
         <source>Album:</source>
-        <translation type="unfinished"></translation>
+        <translation>Albüm:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="326"/>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yorum:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="352"/>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yıl:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="378"/>
         <source>Track number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça numarası:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="404"/>
         <source>Genre:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tür:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="433"/>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Oluştur</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="446"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Sil</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="462"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="485"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapat</translation>
     </message>
 </context>
 <context>
@@ -226,70 +226,70 @@
     <message>
         <location filename="../settingsdialog.ui" line="13"/>
         <source>MPEG Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG Eklenti Ayarları</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="19"/>
         <source>Tag Priority</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket Önceliği</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="33"/>
         <source>First:</source>
-        <translation type="unfinished"></translation>
+        <translation>İlk:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="47"/>
         <location filename="../settingsdialog.ui" line="94"/>
         <location filename="../settingsdialog.ui" line="141"/>
         <source>ID3v1</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v1</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>
         <location filename="../settingsdialog.ui" line="99"/>
         <location filename="../settingsdialog.ui" line="146"/>
         <source>ID3v2</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v2</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="57"/>
         <location filename="../settingsdialog.ui" line="104"/>
         <location filename="../settingsdialog.ui" line="151"/>
         <source>APE</source>
-        <translation type="unfinished"></translation>
+        <translation>APE</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="62"/>
         <location filename="../settingsdialog.ui" line="109"/>
         <location filename="../settingsdialog.ui" line="156"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Etkisiz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="80"/>
         <source>Second:</source>
-        <translation type="unfinished"></translation>
+        <translation>İkinci:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="127"/>
         <source>Third:</source>
-        <translation type="unfinished"></translation>
+        <translation>Üçüncü:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="169"/>
         <source>Encodings</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodlamalar</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="183"/>
         <source>ID3v1 encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v1 kodlaması:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="206"/>
         <source>ID3v2 encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v2 kodlaması:</translation>
     </message>
 </context>
 </TS>
