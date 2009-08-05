@@ -418,12 +418,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="613"/>
         <source>Compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Сумісність</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="619"/>
         <source>Openbox compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Сумісність з Openbox</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="764"/>
@@ -469,6 +469,10 @@
         <location filename="../forms/configdialog.ui" line="371"/>
         <source>Convert %20 to blanks</source>
         <translation>Конвертувати %20 в пробіл</translation>
+    </message>
+    <message>
+        <source>Show full path of a stream</source>
+        <translation type="obsolete">Показувати повний шлях для потоків</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="662"/>
@@ -1035,6 +1039,10 @@
         <location filename="../playlist.cpp" line="165"/>
         <source>&amp;Remove Unselected</source>
         <translation>&amp;Видалити не вибране</translation>
+    </message>
+    <message>
+        <source>Remove unavailable files</source>
+        <translation type="obsolete">Видалити недоступні файли</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="171"/>
