@@ -119,7 +119,7 @@ void PlayListItem::readMetadata()
     m_title = printTag(m_title, "%c", comment());
     m_title = printTag(m_title, "%f", url().section('/',-1));
     m_title = printTag(m_title, "%F", url());
-    m_title = printTag(m_title, "%y", year ();
+    m_title = printTag(m_title, "%y", year());
     //TODO rewrite this
     if (m_title.isEmpty())
     {
