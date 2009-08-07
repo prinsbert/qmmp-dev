@@ -232,16 +232,11 @@
     </message>
     <message>
         <location filename="../configdialog.cpp" line="541"/>
-        <source>Date</source>
-        <translation>日期</translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="542"/>
         <source>Year</source>
         <translation>年代</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="543"/>
+        <location filename="../configdialog.cpp" line="542"/>
         <source>Comment</source>
         <translation>备注</translation>
     </message>
@@ -471,12 +466,12 @@
         <translation>转换 %20 为空格</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="662"/>
+        <location filename="../configdialog.cpp" line="661"/>
         <source>Select Skin Files</source>
         <translation>选择皮肤文件</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="663"/>
+        <location filename="../configdialog.cpp" line="662"/>
         <source>Skin files</source>
         <translation>皮肤文件</translation>
     </message>

@@ -232,16 +232,11 @@
     </message>
     <message>
         <location filename="../configdialog.cpp" line="541"/>
-        <source>Date</source>
-        <translation>Data</translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="542"/>
         <source>Year</source>
         <translation>Anno</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="543"/>
+        <location filename="../configdialog.cpp" line="542"/>
         <source>Comment</source>
         <translation>Commento</translation>
     </message>
@@ -471,12 +466,12 @@
         <translation>Converti il carattere « %20 » in spazi</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="662"/>
+        <location filename="../configdialog.cpp" line="661"/>
         <source>Select Skin Files</source>
         <translation>Seleziona aspetto</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="663"/>
+        <location filename="../configdialog.cpp" line="662"/>
         <source>Skin files</source>
         <translation>Aspetto</translation>
     </message>

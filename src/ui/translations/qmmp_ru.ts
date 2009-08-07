@@ -232,16 +232,11 @@
     </message>
     <message>
         <location filename="../configdialog.cpp" line="541"/>
-        <source>Date</source>
-        <translation>Дата</translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="542"/>
         <source>Year</source>
         <translation>Год</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="543"/>
+        <location filename="../configdialog.cpp" line="542"/>
         <source>Comment</source>
         <translation>Комментарий</translation>
     </message>
@@ -471,12 +466,12 @@
         <translation>Преобразовывать %20 в пробел</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="662"/>
+        <location filename="../configdialog.cpp" line="661"/>
         <source>Select Skin Files</source>
         <translation>Выберите файлы обложек</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="663"/>
+        <location filename="../configdialog.cpp" line="662"/>
         <source>Skin files</source>
         <translation>Файлы обложек</translation>
     </message>

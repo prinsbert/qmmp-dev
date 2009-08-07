@@ -232,16 +232,11 @@
     </message>
     <message>
         <location filename="../configdialog.cpp" line="541"/>
-        <source>Date</source>
-        <translation>Дата</translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="542"/>
         <source>Year</source>
         <translation>Рік</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="543"/>
+        <location filename="../configdialog.cpp" line="542"/>
         <source>Comment</source>
         <translation>Коментар</translation>
     </message>
@@ -471,16 +466,12 @@
         <translation>Конвертувати %20 в пробіл</translation>
     </message>
     <message>
-        <source>Show full path of a stream</source>
-        <translation type="obsolete">Показувати повний шлях для потоків</translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="662"/>
+        <location filename="../configdialog.cpp" line="661"/>
         <source>Select Skin Files</source>
         <translation>Вибрати файли скінів</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="663"/>
+        <location filename="../configdialog.cpp" line="662"/>
         <source>Skin files</source>
         <translation>Файли скінів</translation>
     </message>
@@ -1039,10 +1030,6 @@
         <location filename="../playlist.cpp" line="165"/>
         <source>&amp;Remove Unselected</source>
         <translation>&amp;Видалити не вибране</translation>
-    </message>
-    <message>
-        <source>Remove unavailable files</source>
-        <translation type="obsolete">Видалити недоступні файли</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="171"/>

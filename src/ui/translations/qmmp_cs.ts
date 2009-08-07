@@ -232,16 +232,11 @@
     </message>
     <message>
         <location filename="../configdialog.cpp" line="541"/>
-        <source>Date</source>
-        <translation>Datum</translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="542"/>
         <source>Year</source>
         <translation>Rok</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="543"/>
+        <location filename="../configdialog.cpp" line="542"/>
         <source>Comment</source>
         <translation>Komentář</translation>
     </message>
@@ -471,12 +466,12 @@
         <translation>Převést %20 na mezery</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="662"/>
+        <location filename="../configdialog.cpp" line="661"/>
         <source>Select Skin Files</source>
         <translation>Vybrat soubory s tématy</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="663"/>
+        <location filename="../configdialog.cpp" line="662"/>
         <source>Skin files</source>
         <translation>Soubory s tématy</translation>
     </message>
