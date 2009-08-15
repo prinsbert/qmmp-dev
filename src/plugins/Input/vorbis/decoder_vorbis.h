@@ -24,13 +24,6 @@ public:
     void seek(qint64);
     void stop();
 
-    // Equalizer
-    bool isEQSupported() const { return FALSE; }
-    void setEQEnabled(bool) { ; }
-    void setEQGain(int) { ; }
-    void setEQBands(int[10]) { ; }
-
-
 private:
     // thread run function
     void run();
