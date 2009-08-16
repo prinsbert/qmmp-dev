@@ -39,7 +39,7 @@
     <message>
         <location filename="../qtfiledialog.cpp" line="33"/>
         <source>Qt File Dialog</source>
-        <translation>Qmmp 文件会话</translation>
+        <translation>Qt 文件会话</translation>
     </message>
 </context>
 </TS>
