@@ -71,9 +71,10 @@ bool OutputJACK::initialize()
         {
             qDebug("Unable to connect to JACK server.");
         }
-    return FALSE;
+        return FALSE;
     }
     jack_client_close (client);
+    m_inited = TRUE;
     return TRUE;
 }
 
@@ -84,6 +85,8 @@ qint64 OutputJACK::latency()
 
 qint64 OutputJACK::writeAudio(unsigned char *data, qint64 maxSize)
 {
+    if(!m_configure)
+        return -1;
     m = JACK_Write(jack_device, (unsigned char*)data, maxSize);
     if (!m)
         usleep(2000);
