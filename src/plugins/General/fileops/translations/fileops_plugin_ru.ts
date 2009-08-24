@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU" sourcelanguage="ru_RU">
+<TS version="2.0" language="ru_RU">
 <context>
     <name>FileOps</name>
     <message>
@@ -33,10 +33,14 @@
         <source>Remove files</source>
         <translation>Удалить файлы</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="../fileops.cpp" line="177"/>
-        <source>Are you sure you want to remove %1 file(s) from disk</source>
-        <translation>Вы уверены, что хотите удалить %1 файл(ов) с диска</translation>
+        <source>Are you sure you want to remove %n file(s) from disk?</source>
+        <translation>
+            <numerusform>Вы уверены, что хотите удалить %n файл с диска?</numerusform>
+            <numerusform>Вы уверены, что хотите удалить %n файла с диска?</numerusform>
+            <numerusform>Вы уверены, что хотите удалить %n файлов с диска?</numerusform>
+        </translation>
     </message>
 </context>
 <context>

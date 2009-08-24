@@ -33,10 +33,14 @@
         <source>Remove files</source>
         <translation>Видалити файли</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="../fileops.cpp" line="177"/>
-        <source>Are you sure you want to remove %1 file(s) from disk</source>
-        <translation>Ви впевнені, що бажаєте видалити %1 файл(ів) з диску</translation>
+        <source>Are you sure you want to remove %n file(s) from disk?</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>

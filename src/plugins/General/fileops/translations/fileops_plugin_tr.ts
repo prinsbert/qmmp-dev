@@ -33,10 +33,13 @@
         <source>Remove files</source>
         <translation>Dosyaları kaldır</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="../fileops.cpp" line="177"/>
-        <source>Are you sure you want to remove %1 file(s) from disk</source>
-        <translation>%1 dosyasını diskten kaldırmak istediğinizden emin misiniz</translation>
+        <source>Are you sure you want to remove %n file(s) from disk?</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
