@@ -21,6 +21,12 @@ Deutsch:
 Italienisch:
     Gian Paolo Renello <emmerkar@gmail.com>
 
+Kasachisch:
+    Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+
+Lithuanian:
+    Algirdas Butkus <butkus.algirdas@gmail.com>
+
 Polnisch:
     Grzegorz Gibas <amigib@gmail.com>
 
@@ -29,6 +35,7 @@ Russisch:
 
 Türkisch:
     Mustafa GUNAY <mustafagunay@pgmail.com>
+    Bilgesu Güngör <h.ibrahim.gungor@gmail.com>
 
 Ukrainisch:
     Gennadi Motsyo <drool@altlinux.ru>

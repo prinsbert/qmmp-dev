@@ -348,12 +348,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="613"/>
         <source>Compatibility</source>
-        <translation type="unfinished">Kompatibilität</translation>
+        <translation>Kompatibilität</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="619"/>
         <source>Openbox compatibility</source>
-        <translation type="unfinished">Openbox-Kompatibilität</translation>
+        <translation>Openbox-Kompatibilität</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="896"/>

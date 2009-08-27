@@ -208,7 +208,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="97"/>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="433"/>

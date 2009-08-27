@@ -52,7 +52,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="248"/>
         <source>Position</source>
-        <translation>Position</translation>
+        <translation>Position:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="13"/>
@@ -72,12 +72,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="55"/>
         <source>Delay, ms:</source>
-        <translation>Verzögerung, ms:</translation>
+        <translation>Verzögerung (ms):</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="81"/>
         <source>Transparency</source>
-        <translation>Transparenz</translation>
+        <translation>Transparenz:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="104"/>

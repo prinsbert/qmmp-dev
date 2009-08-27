@@ -6,7 +6,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="13"/>
         <source>Add Files</source>
-        <translation>Datei(en) hinzufügen</translation>
+        <translation>Dateien hinzufügen</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="37"/>
