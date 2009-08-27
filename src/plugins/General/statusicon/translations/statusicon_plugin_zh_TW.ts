@@ -28,14 +28,6 @@
         <source>Use standard icons</source>
         <translation>使用標准圖標</translation>
     </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">確定</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">取消</translation>
-    </message>
 </context>
 <context>
     <name>StatusIcon</name>

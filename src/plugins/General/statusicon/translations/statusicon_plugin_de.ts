@@ -28,14 +28,6 @@
         <source>Use standard icons</source>
         <translation>System-Symbole benutzen</translation>
     </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Abbrechen</translation>
-    </message>
 </context>
 <context>
     <name>StatusIcon</name>

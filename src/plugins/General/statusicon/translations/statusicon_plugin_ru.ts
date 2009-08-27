@@ -28,10 +28,6 @@
         <source>Use standard icons</source>
         <translation>Использовать стандартные иконки</translation>
     </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Отмена</translation>
-    </message>
 </context>
 <context>
     <name>StatusIcon</name>
