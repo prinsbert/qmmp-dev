@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<!DOCTYPE TS><TS version="1.1" language="uk">
+<defaultcodec></defaultcodec>
 <context>
     <name>DecoderMADFactory</name>
     <message>
@@ -47,19 +47,16 @@
         <translation>Гц</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="138"/>
         <location filename="../detailsdialog.cpp" line="142"/>
         <source>Yes</source>
         <translation>Так</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="140"/>
         <location filename="../detailsdialog.cpp" line="144"/>
         <source>No</source>
         <translation>Ні</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="157"/>
         <location filename="../detailsdialog.ui" line="224"/>
         <source>ID3v1 Tag</source>
         <translation>ID3v1-тег</translation>
@@ -120,12 +117,6 @@
         <translation>Інформація MPEG</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.ui" line="110"/>
-        <location filename="../detailsdialog.ui" line="127"/>
-        <location filename="../detailsdialog.ui" line="144"/>
-        <location filename="../detailsdialog.ui" line="161"/>
-        <location filename="../detailsdialog.ui" line="178"/>
-        <location filename="../detailsdialog.ui" line="195"/>
         <location filename="../detailsdialog.ui" line="212"/>
         <source>-</source>
         <translation>-</translation>
@@ -208,7 +199,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="97"/>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="433"/>
@@ -224,15 +215,11 @@
 <context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="47"/>
-        <location filename="../settingsdialog.ui" line="94"/>
         <location filename="../settingsdialog.ui" line="141"/>
         <source>ID3v1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
-        <location filename="../settingsdialog.ui" line="99"/>
         <location filename="../settingsdialog.ui" line="146"/>
         <source>ID3v2</source>
         <translation></translation>
@@ -263,15 +250,11 @@
         <translation>Перший:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
-        <location filename="../settingsdialog.ui" line="104"/>
         <location filename="../settingsdialog.ui" line="151"/>
         <source>APE</source>
         <translation>APE</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
-        <location filename="../settingsdialog.ui" line="109"/>
         <location filename="../settingsdialog.ui" line="156"/>
         <source>Disabled</source>
         <translation>Вимкнути</translation>

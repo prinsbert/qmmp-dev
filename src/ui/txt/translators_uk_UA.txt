@@ -2,30 +2,40 @@
     Klaos Lacerda
     Bruno Gonçalves
 
-Італійська:
-    Gian Paolo Renello <emmerkar@gmail.com>
-
 Китайська традиційна:
     lon <lon83129@126.com>
 
 Китайська спрощена:
     lon <lon83129@126.com>
 
-Польська:
-   Grzegorz Gibas <amigib@gmail.com>
-
 Чеська:
     Karel Volný <kvolny@redhat.com>
+
+Французька:
+    Stanislas Zeller <uncensored.assault@gmail.com>
 
 Німецька:
     Stefan Koelling <stefankoelling.ext@googlemail.com>
     Panagiotis Papadopoulos <pano_90@gmx.net>
+
+Італійська:
+    Gian Paolo Renello <emmerkar@gmail.com>
+
+Казахська:
+    Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+
+Латвійська:
+    Algirdas Butkus <butkus.algirdas@gmail.com>
+
+Польська:
+    Grzegorz Gibas <amigib@gmail.com>
 
 Російська:
     Ilya Kotov <forkotov02@hotmail.ru>
 
 Турецька:
     Mustafa GUNAY <mustafagunay@pgmail.com>
+    Bilgesu Güngör <h.ibrahim.gungor@gmail.com>
 
 Українська:
     Gennadi Motsyo <drool@altlinux.ru>
