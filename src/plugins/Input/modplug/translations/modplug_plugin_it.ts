@@ -334,7 +334,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="710"/>
         <source>Looping</source>
-        <translation>RIpetizione</translation>
+        <translation>Ripetizione</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="716"/>
@@ -362,11 +362,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Apply</source>
-        <translation type="obsolete">Anwenden</translation>
+        <translation type="obsolete">Applica</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="obsolete">Abbrechen</translation>
+        <translation type="obsolete">Annulla</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="192"/>

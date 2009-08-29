@@ -21,7 +21,7 @@
     <message>
         <location filename="../decodermplayerfactory.cpp" line="94"/>
         <source>About MPlayer Plugin</source>
-        <translation>Ul modulo MPlayer</translation>
+        <translation>Info sul modulo MPlayer</translation>
     </message>
     <message>
         <location filename="../decodermplayerfactory.cpp" line="95"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="31"/>
         <source>General information</source>
-        <translation>Allgemeine Informationen</translation>
+        <translation>Informazioni generali</translation>
     </message>
 </context>
 <context>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="57"/>
         <source>Audio/video auto synchronization</source>
-        <translation>sincronizzazione audio/video</translation>
+        <translation>Sincronizzazione audio/video</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="67"/>
