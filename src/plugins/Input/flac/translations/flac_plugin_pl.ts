@@ -104,7 +104,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="173"/>
         <source>Sample width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Szerokość sampla:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="199"/>

@@ -388,7 +388,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="385"/>
         <source>Show song numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyświetl numery utworów na liście odtwarzania</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="580"/>
@@ -413,12 +413,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="613"/>
         <source>Compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Kombatybilność</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="619"/>
         <source>Openbox compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Kombatybilność z Openbox</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="764"/>

@@ -47,14 +47,14 @@
     <message>
         <location filename="../lyricswindow.cpp" line="73"/>
         <source>Not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie znaleziono</translation>
     </message>
     <message>
         <location filename="../lyricswindow.cpp" line="78"/>
         <location filename="../lyricswindow.cpp" line="96"/>
         <location filename="../lyricswindow.cpp" line="99"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <location filename="../lyricswindow.cpp" line="109"/>
