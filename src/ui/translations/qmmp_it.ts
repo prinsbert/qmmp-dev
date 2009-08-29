@@ -196,6 +196,7 @@
         <location filename="../configdialog.cpp" line="284"/>
         <location filename="../configdialog.cpp" line="317"/>
         <location filename="../configdialog.cpp" line="350"/>
+        <location filename="../configdialog.cpp" line="539"/>
         <source>Filename</source>
         <translation>File</translation>
     </message>
@@ -216,41 +217,26 @@
     </message>
     <message>
         <location filename="../configdialog.cpp" line="537"/>
-        <source>Track number</source>
+        <source>Tracknumber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configdialog.cpp" line="540"/>
+        <source>Filepath</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="538"/>
-        <source>Disc number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="539"/>
         <source>Genre</source>
         <translation>Genere</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="540"/>
-        <source>Composer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../configdialog.cpp" line="541"/>
-        <source>File name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="542"/>
-        <source>File path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="543"/>
         <source>Year</source>
         <translation>Anno</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="544"/>
+        <location filename="../configdialog.cpp" line="542"/>
         <source>Comment</source>
         <translation>Commento</translation>
     </message>
@@ -480,12 +466,12 @@
         <translation>Converti il carattere « %20 » in spazi</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="664"/>
+        <location filename="../configdialog.cpp" line="661"/>
         <source>Select Skin Files</source>
         <translation>Seleziona aspetto</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="665"/>
+        <location filename="../configdialog.cpp" line="662"/>
         <source>Skin files</source>
         <translation>Aspetto</translation>
     </message>
@@ -688,132 +674,132 @@
 <context>
     <name>MainVisual</name>
     <message>
-        <location filename="../mainvisual.cpp" line="293"/>
+        <location filename="../mainvisual.cpp" line="294"/>
         <source>Visualization Mode</source>
         <translation>Modo visualizzazione</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="296"/>
+        <location filename="../mainvisual.cpp" line="297"/>
         <source>Analyzer</source>
         <translation>Analizzatore</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="297"/>
+        <location filename="../mainvisual.cpp" line="298"/>
         <source>Scope</source>
         <translation>Oscilloscopio</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="298"/>
+        <location filename="../mainvisual.cpp" line="299"/>
         <source>Off</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="305"/>
+        <location filename="../mainvisual.cpp" line="306"/>
         <source>Analyzer Mode</source>
         <translation>Modo analizzatore</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="308"/>
+        <location filename="../mainvisual.cpp" line="309"/>
         <source>Normal</source>
         <translation>Normale</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="309"/>
+        <location filename="../mainvisual.cpp" line="310"/>
         <source>Fire</source>
         <translation>Fuoco</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="310"/>
+        <location filename="../mainvisual.cpp" line="311"/>
         <source>Vertical Lines</source>
         <translation>Linee verticali</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="311"/>
+        <location filename="../mainvisual.cpp" line="312"/>
         <source>Lines</source>
         <translation>Linee</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="312"/>
+        <location filename="../mainvisual.cpp" line="313"/>
         <source>Bars</source>
         <translation>Barre</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="325"/>
+        <location filename="../mainvisual.cpp" line="326"/>
         <source>Peaks</source>
         <translation>Picchi</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="329"/>
+        <location filename="../mainvisual.cpp" line="330"/>
         <source>Refresh Rate</source>
         <translation>Velocità di aggiornamento</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="332"/>
+        <location filename="../mainvisual.cpp" line="333"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="333"/>
+        <location filename="../mainvisual.cpp" line="334"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="334"/>
+        <location filename="../mainvisual.cpp" line="335"/>
         <source>10 fps</source>
         <translation>10 fps</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="335"/>
+        <location filename="../mainvisual.cpp" line="336"/>
         <source>5 fps</source>
         <translation>5 fps</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="342"/>
+        <location filename="../mainvisual.cpp" line="343"/>
         <source>Analyzer Falloff</source>
         <translation>Ricaduta analizzatore</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="345"/>
-        <location filename="../mainvisual.cpp" line="359"/>
+        <location filename="../mainvisual.cpp" line="346"/>
+        <location filename="../mainvisual.cpp" line="360"/>
         <source>Slowest</source>
         <translation>Molto lenta</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="346"/>
-        <location filename="../mainvisual.cpp" line="360"/>
+        <location filename="../mainvisual.cpp" line="347"/>
+        <location filename="../mainvisual.cpp" line="361"/>
         <source>Slow</source>
         <translation>Lenta</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="347"/>
-        <location filename="../mainvisual.cpp" line="361"/>
+        <location filename="../mainvisual.cpp" line="348"/>
+        <location filename="../mainvisual.cpp" line="362"/>
         <source>Medium</source>
         <translation>Media</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="348"/>
-        <location filename="../mainvisual.cpp" line="362"/>
+        <location filename="../mainvisual.cpp" line="349"/>
+        <location filename="../mainvisual.cpp" line="363"/>
         <source>Fast</source>
         <translation>Rapida</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="349"/>
-        <location filename="../mainvisual.cpp" line="363"/>
+        <location filename="../mainvisual.cpp" line="350"/>
+        <location filename="../mainvisual.cpp" line="364"/>
         <source>Fastest</source>
         <translation>Molto veloce</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="356"/>
+        <location filename="../mainvisual.cpp" line="357"/>
         <source>Peaks Falloff</source>
         <translation>Ricadua picchi</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="369"/>
+        <location filename="../mainvisual.cpp" line="370"/>
         <source>Background</source>
         <translation>Sfondo</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="370"/>
+        <location filename="../mainvisual.cpp" line="371"/>
         <source>Transparent</source>
         <translation>Transparente</translation>
     </message>
@@ -1006,17 +992,17 @@
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="175"/>
+        <location filename="../playlist.cpp" line="172"/>
         <source>Alt+I</source>
         <translation>Alt+I</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="267"/>
+        <location filename="../playlist.cpp" line="264"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="283"/>
+        <location filename="../playlist.cpp" line="280"/>
         <source>O</source>
         <translation>O</translation>
     </message>
@@ -1047,95 +1033,90 @@
     </message>
     <message>
         <location filename="../playlist.cpp" line="171"/>
-        <source>Remove unavailable files</source>
-        <translation>Rimuovi files non disponibili</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="174"/>
         <source>&amp;View Track Details</source>
         <translation>&amp;Dettagli della traccia</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="183"/>
+        <location filename="../playlist.cpp" line="180"/>
         <source>Sort List</source>
         <translation>Riordina la lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="186"/>
-        <location filename="../playlist.cpp" line="213"/>
+        <location filename="../playlist.cpp" line="183"/>
+        <location filename="../playlist.cpp" line="210"/>
         <source>By Title</source>
         <translation>Per titolo</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="190"/>
-        <location filename="../playlist.cpp" line="217"/>
+        <location filename="../playlist.cpp" line="187"/>
+        <location filename="../playlist.cpp" line="214"/>
         <source>By Filename</source>
         <translation>Per titolo del brano</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="194"/>
-        <location filename="../playlist.cpp" line="221"/>
+        <location filename="../playlist.cpp" line="191"/>
+        <location filename="../playlist.cpp" line="218"/>
         <source>By Path + Filename</source>
         <translation>per percorso più titolo del brano</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="198"/>
-        <location filename="../playlist.cpp" line="225"/>
+        <location filename="../playlist.cpp" line="195"/>
+        <location filename="../playlist.cpp" line="222"/>
         <source>By Date</source>
         <translation>Per data</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="211"/>
+        <location filename="../playlist.cpp" line="208"/>
         <source>Sort Selection</source>
         <translation>Riordina la selezione</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="239"/>
+        <location filename="../playlist.cpp" line="236"/>
         <source>Randomize List</source>
         <translation>Mescola i brnai della lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="240"/>
+        <location filename="../playlist.cpp" line="237"/>
         <source>Reverse List</source>
         <translation>Inverti la lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="252"/>
+        <location filename="../playlist.cpp" line="249"/>
         <source>Invert Selection</source>
         <translation>Inverti la selezione</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="259"/>
+        <location filename="../playlist.cpp" line="256"/>
         <source>&amp;Select None</source>
         <translation>&amp;Non scegliere alcun brano</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="266"/>
+        <location filename="../playlist.cpp" line="263"/>
         <source>&amp;Select All</source>
         <translation>&amp;Seleziona tutto</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="275"/>
+        <location filename="../playlist.cpp" line="272"/>
         <source>&amp;New List</source>
         <translation>&amp;Nuova lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="276"/>
+        <location filename="../playlist.cpp" line="273"/>
         <source>Shift+N</source>
         <translation>Shift+N</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="282"/>
+        <location filename="../playlist.cpp" line="279"/>
         <source>&amp;Load List</source>
         <translation>&amp;Carica lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="288"/>
+        <location filename="../playlist.cpp" line="285"/>
         <source>&amp;Save List</source>
         <translation>&amp;Salva lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="289"/>
+        <location filename="../playlist.cpp" line="286"/>
         <source>Shift+S</source>
         <translation>Shift+S</translation>
     </message>
@@ -1155,23 +1136,23 @@
         <translation>U</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="202"/>
-        <location filename="../playlist.cpp" line="229"/>
+        <location filename="../playlist.cpp" line="199"/>
+        <location filename="../playlist.cpp" line="226"/>
         <source>By Track Number</source>
         <translation>Per numero di traccia</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="248"/>
+        <location filename="../playlist.cpp" line="245"/>
         <source>&amp;Queue</source>
         <translation>&amp;Metti in coda</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="248"/>
+        <location filename="../playlist.cpp" line="245"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="245"/>
+        <location filename="../playlist.cpp" line="242"/>
         <source>Actions</source>
         <translation>Azioni</translation>
     </message>
