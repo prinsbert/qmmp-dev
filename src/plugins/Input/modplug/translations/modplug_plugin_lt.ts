@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="lt">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="lt">
 <context>
     <name>DecoderModPlugFactory</name>
     <message>
@@ -170,12 +170,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="41"/>
         <source>16 bit</source>
-        <translation>16 bit</translation>
+        <translation type="unfinished">16 bitų</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="48"/>
         <source>8 bit</source>
-        <translation>8 bit</translation>
+        <translation type="unfinished">8 bitai</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="64"/>
@@ -195,7 +195,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="93"/>
         <source>Resampling</source>
-        <translation>Resampling</translation>
+        <translation type="unfinished">Dažnio konvertavimas</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
@@ -205,7 +205,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="106"/>
         <source>Linear (fast)</source>
-        <translation>Linear (greitas)</translation>
+        <translation type="unfinished">Linijinis (greitas)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="113"/>
@@ -220,7 +220,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="136"/>
         <source>Sampling Rate</source>
-        <translation>Sampling Rate</translation>
+        <translation type="unfinished">Dažnis</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="142"/>

@@ -286,7 +286,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="328"/>
         <source>Load metadata from files</source>
-        <translation>Load metadata from files</translation>
+        <translation type="unfinished">Įkelti meta duomenis iš bylų</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="338"/>
@@ -388,7 +388,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="385"/>
         <source>Show song numbers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rodyti takelių numerius</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="580"/>
@@ -413,12 +413,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="613"/>
         <source>Compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Suderinamumas</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="619"/>
         <source>Openbox compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Openbox suderinamumas</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="764"/>
@@ -438,7 +438,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="796"/>
         <source>Proxy port:</source>
-        <translation>Proxy port:</translation>
+        <translation type="unfinished">Proxy portas:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="809"/>
@@ -463,7 +463,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="371"/>
         <source>Convert %20 to blanks</source>
-        <translation>Convert %20 to blanks</translation>
+        <translation type="unfinished">Konvertuoti %20 į tarpus</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="661"/>
@@ -1083,7 +1083,7 @@
     <message>
         <location filename="../playlist.cpp" line="249"/>
         <source>Invert Selection</source>
-        <translation>Invert Selection</translation>
+        <translation type="unfinished">Atšaukti pasirinkimą</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="256"/>
@@ -1108,7 +1108,7 @@
     <message>
         <location filename="../playlist.cpp" line="279"/>
         <source>&amp;Load List</source>
-        <translation>&amp;Įkwlti sąrašą</translation>
+        <translation type="unfinished">&amp;Įkelti sąrašą</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="285"/>
@@ -1190,7 +1190,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="152"/>
         <source>Usage: qmmp [options] [files]</source>
-        <translation>Naudojimas: qmmp [options] [files]</translation>
+        <translation type="unfinished">Naudojimas: qmmp [nuostatos] [bylos]</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="153"/>
@@ -1210,7 +1210,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="160"/>
         <source>Ideas, patches, bugreports send to forkotov02@hotmail.ru</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Idėjas, pataisymus, klaidas siųsti forkotov02@hotmail.ru</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="165"/>
@@ -1233,7 +1233,7 @@
     <message>
         <location filename="../textscroller.cpp" line="176"/>
         <source>Buffering:</source>
-        <translation>Buffering:</translation>
+        <translation type="unfinished">Kuriamas buferis:</translation>
     </message>
     <message>
         <location filename="../textscroller.cpp" line="62"/>

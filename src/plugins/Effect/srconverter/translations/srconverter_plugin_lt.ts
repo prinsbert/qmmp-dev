@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="lt">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="lt">
 <context>
     <name>EffectSRConverterFactory</name>
     <message>
@@ -34,37 +34,37 @@
     <message>
         <location filename="../settingsdialog.ui" line="19"/>
         <source>Sample Rate (Hz):</source>
-        <translation>Sample Rate (Hz):</translation>
+        <translation type="unfinished">Dažnis (Hz):</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="39"/>
         <source>Interpolation Engine:</source>
-        <translation>Interpolation Engine:</translation>
+        <translation type="unfinished">Interpoliacijos variklis:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="47"/>
         <source>Best Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Geriausia interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>
         <source>Medium Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vidutinė interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="57"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Greičiausia interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="62"/>
         <source>ZOH Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ZOH interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="67"/>
         <source>Linear Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linijinė interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="90"/>
