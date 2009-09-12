@@ -73,11 +73,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="obsolete">Atšaukti</translation>
+        <translation>Atšaukti</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation type="obsolete">Gerai</translation>
+        <translation>Gerai</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="13"/>

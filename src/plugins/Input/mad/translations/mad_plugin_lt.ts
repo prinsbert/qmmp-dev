@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="lt">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="lt">
 <context>
     <name>DecoderMADFactory</name>
     <message>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="377"/>
         <source>Track number:</source>
-        <translation>Takelio numeris:</translation>
+        <translation>Numeris:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="351"/>
@@ -184,27 +184,27 @@
     <message>
         <location filename="../detailsdialog.ui" line="54"/>
         <source>Tag Choice</source>
-        <translation>Tag Choice</translation>
+        <translation>Tag pasirinkimas</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="60"/>
         <source>ID3v1</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v1</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="67"/>
         <source>ID3v2</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v2</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="74"/>
         <source>APE</source>
-        <translation type="unfinished"></translation>
+        <translation>APE</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="432"/>
         <source>Create</source>
-        <translation>sukurti</translation>
+        <translation>Sukurti</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="445"/>
@@ -262,7 +262,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="151"/>
         <source>APE</source>
-        <translation type="unfinished"></translation>
+        <translation>APE</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="156"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="lt">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="lt">
 <context>
     <name>Analyzer</name>
     <message>
@@ -69,22 +69,22 @@
     <message>
         <location filename="../settingsdialog.ui" line="139"/>
         <source>50 FPS</source>
-        <translation>50 FPS/с</translation>
+        <translation>50 kps (fps)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="144"/>
         <source>25 FPS</source>
-        <translation>25 FPS/с</translation>
+        <translation>25 kps (fps)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="149"/>
         <source>10 FPS</source>
-        <translation>10 FPS/с</translation>
+        <translation>10 kps (fps)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="154"/>
         <source>5 FPS</source>
-        <translation>5 FPS/с</translation>
+        <translation>5 kps (fps)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="171"/>

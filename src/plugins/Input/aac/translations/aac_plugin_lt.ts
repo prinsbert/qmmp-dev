@@ -53,7 +53,7 @@
     </message>
     <message>
         <source>Channels:</source>
-        <translation type="obsolete">Kanalai:</translation>
+        <translation>Kanalai:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="119"/>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Stream version:</source>
-        <translation type="obsolete">Srauto versija:</translation>
+        <translation>Srauto versija:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="203"/>

@@ -34,37 +34,37 @@
     <message>
         <location filename="../settingsdialog.ui" line="19"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Dažnis (Hz):</translation>
+        <translation>Dažnis (Hz):</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="39"/>
         <source>Interpolation Engine:</source>
-        <translation type="unfinished">Interpoliacijos variklis:</translation>
+        <translation>Interpoliacijos variklis:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="47"/>
         <source>Best Sinc Interpolation</source>
-        <translation type="unfinished">Geriausia interpoliacija</translation>
+        <translation>Geriausia interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>
         <source>Medium Sinc Interpolation</source>
-        <translation type="unfinished">Vidutinė interpoliacija</translation>
+        <translation>Vidutinė interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="57"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation type="unfinished">Greičiausia interpoliacija</translation>
+        <translation>Greičiausia interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="62"/>
         <source>ZOH Interpolation</source>
-        <translation type="unfinished">ZOH interpoliacija</translation>
+        <translation>ZOH interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="67"/>
         <source>Linear Interpolation</source>
-        <translation type="unfinished">Linijinė interpoliacija</translation>
+        <translation>Linijinė interpoliacija</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="90"/>

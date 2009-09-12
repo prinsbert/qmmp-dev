@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="lt">
+<!DOCTYPE TS>
+<TS version="2.0" language="lt">
 <context>
     <name>DecoderMPCFactory</name>
     <message>
@@ -143,7 +144,7 @@
     <message>
         <location filename="../detailsdialog.ui" line="199"/>
         <source>APE Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>APE Tag</translation>
     </message>
 </context>
 </TS>

@@ -132,7 +132,10 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="77"/>
@@ -170,12 +173,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="41"/>
         <source>16 bit</source>
-        <translation type="unfinished">16 bitų</translation>
+        <translation>16 bitų</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="48"/>
         <source>8 bit</source>
-        <translation type="unfinished">8 bitai</translation>
+        <translation>8 bitai</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="64"/>
@@ -195,7 +198,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="93"/>
         <source>Resampling</source>
-        <translation type="unfinished">Dažnio konvertavimas</translation>
+        <translation>Dažnio konvertavimas</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
@@ -205,7 +208,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="106"/>
         <source>Linear (fast)</source>
-        <translation type="unfinished">Linijinis (greitas)</translation>
+        <translation>Linijinis (greitas)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="113"/>
@@ -220,7 +223,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../settingsdialog.ui" line="136"/>
         <source>Sampling Rate</source>
-        <translation type="unfinished">Dažnis</translation>
+        <translation>Dažnis</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="142"/>

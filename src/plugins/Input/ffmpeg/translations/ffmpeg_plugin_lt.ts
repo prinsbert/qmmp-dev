@@ -156,37 +156,37 @@
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
         <source>Windows Media Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows Media Audio</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="58"/>
         <source>Monkey&apos;s Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Monkey&apos;s Audio</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="65"/>
         <source>True Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>True Audio</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="72"/>
         <source>ALAC (Apple Lossless Audio Codec)</source>
-        <translation type="unfinished"></translation>
+        <translation>ALAC (Apple Lossless Audio Codec)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="79"/>
         <source>ADTS AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>ADTS AAC</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="93"/>
         <source>MPEG-4 AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG-4 AAC</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="100"/>
         <source>RealAudio 1.0/2.0</source>
-        <translation type="unfinished"></translation>
+        <translation>RealAudio 1.0/2.0</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="13"/>
@@ -196,7 +196,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="86"/>
         <source>MP3 (MPEG audio layer 3)</source>
-        <translation type="unfinished"></translation>
+        <translation>MP3 (MPEG audio layer 3)</translation>
     </message>
 </context>
 </TS>
