@@ -330,6 +330,7 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
         }
         return 0;
     }
+#ifdef ESTRPIPE
     else if (m == -ESTRPIPE)
     {
         qDebug ("OutputALSA: Suspend, trying to resume");
@@ -348,6 +349,7 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
         }
         return 0;
     }
+#endif
     qDebug ("OutputALSA: error: %s", snd_strerror(m));
     return snd_pcm_prepare (pcm_handle);
 }
