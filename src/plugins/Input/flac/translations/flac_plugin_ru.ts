@@ -149,7 +149,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="68"/>
         <source>KB</source>
-        <translation>Кб</translation>
+        <translation>КБ</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="13"/>
