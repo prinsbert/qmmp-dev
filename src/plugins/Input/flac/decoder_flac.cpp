@@ -528,11 +528,7 @@ void DecoderFLAC::run()
 
         if (seekTime >= 0.0)
         {
-            FLAC__uint64 target_sample;
-
-            target_sample = (FLAC__uint64)((seekTime/(double)data()->length) *
-                                           (double)data()->total_samples);
-
+            FLAC__uint64 target_sample = FLAC__uint64(seekTime / data()->total_samples * data()->length);
             FLAC__stream_decoder_seek_absolute(data()->decoder,
                                                target_sample);
             seekTime = -1.0;
