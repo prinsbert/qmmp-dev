@@ -382,13 +382,5 @@ too high may cause clipping!</source>
         <source>Loop forever</source>
         <translation>Цикл назавжди</translation>
     </message>
-    <message>
-        <source>Apply</source>
-        <translation type="obsolete">Застосувати</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Відміна</translation>
-    </message>
 </context>
 </TS>

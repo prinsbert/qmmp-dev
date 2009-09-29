@@ -324,7 +324,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../settingsdialog.ui" line="646"/>
         <source>Note: Setting the preamp
 too high may cause clipping!</source>
-        <translation type="unfinished">Замечание: установка слишком высокого
+        <translation>Замечание: установка слишком высокого
 усиления может вызвать срезание!</translation>
     </message>
     <message>
@@ -381,18 +381,6 @@ too high may cause clipping!</source>
         <location filename="../settingsdialog.ui" line="760"/>
         <source>Loop forever</source>
         <translation>Повторять всегда</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
-        <source>Apply</source>
-        <translation type="obsolete">Применить</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Отмена</translation>
     </message>
 </context>
 </TS>

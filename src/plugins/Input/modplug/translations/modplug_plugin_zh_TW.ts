@@ -354,18 +354,6 @@ p, li { white-space: pre-wrap; }
         <translation>永遠循環</translation>
     </message>
     <message>
-        <source>OK</source>
-        <translation type="obsolete">確定</translation>
-    </message>
-    <message>
-        <source>Apply</source>
-        <translation type="obsolete">應用</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">取消</translation>
-    </message>
-    <message>
         <location filename="../settingsdialog.ui" line="192"/>
         <location filename="../settingsdialog.ui" line="457"/>
         <source>Depth (%)</source>

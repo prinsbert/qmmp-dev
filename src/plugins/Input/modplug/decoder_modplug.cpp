@@ -347,13 +347,13 @@ void DecoderModPlug::readSettings()
     (
         settings.value("Surround", TRUE).toBool(),
         TRUE,
-        settings.value("Reverb", TRUE).toBool(),
+        settings.value("Reverb", FALSE).toBool(),
         TRUE,
         settings.value("Megabass", FALSE).toBool(),
         settings.value("NoiseReduction", FALSE).toBool(),
         FALSE
     );
-    if (settings.value("Reverb", TRUE).toBool())
+    if (settings.value("Reverb", FALSE).toBool())
     {
         CSoundFile::SetReverbParameters
         (
