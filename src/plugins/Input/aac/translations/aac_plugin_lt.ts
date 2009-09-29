@@ -52,17 +52,9 @@
         <translation>Trukmė:</translation>
     </message>
     <message>
-        <source>Channels:</source>
-        <translation>Kanalai:</translation>
-    </message>
-    <message>
         <location filename="../detailsdialog.ui" line="119"/>
         <source>Bitrate:</source>
         <translation>Bitrate:</translation>
-    </message>
-    <message>
-        <source>Stream version:</source>
-        <translation>Srauto versija:</translation>
     </message>
     <message>
         <location filename="../detailsdialog.ui" line="203"/>

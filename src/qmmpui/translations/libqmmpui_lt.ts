@@ -4,32 +4,32 @@
 <context>
     <name>PlayListModel</name>
     <message>
-        <location filename="../playlistmodel.cpp" line="358"/>
+        <location filename="../playlistmodel.cpp" line="349"/>
         <source>Url:</source>
         <translation>Adresas:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="359"/>
+        <location filename="../playlistmodel.cpp" line="350"/>
         <source>Title:</source>
         <translation>Pavadinimas:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="360"/>
+        <location filename="../playlistmodel.cpp" line="351"/>
         <source>Artist:</source>
         <translation>Atlikėjas:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="361"/>
+        <location filename="../playlistmodel.cpp" line="352"/>
         <source>Album:</source>
         <translation>Albumas:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="362"/>
+        <location filename="../playlistmodel.cpp" line="353"/>
         <source>Genre:</source>
         <translation>Žanras:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="363"/>
+        <location filename="../playlistmodel.cpp" line="354"/>
         <source>Comment:</source>
         <translation>Komantaras:</translation>
     </message>

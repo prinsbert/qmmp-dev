@@ -9,10 +9,6 @@
         <translation>WavPack-Modul</translation>
     </message>
     <message>
-        <source>WavPackk Files</source>
-        <translation type="obsolete">WavPack Dateien</translation>
-    </message>
-    <message>
         <location filename="../decoderwavpackfactory.cpp" line="129"/>
         <source>About WavPack Audio Plugin</source>
         <translation>Über WavPack-Audio-Modul</translation>

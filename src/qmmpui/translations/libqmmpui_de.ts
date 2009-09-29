@@ -4,32 +4,32 @@
 <context>
     <name>PlayListModel</name>
     <message>
-        <location filename="../playlistmodel.cpp" line="358"/>
+        <location filename="../playlistmodel.cpp" line="349"/>
         <source>Url:</source>
         <translation>URL:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="359"/>
+        <location filename="../playlistmodel.cpp" line="350"/>
         <source>Title:</source>
         <translation>Titel:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="360"/>
+        <location filename="../playlistmodel.cpp" line="351"/>
         <source>Artist:</source>
         <translation>Interpret:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="361"/>
+        <location filename="../playlistmodel.cpp" line="352"/>
         <source>Album:</source>
         <translation>Album:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="362"/>
+        <location filename="../playlistmodel.cpp" line="353"/>
         <source>Genre:</source>
         <translation>Genre:</translation>
     </message>
     <message>
-        <location filename="../playlistmodel.cpp" line="363"/>
+        <location filename="../playlistmodel.cpp" line="354"/>
         <source>Comment:</source>
         <translation>Kommentar:</translation>
     </message>

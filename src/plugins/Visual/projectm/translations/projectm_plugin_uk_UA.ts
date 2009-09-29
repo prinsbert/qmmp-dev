@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="uk">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="uk">
 <context>
     <name>ProjectMPlugin</name>
     <message>
-        <location filename="../projectmplugin.cpp" line="40"/>
+        <location filename="../projectmplugin.cpp" line="41"/>
         <source>ProjectM</source>
         <translation></translation>
     </message>
