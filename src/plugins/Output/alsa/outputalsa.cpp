@@ -183,7 +183,7 @@ void OutputALSA::configure(quint32 freq, int chan, int prec)
     //setup needed values
     m_bits_per_frame = snd_pcm_format_physical_width(format) * chan;
     m_chunk_size = period_size;
-    m_can_pause = snd_pcm_hw_params_can_pause(hwparams);
+    m_can_pause = FALSE;//snd_pcm_hw_params_can_pause(hwparams);
     qDebug("OutputALSA: can pause: %d", m_can_pause);
     Output::configure(freq, chan, prec); //apply configuration
     //create alsa prebuffer;
