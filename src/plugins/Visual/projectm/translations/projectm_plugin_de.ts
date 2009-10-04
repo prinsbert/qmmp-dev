@@ -4,7 +4,7 @@
 <context>
     <name>ProjectMPlugin</name>
     <message>
-        <location filename="../projectmplugin.cpp" line="41"/>
+        <location filename="../projectmplugin.cpp" line="40"/>
         <source>ProjectM</source>
         <translation>ProjectM</translation>
     </message>
@@ -111,7 +111,7 @@
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="51"/>
-        <source>This plugins adds projectM visualization</source>
+        <source>This plugin adds projectM visualization</source>
         <translation>Dieses Modul fügt Unterstützung für ProjectM-Visualisierungen hinzu</translation>
     </message>
     <message>

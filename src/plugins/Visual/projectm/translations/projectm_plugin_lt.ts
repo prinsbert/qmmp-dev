@@ -4,9 +4,9 @@
 <context>
     <name>ProjectMPlugin</name>
     <message>
-        <location filename="../projectmplugin.cpp" line="41"/>
+        <location filename="../projectmplugin.cpp" line="40"/>
         <source>ProjectM</source>
-        <translation type="unfinished">ProjectM</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="29"/>
         <source>ProjectM</source>
-        <translation>ProjectM</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="49"/>
@@ -111,7 +111,7 @@
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="51"/>
-        <source>This plugins adds projectM visualization</source>
+        <source>This plugin adds projectM visualization</source>
         <translation>Šis įskiepis leidžia naudoti projectM vizualizacijas</translation>
     </message>
     <message>
