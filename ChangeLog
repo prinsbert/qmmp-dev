@@ -301,15 +301,24 @@ Version 0.3.1
 * added possibility to load plugins form a different location (Holger Schurig)
 * added mkv extension to mplayer plugin
 * added volume control using global hotkeys
+* added scrolling with mouse to text scroller (Erik Ölsar)
+* added Qt 4.6 support
+* fixed build on some systems (Pino Toskano)
 * fixed problem with "buffering" message
 * fixed sorting by name
 * fixed cue parsing
 * fixed displayed mpeg version
 * fixed bug with missing comment in playlist
 * fixed non-working global hotkeys with enabled caps-lock
+* fixed keyboard lock by hotkey plugin
 * fixed non-working equalizer when using Ogg Vorbis plugin
 * fixed jack regression
 * fixed data receiving from UDS
+* fixed button focus behavior (Erik Ölsar)
+* fixed problem with slow visualization
+* fixed problems with some sound cards
+* fixed locale detection
+* fixed current track loss
 * removed broken LyricWiki.org support, added lyricsplugin.com instead
 * added Lithuanian translation (Algirdas Butkus)
 * added Kazakh translation (Baurzhan Muftakhidinov)

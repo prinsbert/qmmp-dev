@@ -37,7 +37,7 @@ PopupWidget::PopupWidget(QWidget *parent)
     setWindowFlags(Qt::X11BypassWindowManagerHint |
                    Qt::WindowStaysOnTopHint | Qt::Dialog | Qt::FramelessWindowHint);
     setFrameStyle(QFrame::Box | QFrame::Plain);
-
+    setAttribute(Qt::WA_QuitOnClose, FALSE);
     QHBoxLayout *hlayout = new QHBoxLayout(this);
     QLabel *pixlabel = new QLabel(this);
     pixlabel->setPixmap(QPixmap(":/notifier_icon.png"));

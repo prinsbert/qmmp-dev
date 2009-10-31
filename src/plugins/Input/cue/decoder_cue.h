@@ -78,9 +78,6 @@ public:
 
     void dispatch(const Qmmp::State &state);
 
-signals:
-    void finished();
-
 private:
     qint64 m_length2;
     qint64 m_offset;
