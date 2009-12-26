@@ -243,18 +243,54 @@ void Output::changeVolume(uchar *data, qint64 size, int chan)
 {
     if (!SoftwareVolume::instance())
         return;
-    if (chan > 1)
-        for (qint64 i = 0; i < size/2; i+=2)
-        {
-            ((short*)data)[i]*= SoftwareVolume::instance()->left()/100.0;
-            ((short*)data)[i+1]*= SoftwareVolume::instance()->right()/100.0;
-        }
-    else
+    if(m_precision == 16)
     {
-        int l = qMax(SoftwareVolume::instance()->left(), SoftwareVolume::instance()->right());
-        for (qint64 i = 0; i < size/2; i++)
-            ((short*)data)[i]*= l/100.0;
+        if (chan > 1)
+            for (qint64 i = 0; i < size/2; i+=2)
+            {
+                ((short*)data)[i]*= SoftwareVolume::instance()->left()/100.0;
+                ((short*)data)[i+1]*= SoftwareVolume::instance()->right()/100.0;
+            }
+        else
+        {
+            int l = qMax(SoftwareVolume::instance()->left(), SoftwareVolume::instance()->right());
+            for (qint64 i = 0; i < size/2; i++)
+                ((short*)data)[i]*= l/100.0;
+        }
     }
+    else if(m_precision == 8)
+    {
+        if (chan > 1)
+        {
+            for (qint64 i = 0; i < size; i+=2)
+            {
+                ((char*)data)[i]*= SoftwareVolume::instance()->left()/100.0;
+                ((char*)data)[i+1]*= SoftwareVolume::instance()->right()/100.0;
+            }
+        }
+        else
+        {
+            for (qint64 i = 0; i < size; i++)
+                ((char*)data)[i]*= qMax(SoftwareVolume::instance()->left()/100.0,SoftwareVolume::instance()->right()/100.0);
+        }
+    }
+    else if(m_precision == 32)
+    {
+        if (chan > 1)
+        {
+            for (qint64 i = 0; i < size/4; i+=2)
+            {
+                ((qint32*)data)[i]*= SoftwareVolume::instance()->left()/100.0;
+                ((qint32*)data)[i+1]*= SoftwareVolume::instance()->right()/100.0;
+            }
+        }
+        else
+        {
+            for (qint64 i = 0; i < size; i++)
+                ((qint32*)data)[i]*= qMax(SoftwareVolume::instance()->left()/100.0,SoftwareVolume::instance()->right()/100.0);
+        }
+    }
+    
 }
 
 // static methods
