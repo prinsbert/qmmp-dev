@@ -329,3 +329,11 @@ Version 0.3.1
 * updated Ukrainian translation (Gennadi Motsyo)
 * updated Italian translation (Gian Paolo Renello)
 * updated Polish translation (Grzegorz Gibas)
+
+Version 0.3.2
+* added metacity compatibility
+* added projectM 2.0 support
+* removed XFree86-Misc dependency
+* fixed software volume control (added 8/32-bits support)
+* fixed segfault with 6-channel files
+
