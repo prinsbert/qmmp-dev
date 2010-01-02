@@ -139,7 +139,7 @@ qint64 Decoder::produceSound(char *data, qint64 size, quint32 brate, int chan)
             init_iir();
             m_eqInited = TRUE;
         }
-        iir((void*) data, sz, chan);
+        iir((void*) data, sz, chan > 2 ? 2 : chan);
     }
     char *out_data = data;
     char *prev_data = data;
