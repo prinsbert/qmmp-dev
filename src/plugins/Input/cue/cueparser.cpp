@@ -121,6 +121,12 @@ CUEParser::CUEParser(const QString &fileName)
                 m_infoList[i].setLength(0);
         }
     }
+    file.close();
+    if(m_infoList.isEmpty())
+    {
+        qWarning("CUEParser: invalid cue file");
+        return;
+    }
 
     //calculate last item length
     QList <FileInfo *> f_list = Decoder::createPlayList(m_filePath, FALSE);
@@ -139,7 +145,6 @@ CUEParser::CUEParser(const QString &fileName)
         if (!m_infoList[i].metaData().count(Qmmp::ARTIST) && !artist.isEmpty())
             m_infoList[i].setMetaData(Qmmp::ARTIST, artist);
     }
-    file.close();
 }
 
 
