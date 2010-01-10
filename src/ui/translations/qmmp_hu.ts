@@ -586,8 +586,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="79"/>
-        <location filename="../jumptotrackdialog.cpp" line="83"/>
-        <location filename="../jumptotrackdialog.cpp" line="139"/>
+        <location filename="../jumptotrackdialog.cpp" line="89"/>
+        <location filename="../jumptotrackdialog.cpp" line="145"/>
         <source>Queue</source>
         <translation type="unfinished"></translation>
     </message>
@@ -607,8 +607,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="81"/>
-        <location filename="../jumptotrackdialog.cpp" line="137"/>
+        <location filename="../jumptotrackdialog.cpp" line="87"/>
+        <location filename="../jumptotrackdialog.cpp" line="143"/>
         <source>Unqueue</source>
         <translation type="unfinished"></translation>
     </message>
