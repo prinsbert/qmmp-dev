@@ -69,8 +69,8 @@
         <translation>Hayır</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="157"/>
         <location filename="../detailsdialog.ui" line="224"/>
+        <location filename="../detailsdialog.cpp" line="157"/>
         <source>ID3v1 Tag</source>
         <translation>ID3v1 Etiketi</translation>
     </message>
