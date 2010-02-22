@@ -156,7 +156,7 @@ bool DecoderFFmpeg::initialize()
 
     dump_format(ic,0,0,0);
     //dump_stream_info(ic);
-
+    c->dsp_mask |= FF_MM_MMX; //ffmpeg bug workarround
     codec = avcodec_find_decoder(c->codec_id);
 
     if (!codec) return FALSE;
