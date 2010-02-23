@@ -339,3 +339,9 @@ Version 0.3.2
 * fixed segfault with 6-channel files
 * fixed cue parsing
 * improved "jump to" dialog behaviour
+
+Version 0.3.3
+* added Hungarian translation (Németh Gábor)
+* fixed kde dialog support (thanks to Sebastian Piping)
+* fixed channel number detection
+* fixed crash on m4a files
