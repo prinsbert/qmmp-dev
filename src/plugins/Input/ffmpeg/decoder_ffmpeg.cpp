@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2009 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2010 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,7 +20,7 @@
 
 #include <QObject>
 #include <QFile>
-
+#include <malloc.h>
 #include <qmmp/constants.h>
 #include <qmmp/buffer.h>
 #include <qmmp/output.h>
@@ -58,7 +58,7 @@ DecoderFFmpeg::~DecoderFFmpeg()
     deinit();
     if (wma_outbuf)
     {
-        delete [] wma_outbuf;
+        free(wma_outbuf);
         wma_outbuf = 0;
     }
     if (output_buf)
@@ -156,7 +156,6 @@ bool DecoderFFmpeg::initialize()
 
     dump_format(ic,0,0,0);
     //dump_stream_info(ic);
-    c->dsp_mask |= FF_MM_MMX; //ffmpeg bug workarround
     codec = avcodec_find_decoder(c->codec_id);
 
     if (!codec) return FALSE;
@@ -169,7 +168,7 @@ bool DecoderFFmpeg::initialize()
 
     bitrate = c->bit_rate;
     chan = c->channels;
-    wma_outbuf = new uint8_t[AVCODEC_MAX_AUDIO_FRAME_SIZE*sizeof(int16_t) + globalBufferSize];
+    wma_outbuf = (uint8_t *)memalign(16, AVCODEC_MAX_AUDIO_FRAME_SIZE * 3 / 2 + globalBufferSize);
     inited = TRUE;
     qDebug("DecoderFFmpeg: initialize succes");
     return TRUE;
