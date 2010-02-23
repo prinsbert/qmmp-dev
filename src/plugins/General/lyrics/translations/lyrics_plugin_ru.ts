@@ -58,7 +58,7 @@
     <message>
         <location filename="../lyricswindow.cpp" line="75"/>
         <source>Not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Не найдено</translation>
     </message>
     <message>
         <location filename="../lyricswindow.cpp" line="91"/>

@@ -246,102 +246,102 @@
         <translation>Qmmp Ayarları</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="171"/>
+        <location filename="../forms/configdialog.ui" line="177"/>
         <source>Skins</source>
         <translation>Kabuklar</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="231"/>
+        <location filename="../forms/configdialog.ui" line="237"/>
         <source>Fonts</source>
         <translation>Fontlar</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="243"/>
+        <location filename="../forms/configdialog.ui" line="249"/>
         <source>Player:</source>
         <translation>Oynatıcı:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="279"/>
+        <location filename="../forms/configdialog.ui" line="285"/>
         <source>Playlist:</source>
         <translation>Çalma Listesi:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="259"/>
-        <location filename="../forms/configdialog.ui" line="295"/>
+        <location filename="../forms/configdialog.ui" line="265"/>
+        <location filename="../forms/configdialog.ui" line="301"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="266"/>
-        <location filename="../forms/configdialog.ui" line="302"/>
-        <location filename="../forms/configdialog.ui" line="357"/>
+        <location filename="../forms/configdialog.ui" line="272"/>
+        <location filename="../forms/configdialog.ui" line="308"/>
+        <location filename="../forms/configdialog.ui" line="363"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="316"/>
+        <location filename="../forms/configdialog.ui" line="322"/>
         <source>Metadata</source>
         <translation>Veri bilgisi</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="328"/>
+        <location filename="../forms/configdialog.ui" line="334"/>
         <source>Load metadata from files</source>
         <translation>Veri bilgisini dosyadan yükle</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="338"/>
+        <location filename="../forms/configdialog.ui" line="344"/>
         <source>Song Display</source>
         <translation>Şarkı Göstergesi</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="344"/>
+        <location filename="../forms/configdialog.ui" line="350"/>
         <source>Title format:</source>
         <translation>Başlık formatı:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="476"/>
+        <location filename="../forms/configdialog.ui" line="482"/>
         <source>Input</source>
         <translation>Giriş</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="499"/>
+        <location filename="../forms/configdialog.ui" line="505"/>
         <source>Output</source>
         <translation>Çıkış</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="433"/>
+        <location filename="../forms/configdialog.ui" line="439"/>
         <source>Preferences</source>
         <translation>Tercihler</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="446"/>
-        <location filename="../forms/configdialog.ui" line="645"/>
+        <location filename="../forms/configdialog.ui" line="452"/>
+        <location filename="../forms/configdialog.ui" line="651"/>
         <source>Information</source>
         <translation>Bilgi</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="92"/>
+        <location filename="../forms/configdialog.ui" line="98"/>
         <source>Appearance</source>
         <translation>Görünüm</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="101"/>
-        <location filename="../forms/configdialog.ui" line="728"/>
+        <location filename="../forms/configdialog.ui" line="107"/>
+        <location filename="../forms/configdialog.ui" line="734"/>
         <source>Playlist</source>
         <translation>Çalma Listesi</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="110"/>
+        <location filename="../forms/configdialog.ui" line="116"/>
         <source>Plugins</source>
         <translation>Eklentiler</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="119"/>
+        <location filename="../forms/configdialog.ui" line="125"/>
         <source>Advanced</source>
         <translation>Gelişmiş</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="903"/>
+        <location filename="../forms/configdialog.ui" line="909"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
@@ -356,117 +356,117 @@
         <translation>Arşivlenmemiş kabuk</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="128"/>
+        <location filename="../forms/configdialog.ui" line="134"/>
         <source>Connectivity</source>
         <translation>Bağlanırlık</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="516"/>
+        <location filename="../forms/configdialog.ui" line="522"/>
         <source>Visualization</source>
         <translation>Görsellik</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="533"/>
+        <location filename="../forms/configdialog.ui" line="539"/>
         <source>Effects</source>
         <translation>Efektler</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="550"/>
+        <location filename="../forms/configdialog.ui" line="556"/>
         <source>General</source>
         <translation>Genel</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="636"/>
+        <location filename="../forms/configdialog.ui" line="642"/>
         <source>File Dialog</source>
         <translation>Dosya Diyaloğu</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="574"/>
+        <location filename="../forms/configdialog.ui" line="580"/>
         <source>Audio</source>
         <translation>Ses</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="385"/>
+        <location filename="../forms/configdialog.ui" line="391"/>
         <source>Show song numbers</source>
         <translation>Şarkı numaralarını göster</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="580"/>
+        <location filename="../forms/configdialog.ui" line="586"/>
         <source>Use software volume control</source>
         <translation>Yazılımsal ses kontrolünü kullan</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="590"/>
+        <location filename="../forms/configdialog.ui" line="596"/>
         <source>Visibility Control</source>
         <translation>Görünürlük Kontrolü</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="596"/>
+        <location filename="../forms/configdialog.ui" line="602"/>
         <source>Hide on close</source>
         <translation>Kapatınca saklan</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="603"/>
+        <location filename="../forms/configdialog.ui" line="609"/>
         <source>Start hidden</source>
         <translation>Gizli başlat</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="613"/>
+        <location filename="../forms/configdialog.ui" line="619"/>
         <source>Compatibility</source>
         <translation>Uyumluluk</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="619"/>
+        <location filename="../forms/configdialog.ui" line="625"/>
         <source>Openbox compatibility</source>
         <translation>Openbox uyumluluğu</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="626"/>
+        <location filename="../forms/configdialog.ui" line="632"/>
         <source>Metacity compatibility</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="771"/>
+        <location filename="../forms/configdialog.ui" line="777"/>
         <source>Proxy</source>
         <translation>Vekil sunucu</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="783"/>
+        <location filename="../forms/configdialog.ui" line="789"/>
         <source>Enable proxy usage</source>
         <translation>Vekil sunucu kullanımını etkinleştir</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="790"/>
+        <location filename="../forms/configdialog.ui" line="796"/>
         <source>Proxy host name:</source>
         <translation>Vekil sunucu adı:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="803"/>
+        <location filename="../forms/configdialog.ui" line="809"/>
         <source>Proxy port:</source>
         <translation>Vekil sunucu portu:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="816"/>
+        <location filename="../forms/configdialog.ui" line="822"/>
         <source>Use authentication with proxy</source>
         <translation>Vekil sunucu yetkilendirmesi kullan</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="823"/>
+        <location filename="../forms/configdialog.ui" line="829"/>
         <source>Proxy user name:</source>
         <translation>Vekil sunucu kullanıcı adı:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="836"/>
+        <location filename="../forms/configdialog.ui" line="842"/>
         <source>Proxy password:</source>
         <translation>Vekil sunucu parolası:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="364"/>
+        <location filename="../forms/configdialog.ui" line="370"/>
         <source>Convert underscores to blanks</source>
         <translation>Alt çizgileri boşluğa çevir</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="371"/>
+        <location filename="../forms/configdialog.ui" line="377"/>
         <source>Convert %20 to blanks</source>
         <translation>%20 yi boşluğa çevir</translation>
     </message>
@@ -481,39 +481,39 @@
         <translation>Kabuk dosyaları</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="202"/>
+        <location filename="../forms/configdialog.ui" line="208"/>
         <source>Add...</source>
         <translation>Ekle...</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="215"/>
+        <location filename="../forms/configdialog.ui" line="221"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="378"/>
+        <location filename="../forms/configdialog.ui" line="384"/>
         <source>Show protocol</source>
         <translation>Protokolü göster</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="668"/>
+        <location filename="../forms/configdialog.ui" line="674"/>
         <source>Transparency</source>
         <translation>Transparanlık</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="674"/>
+        <location filename="../forms/configdialog.ui" line="680"/>
         <source>Main window</source>
         <translation>Ana pencere</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="697"/>
-        <location filename="../forms/configdialog.ui" line="721"/>
-        <location filename="../forms/configdialog.ui" line="745"/>
+        <location filename="../forms/configdialog.ui" line="703"/>
+        <location filename="../forms/configdialog.ui" line="727"/>
+        <location filename="../forms/configdialog.ui" line="751"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="704"/>
+        <location filename="../forms/configdialog.ui" line="710"/>
         <source>Equalizer</source>
         <translation>Ekolayzır</translation>
     </message>
