@@ -343,5 +343,7 @@ Version 0.3.2
 Version 0.3.3
 * added Hungarian translation (Németh Gábor)
 * fixed kde dialog support (thanks to Sebastian Piping)
-* fixed channel number detection
+* fixed problems with some mp3 files
 * fixed crash on m4a files
+* fixed settings dialog
+* fixed proxy support
