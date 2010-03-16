@@ -223,9 +223,10 @@ void Downloader::run()
                          strdup((Qmmp::proxy().host() + ":" +
                                  QString("%1").arg(Qmmp::proxy().port())).
                                 toLatin1 ().constData ()));
+#if LIBCURL_VERSION_NUM >= 0x071304
     else
         curl_easy_setopt(m_handle, CURLOPT_NOPROXY, "*");
-
+#endif
     if (Qmmp::useProxyAuth())
         curl_easy_setopt(m_handle, CURLOPT_PROXYUSERPWD,
                          strdup((Qmmp::proxy().userName() + ":" +
