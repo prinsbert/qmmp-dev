@@ -57,6 +57,7 @@ DecoderWavPack::DecoderWavPack(QObject *parent, DecoderFactory *d, Output *o, co
     m_context = 0;
     m_length = 0;
     m_offset = 0;
+    m_prebuf = 0;
 }
 
 DecoderWavPack::~DecoderWavPack()
@@ -65,6 +66,9 @@ DecoderWavPack::~DecoderWavPack()
     if (m_output_buf)
         delete [] m_output_buf;
     m_output_buf = 0;
+    if (m_prebuf)
+        delete [] m_prebuf;
+    m_prebuf = 0;
 }
 
 void DecoderWavPack::stop()
@@ -123,6 +127,10 @@ bool DecoderWavPack::initialize()
 
     if (! m_output_buf)
         m_output_buf = new char[globalBufferSize];
+    if (!m_prebuf)
+        m_prebuf = new int32_t[globalBufferSize/4];
+    
+    
     m_output_at = 0;
     m_output_bytes = 0;
 
@@ -164,7 +172,7 @@ bool DecoderWavPack::initialize()
     m_chan = WavpackGetNumChannels(m_context);
     m_freq = WavpackGetSampleRate (m_context);
     m_bps = WavpackGetBitsPerSample (m_context);
-    configure(m_freq, m_chan, m_bps);
+    configure(m_freq, m_chan, m_bps == 24 ? 32 : m_bps);
     m_inited = TRUE;
 
     if (m_offset)
@@ -232,20 +240,21 @@ void DecoderWavPack::run()
             WavpackSeekSample (m_context, m_seekTime * m_freq / 1000);
             m_seekTime = -1.0;
         }
-        //stop if track ended
-        if ((qint64) WavpackGetSampleIndex(m_context) * 1000 /m_freq - m_offset >= m_totalTime)
-        {
-            m_finish = TRUE;
-        }
+        //check end of track
+        m_finish = ((qint64) WavpackGetSampleIndex(m_context) * 1000 /m_freq - m_offset >= m_totalTime);
+        
+        
+        //samples = (globalBufferSize-m_output_at)/m_chan/4;
 
-        samples = (globalBufferSize-m_output_at)/m_chan/4;
-
-        len = WavpackUnpackSamples (m_context, in, samples);
-        for (ulong i = 0; i < len * m_chan; ++i)
+        //len = WavpackUnpackSamples (m_context, in, samples);
+        
+        len = wavpack_decode(m_output_buf + m_output_at, globalBufferSize - m_output_at);
+        
+        /*for (ulong i = 0; i < len * m_chan; ++i)
             out[i] = in[i];
 
         len *= (m_chan * 2); //convert to number of bytes
-        memcpy(m_output_buf + m_output_at, (char *) out, len);
+        memcpy(m_output_buf + m_output_at, (char *) out, len);*/
         if (len > 0)
         {
             m_bitrate =int( WavpackGetInstantBitrate(m_context)/1000);
@@ -299,4 +308,34 @@ void DecoderWavPack::run()
 
     mutex()->unlock();
     deinit();
+}
+
+qint64 DecoderWavPack::wavpack_decode(char *data, qint64 size)
+{
+    ulong len = WavpackUnpackSamples (m_context, m_prebuf, size / m_chan / 4);
+    //convert 32 to 16
+    qint8 *data8 = (qint8 *)data;
+    qint16 *data16 = (qint16 *)data;
+    qint32 *data32 = (qint32 *)data;
+    uint i = 0;
+    switch (m_bps)
+    {
+    case 8:
+        for (i = 0;  i < len * m_chan; ++i)
+            data8[i] = m_prebuf[i];
+         return len * m_chan;
+    case 16:
+        for (i = 0;  i < len * m_chan; ++i)
+            data16[i] = m_prebuf[i];
+         return len * m_chan * 2;
+    case 24:
+        for (i = 0;  i < len * m_chan; ++i)
+            data32[i] = m_prebuf[i] << 8;
+         return len * m_chan * 4;
+    case 32:
+        for (i = 0;  i < len * m_chan; ++i)
+            data32[i] = m_prebuf[i];
+         return len * m_chan * 4;
+    }
+    return 0;
 }

@@ -47,6 +47,7 @@ private:
     // helper functions
     void flush(bool = FALSE);
     void deinit();
+    qint64 wavpack_decode(char *data, qint64 size);
 
     bool m_inited, m_user_stop;
     int m_bps; //bits per sample
@@ -54,6 +55,7 @@ private:
     // output buffer
     char *m_output_buf;
     qint64 m_output_bytes, m_output_at;
+    int32_t *m_prebuf;
 
     unsigned int m_bks; //block size
     bool m_done, m_finish;
