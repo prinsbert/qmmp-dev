@@ -347,3 +347,8 @@ Version 0.3.3
 * fixed crash on m4a files
 * fixed settings dialog
 * fixed proxy support
+
+Version 0.3.4
+* fixed build
+* fixed bug in the global shortcut editor
+* fixed 24-bit wavpack support
