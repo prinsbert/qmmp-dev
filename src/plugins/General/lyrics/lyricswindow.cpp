@@ -55,12 +55,13 @@ void LyricsWindow::showText(bool error)
 {
     if (error)
     {
-        ui.textEdit->setText(m_http->errorString());
+        ui.textBrowser->setText(m_http->errorString());
         return;
     }
     QString content = QString::fromUtf8(m_http->readAll().constData());
 
-    QRegExp artist_regexp("<div id=\\\"artist\\\">([^<]*)</div>");
+    QRegExp artist_regexp("<div id=\\\"artist\\\">(.*)</div>");
+    artist_regexp.setMinimal(true);
     QRegExp title_regexp("<div id=\\\"title\\\">([^<]*)</div>");
     QRegExp lyrics_regexp("<div id=\\\"lyrics\\\">([^<]*)</div>");
     artist_regexp.indexIn(content);
@@ -72,11 +73,11 @@ void LyricsWindow::showText(bool error)
     QString lyrics = lyrics_regexp.cap(1);
     lyrics.replace("[br /]", "<br />");
     if(lyrics.trimmed().isEmpty())
-        ui.textEdit->setHtml("<b>" + tr("Not found") + "</b>");
+        ui.textBrowser->setHtml("<b>" + tr("Not found") + "</b>");
     else
     {
         text += lyrics;
-        ui.textEdit->setHtml(text);
+        ui.textBrowser->setHtml(text);
     }
 }
 

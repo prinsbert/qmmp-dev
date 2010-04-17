@@ -45,48 +45,48 @@
 <context>
     <name>LyricsWindow</name>
     <message>
-        <location filename="../lyricswindow.cpp" line="113"/>
+        <location filename="../lyricswindow.cpp" line="114"/>
         <source>Lyrics: %1 - %2</source>
         <translation>Text: %1 - %2</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.ui" line="67"/>
-        <location filename="../lyricswindow.cpp" line="88"/>
+        <location filename="../lyricswindow.ui" line="60"/>
+        <location filename="../lyricswindow.cpp" line="89"/>
         <source>No connection</source>
         <translation>Nespojeno</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="75"/>
+        <location filename="../lyricswindow.cpp" line="76"/>
         <source>Not found</source>
         <translation>Nenalezeno</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="91"/>
+        <location filename="../lyricswindow.cpp" line="92"/>
         <source>Looking up host...</source>
         <translation>Vyhledávám hostitele...</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="94"/>
+        <location filename="../lyricswindow.cpp" line="95"/>
         <source>Connecting...</source>
         <translation>Připojuji se...</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="97"/>
+        <location filename="../lyricswindow.cpp" line="98"/>
         <source>Sending request...</source>
         <translation>Zasílám požadavek...</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="100"/>
+        <location filename="../lyricswindow.cpp" line="101"/>
         <source>Receiving</source>
         <translation>Příjímám</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="103"/>
+        <location filename="../lyricswindow.cpp" line="104"/>
         <source>Connected</source>
         <translation>Připojeno</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="106"/>
+        <location filename="../lyricswindow.cpp" line="107"/>
         <source>Closing connection...</source>
         <translation>Zavírám spojení...</translation>
     </message>
@@ -111,7 +111,7 @@
         <translation>Hledat</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.ui" line="87"/>
+        <location filename="../lyricswindow.ui" line="80"/>
         <source>Close</source>
         <translation>Zavřít</translation>
     </message>
