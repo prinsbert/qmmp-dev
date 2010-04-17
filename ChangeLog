@@ -352,3 +352,4 @@ Version 0.3.4
 * fixed build
 * fixed bug in the global shortcut editor
 * fixed 24-bit wavpack support
+* fixed lyrics viewer
