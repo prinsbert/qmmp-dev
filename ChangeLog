@@ -404,12 +404,13 @@ Version 0.4.0
 
 Version 0.4.1
 * fixed flv playback
-* removed obsolete memalig function
 * fixed mplayer support
 * fixed popup notifications
 * fixed time format
-* added shorten audio format
-* skip invalid files
 * fixed possible segmentation fault
 * fixed bug which causes equalizer to appear when closing the preferences window
 * fixed notification template
+* fixed mpris regression
+* added shorten audio format
+* skip invalid files
+* removed obsolete memalig function
