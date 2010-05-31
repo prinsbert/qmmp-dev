@@ -39,7 +39,6 @@
         <translation>
             <numerusform>Weet u zeker dat u deze %n bestanden wilt verwijderen?</numerusform>
             <numerusform>Weet u zeker dat u deze %n bestanden wilt verwijderen?</numerusform>
-            <numerusform>Weet u zeker dat u deze %n bestanden wilt verwijderen?</numerusform>
         </translation>
     </message>
 </context>

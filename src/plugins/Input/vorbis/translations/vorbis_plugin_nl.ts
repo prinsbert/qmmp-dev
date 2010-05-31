@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodervorbisfactory.cpp" line="127"/>
         <source>Source code based on mq3 progect</source>
-        <translation>Broncode gebasseerd op het 'mq3 project'</translation>
+        <translation>Broncode gebasseerd op het &apos;mq3 project&apos;</translation>
     </message>
 </context>
 <context>

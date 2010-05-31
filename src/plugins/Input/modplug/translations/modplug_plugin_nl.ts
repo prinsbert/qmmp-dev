@@ -174,7 +174,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="130"/>
         <source>8-tap Fir (extremely high quality)</source>
-        <translation>8-tap 'Fir' (erg goede kwaliteit)</translation>
+        <translation>8-tap &apos;Fir&apos; (erg goede kwaliteit)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="146"/>
@@ -281,7 +281,7 @@
         <source>Note: Setting the preamp
 too high may cause clipping!</source>
         <translation>Notitie: Het instellvan de de voorversterking
-kan voor veel 'afsnijding' zorgen</translation>
+kan voor veel &apos;afsnijding&apos; zorgen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="671"/>

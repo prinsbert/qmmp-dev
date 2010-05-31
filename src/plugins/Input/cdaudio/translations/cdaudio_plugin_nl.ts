@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="93"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
-        <translation>Gebruik: gebruik cdda:/// in het "Voeg URL toe" dialoog of als argument</translation>
+        <translation>Gebruik: gebruik cdda:/// in het &quot;Voeg URL toe&quot; dialoog of als argument</translation>
     </message>
 </context>
 <context>
