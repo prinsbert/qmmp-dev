@@ -403,6 +403,7 @@ Version 0.4.0
 * updated Polish translation (Grzegorz Gibas)
 
 Version 0.4.1
+* added Dutch translation (Ronald Uitermark)
 * fixed flv playback
 * fixed mplayer support
 * fixed popup notifications
@@ -413,4 +414,4 @@ Version 0.4.1
 * fixed mpris regression
 * added shorten audio format
 * skip invalid files
-* removed obsolete memalig function
+* removed obsolete memalign function
