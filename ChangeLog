@@ -404,6 +404,7 @@ Version 0.4.0
 
 Version 0.4.1
 * added Dutch translation (Ronald Uitermark)
+* added shorten audio format
 * fixed flv playback
 * fixed mplayer support
 * fixed popup notifications
@@ -412,6 +413,7 @@ Version 0.4.1
 * fixed bug which causes equalizer to appear when closing the preferences window
 * fixed notification template
 * fixed mpris regression
-* added shorten audio format
+* fixed url dialog
+* fixed removable volumes detection
 * skip invalid files
 * removed obsolete memalign function
