@@ -415,5 +415,6 @@ Version 0.4.1
 * fixed mpris regression
 * fixed url dialog
 * fixed removable volumes detection
+* fixed problem with metadata updating
 * skip invalid files
 * removed obsolete memalign function
