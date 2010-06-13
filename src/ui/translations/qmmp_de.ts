@@ -152,7 +152,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="62"/>
         <source>Set playback volume (example: qmmp --volume 20)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lautstärke der Wiedergabe einstellen (Beispiel: qmmp --volume 20)</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="65"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../configdialog.cpp" line="235"/>
         <source>Decoders</source>
-        <translation>Decoder</translation>
+        <translation>Dekoder</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="245"/>
@@ -355,7 +355,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="377"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Immer im Vordergrund</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="384"/>
@@ -395,7 +395,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="574"/>
         <source>Show popup information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informationen in einem Aufklapp-Fenster anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="584"/>
@@ -438,7 +438,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="797"/>
         <source>Use separate image files</source>
-        <translation type="unfinished"></translation>
+        <translation>Separate Bilddateien verwenden</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="807"/>
@@ -458,12 +458,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="874"/>
         <source>Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiedergabe</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="880"/>
         <source>Continue playback on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiedergabe beim Start fortsetzen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1014"/>
@@ -489,7 +489,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1128"/>
         <source>Use  peak info to prevent clipping</source>
-        <translation type="unfinished"></translation>
+        <translation>Peak-Informationen verwenden, um Clipping zu verhindern</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1144"/>
@@ -509,7 +509,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="364"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Ansicht</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="759"/>
@@ -1185,7 +1185,7 @@
     <message>
         <location filename="../playlist.cpp" line="211"/>
         <source>Remove duplicates</source>
-        <translation type="unfinished"></translation>
+        <translation>Duplikate entfernen</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="214"/>
@@ -1415,32 +1415,32 @@
     <message>
         <location filename="../playlistselector.cpp" line="51"/>
         <source>&amp;Load</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Laden</translation>
     </message>
     <message>
         <location filename="../playlistselector.cpp" line="52"/>
         <source>&amp;Save As...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Speichern unter …</translation>
     </message>
     <message>
         <location filename="../playlistselector.cpp" line="54"/>
         <source>Rename</source>
-        <translation type="unfinished">Umbenennen</translation>
+        <translation>Umbenennen</translation>
     </message>
     <message>
         <location filename="../playlistselector.cpp" line="55"/>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>L&amp;öschen</translation>
     </message>
     <message>
         <location filename="../playlistselector.cpp" line="111"/>
         <source>Rename Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiedergabeliste umbenennen</translation>
     </message>
     <message>
         <location filename="../playlistselector.cpp" line="111"/>
         <source>Playlist name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Name der Wiedergabeliste:</translation>
     </message>
 </context>
 <context>
@@ -1448,12 +1448,12 @@
     <message>
         <location filename="../forms/popupsettings.ui" line="14"/>
         <source>Popup Information Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen Aufklapp-Informationen</translation>
     </message>
     <message>
         <location filename="../forms/popupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Cover anzeigen</translation>
     </message>
     <message>
         <location filename="../forms/popupsettings.ui" line="115"/>
@@ -1463,12 +1463,12 @@
     <message>
         <location filename="../forms/popupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzögerung:</translation>
     </message>
     <message>
         <location filename="../forms/popupsettings.ui" line="178"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../forms/popupsettings.ui" line="89"/>
@@ -1619,7 +1619,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="72"/>
         <source>Unknown command</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannter Befehl</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="174"/>
