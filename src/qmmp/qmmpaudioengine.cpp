@@ -113,9 +113,10 @@ bool QmmpAudioEngine::enqueue(InputSource *source)
 
     if(!source->url().contains("://"))
         factory = Decoder::findByPath(source->url());
+    if(!factory)
+        factory = Decoder::findByMime(source->contentType());
     if(!factory && source->ioDevice())
         factory = Decoder::findByContent(source->ioDevice());
-    //TODO mimetype
     if(!factory && source->url().contains("://"))
         factory = Decoder::findByProtocol(source->url().section("://",0,0));
     if(!factory)
@@ -174,6 +175,15 @@ void QmmpAudioEngine::setEQEnabled(bool on)
 
 void QmmpAudioEngine::addEffect(EffectFactory *factory)
 {
+    foreach(Effect *effect, m_effects)
+    {
+        if(effect->factory() == factory)
+        {
+            qWarning("QmmpAudioEngine: effect %s already exists",
+                     qPrintable(factory->properties().shortName));
+            return;
+        }
+    }
     if(m_output && m_output->isRunning())
     {
         Effect *effect = factory->create();
