@@ -84,6 +84,7 @@ OutputOSS::~OutputOSS()
      m_instance = 0;
     if (m_audio_fd > 0)
     {
+        resetDSP();
         close(m_audio_fd);
         m_audio_fd = -1;
     }
