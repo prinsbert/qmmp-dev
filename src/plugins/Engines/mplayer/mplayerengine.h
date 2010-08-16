@@ -56,6 +56,8 @@ public:
     void seek(qint64);
     void stop();
     void pause();
+    void setEQ(double*, double){};
+    void setEQEnabled(bool){};
 
 private slots:
     void readStdOut();
