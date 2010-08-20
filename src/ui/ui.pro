@@ -169,5 +169,6 @@ TRANSLATIONS = translations/qmmp_ru.ts \
     translations/qmmp_lt.ts \
     translations/qmmp_hu.ts \
     translations/qmmp_nl.ts \
-    translations/qmmp_ja.ts
+    translations/qmmp_ja.ts \
+    translations/qmmp_es.ts
 
