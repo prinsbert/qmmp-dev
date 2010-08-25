@@ -418,3 +418,19 @@ Version 0.4.1
 * fixed problem with metadata updating
 * skip invalid files
 * removed obsolete memalign function
+
+Version 0.4.2
+* added Japanese translation (RyoTa SimaMoto)
+* added Spanish translation (Félix Medrano)
+* added offset support into mplayer plugin
+* updated German translation (Panagiotis Papadopoulos)
+* fixed build scripts
+* fixed shorten playback
+* fixed freezes on corrupted files
+* fixed problem with UDS under freebsd (RyoTa SimaMoto)
+* fixed oss delays
+* fixed possible freezes with mplayer plugin
+* fixed problems with some video files 
+* fixed lyrics plugin (due api changes)
+* optimized tag editor form
+* removed deprecated functions from jack plugin
