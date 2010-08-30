@@ -424,6 +424,7 @@ Version 0.4.2
 * added Spanish translation (Félix Medrano)
 * added offset support into mplayer plugin
 * updated German translation (Panagiotis Papadopoulos)
+* updated Polish translation (Grzegorz Gibas)
 * fixed build scripts
 * fixed shorten playback
 * fixed freezes on corrupted files
@@ -432,5 +433,6 @@ Version 0.4.2
 * fixed possible freezes with mplayer plugin
 * fixed problems with some video files 
 * fixed lyrics plugin (due api changes)
+* fixed template parsing (Avihay Baratz)
 * optimized tag editor form
 * removed deprecated functions from jack plugin
