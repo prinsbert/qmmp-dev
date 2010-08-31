@@ -20,8 +20,6 @@
 
 #include "outputnull.h"
 
-#define MAX_SIZE 50000
-
 OutputNull::OutputNull(QObject * parent) : Output(parent)
 {
    m_bytes_per_second = 0;
