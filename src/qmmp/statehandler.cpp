@@ -135,9 +135,9 @@ void StateHandler::dispatch(Qmmp::State state)
         m_precision = 0;
         m_channels = 0;
         m_metaData.clear();
-    }
-    if(state == Qmmp::Playing)
         m_sendAboutToFinish = true;
+    }
+
     if (m_state != state)
     {
         QStringList states;
