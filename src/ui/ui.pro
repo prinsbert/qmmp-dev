@@ -28,7 +28,6 @@ HEADERS += mainwindow.h \
     mainvisual.h \
     inlines.h \
     fft.h \
-    logscale.h \
     textscroller.h \
     monostereo.h \
     playstatus.h \
@@ -78,7 +77,6 @@ SOURCES += mainwindow.cpp \
     eqgraph.cpp \
     mainvisual.cpp \
     fft.c \
-    logscale.cpp \
     textscroller.cpp \
     monostereo.cpp \
     playstatus.cpp \

@@ -46,7 +46,6 @@ SET(ui_SRCS
     jumptotrackdialog.cpp
     keyboardmanager.cpp
     listwidget.cpp
-    logscale.cpp
     mainvisual.cpp
     mainwindow.cpp
     monostereo.cpp
@@ -101,7 +100,6 @@ SET(ui_MOC_HDRS
     jumptotrackdialog.h
     keyboardmanager.h
     listwidget.h
-    logscale.h
     mainvisual.h
     mainwindow.h
     monostereo.h

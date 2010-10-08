@@ -23,13 +23,11 @@
 #include <QWidget>
 #include <QResizeEvent>
 #include <qmmp/visual.h>
-#include "logscale.h"
 
 class QSettings;
 class QTimer;
 class QMenu;
 class QActionGroup;
-class Buffer;
 
 class VisualNode
 {
