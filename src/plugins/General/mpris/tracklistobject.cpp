@@ -51,14 +51,14 @@ int TrackListObject::AddTrack(const QString &in0, bool in1)
         m_model->addFile(in0);
     int new_count = m_model->count();
     if(new_count == old_count)
-        return 0;
+        return 1;
     if(in1)
     {
         m_model->setCurrent(new_count-1);
         m_player->stop();
         m_player->play();
     }
-    return 1;
+    return 0;
 }
 
 void TrackListObject::DelTrack(int in0)
