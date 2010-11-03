@@ -75,6 +75,10 @@ public:
      */
     EffectFactory* factory() const;
     /*!
+     * Assignes factory object.
+     */
+    void setFactory(EffectFactory *factory);
+    /*!
      * Creates a list of enabled effects.
      */
     static QList<Effect*> create();

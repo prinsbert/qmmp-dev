@@ -69,6 +69,11 @@ EffectFactory* Effect::factory() const
     return m_factory;
 }
 
+void Effect::setFactory(EffectFactory *factory)
+{
+    m_factory = factory;
+}
+
 //static members
 
 QList<EffectFactory*> *Effect::m_factories = 0;
