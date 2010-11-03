@@ -451,3 +451,4 @@ Version 0.4.3
 * fixed aac streams support
 * fixed ape noise while seeking
 * fixed Russian translation
+* fixed crash when adding multiple directories simultaneously
