@@ -441,7 +441,7 @@ Version 0.4.3
 * added dvd autodetection
 * added possibility to center balance on middle-click (Panagiotis Papadopoulos)
 * fixed build (Christian Morales Vega)
-* fixed problems with pidgin music tracker
+* fixed problems with pidgin-musictracker
 * fixed command line processing
 * fixed skins list update
 * fixed segmentation fault on video playback
