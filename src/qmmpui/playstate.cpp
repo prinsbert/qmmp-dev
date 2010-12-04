@@ -31,15 +31,14 @@ bool ShufflePlayState::next()
 
     if (itm_count > 0)
     {
-        if (m_shuffled_current >= m_shuffled_indexes.count() -1 )
+        if (m_shuffled_current >= m_shuffled_indexes.count() - 1)
         {
             if (!m_model->isRepeatableList())
                 return false;
             else
                 prepare();
-        }
-
-        if (m_shuffled_current < m_shuffled_indexes.count() - 1)m_shuffled_current++;
+        } else 
+            m_shuffled_current = (m_shuffled_current + 1) % m_shuffled_indexes.count();
 
         return m_model->setCurrent(m_shuffled_indexes.at(m_shuffled_current));
     }
@@ -81,7 +80,7 @@ void ShufflePlayState::prepare()
     }
 
     for (int i = 0;i < m_shuffled_indexes.count();i++)
-        m_shuffled_indexes.swap(qrand()%m_shuffled_indexes.size(),qrand()%m_shuffled_indexes.size());
+        m_shuffled_indexes.swap(i, qrand()%m_shuffled_indexes.size());
 
     m_shuffled_indexes.prepend(m_model->currentRow());
 }
