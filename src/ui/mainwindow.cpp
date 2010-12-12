@@ -388,6 +388,12 @@ void MainWindow::toggleVisibility()
         activateWindow();
         m_playlist->setVisible(m_display->isPlaylistVisible());
         m_equalizer->setVisible(m_display->isEqualizerVisible());
+        QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+        if(settings.value("General/metacity_compat", false).toBool())
+        {
+            m_playlist->activateWindow();
+            m_equalizer->activateWindow();
+        }
         qApp->processEvents();
         setFocus ();
         if (isMinimized())
