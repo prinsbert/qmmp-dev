@@ -979,118 +979,118 @@
         <translation>Wybierz jeden lub więcej plików do otwarcia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="421"/>
         <source>&amp;Play</source>
         <translation>&amp;Odtwarzaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="421"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="422"/>
         <source>&amp;Pause</source>
         <translation>&amp;Wstrzymaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="422"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>&amp;Stop</source>
         <translation>&amp;Zatrzymaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>V</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="424"/>
         <source>&amp;Previous</source>
         <translation>&amp;Poprzedni</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="424"/>
         <source>Z</source>
         <translation>Z</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="425"/>
         <source>&amp;Next</source>
         <translation>&amp;Następny</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="425"/>
         <source>B</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="444"/>
         <source>&amp;Jump To File</source>
         <translation>&amp;Skocz do pliku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="444"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="444"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>&amp;Settings</source>
         <translation>&amp;Ustawienia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="444"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="456"/>
         <source>&amp;Exit</source>
         <translation>&amp;Wyjście</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="456"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="492"/>
         <source>Open Playlist</source>
         <translation>Otwórz listę odtwarzania</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
+        <location filename="../mainwindow.cpp" line="517"/>
         <source>Save Playlist</source>
         <translation>Zapisz listę odtwarzania</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="446"/>
+        <location filename="../mainwindow.cpp" line="452"/>
         <source>&amp;About</source>
         <translation>&amp;O programie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="484"/>
-        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="490"/>
+        <location filename="../mainwindow.cpp" line="516"/>
         <source>Playlist Files</source>
         <translation>Pliki listy odtwarzania</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="420"/>
+        <location filename="../mainwindow.cpp" line="426"/>
         <source>Space</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="447"/>
+        <location filename="../mainwindow.cpp" line="453"/>
         <source>&amp;About Qt</source>
         <translation>&amp;O Qt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="420"/>
+        <location filename="../mainwindow.cpp" line="426"/>
         <source>&amp;Play/Pause</source>
         <translation>&amp;Odtwarzaj/Wstrzymaj</translation>
     </message>
@@ -1100,37 +1100,37 @@
         <translation>Wszystkie wspierane formaty</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="423"/>
+        <location filename="../mainwindow.cpp" line="429"/>
         <source>&amp;Repeat Track</source>
         <translation>&amp;Powtórz utwór</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="424"/>
+        <location filename="../mainwindow.cpp" line="430"/>
         <source>&amp;Shuffle</source>
         <translation>&amp;Losowo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="428"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>R</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="429"/>
+        <location filename="../mainwindow.cpp" line="435"/>
         <source>Ctrl+R</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="430"/>
+        <location filename="../mainwindow.cpp" line="436"/>
         <source>S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="422"/>
+        <location filename="../mainwindow.cpp" line="428"/>
         <source>&amp;Repeat Playlist</source>
         <translation>Powtó&amp;rz listę odtwarzania</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="442"/>
+        <location filename="../mainwindow.cpp" line="448"/>
         <source>Tools</source>
         <translation>Narzędzia</translation>
     </message>

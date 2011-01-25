@@ -979,118 +979,118 @@
         <translation>Виберіть один чи кілька файлів</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="421"/>
         <source>&amp;Play</source>
         <translation>&amp;Відтворити</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="421"/>
         <source>X</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="422"/>
         <source>&amp;Pause</source>
         <translation>&amp;Пауза</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="422"/>
         <source>C</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>&amp;Stop</source>
         <translation>&amp;Стоп</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>V</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="424"/>
         <source>&amp;Previous</source>
         <translation>&amp;Назад</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="424"/>
         <source>Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="425"/>
         <source>&amp;Next</source>
         <translation>&amp;Вперед</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="425"/>
         <source>B</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="444"/>
         <source>&amp;Jump To File</source>
         <translation>&amp;Перейти до файлу</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="444"/>
         <source>J</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="444"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>&amp;Settings</source>
         <translation>&amp;Налаштування</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="444"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>Ctrl+P</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="456"/>
         <source>&amp;Exit</source>
         <translation>&amp;Вихід</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="456"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="492"/>
         <source>Open Playlist</source>
         <translation>Відкрити список</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
+        <location filename="../mainwindow.cpp" line="517"/>
         <source>Save Playlist</source>
         <translation>Зберегти список</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="446"/>
+        <location filename="../mainwindow.cpp" line="452"/>
         <source>&amp;About</source>
         <translation>&amp;Про програму</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="484"/>
-        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="490"/>
+        <location filename="../mainwindow.cpp" line="516"/>
         <source>Playlist Files</source>
         <translation>Файли списків</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="420"/>
+        <location filename="../mainwindow.cpp" line="426"/>
         <source>Space</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="447"/>
+        <location filename="../mainwindow.cpp" line="453"/>
         <source>&amp;About Qt</source>
         <translation>&amp;Про Qt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="420"/>
+        <location filename="../mainwindow.cpp" line="426"/>
         <source>&amp;Play/Pause</source>
         <translation>&amp;Грати/Пауза</translation>
     </message>
@@ -1100,37 +1100,37 @@
         <translation>Усі формати</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="423"/>
+        <location filename="../mainwindow.cpp" line="429"/>
         <source>&amp;Repeat Track</source>
         <translation>&amp;Повторити трек</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="424"/>
+        <location filename="../mainwindow.cpp" line="430"/>
         <source>&amp;Shuffle</source>
         <translation>&amp;Перемішати</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="428"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>R</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="429"/>
+        <location filename="../mainwindow.cpp" line="435"/>
         <source>Ctrl+R</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="430"/>
+        <location filename="../mainwindow.cpp" line="436"/>
         <source>S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="422"/>
+        <location filename="../mainwindow.cpp" line="428"/>
         <source>&amp;Repeat Playlist</source>
         <translation>&amp;Повторити список</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="442"/>
+        <location filename="../mainwindow.cpp" line="448"/>
         <source>Tools</source>
         <translation>Утиліти</translation>
     </message>

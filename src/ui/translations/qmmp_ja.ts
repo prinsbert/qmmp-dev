@@ -984,153 +984,153 @@
         <translation>開きたいファイルを選ぶ (複数可)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="421"/>
         <source>&amp;Play</source>
         <translation>再生(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="421"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="422"/>
         <source>&amp;Pause</source>
         <translation>一時停止(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="422"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>&amp;Stop</source>
         <translation>終止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>V</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="424"/>
         <source>&amp;Previous</source>
         <translation>前の曲(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="424"/>
         <source>Z</source>
         <translation>Z</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="425"/>
         <source>&amp;Next</source>
         <translation>次の曲(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="425"/>
         <source>B</source>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="420"/>
+        <location filename="../mainwindow.cpp" line="426"/>
         <source>&amp;Play/Pause</source>
         <translation>再生/停止(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="420"/>
+        <location filename="../mainwindow.cpp" line="426"/>
         <source>Space</source>
         <translation>Space</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="422"/>
+        <location filename="../mainwindow.cpp" line="428"/>
         <source>&amp;Repeat Playlist</source>
         <translation>プレイリストを繰り返す(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="423"/>
+        <location filename="../mainwindow.cpp" line="429"/>
         <source>&amp;Repeat Track</source>
         <translation>トラックを繰り返す(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="424"/>
+        <location filename="../mainwindow.cpp" line="430"/>
         <source>&amp;Shuffle</source>
         <translation>シャッフル(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="428"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>R</source>
         <translation>R</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="429"/>
+        <location filename="../mainwindow.cpp" line="435"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="430"/>
+        <location filename="../mainwindow.cpp" line="436"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="444"/>
         <source>&amp;Jump To File</source>
         <translation>ファイルを指定して即刻再生(&amp;J)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="444"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="442"/>
+        <location filename="../mainwindow.cpp" line="448"/>
         <source>Tools</source>
         <translation>ツール</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="444"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>&amp;Settings</source>
         <translation>設定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="444"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="446"/>
+        <location filename="../mainwindow.cpp" line="452"/>
         <source>&amp;About</source>
         <translation>QMMPについて(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="447"/>
+        <location filename="../mainwindow.cpp" line="453"/>
         <source>&amp;About Qt</source>
         <translation>Qtについて(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="456"/>
         <source>&amp;Exit</source>
         <translation>終了(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="456"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="484"/>
-        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="490"/>
+        <location filename="../mainwindow.cpp" line="516"/>
         <source>Playlist Files</source>
         <translation>プレイリストファイル</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="492"/>
         <source>Open Playlist</source>
         <translation>プレイリストを開く</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
+        <location filename="../mainwindow.cpp" line="517"/>
         <source>Save Playlist</source>
         <translation>プレイリストを保存</translation>
     </message>
