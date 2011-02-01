@@ -663,53 +663,58 @@
 <context>
     <name>EqWidget</name>
     <message>
-        <location filename="../eqwidget.cpp" line="169"/>
-        <location filename="../eqwidget.cpp" line="192"/>
+        <location filename="../eqwidget.cpp" line="42"/>
+        <source>Equalizer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../eqwidget.cpp" line="170"/>
+        <location filename="../eqwidget.cpp" line="193"/>
         <source>preset</source>
         <translation>beállítás</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="278"/>
+        <location filename="../eqwidget.cpp" line="279"/>
         <source>&amp;Load/Delete</source>
         <translation>&amp;Betölt/Töröl</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="280"/>
+        <location filename="../eqwidget.cpp" line="281"/>
         <source>&amp;Save Preset</source>
         <translation>Beálítás  &amp;mentése</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="281"/>
+        <location filename="../eqwidget.cpp" line="282"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>&amp;Automatikusan betöltödő beállítás mentése</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="282"/>
+        <location filename="../eqwidget.cpp" line="283"/>
         <source>&amp;Import</source>
         <translation>&amp;Importálás</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="284"/>
+        <location filename="../eqwidget.cpp" line="285"/>
         <source>&amp;Clear</source>
         <translation>&amp;Törlés</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="313"/>
+        <location filename="../eqwidget.cpp" line="314"/>
         <source>Saving Preset</source>
         <translation>Beállítások mentése</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="314"/>
+        <location filename="../eqwidget.cpp" line="315"/>
         <source>Preset name:</source>
         <translation>Beállítás neve:</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="315"/>
+        <location filename="../eqwidget.cpp" line="316"/>
         <source>preset #</source>
         <translation>beállítás #</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="406"/>
+        <location filename="../eqwidget.cpp" line="407"/>
         <source>Import Preset</source>
         <translation>Beállítás importálása</translation>
     </message>
@@ -1138,244 +1143,249 @@
 <context>
     <name>PlayList</name>
     <message>
-        <location filename="../playlist.cpp" line="174"/>
+        <location filename="../playlist.cpp" line="175"/>
         <source>&amp;Add File</source>
         <translation>&amp;Fájl hozzáadása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="175"/>
+        <location filename="../playlist.cpp" line="176"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="180"/>
+        <location filename="../playlist.cpp" line="181"/>
         <source>&amp;Add Directory</source>
         <translation>&amp;Könyvtár hazááadása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="181"/>
+        <location filename="../playlist.cpp" line="182"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="186"/>
+        <location filename="../playlist.cpp" line="187"/>
         <source>&amp;Add Url</source>
         <translation>&amp;Url hozzáadása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="187"/>
+        <location filename="../playlist.cpp" line="188"/>
         <source>U</source>
         <translation>U</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="193"/>
+        <location filename="../playlist.cpp" line="194"/>
         <source>&amp;Remove Selected</source>
         <translation>&amp;Megjelöltek eltávolítása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="194"/>
+        <location filename="../playlist.cpp" line="195"/>
         <source>Del</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="199"/>
+        <location filename="../playlist.cpp" line="200"/>
         <source>&amp;Remove All</source>
         <translation>&amp;Összes eltávolítása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="205"/>
+        <location filename="../playlist.cpp" line="206"/>
         <source>&amp;Remove Unselected</source>
         <translation>&amp;Jelöletlenek eltávolítása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="210"/>
+        <location filename="../playlist.cpp" line="211"/>
         <source>Remove unavailable files</source>
         <translation>Elérhetetlen fájlok eltávolítása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="211"/>
+        <location filename="../playlist.cpp" line="212"/>
         <source>Remove duplicates</source>
         <translation>Duplikációk eltávolítása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="214"/>
+        <location filename="../playlist.cpp" line="215"/>
         <source>&amp;View Track Details</source>
         <translation>Szám adatainak &amp;megnézése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="215"/>
+        <location filename="../playlist.cpp" line="216"/>
         <source>Alt+I</source>
         <translation>Alt+I</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="223"/>
+        <location filename="../playlist.cpp" line="224"/>
         <source>Sort List</source>
         <translation>Lista rendezése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="226"/>
-        <location filename="../playlist.cpp" line="260"/>
+        <location filename="../playlist.cpp" line="227"/>
+        <location filename="../playlist.cpp" line="261"/>
         <source>By Title</source>
         <translation>Cím szerint</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="230"/>
-        <location filename="../playlist.cpp" line="264"/>
+        <location filename="../playlist.cpp" line="231"/>
+        <location filename="../playlist.cpp" line="265"/>
         <source>By Album</source>
         <translation>Album szerint</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="234"/>
-        <location filename="../playlist.cpp" line="268"/>
+        <location filename="../playlist.cpp" line="235"/>
+        <location filename="../playlist.cpp" line="269"/>
         <source>By Artist</source>
         <translation>Előadó szerint</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="238"/>
-        <location filename="../playlist.cpp" line="272"/>
+        <location filename="../playlist.cpp" line="239"/>
+        <location filename="../playlist.cpp" line="273"/>
         <source>By Filename</source>
         <translation>Fájlnév szerint</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="242"/>
-        <location filename="../playlist.cpp" line="276"/>
+        <location filename="../playlist.cpp" line="243"/>
+        <location filename="../playlist.cpp" line="277"/>
         <source>By Path + Filename</source>
         <translation>Elérési út és fájlnév szerint</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="246"/>
-        <location filename="../playlist.cpp" line="280"/>
+        <location filename="../playlist.cpp" line="247"/>
+        <location filename="../playlist.cpp" line="281"/>
         <source>By Date</source>
         <translation>Dátum szerint</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="250"/>
-        <location filename="../playlist.cpp" line="284"/>
+        <location filename="../playlist.cpp" line="251"/>
+        <location filename="../playlist.cpp" line="285"/>
         <source>By Track Number</source>
         <translation>Zene sorszáma szerint</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="258"/>
+        <location filename="../playlist.cpp" line="259"/>
         <source>Sort Selection</source>
         <translation>Jelöltek rendezése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="293"/>
+        <location filename="../playlist.cpp" line="294"/>
         <source>Randomize List</source>
         <translation>Lista összekeverése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="294"/>
+        <location filename="../playlist.cpp" line="295"/>
         <source>Reverse List</source>
         <translation>Fordított lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="299"/>
+        <location filename="../playlist.cpp" line="300"/>
         <source>Actions</source>
         <translation>Tevékenységek</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="302"/>
+        <location filename="../playlist.cpp" line="303"/>
         <source>&amp;Queue</source>
         <translation>&amp;Sorba tesz</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="302"/>
+        <location filename="../playlist.cpp" line="303"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="306"/>
+        <location filename="../playlist.cpp" line="307"/>
         <source>Invert Selection</source>
         <translation>Fordított kijelölés</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="312"/>
+        <location filename="../playlist.cpp" line="313"/>
         <source>&amp;Select None</source>
         <translation>&amp;Kijelölés megszűntetése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="313"/>
+        <location filename="../playlist.cpp" line="314"/>
         <source>Shift+A</source>
         <translation>Shift+A</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="318"/>
+        <location filename="../playlist.cpp" line="319"/>
         <source>&amp;Select All</source>
         <translation>&amp;Összes kijelölése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="319"/>
+        <location filename="../playlist.cpp" line="320"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="325"/>
+        <location filename="../playlist.cpp" line="326"/>
         <source>&amp;New List</source>
         <translation>&amp;Új lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="326"/>
+        <location filename="../playlist.cpp" line="327"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="330"/>
+        <location filename="../playlist.cpp" line="331"/>
         <source>&amp;Delete List</source>
         <translation>&amp;Lista törlése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="331"/>
+        <location filename="../playlist.cpp" line="332"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="350"/>
+        <location filename="../playlist.cpp" line="351"/>
         <source>&amp;Select Next Playlist</source>
         <translation>&amp;Következő lista választása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="351"/>
+        <location filename="../playlist.cpp" line="352"/>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="356"/>
+        <location filename="../playlist.cpp" line="357"/>
         <source>&amp;Select Previous Playlist</source>
         <translation>&amp;Előző lista választása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="357"/>
+        <location filename="../playlist.cpp" line="358"/>
         <source>Ctrl+PgUp</source>
         <translation>Ctrl+PgUp</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="362"/>
+        <location filename="../playlist.cpp" line="363"/>
         <source>&amp;Show Playlists</source>
         <translation>&amp;Lejátszási lista mutatása</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="363"/>
+        <location filename="../playlist.cpp" line="364"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="337"/>
+        <location filename="../playlist.cpp" line="338"/>
         <source>&amp;Load List</source>
         <translation>&amp;Lista betöltése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="338"/>
+        <location filename="../playlist.cpp" line="54"/>
+        <source>Playlist</source>
+        <translation type="unfinished">Lejátszási lista</translation>
+    </message>
+    <message>
+        <location filename="../playlist.cpp" line="339"/>
         <source>O</source>
         <translation>O</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="343"/>
+        <location filename="../playlist.cpp" line="344"/>
         <source>&amp;Save List</source>
         <translation>Lista &amp;mentése</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="344"/>
+        <location filename="../playlist.cpp" line="345"/>
         <source>Shift+S</source>
         <translation>Shift+S</translation>
     </message>
