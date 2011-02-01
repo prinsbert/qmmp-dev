@@ -112,6 +112,7 @@ CUEParser::CUEParser(const QString &fileName)
             path.replace("%", QString(QUrl::toPercentEncoding("%"))); //replace special symbols
             path.replace("#", QString(QUrl::toPercentEncoding("#")));
             path.replace("?", QString(QUrl::toPercentEncoding("?")));
+	    path.replace(":", QString(QUrl::toPercentEncoding(":")));
             FileInfo info("cue://" + path + QString("#%1").arg(words[1].toInt()));
             info.setMetaData(Qmmp::TRACK, words[1].toInt());
             info.setMetaData(Qmmp::ALBUM, album);
