@@ -30,8 +30,18 @@
 #endif
 #include "cueparser.h"
 
-CUEParser::CUEParser(const QString &fileName)
+CUEParser::CUEParser(const QString &url)
 {
+    QString fileName = url;
+    if(url.contains("://"))
+    {
+        QString p = QUrl(url).path();
+        p.replace(QString(QUrl::toPercentEncoding("#")), "#");
+        p.replace(QString(QUrl::toPercentEncoding("?")), "?");
+        p.replace(QString(QUrl::toPercentEncoding("%")), "%");
+        p.replace(QString(QUrl::toPercentEncoding(":")), ":");
+        fileName = p;
+    }
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly))
     {
@@ -112,7 +122,7 @@ CUEParser::CUEParser(const QString &fileName)
             path.replace("%", QString(QUrl::toPercentEncoding("%"))); //replace special symbols
             path.replace("#", QString(QUrl::toPercentEncoding("#")));
             path.replace("?", QString(QUrl::toPercentEncoding("?")));
-	    path.replace(":", QString(QUrl::toPercentEncoding(":")));
+            path.replace(":", QString(QUrl::toPercentEncoding(":")));
             FileInfo info("cue://" + path + QString("#%1").arg(words[1].toInt()));
             info.setMetaData(Qmmp::TRACK, words[1].toInt());
             info.setMetaData(Qmmp::ALBUM, album);

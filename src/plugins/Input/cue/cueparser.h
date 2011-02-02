@@ -30,12 +30,12 @@
 
 
 /**
-	@author Ilya Kotov <forkotov02@hotmail.ru>
+    @author Ilya Kotov <forkotov02@hotmail.ru>
 */
 class CUEParser
 {
 public:
-    CUEParser(const QString &fileName);
+    CUEParser(const QString &url);
 
     ~CUEParser();
 
