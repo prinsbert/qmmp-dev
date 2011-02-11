@@ -249,7 +249,7 @@ qint64 OutputALSA::writeAudio(unsigned char *data, qint64 maxSize)
         m_prebuf_size = m_prebuf_fill + maxSize;
         m_prebuf = (uchar*) realloc(m_prebuf, m_prebuf_size);
     }
-    memcpy(m_prebuf + m_prebuf_fill, data, maxSize);
+    memmove(m_prebuf + m_prebuf_fill, data, maxSize);
     m_prebuf_fill += maxSize;
 
     snd_pcm_uframes_t l = snd_pcm_bytes_to_frames(pcm_handle, m_prebuf_fill);
@@ -263,7 +263,7 @@ qint64 OutputALSA::writeAudio(unsigned char *data, qint64 maxSize)
             l -= m;
             m = snd_pcm_frames_to_bytes(pcm_handle, m); // convert frames to bytes
             m_prebuf_fill -= m;
-            memcpy(m_prebuf, m_prebuf + m, m_prebuf_fill); //move data to begin
+            memmove(m_prebuf, m_prebuf + m, m_prebuf_fill); //move data to begin
         }
         else
             return -1;
@@ -283,7 +283,7 @@ void OutputALSA::flush()
             l -= m;
             m = snd_pcm_frames_to_bytes(pcm_handle, m); // convert frames to bytes
             m_prebuf_fill -= m;
-            memcpy(m_prebuf, m_prebuf + m, m_prebuf_fill);
+            memmove(m_prebuf, m_prebuf + m, m_prebuf_fill);
         }
         else
             break;

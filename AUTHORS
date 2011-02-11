@@ -24,7 +24,7 @@ Translators:
     German - Panagiotis Papadopoulos <pano_90@gmx.net>
     Hungarian - Németh Gábor <sutee84@freemail.hu>
     Italian - Gian Paolo Renello <emmerkar@gmail.com>
-    Japan - Ryota Shimamoto <liangtai.s4@gmail.com>
+    Japanese - Ryota Shimamoto <liangtai.s4@gmail.com>
     Kazakh - Baurzhan Muftakhidinov <baurthefirst@gmail.com>
     Lithuanian - Algirdas Butkus <butkus.algirdas@gmail.com>
     Polish - Grzegorz Gibas <amigib@gmail.com>
@@ -38,13 +38,17 @@ Thanks to:
 
     Adria Arrufat <swiftscythe@gmail.com> - bug reports
     Adrian Knoth <adi@drcomp.erfurt.thur.de> - jack plugin fixes, bug reports
+    Anton Petrusevich <casus@casus.us> - random playback improvements
+    Avihay Baratz <avihayb@gmail.com> - auto stop feature, bug fixes
     Csaba Hruska <csaba.hruska@gmail.com> - ffmpeg plugin fixes
     Dmitry Kostin <kostindima@gmail.com> - iso.wv support
+    Evgeny Gleyzerman <evgley@gmail.com> - cue parsing improvements
     Gennadi Motsyo <drool@altlinux.ru> - bug reports
     Vadim Kalinnikov <moose@ylsoftware.com> - project hosting
     Erik Ölsar <erlk.ozlr@gmail.com> - skinned cursors, ui improvements
     Funda Wang <fundawang@gmail.com> - cmake files fixes
-    Michail Zeludkov <zheludkovm@mail.ru> - ffmpeg plugin fixes
+    Michail Zheludkov <zheludkovm@mail.ru> - ffmpeg plugin fixes
+    Michał Grosicki <grosik88@o2.pl> - alsa plugin fixes
     Panagiotis Papadopoulos <pano_90@gmx.net> - ui fixes, bug reports
     Pino Toscano <toscano.pino@tiscali.it> - portability patches
     Karel Volný <kvolny@redhat.com> - various fixes
@@ -108,3 +112,7 @@ BMP-ladspa - LADSPA Host for BMP (c) 2002-2003
 
     Nick Lamb <njl195@zepler.org.uk>
     Giacomo Lozito <city_hunter@users.sf.net>
+
+Licq - an instant messaging client for UNIX (C) 2006-2009
+
+    Licq developers
