@@ -263,7 +263,7 @@ Version 0.3.0
 * added more formats provided by ffmpeg library (including monkey's audio)
 * added global hotkey support
 * added mpris support
-* added lyrics plugin (uses lyricswiki.org)
+* added lyrics plugin (uses lyricwiki.org)
 * added removable device support (with help of hal)
 * added file operations plugin
 * added projectm visual plugin
@@ -453,3 +453,15 @@ Version 0.4.3
 * fixed Russian translation
 * fixed crash when adding multiple directories simultaneously
 * fixed add/remove effects problem
+
+Version 0.4.4
+* added possibility to save cue tracks inside playlist files
+* optimized ladspa plugin
+* fixed random playback (Anton Petrusevich)
+* fixed metacity support
+* fixed windows titles
+* fixed cue parsing
+* fixed problem with glibc 2.13 (Michał Grosicki) 
+* switched to LyricWiki again
+* updated Japanese translation (Ryota Shimamoto)
+* updated Russian translation
