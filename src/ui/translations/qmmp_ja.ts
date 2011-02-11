@@ -285,12 +285,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="377"/>
         <source>Always on top</source>
-        <translation type="unfinished">常に最前面に</translation>
+        <translation>常に最前面に</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="384"/>
         <source>Double size</source>
-        <translation type="unfinished">2倍サイズ</translation>
+        <translation>2倍サイズ</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="394"/>
@@ -395,22 +395,22 @@
     <message>
         <location filename="../forms/configdialog.ui" line="713"/>
         <source>Visibility Control</source>
-        <translation type="unfinished"></translation>
+        <translation>表示の調整</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="736"/>
         <source>Compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation>親和性</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="742"/>
         <source>Openbox compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Openbox と調和</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="749"/>
         <source>Metacity compatibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Metacity と調和</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="759"/>
@@ -665,7 +665,7 @@
     <message>
         <location filename="../eqwidget.cpp" line="42"/>
         <source>Equalizer</source>
-        <translation type="unfinished">イコライザ</translation>
+        <translation>イコライザ</translation>
     </message>
     <message>
         <location filename="../eqwidget.cpp" line="170"/>
@@ -736,7 +736,7 @@
         <location filename="../jumptotrackdialog.cpp" line="89"/>
         <location filename="../jumptotrackdialog.cpp" line="140"/>
         <source>Queue</source>
-        <translation type="unfinished"></translation>
+        <translation>キュー</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="86"/>
@@ -751,7 +751,7 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="100"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../jumptotrackdialog.cpp" line="53"/>
@@ -772,7 +772,7 @@
         <location filename="../jumptotrackdialog.cpp" line="87"/>
         <location filename="../jumptotrackdialog.cpp" line="138"/>
         <source>Unqueue</source>
-        <translation type="unfinished"></translation>
+        <translation>キューから除く</translation>
     </message>
 </context>
 <context>
@@ -1145,7 +1145,7 @@
     <message>
         <location filename="../playlist.cpp" line="54"/>
         <source>Playlist</source>
-        <translation type="unfinished">プレイリスト</translation>
+        <translation>プレイリスト</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="175"/>
@@ -1287,7 +1287,7 @@
     <message>
         <location filename="../playlist.cpp" line="303"/>
         <source>&amp;Queue</source>
-        <translation type="unfinished"></translation>
+        <translation>キューに追加(&amp;Q)</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="303"/>
