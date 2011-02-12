@@ -3,10 +3,9 @@ SUBDIRS += statusicon \
            lyrics \
            scrobbler \
            fileops
-unix:SUBDIRS += mpris \                
+unix:SUBDIRS += mpris \
                 hal \
                 hotkey \
                 covermanager \
-                kdenotify \
-                streambrowser
+                kdenotify
 TEMPLATE = subdirs
