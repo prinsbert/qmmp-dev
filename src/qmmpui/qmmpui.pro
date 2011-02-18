@@ -78,7 +78,8 @@ TRANSLATIONS = translations/libqmmpui_ru.ts \
     translations/libqmmpui_ja.ts \
     translations/libqmmpui_es.ts
 unix { 
-    devel.files += abstractplaylistitem.h \
+    devel.files += general.h \
+                   abstractplaylistitem.h \
                    generalfactory.h \
                    generalhandler.h \
                    playlistformat.h \

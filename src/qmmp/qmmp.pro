@@ -77,7 +77,7 @@ contains(CONFIG, SVN_VERSION) {
 }
 unix { 
     target.path = $$LIB_DIR
-    devel.files += buffer.h \
+    devel.files += recycler.h \
                    buffer.h \
                    decoder.h \
                    output.h \
