@@ -465,3 +465,11 @@ Version 0.4.4
 * switched to LyricWiki again
 * updated Japanese translation (Ryota Shimamoto)
 * updated Russian translation
+
+Version 0.4.5
+* added support for read-only options to ladspa plugin
+* fixed qmake build (Ryota Shimamoto)
+* fixed headers list (Ryota Shimamoto)
+* fixed typos
+* fixed scrobbler plugin (Ferdinand Vesely)
+
