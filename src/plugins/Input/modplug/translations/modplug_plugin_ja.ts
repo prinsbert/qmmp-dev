@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="133"/>
         <source>Based on the Modplug Plugin for Xmms</source>
-        <translation>XMMS 用 ModPlug プラグインを流用</translation>
+        <translation>XMMS 用 ModPlug プラグインを基に作成</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="134"/>
