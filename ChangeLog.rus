@@ -473,8 +473,7 @@ Version 0.2.3
 Версия 0.4.5
 * добавлена поддержка опций "только для чтения" в модуль LADSPA
 * исправлена сборка с помощью qmake (Ryota Shimamoto)
-* исправлена (Ryota Shimamoto)
+* исправлен список заголовочный файлов (Ryota Shimamoto)
 * исправлены опечатки
 * исправлен модуль scrobbler (Ferdinand Vesely)
 * обновлён японский перевод (Ryota Shimamoto)
-
