@@ -527,4 +527,5 @@ Version 0.5.1
 * fixed build scripts
 * fixed signals synchronization
 * fixed mplayer support
+* fixed segmentation fault in the alsa settings dialog
 * removed internal api usage from gme plugin
