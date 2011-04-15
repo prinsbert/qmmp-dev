@@ -521,6 +521,7 @@ Version 0.5.0
 * updated Lithuanian translation (Algirdas Butkus)
 
 Version 0.5.1
+* added ffmpeg 0.6.90-rc0 support
 * decreased startup delay
 * fixed visualization bug
 * fixed scrobbler plugin
