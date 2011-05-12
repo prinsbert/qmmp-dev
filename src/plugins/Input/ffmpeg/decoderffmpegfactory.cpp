@@ -96,6 +96,7 @@ const DecoderProperties DecoderFFmpegFactory::properties() const
     {
         properties.contentTypes << "audio/3gpp" << "audio/3gpp2" << "audio/mp4";
         properties.contentTypes << "audio/MP4A-LATM" << "audio/mpeg4-generic";
+        properties.contentTypes << "audio/m4a";
     }
     if(filters.contains("*.ac3"))
         properties.contentTypes << "audio/ac3";
@@ -141,6 +142,8 @@ QList<FileInfo *> DecoderFFmpegFactory::createPlayList(const QString &fileName, 
         AVMetadataTag *year = av_metadata_get(in->metadata,"WM/Year",0,0);
         if(!year)
             year = av_metadata_get(in->metadata,"year",0,0);
+        if(!year)
+            year = av_metadata_get(in->metadata,"date",0,0);
         AVMetadataTag *track = av_metadata_get(in->metadata,"track",0,0);
         if(!track)
             track = av_metadata_get(in->metadata,"WM/Track",0,0);
