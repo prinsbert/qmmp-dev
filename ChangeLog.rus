@@ -535,15 +535,13 @@ Version 0.2.3
 * исправлена синхронизация сигналов
 * исправлена поддержка mplayer-а
 * исправлена ошибка сегментации в настройках модуля alsa
-* fixed status icon bugs (patch by Artur Guzik)
-* fixed skinned button bug
-* fixed broken mpris2
-* fixed windows overlapping at left side of screen (Artur Guzik)
-* fixed frozen while cycling through deleted files in playlist
-* fixed status icon bugs (Artur Guzik)
-* fixed skinned button bug
-* fixed metacity support
+* исправлена поддержка mpris2
+* исправлено перекрывание главного окна в левой части экрана (Artur Guzik)
+* исправлено зависание на несуществующих файлах
+* исправлены ошибки в поддержке системного лотка (Artur Guzik)
+* исправлена ошибка в обработке нажатия кнопок
+* исправлена поддержка metacity
 * удалены вызовы внутреннего api из модуля gme
 * обновлён китайский традиционный перевод (lon)
 * обновлён китайский упрощённый перевод (lon)
-
+* обновлён немецкий перевод (Panagiotis Papadopoulos)

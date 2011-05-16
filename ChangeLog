@@ -531,8 +531,6 @@ Version 0.5.1
 * fixed signals synchronization
 * fixed mplayer support
 * fixed segmentation fault in the alsa settings dialog
-* fixed status icon bugs (patch by Artur Guzik)
-* fixed skinned button bug
 * fixed broken mpris2
 * fixed windows overlapping at left side of screen (Artur Guzik)
 * fixed frozen while cycling through deleted files in playlist
@@ -542,4 +540,4 @@ Version 0.5.1
 * removed internal api usage from gme plugin
 * updated Chinese Traditional translation (lon)
 * updated Chinese Simplified translation (lon)
-
+* updated German translation (Panagiotis Papadopoulos)
