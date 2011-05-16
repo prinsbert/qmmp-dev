@@ -521,8 +521,9 @@ Version 0.5.0
 * updated Lithuanian translation (Algirdas Butkus)
 
 Version 0.5.1
-* added ffmpeg 0.6.90-rc0 support
+* added latest ffmpeg support
 * added ac3 support
+* added possibility to switch normal/shaded mode by double click (Panagiotis Papadopoulos)
 * decreased startup delay
 * fixed visualization bug
 * fixed scrobbler plugin
@@ -530,4 +531,15 @@ Version 0.5.1
 * fixed signals synchronization
 * fixed mplayer support
 * fixed segmentation fault in the alsa settings dialog
+* fixed status icon bugs (patch by Artur Guzik)
+* fixed skinned button bug
+* fixed broken mpris2
+* fixed windows overlapping at left side of screen (Artur Guzik)
+* fixed frozen while cycling through deleted files in playlist
+* fixed status icon bugs (Artur Guzik)
+* fixed skinned button bug
+* fixed metacity support
 * removed internal api usage from gme plugin
+* updated Chinese Traditional translation (lon)
+* updated Chinese Simplified translation (lon)
+

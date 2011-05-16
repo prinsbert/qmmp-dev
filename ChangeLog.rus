@@ -525,8 +525,9 @@ Version 0.2.3
 * обновлён литовский перевод (Algirdas Butkus)
 
 Версия 0.5.1
-* добавлена поддержка ffmpeg 0.6.90-rc0
+* добавлена поддержка последней версии ffmpeg
 * добавлена поддержка ac3
+* added possibility to switch normal/shaded mode by double click (Panagiotis Papadopoulos)
 * уменьшено время старта программы
 * исправлена ошибка в визуализации
 * исправлен модуль scrobbler
@@ -534,4 +535,15 @@ Version 0.2.3
 * исправлена синхронизация сигналов
 * исправлена поддержка mplayer-а
 * исправлена ошибка сегментации в настройках модуля alsa
+* fixed status icon bugs (patch by Artur Guzik)
+* fixed skinned button bug
+* fixed broken mpris2
+* fixed windows overlapping at left side of screen (Artur Guzik)
+* fixed frozen while cycling through deleted files in playlist
+* fixed status icon bugs (Artur Guzik)
+* fixed skinned button bug
+* fixed metacity support
 * удалены вызовы внутреннего api из модуля gme
+* обновлён китайский традиционный перевод (lon)
+* обновлён китайский упрощённый перевод (lon)
+
