@@ -527,7 +527,7 @@ Version 0.2.3
 Версия 0.5.1
 * добавлена поддержка последней версии ffmpeg
 * добавлена поддержка ac3
-* added possibility to switch normal/shaded mode by double click (Panagiotis Papadopoulos)
+* добавлена возможность переключения в минимальный режим по двойному щелчку (Panagiotis Papadopoulos)
 * уменьшено время старта программы
 * исправлена ошибка в визуализации
 * исправлен модуль scrobbler
