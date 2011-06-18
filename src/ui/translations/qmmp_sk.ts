@@ -488,12 +488,12 @@
 <context>
     <name>BuiltinCommandLineOption</name>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="62"/>
+        <location filename="../builtincommandlineoption.cpp" line="61"/>
         <source>Skip forward in playlist</source>
         <translation>Posunúť sa v plaliste</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="63"/>
+        <location filename="../builtincommandlineoption.cpp" line="62"/>
         <source>Skip backwards in playlist</source>
         <translation>Vrátiť sa v playliste</translation>
     </message>
@@ -529,26 +529,21 @@
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="60"/>
-        <source>Quit application</source>
-        <translation>Ukončiť program</translation>
-    </message>
-    <message>
-        <location filename="../builtincommandlineoption.cpp" line="61"/>
         <source>Set playback volume (example: qmmp --volume 20)</source>
         <translation>Nastaviť hlasitosť prehrávania (napríklad: qmmp --volume 20)</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="64"/>
+        <location filename="../builtincommandlineoption.cpp" line="63"/>
         <source>Show/hide application</source>
         <translation>Zobraziť/skryť program</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="65"/>
+        <location filename="../builtincommandlineoption.cpp" line="64"/>
         <source>Display Add File dialog</source>
         <translation>Zobraziť dialóg Pridať súbor</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="66"/>
+        <location filename="../builtincommandlineoption.cpp" line="65"/>
         <source>Display Add Directory dialog</source>
         <translation>Zobraziť dialóg Pridať priečinok</translation>
     </message>
@@ -1395,58 +1390,58 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="237"/>
+        <location filename="../mainwindow.cpp" line="245"/>
         <source>Choose a directory</source>
         <translation>Vyberte priečinok</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="248"/>
+        <location filename="../mainwindow.cpp" line="256"/>
         <source>Select one or more files to open</source>
         <translation>Vyberte jeden alebo viac súborov na otvorenie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="422"/>
+        <location filename="../mainwindow.cpp" line="430"/>
         <source>&amp;Jump To File</source>
         <translation>&amp;Preskočiť na súbor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="423"/>
+        <location filename="../mainwindow.cpp" line="431"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="425"/>
+        <location filename="../mainwindow.cpp" line="433"/>
         <source>View</source>
         <translation>Zobraziť</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="433"/>
+        <location filename="../mainwindow.cpp" line="441"/>
         <source>Playlist</source>
         <translation>Playlist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="503"/>
-        <location filename="../mainwindow.cpp" line="529"/>
+        <location filename="../mainwindow.cpp" line="511"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Playlist Files</source>
         <translation>Súbory playlistov</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="505"/>
+        <location filename="../mainwindow.cpp" line="513"/>
         <source>Open Playlist</source>
         <translation>Otvoriť playlist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="530"/>
+        <location filename="../mainwindow.cpp" line="538"/>
         <source>Save Playlist</source>
         <translation>Uložiť playlist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="243"/>
+        <location filename="../mainwindow.cpp" line="251"/>
         <source>All Supported Bitstreams</source>
         <translation>Všetky podporované formáty</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="453"/>
+        <location filename="../mainwindow.cpp" line="461"/>
         <source>Tools</source>
         <translation>Nástroje</translation>
     </message>
@@ -1748,32 +1743,32 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="212"/>
+        <location filename="../qmmpstarter.cpp" line="176"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Použitie: qmmp [možnosti] [súbory]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="213"/>
+        <location filename="../qmmpstarter.cpp" line="177"/>
         <source>Options:</source>
         <translation>Možnosti:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="217"/>
+        <location filename="../qmmpstarter.cpp" line="181"/>
         <source>Don&apos;t start the application</source>
         <translation>Nezapnúť program</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="219"/>
+        <location filename="../qmmpstarter.cpp" line="183"/>
         <source>Print version number and exit</source>
         <translation>Vypísať číslo verzie a skončiť</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="220"/>
+        <location filename="../qmmpstarter.cpp" line="184"/>
         <source>Ideas, patches, bugreports send to forkotov02@hotmail.ru</source>
         <translation>Nápady, záplaty, hlásenie chýb posílejte na forkotov02@hotmail.ru (anglicky)</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="218"/>
+        <location filename="../qmmpstarter.cpp" line="182"/>
         <source>Display this text and exit</source>
         <translation>Zobraziť tento text a skončiť</translation>
     </message>
@@ -1783,12 +1778,12 @@
         <translation>Neznámý príkaz</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="225"/>
+        <location filename="../qmmpstarter.cpp" line="189"/>
         <source>QMMP version:</source>
         <translation>Verzia QMMP:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="226"/>
+        <location filename="../qmmpstarter.cpp" line="190"/>
         <source>Qt version:</source>
         <translation>Verzia Qt:</translation>
     </message>
