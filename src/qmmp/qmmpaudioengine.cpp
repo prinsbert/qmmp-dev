@@ -244,6 +244,8 @@ void QmmpAudioEngine::stop()
     m_user_stop = true;
     mutex()->unlock();
 
+    wait();
+
     if (m_output)
     {
         m_output->mutex()->lock ();
@@ -263,8 +265,6 @@ void QmmpAudioEngine::stop()
         m_output->recycler()->cond()->wakeAll();
         m_output->recycler()->mutex()->unlock();
     }
-
-    wait();
 
     if (m_output)
     {
