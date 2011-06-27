@@ -1449,84 +1449,84 @@
 <context>
     <name>PlayList</name>
     <message>
-        <location filename="../playlist.cpp" line="205"/>
+        <location filename="../playlist.cpp" line="204"/>
         <source>Sort List</source>
         <translation>Sorteer Lijst</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="208"/>
-        <location filename="../playlist.cpp" line="243"/>
+        <location filename="../playlist.cpp" line="207"/>
+        <location filename="../playlist.cpp" line="242"/>
         <source>By Title</source>
         <translation>Op Titel</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="212"/>
-        <location filename="../playlist.cpp" line="247"/>
+        <location filename="../playlist.cpp" line="211"/>
+        <location filename="../playlist.cpp" line="246"/>
         <source>By Album</source>
         <translation>Op Album</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="216"/>
-        <location filename="../playlist.cpp" line="251"/>
+        <location filename="../playlist.cpp" line="215"/>
+        <location filename="../playlist.cpp" line="250"/>
         <source>By Artist</source>
         <translation>Op Artiest</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="220"/>
-        <location filename="../playlist.cpp" line="255"/>
+        <location filename="../playlist.cpp" line="219"/>
+        <location filename="../playlist.cpp" line="254"/>
         <source>By Filename</source>
         <translation>Op Bestandsnaam</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="224"/>
-        <location filename="../playlist.cpp" line="259"/>
+        <location filename="../playlist.cpp" line="223"/>
+        <location filename="../playlist.cpp" line="258"/>
         <source>By Path + Filename</source>
         <translation>Op Pad + Bestandsnaam</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="228"/>
-        <location filename="../playlist.cpp" line="263"/>
+        <location filename="../playlist.cpp" line="227"/>
+        <location filename="../playlist.cpp" line="262"/>
         <source>By Date</source>
         <translation>Op Datum</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="240"/>
+        <location filename="../playlist.cpp" line="239"/>
         <source>Sort Selection</source>
         <translation>Sorteer Selectie</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="275"/>
+        <location filename="../playlist.cpp" line="274"/>
         <source>Randomize List</source>
         <translation>Schud Lijst</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="277"/>
+        <location filename="../playlist.cpp" line="276"/>
         <source>Reverse List</source>
         <translation>Draai Lijst Om</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="551"/>
+        <location filename="../playlist.cpp" line="550"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="178"/>
+        <location filename="../playlist.cpp" line="177"/>
         <source>&amp;Copy Selection To</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="54"/>
+        <location filename="../playlist.cpp" line="53"/>
         <source>Playlist</source>
         <translation type="unfinished">Afspeellijst</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="232"/>
-        <location filename="../playlist.cpp" line="267"/>
+        <location filename="../playlist.cpp" line="231"/>
+        <location filename="../playlist.cpp" line="266"/>
         <source>By Track Number</source>
         <translation>Op Lied Nummer</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="284"/>
+        <location filename="../playlist.cpp" line="283"/>
         <source>Actions</source>
         <translation>Acties</translation>
     </message>

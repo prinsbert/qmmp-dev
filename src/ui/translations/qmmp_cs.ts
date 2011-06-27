@@ -1449,84 +1449,84 @@
 <context>
     <name>PlayList</name>
     <message>
-        <location filename="../playlist.cpp" line="205"/>
+        <location filename="../playlist.cpp" line="204"/>
         <source>Sort List</source>
         <translation>Seřadit seznam</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="208"/>
-        <location filename="../playlist.cpp" line="243"/>
+        <location filename="../playlist.cpp" line="207"/>
+        <location filename="../playlist.cpp" line="242"/>
         <source>By Title</source>
         <translation>Podle názvu skladby</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="212"/>
-        <location filename="../playlist.cpp" line="247"/>
+        <location filename="../playlist.cpp" line="211"/>
+        <location filename="../playlist.cpp" line="246"/>
         <source>By Album</source>
         <translation>Podle alba</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="216"/>
-        <location filename="../playlist.cpp" line="251"/>
+        <location filename="../playlist.cpp" line="215"/>
+        <location filename="../playlist.cpp" line="250"/>
         <source>By Artist</source>
         <translation>Podle umělce</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="220"/>
-        <location filename="../playlist.cpp" line="255"/>
+        <location filename="../playlist.cpp" line="219"/>
+        <location filename="../playlist.cpp" line="254"/>
         <source>By Filename</source>
         <translation>Podle názvu souboru</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="224"/>
-        <location filename="../playlist.cpp" line="259"/>
+        <location filename="../playlist.cpp" line="223"/>
+        <location filename="../playlist.cpp" line="258"/>
         <source>By Path + Filename</source>
         <translation>Podle cesty a názvu souboru</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="228"/>
-        <location filename="../playlist.cpp" line="263"/>
+        <location filename="../playlist.cpp" line="227"/>
+        <location filename="../playlist.cpp" line="262"/>
         <source>By Date</source>
         <translation>Podle data</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="240"/>
+        <location filename="../playlist.cpp" line="239"/>
         <source>Sort Selection</source>
         <translation>Seřadit výběr</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="275"/>
+        <location filename="../playlist.cpp" line="274"/>
         <source>Randomize List</source>
         <translation>Zamíchat seznam</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="277"/>
+        <location filename="../playlist.cpp" line="276"/>
         <source>Reverse List</source>
         <translation>Obrátit pořadí seznamu</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="551"/>
+        <location filename="../playlist.cpp" line="550"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="178"/>
+        <location filename="../playlist.cpp" line="177"/>
         <source>&amp;Copy Selection To</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="54"/>
+        <location filename="../playlist.cpp" line="53"/>
         <source>Playlist</source>
         <translation type="unfinished">Seznam skladeb</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="232"/>
-        <location filename="../playlist.cpp" line="267"/>
+        <location filename="../playlist.cpp" line="231"/>
+        <location filename="../playlist.cpp" line="266"/>
         <source>By Track Number</source>
         <translation>Podle čísla skladby</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="284"/>
+        <location filename="../playlist.cpp" line="283"/>
         <source>Actions</source>
         <translation>Činnosti</translation>
     </message>
