@@ -29,7 +29,6 @@ SET(libqmmpui_SRCS
     commandlinemanager.cpp
     filedialog.cpp
     qtfiledialog.cpp
-    abstractplaylistitem.cpp
     fileloader.cpp
     playstate.cpp
     playlistmodel.cpp
