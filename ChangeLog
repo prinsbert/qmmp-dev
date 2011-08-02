@@ -541,3 +541,13 @@ Version 0.5.1
 * updated Chinese Traditional translation (lon)
 * updated Chinese Simplified translation (lon)
 * updated German translation (Panagiotis Papadopoulos)
+
+Version 0.5.2
+* added feature to reset equalizer slider on middle click (Panagiotis Papadopoulos)
+* added recent Psi+ notification support
+* added Slovak translation (Ján Ďanovský)
+* fixed mouse cursor change bug
+* fixed multi-selection bug
+* fixed cmake build scripts
+* fixed Alt-mouse moving bug
+
