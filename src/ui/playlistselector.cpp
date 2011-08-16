@@ -249,6 +249,7 @@ void PlayListSelector::drawButtons()
     m_pixmap = QPixmap(40, height());
     m_pixmap.fill(m_normal_bg);
     QPainter painter(&m_pixmap);
+    painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setPen(m_left_pressed ? m_current : m_normal);
     painter.setBrush(QBrush(m_left_pressed ? m_current : m_normal));
     QPoint points[3] = {
