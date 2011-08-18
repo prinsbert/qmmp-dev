@@ -546,8 +546,12 @@ Version 0.5.2
 * added feature to reset equalizer slider on middle click (Panagiotis Papadopoulos)
 * added recent Psi+ notification support
 * added Slovak translation (Ján Ďanovský)
+* added EAC3, DTS, and Dolby TrueHD support (Makis Kalofolias)
+* added automatic removal of spaces from the URL
 * fixed mouse cursor change bug
 * fixed multi-selection bug
 * fixed cmake build scripts
 * fixed Alt-mouse moving bug
-
+* fixed mms delays
+* fixed pulseaudio support
+* fixed jack support
