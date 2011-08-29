@@ -548,6 +548,7 @@ Version 0.5.2
 * added Slovak translation (Ján Ďanovský)
 * added EAC3, DTS, and Dolby TrueHD support (Makis Kalofolias)
 * added automatic removal of spaces from the URL
+* added mms metadata support
 * fixed mouse cursor change bug
 * fixed multi-selection bug
 * fixed cmake build scripts
@@ -555,3 +556,5 @@ Version 0.5.2
 * fixed mms delays
 * fixed pulseaudio support
 * fixed jack support
+* fixed text scroller title format
+
