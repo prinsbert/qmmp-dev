@@ -549,6 +549,7 @@ Version 0.5.2
 * added EAC3, DTS, and Dolby TrueHD support (Makis Kalofolias)
 * added automatic removal of spaces from the URL
 * added mms metadata support
+* improved playlist selector
 * fixed mouse cursor change bug
 * fixed multi-selection bug
 * fixed cmake build scripts

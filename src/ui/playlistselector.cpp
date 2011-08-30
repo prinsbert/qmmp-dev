@@ -38,6 +38,7 @@ PlayListSelector::PlayListSelector(PlayListManager *manager, QWidget *parent) : 
     m_scrollable = false;
     m_left_pressed = false;
     m_right_pressed = false;
+    m_moving = false;
     m_offset = 0;
     m_offset_max = 0;
     m_skin = Skin::instance();
@@ -73,7 +74,9 @@ void PlayListSelector::readSettings()
         m_update = true;
     }
     m_metrics = new QFontMetrics(m_font);
-
+    m_pl_separator = "|";
+    m_pl_separator.append(" ");
+    m_pl_separator.prepend(" ");
     resize(width(), m_metrics->height () +1);
     drawButtons();
 }
@@ -87,7 +90,7 @@ void PlayListSelector::updateTabs()
         if(m_rects.isEmpty())
             rect.setX(9);
         else
-            rect.setX(m_rects.last().right() + m_metrics->width(" | "));
+            rect.setX(m_rects.last().x() + m_rects.last().width() + m_metrics->width(m_pl_separator));
         rect.setY(0);
         rect.setWidth(m_metrics->width(text));
         rect.setHeight(m_metrics->ascent ());
@@ -124,10 +127,21 @@ void PlayListSelector::paintEvent(QPaintEvent *)
     QStringList names = m_pl_manager->playListNames();
     int current = m_pl_manager->indexOf(m_pl_manager->currentPlayList());
     int selected = m_pl_manager->indexOf(m_pl_manager->selectedPlayList());
-    painter.setBrush(QBrush(m_selected_bg));
-    painter.setPen(m_selected_bg);
-    painter.drawRect(m_rects.at(selected).x()- 3 - m_offset, 0,
-                     m_rects.at(selected).width()+4, height()-1);
+
+    if(m_moving)
+    {
+        painter.setBrush(QBrush(m_normal_bg));
+        painter.setPen(m_current);
+        painter.drawRect(m_rects.at(selected).x() - 2 - m_offset, 0,
+                         m_rects.at(selected).width() + 3, height()-1);
+    }
+    else
+    {
+        painter.setBrush(QBrush(m_selected_bg));
+        painter.setPen(m_selected_bg);
+        painter.drawRect(m_rects.at(selected).x() - 2 - m_offset, 0,
+                         m_rects.at(selected).width() + 3, height()-1);
+    }
 
     for (int i = 0; i < m_rects.size(); ++i)
     {
@@ -135,13 +149,29 @@ void PlayListSelector::paintEvent(QPaintEvent *)
              painter.setPen(m_current);
         else
              painter.setPen(m_normal);
-        painter.drawText(m_rects[i].x() - m_offset, m_metrics->ascent(), names.at(i));
+
+        if(!m_moving || i != selected)
+            painter.drawText(m_rects[i].x() - m_offset, m_metrics->ascent(), names.at(i));
         if(i < m_rects.size() - 1)
         {
             painter.setPen(m_normal);
-            painter.drawText(m_rects[i].x() + m_rects[i].width() - m_offset, m_metrics->ascent(), " | ");
+            painter.drawText(m_rects[i].x() + m_rects[i].width() - m_offset, m_metrics->ascent(),
+                             m_pl_separator);
         }
     }
+
+    if(m_moving)
+    {
+        painter.setBrush(QBrush(m_selected_bg));
+        painter.setPen(m_selected_bg);
+        painter.drawRect(m_mouse_pos.x() - m_press_offset - 2, 0,
+                         m_rects.at(selected).width() + 3, height());
+
+        painter.setPen(selected == current ? m_current : m_normal);
+        painter.drawText(m_mouse_pos.x() - m_press_offset,
+                         m_metrics->ascent(), names.at(selected));
+    }
+
     if(m_scrollable)
     {
         painter.drawPixmap(width()-40, 0, m_pixmap);
@@ -164,7 +194,7 @@ void PlayListSelector::mousePressEvent (QMouseEvent *e)
     }
     if(m_scrollable && (width() - 40 < e->x()) && (e->x() <= width() - 20))
     {
-        m_offset -=  11 - m_rects.at(firstVisible()).x() + m_offset;
+        m_offset -= m_rects.at(firstVisible()).x() + m_offset;
         m_offset = qMax(0, m_offset);
         m_left_pressed = true;
         drawButtons();
@@ -190,13 +220,20 @@ void PlayListSelector::mousePressEvent (QMouseEvent *e)
     else if(e->button() == Qt::MidButton && selected)
         m_pl_manager->removePlayList(m_pl_manager->selectedPlayList());
     else
+    {
+        m_moving = true;
+        m_mouse_pos = e->pos();
+        m_press_offset = pp.x() - m_rects.at(m_pl_manager->selectedPlayListIndex()).x();
         QWidget::mousePressEvent(e);
+    }
+
 }
 
 void PlayListSelector::mouseReleaseEvent (QMouseEvent *e)
 {
     m_left_pressed = false;
     m_right_pressed = false;
+    m_moving = false;
     drawButtons();
     update();
     QWidget::mouseReleaseEvent(e);
@@ -212,12 +249,25 @@ void PlayListSelector::mouseDoubleClickEvent (QMouseEvent *e)
 
 void PlayListSelector::mouseMoveEvent(QMouseEvent *e)
 {
+    if(!m_moving)
+    {
+        QWidget::mouseMoveEvent(e);
+        return;
+    }
+
+    m_mouse_pos = e->pos();
     QPoint mp = e->pos();
     mp.rx() += m_offset;
+
     int dest = -1;
     for(int i = 0; i < m_rects.count(); ++i)
     {
-        if(mp.x() >= m_rects.at(i).x() && mp.x() <= m_rects.at(i).x() + m_rects.at(i).width())
+        int x_delta = mp.x() - m_rects.at(i).x();
+        if(x_delta < 0 || x_delta > m_rects.at(i).width())
+            continue;
+
+        if((x_delta > m_rects.at(i).width()/2 && m_pl_manager->selectedPlayListIndex() < i) ||
+                (x_delta < m_rects.at(i).width()/2 && m_pl_manager->selectedPlayListIndex() > i))
         {
             dest = i;
             break;
@@ -225,10 +275,12 @@ void PlayListSelector::mouseMoveEvent(QMouseEvent *e)
     }
     if(dest == -1 || dest == m_pl_manager->selectedPlayListIndex())
     {
+        update();
         QWidget::mouseMoveEvent(e);
         return;
     }
     m_pl_manager->move(m_pl_manager->selectedPlayListIndex(), dest);
+    update();
 }
 
 void PlayListSelector::resizeEvent (QResizeEvent *)
