@@ -75,39 +75,25 @@ void OutputOSS::configure(quint32 freq, int chan, Qmmp::AudioFormat format)
         qWarning("OutputOSS: unsupported audio format");
         return;
     }
-    int param = p;
-    if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) < 0)
-    {
-        qWarning("OutputOSS: ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
-        return;
-    }
-    if(param != p)
-    {
-        qWarning("OutputOSS: unsupported audio format");
-        return;
-    }
-    param = chan;
-    if(ioctl(m_audio_fd, SNDCTL_DSP_CHANNELS, &chan) < 0)
-    {
+  ioctl(m_audio_fd, SNDCTL_DSP_SYNC, 0);
+
+    if(ioctl(m_audio_fd, SNDCTL_DSP_CHANNELS, &chan) == -1)
         qWarning("OutputOSS: ioctl SNDCTL_DSP_CHANNELS failed: %s", strerror(errno));
-        return;
-    }
-    if(param != chan)
+
+    if(chan <= 2)
     {
-        qWarning("OutputOSS: unsupported %d-channel mode", param);
-        return;
+        int param = chan - 1;
+        if(ioctl(m_audio_fd, SNDCTL_DSP_STEREO, &param) == -1)
+            qWarning("OutputOSS: ioctl SNDCTL_DSP_STEREO failed: %s", strerror(errno));
+        chan = param + 1;
     }
-    uint param2 = freq;
+
+    if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
+        qWarning("OutputOSS: ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
+
     if (ioctl(m_audio_fd, SNDCTL_DSP_SPEED, &freq) < 0)
-    {
         qWarning("OutputOSS: ioctl SNDCTL_DSP_SPEED failed: %s", strerror(errno));
-        return;
-    }
-    if(param2 != freq)
-    {
-        qWarning("OutputOSS: unsupported sample rate");
-        return;
-    }
+
     ioctl(m_audio_fd, SNDCTL_DSP_RESET, 0);
     Output::configure(freq, chan, format);
 }
