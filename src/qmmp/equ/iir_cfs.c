@@ -149,8 +149,8 @@ sIIRCoefficients* get_coeffs(int *bands, unsigned int sfreq)
                 }
                 break;
     case 96000:
-                iir_cf = iir_cf10_96000;
-
+               iir_cf = iir_cf10_96000;
+               break;
     default:
                 switch(*bands)
                 {
