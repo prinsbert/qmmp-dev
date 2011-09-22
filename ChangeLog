@@ -560,3 +560,5 @@ Version 0.5.2
 * fixed jack support
 * fixed text scroller title format
 
+Version 0.5.3
+* fixed jack-1.9.6 support
