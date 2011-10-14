@@ -108,7 +108,7 @@ bool DecoderCUE::initialize()
                       audioParameters().sampleSize() * m_length/1000;
     m_totalBytes = 0;
 
-    m_sz = audioParameters().sampleSize();
+    m_sz = audioParameters().sampleSize() * audioParameters().channels();
 
     StateHandler::instance()->dispatch(m_parser->info(m_track)->metaData());
     return true;
