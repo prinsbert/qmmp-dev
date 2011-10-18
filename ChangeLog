@@ -561,7 +561,9 @@ Version 0.5.2
 * fixed text scroller title format
 
 Version 0.5.3
+* added Sony Media Wave 64 (W64) support
 * fixed jack-1.9.6 support
 * fixed http plugin freeze
 * fixed displaying ape bitrate
 * fixed bug in the text scroller
+* removed taglib dependency from gme plugin
