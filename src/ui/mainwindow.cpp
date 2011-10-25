@@ -67,7 +67,7 @@ MainWindow::MainWindow(const QStringList& args, BuiltinCommandLineOption* option
                    Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
     setWindowTitle("Qmmp");
 
-    new ActionManager();
+    new ActionManager(this);
 
     //prepare libqmmp and libqmmpui libraries for playing
     m_player = new MediaPlayer(this);
