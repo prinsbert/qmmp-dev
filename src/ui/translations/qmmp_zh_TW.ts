@@ -1400,38 +1400,28 @@
         <translation>選取開啟一個或更多檔案</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="430"/>
-        <source>&amp;Jump To File</source>
-        <translation>跳到檔案(&amp;J)</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="431"/>
-        <source>J</source>
-        <translation>J</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="433"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="441"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Playlist</source>
         <translation type="unfinished">播放清單</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="512"/>
         <source>Open Playlist</source>
         <translation>開啟播放清單</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Save Playlist</source>
         <translation>儲存播放清單</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
-        <location filename="../mainwindow.cpp" line="537"/>
+        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Playlist Files</source>
         <translation>播放清單檔案</translation>
     </message>
@@ -1441,7 +1431,7 @@
         <translation>支援的全部檔案</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="461"/>
+        <location filename="../mainwindow.cpp" line="460"/>
         <source>Tools</source>
         <translation>工具</translation>
     </message>

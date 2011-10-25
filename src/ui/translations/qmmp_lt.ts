@@ -1402,38 +1402,28 @@
         <translation>Pasirinkite vieną ar kelias bylas atvėrimui</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="430"/>
-        <source>&amp;Jump To File</source>
-        <translation>&amp;Pereiti prie bylos</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="431"/>
-        <source>J</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="433"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>View</source>
         <translation>Rodyti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="441"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Playlist</source>
         <translation>Grojaraštis</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="512"/>
         <source>Open Playlist</source>
         <translation>Atverti grojaraštį</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Save Playlist</source>
         <translation>Išsaugoti grojaraštį</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
-        <location filename="../mainwindow.cpp" line="537"/>
+        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Playlist Files</source>
         <translation>Grojaraščio bylos</translation>
     </message>
@@ -1443,7 +1433,7 @@
         <translation>Palaikomi bylų tipai</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="461"/>
+        <location filename="../mainwindow.cpp" line="460"/>
         <source>Tools</source>
         <translation>Įrankiai</translation>
     </message>

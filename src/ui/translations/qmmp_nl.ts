@@ -1400,38 +1400,28 @@
         <translation>Kies een of meer bestanden om te openen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="430"/>
-        <source>&amp;Jump To File</source>
-        <translation>&amp;Spring Naar Bestand</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="431"/>
-        <source>J</source>
-        <translation>J</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="433"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>View</source>
         <translation type="unfinished">Weergave</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="441"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Playlist</source>
         <translation type="unfinished">Afspeellijst</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
-        <location filename="../mainwindow.cpp" line="537"/>
+        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Playlist Files</source>
         <translation>Afspeellijst Bestanden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="512"/>
         <source>Open Playlist</source>
         <translation>Open Afspeellijst</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Save Playlist</source>
         <translation>Bewaar Afspeellijst</translation>
     </message>
@@ -1441,7 +1431,7 @@
         <translation>Alle Ondersteunde Bitstromen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="461"/>
+        <location filename="../mainwindow.cpp" line="460"/>
         <source>Tools</source>
         <translation>Gereedschappen</translation>
     </message>

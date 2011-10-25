@@ -1400,38 +1400,28 @@
         <translation>Seleziona uno o più brani da aprire</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="430"/>
-        <source>&amp;Jump To File</source>
-        <translation>&amp;Vai al brano</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="431"/>
-        <source>J</source>
-        <translation>J</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="433"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="441"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="512"/>
         <source>Open Playlist</source>
         <translation>Apri lista di brani</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Save Playlist</source>
         <translation>Salva lista di brani</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
-        <location filename="../mainwindow.cpp" line="537"/>
+        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Playlist Files</source>
         <translation>Brani della lista</translation>
     </message>
@@ -1441,7 +1431,7 @@
         <translation>Elenco di tutti i tipi di flusso accettati</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="461"/>
+        <location filename="../mainwindow.cpp" line="460"/>
         <source>Tools</source>
         <translation>Strumenti</translation>
     </message>
