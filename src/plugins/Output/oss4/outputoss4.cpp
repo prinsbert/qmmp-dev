@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Ilya Kotov                                      *
+ *   Copyright (C) 2010-2011 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -46,6 +46,7 @@ extern "C"
 
 
 OutputOSS4 *OutputOSS4::m_instance = 0;
+VolumeControlOSS4 *OutputOSS4::m_vc = 0;
 
 OutputOSS4::OutputOSS4(QObject *parent) : Output(parent)
 {
@@ -151,6 +152,8 @@ bool OutputOSS4::initialize()
     tv.tv_sec = 0l;
     tv.tv_usec = 50000l;
     m_do_select = (select(m_audio_fd + 1, 0, &afd, 0, &tv) > 0);
+    if(m_vc)
+	m_vc->restore();
     return true;
 }
 
@@ -194,17 +197,26 @@ void OutputOSS4::reset()
 
 /***** MIXER *****/
 VolumeControlOSS4::VolumeControlOSS4(QObject *parent) : VolumeControl(parent)
-{}
+{
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    m_volume = settings.value("OSS4/volume", 0x3232).toInt();
+    OutputOSS4::m_vc = this;
+    restore();
+}
 
 VolumeControlOSS4::~VolumeControlOSS4()
-{}
+{
+    OutputOSS4::m_vc = 0;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    settings.setValue("OSS4/volume", m_volume);
+}
 
 void VolumeControlOSS4::setVolume(int l, int r)
 {
+    m_volume = (r << 8) | l;
     if(OutputOSS4::instance() && OutputOSS4::instance()->fd() >= 0)
     {
-        int v = (r << 8) | l;
-        ioctl(OutputOSS4::instance()->fd(), SNDCTL_DSP_SETPLAYVOL, &v);
+        ioctl(OutputOSS4::instance()->fd(), SNDCTL_DSP_SETPLAYVOL, &m_volume);
     }
 }
 
@@ -219,5 +231,16 @@ void VolumeControlOSS4::volume(int *ll,int *rr)
             v = 0;
         *rr = (v & 0xFF00) >> 8;
         *ll = (v & 0x00FF);
+        m_volume = v;
     }
+    else
+    {
+        *rr = (m_volume & 0xFF00) >> 8;
+        *ll = (m_volume & 0x00FF);
+    }
+}
+
+void VolumeControlOSS4::restore()
+{
+    setVolume((m_volume & 0x00FF), (m_volume & 0xFF00) >> 8);
 }
