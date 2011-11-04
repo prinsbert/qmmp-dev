@@ -104,7 +104,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../tageditor.ui" line="14"/>
         <source>Tag Editor</source>
-        <translation>タグエディタ</translation>
+        <translation>タグエディター</translation>
     </message>
     <message>
         <location filename="../tageditor.ui" line="38"/>
@@ -182,7 +182,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../templateeditor.ui" line="14"/>
         <source>Template Editor</source>
-        <translation>テンプレートエディタ</translation>
+        <translation>テンプレートエディター</translation>
     </message>
     <message>
         <location filename="../templateeditor.ui" line="39"/>

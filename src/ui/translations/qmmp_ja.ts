@@ -6,12 +6,12 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
         <source>About Qmmp</source>
-        <translation>QMMPについて</translation>
+        <translation>QMMP について</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="40"/>
         <source>About</source>
-        <translation>QMMPについて</translation>
+        <translation>QMMP について</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="54"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="81"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
-        <translation>Qt製マルティミディアプレイヤ QMMP</translation>
+        <translation>Qt 製マルティミディアプレイヤー QMMP</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="82"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="42"/>
         <source>&amp;Play/Pause</source>
-        <translation>再生/停止(&amp;A)</translation>
+        <translation>再生/一時停止(&amp;A)</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="42"/>
@@ -234,7 +234,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="54"/>
         <source>Show Equalizer</source>
-        <translation>イコライザを表示</translation>
+        <translation>イコライザ一時を表示</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="54"/>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="61"/>
         <source>&amp;Add Url</source>
-        <translation>URLを追加(&amp;U)</translation>
+        <translation>URL を追加(&amp;U)</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="61"/>
@@ -324,7 +324,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="70"/>
         <source>&amp;Queue Toggle</source>
-        <translation>選んだプレイリストをキューに追加/キューから撤去</translation>
+        <translation>選んだプレイリストを キューに追加/キューから撤去</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="70"/>
@@ -444,12 +444,12 @@
     <message>
         <location filename="../actionmanager.cpp" line="89"/>
         <source>&amp;About</source>
-        <translation>QMMPについて(&amp;A)</translation>
+        <translation>QMMP について(&amp;A)</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="90"/>
         <source>&amp;About Qt</source>
-        <translation>Qtについて(&amp;Q)</translation>
+        <translation>Qt について(&amp;Q)</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="91"/>
@@ -467,7 +467,7 @@
     <message>
         <location filename="../forms/addurldialog.ui" line="13"/>
         <source>Enter URL to add</source>
-        <translation>追加したいURLを記入</translation>
+        <translation>追加したい URL を記入</translation>
     </message>
     <message>
         <location filename="../forms/addurldialog.ui" line="51"/>
@@ -553,7 +553,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="14"/>
         <source>Qmmp Settings</source>
-        <translation>QMMP設定</translation>
+        <translation>QMMP 設定</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="98"/>
@@ -642,7 +642,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="309"/>
         <source>Player:</source>
-        <translation>プレイヤ:</translation>
+        <translation>プレイヤー:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="331"/>
@@ -687,7 +687,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="439"/>
         <source>Equalizer</source>
-        <translation>イコライザ</translation>
+        <translation>イコライザー</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="511"/>
@@ -712,12 +712,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="559"/>
         <source>Convert underscores to blanks</source>
-        <translation>下線記号_を空白文字で表示</translation>
+        <translation>下線記号 _ を空白文字で表示</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="566"/>
         <source>Convert %20 to blanks</source>
-        <translation>%20を空白文字で表示</translation>
+        <translation>%20 を空白文字で表示</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="573"/>
@@ -846,7 +846,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="951"/>
         <source>Proxy user name:</source>
-        <translation>代理者ユーザ名:</translation>
+        <translation>代理者ユーザー名:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="964"/>
@@ -892,7 +892,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1189"/>
         <source>Buffer size:</source>
-        <translation>バッファサイズ:</translation>
+        <translation>バッファーサイズ:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1202"/>
@@ -958,7 +958,7 @@
     <message>
         <location filename="../configdialog.cpp" line="255"/>
         <source>Decoders</source>
-        <translation>デコーダ</translation>
+        <translation>デコーダー</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="265"/>
@@ -1061,7 +1061,7 @@
     <message>
         <location filename="../eqwidget.cpp" line="43"/>
         <source>Equalizer</source>
-        <translation>イコライザ</translation>
+        <translation>イコライザー</translation>
     </message>
     <message>
         <location filename="../eqwidget.cpp" line="154"/>
@@ -1118,14 +1118,14 @@
 <context>
     <name>JumpToTrackDialog</name>
     <message>
-        <location filename="../forms/jumptotrackdialog.ui" line="14"/>
+        一時<location filename="../forms/jumptotrackdialog.ui" line="14"/>
         <source>Jump To Track</source>
         <translation>トラックを指定して即刻再生</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="37"/>
         <source>Filter</source>
-        <translation>フィルタ</translation>
+        <translation>フィルター</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="70"/>
@@ -1201,7 +1201,7 @@
     <message>
         <location filename="../display.cpp" line="80"/>
         <source>Equalizer</source>
-        <translation>イコライザ</translation>
+        <translation>イコライザー</translation>
     </message>
     <message>
         <location filename="../display.cpp" line="83"/>
@@ -1264,7 +1264,7 @@
     <message>
         <location filename="../mainvisual.cpp" line="283"/>
         <source>Analyzer</source>
-        <translation>スペクトルアナライザ</translation>
+        <translation>スペクトルアナライザー</translation>
     </message>
     <message>
         <location filename="../mainvisual.cpp" line="284"/>
@@ -1279,7 +1279,7 @@
     <message>
         <location filename="../mainvisual.cpp" line="292"/>
         <source>Analyzer Mode</source>
-        <translation>アナライザモード</translation>
+        <translation>アナライザーモード</translation>
     </message>
     <message>
         <location filename="../mainvisual.cpp" line="295"/>
@@ -1294,6 +1294,7 @@
     <message>
         <location filename="../mainvisual.cpp" line="297"/>
         <source>Vertical Lines</source>
+        <translatorcomment>Winamp の表記どおり</translatorcomment>
         <translation>線</translation>
     </message>
     <message>
@@ -1339,7 +1340,7 @@
     <message>
         <location filename="../mainvisual.cpp" line="329"/>
         <source>Analyzer Falloff</source>
-        <translation>アナライザ減衰速度</translation>
+        <translation>アナライザー減衰速度</translation>
     </message>
     <message>
         <location filename="../mainvisual.cpp" line="332"/>
@@ -1526,7 +1527,7 @@
     <message>
         <location filename="../forms/playlistbrowser.ui" line="14"/>
         <source>Playlist Browser</source>
-        <translation>プレイリストブラウザ</translation>
+        <translation>プレイリストブラウザー</translation>
     </message>
     <message>
         <location filename="../forms/playlistbrowser.ui" line="45"/>
@@ -1594,7 +1595,7 @@
     <message>
         <location filename="../forms/popupsettings.ui" line="29"/>
         <source>Template</source>
-        <translation>雛形</translation>
+        <translation>ひな形</translation>
     </message>
     <message>
         <location filename="../forms/popupsettings.ui" line="58"/>
@@ -1624,7 +1625,7 @@
     <message>
         <location filename="../forms/popupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation>待ち時間:</translation>
+        <translation>残映時間:</translation>
     </message>
     <message>
         <location filename="../forms/popupsettings.ui" line="178"/>
@@ -1707,7 +1708,7 @@
     <message>
         <location filename="../forms/preseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation>プリセットエディタ</translation>
+        <translation>プリセットエディター</translation>
     </message>
     <message>
         <location filename="../forms/preseteditor.ui" line="36"/>
@@ -1770,12 +1771,12 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="189"/>
         <source>QMMP version:</source>
-        <translation>QMMP 版番号:</translation>
+        <translation>QMMP のバージョン:</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="190"/>
         <source>Qt version:</source>
-        <translation>Qt 版番号:</translation>
+        <translation>Qt のバージョン:</translation>
     </message>
 </context>
 <context>
@@ -1806,7 +1807,7 @@
     <message>
         <location filename="../textscroller.cpp" line="117"/>
         <source>Buffering: %1%</source>
-        <translation>バッファへ先読み: %1%</translation>
+        <translation>バッファーへ先読み: %1%</translation>
     </message>
 </context>
 <context>

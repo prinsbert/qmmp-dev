@@ -62,7 +62,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="82"/>
         <source>Delay (ms):</source>
-        <translation>待ち時間 (ミリ秒):</translation>
+        <translation>残映時間 (ミリ秒):</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="141"/>
@@ -93,12 +93,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="108"/>
         <source>Cover size:</source>
-        <translation>カバー絵の大きさ:</translation>
+        <translation>表紙画像の大きさ:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="105"/>
         <source>Notification Template</source>
-        <translation>通知の雛形</translation>
+        <translation>通知のひな形</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="368"/>
