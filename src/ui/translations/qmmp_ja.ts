@@ -1118,7 +1118,7 @@
 <context>
     <name>JumpToTrackDialog</name>
     <message>
-        一時<location filename="../forms/jumptotrackdialog.ui" line="14"/>
+        <location filename="../forms/jumptotrackdialog.ui" line="14"/>
         <source>Jump To Track</source>
         <translation>トラックを指定して即刻再生</translation>
     </message>
