@@ -565,5 +565,8 @@ Version 0.5.3
 * fixed jack-1.9.6 support
 * fixed http plugin freeze
 * fixed displaying ape bitrate
-* fixed bug in the text scroller
+* fixed bugs in the text scroller
+* fixed oss4 volume control
+* fixed segmentation fault when 'repeat track' is enabled
 * removed taglib dependency from gme plugin
+* updated Japanese translation (Ryota Shimamoto)
