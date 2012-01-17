@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2011 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2012 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,6 +24,9 @@
 extern "C"{
 #include <libavformat/avformat.h>
 #include <libavcodec/avcodec.h>
+#if (LIBAVUTIL_VERSION_INT >= ((51<<16)+(32<<8)+0))
+#include <libavutil/dict.h>
+#endif
 }
 
 #include "ffmpegmetadatamodel.h"
@@ -65,15 +68,17 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
     }
     if(filters.contains("*.wma") && !memcmp(fmt->name, "asf", 3))
         return true;
-    if(filters.contains("*.mp3") && !memcmp(fmt->name, "mp3", 3))
+    else if(filters.contains("*.mp3") && !memcmp(fmt->name, "mp3", 3))
         return true;
-    if(filters.contains("*.aac") && !memcmp(fmt->name, "aac", 3))
+    else if(filters.contains("*.aac") && !memcmp(fmt->name, "aac", 3))
         return true;
-    if(filters.contains("*.ac3") && !memcmp(fmt->name, "eac3", 4))
+    else if(filters.contains("*.ac3") && !memcmp(fmt->name, "eac3", 4))
         return true;
-    if(filters.contains("*.dts") && !memcmp(fmt->name, "dts", 3))
+    else if(filters.contains("*.dts") && !memcmp(fmt->name, "dts", 3))
         return true;
-    if(filters.contains("*.mka") && !memcmp(fmt->name, "mka", 3))
+    else if(filters.contains("*.mka") && !memcmp(fmt->name, "mka", 3))
+        return true;
+    else if(filters.contains("*.vqf") && !memcmp(fmt->name, "vqf", 3))
         return true;
     return false;
 }
@@ -122,6 +127,61 @@ Decoder *DecoderFFmpegFactory::create(const QString &path, QIODevice *input)
 
 QList<FileInfo *> DecoderFFmpegFactory::createPlayList(const QString &fileName, bool useMetaData)
 {
+#if (LIBAVCODEC_VERSION_INT >= ((53<<16)+(42<<8)+4))
+    QList <FileInfo*> list;
+    avcodec_register_all();
+    avformat_network_init();
+    av_register_all();
+    AVFormatContext *in = 0;
+
+    if (avformat_open_input(&in,fileName.toLocal8Bit().constData(), 0, 0) < 0)
+    {
+        qDebug("DecoderFFmpegFactory: unable to open file");
+        return list;
+    }
+    FileInfo *info = new FileInfo(fileName);
+    avformat_find_stream_info(in, 0);
+
+    if (useMetaData)
+    {
+        AVDictionaryEntry *album = av_dict_get(in->metadata,"album",0,0);
+        if(!album)
+            album = av_dict_get(in->metadata,"WM/AlbumTitle",0,0);
+        AVDictionaryEntry *artist = av_dict_get(in->metadata,"artist",0,0);
+        if(!artist)
+            artist = av_dict_get(in->metadata,"author",0,0);
+        AVDictionaryEntry *comment = av_dict_get(in->metadata,"comment",0,0);
+        AVDictionaryEntry *genre = av_dict_get(in->metadata,"genre",0,0);
+        AVDictionaryEntry *title = av_dict_get(in->metadata,"title",0,0);
+        AVDictionaryEntry *year = av_dict_get(in->metadata,"WM/Year",0,0);
+        if(!year)
+            year = av_dict_get(in->metadata,"year",0,0);
+        if(!year)
+            year = av_dict_get(in->metadata,"date",0,0);
+        AVDictionaryEntry *track = av_dict_get(in->metadata,"track",0,0);
+        if(!track)
+            track = av_dict_get(in->metadata,"WM/Track",0,0);
+        if(!track)
+            track = av_dict_get(in->metadata,"WM/TrackNumber",0,0);
+
+        if(album)
+            info->setMetaData(Qmmp::ALBUM, QString::fromUtf8(album->value).trimmed());
+        if(artist)
+            info->setMetaData(Qmmp::ARTIST, QString::fromUtf8(artist->value).trimmed());
+        if(comment)
+            info->setMetaData(Qmmp::COMMENT, QString::fromUtf8(comment->value).trimmed());
+        if(genre)
+            info->setMetaData(Qmmp::GENRE, QString::fromUtf8(genre->value).trimmed());
+        if(title)
+            info->setMetaData(Qmmp::TITLE, QString::fromUtf8(title->value).trimmed());
+        if(year)
+            info->setMetaData(Qmmp::YEAR, year->value);
+        if(track)
+            info->setMetaData(Qmmp::TRACK, track->value);
+    }
+    info->setLength(in->duration/AV_TIME_BASE);
+    avformat_close_input(&in);
+#else
     QList <FileInfo*> list;
     avcodec_init();
     avcodec_register_all();
@@ -175,6 +235,7 @@ QList<FileInfo *> DecoderFFmpegFactory::createPlayList(const QString &fileName, 
     }
     info->setLength(in->duration/AV_TIME_BASE);
     av_close_input_file(in);
+#endif
     list << info;
     return list;
 }
@@ -195,7 +256,6 @@ void DecoderFFmpegFactory::showAbout(QWidget *parent)
     QMessageBox::about (parent, tr("About FFmpeg Audio Plugin"),
 
                         tr("Qmmp FFmpeg Audio Plugin")+"\n"+
-#if (LIBAVFORMAT_VERSION_INT >= ((52<<16)+(17<<8)+0)) && (LIBAVCODEC_VERSION_INT >= ((51<<16)+(60<<8)+0))
                         QString(tr("Compiled against libavformat-%1.%2.%3 and libavcodec-%4.%5.%6"))
                         .arg(LIBAVFORMAT_VERSION_MAJOR)
                         .arg(LIBAVFORMAT_VERSION_MINOR)
@@ -203,7 +263,6 @@ void DecoderFFmpegFactory::showAbout(QWidget *parent)
                         .arg(LIBAVCODEC_VERSION_MAJOR)
                         .arg(LIBAVCODEC_VERSION_MINOR)
                         .arg(LIBAVCODEC_VERSION_MICRO)+"\n"+
-#endif
                         tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>"));
 }
 

@@ -4,32 +4,32 @@
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="195"/>
+        <location filename="../decoderffmpegfactory.cpp" line="256"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>關於 FFmpeg 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="197"/>
+        <location filename="../decoderffmpegfactory.cpp" line="258"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Qmmp FFmpeg 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="207"/>
+        <location filename="../decoderffmpegfactory.cpp" line="266"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="88"/>
+        <location filename="../decoderffmpegfactory.cpp" line="93"/>
         <source>FFmpeg Plugin</source>
         <translation>FFmpeg 插件</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="90"/>
+        <location filename="../decoderffmpegfactory.cpp" line="95"/>
         <source>FFmpeg Formats</source>
         <translation>FFmpeg 格式</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="199"/>
+        <location filename="../decoderffmpegfactory.cpp" line="259"/>
         <source>Compiled against libavformat-%1.%2.%3 and libavcodec-%4.%5.%6</source>
         <translation>編譯依賴 libavformat-%1.%2.%3 與 libavcodec-%4.%5.%6</translation>
     </message>
@@ -37,42 +37,50 @@
 <context>
     <name>FFmpegMetaDataModel</name>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="48"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="52"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="99"/>
         <source>Length</source>
         <translation>長度</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="49"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="53"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="100"/>
         <source>File size</source>
         <translation>文件大小</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="49"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="53"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="100"/>
         <source>KB</source>
         <translation>KB</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="50"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="54"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="101"/>
         <source>Bitrate</source>
         <translation>比特率</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="50"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="54"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="101"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
         <location filename="../ffmpegmetadatamodel.cpp" line="66"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="117"/>
         <source>Sample rate</source>
         <translation>取樣率</translation>
     </message>
     <message>
         <location filename="../ffmpegmetadatamodel.cpp" line="66"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="117"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffmpegmetadatamodel.cpp" line="67"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="118"/>
         <source>Channels</source>
         <translation>聲音通道</translation>
     </message>
@@ -87,11 +95,6 @@
     <message>
         <location filename="../settingsdialog.ui" line="61"/>
         <source>Windows Media Audio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="68"/>
-        <source>Monkey&apos;s Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -135,9 +138,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../settingsdialog.ui" line="138"/>
+        <source>VQF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>FFmpeg Plugin Settings</source>
         <translation>FFmpeg 插件設置</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="68"/>
+        <source>Monkey&apos;s Audio (APE)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="89"/>

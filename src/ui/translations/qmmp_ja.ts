@@ -1800,12 +1800,12 @@
 <context>
     <name>TextScroller</name>
     <message>
-        <location filename="../textscroller.cpp" line="52"/>
+        <location filename="../textscroller.cpp" line="53"/>
         <source>Autoscroll Songname</source>
         <translation>曲名を自動スクロール</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="117"/>
+        <location filename="../textscroller.cpp" line="118"/>
         <source>Buffering: %1%</source>
         <translation>バッファーへ先読み: %1%</translation>
     </message>

@@ -1799,12 +1799,12 @@
 <context>
     <name>TextScroller</name>
     <message>
-        <location filename="../textscroller.cpp" line="52"/>
+        <location filename="../textscroller.cpp" line="53"/>
         <source>Autoscroll Songname</source>
         <translation>Şarkı Adını Otomatik Kaydır</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="117"/>
+        <location filename="../textscroller.cpp" line="118"/>
         <source>Buffering: %1%</source>
         <translation type="unfinished"></translation>
     </message>

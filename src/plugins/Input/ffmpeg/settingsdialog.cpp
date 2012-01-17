@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2011 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2012 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,6 +26,9 @@
 extern "C"{
 #include <libavformat/avformat.h>
 #include <libavcodec/avcodec.h>
+#if (LIBAVUTIL_VERSION_INT >= ((51<<16)+(32<<8)+0))
+#include <libavutil/dict.h>
+#endif
 }
 #include "settingsdialog.h"
 
@@ -39,7 +42,6 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     filters << "*.wma";
     filters << "*.ape";
     filters = settings.value("FFMPEG/filters", filters).toStringList();
-    avcodec_init();
     avcodec_register_all();
     av_register_all();
     ui.wmaCheckBox->setEnabled(avcodec_find_decoder(CODEC_ID_WMAV1));
@@ -62,11 +64,13 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     ui.ac3CheckBox->setChecked(filters.contains("*.ac3") && avcodec_find_decoder(CODEC_ID_EAC3));
     ui.dtsCheckBox->setEnabled(avcodec_find_decoder(CODEC_ID_DTS));
     ui.dtsCheckBox->setChecked(filters.contains("*.dts") && avcodec_find_decoder(CODEC_ID_DTS));
-#if (LIBAVCODEC_VERSION_INT >= ((52<<16)+(22<<8)+0))
     ui.mkaCheckBox->setEnabled(avcodec_find_decoder(CODEC_ID_TRUEHD));
     ui.mkaCheckBox->setChecked(filters.contains("*.mka") && avcodec_find_decoder(CODEC_ID_TRUEHD));
+    ui.vqfCheckBox->setEnabled(avcodec_find_decoder(CODEC_ID_TWINVQ));
+#if (LIBAVCODEC_VERSION_INT >= ((53<<16)+(42<<8)+4))
+    ui.vqfCheckBox->setChecked(filters.contains("*.vqf") && avcodec_find_decoder(CODEC_ID_TWINVQ));
 #else
-    ui.mkaCheckBox->setEnabled(false);
+    ui.vqfCheckBox->hide();
 #endif
 }
 
@@ -99,6 +103,8 @@ void SettingsDialog::accept()
         filters << "*.dts";
     if (ui.mkaCheckBox->isChecked())
         filters << "*.mka";
+    if (ui.vqfCheckBox->isChecked())
+        filters << "*.vqf";
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("FFMPEG/filters", filters);
     QDialog::accept();
