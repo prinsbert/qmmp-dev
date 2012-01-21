@@ -562,11 +562,15 @@ Version 0.5.2
 
 Version 0.5.3
 * added Sony Media Wave 64 (W64) support
+* added ffmpeg 0.9.1 support
 * fixed jack-1.9.6 support
 * fixed http plugin freeze
 * fixed displaying ape bitrate
 * fixed bugs in the text scroller
 * fixed oss4 volume control
 * fixed segmentation fault when 'repeat track' is enabled
+* fixed text scroller default font
+* fixed segfault when delete invalid tracks
+* fixed duplicates removal
 * removed taglib dependency from gme plugin
 * updated Japanese translation (Ryota Shimamoto)
