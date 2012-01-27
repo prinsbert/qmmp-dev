@@ -184,7 +184,7 @@ void MMSStreamReader::run()
         m_mutex.unlock();
         if(m_aborted)
             break;
-        usleep(5000);
+        DownloadThread::usleep(5000);
     }
 }
 
