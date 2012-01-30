@@ -574,3 +574,7 @@ Version 0.5.3
 * fixed duplicates removal
 * removed taglib dependency from gme plugin
 * updated Japanese translation (Ryota Shimamoto)
+
+Version 0.5.4
+* added ffmpeg 0.10 support
+* fixed build (Karel Volný)
