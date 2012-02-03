@@ -578,3 +578,4 @@ Version 0.5.3
 Version 0.5.4
 * added ffmpeg 0.10 support
 * fixed build (Karel Volný)
+* fixed sorting bugs (Brice Videau)
