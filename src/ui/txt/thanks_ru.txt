@@ -5,6 +5,7 @@
     Anton Petrusevich <casus@casus.us> - улучшение случайного воспроизведения    
     Avihay Baratz <avihayb@gmail.com> - опции авто-остановки, исправления ошибок
     Csaba Hruska <csaba.hruska@gmail.com> - исправления в модуле ffmpeg
+    Brice Videau <brice.videau@gmail.com> - исправления ошибок
     Dmitry Kostin <kostindima@gmail.com> - поддержка iso.wv
     Evgeny Gleyzerman <evgley@gmail.com> - улучшение поддержки cue
     Геннадий Моцьо <drool@altlinux.ru> - сообщения об ошибках
