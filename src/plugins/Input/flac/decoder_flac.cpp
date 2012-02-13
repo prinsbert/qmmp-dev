@@ -300,6 +300,11 @@ bool DecoderFLAC::initialize()
                 }
                 data()->input = new QFile(p);
                 data()->input->open(QIODevice::ReadOnly);
+                if(xiph_comment->contains("DISCNUMBER") && !xiph_comment->fieldListMap()["DISCNUMBER"].isEmpty())
+                {
+                    m_parser->info(m_track)->setMetaData(Qmmp::DISCNUMBER,
+                              QString::fromUtf8(xiph_comment->fieldListMap()["DISCNUMBER"].toString().toCString(true)).trimmed());
+                }
                 QMap<Qmmp::MetaData, QString> metaData = m_parser->info(m_track)->metaData();
                 StateHandler::instance()->dispatch(metaData); //send metadata
                 ReplayGainReader rg(p);
