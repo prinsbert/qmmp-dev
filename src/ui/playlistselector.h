@@ -66,7 +66,6 @@ private:
     QFontMetrics *m_metrics;
     QFont m_font;
     QMenu *m_menu;
-    bool m_update;
     bool m_scrollable;
     QList <QRect> m_rects;
     Skin *m_skin;

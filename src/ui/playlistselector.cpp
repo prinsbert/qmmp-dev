@@ -34,7 +34,7 @@
 
 PlayListSelector::PlayListSelector(PlayListManager *manager, QWidget *parent) : QWidget(parent)
 {
-    m_update = false;
+    m_metrics = 0;
     m_scrollable = false;
     m_left_pressed = false;
     m_right_pressed = false;
@@ -47,7 +47,6 @@ PlayListSelector::PlayListSelector(PlayListManager *manager, QWidget *parent) : 
     connect(m_skin, SIGNAL(skinChanged()), this, SLOT(updateSkin()));
     loadColors();
     readSettings();
-    updateTabs();
     m_menu = new QMenu(this);
     m_menu->addAction(tr("&Load"), parent, SIGNAL (loadPlaylist()));
     m_menu->addAction(tr("&Save As..."), parent, SIGNAL (savePlaylist()));
@@ -57,21 +56,19 @@ PlayListSelector::PlayListSelector(PlayListManager *manager, QWidget *parent) : 
 }
 
 PlayListSelector::~PlayListSelector()
-{}
+{
+   if(m_metrics)
+       delete m_metrics;
+}
 
 void PlayListSelector::readSettings()
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_font.fromString(settings.value("PlayList/Font", QApplication::font().toString()).toString());
-    if (m_update)
+    if (m_metrics)
     {
         delete m_metrics;
-        m_metrics = new QFontMetrics(m_font);
-        updateTabs();
-    }
-    else
-    {
-        m_update = true;
+        m_metrics = 0;
     }
     m_metrics = new QFontMetrics(m_font);
     m_pl_separator = "|";
@@ -79,6 +76,7 @@ void PlayListSelector::readSettings()
     m_pl_separator.prepend(" ");
     resize(width(), m_metrics->height () +1);
     drawButtons();
+    updateTabs();
 }
 
 void PlayListSelector::updateTabs()
