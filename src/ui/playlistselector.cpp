@@ -194,7 +194,7 @@ void PlayListSelector::mousePressEvent (QMouseEvent *e)
     }
     if(m_scrollable && (width() - 40 < e->x()) && (e->x() <= width() - 20))
     {
-        m_offset -= m_rects.at(firstVisible()).x() + m_offset;
+        m_offset -= m_offset - m_rects.at(firstVisible()).x() + 9 + 2;
         m_offset = qMax(0, m_offset);
         m_left_pressed = true;
         drawButtons();
@@ -339,7 +339,7 @@ int PlayListSelector::firstVisible()
 {
     for(int i = 0; i < m_rects.size(); ++i)
     {
-        if(m_rects.at(i).right() - m_offset + m_metrics->width(" - ") + 2 >= 9)
+        if(m_rects.at(i).right() + m_metrics->width(" - ") >= 9 + m_offset)
             return i;
     }
     return 0;
