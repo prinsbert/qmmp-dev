@@ -577,5 +577,7 @@ Version 0.5.3
 
 Version 0.5.4
 * added ffmpeg 0.10 support
+* added 'disc number' tag support for flac files with embedded cuesheet (Brice Videau)
 * fixed build (Karel Volný)
 * fixed sorting bugs (Brice Videau)
+* fixed drag-and-drop feature
