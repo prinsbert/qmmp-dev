@@ -581,3 +581,5 @@ Version 0.5.4
 * fixed build (Karel Volný)
 * fixed sorting bugs (Brice Videau)
 * fixed drag-and-drop feature
+* fixed playlists scrolling
+* fixed memory leak

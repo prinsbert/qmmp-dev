@@ -1554,32 +1554,32 @@
 <context>
     <name>PlayListSelector</name>
     <message>
-        <location filename="../playlistselector.cpp" line="52"/>
+        <location filename="../playlistselector.cpp" line="51"/>
         <source>&amp;Load</source>
         <translation>&amp;Načítať</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="53"/>
+        <location filename="../playlistselector.cpp" line="52"/>
         <source>&amp;Save As...</source>
         <translation>&amp;Uložiť ako...</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="55"/>
+        <location filename="../playlistselector.cpp" line="54"/>
         <source>Rename</source>
         <translation>Premenovať</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="56"/>
+        <location filename="../playlistselector.cpp" line="55"/>
         <source>&amp;Delete</source>
         <translation>&amp;Vymazať</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="114"/>
+        <location filename="../playlistselector.cpp" line="112"/>
         <source>Rename Playlist</source>
         <translation>Premenovať playlist</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="114"/>
+        <location filename="../playlistselector.cpp" line="112"/>
         <source>Playlist name:</source>
         <translation>Název playlistu:</translation>
     </message>
