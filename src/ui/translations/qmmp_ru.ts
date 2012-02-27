@@ -154,7 +154,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="43"/>
         <source>&amp;Jump to File</source>
-        <translation></translation>
+        <translation>&amp;Перейти к файлу</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="43"/>
