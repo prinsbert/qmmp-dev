@@ -583,3 +583,6 @@ Version 0.5.4
 * fixed drag-and-drop feature
 * fixed playlists scrolling
 * fixed memory leak
+
+Version 0.5.5
+* fixed Russian translation
