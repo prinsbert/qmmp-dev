@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2012 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -34,9 +34,10 @@ bool DecoderAACFactory::supports(const QString &source) const
     return (source.right(4).toLower() == ".aac");
 }
 
-bool DecoderAACFactory::canDecode(QIODevice *) const
+bool DecoderAACFactory::canDecode(QIODevice *input) const
 {
-    return false;
+    AACFile aac_file(input, false, false);
+    return aac_file.isValid();
 }
 
 const DecoderProperties DecoderAACFactory::properties() const
@@ -45,7 +46,7 @@ const DecoderProperties DecoderAACFactory::properties() const
     properties.name = tr("AAC Plugin");
     properties.filters << "*.aac";
     properties.description = tr("AAC Files");
-    //properties.contentType = ;
+    properties.contentTypes << "audio/aacp";
     properties.shortName = "aac";
     properties.hasAbout = true;
     properties.hasSettings = false;
