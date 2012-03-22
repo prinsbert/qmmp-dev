@@ -586,3 +586,7 @@ Version 0.5.4
 
 Version 0.5.5
 * fixed Russian translation
+* fixed acc streams support
+* fixed aac bitrate
+* fixed scrobbler failure when using Qt-4.8 (Cristian Rodríguez)
+* updated Japanese translation (Ryota Shimamoto)

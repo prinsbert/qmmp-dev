@@ -130,7 +130,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="103"/>
         <source>RealAudio 1.0/2.0</source>
-        <translation>RealAudio 1.0/2.0</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="110"/>
