@@ -57,7 +57,6 @@ private:
     void post();
     void sync();
     QString m_audio_device;
-    bool m_do_select;
     int m_audio_fd;
     static OutputOSS4 *m_instance;
 

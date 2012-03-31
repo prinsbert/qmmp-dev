@@ -50,7 +50,6 @@ VolumeControlOSS4 *OutputOSS4::m_vc = 0;
 
 OutputOSS4::OutputOSS4(QObject *parent) : Output(parent)
 {
-    m_do_select = true;
     m_audio_fd = -1;
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_audio_device = settings.value("OSS4/device", DEFAULT_DEV).toString();
@@ -70,6 +69,8 @@ OutputOSS4::~OutputOSS4()
 
 void OutputOSS4::configure(quint32 freq, int chan, Qmmp::AudioFormat format)
 {
+    ioctl(m_audio_fd, SNDCTL_DSP_RESET, 0);
+
     int p;
     switch (format)
     {
@@ -87,25 +88,28 @@ void OutputOSS4::configure(quint32 freq, int chan, Qmmp::AudioFormat format)
         break;
     default:
         qWarning("OutputOSS4: unsupported audio format");
-        return;
+        return false;
     }
-    ioctl(m_audio_fd, SNDCTL_DSP_SYNC, 0);
+   
+    if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
+        qWarning("OutputOSS4: ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
+
+    if(ioctl(m_audio_fd, SNDCTL_DSP_CHANNELS, &chan) == -1)
+        qWarning("OutputOSS4: ioctl SNDCTL_DSP_CHANNELS failed: %s", strerror(errno));
+
+    if (ioctl(m_audio_fd, SNDCTL_DSP_SPEED, &freq) < 0)
+        qWarning("OutputOSS4: ioctl SNDCTL_DSP_SPEED failed: %s", strerror(errno));
 
     int enabled = 1;
     if(ioctl(m_audio_fd, SNDCTL_DSP_COOKEDMODE, &enabled) == -1)
         qWarning("OutputOSS4: ioctl SNDCTL_DSP_COOKEDMODE: %s", strerror(errno));
 
-    if(ioctl(m_audio_fd, SNDCTL_DSP_CHANNELS, &chan) == -1)
-        qWarning("OutputOSS4: ioctl SNDCTL_DSP_CHANNELS failed: %s", strerror(errno));
+    ioctl(m_audio_fd, SNDCTL_DSP_RESET, 0);
 
-    if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
-        qWarning("OutputOSS4: ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
+    configure(freq, chan, format);
 
-    if (ioctl(m_audio_fd, SNDCTL_DSP_SPEED, &freq) < 0)
-        qWarning("OutputOSS4: ioctl SNDCTL_DSP_SPEED failed: %s", strerror(errno));
-
-    ioctl(m_audio_fd, SNDCTL_DSP_RESET, 0);	
-    Output::configure(freq, chan, format);
+    if(m_vc)
+        m_vc->restore();
 }
 
 int OutputOSS4::fd()
@@ -130,7 +134,7 @@ void OutputOSS4::sync()
 
 bool OutputOSS4::initialize()
 {
-    m_audio_fd = open(m_audio_device.toAscii(), O_WRONLY, 0);
+   m_audio_fd = open(m_audio_device.toAscii(), O_WRONLY);
 
     if (m_audio_fd < 0)
     {
@@ -138,22 +142,6 @@ bool OutputOSS4::initialize()
                  qPrintable(m_audio_device), strerror(errno));
         return false;
     }
-
-    int flags;
-    if ((flags = fcntl(m_audio_fd, F_GETFL, 0)) > 0)
-    {
-        flags &= O_NDELAY;
-        fcntl(m_audio_fd, F_SETFL, flags);
-    }
-    fd_set afd;
-    FD_ZERO(&afd);
-    FD_SET(m_audio_fd, &afd);
-    struct timeval tv;
-    tv.tv_sec = 0l;
-    tv.tv_usec = 50000l;
-    m_do_select = (select(m_audio_fd + 1, 0, &afd, 0, &tv) > 0);
-    if(m_vc)
-	m_vc->restore();
     return true;
 }
 
@@ -164,23 +152,7 @@ qint64 OutputOSS4::latency()
 
 qint64 OutputOSS4::writeAudio(unsigned char *data, qint64 maxSize)
 {
-    fd_set afd;
-    struct timeval tv;
-    qint64 m = -1, l;
-    FD_ZERO(&afd);
-    FD_SET(m_audio_fd, &afd);
-    // nice long poll timeout
-    tv.tv_sec = 5l;
-    tv.tv_usec = 0l;
-    if ((!m_do_select || (select(m_audio_fd + 1, 0, &afd, 0, &tv) > 0 &&
-                                 FD_ISSET(m_audio_fd, &afd))))
-    {
-        l = qMin(int(2048), int(maxSize));
-        if (l > 0)
-        {
-             m = write(m_audio_fd, data, l);
-        }
-    }
+    qint64 m = write(m_audio_fd, data, maxSize);
     post();
     return m;
 }

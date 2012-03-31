@@ -62,20 +62,29 @@ OutputOSS::~OutputOSS()
 
 void OutputOSS::configure(quint32 freq, int chan, Qmmp::AudioFormat format)
 {
+    ioctl(m_audio_fd, SNDCTL_DSP_RESET, 0);
+
     int p;
     switch (format)
     {
     case Qmmp::PCM_S16LE:
-        p = AFMT_S16_LE;
+#ifdef AFMT_S16_NE
+    p = AFMT_S16_NE;
+#else
+    p = AFMT_S16_LE;
+#endif
         break;
     case Qmmp::PCM_S8:
         p = AFMT_S8;
         break;
     default:
         qWarning("OutputOSS: unsupported audio format");
-        return;
+        return false;
     }
-  ioctl(m_audio_fd, SNDCTL_DSP_SYNC, 0);
+
+    if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
+        qWarning("OutputOSS: ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
+
 
     if(ioctl(m_audio_fd, SNDCTL_DSP_CHANNELS, &chan) == -1)
         qWarning("OutputOSS: ioctl SNDCTL_DSP_CHANNELS failed: %s", strerror(errno));
@@ -88,14 +97,13 @@ void OutputOSS::configure(quint32 freq, int chan, Qmmp::AudioFormat format)
         chan = param + 1;
     }
 
-    if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
-        qWarning("OutputOSS: ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
 
     if (ioctl(m_audio_fd, SNDCTL_DSP_SPEED, &freq) < 0)
         qWarning("OutputOSS: ioctl SNDCTL_DSP_SPEED failed: %s", strerror(errno));
 
     ioctl(m_audio_fd, SNDCTL_DSP_RESET, 0);
-    Output::configure(freq, chan, format);
+
+    configure(freq, chan, format);
 }
 
 void OutputOSS::post()
@@ -110,58 +118,24 @@ void OutputOSS::sync()
 
 bool OutputOSS::initialize()
 {
-    m_audio_fd = open(m_audio_device.toAscii(), O_WRONLY, 0);
+    m_audio_fd = open(m_audio_device.toAscii(), O_WRONLY);
 
     if (m_audio_fd < 0)
     {
         qWarning("OSSOutput: failed to open output device '%s'", qPrintable(m_audio_device));
         return false;
     }
-
-    int flags;
-    if ((flags = fcntl(m_audio_fd, F_GETFL, 0)) > 0)
-    {
-        flags &= O_NDELAY;
-        fcntl(m_audio_fd, F_SETFL, flags);
-    }
-    fd_set afd;
-    FD_ZERO(&afd);
-    FD_SET(m_audio_fd, &afd);
-    struct timeval tv;
-    tv.tv_sec = 0l;
-    tv.tv_usec = 50000l;
-    do_select = (select(m_audio_fd + 1, 0, &afd, 0, &tv) > 0);
     return true;
 }
 
 qint64 OutputOSS::latency()
 {
-    //ulong used = 0;
-
-    /*if (ioctl(m_audio_fd, SNDCTL_DSP_GETODELAY, &used) == -1)
-        used = 0;*/
     return 0;
 }
 
 qint64 OutputOSS::writeAudio(unsigned char *data, qint64 maxSize)
 {
-    fd_set afd;
-    struct timeval tv;
-    qint64 m = -1, l;
-    FD_ZERO(&afd);
-    FD_SET(m_audio_fd, &afd);
-    // nice long poll timeout
-    tv.tv_sec = 5l;
-    tv.tv_usec = 0l;
-    if ((!do_select || (select(m_audio_fd + 1, 0, &afd, 0, &tv) > 0 &&
-                                 FD_ISSET(m_audio_fd, &afd))))
-    {
-        l = qMin(int(2048), int(maxSize));
-        if (l > 0)
-        {
-             m = write(m_audio_fd, data, l);
-        }
-    }
+    qint64 m = write(m_audio_fd, data, maxSize);
     post();
     return m;
 }
