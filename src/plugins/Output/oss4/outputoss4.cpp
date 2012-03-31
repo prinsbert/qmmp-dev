@@ -106,7 +106,7 @@ void OutputOSS4::configure(quint32 freq, int chan, Qmmp::AudioFormat format)
 
     ioctl(m_audio_fd, SNDCTL_DSP_RESET, 0);
 
-    configure(freq, chan, format);
+    Output::configure(freq, chan, format);
 
     if(m_vc)
         m_vc->restore();
