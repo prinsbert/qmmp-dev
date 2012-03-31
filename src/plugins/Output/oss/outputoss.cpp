@@ -44,7 +44,7 @@ extern "C"
 #include <qmmp/visual.h>
 #include "outputoss.h"
 
-OutputOSS::OutputOSS(QObject * parent) : Output(parent), do_select(true), m_audio_fd(-1)
+OutputOSS::OutputOSS(QObject * parent) : Output(parent), m_audio_fd(-1)
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_audio_device = settings.value("OSS/device","/dev/dsp").toString();
@@ -79,7 +79,7 @@ void OutputOSS::configure(quint32 freq, int chan, Qmmp::AudioFormat format)
         break;
     default:
         qWarning("OutputOSS: unsupported audio format");
-        return false;
+        return;
     }
 
     if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)

@@ -88,7 +88,7 @@ void OutputOSS4::configure(quint32 freq, int chan, Qmmp::AudioFormat format)
         break;
     default:
         qWarning("OutputOSS4: unsupported audio format");
-        return false;
+        return;
     }
    
     if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
