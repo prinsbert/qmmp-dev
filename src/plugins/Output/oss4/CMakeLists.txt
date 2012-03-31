@@ -44,10 +44,9 @@ CHECK_CXX_SOURCE_COMPILES("
 #include <soundcard.h>
 #endif
 
-#if OSS_VERSION < 0x040000
+#ifndef SNDCTL_DSP_COOKEDMODE
 #error \\\"oss test failed\\\"
 #endif
-
 
 int main (int argc, char **argv)
 {
