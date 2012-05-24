@@ -170,7 +170,8 @@ void MainWindow::setVolume(int volume, int balance)
 
 void MainWindow::pause(void)
 {
-    m_core->pause();
+    if (m_core->state() == Qmmp::Playing)
+    	m_core->pause();
 }
 
 void MainWindow::stop()
