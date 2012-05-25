@@ -592,5 +592,6 @@ Version 0.5.5
 * fixed aac bitrate
 * fixed scrobbler failure when using Qt-4.8 (Cristian Rodríguez)
 * fixed oss support under freebsd
-* fixed some cuesheets parsing 
+* fixed some cuesheets parsing
+* fixed --pause command line option behaviour (Jared Breland)
 * updated Japanese translation (Ryota Shimamoto)
