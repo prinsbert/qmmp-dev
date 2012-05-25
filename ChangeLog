@@ -589,9 +589,9 @@ Version 0.5.5
 * enabled oss4 plugin by default
 * fixed Russian translation
 * fixed acc streams support
-* fixed aac bitrate
-* fixed scrobbler failure when using Qt-4.8 (Cristian Rodríguez)
+* fixed aac bitrate calculation
+* fixed scrobbler failure when using Qt 4.8 (Cristian Rodríguez)
 * fixed oss support under freebsd
 * fixed some cuesheets parsing
-* fixed --pause command line option behaviour (Jared Breland)
+* fixed --pause command line option behavior (Jared Breland)
 * updated Japanese translation (Ryota Shimamoto)
