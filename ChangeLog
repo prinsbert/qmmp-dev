@@ -642,3 +642,14 @@ Version 0.6.0
 * updated Polish translation (Grzegorz Gibas)
 * updated German translation (Panagiotis Papadopoulos)
 * updated Dutch translation (Ronald Uitermark)
+
+Version 0.6.1
+* fixed icecast streams titles
+* fixed build
+* fixed default output under windows
+* fixed api documentation
+* fixed possible segmentation fault in the cue plugin
+* fixed cue parsing
+* fixed automatic charset detection
+* fixed Ukrainian translation (Gennadi Motsyo)
+* fixed Russian translation
