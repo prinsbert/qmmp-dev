@@ -644,6 +644,7 @@ Version 0.6.0
 * updated Dutch translation (Ronald Uitermark)
 
 Version 0.6.1
+* added icons to the file dialog buttons
 * fixed icecast streams titles
 * fixed build
 * fixed default output under windows
