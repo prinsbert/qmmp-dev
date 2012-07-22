@@ -5,7 +5,7 @@ Version 0.6.0
 * initial release
 
 Version 0.6.1
-* added feature to disable assembler optimizations in FFap plugin
+* added feature to disable assembler optimizations in the FFap plugin
 * fixed documentation
 * fixed playlist scrolling
 * fixed build
