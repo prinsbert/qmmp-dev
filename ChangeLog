@@ -654,3 +654,8 @@ Version 0.6.1
 * fixed automatic charset detection
 * fixed Ukrainian translation (Gennadi Motsyo)
 * fixed Russian translation
+
+Version 0.6.2
+* fixed crash in the http plugin
+* fixed possible crash in the cue parser
+
