@@ -658,4 +658,3 @@ Version 0.6.1
 Version 0.6.2
 * fixed crash in the http plugin
 * fixed possible crash in the cue parser
-
