@@ -656,5 +656,5 @@ Version 0.6.1
 * fixed Russian translation
 
 Version 0.6.2
-* fixed crash in the http plugin
+* fixed crash in the http plugin (Franz Fellner)
 * fixed possible crash in the cue parser
