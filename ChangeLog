@@ -10,3 +10,9 @@ Version 0.6.1
 * fixed playlist scrolling
 * fixed build
 * updated Ukrainian translation (Gennadi Motsyo)
+
+Version 0.6.2
+* fixed FSF address
+* fixed some bugs in cmake files
+* removed executable stack from libffap.so (thanks to Karel Volný)
+* updated Lithuanian translation (Algirdas Butkus)
