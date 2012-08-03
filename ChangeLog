@@ -658,3 +658,9 @@ Version 0.6.1
 Version 0.6.2
 * fixed crash in the http plugin (Franz Fellner)
 * fixed possible crash in the cue parser
+
+Version 0.6.3
+* fixed typo in the about dialog
+* fixed FSF address
+* fixed cmake scripts
+* updated Lithuanian translation (Algirdas Butkus)
