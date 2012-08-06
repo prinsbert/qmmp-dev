@@ -663,4 +663,5 @@ Version 0.6.3
 * fixed typo in the about dialog
 * fixed FSF address
 * fixed cmake scripts
+* fixed filters of the directory scanner
 * updated Lithuanian translation (Algirdas Butkus)
