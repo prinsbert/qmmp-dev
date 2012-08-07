@@ -41,7 +41,6 @@ Analyzer::Analyzer (QWidget *parent)
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     restoreGeometry(settings.value("Analyzer/geometry").toByteArray());
     setFixedSize(2*300-30,105);
-    m_pixmap = QPixmap (75,20);
     m_timer = new QTimer (this);
     connect(m_timer, SIGNAL (timeout()), this, SLOT (timeout()));
     m_left_buffer = new short[VISUAL_BUFFER_SIZE];

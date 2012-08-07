@@ -52,7 +52,6 @@ public slots:
 private:
     void process(short *l, short *r);
     void draw(QPainter *p);
-    QPixmap m_pixmap;
     QPixmap m_bg;
     QTimer *m_timer;
     int m_fps;
