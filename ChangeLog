@@ -15,4 +15,5 @@ Version 0.6.2
 * fixed FSF address
 * fixed some bugs in cmake files
 * removed executable stack from libffap.so (thanks to Karel Volný)
+* fixed crash in the playlist popup message
 * updated Lithuanian translation (Algirdas Butkus)
