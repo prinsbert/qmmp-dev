@@ -664,4 +664,5 @@ Version 0.6.3
 * fixed FSF address
 * fixed cmake scripts
 * fixed filters of the directory scanner
+* fixed crash in the playlist popup message
 * updated Lithuanian translation (Algirdas Butkus)
