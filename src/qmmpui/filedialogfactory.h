@@ -26,7 +26,7 @@ class FileDialog;
 class QWidget;
 class QString;
 
-/*! @brief Helper class to store file dialog plugin properies.
+/*! @brief Helper class to store file dialog plugin properties.
  */
 class FileDialogProperties
 {
