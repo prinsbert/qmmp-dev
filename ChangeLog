@@ -666,3 +666,13 @@ Version 0.6.3
 * fixed filters of the directory scanner
 * fixed crash in the playlist popup message
 * updated Lithuanian translation (Algirdas Butkus)
+
+Version 0.6.4
+* fixed visualization menu update after changing settings
+* fixed skinned user interface settings
+* fixed analyzer falloff speeds
+* fixed skinned user interface visualization switching
+* fixed playlist titlebar resize bug
+* fixed color selection widget
+* fixed Russian translation
+* updated Japanese translation (Ryota Shimamoto)
