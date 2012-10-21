@@ -668,11 +668,13 @@ Version 0.6.3
 * updated Lithuanian translation (Algirdas Butkus)
 
 Version 0.6.4
+* using UTF-8 encoding for shoutcast metadata by default
 * fixed visualization menu update after changing settings
 * fixed skinned user interface settings
 * fixed analyzer falloff speeds
 * fixed skinned user interface visualization switching
 * fixed playlist titlebar resize bug
 * fixed color selection widget
+* fixed possible crash in the transport plugins
 * fixed Russian translation
 * updated Japanese translation (Ryota Shimamoto)
