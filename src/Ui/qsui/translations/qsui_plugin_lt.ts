@@ -984,7 +984,7 @@
         <translation>Paspausk klavišų kombinaciją, kurią nori priskirt</translation>
     </message>
     <message>
-        <location filename="../forms/shortcutdialog.ui" line="43"/>
+        <location filename="../forms/shortcutdialog.ui" line="46"/>
         <source>Clear</source>
         <translation>Išvalyti</translation>
     </message>
