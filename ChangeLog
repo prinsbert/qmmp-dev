@@ -678,3 +678,10 @@ Version 0.6.4
 * fixed possible crash in the transport plugins
 * fixed Russian translation
 * updated Japanese translation (Ryota Shimamoto)
+
+Version 0.6.5
+* increased default mms/http buffer size
+* fixed shortcut dialogs
+* fixed segmentation fault caused by http transport
+* fixed file type determination by content
+* added latest psi/psi+ support
