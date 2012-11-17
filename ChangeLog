@@ -17,3 +17,10 @@ Version 0.6.2
 * removed executable stack from libffap.so (thanks to Karel Volný)
 * fixed crash in the playlist popup message
 * updated Lithuanian translation (Algirdas Butkus)
+
+Version 0.6.3
+* added missing translation files
+* fixed resources
+* fixed qsui settings
+* fixed shortcut editor
+* fixed qsui position bar behaviour
