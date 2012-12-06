@@ -19,8 +19,10 @@ Version 0.6.2
 * updated Lithuanian translation (Algirdas Butkus)
 
 Version 0.6.3
+* added Hebrew tranlation (Genghis Khan)
 * added missing translation files
 * fixed resources
 * fixed qsui settings
 * fixed shortcut editor
 * fixed qsui position bar behaviour
+* fixed division line position in the playlist of the qsui plugin
