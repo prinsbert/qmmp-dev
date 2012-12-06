@@ -680,8 +680,14 @@ Version 0.6.4
 * updated Japanese translation (Ryota Shimamoto)
 
 Version 0.6.5
+* added latest psi/psi+ support
+* added Hebrew translation (Genghis Khan)
 * increased default mms/http buffer size
 * fixed shortcut dialogs
 * fixed segmentation fault caused by http transport
 * fixed file type determination by content
-* added latest psi/psi+ support
+* fixed division line position in the playlist
+* fixed some bugs in the WaveOut plugin
+* updated Japanese tranlation (Ryota Shimamoto)
+* updated Russian translation
+* updated flac mime-type (Christian Morales Vega)
