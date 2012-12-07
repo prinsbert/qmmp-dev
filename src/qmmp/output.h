@@ -56,7 +56,6 @@ public:
     virtual qint64 latency() = 0;
     /*!
      * Requests playback to pause. If it was paused already, playback should resume.
-     * Subclasses that reimplement this function must call the base implementation.
      */
     void pause();
     /*!
