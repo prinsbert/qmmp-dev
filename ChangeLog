@@ -688,6 +688,6 @@ Version 0.6.5
 * fixed file type determination by content
 * fixed division line position in the playlist
 * fixed some bugs in the WaveOut plugin
-* updated Japanese tranlation (Ryota Shimamoto)
+* updated Japanese translation (Ryota Shimamoto)
 * updated Russian translation
 * updated flac mime-type (Christian Morales Vega)
