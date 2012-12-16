@@ -691,3 +691,8 @@ Version 0.6.5
 * updated Japanese translation (Ryota Shimamoto)
 * updated Russian translation
 * updated flac mime-type (Christian Morales Vega)
+
+Version 0.5.6
+added support for http redirect to the url dialog
+fixed seeking when using oss4 as output
+fixed streaming support the ffmpeg plugin
