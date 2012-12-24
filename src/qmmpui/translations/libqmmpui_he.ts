@@ -51,7 +51,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="73"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
-        <translation>‫(c) ‫%1-%2 נבחרת הפיתוח של Qmmp</translation>
+        <translation>‏(c) ‫%1-%2 נבחרת הפיתוח של Qmmp</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="78"/>
@@ -76,8 +76,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="114"/>
         <source>General plugins:</source>
-        <translatorcomment>כלליות</translatorcomment>
-        <translation>תוספות גנגיות:</translation>
+        <translation>תוספות כלליות:</translation>
     </message>
 </context>
 <context>
@@ -136,7 +135,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="156"/>
         <source>Title format:</source>
-        <translation>פורמו כותרת:</translation>
+        <translation>פורמט כותרת:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="166"/>
