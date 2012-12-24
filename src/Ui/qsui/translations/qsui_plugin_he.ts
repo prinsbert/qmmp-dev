@@ -34,7 +34,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="38"/>
         <source>&amp;Play</source>
-        <translation>ה&amp;נגנה</translation>
+        <translation>&amp;נגן</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="38"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="39"/>
         <source>&amp;Pause</source>
-        <translation>ה&amp;שהיה</translation>
+        <translation>ה&amp;שהה</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="39"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="40"/>
         <source>&amp;Stop</source>
-        <translation>ה&amp;פסקה</translation>
+        <translation>ה&amp;פסק</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="40"/>
@@ -210,7 +210,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="62"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">הסר &amp;נבחרות</translation>
+        <translation>הסר &amp;נבחרות</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="63"/>
@@ -406,7 +406,7 @@
         <translation>&amp;ביטול</translation>
     </message>
     <message>
-        <location filename="../addurldialog.cpp" line="125"/>
+        <location filename="../addurldialog.cpp" line="123"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
@@ -489,12 +489,12 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="143"/>
         <source>Play</source>
-        <translation>הנגנה</translation>
+        <translation>נגן</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="153"/>
         <source>Pause</source>
-        <translation>השהיה</translation>
+        <translation>השהה</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="163"/>
