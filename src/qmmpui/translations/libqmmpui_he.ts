@@ -99,7 +99,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="76"/>
         <source>Advanced</source>
-        <translation>מתקדם</translation>
+        <translation>מתקדמות</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="85"/>
@@ -120,17 +120,17 @@
     <message>
         <location filename="../forms/configdialog.ui" line="135"/>
         <source>Load metadata from files</source>
-        <translation>טעינת מידע-מוצמד מן קבצים</translation>
+        <translation>טען מידע-מוצמד מן קבצים</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="142"/>
         <source>Convert underscores to blanks</source>
-        <translation>המרת הדגשות אל תווי רווח</translation>
+        <translation>המר הדגשות אל תווי רווח</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="149"/>
         <source>Convert %20 to blanks</source>
-        <translation>המרת %20 אל תווי רווח</translation>
+        <translation>המר %20 אל תווי רווח</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="156"/>
@@ -150,13 +150,13 @@
     <message>
         <location filename="../forms/configdialog.ui" line="182"/>
         <source>Restrict files to:</source>
-        <translation>הגבלת קבצים אל:</translation>
+        <translation>הגבל קבצים אל:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="192"/>
         <location filename="../forms/configdialog.ui" line="231"/>
         <source>Exclude files:</source>
-        <translation>הוצאת קבצים:</translation>
+        <translation>הוצא קבצים:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="205"/>
@@ -166,12 +166,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="211"/>
         <source>Use separate image files</source>
-        <translation>שימוש בקבצי תמונה פרודים</translation>
+        <translation>השתמש בקבצי תמונה פרודים</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="221"/>
         <source>Include files:</source>
-        <translation>הכללת קבצים:</translation>
+        <translation>הכלל קבצים:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="243"/>
@@ -230,7 +230,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="463"/>
         <source>Add files from command line to this playlist:</source>
-        <translation>הוספת קבצים מן שורת פקודה אל רשימת השמעה זו:</translation>
+        <translation>הוסף קבצים מן שורת פקודה אל רשימת השמעה זו:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="509"/>
@@ -240,8 +240,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="521"/>
         <source>Enable proxy usage</source>
-        <translatorcomment>אפשור ניצול פרוקסי</translatorcomment>
-        <translation>אפשור שימוש בפרוקסי</translation>
+        <translation>אפשר שימוש בפרוקסי</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="528"/>
@@ -256,7 +255,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="554"/>
         <source>Use authentication with proxy</source>
-        <translation>שימוש באימות עם פרוקסי</translation>
+        <translation>השתמש באימות עם פרוקסי</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="561"/>
@@ -292,12 +291,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="679"/>
         <source>Default gain:</source>
-        <translation>רווח משתמט:</translation>
+        <translation>מגבר משתמט:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="731"/>
         <source>Use  peak info to prevent clipping</source>
-        <translation>שימוש במידע שיא למניעת קיצץ</translation>
+        <translation>השתמש במידע שיא למניעת קיצץ</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="747"/>
@@ -317,7 +316,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="841"/>
         <source>Use software volume control</source>
-        <translation>ניצול בקרת שמע של תוכנה</translation>
+        <translation>נצל בקרת שמע של תוכנה</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="848"/>
@@ -441,7 +440,7 @@
     <message>
         <location filename="../forms/detailsdialog.ui" line="42"/>
         <source>Open the directory containing this file</source>
-        <translation>פתיחת המדור שמכיל את קובץ זה</translation>
+        <translation>פתח את המדור שמכיל את קובץ זה</translation>
     </message>
     <message>
         <location filename="../forms/detailsdialog.ui" line="45"/>
@@ -460,7 +459,11 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p dir=&quot;rtl&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="106"/>
@@ -513,7 +516,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="14"/>
         <source>Jump To Track</source>
-        <translation>קפיצה אל רצועה</translation>
+        <translation>קפוץ אל רצועה</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="37"/>
@@ -530,12 +533,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="83"/>
         <source>Refresh</source>
-        <translation>רענון</translation>
+        <translation>רענן</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="96"/>
         <source>Jump To</source>
-        <translation>קפיצה אל</translation>
+        <translation>קפוץ אל</translation>
     </message>
     <message>
         <location filename="../jumptotrackdialog.cpp" line="59"/>
@@ -556,7 +559,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../jumptotrackdialog.cpp" line="90"/>
         <location filename="../jumptotrackdialog.cpp" line="143"/>
         <source>Unqueue</source>
-        <translation>הוצאה מן תור</translation>
+        <translation>הוצא מן תור</translation>
     </message>
 </context>
 <context>
@@ -650,12 +653,16 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p dir=&quot;rtl&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="305"/>
         <source>Include selected tag in file</source>
-        <translation>הכללת תגית נבחרת בקובץ</translation>
+        <translation>הכלל תגית נבחרת בקובץ</translation>
     </message>
 </context>
 <context>
@@ -761,7 +768,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uihelper.cpp" line="147"/>
         <source>Choose a directory</source>
-        <translation>בחירת מדור</translation>
+        <translation>בחר מדור</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="159"/>
@@ -772,12 +779,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uihelper.cpp" line="161"/>
         <source>Open Playlist</source>
-        <translation>פתיחת רשימת השמעה</translation>
+        <translation>פתח רשימת השמעה</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="186"/>
         <source>Save Playlist</source>
-        <translation>שמירת רשימת השמעה</translation>
+        <translation>שמור רשימת השמעה</translation>
     </message>
 </context>
 </TS>
