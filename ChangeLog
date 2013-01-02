@@ -26,3 +26,7 @@ Version 0.6.3
 * fixed shortcut editor
 * fixed qsui position bar behavior
 * fixed division line position in the playlist of the qsui plugin
+
+Version 0.6.4
+* added http redirect support to url dialog of the qsui plugin
+* updated Hebrew translation (Genghis Khan)
