@@ -694,6 +694,7 @@ Version 0.6.5
 
 Version 0.6.6
 * added support for http redirect to the url dialog
+* added ffmpeg 1.1 support
 * fixed seeking when using oss4 as output
 * fixed streaming support the ffmpeg plugin
 * fixed build without qt3support headers (thanks to Dmitry Smolin)
