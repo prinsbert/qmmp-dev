@@ -281,7 +281,7 @@ qint64 DecoderFFmpeg::read(char *audio, qint64 maxSize)
         return 0;
     qint64 len = qMin(m_output_at, maxSize);
 
-    if(av_sample_fmt_is_planar(c->sample_fmt))
+    if(av_sample_fmt_is_planar(c->sample_fmt) && c->request_channels > 1)
     {
         int bps = av_get_bytes_per_sample(c->sample_fmt);
 
