@@ -695,9 +695,11 @@ Version 0.6.5
 Version 0.6.6
 * added support for http redirect to the url dialog
 * added ffmpeg 1.1 support
+* fixed 24/32-bit mode support in the src plugin
 * fixed seeking when using oss4 as output
-* fixed streaming support the ffmpeg plugin
+* fixed streaming support in the ffmpeg plugin
 * fixed build without qt3support headers (thanks to Dmitry Smolin)
-* fixed playlist titlebar cursors
+* fixed playlist titlebar cursor
 * fixed mpris2 support
+* fixed typos
 * updated Hebrew translation (Genghis Khan)
