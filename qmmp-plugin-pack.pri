@@ -10,10 +10,10 @@ INCLUDEPATH += /home/user/qmmp-0.6/include
 INCLUDEPATH += /usr/include
 INCLUDEPATH += /usr/local/include
 }else{
-INCLUDEPATH += C:\projects\qmmp\qmmp-svn-stable\qmmp-0.6\src
-QMAKE_LIBDIR += C:\projects\qmmp\qmmp-svn-stable\qmmp-0.6\bin
-INCLUDEPATH += D:\projects\qmmp\qmmp-svn-stable\qmmp-0.6\src
-QMAKE_LIBDIR += D:\projects\qmmp\qmmp-svn-stable\qmmp-0.6\bin
+INCLUDEPATH += C:/projects/qmmp/qmmp-svn-stable/qmmp-0.6/src
+QMAKE_LIBDIR += C:/projects/qmmp/qmmp-svn-stable/qmmp-0.6/bin
+INCLUDEPATH += D:/projects/qmmp/qmmp-svn-stable/qmmp-0.6/src
+QMAKE_LIBDIR += D:/projects/qmmp/qmmp-svn-stable/qmmp-0.6/bin
 }
 
 #Version
