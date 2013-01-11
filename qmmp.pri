@@ -7,7 +7,7 @@ OBJECTS_DIR=./.build/obj
 
 #Version
 
-QMMP_VERSION = 0.6.6
+QMMP_VERSION = 0.6.7
 CONFIG += SVN_VERSION
 
 
