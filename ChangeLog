@@ -703,3 +703,9 @@ Version 0.6.6
 * fixed mpris2 support
 * fixed typos
 * updated Hebrew translation (Genghis Khan)
+
+Version 0.6.7
+* added lubuntu integration
+* improved rtl locales support
+* fixed latest paranoia support
+* fixed libav 0.8.x support
