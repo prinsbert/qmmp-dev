@@ -537,7 +537,7 @@ Output *QmmpAudioEngine::createOutput()
         delete output;
         output = 0;
         StateHandler::instance()->dispatch(Qmmp::FatalError);
-        return false;
+        return 0;
     }
     if(m_output_buf)
         delete [] m_output_buf;
