@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   Copyright (C) 2003-2007 by Justin Karneges and Michail Pishchagin     *
@@ -20,6 +20,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <QtGlobal>
+#ifdef Q_WS_X11
 #include <QSettings>
 #include <QX11Info>
 #include <QEvent>
@@ -34,6 +36,9 @@ extern "C"
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <X11/XF86keysym.h>
+#ifdef HAVE_XKBLIB_H
+#include <X11/XKBlib.h>
+#endif
 }
 #undef CursorShape
 #undef Status
@@ -102,7 +107,7 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
     }
     settings.endGroup();
     XSync(QX11Info::display(), False);
-//         XSetErrorHandler();
+    //         XSetErrorHandler();
 }
 
 HotkeyManager::~HotkeyManager()
@@ -136,7 +141,7 @@ bool HotkeyManager::eventFilter(QObject* o, QEvent* e)
     if (e->type() == QEvent::KeyPress && (o == qApp->desktop () || o == qApp->activeWindow ()))
     {
         QKeyEvent* k = static_cast<QKeyEvent*>(e);
-        quint32 key = XKeycodeToKeysym(QX11Info::display(), k->nativeScanCode (), 0);
+        quint32 key = keycodeToKeysym(k->nativeScanCode());
         quint32 mod = k->nativeModifiers ();
         SoundCore *core = SoundCore::instance();
         MediaPlayer *player = MediaPlayer::instance();
@@ -159,7 +164,7 @@ bool HotkeyManager::eventFilter(QObject* o, QEvent* e)
                 break;
             case Hotkey::PLAY_PAUSE:
                 if (core->state() == Qmmp::Stopped)
-                    MediaPlayer::instance()->play();
+                    player->play();
                 else if (core->state() != Qmmp::FatalError)
                     core->pause();
                 break;
@@ -175,20 +180,20 @@ bool HotkeyManager::eventFilter(QObject* o, QEvent* e)
             case Hotkey::VOLUME_UP:
             case Hotkey::VOLUME_DOWN:
             {
-                 int volume = qMax(core->leftVolume(), core->rightVolume());
-                 int balance = 0;
-                 int left = core->leftVolume();
-                 int right = core->rightVolume();
-                 if (left || right)
-                     balance = (right - left)*100/volume;
-                 if(hotkey->action == Hotkey::VOLUME_UP)
-                     volume = qMin (100, volume + 5);
-                 else
-                     volume = qMax (0, volume - 5);
-                 core->setVolume(volume-qMax(balance,0)*volume/100,
-                                 volume+qMin(balance,0)*volume/100);
+                int volume = qMax(core->leftVolume(), core->rightVolume());
+                int balance = 0;
+                int left = core->leftVolume();
+                int right = core->rightVolume();
+                if (left || right)
+                    balance = (right - left)*100/volume;
+                if(hotkey->action == Hotkey::VOLUME_UP)
+                    volume = qMin (100, volume + 5);
+                else
+                    volume = qMax (0, volume - 5);
+                core->setVolume(volume-qMax(balance,0)*volume/100,
+                                volume+qMin(balance,0)*volume/100);
             }
-                 break;
+                break;
             case Hotkey::FORWARD:
                 core->seek(core->elapsed() + 5000);
                 break;
@@ -222,7 +227,7 @@ void HotkeyManager::ensureModifiers()
     XModifierKeymap* map = XGetModifierMapping(appDpy);
     if (map)
     {
-        // XKeycodeToKeysym helper code adapeted from xmodmap
+        // XkbKeycodeToKeysym helper code adapeted from xmodmap
         int min_keycode, max_keycode, keysyms_per_keycode = 1;
         XDisplayKeycodes (appDpy, &min_keycode, &max_keycode);
         XFree(XGetKeyboardMapping (appDpy, min_keycode, (max_keycode - min_keycode + 1), &keysyms_per_keycode));
@@ -238,7 +243,11 @@ void HotkeyManager::ensureModifiers()
                     int symIndex = 0;
                     do
                     {
+#ifdef HAVE_XKBLIB_H
+                        sym = XkbKeycodeToKeysym(appDpy, map->modifiermap[mapIndex], symIndex, 0);
+#else
                         sym = XKeycodeToKeysym(appDpy, map->modifiermap[mapIndex], symIndex);
+#endif
                         symIndex++;
                     }
                     while ( !sym && symIndex < keysyms_per_keycode);
@@ -308,5 +317,10 @@ QList<long> HotkeyManager::ignModifiersList()
 
 quint32 HotkeyManager::keycodeToKeysym(quint32 keycode)
 {
-    return XKeycodeToKeysym(QX11Info::display(), keycode, 0);
+#ifdef HAVE_XKBLIB_H
+    return XkbKeycodeToKeysym(QX11Info::display(), keycode, 0, 0);
+#else
+    return XKeycodeToKeysym(QX11Info::display(), keycode,0);
+#endif
 }
+#endif
