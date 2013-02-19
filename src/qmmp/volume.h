@@ -24,7 +24,7 @@
 #endif // VOLUME_H
 
 
-/*! @brief The Volume class is a provides volume API
+/*! @brief The Volume class provides asbtract volume interface
  * @author Ilya Kotov <forkotov02@hotmail.ru>
  */
 class Volume
