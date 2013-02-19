@@ -21,9 +21,6 @@
 #ifndef VOLUME_H
 #define VOLUME_H
 
-#endif // VOLUME_H
-
-
 /*! @brief The Volume class provides asbtract volume interface
  * @author Ilya Kotov <forkotov02@hotmail.ru>
  */
@@ -51,3 +48,5 @@ public:
      */
     virtual int volume(int channel) = 0;
 };
+
+#endif // VOLUME_H
