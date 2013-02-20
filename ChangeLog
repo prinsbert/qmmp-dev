@@ -30,3 +30,7 @@ Version 0.6.3
 Version 0.6.4
 * added http redirect support to the url dialog of the qsui plugin
 * updated Hebrew translation (Genghis Khan)
+
+Version 0.6.5
+* improved rtl locales support
+* fixed compiler warnings
