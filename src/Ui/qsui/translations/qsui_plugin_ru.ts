@@ -416,7 +416,7 @@
     <message>
         <location filename="../equalizer.cpp" line="35"/>
         <source>Equalizer</source>
-        <translation>Эвалайзер</translation>
+        <translation>Эквалайзер</translation>
     </message>
     <message>
         <location filename="../equalizer.cpp" line="43"/>
