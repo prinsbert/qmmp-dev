@@ -51,7 +51,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="77"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
-        <translation></translation>
+        <translation>(c) %1-%2 Qmmp Development Team (開発者チーム)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="82"/>
