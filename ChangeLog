@@ -712,3 +712,7 @@ Version 0.6.7
 * fixed 'enter' hotkey in the playlist browser
 * fixed 24-bit mode support in the src plugin
 * fixed compiler warnings
+
+Version 0.6.8
+* fixed bugs in the mpris plugin
+* updated Japanese translation (Ryota Shimamoto)
