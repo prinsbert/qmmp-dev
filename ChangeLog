@@ -715,4 +715,5 @@ Version 0.6.7
 
 Version 0.6.8
 * fixed bugs in the mpris plugin
+* fixed segmentation fault when running without output plugins
 * updated Japanese translation (Ryota Shimamoto)
