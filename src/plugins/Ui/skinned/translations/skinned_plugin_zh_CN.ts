@@ -848,7 +848,7 @@
     </message>
     <message>
         <location filename="../forms/playlistbrowser.ui" line="52"/>
-        <location filename="../playlistbrowser.cpp" line="39"/>
+        <location filename="../playlistbrowser.cpp" line="40"/>
         <source>Delete</source>
         <translation type="unfinished">删除</translation>
     </message>
@@ -859,7 +859,7 @@
         <translation type="unfinished">...</translation>
     </message>
     <message>
-        <location filename="../playlistbrowser.cpp" line="38"/>
+        <location filename="../playlistbrowser.cpp" line="39"/>
         <source>Rename</source>
         <translation type="unfinished"></translation>
     </message>
