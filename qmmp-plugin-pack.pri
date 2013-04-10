@@ -11,10 +11,10 @@ QMAKE_LIBDIR += /home/user/qmmp-0.7/lib
 INCLUDEPATH += /usr/include
 INCLUDEPATH += /usr/local/include
 }else{
-INCLUDEPATH += D:/projects/qmmp/qmmp-svn/qmmp/src
-QMAKE_LIBDIR += D:/projects/qmmp/qmmp-svn/qmmp/bin
-INCLUDEPATH += C:/projects/qmmp/qmmp-svn/qmmp/src
-QMAKE_LIBDIR += C:/projects/qmmp/qmmp-svn/qmmp/bin
+INCLUDEPATH += D:/projects/qmmp/qmmp-svn-stable/qmmp-0.7/src
+QMAKE_LIBDIR += D:/projects/qmmp/qmmp-svn-stable/qmmp-0.7/qmmp/bin
+INCLUDEPATH += C:/projects/qmmp/qmmp-svn-stable/qmmp-0.7/qmmp/src
+QMAKE_LIBDIR += C:/projects/qmmp/qmmp-svn-stable/qmmp-0.7/qmmp/bin
 }
 
 #Version
