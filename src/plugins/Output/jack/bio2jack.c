@@ -279,8 +279,9 @@ getDriver(int deviceID)
 #endif
   jack_driver_t *drv = &outDev[deviceID];
 
-  if(pthread_mutex_lock(&drv->mutex) != 0)
-    ERR("lock returned an error\n");
+  int err = 0;
+  if((err = pthread_mutex_lock(&drv->mutex)) != 0)
+    ERR("lock returned an error: %d\n", err);
 
   /* should we try to restart the jack server? */
   if(drv->jackd_died && drv->client == 0)
@@ -346,8 +347,9 @@ releaseDriver(jack_driver_t * drv)
      TRACE("deviceID == %d\n", drv->deviceID);
      #endif
    */
-  if(pthread_mutex_unlock(&drv->mutex) != 0)
-    ERR("lock returned an error\n");
+  int err = 0;
+  if((err = pthread_mutex_unlock(&drv->mutex)) != 0)
+    ERR("lock returned an error: %d\n", err);
 }
 
 
@@ -2543,7 +2545,6 @@ JACK_Init(void)
 
     JACK_CleanupDriver(drv);
     JACK_ResetFromDriver(drv);
-    releaseDriver(drv);
   }
 
   client_name = 0;              /* initialize the name to null */
