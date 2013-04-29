@@ -130,7 +130,7 @@ cmake ./ -DUSE_JACK:BOOL=FALSE
 cmake ./ -DCMAKE_INSTALL_PREFIX=другой_путь
 
 Поддержка OSS3 и Udisks.
-Модуль OSS3 и UDisks2 устарели и отключёны по умолчанию. 
+Модули OSS3 и UDisks2 устарели и отключёны по умолчанию.
 Для их включения выполните 'cmake ./ -DUSE_OSS:BOOL=TRUE' или 'cmake ./ -DUSE_OSS:UDISKS2=TRUE' перед сборкой.
 
 Поддержка HAL и UDisks2.
