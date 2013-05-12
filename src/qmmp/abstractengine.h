@@ -83,7 +83,7 @@ public:
      */
     static AbstractEngine *create(InputSource *s, QObject *parent = 0);
     /*!
-     * Returns a list of decoder factories.
+     * Returns a list of engine factories.
      */
     static QList<EngineFactory*> *factories();
     /*!
