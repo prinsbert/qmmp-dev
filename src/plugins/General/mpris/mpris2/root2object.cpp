@@ -65,9 +65,15 @@ QStringList Root2Object::supportedMimeTypes() const
 {
     QStringList mimeTypes;
     foreach(DecoderFactory *factory, *Decoder::factories())
-        mimeTypes << factory->properties().contentTypes;
+    {
+        if(Decoder::isEnabled(factory))
+            mimeTypes << factory->properties().contentTypes;
+    }
     foreach(EngineFactory *factory, *AbstractEngine::factories())
-        mimeTypes << factory->properties().contentTypes;
+    {
+        if(AbstractEngine::isEnabled(factory))
+            mimeTypes << factory->properties().contentTypes;
+    }
     mimeTypes.removeDuplicates();
     return mimeTypes;
 }
