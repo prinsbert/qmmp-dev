@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2013 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -392,7 +392,13 @@ void HttpStreamReader::readICYMetaData()
     uint8_t packet_size;
     m_metacount = 0;
     m_mutex.lock();
-    readBuffer((char *)&packet_size, sizeof(packet_size));
+    while (m_stream.buf_fill < 1 && m_thread->isRunning())
+    {
+        m_mutex.unlock();
+        qApp->processEvents();
+        m_mutex.lock();
+    }
+    readBuffer((char *)&packet_size, 1);
     if (packet_size != 0)
     {
         int size = packet_size * 16;
