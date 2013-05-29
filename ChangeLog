@@ -62,4 +62,5 @@ Version 0.7.0
 Version 0.7.1
 * fixed Ukrainian translation (Gennadi Motsyo)
 * fixed windows support in the ffap plugin
-* fixed shortcut editor dialog
+* fixed shortcut editor dialog in the qsui plugin
+* fixed 'play/pause' action in the qsui plugin
