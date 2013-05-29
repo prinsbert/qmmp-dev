@@ -762,3 +762,5 @@ Version 0.7.1
 * fixed parsing of the icy packet size
 * fixed possible freezes
 * fixed Spanish translation (thanks to Gustavo Alvarez)
+* fixed and improved qmake support (Ryota Shimamoto)
+* fixed pkg-config support
