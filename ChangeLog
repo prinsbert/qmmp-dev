@@ -764,3 +764,4 @@ Version 0.7.1
 * fixed Spanish translation (thanks to Gustavo Alvarez)
 * fixed and improved qmake support (Ryota Shimamoto)
 * fixed pkg-config support
+* fixed several ui bugs
