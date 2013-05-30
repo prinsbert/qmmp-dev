@@ -765,3 +765,4 @@ Version 0.7.1
 * fixed and improved qmake support (Ryota Shimamoto)
 * fixed pkg-config support
 * fixed several ui bugs
+* fixed scrobbler regressions
