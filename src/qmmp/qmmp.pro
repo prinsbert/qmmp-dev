@@ -113,7 +113,7 @@ unix {
         visualfactory.h \
         visual.h \
         volume.h
-        
+
     devel.path = /include/qmmp
     INSTALLS += target \
         devel
@@ -122,11 +122,12 @@ unix {
 INCLUDEPATH += ./
 
 
-QMAKE_PKGCONFIG_NAME = qmmp
-QMAKE_PKGCONFIG_DESCRIPTION = qmmp core library
-QMAKE_PKGCONFIG_REQUIRES = QtCore QtGui
-QMAKE_PKGCONFIG_DESTDIR = pkgconfig
- 
+unix {
+    QMAKE_PKGCONFIG_NAME = qmmp
+    QMAKE_PKGCONFIG_DESCRIPTION = qmmp core library
+    QMAKE_PKGCONFIG_REQUIRES = QtCore QtGui
+    QMAKE_PKGCONFIG_DESTDIR = pkgconfig
+}
 
 
 
