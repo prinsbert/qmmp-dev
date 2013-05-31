@@ -7,7 +7,7 @@ OBJECTS_DIR=./.build/obj
 
 #Version
 
-QMMP_VERSION = 0.7.1
+QMMP_VERSION = 0.7.2
 
 #Comment/uncomment this if you want to change plugins list
 
