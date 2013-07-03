@@ -176,15 +176,15 @@ public:
     /*!
      * Returns a list of the formated titles.
      * @param first First item.
-     * @param last Last item.
+     * @param count A number of items.
      */
-    QStringList getTitles(int first,int last);
+    QStringList getTitles(int first, int count);
     /*!
      * Returns a list of the formatted durations.
      * @param first First item.
-     * @param last Last item.
+     * @param last A number of items.
      */
-    QStringList getTimes(int first,int last);
+    QStringList getTimes(int first, int count);
     /*!
      *  Moves the item at index position \b from to index position \b to.
      */
