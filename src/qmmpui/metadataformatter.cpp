@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -79,7 +79,7 @@ QString MetaDataFormatter::parse(const QMap<Qmmp::MetaData, QString> metaData, q
             QString time;
             int l = length;
             if(l > 3600)
-                time == QString("%1:%2:%3").arg(l/3600,2,10,QChar('0'))
+                time = QString("%1:%2:%3").arg(l/3600,2,10,QChar('0'))
                 .arg(l%3600/60,2,10,QChar('0')).arg(l%60,2,10,QChar('0'));
             else
                 time = QString("%1:%2").arg(l/60,2,10,QChar('0')).arg(l%60,2,10,QChar('0'));
