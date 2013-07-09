@@ -50,7 +50,7 @@ class PlayList : public QWidget
     public:
         PlayList (PlayListManager *manager, QWidget *parent = 0);
 
-        ~PlayList();
+        virtual ~PlayList();
         void load (PlayListItem *);
         void readSettings();
         PlayListItem *currentItem();
