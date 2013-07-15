@@ -288,7 +288,7 @@ QStringList PlayListModel::getTimes(int b,int l)
     for (int i = b; (i < b + l) && (i < m_items.size()); ++i)
     {
         d = m_items.at(i)->length();
-        if(d > 3600)
+        if(d >= 3600)
             str += QString("%1:%2").arg(d/3600).arg(d%3600/60, 2, 10, QChar('0'));
         else
             str += QString("%1").arg(d%3600/60);
