@@ -103,7 +103,7 @@ public:
      */
     void setLength(qint64 length);
     /*!
-     * Same as url()
+     * Returns song url
      */
     const QString url() const;
     /*!
