@@ -766,3 +766,13 @@ Version 0.7.1
 * fixed pkg-config support
 * fixed several ui bugs
 * fixed scrobbler regressions
+
+Version 0.7.2
+* fixed queue update bug
+* fixed track length formatting
+* fixed api documentation
+* fixed gcc warnings
+* fixed memory leaks
+* fixed wildmidi config path
+* fixed playlist autosave feature
+* removed unimplemented function
