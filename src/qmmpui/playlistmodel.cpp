@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright(C) 2006-2012 by Ilya Kotov                                  *
+ *   Copyright(C) 2006-2013 by Ilya Kotov                                  *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -243,6 +243,7 @@ void PlayListModel::clear()
 {
     m_loader->finish();
     m_current = 0;
+    m_currentItem = 0;
     m_stop_item = 0;
     while (!m_items.isEmpty())
     {
@@ -363,6 +364,8 @@ void PlayListModel::removeAt (int i)
 
         if (!m_items.isEmpty())
             m_currentItem = m_items.at(m_current);
+        else
+            m_currentItem = 0;
 
         m_play_state->prepare();
         emit listChanged();
@@ -413,6 +416,8 @@ void PlayListModel::removeSelection(bool inverted)
 
     if (!m_items.isEmpty())
         m_currentItem = m_items.at(m_current);
+    else
+        m_currentItem = 0;
 
     if (select_after_delete >= m_items.count())
         select_after_delete = m_items.count() - 1;
