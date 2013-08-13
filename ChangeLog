@@ -775,4 +775,5 @@ Version 0.7.2
 * fixed memory leaks
 * fixed wildmidi config path
 * fixed playlist autosave feature
+* fixed possible segmentation fault
 * removed unimplemented function
