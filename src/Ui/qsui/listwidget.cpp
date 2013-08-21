@@ -436,15 +436,17 @@ void ListWidget::updateList()
         m_number_width = 0;
 
     //elide title
+    int w = width() - (m_scrollBar->isVisible() ? m_scrollBar->sizeHint().width() : 0);
     QString extra_string;
     for (int i=0; i<m_titles.size(); ++i)
     {
+		QFontMetrics *metrics = (m_model->currentIndex() == i + m_first) ? m_bold_metrics : m_metrics;
         extra_string = getExtraString(m_first + i);
-        int extra_string_space = extra_string.isEmpty() ? 0 : m_metrics->width(extra_string);
+        int extra_string_space = extra_string.isEmpty() ? 0 : m_extra_metrics->width(extra_string);
         if(m_number_width)
             extra_string_space += m_number_width + m_metrics->width("9");
-        m_titles.replace(i, m_metrics->elidedText (m_titles.at(i), Qt::ElideRight,
-                                                   width() -  m_metrics->width(m_times.at(i)) - 22 - extra_string_space));
+        m_titles.replace(i, metrics->elidedText (m_titles.at(i), Qt::ElideRight,
+                                                 w -  metrics->width(m_times.at(i)) - 22 - extra_string_space));
     }
 
     m_scrollBar->setVisible(m_model->count() > m_rows);
