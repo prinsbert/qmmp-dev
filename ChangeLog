@@ -66,5 +66,7 @@ Version 0.7.1
 * fixed 'play/pause' action in the qsui plugin
 
 Version 0.7.2
-* fixed memory leak in the qsui plugin
-* fixed text eliding in the qsui plugin
+* fixed qsui plugin:
+  - fixed memory leak
+  - fixed text eliding
+  - fixed 'rename list' shortcut
