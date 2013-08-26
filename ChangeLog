@@ -64,3 +64,7 @@ Version 0.7.1
 * fixed windows support in the ffap plugin
 * fixed shortcut editor dialog in the qsui plugin
 * fixed 'play/pause' action in the qsui plugin
+
+Version 0.7.2
+* fixed memory leak in the qsui plugin
+* fixed text eliding in the qsui plugin
