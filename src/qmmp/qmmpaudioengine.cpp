@@ -381,8 +381,9 @@ void QmmpAudioEngine::run()
             else if(!m_decoders.isEmpty())
             {
                 m_inputs.take(m_decoder)->deleteLater ();
-                delete m_decoder;
+                Decoder *d = m_decoder;
                 m_decoder = m_decoders.dequeue();
+                delete d;
                 //m_seekTime = m_inputs.value(m_decoder)->offset();
                 m_replayGain->setReplayGainInfo(m_decoder->replayGainInfo());
                 //use current output if possible
@@ -447,8 +448,9 @@ void QmmpAudioEngine::run()
     if(m_decoder)
     {
         m_inputs.take(m_decoder)->deleteLater ();
-        delete m_decoder;
+        Decoder *d = m_decoder;
         m_decoder = 0;
+        delete d;
     }
 
     mutex()->lock ();
