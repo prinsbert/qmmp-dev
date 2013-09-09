@@ -32,6 +32,10 @@ AbstractEngine::AbstractEngine(QObject *parent) : QThread(parent)
 {
 }
 
+AbstractEngine::~AbstractEngine()
+{
+}
+
 QMutex *AbstractEngine::mutex()
 {
     return &m_mutex;
