@@ -14,8 +14,7 @@ SOURCES += projectmplugin.cpp \
            visualprojectmfactory.cpp \
            projectmwidget.cpp
 INCLUDEPATH += ../../../
-CONFIG += release \
-warn_on \
+CONFIG += warn_on \
 plugin \
 link_pkgconfig
 
@@ -45,3 +44,18 @@ isEmpty(LIB_DIR){
 }
 target.path = $$LIB_DIR/qmmp/Visual
 INSTALLS += target
+
+#projectM config path
+exists("/usr/share/projectM/config.inp") {
+
+}
+
+PROJECTM_CONFIG_FILES = /usr/share/projectM/config.inp \
+                        /usr/local/share/projectM/config.inp
+
+for(path, PROJECTM_CONFIG_FILES) {
+  exists($$path) {
+     message ("found projectm configuration: "$$path)
+     DEFINES += PROJECTM_CONFIG_FILE=\\\"$$path\\\"
+  }
+}
