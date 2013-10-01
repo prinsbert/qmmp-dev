@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2009 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2013 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -103,9 +103,7 @@ void FileInfo::setMetaData(Qmmp::MetaData key, const QString &value)
 
     //extract track number from "Track Number/Total Tracks Number" string
     if((key == Qmmp::TRACK || key == Qmmp::DISCNUMBER) && value.contains("/"))
-    {
         m_metaData.insert(key, value.section("/",0,0));
-    }
     else
         m_metaData.insert(key, value);
 }
