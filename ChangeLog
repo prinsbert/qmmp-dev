@@ -778,3 +778,14 @@ Version 0.7.2
 * fixed possible segmentation fault
 * fixed title format update bug
 * removed unimplemented function
+
+Version 0.7.3
+* added window size and position saving to the projectm plugin
+* disabled unsupported settings in the statusicon plugin
+* fixed warnings about invalid parent thread
+* fixed race condition
+* fixed replaygain support in the flac plugin
+* fixed parsing of the track/disc number with separator
+* fixed tooltip in the status icon plugin under Windows
+* fixed 'show tooltip' option in the status icon plugin
+* removed unused variables
