@@ -70,3 +70,6 @@ Version 0.7.2
   - fixed memory leak
   - fixed text eliding
   - fixed 'rename list' shortcut
+
+Version 0.7.3
+* fixed bug causes equalizer reset in the qsui plugin
