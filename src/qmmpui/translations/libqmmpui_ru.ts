@@ -232,66 +232,71 @@
     </message>
     <message>
         <location filename="../configdialog.cpp" line="316"/>
+        <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configdialog.cpp" line="317"/>
         <source>German</source>
         <translation>немецкий</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="317"/>
+        <location filename="../configdialog.cpp" line="318"/>
         <source>Hebrew</source>
         <translation>иврит</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="318"/>
+        <location filename="../configdialog.cpp" line="319"/>
         <source>Hungarian</source>
         <translation>венгерский</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="319"/>
+        <location filename="../configdialog.cpp" line="320"/>
         <source>Italian</source>
         <translation>итальянский</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="320"/>
+        <location filename="../configdialog.cpp" line="321"/>
         <source>Japanese</source>
         <translation>японский</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="321"/>
+        <location filename="../configdialog.cpp" line="322"/>
         <source>Kazakh</source>
         <translation>казахский</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="322"/>
+        <location filename="../configdialog.cpp" line="323"/>
         <source>Lithuanian</source>
         <translation>литовский</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="323"/>
+        <location filename="../configdialog.cpp" line="324"/>
         <source>Polish</source>
         <translation>польский</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="324"/>
+        <location filename="../configdialog.cpp" line="325"/>
         <source>Russian</source>
         <translation>русский</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="325"/>
+        <location filename="../configdialog.cpp" line="326"/>
         <source>Slovak</source>
         <translation>словацкий</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="326"/>
+        <location filename="../configdialog.cpp" line="327"/>
         <source>Spanish</source>
         <translation>испанский</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="327"/>
+        <location filename="../configdialog.cpp" line="328"/>
         <source>Turkish</source>
         <translation>турецкий</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="328"/>
+        <location filename="../configdialog.cpp" line="329"/>
         <source>Ukrainian</source>
         <translation>украинский</translation>
     </message>
