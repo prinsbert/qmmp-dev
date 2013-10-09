@@ -570,6 +570,7 @@ OutputWriter *QmmpAudioEngine::createOutput()
 void QmmpAudioEngine::prepareEffects(Decoder *d)
 {
     m_ap = d->audioParameters();
+    m_replayGain->setFormat(m_ap.format());
 
     foreach(Effect *e, m_effects) //remove disabled and external effects
     {

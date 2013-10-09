@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <math.h>
+#include "audioparameters.h"
 #include "replaygain_p.h"
 
 ReplayGain::ReplayGain()
@@ -26,14 +27,16 @@ ReplayGain::ReplayGain()
     m_sampleSize = 2;
     m_scale = 1.0;
     m_mode = QmmpSettings::REPLAYGAIN_DISABLED;
+    m_format = Qmmp::PCM_UNKNOWM;
     m_preamp = 0.0;
     m_default_gain = 0.0;
     m_prevent_clipping = false;
 }
 
-void ReplayGain::setSampleSize(int size)
+void ReplayGain::setFormat(Qmmp::AudioFormat format)
 {
-    m_sampleSize = size;
+    m_sampleSize = AudioParameters::sampleSize(format);
+    m_format = format;
     updateScale();
 }
 
@@ -68,22 +71,44 @@ void ReplayGain::applyReplayGain(char *data, qint64 size)
 {
     if(m_mode == QmmpSettings::REPLAYGAIN_DISABLED || m_scale == 1.0)
         return;
-    size = size/m_sampleSize;
-    if(m_sampleSize == 2)
-    {
-        for (qint64 i = 0; i < size; i++)
-            ((short*)data)[i]*= m_scale;
+    qint64 samples = size >> (m_sampleSize >> 1); //size / m_sampleSize;
 
-    }
-    else if(m_sampleSize == 1)
-    {
-        for (qint64 i = 0; i < size; i++)
-            ((char*)data)[i]*= m_scale;
-    }
-    else if(m_sampleSize == 4)
-    {
-        for (qint64 i = 0; i < size; i++)
-           ((qint32*)data)[i]*= m_scale;
+	switch (m_format)
+	{
+	    case Qmmp::PCM_S8:
+		{
+			for (qint64 i = 0; i < samples; i++)
+				((char*)data)[i] = qBound(-128.0, ((char*)data)[i] * m_scale, 127.0);
+			break;
+		}
+		case Qmmp::PCM_S16LE:
+		{
+           for (qint64 i = 0; i < samples; i++)
+               ((short*)data)[i] = qBound(-32768.0, ((short*)data)[i] * m_scale, 32767.0);
+           break;
+        }
+        case Qmmp::PCM_S24LE:
+        {
+            for (qint64 i = 0; i < samples; i++)
+            {
+                ((qint32*)data)[i] = qBound(-(double)(1U << 23),
+                                           ((qint32*)data)[i] * m_scale,
+                                           (double)((1U << 23) - 1));
+            }
+            break;
+        }
+        case Qmmp::PCM_S32LE:
+        {
+            for (qint64 i = 0; i < samples; i++)
+            {
+                ((qint32*)data)[i] = qBound(-(double)(1U << 31),
+                                           ((qint32*)data)[i] * m_scale,
+                                           (double)((1U << 31) - 1));
+            }
+            break;
+        }
+        default:
+           ;
     }
 }
 

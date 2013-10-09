@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -34,7 +34,7 @@ class ReplayGain
 public:
     ReplayGain();
 
-    void setSampleSize(int size);
+    void setFormat(Qmmp::AudioFormat format);
     void updateSettings(QmmpSettings::ReplayGainMode mode, double preamp,
                         double default_gain, bool clip);
     void setReplayGainInfo(const QMap<Qmmp::ReplayGainKey, double> &info);
@@ -49,6 +49,7 @@ private:
     double m_preamp;
     double m_default_gain;
     bool m_prevent_clipping;
+    Qmmp::AudioFormat m_format;
 };
 
 #endif // REPLAYGAIN_H
