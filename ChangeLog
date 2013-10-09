@@ -789,3 +789,9 @@ Version 0.7.3
 * fixed tooltip in the status icon plugin under Windows
 * fixed 'show tooltip' option in the status icon plugin
 * removed unused variables
+
+Version 0.7.4
+* added Galician translation (Óscar Pereira)
+* improved ReplayGain support:
+  - fixed 24/32 bit mode
+  - added clipping to prevent overflow
