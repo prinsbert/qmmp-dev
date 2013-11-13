@@ -521,7 +521,7 @@
     <message>
         <location filename="../configdialog.cpp" line="316"/>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>ガリシア語</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="317"/>

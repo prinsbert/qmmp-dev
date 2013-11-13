@@ -10,6 +10,9 @@
 カザフ語:
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>
 
+ガリシア語 (スペイン北西部):
+    Óscar Pereira <oscarpereira1989@gmail.com>
+
 スペイン語:
     Félix Medrano <xukosky@yahoo.es>
 
