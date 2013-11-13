@@ -73,3 +73,6 @@ Version 0.7.2
 
 Version 0.7.3
 * fixed bug causes equalizer reset in the qsui plugin
+
+Version 0.7.4
+* fixed gcc 4.8 warnings
