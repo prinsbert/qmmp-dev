@@ -792,6 +792,11 @@ Version 0.7.3
 
 Version 0.7.4
 * added Galician translation (Óscar Pereira)
+* added ffmpeg 2.1 support
 * improved ReplayGain support:
   - fixed 24/32 bit mode
   - added clipping to prevent overflow
+* fixed localization of the wildmidi plugin
+* fixed case sensitivity while checking file extensions
+* fixed problem with absolute paths
+* fixed gcc 4.8 warnings
