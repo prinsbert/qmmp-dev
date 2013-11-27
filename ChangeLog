@@ -800,4 +800,5 @@ Version 0.7.4
 * fixed case sensitivity while checking file extensions
 * fixed problem with absolute paths
 * fixed gcc 4.8 warnings
+* fixed memory leak
 * fixed Japanese translation (RyōTa SimaMoto)
