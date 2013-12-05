@@ -899,7 +899,10 @@ void PlayListModel::loadPlaylist(const QString &f_name)
             continue;
 
         if (QFileInfo(list.at(i)).isRelative())
-            list[i].prepend(QFileInfo(f_name).canonicalPath () + QDir::separator ());
+            list[i].prepend(QFileInfo(f_name).canonicalPath () + "/");
+
+        list[i].replace("\\","/");
+        list[i].replace("//","/");
     }
     m_loader->loadFiles(list);
     file.close();
