@@ -793,6 +793,7 @@ Version 0.7.3
 Version 0.7.4
 * added Galician translation (Óscar Pereira)
 * added ffmpeg 2.1 support
+* added m3u8 playlist extension
 * improved ReplayGain support:
   - fixed 24/32 bit mode
   - added clipping to prevent overflow
@@ -801,4 +802,6 @@ Version 0.7.4
 * fixed problem with absolute paths
 * fixed gcc 4.8 warnings
 * fixed memory leak
+* fixed parsing of the m3u files with backslashes
+* fixed adding files from command line under Windows
 * fixed Japanese translation (RyōTa SimaMoto)
