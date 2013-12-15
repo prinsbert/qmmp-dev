@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,26 +21,27 @@
 #include <QSettings>
 #include <QDir>
 #include <qmmp/qmmp.h>
+#include "decoder_cdaudio.h"
 #include "settingsdialog.h"
 
 SettingsDialog::SettingsDialog(QWidget *parent)
         : QDialog(parent)
 {
-    ui.setupUi(this);
+    m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("cdaudio");
-    ui.deviceLineEdit->setText(settings.value("device").toString());
-    ui.deviceCheckBox->setChecked(!ui.deviceLineEdit->text().isEmpty());
+    m_ui.deviceLineEdit->setText(settings.value("device").toString());
+    m_ui.deviceCheckBox->setChecked(!m_ui.deviceLineEdit->text().isEmpty());
     int speed = settings.value("speed", 0).toInt();
-    ui.speedCheckBox->setChecked(speed > 0);
-    ui.speedSpinBox->setValue(speed);
-    ui.cdtextCheckBox->setChecked(settings.value("cdtext", true).toBool());
-    ui.cddbGroupBox->setChecked(settings.value("use_cddb", false).toBool());
-    ui.httpCheckBox->setChecked(settings.value("cddb_http", false).toBool());
-    ui.serverLineEdit->setText(settings.value("cddb_server", "freedb.org").toString());
-    ui.pathLineEdit->setText(settings.value("cddb_path").toString());
-    ui.portLineEdit->setText(settings.value("cddb_port", 8880).toString());
+    m_ui.speedCheckBox->setChecked(speed > 0);
+    m_ui.speedSpinBox->setValue(speed);
+    m_ui.cdtextCheckBox->setChecked(settings.value("cdtext", true).toBool());
+    m_ui.cddbGroupBox->setChecked(settings.value("use_cddb", false).toBool());
+    m_ui.httpCheckBox->setChecked(settings.value("cddb_http", false).toBool());
+    m_ui.serverLineEdit->setText(settings.value("cddb_server", "freedb.org").toString());
+    m_ui.pathLineEdit->setText(settings.value("cddb_path").toString());
+    m_ui.portLineEdit->setText(settings.value("cddb_port", 8880).toString());
     settings.endGroup();
 }
 
@@ -51,22 +52,24 @@ void SettingsDialog::accept()
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("cdaudio");
-    if(ui.deviceCheckBox->isChecked())
-        settings.setValue("device", ui.deviceLineEdit->text());
+    if(m_ui.deviceCheckBox->isChecked())
+        settings.setValue("device", m_ui.deviceLineEdit->text());
     else
         settings.remove("device");
-    if(ui.speedCheckBox->isChecked())
-        settings.setValue("speed", ui.speedSpinBox->value());
+    if(m_ui.speedCheckBox->isChecked())
+        settings.setValue("speed", m_ui.speedSpinBox->value());
     else
         settings.setValue("speed", 0);
-    settings.setValue("cdtext", ui.cdtextCheckBox->isChecked());
-    settings.setValue("cdtext", ui.cdtextCheckBox->isChecked());
-    settings.setValue("use_cddb", ui.cddbGroupBox->isChecked());
-    settings.setValue("cddb_http", ui.httpCheckBox->isChecked());
-    settings.setValue("cddb_server",  ui.serverLineEdit->text());
-    settings.setValue("cddb_path", ui.pathLineEdit->text());
-    settings.setValue("cddb_port", ui.portLineEdit->text());
+    settings.setValue("cdtext", m_ui.cdtextCheckBox->isChecked());
+    settings.setValue("cdtext", m_ui.cdtextCheckBox->isChecked());
+    settings.setValue("use_cddb", m_ui.cddbGroupBox->isChecked());
+    settings.setValue("cddb_http", m_ui.httpCheckBox->isChecked());
+    settings.setValue("cddb_server",  m_ui.serverLineEdit->text());
+    settings.setValue("cddb_path", m_ui.pathLineEdit->text());
+    settings.setValue("cddb_port", m_ui.portLineEdit->text());
     settings.endGroup();
+    settings.sync();
+    DecoderCDAudio::clearTrackCache();
     QDialog::accept();
 }
 
