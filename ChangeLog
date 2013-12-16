@@ -797,11 +797,17 @@ Version 0.7.4
 * improved ReplayGain support:
   - fixed 24/32 bit mode
   - added clipping to prevent overflow
+* improved cdaudio plugin:
+  - added Windows support
+  - added track cache
+  - fixed proxy support
 * fixed localization of the wildmidi plugin
 * fixed case sensitivity while checking file extensions
-* fixed problem with absolute paths
 * fixed gcc 4.8 warnings
 * fixed memory leak
-* fixed parsing of the m3u files with backslashes
-* fixed adding files from command line under Windows
+* fixed several Windows-only bugs:
+  - fixed parsing of the m3u files with backslashes
+  - fixed problem with absolute paths
+  - fixed adding files from command line under Windows
+  - fixed Meta/Win modifier in the global hotkey plugin
 * fixed Japanese translation (RyōTa SimaMoto)
