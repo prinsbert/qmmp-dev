@@ -74,7 +74,6 @@ private slots:
     void showTabMenu(QPoint pos);
     void savePlayList();
     void loadPlayList();
-    void on_tabWidget_tabCloseRequested(int index);
     void showBuffering(int percent);
     void showEqualizer();
     void forward();
