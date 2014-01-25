@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2014 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -74,6 +74,7 @@ EqWidget::EqWidget (QWidget *parent)
     updatePositions();
     updateMask();
     connect(SoundCore::instance(), SIGNAL(volumeChanged(int, int)), m_titleBar, SLOT(setVolume(int, int)));
+    m_titleBar->setVolume(SoundCore::instance()->leftVolume(), SoundCore::instance()->rightVolume());
 #ifdef Q_WS_X11
     QString wm_name = WindowSystem::netWindowManagerName();
     if(wm_name.contains("metacity", Qt::CaseInsensitive) ||
