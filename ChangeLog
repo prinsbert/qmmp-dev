@@ -811,3 +811,9 @@ Version 0.7.4
   - fixed adding files from command line under Windows
   - fixed Meta/Win modifier in the global hotkey plugin
 * fixed Japanese translation (RyōTa SimaMoto)
+
+Version 0.7.5
+* fixed case sensitivity while checking file extensions (tnanks to Ryota Shimamoto)
+* fixed special global keys support under the win32 platform
+* fixed latest cmake support
+* fixed inital position of the equalizer volume slider
