@@ -816,4 +816,5 @@ Version 0.7.5
 * fixed case sensitivity while checking file extensions (tnanks to Ryota Shimamoto)
 * fixed special global keys support under the win32 platform
 * fixed latest cmake support
-* fixed inital position of the equalizer volume slider
+* fixed initial position of the equalizer volume slider
+* fixed clang warnings
