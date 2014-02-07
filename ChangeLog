@@ -77,3 +77,9 @@ Version 0.7.3
 Version 0.7.4
 * fixed gcc 4.8 warnings
 * fixed memory leak
+
+Version 0.7.5
+* fixed tab closing bug in the qsui plugin
+* fixed cpu architecture detection while build using qmake
+* fixed feature to disable qsui before build (Ryota Shimamoto)
+* fixed latest cmake support
