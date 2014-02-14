@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2012 by Ilya Kotov                                      *
+ *   Copyright (C) 2012-2014 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -344,7 +344,7 @@ void OutputWriter::run()
                 SoftwareVolume::instance()->changeVolume(b, m_channels, m_format);
             l = 0;
             m = 0;
-            while (l < b->nbytes && !m_pause)
+            while (l < b->nbytes && !m_pause && !m_prev_pause)
             {
                 mutex()->lock();
                 if(m_skip)
