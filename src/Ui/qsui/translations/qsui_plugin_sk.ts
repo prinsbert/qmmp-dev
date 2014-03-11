@@ -594,7 +594,7 @@
         <translation type="unfinished">Činnosti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="647"/>
+        <location filename="../mainwindow.cpp" line="642"/>
         <source>Buffering: %1%</source>
         <translation type="unfinished"></translation>
     </message>
