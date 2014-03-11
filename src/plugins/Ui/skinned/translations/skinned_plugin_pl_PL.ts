@@ -377,48 +377,48 @@
 <context>
     <name>EqWidget</name>
     <message>
-        <location filename="../eqwidget.cpp" line="157"/>
-        <location filename="../eqwidget.cpp" line="178"/>
+        <location filename="../eqwidget.cpp" line="158"/>
+        <location filename="../eqwidget.cpp" line="179"/>
         <source>preset</source>
         <translation>profil</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="264"/>
+        <location filename="../eqwidget.cpp" line="265"/>
         <source>&amp;Load/Delete</source>
         <translation>Wczytaj/&amp;Usuń</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="266"/>
+        <location filename="../eqwidget.cpp" line="267"/>
         <source>&amp;Save Preset</source>
         <translation>Zapi&amp;sz Profil</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="268"/>
+        <location filename="../eqwidget.cpp" line="269"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>Zapi&amp;sz Auto-ładowanie Profilu</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="273"/>
+        <location filename="../eqwidget.cpp" line="274"/>
         <source>&amp;Clear</source>
         <translation>&amp;Wyczyść</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="302"/>
+        <location filename="../eqwidget.cpp" line="303"/>
         <source>Saving Preset</source>
         <translation>Zapisywanie Profilu</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="303"/>
+        <location filename="../eqwidget.cpp" line="304"/>
         <source>Preset name:</source>
         <translation>Nazwa Profilu:</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="304"/>
+        <location filename="../eqwidget.cpp" line="305"/>
         <source>preset #</source>
         <translation>profil #</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="270"/>
+        <location filename="../eqwidget.cpp" line="271"/>
         <source>&amp;Import</source>
         <translation>&amp;Importuj</translation>
     </message>
@@ -428,7 +428,7 @@
         <translation>Korektor</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="395"/>
+        <location filename="../eqwidget.cpp" line="396"/>
         <source>Import Preset</source>
         <translation>Importuj Profil</translation>
     </message>

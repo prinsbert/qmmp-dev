@@ -382,53 +382,53 @@
         <translation>Equalizer</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="157"/>
-        <location filename="../eqwidget.cpp" line="178"/>
+        <location filename="../eqwidget.cpp" line="158"/>
+        <location filename="../eqwidget.cpp" line="179"/>
         <source>preset</source>
         <translation>Voreinstellung</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="264"/>
+        <location filename="../eqwidget.cpp" line="265"/>
         <source>&amp;Load/Delete</source>
         <translation>&amp;Laden/Löschen</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="266"/>
+        <location filename="../eqwidget.cpp" line="267"/>
         <source>&amp;Save Preset</source>
         <translation>&amp;Voreinstellung speichern</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="268"/>
+        <location filename="../eqwidget.cpp" line="269"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>&amp;Automatische Voreinstellungen speichern</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="270"/>
+        <location filename="../eqwidget.cpp" line="271"/>
         <source>&amp;Import</source>
         <translation>&amp;Importieren</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="273"/>
+        <location filename="../eqwidget.cpp" line="274"/>
         <source>&amp;Clear</source>
         <translation>&amp;Zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="302"/>
+        <location filename="../eqwidget.cpp" line="303"/>
         <source>Saving Preset</source>
         <translation>Voreinstellung speichern</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="303"/>
+        <location filename="../eqwidget.cpp" line="304"/>
         <source>Preset name:</source>
         <translation>Name der Voreinstellung:</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="304"/>
+        <location filename="../eqwidget.cpp" line="305"/>
         <source>preset #</source>
         <translation>Voreinstellung #</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="395"/>
+        <location filename="../eqwidget.cpp" line="396"/>
         <source>Import Preset</source>
         <translation>Voreinstellung importieren</translation>
     </message>

@@ -384,53 +384,53 @@
         <translation>אקולייזר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="157"/>
-        <location filename="../eqwidget.cpp" line="178"/>
+        <location filename="../eqwidget.cpp" line="158"/>
+        <location filename="../eqwidget.cpp" line="179"/>
         <source>preset</source>
         <translation>קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="264"/>
+        <location filename="../eqwidget.cpp" line="265"/>
         <source>&amp;Load/Delete</source>
         <translation>&amp;טען/מחק</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="266"/>
+        <location filename="../eqwidget.cpp" line="267"/>
         <source>&amp;Save Preset</source>
         <translation>&amp;שמור קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="268"/>
+        <location filename="../eqwidget.cpp" line="269"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>&amp;שמור קביעות שנטענות אוטומטית</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="270"/>
+        <location filename="../eqwidget.cpp" line="271"/>
         <source>&amp;Import</source>
         <translation>יי&amp;בוא</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="273"/>
+        <location filename="../eqwidget.cpp" line="274"/>
         <source>&amp;Clear</source>
         <translation>&amp;טהר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="302"/>
+        <location filename="../eqwidget.cpp" line="303"/>
         <source>Saving Preset</source>
         <translation>שמירת קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="303"/>
+        <location filename="../eqwidget.cpp" line="304"/>
         <source>Preset name:</source>
         <translation>שם קביעה:</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="304"/>
+        <location filename="../eqwidget.cpp" line="305"/>
         <source>preset #</source>
         <translation>קביעה מספר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="395"/>
+        <location filename="../eqwidget.cpp" line="396"/>
         <source>Import Preset</source>
         <translation>ייבוא קביעות</translation>
     </message>
