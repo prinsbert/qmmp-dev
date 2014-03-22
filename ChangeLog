@@ -818,3 +818,7 @@ Version 0.7.5
 * fixed latest cmake support
 * fixed initial position of the equalizer volume slider
 * fixed clang warnings
+
+Version 0.7.6
+* added libav 10 support
+* fixed freezing on playback resume
