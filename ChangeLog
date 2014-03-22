@@ -83,3 +83,7 @@ Version 0.7.5
 * fixed cpu architecture detection while build using qmake
 * fixed feature to disable qsui before build (Ryota Shimamoto)
 * fixed latest cmake support
+
+Version 0.7.6
+* added seeking using mouse wheel
+* fixed crash in the ffap plugin under win32
