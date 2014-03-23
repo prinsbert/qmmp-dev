@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2014 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -148,6 +148,8 @@ void PlayListItem::readMetadata()
     m_title = f.parse(this);
     if (m_title.isEmpty())
         m_title = value(Qmmp::URL).section('/',-1);
+    if (m_title.isEmpty())
+        m_title = value(Qmmp::URL);
     if (m_info)
         delete m_info;
     m_info = 0;
