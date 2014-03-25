@@ -820,6 +820,6 @@ Version 0.7.5
 * fixed clang warnings
 
 Version 0.7.6
-* improved url processing
-* added libav 10 support
+* added libav 10 and ffmpeg 2.2 support
+* fixed  url parsing
 * fixed freezing on playback resume
