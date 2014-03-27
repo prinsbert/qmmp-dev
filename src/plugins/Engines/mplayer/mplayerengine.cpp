@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2014 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -88,6 +88,7 @@ MplayerEngine::MplayerEngine(QObject *parent)
     m_bitsPerSample = 0;
     m_length = 0;
     m_currentTime = 0;
+    m_user_stop = false;
     m_process = new QProcess(this);
     connect(m_process, SIGNAL(readyReadStandardOutput()), SLOT(readStdOut()));
 }
@@ -102,6 +103,7 @@ MplayerEngine::~MplayerEngine()
 
 bool MplayerEngine::play()
 {
+    m_user_stop = false;
     if(m_process->state() != QProcess::NotRunning)
         return false;
     startMplayerProcess();
@@ -169,8 +171,12 @@ void MplayerEngine::stop()
 {
     while(!m_sources.isEmpty())
         m_sources.dequeue()->deleteLater();
-    m_process->write("quit\n");
-    m_process->close();
+    if(m_process->state() == QProcess::Running)
+    {
+        m_user_stop = true;
+        m_process->write("quit\n");
+        m_process->waitForFinished(3500);
+    }
     StateHandler::instance()->dispatch(Qmmp::Stopped);
 }
 
@@ -216,7 +222,7 @@ void MplayerEngine::readStdOut()
                 return;
             }
         }
-        else if (rx_quit.indexIn(line) > -1)
+        else if (rx_quit.indexIn(line) > -1 && !m_user_stop)
         {
             if (m_process->state() == QProcess::Running)
                 m_process->waitForFinished(1500);

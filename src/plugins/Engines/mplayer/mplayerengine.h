@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2009 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2014 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -69,6 +69,7 @@ private:
     int m_samplerate;
     int m_channels;
     int m_bitsPerSample;
+    bool m_user_stop;
     qint64 m_currentTime;
     qint64 m_length;
     QQueue <InputSource*> m_sources;
