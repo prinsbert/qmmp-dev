@@ -87,3 +87,4 @@ Version 0.7.5
 Version 0.7.6
 * added seeking using mouse wheel
 * fixed crash in the ffap plugin under win32
+* fixed playlist name update bug
