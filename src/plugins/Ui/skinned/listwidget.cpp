@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2014 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -223,7 +223,6 @@ void ListWidget::mouseDoubleClickEvent (QMouseEvent *e)
     }
 }
 
-
 void ListWidget::mousePressEvent(QMouseEvent *e)
 {
     if(m_popupWidget)
@@ -235,10 +234,13 @@ void ListWidget::mousePressEvent(QMouseEvent *e)
     if (INVALID_ROW != row && m_model->count() > row)
     {
         m_pressed_row = row;
-        if(e->button() == Qt::RightButton && !m_model->isSelected(row))
+        if(e->button() == Qt::RightButton)
         {
-            m_model->clearSelection();
-            m_model->setSelected(row, true);
+            if(!m_model->isSelected(row))
+            {
+                m_model->clearSelection();
+                m_model->setSelected(row, true);
+            }
             m_anchor_row = m_pressed_row;
             QWidget::mousePressEvent(e);
             return;
