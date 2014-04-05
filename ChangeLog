@@ -821,6 +821,8 @@ Version 0.7.5
 
 Version 0.7.6
 * added libav 10 and ffmpeg 2.2 support
-* fixed  url parsing
+* fixed url parsing
 * fixed freezing on playback resume
 * fixed random freezing in the mplayer plugin
+* fixed reset selection of tracks when calling context menu
+* fixed multimedia keys support under win32
