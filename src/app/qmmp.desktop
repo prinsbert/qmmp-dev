@@ -32,13 +32,11 @@ Actions=Play;Pause;Stop;Previous;Next;
 Name=Play
 Name[ru]=Воспроизвести
 Exec=qmmp --no-start --play
-OnlyShowIn=Unity;
 
 [Desktop Action Pause]
 Name=Pause
 Name[ru]=Пауза
 Exec=qmmp --no-start --pause
-OnlyShowIn=Unity;
 
 [Desktop Action Stop]
 Name=Stop
@@ -50,10 +48,8 @@ OnlyShowIn=Unity;
 Name=Previous
 Name[ru]=Предыдущий фрагмент
 Exec=qmmp --no-start --previous
-OnlyShowIn=Unity;
 
 [Desktop Action Next]
 Name=Next
 Name[ru]=Следующий фрагмент
 Exec=qmmp --no-start --next
-OnlyShowIn=Unity;
