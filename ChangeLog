@@ -89,3 +89,8 @@ Version 0.7.6
 * fixed crash in the ffap plugin under win32
 * fixed playlist name update bug
 * fixed reset selection of tracks when calling context menu
+
+Version 0.7.7
+* fixed typos
+* fixed Polish locale support
+* removed useless files
