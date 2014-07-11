@@ -891,3 +891,8 @@ Version 0.8.0
 * updated Serbian translation (Mladen Pejaković)
 * updated Polish translation (Grzegorz Gibas)
 * updated Lithuanian translation (Algirdas Butkus)
+
+Version 0.8.1
+* added rusxmms patch autodetection for all supported platforms
+* fixed --pl-dump/--pl-play command line options
+* fixed regressions in the mpris 1.0 support
