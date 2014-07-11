@@ -123,3 +123,6 @@ Version 0.8.0
 * updated Serbian translation (Mladen Pejaković)
 * updated Polish translation (Grzegorz Gibas)
 * updated Lithuanian translation (Algirdas Butkus)
+
+Version 0.8.1
+* added rusxmms autodetection to the mpg123 plugin
