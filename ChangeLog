@@ -898,3 +898,6 @@ Version 0.8.1
 * fixed regressions in the mpris 1.0 support
 * fixed selection behaviour in the playlist when using keyboard
 * fixed disc number disappearing when using flac with embedded cue
+* fixed main window activation
+* fixed segmentation fault when moving track in the group mode
+* fixed not working 'exit' action when option 'hide on close' is enabled
