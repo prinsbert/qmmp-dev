@@ -127,3 +127,4 @@ Version 0.8.0
 Version 0.8.1
 * added rusxmms patch autodetection to the mpg123 plugin
 * fixed selection behaviour when using keyboard in the qsui plugin
+* fixed main window activation un the qsui plugin
