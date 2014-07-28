@@ -901,3 +901,4 @@ Version 0.8.1
 * fixed main window activation
 * fixed segmentation fault when moving track in the group mode
 * fixed not working 'exit' action when option 'hide on close' is enabled
+* fixed freezing in the alsa plugin
