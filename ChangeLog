@@ -904,4 +904,4 @@ Version 0.8.1
 * fixed not working 'exit' action when option 'hide on close' is enabled
 * fixed freezing in the alsa plugin
 * fixed m4a support
-* fixed clearing a key combination in the hotkey plugin]
+* fixed clearing a key combination in the hotkey plugin
