@@ -894,6 +894,7 @@ Version 0.8.0
 
 Version 0.8.1
 * added rusxmms patch autodetection for all supported platforms
+* added application information to the windows executable
 * fixed --pl-dump/--pl-play command line options
 * fixed regressions in the mpris 1.0 support
 * fixed selection behaviour in the playlist when using keyboard
@@ -903,3 +904,4 @@ Version 0.8.1
 * fixed not working 'exit' action when option 'hide on close' is enabled
 * fixed freezing in the alsa plugin
 * fixed m4a support
+* fixed clearing a key combination in the hotkey plugin]
