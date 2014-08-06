@@ -905,3 +905,4 @@ Version 0.8.1
 * fixed freezing in the alsa plugin
 * fixed m4a support
 * fixed clearing a key combination in the hotkey plugin
+* removed duplicate extensions from file association page
