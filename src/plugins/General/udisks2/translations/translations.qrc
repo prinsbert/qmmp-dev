@@ -1,6 +1,7 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
   <qresource>
+    <file>udisks2_plugin_en.qm</file>
     <file>udisks2_plugin_ru.qm</file>
     <file>udisks2_plugin_uk_UA.qm</file>
     <file>udisks2_plugin_zh_CN.qm</file>

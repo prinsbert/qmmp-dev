@@ -1,6 +1,7 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
   <qresource>
+    <file>qmmp_en.qm</file>
     <file>qmmp_ru.qm</file>
     <file>qmmp_uk_UA.qm</file>
     <file>qmmp_zh_CN.qm</file>

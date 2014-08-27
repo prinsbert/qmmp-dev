@@ -1,6 +1,7 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
   <qresource>
+    <file>ffmpeg_legacy_plugin_en.qm</file>
     <file>ffmpeg_legacy_plugin_ru.qm</file>
     <file>ffmpeg_legacy_plugin_uk_UA.qm</file>
     <file>ffmpeg_legacy_plugin_zh_CN.qm</file>

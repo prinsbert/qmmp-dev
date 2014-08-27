@@ -1,6 +1,7 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
   <qresource>
+    <file>playlist_plugin_en.qm</file>
     <file>playlist_plugin_ru.qm</file>
     <file>playlist_plugin_uk_UA.qm</file>
     <file>playlist_plugin_zh_CN.qm</file>
