@@ -906,3 +906,9 @@ Version 0.8.1
 * fixed m4a support
 * fixed clearing a key combination in the hotkey plugin
 * removed duplicate extensions from the file association page
+
+Version 0.8.2
+* added transifex integration
+* added webm support
+* fixed xspf parsing
+* fixed main window activation
