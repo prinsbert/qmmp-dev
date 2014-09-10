@@ -910,5 +910,6 @@ Version 0.8.1
 Version 0.8.2
 * added transifex integration
 * added webm support
+* improved image scaling quality
 * fixed xspf parsing
 * fixed main window activation
