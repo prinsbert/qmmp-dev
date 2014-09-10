@@ -128,3 +128,6 @@ Version 0.8.1
 * added rusxmms patch autodetection to the mpg123 plugin
 * fixed selection behaviour when using keyboard in the qsui plugin
 * fixed main window activation in the qsui plugin
+
+Version 0.8.2
+*improved image scaling quality
