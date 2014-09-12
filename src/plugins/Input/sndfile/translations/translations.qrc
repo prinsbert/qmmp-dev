@@ -1,7 +1,6 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
   <qresource>
-    <file>sndfile_plugin_en.qm</file>
     <file>sndfile_plugin_ru.qm</file>
     <file>sndfile_plugin_uk_UA.qm</file>
     <file>sndfile_plugin_zh_CN.qm</file>

@@ -1,7 +1,6 @@
 <!DOCTYPE RCC>
 <RCC version="1.0">
   <qresource>
-    <file>flac_plugin_en.qm</file>
     <file>flac_plugin_ru.qm</file>
     <file>flac_plugin_uk_UA.qm</file>
     <file>flac_plugin_zh_CN.qm</file>
