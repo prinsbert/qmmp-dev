@@ -908,8 +908,10 @@ Version 0.8.1
 * removed duplicate extensions from the file association page
 
 Version 0.8.2
+* added Portuguese translation (Sérgio Marques)
 * added transifex integration
 * added webm support
 * improved image scaling quality
 * fixed xspf parsing
-* fixed main window activation
+* fixed cover loading sequence
+* fixed main window activation under windows
