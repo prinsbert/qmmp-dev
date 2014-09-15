@@ -602,7 +602,7 @@
     <message>
         <location filename="../configdialog.cpp" line="361"/>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Português</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="362"/>
