@@ -915,3 +915,5 @@ Version 0.8.2
 * fixed xspf parsing
 * fixed cover loading sequence
 * fixed main window activation under windows
+* updated Russian translation
+* updated Ukrainian translation (Gennadi Motsyo)
