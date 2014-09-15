@@ -130,4 +130,6 @@ Version 0.8.1
 * fixed main window activation in the qsui plugin
 
 Version 0.8.2
-*improved image scaling quality
+* added Portuguese translation (Sérgio Marques)
+* added transifex intergration
+* improved image scaling quality
