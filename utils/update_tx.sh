@@ -1,5 +1,6 @@
 #!/bin/sh
 
+PROJECT_NAME=qmmp-stable
 TX_CONFIG="../.tx/config"
 
 echo "[main]" > ${TX_CONFIG}
@@ -45,7 +46,7 @@ do
      esac
 
      file_filter=`echo ${tr_dir} | sed 's/..\///'`
-     echo "[qmmp-stable.${plug_name}]" >> ${TX_CONFIG}
+     echo "[${PROJECT_NAME}.${plug_name}]" >> ${TX_CONFIG}
 
      if [ "$plug_name" = "qmmp" ] || [ "$plug_name" = "libqmmpui" ]; then
         echo "file_filter = ${file_filter}/${plug_name}_<lang>.ts" >> ${TX_CONFIG}
@@ -59,36 +60,14 @@ do
      echo "type = QT" >> ${TX_CONFIG}
      echo "" >> ${TX_CONFIG}
 
+done
 
-#     ts_files=''
-#     qm_files=''
-#     if [ "$plug_name" = "qmmp" ] || [ "$plug_name" = "libqmmpui" ]; then
-#        for code in $LOCALES
-#        do
-#      	    ts_files="${ts_files} ${tr_dir}/${plug_name}_${code}.ts"
-#            qm_files="${qm_files} ${plug_name}_${code}.qm"
-#      	done
-#        qrc_file="${tr_dir}/${plug_name}_locales.qrc"
-#     else
-#        for code in $LOCALES
-#        do
-#      	    ts_files="${ts_files} ${tr_dir}/${plug_name}_plugin_${code}.ts"
-#            qm_files="${qm_files} ${plug_name}_plugin_${code}.qm"
-#      	done
-#        qrc_file="${tr_dir}/translations.qrc"
-#     fi
-
-#     lupdate-qt4 -no-obsolete -silent -extensions "cpp,ui" ${tr_dir}/../ -ts ${ts_files}
-
-
-
-#     echo "<!DOCTYPE RCC>" > $qrc_file
-#     echo "<RCC version=\"1.0\">" >> $qrc_file
-#     echo "  <qresource>" >> $qrc_file
-#     for qm_file in $qm_files
-#     do
-#         echo "    <file>${qm_file}</file>" >> $qrc_file;
-#     done
-#     echo "  </qresource>" >> $qrc_file
-#     echo "</RCC>" >> $qrc_file
+for RESOURCE_NAME in description authors translators thanks
+do
+    echo "[${PROJECT_NAME}.${RESOURCE_NAME}]" >> ${TX_CONFIG}
+    echo "file_filter = src/qmmpui/txt/${RESOURCE_NAME}_<lang>.txt" >> ${TX_CONFIG}
+    echo "source_lang = en" >> ${TX_CONFIG}
+    echo "source_file = src/qmmpui/txt/${RESOURCE_NAME}.txt" >> ${TX_CONFIG}
+    echo "type = TXT" >> ${TX_CONFIG}
+    echo "" >> ${TX_CONFIG}
 done
