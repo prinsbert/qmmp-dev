@@ -40,21 +40,24 @@ Lituano:
 Polaco:
     Grzegorz Gibas <amigib@gmail.com>
 
-Russian:
+Português:
+    Sérgio Marques <smarquespt@gmail.com>
+
+Russo:
     Ilya Kotov <forkotov02@hotmail.ru>
-    
-Serbian:
+
+Sérvio:
     Mladen Pejaković <pejakm@autistici.org>
 
-Slovak:
+Eslovaco:
     Ján Ďanovský <dagsoftware@yahoo.com>
 
-Spanish:
+Espanhol:
     Félix Medrano <xukosky@yahoo.es>
 
-Turkish:
+Turco:
     Mustafa GUNAY <mustafagunay@pgmail.com>
     Bilgesu Güngör <h.ibrahim.gungor@gmail.com>
 
-Ukrainian:
+Ucraniano:
     Gennadi Motsyo <drool@altlinux.ru>
