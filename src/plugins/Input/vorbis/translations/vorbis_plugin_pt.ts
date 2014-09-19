@@ -16,12 +16,12 @@
     <message>
         <location filename="../decodervorbisfactory.cpp" line="124"/>
         <source>About Ogg Vorbis Audio Plugin</source>
-        <translation>Sobre o suplemento Ogg Vorbis</translation>
+        <translation>Sobre o suplemento Ogg Vorbis Audio</translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="125"/>
         <source>Qmmp Ogg Vorbis Audio Plugin</source>
-        <translation>Suplemento Qmmp Ogg Vorbis</translation>
+        <translation>Suplemento Qmmp Ogg Vorbis Audio</translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="126"/>

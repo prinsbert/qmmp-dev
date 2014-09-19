@@ -16,7 +16,7 @@
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="208"/>
         <source>About FFmpeg Audio Plugin</source>
-        <translation>Sobre o suplemento FFmpeg</translation>
+        <translation>Sobre o suplemento FFmpeg Audio</translation>
     </message>
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="210"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../ffmpegmetadatamodel.cpp" line="49"/>
         <source>File size</source>
-        <translation>Tamanho de ficheiro</translation>
+        <translation>Tamanho do ficheiro</translation>
     </message>
     <message>
         <location filename="../ffmpegmetadatamodel.cpp" line="49"/>

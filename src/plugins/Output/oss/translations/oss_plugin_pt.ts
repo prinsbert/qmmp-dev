@@ -11,12 +11,12 @@
     <message>
         <location filename="../outputossfactory.cpp" line="56"/>
         <source>About OSS Output Plugin</source>
-        <translation>Sobre o suplemento OSS Output</translation>
+        <translation>Sobre o suplemento OSS</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="57"/>
         <source>Qmmp OSS Output Plugin</source>
-        <translation>Suplemento Qmmp OSS Output</translation>
+        <translation>Suplemento Qmmp OSS</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="58"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="231"/>
         <source>OK</source>
-        <translation>Aceitar</translation>
+        <translation>Aplicar</translation>
     </message>
 </context>
 </TS>

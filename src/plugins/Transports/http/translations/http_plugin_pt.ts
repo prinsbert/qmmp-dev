@@ -39,7 +39,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Duração de memória:</translation>
+        <translation>Memória:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="64"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
         <source>Metadata encoding</source>
-        <translation>Codificação de dados:</translation>
+        <translation>Codificação de dados</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="84"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../hotkeydialog.ui" line="14"/>
         <source>Modify Shortcut</source>
-        <translation>Modificar atalho</translation>
+        <translation>Mudar atalho</translation>
     </message>
     <message>
         <location filename="../hotkeydialog.ui" line="32"/>

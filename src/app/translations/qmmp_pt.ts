@@ -6,7 +6,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="71"/>
         <source>Don&apos;t clear the playlist</source>
-        <translation>Não limpar lista de reproduçao</translation>
+        <translation>Não limpar lista de reprodução</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="72"/>

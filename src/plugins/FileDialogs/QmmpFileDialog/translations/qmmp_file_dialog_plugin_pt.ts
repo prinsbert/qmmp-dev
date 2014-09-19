@@ -39,7 +39,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="177"/>
         <source>File name:</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do ficheiro:</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="193"/>

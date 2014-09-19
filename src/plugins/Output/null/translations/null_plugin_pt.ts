@@ -11,12 +11,12 @@
     <message>
         <location filename="../outputnullfactory.cpp" line="54"/>
         <source>About Null Output Plugin</source>
-        <translation>Sobre o suplemento Null Output</translation>
+        <translation>Sobre o suplemento Null</translation>
     </message>
     <message>
         <location filename="../outputnullfactory.cpp" line="55"/>
         <source>Qmmp Null Output Plugin</source>
-        <translation>Suplemento Qmmp Null Output</translation>
+        <translation>Suplemento Qmmp Null</translation>
     </message>
     <message>
         <location filename="../outputnullfactory.cpp" line="56"/>

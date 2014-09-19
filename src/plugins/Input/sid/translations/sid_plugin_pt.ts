@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodersidfactory.cpp" line="125"/>
         <source>This plugin plays Commodore 64 music files using libsidplayfp library</source>
-        <translation>Este suplemento reproduz os ficheiros de som Commodore 64 com a biblioteca libsidplayfp</translation>
+        <translation>Este suplemento reproduz os ficheiros áudio Commodore 64 com a biblioteca libsidplayfp</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="126"/>

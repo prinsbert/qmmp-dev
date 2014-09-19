@@ -11,12 +11,12 @@
     <message>
         <location filename="../outputjackfactory.cpp" line="53"/>
         <source>About Jack Output Plugin</source>
-        <translation>Sobre o suplemento Jack Output</translation>
+        <translation>Sobre o suplemento Jack</translation>
     </message>
     <message>
         <location filename="../outputjackfactory.cpp" line="54"/>
         <source>Qmmp Jack Output Plugin</source>
-        <translation>Suplemento Qmmp Jack Output</translation>
+        <translation>Suplemento Qmmp Jack</translation>
     </message>
     <message>
         <location filename="../outputjackfactory.cpp" line="55"/>
