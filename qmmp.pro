@@ -29,7 +29,7 @@ message(Found lrelease executable: $$LRELEASE_EXECUTABLE)
 
 message(generating translations)
 unix:system(find . -name *.ts | xargs $$LRELEASE_EXECUTABLE)
-win32:system(for /r %B in (*.ts) do $$LRELEASE_EXECUTABLE %B)
+#win32:system(for /r %B in (*.ts) do $$LRELEASE_EXECUTABLE %B)
 
 message("******* BUILD CONFIGURATION *******")
 for(out, CONFIG):message($$out)
