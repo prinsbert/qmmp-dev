@@ -915,5 +915,6 @@ Version 0.8.2
 * fixed xspf parsing
 * fixed cover loading sequence
 * fixed main window activation under windows
+* reduced tag reading delay (requires TagLib 1.8 or higher)
 * updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
