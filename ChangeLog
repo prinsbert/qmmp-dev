@@ -133,3 +133,5 @@ Version 0.8.2
 * added Portuguese translation (Sérgio Marques)
 * added transifex intergration
 * improved image scaling quality
+* fixed color settings in the qsui plugin
+* reduced tag reading delay in the mpg123 plugin
