@@ -266,7 +266,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="75"/>
         <source>&amp;Queue Toggle</source>
-        <translation>選んだプレイリストを キューに追加/キューから撤去</translation>
+        <translation>選んだプレイリストを キューに追加/キューから撤去(&amp;Q)</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="75"/>
@@ -503,7 +503,7 @@
     <message>
         <location filename="../hotkeyeditor.cpp" line="67"/>
         <source>Volume</source>
-        <translation type="unfinished">音量</translation>
+        <translation>音量</translation>
     </message>
     <message>
         <location filename="../hotkeyeditor.cpp" line="73"/>
@@ -546,7 +546,7 @@
     <message>
         <location filename="../display.cpp" line="74"/>
         <source>Play files</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルより再生</translation>
     </message>
     <message>
         <location filename="../display.cpp" line="81"/>
@@ -883,7 +883,7 @@
     <message>
         <location filename="../forms/playlistbrowser.ui" line="31"/>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>フィルター:</translation>
     </message>
     <message>
         <location filename="../forms/playlistbrowser.ui" line="43"/>
