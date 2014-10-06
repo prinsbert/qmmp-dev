@@ -124,8 +124,12 @@ bool DecoderOpus::initialize()
 
     const OpusHead *head = op_head(m_opusfile, -1);
     if (head)
-        m_chan =  head->channel_count;
-
+    {
+		qWarning("DecoderOpus: unable to read header");
+		return false;
+	}
+	m_chan =  head->channel_count;
+  
     configure(48000, m_chan, Qmmp::PCM_S16LE); //opus codec supports 48 kHz only
     return true;
 }
