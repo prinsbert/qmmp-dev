@@ -916,6 +916,9 @@ Version 0.8.2
 * fixed cover loading sequence
 * fixed main window activation under windows
 * fixed analyzer color settings
+* fixed typos (Matteo Cypriani)
+* fixed possible segmentation fault in the opus plugin
 * reduced tag reading delay (requires TagLib 1.8 or higher)
 * updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
+* updated Japanese translation (RyōTa SimaMoto)
