@@ -131,7 +131,8 @@ Version 0.8.1
 
 Version 0.8.2
 * added Portuguese translation (Sérgio Marques)
-* added transifex intergration
+* added transifex integration
+* added feature to create a new playlist on double click in the qsui plugin (patch by Evgeniy Alekseev)
 * improved image scaling quality
 * fixed color settings in the qsui plugin
 * reduced tag reading delay in the mpg123 plugin
