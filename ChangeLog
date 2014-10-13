@@ -918,6 +918,7 @@ Version 0.8.2
 * fixed analyzer color settings
 * fixed typos (Matteo Cypriani)
 * fixed possible segmentation fault in the opus plugin
+* fixed separator of the file filters
 * reduced tag reading delay (requires TagLib 1.8 or higher)
 * updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
