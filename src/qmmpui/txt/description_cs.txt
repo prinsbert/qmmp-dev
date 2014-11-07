@@ -1,1 +1,1 @@
-Tento program je zvukový přehrávač napsaný s pomocí knihovny Qt.
+This program is an audio-player, written with the help of the Qt library.

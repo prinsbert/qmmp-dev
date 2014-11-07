@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodersidfactory.cpp" line="67"/>
         <source>SID Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul SID</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="69"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../decodersidfactory.cpp" line="124"/>
         <source>Qmmp SID Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp modul SID</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="125"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodersidfactory.cpp" line="126"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished">Autor: Ilja Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

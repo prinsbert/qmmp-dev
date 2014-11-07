@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="cs_CZ">
+<TS version="2.0" language="cs">
 <context>
     <name>GnomeHotkeyFactory</name>
     <message>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="51"/>
         <source>Qmmp Gnome Hotkey Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul Qmmp Gnome pro klávesové zkratky</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="52"/>
