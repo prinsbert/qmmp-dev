@@ -321,12 +321,29 @@ void GroupedContainer::reverseList()
 
 void GroupedContainer::randomizeList()
 {
-    QList<PlayListTrack *> tracks = takeAllTracks();
+    m_items.clear();
+    for(int i = 0; i < m_groups.count(); ++i)
+    {
+        QList<PlayListTrack *> tracks = m_groups[i]->takeAll();
+        for (int j = 0; j < tracks.count(); j++)
+        {
+            tracks.swap(qrand() % tracks.count(),
+                        qrand() % tracks.count());
+        }
+        m_groups[i]->addTracks(tracks);
+        m_items.append(m_groups[i]);
+        for (int j = 0; j < tracks.count(); j++)
+        {
+            m_items.append(tracks[j]);
+        }
+    }
 
-    for (int i = 0; i < tracks.size(); i++)
-        tracks.swap(qrand()%tracks.size(),qrand()%tracks.size());
-
-    addTracks(tracks);
+    for(int i = 0; i < m_groups.count(); ++i)
+    {
+        m_groups.swap(qrand() % m_groups.size(), qrand() % m_groups.size());
+    }
+    
+    updateIndex();
 }
 
 void GroupedContainer::sort(int mode)
