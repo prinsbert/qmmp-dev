@@ -923,3 +923,10 @@ Version 0.8.2
 * updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
 * updated Japanese translation (RyōTa SimaMoto)
+
+Version 0.8.3
+* reduced time of the 'Randomize List' and "Remove Duplicates" operations
+* fixed ffmpeg 2.5 support
+* fixed 24/32 bit modes in the equalizer
+* updated Portuguese translation (Sérgio Marques)
+* updated Czech translation (Jaroslav Lichtblau)
