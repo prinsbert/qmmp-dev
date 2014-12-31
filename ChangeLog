@@ -928,5 +928,6 @@ Version 0.8.3
 * reduced time of the 'Randomize List' and "Remove Duplicates" operations
 * fixed ffmpeg 2.5 support
 * fixed 24/32 bit modes in the equalizer
+* fixed autoplay when playlist was opened from command line
 * updated Portuguese translation (Sérgio Marques)
 * updated Czech translation (Jaroslav Lichtblau)
