@@ -136,3 +136,8 @@ Version 0.8.2
 * improved image scaling quality
 * fixed color settings in the qsui plugin
 * reduced tag reading delay in the mpg123 plugin
+
+Version 0.8.3
+* fixed qsui plugin:
+  - fixed displaying of the symbol '&' in the tab name
+  - fixed displaying name of the current directory
