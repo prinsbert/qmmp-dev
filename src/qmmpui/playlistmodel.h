@@ -347,7 +347,7 @@ public slots:
      */
     void insert(int index, PlayListTrack *track);
     /*!
-     * Inserts \b track after playlist item \b before.
+     * Inserts \b track before playlist item \b before.
      */
     void insert(PlayListItem *before, PlayListTrack *track);
     /*!
