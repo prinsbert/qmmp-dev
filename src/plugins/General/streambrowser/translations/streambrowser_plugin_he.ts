@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="he_IL">
+<TS version="2.0" language="he">
 <context>
     <name>StreamBrowser</name>
     <message>
         <location filename="../streambrowser.cpp" line="33"/>
         <source>Stream Browser</source>
-        <translatorcomment>מעלעל זרם</translatorcomment>
-        <translation></translation>
+        <translation>Stream Browser</translation>
     </message>
     <message>
         <location filename="../streambrowser.cpp" line="35"/>
         <source>Ctrl+U</source>
-        <translation></translation>
+        <translation>Ctrl+U</translation>
     </message>
 </context>
 <context>
@@ -20,27 +19,27 @@
     <message>
         <location filename="../streambrowserfactory.cpp" line="28"/>
         <source>Stream Browser Plugin</source>
-        <translation>תוספת Stream Browser</translation>
+        <translation>תוסף Stream Browser</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="49"/>
         <source>About Stream Browser Plugin</source>
-        <translation>אודות תוספת Stream Browser</translation>
+        <translation>אודות תוסף Stream Browser</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="50"/>
         <source>Qmmp Stream Browser Plugin</source>
-        <translation>תוספת Stream Browser של Qmmp</translation>
+        <translation>תוסף Stream Browser של Qmmp</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="51"/>
         <source>This plugin allows one to add stream from IceCast stream directory</source>
-        <translation>תוספת זו מתירה לך להוסיף זרם מתוך מדור זרם של IceCast</translation>
+        <translation>תוסף זו מתיר לך להוסיף זרם מתוך מדור זרם של IceCast</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>חוברה על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
+        <translation>חובר על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
     </message>
 </context>
 <context>
@@ -48,7 +47,7 @@
     <message>
         <location filename="../streamwindow.ui" line="14"/>
         <source>Stream Browser</source>
-        <translation></translation>
+        <translation>Stream Browser</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="31"/>
@@ -63,7 +62,7 @@
     <message>
         <location filename="../streamwindow.ui" line="73"/>
         <source>IceCast</source>
-        <translation></translation>
+        <translation>IceCast</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="102"/>
@@ -107,7 +106,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="126"/>
         <source>&amp;Add to playlist</source>
-        <translation>הוסף אל &amp;רשימת נגינה</translation>
+        <translation>&amp;הוסף אל רשימת נגינה</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="131"/>
@@ -117,7 +116,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="141"/>
         <source>Done</source>
-        <translation>סיום</translation>
+        <translation>סיים</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="144"/>
@@ -128,8 +127,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="164"/>
         <source>Receiving</source>
-        <translatorcomment>מקבל כעת</translatorcomment>
-        <translation>קבלה</translation>
+        <translation>כעת מקבל</translation>
     </message>
 </context>
 </TS>
