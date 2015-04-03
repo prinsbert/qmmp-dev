@@ -891,7 +891,7 @@
     </message>
     <message>
         <location filename="../forms/playlistbrowser.ui" line="50"/>
-        <location filename="../playlistbrowser.cpp" line="42"/>
+        <location filename="../playlistbrowser.cpp" line="43"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
@@ -902,7 +902,7 @@
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../playlistbrowser.cpp" line="41"/>
+        <location filename="../playlistbrowser.cpp" line="42"/>
         <source>Rename</source>
         <translation>Umbenennen</translation>
     </message>
@@ -910,32 +910,32 @@
 <context>
     <name>PlayListSelector</name>
     <message>
-        <location filename="../playlistselector.cpp" line="50"/>
+        <location filename="../playlistselector.cpp" line="51"/>
         <source>&amp;Load</source>
         <translation>&amp;Laden</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="51"/>
+        <location filename="../playlistselector.cpp" line="52"/>
         <source>&amp;Save As...</source>
         <translation>&amp;Speichern unter …</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="53"/>
+        <location filename="../playlistselector.cpp" line="54"/>
         <source>Rename</source>
         <translation>Umbenennen</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="54"/>
+        <location filename="../playlistselector.cpp" line="55"/>
         <source>&amp;Delete</source>
         <translation>L&amp;öschen</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="125"/>
+        <location filename="../playlistselector.cpp" line="126"/>
         <source>Rename Playlist</source>
         <translation>Wiedergabeliste umbenennen</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="125"/>
+        <location filename="../playlistselector.cpp" line="126"/>
         <source>Playlist name:</source>
         <translation>Name der Wiedergabeliste:</translation>
     </message>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="tr_TR">
+<TS version="2.0" language="tr">
 <context>
     <name>Converter</name>
     <message>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="90"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Dizin seç</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="110"/>
@@ -89,7 +89,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="116"/>
         <source>Comment</source>
-        <translation type="unfinished">Yorum</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="117"/>
@@ -112,14 +112,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="130"/>
-        <source>Create a copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../converterdialog.cpp" line="121"/>
         <source>Year</source>
-        <translation type="unfinished">Yıl</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="122"/>
@@ -134,6 +129,11 @@
     <message>
         <location filename="../converterdialog.cpp" line="129"/>
         <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../converterdialog.cpp" line="130"/>
+        <source>Create a copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../converterfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished">Yazan: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

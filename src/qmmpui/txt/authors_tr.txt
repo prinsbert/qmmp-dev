@@ -1,13 +1,13 @@
-Çekirdek Geliştiriciler:
+Çekirdek Geliştiricileri
 
-    Ilya Kotov <forkotov02@hotmail.ru> (fikirler ve temel kod)
-    Vladimir Kuznetsov <vovanec@gmail.com> (görünüm ve birçok iyileştirme)
+    Ilya Kotov <forkotov02@hotmail.ru> (fikir ve temel kod)
+    Vladimir Kuznetsov <vovanec@gmail.com> (bakış&his ve birçok yenilik)
 
 Eklenti Geliştiricileri:
 
+    Artur Guzik <aguzik88@gmail.com> (kde4 bildirim eklentisi, tepsi simgesi geliştirimi)
     Yuriy Zhuravlev <stalkerg@gmail.com> (jack & oss eklentisi)
 
-Artwork:
+Çizim:
 
     Andrey Adreev <andreev00@gmail.com>
-

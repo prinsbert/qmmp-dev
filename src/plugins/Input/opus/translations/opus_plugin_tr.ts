@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="tr_TR">
+<TS version="2.0" language="tr">
 <context>
     <name>DecoderOpusFactory</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="124"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished">Yazan: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="125"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../opusmetadatamodel.cpp" line="52"/>
         <source>Hz</source>
-        <translation type="unfinished">Hz</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="53"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../opusmetadatamodel.cpp" line="54"/>
         <source>kbps</source>
-        <translation type="unfinished">kbps</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="55"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../opusmetadatamodel.cpp" line="55"/>
         <source>KB</source>
-        <translation type="unfinished">KB</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -892,7 +892,7 @@
     </message>
     <message>
         <location filename="../forms/playlistbrowser.ui" line="50"/>
-        <location filename="../playlistbrowser.cpp" line="42"/>
+        <location filename="../playlistbrowser.cpp" line="43"/>
         <source>Delete</source>
         <translation>削除</translation>
     </message>
@@ -903,7 +903,7 @@
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../playlistbrowser.cpp" line="41"/>
+        <location filename="../playlistbrowser.cpp" line="42"/>
         <source>Rename</source>
         <translation>名前を変更</translation>
     </message>
@@ -911,32 +911,32 @@
 <context>
     <name>PlayListSelector</name>
     <message>
-        <location filename="../playlistselector.cpp" line="50"/>
+        <location filename="../playlistselector.cpp" line="51"/>
         <source>&amp;Load</source>
         <translation>読込(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="51"/>
+        <location filename="../playlistselector.cpp" line="52"/>
         <source>&amp;Save As...</source>
         <translation>名前を付けて保存(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="53"/>
+        <location filename="../playlistselector.cpp" line="54"/>
         <source>Rename</source>
         <translation>名前を変更</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="54"/>
+        <location filename="../playlistselector.cpp" line="55"/>
         <source>&amp;Delete</source>
         <translation>削除(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="125"/>
+        <location filename="../playlistselector.cpp" line="126"/>
         <source>Rename Playlist</source>
         <translation>プレイリスト名を変更</translation>
     </message>
     <message>
-        <location filename="../playlistselector.cpp" line="125"/>
+        <location filename="../playlistselector.cpp" line="126"/>
         <source>Playlist name:</source>
         <translation>プレイリスト名:</translation>
     </message>
