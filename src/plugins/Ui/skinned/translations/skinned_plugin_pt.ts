@@ -488,7 +488,7 @@
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="40"/>
         <source>Change shortcut...</source>
-        <translation>Mudar atalho</translation>
+        <translation>Mudar atalho...</translation>
     </message>
     <message>
         <location filename="../hotkeyeditor.cpp" line="55"/>
@@ -1206,7 +1206,7 @@ Andrey Adreev &lt;andreev00@gmail.com&gt;</translation>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="197"/>
         <source>Playlist:</source>
-        <translation>Lista de reprodução</translation>
+        <translation>Lista de reprodução:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="233"/>
@@ -1298,7 +1298,7 @@ Andrey Adreev &lt;andreev00@gmail.com&gt;</translation>
     <message>
         <location filename="../skinnedsettings.cpp" line="101"/>
         <source>Select Skin Files</source>
-        <translation>Selecione os ficherios de tema</translation>
+        <translation>Selecione os ficheiros de tema</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="102"/>
