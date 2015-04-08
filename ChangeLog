@@ -933,7 +933,7 @@ Version 0.8.3
 * updated Portuguese translation (Sérgio Marques)
 * updated Czech translation (Jaroslav Lichtblau)
 
-Version 0.8.3
+Version 0.8.4
 * added icons for some actions
 * fixed multiple connections to same signal when switching playlists
 * fixed api documentation
