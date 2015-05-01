@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2014 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -169,10 +169,10 @@ QList<FileInfo *> DecoderFLACFactory::createPlayList(const QString &fileName, bo
         TagLib::StringList fld;
         if(!(fld = tag->fieldListMap()["COMPOSER"]).isEmpty())
             info->setMetaData(Qmmp::COMPOSER,
-                              QString::fromUtf8(fld.toString().toCString(true)).trimmed());
+                              QString::fromUtf8(fld.front().toCString(true)).trimmed());
         if(!(fld = tag->fieldListMap()["DISCNUMBER"]).isEmpty())
             info->setMetaData(Qmmp::DISCNUMBER,
-                              QString::fromUtf8(fld.toString().toCString(true)).trimmed());
+                              QString::fromUtf8(fld.front().toCString(true)).trimmed());
     }
     if(ap)
         info->setLength(ap->length());
