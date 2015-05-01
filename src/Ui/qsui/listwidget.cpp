@@ -96,12 +96,15 @@ void ListWidget::readSettings()
     bool show_popup = settings.value("pl_show_popup", false).toBool();
     m_use_system_colors = settings.value("pl_system_colors", true).toBool();
     loadSystemColors();
-    m_normal_bg.setNamedColor(settings.value("pl_bg1_color", m_normal_bg.name()).toString());
-    m_alternate.setNamedColor(settings.value("pl_bg2_color", m_alternate.name()).toString());
-    m_selected_bg.setNamedColor(settings.value("pl_highlight_color", m_selected_bg.name()).toString());
-    m_normal.setNamedColor(settings.value("pl_normal_text_color", m_normal.name()).toString());
-    m_current.setNamedColor(settings.value("pl_current_text_color",m_current.name()).toString());
-    m_highlighted.setNamedColor(settings.value("pl_hl_text_color",m_highlighted.name()).toString());
+    if(!m_use_system_colors)
+    {
+	m_normal_bg.setNamedColor(settings.value("pl_bg1_color", m_normal_bg.name()).toString());
+	m_alternate.setNamedColor(settings.value("pl_bg2_color", m_alternate.name()).toString());
+	m_selected_bg.setNamedColor(settings.value("pl_highlight_color", m_selected_bg.name()).toString());
+	m_normal.setNamedColor(settings.value("pl_normal_text_color", m_normal.name()).toString());
+	m_current.setNamedColor(settings.value("pl_current_text_color",m_current.name()).toString());
+	m_highlighted.setNamedColor(settings.value("pl_hl_text_color",m_highlighted.name()).toString());
+    }
 
     if (m_update)
     {
@@ -173,11 +176,6 @@ void ListWidget::setMenu(QMenu *menu)
 
 void ListWidget::paintEvent(QPaintEvent *)
 {
-    if(m_use_system_colors)
-    {
-       loadSystemColors();
-    }
-
     QPainter painter(this);
     //m_painter.setPen(Qt::white);
     painter.setFont(m_font);
@@ -197,7 +195,7 @@ void ListWidget::paintEvent(QPaintEvent *)
         if(i % 2 == 1)
         {
             painter.setBrush(QBrush(m_alternate));
-            painter.setPen(palette().color(QPalette::AlternateBase));
+            painter.setPen(m_alternate);
             painter.drawRect (6, i * (m_metrics->lineSpacing() + 2),
                                 w - 10, m_metrics->lineSpacing() + 1);
         }
