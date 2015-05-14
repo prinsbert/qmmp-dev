@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2015 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,6 +20,7 @@
 
 #include <qmmp/metadatamanager.h>
 #include <QRegExp>
+#include <QDir>
 #include "fileloader_p.h"
 #include "qmmpuisettings.h"
 #include "playlistitem.h"
@@ -114,7 +115,10 @@ void FileLoader::add(const QString &path)
 
 void FileLoader::add(const QStringList &paths)
 {
-    m_paths << paths;
+    foreach(QString path, paths)
+    {
+        m_paths << QDir::fromNativeSeparators(path);
+    }
     MetaDataManager::instance()->prepareForAnotherThread();
     m_filters = MetaDataManager::instance()->nameFilters();
     start(QThread::IdlePriority);
@@ -131,7 +135,7 @@ void FileLoader::insert(PlayListItem *before, const QStringList &paths)
     {
         InsertItem item;
         item.before = before;
-        item.path = path;
+        item.path = QDir::fromNativeSeparators(path);
         m_insertItems.append(item);
     }
 
