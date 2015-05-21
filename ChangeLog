@@ -941,3 +941,11 @@ Version 0.8.4
 * fixed Portuguese translation (Sérgio Marques)
 * fixed Hebrew translation (Genghis Khan)
 * updated Turkish translation (Uğur KUYU)
+
+Version 0.8.5
+* fixed playlist resizing on RTL locales
+* fixed vorbis comment support
+* fixed build using qmake
+* fixed cover disappearing bug
+* fixed .exe description
+* fixed problem with path separators under windows
