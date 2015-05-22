@@ -943,6 +943,7 @@ Version 0.8.4
 * updated Turkish translation (Uğur KUYU)
 
 Version 0.8.5
+* added user data directory support
 * fixed playlist resizing on RTL locales
 * fixed vorbis comment support
 * fixed build using qmake
