@@ -141,3 +141,11 @@ Version 0.8.3
 * fixed qsui plugin:
   - fixed displaying of the symbol '&' in the tab name
   - fixed displaying name of the current directory
+
+Version 0.8.4
+* fixed qsui plugin:
+  - fixed Ukrainian translation (Gennadi Motsyo)
+  - fixed custom color scheme usage
+  - optimized playlist drawing
+  - improved cover scaling quality
+* fixed clang warnings in the ffap plugin
