@@ -948,5 +948,6 @@ Version 0.8.5
 * fixed vorbis comment support
 * fixed build using qmake
 * fixed cover disappearing bug
-* fixed .exe description
+* fixed windows executable file description
+* fixed settings form
 * fixed problem with path separators under windows
