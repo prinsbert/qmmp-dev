@@ -872,7 +872,7 @@ Version 0.8.0
   - added multi-channel mode
   - added list of presets
   - added win32 support
-* improved win32 support
+* improved win32 support:
   - enabled support for the enca library
   - added feature to add files from multiple instances
   - added file associations support (based on SMPlayer implementation)
@@ -951,3 +951,4 @@ Version 0.8.5
 * fixed windows executable file description
 * fixed settings form
 * fixed problem with path separators under windows
+* fixed libre.fm support
