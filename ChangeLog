@@ -944,6 +944,7 @@ Version 0.8.4
 
 Version 0.8.5
 * added user data directory support
+* increased player thread priority under windows
 * fixed playlist resizing on RTL locales
 * fixed vorbis comment support
 * fixed build using qmake
