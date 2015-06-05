@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -56,7 +56,8 @@ DecoderModPlug::DecoderModPlug(const QString &path) : Decoder(0)
 DecoderModPlug::~DecoderModPlug()
 {
     deinit();
-    m_instance = 0;
+    if(m_instance == this)
+        m_instance = 0;
 }
 
 bool DecoderModPlug::initialize()
@@ -81,7 +82,7 @@ bool DecoderModPlug::initialize()
     }
     if (m_input_buf.isEmpty())
     {
-        qWarning("DecoderModPlug: error reading moplug file");
+        qWarning("DecoderModPlug: error while reading module file");
         return false;
     }
     m_soundFile = new CSoundFile();
