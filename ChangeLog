@@ -954,3 +954,4 @@ Version 0.8.5
 * fixed libre.fm support
 * fixed some skin parsing
 * fixed support of some skins
+* fixed modplug plugin settings
