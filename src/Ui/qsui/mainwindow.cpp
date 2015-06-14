@@ -61,9 +61,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     m_ui.setupUi(this);
     m_balance = 0;
     m_update = false;
-#ifdef Q_OS_WIN
     m_wasMaximized = false;
-#endif
     //qmmp objects
     m_player = MediaPlayer::instance();
     m_core = SoundCore::instance();
@@ -306,12 +304,10 @@ void MainWindow::toggleVisibility()
 void MainWindow::showAndRaise()
 {
     show();
-#ifdef Q_OS_WIN
     if(m_wasMaximized)
         showMaximized();
     else
         showNormal();
-#endif
     raise();
     activateWindow();
 }
@@ -375,12 +371,10 @@ void MainWindow::closeEvent(QCloseEvent *)
 
 }
 
-#ifdef Q_OS_WIN
 void MainWindow::hideEvent(QHideEvent *)
 {
     m_wasMaximized = isMaximized();
 }
-#endif
 
 void MainWindow::createActions()
 {
