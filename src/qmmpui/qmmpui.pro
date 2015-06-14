@@ -13,7 +13,6 @@ CONFIG += warn_on \
 QMAKE_LIBDIR += ../../lib \
     qmmpui
 
-LIBS += -Wl,-rpath,./
 
 unix {
     TARGET = ../../lib/qmmpui
