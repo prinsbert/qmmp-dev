@@ -365,7 +365,6 @@ void MainWindow::showBitrate(int)
 
 void MainWindow::closeEvent(QCloseEvent *)
 {
-    writeSettings();
     if(!m_hideOnClose || !m_uiHelper->visibilityControl())
         m_uiHelper->exit();
 
@@ -373,6 +372,7 @@ void MainWindow::closeEvent(QCloseEvent *)
 
 void MainWindow::hideEvent(QHideEvent *)
 {
+    writeSettings();
     m_wasMaximized = isMaximized();
 }
 
