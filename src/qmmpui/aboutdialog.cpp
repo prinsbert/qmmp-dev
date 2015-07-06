@@ -70,7 +70,7 @@ QString AboutDialog::loadAbout()
     text.append("<p>");
     text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2015)+"<br>");
     text.append("<a href=\"http://qmmp.ylsoftware.com/\">http://qmmp.ylsoftware.com/</a><br>");
-    text.append("<a href=\"https://sourceforge.net/p/qmmp-dev/tickets/\">https://sourceforge.net/p/qmmp-dev/tickets/</a>");
+    text.append("<a href=\"https://sourceforge.net/p/qmmp-dev/\">https://sourceforge.net/p/qmmp-dev/</a>");
     text.append("</p>");
 
     text.append("<h5>"+tr("Input plugins:")+"</h5>");
