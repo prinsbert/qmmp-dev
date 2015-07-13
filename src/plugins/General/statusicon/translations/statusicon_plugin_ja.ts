@@ -6,7 +6,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Status Icon Plugin Settings</source>
-        <translation>ステイタスアイコンプラグイン設定</translation>
+        <translation>状況アイコンプラグイン設定</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
@@ -113,12 +113,12 @@
     <message>
         <location filename="../statusiconfactory.cpp" line="30"/>
         <source>Status Icon Plugin</source>
-        <translation>ステイタスアイコンプラグイン</translation>
+        <translation>状況アイコンプラグイン</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="50"/>
         <source>About Status Icon Plugin</source>
-        <translation>ステイタスアイコンプラグインについて</translation>
+        <translation>状況アイコンプラグインについて</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="51"/>

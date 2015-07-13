@@ -395,7 +395,7 @@
     <message>
         <location filename="../configdialog.cpp" line="184"/>
         <source>Transports</source>
-        <translation>転送</translation>
+        <translation>搬送</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="194"/>
@@ -1016,7 +1016,7 @@
     <message>
         <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Media files handled by Qmmp:</source>
-        <translation>QMMP が扱うミディアファイル:</translation>
+        <translation>QMMP が扱うメディアファイル:</translation>
     </message>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="49"/>
@@ -1051,7 +1051,7 @@
     <message>
         <location filename="../winfileassocpage.cpp" line="146"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>QMMP で扱わせたいミディアファイルの拡張子にチェックを入れます。 適用ボタンをクリックすればチェックの入ったファイルと QMMP の関連づけが行なわれます。 チェックを外せばミディアの形式の関連づけが以前の状態に戻ります。</translation>
+        <translation>QMMP で扱わせたいメディアファイルの拡張子にチェックを入れます。 適用ボタンをクリックすればチェックの入ったファイルと QMMP の関連づけが行なわれます。 チェックを外せばメディアの形式の関連づけが以前の状態に戻ります。</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="150"/>

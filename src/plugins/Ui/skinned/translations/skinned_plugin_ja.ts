@@ -266,7 +266,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="75"/>
         <source>&amp;Queue Toggle</source>
-        <translation>選んだプレイリストを キューに追加/キューから撤去(&amp;Q)</translation>
+        <translation>選んだ曲をキューに追加/キューから撤去(&amp;Q)</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="75"/>
@@ -376,7 +376,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="92"/>
         <source>&amp;Group tracks</source>
-        <translation>トラックのグループをつくる(&amp;G)</translation>
+        <translation>トラックをグループ化(&amp;G)</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="92"/>
@@ -1212,7 +1212,7 @@ Andrey Adreev &lt;andreev00@gmail.com&gt;</source>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="233"/>
         <source>Use bitmap font if available</source>
-        <translation>あればビットマップフォントを使用</translation>
+        <translation>あればビットマップフォントを使用する</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="243"/>
@@ -1249,7 +1249,7 @@ Andrey Adreev &lt;andreev00@gmail.com&gt;</source>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="350"/>
         <source>Song Display</source>
-        <translation>演目表示</translation>
+        <translation>演題表示</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="356"/>

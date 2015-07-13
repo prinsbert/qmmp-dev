@@ -11,7 +11,7 @@
     <message>
         <location filename="../fileops.cpp" line="98"/>
         <source>Destination directory doesn&apos;t exist</source>
-        <translation>移動先ディレクトリが存在しません</translation>
+        <translation>収容先ディレクトリが存在しません</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="103"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../fileops.cpp" line="188"/>
         <source>Remove files</source>
-        <translation>ファイルを削除</translation>
+        <translation>ファイル削除</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="189"/>
@@ -92,7 +92,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="48"/>
         <source>Enabled</source>
-        <translation>有効</translation>
+        <translation>発効</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="53"/>
@@ -102,7 +102,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="58"/>
         <source>Menu text</source>
-        <translation>メニューの文言</translation>
+        <translation>メニューの項目名</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="63"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="116"/>
         <source>Destination:</source>
-        <translation>目的地:</translation>
+        <translation>ファイル収容先:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="126"/>
