@@ -104,7 +104,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="45"/>
         <source>&amp;Play Files</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルより再生(&amp;H)</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="47"/>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="65"/>
         <source>Block Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>ツールバーを固定</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="67"/>
@@ -289,7 +289,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="82"/>
         <source>&amp;Queue Toggle</source>
-        <translation>選んだプレイリストをキューに追加/キューから撤去</translation>
+        <translation>選んだ曲をキューに追加/キューから撤去</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="82"/>
@@ -566,12 +566,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="218"/>
         <source>Paused</source>
-        <translation>一時停止しています</translation>
+        <translation>一時停止中断</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="221"/>
         <source>Stopped</source>
-        <translation>終止しました</translation>
+        <translation>終演</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="280"/>
@@ -616,7 +616,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="464"/>
         <source>Edit Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>ツールバーの設定変更</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="466"/>
@@ -706,12 +706,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="641"/>
         <source>Add new playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>新しいプレイリストを追加</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="647"/>
         <source>Show all tabs</source>
-        <translation type="unfinished"></translation>
+        <translation>すべてのタブを表示</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="794"/>
@@ -1048,7 +1048,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="116"/>
         <source>Song Display</source>
-        <translation>演目表示</translation>
+        <translation>演題表示</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="122"/>
@@ -1083,22 +1083,22 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="726"/>
         <source>Tabs</source>
-        <translation type="unfinished"></translation>
+        <translation>タブ</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="732"/>
         <source>Show close buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>閉じる[×]ボタンを表示</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="739"/>
         <source>Show tab list menu</source>
-        <translation type="unfinished"></translation>
+        <translation>タブリストメニュー[▼]を表示</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="746"/>
         <source>Show &apos;New Playlist&apos; button</source>
-        <translation type="unfinished"></translation>
+        <translation>新しいプレイリスト[+]ボタンを表示</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="204"/>
@@ -1203,7 +1203,7 @@
     <message>
         <location filename="../qsuisettings.cpp" line="170"/>
         <source>Volume</source>
-        <translation type="unfinished">音量</translation>
+        <translation>音量</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="176"/>
@@ -1317,18 +1317,18 @@
     <message>
         <location filename="../forms/toolbareditor.ui" line="14"/>
         <source>ToolBar Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>ツールバーエディター</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="175"/>
         <source>Reset</source>
-        <translation type="unfinished">リセット</translation>
+        <translation>リセット</translation>
     </message>
     <message>
         <location filename="../toolbareditor.cpp" line="83"/>
         <location filename="../toolbareditor.cpp" line="102"/>
         <source>Separator</source>
-        <translation type="unfinished"></translation>
+        <translation>セパレーター</translation>
     </message>
 </context>
 <context>
