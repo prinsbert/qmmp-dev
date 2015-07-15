@@ -13,5 +13,6 @@ Terminal=false
 
 
 # Translations
-Comment[he]=הוסף קבצים אל רשימת הניגון של Qmmp
-Name[he]=ספח לתוך Qmmp
+Comment[de]=Datei(en) zur Qmmp-Wiedergabeliste hinzufügen
+Name[de]=In die Warteschlange von Qmmp einreihen
+Icon[de]=qmmp

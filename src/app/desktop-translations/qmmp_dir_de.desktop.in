@@ -14,5 +14,7 @@ X-KDE-StartupNotify=false
 
 
 # Translations
-Comment[he]=נגן מולטימדיה מבוסס Qt4
-GenericName[he]=נגן שמע
+Comment[de]=Qt4-basierter Multimediaabspieler
+GenericName[de]=Audioabspieler
+Name[de]=Qmmp
+Icon[de]=qmmp

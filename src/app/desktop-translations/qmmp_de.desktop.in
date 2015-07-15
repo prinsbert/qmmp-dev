@@ -35,3 +35,7 @@ Exec=qmmp --no-start --next
 
 
 # Translations
+Comment[de]=Qt4-basierter Multimediaabspieler
+GenericName[de]=Audioabspieler
+Name[de]=Qmmp
+Icon[de]=qmmp

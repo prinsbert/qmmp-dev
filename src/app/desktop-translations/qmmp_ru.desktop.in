@@ -35,3 +35,5 @@ Exec=qmmp --no-start --next
 
 
 # Translations
+Comment[ru]=Мультимедиа плеер на основе Qt4
+GenericName[ru]=Аудио-плеер

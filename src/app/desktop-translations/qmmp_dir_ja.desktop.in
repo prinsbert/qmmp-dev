@@ -14,5 +14,5 @@ X-KDE-StartupNotify=false
 
 
 # Translations
-Comment[he]=נגן מולטימדיה מבוסס Qt4
-GenericName[he]=נגן שמע
+Comment[ja]=Qt4 を用いたマルティミディアプレイヤー
+GenericName[ja]=音楽プレイヤー
