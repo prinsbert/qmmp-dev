@@ -56,5 +56,3 @@ void SettingsDialog::writeSettings()
     settings.endGroup();
     accept();
 }
-
-

@@ -39,5 +39,3 @@ bool PlayListItem::isSelected() const
 {
     return m_selected;
 }
-
-

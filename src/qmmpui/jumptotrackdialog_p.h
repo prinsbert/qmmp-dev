@@ -61,4 +61,3 @@ private:
 };
 
 #endif //JUMPTOTRACKDIALOG_P_H
-
