@@ -956,3 +956,15 @@ Version 0.8.5
 * fixed some skin parsing
 * fixed support of some skins
 * fixed modplug plugin settings
+
+Version 0.8.6
+* added *.med files support (Ville Skyttä)
+* added s3m, stm and xm extensions to desktop files (Ville Skyttä)
+* updated Japanese translation (RyoTa SimaMoto)
+* fixed main window activation
+* fixed minimizing throw taskbar under windows
+* fixed some skin parsing
+* fixed config directory
+* fixed text scroller colors
+* fixed home page
+* fixed details dialog form
