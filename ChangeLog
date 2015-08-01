@@ -149,3 +149,11 @@ Version 0.8.4
   - optimized playlist drawing
   - improved cover scaling quality
 * fixed clang warnings in the ffap plugin
+
+Version 0.8.5
+* fixed Japanese translation (RyoTa SimaMoto)
+* fixed cmake support
+* fixed qsui plugin:
+  - fixed problem with "jumping" slider
+  - restore maximized mode after hide/show cycle
+  - write settings on the hide event
