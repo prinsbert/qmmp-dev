@@ -968,3 +968,5 @@ Version 0.8.6
 * fixed text scroller colors
 * fixed home page
 * fixed details dialog form
+* fixed documentation
+* fixed support of keyboards with single play/pause button
