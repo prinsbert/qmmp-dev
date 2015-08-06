@@ -49,8 +49,6 @@ JumpToTrackDialog::JumpToTrackDialog(PlayListModel *model, QWidget* parent)
     connect(songsListView,SIGNAL(doubleClicked(const QModelIndex &)),
             this,SLOT(jumpTo(const QModelIndex&)));
     connect(songsListView,SIGNAL(activated(const QModelIndex &)),
-            this,SLOT(jumpTo(const QModelIndex&)));
-    connect(songsListView,SIGNAL(activated(const QModelIndex &)),
             this,SLOT(accept()));
     connect(songsListView->selectionModel(),
             SIGNAL(currentRowChanged(const QModelIndex&,const QModelIndex&)),
