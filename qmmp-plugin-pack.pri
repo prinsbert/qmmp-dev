@@ -28,5 +28,5 @@ CONFIG += SVN_VERSION
 
 CONFIG += MPG123_PLUGIN
 CONFIG += FFAP_PLUGIN
-CONFIG += FFAP_YASM #assemler optimizations
+CONFIG += FFAP_YASM #assembler optimizations
 CONFIG += SIMPLE_UI_PLUGIN
