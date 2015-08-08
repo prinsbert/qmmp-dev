@@ -156,4 +156,4 @@ Version 0.8.5
 * fixed qsui plugin:
   - fixed problem with "jumping" slider
   - restore maximized mode after hide/show cycle
-  - write settings on the hide event
+  - write settings when main window hides
