@@ -964,8 +964,8 @@ Version 0.8.6
 * improved global hotkey settings
 * fixed main window activation
 * fixed minimizing throw taskbar under windows
-* fixed some skin parsing
-* fixed config directory
+* fixed some skins parsing
+* fixed config directory path
 * fixed text scroller colors
 * fixed home page
 * fixed details dialog form
