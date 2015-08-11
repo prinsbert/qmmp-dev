@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013 by Ilya Kotov                                      *
+ *   Copyright (C) 2013-2015 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -123,7 +123,7 @@ bool DecoderOpus::initialize()
         m_totalTime = 0;
 
     const OpusHead *head = op_head(m_opusfile, -1);
-    if (head)
+    if (!head)
     {
 		qWarning("DecoderOpus: unable to read header");
 		return false;
