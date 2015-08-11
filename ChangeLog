@@ -971,3 +971,7 @@ Version 0.8.6
 * fixed details dialog form
 * fixed documentation
 * fixed support of keyboards with single play/pause button
+
+Version 0.8.7
+* fixed opus plugin
+* fixed typos
