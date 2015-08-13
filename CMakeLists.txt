@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
+cmake_minimum_required(VERSION 2.8.11 FATAL_ERROR)
 
-#freebsd include
-include_directories(SYSTEM /usr/include /usr/local/include)
+#freebsd support
+include_directories(SYSTEM /usr/local/include)
+SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/local/include)
+
+#Qt5 modules
+SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt55/lib/cmake)
 
 
 CONFIGURE_FILE(
@@ -12,27 +16,17 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
-SET(QMMP_PLUGIN_PACK_VERSION 0.9.0)
+SET(QMMP_PLUGIN_PACK_VERSION 1.0.0)
 SET(SVN_VERSION TRUE)
 
-SET(QT_MIN_VERSION 4.6.0)
-INCLUDE(FindQt4)
-INCLUDE(${QT_USE_FILE})
-SET(CMAKE_AUTOMOC ON)
 INCLUDE(FindPkgConfig)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+find_package(Qt5Widgets 5.4.0 REQUIRED)
+find_package(Qt5LinguistTools 5.4.0 REQUIRED)
+ADD_DEFINITIONS(-DQ_WS_X11)
 
-IF(NOT QT_LRELEASE_EXECUTABLE)
-FIND_PROGRAM(QT_LRELEASE_EXECUTABLE
-    NAMES lrelease
-    PATHS ${QT_BINARY_DIR}
-    NO_DEFAULT_PATH
-)
-ENDIF(NOT QT_LRELEASE_EXECUTABLE)
-
-#debian hack
-IF(EXISTS ${QT_BINARY_DIR}/lrelease-qt4)
-SET(QT_LRELEASE_EXECUTABLE ${QT_BINARY_DIR}/lrelease-qt4)
-ENDIF(EXISTS ${QT_BINARY_DIR}/lrelease-qt4)
+get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
 IF(QT_LRELEASE_EXECUTABLE)
 MESSAGE(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
@@ -55,10 +49,7 @@ ENDIF(NOT LIB_SUFFIX)
 
 SET(LIB_DIR "lib${LIB_SUFFIX}" CACHE STRING "library path")
 
-
-include(FindPkgConfig)
-pkg_check_modules(QMMPUI qmmpui>=0.8.0)
-pkg_check_modules(QMMP qmmp>=0.8.0 REQUIRED)
+pkg_check_modules(QMMP qmmp>=1.0.0 REQUIRED)
 
 IF(QMMP_FOUND)
 add_subdirectory(src)
