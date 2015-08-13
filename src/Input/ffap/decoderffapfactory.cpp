@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtGui>
 #include <QRegExp>
+#include <QMessageBox>
+#include <QTranslator>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
 #include "replaygainreader.h"
@@ -164,5 +165,3 @@ QTranslator *DecoderFFapFactory::createTranslator(QObject *parent)
     translator->load(QString(":/ffap_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(ffap,DecoderFFapFactory)

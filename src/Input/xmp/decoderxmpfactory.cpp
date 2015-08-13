@@ -18,9 +18,10 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtGui>
 #include <QStringList>
 #include <QRegExp>
+#include <QMessageBox>
+#include <QTranslator>
 #include <xmp.h>
 #include <settingsdialog.h>
 #include "decoder_xmp.h"
@@ -130,5 +131,3 @@ QTranslator *DecoderXmpFactory::createTranslator(QObject *parent)
     translator->load(QString(":/xmp_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(xmp,DecoderXmpFactory)

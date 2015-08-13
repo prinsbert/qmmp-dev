@@ -18,10 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtGui>
 #include <QDialog>
 #include <QMessageBox>
+#include <QTextCodec>
 #include <QFile>
+#include <QSettings>
+#include <QTranslator>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/id3v1tag.h>
@@ -283,5 +285,3 @@ QTranslator *DecoderMPG123Factory::createTranslator(QObject *parent)
     translator->load(QString(":/mpg123_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(mpg123, DecoderMPG123Factory)
