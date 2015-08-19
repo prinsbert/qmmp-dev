@@ -975,3 +975,7 @@ Version 0.8.6
 Version 0.8.7
 * fixed opus plugin
 * fixed typos
+
+Version 0.8.8
+* fixed crash when quitting while playlist is being populated
+* fixed some skins support
