@@ -138,7 +138,7 @@ cmake ./ -DCMAKE_INSTALL_PREFIX=custom_path
 
 OSS3 and UDisks support.
 OSS3 and UDisks plugins are deprecated and disabled by default.
-To enable them, run 'cmake ./ -DUSE_OSS:BOOL=TRUE' or 'cmake ./ -DUSE_OSS:UDISKS2=TRUE' before compilation.
+To enable them, run 'cmake ./ -DUSE_OSS:BOOL=TRUE' or 'cmake ./ -DUSE_OSS:UDISKS=TRUE' before compilation.
 
 HAL and UDisks2 support.
 Most Linux distributions does not include HAL anymore. To disable HAL plugin run following command before compilation:

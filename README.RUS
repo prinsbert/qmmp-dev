@@ -135,8 +135,8 @@ cmake ./ -DUSE_JACK:BOOL=FALSE
 cmake ./ -DCMAKE_INSTALL_PREFIX=другой_путь
 
 Поддержка OSS3 и Udisks.
-Модули OSS3 и UDisks2 устарели и отключёны по умолчанию.
-Для их включения выполните 'cmake ./ -DUSE_OSS:BOOL=TRUE' или 'cmake ./ -DUSE_OSS:UDISKS2=TRUE' перед сборкой.
+Модули OSS3 и UDisks устарели и отключёны по умолчанию.
+Для их включения выполните 'cmake ./ -DUSE_OSS:BOOL=TRUE' или 'cmake ./ -DUSE_OSS:UDISKS=TRUE' перед сборкой.
 
 Поддержка HAL и UDisks2.
 Большинство дистрибутивов Linux больше не поддерживает HAL. Для отключения модуля HAL выполните перед сборкой следующую команду:
