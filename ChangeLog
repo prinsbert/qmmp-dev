@@ -980,3 +980,4 @@ Version 0.8.8
 * fixed crash when quitting while playlist is being populated
 * fixed some skins support
 * fixed documentation
+* fixed cmake support
