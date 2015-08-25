@@ -157,3 +157,6 @@ Version 0.8.5
   - fixed problem with "jumping" slider
   - restore maximized mode after hide/show cycle
   - write settings when main window hides
+
+Version 0.8.6
+* fixed documentation
