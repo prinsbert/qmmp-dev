@@ -178,3 +178,7 @@
 * обновлён польский перевод (Daniel Krawczyk)
 * обновлён греческий перевод (Dimitrios Glentadakis)
 * обновлён японский перевод (RyoTa SimaMoto)
+
+Версия 1.0.0 PREVIEW
+* переход на api qmmp 1.0
+* переход на Qt5

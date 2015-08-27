@@ -178,3 +178,7 @@ Version 0.9.0
 * updated Polish translation (Daniel Krawczyk)
 * updated Greek translation (Dimitrios Glentadakis)
 * updated Japanese translation (RyoTa SimaMoto)
+
+Version 1.0.0 PREVIEW
+* ported to qmmp 1.0 api
+* switch to Qt5
