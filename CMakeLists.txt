@@ -24,7 +24,6 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 find_package(Qt5Widgets 5.4.0 REQUIRED)
 find_package(Qt5LinguistTools 5.4.0 REQUIRED)
-ADD_DEFINITIONS(-DQ_WS_X11)
 
 get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 

@@ -19,7 +19,6 @@ QMAKE_LIBDIR += C:/projects/qmmp/qmmp-svn/qmmp/bin
 }
 
 QT += widgets
-DEFINES += Q_WS_X11
 
 #Version
 
