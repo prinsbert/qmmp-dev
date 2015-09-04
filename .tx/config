@@ -1,19 +1,19 @@
 [main]
 host = https://www.transifex.com
 
-[qmmp-plugin-pack.xmp]
+[qmmp-plugin-pack-stable.xmp]
 file_filter = src/Input/xmp/translations/xmp_plugin_<lang>.ts
 source_lang = en
 source_file = src/Input/xmp/translations/xmp_plugin_en.ts
 type = QT
 
-[qmmp-plugin-pack.ffap]
+[qmmp-plugin-pack-stable.ffap]
 file_filter = src/Input/ffap/translations/ffap_plugin_<lang>.ts
 source_lang = en
 source_file = src/Input/ffap/translations/ffap_plugin_en.ts
 type = QT
 
-[qmmp-plugin-pack.mpg123]
+[qmmp-plugin-pack-stable.mpg123]
 file_filter = src/Input/mpg123/translations/mpg123_plugin_<lang>.ts
 source_lang = en
 source_file = src/Input/mpg123/translations/mpg123_plugin_en.ts
