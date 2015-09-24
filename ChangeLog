@@ -1043,3 +1043,4 @@ Version 0.9.2
 * added equalizer optimization
 * fixed clicks while playing some mp3 files
 * fixed memory leak in the wavpack plugin
+* updated Greek translation (Dimitrios Glentadakis)
