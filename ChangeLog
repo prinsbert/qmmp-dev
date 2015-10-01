@@ -179,6 +179,7 @@ Version 0.9.0
 * updated Greek translation (Dimitrios Glentadakis)
 * updated Japanese translation (RyoTa SimaMoto)
 
-Version 1.0.0 PREVIEW
+Version 1.0.0
 * ported to qmmp 1.0 api
 * switch to Qt5
+* fixed buffer overflow in the mpg123 plugin
