@@ -1040,10 +1040,15 @@ Version 0.9.1
 * fixed Russian translation
 
 Version 0.9.2
-* added equalizer optimization
+* optimized equalizer
+* optimized flac and wavpack plugins
+* improved skinned ui in the shaded mode:
+  - improved time indicator (Thomas Perl)
+  - fixed playlist colors
 * fixed clicks while playing some mp3 files
 * fixed memory leak in the wavpack plugin
 * fixed qt 4.6 support
 * fixed ffmpeg 0.5 support
-* fixed shaded playlist colors
+* fixed effects and decoders sorting
+* fixed possible race condition
 * updated Greek translation (Dimitrios Glentadakis)
