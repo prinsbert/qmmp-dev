@@ -1052,3 +1052,10 @@ Version 0.9.2
 * fixed effects and decoders sorting
 * fixed possible race condition
 * updated Greek translation (Dimitrios Glentadakis)
+
+Version 0.9.3
+* improved command line parser
+* fixed crash in the mplayer engine 
+* fixed time indicator in the qsui plugin
+* fixed truncated output of the '--pl-dump' command
+* fixed track indexes calculation
