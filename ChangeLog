@@ -1056,7 +1056,7 @@ Version 1.0.0
 Version 1.0.1
 * added XFCE icon theme support
 * added Marco WM support
-* added test for supported OpenGL implemetation while using cmake
+* added test for supported OpenGL implementation while using cmake
 * improved command line parser
 * fixed crash in the mplayer engine
 * fixed time indicator in the qsui plugin
