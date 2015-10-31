@@ -1059,3 +1059,7 @@ Version 0.9.3
 * fixed time indicator in the qsui plugin
 * fixed truncated output of the '--pl-dump' command
 * fixed track indexes calculation
+
+Version 0.9.4
+* fixed geometry saving in the skinned UI
+* fixed segmentation fault in the ReplayGain scanner
