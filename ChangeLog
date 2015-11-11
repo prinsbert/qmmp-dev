@@ -1067,3 +1067,5 @@ Version 1.0.2
 * fixed problem with tray icon menu (see QTBUG-48869, patch by equeim)
 * fixed geometry saving in the skinned UI
 * fixed segmentation fault in the ReplayGain scanner
+* fixed hide on close feature
+* fixed Dutch translation (Rhythmdrill)
