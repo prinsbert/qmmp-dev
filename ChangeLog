@@ -1068,4 +1068,5 @@ Version 1.0.2
 * fixed geometry saving in the skinned UI
 * fixed segmentation fault in the ReplayGain scanner
 * fixed hide on close feature
+* fixed some skins parsing
 * fixed Dutch translation (Rhythmdrill)
