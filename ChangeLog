@@ -1065,3 +1065,4 @@ Version 0.9.4
 * fixed segmentation fault in the ReplayGain scanner
 * fixed hide on close feature
 * fixed Dutch translation (Rhythmdrill)
+* fixed build (Ivan Ponomarev)
