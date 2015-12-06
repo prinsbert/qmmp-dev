@@ -44,7 +44,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>千字节</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>

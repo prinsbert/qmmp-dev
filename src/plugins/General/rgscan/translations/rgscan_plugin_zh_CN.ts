@@ -16,7 +16,7 @@
     <message>
         <location filename="../rgscandialog.ui" line="42"/>
         <source>Title</source>
-        <translation type="unfinished">标题</translation>
+        <translation>题头</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="47"/>
@@ -67,7 +67,7 @@
         <location filename="../rgscandialog.cpp" line="117"/>
         <location filename="../rgscandialog.cpp" line="228"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../rgscandialog.cpp" line="127"/>
@@ -75,7 +75,7 @@
         <location filename="../rgscandialog.cpp" line="152"/>
         <location filename="../rgscandialog.cpp" line="223"/>
         <source>%1 dB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1分贝</translation>
     </message>
 </context>
 <context>
@@ -103,7 +103,7 @@
     <message>
         <location filename="../rgscanfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="53"/>

@@ -6,17 +6,17 @@
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="30"/>
         <source>Crossfade Plugin</source>
-        <translation>交叉衰落插件</translation>
+        <translation>淡入淡出插件</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="51"/>
         <source>About Crossfade Plugin</source>
-        <translation>关于交叉衰落插件</translation>
+        <translation>关于淡入淡出插件</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="52"/>
         <source>Qmmp Crossfade Plugin</source>
-        <translation>Qmmp 交叉衰落插件</translation>
+        <translation>Qmmp淡入淡出插件</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="53"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Crossfade Plugin Settings</source>
-        <translation>交叉衰落插件设置</translation>
+        <translation>淡入淡出插件设置</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
@@ -39,8 +39,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="42"/>
         <source>ms</source>
-        <translation type="unfinished">
-</translation>
+        <translation>毫秒</translation>
     </message>
 </context>
 </TS>

@@ -11,82 +11,82 @@
     <message>
         <location filename="../analyzer.cpp" line="364"/>
         <source>Peaks</source>
-        <translation type="unfinished"></translation>
+        <translation>峰</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="367"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>刷新率</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="370"/>
         <source>50 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>50 帧每秒</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="371"/>
         <source>25 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>25 帧每秒</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="372"/>
         <source>10 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>10 帧每秒</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="373"/>
         <source>5 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>5 帧每秒</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="380"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished"></translation>
+        <translation>分析器坠落</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="383"/>
         <location filename="../analyzer.cpp" line="397"/>
         <source>Slowest</source>
-        <translation type="unfinished">最慢</translation>
+        <translation>最慢</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="384"/>
         <location filename="../analyzer.cpp" line="398"/>
         <source>Slow</source>
-        <translation type="unfinished">慢</translation>
+        <translation>慢</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="385"/>
         <location filename="../analyzer.cpp" line="399"/>
         <source>Medium</source>
-        <translation type="unfinished">中</translation>
+        <translation>中等</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="386"/>
         <location filename="../analyzer.cpp" line="400"/>
         <source>Fast</source>
-        <translation type="unfinished">快</translation>
+        <translation>快</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="387"/>
         <location filename="../analyzer.cpp" line="401"/>
         <source>Fastest</source>
-        <translation type="unfinished">最快</translation>
+        <translation>最快</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="394"/>
         <source>Peaks Falloff</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../analyzer.cpp" line="408"/>
-        <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>顶峰坠落</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="408"/>
         <source>&amp;Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;全屏</translation>
+    </message>
+    <message>
+        <location filename="../analyzer.cpp" line="408"/>
+        <source>F</source>
+        <translation>F</translation>
     </message>
 </context>
 <context>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="37"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>选择颜色</translation>
     </message>
 </context>
 <context>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="41"/>
         <source>Cells size:</source>
-        <translation type="unfinished"></translation>
+        <translation>单块儿尺寸</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="101"/>
