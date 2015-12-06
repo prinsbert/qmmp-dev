@@ -1,21 +1,29 @@
-感谢：
+Thanks to:
 
-    Adria Arrufat <swiftscythe@gmail.com> - bug 报告
-    Adrian Knoth <adi@drcomp.erfurt.thur.de> - jack 插件修正，bug 报告
-    Anton Petrusevich <casus@casus.us> - 随机播放改进   
-    Avihay Baratz <avihayb@gmail.com> - 自动停放功能，bug 修正
-    Csaba Hruska <csaba.hruska@gmail.com> - ffmpeg 插件修正
-    Dmitry Kostin <kostindima@gmail.com> - iso.wv 支持
-    Evgeny Gleyzerman <evgley@gmail.com> - cue 解析改进
-    Gennadi Motsyo <drool@altlinux.ru> - bug 报告
-    Vadim Kalinnikov <moose@ylsoftware.com> - 项目网络支持
-    Erik Ölsar <erlk.ozlr@gmail.com> - 光标皮肤、用户界面改进
-    Funda Wang <fundawang@gmail.com> - cmake 文件修正
-    Michail Zheludkov <zheludkovm@mail.ru> - ffmpeg 插件修正
-    Michał Grosicki <grosik88@o2.pl> - alsa 插件修正
-    Panagiotis Papadopoulos <pano_90@gmx.net> - 用户界面修正，bug 报告
-    Pino Toscano <toscano.pino@tiscali.it> - 可移植性补丁
-    Karel Volný <kvolny@redhat.com> - 多项修正
-    Sebastian Pipping <webmaster@hartwork.org> - bs2b 补丁
-    Stefan Koelling <stefankoelling.ext@googlemail.com> - 一些编译修正
-    Yaakov Selkowitz <yselkowitz@gmail.com> - cygwin 补丁
+    Adria Arrufat <swiftscythe@gmail.com> - bug reports
+    Adrian Knoth <adi@drcomp.erfurt.thur.de> - JACK plugin fixes, bug reports
+    Anton Petrusevich <casus@casus.us> - random playback improvements
+    Avihay Baratz <avihayb@gmail.com> - auto stop feature, bug fixes
+    Brice Videau <brice.videau@gmail.com> - bug fixes
+    Cristian Rodríguez <judas.iscariote@gmail.com> - scrobbler fixes
+    Csaba Hruska <csaba.hruska@gmail.com> - FFmpeg plugin fixes
+    Dmitry Kostin <kostindima@gmail.com> - iso.wv support
+    Dmitry Misharov <Dmitry.Misharov@gmail.com> - album artist tag support
+    Evgeny Gleyzerman <evgley@gmail.com> - cue parsing improvements
+    Ferdinand Vesely <erdofves@gmail.com> - scrobbler improvements
+    Gennadi Motsyo <drool@altlinux.ru> - bug reports
+    Hon Jen Yee (PCMan) <pcman.tw@gmail.com> - optimization
+    Vadim Kalinnikov <moose@ylsoftware.com> - project hosting
+    Erik Ölsar <erlk.ozlr@gmail.com> - skinned cursors, ui improvements
+    Funda Wang <fundawang@gmail.com> - cmake files fixes
+    Makis Kalofolias <makskafl@gmail.com> - EAC3, DTS, and Dolby TrueHD support
+    Michail Zheludkov <zheludkovm@mail.ru> - FFmpeg plugin fixes
+    Michał Grosicki <grosik88@o2.pl> - ALSA plugin fixes
+    Panagiotis Papadopoulos <pano_90@gmx.net> - ui fixes, bug reports
+    Pino Toscano <toscano.pino@tiscali.it> - portability patches
+    Karel Volný <kvolny@redhat.com> - various fixes
+    Ryota Shimamoto <liangtai.s16@gmail.com> - FreeBSD patches
+    Sebastian Pipping <webmaster@hartwork.org> - bs2b patches
+    Stefan Koelling <stefankoelling.ext@googlemail.com> - some build fixes
+    Ville Skyttä - ModPlug plugin improvements
+    Yaakov Selkowitz <yselkowitz@gmail.com> - cygwin patches

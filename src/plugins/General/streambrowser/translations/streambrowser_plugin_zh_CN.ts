@@ -39,7 +39,7 @@
     <message>
         <location filename="../streambrowserfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished">作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../streamwindow.ui" line="31"/>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>筛选器：</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="47"/>
@@ -84,13 +84,13 @@
         <location filename="../streamwindow.cpp" line="53"/>
         <location filename="../streamwindow.cpp" line="71"/>
         <source>Genre</source>
-        <translation type="unfinished"></translation>
+        <translation>风格</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="54"/>
         <location filename="../streamwindow.cpp" line="72"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>比特率</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="55"/>
@@ -116,18 +116,18 @@
     <message>
         <location filename="../streamwindow.cpp" line="142"/>
         <source>Done</source>
-        <translation type="unfinished">完成</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="145"/>
         <location filename="../streamwindow.cpp" line="146"/>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="165"/>
         <source>Receiving</source>
-        <translation type="unfinished">接受</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

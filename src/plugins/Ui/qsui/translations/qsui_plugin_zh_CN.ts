@@ -44,67 +44,62 @@
     <message>
         <location filename="../actionmanager.cpp" line="38"/>
         <source>&amp;Play</source>
-        <translation type="unfinished">播放(&amp;P)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="38"/>
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="39"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished">暂停(&amp;P)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="39"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="40"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished">停止(&amp;S)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="40"/>
         <source>V</source>
-        <translation type="unfinished">V</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="41"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished">上一曲(&amp;P)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="41"/>
         <source>Z</source>
-        <translation type="unfinished">Z</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="42"/>
         <source>&amp;Next</source>
-        <translation type="unfinished">下一曲(&amp;N)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="42"/>
         <source>B</source>
-        <translation type="unfinished">B</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="43"/>
         <source>&amp;Play/Pause</source>
-        <translation type="unfinished">播放/暂停(&amp;P)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="43"/>
         <source>Space</source>
-        <translation type="unfinished">空格</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="44"/>
-        <source>J</source>
-        <translation type="unfinished">J</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="44"/>
@@ -112,39 +107,49 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../actionmanager.cpp" line="44"/>
+        <source>J</source>
+        <translation>J</translation>
+    </message>
+    <message>
         <location filename="../actionmanager.cpp" line="45"/>
         <source>&amp;Play Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../actionmanager.cpp" line="45"/>
+        <source>E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../actionmanager.cpp" line="47"/>
         <source>&amp;Repeat Playlist</source>
-        <translation type="unfinished">重复播放列表(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="47"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="49"/>
         <source>&amp;Repeat Track</source>
-        <translation type="unfinished">重复音轨(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="49"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="50"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished">乱序(&amp;S)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="50"/>
         <source>S</source>
-        <translation type="unfinished">S</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="51"/>
@@ -164,7 +169,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="54"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="55"/>
@@ -184,16 +189,6 @@
     <message>
         <location filename="../actionmanager.cpp" line="58"/>
         <source>Put on All Workspaces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="71"/>
-        <source>&amp;Add File</source>
-        <translation type="unfinished">添加文件(&amp;A)</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="45"/>
-        <source>E</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -243,48 +238,53 @@
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="71"/>
+        <source>&amp;Add File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../actionmanager.cpp" line="71"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="72"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">添加文件夹(&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="72"/>
         <source>D</source>
-        <translation type="unfinished">D</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="73"/>
         <source>&amp;Add Url</source>
-        <translation type="unfinished">添加 URL (&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="73"/>
         <source>U</source>
-        <translation type="unfinished">U</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="74"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">删除所选(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="75"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="76"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">删除全部(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="77"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">删除未选(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="79"/>
@@ -304,42 +304,42 @@
     <message>
         <location filename="../actionmanager.cpp" line="82"/>
         <source>Q</source>
-        <translation type="unfinished">Q</translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="83"/>
         <source>Invert Selection</source>
-        <translation type="unfinished">反选</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="84"/>
         <source>&amp;Select None</source>
-        <translation type="unfinished">无选择(&amp;S)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="85"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">选择全部(&amp;S)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="86"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">Ctrl+A</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="87"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished">查看音轨详细信息(&amp;V)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="87"/>
         <source>Alt+I</source>
-        <translation type="unfinished">Alt+I</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="89"/>
         <source>&amp;New List</source>
-        <translation type="unfinished">新建列表(&amp;N)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="89"/>
@@ -359,22 +359,22 @@
     <message>
         <location filename="../actionmanager.cpp" line="91"/>
         <source>&amp;Load List</source>
-        <translation type="unfinished">载入列表(&amp;L)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="91"/>
         <source>O</source>
-        <translation type="unfinished">O</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="92"/>
         <source>&amp;Save List</source>
-        <translation type="unfinished">保存列表(&amp;S)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="92"/>
         <source>Shift+S</source>
-        <translation type="unfinished">Shift+S</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="93"/>
@@ -439,12 +439,12 @@
     <message>
         <location filename="../actionmanager.cpp" line="103"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished">设置(&amp;S)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="103"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished">Ctrl+P</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="104"/>
@@ -454,22 +454,22 @@
     <message>
         <location filename="../actionmanager.cpp" line="105"/>
         <source>&amp;About</source>
-        <translation type="unfinished">关于(&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="106"/>
         <source>&amp;About Qt</source>
-        <translation type="unfinished">关于 Qt (&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="107"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">退出(&amp;E)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="107"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -477,7 +477,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="37"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>选择颜色</translation>
     </message>
 </context>
 <context>
@@ -513,7 +513,7 @@
     <message>
         <location filename="../equalizer.cpp" line="54"/>
         <source>Preset:</source>
-        <translation type="unfinished"></translation>
+        <translation>预设：</translation>
     </message>
     <message>
         <location filename="../equalizer.cpp" line="62"/>
@@ -523,7 +523,7 @@
     <message>
         <location filename="../equalizer.cpp" line="66"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>删除</translation>
     </message>
     <message>
         <location filename="../equalizer.cpp" line="70"/>
@@ -571,13 +571,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="131"/>
-        <source>Select Directory</source>
+        <location filename="../filesystembrowser.cpp" line="66"/>
+        <source>Change Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="66"/>
-        <source>Change Directory</source>
+        <location filename="../filesystembrowser.cpp" line="131"/>
+        <source>Select Directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -616,7 +616,7 @@
     <message>
         <location filename="../hotkeyeditor.cpp" line="68"/>
         <source>Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>播放</translation>
     </message>
     <message>
         <location filename="../hotkeyeditor.cpp" line="74"/>
@@ -631,7 +631,7 @@
     <message>
         <location filename="../hotkeyeditor.cpp" line="86"/>
         <source>Playlist</source>
-        <translation type="unfinished">播放列表</translation>
+        <translation>播放列表</translation>
     </message>
     <message>
         <location filename="../hotkeyeditor.cpp" line="92"/>
@@ -641,178 +641,6 @@
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="140"/>
-        <source>Volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="379"/>
-        <source>&lt;b&gt;%1&lt;/b&gt;|%2 bit|%3 ch|%4 Hz|tracks: %5|total time: %6|%7 kbps|</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="380"/>
-        <source>Paused</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="390"/>
-        <source>&lt;b&gt;%1&lt;/b&gt;|tracks: %2|total time: %3|</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="391"/>
-        <source>Stopped</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="293"/>
-        <source>Playlist name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="334"/>
-        <source>Appearance</source>
-        <translation type="unfinished">外观</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="335"/>
-        <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="380"/>
-        <source>Playing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="434"/>
-        <source>Ctrl+0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="440"/>
-        <source>P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="492"/>
-        <source>Edit Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="494"/>
-        <source>Sort List</source>
-        <translation type="unfinished">列表排序</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="497"/>
-        <location filename="../mainwindow.cpp" line="552"/>
-        <source>By Title</source>
-        <translation type="unfinished">按标题</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="501"/>
-        <location filename="../mainwindow.cpp" line="556"/>
-        <source>By Album</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="505"/>
-        <location filename="../mainwindow.cpp" line="560"/>
-        <source>By Artist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="509"/>
-        <location filename="../mainwindow.cpp" line="564"/>
-        <source>By Album Artist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="513"/>
-        <location filename="../mainwindow.cpp" line="568"/>
-        <source>By Filename</source>
-        <translation type="unfinished">按文件名</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="517"/>
-        <location filename="../mainwindow.cpp" line="572"/>
-        <source>By Path + Filename</source>
-        <translation type="unfinished">按路径+文件名</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="521"/>
-        <location filename="../mainwindow.cpp" line="576"/>
-        <source>By Date</source>
-        <translation type="unfinished">按日期</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="525"/>
-        <location filename="../mainwindow.cpp" line="580"/>
-        <source>By Track Number</source>
-        <translation type="unfinished">按音轨</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="529"/>
-        <location filename="../mainwindow.cpp" line="584"/>
-        <source>By Disc Number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="533"/>
-        <location filename="../mainwindow.cpp" line="588"/>
-        <source>By File Creation Date</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="537"/>
-        <location filename="../mainwindow.cpp" line="592"/>
-        <source>By File Modification Date</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="541"/>
-        <source>By Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="549"/>
-        <source>Sort Selection</source>
-        <translation type="unfinished">选择排序</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="599"/>
-        <source>Randomize List</source>
-        <translation type="unfinished">随机产生列表</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="601"/>
-        <source>Reverse List</source>
-        <translation type="unfinished">逆序列表</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="608"/>
-        <location filename="../mainwindow.cpp" line="653"/>
-        <source>Actions</source>
-        <translation type="unfinished">动作</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="686"/>
-        <source>Add new playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="692"/>
-        <source>Show all tabs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="845"/>
-        <source>Buffering: %1%</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="14"/>
         <source>Qmmp</source>
@@ -851,7 +679,7 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="94"/>
         <source>Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>播放</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="117"/>
@@ -881,37 +709,37 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="199"/>
         <source>Previous</source>
-        <translation type="unfinished">上一曲</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="209"/>
         <source>Play</source>
-        <translation type="unfinished">播放</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="219"/>
         <source>Pause</source>
-        <translation type="unfinished">暂停</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="229"/>
         <source>Next</source>
-        <translation type="unfinished">下一曲</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="239"/>
         <source>Stop</source>
-        <translation type="unfinished">停止</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="244"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">添加文件(&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="249"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">删除全部(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="254"/>
@@ -926,12 +754,12 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="264"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">添加文件夹(&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="269"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">退出(&amp;E)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="274"/>
@@ -946,17 +774,17 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="284"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">选择全部(&amp;S)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="289"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">删除所选(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="294"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">删除未选(&amp;R)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="299"/>
@@ -974,18 +802,190 @@
         <source>Rename Playlist</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="140"/>
+        <source>Volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="379"/>
+        <source>&lt;b&gt;%1&lt;/b&gt;|%2 bit|%3 ch|%4 Hz|tracks: %5|total time: %6|%7 kbps|</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="380"/>
+        <source>Paused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="390"/>
+        <source>&lt;b&gt;%1&lt;/b&gt;|tracks: %2|total time: %3|</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="391"/>
+        <source>Stopped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="293"/>
+        <source>Playlist name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="334"/>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="335"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="380"/>
+        <source>Playing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="434"/>
+        <source>Ctrl+0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="440"/>
+        <source>P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="492"/>
+        <source>Edit Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="494"/>
+        <source>Sort List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="497"/>
+        <location filename="../mainwindow.cpp" line="552"/>
+        <source>By Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="501"/>
+        <location filename="../mainwindow.cpp" line="556"/>
+        <source>By Album</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="505"/>
+        <location filename="../mainwindow.cpp" line="560"/>
+        <source>By Artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="509"/>
+        <location filename="../mainwindow.cpp" line="564"/>
+        <source>By Album Artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="568"/>
+        <source>By Filename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="517"/>
+        <location filename="../mainwindow.cpp" line="572"/>
+        <source>By Path + Filename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="521"/>
+        <location filename="../mainwindow.cpp" line="576"/>
+        <source>By Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="525"/>
+        <location filename="../mainwindow.cpp" line="580"/>
+        <source>By Track Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="529"/>
+        <location filename="../mainwindow.cpp" line="584"/>
+        <source>By Disc Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="533"/>
+        <location filename="../mainwindow.cpp" line="588"/>
+        <source>By File Creation Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="537"/>
+        <location filename="../mainwindow.cpp" line="592"/>
+        <source>By File Modification Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="541"/>
+        <source>By Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="549"/>
+        <source>Sort Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="599"/>
+        <source>Randomize List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="601"/>
+        <source>Reverse List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="608"/>
+        <location filename="../mainwindow.cpp" line="653"/>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="686"/>
+        <source>Add new playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="692"/>
+        <source>Show all tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="845"/>
+        <source>Buffering: %1%</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlayListHeader</name>
     <message>
         <location filename="../playlistheader.cpp" line="61"/>
         <source>Add Column</source>
-        <translation type="unfinished"></translation>
+        <translation>增加n列</translation>
     </message>
     <message>
         <location filename="../playlistheader.cpp" line="62"/>
         <source>Edit Column</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑n列</translation>
     </message>
     <message>
         <location filename="../playlistheader.cpp" line="63"/>
@@ -1048,82 +1048,82 @@
     <message>
         <location filename="../forms/popupsettings.ui" line="178"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>毫秒</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="62"/>
         <source>Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>艺术家</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="63"/>
         <source>Album</source>
-        <translation type="unfinished"></translation>
+        <translation>专辑</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="64"/>
         <source>Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>专辑艺术家</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="65"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>题头</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="66"/>
         <source>Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>单曲编号</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="67"/>
         <source>Two-digit Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>两位单曲号</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="72"/>
         <source>Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>碟片编号</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="73"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="74"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation>文件路径</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="68"/>
         <source>Genre</source>
-        <translation type="unfinished"></translation>
+        <translation>风格</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="69"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>评论</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="70"/>
         <source>Composer</source>
-        <translation type="unfinished"></translation>
+        <translation>作曲</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="71"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>长度</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="75"/>
         <source>Year</source>
-        <translation type="unfinished"></translation>
+        <translation>年份</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="76"/>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>条件</translation>
     </message>
 </context>
 <context>
@@ -1144,17 +1144,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="36"/>
         <source>Hide on close</source>
-        <translation type="unfinished">关闭时隐藏</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="43"/>
         <source>Start hidden</source>
-        <translation type="unfinished">启动时隐藏</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="722"/>
         <source>Fonts</source>
-        <translation type="unfinished">字体</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="728"/>
@@ -1171,7 +1171,7 @@
         <location filename="../forms/qsuisettings.ui" line="821"/>
         <location filename="../forms/qsuisettings.ui" line="840"/>
         <source>???</source>
-        <translation type="unfinished">???</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="62"/>
@@ -1179,7 +1179,7 @@
         <location filename="../forms/qsuisettings.ui" line="786"/>
         <location filename="../forms/qsuisettings.ui" line="847"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="30"/>
@@ -1194,17 +1194,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="74"/>
         <source>Song Display</source>
-        <translation type="unfinished">显示歌曲</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="80"/>
         <source>Show protocol</source>
-        <translation type="unfinished">显示协议</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="137"/>
         <source>Show song numbers</source>
-        <translation type="unfinished">显示曲目编号</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="144"/>
@@ -1232,16 +1232,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="178"/>
-        <source>Colors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuisettings.ui" line="618"/>
-        <source>Group background:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../forms/qsuisettings.ui" line="869"/>
         <source>Reset fonts</source>
         <translation type="unfinished"></translation>
@@ -1257,33 +1247,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="647"/>
-        <source>Group text:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuisettings.ui" line="917"/>
-        <source>Tabs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuisettings.ui" line="923"/>
-        <source>Show close buttons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuisettings.ui" line="930"/>
-        <source>Show tab list menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuisettings.ui" line="937"/>
-        <source>Show &apos;New Playlist&apos; button</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../forms/qsuisettings.ui" line="911"/>
         <source>Miscellaneous</source>
+        <translation>其他杂项</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="184"/>
+        <source>Analyzer Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1292,8 +1262,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="184"/>
-        <source>Analyzer Colors</source>
+        <location filename="../forms/qsuisettings.ui" line="178"/>
+        <source>Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1327,11 +1297,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="404"/>
-        <source>Use system colors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../forms/qsuisettings.ui" line="423"/>
         <source>Background #1:</source>
         <translation type="unfinished"></translation>
@@ -1362,84 +1327,119 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../forms/qsuisettings.ui" line="404"/>
+        <source>Use system colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="618"/>
+        <source>Group background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="647"/>
+        <source>Group text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="917"/>
+        <source>Tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="923"/>
+        <source>Show close buttons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="930"/>
+        <source>Show tab list menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="937"/>
+        <source>Show &apos;New Playlist&apos; button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qsuisettings.cpp" line="118"/>
         <source>Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>艺术家</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="119"/>
         <source>Album</source>
-        <translation type="unfinished"></translation>
+        <translation>专辑</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="120"/>
         <source>Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>专辑艺术家</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="121"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>题头</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="122"/>
         <source>Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>单曲编号</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="123"/>
         <source>Two-digit Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>两位单曲号</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="124"/>
         <source>Genre</source>
-        <translation type="unfinished"></translation>
+        <translation>风格</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="125"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>评论</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="126"/>
         <source>Composer</source>
-        <translation type="unfinished"></translation>
+        <translation>作曲</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="127"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>长度</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="128"/>
         <source>Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>碟片编号</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="129"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="130"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation>文件路径</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="131"/>
         <source>Year</source>
-        <translation type="unfinished"></translation>
+        <translation>年份</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="132"/>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>条件</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="133"/>
         <source>Artist - Title</source>
-        <translation type="unfinished"></translation>
+        <translation>艺术家-题头</translation>
     </message>
 </context>
 <context>
@@ -1452,72 +1452,72 @@
     <message>
         <location filename="../qsuianalyzer.cpp" line="283"/>
         <source>Peaks</source>
-        <translation type="unfinished"></translation>
+        <translation>峰</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="286"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>刷新率</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="289"/>
         <source>50 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="290"/>
         <source>25 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>25 帧每秒</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="291"/>
         <source>10 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>10 帧每秒</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="292"/>
         <source>5 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>5 帧每秒</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="299"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished"></translation>
+        <translation>分析器坠落</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="302"/>
         <location filename="../qsuianalyzer.cpp" line="316"/>
         <source>Slowest</source>
-        <translation type="unfinished"></translation>
+        <translation>最慢</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="303"/>
         <location filename="../qsuianalyzer.cpp" line="317"/>
         <source>Slow</source>
-        <translation type="unfinished"></translation>
+        <translation>慢</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="304"/>
         <location filename="../qsuianalyzer.cpp" line="318"/>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>中等</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="305"/>
         <location filename="../qsuianalyzer.cpp" line="319"/>
         <source>Fast</source>
-        <translation type="unfinished"></translation>
+        <translation>快</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="306"/>
         <location filename="../qsuianalyzer.cpp" line="320"/>
         <source>Fastest</source>
-        <translation type="unfinished"></translation>
+        <translation>最快</translation>
     </message>
     <message>
         <location filename="../qsuianalyzer.cpp" line="313"/>
         <source>Peaks Falloff</source>
-        <translation type="unfinished"></translation>
+        <translation>顶峰坠落</translation>
     </message>
 </context>
 <context>
