@@ -1066,3 +1066,11 @@ Version 0.9.4
 * fixed hide on close feature
 * fixed Dutch translation (Rhythmdrill)
 * fixed build (Ivan Ponomarev)
+
+Version 0.9.5
+* added error handling in the mplayer plugin
+* fixed problem with some covers embedded in the mp3 files
+* fixed some skins support
+* fixed issue with equalizer not saving low levels in the qsui plugin
+* fixed gcc warnings
+* updated Chinese Simplified translation (mabier)
