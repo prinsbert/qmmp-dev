@@ -1070,3 +1070,13 @@ Version 1.0.2
 * fixed hide on close feature
 * fixed some skins parsing
 * fixed Dutch translation (Rhythmdrill)
+
+Version 1.0.3
+* added error handling in the mplayer plugin
+* fixed problem with some covers embedded in the mp3 files
+* fixed some skins support
+* fixed issue with equalizer not saving low levels in the qsui plugin
+* fixed gcc warnings
+* fixed build without Qt X11 Extras
+* fixed Cinnamon and MATE support
+* updated Chinese Simplified translation (mabier)
