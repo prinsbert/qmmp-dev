@@ -13,4 +13,6 @@ Terminal=false
 
 
 # Translations
+Comment[zh_CN]=向Qmmp播放列表中添加(多个)文件
 Name[zh_CN]=在Qmmp播放器中排队
+Icon[zh_CN]=qmmp
