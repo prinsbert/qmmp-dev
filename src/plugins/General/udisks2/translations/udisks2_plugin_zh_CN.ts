@@ -44,22 +44,22 @@
     <message>
         <location filename="../udisks2factory.cpp" line="31"/>
         <source>UDisks2 Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>UDisk2插件</translation>
     </message>
     <message>
         <location filename="../udisks2factory.cpp" line="51"/>
         <source>About UDisks2 Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>关于UDisk2插件</translation>
     </message>
     <message>
         <location filename="../udisks2factory.cpp" line="52"/>
         <source>Qmmp UDisks2 Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp播放器UDisk2插件</translation>
     </message>
     <message>
         <location filename="../udisks2factory.cpp" line="53"/>
         <source>This plugin provides removable devices detection using UDisks2</source>
-        <translation type="unfinished"></translation>
+        <translation>本插件使用UDisk2提供对移动设备的探测功能</translation>
     </message>
     <message>
         <location filename="../udisks2factory.cpp" line="54"/>
@@ -72,12 +72,12 @@
     <message>
         <location filename="../udisks2plugin.cpp" line="130"/>
         <source>Add CD &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>增加CD&quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../udisks2plugin.cpp" line="138"/>
         <source>Add Volume &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>增加音量&quot;%1&quot;</translation>
     </message>
 </context>
 </TS>

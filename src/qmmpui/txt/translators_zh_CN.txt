@@ -1,77 +1,77 @@
-Brazilian Portuguese:
+巴西葡萄牙语：
     Klaos Lacerda
     Bruno Gonçalves
     Heitor Thury Barreiros Barbosa <hthury@gmail.com>
 
-Chinese Traditional:
-    lon <lon83129@126.com>
+繁体中文：
+    艾昂<Ion83129@126.com>
 
-Chinese Simplified:
-    lon <lon83129@126.com>
+简体中文：
+    艾昂<Ion83129@126.com>
 
-Czech:
+捷克语：
     Karel Volný <kvolny@redhat.com>
     Jaroslav Lichtblau
 
-Dutch:
-    Ronald Uitermark <ronald645@gmail.com>
+荷兰语：
+    罗纳德.尤特马克
 
-French:
+法语：
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>
 
-Galician:
+加利西亚语
     Óscar Pereira <oscarpereira1989@gmail.com>
 
-German:
+德语：
     Ettore Atalan
     Stefan Koelling <stefankoelling.ext@googlemail.com>
     Panagiotis Papadopoulos <pano_90@gmx.net>
 
-Greek:
+希腊语：
     Dimitrios Glentadakis
 
-Hebrew:
+希伯来语：
     Genghis Khan <genghiskhan@gmx.ca>
 
-Hungarian:
+匈牙利语：
     Németh Gábor <sutee84@freemail.hu>
 
-Italian:
+意大利语：
     Gian Paolo Renello <emmerkar@gmail.com>
 
-Japanese:
+日语：
     Ryota Shimamoto <liangtai.s16@gmail.com>
 
-Kazakh:
+哈萨克语：
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>
 
-Lithuanian:
+立陶宛语：
     Algirdas Butkus <butkus.algirdas@gmail.com>
 
-Polish:
+波兰语：
     Daniel Krawczyk
     Grzegorz Gibas <amigib@gmail.com>
 
-Portuguese:
+葡萄牙语：
     Sérgio Marques <smarquespt@gmail.com>
 
-Russian:
+俄语：
     Ilya Kotov <forkotov02@hotmail.ru>
 
-Serbian:
+塞尔维亚语：
     Mladen Pejaković <pejakm@autistici.org>
 
-Slovak:
+斯洛伐克语：
     Ján Ďanovský <dagsoftware@yahoo.com>
 
-Spanish:
+西班牙语：
     Félix Medrano <xukosky@yahoo.es>
 
-Turkish:
+土耳其语：
     Mustafa GUNAY <mustafagunay@pgmail.com>
     Bilgesu Güngör <h.ibrahim.gungor@gmail.com>
     Uğur KUYU
 
-Ukrainian:
+乌克兰语：
     Gennadi Motsyo <drool@altlinux.ru>

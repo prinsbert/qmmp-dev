@@ -6,7 +6,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Track Change Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>曲目变更插件设置</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="32"/>
@@ -19,22 +19,22 @@
     <message>
         <location filename="../settingsdialog.ui" line="76"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation type="unfinished"></translation>
+        <translation>当Qmmp开始播放新曲目时运行的命令</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="83"/>
         <source>Command to run toward to end of a track</source>
-        <translation type="unfinished"></translation>
+        <translation>当一个曲目即将结束是运行的命令</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="90"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>当Qmmp中的播放列表结束时运行的命令</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="97"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation type="unfinished"></translation>
+        <translation>当曲目名称(比如，网络媒体流曲目名称)变化时运行的命令</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="57"/>
@@ -117,22 +117,22 @@
     <message>
         <location filename="../trackchangefactory.cpp" line="30"/>
         <source>Track Change Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>曲目变更插件</translation>
     </message>
     <message>
         <location filename="../trackchangefactory.cpp" line="50"/>
         <source>About Track Change Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>关于曲目变更插件</translation>
     </message>
     <message>
         <location filename="../trackchangefactory.cpp" line="51"/>
         <source>Qmmp Track Change Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp曲目变更插件</translation>
     </message>
     <message>
         <location filename="../trackchangefactory.cpp" line="52"/>
         <source>This plugin executes external command when current track is changed</source>
-        <translation type="unfinished"></translation>
+        <translation>该插件允许在当前曲目发生变化时执行外部命令</translation>
     </message>
     <message>
         <location filename="../trackchangefactory.cpp" line="53"/>
