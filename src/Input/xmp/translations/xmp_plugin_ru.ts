@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU">
+<TS version="2.0" language="ru">
 <context>
     <name>DecoderXmpFactory</name>
     <message>
@@ -82,6 +82,11 @@
         <translation>22050 Гц</translation>
     </message>
     <message>
+        <location filename="../settingsdialog.cpp" line="34"/>
+        <source>44100 Hz</source>
+        <translation>44100 Гц</translation>
+    </message>
+    <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
         <translation>48000 Гц</translation>
@@ -100,11 +105,6 @@
         <location filename="../settingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
         <translation>Кубическими сплайнами</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="34"/>
-        <source>44100 Hz</source>
-        <translation>44100 Гц</translation>
     </message>
 </context>
 <context>
