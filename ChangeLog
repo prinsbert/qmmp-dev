@@ -1080,3 +1080,6 @@ Version 1.0.3
 * fixed build without Qt X11 Extras
 * fixed Cinnamon and MATE support
 * updated Chinese Simplified translation (mabier)
+
+Version 1.0.4
+* fixed skinned ui build
