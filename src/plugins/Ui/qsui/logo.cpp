@@ -82,6 +82,7 @@ Logo::Logo(QWidget *parent) : Visual(parent)
 Logo::~Logo()
 {
     Visual::remove(this);
+    delete[] m_buffer;
 }
 
 void Logo::add(unsigned char *data, qint64 size, int chan)
