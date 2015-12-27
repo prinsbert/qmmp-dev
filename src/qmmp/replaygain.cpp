@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2015 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -55,7 +55,8 @@ void ReplayGain::setReplayGainInfo(const QMap<Qmmp::ReplayGainKey, double> &info
 {
     m_info = info;
     m_headroom = headroom;
-    if(m_mode != QmmpSettings::REPLAYGAIN_DISABLED)
+    updateScale();
+    if(m_mode != QmmpSettings::REPLAYGAIN_DISABLED && !m_disabled)
     {
         qDebug("ReplayGain: track: gain=%f dB, peak=%f; album: gain=%f dB, peak=%f",
                m_info[Qmmp::REPLAYGAIN_TRACK_GAIN],
@@ -65,7 +66,6 @@ void ReplayGain::setReplayGainInfo(const QMap<Qmmp::ReplayGainKey, double> &info
         qDebug("ReplayGain: scale=%f", m_scale);
         qDebug("ReplayGain: headroom=%d", m_headroom);
     }
-    updateScale();
 }
 
 qint64 ReplayGain::read(Decoder *decoder, char *data, qint64 size)
