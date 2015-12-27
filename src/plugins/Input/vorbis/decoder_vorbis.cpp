@@ -331,6 +331,7 @@ qint64 DecoderVorbis::read(float *data, qint64 samples)
 
     if (m_section != m_last_section)
         updateTags();
+    m_last_section = m_section;
 
     m_bitrate = ov_bitrate_instant(&oggfile) / 1000;
     return len*channels;
