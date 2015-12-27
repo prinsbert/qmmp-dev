@@ -258,7 +258,7 @@ int LADSPAHost::applyEffect(qint16 *d, int length)
                 instance->descriptor->run(instance->handle, length >> 1);
         }
         for (k = 0; k < length >> 1; ++k)
-            raw16[k] = qBound((int)(m_left[k] * 32768.0f), -32768, 32767);
+            raw16[k] = qBound(-32768, (int)(m_left[k] * 32768.0f), 32767);
     }
     else
     {
@@ -276,8 +276,8 @@ int LADSPAHost::applyEffect(qint16 *d, int length)
         }
         for (k = 0; k < length >> 1; k += 2)
         {
-            raw16[k] = qBound((int)(m_left[k >> 1] * 32768.0f), -32768, 32767);
-            raw16[k+1] = qBound((int)(m_right[k >> 1] * 32768.0f), -32768, 32767);
+            raw16[k] = qBound(-32768, (int)(m_left[k >> 1] * 32768.0f), 32767);
+            raw16[k+1] = qBound(-32768, (int)(m_right[k >> 1] * 32768.0f), 32767);
         }
     }
     return length;
