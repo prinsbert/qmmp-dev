@@ -1083,3 +1083,11 @@ Version 1.0.3
 
 Version 1.0.4
 * fixed skinned ui build
+
+Version 1.0.5
+* added gnome shell support
+* fixed url dialog size
+* fixed memory leak in the qsui plugin
+* fixed ladspa plugin
+* fixed cpu usage in the vorbis plugins
+* fixed utf-8 support in the scrobbler plugin
