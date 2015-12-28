@@ -1074,3 +1074,9 @@ Version 0.9.5
 * fixed issue with equalizer not saving low levels in the qsui plugin
 * fixed gcc warnings
 * updated Chinese Simplified translation (mabier)
+
+Version 0.9.6
+* fixed url dialog size
+* fixed memory leak in the qsui plugin
+* fixed ladspa plugin
+* fixed cpu usage in the vorbis plugins
