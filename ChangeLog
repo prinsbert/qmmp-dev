@@ -1080,3 +1080,5 @@ Version 0.9.6
 * fixed memory leak in the qsui plugin
 * fixed ladspa plugin
 * fixed cpu usage in the vorbis plugins
+* fixed Greek translation (Dimitrios Glentadakis)
+* updated French translation (Adrien Vigneron)
