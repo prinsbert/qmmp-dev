@@ -1091,3 +1091,5 @@ Version 1.0.5
 * fixed ladspa plugin
 * fixed cpu usage in the vorbis plugins
 * fixed utf-8 support in the scrobbler plugin
+* fixed Greek translation (Dimitrios Glentadakis)
+* updated French translation (Adrien Vigneron)
