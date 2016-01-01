@@ -17,6 +17,7 @@
     罗纳德.尤特马克
 
 法语：
+    Adrien Vigneron - VRad <adrienvigneron@ml1.net>
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>
 
