@@ -87,12 +87,12 @@
         <translation>输入URL来添加</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="43"/>
+        <location filename="../forms/addurldialog.ui" line="46"/>
         <source>&amp;Add</source>
         <translation>&amp;添加</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="50"/>
+        <location filename="../forms/addurldialog.ui" line="53"/>
         <source>&amp;Cancel</source>
         <translation>&amp;取消</translation>
     </message>
