@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,6 +33,7 @@
 #include "audioconverter.h"
 #include "qmmpaudioengine_p.h"
 #include "channelconverter_p.h"
+#include "dithering_p.h"
 #include "metadatamanager.h"
 
 #define TRANSPORT_TIMEOUT 5000 //ms
@@ -48,9 +49,12 @@ QmmpAudioEngine::QmmpAudioEngine(QObject *parent)
     m_output = 0;
     m_muted = false;
     m_replayGain = 0;
+    m_dithering = 0;
     m_converter = new AudioConverter;
+
     m_settings = QmmpSettings::instance();
     connect(m_settings,SIGNAL(replayGainSettingsChanged()), SLOT(updateReplayGainSettings()));
+    connect(m_settings,SIGNAL(audioSettingsChanged()), SLOT(updateAudioSettings()));
     connect(m_settings, SIGNAL(eqSettingsChanged()), SLOT(updateEqSettings()));
     reset();
     m_instance = this;
@@ -336,6 +340,16 @@ void QmmpAudioEngine::updateReplayGainSettings()
     }
 }
 
+void QmmpAudioEngine::updateAudioSettings()
+{
+    if(m_dithering)
+    {
+        mutex()->lock();
+        m_dithering->setEnabled(m_settings->useDithering());
+        mutex()->unlock();
+    }
+}
+
 void QmmpAudioEngine::updateEqSettings()
 {
     mutex()->lock();
@@ -359,6 +373,7 @@ void QmmpAudioEngine::run()
     addOffset(); //offset
     mutex()->unlock();
     m_output->start();
+    m_dithering->setFormats(m_decoder->audioParameters().format(), m_output->format());
     StateHandler::instance()->dispatch(Qmmp::Buffering);
     StateHandler::instance()->dispatch(m_decoder->totalTime());
     StateHandler::instance()->dispatch(Qmmp::Playing);
@@ -458,7 +473,6 @@ void QmmpAudioEngine::run()
                     mutex()->unlock();
                     sendMetaData();
                     addOffset(); //offset
-                    continue;
                 }
                 else
                 {
@@ -479,8 +493,12 @@ void QmmpAudioEngine::run()
                         StateHandler::instance()->dispatch(m_decoder->totalTime());
                         sendMetaData();
                         addOffset(); //offset
-                        continue;
                     }
+                }
+                if(m_output)
+                {
+                    m_dithering->setFormats(m_decoder->audioParameters().format(), m_output->format());
+                    continue;
                 }
             }
 
@@ -620,6 +638,7 @@ void QmmpAudioEngine::prepareEffects(Decoder *d)
         }
     }
     m_replayGain = 0;
+    m_dithering = 0;
     QList <Effect *> tmp_effects = m_effects;
     m_effects.clear();
 
@@ -633,6 +652,12 @@ void QmmpAudioEngine::prepareEffects(Decoder *d)
                                      m_settings->replayGainDefaultGain(),
                                      m_settings->replayGainPreventClipping());
         m_replayGain->setReplayGainInfo(d->replayGainInfo());
+    }
+    //dithering
+    {
+        m_dithering = new Dithering;
+        m_dithering->configure(m_ap.sampleRate(), m_ap.channelMap());
+        m_effects << m_dithering;
     }
     //channel order converter
     if(m_ap.channelMap() != m_ap.channelMap().remaped())

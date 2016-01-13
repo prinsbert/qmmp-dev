@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,6 +37,7 @@ class EffectFactory;
 class ReplayGain;
 class QmmpSettings;
 class AudioConverter;
+class Dithering;
 
 /*! @internal
  * @author Ilya Kotov <forkotov02@hotmail.ru>
@@ -62,6 +63,7 @@ public:
 private slots:
     void finish();
     void updateReplayGainSettings();
+    void updateAudioSettings();
     void updateEqSettings();
 
 private:
@@ -96,6 +98,7 @@ private:
     ReplayGain *m_replayGain;
     QmmpSettings *m_settings;
     AudioConverter *m_converter;
+    Dithering *m_dithering;
 };
 
 #endif // QMMPAUDIOENGINE_P_H
