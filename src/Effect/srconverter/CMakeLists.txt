@@ -45,7 +45,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(SAMPLERATE_FOUND)
 ADD_LIBRARY(srconverter MODULE ${libsrconverter_SRCS} ${libsrconverter_UIS_H}
   ${libsrconverter_RCC_SRCS} ${libsrconverter_HDRS})
-add_dependencies(srconverter qmmp)
 target_link_libraries(srconverter Qt5::Widgets ${QMMP_LDFLAGS} ${SAMPLERATE_LDFLAGS})
 install(TARGETS srconverter DESTINATION ${LIB_DIR}/qmmp/Effect)
 ENDIF(SAMPLERATE_FOUND)
