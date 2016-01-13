@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="48"/>
+        <location filename="../decoderffapfactory.cpp" line="51"/>
         <source>FFap Plugin</source>
         <translation>Modul FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="50"/>
+        <location filename="../decoderffapfactory.cpp" line="53"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation>Soubory Monkey&apos;s Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="153"/>
+        <location filename="../decoderffapfactory.cpp" line="161"/>
         <source>About FFap Audio Plugin</source>
         <translation>O modulu FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="154"/>
+        <location filename="../decoderffapfactory.cpp" line="162"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Zvukový modul Qmmp FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="155"/>
+        <location filename="../decoderffapfactory.cpp" line="163"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>Tento modul poskytuje podporu pro Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="156"/>
+        <location filename="../decoderffapfactory.cpp" line="164"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Autor: Ilja Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="157"/>
+        <location filename="../decoderffapfactory.cpp" line="165"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>Založeno na kódu projektů deadbeef, FFmpeg a rockbox</translation>
     </message>
