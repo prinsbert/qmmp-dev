@@ -1,12 +1,13 @@
 Qmmp Plugin Pack
 
 Plugin pack is a set of extra plugins for Qmmp.
-Official home page: http://qmmp.ylsoftware.com/
+Official home page: http://qmmp.ylsoftware.com/plugins.php
 
 Description:
 - MPG123 - MPEG v1/2 layer1/2/3 decoder with use of the libmpg123 library
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
 - XMP - module player with use of the libxmp library
+- Sample Rate Converter - resampler with use of libsamplerate library
 
 Requirements:
 - Qt >= 5.4 (qtbase, qtx11extras and qttools for build)
@@ -14,6 +15,7 @@ Requirements:
 - taglib >= 1.9
 - libmpg123 >= 1.13.0 (Optional)
 - libxmp >= 4.2.0 (Optional)
+- libsamplerate >= 0.1.2 (Optional)
 - cmake >= 2.8.11 (for build only)
 - yasm (for build only)
 
@@ -33,7 +35,7 @@ by running:
 cmake ./ -DUSE_MPG123:BOOL=FALSE
 
 Available options:
-- USE_MPG123; USE_FFAP; USE_XMP (plugins)
+- USE_MPG123; USE_FFAP; USE_XMP; USE_SRC (plugins)
 - USE_ASM (assembler-level optimizations inside FFap decoder)
 
 
