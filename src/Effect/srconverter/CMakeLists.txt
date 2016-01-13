@@ -25,10 +25,6 @@ SET(QT_INCLUDES
 include_directories(${QMMP_INCLUDE_DIRS})
 link_directories( ${QMMP_LIBRARY_DIRS})
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 pkg_check_modules(SAMPLERATE samplerate)
 
 include_directories(${SAMPLERATE_INCLUDE_DIRS})
