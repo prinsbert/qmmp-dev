@@ -14,10 +14,9 @@ CONFIG += warn_on \
 plugin \
 link_pkgconfig
 
-PKGCONFIG += samplerate
+PKGCONFIG += qmmp samplerate
 TEMPLATE = lib
-QMAKE_LIBDIR += ../../../../lib
-LIBS += -lqmmp -L/usr/lib -I/usr/include
+
 
 RESOURCES = translations/translations.qrc
 
