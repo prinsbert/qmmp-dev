@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2016 by Ilya Kotov                                      *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,58 +18,36 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef DECODER_FFMPEG_H
-#define DECODER_FFMPEG_H
+#include "replaygainreader.h"
 
-extern "C"{
-#include <libavformat/avformat.h>
-#include <libavcodec/avcodec.h>
-#include <libavutil/mathematics.h>
-#include <libavutil/dict.h>
+ReplayGainReader::ReplayGainReader(AVFormatContext *ic)
+{
+    AVDictionaryEntry *t = 0;
+    while((t = av_dict_get(ic->metadata, "", t, AV_DICT_IGNORE_SUFFIX)))
+    {
+        if(!strcmp(t->key, "replaygain_album_gain"))
+            setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN, t->value);
+        else if(!strcmp(t->key, "replaygain_album_peak"))
+            setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK, t->value);
+        else if(!strcmp(t->key, "replaygain_track_gain"))
+            setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, t->value);
+        else if(!strcmp(t->key, "replaygain_track_peak"))
+            setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, t->value);
+    }
 }
 
-
-#include <qmmp/decoder.h>
-
-#define PROBE_BUFFER_SIZE 8192
-#define INPUT_BUFFER_SIZE 16384
-
-class DecoderFFmpeg : public Decoder
+QMap <Qmmp::ReplayGainKey, double> ReplayGainReader::replayGainInfo() const
 {
-public:
-    DecoderFFmpeg(const QString &, QIODevice *i);
-    virtual ~DecoderFFmpeg();
+    return m_values;
+}
 
-    // Standard Decoder API
-    bool initialize();
-    qint64 totalTime();
-    int bitrate();
-    qint64 read(unsigned char *audio, qint64 maxSize);
-    void seek(qint64 time);
-
-private:
-    //helper functions
-    void fillBuffer();
-
-    AVFormatContext *ic;
-    AVCodecContext *c;
-
-    int m_bitrate, wma_idx;
-
-    QString m_path;
-    qint64 m_totalTime;
-    AVPacket m_pkt;
-    AVPacket m_temp_pkt;
-    qint64 m_output_at;
-    uchar m_input_buf[INPUT_BUFFER_SIZE + FF_INPUT_BUFFER_PADDING_SIZE];
-    int64_t m_seekTime;
-    qint64  m_skipBytes;
-    int m_channels;
-
-    qint64 ffmpeg_decode();
-    AVIOContext *m_stream;
-    AVFrame *m_decoded_frame;
-};
-
-
-#endif // DECODER_FFMPEG_H
+void ReplayGainReader::setValue(Qmmp::ReplayGainKey key, QString value)
+{
+    value.remove(" dB");
+    if(value.isEmpty())
+        return;
+    bool ok;
+    double v = value.toDouble(&ok);
+    if(ok)
+        m_values[key] = v;
+}

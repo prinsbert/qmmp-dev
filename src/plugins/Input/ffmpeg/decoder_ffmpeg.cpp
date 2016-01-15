@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2014 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,6 +20,7 @@
 
 #include <QObject>
 #include <QFile>
+#include "replaygainreader.h"
 #include "decoder_ffmpeg.h"
 #if (LIBAVCODEC_VERSION_INT >= ((55<<16)+(34<<8)+0)) //libav-10: 55.34.1; ffmpeg-2.1: 55.39.100
 extern "C"{
@@ -191,6 +192,11 @@ bool DecoderFFmpeg::initialize()
         addMetaData(metaData);
     }
 
+    //replay gain
+    ReplayGainReader rg(ic);
+    setReplayGainInfo(rg.replayGainInfo());
+
+
     ic->flags |= AVFMT_FLAG_GENPTS;
     av_read_play(ic);
     for (wma_idx = 0; wma_idx < (int)ic->nb_streams; wma_idx++)
@@ -265,9 +271,11 @@ bool DecoderFFmpeg::initialize()
         break;
     case AV_SAMPLE_FMT_S32:
     case AV_SAMPLE_FMT_S32P:
+        format = Qmmp::PCM_S32LE;
+        break;
     case AV_SAMPLE_FMT_FLT:
     case AV_SAMPLE_FMT_FLTP:
-        format = Qmmp::PCM_S32LE;
+        format = Qmmp::PCM_FLOAT;
         break;
     default:
         qWarning("DecoderFFmpeg: unsupported audio format");
@@ -314,33 +322,24 @@ qint64 DecoderFFmpeg::read(unsigned char *audio, qint64 maxSize)
     if(av_sample_fmt_is_planar(c->sample_fmt) && m_channels > 1)
     {
         int bps = av_get_bytes_per_sample(c->sample_fmt);
-        for(int i = 0; i < (len >> 1); i+=bps)
+
+        for(int i = 0; i < len / bps; i++)
         {
-            memcpy(audio + 2*i, m_decoded_frame->extended_data[0] + i, bps);
-            memcpy(audio + 2*i + bps, m_decoded_frame->extended_data[1] + i, bps);
+            memcpy(audio + i * bps, m_decoded_frame->extended_data[i % m_channels] + i / m_channels * bps, bps);
         }
+
         m_output_at -= len;
-        memmove(m_decoded_frame->extended_data[0],
-                m_decoded_frame->extended_data[0] + len/2, m_output_at/2);
-        memmove(m_decoded_frame->extended_data[1],
-                m_decoded_frame->extended_data[1] + len/2, m_output_at/2);
+        for(int i = 0; i < m_channels; i++)
+        {
+            memmove(m_decoded_frame->extended_data[i],
+                    m_decoded_frame->extended_data[i] + len/m_channels, m_output_at/m_channels);
+        }
     }
     else
     {
         memcpy(audio, m_decoded_frame->extended_data[0], len);
         m_output_at -= len;
         memmove(m_decoded_frame->extended_data[0], m_decoded_frame->extended_data[0] + len, m_output_at);
-    }
-
-    if(c->sample_fmt == AV_SAMPLE_FMT_FLTP || c->sample_fmt == AV_SAMPLE_FMT_FLT)
-    {
-        //convert float to signed 32 bit LE
-        for(int i = 0; i < (len >> 2); i++)
-        {
-            int32_t *out = (int32_t *)audio;
-            float *in = (float *) audio;
-            out[i] = qBound(-1.0f, in[i], +1.0f) * (double) 0x7fffffff;
-        }
     }
 
     return len;
