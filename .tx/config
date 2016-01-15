@@ -31,10 +31,10 @@ source_lang = en
 source_file = src/plugins/Effect/bs2b/translations/bs2b_plugin_en.ts
 type = QT
 
-[qmmp.srconverter]
-file_filter = src/plugins/Effect/srconverter/translations/srconverter_plugin_<lang>.ts
+[qmmp.soxr]
+file_filter = src/plugins/Effect/soxr/translations/soxr_plugin_<lang>.ts
 source_lang = en
-source_file = src/plugins/Effect/srconverter/translations/srconverter_plugin_en.ts
+source_file = src/plugins/Effect/soxr/translations/soxr_plugin_en.ts
 type = QT
 
 [qmmp.crossfade]
