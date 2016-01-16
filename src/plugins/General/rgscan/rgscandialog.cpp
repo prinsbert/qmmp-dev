@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -64,6 +64,9 @@ RGScanDialog::RGScanDialog(QList <PlayListTrack *> tracks,  QWidget *parent) : Q
             continue;
         //skip duplicates
         if(paths.contains(track->url()))
+            continue;
+        //skip unsupported files
+        if(!MetaDataManager::instance()->supports(track->url()))
             continue;
 
         QString ext = track->url().section(".", -1).toLower();
