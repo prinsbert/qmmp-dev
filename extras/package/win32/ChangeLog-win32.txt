@@ -122,3 +122,7 @@ LEGEND
 [*] qmmp-0.9.6
 [*] qmmp-plugin-pack-0.9.3
 [*] ffmpeg-2.8.4
+
+0.9.7
+[*] qmmp-0.9.7
+[*] ffmpeg-2.8.5
