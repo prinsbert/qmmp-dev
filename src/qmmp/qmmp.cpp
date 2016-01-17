@@ -60,9 +60,9 @@ const QString Qmmp::strVersion()
             .arg(QMMP_VERSION_PATCH);
 #if !QMMP_VERSION_STABLE
 #ifdef SVN_REVISION
-    ver += "-svn-"SVN_REVISION;
+    ver += "-svn-" SVN_REVISION;
 #else
-    ver += "-"DEV_SUFFIX;
+    ver += "-" DEV_SUFFIX;
 #endif
 #endif
     return ver;
@@ -74,13 +74,13 @@ const QString Qmmp::pluginsPath()
     if (!path.isEmpty())
        return path;
 #ifdef QMMP_INSTALL_PREFIX
-    QDir dir(QMMP_INSTALL_PREFIX"/"LIB_DIR"/qmmp");
+    QDir dir(QMMP_INSTALL_PREFIX "/" LIB_DIR "/qmmp");
     //qDebug(QMMP_INSTALL_PREFIX"/"LIB_DIR"/qmmp");
 #else
 #if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
     QDir dir(qApp->applicationDirPath() + "/plugins");
 #else
-    QDir dir(qApp->applicationDirPath() + "/../"LIB_DIR"/qmmp");
+    QDir dir(qApp->applicationDirPath() + "/../" LIB_DIR "/qmmp");
 #endif
 #endif
     return dir.canonicalPath();
