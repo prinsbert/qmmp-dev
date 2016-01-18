@@ -67,17 +67,17 @@
         <translation>配置</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="43"/>
+        <location filename="../settingsdialog.cpp" line="45"/>
         <source>UID</source>
         <translation>用户ID</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="44"/>
+        <location filename="../settingsdialog.cpp" line="46"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="126"/>
+        <location filename="../settingsdialog.cpp" line="128"/>
         <source>This LADSPA plugin has no user controls</source>
         <translation>LADSPA 插件用户设置</translation>
     </message>

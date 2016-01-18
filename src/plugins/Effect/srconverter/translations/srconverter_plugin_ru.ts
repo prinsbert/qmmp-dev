@@ -29,7 +29,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="13"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Настройки модуля передескретизации</translation>
+        <translation>Настройки модуля передискретизации</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="19"/>
