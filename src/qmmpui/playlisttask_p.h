@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2014-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -44,7 +44,8 @@ public:
         SORT_SELECTION,
         REMOVE_INVALID,
         REMOVE_DUPLICATES,
-        SORT_BY_COLUMN
+        SORT_BY_COLUMN,
+        REFRESH
     };
     explicit PlayListTask(QObject *parent);
 
@@ -55,6 +56,7 @@ public:
     void sortByColumn(QList <PlayListTrack *> tracks, int column);
     void removeInvalidTracks(QList<PlayListTrack *> tracks, PlayListTrack *current_track);
     void removeDuplicates(QList<PlayListTrack *> tracks, PlayListTrack *current_track);
+    void refresh(QList<PlayListTrack *> tracks, PlayListTrack *current_track);
 
     void run();
 
@@ -72,6 +74,7 @@ private:
     QList <PlayListTrack *> m_tracks;
     QList <PlayListTrack *> m_input_tracks;
     QList<int> m_indexes;
+    QList <PlayListTrack *> m_new_tracks;
     PlayListTrack *m_current_track;
     int m_sort_mode;
     TaskType m_task;

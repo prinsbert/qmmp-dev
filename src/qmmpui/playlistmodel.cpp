@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright(C) 2006-2015 by Ilya Kotov                                  *
+ *   Copyright(C) 2006-2016 by Ilya Kotov                                  *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -900,7 +900,8 @@ void PlayListModel::onTaskFinished()
         emit sortingByColumnFinished(m_task->column(), m_task->isReverted());
     }
     else if(m_task->type() == PlayListTask::REMOVE_INVALID
-            || m_task->type() == PlayListTask::REMOVE_DUPLICATES)
+            || m_task->type() == PlayListTask::REMOVE_DUPLICATES
+            || m_task->type() == PlayListTask::REFRESH)
     {
         PlayListTrack *prev_current_track = m_current_track;
         bool prev_count = m_container->count();
@@ -975,6 +976,11 @@ void PlayListModel::removeInvalidTracks()
 void PlayListModel::removeDuplicates()
 {
     m_task->removeDuplicates(m_container->tracks(), m_current_track);
+}
+
+void PlayListModel::refresh()
+{
+    m_task->refresh(m_container->tracks(), m_current_track);
 }
 
 void PlayListModel::clearQueue()
