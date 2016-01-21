@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,32 +23,59 @@
 #include <QMenu>
 #include <QFile>
 #include <QDir>
+#include <QProgressBar>
+#include <QThreadPool>
+#include <QProcess>
+#include <QMessageBox>
 #include <qmmpui/playlistitem.h>
 #include <qmmpui/metadataformatter.h>
 #include <qmmpui/filedialog.h>
+#include <qmmp/metadatamanager.h>
+#include "converter.h"
 #include "preseteditor.h"
 #include "converterdialog.h"
 
-ConverterDialog::ConverterDialog(QList <PlayListTrack *> items,  QWidget *parent) : QDialog(parent)
+ConverterDialog::ConverterDialog(QList <PlayListTrack *> tracks,  QWidget *parent) : QDialog(parent)
 {
     m_ui.setupUi(this);
-    MetaDataFormatter formatter("%p%if(%p&%t, - ,)%t - %l");
-    foreach(PlayListTrack *item , items)
+    m_ui.tableWidget->verticalHeader()->setDefaultSectionSize(fontMetrics().height() + 3);
+    m_ui.tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+
+    QStringList paths;
+    MetaDataFormatter formatter("%if(%p&%t,%p - %t,%f) - %l");
+    foreach(PlayListTrack *track, tracks)
     {
-        if(item->length() == 0)
+        //skip streams
+        if(track->length() == 0 || track->url().contains("://"))
             continue;
-        QString text = formatter.format(item);
-        QListWidgetItem *listItem = new QListWidgetItem(text);
-        listItem->setData(Qt::UserRole, item->url());
-        listItem->setCheckState(Qt::Checked);
-        m_ui.itemsListWidget->addItem(listItem);
+        //skip duplicates
+        if(paths.contains(track->url()))
+            continue;
+        //skip unsupported files
+        if(!MetaDataManager::instance()->supports(track->url()))
+            continue;
+
+        paths.append(track->url());
+        QString name = formatter.format(track);
+        QTableWidgetItem *item = new QTableWidgetItem(name);
+        item->setData(Qt::UserRole, track->url());
+        item->setData(Qt::ToolTipRole, track->url());
+        m_ui.tableWidget->insertRow(m_ui.tableWidget->rowCount());
+        m_ui.tableWidget->setItem(m_ui.tableWidget->rowCount() - 1, 0, item);
+        QProgressBar *progressBar = new QProgressBar(this);
+        progressBar->setRange(0, 100);
+        m_ui.tableWidget->setCellWidget(m_ui.tableWidget->rowCount() - 1, 1, progressBar);
+        m_ui.tableWidget->setItem(m_ui.tableWidget->rowCount() - 1, 2, new QTableWidgetItem());
     }
+    m_ui.tableWidget->resizeColumnsToContents();
+
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Converter");
     QString music_path = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
     m_ui.outDirEdit->setText(settings.value("out_dir", music_path).toString());
     m_ui.outFileEdit->setText(settings.value("file_name","%p - %t").toString());
     m_ui.overwriteCheckBox->setChecked(settings.value("overwrite",false).toBool());
+    restoreGeometry(settings.value("geometry").toByteArray());
     settings.endGroup();
     createMenus();
 
@@ -59,17 +86,7 @@ ConverterDialog::ConverterDialog(QList <PlayListTrack *> items,  QWidget *parent
 ConverterDialog::~ConverterDialog()
 {
     savePresets();
-}
-
-QStringList ConverterDialog::selectedUrls() const
-{
-    QStringList out;
-    for(int i = 0; i < m_ui.itemsListWidget->count(); i++)
-    {
-        if(m_ui.itemsListWidget->item(i)->checkState() == Qt::Checked)
-            out << m_ui.itemsListWidget->item(i)->data(Qt::UserRole).toString();
-    }
-    return out;
+    on_stopButton_clicked();
 }
 
 QVariantMap ConverterDialog::preset() const
@@ -93,15 +110,78 @@ void ConverterDialog::on_dirButton_clicked()
         m_ui.outDirEdit->setText(dir);
 }
 
-void ConverterDialog::accept()
+void ConverterDialog::on_convertButton_clicked()
+{
+    if(!checkPreset(preset()))
+        return;
+
+    m_ui.convertButton->setEnabled(false);
+    m_converters.clear();
+    for(int i = 0; i < m_ui.tableWidget->rowCount(); ++i)
+    {
+        QString url = m_ui.tableWidget->item(i, 0)->data(Qt::UserRole).toString();
+        Converter *converter = new Converter();
+
+
+        if(!converter->prepare(url, i, preset()))
+        {
+            m_ui.tableWidget->item(i, 2)->setText(tr("Error"));
+            delete converter;
+            continue;
+        }
+        else
+            m_ui.tableWidget->item(i, 2)->setText(tr("Waiting"));
+
+        converter->setAutoDelete(false);
+        m_converters.append(converter);
+        connect(converter, SIGNAL(progress(int)), m_ui.tableWidget->cellWidget(i, 1), SLOT(setValue(int)));
+        connect(converter, SIGNAL(finished(Converter *)), SLOT(onConvertFinished(Converter *)));
+        connect(converter, SIGNAL(message(int, QString)), SLOT(onStateChanged(int, QString)));
+        QThreadPool::globalInstance()->start(converter);
+    }
+    m_ui.tableWidget->resizeColumnsToContents();
+}
+
+void ConverterDialog::on_stopButton_clicked()
+{
+    if(m_converters.isEmpty())
+        return;
+
+    foreach(Converter *c, m_converters)
+        c->stop();
+    QThreadPool::globalInstance()->waitForDone();
+    qDeleteAll(m_converters);
+    m_converters.clear();
+    m_ui.convertButton->setEnabled(true);
+}
+
+void ConverterDialog::onStateChanged(int row, QString message)
+{
+    m_ui.tableWidget->item(row, 2)->setText(message);
+    m_ui.tableWidget->resizeColumnsToContents();
+}
+
+void ConverterDialog::onConvertFinished(Converter *c)
+{
+    if(m_converters.contains(c))
+    {
+        m_converters.removeAll(c);
+        delete c;
+    }
+    if(m_converters.isEmpty())
+        m_ui.convertButton->setEnabled(true);
+}
+
+void ConverterDialog::reject()
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Converter");
     settings.setValue("out_dir", m_ui.outDirEdit->text());
     settings.value("file_name", m_ui.outFileEdit->text());
     settings.setValue("overwrite", m_ui.overwriteCheckBox->isChecked());
+    settings.setValue("geometry", saveGeometry());
     settings.endGroup();
-    QDialog::accept();
+    QDialog::reject();
 }
 
 void ConverterDialog::createMenus()
@@ -270,4 +350,29 @@ QString ConverterDialog::uniqueName(const QString &name)
         unique_name = name + QString("_%1").arg(++i);
     }
     return unique_name;
+}
+
+bool ConverterDialog::checkPreset(const QVariantMap &preset)
+{
+    QStringList programAndArgs = preset["command"].toString().split(" ", QString::SkipEmptyParts);
+    if(programAndArgs.isEmpty())
+        return false;
+
+    QString program = programAndArgs.first();
+
+    int result = QProcess::execute(program);
+
+    if(result == -2)
+    {
+        QMessageBox::warning(this, tr("Error"), tr("Unable to execute \"%1\". Program not found.")
+                             .arg(program));
+        return false;
+    }
+    else if(result < 0)
+    {
+        QMessageBox::warning(this, tr("Error"), tr("Process \"%1\" finished with error.")
+                             .arg(program));
+        return false;
+    }
+    return true;
 }
