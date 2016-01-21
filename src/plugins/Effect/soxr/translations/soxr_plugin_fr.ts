@@ -29,7 +29,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Configuration du greffon de conversion d&apos;échantillonnage</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="20"/>

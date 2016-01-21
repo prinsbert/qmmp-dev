@@ -6,22 +6,22 @@
     <message>
         <location filename="../effectsoxrfactory.cpp" line="31"/>
         <source>SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Модуль SoX Resampler</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="52"/>
         <source>About SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>О модуле SoX Resampler</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="53"/>
         <source>Qmmp SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Преобразователь частоты SoX Resampler для Qmmp</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished">Разработчик: Илья Котов &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation>Разработчик: Илья Котов &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Настройки модуля передескретизации</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="20"/>
@@ -39,32 +39,32 @@
     <message>
         <location filename="../settingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished"></translation>
+        <translation>Качество:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished"></translation>
+        <translation>Самое низкое (быстро)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Низкое</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Среднее</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished"></translation>
+        <translation>Высокое</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished"></translation>
+        <translation>Очень высокое</translation>
     </message>
 </context>
 </TS>

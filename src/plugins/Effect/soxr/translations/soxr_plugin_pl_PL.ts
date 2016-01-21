@@ -29,7 +29,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Ustawienia wtyczki Sample Rate Converter</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="20"/>
