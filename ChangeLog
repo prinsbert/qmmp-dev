@@ -1089,3 +1089,5 @@ Version 0.9.7
 * fixed gme plugin build
 * fixed gcc warnings
 * fixed Russian translation
+* updated Portuguese translation (Sérgio Marques)
+* updated Chinese Simplified translation (Mingye Wang)
