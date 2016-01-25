@@ -1093,3 +1093,12 @@ Version 1.0.5
 * fixed utf-8 support in the scrobbler plugin
 * fixed Greek translation (Dimitrios Glentadakis)
 * updated French translation (Adrien Vigneron)
+
+Version 1.0.6
+* added feature to change default output plugin
+* added feature to skip unsupported files in the rgscan plugin
+* fixed gme plugin build
+* fixed gcc warnings
+* fixed Russian translation
+* updated Portuguese translation (Sérgio Marques)
+* updated Chinese Simplified translation (Mingye Wang)
