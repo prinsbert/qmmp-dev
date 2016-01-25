@@ -64,16 +64,16 @@
         <translation>Записувати пік/підсилення для альбому</translation>
     </message>
     <message>
-        <location filename="../rgscandialog.cpp" line="117"/>
-        <location filename="../rgscandialog.cpp" line="228"/>
+        <location filename="../rgscandialog.cpp" line="120"/>
+        <location filename="../rgscandialog.cpp" line="231"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../rgscandialog.cpp" line="127"/>
-        <location filename="../rgscandialog.cpp" line="128"/>
-        <location filename="../rgscandialog.cpp" line="152"/>
-        <location filename="../rgscandialog.cpp" line="223"/>
+        <location filename="../rgscandialog.cpp" line="130"/>
+        <location filename="../rgscandialog.cpp" line="131"/>
+        <location filename="../rgscandialog.cpp" line="155"/>
+        <location filename="../rgscandialog.cpp" line="226"/>
         <source>%1 dB</source>
         <translation>%1 дБ</translation>
     </message>
