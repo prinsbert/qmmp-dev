@@ -1082,3 +1082,10 @@ Version 0.9.6
 * fixed cpu usage in the vorbis plugins
 * fixed Greek translation (Dimitrios Glentadakis)
 * updated French translation (Adrien Vigneron)
+
+Version 0.9.7
+* added feature to change default output plugin
+* added feature to skip unsupported files in the rgscan plugin
+* fixed gme plugin build
+* fixed gcc warnings
+* fixed Russian translation
