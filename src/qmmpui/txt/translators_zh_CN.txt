@@ -8,6 +8,7 @@
 
 简体中文：
     艾昂<Ion83129@126.com>
+    mabier
 
 捷克语：
     Karel Volný <kvolny@redhat.com>
@@ -21,7 +22,7 @@
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>
 
-加利西亚语
+加利西亚语：
     Óscar Pereira <oscarpereira1989@gmail.com>
 
 德语：
