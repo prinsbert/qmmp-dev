@@ -1,4 +1,4 @@
-Source: qmmp
+Source: qmmp-qt4
 Section: sound
 Priority: optional
 Maintainer: Matteo Cypriani <mcy@lm7.fr>

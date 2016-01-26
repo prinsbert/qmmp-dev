@@ -32,7 +32,7 @@ override_dh_auto_build:
 	dh_auto_build -- VERBOSE=1
 
 override_dh_install:
-	dh_install -pqmmp-plugin-projectm
+	dh_install -pqmmp-qt4-plugin-projectm
 	dh_install -Xprojectm
 
 # Avoid a call to ldconfig in postinst & postrm (ldconfig is not needed since we
