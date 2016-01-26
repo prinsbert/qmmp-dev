@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=0.9.6
-UBUNTU_CODENAMES='precise trusty vivid wily'
+UBUNTU_CODENAMES='precise trusty vivid wily xenial'
 BUILD_ROOT=build-root
 
 
