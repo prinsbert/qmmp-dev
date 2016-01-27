@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=0.9.3
-UBUNTU_CODENAMES='precise trusty vivid wily'
+UBUNTU_CODENAMES='precise trusty vivid wily xenial'
 BUILD_ROOT=build-root
 
 
@@ -22,11 +22,14 @@ build ()
     mkdir qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian/
     cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.gz ./
+    if [ "$1" = "xenial" ]; then
+        mv ./qmmp-plugin-pack_$QMMP_VERSION.orig.tar.gz ./qmmp-plugin-pack-qt4_$QMMP_VERSION.orig.tar.gz
+    fi
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
-    if [ "$1" = "precise" ]; then
+    if [ "$1" = "precise" ] || [ "$1" = "xenianl" ] ; then
         debuild -S -sa -kF594F6B4
     else
-	debuild -S -sd -kF594F6B4
+        debuild -S -sd -kF594F6B4
     fi
     cd ..
     cd ..
