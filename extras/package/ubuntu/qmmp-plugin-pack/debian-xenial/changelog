@@ -1,3 +1,9 @@
+qmmp-plugin-pack-qt4 (0.9.3-1ubuntu2~xenial0) xenial; urgency=medium
+
+  * Added libxmp-dev dependency.
+
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Wed, 27 Jan 2016 19:36:44 +0300
+
 qmmp-plugin-pack-qt4 (0.9.3-1ubuntu1~wily0) wily; urgency=medium
 
   * New upstream release.

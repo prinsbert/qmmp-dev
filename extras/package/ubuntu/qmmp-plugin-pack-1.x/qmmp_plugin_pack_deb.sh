@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.0.3
+PLUGIN_PACK_VERSION=1.0.2
 UBUNTU_CODENAMES='xenial'
 BUILD_ROOT=build-root
 
@@ -23,7 +23,7 @@ build ()
     cp -rv ../../debian-$1/* -t qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian/
     cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.gz ./
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
-    if [ "$1" = "xenianl" ] ; then
+    if [ "$1" = "xenial" ] ; then
         debuild -S -sa -kF594F6B4
     else
         debuild -S -sd -kF594F6B4

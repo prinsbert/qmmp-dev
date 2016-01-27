@@ -23,10 +23,10 @@ build ()
     cp -rv ../../debian-$1/* -t qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian/
     cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.gz ./
     if [ "$1" = "xenial" ]; then
-        mv ./qmmp-plugin-pack_$QMMP_VERSION.orig.tar.gz ./qmmp-plugin-pack-qt4_$QMMP_VERSION.orig.tar.gz
+        mv ./qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.gz ./qmmp-plugin-pack-qt4_$PLUGIN_PACK_VERSION.orig.tar.gz
     fi
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
-    if [ "$1" = "precise" ] || [ "$1" = "xenianl" ] ; then
+    if [ "$1" = "precise" ] || [ "$1" = "xenial" ] ; then
         debuild -S -sa -kF594F6B4
     else
         debuild -S -sd -kF594F6B4
