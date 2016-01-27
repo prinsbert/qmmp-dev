@@ -1,3 +1,9 @@
+qmmp (1.0.6-1ubuntu1~xenial0) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Wed, 27 Jan 2016 19:24:30 +0300
+
 qmmp (1.0.5-1) unstable; urgency=medium
 
   * New upstream release.
