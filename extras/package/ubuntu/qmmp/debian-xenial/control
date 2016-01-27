@@ -24,7 +24,7 @@ Suggests: qmmp-qt4-plugin-projectm, mplayer2, unzip, udisks2 [linux-any],
 Replaces: libqmmp0 (<< 0.9), libqmmpui0 (<< 0.9), libqmmp-misc (<< 0.9)
 Breaks: libqmmp0 (<< 0.9), libqmmpui0 (<< 0.9), libqmmp-misc (<< 0.9) 
 Conflicts: qmmp (>>1.0), qmmp-plugin-projectm (>>1.0)
-Description: feature-rich audio player with support of many formats
+Description: feature-rich audio player with support of many formats (Qt4-version)
  Qmmp is feature-rich audio player with support of many formats.
  It is written in Qt.
  .
