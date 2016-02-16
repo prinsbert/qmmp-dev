@@ -90,7 +90,11 @@ DecoderFFmpeg::~DecoderFFmpeg()
     if (ic)
         avformat_free_context(ic);
     if(m_pkt.data)
+#if (LIBAVCODEC_VERSION_INT >= ((57<<16)+(104<<8)+102)) //ffmpeg-3.0
         av_free_packet(&m_pkt);
+#else
+        av_packet_unref(&m_pkt);
+#endif
     if(m_stream)
         av_free(m_stream);
 
@@ -377,7 +381,11 @@ qint64 DecoderFFmpeg::ffmpeg_decode()
         m_temp_pkt.size -= l;
     }
     if (!m_temp_pkt.size && m_pkt.data)
+#if (LIBAVCODEC_VERSION_INT >= ((57<<16)+(104<<8)+102)) //ffmpeg-3.0
         av_free_packet(&m_pkt);
+#else
+        av_packet_unref(&m_pkt);
+#endif
 
     return out_size;
 }
@@ -390,7 +398,11 @@ void DecoderFFmpeg::seek(qint64 pos)
     m_seekTime = timestamp;
     av_seek_frame(ic, -1, timestamp, AVSEEK_FLAG_BACKWARD);
     avcodec_flush_buffers(c);
-    av_free_packet(&m_pkt);
+#if (LIBAVCODEC_VERSION_INT >= ((57<<16)+(104<<8)+102)) //ffmpeg-3.0
+        av_free_packet(&m_pkt);
+#else
+        av_packet_unref(&m_pkt);
+#endif
     m_temp_pkt.size = 0;
 }
 
@@ -411,7 +423,11 @@ void DecoderFFmpeg::fillBuffer()
             if(m_pkt.stream_index != wma_idx)
             {
                 if(m_pkt.data)
+#if (LIBAVCODEC_VERSION_INT >= ((57<<16)+(104<<8)+102)) //ffmpeg-3.0
                     av_free_packet(&m_pkt);
+#else
+                    av_packet_unref(&m_pkt);
+#endif
                 m_temp_pkt.size = 0;
                 continue;
             }
@@ -481,7 +497,11 @@ void DecoderFFmpeg::fillBuffer()
 #endif
             {
                 if(m_pkt.data)
+#if (LIBAVCODEC_VERSION_INT >= ((57<<16)+(104<<8)+102)) //ffmpeg-3.0
                     av_free_packet(&m_pkt);
+#else
+                    av_packet_unref(&m_pkt);
+#endif
                 m_pkt.data = 0;
                 m_temp_pkt.size = 0;
                 break;
@@ -491,7 +511,11 @@ void DecoderFFmpeg::fillBuffer()
         else if(m_output_at == 0)
         {
             if(m_pkt.data)
+#if (LIBAVCODEC_VERSION_INT >= ((57<<16)+(104<<8)+102)) //ffmpeg-3.0
                 av_free_packet(&m_pkt);
+#else
+                av_packet_unref(&m_pkt);
+#endif
             m_pkt.data = 0;
             m_temp_pkt.size = 0;
             continue;
