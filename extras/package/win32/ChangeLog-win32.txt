@@ -126,3 +126,8 @@ LEGEND
 0.9.7
 [*] qmmp-0.9.7
 [*] ffmpeg-2.8.5
+
+0.9.8
+[*] qmmp-0.9.8
+[*] libsidplayfp-1.8.4
+
