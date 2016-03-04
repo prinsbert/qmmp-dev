@@ -4,37 +4,37 @@
 <context>
     <name>DecoderMADFactory</name>
     <message>
-        <location filename="../decodermadfactory.cpp" line="106"/>
+        <location filename="../decodermadfactory.cpp" line="104"/>
         <source>MPEG Plugin</source>
         <translation>MPEG Module</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="109"/>
+        <location filename="../decodermadfactory.cpp" line="107"/>
         <source>MPEG Files</source>
         <translation>MPEG Bestanden</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="265"/>
+        <location filename="../decodermadfactory.cpp" line="259"/>
         <source>About MPEG Audio Plugin</source>
         <translation>Over de MPEG Audio Module</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="266"/>
+        <location filename="../decodermadfactory.cpp" line="260"/>
         <source>Qmmp MPEG Audio Plugin</source>
         <translation>MPEG Audio Module voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="267"/>
+        <location filename="../decodermadfactory.cpp" line="261"/>
         <source>Compiled against libmad version:</source>
         <translation>Gecompileerd tegen libmad met versie:</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="271"/>
+        <location filename="../decodermadfactory.cpp" line="265"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="272"/>
+        <location filename="../decodermadfactory.cpp" line="266"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Broncode gebasseerd op &apos;mq3&apos; en &apos;madplay&apos; projecten</translation>
     </message>

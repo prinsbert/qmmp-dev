@@ -4,27 +4,27 @@
 <context>
     <name>DecoderMPCFactory</name>
     <message>
-        <location filename="../decodermpcfactory.cpp" line="63"/>
+        <location filename="../decodermpcfactory.cpp" line="61"/>
         <source>Musepack Plugin</source>
         <translation>Musepack Eklentisi</translation>
     </message>
     <message>
-        <location filename="../decodermpcfactory.cpp" line="65"/>
+        <location filename="../decodermpcfactory.cpp" line="63"/>
         <source>Musepack Files</source>
         <translation>Musepack Dosyaları</translation>
     </message>
     <message>
-        <location filename="../decodermpcfactory.cpp" line="134"/>
+        <location filename="../decodermpcfactory.cpp" line="128"/>
         <source>About Musepack Audio Plugin</source>
         <translation>Musepack Ses Eklentisi Hakkında</translation>
     </message>
     <message>
-        <location filename="../decodermpcfactory.cpp" line="135"/>
+        <location filename="../decodermpcfactory.cpp" line="129"/>
         <source>Qmmp Musepack Audio Plugin</source>
         <translation>Qmmp Musepack Ses Eklentisi</translation>
     </message>
     <message>
-        <location filename="../decodermpcfactory.cpp" line="136"/>
+        <location filename="../decodermpcfactory.cpp" line="130"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Yazan: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
