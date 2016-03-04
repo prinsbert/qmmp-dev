@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+*   Copyright (C) 2016 by Ilya Kotov                                      *
 *   forkotov02@hotmail.ru                                                 *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -18,19 +18,23 @@
 *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
 ***************************************************************************/
 
-#ifndef QMMPFILEDIALOG_H
-#define QMMPFILEDIALOG_H
+
+#ifndef TWOPANELFILEDIALOG_H
+#define TWOPANELFILEDIALOG_H
 
 #include <qmmpui/filedialog.h>
 
-class QmmpFileDialogImpl;
+class TwoPanelFileDialogImpl;
 
-class QmmpFileDialog : public FileDialog
+/*!
+ *  @author Ilya Kotov <forkotov02@hotmail.ru>
+ */
+class TwoPanelFileDialog : public FileDialog
 {
     Q_OBJECT
 public:
-    QmmpFileDialog();
-    virtual ~QmmpFileDialog();
+    TwoPanelFileDialog();
+    virtual ~TwoPanelFileDialog();
 
 protected:
     void raise(const QString &dir, Mode mode, const QString &caption,
@@ -39,25 +43,23 @@ protected:
     QStringList exec(QWidget *parent, const QString &dir, Mode mode,
                      const QString &caption, const QString &filter, QString *);
 
+
 private:
-    QmmpFileDialogImpl *m_dialog;
+    TwoPanelFileDialogImpl *m_dialog;
 };
 
 
-class QmmpFileDialogFactory : public QObject, public FileDialogFactory
+
+
+class TwoPanelFileDialogFactory : public QObject, public FileDialogFactory
 {
-Q_OBJECT
-Q_PLUGIN_METADATA(IID "org.qmmp.qmmpui.FileDialogFactoryInterface.1.0")
-Q_INTERFACES(FileDialogFactory)
+    Q_OBJECT
+    Q_INTERFACES(FileDialogFactory)
 public:
-    virtual FileDialog* create();
-    virtual const FileDialogProperties properties() const;
-    virtual void showAbout(QWidget*);
-    virtual QTranslator *createTranslator(QObject *parent);
-    virtual ~QmmpFileDialogFactory()
-    {
-        ;
-    }
+    FileDialog* create();
+    const FileDialogProperties properties() const;
+    void showAbout(QWidget*);
+    QTranslator *createTranslator(QObject *parent);
 };
 
 

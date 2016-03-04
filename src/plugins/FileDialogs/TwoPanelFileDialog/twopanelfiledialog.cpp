@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+*   Copyright (C) 2016 by Ilya Kotov                                      *
 *   forkotov02@hotmail.ru                                                 *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -22,21 +22,21 @@
 #include <QTranslator>
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "qmmpfiledialogimpl.h"
-#include "qmmpfiledialog.h"
+#include "twopanelfiledialogimpl.h"
+#include "twopanelfiledialog.h"
 
-QmmpFileDialog::QmmpFileDialog()
+TwoPanelFileDialog::TwoPanelFileDialog()
 {
-    m_dialog = new QmmpFileDialogImpl();
-    connect(m_dialog,SIGNAL(filesSelected(QStringList, bool)),SIGNAL(filesSelected(QStringList, bool)));
+    m_dialog = new TwoPanelFileDialogImpl();
+    connect(m_dialog, SIGNAL(filesSelected(QStringList, bool)), SIGNAL(filesSelected(QStringList,bool)));
 }
 
-QmmpFileDialog::~QmmpFileDialog()
+TwoPanelFileDialog::~TwoPanelFileDialog()
 {
-    qWarning("QmmpFileDialog::~QmmpFileDialog()");
+    qWarning("%s", Q_FUNC_INFO);
     delete m_dialog;
 }
-void QmmpFileDialog::raise(const QString &dir, Mode mode, const QString &caption,
+void TwoPanelFileDialog::raise(const QString &dir, Mode mode, const QString &caption,
                            const QStringList &mask)
 {
     m_dialog->setModeAndMask(dir, mode, mask);
@@ -45,10 +45,9 @@ void QmmpFileDialog::raise(const QString &dir, Mode mode, const QString &caption
     m_dialog->raise();
 }
 
-QStringList QmmpFileDialog::exec(QWidget *parent, const QString &dir, FileDialog::Mode mode,
-                                 const QString &caption, const QString &filter, QString *)
+QStringList TwoPanelFileDialog::exec(QWidget *parent, const QString &dir, FileDialog::Mode mode, const QString &caption, const QString &filter, QString *)
 {
-    QmmpFileDialogImpl *dialog = new QmmpFileDialogImpl(parent);
+    TwoPanelFileDialogImpl *dialog = new TwoPanelFileDialogImpl(parent);
     dialog->setWindowTitle(caption);
     dialog->setModeAndMask(dir, mode, filter.split(";;", QString::SkipEmptyParts));
     QStringList l;
@@ -58,36 +57,35 @@ QStringList QmmpFileDialog::exec(QWidget *parent, const QString &dir, FileDialog
     return l;
 }
 
-FileDialog* QmmpFileDialogFactory::create()
+FileDialog* TwoPanelFileDialogFactory::create()
 {
-    return new QmmpFileDialog();
+    return new TwoPanelFileDialog();
 }
 
-const FileDialogProperties QmmpFileDialogFactory::properties() const
+const FileDialogProperties TwoPanelFileDialogFactory::properties() const
 {
     FileDialogProperties properties;
-    properties.name = tr("Qmmp File Dialog");
-    properties.shortName = "qmmp_dialog";
+    properties.name = tr("Two-panel File Dialog");
+    properties.shortName = "twopanel_dialog";
     properties.hasAbout = true;
     properties.modal = false;
     return properties;
 }
 
-void QmmpFileDialogFactory::showAbout(QWidget *parent)
+void TwoPanelFileDialogFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Qmmp File Dialog"),
-                        tr("Qmmp File Dialog")+"\n"+
-                        tr("Written by:\n"
-                           "Vladimir Kuznetsov <vovanec@gmail.com>\n"
-                           "Ilya Kotov <forkotov02@hotmail.ru>")+"\n"+
-                        tr("Some code is copied from the Qt library"));
-
+    QMessageBox::about (parent, tr("About Two-panel File Dialog"),
+                        tr("Two-panel File Dialog") + "\n" +
+                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>") + "\n" +
+                        tr("Based on code from the Qt library"));
 }
 
-QTranslator *QmmpFileDialogFactory::createTranslator(QObject *parent)
+QTranslator *TwoPanelFileDialogFactory::createTranslator(QObject *parent)
 {
     QTranslator *translator = new QTranslator(parent);
     QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/qmmp_file_dialog_plugin_") + locale);
+    translator->load(QString(":/two_panel_file_dialog_plugin_") + locale);
     return translator;
 }
+
+Q_EXPORT_PLUGIN2(TwoPanelFileDialog, TwoPanelFileDialogFactory)

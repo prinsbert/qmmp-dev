@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2014 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -132,14 +132,15 @@ QMenu *UiHelper::createMenu(MenuType type, const QString &title, QWidget *parent
     return 0;
 }
 
-void UiHelper::addFile(QWidget *parent, PlayListModel *model)
+void UiHelper::addFiles(QWidget *parent, PlayListModel *model)
 {
     QStringList filters;
     filters << tr("All Supported Bitstreams")+" (" +
             MetaDataManager::instance()->nameFilters().join (" ") +")";
     filters << MetaDataManager::instance()->filters();
-    FileDialog::popup(parent, FileDialog::AddDirsFiles, &m_lastDir,
-                      model, SLOT(add(const QStringList&)),
+    m_model = model;
+    FileDialog::popup(parent, FileDialog::PlayDirsFiles, &m_lastDir,
+                      this, SLOT(addSelectedFiles(QStringList,bool)),
                       tr("Select one or more files to open"), filters.join(";;"));
 }
 
@@ -151,7 +152,7 @@ void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
     filters << MetaDataManager::instance()->filters();
     m_model = model;
     FileDialog::popup(parent, FileDialog::AddDirsFiles, &m_lastDir,
-                      this, SLOT(playSelectedFiles(const QStringList &)),
+                      this, SLOT(playSelectedFiles(QStringList)),
                       tr("Select one or more files to play"), filters.join(";;"));
 
 }
@@ -159,7 +160,7 @@ void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
 void UiHelper::addDirectory(QWidget *parent, PlayListModel *model)
 {
     FileDialog::popup(parent, FileDialog::AddDirs, &m_lastDir,
-                      model, SLOT(add(const QStringList&)),
+                      model, SLOT(add(QStringList)),
                       tr("Choose a directory"));
 }
 
@@ -258,16 +259,24 @@ void UiHelper::removeAction(QObject *action)
     removeAction((QAction *) action);
 }
 
+void UiHelper::addSelectedFiles(const QStringList &files, bool play)
+{
+    if(files.isEmpty() || !PlayListManager::instance()->playLists().contains(m_model))
+        return;
+    if(play)
+        playSelectedFiles(files);
+    else
+        m_model->add(files);
+}
+
 void UiHelper::playSelectedFiles(const QStringList &files)
 {
-    if(files.isEmpty())
-        return;
-    if(!PlayListManager::instance()->playLists().contains(m_model))
+    if(files.isEmpty() || !PlayListManager::instance()->playLists().contains(m_model))
         return;
     m_model->clear();
     PlayListManager::instance()->activatePlayList(m_model);
     connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
-    connect(m_model, SIGNAL(loaderFinished()), SLOT(disconnectPl()));
+    connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), SLOT(disconnectPl()));
     m_model->add(files);
 }
 
@@ -277,6 +286,6 @@ void UiHelper::disconnectPl()
     if(model)
     {
         disconnect(model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
-        disconnect(model, SIGNAL(loaderFinished()), this, SLOT(disconnectPl()));
+        disconnect(model, SIGNAL(trackAdded(PlayListTrack*)), this, SLOT(disconnectPl()));
     }
 }

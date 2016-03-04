@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2008-2013 by Ilya Kotov                                 *
+*   Copyright (C) 2008-2016 by Ilya Kotov                                 *
 *   forkotov02@hotmail.ru                                                 *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -63,6 +63,7 @@ public:
         AddFiles,      /*!< Get existing files */
         AddDirs,       /*!< Get existing directories */
         AddDirsFiles,  /*!< Get existing files and directories */
+        PlayDirsFiles, /*!< Get existing files and directories with play button (if supported) */
         SaveFile       /*!< Get existing or non-existing file */
     };
     /*!
@@ -133,7 +134,7 @@ public:
      * (example: "Audio (*.mp3 *.ogg);;Text files (*.txt);;XML files (*.xml)").
      *
      * Usage: FileDialog::popup(this, FileDialog::AddDirs, &m_lastDir,
-     *                 m_playListModel, SLOT(addFileList(const QStringList&)),
+     *                 m_playListModel, SLOT(addFileList(QStringList)),
      *                 tr("Choose a directory"));
      */
     static void popup(QWidget *parent = 0,
@@ -146,71 +147,15 @@ public:
 
 signals:
     /*!
-     * Emitted when the add button has pressed. Subclass should emit this signal.
+     * Emitted when the add/open button has pressed. Subclass should emit this signal.
      */
-    void filesAdded(const QStringList&);
+    void filesSelected(const QStringList &selected, bool play = false);
 
 protected:
     /*!
      * Object constructor.
      */
     FileDialog();
-    /*!
-     * This is a function that will open modal file dialog and
-     * return an existing directory selected by the user.
-     *
-     * @param parent Parent widget.
-     * @param caption Dialog title.
-     * @param dir Default directory.
-     */
-    virtual QString existingDirectory(QWidget *parent,
-                                      const QString &caption,
-                                      const QString &dir);
-    /*!
-     * This is a function that will open modal file dialog and
-     * return an existing file selected by the user.
-     * Subclass should reimplement this function.
-     * @param parent Parent widget.
-     * @param caption Dialog title.
-     * @param dir Default directory.
-     * @param filter Filer used by file dialog
-     * (example: "Audio (*.mp3 *.ogg);;Text files (*.txt);;XML files (*.xml)").
-     * @param selectedFilter Default selected filter
-     */
-    virtual QString openFileName( QWidget *parent,
-                                  const QString &caption,
-                                  const QString &dir,
-                                  const QString &filter,
-                                  QString *selectedFilter);
-    /*!
-     * This is a function that will open modal file dialog and
-     * return an existing files selected by the user.
-     * Subclass should reimplement this function.
-     * @param parent Parent widget.
-     * @param caption Dialog title.
-     * @param dir Default directory.
-     * @param filter Filer used by file dialog
-     * (example: "Audio (*.mp3 *.ogg);;Text files (*.txt);;XML files (*.xml)").
-     * @param selectedFilter Default selected filter
-     */
-    virtual QStringList openFileNames(QWidget *parent,
-                                      const QString &caption,
-                                      const QString &dir,
-                                      const QString &filter,
-                                      QString *selectedFilter);
-    /*!
-    * This is a function that will open modal file dialog and
-    * return a file name selected by the user. The file does not have to exist.
-    * Subclass should reimplement this function.
-    * @param parent Parent widget.
-    * @param caption Dialog title.
-    * @param dir Default directory.
-    * @param filter Filer used by file dialog
-    * (example: "Audio (*.mp3 *.ogg);;Text files (*.txt);;XML files (*.xml)").
-    * @param selectedFilter Default selected filter.
-    */
-    virtual QString saveFileName (QWidget *parent, const QString &caption, const QString &dir,
-                                   const QString &filter, QString *selectedFilter);
     /*!
      * Object destructor
      */
@@ -224,8 +169,23 @@ protected:
      * @param caption Dialog title.
      * @param mask Filer used by file dialog
      */
-    virtual void raise(const QString &dir = QString(), Mode mode = AddFiles,
-                       const QString &caption = QString(), const QStringList &mask = QStringList());
+    virtual void raise(const QString &dir, Mode mode,
+                       const QString &caption, const QStringList &mask);
+    /*!
+    * This is a function that will open modal file dialog and
+    * return a file(s) or directory name selected by the user.
+    * Subclass should reimplement this function.
+    * @param parent Parent widget.
+    * @param dir Default directory.
+    * @param mode File dialog mode.
+    * @param caption Dialog title.
+    * @param filter Filer used by file dialog
+    * (example: "Audio (*.mp3 *.ogg);;Text files (*.txt);;XML files (*.xml)").
+    * @param selectedFilter Default selected filter.
+    */
+    virtual QStringList exec(QWidget *parent, const QString &dir, Mode mode,
+                             const QString &caption, const QString &filter = QString(),
+                             QString *selectedFilter = 0) = 0;
 
 private slots:
     void updateLastDir(const QStringList&);
@@ -233,7 +193,6 @@ private slots:
 private:
     static void loadPlugins();
     static FileDialog* instance();
-    static FileDialog* createDefault();
     static FileDialogFactory *m_currentFactory;
     static FileDialog* m_instance;
     static QList<QmmpUiPluginCache*> *m_cache;

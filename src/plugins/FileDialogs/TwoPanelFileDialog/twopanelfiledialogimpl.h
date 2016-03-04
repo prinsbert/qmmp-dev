@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2008-2012 by Ilya Kotov                                 *
+*   Copyright (C) 2016 by Ilya Kotov                                      *
 *   forkotov02@hotmail.ru                                                 *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -18,56 +18,55 @@
 *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
 ***************************************************************************/
 
-#ifndef QMMPFILEDIALOGIMPL_H
-#define QMMPFILEDIALOGIMPL_H
+#ifndef TWOPANELFILEDIALOGIMPL_H
+#define TWOPANELFILEDIALOGIMPL_H
 
-#include "ui_qmmpfiledialog.h"
+#include "ui_twopanelfiledialog.h"
 #include <QDialog>
 #include <QCompleter>
 #include <QAbstractItemView>
 #include <qmmpui/filedialog.h>
 #include <QFileSystemModel>
 
-
-class QmmpFileDialogImpl : public QDialog , private Ui::QmmpFileDialog
+/*!
+ *  @author Ilya Kotov <forkotov02@hotmail.ru>
+ */
+class TwoPanelFileDialogImpl : public QDialog
 {
     Q_OBJECT
 public:
-    QmmpFileDialogImpl(QWidget *parent = 0, Qt::WindowFlags f = 0);
+    TwoPanelFileDialogImpl(QWidget *parent = 0);
 
-    ~QmmpFileDialogImpl();
+    ~TwoPanelFileDialogImpl();
 
-    void setModeAndMask(const QString&,FileDialog::Mode m, const QStringList& mask = QStringList());
-    QStringList selectedFiles ();
-
-protected slots:
-    void on_lookInComboBox_activated(const QString&);
-    void on_upToolButton_clicked();
-    void on_fileListView_doubleClicked(const QModelIndex&);
-    void on_treeView_doubleClicked(const QModelIndex&);
-    void on_fileNameLineEdit_returnPressed();
-    void on_fileNameLineEdit_textChanged (const QString &text);
-    void on_addPushButton_clicked();
-    void on_listToolButton_toggled(bool);
-    void on_detailsToolButton_toggled(bool);
-    void on_fileTypeComboBox_activated(int);
+    void setModeAndMask(const QString &path, FileDialog::Mode m, const QStringList& mask);
+    QStringList selectedFiles() const;
 
 signals:
-    void filesSelected(const QStringList&, bool play = false);
-
-protected:
-    virtual void hideEvent (QHideEvent *event);
+    void filesSelected(const QStringList &selected, bool play);
 
 private slots:
-    void updateSelection ();
+    void updateDirSelection(const QItemSelection&s, const QItemSelection&);
+    void updateFileSelection();
+    void on_dirListView_doubleClicked(const QModelIndex&ind);
+    void on_lookInComboBox_activated(const QString&);
+    void on_fileListWidget_itemDoubleClicked(QListWidgetItem *item);
+    void on_fileNameLineEdit_textChanged (const QString &text);
+    void on_addButton_clicked();
+    void on_playButton_clicked();
+    void on_fileTypeComboBox_activated(int);
 
 private:
-    int m_mode;
-    QFileSystemModel* m_model;
+    void updateFileList(const QString &path);
+    void hideEvent (QHideEvent *event);
     void addToHistory(const QString &path);
-    void addFiles(const QStringList &list);
-    QStringList m_history;
+    void addFiles(const QStringList &list, bool play);
 
+    int m_mode;
+    QFileSystemModel* m_dirModel;
+    Ui::TwoPanelFileDialog m_ui;
+    QStringList m_history;
+    QStringList m_filters;
 };
 
 class PathCompleter : public QCompleter
@@ -77,14 +76,13 @@ public:
     PathCompleter(QAbstractItemModel *model, QAbstractItemView *itemView, QObject *parent = 0) : QCompleter(model, parent)
     {
         m_itemView = itemView;
-    };
-
+    }
 
     QString pathFromIndex(const QModelIndex &index) const
     {
-        const QFileSystemModel *dirModel = static_cast<const QFileSystemModel *>(model());
-        QString currentLocation = dirModel->filePath(m_itemView->rootIndex());
-        QString path = dirModel->filePath(index);
+        const QFileSystemModel *fileModel = static_cast<const QFileSystemModel *>(model());
+        QString currentLocation = fileModel->filePath(m_itemView->rootIndex());
+        QString path = fileModel->filePath(index);
         if (path.startsWith(currentLocation))
         {
             path = path.mid(currentLocation.length() + 1);
@@ -100,8 +98,8 @@ public:
         QStringList parts;
         if (!path.startsWith(QDir::separator()))
         {
-            const QFileSystemModel *dirModel = static_cast<const QFileSystemModel *>(model());
-            QString currentLocation = QDir::toNativeSeparators(dirModel->filePath(m_itemView->rootIndex()));
+            const QFileSystemModel *fileModel = static_cast<const QFileSystemModel *>(model());
+            QString currentLocation = QDir::toNativeSeparators(fileModel->filePath(m_itemView->rootIndex()));
             parts = QCompleter::splitPath(currentLocation);
         }
         parts << QCompleter::splitPath(path);
@@ -112,4 +110,4 @@ private:
 };
 
 
-#endif //QMMPFILEDIALOGIMPL_H
+#endif //TWOPANELFILEDIALOGIMPL_H
