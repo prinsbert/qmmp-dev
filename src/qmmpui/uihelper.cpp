@@ -267,7 +267,7 @@ void UiHelper::playSelectedFiles(const QStringList &files)
     m_model->clear();
     PlayListManager::instance()->activatePlayList(m_model);
     connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
-    connect(m_model, SIGNAL(loaderFinished()), SLOT(disconnectPl()));
+    connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), SLOT(disconnectPl()));
     m_model->add(files);
 }
 
