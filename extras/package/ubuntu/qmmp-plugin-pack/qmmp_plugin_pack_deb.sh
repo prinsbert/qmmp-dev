@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=0.9.3
-UBUNTU_CODENAMES='precise trusty vivid wily xenial'
+UBUNTU_CODENAMES='precise trusty wily xenial'
 BUILD_ROOT=build-root
 
 
