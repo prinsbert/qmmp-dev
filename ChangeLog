@@ -1102,3 +1102,9 @@ Version 1.0.6
 * fixed Russian translation
 * updated Portuguese translation (Sérgio Marques)
 * updated Chinese Simplified translation (Mingye Wang)
+
+Version 1.0.7
+* added ffmpeg 3.0 support
+* added support for theme change event in the qsui plugin
+* fixed sendig multiple play commands when opening several files for playback
+* fixed memory leak
