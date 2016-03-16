@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013 by Ilya Kotov                                      *
+ *   Copyright (C) 2013-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -68,14 +68,13 @@ void ToolBarEditor::populateActionList(bool reset)
     for(int id = ActionManager::PLAY; id <= ActionManager::QUIT; ++id)
     {
         QAction *action = ACTION(id);
-        if(action->icon().isNull())
+        if(action->icon().isNull() || names.contains(action->objectName()))
             continue;
         QListWidgetItem *item = new QListWidgetItem();
         item->setIcon(action->icon());
         item->setText(action->text().replace("&", ""));
         item->setData(Qt::UserRole, action->objectName());
-        if(!names.contains(action->objectName()))
-            m_ui->actionsListWidget->addItem(item);
+        m_ui->actionsListWidget->addItem(item);
     }
 
     {
