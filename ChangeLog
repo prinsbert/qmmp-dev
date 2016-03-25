@@ -1108,3 +1108,4 @@ Version 1.0.7
 * added support for theme change event in the qsui plugin
 * fixed sendig multiple play commands when opening several files for playback
 * fixed memory leaks
+* fixed qt5.6 support
