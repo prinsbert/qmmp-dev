@@ -25,6 +25,7 @@
 #include <QStringList>
 #include <qmmp/qmmp.h>
 #include <taglib/tstring.h>
+#include <taglib/tstringlist.h>
 #include "ui_rgscandialog.h"
 
 class QAction;
