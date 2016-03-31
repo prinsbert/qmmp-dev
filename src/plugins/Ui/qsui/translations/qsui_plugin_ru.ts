@@ -479,7 +479,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="277"/>
         <source>Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель инструментов</translation>
     </message>
 </context>
 <context>
@@ -576,17 +576,17 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="63"/>
+        <location filename="../filesystembrowser.cpp" line="67"/>
         <source>Add to Playlist</source>
         <translation>Добавить к списку воспроизведения</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="131"/>
+        <location filename="../filesystembrowser.cpp" line="135"/>
         <source>Select Directory</source>
         <translation>Выберите директорию</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="66"/>
+        <location filename="../filesystembrowser.cpp" line="70"/>
         <source>Change Directory</source>
         <translation>Сменить директорию</translation>
     </message>
@@ -652,27 +652,27 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="437"/>
         <source>Volume</source>
         <translation>Громкость</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="371"/>
+        <location filename="../mainwindow.cpp" line="372"/>
         <source>&lt;b&gt;%1&lt;/b&gt;|%2 bit|%3 ch|%4 Hz|tracks: %5|total time: %6|%7 kbps|</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;|%2 бит|%3 к.|%4 Гц|треков: %5|общее время: %6|%7 кбит/с|</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="372"/>
+        <location filename="../mainwindow.cpp" line="373"/>
         <source>Paused</source>
         <translation>Пауза</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="382"/>
+        <location filename="../mainwindow.cpp" line="383"/>
         <source>&lt;b&gt;%1&lt;/b&gt;|tracks: %2|total time: %3|</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;|треков: %2|общее время: %3|</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="383"/>
+        <location filename="../mainwindow.cpp" line="384"/>
         <source>Stopped</source>
         <translation>Стоп</translation>
     </message>
@@ -692,134 +692,134 @@
         <translation>Сочетания клавиш</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="372"/>
+        <location filename="../mainwindow.cpp" line="373"/>
         <source>Playing</source>
         <translation>Воспр.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="426"/>
+        <location filename="../mainwindow.cpp" line="427"/>
         <source>Ctrl+0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="432"/>
+        <location filename="../mainwindow.cpp" line="433"/>
         <source>P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="434"/>
+        <location filename="../mainwindow.cpp" line="435"/>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиция</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="490"/>
+        <location filename="../mainwindow.cpp" line="491"/>
         <source>Edit Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить панели инструментов</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="492"/>
+        <location filename="../mainwindow.cpp" line="493"/>
         <source>Sort List</source>
         <translation>Сортировать</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="495"/>
-        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="496"/>
+        <location filename="../mainwindow.cpp" line="551"/>
         <source>By Title</source>
         <translation>По названию</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="499"/>
-        <location filename="../mainwindow.cpp" line="554"/>
+        <location filename="../mainwindow.cpp" line="500"/>
+        <location filename="../mainwindow.cpp" line="555"/>
         <source>By Album</source>
         <translation>По альбому</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="503"/>
-        <location filename="../mainwindow.cpp" line="558"/>
+        <location filename="../mainwindow.cpp" line="504"/>
+        <location filename="../mainwindow.cpp" line="559"/>
         <source>By Artist</source>
         <translation>По исполнителю</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="507"/>
-        <location filename="../mainwindow.cpp" line="562"/>
+        <location filename="../mainwindow.cpp" line="508"/>
+        <location filename="../mainwindow.cpp" line="563"/>
         <source>By Album Artist</source>
         <translation>По исполнителю альбома</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
-        <location filename="../mainwindow.cpp" line="566"/>
+        <location filename="../mainwindow.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="567"/>
         <source>By Filename</source>
         <translation>По имени файла</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="515"/>
-        <location filename="../mainwindow.cpp" line="570"/>
+        <location filename="../mainwindow.cpp" line="516"/>
+        <location filename="../mainwindow.cpp" line="571"/>
         <source>By Path + Filename</source>
         <translation>По пути и файлу</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="519"/>
-        <location filename="../mainwindow.cpp" line="574"/>
+        <location filename="../mainwindow.cpp" line="520"/>
+        <location filename="../mainwindow.cpp" line="575"/>
         <source>By Date</source>
         <translation>По дате</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="523"/>
-        <location filename="../mainwindow.cpp" line="578"/>
+        <location filename="../mainwindow.cpp" line="524"/>
+        <location filename="../mainwindow.cpp" line="579"/>
         <source>By Track Number</source>
         <translation>По номеру трека</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <location filename="../mainwindow.cpp" line="582"/>
+        <location filename="../mainwindow.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="583"/>
         <source>By Disc Number</source>
         <translation>По номеру диска</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="531"/>
-        <location filename="../mainwindow.cpp" line="586"/>
+        <location filename="../mainwindow.cpp" line="532"/>
+        <location filename="../mainwindow.cpp" line="587"/>
         <source>By File Creation Date</source>
         <translation>По дате создания файла</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="535"/>
-        <location filename="../mainwindow.cpp" line="590"/>
+        <location filename="../mainwindow.cpp" line="536"/>
+        <location filename="../mainwindow.cpp" line="591"/>
         <source>By File Modification Date</source>
         <translation>По дате изменения файла</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="539"/>
+        <location filename="../mainwindow.cpp" line="540"/>
         <source>By Group</source>
         <translation>По группе</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="547"/>
+        <location filename="../mainwindow.cpp" line="548"/>
         <source>Sort Selection</source>
         <translation>Сортировать выделенное</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="597"/>
+        <location filename="../mainwindow.cpp" line="598"/>
         <source>Randomize List</source>
         <translation>Перемешать</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="599"/>
+        <location filename="../mainwindow.cpp" line="600"/>
         <source>Reverse List</source>
         <translation>Перевернуть</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="606"/>
-        <location filename="../mainwindow.cpp" line="651"/>
+        <location filename="../mainwindow.cpp" line="607"/>
+        <location filename="../mainwindow.cpp" line="652"/>
         <source>Actions</source>
         <translation>Действия</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="684"/>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Add new playlist</source>
         <translation>Добавить новый список воспроизведения</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="690"/>
+        <location filename="../mainwindow.cpp" line="691"/>
         <source>Show all tabs</source>
         <translation>Показать все вкладки</translation>
     </message>
@@ -1581,22 +1581,22 @@
     <message>
         <location filename="../forms/toolbareditor.ui" line="199"/>
         <source>Toolbar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель:</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="222"/>
         <source>&amp;Create</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Создать</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="238"/>
         <source>Re&amp;name</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Переименовать</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="254"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Удалить</translation>
     </message>
     <message>
         <location filename="../toolbareditor.cpp" line="100"/>
@@ -1607,22 +1607,22 @@
     <message>
         <location filename="../toolbareditor.cpp" line="248"/>
         <source>Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель инструментов</translation>
     </message>
     <message>
         <location filename="../toolbareditor.cpp" line="250"/>
         <source>Toolbar %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель %1</translation>
     </message>
     <message>
         <location filename="../toolbareditor.cpp" line="264"/>
         <source>Rename Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Переименовать панель</translation>
     </message>
     <message>
         <location filename="../toolbareditor.cpp" line="264"/>
         <source>Toolbar name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя панель:</translation>
     </message>
 </context>
 <context>
