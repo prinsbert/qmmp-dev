@@ -23,6 +23,7 @@
 #include <QIcon>
 #include <QFile>
 #include <QApplication>
+#include <QWidgetAction>
 #include <qmmp/qmmp.h>
 #include "actionmanager.h"
 
@@ -208,25 +209,107 @@ void ActionManager::resetShortcuts()
 
 void ActionManager::registerAction(int id, QAction *action, QString confKey, QString key)
 {
+    if(m_actions.value(id))
+        qFatal("ActionManager: invalid action id");
+
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("SimpleUiShortcuts");
     action->setShortcut(settings.value(confKey, key).toString());
     action->setProperty("defaultShortcut", key);
     action->setObjectName(confKey);
-    if(m_actions.value(id))
-        qFatal("ActionManager: invalid action id");
     m_actions[id] = action;
     settings.endGroup();
 }
 
-QStringList ActionManager::toolBarActionNames() const
+void ActionManager::registerWidget(int id, QWidget *w, QString text, QString name)
+{
+    if(m_actions.value(id))
+        qFatal("ActionManager: invalid action id");
+    QWidgetAction *action = new QWidgetAction(this);
+    action->setText(text);
+    action->setObjectName(name);
+    action->setDefaultWidget(w);
+    m_actions[id] = action;
+}
+
+QToolBar *ActionManager::createToolBar(ActionManager::ToolBarInfo info, QWidget *parent)
+{
+    QToolBar *toolBar = new QToolBar(info.title, parent);
+    updateToolBar(toolBar, info);
+    toolBar->setProperty("uid", info.uid);
+    toolBar->setIconSize(QSize(16,16));
+    toolBar->setObjectName("Toolbar" + info.uid);
+    return toolBar;
+}
+
+void ActionManager::updateToolBar(QToolBar *toolBar, ActionManager::ToolBarInfo info)
+{
+    toolBar->clear();
+    foreach (QString name, info.actionNames)
+    {
+        if(name == "separator")
+        {
+            toolBar->addSeparator()->setObjectName("separator");
+            continue;
+        }
+        QAction *action = findChild<QAction *>(name);
+        action->setVisible(true);
+        toolBar->addAction(action);
+    }
+}
+
+ActionManager::ToolBarInfo ActionManager::defaultToolBar() const
 {
     QList <Type> idList;
     idList << PL_ADD_FILE << PL_ADD_DIRECTORY << PREVIOUS << PLAY << PAUSE << STOP << NEXT << EJECT;
+    idList << UI_SEPARATOR << UI_POS_SLIDER << UI_SEPARATOR << UI_VOL_SLIDER << VOL_MUTE;
     QStringList names;
     foreach (Type id, idList)
     {
+        if(id == UI_SEPARATOR)
+        {
+            names << "separator";
+            continue;
+        }
         names << m_actions.value(id)->objectName();
     }
-    return names;
+    ActionManager::ToolBarInfo info;
+    info.title = tr("Toolbar");
+    info.actionNames = names;
+    info.uid = "{68363a0b-f2cd-462a-87ca-e3089db21561}";
+    return info;
+}
+
+QList<ActionManager::ToolBarInfo> ActionManager::readToolBarSettings() const
+{
+    QList<ToolBarInfo> list;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    int size = settings.beginReadArray("SimpleUiToolbars");
+    for(int i = 0; i < size; ++i)
+    {
+        ToolBarInfo info;
+        settings.setArrayIndex(i);
+        info.title = settings.value("title").toString();
+        info.actionNames = settings.value("actions").toStringList();
+        info.uid = settings.value("uid").toString();
+        list.append(info);
+    }
+    settings.endArray();
+    if(list.isEmpty())
+        list << defaultToolBar();
+    return list;
+}
+
+void ActionManager::writeToolBarSettings(QList<ActionManager::ToolBarInfo> l)
+{
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    settings.beginWriteArray("SimpleUiToolbars");
+    for(int i = 0; i < l.size(); ++i)
+    {
+        settings.setArrayIndex(i);
+        settings.setValue("title", l[i].title);
+        settings.setValue("actions", l[i].actionNames);
+        settings.setValue("uid", l[i].uid);
+    }
+    settings.endArray();
 }
