@@ -19,7 +19,7 @@ plugin \
 link_pkgconfig
 TEMPLATE = lib
 LIBS += -lqmmp
-PKGCONFIG += jack samplerate
+PKGCONFIG += jack soxr
 
 RESOURCES = translations/translations.qrc
 

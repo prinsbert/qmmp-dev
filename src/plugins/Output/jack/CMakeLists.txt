@@ -13,10 +13,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 # libjack and samplerate
-pkg_check_modules(JACK jack>=1.9.8 samplerate)
+pkg_check_modules(JACK jack>=1.9.8 soxr)
 
 IF(NOT JACK_FOUND)
-pkg_check_modules(JACK jack>=0.122.0 samplerate)
+pkg_check_modules(JACK jack>=0.122.0 soxr)
 ENDIF(NOT JACK_FOUND)
 
 include_directories(${JACK_INCLUDE_DIRS})
