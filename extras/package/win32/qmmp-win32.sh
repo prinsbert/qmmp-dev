@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=0.9.7
+QMMP_VERSION=0.9.8
 QMMP_PLUGIN_PACK_VERSION=0.9.3
 
 export DEV_PATH=/c/devel
