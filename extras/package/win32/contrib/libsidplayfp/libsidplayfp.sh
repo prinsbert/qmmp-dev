@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://sourceforge.net/projects/sidplay-residfp/files/$NAME/1.8/$NAME-$VERSION.tar.gz
+    wget -nc --no-check-certificate http://sourceforge.net/projects/sidplay-residfp/files/$NAME/1.8/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp
