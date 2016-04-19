@@ -87,7 +87,8 @@ Scrobbler::Scrobbler(const QString &scrobblerUrl, const QString &name, QObject *
     m_submitReply = 0;
     m_scrobblerUrl = scrobblerUrl;
     m_name = name;
-    m_state = Qmmp::Stopped;
+    m_previousState = Qmmp::Stopped;
+    m_elapsed = 0;
     m_time = new QTime();
     m_cache = new ScrobblerCache(Qmmp::configDir() +"scrobbler_"+name+".cache");
     m_ua = QString("qmmp-plugins/%1").arg(Qmmp::strVersion().toLower()).toLatin1();
@@ -125,29 +126,26 @@ Scrobbler::~Scrobbler()
 
 void Scrobbler::setState(Qmmp::State state)
 {
-    static Qmmp::State previousState = state;
-    static int elapsed = 0;
-    m_state = state;
     switch ((uint) state)
     {
     case Qmmp::Playing:
-        if (previousState != Qmmp::Paused)
+        if (m_previousState != Qmmp::Paused)
         {
             qDebug("Scrobbler[%s]: new song started", qPrintable(m_name));
             m_start_ts = QDateTime::currentDateTime().toTime_t();
-            elapsed = 0;
+            m_elapsed = 0;
         }
         else
         {
-            qDebug("Scrobbler[%s]: resuming from %d seconds played", qPrintable(m_name), elapsed / 1000);
+            qDebug("Scrobbler[%s]: resuming from %d seconds played", qPrintable(m_name), m_elapsed / 1000);
         }
         m_time->restart();
         break;
     case Qmmp::Stopped:
-        if (previousState != Qmmp::Paused)
-            elapsed += m_time->elapsed();
+        if (m_previousState != Qmmp::Paused)
+            m_elapsed += m_time->elapsed();
         if (!m_song.metaData().isEmpty()
-            && ((elapsed / 1000 > 240) || (elapsed / 1000 > int(m_song.length()/2)))
+            && ((m_elapsed / 1000 > 240) || (m_elapsed / 1000 > int(m_song.length()/2)))
             && (m_song.length() > MIN_SONG_LENGTH))
         {
             m_song.setTimeStamp(m_start_ts);
@@ -163,19 +161,19 @@ void Scrobbler::setState(Qmmp::State state)
             submit();
         break;
     case Qmmp::Paused:
-        elapsed += m_time->elapsed();
-        qDebug("Scrobbler[%s]: pausing after %d seconds played", qPrintable(m_name), elapsed / 1000);
+        m_elapsed += m_time->elapsed();
+        qDebug("Scrobbler[%s]: pausing after %d seconds played", qPrintable(m_name), m_elapsed / 1000);
         break;
     default:
         ;
     }
-    previousState = state;
+    m_previousState = state;
 }
 
 void Scrobbler::updateMetaData()
 {
     QMap <Qmmp::MetaData, QString> metadata = m_core->metaData();
-    if(m_state != Qmmp::Playing || m_core->totalTime() <= 0) //skip stream
+    if(m_core->state() != Qmmp::Playing || m_core->totalTime() <= 0) //skip stream
         return;
     if(metadata.value(Qmmp::TITLE).isEmpty() || metadata.value(Qmmp::ARTIST).isEmpty()) //skip empty tags
         return;

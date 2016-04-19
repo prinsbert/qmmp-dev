@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -83,6 +83,8 @@ private:
     QTime *m_time;
     ScrobblerCache *m_cache;
     QString m_scrobblerUrl, m_name;
+    Qmmp::State m_previousState;
+    int m_elapsed;
 };
 
 /**
