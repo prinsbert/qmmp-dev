@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2012-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2012-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -59,7 +59,7 @@ StreamWindow::StreamWindow(QWidget *parent) : QWidget(parent)
     m_iceCastFilterModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     //icecast table
     ui.icecastTableView->setModel(m_iceCastFilterModel);
-    ui.icecastTableView->verticalHeader()->setDefaultSectionSize(fontMetrics().height());
+    ui.icecastTableView->verticalHeader()->setDefaultSectionSize(fontMetrics().height() + 3);
     ui.icecastTableView->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     ui.icecastTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui.icecastTableView->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -77,7 +77,7 @@ StreamWindow::StreamWindow(QWidget *parent) : QWidget(parent)
     m_favoritesFilterModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     //favorites table
     ui.favoritesTableView->setModel(m_favoritesFilterModel);
-    ui.favoritesTableView->verticalHeader()->setDefaultSectionSize(fontMetrics().height());
+    ui.favoritesTableView->verticalHeader()->setDefaultSectionSize(fontMetrics().height() + 3);
     ui.favoritesTableView->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     ui.favoritesTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui.favoritesTableView->setContextMenuPolicy(Qt::CustomContextMenu);
