@@ -131,3 +131,7 @@ LEGEND
 [*] qmmp-0.9.8
 [*] libsidplayfp-1.8.4
 [*] ffmpeg-2.8.6
+
+0.9.9
+[*] qmmp-0.9.9
+[-] added missing libsidplayfp-4.dll
