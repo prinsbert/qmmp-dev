@@ -32,6 +32,12 @@
 #include "decoder_ffapcue.h"
 #include "cueparser.h"
 
+#ifdef Q_OS_WIN
+#define QStringToFileName(s) TagLib::FileName(reinterpret_cast<const wchar_t *>(s.utf16()))
+#else
+#define QStringToFileName(s) s.toLocal8Bit().constData()
+#endif
+
 // DecoderFFapFactory
 
 bool DecoderFFapFactory::supports(const QString &source) const
@@ -102,10 +108,10 @@ QList<FileInfo *> DecoderFFapFactory::createPlayList(const QString &fileName, bo
     }
 
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
-    TagLib::FileStream stream(fileName.toLocal8Bit().constData(), true);
+    TagLib::FileStream stream(QStringToFileName(fileName), true);
     file = new TagLib::APE::File(&stream);
 #else
-    file = new TagLib::APE::File(fileName.toLocal8Bit().constData());
+    file = new TagLib::APE::File(QStringToFileName(fileName));
 #endif
     tag = useMetaData ? file->APETag() : 0;
     ap = file->audioProperties();

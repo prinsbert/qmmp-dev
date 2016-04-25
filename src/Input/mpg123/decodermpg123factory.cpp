@@ -38,6 +38,12 @@
 #include "decoder_mpg123.h"
 #include "decodermpg123factory.h"
 
+#ifdef Q_OS_WIN
+#define QStringToFileName(s) TagLib::FileName(reinterpret_cast<const wchar_t *>(s.utf16()))
+#else
+#define QStringToFileName(s) s.toLocal8Bit().constData()
+#endif
+
 // DecoderMPG123Factory
 
 DecoderMPG123Factory::DecoderMPG123Factory()
@@ -136,10 +142,10 @@ QList<FileInfo *> DecoderMPG123Factory::createPlayList(const QString &fileName, 
     FileInfo *info = new FileInfo(fileName);
     TagLib::Tag *tag = 0;
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
-    TagLib::FileStream stream(fileName.toLocal8Bit().constData(), true);
+    TagLib::FileStream stream(QStringToFileName(fileName), true);
     TagLib::MPEG::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
 #else
-    TagLib::MPEG::File fileRef(fileName.toLocal8Bit ().constData());
+    TagLib::MPEG::File fileRef(QStringToFileName(fileName));
 #endif
 
     if (useMetaData)
