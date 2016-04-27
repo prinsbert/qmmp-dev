@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Ilya Kotov                                      *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,7 +37,7 @@ FFapMetaDataModel::FFapMetaDataModel(const QString &path, QObject *parent) : Met
     else
         m_path = path;
 
-    m_file = new TagLib::APE::File (m_path.toLocal8Bit().constData());
+    m_file = new TagLib::APE::File (QStringToFileName(m_path));
     if(!path.contains("://"))
     {
         m_tags << new FFapFileTagModel(m_file, TagLib::APE::File::ID3v1);

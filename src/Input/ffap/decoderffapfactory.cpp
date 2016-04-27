@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,12 +31,6 @@
 #include "decoder_ffap.h"
 #include "decoder_ffapcue.h"
 #include "cueparser.h"
-
-#ifdef Q_OS_WIN
-#define QStringToFileName(s) TagLib::FileName(reinterpret_cast<const wchar_t *>(s.utf16()))
-#else
-#define QStringToFileName(s) s.toLocal8Bit().constData()
-#endif
 
 // DecoderFFapFactory
 
