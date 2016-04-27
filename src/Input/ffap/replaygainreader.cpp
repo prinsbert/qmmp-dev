@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Ilya Kotov                                      *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,7 +24,7 @@
 
 ReplayGainReader::ReplayGainReader(const QString &path)
 {
-    TagLib::APE::File fileRef(path.toLocal8Bit ().constData());
+    TagLib::APE::File fileRef(QStringToFileName(path));
     if(fileRef.APETag())
         readAPE(fileRef.APETag());
 }
