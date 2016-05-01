@@ -23,9 +23,7 @@
 #include <QRegExp>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include "cueparser.h"
 #include "decoder_ffap.h"
 #include "decoder_ffapcue.h"
@@ -69,13 +67,8 @@ bool DecoderFFapCUE::initialize()
     p.remove("ape://");
     p.remove(QRegExp("#\\d+$"));
 
-
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(p), true);
     TagLib::APE::File file(&stream);
-#else
-    TagLib::APE::File file(QStringToFileName(p));
-#endif
 
     TagLib::APE::Tag *tag = file.APETag();
 

@@ -20,19 +20,13 @@
 
 #include <QtGlobal>
 #include <taglib/apefile.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include "replaygainreader.h"
 
 ReplayGainReader::ReplayGainReader(const QString &path)
 {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(path), true);
     TagLib::APE::File fileRef(&stream);
-#else
-    TagLib::APE::File fileRef(QStringToFileName(path));
-#endif
     if(fileRef.APETag())
         readAPE(fileRef.APETag());
 }
