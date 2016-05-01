@@ -38,6 +38,14 @@
 #include "decoder_mpg123.h"
 #include "decodermpg123factory.h"
 
+#ifndef QStringToFileName
+#ifdef Q_OS_WIN
+#define QStringToFileName(s) TagLib::FileName(reinterpret_cast<const wchar_t *>(s.utf16()))
+#else
+#define QStringToFileName(s) s.toLocal8Bit().constData()
+#endif
+#endif
+
 // DecoderMPG123Factory
 
 DecoderMPG123Factory::DecoderMPG123Factory()

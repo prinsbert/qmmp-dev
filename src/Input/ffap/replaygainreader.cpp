@@ -25,6 +25,14 @@
 #endif
 #include "replaygainreader.h"
 
+#ifndef QStringToFileName
+#ifdef Q_OS_WIN
+#define QStringToFileName(s) TagLib::FileName(reinterpret_cast<const wchar_t *>(s.utf16()))
+#else
+#define QStringToFileName(s) s.toLocal8Bit().constData()
+#endif
+#endif
+
 ReplayGainReader::ReplayGainReader(const QString &path)
 {
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))

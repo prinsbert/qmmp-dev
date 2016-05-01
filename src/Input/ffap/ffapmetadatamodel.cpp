@@ -25,6 +25,14 @@
 #include <taglib/apetag.h>
 #include "ffapmetadatamodel.h"
 
+#ifndef QStringToFileName
+#ifdef Q_OS_WIN
+#define QStringToFileName(s) TagLib::FileName(reinterpret_cast<const wchar_t *>(s.utf16()))
+#else
+#define QStringToFileName(s) s.toLocal8Bit().constData()
+#endif
+#endif
+
 FFapMetaDataModel::FFapMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(parent)
 {
     if(path.contains("://"))
