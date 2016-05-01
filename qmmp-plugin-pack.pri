@@ -12,8 +12,8 @@ QMAKE_LIBDIR += /home/user/qmmp-0.9/lib
 INCLUDEPATH += /usr/include
 INCLUDEPATH += /usr/local/include
 }else{
-INCLUDEPATH += D:/projects/qmmp/qmmp-svn/qmmp/src
-QMAKE_LIBDIR += D:/projects/qmmp/qmmp-svn/qmmp/bin
+INCLUDEPATH += C:/projects/qmmp-svn-branches/qmmp-0.9/src
+QMAKE_LIBDIR += C:/projects/qmmp-svn-branches/qmmp-0.9/bin
 INCLUDEPATH += C:/projects/qmmp/qmmp-svn/qmmp/src
 QMAKE_LIBDIR += C:/projects/qmmp/qmmp-svn/qmmp/bin
 }
