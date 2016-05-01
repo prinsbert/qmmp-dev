@@ -190,3 +190,7 @@ Version 0.9.3
 * fixed build
 * fixed cover art support in the mpg123 plugin
 * updated Russian translation (AlexL)
+
+Version 0.9.4
+* fixed unicode support under windows
+* fixed support of ape with embedded cue under windows
