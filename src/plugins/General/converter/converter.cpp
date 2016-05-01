@@ -33,8 +33,6 @@
 #include <taglib/mpegfile.h>
 #include "converter.h"
 
-#define QStringToTString_qt4(s) TagLib::String(s.toUtf8().constData(), TagLib::String::UTF8)
-
 Converter::Converter(QObject *parent) : QObject(parent), QRunnable()
 {
     m_user_stop = false;
@@ -257,11 +255,11 @@ void Converter::run()
         TagLib::FileRef file(qPrintable(full_path));
         if(file.tag())
         {
-            file.tag()->setTitle(QStringToTString_qt4(metadata[Qmmp::TITLE]));
-            file.tag()->setArtist(QStringToTString_qt4(metadata[Qmmp::ARTIST]));
-            file.tag()->setAlbum(QStringToTString_qt4(metadata[Qmmp::ALBUM]));
-            file.tag()->setGenre(QStringToTString_qt4(metadata[Qmmp::GENRE]));
-            file.tag()->setComment(QStringToTString_qt4(metadata[Qmmp::COMMENT]));
+            file.tag()->setTitle(QStringToTString(metadata[Qmmp::TITLE]));
+            file.tag()->setArtist(QStringToTString(metadata[Qmmp::ARTIST]));
+            file.tag()->setAlbum(QStringToTString(metadata[Qmmp::ALBUM]));
+            file.tag()->setGenre(QStringToTString(metadata[Qmmp::GENRE]));
+            file.tag()->setComment(QStringToTString(metadata[Qmmp::COMMENT]));
             file.tag()->setYear(metadata[Qmmp::YEAR].toUInt());
             file.tag()->setTrack(metadata[Qmmp::TRACK].toUInt());
 

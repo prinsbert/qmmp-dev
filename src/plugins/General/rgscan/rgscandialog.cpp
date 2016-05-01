@@ -40,7 +40,6 @@
 #include "gain_analysis.h"
 #include "rgscandialog.h"
 
-#define QStringToTString_qt4(s) TagLib::String(s.toUtf8().constData(), TagLib::String::UTF8)
 #define FILE_SKIPPED (Qt::UserRole + 1)
 
 struct ReplayGainInfoItem
@@ -286,12 +285,12 @@ QString RGScanDialog::getAlbumName(const QString &url)
 
 TagLib::String RGScanDialog::gainToString(double value)
 {
-    return QStringToTString_qt4(QString("%1 dB").arg(value, 0, 'f', 2));
+    return QStringToTString(QString("%1 dB").arg(value, 0, 'f', 2));
 }
 
 TagLib::String RGScanDialog::peakToString(double value)
 {
-    return QStringToTString_qt4(QString("%1").arg(value, 0, 'f', 6));
+    return QStringToTString(QString("%1").arg(value, 0, 'f', 6));
 }
 
 TagLib::StringList RGScanDialog::gainToStringList(double value)
