@@ -62,6 +62,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(XMP_FOUND)
 ADD_LIBRARY(xmp MODULE ${libxmp_SRCS} ${libxmp_UIS_H} ${libxmp_RCC_SRCS} ${libxmp_HDRS})
-target_link_libraries(xmp ${QT_LIBRARIES} -lqmmp ${QMMP_LDFLAGS} ${XMP_LDFLAGS})
+target_link_libraries(xmp ${QT_LIBRARIES} ${QMMP_LDFLAGS} ${XMP_LDFLAGS})
 install(TARGETS xmp DESTINATION ${LIB_DIR}/qmmp/Input)
 ENDIF(XMP_FOUND)
