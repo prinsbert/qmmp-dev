@@ -1109,3 +1109,8 @@ Version 1.0.7
 * fixed sendig multiple play commands when opening several files for playback
 * fixed memory leaks
 * fixed qt5.6 support
+
+Version 1.0.8
+* fixed session check in the scrobbler plugin
+* fixed working with both libre.fm and last.fm
+* fixed cell height in the stream browser
