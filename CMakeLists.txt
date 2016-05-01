@@ -10,7 +10,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 ENDIF()
 
 #Qt5 modules
-SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt55/lib/cmake)
+SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt56/lib/cmake)
 
 #extract version from qmmp.h
 FILE(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/src/qmmp/qmmp.h"
