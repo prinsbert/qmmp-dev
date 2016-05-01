@@ -161,7 +161,11 @@ QList<FileInfo *> DecoderFFmpegFactory::createPlayList(const QString &fileName, 
     QList <FileInfo*> list;
     AVFormatContext *in = 0;
 
+#ifdef Q_OS_WIN
+    if (avformat_open_input(&in,fileName.toUtf8().constData(), 0, 0) < 0)
+#else
     if (avformat_open_input(&in,fileName.toLocal8Bit().constData(), 0, 0) < 0)
+#endif
     {
         qDebug("DecoderFFmpegFactory: unable to open file");
         return list;

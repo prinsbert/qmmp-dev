@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,19 +23,34 @@
 #include <taglib/fileref.h>
 #include <taglib/flacfile.h>
 #include <taglib/oggflacfile.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
+#include <taglib/tfilestream.h>
+#include <taglib/id3v2framefactory.h>
+#endif
 #include "replaygainreader.h"
 
 ReplayGainReader::ReplayGainReader(const QString &path)
 {
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
+    TagLib::FileStream stream(QStringToFileName(path), true);
+#endif
     if(path.endsWith(".flac", Qt::CaseInsensitive))
     {
-        TagLib::FLAC::File fileRef(path.toLocal8Bit ().constData());
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
+        TagLib::FLAC::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
+#else
+        TagLib::FLAC::File fileRef(QStringToFileName(path));
+#endif
         if(fileRef.xiphComment())
             readVorbisComment(fileRef.xiphComment());
     }
     else if(path.endsWith(".oga", Qt::CaseInsensitive))
     {
-        TagLib::Ogg::FLAC::File fileRef(path.toLocal8Bit ().constData());
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
+        TagLib::Ogg::FLAC::File fileRef(&stream);
+#else
+        TagLib::Ogg::FLAC::File fileRef(QStringToFileName(path));
+#endif
         if(fileRef.tag())
             readVorbisComment(fileRef.tag());
     }

@@ -33,7 +33,6 @@
 #include "flacmetadatamodel.h"
 #include "decoderflacfactory.h"
 
-
 // DecoderFLACFactory
 
 bool DecoderFLACFactory::supports(const QString &source) const
@@ -100,7 +99,7 @@ QList<FileInfo *> DecoderFLACFactory::createPlayList(const QString &fileName, bo
         return QList<FileInfo *>() << info;
     }
 
-    TagLib::FileStream stream(fileName.toLocal8Bit().constData(), true);
+    TagLib::FileStream stream(QStringToFileName(fileName), true);
 
     if(fileName.endsWith(".flac", Qt::CaseInsensitive))
     {

@@ -29,7 +29,6 @@
 #include "vorbismetadatamodel.h"
 #include "decodervorbisfactory.h"
 
-
 // DecoderOggFactory
 
 bool DecoderVorbisFactory::supports(const QString &source) const
@@ -81,7 +80,7 @@ QList<FileInfo *> DecoderVorbisFactory::createPlayList(const QString &fileName, 
 {
     FileInfo *info = new FileInfo(fileName);
 
-    TagLib::FileStream stream(fileName.toLocal8Bit().constData(), true);
+    TagLib::FileStream stream(QStringToFileName(fileName), true);
     TagLib::Ogg::Vorbis::File fileRef(&stream);
     TagLib::Ogg::XiphComment *tag = useMetaData ? fileRef.tag() : 0;
 

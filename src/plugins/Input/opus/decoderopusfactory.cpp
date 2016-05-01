@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,7 +27,6 @@
 #include "decoder_opus.h"
 #include "opusmetadatamodel.h"
 #include "decoderopusfactory.h"
-
 
 // DecoderOpusFactory
 bool DecoderOpusFactory::supports(const QString &source) const
@@ -78,7 +77,7 @@ QList<FileInfo *> DecoderOpusFactory::createPlayList(const QString &fileName, bo
 {
     FileInfo *info = new FileInfo(fileName);
 
-    TagLib::Ogg::Opus::File fileRef(fileName.toLocal8Bit().constData());
+    TagLib::Ogg::Opus::File fileRef(QStringToFileName(fileName));
     TagLib::Ogg::XiphComment *tag = useMetaData ? fileRef.tag() : 0;
 
     if (tag && !tag->isEmpty())

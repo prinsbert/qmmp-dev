@@ -29,12 +29,10 @@
 #include "decoder_mpc.h"
 #include "decodermpcfactory.h"
 
-
 // DecoderMPCFactory
 
 bool DecoderMPCFactory::supports(const QString &source) const
 {
-
     return (source.right(4).toLower() == ".mpc");
 }
 
@@ -77,9 +75,8 @@ QList<FileInfo *> DecoderMPCFactory::createPlayList(const QString &fileName, boo
 {
     FileInfo *info = new FileInfo(fileName);
 
-    TagLib::FileStream stream(fileName.toLocal8Bit().constData(), true);
+    TagLib::FileStream stream(QStringToFileName(fileName), true);
     TagLib::MPC::File fileRef(&stream);
-
     TagLib::APE::Tag *tag = useMetaData ? fileRef.APETag() : 0;
     if (tag && !tag->isEmpty())
     {
