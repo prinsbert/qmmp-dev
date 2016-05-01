@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=taglib
-VERSION=1.10
+VERSION=1.11
 
 case $1 in
   --download)
@@ -14,7 +14,7 @@ case $1 in
     tar xvzf $NAME-$VERSION.tar.gz
     cd $NAME-$VERSION
     cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MSYS Makefiles" -DZLIB_ROOT=${ZLIB_ROOT} \
-    -DCMAKE_COLOR_MAKEFILE:BOOL=OFF
+    -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DBUILD_SHARED_LIBS=ON
     mingw32-make -j${JOBS}
     mingw32-make install
 
