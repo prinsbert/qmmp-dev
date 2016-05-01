@@ -1097,3 +1097,10 @@ Version 0.9.8
 * added support for theme change event in the qsui plugin
 * fixed sendig multiple play commands when opening several files for playback
 * fixed memory leaks
+
+Version 0.9.9
+* fixed session check in the scrobbler plugin
+* fixed working with both libre.fm and last.fm
+* fixed cell height in the stream browser
+* fixed unicode support under windows
+* fixed problem with file access under windows
