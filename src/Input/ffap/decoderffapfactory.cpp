@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -100,7 +100,7 @@ QList<FileInfo *> DecoderFFapFactory::createPlayList(const QString &fileName, bo
         return QList<FileInfo *>() << info;
     }
 
-    TagLib::FileStream stream(fileName.toLocal8Bit().constData(), true);
+    TagLib::FileStream stream(QStringToFileName(fileName), true);
     file = new TagLib::APE::File(&stream);
     tag = useMetaData ? file->APETag() : 0;
     ap = file->audioProperties();

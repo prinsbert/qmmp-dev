@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,6 +23,9 @@
 #include <QRegExp>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
+#include <taglib/tfilestream.h>
+#endif
 #include "cueparser.h"
 #include "decoder_ffap.h"
 #include "decoder_ffapcue.h"
@@ -67,7 +70,13 @@ bool DecoderFFapCUE::initialize()
     p.remove(QRegExp("#\\d+$"));
 
 
-    TagLib::APE::File file(p.toLocal8Bit().constData());
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
+    TagLib::FileStream stream(QStringToFileName(p), true);
+    TagLib::APE::File file(&stream);
+#else
+    TagLib::APE::File file(QStringToFileName(p));
+#endif
+
     TagLib::APE::Tag *tag = file.APETag();
 
     if (tag && tag->itemListMap().contains("CUESHEET"))
