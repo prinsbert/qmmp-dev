@@ -1114,3 +1114,6 @@ Version 1.0.8
 * fixed session check in the scrobbler plugin
 * fixed working with both libre.fm and last.fm
 * fixed cell height in the stream browser
+* fixed unicode support under windows
+* fixed problem with file access under windows
+* removed borders from statusbar in the qsui plugin
