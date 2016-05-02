@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="172"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="173"/>
@@ -44,42 +44,42 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="68"/>
         <source>Length</source>
-        <translation type="unfinished">長度</translation>
+        <translation>長度</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="69"/>
         <source>Sample rate</source>
-        <translation type="unfinished">取樣率</translation>
+        <translation>取樣率</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="69"/>
         <source>Hz</source>
-        <translation type="unfinished">Hz</translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="70"/>
         <source>Channels</source>
-        <translation type="unfinished">聲音通道</translation>
+        <translation>音頻通道</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="71"/>
         <source>Bitrate</source>
-        <translation type="unfinished">比特率</translation>
+        <translation>比特率</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="71"/>
         <source>kbps</source>
-        <translation type="unfinished">kbps</translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="72"/>
         <source>File size</source>
-        <translation type="unfinished">文件大小</translation>
+        <translation>文件大小</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="72"/>
         <source>KB</source>
-        <translation type="unfinished">KB</translation>
+        <translation>KB</translation>
     </message>
 </context>
 </TS>
