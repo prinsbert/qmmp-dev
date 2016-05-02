@@ -23,7 +23,11 @@
 FFmpegMetaDataModel::FFmpegMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(parent)
 {
     m_in = 0;
+#ifdef Q_OS_WIN
+    if (avformat_open_input(&m_in, path.toUtf8().constData(), 0, 0) < 0)
+#else
     if (avformat_open_input(&m_in, path.toLocal8Bit().constData(), 0, 0) < 0)
+#endif
         return;
     avformat_find_stream_info(m_in, 0);
     av_read_play(m_in);

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,15 +26,12 @@
 #include <taglib/oggflacfile.h>
 #include <taglib/xiphcomment.h>
 #include <taglib/tmap.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
 #include <taglib/id3v2framefactory.h>
-#endif
 #include "cueparser.h"
 #include "decoder_flac.h"
 #include "flacmetadatamodel.h"
 #include "decoderflacfactory.h"
-
 
 // DecoderFLACFactory
 
@@ -102,27 +99,18 @@ QList<FileInfo *> DecoderFLACFactory::createPlayList(const QString &fileName, bo
         return QList<FileInfo *>() << info;
     }
 
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
-    TagLib::FileStream stream(fileName.toLocal8Bit().constData(), true);
-#endif
+    TagLib::FileStream stream(QStringToFileName(fileName), true);
+
 
     if(fileName.endsWith(".flac", Qt::CaseInsensitive))
     {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         flacFile = new TagLib::FLAC::File(&stream, TagLib::ID3v2::FrameFactory::instance());
-#else
-        flacFile = new TagLib::FLAC::File(fileName.toLocal8Bit().constData());
-#endif
         tag = useMetaData ? flacFile->xiphComment() : 0;
         ap = flacFile->audioProperties();
     }
     else if(fileName.endsWith(".oga", Qt::CaseInsensitive))
     {
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         oggFlacFile = new TagLib::Ogg::FLAC::File(&stream);
-#else
-        oggFlacFile = new TagLib::Ogg::FLAC::File(fileName.toLocal8Bit().constData());
-#endif
         tag = useMetaData ? oggFlacFile->tag() : 0;
         ap = oggFlacFile->audioProperties();
     }

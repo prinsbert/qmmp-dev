@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,19 +23,22 @@
 #include <taglib/fileref.h>
 #include <taglib/flacfile.h>
 #include <taglib/oggflacfile.h>
+#include <taglib/tfilestream.h>
+#include <taglib/id3v2framefactory.h>
 #include "replaygainreader.h"
 
 ReplayGainReader::ReplayGainReader(const QString &path)
 {
+    TagLib::FileStream stream(QStringToFileName(path), true);
     if(path.endsWith(".flac", Qt::CaseInsensitive))
     {
-        TagLib::FLAC::File fileRef(path.toLocal8Bit ().constData());
+        TagLib::FLAC::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
         if(fileRef.xiphComment())
             readVorbisComment(fileRef.xiphComment());
     }
     else if(path.endsWith(".oga", Qt::CaseInsensitive))
     {
-        TagLib::Ogg::FLAC::File fileRef(path.toLocal8Bit ().constData());
+        TagLib::Ogg::FLAC::File fileRef(&stream);
         if(fileRef.tag())
             readVorbisComment(fileRef.tag());
     }

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Ilya Kotov                                      *
+ *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,11 +22,15 @@
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/vorbisfile.h>
+#include <taglib/tfilestream.h>
+#include <taglib/id3v2framefactory.h>
 #include "replaygainreader.h"
 
 ReplayGainReader::ReplayGainReader(const QString &path)
 {
-    TagLib::Ogg::Vorbis::File fileRef(path.toLocal8Bit ().constData());
+    TagLib::FileStream stream(QStringToFileName(path), true);
+    TagLib::Ogg::Vorbis::File fileRef(&stream);
+
     if(fileRef.tag())
         readVorbisComment(fileRef.tag());
 }
@@ -39,7 +43,7 @@ QMap <Qmmp::ReplayGainKey, double> ReplayGainReader::replayGainInfo() const
 void ReplayGainReader::readVorbisComment(TagLib::Ogg::XiphComment *comment)
 {
     TagLib::Ogg::FieldListMap items = comment->fieldListMap();
-    if (items.contains("REPLAYGAIN_TRACK_GAIN")) 
+    if (items.contains("REPLAYGAIN_TRACK_GAIN"))
         setValue(Qmmp::REPLAYGAIN_TRACK_GAIN,TStringToQString(items["REPLAYGAIN_TRACK_GAIN"].front()));
     if (items.contains("REPLAYGAIN_TRACK_PEAK"))
         setValue(Qmmp::REPLAYGAIN_TRACK_PEAK,TStringToQString(items["REPLAYGAIN_TRACK_PEAK"].front()));
