@@ -194,3 +194,6 @@ Version 0.9.3
 Version 0.9.4
 * fixed unicode support under windows
 * fixed support of ape with embedded cue under windows
+* updated French translation (Adrien Vigneron)
+* updated Chinese Traditional translation (Mingye Wang)
+* updated Hebrew translation (Genghis Khan)
