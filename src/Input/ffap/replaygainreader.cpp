@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Ilya Kotov                                      *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,11 +20,13 @@
 
 #include <QtGlobal>
 #include <taglib/apefile.h>
+#include <taglib/tfilestream.h>
 #include "replaygainreader.h"
 
 ReplayGainReader::ReplayGainReader(const QString &path)
 {
-    TagLib::APE::File fileRef(path.toLocal8Bit ().constData());
+    TagLib::FileStream stream(QStringToFileName(path), true);
+    TagLib::APE::File fileRef(&stream);
     if(fileRef.APETag())
         readAPE(fileRef.APETag());
 }

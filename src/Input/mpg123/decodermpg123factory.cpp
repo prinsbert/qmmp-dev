@@ -135,7 +135,7 @@ QList<FileInfo *> DecoderMPG123Factory::createPlayList(const QString &fileName, 
 {
     FileInfo *info = new FileInfo(fileName);
     TagLib::Tag *tag = 0;
-    TagLib::FileStream stream(fileName.toLocal8Bit().constData(), true);
+    TagLib::FileStream stream(QStringToFileName(fileName), true);
     TagLib::MPEG::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
 
     if (useMetaData)

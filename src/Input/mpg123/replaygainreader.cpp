@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2014 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,11 +25,14 @@
 #include <taglib/id3v1tag.h>
 #include <taglib/id3v2header.h>
 #include <taglib/textidentificationframe.h>
+#include <taglib/tfilestream.h>
+#include <taglib/id3v2framefactory.h>
 #include "replaygainreader.h"
 
 ReplayGainReader::ReplayGainReader(const QString &path)
 {
-    TagLib::MPEG::File fileRef(path.toLocal8Bit().constData());
+    TagLib::FileStream stream(QStringToFileName(path), true);
+    TagLib::MPEG::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
     if(fileRef.ID3v2Tag())
         readID3v2(fileRef.ID3v2Tag());
     if(m_values.isEmpty() && fileRef.APETag())
