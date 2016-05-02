@@ -6,22 +6,22 @@
     <message>
         <location filename="../decodermpg123factory.cpp" line="111"/>
         <source>MPG123 Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>MPG123 外掛</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="114"/>
         <source>MPEG Files</source>
-        <translation type="unfinished">MPEG 檔案</translation>
+        <translation>MPEG 檔案</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="267"/>
         <source>About MPG123 Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>關於 MPEG 聲訊插件</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="268"/>
         <source>Qmmp MPG123 Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp MPEG 聲訊插件</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="269"/>
@@ -32,7 +32,7 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../decodermpg123factory.cpp" line="271"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished">作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -50,7 +50,7 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="72"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="74"/>
@@ -60,7 +60,7 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="74"/>
         <source>Hz</source>
-        <translation type="unfinished">Hz</translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="78"/>
@@ -73,7 +73,7 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="90"/>
         <source>KB</source>
-        <translation type="unfinished">KB</translation>
+        <translation>KB</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="91"/>
@@ -116,30 +116,6 @@ with use of libmpg123 library</source>
 <context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <location filename="../settingsdialog.ui" line="110"/>
-        <location filename="../settingsdialog.ui" line="159"/>
-        <source>ID3v1</source>
-        <translation>ID3v1</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="66"/>
-        <location filename="../settingsdialog.ui" line="115"/>
-        <location filename="../settingsdialog.ui" line="164"/>
-        <source>ID3v2</source>
-        <translation>ID3v2</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="210"/>
-        <source>ID3v1 encoding:</source>
-        <translation>ID3v1 編碼：</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="236"/>
-        <source>ID3v2 encoding:</source>
-        <translation>ID3v2 編碼：</translation>
-    </message>
-    <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
         <translation>MPEG 插件設定</translation>
@@ -153,6 +129,20 @@ with use of libmpg123 library</source>
         <location filename="../settingsdialog.ui" line="41"/>
         <source>First:</source>
         <translation>第一：</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../settingsdialog.ui" line="110"/>
+        <location filename="../settingsdialog.ui" line="159"/>
+        <source>ID3v1</source>
+        <translation>ID3v1</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../settingsdialog.ui" line="115"/>
+        <location filename="../settingsdialog.ui" line="164"/>
+        <source>ID3v2</source>
+        <translation>ID3v2</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="71"/>
@@ -182,6 +172,16 @@ with use of libmpg123 library</source>
         <location filename="../settingsdialog.ui" line="198"/>
         <source>Encodings</source>
         <translation>編碼</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="210"/>
+        <source>ID3v1 encoding:</source>
+        <translation>ID3v1 編碼：</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="236"/>
+        <source>ID3v2 encoding:</source>
+        <translation>ID3v2 編碼：</translation>
     </message>
 </context>
 </TS>
