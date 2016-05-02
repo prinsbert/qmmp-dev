@@ -192,3 +192,10 @@ Version 1.0.2
 * fixed build
 * fixed cover art support in the mpg123 plugin
 * updated Russian translation (AlexL)
+
+Version 1.0.3
+* fixed unicode support under windows
+* fixed support of ape with embedded cue under windows
+* updated French translation (Adrien Vigneron)
+* updated Chinese Traditional translation (Mingye Wang)
+* updated Hebrew translation (Genghis Khan)
