@@ -1,3 +1,9 @@
+qmmp-plugin-pack (0.9.4-1ubuntu1~wily0) wily; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Mon, 02 May 2016 15:58:44 +0300
+
 qmmp-plugin-pack (0.9.3-1ubuntu2~wily0) wily; urgency=medium
 
   * Added libxmp-dev dependency.
