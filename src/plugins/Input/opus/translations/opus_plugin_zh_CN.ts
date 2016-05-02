@@ -4,32 +4,32 @@
 <context>
     <name>DecoderOpusFactory</name>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="48"/>
+        <location filename="../decoderopusfactory.cpp" line="47"/>
         <source>Opus Plugin</source>
         <translation>Opus插件</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="51"/>
+        <location filename="../decoderopusfactory.cpp" line="50"/>
         <source>Ogg Opus Files</source>
         <translation>Ogg Opus 文件</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="125"/>
+        <location filename="../decoderopusfactory.cpp" line="124"/>
         <source>About Opus Audio Plugin</source>
         <translation>关于Opus音频</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="126"/>
+        <location filename="../decoderopusfactory.cpp" line="125"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Qmmp Opus音频文件插件</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="127"/>
+        <location filename="../decoderopusfactory.cpp" line="126"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="128"/>
+        <location filename="../decoderopusfactory.cpp" line="127"/>
         <source>This plugin includes code from TagLib library</source>
         <translation>此插件中含有TagLib文件库中的代码</translation>
     </message>
@@ -37,42 +37,42 @@
 <context>
     <name>OpusMetaDataModel</name>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="51"/>
+        <location filename="../opusmetadatamodel.cpp" line="54"/>
         <source>Length</source>
         <translation>长度</translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="52"/>
+        <location filename="../opusmetadatamodel.cpp" line="55"/>
         <source>Sample rate</source>
         <translation>采样率</translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="52"/>
+        <location filename="../opusmetadatamodel.cpp" line="55"/>
         <source>Hz</source>
         <translation>赫兹</translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="53"/>
+        <location filename="../opusmetadatamodel.cpp" line="56"/>
         <source>Channels</source>
         <translation>频道</translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="54"/>
+        <location filename="../opusmetadatamodel.cpp" line="57"/>
         <source>Bitrate</source>
         <translation>比特率</translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="54"/>
+        <location filename="../opusmetadatamodel.cpp" line="57"/>
         <source>kbps</source>
         <translation>千比特每秒</translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="55"/>
+        <location filename="../opusmetadatamodel.cpp" line="58"/>
         <source>File size</source>
         <translation>文件大小</translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="55"/>
+        <location filename="../opusmetadatamodel.cpp" line="58"/>
         <source>KB</source>
         <translation>千字节</translation>
     </message>

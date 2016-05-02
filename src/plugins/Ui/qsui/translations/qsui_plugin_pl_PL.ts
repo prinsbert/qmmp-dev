@@ -1551,8 +1551,8 @@
         <translation>Resetuj</translation>
     </message>
     <message>
-        <location filename="../toolbareditor.cpp" line="83"/>
-        <location filename="../toolbareditor.cpp" line="102"/>
+        <location filename="../toolbareditor.cpp" line="82"/>
+        <location filename="../toolbareditor.cpp" line="101"/>
         <source>Separator</source>
         <translation type="unfinished"></translation>
     </message>
