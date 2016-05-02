@@ -134,4 +134,6 @@ LEGEND
 
 0.9.9
 [*] qmmp-0.9.9
+[*] qmmp-plugin-pack-0.9.4
+[*] taglib-1.11
 [-] added missing libsidplayfp-4.dll
