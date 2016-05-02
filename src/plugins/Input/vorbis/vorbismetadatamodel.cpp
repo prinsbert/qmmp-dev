@@ -26,6 +26,11 @@
 #include <taglib/tmap.h>
 #include "vorbismetadatamodel.h"
 
+#if ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION <= 9))
+#undef QStringToTString
+#define QStringToTString(s) TagLib::String(s.toUtf8().constData(), TagLib::String::UTF8)
+#endif
+
 VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(parent)
 {
     m_path = path;

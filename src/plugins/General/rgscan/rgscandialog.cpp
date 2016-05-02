@@ -41,6 +41,11 @@
 
 #define FILE_SKIPPED (Qt::UserRole + 1)
 
+#if ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION <= 9))
+#undef QStringToTString
+#define QStringToTString(s) TagLib::String(s.toUtf8().constData(), TagLib::String::UTF8)
+#endif
+
 struct ReplayGainInfoItem
 {
     QMap<Qmmp::ReplayGainKey, double> info;
