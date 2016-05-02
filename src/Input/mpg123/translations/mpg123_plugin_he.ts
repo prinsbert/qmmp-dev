@@ -1,39 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="he">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="he" version="2.0">
 <context>
     <name>DecoderMPG123Factory</name>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="119"/>
+        <location filename="../decodermpg123factory.cpp" line="111"/>
         <source>MPG123 Plugin</source>
-        <translation>תוספת MPG123</translation>
+        <translation>תוסף MPG123</translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="122"/>
+        <location filename="../decodermpg123factory.cpp" line="114"/>
         <source>MPEG Files</source>
         <translation>קבצי MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="279"/>
+        <location filename="../decodermpg123factory.cpp" line="271"/>
         <source>About MPG123 Audio Plugin</source>
-        <translation>אודות תוספת שמע MPG123</translation>
+        <translation>אודות תוסף שמע MPG123</translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="280"/>
+        <location filename="../decodermpg123factory.cpp" line="272"/>
         <source>Qmmp MPG123 Audio Plugin</source>
-        <translation>תוספת שמע MPG123 של Qmmp</translation>
+        <translation>תוסף שמע MPG123 של Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="281"/>
+        <location filename="../decodermpg123factory.cpp" line="273"/>
         <source>This plugin provides MPEG v1/2 layer1/2/3 support
 with use of libmpg123 library</source>
-        <translation>תוספת זו מספקת תמיכה עבור MPEG v1/2 layer1/2/3
+        <translation>תוסף זה מספק תמיכה עבור MPEG v1/2 layer1/2/3
 באמצעות ספריית libmpg123</translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="283"/>
+        <location filename="../decodermpg123factory.cpp" line="275"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>חוברה על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
+        <translation>חובר על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
     </message>
 </context>
 <context>
@@ -51,7 +49,7 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="72"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="74"/>
@@ -119,7 +117,7 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation>הגדרות תוספת MPEG</translation>
+        <translation>הגדרות תוסף MPEG</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
@@ -136,21 +134,21 @@ with use of libmpg123 library</source>
         <location filename="../settingsdialog.ui" line="110"/>
         <location filename="../settingsdialog.ui" line="159"/>
         <source>ID3v1</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v1</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="66"/>
         <location filename="../settingsdialog.ui" line="115"/>
         <location filename="../settingsdialog.ui" line="164"/>
         <source>ID3v2</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v2</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="71"/>
         <location filename="../settingsdialog.ui" line="120"/>
         <location filename="../settingsdialog.ui" line="169"/>
         <source>APE</source>
-        <translation type="unfinished"></translation>
+        <translation>APE</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="76"/>
