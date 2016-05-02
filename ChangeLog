@@ -1117,3 +1117,6 @@ Version 1.0.8
 * fixed unicode support under windows
 * fixed problem with file access under windows
 * removed borders from statusbar in the qsui plugin
+
+Version 1.0.9
+* fixed taglib-1.9 support
