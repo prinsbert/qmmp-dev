@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -536,16 +536,12 @@ int VolumeALSA::getMixer(snd_mixer_t **mixer, QString card)
         return -1;
     }
 
-    char *dev = strdup(card.toLatin1().data());
-
-    if ((err = snd_mixer_attach(*mixer, dev)) < 0)
+    if ((err = snd_mixer_attach(*mixer, card.toLatin1().constData())) < 0)
     {
         qWarning("OutputALSA: Attaching to mixer %s failed: %s",
-                 dev, snd_strerror(-err));
-        free(dev);
+                 qPrintable(card), snd_strerror(-err));
         return -1;
     }
-    free(dev);
     if ((err = snd_mixer_selem_register(*mixer, NULL, NULL)) < 0)
     {
         qWarning("OutputALSA: Failed to register mixer: %s",
