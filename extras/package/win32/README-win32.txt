@@ -45,6 +45,7 @@ List of the third-party libraries.
   projectm            2.1.0      http://projectm.sourceforge.net/
   libsidplayfp        1.8.4      http://sourceforge.net/projects/sidplay-residfp/
   enca                1.16       http://cihar.com/software/enca/
+  soxr                0.1.2      https://sourceforge.net/projects/soxr/
   libxml2             2.9.1      http://xmlsoft.org/
   librcd              0.1.14     http://rusxmms.sourceforge.net/
   librcc              0.2.12     http://rusxmms.sourceforge.net/
