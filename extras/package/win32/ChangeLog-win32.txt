@@ -137,3 +137,8 @@ LEGEND
 [*] qmmp-plugin-pack-0.9.4
 [*] taglib-1.11
 [-] added missing libsidplayfp-4.dll
+
+0.10.0
+[*] qmmp-0.10.0
+[*] qmmp-plugin-pack-0.10.0
+[-] fixed crash in the projectM library
