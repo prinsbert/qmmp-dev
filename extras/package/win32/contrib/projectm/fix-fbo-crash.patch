@@ -1,0 +1,13 @@
+diff -U3 -r projectM-complete-2.1.0-Source-old/src/libprojectM/Renderer/Renderer.cpp projectM-complete-2.1.0-Source-new/src/libprojectM/Renderer/Renderer.cpp
+--- projectM-complete-2.1.0-Source-old/src/libprojectM/Renderer/Renderer.cpp	2012-05-20 06:43:26 +0300
++++ projectM-complete-2.1.0-Source-new/src/libprojectM/Renderer/Renderer.cpp	2016-05-04 10:10:53 +0300
+@@ -270,7 +270,8 @@
+     if (!renderTarget->renderToTexture)
+     {
+         glGetIntegerv(GL_FRAMEBUFFER_BINDING, &externalFBO);
+-        glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);
++        if(externalFBO != 0)
++            glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);
+     }
+ #endif
+ 
