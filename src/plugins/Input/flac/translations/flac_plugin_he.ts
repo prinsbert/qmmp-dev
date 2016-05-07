@@ -4,27 +4,27 @@
 <context>
     <name>DecoderFLACFactory</name>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="59"/>
+        <location filename="../decoderflacfactory.cpp" line="58"/>
         <source>FLAC Plugin</source>
         <translation>תוספת FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="61"/>
+        <location filename="../decoderflacfactory.cpp" line="60"/>
         <source>FLAC Files</source>
         <translation>קבצי FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="192"/>
+        <location filename="../decoderflacfactory.cpp" line="191"/>
         <source>About FLAC Audio Plugin</source>
         <translation>אודות תוספת שמע FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="193"/>
+        <location filename="../decoderflacfactory.cpp" line="192"/>
         <source>Qmmp FLAC Audio Plugin</source>
         <translation>תוספת שמע FLAC של Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="194"/>
+        <location filename="../decoderflacfactory.cpp" line="193"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>חוברה על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
     </message>
@@ -32,42 +32,42 @@
 <context>
     <name>FLACMetaDataModel</name>
     <message>
-        <location filename="../flacmetadatamodel.cpp" line="80"/>
+        <location filename="../flacmetadatamodel.cpp" line="89"/>
         <source>Length</source>
         <translation>אריכות</translation>
     </message>
     <message>
-        <location filename="../flacmetadatamodel.cpp" line="81"/>
+        <location filename="../flacmetadatamodel.cpp" line="90"/>
         <source>Sample rate</source>
         <translation>שיעור דגימה</translation>
     </message>
     <message>
-        <location filename="../flacmetadatamodel.cpp" line="81"/>
+        <location filename="../flacmetadatamodel.cpp" line="90"/>
         <source>Hz</source>
         <translation>הרץ</translation>
     </message>
     <message>
-        <location filename="../flacmetadatamodel.cpp" line="82"/>
+        <location filename="../flacmetadatamodel.cpp" line="91"/>
         <source>Channels</source>
         <translation>ערוצים</translation>
     </message>
     <message>
-        <location filename="../flacmetadatamodel.cpp" line="83"/>
+        <location filename="../flacmetadatamodel.cpp" line="92"/>
         <source>Bitrate</source>
         <translation>שיעור סיביות</translation>
     </message>
     <message>
-        <location filename="../flacmetadatamodel.cpp" line="83"/>
+        <location filename="../flacmetadatamodel.cpp" line="92"/>
         <source>kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../flacmetadatamodel.cpp" line="85"/>
+        <location filename="../flacmetadatamodel.cpp" line="93"/>
         <source>File size</source>
         <translation>גודל קובץ</translation>
     </message>
     <message>
-        <location filename="../flacmetadatamodel.cpp" line="85"/>
+        <location filename="../flacmetadatamodel.cpp" line="93"/>
         <source>KB</source>
         <translation>ק״ב</translation>
     </message>

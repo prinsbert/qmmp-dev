@@ -4,27 +4,27 @@
 <context>
     <name>DecoderOpusFactory</name>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="50"/>
+        <location filename="../decoderopusfactory.cpp" line="49"/>
         <source>Opus Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="53"/>
+        <location filename="../decoderopusfactory.cpp" line="52"/>
         <source>Ogg Opus Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="127"/>
+        <location filename="../decoderopusfactory.cpp" line="126"/>
         <source>About Opus Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="128"/>
+        <location filename="../decoderopusfactory.cpp" line="127"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="129"/>
+        <location filename="../decoderopusfactory.cpp" line="128"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -32,42 +32,42 @@
 <context>
     <name>OpusMetaDataModel</name>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="51"/>
+        <location filename="../opusmetadatamodel.cpp" line="55"/>
         <source>Length</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="52"/>
+        <location filename="../opusmetadatamodel.cpp" line="56"/>
         <source>Sample rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="52"/>
+        <location filename="../opusmetadatamodel.cpp" line="56"/>
         <source>Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="53"/>
+        <location filename="../opusmetadatamodel.cpp" line="57"/>
         <source>Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="54"/>
+        <location filename="../opusmetadatamodel.cpp" line="58"/>
         <source>Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="54"/>
+        <location filename="../opusmetadatamodel.cpp" line="58"/>
         <source>kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="55"/>
+        <location filename="../opusmetadatamodel.cpp" line="59"/>
         <source>File size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="55"/>
+        <location filename="../opusmetadatamodel.cpp" line="59"/>
         <source>KB</source>
         <translation type="unfinished"></translation>
     </message>

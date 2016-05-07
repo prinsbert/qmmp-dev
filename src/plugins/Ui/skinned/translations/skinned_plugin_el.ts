@@ -810,7 +810,7 @@
         <translation>Ήχος</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="459"/>
+        <location filename="../mainwindow.cpp" line="455"/>
         <source>Tools</source>
         <translation>Εργαλεία</translation>
     </message>

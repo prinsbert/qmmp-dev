@@ -810,7 +810,7 @@
         <translation>Звук</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="459"/>
+        <location filename="../mainwindow.cpp" line="455"/>
         <source>Tools</source>
         <translation>Утиліти</translation>
     </message>
@@ -999,7 +999,7 @@
     <message>
         <location filename="../playlistheader.cpp" line="93"/>
         <source>Alignment</source>
-        <translation>Вирівняти</translation>
+        <translation>Вирівнювання</translation>
     </message>
     <message>
         <location filename="../playlistheader.cpp" line="94"/>

@@ -64,16 +64,16 @@
         <translation>Записывать пик/усиление для альбома</translation>
     </message>
     <message>
-        <location filename="../rgscandialog.cpp" line="123"/>
-        <location filename="../rgscandialog.cpp" line="234"/>
+        <location filename="../rgscandialog.cpp" line="122"/>
+        <location filename="../rgscandialog.cpp" line="233"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
+        <location filename="../rgscandialog.cpp" line="132"/>
         <location filename="../rgscandialog.cpp" line="133"/>
-        <location filename="../rgscandialog.cpp" line="134"/>
-        <location filename="../rgscandialog.cpp" line="158"/>
-        <location filename="../rgscandialog.cpp" line="229"/>
+        <location filename="../rgscandialog.cpp" line="157"/>
+        <location filename="../rgscandialog.cpp" line="228"/>
         <source>%1 dB</source>
         <translation>%1 дБ</translation>
     </message>
