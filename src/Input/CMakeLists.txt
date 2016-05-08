@@ -4,7 +4,7 @@ SET(USE_FFAP   TRUE CACHE BOOL "enabled/disable ffap plugin")
 SET(USE_ASM    TRUE CACHE BOOL "enable/disable assembler optimizations (inside ffap decoder)")
 
 INCLUDE(FindPkgConfig)
-pkg_check_modules(TAGLIB taglib>=1.10.0)
+pkg_check_modules(TAGLIB taglib>=1.9)
 
 IF(USE_MPG123 AND QMMP_FOUND AND TAGLIB_FOUND)
 add_subdirectory(mpg123)
