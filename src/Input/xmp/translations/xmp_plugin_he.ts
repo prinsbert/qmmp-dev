@@ -6,32 +6,32 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="51"/>
         <source>XMP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>תוסף XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="65"/>
         <source>Module Files</source>
-        <translation type="unfinished"></translation>
+        <translation>קבצי מודול</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="120"/>
         <source>About XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>אודות תוסף XMP שמע</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="121"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>תוסף XMP שמע של Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="122"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>חובר על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="123"/>
         <source>Compiled against libxmp-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>הודרה כנגד libxmp-%1</translation>
     </message>
 </context>
 <context>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדרות תוסף XMP</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
@@ -74,22 +74,22 @@
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>שיעור דגימה:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>22050 הרץ</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 הרץ</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 הרץ</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../settingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>לינארית</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="38"/>
@@ -112,12 +112,12 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="49"/>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>שם קובץ</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>פורמט</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
@@ -167,17 +167,17 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="82"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>דגימות</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="90"/>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>מכשירים</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="95"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>הערה</translation>
     </message>
 </context>
 </TS>
