@@ -6,12 +6,12 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="51"/>
         <source>XMP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>XMP 外掛</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="65"/>
         <source>Module Files</source>
-        <translation type="unfinished"></translation>
+        <translation>模組檔案</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="120"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="122"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>作者：Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="123"/>
@@ -74,22 +74,22 @@
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>取樣率</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
@@ -112,12 +112,12 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="49"/>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>格式</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
@@ -167,17 +167,17 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="82"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>取樣率</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="90"/>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>樂器</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="95"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>備註</translation>
     </message>
 </context>
 </TS>
