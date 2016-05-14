@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodermpcfactory.cpp" line="59"/>
         <source>Musepack Plugin</source>
-        <translation>תוספת Musepack</translation>
+        <translation>תוסף Musepack</translation>
     </message>
     <message>
         <location filename="../decodermpcfactory.cpp" line="61"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../decodermpcfactory.cpp" line="125"/>
         <source>About Musepack Audio Plugin</source>
-        <translation>אודות תוספת שמע Musepack</translation>
+        <translation>אודות תוסף שמע Musepack</translation>
     </message>
     <message>
         <location filename="../decodermpcfactory.cpp" line="126"/>
         <source>Qmmp Musepack Audio Plugin</source>
-        <translation>תוספת שמע Musepack של Qmmp</translation>
+        <translation>תוסף שמע Musepack של Qmmp</translation>
     </message>
     <message>
         <location filename="../decodermpcfactory.cpp" line="127"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>חוברה על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
+        <translation>חובר על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
     </message>
 </context>
 <context>

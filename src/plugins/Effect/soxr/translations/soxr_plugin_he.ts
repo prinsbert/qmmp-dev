@@ -11,7 +11,7 @@
     <message>
         <location filename="../effectsoxrfactory.cpp" line="52"/>
         <source>About SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>אודות תוסף SoX Resampler</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="53"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../effectsoxrfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished">חוברה על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
+        <translation>חובר על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
     </message>
 </context>
 <context>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished"></translation>
+        <translation>איכות:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>רגיל</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="37"/>

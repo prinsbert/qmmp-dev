@@ -6,27 +6,27 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="49"/>
         <source>Opus Plugin</source>
-        <translation>תוספת Opus</translation>
+        <translation>תוסף Opus</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="52"/>
         <source>Ogg Opus Files</source>
-        <translation>תוספת Ogg Opus</translation>
+        <translation>תוסף Ogg Opus</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="126"/>
         <source>About Opus Audio Plugin</source>
-        <translation>אודות תוספת שמע Opus</translation>
+        <translation>אודות תוסף שמע Opus</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="127"/>
         <source>Qmmp Opus Audio Plugin</source>
-        <translation>תוספת שמע Opus של Qmmp</translation>
+        <translation>תוסף שמע Opus של Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="128"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>חוברה על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
+        <translation>חובר על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
     </message>
 </context>
 <context>

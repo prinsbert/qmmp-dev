@@ -49,7 +49,7 @@
     <message>
         <location filename="../vorbismetadatamodel.cpp" line="57"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>赫兹</translation>
     </message>
     <message>
         <location filename="../vorbismetadatamodel.cpp" line="58"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../vorbismetadatamodel.cpp" line="59"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>千比特每秒</translation>
     </message>
     <message>
         <location filename="../vorbismetadatamodel.cpp" line="60"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../vorbismetadatamodel.cpp" line="60"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>千字节</translation>
     </message>
 </context>
 </TS>
