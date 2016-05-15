@@ -1,13 +1,13 @@
 #!/bin/sh
 
 NAME=curl
-VERSION=7.44.0
+VERSION=7.48.0
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://curl.haxx.se/download/$NAME-$VERSION.tar.gz
+    wget -nc --no-check-certificate https://curl.haxx.se/download/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp
