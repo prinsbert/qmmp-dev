@@ -18,7 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtGui>
+#include <QMessageBox>
+#include <QTranslator>
 #include "outputwasapi.h"
 #include "outputwasapifactory.h"
 
@@ -61,5 +62,3 @@ QTranslator *OutputWASAPIFactory::createTranslator(QObject *parent)
     translator->load(QString(":/wasapi_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(wasapi,OutputWASAPIFactory)
