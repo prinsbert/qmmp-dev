@@ -1120,3 +1120,9 @@ Version 1.0.8
 
 Version 1.0.9
 * fixed taglib-1.9 support
+
+Version 1.0.10
+* improved sid plugin:
+  - added c64 file extension
+  - fixed default HVSC path
+* updated Japanese translation (RyoTa SimaMoto)
