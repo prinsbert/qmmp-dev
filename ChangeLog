@@ -1104,3 +1104,9 @@ Version 0.9.9
 * fixed cell height in the stream browser
 * fixed unicode support under windows
 * fixed problem with file access under windows
+
+Version 0.9.10
+* improved sid plugin:
+  - added c64 file extension
+  - fixed default HVSC path
+* updated Japanese translation (RyoTa SimaMoto)
