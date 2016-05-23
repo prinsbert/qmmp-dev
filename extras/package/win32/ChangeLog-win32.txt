@@ -142,5 +142,6 @@ LEGEND
 [*] qmmp-0.10.0
 [*] qmmp-plugin-pack-0.10.0
 [*] curl-7.48.0
+[*] wavpack-4.80.0
 [+] soxr-0.1.2
 [-] fixed crash in the projectM library

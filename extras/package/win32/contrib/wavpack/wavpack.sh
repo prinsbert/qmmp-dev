@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=wavpack
-VERSION=4.75.2
+VERSION=4.80.0
 
 case $1 in
   --download)
