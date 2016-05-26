@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=curl
-VERSION=7.48.0
+VERSION=7.49.0
 
 case $1 in
   --download)
