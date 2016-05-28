@@ -197,3 +197,6 @@ Version 0.9.4
 * updated French translation (Adrien Vigneron)
 * updated Chinese Traditional translation (Mingye Wang)
 * updated Hebrew translation (Genghis Khan)
+
+Version 0.9.5
+* fixed TagLib-1.7 support
