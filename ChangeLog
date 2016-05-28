@@ -199,3 +199,6 @@ Version 1.0.3
 * updated French translation (Adrien Vigneron)
 * updated Chinese Traditional translation (Mingye Wang)
 * updated Hebrew translation (Genghis Khan)
+
+Version 1.0.4
+* fixed TagLib-1.9 support
