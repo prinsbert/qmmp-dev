@@ -100,7 +100,7 @@ create_distr ()
   #translations
   cp -v ${QT4_PATH}/translations/qt_??.qm ./translations
   #mingw32 libs
-  for LIB_NAME in libgcc_s_dw2-1.dll libstdc++-6.dll libwinpthread-1.dll
+  for LIB_NAME in libgcc_s_dw2-1.dll libstdc++-6.dll libwinpthread-1.dll libgomp-1.dll
   do
     cp -v ${MINGW32_PATH}/bin/${LIB_NAME} ./
   done
@@ -117,7 +117,7 @@ create_distr ()
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll
+  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
@@ -136,10 +136,10 @@ create_distr ()
 
 case $1 in
   --download)
-    download_qmmp_tarball
-    download_plugins_tarball
-    #download_qmmp_svn
-    #download_plugins_svn
+    #download_qmmp_tarball
+    #download_plugins_tarball
+    download_qmmp_svn
+    download_plugins_svn
   ;;
   --install)
     cd tmp

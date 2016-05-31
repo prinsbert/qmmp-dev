@@ -150,3 +150,9 @@ LEGEND
 [*] glew-1.13.0
 [*] ffmpeg-2.8.7
 [-] fixed crash in the projectM library
+
+0.10.0
+[*] qmmp-0.10.0
+[*] qmmp-plugin-pack-0.10.0
+[*] ffmpeg-3.0.2
+[*] soxr-1.0.2
