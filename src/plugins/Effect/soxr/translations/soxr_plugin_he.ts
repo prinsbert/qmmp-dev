@@ -6,7 +6,7 @@
     <message>
         <location filename="../effectsoxrfactory.cpp" line="31"/>
         <source>SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>תוסף SoX Resampler</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="52"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../effectsoxrfactory.cpp" line="53"/>
         <source>Qmmp SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>תוספת SoX Resampler של Qmmp</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="54"/>
