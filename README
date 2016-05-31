@@ -7,10 +7,10 @@ Description:
 - MPG123 - MPEG v1/2 layer1/2/3 decoder with use of the libmpg123 library
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
 - XMP - module player with use of the libxmp library
-- Sample Rate Converter - resampler with use of libsamplerate library
+- Sample Rate Converter - resampler based on libsamplerate library
 
 Requirements:
-- Qt >= 5.4 (qtbase, qtx11extras and qttools for build)
+- Qt >= 5.4 (qtbase and qttools for build)
 - qmmp 1.1.x
 - taglib >= 1.10
 - libmpg123 >= 1.13.0 (Optional)

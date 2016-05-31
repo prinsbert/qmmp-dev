@@ -10,7 +10,7 @@ Qmmp Plugin Pack
 - Sample Rate Converter - преобразователь частоты дискретизации с использованием библиотеки libsamplerate
 
 Требования:
-- Qt >= 5.4 (qtbase, qtx11extras и qttools для сборки)
+- Qt >= 5.4 (qtbase и qttools для сборки)
 - qmmp 1.1.x
 - taglib >= 1.10
 - libmpg123 >= 1.13.0 (Опционально)
