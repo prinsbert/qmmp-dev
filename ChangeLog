@@ -183,3 +183,22 @@ Version 1.0.0
 * ported to qmmp 1.0 api
 * switch to Qt5
 * fixed buffer overflow in the mpg123 plugin
+
+Version 1.0.1
+* fixed build (RyoTa SimaMoto)
+* reduced tag reading delay in the ffap plugin
+
+Version 1.0.2
+* fixed build
+* fixed cover art support in the mpg123 plugin
+* updated Russian translation (AlexL)
+
+Version 1.0.3
+* fixed unicode support under windows
+* fixed support of ape with embedded cue under windows
+* updated French translation (Adrien Vigneron)
+* updated Chinese Traditional translation (Mingye Wang)
+* updated Hebrew translation (Genghis Khan)
+
+Version 1.0.4
+* fixed TagLib-1.9 support
