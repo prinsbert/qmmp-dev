@@ -200,3 +200,8 @@ Version 0.9.4
 
 Version 0.9.5
 * fixed TagLib-1.7 support
+
+Version 0.10.0
+* ported to qmmp 0.10 api
+* added libsamplerate-based sample rate converter
+* changed default settings in the mpg123 plugin
