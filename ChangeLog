@@ -1053,3 +1053,76 @@ Version 1.0.0
 * fixed possible race condition
 * updated Greek translation (Dimitrios Glentadakis)
 
+Version 1.0.1
+* added XFCE icon theme support
+* added Marco WM support
+* added test for supported OpenGL implementation while using cmake
+* improved command line parser
+* fixed crash in the mplayer engine
+* fixed time indicator in the qsui plugin
+* fixed truncated output of the '--pl-dump' command
+* fixed track indexes calculation
+
+Version 1.0.2
+* fixed problem with tray icon menu (see QTBUG-48869, patch by equeim)
+* fixed geometry saving in the skinned UI
+* fixed segmentation fault in the ReplayGain scanner
+* fixed hide on close feature
+* fixed some skins parsing
+* fixed Dutch translation (Rhythmdrill)
+
+Version 1.0.3
+* added error handling in the mplayer plugin
+* fixed problem with some covers embedded in the mp3 files
+* fixed some skins support
+* fixed issue with equalizer not saving low levels in the qsui plugin
+* fixed gcc warnings
+* fixed build without Qt X11 Extras
+* fixed Cinnamon and MATE support
+* updated Chinese Simplified translation (mabier)
+
+Version 1.0.4
+* fixed skinned ui build
+
+Version 1.0.5
+* added gnome shell support
+* fixed url dialog size
+* fixed memory leak in the qsui plugin
+* fixed ladspa plugin
+* fixed cpu usage in the vorbis plugins
+* fixed utf-8 support in the scrobbler plugin
+* fixed Greek translation (Dimitrios Glentadakis)
+* updated French translation (Adrien Vigneron)
+
+Version 1.0.6
+* added feature to change default output plugin
+* added feature to skip unsupported files in the rgscan plugin
+* fixed gme plugin build
+* fixed gcc warnings
+* fixed Russian translation
+* updated Portuguese translation (Sérgio Marques)
+* updated Chinese Simplified translation (Mingye Wang)
+
+Version 1.0.7
+* added ffmpeg 3.0 support
+* added support for theme change event in the qsui plugin
+* fixed sendig multiple play commands when opening several files for playback
+* fixed memory leaks
+* fixed qt5.6 support
+
+Version 1.0.8
+* fixed session check in the scrobbler plugin
+* fixed working with both libre.fm and last.fm
+* fixed cell height in the stream browser
+* fixed unicode support under windows
+* fixed problem with file access under windows
+* removed borders from statusbar in the qsui plugin
+
+Version 1.0.9
+* fixed taglib-1.9 support
+
+Version 1.0.10
+* improved sid plugin:
+  - added c64 file extension
+  - fixed default HVSC path
+* updated Japanese translation (RyoTa SimaMoto)
