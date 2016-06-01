@@ -1,15 +1,11 @@
 include(../../qmmp.pri)
 
 HEADERS += qmmpstarter.h \
-           builtincommandlineoption.h \
-    lxdesupport.h \
-    xfcesupport.h
+           builtincommandlineoption.h
 
 SOURCES += qmmpstarter.cpp \
            builtincommandlineoption.cpp \
-    lxdesupport.cpp \
-    main.cpp \
-    xfcesupport.cpp
+    main.cpp
 
 
 

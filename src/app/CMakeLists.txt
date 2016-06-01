@@ -25,13 +25,10 @@ SET(app_SRCS
     builtincommandlineoption.cpp
     main.cpp
     qmmpstarter.cpp
-    lxdesupport.cpp
     xfcesupport.cpp
 )
 
-SET(app_HDRS lxdesupport.h
-             xfcesupport.h
-)
+SET(app_HDRS xfcesupport.h)
 
 SET(app_RCCS images/images.qrc translations/qmmp_locales.qrc)
 

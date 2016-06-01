@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,8 +37,6 @@
 #include <qmmpui/uiloader.h>
 #include <qmmpui/qmmpuisettings.h>
 #include "qmmpstarter.h"
-#include "lxdesupport.h"
-#include "xfcesupport.h"
 #include "builtincommandlineoption.h"
 
 #ifdef Q_OS_WIN
@@ -183,9 +181,6 @@ void QMMPStarter::startPlayer()
     theme_paths << share_path + "/icons";
     theme_paths.removeDuplicates();
     QIcon::setThemeSearchPaths(theme_paths);
-
-    LXDESupport::load(); //load lxde icons
-    XFCESupport::load(); //load xfce icons
 #endif
 
     //prepare libqmmp and libqmmpui libraries for usage
