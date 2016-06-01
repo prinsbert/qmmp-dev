@@ -25,7 +25,6 @@ SET(app_SRCS
     builtincommandlineoption.cpp
     main.cpp
     qmmpstarter.cpp
-    xfcesupport.cpp
 )
 
 SET(app_HDRS xfcesupport.h)
