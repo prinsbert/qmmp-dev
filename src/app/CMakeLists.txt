@@ -27,8 +27,6 @@ SET(app_SRCS
     qmmpstarter.cpp
 )
 
-SET(app_HDRS xfcesupport.h)
-
 SET(app_RCCS images/images.qrc translations/qmmp_locales.qrc)
 
 QT5_ADD_RESOURCES(app_RCC_SRCS ${app_RCCS})
@@ -37,7 +35,7 @@ QT5_ADD_RESOURCES(app_RCC_SRCS ${app_RCCS})
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-ADD_EXECUTABLE(qmmp ${app_SRCS} ${app_RCC_SRCS} ${app_HDRS})
+ADD_EXECUTABLE(qmmp ${app_SRCS} ${app_RCC_SRCS})
 target_link_libraries(qmmp Qt5::Widgets libqmmp qmmpui)
 add_dependencies(qmmp qmmpui libqmmp)
 install(TARGETS qmmp DESTINATION bin)
