@@ -1126,3 +1126,59 @@ Version 1.0.10
   - added c64 file extension
   - fixed default HVSC path
 * updated Japanese translation (RyoTa SimaMoto)
+
+Version 1.1.0
+* using floating point pcm format for all lossy decoders
+* using floating point pcm format for all audio effects
+* added new internal audio converter
+* added dithering setting
+* added feature to change output bit depth
+* added feature to change volume adjustment step
+* added soxr-based resampler plugin
+* added MacOS X support (Ivan Ponomarev)
+* added Qt Multimedia output plugin (Ivan Ponomarev)
+* added feature to refresh playlist
+* added two-panel file dialog
+* added feature to scrobble http streams
+* added multi-thread support in the audio converter plugin
+* added support for m4a files in the ReplayGain scanner
+* added WASAPI output plugin
+* improved skinned interface:
+  - show track details when double-clicking on song title in the main window (Thomas Perl)
+  - improved time indicator in the shaded mode (Thomas Perl)
+  - added feature to disable anti-aliasing
+  - added feature to seek by mouse wheel
+  - added column alignment option
+* improved simple user interface (qsui):
+  - added column alignment option
+  - added feature to add/remove sliders
+  - added feature to create multiple panels
+  - added tooltips for the sliders
+  - improved volume slider
+  - fixed problem with minimum width
+* improved wavpack plugin:
+  - added some optimizations
+  - fixed memory leak
+* improved ffmpeg plugin:
+  - added support for m4a embedded album art
+  - added replaygain support
+* improved ladspa plugin
+* improved command line parser
+* improved details dialog
+* improved "jump to track" dialog
+* improved DirectSound output plugin (24/32-bit and multi-channel support)
+* removed libsamplerate-based resampler
+* removed libsamplerate dependency from the jack plugin (using soxr instead)
+* changed default settings in the mpeg plugin
+* fixed metadata encoding issue in the http plugin
+* updated Bulgarian translation (Kiril Kirilov)
+* updated Chinese Traditional translation (Jeff Huang)
+* updated Chinese Simplified translation (Mingcong Bai, Mingye Wang, mabier)
+* updated French translation (Adrien Vigneron and Sébastien Aperghis-Tramoni)
+* updated German translation (Ettore Atalan)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Hebrew translation (Genghis Khan)
+* updated Japanese translation (RyoTa SimaMoto)
+* updated Portuguese translation (Sérgio Marques)
+* updated Russian translation
+* updated Ukrainian translation (Gennadi Motsyo)
