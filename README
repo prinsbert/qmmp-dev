@@ -79,7 +79,7 @@ How to enable XMP plugin.
 By default ModPlug plugin has higher priority than XMP.
 To fix this go to the "settings"->"plugins" and disable ModPlug plugin.
 
-How to enabled FFap plugin.
+How to enable FFap plugin.
 Go to FFmpeg plugin settings and disable Monkey's Audio support.
 
 
