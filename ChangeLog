@@ -202,3 +202,19 @@ Version 1.0.3
 
 Version 1.0.4
 * fixed TagLib-1.9 support
+
+Version 1.1.0
+* ported to qmmp 1.1 api
+* added libsamplerate-based sample rate converter
+* changed default settings in the mpg123 plugin
+* updated Bulgarian translation (Kiril Kirilov)
+* updated Chinese Traditional translation (Jeff Huang)
+* updated Chinese Simplified translation (Mingcong Bai, Mingye Wang, mabier)
+* updated French translation (Adrien Vigneron and Sébastien Aperghis-Tramoni)
+* updated German translation (Ettore Atalan)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Hebrew translation (Genghis Khan)
+* updated Japanese translation (RyoTa SimaMoto)
+* updated Portuguese translation (Sérgio Marques)
+* updated Russian translation
+* updated Ukrainian translation (Gennadi Motsyo)
