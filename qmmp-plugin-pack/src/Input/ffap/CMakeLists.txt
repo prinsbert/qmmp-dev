@@ -1,6 +1,5 @@
 project(libffap)
 
-cmake_minimum_required(VERSION 2.8.0)
 
 if(COMMAND cmake_policy)
     cmake_policy(SET CMP0003 NEW)
