@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodermpg123factory.cpp" line="111"/>
         <source>MPG123 Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>MPG123插件</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="114"/>
@@ -16,18 +16,18 @@
     <message>
         <location filename="../decodermpg123factory.cpp" line="271"/>
         <source>About MPG123 Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>关于MPG123音频插件</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="272"/>
         <source>Qmmp MPG123 Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp MPG123音频插件</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="273"/>
         <source>This plugin provides MPEG v1/2 layer1/2/3 support
 with use of libmpg123 library</source>
-        <translation type="unfinished"></translation>
+        <translation>本插件使用libmpg123库提供MPEG v1/2 1/2/3层支持</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="275"/>

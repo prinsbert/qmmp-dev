@@ -6,22 +6,22 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="51"/>
         <source>XMP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>XMP插件</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="65"/>
         <source>Module Files</source>
-        <translation type="unfinished"></translation>
+        <translation>模块文件</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="120"/>
         <source>About XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>关于XMP音频插件</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="121"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp XMP音频插件</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="122"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="123"/>
         <source>Compiled against libxmp-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>对照libxmp-%1进行了编译</translation>
     </message>
 </context>
 <context>
@@ -39,27 +39,27 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>XMP插件设置</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source> Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>扩音比率：</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished"></translation>
+        <translation>立体声混合：</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished"></translation>
+        <translation>插音类型：</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished"></translation>
+        <translation>低音通过过滤效果</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
