@@ -31,7 +31,7 @@ Installation:
 make install
 
 If someone plugin (for example, MPG123 plugin) doesn't build or doesn't needed you can disable it
-by running:
+by running the following command:
 cmake ./ -DUSE_MPG123:BOOL=FALSE
 
 Available options:
@@ -39,7 +39,7 @@ Available options:
 - USE_ASM (assembler-level optimizations inside FFap decoder)
 
 
-Also you can use ccmake for changing plugins configuration.
+Also you can use ccmake to change plugin configuration.
 By default program will be installed in /usr/local. You can change default path by running:
 cmake ./ -DCMAKE_INSTALL_PREFIX=custom_path
 
@@ -56,14 +56,14 @@ Installation:
 make install INSTALL_ROOT=/usr/local
 
 If someone module doesn't build or doesn't needed you can disable it in qmmp-plugin-pack.pri file - just comment
-corresponding line( symbol '#') or execute qmake with special parameters:
+corresponding line( symbol '#') or execute qmake with the special parameters:
 qmake DISABLED_PLUGINS+=XMP_PLUGIN DISABLED_PLUGINS+=FFAP_PLUGIN
 
 Attention! By default all plugins are enabled by default.
 
 Changing shared library install path (needed by some 64-bit distributions).
 By default, all libraries and plugins will be installed to $(INSTALL PREFIX)/lib. You can change "lib"
-to "lib64" by running qmake-qt4 or cmake with special parameter:
+to "lib64" by running qmake-qt4 or cmake with the special parameter:
 qmake-qt4 LIB_DIR=/lib64
 or
 cmake ./ -DLIB_DIR=lib64
