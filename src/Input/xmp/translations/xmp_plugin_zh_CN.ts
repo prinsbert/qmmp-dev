@@ -64,12 +64,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished"></translation>
+        <translation>使用vblank时间管理</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished"></translation>
+        <translation>模拟Protracker 2.x FX9问题</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
@@ -94,12 +94,12 @@
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>最近的邻居</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>线性</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="38"/>
