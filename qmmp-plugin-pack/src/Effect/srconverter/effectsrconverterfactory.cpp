@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007 by Ilya Kotov                                      *
+ *   Copyright (C) 2007-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,7 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtGui>
+#include <QMessageBox>
+#include <QtPlugin>
+#include <QTranslator>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 #include "srconverter.h"
@@ -40,20 +42,20 @@ Effect *EffectSRConverterFactory::create()
     return new SRConverter();
 }
 
-void EffectSRConverterFactory::showSettings(QWidget *parent) 
+void EffectSRConverterFactory::showSettings(QWidget *parent)
 {
     SettingsDialog *s = new SettingsDialog(parent);
     s ->show();
 }
 
-void EffectSRConverterFactory::showAbout(QWidget *parent) 
+void EffectSRConverterFactory::showAbout(QWidget *parent)
 {
      QMessageBox::about (parent, tr("About Sample Rate Converter Plugin"),
                         tr("Qmmp Sample Rate Converter Plugin")+"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>"));
 }
 
-QTranslator *EffectSRConverterFactory::createTranslator(QObject *parent) 
+QTranslator *EffectSRConverterFactory::createTranslator(QObject *parent)
 {
     QTranslator *translator = new QTranslator(parent);
     QString locale = Qmmp::systemLanguageID();
