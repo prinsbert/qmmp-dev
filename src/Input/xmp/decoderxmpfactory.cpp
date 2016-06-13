@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2015-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,9 +18,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtGui>
 #include <QStringList>
 #include <QRegExp>
+#include <QMessageBox>
+#include <QtPlugin>
+#include <QTranslator>
 #include <xmp.h>
 #include "settingsdialog.h"
 #include "decoder_xmp.h"
