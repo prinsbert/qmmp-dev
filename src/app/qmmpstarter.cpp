@@ -52,7 +52,7 @@
 
 using namespace std;
 
-QMMPStarter::QMMPStarter(int argc,char **argv, QObject* parent) : QObject(parent)
+QMMPStarter::QMMPStarter() : QObject()
 {
     m_player = 0;
     m_core = 0;
@@ -64,9 +64,7 @@ QMMPStarter::QMMPStarter(int argc,char **argv, QObject* parent) : QObject(parent
     m_named_mutex = 0;
 #endif
     m_option_manager = new BuiltinCommandLineOption(this);
-    QStringList tmp;
-    for (int i = 1;i < argc;i++)
-        tmp << QString::fromLocal8Bit(argv[i]);
+    QStringList tmp = qApp->arguments().mid(1);
 
     argString = tmp.join("|||");
     QHash <QString, QStringList> commands = m_option_manager->splitArgs(tmp);
