@@ -85,7 +85,7 @@ Qmmp - Qt-based multimedia player
 - jackit1 >= 0.121.0 или jackit2 >= 1.9.8 (Опционально)
 - soxr >= 0.1.0 (Опционально)
 - libmodplug >= 0.8.4 (Опционально)
-- libsndfile >= 1.0.17 (Опционально)
+- libsndfile >= 1.0.21 (Опционально)
 - wavpack >= 4.41 (Опционально)
 - pulseaudio >= 0.9.15 (Опционально)
 - ffmpeg >= 2.0 или libav >= 0.9 (Опционально)
