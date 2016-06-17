@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -45,6 +45,10 @@ EqWidget::EqWidget (QWidget *parent)
     setWindowTitle(tr("Equalizer"));
     m_shaded = false;
     m_skin = Skin::instance();
+#ifdef QMMP_WS_X11
+    QString wm_name = WindowSystem::netWindowManagerName();
+    m_compiz = wm_name.contains("compiz", Qt::CaseInsensitive);
+#endif
     setPixmap (m_skin->getEqPart (Skin::EQ_MAIN));
     setCursor (m_skin->getCursor (Skin::CUR_EQNORMAL));
     m_titleBar = new EqTitleBar (this);
@@ -75,7 +79,6 @@ EqWidget::EqWidget (QWidget *parent)
     updatePositions();
     updateMask();
 #ifdef QMMP_WS_X11
-    QString wm_name = WindowSystem::netWindowManagerName();
     if(wm_name.contains("metacity", Qt::CaseInsensitive) ||
        wm_name.contains("openbox", Qt::CaseInsensitive))
         setWindowFlags (Qt::Tool | Qt::FramelessWindowHint);
@@ -131,11 +134,22 @@ void EqWidget::setMimimalMode(bool b)
 {
     m_shaded = b;
     int r = m_skin->ratio();
-
-    if(m_shaded)
-         resize(r*275,r*14);
+#ifdef QMMP_WS_X11
+    if(m_compiz)
+    {
+        if(m_shaded)
+            setFixedSize(r*275,r*14);
+        else
+            setFixedSize(r*275,r*116);
+    }
     else
-         resize(r*275,r*116);
+#endif
+    {
+        if(m_shaded)
+            resize(r*275,r*14);
+        else
+            resize(r*275,r*116);
+    }
     updateMask();
 }
 

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -96,6 +96,9 @@ private:
     QList<EQPreset*> m_presets;
     QList<EQPreset*> m_autoPresets;
     bool m_shaded;
+#ifdef QMMP_WS_X11
+        bool m_compiz;
+#endif
 };
 
 #endif
