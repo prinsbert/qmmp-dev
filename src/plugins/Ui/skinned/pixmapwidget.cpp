@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -34,7 +34,8 @@ PixmapWidget::~PixmapWidget()
 void PixmapWidget::setPixmap(const QPixmap pixmap)
 {
     m_pixmap = pixmap;
-    resize(m_pixmap.size());
+    //resize(m_pixmap.size());
+    setFixedSize(m_pixmap.size());
     update();
 }
 
