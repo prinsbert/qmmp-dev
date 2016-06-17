@@ -688,7 +688,7 @@ void PlayList::setMinimalMode(bool b)
         }
         else
         {
-            setFixedSize(qMax(width(), 275 * m_ratio), m_height);
+            setFixedSize(qMax(width(), 275 * m_ratio), qMax(m_height, 116*m_ratio));
         }
     }
     else
