@@ -31,11 +31,13 @@ PixmapWidget::PixmapWidget(QWidget *parent)
 PixmapWidget::~PixmapWidget()
 {}
 
-void PixmapWidget::setPixmap(const QPixmap pixmap)
+void PixmapWidget::setPixmap(const QPixmap pixmap, bool fixed_size)
 {
     m_pixmap = pixmap;
-    //resize(m_pixmap.size());
-    setFixedSize(m_pixmap.size());
+    if(fixed_size)
+        setFixedSize(m_pixmap.size());
+    else
+        resize(m_pixmap.size());
     update();
 }
 

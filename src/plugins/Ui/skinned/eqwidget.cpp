@@ -49,7 +49,7 @@ EqWidget::EqWidget (QWidget *parent)
     QString wm_name = WindowSystem::netWindowManagerName();
     m_compiz = wm_name.contains("compiz", Qt::CaseInsensitive);
 #endif
-    setPixmap (m_skin->getEqPart (Skin::EQ_MAIN));
+    setPixmap (m_skin->getEqPart (Skin::EQ_MAIN), true);
     setCursor (m_skin->getCursor (Skin::CUR_EQNORMAL));
     m_titleBar = new EqTitleBar (this);
     m_titleBar->move (0,0);
@@ -124,7 +124,7 @@ void EqWidget::closeEvent (QCloseEvent* e)
 void EqWidget::updateSkin()
 {
     m_titleBar->setActive (false);
-    setPixmap (m_skin->getEqPart (Skin::EQ_MAIN));
+    setPixmap (m_skin->getEqPart (Skin::EQ_MAIN), true);
     setCursor (m_skin->getCursor (Skin::CUR_EQNORMAL));
     setMimimalMode(m_shaded);
     updatePositions();
