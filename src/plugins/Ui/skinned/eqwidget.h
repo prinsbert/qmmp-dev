@@ -96,9 +96,6 @@ private:
     QList<EQPreset*> m_presets;
     QList<EQPreset*> m_autoPresets;
     bool m_shaded;
-#ifdef QMMP_WS_X11
-        bool m_compiz;
-#endif
 };
 
 #endif

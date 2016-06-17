@@ -45,10 +45,6 @@ EqWidget::EqWidget (QWidget *parent)
     setWindowTitle(tr("Equalizer"));
     m_shaded = false;
     m_skin = Skin::instance();
-#ifdef QMMP_WS_X11
-    QString wm_name = WindowSystem::netWindowManagerName();
-    m_compiz = wm_name.contains("compiz", Qt::CaseInsensitive);
-#endif
     setPixmap (m_skin->getEqPart (Skin::EQ_MAIN), true);
     setCursor (m_skin->getCursor (Skin::CUR_EQNORMAL));
     m_titleBar = new EqTitleBar (this);
@@ -79,6 +75,7 @@ EqWidget::EqWidget (QWidget *parent)
     updatePositions();
     updateMask();
 #ifdef QMMP_WS_X11
+    QString wm_name = WindowSystem::netWindowManagerName();
     if(wm_name.contains("metacity", Qt::CaseInsensitive) ||
        wm_name.contains("openbox", Qt::CaseInsensitive))
         setWindowFlags (Qt::Tool | Qt::FramelessWindowHint);
@@ -134,22 +131,12 @@ void EqWidget::setMimimalMode(bool b)
 {
     m_shaded = b;
     int r = m_skin->ratio();
-#ifdef QMMP_WS_X11
-    if(m_compiz)
-    {
-        if(m_shaded)
-            setFixedSize(r*275,r*14);
-        else
-            setFixedSize(r*275,r*116);
-    }
+
+    if(m_shaded)
+        setFixedSize(r*275,r*14);
     else
-#endif
-    {
-        if(m_shaded)
-            resize(r*275,r*14);
-        else
-            resize(r*275,r*116);
-    }
+        setFixedSize(r*275,r*116);
+
     updateMask();
 }
 
