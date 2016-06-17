@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 9), cmake, pkg-config, qtbase5-dev (>= 5.4),
   libqt5x11extras5-dev (>= 5.4), qttools5-dev-tools (>= 5.4),
   qtchooser, libx11-dev, oss4-dev, libmad0-dev, libvorbis-dev,
   libasound2-dev [linux-any], libtag1-dev, libcurl4-gnutls-dev, libmms-dev,
-  libflac-dev, libmpcdec-dev, libjack-dev, libsamplerate0-dev, libmodplug-dev,
+  libflac-dev, libmpcdec-dev, libjack-dev, libsoxr-dev, libmodplug-dev,
   libsndfile1-dev, libwavpack-dev, libpulse-dev, libavcodec-dev,
   libavformat-dev, libcdio-dev, libcdio-paranoia-dev, libcddb2-dev,
   libfaad-dev, libgme-dev, libopus-dev (>= 1.0.2), libopusfile-dev,
@@ -22,8 +22,8 @@ Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Suggests: qmmp-plugin-projectm, mplayer2, unzip, udisks2 [linux-any],
   hal [!linux-any]
-Replaces: libqmmp0 (<< 0.8), libqmmpui0 (<< 0.8), libqmmp-misc (<< 0.8)
-Breaks: libqmmp0 (<< 0.8), libqmmpui0 (<< 0.8), libqmmp-misc (<< 0.8)
+Replaces: libqmmp0 (<< 1.0), libqmmpui0 (<< 1.0), libqmmp-misc (<< 1.0)
+Breaks: libqmmp0 (<< 1.0), libqmmpui0 (<< 1.0), libqmmp-misc (<< 1.0)
 Description: feature-rich audio player with support of many formats
  Qmmp is feature-rich audio player with support of many formats.
  It is written in Qt.

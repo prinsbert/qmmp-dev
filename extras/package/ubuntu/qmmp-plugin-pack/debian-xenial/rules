@@ -26,6 +26,7 @@ override_dh_auto_configure:
 	dh_auto_configure -- -DCMAKE_INSTALL_PREFIX=/usr -DLIB_DIR=lib/qmmp \
 	 -DCMAKE_INSTALL_RPATH=/usr/lib/qmmp \
 	 -DCMAKE_BUILD_WITH_INSTALL_RPATH:BOOL=TRUE \
+	 -DUSE_SRC=FALSE \
 	 $(EXTRA_CMAKE_ARGS)
 
 override_dh_auto_build:

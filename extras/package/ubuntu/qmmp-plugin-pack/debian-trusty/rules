@@ -14,7 +14,7 @@ endif
 	dh $@
 
 override_dh_auto_configure:
-	cmake -DCMAKE_INSTALL_PREFIX=/usr
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DUSE_SRC=FALSE
 
 override_dh_auto_build:
 	dh_auto_build -- $(MAKE_AUX_FLAGS)
