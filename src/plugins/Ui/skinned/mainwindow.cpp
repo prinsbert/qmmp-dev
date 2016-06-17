@@ -62,10 +62,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     m_update = false;
 
 #ifdef QMMP_WS_X11
-    if(WindowSystem::netWindowManagerName().contains("Marco", Qt::CaseInsensitive) ||
-            WindowSystem::netWindowManagerName().contains("Metacity", Qt::CaseInsensitive) ||
-            WindowSystem::netWindowManagerName().contains("Mutter", Qt::CaseInsensitive) ||
-            WindowSystem::netWindowManagerName().contains("GNOME", Qt::CaseInsensitive))
+    QString wm_name = WindowSystem::netWindowManagerName();
+    if(wm_name.contains("Marco", Qt::CaseInsensitive) ||
+            wm_name.contains("Metacity", Qt::CaseInsensitive) ||
+            wm_name.contains("Mutter", Qt::CaseInsensitive) ||
+            wm_name.contains("GNOME", Qt::CaseInsensitive))
     {
         setWindowFlags(Qt::Window | Qt::FramelessWindowHint |
                        Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
@@ -88,7 +89,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     //user interface
     m_skin = new Skin(this);
-    resize(275 * m_skin->ratio(),116 * m_skin->ratio());
+    setFixedSize(275 * m_skin->ratio(),116 * m_skin->ratio());
+
     Dock *dock = new Dock(this);
     dock->setMainWidget(this);
     m_display = new MainDisplay(this);
