@@ -11,7 +11,7 @@ Description:
 
 Requirements:
 - Qt >= 4.6
-- qmmp 0.9.x
+- qmmp 0.10.x
 - taglib >= 1.7.0
 - libmpg123 >= 1.13.0 (Optional)
 - libxmp >= 4.2.0 (Optional)
