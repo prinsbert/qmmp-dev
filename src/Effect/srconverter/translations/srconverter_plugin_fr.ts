@@ -4,22 +4,22 @@
 <context>
     <name>EffectSRConverterFactory</name>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="30"/>
+        <location filename="../effectsrconverterfactory.cpp" line="32"/>
         <source>SRC Plugin</source>
         <translation>Greffon de conversion d&apos;échantillonnage</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="51"/>
+        <location filename="../effectsrconverterfactory.cpp" line="53"/>
         <source>About Sample Rate Converter Plugin</source>
         <translation>À propos du greffon de conversion d&apos;échantillonnage</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="52"/>
+        <location filename="../effectsrconverterfactory.cpp" line="54"/>
         <source>Qmmp Sample Rate Converter Plugin</source>
         <translation>Greffon de conversion d&apos;échantillonnage pour Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="53"/>
+        <location filename="../effectsrconverterfactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
