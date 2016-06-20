@@ -4,32 +4,32 @@
 <context>
     <name>DecoderWildMidiFactory</name>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="49"/>
+        <location filename="../decoderwildmidifactory.cpp" line="61"/>
         <source>WildMidi Plugin</source>
         <translation>Modul WildMidi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="51"/>
+        <location filename="../decoderwildmidifactory.cpp" line="66"/>
         <source>Midi Files</source>
         <translation>Soubory Midi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="105"/>
+        <location filename="../decoderwildmidifactory.cpp" line="120"/>
         <source>About WildMidi Audio Plugin</source>
         <translation>O modulu WildMidi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="106"/>
+        <location filename="../decoderwildmidifactory.cpp" line="121"/>
         <source>Qmmp WildMidi Audio Plugin</source>
         <translation>Modul Qmmp WildMidi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="107"/>
+        <location filename="../decoderwildmidifactory.cpp" line="122"/>
         <source>This plugin uses WildMidi library to play midi files</source>
         <translation>Tento modul využívá knihovnu WildMidi pro přehrávání Midi souborů</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="108"/>
+        <location filename="../decoderwildmidifactory.cpp" line="123"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Autor: Ilja Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

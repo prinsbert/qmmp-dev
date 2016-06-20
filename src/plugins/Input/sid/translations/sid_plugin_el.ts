@@ -4,32 +4,32 @@
 <context>
     <name>DecoderSIDFactory</name>
     <message>
-        <location filename="../decodersidfactory.cpp" line="69"/>
+        <location filename="../decodersidfactory.cpp" line="77"/>
         <source>SID Plugin</source>
         <translation>Πρόσθετο SID</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="71"/>
+        <location filename="../decodersidfactory.cpp" line="79"/>
         <source>SID Files</source>
         <translation>Αρχεία SID</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="125"/>
+        <location filename="../decodersidfactory.cpp" line="133"/>
         <source>About SID Audio Plugin</source>
         <translation>Σχετικά με το πρόσθετο ήχου SID</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="126"/>
+        <location filename="../decodersidfactory.cpp" line="134"/>
         <source>Qmmp SID Audio Plugin</source>
         <translation>Qmmp πρόσθετο ήχου SID</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="127"/>
+        <location filename="../decodersidfactory.cpp" line="135"/>
         <source>This plugin plays Commodore 64 music files using libsidplayfp library</source>
         <translation>Αυτό το πρόσθετο εκτελεί αρχεία μουσικής Commodore 64 χρησιμοποιώντας τη βιβλιοθήκη libsidplayfp</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="128"/>
+        <location filename="../decodersidfactory.cpp" line="136"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
