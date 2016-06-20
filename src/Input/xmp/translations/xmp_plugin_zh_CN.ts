@@ -104,7 +104,7 @@
     <message>
         <location filename="../settingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished"></translation>
+        <translation>三次样条</translation>
     </message>
 </context>
 <context>
@@ -122,47 +122,47 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Volume scale</source>
-        <translation type="unfinished"></translation>
+        <translation>音量范围</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Number of patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>样式数量</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Number of tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>音轨数量</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Tracks per pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>每种样式的音轨</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Number of instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>乐器数量</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Number of samples</source>
-        <translation type="unfinished"></translation>
+        <translation>样品数量</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="61"/>
         <source>Initial speed</source>
-        <translation type="unfinished"></translation>
+        <translation>初始速度</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="62"/>
         <source>Initial BPM</source>
-        <translation type="unfinished"></translation>
+        <translation>初始BPM（每分钟拍数）</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="63"/>
         <source>Module length in patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>样式中的模长</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="82"/>
