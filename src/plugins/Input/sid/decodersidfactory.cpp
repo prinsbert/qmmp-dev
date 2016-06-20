@@ -22,6 +22,7 @@
 #include <QTranslator>
 #include <QRegExp>
 #include <QMessageBox>
+#include <QFile>
 #include <sidplayfp/SidTune.h>
 #include <sidplayfp/SidTuneInfo.h>
 #include "decoder_sid.h"
@@ -46,6 +47,13 @@ DecoderSIDFactory::DecoderSIDFactory()
 
 bool DecoderSIDFactory::supports(const QString &source) const
 {
+    if(source.endsWith(".mus", Qt::CaseInsensitive))
+    {
+        QFile file(source);
+        file.open(QIODevice::ReadOnly);
+        return canDecode(&file);
+    }
+
     foreach(QString filter, properties().filters)
     {
         QRegExp regexp(filter, Qt::CaseInsensitive, QRegExp::Wildcard);
