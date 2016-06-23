@@ -83,7 +83,7 @@ create_distr ()
   find . -type f -name *.a -delete
   find . -type d -name ".svn" | xargs rm -rf
   #Qt libs
-  for LIB_NAME in QtCore4.dll QtGui4.dll QtNetwork4.dll QtOpenGL4.dll
+  for LIB_NAME in QtCore4.dll QtGui4.dll QtNetwork4.dll QtOpenGL4.dll QtMultimedia4.dll
   do
     cp -v ${QT4_PATH}/bin/${LIB_NAME} ./
   done
@@ -105,7 +105,7 @@ create_distr ()
     cp -v ${MINGW32_PATH}/bin/${LIB_NAME} ./
   done
   #third party libs   
-  for LIB_NAME in avcodec-56.dll avformat-56.dll avutil-54.dll glew32.dll libFLAC-8.dll libcddb-2.dll libcdio-13.dll libcdio_cdda-1.dll
+  for LIB_NAME in avcodec-57.dll avformat-57.dll avutil-55.dll glew32.dll libFLAC-8.dll libcddb-2.dll libcdio-13.dll libcdio_cdda-1.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
