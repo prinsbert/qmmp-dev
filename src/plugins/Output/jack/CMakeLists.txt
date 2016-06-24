@@ -12,7 +12,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
-# libjack and samplerate
+# libjack and libsoxr
 pkg_check_modules(JACK jack>=1.9.8 soxr)
 
 IF(NOT JACK_FOUND)
