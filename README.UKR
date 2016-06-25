@@ -67,7 +67,7 @@ Qmmp - Qt-based multimedia player
 - сканер ReplayGain
 
 Вимоги:
-- Qt >= 4.6
+- Qt >= 5.4 (qtbase, qtx11extras та qttools для компіляції)
 - tar, unzip, bzip2, gzip
 - libmad
 - libvorbis
@@ -117,17 +117,20 @@ cmake ./ -DUSE_JACK:BOOL=FALSE
 Доступні опції:
 - USE_CURL, USE_MMS (транспортні модулі);
 - USE_MAD, USE_FLAC, USE_VORBIS, USE_MPC, USE_MODPLUG, USE_SNDFILE, USE_WAVPACK, USE_FFMPEG, USE_AAC, USE_CUE,
-  USE_MPLAYER, USE_CDA, USE_MIDI, USE_GME, USE_FFMPEG_LEGACY, USE_OPUS (декодери);
-- USE_ALSA, USE_OSS, USE_JACK, USE_PULSE, USE_NULL, USE_OSS4, USE_WAVEOUT, USE_DSOUND (модулі виведення);
-- USE_SRC, USE_BS2B, USE_LADSPA, USE_CROSSFADE, USE_STEREO (ефекти);
+  USE_MPLAYER, USE_CDA, USE_MIDI, USE_GME, USE_OPUS (декодери);
+- USE_ALSA, USE_OSS, USE_JACK, USE_PULSE, USE_NULL, USE_OSS4, USE_WAVEOUT, USE_DSOUND, USE_QTMULTIMEDIA,
+  USE_WASAPI (модулі  виведення);
+- USE_SOXR, USE_BS2B, USE_LADSPA, USE_CROSSFADE, USE_STEREO (ефекти);
 - USE_ANALYZER, USE_PROJECTM (візуалізація);
 - USE_MPRIS, USE_SCROBBLER, USE_STATICON, USE_NOTIFIER, USE_LYRICS, USE_HAL, USE_HOTKEY, USE_FILEOPS, USE_COVER,
-  USE_KDENOTIFY, USE_UDISKS2, USE_UDISKS, USE_CONVERTER, USE_RGSCAN, USE_TRACKCHANGE, USE_COPYPASTE,
+  USE_KDENOTIFY, USE_UDISKS2, USE_CONVERTER, USE_RGSCAN, USE_TRACKCHANGE, USE_COPYPASTE,
   USE_GNOMEHOTKEY (модулі загального призначення);
 - USE_QMMP_DIALOG (файловий діалог);
 - USE_ENCA (автоматичне визначення кодування);
 - USE_SKINNED (стандартний інтерфейс користувача);
+- USE_QSUI (простий інтерфейс);
 - USE_DIR_ASSOC (прив'язка до mime-типу inode/directory);
+- QMMP_DEFAULT_OUTPUT (модуль виведення за замовчанням, приклад використання: -DQMMP_DEFAULT_OUTPUT=pulse).
 
 Також ви можете використовувати ccmake для зміни конфігурації модулів.
 За замовчуванням програма буде встановлена в /usr/local. Ви можете змінити цей шлях командою:
