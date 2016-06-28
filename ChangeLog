@@ -1188,3 +1188,9 @@ Version 1.1.0
 * updated Portuguese translation (Sérgio Marques)
 * updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
+
+Version 1.1.1
+* added ffmpeg 3.1 support
+* fixed qt5.7 support
+* fixed Russian translation
+* updated Ukrainian translation (Gennadi Motsyo)
