@@ -171,11 +171,20 @@ FunctionEnd
 
 ;Installer Sections
 
+Section /o "Portable configuration" PORTABLE
+SectionEnd
+
 Section "-General Section"
 
   SetOutPath "$INSTDIR"
   
   RMDir /r "$INSTDIR"
+  
+  ${If} ${SectionIsSelected} ${PORTABLE}
+     FileOpen $0 "qmmp_portable.txt" w
+     FileWrite $0 "Remove this file to disable portable mode"
+     FileClose $0
+  ${EndIf}
   
   File *.txt qmmp.exe unzip.exe *.dll *.conf
 
@@ -197,26 +206,28 @@ Section "-General Section"
   ;WriteRegStr HKCU "Software\Modern UI Test" "" $INSTDIR
   
   ;Create uninstaller
-  WriteUninstaller "$INSTDIR\Uninstall.exe"
+  ${IfNot} ${SectionIsSelected} ${PORTABLE}
+	WriteUninstaller "$INSTDIR\Uninstall.exe"
 
-  ; Write the uninstall keys for Windows
-  WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayName" "Qt-based Multimedia Player"
-  WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "UninstallString" "$INSTDIR\Uninstall.exe"
-  WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayIcon" "$INSTDIR\qmmp.exe,0"
-  WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayVersion" "${QMMP_VERSION}"
-  WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "Publisher" "Qmmp Development Team"
-  WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "InstallLocation" "$INSTDIR"
-  WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLInfoAbout" "http://qmmp.ylsoftware.com"
-  WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLUpdateInfo" "http://qmmp.ylsoftware.com"  
-  WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "NoModify" 1
-  WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "NoRepair" 1
+	; Write the uninstall keys for Windows
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayName" "Qt-based Multimedia Player"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "UninstallString" "$INSTDIR\Uninstall.exe"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayIcon" "$INSTDIR\qmmp.exe,0"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayVersion" "${QMMP_VERSION}"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "Publisher" "Qmmp Development Team"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "InstallLocation" "$INSTDIR"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLInfoAbout" "http://qmmp.ylsoftware.com"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLUpdateInfo" "http://qmmp.ylsoftware.com"  
+	WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "NoModify" 1
+	WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "NoRepair" 1
   
-  ;Default Programs Registration (Vista & later)
+	;Default Programs Registration (Vista & later)
 
-  ${If} ${AtLeastWinVista}
-    Call RegisterDefaultPrograms
+	${If} ${AtLeastWinVista}
+		Call RegisterDefaultPrograms
+	${EndIf}
   ${EndIf}
-
+	
 SectionEnd
 
 Section "Extra skins"
@@ -229,14 +240,27 @@ Section /o "TagLib with RusXMMS patch"
   File rusxmms\*.dll
 SectionEnd
 
-Section "Start Menu Shortcuts"
-
-  SetShellVarContext all
-  CreateDirectory "$SMPROGRAMS\Qt-based Multimedia Player"
-  CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Qmmp.lnk" "$INSTDIR\qmmp.exe" "" "$INSTDIR\qmmp.exe" 0
-  
+Section "Start Menu Shortcuts" SHORTCUTS
+  ${IfNot} ${SectionIsSelected} ${PORTABLE}
+    SetShellVarContext all
+    CreateDirectory "$SMPROGRAMS\Qt-based Multimedia Player"
+    CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
+    CreateShortCut "$SMPROGRAMS\Qt-based Multimedia Player\Qmmp.lnk" "$INSTDIR\qmmp.exe" "" "$INSTDIR\qmmp.exe" 0
+  ${EndIf}
 SectionEnd
+
+Function .onSelChange
+  SectionGetFlags ${SHORTCUTS} $0
+  ${If} ${SectionIsSelected} ${PORTABLE}
+    IntOp $0 $0 | ${SF_RO}
+    SectionSetFlags ${SHORTCUTS} $0
+  ${Else}
+    IntOp $1 ${SF_RO} ~ 
+    IntOp $0 $0 & $1
+    SectionSetFlags ${SHORTCUTS} $0     
+  ${EndIf}
+FunctionEnd
+
 
 ;--------------------------------
 ;Descriptions
@@ -253,23 +277,21 @@ SectionEnd
 ;Uninstaller Section
 
 Section "Uninstall"
+    SetShellVarContext all
 
-  SetShellVarContext all
+    ; Remove file associations
+    NsExec::Exec '"$INSTDIR\qmmp.exe" --uninstall'
 
-  ; Remove file associations
-  NsExec::Exec '"$INSTDIR\qmmp.exe" --uninstall'
+    ; Remove directories used
+    RMDir /r "$SMPROGRAMS\Qt-based Multimedia Player"
+    RMDir /r "$INSTDIR"
 
-  ; Remove directories used
-  RMDir /r "$SMPROGRAMS\Qt-based Multimedia Player"
-  RMDir /r "$INSTDIR"
+    Delete "$INSTDIR\Uninstall.exe"
 
-  Delete "$INSTDIR\Uninstall.exe"
-
-  ; Remove registry keys
-  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
-  DeleteRegKey HKLM "SOFTWARE\Qmmp"
-  DeleteRegKey HKLM "${QMMP_DEF_PROGS_KEY}"
-  DeleteRegKey HKCR "QmmpFileAudio"
-  DeleteRegValue HKLM "Software\RegisteredApplications" "Qmmp"
-
+    ; Remove registry keys
+    DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
+    DeleteRegKey HKLM "SOFTWARE\Qmmp"
+    DeleteRegKey HKLM "${QMMP_DEF_PROGS_KEY}"
+    DeleteRegKey HKCR "QmmpFileAudio"
+    DeleteRegValue HKLM "Software\RegisteredApplications" "Qmmp"
 SectionEnd
