@@ -20,7 +20,7 @@ Homepage: http://qmmp.ylsoftware.com
 Package: qmmp
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, libqmmp0 (>= ${binary:Version}),
-  libqmmpui0 (>= ${binary:Version}), libqmmp-misc (>= ${binary:Version})
+  libqmmpui0 (>= ${binary:Version}), libqmmp-misc (>= ${binary:Version}),  libtag1-vanilla (>= 1.10)
 Suggests: qmmp-plugin-projectm, unzip
 Description: feature-rich audio player with support of many formats
  Qmmp is feature-rich audio player with support of many formats.

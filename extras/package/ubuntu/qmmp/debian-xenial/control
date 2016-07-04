@@ -18,7 +18,7 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/qmmp.git
 
 Package: qmmp-qt4
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, libtag1v5 (>= 1.10)
 Suggests: qmmp-qt4-plugin-projectm, mplayer2, unzip, udisks2 [linux-any],
   hal [!linux-any]
 Replaces: libqmmp0 (<< 0.9), libqmmpui0 (<< 0.9), libqmmp-misc (<< 0.9)
