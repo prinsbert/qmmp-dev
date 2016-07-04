@@ -1,3 +1,9 @@
+qmmp-plugin-pack-qt4 (0.10.0-1ubuntu1~xenial0) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Tue, 21 Jun 2016 22:27:55 +0300
+
 qmmp-plugin-pack-qt4 (0.9.5-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
