@@ -1191,6 +1191,7 @@ Version 1.1.0
 
 Version 1.1.1
 * added ffmpeg 3.1 support
+* added portable mode for Windows
 * fixed qt5.7 support
 * fixed Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
