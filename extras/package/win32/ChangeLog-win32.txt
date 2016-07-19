@@ -162,3 +162,7 @@ LEGEND
 0.10.1
 [*] qmmp-0.10.1
 [!] portable mode
+
+0.10.2
+[*] qmmp-0.10.2
+[*] opus-1.1.3
