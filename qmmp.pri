@@ -8,7 +8,7 @@ RCC_DIR=./.build/rcc
 
 #Version
 
-QMMP_VERSION = 0.10.2
+QMMP_VERSION = 0.10.3
 
 #Comment/uncomment this if you want to change plugins list
 
