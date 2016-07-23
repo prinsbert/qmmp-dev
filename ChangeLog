@@ -1196,3 +1196,7 @@ Version 1.1.1
 * fixed Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
 * updated Portuguese translation (Sérgio Marques)
+
+Version 1.1.2
+* fixed path to equalizer presets file in the qsui plugin (Ryota Shimamoto)
+* fixed buffer overflow
