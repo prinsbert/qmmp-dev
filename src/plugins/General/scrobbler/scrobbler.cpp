@@ -322,7 +322,7 @@ void Scrobbler::submit()
     }
     data.append(SECRET);
     body.addQueryItem("api_sig", QCryptographicHash::hash(data, QCryptographicHash::Md5).toHex());
-    QByteArray bodyData = body.query(QUrl::FullyDecoded).toUtf8();
+    QByteArray bodyData = body.query(QUrl::FullyEncoded).toUtf8();
     bodyData.replace("+", QUrl::toPercentEncoding("+"));
 
     QNetworkRequest request(url);
@@ -371,7 +371,7 @@ void Scrobbler::sendNotification(const SongInfo &info)
     }
     data.append(SECRET);
     body.addQueryItem("api_sig", QCryptographicHash::hash(data, QCryptographicHash::Md5).toHex());
-    QByteArray bodyData = body.query(QUrl::FullyDecoded).toUtf8();
+    QByteArray bodyData = body.query(QUrl::FullyEncoded).toUtf8();
     bodyData.replace("+", QUrl::toPercentEncoding("+"));
 
     QNetworkRequest request(url);
@@ -480,7 +480,7 @@ void ScrobblerAuth::checkSession(const QString &session)
     }
     data.append(SECRET);
     body.addQueryItem("api_sig", QCryptographicHash::hash(data, QCryptographicHash::Md5).toHex());
-    QByteArray bodyData = body.query(QUrl::FullyDecoded).toUtf8();
+    QByteArray bodyData = body.query(QUrl::FullyEncoded).toUtf8();
     bodyData.replace("+", QUrl::toPercentEncoding("+"));
 
     QNetworkRequest request(url);
