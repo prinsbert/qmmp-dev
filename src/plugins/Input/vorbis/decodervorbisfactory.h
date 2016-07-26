@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -42,7 +42,6 @@ Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.DecoderFactoryInterface.1.0")
 Q_INTERFACES(DecoderFactory)
 
 public:
-    bool supports(const QString &source) const;
     bool canDecode(QIODevice *input) const;
     const DecoderProperties properties() const;
     Decoder *create(const QString &path, QIODevice *input);

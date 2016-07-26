@@ -29,11 +29,6 @@
 #include "decoderopusfactory.h"
 
 // DecoderOpusFactory
-bool DecoderOpusFactory::supports(const QString &source) const
-{
-    return source.right(5).toLower() == ".opus";
-}
-
 bool DecoderOpusFactory::canDecode(QIODevice *input) const
 {
     char buf[36];

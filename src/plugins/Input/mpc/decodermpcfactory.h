@@ -41,7 +41,6 @@ Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.DecoderFactoryInterface.1.0")
 Q_INTERFACES(DecoderFactory)
 
 public:
-    bool supports(const QString &source) const;
     bool canDecode(QIODevice *input) const;
     const DecoderProperties properties() const;
     Decoder *create(const QString &url, QIODevice *i);
