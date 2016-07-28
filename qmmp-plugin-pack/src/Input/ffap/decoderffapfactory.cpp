@@ -36,11 +36,6 @@
 
 // DecoderFFapFactory
 
-bool DecoderFFapFactory::supports(const QString &source) const
-{
-    return (source.right(4).toLower() == ".ape");
-}
-
 bool DecoderFFapFactory::canDecode(QIODevice *input) const
 {
     char buf[3];

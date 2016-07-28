@@ -7,8 +7,8 @@ OBJECTS_DIR=./.build/obj
 RCC_DIR=./.build/rcc
 
 unix{
-INCLUDEPATH += /home/user/qmmp-0.10/include
-QMAKE_LIBDIR += /home/user/qmmp-0.10/lib
+INCLUDEPATH += /home/user/qmmp-0.11/include
+QMAKE_LIBDIR += /home/user/qmmp-0.11/lib
 INCLUDEPATH += /usr/include
 INCLUDEPATH += /usr/local/include
 }else{
