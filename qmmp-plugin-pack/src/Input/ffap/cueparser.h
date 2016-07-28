@@ -56,7 +56,6 @@ private:
         QMap<Qmmp::ReplayGainKey, double> replayGain;
     };
     QList <CUETrack * > m_tracks;
-    bool m_dirty;
     QStringList splitLine(const QString &line);
     qint64 getLength(const QString &str);
     QString m_filePath;
