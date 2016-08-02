@@ -158,17 +158,6 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
             qWarning("Decoder: file open error: %s", qPrintable(file.errorString()));
             return 0;
         }
-        QByteArray array = file.read(8192);
-        QBuffer buffer(&array);
-        buffer.open(QIODevice::ReadOnly);
-
-        //try last factory with stream based input or local files support
-        if (fact && isEnabled(fact) && (!fact->properties().noInput ||
-                                        fact->properties().protocols.contains("file")))
-        {
-            if(fact->canDecode(&buffer))
-                return fact;
-        }
 
         foreach(QmmpPluginCache *item, *m_cache)
         {
@@ -180,7 +169,7 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
             if(fact && fact->properties().noInput && !fact->properties().protocols.contains("file"))
                 continue;
 
-            if (fact->canDecode(&buffer))
+            if (fact->canDecode(&file))
                 return fact;
         }
         return 0;
@@ -220,13 +209,10 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
             qWarning("Decoder: file open error: %s", qPrintable(file.errorString()));
             return 0;
         }
-        QByteArray array = file.read(8192);
-        QBuffer buffer(&array);
-        buffer.open(QIODevice::ReadOnly);
 
         foreach (fact, filered)
         {
-            if(fact->canDecode(&buffer))
+            if(fact->canDecode(&file))
                 return fact;
         }
         return 0;
