@@ -39,17 +39,17 @@
     <message>
         <location filename="../settingsdialog.ui" line="39"/>
         <source>Interpolation Engine:</source>
-        <translation>Interpolation:</translation>
+        <translation>Interpolationseinheit:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="47"/>
         <source>Best Sinc Interpolation</source>
-        <translation>Sinc (hohe Qualität)</translation>
+        <translation>Beste Sinc-Interpolation</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>
         <source>Medium Sinc Interpolation</source>
-        <translation>Sinc (mittlere Qualität)</translation>
+        <translation>Mittlere Sinc-Interpolation</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="57"/>
@@ -59,12 +59,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="62"/>
         <source>ZOH Interpolation</source>
-        <translation>Zero-Order-Hold (ZOH)</translation>
+        <translation>ZOH-Interpolation</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="67"/>
         <source>Linear Interpolation</source>
-        <translation>Linear</translation>
+        <translation>Lineare Interpolation</translation>
     </message>
 </context>
 </TS>
