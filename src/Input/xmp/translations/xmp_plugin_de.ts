@@ -1,33 +1,35 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="de">
 <context>
     <name>DecoderXmpFactory</name>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="53"/>
+        <location filename="../decoderxmpfactory.cpp" line="52"/>
         <source>XMP Plugin</source>
         <translation>XMP-Modul</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="67"/>
+        <location filename="../decoderxmpfactory.cpp" line="66"/>
         <source>Module Files</source>
         <translation>Moduldateien</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="122"/>
+        <location filename="../decoderxmpfactory.cpp" line="121"/>
         <source>About XMP Audio Plugin</source>
         <translation>Über XMP-Audiomodul</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="123"/>
+        <location filename="../decoderxmpfactory.cpp" line="122"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>Qmmp XMP-Audiomodul</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="124"/>
+        <location filename="../decoderxmpfactory.cpp" line="123"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="125"/>
+        <location filename="../decoderxmpfactory.cpp" line="124"/>
         <source>Compiled against libxmp-%1</source>
         <translation>Kompiliert gegen libxmp-%1</translation>
     </message>
