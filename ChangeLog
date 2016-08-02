@@ -1184,3 +1184,7 @@ Version 0.10.1
 Version 0.10.2
 * fixed path to equalizer presets file in the qsui plugin (Ryota Shimamoto)
 * fixed buffer overflow
+
+Version 0.10.3
+* fixed random stop bug
+* fixed duration calculation in the mpeg plugin
