@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="50"/>
+        <location filename="../decoderffapfactory.cpp" line="45"/>
         <source>FFap Plugin</source>
         <translation>FFap-Modul</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="52"/>
+        <location filename="../decoderffapfactory.cpp" line="47"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation>Monkey’s-Audio-Dateien</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="156"/>
+        <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>About FFap Audio Plugin</source>
         <translation>Über FFap-Audio-Modul</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="157"/>
+        <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Qmmp FFap-Audio-Modul</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="158"/>
+        <location filename="../decoderffapfactory.cpp" line="153"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>Dieses Modul fügt Unterstützung für Monkey’s Audio (APE) hinzu</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="159"/>
+        <location filename="../decoderffapfactory.cpp" line="154"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="160"/>
+        <location filename="../decoderffapfactory.cpp" line="155"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>Basiert auf Code von deadbeef, FFmpeg und Rockbox</translation>
     </message>

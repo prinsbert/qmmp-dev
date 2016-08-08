@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="50"/>
+        <location filename="../decoderffapfactory.cpp" line="45"/>
         <source>FFap Plugin</source>
         <translation>FFap プラグイン</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="52"/>
+        <location filename="../decoderffapfactory.cpp" line="47"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation>Monkey&apos;s Audio ファイル</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="156"/>
+        <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>About FFap Audio Plugin</source>
         <translation>FFap 音響プラグインについて</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="157"/>
+        <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>QMMP FFap 音響プラグイン</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="158"/>
+        <location filename="../decoderffapfactory.cpp" line="153"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>このプラグインは Monkey&apos;s Audio (APE) をサポートします</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="159"/>
+        <location filename="../decoderffapfactory.cpp" line="154"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="160"/>
+        <location filename="../decoderffapfactory.cpp" line="155"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>deadbeef と FFmpeg と rockbox のコードを基に作成</translation>
     </message>

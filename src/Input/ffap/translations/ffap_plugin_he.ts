@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="50"/>
+        <location filename="../decoderffapfactory.cpp" line="45"/>
         <source>FFap Plugin</source>
         <translation>תוסף FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="52"/>
+        <location filename="../decoderffapfactory.cpp" line="47"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation>קבצי Monkey&apos;s Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="156"/>
+        <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>About FFap Audio Plugin</source>
         <translation>אודות תוסף שמע FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="157"/>
+        <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>תוסף שמע FFap של Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="158"/>
+        <location filename="../decoderffapfactory.cpp" line="153"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>תוסף זה מספק תמיכה לקבצי Monkey&apos;s Audio ‏(APE)</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="159"/>
+        <location filename="../decoderffapfactory.cpp" line="154"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>חובר על ידי: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;‎</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="160"/>
+        <location filename="../decoderffapfactory.cpp" line="155"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>מבוסס על קוד מתוך deadbeef, FFmpeg וגם rockbox</translation>
     </message>
