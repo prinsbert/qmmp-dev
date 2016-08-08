@@ -4,32 +4,32 @@
 <context>
     <name>DecoderXmpFactory</name>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="53"/>
+        <location filename="../decoderxmpfactory.cpp" line="42"/>
         <source>XMP Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="67"/>
+        <location filename="../decoderxmpfactory.cpp" line="56"/>
         <source>Module Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="122"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>About XMP Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="123"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="124"/>
+        <location filename="../decoderxmpfactory.cpp" line="113"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="125"/>
+        <location filename="../decoderxmpfactory.cpp" line="114"/>
         <source>Compiled against libxmp-%1</source>
         <translation type="unfinished"></translation>
     </message>

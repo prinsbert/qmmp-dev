@@ -4,33 +4,33 @@
 <context>
     <name>DecoderMPG123Factory</name>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="114"/>
+        <location filename="../decodermpg123factory.cpp" line="97"/>
         <source>MPG123 Plugin</source>
         <translation>MPG123 Įskiepis</translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="117"/>
+        <location filename="../decodermpg123factory.cpp" line="100"/>
         <source>MPEG Files</source>
         <translation>MPEG bylos</translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="274"/>
+        <location filename="../decodermpg123factory.cpp" line="257"/>
         <source>About MPG123 Audio Plugin</source>
         <translation>Apie MPG123 Audio įskiepį </translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="275"/>
+        <location filename="../decodermpg123factory.cpp" line="258"/>
         <source>Qmmp MPG123 Audio Plugin</source>
         <translation>Qmmp MPG123 Audio įskiepis</translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="276"/>
+        <location filename="../decodermpg123factory.cpp" line="259"/>
         <source>This plugin provides MPEG v1/2 layer1/2/3 support
 with use of libmpg123 library</source>
         <translation type="unfinished">Šis įskiepis įgalina MPEG v1/2 layer1/2/3 palaikymą naudojant libmpg123 biblioteką  </translation>
     </message>
     <message>
-        <location filename="../decodermpg123factory.cpp" line="278"/>
+        <location filename="../decodermpg123factory.cpp" line="261"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
