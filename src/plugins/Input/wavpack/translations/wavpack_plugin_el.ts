@@ -4,32 +4,32 @@
 <context>
     <name>DecoderWavPackFactory</name>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="44"/>
+        <location filename="../decoderwavpackfactory.cpp" line="38"/>
         <source>WavPack Plugin</source>
         <translation>Πρόσθετο WavPack</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="46"/>
+        <location filename="../decoderwavpackfactory.cpp" line="40"/>
         <source>WavPack Files</source>
         <translation>Αρχεία WavPack</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="160"/>
+        <location filename="../decoderwavpackfactory.cpp" line="154"/>
         <source>About WavPack Audio Plugin</source>
         <translation>Σχετικά με το πρόσθετο ήχου WavPack</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="161"/>
+        <location filename="../decoderwavpackfactory.cpp" line="155"/>
         <source>Qmmp WavPack Audio Plugin</source>
         <translation>Qmmp πρόσθετο ήχου WavPack</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="162"/>
+        <location filename="../decoderwavpackfactory.cpp" line="156"/>
         <source>WavPack library version:</source>
         <translation>Έκδοση βιβλιοθήκης WavPack:</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="164"/>
+        <location filename="../decoderwavpackfactory.cpp" line="158"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

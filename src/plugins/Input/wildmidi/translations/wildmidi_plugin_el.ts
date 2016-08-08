@@ -4,32 +4,32 @@
 <context>
     <name>DecoderWildMidiFactory</name>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="61"/>
+        <location filename="../decoderwildmidifactory.cpp" line="50"/>
         <source>WildMidi Plugin</source>
         <translation>Πρόσθετο WildMidi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="66"/>
+        <location filename="../decoderwildmidifactory.cpp" line="55"/>
         <source>Midi Files</source>
         <translation>Αρχεία Midi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="120"/>
+        <location filename="../decoderwildmidifactory.cpp" line="109"/>
         <source>About WildMidi Audio Plugin</source>
         <translation>Σχετικά με το πρόσθετο ήχου WildMidi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="121"/>
+        <location filename="../decoderwildmidifactory.cpp" line="110"/>
         <source>Qmmp WildMidi Audio Plugin</source>
         <translation>Qmmp πρόσθετο ήχου WildMidi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="122"/>
+        <location filename="../decoderwildmidifactory.cpp" line="111"/>
         <source>This plugin uses WildMidi library to play midi files</source>
         <translation>Αυτό το πρόσθετο χρησιμοποιεί τη βιβλιοθήκη WildMidi για την αναπαραγωγή αρχείων midi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="123"/>
+        <location filename="../decoderwildmidifactory.cpp" line="112"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

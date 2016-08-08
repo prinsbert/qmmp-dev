@@ -4,32 +4,32 @@
 <context>
     <name>DecoderVorbisFactory</name>
     <message>
-        <location filename="../decodervorbisfactory.cpp" line="52"/>
+        <location filename="../decodervorbisfactory.cpp" line="46"/>
         <source>Ogg Vorbis Plugin</source>
         <translation>Ogg Vorbis įskiepis</translation>
     </message>
     <message>
-        <location filename="../decodervorbisfactory.cpp" line="55"/>
+        <location filename="../decodervorbisfactory.cpp" line="49"/>
         <source>Ogg Vorbis Files</source>
         <translation>Ogg Vorbis bylos</translation>
     </message>
     <message>
-        <location filename="../decodervorbisfactory.cpp" line="130"/>
+        <location filename="../decodervorbisfactory.cpp" line="124"/>
         <source>About Ogg Vorbis Audio Plugin</source>
         <translation>Apie Ogg Vorbis audio įskiepį</translation>
     </message>
     <message>
-        <location filename="../decodervorbisfactory.cpp" line="131"/>
+        <location filename="../decodervorbisfactory.cpp" line="125"/>
         <source>Qmmp Ogg Vorbis Audio Plugin</source>
         <translation>Qmmp Ogg Vorbis audio įskiepis</translation>
     </message>
     <message>
-        <location filename="../decodervorbisfactory.cpp" line="132"/>
+        <location filename="../decodervorbisfactory.cpp" line="126"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodervorbisfactory.cpp" line="133"/>
+        <location filename="../decodervorbisfactory.cpp" line="127"/>
         <source>Source code based on mq3 project</source>
         <translation>Išvesties kodas sukurtas mq3 pagrindu</translation>
     </message>

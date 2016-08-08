@@ -4,32 +4,32 @@
 <context>
     <name>DecoderSIDFactory</name>
     <message>
-        <location filename="../decodersidfactory.cpp" line="77"/>
+        <location filename="../decodersidfactory.cpp" line="59"/>
         <source>SID Plugin</source>
         <translation>SID įskiepis</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="79"/>
+        <location filename="../decodersidfactory.cpp" line="61"/>
         <source>SID Files</source>
         <translation>SID bylos</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="133"/>
+        <location filename="../decodersidfactory.cpp" line="115"/>
         <source>About SID Audio Plugin</source>
         <translation>Apie SID Audio įskiepį</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="134"/>
+        <location filename="../decodersidfactory.cpp" line="116"/>
         <source>Qmmp SID Audio Plugin</source>
         <translation>Qmmp SID audio įskiepis</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="135"/>
+        <location filename="../decodersidfactory.cpp" line="117"/>
         <source>This plugin plays Commodore 64 music files using libsidplayfp library</source>
         <translation>Šis įskiepis groja Commodore 64 muzikos bylas, naudojant libsidplayfp biblioteką. </translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="136"/>
+        <location filename="../decodersidfactory.cpp" line="118"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

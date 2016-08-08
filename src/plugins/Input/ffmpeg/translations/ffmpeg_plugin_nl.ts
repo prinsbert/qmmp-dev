@@ -4,32 +4,32 @@
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="232"/>
+        <location filename="../decoderffmpegfactory.cpp" line="221"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>Over de FFmpeg Audio Module</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="233"/>
+        <location filename="../decoderffmpegfactory.cpp" line="222"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>FFmpeg Audio Module voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="234"/>
+        <location filename="../decoderffmpegfactory.cpp" line="223"/>
         <source>Compiled against:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="247"/>
+        <location filename="../decoderffmpegfactory.cpp" line="236"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="123"/>
+        <location filename="../decoderffmpegfactory.cpp" line="112"/>
         <source>FFmpeg Plugin</source>
         <translation>FFmpeg Module</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="125"/>
+        <location filename="../decoderffmpegfactory.cpp" line="114"/>
         <source>FFmpeg Formats</source>
         <translation>FFmpeg Formaat</translation>
     </message>
@@ -62,17 +62,17 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="64"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="72"/>
         <source>Sample rate</source>
         <translation>Sample frequentie</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="64"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="72"/>
         <source>Hz</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="65"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="73"/>
         <source>Channels</source>
         <translation>Kanalen</translation>
     </message>

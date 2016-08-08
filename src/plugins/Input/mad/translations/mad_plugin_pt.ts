@@ -4,37 +4,37 @@
 <context>
     <name>DecoderMADFactory</name>
     <message>
-        <location filename="../decodermadfactory.cpp" line="104"/>
+        <location filename="../decodermadfactory.cpp" line="113"/>
         <source>MPEG Plugin</source>
         <translation>Suplemento MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="107"/>
+        <location filename="../decodermadfactory.cpp" line="116"/>
         <source>MPEG Files</source>
         <translation>Ficheiros MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="259"/>
+        <location filename="../decodermadfactory.cpp" line="268"/>
         <source>About MPEG Audio Plugin</source>
         <translation>Sobre o suplemento MPEG Audio</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="260"/>
+        <location filename="../decodermadfactory.cpp" line="269"/>
         <source>Qmmp MPEG Audio Plugin</source>
         <translation>Suplemento Qmmp MPEG Audio</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="261"/>
+        <location filename="../decodermadfactory.cpp" line="270"/>
         <source>Compiled against libmad version:</source>
         <translation>Compilado com a versão libmad:</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="265"/>
+        <location filename="../decodermadfactory.cpp" line="274"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="266"/>
+        <location filename="../decodermadfactory.cpp" line="275"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Baseado no código fonte dos projetos mq3 e madplay</translation>
     </message>
