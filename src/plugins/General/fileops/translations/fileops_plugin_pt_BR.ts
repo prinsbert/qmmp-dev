@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt_BR" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="pt_BR">
 <context>
     <name>FileOps</name>
     <message>
@@ -21,7 +23,10 @@
     <message numerus="yes">
         <location filename="../fileops.cpp" line="137"/>
         <source>Are you sure you want to move %n file(s)?</source>
-        <translation><numerusform>Tem certeza que deseja mover %n arquivo(s)?</numerusform><numerusform>Tem certeza que deseja mover %n arquivo(s)?</numerusform></translation>
+        <translation>
+            <numerusform>Tem certeza que deseja mover %n arquivo(s)?</numerusform>
+            <numerusform>Tem certeza que deseja mover %n arquivo(s)?</numerusform>
+        </translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="153"/>
@@ -57,7 +62,10 @@
     <message numerus="yes">
         <location filename="../fileops.cpp" line="115"/>
         <source>Are you sure you want to remove %n file(s) from disk?</source>
-        <translation><numerusform>Tem certeza que quer apagar %n arquivo(s) do disco?</numerusform><numerusform>Tem certeza que quer apagar %n arquivo(s) do disco?</numerusform></translation>
+        <translation>
+            <numerusform>Tem certeza que quer apagar %n arquivo(s) do disco?</numerusform>
+            <numerusform>Tem certeza que quer apagar %n arquivo(s) do disco?</numerusform>
+        </translation>
     </message>
 </context>
 <context>
