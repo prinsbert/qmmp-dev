@@ -62,17 +62,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="64"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="72"/>
         <source>Sample rate</source>
         <translation>Próbkowanie</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="64"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="72"/>
         <source>Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="65"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="73"/>
         <source>Channels</source>
         <translation>Kanały</translation>
     </message>

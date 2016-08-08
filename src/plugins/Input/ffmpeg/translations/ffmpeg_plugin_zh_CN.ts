@@ -62,17 +62,17 @@
         <translation>千比特每秒</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="64"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="72"/>
         <source>Sample rate</source>
         <translation>取样率</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="64"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="72"/>
         <source>Hz</source>
         <translation>赫兹</translation>
     </message>
     <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="65"/>
+        <location filename="../ffmpegmetadatamodel.cpp" line="73"/>
         <source>Channels</source>
         <translation>声音通道</translation>
     </message>

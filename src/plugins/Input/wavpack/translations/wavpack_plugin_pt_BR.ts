@@ -6,32 +6,32 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="44"/>
         <source>WavPack Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugin WavPack</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="46"/>
         <source>WavPack Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos WavPack</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="160"/>
         <source>About WavPack Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre o plugin WavPack Áudio</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="161"/>
         <source>Qmmp WavPack Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugin Qmmp WavPack Áudio</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="162"/>
         <source>WavPack library version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versão da biblioteca WavPack:</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="164"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,52 +39,52 @@
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="70"/>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Duração</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="71"/>
         <source>Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Frequência</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="72"/>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Canais</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="73"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Taxa de bits</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="73"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="75"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamanho do arquivo</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="75"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>KB</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="76"/>
         <source>Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Razão</translation>
     </message>
     <message>
         <location filename="../wavpackmetadatamodel.cpp" line="77"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versão</translation>
     </message>
 </context>
 </TS>

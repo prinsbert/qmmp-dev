@@ -6,22 +6,22 @@
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="33"/>
         <source>Qt Multimedia Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugin Qt Multimedia</translation>
     </message>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="58"/>
         <source>About Qt Multimedia Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre o plugin Qt Multimedia</translation>
     </message>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="59"/>
         <source>Qmmp Qt Multimedia Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugin Qmmp Qt Multimedia</translation>
     </message>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="60"/>
         <source>Written by: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenvolvido por: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</translation>
     </message>
 </context>
 <context>
@@ -29,17 +29,17 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferências do plugin Qt Multimedia</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Padrão</translation>
     </message>
 </context>
 </TS>
