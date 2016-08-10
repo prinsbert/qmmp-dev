@@ -1205,3 +1205,5 @@ Version 1.1.3
 * fixed random stop bug
 * fixed duration calculation in the mpeg plugin
 * fixed scrobbling of tracks with '&' symbol
+* updated Brazilian Portuguese translation (Vitor Pereira)
+* updated German translation (Ettore Atalan)
