@@ -1,4 +1,5 @@
 Brasilianisches Portugiesisch:
+    Vitor Pereira
     Klaos Lacerda
     Bruno Gonçalves
     Heitor Thury Barreiros Barbosa <hthury@gmail.com>
@@ -6,7 +7,7 @@ Brasilianisches Portugiesisch:
 Bulgarisch:
     Kiril Kirilov
 
-Chinesisch traditionell
+Chinesisch traditionell:
     lon <lon83129@126.com>
     Jeff Huang
 
