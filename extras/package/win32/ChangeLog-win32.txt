@@ -170,3 +170,5 @@ LEGEND
 0.10.3
 [*] qmmp-0.10.3
 [*] qmmp-plugin-pack-0.10.1
+[*] cirl-7.50.1
+[*] glew-2.0.0
