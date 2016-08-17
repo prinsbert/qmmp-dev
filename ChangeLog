@@ -1186,6 +1186,8 @@ Version 0.10.2
 * fixed buffer overflow
 
 Version 0.10.3
+* added xesam:contentCreated field in the mpris plugin
+* improved ape/tta detection
 * fixed random stop bug
 * fixed duration calculation in the mpeg plugin
 * updated Brazilian Portuguese translation (Vitor Pereira)
