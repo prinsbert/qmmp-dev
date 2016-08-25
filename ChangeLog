@@ -1207,5 +1207,6 @@ Version 1.1.3
 * fixed random stop bug
 * fixed duration calculation in the mpeg plugin
 * fixed scrobbling of tracks with '&' symbol
+* fixed ADTS parser in the aac plugin
 * updated Brazilian Portuguese translation (Vitor Pereira)
 * updated German translation (Ettore Atalan)
