@@ -1208,5 +1208,6 @@ Version 1.1.3
 * fixed duration calculation in the mpeg plugin
 * fixed scrobbling of tracks with '&' symbol
 * fixed ADTS parser in the aac plugin
+* fixed librcc database path in the portable mode
 * updated Brazilian Portuguese translation (Vitor Pereira)
 * updated German translation (Ettore Atalan)
