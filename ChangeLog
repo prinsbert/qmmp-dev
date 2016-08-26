@@ -1191,5 +1191,6 @@ Version 0.10.3
 * fixed random stop bug
 * fixed duration calculation in the mpeg plugin
 * fixed ADTS parser in the aac plugin
+* fixed librcc database path in the portable mode
 * updated Brazilian Portuguese translation (Vitor Pereira)
 * updated German translation (Ettore Atalan)
