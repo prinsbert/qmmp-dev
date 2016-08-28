@@ -1,0 +1,19 @@
+Source: qmmp-plugin-pack
+Section: sound
+Priority: optional
+Maintainer: Ilya Kotov <forkotov02@hotmail.ru>
+Build-Depends: debhelper (>= 8.0.0), cmake, yasm, pkg-config, libmpg123-dev,
+  qmmp (>= 1.1.0), libtag1-dev (>= 1.10), libxmp-dev (>= 4.2.0), qtbase5-dev (>= 5.4),
+  qttools5-dev-tools (>= 5.4), qtchooser
+Standards-Version: 3.9.3
+Homepage: http://qmmp.ylsoftware.com/plugins.php
+
+Package: qmmp-plugin-pack
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Extra plugins for Qmmp
+ Plugin pack is a set of extra plugins for Qmmp (Qt-based mutimedia player)
+ Plugins list:
+ - MPG123 - MPEG v1/2 layer1/2/3 decoder using of libmpg123 library;
+ - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support);
+ - XMP - module player with use of the libxmp library.

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=0.10.2
-UBUNTU_CODENAMES='precise trusty wily xenial'
+QMMP_VERSION=0.10.3
+UBUNTU_CODENAMES='precise trusty wily xenial yakkety'
 BUILD_ROOT=build-root
 
 
@@ -22,7 +22,7 @@ build ()
     mkdir qmmp-$QMMP_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-$QMMP_VERSION/debian/
     cp ../qmmp_$QMMP_VERSION.orig.tar.gz ./
-    if [ "$1" = "xenial" ]; then
+    if [ "$1" = "xenial" ] || [ "$1" = "yakkety" ] ; then
         mv ./qmmp_$QMMP_VERSION.orig.tar.gz ./qmmp-qt4_$QMMP_VERSION.orig.tar.gz
     fi
     cd qmmp-$QMMP_VERSION

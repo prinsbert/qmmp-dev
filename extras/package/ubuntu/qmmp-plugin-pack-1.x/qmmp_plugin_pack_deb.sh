@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.1.1
-UBUNTU_CODENAMES='xenial'
+PLUGIN_PACK_VERSION=1.1.2
+UBUNTU_CODENAMES='xenial yakkety'
 BUILD_ROOT=build-root
 
 

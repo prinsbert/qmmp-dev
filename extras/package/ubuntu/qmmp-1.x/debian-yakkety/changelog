@@ -1,142 +1,89 @@
-qmmp-qt4 (0.10.3-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp (1.1.3-1ubuntu1~yakkety0) yakkety; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sun, 28 Aug 2016 18:46:46 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Sun, 28 Aug 2016 18:57:26 +0300
 
-qmmp-qt4 (0.10.2-1ubuntu1~xenial0) xenial; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 23 Jul 2016 16:24:09 +0300
-
-qmmp-qt4 (0.10.1-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp (1.1.2-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Mon, 04 Jul 2016 20:40:16 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 23 Jul 2016 16:26:42 +0300
 
-qmmp-qt4 (0.10.0-1ubuntu1~xenial0) xenial; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Tue, 21 Jun 2016 21:58:16 +0300
-
-qmmp-qt4 (0.9.10-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp (1.1.1-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Thu, 09 Jun 2016 20:10:10 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Mon, 04 Jul 2016 20:58:18 +0300
 
-qmmp-qt4 (0.9.9-1ubuntu1~xenial0) xenial; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Mon, 02 May 2016 13:46:31 +0300
-
-qmmp-qt4 (0.9.8-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp (1.1.0-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sun, 03 Apr 2016 15:25:09 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Tue, 21 Jun 2016 22:24:17 +0300
 
-qmmp-qt4 (0.9.7-1ubuntu1~xenial0) xenial; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Wed, 27 Jan 2016 19:18:10 +0300
-
-qmmp-qt4 (0.9.6-1ubuntu1~wily0) wily; urgency=medium
+qmmp (1.0.10-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 02 Jan 2016 15:15:58 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Thu, 09 Jun 2016 20:23:36 +0300
 
-qmmp-qt4 (0.9.5-1ubuntu1~wily0) wily; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Thu, 17 Dec 2015 18:40:54 +0300
-
-qmmp-qt4 (0.9.4-1ubuntu1~wily0) wily; urgency=medium
+qmmp (1.0.9-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 14 Nov 2015 12:10:56 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Mon, 02 May 2016 15:27:40 +0300
 
-qmmp-qt4 (0.9.3-1ubuntu1~wily0) wily; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Wed, 21 Oct 2015 17:35:03 +0300
-
-qmmp-qt4 (0.9.2-1ubuntu1~wily0) wily; urgency=medium
+qmmp (1.0.8-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Thu, 01 Oct 2015 18:54:52 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Mon, 02 May 2016 13:48:57 +0300
 
-qmmp-qt4 (0.9.1-1ubuntu1~wily0) wily; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sun, 06 Sep 2015 12:50:01 +0300
-
-qmmp-qt4 (0.9.0-1ubuntu1~wily0) wily; urgency=medium
+qmmp (1.0.7-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Fri, 04 Sep 2015 00:02:44 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Sun, 03 Apr 2016 15:28:50 +0300
 
-qmmp-qt4 (0.8.8-1ubuntu1~wily0) wily; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Tue, 25 Aug 2015 16:36:06 +0300
-
-qmmp-qt4 (0.8.7-1ubuntu1~vivid0) vivid; urgency=medium
+qmmp (1.0.6-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Wed, 12 Aug 2015 10:13:13 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Wed, 27 Jan 2016 19:24:30 +0300
 
-qmmp-qt4 (0.8.6-1ubuntu1~vivid0) vivid; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 08 Aug 2015 22:10:53 +0300
-
-qmmp-qt4 (0.8.5-1ubuntu1~vivid0) vivid; urgency=medium
+qmmp (1.0.5-1) unstable; urgency=medium
 
   * New upstream release.
+  * Update debian/copyright.
+  * Update Build-Depends (switched to Qt5).
+  * Remove debian/menu, according to #741573.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 06 Jun 2015 19:49:46 +0300
+ -- Matteo Cypriani <mcy@lm7.fr>  Sat, 23 Jan 2016 13:55:24 +0100
 
-qmmp-qt4 (0.8.4-1ubuntu3~vivid0) vivid; urgency=medium
-
-  * Rebuild with new taglib.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 25 Apr 2015 15:16:40 +0300
-
-qmmp-qt4 (0.8.4-1ubuntu1~vivid0) vivid; urgency=medium
+qmmp (0.9.1-1) unstable; urgency=medium
 
   * New upstream release.
+    + Fixed segfault with TTA-encoded files. (Closes: #792301)
+  * Update debian/copyright.
+  * Update debian/upstream/metadata: Qmmp has moved from Google Code to
+    SourceForge.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Wed, 08 Apr 2015 18:31:22 +0300
+ -- Matteo Cypriani <mcy@lm7.fr>  Wed, 30 Sep 2015 11:39:45 +0200
 
-qmmp-qt4 (0.8.2-1) unstable; urgency=low
+qmmp (0.8.2-1) unstable; urgency=low
 
   * New upstream release.
     + Removed patches (everything applied upstream).
 
  -- Matteo Cypriani <mcy@lm7.fr>  Mon, 20 Oct 2014 12:39:10 -0400
 
-qmmp-qt4 (0.8.1-1) unstable; urgency=medium
+qmmp (0.8.1-1) unstable; urgency=medium
 
   * New upstream release.
   * Adoption. (Closes: #750924)
-  * Un-split the package: libqmmp-qt4* are now into the main qmmp-qt4 package,
-    installed as private libraries (/usr/lib/qmmp-qt4/libqmmp-qt4*).
+  * Un-split the package: libqmmp* are now into the main qmmp package,
+    installed as private libraries (/usr/lib/qmmp/libqmmp*).
   * Switch to debhelper 9 and format 3.0 (quilt).
   * Bump Standards-Version to 3.9.6.
   * debian/copyright:
@@ -149,10 +96,10 @@ qmmp-qt4 (0.8.1-1) unstable; urgency=medium
     + Simplify Build-Depends (remove most version numbers).
     + Add missing Build-Depends: qtchooser, libcdio-dev, libopus-dev,
       libopusfile-dev, libsidplayfp-dev, libenca-dev.
-    + qmmp-qt4 now Suggests mplayer2.
+    + qmmp now Suggests mplayer2.
     + Add Vcs-Git and Vcs-Browser fields.
     + Update Homepage.
-    + Update qmmp-qt4's Description.
+    + Update qmmp's Description.
   * debian/rules:
     + Simplify.
     + Don't call cmake directly, use dh_auto_configure instead.
@@ -166,23 +113,23 @@ qmmp-qt4 (0.8.1-1) unstable; urgency=medium
     + Add desktop_files.patch.
   * debian/watch: add "debian uupdate".
   * Add debian/upstream/metadata (DEP-12).
-  * Add lintian override (spellcheck false positive on libqmmp-qt4ui).
+  * Add lintian override (spellcheck false positive on libqmmpui).
   * Remove useless debian/README.source.
   * Remove useless debian/README.Debian (Opus is supported now).
 
  -- Matteo Cypriani <mcy@lm7.fr>  Mon, 06 Oct 2014 17:03:56 -0400
 
-qmmp-qt4 (0.7.6-2) unstable; urgency=medium
+qmmp (0.7.6-2) unstable; urgency=medium
 
   * debian/control:
     - Typo fix: s/conveter/converter/. (Closes: #746181)
     - Suggest udisks2 instead of udisks on linux. Already supported upstream
       since 0.7.0. (Closes: #750513)
-    - libqmmp-qt4ui-dev now depends on libqmmp-qt4-dev. Suggested by upstream.
+    - libqmmpui-dev now depends on libqmmp-dev. Suggested by upstream.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 08 Jun 2014 17:27:05 +0300
 
-qmmp-qt4 (0.7.6-1) experimental; urgency=medium
+qmmp (0.7.6-1) experimental; urgency=medium
 
   * New upstream release.
     - Uploading to experimental until libav10 transition is completed.
@@ -192,7 +139,7 @@ qmmp-qt4 (0.7.6-1) experimental; urgency=medium
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Wed, 23 Apr 2014 21:01:06 +0300
 
-qmmp-qt4 (0.7.5-1) unstable; urgency=low
+qmmp (0.7.5-1) unstable; urgency=low
 
   * New upstream release.
   * debian/control:
@@ -206,7 +153,7 @@ qmmp-qt4 (0.7.5-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sat, 22 Feb 2014 15:02:54 +0200
 
-qmmp-qt4 (0.7.4-1) unstable; urgency=low
+qmmp (0.7.4-1) unstable; urgency=low
 
   * New upstream release.
   * debian/copyright:
@@ -214,13 +161,13 @@ qmmp-qt4 (0.7.4-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Thu, 26 Dec 2013 14:13:22 +0200
 
-qmmp-qt4 (0.7.3-1) unstable; urgency=low
+qmmp (0.7.3-1) unstable; urgency=low
 
   * New upstream relese.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sat, 05 Oct 2013 16:53:22 +0300
 
-qmmp-qt4 (0.7.1-1) unstable; urgency=low
+qmmp (0.7.1-1) unstable; urgency=low
 
   * New upstream release.
   * debian/control:
@@ -231,19 +178,19 @@ qmmp-qt4 (0.7.1-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Mon, 24 Jun 2013 21:28:47 +0300
 
-qmmp-qt4 (0.7.0-1) experimental; urgency=low
+qmmp (0.7.0-1) experimental; urgency=low
 
   * New upstream release.
   * debian/copyright:
     - Updated upstream copyrights and licenses.
   * debian/control:
     - Updated list of features.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for 0.7.x upstream releases.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 21 Apr 2013 12:34:22 +0300
 
-qmmp-qt4 (0.6.6-1) experimental; urgency=low
+qmmp (0.6.6-1) experimental; urgency=low
 
   * New upstream release.
   * debian/copyright:
@@ -252,7 +199,7 @@ qmmp-qt4 (0.6.6-1) experimental; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 27 Jan 2013 15:49:22 +0200
 
-qmmp-qt4 (0.6.3-1) experimental; urgency=low
+qmmp (0.6.3-1) experimental; urgency=low
 
   * New upstream release.
   * debian/control:
@@ -261,12 +208,12 @@ qmmp-qt4 (0.6.3-1) experimental; urgency=low
     - Updated upstream feature list, added 'DSP effects' section.
   * debian/copyright:
     - Upstream upstream copyrights.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for 0.6.x upstream releases.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sat, 15 Sep 2012 16:30:42 +0300
 
-qmmp-qt4 (0.5.5-1) unstable; urgency=low
+qmmp (0.5.5-1) unstable; urgency=low
 
   * New upstream release.
     - Fixes scrobbler failure when using Qt 4.8 (Closes: #673896)
@@ -281,13 +228,13 @@ qmmp-qt4 (0.5.5-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Mon, 28 May 2012 13:33:17 +0300
 
-qmmp-qt4 (0.5.4-1) unstable; urgency=low
+qmmp (0.5.4-1) unstable; urgency=low
 
   * New upstream release.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Thu, 01 Mar 2012 21:45:26 +0200
 
-qmmp-qt4 (0.5.3-1) unstable; urgency=low
+qmmp (0.5.3-1) unstable; urgency=low
 
   * New upstream release.
     - FFMpeg input plugin: include libavutil header properly.
@@ -302,7 +249,7 @@ qmmp-qt4 (0.5.3-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sat, 04 Feb 2012 18:58:16 +0200
 
-qmmp-qt4 (0.5.2-2) unstable; urgency=medium
+qmmp (0.5.2-2) unstable; urgency=medium
 
   * debian/control:
     - Added quilt to Build-Depends.
@@ -317,7 +264,7 @@ qmmp-qt4 (0.5.2-2) unstable; urgency=medium
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sat, 14 Jan 2012 13:19:00 +0200
 
-qmmp-qt4 (0.5.2-1) unstable; urgency=low
+qmmp (0.5.2-1) unstable; urgency=low
 
   * New upstream release.
     - Fixes opening playing list menu with multi-item selection.
@@ -331,7 +278,7 @@ qmmp-qt4 (0.5.2-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Fri, 09 Sep 2011 18:51:01 +0300
 
-qmmp-qt4 (0.5.1-1) unstable; urgency=low
+qmmp (0.5.1-1) unstable; urgency=low
 
   * debian/control:
     - Added 'libgme-dev' to build-depends.
@@ -341,7 +288,7 @@ qmmp-qt4 (0.5.1-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Thu, 02 Jun 2011 20:08:13 +0300
 
-qmmp-qt4 (0.5.0-2) unstable; urgency=low
+qmmp (0.5.0-2) unstable; urgency=low
 
   * debian/control:
     - Removed build-depends on libasound-dev on non-linux architectures
@@ -352,13 +299,13 @@ qmmp-qt4 (0.5.0-2) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 24 Apr 2011 13:55:39 +0300
 
-qmmp-qt4 (0.5.0-1) unstable; urgency=low
+qmmp (0.5.0-1) unstable; urgency=low
 
   * New upstream release.
   * debian/control:
     - Bumped libqt4-dev build dependency to (>= 4.6.0).
     - Added a build dependency on libwildmidi-dev (>= 0.2.3.4).
-    - Updated qmmp-qt4's long description.
+    - Updated qmmp's long description.
     - Bumped libavcodev-dev and libavformat-dev build dependencies to
       (>= 4:0.5.0).
   * debian/copyright:
@@ -366,12 +313,12 @@ qmmp-qt4 (0.5.0-1) unstable; urgency=low
   * debian/README.Debian:
     - Made a note about disabled output through OSS4.
     - Made a note about disabled GME plugin.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for 0.5.x upstream releases.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sat, 02 Apr 2011 17:23:07 +0300
 
-qmmp-qt4 (0.4.5-1) unstable; urgency=low
+qmmp (0.4.5-1) unstable; urgency=low
 
   * New upstream release.
   * debian/control:
@@ -379,81 +326,81 @@ qmmp-qt4 (0.4.5-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 20 Mar 2011 12:22:52 +0200
 
-qmmp-qt4 (0.4.4-1) unstable; urgency=low
+qmmp (0.4.4-1) unstable; urgency=low
 
   * New upstream release.
   * debian/copyright:
     - Updated copyright years.
     - Updated 'Translators' section.
   * debian/control:
-    - Removed duplicate 'Section' field for qmmp-qt4-plugin-projectm.
+    - Removed duplicate 'Section' field for qmmp-plugin-projectm.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Wed, 16 Feb 2011 19:12:55 +0200
 
-qmmp-qt4 (0.4.3-1) experimental; urgency=low
+qmmp (0.4.3-1) experimental; urgency=low
 
   * New upstream release.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for new and all 0.4.x upstream releases.
   * debian/copyright:
     - Updated packaging copyright.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Thu, 11 Nov 2010 20:53:29 +0200
 
-qmmp-qt4 (0.4.2-1) experimental; urgency=low
+qmmp (0.4.2-1) experimental; urgency=low
 
   * New upstream release.
   * debian/copyright:
     - Updated 'Translators' section.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for new upstream release.
   * debian/control:
     - Bumped Standards-Version to 3.9.1, no changes needed.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Fri, 10 Sep 2010 19:54:13 +0300
 
-qmmp-qt4 (0.4.1-1) unstable; urgency=low
+qmmp (0.4.1-1) unstable; urgency=low
 
   * New upstream release.
   * debian/copyright:
     - Updated 'Translators' section.
   * debian/control:
     - Added build-dependency on 'libcddb2-dev' package.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for new upstream release.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Fri, 18 Jun 2010 18:55:29 +0300
 
-qmmp-qt4 (0.4.0-1) experimental; urgency=low
+qmmp (0.4.0-1) experimental; urgency=low
 
   * New upstream release.
-    - qmmp-qt4 now can setup shortcuts with Up and Down keys. (Closes: #575568)
+    - Qmmp now can setup shortcuts with Up and Down keys. (Closes: #575568)
   * debian/copyright:
     - Updated 'Base on' section.
     - Updated 'Plugin developers' section.
   * debian/control:
-    - Updated long description of the 'qmmp-qt4' package.
+    - Updated long description of the 'qmmp' package.
     - Bumped build-dependency versions of the 'libqt4-dev', 'cmake',
       'libpulse-dev', 'libtag1-dev' packages.
     - Added build-dependency on libmms-dev.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for new upstream release.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 02 May 2010 21:21:40 +0300
 
-qmmp-qt4 (0.3.3-1) unstable; urgency=low
+qmmp (0.3.3-1) unstable; urgency=low
 
   * New upstream release.
   * debian/copyright:
     - Updated 'translators' section.
   * debian/control:
     - Bumped Standards-Version to 3.8.4, no changes needed.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for new upstream release.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Thu, 11 Mar 2010 17:27:25 +0200
 
-qmmp-qt4 (0.3.2-1) unstable; urgency=low
+qmmp (0.3.2-1) unstable; urgency=low
 
   * New upstream release.
     - Added metacity compatibility mode. Thanks to Norbert Preining
@@ -462,17 +409,17 @@ qmmp-qt4 (0.3.2-1) unstable; urgency=low
     - Removed 'x11proto-xf86misc-dev' build-dependency (Closes: #559704).
   * debian/copyright:
     - Updated copyright years.
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for new upstream release.
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 17 Jan 2010 11:24:54 +0200
 
-qmmp-qt4 (0.3.1-1) unstable; urgency=low
+qmmp (0.3.1-1) unstable; urgency=low
 
   * New upstream release.
     - Removed broken LyricWiki.org support, added lyricsplugin.com instead.
       (Closes: #539822)
-  * debian/libqmmp-qt4{,ui}0.install:
+  * debian/libqmmp{,ui}0.install:
     - Updated for new upstream release.
   * debian/control:
     - Mentioned supported 'lyricsplugin.com' instead of dropped lyricwiki.org.
@@ -481,7 +428,7 @@ qmmp-qt4 (0.3.1-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Sun, 01 Nov 2009 11:02:40 +0200
 
-qmmp-qt4 (0.3.0-3) unstable; urgency=low
+qmmp (0.3.0-3) unstable; urgency=low
 
   * debian/control:
     - Added 'unzip' to Suggests for unpacking external skins.
@@ -492,7 +439,7 @@ qmmp-qt4 (0.3.0-3) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf@debian.org>  Wed, 09 Sep 2009 10:48:22 +0300
 
-qmmp-qt4 (0.3.0-2) unstable; urgency=low
+qmmp (0.3.0-2) unstable; urgency=low
 
   * debian/control:
     - Removed 'get-orig-source' target.
@@ -504,7 +451,7 @@ qmmp-qt4 (0.3.0-2) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Tue, 28 Jul 2009 21:05:10 +0300
 
-qmmp-qt4 (0.3.0-1) unstable; urgency=low
+qmmp (0.3.0-1) unstable; urgency=low
 
   * New upstream release.
   * debian/control:
@@ -513,7 +460,7 @@ qmmp-qt4 (0.3.0-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Sat, 04 Jul 2009 22:51:41 +0300
 
-qmmp-qt4 (0.3.0~svn989-1) experimental; urgency=low
+qmmp (0.3.0~svn989-1) experimental; urgency=low
 
   * New upstream development snapshot, some changes:
     - Fixed adding streams from command line.
@@ -528,7 +475,7 @@ qmmp-qt4 (0.3.0~svn989-1) experimental; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Tue, 30 Jun 2009 13:21:57 +0300
 
-qmmp-qt4 (0.3.0~svn953-1) experimental; urgency=low
+qmmp (0.3.0~svn953-1) experimental; urgency=low
 
   * New upstream development snapshot, some changes:
     - Added Italian translation.
@@ -543,7 +490,7 @@ qmmp-qt4 (0.3.0~svn953-1) experimental; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Tue, 19 May 2009 22:24:38 +0300
 
-qmmp-qt4 (0.3.0~svn916-1) experimental; urgency=low
+qmmp (0.3.0~svn916-1) experimental; urgency=low
 
   * New upstream development snapshot, some changes:
     - Added AAC support
@@ -557,19 +504,19 @@ qmmp-qt4 (0.3.0~svn916-1) experimental; urgency=low
     - Ported to new libmpcdec. (Closes: #520596, #520612)
     - Added Polish translation.
   * debian/control:
-    - Make libqmmp-qt4* shared library packages suggest qmmp-qt4, not recommend it.
-    - Updated long description for qmmp-qt4.
+    - Make libqmmp* shared library packages suggest qmmp, not recommend it.
+    - Updated long description for qmmp.
     - Added libfaad-dev and libprojectm-dev to build dependencies.
     - Allow DM uploads.
     - Bump 'Standards-Version' to 3.8.1, no changes needed.
     - Bump libmpcdec-dev dependency to (>= 2:0.1~r435) according to switch to
       new Musepack format.
     - Added libqt4-opengl-dev to build dependencies for libprojectm.
-    - Introduced new 'qmmp-qt4-plugin-projectm' binary package for projectm
+    - Introduced new 'qmmp-plugin-projectm' binary package for projectm
       plugin, it pulls too many additional dependencies.
     - Bumped debhelper dependency to (>= 7.0.50) for overrides.
     - Added some '--' to short descriptions.
-  * debian/libqmmp-qt4{,ui}.install:
+  * debian/libqmmp{,ui}.install:
     - Updated paths.
   * debian/rules:
     - Disable building CD Audio, BS2B plugins.
@@ -583,7 +530,7 @@ qmmp-qt4 (0.3.0~svn916-1) experimental; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Mon, 27 Apr 2009 20:18:09 +0300
 
-qmmp-qt4 (0.2.3-1) unstable; urgency=low
+qmmp (0.2.3-1) unstable; urgency=low
 
   * New upstream release:
     - added recent ffmpeg support
@@ -605,7 +552,7 @@ qmmp-qt4 (0.2.3-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Fri, 05 Dec 2008 21:33:21 +0200
 
-qmmp-qt4 (0.2.2-1) unstable; urgency=low
+qmmp (0.2.2-1) unstable; urgency=low
 
   * New upstream release.
   * debian/copyright:
@@ -615,7 +562,7 @@ qmmp-qt4 (0.2.2-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Sat, 30 Aug 2008 19:47:28 +0300
 
-qmmp-qt4 (0.2.1-1) unstable; urgency=low
+qmmp (0.2.1-1) unstable; urgency=low
 
   * New upstream release.
   * debian/patches:
@@ -631,7 +578,7 @@ qmmp-qt4 (0.2.1-1) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Fri, 15 Aug 2008 22:31:30 +0300
 
-qmmp-qt4 (0.2.0-3) unstable; urgency=low
+qmmp (0.2.0-3) unstable; urgency=low
 
   * debian/copyright:
     - Added LGPLv2.1 clause, as it used for some files in the
@@ -640,14 +587,14 @@ qmmp-qt4 (0.2.0-3) unstable; urgency=low
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Sat, 09 Aug 2008 11:48:45 +0300
 
-qmmp-qt4 (0.2.0-2) unstable; urgency=low
+qmmp (0.2.0-2) unstable; urgency=low
 
   * debian/copyright:
     - Updated, added translators to copyrights.
 
  -- Eugene V. Lyubimkin <jackyf.devel@gmail.com>  Fri, 08 Aug 2008 21:46:47 +0300
 
-qmmp-qt4 (0.2.0-1) unstable; urgency=low
+qmmp (0.2.0-1) unstable; urgency=low
 
   * Initial release. (Closes: #492106)
 
