@@ -125,7 +125,7 @@ bool DecoderFFapCUE::initialize()
     return true;
 }
 
-qint64 DecoderFFapCUE::totalTime()
+qint64 DecoderFFapCUE::totalTime() const
 {
     return m_decoder ? m_length : 0;
 }
@@ -182,7 +182,7 @@ qint64 DecoderFFapCUE::read(unsigned char *data, qint64 size)
     return len2;
 }
 
-int DecoderFFapCUE::bitrate()
+int DecoderFFapCUE::bitrate() const
 {
     return m_decoder->bitrate();
 }

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Ilya Kotov                                      *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -112,12 +112,12 @@ bool DecoderFFap::initialize()
     return true;
 }
 
-qint64 DecoderFFap::totalTime()
+qint64 DecoderFFap::totalTime() const
 {
     return m_ffap_decoder->duration * 1000;
 }
 
-int DecoderFFap::bitrate()
+int DecoderFFap::bitrate() const
 {
     return m_ffap_decoder->bitrate;
 }
