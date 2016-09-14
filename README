@@ -11,7 +11,7 @@ Description:
 
 Requirements:
 - Qt >= 5.4 (qtbase and qttools for build)
-- qmmp 1.1.x
+- qmmp 1.2.x
 - taglib >= 1.10
 - libmpg123 >= 1.13.0 (Optional)
 - libxmp >= 4.2.0 (Optional)
