@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -146,12 +146,12 @@ bool DecoderMPG123::initialize()
     return true;
 }
 
-qint64 DecoderMPG123::totalTime()
+qint64 DecoderMPG123::totalTime() const
 {
     return m_totalTime;
 }
 
-int DecoderMPG123::bitrate()
+int DecoderMPG123::bitrate() const
 {
     return m_frame_info.bitrate;
 }

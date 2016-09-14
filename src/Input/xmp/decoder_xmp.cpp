@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2015-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -77,12 +77,12 @@ bool DecoderXmp::initialize()
     return true;
 }
 
-qint64 DecoderXmp::totalTime()
+qint64 DecoderXmp::totalTime() const
 {
     return m_totalTime;
 }
 
-int DecoderXmp::bitrate()
+int DecoderXmp::bitrate() const
 {
     return 8;
 }

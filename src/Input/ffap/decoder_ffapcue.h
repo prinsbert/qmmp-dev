@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,7 +22,6 @@
 #define DECODER_FFAPCUE_H
 
 #include <qmmp/decoder.h>
-#include <qmmp/statehandler.h>
 
 class Output;
 class QIDevice;
@@ -39,10 +38,10 @@ public:
 
     // Standard Decoder API
     bool initialize();
-    qint64 totalTime();
+    qint64 totalTime() const;
     void seek(qint64);
     qint64 read(unsigned char *data, qint64 size);
-    int bitrate();
+    int bitrate() const;
     const QString nextURL() const;
     void next();
 
