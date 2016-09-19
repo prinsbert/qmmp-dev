@@ -4,37 +4,37 @@
 <context>
     <name>DecoderMADFactory</name>
     <message>
-        <location filename="../decodermadfactory.cpp" line="113"/>
+        <location filename="../decodermadfactory.cpp" line="116"/>
         <source>MPEG Plugin</source>
         <translation>Модуль MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="116"/>
+        <location filename="../decodermadfactory.cpp" line="119"/>
         <source>MPEG Files</source>
         <translation>Файли MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="268"/>
+        <location filename="../decodermadfactory.cpp" line="271"/>
         <source>About MPEG Audio Plugin</source>
         <translation>Про аудіо-модуль MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="269"/>
+        <location filename="../decodermadfactory.cpp" line="272"/>
         <source>Qmmp MPEG Audio Plugin</source>
         <translation>Аудіо-модуль MPEG для Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="270"/>
+        <location filename="../decodermadfactory.cpp" line="273"/>
         <source>Compiled against libmad version:</source>
         <translation>Зібрано з версією libmad:</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="274"/>
+        <location filename="../decodermadfactory.cpp" line="277"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="275"/>
+        <location filename="../decodermadfactory.cpp" line="278"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Вихідні коди базуються на проектах mq3 та madplay</translation>
     </message>
