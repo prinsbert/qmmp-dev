@@ -17,6 +17,7 @@ QMMP_VERSION = 1.2.0
 
 #Comment/uncomment this if you want to change plugins list
 
+CONFIG += ARCHIVE_PLUGIN
 CONFIG += JACK_PLUGIN
 CONFIG += FLAC_PLUGIN
 CONFIG += MUSEPACK_PLUGIN

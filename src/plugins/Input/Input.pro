@@ -46,4 +46,8 @@ contains(CONFIG, WILDMIDI_PLUGIN){
     SUBDIRS += wildmidi
 }
 
+contains(CONFIG, ARCHIVE_PLUGIN){
+  SUBDIRS += archive
+}
+
 }

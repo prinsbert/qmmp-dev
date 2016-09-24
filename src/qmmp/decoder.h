@@ -126,6 +126,11 @@ public:
      */
     static DecoderFactory *findByProtocol(const QString &p);
     /*!
+     * Returns a list of DecoderFactory pointers which support extension of the required file
+     * @param path Full file path or url with correct extension.
+     */
+    static QList<DecoderFactory *> findByFileExtension(const QString &path);
+    /*!
      * Returns a list of decoder factories.
      */
     static QList<DecoderFactory*> factories();
@@ -170,6 +175,11 @@ protected:
      * @param f Audio format.
      */
     void configure(quint32 srate, int channels, Qmmp::AudioFormat f = Qmmp::PCM_S16LE);
+    /*!
+     * Use this function inside initialize() reimplementation to tell other plugins about audio parameters.
+     * @param p Audio parameters.
+     */
+    void configure(const AudioParameters &p);
 
 private:
     static void loadPlugins();
