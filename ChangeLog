@@ -1194,3 +1194,8 @@ Version 0.10.3
 * fixed librcc database path in the portable mode
 * updated Brazilian Portuguese translation (Vitor Pereira)
 * updated German translation (Ettore Atalan)
+
+Version 0.10.4
+* fixed issue with UTF-16 encoded pledit.txt in the skinned plugin
+* fixed 'index out of range' warning
+* fixed typo in the qsui plugin
