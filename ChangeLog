@@ -1213,6 +1213,6 @@ Version 1.1.3
 * updated German translation (Ettore Atalan)
 
 Version 1.1.4
-* fixed support of skins UTF-16 encoded pledit.txt
+* fixed support of skins UTF-16 with encoded pledit.txt
 * fixed 'index out of range' warning
 * fixed typo in the qsui plugin
