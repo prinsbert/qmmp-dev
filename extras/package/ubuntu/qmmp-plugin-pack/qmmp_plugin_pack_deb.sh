@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=0.10.1
+PLUGIN_PACK_VERSION=0.10.2
 UBUNTU_CODENAMES='precise trusty wily xenial yakkety'
 BUILD_ROOT=build-root
 
