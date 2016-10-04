@@ -220,3 +220,6 @@ Version 0.10.0
 Version 0.10.1
 * updated German translation (Ettore Atalan)
 * updated Brazilian Portuguese translation (Vitor Pereira)
+
+Version 0.10.2
+* fixed 24 bits support in the ffap plugin
