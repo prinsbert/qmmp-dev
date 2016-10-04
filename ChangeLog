@@ -225,3 +225,6 @@ Version 1.1.1
 
 Version 1.1.2
 * updated Brazilian Portuguese translation (Vitor Pereira)
+
+Version 1.1.3
+* fixed 24 bits support in the ffap plugin
