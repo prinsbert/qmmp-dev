@@ -1574,30 +1574,12 @@ ape_decode_frame(FFap_decoder *decoder, void *data, int *data_size)
     int skip = min (s->samplestoskip, blockstodecode);
     i = skip;
 
-    if (decoder->bps == 32) {
+    if (decoder->bps == 32 || decoder->bps == 24) {
         for (; i < blockstodecode; i++) {
             *((int32_t*)samples) = s->decoded0[i];
             samples += 4;
             if(s->channels > 1) {
                 *((int32_t*)samples) = s->decoded1[i];
-                samples += 4;
-            }
-        }
-    }
-    else if (decoder->bps == 24) {
-        for (; i < blockstodecode; i++) {
-            int32_t sample = s->decoded0[i];
-            samples[0] = sample&0xff;
-            samples[1] = (sample&0xff00)>>8;
-            samples[2] = (sample&0xff0000)>>16;
-            samples[3] = 0;
-            samples += 4;
-            if(s->channels > 1) {
-                sample = s->decoded1[i];
-                samples[0] = sample&0xff;
-                samples[1] = (sample&0xff00)>>8;
-                samples[2] = (sample&0xff0000)>>16;
-                samples[3] = 0;
                 samples += 4;
             }
         }
