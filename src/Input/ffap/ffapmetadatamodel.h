@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Ilya Kotov                                      *
+ *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -38,6 +38,7 @@ public:
     ~FFapMetaDataModel();
     QHash<QString, QString> audioProperties();
     QList<TagModel* > tags();
+    QString coverPath();
 
 private:
     QList<TagModel* > m_tags;
