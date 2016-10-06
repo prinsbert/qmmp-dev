@@ -23,6 +23,7 @@
 #include <taglib/tag.h>
 #include <taglib/id3v1tag.h>
 #include <taglib/apetag.h>
+#include <qmmp/metadatamanager.h>
 #include "ffapmetadatamodel.h"
 
 FFapMetaDataModel::FFapMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(parent)
@@ -68,6 +69,11 @@ QHash<QString, QString> FFapMetaDataModel::audioProperties()
 QList<TagModel* > FFapMetaDataModel::tags()
 {
     return m_tags;
+}
+
+QString FFapMetaDataModel::coverPath()
+{
+    return MetaDataManager::instance()->findCoverFile(m_path);
 }
 
 FFapFileTagModel::FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::TagTypes tagType)
