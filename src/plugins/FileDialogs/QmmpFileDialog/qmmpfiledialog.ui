@@ -13,10 +13,16 @@
   <property name="windowTitle">
    <string>Add Files</string>
   </property>
-  <property name="sizeGripEnabled">
-   <bool>true</bool>
-  </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
    <item row="1" column="0" colspan="3">
     <widget class="QSplitter" name="splitter">
      <property name="sizePolicy">
