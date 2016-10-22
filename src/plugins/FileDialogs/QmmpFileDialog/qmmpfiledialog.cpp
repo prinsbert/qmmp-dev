@@ -41,6 +41,7 @@ void QmmpFileDialog::raise(const QString &dir, Mode mode, const QString &caption
 {
     m_dialog->setModeAndMask(dir, mode, mask);
     m_dialog->setWindowTitle(caption);
+    m_dialog->loadMountedVolumes();
     m_dialog->show();
     m_dialog->raise();
 }
