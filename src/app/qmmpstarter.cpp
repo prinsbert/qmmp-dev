@@ -27,6 +27,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <unistd.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <string.h>
 #include <qmmp/qmmp.h>
@@ -57,6 +58,8 @@ QMMPStarter::QMMPStarter() : QObject()
     m_player = 0;
     m_core = 0;
     m_ui = 0;
+    m_finished = false;
+    m_exit_code = EXIT_SUCCESS;
 #ifndef QT_NO_SESSIONMANAGER
     connect(qApp, SIGNAL(commitDataRequest(QSessionManager&)), SLOT(commitData(QSessionManager&)), Qt::DirectConnection);
 #endif
@@ -72,12 +75,14 @@ QMMPStarter::QMMPStarter() : QObject()
     if(commands.keys().contains("--help"))
     {
         printUsage();
-        exit(0);
+        m_finished = true;
+        return;
     }
     if(commands.keys().contains("--version"))
     {
         printVersion();
-        exit(0);
+        m_finished = true;
+        return;
     }
 
     if(!commands.isEmpty())
@@ -88,7 +93,9 @@ QMMPStarter::QMMPStarter() : QObject()
                     arg != "--no-start")
             {
                 cout << qPrintable(tr("Unknown command")) << endl;
-                exit(0);
+                m_exit_code = EXIT_FAILURE;
+                m_finished = true;
+                return;
             }
         }
     }
@@ -112,7 +119,9 @@ QMMPStarter::QMMPStarter() : QObject()
         if(!m_socket->isValid()) //invalid connection
         {
             qWarning("QMMPStarter: unable to connect to server");
-            exit(0);
+            m_exit_code = EXIT_FAILURE;
+            m_finished = true;
+            return;
         }
         writeCommand();
     }
@@ -130,25 +139,32 @@ QMMPStarter::QMMPStarter() : QObject()
             if(!QLocalServer::removeServer(UDS_PATH))
             {
                 qWarning("QMMPStarter: unable to remove invalid socket file");
-                exit(1);
+                m_exit_code = EXIT_FAILURE;
+                m_finished = true;
                 return;
             }
             qWarning("QMMPStarter: removed invalid socket file");
             if(noStart)
-                exit(0);
+            {
+                m_exit_code = EXIT_FAILURE;
+                m_finished = true;
+                return;
+            }
             else if(m_server->listen (UDS_PATH))
                 startPlayer();
             else
             {
                 qWarning("QMMPStarter: server error: %s", qPrintable(m_server->errorString()));
-                exit(1);
+                m_exit_code = EXIT_FAILURE;
+                m_finished = true;
+                return;
             }
         }
         else
             writeCommand();
     }
     else
-        exit(0);
+        m_finished = true;
 #endif
 }
 
@@ -160,6 +176,16 @@ QMMPStarter::~QMMPStarter()
     if(m_named_mutex)
         ReleaseMutex(m_named_mutex);
 #endif
+}
+
+bool QMMPStarter::isFinished() const
+{
+    return m_finished;
+}
+
+int QMMPStarter::exitCode() const
+{
+    return m_exit_code;
 }
 
 void QMMPStarter::startPlayer()
@@ -195,7 +221,8 @@ void QMMPStarter::startPlayer()
     else
     {
         qWarning("QMMPStarter: no user interface found");
-        exit(1);
+        m_finished = true;
+        m_exit_code = EXIT_FAILURE;
         return;
     }
     connect(qApp, SIGNAL(aboutToQuit()), SLOT(savePosition()));
@@ -253,7 +280,7 @@ void QMMPStarter::writeCommand()
         printUsage();
 #endif
 
-    exit(0);
+    m_finished = true;
 }
 
 void QMMPStarter::readCommand()
