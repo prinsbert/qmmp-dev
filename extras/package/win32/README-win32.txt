@@ -23,7 +23,7 @@ List of the third-party libraries.
   MinGW-w64           4.2.0      http://mingw-w64.sourceforge.net/
   Qt                  4.8.7-git  http://qt.io/
   unzip               5.51       http://www.info-zip.org/pub/infozip/UnZip.html
-  taglib              1.11       http://taglib.github.io/
+  taglib              1.11.1     http://taglib.github.io/
   libmad              0.15.1b    http://www.underbit.com/products/mad/
   libogg              1.3.2      http://www.vorbis.com/
   libvorbis           1.3.5      http://www.vorbis.com/
@@ -37,7 +37,7 @@ List of the third-party libraries.
   libcdio             0.83       http://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
-  ffmpeg              3.0.3      http://ffmpeg.org/
+  ffmpeg              3.0.4      http://ffmpeg.org/
   libmodplug          0.8.8.5    http://modplug-xmms.sourceforge.net/
   game-music-emu      0.6.0      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       http://www.musepack.net/
