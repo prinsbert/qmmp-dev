@@ -1222,4 +1222,5 @@ Version 1.1.5
 * fixed directory selection in the qsui plugin
 * fixed possible segmentation fault
 * fixed command line option '--pl-repeat-toggle'
+* fixed some cppcheck warnings
 * changed file dialog form
