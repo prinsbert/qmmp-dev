@@ -67,11 +67,13 @@ DecoderMPG123::DecoderMPG123(const QString &url, QIODevice *i) : Decoder(i)
     m_rate = 0;
     m_frame_info.bitrate = 0;
     m_mpg123_encoding = MPG123_ENC_SIGNED_16;
+    m_handle = 0;
 }
 
 DecoderMPG123::~DecoderMPG123()
 {
     cleanup(m_handle);
+    m_handle = 0;
 }
 
 bool DecoderMPG123::initialize()
@@ -179,9 +181,11 @@ void DecoderMPG123::seek(qint64 pos)
 
 void DecoderMPG123::cleanup(mpg123_handle *handle)
 {
-    mpg123_close(handle);
-    mpg123_delete(handle);
-    handle = 0;
+    if(handle)
+    {
+        mpg123_close(handle);
+        mpg123_delete(handle);
+    }
 }
 
 void DecoderMPG123::setMPG123Format(int encoding)
