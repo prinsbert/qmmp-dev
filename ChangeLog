@@ -1201,6 +1201,7 @@ Version 0.10.4
 * fixed typo in the qsui plugin
 
 Version 0.10.5
+* added ffmpeg 3.2 support
 * fixed file downloading issue in the http plugin
 * fixed directory selection in the qsui plugin
 * fixed possible segmentation fault
