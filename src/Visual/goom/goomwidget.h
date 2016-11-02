@@ -36,6 +36,7 @@ class QPainter;
 class QPaintEvent;
 class QHideEvent;
 class QShowEvent;
+class SoundCore;
 
 
 class GoomWidget : public Visual
@@ -43,19 +44,17 @@ class GoomWidget : public Visual
     Q_OBJECT
 
 public:
-    GoomWidget( QWidget *parent = 0);
+    GoomWidget(QWidget *parent = 0);
     virtual ~GoomWidget();
 
     void add(float *data, size_t samples, int chan);
-    void clear();
-
 
 private slots:
     void timeout();
     void toggleFullScreen();
     void readSettings();
     void writeSettings();
-
+    void updateTitle();
 
 private:
     virtual void hideEvent (QHideEvent *);
@@ -63,34 +62,22 @@ private:
     virtual void closeEvent (QCloseEvent *);
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *e);
-    void process(float *l, float *r);
+    void clear();
     void createMenu();
     QTimer *m_timer;
-    double *m_intern_vis_data;
-    double *m_peaks;
-    int *m_x_scale;
-    double m_peaks_falloff;
-    double m_analyzer_falloff;
-    bool m_show_peaks;
-    float *m_left_buffer;
-    float *m_right_buffer;
-    int m_buffer_at;
-    int m_cols, m_rows;
     bool m_update;
-    //colors
-    QColor m_color1;
-    QColor m_color2;
-    QColor m_color3;
-    QColor m_bgColor;
-    QColor m_peakColor;
-    QSize m_cell_size;
     QMenu *m_menu;
-    QAction *m_peaksAction;
     QActionGroup *m_fpsGroup;
-    QActionGroup *m_analyzerFalloffGroup;
-    QActionGroup *m_peaksFalloffGroup;
-    PluginInfo *m_info;
+    QAction *m_showTitleAction;
+    PluginInfo *m_goom;
+
     QImage m_image;
+    size_t m_buf_at;
+    gint16 m_buf[2][4096];
+    gint16 m_out[2][512];
+    int m_fps;
+    SoundCore *m_core;
+    QString m_title;
 };
 
 

@@ -40,12 +40,12 @@ Visual *VisualGoomFactory::create(QWidget *parent)
     return new GoomWidget(parent);
 }
 
-QDialog *VisualGoomFactory::createConfigDialog(QWidget *parent)
+QDialog *VisualGoomFactory::createConfigDialog(QWidget *)
 {
     return 0;
 }
 
-void VisualGoomFactory::showAbout(QWidget *parent)
+void VisualGoomFactory::showAbout(QWidget *)
 {
 
 }

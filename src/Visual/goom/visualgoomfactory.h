@@ -38,7 +38,7 @@ public:
     const VisualProperties properties() const;
     Visual *create(QWidget *parent);
     QDialog *createConfigDialog(QWidget *parent);
-    void showAbout(QWidget *parent);
+    void showAbout(QWidget *);
     QTranslator *createTranslator(QObject *parent);
 };
 
