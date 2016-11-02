@@ -55,8 +55,6 @@ HEADERS += \
     mmx.h \
     motif_goom1.h \
     motif_goom2.h \
-    ppc_drawings.h \
-    ppc_zoom_ultimate.h \
     sound_tester.h \
     surf3d.h \
     tentacle3d.h \
