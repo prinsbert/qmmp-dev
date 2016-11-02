@@ -13,7 +13,7 @@
 #define CONV_MOTIF_W 128
 #define CONV_MOTIF_WMASK 0x7f
 
-typedef char Motif[CONV_MOTIF_W][CONV_MOTIF_W];
+typedef unsigned char Motif[CONV_MOTIF_W][CONV_MOTIF_W];
 
 #include "motif_goom1.h"
 #include "motif_goom2.h"
@@ -39,7 +39,7 @@ typedef struct _CONV_DATA{
   float visibility;
   Motif conv_motif;
   int   inverse_motif;
-  
+
 } ConvData;
 
 /* init rotozoom tables */
@@ -114,7 +114,7 @@ static void create_output_with_brightness(VisualFX *_this, Pixel *src, Pixel *de
                                          PluginInfo *info, int iff)
 {
   ConvData *data = (ConvData*)_this->fx_data;
-  
+
   int x,y;
   int i = 0;//info->screen.height * info->screen.width - 1;
 
@@ -168,7 +168,7 @@ static void create_output_with_brightness(VisualFX *_this, Pixel *src, Pixel *de
        ::"g"(xtex) ,"g"(ytex)
         , "g"(c), "g"(s)
         , "g"(&data->conv_motif[0][0]));
-    
+
     for (x=info->screen.width;x--;)
     {
       __asm__ __volatile__
@@ -185,7 +185,7 @@ static void create_output_with_brightness(VisualFX *_this, Pixel *src, Pixel *de
 
          "\n\t andl  $127, %%eax"
          "\n\t andl  $16256, %%ecx"
-         
+
          "\n\t addl  %%ecx, %%eax"
          "\n\t movd  %%mm6, %%esi"   /* esi = motif */
          "\n\t xorl  %%ecx, %%ecx"
@@ -216,10 +216,10 @@ static void create_output_with_brightness(VisualFX *_this, Pixel *src, Pixel *de
 
       int iff2;
       unsigned int f0,f1,f2,f3;
-      
+
       xtex += c;
       ytex -= s;
-      
+
       iff2 = ifftab[data->conv_motif[(ytex >>16) & CONV_MOTIF_WMASK][(xtex >> 16) & CONV_MOTIF_WMASK]];
 
 #define sat(a) ((a)>0xFF?0xFF:(a))
@@ -241,12 +241,12 @@ static void create_output_with_brightness(VisualFX *_this, Pixel *src, Pixel *de
 */
       i++;
     }
-#endif 
+#endif
   }
 #ifdef HAVE_MMX
   __asm__ __volatile__ ("\n\t emms");
 #endif
-    
+
   compute_tables(_this, info);
 }
 
@@ -266,7 +266,7 @@ static void convolve_apply(VisualFX *_this, Pixel *src, Pixel *dest, PluginInfo 
   ConvData *data = (ConvData*)_this->fx_data;
   float ff;
   int iff;
-  
+
   ff = (FVAL(data->factor_p) * FVAL(data->factor_adj_p) + FVAL(data->light) ) / 100.0f;
   iff = (unsigned int)(ff * 256);
 
@@ -283,7 +283,7 @@ static void convolve_apply(VisualFX *_this, Pixel *src, Pixel *dest, PluginInfo 
     if (rotate_param < 0.0)
         rotate_param = 0.0;
     rotate_param += FVAL(info->sound.goom_power_p);
-    
+
     rotate_coef  = 4.0 + FVAL(info->sound.goom_power_p) * 6.0;
     data->ftheta = (data->ftheta + rotate_coef * sin(rotate_param * 6.3));
     data->theta  = ((unsigned int)data->ftheta) % NB_THETA;

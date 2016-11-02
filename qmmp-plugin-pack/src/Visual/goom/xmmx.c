@@ -41,11 +41,11 @@ void zoom_filter_xmmx (int prevX, int prevY,
     int bufsize = prevX * prevY; /* taille du buffer */
     volatile int loop;                    /* variable de boucle */
 
-    mmx_t *brutS = (mmx_t*)lbruS; /* buffer de transformation source */
-    mmx_t *brutD = (mmx_t*)lbruD; /* buffer de transformation dest */
+    volatile mmx_t *brutS = (mmx_t*)lbruS; /* buffer de transformation source */
+    volatile mmx_t *brutD = (mmx_t*)lbruD; /* buffer de transformation dest */
 
-    volatile mmx_t prevXY;
-    volatile mmx_t ratiox;
+    mmx_t prevXY;
+    mmx_t ratiox;
     /*	volatile mmx_t interpix; */
 
     expix1[0].val=expix1[prevX-1].val=expix1[prevX*prevY-1].val=expix1[prevX*prevY-prevX].val=0;
@@ -76,8 +76,8 @@ void zoom_filter_xmmx (int prevX, int prevY,
          */
 
         asm volatile
-      ("#1 \n\t movq       %0, %%mm0"
-       "#1 \n\t movq       %1, %%mm1"
+      ("#1 \n\t movq    %0, %%mm0"
+       "#1 \n\t movq    %1, %%mm1"
        "#1 \n\t psubd   %%mm0, %%mm1" /* mm1 = D - S */
        "#1 \n\t movq    %%mm1, %%mm2" /* mm2 = D - S */
        "#1 \n\t pslld     $16, %%mm1"
@@ -90,8 +90,8 @@ void zoom_filter_xmmx (int prevX, int prevY,
        "#1 \n\t paddd   %%mm1, %%mm0"  /* mm0 = S + mm1 */
        "#1 \n\t psrld   $16,   %%mm0"
        :
-       : "g"(brutS[loop])
-       , "g"(brutD[loop])
+       : "m"(brutS[loop])
+       , "m"(brutD[loop])
       );               /* mm0 = S */
 
         /*

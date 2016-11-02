@@ -415,7 +415,8 @@ static void c_zoom (Pixel *expix1, Pixel *expix2, unsigned int prevX, unsigned i
 
     for (myPos = 0; myPos < bufsize; myPos += 2) {
         Color   col1, col2, col3, col4;
-        int     c1, c2, c3, c4, px, py;
+        int     c1, c2, c3, c4;
+        unsigned int px, py;
         int     pos;
         int     coeffs;
 
@@ -755,10 +756,10 @@ VisualFX zoomFilterVisualFXWrapper_create(void)
 
 void pointFilter (PluginInfo *goomInfo, Pixel * pix1, Color c, float t1, float t2, float t3, float t4, Uint cycle)
 {
-    Uint x = (Uint) ((int) (goomInfo->screen.width / 2)
-                     + (int) (t1 * cos ((float) cycle / t3)));
-    Uint y = (Uint) ((int) (goomInfo->screen.height/2)
-                     + (int) (t2 * sin ((float) cycle / t4)));
+    int x = (int) (goomInfo->screen.width / 2)
+                     + (int) (t1 * cos ((float) cycle / t3));
+    int y = (int) (goomInfo->screen.height/2)
+            + (int) (t2 * sin ((float) cycle / t4));
 
     if ((x > 1) && (y > 1) && (x < goomInfo->screen.width - 2) && (y < goomInfo->screen.height - 2)) {
         setPixelRGB (goomInfo, pix1, x + 1, y, c);

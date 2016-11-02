@@ -9,6 +9,8 @@ TEMPLATE = lib
 
 #RESOURCES = translations/translations.qrc
 
+DEFINES += YY_NO_INPUT CPU_X86 ARCH_X86 HAVE_MMX
+
 QMAKE_CFLAGS += -Werror=implicit-function-declaration
 
 unix {
