@@ -4,6 +4,7 @@
 #include <string.h>
 #include "goomsl.h"
 #include "goomsl_private.h"
+#include "goom_tools.h"
 #include "goomsl_yacc.h"
 
 /*#define TRACE_SCRIPT*/
@@ -58,7 +59,7 @@
 
  /* }}} */
 /* {{{ definition of the validation error types */
-static const char *VALIDATE_OK = "ok"; 
+static const char *VALIDATE_OK = "ok";
 #define VALIDATE_ERROR "error while validating "
 #define VALIDATE_TODO "todo"
 #define VALIDATE_SYNTHAX_ERROR "synthax error"
@@ -323,7 +324,7 @@ const char *gsl_instr_validate(Instruction *_this)
 
   switch (_this->id) {
 
-    /* set */ 
+    /* set */
     case INSTR_SET:
       return validate(_this,
           INSTR_SETF_VAR_FLOAT, INSTR_SETF_VAR_VAR,
@@ -491,7 +492,7 @@ void iflow_execute(FastInstructionFlow *_this, GoomSL *gsl)
   while (1)
   {
     int i;
-#ifdef TRACE_SCRIPT 
+#ifdef TRACE_SCRIPT
     printf("execute "); gsl_instr_display(instr[ip].proto); printf("\n");
 #endif
     switch (instr[ip].id) {
@@ -745,7 +746,7 @@ void iflow_execute(FastInstructionFlow *_this, GoomSL *gsl)
           ++i;
         }
         ++ip; break;
-        
+
       case INSTR_DIVS_VAR_VAR:
         /* process integers */
         i=0;
@@ -879,7 +880,7 @@ static void reset_scanner(GoomSL *gss)
 
   goom_hash_free(gss->structIDS);
   gss->structIDS  = goom_hash_new();
-  
+
   while (gss->nbStructID > 0) {
     int i;
     gss->nbStructID--;
@@ -944,7 +945,7 @@ static void gsl_create_fast_iflow(void)
   jitc = currentGoomSL->jitc = jitc_x86_env_new(0xffff);
   currentGoomSL->jitc_func = jitc_prepare_func(jitc);
 
-#if 0  
+#if 0
 #define SRC_STRUCT_ID  instr[ip].data.usrc.var_int[-1]
 #define DEST_STRUCT_ID instr[ip].data.udest.var_int[-1]
 #define SRC_STRUCT_IBLOCK(i)  gsl->gsl_struct[SRC_STRUCT_ID]->iBlock[i]
@@ -964,7 +965,7 @@ static void gsl_create_fast_iflow(void)
 
   JITC_JUMP_LABEL(jitc, "__very_end__");
   JITC_ADD_LABEL (jitc, "__very_start__");
-  
+
   for (i=0;i<number;++i) {
     Instruction *instr = currentGoomSL->iflow->instr[i];
     switch (instr->id) {
@@ -1087,7 +1088,7 @@ static void gsl_create_fast_iflow(void)
             coef   = (long)floor(dcoef);
             dcoef -= floor(dcoef);
             if (dcoef < 0.5) coef += 1;
-            
+
             jitc_add(jitc, "mov  eax, [$d]", instr->data.udest.var_int);
             jitc_add(jitc, "mov  edx, $d",   coef);
             jitc_add(jitc, "imul edx");
@@ -1180,7 +1181,7 @@ static void gsl_create_fast_iflow(void)
           int loop = DEST_STRUCT_SIZE / sizeof(int);
           int dst  = (int)pDEST_VAR;
           int src  = (int)pSRC_VAR;
-        
+
           while (loop--) {
             jitc_add(jitc,"mov eax, [$d]", src);
             jitc_add(jitc,"mov [$d], eax", dst);
@@ -1309,7 +1310,7 @@ static void ext_charAt(GoomSL *gsl, GoomHash *global, GoomHash *local)
     GSL_GLOBAL_INT(gsl, "charAt") = string[index];
 }
 
-static void ext_i2f(GoomSL *gsl, GoomHash *global, GoomHash *local)
+static void ext_i2f(GoomSL *gsl, GoomHash *UNUSED(global), GoomHash *local)
 {
   int i = GSL_LOCAL_INT(gsl, local, "value");
   GSL_GLOBAL_FLOAT(gsl, "i2f") = i;
@@ -1362,7 +1363,7 @@ void gsl_compile(GoomSL *_currentGoomSL, const char *script)
   gsl_bind_function(currentGoomSL, "f2i", ext_f2i);
   gsl_bind_function(currentGoomSL, "i2f", ext_i2f);
   free(script_and_externals);
-  
+
 #ifdef VERBOSE
   printf("=== Compilation done. # of lines: %d. # of instr: %d ===\n", currentGoomSL->num_lines, currentGoomSL->iflow->number);
 #endif
@@ -1472,20 +1473,20 @@ void gsl_append_file_to_buffer(const char *fname, char **buffer)
     char *fbuffer;
     int size,fsize,i=0;
     char reset_msg[256];
-    
+
     /* look if the file have not been already imported */
     for (i=0;i<gsl_nb_import;++i) {
       if (strcmp(gsl_already_imported[i], fname) == 0)
         return;
     }
-    
+
     /* add fname to the already imported files. */
     strcpy(gsl_already_imported[gsl_nb_import++], fname);
 
     /* load the file */
     fbuffer = gsl_read_file(fname);
     fsize = strlen(fbuffer);
-        
+
     /* look for #import */
     while (fbuffer[i]) {
       if ((fbuffer[i]=='#') && (fbuffer[i+1]=='i')) {
@@ -1502,7 +1503,7 @@ void gsl_append_file_to_buffer(const char *fname, char **buffer)
       }
       i++;
     }
-    
+
     sprintf(reset_msg, "\n#FILE %s#\n#RST_LINE#\n", fname);
     strcat(*buffer, reset_msg);
     size=strlen(*buffer);

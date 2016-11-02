@@ -9,11 +9,12 @@
 /*---------------------------------------------------------------------------*/
 
 #include "goom_config_param.h"
+#include "goom_tools.h"
 #include <string.h>
 
 /* TODO: Ajouter goom_ devant ces fonctions */
 
-static void empty_fct(PluginParam *dummy) {
+static void empty_fct(PluginParam *UNUSED(dummy)) {
 }
 
 PluginParam goom_secure_param() {

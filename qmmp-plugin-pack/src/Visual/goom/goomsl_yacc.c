@@ -110,6 +110,7 @@
     #include <string.h>
     #include "goomsl.h"
     #include "goomsl_private.h"
+    #include "goom_tools.h"
 
 #define STRUCT_ALIGNMENT 16
 /* #define VERBOSE  */
@@ -1024,7 +1025,7 @@
       node->unode.opr.op[1] = next;
       return node;
     }
-    static void commit_var_list(NodeType *node)
+    static void commit_var_list(NodeType *UNUSED(node))
     {
     } /* }}} */
 
