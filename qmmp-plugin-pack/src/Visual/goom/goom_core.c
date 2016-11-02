@@ -37,7 +37,7 @@
 static void choose_a_goom_line (PluginInfo *goomInfo, float *param1, float *param2, int *couleur,
                                 int *mode, float *amplitude, int isfar);
 
-static void update_message (PluginInfo *goomInfo, char *message);
+static void update_message (PluginInfo *goomInfo, const char *message);
 
 static void init_buffers(PluginInfo *goomInfo, int buffsize)
 {
@@ -145,7 +145,7 @@ int goom_set_screenbuffer(PluginInfo *goomInfo, void *buffer)
 * WARNING: this is a 600 lines function ! (21-11-2003)
 */
 guint32 *goom_update (PluginInfo *goomInfo, gint16 data[2][512],
-                      int forceMode, float fps, char *songTitle, char *message)
+                      int forceMode, float fps, const char *songTitle, const char *message)
 {
     Pixel *return_val;
     guint32 pointWidth;
@@ -839,7 +839,7 @@ choose_a_goom_line (PluginInfo *goomInfo, float *param1, float *param2, int *cou
 /*
  * Met a jour l'affichage du message defilant
  */
-void update_message (PluginInfo *goomInfo, char *message) {
+void update_message (PluginInfo *goomInfo, const char *message) {
 
     int fin = 0;
 
