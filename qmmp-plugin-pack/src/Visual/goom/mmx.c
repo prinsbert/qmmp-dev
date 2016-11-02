@@ -16,10 +16,6 @@
 // faire : a / sqrtperte <=> a >> PERTEDEC
 #define PERTEDEC 4
 
-int mmx_supported (void) {
-    return (mm_support()&0x1);
-}
-
 void zoom_filter_mmx (int prevX, int prevY,
               Pixel *expix1, Pixel *expix2,
               int *brutS, int *brutD, int buffratio,
