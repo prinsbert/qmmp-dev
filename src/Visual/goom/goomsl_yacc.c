@@ -277,7 +277,7 @@
       fblk++;
       s->fBlock[fblk].size = 0;
       s->fBlock[fblk].data = 0;
-      
+
       /* Finally prepare pointers */
       ALIGN_ADDR(consumed, i_align);
       for (i = 0; i < s->nbFields; ++i)
@@ -304,7 +304,7 @@
     {
       /* Prepare the struct: ie calculate internal storage format */
       gsl_prepare_struct(gsl_struct, STRUCT_ALIGNMENT, STRUCT_ALIGNMENT, STRUCT_ALIGNMENT);
-      
+
       /* If the struct does not already exists */
       if (gsl_get_struct_id(name) < 0)
       {
@@ -319,7 +319,7 @@
         currentGoomSL->gsl_struct[id] = gsl_struct;
       }
     } /* }}} */
-    
+
     /* Creates a field for a struct */
     static GSL_StructField *gsl_new_struct_field(const char *name, int type)
     {
@@ -328,7 +328,7 @@
       field->type = type;
       return field;
     }
-    
+
     /* Create as field for a struct which will be a struct itself */
     static GSL_StructField *gsl_new_struct_field_struct(const char *name, const char *type)
     {
@@ -408,7 +408,7 @@
           }
        }
     }
-    
+
     /* Declare a variable which will be a struct */
     static void gsl_struct_decl(GoomHash *namespace, const char *struct_name, const char *name)
     {
@@ -432,7 +432,7 @@
     {
         gsl_declare_var(currentGoomSL->vars, name, id, NULL);
     }
-    
+
     /* FLOAT */
     static void gsl_float_decl_local(const char *name)
     {
@@ -632,7 +632,7 @@
         if (expr->unode.opr.nbOp == 2) {
           commit_node(expr->unode.opr.op[toAdd],1);
         }
-    
+
         /* redefine the ADD node now as the computed variable */
         nodeFreeInternals(expr);
         *expr = *tmpcpy;
@@ -715,7 +715,7 @@
     static void precommit_mul(NodeType *mul) {
         precommit_expr(mul,"mul",INSTR_MUL);
     } /* }}} */
-    
+
     /* DIV */
     static NodeType *new_div(NodeType *expr1, NodeType *expr2) { /* {{{ */
         return new_expr2("div", OPR_DIV, expr1, expr2);
@@ -762,7 +762,7 @@
         commit_node(call->unode.opr.op[0],0);
         tmpcpy = nodeClone(tmp);
         commit_node(new_set(tmp,new_var(call->str,call->line_number)),0);
-        
+
         nodeFreeInternals(call);
         *call = *tmpcpy;
         free(tmpcpy);
@@ -775,7 +775,7 @@
         precommit_node(set->unode.opr.op[0]);
         precommit_node(set->unode.opr.op[1]);
         tmp = set->unode.opr.op[0];
-        
+
         stmp[0] = 0;
         if (set->unode.opr.op[0]->type == CONST_INT_NODE) {
             sprintf(stmp,"_i_tmp_%i",allocateTemp());
@@ -804,7 +804,7 @@
         commit_node(tmp,instr!=INSTR_SET);
         commit_node(set->unode.opr.op[1],1);
     } /* }}} */
-    
+
     /* NOT */
     static NodeType *new_not(NodeType *expr1) { /* {{{ */
         return new_expr1("not", OPR_NOT, expr1);
@@ -818,7 +818,7 @@
         currentGoomSL->instr = gsl_instr_init(currentGoomSL, "not", INSTR_NOT, 1, set->line_number);
         gsl_instr_add_param(currentGoomSL->instr, "|dummy|", TYPE_LABEL);
     } /* }}} */
-    
+
     /* EQU */
     static NodeType *new_equ(NodeType *expr1, NodeType *expr2) { /* {{{ */
         return new_expr2("isequal", OPR_EQU, expr1, expr2);
@@ -826,7 +826,7 @@
     static void commit_equ(NodeType *mul) {
         commit_test2(mul,"isequal",INSTR_ISEQUAL);
     } /* }}} */
-    
+
     /* INF */
     static NodeType *new_low(NodeType *expr1, NodeType *expr2) { /* {{{ */
         return new_expr2("islower", OPR_LOW, expr1, expr2);
@@ -849,7 +849,7 @@
         char start_while[1024], test_while[1024];
         sprintf(start_while, "|start_while_%d|", lbl);
         sprintf(test_while, "|test_while_%d|", lbl);
-       
+
         GSL_PUT_JUMP(test_while,node->line_number);
         GSL_PUT_LABEL(start_while,node->line_number);
 
@@ -889,9 +889,9 @@
 #ifdef VERBOSE
         printf("ret\n");
 #endif
-        
+
         GSL_PUT_LABEL(tmp_loop, node->line_number);
-        
+
         while (cur != NULL)
         {
           NodeType *x, *var;
@@ -900,14 +900,14 @@
           x   = nodeClone(node->unode.opr.op[0]);
           var = nodeClone(cur->unode.opr.op[0]);
           commit_node(new_set(x, var),0);
-          
+
           /* 2: instr */
           currentGoomSL->instr = gsl_instr_init(currentGoomSL, "call", INSTR_CALL, 1, node->line_number);
           gsl_instr_add_param(currentGoomSL->instr, tmp_func, TYPE_LABEL);
 #ifdef VERBOSE
           printf("call %s\n", tmp_func);
 #endif
-          
+
           /* 3: var=x */
           x   = nodeClone(node->unode.opr.op[0]);
           var = cur->unode.opr.op[0];
@@ -939,7 +939,7 @@
     static NodeType *new_block(NodeType *lastNode) { /* {{{ */
         NodeType *blk = new_op("block", OPR_BLOCK, 2);
         blk->unode.opr.op[0] = new_nop("start_of_block");
-        blk->unode.opr.op[1] = lastNode;        
+        blk->unode.opr.op[1] = lastNode;
         return blk;
     }
     static void commit_block(NodeType *node) {
@@ -974,7 +974,7 @@
         printf("ret\n");
 #endif
     } /* }}} */
-    
+
     /* AFFECTATION LIST */
     static NodeType *new_affec_list(NodeType *set, NodeType *next) /* {{{ */
     {
@@ -1102,7 +1102,7 @@
       return allocateLabel();
     }
     void releaseAllTemps(void) {}
-    void releaseTemp(int n) {}
+    void releaseTemp(int UNUSED(n)) {}
 #else
     static int nbTemp = 0;
     static int *tempArray = 0;
@@ -1154,7 +1154,7 @@
         rootNode = 0;
         lastNode = 0;
     } /* }}} */
-    
+
     void precommit_node(NodeType *node)
     { /* {{{ */
         /* do here stuff for expression.. for exemple */
@@ -1167,11 +1167,11 @@
                 case OPR_CALL_EXPR: precommit_call_expr(node); break;
             }
     } /* }}} */
-    
+
     void commit_node(NodeType *node, int releaseIfTmp)
     { /* {{{ */
         if (node == 0) return;
-        
+
         switch(node->type) {
             case OPR_NODE:
                 switch(node->unode.opr.type) {
@@ -1209,7 +1209,7 @@
         }
         if (releaseIfTmp && is_tmp_expr(node))
           releaseTemp(get_tmp_id(node));
-        
+
         nodeFree(node);
     } /* }}} */
 
@@ -1232,7 +1232,7 @@
     void nodeFreeInternals(NodeType *node) {
         free(node->str); /* {{{ */
     } /* }}} */
-    
+
     void nodeFree(NodeType *node) {
         nodeFreeInternals(node); /* {{{ */
         free(node);
@@ -1265,12 +1265,12 @@
         }
         return node;
     } /* }}} */
-    
+
     NodeType *new_nop(const char *str) {
         NodeType *node = new_op(str, EMPTY_NODE, 0); /* {{{ */
         return node;
     } /* }}} */
-    
+
     NodeType *new_op(const char *str, int type, int nbOp) {
         int i; /* {{{ */
         NodeType *node = nodeNew(str, OPR_NODE, currentGoomSL->num_lines);
@@ -1372,7 +1372,7 @@ typedef union YYSTYPE {
 
 #if (! defined (yyoverflow) \
      && (! defined (__cplusplus) \
-	 || (YYSTYPE_IS_TRIVIAL)))
+     || (YYSTYPE_IS_TRIVIAL)))
 
 /* A type that is properly aligned for any stack member.  */
 union yyalloc
@@ -1399,11 +1399,11 @@ union yyalloc
 #  else
 #   define YYCOPY(To, From, Count)		\
       do					\
-	{					\
-	  register YYSIZE_T yyi;		\
-	  for (yyi = 0; yyi < (Count); yyi++)	\
-	    (To)[yyi] = (From)[yyi];		\
-	}					\
+    {					\
+      register YYSIZE_T yyi;		\
+      for (yyi = 0; yyi < (Count); yyi++)	\
+        (To)[yyi] = (From)[yyi];		\
+    }					\
       while (0)
 #  endif
 # endif
@@ -1416,11 +1416,11 @@ union yyalloc
 # define YYSTACK_RELOCATE(Stack)					\
     do									\
       {									\
-	YYSIZE_T yynewbytes;						\
-	YYCOPY (&yyptr->Stack, Stack, yysize);				\
-	Stack = &yyptr->Stack;						\
-	yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \
-	yyptr += yynewbytes / sizeof (*yyptr);				\
+    YYSIZE_T yynewbytes;						\
+    YYCOPY (&yyptr->Stack, Stack, yysize);				\
+    Stack = &yyptr->Stack;						\
+    yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \
+    yyptr += yynewbytes / sizeof (*yyptr);				\
       }									\
     while (0)
 
@@ -1562,18 +1562,18 @@ static const unsigned short yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals. */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "LTYPE_INTEGER", "LTYPE_FLOAT", 
-  "LTYPE_VAR", "LTYPE_PTR", "PTR_TK", "INT_TK", "FLOAT_TK", "DECLARE", 
-  "EXTERNAL", "WHILE", "DO", "NOT", "PLUS_EQ", "SUB_EQ", "DIV_EQ", 
-  "MUL_EQ", "SUP_EQ", "LOW_EQ", "NOT_EQ", "STRUCT", "FOR", "IN", "'\\n'", 
-  "'='", "'<'", "'>'", "'+'", "'-'", "'/'", "'*'", "':'", "','", "'('", 
-  "')'", "'?'", "'{'", "'}'", "'['", "']'", "$accept", "gsl", "gsl_code", 
-  "struct_declaration", "struct_members", "struct_member", 
-  "ext_task_name", "task_name", "return_type", "arglist", 
-  "gsl_def_functions", "function", "function_intro", "function_outro", 
-  "leave_namespace", "declaration", "empty_declaration", "instruction", 
-  "var_list", "var_list_content", "affectation", "start_block", 
-  "expression", "test", "constValue", "func_call", "func_call_expression", 
+  "$end", "error", "$undefined", "LTYPE_INTEGER", "LTYPE_FLOAT",
+  "LTYPE_VAR", "LTYPE_PTR", "PTR_TK", "INT_TK", "FLOAT_TK", "DECLARE",
+  "EXTERNAL", "WHILE", "DO", "NOT", "PLUS_EQ", "SUB_EQ", "DIV_EQ",
+  "MUL_EQ", "SUP_EQ", "LOW_EQ", "NOT_EQ", "STRUCT", "FOR", "IN", "'\\n'",
+  "'='", "'<'", "'>'", "'+'", "'-'", "'/'", "'*'", "':'", "','", "'('",
+  "')'", "'?'", "'{'", "'}'", "'['", "']'", "$accept", "gsl", "gsl_code",
+  "struct_declaration", "struct_members", "struct_member",
+  "ext_task_name", "task_name", "return_type", "arglist",
+  "gsl_def_functions", "function", "function_intro", "function_outro",
+  "leave_namespace", "declaration", "empty_declaration", "instruction",
+  "var_list", "var_list_content", "affectation", "start_block",
+  "expression", "test", "constValue", "func_call", "func_call_expression",
   "affectation_list", "affectation_in_list", "opt_nl", 0
 };
 #endif
@@ -1973,7 +1973,7 @@ int yydebug;
 # define YYMAXDEPTH 10000
 #endif
 
-
+
 
 #if YYERROR_VERBOSE
 
@@ -2028,7 +2028,7 @@ yystpcpy (yydest, yysrc)
 
 #endif /* !YYERROR_VERBOSE */
 
-
+
 
 #if YYDEBUG
 /*--------------------------------.
@@ -2092,7 +2092,7 @@ yydestruct (yytype, yyvaluep)
         break;
     }
 }
-
+
 
 /* Prevent warnings from -Wmissing-prototypes.  */
 
@@ -2145,7 +2145,7 @@ yyparse ()
 #endif
 #endif
 {
-  
+
   register int yystate;
   register int yyn;
   int yyresult;
@@ -2223,25 +2223,25 @@ yyparse ()
 
 #ifdef yyoverflow
       {
-	/* Give user a chance to reallocate the stack. Use copies of
-	   these so that the &'s don't force the real ones into
-	   memory.  */
-	YYSTYPE *yyvs1 = yyvs;
-	short *yyss1 = yyss;
+    /* Give user a chance to reallocate the stack. Use copies of
+       these so that the &'s don't force the real ones into
+       memory.  */
+    YYSTYPE *yyvs1 = yyvs;
+    short *yyss1 = yyss;
 
 
-	/* Each stack pointer address is followed by the size of the
-	   data in use in that stack, in bytes.  This used to be a
-	   conditional around just the two extra args, but that might
-	   be undefined if yyoverflow is a macro.  */
-	yyoverflow ("parser stack overflow",
-		    &yyss1, yysize * sizeof (*yyssp),
-		    &yyvs1, yysize * sizeof (*yyvsp),
+    /* Each stack pointer address is followed by the size of the
+       data in use in that stack, in bytes.  This used to be a
+       conditional around just the two extra args, but that might
+       be undefined if yyoverflow is a macro.  */
+    yyoverflow ("parser stack overflow",
+            &yyss1, yysize * sizeof (*yyssp),
+            &yyvs1, yysize * sizeof (*yyvsp),
 
-		    &yystacksize);
+            &yystacksize);
 
-	yyss = yyss1;
-	yyvs = yyvs1;
+    yyss = yyss1;
+    yyvs = yyvs1;
       }
 #else /* no yyoverflow */
 # ifndef YYSTACK_RELOCATE
@@ -2249,23 +2249,23 @@ yyparse ()
 # else
       /* Extend the stack our own way.  */
       if (YYMAXDEPTH <= yystacksize)
-	goto yyoverflowlab;
+    goto yyoverflowlab;
       yystacksize *= 2;
       if (YYMAXDEPTH < yystacksize)
-	yystacksize = YYMAXDEPTH;
+    yystacksize = YYMAXDEPTH;
 
       {
-	short *yyss1 = yyss;
-	union yyalloc *yyptr =
-	  (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
-	if (! yyptr)
-	  goto yyoverflowlab;
-	YYSTACK_RELOCATE (yyss);
-	YYSTACK_RELOCATE (yyvs);
+    short *yyss1 = yyss;
+    union yyalloc *yyptr =
+      (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
+    if (! yyptr)
+      goto yyoverflowlab;
+    YYSTACK_RELOCATE (yyss);
+    YYSTACK_RELOCATE (yyvs);
 
 #  undef YYSTACK_RELOCATE
-	if (yyss1 != yyssa)
-	  YYSTACK_FREE (yyss1);
+    if (yyss1 != yyssa)
+      YYSTACK_FREE (yyss1);
       }
 # endif
 #endif /* no yyoverflow */
@@ -2275,10 +2275,10 @@ yyparse ()
 
 
       YYDPRINTF ((stderr, "Stack size increased to %lu\n",
-		  (unsigned long int) yystacksize));
+          (unsigned long int) yystacksize));
 
       if (yyss + yystacksize - 1 <= yyssp)
-	YYABORT;
+    YYABORT;
     }
 
   YYDPRINTF ((stderr, "Entering state %d\n", yystate));
@@ -2329,7 +2329,7 @@ yybackup:
   if (yyn <= 0)
     {
       if (yyn == 0 || yyn == YYTABLE_NINF)
-	goto yyerrlab;
+    goto yyerrlab;
       yyn = -yyn;
       goto yyreduce;
     }
@@ -2790,7 +2790,7 @@ yyreduce:
 
 /* Line 999 of yacc.c.  */
 #line 2792 "goomsl_yacc.c"
-
+
   yyvsp -= yylen;
   yyssp -= yylen;
 
@@ -2827,50 +2827,50 @@ yyerrlab:
       yyn = yypact[yystate];
 
       if (YYPACT_NINF < yyn && yyn < YYLAST)
-	{
-	  YYSIZE_T yysize = 0;
-	  int yytype = YYTRANSLATE (yychar);
-	  char *yymsg;
-	  int yyx, yycount;
+    {
+      YYSIZE_T yysize = 0;
+      int yytype = YYTRANSLATE (yychar);
+      char *yymsg;
+      int yyx, yycount;
 
-	  yycount = 0;
-	  /* Start YYX at -YYN if negative to avoid negative indexes in
-	     YYCHECK.  */
-	  for (yyx = yyn < 0 ? -yyn : 0;
-	       yyx < (int) (sizeof (yytname) / sizeof (char *)); yyx++)
-	    if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR)
-	      yysize += yystrlen (yytname[yyx]) + 15, yycount++;
-	  yysize += yystrlen ("syntax error, unexpected ") + 1;
-	  yysize += yystrlen (yytname[yytype]);
-	  yymsg = (char *) YYSTACK_ALLOC (yysize);
-	  if (yymsg != 0)
-	    {
-	      char *yyp = yystpcpy (yymsg, "syntax error, unexpected ");
-	      yyp = yystpcpy (yyp, yytname[yytype]);
+      yycount = 0;
+      /* Start YYX at -YYN if negative to avoid negative indexes in
+         YYCHECK.  */
+      for (yyx = yyn < 0 ? -yyn : 0;
+           yyx < (int) (sizeof (yytname) / sizeof (char *)); yyx++)
+        if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR)
+          yysize += yystrlen (yytname[yyx]) + 15, yycount++;
+      yysize += yystrlen ("syntax error, unexpected ") + 1;
+      yysize += yystrlen (yytname[yytype]);
+      yymsg = (char *) YYSTACK_ALLOC (yysize);
+      if (yymsg != 0)
+        {
+          char *yyp = yystpcpy (yymsg, "syntax error, unexpected ");
+          yyp = yystpcpy (yyp, yytname[yytype]);
 
-	      if (yycount < 5)
-		{
-		  yycount = 0;
-		  for (yyx = yyn < 0 ? -yyn : 0;
-		       yyx < (int) (sizeof (yytname) / sizeof (char *));
-		       yyx++)
-		    if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR)
-		      {
-			const char *yyq = ! yycount ? ", expecting " : " or ";
-			yyp = yystpcpy (yyp, yyq);
-			yyp = yystpcpy (yyp, yytname[yyx]);
-			yycount++;
-		      }
-		}
-	      yyerror (yymsg);
-	      YYSTACK_FREE (yymsg);
-	    }
-	  else
-	    yyerror ("syntax error; also virtual memory exhausted");
-	}
+          if (yycount < 5)
+        {
+          yycount = 0;
+          for (yyx = yyn < 0 ? -yyn : 0;
+               yyx < (int) (sizeof (yytname) / sizeof (char *));
+               yyx++)
+            if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR)
+              {
+            const char *yyq = ! yycount ? ", expecting " : " or ";
+            yyp = yystpcpy (yyp, yyq);
+            yyp = yystpcpy (yyp, yytname[yyx]);
+            yycount++;
+              }
+        }
+          yyerror (yymsg);
+          YYSTACK_FREE (yymsg);
+        }
+      else
+        yyerror ("syntax error; also virtual memory exhausted");
+    }
       else
 #endif /* YYERROR_VERBOSE */
-	yyerror ("syntax error");
+    yyerror ("syntax error");
     }
 
 
@@ -2878,21 +2878,21 @@ yyerrlab:
   if (yyerrstatus == 3)
     {
       /* If just tried and failed to reuse lookahead token after an
-	 error, discard it.  */
+     error, discard it.  */
 
       /* Return failure if at end of input.  */
       if (yychar == YYEOF)
         {
-	  /* Pop the error token.  */
+      /* Pop the error token.  */
           YYPOPSTACK;
-	  /* Pop the rest of the stack.  */
-	  while (yyss < yyssp)
-	    {
-	      YYDSYMPRINTF ("Error: popping", yystos[*yyssp], yyvsp, yylsp);
-	      yydestruct (yystos[*yyssp], yyvsp);
-	      YYPOPSTACK;
-	    }
-	  YYABORT;
+      /* Pop the rest of the stack.  */
+      while (yyss < yyssp)
+        {
+          YYDSYMPRINTF ("Error: popping", yystos[*yyssp], yyvsp, yylsp);
+          yydestruct (yystos[*yyssp], yyvsp);
+          YYPOPSTACK;
+        }
+      YYABORT;
         }
 
       YYDSYMPRINTF ("Error: discarding", yytoken, &yylval, &yylloc);
@@ -2916,19 +2916,19 @@ yyerrlab1:
     {
       yyn = yypact[yystate];
       if (yyn != YYPACT_NINF)
-	{
-	  yyn += YYTERROR;
-	  if (0 <= yyn && yyn <= YYLAST && yycheck[yyn] == YYTERROR)
-	    {
-	      yyn = yytable[yyn];
-	      if (0 < yyn)
-		break;
-	    }
-	}
+    {
+      yyn += YYTERROR;
+      if (0 <= yyn && yyn <= YYLAST && yycheck[yyn] == YYTERROR)
+        {
+          yyn = yytable[yyn];
+          if (0 < yyn)
+        break;
+        }
+    }
 
       /* Pop the current state because it cannot handle the error token.  */
       if (yyssp == yyss)
-	YYABORT;
+    YYABORT;
 
       YYDSYMPRINTF ("Error: popping", yystos[*yyssp], yyvsp, yylsp);
       yydestruct (yystos[yystate], yyvsp);

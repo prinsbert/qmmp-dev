@@ -1298,7 +1298,7 @@ GoomHash *gsl_globals(GoomSL *_this)
 /**
  * Some native external functions
  */
-static void ext_charAt(GoomSL *gsl, GoomHash *global, GoomHash *local)
+static void ext_charAt(GoomSL *gsl, GoomHash *UNUSED(global), GoomHash *local)
 {
   char *string = GSL_LOCAL_PTR(gsl, local, "value");
   int   index  = GSL_LOCAL_INT(gsl, local, "index");
@@ -1306,7 +1306,7 @@ static void ext_charAt(GoomSL *gsl, GoomHash *global, GoomHash *local)
   if (string == NULL) {
     return;
   }
-  if (index < strlen(string))
+  if (index < (int)strlen(string))
     GSL_GLOBAL_INT(gsl, "charAt") = string[index];
 }
 
@@ -1316,7 +1316,7 @@ static void ext_i2f(GoomSL *gsl, GoomHash *UNUSED(global), GoomHash *local)
   GSL_GLOBAL_FLOAT(gsl, "i2f") = i;
 }
 
-static void ext_f2i(GoomSL *gsl, GoomHash *global, GoomHash *local)
+static void ext_f2i(GoomSL *gsl, GoomHash *UNUSED(global), GoomHash *local)
 {
   float f = GSL_LOCAL_FLOAT(gsl, local, "value");
   GSL_GLOBAL_INT(gsl, "f2i") = f;
@@ -1459,7 +1459,7 @@ static char *gsl_read_file(const char *fname)
   fsize = ftell(f);
   rewind(f);
   buffer = (char*)malloc(fsize+512);
-  if (fread(buffer,1,fsize,f) != fsize) {
+  if (fread(buffer,1,fsize,f) != (size_t)fsize) {
     fprintf(stderr, "ERROR: Could not read file %s\n", fname);
     exit(1);
   }
