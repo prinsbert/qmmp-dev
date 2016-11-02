@@ -29,7 +29,6 @@
 #include <qmmp/output.h>
 #include <qmmp/soundcore.h>
 #include <QTime>
-#include "inlines.h"
 #include "goomwidget.h"
 
 #define VISUAL_NODE_SIZE 512 //samples
