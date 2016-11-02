@@ -27,7 +27,6 @@ win32 {
 
 HEADERS += \
     goomwidget.h \
-    inlines.h \
     visualgoomfactory.h \
     cpu_info.h \
     default_scripts.h \
