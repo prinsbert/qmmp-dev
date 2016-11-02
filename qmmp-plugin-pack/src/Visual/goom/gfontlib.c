@@ -1,3 +1,24 @@
+/***************************************************************************
+ *   Copyright (C) 2000-2004 by                                            *
+ *   Jean-Christophe Hoelt <jeko@ios-software.com>                         *
+ *   Guillaume Borios <gyom@ios-software.com>                              *
+ *                                                                          *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
+ ***************************************************************************/
+
 #include "goom_config.h"
 #include "gfontrle.c"
 #include "gfontlib.h"
@@ -12,28 +33,28 @@ static int    *small_font_width;
 static int    *small_font_height;
 
 void gfont_load (void) {
-	unsigned char *gfont;
-	unsigned int i = 0, j = 0;
-	unsigned int nba = 0;
-	unsigned int current = 32;
+    unsigned char *gfont;
+    unsigned int i = 0, j = 0;
+    unsigned int nba = 0;
+    unsigned int current = 32;
         int    *font_pos;
-	/* decompress le rle */
+    /* decompress le rle */
 
-        
-        
-	gfont = malloc (the_font.width*the_font.height*the_font.bytes_per_pixel);
-	while (i<the_font.rle_size) {
-		unsigned char c = the_font.rle_pixel [i++];
-		if (c == 0) {
-			unsigned int nb = the_font.rle_pixel [i++];
-			while (nb--)
-				gfont[j++] = 0;
-		}
-		else
-			gfont [j++] = c;
-	}
 
-	/* determiner les positions de chaque lettre. */
+
+    gfont = malloc (the_font.width*the_font.height*the_font.bytes_per_pixel);
+    while (i<the_font.rle_size) {
+        unsigned char c = the_font.rle_pixel [i++];
+        if (c == 0) {
+            unsigned int nb = the_font.rle_pixel [i++];
+            while (nb--)
+                gfont[j++] = 0;
+        }
+        else
+            gfont [j++] = c;
+    }
+
+    /* determiner les positions de chaque lettre. */
 
         font_height = calloc (256,sizeof(int));
         small_font_height = calloc (256,sizeof(int));
@@ -43,28 +64,28 @@ void gfont_load (void) {
         small_font_chars = calloc (256,sizeof(int**));
         font_pos = calloc (256,sizeof(int));
 
-	for (i=0;i<the_font.width;i++) {
-		unsigned char a = gfont [i*4 + 3];
-		if (a)
-			nba ++;
-		else
-			nba = 0;
-		if (nba == 2) {
+    for (i=0;i<the_font.width;i++) {
+        unsigned char a = gfont [i*4 + 3];
+        if (a)
+            nba ++;
+        else
+            nba = 0;
+        if (nba == 2) {
                     font_width [current] = i - font_pos [current];
                     small_font_width [current] = font_width [current]/2;
                         font_pos [++current] = i;
                         font_height [current] = the_font.height - 2;
                         small_font_height [current] = font_height [current]/2;
-		}
-	}
-	font_pos [current] = 0;
+        }
+    }
+    font_pos [current] = 0;
         font_height [current] = 0;
         small_font_height [current] = 0;
-	
-	/* charger les lettres et convertir au format de la machine */
-	
-	for (i=33;i<current;i++) {
-		int x; int y;
+
+    /* charger les lettres et convertir au format de la machine */
+
+    for (i=33;i<current;i++) {
+        int x; int y;
                 font_chars [i] = malloc (font_height[i]*sizeof(int *));
                 small_font_chars [i] = malloc (font_height[i]*sizeof(int *)/2);
                 for (y = 0; y < font_height[i]; y++) {
@@ -108,10 +129,10 @@ void gfont_load (void) {
                 }
         }
 
-	/* definir les lettres restantes */ 
-	
-	for (i=0;i<256;i++) {
-		if (font_chars[i]==0) {
+    /* definir les lettres restantes */
+
+    for (i=0;i<256;i++) {
+        if (font_chars[i]==0) {
                     font_chars[i]=font_chars[42];
                     small_font_chars[i]=small_font_chars[42];
                     font_width[i]=font_width[42];
@@ -120,21 +141,21 @@ void gfont_load (void) {
                     small_font_width[i]=small_font_width[42];
                     small_font_height[i]=small_font_height[42];
                 }
-	}
+    }
 
         font_width [32] = (the_font.height / 2) - 1;
         small_font_width [32] = font_width [32]/2;
         font_chars [32] = 0;
         small_font_chars [32] = 0;
-	free(font_pos);
-	free(gfont);
+    free(font_pos);
+    free(gfont);
 }
 
 void    goom_draw_text (Pixel * buf,int resolx,int resoly,
-												int x, int y,
-												const char *str, float charspace, int center) {
-	float   fx = (float) x;
-	int     fin = 0;
+                                                int x, int y,
+                                                const char *str, float charspace, int center) {
+    float   fx = (float) x;
+    int     fin = 0;
 
         Pixel  ***cur_font_chars;
         int    *cur_font_width;
@@ -156,52 +177,52 @@ void    goom_draw_text (Pixel * buf,int resolx,int resoly,
         }
 
         if (cur_font_chars == NULL)
-		return ;
+        return ;
 
-	if (center) {
-		unsigned char   *tmp = (unsigned char*)str;
-		float   lg = -charspace;
+    if (center) {
+        unsigned char   *tmp = (unsigned char*)str;
+        float   lg = -charspace;
 
-		while (*tmp != '\0')
-			lg += cur_font_width[*(tmp++)] + charspace;
+        while (*tmp != '\0')
+            lg += cur_font_width[*(tmp++)] + charspace;
 
-		fx -= lg / 2;
-	}
+        fx -= lg / 2;
+    }
 
-	while (!fin) {
-		unsigned char    c = *str;
+    while (!fin) {
+        unsigned char    c = *str;
 
-		x = (int) fx;
+        x = (int) fx;
 
-		if (c == '\0')
-			fin = 1;
-		else if (cur_font_chars[c]==0) {
-			fx += cur_font_width[c] + charspace;
-		}
-		else {
-			int     xx, yy;
-			int     xmin = x;
-			int     xmax = x + cur_font_width[c];
-			int     ymin = y - cur_font_height[c];
-			int     ymax = y;
+        if (c == '\0')
+            fin = 1;
+        else if (cur_font_chars[c]==0) {
+            fx += cur_font_width[c] + charspace;
+        }
+        else {
+            int     xx, yy;
+            int     xmin = x;
+            int     xmax = x + cur_font_width[c];
+            int     ymin = y - cur_font_height[c];
+            int     ymax = y;
 
-			yy = ymin;
+            yy = ymin;
 
-			if (xmin < 0)
-				xmin = 0;
+            if (xmin < 0)
+                xmin = 0;
 
-			if (xmin >= resolx - 1)
-				return;
+            if (xmin >= resolx - 1)
+                return;
 
-			if (xmax >= (int) resolx)
-				xmax = resolx - 1;
+            if (xmax >= (int) resolx)
+                xmax = resolx - 1;
 
-			if (yy < 0)
-				yy = 0;
+            if (yy < 0)
+                yy = 0;
 
-			if (yy <= (int) resoly - 1) {
-				if (ymax >= (int) resoly - 1)
-					ymax = resoly - 1;
+            if (yy <= (int) resoly - 1) {
+                if (ymax >= (int) resoly - 1)
+                    ymax = resoly - 1;
 
         for (; yy < ymax; yy++)
           for (xx = xmin; xx < xmax; xx++)
@@ -223,9 +244,9 @@ void    goom_draw_text (Pixel * buf,int resolx,int resoly,
                   }
               }
           }
-			}
-			fx += cur_font_width[c] + charspace;
-		}
-		str++;
-	}
+            }
+            fx += cur_font_width[c] + charspace;
+        }
+        str++;
+    }
 }

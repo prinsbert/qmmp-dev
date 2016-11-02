@@ -1,3 +1,22 @@
+/***************************************************************************
+ *   Copyright (C) 2000-2003 iOS-software                                  *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
+ ***************************************************************************/
+
 #ifndef _LINES_H
 #define _LINES_H
 
@@ -13,33 +32,33 @@
 
 struct _GMUNITPOINTER
 {
-	float   x;
-	float   y;
-	float   angle;
+    float   x;
+    float   y;
+    float   angle;
 };
 
 /* tableau de points */
 struct _GMLINE
 {
 
-	GMUnitPointer *points;
-	GMUnitPointer *points2;
-	int     IDdest;
-	float   param;
-	float   amplitudeF;
-	float   amplitude;
+    GMUnitPointer *points;
+    GMUnitPointer *points2;
+    int     IDdest;
+    float   param;
+    float   amplitudeF;
+    float   amplitude;
 
-	int     nbPoints;
-	guint32 color;     /* pour l'instant je stocke la couleur a terme, on stockera le mode couleur et l'on animera */
-	guint32 color2;
+    int     nbPoints;
+    guint32 color;     /* pour l'instant je stocke la couleur a terme, on stockera le mode couleur et l'on animera */
+    guint32 color2;
 
-	int     screenX;
-	int     screenY;
+    int     screenX;
+    int     screenY;
 
-	float   power;
-	float   powinc;
+    float   power;
+    float   powinc;
 
-	PluginInfo *goomInfo;
+    PluginInfo *goomInfo;
 };
 
 /* les ID possibles */
@@ -65,12 +84,12 @@ struct _GMLINE
 
 /* construit un effet de line (une ligne horitontale pour commencer) */
 GMLine *goom_lines_init (PluginInfo *goomInfo, int rx, int ry,
-			 int IDsrc, float paramS, int modeCoulSrc,
-			 int IDdest, float paramD, int modeCoulDest);
+             int IDsrc, float paramS, int modeCoulSrc,
+             int IDdest, float paramD, int modeCoulDest);
 
 void    goom_lines_switch_to (GMLine * gml, int IDdest, float param,
-			float amplitude,
-			int modeCoul);
+            float amplitude,
+            int modeCoul);
 
 void    goom_lines_set_res (GMLine * gml, int rx, int ry);
 
