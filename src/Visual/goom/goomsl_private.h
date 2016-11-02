@@ -1,3 +1,24 @@
+/***************************************************************************
+ *   Copyright (C) 2000-2004 by                                            *
+ *   Jean-Christophe Hoelt <jeko@ios-software.com>                         *
+ *   Guillaume Borios <gyom@ios-software.com>                              *
+ *                                                                          *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
+ ***************************************************************************/
+
 #ifndef _GSL_PRIVATE_H
 #define _GSL_PRIVATE_H
 
@@ -76,7 +97,7 @@ typedef struct _NODE_TYPE { /* {{{ */
     } unode;
 } NodeType; /* }}} */
 typedef struct _INSTRUCTION_DATA { /* {{{ */
-  
+
   union {
     void  *var;
     int   *var_int;
@@ -168,24 +189,24 @@ struct _GoomSL { /* {{{ */
 
     InstructionFlow     *iflow;  /* flow d'instruction 'normal' */
     FastInstructionFlow *fastiflow; /* flow d'instruction optimise */
-    
+
     GoomHash *vars;         /* table de variables */
     int currentNS;
     GoomHash *namespaces[16];
-    
+
     GoomHash *functions;    /* table des fonctions externes */
 
     GoomHeap *data_heap; /* GSL Heap-like memory space */
-    
+
     int nbStructID;
     GoomHash   *structIDS;
     GSL_Struct **gsl_struct;
     int gsl_struct_size;
-    
+
     int    nbPtr;
     int    ptrArraySize;
     void **ptrArray;
-    
+
     int compilationOK;
 #ifdef USE_JITC_X86
     JitcX86Env *jitc;
@@ -229,7 +250,7 @@ void gsl_commit_compilation(void);
 
 #define INSTR_JUMP     6
 #define INSTR_JZERO    29
-#define INSTR_CALL     36 
+#define INSTR_CALL     36
 #define INSTR_RET      37
 #define INSTR_EXT_CALL 38
 #define INSTR_JNZERO   40

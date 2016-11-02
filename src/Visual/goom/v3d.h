@@ -1,3 +1,24 @@
+/***************************************************************************
+ *   Copyright (C) 2000-2004 by                                            *
+ *   Jean-Christophe Hoelt <jeko@ios-software.com>                         *
+ *   Guillaume Borios <gyom@ios-software.com>                              *
+ *                                                                          *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
+ ***************************************************************************/
+
 #ifndef _V3D_H
 #define _V3D_H
 
@@ -19,7 +40,7 @@ typedef struct {
     double x,y;
 } v2g;
 
-/* 
+/*
  * projete le vertex 3D sur le plan d'affichage
  * retourne (0,0) si le point ne doit pas etre affiche.
  *
@@ -29,10 +50,10 @@ typedef struct {
 { \
   int Xp, Yp; \
   if (v3.z > 2) { \
-	 F2I((distance * v3.x / v3.z),Xp) ; \
- 	 F2I((distance * v3.y / v3.z),Yp) ; \
- 	 v2.x = Xp + (width>>1); \
-	 v2.y = -Yp + (height>>1); \
+     F2I((distance * v3.x / v3.z),Xp) ; \
+     F2I((distance * v3.y / v3.z),Yp) ; \
+     v2.x = Xp + (width>>1); \
+     v2.y = -Yp + (height>>1); \
   } \
   else v2.x=v2.y=-666; \
 }
