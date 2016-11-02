@@ -22,23 +22,21 @@
 #define VERBOSE
 
 static void setOptimizedMethods(PluginInfo *p) {
-
-    unsigned int cpuFlavour = cpu_flavour();
-
     /* set default methods */
     p->methods.draw_line = draw_line;
     p->methods.zoom_filter = zoom_filter_c;
-/*    p->methods.create_output_with_brightness = create_output_with_brightness;*/
+
+    int mm_flags = mm_support ();
 
 #ifdef CPU_X86
-    if (1/*cpuFlavour & CPU_OPTION_XMMX*/) {
+    if (mm_flags & FF_MM_MMX2) {
 #ifdef VERBOSE
         printf ("Extented MMX detected. Using the fastest methods !\n");
 #endif
         p->methods.draw_line = draw_line_mmx;
         p->methods.zoom_filter = zoom_filter_xmmx;
     }
-    else if (cpuFlavour & CPU_OPTION_MMX) {
+    else if (mm_flags & FF_MM_MMX) {
 #ifdef VERBOSE
         printf ("MMX detected. Using fast methods !\n");
 #endif
@@ -51,22 +49,6 @@ static void setOptimizedMethods(PluginInfo *p) {
 #endif
 #endif /* CPU_X86 */
 
-#ifdef CPU_POWERPC
-
-        if ((cpuFlavour & CPU_OPTION_64_BITS) != 0) {
-/*            p->methods.create_output_with_brightness = ppc_brightness_G5;        */
-            p->methods.zoom_filter = ppc_zoom_generic;
-        }
-        else if ((cpuFlavour & CPU_OPTION_ALTIVEC) != 0) {
-/*            p->methods.create_output_with_brightness = ppc_brightness_G4;        */
-            p->methods.zoom_filter = ppc_zoom_G4;
-        }
-        else
-        {
-/*            p->methods.create_output_with_brightness = ppc_brightness_generic;*/
-            p->methods.zoom_filter = ppc_zoom_generic;
-        }
-#endif /* CPU_POWERPC */
 
 }
 
