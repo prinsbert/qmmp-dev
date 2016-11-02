@@ -209,10 +209,9 @@ void GoomWidget::createMenu()
     QMenu *refreshRate = m_menu->addMenu(tr("Refresh Rate"));
     m_fpsGroup = new QActionGroup(this);
     m_fpsGroup->setExclusive(true);
+    m_fpsGroup->addAction(tr("60 fps"))->setData(60);
     m_fpsGroup->addAction(tr("50 fps"))->setData(50);
     m_fpsGroup->addAction(tr("25 fps"))->setData(25);
-    m_fpsGroup->addAction(tr("10 fps"))->setData(10);
-    m_fpsGroup->addAction(tr("5 fps"))->setData(5);
     foreach(QAction *act, m_fpsGroup->actions ())
     {
         act->setCheckable(true);
