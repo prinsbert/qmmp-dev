@@ -31,6 +31,8 @@
 # include "config.h"
 #endif
 
+#ifdef CPU_X86
+
 #include "attributes.h"
 
 #include "goom_graphic.h"
@@ -547,6 +549,8 @@ void zoom_filter_xmmx (int prevX, int prevY, Pixel *expix1, Pixel *expix2,
 #define	emms() __asm__ __volatile__ ("emms")
 
 #endif
+
+#endif //CPU_X86
 
 #endif
 

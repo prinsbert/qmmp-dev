@@ -9,7 +9,24 @@ TEMPLATE = lib
 
 #RESOURCES = translations/translations.qrc
 
-DEFINES += YY_NO_INPUT CPU_X86 ARCH_X86 HAVE_MMX  ARCH_X86_32 HAVE_SSE2
+
+DEFINES += YY_NO_INPUT
+
+contains(CONFIG, GOOM_ASM) {
+   contains(QT_ARCH, i386){
+      DEFINES += CPU_X86 ARCH_X86_32
+      message(Architecture is x86)
+      HEADERS += mmx.h
+      SOURCES += mmx.c xmmx.c
+   }
+   contains(QT_ARCH, x86_64){
+      #unsupported
+      #DEFINES += CPU_X86 ARCH_X86_64
+      message(Architecture is x86_64)
+      #HEADERS += mmx.h
+      #SOURCES += mmx.c xmmx.c
+   }
+}
 
 QMAKE_CFLAGS += -Werror=implicit-function-declaration
 
@@ -82,11 +99,9 @@ SOURCES += \
     ifs.c \
     lines.c \
     mathtools.c \
-    mmx.c \
     plugin_info.c \
     sound_tester.c \
     surf3d.c \
     tentacle3d.c \
-    v3d.c \
-    xmmx.c
+    v3d.c
 

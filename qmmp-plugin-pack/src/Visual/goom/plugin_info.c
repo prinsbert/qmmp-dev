@@ -5,16 +5,6 @@
 #include "drawmethods.h"
 #include <math.h>
 #include <stdio.h>
-
-
-#ifdef CPU_POWERPC
-#include <sys/types.h>
-#include <sys/sysctl.h>
-#include "ppc_zoom_ultimate.h"
-#include "ppc_drawings.h"
-#endif /* CPU_POWERPC */
-
-
 #ifdef CPU_X86
 #include "mmx.h"
 #endif /* CPU_X86 */
@@ -26,30 +16,28 @@ static void setOptimizedMethods(PluginInfo *p) {
     p->methods.draw_line = draw_line;
     p->methods.zoom_filter = zoom_filter_c;
 
+#ifdef CPU_X86
     int mm_flags = mm_support ();
 
-#ifdef CPU_X86
     if (mm_flags & FF_MM_MMX2) {
 #ifdef VERBOSE
-        printf ("Extented MMX detected. Using the fastest methods !\n");
+        fprintf (stderr, "Extented MMX detected. Using the fastest methods !\n");
 #endif
         p->methods.draw_line = draw_line_mmx;
         p->methods.zoom_filter = zoom_filter_xmmx;
     }
     else if (mm_flags & FF_MM_MMX) {
 #ifdef VERBOSE
-        printf ("MMX detected. Using fast methods !\n");
+        fprintf (stderr, "MMX detected. Using fast methods !\n");
 #endif
         p->methods.draw_line = draw_line_mmx;
         p->methods.zoom_filter = zoom_filter_mmx;
     }
 #ifdef VERBOSE
         else
-            printf ("Too bad ! No SIMD optimization available for your CPU.\n");
+            fprintf (stderr, "Too bad ! No SIMD optimization available for your CPU.\n");
 #endif
 #endif /* CPU_X86 */
-
-
 }
 
 void plugin_info_init(PluginInfo *pp, int nbVisuals) {

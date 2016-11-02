@@ -2,4 +2,4 @@ include(../../qmmp-plugin-pack.pri)
 
 TEMPLATE = subdirs
 
-SUBDIRS += goom
+contains(CONFIG, GOOM_PLUGIN):SUBDIRS += goom
