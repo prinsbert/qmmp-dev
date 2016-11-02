@@ -1,10 +1,7 @@
 #ifndef CPU_INFO_H
 #define CPU_INFO_H
 
-#ifdef HAVE_MMX
-#ifndef CPU_X86
-#define CPU_X86
-#endif
+#ifdef CPU_X86
 
 #define FF_MM_MMX      0x0001 ///< standard MMX
 #define FF_MM_3DNOW    0x0004 ///< AMD 3DNOW
@@ -22,8 +19,5 @@
 /* Function to test if multimedia instructions are supported...  */
 int mm_support(void);
 
-
-
-
-#endif
-#endif
+#endif //CPU_X86
+#endif //CPU_INFO_H

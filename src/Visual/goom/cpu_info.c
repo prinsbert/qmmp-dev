@@ -2,7 +2,7 @@
 #include "cpu_info.h"
 
 
-#ifdef HAVE_SSE2
+#ifdef CPU_X86
 
 #if ARCH_X86_64
 #    define REG_a "rax"
@@ -49,8 +49,6 @@ typedef int x86_reg;
 typedef struct { uint64_t a, b; } xmm_reg;
 #define DECLARE_ALIGNED(n,t,v)      t v __attribute__ ((aligned (n)))
 #define DECLARE_ALIGNED_16(t, v) DECLARE_ALIGNED(16, t, v)
-#endif
-
 
 /* ebx saving is necessary for PIC. gcc seems unable to see it alone */
 #define cpuid(index,eax,ebx,ecx,edx)\
@@ -105,9 +103,7 @@ int mm_support(void)
         if (std_caps & (1<<23))
             rval |= FF_MM_MMX;
         if (std_caps & (1<<25))
-            rval |= FF_MM_MMX2
-#ifdef HAVE_SSE2
-                  | FF_MM_SSE;
+            rval |= FF_MM_MMX2 | FF_MM_SSE;
         if (std_caps & (1<<26))
             rval |= FF_MM_SSE2;
         if (ecx & 1)
@@ -118,8 +114,7 @@ int mm_support(void)
             rval |= FF_MM_SSE4;
         if (ecx & 0x00100000 )
             rval |= FF_MM_SSE42;
-#endif
-                  ;
+        ;
     }
 
     cpuid(0x80000000, max_ext_level, ebx, ecx, edx);
@@ -138,4 +133,6 @@ int mm_support(void)
 
     return rval;
 }
+
+#endif
 

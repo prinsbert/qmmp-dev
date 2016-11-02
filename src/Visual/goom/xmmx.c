@@ -1,6 +1,6 @@
 //#include "config.h"
 
-#ifdef HAVE_MMX
+#ifdef CPU_X86
 
 /* a definir pour avoir exactement le meme resultat que la fonction C
  * (un chouillat plus lent).. mais la difference est assez peu notable.

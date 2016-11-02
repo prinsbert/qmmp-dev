@@ -1,6 +1,6 @@
 //#include "config.h"
 
-#ifdef HAVE_MMX
+#ifdef CPU_X86
 
 #define BUFFPOINTNB 16
 #define BUFFPOINTMASK 0xffff
