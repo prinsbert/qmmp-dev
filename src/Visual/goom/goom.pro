@@ -35,8 +35,7 @@ unix {
     target.path = $$LIB_DIR/qmmp/Visual
     INSTALLS += target
 
-    QMAKE_LIBDIR += ../../../../lib
-    LIBS += -lqmmp
+    PKGCONFIG += qmmp
     QMAKE_CLEAN = $$PLUGINS_PREFIX/Visual/libgoom.so
 }
 
