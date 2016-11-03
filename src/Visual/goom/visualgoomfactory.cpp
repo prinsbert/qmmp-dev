@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2016 by Ilya Kotov                                      *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,7 +31,7 @@ const VisualProperties VisualGoomFactory::properties() const
     properties.name = tr("Goom");
     properties.shortName = "goom";
     properties.hasSettings = false;
-    properties.hasAbout = false;
+    properties.hasAbout = true;
     return properties;
 }
 
@@ -45,9 +45,15 @@ QDialog *VisualGoomFactory::createConfigDialog(QWidget *)
     return 0;
 }
 
-void VisualGoomFactory::showAbout(QWidget *)
+void VisualGoomFactory::showAbout(QWidget *parent)
 {
-
+    QMessageBox::about (parent, tr("About Goom Visual Plugin"),
+                        tr("Qmmp Goom Visual Plugin")+"\n"+
+                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>")+"\n"+
+                        tr("Based on the source code from the Goom project")+"\n"+
+                        tr("Goom project developers:")+"\n"+
+                        tr("Jean-Christophe Hoelt <jeko@ios-software.com>") + "\n"+
+                        tr("Guillaume Borios <gyom@ios-software.com>"));
 }
 
 QTranslator *VisualGoomFactory::createTranslator(QObject *parent)
