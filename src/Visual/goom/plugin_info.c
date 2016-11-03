@@ -70,6 +70,10 @@ void plugin_info_init(PluginInfo *pp, int nbVisuals) {
     p.sound.prov_max = 0;
     p.sound.goom_limit = 1;
     p.sound.allTimesMax = 1;
+    p.sound.cycle = 0;
+    p.sound.timeSinceLastGoom = 0;
+    p.sound.timeSinceLastBigGoom = 0;
+    p.sound.bigGoomLimit = 0;
 
     p.sound.volume_p       = secure_f_feedback("Sound Volume");
     p.sound.accel_p        = secure_f_feedback("Sound Acceleration");
