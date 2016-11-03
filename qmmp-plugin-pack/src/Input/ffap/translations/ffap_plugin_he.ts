@@ -42,42 +42,42 @@
 <context>
     <name>FFapMetaDataModel</name>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="60"/>
+        <location filename="../ffapmetadatamodel.cpp" line="61"/>
         <source>Length</source>
         <translation>אריכות</translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="61"/>
+        <location filename="../ffapmetadatamodel.cpp" line="62"/>
         <source>Sample rate</source>
         <translation>שיעור דגימה</translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="61"/>
+        <location filename="../ffapmetadatamodel.cpp" line="62"/>
         <source>Hz</source>
         <translation>הרץ</translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="62"/>
+        <location filename="../ffapmetadatamodel.cpp" line="63"/>
         <source>Channels</source>
         <translation>ערוצים</translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="63"/>
+        <location filename="../ffapmetadatamodel.cpp" line="64"/>
         <source>Bitrate</source>
         <translation>שיעור סיביות</translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="63"/>
+        <location filename="../ffapmetadatamodel.cpp" line="64"/>
         <source>kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="64"/>
+        <location filename="../ffapmetadatamodel.cpp" line="65"/>
         <source>File size</source>
         <translation>גודל קובץ</translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="64"/>
+        <location filename="../ffapmetadatamodel.cpp" line="65"/>
         <source>KB</source>
         <translation>ק״ב</translation>
     </message>
