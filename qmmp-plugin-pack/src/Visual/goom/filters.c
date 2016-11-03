@@ -753,6 +753,12 @@ static void zoomFilterVisualFXWrapper_init (struct _VISUAL_FX *_this, PluginInfo
 
 static void zoomFilterVisualFXWrapper_free (struct _VISUAL_FX *_this)
 {
+    ZoomFilterFXWrapperData *data = (ZoomFilterFXWrapperData*)_this->fx_data;
+    if (data->brutS) free (data->freebrutS);
+    if (data->brutD) free (data->freebrutD);
+    if (data->brutT) free (data->freebrutT);
+    free (data->firedec);
+    free (data->params.params);
     free(_this->fx_data);
 }
 
