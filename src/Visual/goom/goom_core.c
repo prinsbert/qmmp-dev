@@ -788,6 +788,16 @@ void goom_close (PluginInfo *goomInfo)
     goom_lines_free (&goomInfo->gmline1);
     goom_lines_free (&goomInfo->gmline2);
 
+
+    // Release info visual
+    free (goomInfo->params);
+    free (goomInfo->sound.params.params);
+
+    // Release PluginInfo
+    free (goomInfo->visuals);
+    gsl_free (goomInfo->scanner);
+    gsl_free (goomInfo->main_scanner);
+
     /* release_ifs (); */
     goomInfo->ifs_fx.free(&goomInfo->ifs_fx);
     goomInfo->convolve_fx.free(&goomInfo->convolve_fx);
