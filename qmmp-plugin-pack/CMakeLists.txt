@@ -114,8 +114,13 @@ MESSAGE("Effect Plugins:")
 PRINT_SUMMARY ("Sample Rate Conversion .........." USE_SRC SAMPLERATE_FOUND)
 
 MESSAGE("")
+MESSAGE("Visual Plugins:")
+PRINT_SUMMARY ("Goom visualization .............." USE_GOOM 1)
+
+MESSAGE("")
 MESSAGE("Advanced:")
-PRINT_SUMMARY ("Assempler optimizations ........." YASM_FOUND USE_FFAP)
+PRINT_SUMMARY ("FFap sssempler optimizations ...." YASM_FOUND USE_FFAP)
+PRINT_SUMMARY ("Goom assempler optimizations ...." GOOM_ASM USE_GOOM)
 
 
 MESSAGE("")
