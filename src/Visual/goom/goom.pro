@@ -7,7 +7,7 @@ CONFIG += warn_on \
     link_pkgconfig
 TEMPLATE = lib
 
-#RESOURCES = translations/translations.qrc
+RESOURCES = translations/translations.qrc
 
 
 DEFINES += YY_NO_INPUT
