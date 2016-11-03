@@ -25,22 +25,27 @@
 #include <string.h>
 #include <stdlib.h>
 
-static Pixel  ***font_chars;
-static int    *font_width;
-static int    *font_height;
-static Pixel  ***small_font_chars;
-static int    *small_font_width;
-static int    *small_font_height;
+static Pixel  ***font_chars = 0;
+static int    font_width[256];
+static int    font_height[256];
+static Pixel  ***small_font_chars = 0;
+static int    small_font_width[256];
+static int    small_font_height[256];
 
 void gfont_load (void) {
     unsigned char *gfont;
     unsigned int i = 0, j = 0;
     unsigned int nba = 0;
     unsigned int current = 32;
-        int    *font_pos;
+    int font_pos[256];
+
     /* decompress le rle */
 
-
+    gfont_free();
+    memset(font_width, 0, sizeof(font_width));
+    memset(font_height, 0, sizeof(font_height));
+    memset(small_font_width, 0, sizeof(small_font_width));
+    memset(small_font_height, 0, sizeof(small_font_height));
 
     gfont = malloc (the_font.width*the_font.height*the_font.bytes_per_pixel);
     while (i<the_font.rle_size) {
@@ -55,14 +60,9 @@ void gfont_load (void) {
     }
 
     /* determiner les positions de chaque lettre. */
-
-        font_height = calloc (256,sizeof(int));
-        small_font_height = calloc (256,sizeof(int));
-        font_width = calloc (256,sizeof(int));
-        small_font_width = calloc (256,sizeof(int));
         font_chars = calloc (256,sizeof(int**));
+        font_chars[0] = 0;
         small_font_chars = calloc (256,sizeof(int**));
-        font_pos = calloc (256,sizeof(int));
 
     for (i=0;i<the_font.width;i++) {
         unsigned char a = gfont [i*4 + 3];
@@ -147,7 +147,6 @@ void gfont_load (void) {
         small_font_width [32] = font_width [32]/2;
         font_chars [32] = 0;
         small_font_chars [32] = 0;
-        free(font_pos);
         free(gfont);
 }
 
@@ -248,5 +247,59 @@ void    goom_draw_text (Pixel * buf,int resolx,int resoly,
             fx += cur_font_width[c] + charspace;
         }
         str++;
+    }
+}
+
+void gfont_free(void)
+{
+    int i,j;
+    if(font_chars)
+    {
+        for(i = 0; i < 256; i++)
+        {
+            if(font_chars[i] == font_chars[42] && i != 42)
+            {
+                font_chars[i] = 0;
+            }
+        }
+
+        for(i = 0; i < 256; i++)
+        {
+            if(font_chars[i])
+            {
+                for(j = 0; j < font_height[i]; j++)
+                {
+                    free(font_chars[i][j]);
+                }
+                free(font_chars[i]);
+            }
+        }
+        free(font_chars);
+        font_chars = 0;
+    }
+
+    if(small_font_chars)
+    {
+        for(i = 0; i < 256; i++)
+        {
+            if(small_font_chars[i] == small_font_chars[42] && i != 42)
+            {
+                small_font_chars[i] = 0;
+            }
+        }
+
+        for(i = 0; i < 256; i++)
+        {
+            if(small_font_chars[i])
+            {
+                for(j = 0; j < small_font_height[i]; j++)
+                {
+                    free(small_font_chars[i][j]);
+                }
+                free(small_font_chars[i]);
+            }
+        }
+        free(small_font_chars);
+        small_font_chars = 0;
     }
 }

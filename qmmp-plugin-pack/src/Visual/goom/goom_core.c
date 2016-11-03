@@ -806,6 +806,8 @@ void goom_close (PluginInfo *goomInfo)
     goomInfo->zoomFilter_fx.free(&goomInfo->zoomFilter_fx);
 
     free(goomInfo);
+
+    gfont_free();
 }
 
 
@@ -887,6 +889,7 @@ void update_message (PluginInfo *goomInfo, const char *message) {
     if (goomInfo->update_message.affiche) {
         int i = 0;
         char *msg = malloc(goomInfo->update_message.longueur + 1);
+        memset(msg, 0, goomInfo->update_message.longueur + 1);
         char *ptr = msg;
         int pos;
         float ecart;
