@@ -22,6 +22,8 @@
 #ifndef GRAPHIC_H
 #define GRAPHIC_H
 
+#include <stdint.h>
+
 typedef unsigned int Uint;
 
 typedef struct
@@ -80,7 +82,7 @@ typedef union _PIXEL {
     unsigned char g;
     unsigned char b;
   } channels;
-  unsigned int val;
+  uint32_t val;
   unsigned char cop[4];
 } Pixel;
 
