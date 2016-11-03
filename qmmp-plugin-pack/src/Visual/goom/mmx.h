@@ -31,6 +31,8 @@
 # include "config.h"
 #endif
 
+#include <stdint.h>
+
 #ifdef CPU_X86
 
 #include "attributes.h"
@@ -53,9 +55,9 @@
      they be truncated by the compiler)
 */
 typedef	union {
-    long long		q;	/* Quadword (64-bit) value */
-    unsigned long long	uq;	/* Unsigned Quadword */
-    int			d[2];	/* 2 Doubleword (32-bit) values */
+    int64_t		q;	/* Quadword (64-bit) value */
+    uint64_t	uq;	/* Unsigned Quadword */
+    int32_t			d[2];	/* 2 Doubleword (32-bit) values */
     unsigned int		ud[2];	/* 2 Unsigned Doubleword */
     short			w[4];	/* 4 Word (16-bit) values */
     unsigned short		uw[4];	/* 4 Unsigned Word */
