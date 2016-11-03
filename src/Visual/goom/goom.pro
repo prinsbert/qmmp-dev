@@ -34,10 +34,8 @@ unix {
     isEmpty(LIB_DIR):LIB_DIR = /lib
     target.path = $$LIB_DIR/qmmp/Visual
     INSTALLS += target
-
-    QMAKE_LIBDIR += ../../../../lib
-    LIBS += -lqmmp
     QMAKE_CLEAN = $$PLUGINS_PREFIX/Visual/libgoom.so
+    PKGCONFIG += qmmp
 }
 
 win32 {
