@@ -93,7 +93,7 @@ void zoom_filter_xmmx (int prevX, int prevY,
        "#1 \n\t psubd   %%mm0, %%mm1" /* mm1 = D - S */
        "#1 \n\t movq    %%mm1, %%mm2" /* mm2 = D - S */
        "#1 \n\t pslld     $16, %%mm1"
-           "#1 \n\t pmullw  %%mm6, %%mm2"
+       "#1 \n\t pmullw  %%mm6, %%mm2"
        "#1 \n\t pmulhuw %%mm6, %%mm1"
 
        "#1 \n\t pslld   $16,   %%mm0"
