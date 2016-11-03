@@ -75,7 +75,8 @@ HEADERS += \
     sound_tester.h \
     surf3d.h \
     tentacle3d.h \
-    v3d.h
+    v3d.h \
+    attributes.h
 
 SOURCES += \
     goomwidget.cpp \
