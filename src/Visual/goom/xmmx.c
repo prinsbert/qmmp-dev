@@ -53,8 +53,8 @@ void zoom_filter_xmmx (int prevX, int prevY,
     int bufsize = prevX * prevY; /* taille du buffer */
     volatile int loop;                    /* variable de boucle */
 
-    volatile mmx_t *brutS = (mmx_t*)lbruS; /* buffer de transformation source */
-    volatile mmx_t *brutD = (mmx_t*)lbruD; /* buffer de transformation dest */
+    mmx_t *brutS = (mmx_t*)lbruS; /* buffer de transformation source */
+    mmx_t *brutD = (mmx_t*)lbruD; /* buffer de transformation dest */
 
     mmx_t prevXY;
     mmx_t ratiox;
@@ -72,7 +72,7 @@ void zoom_filter_xmmx (int prevX, int prevY,
     ("\n\t movq  %0, %%mm6"
      "\n\t pslld $16,      %%mm6" /* mm6 = [rat16=buffratio<<16 | rat16=buffratio<<16] */
      "\n\t pxor  %%mm7,    %%mm7" /* mm7 = 0 */
-     ::"m"(ratiox));
+     ::"g"(ratiox));
 
     loop=0;
 
