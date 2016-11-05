@@ -657,325 +657,325 @@
         <translation>Qmmp</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="54"/>
+        <location filename="../forms/mainwindow.ui" line="32"/>
         <source>&amp;File</source>
         <translation>&amp;Fichier</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="59"/>
+        <location filename="../forms/mainwindow.ui" line="37"/>
         <source>&amp;Tools</source>
         <translation>&amp;Outils</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="67"/>
+        <location filename="../forms/mainwindow.ui" line="45"/>
         <source>&amp;Help</source>
         <translation>&amp;Aide</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="72"/>
+        <location filename="../forms/mainwindow.ui" line="50"/>
         <source>&amp;Edit</source>
         <translation>&amp;Éditer</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="77"/>
+        <location filename="../forms/mainwindow.ui" line="55"/>
         <source>&amp;Playback</source>
         <translation>&amp;Rejouer</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="82"/>
+        <location filename="../forms/mainwindow.ui" line="60"/>
         <source>&amp;View</source>
         <translation>&amp;Vue</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="106"/>
+        <location filename="../forms/mainwindow.ui" line="84"/>
         <source>Spectrum Analyzer</source>
         <translation>Analyse de spectre</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="121"/>
+        <location filename="../forms/mainwindow.ui" line="99"/>
         <source>Files</source>
         <translation>Fichiers</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="136"/>
+        <location filename="../forms/mainwindow.ui" line="114"/>
         <source>Cover</source>
         <translation>Couverture</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="145"/>
+        <location filename="../forms/mainwindow.ui" line="123"/>
         <source>Playlists</source>
         <translation>Listes</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="159"/>
+        <location filename="../forms/mainwindow.ui" line="137"/>
         <source>Previous</source>
         <translation>Précédent</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="169"/>
+        <location filename="../forms/mainwindow.ui" line="147"/>
         <source>Play</source>
         <translation>Jouer</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="179"/>
+        <location filename="../forms/mainwindow.ui" line="157"/>
         <source>Pause</source>
         <translation>Pause</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="189"/>
+        <location filename="../forms/mainwindow.ui" line="167"/>
         <source>Next</source>
         <translation>Suivant</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="199"/>
+        <location filename="../forms/mainwindow.ui" line="177"/>
         <source>Stop</source>
         <translation>Arrêter</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="204"/>
+        <location filename="../forms/mainwindow.ui" line="182"/>
         <source>&amp;Add File</source>
         <translation>&amp;Ajouter fichier</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="209"/>
+        <location filename="../forms/mainwindow.ui" line="187"/>
         <source>&amp;Remove All</source>
         <translation>&amp;Tout enlever</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="214"/>
+        <location filename="../forms/mainwindow.ui" line="192"/>
         <source>New Playlist</source>
         <translation>Nouvelle liste</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="219"/>
+        <location filename="../forms/mainwindow.ui" line="197"/>
         <source>Remove Playlist</source>
         <translation>Supprimer la liste</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="224"/>
+        <location filename="../forms/mainwindow.ui" line="202"/>
         <source>&amp;Add Directory</source>
         <translation>&amp;Ajouter un répertoire</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="229"/>
+        <location filename="../forms/mainwindow.ui" line="207"/>
         <source>&amp;Exit</source>
         <translation>&amp;Quitter</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="234"/>
+        <location filename="../forms/mainwindow.ui" line="212"/>
         <source>About</source>
         <translation>À propos</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="239"/>
+        <location filename="../forms/mainwindow.ui" line="217"/>
         <source>About Qt</source>
         <translation>À propos de Qt</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="244"/>
+        <location filename="../forms/mainwindow.ui" line="222"/>
         <source>&amp;Select All</source>
         <translation>&amp;Tout sélectionner</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="249"/>
+        <location filename="../forms/mainwindow.ui" line="227"/>
         <source>&amp;Remove Selected</source>
         <translation>&amp;Supprimer le sélection</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="254"/>
+        <location filename="../forms/mainwindow.ui" line="232"/>
         <source>&amp;Remove Unselected</source>
         <translation>&amp;Ne garder que la sélection</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="259"/>
+        <location filename="../forms/mainwindow.ui" line="237"/>
         <source>Visualization</source>
         <translation>Visualisation</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="264"/>
+        <location filename="../forms/mainwindow.ui" line="242"/>
         <source>Settings</source>
         <translation>&amp;Réglages</translation>
     </message>
     <message>
-        <location filename="../forms/mainwindow.ui" line="269"/>
-        <location filename="../mainwindow.cpp" line="288"/>
+        <location filename="../forms/mainwindow.ui" line="247"/>
+        <location filename="../mainwindow.cpp" line="276"/>
         <source>Rename Playlist</source>
         <translation>Renommer la liste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="439"/>
+        <location filename="../mainwindow.cpp" line="452"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="374"/>
+        <location filename="../mainwindow.cpp" line="362"/>
         <source>&lt;b&gt;%1&lt;/b&gt;|%2 bit|%3 ch|%4 Hz|tracks: %5|total time: %6|%7 kbps|</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;|%2 bit|%3 ch|%4 Hz|pistes : %5|durée totale : %6|%7 kbps|</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="375"/>
+        <location filename="../mainwindow.cpp" line="363"/>
         <source>Paused</source>
         <translation>En pause</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="385"/>
+        <location filename="../mainwindow.cpp" line="373"/>
         <source>&lt;b&gt;%1&lt;/b&gt;|tracks: %2|total time: %3|</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;|pistes : %2|durée totale : %3|</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="374"/>
         <source>Stopped</source>
         <translation>Arrêté</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="288"/>
+        <location filename="../mainwindow.cpp" line="276"/>
         <source>Playlist name:</source>
         <translation>Nom de la liste :</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="329"/>
+        <location filename="../mainwindow.cpp" line="317"/>
         <source>Appearance</source>
         <translation>Apparence</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="330"/>
+        <location filename="../mainwindow.cpp" line="318"/>
         <source>Shortcuts</source>
         <translation>Raccourcis</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="375"/>
+        <location filename="../mainwindow.cpp" line="363"/>
         <source>Playing</source>
         <translation>En cours</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="429"/>
+        <location filename="../mainwindow.cpp" line="442"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="435"/>
+        <location filename="../mainwindow.cpp" line="448"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="437"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>Position</source>
         <translation>Position</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="493"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="495"/>
+        <location filename="../mainwindow.cpp" line="508"/>
         <source>Sort List</source>
         <translation>Trier la liste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="498"/>
-        <location filename="../mainwindow.cpp" line="553"/>
+        <location filename="../mainwindow.cpp" line="511"/>
+        <location filename="../mainwindow.cpp" line="566"/>
         <source>By Title</source>
         <translation>par titre</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="502"/>
-        <location filename="../mainwindow.cpp" line="557"/>
+        <location filename="../mainwindow.cpp" line="515"/>
+        <location filename="../mainwindow.cpp" line="570"/>
         <source>By Album</source>
         <translation>par album</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="506"/>
-        <location filename="../mainwindow.cpp" line="561"/>
+        <location filename="../mainwindow.cpp" line="519"/>
+        <location filename="../mainwindow.cpp" line="574"/>
         <source>By Artist</source>
         <translation>par artiste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="510"/>
-        <location filename="../mainwindow.cpp" line="565"/>
+        <location filename="../mainwindow.cpp" line="523"/>
+        <location filename="../mainwindow.cpp" line="578"/>
         <source>By Album Artist</source>
         <translation>par artiste d&apos;album</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="514"/>
-        <location filename="../mainwindow.cpp" line="569"/>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <location filename="../mainwindow.cpp" line="582"/>
         <source>By Filename</source>
         <translation>par no mde fichier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="518"/>
-        <location filename="../mainwindow.cpp" line="573"/>
+        <location filename="../mainwindow.cpp" line="531"/>
+        <location filename="../mainwindow.cpp" line="586"/>
         <source>By Path + Filename</source>
         <translation>par chemin et nom de fichier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="522"/>
-        <location filename="../mainwindow.cpp" line="577"/>
+        <location filename="../mainwindow.cpp" line="535"/>
+        <location filename="../mainwindow.cpp" line="590"/>
         <source>By Date</source>
         <translation>par date</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
-        <location filename="../mainwindow.cpp" line="581"/>
+        <location filename="../mainwindow.cpp" line="539"/>
+        <location filename="../mainwindow.cpp" line="594"/>
         <source>By Track Number</source>
         <translation>par numéro de piste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="530"/>
-        <location filename="../mainwindow.cpp" line="585"/>
+        <location filename="../mainwindow.cpp" line="543"/>
+        <location filename="../mainwindow.cpp" line="598"/>
         <source>By Disc Number</source>
         <translation>par numéro de disque</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="534"/>
-        <location filename="../mainwindow.cpp" line="589"/>
+        <location filename="../mainwindow.cpp" line="547"/>
+        <location filename="../mainwindow.cpp" line="602"/>
         <source>By File Creation Date</source>
         <translation>par date de création du fichier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
-        <location filename="../mainwindow.cpp" line="593"/>
+        <location filename="../mainwindow.cpp" line="551"/>
+        <location filename="../mainwindow.cpp" line="606"/>
         <source>By File Modification Date</source>
         <translation>par date de modification du fichier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="../mainwindow.cpp" line="555"/>
         <source>By Group</source>
         <translation>par groupe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="563"/>
         <source>Sort Selection</source>
         <translation>trier la sélection</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="600"/>
+        <location filename="../mainwindow.cpp" line="613"/>
         <source>Randomize List</source>
         <translation>Mélanger la liste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="602"/>
+        <location filename="../mainwindow.cpp" line="615"/>
         <source>Reverse List</source>
         <translation>Inverser la lsite</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="609"/>
-        <location filename="../mainwindow.cpp" line="650"/>
+        <location filename="../mainwindow.cpp" line="622"/>
+        <location filename="../mainwindow.cpp" line="663"/>
         <source>Actions</source>
         <translation>Actions</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="683"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>Add new playlist</source>
         <translation>Ajouter une nouvelle liste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="689"/>
+        <location filename="../mainwindow.cpp" line="413"/>
         <source>Show all tabs</source>
         <translation>Montrer tous les onglets</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="861"/>
+        <location filename="../mainwindow.cpp" line="846"/>
         <source>Buffering: %1%</source>
         <translation>Mise en tampon : %1 %</translation>
     </message>
