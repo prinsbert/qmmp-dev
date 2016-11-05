@@ -49,12 +49,11 @@ void zoom_filter_xmmx (int prevX, int prevY,
                        int *lbruS, int *lbruD, int buffratio,
                        int precalCoef[16][16])
 {
-#ifndef ARCH_X86_64
     int bufsize = prevX * prevY; /* taille du buffer */
     volatile int loop;                    /* variable de boucle */
 
-    volatile mmx_t *brutS = (mmx_t*)lbruS; /* buffer de transformation source */
-    volatile mmx_t *brutD = (mmx_t*)lbruD; /* buffer de transformation dest */
+    mmx_t *brutS = (mmx_t*)lbruS; /* buffer de transformation source */
+    mmx_t *brutD = (mmx_t*)lbruD; /* buffer de transformation dest */
 
     mmx_t prevXY;
     mmx_t ratiox;
@@ -72,7 +71,7 @@ void zoom_filter_xmmx (int prevX, int prevY,
     ("\n\t movq  %0, %%mm6"
      "\n\t pslld $16,      %%mm6" /* mm6 = [rat16=buffratio<<16 | rat16=buffratio<<16] */
      "\n\t pxor  %%mm7,    %%mm7" /* mm7 = 0 */
-     ::"m"(ratiox));
+     ::"g"(ratiox));
 
     loop=0;
 
@@ -93,7 +92,7 @@ void zoom_filter_xmmx (int prevX, int prevY,
        "#1 \n\t psubd   %%mm0, %%mm1" /* mm1 = D - S */
        "#1 \n\t movq    %%mm1, %%mm2" /* mm2 = D - S */
        "#1 \n\t pslld     $16, %%mm1"
-           "#1 \n\t pmullw  %%mm6, %%mm2"
+       "#1 \n\t pmullw  %%mm6, %%mm2"
        "#1 \n\t pmulhuw %%mm6, %%mm1"
 
        "#1 \n\t pslld   $16,   %%mm0"
@@ -150,7 +149,7 @@ void zoom_filter_xmmx (int prevX, int prevY,
             "#2 \n\t andl $15,%%eax"
 
             "#2 \n\t movd (%%esi,%%eax,4),%%mm3"
-            ::"g"(precalCoef):"eax","esi");
+            ::"m"(precalCoef):"eax","esi");
 
         /*
          * extraction des coefficients... (Thread #3)
@@ -179,28 +178,39 @@ void zoom_filter_xmmx (int prevX, int prevY,
       "#4 \n\t movd %%mm1,%%eax"
             "#3 \n\t movq %%mm3,%%mm5"
 
-            "#4 \n\t mull %1"
-            "#4 \n\t movd %%mm0,%%esi"
+      "#4 \n\t mull %1"
+      "#4 \n\t movd %%mm0,%%esi"
 
       "#3 \n\t punpcklbw %%mm5, %%mm3"
             "#4 \n\t addl %%esi, %%eax"
 
       "#3 \n\t movq %%mm3, %%mm4"
       "#3 \n\t movq %%mm3, %%mm5"
-
+#ifdef ARCH_X86_64
+      "#4 \n\t movq %0, %%rsi"
+#else
       "#4 \n\t movl %0, %%esi"
+#endif
       "#3 \n\t punpcklbw %%mm5, %%mm3"
-
+#ifdef ARCH_X86_64
+      "#4 \n\t movq (%%rsi,%%rax,4),%%mm0"
+#else
       "#4 \n\t movq (%%esi,%%eax,4),%%mm0"
+#endif
       "#3 \n\t punpckhbw %%mm5, %%mm4"
 
       "#4 \n\t addl %1,%%eax"
+#ifdef ARCH_X86_64
+      "#4 \n\t movq (%%rsi,%%rax,4),%%mm2"
+#else
       "#4 \n\t movq (%%esi,%%eax,4),%%mm2"
-
-            :
-      : "g"(expix1)
-      , "g"(prevX)
+#endif
+      :: "m"(expix1), "g"(prevX)
+#ifdef ARCH_X86_64
+      :"eax","rax","esi","rsi"
+#else
       :"eax","esi"
+#endif
         );
 
         /*
@@ -263,7 +273,6 @@ void zoom_filter_xmmx (int prevX, int prevY,
 /*#else
     emms();
 #endif*/
-#endif /* ARCH_X86_64 */
 }
 
 #define DRAWMETHOD_PLUS_XMMX(_out,_backbuf,_col) \
