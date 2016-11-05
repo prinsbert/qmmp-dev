@@ -21,10 +21,10 @@ contains(CONFIG, GOOM_ASM) {
    }
    contains(QT_ARCH, x86_64){
       #unsupported
-      #DEFINES += CPU_X86 ARCH_X86_64
+      DEFINES += CPU_X86 ARCH_X86_64
       message(Architecture is x86_64)
-      #HEADERS += mmx.h
-      #SOURCES += mmx.c xmmx.c
+      HEADERS += mmx.h
+      SOURCES += mmx.c xmmx.c
    }
 }
 
