@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -46,13 +46,15 @@ private slots:
     void setState(Qmmp::State state);
 
 private:
-    QPointer<PopupWidget> m_popupWidget;
     void removePsiTuneFiles();
+    bool hasFullscreenWindow() const;
+    QPointer<PopupWidget> m_popupWidget;
     bool m_desktop, m_showVolume;
     bool m_psi;
     int m_l, m_r;
     bool m_isPaused;
     bool m_resumeNotification;
+    bool m_disableForFullScreen;
     SoundCore *m_core;
     QStringList m_psiTuneFiles;
 

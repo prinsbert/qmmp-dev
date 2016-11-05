@@ -18,11 +18,15 @@ RESOURCES = notifier_images.qrc \
             translations/translations.qrc
 
 unix {
-isEmpty(LIB_DIR){
+  isEmpty(LIB_DIR){
     LIB_DIR = /lib
-}
-target.path = $$LIB_DIR/qmmp/General
-INSTALLS += target
+  }
+  qtHaveModule(x11extras) {
+    DEFINES += Q_WS_X11
+    QT += x11extras
+  }
+  target.path = $$LIB_DIR/qmmp/General
+  INSTALLS += target
 }
 
 HEADERS += notifierfactory.h \
