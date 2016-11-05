@@ -149,7 +149,7 @@ void zoom_filter_xmmx (int prevX, int prevY,
             "#2 \n\t andl $15,%%eax"
 
             "#2 \n\t movd (%%esi,%%eax,4),%%mm3"
-            ::"g"(precalCoef):"eax","esi");
+            ::"m"(precalCoef):"eax","esi");
 
         /*
          * extraction des coefficients... (Thread #3)
@@ -205,7 +205,7 @@ void zoom_filter_xmmx (int prevX, int prevY,
 #else
       "#4 \n\t movq (%%esi,%%eax,4),%%mm2"
 #endif
-      :: "g"(expix1), "g"(prevX)
+      :: "m"(expix1), "g"(prevX)
 #ifdef ARCH_X86_64
       :"eax","rax","esi","rsi"
 #else
