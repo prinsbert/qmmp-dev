@@ -182,3 +182,6 @@ LEGEND
 [*] qmmp-0.10.5
 [*] taglib-1.11.1
 [*] ffmpeg-3.0.4
+[*] opusfile-0.8
+[*] enca-1.19
+[*] curl-7.51.0
