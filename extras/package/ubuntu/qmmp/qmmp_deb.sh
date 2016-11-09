@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=0.10.4
+QMMP_VERSION=0.10.5
 UBUNTU_CODENAMES='precise trusty wily xenial yakkety'
 BUILD_ROOT=build-root
 
