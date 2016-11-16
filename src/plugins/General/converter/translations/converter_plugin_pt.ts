@@ -4,29 +4,29 @@
 <context>
     <name>Converter</name>
     <message>
-        <location filename="../converter.cpp" line="128"/>
-        <location filename="../converter.cpp" line="228"/>
+        <location filename="../converter.cpp" line="129"/>
+        <location filename="../converter.cpp" line="229"/>
         <source>Cancelled</source>
         <translation>Cancelada</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="143"/>
-        <location filename="../converter.cpp" line="210"/>
+        <location filename="../converter.cpp" line="144"/>
+        <location filename="../converter.cpp" line="211"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="175"/>
+        <location filename="../converter.cpp" line="176"/>
         <source>Converting</source>
         <translation>Conversão</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="239"/>
+        <location filename="../converter.cpp" line="240"/>
         <source>Encoding</source>
         <translation>Codificação</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="277"/>
+        <location filename="../converter.cpp" line="278"/>
         <source>Finished</source>
         <translation>Terminada</translation>
     </message>

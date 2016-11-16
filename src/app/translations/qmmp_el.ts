@@ -82,62 +82,62 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="90"/>
+        <location filename="../qmmpstarter.cpp" line="95"/>
         <source>Unknown command</source>
         <translation>Άγνωστη εντολή</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="323"/>
+        <location filename="../qmmpstarter.cpp" line="350"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Χρήση: qmmp [επιλογές] [αρχεία]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="324"/>
+        <location filename="../qmmpstarter.cpp" line="351"/>
         <source>Options:</source>
         <translation>Επιλογές:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="328"/>
+        <location filename="../qmmpstarter.cpp" line="355"/>
         <source>Don&apos;t start the application</source>
         <translation>Να μην εκκινηθεί η εφαρμογή</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="329"/>
+        <location filename="../qmmpstarter.cpp" line="356"/>
         <source>Display this text and exit</source>
         <translation>Εμφάνιση του κειμένου και έξοδος</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="330"/>
+        <location filename="../qmmpstarter.cpp" line="357"/>
         <source>Print version number and exit</source>
         <translation>Εκτύπωση του αριθμού έκδοσης και έξοδος</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="331"/>
+        <location filename="../qmmpstarter.cpp" line="358"/>
         <source>Ideas, patches, bugreports send to forkotov02@hotmail.ru</source>
         <translation>Ιδέες, διορθωτικά και αναφορές σφαλμάτων μπορείτε να τις στείλετε στο forkotov02@hotmail.ru</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="334"/>
+        <location filename="../qmmpstarter.cpp" line="361"/>
         <source>Command Line Help</source>
         <translation>Βοήθεια γραμμής εντολών</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="347"/>
+        <location filename="../qmmpstarter.cpp" line="374"/>
         <source>QMMP version: %1</source>
         <translation>Έκδοση του QMMP: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="348"/>
+        <location filename="../qmmpstarter.cpp" line="375"/>
         <source>Compiled with Qt version: %1</source>
         <translation>Μεταγλωττίστηκε με την έκδοση της Qt: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="349"/>
+        <location filename="../qmmpstarter.cpp" line="376"/>
         <source>Using Qt version: %1</source>
         <translation>Χρήση της έκδοσης της Qt: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="352"/>
+        <location filename="../qmmpstarter.cpp" line="379"/>
         <source>Qmmp Version</source>
         <translation>Έκδοση του Qmmp</translation>
     </message>
