@@ -83,7 +83,7 @@ PluginInfo *goom_init (guint32 resx, guint32 resy)
     PluginInfo *goomInfo = (PluginInfo*)malloc(sizeof(PluginInfo));
 
 #ifdef VERBOSE
-    printf ("GOOM: init (%d, %d);\n", resx, resy);
+    printf ("GOOM: init (%u, %u);\n", resx, resy);
 #endif
 
     plugin_info_init(goomInfo,4);
