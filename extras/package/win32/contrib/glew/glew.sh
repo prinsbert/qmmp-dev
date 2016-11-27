@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://downloads.sourceforge.net/sourceforge/glew/glew/${VERSION}/${NAME}-${VERSION}.tgz
+    wget -nc --no-check-certificate http://downloads.sourceforge.net/sourceforge/glew/glew/${VERSION}/${NAME}-${VERSION}.tgz
   ;;
   --install)
     cd temp
