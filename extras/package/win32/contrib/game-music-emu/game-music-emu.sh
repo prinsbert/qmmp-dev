@@ -13,7 +13,6 @@ case $1 in
     cd temp
     tar xvjf $NAME-$VERSION.tar.bz2
     cd $NAME-$VERSION
-    cat ../../gme_fix_left_shift.patch | patch -p0
     cmake ./ -DCMAKE_INSTALL_PREFIX=$PREFIX -G "MSYS Makefiles" -DCMAKE_COLOR_MAKEFILE:BOOL=OFF
     make -j${JOBS}
     make install
