@@ -37,7 +37,7 @@ List of the third-party libraries.
   libcdio             0.83       http://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
-  ffmpeg              3.0.4      http://ffmpeg.org/
+  ffmpeg              3.0.5      http://ffmpeg.org/
   libmodplug          0.8.8.5    http://modplug-xmms.sourceforge.net/
   game-music-emu      0.6.1      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       http://www.musepack.net/
