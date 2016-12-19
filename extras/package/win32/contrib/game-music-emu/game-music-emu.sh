@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=game-music-emu
-VERSION=0.6.0
+VERSION=0.6.1
 
 case $1 in
   --download)
