@@ -190,3 +190,5 @@ LEGEND
 [*] qmmp-0.10.6
 [*] game-music-emu-0.6.1
 [*] ffmpeg-3.0.5
+[*] curl-7.52.1
+[*] libsidplayfp-1.8.7
