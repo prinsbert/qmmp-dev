@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=wavpack
-VERSION=4.80.0
+VERSION=5.0.0
 
 case $1 in
   --download)
@@ -13,7 +13,8 @@ case $1 in
     cd temp
     tar xvjf $NAME-$VERSION.tar.bz2
     cd $NAME-$VERSION
-    CPPFLAGS="-D__MSVCRT_VERSION__=0x0601" CFLAGS="-g" ./configure --prefix=$PREFIX --enable-shared --disable-static
+    cat ../../seeking_mingw.diff | patch -p1
+    ./configure --prefix=$PREFIX --enable-shared --disable-static
     make -j${JOBS}
     make install
 
