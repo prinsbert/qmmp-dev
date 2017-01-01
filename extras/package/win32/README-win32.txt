@@ -27,7 +27,7 @@ List of the third-party libraries.
   libmad              0.15.1b    http://www.underbit.com/products/mad/
   libogg              1.3.2      http://www.vorbis.com/
   libvorbis           1.3.5      http://www.vorbis.com/
-  flac                1.3.1      https://xiph.org/flac/index.html
+  flac                1.3.2      https://xiph.org/flac/index.html
   wavpack             5.0.0      http://www.wavpack.com/
   libsndfile          1.0.27     http://www.mega-nerd.com/libsndfile/
   opus                1.1.3      http://www.opus-codec.org/
