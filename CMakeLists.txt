@@ -165,6 +165,7 @@ PRINT_SUMMARY ("Win32 Waveout support ............." USE_WAVEOUT WINDOWS_H_FOUND
 PRINT_SUMMARY ("Win32 DirectSound support ........." USE_DSOUND DSOUND_H_FOUND)
 PRINT_SUMMARY ("Win32 WASAPI support .............." USE_WASAPI WASAPI_FOUND)
 PRINT_SUMMARY ("Qt Multimedia support ............." USE_QTMULTIMEDIA Qt5Multimedia_FOUND)
+PRINT_SUMMARY ("Icecast support ..................." USE_SHOUT SHOUT_FOUND)
 
 MESSAGE("")
 MESSAGE("Effect Plugins:")
