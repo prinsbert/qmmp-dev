@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2017 by Ilya Kotov                                      *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,26 +17,26 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef OUTPUTALSAFACTORY_H
-#define OUTPUTALSAFACTORY_H
+#ifndef OUTPUTSHOUTFACTORY_H
+#define OUTPUTSHOUTFACTORY_H
 
 #include <QObject>
 #include <QString>
 #include <QIODevice>
 #include <QWidget>
-
 #include <qmmp/output.h>
 #include <qmmp/outputfactory.h>
 
+class ShoutClient;
 
-class OutputALSAFactory : public QObject,
-                          OutputFactory
+class OutputShoutFactory : public QObject, OutputFactory
 {
 Q_OBJECT
 Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.OutputFactoryInterface.1.0")
 Q_INTERFACES(OutputFactory)
 
 public:
+    OutputShoutFactory();
     const OutputProperties properties() const;
     Output* create();
     Volume *createVolume();
@@ -44,6 +44,8 @@ public:
     void showAbout(QWidget *parent);
     QTranslator *createTranslator(QObject *parent);
 
+private:
+    ShoutClient *m_connection;
 };
 
 #endif

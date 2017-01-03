@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2017 by Ilya Kotov                                      *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,33 +17,29 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef OUTPUTALSAFACTORY_H
-#define OUTPUTALSAFACTORY_H
 
-#include <QObject>
-#include <QString>
-#include <QIODevice>
-#include <QWidget>
+#ifndef SETTINGSDIALOG_H
+#define SETTINGSDIALOG_H
 
-#include <qmmp/output.h>
-#include <qmmp/outputfactory.h>
+#include <QDialog>
 
+namespace Ui {
+class SettingsDialog;
+}
 
-class OutputALSAFactory : public QObject,
-                          OutputFactory
+class SettingsDialog : public QDialog
 {
-Q_OBJECT
-Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.OutputFactoryInterface.1.0")
-Q_INTERFACES(OutputFactory)
+    Q_OBJECT
 
 public:
-    const OutputProperties properties() const;
-    Output* create();
-    Volume *createVolume();
-    void showSettings(QWidget* parent);
-    void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    explicit SettingsDialog(QWidget *parent = 0);
+    ~SettingsDialog();
 
+public slots:
+    void accept();
+
+private:
+    Ui::SettingsDialog *m_ui;
 };
 
-#endif
+#endif // SETTINGSDIALOG_H

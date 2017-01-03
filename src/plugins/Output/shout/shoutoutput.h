@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2017 by Ilya Kotov                                      *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,33 +17,42 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef OUTPUTALSAFACTORY_H
-#define OUTPUTALSAFACTORY_H
 
-#include <QObject>
-#include <QString>
-#include <QIODevice>
-#include <QWidget>
+#ifndef SHOUTOUTPUT_H
+#define SHOUTOUTPUT_H
 
+#include <vorbis/vorbisenc.h>
+#include <soxr.h>
 #include <qmmp/output.h>
-#include <qmmp/outputfactory.h>
+#include "shoutclient.h"
 
-
-class OutputALSAFactory : public QObject,
-                          OutputFactory
+class ShoutOutput : public Output
 {
-Q_OBJECT
-Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.OutputFactoryInterface.1.0")
-Q_INTERFACES(OutputFactory)
-
 public:
-    const OutputProperties properties() const;
-    Output* create();
-    Volume *createVolume();
-    void showSettings(QWidget* parent);
-    void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    ShoutOutput(ShoutClient *m);
+    ~ShoutOutput();
 
+    bool initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat);
+    qint64 latency();
+    qint64 writeAudio(unsigned char *data, qint64 maxSize);
+    void drain();
+    void reset();
+    void setMetaData(const QMap<Qmmp::MetaData, QString> &metaData);
+
+private:
+    void sendHeader();
+    ShoutClient *m_client;
+    ogg_stream_state m_os; //take physical pages, weld into a logical stream of packets
+    ogg_page         m_og; //one Ogg bitstream page.  Vorbis packets are inside */
+    ogg_packet       m_op; //one raw packet of data for decode
+    vorbis_info      m_vi; //struct that stores all the static vorbis bitstream settings
+    vorbis_comment   m_vc; //struct that stores all the user comments
+    vorbis_dsp_state m_vd; //central working state for the packet->PCM decoder
+    vorbis_block     m_vb; //local working space for packet->PCM decode
+    soxr_t m_soxr;
+    float *m_soxr_buf;
+    size_t m_soxr_buf_frames;
+    double m_ratio;
 };
 
-#endif
+#endif // SHOUTOUTPUT_H

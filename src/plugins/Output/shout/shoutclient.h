@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2017 by Ilya Kotov                                      *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,33 +17,35 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef OUTPUTALSAFACTORY_H
-#define OUTPUTALSAFACTORY_H
+
+#ifndef SHOUTCLIENT_H
+#define SHOUTCLIENT_H
 
 #include <QObject>
-#include <QString>
-#include <QIODevice>
-#include <QWidget>
+#include <shout/shout.h>
 
-#include <qmmp/output.h>
-#include <qmmp/outputfactory.h>
+class QTimer;
 
-
-class OutputALSAFactory : public QObject,
-                          OutputFactory
+class ShoutClient : public QObject
 {
-Q_OBJECT
-Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.OutputFactoryInterface.1.0")
-Q_INTERFACES(OutputFactory)
-
+    Q_OBJECT
 public:
-    const OutputProperties properties() const;
-    Output* create();
-    Volume *createVolume();
-    void showSettings(QWidget* parent);
-    void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    explicit ShoutClient(QObject *parent);
+    ~ShoutClient();
+
+    void readSettings();
+    bool open();
+    bool send(const unsigned char *data, int len);
+    qint64 latency() const;
+    void closeLater();
+
+public slots:
+    void close();
+
+private:
+    shout_t *m_shout_conn;
+    QTimer *m_timer;
 
 };
 
-#endif
+#endif // SHOUTCLIENT_H
