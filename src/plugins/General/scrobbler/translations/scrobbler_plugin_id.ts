@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="id_ID">
+<TS version="2.0" language="id">
 <context>
     <name>ScrobblerFactory</name>
     <message>
         <location filename="../scrobblerfactory.cpp" line="31"/>
         <source>Scrobbler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugin Scrobbler</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="51"/>
         <source>About Scrobbler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentang Plugin Scrobbler</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="52"/>
         <source>Qmmp AudioScrobbler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Plugin AudioScrobbler</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -29,57 +29,57 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Scrobbler Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Setelan Plugin Scrobbler</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
         <source>Last.fm</source>
-        <translation type="unfinished"></translation>
+        <translation>Last.fm</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="40"/>
         <location filename="../settingsdialog.ui" line="113"/>
         <source>Session:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesi:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="50"/>
         <location filename="../settingsdialog.ui" line="126"/>
         <source>Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Periksa</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="72"/>
         <location filename="../settingsdialog.ui" line="104"/>
         <source>Register new session</source>
-        <translation type="unfinished"></translation>
+        <translation>Registrasi sesi baru</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="82"/>
         <source>Libre.fm</source>
-        <translation type="unfinished"></translation>
+        <translation>Libre.fm</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="86"/>
         <location filename="../settingsdialog.cpp" line="121"/>
         <location filename="../settingsdialog.cpp" line="172"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Pesan</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="87"/>
         <source>1. Wait for browser startup</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Tunggu browser startup</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="88"/>
         <source>2. Allow Qmmp to scrobble tracks to your %1 account</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Bolehkan Qmmp untuk scrobble track ke akun %1 kamu</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="90"/>
         <source>3. Press &quot;OK&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Tekan &quot;OK&quot;</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="103"/>
@@ -89,35 +89,35 @@
         <location filename="../settingsdialog.cpp" line="180"/>
         <location filename="../settingsdialog.cpp" line="184"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Galat</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="103"/>
         <location filename="../settingsdialog.cpp" line="136"/>
         <location filename="../settingsdialog.cpp" line="180"/>
         <source>Network error</source>
-        <translation type="unfinished"></translation>
+        <translation>Galat jaringan</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="107"/>
         <location filename="../settingsdialog.cpp" line="140"/>
         <source>Unable to register new session</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak dapat meregistrasi sesi baru</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="121"/>
         <source>New session has been received successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesi baru telah diterima dengan sukses</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="172"/>
         <source>Permission granted</source>
-        <translation type="unfinished"></translation>
+        <translation>Perizinan dikabulkan</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="184"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
+        <translation>Perizinan ditolak</translation>
     </message>
 </context>
 </TS>

@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="id_ID">
+<TS version="2.0" language="id">
 <context>
     <name>SettingsDialog</name>
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Status Icon Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Setelan Plugin Icon Status</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
         <source>Balloon message</source>
-        <translation type="unfinished"></translation>
+        <translation>Pesan balloon</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="38"/>
         <location filename="../settingsdialog.ui" line="105"/>
         <source>Delay, ms:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tunda, md:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="79"/>
         <source>Tooltip</source>
-        <translation type="unfinished"></translation>
+        <translation>Tooltip</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="91"/>
         <source>Try to split file name when no tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Coba untuk pisah nama file ketika tiada tag</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="98"/>
         <source>Show progress bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampakkan bilah progres</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="131"/>
         <source>Transparency:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparan:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="165"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="174"/>
         <source>Cover size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran sampul:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="214"/>
         <source>32</source>
-        <translation type="unfinished"></translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="225"/>
         <source>Edit template</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit template</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="250"/>
         <source>Use standard icons</source>
-        <translation type="unfinished"></translation>
+        <translation>Gunakan ikon standar</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="80"/>
         <source>Tooltip Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Template Tooltip</translation>
     </message>
 </context>
 <context>
@@ -75,37 +75,37 @@
     <message>
         <location filename="../statusicon.cpp" line="66"/>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Main</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="67"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeda</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="68"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Henti</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="70"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Selanjutnya</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="71"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Sebelumnya</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="73"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Keluar</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="129"/>
         <source>Now Playing</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainkan Sekarang</translation>
     </message>
 </context>
 <context>
@@ -113,32 +113,32 @@
     <message>
         <location filename="../statusiconfactory.cpp" line="30"/>
         <source>Status Icon Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugin Icon Status</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="50"/>
         <source>About Status Icon Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentang Plugin Icon Status</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="51"/>
         <source>Qmmp Status Icon Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Plugin Icon Status</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="52"/>
         <source>Written by:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ditulis oleh:</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="53"/>
         <source>Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="54"/>
         <source>Artur Guzik &lt;a.guzik88@gmail.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Artur Guzik &lt;a.guzik88@gmail.com&gt;</translation>
     </message>
 </context>
 <context>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../statusiconpopupwidget.cpp" line="135"/>
         <source>Stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>Terhenti</translation>
     </message>
 </context>
 </TS>

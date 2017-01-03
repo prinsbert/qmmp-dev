@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="id_ID">
+<TS version="2.0" language="id">
 <context>
     <name>IncDecVolumeCommandLineOption</name>
     <message>
         <location filename="../incdecvolumeoption.cpp" line="44"/>
         <source>Increase volume by 5 steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Besarin volume 5 langkah</translation>
     </message>
     <message>
         <location filename="../incdecvolumeoption.cpp" line="45"/>
         <source>Decrease volume by 5 steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kecilin volume 5 langkah</translation>
     </message>
 </context>
 </TS>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="id_ID">
+<TS version="2.0" language="id">
 <context>
     <name>ProjectMPlugin</name>
     <message>
         <location filename="../projectmplugin.cpp" line="41"/>
         <source>ProjectM</source>
-        <translation type="unfinished"></translation>
+        <translation>ProjectM</translation>
     </message>
 </context>
 <context>
@@ -14,92 +14,92 @@
     <message>
         <location filename="../projectmwidget.cpp" line="155"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bantuan</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="155"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="156"/>
         <source>&amp;Show Song Title</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tampakkan Judul Lagu</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="156"/>
         <source>F2</source>
-        <translation type="unfinished"></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="157"/>
         <source>&amp;Show Preset Name</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tampakkan Nama Preset</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="157"/>
         <source>F3</source>
-        <translation type="unfinished"></translation>
+        <translation>F3</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="158"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tampakkan Menu</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="158"/>
         <source>M</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="160"/>
         <source>&amp;Next Preset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Preset Selanjutnya</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="160"/>
         <source>N</source>
-        <translation type="unfinished"></translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="161"/>
         <source>&amp;Previous Preset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Preset Sebelumnya</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="161"/>
         <source>P</source>
-        <translation type="unfinished"></translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="162"/>
         <source>&amp;Random Preset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Preset Acak</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="162"/>
         <source>R</source>
-        <translation type="unfinished"></translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="163"/>
         <source>&amp;Lock Preset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kunci Preset</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="163"/>
         <source>L</source>
-        <translation type="unfinished"></translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="165"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Layarpenuh</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="165"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
@@ -107,32 +107,32 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="30"/>
         <source>ProjectM</source>
-        <translation type="unfinished"></translation>
+        <translation>ProjectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="50"/>
         <source>About ProjectM Visual Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentang Plugin Visual ProjectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="51"/>
         <source>Qmmp ProjectM Visual Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Plugin Visual ProjectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="52"/>
         <source>This plugin adds projectM visualization</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugin ini menambahkan visualisasi projectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="54"/>
         <source>Based on libprojectM-qt library</source>
-        <translation type="unfinished"></translation>
+        <translation>Berdasarkan pada pustaka projectM-qt</translation>
     </message>
 </context>
 </TS>

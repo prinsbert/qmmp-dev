@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="id_ID">
+<TS version="2.0" language="id">
 <context>
     <name>DecoderFLACFactory</name>
     <message>
         <location filename="../decoderflacfactory.cpp" line="53"/>
         <source>FLAC Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugin FLAC</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="55"/>
         <source>FLAC Files</source>
-        <translation type="unfinished"></translation>
+        <translation>File FLAC</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="186"/>
         <source>About FLAC Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentang Plugin Audio FLAC</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="187"/>
         <source>Qmmp FLAC Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Plugin Audio FLAC</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="188"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -34,42 +34,42 @@
     <message>
         <location filename="../flacmetadatamodel.cpp" line="89"/>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Panjang</translation>
     </message>
     <message>
         <location filename="../flacmetadatamodel.cpp" line="90"/>
         <source>Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Sample rate</translation>
     </message>
     <message>
         <location filename="../flacmetadatamodel.cpp" line="90"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../flacmetadatamodel.cpp" line="91"/>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Saluran</translation>
     </message>
     <message>
         <location filename="../flacmetadatamodel.cpp" line="92"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitrate</translation>
     </message>
     <message>
         <location filename="../flacmetadatamodel.cpp" line="92"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../flacmetadatamodel.cpp" line="93"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran file</translation>
     </message>
     <message>
         <location filename="../flacmetadatamodel.cpp" line="93"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>KB</translation>
     </message>
 </context>
 </TS>
