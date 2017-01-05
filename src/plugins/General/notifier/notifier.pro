@@ -24,6 +24,8 @@ unix {
   qtHaveModule(x11extras) {
     DEFINES += Q_WS_X11
     QT += x11extras
+    CONFIG += link_pkgconfig
+    PKGCONFIG += x11
   }
   target.path = $$LIB_DIR/qmmp/General
   INSTALLS += target
