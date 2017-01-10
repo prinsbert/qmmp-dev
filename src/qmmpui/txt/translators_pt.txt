@@ -1,5 +1,4 @@
-Português do Brasil:
-    Vitor Pereira
+Português do Brasil
     Klaos Lacerda
     Bruno Gonçalves
     Heitor Thury Barreiros Barbosa <hthury@gmail.com>
@@ -21,7 +20,7 @@ Checo:
     Karel Volný <kvolny@redhat.com>
     Jaroslav Lichtblau
 
-Holândes:
+Holandês:
     Ronald Uitermark <ronald645@gmail.com>
 
 Francês:

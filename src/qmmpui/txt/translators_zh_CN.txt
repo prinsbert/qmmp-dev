@@ -1,5 +1,4 @@
 巴西葡萄牙语：
-    Vitor Pereira
     Klaos Lacerda
     Bruno Goncalves
     Heitor Thury Barreiros Barbosa<hthury@gmail.com>
@@ -8,14 +7,14 @@
     Kiril Kirilov
 
 繁体中文：
-    lon <lon83129@126.com>
-    Jeff Huang
+    艾昂<Ion83129@126.com>
+    杰夫.黄
 
 简体中文：
-    lon <lon83129@126.com>
-    mabier
-    白铭骢
-    王铭烨
+    艾昂<Ion83129@126.com>
+    马兵儿
+    Mingcong Bai
+    Mingye Wang
 
 捷克语：
     Karel Volný <kvolny@redhat.com>
