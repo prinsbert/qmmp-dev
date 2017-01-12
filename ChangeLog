@@ -1211,7 +1211,7 @@ Version 0.10.5
 
 Version 0.10.6
 * using http header 'icy-name' as fallback title
-* enabled ADTS AAC by default in the ffmpeg plugin
+* enabled AAC by default in the ffmpeg plugin
 * fixed ADTS parser in the aac plugin
 * fixed possible segmentation fault
 * fixed Ogg Opus streams support
