@@ -1225,3 +1225,11 @@ Version 1.1.5
 * fixed command line option '--pl-repeat-toggle'
 * fixed some cppcheck warnings
 * changed file dialog form
+
+Version 1.1.6
+* using http header 'icy-name' as fallback title
+* enabled AAC by default in the ffmpeg plugin
+* fixed ADTS parser in the aac plugin
+* fixed possible segmentation fault
+* fixed Ogg Opus streams support
+* updated Chinese Simplified translation (Mingcong Bai)
