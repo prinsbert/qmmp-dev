@@ -1,3 +1,9 @@
+qmmp-qt4 (0.10.6-1ubuntu1~yakkety0) yakkety; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Thu, 12 Jan 2017 18:08:52 +0300
+
 qmmp-qt4 (0.10.5-1ubuntu1~yakkety0) yakkety; urgency=medium
 
   * New upstream release.
