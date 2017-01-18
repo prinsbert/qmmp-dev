@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,16 +31,13 @@
 #include <QTime>
 #include "goomwidget.h"
 
-#define VISUAL_NODE_SIZE 512 //samples
-#define VISUAL_BUFFER_SIZE (5*VISUAL_NODE_SIZE)
-
 GoomWidget::GoomWidget(QWidget *parent) : Visual (parent)
 {
     m_core = SoundCore::instance();
     m_update = false;
     m_goom = 0;
     m_fps = 25;
-    m_buf_at = 0;
+    m_running = false;
     connect(m_core, SIGNAL(metaDataChanged()), SLOT(updateTitle()));
 
     setWindowTitle ("Goom");
@@ -61,36 +58,17 @@ GoomWidget::~GoomWidget()
     m_goom = 0;
 }
 
-void GoomWidget::add (float *data, size_t samples, int chan)
+void GoomWidget::start()
 {
-    size_t frames = qMin(samples / chan, size_t(4096));
+    m_running = true;
+    if(isVisible())
+        m_timer->start();
+}
 
-    if(4096 - m_buf_at < frames)
-    {
-        size_t l = (frames + m_buf_at) - 4096;
-        m_buf_at -= l;
-        memmove(m_buf[0], m_buf[0] + l,  m_buf_at*sizeof(gint16));
-        memmove(m_buf[1], m_buf[1] + l,  m_buf_at*sizeof(gint16));
-    }
-
-    if(chan == 1)
-    {
-        for(size_t i = 0; i < frames; i++)
-        {
-            m_buf[0][m_buf_at + i] = data[i*chan] * 32767.0;
-            m_buf[1][m_buf_at + i] = data[i*chan] * 32767.0;
-        }
-
-    }
-    else
-    {
-        for(size_t i = 0; i < frames; i++)
-        {
-            m_buf[0][m_buf_at + i] = data[i*chan] * 32767.0;
-            m_buf[1][m_buf_at + i] = data[i*chan+1] * 32767.0;
-        }
-    }
-    m_buf_at += frames;
+void GoomWidget::stop()
+{
+    m_running = false;
+    m_timer->stop();
 }
 
 void GoomWidget::timeout()
@@ -103,13 +81,14 @@ void GoomWidget::timeout()
         goom_set_resolution(m_goom, width(), height());
         goom_set_screenbuffer(m_goom, m_image.bits());
     }
-    if(m_buf_at >= 512)
+
+    if(takeData(m_buf[0], m_buf[1]))
     {
-        memcpy(m_out[0], m_buf[0], 512 * sizeof(gint16));
-        memcpy(m_out[1], m_buf[1], 512 * sizeof(gint16));
-        m_buf_at -= 512;
-        memmove(m_buf[0], m_buf[0] + 512, m_buf_at * sizeof(gint16));
-        memmove(m_buf[1], m_buf[1] + 512, m_buf_at * sizeof(gint16));
+        for(size_t i = 0; i < QMMP_VISUAL_NODE_SIZE; i++)
+        {
+            m_out[0][i] = m_buf[0][i] * 32767.0;
+            m_out[1][i] = m_buf[1][i] * 32767.0;
+        }
         goom_update (m_goom, m_out, 0, m_fps, qPrintable(m_title), "");
         update();
     }
@@ -164,11 +143,13 @@ void GoomWidget::updateTitle()
 void GoomWidget::hideEvent (QHideEvent *)
 {
     m_timer->stop();
+    clear();
 }
 
 void GoomWidget::showEvent (QShowEvent *)
 {
-    m_timer->start();
+    if(m_running)
+        m_timer->start();
 }
 
 void GoomWidget::closeEvent (QCloseEvent *event)
@@ -182,9 +163,7 @@ void GoomWidget::closeEvent (QCloseEvent *event)
 void GoomWidget::paintEvent (QPaintEvent *)
 {
     QPainter painter (this);
-    mutex()->lock();
     painter.drawImage(0,0, m_image);
-    mutex()->unlock();
 }
 
 void GoomWidget::mousePressEvent(QMouseEvent *e)
@@ -195,7 +174,6 @@ void GoomWidget::mousePressEvent(QMouseEvent *e)
 
 void GoomWidget::clear()
 {
-    m_buf_at = 0;
     m_image.fill(Qt::black);
     update();
 }
