@@ -62,6 +62,7 @@ SET(libqmmp_SRCS
     channelconverter.cpp
     volume.cpp
     dithering.cpp
+    visualbuffer.cpp
 )
 
 SET(libqmmp_HDRS
@@ -92,6 +93,7 @@ SET(libqmmp_HDRS
     channelmap.h
     channelconverter_p.h
     dithering_p.h
+    visualbuffer_p.h
 )
 
 SET(libqmmp_DEVEL_HDRS

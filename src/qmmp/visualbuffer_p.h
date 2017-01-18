@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2017 by Ilya Kotov                                      *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,56 +17,48 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef PROJECTMWIDGET_H
-#define PROJECTMWIDGET_H
 
-#include <QOpenGLWidget>
+#ifndef VISUALBUFFER_P_H
+#define VISUALBUFFER_P_H
 
-class QMenu;
-class QTimer;
-class QListWidget;
-class ProjectMWrapper;
-class projectM;
+#include <QtGlobal>
+#include <QTime>
+#include <QMutex>
 
-/**
-    @author Ilya Kotov <forkotov02@hotmail.ru>
-*/
-class ProjectMWidget : public QOpenGLWidget
+#define VISUAL_BUFFER_SIZE 128 //number of nodes
+
+class VisualNode
 {
-    Q_OBJECT
 public:
-    ProjectMWidget(QListWidget *listWidget, QWidget *parent = 0);
+    float data[2][512];
+    bool used;
+    qint64 ts;
 
-    ~ProjectMWidget();
-
-    projectM *projectMInstance();
-
-signals:
-    void showMenuToggled(bool);
-    void fullscreenToggled(bool);
-
-protected:
-    virtual void initializeGL();
-    virtual void resizeGL(int width, int height);
-    virtual void paintGL();
-    virtual void mousePressEvent (QMouseEvent *event);
-
-private slots:
-    void showHelp();
-    void showPresetName();
-    void showTitle();
-    void nextPreset();
-    void previousPreset();
-    void randomPreset();
-    void lockPreset(bool lock);
-    void updateTitle();
-    void setCurrentRow(int row);
-
-private:
-    void createActions();
-    ProjectMWrapper *m_projectM;
-    QMenu *m_menu;
-    QListWidget *m_listWidget;
+    VisualNode()
+    {
+        used = false;
+        ts = 0;
+    }
 };
 
-#endif
+class VisualBuffer
+{
+public:
+    VisualBuffer();
+
+    void add(float *pcm, int samples, int channels, qint64 ts, qint64 delay);
+    VisualNode *take();
+    void clear();
+    QMutex *mutex();
+
+private:
+    VisualNode m_buffer[VISUAL_BUFFER_SIZE];
+    qint64 m_elapsed;
+    int m_take_index;
+    int m_add_index;
+    QTime m_time;
+    QMutex m_mutex;
+
+};
+
+#endif // VISUALBUFFER_P_H

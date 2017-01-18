@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,9 +25,6 @@
 #include <qmmp/qmmp.h>
 #include "inlines.h"
 #include "logo.h"
-
-#define VISUAL_NODE_SIZE 128 //samples
-#define VISUAL_BUFFER_SIZE (3*VISUAL_NODE_SIZE)
 
 Logo::Logo(QWidget *parent) : Visual(parent)
 {
@@ -66,16 +63,12 @@ Logo::Logo(QWidget *parent) : Visual(parent)
         m_source_lines.append(line);
     }
 
-    QTimer *m_timer = new QTimer(this);
+    m_timer = new QTimer(this);
     connect(m_timer, SIGNAL(timeout()), SLOT(updateLetters()));
     m_timer->setInterval(50);
-    m_timer->start();
 
-    m_buffer_at = 0;
     m_value = 0;
     m_elapsed = 0;
-    m_buffer = new float[VISUAL_BUFFER_SIZE];
-
     updateLetters();
     Visual::add(this);
 }
@@ -83,27 +76,16 @@ Logo::Logo(QWidget *parent) : Visual(parent)
 Logo::~Logo()
 {
     Visual::remove(this);
-    delete[] m_buffer;
 }
 
-void Logo::add(float *data, size_t samples, int chan)
+void Logo::start()
 {
-    Q_UNUSED(chan);
-    if(VISUAL_BUFFER_SIZE == m_buffer_at)
-    {
-        m_buffer_at -= VISUAL_NODE_SIZE;
-        memmove(m_buffer, (m_buffer + VISUAL_NODE_SIZE), m_buffer_at * sizeof(float));
-        return;
-    }
-    int frames = qMin(int(samples/chan), VISUAL_BUFFER_SIZE - m_buffer_at);
-
-    mono_from_multichannel(m_buffer + m_buffer_at, data, frames, chan);
-    m_buffer_at += frames;
+    m_timer->start();
 }
 
-void Logo::clear()
+void Logo::stop()
 {
-    update();
+    m_timer->stop();
 }
 
 void Logo::paintEvent(QPaintEvent *)
@@ -159,7 +141,6 @@ void Logo::updateLetters()
 void Logo::processPreset1()
 {
     m_lines.clear();
-    mutex()->lock();
     QString line;
     for(int i = 0; i < m_source_lines.count(); ++i)
     {
@@ -177,14 +158,12 @@ void Logo::processPreset1()
         }
         m_lines.append(line);
     }
-    mutex()->unlock();
     update();
 }
 
 void Logo::processPreset2()
 {
     m_lines.clear();
-    mutex()->lock();
     QString str = QString("..0000..");//.arg(Qmmp::strVersion().left(5));
     int at = m_value % str.size();
 
@@ -199,14 +178,12 @@ void Logo::processPreset2()
 
         m_lines.append(line);
     }
-    mutex()->unlock();
     update();
 }
 
 void Logo::processPreset3()
 {
     m_lines.clear();
-    mutex()->lock();
     QString str = QString("...%1...").arg(Qmmp::strVersion().left(5));
     int at = m_value % str.size();
 
@@ -221,56 +198,45 @@ void Logo::processPreset3()
 
         m_lines.append(line);
     }
-    mutex()->unlock();
     update();
 }
 
 void Logo::processPreset4()
 {
     m_lines.clear();
-    mutex()->lock();
 
     int max = 0;
 
-    if(m_buffer_at < VISUAL_NODE_SIZE)
+    if(takeData(m_buffer))
     {
-       m_value -= 512;
-       m_value = qMax(m_value, max);
-    }
-    else
-    {
-        for(int j = 0; j < VISUAL_NODE_SIZE; j+=8)
+        for(int j = 0; j < QMMP_VISUAL_NODE_SIZE; j+=8)
         {
-            if(m_buffer[j] > max)
-                max = abs(m_buffer[j] * 65536.0);
+            max = qMax(max, abs(m_buffer[j] * 65536.0));
         }
-
-        m_buffer_at -= VISUAL_NODE_SIZE;
-        memmove(m_buffer, m_buffer + VISUAL_NODE_SIZE, m_buffer_at * sizeof(float));
-        m_value -= 512;
-        m_value = qMax(m_value, max);
     }
+
+    m_value -= 512;
+    m_value = qMax(m_value, max);
 
     int at = 0;
 
     foreach(QString line, m_source_lines)
     {
-
         int count = line.count("X");
         int k = 0;
 
-        while(k < m_value * count / 2048 / 16 / 2)
+        while(k < m_value * count / 65536 / 2)
         {
-            int value = abs(m_buffer[qMin(at++, m_buffer_at)] * 16);
+            int value = abs(m_buffer[qMin(at++, QMMP_VISUAL_NODE_SIZE)] * 16);
             line.replace(line.indexOf("X"), 1, QString("%1").arg(value, 0, 16).toUpper());
             k++;
         }
 
         k = 0;
 
-        while(k < m_value * count / 2048 / 16 / 2)
+        while(k < m_value * count / 65536 / 2)
         {
-            int value = abs(m_buffer[qMin(at++, m_buffer_at)] * 16);
+            int value = abs(m_buffer[qMin(at++, QMMP_VISUAL_NODE_SIZE)] * 16);
             line.replace(line.lastIndexOf("X"), 1, QString("%1").arg(value, 0, 16).toUpper());
             k++;
         }
@@ -282,6 +248,5 @@ void Logo::processPreset4()
 
         m_lines.append(line);
     }
-    mutex()->unlock();
     update();
 }

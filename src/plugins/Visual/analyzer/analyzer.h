@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -32,7 +32,6 @@ class QPaintEvent;
 class QHideEvent;
 class QShowEvent;
 
-
 class Analyzer : public Visual
 {
     Q_OBJECT
@@ -41,9 +40,9 @@ public:
     Analyzer( QWidget *parent = 0);
     virtual ~Analyzer();
 
-    void add(float *data, size_t samples, int chan);
-    void clear();
-
+public slots:
+    void start();
+    void stop();
 
 private slots:
     void timeout();
@@ -51,14 +50,14 @@ private slots:
     void readSettings();
     void writeSettings();
 
-
 private:
+    void clear();
     virtual void hideEvent (QHideEvent *);
     virtual void showEvent (QShowEvent *);
     virtual void closeEvent (QCloseEvent *);
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *e);
-    void process(float *l, float *r);
+    void process();
     void draw(QPainter *p);
     void createMenu();
     QTimer *m_timer;
@@ -68,11 +67,11 @@ private:
     double m_peaks_falloff;
     double m_analyzer_falloff;
     bool m_show_peaks;
-    float *m_left_buffer;
-    float *m_right_buffer;
-    int m_buffer_at;
+    float m_left_buffer[QMMP_VISUAL_NODE_SIZE];
+    float m_right_buffer[QMMP_VISUAL_NODE_SIZE];
     int m_cols, m_rows;
     bool m_update;
+    bool m_running;
     //colors
     QColor m_color1;
     QColor m_color2;

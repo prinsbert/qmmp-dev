@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2012-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2012-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -190,22 +190,8 @@ void OutputWriter::dispatchVisual (Buffer *buffer)
     if(!buffer)
         return;
 
-    foreach (Visual *visual, *Visual::visuals())
-    {
-        visual->mutex()->lock ();
-        visual->add (buffer->data, buffer->samples, m_channels);
-        visual->mutex()->unlock();
-    }
-}
-
-void OutputWriter::clearVisuals()
-{
-    foreach (Visual *visual, *Visual::visuals())
-    {
-        visual->mutex()->lock ();
-        visual->clear();
-        visual->mutex()->unlock();
-    }
+    Visual::addAudio(buffer->data, buffer->samples, m_channels,
+                     m_totalWritten / m_bytesPerMillisecond, m_output->latency());
 }
 
 bool OutputWriter::prepareConverters()
@@ -241,6 +227,23 @@ bool OutputWriter::prepareConverters()
     return true;
 }
 
+void OutputWriter::startVisualization()
+{
+    foreach (Visual *visual, *Visual::visuals())
+    {
+        QMetaObject::invokeMethod(visual, "start", Qt::QueuedConnection);
+    }
+}
+
+void OutputWriter::stopVisualization()
+{
+    Visual::clearBuffer();
+    foreach (Visual *visual, *Visual::visuals())
+    {
+        QMetaObject::invokeMethod(visual, "stop", Qt::QueuedConnection);
+    }
+}
+
 void OutputWriter::dispatch(qint64 elapsed,
                       int bitrate,
                       int frequency,
@@ -255,8 +258,6 @@ void OutputWriter::dispatch(const Qmmp::State &state)
 {
     if (m_handler)
         m_handler->dispatch(state);
-    if (state == Qmmp::Stopped)
-        clearVisuals();
 }
 
 void OutputWriter::run()
@@ -278,6 +279,7 @@ void OutputWriter::run()
     unsigned char *tmp = 0;
 
     dispatch(Qmmp::Playing);
+    startVisualization();
 
     while (!done)
     {
@@ -286,6 +288,7 @@ void OutputWriter::run()
         {
             if(m_pause)
             {
+                Visual::clearBuffer();
                 m_output->suspend();
                 mutex()->unlock();
                 m_prev_pause = m_pause;
@@ -402,6 +405,7 @@ void OutputWriter::run()
 #endif
     }
     dispatch(Qmmp::Stopped);
+    stopVisualization();
     mutex()->unlock();
 }
 
