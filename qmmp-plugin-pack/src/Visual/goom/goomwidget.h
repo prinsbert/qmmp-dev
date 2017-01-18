@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -47,7 +47,9 @@ public:
     GoomWidget(QWidget *parent = 0);
     virtual ~GoomWidget();
 
-    void add(float *data, size_t samples, int chan);
+public slots:
+    void start();
+    void stop();
 
 private slots:
     void timeout();
@@ -66,15 +68,15 @@ private:
     void createMenu();
     QTimer *m_timer;
     bool m_update;
+    bool m_running;
     QMenu *m_menu;
     QActionGroup *m_fpsGroup;
     QAction *m_showTitleAction;
     PluginInfo *m_goom;
 
     QImage m_image;
-    size_t m_buf_at;
-    gint16 m_buf[2][4096];
-    gint16 m_out[2][512];
+    float m_buf[2][QMMP_VISUAL_NODE_SIZE];
+    gint16 m_out[2][QMMP_VISUAL_NODE_SIZE];
     int m_fps;
     SoundCore *m_core;
     QString m_title;
