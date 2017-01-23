@@ -6,6 +6,8 @@ MOC_DIR=./.build/moc/
 OBJECTS_DIR=./.build/obj
 RCC_DIR=./.build/rcc
 
+CONFIG -= depend_includepath
+
 QT += widgets
 DEFINES += QMMP_WS_X11
 
