@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -40,12 +40,10 @@ const DecoderProperties DecoderCUEFactory::properties() const
     properties.shortName = "cue";
     properties.filters << "*.cue";
     properties.description = tr("CUE Files");
-    //properties.contentType = "application/ogg;audio/x-vorbis+ogg";
     properties.protocols << "cue";
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
-    properties.noOutput = true;
     return properties;
 }
 
