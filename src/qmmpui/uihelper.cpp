@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,6 +23,7 @@
 #include <QWidget>
 #include <QAction>
 #include <QSettings>
+#include <QApplication>
 #include <qmmp/soundcore.h>
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/filedialog.h>
@@ -245,6 +246,11 @@ void UiHelper::showMainWindow()
 
 void UiHelper::exit()
 {
+    //send non-spontaneous close event
+    //for all windows
+    foreach (QWidget *widget, qApp->topLevelWidgets())
+        widget->close();
+
     qApp->closeAllWindows();
     qApp->quit();
 }
