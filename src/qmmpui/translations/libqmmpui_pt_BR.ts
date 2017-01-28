@@ -226,13 +226,13 @@
         <location filename="../columneditor.cpp" line="89"/>
         <location filename="../columneditor.cpp" line="113"/>
         <source>File Name</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="90"/>
         <location filename="../columneditor.cpp" line="114"/>
         <source>File Path</source>
-        <translation>Caminho do ficheiro</translation>
+        <translation>Caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="117"/>
@@ -1100,12 +1100,12 @@
     <message>
         <location filename="../templateeditor.cpp" line="61"/>
         <source>File Name</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../templateeditor.cpp" line="62"/>
         <source>File Path</source>
-        <translation>Caminho do ficheiro</translation>
+        <translation>Caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../templateeditor.cpp" line="63"/>
@@ -1124,7 +1124,7 @@
         <location filename="../uihelper.cpp" line="138"/>
         <location filename="../uihelper.cpp" line="150"/>
         <source>All Supported Bitstreams</source>
-        <translation>Todas as emissões suportadas</translation>
+        <translation>Todos os formatos suportados</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="144"/>
@@ -1134,7 +1134,7 @@
     <message>
         <location filename="../uihelper.cpp" line="156"/>
         <source>Select one or more files to play</source>
-        <translation>Selecione um ou mais ficheiros a reproduzir</translation>
+        <translation>Selecione um ou mais arquivos para reproduzir</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="164"/>
@@ -1168,7 +1168,7 @@
     <message>
         <location filename="../forms/winfileassocpage.ui" line="49"/>
         <source>Select All</source>
-        <translation>Marcar todos</translation>
+        <translation>Selecionar todos</translation>
     </message>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="56"/>
@@ -1183,22 +1183,22 @@
     <message>
         <location filename="../winfileassocpage.cpp" line="137"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>Nem todos os tipos de ficheiro foram associados. Verifique as suas permissões e tente novamente.</translation>
+        <translation>Nem todos os tipos de arquivo foram associados. Verifique as permissões de segurança e tente novamente.</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="144"/>
         <source>Check all file types in the list</source>
-        <translation>Marcar todos os tipos de ficheiro da lista</translation>
+        <translation>Marcar todos os tipos de arquivo da lista</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="145"/>
         <source>Uncheck all file types in the list</source>
-        <translation>Desmarcar todos os tipos de ficheiro da lista</translation>
+        <translation>Desmarcar todos os tipos de arquivo da lista</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="146"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Assinale as extensões de ficheiros que pretende gerir com o Qmmp. Se clicar em Aplicar, os tipos de ficheiro marcados serão associados. Se desmarcar um tipo, a associação original será restaurada.</translation>
+        <translation>Assinale as extensões de arquivo que pretende gerir com o Qmmp. Se clicar em Aplicar, os tipos de arquivo marcados serão associados. Se desmarcar um tipo, a associação original será restaurada.</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="150"/>

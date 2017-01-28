@@ -241,7 +241,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="70"/>
         <source>&amp;Remove Selected</source>
-        <translation>&amp;Remover seleção</translation>
+        <translation>&amp;Remover selecionados</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="71"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="82"/>
         <source>&amp;Select All</source>
-        <translation>&amp;Marcar todos</translation>
+        <translation>&amp;Selecionar todos</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="83"/>
@@ -825,7 +825,7 @@
     <message>
         <location filename="../playlist.cpp" line="197"/>
         <source>&amp;Copy Selection To</source>
-        <translation>&amp;Copiar seleção para</translation>
+        <translation>&amp;Copiar selecionados para</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="227"/>
@@ -866,13 +866,13 @@
         <location filename="../playlist.cpp" line="250"/>
         <location filename="../playlist.cpp" line="305"/>
         <source>By Filename</source>
-        <translation>Por nome de ficheiro</translation>
+        <translation>Por nome de arquivo</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="254"/>
         <location filename="../playlist.cpp" line="309"/>
         <source>By Path + Filename</source>
-        <translation>Por caminho e nome de ficheiro</translation>
+        <translation>Por caminho e nome de arquivo</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="258"/>
@@ -890,13 +890,13 @@
         <location filename="../playlist.cpp" line="266"/>
         <location filename="../playlist.cpp" line="321"/>
         <source>By File Creation Date</source>
-        <translation>Por data de criação do ficheiro</translation>
+        <translation>Por data de criação do arquivo</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="270"/>
         <location filename="../playlist.cpp" line="325"/>
         <source>By File Modification Date</source>
-        <translation>Por data de modificação do ficheiro</translation>
+        <translation>Por data de modificação do arquivo</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="274"/>
@@ -1110,12 +1110,12 @@
     <message>
         <location filename="../popupsettings.cpp" line="73"/>
         <source>File Name</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="74"/>
         <source>File Path</source>
-        <translation>Caminho do ficheiro</translation>
+        <translation>Caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="68"/>
@@ -1199,22 +1199,22 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="31"/>
         <source>Skinned User Interface</source>
-        <translation>Skinned User Interface</translation>
+        <translation> Interface de usuário com tema</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="44"/>
         <source>About Qmmp Skinned User Interface</source>
-        <translation>Sobre Qmmp Skinned User Interface</translation>
+        <translation>Sobre Interface de usuário Qmmp com tema</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="45"/>
         <source>Qmmp Skinned User Interface</source>
-        <translation>Qmmp Skinned User Interface</translation>
+        <translation>Interface de usuário Qmmp com tema</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="46"/>
         <source>Simple user interface with Winamp-2.x/XMMS skins support</source>
-        <translation>Interface de utilizador com suporte a temas Winamp-2.x/XMMS</translation>
+        <translation>Interface de usuário com suporte a temas Winamp-2.x/XMMS</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="47"/>
@@ -1499,12 +1499,12 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="194"/>
         <source>File Name</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="195"/>
         <source>File Path</source>
-        <translation>Caminho do ficheiro</translation>
+        <translation>Caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="196"/>

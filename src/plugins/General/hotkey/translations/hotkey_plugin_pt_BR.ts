@@ -29,17 +29,17 @@
     <message>
         <location filename="../hotkeyfactory.cpp" line="52"/>
         <source>About Global Hotkey Plugin</source>
-        <translation>Sobre o suplemento Global Hotkey</translation>
+        <translation>Sobre o plugin Global Hotkey</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="53"/>
         <source>Qmmp Global Hotkey Plugin</source>
-        <translation>Suplemento Qmmp Global Hotkey</translation>
+        <translation>Plugin Qmmp Global Hotkey</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="54"/>
         <source>This plugin adds support for multimedia keys or global key combinations</source>
-        <translation>Este suplemento adiciona suporte às teclas multimédia ou a combinações de teclas</translation>
+        <translation>Este plugin adiciona suporte às teclas multimídia ou a combinações de teclas</translation>
     </message>
     <message>
         <location filename="../hotkeyfactory.cpp" line="55"/>
