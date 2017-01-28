@@ -269,7 +269,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="75"/>
         <source>&amp;Remove Selected</source>
-        <translation>&amp;Remover seleção</translation>
+        <translation>&amp;Remover selecionados</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="76"/>
@@ -779,7 +779,7 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="249"/>
         <source>&amp;Remove Selected</source>
-        <translation>&amp;Remover seleção</translation>
+        <translation>&amp;Remover selecionados</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="254"/>
@@ -900,13 +900,13 @@
         <location filename="../mainwindow.cpp" line="514"/>
         <location filename="../mainwindow.cpp" line="569"/>
         <source>By Filename</source>
-        <translation>Por nome de ficheiro</translation>
+        <translation>Por nome de arquivo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <location filename="../mainwindow.cpp" line="573"/>
         <source>By Path + Filename</source>
-        <translation>Por caminho e nome de ficheiro</translation>
+        <translation>Por caminho e nome de arquivo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="522"/>
@@ -930,13 +930,13 @@
         <location filename="../mainwindow.cpp" line="534"/>
         <location filename="../mainwindow.cpp" line="589"/>
         <source>By File Creation Date</source>
-        <translation>Por data de criação do ficheiro</translation>
+        <translation>Por data de criação do arquivo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="538"/>
         <location filename="../mainwindow.cpp" line="593"/>
         <source>By File Modification Date</source>
-        <translation>Por data de modificação do ficheiro</translation>
+        <translation>Por data de modificação do arquivo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="542"/>
@@ -1116,12 +1116,12 @@
     <message>
         <location filename="../popupsettings.cpp" line="73"/>
         <source>File Name</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="74"/>
         <source>File Path</source>
-        <translation>Caminho do ficheiro</translation>
+        <translation>Caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../popupsettings.cpp" line="68"/>
@@ -1350,14 +1350,14 @@
         <translation>Destaque de fundo:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="583"/>
-        <source>Highlighted text:</source>
-        <translation>Destaque de texto:</translation>
-    </message>
-    <message>
         <location filename="../forms/qsuisettings.ui" line="404"/>
         <source>Use system colors</source>
         <translation>Usar cores do sistema</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="583"/>
+        <source>Highlighted text:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="618"/>
@@ -1447,12 +1447,12 @@
     <message>
         <location filename="../qsuisettings.cpp" line="129"/>
         <source>File Name</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="130"/>
         <source>File Path</source>
-        <translation>Caminho do ficheiro</translation>
+        <translation>Caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="131"/>

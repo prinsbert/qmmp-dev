@@ -162,7 +162,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="133"/>
         <source>File name pattern:</source>
-        <translation>Padrão para nome de ficheiro:</translation>
+        <translation>Padrão para nome de arquivo:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="51"/>
@@ -225,12 +225,12 @@
     <message>
         <location filename="../settingsdialog.cpp" line="231"/>
         <source>File Name</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="232"/>
         <source>File Path</source>
-        <translation>Caminho do ficheiro</translation>
+        <translation>Caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="226"/>

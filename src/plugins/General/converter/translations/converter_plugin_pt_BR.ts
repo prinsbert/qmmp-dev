@@ -122,12 +122,12 @@
     <message>
         <location filename="../converterdialog.cpp" line="201"/>
         <source>File Name</source>
-        <translation>Nome do ficheiro</translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="202"/>
         <source>File Path</source>
-        <translation>Caminho do ficheiro</translation>
+        <translation>Caminho do arquivo</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="212"/>
