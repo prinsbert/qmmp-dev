@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.1.6
+QMMP_VERSION=1.1.7
 UBUNTU_CODENAMES='xenial yakkety'
 BUILD_ROOT=build-root
 
