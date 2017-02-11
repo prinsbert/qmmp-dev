@@ -111,15 +111,12 @@ SOURCES += mainwindow.cpp \
     horizontalslider.cpp
 
 TEMPLATE = lib
-unix:QMAKE_LIBDIR += ../../../../lib
 unix:LIBS += -lqmmpui -lqmmp
 
-win32:QMAKE_LIBDIR += ../../../../bin
 win32:LIBS += -lqmmpui0 -lqmmp0
 
 CONFIG += warn_on \
           plugin
-
 
 TARGET = $$PLUGINS_PREFIX/Ui/skinned
 
@@ -128,11 +125,7 @@ win32:LIBS += -lqmmp0 -lqmmpui0
 
 RESOURCES = resources/resources.qrc glare/glare.qrc
 
-unix{
-isEmpty(LIB_DIR){
-LIB_DIR = /lib
-}
-
+unix {
 target.path = $$LIB_DIR/qmmp/Ui
 INSTALLS += target
 CONFIG += link_pkgconfig
@@ -140,7 +133,5 @@ PKGCONFIG += x11
 DEFINES += QMMP_WS_X11
 QT += x11extras
 }
-
-INCLUDEPATH += ../../../
 
 RESOURCES += translations/translations.qrc

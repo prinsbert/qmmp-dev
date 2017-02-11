@@ -11,8 +11,6 @@ SOURCES += outputjackfactory.cpp \
 TARGET=$$PLUGINS_PREFIX/Output/jack
 QMAKE_CLEAN =$$PLUGINS_PREFIX/Output/libjack.so
 
-INCLUDEPATH += ../../../
-QMAKE_LIBDIR += ../../../../lib
 CONFIG += warn_on \
 thread \
 plugin \
@@ -22,10 +20,6 @@ LIBS += -lqmmp
 PKGCONFIG += jack soxr
 
 RESOURCES = translations/translations.qrc
-
-isEmpty (LIB_DIR){
-LIB_DIR = /lib
-}
 
 target.path = $$LIB_DIR/qmmp/Output
 INSTALLS += target
