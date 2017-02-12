@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -59,8 +59,8 @@ bool DecoderMPG123Factory::canDecode(QIODevice *input) const
     char buf[16 * 512];
     if (input->peek(buf,sizeof(buf)) == sizeof(buf))
     {
-        if(!memcmp(buf + 8, "WAVE", 4) && !memcmp(buf + 20, "U" ,1))
-            return true;
+        if(!memcmp(buf + 8, "WAVE", 4))
+            return !memcmp(buf + 20, "U" ,1);
 
         mpg123_init();
         mpg123_handle *handle = mpg123_new(0, 0);
