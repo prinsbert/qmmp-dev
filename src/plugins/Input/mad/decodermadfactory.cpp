@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -81,6 +81,12 @@ bool DecoderMADFactory::canDecode(QIODevice *input) const
 
     if (input->peek(buf,sizeof(buf)) == sizeof(buf))
     {
+        if (!memcmp(buf, "FLV", 3)) //skip Macromedia Flash Video
+            return false;
+
+        if (!memcmp(buf + 8, "WAVE", 4))
+            return !memcmp(buf + 20, "U" ,1);
+
         struct mad_stream stream;
         struct mad_header header;
         int dec_res;
