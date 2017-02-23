@@ -798,184 +798,184 @@
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="247"/>
-        <location filename="../mainwindow.cpp" line="276"/>
+        <location filename="../mainwindow.cpp" line="274"/>
         <source>Rename Playlist</source>
         <translation>重命名播放列表</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="452"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="362"/>
+        <location filename="../mainwindow.cpp" line="360"/>
         <source>&lt;b&gt;%1&lt;/b&gt;|%2 bit|%3 ch|%4 Hz|tracks: %5|total time: %6|%7 kbps|</source>
         <translation>&lt;b&gt;%1&lt;/b?|%2 比特|%3频道|%4赫兹|曲目：%5|总计时间：%6|%7前比特每秒|</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="361"/>
         <source>Paused</source>
         <translation>被暂停</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="373"/>
+        <location filename="../mainwindow.cpp" line="371"/>
         <source>&lt;b&gt;%1&lt;/b&gt;|tracks: %2|total time: %3|</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;|曲目：%2|总计时间：%3|</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="374"/>
+        <location filename="../mainwindow.cpp" line="372"/>
         <source>Stopped</source>
         <translation>被停止</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="276"/>
+        <location filename="../mainwindow.cpp" line="274"/>
         <source>Playlist name:</source>
         <translation>播放列表名称：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="317"/>
+        <location filename="../mainwindow.cpp" line="315"/>
         <source>Appearance</source>
         <translation>外观</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="318"/>
+        <location filename="../mainwindow.cpp" line="316"/>
         <source>Shortcuts</source>
         <translation>热键</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="361"/>
         <source>Playing</source>
         <translation>播放中</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="442"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="448"/>
+        <location filename="../mainwindow.cpp" line="446"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="448"/>
         <source>Position</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="504"/>
         <source>Edit Toolbars</source>
         <translation>编辑工具栏</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="508"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Sort List</source>
         <translation>清单排序</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
-        <location filename="../mainwindow.cpp" line="566"/>
+        <location filename="../mainwindow.cpp" line="509"/>
+        <location filename="../mainwindow.cpp" line="564"/>
         <source>By Title</source>
         <translation>按标题</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="515"/>
-        <location filename="../mainwindow.cpp" line="570"/>
+        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="568"/>
         <source>By Album</source>
         <translation>按专辑</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="519"/>
-        <location filename="../mainwindow.cpp" line="574"/>
+        <location filename="../mainwindow.cpp" line="517"/>
+        <location filename="../mainwindow.cpp" line="572"/>
         <source>By Artist</source>
         <translation>按艺术家</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="523"/>
-        <location filename="../mainwindow.cpp" line="578"/>
+        <location filename="../mainwindow.cpp" line="521"/>
+        <location filename="../mainwindow.cpp" line="576"/>
         <source>By Album Artist</source>
         <translation>按专辑 艺术家</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <location filename="../mainwindow.cpp" line="582"/>
+        <location filename="../mainwindow.cpp" line="525"/>
+        <location filename="../mainwindow.cpp" line="580"/>
         <source>By Filename</source>
         <translation>按文件名称</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="531"/>
-        <location filename="../mainwindow.cpp" line="586"/>
+        <location filename="../mainwindow.cpp" line="529"/>
+        <location filename="../mainwindow.cpp" line="584"/>
         <source>By Path + Filename</source>
         <translation>按路径+文件名称</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="535"/>
-        <location filename="../mainwindow.cpp" line="590"/>
+        <location filename="../mainwindow.cpp" line="533"/>
+        <location filename="../mainwindow.cpp" line="588"/>
         <source>By Date</source>
         <translation>按日期</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="539"/>
-        <location filename="../mainwindow.cpp" line="594"/>
+        <location filename="../mainwindow.cpp" line="537"/>
+        <location filename="../mainwindow.cpp" line="592"/>
         <source>By Track Number</source>
         <translation>按单曲号</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="543"/>
-        <location filename="../mainwindow.cpp" line="598"/>
+        <location filename="../mainwindow.cpp" line="541"/>
+        <location filename="../mainwindow.cpp" line="596"/>
         <source>By Disc Number</source>
         <translation>按光盘号</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="547"/>
-        <location filename="../mainwindow.cpp" line="602"/>
+        <location filename="../mainwindow.cpp" line="545"/>
+        <location filename="../mainwindow.cpp" line="600"/>
         <source>By File Creation Date</source>
         <translation>按文件的创建日期</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="551"/>
-        <location filename="../mainwindow.cpp" line="606"/>
+        <location filename="../mainwindow.cpp" line="549"/>
+        <location filename="../mainwindow.cpp" line="604"/>
         <source>By File Modification Date</source>
         <translation>按文件的修改日期</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="555"/>
+        <location filename="../mainwindow.cpp" line="553"/>
         <source>By Group</source>
         <translation>按组</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="563"/>
+        <location filename="../mainwindow.cpp" line="561"/>
         <source>Sort Selection</source>
         <translation>排序选择</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="613"/>
+        <location filename="../mainwindow.cpp" line="611"/>
         <source>Randomize List</source>
         <translation>随机列表</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="615"/>
+        <location filename="../mainwindow.cpp" line="613"/>
         <source>Reverse List</source>
         <translation>反序列表</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="622"/>
-        <location filename="../mainwindow.cpp" line="663"/>
+        <location filename="../mainwindow.cpp" line="620"/>
+        <location filename="../mainwindow.cpp" line="661"/>
         <source>Actions</source>
         <translation>行动</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="407"/>
+        <location filename="../mainwindow.cpp" line="405"/>
         <source>Add new playlist</source>
         <translation>添加新播放列表</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>Show all tabs</source>
         <translation>显示所有的分页标签</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="846"/>
+        <location filename="../mainwindow.cpp" line="844"/>
         <source>Buffering: %1%</source>
         <translation>缓冲中：%1%</translation>
     </message>
@@ -1473,77 +1473,77 @@
 <context>
     <name>QSUiAnalyzer</name>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="274"/>
+        <location filename="../qsuianalyzer.cpp" line="228"/>
         <source>Cover</source>
         <translation>封面</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="277"/>
+        <location filename="../qsuianalyzer.cpp" line="231"/>
         <source>Peaks</source>
         <translation>峰</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="280"/>
+        <location filename="../qsuianalyzer.cpp" line="234"/>
         <source>Refresh Rate</source>
         <translation>刷新率</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="283"/>
+        <location filename="../qsuianalyzer.cpp" line="237"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="284"/>
+        <location filename="../qsuianalyzer.cpp" line="238"/>
         <source>25 fps</source>
         <translation>25 帧每秒</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="285"/>
+        <location filename="../qsuianalyzer.cpp" line="239"/>
         <source>10 fps</source>
         <translation>10 帧每秒</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="286"/>
+        <location filename="../qsuianalyzer.cpp" line="240"/>
         <source>5 fps</source>
         <translation>5 帧每秒</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="293"/>
+        <location filename="../qsuianalyzer.cpp" line="247"/>
         <source>Analyzer Falloff</source>
         <translation>分析器坠落</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="296"/>
-        <location filename="../qsuianalyzer.cpp" line="310"/>
+        <location filename="../qsuianalyzer.cpp" line="250"/>
+        <location filename="../qsuianalyzer.cpp" line="264"/>
         <source>Slowest</source>
         <translation>最慢</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="297"/>
-        <location filename="../qsuianalyzer.cpp" line="311"/>
+        <location filename="../qsuianalyzer.cpp" line="251"/>
+        <location filename="../qsuianalyzer.cpp" line="265"/>
         <source>Slow</source>
         <translation>慢</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="298"/>
-        <location filename="../qsuianalyzer.cpp" line="312"/>
+        <location filename="../qsuianalyzer.cpp" line="252"/>
+        <location filename="../qsuianalyzer.cpp" line="266"/>
         <source>Medium</source>
         <translation>中等</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="299"/>
-        <location filename="../qsuianalyzer.cpp" line="313"/>
+        <location filename="../qsuianalyzer.cpp" line="253"/>
+        <location filename="../qsuianalyzer.cpp" line="267"/>
         <source>Fast</source>
         <translation>快</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="300"/>
-        <location filename="../qsuianalyzer.cpp" line="314"/>
+        <location filename="../qsuianalyzer.cpp" line="254"/>
+        <location filename="../qsuianalyzer.cpp" line="268"/>
         <source>Fastest</source>
         <translation>最快</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="307"/>
+        <location filename="../qsuianalyzer.cpp" line="261"/>
         <source>Peaks Falloff</source>
         <translation>顶峰坠落</translation>
     </message>

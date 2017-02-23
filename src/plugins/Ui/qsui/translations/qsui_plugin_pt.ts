@@ -798,184 +798,184 @@
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="247"/>
-        <location filename="../mainwindow.cpp" line="276"/>
+        <location filename="../mainwindow.cpp" line="274"/>
         <source>Rename Playlist</source>
         <translation>Renomear lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="452"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="362"/>
+        <location filename="../mainwindow.cpp" line="360"/>
         <source>&lt;b&gt;%1&lt;/b&gt;|%2 bit|%3 ch|%4 Hz|tracks: %5|total time: %6|%7 kbps|</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;|%2 bit|%3 ca|%4 Hz|faixas: %5|duração total: %6|%7 kbps|</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="361"/>
         <source>Paused</source>
         <translation>Pausa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="373"/>
+        <location filename="../mainwindow.cpp" line="371"/>
         <source>&lt;b&gt;%1&lt;/b&gt;|tracks: %2|total time: %3|</source>
         <translation>&lt;b&gt;%1&lt;/b&gt;|faixas: %2|duração total: %3|</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="374"/>
+        <location filename="../mainwindow.cpp" line="372"/>
         <source>Stopped</source>
         <translation>Parado</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="276"/>
+        <location filename="../mainwindow.cpp" line="274"/>
         <source>Playlist name:</source>
         <translation>Nome da lista de reprodução:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="317"/>
+        <location filename="../mainwindow.cpp" line="315"/>
         <source>Appearance</source>
         <translation>Aparência</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="318"/>
+        <location filename="../mainwindow.cpp" line="316"/>
         <source>Shortcuts</source>
         <translation>Atalhos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="361"/>
         <source>Playing</source>
         <translation>Reprodução</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="442"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="448"/>
+        <location filename="../mainwindow.cpp" line="446"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="448"/>
         <source>Position</source>
         <translation>Posição</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="504"/>
         <source>Edit Toolbars</source>
         <translation>Editar barras de ferramentas</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="508"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Sort List</source>
         <translation>Organizar lista</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="511"/>
-        <location filename="../mainwindow.cpp" line="566"/>
+        <location filename="../mainwindow.cpp" line="509"/>
+        <location filename="../mainwindow.cpp" line="564"/>
         <source>By Title</source>
         <translation>Por título</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="515"/>
-        <location filename="../mainwindow.cpp" line="570"/>
+        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="568"/>
         <source>By Album</source>
         <translation>Por álbum</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="519"/>
-        <location filename="../mainwindow.cpp" line="574"/>
+        <location filename="../mainwindow.cpp" line="517"/>
+        <location filename="../mainwindow.cpp" line="572"/>
         <source>By Artist</source>
         <translation>Por artista</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="523"/>
-        <location filename="../mainwindow.cpp" line="578"/>
+        <location filename="../mainwindow.cpp" line="521"/>
+        <location filename="../mainwindow.cpp" line="576"/>
         <source>By Album Artist</source>
         <translation>Por artista do álbum</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <location filename="../mainwindow.cpp" line="582"/>
+        <location filename="../mainwindow.cpp" line="525"/>
+        <location filename="../mainwindow.cpp" line="580"/>
         <source>By Filename</source>
         <translation>Por nome de ficheiro</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="531"/>
-        <location filename="../mainwindow.cpp" line="586"/>
+        <location filename="../mainwindow.cpp" line="529"/>
+        <location filename="../mainwindow.cpp" line="584"/>
         <source>By Path + Filename</source>
         <translation>Por caminho e nome de ficheiro</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="535"/>
-        <location filename="../mainwindow.cpp" line="590"/>
+        <location filename="../mainwindow.cpp" line="533"/>
+        <location filename="../mainwindow.cpp" line="588"/>
         <source>By Date</source>
         <translation>Por data</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="539"/>
-        <location filename="../mainwindow.cpp" line="594"/>
+        <location filename="../mainwindow.cpp" line="537"/>
+        <location filename="../mainwindow.cpp" line="592"/>
         <source>By Track Number</source>
         <translation>Por número de faixa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="543"/>
-        <location filename="../mainwindow.cpp" line="598"/>
+        <location filename="../mainwindow.cpp" line="541"/>
+        <location filename="../mainwindow.cpp" line="596"/>
         <source>By Disc Number</source>
         <translation>Por número de disco</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="547"/>
-        <location filename="../mainwindow.cpp" line="602"/>
+        <location filename="../mainwindow.cpp" line="545"/>
+        <location filename="../mainwindow.cpp" line="600"/>
         <source>By File Creation Date</source>
         <translation>Por data de criação do ficheiro</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="551"/>
-        <location filename="../mainwindow.cpp" line="606"/>
+        <location filename="../mainwindow.cpp" line="549"/>
+        <location filename="../mainwindow.cpp" line="604"/>
         <source>By File Modification Date</source>
         <translation>Por data de modificação do ficheiro</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="555"/>
+        <location filename="../mainwindow.cpp" line="553"/>
         <source>By Group</source>
         <translation>Por grupo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="563"/>
+        <location filename="../mainwindow.cpp" line="561"/>
         <source>Sort Selection</source>
         <translation>Organizar seleção</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="613"/>
+        <location filename="../mainwindow.cpp" line="611"/>
         <source>Randomize List</source>
         <translation>Lista aleatória</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="615"/>
+        <location filename="../mainwindow.cpp" line="613"/>
         <source>Reverse List</source>
         <translation>Inverter lista</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="622"/>
-        <location filename="../mainwindow.cpp" line="663"/>
+        <location filename="../mainwindow.cpp" line="620"/>
+        <location filename="../mainwindow.cpp" line="661"/>
         <source>Actions</source>
         <translation>Ações</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="407"/>
+        <location filename="../mainwindow.cpp" line="405"/>
         <source>Add new playlist</source>
         <translation>Adicionar nova lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>Show all tabs</source>
         <translation>Mostrar todos os separadores</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="846"/>
+        <location filename="../mainwindow.cpp" line="844"/>
         <source>Buffering: %1%</source>
         <translation>Processamento: %1%</translation>
     </message>
@@ -1473,77 +1473,77 @@
 <context>
     <name>QSUiAnalyzer</name>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="274"/>
+        <location filename="../qsuianalyzer.cpp" line="228"/>
         <source>Cover</source>
         <translation>Capa de álbum</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="277"/>
+        <location filename="../qsuianalyzer.cpp" line="231"/>
         <source>Peaks</source>
         <translation>Picos</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="280"/>
+        <location filename="../qsuianalyzer.cpp" line="234"/>
         <source>Refresh Rate</source>
         <translation>Taxa de atualização</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="283"/>
+        <location filename="../qsuianalyzer.cpp" line="237"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="284"/>
+        <location filename="../qsuianalyzer.cpp" line="238"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="285"/>
+        <location filename="../qsuianalyzer.cpp" line="239"/>
         <source>10 fps</source>
         <translation>10 fps</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="286"/>
+        <location filename="../qsuianalyzer.cpp" line="240"/>
         <source>5 fps</source>
         <translation>5 fps</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="293"/>
+        <location filename="../qsuianalyzer.cpp" line="247"/>
         <source>Analyzer Falloff</source>
         <translation>Solução para analisador</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="296"/>
-        <location filename="../qsuianalyzer.cpp" line="310"/>
+        <location filename="../qsuianalyzer.cpp" line="250"/>
+        <location filename="../qsuianalyzer.cpp" line="264"/>
         <source>Slowest</source>
         <translation>Mais lenta</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="297"/>
-        <location filename="../qsuianalyzer.cpp" line="311"/>
+        <location filename="../qsuianalyzer.cpp" line="251"/>
+        <location filename="../qsuianalyzer.cpp" line="265"/>
         <source>Slow</source>
         <translation>Lenta</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="298"/>
-        <location filename="../qsuianalyzer.cpp" line="312"/>
+        <location filename="../qsuianalyzer.cpp" line="252"/>
+        <location filename="../qsuianalyzer.cpp" line="266"/>
         <source>Medium</source>
         <translation>Média</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="299"/>
-        <location filename="../qsuianalyzer.cpp" line="313"/>
+        <location filename="../qsuianalyzer.cpp" line="253"/>
+        <location filename="../qsuianalyzer.cpp" line="267"/>
         <source>Fast</source>
         <translation>Rápida</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="300"/>
-        <location filename="../qsuianalyzer.cpp" line="314"/>
+        <location filename="../qsuianalyzer.cpp" line="254"/>
+        <location filename="../qsuianalyzer.cpp" line="268"/>
         <source>Fastest</source>
         <translation>Mais rápida</translation>
     </message>
     <message>
-        <location filename="../qsuianalyzer.cpp" line="307"/>
+        <location filename="../qsuianalyzer.cpp" line="261"/>
         <source>Peaks Falloff</source>
         <translation>Solução para picos</translation>
     </message>
