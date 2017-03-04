@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=1.1.3
-UBUNTU_CODENAMES='xenial yakkety'
+UBUNTU_CODENAMES='xenial yakkety zesty'
 BUILD_ROOT=build-root
 
 

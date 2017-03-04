@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=1.1.7
-UBUNTU_CODENAMES='xenial yakkety'
+UBUNTU_CODENAMES='xenial yakkety zesty'
 BUILD_ROOT=build-root
 
 
