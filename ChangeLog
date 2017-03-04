@@ -1241,3 +1241,8 @@ Version 1.1.7
 * fixed crash when using KDE file dialog
 * fixed saving state of the visual plugins
 * updated Brazilian Portuguese translation (Vítor Pereira Barros)
+
+Version 1.1.8
+* fixed PCM Wave support
+* fixed Game Boy support in the gme plugin
+* fixed Xing header detection in the mpeg plugin
