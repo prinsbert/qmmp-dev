@@ -1224,6 +1224,6 @@ Version 0.10.7
 * updated Brazilian Portuguese translation (Vítor Pereira Barros)
 
 Version 0.10.8
-fixed PCM Wave support
-fixed Game Boy support in the gme plugin
-fixed Xing header detection in the mpeg plugin
+* fixed PCM Wave support
+* fixed Game Boy support in the gme plugin
+* fixed Xing header detection in the mpeg plugin
