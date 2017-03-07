@@ -82,74 +82,89 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="95"/>
+        <location filename="../qmmpstarter.cpp" line="107"/>
         <source>Unknown command</source>
         <translation>未知指令</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="350"/>
+        <location filename="../qmmpstarter.cpp" line="362"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>使用：qmmp [设置] [文件]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="351"/>
+        <location filename="../qmmpstarter.cpp" line="363"/>
         <source>Options:</source>
         <translation>设置：</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="357"/>
+        <location filename="../qmmpstarter.cpp" line="369"/>
+        <source>Start qmmp with the specified user interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qmmpstarter.cpp" line="370"/>
+        <source>List all available user interfaces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qmmpstarter.cpp" line="371"/>
         <source>Don&apos;t start the application</source>
         <translation>无法启动此程序</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="358"/>
+        <location filename="../qmmpstarter.cpp" line="372"/>
         <source>Display this text and exit</source>
         <translation>显示这些文本并退出</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="359"/>
+        <location filename="../qmmpstarter.cpp" line="373"/>
         <source>Print version number and exit</source>
         <translation>显示版本并退出</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="361"/>
+        <location filename="../qmmpstarter.cpp" line="375"/>
         <source>Home page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="362"/>
+        <location filename="../qmmpstarter.cpp" line="376"/>
         <source>Development page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="363"/>
+        <location filename="../qmmpstarter.cpp" line="377"/>
         <source>Bug tracker: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="368"/>
+        <location filename="../qmmpstarter.cpp" line="382"/>
         <source>Command Line Help</source>
         <translation>命令行帮助</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="381"/>
+        <location filename="../qmmpstarter.cpp" line="395"/>
         <source>QMMP version: %1</source>
         <translation>QMMP版本：%1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="382"/>
+        <location filename="../qmmpstarter.cpp" line="396"/>
         <source>Compiled with Qt version: %1</source>
         <translation>用于编译的QT版本：%1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="383"/>
+        <location filename="../qmmpstarter.cpp" line="397"/>
         <source>Using Qt version: %1</source>
         <translation>使用的Qt版本：%1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="386"/>
+        <location filename="../qmmpstarter.cpp" line="400"/>
         <source>Qmmp Version</source>
         <translation>Qmmp播放器版本</translation>
+    </message>
+    <message>
+        <location filename="../qmmpstarter.cpp" line="417"/>
+        <source>User Interfaces</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

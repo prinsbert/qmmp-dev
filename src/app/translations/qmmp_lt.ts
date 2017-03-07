@@ -82,74 +82,89 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="350"/>
+        <location filename="../qmmpstarter.cpp" line="362"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Naudojimas: qmmp [nuostatos] [bylos]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="351"/>
+        <location filename="../qmmpstarter.cpp" line="363"/>
         <source>Options:</source>
         <translation>Nustatymai:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="359"/>
+        <location filename="../qmmpstarter.cpp" line="373"/>
         <source>Print version number and exit</source>
         <translation>Parodyti versiją ir išeiti</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="358"/>
+        <location filename="../qmmpstarter.cpp" line="372"/>
         <source>Display this text and exit</source>
         <translation>Parodyti šį tekstą ir išeiti</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="95"/>
+        <location filename="../qmmpstarter.cpp" line="107"/>
         <source>Unknown command</source>
         <translation>Nežinoma komanda</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="357"/>
+        <location filename="../qmmpstarter.cpp" line="369"/>
+        <source>Start qmmp with the specified user interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qmmpstarter.cpp" line="370"/>
+        <source>List all available user interfaces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qmmpstarter.cpp" line="371"/>
         <source>Don&apos;t start the application</source>
         <translation>Nepaleisti programos</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="361"/>
+        <location filename="../qmmpstarter.cpp" line="375"/>
         <source>Home page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="362"/>
+        <location filename="../qmmpstarter.cpp" line="376"/>
         <source>Development page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="363"/>
+        <location filename="../qmmpstarter.cpp" line="377"/>
         <source>Bug tracker: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="368"/>
+        <location filename="../qmmpstarter.cpp" line="382"/>
         <source>Command Line Help</source>
         <translation>Terminalo pagalba </translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="381"/>
+        <location filename="../qmmpstarter.cpp" line="395"/>
         <source>QMMP version: %1</source>
         <translation>QMMP versija: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="382"/>
+        <location filename="../qmmpstarter.cpp" line="396"/>
         <source>Compiled with Qt version: %1</source>
         <translation>Sukompiliuota su Qt versija: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="383"/>
+        <location filename="../qmmpstarter.cpp" line="397"/>
         <source>Using Qt version: %1</source>
         <translation>Naudojama Qt versija: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="386"/>
+        <location filename="../qmmpstarter.cpp" line="400"/>
         <source>Qmmp Version</source>
         <translation>Qmmp Versija</translation>
+    </message>
+    <message>
+        <location filename="../qmmpstarter.cpp" line="417"/>
+        <source>User Interfaces</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
