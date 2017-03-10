@@ -199,3 +199,9 @@ LEGEND
 [*] qmmp-0.10.7
 [*] opus-1.1.4
 [*] ffmpeg-3.0.6
+
+0.10.8
+[*] qmmp-0.10.8
+[*] ffmpeg-3.0.7
+[*] curl-7.53.1
+[*] wavpack-5.1.0
