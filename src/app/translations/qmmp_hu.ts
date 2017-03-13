@@ -45,36 +45,46 @@
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="79"/>
-        <source>Mute/Restore volume</source>
+        <source>Print volume level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="80"/>
+        <source>Mute/Restore volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../builtincommandlineoption.cpp" line="81"/>
+        <source>Print mute status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../builtincommandlineoption.cpp" line="82"/>
         <source>Skip forward in playlist</source>
         <translation>Lejátszási lista következő számának kihagyása</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="81"/>
+        <location filename="../builtincommandlineoption.cpp" line="83"/>
         <source>Skip backwards in playlist</source>
         <translation>Lejátszási lista előző számainak kihagyása</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="82"/>
+        <location filename="../builtincommandlineoption.cpp" line="84"/>
         <source>Show/hide application</source>
         <translation>Alkalmazás mutatása/elrejtése</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="83"/>
+        <location filename="../builtincommandlineoption.cpp" line="85"/>
         <source>Show main window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="84"/>
+        <location filename="../builtincommandlineoption.cpp" line="86"/>
         <source>Display Add File dialog</source>
         <translation>Fájl hozzáadása ablak mutatása</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="85"/>
+        <location filename="../builtincommandlineoption.cpp" line="87"/>
         <source>Display Add Directory dialog</source>
         <translation>Könyvtár hozzáadása ablak mutatása</translation>
     </message>
@@ -87,82 +97,82 @@
         <translation>Ismeretlen parancs</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="362"/>
+        <location filename="../qmmpstarter.cpp" line="363"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Használat: qmmp [opciók] [fájlok]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="363"/>
+        <location filename="../qmmpstarter.cpp" line="364"/>
         <source>Options:</source>
         <translation>Opciók:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="369"/>
+        <location filename="../qmmpstarter.cpp" line="370"/>
         <source>Start qmmp with the specified user interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="370"/>
+        <location filename="../qmmpstarter.cpp" line="371"/>
         <source>List all available user interfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="371"/>
+        <location filename="../qmmpstarter.cpp" line="372"/>
         <source>Don&apos;t start the application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="372"/>
+        <location filename="../qmmpstarter.cpp" line="373"/>
         <source>Display this text and exit</source>
         <translation>Mutasd ezt a szöveget, majd lépj ki</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="373"/>
+        <location filename="../qmmpstarter.cpp" line="374"/>
         <source>Print version number and exit</source>
         <translation>Mutasd a verziószámot, majd lépj ki</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="375"/>
+        <location filename="../qmmpstarter.cpp" line="376"/>
         <source>Home page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="376"/>
+        <location filename="../qmmpstarter.cpp" line="377"/>
         <source>Development page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="377"/>
+        <location filename="../qmmpstarter.cpp" line="378"/>
         <source>Bug tracker: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="382"/>
+        <location filename="../qmmpstarter.cpp" line="383"/>
         <source>Command Line Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="395"/>
+        <location filename="../qmmpstarter.cpp" line="396"/>
         <source>QMMP version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="396"/>
+        <location filename="../qmmpstarter.cpp" line="397"/>
         <source>Compiled with Qt version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="397"/>
+        <location filename="../qmmpstarter.cpp" line="398"/>
         <source>Using Qt version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="400"/>
+        <location filename="../qmmpstarter.cpp" line="401"/>
         <source>Qmmp Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="417"/>
+        <location filename="../qmmpstarter.cpp" line="418"/>
         <source>User Interfaces</source>
         <translation type="unfinished"></translation>
     </message>
