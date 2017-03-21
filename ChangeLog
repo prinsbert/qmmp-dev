@@ -1247,3 +1247,4 @@ Version 1.1.8
 * fixed Game Boy support in the gme plugin
 * fixed Xing header detection in the mpeg plugin
 * fixed output of the '--status' command line option
+* fixed maximum year in the tag editor
