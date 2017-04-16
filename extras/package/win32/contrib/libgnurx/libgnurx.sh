@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://download.sourceforge.net/mingw/Other/UserContributed/regex/mingw-regex-$VERSION/$NAME-$VERSION-src.tar.gz
+    wget -nc --no-check-certificate http://download.sourceforge.net/mingw/Other/UserContributed/regex/mingw-regex-$VERSION/$NAME-$VERSION-src.tar.gz
   ;;
   --install)
     cd temp

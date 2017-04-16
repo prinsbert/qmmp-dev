@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://downloads.sourceforge.net/sourceforge/bs2b/$NAME-$VERSION.tar.gz
+    wget -nc --no-check-certificate http://downloads.sourceforge.net/sourceforge/bs2b/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp

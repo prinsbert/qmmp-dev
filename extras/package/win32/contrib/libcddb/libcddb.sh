@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://prdownloads.sourceforge.net/libcddb/$NAME-$VERSION.tar.bz2
+    wget -nc --no-check-certificate http://prdownloads.sourceforge.net/libcddb/$NAME-$VERSION.tar.bz2
   ;;
   --install)
     cd temp

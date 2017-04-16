@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://downloads.xiph.org/releases/ogg/$NAME-$VERSION.tar.gz
+    wget -nc --no-check-certificate http://downloads.xiph.org/releases/ogg/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp
