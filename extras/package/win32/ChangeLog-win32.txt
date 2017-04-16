@@ -205,3 +205,7 @@ LEGEND
 [*] ffmpeg-3.0.7
 [*] curl-7.53.1
 [*] wavpack-5.1.0
+
+0.10.9
+[*] qmmp-0.10.9
+[*] libsndfile-1.0.28
