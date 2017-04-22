@@ -76,7 +76,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 #endif
         setWindowFlags(Qt::Window | Qt::FramelessWindowHint |
                        Qt::WindowCloseButtonHint | Qt::WindowMinMaxButtonsHint | Qt::WindowSystemMenuHint);
-    setWindowTitle("Qmmp");
+
+    restoreWindowTitle();
 
     m_titleFormatter.setPattern("%if(%p,%p - %t,%t)");
 
@@ -110,6 +111,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     m_vis = MainVisual::instance();
     Visual::add(m_vis);
     //connections
+    connect (m_player,SIGNAL(playbackFinished()), SLOT(restoreWindowTitle()));
     connect (m_playlist,SIGNAL(next()),SLOT(next()));
     connect (m_playlist,SIGNAL(prev()),SLOT(previous()));
     connect (m_playlist,SIGNAL(play()),SLOT(play()));
@@ -194,10 +196,6 @@ void MainWindow::showState(Qmmp::State state)
         break;
     case Qmmp::Stopped:
         m_playlist->setTime(-1);
-        if (m_pl_manager->currentPlayList()->currentTrack())
-            setWindowTitle(m_titleFormatter.format(m_pl_manager->currentPlayList()->currentTrack()));
-        else
-            setWindowTitle("Qmmp");
         break;
     }
 }
@@ -542,4 +540,9 @@ void MainWindow::keyPressEvent(QKeyEvent *ke)
     QKeyEvent event = QKeyEvent(ke->type(), ke->key(),
                                 ke->modifiers(), ke->text(),ke->isAutoRepeat(), ke->count());
     QApplication::sendEvent(m_playlist,&event);
+}
+
+void MainWindow::restoreWindowTitle()
+{
+    setWindowTitle(tr("Qmmp"));
 }
