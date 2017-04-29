@@ -785,34 +785,39 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="361"/>
+        <location filename="../mainwindow.cpp" line="359"/>
         <source>Appearance</source>
         <translation>Aparência</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="362"/>
+        <location filename="../mainwindow.cpp" line="360"/>
         <source>Shortcuts</source>
         <translation>Atalhos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="432"/>
+        <location filename="../mainwindow.cpp" line="430"/>
         <source>View</source>
         <translation>Ver</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="441"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Playlist</source>
         <translation>Lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="459"/>
+        <location filename="../mainwindow.cpp" line="457"/>
         <source>Audio</source>
         <translation>Áudio</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="467"/>
+        <location filename="../mainwindow.cpp" line="465"/>
         <source>Tools</source>
         <translation>Ferramentas</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="547"/>
+        <source>Qmmp</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1375,17 +1380,17 @@
 <context>
     <name>TextScroller</name>
     <message>
-        <location filename="../textscroller.cpp" line="56"/>
+        <location filename="../textscroller.cpp" line="57"/>
         <source>Autoscroll Songname</source>
         <translation>Deslocação automática do nome da faixa</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="57"/>
+        <location filename="../textscroller.cpp" line="58"/>
         <source>Transparent Background</source>
         <translation>Fundo transparente</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="126"/>
+        <location filename="../textscroller.cpp" line="128"/>
         <source>Buffering: %1%</source>
         <translation>Processamento: %1%</translation>
     </message>
