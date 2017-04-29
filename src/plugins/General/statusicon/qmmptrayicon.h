@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -39,15 +39,17 @@ public:
     QmmpTrayIcon(QObject *parent = 0);
     ~QmmpTrayIcon();
 
-#ifdef QMMP_WS_X11
-    void showNiceToolTip(bool value);
+     void setToolTip(const QString &tip);
 
+#ifdef QMMP_WS_X11
 private:
     bool event(QEvent *e);
     void wheelEvent(QWheelEvent *e);
     void showToolTip();
+    bool hasToolTipEvent();
     bool m_showNiceToolTip;
-    QPointer<StatusIconPopupWidget> m_PopupWidget;
+    QPointer<StatusIconPopupWidget> m_popupWidget;
+    QString m_message;
 #endif
 };
 
