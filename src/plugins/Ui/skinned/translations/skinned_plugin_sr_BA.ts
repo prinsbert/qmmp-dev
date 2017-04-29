@@ -447,58 +447,58 @@
 <context>
     <name>EqWidget</name>
     <message>
-        <location filename="../eqwidget.cpp" line="45"/>
+        <location filename="../eqwidget.cpp" line="46"/>
         <source>Equalizer</source>
         <translation>Еквилајзер</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="156"/>
-        <location filename="../eqwidget.cpp" line="173"/>
+        <location filename="../eqwidget.cpp" line="166"/>
+        <location filename="../eqwidget.cpp" line="183"/>
         <source>preset</source>
         <translation>поставка</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="256"/>
+        <location filename="../eqwidget.cpp" line="266"/>
         <source>&amp;Load/Delete</source>
         <translation>&amp;Учитај/обриши</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="258"/>
+        <location filename="../eqwidget.cpp" line="268"/>
         <source>&amp;Save Preset</source>
         <translation>&amp;Сачувај поставку</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="260"/>
+        <location filename="../eqwidget.cpp" line="270"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>&amp;Сачувај ауто-учитану поставку</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="262"/>
+        <location filename="../eqwidget.cpp" line="272"/>
         <source>&amp;Import</source>
         <translation>У&amp;вези</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="265"/>
+        <location filename="../eqwidget.cpp" line="275"/>
         <source>&amp;Clear</source>
         <translation>&amp;Очисти</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="294"/>
+        <location filename="../eqwidget.cpp" line="304"/>
         <source>Saving Preset</source>
         <translation>Уписивање поставке</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="295"/>
+        <location filename="../eqwidget.cpp" line="305"/>
         <source>Preset name:</source>
         <translation>Име поставке:</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="296"/>
+        <location filename="../eqwidget.cpp" line="306"/>
         <source>preset #</source>
         <translation>поставка еквилајзера #</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="387"/>
+        <location filename="../eqwidget.cpp" line="397"/>
         <source>Import Preset</source>
         <translation>Увоз поставке еквилајзера</translation>
     </message>
@@ -785,32 +785,32 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="351"/>
+        <location filename="../mainwindow.cpp" line="361"/>
         <source>Appearance</source>
         <translation>Изглед</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="352"/>
+        <location filename="../mainwindow.cpp" line="362"/>
         <source>Shortcuts</source>
         <translation>Пречице</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="422"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>View</source>
         <translation>Приказ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="431"/>
+        <location filename="../mainwindow.cpp" line="441"/>
         <source>Playlist</source>
         <translation>Листа нумера</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="449"/>
+        <location filename="../mainwindow.cpp" line="459"/>
         <source>Audio</source>
         <translation>Звук</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="457"/>
+        <location filename="../mainwindow.cpp" line="467"/>
         <source>Tools</source>
         <translation>Алатке</translation>
     </message>
@@ -818,123 +818,123 @@
 <context>
     <name>PlayList</name>
     <message>
-        <location filename="../playlist.cpp" line="55"/>
+        <location filename="../playlist.cpp" line="56"/>
         <source>Playlist</source>
         <translation>Листа нумера</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="197"/>
+        <location filename="../playlist.cpp" line="198"/>
         <source>&amp;Copy Selection To</source>
         <translation>&amp;Копирај избор у</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="227"/>
+        <location filename="../playlist.cpp" line="228"/>
         <source>Sort List</source>
         <translation>Сортирај</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="230"/>
-        <location filename="../playlist.cpp" line="285"/>
+        <location filename="../playlist.cpp" line="231"/>
+        <location filename="../playlist.cpp" line="286"/>
         <source>By Title</source>
         <translation>по наслову</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="234"/>
-        <location filename="../playlist.cpp" line="289"/>
+        <location filename="../playlist.cpp" line="235"/>
+        <location filename="../playlist.cpp" line="290"/>
         <source>By Album</source>
         <translation>по албуму</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="238"/>
-        <location filename="../playlist.cpp" line="293"/>
+        <location filename="../playlist.cpp" line="239"/>
+        <location filename="../playlist.cpp" line="294"/>
         <source>By Disc Number</source>
         <translation>по броју диска</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="242"/>
-        <location filename="../playlist.cpp" line="297"/>
+        <location filename="../playlist.cpp" line="243"/>
+        <location filename="../playlist.cpp" line="298"/>
         <source>By Artist</source>
         <translation>по извођачу</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="246"/>
-        <location filename="../playlist.cpp" line="301"/>
+        <location filename="../playlist.cpp" line="247"/>
+        <location filename="../playlist.cpp" line="302"/>
         <source>By Album Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="250"/>
-        <location filename="../playlist.cpp" line="305"/>
+        <location filename="../playlist.cpp" line="251"/>
+        <location filename="../playlist.cpp" line="306"/>
         <source>By Filename</source>
         <translation>по имену фајла</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="254"/>
-        <location filename="../playlist.cpp" line="309"/>
+        <location filename="../playlist.cpp" line="255"/>
+        <location filename="../playlist.cpp" line="310"/>
         <source>By Path + Filename</source>
         <translation>по путањи и имену</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="258"/>
-        <location filename="../playlist.cpp" line="313"/>
+        <location filename="../playlist.cpp" line="259"/>
+        <location filename="../playlist.cpp" line="314"/>
         <source>By Date</source>
         <translation>по датуму</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="262"/>
-        <location filename="../playlist.cpp" line="317"/>
+        <location filename="../playlist.cpp" line="263"/>
+        <location filename="../playlist.cpp" line="318"/>
         <source>By Track Number</source>
         <translation>по броју нумере</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="266"/>
-        <location filename="../playlist.cpp" line="321"/>
+        <location filename="../playlist.cpp" line="267"/>
+        <location filename="../playlist.cpp" line="322"/>
         <source>By File Creation Date</source>
         <translation>по датуму фајла</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="270"/>
-        <location filename="../playlist.cpp" line="325"/>
+        <location filename="../playlist.cpp" line="271"/>
+        <location filename="../playlist.cpp" line="326"/>
         <source>By File Modification Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="274"/>
+        <location filename="../playlist.cpp" line="275"/>
         <source>By Group</source>
         <translation>по групи</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="282"/>
+        <location filename="../playlist.cpp" line="283"/>
         <source>Sort Selection</source>
         <translation>Сортирај избор</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="333"/>
+        <location filename="../playlist.cpp" line="334"/>
         <source>Randomize List</source>
         <translation>Претумбај</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="335"/>
+        <location filename="../playlist.cpp" line="336"/>
         <source>Reverse List</source>
         <translation>Обрни</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="346"/>
+        <location filename="../playlist.cpp" line="347"/>
         <source>Actions</source>
         <translation>Радње</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="601"/>
+        <location filename="../playlist.cpp" line="611"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Преименовање листе</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="601"/>
+        <location filename="../playlist.cpp" line="611"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Име листе:</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="622"/>
+        <location filename="../playlist.cpp" line="632"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;нову листу</translation>
     </message>
