@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,7 +21,8 @@
 #include <QEvent>
 #include <QWheelEvent>
 #include <QMouseEvent>
-
+#include <QGuiApplication>
+#include <QWindow>
 #include <qmmp/soundcore.h>
 
 #include "qmmptrayicon.h"
@@ -32,22 +33,30 @@
 
 QmmpTrayIcon::QmmpTrayIcon(QObject *parent)
         : QSystemTrayIcon(parent)
-{
-#ifdef QMMP_WS_X11
-    m_showNiceToolTip = false;
-#endif
-}
+{}
 
 
 QmmpTrayIcon::~QmmpTrayIcon()
 {
 }
-#ifdef QMMP_WS_X11
-void QmmpTrayIcon::showNiceToolTip(bool value)
+
+void QmmpTrayIcon::setToolTip(const QString &tip)
 {
-    m_showNiceToolTip = value;
+#ifdef QMMP_WS_X11
+    if(hasToolTipEvent())
+    {
+        m_message = tip;
+        if(m_popupWidget)
+            showToolTip();
+    }
+    else
+        QSystemTrayIcon::setToolTip(tip);
+#else
+    QSystemTrayIcon::setToolTip(tip);
+#endif
 }
 
+#ifdef QMMP_WS_X11
 bool QmmpTrayIcon::event(QEvent *e)
 {
     if (e->type() == QEvent::Wheel )
@@ -65,6 +74,18 @@ bool QmmpTrayIcon::event(QEvent *e)
     return QSystemTrayIcon::event(e);
 }
 
+bool QmmpTrayIcon::hasToolTipEvent()
+{
+    //checking for XEmbed system tray implementation
+    //only this implementation is able to send QHelpEvent
+    foreach (QWindow *w, qApp->allWindows())
+    {
+        if(w->objectName() == "QSystemTrayIconSysWindow")
+            return true;
+    }
+    return false;
+}
+
 void QmmpTrayIcon::wheelEvent(QWheelEvent *e)
 {
     SoundCore::instance()->changeVolume(e->delta()/20);
@@ -72,13 +93,10 @@ void QmmpTrayIcon::wheelEvent(QWheelEvent *e)
 
 void QmmpTrayIcon::showToolTip()
 {
-    if(m_showNiceToolTip)
+    if(m_popupWidget.isNull())
     {
-        if(m_PopupWidget.isNull())
-        {
-            m_PopupWidget = new StatusIconPopupWidget();
-        }
-        m_PopupWidget->showInfo(geometry().x(),geometry().y());
+        m_popupWidget = new StatusIconPopupWidget();
     }
+    m_popupWidget->showInfo(geometry().x(),geometry().y(), m_message);
 }
 #endif
