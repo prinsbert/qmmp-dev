@@ -4,37 +4,37 @@
 <context>
     <name>DecoderMADFactory</name>
     <message>
-        <location filename="../decodermadfactory.cpp" line="107"/>
+        <location filename="../decodermadfactory.cpp" line="113"/>
         <source>MPEG Plugin</source>
         <translation>Πρόσθετο MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="110"/>
+        <location filename="../decodermadfactory.cpp" line="116"/>
         <source>MPEG Files</source>
         <translation>Αρχεία MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="266"/>
+        <location filename="../decodermadfactory.cpp" line="272"/>
         <source>About MPEG Audio Plugin</source>
         <translation>Σχετικά με το πρόσθετο ήχου MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="267"/>
+        <location filename="../decodermadfactory.cpp" line="273"/>
         <source>Qmmp MPEG Audio Plugin</source>
         <translation>Qmmp πρόσθετο ήχου MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="268"/>
+        <location filename="../decodermadfactory.cpp" line="274"/>
         <source>Compiled against libmad version:</source>
         <translation>Μεταγλωττίστηκε χρησιμοποιώντας την έκδοση της βιβλιοθήκης libmad:</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="272"/>
+        <location filename="../decodermadfactory.cpp" line="278"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermadfactory.cpp" line="273"/>
+        <location filename="../decodermadfactory.cpp" line="279"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Ο πηγαίος κώδικας έχει βασιστεί στα έργα mq3 και madplay</translation>
     </message>
