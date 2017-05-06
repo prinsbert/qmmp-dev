@@ -479,7 +479,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="277"/>
         <source>Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre des outils</translation>
     </message>
 </context>
 <context>
@@ -865,7 +865,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="492"/>
         <source>Edit Toolbars</source>
-        <translation type="unfinished"></translation>
+        <translation>Editer la barre des outils</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="494"/>
@@ -1350,14 +1350,14 @@
         <translation>Arrière-plan en surbrillance :</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="583"/>
-        <source>Highlighted text:</source>
-        <translation>Texte en surbrillance :</translation>
-    </message>
-    <message>
         <location filename="../forms/qsuisettings.ui" line="404"/>
         <source>Use system colors</source>
         <translation>Utiliser les couleurs systèmes</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="583"/>
+        <source>Highlighted text:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="618"/>
@@ -1581,17 +1581,17 @@
     <message>
         <location filename="../forms/toolbareditor.ui" line="199"/>
         <source>Toolbar:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre d&apos;outils:</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="222"/>
         <source>&amp;Create</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Créer</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="238"/>
         <source>Re&amp;name</source>
-        <translation type="unfinished"></translation>
+        <translation>Re&amp;nommer</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="254"/>
@@ -1607,22 +1607,22 @@
     <message>
         <location filename="../toolbareditor.cpp" line="248"/>
         <source>Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre des outils</translation>
     </message>
     <message>
         <location filename="../toolbareditor.cpp" line="250"/>
         <source>Toolbar %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre des outils %1</translation>
     </message>
     <message>
         <location filename="../toolbareditor.cpp" line="264"/>
         <source>Rename Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Renommer la barre des outils</translation>
     </message>
     <message>
         <location filename="../toolbareditor.cpp" line="264"/>
         <source>Toolbar name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de la barre des outils:</translation>
     </message>
 </context>
 <context>
@@ -1638,7 +1638,7 @@
     <message>
         <location filename="../volumeslider.cpp" line="91"/>
         <source>%1%</source>
-        <translation type="unfinished"></translation>
+        <translation>%1%</translation>
     </message>
 </context>
 </TS>
