@@ -361,10 +361,10 @@ source_lang = en
 source_file = src/plugins/FileDialogs/QmmpFileDialog/translations/qmmp_file_dialog_plugin_en.ts
 type = QT
 
-[qmmp-stable.TwoPanelFileDialog]
-file_filter = src/plugins/FileDialogs/TwoPanelFileDialog/translations/TwoPanelFileDialog_plugin_<lang>.ts
+[qmmp-stable.two_panel_file_dialog]
+file_filter = src/plugins/FileDialogs/TwoPanelFileDialog/translations/two_panel_file_dialog_plugin_<lang>.ts
 source_lang = en
-source_file = src/plugins/FileDialogs/TwoPanelFileDialog/translations/TwoPanelFileDialog_plugin_en.ts
+source_file = src/plugins/FileDialogs/TwoPanelFileDialog/translations/two_panel_file_dialog_plugin_en.ts
 type = QT
 
 [qmmp-stable.mms]
