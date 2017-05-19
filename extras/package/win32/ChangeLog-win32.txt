@@ -209,3 +209,6 @@ LEGEND
 0.10.9
 [*] qmmp-0.10.9
 [*] libsndfile-1.0.28
+[*] libmodplug-0.8.9.0
+[*] curl-7.54.0
+[*] ffmpeg-3.0.8
