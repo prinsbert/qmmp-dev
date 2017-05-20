@@ -59,7 +59,7 @@
     <message>
         <location filename="../opusmetadatamodel.cpp" line="58"/>
         <source>kbps</source>
-        <translation>Кб/с</translation>
+        <translation>кбит/с</translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="59"/>
