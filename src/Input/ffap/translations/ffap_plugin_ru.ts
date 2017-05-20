@@ -69,7 +69,7 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="64"/>
         <source>kbps</source>
-        <translation>Кб/с</translation>
+        <translation>кбит/с</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="65"/>
