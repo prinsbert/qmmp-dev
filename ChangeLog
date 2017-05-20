@@ -1256,6 +1256,7 @@ Version 1.1.9
 * fixed freezing when using DirectSound output
 * fixed documentation
 * fixed issue with 'jump to track' dialog when single click activation is enabled
-* fixed Russian translation
 * fixed tray icon tooltip
+* fixed FLAC bitrate calculation
+* fixed Russian translation
 * updated French translation (Adrien Vigneron)
