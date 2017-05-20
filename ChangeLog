@@ -1248,3 +1248,14 @@ Version 1.1.8
 * fixed Xing header detection in the mpeg plugin
 * fixed output of the '--status' command line option
 * fixed maximum year in the tag editor
+
+Version 1.1.9
+* using relative skin path for portable configuration
+* improved WASAPI support
+* fixed cursors support in the skinned user interface
+* fixed freezing when using DirectSound output
+* fixed documentation
+* fixed issue with 'jump to track' dialog when single click activation is enabled
+* fixed Russian translation
+* fixed tray icon tooltip
+* updated French translation (Adrien Vigneron)
