@@ -75,7 +75,7 @@ libmpg123</translation>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="90"/>
         <source>KB</source>
-        <translation>КБ</translation>
+        <translation>кбит/с</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="91"/>
