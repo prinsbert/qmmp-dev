@@ -1238,5 +1238,6 @@ Version 0.10.9
 * fixed documentation
 * fixed issue with 'jump to track' dialog when single click activation is enabled
 * fixed FLAC bitrate calculation
+* fixed segmentation fault in the ffmpeg plugin
 * fixed Russian translation
 * updated French translation (Adrien Vigneron)
