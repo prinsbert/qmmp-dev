@@ -2,3 +2,5 @@ qt-4.6.0-reduce-cpu-usage.patch - reduses cpu usage when using terminus font
 qt-4.8.6-fix-win7-tooltip.diff - fixes tooltip in QSystemTrayIcon under Windows 7
 taglib-1.9.1-bug-308.diff - fixes crash on the flac files with id3v2 tags
 qtbase-5.5.0-QTBUG-47352.patch - fixes problem with single key hotkeys on non-latin layouts
+rusxmms/taglib-1.11.1-ds-rusxmms.patch - rusxmms patch for TagLib
+rusxmms/taglib-1.11.1+dfsg.1-ds-rusxmms.patch - rusxmms patch for TagLib with debian modifications
