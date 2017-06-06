@@ -263,6 +263,8 @@ QList<DecoderFactory *> Decoder::findByFileExtension(const QString &path)
             continue;
 
         DecoderFactory *fact = item->decoderFactory();
+        if(!fact)
+            continue;
 
         foreach(QString filter, fact->properties().filters)
         {
