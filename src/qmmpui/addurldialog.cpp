@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -98,7 +98,7 @@ void AddUrlDialog::accept()
     m_history.removeAll(s);
     m_history.prepend(s);
 
-    if (s.startsWith("http://")) //try to download playlist
+    if (s.startsWith("http://") || s.startsWith("https://")) //try to download playlist
     {
         m_downloader->start(QUrl(s));
         return;
