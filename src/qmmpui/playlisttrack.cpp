@@ -59,7 +59,7 @@ PlayListTrack::PlayListTrack(FileInfo *info) :  QMap<Qmmp::MetaData, QString>(in
     m_track_index = -1;
     m_settings = QmmpUiSettings::instance();
     m_helper = MetaDataHelper::instance();
-    setLength(m_length = info->length());
+    m_length = info->length();
     insert(Qmmp::URL, info->path());
     m_refCount = 0;
     m_sheduledForDeletion = false;
