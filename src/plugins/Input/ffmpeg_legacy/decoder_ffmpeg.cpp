@@ -1,9 +1,5 @@
 /***************************************************************************
-<<<<<<< .working
- *   Copyright (C) 2006-2013 by Ilya Kotov                                 *
-=======
  *   Copyright (C) 2006-2017 by Ilya Kotov                                 *
->>>>>>> .merge-right.r7245
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
