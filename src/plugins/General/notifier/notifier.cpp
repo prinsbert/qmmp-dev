@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -86,8 +86,8 @@ void Notifier::setState(Qmmp::State state)
         {
             showMetaData();
             m_isPaused = false;
-            break;
         }
+        break;
     }
     case Qmmp::Paused:
     {
