@@ -80,6 +80,12 @@ quint32 Hotkey::defaultKey(int act)
 
 HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
+    //Workaround Qt regression of no longer delivering events for the root window
+    //See qtbase commit 2b34aefcf02f09253473b096eb4faffd3e62b5f4
+    //More information: https://bugs.kde.org/show_bug.cgi?id=360841
+    qApp->desktop()->winId();
+#endif
     QCoreApplication::instance()->installEventFilter(this);
     WId rootWindow = QX11Info::appRootWindow();
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat); //load settings
