@@ -124,7 +124,6 @@ static FLAC__StreamDecoderReadStatus flac_callback_read (const FLAC__StreamDecod
 {
     DecoderFLAC *dflac = (DecoderFLAC *) client_data;
     qint64 res = dflac->data()->input->read((char *)buffer, *bytes);
-    qDebug("%lld", res);
 
     if (res > 0)
     {
@@ -149,7 +148,6 @@ static FLAC__StreamDecoderWriteStatus flac_callback_write (const FLAC__StreamDec
 {
     DecoderFLAC *dflac = (DecoderFLAC *) client_data;
     const unsigned wide_samples = frame->header.blocksize;
-    qDebug("wid %u", wide_samples);
 
     if (dflac->data()->abort)
         return FLAC__STREAM_DECODER_WRITE_STATUS_ABORT;
