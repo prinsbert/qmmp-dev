@@ -18,45 +18,29 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef HISTORYWINDOW_H
-#define HISTORYWINDOW_H
+#ifndef DATEINPUTDIALOG_H
+#define DATEINPUTDIALOG_H
 
-#include <QWidget>
-#include <QSqlDatabase>
-#include <QListWidgetItem>
-#include <QMap>
-#include <qmmpui/metadataformatter.h>
+#include <QDialog>
+#include <QDate>
 
 namespace Ui {
-class HistoryWindow;
+class DateInputDialog;
 }
 
-class HistoryWindow : public QWidget
+class DateInputDialog : public QDialog
 {
     Q_OBJECT
-public:
-    explicit HistoryWindow(QSqlDatabase db, QWidget *parent = 0);
-    ~HistoryWindow();
 
-private slots:
-    void on_executeButton_clicked();
-    void on_lastWeakButton_clicked();
-    void on_lastMonthButton_clicked();
-    void on_fromButton_clicked();
-    void on_toButton_clicked();
+public:
+    explicit DateInputDialog(QWidget *parent = 0);
+    ~DateInputDialog();
+
+    QDate selectedDate() const;
+    void setSelectedDate(const QDate &date);
 
 private:
-    void loadHistory();
-    void loadDistribution();
-    void loadTopSongs();
-    void loadTopArtists();
-    void loadTopGenres();
-    void readSettings();
-    void closeEvent(QCloseEvent *);
-
-    Ui::HistoryWindow *m_ui;
-    QSqlDatabase m_db;
-    MetaDataFormatter m_formatter;
+    Ui::DateInputDialog *m_ui;
 };
 
-#endif // HISTORYWINDOW_H
+#endif // DATEINPUTDIALOG_H

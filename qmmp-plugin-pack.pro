@@ -4,7 +4,7 @@ include (qmmp-plugin-pack.pri)
 
 TEMPLATE = subdirs
 
-SUBDIRS += src/Input src/Effect src/Visual
+SUBDIRS += src/Input src/Effect src/Visual src/General
 
 
 unix:exists($$[QT_INSTALL_BINS]/lrelease){
