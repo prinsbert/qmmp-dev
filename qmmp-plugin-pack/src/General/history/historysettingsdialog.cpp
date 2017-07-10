@@ -18,45 +18,39 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef HISTORYWINDOW_H
-#define HISTORYWINDOW_H
+#include <QSettings>
+#include <qmmp/qmmp.h>
+#include <qmmpui/metadataformattermenu.h>
+#include "historysettingsdialog.h"
+#include "ui_historysettingsdialog.h"
 
-#include <QWidget>
-#include <QSqlDatabase>
-#include <QListWidgetItem>
-#include <QMap>
-#include <qmmpui/metadataformatter.h>
+HistorySettingsDialog::HistorySettingsDialog(QWidget *parent) :
+    QDialog(parent),
+    m_ui(new Ui::HistorySettingsDialog)
+{
+    m_ui->setupUi(this);
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    m_ui->titleLineEdit->setText(settings.value("History/title_format", "%if(%p,%p - %t,%t)").toString());
 
-namespace Ui {
-class HistoryWindow;
+    MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
+    m_ui->titleButton->setMenu(menu);
+    m_ui->titleButton->setPopupMode(QToolButton::InstantPopup);
+    connect(menu, SIGNAL(patternSelected(QString)), SLOT(addTitleString(QString)));
 }
 
-class HistoryWindow : public QWidget
+HistorySettingsDialog::~HistorySettingsDialog()
 {
-    Q_OBJECT
-public:
-    explicit HistoryWindow(QSqlDatabase db, QWidget *parent = 0);
-    ~HistoryWindow();
+    delete m_ui;
+}
 
-private slots:
-    void on_executeButton_clicked();
-    void on_lastWeakButton_clicked();
-    void on_lastMonthButton_clicked();
-    void on_fromButton_clicked();
-    void on_toButton_clicked();
+void HistorySettingsDialog::accept()
+{
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    settings.setValue("History/title_format", m_ui->titleLineEdit->text());
+    QDialog::accept();
+}
 
-private:
-    void loadHistory();
-    void loadDistribution();
-    void loadTopSongs();
-    void loadTopArtists();
-    void loadTopGenres();
-    void readSettings();
-    void closeEvent(QCloseEvent *);
-
-    Ui::HistoryWindow *m_ui;
-    QSqlDatabase m_db;
-    MetaDataFormatter m_formatter;
-};
-
-#endif // HISTORYWINDOW_H
+void HistorySettingsDialog::addTitleString(const QString &str)
+{
+    m_ui->titleLineEdit->insert(str);
+}

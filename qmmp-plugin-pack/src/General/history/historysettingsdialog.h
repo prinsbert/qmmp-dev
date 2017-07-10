@@ -18,45 +18,31 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef HISTORYWINDOW_H
-#define HISTORYWINDOW_H
+#ifndef HISTORYSETTINGSDIALOG_H
+#define HISTORYSETTINGSDIALOG_H
 
-#include <QWidget>
-#include <QSqlDatabase>
-#include <QListWidgetItem>
-#include <QMap>
-#include <qmmpui/metadataformatter.h>
+#include <QDialog>
 
 namespace Ui {
-class HistoryWindow;
+class HistorySettingsDialog;
 }
 
-class HistoryWindow : public QWidget
+class HistorySettingsDialog : public QDialog
 {
     Q_OBJECT
+
 public:
-    explicit HistoryWindow(QSqlDatabase db, QWidget *parent = 0);
-    ~HistoryWindow();
+    explicit HistorySettingsDialog(QWidget *parent = 0);
+    ~HistorySettingsDialog();
+
+public slots:
+    void accept();
 
 private slots:
-    void on_executeButton_clicked();
-    void on_lastWeakButton_clicked();
-    void on_lastMonthButton_clicked();
-    void on_fromButton_clicked();
-    void on_toButton_clicked();
+    void addTitleString(const QString &str);
 
 private:
-    void loadHistory();
-    void loadDistribution();
-    void loadTopSongs();
-    void loadTopArtists();
-    void loadTopGenres();
-    void readSettings();
-    void closeEvent(QCloseEvent *);
-
-    Ui::HistoryWindow *m_ui;
-    QSqlDatabase m_db;
-    MetaDataFormatter m_formatter;
+    Ui::HistorySettingsDialog *m_ui;
 };
 
-#endif // HISTORYWINDOW_H
+#endif // HISTORYSETTINGSDIALOG_H

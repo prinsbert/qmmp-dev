@@ -18,45 +18,27 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef HISTORYWINDOW_H
-#define HISTORYWINDOW_H
+#include "dateinputdialog.h"
+#include "ui_dateinputdialog.h"
 
-#include <QWidget>
-#include <QSqlDatabase>
-#include <QListWidgetItem>
-#include <QMap>
-#include <qmmpui/metadataformatter.h>
-
-namespace Ui {
-class HistoryWindow;
+DateInputDialog::DateInputDialog(QWidget *parent) :
+    QDialog(parent),
+    m_ui(new Ui::DateInputDialog)
+{
+    m_ui->setupUi(this);
 }
 
-class HistoryWindow : public QWidget
+DateInputDialog::~DateInputDialog()
 {
-    Q_OBJECT
-public:
-    explicit HistoryWindow(QSqlDatabase db, QWidget *parent = 0);
-    ~HistoryWindow();
+    delete m_ui;
+}
 
-private slots:
-    void on_executeButton_clicked();
-    void on_lastWeakButton_clicked();
-    void on_lastMonthButton_clicked();
-    void on_fromButton_clicked();
-    void on_toButton_clicked();
+QDate DateInputDialog::selectedDate() const
+{
+    return m_ui->calendarWidget->selectedDate();
+}
 
-private:
-    void loadHistory();
-    void loadDistribution();
-    void loadTopSongs();
-    void loadTopArtists();
-    void loadTopGenres();
-    void readSettings();
-    void closeEvent(QCloseEvent *);
-
-    Ui::HistoryWindow *m_ui;
-    QSqlDatabase m_db;
-    MetaDataFormatter m_formatter;
-};
-
-#endif // HISTORYWINDOW_H
+void DateInputDialog::setSelectedDate(const QDate &date)
+{
+    m_ui->calendarWidget->setSelectedDate(date);
+}
