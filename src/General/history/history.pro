@@ -13,7 +13,7 @@ unix:LIBS += -lqmmpui -lqmmp
 
 win32:LIBS += -lqmmpui0 -lqmmp0
 
-#RESOURCES = translations/translations.qrc
+RESOURCES = translations/translations.qrc
 isEmpty(LIB_DIR){
     LIB_DIR = /lib
 }
