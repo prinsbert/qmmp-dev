@@ -4,42 +4,42 @@
 <context>
     <name>GoomWidget</name>
     <message>
-        <location filename="../goomwidget.cpp" line="158"/>
+        <location filename="../goomwidget.cpp" line="137"/>
         <source>%1 - %2</source>
         <translation>%1 - %2</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="209"/>
+        <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
         <translation>Частота обновления</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="212"/>
+        <location filename="../goomwidget.cpp" line="190"/>
         <source>60 fps</source>
         <translation>60 гц</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="213"/>
+        <location filename="../goomwidget.cpp" line="191"/>
         <source>50 fps</source>
         <translation>50 Гц</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="214"/>
+        <location filename="../goomwidget.cpp" line="192"/>
         <source>25 fps</source>
         <translation>25 Гц</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="220"/>
+        <location filename="../goomwidget.cpp" line="198"/>
         <source>&amp;Show Title</source>
         <translation>&amp;Показывать название</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="223"/>
+        <location filename="../goomwidget.cpp" line="201"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Полноэкранный режим</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="223"/>
+        <location filename="../goomwidget.cpp" line="201"/>
         <source>F</source>
         <translation type="unfinished"></translation>
     </message>
