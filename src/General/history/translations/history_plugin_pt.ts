@@ -83,7 +83,7 @@
     </message>
     <message>
         <location filename="../historywindow.ui" line="69"/>
-        <source>Last weak</source>
+        <source>Last week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
