@@ -379,7 +379,7 @@ void HistoryWindow::on_executeButton_clicked()
     loadTopGenres();
 }
 
-void HistoryWindow::on_lastWeakButton_clicked()
+void HistoryWindow::on_lastWeekButton_clicked()
 {
     QDateTime t = QDateTime::currentDateTime();
     t.setTime(QTime(23, 59, 0 ,0));
