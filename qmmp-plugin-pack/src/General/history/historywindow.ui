@@ -64,9 +64,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="lastWeakButton">
+       <widget class="QPushButton" name="lastWeekButton">
         <property name="text">
-         <string>Last weak</string>
+         <string>Last week</string>
         </property>
        </widget>
       </item>
