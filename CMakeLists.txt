@@ -48,12 +48,17 @@ ENDIF(NOT LIB_SUFFIX)
 
 SET(LIB_DIR "lib${LIB_SUFFIX}" CACHE STRING "library path")
 
-pkg_check_modules(QMMP qmmp>=1.1.0 REQUIRED)
-include_directories(${QMMP_INCLUDEDIR})
+pkg_check_modules(QMMP qmmp>=1.2.0 REQUIRED)
+pkg_check_modules(QMMPUI qmmpui>=1.2.0)
 
 IF(QMMP_FOUND)
 add_subdirectory(src)
+include_directories(${QMMP_INCLUDEDIR})
 ENDIF(QMMP_FOUND)
+
+IF(QMMPUI_FOUND)
+include_directories(${QMMPUI_INCLUDEDIR})
+ENDIF(QMMPUI_FOUND)
 
 MACRO(PRINT_SUMMARY str USE FOUND)
 IF(${USE} AND ${FOUND})
@@ -107,6 +112,10 @@ PRINT_SUMMARY ("Sample Rate Conversion .........." USE_SRC SAMPLERATE_FOUND)
 MESSAGE("")
 MESSAGE("Visual Plugins:")
 PRINT_SUMMARY ("Goom visualization .............." USE_GOOM 1)
+
+MESSAGE("")
+MESSAGE("General Plugins:")
+PRINT_SUMMARY ("History plugin .................." USE_HISTORY QMMPUI_FOUND)
 
 MESSAGE("")
 MESSAGE("Advanced:")

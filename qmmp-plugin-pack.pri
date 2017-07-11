@@ -35,5 +35,6 @@ CONFIG += FFAP_YASM #assembler optimizations
 CONFIG += XMP_PLUGIN
 CONFIG += GOOM_PLUGIN
 CONFIG += GOOM_ASM #assembler optimizations
+CONFIG += HISTORY_PLUGIN
 
 CONFIG -= $$DISABLED_PLUGINS
