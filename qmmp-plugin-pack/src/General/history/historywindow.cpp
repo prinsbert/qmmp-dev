@@ -152,7 +152,6 @@ void HistoryWindow::loadDistribution()
         return;
     }
     int maxCount = query.value(0).toInt();
-    qDebug("%d", maxCount);
     query.finish();
 
     query.prepare("SELECT count(*), date(Timestamp, 'localtime') FROM track_history WHERE Timestamp BETWEEN :from and :to "
