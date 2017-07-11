@@ -57,11 +57,6 @@
         <source>Title format:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../historysettingsdialog.ui" line="41"/>
-        <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HistoryWindow</name>
@@ -79,12 +74,6 @@
     <message>
         <location filename="../historywindow.ui" line="35"/>
         <source>From:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../historywindow.ui" line="45"/>
-        <location filename="../historywindow.ui" line="62"/>
-        <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
