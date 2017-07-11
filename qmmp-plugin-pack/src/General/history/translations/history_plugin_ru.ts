@@ -161,12 +161,12 @@
         <translation>hh:mm:ss</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="174"/>
+        <location filename="../historywindow.cpp" line="173"/>
         <source>MM-yyyy</source>
         <translation>MM-yyyy</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="175"/>
+        <location filename="../historywindow.cpp" line="174"/>
         <source>dd MMMM</source>
         <translation>dd MMMM</translation>
     </message>
