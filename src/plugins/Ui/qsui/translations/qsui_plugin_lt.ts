@@ -577,17 +577,22 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="63"/>
+        <location filename="../filesystembrowser.cpp" line="91"/>
         <source>Add to Playlist</source>
         <translation>Įkelti į grojąraštį</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="131"/>
+        <location filename="../filesystembrowser.cpp" line="95"/>
+        <source>Quick Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="169"/>
         <source>Select Directory</source>
         <translation>Pasirinkti aplanką</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="66"/>
+        <location filename="../filesystembrowser.cpp" line="93"/>
         <source>Change Directory</source>
         <translation>Pakeisti aplanką</translation>
     </message>
