@@ -1261,3 +1261,18 @@ Version 1.1.9
 * fixed segmentation fault in the ffmpeg plugin
 * fixed Russian translation
 * updated French translation (Adrien Vigneron)
+
+Version 1.1.10
+* added feature to download playlist from https
+* decreased waiting time in the WASAPI plugin
+* improved plugin list in the settings dialog
+* fixed regression in the 'jump to track' dialog
+* fixed possible segmentation fault
+* fixed seeking in the ffmpeg plugin
+* fixed null pointer dereference in the mpeg plugin
+* fixed gcc warnings
+* fixed dithering settings
+* fixed 24 bits support in the WASAPI plugin
+* fixed segmentation fault on Ogg FLAC streams
+* fixed Qt 5.9 support in the global hotkey plugin
+* updated documentation
