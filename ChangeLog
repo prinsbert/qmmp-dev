@@ -1264,6 +1264,7 @@ Version 1.1.9
 
 Version 1.1.10
 * added feature to download playlist from https
+* increased DirectSound buffer size
 * decreased waiting time in the WASAPI plugin
 * improved plugin list in the settings dialog
 * fixed regression in the 'jump to track' dialog
@@ -1277,3 +1278,4 @@ Version 1.1.10
 * fixed XPM skins support
 * fixed Qt 5.9 support in the global hotkey plugin
 * updated documentation
+* updated Galician translation (Delio Docampo Cordeiro)
