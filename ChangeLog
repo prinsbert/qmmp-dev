@@ -1244,6 +1244,7 @@ Version 0.10.9
 
 Version 0.10.10
 * added feature to download playlist from https
+* increased DirectSound buffer size
 * decreased waiting time in the WASAPI plugin
 * improved plugin list in the settings dialog
 * fixed regression in the 'jump to track' dialog
