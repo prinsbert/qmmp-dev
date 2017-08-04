@@ -40,9 +40,9 @@ Version 0.0.5
 * added autosave of equalizer settings
 * added Jack support plugin (Yuriy Zhuravlev)
 * added Musepack support plugin
-* fixed program crush with some skins
+* fixed program crash with some skins
 * fixed bug in balance control
-* fixed bug in alsa plugin which cause crush in some soundcards (thanks to Vadim Kalinnikov)
+* fixed bug in alsa plugin which cause crash in some soundcards (thanks to Vadim Kalinnikov)
 * fixed bug in processing of double click on playlist
 
 Version 0.0.6
@@ -1274,5 +1274,6 @@ Version 1.1.10
 * fixed dithering settings
 * fixed 24 bits support in the WASAPI plugin
 * fixed segmentation fault on Ogg FLAC streams
+* fixed XPM skins support
 * fixed Qt 5.9 support in the global hotkey plugin
 * updated documentation
