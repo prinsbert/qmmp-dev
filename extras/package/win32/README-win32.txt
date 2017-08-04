@@ -30,18 +30,18 @@ List of the third-party libraries.
   flac                1.3.2      https://xiph.org/flac/index.html
   wavpack             5.1.0      http://www.wavpack.com/
   libsndfile          1.0.28     http://www.mega-nerd.com/libsndfile/
-  opus                1.1.4      http://www.opus-codec.org/
-  opusfile            0.8        http://www.opus-codec.org/
+  opus                1.2        http://www.opus-codec.org/
+  opusfile            0.9        http://www.opus-codec.org/
   libbs2b             3.1.0      http://bs2b.sourceforge.net/
-  curl                7.54.0     http://curl.haxx.se/
+  curl                7.54.1     http://curl.haxx.se/
   libcdio             0.83       http://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
-  ffmpeg              3.0.8      http://ffmpeg.org/
+  ffmpeg              3.0.9      http://ffmpeg.org/
   libmodplug          0.8.9.0    http://modplug-xmms.sourceforge.net/
   game-music-emu      0.6.1      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       http://www.musepack.net/
-  glew                2.0.0      http://glew.sourceforge.net/
+  glew                2.1.0      http://glew.sourceforge.net/
   projectm            2.1.0      http://projectm.sourceforge.net/
   libsidplayfp        1.8.7      http://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       http://cihar.com/software/enca/

@@ -216,3 +216,8 @@ LEGEND
 0.10.10
 [*] qmmp-0.10.10
 [*] qmmp-plugin-pack-0.10.3
+[*] opus-1.2
+[*] opusfile-0.9
+[*] curl-7.54.1
+[*] glew-2.1.0
+[*] ffmpeg-3.0.9
