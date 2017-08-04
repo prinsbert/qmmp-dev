@@ -1,3 +1,9 @@
+qmmp (1.1.10-1ubuntu1~zesty0) zesty; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 05 Aug 2017 00:15:26 +0300
+
 qmmp (1.1.9-1ubuntu1~zesty0) zesty; urgency=medium
 
   * New upstream release.
