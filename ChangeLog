@@ -228,3 +228,9 @@ Version 1.1.2
 
 Version 1.1.3
 * fixed 24 bits support in the ffap plugin
+
+Version 1.1.4
+* fixed possible segmentation fault in the mpg123 plugin
+* fixed MP3 in WAV container detection in the mpg123 plugin
+* fixed Russian translation
+* updated Galician translation (Delio Docampo Cordeiro)
