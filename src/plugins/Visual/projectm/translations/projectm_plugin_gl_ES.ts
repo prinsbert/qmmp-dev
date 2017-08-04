@@ -44,12 +44,12 @@
     <message>
         <location filename="../projectmwidget.cpp" line="158"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Amosar menú</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="158"/>
         <source>M</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="160"/>

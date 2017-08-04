@@ -44,7 +44,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
         <source>Override device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anular dispositivo:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="42"/>

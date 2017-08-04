@@ -11,82 +11,82 @@
     <message>
         <location filename="../analyzer.cpp" line="356"/>
         <source>Peaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Picos</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="359"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Taxa de refresco</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="362"/>
         <source>50 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="363"/>
         <source>25 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="364"/>
         <source>10 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>10 fps</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="365"/>
         <source>5 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>5 fps</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="372"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished"></translation>
+        <translation>Analizador Falloff</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="375"/>
         <location filename="../analyzer.cpp" line="389"/>
         <source>Slowest</source>
-        <translation type="unfinished">O máis lento</translation>
+        <translation>O máis lento</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="376"/>
         <location filename="../analyzer.cpp" line="390"/>
         <source>Slow</source>
-        <translation type="unfinished">Lento</translation>
+        <translation>Lento</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="377"/>
         <location filename="../analyzer.cpp" line="391"/>
         <source>Medium</source>
-        <translation type="unfinished">Medio</translation>
+        <translation>Medio</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="378"/>
         <location filename="../analyzer.cpp" line="392"/>
         <source>Fast</source>
-        <translation type="unfinished">Rápido</translation>
+        <translation>Rápido</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="379"/>
         <location filename="../analyzer.cpp" line="393"/>
         <source>Fastest</source>
-        <translation type="unfinished">O máis rápido</translation>
+        <translation>O máis rápido</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="386"/>
         <source>Peaks Falloff</source>
-        <translation type="unfinished"></translation>
+        <translation>Caída de picos</translation>
+    </message>
+    <message>
+        <location filename="../analyzer.cpp" line="400"/>
+        <source>&amp;Full Screen</source>
+        <translation>&amp;Pantaia completa</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="400"/>
         <source>F</source>
         <translation>F</translation>
-    </message>
-    <message>
-        <location filename="../analyzer.cpp" line="400"/>
-        <source>&amp;Full Screen</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

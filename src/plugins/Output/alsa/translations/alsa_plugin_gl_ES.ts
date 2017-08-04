@@ -84,8 +84,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="213"/>
         <source>Use snd_pcm_pause function</source>
-        <translation type="unfinished">
-Usar a función snd_pcm_pause</translation>
+        <translation>Usar a función snd_pcm_pause</translation>
     </message>
 </context>
 </TS>

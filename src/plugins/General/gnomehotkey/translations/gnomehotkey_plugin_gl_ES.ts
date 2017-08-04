@@ -6,27 +6,27 @@
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="30"/>
         <source>Gnome Hotkey Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadido teclas de acceso rápido para Gnome</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="51"/>
         <source>About Gnome Hotkey Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca do engadido de teclas de acceso rápido para Gnome</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="52"/>
         <source>Qmmp Gnome Hotkey Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadido Qmmp teclas de acceso rápido para Gnome</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="53"/>
         <source>This plugin adds support of the GNOME/Cinnamon hotkeys</source>
-        <translation type="unfinished"></translation>
+        <translation>Este engadido engade soporte para as teclas de acceso rápido de GNOME/Cinnamon</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Escrito por: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 </TS>

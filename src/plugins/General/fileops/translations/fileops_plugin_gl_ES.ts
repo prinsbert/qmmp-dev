@@ -18,14 +18,14 @@
     <message>
         <location filename="../fileops.cpp" line="136"/>
         <source>Move Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover arquivos</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="137"/>
         <source>Are you sure you want to move %n file(s)?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Está seguro/a de que quere mover %n arquivo(s)?</numerusform>
+            <numerusform>Está seguro/a de que quere mover %n arquivo(s)?</numerusform>
         </translation>
     </message>
     <message>
@@ -47,24 +47,24 @@
     <message>
         <location filename="../fileops.cpp" line="243"/>
         <source>Moving</source>
-        <translation type="unfinished"></translation>
+        <translation>Movendo</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="276"/>
         <source>Moving file %1/%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Movendo arquivo %1%2</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="114"/>
         <source>Remove Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminando arquivos</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="115"/>
         <source>Are you sure you want to remove %n file(s) from disk?</source>
         <translation>
-            <numerusform>Está seguro/a de que quere eliminar %n ficheiro do disco?</numerusform>
-            <numerusform>Está seguro/a de que quere eliminar %n ficheiros do disco?</numerusform>
+            <numerusform>Está seguro/a de que quere eliminar %n ficheiro(s) do disco?</numerusform>
+            <numerusform>Está seguro/a de que quere eliminar %n ficheiro(s) do disco?</numerusform>
         </translation>
     </message>
 </context>
@@ -180,7 +180,7 @@
         <location filename="../settingsdialog.cpp" line="53"/>
         <location filename="../settingsdialog.cpp" line="133"/>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="137"/>
@@ -200,7 +200,7 @@
     <message>
         <location filename="../settingsdialog.cpp" line="222"/>
         <source>Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Álbum do artista</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="223"/>
@@ -210,27 +210,27 @@
     <message>
         <location filename="../settingsdialog.cpp" line="224"/>
         <source>Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de pista</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="225"/>
         <source>Two-digit Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de pista de dous díxitos</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="230"/>
         <source>Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de disco</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="231"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="232"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta do arquivo</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="226"/>

@@ -7,28 +7,28 @@
         <location filename="../converter.cpp" line="129"/>
         <location filename="../converter.cpp" line="229"/>
         <source>Cancelled</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelado</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="144"/>
         <location filename="../converter.cpp" line="211"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="176"/>
         <source>Converting</source>
-        <translation type="unfinished"></translation>
+        <translation>Convertendo</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="240"/>
         <source>Encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificando</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="278"/>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Rematado</translation>
     </message>
 </context>
 <context>
@@ -36,17 +36,17 @@
     <message>
         <location filename="../converterdialog.ui" line="14"/>
         <source>Audio Converter</source>
-        <translation type="unfinished"></translation>
+        <translation>Conversor de audio</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="44"/>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation>Progreso</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="49"/>
         <source>State</source>
-        <translation type="unfinished"></translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="63"/>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../converterdialog.ui" line="124"/>
         <source>Convert</source>
-        <translation type="unfinished">Converter</translation>
+        <translation>Converter</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="131"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Deter</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="107"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="192"/>
         <source>Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Álbum do artista</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="39"/>
@@ -107,32 +107,32 @@
     <message>
         <location filename="../converterdialog.cpp" line="194"/>
         <source>Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de pista</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="195"/>
         <source>Two-digit Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de pista de dous díxitos</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="200"/>
         <source>Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de disco</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="201"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="202"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta do arquivo</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="212"/>
         <source>Create a Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear unha copia</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="196"/>
@@ -144,12 +144,12 @@
         <location filename="../converterdialog.cpp" line="367"/>
         <location filename="../converterdialog.cpp" line="373"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="133"/>
         <source>Waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Esperando</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="197"/>
@@ -194,12 +194,12 @@
     <message>
         <location filename="../converterdialog.cpp" line="367"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non se pode executar &quot;%1&quot;. Non se atopou o programa.</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="373"/>
         <source>Process &quot;%1&quot; finished with error.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proceso &quot;%1&quot; rematou con erros.</translation>
     </message>
 </context>
 <context>
