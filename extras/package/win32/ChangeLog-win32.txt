@@ -212,3 +212,7 @@ LEGEND
 [*] libmodplug-0.8.9.0
 [*] curl-7.54.0
 [*] ffmpeg-3.0.8
+
+0.10.10
+[*] qmmp-0.10.10
+[*] qmmp-plugin-pack-0.10.3
