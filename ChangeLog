@@ -1257,3 +1257,4 @@ Version 0.10.10
 * fixed segmentation fault on Ogg FLAC streams
 * fixed XPM skins support
 * updated documentation
+* updated Galician translation (Delio Docampo Cordeiro)
