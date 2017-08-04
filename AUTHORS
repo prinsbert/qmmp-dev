@@ -37,6 +37,7 @@ Translators:
 
     Galician:
         Óscar Pereira <oscarpereira1989@gmail.com>
+        Delio Docampo Cordeiro
 
     German:
         Ettore Atalan
@@ -104,3 +105,13 @@ apedec from FFMpeg (C) 2007
 demac - A Monkey's Audio decoder (C) 2007
 
     Dave Chapman 2007
+
+goom - A cool visual effects program that runs on almost every multimedia players (C) 2000-2004
+
+    Jean-Christophe Hoelt <jeko@ios-software.com>
+    Guillaume Borios <gyom@ios-software.com>
+
+MultiMedia eXtensions GCC interface library for IA32 (C) 1997-1999
+
+    H. Dietz
+    R. Fisher
