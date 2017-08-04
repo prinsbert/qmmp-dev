@@ -42,7 +42,7 @@ Version 0.0.5
 * added Musepack support plugin
 * fixed program crash with some skins
 * fixed bug in balance control
-* fixed bug in alsa plugin which cause crush in some soundcards (thanks to Vadim Kalinnikov)
+* fixed bug in alsa plugin which cause crash in some soundcards (thanks to Vadim Kalinnikov)
 * fixed bug in processing of double click on playlist
 
 Version 0.0.6
