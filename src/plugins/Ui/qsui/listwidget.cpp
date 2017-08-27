@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -48,6 +48,7 @@ ListWidget::ListWidget(PlayListModel *model, QWidget *parent)
     m_popupWidget = 0;
     m_ui_settings = QmmpUiSettings::instance();
     m_menu = 0;
+    m_filterMode = false;
     m_model = model;
     m_timer = new QTimer(this);
     m_timer->setInterval(50);
@@ -72,10 +73,10 @@ ListWidget::ListWidget(PlayListModel *model, QWidget *parent)
     readSettings();
     connect(m_ui_settings, SIGNAL(repeatableTrackChanged(bool)), SLOT(updateRepeatIndicator()));
     connect(m_timer, SIGNAL(timeout()), SLOT(autoscroll()));
-    connect(m_scrollBar, SIGNAL(valueChanged (int)), SLOT(scroll(int)));
-    connect(m_hslider, SIGNAL(valueChanged(int)), m_header, SLOT(scroll(int)));
+    connect(m_scrollBar, SIGNAL(valueChanged (int)), SLOT(setViewPosition(int)));
+    connect(m_hslider, SIGNAL(valueChanged(int)), m_header, SLOT(setViewPosition(int)));
     connect(m_hslider, SIGNAL(valueChanged(int)), this, SLOT(update()));
-    connect(m_model, SIGNAL(currentVisibleRequest()), SLOT(scrollToCurrent()));
+    connect(m_model, SIGNAL(scrollToRequest(int)), SLOT(scrollTo(int)));
     connect(m_model, SIGNAL(listChanged(int)), SLOT(updateList(int)));
     connect(m_model, SIGNAL(sortingByColumnFinished(int,bool)), m_header, SLOT(showSortIndicator(int,bool)));
     SET_ACTION(ActionManager::PL_SHOW_HEADER, this, SLOT(readSettings()));
@@ -154,8 +155,20 @@ PlayListModel *ListWidget::model()
     return m_model;
 }
 
+bool ListWidget::filterMode() const
+{
+    return m_filterMode;
+}
+
 void ListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
 {
+    if(m_filterMode)
+    {
+        m_filterMode = false;
+        m_first = 0;
+        m_filteredItems.clear();
+    }
+
     if(previous)
     {
         previous->setProperty("first_visible", m_first);
@@ -175,7 +188,7 @@ void ListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
         m_first = 0;
         updateList(PlayListModel::STRUCTURE | PlayListModel::CURRENT);
     }
-    connect (m_model, SIGNAL(currentVisibleRequest()), SLOT(scrollToCurrent()));
+    connect (m_model, SIGNAL(scrollToRequest(int)), SLOT(scrollTo(int)));
     connect (m_model, SIGNAL(listChanged(int)), SLOT(updateList(int)));
     connect (m_model, SIGNAL(sortingByColumnFinished(int,bool)), m_header, SLOT(showSortIndicator(int,bool)));
 }
@@ -215,15 +228,23 @@ void ListWidget::mouseDoubleClickEvent (QMouseEvent *e)
 {
     int y = e->y();
     int index = indexAt(y);
+
     if (INVALID_INDEX != index)
     {
+        if(m_filterMode)
+        {
+            m_filterMode = false;
+            m_filteredItems.clear();
+            scrollTo(index);
+        }
+
         m_model->setCurrent(index);
         MediaPlayer *player = MediaPlayer::instance();
         player->playListManager()->selectPlayList(m_model);
         player->playListManager()->activatePlayList(m_model);
         player->stop();
         player->play();
-        emit selectionChanged();
+        emit doubleClicked();
         update();
     }
 }
@@ -358,48 +379,54 @@ void ListWidget::updateList(int flags)
     if(updateRowCount())
         flags |= PlayListModel::STRUCTURE;
 
+    if(flags & PlayListModel::STRUCTURE && m_filterMode)
+    {
+        m_filteredItems = m_model->findTracks(m_filterString);
+    }
+
     if(flags & PlayListModel::CURRENT)
-        recenterCurrent();
+        recenterTo(m_model->currentIndex());
 
     QList<PlayListItem *> items;
+    int count = m_filterMode ? m_filteredItems.count() : m_model->count();
 
     if(flags & PlayListModel::STRUCTURE || flags & PlayListModel::CURRENT)
     {
         m_scrollBar->blockSignals(true);
-        if(m_row_count >= m_model->count())
+        if(m_row_count >= count)
         {
             m_first = 0;
             m_scrollBar->setMaximum(0);
             m_scrollBar->setValue(0);
             emit positionChanged(0,0);
         }
-        else if(m_first + m_row_count >= m_model->count())
+        else if(m_first + m_row_count >= count)
         {
-            m_first = qMax(0, m_model->count() - m_row_count);
-            m_scrollBar->setMaximum(m_model->count() - m_row_count);
+            m_first = qMax(0, count - m_row_count);
+            m_scrollBar->setMaximum(count - m_row_count);
             m_scrollBar->setValue(m_first);
             emit positionChanged(m_first, m_first);
         }
         else
         {
-            m_scrollBar->setMaximum(m_model->count() - m_row_count);
+            m_scrollBar->setMaximum(count - m_row_count);
             m_scrollBar->setValue(m_first);
-            emit positionChanged(m_first, m_model->count() - m_row_count);
+            emit positionChanged(m_first, count - m_row_count);
         }
         m_scrollBar->blockSignals(false);
 
-        items = m_model->mid(m_first, m_row_count);
+        items = m_filterMode ? m_filteredItems.mid(m_first, m_row_count) : m_model->mid(m_first, m_row_count);
 
         while(m_rows.count() < qMin(m_row_count, items.count()))
             m_rows << new ListWidgetRow;
         while(m_rows.count() > qMin(m_row_count, items.count()))
             delete m_rows.takeFirst();
 
-        m_scrollBar->setVisible(m_model->count() > m_row_count);
+        m_scrollBar->setVisible(count > m_row_count);
     }
     else
     {
-        items = m_model->mid(m_first, m_row_count);
+        items = m_filterMode ? m_filteredItems.mid(m_first, m_row_count) : m_model->mid(m_first, m_row_count);
     }
 
     if(flags & PlayListModel::STRUCTURE)
@@ -451,7 +478,7 @@ void ListWidget::updateList(int flags)
         row->sizes = m_header->sizes();
         row->alignment = m_header->alignment();
 
-        (m_first + i) == m_model->currentIndex() ? row->flags |= ListWidgetRow::CURRENT :
+        items[i] == m_model->currentTrack() ? row->flags |= ListWidgetRow::CURRENT :
                 row->flags &= ~ListWidgetRow::CURRENT;
 
         if(items[i]->isGroup())
@@ -464,8 +491,8 @@ void ListWidget::updateList(int flags)
         {
             row->flags &= ~ListWidgetRow::GROUP;
             row->number = items.at(i)->trackIndex() + 1;
-            row->length = items[i]->formattedLength();
-            row->extraString = getExtraString(m_first + i);
+            row->length = items.at(i)->formattedLength();
+            row->extraString = getExtraString(items.at(i));
         }
         m_drawer.prepareRow(row);  //elide titles
     }
@@ -474,6 +501,9 @@ void ListWidget::updateList(int flags)
 
 void ListWidget::autoscroll()
 {
+    if(m_filterMode)
+        return;
+
     SimpleSelection sel = m_model->getSelection(m_pressed_index);
     if ((sel.m_top == 0 && m_scroll_direction == TOP && sel.count() > 1) ||
         (sel.m_bottom == m_model->count() - 1 && m_scroll_direction == DOWN && sel.count() > 1))
@@ -499,16 +529,37 @@ void ListWidget::updateRepeatIndicator()
     updateList(PlayListModel::CURRENT | PlayListModel::STRUCTURE);
 }
 
-void ListWidget::scrollToCurrent()
+void ListWidget::scrollTo(int index)
 {
-    updateList(PlayListModel::CURRENT | PlayListModel::STRUCTURE);
+    if (m_row_count && !m_filterMode)
+    {
+        recenterTo(index);
+        updateList(PlayListModel::STRUCTURE);
+    }
 }
 
-void ListWidget::scroll(int sc)
+void ListWidget::setViewPosition(int sc)
 {
     if (m_model->count() <= m_row_count)
         return;
-    m_first = sc; //*(m_model->count() - m_rows)/99;
+    m_first = sc;
+    updateList(PlayListModel::STRUCTURE);
+}
+
+void ListWidget::setFilterString(const QString &str)
+{
+    m_filterString = str;
+    if(str.isEmpty())
+    {
+        m_filteredItems.clear();
+        m_filterString.clear();
+        m_filterMode = false;
+    }
+    else
+    {
+        m_filterMode = true;
+    }
+    m_first = 0;
     updateList(PlayListModel::STRUCTURE);
 }
 
@@ -526,7 +577,7 @@ void ListWidget::dragEnterEvent(QDragEnterEvent *event)
 
 void ListWidget::dropEvent(QDropEvent *event)
 {
-    if (event->mimeData()->hasUrls())
+    if (!m_filterMode && event->mimeData()->hasUrls())
     {
         QList<QUrl> list_urls = event->mimeData()->urls();
         event->acceptProposedAction();
@@ -560,13 +611,13 @@ void ListWidget::dragMoveEvent(QDragMoveEvent *event)
     }
 }
 
-const QString ListWidget::getExtraString(int i)
+const QString ListWidget::getExtraString(PlayListItem *item)
 {
-    QString extra_string;
+    if(item->isGroup())
+        return QString();
 
-    PlayListTrack *track = m_model->track(i);
-    if(!track)
-        return extra_string;
+    QString extra_string;
+    PlayListTrack *track = static_cast<PlayListTrack *>(item);
 
     if (m_show_protocol && track->url().contains("://"))
         extra_string = "[" + track->url().split("://").at(0) + "]";
@@ -577,7 +628,7 @@ const QString ListWidget::getExtraString(int i)
         extra_string += "|"+QString::number(index + 1)+"|";
     }
 
-    if(m_model->currentIndex() == i && m_ui_settings->isRepeatableTrack())
+    if(m_model->currentTrack() == track && m_ui_settings->isRepeatableTrack())
         extra_string += "|R|";
     else if(m_model->isStopAfter(track))
         extra_string += "|S|";
@@ -625,6 +676,9 @@ void ListWidget::updateScrollBars()
 
 void ListWidget::mouseMoveEvent(QMouseEvent *e)
 {
+    if(m_filterMode)
+        return;
+
     if(e->buttons() == Qt::LeftButton)
     {
         if (m_prev_y > e->y())
@@ -690,10 +744,22 @@ void ListWidget::mouseReleaseEvent(QMouseEvent *e)
 int ListWidget::indexAt(int y) const
 {
     y -= m_header->isVisible() ? m_header->height() : 0;
-    for (int i = 0; i < qMin(m_row_count, m_model->count() - m_first); ++i)
+
+    if(m_filterMode)
     {
-        if ((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
-            return m_first + i;
+        for (int i = 0; i < qMin(m_row_count, m_filteredItems.count() - m_first); ++i)
+        {
+            if ((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
+                return m_model->indexOf(m_filteredItems.at(m_first + i));
+        }
+    }
+    else
+    {
+        for (int i = 0; i < qMin(m_row_count, m_model->count() - m_first); ++i)
+        {
+            if ((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
+                return m_first + i;
+        }
     }
     return INVALID_INDEX;
 }
@@ -704,14 +770,13 @@ void ListWidget::contextMenuEvent(QContextMenuEvent * event)
         menu()->exec(event->globalPos());
 }
 
-void ListWidget::recenterCurrent()
+void ListWidget::recenterTo(int index)
 {
-    if (m_row_count)
+    if (m_row_count && !m_filterMode)
     {
-        if (m_first + m_row_count < m_model->currentIndex() + 1)
-            m_first = qMin(m_model->count() - m_row_count,
-                           m_model->currentIndex() - m_row_count/2);
-        else if (m_first > m_model->currentIndex())
-            m_first = qMax (m_model->currentIndex() - m_row_count/2, 0);
+        if (m_first + m_row_count < index + 1)
+            m_first = qMin(m_model->count() - m_row_count, index - m_row_count/2);
+        else if (m_first > index)
+            m_first = qMax (index - m_row_count/2, 0);
     }
 }

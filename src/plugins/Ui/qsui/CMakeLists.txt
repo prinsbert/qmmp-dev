@@ -43,6 +43,7 @@ SET(libqsui_SRCS
     playlistheader.cpp
     hotkeyeditor.cpp
     volumeslider.cpp
+    qsuiquicksearch.cpp
 )
 
 SET(libqsui_HDRS

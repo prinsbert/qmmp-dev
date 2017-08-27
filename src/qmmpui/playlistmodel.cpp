@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright(C) 2006-2016 by Ilya Kotov                                  *
+ *   Copyright(C) 2006-2017 by Ilya Kotov                                  *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -425,6 +425,25 @@ PlayListTrack *PlayListModel::findTrack(int track_index) const
     return m_container->findTrack(track_index);
 }
 
+QList<PlayListItem *> PlayListModel::findTracks(const QString &str) const
+{
+    QList<PlayListItem *> items;
+    PlayListItem *item = 0;
+    if(str.isEmpty())
+        return items;
+
+    for(int i = 0; i < m_container->count(); ++i)
+    {
+        item = m_container->item(i);
+        if(item->isGroup())
+            continue;
+
+        if(!item->formattedTitles().filter(str, Qt::CaseInsensitive).isEmpty())
+            items.append(item);
+    }
+    return items;
+}
+
 void PlayListModel::setSelected(int index, bool selected)
 {
     m_container->setSelected(index, selected);
@@ -459,6 +478,13 @@ void PlayListModel::setSelected(int first, int last, bool selected)
             continue;
         i->setSelected(selected);
     }
+    emit listChanged(SELECTION);
+}
+
+void PlayListModel::setSelected(QList<int> indexes, bool selected)
+{
+    foreach (int idx, indexes)
+        m_container->setSelected(idx, selected);
     emit listChanged(SELECTION);
 }
 
@@ -921,8 +947,14 @@ void PlayListModel::onTaskFinished()
 
 void PlayListModel::doCurrentVisibleRequest()
 {
-    if(!m_container->isEmpty())
-        emit currentVisibleRequest();
+    if(!m_container->isEmpty() && m_current >= 0)
+        emit scrollToRequest(currentIndex());
+}
+
+void PlayListModel::scrollTo(int index)
+{
+    if(index >= 0 && index < m_container->count())
+        emit scrollToRequest(index);
 }
 
 void PlayListModel::loadPlaylist(const QString &f_name)

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2017 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -69,12 +69,11 @@ public:
 public slots:
     void readSettings();
     void updateList(int flags);
-    void scroll(int); //0-99
-    void recenterCurrent();
+    void setViewPosition(int);
     void setModel(PlayListModel *selected, PlayListModel *previous = 0);
 
 signals:
-    void selectionChanged();
+    void doubleClicked();
     void positionChanged(int, int); //current position, maximum value
 
 protected:
@@ -97,13 +96,15 @@ private slots:
     void updateSkin();
     void autoscroll();
     void updateRepeatIndicator();
-    void scrollToCurrent();
+    void scrollTo(int index);
 
 private:
     enum ScrollDirection
     {
         NONE = 0,TOP,DOWN
     };
+
+    void recenterTo(int index);
     /*!
      * Returns string with queue number or(and) repeate flag for the item number \b i.
      */
