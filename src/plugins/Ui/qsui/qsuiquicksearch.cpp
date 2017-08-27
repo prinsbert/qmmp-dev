@@ -41,6 +41,7 @@ QSUIQuickSearch::QSUIQuickSearch(ListWidget *listWidget, QWidget *parent) :
     setLayout(layout);
     layout->addWidget(m_lineEdit);
     m_lineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    m_lineEdit->setClearButtonEnabled(true);
     connect(m_lineEdit, SIGNAL(textEdited(QString)), m_listWidget, SLOT(setFilterString(QString)));
     connect(m_manager, SIGNAL(selectedPlayListChanged(PlayListModel*,PlayListModel*)), m_lineEdit, SLOT(clear()));
     connect(m_listWidget, SIGNAL(doubleClicked()), m_lineEdit, SLOT(clear()));
