@@ -22,7 +22,7 @@
     <message>
         <location filename="../historyfactory.cpp" line="32"/>
         <source>Listening History Plugin</source>
-        <translation>Модулья журнала</translation>
+        <translation>Модуль журнала</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="52"/>
