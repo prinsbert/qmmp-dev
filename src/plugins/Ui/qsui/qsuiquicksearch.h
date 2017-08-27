@@ -37,9 +37,6 @@ class QSUIQuickSearch : public QWidget
 public:
     explicit QSUIQuickSearch(ListWidget *listWidget, QWidget *parent = 0);
 
-private slots:
-    void onTextEdited(const QString &str);
-
 private:
     QLineEdit *m_lineEdit;
     PlayListManager *m_manager;
