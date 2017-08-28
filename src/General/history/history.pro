@@ -22,13 +22,15 @@ HEADERS += historyfactory.h \
     history.h \
     historywindow.h \
     dateinputdialog.h \
-    historysettingsdialog.h
+    historysettingsdialog.h \
+    progressbaritemdelegate.h
 
 SOURCES += historyfactory.cpp \
     history.cpp \
     historywindow.cpp \
     dateinputdialog.cpp \
-    historysettingsdialog.cpp
+    historysettingsdialog.cpp \
+    progressbaritemdelegate.cpp
 
 FORMS += \
     historywindow.ui \
