@@ -48,12 +48,12 @@ HistoryWindow::HistoryWindow(QSqlDatabase db, QWidget *parent) :
     t.setTime(QTime(0, 0, 0, 0));
     t = t.addDays(-7);
     m_ui->fromDateEdit->setDateTime(t);
-    on_executeButton_clicked();
-
     m_ui->distributionTreeWidget->setItemDelegate(new ProgressBarItemDelegate(this));
     m_ui->topArtistsTreeWidget->setItemDelegate(new ProgressBarItemDelegate(this));
     m_ui->topSongsTreeWidget->setItemDelegate(new ProgressBarItemDelegate(this));
     m_ui->topGenresTreeWidget->setItemDelegate(new ProgressBarItemDelegate(this));
+
+    on_executeButton_clicked();
 }
 
 HistoryWindow::~HistoryWindow()
@@ -273,7 +273,7 @@ void HistoryWindow::loadTopArtists()
     QSqlQuery query(m_db);
 
     query.prepare("SELECT count(*) as c,Artist "
-                  "FROM track_history WHERE Timestamp BETWEEN :from and :to "
+                  "FROM track_history WHERE (Timestamp BETWEEN :from and :to) AND Artist NOT NULL "
                   "GROUP BY Artist ORDER BY c DESC LIMIT 100");
     query.bindValue(":from", m_ui->fromDateEdit->dateTime().toUTC().toString("yyyy-MM-dd hh:mm:ss"));
     query.bindValue(":to", m_ui->toDateEdit->dateTime().toUTC().toString("yyyy-MM-dd hh:mm:ss"));
@@ -312,7 +312,7 @@ void HistoryWindow::loadTopGenres()
     QSqlQuery query(m_db);
 
     query.prepare("SELECT count(*) as c,Genre "
-                  "FROM track_history WHERE Timestamp BETWEEN :from and :to "
+                  "FROM track_history WHERE (Timestamp BETWEEN :from and :to) AND Genre NOT NULL "
                   "GROUP BY Genre ORDER BY c DESC LIMIT 100");
     query.bindValue(":from", m_ui->fromDateEdit->dateTime().toUTC().toString("yyyy-MM-dd hh:mm:ss"));
     query.bindValue(":to", m_ui->toDateEdit->dateTime().toUTC().toString("yyyy-MM-dd hh:mm:ss"));
