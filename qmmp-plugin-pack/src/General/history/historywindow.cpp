@@ -28,6 +28,7 @@
 #include <qmmp/qmmp.h>
 #include "historywindow.h"
 #include "dateinputdialog.h"
+#include "progressbaritemdelegate.h"
 #include "ui_historywindow.h"
 
 HistoryWindow::HistoryWindow(QSqlDatabase db, QWidget *parent) :
@@ -48,6 +49,11 @@ HistoryWindow::HistoryWindow(QSqlDatabase db, QWidget *parent) :
     t = t.addDays(-7);
     m_ui->fromDateEdit->setDateTime(t);
     on_executeButton_clicked();
+
+    m_ui->distributionTreeWidget->setItemDelegate(new ProgressBarItemDelegate(this));
+    m_ui->topArtistsTreeWidget->setItemDelegate(new ProgressBarItemDelegate(this));
+    m_ui->topSongsTreeWidget->setItemDelegate(new ProgressBarItemDelegate(this));
+    m_ui->topGenresTreeWidget->setItemDelegate(new ProgressBarItemDelegate(this));
 }
 
 HistoryWindow::~HistoryWindow()
@@ -197,11 +203,9 @@ void HistoryWindow::loadDistribution()
         QTreeWidgetItem *item = new QTreeWidgetItem();
         item->setText(0, dayStr);
         topLevelItem->addChild(item);
-        QProgressBar *countBar = new QProgressBar();
-        countBar->setMaximum(maxCount);
-        countBar->setFormat("%v");
-        countBar->setValue(query.value(0).toInt());
-        m_ui->distributionTreeWidget->setItemWidget(item, 1, countBar);
+        item->setData(1, ProgressBarRole, true);
+        item->setData(1, ProgressBarMaxRole, maxCount);
+        item->setData(1, ProgressBarValueRole, query.value(0).toInt());
     }
 
     m_ui->distributionTreeWidget->expandAll();
@@ -253,11 +257,9 @@ void HistoryWindow::loadTopSongs()
         if(!maxCount)
             maxCount = query.value(0).toInt();
 
-        QProgressBar *countBar = new QProgressBar();
-        countBar->setMaximum(maxCount);
-        countBar->setFormat("%v");
-        countBar->setValue(query.value(0).toInt());
-        m_ui->topSongsTreeWidget->setItemWidget(item, 1, countBar);
+        item->setData(1, ProgressBarRole, true);
+        item->setData(1, ProgressBarMaxRole, maxCount);
+        item->setData(1, ProgressBarValueRole, query.value(0).toInt());
     }
 }
 
@@ -294,11 +296,9 @@ void HistoryWindow::loadTopArtists()
         if(!maxCount)
             maxCount = query.value(0).toInt();
 
-        QProgressBar *countBar = new QProgressBar();
-        countBar->setMaximum(maxCount);
-        countBar->setFormat("%v");
-        countBar->setValue(query.value(0).toInt());
-        m_ui->topArtistsTreeWidget->setItemWidget(item, 1, countBar);
+        item->setData(1, ProgressBarRole, true);
+        item->setData(1, ProgressBarMaxRole, maxCount);
+        item->setData(1, ProgressBarValueRole, query.value(0).toInt());
     }
 }
 
@@ -335,11 +335,9 @@ void HistoryWindow::loadTopGenres()
         if(!maxCount)
             maxCount = query.value(0).toInt();
 
-        QProgressBar *countBar = new QProgressBar();
-        countBar->setMaximum(maxCount);
-        countBar->setFormat("%v");
-        countBar->setValue(query.value(0).toInt());
-        m_ui->topGenresTreeWidget->setItemWidget(item, 1, countBar);
+        item->setData(1, ProgressBarRole, true);
+        item->setData(1, ProgressBarMaxRole, maxCount);
+        item->setData(1, ProgressBarValueRole, query.value(0).toInt());
     }
 }
 
