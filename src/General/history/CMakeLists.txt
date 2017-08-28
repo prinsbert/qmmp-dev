@@ -20,6 +20,7 @@ SET(libhistory_SRCS
     historyfactory.cpp
     historysettingsdialog.cpp
     historywindow.cpp
+    progressbaritemdelegate.cpp
 )
 
 SET(libhistory_RCCS translations/translations.qrc)
