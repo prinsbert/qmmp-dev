@@ -1,23 +1,24 @@
 include(../../plugins.pri)
-FORMS += settingsdialog.ui
+
+TARGET = $$PLUGINS_PREFIX/Input/wildmidi
+
 HEADERS += decoderwildmidifactory.h \
     decoder_wildmidi.h \
     wildmidihelper.h \
     settingsdialog.h
+
 SOURCES += decoder_wildmidi.cpp \
     decoderwildmidifactory.cpp \
     wildmidihelper.cpp \
     settingsdialog.cpp
-TARGET = $$PLUGINS_PREFIX/Input/wildmidi
-QMAKE_CLEAN = $$PLUGINS_PREFIX/Input/libwildmidi.so
-CONFIG += warn_on \
-    plugin
-TEMPLATE = lib
-LIBS += -lqmmp \
-    -L/usr/lib \
+
+FORMS += settingsdialog.ui
+
+RESOURCES = translations/translations.qrc
+
+LIBS += -L/usr/lib \
     -I/usr/include \
     -lWildMidi
 
-RESOURCES = translations/translations.qrc
 target.path = $$LIB_DIR/qmmp/Input
 INSTALLS += target

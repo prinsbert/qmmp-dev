@@ -1,39 +1,27 @@
 include(../../qmmp.pri)
 
+TEMPLATE = app
+
+unix:TARGET = ../../bin/qmmp
+win32:TARGET = ../../../bin/qmmp
+
+QT += network
+
 HEADERS += qmmpstarter.h \
            builtincommandlineoption.h
 
 SOURCES += qmmpstarter.cpp \
            builtincommandlineoption.cpp \
-    main.cpp
+           main.cpp
 
-
-
-# Some conf to redirect intermediate stuff in separate dirs
-UI_DIR = ./.build/ui/
-MOC_DIR = ./.build/moc/
-OBJECTS_DIR = ./.build/obj
-QT += network
-unix:TARGET = ../../bin/qmmp
-win32:TARGET = ../../../bin/qmmp
-CONFIG += thread \
-    warn_on
-QMAKE_LIBDIR += ../../lib \
-    qmmpui
-
-unix:LIBS += -L../../lib \
-    -lqmmp \
-    -lqmmpui
-win32:LIBS += -L../../bin \
-    -lqmmp0 \
-    -lqmmpui0
-
-win32:RC_FILE = qmmp.rc
+RESOURCES = images/images.qrc translations/qmmp_locales.qrc
 
 INCLUDEPATH += ../
-RESOURCES = images/images.qrc
-TEMPLATE = app
+
+
 unix {
+    LIBS += -lqmmp -lqmmpui
+    QMAKE_LIBDIR += ../../lib
     target.path = /bin
     desktop.files = qmmp.desktop \
         qmmp_enqueue.desktop \
@@ -55,4 +43,9 @@ unix {
         icon48 \
         icon_svg
 }
-RESOURCES += translations/qmmp_locales.qrc
+
+win32 {
+    LIBS += -lqmmp0 -lqmmpui0
+    QMAKE_LIBDIR += ../../bin
+    RC_FILE = qmmp.rc
+}

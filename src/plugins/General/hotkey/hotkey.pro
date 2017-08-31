@@ -1,19 +1,6 @@
 include(../../plugins.pri)
 
-CONFIG += warn_on \
-plugin  \
- lib  \
- link_pkgconfig
-
-
 TARGET = $$PLUGINS_PREFIX/General/hotkey
-
-
-TEMPLATE = lib
-
-RESOURCES = translations/translations.qrc
-
-target.path = $$LIB_DIR/qmmp/General
 
 HEADERS += hotkeyfactory.h \
            hotkeymanager.h \
@@ -29,16 +16,14 @@ SOURCES += hotkeyfactory.cpp \
 FORMS += settingsdialog.ui \
          hotkeydialog.ui
 
+RESOURCES = translations/translations.qrc
+
+LIBS += $$QMMPUI_LIB
+
 unix {
     target.path = $$LIB_DIR/qmmp/General
     INSTALLS += target
-    QMAKE_CLEAN = $$PLUGINS_PREFIX/General/libhotkey.so
     PKGCONFIG += x11
     DEFINES += HAVE_XKBLIB_H
-    LIBS += -lqmmpui -lqmmp
     QT += x11extras
-}
-
-win32 {
-    LIBS += -lqmmpui0 -lqmmp0
 }

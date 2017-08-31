@@ -1,26 +1,16 @@
 include(../../plugins.pri)
 
+TARGET = $$PLUGINS_PREFIX/Output/pulseaudio
+
 HEADERS += outputpulseaudiofactory.h \
            outputpulseaudio.h
 
 SOURCES += outputpulseaudiofactory.cpp \
            outputpulseaudio.cpp
 
-
-TARGET=$$PLUGINS_PREFIX/Output/pulseaudio
-QMAKE_CLEAN =$$PLUGINS_PREFIX/Output/libpulseaudio.so
-
-CONFIG += warn_on \
-thread \
-plugin \
-link_pkgconfig
-
-TEMPLATE = lib
-LIBS += -lqmmp
+RESOURCES = translations/translations.qrc
 
 PKGCONFIG += libpulse-simple
-
-RESOURCES = translations/translations.qrc
 
 target.path = $$LIB_DIR/qmmp/Output
 INSTALLS += target

@@ -1,11 +1,7 @@
 include(../../plugins.pri)
-FORMS += \
-    forms/preseteditor.ui \
-    forms/playlistbrowser.ui \
-    forms/popupsettings.ui \
-    forms/shortcutdialog.ui \
-    forms/skinnedsettings.ui \
-    forms/hotkeyeditor.ui
+
+TARGET = $$PLUGINS_PREFIX/Ui/skinned
+
 HEADERS += mainwindow.h \
     button.h \
     display.h \
@@ -58,6 +54,7 @@ HEADERS += mainwindow.h \
     listwidgetdrawer.h \
     playlistheader.h \
     horizontalslider.h
+
 SOURCES += mainwindow.cpp \
     button.cpp \
     display.cpp \
@@ -110,28 +107,24 @@ SOURCES += mainwindow.cpp \
     playlistheader.cpp \
     horizontalslider.cpp
 
-TEMPLATE = lib
-unix:LIBS += -lqmmpui -lqmmp
+FORMS += \
+    forms/preseteditor.ui \
+    forms/playlistbrowser.ui \
+    forms/popupsettings.ui \
+    forms/shortcutdialog.ui \
+    forms/skinnedsettings.ui \
+    forms/hotkeyeditor.ui
 
-win32:LIBS += -lqmmpui0 -lqmmp0
+RESOURCES = resources/resources.qrc \
+            glare/glare.qrc \
+            translations/translations.qrc
 
-CONFIG += warn_on \
-          plugin
-
-TARGET = $$PLUGINS_PREFIX/Ui/skinned
-
-unix:LIBS += -lqmmp -lqmmpui
-win32:LIBS += -lqmmp0 -lqmmpui0
-
-RESOURCES = resources/resources.qrc glare/glare.qrc
+LIBS += $$QMMPUI_LIB
 
 unix {
-target.path = $$LIB_DIR/qmmp/Ui
-INSTALLS += target
-CONFIG += link_pkgconfig
-PKGCONFIG += x11
-DEFINES += QMMP_WS_X11
-QT += x11extras
+    target.path = $$LIB_DIR/qmmp/Ui
+    INSTALLS += target
+    PKGCONFIG += x11
+    DEFINES += QMMP_WS_X11
+    QT += x11extras
 }
-
-RESOURCES += translations/translations.qrc

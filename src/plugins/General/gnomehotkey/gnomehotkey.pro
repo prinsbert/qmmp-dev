@@ -1,21 +1,8 @@
 include(../../plugins.pri)
 
-CONFIG += warn_on \
-plugin  \
- lib
+TARGET = $$PLUGINS_PREFIX/General/gnomehotkey
 
 QT += dbus
-
-TARGET = $$PLUGINS_PREFIX/General/gnomehotkey
-QMAKE_CLEAN = $$PLUGINS_PREFIX/General/libgnomehotkey.so
-
-TEMPLATE = lib
-
-RESOURCES = translations/translations.qrc
-
-target.path = $$LIB_DIR/qmmp/General
-INSTALLS += target
-
 
 HEADERS += gnomehotkeyfactory.h \
     mediakeys.h
@@ -23,4 +10,9 @@ HEADERS += gnomehotkeyfactory.h \
 SOURCES += gnomehotkeyfactory.cpp \
     mediakeys.cpp
 
-LIBS += -lqmmpui -lqmmp
+RESOURCES = translations/translations.qrc
+
+LIBS += $$QMMPUI_LIB
+
+target.path = $$LIB_DIR/qmmp/General
+INSTALLS += target

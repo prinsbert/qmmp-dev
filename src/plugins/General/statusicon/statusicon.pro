@@ -1,36 +1,29 @@
 include(../../plugins.pri)
-CONFIG += warn_on \
-    plugin
-unix:TARGET = $$PLUGINS_PREFIX/General/statusicon
-unix:QMAKE_CLEAN = $$PLUGINS_PREFIX/General/libstatusicon.so
-win32:TARGET = $$PLUGINS_PREFIX/General/statusicon
-TEMPLATE = lib
-unix {
-    LIBS += -lqmmpui \
-        -lqmmp
-}
-win32 {
-    LIBS += -lqmmpui0 \
-        -lqmmp0
-}
 
-RESOURCES = translations/translations.qrc
-unix {
-    target.path = $$LIB_DIR/qmmp/General
-    INSTALLS += target
-}
-RESOURCES += images/tray_images.qrc
+TARGET = $$PLUGINS_PREFIX/General/statusicon
+
 HEADERS += statusiconfactory.h \
     statusicon.h \
     settingsdialog.h \
     qmmptrayicon.h \
     statusiconpopupwidget.h \
     coverwidget.h
+
 SOURCES += statusiconfactory.cpp \
     statusicon.cpp \
     settingsdialog.cpp \
     qmmptrayicon.cpp \
     statusiconpopupwidget.cpp \
     coverwidget.cpp
+
 FORMS += settingsdialog.ui
-win32:HEADERS += ../../../../src/qmmpui/general.h
+
+RESOURCES = translations/translations.qrc \
+            images/tray_images.qrc
+
+LIBS += $$QMMPUI_LIB
+
+unix {
+    target.path = $$LIB_DIR/qmmp/General
+    INSTALLS += target
+}

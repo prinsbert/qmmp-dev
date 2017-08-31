@@ -1,5 +1,7 @@
 include(../../plugins.pri)
 
+TARGET = $$PLUGINS_PREFIX/Input/archive
+
 HEADERS += \
     archiveinputdevice.h \
     decoderarchivefactory.h \
@@ -14,24 +16,10 @@ SOURCES += \
     archivetagreader.cpp \
     archivemetadatamodel.cpp
 
-TARGET=$$PLUGINS_PREFIX/Input/archive
-
-CONFIG += warn_on \
-plugin \
-link_pkgconfig
-
-TEMPLATE = lib
-
 RESOURCES = translations/translations.qrc
 
 unix {
     target.path = $$LIB_DIR/qmmp/Input
     INSTALLS += target
-    LIBS += -lqmmp
     PKGCONFIG += libarchive taglib
-    QMAKE_CLEAN =$$PLUGINS_PREFIX/Input/libarchive.so
-}
-
-win32 {
-    LIBS += -lqmmp0 -larchive -ltag
 }

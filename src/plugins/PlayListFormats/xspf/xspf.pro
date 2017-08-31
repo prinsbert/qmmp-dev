@@ -1,25 +1,14 @@
 include(../../plugins.pri)
 
-CONFIG += warn_on \
-plugin  \
- lib
-
-TARGET =$$PLUGINS_PREFIX/PlayListFormats/xspfplaylistformat
-
-TEMPLATE = lib
+TARGET = $$PLUGINS_PREFIX/PlayListFormats/xspfplaylistformat
 
 SOURCES += xspfplaylistformat.cpp
+
 HEADERS += xspfplaylistformat.h
+
+LIBS += $$QMMPUI_LIB
 
 unix {
     target.path = $$LIB_DIR/qmmp/PlayListFormats
     INSTALLS += target
-
-    QMAKE_CLEAN =$$PLUGINS_PREFIX/PlayListFormats/libxsplaylistformat.so
-    LIBS += -lqmmpui -lqmmp
 }
-
-win32 {
-    LIBS += -lqmmpui0 -lqmmp0
-}
-

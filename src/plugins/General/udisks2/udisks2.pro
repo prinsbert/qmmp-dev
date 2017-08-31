@@ -1,21 +1,8 @@
 include(../../plugins.pri)
 
-CONFIG += warn_on \
-plugin  \
- lib
+TARGET = $$PLUGINS_PREFIX/General/udisks2
 
 QT += dbus
-
-TARGET = $$PLUGINS_PREFIX/General/udisks2
-QMAKE_CLEAN = $$PLUGINS_PREFIX/General/libudisks2.so
-
-TEMPLATE = lib
-
-RESOURCES = translations/translations.qrc
-
-target.path = $$LIB_DIR/qmmp/General
-INSTALLS += target
-
 
 HEADERS += udisks2factory.h \
            udisks2plugin.h \
@@ -29,6 +16,11 @@ SOURCES += udisks2factory.cpp \
            udisks2device.cpp \
            settingsdialog.cpp
 
-LIBS += -lqmmpui -lqmmp
-
 FORMS += settingsdialog.ui
+
+RESOURCES = translations/translations.qrc
+
+LIBS += $$QMMPUI_LIB
+
+target.path = $$LIB_DIR/qmmp/General
+INSTALLS += target
