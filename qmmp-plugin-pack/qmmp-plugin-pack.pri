@@ -1,5 +1,9 @@
 #Common settings for Qmmp Plugin Pack build
 
+#Extra clean target
+
+unix: QMAKE_DISTCLEAN += -r .build
+
 #Some conf to redirect intermediate stuff in separate dirs
 UI_DIR=./.build/ui
 MOC_DIR=./.build/moc
