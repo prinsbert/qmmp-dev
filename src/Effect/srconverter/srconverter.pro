@@ -1,6 +1,6 @@
 include(../../plugins.pri)
 
-TARGET=$$PLUGINS_PREFIX/Effect/srconverter
+TARGET = $$PLUGINS_PREFIX/Effect/srconverter
 
 HEADERS += srconverter.h \
  effectsrconverterfactory.h \

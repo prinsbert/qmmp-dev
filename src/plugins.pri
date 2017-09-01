@@ -14,5 +14,5 @@ unix {
     PKGCONFIG += qmmp
 }
 
-CONFIG += warn_on plugin lib link_pkgconfig
+CONFIG += warn_on plugin lib link_pkgconfig hide_symbols
 TEMPLATE = lib
