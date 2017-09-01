@@ -2,47 +2,6 @@ include(../../plugins.pri)
 
 TARGET = $$PLUGINS_PREFIX/Visual/goom
 
-CONFIG += warn_on \
-    plugin \
-    link_pkgconfig
-TEMPLATE = lib
-
-RESOURCES = translations/translations.qrc
-
-
-DEFINES += YY_NO_INPUT
-
-contains(CONFIG, GOOM_ASM) {
-   contains(QT_ARCH, i386){
-      DEFINES += CPU_X86 ARCH_X86_32
-      message(Architecture is x86)
-      HEADERS += mmx.h
-      SOURCES += mmx.c xmmx.c
-   }
-   contains(QT_ARCH, x86_64){
-      #unsupported
-      DEFINES += CPU_X86 ARCH_X86_64
-      message(Architecture is x86_64)
-      HEADERS += mmx.h
-      SOURCES += mmx.c xmmx.c
-   }
-}
-
-QMAKE_CFLAGS += -Werror=implicit-function-declaration
-
-unix {
-    isEmpty(LIB_DIR):LIB_DIR = /lib
-    target.path = $$LIB_DIR/qmmp/Visual
-    INSTALLS += target
-
-    PKGCONFIG += qmmp
-    QMAKE_CLEAN = $$PLUGINS_PREFIX/Visual/libgoom.so
-}
-
-win32 {
-    LIBS += -lqmmp0
-}
-
 HEADERS += \
     goomwidget.h \
     visualgoomfactory.h \
@@ -105,3 +64,31 @@ SOURCES += \
     tentacle3d.c \
     v3d.c
 
+RESOURCES = translations/translations.qrc
+
+
+DEFINES += YY_NO_INPUT
+
+contains(CONFIG, GOOM_ASM) {
+   contains(QT_ARCH, i386){
+      DEFINES += CPU_X86 ARCH_X86_32
+      message(Architecture is x86)
+      HEADERS += mmx.h
+      SOURCES += mmx.c xmmx.c
+   }
+   contains(QT_ARCH, x86_64){
+      #unsupported
+      DEFINES += CPU_X86 ARCH_X86_64
+      message(Architecture is x86_64)
+      HEADERS += mmx.h
+      SOURCES += mmx.c xmmx.c
+   }
+}
+
+QMAKE_CFLAGS += -Werror=implicit-function-declaration
+
+unix {
+    target.path = $$LIB_DIR/qmmp/Visual
+    INSTALLS += target
+    PKGCONFIG += qmmp
+}

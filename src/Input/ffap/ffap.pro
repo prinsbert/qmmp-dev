@@ -1,17 +1,20 @@
 include(../../plugins.pri)
 
+TARGET = $$PLUGINS_PREFIX/Input/ffap
 
 HEADERS += decoderffapfactory.h ffap.h decoder_ffap.h \
     cueparser.h \
     ffapmetadatamodel.h \
     replaygainreader.h \
     decoder_ffapcue.h
+
 SOURCES += decoderffapfactory.cpp ffap.c decoder_ffap.cpp \
     cueparser.cpp \
     ffapmetadatamodel.cpp \
     replaygainreader.cpp \
     decoder_ffapcue.cpp
 
+RESOURCES = translations/translations.qrc
 
 contains(CONFIG, FFAP_YASM) {
   contains(QT_ARCH, i386)|contains(QT_ARCH, x86_64) {
@@ -40,27 +43,11 @@ contains(CONFIG, FFAP_YASM) {
   }
 }
 
-
-TARGET = $$PLUGINS_PREFIX/Input/ffap
-unix:QMAKE_CLEAN = $$PLUGINS_PREFIX/Input/libffap.so
-
-
-CONFIG += warn_on \
-    plugin \
-    link_pkgconfig
-TEMPLATE = lib
-
-unix:PKGCONFIG += qmmp taglib
-
-RESOURCES = translations/translations.qrc
 unix {
-    isEmpty(LIB_DIR):LIB_DIR = /lib
+    PKGCONFIG += taglib
     target.path = $$LIB_DIR/qmmp/Input
     INSTALLS += target
 }
 win32 {
-    QMAKE_LIBDIR += ../../../../bin
-    LIBS += -lqmmp0 -ltag.dll
+    LIBS += -ltag.dll
 }
-
-
