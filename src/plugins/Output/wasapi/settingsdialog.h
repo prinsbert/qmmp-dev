@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2017 by Ilya Kotov                                      *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,49 +18,25 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QMessageBox>
-#include <QTranslator>
-#include "settingsdialog.h"
-#include "outputwasapi.h"
-#include "outputwasapifactory.h"
+#ifndef SETTINGSDIALOG_H
+#define SETTINGSDIALOG_H
 
-const OutputProperties OutputWASAPIFactory::properties() const
-{
-    OutputProperties properties;
-    properties.name = tr("WASAPI Plugin");
-    properties.hasAbout = true;
-    properties.hasSettings = true;
-    properties.shortName = "wasapi";
-    return properties;
-}
+#include <QDialog>
+#include "ui_settingsdialog.h"
 
-Output* OutputWASAPIFactory::create()
+class SettingsDialog : public QDialog
 {
-    return new OutputWASAPI();
-}
+    Q_OBJECT
+public:
+    explicit SettingsDialog(QWidget *parent = 0);
 
-Volume *OutputWASAPIFactory::createVolume()
-{
-    return new VolumeWASAPI;
-}
+public slots:
+    void accept();
 
-void OutputWASAPIFactory::showSettings(QWidget* parent)
-{
-    SettingsDialog *s = new SettingsDialog(parent);
-    s->show();
-}
+private:
+    void enumDevices();
+    Ui::SettingsDialog m_ui;
 
-void OutputWASAPIFactory::showAbout(QWidget *parent)
-{
-   QMessageBox::about (parent, tr("About WASAPI Output Plugin"),
-                        tr("Qmmp WASAPI Output Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>"));
-}
+};
 
-QTranslator *OutputWASAPIFactory::createTranslator(QObject *parent)
-{
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/wasapi_plugin_") + locale);
-    return translator;
-}
+#endif // SETTINGSDIALOG_H
