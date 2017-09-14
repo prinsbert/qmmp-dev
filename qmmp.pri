@@ -10,12 +10,16 @@ MOC_DIR=./.build/moc/
 OBJECTS_DIR=./.build/obj
 RCC_DIR=./.build/rcc
 
-CONFIG -= depend_includepath
+#Defines
 
-QT += widgets
+DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS
 DEFINES += QMMP_WS_X11
-
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x050400
+
+#Configuration
+
+CONFIG -= depend_includepath
+QT += widgets
 
 #Version
 
