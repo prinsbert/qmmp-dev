@@ -1,10 +1,5 @@
 project(app)
 
-if(COMMAND cmake_policy)
-   cmake_policy(SET CMP0003 NEW)
-   cmake_policy(SET CMP0005 OLD)
-endif(COMMAND cmake_policy) 
-
 INCLUDE(UsePkgConfig)
 
 ADD_DEFINITIONS( -Wall )

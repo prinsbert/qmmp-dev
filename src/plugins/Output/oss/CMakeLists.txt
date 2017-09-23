@@ -1,9 +1,5 @@
 project(liboss)
 
-if(COMMAND cmake_policy)
-cmake_policy(SET CMP0003 NEW)
-endif(COMMAND cmake_policy)
-
 INCLUDE(CheckIncludeFile)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -44,4 +40,3 @@ ADD_LIBRARY(oss MODULE ${liboss_SRCS} ${liboss_UIS_H}
 add_dependencies(oss qmmp)
 target_link_libraries(oss Qt5::Widgets -lqmmp)
 install(TARGETS oss DESTINATION ${LIB_DIR}/qmmp/Output)
-

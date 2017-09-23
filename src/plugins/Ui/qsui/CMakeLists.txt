@@ -1,11 +1,5 @@
 project(qsui)
 
-if(COMMAND cmake_policy)
-    cmake_policy(SET CMP0003 OLD)
-    cmake_policy(SET CMP0005 OLD)
-endif(COMMAND cmake_policy)
-
-
 # libqmmpui & libqmmp
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
