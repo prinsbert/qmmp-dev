@@ -1,12 +1,9 @@
 project(libqmmp)
 
-if(COMMAND cmake_policy)
-    cmake_policy(SET CMP0003 OLD)
-    cmake_policy(SET CMP0005 OLD)
-endif(COMMAND cmake_policy)
-
-ADD_DEFINITIONS(-DLIB_DIR=\\\"/${LIB_DIR}\\\")
-ADD_DEFINITIONS(-DQMMP_INSTALL_PREFIX=\\\"${CMAKE_INSTALL_PREFIX}\\\")
+SET(libqmmp_DEFINES
+    LIB_DIR="/${LIB_DIR}"
+    QMMP_INSTALL_PREFIX="${CMAKE_INSTALL_PREFIX}"
+)
 
 IF(NOT QMMP_VERSION_STABLE) #add svn revision
 execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/svn_revision.sh
@@ -14,16 +11,15 @@ execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/svn_revision.sh
                 OUTPUT_VARIABLE SVN_REVISION
                 OUTPUT_STRIP_TRAILING_WHITESPACE)
 IF(SVN_REVISION)
-ADD_DEFINITIONS(-DSVN_REVISION=\\\"${SVN_REVISION}\\\")
+SET(libqmmp_DEFINES ${libqmmp_DEFINES} SVN_REVISION="${SVN_REVISION}")
 ENDIF(SVN_REVISION)
 ENDIF(NOT QMMP_VERSION_STABLE)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-
 SET(QMMP_DEFAULT_OUTPUT "" CACHE STRING "default output plugin")
 IF(QMMP_DEFAULT_OUTPUT)
-    ADD_DEFINITIONS(-DQMMP_DEFAULT_OUTPUT=\\\"${QMMP_DEFAULT_OUTPUT}\\\")
+    SET(libqmmp_DEFINES ${libqmmp_DEFINES} QMMP_DEFAULT_OUTPUT="${QMMP_DEFAULT_OUTPUT}")
     MESSAGE(STATUS "Default output: ${QMMP_DEFAULT_OUTPUT}")
 ENDIF(QMMP_DEFAULT_OUTPUT)
 
@@ -132,6 +128,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 ADD_LIBRARY(libqmmp SHARED ${libqmmp_SRCS} ${libqmmp_HDRS})
 target_link_libraries(libqmmp Qt5::Widgets)
 SET_TARGET_PROPERTIES(libqmmp PROPERTIES VERSION ${QMMP_VERSION} SOVERSION ${QMMP_SOVERSION} OUTPUT_NAME qmmp)
+target_compile_definitions(libqmmp PRIVATE ${libqmmp_DEFINES})
 install(TARGETS libqmmp LIBRARY DESTINATION ${LIB_DIR}
                         RUNTIME DESTINATION bin
                         ARCHIVE DESTINATION ${LIB_DIR})

@@ -1,9 +1,5 @@
 project(libffmpeg)
 
-if(COMMAND cmake_policy)
-cmake_policy(SET CMP0003 NEW)
-endif(COMMAND cmake_policy)
-
 # fixes ffmpeg defines
 ADD_DEFINITIONS(-D__STDC_CONSTANT_MACROS)
 
