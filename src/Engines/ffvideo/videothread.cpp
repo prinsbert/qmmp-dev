@@ -22,6 +22,7 @@
 #include <QTime>
 #include "packetbuffer.h"
 #include "videowindow.h"
+#include "ffvideodecoder.h"
 #include "videothread.h"
 
 VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
@@ -31,11 +32,11 @@ VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
     m_output = 0;
 }
 
-bool VideoThread::initialize(AVCodecContext *ctx, AVStream *s, VideoWindow *w)
+bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
 {
-    m_context = ctx;
-    m_w = w;
-    m_stream = s;
+    m_context = decoder->videoCodecContext();
+    m_stream = decoder->formatContext()->streams[decoder->videoIndex()];
+    m_videoWindow = w;
     return true;
 }
 
@@ -95,8 +96,9 @@ void VideoThread::run()
         if(p->pts * 1000 * av_q2d(m_stream->time_base) > t.elapsed())
         {
 
-            m_buffer->cond()->wakeAll();
             m_buffer->mutex()->unlock();
+            m_buffer->cond()->wakeAll();
+
             usleep(50);
             qDebug("+++c");
             continue;
@@ -115,7 +117,7 @@ void VideoThread::run()
         m_buffer->cond()->wakeAll();
         m_buffer->mutex()->unlock();
 
-        qDebug("2");
+        qDebug("+2");
 
         if(avcodec_receive_frame(m_context, frame) == 0)
         {
@@ -123,12 +125,12 @@ void VideoThread::run()
             //uint8_t *pix[] = { img.bits() };
             int r = sws_scale(sws, frame->data, frame->linesize, 0, frame->height, frameRGB->data, frameRGB->linesize);
             QImage img(frameRGB->data[0], m_context->width, m_context->height, frameRGB->linesize[0], QImage::Format_RGB888);
-            m_w->addImage(img);
+            m_videoWindow->addImage(img);
             av_frame_unref(frame);
         }
         else
             qDebug("fail 2");
-        qDebug("3");
+        qDebug("+3");
     }
     av_frame_free(&frame);
     sws_freeContext(sws);

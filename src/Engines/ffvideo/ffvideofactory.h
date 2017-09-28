@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2006-2015 by Ilya Kotov                                 *
  *   forkotov02@hotmail.ru                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,43 +17,33 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef FFVIDEOFACTORY_H
+#define FFVIDEOFACTORY_H
 
-#ifndef AUDIOTHREAD_H
-#define AUDIOTHREAD_H
+#include <QObject>
+#include <QString>
+#include <QIODevice>
+#include <QWidget>
 
-extern "C"{
-#include <libavformat/avformat.h>
-#include <libavcodec/avcodec.h>
-#include <libavcodec/version.h>
-#include <libavutil/mathematics.h>
-#include <libavutil/dict.h>
-#include <libswscale/swscale.h>
-#include <libswresample/swresample.h>
-}
+#include <qmmp/abstractengine.h>
+#include <qmmp/enginefactory.h>
+#include <qmmp/fileinfo.h>
+#include <qmmp/metadatamodel.h>
 
-#include <QThread>
-#include <QMutex>
-
-class Output;
-class PacketBuffer;
-class FFVideoDecoder;
-
-class AudioThread : public QThread
+class FFVideoFactory : public QObject, EngineFactory
 {
-    Q_OBJECT
+Q_OBJECT
+Q_INTERFACES(EngineFactory)
+
 public:
-    explicit AudioThread(PacketBuffer *buf, QObject *parent = 0);
-
-    bool initialize(FFVideoDecoder *decoder);
-
-private:
-    void run();
-
-    QMutex m_mutex;
-    AVCodecContext *m_context;
-    Output *m_output;
-    PacketBuffer *m_buffer;
-
+    const EngineProperties properties() const;
+    bool supports(const QString &source) const;
+    AbstractEngine *create(QObject *parent = 0);
+    QList<FileInfo *> createPlayList(const QString &fileName, bool useMetaData, QStringList *);
+    MetaDataModel* createMetaDataModel(const QString &path, QObject *parent = 0);
+    void showSettings(QWidget *parent);
+    void showAbout(QWidget *parent);
+    QTranslator *createTranslator(QObject *parent);
 };
 
-#endif // AUDIOTHREAD_H
+#endif
