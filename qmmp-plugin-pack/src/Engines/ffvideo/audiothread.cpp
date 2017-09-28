@@ -21,6 +21,7 @@
 #include <QtDebug>
 #include <qmmp/output.h>
 #include "packetbuffer.h"
+#include "ffvideodecoder.h"
 #include "audiothread.h"
 
 
@@ -31,9 +32,9 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
     m_output = 0;
 }
 
-bool AudioThread::initialize(AVCodecContext *ctx)
+bool AudioThread::initialize(FFVideoDecoder *decoder)
 {
-    m_context = ctx;
+    m_context = decoder->audioCodecContext();
     m_output = Output::create();
 
     if(!m_output)
@@ -113,8 +114,9 @@ void AudioThread::run()
             m_buffer->done();
         }
 
-        m_buffer->cond()->wakeAll();
         m_buffer->mutex()->unlock();
+        m_buffer->cond()->wakeAll();
+
 
         if(avcodec_receive_frame(m_context, frame) == 0)
         {

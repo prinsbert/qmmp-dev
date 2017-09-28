@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef AUDIOTHREAD_H
-#define AUDIOTHREAD_H
+#ifndef FFMPEGENGINE_H
+#define FFMPEGENGINE_H
 
 extern "C"{
 #include <libavformat/avformat.h>
@@ -27,33 +27,60 @@ extern "C"{
 #include <libavcodec/version.h>
 #include <libavutil/mathematics.h>
 #include <libavutil/dict.h>
-#include <libswscale/swscale.h>
-#include <libswresample/swresample.h>
 }
 
-#include <QThread>
-#include <QMutex>
+#include <QQueue>
+#include <QString>
+#include <QProcess>
+#include <QSharedPointer>
+#include <qmmp/statehandler.h>
+#include <qmmp/abstractengine.h>
+#include "ffvideodecoder.h"
 
 class Output;
+class QIDevice;
+class QMenu;
+class QProcess;
+class FileInfo;
+class InputSource;
 class PacketBuffer;
-class FFVideoDecoder;
+class AudioThread;
+class VideoThread;
+class VideoWindow;
 
-class AudioThread : public QThread
+class FFmpegEngine : public AbstractEngine
 {
     Q_OBJECT
 public:
-    explicit AudioThread(PacketBuffer *buf, QObject *parent = 0);
+    FFmpegEngine(EngineFactory *factory, QObject *parent);
+    virtual ~FFmpegEngine();
 
-    bool initialize(FFVideoDecoder *decoder);
+    // Engine API
+    bool play();
+    bool enqueue(InputSource *source);
+    void seek(qint64);
+    void stop();
+    void pause();
+    void setMuted(bool muted);
+
 
 private:
     void run();
+    void clearDecoders();
+    void reset();
 
-    QMutex m_mutex;
-    AVCodecContext *m_context;
-    Output *m_output;
-    PacketBuffer *m_buffer;
-
+    EngineFactory *m_factory;
+    PacketBuffer *m_audioBuffer;
+    PacketBuffer *m_videoBuffer;
+    AudioThread *m_audioThread;
+    VideoThread *m_videoThread;
+    QQueue <FFVideoDecoder*> m_decoders;
+    QHash <FFVideoDecoder*, InputSource*> m_inputs;
+    VideoWindow *m_videoWindow;
+    FFVideoDecoder *m_decoder;
+    bool m_done, m_finish, m_user_stop;
+    QSharedPointer<QMap<Qmmp::MetaData, QString> > m_metaData;
 };
 
-#endif // AUDIOTHREAD_H
+
+#endif // FFMPEGENGINE_H
