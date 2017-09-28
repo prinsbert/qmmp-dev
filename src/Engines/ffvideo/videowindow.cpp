@@ -27,6 +27,7 @@ VideoWindow::VideoWindow(QWidget *parent) :
     QWidget(0)
 {
     setAutoFillBackground(false);
+    resize(1027, 758);
 }
 
 void VideoWindow::addImage(const QImage &img)

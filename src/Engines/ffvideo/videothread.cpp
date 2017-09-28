@@ -38,6 +38,7 @@ bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
     m_context = decoder->videoCodecContext();
     m_stream = decoder->formatContext()->streams[decoder->videoIndex()];
     m_videoWindow = w;
+    m_window_size = w->size();
     return true;
 }
 
@@ -60,15 +61,18 @@ void VideoThread::run()
     m_user_stop = false;
 
 
-    av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width, m_context->height, AV_PIX_FMT_RGB24, 32);
+    double ratio = qMin(double(m_window_size.width()) / m_context->width, double(m_window_size.height()) / m_context->height);
+    qDebug("%f %d %d", ratio, m_window_size.height(), m_context->height);
+
+    av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width * ratio, m_context->height * ratio, AV_PIX_FMT_RGB24, 32);
     t.start();
 
     SwsContext *sws = sws_getContext (
                 m_context->width,
                 m_context->height,
                 m_context->pix_fmt,
-                m_context->width,
-                m_context->height,
+                m_context->width * ratio,
+                m_context->height * ratio,
                 AV_PIX_FMT_RGB24,
                 SWS_BICUBIC, 0, 0, 0);
 
@@ -116,7 +120,7 @@ void VideoThread::run()
         if(avcodec_receive_frame(m_context, frame) == 0)
         {
             int r = sws_scale(sws, frame->data, frame->linesize, 0, frame->height, frameRGB->data, frameRGB->linesize);
-            QImage img(frameRGB->data[0], m_context->width, m_context->height, frameRGB->linesize[0], QImage::Format_RGB888);
+            QImage img(frameRGB->data[0], m_context->width * ratio, m_context->height * ratio, frameRGB->linesize[0], QImage::Format_RGB888);
             m_videoWindow->addImage(img);
             av_frame_unref(frame);
         }
@@ -125,3 +129,13 @@ void VideoThread::run()
     av_frame_free(&frameRGB);
     sws_freeContext(sws);
 }
+QSize VideoThread::windowSize() const
+{
+    return m_window_size;
+}
+
+void VideoThread::setWindowSize(const QSize &windowSize)
+{
+    m_window_size = windowSize;
+}
+
