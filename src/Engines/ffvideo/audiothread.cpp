@@ -30,6 +30,7 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
 {
     m_buffer = buf;
     m_output = 0;
+    m_user_stop = false;
 }
 
 bool AudioThread::initialize(FFVideoDecoder *decoder)
@@ -80,10 +81,20 @@ bool AudioThread::initialize(FFVideoDecoder *decoder)
     return ok;
 }
 
+QMutex *AudioThread::mutex()
+{
+    return &m_mutex;
+}
+
+void AudioThread::stop()
+{
+    m_user_stop = true;
+}
+
 void AudioThread::run()
 {
-    qDebug("%s", Q_FUNC_INFO);
     bool done = false;
+    m_user_stop = false;
     AVFrame *frame = av_frame_alloc();
     AVFrame *oframe = av_frame_alloc();
     SwrContext *swr = swr_alloc_set_opts(NULL,                      // we're allocating a new context
@@ -97,15 +108,25 @@ void AudioThread::run()
 
     while (!done)
     {
+        mutex()->lock ();
         m_buffer->mutex()->lock();
-
-        while (m_buffer->empty() && !done)
+        while (m_buffer->empty() && !m_user_stop)
         {
-            qDebug("++++");
-            m_buffer->cond()->wakeOne();
+            mutex()->unlock ();
             m_buffer->cond()->wait(m_buffer->mutex());
-            qDebug("++++1");
+            mutex()->lock ();
         }
+
+        if(m_user_stop)
+        {
+            done = true;
+            m_buffer->mutex()->unlock();
+            mutex()->unlock();
+            continue;
+        }
+
+        mutex()->unlock();
+
 
         AVPacket *p = m_buffer->next();
 

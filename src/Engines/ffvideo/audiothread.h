@@ -45,6 +45,8 @@ public:
     explicit AudioThread(PacketBuffer *buf, QObject *parent = 0);
 
     bool initialize(FFVideoDecoder *decoder);
+    QMutex *mutex();
+    void stop();
 
 private:
     void run();
@@ -53,7 +55,7 @@ private:
     AVCodecContext *m_context;
     Output *m_output;
     PacketBuffer *m_buffer;
-
+    bool m_user_stop;
 };
 
 #endif // AUDIOTHREAD_H
