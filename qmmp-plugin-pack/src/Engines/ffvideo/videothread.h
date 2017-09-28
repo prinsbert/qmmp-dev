@@ -34,6 +34,7 @@ extern "C"{
 
 #include <QThread>
 #include <QMutex>
+#include <QSize>
 
 class Output;
 class PacketBuffer;
@@ -50,6 +51,9 @@ public:
     void stop();
     QMutex *mutex();
 
+    QSize windowSize() const;
+    void setWindowSize(const QSize &windowSize);
+
 private:
     void run();
 
@@ -60,6 +64,7 @@ private:
     VideoWindow *m_videoWindow;
     AVStream *m_stream;
     bool m_user_stop;
+    QSize m_window_size;
 
 };
 
