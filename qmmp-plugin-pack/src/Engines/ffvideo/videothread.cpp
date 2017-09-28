@@ -30,6 +30,7 @@ VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
 {
     m_buffer = buf;
     m_output = 0;
+    m_user_stop = false;
 }
 
 bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
@@ -40,31 +41,28 @@ bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
     return true;
 }
 
+void VideoThread::stop()
+{
+    m_user_stop = true;
+}
+
+QMutex *VideoThread::mutex()
+{
+    return &m_mutex;
+}
+
 void VideoThread::run()
 {
-    qDebug("%s", Q_FUNC_INFO);
-
-    //img.fill(Qt::red);
-
-
-    AVFrame* frameRGB = av_frame_alloc();
-    av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width, m_context->height, AV_PIX_FMT_RGB24, 32);
-
-//    avpicture_alloc((AVPicture*)frameRGB,
-//                    AV_PIX_FMT_ARGB,
-//                    m_context->width,
-//                    m_context->height);
-
-
-
-
+    AVFrame *frameRGB = av_frame_alloc();
+    AVFrame *frame = av_frame_alloc();
     QTime t;
+    bool done = false;
+    m_user_stop = false;
+
+
+    av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width, m_context->height, AV_PIX_FMT_RGB24, 32);
     t.start();
 
-
-    bool done = false;
-    AVFrame *frame = av_frame_alloc();
-    //AVFrame *oframe = av_frame_alloc();
     SwsContext *sws = sws_getContext (
                 m_context->width,
                 m_context->height,
@@ -76,62 +74,54 @@ void VideoThread::run()
 
     while (!done)
     {
-        qDebug("lock");
+        mutex()->lock ();
         m_buffer->mutex()->lock();
-
-        while (m_buffer->empty() && !done)
+        while (m_buffer->empty() && !m_user_stop)
         {
-            m_buffer->cond()->wakeOne();
-            qDebug("wait 1");
+            mutex()->unlock ();
             m_buffer->cond()->wait(m_buffer->mutex());
-            qDebug("wait 2");
+            mutex()->lock();
         }
 
+        if(m_user_stop)
+        {
+            done = true;
+            m_buffer->mutex()->unlock();
+            mutex()->unlock();
+            continue;
+        }
+
+        mutex()->unlock();
+
         AVPacket *p = m_buffer->next();
-
-
-
-
-
         if(p->pts * 1000 * av_q2d(m_stream->time_base) > t.elapsed())
         {
 
             m_buffer->mutex()->unlock();
             m_buffer->cond()->wakeAll();
-
             usleep(50);
-            qDebug("+++c");
             continue;
         }
-
-        qDebug("1");
-
 
         if(avcodec_send_packet(m_context, p) == 0)
         {
             m_buffer->done();
         }
         else
-            qDebug("fail 1");
+            qDebug("fail 1 %s", Q_FUNC_INFO);
 
-        m_buffer->cond()->wakeAll();
         m_buffer->mutex()->unlock();
-
-        qDebug("+2");
+        m_buffer->cond()->wakeAll();
 
         if(avcodec_receive_frame(m_context, frame) == 0)
         {
-            //const int pitch[] = { 1000 };
-            //uint8_t *pix[] = { img.bits() };
             int r = sws_scale(sws, frame->data, frame->linesize, 0, frame->height, frameRGB->data, frameRGB->linesize);
             QImage img(frameRGB->data[0], m_context->width, m_context->height, frameRGB->linesize[0], QImage::Format_RGB888);
             m_videoWindow->addImage(img);
             av_frame_unref(frame);
         }
-        else
-            qDebug("fail 2");
-        qDebug("+3");
     }
     av_frame_free(&frame);
+    av_frame_free(&frameRGB);
     sws_freeContext(sws);
 }

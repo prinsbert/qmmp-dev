@@ -199,9 +199,7 @@ void FFmpegEngine::run()
                 while (m_audioBuffer->full() && !m_user_stop)
                 {
                     mutex()->unlock();
-                    qDebug("1");
                     m_audioBuffer->cond()->wait(m_audioBuffer->mutex());
-                    qDebug("2");
                     mutex()->lock();
                 }
 
@@ -217,7 +215,7 @@ void FFmpegEngine::run()
                 *m_audioBuffer->get() = pkt;
                 m_audioBuffer->add();
                 m_audioBuffer->mutex()->unlock();
-                m_audioBuffer->cond()->wakeOne();
+                m_audioBuffer->cond()->wakeAll();
             }
             else if(pkt.stream_index == m_decoder->videoIndex())
             {
@@ -225,9 +223,7 @@ void FFmpegEngine::run()
                 while (m_videoBuffer->full() && !m_user_stop)
                 {
                     mutex()->unlock();
-                    qDebug("3");
                     m_videoBuffer->cond()->wait(m_videoBuffer->mutex());
-                    qDebug("4");
                     mutex()->lock();
                 }
 
@@ -243,8 +239,7 @@ void FFmpegEngine::run()
                 *m_videoBuffer->get() = pkt;
                 m_videoBuffer->add();
                 m_videoBuffer->mutex()->unlock();
-                qDebug("wake all");
-                m_videoBuffer->cond()->wakeOne();
+                m_videoBuffer->cond()->wakeAll();
             }
             else
             {
@@ -271,9 +266,7 @@ void FFmpegEngine::run()
             //sendMetaData();
             //addOffset(); //offset
         }
-
-        //continue if new input was queued
-        if(m_decoders.isEmpty() || m_user_stop)
+        else if(m_decoders.isEmpty() || m_user_stop)
         {
             m_done = true;
             m_finish = !m_user_stop;
@@ -286,15 +279,15 @@ void FFmpegEngine::run()
 
     if(m_user_stop || (m_done && !m_finish))
     {
-        //m_audioThread->mutex()->lock ();
-        //m_audioThread->stop();
+        m_audioThread->mutex()->lock ();
+        m_audioThread->stop();
         m_audioBuffer->cond()->wakeAll();
-        //m_audioThread->mutex()->unlock();
+        m_audioThread->mutex()->unlock();
 
-        //m_videoThread->mutex()->lock ();
-        //m_videoThread->stop();
+        m_videoThread->mutex()->lock ();
+        m_videoThread->stop();
         m_videoBuffer->cond()->wakeAll();
-        //m_videoThread->mutex()->unlock();
+        m_videoThread->mutex()->unlock();
     }
 
     mutex()->unlock();
@@ -309,6 +302,7 @@ void FFmpegEngine::run()
         m_videoThread->wait();
     }
     clearDecoders();
+    qDebug("FFmpegEngine: thread finished");
 }
 
 void FFmpegEngine::clearDecoders()
