@@ -128,6 +128,7 @@ void VideoThread::run()
     av_frame_free(&frame);
     av_frame_free(&frameRGB);
     sws_freeContext(sws);
+    qDebug("VideoThread: finished");
 }
 QSize VideoThread::windowSize() const
 {

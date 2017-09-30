@@ -43,10 +43,12 @@ class AudioThread : public QThread
     Q_OBJECT
 public:
     explicit AudioThread(PacketBuffer *buf, QObject *parent = 0);
+    ~AudioThread();
 
     bool initialize(FFVideoDecoder *decoder);
     QMutex *mutex();
     void stop();
+    void close();
 
 private:
     void run();

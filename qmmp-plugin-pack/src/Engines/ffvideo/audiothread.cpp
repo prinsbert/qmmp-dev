@@ -33,8 +33,14 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
     m_user_stop = false;
 }
 
+AudioThread::~AudioThread()
+{
+    close();
+}
+
 bool AudioThread::initialize(FFVideoDecoder *decoder)
 {
+    close();
     m_context = decoder->audioCodecContext();
     m_output = Output::create();
 
@@ -44,41 +50,13 @@ bool AudioThread::initialize(FFVideoDecoder *decoder)
         return false;
     }
 
-    Qmmp::AudioFormat format = Qmmp::PCM_UNKNOWM;
-
-    switch(m_context->sample_fmt)
+    if(!m_output->initialize(44100, ChannelMap(2), Qmmp::PCM_S16LE))
     {
-    case AV_SAMPLE_FMT_U8:
-    case AV_SAMPLE_FMT_U8P:
-        format = Qmmp::PCM_S8;
-        break;
-    case AV_SAMPLE_FMT_S16:
-    case AV_SAMPLE_FMT_S16P:
-        format = Qmmp::PCM_S16LE;
-        break;
-    case AV_SAMPLE_FMT_S32:
-    case AV_SAMPLE_FMT_S32P:
-        format = Qmmp::PCM_S32LE;
-        break;
-    case AV_SAMPLE_FMT_FLT:
-    case AV_SAMPLE_FMT_FLTP:
-        format = Qmmp::PCM_FLOAT;
-        break;
-    default:
-        qWarning("AudioThread: unsupported audio format");
-        return false;
-    }
-
-    qDebug() << m_context->sample_rate << m_context->channels << format << Qmmp::PCM_FLOAT;
-
-    bool ok = m_output->initialize(44100, ChannelMap(2), Qmmp::PCM_S16LE);
-    if(!ok)
-    {
+        close();
         qWarning("AudioThread: unable to initialize output");
         return false;
     }
-
-    return ok;
+    return true;
 }
 
 QMutex *AudioThread::mutex()
@@ -89,6 +67,21 @@ QMutex *AudioThread::mutex()
 void AudioThread::stop()
 {
     m_user_stop = true;
+}
+
+void AudioThread::close()
+{
+    if(isRunning())
+    {
+        qWarning("AudioThread: unable to close active output");
+        return;
+    }
+
+    if(m_output)
+    {
+        delete m_output;
+        m_output = 0;
+    }
 }
 
 void AudioThread::run()
@@ -174,4 +167,5 @@ void AudioThread::run()
         }
     }
     av_frame_free(&frame);
+    qDebug("AudioThread: finished");
 }
