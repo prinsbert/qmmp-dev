@@ -52,6 +52,7 @@ FFmpegEngine::FFmpegEngine(EngineFactory *factory, QObject *parent)
 
 FFmpegEngine::~FFmpegEngine()
 {
+    stop();
     delete m_audioBuffer;
     delete m_videoBuffer;
     m_videoWindow->deleteLater();
@@ -94,6 +95,7 @@ bool FFmpegEngine::enqueue(InputSource *source)
         source->ioDevice()->close();
 
     mutex()->lock();
+
     m_decoders.enqueue(decoder);
     m_inputs.insert(decoder, source);
     mutex()->unlock();
@@ -118,11 +120,13 @@ void FFmpegEngine::stop()
     if (m_videoThread->isRunning())
         m_videoBuffer->cond()->wakeAll();
 
+
     if(isRunning())
         wait();
 
     m_videoWindow->hide();
 
+    m_audioThread->close();
     clearDecoders();
     reset();
 }
@@ -281,6 +285,7 @@ void FFmpegEngine::run()
     {
         m_audioThread->mutex()->lock ();
         m_audioThread->stop();
+        m_audioThread->close();
         m_audioBuffer->cond()->wakeAll();
         m_audioThread->mutex()->unlock();
 
@@ -302,11 +307,15 @@ void FFmpegEngine::run()
         m_videoThread->wait();
     }
     clearDecoders();
+    StateHandler::instance()->dispatch(Qmmp::Stopped);
     qDebug("FFmpegEngine: thread finished");
 }
 
 void FFmpegEngine::clearDecoders()
 {
+    m_audioBuffer->clear();
+    m_videoBuffer->clear();
+
     if(m_decoder)
     {
         m_inputs.take(m_decoder)->deleteLater ();
