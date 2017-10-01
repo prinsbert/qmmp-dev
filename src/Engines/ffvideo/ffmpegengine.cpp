@@ -132,7 +132,15 @@ void FFmpegEngine::stop()
 }
 
 void FFmpegEngine::pause()
-{}
+{
+    if(m_audioThread->isRunning() && m_videoThread->isRunning())
+    {
+        m_audioThread->pause();
+        m_videoThread->pause();
+        m_videoBuffer->cond()->wakeAll();
+        m_audioBuffer->cond()->wakeAll();
+    }
+}
 
 void FFmpegEngine::setMuted(bool muted)
 {}

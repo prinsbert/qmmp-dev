@@ -20,6 +20,7 @@
 
 #include <QtDebug>
 #include <qmmp/output.h>
+#include <qmmp/statehandler.h>
 #include "packetbuffer.h"
 #include "ffvideodecoder.h"
 #include "audiothread.h"
@@ -31,6 +32,9 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
     m_buffer = buf;
     m_output = 0;
     m_user_stop = false;
+    m_finish = false;
+    m_pause = false;
+    m_prev_pause = false;
 }
 
 AudioThread::~AudioThread()
@@ -69,6 +73,15 @@ void AudioThread::stop()
     m_user_stop = true;
 }
 
+void AudioThread::pause()
+{
+    mutex()->lock();
+    m_pause = !m_pause;
+    mutex()->unlock();
+    Qmmp::State state = m_pause ? Qmmp::Paused: Qmmp::Playing;
+    StateHandler::instance()->dispatch(state);
+}
+
 void AudioThread::close()
 {
     if(isRunning())
@@ -88,6 +101,9 @@ void AudioThread::run()
 {
     bool done = false;
     m_user_stop = false;
+    m_finish = false;
+    m_pause = false;
+    m_prev_pause = false;
     AVFrame *frame = av_frame_alloc();
     AVFrame *oframe = av_frame_alloc();
     SwrContext *swr = swr_alloc_set_opts(NULL,                      // we're allocating a new context
@@ -102,12 +118,29 @@ void AudioThread::run()
     while (!done)
     {
         mutex()->lock ();
+        if(m_pause != m_prev_pause)
+        {
+            if(m_pause)
+            {
+                //Visual::clearBuffer();
+                m_output->suspend();
+                mutex()->unlock();
+                m_prev_pause = m_pause;
+                continue;
+            }
+            else
+                m_output->resume();
+            m_prev_pause = m_pause;
+        }
         m_buffer->mutex()->lock();
-        while (m_buffer->empty() && !m_user_stop)
+        done = m_user_stop || (m_finish && m_buffer->empty());
+
+        while (!done && (m_buffer->empty() || m_pause))
         {
             mutex()->unlock ();
             m_buffer->cond()->wait(m_buffer->mutex());
             mutex()->lock ();
+            done = m_user_stop || m_finish;
         }
 
         if(m_user_stop)
