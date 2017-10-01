@@ -49,6 +49,7 @@ public:
 
     bool initialize(FFVideoDecoder *decoder, VideoWindow *w);
     void stop();
+    void pause();
     QMutex *mutex();
 
     QSize windowSize() const;
@@ -63,8 +64,9 @@ private:
     PacketBuffer *m_buffer;
     VideoWindow *m_videoWindow;
     AVStream *m_stream;
-    bool m_user_stop;
     QSize m_window_size;
+    bool m_user_stop, m_finish;
+    bool m_pause, m_prev_pause;
 
 };
 

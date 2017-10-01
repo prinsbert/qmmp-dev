@@ -48,6 +48,7 @@ public:
     bool initialize(FFVideoDecoder *decoder);
     QMutex *mutex();
     void stop();
+    void pause();
     void close();
 
 private:
@@ -57,7 +58,8 @@ private:
     AVCodecContext *m_context;
     Output *m_output;
     PacketBuffer *m_buffer;
-    bool m_user_stop;
+    bool m_user_stop, m_finish;
+    bool m_pause, m_prev_pause;
 };
 
 #endif // AUDIOTHREAD_H

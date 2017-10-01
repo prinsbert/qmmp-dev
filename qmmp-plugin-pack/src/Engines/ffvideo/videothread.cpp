@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include <QImage>
-#include <QTime>
+#include <QElapsedTimer>
 #include "packetbuffer.h"
 #include "videowindow.h"
 #include "ffvideodecoder.h"
@@ -31,6 +31,9 @@ VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
     m_buffer = buf;
     m_output = 0;
     m_user_stop = false;
+    m_finish = false;
+    m_pause = false;
+    m_prev_pause = false;
 }
 
 bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
@@ -47,6 +50,13 @@ void VideoThread::stop()
     m_user_stop = true;
 }
 
+void VideoThread::pause()
+{
+    mutex()->lock();
+    m_pause = !m_pause;
+    mutex()->unlock();
+}
+
 QMutex *VideoThread::mutex()
 {
     return &m_mutex;
@@ -54,15 +64,18 @@ QMutex *VideoThread::mutex()
 
 void VideoThread::run()
 {
-    AVFrame *frameRGB = av_frame_alloc();
-    AVFrame *frame = av_frame_alloc();
-    QTime t;
+    QElapsedTimer t;
     bool done = false;
     m_user_stop = false;
+    m_finish = false;
+    m_pause = false;
+    m_prev_pause = false;
+    int ms = 0;
 
+    AVFrame *frameRGB = av_frame_alloc();
+    AVFrame *frame = av_frame_alloc();
 
     double ratio = qMin(double(m_window_size.width()) / m_context->width, double(m_window_size.height()) / m_context->height);
-    qDebug("%f %d %d", ratio, m_window_size.height(), m_context->height);
 
     av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width * ratio, m_context->height * ratio, AV_PIX_FMT_RGB24, 32);
     t.start();
@@ -79,12 +92,30 @@ void VideoThread::run()
     while (!done)
     {
         mutex()->lock ();
+        if(m_pause != m_prev_pause)
+        {
+            if(m_pause)
+            {
+                mutex()->unlock();
+                m_prev_pause = m_pause;
+                ms += t.elapsed();
+                continue;
+            }
+            else
+            {
+                t.restart();
+            }
+            m_prev_pause = m_pause;
+        }
         m_buffer->mutex()->lock();
-        while (m_buffer->empty() && !m_user_stop)
+        done = m_user_stop || (m_finish && m_buffer->empty());
+
+        while (!done && (m_buffer->empty() || m_pause))
         {
             mutex()->unlock ();
             m_buffer->cond()->wait(m_buffer->mutex());
             mutex()->lock();
+            done = m_user_stop || m_finish;
         }
 
         if(m_user_stop)
@@ -98,9 +129,9 @@ void VideoThread::run()
         mutex()->unlock();
 
         AVPacket *p = m_buffer->next();
-        if(p->pts * 1000 * av_q2d(m_stream->time_base) > t.elapsed())
-        {
 
+        if(p->pts * 1000 * av_q2d(m_stream->time_base) > ms + t.elapsed())
+        {
             m_buffer->mutex()->unlock();
             m_buffer->cond()->wakeAll();
             usleep(50);
