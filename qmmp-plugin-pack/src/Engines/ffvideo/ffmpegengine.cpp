@@ -110,6 +110,7 @@ void FFmpegEngine::seek(qint64 pos)
 
 void FFmpegEngine::stop()
 {
+    qDebug("%s", Q_FUNC_INFO);
     mutex()->lock ();
     m_user_stop = true;
     mutex()->unlock();
@@ -278,43 +279,63 @@ void FFmpegEngine::run()
             //sendMetaData();
             //addOffset(); //offset
         }
-        else if(m_decoders.isEmpty() || m_user_stop)
+        else //end of stream
         {
+            //write remaining audio data
+            m_audioBuffer->mutex()->lock();
+            while (!m_audioBuffer->empty() && !m_user_stop)
+            {
+                mutex()->unlock();
+                m_audioBuffer->cond()->wait(m_audioBuffer->mutex());
+                mutex()->lock();
+            }
+            m_audioBuffer->mutex()->unlock();
+            m_audioBuffer->cond()->wakeAll();
+
+            m_videoBuffer->mutex()->lock();
+            while (!m_videoBuffer->empty() && m_user_stop)
+            {
+                mutex()->unlock();
+                m_videoBuffer->cond()->wait(m_videoBuffer->mutex());
+                mutex()->lock();
+            }
+            m_videoBuffer->mutex()->unlock();
+            m_videoBuffer->cond()->wakeAll();
+
             m_done = true;
             m_finish = !m_user_stop;
+
         }
         mutex()->unlock();
     }
     mutex()->lock ();
-    //if (m_finish)
-        //finish();
 
     if(m_user_stop || (m_done && !m_finish))
     {
-        m_audioThread->mutex()->lock ();
         m_audioThread->stop();
-        m_audioThread->close();
-        m_audioBuffer->cond()->wakeAll();
-        m_audioThread->mutex()->unlock();
-
-        m_videoThread->mutex()->lock ();
         m_videoThread->stop();
-        m_videoBuffer->cond()->wakeAll();
-        m_videoThread->mutex()->unlock();
     }
+    else if(m_finish)
+    {
+        m_audioThread->finish();
+        m_videoThread->finish();
+    }
+
+    m_audioBuffer->cond()->wakeAll();
+    m_videoBuffer->cond()->wakeAll();
 
     mutex()->unlock();
 
     if(m_audioThread->isRunning())
-    {
         m_audioThread->wait();
-    }
 
     if(m_videoThread->isRunning())
-    {
         m_videoThread->wait();
-    }
+
+    m_audioThread->close();
     clearDecoders();
+    if(m_finish && !m_user_stop)
+        StateHandler::instance()->sendFinished();
     StateHandler::instance()->dispatch(Qmmp::Stopped);
     qDebug("FFmpegEngine: thread finished");
 }

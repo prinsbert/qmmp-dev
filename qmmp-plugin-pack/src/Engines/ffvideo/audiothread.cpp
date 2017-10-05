@@ -35,6 +35,7 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
     m_finish = false;
     m_pause = false;
     m_prev_pause = false;
+    m_stream = 0;
 }
 
 AudioThread::~AudioThread()
@@ -46,6 +47,7 @@ bool AudioThread::initialize(FFVideoDecoder *decoder)
 {
     close();
     m_context = decoder->audioCodecContext();
+    m_stream = decoder->formatContext()->streams[decoder->audioIndex()];
     m_output = Output::create();
 
     if(!m_output)
@@ -63,21 +65,25 @@ bool AudioThread::initialize(FFVideoDecoder *decoder)
     return true;
 }
 
-QMutex *AudioThread::mutex()
-{
-    return &m_mutex;
-}
-
 void AudioThread::stop()
 {
+    m_mutex.lock();
     m_user_stop = true;
+    m_mutex.unlock();
+}
+
+void AudioThread::finish()
+{
+    m_mutex.lock();
+    m_finish = true;
+    m_mutex.unlock();
 }
 
 void AudioThread::pause()
 {
-    mutex()->lock();
+    m_mutex.lock();
     m_pause = !m_pause;
-    mutex()->unlock();
+    m_mutex.unlock();
     Qmmp::State state = m_pause ? Qmmp::Paused: Qmmp::Playing;
     StateHandler::instance()->dispatch(state);
 }
@@ -117,14 +123,14 @@ void AudioThread::run()
 
     while (!done)
     {
-        mutex()->lock ();
+        m_mutex.lock ();
         if(m_pause != m_prev_pause)
         {
             if(m_pause)
             {
                 //Visual::clearBuffer();
                 m_output->suspend();
-                mutex()->unlock();
+                m_mutex.unlock();
                 m_prev_pause = m_pause;
                 continue;
             }
@@ -137,9 +143,9 @@ void AudioThread::run()
 
         while (!done && (m_buffer->empty() || m_pause))
         {
-            mutex()->unlock ();
+            m_mutex.unlock ();
             m_buffer->cond()->wait(m_buffer->mutex());
-            mutex()->lock ();
+            m_mutex.lock ();
             done = m_user_stop || m_finish;
         }
 
@@ -147,14 +153,21 @@ void AudioThread::run()
         {
             done = true;
             m_buffer->mutex()->unlock();
-            mutex()->unlock();
+            m_mutex.unlock();
             continue;
         }
 
-        mutex()->unlock();
+        m_mutex.unlock();
 
 
         AVPacket *p = m_buffer->next();
+
+        if(!p)
+        {
+            m_buffer->mutex()->unlock();
+            m_buffer->cond()->wakeOne();
+            continue;
+        }
 
         if(avcodec_send_packet(m_context, p) == 0)
         {
@@ -170,6 +183,7 @@ void AudioThread::run()
             oframe->channel_layout = AV_CH_LAYOUT_STEREO;
             oframe->sample_rate = 44100;
             oframe->format = AV_SAMPLE_FMT_S16;
+            oframe->pts = frame->pts;
             if(swr_convert_frame(swr, oframe, frame) != 0)
             {
                 qWarning("AudioThread: swr_convert_frame failed!");
@@ -196,9 +210,13 @@ void AudioThread::run()
                 }
             }
 
+            StateHandler::instance()->dispatch(frame->pts  * 1000 * av_q2d(m_stream->time_base),
+                                               m_context->bit_rate / 1000, 44100, 16, 2);
             av_frame_unref(oframe);
         }
     }
     av_frame_free(&frame);
+    if(m_finish)
+        m_output->drain();
     qDebug("AudioThread: finished");
 }
