@@ -41,25 +41,30 @@ bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
     m_context = decoder->videoCodecContext();
     m_stream = decoder->formatContext()->streams[decoder->videoIndex()];
     m_videoWindow = w;
-    m_window_size = w->size();
+    m_window_size = QSize(m_context->width, m_context->height);
+    m_videoWindow->resize(m_window_size); //TODO thread safe
     return true;
 }
 
 void VideoThread::stop()
 {
+    m_mutex.lock();
     m_user_stop = true;
+    m_mutex.unlock();
+}
+
+void VideoThread::finish()
+{
+    m_mutex.lock();
+    m_finish = true;
+    m_mutex.unlock();
 }
 
 void VideoThread::pause()
 {
-    mutex()->lock();
+    m_mutex.lock();
     m_pause = !m_pause;
-    mutex()->unlock();
-}
-
-QMutex *VideoThread::mutex()
-{
-    return &m_mutex;
+    m_mutex.unlock();
 }
 
 void VideoThread::run()
@@ -75,7 +80,7 @@ void VideoThread::run()
     AVFrame *frameRGB = av_frame_alloc();
     AVFrame *frame = av_frame_alloc();
 
-    double ratio = qMin(double(m_window_size.width()) / m_context->width, double(m_window_size.height()) / m_context->height);
+    double ratio = 1;//qMin(double(m_window_size.width()) / m_context->width, double(m_window_size.height()) / m_context->height);
 
     av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width * ratio, m_context->height * ratio, AV_PIX_FMT_RGB24, 32);
     t.start();
@@ -91,12 +96,12 @@ void VideoThread::run()
 
     while (!done)
     {
-        mutex()->lock ();
+        m_mutex.lock ();
         if(m_pause != m_prev_pause)
         {
             if(m_pause)
             {
-                mutex()->unlock();
+                m_mutex.unlock();
                 m_prev_pause = m_pause;
                 ms += t.elapsed();
                 continue;
@@ -112,9 +117,9 @@ void VideoThread::run()
 
         while (!done && (m_buffer->empty() || m_pause))
         {
-            mutex()->unlock ();
+            m_mutex.unlock ();
             m_buffer->cond()->wait(m_buffer->mutex());
-            mutex()->lock();
+            m_mutex.lock();
             done = m_user_stop || m_finish;
         }
 
@@ -122,13 +127,20 @@ void VideoThread::run()
         {
             done = true;
             m_buffer->mutex()->unlock();
-            mutex()->unlock();
+            m_mutex.unlock();
             continue;
         }
 
-        mutex()->unlock();
+        m_mutex.unlock();
 
         AVPacket *p = m_buffer->next();
+
+        if(!p)
+        {
+            m_buffer->mutex()->unlock();
+            m_buffer->cond()->wakeOne();
+            continue;
+        }
 
         if(p->pts * 1000 * av_q2d(m_stream->time_base) > ms + t.elapsed())
         {
@@ -154,8 +166,10 @@ void VideoThread::run()
             QImage img(frameRGB->data[0], m_context->width * ratio, m_context->height * ratio, frameRGB->linesize[0], QImage::Format_RGB888);
             m_videoWindow->addImage(img);
             av_frame_unref(frame);
+
         }
     }
+
     av_frame_free(&frame);
     av_frame_free(&frameRGB);
     sws_freeContext(sws);

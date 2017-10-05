@@ -49,8 +49,8 @@ public:
 
     bool initialize(FFVideoDecoder *decoder, VideoWindow *w);
     void stop();
+    void finish();
     void pause();
-    QMutex *mutex();
 
     QSize windowSize() const;
     void setWindowSize(const QSize &windowSize);
