@@ -34,6 +34,7 @@ VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
     m_finish = false;
     m_pause = false;
     m_prev_pause = false;
+    m_sync = false;
 }
 
 bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
@@ -67,6 +68,13 @@ void VideoThread::pause()
     m_mutex.unlock();
 }
 
+void VideoThread::sync()
+{
+    m_mutex.lock();
+    m_sync = true;
+    m_mutex.unlock();
+}
+
 void VideoThread::run()
 {
     QElapsedTimer t;
@@ -75,7 +83,7 @@ void VideoThread::run()
     m_finish = false;
     m_pause = false;
     m_prev_pause = false;
-    int ms = 0;
+    int timer_offset = 0;
 
     AVFrame *frameRGB = av_frame_alloc();
     AVFrame *frame = av_frame_alloc();
@@ -103,7 +111,7 @@ void VideoThread::run()
             {
                 m_mutex.unlock();
                 m_prev_pause = m_pause;
-                ms += t.elapsed();
+                timer_offset += t.elapsed();
                 continue;
             }
             else
@@ -142,11 +150,20 @@ void VideoThread::run()
             continue;
         }
 
-        if(p->pts * 1000 * av_q2d(m_stream->time_base) > ms + t.elapsed())
+        m_mutex.lock();
+        if(m_sync)
+        {
+            timer_offset = p->pts * 1000 * av_q2d(m_stream->time_base);
+            t.restart();
+            m_sync = false;
+        }
+        m_mutex.unlock();
+
+        if(p->pts * 1000 * av_q2d(m_stream->time_base) > timer_offset + t.elapsed())
         {
             m_buffer->mutex()->unlock();
             m_buffer->cond()->wakeAll();
-            usleep(50);
+            usleep(300);
             continue;
         }
 
@@ -166,7 +183,6 @@ void VideoThread::run()
             QImage img(frameRGB->data[0], m_context->width * ratio, m_context->height * ratio, frameRGB->linesize[0], QImage::Format_RGB888);
             m_videoWindow->addImage(img);
             av_frame_unref(frame);
-
         }
     }
 

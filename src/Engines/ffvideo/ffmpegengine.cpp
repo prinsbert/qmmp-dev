@@ -34,12 +34,15 @@
 #include "videowindow.h"
 #include "ffmpegengine.h"
 
+#define AUDIO_BUFFER_SIZE 50
+#define VIDEO_BUFFER_SIZE 50
+
 FFmpegEngine::FFmpegEngine(EngineFactory *factory, QObject *parent)
     : AbstractEngine(parent)
 {
     m_factory = factory;
-    m_audioBuffer = new PacketBuffer(50);
-    m_videoBuffer = new PacketBuffer(50);
+    m_audioBuffer = new PacketBuffer(AUDIO_BUFFER_SIZE);
+    m_videoBuffer = new PacketBuffer(VIDEO_BUFFER_SIZE);
     m_audioThread = new AudioThread(m_audioBuffer, this);
     m_videoThread = new VideoThread(m_videoBuffer, this);
     m_videoWindow = new VideoWindow(qApp->activeWindow());
@@ -106,7 +109,14 @@ bool FFmpegEngine::enqueue(InputSource *source)
 }
 
 void FFmpegEngine::seek(qint64 pos)
-{}
+{
+    if (isRunning())
+    {
+        mutex()->lock ();
+        m_seekTime = pos;
+        mutex()->unlock();
+    }
+}
 
 void FFmpegEngine::stop()
 {
@@ -170,15 +180,18 @@ void FFmpegEngine::run()
     {
         mutex()->lock ();
         //seek
-        /*if (m_seekTime >= 0)
+        if (m_seekTime >= 0)
         {
+            m_audioBuffer->mutex()->lock ();
+            m_audioBuffer->clear();
+            m_audioBuffer->mutex()->unlock ();
+            m_videoBuffer->mutex()->lock ();
+            m_videoBuffer->clear();
+            m_videoBuffer->mutex()->unlock ();
             m_decoder->seek(m_seekTime);
+            m_videoThread->sync();
             m_seekTime = -1;
-            m_output->recycler()->mutex()->lock ();
-            m_output->recycler()->clear();
-            m_output->recycler()->mutex()->unlock ();
-            m_output_at = 0;
-        }*/
+        }
         //metadata
         /*if(m_decoder->hasMetaData())
         {
@@ -363,7 +376,7 @@ void FFmpegEngine::reset()
 {
     m_done = false;
     m_finish = false;
-    //m_seekTime = -1;
+    m_seekTime = -1;
     //m_output_at = 0;
     m_user_stop = false;
     //m_bitrate = 0;

@@ -114,6 +114,18 @@ qint64 FFVideoDecoder::totalTime() const
     return m_totalTime;
 }
 
+void FFVideoDecoder::seek(qint64 time)
+{
+    int64_t timestamp = int64_t(time) * AV_TIME_BASE / 1000;
+
+    if (m_formatContext->start_time != (qint64)AV_NOPTS_VALUE)
+        timestamp += m_formatContext->start_time;
+
+    av_seek_frame(m_formatContext, -1, timestamp, AVSEEK_FLAG_BACKWARD);
+    avcodec_flush_buffers(m_audioCodecContext);
+    avcodec_flush_buffers(m_videoCodecContext);
+}
+
 AVFormatContext *FFVideoDecoder::formatContext() const
 {
     return m_formatContext;

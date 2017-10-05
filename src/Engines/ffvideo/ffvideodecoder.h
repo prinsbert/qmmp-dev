@@ -39,6 +39,7 @@ public:
 
     bool initialize(const QString &path);
     qint64 totalTime() const;
+    void seek(qint64 time);
 
     AVFormatContext *formatContext() const;
     AVCodecContext *audioCodecContext() const;
