@@ -35,6 +35,7 @@ VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
     m_pause = false;
     m_prev_pause = false;
     m_sync = false;
+    m_resize = false;
 }
 
 bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
@@ -77,46 +78,57 @@ void VideoThread::sync()
 
 void VideoThread::run()
 {
-    QElapsedTimer t;
+    QElapsedTimer timer;
+    int timer_offset = 0;
     bool done = false;
+    double ratio = 1.0;
+    SwsContext *sws = sws_getContext(m_context->width, m_context->height, m_context->pix_fmt,
+                                     m_context->width, m_context->height, AV_PIX_FMT_RGB24, SWS_BICUBIC, 0, 0, 0);
+
     m_user_stop = false;
     m_finish = false;
     m_pause = false;
     m_prev_pause = false;
-    int timer_offset = 0;
+    m_sync = false;
+    m_resize = false;
 
     AVFrame *frameRGB = av_frame_alloc();
     AVFrame *frame = av_frame_alloc();
+    av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width, m_context->height,
+                   AV_PIX_FMT_RGB24, 32);
 
-    double ratio = 1;//qMin(double(m_window_size.width()) / m_context->width, double(m_window_size.height()) / m_context->height);
-
-    av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width * ratio, m_context->height * ratio, AV_PIX_FMT_RGB24, 32);
-    t.start();
-
-    SwsContext *sws = sws_getContext (
-                m_context->width,
-                m_context->height,
-                m_context->pix_fmt,
-                m_context->width * ratio,
-                m_context->height * ratio,
-                AV_PIX_FMT_RGB24,
-                SWS_BICUBIC, 0, 0, 0);
+    timer.start();
 
     while (!done)
     {
         m_mutex.lock ();
+
+        if(m_resize)
+        {
+            m_resize = false;
+            ratio = qMin(double(m_window_size.width()) / m_context->width, double(m_window_size.height()) / m_context->height);
+
+            sws = sws_getCachedContext(sws, m_context->width, m_context->height, m_context->pix_fmt,
+                                       m_context->width * ratio, m_context->height * ratio,
+                                       AV_PIX_FMT_RGB24, SWS_BICUBIC, 0, 0, 0);
+            av_frame_free(&frameRGB);
+            frameRGB = av_frame_alloc();
+            av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width * ratio,
+                           m_context->height * ratio, AV_PIX_FMT_RGB24, 32);
+        }
+
         if(m_pause != m_prev_pause)
         {
             if(m_pause)
             {
                 m_mutex.unlock();
                 m_prev_pause = m_pause;
-                timer_offset += t.elapsed();
+                timer_offset += timer.elapsed();
                 continue;
             }
             else
             {
-                t.restart();
+                timer.restart();
             }
             m_prev_pause = m_pause;
         }
@@ -154,12 +166,12 @@ void VideoThread::run()
         if(m_sync)
         {
             timer_offset = p->pts * 1000 * av_q2d(m_stream->time_base);
-            t.restart();
+            timer.restart();
             m_sync = false;
         }
         m_mutex.unlock();
 
-        if(p->pts * 1000 * av_q2d(m_stream->time_base) > timer_offset + t.elapsed())
+        if(p->pts * 1000 * av_q2d(m_stream->time_base) > timer_offset + timer.elapsed())
         {
             m_buffer->mutex()->unlock();
             m_buffer->cond()->wakeAll();
@@ -191,13 +203,11 @@ void VideoThread::run()
     sws_freeContext(sws);
     qDebug("VideoThread: finished");
 }
-QSize VideoThread::windowSize() const
-{
-    return m_window_size;
-}
 
 void VideoThread::setWindowSize(const QSize &windowSize)
 {
+    m_mutex.lock();
     m_window_size = windowSize;
+    m_resize = true;
+    m_mutex.unlock();
 }
-

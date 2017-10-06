@@ -53,7 +53,7 @@ public:
     void pause();
     void sync();
 
-    QSize windowSize() const;
+public slots:
     void setWindowSize(const QSize &windowSize);
 
 private:
@@ -69,6 +69,7 @@ private:
     bool m_user_stop, m_finish;
     bool m_pause, m_prev_pause;
     bool m_sync;
+    bool m_resize;
 
 };
 

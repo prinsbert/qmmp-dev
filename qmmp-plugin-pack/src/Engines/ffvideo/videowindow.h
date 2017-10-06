@@ -33,9 +33,14 @@ public:
 
     void addImage(const QImage &img);
 
+signals:
+    void resizeRequest(const QSize &size);
+    void stopRequest();
+
 private:
     void paintEvent(QPaintEvent *);
-    QMutex m;
+    bool event(QEvent *e);
+    QMutex m_mutex;
     QImage m_image;
 };
 

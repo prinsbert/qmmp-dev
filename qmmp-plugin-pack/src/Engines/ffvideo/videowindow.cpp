@@ -21,20 +21,23 @@
 #include <QPainter>
 #include <QApplication>
 #include <QPaintEvent>
+#include <QResizeEvent>
 #include "videowindow.h"
 
 VideoWindow::VideoWindow(QWidget *parent) :
-    QWidget(0)
+    QWidget(parent)
 {
-    setAutoFillBackground(false);
+    setWindowFlags(Qt::Window);
+    setAutoFillBackground(true);
     resize(1027, 758);
+    setMinimumSize(100, 100);
 }
 
 void VideoWindow::addImage(const QImage &img)
 {
-    m.lock();
+    m_mutex.lock();
     m_image = img;
-    m.unlock();
+    m_mutex.unlock();
     QMetaObject::invokeMethod(this, "update", Qt::QueuedConnection);
 }
 
@@ -42,7 +45,20 @@ void VideoWindow::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
     p.fillRect(QRect(0, 0, width(), height()), Qt::black);
-    m.lock();
-    p.drawImage(0,0, m_image);
-    m.unlock();
+    m_mutex.lock();
+    p.drawImage((width() - m_image.width()) / 2, (height() - m_image.height()) / 2, m_image);
+    m_mutex.unlock();
+}
+
+bool VideoWindow::event(QEvent *e)
+{
+    if(e->type() == QEvent::Resize && e->spontaneous())
+    {
+        emit resizeRequest(static_cast<QResizeEvent*>(e)->size());
+    }
+    else if(e->type() == QEvent::Close && e->spontaneous())
+    {
+        emit stopRequest();
+    }
+    return QWidget::event(e);
 }
