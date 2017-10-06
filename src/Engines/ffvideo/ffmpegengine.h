@@ -31,7 +31,7 @@ extern "C"{
 
 #include <QQueue>
 #include <QString>
-#include <QProcess>
+#include <QPointer>
 #include <QSharedPointer>
 #include <qmmp/statehandler.h>
 #include <qmmp/abstractengine.h>
@@ -63,6 +63,8 @@ public:
     void pause();
     void setMuted(bool muted);
 
+private slots:
+    void onStopRequest();
 
 private:
     void run();
@@ -76,7 +78,7 @@ private:
     VideoThread *m_videoThread;
     QQueue <FFVideoDecoder*> m_decoders;
     QHash <FFVideoDecoder*, InputSource*> m_inputs;
-    VideoWindow *m_videoWindow;
+    QPointer<VideoWindow> m_videoWindow;
     FFVideoDecoder *m_decoder;
     bool m_done, m_finish, m_user_stop;
     qint64 m_seekTime;

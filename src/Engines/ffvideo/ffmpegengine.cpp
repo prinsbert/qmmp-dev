@@ -51,6 +51,8 @@ FFmpegEngine::FFmpegEngine(EngineFactory *factory, QObject *parent)
     avformat_network_init();
     av_register_all();
     reset();
+    connect(m_videoWindow, SIGNAL(resizeRequest(QSize)), m_videoThread, SLOT(setWindowSize(QSize)));
+    connect(m_videoWindow, SIGNAL(stopRequest()), SLOT(onStopRequest()));
 }
 
 FFmpegEngine::~FFmpegEngine()
@@ -58,7 +60,8 @@ FFmpegEngine::~FFmpegEngine()
     stop();
     delete m_audioBuffer;
     delete m_videoBuffer;
-    m_videoWindow->deleteLater();
+    if(!m_videoWindow.isNull())
+        m_videoWindow->deleteLater();
 }
 
 bool FFmpegEngine::play()
@@ -69,10 +72,11 @@ bool FFmpegEngine::play()
     if(!m_audioThread->initialize(m_decoders.head()))
         return false;
 
-    if(!m_videoThread->initialize(m_decoders.head(), m_videoWindow))
+    if(!m_videoThread->initialize(m_decoders.head(), m_videoWindow.data()))
         return false;
 
-    m_videoWindow->show();
+    if(!m_videoWindow.isNull())
+        m_videoWindow->show();
     start();
     return true;
 }
@@ -135,7 +139,8 @@ void FFmpegEngine::stop()
     if(isRunning())
         wait();
 
-    m_videoWindow->hide();
+    if(!m_videoWindow.isNull())
+        m_videoWindow->hide();
 
     m_audioThread->close();
     clearDecoders();
@@ -155,6 +160,11 @@ void FFmpegEngine::pause()
 
 void FFmpegEngine::setMuted(bool muted)
 {}
+
+void FFmpegEngine::onStopRequest()
+{
+    stop();
+}
 
 void FFmpegEngine::run()
 {
