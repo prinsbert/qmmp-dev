@@ -1,4 +1,5 @@
-Πορτογαλικά Βραζιλίας
+Πορτογαλικά Βραζιλίας:
+    Vitor Pereira
     Klaos Lacerda
     Bruno Gonçalves
     Heitor Thury Barreiros Barbosa <hthury@gmail.com>
@@ -6,32 +7,32 @@
 Βουλγαρικά:
     Kiril Kirilov
 
-Κινέζικα παραδοσιακά
+Κινέζικα παραδοσιακά:
     lon <lon83129@126.com>
     Jeff Huang
 
-Κινέζικα απλά
+Κινέζικα απλοποιημένα:
     lon <lon83129@126.com>
     mabier
     Mingcong Bai
     Mingye Wang
 
-Τσέχικα
+Τσέχικα:
     Karel Volný <kvolny@redhat.com>
     Jaroslav Lichtblau
 
-Ολλανδικά
+Ολλανδικά:
     Ronald Uitermark <ronald645@gmail.com>
 
-Γαλλικά
+Γαλλικά:
     Adrien Vigneron - VRad <adrienvigneron@ml1.net>
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>
 
-Γαλικιανά
+Γαλικικά:
     Óscar Pereira <oscarpereira1989@gmail.com>
 
-Γερμανικά
+Γερμανικά:
     Ettore Atalan
     Stefan Koelling <stefankoelling.ext@googlemail.com>
     Panagiotis Papadopoulos <pano_90@gmx.net>
@@ -39,16 +40,16 @@
 Ελληνικά:
     Δημήτριος Γλενταδάκης
 
-Εβραϊκά
+Εβραικά:
     Genghis Khan <genghiskhan@gmx.ca>
 
-Ουγγρικά
+Ουγγρικά:
     Németh Gábor <sutee84@freemail.hu>
 
-Ιταλικά
+Ιταλικά:
     Gian Paolo Renello <emmerkar@gmail.com>
 
-Ιαπωνικά
+Ιαπωνικά:
     Ryota Shimamoto <liangtai.s16@gmail.com>
 
 Καζακικά
@@ -67,7 +68,7 @@
 Ρωσικά
     Ilya Kotov <forkotov02@hotmail.ru>
 
-Σέρβικα
+Σερβικά:
     Mladen Pejaković <pejakm@autistici.org>
 
 Σλοβακικά
@@ -75,6 +76,7 @@
 
 Ισπανικά
     Félix Medrano <xukosky@yahoo.es>
+    Joel Barrios <darkshram@gmail.com>
 
 Τουρκικά
     Mustafa GUNAY <mustafagunay@pgmail.com>
