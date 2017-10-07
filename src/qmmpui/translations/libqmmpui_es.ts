@@ -1060,7 +1060,7 @@
     <message>
         <location filename="../templateeditor.cpp" line="52"/>
         <source>Album Artist</source>
-        <translation >Artista del álbum</translation>
+        <translation>Artista del álbum</translation>
     </message>
     <message>
         <location filename="../templateeditor.cpp" line="54"/>
