@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2009 by Ilya Kotov                                      *
- *   forkotov02@hotmail.ru                                                 *
+ *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -50,7 +50,7 @@ void LyricsFactory::showAbout(QWidget *parent)
     QMessageBox::about (parent, tr("About Lyrics Plugin"),
                         tr("Qmmp Lyrics Plugin")+"\n"+
                         tr("This plugin retrieves lyrics from LyricWiki")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>"));
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QTranslator *LyricsFactory::createTranslator(QObject *parent)

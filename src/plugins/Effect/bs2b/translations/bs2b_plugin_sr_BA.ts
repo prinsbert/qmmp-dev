@@ -35,13 +35,13 @@
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="59"/>
-        <source>Ilya Kotov</source>
-        <translation>Илија Котов (Ilya Kotov)</translation>
+        <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="60"/>
-        <source>Sebastian Pipping</source>
-        <translation>Себастијан Пипинг (Sebastian Pipping)</translation>
+        <source>Sebastian Pipping &lt;sebastian@pipping.org&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

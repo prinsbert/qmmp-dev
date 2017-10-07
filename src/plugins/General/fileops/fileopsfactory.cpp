@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
- *   forkotov02@hotmail.ru                                                 *
+ *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -49,7 +49,7 @@ void FileOpsFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About File Operations Plugin"),
                         tr("Qmmp File Operations Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>"));
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QTranslator *FileOpsFactory::createTranslator(QObject *parent)
