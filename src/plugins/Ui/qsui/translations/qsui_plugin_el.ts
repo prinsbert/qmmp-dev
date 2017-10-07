@@ -1350,14 +1350,14 @@
         <translation>Τονισμένο παρασκήνιο:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="583"/>
-        <source>Highlighted text:</source>
-        <translation>Τονισμένο κείμενο:</translation>
-    </message>
-    <message>
         <location filename="../forms/qsuisettings.ui" line="404"/>
         <source>Use system colors</source>
         <translation>Χρήση των χρωμάτων του συστήματος</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="583"/>
+        <source>Highlighted text:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="618"/>
