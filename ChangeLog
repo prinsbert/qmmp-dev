@@ -1267,3 +1267,5 @@ Version 0.10.11
 * fixed issue with untracked property in the mpris plugin
 * fixed possible segmentation fault
 * fixed cmake warnings
+* updated Spanish translation (Joel Barrios)
+* updated Portuguese translation (Sérgio Marques)
