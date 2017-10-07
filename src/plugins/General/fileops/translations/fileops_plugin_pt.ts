@@ -24,8 +24,8 @@
         <location filename="../fileops.cpp" line="137"/>
         <source>Are you sure you want to move %n file(s)?</source>
         <translation>
-            <numerusform>Tem a certeza que deseja mover %n ficheiro?</numerusform>
-            <numerusform>Tem a certeza que deseja mover %n ficheiros?</numerusform>
+            <numerusform>Tem a certeza de que deseja mover %n ficheiro?</numerusform>
+            <numerusform>Tem a certeza de que deseja mover %n ficheiros?</numerusform>
         </translation>
     </message>
     <message>

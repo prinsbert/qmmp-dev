@@ -181,7 +181,7 @@
         <location filename="../columneditor.cpp" line="92"/>
         <location filename="../columneditor.cpp" line="115"/>
         <source>Track Index</source>
-        <translation>Índice de faixa</translation>
+        <translation>Índice da faixa</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="93"/>
@@ -475,7 +475,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="696"/>
         <source>Default gain:</source>
-        <translation>Ganho pré-definido:</translation>
+        <translation>Ganho padrão:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="748"/>

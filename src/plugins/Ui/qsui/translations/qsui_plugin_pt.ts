@@ -1350,14 +1350,14 @@
         <translation>Destaque de fundo:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="583"/>
-        <source>Highlighted text:</source>
-        <translation>Destaque de texto:</translation>
-    </message>
-    <message>
         <location filename="../forms/qsuisettings.ui" line="404"/>
         <source>Use system colors</source>
         <translation>Usar cores do sistema</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="583"/>
+        <source>Highlighted text:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="618"/>
