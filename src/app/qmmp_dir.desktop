@@ -1,6 +1,7 @@
 [Desktop Entry]
 X-Desktop-File-Install-Version=0.11
 Name=Qmmp
+Name[es]=Qmmp
 Name[gl_ES]=Qmmp
 Name[pt]=Qmmp
 Name[pt_BR]=Qmmp
@@ -10,6 +11,7 @@ Name[ru]=Плеер Qmmp
 Comment=Qt4-based Multimedia Player
 Comment[cs]=Přehrávač hudby založený na Qt
 Comment[de]=Qt4-basierter Audio-Player
+Comment[es]=Reproductor de medios basado sobre Qt4
 Comment[fr]=Lecteur multimédia en Qt4
 Comment[gl_ES]=Reproductor multimedia basado en Qt4
 Comment[he]=נגן מולטימדיה מבוסס Qt4
@@ -27,6 +29,7 @@ Comment[zh_TW]=基于Qt4的多媒體播放器
 GenericName=Audio player
 GenericName[cs]=Přehrávač hudby
 GenericName[de]=Audio-Player
+GenericName[es]=Reproductor de audio
 GenericName[fr]=Lecteur audio
 GenericName[gl_ES]=Reproductor de audio
 GenericName[he]=נגן שמע

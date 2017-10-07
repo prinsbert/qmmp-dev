@@ -6,32 +6,32 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="50"/>
         <source>Opus Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Módulo Opus</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="53"/>
         <source>Ogg Opus Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos Ogg Opus</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="127"/>
         <source>About Opus Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca del Módulo de Audio Opus</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="128"/>
         <source>Qmmp Opus Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Módulo de Audio Opus de Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="129"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation type="unfinished">Escrito por: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation>Escrito por: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="130"/>
         <source>This plugin includes code from TagLib library</source>
-        <translation type="unfinished"></translation>
+        <translation>Este módulo incluye código proveniente de la biblioteca TagLib</translation>
     </message>
 </context>
 <context>
@@ -39,42 +39,42 @@
     <message>
         <location filename="../opusmetadatamodel.cpp" line="54"/>
         <source>Length</source>
-        <translation type="unfinished">Duración</translation>
+        <translation>Duración</translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="55"/>
         <source>Sample rate</source>
-        <translation type="unfinished">Frecuencia</translation>
+        <translation>Frecuencia</translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="55"/>
         <source>Hz</source>
-        <translation type="unfinished">Hz</translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="56"/>
         <source>Channels</source>
-        <translation type="unfinished">Canales</translation>
+        <translation>Canales</translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="57"/>
         <source>Bitrate</source>
-        <translation type="unfinished">Tasa de bits</translation>
+        <translation>Tasa de bits</translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="57"/>
         <source>kbps</source>
-        <translation type="unfinished">kbps</translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="58"/>
         <source>File size</source>
-        <translation type="unfinished">Tamaño del archivo</translation>
+        <translation>Tamaño del archivo</translation>
     </message>
     <message>
         <location filename="../opusmetadatamodel.cpp" line="58"/>
         <source>KB</source>
-        <translation type="unfinished">KB</translation>
+        <translation>KB</translation>
     </message>
 </context>
 </TS>
