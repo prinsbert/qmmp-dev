@@ -6,59 +6,59 @@
     <message>
         <location filename="../playlistoption.cpp" line="46"/>
         <source>Show playlist manipulation commands</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar herramientas de manipulación de lista de reproducción</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="60"/>
         <source>List all available playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar todas las listas de reproducción</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="61"/>
         <source>Show playlist content</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar contenido de lista de reproducción</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="62"/>
         <source>Play track &lt;track&gt; in playlist &lt;id&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Reproducir pista &lt;track&gt; en lista de reproducción &lt;id&gt;</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="63"/>
         <source>Clear playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar lista de reproducción</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="64"/>
         <source>Toggle playlist repeat</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar la repetición de la lista de reproducción</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="65"/>
         <source>Toggle playlist shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar modo aleatorio de lista de reproducción</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="66"/>
         <source>Show playlist options</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar opciones de lista de reproducción</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="85"/>
         <location filename="../playlistoption.cpp" line="106"/>
         <location filename="../playlistoption.cpp" line="122"/>
         <source>Invalid playlist ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID inválido de lista de reproducción</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="100"/>
         <source>Invalid number of arguments</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de argumentos inválido</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="110"/>
         <source>Invalid track ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID de pista inválido</translation>
     </message>
 </context>
 </TS>
