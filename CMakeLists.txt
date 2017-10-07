@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
 #freebsd include
 include_directories(SYSTEM /usr/include /usr/local/include)
 
+if(POLICY CMP0071)
+  cmake_policy(SET CMP0071 NEW)
+endif()
 
 CONFIGURE_FILE(
   "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
