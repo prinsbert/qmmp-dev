@@ -9,6 +9,10 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
   SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /opt/local/include)
 ENDIF()
 
+if(POLICY CMP0071)
+  cmake_policy(SET CMP0071 NEW)
+endif()
+
 #Qt5 modules
 SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt56/lib/cmake)
 
