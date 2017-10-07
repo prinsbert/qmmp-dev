@@ -1258,3 +1258,12 @@ Version 0.10.10
 * fixed XPM skins support
 * updated documentation
 * updated Galician translation (Delio Docampo Cordeiro)
+
+Version 0.10.11
+* added AAC mime types to the qmmp.desktop
+* added album artist support in the cue parsers
+* using game name as album tag for GME (Chris Spiegel)
+* fixed seeking in the mpris plugin
+* fixed issue with untracked property in the mpris plugin
+* fixed possible segmentation fault
+* fixed cmake warnings
