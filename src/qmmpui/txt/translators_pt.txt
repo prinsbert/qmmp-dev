@@ -76,6 +76,7 @@ Eslovaco:
 
 Espanhol:
     Félix Medrano <xukosky@yahoo.es>
+    Joel Barrios <darkshram@gmail.com>
 
 Turco:
     Mustafa GUNAY <mustafagunay@pgmail.com>

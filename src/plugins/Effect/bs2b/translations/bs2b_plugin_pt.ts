@@ -65,7 +65,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="71"/>
         <source>Default</source>
-        <translation>Pré-definido</translation>
+        <translation>Padrão</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
