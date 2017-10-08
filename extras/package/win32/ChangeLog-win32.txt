@@ -221,3 +221,8 @@ LEGEND
 [*] curl-7.54.1
 [*] glew-2.1.0
 [*] ffmpeg-3.0.9
+
+0.10.11
+[*] qmmp-0.10.11
+[*] qmmp-plugin-pack-0.10.4
+[*] curl-7.56.0
