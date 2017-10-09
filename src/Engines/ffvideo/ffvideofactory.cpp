@@ -26,8 +26,13 @@
 #include "ffvideometadatamodel.h"
 #include "ffvideofactory.h"
 
-
-// MplayerEngineFactory
+// FFVideoFactory
+FFVideoFactory::FFVideoFactory()
+{
+    avcodec_register_all();
+    avformat_network_init();
+    av_register_all();
+}
 
 const EngineProperties FFVideoFactory::properties() const
 {
@@ -63,10 +68,62 @@ AbstractEngine *FFVideoFactory::create(QObject *parent)
 
 QList<FileInfo *> FFVideoFactory::createPlayList(const QString &fileName, bool useMetaData, QStringList *)
 {
-    Q_UNUSED(useMetaData);
-    QList<FileInfo *> info;
-    info << new FileInfo(fileName);
-    return info;
+    QList <FileInfo*> list;
+    AVFormatContext *in = 0;
+
+#ifdef Q_OS_WIN
+    if (avformat_open_input(&in,fileName.toUtf8().constData(), 0, 0) < 0)
+#else
+    if (avformat_open_input(&in,fileName.toLocal8Bit().constData(), 0, 0) < 0)
+#endif
+    {
+        qDebug("DecoderFFmpegFactory: unable to open file");
+        return list;
+    }
+    FileInfo *info = new FileInfo(fileName);
+    avformat_find_stream_info(in, 0);
+
+    if (useMetaData)
+    {
+        AVDictionaryEntry *album = av_dict_get(in->metadata,"album",0,0);
+        if(!album)
+            album = av_dict_get(in->metadata,"WM/AlbumTitle",0,0);
+        AVDictionaryEntry *artist = av_dict_get(in->metadata,"artist",0,0);
+        if(!artist)
+            artist = av_dict_get(in->metadata,"author",0,0);
+        AVDictionaryEntry *comment = av_dict_get(in->metadata,"comment",0,0);
+        AVDictionaryEntry *genre = av_dict_get(in->metadata,"genre",0,0);
+        AVDictionaryEntry *title = av_dict_get(in->metadata,"title",0,0);
+        AVDictionaryEntry *year = av_dict_get(in->metadata,"WM/Year",0,0);
+        if(!year)
+            year = av_dict_get(in->metadata,"year",0,0);
+        if(!year)
+            year = av_dict_get(in->metadata,"date",0,0);
+        AVDictionaryEntry *track = av_dict_get(in->metadata,"track",0,0);
+        if(!track)
+            track = av_dict_get(in->metadata,"WM/Track",0,0);
+        if(!track)
+            track = av_dict_get(in->metadata,"WM/TrackNumber",0,0);
+
+        if(album)
+            info->setMetaData(Qmmp::ALBUM, QString::fromUtf8(album->value).trimmed());
+        if(artist)
+            info->setMetaData(Qmmp::ARTIST, QString::fromUtf8(artist->value).trimmed());
+        if(comment)
+            info->setMetaData(Qmmp::COMMENT, QString::fromUtf8(comment->value).trimmed());
+        if(genre)
+            info->setMetaData(Qmmp::GENRE, QString::fromUtf8(genre->value).trimmed());
+        if(title)
+            info->setMetaData(Qmmp::TITLE, QString::fromUtf8(title->value).trimmed());
+        if(year)
+            info->setMetaData(Qmmp::YEAR, year->value);
+        if(track)
+            info->setMetaData(Qmmp::TRACK, track->value);
+    }
+    info->setLength(in->duration/AV_TIME_BASE);
+    avformat_close_input(&in);
+    list << info;
+    return list;
 }
 
 MetaDataModel* FFVideoFactory::createMetaDataModel(const QString &path, QObject *parent)
