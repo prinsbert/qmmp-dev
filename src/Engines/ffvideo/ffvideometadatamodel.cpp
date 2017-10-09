@@ -71,7 +71,7 @@ QHash<QString, QString> FFVideoMetaDataModel::audioProperties()
 
 QPixmap FFVideoMetaDataModel::cover()
 {
-    AVCodecParameters *c = 0;
+    /*AVCodecParameters *c = 0;
     for (uint idx = 0; idx < m_in->nb_streams; idx++)
     {
         c = m_in->streams[idx]->codecpar;
@@ -85,6 +85,6 @@ QPixmap FFVideoMetaDataModel::cover()
         QPixmap pix;
         pix.loadFromData(QByteArray((const char*)pkt.data, pkt.size));
         return pix;
-    }
+    }*/
     return QPixmap();
 }

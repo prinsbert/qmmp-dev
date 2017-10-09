@@ -44,7 +44,7 @@ bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
     m_stream = decoder->formatContext()->streams[decoder->videoIndex()];
     m_videoWindow = w;
     m_window_size = QSize(m_context->width, m_context->height);
-    m_videoWindow->resize(m_window_size); //TODO thread safe
+    //m_videoWindow->resize(m_window_size); //TODO thread safe
     return true;
 }
 
@@ -98,6 +98,9 @@ void VideoThread::run()
                    AV_PIX_FMT_RGB24, 32);
 
     timer.start();
+    m_sync = true;
+
+
 
     while (!done)
     {
@@ -163,13 +166,16 @@ void VideoThread::run()
         }
 
         m_mutex.lock();
-        if(m_sync)
+        if(m_sync && p->pts > 0)
         {
             timer_offset = p->pts * 1000 * av_q2d(m_stream->time_base);
             timer.restart();
             m_sync = false;
         }
         m_mutex.unlock();
+
+        if(p->pts == AV_NOPTS_VALUE)
+            p->pts = p->dts;
 
         if(p->pts * 1000 * av_q2d(m_stream->time_base) > timer_offset + timer.elapsed())
         {

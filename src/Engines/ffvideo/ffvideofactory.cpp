@@ -34,7 +34,9 @@ const EngineProperties FFVideoFactory::properties() const
     EngineProperties properties;
     properties.name = tr("FFmpeg Video Plugin");
     properties.shortName = "ffvideo";
-    properties.filters << "*.mp4";
+    properties.filters << "*.avi" << "*.mpg" << "*.mpeg" << "*.divx" << "*.qt"
+                       << "*.mov" << "*.wmv" << "*.asf" << "*.flv" << "*.3gp"
+                       << "*.mkv" << "*.mp4" << "*.webm";
     properties.description = tr("Video Files");
     //properties.contentType = "application/ogg;audio/x-vorbis+ogg";
     properties.protocols << "file";
@@ -45,7 +47,13 @@ const EngineProperties FFVideoFactory::properties() const
 
 bool FFVideoFactory::supports(const QString &source) const
 {
-    return true;
+    foreach(QString filter,  properties().filters)
+    {
+        QRegExp regexp(filter, Qt::CaseInsensitive, QRegExp::Wildcard);
+        if (regexp.exactMatch(source))
+            return true;
+    }
+    return false;
 }
 
 AbstractEngine *FFVideoFactory::create(QObject *parent)
