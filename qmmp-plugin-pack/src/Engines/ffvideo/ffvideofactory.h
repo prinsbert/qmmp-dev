@@ -36,6 +36,7 @@ Q_OBJECT
 Q_INTERFACES(EngineFactory)
 
 public:
+    FFVideoFactory();
     const EngineProperties properties() const;
     bool supports(const QString &source) const;
     AbstractEngine *create(QObject *parent = 0);
