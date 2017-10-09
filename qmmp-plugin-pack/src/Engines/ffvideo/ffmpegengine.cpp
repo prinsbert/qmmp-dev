@@ -284,20 +284,41 @@ void FFmpegEngine::run()
         }
         else if(!m_decoders.isEmpty())
         {
+            m_audioThread->finish();
+            m_videoThread->finish();
+
+            m_audioBuffer->cond()->wakeAll();
+            m_videoBuffer->cond()->wakeAll();
+
+            if(m_audioThread->isRunning())
+                m_audioThread->wait();
+
+            if(m_videoThread->isRunning())
+                m_videoThread->wait();
+
+            QMetaObject::invokeMethod(m_videoWindow, "hide", Qt::QueuedConnection);
+
+            StateHandler::instance()->sendFinished();
+            StateHandler::instance()->dispatch(Qmmp::Stopped);
+
             m_inputs.take(m_decoder)->deleteLater ();
             delete m_decoder;
             m_decoder = m_decoders.dequeue();
-            //m_seekTime = m_inputs.value(m_decoder)->offset();
-            //flush(true);
-            //prepareEffects(m_decoder);
-            StateHandler::instance()->sendFinished();
-            StateHandler::instance()->dispatch(Qmmp::Stopped); //fake stop/start cycle
+
             StateHandler::instance()->dispatch(Qmmp::Buffering);
+
+            m_audioThread->initialize(m_decoder);
+            m_videoThread->initialize(m_decoder, m_videoWindow);
+            QMetaObject::invokeMethod(m_videoWindow, "show", Qt::QueuedConnection);
+
+
+            m_audioThread->start();
+            m_videoThread->start();
+
             StateHandler::instance()->dispatch(m_decoder->totalTime());
-            //m_output->mutex()->lock();
-            //m_output->seek(0); //reset counter
-            //m_output->mutex()->unlock();
             StateHandler::instance()->dispatch(Qmmp::Playing);
+
+
             //mutex()->unlock();
             //sendMetaData();
             //addOffset(); //offset

@@ -106,6 +106,8 @@ void AudioThread::close()
 void AudioThread::run()
 {
     bool done = false;
+    int err = 0;
+    char errbuf[AV_ERROR_MAX_STRING_SIZE] = {0};
     m_user_stop = false;
     m_finish = false;
     m_pause = false;
@@ -169,16 +171,21 @@ void AudioThread::run()
             continue;
         }
 
-        if(avcodec_send_packet(m_context, p) == 0)
+        if((err = avcodec_send_packet(m_context, p)) == 0)
         {
             m_buffer->done();
+        }
+        else
+        {
+            m_buffer->done();
+            av_strerror(err, errbuf, sizeof(errbuf));
+            qWarning("AudioThread: avcodec_send_packet failed: %s", errbuf);
         }
 
         m_buffer->mutex()->unlock();
         m_buffer->cond()->wakeAll();
 
-
-        if(avcodec_receive_frame(m_context, frame) == 0)
+        if((err = avcodec_receive_frame(m_context, frame)) == 0)
         {
             oframe->channel_layout = AV_CH_LAYOUT_STEREO;
             oframe->sample_rate = 44100;
@@ -213,6 +220,12 @@ void AudioThread::run()
             StateHandler::instance()->dispatch(frame->pts  * 1000 * av_q2d(m_stream->time_base),
                                                m_context->bit_rate / 1000, 44100, 16, 2);
             av_frame_unref(oframe);
+        }
+        else
+        {
+            //err = AVERROR(EAGAIN);
+            av_strerror(err, errbuf, sizeof(errbuf));
+            qWarning("AudioThread: avcodec_receive_frame failed: %s", errbuf);
         }
     }
     av_frame_free(&frame);
