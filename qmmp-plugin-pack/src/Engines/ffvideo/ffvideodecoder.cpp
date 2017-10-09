@@ -45,7 +45,11 @@ bool FFVideoDecoder::initialize(const QString &path)
     int err = 0;
     char errbuf[AV_ERROR_MAX_STRING_SIZE] = {0};
 
+#ifdef Q_OS_WIN
+    if((err = avformat_open_input(&m_formatContext, path.toUtf8().constData(), 0, 0)) != 0)
+#else
     if((err = avformat_open_input(&m_formatContext, path.toLocal8Bit().constData(), 0, 0)) != 0)
+#endif
     {
         av_strerror(err, errbuf, sizeof(errbuf));
         qWarning("FFVideoDecoder: avformat_open_input() failed: %s", errbuf);
