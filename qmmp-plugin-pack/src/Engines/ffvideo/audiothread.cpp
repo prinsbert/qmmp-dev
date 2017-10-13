@@ -183,7 +183,7 @@ void AudioThread::run()
         {
             m_buffer->done();
         }
-        else
+        else if(err != AVERROR(EAGAIN))
         {
             m_buffer->done();
             av_strerror(err, errbuf, sizeof(errbuf));
