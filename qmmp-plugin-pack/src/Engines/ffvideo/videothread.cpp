@@ -43,8 +43,7 @@ bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
     m_context = decoder->videoCodecContext();
     m_stream = decoder->formatContext()->streams[decoder->videoIndex()];
     m_videoWindow = w;
-    m_window_size = QSize(m_context->width, m_context->height);
-    //m_videoWindow->resize(m_window_size); //TODO thread safe
+    m_window_size = w->size();
     return true;
 }
 
@@ -82,25 +81,20 @@ void VideoThread::run()
     int timer_offset = 0;
     bool done = false;
     double ratio = 1.0;
-    SwsContext *sws = sws_getContext(m_context->width, m_context->height, m_context->pix_fmt,
-                                     m_context->width, m_context->height, AV_PIX_FMT_RGB24, SWS_BICUBIC, 0, 0, 0);
-
     m_user_stop = false;
     m_finish = false;
     m_pause = false;
     m_prev_pause = false;
     m_sync = false;
-    m_resize = false;
+    m_resize = true; //create SwsContext
 
-    AVFrame *frameRGB = av_frame_alloc();
     AVFrame *frame = av_frame_alloc();
-    av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width, m_context->height,
-                   AV_PIX_FMT_RGB24, 32);
+
+    AVFrame *frameRGB = 0;
+    SwsContext *sws = 0;
 
     timer.start();
     m_sync = true;
-
-
 
     while (!done)
     {
@@ -114,7 +108,8 @@ void VideoThread::run()
             sws = sws_getCachedContext(sws, m_context->width, m_context->height, m_context->pix_fmt,
                                        m_context->width * ratio, m_context->height * ratio,
                                        AV_PIX_FMT_RGB24, SWS_BICUBIC, 0, 0, 0);
-            av_frame_free(&frameRGB);
+            if(frameRGB)
+                av_frame_free(&frameRGB);
             frameRGB = av_frame_alloc();
             av_image_alloc(frameRGB->data, frameRGB->linesize, m_context->width * ratio,
                            m_context->height * ratio, AV_PIX_FMT_RGB24, 32);
@@ -205,7 +200,8 @@ void VideoThread::run()
     }
 
     av_frame_free(&frame);
-    av_frame_free(&frameRGB);
+    if(frameRGB)
+        av_frame_free(&frameRGB);
     sws_freeContext(sws);
     qDebug("VideoThread: finished");
 }

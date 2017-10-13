@@ -45,7 +45,7 @@ const EngineProperties FFVideoFactory::properties() const
     properties.description = tr("Video Files");
     //properties.contentType = "application/ogg;audio/x-vorbis+ogg";
     properties.protocols << "file";
-    properties.hasAbout = false;
+    properties.hasAbout = true;
     properties.hasSettings = false;
     return properties;
 }
@@ -131,15 +131,24 @@ MetaDataModel* FFVideoFactory::createMetaDataModel(const QString &path, QObject 
     return new FFVideoMetaDataModel(path, parent);
 }
 
-void FFVideoFactory::showSettings(QWidget *parent)
-{
-    //SettingsDialog *s = new SettingsDialog(parent);
-    //s->show();
-}
+void FFVideoFactory::showSettings(QWidget *)
+{}
 
 void FFVideoFactory::showAbout(QWidget *parent)
 {
-
+    QMessageBox::about (parent, tr("About FFVideo Plugin"),
+                        tr("FFmpeg-based video plugin for Qmmp")+"\n"+
+                        tr("Compiled against:") + "\n"+
+                        QString("libavformat-%1\n"
+                                "libavcodec-%2\n"
+                                "libavutil-%3\n"
+                                "libswscale-%4")
+                        .arg(AV_STRINGIFY(LIBAVFORMAT_VERSION))
+                        .arg(AV_STRINGIFY(LIBAVCODEC_VERSION))
+                        .arg(AV_STRINGIFY(LIBAVUTIL_VERSION))
+                        .arg(AV_STRINGIFY(LIBSWSCALE_VERSION))
+                        +"\n"+
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QTranslator *FFVideoFactory::createTranslator(QObject *parent)

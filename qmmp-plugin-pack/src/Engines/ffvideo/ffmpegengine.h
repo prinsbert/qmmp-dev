@@ -27,6 +27,7 @@ extern "C"{
 #include <libavcodec/version.h>
 #include <libavutil/mathematics.h>
 #include <libavutil/dict.h>
+#include <libswscale/swscale.h>
 }
 
 #include <QQueue>
@@ -68,6 +69,7 @@ private slots:
 
 private:
     void run();
+    void sendMetaData();
     void clearDecoders();
     void reset();
 

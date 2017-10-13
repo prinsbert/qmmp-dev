@@ -22,6 +22,8 @@
 #include <QApplication>
 #include <QPaintEvent>
 #include <QResizeEvent>
+#include <QSettings>
+#include <qmmp/qmmp.h>
 #include "videowindow.h"
 
 VideoWindow::VideoWindow(QWidget *parent) :
@@ -29,8 +31,9 @@ VideoWindow::VideoWindow(QWidget *parent) :
 {
     setWindowFlags(Qt::Window);
     setAutoFillBackground(true);
-    resize(1027, 758);
     setMinimumSize(100, 100);
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    restoreGeometry(settings.value("FFVideo/geometry").toByteArray());
 }
 
 void VideoWindow::addImage(const QImage &img)
@@ -61,4 +64,10 @@ bool VideoWindow::event(QEvent *e)
         emit stopRequest();
     }
     return QWidget::event(e);
+}
+
+void VideoWindow::closeEvent(QCloseEvent *)
+{
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    settings.setValue("FFVideo/geometry", saveGeometry());
 }

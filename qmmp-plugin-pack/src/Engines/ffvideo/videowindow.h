@@ -40,6 +40,7 @@ signals:
 private:
     void paintEvent(QPaintEvent *);
     bool event(QEvent *e);
+    void closeEvent(QCloseEvent *);
     QMutex m_mutex;
     QImage m_image;
 };
