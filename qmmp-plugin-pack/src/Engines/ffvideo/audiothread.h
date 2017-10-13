@@ -50,6 +50,7 @@ public:
     void finish();
     void pause();
     void close();
+    void setMuted(bool muted);
 
 private:
     void run();
@@ -61,6 +62,7 @@ private:
     AVStream *m_stream;
     bool m_user_stop, m_finish;
     bool m_pause, m_prev_pause;
+    bool m_muted;
 };
 
 #endif // AUDIOTHREAD_H

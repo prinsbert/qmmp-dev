@@ -156,7 +156,9 @@ void FFmpegEngine::pause()
 }
 
 void FFmpegEngine::setMuted(bool muted)
-{}
+{
+    m_audioThread->setMuted(muted);
+}
 
 void FFmpegEngine::onStopRequest()
 {

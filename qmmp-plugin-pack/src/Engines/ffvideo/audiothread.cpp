@@ -36,6 +36,7 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
     m_pause = false;
     m_prev_pause = false;
     m_stream = 0;
+    m_muted = false;
 }
 
 AudioThread::~AudioThread()
@@ -101,6 +102,13 @@ void AudioThread::close()
         delete m_output;
         m_output = 0;
     }
+}
+
+void AudioThread::setMuted(bool muted)
+{
+    m_mutex.lock();
+    m_muted = muted;
+    m_mutex.unlock();
 }
 
 void AudioThread::run()
@@ -200,6 +208,11 @@ void AudioThread::run()
 
             int size = oframe->nb_samples * 4;
             unsigned char *data = oframe->data[0];
+
+            m_mutex.lock();
+            if(m_muted)
+                memset(data, 0, size);
+            m_mutex.unlock();
 
             while (size > 0)
             {
