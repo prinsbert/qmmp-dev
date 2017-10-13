@@ -77,6 +77,8 @@ void VideoThread::sync()
 
 void VideoThread::run()
 {
+    int err = 0;
+    char errbuf[AV_ERROR_MAX_STRING_SIZE] = {0};
     QElapsedTimer timer;
     int timer_offset = 0;
     bool done = false;
@@ -180,20 +182,25 @@ void VideoThread::run()
             continue;
         }
 
-        if(avcodec_send_packet(m_context, p) == 0)
+        if((err = avcodec_send_packet(m_context, p)) == 0)
         {
             m_buffer->done();
         }
-        else
-            qDebug("fail 1 %s", Q_FUNC_INFO);
+        else if(err != AVERROR(EAGAIN))
+        {
+            m_buffer->done();
+            av_strerror(err, errbuf, sizeof(errbuf));
+            qWarning("VideoThread: avcodec_send_packet failed: %s", errbuf);
+        }
 
         m_buffer->mutex()->unlock();
         m_buffer->cond()->wakeAll();
 
         if(avcodec_receive_frame(m_context, frame) == 0)
         {
-            int r = sws_scale(sws, frame->data, frame->linesize, 0, frame->height, frameRGB->data, frameRGB->linesize);
-            QImage img(frameRGB->data[0], m_context->width * ratio, m_context->height * ratio, frameRGB->linesize[0], QImage::Format_RGB888);
+            sws_scale(sws, frame->data, frame->linesize, 0, frame->height, frameRGB->data, frameRGB->linesize);
+            QImage img(frameRGB->data[0], m_context->width * ratio, m_context->height * ratio,
+                    frameRGB->linesize[0], QImage::Format_RGB888);
             m_videoWindow->addImage(img);
             av_frame_unref(frame);
         }
