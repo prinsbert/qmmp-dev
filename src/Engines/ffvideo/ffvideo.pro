@@ -20,9 +20,7 @@ SOURCES += ffmpegengine.cpp \
     videowindow.cpp \
     ffvideodecoder.cpp
 
-#FORMS += settingsdialog.ui
-
-#RESOURCES = translations/translations.qrc
+RESOURCES = translations/translations.qrc
 
 DEFINES += __STDC_CONSTANT_MACROS
 
