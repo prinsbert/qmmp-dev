@@ -222,11 +222,12 @@ void FFmpegEngine::run()
             if(pkt.stream_index == m_decoder->audioIndex())
             {
                 m_audioBuffer->mutex()->lock();
-                while (m_audioBuffer->full() && !m_user_stop)
+                while (m_audioBuffer->full() && !m_user_stop && !m_done)
                 {
                     mutex()->unlock();
                     m_audioBuffer->cond()->wait(m_audioBuffer->mutex());
                     mutex()->lock();
+                    m_done = !m_videoThread->isRunning();
                 }
 
                 if(m_user_stop)
@@ -246,11 +247,12 @@ void FFmpegEngine::run()
             else if(pkt.stream_index == m_decoder->videoIndex())
             {
                 m_videoBuffer->mutex()->lock();
-                while (m_videoBuffer->full() && !m_user_stop)
+                while (m_videoBuffer->full() && !m_user_stop && !m_done)
                 {
                     mutex()->unlock();
                     m_videoBuffer->cond()->wait(m_videoBuffer->mutex());
                     mutex()->lock();
+                    m_done = !m_videoThread->isRunning();
                 }
 
                 if(m_user_stop)

@@ -191,10 +191,11 @@ void AudioThread::run()
             oframe->sample_rate = 44100;
             oframe->format = AV_SAMPLE_FMT_S16;
             oframe->pts = frame->pts;
-            if(swr_convert_frame(swr, oframe, frame) != 0)
+            if((err = swr_convert_frame(swr, oframe, frame)) != 0)
             {
-                qWarning("AudioThread: swr_convert_frame failed!");
-                break;
+                av_strerror(err, errbuf, sizeof(errbuf));
+                qWarning("AudioThread: swr_convert_frame failed: %s", errbuf);
+                continue;
             }
 
             int size = oframe->nb_samples * 4;
@@ -228,6 +229,7 @@ void AudioThread::run()
             qWarning("AudioThread: avcodec_receive_frame failed: %s", errbuf);
         }
     }
+    m_buffer->cond()->wakeAll();
     av_frame_free(&frame);
     if(m_finish)
         m_output->drain();

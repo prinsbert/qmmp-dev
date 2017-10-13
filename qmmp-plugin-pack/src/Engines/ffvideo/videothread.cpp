@@ -198,7 +198,7 @@ void VideoThread::run()
             av_frame_unref(frame);
         }
     }
-
+    m_buffer->cond()->wakeAll();
     av_frame_free(&frame);
     if(frameRGB)
         av_frame_free(&frameRGB);
