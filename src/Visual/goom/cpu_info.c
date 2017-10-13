@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2016 by Ilya Kotov                                      *
- *   forkotov02@hotmail.ru                                                 *
+ *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Based on FFmpeg code                                                  *
  *                                                                         *
