@@ -34,7 +34,7 @@ met gebruik van de libmpg123 bibliotheek</translation>
     <message>
         <location filename="../decodermpg123factory.cpp" line="261"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>Auteur: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

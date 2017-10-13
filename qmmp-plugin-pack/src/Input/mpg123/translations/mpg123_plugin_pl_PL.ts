@@ -33,7 +33,7 @@ przy użyciu biblioteki libmpg123 </translation>
     <message>
         <location filename="../decodermpg123factory.cpp" line="261"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>Autor: Ilja Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
