@@ -174,14 +174,14 @@ void FFmpegEngine::run()
         return;
     }
     m_decoder = m_decoders.dequeue();
-    //addOffset(); //offset
+    m_seekTime = m_inputs.value(m_decoder)->offset(); //offset
     mutex()->unlock();
     m_audioThread->start();
     m_videoThread->start();
     StateHandler::instance()->dispatch(Qmmp::Buffering);
     StateHandler::instance()->dispatch(m_decoder->totalTime());
     StateHandler::instance()->dispatch(Qmmp::Playing);
-    //sendMetaData();
+    sendMetaData();
 
     while (!m_done && !m_finish)
     {
@@ -200,20 +200,13 @@ void FFmpegEngine::run()
             m_seekTime = -1;
         }
         //metadata
-        /*if(m_decoder->hasMetaData())
-        {
-            QMap<Qmmp::MetaData, QString> m = m_decoder->takeMetaData();
-            m[Qmmp::URL] = m_inputs[m_decoder]->url();
-            StateHandler::instance()->dispatch(m);
-            m_metaData = QSharedPointer<QMap<Qmmp::MetaData, QString> >(new QMap<Qmmp::MetaData, QString>(m));
-        }
         if(m_inputs[m_decoder]->hasMetaData())
         {
             QMap<Qmmp::MetaData, QString> m = m_inputs[m_decoder]->takeMetaData();
             m[Qmmp::URL] = m_inputs[m_decoder]->url();
             StateHandler::instance()->dispatch(m);
             m_metaData = QSharedPointer<QMap<Qmmp::MetaData, QString> >(new QMap<Qmmp::MetaData, QString>(m));
-        }*/
+        }
         if(m_inputs[m_decoder]->hasStreamInfo())
             StateHandler::instance()->dispatch(m_inputs[m_decoder]->takeStreamInfo());
 
@@ -314,11 +307,8 @@ void FFmpegEngine::run()
 
             StateHandler::instance()->dispatch(m_decoder->totalTime());
             StateHandler::instance()->dispatch(Qmmp::Playing);
-
-
-            //mutex()->unlock();
-            //sendMetaData();
-            //addOffset(); //offset
+            sendMetaData();
+            m_seekTime = m_inputs.value(m_decoder)->offset(); //offset
         }
         else //end of stream
         {
@@ -381,6 +371,24 @@ void FFmpegEngine::run()
     qDebug("FFmpegEngine: thread finished");
 }
 
+void FFmpegEngine::sendMetaData()
+{
+    if(!m_decoder || m_inputs.isEmpty())
+        return;
+    QString url = m_inputs.value(m_decoder)->url();
+    if (QFile::exists(url)) //send metadata for local files only
+    {
+        QList <FileInfo *> list = m_factory->createPlayList(url, true, 0);
+        if (!list.isEmpty())
+        {
+            StateHandler::instance()->dispatch(list[0]->metaData());
+            m_metaData = QSharedPointer<QMap<Qmmp::MetaData, QString> >(new QMap<Qmmp::MetaData, QString>(list[0]->metaData()));
+            while (!list.isEmpty())
+                delete list.takeFirst();
+        }
+    }
+}
+
 void FFmpegEngine::clearDecoders()
 {
     m_audioBuffer->clear();
@@ -405,9 +413,5 @@ void FFmpegEngine::reset()
     m_done = false;
     m_finish = false;
     m_seekTime = -1;
-    //m_output_at = 0;
     m_user_stop = false;
-    //m_bitrate = 0;
-    //m_next = false;
 }
-
