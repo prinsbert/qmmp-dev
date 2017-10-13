@@ -151,22 +151,22 @@
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="98"/>
+        <location filename="../historywindow.cpp" line="104"/>
         <source>dd MMMM yyyy</source>
         <translation>dd MMMM yyyy</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="99"/>
+        <location filename="../historywindow.cpp" line="105"/>
         <source>hh:mm:ss</source>
         <translation>hh:mm:ss</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="173"/>
+        <location filename="../historywindow.cpp" line="179"/>
         <source>MM-yyyy</source>
         <translation>MM-yyyy</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="174"/>
+        <location filename="../historywindow.cpp" line="180"/>
         <source>dd MMMM</source>
         <translation>dd MMMM</translation>
     </message>
