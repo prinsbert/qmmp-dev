@@ -10,6 +10,10 @@ MOC_DIR=./.build/moc
 OBJECTS_DIR=./.build/obj
 RCC_DIR=./.build/rcc
 
+#Defines
+
+DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS
+
 unix{
 INCLUDEPATH += /home/user/qmmp-0.11/include
 QMAKE_LIBDIR += /home/user/qmmp-0.11/lib
@@ -36,5 +40,6 @@ CONFIG += XMP_PLUGIN
 CONFIG += GOOM_PLUGIN
 CONFIG += GOOM_ASM #assembler optimizations
 CONFIG += HISTORY_PLUGIN
+CONFIG += FFVIDEO_PLUGIN
 
 CONFIG -= $$DISABLED_PLUGINS
