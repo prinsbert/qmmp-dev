@@ -33,8 +33,8 @@ met gebruik van de libmpg123 bibliotheek</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="254"/>
-        <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>Auteur: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
+        <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

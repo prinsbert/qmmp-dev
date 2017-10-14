@@ -41,7 +41,7 @@
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="55"/>
-        <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
+        <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -151,22 +151,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="98"/>
+        <location filename="../historywindow.cpp" line="104"/>
         <source>dd MMMM yyyy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="99"/>
+        <location filename="../historywindow.cpp" line="105"/>
         <source>hh:mm:ss</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="173"/>
+        <location filename="../historywindow.cpp" line="179"/>
         <source>MM-yyyy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="174"/>
+        <location filename="../historywindow.cpp" line="180"/>
         <source>dd MMMM</source>
         <translation type="unfinished"></translation>
     </message>

@@ -30,8 +30,8 @@
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="154"/>
-        <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>Розробник: Ілля Котов &lt;forkotov02@hotmail.ru&gt;</translation>
+        <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="155"/>

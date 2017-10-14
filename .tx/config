@@ -31,6 +31,12 @@ source_lang = en
 source_file = src/Visual/goom/translations/goom_plugin_en.ts
 type = QT
 
+[qmmp-plugin-pack.ffvideo]
+file_filter = src/Engines/ffvideo/translations/ffvideo_plugin_<lang>.ts
+source_lang = en
+source_file = src/Engines/ffvideo/translations/ffvideo_plugin_en.ts
+type = QT
+
 [qmmp-plugin-pack.history]
 file_filter = src/General/history/translations/history_plugin_<lang>.ts
 source_lang = en

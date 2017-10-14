@@ -25,8 +25,8 @@
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
-        <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
-        <translation>製作者: Илья Котов (Ilya Kotov) &lt;forkotov02@hotmail.ru&gt;</translation>
+        <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="113"/>
