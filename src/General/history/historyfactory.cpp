@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2017 by Ilya Kotov                                      *
- *   forkotov02@hotmail.ru                                                 *
+ *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -52,7 +52,7 @@ void HistoryFactory::showAbout(QWidget *parent)
     QMessageBox::about (parent, tr("About Listening History Plugin"),
                         tr("Qmmp Listening History Plugin")+"\n"+
                         tr("This plugin collects information about listened tracks")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>"));
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QTranslator *HistoryFactory::createTranslator(QObject *parent)

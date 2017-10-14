@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2011-2017 by Ilya Kotov                                 *
- *   forkotov02@hotmail.ru                                                 *
+ *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -251,7 +251,7 @@ void DecoderMPG123Factory::showAbout(QWidget *parent)
                         tr("Qmmp MPG123 Audio Plugin")+"\n"+
                         tr("This plugin provides MPEG v1/2 layer1/2/3 support\n"
                            "with use of libmpg123 library")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>")
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")
                         );
 }
 

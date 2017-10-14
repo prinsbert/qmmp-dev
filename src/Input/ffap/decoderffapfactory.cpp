@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
- *   forkotov02@hotmail.ru                                                 *
+ *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -151,7 +151,7 @@ void DecoderFFapFactory::showAbout(QWidget *parent)
     QMessageBox::about (parent, tr("About FFap Audio Plugin"),
                         tr("Qmmp FFap Audio Plugin")+"\n"+
                         tr("This plugin provides Monkey's Audio (APE) support") +"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>")  +"\n"+
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")  +"\n"+
                         tr("Based on code from deadbeef, FFmpeg and rockbox"));
 }
 

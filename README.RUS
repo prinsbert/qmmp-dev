@@ -80,5 +80,5 @@ cmake ./ -DLIB_DIR=lib64
 Перейдите в настройки модуля FFmpeg и отключите поддержку Monkey's Audio.
 
 
-Патчи, сообщения об ошибках направляйте на forkotov02@hotmail.ru или используйте баг-трекер:
+Патчи, сообщения об ошибках направляйте на forkotov02@ya.ru или используйте баг-трекер:
 https://sourceforge.net/p/qmmp-dev/tickets
