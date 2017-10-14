@@ -27,7 +27,7 @@
 #include <qmmpui/generalfactory.h>
 
 /**
-    @author Ilya Kotov <forkotov02@hotmail.ru>
+    @author Ilya Kotov <forkotov02@ya.ru>
 */
 class HistoryFactory : public QObject, public GeneralFactory
 {

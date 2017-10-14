@@ -49,7 +49,7 @@ void VisualGoomFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About Goom Visual Plugin"),
                         tr("Qmmp Goom Visual Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>")+"\n"+
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
                         tr("Based on the source code from the Goom project")+"\n"+
                         tr("Goom project developers:")+"\n"+
                         tr("Jean-Christophe Hoelt <jeko@ios-software.com>") + "\n"+

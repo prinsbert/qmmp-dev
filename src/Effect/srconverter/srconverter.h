@@ -24,7 +24,7 @@
 #include <qmmp/effect.h>
 
 /**
-    @author Ilya Kotov <forkotov02@hotmail.ru>
+    @author Ilya Kotov <forkotov02@ya.ru>
 */
 
 class SRConverter : public Effect

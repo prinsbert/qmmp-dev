@@ -35,7 +35,7 @@ class QBuffer;
 class QByteArray;
 
 /**
-    @author Ilya Kotov <forkotov02@hotmail.ru>
+    @author Ilya Kotov <forkotov02@ya.ru>
 */
 class TagExtractor
 {
