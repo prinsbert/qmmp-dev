@@ -120,6 +120,10 @@ PRINT_SUMMARY ("FFap plugin (Monkey's audio) ...." USE_FFAP TAGLIB_FOUND)
 PRINT_SUMMARY ("XMP plugin ......................" USE_XMP XMP_FOUND)
 
 MESSAGE("")
+MESSAGE("Engines:")
+PRINT_SUMMARY ("FFmpeg video plugin ............." USE_FFVIDEO FFMPEG_FOUND)
+
+MESSAGE("")
 MESSAGE("Effect Plugins:")
 PRINT_SUMMARY ("Sample Rate Conversion .........." USE_SRC SAMPLERATE_FOUND)
 
