@@ -229,3 +229,9 @@ Version 0.10.3
 * fixed MP3 in WAV container detection in the mpg123 plugin
 * fixed Russian translation
 * updated Galician translation (Delio Docampo Cordeiro)
+
+Version 0.10.4
+* added album artist tag support in the ffap plugin 
+* fixed cmake 3.10 support
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Spanish translation (Joel Barrios)
