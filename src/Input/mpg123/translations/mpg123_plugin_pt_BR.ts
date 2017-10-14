@@ -32,7 +32,7 @@ MPEG v1/2/3 através da biblioteca libmpg123</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="261"/>
-        <source>Written by: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</source>
+        <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
