@@ -16,8 +16,9 @@ SOURCES += decoderffapfactory.cpp ffap.c decoder_ffap.cpp \
 
 RESOURCES = translations/translations.qrc
 
+
 contains(CONFIG, FFAP_YASM) {
-  contains(QT_ARCH, i386)|contains(QT_ARCH, x86_64) {
+  contains(QT_ARCH, i386)|contains(QT_ARCH, x86_64)|contains(QT_ARCH, windows) {
     ASM_SOURCES += dsputil_yasm.asm x86inc.asm
     asm_compiler.commands = yasm
     asm_compiler.commands += ${QMAKE_FILE_IN} -o ${QMAKE_FILE_OUT}
@@ -36,6 +37,10 @@ contains(CONFIG, FFAP_YASM) {
       message(Architecture is x86_64)
       DEFINES += ARCH_X86_64
       asm_compiler.commands += -f elf64 -m amd64 -DARCH_X86_64 -DPIC
+    } else:contains(QT_ARCH, windows) {
+      message(Architecture is x86)
+      DEFINES += ARCH_X86_32
+      asm_compiler.commands += -f win32 -DPREFIX
     }
   } else {
     message(Architecture is unknown)
