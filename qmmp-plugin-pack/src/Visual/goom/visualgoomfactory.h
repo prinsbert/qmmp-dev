@@ -27,7 +27,7 @@
 #include <qmmp/visual.h>
 
 /**
-    @author Ilya Kotov <forkotov02@hotmail.ru>
+    @author Ilya Kotov <forkotov02@ya.ru>
 */
 class VisualGoomFactory : public QObject, public VisualFactory
 {

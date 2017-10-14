@@ -29,7 +29,7 @@
 #define ProgressBarMaxRole   (Qt::UserRole + 3)
 
 /*!
- * @author Ilya Kotov <forkotov02@hotmail.ru>
+ * @author Ilya Kotov <forkotov02@ya.ru>
  */
 class ProgressBarItemDelegate : public QStyledItemDelegate
 {

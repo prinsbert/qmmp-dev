@@ -258,7 +258,7 @@ void DecoderMPG123Factory::showAbout(QWidget *parent)
                         tr("Qmmp MPG123 Audio Plugin")+"\n"+
                         tr("This plugin provides MPEG v1/2 layer1/2/3 support\n"
                            "with use of libmpg123 library")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@hotmail.ru>")
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")
                         );
 }
 
