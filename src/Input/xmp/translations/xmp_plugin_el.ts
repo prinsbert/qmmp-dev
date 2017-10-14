@@ -6,22 +6,22 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="53"/>
         <source>XMP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρόσθετο XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="67"/>
         <source>Module Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία αρθρώματος</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="122"/>
         <source>About XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Περί του πρόσθετο ήχου XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="123"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp πρόσθετο ήχου XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="124"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="125"/>
         <source>Compiled against libxmp-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Μεταγλωττίστηκε χρησιμοποιώντας την βιβλιοθήκη libxmp-%1</translation>
     </message>
 </context>
 <context>
@@ -39,72 +39,72 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμίσεις πρόσθετου XMP</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source> Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation> Συντελεστής ενίσχυσης:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Στερεοφωνική μίξη:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished"></translation>
+        <translation> Τύπος παρεμβολής:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Τέχνασμα φίλτρου χαμηλών συχνοτήτων</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρήση χρονισμού vblank</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Σφάλμα προσομοίωσης Protracker 2.x FX9</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμός δειγματοληψίας:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Κοντινότερος γείτονας</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Γραμμικό</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Κυβική πολυωνυμική συνάρτηση (spline)</translation>
     </message>
 </context>
 <context>
@@ -112,72 +112,72 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="49"/>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα αρχείου</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Volume scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλίμακα έντασης</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Number of patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός σχηματομορφών</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Number of tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός κομματιών</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Tracks per pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Κομμάτια ανά σχηματομορφή</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Number of instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός οργάνων</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Number of samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός δειγμάτων</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="61"/>
         <source>Initial speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχική ταχύτητα</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="62"/>
         <source>Initial BPM</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχικό BPM</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="63"/>
         <source>Module length in patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Μήκος αρθρώματος στις σχηματομορφές</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="82"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Δείγματα</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="90"/>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Όργανα</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="95"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχόλιο</translation>
     </message>
 </context>
 </TS>

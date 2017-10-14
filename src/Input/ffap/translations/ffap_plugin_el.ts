@@ -6,27 +6,27 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="53"/>
         <source>FFap Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρόσθετο FFap</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="55"/>
         <source>Monkey&apos;s Audio Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία ήχου Monkey</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="163"/>
         <source>About FFap Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Περί του πρόσθετου ήχου FFap</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="164"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp FFap πρόσθετο ήχου</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="165"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το πρόσθετο παρέχει υποστήριξη ήχου Monkey (APE)</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="166"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="167"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Βασισμένο στον κώδικα των deadbeef, FFmpeg και rockbox</translation>
     </message>
 </context>
 <context>
@@ -44,42 +44,42 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="60"/>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάρκεια</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="61"/>
         <source>Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμός δειγματοληψίας</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="61"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="62"/>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Κανάλια</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="63"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμός bit</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="63"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="64"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος αρχείου</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="64"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>KB</translation>
     </message>
 </context>
 </TS>
