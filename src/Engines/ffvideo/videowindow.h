@@ -37,6 +37,9 @@ signals:
     void resizeRequest(const QSize &size);
     void stopRequest();
 
+private slots:
+    void toggleFullScreen();
+
 private:
     void paintEvent(QPaintEvent *);
     bool event(QEvent *e);
