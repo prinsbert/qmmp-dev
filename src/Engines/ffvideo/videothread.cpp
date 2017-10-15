@@ -174,14 +174,6 @@ void VideoThread::run()
         if(p->pts == AV_NOPTS_VALUE)
             p->pts = p->dts;
 
-        if(p->pts * 1000 * av_q2d(m_stream->time_base) > timer_offset + timer.elapsed())
-        {
-            m_buffer->mutex()->unlock();
-            m_buffer->cond()->wakeAll();
-            usleep(300);
-            continue;
-        }
-
         if((err = avcodec_send_packet(m_context, p)) == 0)
         {
             m_buffer->done();
@@ -198,9 +190,16 @@ void VideoThread::run()
 
         if(avcodec_receive_frame(m_context, frame) == 0)
         {
+            frame->pts = av_frame_get_best_effort_timestamp(frame);
             sws_scale(sws, frame->data, frame->linesize, 0, frame->height, frameRGB->data, frameRGB->linesize);
             QImage img(frameRGB->data[0], m_context->width * ratio, m_context->height * ratio,
                     frameRGB->linesize[0], QImage::Format_RGB888);
+
+            while(frame->pts * 1000 * av_q2d(m_stream->time_base) > timer_offset + timer.elapsed())
+            {
+                usleep(100);
+                continue;
+            }
             m_videoWindow->addImage(img);
             av_frame_unref(frame);
         }
