@@ -23,6 +23,8 @@
 #include <QPaintEvent>
 #include <QResizeEvent>
 #include <QSettings>
+#include <QMainWindow>
+#include <QAction>
 #include <qmmp/qmmp.h>
 #include "videowindow.h"
 
@@ -35,6 +37,20 @@ VideoWindow::VideoWindow(QWidget *parent) :
     setWindowTitle(tr("FFmpeg Video"));
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     restoreGeometry(settings.value("FFVideo/geometry").toByteArray());
+
+    foreach (QWidget *w, qApp->topLevelWidgets())
+    {
+        if(qobject_cast<QMainWindow *>(w))
+        {
+            addActions(w->actions());
+            break;
+        }
+    }
+
+    QAction *fullScreenAction = new QAction(this);
+    fullScreenAction->setShortcut(tr("Alt+Return"));
+    connect(fullScreenAction, SIGNAL(triggered(bool)), SLOT(toggleFullScreen()));
+    addAction(fullScreenAction);
 }
 
 void VideoWindow::addImage(const QImage &img)
@@ -43,6 +59,11 @@ void VideoWindow::addImage(const QImage &img)
     m_image = img;
     m_mutex.unlock();
     QMetaObject::invokeMethod(this, "update", Qt::QueuedConnection);
+}
+
+void VideoWindow::toggleFullScreen()
+{
+    setWindowState(windowState() ^Qt::WindowFullScreen);
 }
 
 void VideoWindow::paintEvent(QPaintEvent *)
