@@ -195,6 +195,9 @@ void AudioThread::run()
 
         if((err = avcodec_receive_frame(m_context, frame)) == 0)
         {
+            if(frame->pts == AV_NOPTS_VALUE)
+                frame->pts = frame->pkt_pts;
+
             oframe->channel_layout = AV_CH_LAYOUT_STEREO;
             oframe->sample_rate = 44100;
             oframe->format = AV_SAMPLE_FMT_S16;
