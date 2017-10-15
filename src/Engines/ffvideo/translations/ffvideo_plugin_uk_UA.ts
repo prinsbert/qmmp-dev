@@ -96,8 +96,13 @@
 <context>
     <name>VideoWindow</name>
     <message>
-        <location filename="../videowindow.cpp" line="35"/>
+        <location filename="../videowindow.cpp" line="37"/>
         <source>FFmpeg Video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../videowindow.cpp" line="51"/>
+        <source>Alt+Return</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
