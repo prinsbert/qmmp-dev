@@ -67,6 +67,17 @@ bool FFVideoDecoder::initialize(const QString &path)
     m_audioIndex = av_find_best_stream(m_formatContext, AVMEDIA_TYPE_AUDIO, -1, -1, 0, 0);
     m_videoIndex = av_find_best_stream(m_formatContext, AVMEDIA_TYPE_VIDEO, -1, -1, 0, 0);
 
+    //select default stream for audio
+    for(unsigned int i = 0; i < m_formatContext->nb_streams; ++i)
+    {
+        if(m_formatContext->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO &&
+                m_formatContext->streams[i]->disposition & AV_DISPOSITION_DEFAULT)
+        {
+            m_audioIndex = i;
+            break;
+        }
+    }
+
     if((err = m_audioIndex) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));

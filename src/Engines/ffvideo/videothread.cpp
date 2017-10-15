@@ -195,11 +195,14 @@ void VideoThread::run()
             QImage img(frameRGB->data[0], m_context->width * ratio, m_context->height * ratio,
                     frameRGB->linesize[0], QImage::Format_RGB888);
 
-            while(frame->pts * 1000 * av_q2d(m_stream->time_base) > timer_offset + timer.elapsed())
+            m_mutex.lock();
+            while(frame->pts * 1000 * av_q2d(m_stream->time_base) > timer_offset + timer.elapsed() && !m_user_stop)
             {
+                m_mutex.unlock();
                 usleep(100);
-                continue;
+                m_mutex.lock();
             }
+            m_mutex.unlock();
             m_videoWindow->addImage(img);
             av_frame_unref(frame);
         }
