@@ -195,8 +195,10 @@ void AudioThread::run()
 
         if((err = avcodec_receive_frame(m_context, frame)) == 0)
         {
+#if (LIBAVUTIL_VERSION_INT < ((55<<16)+(34<<8)+100)) //ffmpeg 3.2
             if(frame->pts == AV_NOPTS_VALUE)
                 frame->pts = frame->pkt_pts;
+#endif
 
             oframe->channel_layout = AV_CH_LAYOUT_STEREO;
             oframe->sample_rate = 44100;
