@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=0.10.3
-UBUNTU_CODENAMES='precise trusty xenial zesty'
+UBUNTU_CODENAMES='precise trusty xenial zesty artful'
 BUILD_ROOT=build-root
 
 

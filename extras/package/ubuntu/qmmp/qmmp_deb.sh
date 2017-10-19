@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=0.10.10
-UBUNTU_CODENAMES='precise trusty xenial zesty'
+UBUNTU_CODENAMES='precise trusty xenial zesty artful'
 BUILD_ROOT=build-root
 
 
