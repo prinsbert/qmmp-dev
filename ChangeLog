@@ -1272,6 +1272,7 @@ Version 0.10.11
 * fixed possible segmentation fault in the ffmpeg plugin
 * fixed saving of the equalizer 'auto' mode option
 * fixed control socket permissions (Andrey A. Rys)
+* fixed rusxmms support
 * updated Spanish translation (Joel Barrios)
 * updated Portuguese translation (Sérgio Marques)
 * updated Greek translation (Dimitrios Glentadakis)
