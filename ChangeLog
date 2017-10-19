@@ -1279,3 +1279,20 @@ Version 1.1.10
 * fixed Qt 5.9 support in the global hotkey plugin
 * updated documentation
 * updated Galician translation (Delio Docampo Cordeiro)
+
+Version 1.1.11
+* added AAC mime types to the qmmp.desktop
+* added album artist support in the cue parsers
+* using game name as album tag in the gme plugin (Chris Spiegel)
+* fixed seeking in the mpris plugin
+* fixed issue with untracked property in the mpris plugin
+* fixed possible segmentation fault
+* fixed cmake warnings
+* fixed cmake 3.10 support
+* fixed file size calculation in the ffmpeg plugin
+* fixed possible segmentation fault in the ffmpeg plugin
+* fixed saving of the equalizer 'auto' mode option
+* fixed control socket permissions (Andrey A. Rys)
+* updated Spanish translation (Joel Barrios)
+* updated Portuguese translation (Sérgio Marques)
+* updated Greek translation (Dimitrios Glentadakis)
