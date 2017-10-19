@@ -116,6 +116,7 @@ QMMPStarter::QMMPStarter() : QObject()
     m_socket = new QLocalSocket(this);
     bool noStart = commands.keys().contains("--no-start");
 
+    m_server->setSocketOptions(QLocalServer::UserAccessOption);
 #ifdef Q_OS_WIN
     //Windows IPC implementation (named mutex and named pipe)
     m_named_mutex = CreateMutexA(NULL, TRUE, "QMMP-403cd318-cc7b-4622-8dfd-df18d1e70057");
