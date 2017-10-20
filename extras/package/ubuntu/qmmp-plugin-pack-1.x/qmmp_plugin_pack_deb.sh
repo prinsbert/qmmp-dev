@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.1.4
+PLUGIN_PACK_VERSION=1.1.5
 UBUNTU_CODENAMES='xenial zesty artful'
 BUILD_ROOT=build-root
 
@@ -8,9 +8,7 @@ BUILD_ROOT=build-root
 prepare ()
 {
     cp ../qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2 ./
-    bzip2 -dv ./qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
-    mv ./qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar ./qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar
-    gzip ./qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar
+    mv ./qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2 ./qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.bz2
 }
 
 build ()
@@ -21,7 +19,7 @@ build ()
     tar xvjf ../../qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
     mkdir qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian/
-    cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.gz ./
+    cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.bz2 ./
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
     if [ "$1" = "xenial" ] ; then
         debuild -S -sa -kF594F6B4

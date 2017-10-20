@@ -1,3 +1,9 @@
+qmmp-plugin-pack-qt4 (0.10.4-1ubuntu1~zesty0) zesty; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Fri, 20 Oct 2017 22:38:34 +0300
+
 qmmp-plugin-pack-qt4 (0.10.3-1ubuntu1~zesty0) zesty; urgency=medium
 
   * New upstream release.

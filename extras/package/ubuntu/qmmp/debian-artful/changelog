@@ -1,3 +1,9 @@
+qmmp-qt4 (0.10.11-1ubuntu1~artful0) artful; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Fri, 20 Oct 2017 20:17:27 +0300
+
 qmmp-qt4 (0.10.10-1ubuntu1~zesty0) zesty; urgency=medium
 
   * New upstream release.

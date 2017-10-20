@@ -1,3 +1,9 @@
+qmmp (0.10.11-1ubuntu1~trusty0) trusty; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Fri, 20 Oct 2017 20:17:27 +0300
+
 qmmp (0.10.10-1ubuntu1~trusty0) trusty; urgency=medium
 
   * New upstream release.

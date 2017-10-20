@@ -1,3 +1,9 @@
+qmmp (1.1.11-1ubuntu1~artful0) artful; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Fri, 20 Oct 2017 21:46:19 +0300
+
 qmmp (1.1.6-1.1ubuntu1) artful; urgency=medium
 
   * Disable qmmp-plugin-projectm on arm64, where Qt is also linked to GLESv2

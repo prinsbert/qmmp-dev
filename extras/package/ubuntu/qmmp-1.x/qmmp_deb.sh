@@ -8,9 +8,7 @@ BUILD_ROOT=build-root
 prepare ()
 {
     cp ../qmmp-$QMMP_VERSION.tar.bz2 ./
-    bzip2 -dv ./qmmp-$QMMP_VERSION.tar.bz2
-    mv ./qmmp-$QMMP_VERSION.tar ./qmmp_$QMMP_VERSION.orig.tar
-    gzip ./qmmp_$QMMP_VERSION.orig.tar
+    mv ./qmmp-$QMMP_VERSION.tar.bz2 ./qmmp_$QMMP_VERSION.orig.tar.bz2
 }
 
 build ()
@@ -21,7 +19,7 @@ build ()
     tar xvjf ../../qmmp-$QMMP_VERSION.tar.bz2
     mkdir qmmp-$QMMP_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-$QMMP_VERSION/debian/
-    cp ../qmmp_$QMMP_VERSION.orig.tar.gz ./
+    cp ../qmmp_$QMMP_VERSION.orig.tar.bz2 ./
     cd qmmp-$QMMP_VERSION
     if [ "$1" = "xenial" ] ; then
         debuild -S -sa -kF594F6B4
