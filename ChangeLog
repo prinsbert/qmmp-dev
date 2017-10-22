@@ -1297,3 +1297,6 @@ Version 1.1.11
 * updated Spanish translation (Joel Barrios)
 * updated Portuguese translation (Sérgio Marques)
 * updated Greek translation (Dimitrios Glentadakis)
+
+Version 1.1.12
+* fixed IPC regression
