@@ -1188,3 +1188,112 @@ Version 1.1.0
 * updated Portuguese translation (Sérgio Marques)
 * updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
+
+Version 1.1.1
+* added ffmpeg 3.1 support
+* added portable mode for Windows
+* fixed qt5.7 support
+* fixed Russian translation
+* updated Ukrainian translation (Gennadi Motsyo)
+* updated Portuguese translation (Sérgio Marques)
+
+Version 1.1.2
+* fixed path to equalizer presets file in the qsui plugin (Ryota Shimamoto)
+* fixed buffer overflow
+
+Version 1.1.3
+* added xesam:contentCreated field in the mpris plugin
+* improved ape/tta detection
+* fixed random stop bug
+* fixed duration calculation in the mpeg plugin
+* fixed scrobbling of tracks with '&' symbol
+* fixed ADTS parser in the aac plugin
+* fixed librcc database path in the portable mode
+* updated Brazilian Portuguese translation (Vitor Pereira)
+* updated German translation (Ettore Atalan)
+
+Version 1.1.4
+* fixed support of skins UTF-16 with encoded pledit.txt
+* fixed 'index out of range' warning
+* fixed typo in the qsui plugin
+
+Version 1.1.5
+* added ffmpeg 3.2 support
+* fixed file downloading issue in the http plugin
+* fixed directory selection in the qsui plugin
+* fixed possible segmentation fault
+* fixed command line option '--pl-repeat-toggle'
+* fixed some cppcheck warnings
+* changed file dialog form
+
+Version 1.1.6
+* using http header 'icy-name' as fallback title
+* enabled AAC by default in the ffmpeg plugin
+* fixed ADTS parser in the aac plugin
+* fixed possible segmentation fault
+* fixed Ogg Opus streams support
+* updated Chinese Simplified translation (Mingcong Bai)
+
+Version 1.1.7
+* improved stream format determination in the ffmpeg plugin
+* fixed GCC 6.x support
+* fixed possible segmentation fault
+* fixed crash when using KDE file dialog
+* fixed saving state of the visual plugins
+* updated Brazilian Portuguese translation (Vítor Pereira Barros)
+
+Version 1.1.8
+* fixed PCM Wave support
+* fixed Game Boy support in the gme plugin
+* fixed Xing header detection in the mpeg plugin
+* fixed output of the '--status' command line option
+* fixed maximum year in the tag editor
+
+Version 1.1.9
+* using relative skin path for portable configuration
+* improved WASAPI support
+* fixed cursors support in the skinned user interface
+* fixed freezing when using DirectSound output
+* fixed documentation
+* fixed issue with 'jump to track' dialog when single click activation is enabled
+* fixed tray icon tooltip
+* fixed FLAC bitrate calculation
+* fixed segmentation fault in the ffmpeg plugin
+* fixed Russian translation
+* updated French translation (Adrien Vigneron)
+
+Version 1.1.10
+* added feature to download playlist from https
+* increased DirectSound buffer size
+* decreased waiting time in the WASAPI plugin
+* improved plugin list in the settings dialog
+* fixed regression in the 'jump to track' dialog
+* fixed possible segmentation fault
+* fixed seeking in the ffmpeg plugin
+* fixed null pointer dereference in the mpeg plugin
+* fixed gcc warnings
+* fixed dithering settings
+* fixed 24 bits support in the WASAPI plugin
+* fixed segmentation fault on Ogg FLAC streams
+* fixed XPM skins support
+* fixed Qt 5.9 support in the global hotkey plugin
+* updated documentation
+* updated Galician translation (Delio Docampo Cordeiro)
+
+Version 1.1.11
+* added AAC mime types to the qmmp.desktop
+* added album artist support in the cue parsers
+* using game name as album tag in the gme plugin (Chris Spiegel)
+* fixed seeking in the mpris plugin
+* fixed issue with untracked property in the mpris plugin
+* fixed possible segmentation fault
+* fixed cmake warnings
+* fixed cmake 3.10 support
+* fixed file size calculation in the ffmpeg plugin
+* fixed possible segmentation fault in the ffmpeg plugin
+* fixed saving of the equalizer 'auto' mode option
+* fixed control socket permissions (Andrey A. Rys)
+* fixed rusxmms support
+* updated Spanish translation (Joel Barrios)
+* updated Portuguese translation (Sérgio Marques)
+* updated Greek translation (Dimitrios Glentadakis)
