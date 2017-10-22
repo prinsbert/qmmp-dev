@@ -131,6 +131,8 @@ void AudioThread::run()
                                          m_context->sample_rate,    // in_sample_rate
                                          0, NULL);
 
+    StateHandler::instance()->dispatch(m_output->audioParameters());
+
     while (!done)
     {
         m_mutex.lock ();
@@ -237,7 +239,7 @@ void AudioThread::run()
             }
 
             StateHandler::instance()->dispatch(frame->pts  * 1000 * av_q2d(m_stream->time_base),
-                                               m_context->bit_rate / 1000, 44100, 16, 2);
+                                               m_context->bit_rate / 1000);
             av_frame_unref(oframe);
         }
         else

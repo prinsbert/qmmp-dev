@@ -178,11 +178,11 @@ void FFmpegEngine::run()
     m_decoder = m_decoders.dequeue();
     m_seekTime = m_inputs.value(m_decoder)->offset(); //offset
     mutex()->unlock();
-    m_audioThread->start();
-    m_videoThread->start();
     StateHandler::instance()->dispatch(Qmmp::Buffering);
     StateHandler::instance()->dispatch(m_decoder->totalTime());
     StateHandler::instance()->dispatch(Qmmp::Playing);
+    m_audioThread->start();
+    m_videoThread->start();
     sendMetaData();
 
     while (!m_done && !m_finish)
