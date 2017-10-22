@@ -31,6 +31,12 @@
 class AudioParameters
 {
 public:
+
+    enum ByteOrder
+    {
+        LittleEndian = 0,
+        BigEndian
+    };
     /*!
      * Constructor.
      */
@@ -79,6 +85,22 @@ public:
      */
     int sampleSize() const;
     /*!
+     * Returns the number of bytes required to represent one frame
+     * (a sample in each channel) in this format.
+     */
+    int frameSize() const;
+    /*!
+     * Returns sample size in bits.
+     */
+    int bitsPerSample() const;
+    /*!
+     * Returns the number of used bits in the sample. The value shoud be
+     * less or equal to the value returned by \b bitsPerSample().
+     */
+    int validBitsPerSample() const;
+
+    ByteOrder byteOrder() const;
+    /*!
      * Returns string represention of the audio parameters.
      * May be useful for debug purposes.
      */
@@ -87,12 +109,24 @@ public:
      * Returns sample size in bytes of the given pcm data \b format.
      */
     static int sampleSize(Qmmp::AudioFormat format);
+    /*!
+     * Returns sample size in bits of the given pcm data \b format.
+     */
+    static int bitsPerSample(Qmmp::AudioFormat format);
+    /*!
+     * Returns the number of used bits in the sample
+     * of the given pcm data \b format.
+     */
+    static int validBitsPerSample(Qmmp::AudioFormat format);
+
+    static Qmmp::AudioFormat findAudioFormat(int bits, ByteOrder byteOrder = LittleEndian);
 
 private:
     quint32 m_srate;
     ChannelMap m_chan_map;
     Qmmp::AudioFormat m_format;
     int m_sz;
+    int m_precision;
 };
 
 #endif // AUDIOPARAMETERS_H
