@@ -93,7 +93,7 @@ create_distr ()
   do
     cp -v ${QT4_PATH}/plugins/codecs/${LIB_NAME} ./plugins/codecs
   done
-  for LIB_NAME in qgif4.dll qico4.dll qjpeg4.dll qsvg4.dll
+  for LIB_NAME in qgif4.dll qico4.dll qjpeg4.dll
   do
     cp -v ${QT4_PATH}/plugins/imageformats/${LIB_NAME} ./plugins/imageformats
   done
