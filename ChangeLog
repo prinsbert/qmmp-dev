@@ -216,3 +216,23 @@ Version 0.10.0
 * updated Portuguese translation (Sérgio Marques)
 * updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
+
+Version 0.10.1
+* updated German translation (Ettore Atalan)
+* updated Brazilian Portuguese translation (Vitor Pereira)
+
+Version 0.10.2
+* fixed 24 bits support in the ffap plugin
+
+Version 0.10.3
+* fixed possible segmentation fault in the mpg123 plugin
+* fixed MP3 in WAV container detection in the mpg123 plugin
+* fixed Russian translation
+* updated Galician translation (Delio Docampo Cordeiro)
+
+Version 0.10.4
+* added album artist tag support in the ffap plugin 
+* fixed cmake 3.10 support
+* fixed rusxmms support in the mpg123 plugin
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Spanish translation (Joel Barrios)
