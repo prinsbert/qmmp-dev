@@ -43,6 +43,8 @@
 #ifdef Q_OS_WIN
 #include <sstream>
 #include <QMessageBox>
+#else
+#include <sys/stat.h>
 #endif
 
 #ifdef Q_OS_WIN
@@ -104,7 +106,6 @@ QMMPStarter::QMMPStarter() : QObject()
     m_socket = new QLocalSocket(this);
     bool noStart = commands.keys().contains("--no-start");
 
-    m_server->setSocketOptions(QLocalServer::UserAccessOption);
 #ifdef Q_OS_WIN
     //Windows IPC implementation (named mutex and named pipe)
     m_named_mutex = CreateMutexA(NULL, TRUE, "QMMP-403cd318-cc7b-4622-8dfd-df18d1e70057");
@@ -129,6 +130,9 @@ QMMPStarter::QMMPStarter() : QObject()
 #else
     if(!noStart && m_server->listen (UDS_PATH)) //trying to create server
     {
+#ifndef Q_OS_WIN
+        chmod(UDS_PATH, S_IRUSR | S_IWUSR);
+#endif
         startPlayer();
     }
     else if(QFile::exists(UDS_PATH))
@@ -152,7 +156,12 @@ QMMPStarter::QMMPStarter() : QObject()
                 return;
             }
             else if(m_server->listen (UDS_PATH))
+            {
+#ifndef Q_OS_WIN
+                chmod(UDS_PATH, S_IRUSR | S_IWUSR);
+#endif
                 startPlayer();
+            }
             else
             {
                 qWarning("QMMPStarter: server error: %s", qPrintable(m_server->errorString()));
