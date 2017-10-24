@@ -8,6 +8,9 @@ Description:
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
 - XMP - module player with use of the libxmp library
 - Sample Rate Converter - resampler based on libsamplerate library
+- Goom - audio visualization based on goom project
+- FFVideo - video playback engine based on FFmpeg library
+- History - a tool for collection information information about listened tracks
 
 Requirements:
 - Qt >= 4.6
@@ -16,10 +19,11 @@ Requirements:
 - libmpg123 >= 1.13.0 (Optional)
 - libxmp >= 4.2.0 (Optional)
 - libsamplerate >= 0.1.2 (Optional)
+- ffmpeg >= 3.1 (Optional)
 - cmake >= 2.8.6 (for build only)
 - yasm (for build only)
 
-Attention! Plugin Pack build needs lrelease installed. The libqt4-devel package often contains this utility.
+Attention! Plugin Pack build needs lrelease installed.
 
 Configure:
 cmake ./
@@ -35,7 +39,7 @@ by running the following command:
 cmake ./ -DUSE_MPG123:BOOL=FALSE
 
 Available options:
-- USE_MPG123; USE_FFAP; USE_XMP; USE_SRC (plugins)
+- UUSE_MPG123, USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_HISTORY (plugins)
 - USE_ASM (assembler-level optimizations inside FFap decoder)
 
 
@@ -61,10 +65,10 @@ qmake DISABLED_PLUGINS+=XMP_PLUGIN DISABLED_PLUGINS+=FFAP_PLUGIN
 
 Attention! By default all plugins are enabled by default.
 
-Changing shared library install path (needed by some 64-bit distributions).
+Changing shared library install path (for some 64-bit distributions).
 By default, all libraries and plugins will be installed to $(INSTALL PREFIX)/lib. You can change "lib"
-to "lib64" by running qmake-qt4 or cmake with the special parameter:
-qmake-qt4 LIB_DIR=/lib64
+to "lib64" by running qmake (qmake-qt4) or cmake with the special parameter:
+qmake LIB_DIR=/lib64
 or
 cmake ./ -DLIB_DIR=lib64
 
@@ -80,8 +84,10 @@ By default ModPlug plugin has higher priority than XMP.
 To fix this go to the "settings"->"plugins" and disable ModPlug plugin.
 
 How to enable FFap plugin.
-Go to FFmpeg plugin settings and disable Monkey's Audio support.
+Go to the FFmpeg plugin settings and disable Monkey's Audio support.
 
+How to enable FFVideo plugin.
+Go to the "settings"->"plugins" and disable MPlayer plugin.
 
-All patches, bug reports, ideas etc. send to forkotov02@ya.ru or use bug tracker:
-https://sourceforge.net/p/qmmp-dev/tickets
+All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets or
+forkotov02@ya.ru
