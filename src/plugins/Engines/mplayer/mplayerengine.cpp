@@ -252,7 +252,7 @@ void MplayerEngine::readStdOut()
 
 void MplayerEngine::onError(QProcess::ProcessError error)
 {
-    if(error == QProcess::FailedToStart || error == QProcess::FailedToStart)
+    if(error == QProcess::FailedToStart || error == QProcess::Crashed)
         StateHandler::instance()->dispatch(Qmmp::FatalError);
     qWarning("MplayerEngine: process error: %d", error);
 }
