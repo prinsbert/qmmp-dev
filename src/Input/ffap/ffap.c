@@ -514,12 +514,12 @@ ape_read_header (FFap_decoder *decoder)
         else
             ape->bps = 16;
 
-        if (ape->fileversion >= 3950)
+        //if (ape->fileversion >= 3950)
             ape->blocksperframe = 73728 * 4;
-        else if (ape->fileversion >= 3900 || (ape->fileversion >= 3800  && ape->compressiontype >= 4000))
+        /*else if (ape->fileversion >= 3900 || (ape->fileversion >= 3800  && ape->compressiontype >= 4000))
             ape->blocksperframe = 73728;
         else
-            ape->blocksperframe = 9216;
+            ape->blocksperframe = 9216;*/
 
         /* Skip any stored wav header */
         if (!(ape->formatflags & MAC_FORMAT_FLAG_CREATE_WAV_HEADER)) {
@@ -726,7 +726,7 @@ int ffap_init(FFap_decoder *decoder)
     decoder->bps = decoder->ape_ctx->bps;
     decoder->samplerate = decoder->ape_ctx->samplerate;
     decoder->channels = decoder->ape_ctx->channels;
-    decoder->duration = decoder->ape_ctx->totalsamples / decoder->samplerate;
+    decoder->duration = (float)decoder->ape_ctx->totalsamples / decoder->samplerate;
     decoder->readpos = 0;
 
 

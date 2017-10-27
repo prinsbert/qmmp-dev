@@ -36,6 +36,9 @@ VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
     m_prev_pause = false;
     m_sync = false;
     m_resize = false;
+    m_context = 0;
+    m_videoWindow = 0;
+    m_stream = 0;
 }
 
 bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)

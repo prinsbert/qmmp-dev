@@ -37,6 +37,7 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
     m_prev_pause = false;
     m_stream = 0;
     m_muted = false;
+    m_context = 0;
 }
 
 AudioThread::~AudioThread()

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2017 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -38,6 +38,12 @@ DecoderFFapCUE::DecoderFFapCUE(const QString &url)
     m_track = 0;
     m_buf = 0;
     m_input = 0;
+    m_length = 0;
+    m_offset = 0;
+    m_totalBytes = 0;
+    m_buf_size = 0;
+    m_sz = 0;
+    length_in_bytes = 0;
 }
 
 DecoderFFapCUE::~DecoderFFapCUE()
