@@ -93,7 +93,10 @@ bool FFmpegEngine::enqueue(InputSource *source)
 
     FFVideoDecoder *decoder = new FFVideoDecoder();
     if(!decoder->initialize(source->url()))
+    {
+        delete decoder;
         return false;
+    }
 
     if(source->ioDevice())
         source->ioDevice()->close();
