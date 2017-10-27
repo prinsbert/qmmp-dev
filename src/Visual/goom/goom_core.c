@@ -274,7 +274,7 @@ guint32 *goom_update (PluginInfo *goomInfo, gint16 data[2][512],
                     goomInfo->update.zoomFilterData.waveEffect = (goom_irand(goomInfo->gRandom,3) == 0);
                     if (goom_irand(goomInfo->gRandom,2))
                         goomInfo->update.zoomFilterData.vitesse = (goomInfo->update.zoomFilterData.vitesse + 127) >> 1;
-                        break;
+                    break;
                 case 1:
                 case 11:
                     goomInfo->update.zoomFilterData.mode = CRYSTAL_BALL_MODE;
@@ -839,7 +839,7 @@ choose_a_goom_line (PluginInfo *goomInfo, float *param1, float *param2, int *cou
             break;
         case GML_HLINE:
             if (goom_irand(goomInfo->gRandom,4) || isfar) {
-                *param1 = goomInfo->screen.height / 7;
+                *param1 = goomInfo->screen.height / 7.0f;
                 *param2 = 6.0f * goomInfo->screen.height / 7.0f;
             }
             else {
