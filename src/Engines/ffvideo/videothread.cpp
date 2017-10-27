@@ -165,6 +165,9 @@ void VideoThread::run()
             continue;
         }
 
+        if(p->pts == AV_NOPTS_VALUE)
+            p->pts = p->dts;
+
         m_mutex.lock();
         if(m_sync && p->pts > 0)
         {
@@ -173,9 +176,6 @@ void VideoThread::run()
             m_sync = false;
         }
         m_mutex.unlock();
-
-        if(p->pts == AV_NOPTS_VALUE)
-            p->pts = p->dts;
 
         if((err = avcodec_send_packet(m_context, p)) == 0)
         {
