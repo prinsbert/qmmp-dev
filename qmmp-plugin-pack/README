@@ -16,10 +16,10 @@ Requirements:
 - Qt >= 4.6
 - qmmp 0.11.x
 - taglib >= 1.7.0
-- libmpg123 >= 1.13.0 (Optional)
-- libxmp >= 4.2.0 (Optional)
+- libmpg123 >= 1.13.0 (optional)
+- libxmp >= 4.2.0 (optional)
 - libsamplerate >= 0.1.2 (Optional)
-- ffmpeg >= 3.1 (Optional)
+- ffmpeg >= 3.1 (optional)
 - cmake >= 2.8.6 (for build only)
 - yasm (for build only)
 
