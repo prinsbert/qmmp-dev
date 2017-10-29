@@ -3,14 +3,15 @@ Section: sound
 Priority: optional
 Maintainer: Ilya Kotov <forkotov02@hotmail.ru>
 Build-Depends: debhelper (>= 8.0.0), cmake, yasm, pkg-config, libmpg123-dev,
-  qmmp (>= 1.1.0), libtag1-dev (>= 1.10), libxmp-dev (>= 4.2.0), qtbase5-dev (>= 5.4),
-  qttools5-dev-tools (>= 5.4), qtchooser
+  qmmp (>= 1.2.0), libtag1-dev (>= 1.11), libxmp-dev (>= 4.2.0), qtbase5-dev (>= 5.4),
+  qttools5-dev-tools (>= 5.4), qtchooser,
+  libavcodec-dev (>= 7:3.1.0), libavformat-dev (>= 7:3.1.0), libavutil-dev (>= 7:3.1.0), libswscale-dev (>= 7:3.1.0)
 Standards-Version: 3.9.3
 Homepage: http://qmmp.ylsoftware.com/plugins.php
 
 Package: qmmp-plugin-pack
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5sql5-sqlite
 Description: Extra plugins for Qmmp
  Plugin pack is a set of extra plugins for Qmmp (Qt-based mutimedia player)
  Plugins list:

@@ -5,14 +5,15 @@ Maintainer: Matteo Cypriani <mcy@lm7.fr>
 Build-Depends: debhelper (>= 10), cmake, pkg-config, qtbase5-dev (>= 5.4),
   libqt5x11extras5-dev (>= 5.4), qttools5-dev-tools (>= 5.4),
   qtchooser, libx11-dev, oss4-dev [!linux-any], libmad0-dev, libvorbis-dev,
-  libogg-dev, libasound2-dev [linux-any], libtag1-dev (>= 1.10),
+  libogg-dev, libasound2-dev [linux-any], libtag1-dev (>= 1.11),
   libcurl4-gnutls-dev, qtmultimedia5-dev (>= 5.4), libmms-dev,
   libflac-dev, libmpcdec-dev, libjack-jackd2-dev, libsoxr-dev,
   libmodplug-dev, libsndfile1-dev, libwavpack-dev, libpulse-dev,
   libavcodec-dev, libavformat-dev, libcdio-dev, libcdio-paranoia-dev,
   libcddb2-dev, libfaad-dev, libgme-dev, libopus-dev (>= 1.0.2),
   libopusfile-dev, libwildmidi-dev, libsidplayfp-dev (>= 1.0.3),
-  libbs2b-dev, libprojectm-dev [!armel !armhf], libenca-dev
+  libbs2b-dev, libprojectm-dev [!armel !armhf], libenca-dev,
+  libshout3-dev, libarchive-dev (>= 3.2.1)
 Standards-Version: 3.9.8
 Homepage: http://qmmp.ylsoftware.com/
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/qmmp.git

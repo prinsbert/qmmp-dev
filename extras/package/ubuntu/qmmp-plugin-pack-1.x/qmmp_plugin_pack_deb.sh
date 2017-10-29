@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.1.5
+PLUGIN_PACK_VERSION=1.2.0
 UBUNTU_CODENAMES='xenial zesty artful'
 BUILD_ROOT=build-root
 

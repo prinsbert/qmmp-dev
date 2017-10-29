@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.1.12
+QMMP_VERSION=1.2.0
 UBUNTU_CODENAMES='xenial zesty artful'
 BUILD_ROOT=build-root
 
