@@ -236,3 +236,10 @@ Version 0.10.4
 * fixed rusxmms support in the mpg123 plugin
 * updated Greek translation (Dimitrios Glentadakis)
 * updated Spanish translation (Joel Barrios)
+
+Version 0.11.0
+* ported to qmmp 0.11 api
+* added history plugin
+* added ffvideo plugin
+* added Goom visualization
+* fixed memory leaks
