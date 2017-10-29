@@ -231,3 +231,4 @@ LEGEND
 0.11.0
 [*] qmmp-0.11.0
 [*] qmmp-plugin-pack-0.11.0
+[*] ffmpeg-3.4

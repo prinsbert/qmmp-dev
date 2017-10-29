@@ -3,15 +3,17 @@ Qt-based Multimedia Player for Windows
 License: GNU General Public License v2.0 or later
 Offical web page: http://qmmp.ylsoftware.com
 Bug tracker: https://sourceforge.net/p/qmmp-dev/tickets/
-Maintainer: Ilya Kotov <forkotov02@hotmail.ru> or <trialuser02@gmail.com>
+Maintainer: Ilya Kotov <forkotov02@ya.ru> or <i.kotov@rusbitech.ru>
 
 Known issues:
   - disabled plugins: mms, wildmidi, aac, jack, pulseaudio, oss4, alsa, mplayer,
-    mpris, converter, kdenotify, gnome hotkey;
+    mpris, converter, kdenotify, gnome hotkey, archive, icecast;
   - packed Xmms skins (i.e. *.tar.gz, *.tar.bz2) are not supported. You should unpack them before usage.
 
 Extra plugins (see http://qmmp.ylsoftware.com/plugins.php):
-  - FFap - enhanced Monkey's Audio (APE) decoder.
+  - FFap - enhanced Monkey's Audio (APE) decoder;
+  - Goom - audio visualization based on goom project;
+  - History - a tool for collection information information about listened tracks.
 
 This archive also contains third-party libraries. Source code of these libraries
 is freely available on the Internet.
@@ -55,7 +57,7 @@ List of the third-party artwork.
 
   Name                Web page
 
-  Oxygen icons        http://www.oxygen-icons.org/
+  Oxygen icons        https://community.kde.org/Frameworks
   Bunjee skin         http://gnome-look.org/content/show.php?content=71828
   Vortigo skin        http://gnome-look.org/content/show.php?content=55440
   Azenis skin         http://packages.altlinux.org/ru/Sisyphus/srpms/qmmp-skins-azenis
