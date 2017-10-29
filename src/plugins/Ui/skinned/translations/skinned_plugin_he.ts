@@ -452,53 +452,53 @@
         <translation>אקולייזר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="166"/>
-        <location filename="../eqwidget.cpp" line="183"/>
+        <location filename="../eqwidget.cpp" line="167"/>
+        <location filename="../eqwidget.cpp" line="184"/>
         <source>preset</source>
         <translation>קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="266"/>
+        <location filename="../eqwidget.cpp" line="268"/>
         <source>&amp;Load/Delete</source>
         <translation>&amp;טען/מחק</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="268"/>
+        <location filename="../eqwidget.cpp" line="270"/>
         <source>&amp;Save Preset</source>
         <translation>&amp;שמור קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="270"/>
+        <location filename="../eqwidget.cpp" line="272"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>&amp;שמור קביעות שנטענות אוטומטית</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="272"/>
+        <location filename="../eqwidget.cpp" line="274"/>
         <source>&amp;Import</source>
         <translation>יי&amp;בוא</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="275"/>
+        <location filename="../eqwidget.cpp" line="277"/>
         <source>&amp;Clear</source>
         <translation>&amp;טהר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="304"/>
+        <location filename="../eqwidget.cpp" line="306"/>
         <source>Saving Preset</source>
         <translation>שמירת קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="305"/>
+        <location filename="../eqwidget.cpp" line="307"/>
         <source>Preset name:</source>
         <translation>שם קביעה:</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="306"/>
+        <location filename="../eqwidget.cpp" line="308"/>
         <source>preset #</source>
         <translation>קביעה מספר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="397"/>
+        <location filename="../eqwidget.cpp" line="399"/>
         <source>Import Preset</source>
         <translation>ייבוא קביעות</translation>
     </message>
@@ -624,27 +624,27 @@
         <translation>איזון</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="295"/>
+        <location filename="../display.cpp" line="296"/>
         <source>Volume: %1%</source>
         <translation>עצמת קול: %1%</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="299"/>
+        <location filename="../display.cpp" line="300"/>
         <source>Balance: %1% right</source>
         <translation>איזון: %1% ימינה</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="301"/>
+        <location filename="../display.cpp" line="302"/>
         <source>Balance: %1% left</source>
         <translation>איזון: %1% שמאלה</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="303"/>
+        <location filename="../display.cpp" line="304"/>
         <source>Balance: center</source>
         <translation>איזון: מרכז</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="309"/>
+        <location filename="../display.cpp" line="310"/>
         <source>Seek to: %1</source>
         <translation>מעבר אל: %1</translation>
     </message>

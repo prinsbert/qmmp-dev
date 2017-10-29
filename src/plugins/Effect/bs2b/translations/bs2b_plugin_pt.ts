@@ -35,13 +35,13 @@
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="59"/>
-        <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
+        <translation>Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="60"/>
-        <source>Sebastian Pipping &lt;sebastian@pipping.org&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>Sebastian Pipping &lt;sebastian@pipping.org&gt;</source>
+        <translation>Sebastian Pipping &lt;sebastian@pipping.org&gt;</translation>
     </message>
 </context>
 <context>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="71"/>
         <source>Default</source>
-        <translation>Pré-definido</translation>
+        <translation>Padrão</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>

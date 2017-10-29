@@ -46,7 +46,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="79"/>
         <source>Print volume level</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση του επιπέδου έντασης</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="80"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="81"/>
         <source>Print mute status</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση της κατάστασης σε σίγαση</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="82"/>
@@ -92,89 +92,89 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="107"/>
+        <location filename="../qmmpstarter.cpp" line="109"/>
         <source>Unknown command</source>
         <translation>Άγνωστη εντολή</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="363"/>
+        <location filename="../qmmpstarter.cpp" line="373"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Χρήση: qmmp [επιλογές] [αρχεία]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="364"/>
+        <location filename="../qmmpstarter.cpp" line="374"/>
         <source>Options:</source>
         <translation>Επιλογές:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="370"/>
+        <location filename="../qmmpstarter.cpp" line="380"/>
         <source>Start qmmp with the specified user interface</source>
-        <translation type="unfinished"></translation>
+        <translation>Εκκίνηση του qmmp με το καθορισμένο περιβάλλον χρήστη</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="371"/>
+        <location filename="../qmmpstarter.cpp" line="381"/>
         <source>List all available user interfaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση όλων των διαθέσιμων περιβαλλόντων χρήστη</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="372"/>
+        <location filename="../qmmpstarter.cpp" line="382"/>
         <source>Don&apos;t start the application</source>
         <translation>Να μην εκκινηθεί η εφαρμογή</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="373"/>
+        <location filename="../qmmpstarter.cpp" line="383"/>
         <source>Display this text and exit</source>
         <translation>Εμφάνιση του κειμένου και έξοδος</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="374"/>
+        <location filename="../qmmpstarter.cpp" line="384"/>
         <source>Print version number and exit</source>
-        <translation>Εκτύπωση του αριθμού έκδοσης και έξοδος</translation>
+        <translation>Εμφάνιση του αριθμού έκδοσης και έξοδος</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="376"/>
+        <location filename="../qmmpstarter.cpp" line="386"/>
         <source>Home page: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ιστοσελίδα: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="377"/>
+        <location filename="../qmmpstarter.cpp" line="387"/>
         <source>Development page: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ιστοσελίδα ανάπτυξης: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="378"/>
+        <location filename="../qmmpstarter.cpp" line="388"/>
         <source>Bug tracker: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ιχνηλάτης σφαλμάτων: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="383"/>
+        <location filename="../qmmpstarter.cpp" line="393"/>
         <source>Command Line Help</source>
         <translation>Βοήθεια γραμμής εντολών</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="396"/>
+        <location filename="../qmmpstarter.cpp" line="406"/>
         <source>QMMP version: %1</source>
         <translation>Έκδοση του QMMP: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="397"/>
+        <location filename="../qmmpstarter.cpp" line="407"/>
         <source>Compiled with Qt version: %1</source>
         <translation>Μεταγλωττίστηκε με την έκδοση της Qt: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="398"/>
+        <location filename="../qmmpstarter.cpp" line="408"/>
         <source>Using Qt version: %1</source>
         <translation>Χρήση της έκδοσης της Qt: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="401"/>
+        <location filename="../qmmpstarter.cpp" line="411"/>
         <source>Qmmp Version</source>
         <translation>Έκδοση του Qmmp</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="418"/>
+        <location filename="../qmmpstarter.cpp" line="428"/>
         <source>User Interfaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιβάλλοντα χρήστη</translation>
     </message>
 </context>
 </TS>
