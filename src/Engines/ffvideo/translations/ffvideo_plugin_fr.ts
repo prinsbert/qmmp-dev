@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr_FR">
+<TS version="2.0" language="fr">
 <context>
     <name>FFVideoFactory</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers vidéo</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="139"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="141"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Compilé contre :</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="151"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,33 +39,33 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="52"/>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Longueur</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="53"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille du fichier</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="53"/>
         <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Ko</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Taux de bit</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
         <location filename="../ffvideometadatamodel.cpp" line="62"/>
         <source>%1 kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Kbps</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="62"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Débit Audio</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="63"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="63"/>
         <source>%1 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Hz</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="64"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Débit vidéo</translation>
     </message>
 </context>
 <context>
