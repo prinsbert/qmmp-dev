@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Qmmp
-Upstream-Contact: Ilya Kotov <forkotov02@hotmail.ru> or <trialuser02@gmail.com>
+Upstream-Contact: Ilya Kotov <forkotov02@ya.ru> or <trialuser02@gmail.com>
 Source: http://qmmp.ylsoftware.com/
 License: GPL-2+
 Comment:
@@ -30,7 +30,7 @@ Copyright:
  2006-2009 Licq developers
  2009-2012 Artur Guzik <aguzik88@gmail.com>
  2006-2014 Ricardo Villalba <rvm@users.sourceforge.net>
- 2005-2015 Ilya Kotov <forkotov02@hotmail.ru> or <trialuser02@gmail.com>
+ 2005-2015 Ilya Kotov <forkotov02@ya.ru> or <trialuser02@gmail.com>
 License: GPL-2+
 
 Files: src/plugins/Effect/ladspa/ladspa.h

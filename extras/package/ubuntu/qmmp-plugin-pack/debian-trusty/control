@@ -1,7 +1,7 @@
 Source: qmmp-plugin-pack
 Section: sound
 Priority: optional
-Maintainer: Ilya Kotov <forkotov02@hotmail.ru>
+Maintainer: Ilya Kotov <i.kotov@rusbitech.ru>
 Build-Depends: debhelper (>= 8.0.0), cmake, yasm, pkg-config, libmpg123-dev, libqt4-dev (>= 4:4.7.0),
                libqmmp-dev (>= 0.11), libqmmpui-dev ( >= 0.11), libtag1-dev (>= 1.11), libxmp-dev (>= 4.2)
 Standards-Version: 3.9.3
