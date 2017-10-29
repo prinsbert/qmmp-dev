@@ -1,93 +1,80 @@
 [Icon Theme]
 Name=Oxygen
-Name[ar]=أكسجين
-Name[bn]=অক্সিজেন
-Name[csb]=Krziseń
+Name[bs]=Oxygen
+Name[ca]=Oxygen
+Name[ca@valencia]=Oxygen
+Name[cs]=Oxygen
+Name[da]=Oxygen
+Name[de]=Oxygen
+Name[el]=Oxygen
 Name[es]=Oxígeno
-Name[gu]=ઓક્સિજન
-Name[hi]=आक्सीजन
-Name[hne]=आक्सीजन
-Name[kk]=Оттегі
-Name[km]=អុកស៊ី� ្សែន
-Name[kn]=ಆಕ್ಸಿಜನ್
-Name[mai]=आक्सीजन
-Name[mk]=Оксиген
-Name[ml]=ഓക്സിജന്‍
-Name[mr]=आक्सीजन
-Name[ne]=अक्सिजन
-Name[nn]=Oksygen
-Name[or]=ଅକ୍ସିଜେନ
-Name[pa]=ਆਕਸੀਜਨ
-Name[se]=Oksygena
+Name[eu]=Oxygen
+Name[fi]=Oxygen
+Name[fr]=Oxygen
+Name[gl]=Oxygen
+Name[hu]=Oxygen
+Name[it]=Oxygen
+Name[kk]=Oxygen
+Name[ko]=Oxygen
+Name[mr]=ऑक्सीजन
+Name[nb]=Oxygen
+Name[nds]=Oxygen
+Name[nl]=Oxygen
+Name[pl]=Oxygen
+Name[pt]=Oxygen
+Name[pt_BR]=Oxygen
+Name[ro]=Oxygen
+Name[ru]=Oxygen
+Name[sk]=Oxygen
+Name[sl]=Kisik
 Name[sr]=Кисеоник
+Name[sr@ijekavian]=Кисеоник
+Name[sr@ijekavianlatin]=Kiseonik
 Name[sr@latin]=Kiseonik
-Name[ta]=ஆக்ஸிஜன்
-Name[th]=รูปแบบ Oxygen
-Name[wa]=Ocsidjinne
+Name[sv]=Oxygen
+Name[tr]=Oxygen
+Name[ug]=ئوكسېگىن
+Name[uk]=Oxygen
 Name[x-test]=xxOxygenxx
+Name[zh_CN]=Oxygen(氧气)
+Name[zh_TW]=Oxygen
 
 Comment=Oxygen Team
-Comment[af]=Oxygen span
-Comment[ar]=ثيمة أكسجين
-Comment[be@latin]=Supołka „Oxygen”
-Comment[bg]=Екипът на Oxygen
-Comment[bn]=অক্সিজেন টীম
-Comment[bn_IN]=Oxygen দল
+Comment[bs]=Oxygen tim
+Comment[ca]=Equip de l'Oxygen
+Comment[ca@valencia]=Equip de l'Oxygen
 Comment[cs]=Tým Oxygen
-Comment[csb]=Oxygen-Team
 Comment[da]=Oxygen-holdet
 Comment[de]=Oxygen-Team
-Comment[el]=Η ομάδα του Oxygen
-Comment[eo]=Oxygen Teamo
-Comment[es]=Equipo Oxygen
-Comment[et]=Oxygeni meeskond
+Comment[el]=Ομάδα Oxygen
+Comment[es]=Equipo Oxígeno
 Comment[eu]=Oxygen taldea
-Comment[fi]=Oxygen-tiimi
-Comment[fr]=L'équipe Oxygen
-Comment[ga]=Foireann Oxygen
-Comment[gl]=A equipa de Oxygen
-Comment[gu]=ઓક્સિજન ટીમ
-Comment[he]=צוות Oxygen
-Comment[hi]=ऑक्सीजन टोली
-Comment[hne]=आक्सीजन टीम
-Comment[hr]=Tim Oxygen-a
-Comment[is]=Oxygen teymið
+Comment[fi]=Oxygenin kehitysryhmä
+Comment[fr]=Équipe Oxygen
+Comment[gl]=Equipo de Oxygen
+Comment[hu]=Oxygen csapat
 Comment[it]=La squadra di Oxygen
 Comment[kk]=Oxygen тобы
-Comment[km]=ក្រុម​អុកស៊ីសែន
-Comment[kn]=ಆಕ್ಸಿಜನ್ ತಂಡ
 Comment[ko]=Oxygen 팀
-Comment[ku]=Koma Oxygen
-Comment[lt]=Oxygen komanda
-Comment[lv]=Oxygen komanda
-Comment[mk]=Тимот на Оксиген
-Comment[ml]=ഓക്സിജന്‍ സംഘം
-Comment[mr]=ऑक्सीजन समूह
+Comment[mr]=ऑक्सीजन टीम
+Comment[nb]=Oxygen-laget
 Comment[nds]=Oxygen-Koppel
 Comment[nl]=Oxygen-team
-Comment[nn]=Oksygen-gruppa
-Comment[or]=Oxygen ଦଳ
-Comment[pa]=ਆਕਸੀਜਨ ਟੀਮ
-Comment[pl]=Zespół Oxygena
+Comment[pl]=Zespół Oxygen
 Comment[pt]=Equipa do Oxygen
 Comment[pt_BR]=Equipe do Oxygen
 Comment[ro]=Echipa Oxygen
 Comment[ru]=Команда Oxygen
-Comment[si]=Oxygen කණ්ඩායම
 Comment[sk]=Tím Oxygen
-Comment[sl]=Ekipa Oxygena
+Comment[sl]=Ekipa Kisika
 Comment[sr]=Тим Кисеоника
+Comment[sr@ijekavian]=Тим Кисеоника
+Comment[sr@ijekavianlatin]=Tim Kiseonika
 Comment[sr@latin]=Tim Kiseonika
 Comment[sv]=Oxygen-gruppen
-Comment[ta]=Oxygen அணி
-Comment[te]=Oxygen టీము
-Comment[tg]=Командаи Oxygen
-Comment[th]=กลุ่มผู้พัฒนา Oxygen
-Comment[tr]=Oxygen Ekibi
+Comment[tr]=Oxygen Takımı
+Comment[ug]=ئوكسېگىن ئەترىتى
 Comment[uk]=Команда Oxygen
-Comment[uz]=Oxygen jamoasi
-Comment[uz@cyrillic]=Oxygen жамоаси
-Comment[wa]=Ekipe Ocsidjinne
 Comment[x-test]=xxOxygen Teamxx
 Comment[zh_CN]=Oxygen 团队
 Comment[zh_TW]=Oxygen 開發團隊
@@ -103,10 +90,12 @@ LockOverlay=lockoverlay
 ShareOverlay=share
 ZipOverlay=zip
 
+Directories=8x8/emblems,16x16/actions,16x16/animations,16x16/apps,16x16/categories,16x16/devices,16x16/emblems,16x16/emotes,16x16/intl,16x16/mimetypes,16x16/places,16x16/status,16x16/special,22x22/actions,22x22/mimetypes,22x22/places,22x22/status,32x32/actions,32x32/mimetypes,32x32/places,32x32/status,48x48/actions,48x48/mimetypes,48x48/places,48x48/status
 
-
-Directories=16x16/actions,16x16/animations,16x16/apps,16x16/categories,16x16/devices,16x16/emblems,16x16/emotes,16x16/intl,16x16/mimetypes,16x16/places,16x16/status,16x16/special
-
+[8x8/emblems]
+Size=8
+Context=Emblems
+Type=Threshold
 
 [16x16/actions]
 Size=16
@@ -166,4 +155,64 @@ Type=Threshold
 [16x16/special]
 Size=16
 Context=Actions
+Type=Threshold
+
+[22x22/actions]
+Size=22
+Context=Actions
+Type=Threshold
+
+[22x22/mimetypes]
+Size=22
+Context=MimeTypes
+Type=Threshold
+
+[22x22/places]
+Size=22
+Context=Places
+Type=Threshold
+
+[22x22/status]
+Size=22
+Context=Status
+Type=Threshold
+
+[32x32/actions]
+Size=32
+Context=Actions
+Type=Threshold
+
+[32x32/mimetypes]
+Size=32
+Context=MimeTypes
+Type=Threshold
+
+[32x32/places]
+Size=32
+Context=Places
+Type=Threshold
+
+[32x32/status]
+Size=32
+Context=Status
+Type=Threshold
+
+[48x48/actions]
+Size=48
+Context=Actions
+Type=Threshold
+
+[48x48/mimetypes]
+Size=48
+Context=MimeTypes
+Type=Threshold
+
+[48x48/places]
+Size=48
+Context=Places
+Type=Threshold
+
+[48x48/status]
+Size=48
+Context=Status
 Type=Threshold
