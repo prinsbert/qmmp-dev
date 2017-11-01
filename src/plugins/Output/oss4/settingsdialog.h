@@ -24,7 +24,7 @@
 #include "ui_settingsdialog.h"
 
 /**
-    @author Ilya Kotov <forkotov@hotmail.ru>
+    @author Ilya Kotov <forkotov@ya.ru>
 */
 class SettingsDialog : public QDialog
 {

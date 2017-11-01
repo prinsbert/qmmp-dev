@@ -30,7 +30,7 @@
 class VolumeOSS4;
 
 /**
-    @author Ilya Kotov <forkotov@hotmail.ru>
+    @author Ilya Kotov <forkotov@ya.ru>
 */
 class OutputOSS4 : public Output
 {
