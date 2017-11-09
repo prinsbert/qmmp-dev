@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="125"/>
         <source>Compiled against libxmp-%1</source>
-        <translation>libxmp-%1 対応でコンパイル</translation>
+        <translation>libxmp-%1 を使用してコンパイル</translation>
     </message>
 </context>
 <context>
