@@ -26,7 +26,7 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="58"/>
         <source>Compiled against libbs2b-%1</source>
-        <translation>libbs2b-%1 対応でコンパイル</translation>
+        <translation>libbs2b-%1 を使用してコンパイル</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="59"/>
