@@ -26,12 +26,12 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="113"/>
         <source>Compiled against libxmp-%1</source>
-        <translation>libxmp-%1 対応でコンパイル</translation>
+        <translation>libxmp-%1 を使用してコンパイル</translation>
     </message>
 </context>
 <context>

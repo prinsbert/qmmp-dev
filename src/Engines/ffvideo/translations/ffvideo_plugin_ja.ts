@@ -6,32 +6,32 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="40"/>
         <source>FFmpeg Video Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg 映像プラグイン</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>映像ファイル</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="139"/>
         <source>About FFVideo Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>FFVideo プラグインについて</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="140"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg を使用する QMMP 用映像プラグイン</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="141"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>コンパイルに使用したライブラリ:</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="151"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,58 +39,58 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="52"/>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>映写時間</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="53"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルサイズ</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="53"/>
         <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KiB</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>ビットレート</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
         <location filename="../ffvideometadatamodel.cpp" line="62"/>
         <source>%1 kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kbps</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="62"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>音声ビットレート</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="63"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>音声サンプルレート</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="63"/>
         <source>%1 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Hz</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="64"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>音声チャンネル数</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>映像の寸法</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>映像ビットレート</translation>
     </message>
 </context>
 <context>
@@ -98,12 +98,12 @@
     <message>
         <location filename="../videowindow.cpp" line="37"/>
         <source>FFmpeg Video</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg 映像</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="51"/>
         <source>Alt+Return</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Enter</translation>
     </message>
 </context>
 </TS>

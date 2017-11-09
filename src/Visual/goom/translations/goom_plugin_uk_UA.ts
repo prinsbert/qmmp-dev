@@ -64,7 +64,7 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="53"/>
