@@ -401,7 +401,7 @@
           ((int*)space)[-1] = type; /* stockage du type dans le prefixe de structure */
           for (i = 0; i < gsl_struct->nbFields; ++i)
           {
-            char full_name[256];
+            char full_name[257];
             char *cspace = (char*)space + gsl_struct->fields[i]->offsetInStruct;
             sprintf(full_name, "%s.%s", name, gsl_struct->fields[i]->name);
             gsl_declare_var(ns, full_name, gsl_struct->fields[i]->type, cspace);
