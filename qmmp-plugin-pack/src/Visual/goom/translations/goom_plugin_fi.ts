@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="fi">
 <context>
     <name>GoomWidget</name>
     <message>
@@ -39,7 +41,7 @@
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>F</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -47,12 +49,12 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="31"/>
         <source>Goom</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="50"/>
         <source>About Goom Visual Plugin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="51"/>
@@ -67,7 +69,7 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="53"/>
         <source>Based on the source code from the Goom project</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="54"/>

@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="fi">
 <context>
     <name>DateInputDialog</name>
     <message>
@@ -25,12 +27,12 @@
     <message>
         <location filename="../historyfactory.cpp" line="52"/>
         <source>About Listening History Plugin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="53"/>
         <source>Qmmp Listening History Plugin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
@@ -53,7 +55,7 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>
         <source>Title format:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -92,23 +94,23 @@
     <message>
         <location filename="../historywindow.ui" line="83"/>
         <source>Execute</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="129"/>
         <source>Time</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="134"/>
         <location filename="../historywindow.ui" line="183"/>
         <source>Song</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="143"/>
         <source>Distribution</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="156"/>
@@ -151,7 +153,7 @@
     <message>
         <location filename="../historywindow.cpp" line="104"/>
         <source>dd MMMM yyyy</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="105"/>
@@ -161,12 +163,12 @@
     <message>
         <location filename="../historywindow.cpp" line="179"/>
         <source>MM-yyyy</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="180"/>
         <source>dd MMMM</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="fi">
 <context>
     <name>DecoderFFapFactory</name>
     <message>
@@ -9,12 +11,12 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="50"/>
         <source>Monkey&apos;s Audio Files</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="158"/>
         <source>About FFap Audio Plugin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="159"/>
@@ -24,7 +26,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="160"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="161"/>
@@ -34,7 +36,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="162"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
