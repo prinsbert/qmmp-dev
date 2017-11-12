@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="fi">
 <context>
     <name>DecoderMPG123Factory</name>
     <message>
@@ -14,18 +16,18 @@
     <message>
         <location filename="../decodermpg123factory.cpp" line="257"/>
         <source>About MPG123 Audio Plugin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="258"/>
         <source>Qmmp MPG123 Audio Plugin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="259"/>
         <source>This plugin provides MPEG v1/2 layer1/2/3 support
 with use of libmpg123 library</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="261"/>
@@ -38,7 +40,7 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="70"/>
         <source>Format</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="72"/>
@@ -66,7 +68,7 @@ with use of libmpg123 library</source>
         <location filename="../mpegmetadatamodel.cpp" line="84"/>
         <location filename="../mpegmetadatamodel.cpp" line="87"/>
         <source>Mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="90"/>
@@ -121,12 +123,12 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
         <source>Tag Priority</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="41"/>
         <source>First:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="61"/>
@@ -147,39 +149,39 @@ with use of libmpg123 library</source>
         <location filename="../settingsdialog.ui" line="120"/>
         <location filename="../settingsdialog.ui" line="169"/>
         <source>APE</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="76"/>
         <location filename="../settingsdialog.ui" line="125"/>
         <location filename="../settingsdialog.ui" line="174"/>
         <source>Disabled</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="90"/>
         <source>Second:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="139"/>
         <source>Third:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="198"/>
         <source>Encodings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="210"/>
         <source>ID3v1 encoding:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="236"/>
         <source>ID3v2 encoding:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
