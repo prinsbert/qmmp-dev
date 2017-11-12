@@ -61,7 +61,7 @@ przy użyciu biblioteki libmpg123 </translation>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="74"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="78"/>
@@ -74,7 +74,7 @@ przy użyciu biblioteki libmpg123 </translation>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="90"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>KB</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="91"/>

@@ -33,7 +33,7 @@ Unterstützung für Dateien im „MPEG v1/2 Layer1/2/3“-Format hinzu</translat
     <message>
         <location filename="../decodermpg123factory.cpp" line="254"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>

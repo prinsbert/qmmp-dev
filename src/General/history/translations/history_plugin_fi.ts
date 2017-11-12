@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pl_PL">
+<TS version="2.0" language="fi">
 <context>
     <name>DateInputDialog</name>
     <message>
         <location filename="../dateinputdialog.ui" line="14"/>
         <source>Select Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse päivä</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../history.cpp" line="60"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Historia</translation>
     </message>
 </context>
 <context>
@@ -22,7 +22,7 @@
     <message>
         <location filename="../historyfactory.cpp" line="32"/>
         <source>Listening History Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuunteluhistorialiitännäinen</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="52"/>
@@ -37,12 +37,12 @@
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
         <source>This plugin collects information about listened tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Tämä liitännäinen kerää tietoja kuunnelluista kappaleista</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Toteuttanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -50,12 +50,12 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="14"/>
         <source>Listening History Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuunteluhistorialiitännäisen asetukset</translation>
     </message>
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>
         <source>Title format:</source>
-        <translation>Format tytułu:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -64,32 +64,32 @@
         <location filename="../historywindow.ui" line="14"/>
         <location filename="../historywindow.ui" line="110"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Historia</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="29"/>
         <source>Time Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Aikajana</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="35"/>
         <source>From:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alkaa:</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="52"/>
         <source>To:</source>
-        <translation type="unfinished"></translation>
+        <translation>Päättyy:</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="69"/>
         <source>Last week</source>
-        <translation type="unfinished"></translation>
+        <translation>Viime viikko</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="76"/>
         <source>Last month</source>
-        <translation type="unfinished"></translation>
+        <translation>Viime kuukausi</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="83"/>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../historywindow.ui" line="156"/>
         <source>Day</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivä</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="161"/>
@@ -123,32 +123,32 @@
         <location filename="../historywindow.ui" line="215"/>
         <location filename="../historywindow.ui" line="242"/>
         <source>Play counts</source>
-        <translation type="unfinished"></translation>
+        <translation>Toistokerrat</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="170"/>
         <source>Top Songs</source>
-        <translation type="unfinished"></translation>
+        <translation>Suosituimmat kappaleet</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="197"/>
         <source>Top Artists</source>
-        <translation type="unfinished"></translation>
+        <translation>Suosituimmat artistit</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="210"/>
         <source>Artist</source>
-        <translation>Artysta</translation>
+        <translation>Artisti</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="224"/>
         <source>Top Genres</source>
-        <translation type="unfinished"></translation>
+        <translation>Suosituimmat tyylilajit</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="237"/>
         <source>Genre</source>
-        <translation>Gatunek</translation>
+        <translation>Tyylilaji</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="104"/>
@@ -158,7 +158,7 @@
     <message>
         <location filename="../historywindow.cpp" line="105"/>
         <source>hh:mm:ss</source>
-        <translation type="unfinished"></translation>
+        <translation>hh:mm:ss</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="179"/>

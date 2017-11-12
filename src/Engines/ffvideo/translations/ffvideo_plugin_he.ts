@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="he_IL">
+<TS version="2.0" language="he">
 <context>
     <name>FFVideoFactory</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>קבצי וידיאו</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="139"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="141"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>הודר כנגד:</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="151"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="52"/>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>אריכות</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="53"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>גודל קובץ</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="53"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>שיעור סיביות</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="62"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>שיעור סיביות שמע</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="63"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>שיעור סיביות וידיאו</translation>
     </message>
 </context>
 <context>

@@ -54,7 +54,7 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="62"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="63"/>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="65"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>KB</translation>
     </message>
 </context>
 </TS>

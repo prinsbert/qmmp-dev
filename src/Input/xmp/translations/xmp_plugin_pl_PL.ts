@@ -74,7 +74,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Próbkowanie:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
@@ -112,12 +112,12 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="49"/>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa pliku</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
@@ -167,17 +167,17 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="82"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Sample</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="90"/>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Instrumenty</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="95"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentarz</translation>
     </message>
 </context>
 </TS>
