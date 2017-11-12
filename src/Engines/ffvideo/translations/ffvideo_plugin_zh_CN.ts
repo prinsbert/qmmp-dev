@@ -11,7 +11,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>视频文件</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="139"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="141"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>在以下文件的基础上进行的编译：</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="151"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="52"/>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>长度</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="53"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>文件大小</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="53"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>比特率</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="62"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>音频比特率</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="63"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>视频比特率</translation>
     </message>
 </context>
 <context>
