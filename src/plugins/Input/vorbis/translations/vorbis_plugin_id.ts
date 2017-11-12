@@ -21,12 +21,12 @@
     <message>
         <location filename="../decodervorbisfactory.cpp" line="125"/>
         <source>Qmmp Ogg Vorbis Audio Plugin</source>
-        <translation>Qmmp Plugin Audio Vorbis Ogg</translation>
+        <translation>Plugin Audio Vorbis Ogg Qmmp</translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="126"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="127"/>

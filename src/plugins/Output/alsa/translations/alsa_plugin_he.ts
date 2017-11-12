@@ -21,7 +21,7 @@
     <message>
         <location filename="../outputalsafactory.cpp" line="59"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>חובר על ידי: Ilya Kotov &lt;forkotov02@ya.ru&gt;‎</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

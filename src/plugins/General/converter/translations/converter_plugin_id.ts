@@ -146,7 +146,7 @@
     <message>
         <location filename="../converterfactory.cpp" line="51"/>
         <source>Qmmp Converter Plugin</source>
-        <translation>Qmmp Plugin Converter</translation>
+        <translation>Plugin Converter Qmmp</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="52"/>
@@ -156,7 +156,7 @@
     <message>
         <location filename="../converterfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

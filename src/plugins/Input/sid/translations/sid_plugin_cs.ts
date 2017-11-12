@@ -6,7 +6,7 @@
     <message>
         <location filename="../decodersidfactory.cpp" line="59"/>
         <source>SID Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul SID</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="61"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../decodersidfactory.cpp" line="116"/>
         <source>Qmmp SID Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp modul SID</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="117"/>

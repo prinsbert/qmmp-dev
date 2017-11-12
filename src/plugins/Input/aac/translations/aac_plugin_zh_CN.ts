@@ -64,7 +64,7 @@
     <message>
         <location filename="../decoderaacfactory.cpp" line="85"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

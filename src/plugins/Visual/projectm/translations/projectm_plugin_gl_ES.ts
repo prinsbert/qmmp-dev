@@ -44,12 +44,12 @@
     <message>
         <location filename="../projectmwidget.cpp" line="153"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Amosar menú</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="153"/>
         <source>M</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="155"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Escrito por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="54"/>

@@ -21,12 +21,12 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="187"/>
         <source>Qmmp FLAC Audio Plugin</source>
-        <translation>Qmmp Plugin Audio FLAC</translation>
+        <translation>Plugin Audio FLAC Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="188"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

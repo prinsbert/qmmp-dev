@@ -16,12 +16,12 @@
     <message>
         <location filename="../rgscandialog.ui" line="42"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Název</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="47"/>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation>Postup</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="52"/>
@@ -67,7 +67,7 @@
         <location filename="../rgscandialog.cpp" line="122"/>
         <location filename="../rgscandialog.cpp" line="233"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../rgscandialog.cpp" line="132"/>
@@ -75,7 +75,7 @@
         <location filename="../rgscandialog.cpp" line="157"/>
         <location filename="../rgscandialog.cpp" line="228"/>
         <source>%1 dB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dB</translation>
     </message>
 </context>
 <context>

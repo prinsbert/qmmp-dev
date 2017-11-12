@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="123"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autor: Ilja Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../opusmetadatamodel.cpp" line="59"/>
         <source>KB</source>
-        <translation type="unfinished"></translation>
+        <translation>KB</translation>
     </message>
 </context>
 </TS>

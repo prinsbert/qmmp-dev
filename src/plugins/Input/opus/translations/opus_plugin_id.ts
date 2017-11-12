@@ -21,12 +21,12 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="122"/>
         <source>Qmmp Opus Audio Plugin</source>
-        <translation>Qmmp Plugin Audio Opus</translation>
+        <translation>Plugin Audio Opus Qmmp </translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="123"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
