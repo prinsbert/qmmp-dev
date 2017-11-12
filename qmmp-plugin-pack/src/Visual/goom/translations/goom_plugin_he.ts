@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="he_IL">
+<TS version="2.0" language="he">
 <context>
     <name>GoomWidget</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>שיעור רענון</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="190"/>
@@ -36,12 +36,12 @@
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>&amp;Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;מסך מלא</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
