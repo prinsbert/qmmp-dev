@@ -27,5 +27,6 @@
     <file>history_plugin_bg.qm</file>
     <file>history_plugin_el.qm</file>
     <file>history_plugin_id.qm</file>
+    <file>history_plugin_fi.qm</file>
   </qresource>
 </RCC>
