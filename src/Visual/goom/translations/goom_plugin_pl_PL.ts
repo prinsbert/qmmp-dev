@@ -11,22 +11,22 @@
     <message>
         <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Odświeżanie</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="190"/>
         <source>60 fps</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">25 klatek {60 ?}</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="191"/>
         <source>50 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>50 klatek</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="192"/>
         <source>25 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>25 klatek</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="198"/>
@@ -36,12 +36,12 @@
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>&amp;Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pełny Ekran</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
