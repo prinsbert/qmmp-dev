@@ -1,4 +1,4 @@
-project(libsrconverter)
+project(libhistory)
 
 SET(QT_USE_QTSQL TRUE)
 INCLUDE(FindQt4)
