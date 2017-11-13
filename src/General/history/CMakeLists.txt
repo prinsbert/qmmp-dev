@@ -1,4 +1,4 @@
-project(libsrconverter)
+project(libhistory)
 
 # libqmmp
 include_directories(${QMMP_INCLUDE_DIRS})
