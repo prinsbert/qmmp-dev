@@ -14,7 +14,7 @@ SET(libnotifier_SRCS
     popupwidget.cpp
 )
 
-SET(libnotifier_RCCS 
+SET(libnotifier_RCCS
     translations/translations.qrc
     notifier_images.qrc)
 
@@ -38,8 +38,8 @@ IF(X11_FOUND AND Qt5X11Extras_FOUND)
   include_directories(${X11_INCLUDE_DIRS})
   link_directories(${X11_LIBRARY_DIRS})
   ADD_DEFINITIONS(${X11_CFLAGS})
-  ADD_DEFINITIONS(-DQ_WS_X11)
-  target_link_libraries(notifier Qt5::X11Extras Qt5::Widgets -lqmmpui -lqmmp)
+  ADD_DEFINITIONS(-DX11_FOUND)
+  target_link_libraries(notifier Qt5::X11Extras Qt5::Widgets ${X11_LDFLAGS} -lqmmpui -lqmmp)
 ELSE(X11_FOUND AND Qt5X11Extras_FOUND)
   target_link_libraries(notifier Qt5::Widgets -lqmmpui -lqmmp)
 ENDIF(X11_FOUND AND Qt5X11Extras_FOUND)
