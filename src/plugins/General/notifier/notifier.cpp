@@ -26,7 +26,7 @@
 #include <qmmp/soundcore.h>
 #undef Visual
 
-#ifdef Q_WS_X11
+#ifdef QMMP_WS_X11
 #include <QX11Info>
 #include <X11/X.h>
 #include <X11/Xatom.h>
@@ -177,7 +177,7 @@ void Notifier::removePsiTuneFiles()
     }
 }
 
-#ifdef Q_WS_X11
+#ifdef QMMP_WS_X11
 bool Notifier::hasFullscreenWindow() const
 {
     if(!m_disableForFullScreen)
