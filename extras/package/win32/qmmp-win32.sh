@@ -83,12 +83,12 @@ create_distr ()
   find . -type f -name *.a -delete
   find . -type d -name ".svn" | xargs rm -rf
   #Qt libs
-  for LIB_NAME in QtCore4.dll QtGui4.dll QtNetwork4.dll QtOpenGL4.dll QtMultimedia4.dll
+  for LIB_NAME in QtCore4.dll QtGui4.dll QtNetwork4.dll QtOpenGL4.dll QtMultimedia4.dll QtSql4.dll
   do
     cp -v ${QT4_PATH}/bin/${LIB_NAME} ./
   done
   #Qt plugins
-  mkdir -p plugins/imageformats plugins/codecs
+  mkdir -p plugins/imageformats plugins/codecs plugins/sqldrivers
   for LIB_NAME in qcncodecs4.dll qjpcodecs4.dll qkrcodecs4.dll qtwcodecs4.dll
   do
     cp -v ${QT4_PATH}/plugins/codecs/${LIB_NAME} ./plugins/codecs
@@ -96,6 +96,10 @@ create_distr ()
   for LIB_NAME in qgif4.dll qico4.dll qjpeg4.dll
   do
     cp -v ${QT4_PATH}/plugins/imageformats/${LIB_NAME} ./plugins/imageformats
+  done
+  for LIB_NAME in qsqlite4.dll
+  do
+    cp -v ${QT4_PATH}/plugins/sqldrivers/${LIB_NAME} ./plugins/sqldrivers
   done
   #translations
   cp -v ${QT4_PATH}/translations/qt_??.qm ./translations
