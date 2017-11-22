@@ -21,7 +21,7 @@
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -44,27 +44,27 @@
     <message>
         <location filename="../settingsdialog.ui" line="47"/>
         <source>Best Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Лучшая sinc-интерполяция</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>
         <source>Medium Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Средняя sinc-интерполяция</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="57"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Быстрая sinc-интерполяция</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="62"/>
         <source>ZOH Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Интерполяция нулевого порядка</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="67"/>
         <source>Linear Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Линейная интерполяция</translation>
     </message>
 </context>
 </TS>
