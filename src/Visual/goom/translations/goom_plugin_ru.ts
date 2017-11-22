@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU">
+<TS version="2.0" language="ru">
 <context>
     <name>GoomWidget</name>
     <message>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="53"/>
@@ -79,12 +79,12 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="55"/>
         <source>Jean-Christophe Hoelt &lt;jeko@ios-software.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Jean-Christophe Hoelt &lt;jeko@ios-software.com&gt;</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="56"/>
         <source>Guillaume Borios &lt;gyom@ios-software.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Guillaume Borios &lt;gyom@ios-software.com&gt;</translation>
     </message>
 </context>
 </TS>
