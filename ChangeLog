@@ -242,3 +242,24 @@ Version 1.1.5
 * fixed rusxmms support in the mpg123 plugin
 * updated Greek translation (Dimitrios Glentadakis)
 * updated Spanish translation (Joel Barrios)
+
+Version 1.2.0
+* ported to qmmp 1.2 api
+* added history plugin
+* added ffvideo plugin
+* added Goom visualization
+* fixed memory leaks
+* added Finnish translation (Jiri Grönroos)
+* updated Brazilian Portuguese translation (Vitor Pereira)
+* updated Chezh translation (Jaroslav Lichtblau)
+* updated Chinese Simplified translation (Mingcong Bai)
+* updated French translation (Adrien Vigneron and Sébastien Aperghis-Tramoni)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated German translation (Ettore Atalan)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Polish translation (Daniel Krawczyk)
+* updated Portuguese translation (Sérgio Marques)
+* updated Russian translation (Alexey Loginov)
+* updated Spanish translation (Joel Barrios and Bohdan Shuba)
+* updated Japanese translation (RyoTa SimaMoto)
+* updated Ukrainian translation (Gennady Motsio)
