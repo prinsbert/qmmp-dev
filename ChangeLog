@@ -1300,3 +1300,55 @@ Version 1.1.11
 
 Version 1.1.12
 * fixed IPC regression
+
+Version 1.2.0
+* added archive reader plugin (requires TagLib 1.11 or higher)
+* added file writer plugin
+* added icecast output plugin
+* added feature to disable notifications when another application is in 
+  the full screen mode
+* added cover tab to the track details dialog
+* added '--volume-status' command-line option
+* added '--mute-status' command-line option
+* added feature to change user interface from command line
+* added parent directory name to the title formatting fields
+* added cache to the lyrics plugin
+* added feature to clear window title when playback is finished
+* added 'Raise' method implementation to the mpris plugin
+* added mount point list to the file dialog
+* improved plugin API
+* improved cover cache
+* improved visualization support
+* improved aac plugin
+* improved audio format determination in the ffmpeg plugin
+* improved m3u, pls and xspf support
+* improved DirectSound and WASAPI support
+* improved sndfile plugin
+* improved mpeg plugin:
+  - added lame header support
+  - added gapless support
+  - improved file type determination
+* improved qsui plugin:
+  - added quick search to the file system browser
+  - added quick search to the playlist
+  - added feature to change toolbar icon size
+  - added record button
+  - added cover image alignment
+  - reduced memory usage
+  - improved settings
+* fixed memory leaks
+* added Finnish translation (Jiri Grönroos)
+* updated Brazilian Portuguese translation (Vitor Pereira)
+* updated Chezh translation (Jaroslav Lichtblau)
+* updated Chinese Simplified translation (Mingcong Bai)
+* updated French translation (Adrien Vigneron and Sébastien Aperghis-Tramoni)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated German translation (Ettore Atalan)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Indonesian translation (Wantoyo)
+* updated Polish translation (Daniel Krawczyk)
+* updated Portuguese translation (Sérgio Marques)
+* updated Russian translation (Alexey Loginov)
+* updated Spanish translation (Joel Barrios and Bohdan Shuba)
+* updated Japanese translation (RyoTa SimaMoto)
+* updated Ukrainian translation (Gennady Motsio)
