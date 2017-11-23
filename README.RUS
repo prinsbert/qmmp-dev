@@ -2,6 +2,8 @@ Qmmp Plugin Pack
 
 Набор дополнительных модулей для Qmmp.
 Официальная домашняя страница: http://qmmp.ylsoftware.com/
+Разработка: https://sourceforge.net/projects/qmmp-dev/
+Перевод: https://www.transifex.com/qmmp-development-team/
 
 Список модулей:
 - MPG123 - декодер MPEG v1/2 layer1/2/3 с использованием библиотеки libmpg123
