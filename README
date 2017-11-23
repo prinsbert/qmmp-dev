@@ -2,6 +2,8 @@ Qmmp Plugin Pack
 
 Plugin pack is a set of extra plugins for Qmmp.
 Official home page: http://qmmp.ylsoftware.com/plugins.php
+Development: https://sourceforge.net/projects/qmmp-dev/
+Translation: https://www.transifex.com/qmmp-development-team/
 
 Description:
 - MPG123 - MPEG v1/2 layer1/2/3 decoder with use of the libmpg123 library
