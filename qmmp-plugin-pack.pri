@@ -26,7 +26,7 @@ QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
 
 #Version
 
-QMMP_PLUGIN_PACK_VERSION = 0.11.0
+QMMP_PLUGIN_PACK_VERSION = 0.12.0
 CONFIG += SVN_VERSION
 
 
