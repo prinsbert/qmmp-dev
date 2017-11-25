@@ -1,15 +1,6 @@
 project(libffap)
 
-# qt plugin
-ADD_DEFINITIONS(${QT_DEFINITIONS})
-ADD_DEFINITIONS(-DQT_PLUGIN)
-ADD_DEFINITIONS(-DQT_NO_DEBUG)
-ADD_DEFINITIONS(-DQT_SHARED)
-ADD_DEFINITIONS(-DQT_THREAD)
-
 REMOVE_DEFINITIONS(-Wall)
-
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # libqmmp
 include_directories(${QMMP_INCLUDE_DIRS})
@@ -45,17 +36,35 @@ ENDIF(USE_ASM)
 IF(USE_ASM AND (NOT YASM_PATH MATCHES "^.*-NOTFOUND"))
   SET(YASM_FOUND TRUE CACHE INTERNAL "yasm_found")
   IF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86|x86_64)$")
-    set(CMAKE_ASM_NASM_COMPILER "yasm")
-    enable_language(ASM_NASM)
+   
     ADD_DEFINITIONS(-DHAVE_SSE2)
-    SET(libffap_SRCS ${libffap_SRCS} dsputil_yasm.asm x86inc.asm)
+    SET(YASM_OBJS x86inc.o dsputil_yasm.o)
+    
     IF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
       ADD_DEFINITIONS(-DARCH_X86_32)
-      set_source_files_properties(x86inc.asm dsputil_yasm.asm PROPERTIES COMPILE_FLAGS "-m x86 -DARCH_X86_32")
+      
+      add_custom_command(OUTPUT x86inc.o 
+                         COMMAND yasm ARGS -m x86 -f elf32 -DARCH_X86_32 x86inc.asm -o ${CMAKE_CURRENT_BINARY_DIR}/x86inc.o
+                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                         COMMENT "Building x86inc.o")
+      add_custom_command(OUTPUT dsputil_yasm.o
+                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} 
+                         COMMAND yasm ARGS -m x86 -f elf32 -DARCH_X86_32 dsputil_yasm.asm -o ${CMAKE_CURRENT_BINARY_DIR}/dsputil_yasm.o
+                         DEPENDS x86inc.o COMMENT "Building dsputil_yasm.o")
+      
       message("-- Architecture: x86")
     ELSEIF(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
       ADD_DEFINITIONS(-DARCH_X86_64)
-      set_source_files_properties(x86inc.asm dsputil_yasm.asm PROPERTIES COMPILE_FLAGS "-m amd64 -DARCH_X86_64 -DPIC")
+      
+      add_custom_command(OUTPUT x86inc.o 
+                         COMMAND yasm ARGS -m amd64 -f elf64 -DARCH_X86_64 -DPIC x86inc.asm -o ${CMAKE_CURRENT_BINARY_DIR}/x86inc.o
+                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                         COMMENT "compiling  x86inc.asm")
+      add_custom_command(OUTPUT dsputil_yasm.o
+                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} 
+                         COMMAND yasm ARGS -m amd64 -f elf64 -DARCH_X86_64 -DPIC dsputil_yasm.asm -o ${CMAKE_CURRENT_BINARY_DIR}/dsputil_yasm.o
+                         DEPENDS x86inc.o COMMENT "compiling  dsputil_yasm.asm")
+      
       message("-- Architecture: x86_64")
     ENDIF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
   ELSE(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86|x86_64)$")
@@ -63,24 +72,19 @@ IF(USE_ASM AND (NOT YASM_PATH MATCHES "^.*-NOTFOUND"))
     message("-- Architecture: unknown")
   ENDIF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86|x86_64)$")
 
-  FOREACH (SOURCE ${libffap_SRCS})
-    IF (NOT ${SOURCE} MATCHES "asm$")
-      set_source_files_properties(${SOURCE} PROPERTIES COMPILE_FLAGS "-Wall")
-    ENDIF()
-  ENDFOREACH()
 ELSE(USE_ASM AND (NOT YASM_PATH MATCHES "^.*-NOTFOUND"))
     message("-- Assembler optimizations are disabled")
 ENDIF(USE_ASM AND (NOT YASM_PATH MATCHES "^.*-NOTFOUND"))
 
 SET(libffap_RCCS translations/translations.qrc)
 
-QT4_ADD_RESOURCES(libffap_RCC_SRCS ${libffap_RCCS})
+QT5_ADD_RESOURCES(libffap_RCC_SRCS ${libffap_RCCS})
 
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 
-ADD_LIBRARY(ffap MODULE ${libffap_SRCS} ${libffap_RCC_SRCS} ${libffap_HDRS})
-target_link_libraries(ffap ${QT_LIBRARIES} ${QMMP_LDFLAGS} ${ffap_LDFLAGS} ${TAGLIB_LDFLAGS})
+ADD_LIBRARY(ffap MODULE ${libffap_SRCS} ${libffap_RCC_SRCS} ${libffap_HDRS} ${YASM_OBJS})
+target_link_libraries(ffap Qt5::Widgets ${QMMP_LDFLAGS} ${ffap_LDFLAGS} ${TAGLIB_LDFLAGS})
 install(TARGETS ffap DESTINATION ${LIB_DIR}/qmmp/Input)

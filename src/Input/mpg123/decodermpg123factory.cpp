@@ -20,11 +20,10 @@
 
 #include <QDialog>
 #include <QMessageBox>
-#include <QFile>
 #include <QTextCodec>
+#include <QFile>
 #include <QSettings>
 #include <QTranslator>
-#include <QtPlugin>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/id3v1tag.h>
@@ -32,9 +31,7 @@
 #include <taglib/apetag.h>
 #include <taglib/tfile.h>
 #include <taglib/mpegfile.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include "mpegmetadatamodel.h"
 #include "replaygainreader.h"
 #include "settingsdialog.h"
@@ -121,12 +118,8 @@ QList<FileInfo *> DecoderMPG123Factory::createPlayList(const QString &fileName, 
 {
     FileInfo *info = new FileInfo(fileName);
     TagLib::Tag *tag = 0;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(fileName), true);
     TagLib::MPEG::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
-#else
-    TagLib::MPEG::File fileRef(QStringToFileName(fileName));
-#endif
 
     if (useMetaData)
     {
@@ -137,8 +130,8 @@ QList<FileInfo *> DecoderMPG123Factory::createPlayList(const QString &fileName, 
 
         uint tag_array[3];
         tag_array[0] = settings.value("tag_1", SettingsDialog::ID3v2).toInt();
-        tag_array[1] = settings.value("tag_2", SettingsDialog::APE).toInt();
-        tag_array[2] = settings.value("tag_3", SettingsDialog::ID3v1).toInt();
+        tag_array[1] = settings.value("tag_2", SettingsDialog::Disabled).toInt();
+        tag_array[2] = settings.value("tag_3", SettingsDialog::Disabled).toInt();
 
         QByteArray name;
         for (int i = 0; i < 3; ++i)
@@ -269,5 +262,3 @@ QTranslator *DecoderMPG123Factory::createTranslator(QObject *parent)
     translator->load(QString(":/mpg123_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(mpg123, DecoderMPG123Factory)

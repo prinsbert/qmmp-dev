@@ -1,11 +1,5 @@
 project(libgoom)
 
-# qt plugin
-ADD_DEFINITIONS(${QT_DEFINITIONS})
-ADD_DEFINITIONS(-DQT_PLUGIN)
-ADD_DEFINITIONS(-DQT_NO_DEBUG)
-ADD_DEFINITIONS(-DQT_SHARED)
-ADD_DEFINITIONS(-DQT_THREAD)
 ADD_DEFINITIONS(-DYY_NO_INPUT)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -98,7 +92,7 @@ ENDIF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
 
 SET(libgoom_RCCS translations/translations.qrc)
 
-QT4_ADD_RESOURCES(libgoom_RCC_SRCS ${libgoom_RCCS})
+QT5_ADD_RESOURCES(libgoom_RCC_SRCS ${libgoom_RCCS})
 
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
@@ -106,5 +100,5 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 
 ADD_LIBRARY(goom MODULE ${libgoom_SRCS} ${libgoom_RCC_SRCS} ${libgoom_HDRS})
-target_link_libraries(goom ${QT_LIBRARIES} ${QMMP_LDFLAGS} ${goom_LDFLAGS})
+target_link_libraries(goom Qt5::Widgets ${QMMP_LDFLAGS} ${goom_LDFLAGS})
 install(TARGETS goom DESTINATION ${LIB_DIR}/qmmp/Visual)

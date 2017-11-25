@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2015 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,9 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QMessageBox>
-#include <QtPlugin>
 #include <QTranslator>
+#include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 #include "srconverter.h"
@@ -62,5 +61,3 @@ QTranslator *EffectSRConverterFactory::createTranslator(QObject *parent)
     translator->load(QString(":/srconverter_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(srconverter, EffectSRConverterFactory)

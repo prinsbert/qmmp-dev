@@ -63,5 +63,3 @@ QTranslator *VisualGoomFactory::createTranslator(QObject *parent)
     translator->load(QString(":/goom_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(goom,VisualGoomFactory)

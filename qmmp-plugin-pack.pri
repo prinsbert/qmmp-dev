@@ -10,23 +10,23 @@ MOC_DIR=./.build/moc
 OBJECTS_DIR=./.build/obj
 RCC_DIR=./.build/rcc
 
-#Defines
-
-DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS
-
 unix{
-INCLUDEPATH += /home/user/qmmp-0.11/include
-QMAKE_LIBDIR += /home/user/qmmp-0.11/lib
+INCLUDEPATH += /home/user/qmmp-1.2/include
+QMAKE_LIBDIR += /home/user/qmmp-1.2/lib
 INCLUDEPATH += /usr/include
 INCLUDEPATH += /usr/local/include
 }else{
-INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
-QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+INCLUDEPATH += D:/projects/qmmp/qmmp-svn/qmmp/src
+QMAKE_LIBDIR += D:/projects/qmmp/qmmp-svn/qmmp/bin
+INCLUDEPATH += C:/projects/qmmp/qmmp-svn/qmmp/src
+QMAKE_LIBDIR += C:/projects/qmmp/qmmp-svn/qmmp/bin
 }
+
+QT += widgets
 
 #Version
 
-QMMP_PLUGIN_PACK_VERSION = 0.11.0
+QMMP_PLUGIN_PACK_VERSION = 1.2.1
 CONFIG += SVN_VERSION
 
 

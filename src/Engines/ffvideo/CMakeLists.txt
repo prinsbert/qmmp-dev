@@ -1,12 +1,5 @@
 project(libffvideo)
 
-# qt plugin
-ADD_DEFINITIONS( -Wall )
-ADD_DEFINITIONS(${QT_DEFINITIONS})
-ADD_DEFINITIONS(-DQT_PLUGIN)
-ADD_DEFINITIONS(-DQT_NO_DEBUG)
-ADD_DEFINITIONS(-DQT_SHARED)
-ADD_DEFINITIONS(-DQT_THREAD)
 # fixes ffmpeg defines
 ADD_DEFINITIONS(-D__STDC_CONSTANT_MACROS)
 
@@ -45,6 +38,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(FFMPEG_FOUND)
 ADD_LIBRARY(ffvideo MODULE ${libffvideo_SRCS} ${libffvideo_RCC_SRCS} ${libffvideo_HDRS})
-target_link_libraries(ffvideo ${QT_LIBRARIES} ${QMMP_LDFLAGS} ${FFMPEG_LDFLAGS})
+target_link_libraries(ffvideo Qt5::Widgets ${QMMP_LDFLAGS} ${FFMPEG_LDFLAGS})
 install(TARGETS ffvideo DESTINATION ${LIB_DIR}/qmmp/Engines)
 ENDIF(FFMPEG_FOUND)

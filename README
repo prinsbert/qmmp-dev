@@ -15,14 +15,14 @@ Description:
 - History - a tool for collection information information about listened tracks
 
 Requirements:
-- Qt >= 4.6
-- qmmp 0.11.x
-- taglib >= 1.7.0
+- Qt >= 5.4 (qtbase and qttools for build)
+- qmmp 1.2.x
+- taglib >= 1.10
 - libmpg123 >= 1.13.0 (optional)
 - libxmp >= 4.2.0 (optional)
-- libsamplerate >= 0.1.2 (Optional)
+- libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.1 (optional)
-- cmake >= 2.8.6 (for build only)
+- cmake >= 2.8.11 (for build only)
 - yasm (for build only)
 
 Attention! Plugin Pack build needs lrelease installed.
@@ -69,7 +69,7 @@ Attention! By default all plugins are enabled by default.
 
 Changing shared library install path (for some 64-bit distributions).
 By default, all libraries and plugins will be installed to $(INSTALL PREFIX)/lib. You can change "lib"
-to "lib64" by running qmake (qmake-qt4) or cmake with the special parameter:
+to "lib64" by running qmake or cmake with the special parameter:
 qmake LIB_DIR=/lib64
 or
 cmake ./ -DLIB_DIR=lib64

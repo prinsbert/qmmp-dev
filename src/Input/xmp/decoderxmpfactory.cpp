@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2015 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,7 +21,6 @@
 #include <QStringList>
 #include <QRegExp>
 #include <QMessageBox>
-#include <QtPlugin>
 #include <QTranslator>
 #include <xmp.h>
 #include "settingsdialog.h"
@@ -121,5 +120,3 @@ QTranslator *DecoderXmpFactory::createTranslator(QObject *parent)
     translator->load(QString(":/xmp_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(xmp,DecoderXmpFactory)
