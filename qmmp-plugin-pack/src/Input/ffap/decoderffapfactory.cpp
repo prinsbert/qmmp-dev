@@ -18,15 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QMessageBox>
-#include <QtPlugin>
-#include <QTranslator>
 #include <QRegExp>
+#include <QMessageBox>
+#include <QTranslator>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include "replaygainreader.h"
 #include "ffapmetadatamodel.h"
 #include "decoderffapfactory.h"
@@ -98,12 +95,8 @@ QList<FileInfo *> DecoderFFapFactory::createPlayList(const QString &fileName, bo
         return QList<FileInfo *>() << info;
     }
 
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(fileName), true);
     file = new TagLib::APE::File(&stream);
-#else
-    file = new TagLib::APE::File(QStringToFileName(fileName));
-#endif
     tag = useMetaData ? file->APETag() : 0;
     ap = file->audioProperties();
 
@@ -169,5 +162,3 @@ QTranslator *DecoderFFapFactory::createTranslator(QObject *parent)
     translator->load(QString(":/ffap_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(ffap,DecoderFFapFactory)

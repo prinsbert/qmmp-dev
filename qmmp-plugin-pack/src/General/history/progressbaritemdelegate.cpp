@@ -32,11 +32,11 @@ void ProgressBarItemDelegate::paint(QPainter *painter,
 {
     if (hasProgressBar(index))
     {
-        QStyleOptionViewItemV4 opt = option;
+        QStyleOptionViewItem opt = option;
 
         initStyleOption(&opt, index);
 
-        QStyleOptionProgressBarV2 progressBarOption;
+        QStyleOptionProgressBar progressBarOption;
         progressBarOption.rect = option.rect;
         progressBarOption.invertedAppearance = false;
         progressBarOption.bottomToTop = false;

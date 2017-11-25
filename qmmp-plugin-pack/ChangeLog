@@ -179,30 +179,32 @@ Version 0.9.0
 * updated Greek translation (Dimitrios Glentadakis)
 * updated Japanese translation (RyoTa SimaMoto)
 
-Version 0.9.1
+Version 1.0.0
+* ported to qmmp 1.0 api
+* switch to Qt5
 * fixed buffer overflow in the mpg123 plugin
 
-Version 0.9.2
+Version 1.0.1
 * fixed build (RyoTa SimaMoto)
 * reduced tag reading delay in the ffap plugin
 
-Version 0.9.3
+Version 1.0.2
 * fixed build
 * fixed cover art support in the mpg123 plugin
 * updated Russian translation (AlexL)
 
-Version 0.9.4
+Version 1.0.3
 * fixed unicode support under windows
 * fixed support of ape with embedded cue under windows
 * updated French translation (Adrien Vigneron)
 * updated Chinese Traditional translation (Mingye Wang)
 * updated Hebrew translation (Genghis Khan)
 
-Version 0.9.5
-* fixed TagLib-1.7 support
+Version 1.0.4
+* fixed TagLib-1.9 support
 
-Version 0.10.0
-* ported to qmmp 0.10 api
+Version 1.1.0
+* ported to qmmp 1.1 api
 * added libsamplerate-based sample rate converter
 * changed default settings in the mpg123 plugin
 * updated Bulgarian translation (Kiril Kirilov)
@@ -217,28 +219,32 @@ Version 0.10.0
 * updated Russian translation
 * updated Ukrainian translation (Gennadi Motsyo)
 
-Version 0.10.1
+Version 1.1.1
+* fixed qt5.7 support
 * updated German translation (Ettore Atalan)
+
+Version 1.1.2
 * updated Brazilian Portuguese translation (Vitor Pereira)
 
-Version 0.10.2
+Version 1.1.3
 * fixed 24 bits support in the ffap plugin
 
-Version 0.10.3
+Version 1.1.4
+* enabled assembly optimizations in the ffap plugin under windows
 * fixed possible segmentation fault in the mpg123 plugin
 * fixed MP3 in WAV container detection in the mpg123 plugin
 * fixed Russian translation
 * updated Galician translation (Delio Docampo Cordeiro)
 
-Version 0.10.4
+Version 1.1.5
 * added album artist tag support in the ffap plugin 
 * fixed cmake 3.10 support
 * fixed rusxmms support in the mpg123 plugin
 * updated Greek translation (Dimitrios Glentadakis)
 * updated Spanish translation (Joel Barrios)
 
-Version 0.11.0
-* ported to qmmp 0.11 api
+Version 1.2.0
+* ported to qmmp 1.2 api
 * added history plugin
 * added ffvideo plugin
 * added Goom visualization

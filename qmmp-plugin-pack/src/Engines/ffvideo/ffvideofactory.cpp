@@ -158,5 +158,3 @@ QTranslator *FFVideoFactory::createTranslator(QObject *parent)
     translator->load(QString(":/ffvideo_plugin_") + locale);
     return translator;
 }
-
-Q_EXPORT_PLUGIN2(ffvideo,FFVideoFactory)

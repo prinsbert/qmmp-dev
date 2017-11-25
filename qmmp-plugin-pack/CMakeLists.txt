@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
+cmake_minimum_required(VERSION 2.8.11 FATAL_ERROR)
 
-#freebsd include
-include_directories(SYSTEM /usr/include /usr/local/include)
+#freebsd support
+include_directories(SYSTEM /usr/local/include)
+SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/local/include)
+
+#Qt5 modules
+SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt56/lib/cmake)
 
 if(POLICY CMP0071)
   cmake_policy(SET CMP0071 NEW)
@@ -15,27 +19,17 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
-SET(QMMP_PLUGIN_PACK_VERSION 0.11.0)
+SET(QMMP_PLUGIN_PACK_VERSION 1.2.1)
 SET(SVN_VERSION TRUE)
 
-SET(QT_MIN_VERSION 4.6.0)
-INCLUDE(FindQt4)
-INCLUDE(${QT_USE_FILE})
-SET(CMAKE_AUTOMOC ON)
 INCLUDE(FindPkgConfig)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+find_package(Qt5Widgets 5.4.0 REQUIRED)
+find_package(Qt5LinguistTools 5.4.0 REQUIRED)
+find_package(Qt5Sql 5.4.0)
 
-IF(NOT QT_LRELEASE_EXECUTABLE)
-FIND_PROGRAM(QT_LRELEASE_EXECUTABLE
-    NAMES lrelease
-    PATHS ${QT_BINARY_DIR}
-    NO_DEFAULT_PATH
-)
-ENDIF(NOT QT_LRELEASE_EXECUTABLE)
-
-#debian hack
-IF(EXISTS ${QT_BINARY_DIR}/lrelease-qt4)
-SET(QT_LRELEASE_EXECUTABLE ${QT_BINARY_DIR}/lrelease-qt4)
-ENDIF(EXISTS ${QT_BINARY_DIR}/lrelease-qt4)
+get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
 IF(QT_LRELEASE_EXECUTABLE)
 MESSAGE(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
@@ -58,10 +52,8 @@ ENDIF(NOT LIB_SUFFIX)
 
 SET(LIB_DIR "lib${LIB_SUFFIX}" CACHE STRING "library path")
 
-
-include(FindPkgConfig)
-pkg_check_modules(QMMP qmmp>=0.11.0 REQUIRED)
-pkg_check_modules(QMMPUI qmmpui>=0.11.0)
+pkg_check_modules(QMMP qmmp>=1.2.0 REQUIRED)
+pkg_check_modules(QMMPUI qmmpui>=1.2.0)
 
 IF(QMMP_FOUND)
 add_subdirectory(src)
@@ -133,7 +125,7 @@ PRINT_SUMMARY ("Goom visualization .............." USE_GOOM 1)
 
 MESSAGE("")
 MESSAGE("General Plugins:")
-PRINT_SUMMARY ("History plugin .................." USE_HISTORY QMMPUI_FOUND)
+PRINT_SUMMARY ("History plugin .................." USE_HISTORY QMMPUI_FOUND AND Qt5Sql_FOUND)
 
 MESSAGE("")
 MESSAGE("Advanced:")

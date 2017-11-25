@@ -1,15 +1,5 @@
 project(libmpg123)
 
-# qt plugin
-ADD_DEFINITIONS( -Wall )
-ADD_DEFINITIONS(${QT_DEFINITIONS})
-ADD_DEFINITIONS(-DQT_PLUGIN)
-ADD_DEFINITIONS(-DQT_NO_DEBUG)
-ADD_DEFINITIONS(-DQT_SHARED)
-ADD_DEFINITIONS(-DQT_THREAD)
-
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 # libqmmp
 include_directories(${QMMP_INCLUDE_DIRS})
 link_directories( ${QMMP_LIBRARY_DIRS})
@@ -38,7 +28,7 @@ SET(libmpg123_HDRS
 
 SET(libmpg123_RCCS translations/translations.qrc)
 
-QT4_ADD_RESOURCES(libmpg123_RCC_SRCS ${libmpg123_RCCS})
+QT5_ADD_RESOURCES(libmpg123_RCC_SRCS ${libmpg123_RCCS})
 
 # user interface
 
@@ -46,13 +36,13 @@ SET(libmpg123_UIS
     settingsdialog.ui
 )
 
-QT4_WRAP_UI(libmpg123_UIS_H ${libmpg123_UIS})
+QT5_WRAP_UI(libmpg123_UIS_H ${libmpg123_UIS})
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(MPG123_FOUND)
 ADD_LIBRARY(mpg123 MODULE ${libmpg123_SRCS} ${libmpg123_UIS_H} ${libmpg123_RCC_SRCS} ${libmpg123_HDRS})
-target_link_libraries(mpg123 ${QT_LIBRARIES} ${QMMP_LDFLAGS} ${MPG123_LDFLAGS} ${TAGLIB_LDFLAGS})
+target_link_libraries(mpg123 Qt5::Widgets ${QMMP_LDFLAGS} ${MPG123_LDFLAGS} ${TAGLIB_LDFLAGS})
 install(TARGETS mpg123 DESTINATION ${LIB_DIR}/qmmp/Input)
 ENDIF(MPG123_FOUND)
