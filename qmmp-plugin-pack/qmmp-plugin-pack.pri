@@ -11,8 +11,8 @@ OBJECTS_DIR=./.build/obj
 RCC_DIR=./.build/rcc
 
 unix{
-INCLUDEPATH += /home/user/qmmp-1.2/include
-QMAKE_LIBDIR += /home/user/qmmp-1.2/lib
+INCLUDEPATH += /home/user/qmmp-1.3/include
+QMAKE_LIBDIR += /home/user/qmmp-1.3/lib
 INCLUDEPATH += /usr/include
 INCLUDEPATH += /usr/local/include
 }else{
@@ -26,7 +26,7 @@ QT += widgets
 
 #Version
 
-QMMP_PLUGIN_PACK_VERSION = 1.2.1
+QMMP_PLUGIN_PACK_VERSION = 1.3.0
 CONFIG += SVN_VERSION
 
 
