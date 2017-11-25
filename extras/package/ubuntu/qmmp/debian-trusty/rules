@@ -19,7 +19,7 @@ endif
 	dh $@
 
 override_dh_auto_configure:
-	cmake -DCMAKE_INSTALL_PREFIX=/usr $(EXTRA_CMAKE_ARGS)
+	cmake -DCMAKE_INSTALL_PREFIX=/usr $(EXTRA_CMAKE_ARGS) -DUSE_ARCHIVE=FALSE
 
 override_dh_auto_build:
 	dh_auto_build -- $(MAKE_AUX_FLAGS)

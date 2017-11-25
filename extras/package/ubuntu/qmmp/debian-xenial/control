@@ -1,30 +1,30 @@
-Source: qmmp-qt4
+Source: qmmp
 Section: sound
 Priority: optional
 Maintainer: Matteo Cypriani <mcy@lm7.fr>
-Build-Depends: debhelper (>= 9), cmake, pkg-config, qtchooser, libqt4-dev,
-  libqt4-opengl-dev, libx11-dev, oss4-dev, libmad0-dev, libvorbis-dev,
+Build-Depends: debhelper (>= 9), cmake, pkg-config, qtbase5-dev (>= 5.4),
+  libqt5x11extras5-dev (>= 5.4), qttools5-dev-tools (>= 5.4),
+  qtchooser, libx11-dev, oss4-dev, libmad0-dev, libvorbis-dev,
   libasound2-dev [linux-any], libtag1-dev (>= 1.11), libcurl4-gnutls-dev, libmms-dev,
   libflac-dev, libmpcdec-dev, libjack-dev, libsoxr-dev, libmodplug-dev,
   libsndfile1-dev, libwavpack-dev, libpulse-dev, libavcodec-dev,
   libavformat-dev, libcdio-dev, libcdio-paranoia-dev, libcddb2-dev,
   libfaad-dev, libgme-dev, libopus-dev (>= 1.0.2), libopusfile-dev,
   libwildmidi-dev, libsidplayfp-dev (>= 1.0.3), libbs2b-dev, libprojectm-dev,
-  libenca-dev, libshout3-dev, libarchive-dev (>=3.2.1)
+  libenca-dev, libshout3-dev
 Standards-Version: 3.9.6
 Homepage: http://qmmp.ylsoftware.com/
 Vcs-Git: git://anonscm.debian.org/collab-maint/qmmp.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/qmmp.git
 
-Package: qmmp-qt4
+Package: qmmp
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, libtag1v5 (>= 1.10)
-Suggests: qmmp-qt4-plugin-projectm, mplayer2, unzip, udisks2 [linux-any],
+Suggests: qmmp-plugin-projectm, mplayer2, unzip, udisks2 [linux-any],
   hal [!linux-any]
-Replaces: libqmmp0 (<< 0.9), libqmmpui0 (<< 0.9), libqmmp-misc (<< 0.9)
-Breaks: libqmmp0 (<< 0.9), libqmmpui0 (<< 0.9), libqmmp-misc (<< 0.9) 
-Conflicts: qmmp (>>1.0), qmmp-plugin-projectm (>>1.0)
-Description: feature-rich audio player with support of many formats (Qt4-version)
+Replaces: libqmmp0 (<< 1.0), libqmmpui0 (<< 1.0), libqmmp-misc (<< 1.0)
+Breaks: libqmmp0 (<< 1.0), libqmmpui0 (<< 1.0), libqmmp-misc (<< 1.0)
+Description: feature-rich audio player with support of many formats
  Qmmp is feature-rich audio player with support of many formats.
  It is written in Qt.
  .
@@ -84,7 +84,7 @@ Description: feature-rich audio player with support of many formats (Qt4-version
   - visualization (spectre analyzer, projectm)
   - global hotkeys
 
-Package: qmmp-qt4-plugin-projectm
+Package: qmmp-plugin-projectm
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: qmmp audio player -- projectM visualization plugin

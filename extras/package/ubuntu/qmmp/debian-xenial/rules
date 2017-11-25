@@ -26,13 +26,14 @@ override_dh_auto_configure:
 	dh_auto_configure -- -DCMAKE_INSTALL_PREFIX=/usr -DLIB_DIR=lib/qmmp \
 	  -DCMAKE_INSTALL_RPATH=/usr/lib/qmmp \
 	  -DCMAKE_BUILD_WITH_INSTALL_RPATH:BOOL=TRUE \
+	  -DUSE_ARCHIVE=FALSE \
 	  $(EXTRA_CMAKE_ARGS)
 
 override_dh_auto_build:
 	dh_auto_build -- VERBOSE=1
 
 override_dh_install:
-	dh_install -pqmmp-qt4-plugin-projectm
+	dh_install -pqmmp-plugin-projectm
 	dh_install -Xprojectm
 
 # Avoid a call to ldconfig in postinst & postrm (ldconfig is not needed since we
