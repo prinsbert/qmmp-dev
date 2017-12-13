@@ -15,4 +15,7 @@ Description: Extra plugins for Qmmp
  Plugins list:
  - MPG123 - MPEG v1/2 layer1/2/3 decoder using of libmpg123 library;
  - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support);
- - XMP - module player with use of the libxmp library.
+ - XMP - module player with use of the libxmp library;
+ - Goom - audio visualization based on goom project;
+ - FFVideo - video playback engine based on FFmpeg library;
+ - History - a tool for collection information information about listened tracks.
