@@ -1220,47 +1220,57 @@
         <translation>Einzelspaltenmodus</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="402"/>
+        <location filename="../forms/skinnedsettings.ui" line="307"/>
+        <source>Show splitters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="314"/>
+        <source>Alternate splitter color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="416"/>
         <source>Fonts</source>
         <translation>Schriftarten</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="456"/>
+        <location filename="../forms/skinnedsettings.ui" line="470"/>
         <source>Playlist:</source>
         <translation>Wiedergabeliste:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="492"/>
+        <location filename="../forms/skinnedsettings.ui" line="506"/>
         <source>Column headers:</source>
         <translation>Spaltenüberschriften:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="414"/>
+        <location filename="../forms/skinnedsettings.ui" line="428"/>
         <source>Player:</source>
         <translation>Abspieler:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="436"/>
-        <location filename="../forms/skinnedsettings.ui" line="478"/>
-        <location filename="../forms/skinnedsettings.ui" line="505"/>
+        <location filename="../forms/skinnedsettings.ui" line="450"/>
+        <location filename="../forms/skinnedsettings.ui" line="492"/>
+        <location filename="../forms/skinnedsettings.ui" line="519"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="134"/>
-        <location filename="../forms/skinnedsettings.ui" line="443"/>
-        <location filename="../forms/skinnedsettings.ui" line="485"/>
-        <location filename="../forms/skinnedsettings.ui" line="512"/>
+        <location filename="../forms/skinnedsettings.ui" line="457"/>
+        <location filename="../forms/skinnedsettings.ui" line="499"/>
+        <location filename="../forms/skinnedsettings.ui" line="526"/>
         <source>...</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="534"/>
+        <location filename="../forms/skinnedsettings.ui" line="548"/>
         <source>Reset fonts</source>
         <translation>Schriftarten zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="543"/>
+        <location filename="../forms/skinnedsettings.ui" line="557"/>
         <source>Use bitmap font if available</source>
         <translation>Bitmap-Schriftart verwenden, falls verfügbar</translation>
     </message>
@@ -1337,22 +1347,22 @@
         <translation>Wiedergabelisten anzeigen</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="354"/>
+        <location filename="../forms/skinnedsettings.ui" line="368"/>
         <source>Show popup information</source>
         <translation>Informationen in einem Aufklapp-Fenster anzeigen</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="366"/>
+        <location filename="../forms/skinnedsettings.ui" line="380"/>
         <source>Edit template</source>
         <translation>Vorlage bearbeiten</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="319"/>
+        <location filename="../forms/skinnedsettings.ui" line="333"/>
         <source>Playlist separator:</source>
         <translation>Wiedergabelisten-Trenner:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="310"/>
+        <location filename="../forms/skinnedsettings.ui" line="324"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>„Neue Wiedergabeliste“-Knopf zeigen</translation>
     </message>

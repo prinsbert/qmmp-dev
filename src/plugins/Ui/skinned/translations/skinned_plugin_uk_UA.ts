@@ -1220,47 +1220,57 @@
         <translation>Одностовпчиковий режим</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="402"/>
+        <location filename="../forms/skinnedsettings.ui" line="307"/>
+        <source>Show splitters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="314"/>
+        <source>Alternate splitter color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="416"/>
         <source>Fonts</source>
         <translation>Шрифти</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="456"/>
+        <location filename="../forms/skinnedsettings.ui" line="470"/>
         <source>Playlist:</source>
         <translation>Список:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="492"/>
+        <location filename="../forms/skinnedsettings.ui" line="506"/>
         <source>Column headers:</source>
         <translation>Назви стовпчиків:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="414"/>
+        <location filename="../forms/skinnedsettings.ui" line="428"/>
         <source>Player:</source>
         <translation>Програвач:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="436"/>
-        <location filename="../forms/skinnedsettings.ui" line="478"/>
-        <location filename="../forms/skinnedsettings.ui" line="505"/>
+        <location filename="../forms/skinnedsettings.ui" line="450"/>
+        <location filename="../forms/skinnedsettings.ui" line="492"/>
+        <location filename="../forms/skinnedsettings.ui" line="519"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="134"/>
-        <location filename="../forms/skinnedsettings.ui" line="443"/>
-        <location filename="../forms/skinnedsettings.ui" line="485"/>
-        <location filename="../forms/skinnedsettings.ui" line="512"/>
+        <location filename="../forms/skinnedsettings.ui" line="457"/>
+        <location filename="../forms/skinnedsettings.ui" line="499"/>
+        <location filename="../forms/skinnedsettings.ui" line="526"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="534"/>
+        <location filename="../forms/skinnedsettings.ui" line="548"/>
         <source>Reset fonts</source>
         <translation>Скинути шрифти</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="543"/>
+        <location filename="../forms/skinnedsettings.ui" line="557"/>
         <source>Use bitmap font if available</source>
         <translation>Використовувати растрові шрифти, якщо доступні</translation>
     </message>
@@ -1327,22 +1337,22 @@
         <translation>Показати списки</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="354"/>
+        <location filename="../forms/skinnedsettings.ui" line="368"/>
         <source>Show popup information</source>
         <translation>Показувати спливаюче вікно з інформацією</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="366"/>
+        <location filename="../forms/skinnedsettings.ui" line="380"/>
         <source>Edit template</source>
         <translation>Редагувати шаблон</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="319"/>
+        <location filename="../forms/skinnedsettings.ui" line="333"/>
         <source>Playlist separator:</source>
         <translation>Розділювач списків:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="310"/>
+        <location filename="../forms/skinnedsettings.ui" line="324"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Показати кнопку &quot;Новий список&quot;</translation>
     </message>
