@@ -18,5 +18,5 @@ unix {
     QMMPUI_LIB = -lqmmpui
 }
 
-CONFIG += warn_on plugin lib thread link_pkgconfig hide_symbols
+CONFIG += warn_on plugin lib thread link_pkgconfig
 TEMPLATE = lib

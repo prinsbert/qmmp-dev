@@ -15,6 +15,10 @@ RCC_DIR=./.build/rcc
 
 DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS
 
+#Configuration
+
+CONFIG += hide_symbols
+
 #Version
 
 QMMP_VERSION = 0.12.0

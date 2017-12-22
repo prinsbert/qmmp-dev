@@ -82,6 +82,7 @@ SET(libqmmpui_HDRS
     playlistparser.h
     qmmpuiplugincache_p.h
     metadatahelper_p.h
+    qmmpui_export.h
 )
 
 SET(libqmmpui_DEVEL_HDRS
@@ -110,6 +111,7 @@ SET(libqmmpui_DEVEL_HDRS
     uihelper.h
     uiloader.h
     playlistheadermodel.h
+    qmmpui_export.h
 )
 
 
