@@ -23,6 +23,7 @@
 #include <QSettings>
 #include <QTranslator>
 #include <QFile>
+#include <QtPlugin>
 #include <QTextCodec>
 #include <mad.h>
 #include <taglib/tag.h>
@@ -318,3 +319,4 @@ QTranslator *DecoderMPEGFactory::createTranslator(QObject *parent)
     translator->load(QString(":/mad_plugin_") + locale);
     return translator;
 }
+Q_EXPORT_PLUGIN2(mpeg,DecoderMPEGFactory)
