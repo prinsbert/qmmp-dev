@@ -6,7 +6,6 @@ Qmmp Plugin Pack
 Перевод: https://www.transifex.com/qmmp-development-team/
 
 Список модулей:
-- MPG123 - декодер MPEG v1/2 layer1/2/3 с использованием библиотеки libmpg123
 - FFap - улучшенный декодер Monkey's Audio (APE) (поддержка 24-х бит и встроенного cue)
 - XMP - проигрыватель трекерной музыки с использованием библиотеки libxmp
 - Sample Rate Converter - преобразователь частоты дискретизации с использованием библиотеки libsamplerate
@@ -18,7 +17,6 @@ Qmmp Plugin Pack
 - Qt >= 4.6
 - qmmp 0.11.x
 - taglib >= 1.7.0
-- libmpg123 >= 1.13.0 (опционально)
 - libxmp >= 4.2.0 (опционально)
 - libsamplerate >= 0.1.2 (опционально)
 - ffmpeg >= 3.1 (опционально)
@@ -40,7 +38,7 @@ make install
 cmake ./ -DUSE_MPG123:BOOL=FALSE
 
 Доступные опции:
-- USE_MPG123, USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_HISTORY (модули)
+- USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_HISTORY (модули)
 - USE_ASM (оптимизации на ассемблере в декодере FFap)
 
 
