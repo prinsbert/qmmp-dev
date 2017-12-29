@@ -6,7 +6,6 @@ Development: https://sourceforge.net/projects/qmmp-dev/
 Translation: https://www.transifex.com/qmmp-development-team/
 
 Description:
-- MPG123 - MPEG v1/2 layer1/2/3 decoder with use of the libmpg123 library
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
 - XMP - module player with use of the libxmp library
 - Sample Rate Converter - resampler based on libsamplerate library
@@ -18,7 +17,6 @@ Requirements:
 - Qt >= 5.4 (qtbase and qttools for build)
 - qmmp 1.2.x
 - taglib >= 1.10
-- libmpg123 >= 1.13.0 (optional)
 - libxmp >= 4.2.0 (optional)
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.1 (optional)
@@ -41,7 +39,7 @@ by running the following command:
 cmake ./ -DUSE_MPG123:BOOL=FALSE
 
 Available options:
-- UUSE_MPG123, USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_HISTORY (plugins)
+- USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_HISTORY (plugins)
 - USE_ASM (assembler-level optimizations inside FFap decoder)
 
 
