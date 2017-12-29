@@ -1,5 +1,13 @@
 project(libmpeg)
 
+# qt plugin
+ADD_DEFINITIONS( -Wall )
+ADD_DEFINITIONS(${QT_DEFINITIONS})
+ADD_DEFINITIONS(-DQT_PLUGIN)
+ADD_DEFINITIONS(-DQT_NO_DEBUG)
+ADD_DEFINITIONS(-DQT_SHARED)
+ADD_DEFINITIONS(-DQT_THREAD)
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # libqmmp
@@ -52,7 +60,7 @@ ENDIF(MPG123_FOUND)
 
 SET(libmpeg_RCCS translations/translations.qrc)
 
-QT5_ADD_RESOURCES(libmpeg_RCC_SRCS ${libmpeg_RCCS})
+QT4_ADD_RESOURCES(libmpeg_RCC_SRCS ${libmpeg_RCCS})
 
 # user interface
 
@@ -60,7 +68,7 @@ SET(libmpeg_UIS
     settingsdialog.ui
 )
 
-QT5_WRAP_UI(libmpeg_UIS_H ${libmpeg_UIS})
+QT4_WRAP_UI(libmpeg_UIS_H ${libmpeg_UIS})
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -68,6 +76,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(MAD_FOUND OR MPG123_FOUND)
 ADD_LIBRARY(mpeg MODULE ${libmpeg_SRCS} ${libmpeg_UIS_H} ${libmpeg_RCC_SRCS} ${libmpeg_HDRS})
 add_dependencies(mpeg qmmp)
-target_link_libraries(mpeg Qt5::Widgets -lqmmp ${TAGLIB_LDFLAGS} ${MAD_LDFLAGS} ${MPG123_LDFLAGS})
+target_link_libraries(mpeg ${QT_LIBRARIES} libqmmp ${TAGLIB_LDFLAGS} ${MAD_LDFLAGS} ${MPG123_LDFLAGS})
 install(TARGETS mpeg DESTINATION ${LIB_DIR}/qmmp/Input)
 ENDIF(MAD_FOUND OR MPG123_FOUND)
