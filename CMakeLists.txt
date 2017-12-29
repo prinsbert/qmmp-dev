@@ -107,7 +107,6 @@ ENDIF(UNIX)
 
 MESSAGE("")
 MESSAGE("Input Plugins:")
-PRINT_SUMMARY ("mpg123 plugin ..................." USE_MPG123  MPG123_FOUND)
 PRINT_SUMMARY ("FFap plugin (Monkey's audio) ...." USE_FFAP TAGLIB_FOUND)
 PRINT_SUMMARY ("XMP plugin ......................" USE_XMP XMP_FOUND)
 
