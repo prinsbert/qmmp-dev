@@ -240,3 +240,4 @@ LEGEND
 [*] qmmp-0.11.1
 [*] curl-7.58.0
 [*] ffmpeg-3.4.1
+[*] game-music-emu-0.6.2
