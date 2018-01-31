@@ -235,3 +235,8 @@ LEGEND
 [*] curl-7.56.1
 [*] libogg-1.3.3
 [*] opusfile-0.10
+
+0.11.1
+[*] qmmp-0.11.1
+[*] curl-7.58.0
+[*] ffmpeg-3.4.1
