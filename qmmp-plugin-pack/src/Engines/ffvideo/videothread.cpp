@@ -193,7 +193,7 @@ void VideoThread::run()
 
         if(avcodec_receive_frame(m_context, frame) == 0)
         {
-            frame->pts = av_frame_get_best_effort_timestamp(frame);
+            frame->pts = frame->best_effort_timestamp;
             sws_scale(sws, frame->data, frame->linesize, 0, frame->height, frameRGB->data, frameRGB->linesize);
             QImage img(frameRGB->data[0], m_context->width * ratio, m_context->height * ratio,
                     frameRGB->linesize[0], QImage::Format_RGB888);
