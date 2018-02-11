@@ -105,7 +105,7 @@ const DecoderProperties DecoderMPG123Factory::properties() const
 
 Decoder *DecoderMPG123Factory::create(const QString &url, QIODevice *input)
 {
-    Decoder *d = new DecoderMPG123(url, input);
+    Decoder *d = new DecoderMPG123(input);
     if(!url.contains("://")) //local file
     {
         ReplayGainReader rg(url);

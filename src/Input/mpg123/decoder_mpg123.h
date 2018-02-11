@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,12 +25,11 @@ class QIODevice;
 
 #include <mpg123.h>
 #include <qmmp/decoder.h>
-#include "decodermpg123factory.h"
 
 class DecoderMPG123 : public Decoder
 {
 public:
-    DecoderMPG123(const QString &url, QIODevice *i);
+    DecoderMPG123(QIODevice *i);
     virtual ~DecoderMPG123();
 
     // standard decoder API
@@ -46,11 +45,10 @@ private:
     void setMPG123Format(int encoding);
     mpg123_handle *m_handle;
     mpg123_frameinfo m_frame_info;
-    QString m_url;
     qint64 m_totalTime;
     long m_rate;
     int m_mpg123_encoding;
-    int m_resync_errors;
+    int m_errors;
 };
 
 
