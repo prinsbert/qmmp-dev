@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<TS version="2.1" language="uk">
 <context>
     <name>DecoderMPEGFactory</name>
     <message>
         <location filename="../decodermpegfactory.cpp" line="117"/>
         <source>MPEG Plugin</source>
-        <translation type="unfinished">Модуль MPEG</translation>
+        <translation>Модуль MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="120"/>
         <source>MPEG Files</source>
-        <translation type="unfinished">Файли MPEG</translation>
+        <translation>Файли MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="284"/>
         <source>About MPEG Audio Plugin</source>
-        <translation type="unfinished">Про аудіо-модуль MPEG</translation>
+        <translation>Про аудіо-модуль MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="285"/>
         <source>Qmmp MPEG Audio Plugin</source>
-        <translation type="unfinished">Аудіо-модуль MPEG для Qmmp</translation>
+        <translation>Аудіо-модуль MPEG для Qmmp</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="286"/>
         <source>Compiled against libmad version:</source>
-        <translation type="unfinished">Зібрано з версією libmad:</translation>
+        <translation>Зібрано з версією libmad:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="290"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished">Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="291"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation type="unfinished">Вихідні коди базуються на проектах mq3 та madplay</translation>
+        <translation>Вихідні коди базуються на проектах mq3 та madplay</translation>
     </message>
 </context>
 <context>
@@ -151,17 +151,17 @@
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Декодер</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="35"/>
         <source>MAD</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="42"/>
         <source>MPG123</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>

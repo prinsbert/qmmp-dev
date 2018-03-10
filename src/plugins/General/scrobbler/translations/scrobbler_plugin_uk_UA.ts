@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<TS version="2.1" language="uk">
 <context>
     <name>ScrobblerFactory</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../scrobblerfactory.cpp" line="52"/>
         <source>About Scrobbler Plugin</source>
-        <translation>Про модуль Scrobbler </translation>
+        <translation>Про модуль Scrobbler</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="53"/>
