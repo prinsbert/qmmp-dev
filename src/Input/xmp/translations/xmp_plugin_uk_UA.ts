@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk_UA">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderXmpFactory</name>
     <message>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source> Amplification factor:</source>
-        <translation>Підсилення:</translation>
+        <translation> Підсилення:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation>Тип інтерполяції:</translation>
+        <translation> Тип інтерполяції:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
