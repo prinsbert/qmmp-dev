@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="it">
 <context>
     <name>ProjectMPlugin</name>
     <message>
         <location filename="../projectmplugin.cpp" line="41"/>
         <source>ProjectM</source>
-        <translation>Visualizzatore musicale ProjectM</translation>
+        <translation>ProjectM</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="160"/>
         <source>&amp;Help</source>
-        <translation>Aiuto</translation>
+        <translation>&amp;Aiuto</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="160"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="161"/>
         <source>&amp;Show Song Title</source>
-        <translation>Mostra il titolo del brano</translation>
+        <translation>Mo&amp;stra il titolo del brano</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="161"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="162"/>
         <source>&amp;Show Preset Name</source>
-        <translation>Mostra nome del brano programmato</translation>
+        <translation>Mo&amp;stra nome del brano programmato</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="162"/>
@@ -44,17 +44,17 @@
     <message>
         <location filename="../projectmwidget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Mo&amp;stra menu</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
-        <translation>Brano programmato successivo</translation>
+        <translation>Bra&amp;no programmato successivo</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="165"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation>&gt;Brano programmato precedente</translation>
+        <translation>Brano programmato &amp;precedente</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="166"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="167"/>
         <source>&amp;Random Preset</source>
-        <translation>Brano programmato casuale</translation>
+        <translation>B&amp;rano programmato casuale</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="167"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
-        <translation>Blocca programmazione</translation>
+        <translation>B&amp;locca programmazione</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="168"/>
@@ -107,27 +107,27 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="31"/>
         <source>ProjectM</source>
-        <translation>Visualizzatore musicale ProjectM</translation>
+        <translation>ProjectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="51"/>
         <source>About ProjectM Visual Plugin</source>
-        <translation>Informazioni sul visualizzatore musicale ProjectM</translation>
+        <translation>Informazioni sull&apos;estensione visuale ProjectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="52"/>
         <source>Qmmp ProjectM Visual Plugin</source>
-        <translation>Modulo Visulaizzatore Projectm per Qmmp</translation>
+        <translation>Estensione visuale ProjectM per Qmmp</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="53"/>
         <source>This plugin adds projectM visualization</source>
-        <translation>Questo modulo aggiunge visualizzazione musicale dei brani grazie a projectM</translation>
+        <translation>Questa estensione aggiunge la visualizzazione tramite projectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autore by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="55"/>

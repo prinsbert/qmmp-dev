@@ -6,22 +6,22 @@
     <message>
         <location filename="../scrobblerfactory.cpp" line="32"/>
         <source>Scrobbler Plugin</source>
-        <translation>Modulo Scrobbler</translation>
+        <translation>Estensione Scrobbler</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="52"/>
         <source>About Scrobbler Plugin</source>
-        <translation>Info sul modulo Scrobbler</translation>
+        <translation>Informazioni sull&apos;estensione Scrobbler</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="53"/>
         <source>Qmmp AudioScrobbler Plugin</source>
-        <translation>Modulo AudioScrobbler per Qmmp</translation>
+        <translation>Estensione AudioScrobbler per Qmmp</translation>
     </message>
     <message>
         <location filename="../scrobblerfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>Scrobbler Plugin Settings</source>
-        <translation>Impostazioni del modulo Scrobbler</translation>
+        <translation>Impostazioni dell&apos;estensione Scrobbler</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
@@ -40,7 +40,7 @@
         <location filename="../settingsdialog.ui" line="40"/>
         <location filename="../settingsdialog.ui" line="113"/>
         <source>Session:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sessione</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="50"/>
@@ -52,7 +52,7 @@
         <location filename="../settingsdialog.ui" line="72"/>
         <location filename="../settingsdialog.ui" line="104"/>
         <source>Register new session</source>
-        <translation type="unfinished"></translation>
+        <translation>Registra una nuova sessione</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="82"/>
@@ -64,12 +64,12 @@
         <location filename="../settingsdialog.cpp" line="121"/>
         <location filename="../settingsdialog.cpp" line="172"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Messaggio</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="87"/>
         <source>1. Wait for browser startup</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Attendi l&apos;avvio del browser</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="88"/>
@@ -83,10 +83,20 @@
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="103"/>
+        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../settingsdialog.cpp" line="136"/>
+        <location filename="../settingsdialog.cpp" line="140"/>
+        <location filename="../settingsdialog.cpp" line="180"/>
+        <location filename="../settingsdialog.cpp" line="184"/>
+        <source>Error</source>
+        <translation>Errore</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.cpp" line="103"/>
         <location filename="../settingsdialog.cpp" line="136"/>
         <location filename="../settingsdialog.cpp" line="180"/>
         <source>Network error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore di rete</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="107"/>
@@ -102,22 +112,12 @@
     <message>
         <location filename="../settingsdialog.cpp" line="172"/>
         <source>Permission granted</source>
-        <translation type="unfinished"></translation>
+        <translation>Permesso accordato</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="184"/>
         <source>Permission denied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="103"/>
-        <location filename="../settingsdialog.cpp" line="107"/>
-        <location filename="../settingsdialog.cpp" line="136"/>
-        <location filename="../settingsdialog.cpp" line="140"/>
-        <location filename="../settingsdialog.cpp" line="180"/>
-        <location filename="../settingsdialog.cpp" line="184"/>
-        <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Permesso negato</translation>
     </message>
 </context>
 </TS>

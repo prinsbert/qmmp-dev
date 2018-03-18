@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="it_IT">
+<TS version="2.0" language="it">
 <context>
     <name>OutputWaveOutFactory</name>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="31"/>
         <source>WaveOut Plugin</source>
-        <translation>Modulo WaveOut</translation>
+        <translation>Estensione WaveOut</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="62"/>
         <source>About WaveOut Output Plugin</source>
-        <translation>Informazioni sul modulo d&apos;uscita WaveOut</translation>
+        <translation>Informazioni sull&apos;estensione d&apos;uscita WaveOut</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="63"/>
         <source>Qmmp WaveOut Output Plugin</source>
-        <translation>Modulo d&apos;uscita WaveOut per Qmmp</translation>
+        <translation>Estensione d&apos;uscita WaveOut per Qmmp</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="64"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="65"/>

@@ -4,24 +4,9 @@
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="203"/>
-        <source>About FFmpeg Audio Plugin</source>
-        <translation>Info sul modulo audi FFmpeg</translation>
-    </message>
-    <message>
-        <location filename="../decoderffmpegfactory.cpp" line="205"/>
-        <source>Qmmp FFmpeg Audio Plugin</source>
-        <translation>Modulo audio FFmpeg per Qmmp</translation>
-    </message>
-    <message>
-        <location filename="../decoderffmpegfactory.cpp" line="213"/>
-        <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-    <message>
         <location filename="../decoderffmpegfactory.cpp" line="94"/>
         <source>FFmpeg Plugin</source>
-        <translation>Modulo FFmpeg</translation>
+        <translation>Estensione FFmpeg</translation>
     </message>
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="96"/>
@@ -29,9 +14,24 @@
         <translation>Formati FFmpeg</translation>
     </message>
     <message>
+        <location filename="../decoderffmpegfactory.cpp" line="203"/>
+        <source>About FFmpeg Audio Plugin</source>
+        <translation>Informazioni sull&apos;estensione audio FFmpeg</translation>
+    </message>
+    <message>
+        <location filename="../decoderffmpegfactory.cpp" line="205"/>
+        <source>Qmmp FFmpeg Audio Plugin</source>
+        <translation>Estensione audio FFmpeg per Qmmp</translation>
+    </message>
+    <message>
         <location filename="../decoderffmpegfactory.cpp" line="206"/>
         <source>Compiled against libavformat-%1.%2.%3 and libavcodec-%4.%5.%6</source>
         <translation>Compilato con libavformat-%1.%2.%3 e libavcodec-%4.%5.%6</translation>
+    </message>
+    <message>
+        <location filename="../decoderffmpegfactory.cpp" line="213"/>
+        <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
+        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -80,6 +80,11 @@
 <context>
     <name>SettingsDialog</name>
     <message>
+        <location filename="../settingsdialog.ui" line="14"/>
+        <source>FFmpeg Plugin Settings</source>
+        <translation>Impostazioni dell&apos;estensione FFmpeg</translation>
+    </message>
+    <message>
         <location filename="../settingsdialog.ui" line="55"/>
         <source>Formats</source>
         <translation>Formati</translation>
@@ -88,6 +93,11 @@
         <location filename="../settingsdialog.ui" line="61"/>
         <source>Windows Media Audio</source>
         <translation>Windows Media Audio</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="68"/>
+        <source>Monkey&apos;s Audio (APE)</source>
+        <translation>Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="75"/>
@@ -100,9 +110,14 @@
         <translation>ADTS AAC</translation>
     </message>
     <message>
+        <location filename="../settingsdialog.ui" line="89"/>
+        <source>MP3 (MPEG audio layer 3)</source>
+        <translation>MP3 (MPEG Audio Layer 3)</translation>
+    </message>
+    <message>
         <location filename="../settingsdialog.ui" line="96"/>
         <source>MPEG-4 AAC/ALAC</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG-4 AAC/ALAC</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="103"/>
@@ -112,42 +127,27 @@
     <message>
         <location filename="../settingsdialog.ui" line="110"/>
         <source>Shorten</source>
-        <translation type="unfinished"></translation>
+        <translation>Shorten</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="117"/>
         <source>AC3/EAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3/EAC</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="124"/>
         <source>DTS/DTS-Core</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS/DTS-Core</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="131"/>
         <source>Matroska Audio (Dolby TrueHD Lossless)</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio Matroska (Dolby TrueHD Lossless)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="138"/>
         <source>VQF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>FFmpeg Plugin Settings</source>
-        <translation>Impostazioni del modulo FFmpeg</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="68"/>
-        <source>Monkey&apos;s Audio (APE)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="89"/>
-        <source>MP3 (MPEG audio layer 3)</source>
-        <translation>MP3 (MPEG Audio Layer 3)</translation>
+        <translation>VQF</translation>
     </message>
 </context>
 </TS>
