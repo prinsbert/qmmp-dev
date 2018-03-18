@@ -6,33 +6,34 @@
     <message>
         <location filename="../decodermpg123factory.cpp" line="97"/>
         <source>MPG123 Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Estensione MPG123</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="100"/>
         <source>MPEG Files</source>
-        <translation type="unfinished">Brani MPEG</translation>
+        <translation>File MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="257"/>
         <source>About MPG123 Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni sull&apos;estensione audio MPG123</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="258"/>
         <source>Qmmp MPG123 Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Estensione audio MPG123 per Qmmp</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="259"/>
         <source>This plugin provides MPEG v1/2 layer1/2/3 support
 with use of libmpg123 library</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa estensione fornisce il supporto per MPEG v1/2 layer 1/2/3
+tramite l&apos;uso della libreria libmpg123</translation>
     </message>
     <message>
         <location filename="../decodermpg123factory.cpp" line="261"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -118,7 +119,17 @@ with use of libmpg123 library</source>
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation>Impostazioni modulo MPEG</translation>
+        <translation>Impostazioni estensione MPEG</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="29"/>
+        <source>Tag Priority</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="41"/>
+        <source>First:</source>
+        <translation>Prima:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="61"/>
@@ -133,26 +144,6 @@ with use of libmpg123 library</source>
         <location filename="../settingsdialog.ui" line="164"/>
         <source>ID3v2</source>
         <translation>ID3v2</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="210"/>
-        <source>ID3v1 encoding:</source>
-        <translation>Codifica ID3v1:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="236"/>
-        <source>ID3v2 encoding:</source>
-        <translation>Codifica ID3v2:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Tag Priority</source>
-        <translation>Priorità etichettatura</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="41"/>
-        <source>First:</source>
-        <translation>Prima:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="71"/>
@@ -182,6 +173,16 @@ with use of libmpg123 library</source>
         <location filename="../settingsdialog.ui" line="198"/>
         <source>Encodings</source>
         <translation>Codifiche</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="210"/>
+        <source>ID3v1 encoding:</source>
+        <translation>Codifica ID3v1:</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="236"/>
+        <source>ID3v2 encoding:</source>
+        <translation>Codifica ID3v2:</translation>
     </message>
 </context>
 </TS>
