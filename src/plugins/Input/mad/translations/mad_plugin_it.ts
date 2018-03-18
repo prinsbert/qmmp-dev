@@ -6,37 +6,37 @@
     <message>
         <location filename="../decodermadfactory.cpp" line="116"/>
         <source>MPEG Plugin</source>
-        <translation>Modulo MPEG</translation>
+        <translation>Estensione MPEG</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="119"/>
         <source>MPEG Files</source>
-        <translation>Brani MPEG</translation>
+        <translation>File MPEG</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="271"/>
         <source>About MPEG Audio Plugin</source>
-        <translation>Info sul modulo audio MPEG</translation>
+        <translation>Informazioni sull&apos;estensione audio MPEG</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="272"/>
         <source>Qmmp MPEG Audio Plugin</source>
-        <translation>Modulo audio MPEG per Qmmp</translation>
+        <translation>Estensione audio MPEG per Qmmp</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="273"/>
         <source>Compiled against libmad version:</source>
-        <translation>Compilato con libmad-Version:</translation>
+        <translation>Compilato con libmad versione:</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="277"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autore: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermadfactory.cpp" line="278"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Codice sorgente basato sui progetti mq3 e madplay</translation>
     </message>
 </context>
 <context>
@@ -122,7 +122,17 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation>Impostazioni modulo MPEG</translation>
+        <translation>Impostazioni estensione MPEG</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="29"/>
+        <source>Tag Priority</source>
+        <translation>Priorità etichettatura</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="41"/>
+        <source>First:</source>
+        <translation>Prima:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="61"/>
@@ -137,26 +147,6 @@
         <location filename="../settingsdialog.ui" line="164"/>
         <source>ID3v2</source>
         <translation>ID3v2</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="210"/>
-        <source>ID3v1 encoding:</source>
-        <translation>Codifica ID3v1:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="236"/>
-        <source>ID3v2 encoding:</source>
-        <translation>Codifica ID3v2:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Tag Priority</source>
-        <translation>Priorità etichettatura</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="41"/>
-        <source>First:</source>
-        <translation>Prima:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="71"/>
@@ -186,6 +176,16 @@
         <location filename="../settingsdialog.ui" line="198"/>
         <source>Encodings</source>
         <translation>Codifiche</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="210"/>
+        <source>ID3v1 encoding:</source>
+        <translation>Codifica ID3v1:</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="236"/>
+        <source>ID3v2 encoding:</source>
+        <translation>Codifica ID3v2:</translation>
     </message>
 </context>
 </TS>
