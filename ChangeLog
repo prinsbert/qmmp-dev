@@ -1328,3 +1328,12 @@ Version 0.11.0
 * updated Spanish translation (Joel Barrios and Bohdan Shuba)
 * updated Japanese translation (RyoTa SimaMoto)
 * updated Ukrainian translation (Gennady Motsio)
+
+Version 0.11.1
+* added ffmpeg 3.5 support
+* added feature to change default user interface
+* fixed playlists moving
+* fixed mp3 detection
+* updated Ukrainian translation (Gennady Motsio)
+* updated Italian translation (Luigi Toscano)
+* updated Spanish translation (Joel Barrios)
