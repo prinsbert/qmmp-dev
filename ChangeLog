@@ -1351,7 +1351,7 @@ Version 1.2.0
 * updated Russian translation (Alexey Loginov)
 * updated Spanish translation (Joel Barrios and Bohdan Shuba)
 * updated Japanese translation (RyoTa SimaMoto)
-* updated Ukrainian translation (Gennady Motsio)
+* updated Ukrainian translation (Gennady Motsyo)
 
 Version 1.2.1
 * added ffmpeg 3.5 support
@@ -1360,6 +1360,6 @@ Version 1.2.1
 * fixed openbox support
 * fixed kwin support
 * fixed mp3 detection
-* updated Ukrainian translation (Gennady Motsio)
+* updated Ukrainian translation (Gennady Motsyo)
 * updated Italian translation (Luigi Toscano)
 * updated Spanish translation (Joel Barrios)
