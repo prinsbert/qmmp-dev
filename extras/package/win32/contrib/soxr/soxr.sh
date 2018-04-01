@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=soxr
-VERSION=0.1.2
+VERSION=0.1.3
 
 case $1 in
   --download)
