@@ -1360,6 +1360,8 @@ Version 1.2.1
 * fixed openbox support
 * fixed kwin support
 * fixed mp3 detection
+* fixed seeking by mouse wheel
+* fixed build with Qt 5.11
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Italian translation (Luigi Toscano)
 * updated Spanish translation (Joel Barrios)
