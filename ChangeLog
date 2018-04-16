@@ -1334,6 +1334,7 @@ Version 0.11.1
 * added feature to change default user interface
 * fixed playlists moving
 * fixed mp3 detection
+* fixed seeking by mouse wheel
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Italian translation (Luigi Toscano)
 * updated Spanish translation (Joel Barrios)
