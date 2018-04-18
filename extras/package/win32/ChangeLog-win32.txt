@@ -243,3 +243,4 @@ LEGEND
 [*] ffmpeg-3.4.2
 [*] game-music-emu-0.6.2
 [*] soxr-1.0.3
+[*] libvorbis-1.3.6

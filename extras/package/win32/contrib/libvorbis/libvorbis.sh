@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=libvorbis
-VERSION=1.3.5
+VERSION=1.3.6
 
 case $1 in
   --download)

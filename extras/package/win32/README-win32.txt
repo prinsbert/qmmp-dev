@@ -29,7 +29,7 @@ List of the third-party libraries.
   taglib              1.11.1     http://taglib.github.io/
   libmad              0.15.1b    http://www.underbit.com/products/mad/
   libogg              1.3.3      http://www.vorbis.com/
-  libvorbis           1.3.5      http://www.vorbis.com/
+  libvorbis           1.3.6      http://www.vorbis.com/
   flac                1.3.2      https://xiph.org/flac/index.html
   wavpack             5.1.0      http://www.wavpack.com/
   libsndfile          1.0.28     http://www.mega-nerd.com/libsndfile/
