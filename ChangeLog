@@ -1354,7 +1354,7 @@ Version 1.2.0
 * updated Ukrainian translation (Gennady Motsyo)
 
 Version 1.2.1
-* added ffmpeg 3.5 support
+* added ffmpeg 4.0 support
 * added feature to change default user interface
 * fixed playlists moving
 * fixed openbox support
