@@ -265,6 +265,6 @@ Version 1.2.0
 * updated Ukrainian translation (Gennady Motsyo)
 
 Version 1.2.1
-* added ffmpeg 3.5 support in the ffvideo plugin
+* added ffmpeg 4.0 support in the ffvideo plugin
 * fixed issues with some corrupted files in the mpg123 plugin
 * updated Italian translation (Luigi Toscano)
