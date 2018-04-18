@@ -1330,7 +1330,7 @@ Version 0.11.0
 * updated Ukrainian translation (Gennady Motsyo)
 
 Version 0.11.1
-* added ffmpeg 3.5 support
+* added ffmpeg 4.0 support
 * added feature to change default user interface
 * fixed playlists moving
 * fixed mp3 detection
