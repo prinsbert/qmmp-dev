@@ -1,3 +1,9 @@
+qmmp-plugin-pack (0.11.1-1ubuntu1~trusty0) trusty; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Thu, 19 Apr 2018 21:06:35 +0300
+
 qmmp-plugin-pack (0.11.0-1ubuntu1~trusty0) trusty; urgency=medium
 
   * New upstream release.

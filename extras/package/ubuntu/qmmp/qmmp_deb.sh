@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=0.11.0
-UBUNTU_CODENAMES='precise trusty xenial zesty artful bionic'
+QMMP_VERSION=0.11.1
+UBUNTU_CODENAMES='precise trusty xenial artful bionic'
 BUILD_ROOT=build-root
 
 
@@ -22,7 +22,7 @@ build ()
     mkdir qmmp-$QMMP_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-$QMMP_VERSION/debian/
     cp ../qmmp_$QMMP_VERSION.orig.tar.gz ./
-    if [ "$1" = "xenial" ] || [ "$1" = "zesty" ] || [ "$1" = "artful" ] ; then
+    if [ "$1" = "xenial" ] || [ "$1" = "artful" ] || [ "$1" = "bionic" ] ; then
         mv ./qmmp_$QMMP_VERSION.orig.tar.gz ./qmmp-qt4_$QMMP_VERSION.orig.tar.gz
     fi
     cd qmmp-$QMMP_VERSION
