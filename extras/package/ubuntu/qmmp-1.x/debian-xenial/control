@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9), cmake, pkg-config, qtbase5-dev (>= 5.4),
   libavformat-dev, libcdio-dev, libcdio-paranoia-dev, libcddb2-dev,
   libfaad-dev, libgme-dev, libopus-dev (>= 1.0.2), libopusfile-dev,
   libwildmidi-dev, libsidplayfp-dev (>= 1.0.3), libbs2b-dev, libprojectm-dev,
-  libenca-dev, libshout3-dev, libarchive-dev (>= 3.2.1)
+  libenca-dev, libshout3-dev
 Standards-Version: 3.9.6
 Homepage: http://qmmp.ylsoftware.com/
 Vcs-Git: git://anonscm.debian.org/collab-maint/qmmp.git
