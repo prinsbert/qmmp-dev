@@ -1365,3 +1365,7 @@ Version 1.2.1
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Italian translation (Luigi Toscano)
 * updated Spanish translation (Joel Barrios)
+
+Version 1.2.2
+* fixed build with Qt 5.11
+* fixed memory leaks
