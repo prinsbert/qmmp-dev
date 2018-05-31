@@ -26,7 +26,7 @@
 #include <QMenu>
 #include <QRegExp>
 #include <QSettings>
-#include <qmmp/fileinfo.h>
+#include <qmmp/trackinfo.h>
 #include <qmmp/inputsource.h>
 #include "packetbuffer.h"
 #include "audiothread.h"
@@ -85,14 +85,14 @@ bool FFmpegEngine::enqueue(InputSource *source)
     foreach(QString filter, filters)
     {
         QRegExp regexp(filter, Qt::CaseInsensitive, QRegExp::Wildcard);
-        if((supports = regexp.exactMatch(source->url())))
+        if((supports = regexp.exactMatch(source->path())))
             break;
     }
     if(!supports)
         return false;
 
     FFVideoDecoder *decoder = new FFVideoDecoder();
-    if(!decoder->initialize(source->url()))
+    if(!decoder->initialize(source->path()))
     {
         delete decoder;
         return false;
@@ -205,7 +205,7 @@ void FFmpegEngine::run()
             m_seekTime = -1;
         }
         //metadata
-        if(m_inputs[m_decoder]->hasMetaData())
+        /*if(m_inputs[m_decoder]->hasMetaData())
         {
             QMap<Qmmp::MetaData, QString> m = m_inputs[m_decoder]->takeMetaData();
             m[Qmmp::URL] = m_inputs[m_decoder]->url();
@@ -213,7 +213,7 @@ void FFmpegEngine::run()
             m_metaData = QSharedPointer<QMap<Qmmp::MetaData, QString> >(new QMap<Qmmp::MetaData, QString>(m));
         }
         if(m_inputs[m_decoder]->hasStreamInfo())
-            StateHandler::instance()->dispatch(m_inputs[m_decoder]->takeStreamInfo());
+            StateHandler::instance()->dispatch(m_inputs[m_decoder]->takeStreamInfo());*/
 
         // decode
         av_init_packet(&pkt);
@@ -380,7 +380,7 @@ void FFmpegEngine::run()
 
 void FFmpegEngine::sendMetaData()
 {
-    if(!m_decoder || m_inputs.isEmpty())
+    /*if(!m_decoder || m_inputs.isEmpty())
         return;
     QString url = m_inputs.value(m_decoder)->url();
     if (QFile::exists(url)) //send metadata for local files only
@@ -393,7 +393,7 @@ void FFmpegEngine::sendMetaData()
             while (!list.isEmpty())
                 delete list.takeFirst();
         }
-    }
+    }*/
 }
 
 void FFmpegEngine::clearDecoders()
