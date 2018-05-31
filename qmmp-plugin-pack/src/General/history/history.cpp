@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -35,7 +35,7 @@ History::History(QObject *parent) : QObject(parent)
     m_duration = 0;
     m_previousState = Qmmp::Stopped;
     m_elapsed = 0;
-    connect(m_core, SIGNAL(metaDataChanged()), SLOT(onMetaDataChanged()));
+    connect(m_core, SIGNAL(trackInfoChanged()), SLOT(onTrackInfoChanged()));
     connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(onStateChanged(Qmmp::State)));
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
@@ -72,13 +72,13 @@ History::~History()
     }
 }
 
-void History::onMetaDataChanged()
+void History::onTrackInfoChanged()
 {
     if(m_elapsed + m_time.elapsed() > 20000)
         saveTrack();
 
-    m_metaData = m_core->metaData();
-    m_duration = m_core->totalTime();
+    m_trackInfo = m_core->trackInfo();
+    m_duration = m_core->duration();
     m_time.restart();
     m_elapsed = 0;
 }
@@ -135,31 +135,31 @@ bool History::createTables()
 void History::saveTrack()
 {
     QSqlDatabase db = QSqlDatabase::database(CONNECTION_NAME);
-    if(!db.isOpen() || m_metaData.isEmpty())
+    if(!db.isOpen() || m_trackInfo.isEmpty())
         return;
 
     QSqlQuery query(db);
     query.prepare("INSERT INTO track_history VALUES(NULL, CURRENT_TIMESTAMP, :title, :artist, :albumartist, :album, :comment,"
                   ":genre, :composer, :year, :track, :discnumber, :duration, :url);");
-    query.bindValue(":title", m_metaData.value(Qmmp::TITLE));
-    query.bindValue(":artist", m_metaData.value(Qmmp::ARTIST));
-    query.bindValue(":albumartist", m_metaData.value(Qmmp::ALBUMARTIST));
-    query.bindValue(":album", m_metaData.value(Qmmp::ALBUM));
-    query.bindValue(":comment", m_metaData.value(Qmmp::COMMENT));
-    query.bindValue(":genre", m_metaData.value(Qmmp::GENRE));
-    query.bindValue(":composer", m_metaData.value(Qmmp::COMPOSER));
-    query.bindValue(":year", m_metaData.value(Qmmp::YEAR));
-    query.bindValue(":track", m_metaData.value(Qmmp::TRACK));
-    query.bindValue(":discnumber", m_metaData.value(Qmmp::DISCNUMBER));
-    query.bindValue(":duration", m_duration);
-    query.bindValue(":url", m_metaData.value(Qmmp::URL));
+    query.bindValue(":title", m_trackInfo.value(Qmmp::TITLE));
+    query.bindValue(":artist", m_trackInfo.value(Qmmp::ARTIST));
+    query.bindValue(":albumartist", m_trackInfo.value(Qmmp::ALBUMARTIST));
+    query.bindValue(":album", m_trackInfo.value(Qmmp::ALBUM));
+    query.bindValue(":comment", m_trackInfo.value(Qmmp::COMMENT));
+    query.bindValue(":genre", m_trackInfo.value(Qmmp::GENRE));
+    query.bindValue(":composer", m_trackInfo.value(Qmmp::COMPOSER));
+    query.bindValue(":year", m_trackInfo.value(Qmmp::YEAR));
+    query.bindValue(":track", m_trackInfo.value(Qmmp::TRACK));
+    query.bindValue(":discnumber", m_trackInfo.value(Qmmp::DISCNUMBER));
+    query.bindValue(":duration", m_trackInfo.duration());
+    query.bindValue(":url", m_trackInfo.path());
     bool ok = query.exec();
 
     if(!ok)
         qWarning("History: unable to save track, error: %s", qPrintable(query.lastError().text()));
     else
         qDebug("History: track '%s' has been added to history",
-               qPrintable(m_metaData.value(Qmmp::ARTIST) + " - " + m_metaData.value(Qmmp::TITLE)));
+               qPrintable(m_trackInfo.value(Qmmp::ARTIST) + " - " + m_trackInfo.value(Qmmp::TITLE)));
 
-    m_metaData.clear();
+    m_trackInfo.clear();
 }
