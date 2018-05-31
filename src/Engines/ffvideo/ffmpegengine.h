@@ -42,7 +42,6 @@ class Output;
 class QIDevice;
 class QMenu;
 class QProcess;
-class FileInfo;
 class InputSource;
 class PacketBuffer;
 class AudioThread;
