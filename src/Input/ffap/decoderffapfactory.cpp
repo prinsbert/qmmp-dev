@@ -80,7 +80,7 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
         filePath.remove("ape://");
         filePath.remove(QRegExp("#\\d+$"));
         int track = filePath.section("#", -1).toInt();
-        list = createPlayList(filePath, TrackInfo::MetaData, 0);
+        list = createPlayList(filePath, parts, 0);
         if (list.isEmpty() || track <= 0 || track > list.count())
         {
             qDeleteAll(list);
