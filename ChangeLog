@@ -1338,3 +1338,6 @@ Version 0.11.1
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Italian translation (Luigi Toscano)
 * updated Spanish translation (Joel Barrios)
+
+Version 0.11.2
+* fixed memory leaks
