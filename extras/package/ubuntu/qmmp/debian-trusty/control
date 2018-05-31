@@ -139,7 +139,7 @@ Description: qmmp audio player -- user interface library (development files)
 
 Package: qmmp-plugin-projectm
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, ttf-dejavu-core
 Description: qmmp audio player -- projectM visualization plugin
  Qmmp is feature-rich audio player with support of many formats.
  It is written in Qt.

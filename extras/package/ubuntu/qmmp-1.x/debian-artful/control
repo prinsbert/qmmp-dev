@@ -90,7 +90,7 @@ Description: feature-rich audio player with support of many formats
 
 Package: qmmp-plugin-projectm
 Architecture: any-amd64 any-i386 any-mips any-mipsel any-powerpc any-ppc64el any-s390x any-alpha any-hppa any-m68k any-mips64el any-powerpcspe any-sh4 any-sparc64 any-x32
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, ttf-dejavu-core
 Description: qmmp audio player -- projectM visualization plugin
  Qmmp is feature-rich audio player with support of many formats.
  It is written in Qt.

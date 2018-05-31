@@ -1,3 +1,9 @@
+qmmp (1.2.2-1ubuntu1~xenial0) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Thu, 31 May 2018 20:14:59 +0300
+
 qmmp (1.2.1-1ubuntu1~xenial1) xenial; urgency=medium
 
   * New upstream release.
