@@ -49,7 +49,6 @@ private:
     void saveTrack();
 
     SoundCore *m_core;
-    qint64 m_duration;
     TrackInfo m_trackInfo;
     QTime m_time;
     Qmmp::State m_previousState;
