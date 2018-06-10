@@ -82,7 +82,7 @@ Requirements:
 - libvorbis
 - libogg
 - libalsa >= 1.0.1
-- taglib >= 1.6 (1.11 or higher is recommended)
+- taglib >= 1.7 (1.11 or higher is recommended)
 - curl >= 7.16
 - libmpg123 >= 1.13.0 (optional)
 - libmms >= 0.4 (optional)
