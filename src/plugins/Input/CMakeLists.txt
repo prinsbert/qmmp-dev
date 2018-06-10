@@ -3,7 +3,6 @@ SET(USE_MPG123         TRUE CACHE BOOL "enable/disable mpg123 decoder (mpeg plug
 SET(USE_FLAC           TRUE CACHE BOOL "enable/disable flac plugin")
 SET(USE_VORBIS         TRUE CACHE BOOL "enable/disable ogg vorbis plugin")
 SET(USE_FFMPEG         TRUE CACHE BOOL "enable/disable ffmpeg plugin")
-SET(USE_FFMPEG_LEGACY  TRUE CACHE BOOL "enable/disable ffmpeg_legacy plugin")
 SET(USE_MPC            TRUE CACHE BOOL "enable/disable mpc plugin")
 SET(USE_SNDFILE        TRUE CACHE BOOL "enable/disable sndfile plugin")
 SET(USE_WAVPACK        TRUE CACHE BOOL "enable/disable wavpack plugin")
@@ -33,10 +32,6 @@ ENDIF(USE_VORBIS AND TAGLIB_FOUND)
 IF(USE_FFMPEG)
 add_subdirectory(ffmpeg)
 ENDIF(USE_FFMPEG)
-
-IF(USE_FFMPEG_LEGACY)
-add_subdirectory(ffmpeg_legacy)
-ENDIF(USE_FFMPEG_LEGACY)
 
 IF(USE_MPC AND TAGLIB_FOUND)
 add_subdirectory(mpc)
