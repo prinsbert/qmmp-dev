@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,6 +24,7 @@
 #include <QFileInfo>
 #include <QProcess>
 #include <QPushButton>
+#include <QStyle>
 #include <qmmp/metadatamanager.h>
 #include <qmmp/metadatamodel.h>
 #include <qmmp/tagmodel.h>
@@ -132,16 +133,16 @@ void DetailsDialog::updatePage()
 
     m_ui->pageLabel->setText(tr("%1/%2").arg(m_page + 1).arg(m_tracks.count()));
     m_track = m_tracks.at(m_page);
-    m_path = m_track->url();
+    m_path = m_track->path();
     setWindowTitle (m_path.section('/',-1));
     m_ui->pathEdit->setText(m_path);
 
     //load metadata and create metadata model
-    QList <FileInfo *> flist = MetaDataManager::instance()->createPlayList(m_path, true);
-    if(!flist.isEmpty() && QFile::exists(m_track->url()))
+    QList <TrackInfo *> flist = MetaDataManager::instance()->createPlayList(m_path, TrackInfo::MetaData);
+    if(!flist.isEmpty() && QFile::exists(m_track->path()))
         m_metaData = flist.at(0)->metaData();
     else
-        m_metaData = *m_track;
+        m_metaData = m_track->metaData();
     qDeleteAll(flist);
 
     QPixmap cover = MetaDataManager::instance()->getCover(m_path);
@@ -197,7 +198,7 @@ void DetailsDialog::printInfo()
     if(m_metaData[Qmmp::DISCNUMBER] != "0")
         formattedText += formatRow(tr("Disc number"), m_metaData[Qmmp::DISCNUMBER]);
     //stream information
-    if(core->state() == Qmmp::Playing && core->url() == m_metaData.value(Qmmp::URL))
+    /*if(core->state() == Qmmp::Playing && core->url() == m_metaData.value(Qmmp::URL))
     {
         if(!core->streamInfo().isEmpty())
         {
@@ -210,7 +211,7 @@ void DetailsDialog::printInfo()
             foreach(QString key, core->streamInfo().keys())
                 formattedText += formatRow(key, core->streamInfo().value(key));
         }
-    }
+    }*/
     //audio info
     if(!m_metaDataModel)
     {

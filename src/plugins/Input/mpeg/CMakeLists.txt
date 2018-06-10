@@ -34,12 +34,10 @@ SET(libmpeg_SRCS
   settingsdialog.cpp
   tagextractor.cpp
   mpegmetadatamodel.cpp
-  replaygainreader.cpp
 )
 
 SET(libmpeg_HDRS
   tagextractor.h
-  replaygainreader.h
 )
 
 IF(MAD_FOUND)

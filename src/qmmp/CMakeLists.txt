@@ -39,7 +39,7 @@ SET(libqmmp_SRCS
     decoder.cpp
     output.cpp
     outputwriter.cpp
-    fileinfo.cpp
+    trackinfo.cpp
     equ/iir.c
     equ/iir_cfs.c
     equ/iir_fpu.c
@@ -84,7 +84,7 @@ SET(libqmmp_HDRS
     effect.h
     qmmp.h
     replaygain_p.h
-    fileinfo.h
+    trackinfo.h
     audioconverter.h
     qmmpplugincache_p.h
     eqsettings.h
@@ -114,7 +114,7 @@ SET(libqmmp_DEVEL_HDRS
     effect.h
     enginefactory.h
     eqsettings.h
-    fileinfo.h
+    trackinfo.h
     inputsourcefactory.h
     inputsource.h
     metadatamanager.h

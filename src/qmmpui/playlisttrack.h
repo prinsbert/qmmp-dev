@@ -20,10 +20,9 @@
 #ifndef PLAYLISTTRACK_H
 #define PLAYLISTTRACK_H
 
-#include <QMap>
 #include <QStringList>
-#include <qmmp/fileinfo.h>
 #include <qmmp/qmmp.h>
+#include <qmmp/trackinfo.h>
 #include "playlistitem.h"
 #include "qmmpui_export.h"
 
@@ -34,7 +33,7 @@ class MetaDataHelper;
 /** @brief The PlayListTrack class provides a track for use with the PlayListModel class.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
-class QMMPUI_EXPORT PlayListTrack : public QMap <Qmmp::MetaData, QString>, public PlayListItem
+class QMMPUI_EXPORT PlayListTrack : public TrackInfo, public PlayListItem
 {
 public:
     /*!
@@ -49,7 +48,7 @@ public:
      * Constructs plalist item with given metadata.
      * @param info Media file information.
      */
-    PlayListTrack(FileInfo *info);
+    PlayListTrack(TrackInfo *info);
     /*!
      * Object destructor.
      */
@@ -72,27 +71,15 @@ public:
      */
     const QString formattedLength();
     /*!
-     * Returns song length in seconds.
-     */
-    qint64 length() const;
-    /*!
-     * Sets length in seconds.
-     */
-    void setLength(qint64 length);
-    /*!
-     * Same as url()
-     */
-    const QString url() const;
-    /*!
      * Updates current metadata.
      * @param metaData Map with metadata values.
      */
     void updateMetaData(const QMap <Qmmp::MetaData, QString> &metaData);
     /*!
      *  Updates current metadata.
-     *  @param info Media file information.
+     *  @param info Track information.
      */
-    void updateMetaData(FileInfo *info);
+    void updateMetaData(TrackInfo *info);
     /*!
      * Gets new metadata from file (works for local files only).
      */
@@ -147,7 +134,6 @@ private:
     QStringList m_titleFormats;
     QString m_groupFormat;
     QmmpUiSettings *m_settings;
-    qint64 m_length;
     int m_refCount;
     int m_track_index;
     bool m_sheduledForDeletion;

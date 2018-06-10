@@ -30,7 +30,6 @@ SET(libopus_SRCS
   decoder_opus.cpp
   decoderopusfactory.cpp
   opusmetadatamodel.cpp
-  replaygainreader.cpp
   opusfile.cpp
   opusproperties.cpp
   tdebug.cpp
@@ -38,7 +37,6 @@ SET(libopus_SRCS
 
 SET(libopus_HDRS
   decoder_opus.h
-  replaygainreader.h
   opusfile.h
   opusproperties.h
   tdebug.h

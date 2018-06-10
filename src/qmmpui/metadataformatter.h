@@ -26,7 +26,6 @@
 #include <QList>
 #include <qmmpui/playlisttrack.h>
 #include <qmmp/qmmp.h>
-#include <qmmp/fileinfo.h>
 #include "qmmpui_export.h"
 
 /*! @brief The MetaDataFormatter formats metadata using templates.
@@ -72,26 +71,21 @@ public:
      */
     QString format(const PlayListTrack *item) const;
     /*!
-     * Converts metadata to one string using template.
-     * @param metaData Metadata array.
-     * @param length Length in seconds.
-     * @param track Index of track.
-     */
-    QString format(const QMap<Qmmp::MetaData, QString> &metaData, qint64 length = 0, int track = 0) const;
-    /*!
-     * Converts metadata of \b FileInfo pointer \b info to one string using template.
-     * \param info pointer to \b FileInfo object.
+     * Converts metadata of \b TrackInfo pointer \b info to one string using template.
+     * \param info pointer to \b TrackInfo object.
      * \param track Index of track.
      */
-    QString format(const FileInfo *info, int track = 0) const;
+    QString format(const TrackInfo &info, int trackIndex = 0) const;
+
+    QString format(const TrackInfo *info, int trackIndex = 0) const;
     /*!
-     * Returns formatted length (example: 05:02:03).
-     * \param length Length in seconds.
+     * Returns formatted duration (example: 05:02:03).
+     * \param duration Duration in milliseconds.
      * \param hideZero Setting for zero values output.
      * If \b hideZero is \b true, then the function outputs empty string for zero length,
      * otherwise outputs "0:00".
      */
-    static QString formatLength(qint64 length, bool hideZero = true);
+    static QString formatDuration(qint64 duration, bool hideZero = true, bool showMs = false);
 
 private:
     struct Node;
@@ -122,7 +116,8 @@ private:
         //extra fields
         enum
         {
-            TWO_DIGIT_TRACK = Qmmp::URL + 1,
+            PATH = Qmmp::DISCNUMBER + 1,
+            TWO_DIGIT_TRACK,
             DURATION,
             FILE_NAME,
             TRACK_INDEX
@@ -140,9 +135,9 @@ private:
     void parseText(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end);
     void parseEscape(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end);
 
-    QString evalute(const QList<Node> *nodes, const QMap<Qmmp::MetaData, QString> *metaData, qint64 length, int track) const;
-    QString printParam(Param *p, const QMap<Qmmp::MetaData, QString> *metaData, qint64 length, int track) const;
-    QString printField(int field, const QMap<Qmmp::MetaData, QString> *metaData, qint64 length, int track) const;
+    QString evalute(const QList<Node> *nodes, const TrackInfo *info, int trackIndex) const;
+    QString printParam(Param *p, const TrackInfo *info, int trackIndex) const;
+    QString printField(int field, const TrackInfo *info, int trackIndex) const;
 
     QString dumpNode(Node node) const;
 

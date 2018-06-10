@@ -20,15 +20,7 @@
 #ifndef DECODERMPEGFACTORY_H
 #define DECODERMPEGFACTORY_H
 
-#include <QObject>
-#include <QString>
-#include <QIODevice>
-#include <QWidget>
-
-#include <qmmp/decoder.h>
-#include <qmmp/output.h>
 #include <qmmp/decoderfactory.h>
-#include <qmmp/metadatamodel.h>
 
 class DecoderMPEGFactory : public QObject,
                           DecoderFactory
@@ -40,8 +32,8 @@ public:
     DecoderMPEGFactory();
     bool canDecode(QIODevice *input) const;
     const DecoderProperties properties() const;
-    Decoder *create(const QString &path, QIODevice *input);
-    QList<FileInfo *> createPlayList(const QString &fileName, bool useMetaData, QStringList *);
+    Decoder *create(const QString &, QIODevice *input);
+    QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *);
     MetaDataModel* createMetaDataModel(const QString &path, QObject *parent = 0);
     void showSettings(QWidget *parent);
     void showAbout(QWidget *parent);

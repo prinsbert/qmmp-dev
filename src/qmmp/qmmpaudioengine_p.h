@@ -25,6 +25,7 @@
 #include <QHash>
 #include <QSharedPointer>
 #include "abstractengine.h"
+#include "trackinfo.h"
 #include "audioparameters.h"
 
 class QIODevice;
@@ -74,7 +75,7 @@ private:
     void flush(bool = false);
     void addOffset();
     qint64 produceSound(unsigned char *data, qint64 size, quint32 brate);
-    void sendMetaData();
+    void attachMetaData(Decoder *decoder, DecoderFactory *factory, InputSource *source);
     OutputWriter *createOutput();
     void prepareEffects(Decoder *d);
 
@@ -95,7 +96,7 @@ private:
     AudioParameters m_ap;
     bool m_next;
     bool m_muted;
-    QSharedPointer<QMap<Qmmp::MetaData, QString> > m_metaData;
+    QSharedPointer<TrackInfo> m_trackInfo;
     static QmmpAudioEngine *m_instance;
     ReplayGain *m_replayGain;
     QmmpSettings *m_settings;

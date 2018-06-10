@@ -92,37 +92,41 @@ void StateHandler::dispatch(qint64 length)
     m_mutex.unlock();
 }
 
-void StateHandler::dispatch(const QMap<Qmmp::MetaData, QString> &metaData)
+bool StateHandler::dispatch(const TrackInfo &info)
 {
-    m_mutex.lock();
-    QMap<Qmmp::MetaData, QString> tmp = metaData;
-    foreach(QString value, tmp.values()) //remove empty keys
-    {
-        if (value.isEmpty() || value == "0")
-            tmp.remove(tmp.key(value));
-    }
-    if(tmp.isEmpty() || tmp.value(Qmmp::URL).isEmpty()) //skip empty tags
+    QMutexLocker locker(&m_mutex);
+    if(info.isEmpty())
     {
         qWarning("StateHandler: empty metadata");
-        m_mutex.unlock();
-        return;
+        return false;
     }
     if(m_state != Qmmp::Playing && m_state != Qmmp::Paused)
     {
         qWarning("StateHandler: metadata is ignored");
-        m_mutex.unlock();
-        return;
+        return false;
     }
 
-    if(m_metaData.isEmpty() || m_metaData.value(Qmmp::URL) == metaData.value(Qmmp::URL))
+    if(m_info.isEmpty() || m_info.path() == info.path())
     {
-        if (m_metaData != tmp)
+        TrackInfo tmp = m_info;
+        tmp.setPath(info.path());
+        if(info.parts() & TrackInfo::MetaData)
+            tmp.setValues(info.metaData());
+        if(info.parts() & TrackInfo::Properties)
+            tmp.setValues(info.properties());
+        if(info.parts() & TrackInfo::ReplayGainInfo)
+            tmp.setValues(info.replayGainInfo());
+        if(info.duration() > 0)
+            tmp.setDuration(info.duration());
+
+        if(m_info != tmp)
         {
-            m_metaData = tmp;
-            qApp->postEvent(parent(), new MetaDataChangedEvent(m_metaData));
+            m_info = tmp;
+            qApp->postEvent(parent(), new TrackInfoEvent(m_info));
+            return true;
         }
     }
-    m_mutex.unlock();
+    return false;
 }
 
 void StateHandler::dispatch(const QHash<QString, QString> &info)
@@ -152,6 +156,7 @@ void StateHandler::dispatch(Qmmp::State state)
     {
         m_elapsed = -1;
         m_bitrate = 0;
+        m_info.clear();
         m_metaData.clear();
         m_streamInfo.clear();
         m_audioParameters = AudioParameters();

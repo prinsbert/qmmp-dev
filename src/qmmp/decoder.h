@@ -11,13 +11,12 @@
 #include <QList>
 #include <QMap>
 #include <QIODevice>
-#include "fileinfo.h"
 #include "qmmp.h"
 #include "audioparameters.h"
 #include "channelmap.h"
-#include "decoderfactory.h"
 
 class QmmpPluginCache;
+class DecoderFactory;
 
 /*! @brief The Decoder class provides the base interface class of audio decoders.
  * @author Brad Hughes <bhughes@trolltech.com>
@@ -106,6 +105,9 @@ public:
      * Attention: hasMetaData() should return \b true before use of this fuction.
      */
     QMap<Qmmp::MetaData, QString> takeMetaData();
+    void setProperty(Qmmp::TrackProperty key, const QVariant &value);
+    void setProperties(const QMap<Qmmp::TrackProperty, QString> &properties);
+    const QMap<Qmmp::TrackProperty, QString> &properties() const;
     /*!
      * Returns DecoderFactory pointer which supports file \b path or 0 if file \b path is unsupported
      * @param path Full local file path.
@@ -186,6 +188,7 @@ private:
     static QList<QmmpPluginCache*> *m_cache;
     static QStringList m_disabledNames;
     AudioParameters m_parameters;
+    QMap<Qmmp::TrackProperty, QString> m_properties;
     QIODevice *m_input;
     bool m_hasMetaData;
     QMap<Qmmp::MetaData, QString> m_metaData;

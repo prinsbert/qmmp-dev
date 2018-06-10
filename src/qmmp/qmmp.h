@@ -73,8 +73,20 @@ public:
         COMPOSER,  /*!< Composer */
         YEAR,      /*!< Year */
         TRACK,     /*!< Track number */
-        DISCNUMBER,/*!< Disc number */
-        URL        /*!< Stream url or local file path */
+        DISCNUMBER /*!< Disc number */
+    };
+    /*!
+     * Track properties
+     */
+    enum TrackProperty
+    {
+        BITRATE = 0,
+        SAMPLERATE,
+        CHANNELS,
+        BITS_PER_SAMPLE,
+        FORMAT_NAME,
+        DECODER,
+        FILE_SIZE
     };
     /*!
      * Keys of ReplayGain information

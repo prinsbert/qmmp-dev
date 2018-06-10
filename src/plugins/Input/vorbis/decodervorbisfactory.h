@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,16 +20,7 @@
 #ifndef DECODERVORBISFACTORY_H
 #define DECODERVORBISFACTORY_H
 
-#include <QObject>
-#include <QString>
-#include <QIODevice>
-#include <QWidget>
-
-#include <qmmp/decoder.h>
-#include <qmmp/output.h>
 #include <qmmp/decoderfactory.h>
-#include <qmmp/fileinfo.h>
-#include <qmmp/metadatamodel.h>
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -43,9 +34,9 @@ Q_INTERFACES(DecoderFactory)
 public:
     bool canDecode(QIODevice *input) const;
     const DecoderProperties properties() const;
-    Decoder *create(const QString &path, QIODevice *input);
+    Decoder *create(const QString &, QIODevice *input);
     MetaDataModel* createMetaDataModel(const QString &path, QObject *parent = 0);
-    QList<FileInfo *> createPlayList(const QString &fileName, bool useMetaData, QStringList *);
+    QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *);
     QObject* showDetails(QWidget *parent, const QString &path);
     void showSettings(QWidget *parent);
     void showAbout(QWidget *parent);

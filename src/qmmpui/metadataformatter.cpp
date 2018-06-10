@@ -59,7 +59,7 @@ MetaDataFormatter::MetaDataFormatter(const QString &pattern)
     m_fieldNames.insert("y", Qmmp::YEAR);
     m_fieldNames.insert("n", Qmmp::TRACK);
     m_fieldNames.insert("D", Qmmp::DISCNUMBER);
-    m_fieldNames.insert("F", Qmmp::URL);
+    m_fieldNames.insert("F", Param::PATH);
     m_fieldNames.insert("NN", Param::TWO_DIGIT_TRACK);
     m_fieldNames.insert("l", Param::DURATION);
     m_fieldNames.insert("f", Param::FILE_NAME);
@@ -98,30 +98,39 @@ const QString MetaDataFormatter::pattern() const
 
 QString MetaDataFormatter::format(const PlayListTrack *item) const
 {
-    return format(*item, item->length(), item->trackIndex());
+    return evalute(&m_nodes, item, item->trackIndex());
 }
 
-QString MetaDataFormatter::format(const QMap<Qmmp::MetaData, QString> &metaData, qint64 length, int track) const
+QString MetaDataFormatter::format(const TrackInfo &info, int trackIndex) const
 {
-    return evalute(&m_nodes, &metaData, length, track).trimmed();
+    return evalute(&m_nodes, &info, trackIndex);
 }
 
-QString MetaDataFormatter::format(const FileInfo *info, int track) const
+QString MetaDataFormatter::format(const TrackInfo *info, int trackIndex) const
 {
-    return format(info->metaData(), info->length(), track);
+    return format(*info, trackIndex);
 }
 
-QString MetaDataFormatter::formatLength(qint64 length, bool hideZero)
+QString MetaDataFormatter::formatDuration(qint64 duration, bool hideZero, bool showMs)
 {
-    if(length <= 0)
-        return hideZero ? QString() : "0:00";
-    QString str;
-    if(length >= 3600)
-        str = QString("%1:%2").arg(length/3600).arg(length%3600/60, 2, 10, QChar('0'));
+    if(duration <= 0)
+    {
+        if(hideZero)
+            return QString();
+        else
+            return showMs ? QLatin1String("0:00.000") : QLatin1String("0:00");
+    }
+
+    QString out;
+    qint64 durationInSeconds = duration / 1000;
+    if(durationInSeconds >= 3600)
+        out = QString("%1:%2").arg(durationInSeconds / 3600).arg(duration % 3600 / 60, 2, 10, QChar('0'));
     else
-        str = QString("%1").arg(length%3600/60);
-    str += QString(":%1").arg(length%60, 2, 10, QChar('0'));
-    return str;
+        out = QString("%1").arg(durationInSeconds % 3600 / 60);
+    out += QString(":%1").arg(durationInSeconds % 60, 2, 10, QChar('0'));
+    if(showMs)
+        out += QString(".%1").arg(duration % 1000, 3, 10, QChar('0'));
+    return out;
 }
 
 bool MetaDataFormatter::parseField(QList<Node> *nodes, QString::const_iterator *i, QString::const_iterator end)
@@ -389,7 +398,7 @@ void MetaDataFormatter::parseEscape(QList<MetaDataFormatter::Node> *nodes, QStri
     nodes->append(node);
 }
 
-QString MetaDataFormatter::evalute(const QList<Node> *nodes, const QMap<Qmmp::MetaData, QString> *metaData, qint64 length, int track) const
+QString MetaDataFormatter::evalute(const QList<Node> *nodes, const TrackInfo *info, int trackIndex) const
 {
     QString out;
     for(int i = 0; i < nodes->count(); ++i)
@@ -398,56 +407,56 @@ QString MetaDataFormatter::evalute(const QList<Node> *nodes, const QMap<Qmmp::Me
         if(node.command == Node::PRINT_TEXT)
         {
             Param p = node.params.first();
-            out.append(printParam(&p, metaData, length, track));
+            out.append(printParam(&p, info, trackIndex));
 
         }
         else if(node.command == Node::IF_KEYWORD)
         {
-            QString var1 = printParam(&node.params[0], metaData, length, track);
+            QString var1 = printParam(&node.params[0], info, trackIndex);
             if(var1.isEmpty() || var1 == "0")
-                out.append(printParam(&node.params[2], metaData, length, track));
+                out.append(printParam(&node.params[2], info, trackIndex));
             else
-                out.append(printParam(&node.params[1], metaData, length, track));
+                out.append(printParam(&node.params[1], info, trackIndex));
         }
         else if(node.command == Node::AND_OPERATOR)
         {
-            QString var1 = printParam(&node.params[0], metaData, length, track);
-            QString var2 = printParam(&node.params[1], metaData, length, track);
+            QString var1 = printParam(&node.params[0], info, trackIndex);
+            QString var2 = printParam(&node.params[1], info, trackIndex);
             if(!var1.isEmpty() && !var2.isEmpty())
                 out.append("1");
         }
         else if(node.command == Node::OR_OPERATOR)
         {
-            QString var1 = printParam(&node.params[0], metaData, length, track);
+            QString var1 = printParam(&node.params[0], info, trackIndex);
             if(!var1.isEmpty())
                 out.append("1");
             else
             {
-                QString var2 = printParam(&node.params[1], metaData, length, track);
+                QString var2 = printParam(&node.params[1], info, trackIndex);
                 if(!var2.isEmpty())
                     out.append("1");
             }
         }
         else if(node.command == Node::DIR_FUNCTION)
         {
-            out.append(metaData->value(Qmmp::URL).section('/', -node.params[0].number - 2, -node.params[0].number - 2));
+            out.append(info->path().section('/', -node.params[0].number - 2, -node.params[0].number - 2));
         }
     }
     return out;
 }
 
-QString MetaDataFormatter::printParam(MetaDataFormatter::Param *p, const QMap<Qmmp::MetaData, QString> *metaData, qint64 length, int track) const
+QString MetaDataFormatter::printParam(MetaDataFormatter::Param *p, const TrackInfo *info, int trackIndex) const
 {
     switch (p->type)
     {
     case Param::FIELD:
-        return printField(p->field, metaData, length, track);
+        return printField(p->field, info, trackIndex);
         break;
     case Param::TEXT:
         return p->text;
         break;
     case Param::NODES:
-        return evalute(&p->children, metaData, length, track);
+        return evalute(&p->children, info, trackIndex);
         break;
     default:
         break;
@@ -455,41 +464,45 @@ QString MetaDataFormatter::printParam(MetaDataFormatter::Param *p, const QMap<Qm
     return QString();
 }
 
-QString MetaDataFormatter::printField(int field, const QMap<Qmmp::MetaData, QString> *metaData, qint64 length, int track) const
+QString MetaDataFormatter::printField(int field, const TrackInfo *info, int trackIndex) const
 {
-    if(field >= Qmmp::TITLE && field <= Qmmp::URL)
+    if(field >= Qmmp::TITLE && field <= Qmmp::DISCNUMBER)
     {
         if(field == Qmmp::TITLE)
         {
-            QString title = metaData->value(Qmmp::TITLE);
+            QString title = info->value(Qmmp::TITLE);
             if(title.isEmpty()) //using file name if title is empty
             {
-                title = metaData->value(Qmmp::URL).section('/',-1);
+                title = info->path().section('/',-1);
                 title = title.left(title.lastIndexOf('.'));
             }
 
             if(title.isEmpty()) //using full path if file name is empty
-                title = metaData->value(Qmmp::URL);
+                title = info->path();
 
             return title;
         }
-        return metaData->value((Qmmp::MetaData) field);
+        return info->value((Qmmp::MetaData) field);
+    }
+    else if(field == Param::PATH)
+    {
+        return info->path();
     }
     else if(field == Param::TWO_DIGIT_TRACK)
     {
-        return QString("%1").arg(metaData->value(Qmmp::TRACK),2,'0');
+        return QString("%1").arg(info->value(Qmmp::TRACK),2,'0');
     }
     else if(field == Param::DURATION)
     {
-        return formatLength(length);
+        return formatDuration(info->duration());
     }
     else if(field == Param::FILE_NAME)
     {
-        return metaData->value(Qmmp::URL).section('/',-1);
+        return info->path().section('/',-1);
     }
     else if(field == Param::TRACK_INDEX)
     {
-        return QString::number(track + 1);
+        return QString::number(trackIndex + 1);
     }
     return QString();
 }

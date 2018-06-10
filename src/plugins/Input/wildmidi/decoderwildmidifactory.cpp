@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -69,27 +69,25 @@ Decoder *DecoderWildMidiFactory::create(const QString &path, QIODevice *input)
     return new DecoderWildMidi(path);
 }
 
-QList<FileInfo *> DecoderWildMidiFactory::createPlayList(const QString &fileName, bool useMetaData, QStringList *)
+QList<TrackInfo *> DecoderWildMidiFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    Q_UNUSED(useMetaData);
-    QList <FileInfo*> list;
-    FileInfo *info = new FileInfo(fileName);
+    TrackInfo *info = new TrackInfo(path);
+    WildMidiHelper *helper = WildMidiHelper::instance();
 
-    if(WildMidiHelper::instance()->initialize() && WildMidiHelper::instance()->sampleRate())
+    if((parts & TrackInfo::Properties) && helper->initialize() && helper->sampleRate())
     {
-        void *midi_ptr = WildMidi_Open (fileName.toLocal8Bit().constData());
+        void *midi_ptr = WildMidi_Open (path.toLocal8Bit().constData());
         if(midi_ptr)
         {
             WildMidiHelper::instance()->addPtr(midi_ptr);
             _WM_Info *wm_info = WildMidi_GetInfo(midi_ptr);
-            info->setLength((qint64)wm_info->approx_total_samples
-                            / WildMidiHelper::instance()->sampleRate());
+            info->setValue(Qmmp::SAMPLERATE, helper->sampleRate());
+            info->setDuration((qint64)wm_info->approx_total_samples * 1000 / helper->sampleRate());
             WildMidi_Close(midi_ptr);
             WildMidiHelper::instance()->removePtr(midi_ptr);
         }
     }
-    list << info;
-    return list;
+    return QList<TrackInfo *>() << info;
 }
 
 MetaDataModel* DecoderWildMidiFactory::createMetaDataModel(const QString &path, QObject *parent)

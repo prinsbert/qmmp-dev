@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -87,7 +87,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(showState(Qmmp::State)));
     connect(m_core, SIGNAL(bitrateChanged(int)), SLOT(updateStatus()));
     connect(m_core, SIGNAL(bufferingProgress(int)), SLOT(showBuffering(int)));
-    connect(m_core, SIGNAL(metaDataChanged()), SLOT(showMetaData()));
+    connect(m_core, SIGNAL(trackInfoChanged()), SLOT(showMetaData()));
     //keyboard manager
     m_key_manager = new KeyboardManager(this);
     //create tabs
@@ -202,11 +202,11 @@ void MainWindow::updatePosition(qint64 pos)
     if(!m_positionSlider->isSliderDown())
         m_positionSlider->setValue(pos/1000);
 
-    QString text = MetaDataFormatter::formatLength(pos/1000, false);
+    QString text = MetaDataFormatter::formatDuration(pos, false);
     if(m_core->duration() > 1000)
     {
         text.append("/");
-        text.append(MetaDataFormatter::formatLength(m_core->duration()/1000));
+        text.append(MetaDataFormatter::formatDuration(m_core->duration()));
     }
     m_timeLabel->setText(text);
 }
@@ -223,9 +223,9 @@ void MainWindow::showState(Qmmp::State state)
     case Qmmp::Playing:
     {
         updateStatus();
-        m_analyzer->setCover(MetaDataManager::instance()->getCover(m_core->url()));
+        m_analyzer->setCover(MetaDataManager::instance()->getCover(m_core->path()));
         CoverWidget *cw = qobject_cast<CoverWidget *>(m_ui.coverDockWidget->widget());
-        cw->setCover(MetaDataManager::instance()->getCover(m_core->url()));
+        cw->setCover(MetaDataManager::instance()->getCover(m_core->path()));
         break;
     }
     case Qmmp::Paused:
@@ -365,7 +365,7 @@ void MainWindow::playPause()
 void MainWindow::updateStatus()
 {
     int tracks = m_pl_manager->currentPlayList()->trackCount();
-    int length = m_pl_manager->currentPlayList()->totalLength();
+    qint64 duration = m_pl_manager->currentPlayList()->totalDuration();
 
     if(m_core->state() == Qmmp::Playing || m_core->state() == Qmmp::Paused)
     {
@@ -376,7 +376,7 @@ void MainWindow::updateStatus()
                                .arg(ap.channels())
                                .arg(ap.sampleRate())
                                .arg(tracks)
-                               .arg(MetaDataFormatter::formatLength(length, false))
+                               .arg(MetaDataFormatter::formatDuration(duration, false))
                                .arg(m_core->bitrate()));
     }
     else if(m_core->state() == Qmmp::Stopped)
@@ -384,7 +384,7 @@ void MainWindow::updateStatus()
         m_statusLabel->setText(tr("<b>%1</b>|tracks: %2|total time: %3|")
                                .arg(tr("Stopped"))
                                .arg(tracks)
-                               .arg(MetaDataFormatter::formatLength(length)));
+                               .arg(MetaDataFormatter::formatDuration(duration)));
     }
     else
         m_statusLabel->clear();
@@ -893,7 +893,7 @@ void MainWindow::showMetaData()
 {
     PlayListModel *model = m_pl_manager->currentPlayList();
     PlayListTrack *track = model->currentTrack();
-    if(track && track->url() == m_core->metaData().value(Qmmp::URL))
+    if(track && track->path() == m_core->trackInfo().path())
     {
         setWindowTitle(m_titleFormatter.format(track));
     }

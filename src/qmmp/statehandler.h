@@ -60,10 +60,8 @@ public:
      * @param duration track length in milliseconds
      */
     void dispatch(qint64 duration);
-    /*!
-     * Sends metadata \b metaData
-     */
-    void dispatch(const QMap<Qmmp::MetaData, QString> &metaData);
+
+    bool dispatch(const TrackInfo &info);
     /*!
      * Sends stream information \b info
      */
@@ -140,6 +138,7 @@ private:
     int m_bitrate;
     static StateHandler* m_instance;
     QMap <Qmmp::MetaData, QString> m_metaData;
+    TrackInfo m_info;
     QHash <QString, QString> m_streamInfo;
     Qmmp::State m_state;
     AudioParameters m_audioParameters;
