@@ -106,7 +106,11 @@ QList<TrackInfo *> DecoderMPCFactory::createPlayList(const QString &path, TrackI
         info->setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
         info->setValue(Qmmp::BITS_PER_SAMPLE, 16);
         info->setValue(Qmmp::FORMAT_NAME, QString("Musepack SV%1").arg(fileRef.audioProperties()->mpcVersion()));
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 10))
         info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
+#else
+        info->setDuration(fileRef.audioProperties()->length() * 1000);
+#endif
     }
 
     return QList<TrackInfo*>() << info;

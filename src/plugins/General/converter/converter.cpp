@@ -258,11 +258,11 @@ void Converter::run()
         TagLib::FileRef file(qPrintable(full_path));
         if(file.tag())
         {
-            file.tag()->setTitle(QStringToTString(info.value(Qmmp::TITLE)));
-            file.tag()->setArtist(QStringToTString(info.value(Qmmp::ARTIST)));
-            file.tag()->setAlbum(QStringToTString(info.value(Qmmp::ALBUM)));
-            file.tag()->setGenre(QStringToTString(info.value(Qmmp::GENRE)));
-            file.tag()->setComment(QStringToTString(info.value(Qmmp::COMMENT)));
+            file.tag()->setTitle(QStringToTString_qt4(info.value(Qmmp::TITLE)));
+            file.tag()->setArtist(QStringToTString_qt4(info.value(Qmmp::ARTIST)));
+            file.tag()->setAlbum(QStringToTString_qt4(info.value(Qmmp::ALBUM)));
+            file.tag()->setGenre(QStringToTString_qt4(info.value(Qmmp::GENRE)));
+            file.tag()->setComment(QStringToTString_qt4(info.value(Qmmp::COMMENT)));
             file.tag()->setYear(info.value(Qmmp::YEAR).toUInt());
             file.tag()->setTrack(info.value(Qmmp::TRACK).toUInt());
 

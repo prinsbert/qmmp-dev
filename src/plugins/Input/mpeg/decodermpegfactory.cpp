@@ -32,7 +32,9 @@
 #include <taglib/apetag.h>
 #include <taglib/tfile.h>
 #include <taglib/mpegfile.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
+#endif
 #include <taglib/id3v2tag.h>
 #include <taglib/id3v2header.h>
 #include <taglib/textidentificationframe.h>
@@ -206,8 +208,12 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
         return QList<TrackInfo*>() << info;
 
     TagLib::Tag *tag = 0;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(path), true);
     TagLib::MPEG::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
+#else
+    TagLib::MPEG::File fileRef(QStringToFileName(path));
+#endif
 
     if (parts & TrackInfo::MetaData)
     {
@@ -318,7 +324,11 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
         case TagLib::MPEG::Header::Version2_5:
             info->setValue(Qmmp::FORMAT_NAME, QString("MPEG-2.5 layer %1").arg(fileRef.audioProperties()->layer()));
         }
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 10))
         info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
+#else
+        info->setDuration(fileRef.audioProperties()->length() * 1000);
+#endif
     }
 
     if(parts & TrackInfo::ReplayGainInfo)

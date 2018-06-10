@@ -99,7 +99,11 @@ QList<TrackInfo *> DecoderVorbisFactory::createPlayList(const QString &path, Tra
         info->setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
         info->setValue(Qmmp::BITS_PER_SAMPLE, 32);  //float
         info->setValue(Qmmp::FORMAT_NAME, "Ogg Vorbis");
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 10))
         info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
+#else
+        info->setDuration(fileRef.audioProperties()->length() * 1000);
+#endif
     }
 
     if((parts & TrackInfo::ReplayGainInfo) && fileRef.tag() && !fileRef.tag()->isEmpty())

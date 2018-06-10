@@ -120,7 +120,7 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         oggFlacFile = new TagLib::Ogg::FLAC::File(&stream);
 #else
-        oggFlacFile = new TagLib::Ogg::FLAC::File(QStringToFileName(fileName));
+        oggFlacFile = new TagLib::Ogg::FLAC::File(QStringToFileName(path));
 #endif
         tag = oggFlacFile->tag();
         ap = oggFlacFile->audioProperties();
@@ -184,9 +184,14 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
         info->setValue(Qmmp::BITRATE, ap->bitrate());
         info->setValue(Qmmp::SAMPLERATE, ap->sampleRate());
         info->setValue(Qmmp::CHANNELS, ap->channels());
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 10))
         info->setValue(Qmmp::BITS_PER_SAMPLE, ap->bitsPerSample());
-        info->setValue(Qmmp::FORMAT_NAME, flacFile ? "FLAC" : "Ogg FLAC");
         info->setDuration(ap->lengthInMilliseconds());
+#else
+        info->setValue(Qmmp::BITS_PER_SAMPLE, ap->sampleWidth());
+        info->setDuration(ap->length() * 1000);
+#endif
+        info->setValue(Qmmp::FORMAT_NAME, flacFile ? "FLAC" : "Ogg FLAC");
     }
 
     if((parts & TrackInfo::ReplayGainInfo) && tag && !tag->isEmpty())
