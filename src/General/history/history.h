@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,9 +22,9 @@
 #define HISTORY_H
 
 #include <QObject>
-#include <QMap>
 #include <QTime>
 #include <QPointer>
+#include <qmmp/trackinfo.h>
 #include <qmmp/qmmp.h>
 
 #define CONNECTION_NAME "qmmp_history"
@@ -40,7 +40,7 @@ public:
     ~History();
 
 private slots:
-    void onMetaDataChanged();
+    void onTrackInfoChanged();
     void onStateChanged(Qmmp::State state);
     void showHistoryWindow();
 
@@ -49,8 +49,7 @@ private:
     void saveTrack();
 
     SoundCore *m_core;
-    qint64 m_duration;
-    QMap <Qmmp::MetaData, QString> m_metaData;
+    TrackInfo m_trackInfo;
     QTime m_time;
     Qmmp::State m_previousState;
     quint64 m_elapsed;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -72,76 +72,76 @@ Decoder *DecoderFFapFactory::create(const QString &url, QIODevice *i)
     return d;
 }
 
-QList<FileInfo *> DecoderFFapFactory::createPlayList(const QString &fileName, bool useMetaData, QStringList *)
+QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    QList <FileInfo*> list;
-    TagLib::APE::Tag *tag = 0;
-    TagLib::APE::File *file = 0;
-    TagLib::APE::Properties *ap = 0;
+    QList <TrackInfo*> list;
 
     //extract metadata of one cue track
-    if(fileName.contains("://"))
+    if(path.contains("://"))
     {
-        QString path = fileName;
-        path.remove("ape://");
-        path.remove(QRegExp("#\\d+$"));
-        int track = fileName.section("#", -1).toInt();
-        list = createPlayList(path, true, 0);
+        QString filePath = path;
+        filePath.remove("ape://");
+        filePath.remove(QRegExp("#\\d+$"));
+        int track = filePath.section("#", -1).toInt();
+        list = createPlayList(filePath, parts, 0);
         if (list.isEmpty() || track <= 0 || track > list.count())
         {
             qDeleteAll(list);
             list.clear();
             return list;
         }
-        FileInfo *info = list.takeAt(track - 1);
+        TrackInfo *info = list.takeAt(track - 1);
         qDeleteAll(list);
-        return QList<FileInfo *>() << info;
+        return QList<TrackInfo *>() << info;
     }
 
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
-    TagLib::FileStream stream(QStringToFileName(fileName), true);
-    file = new TagLib::APE::File(&stream);
+    TagLib::FileStream stream(QStringToFileName(path), true);
+    TagLib::APE::File file(&stream);
 #else
-    file = new TagLib::APE::File(QStringToFileName(fileName));
+    TagLib::APE::File file(QStringToFileName(path));
 #endif
-    tag = useMetaData ? file->APETag() : 0;
-    ap = file->audioProperties();
+    TagLib::APE::Tag *tag = file.APETag();
+    TagLib::APE::Properties *ap = file.audioProperties();
 
-    FileInfo *info = new FileInfo(fileName);
-
-    if (tag && !tag->isEmpty())
+    TrackInfo *info = new TrackInfo(path);
+    if((parts & TrackInfo::MetaData) && tag && !tag->isEmpty())
     {
-        info->setMetaData(Qmmp::ALBUM,
-                          QString::fromUtf8(tag->album().toCString(true)).trimmed());
-        info->setMetaData(Qmmp::ARTIST,
-                          QString::fromUtf8(tag->artist().toCString(true)).trimmed());
-        info->setMetaData(Qmmp::COMMENT,
-                          QString::fromUtf8(tag->comment().toCString(true)).trimmed());
-        info->setMetaData(Qmmp::GENRE,
-                          QString::fromUtf8(tag->genre().toCString(true)).trimmed());
-        info->setMetaData(Qmmp::TITLE,
-                          QString::fromUtf8(tag->title().toCString(true)).trimmed());
-        info->setMetaData(Qmmp::YEAR, tag->year());
-        info->setMetaData(Qmmp::TRACK, tag->track());
-
-        if (tag->itemListMap().contains("CUESHEET"))
-        {
-            CUEParser parser(tag->itemListMap()["CUESHEET"].toString().toCString(true), fileName);
-            list = parser.createPlayList();
-            delete info;
-            delete file;
-            return list;
-        }
+        info->setValue(Qmmp::ALBUM, TStringToQString(tag->album()));
+        info->setValue(Qmmp::ARTIST, TStringToQString(tag->artist()));
+        info->setValue(Qmmp::COMMENT, TStringToQString(tag->comment()));
+        info->setValue(Qmmp::GENRE, TStringToQString(tag->genre()));
+        info->setValue(Qmmp::TITLE, TStringToQString(tag->title()));
+        info->setValue(Qmmp::YEAR, tag->year());
+        info->setValue(Qmmp::TRACK, tag->track());
 
         //additional metadata
         TagLib::APE::Item fld;
         if(!(fld = tag->itemListMap()["COMPOSER"]).isEmpty())
-            info->setMetaData(Qmmp::COMPOSER, QString::fromUtf8(fld.toString().toCString(true)).trimmed());
+            info->setValue(Qmmp::COMPOSER, TStringToQString(fld.toString()));
+
+        if (tag->itemListMap().contains("CUESHEET"))
+        {
+            delete info;
+            CUEParser parser(tag->itemListMap()["CUESHEET"].toString().toCString(true), path);
+            return parser.createPlayList();
+        }
     }
+
     if(ap)
-        info->setLength(ap->length());
+    {
+        info->setDuration(ap->lengthInMilliseconds());
+        if(parts & TrackInfo::Properties)
+        {
+            info->setValue(Qmmp::BITRATE, ap->bitrate());
+            info->setValue(Qmmp::SAMPLERATE, ap->sampleRate());
+            info->setValue(Qmmp::CHANNELS, ap->channels());
+            info->setValue(Qmmp::BITS_PER_SAMPLE, ap->bitsPerSample());
+            info->setValue(Qmmp::FORMAT_NAME, "APE");
+        }
+    }
+
     list << info;
-    delete file;
     return list;
 }
 

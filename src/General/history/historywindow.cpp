@@ -86,17 +86,17 @@ void HistoryWindow::loadHistory()
 
     while (query.next())
     {
-        FileInfo info;
-        info.setMetaData(Qmmp::TITLE,  query.value(1).toString());
-        info.setMetaData(Qmmp::ARTIST,  query.value(2).toString());
-        info.setMetaData(Qmmp::ALBUMARTIST,  query.value(3).toString());
-        info.setMetaData(Qmmp::ALBUM,  query.value(4).toString());
-        info.setMetaData(Qmmp::COMMENT,  query.value(5).toString());
-        info.setMetaData(Qmmp::GENRE,  query.value(6).toString());
-        info.setMetaData(Qmmp::COMPOSER,  query.value(7).toString());
-        info.setMetaData(Qmmp::TRACK,  query.value(8).toString());
-        info.setMetaData(Qmmp::YEAR,  query.value(9).toString());
-        info.setLength(query.value(10).toInt() / 1000);
+        TrackInfo info;
+        info.setValue(Qmmp::TITLE,  query.value(1).toString());
+        info.setValue(Qmmp::ARTIST,  query.value(2).toString());
+        info.setValue(Qmmp::ALBUMARTIST,  query.value(3).toString());
+        info.setValue(Qmmp::ALBUM,  query.value(4).toString());
+        info.setValue(Qmmp::COMMENT,  query.value(5).toString());
+        info.setValue(Qmmp::GENRE,  query.value(6).toString());
+        info.setValue(Qmmp::COMPOSER,  query.value(7).toString());
+        info.setValue(Qmmp::TRACK,  query.value(8).toString());
+        info.setValue(Qmmp::YEAR,  query.value(9).toString());
+        info.setDuration(query.value(10).toInt());
         info.setPath(query.value(11).toString());
 
         QDateTime dateTime = QDateTime::fromString(query.value(0).toString(), "yyyy-MM-dd hh:mm:ss");
@@ -127,7 +127,7 @@ void HistoryWindow::loadHistory()
         QTreeWidgetItem *topLevelItem = m_ui->historyTreeWidget->topLevelItem(topLevelCount - 1);
         QTreeWidgetItem *item = new QTreeWidgetItem();
         item->setText(0, timeStr);
-        item->setText(1, m_formatter.format(info.metaData(), info.length()));
+        item->setText(1, m_formatter.format(info));
         topLevelItem->addChild(item);
     }
 
@@ -236,21 +236,21 @@ void HistoryWindow::loadTopSongs()
 
     while (query.next())
     {
-        FileInfo info;
-        info.setMetaData(Qmmp::TITLE,  query.value(2).toString());
-        info.setMetaData(Qmmp::ARTIST,  query.value(3).toString());
-        info.setMetaData(Qmmp::ALBUMARTIST,  query.value(4).toString());
-        info.setMetaData(Qmmp::ALBUM,  query.value(5).toString());
-        info.setMetaData(Qmmp::COMMENT,  query.value(6).toString());
-        info.setMetaData(Qmmp::GENRE,  query.value(7).toString());
-        info.setMetaData(Qmmp::COMPOSER,  query.value(8).toString());
-        info.setMetaData(Qmmp::TRACK,  query.value(9).toString());
-        info.setMetaData(Qmmp::YEAR,  query.value(10).toString());
-        info.setLength(query.value(11).toInt() / 1000);
+        TrackInfo info;
+        info.setValue(Qmmp::TITLE,  query.value(2).toString());
+        info.setValue(Qmmp::ARTIST,  query.value(3).toString());
+        info.setValue(Qmmp::ALBUMARTIST,  query.value(4).toString());
+        info.setValue(Qmmp::ALBUM,  query.value(5).toString());
+        info.setValue(Qmmp::COMMENT,  query.value(6).toString());
+        info.setValue(Qmmp::GENRE,  query.value(7).toString());
+        info.setValue(Qmmp::COMPOSER,  query.value(8).toString());
+        info.setValue(Qmmp::TRACK,  query.value(9).toString());
+        info.setValue(Qmmp::YEAR,  query.value(10).toString());
+        info.setDuration(query.value(11).toInt());
         info.setPath(query.value(12).toString());
 
         QTreeWidgetItem *item = new QTreeWidgetItem();
-        item->setText(0, m_formatter.format(info.metaData(), info.length()));
+        item->setText(0, m_formatter.format(info));
 
         m_ui->topSongsTreeWidget->addTopLevelItem(item);
 
