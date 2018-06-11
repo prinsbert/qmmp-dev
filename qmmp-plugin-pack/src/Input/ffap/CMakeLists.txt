@@ -17,7 +17,6 @@ SET(libffap_SRCS
   decoderffapfactory.cpp
   ffapmetadatamodel.cpp
   cueparser.cpp
-  replaygainreader.cpp
   ffap.c
 )
 
@@ -25,7 +24,6 @@ SET(libffap_HDRS
   decoder_ffap.h
   decoder_ffapcue.h
   cueparser.h
-  replaygainreader.h
   ffap.h
 )
 
