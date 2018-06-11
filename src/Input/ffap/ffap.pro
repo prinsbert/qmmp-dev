@@ -5,13 +5,11 @@ TARGET = $$PLUGINS_PREFIX/Input/ffap
 HEADERS += decoderffapfactory.h ffap.h decoder_ffap.h \
     cueparser.h \
     ffapmetadatamodel.h \
-    replaygainreader.h \
     decoder_ffapcue.h
 
 SOURCES += decoderffapfactory.cpp ffap.c decoder_ffap.cpp \
     cueparser.cpp \
     ffapmetadatamodel.cpp \
-    replaygainreader.cpp \
     decoder_ffapcue.cpp
 
 RESOURCES = translations/translations.qrc
