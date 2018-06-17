@@ -299,7 +299,4 @@ quint32 HotkeyManager::keycodeToKeysym(quint32 keycode)
     return MapVirtualKey(keycode, 1);
 }
 
-#include "moc_hotkeymanager.cpp"
-
 #endif
-
