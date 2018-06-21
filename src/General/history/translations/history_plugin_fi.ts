@@ -12,7 +12,7 @@
 <context>
     <name>History</name>
     <message>
-        <location filename="../history.cpp" line="60"/>
+        <location filename="../history.cpp" line="59"/>
         <source>History</source>
         <translation>Historia</translation>
     </message>

@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="45"/>
+        <location filename="../decoderffapfactory.cpp" line="44"/>
         <source>FFap Plugin</source>
         <translation>Модуль FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="47"/>
+        <location filename="../decoderffapfactory.cpp" line="46"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation>Файлы Monkey&apos;s Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="151"/>
+        <location filename="../decoderffapfactory.cpp" line="158"/>
         <source>About FFap Audio Plugin</source>
         <translation>Об аудио-модуле FFap для Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="152"/>
+        <location filename="../decoderffapfactory.cpp" line="159"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Аудио-модуль FFap для Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="153"/>
+        <location filename="../decoderffapfactory.cpp" line="160"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>Данный модуль добавляет поддержку Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="154"/>
+        <location filename="../decoderffapfactory.cpp" line="161"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="155"/>
+        <location filename="../decoderffapfactory.cpp" line="162"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>Основан на исходном коде проектов deadbeef, FFmpeg и rockbox</translation>
     </message>
