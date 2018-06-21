@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="48"/>
+        <location filename="../decoderffapfactory.cpp" line="47"/>
         <source>FFap Plugin</source>
         <translation>Wtyczka Ffap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="50"/>
+        <location filename="../decoderffapfactory.cpp" line="49"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation>Pliki Monkey&apos;s Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="158"/>
+        <location filename="../decoderffapfactory.cpp" line="165"/>
         <source>About FFap Audio Plugin</source>
         <translation>O wtyczce FFap Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="159"/>
+        <location filename="../decoderffapfactory.cpp" line="166"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Wtyczka Qmmp FFap Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="160"/>
+        <location filename="../decoderffapfactory.cpp" line="167"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>Ta wtyczka umożliwia odtwarzanie plików Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="161"/>
+        <location filename="../decoderffapfactory.cpp" line="168"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="162"/>
+        <location filename="../decoderffapfactory.cpp" line="169"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>Oparty na kodzie z deadbeef, FFmpeg oraz rockbox</translation>
     </message>

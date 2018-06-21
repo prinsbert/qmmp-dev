@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="48"/>
+        <location filename="../decoderffapfactory.cpp" line="47"/>
         <source>FFap Plugin</source>
         <translation>Πρόσθετο FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="50"/>
+        <location filename="../decoderffapfactory.cpp" line="49"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation>Αρχεία ήχου Monkey</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="158"/>
+        <location filename="../decoderffapfactory.cpp" line="165"/>
         <source>About FFap Audio Plugin</source>
         <translation>Περί του πρόσθετου ήχου FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="159"/>
+        <location filename="../decoderffapfactory.cpp" line="166"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Qmmp FFap πρόσθετο ήχου</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="160"/>
+        <location filename="../decoderffapfactory.cpp" line="167"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>Αυτό το πρόσθετο παρέχει υποστήριξη ήχου Monkey (APE)</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="161"/>
+        <location filename="../decoderffapfactory.cpp" line="168"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="162"/>
+        <location filename="../decoderffapfactory.cpp" line="169"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>Βασισμένο στον κώδικα των deadbeef, FFmpeg και rockbox</translation>
     </message>
