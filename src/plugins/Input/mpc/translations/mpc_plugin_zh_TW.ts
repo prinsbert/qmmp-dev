@@ -14,17 +14,17 @@
         <translation>Musepack 檔案</translation>
     </message>
     <message>
-        <location filename="../decodermpcfactory.cpp" line="127"/>
+        <location filename="../decodermpcfactory.cpp" line="129"/>
         <source>About Musepack Audio Plugin</source>
         <translation>關於 Musepack 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decodermpcfactory.cpp" line="128"/>
+        <location filename="../decodermpcfactory.cpp" line="130"/>
         <source>Qmmp Musepack Audio Plugin</source>
         <translation>Qmmp Musepack 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decodermpcfactory.cpp" line="129"/>
+        <location filename="../decodermpcfactory.cpp" line="131"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>作者：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

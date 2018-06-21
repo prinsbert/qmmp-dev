@@ -4,32 +4,32 @@
 <context>
     <name>DecoderOpusFactory</name>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="45"/>
+        <location filename="../decoderopusfactory.cpp" line="44"/>
         <source>Opus Plugin</source>
         <translation>Modul Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="48"/>
+        <location filename="../decoderopusfactory.cpp" line="47"/>
         <source>Ogg Opus Files</source>
         <translation>Soubory Ogg Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="122"/>
+        <location filename="../decoderopusfactory.cpp" line="118"/>
         <source>About Opus Audio Plugin</source>
         <translation>O modulu Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="123"/>
+        <location filename="../decoderopusfactory.cpp" line="119"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Modul Qmmp Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="124"/>
+        <location filename="../decoderopusfactory.cpp" line="120"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="125"/>
+        <location filename="../decoderopusfactory.cpp" line="121"/>
         <source>This plugin includes code from TagLib library</source>
         <translation>Tento modul zahrnuje kód z knihovny TagLib</translation>
     </message>

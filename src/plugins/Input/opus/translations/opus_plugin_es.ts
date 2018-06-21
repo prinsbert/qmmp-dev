@@ -4,32 +4,32 @@
 <context>
     <name>DecoderOpusFactory</name>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="45"/>
+        <location filename="../decoderopusfactory.cpp" line="44"/>
         <source>Opus Plugin</source>
         <translation>Módulo Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="48"/>
+        <location filename="../decoderopusfactory.cpp" line="47"/>
         <source>Ogg Opus Files</source>
         <translation>Archivos Ogg Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="122"/>
+        <location filename="../decoderopusfactory.cpp" line="118"/>
         <source>About Opus Audio Plugin</source>
         <translation>Acerca del Módulo de Audio Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="123"/>
+        <location filename="../decoderopusfactory.cpp" line="119"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Módulo de Audio Opus de Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="124"/>
+        <location filename="../decoderopusfactory.cpp" line="120"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="125"/>
+        <location filename="../decoderopusfactory.cpp" line="121"/>
         <source>This plugin includes code from TagLib library</source>
         <translation>Este módulo incluye código proveniente de la biblioteca TagLib</translation>
     </message>

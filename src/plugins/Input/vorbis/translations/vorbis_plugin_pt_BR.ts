@@ -4,12 +4,12 @@
 <context>
     <name>DecoderVorbisFactory</name>
     <message>
-        <location filename="../decodervorbisfactory.cpp" line="49"/>
+        <location filename="../decodervorbisfactory.cpp" line="48"/>
         <source>Ogg Vorbis Plugin</source>
         <translation>Plugin Ogg Vorbis</translation>
     </message>
     <message>
-        <location filename="../decodervorbisfactory.cpp" line="52"/>
+        <location filename="../decodervorbisfactory.cpp" line="51"/>
         <source>Ogg Vorbis Files</source>
         <translation>Arquivos Ogg Vorbis</translation>
     </message>

@@ -14,17 +14,17 @@
         <translation>Fichiers FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="199"/>
+        <location filename="../decoderflacfactory.cpp" line="230"/>
         <source>About FLAC Audio Plugin</source>
         <translation>À propos du greffon audio FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="200"/>
+        <location filename="../decoderflacfactory.cpp" line="231"/>
         <source>Qmmp FLAC Audio Plugin</source>
         <translation>Greffon audio FLAC pour Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="201"/>
+        <location filename="../decoderflacfactory.cpp" line="232"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
