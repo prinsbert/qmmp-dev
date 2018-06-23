@@ -72,7 +72,7 @@ ADD_LIBRARY(modplug MODULE ${libmodplug_SRCS} ${libmodplug_UIS_H}
   ${libmodplug_RCC_SRCS} ${libmodplug_HDRS})
 add_dependencies(modplug qmmp)
 target_link_libraries(modplug ${QT_LIBRARIES} libqmmp ${MODPLUG_LDFLAGS})
-install(TARGETS modplug DESTINATION ${LIB_DIR}/qmmp/Input)
+install(TARGETS modplug DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(MODPLUG_FOUND)
 
 

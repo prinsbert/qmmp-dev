@@ -21,7 +21,7 @@ contains(CONFIG, WITH_PROJECTM20){
 
 unix {
     PKGCONFIG += libprojectM
-    target.path = $$LIB_DIR/qmmp/Visual
+    target.path = $$PLUGIN_DIR/Visual
     INSTALLS += target
     LIBS += -L/usr/lib -I/usr/include
     #projectM config path

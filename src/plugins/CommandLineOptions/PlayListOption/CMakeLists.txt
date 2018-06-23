@@ -37,4 +37,4 @@ ADD_LIBRARY(playlistoption MODULE ${libplaylistoption_SRCS}
            ${libplaylistoption_RCC_SRCS})
 add_dependencies(playlistoption qmmpui)
 target_link_libraries(playlistoption ${QT_LIBRARIES} qmmpui libqmmp)
-install(TARGETS playlistoption DESTINATION ${LIB_DIR}/qmmp/CommandLineOptions)
+install(TARGETS playlistoption DESTINATION ${PLUGIN_DIR}/CommandLineOptions)

@@ -18,5 +18,5 @@ contains(CONFIG, WITH_NEW_JACK){
 
 PKGCONFIG += jack soxr
 
-target.path = $$LIB_DIR/qmmp/Output
+target.path = $$PLUGIN_DIR/Output
 INSTALLS += target

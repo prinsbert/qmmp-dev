@@ -92,6 +92,7 @@ ELSE()
 	SET(LIB_DIR "lib${LIB_SUFFIX}" CACHE STRING "library path")
 ENDIF()
 
+SET(PLUGIN_DIR "${LIB_DIR}/qmmp-${QMMP_VERSION_MAJOR}.${QMMP_VERSION_MINOR}" CACHE STRING "plugin path")
 SET(USE_SKINNED TRUE CACHE BOOL "enable/disable standard skinned user interface")
 SET(USE_DIR_ASSOC TRUE CACHE BOOL "enable/disable inode/directory mime type association")
 

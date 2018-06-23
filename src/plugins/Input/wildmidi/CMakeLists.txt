@@ -65,5 +65,5 @@ ADD_LIBRARY(wildmidi MODULE ${libwildmidi_SRCS} ${libwildmidi_UIS_H} ${libwildmi
 ${libwildmidi_HDRS})
 add_dependencies(wildmidi qmmp)
 target_link_libraries(wildmidi ${QT_LIBRARIES} libqmmp ${WILDMIDI_LIB})
-install(TARGETS wildmidi DESTINATION ${LIB_DIR}/qmmp/Input)
+install(TARGETS wildmidi DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(WILDMIDI_FOUND)

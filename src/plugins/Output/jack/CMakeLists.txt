@@ -73,6 +73,6 @@ set_target_properties(jack PROPERTIES
                            LINK_FLAGS -pthread
 )
 target_link_libraries(jack ${QT_LIBRARIES} libqmmp ${JACK_LDFLAGS})
-install(TARGETS jack DESTINATION ${LIB_DIR}/qmmp/Output)
+install(TARGETS jack DESTINATION ${PLUGIN_DIR}/Output)
 ENDIF(JACK_FOUND)
 
