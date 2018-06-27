@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -302,6 +302,8 @@ void PlayListManager::readPlayLists()
             tracks.last()->insert(Qmmp::DISCNUMBER, value);
         else if (param == "length")
             tracks.last()->setLength(value.toInt());
+        else if (param == "duration")
+            tracks.last()->setLength(value.toInt() / 1000);    
     }
     buffer.close();
     if(m_models.isEmpty())
