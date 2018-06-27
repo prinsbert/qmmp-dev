@@ -152,5 +152,8 @@ unix {
     QMAKE_PKGCONFIG_DESCRIPTION = qmmp core library
     QMAKE_PKGCONFIG_REQUIRES = QtCore QtGui
     QMAKE_PKGCONFIG_DESTDIR = pkgconfig
+    QMAKE_PKGCONFIG_PREFIX = $$PREFIX
+    QMAKE_PKGCONFIG_LIBDIR = $$target.path
+    QMAKE_PKGCONFIG_INCDIR = $$PREFIX/include
     QMAKE_DISTCLEAN += -r pkgconfig
 }
