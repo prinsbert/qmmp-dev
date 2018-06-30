@@ -149,8 +149,13 @@ install(TARGETS libqmmpui LIBRARY DESTINATION ${LIB_DIR}
                           RUNTIME DESTINATION bin
                           ARCHIVE DESTINATION ${LIB_DIR})
 IF(NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin)
-    install(FILES ${libqmmpui_DEVEL_HDRS} DESTINATION include/qmmpui)
-
+    IF(APP_NAME_SUFFIX)
+        install(FILES ${libqmmpui_DEVEL_HDRS} DESTINATION include/qmmp${APP_NAME_SUFFIX}/qmmpui)
+        SET(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_PREFIX}/include/qmmp${APP_NAME_SUFFIX})
+    ELSE()
+        install(FILES ${libqmmpui_DEVEL_HDRS} DESTINATION include/qmmpui)
+        SET(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_PREFIX}/include)
+    ENDIF()
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/qmmpui.pc.in ${CMAKE_CURRENT_BINARY_DIR}/qmmpui${APP_NAME_SUFFIX}.pc @ONLY)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmmpui${APP_NAME_SUFFIX}.pc DESTINATION ${LIB_DIR}/pkgconfig)
 ENDIF()
