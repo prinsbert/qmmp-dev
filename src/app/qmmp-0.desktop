@@ -52,11 +52,63 @@ GenericName[tr]=Ses Oynatıcı
 GenericName[uk]=Медіа-програвач
 GenericName[zh_CN]=音乐播放器
 GenericName[zh_TW]=音樂播放器
-Exec=qmmp %F
-Icon=qmmp
+Keywords=player;audio;video;multimedia;
+Keywords[fr]=lecteur;audio;vidéo;multimédia;
+Exec=qmmp-0 %F
+Icon=qmmp-0
 Terminal=false
-NoDisplay=true
 Type=Application
 Categories=AudioVideo;Player;Audio;Qt;
-MimeType=inode/directory;
+MimeType=application/x-ogg;audio/mp3;audio/mpeg;audio/flac;audio/x-mp3;audio/x-mpeg;audio/x-ms-wma;audio/x-musepack;application/ogg;audio/x-vorbis+ogg;audio/x-scpls;audio/x-mpegurl;audio/x-it;audio/x-mod;audio/x-s3m;audio/x-stm;audio/x-xm;audio/x-ape;application/x-cue;x-content/audio-cdda;audio/x-ffmpeg-shorten;audio/aac;audio/x-aac;audio/m4a;audio/x-m4a;
 X-KDE-StartupNotify=false
+Actions=Play;Pause;Stop;Previous;Next;
+
+[Desktop Action Play]
+Name=Play
+Name[fr]=Lecture
+Name[ru]=Воспроизвести
+Name[sr]=Пусти
+Name[sr@Ijekavian]=Пусти
+Name[sr@ijekavianlatin]=Pusti
+Name[sr@latin]=Pusti
+Exec=qmmp-0 --no-start --play
+
+[Desktop Action Pause]
+Name=Pause
+Name[fr]=Pause
+Name[ru]=Пауза
+Name[sr]=Паузирај
+Name[sr@Ijekavian]=Паузирај
+Name[sr@ijekavianlatin]=Pauziraj
+Name[sr@latin]=Pauziraj
+Exec=qmmp-0 --no-start --pause
+
+[Desktop Action Stop]
+Name=Stop
+Name[fr]=Arrêt
+Name[ru]=Остановить
+Name[sr]=Заустави
+Name[sr@Ijekavian]=Заустави
+Name[sr@ijekavianlatin]=Zaustavi
+Name[sr@latin]=Zaustavi
+Exec=qmmp-0 --no-start --stop
+
+[Desktop Action Previous]
+Name=Previous
+Name[fr]=Précédent
+Name[ru]=Предыдущий фрагмент
+Name[sr]=Претходна
+Name[sr@Ijekavian]=Претходна
+Name[sr@ijekavianlatin]=Prethodna
+Name[sr@latin]=Prethodna
+Exec=qmmp-0 --no-start --previous
+
+[Desktop Action Next]
+Name=Next
+Name[fr]=Suivant
+Name[ru]=Следующий фрагмент
+Name[sr]=Следећа
+Name[sr@Ijekavian]=Сљедећа
+Name[sr@ijekavianlatin]=Sljedeća
+Name[sr@latin]=Sledeća
+Exec=qmmp-0 --no-start --next
