@@ -47,6 +47,6 @@ QT4_WRAP_UI(libfileops_UIS_H ${libfileops_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(fileops MODULE ${libfileops_SRCS} ${libfileops_UIS_H} ${libfileops_RCC_SRCS})
-add_dependencies(fileops qmmpui)
-target_link_libraries(fileops ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(fileops libqmmpui)
+target_link_libraries(fileops ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS fileops DESTINATION ${PLUGIN_DIR}/General)

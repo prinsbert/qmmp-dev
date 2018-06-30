@@ -3,9 +3,9 @@ exec_prefix=@CMAKE_INSTALL_PREFIX@
 libdir=@CMAKE_INSTALL_PREFIX@/@LIB_DIR@
 includedir=@CMAKE_INSTALL_PREFIX@/include
 
-Name: qmmp
+Name: qmmp@APP_NAME_SUFFIX@
 Description: qmmp core library
 Version: @QMMP_VERSION@
 Requires: QtCore QtGui
-Libs: -L${libdir} -lqmmp
+Libs: -L${libdir} -lqmmp@APP_NAME_SUFFIX@
 Cflags: -I${includedir}

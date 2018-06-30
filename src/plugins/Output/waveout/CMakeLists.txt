@@ -40,7 +40,7 @@ QT4_ADD_RESOURCES(libwaveout_RCC_SRCS ${libwaveout_RCCS})
 
 IF(WINDOWS_H_FOUND)
 ADD_LIBRARY(waveout MODULE ${libwaveout_SRCS} ${libwaveout_RCC_SRCS} ${libwaveout_HDRS})
-add_dependencies(waveout qmmp)
+add_dependencies(waveout libqmmp)
 target_link_libraries(waveout ${QT_LIBRARIES} libqmmp -lwinmm)
 install(TARGETS waveout DESTINATION ${PLUGIN_DIR}/Output)
 ENDIF(WINDOWS_H_FOUND)

@@ -47,6 +47,6 @@ QT4_ADD_RESOURCES(libmpris_RCC_SRCS ${libmpris_RCCS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(mpris MODULE ${libmpris_SRCS} ${libmpris_RCC_SRCS})
-add_dependencies(mpris qmmpui)
-target_link_libraries(mpris ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(mpris libqmmpui)
+target_link_libraries(mpris ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS mpris DESTINATION ${PLUGIN_DIR}/General)

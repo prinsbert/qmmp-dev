@@ -48,7 +48,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(SHOUT_FOUND)
 ADD_LIBRARY(shout MODULE ${libshout_SRCS} ${libshout_UIS_H} ${libshout_RCC_SRCS})
-add_dependencies(shout qmmp)
+add_dependencies(shout libqmmp)
 target_link_libraries(shout ${QT_LIBRARIES} libqmmp ${SHOUT_LDFLAGS})
 install(TARGETS shout DESTINATION ${PLUGIN_DIR}/Output)
 ENDIF(SHOUT_FOUND)

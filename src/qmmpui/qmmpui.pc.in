@@ -3,9 +3,9 @@ exec_prefix=@CMAKE_INSTALL_PREFIX@
 libdir=@CMAKE_INSTALL_PREFIX@/@LIB_DIR@
 includedir=@CMAKE_INSTALL_PREFIX@/include
 
-Name: qmmpui
+Name: qmmpui@APP_NAME_SUFFIX@
 Description: qmmp user interface library
 Version: @QMMP_VERSION@
-Requires: QtCore QtGui QtNetwork qmmp
-Libs: -L${libdir} -lqmmpui
+Requires: QtCore QtGui QtNetwork qmmp@APP_NAME_SUFFIX@
+Libs: -L${libdir} -lqmmpui@APP_NAME_SUFFIX@
 Cflags: -I${includedir}

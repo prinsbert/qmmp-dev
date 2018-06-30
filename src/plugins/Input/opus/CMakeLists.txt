@@ -55,7 +55,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(OPUS_FOUND)
 ADD_LIBRARY(opus MODULE ${libopus_SRCS} ${libopus_RCC_SRCS} ${libopus_HDRS})
-add_dependencies(opus qmmp)
+add_dependencies(opus libqmmp)
 target_link_libraries(opus ${QT_LIBRARIES} libqmmp ${OPUS_LDFLAGS} ${TAGLIB_LDFLAGS})
 install(TARGETS opus DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(OPUS_FOUND)

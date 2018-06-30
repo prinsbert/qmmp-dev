@@ -58,7 +58,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(SIDPLAYFP_FOUND)
 ADD_LIBRARY(sid MODULE ${libsid_SRCS} ${libsid_UIS_H}
   ${libsid_RCC_SRCS} ${libsid_HDRS})
-add_dependencies(sid qmmp)
+add_dependencies(sid libqmmp)
 target_link_libraries(sid ${QT_LIBRARIES} libqmmp ${SIDPLAYFP_LDFLAGS})
 install(TARGETS sid DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(SIDPLAYFP_FOUND)

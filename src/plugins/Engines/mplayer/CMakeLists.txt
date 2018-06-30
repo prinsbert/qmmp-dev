@@ -44,7 +44,7 @@ QT4_WRAP_UI(libmplayer_UIS_H ${libmplayer_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(mplayer MODULE ${libmplayer_SRCS} ${libmplayer_RCC_SRCS} ${libmplayer_UIS_H})
-add_dependencies(mplayer qmmp)
+add_dependencies(mplayer libqmmp)
 target_link_libraries(mplayer ${QT_LIBRARIES} libqmmp)
 install(TARGETS mplayer DESTINATION ${PLUGIN_DIR}/Engines)
 

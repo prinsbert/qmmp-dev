@@ -56,7 +56,7 @@ QT4_WRAP_UI(libcue_UIS_H ${libcue_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(cue MODULE ${libcue_SRCS} ${libcue_RCC_SRCS} ${libcue_UIS_H} ${libcue_HDRS})
-add_dependencies(cue qmmp)
+add_dependencies(cue libqmmp)
 IF(USE_ENCA AND ENCA_FOUND)
 target_link_libraries(cue ${QT_LIBRARIES} libqmmp ${ENCA_LDFLAGS})
 ELSE(USE_ENCA AND ENCA_FOUND)

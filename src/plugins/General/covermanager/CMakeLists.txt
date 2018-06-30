@@ -48,6 +48,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(covermanager MODULE ${libcovermanager_SRCS} ${libcovermanager_UIS_H}
   ${libcovermanager_RCC_SRCS})
-add_dependencies(covermanager qmmpui)
-target_link_libraries(covermanager ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(covermanager libqmmpui)
+target_link_libraries(covermanager ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS covermanager DESTINATION ${PLUGIN_DIR}/General)

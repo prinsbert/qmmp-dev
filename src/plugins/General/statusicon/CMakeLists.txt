@@ -48,6 +48,6 @@ QT4_WRAP_UI(libstatusicon_UIS_H ${libstatusicon_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(statusicon MODULE ${libstatusicon_SRCS} ${libstatusicon_UIS_H} ${libstatusicon_RCC_SRCS})
-add_dependencies(statusicon qmmpui libqmmp)
-target_link_libraries(statusicon ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(statusicon libqmmpui libqmmp)
+target_link_libraries(statusicon ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS statusicon DESTINATION ${PLUGIN_DIR}/General)

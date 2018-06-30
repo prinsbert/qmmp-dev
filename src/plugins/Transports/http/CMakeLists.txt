@@ -63,6 +63,6 @@ ELSE(USE_ENCA AND ENCA_FOUND)
 target_link_libraries(http ${QT_LIBRARIES} libqmmp ${CURL_LDFLAGS})
 ENDIF(USE_ENCA AND ENCA_FOUND)
 
-add_dependencies(http qmmp)
+add_dependencies(http libqmmp)
 install(TARGETS http DESTINATION ${PLUGIN_DIR}/Transports)
 ENDIF(CURL_FOUND)

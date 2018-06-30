@@ -46,7 +46,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(SNDFILE_FOUND)
 ADD_LIBRARY(sndfile MODULE ${libsndfile_SRCS} ${libsndfile_UIS_H}
   ${libsndfile_RCC_SRCS} ${libsndfile_HDRS})
-add_dependencies(sndfile qmmp)
+add_dependencies(sndfile libqmmp)
 target_link_libraries(sndfile ${QT_LIBRARIES} libqmmp ${SNDFILE_LDFLAGS})
 install(TARGETS sndfile DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(SNDFILE_FOUND)

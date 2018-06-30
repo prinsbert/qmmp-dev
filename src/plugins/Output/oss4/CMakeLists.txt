@@ -83,7 +83,7 @@ IF(OSS4_FOUND)
 QT4_WRAP_UI(liboss4_UIS_H ${liboss4_UIS})
 
 ADD_LIBRARY(oss4 MODULE ${liboss4_SRCS} ${liboss4_UIS_H} ${liboss4_RCC_SRCS} ${liboss4_HDRS})
-add_dependencies(oss4 qmmp)
+add_dependencies(oss4 libqmmp)
 target_link_libraries(oss4 ${QT_LIBRARIES} libqmmp)
 install(TARGETS oss4 DESTINATION ${PLUGIN_DIR}/Output)
 ENDIF(OSS4_FOUND)

@@ -49,7 +49,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(CDIO_FOUND)
 ADD_LIBRARY(cdaudio MODULE ${libcdaudio_SRCS} ${libcdaudio_UIS_H} ${libcdaudio_RCC_SRCS}
 ${libcdaudio_HDRS})
-add_dependencies(cdaudio qmmp)
+add_dependencies(cdaudio libqmmp)
 target_link_libraries(cdaudio ${QT_LIBRARIES} libqmmp ${CDIO_LDFLAGS})
 install(TARGETS cdaudio DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(CDIO_FOUND)

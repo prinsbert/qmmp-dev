@@ -79,7 +79,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(FAAD_FOUND)
 ADD_LIBRARY(aac MODULE ${libaac_SRCS} ${libaac_RCC_SRCS} ${libaac_HDRS})
-add_dependencies(aac qmmp)
+add_dependencies(aac libqmmp)
 target_link_libraries(aac ${QT_LIBRARIES} libqmmp -lfaad ${TAGLIB_LDFLAGS})
 install(TARGETS aac DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(FAAD_FOUND)

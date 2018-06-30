@@ -35,6 +35,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(playlistoption MODULE ${libplaylistoption_SRCS}
            ${libplaylistoption_RCC_SRCS})
-add_dependencies(playlistoption qmmpui)
-target_link_libraries(playlistoption ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(playlistoption libqmmpui)
+target_link_libraries(playlistoption ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS playlistoption DESTINATION ${PLUGIN_DIR}/CommandLineOptions)

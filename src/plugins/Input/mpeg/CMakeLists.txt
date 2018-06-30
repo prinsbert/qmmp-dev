@@ -73,7 +73,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(MAD_FOUND OR MPG123_FOUND)
 ADD_LIBRARY(mpeg MODULE ${libmpeg_SRCS} ${libmpeg_UIS_H} ${libmpeg_RCC_SRCS} ${libmpeg_HDRS})
-add_dependencies(mpeg qmmp)
+add_dependencies(mpeg libqmmp)
 target_link_libraries(mpeg ${QT_LIBRARIES} libqmmp ${TAGLIB_LDFLAGS} ${MAD_LDFLAGS} ${MPG123_LDFLAGS})
 install(TARGETS mpeg DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(MAD_FOUND OR MPG123_FOUND)

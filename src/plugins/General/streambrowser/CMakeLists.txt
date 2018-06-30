@@ -49,6 +49,6 @@ QT4_WRAP_UI(libstreambrowser_UIS_H ${libstreambrowser_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(streambrowser MODULE ${libstreambrowser_SRCS} ${libstreambrowser_UIS_H} ${libstreambrowser_RCC_SRCS})
-add_dependencies(streambrowser qmmpui)
-target_link_libraries(streambrowser ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(streambrowser libqmmpui)
+target_link_libraries(streambrowser ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS streambrowser DESTINATION ${PLUGIN_DIR}/General)

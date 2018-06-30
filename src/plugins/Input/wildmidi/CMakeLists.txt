@@ -63,7 +63,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(WILDMIDI_FOUND)
 ADD_LIBRARY(wildmidi MODULE ${libwildmidi_SRCS} ${libwildmidi_UIS_H} ${libwildmidi_RCC_SRCS}
 ${libwildmidi_HDRS})
-add_dependencies(wildmidi qmmp)
+add_dependencies(wildmidi libqmmp)
 target_link_libraries(wildmidi ${QT_LIBRARIES} libqmmp ${WILDMIDI_LIB})
 install(TARGETS wildmidi DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(WILDMIDI_FOUND)

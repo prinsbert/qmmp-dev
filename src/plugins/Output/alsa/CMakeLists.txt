@@ -48,7 +48,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(ALSA_FOUND)
 ADD_LIBRARY(alsa MODULE ${libalsa_SRCS} ${libalsa_UIS_H} ${libalsa_RCC_SRCS})
-add_dependencies(alsa qmmp)
+add_dependencies(alsa libqmmp)
 target_link_libraries(alsa ${QT_LIBRARIES} libqmmp ${ALSA_LDFLAGS})
 install(TARGETS alsa DESTINATION ${PLUGIN_DIR}/Output)
 ENDIF(ALSA_FOUND)

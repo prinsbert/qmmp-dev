@@ -49,6 +49,6 @@ QT4_WRAP_UI(liblyrics_UIS_H ${liblyrics_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(lyrics MODULE ${liblyrics_SRCS} ${liblyrics_UIS_H} ${liblyrics_RCC_SRCS})
-add_dependencies(lyrics qmmpui)
-target_link_libraries(lyrics ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(lyrics libqmmpui)
+target_link_libraries(lyrics ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS lyrics DESTINATION ${PLUGIN_DIR}/General)

@@ -64,7 +64,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(GME_FOUND)
 ADD_LIBRARY(gme MODULE ${libgme_SRCS} ${libgme_RCC_SRCS} ${libgme_HDRS} ${libgme_UIS_H})
-add_dependencies(gme qmmp)
+add_dependencies(gme libqmmp)
 target_link_libraries(gme ${QT_LIBRARIES} libqmmp ${GME_LIB})
 install(TARGETS gme DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(GME_FOUND)

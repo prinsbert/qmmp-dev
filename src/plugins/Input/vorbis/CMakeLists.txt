@@ -49,7 +49,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(VORBIS_FOUND)
 ADD_LIBRARY(vorbis MODULE ${libvorbis_SRCS} ${libvorbis_RCC_SRCS} ${libvorbis_HDRS})
-add_dependencies(vorbis qmmp)
+add_dependencies(vorbis libqmmp)
 target_link_libraries(vorbis ${QT_LIBRARIES} libqmmp ${VORBIS_LDFLAGS} ${TAGLIB_LDFLAGS})
 install(TARGETS vorbis DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(VORBIS_FOUND)

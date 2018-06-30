@@ -47,6 +47,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(crossfade MODULE ${libcrossfade_SRCS} ${libcrossfade_UIS_H} ${libcrossfade_RCC_SRCS}
 ${libcrossfade_HDRS})
-add_dependencies(crossfade qmmp)
+add_dependencies(crossfade libqmmp)
 target_link_libraries(crossfade ${QT_LIBRARIES} libqmmp)
 install(TARGETS crossfade DESTINATION ${PLUGIN_DIR}/Effect)

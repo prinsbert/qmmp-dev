@@ -67,7 +67,7 @@ QT4_ADD_RESOURCES(libjack_RCC_SRCS ${libjack_RCCS})
 
 IF(JACK_FOUND)
 ADD_LIBRARY(jack MODULE ${libjack_SRCS} ${libjack_RCC_SRCS} ${libjack_HDRS})
-add_dependencies(jack qmmp)
+add_dependencies(jack libqmmp)
 set_target_properties(jack PROPERTIES
                            COMPILE_FLAGS -pthread
                            LINK_FLAGS -pthread

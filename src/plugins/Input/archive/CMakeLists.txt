@@ -47,7 +47,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(LIBARCHIVE_FOUND)
 ADD_LIBRARY(archive MODULE ${libarchive_SRCS} ${libarchive_RCC_SRCS} ${libarchive_HDRS})
-add_dependencies(archive qmmp)
+add_dependencies(archive libqmmp)
 target_link_libraries(archive ${QT_LIBRARIES} libqmmp ${LIBARCHIVE_LDFLAGS} ${TAGLIB_LDFLAGS})
 install(TARGETS archive DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(LIBARCHIVE_FOUND)

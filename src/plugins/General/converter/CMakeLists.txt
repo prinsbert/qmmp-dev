@@ -54,6 +54,6 @@ QT4_WRAP_UI(libconverter_UIS_H ${libconverter_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(converter MODULE ${libconverter_SRCS} ${libconverter_UIS_H} ${libconverter_RCC_SRCS})
-add_dependencies(converter qmmpui)
-target_link_libraries(converter ${QT_LIBRARIES} qmmpui libqmmp ${TAGLIB_LDFLAGS})
+add_dependencies(converter libqmmpui)
+target_link_libraries(converter ${QT_LIBRARIES} libqmmpui libqmmp ${TAGLIB_LDFLAGS})
 install(TARGETS converter DESTINATION ${PLUGIN_DIR}/General)

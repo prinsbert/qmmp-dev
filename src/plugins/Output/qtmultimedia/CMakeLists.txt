@@ -48,7 +48,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(${QT_QTMULTIMEDIA_FOUND})
 	ADD_LIBRARY(qtmultimedia MODULE ${libqtmultimedia_SRCS} ${libqtmultimedia_UIS_H} ${libqtmultimedia_RCC_SRCS} ${libqtmultimedia_HDRS})
-	add_dependencies(qtmultimedia qmmp)
+	add_dependencies(qtmultimedia libqmmp)
 	target_link_libraries(qtmultimedia ${QT_LIBRARIES} libqmmp)
 	install(TARGETS qtmultimedia DESTINATION ${PLUGIN_DIR}/qmmp/Output)
 ENDIF(${QT_QTMULTIMEDIA_FOUND})

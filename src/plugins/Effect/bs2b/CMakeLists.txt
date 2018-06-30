@@ -53,7 +53,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(BS2B_FOUND)
 ADD_LIBRARY(bs2b MODULE ${libbs2b_SRCS} ${libbs2b_UIS_H}
   ${libbs2b_RCC_SRCS} ${libbs2b_HDRS})
-add_dependencies(bs2b qmmp)
+add_dependencies(bs2b libqmmp)
 target_link_libraries(bs2b ${QT_LIBRARIES} libqmmp ${BS2B_LDFLAGS})
 install(TARGETS bs2b DESTINATION ${PLUGIN_DIR}/Effect)
 ENDIF(BS2B_FOUND)

@@ -46,6 +46,6 @@ QT4_WRAP_UI(libudisks_UIS_H ${libudisks_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(udisks MODULE ${libudisks_SRCS} ${libudisks_UIS_H} ${libudisks_RCC_SRCS})
-add_dependencies(udisks qmmpui)
-target_link_libraries(udisks ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(udisks libqmmpui)
+target_link_libraries(udisks ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS udisks DESTINATION ${PLUGIN_DIR}/General)

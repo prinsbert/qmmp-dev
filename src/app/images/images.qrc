@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/" >
-        <file>16x16/qmmp.png</file>
-        <file>32x32/qmmp.png</file>
-        <file>48x48/qmmp.png</file>
-        <file>56x56/qmmp.png</file>
-        <file>scalable/qmmp.svgz</file>
+        <file alias="16x16/qmmp.png">16x16/qmmp-0.png</file>
+        <file alias="32x32/qmmp.png">32x32/qmmp-0.png</file>
+        <file alias="48x48/qmmp.png">48x48/qmmp-0.png</file>
+        <file alias="56x56/qmmp.png">56x56/qmmp-0.png</file>
+        <file alias="scalable/qmmp.svgz">scalable/qmmp-0.svgz</file>
     </qresource>
 </RCC>

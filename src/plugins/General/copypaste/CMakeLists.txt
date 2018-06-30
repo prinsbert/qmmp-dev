@@ -37,6 +37,6 @@ QT4_ADD_RESOURCES(libcopypaste_RCC_SRCS ${libcopypaste_RCCS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(copypaste MODULE ${libcopypaste_SRCS} ${libcopypaste_UIS_H} ${libcopypaste_RCC_SRCS})
-add_dependencies(copypaste qmmpui)
-target_link_libraries(copypaste ${QT_LIBRARIES} qmmpui libqmmp)
+add_dependencies(copypaste libqmmpui)
+target_link_libraries(copypaste ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS copypaste DESTINATION ${PLUGIN_DIR}/General)

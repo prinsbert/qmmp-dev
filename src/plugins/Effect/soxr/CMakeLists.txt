@@ -52,7 +52,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(SOXR_FOUND)
 ADD_LIBRARY(soxr MODULE ${libsoxr_SRCS} ${libsoxr_UIS_H} ${libsoxr_RCC_SRCS} ${libsoxr_HDRS})
-add_dependencies(soxr qmmp)
+add_dependencies(soxr libqmmp)
 target_link_libraries(soxr ${QT_LIBRARIES} libqmmp ${SOXR_LDFLAGS})
 install(TARGETS soxr DESTINATION ${PLUGIN_DIR}/Effect)
 ENDIF(SOXR_FOUND)

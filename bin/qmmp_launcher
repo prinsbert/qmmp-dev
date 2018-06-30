@@ -14,4 +14,4 @@ echo "$LD_LIBRARY_PATH" | awk -F: '{ for(i = 1; i <= NF; i++) printf "%d) %s\n",
 export LD_LIBRARY_PATH
 echo
 
-exec $MYDIR/qmmp "$@"
+exec $MYDIR/qmmp-0 "$@"

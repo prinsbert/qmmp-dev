@@ -70,7 +70,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(MODPLUG_FOUND)
 ADD_LIBRARY(modplug MODULE ${libmodplug_SRCS} ${libmodplug_UIS_H}
   ${libmodplug_RCC_SRCS} ${libmodplug_HDRS})
-add_dependencies(modplug qmmp)
+add_dependencies(modplug libqmmp)
 target_link_libraries(modplug ${QT_LIBRARIES} libqmmp ${MODPLUG_LDFLAGS})
 install(TARGETS modplug DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(MODPLUG_FOUND)

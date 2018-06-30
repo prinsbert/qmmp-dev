@@ -46,7 +46,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 IF(PULSE_FOUND)
 ADD_LIBRARY(pulseaudio MODULE ${libpulseaudio_SRCS} ${libpulseaudio_UIS_H}
   ${libpulseaudio_RCC_SRCS} ${libpulseaudio_HDRS})
-add_dependencies(pulseaudio qmmp)
+add_dependencies(pulseaudio libqmmp)
 target_link_libraries(pulseaudio ${QT_LIBRARIES} libqmmp ${PULSE_LDFLAGS})
 install(TARGETS pulseaudio DESTINATION ${PLUGIN_DIR}/Output)
 ENDIF(PULSE_FOUND)

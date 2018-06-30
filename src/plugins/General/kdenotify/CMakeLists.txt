@@ -16,13 +16,14 @@ ADD_DEFINITIONS(-DQT_SHARED)
 ADD_DEFINITIONS(-DQT_THREAD)
 
 
-
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # libqmmpui & libqmmp
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
+
+SET(libkdenotify_DEFINES APP_NAME_SUFFIX="${APP_NAME_SUFFIX}")
 
 SET(libkdenotify_SRCS
     kdenotify.cpp
@@ -47,10 +48,11 @@ QT4_WRAP_UI(libkdenotify_UIS_H ${libkdenotify_UIS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(kdenotify MODULE ${libkdenotify_SRCS} ${libkdenotify_RCC_SRCS} ${libkdenotify_UIS_H})
-add_dependencies(kdenotify qmmpui)
-target_link_libraries(kdenotify ${QT_LIBRARIES} qmmpui libqmmp)
+SET_TARGET_PROPERTIES(kdenotify PROPERTIES COMPILE_DEFINITIONS "${libkdenotify_DEFINES}")
+add_dependencies(kdenotify libqmmpui)
+target_link_libraries(kdenotify ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS kdenotify DESTINATION ${PLUGIN_DIR}/General)
 IF(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-	install(FILES images/empty_cover.png DESTINATION share/qmmp/images)
-	install(FILES images/app_icon.png DESTINATION share/qmmp/images)
+	install(FILES images/empty_cover.png DESTINATION share/qmmp${APP_NAME_SUFFIX}/images)
+	install(FILES images/app_icon.png DESTINATION share/qmmp${APP_NAME_SUFFIX}/images)
 ENDIF()
