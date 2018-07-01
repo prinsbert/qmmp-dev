@@ -80,7 +80,7 @@ do
     echo "[${PROJECT_NAME}.${RESOURCE_NAME}-desktop]" >> ${TX_CONFIG}
     echo "file_filter = src/app/desktop-translations/${RESOURCE_NAME}_<lang>.desktop.in" >> ${TX_CONFIG}
     echo "source_lang = en" >> ${TX_CONFIG}
-    echo "source_file = src/app/${RESOURCE_NAME}.desktop" >> ${TX_CONFIG}
+    echo "source_file = src/app/${RESOURCE_NAME}-0.desktop" >> ${TX_CONFIG}
     echo "type = DESKTOP" >> ${TX_CONFIG}
     echo "" >> ${TX_CONFIG}
 done

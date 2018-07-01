@@ -430,18 +430,18 @@ type = TXT
 [qmmp.qmmp-desktop]
 file_filter = src/app/desktop-translations/qmmp_<lang>.desktop.in
 source_lang = en
-source_file = src/app/qmmp.desktop
+source_file = src/app/qmmp-0.desktop
 type = DESKTOP
 
 [qmmp.qmmp-dir-desktop]
 file_filter = src/app/desktop-translations/qmmp-dir_<lang>.desktop.in
 source_lang = en
-source_file = src/app/qmmp-dir.desktop
+source_file = src/app/qmmp-dir-0.desktop
 type = DESKTOP
 
 [qmmp.qmmp-enqueue-desktop]
 file_filter = src/app/desktop-translations/qmmp-enqueue_<lang>.desktop.in
 source_lang = en
-source_file = src/app/qmmp-enqueue.desktop
+source_file = src/app/qmmp-enqueue-0.desktop
 type = DESKTOP
 
