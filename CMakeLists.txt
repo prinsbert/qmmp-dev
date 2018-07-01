@@ -52,8 +52,8 @@ ENDIF(NOT LIB_SUFFIX)
 
 SET(LIB_DIR "lib${LIB_SUFFIX}" CACHE STRING "library path")
 
-pkg_check_modules(QMMP qmmp>=1.2.0 REQUIRED)
-pkg_check_modules(QMMPUI qmmpui>=1.2.0)
+pkg_check_modules(QMMP qmmp>=1.3.0 REQUIRED)
+pkg_check_modules(QMMPUI qmmpui>=1.3.0)
 
 IF(QMMP_FOUND)
 add_subdirectory(src)
