@@ -52,13 +52,13 @@ cmake ./ -DCMAKE_INSTALL_PREFIX=custom_path
 In some cases, you can use qmake for building and installation.
 
 Configure:
-qmake
+qmake PREFIX=custom_path (default: /usr)
 
 Build:
 make
 
 Installation:
-make install INSTALL_ROOT=/usr/local
+make install
 
 If someone module doesn't build or doesn't needed you can disable it in qmmp-plugin-pack.pri file - just comment
 corresponding line( symbol '#') or execute qmake with the special parameters:
