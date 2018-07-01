@@ -28,7 +28,7 @@ RESOURCES = translations/translations.qrc
 win32:LIBS += -lqmmpui0
 
 unix {
-    PKGCONFIG += qmmpui
-    target.path = $$LIB_DIR/qmmp/General
+    PKGCONFIG += qmmpui$${APP_NAME_SUFFIX}
+    target.path = $$PLUGIN_DIR/General
     INSTALLS += target
 }

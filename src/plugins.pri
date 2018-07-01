@@ -7,11 +7,8 @@ win32 {
 }
 
 unix {
-    isEmpty(LIB_DIR){
-        LIB_DIR = /lib
-    }
-    PLUGINS_PREFIX=../../../lib/qmmp
-    PKGCONFIG += qmmp
+    PLUGINS_PREFIX=../../../lib/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}
+    PKGCONFIG += qmmp$${APP_NAME_SUFFIX}
 }
 
 CONFIG += warn_on plugin lib link_pkgconfig hide_symbols

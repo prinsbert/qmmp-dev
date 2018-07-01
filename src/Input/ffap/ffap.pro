@@ -48,7 +48,7 @@ contains(CONFIG, FFAP_YASM) {
 
 unix {
     PKGCONFIG += taglib
-    target.path = $$LIB_DIR/qmmp/Input
+    target.path = $$PLUGIN_DIR/Input
     INSTALLS += target
 }
 win32 {

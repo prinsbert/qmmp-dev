@@ -107,4 +107,4 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(goom MODULE ${libgoom_SRCS} ${libgoom_RCC_SRCS} ${libgoom_HDRS})
 target_link_libraries(goom ${QT_LIBRARIES} ${QMMP_LDFLAGS} ${goom_LDFLAGS})
-install(TARGETS goom DESTINATION ${LIB_DIR}/qmmp/Visual)
+install(TARGETS goom DESTINATION ${PLUGIN_DIR}/Visual)

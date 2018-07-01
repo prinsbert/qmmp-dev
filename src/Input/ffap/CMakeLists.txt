@@ -81,4 +81,4 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ADD_LIBRARY(ffap MODULE ${libffap_SRCS} ${libffap_RCC_SRCS} ${libffap_HDRS})
 target_link_libraries(ffap ${QT_LIBRARIES} ${QMMP_LDFLAGS} ${ffap_LDFLAGS} ${TAGLIB_LDFLAGS})
-install(TARGETS ffap DESTINATION ${LIB_DIR}/qmmp/Input)
+install(TARGETS ffap DESTINATION ${PLUGIN_DIR}/Input)

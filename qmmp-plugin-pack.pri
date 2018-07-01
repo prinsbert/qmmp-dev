@@ -14,21 +14,39 @@ RCC_DIR=./.build/rcc
 
 DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS
 
-unix{
-INCLUDEPATH += /home/user/qmmp-0.11/include
-QMAKE_LIBDIR += /home/user/qmmp-0.11/lib
-INCLUDEPATH += /usr/include
-INCLUDEPATH += /usr/local/include
-}else{
-INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
-QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
-}
-
 #Version
 
 QMMP_PLUGIN_PACK_VERSION = 0.12.0
 CONFIG += SVN_VERSION
 
+#Install paths
+
+VERSIONS = $$split(QMMP_PLUGIN_PACK_VERSION, ".")
+
+QMMP_PLUGIN_PACK_VERSION_MAJOR = $$member(VERSIONS, 0)
+QMMP_PLUGIN_PACK_VERSION_MINOR = $$member(VERSIONS, 1)
+
+APP_NAME_SUFFIX = "-0"
+
+unix {
+  isEmpty(PREFIX): PREFIX=/usr
+  isEmpty(BIN_DIR): BIN_DIR=$$PREFIX/bin
+  isEmpty(DATA_DIR): DATA_DIR=$$PREFIX/share
+  isEmpty(LIB_DIR): LIB_DIR=$$PREFIX/lib
+  isEmpty(PLUGIN_DIR): PLUGIN_DIR=$$LIB_DIR/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}
+}
+
+#Includes
+
+unix {
+  INCLUDEPATH += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/include/qmmp$${APP_NAME_SUFFIX}
+  QMAKE_LIBDIR += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/lib
+  INCLUDEPATH += /usr/include/qmmp$${APP_NAME_SUFFIX}
+  INCLUDEPATH += /usr/local/include/qmmp$${APP_NAME_SUFFIX}
+} else {
+  INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
+  QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+}
 
 #Comment/uncomment this if you want to change plugins list
 
