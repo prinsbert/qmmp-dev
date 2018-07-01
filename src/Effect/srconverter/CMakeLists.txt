@@ -42,5 +42,5 @@ IF(SAMPLERATE_FOUND)
 ADD_LIBRARY(srconverter MODULE ${libsrconverter_SRCS} ${libsrconverter_UIS_H}
   ${libsrconverter_RCC_SRCS} ${libsrconverter_HDRS})
 target_link_libraries(srconverter Qt5::Widgets ${QMMP_LDFLAGS} ${SAMPLERATE_LDFLAGS})
-install(TARGETS srconverter DESTINATION ${LIB_DIR}/qmmp/Effect)
+install(TARGETS srconverter DESTINATION ${PLUGIN_DIR}/Effect)
 ENDIF(SAMPLERATE_FOUND)

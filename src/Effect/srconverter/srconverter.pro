@@ -14,7 +14,7 @@ FORMS += settingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 
-PKGCONFIG += qmmp samplerate
+PKGCONFIG += samplerate
 
-target.path = $$LIB_DIR/qmmp/Effect
+target.path = $$PLUGIN_DIR/Effect
 INSTALLS += target
