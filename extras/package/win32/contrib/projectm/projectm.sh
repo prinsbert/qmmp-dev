@@ -16,6 +16,7 @@ case $1 in
     cd projectM-complete-$VERSION-Source
     cat ../../projectm-win32.patch | patch -p1
     cat ../../fix-fbo-crash.patch | patch -p1
+    cat ../../01_fix-gcc6-build.patch | patch -p1
     cd src    
     cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MSYS Makefiles" \
     -DCMAKE_COLOR_MAKEFILE:BOOL=OFF \
