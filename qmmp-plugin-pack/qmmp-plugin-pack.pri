@@ -37,10 +37,10 @@ unix {
 #Includes
 
 unix {
-  INCLUDEPATH += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/include/qmmp$${APP_NAME_SUFFIX}
+  INCLUDEPATH += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/include
   QMAKE_LIBDIR += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/lib
-  INCLUDEPATH += /usr/include/qmmp$${APP_NAME_SUFFIX}
-  INCLUDEPATH += /usr/local/include/qmmp$${APP_NAME_SUFFIX}
+  INCLUDEPATH += /usr/include
+  INCLUDEPATH += /usr/local/include
 } else {
   INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
   QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
