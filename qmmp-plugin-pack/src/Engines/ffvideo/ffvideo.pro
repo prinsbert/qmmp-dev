@@ -24,6 +24,6 @@ RESOURCES = translations/translations.qrc
 
 DEFINES += __STDC_CONSTANT_MACROS
 
-target.path = $$LIB_DIR/qmmp/Engines
+target.path = $$PLUGIN_DIR/Engines
 INSTALLS += target
 PKGCONFIG += libavcodec libavformat libavutil libswscale

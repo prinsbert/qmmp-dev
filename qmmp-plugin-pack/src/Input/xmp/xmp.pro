@@ -18,7 +18,7 @@ FORMS += \
 RESOURCES = translations/translations.qrc
 
 unix {
-    target.path = $$LIB_DIR/qmmp/Input
+    target.path = $$PLUGIN_DIR/Input
     INSTALLS += target
     PKGCONFIG += libxmp
     QMAKE_CLEAN = $$PLUGINS_PREFIX/Input/libxmp.so

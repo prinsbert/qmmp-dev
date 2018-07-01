@@ -88,7 +88,6 @@ contains(CONFIG, GOOM_ASM) {
 QMAKE_CFLAGS += -Werror=implicit-function-declaration
 
 unix {
-    target.path = $$LIB_DIR/qmmp/Visual
+    target.path = $$PLUGIN_DIR/Visual
     INSTALLS += target
-    PKGCONFIG += qmmp
 }
