@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LIB_NAMES+='qtbase qttools'
+LIB_NAMES+='qtbase qttools qttranslations'
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
