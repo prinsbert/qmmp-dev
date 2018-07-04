@@ -61,6 +61,7 @@ private slots:
 
 private:
     Ui::DetailsDialog *m_ui;
+    void closeEvent(QCloseEvent *);
     void updatePage();
     void printInfo();
     QString formatRow(const QString key, const QString value);
