@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2016-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -38,7 +38,7 @@ GoomWidget::GoomWidget(QWidget *parent) : Visual (parent)
     m_goom = 0;
     m_fps = 25;
     m_running = false;
-    connect(m_core, SIGNAL(metaDataChanged()), SLOT(updateTitle()));
+    connect(m_core, SIGNAL(trackInfoChanged()), SLOT(updateTitle()));
 
     setWindowTitle ("Goom");
     setMinimumSize(150,150);
