@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,6 +22,7 @@
 #include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
+#include <qmmpui/general.h>
 #include "settingsdialog.h"
 #include "hotkeymanager.h"
 #include "hotkeyfactory.h"
@@ -44,7 +45,13 @@ QObject *HotkeyFactory::create(QObject *parent)
 
 QDialog *HotkeyFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    SettingsDialog *dialog = new SettingsDialog(parent);
+    if(General::isEnabled(this))
+    {
+        General::setEnabled(this, false);
+        connect(dialog, SIGNAL(finished(int)), SLOT(restore()));
+    }
+    return dialog;
 }
 
 void HotkeyFactory::showAbout(QWidget *parent)
@@ -61,6 +68,11 @@ QTranslator *HotkeyFactory::createTranslator(QObject *parent)
     QString locale = Qmmp::systemLanguageID();
     translator->load(QString(":/hotkey_plugin_") + locale);
     return translator;
+}
+
+void HotkeyFactory::restore()
+{
+    General::setEnabled(this);
 }
 
 Q_EXPORT_PLUGIN2(hotkey, HotkeyFactory)
