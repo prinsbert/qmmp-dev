@@ -54,6 +54,7 @@ find_package(Qt5X11Extras 5.4.0)
 find_package(Qt5DBus 5.4.0)
 find_package(Qt5Multimedia 5.4.0)
 ADD_DEFINITIONS(-DQMMP_WS_X11)
+SET(CMAKE_CXX_STANDARD 11)
 
 get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
