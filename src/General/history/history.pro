@@ -25,7 +25,7 @@ FORMS += \
 
 RESOURCES = translations/translations.qrc
 
-win32:LIBS += -lqmmpui0
+win32:LIBS += -lqmmpui1
 
 unix {
     PKGCONFIG += qmmpui$${APP_NAME_SUFFIX}
