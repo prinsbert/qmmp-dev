@@ -5,7 +5,7 @@ win32:PLUGINS_PREFIX=../../../../bin/plugins
 win32 {
     QMAKE_LIBDIR += ../../../../bin
     PLUGINS_PREFIX=../../../../bin/plugins
-    LIBS += -lqmmp0
+    LIBS += -lqmmp1
 }
 
 unix {
