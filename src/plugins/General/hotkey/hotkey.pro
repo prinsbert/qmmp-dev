@@ -24,6 +24,5 @@ unix {
     target.path = $$LIB_DIR/qmmp/General
     INSTALLS += target
     PKGCONFIG += x11
-    DEFINES += HAVE_XKBLIB_H
     QT += x11extras
 }
