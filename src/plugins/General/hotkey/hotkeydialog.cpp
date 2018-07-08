@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,10 +25,10 @@
 HotkeyDialog::HotkeyDialog(quint32 key, quint32 mod, QWidget *parent)
         : QDialog(parent)
 {
-    ui.setupUi(this);
+    m_ui.setupUi(this);
     m_key = key;
     m_modifiers = mod;
-    ui.keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
+    m_ui.keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
 }
 
 HotkeyDialog::~HotkeyDialog()
@@ -39,9 +39,9 @@ void HotkeyDialog::keyPressEvent (QKeyEvent *event)
     m_key = HotkeyManager::keycodeToKeysym(event->nativeScanCode ());
     m_modifiers = event->nativeModifiers ();
     foreach(long mask_mod, HotkeyManager::ignModifiersList())
-        m_modifiers &= ~mask_mod; //remove ignoried modifiers (num lock, caps lock, etc)
+        m_modifiers &= ~mask_mod; //remove ignored modifiers (num lock, caps lock, etc)
 
-    ui.keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
+    m_ui.keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
     QDialog::keyPressEvent(event);
 }
 
@@ -62,7 +62,7 @@ quint32 HotkeyDialog::keySym () const
 
 void HotkeyDialog::accept()
 {
-    if (ui.keyLineEdit->text().isEmpty()) //clear key & modifiers
+    if (m_ui.keyLineEdit->text().isEmpty()) //clear key & modifiers
     {
         m_key = 0;
         m_modifiers = 0;

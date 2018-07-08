@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,10 +25,10 @@
 #include <QTableWidgetItem>
 #include <QList>
 #include <QAbstractNativeEventFilter>
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
 #include <qmmpui/general.h>
-
-class QEvent;
-class QWidget;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -54,18 +54,14 @@ public:
         VOLUME_MUTE
     };
 
-    Hotkey()
-    {
-        action = PLAY;
-        key = 0;
-        mod = 0;
-        code = 0;
-    }
-
-    quint32 mod;
-    quint32 key;
-    int action;
-    int code;
+    quint32 mod = 0;
+    quint32 key = 0;
+    int action = PLAY;
+    int code = 0;
+#ifdef Q_OS_WIN
+    UINT mods = 0;
+    WPARAM id = 0;
+#endif
     quint32 defaultKey();
     static quint32 defaultKey(int act);
 };
@@ -84,13 +80,7 @@ public:
 
 private:
     bool nativeEventFilter(const QByteArray &eventType, void *message, long *result);
-#ifdef QMMP_WS_X11
     QList <Hotkey *> m_grabbedKeys;
-#endif
-
-#ifdef Q_OS_WIN
-    QList<QWidget *> m_filters;
-#endif
 };
 
 #endif

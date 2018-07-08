@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Copyright (C) 2003-2007 by Justin Karneges and Michail Pishchagin     *
@@ -112,15 +112,14 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 
 HotkeyManager::~HotkeyManager()
 {
-    if(qApp && qApp->eventDispatcher())
-        qApp->removeNativeEventFilter(this);
-    foreach(Hotkey *key, m_grabbedKeys)
+    qApp->removeNativeEventFilter(this);
+    while(!m_grabbedKeys.isEmpty())
     {
+        Hotkey *key = m_grabbedKeys.takeFirst ();
         if(key->code)
             XUngrabKey(QX11Info::display(), key->code, key->mod, QX11Info::appRootWindow());
+        delete key;
     }
-    while (!m_grabbedKeys.isEmpty())
-        delete m_grabbedKeys.takeFirst ();
 }
 
 const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
@@ -200,9 +199,7 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
             case Hotkey::VOLUME_MUTE:
                 SoundCore::instance()->setMuted(!SoundCore::instance()->isMuted());
                 break;
-
             }
-
         }
     }
     return false;
