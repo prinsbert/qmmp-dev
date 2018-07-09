@@ -1,14 +1,14 @@
 #!/bin/sh
 
-QMMP_VERSION=0.11.2
-QMMP_PLUGIN_PACK_VERSION=0.11.1
+QMMP_VERSION=1.3.0
+QMMP_PLUGIN_PACK_VERSION=1.3.0
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
-export QT4_PATH=${DEV_PATH}/qt4
+export QT5_PATH=${DEV_PATH}/qt5
 export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
 export PREFIX=${DEV_PATH}/mingw32-libs
-export PATH=${PATH}:${MINGW32_PATH}/bin:${QT4_PATH}/bin:${PREFIX}/bin
+export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
 
 export JOBS=2
@@ -86,24 +86,24 @@ create_distr ()
   #Qt libs
   for LIB_NAME in QtCore4.dll QtGui4.dll QtNetwork4.dll QtOpenGL4.dll QtMultimedia4.dll QtSql4.dll
   do
-    cp -v ${QT4_PATH}/bin/${LIB_NAME} ./
+    cp -v ${QT5_PATH}/bin/${LIB_NAME} ./
   done
   #Qt plugins
   mkdir -p plugins/imageformats plugins/codecs plugins/sqldrivers
   for LIB_NAME in qcncodecs4.dll qjpcodecs4.dll qkrcodecs4.dll qtwcodecs4.dll
   do
-    cp -v ${QT4_PATH}/plugins/codecs/${LIB_NAME} ./plugins/codecs
+    cp -v ${QT5_PATH}/plugins/codecs/${LIB_NAME} ./plugins/codecs
   done
   for LIB_NAME in qgif4.dll qico4.dll qjpeg4.dll
   do
-    cp -v ${QT4_PATH}/plugins/imageformats/${LIB_NAME} ./plugins/imageformats
+    cp -v ${QT5_PATH}/plugins/imageformats/${LIB_NAME} ./plugins/imageformats
   done
   for LIB_NAME in qsqlite4.dll
   do
-    cp -v ${QT4_PATH}/plugins/sqldrivers/${LIB_NAME} ./plugins/sqldrivers
+    cp -v ${QT5_PATH}/plugins/sqldrivers/${LIB_NAME} ./plugins/sqldrivers
   done
   #translations
-  cp -v ${QT4_PATH}/translations/qt_??.qm ./translations
+  cp -v ${QT5_PATH}/translations/qt_??.qm ./translations
   #mingw32 libs
   for LIB_NAME in libgcc_s_dw2-1.dll libstdc++-6.dll libwinpthread-1.dll libgomp-1.dll
   do
@@ -141,10 +141,10 @@ create_distr ()
 
 case $1 in
   --download)
-    download_qmmp_tarball
-    download_plugins_tarball
-    #download_qmmp_svn
-    #download_plugins_svn
+    #download_qmmp_tarball
+    #download_plugins_tarball
+    download_qmmp_svn
+    download_plugins_svn
   ;;
   --install)
     cd tmp
