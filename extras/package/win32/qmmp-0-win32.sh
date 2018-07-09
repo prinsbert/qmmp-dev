@@ -71,8 +71,9 @@ create_distr ()
   cd qmmp-distr
   mkdir -p translations
   cp -v ../../*.txt ./
-  cp -v ../../*.nsi ./
-  cp -v ../../*.conf ./
+  cp -v ../../qmmp-0.x/*.txt ./
+  cp -v ../../qmmp-0.x/*.nsi ./
+  cp -v ../../qmmp-0.x/*.conf ./
   cp -v ../../unzip.exe ./
   cp -rv ../../themes ./
   cp -rv ../../skins ./
