@@ -8,7 +8,8 @@ export MINGW32_PATH=${DEV_PATH}/mingw32
 export QT5_PATH=${DEV_PATH}/qt5
 export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
 export PREFIX=${DEV_PATH}/mingw32-libs
-export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin
+export SVN_PATH=/c/Program\ Files/Subversion/bin
+export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin:${SVN_PATH}
 export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig 
 
 export JOBS=2
@@ -71,9 +72,9 @@ create_distr ()
   cd qmmp-distr
   mkdir -p translations
   cp -v ../../*.txt ./
-  cp -v ../../qmmp-0.x/*.txt ./
-  cp -v ../../qmmp-0.x/*.nsi ./
-  cp -v ../../qmmp-0.x/*.conf ./
+  cp -v ../../qmmp-1.x/*.txt ./
+  cp -v ../../qmmp-1.x/*.nsi ./
+  cp -v ../../qmmp-1.x/*.conf ./
   cp -v ../../unzip.exe ./
   cp -rv ../../themes ./
   cp -rv ../../skins ./
@@ -84,26 +85,27 @@ create_distr ()
   find . -type f -name *.a -delete
   find . -type d -name ".svn" | xargs rm -rf
   #Qt libs
-  for LIB_NAME in QtCore4.dll QtGui4.dll QtNetwork4.dll QtOpenGL4.dll QtMultimedia4.dll QtSql4.dll
+  for LIB_NAME in Qt5Core.dll Qt5Gui.dll Qt5Widgets.dll Qt5Network.dll Qt5Sql.dll
   do
     cp -v ${QT5_PATH}/bin/${LIB_NAME} ./
   done
   #Qt plugins
-  mkdir -p plugins/imageformats plugins/codecs plugins/sqldrivers
-  for LIB_NAME in qcncodecs4.dll qjpcodecs4.dll qkrcodecs4.dll qtwcodecs4.dll
+  mkdir -p plugins/imageformats plugins/platforms plugins/sqldrivers plugins/styles
+  cp -v ${QT5_PATH}/plugins/imageformats/*.dll ./plugins/imageformats  
+  for LIB_NAME in qwindows.dll
   do
-    cp -v ${QT5_PATH}/plugins/codecs/${LIB_NAME} ./plugins/codecs
+    cp -v ${QT5_PATH}/plugins/platforms/${LIB_NAME} ./plugins/platforms
   done
-  for LIB_NAME in qgif4.dll qico4.dll qjpeg4.dll
-  do
-    cp -v ${QT5_PATH}/plugins/imageformats/${LIB_NAME} ./plugins/imageformats
-  done
-  for LIB_NAME in qsqlite4.dll
+  for LIB_NAME in qsqlite.dll
   do
     cp -v ${QT5_PATH}/plugins/sqldrivers/${LIB_NAME} ./plugins/sqldrivers
   done
+  for LIB_NAME in qwindowsvistastyle.dll
+  do
+    cp -v ${QT5_PATH}/plugins/styles/${LIB_NAME} ./plugins/styles
+  done
   #translations
-  cp -v ${QT5_PATH}/translations/qt_??.qm ./translations
+  cp -v ${QT5_PATH}/translations/qtbase_??.qm ./translations
   #mingw32 libs
   for LIB_NAME in libgcc_s_dw2-1.dll libstdc++-6.dll libwinpthread-1.dll libgomp-1.dll
   do
