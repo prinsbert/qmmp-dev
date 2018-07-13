@@ -268,3 +268,6 @@ Version 1.2.1
 * added ffmpeg 4.0 support in the ffvideo plugin
 * fixed issues with some corrupted files in the mpg123 plugin
 * updated Italian translation (Luigi Toscano)
+
+Version 1.2.2
+* fixed build for windows
