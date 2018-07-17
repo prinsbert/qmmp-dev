@@ -262,3 +262,6 @@ Version 0.11.1
 * added ffmpeg 4.0 support in the ffvideo plugin
 * fixed issues with some corrupted files in the mpg123 plugin
 * updated Italian translation (Luigi Toscano)
+
+Version 0.11.2
+* fixed segmentation fault in the Goom plugin
