@@ -271,3 +271,4 @@ Version 1.2.1
 
 Version 1.2.2
 * fixed build for windows
+* fixed segmentation fault in the Goom plugin
