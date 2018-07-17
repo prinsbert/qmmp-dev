@@ -1343,3 +1343,4 @@ Version 0.11.2
 * added qmmp 0.12/1.3 config compatibility
 * disabling global shortcuts during configuration
 * fixed memory leaks
+* fixed issue caused by sending same metadata several times in a row
