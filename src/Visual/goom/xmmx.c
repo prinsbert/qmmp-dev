@@ -145,11 +145,19 @@ void zoom_filter_xmmx (int prevX, int prevY,
             "#2 \n\t shll $6,%%esi"
             "#2 \n\t movd %%mm1,%%eax"
 
+#ifdef ARCH_X86_64
+            "#2 \n\t addq %0,%%rsi"
+            "#2 \n\t andq $15,%%rax"
+
+            "#2 \n\t movq (%%rsi,%%rax,4),%%mm3"
+            ::"m"(precalCoef):"eax","esi", "rsi", "rax");
+#else
             "#2 \n\t addl %0,%%esi"
             "#2 \n\t andl $15,%%eax"
 
             "#2 \n\t movd (%%esi,%%eax,4),%%mm3"
             ::"m"(precalCoef):"eax","esi");
+#endif
 
         /*
          * extraction des coefficients... (Thread #3)
