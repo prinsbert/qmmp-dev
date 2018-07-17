@@ -246,5 +246,7 @@ LEGEND
 [*] libvorbis-1.3.6
 
 0.11.2
-[*] qmmp-0.11.1
-[*] curl-7.60.0
+[*] qmmp-0.11.2
+[*] qmmp-plugin-pack-0.11.2
+[*] curl-7.61.0
+[*] ffmpeg-3.4.3
