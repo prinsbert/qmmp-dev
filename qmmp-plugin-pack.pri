@@ -39,7 +39,6 @@ unix {
 unix {
   INCLUDEPATH += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/include
   QMAKE_LIBDIR += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/lib
-  INCLUDEPATH += /usr/include
   INCLUDEPATH += /usr/local/include
 } else {
   INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
