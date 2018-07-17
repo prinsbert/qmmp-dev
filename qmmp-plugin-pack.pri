@@ -13,7 +13,6 @@ RCC_DIR=./.build/rcc
 unix{
 INCLUDEPATH += /home/user/qmmp-1.2/include
 QMAKE_LIBDIR += /home/user/qmmp-1.2/lib
-INCLUDEPATH += /usr/include
 INCLUDEPATH += /usr/local/include
 }else{
 INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-1.2/src
