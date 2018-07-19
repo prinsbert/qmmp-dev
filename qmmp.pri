@@ -17,7 +17,7 @@ DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS
 
 #Version
 
-QMMP_VERSION = 0.11.2
+QMMP_VERSION = 0.11.3
 
 #Comment/uncomment this if you want to change plugins list
 
