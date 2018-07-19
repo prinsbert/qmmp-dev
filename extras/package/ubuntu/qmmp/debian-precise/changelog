@@ -1,3 +1,9 @@
+qmmp (0.11.2-1ubuntu1~precise0) precise; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Fri, 20 Jul 2018 00:07:47 +0300
+
 qmmp (0.11.1-1ubuntu2~precise0) precise; urgency=medium
 
   * New upstream release.

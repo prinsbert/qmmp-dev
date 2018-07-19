@@ -1,3 +1,9 @@
+qmmp-plugin-pack (0.11.2-1ubuntu1~precise0) precise; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Fri, 20 Jul 2018 00:11:31 +0300
+
 qmmp-plugin-pack (0.11.1-1ubuntu1~precise0) precise; urgency=medium
 
   * New upstream release.
