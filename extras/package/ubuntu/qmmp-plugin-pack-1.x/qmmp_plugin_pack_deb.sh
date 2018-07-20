@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=1.2.1
-UBUNTU_CODENAMES='xenial artful bionic'
+UBUNTU_CODENAMES='xenial bionic'
 BUILD_ROOT=build-root
 
 
