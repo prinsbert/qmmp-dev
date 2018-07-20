@@ -14,7 +14,7 @@ Known issues:
 Extra plugins (see http://qmmp.ylsoftware.com/plugins.php):
   - FFap - enhanced Monkey's Audio (APE) decoder;
   - Goom - audio visualization based on goom project;
-  - History - a tool for collection information information about listened tracks.
+  - History - a tool for collection information about listened tracks.
 
 This archive also contains third-party libraries. Source code of these libraries
 is freely available on the Internet.
@@ -23,8 +23,8 @@ List of the third-party libraries.
 
   Name                Version    Web page
 
-  MinGW-w64           4.2.0      http://mingw-w64.sourceforge.net/
-  Qt                  4.8.7-git  http://qt.io/
+  MinGW-w64           4.3.5      http://mingw-w64.sourceforge.net/
+  Qt                  5.11.1     http://qt.io/
   unzip               5.51       http://www.info-zip.org/pub/infozip/UnZip.html
   taglib              1.11.1     http://taglib.github.io/
   libmad              0.15.1b    http://www.underbit.com/products/mad/
