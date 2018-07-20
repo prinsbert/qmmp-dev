@@ -24,7 +24,7 @@ QT += widgets
 
 #Version
 
-QMMP_VERSION = 1.2.3
+QMMP_VERSION = 1.2.4
 
 #Comment/uncomment this if you want to change plugins list
 
