@@ -252,7 +252,6 @@ LEGEND
 [*] ffmpeg-3.4.3
 
 1.2.3
-[+] qtbase-5.11.1
 [*] qmmp-1.2.3
 [*] qmmp-plugin-pack-1.2.3-r8187
-
+[+] qtbase-5.11.1
