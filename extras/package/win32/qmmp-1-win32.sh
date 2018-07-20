@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=1.2.3
-QMMP_PLUGIN_PACK_VERSION=1.2.2
+QMMP_PLUGIN_PACK_VERSION=1.2.3
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
@@ -41,7 +41,7 @@ download_qmmp_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
+  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-1.2 qmmp-${QMMP_VERSION}
   cd ..
 }
 
@@ -50,7 +50,7 @@ download_plugins_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-plugin-pack...'
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp-plugin-pack qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
+  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-1.2 qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
   cd ..
 }
 
@@ -143,9 +143,9 @@ create_distr ()
 
 case $1 in
   --download)
-    #download_qmmp_tarball
+    download_qmmp_tarball
     #download_plugins_tarball
-    download_qmmp_svn
+    #download_qmmp_svn
     download_plugins_svn
   ;;
   --install)
