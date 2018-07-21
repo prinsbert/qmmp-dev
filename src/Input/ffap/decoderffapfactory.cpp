@@ -37,7 +37,7 @@ bool DecoderFFapFactory::canDecode(QIODevice *input) const
     return (input->peek(buf, 3) == 3 && !memcmp(buf, "MAC", 3));
 }
 
-const DecoderProperties DecoderFFapFactory::properties() const
+DecoderProperties DecoderFFapFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("FFap Plugin");
@@ -46,7 +46,6 @@ const DecoderProperties DecoderFFapFactory::properties() const
     //properties.contentType = ;
     properties.shortName = "ffap";
     properties.hasAbout = true;
-    properties.translation = QString(":/ffap_plugin_");
     properties.hasSettings = false;
     properties.noInput = false;
     properties.protocols << "ape";
@@ -160,4 +159,9 @@ void DecoderFFapFactory::showAbout(QWidget *parent)
                         tr("This plugin provides Monkey's Audio (APE) support") +"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>")  +"\n"+
                         tr("Based on code from deadbeef, FFmpeg and rockbox"));
+}
+
+QString DecoderFFapFactory::translation() const
+{
+    return QString(":/ffap_plugin_");
 }

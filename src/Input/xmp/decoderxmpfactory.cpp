@@ -34,7 +34,7 @@ bool DecoderXmpFactory::canDecode(QIODevice *) const
     return false;
 }
 
-const DecoderProperties DecoderXmpFactory::properties() const
+DecoderProperties DecoderXmpFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("XMP Plugin");
@@ -54,7 +54,6 @@ const DecoderProperties DecoderXmpFactory::properties() const
     properties.description = tr("Module Files");
     //properties.contentType = ;
     properties.shortName = "xmp";
-    properties.translation = QString(":/xmp_plugin_");
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
@@ -111,4 +110,9 @@ void DecoderXmpFactory::showAbout(QWidget *parent)
                         tr("Qmmp XMP Audio Plugin")+"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
                         tr("Compiled against libxmp-%1").arg(XMP_VERSION));
+}
+
+QString DecoderXmpFactory::translation() const
+{
+    return QString(":/xmp_plugin_");
 }

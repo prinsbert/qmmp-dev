@@ -29,7 +29,6 @@ const EffectProperties EffectSRConverterFactory::properties() const
     EffectProperties properties;
     properties.name = tr("SRC Plugin");
     properties.shortName = "SRC";
-    properties.translation = QString(":/srconverter_plugin_");
     properties.hasSettings = true;
     properties.hasAbout = true;
     properties.priority = EffectProperties::EFFECT_PRIORITY_HIGH;
@@ -51,5 +50,10 @@ void EffectSRConverterFactory::showAbout(QWidget *parent)
 {
      QMessageBox::about (parent, tr("About Sample Rate Converter Plugin"),
                         tr("Qmmp Sample Rate Converter Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+}
+
+QString EffectSRConverterFactory::translation() const
+{
+    return QString(":/srconverter_plugin_");
 }
