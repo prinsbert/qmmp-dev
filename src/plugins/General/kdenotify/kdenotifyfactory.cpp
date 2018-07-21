@@ -29,7 +29,7 @@
 const GeneralProperties KdeNotifyFactory::properties() const
 {
     GeneralProperties properties;
-    properties.name = tr("KDE 4 notification plugin");
+    properties.name = tr("KDE notification plugin");
     properties.shortName = "kdenotify_icon";
     properties.hasAbout = true;
     properties.hasSettings = true;
@@ -50,7 +50,7 @@ QDialog *KdeNotifyFactory::createConfigDialog(QWidget *parent)
 void KdeNotifyFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About KDE Notification Plugin"),
-                        tr("KDE 4 notification plugin for Qmmp \n") +
+                        tr("KDE notification plugin for Qmmp") + "<br>"
                         "Artur Guzik <a.guzik88@gmail.com>");
 }
 
