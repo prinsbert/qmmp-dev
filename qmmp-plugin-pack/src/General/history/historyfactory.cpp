@@ -25,12 +25,11 @@
 #include "historysettingsdialog.h"
 #include "historyfactory.h"
 
-const GeneralProperties HistoryFactory::properties() const
+GeneralProperties HistoryFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Listening History Plugin");
     properties.shortName = "history";
-    properties.translation = QString(":/history_plugin_");
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -53,4 +52,9 @@ void HistoryFactory::showAbout(QWidget *parent)
                         tr("Qmmp Listening History Plugin")+"\n"+
                         tr("This plugin collects information about listened tracks")+"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+}
+
+QString HistoryFactory::translation() const
+{
+    return QString(":/history_plugin_");
 }

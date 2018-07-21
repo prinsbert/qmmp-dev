@@ -24,12 +24,11 @@
 #include "visualgoomfactory.h"
 #include "goomwidget.h"
 
-const VisualProperties VisualGoomFactory::properties() const
+VisualProperties VisualGoomFactory::properties() const
 {
     VisualProperties properties;
     properties.name = tr("Goom");
     properties.shortName = "goom";
-    properties.translation = QString(":/goom_plugin_");
     properties.hasSettings = false;
     properties.hasAbout = true;
     return properties;
@@ -54,4 +53,9 @@ void VisualGoomFactory::showAbout(QWidget *parent)
                         tr("Goom project developers:")+"\n"+
                         tr("Jean-Christophe Hoelt <jeko@ios-software.com>") + "\n"+
                         tr("Guillaume Borios <gyom@ios-software.com>"));
+}
+
+QString VisualGoomFactory::translation() const
+{
+    return QString(":/goom_plugin_");
 }
