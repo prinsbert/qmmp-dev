@@ -13,8 +13,8 @@
     <name>KdeNotifyFactory</name>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="32"/>
-        <source>KDE 4 notification plugin</source>
-        <translation>תוסף התראת KDE 4</translation>
+        <source>KDE notification plugin</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="52"/>
@@ -23,10 +23,8 @@
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="53"/>
-        <source>KDE 4 notification plugin for Qmmp 
-</source>
-        <translation>תוסף התראת KDE 4 עבור Qmmp 
-</translation>
+        <source>KDE notification plugin for Qmmp</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -43,26 +41,31 @@
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="45"/>
-        <source>Notification delay [s]:</source>
-        <translation>שיהוי התראה [ש]:</translation>
+        <source>Notification delay:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="75"/>
+        <location filename="../settingsdialog.ui" line="52"/>
+        <source>s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="78"/>
         <source>Update visible notification instead create new</source>
         <translation>עדכן התראות נראות במקום ליצור חדשות</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="85"/>
+        <location filename="../settingsdialog.ui" line="88"/>
         <source>Appearance</source>
         <translation>הופעה</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="91"/>
+        <location filename="../settingsdialog.ui" line="94"/>
         <source>Show covers</source>
         <translation>הצג כיסויים</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="100"/>
+        <location filename="../settingsdialog.ui" line="103"/>
         <source>Edit template</source>
         <translation>ערוך תבנית</translation>
     </message>

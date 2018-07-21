@@ -13,8 +13,8 @@
     <name>KdeNotifyFactory</name>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="32"/>
-        <source>KDE 4 notification plugin</source>
-        <translation>Suplemento KDE4 Notification</translation>
+        <source>KDE notification plugin</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="52"/>
@@ -23,11 +23,8 @@
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="53"/>
-        <source>KDE 4 notification plugin for Qmmp 
-</source>
-        <translation>Suplemento Qmmp KDE4 Notification
-
-</translation>
+        <source>KDE notification plugin for Qmmp</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -44,26 +41,31 @@
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="45"/>
-        <source>Notification delay [s]:</source>
-        <translation>Atraso da notificação [s]:</translation>
+        <source>Notification delay:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="75"/>
+        <location filename="../settingsdialog.ui" line="52"/>
+        <source>s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="78"/>
         <source>Update visible notification instead create new</source>
         <translation>Atualizar notificação em vez de criar uma nova</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="85"/>
+        <location filename="../settingsdialog.ui" line="88"/>
         <source>Appearance</source>
         <translation>Aparência</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="91"/>
+        <location filename="../settingsdialog.ui" line="94"/>
         <source>Show covers</source>
         <translation>Mostrar capa de álbum</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="100"/>
+        <location filename="../settingsdialog.ui" line="103"/>
         <source>Edit template</source>
         <translation>Editar modelo</translation>
     </message>
