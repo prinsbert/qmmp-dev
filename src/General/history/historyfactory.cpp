@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "history.h"
@@ -31,6 +30,7 @@ const GeneralProperties HistoryFactory::properties() const
     GeneralProperties properties;
     properties.name = tr("Listening History Plugin");
     properties.shortName = "history";
+    properties.translation = QString(":/history_plugin_");
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -53,12 +53,4 @@ void HistoryFactory::showAbout(QWidget *parent)
                         tr("Qmmp Listening History Plugin")+"\n"+
                         tr("This plugin collects information about listened tracks")+"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
-}
-
-QTranslator *HistoryFactory::createTranslator(QObject *parent)
-{
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/history_plugin_") + locale);
-    return translator;
 }

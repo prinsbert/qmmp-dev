@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "ffvideofactory.h"
 #include "ffmpegengine.h"

@@ -20,7 +20,6 @@
 
 #include <QRegExp>
 #include <QMessageBox>
-#include <QTranslator>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
 #include <taglib/tfilestream.h>
@@ -47,6 +46,7 @@ const DecoderProperties DecoderFFapFactory::properties() const
     //properties.contentType = ;
     properties.shortName = "ffap";
     properties.hasAbout = true;
+    properties.translation = QString(":/ffap_plugin_");
     properties.hasSettings = false;
     properties.noInput = false;
     properties.protocols << "ape";
@@ -160,12 +160,4 @@ void DecoderFFapFactory::showAbout(QWidget *parent)
                         tr("This plugin provides Monkey's Audio (APE) support") +"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>")  +"\n"+
                         tr("Based on code from deadbeef, FFmpeg and rockbox"));
-}
-
-QTranslator *DecoderFFapFactory::createTranslator(QObject *parent)
-{
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/ffap_plugin_") + locale);
-    return translator;
 }

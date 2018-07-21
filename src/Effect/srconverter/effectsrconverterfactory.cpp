@@ -18,7 +18,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QTranslator>
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
@@ -30,6 +29,7 @@ const EffectProperties EffectSRConverterFactory::properties() const
     EffectProperties properties;
     properties.name = tr("SRC Plugin");
     properties.shortName = "SRC";
+    properties.translation = QString(":/srconverter_plugin_");
     properties.hasSettings = true;
     properties.hasAbout = true;
     properties.priority = EffectProperties::EFFECT_PRIORITY_HIGH;
@@ -52,12 +52,4 @@ void EffectSRConverterFactory::showAbout(QWidget *parent)
      QMessageBox::about (parent, tr("About Sample Rate Converter Plugin"),
                         tr("Qmmp Sample Rate Converter Plugin")+"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
-}
-
-QTranslator *EffectSRConverterFactory::createTranslator(QObject *parent)
-{
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/srconverter_plugin_") + locale);
-    return translator;
 }
