@@ -21,7 +21,6 @@
 #include <QStringList>
 #include <QRegExp>
 #include <QMessageBox>
-#include <QTranslator>
 #include <xmp.h>
 #include "settingsdialog.h"
 #include "decoder_xmp.h"
@@ -55,6 +54,7 @@ const DecoderProperties DecoderXmpFactory::properties() const
     properties.description = tr("Module Files");
     //properties.contentType = ;
     properties.shortName = "xmp";
+    properties.translation = QString(":/xmp_plugin_");
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
@@ -111,12 +111,4 @@ void DecoderXmpFactory::showAbout(QWidget *parent)
                         tr("Qmmp XMP Audio Plugin")+"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
                         tr("Compiled against libxmp-%1").arg(XMP_VERSION));
-}
-
-QTranslator *DecoderXmpFactory::createTranslator(QObject *parent)
-{
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/xmp_plugin_") + locale);
-    return translator;
 }
