@@ -19,14 +19,13 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "history.h"
 #include "historysettingsdialog.h"
 #include "historyfactory.h"
 
-const GeneralProperties HistoryFactory::properties() const
+GeneralProperties HistoryFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Listening History Plugin");
@@ -55,12 +54,9 @@ void HistoryFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *HistoryFactory::createTranslator(QObject *parent)
+QString HistoryFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/history_plugin_") + locale);
-    return translator;
+    return QString(":/history_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(history, HistoryFactory)

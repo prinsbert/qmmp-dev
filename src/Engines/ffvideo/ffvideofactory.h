@@ -29,14 +29,14 @@ Q_INTERFACES(EngineFactory)
 
 public:
     FFVideoFactory();
-    const EngineProperties properties() const;
+    EngineProperties properties() const;
     bool supports(const QString &source) const;
     AbstractEngine *create(QObject *parent = 0);
     QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *);
     MetaDataModel* createMetaDataModel(const QString &path, QObject *parent = 0);
     void showSettings(QWidget *);
     void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    QString translation() const;
 };
 
 #endif

@@ -32,13 +32,13 @@ class DecoderFFapFactory : public QObject, DecoderFactory
 
 public:
     bool canDecode(QIODevice *input) const;
-    const DecoderProperties properties() const;
+    DecoderProperties properties() const;
     Decoder *create(const QString &url, QIODevice *i);
     QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *);
     MetaDataModel* createMetaDataModel(const QString &path, QObject *parent = 0);
     void showSettings(QWidget *parent);
     void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    QString translation() const;
 };
 
 #endif

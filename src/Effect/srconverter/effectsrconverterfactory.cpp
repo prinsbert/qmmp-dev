@@ -20,7 +20,6 @@
 
 #include <QMessageBox>
 #include <QtPlugin>
-#include <QTranslator>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 #include "srconverter.h"
@@ -52,15 +51,12 @@ void EffectSRConverterFactory::showAbout(QWidget *parent)
 {
      QMessageBox::about (parent, tr("About Sample Rate Converter Plugin"),
                         tr("Qmmp Sample Rate Converter Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *EffectSRConverterFactory::createTranslator(QObject *parent)
+QString EffectSRConverterFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/srconverter_plugin_") + locale);
-    return translator;
+    return QString(":/srconverter_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(srconverter, EffectSRConverterFactory)

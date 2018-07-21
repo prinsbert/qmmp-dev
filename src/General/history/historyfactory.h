@@ -21,7 +21,6 @@
 #define HISTORYFACTORY_H
 
 #include <QObject>
-#include <QTranslator>
 #include <QDialog>
 #include <qmmpui/general.h>
 #include <qmmpui/generalfactory.h>
@@ -34,11 +33,11 @@ class HistoryFactory : public QObject, public GeneralFactory
 Q_OBJECT
 Q_INTERFACES(GeneralFactory)
 public:
-    const GeneralProperties properties() const;
+    GeneralProperties properties() const;
     QObject *create(QObject *parent);
     QDialog *createConfigDialog(QWidget *parent);
     void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    QString translation() const;
 };
 
 #endif // HISTORYFACTORY_H

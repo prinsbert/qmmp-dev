@@ -19,9 +19,8 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QtPlugin>
-#include <QTranslator>
 #include <QRegExp>
+#include <QtPlugin>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
@@ -41,7 +40,7 @@ bool DecoderFFapFactory::canDecode(QIODevice *input) const
     return (input->peek(buf, 3) == 3 && !memcmp(buf, "MAC", 3));
 }
 
-const DecoderProperties DecoderFFapFactory::properties() const
+DecoderProperties DecoderFFapFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("FFap Plugin");
@@ -169,12 +168,9 @@ void DecoderFFapFactory::showAbout(QWidget *parent)
                         tr("Based on code from deadbeef, FFmpeg and rockbox"));
 }
 
-QTranslator *DecoderFFapFactory::createTranslator(QObject *parent)
+QString DecoderFFapFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/ffap_plugin_") + locale);
-    return translator;
+    return QString(":/ffap_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(ffap,DecoderFFapFactory)

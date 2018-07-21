@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "visualgoomfactory.h"
 #include "goomwidget.h"
 
-const VisualProperties VisualGoomFactory::properties() const
+VisualProperties VisualGoomFactory::properties() const
 {
     VisualProperties properties;
     properties.name = tr("Goom");
@@ -56,12 +55,9 @@ void VisualGoomFactory::showAbout(QWidget *parent)
                         tr("Guillaume Borios <gyom@ios-software.com>"));
 }
 
-QTranslator *VisualGoomFactory::createTranslator(QObject *parent)
+QString VisualGoomFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/goom_plugin_") + locale);
-    return translator;
+    return QString(":/goom_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(goom,VisualGoomFactory)

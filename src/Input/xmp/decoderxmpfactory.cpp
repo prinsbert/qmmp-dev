@@ -22,7 +22,6 @@
 #include <QRegExp>
 #include <QMessageBox>
 #include <QtPlugin>
-#include <QTranslator>
 #include <xmp.h>
 #include "settingsdialog.h"
 #include "decoder_xmp.h"
@@ -36,7 +35,7 @@ bool DecoderXmpFactory::canDecode(QIODevice *) const
     return false;
 }
 
-const DecoderProperties DecoderXmpFactory::properties() const
+DecoderProperties DecoderXmpFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("XMP Plugin");
@@ -114,12 +113,9 @@ void DecoderXmpFactory::showAbout(QWidget *parent)
                         tr("Compiled against libxmp-%1").arg(XMP_VERSION));
 }
 
-QTranslator *DecoderXmpFactory::createTranslator(QObject *parent)
+QString DecoderXmpFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/xmp_plugin_") + locale);
-    return translator;
+    return QString(":/xmp_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(xmp,DecoderXmpFactory)
