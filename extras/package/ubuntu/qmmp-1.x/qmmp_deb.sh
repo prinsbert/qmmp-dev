@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.2.2
+QMMP_VERSION=1.2.3
 UBUNTU_CODENAMES='xenial bionic'
 BUILD_ROOT=build-root
 
