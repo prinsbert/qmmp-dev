@@ -19,27 +19,28 @@
  ***************************************************************************/
 
 #include <QtPlugin>
-#include <QTranslator>
 #include <QLocale>
 #include <QMap>
 #include <qmmp/soundcore.h>
 #include <qmmpui/metadataformatter.h>
 #include "statusoption.h"
 
+CommandLineProperties StatusOption::properties() const
+{
+    CommandLineProperties properties;
+    properties.shortName = "StatusOption";
+    properties.helpString << QString("--status") + "||" + tr("Print playback status")
+                          << QString("--nowplaying <fmt>") + "||"
+                             + tr("Print formatted track name (example: qmmp --nowplaying \"%t - %a\")")
+                          << QString("--nowplaying-syntax") + "||" + tr("Print --nowplaying syntax");
+    return properties;
+}
+
 bool StatusOption::identify(const QString &str) const
 {
     QStringList opts;
     opts << "--status" << "--nowplaying" << "--nowplaying-syntax";
     return opts.contains(str);
-}
-
-const QStringList StatusOption::helpString() const
-{
-    return QStringList()
-            << QString("--status") + "||" + tr("Print playback status")
-            << QString("--nowplaying <fmt>") + "||"
-               + tr("Print formatted track name (example: qmmp --nowplaying \"%t - %a\")")
-            << QString("--nowplaying-syntax") + "||" + tr("Print --nowplaying syntax");
 }
 
 QString StatusOption::executeCommand(const QString &opt_str, const QStringList &args)
@@ -105,17 +106,9 @@ QString StatusOption::executeCommand(const QString &opt_str, const QStringList &
     return out;
 }
 
-const QString StatusOption::name() const
+QString StatusOption::translation() const
 {
-    return "StatusOption";
-}
-
-QTranslator *StatusOption::createTranslator(QObject *parent)
-{
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/status_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/status_plugin_");
 }
 
 QString StatusOption::genProgressBar()

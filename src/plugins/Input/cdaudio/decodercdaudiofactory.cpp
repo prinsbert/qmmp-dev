@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <QRegExp>
 #include <cdio/version.h>
@@ -36,7 +35,7 @@ bool DecoderCDAudioFactory::canDecode(QIODevice *) const
     return false;
 }
 
-const DecoderProperties DecoderCDAudioFactory::properties() const
+DecoderProperties DecoderCDAudioFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("CD Audio Plugin");
@@ -91,12 +90,9 @@ void DecoderCDAudioFactory::showAbout(QWidget *parent)
                         tr("Usage: open cdda:/// using Add URL dialog or command line"));
 }
 
-QTranslator *DecoderCDAudioFactory::createTranslator(QObject *parent)
+QString DecoderCDAudioFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/cdaudio_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/cdaudio_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(cdaudio, DecoderCDAudioFactory)

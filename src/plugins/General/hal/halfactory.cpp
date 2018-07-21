@@ -19,14 +19,13 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 #include "halplugin.h"
 #include "halfactory.h"
 
-const GeneralProperties HalFactory::properties() const
+GeneralProperties HalFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("HAL Plugin");
@@ -56,12 +55,9 @@ void HalFactory::showAbout(QWidget *parent)
                         tr("Based on Solid (KDE hardware library)"));
 }
 
-QTranslator *HalFactory::createTranslator(QObject *parent)
+QString HalFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/hal_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/hal_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(hal, HalFactory)

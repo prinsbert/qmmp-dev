@@ -23,8 +23,6 @@
 #include <QObject>
 #include "filedialog.h"
 
-class QTranslator;
-
 /*! @internal
  * @author Vladimir Kuznetsov <vovanec@gmail.com>
  */
@@ -36,9 +34,9 @@ class QtFileDialogFactory : public QObject, public FileDialogFactory
 public:
     QtFileDialogFactory(){}
     FileDialog* create();
-    const FileDialogProperties properties() const;
+    FileDialogProperties properties() const;
     void showAbout(QWidget*);
-    QTranslator *createTranslator(QObject*);
+    QString translation() const;
     virtual ~QtFileDialogFactory()
     {
         ;

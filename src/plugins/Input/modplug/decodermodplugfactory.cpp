@@ -21,7 +21,6 @@
 #include <QStringList>
 #include <QRegExp>
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <QSettings>
 #include <QFile>
@@ -42,7 +41,7 @@ bool DecoderModPlugFactory::canDecode(QIODevice *) const
     return false;
 }
 
-const DecoderProperties DecoderModPlugFactory::properties() const
+DecoderProperties DecoderModPlugFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("ModPlug Plugin");
@@ -144,12 +143,9 @@ void DecoderModPlugFactory::showAbout(QWidget *parent)
                         tr("Konstanty Bialkowski <konstanty@ieee.org>"));
 }
 
-QTranslator *DecoderModPlugFactory::createTranslator(QObject *parent)
+QString DecoderModPlugFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/modplug_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/modplug_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(modplug,DecoderModPlugFactory)

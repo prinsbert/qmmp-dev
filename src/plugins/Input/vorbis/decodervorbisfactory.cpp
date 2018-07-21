@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
@@ -42,7 +41,7 @@ bool DecoderVorbisFactory::canDecode(QIODevice *input) const
     return false;
 }
 
-const DecoderProperties DecoderVorbisFactory::properties() const
+DecoderProperties DecoderVorbisFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Ogg Vorbis Plugin");
@@ -132,15 +131,12 @@ void DecoderVorbisFactory::showAbout(QWidget *parent)
                         tr("Qmmp Ogg Vorbis Audio Plugin")+"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
                         tr("Source code based on mq3 project")
-                       );
+                        );
 }
 
-QTranslator *DecoderVorbisFactory::createTranslator(QObject *parent)
+QString DecoderVorbisFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/vorbis_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/vorbis_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(vorbis,DecoderVorbisFactory)

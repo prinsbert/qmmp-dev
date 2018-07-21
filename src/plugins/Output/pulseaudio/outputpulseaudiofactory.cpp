@@ -19,14 +19,13 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "outputpulseaudio.h"
 #include "outputpulseaudiofactory.h"
 
 
-const OutputProperties OutputPulseAudioFactory::properties() const
+OutputProperties OutputPulseAudioFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("PulseAudio Plugin");
@@ -55,15 +54,12 @@ void OutputPulseAudioFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About PulseAudio Output Plugin"),
                         tr("Qmmp PulseAudio Output Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *OutputPulseAudioFactory::createTranslator(QObject *parent)
+QString OutputPulseAudioFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/pulseaudio_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/pulseaudio_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(pulseaudio, OutputPulseAudioFactory)

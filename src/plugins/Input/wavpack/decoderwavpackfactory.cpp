@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "wavpackmetadatamodel.h"
 #include "decoder_wavpack.h"
@@ -33,7 +32,7 @@ bool DecoderWavPackFactory::canDecode(QIODevice *input) const
     return (input->peek(buf, 4) == 4 && !memcmp(buf, "wvpk", 4));
 }
 
-const DecoderProperties DecoderWavPackFactory::properties() const
+DecoderProperties DecoderWavPackFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("WavPack Plugin");
@@ -182,12 +181,9 @@ void DecoderWavPackFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderWavPackFactory::createTranslator(QObject *parent)
+QString DecoderWavPackFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/wavpack_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/wavpack_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(wavpack,DecoderWavPackFactory)

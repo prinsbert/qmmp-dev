@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "mpris.h"
 #include "mprisfactory.h"
 
-const GeneralProperties MPRISFactory::properties() const
+GeneralProperties MPRISFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("MPRIS Plugin");
@@ -53,12 +52,9 @@ void MPRISFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *MPRISFactory::createTranslator(QObject *parent)
+QString MPRISFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/mpris_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/mpris_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(mpris, MPRISFactory)

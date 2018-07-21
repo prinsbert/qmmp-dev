@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "covermanager.h"
 #include "covermanagerfactory.h"
 
-const GeneralProperties CoverManagerFactory::properties() const
+GeneralProperties CoverManagerFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Cover Manager Plugin");
@@ -53,12 +52,9 @@ void CoverManagerFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *CoverManagerFactory::createTranslator(QObject *parent)
+QString CoverManagerFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/covermanager_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/covermanager_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(covermanager, CoverManagerFactory)

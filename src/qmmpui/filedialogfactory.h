@@ -23,7 +23,6 @@
 #include "qmmpui_export.h"
 
 class QObject;
-class QTranslator;
 class FileDialog;
 class QWidget;
 class QString;
@@ -41,12 +40,12 @@ public:
         hasAbout = false;
         modal = true;
     }
-    bool hasAbout;     /*!< Should be \b true if the file dialog plugin has about dialog,
-                        * otherwise should be \b false */
-    QString name;      /*!< File dialog plugin full name */
-    QString shortName; /*!< File dialog short name for internal usage */
-    bool modal;        /*!<  Should be \b true if the file dialog doesn't support nonmodal mode,
-                        * otherwise should be \b false */
+    bool hasAbout;        /*!< Should be \b true if the file dialog plugin has about dialog,
+                           * otherwise should be \b false */
+    QString name;         /*!< File dialog plugin full name */
+    QString shortName;    /*!< File dialog short name for internal usage */
+    bool modal;           /*!<  Should be \b true if the file dialog doesn't support nonmodal mode,
+                           * otherwise should be \b false */
 };
 /*! @brief File dialog plugin interface.
  * @author Vladimir Kuznetsov <vovanec@gmail.com>
@@ -65,17 +64,16 @@ public:
     /*!
      * Returns file dialog plugin properties.
      */
-    virtual const FileDialogProperties properties() const = 0;
+    virtual FileDialogProperties properties() const = 0;
     /*!
      * Shows about dialog.
      * @param parent Parent widget.
      */
     virtual void showAbout(QWidget *parent) = 0;
     /*!
-     * Creates QTranslator object of the system locale. Should return 0 if translation doesn't exist.
-     * @param parent Parent object.
+     * Returns translation file path without locale code and extension
      */
-    virtual QTranslator *createTranslator(QObject *parent) = 0;
+    virtual QString translation() const = 0;
 };
 
 Q_DECLARE_INTERFACE(FileDialogFactory, "FileDialogFactory/1.0")

@@ -19,7 +19,6 @@
 ***************************************************************************/
 
 #include <QtPlugin>
-#include <QTranslator>
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "twopanelfiledialogimpl.h"
@@ -62,7 +61,7 @@ FileDialog* TwoPanelFileDialogFactory::create()
     return new TwoPanelFileDialog();
 }
 
-const FileDialogProperties TwoPanelFileDialogFactory::properties() const
+FileDialogProperties TwoPanelFileDialogFactory::properties() const
 {
     FileDialogProperties properties;
     properties.name = tr("Two-panel File Dialog");
@@ -80,12 +79,9 @@ void TwoPanelFileDialogFactory::showAbout(QWidget *parent)
                         tr("Based on code from the Qt library"));
 }
 
-QTranslator *TwoPanelFileDialogFactory::createTranslator(QObject *parent)
+QString TwoPanelFileDialogFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/two_panel_file_dialog_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/two_panel_file_dialog_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(TwoPanelFileDialog, TwoPanelFileDialogFactory)

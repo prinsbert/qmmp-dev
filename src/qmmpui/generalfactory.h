@@ -23,7 +23,6 @@
 #include "qmmpui_export.h"
 
 class QObject;
-class QTranslator;
 class QDialog;
 class QString;
 class QWidget;
@@ -64,7 +63,7 @@ public:
     /*!
      * Returns general plugin properties.
      */
-    virtual const GeneralProperties properties() const = 0;
+    virtual GeneralProperties properties() const = 0;
     /*!
      * Creates object of the General class.
      */
@@ -81,10 +80,9 @@ public:
      */
     virtual void showAbout(QWidget *parent) = 0;
     /*!
-     * Creates QTranslator object of the system locale. Should return \b 0 if translation doesn't exist.
-     * @param parent Parent object.
+     * Returns translation file path without locale code and extension
      */
-    virtual QTranslator *createTranslator(QObject *parent) = 0;
+    virtual QString translation() const = 0;
 };
 
 Q_DECLARE_INTERFACE(GeneralFactory, "GeneralFactory/1.0")

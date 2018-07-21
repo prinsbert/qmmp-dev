@@ -21,7 +21,6 @@
 #include <QDialog>
 #include <QMessageBox>
 #include <QSettings>
-#include <QTranslator>
 #include <QFile>
 #include <QtPlugin>
 #include <QTextCodec>
@@ -164,7 +163,7 @@ bool DecoderMPEGFactory::canDecode(QIODevice *input) const
     return false;
 }
 
-const DecoderProperties DecoderMPEGFactory::properties() const
+DecoderProperties DecoderMPEGFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("MPEG Plugin");
@@ -403,14 +402,11 @@ void DecoderMPEGFactory::showAbout(QWidget *parent)
 
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
                         tr("Source code based on mq3 and madplay projects")
-                       );
+                        );
 }
 
-QTranslator *DecoderMPEGFactory::createTranslator(QObject *parent)
+QString DecoderMPEGFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/mpeg_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/mpeg_plugin_");
 }
 Q_EXPORT_PLUGIN2(mpeg,DecoderMPEGFactory)

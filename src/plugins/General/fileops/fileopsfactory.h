@@ -24,7 +24,6 @@
     @author Ilya Kotov <forkotov02@ya.ru>
 */
 #include <QObject>
-#include <QTranslator>
 #include <QDialog>
 
 #include <qmmpui/general.h>
@@ -35,11 +34,11 @@ class FileOpsFactory : public QObject, public GeneralFactory
 Q_OBJECT
 Q_INTERFACES(GeneralFactory)
 public:
-    const GeneralProperties properties() const;
+    GeneralProperties properties() const;
     QObject *create(QObject *parent);
     QDialog *createConfigDialog(QWidget *parent);
     void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    QString translation() const;
 };
 
 #endif

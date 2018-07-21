@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <QRegExp>
 #include <QSettings>
@@ -54,7 +53,7 @@ bool DecoderSIDFactory::canDecode(QIODevice *input) const
     return (!memcmp(buf, "RSID", 4) || !memcmp(buf, "PSID", 4));
 }
 
-const DecoderProperties DecoderSIDFactory::properties() const
+DecoderProperties DecoderSIDFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("SID Plugin");
@@ -119,11 +118,8 @@ void DecoderSIDFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderSIDFactory::createTranslator(QObject *parent)
+QString DecoderSIDFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/sid_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/sid_plugin_");
 }
 Q_EXPORT_PLUGIN2(sid,DecoderSIDFactory)

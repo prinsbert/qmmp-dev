@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <QApplication>
 #include <qmmp/qmmp.h>
@@ -35,7 +34,7 @@ OutputShoutFactory::OutputShoutFactory()
     m_connection = new ShoutClient(qApp);
 }
 
-const OutputProperties OutputShoutFactory::properties() const
+OutputProperties OutputShoutFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("Icecast Plugin");
@@ -69,12 +68,9 @@ void OutputShoutFactory::showAbout(QWidget *parent)
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *OutputShoutFactory::createTranslator(QObject *parent)
+QString OutputShoutFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/shout_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/shout_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(shout, OutputShoutFactory)

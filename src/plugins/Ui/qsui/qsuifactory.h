@@ -21,7 +21,6 @@
 #define QSUIFACTORY_H
 
 #include <QObject>
-#include <QTranslator>
 #include <qmmpui/uifactory.h>
 
 /*!
@@ -32,10 +31,10 @@ class QSUIFactory : public QObject, public UiFactory
     Q_OBJECT
     Q_INTERFACES(UiFactory)
 public:
-    const UiProperties properties() const;
+    UiProperties properties() const;
     QObject *create();
     void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    QString translation() const;
 };
 
 #endif

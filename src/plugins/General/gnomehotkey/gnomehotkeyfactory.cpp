@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "mediakeys.h"
 #include "gnomehotkeyfactory.h"
 
-const GeneralProperties GnomeHotkeyFactory::properties() const
+GeneralProperties GnomeHotkeyFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Gnome Hotkey Plugin");
@@ -55,12 +54,9 @@ void GnomeHotkeyFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *GnomeHotkeyFactory::createTranslator(QObject *parent)
+QString GnomeHotkeyFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/gnomehotkey_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/gnomehotkey_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(gnomehotkey, GnomeHotkeyFactory)

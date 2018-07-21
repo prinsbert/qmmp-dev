@@ -19,12 +19,11 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "lyrics.h"
 #include "lyricsfactory.h"
 
-const GeneralProperties LyricsFactory::properties() const
+GeneralProperties LyricsFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Lyrics Plugin");
@@ -54,12 +53,9 @@ void LyricsFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *LyricsFactory::createTranslator(QObject *parent)
+QString LyricsFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/lyrics_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/lyrics_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(lyrcis, LyricsFactory)

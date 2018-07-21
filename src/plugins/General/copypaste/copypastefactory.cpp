@@ -19,12 +19,11 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "copypaste.h"
 #include "copypastefactory.h"
 
-const GeneralProperties CopyPasteFactory::properties() const
+GeneralProperties CopyPasteFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Copy/Paste Plugin");
@@ -53,12 +52,9 @@ void CopyPasteFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *CopyPasteFactory::createTranslator(QObject *parent)
+QString CopyPasteFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/copypaste_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/copypaste_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(copypaste, CopyPasteFactory)

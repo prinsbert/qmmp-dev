@@ -19,14 +19,13 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "scrobblerhandler.h"
 #include "settingsdialog.h"
 #include "scrobblerfactory.h"
 
-const GeneralProperties ScrobblerFactory::properties() const
+GeneralProperties ScrobblerFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Scrobbler Plugin");
@@ -54,12 +53,9 @@ void ScrobblerFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *ScrobblerFactory::createTranslator(QObject *parent)
+QString ScrobblerFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/scrobbler_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/scrobbler_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(scrobbler, ScrobblerFactory)

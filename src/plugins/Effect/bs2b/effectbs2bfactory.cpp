@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <bs2b/bs2bversion.h>
 #include <qmmp/qmmp.h>
@@ -61,12 +60,9 @@ void EffectBs2bFactory::showAbout(QWidget *parent)
                         tr("Sebastian Pipping <sebastian@pipping.org>")+"</p>");
 }
 
-QTranslator *EffectBs2bFactory::createTranslator(QObject *parent)
+QString EffectBs2bFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/bs2b_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/bs2b_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(bs2b,EffectBs2bFactory)

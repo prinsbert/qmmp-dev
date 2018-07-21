@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "outputwaveout.h"
 #include "outputwaveoutfactory.h"
 
 
-const OutputProperties OutputWaveOutFactory::properties() const
+OutputProperties OutputWaveOutFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("WaveOut Plugin");
@@ -65,12 +64,9 @@ void OutputWaveOutFactory::showAbout(QWidget *parent)
                         tr("Based on aacDECdrop player"));
 }
 
-QTranslator *OutputWaveOutFactory::createTranslator(QObject *parent)
+QString OutputWaveOutFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/waveout_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/waveout_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(waveout,OutputWaveOutFactory)

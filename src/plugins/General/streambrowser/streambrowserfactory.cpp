@@ -19,12 +19,11 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "streambrowser.h"
 #include "streambrowserfactory.h"
 
-const GeneralProperties StreamBrowserFactory::properties() const
+GeneralProperties StreamBrowserFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Stream Browser Plugin");
@@ -54,12 +53,9 @@ void StreamBrowserFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *StreamBrowserFactory::createTranslator(QObject *parent)
+QString StreamBrowserFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/streambrowser_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/streambrowser_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(streambrowser, StreamBrowserFactory)

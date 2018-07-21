@@ -19,12 +19,11 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "converterhelper.h"
 #include "converterfactory.h"
 
-const GeneralProperties ConverterFactory::properties() const
+GeneralProperties ConverterFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Converter Plugin");
@@ -55,12 +54,9 @@ void ConverterFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *ConverterFactory::createTranslator(QObject *parent)
+QString ConverterFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/converter_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/converter_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(converter, ConverterFactory)

@@ -19,14 +19,13 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "outputnull.h"
 #include "outputnullfactory.h"
 
 
-const OutputProperties OutputNullFactory::properties() const
+OutputProperties OutputNullFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("Null Plugin");
@@ -55,15 +54,12 @@ void OutputNullFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About Null Output Plugin"),
                         tr("Qmmp Null Output Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *OutputNullFactory::createTranslator(QObject *parent)
+QString OutputNullFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/null_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/null_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(null, OutputNullFactory)

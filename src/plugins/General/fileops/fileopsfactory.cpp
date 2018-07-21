@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "fileops.h"
 #include "settingsdialog.h"
 #include "fileopsfactory.h"
 
-const GeneralProperties FileOpsFactory::properties() const
+GeneralProperties FileOpsFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("File Operations Plugin");
@@ -53,12 +52,9 @@ void FileOpsFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *FileOpsFactory::createTranslator(QObject *parent)
+QString FileOpsFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/fileops_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/fileops_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(fileops, FileOpsFactory)

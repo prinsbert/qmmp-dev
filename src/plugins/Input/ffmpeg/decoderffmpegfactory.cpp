@@ -20,7 +20,6 @@
 
 #include <QSettings>
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 
 extern "C"{
@@ -87,7 +86,7 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
     return false;
 }
 
-const DecoderProperties DecoderFFmpegFactory::properties() const
+DecoderProperties DecoderFFmpegFactory::properties() const
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QStringList filters;
@@ -300,12 +299,9 @@ void DecoderFFmpegFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderFFmpegFactory::createTranslator(QObject *parent)
+QString DecoderFFmpegFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/ffmpeg_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/ffmpeg_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(ffmpeg,DecoderFFmpegFactory)

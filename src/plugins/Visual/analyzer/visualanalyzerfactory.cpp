@@ -19,14 +19,13 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 #include "visualanalyzerfactory.h"
 #include "analyzer.h"
 
-const VisualProperties VisualAnalyzerFactory::properties() const
+VisualProperties VisualAnalyzerFactory::properties() const
 {
     VisualProperties properties;
     properties.name = tr("Analyzer Plugin");
@@ -53,12 +52,9 @@ void VisualAnalyzerFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *VisualAnalyzerFactory::createTranslator(QObject *parent)
+QString VisualAnalyzerFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/analyzer_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/analyzer_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(analyzer,VisualAnalyzerFactory)

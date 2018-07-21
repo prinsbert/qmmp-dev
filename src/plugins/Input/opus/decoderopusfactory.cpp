@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
@@ -38,7 +37,7 @@ bool DecoderOpusFactory::canDecode(QIODevice *input) const
     return false;
 }
 
-const DecoderProperties DecoderOpusFactory::properties() const
+DecoderProperties DecoderOpusFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Opus Plugin");
@@ -121,12 +120,9 @@ void DecoderOpusFactory::showAbout(QWidget *parent)
                         tr("This plugin includes code from TagLib library"));
 }
 
-QTranslator *DecoderOpusFactory::createTranslator(QObject *parent)
+QString DecoderOpusFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/opus_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/opus_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(opus,DecoderOpusFactory)

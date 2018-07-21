@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "effectcrossfadefactory.h"
@@ -52,15 +51,12 @@ void EffectCrossfadeFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About Crossfade Plugin"),
                        tr("Qmmp Crossfade Plugin")+"\n"+
-                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *EffectCrossfadeFactory::createTranslator(QObject *parent)
+QString EffectCrossfadeFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/crossfade_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/crossfade_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(crossfade,EffectCrossfadeFactory)

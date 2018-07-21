@@ -57,9 +57,9 @@ class TwoPanelFileDialogFactory : public QObject, public FileDialogFactory
     Q_INTERFACES(FileDialogFactory)
 public:
     FileDialog* create();
-    const FileDialogProperties properties() const;
+    FileDialogProperties properties() const;
     void showAbout(QWidget*);
-    QTranslator *createTranslator(QObject *parent);
+    QString translation() const;
 };
 
 

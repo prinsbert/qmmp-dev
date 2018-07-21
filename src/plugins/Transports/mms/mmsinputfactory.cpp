@@ -20,21 +20,20 @@
 
 #include <QtPlugin>
 #include <QMessageBox>
-#include <QTranslator>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 #include "mmsinputsource.h"
 #include "mmsinputfactory.h"
 
-const InputSourceProperties MMSInputFactory::properties() const
+InputSourceProperties MMSInputFactory::properties() const
 {
-    InputSourceProperties p;
-    p.protocols << "mms" << "mmsh" << "mmst" << "mmsu";
-    p.name = tr("MMS Plugin");
-    p.shortName = "mms";
-    p.hasAbout = true;
-    p.hasSettings = true;
-    return p;
+    InputSourceProperties properties;
+    properties.protocols << "mms" << "mmsh" << "mmst" << "mmsu";
+    properties.name = tr("MMS Plugin");
+    properties.shortName = "mms";
+    properties.hasAbout = true;
+    properties.hasSettings = true;
+    return properties;
 }
 
 InputSource *MMSInputFactory::create(const QString &url, QObject *parent)
@@ -55,11 +54,8 @@ void MMSInputFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *MMSInputFactory::createTranslator(QObject *parent)
+QString MMSInputFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/mms_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/mms_plugin_");
 }
 Q_EXPORT_PLUGIN2(mms, MMSInputFactory)

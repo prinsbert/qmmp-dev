@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
@@ -32,7 +31,7 @@ Output* OutputOSS4Factory::create()
     return new OutputOSS4();
 }
 
-const OutputProperties OutputOSS4Factory::properties() const
+OutputProperties OutputOSS4Factory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("OSS4 Plugin");
@@ -60,12 +59,9 @@ void OutputOSS4Factory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *OutputOSS4Factory::createTranslator(QObject *parent)
+QString OutputOSS4Factory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/oss4_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/oss4_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(oss4,OutputOSS4Factory)

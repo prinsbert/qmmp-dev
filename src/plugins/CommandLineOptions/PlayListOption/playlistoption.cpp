@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QtPlugin>
-#include <QTranslator>
 #include <QLocale>
 #include <qmmp/soundcore.h>
 #include <qmmpui/playlistmanager.h>
@@ -28,6 +27,14 @@
 #include <qmmpui/qmmpuisettings.h>
 #include <qmmpui/commandlinemanager.h>
 #include "playlistoption.h"
+
+CommandLineProperties PlayListOption::properties() const
+{
+    CommandLineProperties properties;
+    properties.shortName = "PlayListOption";
+    properties.helpString << QString("--pl-help") + "||" + tr("Show playlist manipulation commands");
+    return properties;
+}
 
 bool PlayListOption::identify(const QString & str) const
 {
@@ -39,12 +46,6 @@ bool PlayListOption::identify(const QString & str) const
             str == QString("--pl-repeat-toggle") ||
             str == QString("--pl-shuffle-toggle") ||
             str == QString("--pl-state");
-}
-
-const QStringList PlayListOption::helpString() const
-{
-    return QStringList()
-            << QString("--pl-help") + "||" + tr("Show playlist manipulation commands");
 }
 
 QString PlayListOption::executeCommand(const QString& opt_str, const QStringList &args)
@@ -144,17 +145,9 @@ QString PlayListOption::executeCommand(const QString& opt_str, const QStringList
     return out;
 }
 
-const QString PlayListOption::name() const
+QString PlayListOption::translation() const
 {
-    return "PlayListOption";
-}
-
-QTranslator *PlayListOption::createTranslator(QObject *parent)
-{
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/playlist_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/playlist_plugin_");
 }
 
 QString PlayListOption::boolToText(bool enabled)

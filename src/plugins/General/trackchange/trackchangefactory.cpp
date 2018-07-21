@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "trackchange.h"
 #include "settingsdialog.h"
 #include "trackchangefactory.h"
 
-const GeneralProperties TrackChangeFactory::properties() const
+GeneralProperties TrackChangeFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Track Change Plugin");
@@ -54,12 +53,9 @@ void TrackChangeFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *TrackChangeFactory::createTranslator(QObject *parent)
+QString TrackChangeFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/trackchange_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/trackchange_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(trackchange, TrackChangeFactory)

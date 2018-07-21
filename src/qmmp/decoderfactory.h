@@ -24,7 +24,6 @@
 #include <QObject>
 #include <QString>
 #include <QIODevice>
-#include <QTranslator>
 #include <QStringList>
 #include "qmmp_export.h"
 #include "decoder.h"
@@ -74,9 +73,9 @@ public:
      */
     virtual bool canDecode(QIODevice *d) const = 0;
     /*!
-     * Returns general plugin properties.
+     * Returns decoder plugin properties.
      */
-    virtual const DecoderProperties properties() const = 0;
+    virtual DecoderProperties properties() const = 0;
     /*!
      * Creates decoder object.
      * @param path File path
@@ -110,10 +109,10 @@ public:
      */
     virtual void showAbout(QWidget *parent) = 0;
     /*!
-     * Creates QTranslator object of the system locale. Should return 0 if translation doesn't exist.
-     * @param parent Parent object.
+     * Returns translation file path without locale code and extension
      */
-    virtual QTranslator *createTranslator(QObject *parent) = 0;
+    virtual QString translation() const = 0;
+
 };
 
 Q_DECLARE_INTERFACE(DecoderFactory, "DecoderFactory/1.0")

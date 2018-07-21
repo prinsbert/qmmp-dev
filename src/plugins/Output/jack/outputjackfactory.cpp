@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QSettings>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
@@ -27,7 +26,7 @@
 #include "outputjackfactory.h"
 
 
-const OutputProperties OutputJACKFactory::properties() const
+OutputProperties OutputJACKFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("JACK Plugin");
@@ -58,12 +57,9 @@ void OutputJACKFactory::showAbout(QWidget *parent)
                         tr("Written by: Yuriy Zhuravlev <slalkerg@gmail.com>"));
 }
 
-QTranslator *OutputJACKFactory::createTranslator(QObject *parent)
+QString OutputJACKFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/jack_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/jack_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(jack,OutputJACKFactory)

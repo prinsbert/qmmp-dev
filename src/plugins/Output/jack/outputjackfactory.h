@@ -36,13 +36,12 @@ Q_OBJECT
 Q_INTERFACES(OutputFactory)
 
 public:
-    const OutputProperties properties() const;
+    OutputProperties properties() const;
     Output* create();
     Volume *createVolume();
     void showSettings(QWidget* parent);
     void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
-
+    QString translation() const;
 };
 
 #endif

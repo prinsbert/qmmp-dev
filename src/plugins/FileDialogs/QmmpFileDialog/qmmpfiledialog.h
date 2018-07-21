@@ -50,9 +50,9 @@ class QmmpFileDialogFactory : public QObject, public FileDialogFactory
     Q_INTERFACES(FileDialogFactory)
 public:
     virtual FileDialog* create();
-    virtual const FileDialogProperties properties() const;
+    virtual FileDialogProperties properties() const;
     virtual void showAbout(QWidget*);
-    virtual QTranslator *createTranslator(QObject *parent);
+    virtual QString translation() const;
     virtual ~QmmpFileDialogFactory()
     {
         ;

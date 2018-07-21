@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include <qmmpui/general.h>
@@ -27,7 +26,7 @@
 #include "hotkeymanager.h"
 #include "hotkeyfactory.h"
 
-const GeneralProperties HotkeyFactory::properties() const
+GeneralProperties HotkeyFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Global Hotkey Plugin");
@@ -62,12 +61,9 @@ void HotkeyFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *HotkeyFactory::createTranslator(QObject *parent)
+QString HotkeyFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/hotkey_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/hotkey_plugin_");
 }
 
 void HotkeyFactory::restore()

@@ -20,7 +20,6 @@
 
 #include <QFile>
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "aacfile.h"
 #include "aacmetadatamodel.h"
@@ -36,7 +35,7 @@ bool DecoderAACFactory::canDecode(QIODevice *input) const
     return aac_file.isValid();
 }
 
-const DecoderProperties DecoderAACFactory::properties() const
+DecoderProperties DecoderAACFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("AAC Plugin");
@@ -106,12 +105,9 @@ void DecoderAACFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderAACFactory::createTranslator(QObject *parent)
+QString DecoderAACFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/aac_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/aac_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(aac,DecoderAACFactory)

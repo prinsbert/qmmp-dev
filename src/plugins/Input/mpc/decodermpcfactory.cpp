@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
@@ -50,7 +49,7 @@ bool DecoderMPCFactory::canDecode(QIODevice *input) const
     return false;
 }
 
-const DecoderProperties DecoderMPCFactory::properties() const
+DecoderProperties DecoderMPCFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Musepack Plugin");
@@ -131,12 +130,9 @@ void DecoderMPCFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderMPCFactory::createTranslator(QObject *parent)
+QString DecoderMPCFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/mpc_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/mpc_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(mpc,DecoderMPCFactory)

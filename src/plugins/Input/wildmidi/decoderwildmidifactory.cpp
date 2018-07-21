@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "wildmidihelper.h"
 #include "decoder_wildmidi.h"
@@ -45,7 +44,7 @@ bool DecoderWildMidiFactory::canDecode(QIODevice *input) const
 #endif
 }
 
-const DecoderProperties DecoderWildMidiFactory::properties() const
+DecoderProperties DecoderWildMidiFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("WildMidi Plugin");
@@ -111,11 +110,8 @@ void DecoderWildMidiFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderWildMidiFactory::createTranslator(QObject *parent)
+QString DecoderWildMidiFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/wildmidi_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/wildmidi_plugin_");
 }
 Q_EXPORT_PLUGIN2(wildmidi,DecoderWildMidiFactory)

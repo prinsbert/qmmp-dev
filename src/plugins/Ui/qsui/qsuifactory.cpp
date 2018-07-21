@@ -25,7 +25,7 @@
 #include "aboutqsuidialog.h"
 #include "qsuifactory.h"
 
-const UiProperties QSUIFactory::properties() const
+UiProperties QSUIFactory::properties() const
 {
     UiProperties props;
     props.hasAbout = true;
@@ -46,12 +46,9 @@ void QSUIFactory::showAbout(QWidget *parent)
     about.exec();
 }
 
-QTranslator *QSUIFactory::createTranslator(QObject *parent)
+QString QSUIFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/qsui_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/qsui_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(qsui, QSUIFactory)

@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
@@ -58,12 +57,9 @@ void EffectLADSPAFactory::showAbout(QWidget *parent)
                         tr("Giacomo Lozito <city_hunter@users.sf.net>"));
 }
 
-QTranslator *EffectLADSPAFactory::createTranslator(QObject *parent)
+QString EffectLADSPAFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/ladspa_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/ladspa_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(ladspa,EffectLADSPAFactory)

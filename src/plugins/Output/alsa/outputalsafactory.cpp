@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
@@ -27,7 +26,7 @@
 #include "outputalsafactory.h"
 
 
-const OutputProperties OutputALSAFactory::properties() const
+OutputProperties OutputALSAFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("ALSA Plugin");
@@ -55,17 +54,14 @@ void OutputALSAFactory::showSettings(QWidget* parent)
 
 void OutputALSAFactory::showAbout(QWidget *parent)
 {
-   QMessageBox::about (parent, tr("About ALSA Output Plugin"),
+    QMessageBox::about (parent, tr("About ALSA Output Plugin"),
                         tr("Qmmp ALSA Output Plugin")+"\n"+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *OutputALSAFactory::createTranslator(QObject *parent)
+QString OutputALSAFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/alsa_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/alsa_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(alsa,OutputALSAFactory)

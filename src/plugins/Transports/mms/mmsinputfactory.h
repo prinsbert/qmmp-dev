@@ -25,8 +25,6 @@
 #include <QStringList>
 #include <qmmp/inputsourcefactory.h>
 
-class QTranslator;
-
 /*!
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
@@ -35,11 +33,11 @@ class MMSInputFactory : public QObject, InputSourceFactory
 Q_OBJECT
 Q_INTERFACES(InputSourceFactory)
 public:
-    const InputSourceProperties properties() const;
+    InputSourceProperties properties() const;
     InputSource *create(const QString &url, QObject *parent = 0);
     void showSettings(QWidget *parent);
     void showAbout(QWidget *parent);
-    QTranslator *createTranslator(QObject *parent);
+    QString translation() const;
 };
 
 #endif // MMSINPUTFACTORY_H

@@ -18,9 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QRegExp>
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "settingsdialog.h"
 #include "gmehelper.h"
@@ -34,7 +32,7 @@ bool DecoderGmeFactory::canDecode(QIODevice *) const
     return false;
 }
 
-const DecoderProperties DecoderGmeFactory::properties() const
+DecoderProperties DecoderGmeFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("GME Plugin");
@@ -108,11 +106,8 @@ void DecoderGmeFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderGmeFactory::createTranslator(QObject *parent)
+QString DecoderGmeFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/gme_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/gme_plugin_");
 }
 Q_EXPORT_PLUGIN2(gme,DecoderGmeFactory)

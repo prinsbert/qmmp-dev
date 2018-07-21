@@ -24,7 +24,7 @@
 #include "mainwindow.h"
 #include "skinnedfactory.h"
 
-const UiProperties SkinnedFactory::properties() const
+UiProperties SkinnedFactory::properties() const
 {
     UiProperties props;
     props.hasAbout = true;
@@ -53,12 +53,9 @@ void SkinnedFactory::showAbout(QWidget *parent)
 
 }
 
-QTranslator *SkinnedFactory::createTranslator(QObject *parent)
+QString SkinnedFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/skinned_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/skinned_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(skinned, SkinnedFactory)

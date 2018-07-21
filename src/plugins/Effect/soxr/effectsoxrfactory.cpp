@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
@@ -52,15 +51,12 @@ void EffectSoXRFactory::showAbout(QWidget *parent)
 {
      QMessageBox::about (parent, tr("About SoX Resampler Plugin"),
                         tr("Qmmp SoX Resampler Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *EffectSoXRFactory::createTranslator(QObject *parent)
+QString EffectSoXRFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/soxr_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/soxr_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(soxr, EffectSoXRFactory)

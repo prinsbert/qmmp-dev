@@ -19,12 +19,11 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "rgscanhelper.h"
 #include "rgscanfactory.h"
 
-const GeneralProperties RGScanFactory::properties() const
+GeneralProperties RGScanFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("ReplayGain Scanner Plugin");
@@ -59,12 +58,9 @@ void RGScanFactory::showAbout(QWidget *parent)
 
 }
 
-QTranslator *RGScanFactory::createTranslator(QObject *parent)
+QString RGScanFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/rgscan_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/rgscan_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(rgscan, RGScanFactory)

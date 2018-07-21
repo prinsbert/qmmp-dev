@@ -20,7 +20,6 @@
 
 #include <QRegExp>
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <archive.h>
 #include <archive_entry.h>
@@ -36,7 +35,7 @@ bool DecoderArchiveFactory::canDecode(QIODevice *) const
     return false;
 }
 
-const DecoderProperties DecoderArchiveFactory::properties() const
+DecoderProperties DecoderArchiveFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Archive Plugin");
@@ -154,12 +153,9 @@ void DecoderArchiveFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderArchiveFactory::createTranslator(QObject *parent)
+QString DecoderArchiveFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/archive_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/archive_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(archive, DecoderArchiveFactory)

@@ -28,7 +28,7 @@ FileDialog* QtFileDialogFactory::create()
     return new QtFileDialog();
 }
 
-const FileDialogProperties QtFileDialogFactory::properties() const
+FileDialogProperties QtFileDialogFactory::properties() const
 {
     FileDialogProperties properties;
     properties.name = tr("Qt File Dialog");
@@ -40,10 +40,9 @@ const FileDialogProperties QtFileDialogFactory::properties() const
 
 void QtFileDialogFactory::showAbout(QWidget*){}
 
-QTranslator *QtFileDialogFactory::createTranslator(QObject *parent)
+QString QtFileDialogFactory::translation() const
 {
-    Q_UNUSED(parent)
-    return 0;
+    return QString();
 }
 
 QtFileDialog::~QtFileDialog()

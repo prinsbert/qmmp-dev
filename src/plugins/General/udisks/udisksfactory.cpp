@@ -19,14 +19,13 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 #include "udisksplugin.h"
 #include "udisksfactory.h"
 
-const GeneralProperties UDisksFactory::properties() const
+GeneralProperties UDisksFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("UDisks Plugin");
@@ -55,12 +54,9 @@ void UDisksFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *UDisksFactory::createTranslator(QObject *parent)
+QString UDisksFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/udisks_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/udisks_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(udisks, UDisksFactory)

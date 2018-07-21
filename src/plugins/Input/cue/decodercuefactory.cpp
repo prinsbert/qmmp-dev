@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "decoder_cue.h"
 #include "cuemetadatamodel.h"
@@ -35,7 +34,7 @@ bool DecoderCUEFactory::canDecode(QIODevice *) const
     return false;
 }
 
-const DecoderProperties DecoderCUEFactory::properties() const
+DecoderProperties DecoderCUEFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("CUE Plugin");
@@ -95,12 +94,9 @@ void DecoderCUEFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderCUEFactory::createTranslator(QObject *parent)
+QString DecoderCUEFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/cue_plugin_") + locale);
-    return translator;
+    return  QLatin1String(":/cue_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(cue,DecoderCUEFactory)

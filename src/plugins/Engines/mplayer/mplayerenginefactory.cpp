@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "mplayermetadatamodel.h"
 #include "settingsdialog.h"
@@ -29,7 +28,7 @@
 
 // MplayerEngineFactory
 
-const EngineProperties MplayerEngineFactory::properties() const
+EngineProperties MplayerEngineFactory::properties() const
 {
     EngineProperties properties;
     properties.name = tr("Mplayer Plugin");
@@ -87,12 +86,9 @@ void MplayerEngineFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *MplayerEngineFactory::createTranslator(QObject *parent)
+QString MplayerEngineFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/mplayer_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/mplayer_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(mplayer,MplayerEngineFactory)

@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "statusicon.h"
 #include "settingsdialog.h"
 #include "statusiconfactory.h"
 
-const GeneralProperties StatusIconFactory::properties() const
+GeneralProperties StatusIconFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Status Icon Plugin");
@@ -55,12 +54,9 @@ void StatusIconFactory::showAbout(QWidget *parent)
                         tr("Artur Guzik <a.guzik88@gmail.com>"));
 }
 
-QTranslator *StatusIconFactory::createTranslator(QObject *parent)
+QString StatusIconFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/statusicon_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/statusicon_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(statusicon, StatusIconFactory)

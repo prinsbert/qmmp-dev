@@ -24,7 +24,6 @@
 #include <QObject>
 #include "qmmp_export.h"
 
-class QTranslator;
 class QStringList;
 class InputSource;
 
@@ -60,7 +59,7 @@ public:
     /*!
      * Returns transport plugin properties.
      */
-    virtual const InputSourceProperties properties() const = 0;
+    virtual InputSourceProperties properties() const = 0;
     /*!
      * Creates transport provided by plugin.
      * @param url URL of the stream.
@@ -78,10 +77,9 @@ public:
      */
     virtual void showAbout(QWidget *parent) = 0;
     /*!
-     * Creates QTranslator object of the system locale. Should return 0 if translation doesn't exist.
-     * @param parent Parent object.
+     * Returns translation file path without locale code and extension
      */
-    virtual QTranslator *createTranslator(QObject *parent) = 0;
+    virtual QString translation() const = 0;
 };
 
 Q_DECLARE_INTERFACE(InputSourceFactory, "InputSourceFactory/1.0")

@@ -19,24 +19,25 @@
  ***************************************************************************/
 
 #include <QtPlugin>
-#include <QTranslator>
 #include <QLocale>
 #include <QApplication>
 #include <qmmpui/winfileassoc.h>
 #include <qmmp/metadatamanager.h>
 #include "uninstalloption.h"
 
+CommandLineProperties UninstallOption::properties() const
+{
+    CommandLineProperties properties;
+    properties.shortName = "UninstallOption";
+    properties.helpString <<QString("--uninstall") + "||" + tr("Restore the old file associations and clean up the registry");
+    return properties;
+}
+
 bool UninstallOption::identify(const QString &str) const
 {
     QStringList opts;
     opts << "--uninstall";
     return opts.contains(str);
-}
-
-const QStringList UninstallOption::helpString() const
-{
-    return QStringList()
-            << QString("--uninstall") + "||" + tr("Restore the old file associations and clean up the registry");
 }
 
 QString UninstallOption::executeCommand(const QString &opt_str, const QStringList &args)
@@ -59,17 +60,9 @@ QString UninstallOption::executeCommand(const QString &opt_str, const QStringLis
     return QString();
 }
 
-const QString UninstallOption::name() const
+QString UninstallOption::translation() const
 {
-    return "UninstallOption";
-}
-
-QTranslator *UninstallOption::createTranslator(QObject *parent)
-{
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/uninstall_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/uninstall_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(uninstalloption, UninstallOption)

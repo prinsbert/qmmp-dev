@@ -27,7 +27,6 @@
 #include <qmmpui/commandlineoption.h>
 #include <qmmpui/commandlinemanager.h>
 
-
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
@@ -36,11 +35,10 @@ class StatusOption : public QObject, public CommandLineOption
 Q_OBJECT
 Q_INTERFACES(CommandLineOption)
 public:
+    virtual CommandLineProperties properties() const;
     virtual bool identify(const QString& opt_str) const;
-    virtual const QString name() const;
-    virtual const QStringList helpString() const;
     virtual QString executeCommand(const QString& opt_str, const QStringList &args);
-    virtual QTranslator *createTranslator(QObject *parent);
+    virtual QString translation() const;
 
 private:
     QString genProgressBar();

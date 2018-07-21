@@ -19,14 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "kdenotifyfactory.h"
 #include "kdenotify.h"
 #include "settingsdialog.h"
 
-
-const GeneralProperties KdeNotifyFactory::properties() const
+GeneralProperties KdeNotifyFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("KDE notification plugin");
@@ -51,15 +49,12 @@ void KdeNotifyFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About KDE Notification Plugin"),
                         tr("KDE notification plugin for Qmmp") + "<br>"
-                        "Artur Guzik <a.guzik88@gmail.com>");
+                                                                 "Artur Guzik <a.guzik88@gmail.com>");
 }
 
-QTranslator *KdeNotifyFactory::createTranslator(QObject *parent)
+QString KdeNotifyFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/kdenotify_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/kdenotify_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(kdenotify, KdeNotifyFactory)

@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
@@ -50,7 +49,7 @@ bool DecoderFLACFactory::canDecode(QIODevice *input) const
     return false;
 }
 
-const DecoderProperties DecoderFLACFactory::properties() const
+DecoderProperties DecoderFLACFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("FLAC Plugin");
@@ -232,12 +231,9 @@ void DecoderFLACFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *DecoderFLACFactory::createTranslator(QObject *parent)
+QString DecoderFLACFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/flac_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/flac_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(flac,DecoderFLACFactory)

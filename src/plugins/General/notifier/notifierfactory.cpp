@@ -1,5 +1,9 @@
 /***************************************************************************
+<<<<<<< .working
  *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+=======
+ *   Copyright (C) 2008-2018 by Ilya Kotov                                 *
+>>>>>>> .merge-right.r8203
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,13 +23,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include "notifier.h"
 #include "settingsdialog.h"
 #include "notifierfactory.h"
 
-const GeneralProperties NotifierFactory::properties() const
+GeneralProperties NotifierFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Notifier Plugin");
@@ -53,12 +56,9 @@ void NotifierFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *NotifierFactory::createTranslator(QObject *parent)
+QString NotifierFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/notifier_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/notifier_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(notifier,NotifierFactory)

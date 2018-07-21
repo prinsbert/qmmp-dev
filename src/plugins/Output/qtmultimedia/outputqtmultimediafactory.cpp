@@ -22,13 +22,12 @@
 #include "outputqtmultimediafactory.h"
 #include "settingsdialog.h"
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "outputqtmultimedia.h"
 
 
-const OutputProperties OutputQtMultimediaFactory::properties() const
+OutputProperties OutputQtMultimediaFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("Qt Multimedia Plugin");
@@ -58,15 +57,12 @@ void OutputQtMultimediaFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About Qt Multimedia Output Plugin"),
                         tr("Qmmp Qt Multimedia Output Plugin")+"\n"+
-                        tr("Written by: Ivan Ponomarev <ivantrue@gmail.com>"));
+                       tr("Written by: Ivan Ponomarev <ivantrue@gmail.com>"));
 }
 
-QTranslator *OutputQtMultimediaFactory::createTranslator(QObject *parent)
+QString OutputQtMultimediaFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/qtmultimedia_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/qtmultimedia_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(qtmultimedia, OutputQtMultimediaFactory)

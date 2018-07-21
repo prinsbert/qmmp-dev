@@ -20,22 +20,21 @@
 
 #include <QtPlugin>
 #include <QMessageBox>
-#include <QTranslator>
 #include <curl/curlver.h>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 #include "httpinputsource.h"
 #include "httpinputfactory.h"
 
-const InputSourceProperties HTTPInputFactory::properties() const
+InputSourceProperties HTTPInputFactory::properties() const
 {
-    InputSourceProperties p;
-    p.protocols << "http" << "https";
-    p.name = tr("HTTP Plugin");
-    p.shortName = "http";
-    p.hasAbout = true;
-    p.hasSettings = true;
-    return p;
+    InputSourceProperties properties;
+    properties.protocols << "http" << "https";
+    properties.name = tr("HTTP Plugin");
+    properties.shortName = "http";
+    properties.hasAbout = true;
+    properties.hasSettings = true;
+    return properties;
 }
 
 InputSource *HTTPInputFactory::create(const QString &url, QObject *parent)
@@ -57,11 +56,8 @@ void HTTPInputFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *HTTPInputFactory::createTranslator(QObject *parent)
+QString HTTPInputFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/http_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/http_plugin_");
 }
 Q_EXPORT_PLUGIN2(http, HTTPInputFactory)

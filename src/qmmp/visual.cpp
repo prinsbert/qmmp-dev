@@ -27,6 +27,7 @@
 #include <QDialog>
 #include <QDir>
 #include <QPluginLoader>
+#include <QTranslator>
 #include "statehandler.h"
 #include "visualfactory.h"
 #include "visualbuffer_p.h"
@@ -261,7 +262,12 @@ void Visual::checkFactories()
             {
                 m_factories->append(factory);
                 m_files->insert(factory, filePath);
-                qApp->installTranslator(factory->createTranslator(qApp));
+                if(!factory->translation().isEmpty())
+                {
+                    QTranslator *translator = new QTranslator(qApp);
+                    translator->load(factory->translation() + Qmmp::systemLanguageID());
+                    qApp->installTranslator(translator);
+                }
             }
         }
     }

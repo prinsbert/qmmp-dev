@@ -19,13 +19,12 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include <QTranslator>
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "visualprojectmfactory.h"
 #include "projectmplugin.h"
 
-const VisualProperties VisualProjectMFactory::properties() const
+VisualProperties VisualProjectMFactory::properties() const
 {
     VisualProperties properties;
     properties.name = tr("ProjectM");
@@ -55,12 +54,9 @@ void VisualProjectMFactory::showAbout(QWidget *parent)
                         tr("Based on libprojectM-qt library"));
 }
 
-QTranslator *VisualProjectMFactory::createTranslator(QObject *parent)
+QString VisualProjectMFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/projectm_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/projectm_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(projectm,VisualProjectMFactory)
