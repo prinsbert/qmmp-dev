@@ -35,7 +35,7 @@ FFVideoFactory::FFVideoFactory()
 #endif
 }
 
-const EngineProperties FFVideoFactory::properties() const
+EngineProperties FFVideoFactory::properties() const
 {
     EngineProperties properties;
     properties.name = tr("FFmpeg Video Plugin");
@@ -152,10 +152,7 @@ void FFVideoFactory::showAbout(QWidget *parent)
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
-QTranslator *FFVideoFactory::createTranslator(QObject *parent)
+QString FFVideoFactory::translation() const
 {
-    QTranslator *translator = new QTranslator(parent);
-    QString locale = Qmmp::systemLanguageID();
-    translator->load(QString(":/ffvideo_plugin_") + locale);
-    return translator;
+    return QLatin1String(":/ffvideo_plugin_");
 }
