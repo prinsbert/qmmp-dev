@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="44"/>
+        <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
         <translation>FFap-liitännäinen</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="46"/>
+        <location filename="../decoderffapfactory.cpp" line="45"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="158"/>
+        <location filename="../decoderffapfactory.cpp" line="157"/>
         <source>About FFap Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="159"/>
+        <location filename="../decoderffapfactory.cpp" line="158"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Qmmp:n FFap-ääniliitännäinen</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="160"/>
+        <location filename="../decoderffapfactory.cpp" line="159"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="161"/>
+        <location filename="../decoderffapfactory.cpp" line="160"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Toteuttanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="162"/>
+        <location filename="../decoderffapfactory.cpp" line="161"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation type="unfinished"></translation>
     </message>

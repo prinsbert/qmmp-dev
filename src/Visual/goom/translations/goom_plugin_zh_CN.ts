@@ -47,42 +47,42 @@
 <context>
     <name>VisualGoomFactory</name>
     <message>
-        <location filename="../visualgoomfactory.cpp" line="31"/>
+        <location filename="../visualgoomfactory.cpp" line="30"/>
         <source>Goom</source>
         <translation>Goom</translation>
     </message>
     <message>
-        <location filename="../visualgoomfactory.cpp" line="50"/>
+        <location filename="../visualgoomfactory.cpp" line="49"/>
         <source>About Goom Visual Plugin</source>
         <translation>关于 Goom 可视化插件</translation>
     </message>
     <message>
-        <location filename="../visualgoomfactory.cpp" line="51"/>
+        <location filename="../visualgoomfactory.cpp" line="50"/>
         <source>Qmmp Goom Visual Plugin</source>
         <translation>Qmmp Goom 可视化插件</translation>
     </message>
     <message>
-        <location filename="../visualgoomfactory.cpp" line="52"/>
+        <location filename="../visualgoomfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../visualgoomfactory.cpp" line="53"/>
+        <location filename="../visualgoomfactory.cpp" line="52"/>
         <source>Based on the source code from the Goom project</source>
         <translation>基于 Goom 项目的源代码</translation>
     </message>
     <message>
-        <location filename="../visualgoomfactory.cpp" line="54"/>
+        <location filename="../visualgoomfactory.cpp" line="53"/>
         <source>Goom project developers:</source>
         <translation>Goom 项目开发者：</translation>
     </message>
     <message>
-        <location filename="../visualgoomfactory.cpp" line="55"/>
+        <location filename="../visualgoomfactory.cpp" line="54"/>
         <source>Jean-Christophe Hoelt &lt;jeko@ios-software.com&gt;</source>
         <translation>Jean-Christophe Hoelt &lt;jeko@ios-software.com&gt;</translation>
     </message>
     <message>
-        <location filename="../visualgoomfactory.cpp" line="56"/>
+        <location filename="../visualgoomfactory.cpp" line="55"/>
         <source>Guillaume Borios &lt;gyom@ios-software.com&gt;</source>
         <translation>Guillaume Borios &lt;gyom@ios-software.com&gt;</translation>
     </message>

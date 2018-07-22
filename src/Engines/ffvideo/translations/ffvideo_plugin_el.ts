@@ -4,32 +4,32 @@
 <context>
     <name>FFVideoFactory</name>
     <message>
-        <location filename="../ffvideofactory.cpp" line="42"/>
+        <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
         <translation>Πρόσθετο βίντεο FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="47"/>
+        <location filename="../ffvideofactory.cpp" line="46"/>
         <source>Video Files</source>
         <translation>Αρχεία βίντεο</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="141"/>
+        <location filename="../ffvideofactory.cpp" line="140"/>
         <source>About FFVideo Plugin</source>
         <translation>Περί του πρόσθετου FFVideo</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="142"/>
+        <location filename="../ffvideofactory.cpp" line="141"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Πρόσθετο βίντεο FFmpeg για το Qmmp</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="143"/>
+        <location filename="../ffvideofactory.cpp" line="142"/>
         <source>Compiled against:</source>
         <translation>Μεταγλωττίστηκε χρησιμοποιώντας:</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="153"/>
+        <location filename="../ffvideofactory.cpp" line="152"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

@@ -4,22 +4,22 @@
 <context>
     <name>EffectSRConverterFactory</name>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="31"/>
+        <location filename="../effectsrconverterfactory.cpp" line="30"/>
         <source>SRC Plugin</source>
         <translation>Πρόσθετο SRC</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="52"/>
+        <location filename="../effectsrconverterfactory.cpp" line="51"/>
         <source>About Sample Rate Converter Plugin</source>
         <translation>Σχετικά με το πρόσθετο μετατροπής ρυθμού δειγματοληψίας</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="53"/>
+        <location filename="../effectsrconverterfactory.cpp" line="52"/>
         <source>Qmmp Sample Rate Converter Plugin</source>
         <translation>Qmmp πρόσθετο μετατροπής ρυθμού δειγματοληψίας</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="54"/>
+        <location filename="../effectsrconverterfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

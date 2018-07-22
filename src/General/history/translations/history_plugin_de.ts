@@ -20,27 +20,27 @@
 <context>
     <name>HistoryFactory</name>
     <message>
-        <location filename="../historyfactory.cpp" line="32"/>
+        <location filename="../historyfactory.cpp" line="31"/>
         <source>Listening History Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historyfactory.cpp" line="52"/>
+        <location filename="../historyfactory.cpp" line="51"/>
         <source>About Listening History Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historyfactory.cpp" line="53"/>
+        <location filename="../historyfactory.cpp" line="52"/>
         <source>Qmmp Listening History Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historyfactory.cpp" line="54"/>
+        <location filename="../historyfactory.cpp" line="53"/>
         <source>This plugin collects information about listened tracks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historyfactory.cpp" line="55"/>
+        <location filename="../historyfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
