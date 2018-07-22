@@ -4,32 +4,32 @@
 <context>
     <name>FFVideoFactory</name>
     <message>
-        <location filename="../ffvideofactory.cpp" line="42"/>
+        <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
         <translation>Suplemento FFmpeg Video</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="47"/>
+        <location filename="../ffvideofactory.cpp" line="46"/>
         <source>Video Files</source>
         <translation>Ficheiros de vídeo</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="141"/>
+        <location filename="../ffvideofactory.cpp" line="140"/>
         <source>About FFVideo Plugin</source>
         <translation>Sobre o suplemento FFVideo</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="142"/>
+        <location filename="../ffvideofactory.cpp" line="141"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Suplemento FFmpeg Video para o Qmmp</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="143"/>
+        <location filename="../ffvideofactory.cpp" line="142"/>
         <source>Compiled against:</source>
         <translation>Compilado com:</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="153"/>
+        <location filename="../ffvideofactory.cpp" line="152"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
