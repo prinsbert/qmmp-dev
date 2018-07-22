@@ -4,27 +4,27 @@
 <context>
     <name>DecoderFLACFactory</name>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="56"/>
+        <location filename="../decoderflacfactory.cpp" line="55"/>
         <source>FLAC Plugin</source>
         <translation>FLAC プラグイン</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="58"/>
+        <location filename="../decoderflacfactory.cpp" line="57"/>
         <source>FLAC Files</source>
         <translation>FLAC ファイル</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="230"/>
+        <location filename="../decoderflacfactory.cpp" line="229"/>
         <source>About FLAC Audio Plugin</source>
         <translation>FLAC 音響プラグインについて</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="231"/>
+        <location filename="../decoderflacfactory.cpp" line="230"/>
         <source>Qmmp FLAC Audio Plugin</source>
         <translation>QMMP FLAC 音響プラグイン</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="232"/>
+        <location filename="../decoderflacfactory.cpp" line="231"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>

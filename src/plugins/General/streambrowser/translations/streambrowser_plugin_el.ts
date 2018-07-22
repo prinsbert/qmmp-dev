@@ -17,27 +17,27 @@
 <context>
     <name>StreamBrowserFactory</name>
     <message>
-        <location filename="../streambrowserfactory.cpp" line="30"/>
+        <location filename="../streambrowserfactory.cpp" line="29"/>
         <source>Stream Browser Plugin</source>
         <translation>Πρόσθετο περιηγητή ροών</translation>
     </message>
     <message>
-        <location filename="../streambrowserfactory.cpp" line="51"/>
+        <location filename="../streambrowserfactory.cpp" line="50"/>
         <source>About Stream Browser Plugin</source>
         <translation>Σχετικά με το πρόσθετο περιηγητή ροών</translation>
     </message>
     <message>
-        <location filename="../streambrowserfactory.cpp" line="52"/>
+        <location filename="../streambrowserfactory.cpp" line="51"/>
         <source>Qmmp Stream Browser Plugin</source>
         <translation>Qmmp πρόσθετο περιηγητή ροών</translation>
     </message>
     <message>
-        <location filename="../streambrowserfactory.cpp" line="53"/>
+        <location filename="../streambrowserfactory.cpp" line="52"/>
         <source>This plugin allows one to add stream from IceCast stream directory</source>
         <translation>Αυτό το πρόσθετο επιτρέπει την προσθήκη μιας ροής από τον κατάλογο ροών του IceCast</translation>
     </message>
     <message>
-        <location filename="../streambrowserfactory.cpp" line="54"/>
+        <location filename="../streambrowserfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

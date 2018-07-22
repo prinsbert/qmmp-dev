@@ -47,32 +47,32 @@
 <context>
     <name>DecoderArchiveFactory</name>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="42"/>
+        <location filename="../decoderarchivefactory.cpp" line="41"/>
         <source>Archive Plugin</source>
         <translation>Plugin Archive</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="44"/>
+        <location filename="../decoderarchivefactory.cpp" line="43"/>
         <source>Archives</source>
         <translation>Arquivos</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="151"/>
+        <location filename="../decoderarchivefactory.cpp" line="150"/>
         <source>About Archive Reader Plugin</source>
         <translation>Sobre o plugin Archive Reader</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="152"/>
+        <location filename="../decoderarchivefactory.cpp" line="151"/>
         <source>Qmmp Archive Reader Plugin</source>
         <translation>Plugin Qmmp Archive Reader</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="153"/>
+        <location filename="../decoderarchivefactory.cpp" line="152"/>
         <source>Compiled against %1</source>
         <translation>Compilado com %1</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="154"/>
+        <location filename="../decoderarchivefactory.cpp" line="153"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

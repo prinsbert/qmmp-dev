@@ -60,18 +60,18 @@
 <context>
     <name>QmmpFileDialogFactory</name>
     <message>
-        <location filename="../qmmpfiledialog.cpp" line="69"/>
-        <location filename="../qmmpfiledialog.cpp" line="79"/>
+        <location filename="../qmmpfiledialog.cpp" line="68"/>
+        <location filename="../qmmpfiledialog.cpp" line="78"/>
         <source>Qmmp File Dialog</source>
         <translation>QMMP ファイルダイアログ</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.cpp" line="78"/>
+        <location filename="../qmmpfiledialog.cpp" line="77"/>
         <source>About Qmmp File Dialog</source>
         <translation>QMMP ファイルダイアログについて</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.cpp" line="80"/>
+        <location filename="../qmmpfiledialog.cpp" line="79"/>
         <source>Written by:
 Vladimir Kuznetsov &lt;vovanec@gmail.com&gt;
 Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
@@ -80,7 +80,7 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
 Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialog.cpp" line="83"/>
+        <location filename="../qmmpfiledialog.cpp" line="82"/>
         <source>Some code is copied from the Qt library</source>
         <translation>コードの一部に Qt ライブラリのソースを流用しています</translation>
     </message>
