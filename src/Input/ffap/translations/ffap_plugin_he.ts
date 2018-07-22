@@ -4,37 +4,37 @@
 <context>
     <name>DecoderFFapFactory</name>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="47"/>
+        <location filename="../decoderffapfactory.cpp" line="46"/>
         <source>FFap Plugin</source>
         <translation>תוסף FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="49"/>
+        <location filename="../decoderffapfactory.cpp" line="48"/>
         <source>Monkey&apos;s Audio Files</source>
         <translation>קבצי Monkey&apos;s Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="165"/>
+        <location filename="../decoderffapfactory.cpp" line="164"/>
         <source>About FFap Audio Plugin</source>
         <translation>אודות תוסף שמע FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="166"/>
+        <location filename="../decoderffapfactory.cpp" line="165"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>תוסף שמע FFap של Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="167"/>
+        <location filename="../decoderffapfactory.cpp" line="166"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>תוסף זה מספק תמיכה לקבצי Monkey&apos;s Audio ‏(APE)</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="168"/>
+        <location filename="../decoderffapfactory.cpp" line="167"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="169"/>
+        <location filename="../decoderffapfactory.cpp" line="168"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>מבוסס על קוד מתוך deadbeef, FFmpeg וגם rockbox</translation>
     </message>
