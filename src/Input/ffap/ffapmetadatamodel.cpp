@@ -79,7 +79,7 @@ QList<MetaDataItem> FFapMetaDataModel::extraProperties() const
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         ep << MetaDataItem(tr("Samples"), ap->sampleFrames());
 #endif
-        ep << MetaDataItem(tr("Vesion"), ap->version());
+        ep << MetaDataItem(tr("Version"), ap->version());
     }
     return ep;
 }
