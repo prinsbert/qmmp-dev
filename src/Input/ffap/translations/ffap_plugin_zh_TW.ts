@@ -42,44 +42,14 @@
 <context>
     <name>FFapMetaDataModel</name>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="61"/>
-        <source>Length</source>
-        <translation>長度</translation>
+        <location filename="../ffapmetadatamodel.cpp" line="67"/>
+        <source>Samples</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="62"/>
-        <source>Sample rate</source>
-        <translation>取樣率</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="62"/>
-        <source>Hz</source>
-        <translation>Hz</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="63"/>
-        <source>Channels</source>
-        <translation>音頻通道</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="64"/>
-        <source>Bitrate</source>
-        <translation>比特率</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="64"/>
-        <source>kbps</source>
-        <translation>kbps</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="65"/>
-        <source>File size</source>
-        <translation>文件大小</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="65"/>
-        <source>KB</source>
-        <translation>KB</translation>
+        <location filename="../ffapmetadatamodel.cpp" line="68"/>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

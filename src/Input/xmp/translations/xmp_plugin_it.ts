@@ -14,22 +14,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="109"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>About XMP Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="110"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="113"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="112"/>
+        <location filename="../decoderxmpfactory.cpp" line="114"/>
         <source>Compiled against libxmp-%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -110,72 +110,62 @@
 <context>
     <name>XmpMetaDataModel</name>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="49"/>
-        <source>File name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../xmpmetadatamodel.cpp" line="54"/>
-        <source>Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../xmpmetadatamodel.cpp" line="55"/>
+        <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Volume scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="56"/>
+        <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Number of patterns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="57"/>
+        <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Number of tracks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="58"/>
+        <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Tracks per pattern</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="59"/>
+        <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Number of instruments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="60"/>
+        <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Number of samples</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="61"/>
+        <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Initial speed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="62"/>
+        <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Initial BPM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="63"/>
+        <location filename="../xmpmetadatamodel.cpp" line="61"/>
         <source>Module length in patterns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="82"/>
+        <location filename="../xmpmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="90"/>
+        <location filename="../xmpmetadatamodel.cpp" line="88"/>
         <source>Instruments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="95"/>
+        <location filename="../xmpmetadatamodel.cpp" line="93"/>
         <source>Comment</source>
         <translation type="unfinished"></translation>
     </message>
