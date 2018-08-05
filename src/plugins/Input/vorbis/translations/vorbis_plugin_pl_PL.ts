@@ -34,47 +34,4 @@
         <translation>Kod źródłowy oparty jest na projekcie mq3</translation>
     </message>
 </context>
-<context>
-    <name>VorbisMetaDataModel</name>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="58"/>
-        <source>Length</source>
-        <translation>Długość</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="59"/>
-        <source>Sample rate</source>
-        <translation>Próbkowanie</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="59"/>
-        <source>Hz</source>
-        <translation>Hz</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="60"/>
-        <source>Channels</source>
-        <translation>Kanały</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="61"/>
-        <source>Bitrate</source>
-        <translation>Szybkość transmisji</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="61"/>
-        <source>kbps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="62"/>
-        <source>File size</source>
-        <translation>Wielkość pliku</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="62"/>
-        <source>KB</source>
-        <translation>KB</translation>
-    </message>
-</context>
 </TS>

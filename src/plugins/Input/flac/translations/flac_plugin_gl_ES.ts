@@ -29,47 +29,4 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
-<context>
-    <name>FLACMetaDataModel</name>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="92"/>
-        <source>Length</source>
-        <translation>Lonxitude</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="93"/>
-        <source>Sample rate</source>
-        <translation>Frecuencia de mostra</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="93"/>
-        <source>Hz</source>
-        <translation>Hz</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="94"/>
-        <source>Channels</source>
-        <translation>Canais</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="95"/>
-        <source>Bitrate</source>
-        <translation>Taxa de bits</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="95"/>
-        <source>kbps</source>
-        <translation>kbps</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="96"/>
-        <source>File size</source>
-        <translation>Tamaño de ficheiro</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="96"/>
-        <source>KB</source>
-        <translation>KB</translation>
-    </message>
-</context>
 </TS>

@@ -14,67 +14,24 @@
         <translation>Formatos FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="284"/>
+        <location filename="../decoderffmpegfactory.cpp" line="285"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>Sobre o plugin FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="285"/>
+        <location filename="../decoderffmpegfactory.cpp" line="286"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Plugin Qmmp FFmpeg Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="286"/>
+        <location filename="../decoderffmpegfactory.cpp" line="287"/>
         <source>Compiled against:</source>
         <translation>Compilado com:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="299"/>
+        <location filename="../decoderffmpegfactory.cpp" line="300"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>FFmpegMetaDataModel</name>
-    <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="50"/>
-        <source>Length</source>
-        <translation>Duração</translation>
-    </message>
-    <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="51"/>
-        <source>File size</source>
-        <translation>Tamanho do arquivo</translation>
-    </message>
-    <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="51"/>
-        <source>%1 KB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="52"/>
-        <source>%1 kbps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="63"/>
-        <source>%1 Hz</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="52"/>
-        <source>Bitrate</source>
-        <translation>Taxa de dados</translation>
-    </message>
-    <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="63"/>
-        <source>Sample rate</source>
-        <translation>Frequência</translation>
-    </message>
-    <message>
-        <location filename="../ffmpegmetadatamodel.cpp" line="64"/>
-        <source>Channels</source>
-        <translation>Canais</translation>
     </message>
 </context>
 <context>

@@ -34,47 +34,4 @@
         <translation>Исходный код основан на проекте mq3</translation>
     </message>
 </context>
-<context>
-    <name>VorbisMetaDataModel</name>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="58"/>
-        <source>Length</source>
-        <translation>Длительность</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="59"/>
-        <source>Sample rate</source>
-        <translation>Дискретизация</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="59"/>
-        <source>Hz</source>
-        <translation>Гц</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="60"/>
-        <source>Channels</source>
-        <translation>Каналов</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="61"/>
-        <source>Bitrate</source>
-        <translation>Битовая частота</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="61"/>
-        <source>kbps</source>
-        <translation>кбит/с</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="62"/>
-        <source>File size</source>
-        <translation>Размер файла</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="62"/>
-        <source>KB</source>
-        <translation>КБ</translation>
-    </message>
-</context>
 </TS>

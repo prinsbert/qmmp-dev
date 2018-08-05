@@ -37,44 +37,9 @@
 <context>
     <name>OpusMetaDataModel</name>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="54"/>
-        <source>Length</source>
-        <translation>长度</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="55"/>
-        <source>Sample rate</source>
-        <translation>采样率</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="55"/>
-        <source>Hz</source>
-        <translation>赫兹</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="56"/>
-        <source>Channels</source>
-        <translation>频道</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="57"/>
-        <source>Bitrate</source>
-        <translation>比特率</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="57"/>
-        <source>kbps</source>
-        <translation>千比特每秒</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="58"/>
-        <source>File size</source>
-        <translation>文件大小</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="58"/>
-        <source>KB</source>
-        <translation>千字节</translation>
+        <location filename="../opusmetadatamodel.cpp" line="50"/>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

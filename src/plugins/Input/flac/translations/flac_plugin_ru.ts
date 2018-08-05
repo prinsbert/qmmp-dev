@@ -29,47 +29,4 @@
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
-<context>
-    <name>FLACMetaDataModel</name>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="92"/>
-        <source>Length</source>
-        <translation>Длительность</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="93"/>
-        <source>Sample rate</source>
-        <translation>Дискретизация</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="93"/>
-        <source>Hz</source>
-        <translation>Гц</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="94"/>
-        <source>Channels</source>
-        <translation>Каналов</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="95"/>
-        <source>Bitrate</source>
-        <translation>Битовая частота</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="95"/>
-        <source>kbps</source>
-        <translation>кбит/с</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="96"/>
-        <source>File size</source>
-        <translation>Размер файла</translation>
-    </message>
-    <message>
-        <location filename="../flacmetadatamodel.cpp" line="96"/>
-        <source>KB</source>
-        <translation>КБ</translation>
-    </message>
-</context>
 </TS>

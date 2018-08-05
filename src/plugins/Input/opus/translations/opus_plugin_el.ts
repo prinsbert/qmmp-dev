@@ -37,44 +37,9 @@
 <context>
     <name>OpusMetaDataModel</name>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="54"/>
-        <source>Length</source>
-        <translation>Διάρκεια</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="55"/>
-        <source>Sample rate</source>
-        <translation>Ρυθμός δειγματοληψίας</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="55"/>
-        <source>Hz</source>
-        <translation>Hz</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="56"/>
-        <source>Channels</source>
-        <translation>Κανάλια</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="57"/>
-        <source>Bitrate</source>
-        <translation>Ρυθμός bit</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="57"/>
-        <source>kbps</source>
-        <translation>kbps</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="58"/>
-        <source>File size</source>
-        <translation>Μέγεθος αρχείου</translation>
-    </message>
-    <message>
-        <location filename="../opusmetadatamodel.cpp" line="58"/>
-        <source>KB</source>
-        <translation>KB</translation>
+        <location filename="../opusmetadatamodel.cpp" line="50"/>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -34,47 +34,4 @@
         <translation>Zdrojový kód je založen na projektu mq3</translation>
     </message>
 </context>
-<context>
-    <name>VorbisMetaDataModel</name>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="58"/>
-        <source>Length</source>
-        <translation>Délka</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="59"/>
-        <source>Sample rate</source>
-        <translation>Vzorkovací frekvence</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="59"/>
-        <source>Hz</source>
-        <translation>Hz</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="60"/>
-        <source>Channels</source>
-        <translation>Počet kanálů</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="61"/>
-        <source>Bitrate</source>
-        <translation>Datový tok</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="61"/>
-        <source>kbps</source>
-        <translation>kbps</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="62"/>
-        <source>File size</source>
-        <translation>Velikost souboru</translation>
-    </message>
-    <message>
-        <location filename="../vorbismetadatamodel.cpp" line="62"/>
-        <source>KB</source>
-        <translation>KiB</translation>
-    </message>
-</context>
 </TS>
