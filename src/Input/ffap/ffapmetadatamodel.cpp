@@ -65,7 +65,7 @@ QList<MetaDataItem> FFapMetaDataModel::extraProperties() const
     if(ap)
     {
         ep << MetaDataItem(tr("Samples"), ap->sampleFrames());
-        ep << MetaDataItem(tr("Vesion"), ap->version());
+        ep << MetaDataItem(tr("Version"), ap->version());
     }
     return ep;
 }
