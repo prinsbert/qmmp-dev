@@ -24,7 +24,9 @@
 #include <taglib/vorbisfile.h>
 #include <taglib/xiphcomment.h>
 #include <qmmp/metadatamodel.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
+#endif
 
 
 class VorbisCommentModel;
@@ -47,7 +49,9 @@ private:
     TagLib::Ogg::Vorbis::File *m_file;
     TagLib::Ogg::XiphComment *m_tag;
     QList<TagModel* > m_tags;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream *m_stream;
+#endif
 };
 
 class VorbisCommentModel : public TagModel

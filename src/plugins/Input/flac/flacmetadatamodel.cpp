@@ -33,7 +33,9 @@
 FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly, QObject *parent) : MetaDataModel(true, parent)
 {
     m_file = 0;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     m_stream = 0;
+#endif
 
     if(path.startsWith("flac://"))
     {
@@ -49,15 +51,23 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly, QObject
 
     if(m_path.endsWith(".flac", Qt::CaseInsensitive))
     {
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         m_stream = new TagLib::FileStream(QStringToFileName(m_path), readOnly);
         TagLib::FLAC::File *f = new TagLib::FLAC::File(m_stream, TagLib::ID3v2::FrameFactory::instance());
+#else
+        TagLib::FLAC::File *f = new TagLib::FLAC::File(QStringToFileName(m_path));
+#endif
         tag = f->xiphComment();
         m_file = f;
     }
     else if(m_path.endsWith(".oga", Qt::CaseInsensitive))
     {
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
         m_stream = new TagLib::FileStream(QStringToFileName(m_path), readOnly);
         TagLib::Ogg::FLAC::File *f = new TagLib::Ogg::FLAC::File(m_stream);
+#else
+        TagLib::Ogg::FLAC::File *f = new TagLib::Ogg::FLAC::File(QStringToFileName(m_path));
+#endif
         tag = f->tag();
         m_file = f;
     }
@@ -78,8 +88,10 @@ FLACMetaDataModel::~FLACMetaDataModel()
         delete m_file;
         m_file = 0;
     }
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     if(m_stream)
         delete m_stream;
+#endif
 }
 
 QList<TagModel* > FLACMetaDataModel::tags() const

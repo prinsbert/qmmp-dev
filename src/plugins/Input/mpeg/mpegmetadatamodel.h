@@ -23,7 +23,9 @@
 
 #include <qmmp/metadatamodel.h>
 #include <taglib/mpegfile.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
+#endif
 
 class QTextCodec;
 
@@ -40,7 +42,9 @@ public:
 private:
     QList<TagModel* > m_tags;
     TagLib::MPEG::File *m_file;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream *m_stream;
+#endif
 };
 
 class MpegFileTagModel : public TagModel

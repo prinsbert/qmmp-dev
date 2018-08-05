@@ -24,7 +24,9 @@
 #include <taglib/flacfile.h>
 #include <taglib/oggflacfile.h>
 #include <taglib/xiphcomment.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
+#endif
 #include <qmmp/metadatamodel.h>
 
 class FLACMetaDataModel : public MetaDataModel
@@ -41,7 +43,9 @@ private:
     QString m_path;
     QList<TagModel* > m_tags;
     TagLib::File *m_file;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream *m_stream;
+#endif
 };
 
 class VorbisCommentModel : public TagModel

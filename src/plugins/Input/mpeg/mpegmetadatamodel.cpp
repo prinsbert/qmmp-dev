@@ -37,8 +37,12 @@
 MPEGMetaDataModel::MPEGMetaDataModel(bool using_rusxmms, const QString &path, bool readOnly, QObject *parent) :
     MetaDataModel(readOnly, parent)
 {
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
     m_file = new TagLib::MPEG::File(m_stream, TagLib::ID3v2::FrameFactory::instance());
+#else
+    m_file = new TagLib::MPEG::File(QStringToFileName(path));
+#endif
     m_tags << new MpegFileTagModel(using_rusxmms, m_file, TagLib::MPEG::File::ID3v1);
     m_tags << new MpegFileTagModel(using_rusxmms, m_file, TagLib::MPEG::File::ID3v2);
     m_tags << new MpegFileTagModel(using_rusxmms, m_file, TagLib::MPEG::File::APE);
@@ -49,7 +53,9 @@ MPEGMetaDataModel::~MPEGMetaDataModel()
     while(!m_tags.isEmpty())
         delete m_tags.takeFirst();
     delete m_file;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     delete m_stream;
+#endif
 }
 
 QList<MetaDataItem> MPEGMetaDataModel::extraProperties() const

@@ -32,8 +32,12 @@ VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, bool readOnly, QOb
     : MetaDataModel(readOnly, parent)
 {
     m_path = path;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
     m_file = new TagLib::Ogg::Vorbis::File(m_stream);
+#else
+    m_file = new TagLib::Ogg::Vorbis::File(QStringToFileName(path));
+#endif
     m_tag = m_file->tag();
     m_tags << new VorbisCommentModel(this);
 }
@@ -44,7 +48,9 @@ VorbisMetaDataModel::~VorbisMetaDataModel()
         delete m_tags.takeFirst();
 
     delete m_file;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     delete m_stream;
+#endif
 }
 
 QList<TagModel* > VorbisMetaDataModel::tags() const
