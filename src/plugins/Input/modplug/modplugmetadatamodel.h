@@ -32,8 +32,8 @@ Q_OBJECT
 public:
     ModPlugMetaDataModel(const QString &path, QObject *parent);
     ~ModPlugMetaDataModel();
-    QHash<QString, QString> audioProperties();
-    QHash<QString, QString> descriptions();
+    QList<MetaDataItem> extraProperties() const;
+    QList<MetaDataItem> descriptions() const;
     static QString getTypeName(quint32 type);
 
 private:

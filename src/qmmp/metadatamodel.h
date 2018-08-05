@@ -26,7 +26,27 @@
 #include <QString>
 #include <QObject>
 #include <QPixmap>
+#include <QVariant>
+#include <QFlags>
 #include "tagmodel.h"
+
+
+class QMMP_EXPORT MetaDataItem
+{
+public:
+    MetaDataItem(const QString &name, const QVariant &value, const QString &suffix = QString());
+
+    const QString &name() const;
+    void setName(const QString &name);
+    const QVariant &value() const;
+    void setValue(const QString &value);
+    const QString &suffix() const;
+    void setSuffix(const QString &suffix);
+
+private:
+    QString m_name, m_suffix;
+    QVariant m_value;
+};
 
 /*! @brief The MetaDataModel is the base interface class of metadata access.
  * @author Ilya Kotov <forkotov02@ya.ru>
@@ -35,39 +55,50 @@ class QMMP_EXPORT MetaDataModel : public QObject
 {
 Q_OBJECT
 public:
+    enum DialogHint
+    {
+        NO_HINTS = 0x0,
+        IS_COVER_EDITABLE = 0x1,
+        COMPLETE_PROPERTY_LIST = 0x2
+    };
+    Q_DECLARE_FLAGS(DialogHints, DialogHint)
     /*!
      * Constructor.
      * @param parent Parent Object.
      */
-    MetaDataModel(QObject *parent = 0);
+    MetaDataModel(bool readOnly, QObject *parent = 0);
     /*!
      * Destructor.
      */
     virtual ~MetaDataModel();
-    /*!
-     * Returns an associative array of the audio properties.
-     * Subclass should reimplement this function. Default implementation returns empty array.
-     */
-    virtual QHash<QString, QString> audioProperties();
-    /*!
-     * Returns an associative array of the long descriptions.
-     * Subclass should reimplement this function. Default implementation returns empty array.
-     */
-    virtual QHash<QString, QString> descriptions();
+
+    virtual QList<MetaDataItem> extraProperties() const;
+    virtual QList<MetaDataItem> descriptions() const;
     /*!
      * Returns a list of available tags.
      * Subclass should reimplement this function. Default implementation returns empty array.
      */
-    virtual QList<TagModel* > tags();
+    virtual QList<TagModel* > tags() const;
     /*!
      * Returns cover pixmap.
      * Subclass should reimplement this function. Default implementation returns empty pixmap.
      */
-    virtual QPixmap cover();
+    virtual QPixmap cover() const;
     /*!
      * Returns path to cover pixmap.
      */
-    virtual QString coverPath();
+    virtual QString coverPath() const;
+    void setCover(const QPixmap &cover);
+    bool isReadOnly() const;
+    const DialogHints &dialogHints() const;
+
+protected:
+    void setDialogHints(const DialogHints &hints);
+    void setReadOnly(bool readOnly);
+
+private:
+    bool m_readOnly;
+    DialogHints m_dialogHints;
 };
 
 #endif // METADATAMODEL_H

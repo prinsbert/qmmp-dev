@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,10 +28,12 @@
 #define QStringToTString_qt4(s) TagLib::String(s.toUtf8().constData(), TagLib::String::UTF8)
 #define TStringToQString_qt4(s) QString::fromUtf8(s.toCString(true)).trimmed()
 
-VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(parent)
+VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, bool readOnly, QObject *parent)
+    : MetaDataModel(readOnly, parent)
 {
     m_path = path;
-    m_file = new TagLib::Ogg::Vorbis::File(QStringToFileName(path));
+    m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
+    m_file = new TagLib::Ogg::Vorbis::File(m_stream);
     m_tag = m_file->tag();
     m_tags << new VorbisCommentModel(this);
 }
@@ -41,35 +43,16 @@ VorbisMetaDataModel::~VorbisMetaDataModel()
     while(!m_tags.isEmpty())
         delete m_tags.takeFirst();
 
-    if(m_file)
-    {
-        delete m_file;
-        m_file = 0;
-    }
+    delete m_file;
+    delete m_stream;
 }
 
-QHash<QString, QString> VorbisMetaDataModel::audioProperties()
-{
-    QHash<QString, QString> ap;
-    if(m_file->audioProperties())
-    {
-        QString text = QString("%1").arg(m_file->audioProperties()->length()/60);
-        text +=":"+QString("%1").arg(m_file->audioProperties()->length()%60,2,10,QChar('0'));
-        ap.insert(tr("Length"), text);
-        ap.insert(tr("Sample rate"), QString("%1 " + tr("Hz")).arg(m_file->audioProperties()->sampleRate()));
-        ap.insert(tr("Channels"), QString("%1").arg(m_file->audioProperties()->channels()));
-        ap.insert(tr("Bitrate"), QString("%1 " + tr("kbps")).arg(m_file->audioProperties()->bitrate()));
-        ap.insert(tr("File size"), QString("%1 "+tr("KB")).arg(m_file->length()/1024));
-    }
-    return ap;
-}
-
-QList<TagModel* > VorbisMetaDataModel::tags()
+QList<TagModel* > VorbisMetaDataModel::tags() const
 {
     return m_tags;
 }
 
-QPixmap VorbisMetaDataModel::cover()
+QPixmap VorbisMetaDataModel::cover() const
 {
     if(!m_tag || m_tag->isEmpty())
         return QPixmap();
@@ -105,7 +88,7 @@ QPixmap VorbisMetaDataModel::cover()
     return QPixmap();
 }
 
-ulong VorbisMetaDataModel::readPictureBlockField(QByteArray data, int offset)
+ulong VorbisMetaDataModel::readPictureBlockField(QByteArray data, int offset) const
 {
     return (((uchar)data.data()[offset] & 0xff) << 24) |
            (((uchar)data.data()[offset+1] & 0xff) << 16) |
@@ -122,12 +105,12 @@ VorbisCommentModel::VorbisCommentModel(VorbisMetaDataModel *model) : TagModel(Ta
 VorbisCommentModel::~VorbisCommentModel()
 {}
 
-const QString VorbisCommentModel::name()
+QString VorbisCommentModel::name() const
 {
     return "Vorbis Comment";
 }
 
-const QString VorbisCommentModel::value(Qmmp::MetaData key)
+QString VorbisCommentModel::value(Qmmp::MetaData key) const
 {
     if(!m_model->m_tag || m_model->m_tag->isEmpty())
         return QString();

@@ -60,7 +60,6 @@ ADD_DEFINITIONS(${TAGLIB_CFLAGS})
 SET(libaac_SRCS
   decoder_aac.cpp
   decoderaacfactory.cpp
-  aacmetadatamodel.cpp
   aacfile.cpp
 )
 

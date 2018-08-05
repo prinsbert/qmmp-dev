@@ -67,8 +67,9 @@ QList<TrackInfo *> MplayerEngineFactory::createPlayList(const QString &path, Tra
     return info;
 }
 
-MetaDataModel* MplayerEngineFactory::createMetaDataModel(const QString &path, QObject *parent)
+MetaDataModel* MplayerEngineFactory::createMetaDataModel(const QString &path, bool readOnly, QObject *parent)
 {
+    Q_UNUSED(readOnly);
     return new MplayerMetaDataModel(path, parent);
 }
 

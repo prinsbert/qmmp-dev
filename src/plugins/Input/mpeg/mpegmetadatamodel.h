@@ -23,6 +23,7 @@
 
 #include <qmmp/metadatamodel.h>
 #include <taglib/mpegfile.h>
+#include <taglib/tfilestream.h>
 
 class QTextCodec;
 
@@ -30,15 +31,16 @@ class MPEGMetaDataModel : public MetaDataModel
 {
 Q_OBJECT
 public:
-    MPEGMetaDataModel(bool using_rusxmms, const QString &path, QObject *parent);
+    MPEGMetaDataModel(bool using_rusxmms, const QString &path, bool readOnly, QObject *parent);
     ~MPEGMetaDataModel();
-    QHash<QString, QString> audioProperties();
-    QList<TagModel* > tags();
-    QPixmap cover();
+    QList<MetaDataItem> extraProperties() const;
+    QList<TagModel* > tags() const;
+    QPixmap cover() const;
 
 private:
     QList<TagModel* > m_tags;
     TagLib::MPEG::File *m_file;
+    TagLib::FileStream *m_stream;
 };
 
 class MpegFileTagModel : public TagModel
@@ -46,11 +48,11 @@ class MpegFileTagModel : public TagModel
 public:
     MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file, TagLib::MPEG::File::TagTypes tagType);
     ~MpegFileTagModel();
-    const QString name();
-    QList<Qmmp::MetaData> keys();
-    const QString value(Qmmp::MetaData key);
+    QString name() const;
+    QList<Qmmp::MetaData> keys() const;
+    QString value(Qmmp::MetaData key) const;
     void setValue(Qmmp::MetaData key, const QString &value);
-    bool exists();
+    bool exists() const;
     void create();
     void remove();
     void save();

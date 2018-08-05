@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -29,17 +29,17 @@ class OpusMetaDataModel : public MetaDataModel
 {
 Q_OBJECT
 public:
-    OpusMetaDataModel(const QString &path, QObject *parent);
+    OpusMetaDataModel(const QString &path, bool readOnly, QObject *parent);
     ~OpusMetaDataModel();
-    QHash<QString, QString> audioProperties();
-    QList<TagModel* > tags();
-    QPixmap cover();
+    QList<MetaDataItem> extraProperties() const;
+    QList<TagModel* > tags() const;
+    QPixmap cover() const;
 
 private:
+    ulong readPictureBlockField(QByteArray data, int offset) const;
     QString m_path;
     QList<TagModel* > m_tags;
     TagLib::Ogg::Opus::File *m_file;
-    ulong readPictureBlockField(QByteArray data, int offset);
 };
 
 class VorbisCommentModel : public TagModel
@@ -47,8 +47,8 @@ class VorbisCommentModel : public TagModel
 public:
     VorbisCommentModel(TagLib::Ogg::Opus::File *file);
     ~VorbisCommentModel();
-    const QString name();
-    const QString value(Qmmp::MetaData key);
+    QString name() const;
+    QString value(Qmmp::MetaData key) const;
     void setValue(Qmmp::MetaData key, const QString &value);
     void save();
 

@@ -22,7 +22,6 @@
 #include <QMessageBox>
 #include <QtPlugin>
 #include "aacfile.h"
-#include "aacmetadatamodel.h"
 #include "decoder_aac.h"
 #include "decoderaacfactory.h"
 
@@ -90,9 +89,12 @@ QList<TrackInfo *> DecoderAACFactory::createPlayList(const QString &path, TrackI
     return QList<TrackInfo*>() << info;
 }
 
-MetaDataModel* DecoderAACFactory::createMetaDataModel(const QString &path, QObject *parent)
+MetaDataModel* DecoderAACFactory::createMetaDataModel(const QString &path, bool readOnly, QObject *parent)
 {
-    return new AACMetaDataModel(path, parent);
+    Q_UNUSED(path);
+    Q_UNUSED(readOnly);
+    Q_UNUSED(parent);
+    return 0;
 }
 
 void DecoderAACFactory::showSettings(QWidget *)
