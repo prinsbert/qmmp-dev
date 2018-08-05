@@ -72,7 +72,7 @@ QList<TrackInfo *> DecoderXmpFactory::createPlayList(const QString &path, TrackI
 {
     QList <TrackInfo*> list;
     TrackInfo *info = new TrackInfo(path);
-    if(parts & TrackInfo::MetaData)
+    if(parts & (TrackInfo::MetaData | TrackInfo::Properties))
     {
         xmp_context ctx = xmp_create_context();
         if(xmp_load_module(ctx, path.toLocal8Bit().data()) != 0)
@@ -85,6 +85,7 @@ QList<TrackInfo *> DecoderXmpFactory::createPlayList(const QString &path, TrackI
         xmp_module_info mi;
         xmp_get_module_info(ctx, &mi);
         info->setValue(Qmmp::TITLE, mi.mod->name);
+        info->setValue(Qmmp::FORMAT_NAME, mi.mod->type);
         info->setDuration(mi.seq_data[0].duration);
         xmp_release_module(ctx);
         xmp_free_context(ctx);
@@ -93,8 +94,9 @@ QList<TrackInfo *> DecoderXmpFactory::createPlayList(const QString &path, TrackI
     return list;
 }
 
-MetaDataModel* DecoderXmpFactory::createMetaDataModel(const QString &path, QObject *parent)
+MetaDataModel* DecoderXmpFactory::createMetaDataModel(const QString &path, bool readOnly, QObject *parent)
 {
+    Q_UNUSED(readOnly);
     return new XmpMetaDataModel(path, parent);
 }
 

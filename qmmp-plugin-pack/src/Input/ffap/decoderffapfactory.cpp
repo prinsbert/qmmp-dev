@@ -144,9 +144,9 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
     return QList<TrackInfo *>() << info;
 }
 
-MetaDataModel* DecoderFFapFactory::createMetaDataModel(const QString &path, QObject *parent)
+MetaDataModel* DecoderFFapFactory::createMetaDataModel(const QString &path, bool readOnly, QObject *parent)
 {
-    return new FFapMetaDataModel(path, parent);
+    return new FFapMetaDataModel(path, readOnly, parent);
 }
 
 void DecoderFFapFactory::showSettings(QWidget *)

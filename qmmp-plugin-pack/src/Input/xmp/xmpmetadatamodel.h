@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2015-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,8 +31,8 @@ Q_OBJECT
 public:
     XmpMetaDataModel(const QString &path, QObject *parent);
     ~XmpMetaDataModel();
-    QHash<QString, QString> audioProperties();
-    QHash<QString, QString> descriptions();
+    QList<MetaDataItem> extraProperties() const override;
+    QList<MetaDataItem> descriptions() const override;
 
 private:
     xmp_context m_ctx;
