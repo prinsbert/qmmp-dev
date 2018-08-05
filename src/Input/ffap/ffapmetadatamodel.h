@@ -24,6 +24,7 @@
 #include <qmmp/metadatamodel.h>
 #include <taglib/tag.h>
 #include <taglib/apefile.h>
+#include <taglib/tfilestream.h>
 
 class QTextCodec;
 
@@ -34,16 +35,17 @@ class FFapMetaDataModel : public MetaDataModel
 {
 Q_OBJECT
 public:
-    FFapMetaDataModel(const QString &path, QObject *parent);
+    FFapMetaDataModel(const QString &path, bool readOnly, QObject *parent);
     ~FFapMetaDataModel();
-    QHash<QString, QString> audioProperties();
-    QList<TagModel* > tags();
-    QString coverPath();
+    QList<MetaDataItem> extraProperties() const override;
+    QList<TagModel* > tags() const override;
+    QString coverPath() const override;
 
 private:
+    QString m_path;
     QList<TagModel* > m_tags;
     TagLib::APE::File *m_file;
-    QString m_path;
+    TagLib::FileStream *m_stream;
 };
 
 class FFapFileTagModel : public TagModel
@@ -51,14 +53,14 @@ class FFapFileTagModel : public TagModel
 public:
     FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::TagTypes tagType);
     ~FFapFileTagModel();
-    const QString name();
-    QList<Qmmp::MetaData> keys();
-    const QString value(Qmmp::MetaData key);
-    void setValue(Qmmp::MetaData key, const QString &value);
-    bool exists();
-    void create();
-    void remove();
-    void save();
+    QString name() const override;
+    QList<Qmmp::MetaData> keys() const override;
+    QString value(Qmmp::MetaData key) const override;
+    void setValue(Qmmp::MetaData key, const QString &value) override;
+    bool exists() const override;
+    void create() override;
+    void remove() override;
+    void save() override;
 
 private:
     QTextCodec *m_codec;

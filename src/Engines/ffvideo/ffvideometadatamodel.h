@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2018 by Ilya Kotov                                  *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -35,8 +35,8 @@ Q_OBJECT
 public:
     FFVideoMetaDataModel(const QString &path, QObject *parent);
     ~FFVideoMetaDataModel();
-    QHash<QString, QString> audioProperties();
-    QPixmap cover();
+    QList<MetaDataItem> extraProperties() const override;
+    QPixmap cover() const override;
 
 private:
     AVFormatContext *m_in;
