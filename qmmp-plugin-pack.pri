@@ -51,7 +51,6 @@ unix {
 #Comment/uncomment this if you want to change plugins list
 
 CONFIG += SRC_PLUGIN
-CONFIG += MPG123_PLUGIN
 CONFIG += FFAP_PLUGIN
 CONFIG += FFAP_YASM #assembler optimizations
 CONFIG += XMP_PLUGIN

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,9 +23,10 @@
 
 //TODO add video support
 
-FFVideoMetaDataModel::FFVideoMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(parent)
+FFVideoMetaDataModel::FFVideoMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(true, parent)
 {
     m_in = 0;
+    setDialogHints(MetaDataModel::COMPLETE_PROPERTY_LIST);
 #ifdef Q_OS_WIN
     if (avformat_open_input(&m_in, path.toUtf8().constData(), 0, 0) < 0)
 #else
@@ -42,16 +43,16 @@ FFVideoMetaDataModel::~FFVideoMetaDataModel()
         avformat_close_input(&m_in);
 }
 
-QHash<QString, QString> FFVideoMetaDataModel::audioProperties()
+QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
 {
-    QHash<QString, QString> ap;
+    QList<MetaDataItem> ep;
     if(!m_in)
-        return ap;
+        return ep;
     QString text = QString("%1").arg(int(m_in->duration/AV_TIME_BASE)/60);
     text +=":"+QString("%1").arg(int(m_in->duration/AV_TIME_BASE)%60,2,10,QChar('0'));
-    ap.insert(tr("Length"), text);
-    ap.insert(tr("File size"),  tr("%1 KB").arg(avio_size(m_in->pb) / 1000));
-    ap.insert(tr("Bitrate"), tr("%1 kbps").arg(m_in->bit_rate/1000));
+    ep << MetaDataItem(tr("Length"), text);
+    ep << MetaDataItem(tr("File size"), avio_size(m_in->pb) / 1024, tr("KiB"));
+    ep << MetaDataItem(tr("Bitrate"), m_in->bit_rate / 1000, tr("kbps"));
 
     int audioIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_AUDIO, -1, -1, 0, 0);
     int videoIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_VIDEO, -1, -1, 0, 0);
@@ -59,21 +60,21 @@ QHash<QString, QString> FFVideoMetaDataModel::audioProperties()
     if(audioIndex >= 0)
     {
          AVCodecParameters *c = m_in->streams[audioIndex]->codecpar;
-         ap.insert(tr("Audio bitrate"), tr("%1 kbps").arg(c->bit_rate / 1000));
-         ap.insert(tr("Audio sample rate"), tr("%1 Hz").arg(c->sample_rate));
-         ap.insert(tr("Audio channels"), QString("%1").arg(c->channels));
+         ep << MetaDataItem(tr("Audio bitrate"), c->bit_rate / 1000, tr("kbps"));
+         ep << MetaDataItem(tr("Audio sample rate"), c->sample_rate, tr("Hz"));
+         ep << MetaDataItem(tr("Audio channels"), c->channels);
     }
 
     if(videoIndex >= 0)
     {
          AVCodecParameters *c = m_in->streams[videoIndex]->codecpar;
-         ap.insert(tr("Video size"), QString("%1x%2").arg(c->width).arg(c->height));
-         ap.insert(tr("Video bitrate"), QString("%1 kbps").arg(c->bit_rate));
+         ep << MetaDataItem(tr("Video size"), QString("%1x%2").arg(c->width).arg(c->height));
+         ep << MetaDataItem(tr("Video bitrate"), c->bit_rate / 1000, tr("kbps"));
     }
-    return ap;
+    return ep;
 }
 
-QPixmap FFVideoMetaDataModel::cover()
+QPixmap FFVideoMetaDataModel::cover() const
 {
     if(!m_in)
         return QPixmap();
@@ -84,7 +85,7 @@ QPixmap FFVideoMetaDataModel::cover()
         if (c->codec_type == AVMEDIA_TYPE_VIDEO && c->codec_id == AV_CODEC_ID_MJPEG)
             break;
     }
-    if (c)
+    if(c)
     {
         AVPacket pkt;
         av_read_frame(m_in, &pkt);

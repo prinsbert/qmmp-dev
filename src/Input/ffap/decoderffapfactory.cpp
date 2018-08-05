@@ -132,7 +132,11 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
         info->setValue(Qmmp::CHANNELS, ap->channels());
         info->setValue(Qmmp::BITS_PER_SAMPLE, ap->bitsPerSample());
         info->setValue(Qmmp::FORMAT_NAME, "Monkey's Audio");
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 10))
         info->setDuration(ap->lengthInMilliseconds());
+#else
+        info->setDuration(ap->length() * 1000);
+#endif
     }
 
     if((parts & TrackInfo::ReplayGainInfo) && tag && !tag->isEmpty())
@@ -151,9 +155,9 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
     return QList<TrackInfo *>() << info;
 }
 
-MetaDataModel* DecoderFFapFactory::createMetaDataModel(const QString &path, QObject *parent)
+MetaDataModel* DecoderFFapFactory::createMetaDataModel(const QString &path, bool readOnly, QObject *parent)
 {
-    return new FFapMetaDataModel(path, parent);
+    return new FFapMetaDataModel(path, readOnly, parent);
 }
 
 void DecoderFFapFactory::showSettings(QWidget *)

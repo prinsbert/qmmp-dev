@@ -127,8 +127,9 @@ QList<TrackInfo *> FFVideoFactory::createPlayList(const QString &path, TrackInfo
     return list;
 }
 
-MetaDataModel* FFVideoFactory::createMetaDataModel(const QString &path, QObject *parent)
+MetaDataModel* FFVideoFactory::createMetaDataModel(const QString &path, bool readOnly, QObject *parent)
 {
+    Q_UNUSED(readOnly);
     return new FFVideoMetaDataModel(path, parent);
 }
 

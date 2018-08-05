@@ -24,6 +24,9 @@
 #include <qmmp/metadatamodel.h>
 #include <taglib/tag.h>
 #include <taglib/apefile.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
+#include <taglib/tfilestream.h>
+#endif
 
 class QTextCodec;
 
@@ -34,16 +37,19 @@ class FFapMetaDataModel : public MetaDataModel
 {
 Q_OBJECT
 public:
-    FFapMetaDataModel(const QString &path, QObject *parent);
+    FFapMetaDataModel(const QString &path, bool readOnly, QObject *parent);
     ~FFapMetaDataModel();
-    QHash<QString, QString> audioProperties();
-    QList<TagModel* > tags();
-    QString coverPath();
+    QList<MetaDataItem> extraProperties() const;
+    QList<TagModel* > tags() const;
+    QString coverPath() const;
 
 private:
+    QString m_path;
     QList<TagModel* > m_tags;
     TagLib::APE::File *m_file;
-    QString m_path;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
+    TagLib::FileStream *m_stream;
+#endif
 };
 
 class FFapFileTagModel : public TagModel
@@ -51,11 +57,11 @@ class FFapFileTagModel : public TagModel
 public:
     FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::TagTypes tagType);
     ~FFapFileTagModel();
-    const QString name();
-    QList<Qmmp::MetaData> keys();
-    const QString value(Qmmp::MetaData key);
+    QString name() const;
+    QList<Qmmp::MetaData> keys() const;
+    QString value(Qmmp::MetaData key) const;
     void setValue(Qmmp::MetaData key, const QString &value);
-    bool exists();
+    bool exists() const;
     void create();
     void remove();
     void save();
