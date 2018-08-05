@@ -43,6 +43,7 @@ FFapMetaDataModel::FFapMetaDataModel(const QString &path, bool readOnly, QObject
     {
         m_path = path;
         m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);
+        m_file = new TagLib::APE::File(m_stream);
         m_tags << new FFapFileTagModel(m_file, TagLib::APE::File::ID3v1);
         m_tags << new FFapFileTagModel(m_file, TagLib::APE::File::APE);
         setReadOnly(readOnly);
