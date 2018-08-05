@@ -14,27 +14,27 @@
         <translation>Fichiers audio Monkey</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="164"/>
+        <location filename="../decoderffapfactory.cpp" line="168"/>
         <source>About FFap Audio Plugin</source>
         <translation>A propos du plugin audio FFap</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="165"/>
+        <location filename="../decoderffapfactory.cpp" line="169"/>
         <source>Qmmp FFap Audio Plugin</source>
         <translation>Plugin audio FFap Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="166"/>
+        <location filename="../decoderffapfactory.cpp" line="170"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
         <translation>Ce plugin fournit le support des fichiers audio Monkey (APE)</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="167"/>
+        <location filename="../decoderffapfactory.cpp" line="171"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderffapfactory.cpp" line="168"/>
+        <location filename="../decoderffapfactory.cpp" line="172"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
         <translation>Basé sur le code de deadbeef, FFmpeg et rockbox</translation>
     </message>
@@ -42,44 +42,14 @@
 <context>
     <name>FFapMetaDataModel</name>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="61"/>
-        <source>Length</source>
-        <translation>Longueur</translation>
+        <location filename="../ffapmetadatamodel.cpp" line="80"/>
+        <source>Samples</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="62"/>
-        <source>Sample rate</source>
-        <translation>Taux de sample</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="62"/>
-        <source>Hz</source>
-        <translation>Hz</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="63"/>
-        <source>Channels</source>
-        <translation>Canaux</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="64"/>
-        <source>Bitrate</source>
-        <translation>Taux de bit</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="64"/>
-        <source>kbps</source>
-        <translation>kbps</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="65"/>
-        <source>File size</source>
-        <translation>Taille du fichier</translation>
-    </message>
-    <message>
-        <location filename="../ffapmetadatamodel.cpp" line="65"/>
-        <source>KB</source>
-        <translation>KB</translation>
+        <location filename="../ffapmetadatamodel.cpp" line="82"/>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

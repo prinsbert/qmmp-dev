@@ -14,22 +14,22 @@
         <translation>Videosoubory</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="140"/>
+        <location filename="../ffvideofactory.cpp" line="141"/>
         <source>About FFVideo Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="141"/>
+        <location filename="../ffvideofactory.cpp" line="142"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="142"/>
+        <location filename="../ffvideofactory.cpp" line="143"/>
         <source>Compiled against:</source>
         <translation>Kompilováno s:</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="152"/>
+        <location filename="../ffvideofactory.cpp" line="153"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -37,58 +37,59 @@
 <context>
     <name>FFVideoMetaDataModel</name>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="52"/>
+        <location filename="../ffvideometadatamodel.cpp" line="53"/>
         <source>Length</source>
         <translation>Délka</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="53"/>
+        <location filename="../ffvideometadatamodel.cpp" line="54"/>
         <source>File size</source>
         <translation>Velikost souboru</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="53"/>
-        <source>%1 KB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ffvideometadatamodel.cpp" line="54"/>
+        <location filename="../ffvideometadatamodel.cpp" line="55"/>
         <source>Bitrate</source>
         <translation>Datový tok</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="54"/>
-        <location filename="../ffvideometadatamodel.cpp" line="62"/>
-        <source>%1 kbps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ffvideometadatamodel.cpp" line="62"/>
+        <location filename="../ffvideometadatamodel.cpp" line="63"/>
         <source>Audio bitrate</source>
         <translation>Datový tok audia</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="63"/>
+        <location filename="../ffvideometadatamodel.cpp" line="64"/>
         <source>Audio sample rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../ffvideometadatamodel.cpp" line="54"/>
+        <source>KiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ffvideometadatamodel.cpp" line="55"/>
         <location filename="../ffvideometadatamodel.cpp" line="63"/>
-        <source>%1 Hz</source>
+        <location filename="../ffvideometadatamodel.cpp" line="72"/>
+        <source>kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="64"/>
+        <source>Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ffvideometadatamodel.cpp" line="65"/>
         <source>Audio channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="70"/>
+        <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Video size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="71"/>
+        <location filename="../ffvideometadatamodel.cpp" line="72"/>
         <source>Video bitrate</source>
         <translation>Datový tok videa</translation>
     </message>

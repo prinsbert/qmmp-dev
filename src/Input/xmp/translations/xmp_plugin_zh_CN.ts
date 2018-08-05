@@ -14,22 +14,22 @@
         <translation>模块文件</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="110"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>About XMP Audio Plugin</source>
         <translation>关于XMP音频插件</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="113"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>Qmmp XMP音频插件</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="112"/>
+        <location filename="../decoderxmpfactory.cpp" line="114"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="113"/>
+        <location filename="../decoderxmpfactory.cpp" line="115"/>
         <source>Compiled against libxmp-%1</source>
         <translation>对照libxmp-%1进行了编译</translation>
     </message>
@@ -110,72 +110,62 @@
 <context>
     <name>XmpMetaDataModel</name>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="49"/>
-        <source>File name</source>
-        <translation>文件名</translation>
-    </message>
-    <message>
-        <location filename="../xmpmetadatamodel.cpp" line="54"/>
-        <source>Format</source>
-        <translation>格式</translation>
-    </message>
-    <message>
-        <location filename="../xmpmetadatamodel.cpp" line="55"/>
+        <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Volume scale</source>
         <translation>音量范围</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="56"/>
+        <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Number of patterns</source>
         <translation>样式数量</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="57"/>
+        <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Number of tracks</source>
         <translation>音轨数量</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="58"/>
+        <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Tracks per pattern</source>
         <translation>每种样式的音轨</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="59"/>
+        <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Number of instruments</source>
         <translation>乐器数量</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="60"/>
+        <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Number of samples</source>
         <translation>样品数量</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="61"/>
+        <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Initial speed</source>
         <translation>初始速度</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="62"/>
+        <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Initial BPM</source>
         <translation>初始BPM（每分钟拍数）</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="63"/>
+        <location filename="../xmpmetadatamodel.cpp" line="61"/>
         <source>Module length in patterns</source>
         <translation>样式中的模长</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="82"/>
+        <location filename="../xmpmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
         <translation>取样率</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="90"/>
+        <location filename="../xmpmetadatamodel.cpp" line="88"/>
         <source>Instruments</source>
         <translation>乐器</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="95"/>
+        <location filename="../xmpmetadatamodel.cpp" line="93"/>
         <source>Comment</source>
         <translation>评论</translation>
     </message>
