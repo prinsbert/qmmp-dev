@@ -27,14 +27,22 @@ public:
     IODeviceStream(QIODevice *input, const QString &url)
     {
         m_input = input;
+#ifdef Q_OS_WIN
         m_fileName = url.section("/", -1);
+#else
+        m_fileName = url.section("/", -1).toLocal8Bit();
+#endif
     }
 
     virtual ~IODeviceStream() {}
 
     virtual TagLib::FileName name() const
     {
+#ifdef Q_OS_WIN
         return QStringToFileName(m_fileName);
+#else
+        return m_fileName.constData();
+#endif
     }
     virtual TagLib::ByteVector readBlock(unsigned long length)
     {
@@ -87,16 +95,18 @@ public:
     {}
 
 private:
+#ifdef Q_OS_WIN
     QString m_fileName;
+#else
+    QByteArray m_fileName;
+#endif
     QIODevice *m_input;
-
 };
 
 ArchiveTagReader::ArchiveTagReader(QIODevice *input, const QString &url)
 {
     m_stream = new IODeviceStream(input, url);
     m_file = new TagLib::FileRef(m_stream);
-    m_url = url;
 }
 
 ArchiveTagReader::~ArchiveTagReader()
