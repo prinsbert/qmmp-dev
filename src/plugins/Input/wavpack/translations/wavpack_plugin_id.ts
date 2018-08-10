@@ -14,22 +14,22 @@
         <translation>File WavPack</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="154"/>
+        <location filename="../decoderwavpackfactory.cpp" line="155"/>
         <source>About WavPack Audio Plugin</source>
         <translation>Tentang Plugin Audio WavPack</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="155"/>
+        <location filename="../decoderwavpackfactory.cpp" line="156"/>
         <source>Qmmp WavPack Audio Plugin</source>
         <translation>Plugin Audio WavPack Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="156"/>
+        <location filename="../decoderwavpackfactory.cpp" line="157"/>
         <source>WavPack library version:</source>
         <translation>Versi pustaka WavPack:</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="158"/>
+        <location filename="../decoderwavpackfactory.cpp" line="159"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

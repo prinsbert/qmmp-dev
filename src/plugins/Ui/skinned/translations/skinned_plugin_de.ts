@@ -526,37 +526,37 @@
         <translation>Kurzbefehl ändern …</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="57"/>
+        <location filename="../hotkeyeditor.cpp" line="58"/>
         <source>Playback</source>
         <translation>Wiedergabe</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="63"/>
+        <location filename="../hotkeyeditor.cpp" line="64"/>
         <source>View</source>
         <translation>Ansicht</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="69"/>
+        <location filename="../hotkeyeditor.cpp" line="70"/>
         <source>Volume</source>
         <translation>Lautstärke</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="75"/>
+        <location filename="../hotkeyeditor.cpp" line="76"/>
         <source>Playlist</source>
         <translation>Wiedergabeliste</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="81"/>
+        <location filename="../hotkeyeditor.cpp" line="82"/>
         <source>Misc</source>
         <translation>Verschiedenes</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="93"/>
+        <location filename="../hotkeyeditor.cpp" line="94"/>
         <source>Reset Shortcuts</source>
         <translation>Kurzbefehle zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="94"/>
+        <location filename="../hotkeyeditor.cpp" line="95"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation>Möchten Sie die Standardkurzbefehle wiederherstellen?</translation>
     </message>

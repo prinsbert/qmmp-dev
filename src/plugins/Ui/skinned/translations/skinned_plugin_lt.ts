@@ -527,37 +527,37 @@
         <translation>Keisti trumpinį...</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="57"/>
+        <location filename="../hotkeyeditor.cpp" line="58"/>
         <source>Playback</source>
         <translation>Grojimas</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="63"/>
+        <location filename="../hotkeyeditor.cpp" line="64"/>
         <source>View</source>
         <translation>Rodyti</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="69"/>
+        <location filename="../hotkeyeditor.cpp" line="70"/>
         <source>Volume</source>
         <translation>Garsumas</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="75"/>
+        <location filename="../hotkeyeditor.cpp" line="76"/>
         <source>Playlist</source>
         <translation>Grojaraštis</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="81"/>
+        <location filename="../hotkeyeditor.cpp" line="82"/>
         <source>Misc</source>
         <translation>Įvairūs</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="93"/>
+        <location filename="../hotkeyeditor.cpp" line="94"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="94"/>
+        <location filename="../hotkeyeditor.cpp" line="95"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished"></translation>
     </message>

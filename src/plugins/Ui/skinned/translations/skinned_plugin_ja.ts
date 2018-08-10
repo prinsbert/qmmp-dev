@@ -526,37 +526,37 @@
         <translation>ショートカットを変更...</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="57"/>
+        <location filename="../hotkeyeditor.cpp" line="58"/>
         <source>Playback</source>
         <translation>再生</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="63"/>
+        <location filename="../hotkeyeditor.cpp" line="64"/>
         <source>View</source>
         <translation>観容</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="69"/>
+        <location filename="../hotkeyeditor.cpp" line="70"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="75"/>
+        <location filename="../hotkeyeditor.cpp" line="76"/>
         <source>Playlist</source>
         <translation>プレイリスト</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="81"/>
+        <location filename="../hotkeyeditor.cpp" line="82"/>
         <source>Misc</source>
         <translation>その他いろいろ</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="93"/>
+        <location filename="../hotkeyeditor.cpp" line="94"/>
         <source>Reset Shortcuts</source>
         <translation>ショートカットをリセット</translation>
     </message>
     <message>
-        <location filename="../hotkeyeditor.cpp" line="94"/>
+        <location filename="../hotkeyeditor.cpp" line="95"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation>ショートカット設定をデフォルトに戻しますが、間違いありませんか。</translation>
     </message>
