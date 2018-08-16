@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -105,6 +105,7 @@ private:
 
 ArchiveTagReader::ArchiveTagReader(QIODevice *input, const QString &url)
 {
+    m_url = url;
     m_stream = new IODeviceStream(input, url);
     m_file = new TagLib::FileRef(m_stream);
 }
