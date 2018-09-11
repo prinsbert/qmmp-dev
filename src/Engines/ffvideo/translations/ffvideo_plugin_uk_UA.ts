@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<TS version="2.1" language="uk">
 <context>
     <name>FFVideoFactory</name>
     <message>
@@ -64,19 +64,19 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="54"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>КіБ</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="55"/>
         <location filename="../ffvideometadatamodel.cpp" line="63"/>
         <location filename="../ffvideometadatamodel.cpp" line="72"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>кб/с</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="64"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Гц</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="65"/>
