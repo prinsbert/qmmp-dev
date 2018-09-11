@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<TS version="2.1" language="uk">
 <context>
     <name>DecoderMPEGFactory</name>
     <message>
@@ -21,17 +21,17 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="389"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>аудіодекодер MPEG 1.0/2.0/2.5 layer 1/2/3</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="390"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Зібрано з:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="399"/>
         <source>mpg123, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>mpg123, версія API: %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="403"/>
