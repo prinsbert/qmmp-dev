@@ -22,6 +22,6 @@ LIBS += $$QMMPUI_LIB
 unix {
   PKGCONFIG += x11
   DEFINES += X11_FOUND
-  target.path = $$PLUGIN_DIR/qmmp/General
+  target.path = $$PLUGIN_DIR/General
   INSTALLS += target
 }
