@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,9 +33,9 @@ class QTextCodec;
 */
 class FFapMetaDataModel : public MetaDataModel
 {
-Q_OBJECT
+    Q_DECLARE_TR_FUNCTIONS(FFapMetaDataModel)
 public:
-    FFapMetaDataModel(const QString &path, bool readOnly, QObject *parent);
+    FFapMetaDataModel(const QString &path, bool readOnly);
     ~FFapMetaDataModel();
     QList<MetaDataItem> extraProperties() const override;
     QList<TagModel* > tags() const override;
