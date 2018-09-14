@@ -28,8 +28,8 @@
 #define QStringToTString_qt4(s) TagLib::String(s.toUtf8().constData(), TagLib::String::UTF8)
 #define TStringToQString_qt4(s) QString::fromUtf8(s.toCString(true)).trimmed()
 
-VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, bool readOnly, QObject *parent)
-    : MetaDataModel(readOnly, parent)
+VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, bool readOnly)
+    : MetaDataModel(readOnly)
 {
     m_path = path;
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))

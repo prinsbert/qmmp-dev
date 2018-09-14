@@ -34,8 +34,8 @@
 #include <taglib/id3v2framefactory.h>
 #include "mpegmetadatamodel.h"
 
-MPEGMetaDataModel::MPEGMetaDataModel(bool using_rusxmms, const QString &path, bool readOnly, QObject *parent) :
-    MetaDataModel(readOnly, parent)
+MPEGMetaDataModel::MPEGMetaDataModel(bool using_rusxmms, const QString &path, bool readOnly) :
+    MetaDataModel(readOnly)
 {
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     m_stream = new TagLib::FileStream(QStringToFileName(path), readOnly);

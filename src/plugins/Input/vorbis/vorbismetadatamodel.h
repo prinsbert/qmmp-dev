@@ -33,9 +33,8 @@ class VorbisCommentModel;
 
 class VorbisMetaDataModel : public MetaDataModel
 {
-Q_OBJECT
 public:
-    VorbisMetaDataModel(const QString &path, bool readOnly, QObject *parent);
+    VorbisMetaDataModel(const QString &path, bool readOnly);
     ~VorbisMetaDataModel();
     friend class VorbisCommentModel;
 

@@ -27,9 +27,9 @@
 
 class OpusMetaDataModel : public MetaDataModel
 {
-Q_OBJECT
+    Q_DECLARE_TR_FUNCTIONS(OpusMetaDataModel)
 public:
-    OpusMetaDataModel(const QString &path, bool readOnly, QObject *parent);
+    OpusMetaDataModel(const QString &path, bool readOnly);
     ~OpusMetaDataModel();
     QList<MetaDataItem> extraProperties() const;
     QList<TagModel* > tags() const;
