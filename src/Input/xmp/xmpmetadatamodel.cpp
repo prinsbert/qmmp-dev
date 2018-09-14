@@ -21,7 +21,7 @@
 #include <QFile>
 #include "xmpmetadatamodel.h"
 
-XmpMetaDataModel::XmpMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(true, parent)
+XmpMetaDataModel::XmpMetaDataModel(const QString &path) : MetaDataModel(true)
 {
     m_path = path;
     m_ctx = xmp_create_context();

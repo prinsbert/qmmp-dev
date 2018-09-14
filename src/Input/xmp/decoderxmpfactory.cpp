@@ -94,10 +94,10 @@ QList<TrackInfo *> DecoderXmpFactory::createPlayList(const QString &path, TrackI
     return list;
 }
 
-MetaDataModel* DecoderXmpFactory::createMetaDataModel(const QString &path, bool readOnly, QObject *parent)
+MetaDataModel* DecoderXmpFactory::createMetaDataModel(const QString &path, bool readOnly)
 {
     Q_UNUSED(readOnly);
-    return new XmpMetaDataModel(path, parent);
+    return new XmpMetaDataModel(path);
 }
 
 void DecoderXmpFactory::showSettings(QWidget *parent)
