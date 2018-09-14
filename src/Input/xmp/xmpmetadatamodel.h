@@ -27,9 +27,9 @@
 
 class XmpMetaDataModel : public MetaDataModel
 {
-Q_OBJECT
+    Q_DECLARE_TR_FUNCTIONS(XmpMetaDataModel)
 public:
-    XmpMetaDataModel(const QString &path, QObject *parent);
+    XmpMetaDataModel(const QString &path);
     ~XmpMetaDataModel();
     QList<MetaDataItem> extraProperties() const;
     QList<MetaDataItem> descriptions() const;

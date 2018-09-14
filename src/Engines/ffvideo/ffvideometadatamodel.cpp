@@ -23,7 +23,7 @@
 
 //TODO add video support
 
-FFVideoMetaDataModel::FFVideoMetaDataModel(const QString &path, QObject *parent) : MetaDataModel(true, parent)
+FFVideoMetaDataModel::FFVideoMetaDataModel(const QString &path) : MetaDataModel(true)
 {
     m_in = 0;
     setDialogHints(MetaDataModel::COMPLETE_PROPERTY_LIST);

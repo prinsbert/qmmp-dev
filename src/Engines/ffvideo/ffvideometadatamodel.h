@@ -31,9 +31,9 @@ extern "C"{
 
 class FFVideoMetaDataModel : public MetaDataModel
 {
-Q_OBJECT
+Q_DECLARE_TR_FUNCTIONS(FFVideoMetaDataModel)
 public:
-    FFVideoMetaDataModel(const QString &path, QObject *parent);
+    FFVideoMetaDataModel(const QString &path);
     ~FFVideoMetaDataModel();
     QList<MetaDataItem> extraProperties() const;
     QPixmap cover() const;
