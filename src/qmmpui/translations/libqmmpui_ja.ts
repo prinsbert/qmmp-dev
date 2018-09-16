@@ -739,19 +739,25 @@
 <context>
     <name>CoverViewer</name>
     <message>
-        <location filename="../coverviewer.cpp" line="30"/>
+        <location filename="../coverviewer.cpp" line="35"/>
         <source>&amp;Save As...</source>
         <translation>名前を付けて保存(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../coverviewer.cpp" line="52"/>
+        <location filename="../coverviewer.cpp" line="68"/>
         <source>Save Cover As</source>
         <translation>カバー画像に名前を付けて保存</translation>
     </message>
     <message>
-        <location filename="../coverviewer.cpp" line="54"/>
+        <location filename="../coverviewer.cpp" line="70"/>
+        <location filename="../coverviewer.cpp" line="83"/>
         <source>Images</source>
         <translation>画像</translation>
+    </message>
+    <message>
+        <location filename="../coverviewer.cpp" line="81"/>
+        <source>Open Image</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
