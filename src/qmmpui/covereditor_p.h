@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017-2018 by Ilya Kotov                                 *
+ *   Copyright (C) 2018 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,36 +17,44 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef COVERVIEWER_H
-#define COVERVIEWER_H
+
+#ifndef COVEREDITOR_P_H
+#define COVEREDITOR_P_H
 
 #include <QWidget>
-#include <QPixmap>
+#include <QString>
+#include <qmmp/metadatamodel.h>
+#include "ui_covereditor.h"
 
-class QMouseEvent;
+class CoverViewer;
 
 /**
    @internal
    @author Ilya Kotov <forkotov02@ya.ru>
 */
 
-class CoverViewer : public QWidget
+class CoverEditor : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    CoverViewer(QWidget *parent = 0);
+    explicit CoverEditor(MetaDataModel *model, const QString &coverPath, QWidget *parent = 0);
 
-    ~CoverViewer();
+    bool isEditable() const;
+    void save();
 
-    void setPixmap(const QPixmap&);
-    bool hasPixmap() const;
-
-public slots:
-    void saveAs();
+private slots:
+    void on_sourceComboBox_activated(int index);
+    void on_loadButton_clicked();
+    void on_deleteButton_clicked();
+    void on_saveAsButton_clicked();
 
 private:
-    void paintEvent(QPaintEvent *);
-    QPixmap m_pixmap;
+    Ui::CoverEditor m_ui;
+    MetaDataModel *m_model;
+    CoverViewer *m_viewer;
+    QString m_coverPath;
+    bool m_editable;
+
 };
 
-#endif
+#endif // COVEREDITOR_P_H

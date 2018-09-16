@@ -33,7 +33,7 @@
 #include "metadataformatter.h"
 #include "playlisttrack.h"
 #include "tageditor_p.h"
-#include "coverviewer_p.h"
+#include "covereditor_p.h"
 #include "detailsdialog.h"
 
 DetailsDialog::DetailsDialog(QList<PlayListTrack *> tracks, QWidget *parent)
@@ -90,25 +90,35 @@ void DetailsDialog::on_buttonBox_clicked(QAbstractButton *button)
 {
     if(m_ui->buttonBox->standardButton(button) == QDialogButtonBox::Save)
     {
-        TagEditor *tab = qobject_cast<TagEditor *> (m_ui->tabWidget->currentWidget());
-        if(tab)
-            tab->save();
+        TagEditor *tagEditor = qobject_cast<TagEditor *>(m_ui->tabWidget->currentWidget());
+        CoverEditor *coverEditor = 0;
+        if(tagEditor)
+            tagEditor->save();
+        else if((coverEditor = qobject_cast<CoverEditor *>(m_ui->tabWidget->currentWidget())))
+            coverEditor->save();
     }
     else
-        reject();
-
-    //close all files before closing dialog
-    if(m_metaDataModel)
     {
-        delete m_metaDataModel;
-        m_metaDataModel = 0;
+        //close all files before closing dialog
+        if(m_metaDataModel)
+        {
+            delete m_metaDataModel;
+            m_metaDataModel = 0;
+        }
+        reject();
     }
 }
 
 void DetailsDialog::on_tabWidget_currentChanged(int index)
 {
-    TagEditor *tab = qobject_cast<TagEditor *> (m_ui->tabWidget->widget(index));
-    m_ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(tab && m_metaDataModel && !m_metaDataModel->isReadOnly());
+    TagEditor *tagEditor = qobject_cast<TagEditor *> (m_ui->tabWidget->widget(index));
+    CoverEditor *coverEditor = 0;
+    if(tagEditor)
+        m_ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(m_metaDataModel && !m_metaDataModel->isReadOnly());
+    else if((coverEditor = qobject_cast<CoverEditor *>(m_ui->tabWidget->currentWidget())))
+        m_ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(coverEditor->isEditable());
+    else
+        m_ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(false);
 }
 
 void DetailsDialog::on_prevButton_clicked()
@@ -176,13 +186,8 @@ void DetailsDialog::updatePage()
     qDeleteAll(infoList);
     infoList.clear();
 
-    QPixmap cover = MetaDataManager::instance()->getCover(m_info.path());
-    if(!cover.isNull())
-    {
-        CoverViewer *coverViewer = new CoverViewer(this);
-        coverViewer->setPixmap(cover);
-        m_ui->tabWidget->addTab(coverViewer, tr("Cover"));
-    }
+    QString coverPath;
+    QPixmap coverPixmap;
 
     if(m_info.path().contains("://")) //URL
     {
@@ -190,8 +195,23 @@ void DetailsDialog::updatePage()
     }
     else if(QFile::exists(m_info.path())) //local file
     {
+        coverPath = MetaDataManager::instance()->findCoverFile(m_info.path());
         bool writable = QFileInfo(m_info.path()).isWritable();
         m_metaDataModel = MetaDataManager::instance()->createMetaDataModel(m_info.path(), !writable);
+    }
+
+    if(m_metaDataModel)
+    {
+        coverPath = coverPath.isEmpty() ? m_metaDataModel->coverPath() : coverPath;
+        coverPixmap = m_metaDataModel->cover();
+    }
+
+    if((m_metaDataModel && (m_metaDataModel->dialogHints() & MetaDataModel::IS_COVER_EDITABLE)) ||
+            !coverPath.isEmpty() ||
+            !coverPixmap.isNull())
+    {
+        CoverEditor *coverEditor = new CoverEditor(m_metaDataModel, coverPath, this);
+        m_ui->tabWidget->addTab(coverEditor, tr("Cover"));
     }
 
     if(m_metaDataModel)

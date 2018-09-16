@@ -66,6 +66,7 @@ SET(libqmmpui_SRCS
     columneditor.cpp
     metadatahelper.cpp
     coverviewer.cpp
+    covereditor.cpp
 )
 
 SET(libqmmpui_HDRS
@@ -132,6 +133,7 @@ SET(libqmmpui_UIS
     forms/aboutdialog.ui
     forms/addurldialog.ui
     forms/columneditor.ui
+    forms/covereditor.ui
 )
 
 QT4_WRAP_UI(libqmmpui_UIS_H ${libqmmpui_UIS})
