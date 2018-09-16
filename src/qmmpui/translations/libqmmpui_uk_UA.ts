@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk_UA">
+<TS version="2.0" language="uk_UA">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -704,6 +704,39 @@
     </message>
 </context>
 <context>
+    <name>CoverEditor</name>
+    <message>
+        <location filename="../forms/covereditor.ui" line="22"/>
+        <source>Image source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/covereditor.ui" line="76"/>
+        <source>Load</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/covereditor.ui" line="83"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/covereditor.ui" line="90"/>
+        <source>Save as...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../covereditor.cpp" line="33"/>
+        <source>External file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../covereditor.cpp" line="34"/>
+        <source>Tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverViewer</name>
     <message>
         <location filename="../coverviewer.cpp" line="30"/>
@@ -711,12 +744,12 @@
         <translation>&amp;Зберегти як...</translation>
     </message>
     <message>
-        <location filename="../coverviewer.cpp" line="57"/>
+        <location filename="../coverviewer.cpp" line="52"/>
         <source>Save Cover As</source>
         <translation>Зберегти обкладинку як</translation>
     </message>
     <message>
-        <location filename="../coverviewer.cpp" line="59"/>
+        <location filename="../coverviewer.cpp" line="54"/>
         <source>Images</source>
         <translation>Зображення</translation>
     </message>
@@ -744,127 +777,127 @@
         <translation>Підсумок</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="153"/>
+        <location filename="../detailsdialog.cpp" line="168"/>
         <source>%1/%2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="179"/>
+        <location filename="../detailsdialog.cpp" line="214"/>
         <source>Cover</source>
         <translation>Обкладинка</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="219"/>
+        <location filename="../detailsdialog.cpp" line="244"/>
         <source>Title</source>
         <translation>Заголовок</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="220"/>
+        <location filename="../detailsdialog.cpp" line="245"/>
         <source>Artist</source>
         <translation>Виконавець</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="221"/>
+        <location filename="../detailsdialog.cpp" line="246"/>
         <source>Album artist</source>
         <translation>Альбом виконавця</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="222"/>
+        <location filename="../detailsdialog.cpp" line="247"/>
         <source>Album</source>
         <translation>Альбом</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="223"/>
+        <location filename="../detailsdialog.cpp" line="248"/>
         <source>Comment</source>
         <translation>Коментар</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="224"/>
+        <location filename="../detailsdialog.cpp" line="249"/>
         <source>Genre</source>
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="225"/>
+        <location filename="../detailsdialog.cpp" line="250"/>
         <source>Composer</source>
         <translation>Композитор</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="226"/>
+        <location filename="../detailsdialog.cpp" line="251"/>
         <source>Year</source>
         <translation>Рік</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="227"/>
+        <location filename="../detailsdialog.cpp" line="252"/>
         <source>Track</source>
         <translation>Доріжка</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="228"/>
+        <location filename="../detailsdialog.cpp" line="253"/>
         <source>Disc number</source>
         <translation>Номер диску</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="246"/>
+        <location filename="../detailsdialog.cpp" line="271"/>
         <source>Duration</source>
         <translation>Тривалість</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="249"/>
+        <location filename="../detailsdialog.cpp" line="274"/>
         <source>Bitrate</source>
         <translation>Бітрейт</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="249"/>
+        <location filename="../detailsdialog.cpp" line="274"/>
         <source>kbps</source>
         <translation>кб/с</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="250"/>
+        <location filename="../detailsdialog.cpp" line="275"/>
         <source>Sample rate</source>
         <translation>Частота дискретизації</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="250"/>
+        <location filename="../detailsdialog.cpp" line="275"/>
         <source>Hz</source>
         <translation>Гц</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="251"/>
+        <location filename="../detailsdialog.cpp" line="276"/>
         <source>Channels</source>
         <translation>Канали</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="252"/>
+        <location filename="../detailsdialog.cpp" line="277"/>
         <source>Sample size</source>
         <translation>Розмір семпла</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="252"/>
+        <location filename="../detailsdialog.cpp" line="277"/>
         <source>bits</source>
         <translation>біт</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="253"/>
+        <location filename="../detailsdialog.cpp" line="278"/>
         <source>Format name</source>
         <translation>Назва формату</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="254"/>
+        <location filename="../detailsdialog.cpp" line="279"/>
         <source>File size</source>
         <translation>Розмір файла</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="254"/>
+        <location filename="../detailsdialog.cpp" line="279"/>
         <source>KiB</source>
         <translation>КіБ</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="298"/>
+        <location filename="../detailsdialog.cpp" line="323"/>
         <source>Yes</source>
         <translation>Так</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="298"/>
+        <location filename="../detailsdialog.cpp" line="323"/>
         <source>No</source>
         <translation>Ні</translation>
     </message>
