@@ -274,3 +274,6 @@ Version 1.2.2
 * fixed Goom plugin:
   - fixed segmentation fault
   - fixed issue with gcc optimizations (-O2 flag)
+  
+Version 1.2.3
+* fixed gcc 8.1 support
