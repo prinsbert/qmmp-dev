@@ -6,7 +6,7 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
         <source>About Qmmp</source>
-        <translation>O programie</translation>
+        <translation>O Qmmp</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="49"/>
@@ -31,12 +31,12 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="105"/>
         <source>License Agreement</source>
-        <translation>Licencja</translation>
+        <translation>Umowa licencyjna</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="63"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
-        <translation>Oparty na bibliotekach QT odtwarzacz (Qmmp)</translation>
+        <translation>Odtwarzacz multimedialny oparty na Qt (Qmmp)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="67"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../forms/addurldialog.ui" line="14"/>
         <source>Enter URL to add</source>
-        <translation>Wipsz URL do dodania</translation>
+        <translation>Wpisz URL do dodania</translation>
     </message>
     <message>
         <location filename="../forms/addurldialog.ui" line="46"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../forms/addurldialog.ui" line="53"/>
         <source>&amp;Cancel</source>
-        <translation>Anuluj</translation>
+        <translation>A&amp;nuluj</translation>
     </message>
     <message>
         <location filename="../addurldialog.cpp" line="85"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="14"/>
         <source>Edit Column</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj kolumnę</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="36"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="76"/>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="64"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="29"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="85"/>
@@ -172,57 +172,57 @@
     <message>
         <location filename="../columneditor.cpp" line="100"/>
         <source>Track Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeks ścieżek</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="87"/>
         <source>Artist - Album</source>
-        <translation type="unfinished"></translation>
+        <translation>Artysta - Album</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="88"/>
         <source>Artist - Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Artysta - Tytuł</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="89"/>
         <source>Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Artysta albumu</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="91"/>
         <source>Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numer utworu</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="92"/>
         <source>Two-digit Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwucyfrowy numer utworu</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="97"/>
         <source>Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numer płyty</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="98"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa pliku</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="99"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ścieżka pliku</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="102"/>
         <source>Parent Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalog nadrzędny</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="103"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Niestandardowy</translation>
     </message>
 </context>
 <context>
@@ -379,7 +379,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="417"/>
         <source>Use separate image files</source>
-        <translation>Użyj oddzielnych obrazków</translation>
+        <translation>Użyj oddzielnych obrazów</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="427"/>
@@ -439,7 +439,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="628"/>
         <source>Replay Gain</source>
-        <translation type="unfinished"></translation>
+        <translation>Replay Gain</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="634"/>
@@ -449,13 +449,13 @@
     <message>
         <location filename="../forms/configdialog.ui" line="651"/>
         <source>Preamp:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wzmocnienie sygnału:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="683"/>
         <location filename="../forms/configdialog.ui" line="728"/>
         <source>dB</source>
-        <translation type="unfinished"></translation>
+        <translation>dB</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="696"/>
@@ -465,7 +465,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="748"/>
         <source>Use  peak info to prevent clipping</source>
-        <translation>Użyj informacji peak by zapobiec &quot;klipnięciom&quot;</translation>
+        <translation>Użyj informacji o szczytach, aby zapobiec przycinaniu</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="778"/>
@@ -485,17 +485,17 @@
     <message>
         <location filename="../forms/configdialog.ui" line="823"/>
         <source>Volume adjustment step:</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok regulacji głośności:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="764"/>
         <source>Output bit depth:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyjściowa głębia bitowa:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="771"/>
         <source>Use dithering</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj ditheringu</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="64"/>
@@ -555,7 +555,7 @@
     <message>
         <location filename="../configdialog.cpp" line="263"/>
         <source>File Dialogs</source>
-        <translation>Okno dialogowe</translation>
+        <translation>Okna dialogowe</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="274"/>
@@ -570,17 +570,17 @@
     <message>
         <location filename="../configdialog.cpp" line="325"/>
         <source>Brazilian Portuguese</source>
-        <translation>Brazylijski Portugalski</translation>
+        <translation>Brazylijski portugalski</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="326"/>
         <source>Chinese Simplified</source>
-        <translation>Chiński Uproszczony</translation>
+        <translation>Chiński uproszczony</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="327"/>
         <source>Chinese Traditional</source>
-        <translation>Chiński Tradycyjny</translation>
+        <translation>Chiński tradycyjny</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="328"/>
@@ -615,7 +615,7 @@
     <message>
         <location filename="../configdialog.cpp" line="334"/>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Grecki</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="335"/>
@@ -630,7 +630,7 @@
     <message>
         <location filename="../configdialog.cpp" line="337"/>
         <source>Indonesian</source>
-        <translation type="unfinished"></translation>
+        <translation>Indonezyjski</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="338"/>
@@ -645,7 +645,7 @@
     <message>
         <location filename="../configdialog.cpp" line="340"/>
         <source>Kazakh</source>
-        <translation>Kazaski</translation>
+        <translation>Kazachski</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="341"/>
@@ -660,7 +660,7 @@
     <message>
         <location filename="../configdialog.cpp" line="343"/>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Portugalski</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="344"/>
@@ -670,7 +670,7 @@
     <message>
         <location filename="../configdialog.cpp" line="345"/>
         <source>Serbian</source>
-        <translation type="unfinished"></translation>
+        <translation>Serbski</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="346"/>
@@ -700,7 +700,7 @@
     <message>
         <location filename="../configdialog.cpp" line="351"/>
         <source>Serbian (Ekavian)</source>
-        <translation>Serbski (Ekawski)</translation>
+        <translation>Serbski (ekawski)</translation>
     </message>
 </context>
 <context>
@@ -708,7 +708,7 @@
     <message>
         <location filename="../coverviewer.cpp" line="30"/>
         <source>&amp;Save As...</source>
-        <translation>Zapisz jako...</translation>
+        <translation>&amp;Zapisz jako...</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="57"/>
@@ -744,62 +744,62 @@
         <translation>Informacje</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="151"/>
+        <location filename="../detailsdialog.cpp" line="152"/>
         <source>%1/%2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="170"/>
+        <location filename="../detailsdialog.cpp" line="171"/>
         <source>Cover</source>
         <translation>Okładka</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="204"/>
+        <location filename="../detailsdialog.cpp" line="205"/>
         <source>Title</source>
         <translation>Tytuł</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="205"/>
+        <location filename="../detailsdialog.cpp" line="206"/>
         <source>Artist</source>
         <translation>Artysta</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="206"/>
+        <location filename="../detailsdialog.cpp" line="207"/>
         <source>Album artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Artysta albumu</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="207"/>
+        <location filename="../detailsdialog.cpp" line="208"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="208"/>
+        <location filename="../detailsdialog.cpp" line="209"/>
         <source>Comment</source>
         <translation>Komentarz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="209"/>
+        <location filename="../detailsdialog.cpp" line="210"/>
         <source>Genre</source>
         <translation>Gatunek</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="210"/>
+        <location filename="../detailsdialog.cpp" line="211"/>
         <source>Composer</source>
         <translation>Kompozytor</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="212"/>
+        <location filename="../detailsdialog.cpp" line="213"/>
         <source>Year</source>
         <translation>Rok</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="214"/>
+        <location filename="../detailsdialog.cpp" line="215"/>
         <source>Track</source>
         <translation>Ścieżka</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="216"/>
+        <location filename="../detailsdialog.cpp" line="217"/>
         <source>Disc number</source>
         <translation>Numer płyty</translation>
     </message>
@@ -870,7 +870,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="28"/>
         <source>Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Artysta albumu</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="31"/>
@@ -880,12 +880,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="32"/>
         <source>Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numer utworu</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Two-digit Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwucyfrowy numer utworu</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="35"/>
@@ -910,17 +910,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="39"/>
         <source>Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numer płyty</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="42"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa pliku</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="43"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ścieżka pliku</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="45"/>
@@ -935,12 +935,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="47"/>
         <source>Artist - Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Artysta - Tytuł</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="48"/>
         <source>Parent Directory Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa katalogu nadrzędnego</translation>
     </message>
 </context>
 <context>
@@ -956,7 +956,7 @@
     <message>
         <location filename="../playlistheadermodel.cpp" line="36"/>
         <source>Artist - Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Artysta - Tytuł</translation>
     </message>
     <message>
         <location filename="../playlistheadermodel.cpp" line="186"/>
@@ -966,7 +966,7 @@
     <message>
         <location filename="../playlistheadermodel.cpp" line="187"/>
         <source>Add Column</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj kolumnę</translation>
     </message>
 </context>
 <context>
@@ -1012,7 +1012,7 @@
     <message>
         <location filename="../qtfiledialog.cpp" line="34"/>
         <source>Qt File Dialog</source>
-        <translation>Okno dialogowe QT</translation>
+        <translation>Okno dialogowe Qt</translation>
     </message>
 </context>
 <context>
@@ -1040,7 +1040,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="113"/>
         <source>Album artist:</source>
-        <translation type="unfinished"></translation>
+        <translation>Artysta albumu:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="123"/>
@@ -1062,7 +1062,7 @@
         <location filename="../forms/tageditor.ui" line="228"/>
         <location filename="../forms/tageditor.ui" line="260"/>
         <source>?</source>
-        <translation type="unfinished"></translation>
+        <translation>?</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="203"/>
@@ -1119,7 +1119,7 @@
     <message>
         <location filename="../uihelper.cpp" line="156"/>
         <source>Select one or more files to play</source>
-        <translation>Wybierz jedne lub więcej plików do odtwarzania</translation>
+        <translation>Wybierz jeden lub więcej plików do odtwarzania</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="164"/>
@@ -1183,7 +1183,7 @@
     <message>
         <location filename="../winfileassocpage.cpp" line="146"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Zaznacz rozszerzenia plików, które Qmmp ma obsługiwać. Po kliknięciu Zastosuj, zaznaczone pliki zostaną skojarzone z Qmmp. Jeśli odznaczysz typ pliku, pierwotne skojarzenie zostanie przywrócone.</translation>
+        <translation>Zaznacz rozszerzenia plików, które Qmmp ma obsługiwać. Po kliknięciu Zastosuj zaznaczone pliki zostaną skojarzone z Qmmp. Jeśli odznaczysz typ pliku, pierwotne skojarzenie zostanie przywrócone.</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="150"/>
