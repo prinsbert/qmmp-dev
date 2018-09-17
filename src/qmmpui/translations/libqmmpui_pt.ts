@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="pt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -615,7 +613,7 @@
     <message>
         <location filename="../configdialog.cpp" line="334"/>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Grego</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="335"/>
@@ -630,7 +628,7 @@
     <message>
         <location filename="../configdialog.cpp" line="337"/>
         <source>Indonesian</source>
-        <translation type="unfinished"></translation>
+        <translation>Indonésio</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="338"/>
@@ -670,7 +668,7 @@
     <message>
         <location filename="../configdialog.cpp" line="345"/>
         <source>Serbian</source>
-        <translation type="unfinished"></translation>
+        <translation>Sérvio</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="346"/>
@@ -744,62 +742,62 @@
         <translation>Resumo</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="152"/>
+        <location filename="../detailsdialog.cpp" line="151"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="171"/>
+        <location filename="../detailsdialog.cpp" line="170"/>
         <source>Cover</source>
         <translation>Capa de álbum</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="205"/>
+        <location filename="../detailsdialog.cpp" line="204"/>
         <source>Title</source>
         <translation>Título</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="206"/>
+        <location filename="../detailsdialog.cpp" line="205"/>
         <source>Artist</source>
         <translation>Artista</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="207"/>
+        <location filename="../detailsdialog.cpp" line="206"/>
         <source>Album artist</source>
         <translation>Artista do álbum</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="208"/>
+        <location filename="../detailsdialog.cpp" line="207"/>
         <source>Album</source>
         <translation>Álbum</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="209"/>
+        <location filename="../detailsdialog.cpp" line="208"/>
         <source>Comment</source>
         <translation>Comentário</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="210"/>
+        <location filename="../detailsdialog.cpp" line="209"/>
         <source>Genre</source>
         <translation>Género</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="211"/>
+        <location filename="../detailsdialog.cpp" line="210"/>
         <source>Composer</source>
         <translation>Compositor</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="213"/>
+        <location filename="../detailsdialog.cpp" line="212"/>
         <source>Year</source>
         <translation>Ano</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="215"/>
+        <location filename="../detailsdialog.cpp" line="214"/>
         <source>Track</source>
         <translation>Faixa</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="217"/>
+        <location filename="../detailsdialog.cpp" line="216"/>
         <source>Disc number</source>
         <translation>Número do disco</translation>
     </message>
@@ -973,7 +971,7 @@
     <name>PlayListManager</name>
     <message>
         <location filename="../playlistmanager.cpp" line="152"/>
-        <location filename="../playlistmanager.cpp" line="311"/>
+        <location filename="../playlistmanager.cpp" line="309"/>
         <source>Playlist</source>
         <translation>Lista de reprodução</translation>
     </message>
@@ -1010,7 +1008,7 @@
 <context>
     <name>QtFileDialogFactory</name>
     <message>
-        <location filename="../qtfiledialog.cpp" line="35"/>
+        <location filename="../qtfiledialog.cpp" line="34"/>
         <source>Qt File Dialog</source>
         <translation>Diálogo de ficheiro Qt</translation>
     </message>
@@ -1106,39 +1104,39 @@
 <context>
     <name>UiHelper</name>
     <message>
-        <location filename="../uihelper.cpp" line="139"/>
-        <location filename="../uihelper.cpp" line="151"/>
+        <location filename="../uihelper.cpp" line="138"/>
+        <location filename="../uihelper.cpp" line="150"/>
         <source>All Supported Bitstreams</source>
         <translation>Todas as emissões suportadas</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="145"/>
+        <location filename="../uihelper.cpp" line="144"/>
         <source>Select one or more files to open</source>
         <translation>Selecione um ou mais ficheiros a abrir</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="157"/>
+        <location filename="../uihelper.cpp" line="156"/>
         <source>Select one or more files to play</source>
         <translation>Selecione um ou mais ficheiros a reproduzir</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="165"/>
+        <location filename="../uihelper.cpp" line="164"/>
         <source>Choose a directory</source>
         <translation>Selecione um diretório</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="181"/>
-        <location filename="../uihelper.cpp" line="205"/>
+        <location filename="../uihelper.cpp" line="180"/>
+        <location filename="../uihelper.cpp" line="204"/>
         <source>Playlist Files</source>
         <translation>Ficheiros de lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="183"/>
+        <location filename="../uihelper.cpp" line="182"/>
         <source>Open Playlist</source>
         <translation>Abrir lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="206"/>
+        <location filename="../uihelper.cpp" line="205"/>
         <source>Save Playlist</source>
         <translation>Guardar lista de reprodução</translation>
     </message>

@@ -1378,3 +1378,17 @@ Version 1.2.3
 * fixed metadata updating issue
 * fixed build for windows
 * fixed issue caused by sending same metadata several times in a row
+
+Version 1.2.3
+* added equalizer optimization
+* updated translation list
+* improved PCM WAVE support
+* fixed segmentation fault
+* fixed tag reading in the archive plugin
+* fixed seeking in the archive plugin
+* fixed issue with multiscreen configuration
+* updated Polish translation (mrerexx)
+* updated Portuguese translation (Sérgio Marques)
+* updated Spanish translation (Joel Barrios)
+* updated Ukrainian translation (Gennady Motsyo)
+* updated Russian translation
