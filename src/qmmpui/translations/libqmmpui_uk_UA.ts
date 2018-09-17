@@ -615,7 +615,7 @@
     <message>
         <location filename="../configdialog.cpp" line="334"/>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Грецька</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="335"/>
@@ -630,7 +630,7 @@
     <message>
         <location filename="../configdialog.cpp" line="337"/>
         <source>Indonesian</source>
-        <translation type="unfinished"></translation>
+        <translation>Індонезійська</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="338"/>
@@ -670,7 +670,7 @@
     <message>
         <location filename="../configdialog.cpp" line="345"/>
         <source>Serbian</source>
-        <translation type="unfinished"></translation>
+        <translation>Сербська</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="346"/>
