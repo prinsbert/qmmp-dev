@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,7 +25,7 @@
 #include <QSignalMapper>
 #include <QCloseEvent>
 #include <QInputDialog>
-#include <QDesktopWidget>
+#include <QScreen>
 #include <qmmpui/playlistitem.h>
 #include <qmmpui/playlistmodel.h>
 #include <qmmpui/playlistmanager.h>
@@ -496,16 +496,22 @@ void PlayList::readSettings()
     }
     else
     {
-        QDesktopWidget *desktop = qApp->desktop();
+        QScreen *screen = QGuiApplication::primaryScreen();
+        QRect availableGeometry = screen->availableGeometry();
         QPoint pos = settings.value ("Skinned/pl_pos", QPoint (100, 332)).toPoint();
-        if(!desktop->availableGeometry().contains(pos))
+        m_ratio = m_skin->ratio();
+        //TODO QGuiApplication::screenAt
+        foreach(QScreen *screen, QGuiApplication::screens())
         {
-            QRect availableGeometry = desktop->availableGeometry();
-            m_ratio = m_skin->ratio();
-            pos.setX(qBound(availableGeometry.left(), pos.x(), availableGeometry.right() - m_ratio*275));
-            pos.setY(qBound(availableGeometry.top(), pos.y(), availableGeometry.bottom() - m_ratio*116));
+            if(screen->availableGeometry().contains(pos))
+            {
+               availableGeometry = screen->availableGeometry();
+               break;
+            }
         }
-        move (pos); //position
+        pos.setX(qBound(availableGeometry.left(), pos.x(), availableGeometry.right() - m_ratio*275));
+        pos.setY(qBound(availableGeometry.top(), pos.y(), availableGeometry.bottom() - m_ratio*116));
+        move(pos); //position
         m_update = true;
     }
 }
