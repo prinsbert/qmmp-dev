@@ -1379,7 +1379,7 @@ Version 1.2.3
 * fixed build for windows
 * fixed issue caused by sending same metadata several times in a row
 
-Version 1.2.3
+Version 1.2.4
 * added equalizer optimization
 * updated translation list
 * improved PCM WAVE support
