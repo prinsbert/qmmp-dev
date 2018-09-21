@@ -11,12 +11,16 @@ OBJECTS_DIR=./.build/obj
 RCC_DIR=./.build/rcc
 
 unix{
-INCLUDEPATH += /home/user/qmmp-1.2/include
-QMAKE_LIBDIR += /home/user/qmmp-1.2/lib
-INCLUDEPATH += /usr/local/include
-}else{
-INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-1.2/src
-QMAKE_LIBDIR += C:/projects/qmmp-svn-stable/qmmp-1.2/bin
+  INCLUDEPATH += /home/user/qmmp-1.2/include
+  QMAKE_LIBDIR += /home/user/qmmp-1.2/lib
+  INCLUDEPATH += /usr/local/include
+} else {
+  INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-1.2/src
+  QMAKE_LIBDIR += C:/projects/qmmp-svn-stable/qmmp-1.2/bin
+  EXTRA_INCDIR = C:/devel/mingw32-libs/include
+  QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
+  QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
+  QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
 }
 
 QT += widgets
