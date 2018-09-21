@@ -46,6 +46,7 @@ unix {
 } else {
   INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
   QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+  QMAKE_CFLAGS_ISYSTEM = -isystem
   EXTRA_INCDIR = C:/devel/mingw32-libs/include
   QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
   QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
