@@ -46,6 +46,10 @@ unix {
 } else {
   INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
   QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+  EXTRA_INCDIR = C:/devel/mingw32-libs/include
+  QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
+  QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
+  QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
 }
 
 #Comment/uncomment this if you want to change plugins list
