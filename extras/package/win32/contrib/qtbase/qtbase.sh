@@ -1,13 +1,13 @@
 #!/bin/sh
 
 NAME=qtbase-everywhere-src
-VERSION=5.11.1
+VERSION=5.11.2
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate https://download.qt.io/official_releases/qt/5.11/5.11.1/submodules/$NAME-$VERSION.tar.xz
+    wget -nc --no-check-certificate https://download.qt.io/official_releases/qt/5.11/$VERSION/submodules/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp
