@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.2.3
+QMMP_VERSION=1.2.4
 QMMP_PLUGIN_PACK_VERSION=1.2.3
 
 export DEV_PATH=/c/devel
@@ -144,9 +144,9 @@ create_distr ()
 case $1 in
   --download)
     download_qmmp_tarball
-    #download_plugins_tarball
+    download_plugins_tarball
     #download_qmmp_svn
-    download_plugins_svn
+    #download_plugins_svn
   ;;
   --install)
     cd tmp

@@ -250,3 +250,9 @@ LEGEND
 [*] qmmp-plugin-pack-0.11.2
 [*] curl-7.61.0
 [*] ffmpeg-3.4.3
+
+0.11.3
+[*] qmmp-0.11.3
+[*] qmmp-plugin-pack-0.11.3
+[*] curl-7.61.1
+[*] ffmpeg-3.4.4

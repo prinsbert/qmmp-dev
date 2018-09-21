@@ -255,3 +255,10 @@ LEGEND
 [*] qmmp-1.2.3
 [*] qmmp-plugin-pack-1.2.3-r8187
 [+] qtbase-5.11.1
+
+1.2.3
+[*] qmmp-1.2.4
+[*] qmmp-plugin-pack-1.2.3
+[*] curl-7.61.1
+[*] ffmpeg-3.4.4
+[+] qtbase-5.11.1
