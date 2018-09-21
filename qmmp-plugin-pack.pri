@@ -20,8 +20,9 @@ unix {
   INCLUDEPATH += /usr/include
   INCLUDEPATH += /usr/local/include
 } else {
-  INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
-  QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+  INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-0.11/src
+  QMAKE_LIBDIR += C:/projects/qmmp-svn-stable/qmmp-0.11/bin
+  QMAKE_CFLAGS_ISYSTEM = -isystem
   EXTRA_INCDIR = C:/devel/mingw32-libs/include
   QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
   QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
