@@ -26,6 +26,14 @@ QT += widgets
 
 QMMP_VERSION = 1.2.4
 
+#Include and link paths
+win32 {
+EXTRA_INCDIR = C:/devel/mingw32-libs/include
+QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
+QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
+QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
+}
+
 #Comment/uncomment this if you want to change plugins list
 
 CONFIG += ARCHIVE_PLUGIN
