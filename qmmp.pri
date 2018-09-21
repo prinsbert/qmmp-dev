@@ -21,6 +21,7 @@ QMMP_VERSION = 0.11.3
 
 #Include and link paths
 win32 {
+QMAKE_CFLAGS_ISYSTEM = -isystem
 EXTRA_INCDIR = C:/devel/mingw32-libs/include
 QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
 QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
