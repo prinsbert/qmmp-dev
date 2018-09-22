@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.2.2
-UBUNTU_CODENAMES='xenial bionic'
+PLUGIN_PACK_VERSION=1.2.3
+UBUNTU_CODENAMES='xenial bionic cosmic'
 BUILD_ROOT=build-root
 
 
