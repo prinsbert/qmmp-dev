@@ -32,7 +32,6 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 find_package(Qt5Widgets 5.4.0 REQUIRED)
 find_package(Qt5LinguistTools 5.4.0 REQUIRED)
-find_package(Qt5Sql 5.4.0)
 
 get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
@@ -130,10 +129,6 @@ PRINT_SUMMARY ("Sample Rate Conversion .........." USE_SRC SAMPLERATE_FOUND)
 MESSAGE("")
 MESSAGE("Visual Plugins:")
 PRINT_SUMMARY ("Goom visualization .............." USE_GOOM 1)
-
-MESSAGE("")
-MESSAGE("General Plugins:")
-PRINT_SUMMARY ("History plugin .................." USE_HISTORY QMMPUI_FOUND AND Qt5Sql_FOUND)
 
 MESSAGE("")
 MESSAGE("Advanced:")
