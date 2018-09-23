@@ -33,8 +33,8 @@ QT5_WRAP_UI(libhistory_UIS_H ${libhistory_UIS})
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-IF(QMMPUI_FOUND)
+IF(QMMPUI_FOUND AND Qt5Sql_FOUND)
 ADD_LIBRARY(history MODULE ${libhistory_SRCS} ${libhistory_UIS_H} ${libhistory_RCC_SRCS})
 target_link_libraries(history Qt5::Widgets Qt5::Sql ${QMMP_LDFLAGS} ${QMMPUI_LDFLAGS})
 install(TARGETS history DESTINATION ${LIB_DIR}/qmmp/General)
-ENDIF(QMMPUI_FOUND)
+ENDIF(QMMPUI_FOUND AND Qt5Sql_FOUND)
