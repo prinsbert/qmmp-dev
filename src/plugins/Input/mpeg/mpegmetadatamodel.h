@@ -38,6 +38,8 @@ public:
     QList<MetaDataItem> extraProperties() const;
     QList<TagModel* > tags() const;
     QPixmap cover() const;
+    void setCover(const QPixmap &pix);
+    void removeCover();
 
 private:
     QList<TagModel* > m_tags;
