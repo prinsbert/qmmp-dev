@@ -1,0 +1,13 @@
+Index: taglib-1.11.1/taglib/ogg/oggfile.cpp
+===================================================================
+--- taglib-1.11.1.orig/taglib/ogg/oggfile.cpp	2018-09-23 20:47:31.000000000 +0300
++++ taglib-1.11.1/taglib/ogg/oggfile.cpp	2018-09-23 20:50:31.949023150 +0300
+@@ -253,7 +253,7 @@
+   ByteVectorList packets = firstPage->packets();
+   packets[i - firstPage->firstPacketIndex()] = packet;
+ 
+-  if(firstPage != lastPage && lastPage->packetCount() > 2) {
++  if(firstPage != lastPage && lastPage->packetCount() > 1) {
+     ByteVectorList lastPagePackets = lastPage->packets();
+     lastPagePackets.erase(lastPagePackets.begin());
+     packets.append(lastPagePackets);
