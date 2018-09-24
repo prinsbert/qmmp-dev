@@ -1,5 +1,0 @@
-SET(USE_HISTORY TRUE CACHE BOOL "enable/disable history plugin")
-
-IF(USE_HISTORY AND QMMPUI_FOUND)
-add_subdirectory(history)
-ENDIF(USE_HISTORY AND QMMPUI_FOUND)

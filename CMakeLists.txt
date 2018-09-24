@@ -141,10 +141,6 @@ MESSAGE("Visual Plugins:")
 PRINT_SUMMARY ("Goom visualization .............." USE_GOOM 1)
 
 MESSAGE("")
-MESSAGE("General Plugins:")
-PRINT_SUMMARY ("History plugin .................." USE_HISTORY QMMPUI_FOUND)
-
-MESSAGE("")
 MESSAGE("Advanced:")
 PRINT_SUMMARY ("FFap sssempler optimizations ...." YASM_FOUND USE_FFAP)
 PRINT_SUMMARY ("Goom assempler optimizations ...." GOOM_ASM USE_GOOM)
