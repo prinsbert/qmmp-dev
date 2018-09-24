@@ -18,6 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <QBuffer>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/vorbisfile.h>
@@ -29,7 +30,11 @@
 #define TStringToQString_qt4(s) QString::fromUtf8(s.toCString(true)).trimmed()
 
 VorbisMetaDataModel::VorbisMetaDataModel(const QString &path, bool readOnly)
+#ifdef HAS_PICTURE_LIST
+    : MetaDataModel(readOnly, MetaDataModel::IS_COVER_EDITABLE)
+#else
     : MetaDataModel(readOnly)
+#endif
 {
     m_path = path;
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
@@ -93,6 +98,48 @@ QPixmap VorbisMetaDataModel::cover() const
     }
     return QPixmap();
 }
+
+#ifdef HAS_PICTURE_LIST
+void VorbisMetaDataModel::setCover(const QPixmap &pix)
+{
+    removeCover();
+    if(m_tag)
+    {
+        TagLib::FLAC::Picture *picture = new TagLib::FLAC::Picture();
+        picture->setType(TagLib::FLAC::Picture::FrontCover);
+
+        QByteArray data;
+        QBuffer buffer(&data);
+        buffer.open(QIODevice::WriteOnly);
+        pix.save(&buffer, "JPEG");
+        picture->setMimeType("image/jpeg");
+        picture->setData(TagLib::ByteVector(data.constData(), data.size()));
+        m_tag->addPicture(picture);
+        m_file->save();
+    }
+}
+
+void VorbisMetaDataModel::removeCover()
+{
+    if(m_tag && !m_tag->isEmpty())
+    {
+        bool save = false;
+        TagLib::List<TagLib::FLAC::Picture *> list = m_tag->pictureList();
+        for(uint i = 0; i < list.size(); ++i)
+        {
+            if(list[i]->type() == TagLib::FLAC::Picture::FrontCover)
+            {
+                m_tag->removePicture(list[i], false);
+                save = true;
+            }
+        }
+        if(save)
+        {
+            m_file->save();
+        }
+    }
+}
+#endif
 
 ulong VorbisMetaDataModel::readPictureBlockField(QByteArray data, int offset) const
 {

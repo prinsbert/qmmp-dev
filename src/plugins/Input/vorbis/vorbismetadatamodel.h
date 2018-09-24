@@ -28,8 +28,11 @@
 #include <taglib/tfilestream.h>
 #endif
 
-
 class VorbisCommentModel;
+
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 11))
+#define HAS_PICTURE_LIST
+#endif
 
 class VorbisMetaDataModel : public MetaDataModel
 {
@@ -40,6 +43,10 @@ public:
 
     QList<TagModel* > tags() const;
     QPixmap cover() const;
+#ifdef HAS_PICTURE_LIST
+    void setCover(const QPixmap &pix);
+    void removeCover();
+#endif
 
 private:
     ulong readPictureBlockField(QByteArray data, int offset) const;

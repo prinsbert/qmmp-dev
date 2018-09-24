@@ -29,6 +29,10 @@
 #endif
 #include <qmmp/metadatamodel.h>
 
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 11))
+#define HAS_PICTURE_LIST
+#endif
+
 class FLACMetaDataModel : public MetaDataModel
 {
 public:
@@ -37,6 +41,10 @@ public:
     QList<TagModel* > tags() const;
     QPixmap cover() const;
     QString coverPath() const;
+#ifdef HAS_PICTURE_LIST
+    void setCover(const QPixmap &pix);
+    void removeCover();
+#endif
 
 private:
     QString m_path;
@@ -45,6 +53,7 @@ private:
 #if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream *m_stream;
 #endif
+    TagLib::Ogg::XiphComment *m_tag;
 };
 
 class VorbisCommentModel : public TagModel
