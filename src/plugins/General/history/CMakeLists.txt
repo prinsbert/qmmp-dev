@@ -19,13 +19,10 @@ SET(QT_INCLUDES
   ${CMAKE_CURRENT_SOURCE_DIR}/../../../
 )
 
-# libqmmp
-include_directories(${QMMP_INCLUDE_DIRS})
-link_directories( ${QMMP_LIBRARY_DIRS})
-
-# libqmmpui
-include_directories(${QMMPUI_INCLUDE_DIRS})
-link_directories( ${QMMPUI_LIBRARY_DIRS})
+# libqmmpui & libqmmp
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
+link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
+link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 ADD_DEFINITIONS(${SAMPLERATE_CFLAGS})
 
@@ -54,8 +51,6 @@ QT4_WRAP_UI(libhistory_UIS_H ${libhistory_UIS})
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-IF(QMMPUI_FOUND)
 ADD_LIBRARY(history MODULE ${libhistory_SRCS} ${libhistory_UIS_H} ${libhistory_RCC_SRCS})
-target_link_libraries(history ${QT_LIBRARIES} ${QMMP_LDFLAGS} ${QMMPUI_LDFLAGS})
+target_link_libraries(history ${QT_LIBRARIES} libqmmpui libqmmp)
 install(TARGETS history DESTINATION ${PLUGIN_DIR}/General)
-ENDIF(QMMPUI_FOUND)
