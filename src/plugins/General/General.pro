@@ -28,4 +28,8 @@ contains(CONFIG, HAL_PLUGIN){
     unix:SUBDIRS += hal
 }
 
+contains(CONFIG, HISTORY_PLUGIN){
+    SUBDIRS += history
+}
+
 TEMPLATE = subdirs

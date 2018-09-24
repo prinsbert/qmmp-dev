@@ -231,6 +231,7 @@ PRINT_SUMMARY ("ReplayGain Scanner ................" USE_RGSCAN TAGLIB_FOUND)
 PRINT_SUMMARY ("Stream browser ...................." USE_SB 1)
 PRINT_SUMMARY ("Track change ......................" USE_TRACKCHANGE 1)
 PRINT_SUMMARY ("Copy/Paste ........................" USE_COPYPASTE 1)
+PRINT_SUMMARY ("History plugin ...................." USE_HISTORY Qt5Sql_FOUND)
 
 MESSAGE("")
 MESSAGE("File Dialogs:")
