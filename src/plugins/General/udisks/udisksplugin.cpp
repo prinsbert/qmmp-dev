@@ -173,7 +173,7 @@ void UDisksPlugin::updateActions()
             action->setText(actionText);
             action->setData(dev_path);
             m_actions->addAction(action);
-            UiHelper::instance()->addAction(action, UiHelper::TOOLS_MENU);
+            UiHelper::instance()->addAction(action, UiHelper::ADD_MENU);
             addPath(dev_path);
         }
     }
