@@ -663,7 +663,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../forms/mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.cpp" line="964"/>
+        <location filename="../mainwindow.cpp" line="965"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
@@ -879,104 +879,104 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="520"/>
+        <location filename="../mainwindow.cpp" line="521"/>
         <source>Edit Toolbars</source>
         <translation>Edit Bilah-alat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="522"/>
+        <location filename="../mainwindow.cpp" line="523"/>
         <source>Sort List</source>
         <translation>Daftar Surtir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="525"/>
-        <location filename="../mainwindow.cpp" line="580"/>
+        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="581"/>
         <source>By Title</source>
         <translation>Menurut Judul</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="529"/>
-        <location filename="../mainwindow.cpp" line="584"/>
+        <location filename="../mainwindow.cpp" line="530"/>
+        <location filename="../mainwindow.cpp" line="585"/>
         <source>By Album</source>
         <translation>Menurut Album</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="533"/>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="589"/>
         <source>By Artist</source>
         <translation>Menurut Artist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="537"/>
-        <location filename="../mainwindow.cpp" line="592"/>
+        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="593"/>
         <source>By Album Artist</source>
         <translation>Menurut Album Artist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="541"/>
-        <location filename="../mainwindow.cpp" line="596"/>
+        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="../mainwindow.cpp" line="597"/>
         <source>By Filename</source>
         <translation>Menurut Filename</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="545"/>
-        <location filename="../mainwindow.cpp" line="600"/>
+        <location filename="../mainwindow.cpp" line="546"/>
+        <location filename="../mainwindow.cpp" line="601"/>
         <source>By Path + Filename</source>
         <translation>Menurut Alur + Filename</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="549"/>
-        <location filename="../mainwindow.cpp" line="604"/>
+        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="605"/>
         <source>By Date</source>
         <translation>Menurut Tanggal</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="553"/>
-        <location filename="../mainwindow.cpp" line="608"/>
+        <location filename="../mainwindow.cpp" line="554"/>
+        <location filename="../mainwindow.cpp" line="609"/>
         <source>By Track Number</source>
         <translation>Menurut Nomor Trek</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="557"/>
-        <location filename="../mainwindow.cpp" line="612"/>
+        <location filename="../mainwindow.cpp" line="558"/>
+        <location filename="../mainwindow.cpp" line="613"/>
         <source>By Disc Number</source>
         <translation>Menurut Nomor Cakram</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="561"/>
-        <location filename="../mainwindow.cpp" line="616"/>
+        <location filename="../mainwindow.cpp" line="562"/>
+        <location filename="../mainwindow.cpp" line="617"/>
         <source>By File Creation Date</source>
         <translation>Menurut Tanggal Penciptaan File</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="565"/>
-        <location filename="../mainwindow.cpp" line="620"/>
+        <location filename="../mainwindow.cpp" line="566"/>
+        <location filename="../mainwindow.cpp" line="621"/>
         <source>By File Modification Date</source>
         <translation>Menurut Tanggal Modifikasi File</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="569"/>
+        <location filename="../mainwindow.cpp" line="570"/>
         <source>By Group</source>
         <translation>Menurut Kelompok</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="577"/>
+        <location filename="../mainwindow.cpp" line="578"/>
         <source>Sort Selection</source>
         <translation>Pilihan Surtir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="627"/>
+        <location filename="../mainwindow.cpp" line="628"/>
         <source>Randomize List</source>
         <translation>Daftar Acakan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="629"/>
+        <location filename="../mainwindow.cpp" line="630"/>
         <source>Reverse List</source>
         <translation>Daftar Mundur</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="636"/>
-        <location filename="../mainwindow.cpp" line="677"/>
+        <location filename="../mainwindow.cpp" line="637"/>
+        <location filename="../mainwindow.cpp" line="678"/>
         <source>Actions</source>
         <translation>Tindakan</translation>
     </message>
@@ -991,7 +991,7 @@
         <translation>Tampakkan semua tab</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="873"/>
+        <location filename="../mainwindow.cpp" line="874"/>
         <source>Buffering: %1%</source>
         <translation>Buffering: %1%</translation>
     </message>

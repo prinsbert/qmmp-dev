@@ -2,6 +2,39 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ru">
 <context>
+    <name>EditStreamDialog</name>
+    <message>
+        <location filename="../editstreamdialog.ui" line="14"/>
+        <source>Edit Stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="34"/>
+        <source>URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="44"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="54"/>
+        <source>Genre:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="64"/>
+        <source>Bitrate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="74"/>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>StreamBrowser</name>
     <message>
         <location filename="../streambrowser.cpp" line="33"/>
@@ -75,59 +108,74 @@
         <translation>Обновить</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="51"/>
-        <location filename="../streamwindow.cpp" line="69"/>
+        <location filename="../streamwindow.cpp" line="55"/>
+        <location filename="../streamwindow.cpp" line="73"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="52"/>
-        <location filename="../streamwindow.cpp" line="70"/>
+        <location filename="../streamwindow.cpp" line="56"/>
+        <location filename="../streamwindow.cpp" line="74"/>
         <source>Genre</source>
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="53"/>
-        <location filename="../streamwindow.cpp" line="71"/>
+        <location filename="../streamwindow.cpp" line="57"/>
+        <location filename="../streamwindow.cpp" line="75"/>
         <source>Bitrate</source>
         <translation>Битовая частота</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="54"/>
-        <location filename="../streamwindow.cpp" line="72"/>
+        <location filename="../streamwindow.cpp" line="58"/>
+        <location filename="../streamwindow.cpp" line="76"/>
         <source>Format</source>
         <translation>Формат</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="125"/>
+        <location filename="../streamwindow.cpp" line="129"/>
         <source>&amp;Add to favorites</source>
         <translation>&amp;Добавить в избранное</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="126"/>
+        <location filename="../streamwindow.cpp" line="132"/>
         <source>&amp;Add to playlist</source>
         <translation>&amp;Добавить в список воспроизведения</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="131"/>
+        <location filename="../streamwindow.cpp" line="135"/>
+        <source>&amp;Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../streamwindow.cpp" line="137"/>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../streamwindow.cpp" line="140"/>
         <source>&amp;Remove</source>
         <translation>&amp;Удалить</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="141"/>
+        <location filename="../streamwindow.cpp" line="150"/>
         <source>Done</source>
         <translation>Готово</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="144"/>
-        <location filename="../streamwindow.cpp" line="145"/>
+        <location filename="../streamwindow.cpp" line="153"/>
+        <location filename="../streamwindow.cpp" line="154"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="164"/>
+        <location filename="../streamwindow.cpp" line="173"/>
         <source>Receiving</source>
         <translation>Получение</translation>
+    </message>
+    <message>
+        <location filename="../streamwindow.cpp" line="270"/>
+        <source>Edit Stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

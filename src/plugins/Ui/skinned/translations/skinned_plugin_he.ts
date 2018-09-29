@@ -452,53 +452,53 @@
         <translation>אקולייזר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="167"/>
-        <location filename="../eqwidget.cpp" line="184"/>
+        <location filename="../eqwidget.cpp" line="164"/>
+        <location filename="../eqwidget.cpp" line="181"/>
         <source>preset</source>
         <translation>קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="268"/>
+        <location filename="../eqwidget.cpp" line="265"/>
         <source>&amp;Load/Delete</source>
         <translation>&amp;טען/מחק</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="270"/>
+        <location filename="../eqwidget.cpp" line="267"/>
         <source>&amp;Save Preset</source>
         <translation>&amp;שמור קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="272"/>
+        <location filename="../eqwidget.cpp" line="269"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>&amp;שמור קביעות שנטענות אוטומטית</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="274"/>
+        <location filename="../eqwidget.cpp" line="271"/>
         <source>&amp;Import</source>
         <translation>יי&amp;בוא</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="277"/>
+        <location filename="../eqwidget.cpp" line="274"/>
         <source>&amp;Clear</source>
         <translation>&amp;טהר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="306"/>
+        <location filename="../eqwidget.cpp" line="303"/>
         <source>Saving Preset</source>
         <translation>שמירת קביעות</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="307"/>
+        <location filename="../eqwidget.cpp" line="304"/>
         <source>Preset name:</source>
         <translation>שם קביעה:</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="308"/>
+        <location filename="../eqwidget.cpp" line="305"/>
         <source>preset #</source>
         <translation>קביעה מספר</translation>
     </message>
     <message>
-        <location filename="../eqwidget.cpp" line="399"/>
+        <location filename="../eqwidget.cpp" line="396"/>
         <source>Import Preset</source>
         <translation>ייבוא קביעות</translation>
     </message>
@@ -785,37 +785,37 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="354"/>
+        <location filename="../mainwindow.cpp" line="351"/>
         <source>Appearance</source>
         <translation>הופעה</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="355"/>
+        <location filename="../mainwindow.cpp" line="352"/>
         <source>Shortcuts</source>
         <translation>קיצורי דרך</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="425"/>
+        <location filename="../mainwindow.cpp" line="422"/>
         <source>View</source>
         <translation>תצוגה</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="434"/>
+        <location filename="../mainwindow.cpp" line="431"/>
         <source>Playlist</source>
         <translation>רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="452"/>
+        <location filename="../mainwindow.cpp" line="449"/>
         <source>Audio</source>
         <translation>שמע</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="460"/>
+        <location filename="../mainwindow.cpp" line="457"/>
         <source>Tools</source>
         <translation>כלים</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="../mainwindow.cpp" line="539"/>
         <source>Qmmp</source>
         <translation>Qmmp</translation>
     </message>
@@ -833,113 +833,113 @@
         <translation>&amp;העתק בחירה אל</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="228"/>
+        <location filename="../playlist.cpp" line="229"/>
         <source>Sort List</source>
         <translation>מיין רשימה</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="231"/>
-        <location filename="../playlist.cpp" line="286"/>
+        <location filename="../playlist.cpp" line="232"/>
+        <location filename="../playlist.cpp" line="287"/>
         <source>By Title</source>
         <translation>לפי כותרת</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="235"/>
-        <location filename="../playlist.cpp" line="290"/>
+        <location filename="../playlist.cpp" line="236"/>
+        <location filename="../playlist.cpp" line="291"/>
         <source>By Album</source>
         <translation>לפי אלבום</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="239"/>
-        <location filename="../playlist.cpp" line="294"/>
+        <location filename="../playlist.cpp" line="240"/>
+        <location filename="../playlist.cpp" line="295"/>
         <source>By Disc Number</source>
         <translation>לפי מספר תקליטור</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="243"/>
-        <location filename="../playlist.cpp" line="298"/>
+        <location filename="../playlist.cpp" line="244"/>
+        <location filename="../playlist.cpp" line="299"/>
         <source>By Artist</source>
         <translation>לפי אמן</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="247"/>
-        <location filename="../playlist.cpp" line="302"/>
+        <location filename="../playlist.cpp" line="248"/>
+        <location filename="../playlist.cpp" line="303"/>
         <source>By Album Artist</source>
         <translation>לפי אלבום אמן</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="251"/>
-        <location filename="../playlist.cpp" line="306"/>
+        <location filename="../playlist.cpp" line="252"/>
+        <location filename="../playlist.cpp" line="307"/>
         <source>By Filename</source>
         <translation>לפי שם קובץ</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="255"/>
-        <location filename="../playlist.cpp" line="310"/>
+        <location filename="../playlist.cpp" line="256"/>
+        <location filename="../playlist.cpp" line="311"/>
         <source>By Path + Filename</source>
         <translation>לפי נתיב + שם קובץ</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="259"/>
-        <location filename="../playlist.cpp" line="314"/>
+        <location filename="../playlist.cpp" line="260"/>
+        <location filename="../playlist.cpp" line="315"/>
         <source>By Date</source>
         <translation>לפי תאריך</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="263"/>
-        <location filename="../playlist.cpp" line="318"/>
+        <location filename="../playlist.cpp" line="264"/>
+        <location filename="../playlist.cpp" line="319"/>
         <source>By Track Number</source>
         <translation>לפי מספר רצועה</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="267"/>
-        <location filename="../playlist.cpp" line="322"/>
+        <location filename="../playlist.cpp" line="268"/>
+        <location filename="../playlist.cpp" line="323"/>
         <source>By File Creation Date</source>
         <translation>לפי תאריך יצירת קובץ</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="271"/>
-        <location filename="../playlist.cpp" line="326"/>
+        <location filename="../playlist.cpp" line="272"/>
+        <location filename="../playlist.cpp" line="327"/>
         <source>By File Modification Date</source>
         <translation>לפי תאריך שינוי קובץ</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="275"/>
+        <location filename="../playlist.cpp" line="276"/>
         <source>By Group</source>
         <translation>לפי קבוצה</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="283"/>
+        <location filename="../playlist.cpp" line="284"/>
         <source>Sort Selection</source>
         <translation>מיין נבחרות</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="334"/>
+        <location filename="../playlist.cpp" line="335"/>
         <source>Randomize List</source>
         <translation>רשימה אקראית</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="336"/>
+        <location filename="../playlist.cpp" line="337"/>
         <source>Reverse List</source>
         <translation>רשימה מהופכת</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="347"/>
+        <location filename="../playlist.cpp" line="348"/>
         <source>Actions</source>
         <translation>פעולות</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="617"/>
+        <location filename="../playlist.cpp" line="615"/>
         <source>Rename Playlist</source>
         <translation>שנה שם רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="617"/>
+        <location filename="../playlist.cpp" line="615"/>
         <source>Playlist name:</source>
         <translation>שם רשימת נגינה:</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="638"/>
+        <location filename="../playlist.cpp" line="636"/>
         <source>&amp;New PlayList</source>
         <translation>רשימת נגינה &amp;חדשה</translation>
     </message>

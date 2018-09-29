@@ -14,22 +14,22 @@
         <translation>Огг Опус фајлови</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="117"/>
+        <location filename="../decoderopusfactory.cpp" line="122"/>
         <source>About Opus Audio Plugin</source>
         <translation>О Опус прикључку</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="118"/>
+        <location filename="../decoderopusfactory.cpp" line="123"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Кумп Опус прикључак</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="119"/>
+        <location filename="../decoderopusfactory.cpp" line="124"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Аутор: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="120"/>
+        <location filename="../decoderopusfactory.cpp" line="125"/>
         <source>This plugin includes code from TagLib library</source>
         <translation>Овај прикључак користи кôд из TagLib библиотеке</translation>
     </message>

@@ -2,6 +2,39 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="zh_CN">
 <context>
+    <name>EditStreamDialog</name>
+    <message>
+        <location filename="../editstreamdialog.ui" line="14"/>
+        <source>Edit Stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="34"/>
+        <source>URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="44"/>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="54"/>
+        <source>Genre:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="64"/>
+        <source>Bitrate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../editstreamdialog.ui" line="74"/>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>StreamBrowser</name>
     <message>
         <location filename="../streambrowser.cpp" line="33"/>
@@ -75,59 +108,74 @@
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="51"/>
-        <location filename="../streamwindow.cpp" line="69"/>
+        <location filename="../streamwindow.cpp" line="55"/>
+        <location filename="../streamwindow.cpp" line="73"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="52"/>
-        <location filename="../streamwindow.cpp" line="70"/>
+        <location filename="../streamwindow.cpp" line="56"/>
+        <location filename="../streamwindow.cpp" line="74"/>
         <source>Genre</source>
         <translation>风格</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="53"/>
-        <location filename="../streamwindow.cpp" line="71"/>
+        <location filename="../streamwindow.cpp" line="57"/>
+        <location filename="../streamwindow.cpp" line="75"/>
         <source>Bitrate</source>
         <translation>比特率</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="54"/>
-        <location filename="../streamwindow.cpp" line="72"/>
+        <location filename="../streamwindow.cpp" line="58"/>
+        <location filename="../streamwindow.cpp" line="76"/>
         <source>Format</source>
         <translation>格式</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="125"/>
+        <location filename="../streamwindow.cpp" line="129"/>
         <source>&amp;Add to favorites</source>
         <translation>添加到最爱清单(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="126"/>
+        <location filename="../streamwindow.cpp" line="132"/>
         <source>&amp;Add to playlist</source>
         <translation>添加到播放列表中(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="131"/>
+        <location filename="../streamwindow.cpp" line="135"/>
+        <source>&amp;Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../streamwindow.cpp" line="137"/>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../streamwindow.cpp" line="140"/>
         <source>&amp;Remove</source>
         <translation>移除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="141"/>
+        <location filename="../streamwindow.cpp" line="150"/>
         <source>Done</source>
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="144"/>
-        <location filename="../streamwindow.cpp" line="145"/>
+        <location filename="../streamwindow.cpp" line="153"/>
+        <location filename="../streamwindow.cpp" line="154"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="164"/>
+        <location filename="../streamwindow.cpp" line="173"/>
         <source>Receiving</source>
         <translation>接收中</translation>
+    </message>
+    <message>
+        <location filename="../streamwindow.cpp" line="270"/>
+        <source>Edit Stream</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

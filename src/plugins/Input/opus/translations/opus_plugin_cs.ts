@@ -14,22 +14,22 @@
         <translation>Soubory Ogg Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="117"/>
+        <location filename="../decoderopusfactory.cpp" line="122"/>
         <source>About Opus Audio Plugin</source>
         <translation>O modulu Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="118"/>
+        <location filename="../decoderopusfactory.cpp" line="123"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Modul Qmmp Opus</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="119"/>
+        <location filename="../decoderopusfactory.cpp" line="124"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="120"/>
+        <location filename="../decoderopusfactory.cpp" line="125"/>
         <source>This plugin includes code from TagLib library</source>
         <translation>Tento modul zahrnuje kód z knihovny TagLib</translation>
     </message>
