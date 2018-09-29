@@ -63,7 +63,7 @@ StreamWindow::StreamWindow(QWidget *parent)
     //icecast table
     m_ui->icecastTableView->setModel(m_iceCastFilterModel);
     m_ui->icecastTableView->verticalHeader()->setDefaultSectionSize(fontMetrics().height() + 3);
-    m_ui->icecastTableView->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    m_ui->icecastTableView->verticalHeader()->setResizeMode(QHeaderView::Fixed);
     m_ui->icecastTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_ui->icecastTableView->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(m_ui->icecastTableView, SIGNAL(customContextMenuRequested(QPoint)),
@@ -81,7 +81,7 @@ StreamWindow::StreamWindow(QWidget *parent)
     //favorites table
     m_ui->favoritesTableView->setModel(m_favoritesFilterModel);
     m_ui->favoritesTableView->verticalHeader()->setDefaultSectionSize(fontMetrics().height() + 3);
-    m_ui->favoritesTableView->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    m_ui->favoritesTableView->verticalHeader()->setResizeMode(QHeaderView::Fixed);
     m_ui->favoritesTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_ui->favoritesTableView->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(m_ui->favoritesTableView, SIGNAL(customContextMenuRequested(QPoint)),
