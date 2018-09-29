@@ -30,9 +30,10 @@ SET(libstreambrowser_SRCS
     streambrowser.cpp
     streambrowserfactory.cpp
     streamwindow.cpp
+    editstreamdialog.cpp
 )
 
-SET(libstreambrowser_RCCS 
+SET(libstreambrowser_RCCS
     translations/translations.qrc)
 
 QT4_ADD_RESOURCES(libstreambrowser_RCC_SRCS ${libstreambrowser_RCCS})
@@ -41,6 +42,7 @@ QT4_ADD_RESOURCES(libstreambrowser_RCC_SRCS ${libstreambrowser_RCCS})
 
 SET(libstreambrowser_UIS
     streamwindow.ui
+    editstreamdialog.ui
 )
 
 QT4_WRAP_UI(libstreambrowser_UIS_H ${libstreambrowser_UIS})

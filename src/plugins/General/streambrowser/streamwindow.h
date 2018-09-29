@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2012 by Ilya Kotov                                      *
+ *   Copyright (C) 2012-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,14 +22,18 @@
 
 #include <QWidget>
 #include <QSortFilterProxyModel>
-#include "ui_streamwindow.h"
 
 class QNetworkAccessManager;
 class QNetworkReply;
 class QStandardItemModel;
 class QSortFilterProxyModel;
 class QMenu;
+class QAction;
 class StreamsProxyModel;
+
+namespace Ui {
+class StreamWindow;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -50,13 +54,15 @@ private slots:
     void execIceCastMenu(const QPoint &pos);
     void execFavoritesMenu(const QPoint &pos);
     void addToFavorites();
+    void createStream();
+    void editStream();
     void removeFromFavorites();
 
 private:
     void closeEvent(QCloseEvent *);
     void readXml(QIODevice *input, QStandardItemModel *model);
 
-    Ui::StreamWindow ui;
+    Ui::StreamWindow *m_ui;
     QNetworkAccessManager *m_http;
     QNetworkReply *m_requestReply;
     QString m_artist, m_title;
@@ -64,6 +70,7 @@ private:
     QSortFilterProxyModel *m_iceCastFilterModel, *m_favoritesFilterModel;
     QMenu *m_iceCastMenu;
     QMenu *m_favoritesMenu;
+    QAction *m_addAction, *m_editAction, *m_removeAction, *m_addToFavoritesAction;
 };
 
 /**
