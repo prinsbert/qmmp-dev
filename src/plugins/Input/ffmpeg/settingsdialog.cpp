@@ -63,8 +63,6 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.mkaCheckBox->setChecked(filters.contains("*.mka") && avcodec_find_decoder(AV_CODEC_ID_TRUEHD));
     m_ui.vqfCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_TWINVQ));
     m_ui.vqfCheckBox->setChecked(filters.contains("*.vqf") && avcodec_find_decoder(AV_CODEC_ID_TWINVQ));
-    m_ui.takCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_TAK));
-    m_ui.takCheckBox->setChecked(filters.contains("*.tak") && avcodec_find_decoder(AV_CODEC_ID_TAK));
 #else
     m_ui.wmaCheckBox->setEnabled(avcodec_find_decoder(CODEC_ID_WMAV1));
     m_ui.wmaCheckBox->setChecked(filters.contains("*.wma") && avcodec_find_decoder(CODEC_ID_WMAV1));
@@ -90,8 +88,13 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.mkaCheckBox->setChecked(filters.contains("*.mka") && avcodec_find_decoder(CODEC_ID_TRUEHD));
     m_ui.vqfCheckBox->setEnabled(avcodec_find_decoder(CODEC_ID_TWINVQ));
     m_ui.vqfCheckBox->setChecked(filters.contains("*.vqf") && avcodec_find_decoder(CODEC_ID_TWINVQ));
-    m_ui.takCheckBox->setEnabled(avcodec_find_decoder(CODEC_ID_TAK));
-    m_ui.takCheckBox->setChecked(filters.contains("*.tak") && avcodec_find_decoder(CODEC_ID_TAK));
+#endif
+
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)) //libav 9
+    m_ui.takCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_TAK));
+    m_ui.takCheckBox->setChecked(filters.contains("*.tak") && avcodec_find_decoder(AV_CODEC_ID_TAK));
+#else
+    m_ui.takCheckBox->setEnabled(false);
 #endif
 }
 

@@ -83,8 +83,10 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
         return true;
     else if(filters.contains("*.m4a") && (formats.contains("m4a") || formats.contains("mp4")))
         return true;
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)) //libav 9
     else if(filters.contains("*.tak"))
         return true;
+#endif
     return false;
 }
 
@@ -92,7 +94,10 @@ DecoderProperties DecoderFFmpegFactory::properties() const
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QStringList filters;
-    filters << "*.wma" << "*.ape" << "*.tta" << "*.m4a" << "*.aac" << "*.ra" << "*.shn" << "*.vqf" << "*.ac3" << "*.tak";
+    filters << "*.wma" << "*.ape" << "*.tta" << "*.m4a" << "*.aac" << "*.ra" << "*.shn" << "*.vqf" << "*.ac3";
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)) //libav 9
+    filters << "*.tak";
+#endif
     filters = settings.value("FFMPEG/filters", filters).toStringList();
 
     //remove unsupported filters
@@ -121,8 +126,6 @@ DecoderProperties DecoderFFmpegFactory::properties() const
         filters.removeAll("*.mka");
     if(!avcodec_find_decoder(AV_CODEC_ID_TWINVQ))
         filters.removeAll("*.vqf");
-    if(!avcodec_find_decoder(AV_CODEC_ID_TAK))
-        filters.removeAll("*.tak");
 #else
     if(!avcodec_find_decoder(CODEC_ID_WMAV1))
         filters.removeAll("*.wma");
@@ -148,7 +151,9 @@ DecoderProperties DecoderFFmpegFactory::properties() const
         filters.removeAll("*.mka");
     if(!avcodec_find_decoder(CODEC_ID_TWINVQ))
         filters.removeAll("*.vqf");
-    if(!avcodec_find_decoder(CODEC_ID_TAK))
+#endif
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)) //libav 9
+    if(!avcodec_find_decoder(AV_CODEC_ID_TAK))
         filters.removeAll("*.tak");
 #endif
     DecoderProperties properties;
