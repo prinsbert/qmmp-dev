@@ -4,32 +4,32 @@
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="151"/>
+        <location filename="../decoderffmpegfactory.cpp" line="160"/>
         <source>FFmpeg Plugin</source>
         <translation>Modul FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="153"/>
+        <location filename="../decoderffmpegfactory.cpp" line="162"/>
         <source>FFmpeg Formats</source>
         <translation>Formáty FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="285"/>
+        <location filename="../decoderffmpegfactory.cpp" line="294"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>O modulu FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="286"/>
+        <location filename="../decoderffmpegfactory.cpp" line="295"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Vstupní modul Qmmp FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="287"/>
+        <location filename="../decoderffmpegfactory.cpp" line="296"/>
         <source>Compiled against:</source>
         <translation>Kompilováno s:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="300"/>
+        <location filename="../decoderffmpegfactory.cpp" line="309"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -105,6 +105,11 @@
         <location filename="../settingsdialog.ui" line="138"/>
         <source>VQF</source>
         <translation>VQF</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="145"/>
+        <source>Tom&apos;s lossless Audio Kompressor (TAK)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
