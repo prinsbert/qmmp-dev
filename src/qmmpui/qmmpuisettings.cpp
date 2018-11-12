@@ -39,14 +39,15 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
     m_group_format = s.value("group_format", "%p%if(%p&%a, - %if(%y,[%y] ,),)%a").toString();
     m_convertUnderscore = s.value ("convert_underscore", true).toBool();
     m_convertTwenty = s.value ("convert_twenty", true).toBool();
-    m_useMetadata = s.value ("load_metadata", true).toBool();
+    m_useMetaData = s.value ("load_metadata", true).toBool();
     m_autosave_playlist = s.value("autosave", true).toBool();
-    m_repeate_list = s.value("repeate_list",false).toBool();
-    m_shuffle = s.value("shuffle",false).toBool();
-    m_groups_enabled = s.value("groups",false).toBool();
-    m_repeat_track = s.value("repeate_track",false).toBool();
-    m_no_pl_advance = s.value("no_advance",false).toBool();
+    m_repeate_list = s.value("repeate_list", false).toBool();
+    m_shuffle = s.value("shuffle", false).toBool();
+    m_groups_enabled = s.value("groups", false).toBool();
+    m_repeat_track = s.value("repeate_track", false).toBool();
+    m_no_pl_advance = s.value("no_advance", false).toBool();
     m_clear_prev_playlist = s.value("clear_previous", false).toBool();
+    m_read_metadata_for_playlist = s.value("read_metadata_for_playlist", true).toBool();
     s.endGroup();
     s.beginGroup("General");
     m_resume_on_startup = s.value("resume_on_startup", false).toBool();
@@ -111,9 +112,9 @@ bool QmmpUiSettings::convertTwenty() const
     return m_convertTwenty;
 }
 
-bool QmmpUiSettings::useMetadata() const
+bool QmmpUiSettings::useMetaData() const
 {
-    return m_useMetadata;
+    return m_useMetaData;
 }
 
 void QmmpUiSettings::setConvertUnderscore(bool yes)
@@ -139,9 +140,9 @@ void QmmpUiSettings::setGroupFormat(const QString &groupFormat)
     }
 }
 
-void QmmpUiSettings::setUseMetadata(bool yes)
+void QmmpUiSettings::setUseMetaData(bool yes)
 {
-    m_useMetadata = yes;
+    m_useMetaData = yes;
 }
 
 bool QmmpUiSettings::resumeOnStartup() const
@@ -171,7 +172,7 @@ void QmmpUiSettings::sync()
     s.setValue("PlayList/group_format", m_group_format);
     s.setValue("PlayList/convert_underscore", m_convertUnderscore);
     s.setValue("PlayList/convert_twenty", m_convertTwenty);
-    s.setValue("PlayList/load_metadata", m_useMetadata);
+    s.setValue("PlayList/load_metadata", m_useMetaData);
     s.setValue("PlayList/autosave", m_autosave_playlist);
     s.setValue("PlayList/repeate_list", m_repeate_list);
     s.setValue("PlayList/shuffle", m_shuffle);
@@ -179,6 +180,7 @@ void QmmpUiSettings::sync()
     s.setValue("PlayList/repeate_track", m_repeat_track);
     s.setValue("PlayList/no_advance", m_no_pl_advance);
     s.setValue("PlayList/clear_previous", m_clear_prev_playlist);
+    s.setValue("PlayList/read_metadata_for_playlist", m_read_metadata_for_playlist);
     s.setValue("General/resume_on_startup", m_resume_on_startup);
     s.setValue("General/restrict_filters", m_restrict_filters);
     s.setValue("General/exclude_filters", m_exclude_filters);
@@ -298,4 +300,15 @@ void QmmpUiSettings::setClearPreviousPlayList(bool enabled)
 bool QmmpUiSettings::clearPreviousPlayList() const
 {
     return m_clear_prev_playlist;
+}
+
+bool QmmpUiSettings::readMetaDataForPlayLists() const
+{
+    return m_read_metadata_for_playlist;
+}
+
+void QmmpUiSettings::setReadMetaDataForPlayLists(bool enabled)
+{
+    m_read_metadata_for_playlist = enabled;
+    m_timer->start();
 }
