@@ -4,6 +4,8 @@ LOCALES='en ru uk_UA zh_CN zh_TW tr cs pt_BR pt de pl_PL fr it kk lt hu nl ja sk
 
 echo "Locales: ${LOCALES}"
 
+QT_SELECT=5
+
 for tr_dir in `find ../src/ -type d -name "translations"`
 do
 
