@@ -151,22 +151,22 @@
         <translation>Genre</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="104"/>
+        <location filename="../historywindow.cpp" line="118"/>
         <source>dd MMMM yyyy</source>
         <translation>tt MMMM jjjj</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="105"/>
+        <location filename="../historywindow.cpp" line="119"/>
         <source>hh:mm:ss</source>
         <translation>hh:mm:ss</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="179"/>
+        <location filename="../historywindow.cpp" line="193"/>
         <source>MM-yyyy</source>
         <translation>MM-jjjj</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="180"/>
+        <location filename="../historywindow.cpp" line="194"/>
         <source>dd MMMM</source>
         <translation>tt MMMM</translation>
     </message>
