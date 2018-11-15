@@ -37,9 +37,9 @@ class FFapMetaDataModel : public MetaDataModel
 public:
     FFapMetaDataModel(const QString &path, bool readOnly);
     ~FFapMetaDataModel();
-    QList<MetaDataItem> extraProperties() const override;
-    QList<TagModel* > tags() const override;
-    QString coverPath() const override;
+    QList<MetaDataItem> extraProperties() const;
+    QList<TagModel* > tags() const;
+    QString coverPath() const;
 
 private:
     QString m_path;
@@ -53,14 +53,14 @@ class FFapFileTagModel : public TagModel
 public:
     FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::TagTypes tagType);
     ~FFapFileTagModel();
-    QString name() const override;
-    QList<Qmmp::MetaData> keys() const override;
-    QString value(Qmmp::MetaData key) const override;
-    void setValue(Qmmp::MetaData key, const QString &value) override;
-    bool exists() const override;
-    void create() override;
-    void remove() override;
-    void save() override;
+    QString name() const;
+    QList<Qmmp::MetaData> keys() const;
+    QString value(Qmmp::MetaData key) const;
+    void setValue(Qmmp::MetaData key, const QString &value);
+    bool exists() const;
+    void create();
+    void remove();
+    void save();
 
 private:
     QTextCodec *m_codec;
