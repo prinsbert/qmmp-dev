@@ -31,8 +31,8 @@ class XmpMetaDataModel : public MetaDataModel
 public:
     XmpMetaDataModel(const QString &path);
     ~XmpMetaDataModel();
-    QList<MetaDataItem> extraProperties() const override;
-    QList<MetaDataItem> descriptions() const override;
+    QList<MetaDataItem> extraProperties() const;
+    QList<MetaDataItem> descriptions() const;
 
 private:
     xmp_context m_ctx;

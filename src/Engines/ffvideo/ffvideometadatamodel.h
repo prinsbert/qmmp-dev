@@ -35,7 +35,7 @@ Q_DECLARE_TR_FUNCTIONS(FFVideoMetaDataModel)
 public:
     FFVideoMetaDataModel(const QString &path);
     ~FFVideoMetaDataModel();
-    QList<MetaDataItem> extraProperties() const override;
+    QList<MetaDataItem> extraProperties() const;
 
 private:
     AVFormatContext *m_in;
