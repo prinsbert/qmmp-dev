@@ -21,12 +21,10 @@
 #include <stdint.h>
 #include "ffvideometadatamodel.h"
 
-//TODO add video support
-
-FFVideoMetaDataModel::FFVideoMetaDataModel(const QString &path) : MetaDataModel(true)
+FFVideoMetaDataModel::FFVideoMetaDataModel(const QString &path)
+    : MetaDataModel(true, MetaDataModel::COMPLETE_PROPERTY_LIST)
 {
     m_in = 0;
-    setDialogHints(MetaDataModel::COMPLETE_PROPERTY_LIST);
 #ifdef Q_OS_WIN
     if (avformat_open_input(&m_in, path.toUtf8().constData(), 0, 0) < 0)
 #else
@@ -51,8 +49,8 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
     QString text = QString("%1").arg(int(m_in->duration/AV_TIME_BASE)/60);
     text +=":"+QString("%1").arg(int(m_in->duration/AV_TIME_BASE)%60,2,10,QChar('0'));
     ep << MetaDataItem(tr("Length"), text);
-    ep << MetaDataItem(tr("File size"), avio_size(m_in->pb) / 1024, tr("KiB"));
-    ep << MetaDataItem(tr("Bitrate"), m_in->bit_rate / 1000, tr("kbps"));
+    ep << MetaDataItem(tr("File size"), quint64(avio_size(m_in->pb) / 1024), tr("KiB"));
+    ep << MetaDataItem(tr("Bitrate"), quint64(m_in->bit_rate / 1000), tr("kbps"));
 
     int audioIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_AUDIO, -1, -1, 0, 0);
     int videoIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_VIDEO, -1, -1, 0, 0);
@@ -60,7 +58,7 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
     if(audioIndex >= 0)
     {
          AVCodecParameters *c = m_in->streams[audioIndex]->codecpar;
-         ep << MetaDataItem(tr("Audio bitrate"), c->bit_rate / 1000, tr("kbps"));
+         ep << MetaDataItem(tr("Audio bitrate"), qint64(c->bit_rate / 1000), tr("kbps"));
          ep << MetaDataItem(tr("Audio sample rate"), c->sample_rate, tr("Hz"));
          ep << MetaDataItem(tr("Audio channels"), c->channels);
     }
@@ -69,29 +67,7 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
     {
          AVCodecParameters *c = m_in->streams[videoIndex]->codecpar;
          ep << MetaDataItem(tr("Video size"), QString("%1x%2").arg(c->width).arg(c->height));
-         ep << MetaDataItem(tr("Video bitrate"), c->bit_rate / 1000, tr("kbps"));
+         ep << MetaDataItem(tr("Video bitrate"), qint64(c->bit_rate / 1000), tr("kbps"));
     }
     return ep;
-}
-
-QPixmap FFVideoMetaDataModel::cover() const
-{
-    if(!m_in)
-        return QPixmap();
-    AVCodecParameters *c = 0;
-    for (uint idx = 0; idx < m_in->nb_streams; idx++)
-    {
-        c = m_in->streams[idx]->codecpar;
-        if (c->codec_type == AVMEDIA_TYPE_VIDEO && c->codec_id == AV_CODEC_ID_MJPEG)
-            break;
-    }
-    if(c)
-    {
-        AVPacket pkt;
-        av_read_frame(m_in, &pkt);
-        QPixmap pix;
-        pix.loadFromData(QByteArray((const char*)pkt.data, pkt.size));
-        return pix;
-    }
-    return QPixmap();
 }

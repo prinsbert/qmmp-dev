@@ -558,6 +558,7 @@
         switch (expr->unode.opr.nbOp) {
         case 2:
           precommit_node(expr->unode.opr.op[1]);
+           /* falls through */
         case 1:
           precommit_node(expr->unode.opr.op[0]);
         }
