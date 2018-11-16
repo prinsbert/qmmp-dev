@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,7 +25,10 @@
 #include <QSettings>
 #include <QMainWindow>
 #include <QAction>
+#include <QMenu>
+#include <QIcon>
 #include <qmmp/qmmp.h>
+#include <qmmp/soundcore.h>
 #include "videowindow.h"
 
 VideoWindow::VideoWindow(QWidget *parent) :
@@ -36,21 +39,13 @@ VideoWindow::VideoWindow(QWidget *parent) :
     setMinimumSize(100, 100);
     setWindowTitle(tr("FFmpeg Video"));
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
-    restoreGeometry(settings.value("FFVideo/geometry").toByteArray());
-
-    foreach (QWidget *w, qApp->topLevelWidgets())
-    {
-        if(qobject_cast<QMainWindow *>(w))
-        {
-            addActions(w->actions());
-            break;
-        }
-    }
-
-    QAction *fullScreenAction = new QAction(this);
-    fullScreenAction->setShortcut(tr("Alt+Return"));
-    connect(fullScreenAction, SIGNAL(triggered(bool)), SLOT(toggleFullScreen()));
-    addAction(fullScreenAction);
+    restoreGeometry(settings.value("FFVideo/geometry").toByteArray());    
+    m_menu = new QMenu(this);
+    m_menu->addAction(QIcon::fromTheme("media-playback-pause"), tr("&Pause"), SoundCore::instance(), SLOT(pause()), tr("Space"));
+    m_menu->addAction(QIcon::fromTheme("media-playback-stop"), tr("&Stop"), SoundCore::instance(), SLOT(stop()), tr("V"));
+    m_menu->addSeparator();
+    m_menu->addAction(tr("&Fullscreen"), this, SLOT(setFullScreen(bool)), tr("F"))->setCheckable(true);
+    addActions(m_menu->actions());
 }
 
 void VideoWindow::addImage(const QImage &img)
@@ -61,9 +56,12 @@ void VideoWindow::addImage(const QImage &img)
     QMetaObject::invokeMethod(this, "update", Qt::QueuedConnection);
 }
 
-void VideoWindow::toggleFullScreen()
+void VideoWindow::setFullScreen(bool enabled)
 {
-    setWindowState(windowState() ^Qt::WindowFullScreen);
+    if(enabled)
+        setWindowState(windowState() | Qt::WindowFullScreen);
+    else
+        setWindowState(windowState() & ~Qt::WindowFullScreen);
 }
 
 void VideoWindow::paintEvent(QPaintEvent *)
@@ -92,4 +90,9 @@ void VideoWindow::closeEvent(QCloseEvent *)
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("FFVideo/geometry", saveGeometry());
+}
+
+void VideoWindow::contextMenuEvent(QContextMenuEvent *event)
+{
+    m_menu->popup(mapToGlobal(event->pos()));
 }
