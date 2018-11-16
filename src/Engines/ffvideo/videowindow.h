@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,6 +25,8 @@
 #include <QMutex>
 #include <QImage>
 
+class QMenu;
+
 class VideoWindow : public QWidget
 {
     Q_OBJECT
@@ -38,14 +40,16 @@ signals:
     void stopRequest();
 
 private slots:
-    void toggleFullScreen();
+    void setFullScreen(bool enabled);
 
 private:
     void paintEvent(QPaintEvent *);
     bool event(QEvent *e);
     void closeEvent(QCloseEvent *);
+    void contextMenuEvent(QContextMenuEvent *event);
     QMutex m_mutex;
     QImage m_image;
+    QMenu *m_menu;
 };
 
 #endif // VIDEOWINDOW_H

@@ -46,14 +46,23 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
     QList<MetaDataItem> ep;
     if(!m_in)
         return ep;
-    QString text = QString("%1").arg(int(m_in->duration/AV_TIME_BASE)/60);
-    text +=":"+QString("%1").arg(int(m_in->duration/AV_TIME_BASE)%60,2,10,QChar('0'));
-    ep << MetaDataItem(tr("Length"), text);
+
     ep << MetaDataItem(tr("File size"), quint64(avio_size(m_in->pb) / 1024), tr("KiB"));
     ep << MetaDataItem(tr("Bitrate"), quint64(m_in->bit_rate / 1000), tr("kbps"));
 
     int audioIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_AUDIO, -1, -1, 0, 0);
     int videoIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_VIDEO, -1, -1, 0, 0);
+
+    //select default stream for audio
+    for(unsigned int i = 0; i < m_in->nb_streams; ++i)
+    {
+        if(m_in->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_AUDIO &&
+                m_in->streams[i]->disposition & AV_DISPOSITION_DEFAULT)
+        {
+            audioIndex = i;
+            break;
+        }
+    }
 
     if(audioIndex >= 0)
     {
