@@ -26,6 +26,7 @@
 #include <QImage>
 
 class QMenu;
+class SoundCore;
 
 class VideoWindow : public QWidget
 {
@@ -41,6 +42,8 @@ signals:
 
 private slots:
     void setFullScreen(bool enabled);
+    void forward();
+    void backward();
 
 private:
     void paintEvent(QPaintEvent *);
@@ -50,6 +53,7 @@ private:
     QMutex m_mutex;
     QImage m_image;
     QMenu *m_menu;
+    SoundCore *m_core;
 };
 
 #endif // VIDEOWINDOW_H
