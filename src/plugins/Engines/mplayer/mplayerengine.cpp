@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,6 +37,7 @@ static QRegExp rx_pause("^(.*)=(.*)PAUSE(.*)");
 static QRegExp rx_end("^(.*)End of file(.*)");
 static QRegExp rx_quit("^(.*)Quit(.*)");
 static QRegExp rx_audio("^AUDIO: *([0-9,.]+) *Hz.*([0-9,.]+) *ch.*([0-9]+).* ([0-9,.]+) *kbit.*");
+static QRegExp rx_audio2("^AUDIO: *([0-9,.]+) *Hz.*([0-9,.]+) *ch.*([a-z]+).* ([0-9,.]+) *kbit.*");
 
 
 FileInfo *MplayerInfo::createFileInfo(const QString &path)
@@ -240,6 +241,15 @@ void MplayerEngine::readStdOut()
             m_channels = rx_audio.cap(2).toInt();
             m_bitsPerSample = rx_audio.cap(3).toDouble();
             m_bitrate = rx_audio.cap(4).toDouble();
+            AudioParameters ap(m_samplerate, ChannelMap(m_channels), AudioParameters::findAudioFormat(m_bitsPerSample));
+            StateHandler::instance()->dispatch(ap);
+        }
+        else if (rx_audio2.indexIn(line) > -1)
+        {
+            m_samplerate = rx_audio2.cap(1).toInt();
+            m_channels = rx_audio2.cap(2).toInt();
+            m_bitsPerSample = 32;
+            m_bitrate = rx_audio2.cap(4).toDouble();
             AudioParameters ap(m_samplerate, ChannelMap(m_channels), AudioParameters::findAudioFormat(m_bitsPerSample));
             StateHandler::instance()->dispatch(ap);
         }
