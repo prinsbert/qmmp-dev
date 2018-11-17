@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,6 +26,7 @@
 #include <QMenu>
 #include <QRegExp>
 #include <QSettings>
+#include <QFileInfo>
 #include <qmmp/trackinfo.h>
 #include <qmmp/inputsource.h>
 #include "packetbuffer.h"
@@ -153,8 +154,9 @@ void FFmpegEngine::pause()
     {
         m_audioThread->pause();
         m_videoThread->pause();
-        m_videoBuffer->cond()->wakeAll();
+
         m_audioBuffer->cond()->wakeAll();
+        m_videoBuffer->cond()->wakeAll();
     }
 }
 
@@ -172,7 +174,7 @@ void FFmpegEngine::run()
 {
     AVPacket pkt;
     mutex()->lock ();
-    m_metaData.clear();
+    m_trackInfo.clear();
     if(m_decoders.isEmpty())
     {
         mutex()->unlock ();
@@ -204,17 +206,6 @@ void FFmpegEngine::run()
             m_videoThread->sync();
             m_seekTime = -1;
         }
-        //metadata
-        /*if(m_inputs[m_decoder]->hasMetaData())
-        {
-            QMap<Qmmp::MetaData, QString> m = m_inputs[m_decoder]->takeMetaData();
-            m[Qmmp::URL] = m_inputs[m_decoder]->url();
-            StateHandler::instance()->dispatch(m);
-            m_metaData = QSharedPointer<QMap<Qmmp::MetaData, QString> >(new QMap<Qmmp::MetaData, QString>(m));
-        }
-        if(m_inputs[m_decoder]->hasStreamInfo())
-            StateHandler::instance()->dispatch(m_inputs[m_decoder]->takeStreamInfo());*/
-
         // decode
         av_init_packet(&pkt);
 
@@ -380,20 +371,23 @@ void FFmpegEngine::run()
 
 void FFmpegEngine::sendMetaData()
 {
-    /*if(!m_decoder || m_inputs.isEmpty())
+    if(!m_decoder || m_inputs.isEmpty())
         return;
-    QString url = m_inputs.value(m_decoder)->url();
-    if (QFile::exists(url)) //send metadata for local files only
+    QString path = m_inputs.value(m_decoder)->path();
+    if (QFile::exists(path)) //send metadata for local files only
     {
-        QList <FileInfo *> list = m_factory->createPlayList(url, true, 0);
+        QList<TrackInfo *> list = m_factory->createPlayList(path, TrackInfo::AllParts, 0);
         if (!list.isEmpty())
         {
-            StateHandler::instance()->dispatch(list[0]->metaData());
-            m_metaData = QSharedPointer<QMap<Qmmp::MetaData, QString> >(new QMap<Qmmp::MetaData, QString>(list[0]->metaData()));
+            TrackInfo *info = list.takeFirst();
+            info->setValue(Qmmp::DECODER, m_factory->properties().shortName);
+            info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
+            StateHandler::instance()->dispatch(*info);
+            m_trackInfo = QSharedPointer<TrackInfo>(info);
             while (!list.isEmpty())
                 delete list.takeFirst();
         }
-    }*/
+    }
 }
 
 void FFmpegEngine::clearDecoders()

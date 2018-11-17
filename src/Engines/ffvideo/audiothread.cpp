@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -141,7 +141,6 @@ void AudioThread::run()
         {
             if(m_pause)
             {
-                //Visual::clearBuffer();
                 m_output->suspend();
                 m_mutex.unlock();
                 m_prev_pause = m_pause;
@@ -149,6 +148,7 @@ void AudioThread::run()
             }
             else
                 m_output->resume();
+
             m_prev_pause = m_pause;
         }
         m_buffer->mutex()->lock();
@@ -160,6 +160,11 @@ void AudioThread::run()
             m_buffer->cond()->wait(m_buffer->mutex());
             m_mutex.lock ();
             done = m_user_stop || m_finish;
+            if(!m_pause && (m_pause != m_prev_pause))
+            {
+                m_prev_pause = m_pause;
+                m_output->resume();
+            }
         }
 
         if(m_user_stop)

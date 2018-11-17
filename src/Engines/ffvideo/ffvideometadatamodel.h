@@ -36,7 +36,6 @@ public:
     FFVideoMetaDataModel(const QString &path);
     ~FFVideoMetaDataModel();
     QList<MetaDataItem> extraProperties() const;
-    QPixmap cover() const;
 
 private:
     AVFormatContext *m_in;
