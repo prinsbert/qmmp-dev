@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2018 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,6 +26,7 @@
 #include <QMenu>
 #include <QRegExp>
 #include <QSettings>
+#include <QFileInfo>
 #include <qmmp/trackinfo.h>
 #include <qmmp/inputsource.h>
 #include "packetbuffer.h"
@@ -153,8 +154,9 @@ void FFmpegEngine::pause()
     {
         m_audioThread->pause();
         m_videoThread->pause();
-        m_videoBuffer->cond()->wakeAll();
+
         m_audioBuffer->cond()->wakeAll();
+        m_videoBuffer->cond()->wakeAll();
     }
 }
 
@@ -377,8 +379,11 @@ void FFmpegEngine::sendMetaData()
         QList<TrackInfo *> list = m_factory->createPlayList(path, TrackInfo::AllParts, 0);
         if (!list.isEmpty())
         {
-            StateHandler::instance()->dispatch(*list.first());
-            m_trackInfo = QSharedPointer<TrackInfo>(list.takeFirst());
+            TrackInfo *info = list.takeFirst();
+            info->setValue(Qmmp::DECODER, m_factory->properties().shortName);
+            info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
+            StateHandler::instance()->dispatch(*info);
+            m_trackInfo = QSharedPointer<TrackInfo>(info);
             while (!list.isEmpty())
                 delete list.takeFirst();
         }
