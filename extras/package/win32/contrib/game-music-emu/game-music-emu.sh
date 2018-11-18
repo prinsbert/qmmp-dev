@@ -13,6 +13,7 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz
     cd $NAME-$VERSION
+    cat ../../game-music-emu-fix-nsfe.patch | patch -p1 --verbose
     cmake ./ -DCMAKE_INSTALL_PREFIX=$PREFIX -G "MSYS Makefiles" -DCMAKE_COLOR_MAKEFILE:BOOL=OFF
     make -j${JOBS}
     make install
