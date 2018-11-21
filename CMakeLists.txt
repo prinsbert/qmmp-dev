@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
 #freebsd include
 include_directories(SYSTEM /usr/include /usr/local/include)
 
+#installation paths
+include(GNUInstallDirs)
+
 if(POLICY CMP0071)
   cmake_policy(SET CMP0071 NEW)
 endif()
@@ -56,14 +59,7 @@ ELSE(SVN_VERSION)
 execute_process(COMMAND find ${CMAKE_CURRENT_SOURCE_DIR} -name *.ts COMMAND xargs ${QT_LRELEASE_EXECUTABLE} -silent)
 ENDIF(SVN_VERSION)
 
-IF(NOT LIB_SUFFIX)
-IF("${QT_LIBRARY_DIR}" MATCHES lib64)
-set(LIB_SUFFIX 64)
-ENDIF("${QT_LIBRARY_DIR}" MATCHES lib64)
-ENDIF(NOT LIB_SUFFIX)
-
-SET(LIB_DIR "lib${LIB_SUFFIX}" CACHE STRING "library path")
-SET(PLUGIN_DIR "${LIB_DIR}/qmmp-${QMMP_PLUGIN_PACK_VERSION_MAJOR}.${QMMP_PLUGIN_PACK_VERSION_MINOR}" CACHE STRING "plugin path")
+SET(PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qmmp-${QMMP_PLUGIN_PACK_VERSION_MAJOR}.${QMMP_PLUGIN_PACK_VERSION_MINOR}" CACHE STRING "plugin path")
 SET(APP_NAME_SUFFIX "-0")
 
 
