@@ -119,5 +119,5 @@ SET_TARGET_PROPERTIES(skinned PROPERTIES COMPILE_DEFINITIONS "${libskinned_DEFIN
 target_link_libraries(skinned ${QT_LIBRARIES} libqmmp libqmmpui ${X11_LDFLAGS})
 add_dependencies(skinned libqmmpui libqmmp)
 install(TARGETS skinned DESTINATION ${PLUGIN_DIR}/Ui)
-install(FILES scripts/kwin.sh DESTINATION share/qmmp${APP_NAME_SUFFIX}/scripts)
+install(FILES scripts/kwin.sh DESTINATION ${CMAKE_INSTALL_DATADIR}/qmmp${APP_NAME_SUFFIX}/scripts)
 ENDIF(X11_FOUND)

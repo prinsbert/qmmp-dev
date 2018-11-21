@@ -17,6 +17,9 @@ IF(POLICY CMP0063)
 cmake_policy(SET CMP0063 NEW)
 ENDIF()
 
+#installation paths
+include(GNUInstallDirs)
+
 #extract version from qmmp.h
 FILE(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/src/qmmp/qmmp.h"
      QMMP_VERSION_DATA REGEX "^#define[ \t]+QMMP_VERSION_[A-Z]+[ \t]+[0-9]+.*$")
@@ -80,19 +83,13 @@ ELSE(SVN_VERSION)
 execute_process(COMMAND find ${CMAKE_CURRENT_SOURCE_DIR} -name *.ts COMMAND xargs ${QT_LRELEASE_EXECUTABLE} -silent)
 ENDIF(SVN_VERSION)
 
-IF(NOT LIB_SUFFIX)
-IF("${QT_LIBRARY_DIR}" MATCHES lib64)
-set(LIB_SUFFIX 64)
-ENDIF("${QT_LIBRARY_DIR}" MATCHES lib64)
-ENDIF(NOT LIB_SUFFIX)
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES Darwin)
-	SET(LIB_DIR "qmmp.app/Contents/Frameworks" CACHE STRING "library path")
-ELSE()
-	SET(LIB_DIR "lib${LIB_SUFFIX}" CACHE STRING "library path")
+	SET(CMAKE_INSTALL_LIBDIR "qmmp.app/Contents/Frameworks" CACHE)
 ENDIF()
 
-SET(PLUGIN_DIR "${LIB_DIR}/qmmp-${QMMP_VERSION_MAJOR}.${QMMP_VERSION_MINOR}" CACHE STRING "plugin path")
+SET(PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qmmp-${QMMP_VERSION_MAJOR}.${QMMP_VERSION_MINOR}" CACHE STRING "plugin path")
+
 SET(USE_SKINNED TRUE CACHE BOOL "enable/disable standard skinned user interface")
 SET(USE_DIR_ASSOC TRUE CACHE BOOL "enable/disable inode/directory mime type association")
 SET(APP_NAME_SUFFIX "-0")
