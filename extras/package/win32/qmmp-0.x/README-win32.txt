@@ -4,7 +4,7 @@ License: GNU General Public License v2.0 or later
 Offical web page: http://qmmp.ylsoftware.com
 Bug tracker: https://sourceforge.net/p/qmmp-dev/tickets/
 Translation: https://www.transifex.com/qmmp-development-team/
-Maintainer: Ilya Kotov <forkotov02@ya.ru> or <i.kotov@rusbitech.ru>
+Maintainer: Ilya Kotov <forkotov02@ya.ru> or <iokotov@astralinux.ru>
 
 Known issues:
   - disabled plugins: mms, wildmidi, aac, jack, pulseaudio, oss4, alsa, mplayer,
