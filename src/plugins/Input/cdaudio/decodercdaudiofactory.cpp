@@ -20,9 +20,7 @@
 
 #include <QMessageBox>
 #include <QtPlugin>
-#include <QRegExp>
 #include <cdio/version.h>
-#include <cddb/version.h>
 #include "settingsdialog.h"
 #include "decoder_cdaudio.h"
 #include "decodercdaudiofactory.h"
@@ -56,9 +54,12 @@ Decoder *DecoderCDAudioFactory::create(const QString &url, QIODevice *input)
 QList<TrackInfo *> DecoderCDAudioFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
     QList<TrackInfo*> list;
+
+    if(path.contains("#"))
+        return list;
+
     QString device_path = path;
     device_path.remove("cdda://");
-    device_path.remove(QRegExp("#\\d+$"));
     QList <CDATrack> tracks = DecoderCDAudio::generateTrackList(device_path, parts);
     foreach(CDATrack t, tracks)
     {
