@@ -31,18 +31,44 @@
 #include "httpinputsource.h"
 #include "httpstreamreader.h"
 
+#define MAX_BUFFER_SIZE 150000000UL //bytes
+
 //curl callbacks
 static size_t curl_write_data(void *data, size_t size, size_t nmemb,
                               void *pointer)
 {
     HttpStreamReader *dl = (HttpStreamReader *)pointer;
-    dl->mutex()->lock ();
-    size_t buf_start = dl->stream()->buf_fill;
-    size_t data_size = size * nmemb;
-    dl->stream()->buf_fill += data_size;
+    dl->mutex()->lock();
 
-    dl->stream()->buf = (char *)realloc (dl->stream()->buf, dl->stream()->buf_fill);
-    memcpy (dl->stream()->buf + buf_start, data, data_size);
+    if(dl->stream()->buf_fill > MAX_BUFFER_SIZE)
+    {
+        qWarning("HttpStreamReader: buffer has reached the maximum size, disconnecting...");
+        dl->stream()->aborted = true;
+        dl->mutex()->unlock();
+        return 0;
+    }
+
+    size_t data_size = size * nmemb;
+    if(dl->stream()->buf_fill + data_size > dl->stream()->buf_size)
+    {
+        char *prev = dl->stream()->buf;
+        dl->stream()->buf = (char *)realloc(dl->stream()->buf, dl->stream()->buf_fill + data_size);
+        if(!dl->stream()->buf)
+        {
+            qWarning("HttpStreamReader: unable to allocate %lu bytes",  dl->stream()->buf_fill + data_size);
+            if(prev)
+                free(prev);
+
+            dl->stream()->buf_fill = 0;
+            dl->stream()->buf_size = 0;
+            dl->stream()->aborted = true;
+            dl->mutex()->unlock();
+            return 0;
+        }
+        dl->stream()->buf_size = dl->stream()->buf_fill + data_size;
+    }
+    memcpy(dl->stream()->buf + dl->stream()->buf_fill, data, data_size);
+    dl->stream()->buf_fill += data_size;
     dl->mutex()->unlock();
     dl->checkBuffer();
     return data_size;
@@ -115,6 +141,7 @@ HttpStreamReader::HttpStreamReader(const QString &url, HTTPInputSource *parent) 
     m_url = url;
     curl_global_init(CURL_GLOBAL_ALL);
     m_stream.buf_fill = 0;
+    m_stream.buf_size = 0;
     m_stream.buf = 0;
     m_stream.icy_meta_data = false;
     m_stream.aborted = true;
@@ -127,7 +154,7 @@ HttpStreamReader::HttpStreamReader(const QString &url, HTTPInputSource *parent) 
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("HTTP");
     m_codec = QTextCodec::codecForName(settings.value("icy_encoding","UTF-8").toByteArray ());
-    m_buffer_size = settings.value("buffer_size",384).toInt() * 1000;
+    m_prebuffer_size = settings.value("buffer_size",384).toInt() * 1000;
     if(settings.value("override_user_agent",false).toBool())
         m_userAgent = settings.value("user_agent").toString();
     if(m_userAgent.isEmpty())
@@ -151,6 +178,7 @@ HttpStreamReader::~HttpStreamReader()
     curl_global_cleanup();
     m_stream.aborted = true;
     m_stream.buf_fill = 0;
+    m_stream.buf_size = 0;
     if (m_stream.buf)
         free(m_stream.buf);
 
@@ -182,12 +210,15 @@ bool HttpStreamReader::isSequential () const
     return true;
 }
 
-bool HttpStreamReader::open (OpenMode mode)
+bool HttpStreamReader::open(OpenMode mode)
 {
-    if (mode != QIODevice::ReadOnly)
-        return false;
-    QIODevice::open(mode);
-    return m_ready;
+    if(m_ready && mode == QIODevice::ReadOnly)
+    {
+        QIODevice::open(mode);
+        return true;
+    }
+
+    return false;
 }
 
 bool HttpStreamReader::seek (qint64 pos)
@@ -220,11 +251,10 @@ qint64 HttpStreamReader::readData(char* data, qint64 maxlen)
         len = readBuffer(data, maxlen);
     else
     {
-        qint64 nread = 0;
-        qint64 to_read;
-        while (maxlen > nread && m_stream.buf_fill > nread)
+        size_t nread = 0;
+        while (size_t(maxlen) > nread && m_stream.buf_fill > nread)
         {
-            to_read = qMin<qint64>(m_stream.icy_metaint - m_metacount, maxlen - nread);
+            size_t to_read = qMin<size_t>(m_stream.icy_metaint - m_metacount, maxlen - nread);
             qint64 res = readBuffer(data + nread, to_read);
             nread += res;
             m_metacount += res;
@@ -344,10 +374,16 @@ void HttpStreamReader::run()
     curl_easy_setopt(m_handle, CURLOPT_HTTP200ALIASES, http200_aliases);
     curl_easy_setopt(m_handle, CURLOPT_HTTPHEADER, http_headers);
     m_mutex.lock();
+    if(m_stream.buf)
+    {
+        free(m_stream.buf);
+        m_stream.buf = 0;
+    }
     m_stream.buf_fill = 0;
-    m_stream.buf = 0;
+    m_stream.buf_size = m_prebuffer_size * 2;
+    m_stream.buf = (char *)malloc(m_stream.buf_size); //initial buffer
     m_stream.aborted = false;
-    m_stream.header.clear ();
+    m_stream.header.clear();
     m_ready  = false;
     int return_code;
     qDebug("HttpStreamReader: starting libcurl");
@@ -372,14 +408,18 @@ qint64 HttpStreamReader::readBuffer(char* data, qint64 maxlen)
         memmove(m_stream.buf, m_stream.buf + len, m_stream.buf_fill);
         return len;
     }
-    return 0;
+    else if (m_stream.aborted)
+        return -1;
+    else
+        return 0;
 }
 
 void HttpStreamReader::checkBuffer()
 {
-    if(m_stream.aborted)
+    if(m_stream.aborted || m_ready)
         return;
-    if (m_stream.buf_fill > m_buffer_size && !m_ready)
+
+    if (m_stream.buf_fill > m_prebuffer_size)
     {
         m_ready  = true;
         qDebug("HttpStreamReader: ready");
@@ -396,9 +436,9 @@ void HttpStreamReader::checkBuffer()
         }
         emit ready();
     }
-    else if (!m_ready)
+    else
     {
-        StateHandler::instance()->dispatchBuffer(100 * m_stream.buf_fill / m_buffer_size);
+        StateHandler::instance()->dispatchBuffer(100 * m_stream.buf_fill / m_prebuffer_size);
         qApp->processEvents();
     }
 }
@@ -418,7 +458,7 @@ void HttpStreamReader::readICYMetaData()
     readBuffer((char *)&packet_size, 1);
     if (packet_size != 0)
     {
-        int size = packet_size * 16;
+        size_t size = packet_size * 16;
         char packet[size];
         while (m_stream.buf_fill < size && m_thread->isRunning())
         {
