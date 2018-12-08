@@ -1392,3 +1392,9 @@ Version 1.2.4
 * updated Spanish translation (Joel Barrios)
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Russian translation
+
+Version 1.2.5
+* added icon for 'exit' action in the tray icon menu
+* fixed drag-and-drop issue under Qt 5.12
+* fixed issue with 8-bit audio in the ffmpeg plugin
+* fixed latest mplayer output parsing
