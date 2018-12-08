@@ -1358,3 +1358,9 @@ Version 0.11.3
 * updated Spanish translation (Joel Barrios)
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Russian translation
+
+Version 0.11.4
+* added icon for 'exit' action in the tray icon menu
+* disabled ogg opus plugin for taglib 1.6 or lower
+* fixed issue with 8-bit audio in the ffmpeg plugin
+* fixed latest mplayer output parsing
