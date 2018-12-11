@@ -1,22 +1,16 @@
 [main]
 host = https://www.transifex.com
 
-[qmmp-plugin-pack.srconverter]
-file_filter = src/Effect/srconverter/translations/srconverter_plugin_<lang>.ts
+[qmmp-plugin-pack.ffap]
+file_filter = src/Input/ffap/translations/ffap_plugin_<lang>.ts
 source_lang = en
-source_file = src/Effect/srconverter/translations/srconverter_plugin_en.ts
+source_file = src/Input/ffap/translations/ffap_plugin_en.ts
 type = QT
 
 [qmmp-plugin-pack.xmp]
 file_filter = src/Input/xmp/translations/xmp_plugin_<lang>.ts
 source_lang = en
 source_file = src/Input/xmp/translations/xmp_plugin_en.ts
-type = QT
-
-[qmmp-plugin-pack.ffap]
-file_filter = src/Input/ffap/translations/ffap_plugin_<lang>.ts
-source_lang = en
-source_file = src/Input/ffap/translations/ffap_plugin_en.ts
 type = QT
 
 [qmmp-plugin-pack.goom]
@@ -29,5 +23,11 @@ type = QT
 file_filter = src/Engines/ffvideo/translations/ffvideo_plugin_<lang>.ts
 source_lang = en
 source_file = src/Engines/ffvideo/translations/ffvideo_plugin_en.ts
+type = QT
+
+[qmmp-plugin-pack.srconverter]
+file_filter = src/Effect/srconverter/translations/srconverter_plugin_<lang>.ts
+source_lang = en
+source_file = src/Effect/srconverter/translations/srconverter_plugin_en.ts
 type = QT
 
