@@ -1398,3 +1398,5 @@ Version 1.2.5
 * fixed drag-and-drop issue under Qt 5.12
 * fixed issue with 8-bit audio in the ffmpeg plugin
 * fixed latest mplayer output parsing
+* fixed '--quit' command line option processing
+* fixed issue with empty audio parameters
