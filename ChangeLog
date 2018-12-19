@@ -1364,3 +1364,5 @@ Version 0.11.4
 * disabled ogg opus plugin for taglib 1.6 or lower
 * fixed issue with 8-bit audio in the ffmpeg plugin
 * fixed latest mplayer output parsing
+* fixed '--quit' command line option processing
+* fixed issue with empty audio parameters
