@@ -17,7 +17,7 @@ DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS
 
 #Version
 
-QMMP_VERSION = 0.11.4
+QMMP_VERSION = 0.11.5
 
 #Include and link paths
 win32 {
