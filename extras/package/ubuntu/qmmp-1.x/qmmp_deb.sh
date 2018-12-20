@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.2.4
+QMMP_VERSION=1.2.5
 UBUNTU_CODENAMES='xenial bionic cosmic'
 BUILD_ROOT=build-root
 
@@ -22,9 +22,9 @@ build ()
     cp ../qmmp_$QMMP_VERSION.orig.tar.bz2 ./
     cd qmmp-$QMMP_VERSION
     if [ "$1" = "xenial" ] ; then
-        debuild -S -sa -kF594F6B4
+        debuild -S -d -sa -kF594F6B4
     else
-        debuild -S -sd -kF594F6B4
+        debuild -S -d -sd -kF594F6B4
     fi
     cd ..
     cd ..

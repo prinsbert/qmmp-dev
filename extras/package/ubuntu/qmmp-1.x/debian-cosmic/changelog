@@ -1,3 +1,9 @@
+qmmp (1.2.5-1ubuntu1~cosmic0) cosmic; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Thu, 20 Dec 2018 23:09:16 +0300
+
 qmmp (1.2.4-1ubuntu1~cosmic0) cosmic; urgency=medium
 
   * New upstream release.
