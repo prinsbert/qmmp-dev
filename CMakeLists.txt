@@ -14,7 +14,7 @@ if(POLICY CMP0071)
 endif()
 
 #Qt5 modules
-SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt56/lib/cmake)
+SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt512/lib/cmake)
 
 #extract version from qmmp.h
 FILE(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/src/qmmp/qmmp.h"
