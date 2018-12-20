@@ -24,7 +24,7 @@ QT += widgets
 
 #Version
 
-QMMP_VERSION = 1.2.5
+QMMP_VERSION = 1.2.6
 
 #Include and link paths
 win32 {
