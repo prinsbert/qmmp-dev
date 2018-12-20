@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qtwinextras-everywhere-src
-VERSION=5.11.2
+VERSION=5.11.3
 
 case $1 in
   --download)

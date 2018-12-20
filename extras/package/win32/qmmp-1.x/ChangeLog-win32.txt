@@ -269,5 +269,6 @@ LEGEND
 [*] opusfile-0.11
 [*] curl-7.63.0
 [*] ffmpeg-3.4.5
+[*] qt-5.11.3
 [-] fixed ogg vorbis corruption (https://github.com/taglib/taglib/issues/775)
 [-] fixed nsfe support (https://bitbucket.org/mpyne/game-music-emu/issues/22)
