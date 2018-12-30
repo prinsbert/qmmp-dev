@@ -150,6 +150,14 @@
   WriteRegStr HKLM  "${QMMP_DEF_PROGS_KEY}\Capabilities\FileAssociations" ${EXT} "QmmpFileAudio"
 !macroend
 
+;Check windows version
+
+Function .onInit
+  ${IfNot} ${AtLeastWinVista}
+    MessageBox MB_OK "Vista or above is required"
+    Quit
+FunctionEnd
+
 ;--------------------------------
 
 ;Installer functions
