@@ -74,13 +74,13 @@ QMMPStarter::QMMPStarter() : QObject()
     argString = tmp.join("|||");
     QHash <QString, QStringList> commands = m_option_manager->splitArgs(tmp);
 
-    if(commands.keys().contains("--help"))
+    if(commands.keys().contains("--help") || commands.keys().contains("-h"))
     {
         printUsage();
         m_finished = true;
         return;
     }
-    if(commands.keys().contains("--version"))
+    if(commands.keys().contains("--version") || commands.keys().contains("-v"))
     {
         printVersion();
         m_finished = true;
@@ -101,18 +101,41 @@ QMMPStarter::QMMPStarter() : QObject()
 
     if(!commands.isEmpty())
     {
-        foreach(QString arg, commands.keys())
+        foreach(QString key, commands.keys())
         {
-            if(!m_option_manager->identify(arg) && !CommandLineManager::hasOption(arg) &&
-                    arg != "--no-start" && arg != "--ui")
+            CommandLineHandler::OptionFlags flags;
+            if(!m_option_manager->identify(key) &&
+                    !CommandLineManager::hasOption(key, &flags) &&
+                    key != "--no-start" &&
+                    key != "--ui")
             {
                 cout << qPrintable(tr("Unknown command")) << endl;
                 m_exit_code = EXIT_FAILURE;
                 m_finished = true;
                 return;
             }
+
+            if(flags & CommandLineHandler::NO_START)
+            {
+                m_exit_code = EXIT_SUCCESS;
+                m_finished = true;
+                //show dialog with command line documentation under ms windows
+#ifdef Q_OS_WIN
+                stringstream tmp_stream;
+                tmp_stream.copyfmt(cout);
+                streambuf* old_stream = cout.rdbuf(tmp_stream.rdbuf());
+#endif
+                cout << qPrintable(CommandLineManager::executeCommand(key, commands.value(key)).trimmed()) << endl;
+#ifdef Q_OS_WIN
+                string text = tmp_stream.str();
+                QMessageBox::information(0, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
+                cout.rdbuf(old_stream); //restore old stream buffer
+#endif
+                return;
+            }
         }
     }
+
 
     m_server = new QLocalServer(this);
     m_socket = new QLocalSocket(this);
@@ -374,8 +397,8 @@ void QMMPStarter::printUsage()
     extraHelp << QString("--ui <name>") + "||" + tr("Start qmmp with the specified user interface");
     extraHelp << QString("--ui-list") + "||" + tr("List all available user interfaces");
     extraHelp << QString("--no-start") + "||" + tr("Don't start the application");
-    extraHelp << QString("--help") + "||" + tr("Display this text and exit");
-    extraHelp << QString("--version") + "||" + tr("Print version number and exit");
+    extraHelp << QString("-h, --help") + "||" + tr("Display this text and exit");
+    extraHelp << QString("-v, --version") + "||" + tr("Print version number and exit");
     extraHelp << "";
     extraHelp << tr("Home page: %1").arg("http://qmmp.ylsoftware.com");
     extraHelp << tr("Development page: %1").arg("https://sourceforge.net/p/qmmp-dev");

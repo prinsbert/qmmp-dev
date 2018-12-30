@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2018 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,7 +22,7 @@
 
 #include <QHash>
 #include "general.h"
-#include "commandlineoption.h"
+#include "commandlinehandler.h"
 #include "qmmpui_export.h"
 
 
@@ -34,15 +34,15 @@ class QMMPUI_EXPORT CommandLineManager
 public:
     /*!
      * Executes command \b opt_str.
-     * @param opt_str Command line option string.
+     * @param name Command line option name.
      * @param args Command arguments.
      * @return Command output result.
      */
-    static QString executeCommand(const QString& opt_str, const QStringList &args = QStringList());
+    static QString executeCommand(const QString &name, const QStringList &args = QStringList());
     /*!
      * Return \b true if command \b opt_str is supported, otherwise returns \b false.
      */
-    static bool hasOption(const QString &opt_str);
+    static bool hasOption(const QString &opt_str, CommandLineHandler::OptionFlags *flags = 0);
     /*!
      * Prints usage to stdout.
      */
@@ -55,8 +55,8 @@ public:
 
 private:
     static void checkOptions();
-    static QList<CommandLineOption *> *m_options;
-    static QHash<CommandLineOption*, QString> *m_files;
+    static QList<CommandLineHandler *> *m_options;
+    static QHash<CommandLineHandler*, QString> *m_files;
 };
 
 #endif
