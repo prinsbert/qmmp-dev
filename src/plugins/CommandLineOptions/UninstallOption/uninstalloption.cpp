@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2014-2019 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,25 +25,26 @@
 #include <qmmp/metadatamanager.h>
 #include "uninstalloption.h"
 
-CommandLineProperties UninstallOption::properties() const
+void UninstallOption::registerOprions()
 {
-    CommandLineProperties properties;
-    properties.shortName = "UninstallOption";
-    properties.helpString <<QString("--uninstall") + "||" + tr("Restore the old file associations and clean up the registry");
-    return properties;
+    registerOption(0, "--uninstall", tr("Restore the old file associations and clean up the registry"));
+    setOptionFlags(0, HIDDEN_FROM_HELP | NO_START);
 }
 
-bool UninstallOption::identify(const QString &str) const
+QString UninstallOption::shortName() const
 {
-    QStringList opts;
-    opts << "--uninstall";
-    return opts.contains(str);
+     return QLatin1String("UninstallOption");
 }
 
-QString UninstallOption::executeCommand(const QString &opt_str, const QStringList &args)
+QString UninstallOption::translation() const
+{
+    return QLatin1String(":/uninstall_plugin_");
+}
+
+QString UninstallOption::executeCommand(int id, const QStringList &args)
 {
     Q_UNUSED(args);
-    if(opt_str == "--uninstall")
+    if(id == 0)
     {
         WinFileAssoc assoc;
         QStringList regExts, extsToCheck;
@@ -55,14 +56,8 @@ QString UninstallOption::executeCommand(const QString &opt_str, const QStringLis
         assoc.GetRegisteredExtensions(extsToCheck, regExts);
         assoc.RestoreFileAssociations(regExts);
         assoc.RemoveClassId();
-        QMetaObject::invokeMethod(qApp, "quit", Qt::QueuedConnection);
     }
     return QString();
-}
-
-QString UninstallOption::translation() const
-{
-    return QLatin1String(":/uninstall_plugin_");
 }
 
 Q_EXPORT_PLUGIN2(uninstalloption, UninstallOption)
