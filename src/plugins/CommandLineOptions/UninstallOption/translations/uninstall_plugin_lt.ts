@@ -4,7 +4,7 @@
 <context>
     <name>UninstallOption</name>
     <message>
-        <location filename="../uninstalloption.cpp" line="32"/>
+        <location filename="../uninstalloption.cpp" line="30"/>
         <source>Restore the old file associations and clean up the registry</source>
         <translation>Atstatyti media bylų asociacijas ir išvalyti registrą</translation>
     </message>
