@@ -1328,3 +1328,41 @@ Version 0.11.0
 * updated Spanish translation (Joel Barrios and Bohdan Shuba)
 * updated Japanese translation (RyoTa SimaMoto)
 * updated Ukrainian translation (Gennady Motsyo)
+
+Version 0.11.1
+* added ffmpeg 4.0 support
+* added feature to change default user interface
+* fixed playlists moving
+* fixed mp3 detection
+* fixed seeking by mouse wheel
+* updated Ukrainian translation (Gennady Motsyo)
+* updated Italian translation (Luigi Toscano)
+* updated Spanish translation (Joel Barrios)
+
+Version 0.11.2
+* added qmmp 0.12/1.3 config compatibility
+* disabling global shortcuts during configuration
+* fixed memory leaks
+* fixed issue caused by sending same metadata several times in a row
+
+Version 0.11.3
+* added equalizer optimization
+* updated translation list
+* improved PCM WAVE support
+* fixed segmentation fault
+* fixed tag reading in the archive plugin
+* fixed seeking in the archive plugin
+* fixed issue with multiscreen configuration
+* updated Polish translation (mrerexx)
+* updated Portuguese translation (Sérgio Marques)
+* updated Spanish translation (Joel Barrios)
+* updated Ukrainian translation (Gennady Motsyo)
+* updated Russian translation
+
+Version 0.11.4
+* added icon for 'exit' action in the tray icon menu
+* disabled ogg opus plugin for taglib 1.6 or lower
+* fixed issue with 8-bit audio in the ffmpeg plugin
+* fixed latest mplayer output parsing
+* fixed '--quit' command line option processing
+* fixed issue with empty audio parameters
