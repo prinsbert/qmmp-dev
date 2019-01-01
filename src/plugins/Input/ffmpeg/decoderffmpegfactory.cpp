@@ -152,7 +152,7 @@ DecoderProperties DecoderFFmpegFactory::properties() const
     if(!avcodec_find_decoder(CODEC_ID_TWINVQ))
         filters.removeAll("*.vqf");
 #endif
-#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)) //libav 9
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(54,35,0)) //libav 9
     if(!avcodec_find_decoder(AV_CODEC_ID_TAK))
         filters.removeAll("*.tak");
 #endif

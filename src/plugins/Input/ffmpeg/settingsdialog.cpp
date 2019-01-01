@@ -90,7 +90,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.vqfCheckBox->setChecked(filters.contains("*.vqf") && avcodec_find_decoder(CODEC_ID_TWINVQ));
 #endif
 
-#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)) //libav 9
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(54,35,0)) //libav 9
     m_ui.takCheckBox->setEnabled(avcodec_find_decoder(AV_CODEC_ID_TAK));
     m_ui.takCheckBox->setChecked(filters.contains("*.tak") && avcodec_find_decoder(AV_CODEC_ID_TAK));
 #else
