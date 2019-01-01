@@ -5,3 +5,4 @@ qtbase-5.5.0-QTBUG-47352.patch - fixes problem with single key hotkeys on non-la
 rusxmms/taglib-1.11.1-ds-rusxmms.patch - rusxmms patch for TagLib
 rusxmms/taglib-1.11.1+dfsg.1-ds-rusxmms.patch - rusxmms patch for TagLib with debian modifications
 taglib-1.11.1-bug-864.patch - fixes ogg corruption: https://github.com/taglib/taglib/issues/864
+game-music-emu-fix-nsfe.patch - NSFE support: https://bitbucket.org/mpyne/game-music-emu/issues/22

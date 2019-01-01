@@ -1,0 +1,36 @@
+From 63119537125e0241e68736d33128edbc2a64e13f Mon Sep 17 00:00:00 2001
+From: Michael Pyne <mpyne@purinchu.net>
+Date: Sun, 6 May 2018 12:22:05 -0400
+Subject: [PATCH] nsfe: Some blocks can have a 0-sized header, don't fail for
+ those.
+
+This fixes a regression introduced by commit
+205290614cdc057541b26adeea05a9d45993f860, where we added a check for
+potentially malicious NSFE file dumps to avoid crashes or potential OOB
+mem access.
+
+It seems some valid files can have 0-sized blocks, so let those through
+the first check.  This allows the testcases for Issue #22 to pass while
+still rejecting the corrupt file on Issue #14.
+
+Fixes Issue #22.
+---
+ gme/Nsfe_Emu.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gme/Nsfe_Emu.cpp b/gme/Nsfe_Emu.cpp
+index 130a179..035f99d 100644
+--- a/gme/Nsfe_Emu.cpp
++++ b/gme/Nsfe_Emu.cpp
+@@ -135,7 +135,7 @@ blargg_err_t Nsfe_Info::load( Data_Reader& in, Nsf_Emu* nsf_emu )
+ 		blargg_long size = get_le32( block_header [0] );
+ 		blargg_long tag  = get_le32( block_header [1] );
+ 
+-		if ( size <= 0 )
++		if ( size < 0 )
+ 			return "Corrupt file";
+ 		
+ 		//debug_printf( "tag: %c%c%c%c\n", char(tag), char(tag>>8), char(tag>>16), char(tag>>24) );
+-- 
+2.10.5
+
