@@ -6,17 +6,15 @@ Development: https://sourceforge.net/projects/qmmp-dev/
 Translation: https://www.transifex.com/qmmp-development-team/
 
 Description:
-- MPG123 - MPEG v1/2 layer1/2/3 decoder with use of the libmpg123 library
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
 - XMP - module player with use of the libxmp library
 - Sample Rate Converter - resampler based on libsamplerate library
 - Goom - audio visualization based on goom project
 - FFVideo - video playback engine based on FFmpeg library
-- History - a tool for collection information information about listened tracks
 
 Requirements:
 - Qt >= 4.6
-- qmmp 0.11.x
+- qmmp 0.12.x
 - taglib >= 1.7.0
 - libxmp >= 4.2.0 (optional)
 - libsamplerate >= 0.1.2 (Optional)
@@ -75,10 +73,6 @@ cmake ./ -DLIB_DIR=lib64
 
 
 To avoid some problems please read below carefully.
-
-How to enable MPG123 plugin.
-By default libmad-based MPEG plugin has higher priority than MPG123.
-To fix this go to the "settings"->"plugins" and disable MPEG plugin.
 
 How to enable XMP plugin.
 By default ModPlug plugin has higher priority than XMP.
