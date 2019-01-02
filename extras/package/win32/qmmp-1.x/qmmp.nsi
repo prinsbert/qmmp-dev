@@ -156,6 +156,7 @@ Function .onInit
   ${IfNot} ${AtLeastWinVista}
     MessageBox MB_OK "Vista or above is required"
     Quit
+  ${EndIf}
 FunctionEnd
 
 ;--------------------------------
