@@ -33,18 +33,20 @@ make
 Installation:
 make install
 
-If someone plugin (for example, MPG123 plugin) doesn't build or doesn't needed you can disable it
+If someone plugin (for example, XMP plugin) doesn't build or doesn't needed you can disable it
 by running the following command:
-cmake ./ -DUSE_MPG123:BOOL=FALSE
+cmake ./ -DUSE_XMP:BOOL=FALSE
 
 Available options:
-- USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_HISTORY (plugins)
+- USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO (plugins)
 - USE_ASM (assembler-level optimizations inside FFap decoder)
-
 
 Also you can use ccmake to change plugin configuration.
 By default program will be installed in /usr/local. You can change default path by running:
 cmake ./ -DCMAKE_INSTALL_PREFIX=custom_path
+
+For more information see GNUInstallDirs module documentation:
+https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html
 
 
 In some cases, you can use qmake for building and installation.
@@ -67,7 +69,7 @@ Attention! By default all plugins are enabled by default.
 Changing shared library install path (for some 64-bit distributions).
 By default, all libraries and plugins will be installed to $(INSTALL PREFIX)/lib. You can change "lib"
 to "lib64" by running qmake (qmake-qt4) or cmake with the special parameter:
-qmake LIB_DIR=/lib64
+qmake LIB_DIR=/usr/lib64
 or
 cmake ./ -DLIB_DIR=lib64
 
