@@ -28,6 +28,9 @@ QMMP_PLUGIN_PACK_VERSION_MINOR = $$member(VERSIONS, 1)
 
 APP_NAME_SUFFIX = "-0"
 
+#QMAKE_LFLAGS_DEBUG += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
+#QMAKE_LFLAGS += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
+
 unix {
   isEmpty(PREFIX): PREFIX=/usr
   isEmpty(BIN_DIR): BIN_DIR=$$PREFIX/bin
