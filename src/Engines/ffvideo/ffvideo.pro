@@ -26,4 +26,4 @@ DEFINES += __STDC_CONSTANT_MACROS
 
 target.path = $$LIB_DIR/qmmp/Engines
 INSTALLS += target
-PKGCONFIG += libavcodec libavformat libavutil libswscale
+PKGCONFIG += libavcodec libavformat libavutil libswscale libswresample

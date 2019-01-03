@@ -14,6 +14,9 @@ RCC_DIR=./.build/rcc
 
 DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS
 
+#QMAKE_LFLAGS_DEBUG += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
+#QMAKE_LFLAGS += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
+
 unix {
   INCLUDEPATH += /home/user/qmmp-0.11/include
   QMAKE_LIBDIR += /home/user/qmmp-0.11/lib
