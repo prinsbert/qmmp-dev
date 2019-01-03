@@ -29,7 +29,7 @@ XmpMetaDataModel::XmpMetaDataModel(const QString &path) : MetaDataModel(true)
     if(err != 0)
     {
         xmp_free_context(m_ctx);
-        m_ctx = 0;
+        m_ctx = nullptr;
         qWarning("XmpMetaDataModel: unable to load module file, error = %d", err);
     }
 }

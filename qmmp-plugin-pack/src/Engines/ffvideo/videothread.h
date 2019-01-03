@@ -45,7 +45,7 @@ class VideoThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit VideoThread(PacketBuffer *buf, QObject *parent = 0);
+    explicit VideoThread(PacketBuffer *buf, QObject *parent = nullptr);
 
     bool initialize(FFVideoDecoder *decoder, VideoWindow *w);
     void stop();

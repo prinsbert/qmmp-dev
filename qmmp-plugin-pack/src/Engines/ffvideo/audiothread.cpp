@@ -30,14 +30,14 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
     QThread(parent)
 {
     m_buffer = buf;
-    m_output = 0;
+    m_output = nullptr;
     m_user_stop = false;
     m_finish = false;
     m_pause = false;
     m_prev_pause = false;
-    m_stream = 0;
+    m_stream = nullptr;
     m_muted = false;
-    m_context = 0;
+    m_context = nullptr;
 }
 
 AudioThread::~AudioThread()
@@ -101,7 +101,7 @@ void AudioThread::close()
     if(m_output)
     {
         delete m_output;
-        m_output = 0;
+        m_output = nullptr;
     }
 }
 
@@ -123,14 +123,14 @@ void AudioThread::run()
     m_prev_pause = false;
     AVFrame *frame = av_frame_alloc();
     AVFrame *oframe = av_frame_alloc();
-    SwrContext *swr = swr_alloc_set_opts(NULL,                      // we're allocating a new context
+    SwrContext *swr = swr_alloc_set_opts(nullptr,                   // we're allocating a new context
                                          AV_CH_LAYOUT_STEREO,       // out_ch_layout
                                          AV_SAMPLE_FMT_S16,         // out_sample_fmt
                                          44100,                     // out_sample_rate
                                          m_context->channel_layout, // in_ch_layout
                                          m_context->sample_fmt,     // in_sample_fmt
                                          m_context->sample_rate,    // in_sample_rate
-                                         0, NULL);
+                                         0, nullptr);
 
     StateHandler::instance()->dispatch(m_output->audioParameters());
 

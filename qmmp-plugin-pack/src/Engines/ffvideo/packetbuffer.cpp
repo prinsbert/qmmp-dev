@@ -42,7 +42,7 @@ PacketBuffer::~PacketBuffer()
         av_packet_free(&m_packets[i]);
     }
     delete [] m_packets;
-    m_packets = 0;
+    m_packets = nullptr;
 }
 
 bool PacketBuffer::full() const
@@ -72,13 +72,13 @@ AVPacket *PacketBuffer::next() const
         //m_blocked = m_buffers[m_done_index];
         return m_packets[m_done_index] ;
     }
-    return 0;
+    return nullptr;
 }
 
 AVPacket *PacketBuffer::get() const
 {
     if (full())
-        return 0;
+        return nullptr;
     return m_packets[m_add_index];
 }
 

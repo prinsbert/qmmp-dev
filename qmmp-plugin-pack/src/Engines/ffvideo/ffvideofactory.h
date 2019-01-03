@@ -32,7 +32,7 @@ public:
     FFVideoFactory();
     EngineProperties properties() const;
     bool supports(const QString &source) const;
-    AbstractEngine *create(QObject *parent = 0);
+    AbstractEngine *create(QObject *parent = nullptr);
     QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *);
     MetaDataModel* createMetaDataModel(const QString &path, bool readOnly);
     void showSettings(QWidget *);

@@ -68,7 +68,7 @@ DecoderFFap::DecoderFFap(const QString &path, QIODevice *i)
 {
     //m_data = 0;
     m_path = path;
-    m_ffap_decoder = 0;
+    m_ffap_decoder = nullptr;
     ffap_load();
 }
 
@@ -136,7 +136,7 @@ void DecoderFFap::deinit()
 {
     if (m_ffap_decoder)
         ffap_free(m_ffap_decoder);
-    m_ffap_decoder = 0;
+    m_ffap_decoder = nullptr;
 }
 
 

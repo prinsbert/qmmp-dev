@@ -29,16 +29,16 @@ VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
     QThread(parent)
 {
     m_buffer = buf;
-    m_output = 0;
+    m_output = nullptr;
     m_user_stop = false;
     m_finish = false;
     m_pause = false;
     m_prev_pause = false;
     m_sync = false;
     m_resize = false;
-    m_context = 0;
-    m_videoWindow = 0;
-    m_stream = 0;
+    m_context = nullptr;
+    m_videoWindow = nullptr;
+    m_stream = nullptr;
 }
 
 bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)
@@ -95,8 +95,8 @@ void VideoThread::run()
 
     AVFrame *frame = av_frame_alloc();
 
-    AVFrame *frameRGB = 0;
-    SwsContext *sws = 0;
+    AVFrame *frameRGB = nullptr;
+    SwsContext *sws = nullptr;
 
     timer.start();
     m_sync = true;
@@ -112,7 +112,7 @@ void VideoThread::run()
 
             sws = sws_getCachedContext(sws, m_context->width, m_context->height, m_context->pix_fmt,
                                        m_context->width * ratio, m_context->height * ratio,
-                                       AV_PIX_FMT_RGB24, SWS_BICUBIC, 0, 0, 0);
+                                       AV_PIX_FMT_RGB24, SWS_BICUBIC, nullptr, nullptr, nullptr);
             if(frameRGB)
                 av_frame_free(&frameRGB);
             frameRGB = av_frame_alloc();

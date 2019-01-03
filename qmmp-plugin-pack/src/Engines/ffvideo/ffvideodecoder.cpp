@@ -22,9 +22,9 @@
 
 FFVideoDecoder::FFVideoDecoder()
 {
-   m_formatContext = 0;
-   m_audioCodecContext = 0;
-   m_videoCodecContext = 0;
+   m_formatContext = nullptr;
+   m_audioCodecContext = nullptr;
+   m_videoCodecContext = nullptr;
    m_audioIndex = 0;
    m_videoIndex = 0;
    m_totalTime = 0;
@@ -46,26 +46,26 @@ bool FFVideoDecoder::initialize(const QString &path)
     char errbuf[AV_ERROR_MAX_STRING_SIZE] = {0};
 
 #ifdef Q_OS_WIN
-    if((err = avformat_open_input(&m_formatContext, path.toUtf8().constData(), 0, 0)) != 0)
+    if((err = avformat_open_input(&m_formatContext, path.toUtf8().constData(), nullptr, nullptr)) != 0)
 #else
-    if((err = avformat_open_input(&m_formatContext, path.toLocal8Bit().constData(), 0, 0)) != 0)
+    if((err = avformat_open_input(&m_formatContext, path.toLocal8Bit().constData(), nullptr, nullptr)) != 0)
 #endif
     {
         av_strerror(err, errbuf, sizeof(errbuf));
         qWarning("FFVideoDecoder: avformat_open_input() failed: %s", errbuf);
         return false;
     }
-    if((err = avformat_find_stream_info(m_formatContext, 0)) < 0)
+    if((err = avformat_find_stream_info(m_formatContext, nullptr)) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));
         qWarning("FFVideoDecoder: avformat_find_stream_info() failed: %s", errbuf);
         return false;
     }
 
-    av_dump_format(m_formatContext,0,0,0);
+    av_dump_format(m_formatContext,0,nullptr,0);
 
-    m_audioIndex = av_find_best_stream(m_formatContext, AVMEDIA_TYPE_AUDIO, -1, -1, 0, 0);
-    m_videoIndex = av_find_best_stream(m_formatContext, AVMEDIA_TYPE_VIDEO, -1, -1, 0, 0);
+    m_audioIndex = av_find_best_stream(m_formatContext, AVMEDIA_TYPE_AUDIO, -1, -1, nullptr, 0);
+    m_videoIndex = av_find_best_stream(m_formatContext, AVMEDIA_TYPE_VIDEO, -1, -1, nullptr, 0);
 
     //select default stream for audio
     for(unsigned int i = 0; i < m_formatContext->nb_streams; ++i)
@@ -100,20 +100,20 @@ bool FFVideoDecoder::initialize(const QString &path)
         return false;
     }
 
-    m_audioCodecContext = avcodec_alloc_context3(NULL);
+    m_audioCodecContext = avcodec_alloc_context3(nullptr);
     avcodec_parameters_to_context (m_audioCodecContext, m_formatContext->streams[m_audioIndex]->codecpar);
 
-    m_videoCodecContext = avcodec_alloc_context3(NULL);
+    m_videoCodecContext = avcodec_alloc_context3(nullptr);
     avcodec_parameters_to_context (m_videoCodecContext, m_formatContext->streams[m_videoIndex]->codecpar);
 
-    if ((err = avcodec_open2(m_audioCodecContext, audioCodec, 0)) < 0)
+    if ((err = avcodec_open2(m_audioCodecContext, audioCodec, nullptr)) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));
         qWarning("FFVideoDecoder: avcodec_open2() failed: %s", errbuf);
         return false;
     }
 
-    if ((err = avcodec_open2(m_videoCodecContext, videoCodec, 0)) < 0)
+    if ((err = avcodec_open2(m_videoCodecContext, videoCodec, nullptr)) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));
         qWarning("FFVideoDecoder: avcodec_open2() failed: %s", errbuf);

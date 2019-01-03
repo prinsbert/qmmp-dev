@@ -47,7 +47,7 @@ FFmpegEngine::FFmpegEngine(EngineFactory *factory, QObject *parent)
     m_audioThread = new AudioThread(m_audioBuffer, this);
     m_videoThread = new VideoThread(m_videoBuffer, this);
     m_videoWindow = new VideoWindow(qApp->activeWindow());
-    m_decoder = 0;
+    m_decoder = nullptr;
     reset();
     connect(m_videoWindow, SIGNAL(resizeRequest(QSize)), m_videoThread, SLOT(setWindowSize(QSize)));
     connect(m_videoWindow, SIGNAL(stopRequest()), SLOT(onStopRequest()));
@@ -376,7 +376,7 @@ void FFmpegEngine::sendMetaData()
     QString path = m_inputs.value(m_decoder)->path();
     if (QFile::exists(path)) //send metadata for local files only
     {
-        QList<TrackInfo *> list = m_factory->createPlayList(path, TrackInfo::AllParts, 0);
+        QList<TrackInfo *> list = m_factory->createPlayList(path, TrackInfo::AllParts, nullptr);
         if (!list.isEmpty())
         {
             TrackInfo *info = list.takeFirst();
@@ -399,7 +399,7 @@ void FFmpegEngine::clearDecoders()
     {
         m_inputs.take(m_decoder)->deleteLater ();
         delete m_decoder;
-        m_decoder = 0;
+        m_decoder = nullptr;
     }
     while(!m_decoders.isEmpty())
     {
