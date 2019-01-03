@@ -32,7 +32,7 @@ class VideoWindow : public QWidget
 {
     Q_OBJECT
 public:
-    explicit VideoWindow(QWidget *parent = 0);
+    explicit VideoWindow(QWidget *parent = nullptr);
 
     void addImage(const QImage &img);
 

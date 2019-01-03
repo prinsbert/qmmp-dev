@@ -35,7 +35,7 @@ GoomWidget::GoomWidget(QWidget *parent) : Visual (parent)
 {
     m_core = SoundCore::instance();
     m_update = false;
-    m_goom = 0;
+    m_goom = nullptr;
     m_fps = 25;
     m_running = false;
     connect(m_core, SIGNAL(trackInfoChanged()), SLOT(updateTitle()));
@@ -55,7 +55,7 @@ GoomWidget::~GoomWidget()
 {
     if(m_goom)
         goom_close(m_goom);
-    m_goom = 0;
+    m_goom = nullptr;
 }
 
 void GoomWidget::start()

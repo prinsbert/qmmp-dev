@@ -24,14 +24,14 @@
 FFVideoMetaDataModel::FFVideoMetaDataModel(const QString &path)
     : MetaDataModel(true, MetaDataModel::COMPLETE_PROPERTY_LIST)
 {
-    m_in = 0;
+    m_in = nullptr;
 #ifdef Q_OS_WIN
-    if (avformat_open_input(&m_in, path.toUtf8().constData(), 0, 0) < 0)
+    if (avformat_open_input(&m_in, path.toUtf8().constData(), nullptr, nullptr) < 0)
 #else
-    if (avformat_open_input(&m_in, path.toLocal8Bit().constData(), 0, 0) < 0)
+    if (avformat_open_input(&m_in, path.toLocal8Bit().constData(), nullptr, nullptr) < 0)
 #endif
         return;
-    avformat_find_stream_info(m_in, 0);
+    avformat_find_stream_info(m_in, nullptr);
     av_read_play(m_in);
 }
 
@@ -50,8 +50,8 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
     ep << MetaDataItem(tr("File size"), quint64(avio_size(m_in->pb) / 1024), tr("KiB"));
     ep << MetaDataItem(tr("Bitrate"), quint64(m_in->bit_rate / 1000), tr("kbps"));
 
-    int audioIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_AUDIO, -1, -1, 0, 0);
-    int videoIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_VIDEO, -1, -1, 0, 0);
+    int audioIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_AUDIO, -1, -1, nullptr, 0);
+    int videoIndex = av_find_best_stream(m_in, AVMEDIA_TYPE_VIDEO, -1, -1, nullptr, 0);
 
     //select default stream for audio
     for(unsigned int i = 0; i < m_in->nb_streams; ++i)

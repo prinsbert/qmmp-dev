@@ -41,7 +41,7 @@ Visual *VisualGoomFactory::create(QWidget *parent)
 
 QDialog *VisualGoomFactory::createConfigDialog(QWidget *)
 {
-    return 0;
+    return nullptr;
 }
 
 void VisualGoomFactory::showAbout(QWidget *parent)

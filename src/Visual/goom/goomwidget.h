@@ -44,7 +44,7 @@ class GoomWidget : public Visual
     Q_OBJECT
 
 public:
-    GoomWidget(QWidget *parent = 0);
+    GoomWidget(QWidget *parent = nullptr);
     virtual ~GoomWidget();
 
 public slots:

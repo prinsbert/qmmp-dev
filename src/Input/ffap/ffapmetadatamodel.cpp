@@ -28,8 +28,8 @@
 
 FFapMetaDataModel::FFapMetaDataModel(const QString &path, bool readOnly) : MetaDataModel(true)
 {
-    m_stream = 0;
-    m_file = 0;
+    m_stream = nullptr;
+    m_file = nullptr;
     if(path.contains("://"))
     {
         QString p = path;
@@ -191,7 +191,7 @@ void FFapFileTagModel::setValue(Qmmp::MetaData key, const QString &value)
 
 bool FFapFileTagModel::exists() const
 {
-    return (m_tag != 0);
+    return (m_tag != nullptr);
 }
 
 void FFapFileTagModel::create()
@@ -206,7 +206,7 @@ void FFapFileTagModel::create()
 
 void FFapFileTagModel::remove()
 {
-    m_tag = 0;
+    m_tag = nullptr;
 }
 
 void FFapFileTagModel::save()

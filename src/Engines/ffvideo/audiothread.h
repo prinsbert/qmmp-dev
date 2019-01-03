@@ -42,7 +42,7 @@ class AudioThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit AudioThread(PacketBuffer *buf, QObject *parent = 0);
+    explicit AudioThread(PacketBuffer *buf, QObject *parent = nullptr);
     ~AudioThread();
 
     bool initialize(FFVideoDecoder *decoder);
