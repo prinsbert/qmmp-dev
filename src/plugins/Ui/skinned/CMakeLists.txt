@@ -21,8 +21,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
-SET(libskinned_DEFINES APP_NAME_SUFFIX="${APP_NAME_SUFFIX}")
-
 # X11
 include_directories(${X11_INCLUDE_DIRS})
 link_directories(${X11_LIBRARY_DIRS})
@@ -115,7 +113,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(X11_FOUND)
 ADD_LIBRARY(skinned MODULE ${skinned_SRCS} ${skinned_UIS_H} ${skinned_RCC_SRCS} ${skinned_HDRS})
-SET_TARGET_PROPERTIES(skinned PROPERTIES COMPILE_DEFINITIONS "${libskinned_DEFINES}")
 target_link_libraries(skinned ${QT_LIBRARIES} libqmmp libqmmpui ${X11_LDFLAGS})
 add_dependencies(skinned libqmmpui libqmmp)
 install(TARGETS skinned DESTINATION ${PLUGIN_DIR}/Ui)
