@@ -77,6 +77,7 @@ create_distr ()
   cp -v ../../qmmp-1.x/*.txt ./
   cp -v ../../qmmp-1.x/*.nsi ./
   cp -v ../../qmmp-1.x/*.conf ./
+  cp -v ../../qmmp-1.x/*.default ./
   cp -v ../../unzip.exe ./
   cp -rv ../../themes ./
   cp -rv ../../skins ./

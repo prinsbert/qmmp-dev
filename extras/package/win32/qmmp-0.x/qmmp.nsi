@@ -240,6 +240,11 @@ Section /o "TagLib with RusXMMS patch"
   File rusxmms\*.dll
 SectionEnd
 
+Section /o "Use Simple UI by default"
+  SetOutPath "$INSTDIR"
+  File qmmprc.default
+SectionEnd
+
 Section "Start Menu Shortcuts" SHORTCUTS
   ${IfNot} ${SectionIsSelected} ${PORTABLE}
     SetShellVarContext all
