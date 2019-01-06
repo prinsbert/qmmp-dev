@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2019 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,8 +33,8 @@ public:
     SRConverter();
     virtual ~SRConverter();
 
-    void applyEffect(Buffer *b);
-    void configure(quint32 freq, ChannelMap map);
+    void applyEffect(Buffer *b) override;
+    void configure(quint32 freq, ChannelMap map) override;
 
 private:
     void freeSRC();

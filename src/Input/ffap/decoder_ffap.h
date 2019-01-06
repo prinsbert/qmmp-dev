@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -34,11 +34,11 @@ public:
     virtual ~DecoderFFap();
 
     // Standard Decoder API
-    bool initialize();
-    qint64 totalTime() const;
-    int bitrate() const;
-    qint64 read(unsigned char *data, qint64 maxSize);
-    void seek(qint64 time);
+    bool initialize() override;
+    qint64 totalTime() const override;
+    int bitrate() const override;
+    qint64 read(unsigned char *data, qint64 maxSize) override;
+    void seek(qint64 time) override;
 
 private:
     // helper functions

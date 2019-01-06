@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016-2017 by Ilya Kotov                                 *
+ *   Copyright (C) 2016-2019 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -48,8 +48,8 @@ public:
     virtual ~GoomWidget();
 
 public slots:
-    void start();
-    void stop();
+    void start() override;
+    void stop() override;
 
 private slots:
     void timeout();
@@ -59,11 +59,11 @@ private slots:
     void updateTitle();
 
 private:
-    virtual void hideEvent (QHideEvent *);
-    virtual void showEvent (QShowEvent *);
-    virtual void closeEvent (QCloseEvent *);
-    void paintEvent(QPaintEvent *);
-    void mousePressEvent(QMouseEvent *e);
+    virtual void hideEvent (QHideEvent *) override;
+    virtual void showEvent (QShowEvent *) override;
+    virtual void closeEvent (QCloseEvent *) override;
+    void paintEvent(QPaintEvent *) override;
+    void mousePressEvent(QMouseEvent *e) override;
     void clear();
     void createMenu();
     QTimer *m_timer;

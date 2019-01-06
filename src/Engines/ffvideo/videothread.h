@@ -57,7 +57,7 @@ public slots:
     void setWindowSize(const QSize &windowSize);
 
 private:
-    void run();
+    void run() override;
 
     QMutex m_mutex;
     AVCodecContext *m_context;

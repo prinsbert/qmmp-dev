@@ -53,7 +53,7 @@ public:
     void setMuted(bool muted);
 
 private:
-    void run();
+    void run() override;
 
     QMutex m_mutex;
     AVCodecContext *m_context;
