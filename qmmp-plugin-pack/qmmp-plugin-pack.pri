@@ -31,7 +31,9 @@ QMMP_PLUGIN_PACK_VERSION_MINOR = $$member(VERSIONS, 1)
 
 #*-g++ {
 #  QMAKE_CXXFLAGS += -Werror=zero-as-null-pointer-constant
+#  QMAKE_CXXFLAGS += -Werror=suggest-override
 #}
+
 
 unix {
   isEmpty(PREFIX): PREFIX=/usr

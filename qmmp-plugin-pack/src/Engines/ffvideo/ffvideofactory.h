@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2018 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,14 +30,14 @@ Q_INTERFACES(EngineFactory)
 
 public:
     FFVideoFactory();
-    EngineProperties properties() const;
-    bool supports(const QString &source) const;
-    AbstractEngine *create(QObject *parent = nullptr);
-    QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *);
-    MetaDataModel* createMetaDataModel(const QString &path, bool readOnly);
-    void showSettings(QWidget *);
-    void showAbout(QWidget *parent);
-    QString translation() const;
+    EngineProperties properties() const override;
+    bool supports(const QString &source) const override;
+    AbstractEngine *create(QObject *parent = nullptr) override;
+    QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *) override;
+    MetaDataModel* createMetaDataModel(const QString &path, bool readOnly) override;
+    void showSettings(QWidget *) override;
+    void showAbout(QWidget *parent) override;
+    QString translation() const override;
 };
 
 #endif

@@ -56,18 +56,18 @@ public:
     virtual ~FFmpegEngine();
 
     // Engine API
-    bool play();
-    bool enqueue(InputSource *source);
-    void seek(qint64);
-    void stop();
-    void pause();
-    void setMuted(bool muted);
+    bool play() override;
+    bool enqueue(InputSource *source) override;
+    void seek(qint64) override;
+    void stop() override;
+    void pause() override;
+    void setMuted(bool muted) override;
 
 private slots:
     void onStopRequest();
 
 private:
-    void run();
+    void run() override;
     void sendMetaData();
     void clearDecoders();
     void reset();
