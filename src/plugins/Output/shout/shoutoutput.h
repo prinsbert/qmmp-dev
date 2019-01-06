@@ -37,7 +37,7 @@ public:
     qint64 writeAudio(unsigned char *data, qint64 maxSize);
     void drain();
     void reset();
-    void setTrackInfo(const QMap<Qmmp::MetaData, QString> &metaData);
+    void setTrackInfo(const TrackInfo &info);
 
 private:
     void sendHeader();
