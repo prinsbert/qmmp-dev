@@ -1,8 +1,8 @@
 /***************************************************************************
 <<<<<<< .working
- *   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
 =======
- *   Copyright (C) 2008-2018 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
 >>>>>>> .merge-right.r8203
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
