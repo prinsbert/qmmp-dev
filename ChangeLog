@@ -270,3 +270,6 @@ Version 0.11.2
 
 Version 0.11.3
 * fixed gcc 8.1 support
+
+Version 0.11.4
+* fixed ffvideo plugin linking
