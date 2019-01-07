@@ -1366,3 +1366,8 @@ Version 0.11.4
 * fixed latest mplayer output parsing
 * fixed '--quit' command line option processing
 * fixed issue with empty audio parameters
+
+Version 0.11.5
+* fixed OSS4 plugin build
+* fixed 12, 20-bit integer and 32-bit float formats support in the 
+  WavPack plugin
