@@ -237,7 +237,7 @@ Version 1.1.4
 * updated Galician translation (Delio Docampo Cordeiro)
 
 Version 1.1.5
-* added album artist tag support in the ffap plugin 
+* added album artist tag support in the ffap plugin
 * fixed cmake 3.10 support
 * fixed rusxmms support in the mpg123 plugin
 * updated Greek translation (Dimitrios Glentadakis)
@@ -263,3 +263,21 @@ Version 1.2.0
 * updated Spanish translation (Joel Barrios and Bohdan Shuba)
 * updated Japanese translation (RyoTa SimaMoto)
 * updated Ukrainian translation (Gennady Motsyo)
+
+Version 1.2.1
+* added ffmpeg 4.0 support in the ffvideo plugin
+* fixed issues with some corrupted files in the mpg123 plugin
+* updated Italian translation (Luigi Toscano)
+
+Version 1.2.2
+* fixed build for windows
+* fixed Goom plugin:
+  - fixed segmentation fault
+  - fixed issue with gcc optimizations (-O2 flag)
+
+Version 1.2.3
+* fixed gcc 8.1 support
+
+Version 1.2.4
+* fixed ffvideo plugin linking
+* fixed build without QtSql
