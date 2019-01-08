@@ -132,48 +132,48 @@
         <translation>Formatas</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="129"/>
+        <location filename="../streamwindow.cpp" line="131"/>
         <source>&amp;Add to favorites</source>
         <translation>&amp;Įkelti į mėgstamus</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="132"/>
+        <location filename="../streamwindow.cpp" line="134"/>
         <source>&amp;Add to playlist</source>
         <translation>&amp;Įkelti į grojaraštį </translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="135"/>
+        <location filename="../streamwindow.cpp" line="137"/>
         <source>&amp;Create</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="137"/>
+        <location filename="../streamwindow.cpp" line="139"/>
         <source>&amp;Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="140"/>
+        <location filename="../streamwindow.cpp" line="142"/>
         <source>&amp;Remove</source>
         <translation>&amp;Pašalinti</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="150"/>
+        <location filename="../streamwindow.cpp" line="152"/>
         <source>Done</source>
         <translation>Atlikta</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="153"/>
-        <location filename="../streamwindow.cpp" line="154"/>
+        <location filename="../streamwindow.cpp" line="155"/>
+        <location filename="../streamwindow.cpp" line="156"/>
         <source>Error</source>
         <translation>Klaida</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="173"/>
+        <location filename="../streamwindow.cpp" line="175"/>
         <source>Receiving</source>
         <translation>Gaunu</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="270"/>
+        <location filename="../streamwindow.cpp" line="272"/>
         <source>Edit Stream</source>
         <translation type="unfinished"></translation>
     </message>

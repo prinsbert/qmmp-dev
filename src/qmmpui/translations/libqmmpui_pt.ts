@@ -1260,39 +1260,39 @@
 <context>
     <name>UiHelper</name>
     <message>
-        <location filename="../uihelper.cpp" line="125"/>
-        <location filename="../uihelper.cpp" line="137"/>
+        <location filename="../uihelper.cpp" line="124"/>
+        <location filename="../uihelper.cpp" line="136"/>
         <source>All Supported Bitstreams</source>
         <translation>Todas as emissões suportadas</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="131"/>
+        <location filename="../uihelper.cpp" line="130"/>
         <source>Select one or more files to open</source>
         <translation>Selecione um ou mais ficheiros a abrir</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="143"/>
+        <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to play</source>
         <translation>Selecione um ou mais ficheiros a reproduzir</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="151"/>
+        <location filename="../uihelper.cpp" line="150"/>
         <source>Choose a directory</source>
         <translation>Selecione um diretório</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="167"/>
-        <location filename="../uihelper.cpp" line="191"/>
+        <location filename="../uihelper.cpp" line="166"/>
+        <location filename="../uihelper.cpp" line="190"/>
         <source>Playlist Files</source>
         <translation>Ficheiros de lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="169"/>
+        <location filename="../uihelper.cpp" line="168"/>
         <source>Open Playlist</source>
         <translation>Abrir lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="192"/>
+        <location filename="../uihelper.cpp" line="191"/>
         <source>Save Playlist</source>
         <translation>Guardar lista de reprodução</translation>
     </message>

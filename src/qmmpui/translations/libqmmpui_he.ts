@@ -1260,39 +1260,39 @@
 <context>
     <name>UiHelper</name>
     <message>
-        <location filename="../uihelper.cpp" line="125"/>
-        <location filename="../uihelper.cpp" line="137"/>
+        <location filename="../uihelper.cpp" line="124"/>
+        <location filename="../uihelper.cpp" line="136"/>
         <source>All Supported Bitstreams</source>
         <translation>כל זרמי הסביות הנתמכים</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="131"/>
+        <location filename="../uihelper.cpp" line="130"/>
         <source>Select one or more files to open</source>
         <translation>בחר קובץ אחד או יותר לפתיחה</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="143"/>
+        <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to play</source>
         <translation>בחר קובץ אחד או יותר לניגון</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="151"/>
+        <location filename="../uihelper.cpp" line="150"/>
         <source>Choose a directory</source>
         <translation>בחר מדור</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="167"/>
-        <location filename="../uihelper.cpp" line="191"/>
+        <location filename="../uihelper.cpp" line="166"/>
+        <location filename="../uihelper.cpp" line="190"/>
         <source>Playlist Files</source>
         <translation>קבצי רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="169"/>
+        <location filename="../uihelper.cpp" line="168"/>
         <source>Open Playlist</source>
         <translation>פתח רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="192"/>
+        <location filename="../uihelper.cpp" line="191"/>
         <source>Save Playlist</source>
         <translation>שמור רשימת נגינה</translation>
     </message>
