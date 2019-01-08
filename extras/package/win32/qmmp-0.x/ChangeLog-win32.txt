@@ -265,3 +265,7 @@ LEGEND
 [*] ffmpeg-3.4.5
 [-] fixed ogg vorbis corruption (https://github.com/taglib/taglib/issues/775)
 [-] fixed nsfe support (https://bitbucket.org/mpyne/game-music-emu/issues/22)
+
+0.11.5
+[*] qmmp-0.11.5
+[*] qmmp-plugin-pack-0.11.4

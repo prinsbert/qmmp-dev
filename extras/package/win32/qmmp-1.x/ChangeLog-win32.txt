@@ -272,3 +272,7 @@ LEGEND
 [*] qt-5.11.3
 [-] fixed ogg vorbis corruption (https://github.com/taglib/taglib/issues/775)
 [-] fixed nsfe support (https://bitbucket.org/mpyne/game-music-emu/issues/22)
+
+1.2.6
+[*] qmmp-1.2.6
+[*] qmmp-plugin-pack-1.2.4
