@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.2.3
+PLUGIN_PACK_VERSION=1.2.4
 UBUNTU_CODENAMES='xenial bionic cosmic'
 BUILD_ROOT=build-root
 
@@ -22,9 +22,9 @@ build ()
     cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.bz2 ./
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
     if [ "$1" = "xenial" ] ; then
-        debuild -S -sa -kF594F6B4
+        debuild -S -sa -d -kF594F6B4
     else
-        debuild -S -sd -kF594F6B4
+        debuild -S -sd -d -kF594F6B4
     fi
     cd ..
     cd ..
