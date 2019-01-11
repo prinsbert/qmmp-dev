@@ -6,32 +6,32 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="40"/>
         <source>XMP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Wtyczka XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="54"/>
         <source>Module Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Pliki modułów</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>About XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>O wtyczcie dźwiękowej XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Wtyczka dźwiękowa XMP dla Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="113"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="114"/>
         <source>Compiled against libxmp-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Skompilowana z biblioteką libxmp-%1</translation>
     </message>
 </context>
 <context>
@@ -39,37 +39,37 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia wtyczki XMP</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source> Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Współczynnik wzmocnienia:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Miksowanie stereo:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ interpolacji:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Efekt filtru dolnoprzepustowego</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj timingu vblank</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Emuluj błąd Protracker 2.x FX9</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
@@ -79,32 +79,32 @@
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Najbliższy sąsiad</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Liniowy</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Cubic spline</translation>
     </message>
 </context>
 <context>
@@ -112,52 +112,52 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Volume scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Skala głośności</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Number of patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba wzorców</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Number of tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba ścieżek</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Tracks per pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Ścieżki na wzorzec</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Number of instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba instrumentów</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Number of samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba próbek</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Initial speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Prędkość początkowa</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Initial BPM</source>
-        <translation type="unfinished"></translation>
+        <translation>BPM początkowe</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="61"/>
         <source>Module length in patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Długość modułu we wzorcach</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
-        <translation>Sample</translation>
+        <translation>Próbki</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="88"/>
