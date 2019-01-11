@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="46"/>
         <source>FFap Plugin</source>
-        <translation>Wtyczka Ffap</translation>
+        <translation>Wtyczka FFap</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="48"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="168"/>
         <source>About FFap Audio Plugin</source>
-        <translation>O wtyczce FFap Audio</translation>
+        <translation>O wtyczce dźwiękowej FFap</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="169"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation>Wtyczka Qmmp FFap Audio</translation>
+        <translation>Wtyczka dźwiękowa FFap dla Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="170"/>
@@ -31,12 +31,12 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="171"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="172"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
-        <translation>Oparty na kodzie z deadbeef, FFmpeg oraz rockbox</translation>
+        <translation>Oparta na kodzie z deadbeef, FFmpeg oraz rockbox</translation>
     </message>
 </context>
 <context>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Próbki</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="82"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersja</translation>
     </message>
 </context>
 </TS>

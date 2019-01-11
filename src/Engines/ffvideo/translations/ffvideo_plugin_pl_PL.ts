@@ -6,7 +6,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Wtyczka wideo FFmpeg</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="46"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="165"/>
         <source>About FFVideo Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>O wtyczce FFVideo</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="166"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
-        <translation type="unfinished"></translation>
+        <translation>Oparta na FFmpeg wtyczka wideo dla Qmmp</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="167"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="177"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -54,34 +54,34 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Próbkowanie dźwięku</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="72"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanały dźwięku</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="78"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielkość wideo</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
@@ -94,37 +94,37 @@
     <message>
         <location filename="../videowindow.cpp" line="40"/>
         <source>FFmpeg Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Wideo FFmpeg</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Wstrzymaj</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Spacja</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Zatrzymaj</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <source>V</source>
-        <translation type="unfinished"></translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>P&amp;ełny ekran</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 </TS>
