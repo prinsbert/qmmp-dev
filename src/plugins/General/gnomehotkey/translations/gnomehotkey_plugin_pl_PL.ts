@@ -6,17 +6,17 @@
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="30"/>
         <source>Gnome Hotkey Plugin</source>
-        <translation>Wtyczka Skrótów Klawiszowych Gnome</translation>
+        <translation>Wtyczka Skróty klawiszowe Gnome</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="51"/>
         <source>About Gnome Hotkey Plugin</source>
-        <translation>O wtyczce Skrótów Klawiszowych dla Gnome</translation>
+        <translation>O wtyczce Skróty klawiszowe Gnome</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="52"/>
         <source>Qmmp Gnome Hotkey Plugin</source>
-        <translation>Wtyczka Skrótów Klawiszowych Gnome dla Qmmp</translation>
+        <translation>Wtyczka Skróŧy klawiszowe Gnome dla Qmmp</translation>
     </message>
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="53"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../gnomehotkeyfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>
