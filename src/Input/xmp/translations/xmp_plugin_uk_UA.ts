@@ -44,7 +44,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source> Amplification factor:</source>
-        <translation>Підсилення:</translation>
+        <translation> Підсилення:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation>Тип інтерполяції:</translation>
+        <translation> Тип інтерполяції:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
