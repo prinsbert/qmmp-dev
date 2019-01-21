@@ -167,7 +167,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="93"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentti</translation>
     </message>
 </context>
 </TS>

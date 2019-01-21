@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.1" language="nl">
 <context>
     <name>GoomWidget</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Vernieuw Frequentie</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="190"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="52"/>

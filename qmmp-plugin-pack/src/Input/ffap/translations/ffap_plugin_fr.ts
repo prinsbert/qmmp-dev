@@ -44,12 +44,12 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="67"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Samples</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="68"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
 </context>
 </TS>
