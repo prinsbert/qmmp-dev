@@ -6,22 +6,22 @@
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="31"/>
         <source>SRC Plugin</source>
-        <translation>Modulo SRC</translation>
+        <translation>Estensione SRC</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="52"/>
         <source>About Sample Rate Converter Plugin</source>
-        <translation>Info sul modulo di conversione campionamento</translation>
+        <translation>Informazioni sull&apos;estensione di conversione campionamento</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="53"/>
         <source>Qmmp Sample Rate Converter Plugin</source>
-        <translation>Modulo di conversione campionamento Qmmp</translation>
+        <translation>Estensione di conversione campionamento per Qmmp</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="13"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Impostazioni del modulo di conversione campionamento</translation>
+        <translation>Impostazioni dell&apos;estensione di conversione campionamento</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="19"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="67"/>
         <source>Linear Interpolation</source>
-        <translation>Lineare</translation>
+        <translation>Interpolazione lineare</translation>
     </message>
 </context>
 </TS>

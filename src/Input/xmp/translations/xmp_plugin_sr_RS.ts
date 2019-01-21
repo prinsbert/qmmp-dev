@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="114"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутор: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="115"/>
@@ -74,22 +74,22 @@
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Узорковање:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
@@ -157,17 +157,17 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Узорци</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="88"/>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Инструменти</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="93"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>коментар</translation>
     </message>
 </context>
 </TS>

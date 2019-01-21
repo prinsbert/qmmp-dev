@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="171"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутор: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="172"/>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Узорци</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="82"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Издање</translation>
     </message>
 </context>
 </TS>

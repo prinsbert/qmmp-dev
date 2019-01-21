@@ -11,7 +11,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="46"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Видео фајлови</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="165"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="167"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Компилован на:</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="177"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутор: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,17 +39,17 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Величина</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Битски проток</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Биткси проток звука</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
@@ -66,12 +66,12 @@
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kb/s</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="72"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Битски проток видеа</translation>
     </message>
 </context>
 <context>
@@ -99,32 +99,32 @@
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>П&amp;аузирај</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Размак</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Заустави</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <source>V</source>
-        <translation type="unfinished"></translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Цео екран</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 </TS>

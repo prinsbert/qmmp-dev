@@ -49,7 +49,7 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="82"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versio</translation>
     </message>
 </context>
 </TS>

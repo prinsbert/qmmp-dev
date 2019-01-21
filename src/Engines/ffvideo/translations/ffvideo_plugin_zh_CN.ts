@@ -66,12 +66,12 @@
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>千比特每秒</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>赫兹</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="72"/>
@@ -99,32 +99,32 @@
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>暂停(&amp;P)</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>空格键</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>停止(&amp;S)</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <source>V</source>
-        <translation type="unfinished"></translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>全屏(&amp;F)</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 </TS>

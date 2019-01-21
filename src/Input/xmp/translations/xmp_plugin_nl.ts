@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.1" language="nl">
 <context>
     <name>DecoderXmpFactory</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="114"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="115"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sample frequentie:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
@@ -157,17 +157,17 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Samples</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="88"/>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Instrumenten</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="93"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Commentaar</translation>
     </message>
 </context>
 </TS>

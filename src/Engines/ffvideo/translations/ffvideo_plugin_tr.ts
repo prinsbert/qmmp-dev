@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="tr_TR">
+<TS version="2.1" language="tr">
 <context>
     <name>FFVideoFactory</name>
     <message>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="177"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya boyutu</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Bit hızı</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
@@ -66,12 +66,12 @@
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="72"/>
@@ -119,12 +119,12 @@
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tam Ekran</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 </TS>
