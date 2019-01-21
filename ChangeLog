@@ -273,3 +273,21 @@ Version 0.11.3
 
 Version 0.11.4
 * fixed ffvideo plugin linking
+
+Version 0.12.0
+* ported to qmmp 0.12 api
+* improved ffvideo plugin
+* removed history plugin
+* removed mpg123 plugin
+* updated Russian translation (Alexey Loginov, Viktor Eruhin)
+* updated Polish translation (mrerexx)
+* updated Portuguese translation (Sérgio Marques)
+* updated Ukrainian translation (Gennady Motsyo)
+* updated Spanish translation (Joel Barrios)
+* updated German translation (Ettore Atalan)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Indonesian translation (Wantoyo)
+* updated Italian translation (Luigi Toscano)
+* updated Finnish translation (Jiri Grönroos)
+* updated Chinese Traditional translation (Cosmos Chen)
