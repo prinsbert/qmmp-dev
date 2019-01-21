@@ -281,3 +281,9 @@ Version 1.2.3
 Version 1.2.4
 * fixed ffvideo plugin linking
 * fixed build without QtSql
+
+Version 1.3.0
+* ported to qmmp 1.3 api
+* improved ffvideo plugin
+* removed history plugin
+* removed mpg123 plugin
