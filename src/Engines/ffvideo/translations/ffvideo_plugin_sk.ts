@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sk_SK">
+<TS version="2.1" language="sk">
 <context>
     <name>FFVideoFactory</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="167"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skompilovaný oproti:</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="177"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>Veľkosť súboru</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitový tok</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
@@ -66,12 +66,12 @@
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="72"/>
@@ -99,22 +99,22 @@
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Pozastaviť</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Medzerník</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Za&amp;staviť</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <source>V</source>
-        <translation type="unfinished"></translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 </TS>

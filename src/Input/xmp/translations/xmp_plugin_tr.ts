@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="tr_TR">
+<TS version="2.1" language="tr">
 <context>
     <name>DecoderXmpFactory</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="113"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="114"/>
@@ -79,17 +79,17 @@
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="93"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Yorum</translation>
     </message>
 </context>
 </TS>

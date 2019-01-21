@@ -41,7 +41,7 @@
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>

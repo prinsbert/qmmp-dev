@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="it_IT">
+<TS version="2.1" language="it">
 <context>
     <name>DecoderXmpFactory</name>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="40"/>
         <source>XMP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Estensione XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="54"/>
         <source>Module Files</source>
-        <translation type="unfinished"></translation>
+        <translation>File Module</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>About XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni sull&apos;estensione audio XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Estensione audio XMP per Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="113"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="114"/>
         <source>Compiled against libxmp-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Compilato con libxmp-%1</translation>
     </message>
 </context>
 <context>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni dell&apos;estensione XMP</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source> Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fattore di amplificazione:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo di interpolazione:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
@@ -74,37 +74,37 @@
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Frequenza di campionamento:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Vicino più prossimo</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineare</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline cubica</translation>
     </message>
 </context>
 <context>
@@ -122,7 +122,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Number of tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di tracce</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
@@ -132,17 +132,17 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Number of instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di strumenti</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Number of samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di campioni</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Initial speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Velocità iniziale</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="60"/>
@@ -157,17 +157,17 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Campioni</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="88"/>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Strumenti</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="93"/>
         <source>Comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Commento</translation>
     </message>
 </context>
 </TS>

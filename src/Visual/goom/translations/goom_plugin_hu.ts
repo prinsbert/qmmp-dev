@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="hu_HU">
+<TS version="2.1" language="hu">
 <context>
     <name>GoomWidget</name>
     <message>
@@ -11,22 +11,22 @@
     <message>
         <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ráta frissítése</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="190"/>
         <source>60 fps</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">25 fps {60 ?}</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="191"/>
         <source>50 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="192"/>
         <source>25 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="198"/>
