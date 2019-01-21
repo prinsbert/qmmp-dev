@@ -39,7 +39,7 @@
     <message>
         <location filename="../opusmetadatamodel.cpp" line="50"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>版本</translation>
     </message>
 </context>
 </TS>

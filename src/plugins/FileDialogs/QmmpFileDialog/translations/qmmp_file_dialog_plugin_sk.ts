@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="sk_SK">
+<TS version="2.0" language="sk">
 <context>
     <name>QmmpFileDialog</name>
     <message>
         <location filename="../qmmpfiledialog.ui" line="14"/>
         <source>Add Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať súbory</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="44"/>
         <source>Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Hore</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="47"/>
@@ -19,42 +19,42 @@
         <location filename="../qmmpfiledialog.ui" line="79"/>
         <location filename="../qmmpfiledialog.ui" line="104"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="57"/>
         <source>List view</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť zoznam</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="76"/>
         <source>Detailed view</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit detaily</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="101"/>
         <source>Close dialog on add</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatvoriť dialóg pri pridaní</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="184"/>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Názov súboru:</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="200"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="207"/>
         <source>Files of type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Súbory typu:</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="233"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatvoriť</translation>
     </message>
 </context>
 <context>
@@ -63,12 +63,12 @@
         <location filename="../qmmpfiledialog.cpp" line="68"/>
         <location filename="../qmmpfiledialog.cpp" line="78"/>
         <source>Qmmp File Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp dialóg súborov</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="77"/>
         <source>About Qmmp File Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>O Qmmp dialógu súborov</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="79"/>
@@ -80,7 +80,7 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="82"/>
         <source>Some code is copied from the Qt library</source>
-        <translation type="unfinished"></translation>
+        <translation>Niektoré časti kódu sú skopírované z Qt knižnice</translation>
     </message>
 </context>
 <context>
@@ -88,23 +88,24 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
     <message>
         <location filename="../qmmpfiledialogimpl.cpp" line="250"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialogimpl.cpp" line="263"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložiť</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialogimpl.cpp" line="277"/>
         <source>Directories</source>
-        <translation type="unfinished"></translation>
+        <translation>Priečinky</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialogimpl.cpp" line="446"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 už existuje.
+Prajete si ho nahradiť?</translation>
     </message>
 </context>
 </TS>

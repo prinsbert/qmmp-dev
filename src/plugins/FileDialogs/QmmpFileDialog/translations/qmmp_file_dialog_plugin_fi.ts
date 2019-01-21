@@ -24,17 +24,17 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="57"/>
         <source>List view</source>
-        <translation type="unfinished"></translation>
+        <translation>Listanäkymä</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="76"/>
         <source>Detailed view</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietonäkymä</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="101"/>
         <source>Close dialog on add</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje ikkuna lisäyksen yhteydessä</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="184"/>
@@ -63,7 +63,7 @@
         <location filename="../qmmpfiledialog.cpp" line="68"/>
         <location filename="../qmmpfiledialog.cpp" line="78"/>
         <source>Qmmp File Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp-tiedostoikkuna</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="77"/>
@@ -80,7 +80,7 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
     <message>
         <location filename="../qmmpfiledialog.cpp" line="82"/>
         <source>Some code is copied from the Qt library</source>
-        <translation type="unfinished"></translation>
+        <translation>Osa koodista on kopioitu Qt-kirjastosta</translation>
     </message>
 </context>
 <context>

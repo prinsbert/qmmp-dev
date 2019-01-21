@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="sk_SK">
+<TS version="2.0" language="sk">
 <context>
     <name>RGScanDialog</name>
     <message>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../rgscandialog.ui" line="42"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Názov</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="47"/>
@@ -67,7 +67,7 @@
         <location filename="../rgscandialog.cpp" line="130"/>
         <location filename="../rgscandialog.cpp" line="241"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../rgscandialog.cpp" line="140"/>
@@ -75,7 +75,7 @@
         <location filename="../rgscandialog.cpp" line="165"/>
         <location filename="../rgscandialog.cpp" line="236"/>
         <source>%1 dB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dB</translation>
     </message>
 </context>
 <context>

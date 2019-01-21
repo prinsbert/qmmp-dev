@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="sk_SK">
+<TS version="2.0" language="sk">
 <context>
     <name>DecoderMPEGFactory</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="390"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skompilovaný oproti:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="399"/>
@@ -128,7 +128,7 @@
         <location filename="../settingsdialog.ui" line="173"/>
         <location filename="../settingsdialog.ui" line="222"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakázané</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="138"/>

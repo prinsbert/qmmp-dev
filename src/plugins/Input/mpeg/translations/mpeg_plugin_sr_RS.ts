@@ -6,17 +6,17 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="169"/>
         <source>MPEG Plugin</source>
-        <translation type="unfinished">МПЕГ прикључак</translation>
+        <translation>МПЕГ прикључак</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="172"/>
         <source>MPEG Files</source>
-        <translation type="unfinished">МПЕГ фајлови</translation>
+        <translation>МПЕГ фајлови</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="388"/>
         <source>About MPEG Audio Plugin</source>
-        <translation type="unfinished">О МПЕГ прикључку</translation>
+        <translation>О МПЕГ прикључку</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="389"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="390"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Компилован на:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="399"/>
@@ -36,12 +36,12 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="403"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished">Аутор: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="404"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation type="unfinished">Заснован на пројектима mq3 и madplay</translation>
+        <translation>Заснован на пројектима mq3 и madplay</translation>
     </message>
 </context>
 <context>
