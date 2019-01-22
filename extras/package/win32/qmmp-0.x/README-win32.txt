@@ -13,8 +13,7 @@ Known issues:
 
 Extra plugins (see http://qmmp.ylsoftware.com/plugins.php):
   - FFap - enhanced Monkey's Audio (APE) decoder;
-  - Goom - audio visualization based on goom project;
-  - History - a tool for collection information about listened tracks.
+  - Goom - audio visualization based on goom project.
 
 This archive also contains third-party libraries. Source code of these libraries
 is freely available on the Internet.

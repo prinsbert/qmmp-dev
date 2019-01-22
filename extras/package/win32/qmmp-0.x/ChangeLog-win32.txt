@@ -269,3 +269,8 @@ LEGEND
 0.11.5
 [*] qmmp-0.11.5
 [*] qmmp-plugin-pack-0.11.4
+
+0.12.0
+[*] qmmp-0.12.0
+[*] qmmp-plugin-pack-0.12.0
+[!] feature to change default UI before installation
