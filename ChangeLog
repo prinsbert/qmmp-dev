@@ -1405,6 +1405,7 @@ Version 0.12.0
 * fixed "--pl-help", "--nowplaying-syntax" command line options
   processing
 * fixed feature to disable engine
+* fixed flac preset in the converter plugin
 * improved Windows support:
   - added exclusive mode in the WASAPI plugin
 * hid private symbols in the liqmmp and libqmmpui libraries
