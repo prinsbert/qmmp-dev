@@ -153,7 +153,7 @@ void Converter::run()
     MetaDataFormatter formatter(pattern);
 
 
-    QString name = formatter.format(list.first());
+    QString name = formatter.format(info);
     QString full_path = out_path + "/" + name + "." + m_preset["ext"].toString();
 
     if(QFile::exists(full_path))
