@@ -450,7 +450,7 @@ void DecoderFFmpeg::fillBuffer()
             if (av_read_frame(ic, &m_pkt) < 0)
             {
                 m_temp_pkt.size = 0;
-                m_temp_pkt.data = nullptr;
+                m_temp_pkt.data = 0;
             }
             m_temp_pkt.size = m_pkt.size;
             m_temp_pkt.data = m_pkt.data;
