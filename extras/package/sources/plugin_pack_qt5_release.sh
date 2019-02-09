@@ -17,12 +17,13 @@ svn up
 echo "Creating changelog.."
 svn log > ChangeLog.svn
 
-VERSION=`cat qmmp-plugin-pack.pri | grep "QMMP_PLUGIN_PACK_VERSION" | cut -d " " -f3`
+VERSION=`cat qmmp-plugin-pack.pri | grep "^QMMP_PLUGIN_PACK_VERSION =" | cut -d " " -f3`
 
 TARBALL=qmmp-plugin-pack-$VERSION
 
 
 echo Sources name: $TARBALL
+
 cd ..
 if [ -d $TARBALL ]; then
 echo "Removing previous directory.."
