@@ -1402,8 +1402,7 @@ Version 0.12.0
 * added feature to disable tag reading while loading a playlist file
 * reduced number of locks
 * improved command line support
-* fixed "--pl-help", "--nowplaying-syntax" command line options
-  processing
+* fixed "--pl-help", "--nowplaying-syntax" command line options processing
 * fixed feature to disable engine
 * fixed flac preset in the converter plugin
 * improved Windows support:
