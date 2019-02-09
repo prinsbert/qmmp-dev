@@ -41,8 +41,8 @@ download_qmmp_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
-  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-1.2 qmmp-${QMMP_VERSION}
+  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
+  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-1.3 qmmp-${QMMP_VERSION}
   cd ..
 }
 
@@ -51,8 +51,8 @@ download_plugins_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-plugin-pack...'
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp-plugin-pack qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
-  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-1.2 qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
+  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp-plugin-pack qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
+  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-1.3 qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
   cd ..
 }
 
@@ -88,7 +88,7 @@ create_distr ()
   find . -type f -name *.a -delete
   find . -type d -name ".svn" | xargs rm -rf
   #Qt libs
-  for LIB_NAME in Qt5Core.dll Qt5Gui.dll Qt5Widgets.dll Qt5Network.dll Qt5Sql.dll
+  for LIB_NAME in Qt5Core.dll Qt5Gui.dll Qt5Widgets.dll Qt5Network.dll Qt5Sql.dll Qt5WinExtras.dll
   do
     cp -v ${QT5_PATH}/bin/${LIB_NAME} ./
   done
