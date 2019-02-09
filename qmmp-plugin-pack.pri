@@ -14,7 +14,7 @@ QT += widgets
 
 #Version
 
-QMMP_PLUGIN_PACK_VERSION = 1.3.0
+QMMP_PLUGIN_PACK_VERSION = 1.3.1
 CONFIG += SVN_VERSION
 
 #Install paths
