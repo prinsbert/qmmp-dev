@@ -1,3 +1,3 @@
-/usr/include/qmmp
-/usr/lib/libqmmp.so
-/usr/lib/pkgconfig/qmmp.pc
+/usr/include/qmmp-0/qmmp
+/usr/lib/*/libqmmp-0.so
+/usr/lib/*/pkgconfig/qmmp-0.pc

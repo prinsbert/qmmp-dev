@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=0.11.4
+PLUGIN_PACK_VERSION=0.12.0
 UBUNTU_CODENAMES='precise trusty xenial bionic cosmic'
 BUILD_ROOT=build-root
 

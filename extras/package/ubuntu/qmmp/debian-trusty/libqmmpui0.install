@@ -1,2 +1,2 @@
-usr/lib/libqmmpui.so.0.11.*
-usr/lib/libqmmpui.so.0
+usr/lib/*/libqmmpui-0.so.0.12.*
+usr/lib/*/libqmmpui-0.so.0
