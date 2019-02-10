@@ -1173,7 +1173,7 @@
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="69"/>
-        <source>sixixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
+        <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
