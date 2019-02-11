@@ -59,3 +59,5 @@ QString OutputDirectSoundFactory::translation() const
 {
     return QLatin1String(":/directsound_plugin_");
 }
+
+Q_EXPORT_PLUGIN2(directsound, OutputDirectSoundFactory)
