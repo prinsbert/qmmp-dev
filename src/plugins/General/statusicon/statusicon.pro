@@ -6,15 +6,18 @@ HEADERS += statusiconfactory.h \
     statusicon.h \
     settingsdialog.h \
     qmmptrayicon.h \
-    statusiconpopupwidget.h \
     coverwidget.h
 
 SOURCES += statusiconfactory.cpp \
     statusicon.cpp \
     settingsdialog.cpp \
     qmmptrayicon.cpp \
-    statusiconpopupwidget.cpp \
     coverwidget.cpp
+
+unix {
+    HEADERS += statusiconpopupwidget.h
+    SOURCES += statusiconpopupwidget.cpp
+}
 
 FORMS += settingsdialog.ui
 
