@@ -34,6 +34,7 @@ case $1 in
     --enable-demuxer=tta --enable-demuxer=rtp \
     --enable-demuxer=eac3 --enable-demuxer=dts --enable-demuxer=dtshd --enable-demuxer=flac \
     --enable-demuxer=matroska --enable-demuxer=asf --enable-demuxer=mov \
+    --enable-decoder=tak --enable-demuxer=tak \
     --disable-d3d11va --disable-dxva2
     make -j${JOBS}
     make install
