@@ -19,6 +19,8 @@ contains(CONFIG, WITH_PROJECTM20){
     DEFINES += PROJECTM_20
 }
 
+#DEFINES += PROJECTM_31
+
 unix {
     PKGCONFIG += libprojectM
     target.path = $$PLUGIN_DIR/Visual

@@ -26,11 +26,17 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 # projectM
 pkg_search_module(PROJECTM libprojectM)
 pkg_search_module(PROJECTM_20 libprojectM>=2.0.0)
+pkg_search_module(PROJECTM_31 libprojectM>=3.1.0)
 ADD_DEFINITIONS(${PROJECTM_CFLAGS})
+
 
 IF(PROJECTM_20_FOUND)
 ADD_DEFINITIONS(-DPROJECTM_20)
 ENDIF(PROJECTM_20_FOUND)
+
+IF(PROJECTM_31_FOUND)
+ADD_DEFINITIONS(-DPROJECTM_31)
+ENDIF(PROJECTM_31_FOUND)
 
 find_file(PROJECTM_CONFIG config.inp
           PATHS "/usr/share/projectM/" "/usr/local/share/projectM/")
