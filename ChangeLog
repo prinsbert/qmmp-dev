@@ -1424,3 +1424,9 @@ Version 0.12.0
 * updated Italian translation (Luigi Toscano)
 * updated Finnish translation (Jiri Grönroos)
 * updated Chinese Traditional translation (Cosmos Chen)
+
+Version 0.12.1
+* added projectM 3.1 support
+* fixed current track text color in the qsui plugin
+* fixed DirectSound output plugin
+* fixed command line processing under Windows
