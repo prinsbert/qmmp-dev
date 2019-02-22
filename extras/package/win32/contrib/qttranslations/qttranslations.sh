@@ -1,13 +1,13 @@
 #!/bin/sh
 
 NAME=qttranslations-everywhere-src
-VERSION=5.11.3
+VERSION=5.12.1
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate https://download.qt.io/official_releases/qt/5.11/$VERSION/submodules/$NAME-$VERSION.tar.xz
+    wget -nc --no-check-certificate https://download.qt.io/official_releases/qt/5.12/$VERSION/submodules/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp
