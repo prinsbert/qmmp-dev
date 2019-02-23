@@ -1432,3 +1432,7 @@ Version 0.12.1
 * fixed DirectSound output plugin
 * fixed command line processing under Windows
 * fixed AAC support
+* updated Polish translation (mrerexx)
+* updated Portuguese translation (Sérgio Marques)
+* updated Finnish translation (Jiri Grönroos)
+* updated Russian translation (Alexey Loginov)
