@@ -1427,6 +1427,8 @@ Version 0.12.0
 
 Version 0.12.1
 * added projectM 3.1 support
+* added feature to determine plugin prefix via pkgconfig (Chris Spiegel)
 * fixed current track text color in the qsui plugin
 * fixed DirectSound output plugin
 * fixed command line processing under Windows
+* fixed AAC support
