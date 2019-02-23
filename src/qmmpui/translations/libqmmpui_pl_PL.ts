@@ -1150,7 +1150,7 @@
     <message>
         <location filename="../winfileassoc.cpp" line="278"/>
         <source>Enqueue in Qmmp</source>
-        <translation>Kolejkuj w Qmmp</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
