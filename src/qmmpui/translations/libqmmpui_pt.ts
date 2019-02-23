@@ -172,7 +172,7 @@
     <message>
         <location filename="../columneditor.cpp" line="100"/>
         <source>Track Index</source>
-        <translation>Índice da faixa</translation>
+        <translation>Índice de faixa</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="87"/>
@@ -1150,7 +1150,7 @@
     <message>
         <location filename="../winfileassoc.cpp" line="278"/>
         <source>Enqueue in Qmmp</source>
-        <translation>Colocar na fila do Qmmp</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1049,7 +1049,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Purkaja</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="66"/>
@@ -1150,7 +1150,7 @@
     <message>
         <location filename="../winfileassoc.cpp" line="278"/>
         <source>Enqueue in Qmmp</source>
-        <translation>Aseta jonoon Qmmp:ssä</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
