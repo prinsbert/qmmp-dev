@@ -1,100 +1,100 @@
-qmmp-qt4 (0.12.1-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.12.1-1ubuntu1~disco0) disco; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 24 Feb 2019 19:58:37 +0300
 
-qmmp-qt4 (0.12.0-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.12.0-1ubuntu1~cosmic1) cosmic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 10 Feb 2019 19:45:47 +0300
 
-qmmp-qt4 (0.11.5-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.11.5-1ubuntu1~cosmic0) cosmic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <i.kotov@rusbitech.ru>  Tue, 08 Jan 2019 13:52:11 +0300
 
-qmmp-qt4 (0.11.4-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.11.4-1ubuntu1~cosmic0) cosmic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <i.kotov@rusbitech.ru>  Thu, 20 Dec 2018 23:01:41 +0300
 
-qmmp-qt4 (0.11.3-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.11.3-1ubuntu1~cosmic0) cosmic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <i.kotov@rusbitech.ru>  Sat, 22 Sep 2018 01:05:43 +0300
 
-qmmp-qt4 (0.11.2-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.11.2-1ubuntu1~bionic0) bionic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <i.kotov@rusbitech.ru>  Fri, 20 Jul 2018 00:07:47 +0300
 
-qmmp-qt4 (0.11.1-1ubuntu2~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.11.1-1ubuntu2~bionic0) bionic; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <i.kotov@rusbitech.ru>  Thu, 19 Apr 2018 20:16:09 +0300
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Thu, 19 Apr 2018 20:16:10 +0300
 
-qmmp-qt4 (0.11.0-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.11.0-1ubuntu1~bionic0) bionic; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <i.kotov@rusbitech.ru>  Sat, 25 Nov 2017 14:10:00 +0300
+ -- Ilya Kotov <i.kotov@rusbitech.ru>  Sat, 25 Nov 2017 14:10:01 +0300
 
-qmmp-qt4 (0.10.11-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.10.11-1ubuntu1~artful0) artful; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <i.kotov@rusbitech.ru>  Fri, 20 Oct 2017 20:17:27 +0300
 
-qmmp-qt4 (0.10.10-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.10.10-1ubuntu1~zesty0) zesty; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 05 Aug 2017 00:08:08 +0300
 
-qmmp-qt4 (0.10.9-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.10.9-1ubuntu1~zesty0) zesty; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 03 Jun 2017 12:22:43 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 03 Jun 2017 12:22:44 +0300
 
-qmmp-qt4 (0.10.8-1ubuntu1~xenial0) xenial; urgency=medium
-
-  * New upstream release.
-
- -- Ilya Kotov <forkotov02@hotmail.ru>  Thu, 23 Mar 2017 22:25:26 +0300
-
-qmmp-qt4 (0.10.7-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.10.8-1ubuntu1~zesty0) zesty; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 11 Feb 2017 13:33:42 +0300
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Thu, 23 Mar 2017 22:25:27 +0300
 
-qmmp-qt4 (0.10.6-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.10.7-1ubuntu1~zesty0) zesty; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <forkotov02@hotmail.ru>  Sat, 04 Mar 2017 12:09:59 +0300
+
+qmmp-qt4 (0.10.6-1ubuntu1~yakkety0) yakkety; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <forkotov02@hotmail.ru>  Thu, 12 Jan 2017 18:08:52 +0300
 
-qmmp-qt4 (0.10.5-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.10.5-1ubuntu1~yakkety0) yakkety; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <forkotov02@hotmail.ru>  Wed, 09 Nov 2016 17:51:55 +0300
 
-qmmp-qt4 (0.10.4-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.10.4-1ubuntu1~yakkety0) yakkety; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <forkotov02@hotmail.ru>  Tue, 04 Oct 2016 13:01:01 +0300
 
-qmmp-qt4 (0.10.3-1ubuntu1~xenial0) xenial; urgency=medium
+qmmp-qt4 (0.10.3-1ubuntu1~yakkety0) yakkety; urgency=medium
 
   * New upstream release.
 

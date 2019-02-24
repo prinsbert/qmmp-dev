@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=1.3.0
-UBUNTU_CODENAMES='xenial bionic cosmic'
+QMMP_VERSION=1.3.1
+UBUNTU_CODENAMES='xenial bionic cosmic disco'
 BUILD_ROOT=build-root
 
 
