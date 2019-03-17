@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qttools-everywhere-src
-VERSION=5.12.1
+VERSION=5.12.2
 
 case $1 in
   --download)

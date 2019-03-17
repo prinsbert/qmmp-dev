@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qtbase-everywhere-src
-VERSION=5.12.1
+VERSION=5.12.2
 
 case $1 in
   --download)
@@ -13,7 +13,6 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz -C $DEV_PATH
     cp ../build.bat $DEV_PATH/$NAME-$VERSION
-    cat ../mingw-build.patch | patch -p1 -d $DEV_PATH/$NAME-$VERSION
     cd $DEV_PATH/$NAME-$VERSION
     cmd /c build.bat
     mingw32-make -j${JOBS}
