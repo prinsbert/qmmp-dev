@@ -61,7 +61,7 @@ public:
     void seek(qint64) override;
     void stop() override;
     void pause() override;
-    void setMuted(bool muted) override;
+    //void setMuted(bool muted) override;
 
 private slots:
     void onStopRequest();

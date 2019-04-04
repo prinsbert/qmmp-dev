@@ -22,7 +22,7 @@
 #include "ffvideometadatamodel.h"
 
 FFVideoMetaDataModel::FFVideoMetaDataModel(const QString &path)
-    : MetaDataModel(true, MetaDataModel::COMPLETE_PROPERTY_LIST)
+    : MetaDataModel(true, MetaDataModel::CompletePropertyList)
 {
     m_in = nullptr;
 #ifdef Q_OS_WIN
