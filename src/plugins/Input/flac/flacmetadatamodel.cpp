@@ -24,9 +24,7 @@
 #include <taglib/fileref.h>
 #include <taglib/tmap.h>
 #include <taglib/id3v2framefactory.h>
-#ifndef IS_COVER_EDITABLE
 #include <FLAC/all.h>
-#endif
 #include <qmmp/metadatamanager.h>
 #include "flacmetadatamodel.h"
 
