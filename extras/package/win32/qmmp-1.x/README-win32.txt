@@ -13,8 +13,7 @@ Known issues:
 
 Extra plugins (see http://qmmp.ylsoftware.com/plugins.php):
   - FFap - enhanced Monkey's Audio (APE) decoder;
-  - Goom - audio visualization based on goom project;
-  - History - a tool for collection information about listened tracks.
+  - Goom - audio visualization based on goom project.
 
 This archive also contains third-party libraries. Source code of these libraries
 is freely available on the Internet.
@@ -52,6 +51,7 @@ List of the third-party libraries.
   libxml2             2.9.1      http://xmlsoft.org/
   librcd              0.1.14     http://rusxmms.sourceforge.net/
   librcc              0.2.12     http://rusxmms.sourceforge.net/
+  mpg123              1.25.10    https://www.mpg123.de/
 
 
 List of the third-party artwork.

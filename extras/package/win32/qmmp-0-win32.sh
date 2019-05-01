@@ -123,7 +123,7 @@ create_distr ()
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll
+  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll libmpg123-0.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
