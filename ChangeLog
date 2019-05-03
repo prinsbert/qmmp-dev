@@ -1436,3 +1436,15 @@ Version 0.12.1
 * updated Portuguese translation (Sérgio Marques)
 * updated Finnish translation (Jiri Grönroos)
 * updated Russian translation (Alexey Loginov)
+
+Version 1.3.2
+* added feature to play track on double click in the history plugin
+* enabled mpg123 decoder for Windows
+* using album cover from file by default
+* fixed lyrics plugin
+* fixed API documentation
+* fixed issue with read-only mode for FLAC files
+* fixed issue with missing properties for some CUE tracks
+* fixed freezing on some corrupted files in the ffmpeg plugin
+* fixed crash on some streams in the ffmpeg plugin
+* fixed file type determination by content in the mpeg plugin
