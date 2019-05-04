@@ -1,3 +1,9 @@
+qmmp (0.12.2-1ubuntu1~trusty0) trusty; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 04 May 2019 23:56:46 +0300
+
 qmmp (0.12.1-1ubuntu1~trusty0) trusty; urgency=medium
 
   * New upstream release.

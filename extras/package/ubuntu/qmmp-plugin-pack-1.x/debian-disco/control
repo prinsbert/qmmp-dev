@@ -1,0 +1,21 @@
+Source: qmmp-plugin-pack
+Section: sound
+Priority: optional
+Maintainer: Ilya Kotov <iokotov@astralinux.ru>
+Build-Depends: debhelper (>= 9), cmake, yasm, pkg-config,
+  qmmp (>= 1.3.0), libtag1-dev (>= 1.11), libxmp-dev (>= 4.2.0), qtbase5-dev (>= 5.4),
+  qttools5-dev-tools (>= 5.4), qttools5-dev (>= 5.4), qtchooser,
+  libavcodec-dev (>= 7:3.1.0), libavformat-dev (>= 7:3.1.0), libavutil-dev (>= 7:3.1.0), libswscale-dev (>= 7:3.1.0)
+Standards-Version: 3.9.3
+Homepage: http://qmmp.ylsoftware.com/plugins.php
+
+Package: qmmp-plugin-pack
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5sql5-sqlite
+Description: Extra plugins for Qmmp
+ Plugin pack is a set of extra plugins for Qmmp (Qt-based mutimedia player)
+ Plugins list:
+ - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support);
+ - XMP - module player with use of the libxmp library;
+ - Goom - audio visualization based on goom project;
+ - FFVideo - video playback engine based on FFmpeg library.
