@@ -21,7 +21,7 @@ CONFIG += hide_symbols
 
 #Version
 
-QMMP_VERSION = 0.12.2
+QMMP_VERSION = 0.12.3
 
 #Install paths
 
