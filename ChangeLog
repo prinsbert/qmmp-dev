@@ -291,3 +291,6 @@ Version 0.12.0
 * updated Italian translation (Luigi Toscano)
 * updated Finnish translation (Jiri Grönroos)
 * updated Chinese Traditional translation (Cosmos Chen)
+
+Version 0.12.1
+* fixed issue with missing properties for CUE tracks in the ffap plugin
