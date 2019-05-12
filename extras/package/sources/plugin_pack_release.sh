@@ -15,7 +15,7 @@ fi
 cd qmmp-plugin-pack-svn
 svn up
 echo "Creating changelog.."
-svn log > ChangeLog.svn
+LC_MESSAGES=C svn log > ChangeLog.svn
 
 VERSION=`cat qmmp-plugin-pack.pri | grep "^QMMP_PLUGIN_PACK_VERSION =" | cut -d " " -f3`
 

@@ -15,7 +15,7 @@ fi
 cd qmmp-svn
 svn up
 echo "Creating changelog.."
-svn log > ChangeLog.svn
+LC_MESSAGES=C svn log > ChangeLog.svn
 
 MAJOR=`cat src/qmmp/qmmp.h | grep "#define QMMP_VERSION_MAJOR" | cut -d " " -f3`
 MINOR=`cat src/qmmp/qmmp.h | grep "#define QMMP_VERSION_MINOR" | cut -d " " -f3`
