@@ -606,7 +606,7 @@ void ListWidget::removeSelected()
     if(m_filterMode)
     {
         QList<PlayListItem *> items;
-        for(PlayListItem *item : m_filteredItems)
+        foreach(PlayListItem *item, m_filteredItems)
         {
             if(item->isSelected())
                 items << item;
@@ -624,7 +624,7 @@ void ListWidget::removeUnselected()
     if(m_filterMode)
     {
         QList<PlayListItem *> items;
-        for(PlayListItem *item : m_filteredItems)
+        foreach(PlayListItem *item, m_filteredItems)
         {
             if(!item->isSelected())
                 items << item;
