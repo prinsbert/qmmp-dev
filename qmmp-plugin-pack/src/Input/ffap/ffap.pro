@@ -3,12 +3,10 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Input/ffap
 
 HEADERS += decoderffapfactory.h ffap.h decoder_ffap.h \
-    cueparser.h \
     ffapmetadatamodel.h \
     decoder_ffapcue.h
 
 SOURCES += decoderffapfactory.cpp ffap.c decoder_ffap.cpp \
-    cueparser.cpp \
     ffapmetadatamodel.cpp \
     decoder_ffapcue.cpp
 

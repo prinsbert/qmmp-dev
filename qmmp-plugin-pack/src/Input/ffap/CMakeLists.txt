@@ -16,14 +16,12 @@ SET(libffap_SRCS
   decoder_ffapcue.cpp
   decoderffapfactory.cpp
   ffapmetadatamodel.cpp
-  cueparser.cpp
   ffap.c
 )
 
 SET(libffap_HDRS
   decoder_ffap.h
   decoder_ffapcue.h
-  cueparser.h
   ffap.h
 )
 
