@@ -21,7 +21,9 @@
 //#include "ytbstreamreader.h"
 #include <QtDebug>
 #include <QNetworkReply>
-#include <QUrlQuery>
+#include <QProcess>
+#include <QJsonDocument>
+#include <QJsonArray>
 #include "ytbinputsource.h"
 
 YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSource(url,parent)
@@ -35,6 +37,11 @@ YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSourc
     connect(m_reader, SIGNAL(error()),SIGNAL(error()));*/
 }
 
+YtbInputSource::~YtbInputSource()
+{
+    qDebug() << Q_FUNC_INFO;
+}
+
 QIODevice *YtbInputSource::ioDevice()
 {
     return m_getStreamReply;
@@ -43,11 +50,35 @@ QIODevice *YtbInputSource::ioDevice()
 bool YtbInputSource::initialize()
 {
     QString id = m_url.section("://", -1);
-    QUrl getVideoUrl(QString("https://www.youtube.com/get_video_info?video_id=%1").arg(id));
-    QNetworkRequest request(getVideoUrl);
-    request.setRawHeader("Host", getVideoUrl.host().toLatin1());
-    request.setRawHeader("Accept", "*/*");
-    m_getVideoReply = m_manager->get(request);
+    QString cmd = QString("youtube-dl --print-json -s https://www.youtube.com/watch?v=%1").arg(id);
+
+    QProcess process;
+    process.start(cmd);
+    process.waitForFinished();
+
+    //qDebug() << process.readAllStandardOutput();
+
+    QJsonDocument json = QJsonDocument::fromJson(process.readAllStandardOutput());
+
+    for(const QJsonValue &value : json["formats"].toArray())
+    {
+        qDebug() << value["ext"].toString() << value["acodec"].toString() << value["vcodec"].toString();
+
+        if(value["ext"].toString() == "m4a")
+        {
+            QUrl ur(value["url"].toString());
+            QNetworkRequest request(ur);
+            request.setRawHeader("Host", ur.host().toLatin1());
+            request.setRawHeader("Accept", "*/*");
+            m_getStreamReply = m_manager->get(request);
+            m_getStreamReply->setReadBufferSize(0);
+            connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+            break;
+        }
+    }
+
+    //qDebug() << json["formats"].toArray();
+
     return true;
 }
 
@@ -70,47 +101,64 @@ QString YtbInputSource::contentType() const
 
 void YtbInputSource::onFinished(QNetworkReply *reply)
 {
-    if(m_getVideoReply == reply)
+    qDebug() << Q_FUNC_INFO << reply << m_getVideoReply;
+
+//    if(m_getVideoReply == reply)
+//    {
+//        m_getVideoReply = nullptr;
+
+
+//        if(reply->error() != QNetworkReply::NoError)
+//        {
+//            qDebug() << "error" << reply->errorString();
+//            reply->deleteLater();
+//            return;
+//        }
+
+//        QString data = QString::fromLatin1(reply->readAll());
+//        //qDebug() << data;
+//        QUrlQuery query(data);
+//        QString fmts = query.queryItemValue("adaptive_fmts");
+//        query.setQuery(fmts);
+//        qDebug() << "---";
+
+
+//        qDebug() << query.queryItemValue("url_encoded_fmt_stream_map");
+
+////        for(const QString &bitrate : query.allQueryItemValues("audio_sample_rate", QUrl::FullyDecoded))
+////            qDebug() << bitrate;
+
+////        for(const QString &bitrate : query.allQueryItemValues("audio_channels", QUrl::FullyDecoded))
+////            qDebug() << bitrate;
+
+//        for(const QString &encodedUrl : query.allQueryItemValues("url", QUrl::FullyDecoded))
+//        {
+//            QByteArray tmp = QByteArray::fromPercentEncoding(QByteArray::fromPercentEncoding(encodedUrl.toLatin1()));
+//            QString streamUrl = QString::fromLatin1(tmp);
+//            QUrlQuery streamQuery(streamUrl);
+//            QString mime = streamQuery.queryItemValue("mime", QUrl::FullyDecoded);
+//            qDebug() << mime;
+
+//            if(mime == "audio/mp4")
+//            {
+//                QUrl ur(streamUrl);
+//                QNetworkRequest request(ur);
+//                request.setRawHeader("Host", ur.host().toLatin1());
+//                request.setRawHeader("Accept", "*/*");
+//                m_getStreamReply = m_manager->get(request);
+//                m_getStreamReply->setReadBufferSize(0);
+//                connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+//                break;
+//            }
+//        }
+
+//        reply->deleteLater();
+//    }
+
+   if(m_getStreamReply == reply)
     {
-        m_getVideoReply = nullptr;
-
-        QString data = QString::fromLatin1(reply->readAll());
-        QUrlQuery query(data);
-        QString fmts = query.queryItemValue("adaptive_fmts");
-        query.setQuery(fmts);
-
-//        for(const QString &bitrate : query.allQueryItemValues("audio_sample_rate", QUrl::FullyDecoded))
-//            qDebug() << bitrate;
-
-//        for(const QString &bitrate : query.allQueryItemValues("audio_channels", QUrl::FullyDecoded))
-//            qDebug() << bitrate;
-
-        for(const QString &encodedUrl : query.allQueryItemValues("url", QUrl::FullyDecoded))
-        {
-            QByteArray tmp = QByteArray::fromPercentEncoding(QByteArray::fromPercentEncoding(encodedUrl.toLatin1()));
-            QString streamUrl = QString::fromLatin1(tmp);
-            QUrlQuery streamQuery(streamUrl);
-            QString mime = streamQuery.queryItemValue("mime", QUrl::FullyDecoded);
-
-            if(mime == "audio/mp4")
-            {
-                QUrl ur(streamUrl);
-                QNetworkRequest request(ur);
-                request.setRawHeader("Host", ur.host().toLatin1());
-                request.setRawHeader("Accept", "*/*");
-                m_getStreamReply = m_manager->get(request);
-                m_getStreamReply->setReadBufferSize(0);
-                connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
-                break;
-            }
-        }
-
+        m_getStreamReply = nullptr;
         reply->deleteLater();
-    }
-
-    if(m_getStreamReply == reply)
-    {
-        //m_getStreamReply = nullptr;
         qDebug() << reply->errorString();
     }
 

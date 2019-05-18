@@ -34,6 +34,7 @@ class YtbInputSource : public InputSource
 Q_OBJECT
 public:
     YtbInputSource(const QString &path, QObject *parent = nullptr);
+    ~YtbInputSource();
 
     QIODevice *ioDevice() override;
     bool initialize() override;
