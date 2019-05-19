@@ -32,9 +32,6 @@ YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSourc
     m_manager = new QNetworkAccessManager(this);
     connect(m_manager, SIGNAL(finished(QNetworkReply*)), SLOT(onFinished(QNetworkReply*)));
     qDebug() << Q_FUNC_INFO << url;
-     /*m_reader = new HttpStreamReader(url, this);
-    connect(m_reader, SIGNAL(ready()),SIGNAL(ready()));
-    connect(m_reader, SIGNAL(error()),SIGNAL(error()));*/
 }
 
 YtbInputSource::~YtbInputSource()
@@ -59,12 +56,19 @@ bool YtbInputSource::initialize()
     //qDebug() << process.readAllStandardOutput();
 
     QJsonDocument json = QJsonDocument::fromJson(process.readAllStandardOutput());
+    qDebug() << json["fulltitle"].toString();
+
+    QMap<Qmmp::MetaData, QString> metaData = {
+        { Qmmp::TITLE, json["fulltitle"].toString() }
+    };
+    addMetaData(metaData);
 
     for(const QJsonValue &value : json["formats"].toArray())
     {
-        qDebug() << value["ext"].toString() << value["acodec"].toString() << value["vcodec"].toString();
+        //qDebug() << value;
+        //qDebug() << value["ext"].toString() << value["acodec"].toString() << value["vcodec"].toString();
 
-        if(value["ext"].toString() == "m4a")
+        if(value["acodec"].toString() == "opus")
         {
             QUrl ur(value["url"].toString());
             QNetworkRequest request(ur);
@@ -157,8 +161,8 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
 
    if(m_getStreamReply == reply)
     {
-        m_getStreamReply = nullptr;
-        reply->deleteLater();
+        //m_getStreamReply = nullptr;
+        //reply->deleteLater();
         qDebug() << reply->errorString();
     }
 
