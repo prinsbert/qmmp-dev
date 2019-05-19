@@ -86,7 +86,7 @@ bool DecoderFFap::initialize()
         qWarning("DecoderFFap: unable to initialize decoder");
         return false;
     }
-    Qmmp::AudioFormat format = Qmmp::PCM_UNKNOWM;
+    Qmmp::AudioFormat format = Qmmp::PCM_UNKNOWN;
     switch(m_ffap_decoder->bps)
     {
     case 8:
