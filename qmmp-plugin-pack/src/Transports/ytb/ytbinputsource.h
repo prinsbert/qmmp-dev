@@ -22,6 +22,7 @@
 #define YTBINPUTSOURCE_H
 
 #include <QNetworkAccessManager>
+#include <QProcess>
 #include <qmmp/inputsource.h>
 
 class QNetworkReply;
@@ -43,14 +44,18 @@ public:
     QString contentType() const override;
 
 private slots:
+    void onProcessErrorOccurred(QProcess::ProcessError);
+    void onProcessFinished(int exitCode, QProcess::ExitStatus status);
     void onFinished(QNetworkReply *reply);
     void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
+
+
 
 private:
     QString m_url;
     bool m_ready = false;
+    QProcess *m_process;
     QNetworkAccessManager *m_manager;
-    QNetworkReply *m_getVideoReply = nullptr;
     QNetworkReply *m_getStreamReply = nullptr;
 
 };
