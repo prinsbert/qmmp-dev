@@ -21,22 +21,33 @@
 //#include "ytbstreamreader.h"
 #include <QtDebug>
 #include <QNetworkReply>
-#include <QProcess>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <qmmp/statehandler.h>
 #include "ytbinputsource.h"
 
-YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSource(url,parent)
+#define PREBUFFER_SIZE 128000
+
+YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSource(url, parent)
 {
     m_url = url;
+    m_process = new QProcess(this);
     m_manager = new QNetworkAccessManager(this);
+
+    connect(m_process, SIGNAL(errorOccurred(QProcess::ProcessError)), SLOT(onProcessErrorOccurred(QProcess::ProcessError)));
+    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)), SLOT(onProcessFinished(int,QProcess::ExitStatus)));
     connect(m_manager, SIGNAL(finished(QNetworkReply*)), SLOT(onFinished(QNetworkReply*)));
-    qDebug() << Q_FUNC_INFO << url;
 }
 
 YtbInputSource::~YtbInputSource()
 {
-    qDebug() << Q_FUNC_INFO;
+    if(m_getStreamReply)
+    {
+        if(m_getStreamReply->isFinished())
+            m_getStreamReply->abort();
+        m_getStreamReply->deleteLater();
+        m_getStreamReply = nullptr;
+    }
 }
 
 QIODevice *YtbInputSource::ioDevice()
@@ -49,40 +60,9 @@ bool YtbInputSource::initialize()
     QString id = m_url.section("://", -1);
     QString cmd = QString("youtube-dl --print-json -s https://www.youtube.com/watch?v=%1").arg(id);
 
-    QProcess process;
-    process.start(cmd);
-    process.waitForFinished();
-
-    //qDebug() << process.readAllStandardOutput();
-
-    QJsonDocument json = QJsonDocument::fromJson(process.readAllStandardOutput());
-    qDebug() << json["fulltitle"].toString();
-
-    QMap<Qmmp::MetaData, QString> metaData = {
-        { Qmmp::TITLE, json["fulltitle"].toString() }
-    };
-    addMetaData(metaData);
-
-    for(const QJsonValue &value : json["formats"].toArray())
-    {
-        //qDebug() << value;
-        //qDebug() << value["ext"].toString() << value["acodec"].toString() << value["vcodec"].toString();
-
-        if(value["acodec"].toString() == "opus")
-        {
-            QUrl ur(value["url"].toString());
-            QNetworkRequest request(ur);
-            request.setRawHeader("Host", ur.host().toLatin1());
-            request.setRawHeader("Accept", "*/*");
-            m_getStreamReply = m_manager->get(request);
-            m_getStreamReply->setReadBufferSize(0);
-            connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
-            break;
-        }
-    }
-
-    //qDebug() << json["formats"].toArray();
-
+    m_ready = false;
+    m_process->start(cmd);
+    qDebug("YtbInputSource: starting youtube-dl...");
     return true;
 }
 
@@ -94,7 +74,6 @@ bool YtbInputSource::isReady()
 bool YtbInputSource::isWaiting()
 {
     return false;
-    //return (!m_reader->bytesAvailable() && m_reader->isOpen());
 }
 
 QString YtbInputSource::contentType() const
@@ -103,78 +82,95 @@ QString YtbInputSource::contentType() const
     //return m_reader->contentType();
 }
 
-void YtbInputSource::onFinished(QNetworkReply *reply)
+void YtbInputSource::onProcessErrorOccurred(QProcess::ProcessError)
 {
-    qDebug() << Q_FUNC_INFO << reply << m_getVideoReply;
+    qWarning("YtbInputSource: unable to start process 'youtube-dl', error: %s", qPrintable(m_process->errorString()));
+    emit error();
+}
 
-//    if(m_getVideoReply == reply)
-//    {
-//        m_getVideoReply = nullptr;
+void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status)
+{
+    if(exitCode != EXIT_SUCCESS || status != QProcess::NormalExit)
+        return;
 
-
-//        if(reply->error() != QNetworkReply::NoError)
-//        {
-//            qDebug() << "error" << reply->errorString();
-//            reply->deleteLater();
-//            return;
-//        }
-
-//        QString data = QString::fromLatin1(reply->readAll());
-//        //qDebug() << data;
-//        QUrlQuery query(data);
-//        QString fmts = query.queryItemValue("adaptive_fmts");
-//        query.setQuery(fmts);
-//        qDebug() << "---";
-
-
-//        qDebug() << query.queryItemValue("url_encoded_fmt_stream_map");
-
-////        for(const QString &bitrate : query.allQueryItemValues("audio_sample_rate", QUrl::FullyDecoded))
-////            qDebug() << bitrate;
-
-////        for(const QString &bitrate : query.allQueryItemValues("audio_channels", QUrl::FullyDecoded))
-////            qDebug() << bitrate;
-
-//        for(const QString &encodedUrl : query.allQueryItemValues("url", QUrl::FullyDecoded))
-//        {
-//            QByteArray tmp = QByteArray::fromPercentEncoding(QByteArray::fromPercentEncoding(encodedUrl.toLatin1()));
-//            QString streamUrl = QString::fromLatin1(tmp);
-//            QUrlQuery streamQuery(streamUrl);
-//            QString mime = streamQuery.queryItemValue("mime", QUrl::FullyDecoded);
-//            qDebug() << mime;
-
-//            if(mime == "audio/mp4")
-//            {
-//                QUrl ur(streamUrl);
-//                QNetworkRequest request(ur);
-//                request.setRawHeader("Host", ur.host().toLatin1());
-//                request.setRawHeader("Accept", "*/*");
-//                m_getStreamReply = m_manager->get(request);
-//                m_getStreamReply->setReadBufferSize(0);
-//                connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
-//                break;
-//            }
-//        }
-
-//        reply->deleteLater();
-//    }
-
-   if(m_getStreamReply == reply)
+    QJsonDocument json = QJsonDocument::fromJson(m_process->readAllStandardOutput());
+    if(json.isEmpty())
     {
-        //m_getStreamReply = nullptr;
-        //reply->deleteLater();
-        qDebug() << reply->errorString();
+        qWarning("YtbInputSource: unable to parse youtube-dl output");
+        emit error();
+        return;
     }
 
+    QMap<Qmmp::MetaData, QString> metaData = {
+        { Qmmp::TITLE, json["fulltitle"].toString() }
+    };
+    addMetaData(metaData);
 
+    QString url;
+    for(const QJsonValue &value : json["formats"].toArray())
+    {
+        if(value["ext"].toString() == "m4a")
+        {
+            url = value["url"].toString();
+            break;
+        }
+    }
+
+    if(url.isEmpty())
+    {
+        qWarning("YtbInputSource: unable to find stream");
+        emit error();
+        return;
+    }
+
+    qDebug("YtbInputSource: downloading stream...");
+
+    QUrl streamUrl(url);
+    QNetworkRequest request(streamUrl);
+    request.setRawHeader("Host", streamUrl.host().toLatin1());
+    request.setRawHeader("Accept", "*/*");
+    m_getStreamReply = m_manager->get(request);
+    m_getStreamReply->setReadBufferSize(0);
+    connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+}
+
+void YtbInputSource::onFinished(QNetworkReply *reply)
+{
+    if(reply == m_getStreamReply)
+    {
+        if(reply->error() != QNetworkReply::NoError)
+        {
+            qWarning("YtbInputSource: downloading finished with error: %s", qPrintable(reply->errorString()));
+            if(!m_ready)
+            {
+                m_getStreamReply = nullptr;
+                reply->deleteLater();
+                emit error();
+            }
+        }
+        else
+        {
+            qDebug("YtbInputSource: downloading finished");
+        }
+    }
+    else
+    {
+        reply->deleteLater();
+    }
 }
 
 void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
-    qDebug() << bytesReceived << bytesTotal;
-    if(!m_ready && bytesReceived > 500000)
+    Q_UNUSED(bytesTotal);
+
+    if(!m_ready && bytesReceived > PREBUFFER_SIZE)
     {
+        qDebug("YtbInputSource: ready");
         m_ready = true;
         emit ready();
+    }
+    else if(!m_ready)
+    {
+        StateHandler::instance()->dispatchBuffer(100 * bytesReceived / PREBUFFER_SIZE);
     }
 }
