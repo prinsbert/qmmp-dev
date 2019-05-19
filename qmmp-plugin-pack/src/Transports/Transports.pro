@@ -1,4 +1,4 @@
 include (../../qmmp-plugin-pack.pri)
 TEMPLATE = subdirs
 
-SUBDIRS += ytb
+contains(CONFIG, YOUTUBE_PLUGIN):SUBDIRS += ytb
