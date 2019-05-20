@@ -33,6 +33,7 @@ YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSourc
     m_url = url;
     m_process = new QProcess(this);
     m_manager = new QNetworkAccessManager(this);
+    m_manager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
 
     connect(m_process, SIGNAL(errorOccurred(QProcess::ProcessError)), SLOT(onProcessErrorOccurred(QProcess::ProcessError)));
     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)), SLOT(onProcessFinished(int,QProcess::ExitStatus)));
