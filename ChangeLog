@@ -1448,3 +1448,11 @@ Version 0.12.2
 * fixed freezing on some corrupted files in the ffmpeg plugin
 * fixed crash on some streams in the ffmpeg plugin
 * fixed file type determination by content in the mpeg plugin
+
+Version 0.12.3
+* added float output support for PulseAudio
+* improved channel conversion
+* fixed feature to remove tracks when using quick search in the qsui plugin
+* fixed crash on some corrupted archives
+* fixed logo animation in the qsui plugin
+* fixed freezing in the ffmpeg plugin
