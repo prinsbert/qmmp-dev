@@ -1437,7 +1437,7 @@ Version 0.12.1
 * updated Finnish translation (Jiri Grönroos)
 * updated Russian translation (Alexey Loginov)
 
-Version 1.3.2
+Version 0.12.2
 * added feature to play track on double click in the history plugin
 * enabled mpg123 decoder for Windows
 * using album cover from file by default
