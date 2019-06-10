@@ -136,3 +136,5 @@ PRINT_SUMMARY ("Goom assempler optimizations ...." GOOM_ASM USE_GOOM)
 
 
 MESSAGE("")
+
+install(FILES appdata/qmmp-plugin-pack${APP_NAME_SUFFIX}.appdata.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
