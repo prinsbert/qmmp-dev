@@ -6,7 +6,7 @@
     <message>
         <location filename="../uninstalloption.cpp" line="30"/>
         <source>Restore the old file associations and clean up the registry</source>
-        <translation type="unfinished"></translation>
+        <translation>Herstel de oorspronkelijke bestandstoewijzingen en schoon het register op</translation>
     </message>
 </context>
 </TS>

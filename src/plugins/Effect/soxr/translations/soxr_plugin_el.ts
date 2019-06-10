@@ -29,7 +29,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>SoX Resampler Settings</source>
-        <translation>Ρυθμίσεις του πρόσθετου επαναδειγματοληψίας SoX</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="29"/>
