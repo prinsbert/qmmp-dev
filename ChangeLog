@@ -1458,3 +1458,5 @@ Version 0.12.3
 * fixed crash on some corrupted archives
 * fixed logo animation in the qsui plugin
 * fixed freezing in the ffmpeg plugin
+* updated Dutch translation (Heimen Stoffels)
+* updated Greek translation (Dimitrios Glentadakis)
