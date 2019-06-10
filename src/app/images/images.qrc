@@ -4,6 +4,9 @@
         <file alias="32x32/qmmp.png">32x32/qmmp-0.png</file>
         <file alias="48x48/qmmp.png">48x48/qmmp-0.png</file>
         <file alias="56x56/qmmp.png">56x56/qmmp-0.png</file>
+        <file alias="64x64/qmmp.png">64x64/qmmp-0.png</file>
+        <file alias="128x128/qmmp.png">128x128/qmmp-0.png</file>
+        <file alias="256x256/qmmp.png">256x256/qmmp-0.png</file>
         <file alias="scalable/qmmp.svgz">scalable/qmmp-0.svgz</file>
     </qresource>
 </RCC>
