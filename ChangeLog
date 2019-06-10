@@ -1451,6 +1451,8 @@ Version 0.12.2
 
 Version 0.12.3
 * added float output support for PulseAudio
+* added AppStream information (Joel Barrios Dueñas)
+* added more icon sizes
 * improved channel conversion
 * fixed feature to remove tracks when using quick search in the qsui plugin
 * fixed crash on some corrupted archives
