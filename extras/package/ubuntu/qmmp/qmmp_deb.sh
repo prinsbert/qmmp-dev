@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=0.12.2
+QMMP_VERSION=0.12.3
 UBUNTU_CODENAMES='precise trusty xenial bionic cosmic disco'
 BUILD_ROOT=build-root
 
