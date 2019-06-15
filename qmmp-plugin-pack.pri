@@ -14,7 +14,7 @@ QT += widgets
 
 #Version
 
-QMMP_PLUGIN_PACK_VERSION = 1.3.1
+QMMP_PLUGIN_PACK_VERSION = 1.3.2
 CONFIG += SVN_VERSION
 CONFIG += hide_symbols
 CONFIG += c++11
