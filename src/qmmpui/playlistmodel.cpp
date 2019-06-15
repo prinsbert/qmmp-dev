@@ -550,7 +550,7 @@ void PlayListModel::removeTracks(const QList<PlayListItem *> &items)
 void PlayListModel::removeTracks(const QList<PlayListTrack *> &tracks)
 {
     QList<PlayListItem *> items;
-    for(PlayListTrack *track : tracks)
+    foreach(PlayListTrack *track, tracks)
         items << dynamic_cast<PlayListItem *>(track);
 
     removeTracks(items);
