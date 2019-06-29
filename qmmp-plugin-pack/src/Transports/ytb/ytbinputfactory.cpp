@@ -20,6 +20,7 @@
 
 #include <QtPlugin>
 #include <QMessageBox>
+#include <QProcess>
 #include <qmmp/qmmp.h>
 #include "ytbinputsource.h"
 #include "ytbinputfactory.h"
@@ -30,7 +31,7 @@ InputSourceProperties YtbInputFactory::properties() const
     properties.protocols << "ytb";
     properties.name = tr("Youtube Plugin");
     properties.shortName = "ytb";
-    properties.hasAbout = false;
+    properties.hasAbout = true;
     properties.hasSettings = false;
     return properties;
 }
@@ -47,10 +48,19 @@ void YtbInputFactory::showSettings(QWidget *parent)
 
 void YtbInputFactory::showAbout(QWidget *parent)
 {
-    /*QMessageBox::about (parent, tr("About HTTP Transport Plugin"),
-                        tr("Qmmp HTTP Transport Plugin")+"\n"+
-                        tr("Compiled against libcurl-%1").arg(LIBCURL_VERSION) + "\n" +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));*/
+    QProcess p;
+    p.start("youtube-dl --version");
+    p.waitForFinished();
+    QString version = QString::fromLatin1(p.readAll()).trimmed();
+    if(version.isEmpty())
+        version = tr("not found");
+
+    QMessageBox::about(parent, tr("About Youtube Transport Plugin"),
+                       tr("Qmmp Youtube Transport Plugin") + "<br>" +
+                       tr("This plugin adds feature to play audio from Youtube using "
+                          "<a href=\"https://youtube-dl.org/\">youtube-dl</a> utility") + "<br>"+
+                       tr("youtube-dl version: %1").arg(version) + "<br>" +
+                       tr("Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;"));
 }
 
 QString YtbInputFactory::translation() const
