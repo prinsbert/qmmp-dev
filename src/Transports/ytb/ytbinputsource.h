@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2019 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,6 +26,7 @@
 #include <qmmp/inputsource.h>
 
 class QNetworkReply;
+class BufferDevice;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -57,6 +58,7 @@ private:
     QProcess *m_process;
     QNetworkAccessManager *m_manager;
     QNetworkReply *m_getStreamReply = nullptr;
+    BufferDevice *m_buffer;
 
 };
 

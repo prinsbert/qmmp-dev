@@ -6,11 +6,13 @@ QT += network
 
 HEADERS += \
     ytbinputfactory.h \
-    ytbinputsource.h
+    ytbinputsource.h \
+    bufferdevice.h
 
 SOURCES += \
     ytbinputfactory.cpp \
-    ytbinputsource.cpp
+    ytbinputsource.cpp \
+    bufferdevice.cpp
 
 #RESOURCES = translations/translations.qrc
 
