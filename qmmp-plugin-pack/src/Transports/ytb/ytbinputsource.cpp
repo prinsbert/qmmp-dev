@@ -94,7 +94,11 @@ void YtbInputSource::onProcessErrorOccurred(QProcess::ProcessError)
 void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status)
 {
     if(exitCode != EXIT_SUCCESS || status != QProcess::NormalExit)
+    {
+        qWarning("YtbInputSource: youtube-dl finished with error:\n%s", m_process->readAllStandardError().constData());
+        emit error();
         return;
+    }
 
     QJsonDocument json = QJsonDocument::fromJson(m_process->readAllStandardOutput());
     if(json.isEmpty())
@@ -104,16 +108,32 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
         return;
     }
 
+    //qDebug("%s", json.toJson(QJsonDocument::Indented).constData());
+
     QMap<Qmmp::MetaData, QString> metaData = {
         { Qmmp::TITLE, json["fulltitle"].toString() }
     };
     addMetaData(metaData);
 
+    QHash<QString, QString> streamInfo = {
+        { tr("Uploader"), json["uploader"].toString() },
+        { tr("Upload date"), json["upload_date"].toString() },
+        { tr("Duration"), QString("%1:%2").arg(json["duration"].toInt() / 60)
+          .arg(json["duration"].toInt() % 60, 2, 10, QChar('0')) },
+    };
+    addStreamInfo(streamInfo);
+
+    int bitrate = json["abr"].toInt();
+    QString acodec = json["acodec"].toString();
+
     QString url;
     for(const QJsonValue &value : json["formats"].toArray())
     {
-        qDebug() << value["ext"].toString();
-        if(value["ext"].toString() == "m4a")
+        qDebug() << value["acodec"].toString() << value["vcodec"].toString() << value["abr"].toInt();
+
+        if(value["abr"].toInt() == bitrate &&
+                value["acodec"].toString() == acodec &&
+                value["vcodec"].toString() == "none")
         {
             url = value["url"].toString();
             break;
