@@ -18,42 +18,34 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtPlugin>
-#include <QMessageBox>
-#include <qmmp/qmmp.h>
-#include "ytbinputsource.h"
-#include "ytbinputfactory.h"
+#ifndef BUFFERDEVICE_H
+#define BUFFERDEVICE_H
 
-InputSourceProperties YtbInputFactory::properties() const
-{
-    InputSourceProperties properties;
-    properties.protocols << "ytb";
-    properties.name = tr("Youtube Plugin");
-    properties.shortName = "ytb";
-    properties.hasAbout = false;
-    properties.hasSettings = false;
-    return properties;
-}
+#include <QObject>
+#include <QIODevice>
+#include <QByteArray>
+#include <QMutex>
 
-InputSource *YtbInputFactory::create(const QString &url, QObject *parent)
+class BufferDevice : public QIODevice
 {
-    return new YtbInputSource(url, parent);
-}
+    Q_OBJECT
+public:
+    BufferDevice(QObject *parent);
+    ~BufferDevice();
 
-void YtbInputFactory::showSettings(QWidget *parent)
-{
-    Q_UNUSED(parent);
-}
+    bool addData(const QByteArray &data);
+    bool isSequential() const override;
+    qint64 bytesAvailable() const override;
 
-void YtbInputFactory::showAbout(QWidget *parent)
-{
-    /*QMessageBox::about (parent, tr("About HTTP Transport Plugin"),
-                        tr("Qmmp HTTP Transport Plugin")+"\n"+
-                        tr("Compiled against libcurl-%1").arg(LIBCURL_VERSION) + "\n" +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));*/
-}
+private:
+    qint64 readData(char *data, qint64 maxSize) override;
+    qint64 writeData(const char *data, qint64 maxSize) override;
+    char *m_buffer;
+    qint64 m_readAt = 0;
+    qint64 m_writeAt = 0;
+    qint64 m_bufferSize = 0;
+    mutable QMutex m_mutex;
 
-QString YtbInputFactory::translation() const
-{
-    return QLatin1String(":/ytb_plugin_");
-}
+};
+
+#endif // BUFFERDEVICE_H

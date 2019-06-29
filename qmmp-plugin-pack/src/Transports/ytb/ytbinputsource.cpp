@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2019 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,12 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-//#include "ytbstreamreader.h"
 #include <QtDebug>
 #include <QNetworkReply>
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <qmmp/statehandler.h>
+#include "bufferdevice.h"
 #include "ytbinputsource.h"
 
 #define PREBUFFER_SIZE 128000
@@ -31,6 +31,7 @@
 YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSource(url, parent)
 {
     m_url = url;
+    m_buffer = new BufferDevice(this);
     m_process = new QProcess(this);
     m_manager = new QNetworkAccessManager(this);
     m_manager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
@@ -53,7 +54,7 @@ YtbInputSource::~YtbInputSource()
 
 QIODevice *YtbInputSource::ioDevice()
 {
-    return m_getStreamReply;
+    return m_buffer;
 }
 
 bool YtbInputSource::initialize()
@@ -62,6 +63,7 @@ bool YtbInputSource::initialize()
     QString cmd = QString("youtube-dl --print-json -s https://www.youtube.com/watch?v=%1").arg(id);
 
     m_ready = false;
+    m_buffer->open(QIODevice::ReadOnly);
     m_process->start(cmd);
     qDebug("YtbInputSource: starting youtube-dl...");
     return true;
@@ -110,6 +112,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     QString url;
     for(const QJsonValue &value : json["formats"].toArray())
     {
+        qDebug() << value["ext"].toString();
         if(value["ext"].toString() == "m4a")
         {
             url = value["url"].toString();
@@ -151,6 +154,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
         }
         else
         {
+            m_buffer->addData(m_getStreamReply->readAll());
             qDebug("YtbInputSource: downloading finished");
         }
     }
@@ -168,10 +172,13 @@ void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
     {
         qDebug("YtbInputSource: ready");
         m_ready = true;
+        m_buffer->open(QIODevice::ReadOnly);
         emit ready();
     }
     else if(!m_ready)
     {
         StateHandler::instance()->dispatchBuffer(100 * bytesReceived / PREBUFFER_SIZE);
     }
+
+    m_buffer->addData(m_getStreamReply->readAll());
 }
