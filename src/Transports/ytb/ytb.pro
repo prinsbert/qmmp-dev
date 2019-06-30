@@ -14,7 +14,7 @@ SOURCES += \
     ytbinputsource.cpp \
     bufferdevice.cpp
 
-#RESOURCES = translations/translations.qrc
+RESOURCES = translations/translations.qrc
 
 unix {
     LIBS += -L/usr/lib
