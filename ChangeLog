@@ -1460,3 +1460,14 @@ Version 0.12.3
 * fixed freezing in the ffmpeg plugin
 * updated Dutch translation (Heimen Stoffels)
 * updated Greek translation (Dimitrios Glentadakis)
+
+Version 0.12.4
+* improved mp3 file determination
+* added format name in the ffmpeg plugin
+* fixed pausing logic
+* fixed random crash when changing audio settings
+* fixed build warning
+* fixed duration formatting
+* fixed ReplayGain support
+* fixed memory leak
+* updated Ukrainian translation (Gennady Motsyo)
