@@ -936,7 +936,7 @@
     <message>
         <location filename="../playlist.cpp" line="615"/>
         <source>Playlist name:</source>
-        <translation>Nome della scaletta</translation>
+        <translation>Nome della scaletta:</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="636"/>
@@ -994,7 +994,7 @@
     <message>
         <location filename="../playlistheader.cpp" line="88"/>
         <source>Show Queue/Protocol</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra coda/protocollo</translation>
     </message>
     <message>
         <location filename="../playlistheader.cpp" line="90"/>
@@ -1174,7 +1174,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="69"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</translation>
     </message>
 </context>
 <context>

@@ -14,22 +14,22 @@
         <translation>Formati FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="294"/>
+        <location filename="../decoderffmpegfactory.cpp" line="296"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>Informazioni sull&apos;estensione audio FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="295"/>
+        <location filename="../decoderffmpegfactory.cpp" line="297"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Estensione audio FFmpeg per Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="296"/>
+        <location filename="../decoderffmpegfactory.cpp" line="298"/>
         <source>Compiled against:</source>
         <translation>Compilato con:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="309"/>
+        <location filename="../decoderffmpegfactory.cpp" line="311"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -109,7 +109,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="145"/>
         <source>Tom&apos;s lossless Audio Kompressor (TAK)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompressore audio senza perdita di Tom (Tom&apos;s lossless Audio Kompressor, TAK)</translation>
     </message>
 </context>
 </TS>
