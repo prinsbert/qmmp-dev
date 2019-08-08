@@ -119,7 +119,7 @@ create_distr ()
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libopus-0.dll libopusfile-0.dll libprojectM.dll libsidplayfp-4.dll libsndfile-1.dll libtag.dll libvorbis-0.dll
+  for LIB_NAME in libopus-0.dll libopusfile-0.dll libprojectM.dll libsidplayfp-5.dll libsndfile-1.dll libtag.dll libvorbis-0.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
