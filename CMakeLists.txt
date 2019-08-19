@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
+project(qmmp-plugin-pack)
 
 #freebsd include
 include_directories(SYSTEM /usr/include /usr/local/include)
