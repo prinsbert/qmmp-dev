@@ -1470,4 +1470,6 @@ Version 0.12.4
 * fixed duration formatting
 * fixed ReplayGain support
 * fixed memory leak
+* fixed multiple channels support in the equalizer
 * updated Ukrainian translation (Gennady Motsyo)
+* updated Italian translation (Luigi Toscano)
