@@ -1473,3 +1473,7 @@ Version 0.12.4
 * fixed multiple channels support in the equalizer
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Italian translation (Luigi Toscano)
+
+Version 0.12.5
+* added icon for "play/pause" action
+* fixed "album artist" tag support
