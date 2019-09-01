@@ -29,7 +29,6 @@
 #include "flacmetadatamodel.h"
 
 #define QStringToTString_qt4(s) TagLib::String(s.toUtf8().constData(), TagLib::String::UTF8)
-#define TStringToQString_qt4(s) QString::fromUtf8(s.toCString(true)).trimmed()
 
 FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly)
 #ifdef HAS_PICTURE_LIST
@@ -190,20 +189,20 @@ QString VorbisCommentModel::value(Qmmp::MetaData key) const
     switch((int) key)
     {
     case Qmmp::TITLE:
-        return TStringToQString_qt4(m_tag->title());
+        return TStringToQString(m_tag->title());
     case Qmmp::ARTIST:
-        return TStringToQString_qt4(m_tag->artist());
+        return TStringToQString(m_tag->artist());
     case Qmmp::ALBUMARTIST:
         if(m_tag->fieldListMap()["ALBUMARTIST"].isEmpty())
             return QString();
         else
             return TStringToQString(m_tag->fieldListMap()["ALBUMARTIST"].toString());
     case Qmmp::ALBUM:
-        return TStringToQString_qt4(m_tag->album());
+        return TStringToQString(m_tag->album());
     case Qmmp::COMMENT:
-        return TStringToQString_qt4(m_tag->comment());
+        return TStringToQString(m_tag->comment());
     case Qmmp::GENRE:
-        return TStringToQString_qt4(m_tag->genre());
+        return TStringToQString(m_tag->genre());
     case Qmmp::COMPOSER:
         if(m_tag->fieldListMap()["COMPOSER"].isEmpty())
             return QString();
