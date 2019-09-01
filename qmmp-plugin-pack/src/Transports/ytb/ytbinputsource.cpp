@@ -135,7 +135,8 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
                 value["acodec"].toString() == acodec &&
                 value["vcodec"].toString() == "none")
         {
-            url = value["url"].toString();
+            url = value["protocol"].toString() == "http_dash_segments" ?
+                        value["fragment_base_url"].toString() : value["url"].toString();
             break;
         }
     }
