@@ -81,9 +81,9 @@ bool FFmpegEngine::play()
 
 bool FFmpegEngine::enqueue(InputSource *source)
 {
-    QStringList filters = m_factory->properties().filters;
+    const QStringList filters = m_factory->properties().filters;
     bool supports = false;
-    foreach(QString filter, filters)
+    for(const QString &filter : qAsConst(filters))
     {
         QRegExp regexp(filter, Qt::CaseInsensitive, QRegExp::Wildcard);
         if((supports = regexp.exactMatch(source->path())))
