@@ -10,14 +10,22 @@ MOC_DIR=./.build/moc
 OBJECTS_DIR=./.build/obj
 RCC_DIR=./.build/rcc
 
+#Defines
+
+DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS QT_NO_FOREACH
+unix:DEFINES += QMMP_WS_X11
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x050400 QT_DEPRECATED_WARNINGS
+
+#Configuration
+
+CONFIG += SVN_VERSION
+CONFIG += hide_symbols
+CONFIG += c++11
 QT += widgets
 
 #Version
 
 QMMP_PLUGIN_PACK_VERSION = 1.4.0
-CONFIG += SVN_VERSION
-CONFIG += hide_symbols
-CONFIG += c++11
 
 #Install paths
 
