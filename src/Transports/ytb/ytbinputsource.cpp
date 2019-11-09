@@ -22,6 +22,7 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QJsonObject>
 #include <qmmp/statehandler.h>
 #include "bufferdevice.h"
 #include "ytbinputsource.h"
@@ -126,7 +127,9 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     int bitrate = json["abr"].toInt();
     QString acodec = json["acodec"].toString();
 
+
     QString url;
+    QJsonObject headers;
     for(const QJsonValue &value : json["formats"].toArray())
     {
         qDebug() << value["acodec"].toString() << value["vcodec"].toString() << value["abr"].toInt();
@@ -137,6 +140,8 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
         {
             url = value["protocol"].toString() == "http_dash_segments" ?
                         value["fragment_base_url"].toString() : value["url"].toString();
+
+            headers = value["http_headers"].toObject();
             break;
         }
     }
@@ -152,8 +157,13 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
     QUrl streamUrl(url);
     QNetworkRequest request(streamUrl);
-    request.setRawHeader("Host", streamUrl.host().toLatin1());
-    request.setRawHeader("Accept", "*/*");
+    QJsonObject::iterator it = headers.begin();
+    while (it != headers.end())
+    {
+        request.setRawHeader(it.key().toLatin1(), it.value().toString().toLatin1());
+        it++;
+    }
+
     m_getStreamReply = m_manager->get(request);
     m_getStreamReply->setReadBufferSize(0);
     connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
@@ -161,6 +171,8 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
 void YtbInputSource::onFinished(QNetworkReply *reply)
 {
+    qDebug() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+
     if(reply == m_getStreamReply)
     {
         if(reply->error() != QNetworkReply::NoError)
