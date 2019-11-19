@@ -23,6 +23,7 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QUrlQuery>
 #include <qmmp/statehandler.h>
 #include "bufferdevice.h"
 #include "ytbinputsource.h"
@@ -60,7 +61,14 @@ QIODevice *YtbInputSource::ioDevice()
 
 bool YtbInputSource::initialize()
 {
-    QString id = m_url.section("://", -1);
+    QString id;
+    if(m_url.startsWith("ytb://"))
+        id = m_url.section("://", -1);
+    else if(m_url.startsWith("https://www.youtube.com/"))
+        id = QUrlQuery(QUrl(m_url)).queryItemValue("v");
+    else if(m_url.startsWith("https://youtu.be/"))
+        id = QUrl(m_url).path().remove("/");
+
     QString cmd = QString("youtube-dl --print-json -s https://www.youtube.com/watch?v=%1").arg(id);
 
     m_ready = false;
