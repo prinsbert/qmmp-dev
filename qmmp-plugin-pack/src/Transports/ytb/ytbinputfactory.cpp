@@ -29,6 +29,10 @@ InputSourceProperties YtbInputFactory::properties() const
 {
     InputSourceProperties properties;
     properties.protocols << "ytb";
+    properties.regExps = {
+        QRegularExpression("^https\\:\\/\\/www.youtube.com\\/.*"),
+        QRegularExpression("^https\\:\\/\\/youtu.be\\/.*")
+    };
     properties.name = tr("Youtube Plugin");
     properties.shortName = "ytb";
     properties.hasAbout = true;
