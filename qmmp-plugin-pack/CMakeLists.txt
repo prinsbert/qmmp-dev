@@ -6,7 +6,7 @@ include_directories(SYSTEM /usr/local/include)
 SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/local/include)
 
 #Qt5 modules
-SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt512/lib/cmake)
+#SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt512/lib/cmake)
 
 #installation paths
 include(GNUInstallDirs)
@@ -36,6 +36,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 find_package(Qt5Widgets 5.4.0 REQUIRED)
 find_package(Qt5LinguistTools 5.4.0 REQUIRED)
+find_package(Qt5Network 5.4.0 REQUIRED)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 set(CMAKE_CXX_STANDARD 11)
@@ -112,6 +113,10 @@ ADD_CUSTOM_COMMAND(
     TARGET  distclean
 )
 ENDIF(UNIX)
+
+MESSAGE("")
+MESSAGE("Transports:")
+PRINT_SUMMARY ("YouTube support ................." USE_YTB 1)
 
 MESSAGE("")
 MESSAGE("Input Plugins:")
