@@ -109,13 +109,15 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
         return;
     }
 
-    QJsonDocument json = QJsonDocument::fromJson(m_process->readAllStandardOutput());
-    if(json.isEmpty())
+    QJsonDocument document = QJsonDocument::fromJson(m_process->readAllStandardOutput());
+    if(document.isEmpty())
     {
         qWarning("YtbInputSource: unable to parse youtube-dl output");
         emit error();
         return;
     }
+
+    QJsonObject json = document.object();
 
     //qDebug("%s", json.toJson(QJsonDocument::Indented).constData());
 
@@ -140,16 +142,17 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     QJsonObject headers;
     for(const QJsonValue &value : json["formats"].toArray())
     {
-        qDebug() << value["acodec"].toString() << value["vcodec"].toString() << value["abr"].toInt();
+        QJsonObject obj = value.toObject();
+        qDebug() << obj["acodec"].toString() << obj["vcodec"].toString() << obj["abr"].toInt();
 
-        if(value["abr"].toInt() == bitrate &&
-                value["acodec"].toString() == acodec &&
-                value["vcodec"].toString() == "none")
+        if(obj["abr"].toInt() == bitrate &&
+                obj["acodec"].toString() == acodec &&
+                obj["vcodec"].toString() == "none")
         {
-            url = value["protocol"].toString() == "http_dash_segments" ?
-                        value["fragment_base_url"].toString() : value["url"].toString();
+            url = obj["protocol"].toString() == "http_dash_segments" ?
+                        obj["fragment_base_url"].toString() : obj["url"].toString();
 
-            headers = value["http_headers"].toObject();
+            headers = obj["http_headers"].toObject();
             break;
         }
     }
