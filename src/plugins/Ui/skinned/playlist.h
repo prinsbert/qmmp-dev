@@ -86,6 +86,8 @@ class PlayList : public QWidget
         void showPlayLists();
         void generateCopySelectedMenu();
         void copySelectedMenuActionTriggered(QAction *action);
+        void onCurrentPlayListChanged(PlayListModel *current, PlayListModel *previous);
+        void onListChanged(int flags);
 
     private:
         void updatePositions();
