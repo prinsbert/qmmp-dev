@@ -828,118 +828,118 @@
         <translation>Lista de reproducción</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="198"/>
+        <location filename="../playlist.cpp" line="200"/>
         <source>&amp;Copy Selection To</source>
         <translation>&amp;Copiar la selección a</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="229"/>
+        <location filename="../playlist.cpp" line="231"/>
         <source>Sort List</source>
         <translation>Ordenar la lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="232"/>
-        <location filename="../playlist.cpp" line="287"/>
+        <location filename="../playlist.cpp" line="234"/>
+        <location filename="../playlist.cpp" line="289"/>
         <source>By Title</source>
         <translation>Por título</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="236"/>
-        <location filename="../playlist.cpp" line="291"/>
+        <location filename="../playlist.cpp" line="238"/>
+        <location filename="../playlist.cpp" line="293"/>
         <source>By Album</source>
         <translation>Por álbum</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="240"/>
-        <location filename="../playlist.cpp" line="295"/>
+        <location filename="../playlist.cpp" line="242"/>
+        <location filename="../playlist.cpp" line="297"/>
         <source>By Disc Number</source>
         <translation>Por Número de Disco</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="244"/>
-        <location filename="../playlist.cpp" line="299"/>
+        <location filename="../playlist.cpp" line="246"/>
+        <location filename="../playlist.cpp" line="301"/>
         <source>By Artist</source>
         <translation>Por intérprete</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="248"/>
-        <location filename="../playlist.cpp" line="303"/>
+        <location filename="../playlist.cpp" line="250"/>
+        <location filename="../playlist.cpp" line="305"/>
         <source>By Album Artist</source>
         <translation>Por Artista del Álbum</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="252"/>
-        <location filename="../playlist.cpp" line="307"/>
+        <location filename="../playlist.cpp" line="254"/>
+        <location filename="../playlist.cpp" line="309"/>
         <source>By Filename</source>
         <translation>Por nombre de archivo</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="256"/>
-        <location filename="../playlist.cpp" line="311"/>
+        <location filename="../playlist.cpp" line="258"/>
+        <location filename="../playlist.cpp" line="313"/>
         <source>By Path + Filename</source>
         <translation>Por ruta + nombre</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="260"/>
-        <location filename="../playlist.cpp" line="315"/>
+        <location filename="../playlist.cpp" line="262"/>
+        <location filename="../playlist.cpp" line="317"/>
         <source>By Date</source>
         <translation>Por fecha</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="264"/>
-        <location filename="../playlist.cpp" line="319"/>
+        <location filename="../playlist.cpp" line="266"/>
+        <location filename="../playlist.cpp" line="321"/>
         <source>By Track Number</source>
         <translation>Por número de pista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="268"/>
-        <location filename="../playlist.cpp" line="323"/>
+        <location filename="../playlist.cpp" line="270"/>
+        <location filename="../playlist.cpp" line="325"/>
         <source>By File Creation Date</source>
         <translation>Por Fecha de Creación de Archivo</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="272"/>
-        <location filename="../playlist.cpp" line="327"/>
+        <location filename="../playlist.cpp" line="274"/>
+        <location filename="../playlist.cpp" line="329"/>
         <source>By File Modification Date</source>
         <translation>Por Fecha de Modificación de Archivo</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="276"/>
+        <location filename="../playlist.cpp" line="278"/>
         <source>By Group</source>
         <translation>Por Grupo</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="284"/>
+        <location filename="../playlist.cpp" line="286"/>
         <source>Sort Selection</source>
         <translation>Ordenar la selección</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="335"/>
+        <location filename="../playlist.cpp" line="337"/>
         <source>Randomize List</source>
         <translation>Lista aleatoria</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="337"/>
+        <location filename="../playlist.cpp" line="339"/>
         <source>Reverse List</source>
         <translation>Invertir la lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="348"/>
+        <location filename="../playlist.cpp" line="350"/>
         <source>Actions</source>
         <translation>Acciones</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="615"/>
+        <location filename="../playlist.cpp" line="621"/>
         <source>Rename Playlist</source>
         <translation>Renombrar lista</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="615"/>
+        <location filename="../playlist.cpp" line="621"/>
         <source>Playlist name:</source>
         <translation>Nombre de la lista:</translation>
     </message>
     <message>
-        <location filename="../playlist.cpp" line="636"/>
+        <location filename="../playlist.cpp" line="642"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;Lista nueva</translation>
     </message>

@@ -14,22 +14,22 @@
         <translation>Ogg Opus ファイル</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="122"/>
+        <location filename="../decoderopusfactory.cpp" line="129"/>
         <source>About Opus Audio Plugin</source>
         <translation>Opus 音響プラグインについて</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="123"/>
+        <location filename="../decoderopusfactory.cpp" line="130"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>QMMP Opus 音響プラグイン</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="124"/>
+        <location filename="../decoderopusfactory.cpp" line="131"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="125"/>
+        <location filename="../decoderopusfactory.cpp" line="132"/>
         <source>This plugin includes code from TagLib library</source>
         <translation>このプラグインは TagLib ライブラリーのコードを流用しています。</translation>
     </message>
@@ -37,7 +37,7 @@
 <context>
     <name>OpusMetaDataModel</name>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="50"/>
+        <location filename="../opusmetadatamodel.cpp" line="49"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>

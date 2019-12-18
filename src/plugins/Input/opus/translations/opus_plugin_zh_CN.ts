@@ -14,22 +14,22 @@
         <translation>Ogg Opus 文件</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="122"/>
+        <location filename="../decoderopusfactory.cpp" line="129"/>
         <source>About Opus Audio Plugin</source>
         <translation>关于Opus音频</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="123"/>
+        <location filename="../decoderopusfactory.cpp" line="130"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Qmmp Opus音频文件插件</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="124"/>
+        <location filename="../decoderopusfactory.cpp" line="131"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="125"/>
+        <location filename="../decoderopusfactory.cpp" line="132"/>
         <source>This plugin includes code from TagLib library</source>
         <translation>此插件中含有TagLib文件库中的代码</translation>
     </message>
@@ -37,7 +37,7 @@
 <context>
     <name>OpusMetaDataModel</name>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="50"/>
+        <location filename="../opusmetadatamodel.cpp" line="49"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>

@@ -1126,8 +1126,8 @@
 <context>
     <name>PlayListManager</name>
     <message>
-        <location filename="../playlistmanager.cpp" line="170"/>
-        <location filename="../playlistmanager.cpp" line="315"/>
+        <location filename="../playlistmanager.cpp" line="171"/>
+        <location filename="../playlistmanager.cpp" line="316"/>
         <source>Playlist</source>
         <translation>Lejátszási lista</translation>
     </message>

@@ -14,22 +14,22 @@
         <translation>Ogg Opus Bylos</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="122"/>
+        <location filename="../decoderopusfactory.cpp" line="129"/>
         <source>About Opus Audio Plugin</source>
         <translation>Apie Opus Audio Įskiepį</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="123"/>
+        <location filename="../decoderopusfactory.cpp" line="130"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Qmmp Opus Audio Įskiepis</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="124"/>
+        <location filename="../decoderopusfactory.cpp" line="131"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="125"/>
+        <location filename="../decoderopusfactory.cpp" line="132"/>
         <source>This plugin includes code from TagLib library</source>
         <translation>Įskiepyje yra kodo iš TagLib bibliotekos </translation>
     </message>
@@ -37,7 +37,7 @@
 <context>
     <name>OpusMetaDataModel</name>
     <message>
-        <location filename="../opusmetadatamodel.cpp" line="50"/>
+        <location filename="../opusmetadatamodel.cpp" line="49"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
