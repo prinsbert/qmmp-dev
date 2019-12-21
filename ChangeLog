@@ -1483,4 +1483,5 @@ Version 0.12.5
 * fixed duration overflow
 * fixed playlist duration update
 * fixed issue with special symbols in the track change plugin
+* fixed crash on encrypted archives
 * updated Galician translation (Delio Docampo Cordeiro)
