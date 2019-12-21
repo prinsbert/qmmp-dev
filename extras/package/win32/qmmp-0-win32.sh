@@ -84,6 +84,10 @@ create_distr ()
   cp -rv ../qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}/bin/plugins ./
   find . -type f -name *.a -delete
   find . -type d -name ".svn" | xargs rm -rf
+  cp -v ../qmmp-${QMMP_VERSION}/ChangeLog ./ChangeLog.txt
+  cp -v ../qmmp-${QMMP_VERSION}/ChangeLog.rus ./ChangeLog.rus.txt
+  u2d ./ChangeLog.txt
+  u2d ./ChangeLog.rus.txt
   #Qt libs
   for LIB_NAME in QtCore4.dll QtGui4.dll QtNetwork4.dll QtOpenGL4.dll QtMultimedia4.dll QtSql4.dll
   do
