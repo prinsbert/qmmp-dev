@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -183,20 +183,26 @@ bool DecoderFFmpeg::initialize()
     {
         QMap<Qmmp::MetaData, QString> metaData;
         AVDictionaryEntry *album = av_dict_get(ic->metadata,"album",0,0);
-        if(!album)
-            album = av_dict_get(ic->metadata,"WM/AlbumTitle",0,0);
+        AVDictionaryEntry *album_artist = av_dict_get(ic->metadata,"album_artist",0,0);
         AVDictionaryEntry *artist = av_dict_get(ic->metadata,"artist",0,0);
-        if(!artist)
-            artist = av_dict_get(ic->metadata,"author",0,0);
+        AVDictionaryEntry *composer = av_dict_get(ic->metadata,"composer",0,0);
         AVDictionaryEntry *comment = av_dict_get(ic->metadata,"comment",0,0);
         AVDictionaryEntry *genre = av_dict_get(ic->metadata,"genre",0,0);
         AVDictionaryEntry *title = av_dict_get(ic->metadata,"title",0,0);
-        AVDictionaryEntry *year = av_dict_get(ic->metadata,"WM/Year",0,0);
+        AVDictionaryEntry *year = av_dict_get(ic->metadata,"date",0,0);
+        AVDictionaryEntry *track = av_dict_get(ic->metadata,"track",0,0);
+
+        if(!album)
+            album = av_dict_get(ic->metadata,"WM/AlbumTitle",0,0);
+
+        if(!artist)
+            artist = av_dict_get(ic->metadata,"author",0,0);
+
+        if(!year)
+            year = av_dict_get(ic->metadata,"WM/Year",0,0);
         if(!year)
             year = av_dict_get(ic->metadata,"year",0,0);
-        if(!year)
-            year = av_dict_get(ic->metadata,"date",0,0);
-        AVDictionaryEntry *track = av_dict_get(ic->metadata,"track",0,0);
+
         if(!track)
             track = av_dict_get(ic->metadata,"WM/Track",0,0);
         if(!track)
@@ -204,8 +210,12 @@ bool DecoderFFmpeg::initialize()
 
         if(album)
             metaData.insert(Qmmp::ALBUM, QString::fromUtf8(album->value).trimmed());
+        if(album_artist)
+            metaData.insert(Qmmp::ALBUMARTIST, QString::fromUtf8(album_artist->value).trimmed());
         if(artist)
             metaData.insert(Qmmp::ARTIST, QString::fromUtf8(artist->value).trimmed());
+        if(composer)
+            metaData.insert(Qmmp::COMPOSER, QString::fromUtf8(composer->value).trimmed());
         if(comment)
             metaData.insert(Qmmp::COMMENT, QString::fromUtf8(comment->value).trimmed());
         if(genre)
