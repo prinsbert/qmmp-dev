@@ -317,3 +317,7 @@ LEGEND
 [*] ffmpeg-3.4.7
 [*] libogg-1.3.4
 [!] added qmmp changelogs
+
+1.3.6
+[*] qmmp-1.3.6
+[*] curl-7.68.0
