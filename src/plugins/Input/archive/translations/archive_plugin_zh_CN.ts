@@ -14,22 +14,22 @@
         <translation>归档</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="160"/>
+        <location filename="../decoderarchivefactory.cpp" line="169"/>
         <source>About Archive Reader Plugin</source>
         <translation>关于归档读取器插件</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="161"/>
+        <location filename="../decoderarchivefactory.cpp" line="170"/>
         <source>Qmmp Archive Reader Plugin</source>
         <translation>Qmmp 归档读取器插件</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="162"/>
+        <location filename="../decoderarchivefactory.cpp" line="171"/>
         <source>Compiled against %1</source>
         <translation>使用 %1 编译</translation>
     </message>
     <message>
-        <location filename="../decoderarchivefactory.cpp" line="163"/>
+        <location filename="../decoderarchivefactory.cpp" line="172"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

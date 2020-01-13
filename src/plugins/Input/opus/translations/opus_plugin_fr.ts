@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="132"/>
         <source>This plugin includes code from TagLib library</source>
-        <translation>Ce greffon comprend du code de la bibliothèque TagLib</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
