@@ -1485,3 +1485,10 @@ Version 0.12.5
 * fixed issue with special symbols in the track change plugin
 * fixed crash on encrypted archives
 * updated Galician translation (Delio Docampo Cordeiro)
+
+Version 0.12.6
+* added 'album artist' and 'composer' tags support in the ffmpeg plugin
+* fixed window title updating when playing CUE tracks
+* fixed crash on Futura skin in the skinned ui
+* updated French translation (Adrien Vigneron)
+* updated Indonesian translation (Andika Triwidada and Wantoyo)
