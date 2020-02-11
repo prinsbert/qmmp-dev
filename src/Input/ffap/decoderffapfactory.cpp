@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -76,7 +76,7 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
 
     TrackInfo *info = new TrackInfo(filePath);
 
-    if(parts == TrackInfo::NoParts)
+    if(parts == TrackInfo::Parts())
         return QList<TrackInfo *>() << info;
 
     TagLib::FileStream stream(QStringToFileName(filePath), true);
