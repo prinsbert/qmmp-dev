@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019 by Ilya Kotov                                      *
+ *   Copyright (C) 2019-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -69,11 +69,11 @@ bool YtbInputSource::initialize()
     else if(m_url.startsWith("https://youtu.be/"))
         id = QUrl(m_url).path().remove("/");
 
-    QString cmd = QString("youtube-dl --print-json -s https://www.youtube.com/watch?v=%1").arg(id);
+    QStringList args = { "--print-json", "-s", QString("https://www.youtube.com/watch?v=%1").arg(id) };
 
     m_ready = false;
     m_buffer->open(QIODevice::ReadOnly);
-    m_process->start(cmd);
+    m_process->start("youtube-dl", args);
     qDebug("YtbInputSource: starting youtube-dl...");
     return true;
 }
@@ -186,7 +186,11 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
 
     if(reply == m_getStreamReply)
     {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+        if(reply->networkError() != QNetworkReply::NoError)
+#else
         if(reply->error() != QNetworkReply::NoError)
+#endif
         {
             qWarning("YtbInputSource: downloading finished with error: %s", qPrintable(reply->errorString()));
             if(!m_ready)
