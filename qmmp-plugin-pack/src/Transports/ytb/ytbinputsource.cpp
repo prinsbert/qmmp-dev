@@ -153,6 +153,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
                         obj["fragment_base_url"].toString() : obj["url"].toString();
 
             headers = obj["http_headers"].toObject();
+            setProperty(Qmmp::BITRATE, bitrate);
             break;
         }
     }
