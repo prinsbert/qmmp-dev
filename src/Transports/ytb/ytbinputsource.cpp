@@ -187,11 +187,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
 
     if(reply == m_getStreamReply)
     {
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
-        if(reply->networkError() != QNetworkReply::NoError)
-#else
         if(reply->error() != QNetworkReply::NoError)
-#endif
         {
             qWarning("YtbInputSource: downloading finished with error: %s", qPrintable(reply->errorString()));
             if(!m_ready)
