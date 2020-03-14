@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QMessageBox>
+#include <QSettings>
 #include <QtPlugin>
 #include <cdio/version.h>
 #include <cddb/version.h>
@@ -28,6 +29,16 @@
 
 
 // DecoderCDAudioFactory
+
+DecoderCDAudioFactory::DecoderCDAudioFactory()
+{
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    if(settings.value("cdaudio/cddb_server").toByteArray() == "freedb.org")
+    {
+        qDebug("DecoderCDAudioFactory: switching to gnudb.org");
+        settings.setValue("cdaudio/cddb_server", "gnudb.org");
+    }
+}
 
 bool DecoderCDAudioFactory::canDecode(QIODevice *) const
 {

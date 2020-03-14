@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -245,7 +245,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
         {
             cddb_cache_disable (cddb_conn); //disable libcddb cache, use own cache implementation instead
             settings.beginGroup("cdaudio");
-            cddb_set_server_name (cddb_conn, settings.value("cddb_server", "freedb.org").toByteArray().constData());
+            cddb_set_server_name (cddb_conn, settings.value("cddb_server", "gnudb.org").toByteArray().constData());
             cddb_set_server_port (cddb_conn, settings.value("cddb_port", 8880).toInt());
 
             if (settings.value("cddb_http", false).toBool())
