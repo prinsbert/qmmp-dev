@@ -13,7 +13,7 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz
     cd $NAME-$VERSION
-    cmake ./ -DCMAKE_INSTALL_PREFIX=$PREFIX -G "MSYS Makefiles" -DCMAKE_COLOR_MAKEFILE:BOOL=OFF
+    cmake ./ -DCMAKE_INSTALL_PREFIX=$PREFIX -G "MSYS Makefiles" -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DENABLE_UBSAN:BOOL=OFF
     make -j${JOBS}
     make install
 
