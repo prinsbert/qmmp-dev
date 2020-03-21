@@ -1492,3 +1492,11 @@ Version 0.12.6
 * fixed crash on Futura skin in the skinned ui
 * updated French translation (Adrien Vigneron)
 * updated Indonesian translation (Andika Triwidada and Wantoyo)
+
+Version 0.12.7
+* using gnudb.org as default CDDB server
+* fixed several crashes in the file operations plugin
+* fixed mpris support
+* fixed text scroller issues in the skinned plugin
+* fixed cmake warning
+* updated Polish translation (mrerexx)
