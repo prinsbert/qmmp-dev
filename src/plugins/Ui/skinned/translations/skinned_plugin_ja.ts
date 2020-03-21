@@ -1401,7 +1401,7 @@
         <translation>背景を透過</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="128"/>
+        <location filename="../textscroller.cpp" line="129"/>
         <source>Buffering: %1%</source>
         <translation>バッファーへ先読み: %1%</translation>
     </message>

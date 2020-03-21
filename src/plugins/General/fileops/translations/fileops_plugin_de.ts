@@ -4,24 +4,24 @@
 <context>
     <name>FileOps</name>
     <message>
-        <location filename="../fileops.cpp" line="98"/>
-        <location filename="../fileops.cpp" line="132"/>
+        <location filename="../fileops.cpp" line="97"/>
+        <location filename="../fileops.cpp" line="137"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="99"/>
-        <location filename="../fileops.cpp" line="133"/>
+        <location filename="../fileops.cpp" line="98"/>
+        <location filename="../fileops.cpp" line="138"/>
         <source>Destination directory doesn&apos;t exist</source>
         <translation>Das Zielverzeichnis existiert nicht</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="136"/>
+        <location filename="../fileops.cpp" line="141"/>
         <source>Move Files</source>
         <translation>Dateien verschieben</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileops.cpp" line="137"/>
+        <location filename="../fileops.cpp" line="142"/>
         <source>Are you sure you want to move %n file(s)?</source>
         <translation>
             <numerusform>Sind Sie sicher, dass Sie %n Datei verschieben möchten?</numerusform>
@@ -29,38 +29,38 @@
         </translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="153"/>
+        <location filename="../fileops.cpp" line="158"/>
         <source>Copying</source>
         <translation>Kopiere</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="154"/>
-        <location filename="../fileops.cpp" line="244"/>
+        <location filename="../fileops.cpp" line="159"/>
+        <location filename="../fileops.cpp" line="253"/>
         <source>Stop</source>
         <translation>Stopp</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="199"/>
+        <location filename="../fileops.cpp" line="204"/>
         <source>Copying file %1/%2</source>
         <translation>Datei %1/%2 wird kopiert</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="243"/>
+        <location filename="../fileops.cpp" line="252"/>
         <source>Moving</source>
         <translation>Verschiebevorgang</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="276"/>
+        <location filename="../fileops.cpp" line="288"/>
         <source>Moving file %1/%2</source>
         <translation>Datei %1/%2 wird verschoben</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="114"/>
+        <location filename="../fileops.cpp" line="113"/>
         <source>Remove Files</source>
         <translation>Dateien entfernen</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileops.cpp" line="115"/>
+        <location filename="../fileops.cpp" line="114"/>
         <source>Are you sure you want to remove %n file(s) from disk?</source>
         <translation>
             <numerusform>Sind Sie sicher, dass Sie %n Datei von der Festplatte entfernen möchten?</numerusform>
