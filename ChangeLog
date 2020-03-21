@@ -294,3 +294,7 @@ Version 0.12.0
 
 Version 0.12.1
 * fixed issue with missing properties for CUE tracks in the ffap plugin
+
+Version 0.12.2
+* fixed cmake warning
+* updated French translation (Adrien Vigneron)
