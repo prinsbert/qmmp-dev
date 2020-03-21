@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="41"/>
         <source>XMP Plugin</source>
-        <translation>Plugin XMP</translation>
+        <translation>Greffon XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="55"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>About XMP Audio Plugin</source>
-        <translation>A propos du plugin audio XMP</translation>
+        <translation>A propos du greffon audio XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="113"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation>Plugin audio XMP Qmmp</translation>
+        <translation>Greffon audio XMP Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="114"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation>Paramètres du plugin XMP</translation>
+        <translation>Paramètres du greffon XMP</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
