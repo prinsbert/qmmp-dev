@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.3.1
-UBUNTU_CODENAMES='xenial bionic cosmic disco eoan'
+PLUGIN_PACK_VERSION=1.3.2
+UBUNTU_CODENAMES='xenial bionic eoan focal'
 BUILD_ROOT=build-root
 
 
