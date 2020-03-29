@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl_NL">
+<TS version="2.1" language="nl">
 <context>
     <name>YtbInputFactory</name>
     <message>
         <location filename="../ytbinputfactory.cpp" line="36"/>
         <source>Youtube Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>YouTube-plug-in</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="60"/>
         <source>not found</source>
-        <translation type="unfinished"></translation>
+        <translation>niet gevonden</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="62"/>
         <source>About Youtube Transport Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Over de YouTube-plug-in</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="63"/>
         <source>Qmmp Youtube Transport Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>YouTube-plug-in voor Qmmp</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="64"/>
         <source>This plugin adds feature to play audio from Youtube using &lt;a href=&quot;https://youtube-dl.org/&quot;&gt;youtube-dl&lt;/a&gt; utility</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze plug-in stelt je in staat om muziek van YouTube af te spelen met behulp van &lt;a href=&quot;https://youtube-dl.org/&quot;&gt;youtube-dl&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="66"/>
         <source>youtube-dl version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>youtube-dl-versie: %1</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="67"/>
         <source>Written by: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Auteur: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
 </context>
 <context>
@@ -44,17 +44,17 @@
     <message>
         <location filename="../ytbinputsource.cpp" line="130"/>
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Geüpload door</translation>
     </message>
     <message>
         <location filename="../ytbinputsource.cpp" line="131"/>
         <source>Upload date</source>
-        <translation type="unfinished"></translation>
+        <translation>Geüpload op</translation>
     </message>
     <message>
         <location filename="../ytbinputsource.cpp" line="132"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Duur</translation>
     </message>
 </context>
 </TS>

@@ -6,22 +6,22 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="40"/>
         <source>XMP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>XMP-plug-in</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="54"/>
         <source>Module Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Modulebestanden</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>About XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Over de XMP-audioplug-in</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp XMP-audioplug-in</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="113"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="114"/>
         <source>Compiled against libxmp-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebouwd met libxmp-%1</translation>
     </message>
 </context>
 <context>
@@ -39,72 +39,72 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source> Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versterkingsfactor:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereo mixen:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Soort interpolatie:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Lowpass-filtereffect</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished"></translation>
+        <translation>vblank-timer gebruiken</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Protracker 2.x FX9-bug nabootsen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation>Sample frequentie:</translation>
+        <translation>Samplesnelheid:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Nabije buur</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineair</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Cubic spline</translation>
     </message>
 </context>
 <context>
@@ -112,47 +112,47 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Volume scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Volumeschaal</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Number of patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal patronen</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Number of tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal nummers</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Tracks per pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal nummers per patroon</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Number of instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal instrumenten</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Number of samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal samples</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Initial speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Initële snelheid</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Initial BPM</source>
-        <translation type="unfinished"></translation>
+        <translation>Initiële BPM</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="61"/>
         <source>Module length in patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Moduleduur, in patronen</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="80"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="93"/>
         <source>Comment</source>
-        <translation>Commentaar</translation>
+        <translation>Opmerking</translation>
     </message>
 </context>
 </TS>
