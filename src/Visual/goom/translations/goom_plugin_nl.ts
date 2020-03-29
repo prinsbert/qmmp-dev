@@ -6,42 +6,42 @@
     <message>
         <location filename="../goomwidget.cpp" line="137"/>
         <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
-        <translation>Vernieuw Frequentie</translation>
+        <translation>Verversingssnelheid</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="190"/>
         <source>60 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>60 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="191"/>
         <source>50 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="192"/>
         <source>25 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="198"/>
         <source>&amp;Show Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel &amp;tonen</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>&amp;Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeld&amp;vullend</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="201"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
@@ -49,17 +49,17 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="30"/>
         <source>Goom</source>
-        <translation type="unfinished"></translation>
+        <translation>Goom</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="49"/>
         <source>About Goom Visual Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>About de Goom Visual-plug-in</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="50"/>
         <source>Qmmp Goom Visual Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Goom Visual-plug-in</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="51"/>
@@ -69,22 +69,22 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="52"/>
         <source>Based on the source code from the Goom project</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebaseerd op de broncode van Goom</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="53"/>
         <source>Goom project developers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Goom-projectontwikkelaars:</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="54"/>
         <source>Jean-Christophe Hoelt &lt;jeko@ios-software.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Jean-Christophe Hoelt &lt;jeko@ios-software.com&gt;</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="55"/>
         <source>Guillaume Borios &lt;gyom@ios-software.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Guillaume Borios &lt;gyom@ios-software.com&gt;</translation>
     </message>
 </context>
 </TS>

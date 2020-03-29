@@ -6,17 +6,17 @@
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="30"/>
         <source>SRC Plugin</source>
-        <translation>SRC Module</translation>
+        <translation>SRC-plug-in</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="51"/>
         <source>About Sample Rate Converter Plugin</source>
-        <translation>Over de Sample Rate Converter Module</translation>
+        <translation>Over de Sample Rate Converter-plug-in</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="52"/>
         <source>Qmmp Sample Rate Converter Plugin</source>
-        <translation>Sample Rate Converter Module voor Qmmp</translation>
+        <translation>Sample Rate Converter-plug-in voor Qmmp</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="53"/>
@@ -29,42 +29,42 @@
     <message>
         <location filename="../settingsdialog.ui" line="13"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Sample Rate Converter Module Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="19"/>
         <source>Sample Rate (Hz):</source>
-        <translation>Sample frequentie (Hz):</translation>
+        <translation>Samplesnelheid (Hz):</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="39"/>
         <source>Interpolation Engine:</source>
-        <translation>Interpolatie Engine:</translation>
+        <translation>Interpolatie-aandrijving:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="47"/>
         <source>Best Sinc Interpolation</source>
-        <translation>Beste Sinc Interpolatie</translation>
+        <translation>Beste Sinc-interpolatie</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>
         <source>Medium Sinc Interpolation</source>
-        <translation>Medium Sinc Interpolatie</translation>
+        <translation>Normale Sinc-interpolatie</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="57"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation>Snelste Sinc Interpolatie</translation>
+        <translation>Snelste Sinc-interpolatie</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="62"/>
         <source>ZOH Interpolation</source>
-        <translation>ZOH Interpolatie</translation>
+        <translation>ZOH-interpolatie</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="67"/>
         <source>Linear Interpolation</source>
-        <translation>Lineaire Interpolatie</translation>
+        <translation>Lineaire interpolatie</translation>
     </message>
 </context>
 </TS>
