@@ -32,12 +32,12 @@ class SettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    SettingsDialog(QWidget *parent = nullptr);
+    SettingsDialog(QWidget *parent = 0);
 
     ~SettingsDialog();
 
 public slots:
-    virtual void accept() override;
+    virtual void accept();
 
 private slots:
     void on_newSessionButton_lastfm_clicked();

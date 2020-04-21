@@ -140,7 +140,7 @@ LyricsProvider *UltimateLyricsParser::provider(const QString &name) const
         if(provider->name() == name)
             return provider;
     }
-    return nullptr;
+    return 0;
 }
 
 QStringList UltimateLyricsParser::defaultProviders()

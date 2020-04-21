@@ -36,7 +36,7 @@ public:
     ~SettingsDialog();
 
 public slots:
-    void accept() override;
+    void accept();
 
 private:
     Ui::SettingsDialog *m_ui;

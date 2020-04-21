@@ -37,7 +37,7 @@ class LyricsWindow : public QWidget
 {
 Q_OBJECT
 public:
-    LyricsWindow(const TrackInfo *info, QWidget *parent = nullptr);
+    LyricsWindow(const TrackInfo *info, QWidget *parent = 0);
 
     ~LyricsWindow();
 
@@ -51,7 +51,7 @@ private slots:
     void saveToCache(const QString &text);
 
 private:
-    void closeEvent(QCloseEvent *) override;
+    void closeEvent(QCloseEvent *);
     Ui::LyricsWindow m_ui;
     QNetworkAccessManager *m_http;
     QString m_cachePath;
