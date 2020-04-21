@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nl">
+<TS version="2.0" language="nl">
 <context>
     <name>Lyrics</name>
     <message>
@@ -17,32 +17,32 @@
 <context>
     <name>LyricsFactory</name>
     <message>
-        <location filename="../lyricsfactory.cpp" line="29"/>
+        <location filename="../lyricsfactory.cpp" line="30"/>
         <source>Lyrics Plugin</source>
         <translation>Songtekstplug-in</translation>
     </message>
     <message>
-        <location filename="../lyricsfactory.cpp" line="49"/>
+        <location filename="../lyricsfactory.cpp" line="50"/>
         <source>About Lyrics Plugin</source>
         <translation>Over de Songtekstplug-in</translation>
     </message>
     <message>
-        <location filename="../lyricsfactory.cpp" line="50"/>
+        <location filename="../lyricsfactory.cpp" line="51"/>
         <source>Qmmp Lyrics Plugin</source>
         <translation>Songtekstplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../lyricsfactory.cpp" line="51"/>
+        <location filename="../lyricsfactory.cpp" line="52"/>
         <source>This plugin retrieves lyrics from LyricWiki</source>
         <translation>Deze plug-in haalt songteksten op van LyricWiki</translation>
     </message>
     <message>
-        <location filename="../lyricsfactory.cpp" line="52"/>
+        <location filename="../lyricsfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../lyricsfactory.cpp" line="53"/>
+        <location filename="../lyricsfactory.cpp" line="54"/>
         <source>Based on Ultimate Lyrics script by Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</source>
         <translation>Gebaseerd op het Ultimate Lyrics-script van Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</translation>
     </message>
@@ -85,42 +85,29 @@
         <translation>Naam:</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="115"/>
+        <location filename="../lyricswindow.cpp" line="113"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="126"/>
+        <location filename="../lyricswindow.cpp" line="124"/>
         <source>Not found</source>
         <translation>Niet gevonden</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="136"/>
+        <location filename="../lyricswindow.cpp" line="134"/>
         <source>Error: %1 - %2</source>
         <translation>Fout: %1 - %2</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="149"/>
+        <location filename="../lyricswindow.cpp" line="147"/>
         <source>Receiving</source>
         <translation>Bezig met ophalen...</translation>
     </message>
     <message>
-        <location filename="../lyricswindow.cpp" line="204"/>
+        <location filename="../lyricswindow.cpp" line="202"/>
         <source>cache</source>
         <translation>cache</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Lyrics Plugin Settings</source>
-        <translation>Songtekstinstellingen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Lyrics providers:</source>
-        <translation>Songtekstdiensten:</translation>
     </message>
 </context>
 <context>
