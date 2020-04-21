@@ -34,7 +34,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     parser.load(":/ultimate_providers.xml");
     QStringList enabledProviders = settings.value("Lyrics/enabled_providers", parser.defaultProviders()).toStringList();
 
-    for(const LyricsProvider *provider : parser.providers())
+    foreach(const LyricsProvider *provider, parser.providers())
     {
         QListWidgetItem *item = new QListWidgetItem(provider->name());
         item->setCheckState(enabledProviders.contains(provider->name()) ? Qt::Checked : Qt::Unchecked);

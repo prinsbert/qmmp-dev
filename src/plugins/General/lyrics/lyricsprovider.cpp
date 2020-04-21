@@ -55,7 +55,10 @@ void LyricsProvider::setUrl(const QString &url)
 
 void LyricsProvider::addUrlFormat(const QString &replace, const QString &with)
 {
-    m_urlFormats << UrlFormat{ .replace = replace, .with = with };
+    UrlFormat f;
+    f.replace = replace;
+    f.with = with;
+    m_urlFormats << f;
 }
 
 void LyricsProvider::addRule(const QList<QPair<QString, QString> > &args, bool exclude)
@@ -99,7 +102,7 @@ QString LyricsProvider::getUrl(const TrackInfo &track) const
     {
         QString value = it.value();
 
-        for(const UrlFormat &format: m_urlFormats)
+        foreach(const UrlFormat &format, m_urlFormats)
             value.replace(QRegExp(QString("[%1]").arg(QRegExp::escape(format.replace))), format.with);
 
         url.replace(it.key(), it.value());
@@ -135,13 +138,13 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
         Rule tmpRule = rule;
         QString tmpContent = content;
 
-        for(Item &item : tmpRule)
+        for(int i = 0; i < tmpRule.size(); i++)
         {
             QMap<QString, QString>::const_iterator it = replaceMap.constBegin();
             while(it != replaceMap.constEnd())
             {
-                item.begin.replace(it.key(), it.value());
-                item.url.replace(it.key(), it.value());
+                tmpRule[i].begin.replace(it.key(), it.value());
+                tmpRule[i].url.replace(it.key(), it.value());
                 it++;
             }
         }

@@ -154,7 +154,7 @@ void LyricsWindow::on_refreshButton_clicked()
     m_info.setValue(Qmmp::TRACK, m_ui.trackSpinBox->value());
     m_info.setValue(Qmmp::YEAR, m_ui.yearSpinBox->value());
 
-    for(LyricsProvider *provider : m_parser.providers())
+    foreach(LyricsProvider *provider, m_parser.providers())
     {
         if(m_enabledProviders.contains(provider->name()))
         {
