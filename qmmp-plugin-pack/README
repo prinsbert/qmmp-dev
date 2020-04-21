@@ -11,6 +11,7 @@ Description:
 - Sample Rate Converter - resampler based on libsamplerate library
 - Goom - audio visualization based on goom project
 - FFVideo - video playback engine based on FFmpeg library
+- Ytb - audio playback from YouTube (uses youtube-dl)
 
 Requirements:
 - Qt >= 5.4 (qtbase and qttools for build)
@@ -38,7 +39,7 @@ by running the following command:
 cmake ./ -DUSE_XMP:BOOL=FALSE
 
 Available options:
-- USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO (plugins)
+- USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB (plugins)
 - USE_ASM (assembler-level optimizations inside FFap decoder)
 
 Also you can use ccmake to change plugin configuration.
