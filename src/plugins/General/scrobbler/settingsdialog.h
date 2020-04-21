@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -32,30 +32,26 @@ class SettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    SettingsDialog(QWidget *parent = 0);
+    SettingsDialog(QWidget *parent = nullptr);
 
     ~SettingsDialog();
 
 public slots:
-    virtual void accept();
+    virtual void accept() override;
 
 private slots:
     void on_newSessionButton_lastfm_clicked();
     void on_newSessionButton_librefm_clicked();
-    void on_newSessionButton_listenbrainz_clicked();
     void processTokenResponse(int error);
     void processSessionResponse(int error);
     void on_checkButton_lastfm_clicked();
     void on_checkButton_librefm_clicked();
-    void on_checkButton_listenbrainz_clicked();
     void processCheckResponse(int error);
 
 private:
     Ui::SettingsDialog m_ui;
     ScrobblerAuth *m_lastfmAuth;
     ScrobblerAuth *m_librefmAuth;
-    ScrobblerAuth *m_listenbrainzAuth;
-
 };
 
 #endif

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,8 +31,6 @@ ScrobblerHandler::ScrobblerHandler(QObject *parent) : QObject(parent)
         new Scrobbler(SCROBBLER_LASTFM_URL, "lastfm", this);
     if(settings.value("use_librefm", false).toBool())
         new Scrobbler(SCROBBLER_LIBREFM_URL, "librefm", this);
-    if(settings.value("use_listenbrainz", false).toBool())
-        new Scrobbler(SCROBBLER_LISTENBRAINZ_URL, "listenbrainz", this);
     settings.endGroup();
 }
 
