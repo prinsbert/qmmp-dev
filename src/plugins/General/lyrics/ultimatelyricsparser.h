@@ -1,6 +1,9 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2019 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
+ *                                                                         *
+ *   Based on Amarok 2 Ultimate Lyrics script                              *
+ *   Copyright (C) 2009-2010 Vladimir Brkic <vladimir_brkic@yahoo.com>     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,36 +20,32 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef LYRICS_H
-#define LYRICS_H
 
-#include <QPointer>
+#ifndef ULTIMATELYRICSPARSER_H
+#define ULTIMATELYRICSPARSER_H
 
-#include <qmmpui/general.h>
-#include <qmmp/qmmp.h>
+#include <QString>
+#include <QCoreApplication>
+#include <QList>
+#include "lyricsprovider.h"
 
-class QAction;
-
-class SoundCore;
-
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-
-class Lyrics : public QObject
+class UltimateLyricsParser
 {
-Q_OBJECT
+    Q_DECLARE_TR_FUNCTIONS(UltimateLyricsParser)
 public:
-    Lyrics(QObject *parent = nullptr);
+    UltimateLyricsParser();
+    ~UltimateLyricsParser();
 
-    ~Lyrics();
-
-private slots:
-    void showLyrics();
+    bool load(const QString &path);
+    const QString &errorString() const;
+    const QList<LyricsProvider *> &providers();
+    LyricsProvider *provider(const QString &name) const;
+    static QStringList defaultProviders();
 
 private:
-    QAction *m_action;
+    QString m_errorString;
+    QList<LyricsProvider *> m_providers;
 
 };
 
-#endif
+#endif // ULTIMATELYRICSPARSER_H

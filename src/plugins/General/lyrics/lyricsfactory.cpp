@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,6 +20,7 @@
 
 #include <QMessageBox>
 #include <QtPlugin>
+#include "settingsdialog.h"
 #include "lyrics.h"
 #include "lyricsfactory.h"
 
@@ -29,7 +30,7 @@ GeneralProperties LyricsFactory::properties() const
     properties.name = tr("Lyrics Plugin");
     properties.shortName = "lyrics";
     properties.hasAbout = true;
-    properties.hasSettings = false;
+    properties.hasSettings = true;
     properties.visibilityControl = false;
     return properties;
 }
@@ -41,8 +42,7 @@ QObject *LyricsFactory::create(QObject *parent)
 
 QDialog *LyricsFactory::createConfigDialog(QWidget *parent)
 {
-    Q_UNUSED(parent);
-    return 0;
+    return new SettingsDialog(parent);
 }
 
 void LyricsFactory::showAbout(QWidget *parent)
@@ -50,7 +50,9 @@ void LyricsFactory::showAbout(QWidget *parent)
     QMessageBox::about (parent, tr("About Lyrics Plugin"),
                         tr("Qmmp Lyrics Plugin")+"\n"+
                         tr("This plugin retrieves lyrics from LyricWiki")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                        tr("Based on Ultimate Lyrics script by Vladimir Brkic <vladimir_brkic@yahoo.com>")
+                        );
 }
 
 QString LyricsFactory::translation() const
@@ -58,4 +60,4 @@ QString LyricsFactory::translation() const
     return QLatin1String(":/lyrics_plugin_");
 }
 
-Q_EXPORT_PLUGIN2(lyrcis, LyricsFactory)
+Q_EXPORT_PLUGIN2(lyrics, LyricsFactory)

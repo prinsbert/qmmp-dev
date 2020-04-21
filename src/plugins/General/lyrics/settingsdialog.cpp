@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2019 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,36 +17,45 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef LYRICS_H
-#define LYRICS_H
 
-#include <QPointer>
-
-#include <qmmpui/general.h>
+#include <QSettings>
 #include <qmmp/qmmp.h>
+#include "settingsdialog.h"
+#include "ultimatelyricsparser.h"
+#include "ui_settingsdialog.h"
 
-class QAction;
-
-class SoundCore;
-
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-
-class Lyrics : public QObject
+SettingsDialog::SettingsDialog(QWidget *parent) :
+    QDialog(parent),
+    m_ui(new Ui::SettingsDialog)
 {
-Q_OBJECT
-public:
-    Lyrics(QObject *parent = nullptr);
+    m_ui->setupUi(this);
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);  
+    UltimateLyricsParser parser;
+    parser.load(":/ultimate_providers.xml");
+    QStringList enabledProviders = settings.value("Lyrics/enabled_providers", parser.defaultProviders()).toStringList();
 
-    ~Lyrics();
+    for(const LyricsProvider *provider : parser.providers())
+    {
+        QListWidgetItem *item = new QListWidgetItem(provider->name());
+        item->setCheckState(enabledProviders.contains(provider->name()) ? Qt::Checked : Qt::Unchecked);
+        m_ui->providersListWidget->addItem(item);
+    }
+}
 
-private slots:
-    void showLyrics();
+SettingsDialog::~SettingsDialog()
+{
+    delete m_ui;
+}
 
-private:
-    QAction *m_action;
-
-};
-
-#endif
+void SettingsDialog::accept()
+{
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QStringList enabledProviders;
+    for(int i = 0; i < m_ui->providersListWidget->count(); ++i)
+    {
+        if(m_ui->providersListWidget->item(i)->checkState() == Qt::Checked)
+            enabledProviders << m_ui->providersListWidget->item(i)->text();
+    }
+    settings.setValue("Lyrics/enabled_providers", enabledProviders);
+    QDialog::accept();
+}

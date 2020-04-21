@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,11 +21,14 @@
 #define LYRICSWINDOW_H
 
 #include <QWidget>
-
+#include <QHash>
+#include <qmmp/trackinfo.h>
+#include "ultimatelyricsparser.h"
 #include "ui_lyricswindow.h"
 
 class QNetworkAccessManager;
 class QNetworkReply;
+class TrackInfo;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -34,23 +37,28 @@ class LyricsWindow : public QWidget
 {
 Q_OBJECT
 public:
-    LyricsWindow(const QString &artist, const QString &title, QWidget *parent = 0);
+    LyricsWindow(const TrackInfo *info, QWidget *parent = nullptr);
 
     ~LyricsWindow();
 
 private slots:
-    void showText(QNetworkReply *reply);
-    void on_searchPushButton_clicked();
+    void onRequestFinished(QNetworkReply *reply);
+    void on_refreshButton_clicked();
+    void on_editButton_clicked(bool checked);
+    void on_providerComboBox_activated(int index);
     QString cacheFilePath() const;
     bool loadFromCache();
     void saveToCache(const QString &text);
 
 private:
+    void closeEvent(QCloseEvent *) override;
     Ui::LyricsWindow m_ui;
     QNetworkAccessManager *m_http;
-    QNetworkReply *m_requestReply;
-    QString m_artist, m_title;
     QString m_cachePath;
+    UltimateLyricsParser m_parser;
+    TrackInfo m_info;
+    QHash<QNetworkReply *, QString> m_tasks;
+    QStringList m_enabledProviders;
 };
 
 #endif

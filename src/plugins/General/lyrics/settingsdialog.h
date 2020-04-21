@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2019 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,36 +17,29 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef LYRICS_H
-#define LYRICS_H
 
-#include <QPointer>
+#ifndef SETTINGSDIALOG_H
+#define SETTINGSDIALOG_H
 
-#include <qmmpui/general.h>
-#include <qmmp/qmmp.h>
+#include <QDialog>
 
-class QAction;
+namespace Ui {
+class SettingsDialog;
+}
 
-class SoundCore;
-
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-
-class Lyrics : public QObject
+class SettingsDialog : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
+
 public:
-    Lyrics(QObject *parent = nullptr);
+    explicit SettingsDialog(QWidget *parent = 0);
+    ~SettingsDialog();
 
-    ~Lyrics();
-
-private slots:
-    void showLyrics();
+public slots:
+    void accept() override;
 
 private:
-    QAction *m_action;
-
+    Ui::SettingsDialog *m_ui;
 };
 
-#endif
+#endif // SETTINGSDIALOG_H
