@@ -28,7 +28,10 @@
 #include "lyricsprovider.h"
 
 LyricsProvider::LyricsProvider()
-{}
+{
+    m_charset = QLatin1String("utf-8");
+    m_skipRules = false;
+}
 
 void LyricsProvider::setName(const QString &name)
 {

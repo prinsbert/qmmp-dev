@@ -70,13 +70,13 @@ private:
     QString exclude(const QString &content, const Rule &rule) const;
 
     QString m_name, m_title;
-    QString m_charset = QLatin1String("utf-8");
+    QString m_charset;
     QString m_url;
     QList<UrlFormat> m_urlFormats;
     QList<Rule> m_extractRules;
     QList<Rule> m_excludeRules;
     QStringList m_invalidIndicators;
-    bool m_skipRules = false;
+    bool m_skipRules;
 
     typedef QPair<QString, QString> Arg;
 };
