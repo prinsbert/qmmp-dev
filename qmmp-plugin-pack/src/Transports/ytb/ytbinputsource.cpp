@@ -20,11 +20,13 @@
 
 #include <QtDebug>
 #include <QNetworkReply>
+#include <QNetworkProxy>
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QUrlQuery>
 #include <qmmp/statehandler.h>
+#include <qmmp/qmmpsettings.h>
 #include "bufferdevice.h"
 #include "ytbinputsource.h"
 
@@ -37,6 +39,22 @@ YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSourc
     m_process = new QProcess(this);
     m_manager = new QNetworkAccessManager(this);
     m_manager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+
+    QmmpSettings *gs = QmmpSettings::instance();
+    if (gs->isProxyEnabled())
+    {
+        QNetworkProxy proxy(QNetworkProxy::HttpProxy, gs->proxy().host(),  gs->proxy().port());
+        if(gs->proxyType() == QmmpSettings::SOCKS5_PROXY)
+            proxy.setType(QNetworkProxy::Socks5Proxy);
+        if(gs->useProxyAuth())
+        {
+            proxy.setUser(gs->proxy().userName());
+            proxy.setPassword(gs->proxy().password());
+        }
+        m_manager->setProxy(proxy);
+    }
+    else
+        m_manager->setProxy(QNetworkProxy::NoProxy);
 
     connect(m_process, SIGNAL(errorOccurred(QProcess::ProcessError)), SLOT(onProcessErrorOccurred(QProcess::ProcessError)));
     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)), SLOT(onProcessFinished(int,QProcess::ExitStatus)));
