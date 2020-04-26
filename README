@@ -20,6 +20,7 @@ Requirements:
 - libxmp >= 4.2.0 (optional)
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.1 (optional)
+- youtube-dl (latest version, optional)
 - cmake >= 2.8.11 (for build only)
 - yasm (for build only)
 
