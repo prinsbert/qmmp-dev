@@ -6,7 +6,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Greffon vidéo FFmpeg</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="46"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="165"/>
         <source>About FFVideo Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos du greffon FFVidéo</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="166"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
-        <translation type="unfinished"></translation>
+        <translation>Greffon vidéo basé sur FFmpeg pour Qmmp</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="167"/>
@@ -54,12 +54,12 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Taux d’échantillonnage audio</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
@@ -76,12 +76,12 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="72"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Cannaux audio</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="78"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille de la vidéo</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../videowindow.cpp" line="40"/>
         <source>FFmpeg Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidéo FFmpeg</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>

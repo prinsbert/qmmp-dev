@@ -42,17 +42,17 @@
 <context>
     <name>YtbInputSource</name>
     <message>
-        <location filename="../ytbinputsource.cpp" line="130"/>
+        <location filename="../ytbinputsource.cpp" line="148"/>
         <source>Uploader</source>
         <translation>Завантажувач</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="131"/>
+        <location filename="../ytbinputsource.cpp" line="149"/>
         <source>Upload date</source>
         <translation>Дата завантаження</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="132"/>
+        <location filename="../ytbinputsource.cpp" line="150"/>
         <source>Duration</source>
         <translation>Тривалість</translation>
     </message>
