@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<TS version="2.1" language="uk">
 <context>
     <name>Lyrics</name>
     <message>
@@ -115,7 +115,7 @@
     <message>
         <location filename="../ultimatelyricsparser.cpp" line="119"/>
         <source>%1 (line: %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (рядок: %2)</translation>
     </message>
 </context>
 </TS>
