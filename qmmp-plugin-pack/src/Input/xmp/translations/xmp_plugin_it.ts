@@ -59,17 +59,17 @@
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Effetto filtro passa basso</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa l&apos;intervallo vblank</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Emula il bug di Protracker 2.x FX9</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Volume scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Scala volume</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Initial BPM</source>
-        <translation type="unfinished"></translation>
+        <translation>BPM iniziali</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="61"/>

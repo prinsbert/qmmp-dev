@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
-        <translation>Plugin FFap</translation>
+        <translation>Greffon FFap</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>About FFap Audio Plugin</source>
-        <translation>A propos du plugin audio FFap</translation>
+        <translation>A propos du greffon audio FFap</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation>Plugin audio FFap Qmmp</translation>
+        <translation>Greffon audio FFap Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation>Ce plugin fournit le support des fichiers audio Monkey (APE)</translation>
+        <translation>Ce greffon fournit le support des fichiers audio Monkey (APE)</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="153"/>
