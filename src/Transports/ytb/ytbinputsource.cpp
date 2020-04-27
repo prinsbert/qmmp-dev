@@ -38,7 +38,9 @@ YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSourc
     m_buffer = new BufferDevice(this);
     m_process = new QProcess(this);
     m_manager = new QNetworkAccessManager(this);
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 9, 0))
     m_manager->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+#endif
 
     QmmpSettings *gs = QmmpSettings::instance();
     if (gs->isProxyEnabled())
