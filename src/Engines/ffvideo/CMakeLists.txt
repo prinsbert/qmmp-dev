@@ -8,8 +8,8 @@ include_directories(${QMMP_INCLUDE_DIRS})
 link_directories( ${QMMP_LIBRARY_DIRS})
 
 # minimal supported version
-# ffmpeg-3.1: libavcodec-57.48.101, libavformat-57.40.101, libavutil-55.27.100, libswscale-4.1.100
-pkg_check_modules(FFMPEG libavcodec>=57.48.101 libavformat>=57.40.101 libavutil>=55.27.100 libswscale>=4.1.100 libswresample)
+# ffmpeg-3.2: libavcodec-57.64.100, libavformat-57.56.100, libavutil-55.34.100, libswscale-4.1.100
+pkg_check_modules(FFMPEG libavcodec>=57.64.0 libavformat>=57.56.0 libavutil>=55.34.0 libswscale>=4.1.0 libswresample)
 
 include_directories(${FFMPEG_INCLUDE_DIRS})
 link_directories(${FFMPEG_LIBRARY_DIRS})

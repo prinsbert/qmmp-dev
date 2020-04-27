@@ -11,7 +11,7 @@ Qmmp Plugin Pack
 - Sample Rate Converter - преобразователь частоты дискретизации с использованием библиотеки libsamplerate
 - Goom - визуализация на базе проекта goom
 - FFVideo - воспроизведение видео с использованием библиотеки FFmpeg
-- Ytb - воспроизведение аудио с YouTube (использует youtube-dl)
+- Ytb - воспроизведение аудио с YouTube (используется youtube-dl)
 
 Требования:
 - Qt >= 5.4 (qtbase и qttools для сборки)
@@ -19,7 +19,7 @@ Qmmp Plugin Pack
 - taglib >= 1.10
 - libxmp >= 4.2.0 (опционально)
 - libsamplerate >= 0.1.2 (опционально)
-- ffmpeg >= 3.1 (опционально)
+- ffmpeg >= 3.2 (опционально)
 - youtube-dl (последняя версия, опционально)
 - cmake >= 2.8.11 (только для сборки)
 - yasm (только для сборки)
