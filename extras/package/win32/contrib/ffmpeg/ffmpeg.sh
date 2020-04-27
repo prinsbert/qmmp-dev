@@ -29,6 +29,8 @@ case $1 in
     --enable-decoder=aac --enable-decoder=alac --enable-decoder=shorten --enable-decoder=twinvq \
     --enable-decoder=tta --enable-decoder=ra_288 --enable-decoder=ra_144 \
     --enable-decoder=eac3 --enable-decoder=flac \
+    --enable-decoder=dsd_lsbf --enable-decoder=dsd_lsbf_planar --enable-decoder=dsd_msbf --enable-decoder=dsd_msbf_planar \
+    --enable-decoder=dca \
     --enable-demuxer=ape  --enable-demuxer=xwma --enable-demuxer=truehd \
     --enable-demuxer=aac  --enable-demuxer=shorten --enable-demuxer=rtsp \
     --enable-demuxer=tta --enable-demuxer=rtp \
