@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qttranslations-everywhere-src
-VERSION=5.12.7
+VERSION=5.12.8
 
 case $1 in
   --download)
