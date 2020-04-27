@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.3.7
+QMMP_VERSION=1.4.0
 UBUNTU_CODENAMES='xenial bionic eoan focal'
 BUILD_ROOT=build-root
 

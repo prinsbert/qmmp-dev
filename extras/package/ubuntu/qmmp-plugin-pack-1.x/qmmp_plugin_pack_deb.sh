@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.3.2
+PLUGIN_PACK_VERSION=1.4.0
 UBUNTU_CODENAMES='xenial bionic eoan focal'
 BUILD_ROOT=build-root
 
