@@ -1,0 +1,5 @@
+qmmp-in-ffmpeg (1.4.0) xenial; urgency=medium
+
+  * Initial release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 28 Apr 2020 23:41:18 +0300
