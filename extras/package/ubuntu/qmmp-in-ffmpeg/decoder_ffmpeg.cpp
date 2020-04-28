@@ -303,7 +303,7 @@ bool DecoderFFmpeg::initialize()
         m_totalTime = 0;
 #endif
 
-    Qmmp::AudioFormat format = Qmmp::PCM_UNKNOWM;
+    Qmmp::AudioFormat format = Qmmp::PCM_UNKNOWN;
 
     switch(c->sample_fmt)
     {

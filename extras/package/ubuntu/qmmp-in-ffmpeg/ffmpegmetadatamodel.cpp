@@ -48,11 +48,11 @@ FFmpegMetaDataModel::FFmpegMetaDataModel(const QString &path) : MetaDataModel(tr
         avformat_find_stream_info(in, nullptr);
         av_read_play(in);
 
-        AVCodecParameters *c = nullptr;
+        AVCodecContext *c = nullptr;
 
         for (uint idx = 0; idx < in->nb_streams; idx++)
         {
-            c = in->streams[idx]->codecpar;
+            c = in->streams[idx]->codec;
 
             if (c->codec_type == AVMEDIA_TYPE_VIDEO && c->codec_id == AV_CODEC_ID_MJPEG)
                 break;
