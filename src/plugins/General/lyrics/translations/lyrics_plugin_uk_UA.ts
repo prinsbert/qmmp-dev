@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.0" language="uk">
 <context>
     <name>Lyrics</name>
     <message>
@@ -108,6 +108,19 @@
         <location filename="../lyricswindow.ui" line="115"/>
         <source>Title:</source>
         <translation>Заголовок:</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <location filename="../settingsdialog.ui" line="14"/>
+        <source>Lyrics Plugin Settings</source>
+        <translation>Налаштування модуля текстів</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="29"/>
+        <source>Lyrics providers:</source>
+        <translation>Постачальники текстів:</translation>
     </message>
 </context>
 <context>

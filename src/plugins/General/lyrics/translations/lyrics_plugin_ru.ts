@@ -111,6 +111,19 @@
     </message>
 </context>
 <context>
+    <name>SettingsDialog</name>
+    <message>
+        <location filename="../settingsdialog.ui" line="14"/>
+        <source>Lyrics Plugin Settings</source>
+        <translation>Настройка модуля текстов песен</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="29"/>
+        <source>Lyrics providers:</source>
+        <translation>Провайдеры текстов песен:</translation>
+    </message>
+</context>
+<context>
     <name>UltimateLyricsParser</name>
     <message>
         <location filename="../ultimatelyricsparser.cpp" line="119"/>

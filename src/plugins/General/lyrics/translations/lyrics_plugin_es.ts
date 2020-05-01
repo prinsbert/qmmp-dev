@@ -111,6 +111,19 @@
     </message>
 </context>
 <context>
+    <name>SettingsDialog</name>
+    <message>
+        <location filename="../settingsdialog.ui" line="14"/>
+        <source>Lyrics Plugin Settings</source>
+        <translation>Configuración del complemento de letras</translation>
+    </message>
+    <message>
+        <location filename="../settingsdialog.ui" line="29"/>
+        <source>Lyrics providers:</source>
+        <translation>Proveedores de letras:</translation>
+    </message>
+</context>
+<context>
     <name>UltimateLyricsParser</name>
     <message>
         <location filename="../ultimatelyricsparser.cpp" line="119"/>
