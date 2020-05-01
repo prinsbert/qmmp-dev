@@ -71,7 +71,7 @@ Translators:
         Németh Gábor <sutee84@freemail.hu>
 
     Indonesian:
-        Andika Triwidada 
+        Andika Triwidada
         Wantoyo <wantoyek@gmail.com>
 
     Italian:
@@ -230,3 +230,7 @@ ReplayGainAnalysis (from MP3Gain) - analyzes input samples and give the recommen
 SMPlayer - GUI front-end for mplayer
 
     Ricardo Villalba <rvm@users.sourceforge.net>
+
+Ultimate Lyrics - lyrics plugin for Amarok 2.x series (C) 2009-2010
+
+    Vladimir Brkic <vladimir_brkic@yahoo.com>

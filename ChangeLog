@@ -1495,8 +1495,11 @@ Version 0.12.6
 
 Version 0.12.7
 * using gnudb.org as default CDDB server
+* added multiple lyrics providers support (based on Ultimare Lyrics plugin)
 * fixed several crashes in the file operations plugin
 * fixed mpris support
 * fixed text scroller issues in the skinned plugin
 * fixed cmake warning
+* fixed qtmultimedia plugin installation path (Gennady Motsyo)
+* updated Ukrainian translation (Gennady Motsyo)
 * updated Polish translation (mrerexx)
