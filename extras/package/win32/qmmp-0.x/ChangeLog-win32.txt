@@ -311,3 +311,12 @@ LEGEND
 0.12.6
 [*] qmmp-0.12.6
 [*] curl-7.68.0
+
+0.12.7
+[*] qmmp-0.12.7
+[*] qmmp-plugin-pack-0.12.2
+[*] curl-7.69.1
+[*] libxml2-2.9.10
+[*] glew-2.2.0
+[*] wavpack-2.2.0
+[*] game-music-emu-0.6.3
