@@ -122,6 +122,7 @@ bool DecoderVorbis::initialize()
     {
         freq = ogginfo->rate;
         chan = ogginfo->channels;
+        setProperty(Qmmp::FORMAT_NAME, "Ogg Vorbis");
     }
 
     ChannelMap chmap = findChannelMap(chan);

@@ -405,6 +405,7 @@ bool DecoderFLAC::initialize()
             return false;
         }
         qDebug("DecoderFLAC: Ogg FLAC stream found");
+        setProperty(Qmmp::FORMAT_NAME, "Ogg FLAC");
     }
     else if (!memcmp(buf, "fLaC", 4))
     {
@@ -423,6 +424,7 @@ bool DecoderFLAC::initialize()
             return false;
         }
         qDebug("DecoderFLAC: native FLAC stream found");
+        setProperty(Qmmp::FORMAT_NAME, "FLAC");
     }
     else
     {
