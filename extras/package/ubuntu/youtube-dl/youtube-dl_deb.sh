@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2020.06.06
+VERSION=2020.06.16.1
 UBUNTU_CODENAMES='xenial bionic eoan focal'
 BUILD_ROOT=build-root
 

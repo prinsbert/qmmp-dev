@@ -1,3 +1,9 @@
+youtube-dl (2020.06.16.1-1ubuntu1~focal0) focal; urgency=medium
+
+  * New upstream release.
+
+ -- Rogério Brito <rbrito@ime.usp.br>  Tue, 14 Jul 2020 13:12:47 +0300
+
 youtube-dl (2020.06.06-1ubuntu1~focal0) focal; urgency=medium
 
   * New upstream release.
