@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=xa
-VERSION=2.3.10
+VERSION=2.3.11
 
 case $1 in
   --download)
