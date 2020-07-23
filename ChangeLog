@@ -1503,3 +1503,9 @@ Version 0.12.7
 * fixed qtmultimedia plugin installation path (Gennady Motsyo)
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Polish translation (mrerexx)
+
+Version 0.12.8
+* fixed 'jump to track' dialog delay
+* fixed some streams detection in the mpeg plugin
+* fixed codec and bitrate displaying for IceCast streams
+* fixed playback startup detection in the mpris plugin
