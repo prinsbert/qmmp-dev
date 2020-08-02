@@ -1,3 +1,9 @@
+qmmp (0.12.8-1ubuntu1~precise0) precise; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 02 Aug 2020 13:06:33 +0300
+
 qmmp (0.12.7-1ubuntu1~precise0) precise; urgency=medium
 
   * New upstream release.
