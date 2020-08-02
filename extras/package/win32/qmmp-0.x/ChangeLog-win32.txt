@@ -320,3 +320,9 @@ LEGEND
 [*] glew-2.2.0
 [*] wavpack-2.2.0
 [*] game-music-emu-0.6.3
+
+0.12.8
+[*] qmmp-0.12.8
+[*] curl-7.71.1
+[*] libsidplayfp-2.0.4
+[*] opusfile-0.12
