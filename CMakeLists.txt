@@ -6,7 +6,7 @@ include_directories(SYSTEM /usr/local/include)
 SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/local/include)
 
 #Qt5 modules
-#SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt512/lib/cmake)
+SET(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /opt/qt515/lib/cmake)
 
 #installation paths
 include(GNUInstallDirs)
