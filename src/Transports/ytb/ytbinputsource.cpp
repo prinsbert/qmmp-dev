@@ -74,7 +74,7 @@ YtbInputSource::~YtbInputSource()
     }
 }
 
-QIODevice *YtbInputSource::ioDevice()
+QIODevice *YtbInputSource::ioDevice() const
 {
     return m_buffer;
 }
@@ -98,12 +98,12 @@ bool YtbInputSource::initialize()
     return true;
 }
 
-bool YtbInputSource::isReady()
+bool YtbInputSource::isReady() const
 {
     return m_ready;
 }
 
-bool YtbInputSource::isWaiting()
+bool YtbInputSource::isWaiting() const
 {
     return false;
 }
