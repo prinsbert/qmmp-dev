@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright(C) 2006-2019 by Ilya Kotov                                  *
+ *   Copyright(C) 2006-2020 by Ilya Kotov                                  *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -959,7 +959,7 @@ void PlayListModel::onTaskFinished()
             || m_task->type() == PlayListTask::REFRESH)
     {
         PlayListTrack *prev_current_track = m_current_track;
-        bool prev_count = m_container->count();
+        int prev_count = m_container->count();
 
         m_container->replaceTracks(m_task->takeResults(&m_current_track));
 
