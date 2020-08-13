@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -48,11 +48,11 @@ public:
     int videoIndex() const;
 
 private:
-    AVFormatContext *m_formatContext;
-    AVCodecContext *m_audioCodecContext;
-    AVCodecContext *m_videoCodecContext;
-    int m_audioIndex, m_videoIndex;
-    qint64 m_totalTime;
+    AVFormatContext *m_formatContext = nullptr;
+    AVCodecContext *m_audioCodecContext = nullptr;
+    AVCodecContext *m_videoCodecContext = nullptr;
+    int m_audioIndex = 0, m_videoIndex = 0;
+    qint64 m_totalTime = 0;
 };
 
 #endif // FFVIDEODECODER_H

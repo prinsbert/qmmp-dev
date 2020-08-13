@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,14 +21,7 @@
 #include "ffvideodecoder.h"
 
 FFVideoDecoder::FFVideoDecoder()
-{
-   m_formatContext = nullptr;
-   m_audioCodecContext = nullptr;
-   m_videoCodecContext = nullptr;
-   m_audioIndex = 0;
-   m_videoIndex = 0;
-   m_totalTime = 0;
-}
+{}
 
 FFVideoDecoder::~FFVideoDecoder()
 {

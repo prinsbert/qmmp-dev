@@ -30,7 +30,7 @@ class BufferDevice : public QIODevice
 {
     Q_OBJECT
 public:
-    BufferDevice(QObject *parent);
+    explicit BufferDevice(QObject *parent);
     ~BufferDevice();
 
     bool addData(const QByteArray &data);

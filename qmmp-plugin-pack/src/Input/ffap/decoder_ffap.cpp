@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,13 +27,13 @@
 //callbacks
 size_t ffap_read_cb(void *ptr, size_t size, size_t nmemb, void *client_data)
 {
-    DecoderFFap *dffap = (DecoderFFap *) client_data;
+    DecoderFFap *dffap = static_cast<DecoderFFap *>(client_data);
     return dffap->input()->read((char *) ptr, size * nmemb);
 }
 
 int ffap_seek_cb(int64_t offset, int whence, void *client_data)
 {
-    DecoderFFap *dffap = (DecoderFFap *) client_data;
+    DecoderFFap *dffap = static_cast<DecoderFFap *>(client_data);
     bool ok = false;
     switch(whence)
     {
@@ -52,22 +52,20 @@ int ffap_seek_cb(int64_t offset, int whence, void *client_data)
 
 int64_t ffap_tell_cb(void *client_data)
 {
-    DecoderFFap *dffap = (DecoderFFap *) client_data;
+    DecoderFFap *dffap = static_cast<DecoderFFap *>(client_data);
     return dffap->input()->pos();
 }
 
 int64_t ffap_getlength_cb(void *client_data)
 {
-    DecoderFFap *dffap = (DecoderFFap *) client_data;
+    DecoderFFap *dffap = static_cast<DecoderFFap *>(client_data);
     return dffap->input()->size();
 }
 
 // Decoder class
-DecoderFFap::DecoderFFap(const QString &path, QIODevice *i)
-        : Decoder(i)
+DecoderFFap::DecoderFFap(const QString &path, QIODevice *i) : Decoder(i),
+    m_path(path)
 {
-    //m_data = 0;
-    m_path = path;
     ffap_load();
 }
 

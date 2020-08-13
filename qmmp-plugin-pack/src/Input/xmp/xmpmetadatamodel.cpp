@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2015-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,9 +21,8 @@
 #include <QFile>
 #include "xmpmetadatamodel.h"
 
-XmpMetaDataModel::XmpMetaDataModel(const QString &path) : MetaDataModel(true)
+XmpMetaDataModel::XmpMetaDataModel(const QString &path) : MetaDataModel(true), m_path(path)
 {
-    m_path = path;
     m_ctx = xmp_create_context();
     int err = xmp_load_module(m_ctx, m_path.toLocal8Bit().data());
     if(err != 0)

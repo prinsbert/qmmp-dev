@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,8 +28,6 @@
 
 FFapMetaDataModel::FFapMetaDataModel(const QString &path, bool readOnly) : MetaDataModel(true)
 {
-    m_stream = nullptr;
-    m_file = nullptr;
     if(path.contains("://"))
     {
         QString p = path;
@@ -80,11 +78,10 @@ QString FFapMetaDataModel::coverPath() const
     return MetaDataManager::instance()->findCoverFile(m_path);
 }
 
-FFapFileTagModel::FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::TagTypes tagType)
-        : TagModel()
+FFapFileTagModel::FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::TagTypes tagType) : TagModel(),
+    m_file(file),
+    m_tagType(tagType)
 {
-    m_tagType = tagType;
-    m_file = file;
     if (m_tagType == TagLib::APE::File::ID3v1)
     {
         m_tag = m_file->ID3v1Tag();

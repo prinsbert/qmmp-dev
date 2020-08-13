@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -50,7 +50,7 @@ public:
     QWaitCondition *cond();
 
 private:
-    unsigned int m_size, m_add_index, m_done_index, m_current_count;
+    unsigned int m_size, m_add_index = 0, m_done_index = 0, m_current_count = 0;
     AVPacket **m_packets;
     QMutex m_mutex;
     QWaitCondition m_condition;
