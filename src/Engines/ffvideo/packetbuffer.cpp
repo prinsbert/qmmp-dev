@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,12 +20,8 @@
 
 #include "packetbuffer.h"
 
-PacketBuffer::PacketBuffer(int size)
+PacketBuffer::PacketBuffer(int size) : m_size(size)
 {
-    m_size = size;
-    m_add_index = 0;
-    m_done_index = 0;
-    m_current_count = 0;
     m_packets = new AVPacket*[size];
     for(unsigned int i = 0; i < m_size; ++i)
     {

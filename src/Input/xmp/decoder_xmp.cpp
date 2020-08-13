@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2015-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,13 +28,9 @@
 
 DecoderXmp *DecoderXmp::m_instance = nullptr;
 
-DecoderXmp::DecoderXmp(const QString &path) : Decoder(nullptr)
+DecoderXmp::DecoderXmp(const QString &path) : Decoder(nullptr), m_path(path)
 {
     m_instance = this;
-    m_path = path;
-    m_ctx = nullptr;
-    m_srate = 44100;
-    m_totalTime = 0;
 }
 
 DecoderXmp::~DecoderXmp()

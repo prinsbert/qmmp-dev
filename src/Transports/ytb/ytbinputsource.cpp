@@ -32,9 +32,8 @@
 
 #define PREBUFFER_SIZE 128000
 
-YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSource(url, parent)
+YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSource(url, parent), m_url(url)
 {
-    m_url = url;
     m_buffer = new BufferDevice(this);
     m_process = new QProcess(this);
     m_manager = new QNetworkAccessManager(this);
@@ -193,7 +192,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     while (it != headers.end())
     {
         request.setRawHeader(it.key().toLatin1(), it.value().toString().toLatin1());
-        it++;
+        ++it;
     }
 
     m_getStreamReply = m_manager->get(request);
