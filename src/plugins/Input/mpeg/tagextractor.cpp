@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2020 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -106,6 +106,11 @@ ID3v2Tag::ID3v2Tag(QByteArray *array, long offset) : TagLib::ID3v2::Tag()
     m_buf->open(QIODevice::ReadOnly);
     m_offset = offset;
     read();
+}
+
+ID3v2Tag::~ID3v2Tag()
+{
+    delete m_buf;
 }
 
 void ID3v2Tag::read ()
