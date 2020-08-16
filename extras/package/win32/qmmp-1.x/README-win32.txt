@@ -15,6 +15,9 @@ Extra plugins (see http://qmmp.ylsoftware.com/plugins.php):
   - FFap - enhanced Monkey's Audio (APE) decoder;
   - Goom - audio visualization based on goom project.
 
+Third-party plugins:
+  - qmmp-adplug - AdPlug-based AdLib input plugin for Qmmp (Web page: https://github.com/cspiegel/qmmp-adplug)
+
 This archive also contains third-party libraries. Source code of these libraries
 is freely available on the Internet.
 
@@ -52,6 +55,8 @@ List of the third-party libraries.
   librcd              0.1.14     http://rusxmms.sourceforge.net/
   librcc              0.2.12     http://rusxmms.sourceforge.net/
   mpg123              1.25.13    https://www.mpg123.de/
+  adplug              2.3.3      https://github.com/adplug/adplug
+  libbinio            1.5        https://github.com/adplug/libbinio
 
 
 List of the third-party artwork.

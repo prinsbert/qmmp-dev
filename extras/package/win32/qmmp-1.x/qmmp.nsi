@@ -254,6 +254,14 @@ Section /o "Use Simple UI by default"
   File qmmprc.default
 SectionEnd
 
+
+Section /o "AdLib formats support (AdPlug)"
+  SetOutPath "$INSTDIR"
+  File adplug\libbinio*.dll
+  File adplug\libadplug*.dll
+  File /oname=plugins\Input\cas-adplug.dll adplug\cas-adplug.dll
+SectionEnd
+
 Section "Start Menu Shortcuts" SHORTCUTS
   ${IfNot} ${SectionIsSelected} ${PORTABLE}
     SetShellVarContext all

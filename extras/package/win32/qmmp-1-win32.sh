@@ -36,6 +36,16 @@ download_plugins_tarball()
   cd ..
 }
 
+download_qmmp_adplug_archive()
+{
+  mkdir -p tmp
+  cd tmp
+  echo 'downloading qmmp-adplug...'
+  wget -nc https://github.com/cspiegel/qmmp-adplug/archive/master.zip
+  7za x -y master.zip
+  cd ..
+}
+
 download_qmmp_svn()
 {
   mkdir -p tmp
@@ -64,6 +74,11 @@ build ()
   cd ..
   cd qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
   qmake CONFIG+=release INCLUDEPATH+=`dirs`/../qmmp-${QMMP_VERSION}/src QMAKE_LIBDIR+=`dirs`/../qmmp-${QMMP_VERSION}/bin
+  mingw32-make -j${JOBS}
+  cd ..
+  cd qmmp-adplug-master
+  qmake CONFIG+=release INCLUDEPATH+=`dirs`/../qmmp-${QMMP_VERSION}/src QMAKE_LIBDIR+=`dirs`/../qmmp-${QMMP_VERSION}/bin LIBS+=-lqmmp1 QT+=widgets CONFIG+=link_pkgconfig PKGCONFIG+=adplug \
+  CONFIG+=hide_symbols
   mingw32-make -j${JOBS}
   cd ..
 }
@@ -144,6 +159,13 @@ create_distr ()
     cp -v ${PREFIX}/bin/${LIB_NAME} ./rusxmms
   done
   cp -v	${PREFIX}/taglib-rusxmms/bin/libtag.dll ./rusxmms	     
+  #adplug
+  mkdir -p adplug
+  for LIB_NAME in libadplug*.dll libbinio*.dll
+  do
+    cp -v ${PREFIX}/bin/${LIB_NAME} ./adplug/
+  done
+  cp -v ../qmmp-adplug-master/release/*.dll ./adplug/
   cd ..
 }
 
@@ -154,6 +176,7 @@ case $1 in
     download_plugins_tarball
     #download_qmmp_svn
     #download_plugins_svn
+    download_qmmp_adplug_archive
   ;;
   --install)
     cd tmp
