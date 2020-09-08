@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=0.12.8
-UBUNTU_CODENAMES='precise trusty xenial bionic eoan'
+UBUNTU_CODENAMES='precise trusty xenial bionic'
 BUILD_ROOT=build-root
 
 
@@ -22,7 +22,7 @@ build ()
     mkdir qmmp-$QMMP_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-$QMMP_VERSION/debian/
     cp ../qmmp_$QMMP_VERSION.orig.tar.gz ./
-    if [ "$1" = "xenial" ] || [ "$1" = "bionic" ] || [ "$1" = "eoan" ] ; then
+    if [ "$1" = "xenial" ] || [ "$1" = "bionic" ] ; then
         mv ./qmmp_$QMMP_VERSION.orig.tar.gz ./qmmp-qt4_$QMMP_VERSION.orig.tar.gz
     fi
     cd qmmp-$QMMP_VERSION
