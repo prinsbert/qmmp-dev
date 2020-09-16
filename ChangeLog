@@ -1509,3 +1509,8 @@ Version 0.12.8
 * fixed some streams detection in the mpeg plugin
 * fixed codec and bitrate displaying for IceCast streams
 * fixed playback startup detection in the mpris plugin
+
+Version 0.12.9
+* fixed playlist updating
+* fixed memory leak
+* fixed xing header parsing in the mpeg plugin
