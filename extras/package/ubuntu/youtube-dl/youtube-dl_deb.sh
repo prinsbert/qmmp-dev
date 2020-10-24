@@ -17,10 +17,10 @@ build ()
     mkdir $1
     cd $1
     tar xvzf ../../youtube-dl-$VERSION.tar.gz
-    mkdir youtube-dl/debian
-    cp -rv ../../debian-$1/* -t youtube-dl/debian/
+    mkdir youtube-dl-$VERSION/debian
+    cp -rv ../../debian-$1/* -t youtube-dl-$VERSION/debian/
     cp ../youtube-dl_$VERSION.orig.tar.gz ./
-    cd youtube-dl
+    cd youtube-dl-$VERSION
     if [ "$1" = "xenial" ] ; then
         debuild -S -sa -d -kF594F6B4
     else
