@@ -1,3 +1,9 @@
+qmmp-plugin-pack (1.4.0-1ubuntu1~bionic1) bionic; urgency=medium
+
+  * Rebuild.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 24 Oct 2020 12:59:30 +0300
+
 qmmp-plugin-pack (1.4.0-1ubuntu1~bionic0) bionic; urgency=medium
 
   * New upstream release.
