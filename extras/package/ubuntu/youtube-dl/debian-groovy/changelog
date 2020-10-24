@@ -1,44 +1,51 @@
-youtube-dl (2020.09.20-1ubuntu1~focal0) focal; urgency=medium
+youtube-dl (2020.09.20-1ubuntu1~groovy1) groovy; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 24 Oct 2020 12:11:37 +0300
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 24 Oct 2020 12:33:18 +0300
 
-youtube-dl (2020.09.14-1ubuntu1~focal0) focal; urgency=medium
+youtube-dl (2020.09.14-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2020.09.14.
+    + Fixes problems with YouTube and downloads from Google Drive.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 16 Sep 2020 23:54:13 +0300
+ -- Rogério Brito <rbrito@ime.usp.br>  Sun, 13 Sep 2020 21:30:13 -0300
 
-youtube-dl (2020.09.06-1ubuntu1~focal0) focal; urgency=medium
+youtube-dl (2020.07.28-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2020.07.28
+    + Fixes problems with some playlists from YouTube (among other things).
+  * debian/control: Update list of supported sites.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 08 Sep 2020 23:24:44 +0300
+ -- Rogério Brito <rbrito@ime.usp.br>  Mon, 10 Aug 2020 13:56:03 -0300
 
-youtube-dl (2020.07.28-1ubuntu1~focal0) focal; urgency=medium
+youtube-dl (2020.06.16.1-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2020.06.16.1
+    + Fixes problems with some metadata from YouTube.
 
- -- Rogério Brito <rbrito@ime.usp.br>  Thu, 30 Jul 2020 15:47:00 +0300
+ -- Rogério Brito <rbrito@ime.usp.br>  Wed, 17 Jun 2020 18:22:20 -0300
 
-youtube-dl (2020.06.16.1-1ubuntu1~focal0) focal; urgency=medium
+youtube-dl (2020.06.16-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2020.06.16.
+    + Fixes problems when downloading YouTube playlists.
 
- -- Rogério Brito <rbrito@ime.usp.br>  Tue, 14 Jul 2020 13:12:47 +0300
+ -- Rogério Brito <rbrito@ime.usp.br>  Mon, 15 Jun 2020 17:14:11 -0300
 
-youtube-dl (2020.06.06-1ubuntu1~focal0) focal; urgency=medium
+youtube-dl (2020.05.08-1) unstable; urgency=medium
 
-  * New upstream release.
+  [ Debian Janitor ]
+  * debian/copyright: use spaces rather than tabs to start continuation lines.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Use canonical URL in Vcs-Git.
 
- -- Rogério Brito <rbrito@ime.usp.br>  Sat, 06 Jun 2020 16:22:59 +0300
+  [ Rogério Brito ]
+  * New upstream version 2020.05.08
+  * debian/control: Upgrade debhelper-compat to 13.
 
-youtube-dl (2020.05.08-1ubuntu1~focal0) focal; urgency=medium
-
-  * New upstream release.
-
- -- Rogério Brito <rbrito@ime.usp.br>  Sun, 24 May 2020 13:01:37 +0300
+ -- Rogério Brito <rbrito@ime.usp.br>  Wed, 13 May 2020 15:37:41 -0300
 
 youtube-dl (2020.03.24-1) unstable; urgency=medium
 

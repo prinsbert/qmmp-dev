@@ -1,7 +1,7 @@
 #!/bin/sh
 
-VERSION=2020.09.06
-UBUNTU_CODENAMES='xenial bionic focal'
+VERSION=2020.09.20
+UBUNTU_CODENAMES='xenial bionic focal groovy'
 BUILD_ROOT=build-root
 
 
