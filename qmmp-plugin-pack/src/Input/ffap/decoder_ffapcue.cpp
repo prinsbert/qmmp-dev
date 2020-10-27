@@ -20,7 +20,7 @@
 
 #include <QObject>
 #include <QFile>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
 #include <taglib/tfilestream.h>
@@ -57,7 +57,7 @@ bool DecoderFFapCUE::initialize()
         return false;
     }
     filePath.remove("ape://");
-    filePath.remove(QRegExp("#\\d+$"));
+    filePath.remove(QRegularExpression("#\\d+$"));
     m_track = m_url.section("#", -1).toInt();
 
     TagLib::FileStream stream(QStringToFileName(filePath), true);

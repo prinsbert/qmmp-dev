@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QStringList>
-#include <QRegExp>
 #include <QMessageBox>
 #include <xmp.h>
 #include "settingsdialog.h"

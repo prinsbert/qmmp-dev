@@ -24,7 +24,7 @@
 #include <QAction>
 #include <QKeyEvent>
 #include <QMenu>
-#include <QRegExp>
+#include <QDir>
 #include <QSettings>
 #include <QFileInfo>
 #include <qmmp/trackinfo.h>
@@ -81,15 +81,7 @@ bool FFmpegEngine::play()
 
 bool FFmpegEngine::enqueue(InputSource *source)
 {
-    const QStringList filters = m_factory->properties().filters;
-    bool supports = false;
-    for(const QString &filter : qAsConst(filters))
-    {
-        QRegExp regexp(filter, Qt::CaseInsensitive, QRegExp::Wildcard);
-        if((supports = regexp.exactMatch(source->path())))
-            break;
-    }
-    if(!supports)
+    if(!QDir::match(m_factory->properties().filters, source->path().section(QChar('/'), -1)))
         return false;
 
     FFVideoDecoder *decoder = new FFVideoDecoder();
