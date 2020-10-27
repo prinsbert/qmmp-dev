@@ -41,12 +41,11 @@ EngineProperties FFVideoFactory::properties() const
     EngineProperties properties;
     properties.name = tr("FFmpeg Video Plugin");
     properties.shortName = "ffvideo";
-    properties.filters << "*.avi" << "*.mpg" << "*.mpeg" << "*.divx" << "*.qt"
-                       << "*.mov" << "*.wmv" << "*.asf" << "*.flv" << "*.3gp"
-                       << "*.mkv" << "*.mp4" << "*.webm";
+    properties.filters = QStringList { "*.avi", "*.mpg", "*.mpeg", "*.divx", "*.qt",
+            "*.mov", "*.wmv", "*.asf", "*.flv", "*.3gp", "*.mkv", "*.mp4", "*.webm" };
     properties.description = tr("Video Files");
     //properties.contentType = "application/ogg;audio/x-vorbis+ogg";
-    properties.protocols << "file";
+    properties.protocols = QStringList { "file" };
     properties.hasAbout = true;
     properties.hasSettings = false;
     return properties;
