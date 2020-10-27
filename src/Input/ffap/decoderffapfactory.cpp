@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QMessageBox>
 #include <taglib/apefile.h>
 #include <taglib/apetag.h>
@@ -69,7 +69,7 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
     if(path.contains("://"))
     {
         filePath.remove("ape://");
-        filePath.remove(QRegExp("#\\d+$"));
+        filePath.remove(QRegularExpression("#\\d+$"));
         track = path.section("#", -1).toInt();
         parts = TrackInfo::AllParts; //extract all metadata for single cue track
     }

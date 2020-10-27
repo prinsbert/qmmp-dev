@@ -20,6 +20,7 @@
 
 #include <QMessageBox>
 #include <QtPlugin>
+#include <QDir>
 #include "ffvideofactory.h"
 #include "ffmpegengine.h"
 #include "ffvideometadatamodel.h"
@@ -53,13 +54,7 @@ EngineProperties FFVideoFactory::properties() const
 
 bool FFVideoFactory::supports(const QString &source) const
 {
-    for(const QString &filter : properties().filters)
-    {
-        QRegExp regexp(filter, Qt::CaseInsensitive, QRegExp::Wildcard);
-        if (regexp.exactMatch(source))
-            return true;
-    }
-    return false;
+    return QDir::match(properties().filters, source.section(QChar('/'), -1));
 }
 
 AbstractEngine *FFVideoFactory::create(QObject *parent)

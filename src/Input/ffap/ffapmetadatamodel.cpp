@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include <QTextCodec>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <taglib/tag.h>
 #include <taglib/id3v1tag.h>
 #include <taglib/apetag.h>
@@ -32,7 +32,7 @@ FFapMetaDataModel::FFapMetaDataModel(const QString &path, bool readOnly) : MetaD
     {
         QString p = path;
         p.remove("ape://");
-        p.remove(QRegExp("#\\d+$"));
+        p.remove(QRegularExpression("#\\d+$"));
         m_path = p;
         m_stream = new TagLib::FileStream(QStringToFileName(p), true);
         m_file = new TagLib::APE::File(m_stream);
