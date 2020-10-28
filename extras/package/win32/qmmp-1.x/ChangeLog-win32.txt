@@ -353,3 +353,8 @@ LEGEND
 [+] adplug-2.3.3
 [+] libbinio-1.5
 [+] qmmp-adplug
+
+1.4.3
+[*] qmmp-1.4.3
+[*] curl-7.73.0
+[*] libsidplayfp-2.0.5

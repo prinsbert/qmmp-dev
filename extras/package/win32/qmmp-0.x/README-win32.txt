@@ -35,7 +35,7 @@ List of the third-party libraries.
   opus                1.3.1      http://www.opus-codec.org/
   opusfile            0.12       http://www.opus-codec.org/
   libbs2b             3.1.0      http://bs2b.sourceforge.net/
-  curl                7.72.0     http://curl.haxx.se/
+  curl                7.73.0     http://curl.haxx.se/
   libcdio             0.83       http://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
@@ -45,7 +45,7 @@ List of the third-party libraries.
   musepack            r475       http://www.musepack.net/
   glew                2.2.0      http://glew.sourceforge.net/
   projectm            2.1.0      http://projectm.sourceforge.net/
-  libsidplayfp        2.0.4      http://sourceforge.net/projects/sidplay-residfp/
+  libsidplayfp        2.0.5      http://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       http://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   libxml2             2.9.10     http://xmlsoft.org/
