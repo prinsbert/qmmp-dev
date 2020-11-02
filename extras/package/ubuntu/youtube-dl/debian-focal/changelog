@@ -1,3 +1,9 @@
+youtube-dl (2020.11.01.1-1ubuntu1~focal0) focal; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 02 Nov 2020 09:56:04 +0300
+
 youtube-dl (2020.09.20-1ubuntu1~focal1) focal; urgency=medium
 
   * New upstream release.

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2020.09.20
+VERSION=2020.11.01.1
 UBUNTU_CODENAMES='xenial bionic focal groovy'
 BUILD_ROOT=build-root
 
@@ -17,10 +17,10 @@ build ()
     mkdir $1
     cd $1
     tar xvzf ../../youtube-dl-$VERSION.tar.gz
-    mkdir youtube-dl-$VERSION/debian
-    cp -rv ../../debian-$1/* -t youtube-dl-$VERSION/debian/
+    mkdir youtube-dl/debian
+    cp -rv ../../debian-$1/* -t youtube-dl/debian/
     cp ../youtube-dl_$VERSION.orig.tar.gz ./
-    cd youtube-dl-$VERSION
+    cd youtube-dl
     if [ "$1" = "xenial" ] ; then
         debuild -S -sa -d -kF594F6B4
     else
