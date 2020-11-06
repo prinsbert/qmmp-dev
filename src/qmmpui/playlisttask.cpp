@@ -461,6 +461,7 @@ void PlayListTask::run()
             foreach (TrackInfo *info, mm->createPlayList(f.canonicalFilePath(), parts, &ignored))
             {
                 m_new_tracks << new PlayListTrack(info);
+                delete info;
             }
             ignoredFiles.append(ignored);
         }
