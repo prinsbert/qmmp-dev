@@ -47,13 +47,18 @@ ConverterDialog::ConverterDialog(QList <PlayListTrack *> tracks,  QWidget *paren
     foreach(PlayListTrack *track, tracks)
     {
         //skip streams
-        if(track->duration() == 0 || track->path().contains("://"))
+        if(track->duration() == 0 && track->path().contains("://"))
             continue;
         //skip duplicates
         if(paths.contains(track->path()))
             continue;
         //skip unsupported files
-        if(!MetaDataManager::instance()->supports(track->path()))
+        if(track->path().contains("://"))
+        {
+            if(!Decoder::findByProtocol(track->path().section("://",0,0)))
+                continue;
+        }
+        else if(!MetaDataManager::instance()->supports(track->path()))
             continue;
 
         paths.append(track->path());
