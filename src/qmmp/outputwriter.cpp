@@ -374,13 +374,11 @@ void OutputWriter::run()
             if(m < 0)
                 break;
         }
-        mutex()->lock();
         //force buffer change
         recycler()->mutex()->lock ();
         recycler()->done();
         recycler()->mutex()->unlock();
         b = 0;
-        mutex()->unlock();
     }
     mutex()->lock ();
     //write remaining data
