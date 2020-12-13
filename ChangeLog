@@ -1514,3 +1514,10 @@ Version 0.12.9
 * fixed playlist updating
 * fixed memory leak
 * fixed xing header parsing in the mpeg plugin
+
+Version 0.12.10
+* fixed dithering
+* fixed memory leak
+* fixed ignored files checking
+* fixed cue tracks support in the converter plugin
+* fixed possible freezing on playback resume
