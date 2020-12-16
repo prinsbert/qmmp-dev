@@ -1,3 +1,9 @@
+qmmp (1.4.3-1ubuntu1~bionic0) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 16 Dec 2020 23:58:14 +0300
+
 qmmp (1.4.2-1ubuntu1~bionic0) bionic; urgency=medium
 
   * New upstream release.
