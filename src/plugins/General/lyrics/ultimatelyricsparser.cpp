@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019 by Ilya Kotov                                      *
+ *   Copyright (C) 2019-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Based on Amarok 2 Ultimate Lyrics script                              *
@@ -146,8 +146,7 @@ LyricsProvider *UltimateLyricsParser::provider(const QString &name) const
 QStringList UltimateLyricsParser::defaultProviders()
 {
     QStringList out;
-    out << "lyrics.wikia.com"
-        << "Encyclopaedia Metallum"
+    out << "Encyclopaedia Metallum"
         << "letras.mus.br"
         << "darklyrics.com";
 
