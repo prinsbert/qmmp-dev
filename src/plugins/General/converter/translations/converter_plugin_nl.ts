@@ -26,7 +26,7 @@
         <translation>Bezig met omzetten</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="276"/>
+        <location filename="../converter.cpp" line="280"/>
         <source>Finished</source>
         <translation>Afgerond</translation>
     </message>
@@ -51,32 +51,32 @@
     <message>
         <location filename="../converterdialog.ui" line="63"/>
         <source>Output directory:</source>
-        <translation>Uitvoer map:</translation>
+        <translation>Uitvoermap:</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="80"/>
         <source>Output file name:</source>
-        <translation>Uitvoer bestandsnaam:</translation>
+        <translation>Uitvoerbestandsnaam:</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="97"/>
         <source>Preset:</source>
-        <translation>Profiel:</translation>
+        <translation>Voorinstelling:</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="114"/>
         <source>Overwrite existing files</source>
-        <translation>Overschrijv bestaande bestanden</translation>
+        <translation>Bestaande bestanden overschrijven</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="124"/>
         <source>Convert</source>
-        <translation>Converteer</translation>
+        <translation>Converteren</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="131"/>
         <source>Stop</source>
-        <translation>Stoppen</translation>
+        <translation>Afbreken</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="113"/>
@@ -91,7 +91,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="203"/>
         <source>Create a Copy</source>
-        <translation>Kopie creëren</translation>
+        <translation>Kopie maken</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="134"/>
@@ -108,17 +108,17 @@
     <message>
         <location filename="../converterdialog.cpp" line="201"/>
         <source>Create</source>
-        <translation>Creëer</translation>
+        <translation>Maken</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="202"/>
         <source>Edit</source>
-        <translation>Bewerk</translation>
+        <translation>Bewerken</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="204"/>
         <source>Delete</source>
-        <translation>Verwijder</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="358"/>
@@ -136,22 +136,22 @@
     <message>
         <location filename="../converterfactory.cpp" line="28"/>
         <source>Converter Plugin</source>
-        <translation>Converteer Module</translation>
+        <translation>Converteerplug-in</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="49"/>
         <source>About Converter Plugin</source>
-        <translation>Over de Converteer Module</translation>
+        <translation>Over de converteerplug-in</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="50"/>
         <source>Qmmp Converter Plugin</source>
-        <translation>Converteer Module voor Qmmp</translation>
+        <translation>Converteerplug-in voor Qmmp</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="51"/>
         <source>This plugin converts supported audio files to other file formats using external command-line encoders</source>
-        <translation>Deze module converteert ondersteunde audiobestanden naar andere formaten door gebruik van externe commando prompt encoders</translation>
+        <translation>Deze module converteert ondersteunde audiobestanden naar andere formaten middels externe opdrachtregel-encoders</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="53"/>
@@ -164,7 +164,7 @@
     <message>
         <location filename="../converterhelper.cpp" line="33"/>
         <source>Convert</source>
-        <translation>Converteer</translation>
+        <translation>Converteren</translation>
     </message>
     <message>
         <location filename="../converterhelper.cpp" line="34"/>
@@ -177,7 +177,7 @@
     <message>
         <location filename="../preseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation>Profiel Bewerker</translation>
+        <translation>Voorinstellingen bewerken</translation>
     </message>
     <message>
         <location filename="../preseteditor.ui" line="29"/>
@@ -197,7 +197,7 @@
     <message>
         <location filename="../preseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation>Commando</translation>
+        <translation>Opdracht</translation>
     </message>
     <message>
         <location filename="../preseteditor.ui" line="77"/>
@@ -207,27 +207,27 @@
     <message>
         <location filename="../preseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation>Schrijf tags</translation>
+        <translation>Tags toekennen</translation>
     </message>
     <message>
         <location filename="../preseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation>Converteer naar 16bit</translation>
+        <translation>Converteren naar 16-bit</translation>
     </message>
     <message>
         <location filename="../preseteditor.cpp" line="37"/>
         <source>%1 (Read Only)</source>
-        <translation>%1 (Alleen Lezen)</translation>
+        <translation>%1 (alleen-lezen)</translation>
     </message>
     <message>
         <location filename="../preseteditor.cpp" line="70"/>
         <source>Output file</source>
-        <translation>Uitvoer bestand</translation>
+        <translation>Uitvoerbestand</translation>
     </message>
     <message>
         <location filename="../preseteditor.cpp" line="71"/>
         <source>Input file</source>
-        <translation>Invoer bestand</translation>
+        <translation>Invoerbestand</translation>
     </message>
 </context>
 </TS>

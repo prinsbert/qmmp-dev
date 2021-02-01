@@ -192,17 +192,17 @@
     <message>
         <location filename="../columneditor.cpp" line="91"/>
         <source>Track Number</source>
-        <translation>Nummer</translation>
+        <translation>Volgnummer</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="92"/>
         <source>Two-digit Track Number</source>
-        <translation>2 cijferig nummer</translation>
+        <translation>Tweecijferig volgnummer</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="97"/>
         <source>Disc Number</source>
-        <translation>Schijf nummer</translation>
+        <translation>Schijfnummer</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="98"/>
@@ -870,7 +870,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="249"/>
         <source>Disc number</source>
-        <translation>CD nummer</translation>
+        <translation>Schijfnummer</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="267"/>
@@ -1014,12 +1014,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="32"/>
         <source>Track Number</source>
-        <translation>Nummer</translation>
+        <translation>Volgnummer</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Two-digit Track Number</source>
-        <translation>2 cijferige nummer</translation>
+        <translation>Tweecijferig volgnummer</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="37"/>
@@ -1084,7 +1084,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="42"/>
         <source>Disc Number</source>
-        <translation>Schijf nummer</translation>
+        <translation>Schijfnummer</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="47"/>
@@ -1243,7 +1243,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="250"/>
         <source>Disc number:</source>
-        <translation>CD nummer:</translation>
+        <translation>Schijfnummer:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="275"/>

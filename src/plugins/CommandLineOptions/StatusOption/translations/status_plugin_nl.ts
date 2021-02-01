@@ -71,7 +71,7 @@
     <message>
         <location filename="../statusoption.cpp" line="104"/>
         <source>%D - disc number</source>
-        <translation>%D - CD nummer</translation>
+        <translation>%D - schijfnummer</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="105"/>

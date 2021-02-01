@@ -63,7 +63,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="126"/>
         <source>Invalid number of arguments</source>
-        <translation>Ongeldig nummer van argumenten</translation>
+        <translation>Ongeldig aantal aanvullende opties</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="136"/>

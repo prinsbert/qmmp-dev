@@ -858,7 +858,7 @@
         <location filename="../playlist.cpp" line="259"/>
         <location filename="../playlist.cpp" line="299"/>
         <source>By Disc Number</source>
-        <translation>Op CD nummer</translation>
+        <translation>Op volgnummer</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="241"/>
@@ -894,7 +894,7 @@
         <location filename="../playlist.cpp" line="256"/>
         <location filename="../playlist.cpp" line="296"/>
         <source>By Track Number</source>
-        <translation>Op Lied Nummer</translation>
+        <translation>Op volgnummer</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="262"/>

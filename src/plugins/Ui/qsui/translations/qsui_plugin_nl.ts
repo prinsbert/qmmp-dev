@@ -917,13 +917,13 @@ Instellingen</translation>
         <location filename="../mainwindow.cpp" line="518"/>
         <location filename="../mainwindow.cpp" line="559"/>
         <source>By Track Number</source>
-        <translation>Op Lied Nummer</translation>
+        <translation>Op volgnummer</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
         <location filename="../mainwindow.cpp" line="562"/>
         <source>By Disc Number</source>
-        <translation>Op CD Nummer</translation>
+        <translation>Op schijfnummer</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="524"/>
@@ -1645,7 +1645,7 @@ Instellingen</translation>
     <message>
         <location filename="../forms/toolbareditor.ui" line="222"/>
         <source>&amp;Create</source>
-        <translation>&amp;Creëren</translation>
+        <translation>&amp;Maken</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="238"/>

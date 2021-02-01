@@ -6,7 +6,7 @@
     <message>
         <location filename="../kdenotify.cpp" line="122"/>
         <source>Qmmp now playing:</source>
-        <translation>Qmmp speelt nu af:</translation>
+        <translation>Je luistert naar:</translation>
     </message>
 </context>
 <context>
@@ -19,7 +19,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="49"/>
         <source>About KDE Notification Plugin</source>
-        <translation>Over de KDE 4 Notificatie Module</translation>
+        <translation>Over de KDE 4-meldingsplug-in</translation>
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="50"/>
@@ -32,7 +32,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>KDE 4 Notification Plugin Settings</source>
-        <translation>KDE 4 Notificatie Module Instellingen</translation>
+        <translation>Meldingsinstellingen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="39"/>
@@ -52,27 +52,27 @@
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
         <source>Update visible notification instead create new</source>
-        <translation>Werk huidige notificatie bij i.p.v. het maken van een nieuwe</translation>
+        <translation>Huidige melding bijwerken i.p.v. nieuwe te tonen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="88"/>
         <source>Appearance</source>
-        <translation>Vertoning</translation>
+        <translation>Vormgeving</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="94"/>
         <source>Show covers</source>
-        <translation>Laat albumhoezen zien</translation>
+        <translation>Albumhoezen tonen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="103"/>
         <source>Edit template</source>
-        <translation>Bewerk layout</translation>
+        <translation>Sjabloon aanpassen</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="75"/>
         <source>Notification Template</source>
-        <translation>Notificatie Layout</translation>
+        <translation>Meldingssjabloon</translation>
     </message>
 </context>
 </TS>

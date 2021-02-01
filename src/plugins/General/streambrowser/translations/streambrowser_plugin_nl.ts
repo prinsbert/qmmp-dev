@@ -144,7 +144,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="140"/>
         <source>&amp;Create</source>
-        <translation>&amp;Creëren</translation>
+        <translation>&amp;Maken</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="142"/>
