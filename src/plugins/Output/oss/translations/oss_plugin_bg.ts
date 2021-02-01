@@ -21,7 +21,7 @@
     <message>
         <location filename="../outputossfactory.cpp" line="58"/>
         <source>Written by: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Написана  от: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="59"/>

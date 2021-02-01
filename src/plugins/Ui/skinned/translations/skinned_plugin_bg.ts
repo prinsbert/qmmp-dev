@@ -221,7 +221,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="65"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ф</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="66"/>
@@ -513,17 +513,17 @@
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="40"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Нулиране</translation>
     </message>
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="54"/>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Действие</translation>
     </message>
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="59"/>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Пряк път</translation>
     </message>
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="33"/>
@@ -571,27 +571,27 @@
     <message>
         <location filename="../display.cpp" line="59"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Предишна песен</translation>
     </message>
     <message>
         <location filename="../display.cpp" line="63"/>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Стартиране</translation>
     </message>
     <message>
         <location filename="../display.cpp" line="66"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Пауза</translation>
     </message>
     <message>
         <location filename="../display.cpp" line="69"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Спиране</translation>
     </message>
     <message>
         <location filename="../display.cpp" line="72"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Следваща песен</translation>
     </message>
     <message>
         <location filename="../display.cpp" line="75"/>
@@ -709,7 +709,7 @@
     <message>
         <location filename="../mainvisual.cpp" line="245"/>
         <source>Peaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Връх</translation>
     </message>
     <message>
         <location filename="../mainvisual.cpp" line="249"/>
@@ -1050,7 +1050,7 @@
     <message>
         <location filename="../forms/popupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Нулиране</translation>
     </message>
     <message>
         <location filename="../forms/popupsettings.ui" line="65"/>
@@ -1126,7 +1126,7 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Изчистване</translation>
     </message>
 </context>
 <context>
@@ -1287,7 +1287,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="89"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Основни</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="146"/>

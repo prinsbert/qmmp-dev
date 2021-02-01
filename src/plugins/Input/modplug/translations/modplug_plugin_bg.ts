@@ -275,7 +275,7 @@ too high may cause clipping!</source>
     <message>
         <location filename="../settingsdialog.ui" line="677"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Основни</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="683"/>

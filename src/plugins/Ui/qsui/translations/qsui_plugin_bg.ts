@@ -254,7 +254,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="74"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ф</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="75"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="47"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Избор на цвят</translation>
     </message>
 </context>
 <context>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../equalizer.cpp" line="74"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Нулиране</translation>
     </message>
     <message>
         <location filename="../equalizer.cpp" line="87"/>
@@ -611,17 +611,17 @@
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="40"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Нулиране</translation>
     </message>
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="54"/>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Действие</translation>
     </message>
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="59"/>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Пряк път</translation>
     </message>
     <message>
         <location filename="../forms/hotkeyeditor.ui" line="33"/>
@@ -725,27 +725,27 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="149"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Предишна песен</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="159"/>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Стартиране</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="169"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Пауза</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="179"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Следваща песен</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="189"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Спиране</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="194"/>
@@ -1038,7 +1038,7 @@
     <message>
         <location filename="../forms/popupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Нулиране</translation>
     </message>
     <message>
         <location filename="../forms/popupsettings.ui" line="65"/>
@@ -1247,18 +1247,18 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="185"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветове</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="247"/>
         <source>Peaks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Височини:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="311"/>
         <location filename="../forms/qsuisettings.ui" line="961"/>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Фон</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="444"/>
@@ -1406,7 +1406,7 @@
     <message>
         <location filename="../qsuivisualization.cpp" line="151"/>
         <source>Peaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Връх</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="154"/>
@@ -1620,7 +1620,7 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Изчистване</translation>
     </message>
 </context>
 <context>
@@ -1633,7 +1633,7 @@
     <message>
         <location filename="../forms/toolbareditor.ui" line="62"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Нулиране</translation>
     </message>
     <message>
         <location filename="../forms/toolbareditor.ui" line="199"/>

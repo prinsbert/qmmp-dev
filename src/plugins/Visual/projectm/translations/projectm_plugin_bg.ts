@@ -99,7 +99,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="160"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ф</translation>
     </message>
 </context>
 <context>

@@ -575,7 +575,7 @@
     <message>
         <location filename="../configdialog.cpp" line="251"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Основни</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="262"/>
@@ -1266,7 +1266,7 @@
     <message>
         <location filename="../forms/templateeditor.ui" line="39"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Нулиране</translation>
     </message>
     <message>
         <location filename="../forms/templateeditor.ui" line="46"/>
@@ -1341,7 +1341,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../winfileassocpage.cpp" line="125"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Внимание</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="126"/>

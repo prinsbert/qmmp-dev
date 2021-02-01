@@ -37,7 +37,7 @@
         <location filename="../fileops.cpp" line="155"/>
         <location filename="../fileops.cpp" line="249"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Спиране</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="200"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../hotkeydialog.ui" line="14"/>
         <source>Modify Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Промяна на прекия път</translation>
     </message>
     <message>
         <location filename="../hotkeydialog.ui" line="29"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../hotkeydialog.ui" line="43"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Изчистване</translation>
     </message>
 </context>
 <context>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="63"/>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Пряк път</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="79"/>

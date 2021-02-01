@@ -75,27 +75,27 @@
     <message>
         <location filename="../statusicon.cpp" line="71"/>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Стартиране</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="72"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Пауза</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="73"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Спиране</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="75"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Следваща песен</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="76"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Предишна песен</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="78"/>

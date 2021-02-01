@@ -11,7 +11,7 @@
     <message>
         <location filename="../analyzer.cpp" line="332"/>
         <source>Peaks</source>
-        <translation type="unfinished"></translation>
+        <translation>Връх</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="335"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../analyzer.cpp" line="376"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ф</translation>
     </message>
 </context>
 <context>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="37"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Избор на цвят</translation>
     </message>
 </context>
 <context>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="35"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Основни</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="41"/>
@@ -117,12 +117,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="101"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветове</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="107"/>
         <source>Peaks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Височини:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="139"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="171"/>
         <source>Background:</source>
-        <translation type="unfinished"></translation>
+        <translation>Фон</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="203"/>

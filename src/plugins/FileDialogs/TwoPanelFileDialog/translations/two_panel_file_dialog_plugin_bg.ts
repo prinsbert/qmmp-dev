@@ -21,7 +21,7 @@
     <message>
         <location filename="../twopanelfiledialog.ui" line="117"/>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Стартиране</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="130"/>
