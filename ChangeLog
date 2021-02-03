@@ -1521,3 +1521,7 @@ Version 0.12.10
 * fixed ignored files checking
 * fixed cue tracks support in the converter plugin
 * fixed possible freezing on playback resume
+
+Version 0.12.11
+* fixed crash when changing decoder
+* removed lyrics.wikia.com provider (service was closed)
