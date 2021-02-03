@@ -1640,3 +1640,13 @@ Version 1.4.3
 * fixed possible freezing on playback resume
 * updated Finnish translation (Kimmo Kujansuu)
 * updated Bulgarian translation (Miroslav Mihov)
+
+Version 1.4.4
+* fixed crash when changing decoder
+* fixed memory leak
+* removed lyrics.wikia.com provider (service was closed)
+* using plain text in KDE tray tooltip
+* updated Dutch translation (Heimen Stoffels)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Spanish translation (Joel Barrios)
+* updated Bulgarian translation (Miroslav Mihov)
