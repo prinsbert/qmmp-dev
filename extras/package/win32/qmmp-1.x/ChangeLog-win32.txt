@@ -358,3 +358,9 @@ LEGEND
 [*] qmmp-1.4.3
 [*] curl-7.74.0
 [*] libsidplayfp-2.0.5
+
+1.4.4
+[*] qmmp-1.4.4
+[*] curl-7.75.0
+[*] wavpack-5.4.0
+[*] mpg123-1.26.4

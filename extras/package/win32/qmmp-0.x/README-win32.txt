@@ -30,12 +30,12 @@ List of the third-party libraries.
   libogg              1.3.4      http://www.vorbis.com/
   libvorbis           1.3.7      http://www.vorbis.com/
   flac                1.3.3      https://xiph.org/flac/index.html
-  wavpack             5.2.0      http://www.wavpack.com/
+  wavpack             5.4.0      http://www.wavpack.com/
   libsndfile          1.0.28     http://www.mega-nerd.com/libsndfile/
   opus                1.3.1      http://www.opus-codec.org/
   opusfile            0.12       http://www.opus-codec.org/
   libbs2b             3.1.0      http://bs2b.sourceforge.net/
-  curl                7.74.0     http://curl.haxx.se/
+  curl                7.75.0     http://curl.haxx.se/
   libcdio             0.83       http://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
@@ -51,7 +51,7 @@ List of the third-party libraries.
   libxml2             2.9.10     http://xmlsoft.org/
   librcd              0.1.14     http://rusxmms.sourceforge.net/
   librcc              0.2.12     http://rusxmms.sourceforge.net/
-  mpg123              1.26.3     https://www.mpg123.de/
+  mpg123              1.26.4     https://www.mpg123.de/
 
 List of the third-party artwork.
 
