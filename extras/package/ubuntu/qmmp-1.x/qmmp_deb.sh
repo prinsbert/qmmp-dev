@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.4.3
+QMMP_VERSION=1.4.4
 UBUNTU_CODENAMES='xenial bionic focal groovy'
 BUILD_ROOT=build-root
 
