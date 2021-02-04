@@ -1523,5 +1523,5 @@ Version 0.12.10
 * fixed possible freezing on playback resume
 
 Version 0.12.11
-* fixed crash when changing decoder
+* fixed crash when changing audio parameters
 * removed lyrics.wikia.com provider (service was closed)
