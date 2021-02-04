@@ -1642,7 +1642,7 @@ Version 1.4.3
 * updated Bulgarian translation (Miroslav Mihov)
 
 Version 1.4.4
-* fixed crash when changing decoder
+* fixed crash when changing audio parameters
 * fixed memory leak
 * removed lyrics.wikia.com provider (service was closed)
 * using plain text in the KDE tray tooltip
