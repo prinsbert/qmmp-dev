@@ -25,7 +25,7 @@ QT += widgets
 
 #Version
 
-QMMP_VERSION = 1.4.4
+QMMP_VERSION = 1.4.5
 
 #Install paths
 
