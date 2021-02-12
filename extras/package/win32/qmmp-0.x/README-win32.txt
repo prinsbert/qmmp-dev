@@ -31,7 +31,7 @@ List of the third-party libraries.
   libvorbis           1.3.7      http://www.vorbis.com/
   flac                1.3.3      https://xiph.org/flac/index.html
   wavpack             5.4.0      http://www.wavpack.com/
-  libsndfile          1.0.28     http://www.mega-nerd.com/libsndfile/
+  libsndfile          1.0.31     http://www.mega-nerd.com/libsndfile/
   opus                1.3.1      http://www.opus-codec.org/
   opusfile            0.12       http://www.opus-codec.org/
   libbs2b             3.1.0      http://bs2b.sourceforge.net/
