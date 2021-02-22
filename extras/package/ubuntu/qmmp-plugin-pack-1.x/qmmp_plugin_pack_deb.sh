@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=1.4.0
-UBUNTU_CODENAMES='xenial bionic focal groovy'
+UBUNTU_CODENAMES='xenial bionic focal groovy hirsute'
 BUILD_ROOT=build-root
 
 
