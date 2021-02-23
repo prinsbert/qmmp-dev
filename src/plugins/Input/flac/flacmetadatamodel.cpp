@@ -258,7 +258,11 @@ void VorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
         return;
     case Qmmp::DISCNUMBER:
         value == "0" ?
+#if ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION <= 11))
         m_tag->removeField("DISCNUMBER"):
+#else
+        m_tag->removeFields("DISCNUMBER"):
+#endif
         m_tag->addField("DISCNUMBER", str, true);
     }
 }
