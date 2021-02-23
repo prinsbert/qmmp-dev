@@ -308,7 +308,9 @@ void MpegFileTagModel::setValue(Qmmp::MetaData key, const QString &value)
             m_codec = QTextCodec::codecForName ("UTF-8");
             TagLib::ID3v2::FrameFactory *factory = TagLib::ID3v2::FrameFactory::instance();
             factory->setDefaultTextEncoding(type);
+#if ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION <= 11))
             m_file->setID3v2FrameFactory(factory);
+#endif
             type = TagLib::String::UTF8;
         }
         //save additional tags
