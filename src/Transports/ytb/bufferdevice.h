@@ -42,7 +42,6 @@ public:
     bool isSequential() const override;
     //qint64 bytesAvailable() const override;
     qint64 size() const override;
-    qint64 pos() const override;
     bool seek(qint64 pos) override;
 
 signals:

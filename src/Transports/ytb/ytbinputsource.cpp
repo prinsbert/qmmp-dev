@@ -264,14 +264,18 @@ void YtbInputSource::onSeekRequest()
     qDebug() << Q_FUNC_INFO <<  m_buffer->seekRequestPos();
     m_offset = m_buffer->seekRequestPos();
     m_buffer->clearRequestPos();
-    disconnect(m_getStreamReply, nullptr, nullptr, nullptr);
-    m_getStreamReply->abort();
 
-    QNetworkRequest request = m_getStreamReply->request();
+    QNetworkReply *tmp = m_getStreamReply;
+    m_getStreamReply = nullptr;
+    disconnect(tmp, nullptr, nullptr, nullptr);
+    tmp->abort();
+
+
+    QNetworkRequest request = tmp->request();
+    tmp->deleteLater();
     request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
     request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
     m_buffer->setOffset(m_offset);
-    //m_getStreamReply->deleteLater();
     m_getStreamReply = m_manager->get(request);
     m_getStreamReply->setReadBufferSize(0);
     connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
