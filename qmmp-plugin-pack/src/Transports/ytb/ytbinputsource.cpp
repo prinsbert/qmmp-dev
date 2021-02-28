@@ -60,6 +60,7 @@ YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSourc
     connect(m_process, SIGNAL(errorOccurred(QProcess::ProcessError)), SLOT(onProcessErrorOccurred(QProcess::ProcessError)));
     connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)), SLOT(onProcessFinished(int,QProcess::ExitStatus)));
     connect(m_manager, SIGNAL(finished(QNetworkReply*)), SLOT(onFinished(QNetworkReply*)));
+    connect(m_buffer, SIGNAL(seekRequest()), SLOT(onSeekRequest()));
 }
 
 YtbInputSource::~YtbInputSource()
@@ -104,7 +105,7 @@ bool YtbInputSource::isReady() const
 
 bool YtbInputSource::isWaiting() const
 {
-    return false;
+    return m_buffer->isWaiting();
 }
 
 QString YtbInputSource::contentType() const
@@ -138,7 +139,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
     QJsonObject json = document.object();
 
-    //qDebug("%s", json.toJson(QJsonDocument::Indented).constData());
+    //qDebug("%s", document.toJson(QJsonDocument::Indented).constData());
 
     QMap<Qmmp::MetaData, QString> metaData = {
         { Qmmp::TITLE, json["fulltitle"].toString() }
@@ -173,6 +174,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
             headers = obj["http_headers"].toObject();
             setProperty(Qmmp::BITRATE, bitrate);
+            m_fileSize = obj["filesize"].toInt();
             break;
         }
     }
@@ -195,6 +197,15 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
         ++it;
     }
 
+    if(m_offset > 0)
+    {
+        request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+        request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
+        m_buffer->setOffset(m_offset);
+    }
+
+    m_buffer->setSize(m_fileSize);
+
     m_getStreamReply = m_manager->get(request);
     m_getStreamReply->setReadBufferSize(0);
     connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
@@ -213,7 +224,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
             {
                 m_getStreamReply = nullptr;
                 reply->deleteLater();
-                emit error();
+                //emit error();
             }
         }
         else
@@ -244,5 +255,27 @@ void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
         StateHandler::instance()->dispatchBuffer(100 * bytesReceived / PREBUFFER_SIZE);
     }
 
+    qDebug("received %lld", m_getStreamReply->bytesAvailable());
     m_buffer->addData(m_getStreamReply->readAll());
+}
+
+void YtbInputSource::onSeekRequest()
+{
+    qDebug() << Q_FUNC_INFO <<  m_buffer->seekRequestPos();
+    m_offset = m_buffer->seekRequestPos();
+    m_buffer->clearRequestPos();
+    disconnect(m_getStreamReply, nullptr, nullptr, nullptr);
+    m_getStreamReply->abort();
+
+    QNetworkRequest request = m_getStreamReply->request();
+    request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+    request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
+    m_buffer->setOffset(m_offset);
+    //m_getStreamReply->deleteLater();
+    m_getStreamReply = m_manager->get(request);
+    m_getStreamReply->setReadBufferSize(0);
+    connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+    //m_ready = false;
+    //m_buffer->close();
+    qDebug("seeking");
 }
