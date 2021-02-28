@@ -33,9 +33,21 @@ public:
     explicit BufferDevice(QObject *parent);
     ~BufferDevice();
 
+    void setOffset(int offset);
+    void setSize(int size);
     bool addData(const QByteArray &data);
+    qint64 seekRequestPos() const;
+    bool isWaiting() const;
+    void clearRequestPos();
     bool isSequential() const override;
-    qint64 bytesAvailable() const override;
+    //qint64 bytesAvailable() const override;
+    qint64 size() const override;
+    qint64 pos() const override;
+    bool seek(qint64 pos) override;
+
+signals:
+    void seekRequest();
+
 
 private:
     qint64 readData(char *data, qint64 maxSize) override;
@@ -44,6 +56,10 @@ private:
     qint64 m_readAt = 0;
     qint64 m_writeAt = 0;
     qint64 m_bufferSize = 0;
+    qint64 m_size = 0;
+    qint64 m_offset = 0;
+    qint64 m_seekRequestPos = -1;
+    bool m_waiting = false;
     mutable QMutex m_mutex;
 
 };

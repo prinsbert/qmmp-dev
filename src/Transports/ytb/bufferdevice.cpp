@@ -19,7 +19,9 @@
  ***************************************************************************/
 
 #include <QMutexLocker>
+#include <QtDebug>
 #include <stdlib.h>
+#include <unistd.h>
 #include "bufferdevice.h"
 
 #define INITIAL_BUFFER_SIZE 30000000
@@ -37,6 +39,16 @@ BufferDevice::~BufferDevice()
         free(m_buffer);
         m_buffer = nullptr;
     }
+}
+
+void BufferDevice::setOffset(int offset)
+{
+    m_offset = offset;
+}
+
+void BufferDevice::setSize(int size)
+{
+    m_size = size;
 }
 
 bool BufferDevice::addData(const QByteArray &data)
@@ -61,18 +73,67 @@ bool BufferDevice::addData(const QByteArray &data)
 
     memcpy(m_buffer + m_writeAt, data.data(), data.size());
     m_writeAt += data.size();
+    if(m_writeAt > 250000)
+        m_waiting = false;
     return true;
+}
+
+qint64 BufferDevice::seekRequestPos() const
+{
+    return m_seekRequestPos;
+}
+
+bool BufferDevice::isWaiting() const
+{
+    return m_waiting;
+}
+
+void BufferDevice::clearRequestPos()
+{
+    m_seekRequestPos = -1;
 }
 
 bool BufferDevice::isSequential() const
 {
-    return true;
+    return false;
 }
 
-qint64 BufferDevice::bytesAvailable() const
+/*qint64 BufferDevice::bytesAvailable() const
 {
     QMutexLocker locker(&m_mutex);
     return m_writeAt - m_readAt + QIODevice::bytesAvailable();
+}*/
+
+qint64 BufferDevice::size() const
+{
+    return m_size;
+}
+
+qint64 BufferDevice::pos() const
+{
+    return m_offset + m_readAt;
+}
+
+bool BufferDevice::seek(qint64 pos)
+{
+    qDebug() << Q_FUNC_INFO << pos;
+
+    if(pos >= m_offset && pos < m_writeAt - m_offset)
+        m_readAt = pos - m_offset;
+    else
+    {
+        m_seekRequestPos = pos;
+        m_offset = pos;
+        m_writeAt = 0;
+        m_readAt = 0;
+        m_waiting = true;
+        emit seekRequest();
+        while (m_writeAt < 250000) {
+            sleep(1);
+        }
+    }
+
+    return QIODevice::seek(pos);
 }
 
 qint64 BufferDevice::readData(char *data, qint64 maxSize)

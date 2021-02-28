@@ -49,8 +49,7 @@ private slots:
     void onProcessFinished(int exitCode, QProcess::ExitStatus status);
     void onFinished(QNetworkReply *reply);
     void onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-
-
+    void onSeekRequest();
 
 private:
     QString m_url;
@@ -59,6 +58,8 @@ private:
     QNetworkAccessManager *m_manager;
     QNetworkReply *m_getStreamReply = nullptr;
     BufferDevice *m_buffer;
+    qint64 m_fileSize = -1;
+    qint64 m_offset = 0;
 
 };
 
