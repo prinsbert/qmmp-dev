@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -53,7 +53,7 @@ public:
      * \param out Output buffer.
      * \param samples Number of samples.
      */
-    void fromFloat(const float *in, const unsigned char *out, size_t samples);
+    void fromFloat(const float *in, unsigned char *out, size_t samples);
 
 
 private:
