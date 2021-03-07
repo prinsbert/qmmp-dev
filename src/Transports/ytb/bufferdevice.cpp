@@ -119,19 +119,14 @@ bool BufferDevice::seek(qint64 pos)
     qDebug() << Q_FUNC_INFO << pos;
 
     if(pos >= m_offset && pos < m_writeAt + m_offset)
+    {
         m_readAt = pos - m_offset;
+        m_seekRequestPos = -1;
+    }
     else
     {
         m_seekRequestPos = pos;
-        m_offset = pos;
-        m_writeAt = 0;
-        m_readAt = 0;
-        m_waiting = true;
-        emit seekRequest();
-        while (m_writeAt < 250000) {
-            qDebug("waiting");
-            sleep(1);
-        }
+
     }
 
     return QIODevice::seek(pos);
@@ -143,6 +138,22 @@ qint64 BufferDevice::readData(char *data, qint64 maxSize)
     QMutexLocker locker(&m_mutex);
     if(!m_buffer)
         return -1;
+
+    if(m_seekRequestPos >= 0)
+    {
+        m_mutex.unlock();
+        m_offset = m_seekRequestPos;
+        m_writeAt = 0;
+        m_readAt = 0;
+        //m_waiting = true;
+        emit seekRequest();
+        while (m_writeAt < 250000) {
+            qDebug("waiting");
+            sleep(1);
+        }
+        m_mutex.lock();
+    }
+
     qint64 size = qMin(maxSize, m_writeAt - m_readAt);
     memcpy(data, m_buffer + m_readAt, size);
     m_readAt += size;
