@@ -25,6 +25,7 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QUrlQuery>
+#include <unistd.h>
 #include <qmmp/statehandler.h>
 #include <qmmp/qmmpsettings.h>
 #include "bufferdevice.h"
@@ -241,7 +242,8 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
 
 void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
-    Q_UNUSED(bytesTotal);
+    qDebug() << Q_FUNC_INFO << bytesReceived << bytesTotal;
+    //Q_UNUSED(bytesTotal);
 
     if(!m_ready && bytesReceived > PREBUFFER_SIZE)
     {
@@ -255,7 +257,7 @@ void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
         StateHandler::instance()->dispatchBuffer(100 * bytesReceived / PREBUFFER_SIZE);
     }
 
-    qDebug("received %lld", m_getStreamReply->bytesAvailable());
+    qDebug("received %lld total: %lld", m_getStreamReply->bytesAvailable(), bytesReceived);
     m_buffer->addData(m_getStreamReply->readAll());
 }
 
@@ -269,13 +271,15 @@ void YtbInputSource::onSeekRequest()
     m_getStreamReply = nullptr;
     disconnect(tmp, nullptr, nullptr, nullptr);
     tmp->abort();
+    //m_manager->clearConnectionCache();
 
 
     QNetworkRequest request = tmp->request();
-    tmp->deleteLater();
+    //tmp->deleteLater();
     request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
     request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
     m_buffer->setOffset(m_offset);
+    sleep(5);
     m_getStreamReply = m_manager->get(request);
     m_getStreamReply->setReadBufferSize(0);
     connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
