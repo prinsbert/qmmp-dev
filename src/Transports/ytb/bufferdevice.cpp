@@ -53,7 +53,6 @@ void BufferDevice::setSize(int size)
 
 bool BufferDevice::addData(const QByteArray &data)
 {
-    qDebug() << Q_FUNC_INFO;
     QMutexLocker locker(&m_mutex);
     if(m_writeAt + data.size() > m_bufferSize && m_readAt > 0)
     {
@@ -75,21 +74,13 @@ bool BufferDevice::addData(const QByteArray &data)
 
     memcpy(m_buffer + m_writeAt, data.data(), data.size());
     m_writeAt += data.size();
-    if(m_writeAt > 250000)
-        m_waiting = false;
-    qDebug("++");
     return true;
 }
 
 qint64 BufferDevice::seekRequestPos() const
 {
-    //QMutexLocker locker(&m_mutex);
+    QMutexLocker locker(&m_mutex);
     return m_seekRequestPos;
-}
-
-bool BufferDevice::isWaiting() const
-{
-    return m_waiting;
 }
 
 void BufferDevice::clearRequestPos()
@@ -100,14 +91,8 @@ void BufferDevice::clearRequestPos()
 
 bool BufferDevice::isSequential() const
 {
-    return false;
+    return m_size == 0;
 }
-
-/*qint64 BufferDevice::bytesAvailable() const
-{
-    QMutexLocker locker(&m_mutex);
-    return m_writeAt - m_readAt + QIODevice::bytesAvailable();
-}*/
 
 qint64 BufferDevice::size() const
 {
@@ -116,8 +101,10 @@ qint64 BufferDevice::size() const
 
 bool BufferDevice::seek(qint64 pos)
 {
-    qDebug() << Q_FUNC_INFO << pos;
+    if(isSequential())
+        return false;
 
+    QMutexLocker locker(&m_mutex);
     if(pos >= m_offset && pos < m_writeAt + m_offset)
     {
         m_readAt = pos - m_offset;
@@ -126,7 +113,6 @@ bool BufferDevice::seek(qint64 pos)
     else
     {
         m_seekRequestPos = pos;
-
     }
 
     return QIODevice::seek(pos);
@@ -134,7 +120,6 @@ bool BufferDevice::seek(qint64 pos)
 
 qint64 BufferDevice::readData(char *data, qint64 maxSize)
 {
-    qDebug() << Q_FUNC_INFO << maxSize;
     QMutexLocker locker(&m_mutex);
     if(!m_buffer)
         return -1;
@@ -145,10 +130,9 @@ qint64 BufferDevice::readData(char *data, qint64 maxSize)
         m_offset = m_seekRequestPos;
         m_writeAt = 0;
         m_readAt = 0;
-        //m_waiting = true;
         emit seekRequest();
-        while (m_writeAt < 250000) {
-            qDebug("waiting");
+        while (m_writeAt < 250000)
+        {
             sleep(1);
         }
         m_mutex.lock();
@@ -157,7 +141,6 @@ qint64 BufferDevice::readData(char *data, qint64 maxSize)
     qint64 size = qMin(maxSize, m_writeAt - m_readAt);
     memcpy(data, m_buffer + m_readAt, size);
     m_readAt += size;
-    qDebug("done");
     return size;
 }
 
