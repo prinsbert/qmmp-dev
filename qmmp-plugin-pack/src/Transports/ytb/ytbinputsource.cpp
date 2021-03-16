@@ -106,7 +106,7 @@ bool YtbInputSource::isReady() const
 
 bool YtbInputSource::isWaiting() const
 {
-    return m_buffer->isWaiting();
+    return !m_ready;
 }
 
 QString YtbInputSource::contentType() const
@@ -155,28 +155,44 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     };
     addStreamInfo(streamInfo);
 
-    int bitrate = json["abr"].toInt();
-    QString acodec = json["acodec"].toString();
-
-
-    QString url;
+    double bitrate = 0;
+    QString url, codec;
     QJsonObject headers;
     for(const QJsonValue &value : json["formats"].toArray())
     {
         QJsonObject obj = value.toObject();
-        qDebug() << obj["acodec"].toString() << obj["vcodec"].toString() << obj["abr"].toInt();
 
-        if(obj["abr"].toInt() == bitrate &&
-                obj["acodec"].toString() == acodec &&
-                obj["vcodec"].toString() == "none")
+        qDebug() << obj["acodec"].toString() << obj["vcodec"].toString() << obj["abr"].toDouble();
+
+        if(obj["abr"].toDouble() > bitrate && obj["acodec"].toString() == "opus" && obj["vcodec"].toString() == "none")
         {
             url = obj["protocol"].toString() == "http_dash_segments" ?
                         obj["fragment_base_url"].toString() : obj["url"].toString();
 
+            bitrate = obj["abr"].toDouble();
             headers = obj["http_headers"].toObject();
-            setProperty(Qmmp::BITRATE, bitrate);
+            codec = obj["acodec"].toString();
             m_fileSize = obj["filesize"].toInt();
-            break;
+        }
+    }
+
+    //fallback
+    if(url.isEmpty())
+    {
+        for(const QJsonValue &value : json["formats"].toArray())
+        {
+            QJsonObject obj = value.toObject();
+
+            if(obj["abr"].toDouble() > bitrate && obj["vcodec"].toString() == "none")
+            {
+                url = obj["protocol"].toString() == "http_dash_segments" ?
+                            obj["fragment_base_url"].toString() : obj["url"].toString();
+
+                bitrate = obj["abr"].toDouble();
+                headers = obj["http_headers"].toObject();
+                codec = obj["acodec"].toString();
+                m_fileSize = obj["filesize"].toInt();
+            }
         }
     }
 
@@ -187,6 +203,14 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
         return;
     }
 
+    if(codec != "opus") //disable seeking for other streams
+        m_fileSize = 0;
+
+    setProperty(Qmmp::BITRATE, int(bitrate));
+    setProperty(Qmmp::FILE_SIZE, m_fileSize);
+    setProperty(Qmmp::FORMAT_NAME, codec);
+
+    qDebug() << "YtbInputSource: selected stream:" << codec << bitrate << "kb/s";
     qDebug("YtbInputSource: downloading stream...");
 
     QUrl streamUrl(url);
@@ -214,8 +238,6 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
 void YtbInputSource::onFinished(QNetworkReply *reply)
 {
-    qDebug() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-
     if(reply == m_getStreamReply)
     {
         if(reply->error() != QNetworkReply::NoError)
@@ -224,8 +246,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
             if(!m_ready)
             {
                 m_getStreamReply = nullptr;
-                reply->deleteLater();
-                //emit error();
+                emit error();
             }
         }
         else
@@ -236,14 +257,26 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
     }
     else
     {
-        reply->deleteLater();
+        if(reply->error() == QNetworkReply::OperationCanceledError && m_buffer->seekRequestPos() > 0)
+        {
+            qDebug("YtbInputSource: processing seek request...");
+            m_buffer->clearRequestPos();
+            QNetworkRequest request = reply->request();
+            request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+            request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
+            m_buffer->setOffset(m_offset);
+            m_getStreamReply = m_manager->get(request);
+            m_getStreamReply->setReadBufferSize(0);
+            connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+        }
     }
+
+    reply->deleteLater();
 }
 
 void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
-    qDebug() << Q_FUNC_INFO << bytesReceived << bytesTotal;
-    //Q_UNUSED(bytesTotal);
+    Q_UNUSED(bytesTotal);
 
     if(!m_ready && bytesReceived > PREBUFFER_SIZE)
     {
@@ -257,33 +290,17 @@ void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
         StateHandler::instance()->dispatchBuffer(100 * bytesReceived / PREBUFFER_SIZE);
     }
 
-    qDebug("received %lld total: %lld", m_getStreamReply->bytesAvailable(), bytesReceived);
-    m_buffer->addData(m_getStreamReply->readAll());
+    if(m_getStreamReply)
+    {
+        m_buffer->addData(m_getStreamReply->readAll());
+    }
 }
 
 void YtbInputSource::onSeekRequest()
 {
-    qDebug() << Q_FUNC_INFO <<  m_buffer->seekRequestPos();
     m_offset = m_buffer->seekRequestPos();
-    m_buffer->clearRequestPos();
-
-    QNetworkReply *tmp = m_getStreamReply;
+    qDebug("YtbInputSource: seek request position: %lld", m_offset);
+    QNetworkReply *prevReply = m_getStreamReply;
     m_getStreamReply = nullptr;
-    disconnect(tmp, nullptr, nullptr, nullptr);
-    tmp->abort();
-    //m_manager->clearConnectionCache();
-
-
-    QNetworkRequest request = tmp->request();
-    //tmp->deleteLater();
-    request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
-    request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
-    m_buffer->setOffset(m_offset);
-    sleep(5);
-    m_getStreamReply = m_manager->get(request);
-    m_getStreamReply->setReadBufferSize(0);
-    connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
-    //m_ready = false;
-    //m_buffer->close();
-    qDebug("seeking");
+    prevReply->abort();
 }
