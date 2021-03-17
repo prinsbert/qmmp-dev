@@ -20,8 +20,7 @@
 
 #include <QMutexLocker>
 #include <QtDebug>
-#include <stdlib.h>
-#include <unistd.h>
+#include <string.h>
 #include "bufferdevice.h"
 
 #define INITIAL_BUFFER_SIZE 30000000
@@ -74,6 +73,7 @@ bool BufferDevice::addData(const QByteArray &data)
 
     memcpy(m_buffer + m_writeAt, data.data(), data.size());
     m_writeAt += data.size();
+    m_waitCondition.wakeAll();
     return true;
 }
 
@@ -126,16 +126,12 @@ qint64 BufferDevice::readData(char *data, qint64 maxSize)
 
     if(m_seekRequestPos >= 0)
     {
-        m_mutex.unlock();
         m_offset = m_seekRequestPos;
         m_writeAt = 0;
         m_readAt = 0;
         emit seekRequest();
-        while (m_writeAt < 250000)
-        {
-            sleep(1);
-        }
-        m_mutex.lock();
+        while(m_writeAt < PREBUFFER_SIZE)
+            m_waitCondition.wait(&m_mutex);
     }
 
     qint64 size = qMin(maxSize, m_writeAt - m_readAt);
