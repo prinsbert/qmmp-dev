@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014-2020 by Ilya Kotov                                 *
+ *   Copyright (C) 2014-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,14 +24,28 @@
 #include <QList>
 #include "qmmp.h"
 
+/*! @brief This class represents audio channel mapping.
+ * @author Ilya Kotov <forkotov02@ya.ru>
+ */
 class QMMP_EXPORT ChannelMap : public QList<Qmmp::ChannelPosition>
 {
 public:
-    ChannelMap();
-    ChannelMap(int channels);
-
+    /*!
+     * Constructs channel mapping with internal order.
+     * \param channels Number channels
+     */
+    explicit ChannelMap(int channels = 0);
+    /*!
+     * Returns a mask with used channels.
+     */
     int mask() const;
+    /*!
+     * Converts current channel order to internal.
+     */
     const ChannelMap remaped() const;
+    /*!
+     * Converts channel channel mapping to string representation (for debug purposes).
+     */
     const QString toString() const;
 
 private:
