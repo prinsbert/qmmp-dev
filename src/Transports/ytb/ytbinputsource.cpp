@@ -245,7 +245,6 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
             qWarning("YtbInputSource: downloading finished with error: %s", qPrintable(reply->errorString()));
             if(!m_ready)
             {
-                m_getStreamReply = nullptr;
                 emit error();
             }
         }
@@ -254,6 +253,8 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
             m_buffer->addData(m_getStreamReply->readAll());
             qDebug("YtbInputSource: downloading finished");
         }
+
+        m_getStreamReply = nullptr;
     }
     else
     {
