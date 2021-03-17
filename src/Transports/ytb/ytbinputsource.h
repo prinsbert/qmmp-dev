@@ -43,6 +43,8 @@ public:
     bool isReady() const override;
     bool isWaiting() const override;
     QString contentType() const override;
+    void stop() override;
+
 
 private slots:
     void onProcessErrorOccurred(QProcess::ProcessError);

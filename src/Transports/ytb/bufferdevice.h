@@ -44,10 +44,10 @@ public:
     bool isSequential() const override;
     qint64 size() const override;
     bool seek(qint64 pos) override;
+    void stop();
 
 signals:
     void seekRequest();
-
 
 private:
     qint64 readData(char *data, qint64 maxSize) override;
@@ -61,6 +61,7 @@ private:
     qint64 m_seekRequestPos = -1;
     mutable QMutex m_mutex;
     QWaitCondition m_waitCondition;
+    bool m_stopped = false;
 
 
 };
