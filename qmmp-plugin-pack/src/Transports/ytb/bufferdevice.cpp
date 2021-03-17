@@ -118,6 +118,14 @@ bool BufferDevice::seek(qint64 pos)
     return QIODevice::seek(pos);
 }
 
+void BufferDevice::stop()
+{
+    m_mutex.lock();
+    m_stopped = true;
+    m_mutex.unlock();
+    m_waitCondition.wakeAll();
+}
+
 qint64 BufferDevice::readData(char *data, qint64 maxSize)
 {
     QMutexLocker locker(&m_mutex);
@@ -130,9 +138,12 @@ qint64 BufferDevice::readData(char *data, qint64 maxSize)
         m_writeAt = 0;
         m_readAt = 0;
         emit seekRequest();
-        while(m_writeAt < PREBUFFER_SIZE)
+        while(m_writeAt < PREBUFFER_SIZE && !m_stopped)
             m_waitCondition.wait(&m_mutex);
     }
+
+    if(m_stopped)
+        return 0;
 
     qint64 size = qMin(maxSize, m_writeAt - m_readAt);
     memcpy(data, m_buffer + m_readAt, size);

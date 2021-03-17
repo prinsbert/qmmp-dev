@@ -113,6 +113,11 @@ QString YtbInputSource::contentType() const
     //return m_reader->contentType();
 }
 
+void YtbInputSource::stop()
+{
+    m_buffer->stop();
+}
+
 void YtbInputSource::onProcessErrorOccurred(QProcess::ProcessError)
 {
     qWarning("YtbInputSource: unable to start process 'youtube-dl', error: %s", qPrintable(m_process->errorString()));
@@ -253,6 +258,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
         }
 
         m_getStreamReply = nullptr;
+        m_buffer->stop();
     }
     else
     {
