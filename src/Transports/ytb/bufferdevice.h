@@ -24,7 +24,10 @@
 #include <QObject>
 #include <QIODevice>
 #include <QByteArray>
+#include <QWaitCondition>
 #include <QMutex>
+
+#define PREBUFFER_SIZE 128000
 
 class BufferDevice : public QIODevice
 {
@@ -57,6 +60,8 @@ private:
     qint64 m_offset = 0;
     qint64 m_seekRequestPos = -1;
     mutable QMutex m_mutex;
+    QWaitCondition m_waitCondition;
+
 
 };
 

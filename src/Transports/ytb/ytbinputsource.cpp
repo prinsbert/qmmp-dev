@@ -31,8 +31,6 @@
 #include "bufferdevice.h"
 #include "ytbinputsource.h"
 
-#define PREBUFFER_SIZE 128000
-
 YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSource(url, parent), m_url(url)
 {
     m_buffer = new BufferDevice(this);
