@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Ilya Kotov                                      *
+ *   Copyright (C) 2014-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,7 +31,6 @@ Qmmp::ChannelPosition ChannelMap::m_internal_map[9] = { Qmmp::CHAN_FRONT_LEFT,
                                                         Qmmp::CHAN_LFE,
                                                         Qmmp::CHAN_SIDE_LEFT,
                                                         Qmmp::CHAN_SIDE_RIGHT };
-ChannelMap::ChannelMap() {}
 
 ChannelMap::ChannelMap(int channels)
 {
