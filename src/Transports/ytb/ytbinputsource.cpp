@@ -250,6 +250,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
             {
                 emit error();
             }
+            m_buffer->stop();
         }
         else
         {
@@ -258,7 +259,6 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
         }
 
         m_getStreamReply = nullptr;
-        m_buffer->stop();
     }
     else
     {
