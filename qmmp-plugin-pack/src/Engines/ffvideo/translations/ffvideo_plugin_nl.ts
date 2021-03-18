@@ -4,7 +4,7 @@
 <context>
     <name>FFVideoFactory</name>
     <message>
-        <location filename="../ffvideofactory.cpp" line="41"/>
+        <location filename="../ffvideofactory.cpp" line="42"/>
         <source>FFmpeg Video Plugin</source>
         <translation>FFmpeg-videoplug-in</translation>
     </message>
@@ -14,22 +14,22 @@
         <translation>Videobestanden</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="165"/>
+        <location filename="../ffvideofactory.cpp" line="159"/>
         <source>About FFVideo Plugin</source>
         <translation>Over FFVideo-plug-in</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="166"/>
+        <location filename="../ffvideofactory.cpp" line="160"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Een op FFmpeg gebaseerde videoplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="167"/>
+        <location filename="../ffvideofactory.cpp" line="161"/>
         <source>Compiled against:</source>
         <translation>Gebouwd met</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="177"/>
+        <location filename="../ffvideofactory.cpp" line="171"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

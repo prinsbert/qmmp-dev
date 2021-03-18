@@ -42,17 +42,17 @@
 <context>
     <name>YtbInputSource</name>
     <message>
-        <location filename="../ytbinputsource.cpp" line="148"/>
+        <location filename="../ytbinputsource.cpp" line="154"/>
         <source>Uploader</source>
         <translation>Téléverseur</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="149"/>
+        <location filename="../ytbinputsource.cpp" line="155"/>
         <source>Upload date</source>
         <translation>Date de téléversement</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="150"/>
+        <location filename="../ytbinputsource.cpp" line="156"/>
         <source>Duration</source>
         <translation>Durée</translation>
     </message>

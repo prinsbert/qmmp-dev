@@ -4,32 +4,32 @@
 <context>
     <name>DecoderXmpFactory</name>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="40"/>
+        <location filename="../decoderxmpfactory.cpp" line="39"/>
         <source>XMP Plugin</source>
         <translation>Suplemento XMP</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="54"/>
+        <location filename="../decoderxmpfactory.cpp" line="52"/>
         <source>Module Files</source>
         <translation>Ficheiros MOD</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
         <translation>Sobre o suplemento XMP Audio</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="112"/>
+        <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>Suplemento Qmmp XMP Audio</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="113"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="114"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
         <translation>Compilado com libxmp-%1</translation>
     </message>
@@ -110,62 +110,62 @@
 <context>
     <name>XmpMetaDataModel</name>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="53"/>
+        <location filename="../xmpmetadatamodel.cpp" line="52"/>
         <source>Volume scale</source>
         <translation>Escala de volume</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="54"/>
+        <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Number of patterns</source>
         <translation>Número de padrões</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="55"/>
+        <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Number of tracks</source>
         <translation>Número de faixas</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="56"/>
+        <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Tracks per pattern</source>
         <translation>Faixas por padrão</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="57"/>
+        <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Number of instruments</source>
         <translation>Número de instrumentos</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="58"/>
+        <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Number of samples</source>
         <translation>Número de amostras</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="59"/>
+        <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Initial speed</source>
         <translation>Velocidade inicial</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="60"/>
+        <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Initial BPM</source>
         <translation>BPM inicial</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="61"/>
+        <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Module length in patterns</source>
         <translation>Tamanho do módulo em padrões</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="80"/>
+        <location filename="../xmpmetadatamodel.cpp" line="79"/>
         <source>Samples</source>
         <translation>Amostras</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="88"/>
+        <location filename="../xmpmetadatamodel.cpp" line="87"/>
         <source>Instruments</source>
         <translation>Instrumentos</translation>
     </message>
     <message>
-        <location filename="../xmpmetadatamodel.cpp" line="93"/>
+        <location filename="../xmpmetadatamodel.cpp" line="92"/>
         <source>Comment</source>
         <translation>Comentário</translation>
     </message>
