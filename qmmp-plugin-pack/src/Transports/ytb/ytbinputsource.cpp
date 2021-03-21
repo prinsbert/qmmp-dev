@@ -217,24 +217,25 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     qDebug("YtbInputSource: downloading stream...");
 
     QUrl streamUrl(url);
-    QNetworkRequest request(streamUrl);
+    //QNetworkRequest request(streamUrl);
+    m_request.setUrl(streamUrl);
     QJsonObject::iterator it = headers.begin();
     while (it != headers.end())
     {
-        request.setRawHeader(it.key().toLatin1(), it.value().toString().toLatin1());
+        m_request.setRawHeader(it.key().toLatin1(), it.value().toString().toLatin1());
         ++it;
     }
 
     if(m_offset > 0)
     {
-        request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
-        request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
+        m_request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+        m_request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
         m_buffer->setOffset(m_offset);
     }
 
     m_buffer->setSize(m_fileSize);
 
-    m_getStreamReply = m_manager->get(request);
+    m_getStreamReply = m_manager->get(m_request);
     m_getStreamReply->setReadBufferSize(0);
     connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
 }
@@ -266,11 +267,10 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
         {
             qDebug("YtbInputSource: processing seek request...");
             m_buffer->clearRequestPos();
-            QNetworkRequest request = reply->request();
-            request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
-            request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
+            m_request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+            m_request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
             m_buffer->setOffset(m_offset);
-            m_getStreamReply = m_manager->get(request);
+            m_getStreamReply = m_manager->get(m_request);
             m_getStreamReply->setReadBufferSize(0);
             connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
         }
@@ -305,7 +305,20 @@ void YtbInputSource::onSeekRequest()
 {
     m_offset = m_buffer->seekRequestPos();
     qDebug("YtbInputSource: seek request position: %lld", m_offset);
-    QNetworkReply *prevReply = m_getStreamReply;
-    m_getStreamReply = nullptr;
-    prevReply->abort();
+    if(m_getStreamReply)
+    {
+        QNetworkReply *prevReply = m_getStreamReply;
+        m_getStreamReply = nullptr;
+        prevReply->abort();
+    }
+    else
+    {
+        m_buffer->clearRequestPos();
+        m_request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+        m_request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
+        m_buffer->setOffset(m_offset);
+        m_getStreamReply = m_manager->get(m_request);
+        m_getStreamReply->setReadBufferSize(0);
+        connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+    }
 }

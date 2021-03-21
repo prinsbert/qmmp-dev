@@ -62,6 +62,7 @@ private:
     BufferDevice *m_buffer;
     qint64 m_fileSize = -1;
     qint64 m_offset = 0;
+    QNetworkRequest m_request;
 
 };
 
