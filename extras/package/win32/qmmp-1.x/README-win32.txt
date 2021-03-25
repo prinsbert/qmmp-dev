@@ -28,7 +28,7 @@ List of the third-party libraries.
   MinGW-w64           4.3.5      http://mingw-w64.sourceforge.net/
   Qt                  5.12.10    http://qt.io/
   unzip               5.51       http://www.info-zip.org/pub/infozip/UnZip.html
-  taglib              1.11.1     http://taglib.github.io/
+  taglib              1.12       http://taglib.github.io/
   libmad              0.15.1b    http://www.underbit.com/products/mad/
   libogg              1.3.4      http://www.vorbis.com/
   libvorbis           1.3.7      http://www.vorbis.com/
@@ -48,13 +48,13 @@ List of the third-party libraries.
   musepack            r475       http://www.musepack.net/
   glew                2.2.0      http://glew.sourceforge.net/
   projectm            2.1.0      http://projectm.sourceforge.net/
-  libsidplayfp        2.0.5      http://sourceforge.net/projects/sidplay-residfp/
+  libsidplayfp        2.1.1      http://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       http://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   libxml2             2.9.10     http://xmlsoft.org/
   librcd              0.1.14     http://rusxmms.sourceforge.net/
   librcc              0.2.12     http://rusxmms.sourceforge.net/
-  mpg123              1.26.4     https://www.mpg123.de/
+  mpg123              1.26.5     https://www.mpg123.de/
   adplug              2.3.3      https://github.com/adplug/adplug
   libbinio            1.5        https://github.com/adplug/libbinio
 

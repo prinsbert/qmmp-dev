@@ -348,3 +348,9 @@ LEGEND
 0.12.12
 [*] qmmp-0.12.12
 [*] libsndfile-1.0.31
+
+0.12.13
+[*] qmmp-0.12.13
+[*] taglib-1.12
+[*] libsidplayfp-2.1.1
+[*] mpg123-1.26.5

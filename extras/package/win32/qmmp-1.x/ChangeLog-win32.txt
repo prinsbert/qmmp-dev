@@ -369,3 +369,9 @@ LEGEND
 1.4.5
 [*] qmmp-1.4.5
 [*] libsndfile-1.0.31
+
+1.4.6
+[*] qmmp-1.4.6
+[*] taglib-1.12
+[*] libsidplayfp-2.1.1
+[*] mpg123-1.26.5
