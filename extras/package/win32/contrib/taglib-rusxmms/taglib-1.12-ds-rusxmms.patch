@@ -1,21 +1,42 @@
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a59efc9..eda2f53 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -120,6 +120,8 @@ if(NOT HAVE_ZLIB AND ZLIB_SOURCE)
-   set(HAVE_ZLIB_SOURCE 1)
+From 33142c2b3eb1cd44e96787a9af3288c2b0b6520a Mon Sep 17 00:00:00 2001
+From: Ilya Kotov <iokotov@astralinux.ru>
+Date: Thu, 25 Mar 2021 22:38:44 +0300
+Subject: [PATCH] apply rusxmms patch
+
+---
+ ConfigureChecks.cmake                         |   2 +
+ config.h.cmake                                |   3 +
+ examples/tagreader_c.c                        |   2 +-
+ examples/tagwriter.cpp                        |   2 +-
+ taglib/CMakeLists.txt                         |   6 +-
+ taglib/mpeg/id3v1/id3v1tag.cpp                |  13 +-
+ taglib/mpeg/id3v2/frames/commentsframe.cpp    |   8 +-
+ .../id3v2/frames/textidentificationframe.cpp  |  11 +-
+ taglib/mpeg/id3v2/id3v2frame.cpp              |   2 +-
+ taglib/toolkit/rccpatch.cpp                   | 237 ++++++++++++++++++
+ taglib/toolkit/rccpatch.h                     |  20 ++
+ taglib/toolkit/tstring.cpp                    | 129 ++++++++--
+ taglib/toolkit/tstring.h                      |  16 ++
+ 13 files changed, 415 insertions(+), 36 deletions(-)
+ create mode 100644 taglib/toolkit/rccpatch.cpp
+ create mode 100644 taglib/toolkit/rccpatch.h
+
+diff --git a/ConfigureChecks.cmake b/ConfigureChecks.cmake
+index bcdbfe20..e3786f74 100644
+--- a/ConfigureChecks.cmake
++++ b/ConfigureChecks.cmake
+@@ -201,3 +201,5 @@ endif()
+ if(CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
+ 	set(PLATFORM WINRT 1)
  endif()
- 
-+SET(HAVE_LIBRCC 1)
 +
- include_directories(${CMAKE_CURRENT_BINARY_DIR})
- configure_file(config.h.cmake "${CMAKE_CURRENT_BINARY_DIR}/config.h")
- 
++SET(HAVE_LIBRCC 1)
+\ No newline at end of file
 diff --git a/config.h.cmake b/config.h.cmake
-index 7eb5993..8d4a541 100644
+index 8d8c36ab..ccae081b 100644
 --- a/config.h.cmake
 +++ b/config.h.cmake
-@@ -30,4 +30,7 @@
+@@ -29,6 +29,9 @@
  /* Indicates whether debug messages are shown even in release mode */
  #cmakedefine   TRACE_IN_RELEASE 1
  
@@ -23,8 +44,10 @@ index 7eb5993..8d4a541 100644
 +#cmakedefine   HAVE_LIBRCC 1
 +
  #cmakedefine TESTS_DIR "@TESTS_DIR@"
+ 
+ #endif
 diff --git a/examples/tagreader_c.c b/examples/tagreader_c.c
-index 0436992..e0f17d8 100644
+index 04369926..e0f17d82 100644
 --- a/examples/tagreader_c.c
 +++ b/examples/tagreader_c.c
 @@ -38,7 +38,7 @@ int main(int argc, char *argv[])
@@ -37,7 +60,7 @@ index 0436992..e0f17d8 100644
    for(i = 1; i < argc; i++) {
      printf("******************** \"%s\" ********************\n", argv[i]);
 diff --git a/examples/tagwriter.cpp b/examples/tagwriter.cpp
-index ed8b0d7..6a7a263 100644
+index ed8b0d7a..6a7a2632 100644
 --- a/examples/tagwriter.cpp
 +++ b/examples/tagwriter.cpp
 @@ -115,7 +115,7 @@ int main(int argc, char *argv[])
@@ -50,10 +73,10 @@ index ed8b0d7..6a7a263 100644
        TagLib::List<TagLib::FileRef>::ConstIterator it;
        for(it = fileList.begin(); it != fileList.end(); ++it) {
 diff --git a/taglib/CMakeLists.txt b/taglib/CMakeLists.txt
-index 000f793..e30471e 100644
+index 563583ef..e2172986 100644
 --- a/taglib/CMakeLists.txt
 +++ b/taglib/CMakeLists.txt
-@@ -42,6 +42,7 @@ set(tag_HDRS
+@@ -39,6 +39,7 @@ set(tag_HDRS
    audioproperties.h
    taglib_export.h
    ${CMAKE_CURRENT_BINARY_DIR}/../taglib_config.h
@@ -61,7 +84,7 @@ index 000f793..e30471e 100644
    toolkit/taglib.h
    toolkit/tstring.h
    toolkit/tlist.h
-@@ -297,6 +298,7 @@ set(xm_SRCS
+@@ -295,6 +296,7 @@ set(xm_SRCS
  )
  
  set(toolkit_SRCS
@@ -69,20 +92,22 @@ index 000f793..e30471e 100644
    toolkit/tstring.cpp
    toolkit/tstringlist.cpp
    toolkit/tbytevector.cpp
-@@ -345,7 +347,7 @@ set(tag_LIB_SRCS
- add_library(tag ${tag_LIB_SRCS} ${tag_HDRS})
+@@ -338,7 +340,9 @@ add_library(tag ${tag_LIB_SRCS} ${tag_HDRS})
+ set_property(TARGET tag PROPERTY CXX_STANDARD 98)
  
- if(ZLIB_FOUND)
+ if(HAVE_ZLIB AND NOT HAVE_ZLIB_SOURCE)
 -  target_link_libraries(tag ${ZLIB_LIBRARIES})
 +  target_link_libraries(tag rcc ${ZLIB_LIBRARIES})
++else ()
++  target_link_libraries(tag rcc)
  endif()
  
- if(HAVE_BOOST_ATOMIC)
+ set_target_properties(tag PROPERTIES
 diff --git a/taglib/mpeg/id3v1/id3v1tag.cpp b/taglib/mpeg/id3v1/id3v1tag.cpp
-index ca93041..dca5f7a 100644
+index ca930411..872ba6a2 100644
 --- a/taglib/mpeg/id3v1/id3v1tag.cpp
 +++ b/taglib/mpeg/id3v1/id3v1tag.cpp
-@@ -69,15 +69,15 @@ StringHandler::StringHandler()
+@@ -69,15 +69,18 @@ StringHandler::StringHandler()
  
  String ID3v1::StringHandler::parse(const ByteVector &data) const
  {
@@ -95,14 +120,17 @@ index ca93041..dca5f7a 100644
 -  if(s.isLatin1())
 -    return s.data(String::Latin1);
 -  else
-+  if(!s.isLatin1() && String::ID3WType(String::Latin1) == String::Latin1)
++  if(!s.isLatin1())
++  {
++   if (String::ID3WType(String::Latin1) == String::Latin1)
      return ByteVector();
-+    
++  }
++
 +  return s.data(String::Latin1ID3);
  }
  
  ////////////////////////////////////////////////////////////////////////////////
-@@ -262,7 +262,7 @@ void ID3v1::Tag::parse(const ByteVector &data)
+@@ -262,7 +265,7 @@ void ID3v1::Tag::parse(const ByteVector &data)
      d->track   = static_cast<unsigned char>(data[offset + 29]);
    }
    else
@@ -112,10 +140,10 @@ index ca93041..dca5f7a 100644
    offset += 30;
  
 diff --git a/taglib/mpeg/id3v2/frames/commentsframe.cpp b/taglib/mpeg/id3v2/frames/commentsframe.cpp
-index b561832..9cfaba2 100644
+index 815e5e1a..44c7a66b 100644
 --- a/taglib/mpeg/id3v2/frames/commentsframe.cpp
 +++ b/taglib/mpeg/id3v2/frames/commentsframe.cpp
-@@ -148,10 +148,10 @@ void CommentsFrame::parseFields(const ByteVector &data)
+@@ -150,10 +150,10 @@ void CommentsFrame::parseFields(const ByteVector &data)
      return;
    }
  
@@ -128,7 +156,7 @@ index b561832..9cfaba2 100644
  
    ByteVectorList l = ByteVectorList::split(data.mid(4), textDelimiter(d->textEncoding), byteAlign, 2);
  
-@@ -171,11 +171,13 @@ ByteVector CommentsFrame::renderFields() const
+@@ -173,11 +173,13 @@ ByteVector CommentsFrame::renderFields() const
    ByteVector v;
  
    String::Type encoding = d->textEncoding;
@@ -144,10 +172,10 @@ index b561832..9cfaba2 100644
    v.append(d->description.data(encoding));
    v.append(textDelimiter(encoding));
 diff --git a/taglib/mpeg/id3v2/frames/textidentificationframe.cpp b/taglib/mpeg/id3v2/frames/textidentificationframe.cpp
-index d9d3b29..74f69da 100644
+index 39019e61..abc6845c 100644
 --- a/taglib/mpeg/id3v2/frames/textidentificationframe.cpp
 +++ b/taglib/mpeg/id3v2/frames/textidentificationframe.cpp
-@@ -191,12 +191,12 @@ void TextIdentificationFrame::parseFields(const ByteVector &data)
+@@ -194,12 +194,12 @@ void TextIdentificationFrame::parseFields(const ByteVector &data)
  
    // read the string data type (the first byte of the field data)
  
@@ -162,7 +190,7 @@ index d9d3b29..74f69da 100644
  
    // build a small counter to strip nulls off the end of the field
  
-@@ -227,11 +227,14 @@ void TextIdentificationFrame::parseFields(const ByteVector &data)
+@@ -230,11 +230,14 @@ void TextIdentificationFrame::parseFields(const ByteVector &data)
  
  ByteVector TextIdentificationFrame::renderFields() const
  {
@@ -180,10 +208,10 @@ index d9d3b29..74f69da 100644
    for(StringList::ConstIterator it = d->fieldList.begin(); it != d->fieldList.end(); it++) {
  
 diff --git a/taglib/mpeg/id3v2/id3v2frame.cpp b/taglib/mpeg/id3v2/id3v2frame.cpp
-index 1f896fa..ef9d91d 100644
+index 81f351ef..9e9c471e 100644
 --- a/taglib/mpeg/id3v2/id3v2frame.cpp
 +++ b/taglib/mpeg/id3v2/id3v2frame.cpp
-@@ -297,7 +297,7 @@ String::Type Frame::checkEncoding(const StringList &fields, String::Type encodin
+@@ -300,7 +300,7 @@ String::Type Frame::checkEncoding(const StringList &fields, String::Type encodin
    if((encoding == String::UTF8 || encoding == String::UTF16BE) && version != 4)
      return String::UTF16;
  
@@ -194,7 +222,7 @@ index 1f896fa..ef9d91d 100644
    for(StringList::ConstIterator it = fields.begin(); it != fields.end(); ++it) {
 diff --git a/taglib/toolkit/rccpatch.cpp b/taglib/toolkit/rccpatch.cpp
 new file mode 100644
-index 0000000..af99323
+index 00000000..af993234
 --- /dev/null
 +++ b/taglib/toolkit/rccpatch.cpp
 @@ -0,0 +1,237 @@
@@ -437,7 +465,7 @@ index 0000000..af99323
 +}
 diff --git a/taglib/toolkit/rccpatch.h b/taglib/toolkit/rccpatch.h
 new file mode 100644
-index 0000000..31f4410
+index 00000000..31f44106
 --- /dev/null
 +++ b/taglib/toolkit/rccpatch.h
 @@ -0,0 +1,20 @@
@@ -462,10 +490,10 @@ index 0000000..31f4410
 +
 +#endif /* _RCC_PATCH_H */
 diff --git a/taglib/toolkit/tstring.cpp b/taglib/toolkit/tstring.cpp
-index 8328790..278256f 100644
+index c60a3e2e..8337b50b 100644
 --- a/taglib/toolkit/tstring.cpp
 +++ b/taglib/toolkit/tstring.cpp
-@@ -42,6 +42,7 @@
+@@ -33,6 +33,7 @@
  #include <trefcounter.h>
  #include <tutils.h>
  
@@ -473,60 +501,74 @@ index 8328790..278256f 100644
  #include "tstring.h"
  
  namespace
-@@ -120,15 +121,37 @@ namespace
-     else
+@@ -48,16 +49,6 @@ namespace
        return String::UTF16BE;
    }
-+  
-+  void copyFromUTF8(std::wstring &data, const char *s, size_t length);
  
-   // Converts a Latin-1 string into UTF-16(without BOM/CPU byte order)
-   // and copies it to the internal buffer.
+-  // Converts a Latin-1 string into UTF-16(without BOM/CPU byte order)
+-  // and copies it to the internal buffer.
 -  void copyFromLatin1(std::wstring &data, const char *s, size_t length)
-+  void copyFromLatin1(std::wstring &data, const char *s, size_t length, bool prepare = false, String::Type t = String::Latin1)
-   {
-     data.resize(length);
- 
-     for(size_t i = 0; i < length; ++i)
-       data[i] = static_cast<unsigned char>(s[i]);
-+      
-+         
-+    // librcc conversation
-+    if (prepare) {
-+     
-+     ByteVector v;
-+     std::string str = std::string(s, length);
-+    
-+     if (t == String::Latin1ID3) v = rccTaglibPatchRecodeInputID3(str, false);
-+     else if (t == String::Latin1ID3V2) v = rccTaglibPatchRecodeInputID3(str, true);
-+     else /* Latin1 converted from Locale */ v = rccTaglibPatchRecodeInput(str);
+-  {
+-    data.resize(length);
+-
+-    for(size_t i = 0; i < length; ++i)
+-      data[i] = static_cast<unsigned char>(s[i]);
+-  }
+-
+   // Converts a UTF-8 string into UTF-16(without BOM/CPU byte order)
+   // and copies it to the internal buffer.
+   void copyFromUTF8(std::wstring &data, const char *s, size_t length)
+@@ -73,6 +64,36 @@ namespace
+       debug("String::copyFromUTF8() - UTF8-CPP error: " + message);
+       data.clear();
+     }
 +
-+     if (v.size()) {
-+       copyFromUTF8(data, v.data(), v.size());
-+     } else {
-+     // We don't know if we got UTF-8 encoded string or either rcc is disable or something is failed,
-+     // since standard applications are really expecting here Latin1, it is safe to just check if we have violations of UTF8
-+     //if (Unicode::isLegalUTF8(s)) t = UTF8;
-+     }
-+    }      
++  }
++
++  // Converts a Latin-1 string into UTF-16(without BOM/CPU byte order)
++  // and copies it to the internal buffer.
++  void copyFromLatin1(std::wstring &data, const char *s, size_t length, bool prepare, String::Type t)
++  {
++     // librcc conversation
++    if (prepare) {
++      ByteVector v;
++      std::string std_s(s);
++
++      if (t == String::Latin1ID3) v = rccTaglibPatchRecodeInputID3(std_s, false);
++      else if (t == String::Latin1ID3V2) v = rccTaglibPatchRecodeInputID3(std_s, true);
++      else /* Latin1 converted from Locale */ v = rccTaglibPatchRecodeInput(std_s);
++
++      if (v.size()) {
++        copyFromUTF8(data, v.data(), v.size());
++        return;
++      } else {
++	// We don't know if we got UTF-8 encoded string or either rcc is disable or something is failed,
++	// since standard applications are really expecting here Latin1, it is safe to just check if we have violations of UTF8
++	//if (Unicode::isLegalUTF8(s)) t = UTF8;
++      } 
++    }
++
++    data.resize(length);
++
++    for(size_t i = 0; i < length; ++i)
++      data[i] = static_cast<unsigned char>(s[i]);
    }
  
-   // Converts a UTF-8 string into UTF-16(without BOM/CPU byte order)
-@@ -264,8 +287,11 @@ String::String(const String &s) :
+   // Helper functions to read a UTF-16 character from an array.
+@@ -175,8 +196,11 @@ String::String(const String &s) :
  String::String(const std::string &s, Type t) :
    d(new StringPrivate())
  {
--  if(t == Latin1)
--    copyFromLatin1(d->data, s.c_str(), s.length());
 +  if(t == Locale)
-+   t = rccTaglibPatchGetLocaleType();
++    t = rccTaglibPatchGetLocaleType();
 +
-+  if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
+   if(t == Latin1)
+-    copyFromLatin1(d->data, s.c_str(), s.length());
 +    copyFromLatin1(d->data, s.c_str(), s.length(), true, t);
    else if(t == String::UTF8)
      copyFromUTF8(d->data, s.c_str(), s.length());
    else {
-@@ -312,8 +338,11 @@ String::String(const wchar_t *s, Type t) :
+@@ -223,8 +247,11 @@ String::String(const wchar_t *s, Type t) :
  String::String(const char *s, Type t) :
    d(new StringPrivate())
  {
@@ -540,29 +582,41 @@ index 8328790..278256f 100644
    else if(t == String::UTF8)
      copyFromUTF8(d->data, s, ::strlen(s));
    else {
-@@ -344,9 +373,13 @@ String::String(const ByteVector &v, Type t) :
+@@ -245,8 +272,11 @@ String::String(wchar_t c, Type t) :
+ String::String(char c, Type t) :
+   d(new StringPrivate())
  {
+-  if(t == Latin1)
+-    copyFromLatin1(d->data, &c, 1);
++  if(t == Locale)
++    t = rccTaglibPatchGetLocaleType();
++
++  if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
++    copyFromLatin1(d->data, &c, 1, true, t);
+   else if(t == String::UTF8)
+     copyFromUTF8(d->data, &c, 1);
+   else {
+@@ -260,8 +290,11 @@ String::String(const ByteVector &v, Type t) :
    if(v.isEmpty())
      return;
-+    
-+  if(t == Locale)
-+   t = rccTaglibPatchGetLocaleType();
-+
-+   if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
-+     copyFromLatin1(d->data, v.data(), v.size(), true, t);
  
 -  if(t == Latin1)
 -    copyFromLatin1(d->data, v.data(), v.size());
++  if(t == Locale)
++    t = rccTaglibPatchGetLocaleType();
++
++  if(t == Latin1 || t == Latin1ID3 || t == Latin1ID3V2)
++    copyFromLatin1(d->data, v.data(), v.size(), true, t);
    else if(t == UTF8)
      copyFromUTF8(d->data, v.data(), v.size());
    else
-@@ -499,8 +532,38 @@ bool String::isNull() const
+@@ -416,8 +449,38 @@ bool String::isNull() const
  
  ByteVector String::data(Type t) const
  {
 -  switch(t)
 -  {
-+   ByteVector v;
++  ByteVector v;
 +
 +  if (t == Locale) {
 +        // The source is either Unicode or real Latin1 (if rcc is bypassed)
@@ -597,7 +651,7 @@ index 8328790..278256f 100644
    case Latin1:
      {
        ByteVector v(size(), 0);
-@@ -822,7 +885,35 @@ const TagLib::String operator+(const TagLib::String &s1, const char *s2)
+@@ -741,7 +804,33 @@ const TagLib::String operator+(const TagLib::String &s1, const char *s2)
  
  std::ostream &operator<<(std::ostream &s, const TagLib::String &str)
  {
@@ -632,31 +686,29 @@ index 8328790..278256f 100644
 +    return Latin1;
 +  return type;
 +}
-+
-+
 diff --git a/taglib/toolkit/tstring.h b/taglib/toolkit/tstring.h
-index b1be04b..b21f297 100644
+index 7028aab2..20d43967 100644
 --- a/taglib/toolkit/tstring.h
 +++ b/taglib/toolkit/tstring.h
-@@ -96,6 +96,18 @@ namespace TagLib {
+@@ -95,6 +95,18 @@ namespace TagLib {
+      * ID3v1 is assumed to be Latin1 and Ogg Vorbis comments use UTF8.
       */
      enum Type {
-       /*!
-+        * Determine using current locale settings
-+        */
-+      Locale = -1,
-+       /*!
-+        * Latin1 for ID3 tags.
-+        */
-+      Latin1ID3 = 65,
-+       /*!
-+        * Latin1 for ID3v2 tags.
-+        */
-+      Latin1ID3V2 = 66,
 +      /*!
++       * Determine using current locale settings
++       */
++      Locale = -1,
++      /*!
++       * Latin1 for ID3 tags.
++       */
++      Latin1ID3 = 65,
++      /*!
++       * Latin1 for ID3v2 tags.
++       */
++      Latin1ID3V2 = 66,
+       /*!
         * IS08859-1, or <i>Latin1</i> encoding.  8 bit characters.
         */
-       Latin1 = 0,
 @@ -117,6 +129,10 @@ namespace TagLib {
         */
        UTF16LE = 4
@@ -668,3 +720,6 @@ index b1be04b..b21f297 100644
  
      /*!
       * Constructs an empty String.
+-- 
+2.17.1
+
