@@ -9,7 +9,7 @@ LIB_NAMES+='libbinio adplug' #adplug
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32:${DEV_PATH}/mingw32/opt
 export QT4_PATH=${DEV_PATH}/qt4
-export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
+export ZLIB_ROOT=${DEV_PATH}/mingw32/i686-w64-mingw32
 export PREFIX=${DEV_PATH}/mingw32-libs
 
 export PATH=${PATH}:${MINGW32_PATH}/bin:${QT4_PATH}/bin:${PREFIX}/bin:${DEV_PATH}/msys/bin
