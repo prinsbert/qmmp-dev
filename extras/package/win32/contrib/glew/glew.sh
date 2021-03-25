@@ -13,9 +13,11 @@ case $1 in
     cd temp
     tar xvzf $NAME-$VERSION.tgz
     cd $NAME-$VERSION
-    make -j${JOBS}
-    GLEW_DEST=${PREFIX} make install
-
+    cd build
+    cmake ./cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_UTILS=OFF -G "MSYS Makefiles"
+    make
+    make install
+    cd ..
   ;;
   --clean)
     cd temp

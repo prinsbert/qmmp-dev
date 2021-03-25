@@ -1,11 +1,10 @@
 #!/bin/sh
 
-#LIB_NAMES+='pkg-config yasm taglib libmad mpg123 libogg libvorbis flac wavpack libsndfile opus opusfile '
-#LIB_NAMES+='libbs2b curl libcdio libgnurx libcddb ffmpeg libmodplug game-music-emu musepack '
-#LIB_NAMES+='glew projectm xa libsidplayfp enca soxr '
-#LIB_NAMES+='libxml2 librcd librcc taglib-rusxmms ' #rusxmms
-#LIB_NAMES+='libbinio adplug' #adplug
-LIB_NAMES+='glew'
+LIB_NAMES+='pkg-config yasm taglib libmad mpg123 libogg libvorbis flac wavpack libsndfile opus opusfile '
+LIB_NAMES+='libbs2b curl libcdio libgnurx libcddb ffmpeg libmodplug game-music-emu musepack '
+LIB_NAMES+='glew projectm xa libsidplayfp enca soxr '
+LIB_NAMES+='libxml2 librcd librcc taglib-rusxmms ' #rusxmms
+LIB_NAMES+='libbinio adplug' #adplug
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32:${DEV_PATH}/mingw32/opt
@@ -13,7 +12,7 @@ export QT4_PATH=${DEV_PATH}/qt4
 export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
 export PREFIX=${DEV_PATH}/mingw32-libs
 
-export PATH=${PATH}:${MINGW32_PATH}/bin:${QT4_PATH}/bin:${PREFIX}/bin
+export PATH=${PATH}:${MINGW32_PATH}/bin:${QT4_PATH}/bin:${PREFIX}/bin:${DEV_PATH}/msys/bin
 
 export STRIP=false
 export JOBS=2
