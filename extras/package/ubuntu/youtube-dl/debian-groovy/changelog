@@ -1,3 +1,9 @@
+youtube-dl (2021.03.25-1ubuntu1~groovy0) groovy; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 28 Mar 2021 21:55:50 +0300
+
 youtube-dl (2021.03.14-1ubuntu1~groovy0) groovy; urgency=medium
 
   * New upstream release.
