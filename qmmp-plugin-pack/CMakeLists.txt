@@ -59,8 +59,8 @@ ENDIF(SVN_VERSION)
 SET(PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qmmp-${QMMP_PLUGIN_PACK_VERSION_MAJOR}.${QMMP_PLUGIN_PACK_VERSION_MINOR}" CACHE STRING "plugin path")
 #SET(APP_NAME_SUFFIX "-1")
 
-pkg_check_modules(QMMP qmmp${APP_NAME_SUFFIX}>=1.4.0 REQUIRED)
-pkg_check_modules(QMMPUI qmmpui${APP_NAME_SUFFIX}>=1.4.0)
+pkg_check_modules(QMMP qmmp${APP_NAME_SUFFIX}>=1.5.0 REQUIRED)
+pkg_check_modules(QMMPUI qmmpui${APP_NAME_SUFFIX}>=1.5.0)
 
 IF(QMMP_FOUND)
 add_subdirectory(src)

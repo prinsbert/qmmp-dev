@@ -15,7 +15,7 @@ Description:
 
 Requirements:
 - Qt >= 5.4 (qtbase and qttools for build)
-- qmmp 1.4.x
+- qmmp 1.5.x
 - taglib >= 1.10
 - libxmp >= 4.2.0 (optional)
 - libsamplerate >= 0.1.2 (optional)
@@ -40,7 +40,6 @@ cmake ./ -DUSE_XMP:BOOL=FALSE
 
 Available options:
 - USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB (plugins)
-- USE_ASM (assembler-level optimizations inside FFap decoder)
 
 Also you can use ccmake to change plugin configuration.
 By default program will be installed in /usr/local. You can change default path by running:
