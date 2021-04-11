@@ -137,8 +137,7 @@ PRINT_SUMMARY ("Goom visualization .............." USE_GOOM 1)
 
 MESSAGE("")
 MESSAGE("Advanced:")
-PRINT_SUMMARY ("FFap sssempler optimizations ...." YASM_FOUND USE_FFAP)
-PRINT_SUMMARY ("Goom assempler optimizations ...." GOOM_ASM USE_GOOM)
+PRINT_SUMMARY ("Goom assembler optimizations ...." GOOM_ASM USE_GOOM)
 
 
 MESSAGE("")
