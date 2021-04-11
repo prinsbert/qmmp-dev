@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2021.03.25
+VERSION=2021.04.07
 UBUNTU_CODENAMES='xenial bionic focal groovy'
 BUILD_ROOT=build-root
 
