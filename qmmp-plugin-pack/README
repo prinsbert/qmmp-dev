@@ -22,7 +22,6 @@ Requirements:
 - ffmpeg >= 3.2 (optional)
 - youtube-dl (latest version, optional)
 - cmake >= 3.5.0 (for build only)
-- yasm (for build only)
 
 Attention! Plugin Pack build needs lrelease installed.
 
