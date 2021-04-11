@@ -72,7 +72,6 @@ unix {
 
 CONFIG += SRC_PLUGIN
 CONFIG += FFAP_PLUGIN
-CONFIG += FFAP_YASM #assembler optimizations
 CONFIG += XMP_PLUGIN
 CONFIG += GOOM_PLUGIN
 CONFIG += GOOM_ASM #assembler optimizations
