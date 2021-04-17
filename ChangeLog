@@ -1650,3 +1650,11 @@ Version 1.4.4
 * updated Galician translation (Delio Docampo Cordeiro)
 * updated Spanish translation (Joel Barrios)
 * updated Bulgarian translation (Miroslav Mihov)
+
+Version 1.4.5
+* added TagLib 1.12 support
+* disabled CRC checking in the mpeg plugin
+* fixed playlist update
+* fixed build with gcc 11
+* fixed API documentation
+* fixed skin search path
