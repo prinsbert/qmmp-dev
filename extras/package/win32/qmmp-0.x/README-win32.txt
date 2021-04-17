@@ -36,7 +36,8 @@ List of the third-party libraries.
   opusfile            0.12       http://www.opus-codec.org/
   libbs2b             3.1.0      http://bs2b.sourceforge.net/
   curl                7.76.1     http://curl.haxx.se/
-  libcdio             0.83       http://www.gnu.org/software/libcdio/
+  libcdio             2.1.0      http://www.gnu.org/software/libcdio/
+  libcdio-paranoia    10.2+2.0.1 http://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
   ffmpeg              3.4.8      http://ffmpeg.org/
