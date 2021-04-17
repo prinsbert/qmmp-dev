@@ -1,7 +1,7 @@
 #!/bin/sh
 
-NAME=libcdio
-VERSION=2.1.0
+NAME=libcdio-paranoia
+VERSION=10.2+2.0.1
 
 case $1 in
   --download)
@@ -14,9 +14,7 @@ case $1 in
     tar xvjf $NAME-$VERSION.tar.bz2
     cd $NAME-$VERSION
     autoreconf -fi
-    CFLAGS="-march=i686" ./configure --prefix=$PREFIX --enable-shared --disable-static --disable-cxx --disable-example-progs \
-    --disable-cddb --without-cd-drive --without-cd-info --without-cdda-player \
-    --without-iso-info --without-iso-read --without-cd-read
+    CFLAGS="-march=i686" ./configure --prefix=$PREFIX --enable-shared --disable-static --disable-cxx --disable-example-progs
     make -j${JOBS}
     make install
 
