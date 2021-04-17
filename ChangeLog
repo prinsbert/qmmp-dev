@@ -1525,3 +1525,11 @@ Version 0.12.10
 Version 0.12.11
 * fixed crash when changing audio parameters
 * removed lyrics.wikia.com provider (service was closed)
+
+Version 0.12.12
+* added TagLib 1.12 support
+* disabled CRC checking in the mpeg plugin
+* fixed playlist update
+* fixed build with gcc 11
+* fixed API documentation
+* fixed skin search path
