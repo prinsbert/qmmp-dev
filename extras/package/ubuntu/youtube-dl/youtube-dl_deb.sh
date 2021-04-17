@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VERSION=2021.04.17
-UBUNTU_CODENAMES='xenial bionic focal groovy'
+UBUNTU_CODENAMES='xenial bionic focal groovy hirsute'
 BUILD_ROOT=build-root
 
 
