@@ -1658,3 +1658,4 @@ Version 1.4.5
 * fixed build with gcc 11
 * fixed API documentation
 * fixed skin search path
+* fixed application icons
