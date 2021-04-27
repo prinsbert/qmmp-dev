@@ -1533,3 +1533,4 @@ Version 0.12.12
 * fixed build with gcc 11
 * fixed API documentation
 * fixed skin search path
+* fixed application icons
