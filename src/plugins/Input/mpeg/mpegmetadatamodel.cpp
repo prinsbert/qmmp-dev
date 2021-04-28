@@ -26,6 +26,7 @@
 #include <taglib/fileref.h>
 #include <taglib/id3v1tag.h>
 #include <taglib/id3v2tag.h>
+#include <taglib/id3v2.h>
 #include <taglib/apetag.h>
 #include <taglib/tfile.h>
 #include <taglib/mpegfile.h>
