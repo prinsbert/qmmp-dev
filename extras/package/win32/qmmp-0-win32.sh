@@ -22,6 +22,10 @@ download_qmmp_tarball()
   echo 'downloading qmmp...'
   wget -nc http://qmmp.ylsoftware.com/files/qmmp-${QMMP_VERSION}.tar.bz2
   tar xvjf qmmp-${QMMP_VERSION}.tar.bz2
+  cd qmmp-${QMMP_VERSION}
+  cp -v ../../qmmp-0.x/mingw32-build.patch ./
+  cat mingw32-build.patch | patch -p0
+  cd ..
   cd ..
 }
 
@@ -123,7 +127,7 @@ create_distr ()
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libopus-0.dll libopusfile-0.dll libprojectM.dll libsidplayfp-5.dll libsndfile-1.dll libtag.dll libvorbis-0.dll
+  for LIB_NAME in libopus-0.dll libopusfile-0.dll libprojectM.dll libsidplayfp-*.dll libsndfile-1.dll libtag.dll libvorbis-0.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done

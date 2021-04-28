@@ -1,0 +1,20 @@
+Index: src/plugins/Input/mpeg/mpegmetadatamodel.cpp
+===================================================================
+--- src/plugins/Input/mpeg/mpegmetadatamodel.cpp	(revision 9855)
++++ src/plugins/Input/mpeg/mpegmetadatamodel.cpp	(working copy)
+@@ -412,11 +412,11 @@
+ void MpegFileTagModel::save()
+ {
+     if(m_tag)
+-#if ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION <= 11))
++//#if ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION <= 11))
+         m_file->save(m_tagType, false);
+-#else
+-        m_file->save(m_tagType, TagLib::File::StripNone, TagLib::ID3v2::Version::v4, TagLib::File::DoNotDuplicate);
+-#endif
++//#else
++//        m_file->save(m_tagType, TagLib::File::StripNone, TagLib::ID3v2::Version::v4, TagLib::File::DoNotDuplicate);
++//#endif
+     else
+         m_file->strip(m_tagType);
+ }
