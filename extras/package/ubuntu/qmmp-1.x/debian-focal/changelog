@@ -1,3 +1,9 @@
+qmmp (1.4.5-1ubuntu1~focal0) focal; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 28 Apr 2021 21:14:38 +0300
+
 qmmp (1.4.4-1ubuntu1~focal0) focal; urgency=medium
 
   * New upstream release.
