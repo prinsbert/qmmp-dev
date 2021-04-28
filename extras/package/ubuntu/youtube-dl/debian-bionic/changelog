@@ -1,3 +1,9 @@
+youtube-dl (2021.04.26-1ubuntu1~bionic0) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 29 Apr 2021 00:23:18 +0300
+
 youtube-dl (2021.04.17-1ubuntu1~bionic0) bionic; urgency=medium
 
   * New upstream release.
