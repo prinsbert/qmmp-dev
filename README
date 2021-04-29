@@ -40,7 +40,7 @@ Visual effects:
 Output system support:
 - OSS4 (FreeBSD)
 - ALSA (Linux)
-- Pulse Audio
+- PulseAudio
 - JACK
 - QtMultimedia
 - Icecast
