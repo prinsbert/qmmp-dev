@@ -40,7 +40,7 @@ Qmmp - Qt-based multimedia player
 Системы вывода звука:
 - OSS4 (FreeBSD)
 - ALSA (Linux)
-- Pulse Audio
+- PulseAudio
 - JACK
 - QtMultimedia
 - Icecast
