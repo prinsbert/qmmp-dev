@@ -11,7 +11,7 @@
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="51"/>
         <source>About Sample Rate Converter Plugin</source>
-        <translation>Sobre o suplemento Sample Rate Converter</translation>
+        <translation>Acerca de suplemento Sample Rate Converter</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="52"/>

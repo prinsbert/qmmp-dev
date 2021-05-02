@@ -16,7 +16,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
-        <translation>Sobre o suplemento XMP Audio</translation>
+        <translation>Acerca de suplemento XMP Audio</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="110"/>
