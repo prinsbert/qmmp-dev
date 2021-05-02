@@ -16,7 +16,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="159"/>
         <source>About FFVideo Plugin</source>
-        <translation>Sobre o suplemento FFVideo</translation>
+        <translation>Acerca de suplemento FFVideo</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="160"/>
