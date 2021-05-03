@@ -11,10 +11,6 @@ unix:exists($$[QT_INSTALL_BINS]/lrelease){
 LRELEASE_EXECUTABLE = $$[QT_INSTALL_BINS]/lrelease
 }
 
-unix:exists($$[QT_INSTALL_BINS]/lrelease-qt5){
-LRELEASE_EXECUTABLE = $$[QT_INSTALL_BINS]/lrelease-qt5
-}
-
 
 win32:exists($$[QT_INSTALL_BINS]/lrelease.exe){
 LRELEASE_EXECUTABLE = $$[QT_INSTALL_BINS]/lrelease.exe
