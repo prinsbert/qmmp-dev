@@ -35,40 +35,7 @@ SET(libgoom_SRCS
   tentacle3d.c
   v3d.c
   visualgoomfactory.cpp
-)
-
-SET(libgoom_HDRS
-  attributes.h
-  cpu_info.h
-  default_scripts.h
-  drawmethods.h
-  gfontlib.h
-  goom_config.h
-  goom_config_param.h
-  goom_filters.h
-  goom_fx.h
-  goom_graphic.h
-  goom.h
-  goom_plugin_info.h
-  goomsl.h
-  goomsl_hash.h
-  goomsl_heap.h
-  goomsl_private.h
-  goomsl_yacc.h
-  goom_tools.h
-  goom_typedefs.h
-  goom_visual_fx.h
-  goomwidget.h
-  ifs.h
-  lines.h
-  mathtools.h
-  motif_goom1.h
-  motif_goom2.h
-  sound_tester.h
-  surf3d.h
-  tentacle3d.h
-  v3d.h
-  visualgoomfactory.h
+  translations/translations.qrc
 )
 
 IF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
@@ -90,15 +57,6 @@ ELSE(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
 ENDIF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
 
 
-SET(libgoom_RCCS translations/translations.qrc)
-
-QT5_ADD_RESOURCES(libgoom_RCC_SRCS ${libgoom_RCCS})
-
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
-
-ADD_LIBRARY(goom MODULE ${libgoom_SRCS} ${libgoom_RCC_SRCS} ${libgoom_HDRS})
-target_link_libraries(goom Qt5::Widgets ${QMMP_LDFLAGS} ${goom_LDFLAGS})
+ADD_LIBRARY(goom MODULE ${libgoom_SRCS})
+target_link_libraries(goom Qt6::Widgets ${QMMP_LDFLAGS} ${goom_LDFLAGS})
 install(TARGETS goom DESTINATION ${PLUGIN_DIR}/Visual)

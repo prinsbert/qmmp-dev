@@ -12,16 +12,9 @@ SET(libytb_SRCS
   bufferdevice.cpp
   ytbinputfactory.cpp
   ytbinputsource.cpp
+  translations/translations.qrc
 )
 
-SET(libytb_RCCS translations/translations.qrc)
-
-QT5_ADD_RESOURCES(libytb_RCC_SRCS ${libytb_RCCS})
-
-# Don't forget to include output directory, otherwise
-# the UI file won't be wrapped!
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
-ADD_LIBRARY(ytb MODULE ${libytb_SRCS} ${libytb_UIS_H} ${libytb_RCC_SRCS} ${libytb_HDRS})
-target_link_libraries(ytb Qt5::Widgets Qt5::Network ${QMMP_LDFLAGS} ${XMP_LDFLAGS})
+ADD_LIBRARY(ytb MODULE ${libytb_SRCS})
+target_link_libraries(ytb PRIVATE Qt6::Widgets Qt6::Network ${QMMP_LDFLAGS} ${XMP_LDFLAGS})
 install(TARGETS ytb DESTINATION ${PLUGIN_DIR}/Transports)
