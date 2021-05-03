@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2020 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,14 +33,6 @@
 
 QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
 {
-    m_error = false;
-    m_instance = nullptr;
-    m_decoderFactory = nullptr;
-    m_outputFactory = nullptr;
-    m_engineFactory = nullptr;
-    m_effectFactory = nullptr;
-    m_inputSourceFactory = nullptr;
-    m_priority = 0;
     bool update = false;
     QFileInfo info(file);
     m_path = info.QFileInfo::canonicalFilePath();
@@ -54,13 +46,14 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
 
     {
         QStringList values = settings->value(m_path).toStringList();
-        if(values.count() != 3)
+        if(values.count() != 4)
             update = true;
         else
         {
             m_shortName = values.at(0);
             m_priority = values.at(1).toInt();
-            update = (info.lastModified().toString(Qt::ISODate) != values.at(2));
+            m_filters = values.at(2).split(";");
+            update = (info.lastModified().toString(Qt::ISODate) != values.at(3));
         }
     }
     else
@@ -73,6 +66,7 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
         {
             m_shortName = factory->properties().shortName;
             m_priority = factory->properties().priority;
+            m_filters = factory->properties().filters;
         }
         else if(OutputFactory *factory = outputFactory())
         {
@@ -83,6 +77,7 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
         {
             m_shortName = factory->properties().shortName;
             m_priority = 0;
+            m_filters = factory->properties().filters;
         }
         else if(EffectFactory *factory = effectFactory())
         {
@@ -105,6 +100,7 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
             QStringList values;
             values << m_shortName;
             values << QString::number(m_priority);
+            values << m_filters.join(";");
             values << info.lastModified().toString(Qt::ISODate);
             settings->setValue(m_path, values);
             qDebug("QmmpPluginCache: added cache item \"%s=%s\"",
@@ -122,6 +118,11 @@ const QString QmmpPluginCache::shortName() const
 const QString QmmpPluginCache::file() const
 {
     return m_path;
+}
+
+const QStringList &QmmpPluginCache::filters() const
+{
+    return m_filters;
 }
 
 int QmmpPluginCache::priority() const
@@ -212,8 +213,10 @@ void QmmpPluginCache::loadTranslation(const QString &translation)
     if(!translation.isEmpty())
     {
         QTranslator *translator = new QTranslator(qApp);
-        translator->load(translation + Qmmp::systemLanguageID());
-        qApp->installTranslator(translator);
+        if(translator->load(translation + Qmmp::systemLanguageID()))
+            qApp->installTranslator(translator);
+        else
+            delete translator;
     }
 }
 

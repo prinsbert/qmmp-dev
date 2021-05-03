@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013 by Ilya Kotov                                      *
+ *   Copyright (C) 2013-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,6 +22,7 @@
 #define QMMPPLUGINCACHE_P_H
 
 #include <QString>
+#include <QStringList>
 #include <QObject>
 #include <QSettings>
 
@@ -41,6 +42,7 @@ public:
 
     const QString shortName() const;
     const QString file() const;
+    const QStringList &filters() const;
     int priority() const;
     bool hasError() const;
 
@@ -57,14 +59,15 @@ private:
     void loadTranslation(const QString &translation);
     QString m_path;
     QString m_shortName;
-    bool m_error;
-    QObject *m_instance;
-    DecoderFactory *m_decoderFactory;
-    OutputFactory *m_outputFactory;
-    EngineFactory *m_engineFactory;
-    EffectFactory *m_effectFactory;
-    InputSourceFactory *m_inputSourceFactory;
-    int m_priority;
+    QStringList m_filters;
+    bool m_error = false;
+    QObject *m_instance = nullptr;
+    DecoderFactory *m_decoderFactory = nullptr;
+    OutputFactory *m_outputFactory = nullptr;
+    EngineFactory *m_engineFactory = nullptr;
+    EffectFactory *m_effectFactory = nullptr;
+    InputSourceFactory *m_inputSourceFactory = nullptr;
+    int m_priority = 0;
 };
 
 #endif // QMMPPLUGINCACHE_P_H
