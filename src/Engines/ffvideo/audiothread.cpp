@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2017-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,14 +30,6 @@ AudioThread::AudioThread(PacketBuffer *buf, QObject *parent) :
     QThread(parent)
 {
     m_buffer = buf;
-    m_output = nullptr;
-    m_user_stop = false;
-    m_finish = false;
-    m_pause = false;
-    m_prev_pause = false;
-    m_stream = nullptr;
-    m_muted = false;
-    m_context = nullptr;
 }
 
 AudioThread::~AudioThread()
@@ -203,11 +195,6 @@ void AudioThread::run()
 
         if((err = avcodec_receive_frame(m_context, frame)) == 0)
         {
-#if (LIBAVUTIL_VERSION_INT < ((55<<16)+(34<<8)+100)) //ffmpeg 3.2
-            if(frame->pts == AV_NOPTS_VALUE)
-                frame->pts = frame->pkt_pts;
-#endif
-
             oframe->channel_layout = AV_CH_LAYOUT_STEREO;
             oframe->sample_rate = 44100;
             oframe->format = AV_SAMPLE_FMT_S16;
