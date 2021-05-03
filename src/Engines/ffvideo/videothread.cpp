@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -29,16 +29,6 @@ VideoThread::VideoThread(PacketBuffer *buf, QObject *parent) :
     QThread(parent)
 {
     m_buffer = buf;
-    m_output = nullptr;
-    m_user_stop = false;
-    m_finish = false;
-    m_pause = false;
-    m_prev_pause = false;
-    m_sync = false;
-    m_resize = false;
-    m_context = nullptr;
-    m_videoWindow = nullptr;
-    m_stream = nullptr;
 }
 
 bool VideoThread::initialize(FFVideoDecoder *decoder, VideoWindow *w)

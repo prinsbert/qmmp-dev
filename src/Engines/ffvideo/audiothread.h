@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -56,13 +56,13 @@ private:
     void run() override;
 
     QMutex m_mutex;
-    AVCodecContext *m_context;
-    Output *m_output;
-    PacketBuffer *m_buffer;
-    AVStream *m_stream;
-    bool m_user_stop, m_finish;
-    bool m_pause, m_prev_pause;
-    bool m_muted;
+    AVCodecContext *m_context = nullptr;
+    Output *m_output = nullptr;
+    PacketBuffer *m_buffer = nullptr;
+    AVStream *m_stream = nullptr;
+    bool m_user_stop = false, m_finish = false;
+    bool m_pause = false, m_prev_pause = false;
+    bool m_muted = false;
 };
 
 #endif // AUDIOTHREAD_H

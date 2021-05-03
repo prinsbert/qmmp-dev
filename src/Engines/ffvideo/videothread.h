@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -60,16 +60,16 @@ private:
     void run() override;
 
     QMutex m_mutex;
-    AVCodecContext *m_context;
-    Output *m_output;
-    PacketBuffer *m_buffer;
-    VideoWindow *m_videoWindow;
-    AVStream *m_stream;
+    AVCodecContext *m_context = nullptr;
+    Output *m_output = nullptr;
+    PacketBuffer *m_buffer = nullptr;
+    VideoWindow *m_videoWindow = nullptr;
+    AVStream *m_stream = nullptr;
     QSize m_window_size;
-    bool m_user_stop, m_finish;
-    bool m_pause, m_prev_pause;
-    bool m_sync;
-    bool m_resize;
+    bool m_user_stop = false, m_finish = false;
+    bool m_pause = false, m_prev_pause = false;
+    bool m_sync = false;
+    bool m_resize = false;
 
 };
 
