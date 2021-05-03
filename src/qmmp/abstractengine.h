@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -91,6 +91,10 @@ public:
      * Returns a list of enabled engine factories.
      */
     static QList<EngineFactory*> enabledFactories();
+    /*!
+     * Returns a list of file name filters, i.e. "*.mp3 *.mpg".
+     */
+    static QStringList nameFilters();
     /*!
      * Returns EngineFactory pointer which supports file \b path or 0 if file \b path is unsupported.
      */

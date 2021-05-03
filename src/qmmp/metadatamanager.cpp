@@ -148,17 +148,8 @@ QStringList MetaDataManager::filters() const
 
 QStringList MetaDataManager::nameFilters() const
 {
-    QStringList filters;
-    foreach(DecoderFactory *fact, Decoder::enabledFactories())
-    {
-        if (Decoder::isEnabled(fact))
-            filters << fact->properties().filters;
-    }
-    foreach(EngineFactory *fact, AbstractEngine::enabledFactories())
-    {
-        if (AbstractEngine::isEnabled(fact))
-            filters << fact->properties().filters;
-    }
+    QStringList filters = Decoder::nameFilters();
+    filters << AbstractEngine::nameFilters();
     if(m_settings->determineFileTypeByContent())
         filters << "*";
     filters.removeDuplicates();

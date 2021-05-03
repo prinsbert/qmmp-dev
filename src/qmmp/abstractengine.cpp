@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -123,6 +123,20 @@ QList<EngineFactory *> AbstractEngine::enabledFactories()
             list.append(item->engineFactory());
     }
     return list;
+}
+
+QStringList AbstractEngine::nameFilters()
+{
+    loadPlugins();
+    QStringList filters;
+    foreach (QmmpPluginCache *item, *m_cache)
+    {
+        if(m_disabledNames.contains(item->shortName()))
+            continue;
+
+        filters << item->filters();
+    }
+    return filters;
 }
 
 EngineFactory *AbstractEngine::findByFilePath(const QString& source)
