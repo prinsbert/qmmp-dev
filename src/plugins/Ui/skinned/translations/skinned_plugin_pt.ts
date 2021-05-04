@@ -431,12 +431,12 @@
     <message>
         <location filename="../actionmanager.cpp" line="91"/>
         <source>&amp;About</source>
-        <translation>So&amp;bre</translation>
+        <translation>&amp;Acerca</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="92"/>
         <source>&amp;About Qt</source>
-        <translation>S&amp;obre Qt</translation>
+        <translation>&amp;Acerca de Qt</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="93"/>
@@ -1139,7 +1139,7 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="61"/>
         <source>About Qmmp Skinned User Interface</source>
-        <translation>Sobre Qmmp Skinned User Interface</translation>
+        <translation>Acerca de Qmmp Skinned User Interface</translation>
     </message>
     <message>
         <location filename="../skinnedfactory.cpp" line="62"/>

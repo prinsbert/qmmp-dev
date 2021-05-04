@@ -6,7 +6,7 @@
     <message>
         <location filename="../forms/aboutqsuidialog.ui" line="14"/>
         <source>About QSUI</source>
-        <translation>Sobre QSUI</translation>
+        <translation>Acerca de QSUI</translation>
     </message>
     <message>
         <location filename="../aboutqsuidialog.cpp" line="41"/>
@@ -464,17 +464,17 @@
     <message>
         <location filename="../actionmanager.cpp" line="100"/>
         <source>&amp;About Ui</source>
-        <translation>Sobre &amp;UI</translation>
+        <translation>&amp;Acerca de UI</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="101"/>
         <source>&amp;About</source>
-        <translation>&amp;Sobre</translation>
+        <translation>&amp;Acerca</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="102"/>
         <source>&amp;About Qt</source>
-        <translation>Sobre &amp;Qt</translation>
+        <translation>&amp;Acerca de Qt</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="103"/>
@@ -780,12 +780,12 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="224"/>
         <source>About</source>
-        <translation>Sobre</translation>
+        <translation>Acerca</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="229"/>
         <source>About Qt</source>
-        <translation>Sobre Qt</translation>
+        <translation>Acerca de Qt</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="234"/>

@@ -6,12 +6,12 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
         <source>About Qmmp</source>
-        <translation>Sobre o Qmmp</translation>
+        <translation>Acerca de Qmmp</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="49"/>
         <source>About</source>
-        <translation>Sobre</translation>
+        <translation>Acerca</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="63"/>

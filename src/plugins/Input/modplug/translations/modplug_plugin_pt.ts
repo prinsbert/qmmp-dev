@@ -16,7 +16,7 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="136"/>
         <source>About ModPlug Audio Plugin</source>
-        <translation>Sobre o suplemento ModPlug Audio</translation>
+        <translation>Acerca de suplemento ModPlug Audio</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="137"/>

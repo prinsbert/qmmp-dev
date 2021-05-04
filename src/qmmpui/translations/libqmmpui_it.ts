@@ -271,7 +271,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="129"/>
         <source>Load metadata from files</source>
-        <translation>Carica i metadati dai file</translation>
+        <translation>Carica i metadati dai brani</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="136"/>
@@ -475,7 +475,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="711"/>
         <source>Default gain:</source>
-        <translation>Normalizzazione predefinita:</translation>
+        <translation>Normalizzazione predefinita</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="763"/>
@@ -1243,7 +1243,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="250"/>
         <source>Disc number:</source>
-        <translation>Numero disco: </translation>
+        <translation>Disco numero: </translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="275"/>

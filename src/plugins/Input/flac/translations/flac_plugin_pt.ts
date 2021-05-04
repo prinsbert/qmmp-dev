@@ -16,7 +16,7 @@
     <message>
         <location filename="../decoderflacfactory.cpp" line="210"/>
         <source>About FLAC Audio Plugin</source>
-        <translation>Sobre o suplemento FLAC Audio</translation>
+        <translation>Acerca de suplemento FLAC Audio</translation>
     </message>
     <message>
         <location filename="../decoderflacfactory.cpp" line="211"/>

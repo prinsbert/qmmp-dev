@@ -126,7 +126,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="51"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Passaggio &amp;tra scalette</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="52"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="74"/>
         <source>&amp;Queue Toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Attiva/disattiva co&amp;da</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="74"/>
@@ -941,7 +941,7 @@
     <message>
         <location filename="../playlist.cpp" line="595"/>
         <source>Playlist name:</source>
-        <translation>Nome della scaletta</translation>
+        <translation>Nome della scaletta:</translation>
     </message>
     <message>
         <location filename="../playlist.cpp" line="616"/>
@@ -1344,7 +1344,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="293"/>
         <source>Show anchor</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra ancora</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="300"/>

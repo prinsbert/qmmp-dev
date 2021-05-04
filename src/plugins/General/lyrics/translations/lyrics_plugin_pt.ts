@@ -24,7 +24,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="49"/>
         <source>About Lyrics Plugin</source>
-        <translation>Sobre o suplemento Lyrics</translation>
+        <translation>Acerca de suplemento Lyrics</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="50"/>

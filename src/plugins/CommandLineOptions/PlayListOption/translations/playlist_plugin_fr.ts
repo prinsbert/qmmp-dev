@@ -6,27 +6,27 @@
     <message>
         <location filename="../playlistoption.cpp" line="33"/>
         <source>Show playlist manipulation commands</source>
-        <translation>Montrer les commandes de manipulation de liste</translation>
+        <translation>Montrer les commandes de manipulation de playlist</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="34"/>
         <source>List all available playlists</source>
-        <translation>Montrer toutes les listes disponibles</translation>
+        <translation>Montrer toutes les playlists disponibles</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="35"/>
         <source>Show playlist content</source>
-        <translation>Montrer le contenu de la liste</translation>
+        <translation>Montrer le contenu de la playlist</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="36"/>
         <source>Play track &lt;track&gt; in playlist &lt;id&gt;</source>
-        <translation>Lire le morceau &lt;track&gt; dans la liste &lt;id&gt;</translation>
+        <translation>Lire le morceau &lt;track&gt; dans la playlist &lt;id&gt;</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="37"/>
         <source>Clear playlist</source>
-        <translation>Vider la liste</translation>
+        <translation>Vider la playlist</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="38"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../playlistoption.cpp" line="40"/>
         <source>Toggle playlist repeat</source>
-        <translation>Activer/Désactiver la répétition de liste</translation>
+        <translation>Activer/Désactiver la répétition de playlist</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="41"/>
@@ -51,14 +51,14 @@
     <message>
         <location filename="../playlistoption.cpp" line="42"/>
         <source>Show playlist options</source>
-        <translation>Montrer les options de liste</translation>
+        <translation>Montrer les options de playlist</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="110"/>
         <location filename="../playlistoption.cpp" line="132"/>
         <location filename="../playlistoption.cpp" line="171"/>
         <source>Invalid playlist ID</source>
-        <translation>Identifiant de liste invalide</translation>
+        <translation>Identifiant de playlist invalide</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="126"/>

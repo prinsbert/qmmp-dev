@@ -905,7 +905,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="273"/>
         <source>Sample size</source>
-        <translation>Taille d&apos;échantillonage</translation>
+        <translation>Taille d’échantillonnage</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="273"/>
@@ -915,7 +915,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="274"/>
         <source>Format name</source>
-        <translation>Nom du format</translation>
+        <translation>Formatage du nom</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="275"/>

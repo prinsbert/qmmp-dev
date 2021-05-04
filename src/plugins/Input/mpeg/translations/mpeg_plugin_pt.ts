@@ -16,7 +16,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="400"/>
         <source>About MPEG Audio Plugin</source>
-        <translation>Sobre o suplemento MPEG Audio</translation>
+        <translation>Acerca de suplemento MPEG Audio</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="401"/>

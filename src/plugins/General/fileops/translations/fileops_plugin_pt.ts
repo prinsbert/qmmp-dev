@@ -78,7 +78,7 @@
     <message>
         <location filename="../fileopsfactory.cpp" line="50"/>
         <source>About File Operations Plugin</source>
-        <translation>Sobre o suplemento File Operations</translation>
+        <translation>Acerca de suplemento File Operations</translation>
     </message>
     <message>
         <location filename="../fileopsfactory.cpp" line="51"/>
