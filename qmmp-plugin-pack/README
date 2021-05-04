@@ -16,10 +16,10 @@ Description:
 Requirements:
 - Qt >= 5.4 (qtbase and qttools for build)
 - qmmp 1.5.x
-- taglib >= 1.10
+- taglib >= 1.11
 - libxmp >= 4.2.0 (optional)
 - libsamplerate >= 0.1.2 (optional)
-- ffmpeg >= 3.2 (optional)
+- ffmpeg >= 3.4 (optional)
 - youtube-dl (latest version, optional)
 - cmake >= 3.5.0 (for build only)
 
