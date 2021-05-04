@@ -16,7 +16,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>About FFap Audio Plugin</source>
-        <translation>Sobre o suplemento FFap Audio</translation>
+        <translation>Acerca de suplemento FFap Audio</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>

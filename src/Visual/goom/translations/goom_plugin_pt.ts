@@ -54,7 +54,7 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="49"/>
         <source>About Goom Visual Plugin</source>
-        <translation>Sobre o suplemento Goom</translation>
+        <translation>Acerca de suplemento Goom</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="50"/>

@@ -16,7 +16,7 @@
     <message>
         <location filename="../ytbinputfactory.cpp" line="62"/>
         <source>About Youtube Transport Plugin</source>
-        <translation>Sobre o suplemento Youtube Transport</translation>
+        <translation>Acerca de suplemento Youtube Transport</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="63"/>
@@ -36,23 +36,23 @@
     <message>
         <location filename="../ytbinputfactory.cpp" line="67"/>
         <source>Written by: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation>Desenvolvido: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
+        <translation>Desenvolvido por: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
 </context>
 <context>
     <name>YtbInputSource</name>
     <message>
-        <location filename="../ytbinputsource.cpp" line="148"/>
+        <location filename="../ytbinputsource.cpp" line="150"/>
         <source>Uploader</source>
         <translation>Publicador</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="149"/>
+        <location filename="../ytbinputsource.cpp" line="151"/>
         <source>Upload date</source>
-        <translation>Data da publicação</translation>
+        <translation>Data de publicação</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="150"/>
+        <location filename="../ytbinputsource.cpp" line="152"/>
         <source>Duration</source>
         <translation>Duração</translation>
     </message>

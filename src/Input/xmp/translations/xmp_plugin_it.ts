@@ -74,7 +74,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation>Frequenza di campionamento:</translation>
+        <translation>Campionamento</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="80"/>
         <source>Samples</source>
-        <translation>Campioni</translation>
+        <translation>Campionamenti</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="88"/>

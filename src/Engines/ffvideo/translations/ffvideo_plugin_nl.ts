@@ -16,7 +16,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="165"/>
         <source>About FFVideo Plugin</source>
-        <translation>Over FFVideo-plug-in</translation>
+        <translation>Over FFVideo-plugpin</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="166"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>Audiobitsnelheid</translation>
+        <translation>Audio bitrate</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>
         <source>Video bitrate</source>
-        <translation>Videobitsnelheid</translation>
+        <translation>Video bitrate</translation>
     </message>
 </context>
 <context>
@@ -99,12 +99,12 @@
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
-        <translation>&amp;Pauzeren</translation>
+        <translation>&amp;Pauze</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>
         <source>Space</source>
-        <translation>Spatiebalk</translation>
+        <translation>Spatie</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
@@ -119,7 +119,7 @@
     <message>
         <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
-        <translation>Beeld&amp;vullend</translation>
+        <translation>&amp;Volledig scherm</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="48"/>

@@ -16,7 +16,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="165"/>
         <source>About FFVideo Plugin</source>
-        <translation>Sobre o suplemento FFVideo</translation>
+        <translation>Acerca de suplemento FFVideo</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="166"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>Taxa de dados de áudio</translation>
+        <translation>Taxa de dados do áudio</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
