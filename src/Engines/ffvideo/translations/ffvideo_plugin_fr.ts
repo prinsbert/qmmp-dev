@@ -14,22 +14,22 @@
         <translation>Fichiers vidéo</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="159"/>
+        <location filename="../ffvideofactory.cpp" line="155"/>
         <source>About FFVideo Plugin</source>
         <translation>À propos du greffon FFVidéo</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="160"/>
+        <location filename="../ffvideofactory.cpp" line="156"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Greffon vidéo basé sur FFmpeg pour Qmmp</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="161"/>
+        <location filename="../ffvideofactory.cpp" line="157"/>
         <source>Compiled against:</source>
         <translation>Compilé contre :</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="171"/>
+        <location filename="../ffvideofactory.cpp" line="167"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
