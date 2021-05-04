@@ -1659,3 +1659,9 @@ Version 1.4.5
 * fixed API documentation
 * fixed skin search path
 * fixed application icons
+
+Version 1.4.6
+* added application startup optimization
+* added X11 session checking in the notifier plugin
+* fixed provider settings parsing in the lyrics plugin
+* fixed equalizer form in the qsui plugin
