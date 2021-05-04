@@ -16,7 +16,7 @@ Description:
 Requirements:
 - Qt >= 6.1 (qtbase and qttools for build)
 - qmmp 2.0.x
-- taglib >= 1.10
+- taglib >= 1.12
 - libxmp >= 4.2.0 (optional)
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.4 (optional)

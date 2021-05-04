@@ -16,7 +16,7 @@ Qmmp Plugin Pack
 Требования:
 - Qt >= 6.1 (qtbase и qttools для сборки)
 - qmmp 2.0.x
-- taglib >= 1.10
+- taglib >= 1.12
 - libxmp >= 4.2.0 (опционально)
 - libsamplerate >= 0.1.2 (опционально)
 - ffmpeg >= 3.4 (опционально)
