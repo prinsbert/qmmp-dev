@@ -14,22 +14,22 @@
         <translation>視頻文件</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="159"/>
+        <location filename="../ffvideofactory.cpp" line="155"/>
         <source>About FFVideo Plugin</source>
         <translation>關於 FFVideo 外掛程式</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="160"/>
+        <location filename="../ffvideofactory.cpp" line="156"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Qmmp 的基於 FFmpeg 的視訊外掛程式</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="161"/>
+        <location filename="../ffvideofactory.cpp" line="157"/>
         <source>Compiled against:</source>
         <translation>編譯使用：</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="171"/>
+        <location filename="../ffvideofactory.cpp" line="167"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
