@@ -16,10 +16,10 @@ Qmmp Plugin Pack
 Требования:
 - Qt >= 5.4 (qtbase и qttools для сборки)
 - qmmp 1.5.x
-- taglib >= 1.10
+- taglib >= 1.11
 - libxmp >= 4.2.0 (опционально)
 - libsamplerate >= 0.1.2 (опционально)
-- ffmpeg >= 3.2 (опционально)
+- ffmpeg >= 3.4 (опционально)
 - youtube-dl (последняя версия, опционально)
 - cmake >= 3.5.0 (только для сборки)
 
