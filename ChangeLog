@@ -1665,3 +1665,6 @@ Version 1.4.6
 * added X11 session checking in the notifier plugin
 * fixed provider settings parsing in the lyrics plugin
 * fixed equalizer form in the qsui plugin
+* updated Portuguese translation (Sérgio Marques)
+* updated Italian translation (Luigi Toscano)
+* updated French translation (Adrien Vigneron)
