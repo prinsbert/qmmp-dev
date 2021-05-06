@@ -375,3 +375,6 @@ LEGEND
 [*] curl-7.76.1
 [*] libcdio-2.1.0
 [*] libcdio-paranoia-10.2+2.0.1
+
+1.4.6
+[*] qmmp-1.4.6
