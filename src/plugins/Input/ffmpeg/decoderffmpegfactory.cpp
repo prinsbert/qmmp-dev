@@ -57,7 +57,7 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
     pd.buf = buf;
     if(pd.buf_size < PROBE_BUFFER_SIZE)
         return false;
-    AVInputFormat *fmt = av_probe_input_format(&pd, 1);
+    const AVInputFormat *fmt = av_probe_input_format(&pd, 1);
     if(!fmt)
         return false;
 
@@ -215,6 +215,7 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
 
     avformat_find_stream_info(in, 0);
 
+    if(parts & TrackInfo::MetaData)
     if(parts & TrackInfo::MetaData)
     {
         AVDictionaryEntry *album = av_dict_get(in->metadata,"album",0,0);

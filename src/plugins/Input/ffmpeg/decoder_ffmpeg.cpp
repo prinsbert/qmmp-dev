@@ -143,7 +143,7 @@ bool DecoderFFmpeg::initialize()
         qWarning("DecoderFFmpeg: too small buffer size: %d bytes", pd.buf_size);
         return false;
     }
-    AVInputFormat *fmt = av_probe_input_format(&pd, 1);
+    const AVInputFormat *fmt = av_probe_input_format(&pd, 1);
     if(!fmt)
     {
         qWarning("DecoderFFmpeg: usupported format");
@@ -273,7 +273,7 @@ bool DecoderFFmpeg::initialize()
 
     av_dump_format(ic,0,0,0);
 
-    AVCodec *codec = avcodec_find_decoder(c->codec_id);
+    const AVCodec *codec = avcodec_find_decoder(m_codecContext->codec_id);
 
     if (!codec)
     {
