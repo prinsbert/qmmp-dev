@@ -273,7 +273,7 @@ bool DecoderFFmpeg::initialize()
 
     av_dump_format(ic,0,0,0);
 
-    const AVCodec *codec = avcodec_find_decoder(m_codecContext->codec_id);
+    const AVCodec *codec = avcodec_find_decoder(c->codec_id);
 
     if (!codec)
     {
