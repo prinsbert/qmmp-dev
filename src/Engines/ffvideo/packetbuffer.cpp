@@ -30,7 +30,9 @@ PacketBuffer::PacketBuffer(int size)
     for(unsigned int i = 0; i < m_size; ++i)
     {
         m_packets[i] = av_packet_alloc();
+#if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(58,133,100)) //ffmpeg 4.5
         av_init_packet(m_packets[i]);
+#endif
     }
 }
 
@@ -94,7 +96,9 @@ void PacketBuffer::done()
     if (m_current_count)
     {
         av_packet_unref(m_packets[m_done_index]);
+#if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(58,133,100)) //ffmpeg 4.5
         av_init_packet(m_packets[m_done_index]);
+#endif
         m_current_count--;
         m_done_index = (m_done_index + 1) % m_size;
     }
@@ -108,7 +112,9 @@ void PacketBuffer::clear()
     for(unsigned int i = 0; i < m_size; ++i)
     {
         av_packet_unref(m_packets[m_done_index]);
+#if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(58,133,100)) //ffmpeg 4.5
         av_init_packet(m_packets[i]);
+#endif
     }
 }
 
