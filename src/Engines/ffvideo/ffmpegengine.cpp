@@ -172,7 +172,7 @@ void FFmpegEngine::onStopRequest()
 
 void FFmpegEngine::run()
 {
-    AVPacket pkt;
+    AVPacket *pkt = av_packet_alloc();
     mutex()->lock ();
     m_trackInfo.clear();
     if(m_decoders.isEmpty())
@@ -207,15 +207,14 @@ void FFmpegEngine::run()
             m_seekTime = -1;
         }
         // decode
-        av_init_packet(&pkt);
 
         mutex()->unlock();
-        int r = av_read_frame(m_decoder->formatContext(), &pkt);
+        int r = av_read_frame(m_decoder->formatContext(), pkt);
         mutex()->lock();
 
         if(r == 0)
         {
-            if(pkt.stream_index == m_decoder->audioIndex())
+            if(pkt->stream_index == m_decoder->audioIndex())
             {
                 m_audioBuffer->mutex()->lock();
                 while (m_audioBuffer->full() && !m_user_stop && !m_done)
@@ -228,19 +227,19 @@ void FFmpegEngine::run()
 
                 if(m_user_stop)
                 {
-                    av_packet_unref(&pkt);
+                    av_packet_unref(pkt);
                     m_done = true;
                     m_audioBuffer->mutex()->unlock();
                     mutex()->unlock();
                     continue;
                 }
 
-                *m_audioBuffer->get() = pkt;
+                *m_audioBuffer->get() = *pkt;
                 m_audioBuffer->add();
                 m_audioBuffer->mutex()->unlock();
                 m_audioBuffer->cond()->wakeAll();
             }
-            else if(pkt.stream_index == m_decoder->videoIndex())
+            else if(pkt->stream_index == m_decoder->videoIndex())
             {
                 m_videoBuffer->mutex()->lock();
                 while (m_videoBuffer->full() && !m_user_stop && !m_done)
@@ -253,21 +252,21 @@ void FFmpegEngine::run()
 
                 if(m_user_stop)
                 {
-                    av_packet_unref(&pkt);
+                    av_packet_unref(pkt);
                     m_done = true;
                     m_videoBuffer->mutex()->unlock();
                     mutex()->unlock();
                     continue;
                 }
 
-                *m_videoBuffer->get() = pkt;
+                *m_videoBuffer->get() = *pkt;
                 m_videoBuffer->add();
                 m_videoBuffer->mutex()->unlock();
                 m_videoBuffer->cond()->wakeAll();
             }
             else
             {
-                av_packet_unref(&pkt);
+                av_packet_unref(pkt);
             }
         }
         else if(!m_decoders.isEmpty())
