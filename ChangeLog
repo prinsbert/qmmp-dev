@@ -327,6 +327,7 @@ Version 1.4.0
 
 Version 1.4.1
 * fixed build with the latest ffmpeg version
+* fixed processor architecture detection under FreeBSD
 * updated Dutch translation (Heimen Stoffels)
 * updated Portuguese translation (Sérgio Marques)
 * updated French translation (Adrien Vigneron)
