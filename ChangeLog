@@ -324,3 +324,9 @@ Version 1.4.0
 * updated Greek translation (Dimitrios Glentadakis)
 * updated Italian translation (Luigi Toscano)
 * updated German translation (Ettore Atalan)
+
+Version 1.4.1
+* fixed build with the latest ffmpeg version
+* updated Dutch translation (Heimen Stoffels)
+* updated Portuguese translation (Sérgio Marques)
+* updated French translation (Adrien Vigneron)
