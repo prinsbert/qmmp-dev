@@ -84,8 +84,8 @@ bool FFVideoDecoder::initialize(const QString &path)
         return false;
     }
 
-    AVCodec *audioCodec = avcodec_find_decoder (m_formatContext->streams[m_audioIndex]->codecpar->codec_id);
-    AVCodec *videoCodec = avcodec_find_decoder (m_formatContext->streams[m_videoIndex]->codecpar->codec_id);
+    const AVCodec *audioCodec = avcodec_find_decoder (m_formatContext->streams[m_audioIndex]->codecpar->codec_id);
+    const AVCodec *videoCodec = avcodec_find_decoder (m_formatContext->streams[m_videoIndex]->codecpar->codec_id);
 
     if(!audioCodec || !videoCodec)
     {
