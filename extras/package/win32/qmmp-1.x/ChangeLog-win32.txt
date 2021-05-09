@@ -378,3 +378,4 @@ LEGEND
 
 1.4.6
 [*] qmmp-1.4.6
+[*] qmmp-plugin-pack-1.4.1
