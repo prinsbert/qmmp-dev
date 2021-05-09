@@ -10,7 +10,7 @@
  ;-------------------------------
  ;Defines
  
-   !define QMMP_VERSION "1.4.6"
+   !define QMMP_VERSION "1.5.0"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
    !define QMMP_UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
    !define APP_DESCRIPTION "Qt-based multimedia player with support of many formats"
@@ -244,16 +244,10 @@ Section "Extra skins"
   File /r skins\*.txt skins\*.png skins\*.cur
 SectionEnd
 
-Section /o "TagLib with RusXMMS patch"
-  SetOutPath "$INSTDIR"
-  File rusxmms\*.dll
-SectionEnd
-
 Section /o "Use Simple UI by default"
   SetOutPath "$INSTDIR"
   File qmmprc.default
 SectionEnd
-
 
 Section /o "AdLib formats support (AdPlug)"
   SetOutPath "$INSTDIR"

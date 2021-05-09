@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=1.4.6
-QMMP_PLUGIN_PACK_VERSION=1.4.1
+QMMP_VERSION=1.5.0
+QMMP_PLUGIN_PACK_VERSION=1.5.0
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
@@ -146,19 +146,12 @@ create_distr ()
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll libmpg123-0.dll
+  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll libmpg123-0.dll librcc.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
   #projectM presets
-  cp -rv ${PREFIX}/share/projectM/ ./
-  #rusxmms
-  mkdir -p rusxmms
-  for LIB_NAME in libxml2-2.dll librcd-0.dll librcc.dll
-  do
-    cp -v ${PREFIX}/bin/${LIB_NAME} ./rusxmms
-  done
-  cp -v	${PREFIX}/taglib-rusxmms/bin/libtag.dll ./rusxmms	     
+  cp -rv ${PREFIX}/share/projectM/ ./	     
   #adplug
   mkdir -p adplug
   for LIB_NAME in libadplug*.dll libbinio*.dll
@@ -172,10 +165,10 @@ create_distr ()
 
 case $1 in
   --download)
-    download_qmmp_tarball
-    download_plugins_tarball
-    #download_qmmp_svn
-    #download_plugins_svn
+    #download_qmmp_tarball
+    #download_plugins_tarball
+    download_qmmp_svn
+    download_plugins_svn
     download_qmmp_adplug_archive
   ;;
   --install)
