@@ -1534,3 +1534,9 @@ Version 0.12.12
 * fixed API documentation
 * fixed skin search path
 * fixed application icons
+
+Version 0.12.13
+* added application startup optimization
+* fixed provider settings parsing in the lyrics plugin
+* fixed equalizer form in the qsui plugin
+* fixed build with the latest ffmpeg version
