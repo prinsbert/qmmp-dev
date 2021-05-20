@@ -59,7 +59,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
