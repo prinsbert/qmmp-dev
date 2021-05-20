@@ -54,7 +54,7 @@
     <message>
         <location filename="../ytbinputsource.cpp" line="156"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>长度</translation>
     </message>
 </context>
 </TS>
