@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fi_FI">
+<TS version="2.1" language="fi">
 <context>
     <name>YtbInputFactory</name>
     <message>
         <location filename="../ytbinputfactory.cpp" line="36"/>
         <source>Youtube Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Youtube-liitännäinen</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="60"/>
         <source>not found</source>
-        <translation type="unfinished"></translation>
+        <translation>ei löytynyt</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="62"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../ytbinputfactory.cpp" line="66"/>
         <source>youtube-dl version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>youtube-dl:n versio: %1</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="67"/>
@@ -44,17 +44,17 @@
     <message>
         <location filename="../ytbinputsource.cpp" line="154"/>
         <source>Uploader</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähettäjä</translation>
     </message>
     <message>
         <location filename="../ytbinputsource.cpp" line="155"/>
         <source>Upload date</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetyspäivä</translation>
     </message>
     <message>
         <location filename="../ytbinputsource.cpp" line="156"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesto</translation>
     </message>
 </context>
 </TS>
