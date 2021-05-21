@@ -55,7 +55,7 @@ List of the third-party libraries.
   libxml2             2.9.10     http://xmlsoft.org/
   librcd              0.1.14     http://rusxmms.sourceforge.net/
   librcc              0.2.12     http://rusxmms.sourceforge.net/
-  mpg123              1.26.5     https://www.mpg123.de/
+  mpg123              1.27.2     https://www.mpg123.de/
   adplug              2.3.3      https://github.com/adplug/adplug
   libbinio            1.5        https://github.com/adplug/libbinio
 

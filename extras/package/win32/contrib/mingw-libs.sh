@@ -66,10 +66,20 @@ case $1 in
         cd ..
     done
   ;;
+  --print-versions)
+    for NAME in $LIB_NAMES
+    do
+        cd $NAME
+        VERSION=`cat ./$NAME.sh | grep ^VERSION= | cut -d = -f 2` 
+        echo ${NAME}-${VERSION}
+        cd ..
+    done
+  ;;
   *)
     echo "Commands:"
     echo "--download"
     echo "--install"
     echo "--clean"
     echo "--clean-src"
+    echo "--print-versions"
 esac
