@@ -50,8 +50,8 @@ List of the third-party libraries.
   enca                1.19       http://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   libxml2             2.9.10     http://xmlsoft.org/
-  librcd              0.1.14     http://rusxmms.sourceforge.net/
-  librcc              0.2.12     http://rusxmms.sourceforge.net/
+  librcd              0.1.14     https://github.com/RusXMMS/librcd
+  librcc              0.2.12     https://github.com/RusXMMS/librcc
   mpg123              1.27.2     https://www.mpg123.de/
 
 List of the third-party artwork.

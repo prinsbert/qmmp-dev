@@ -146,7 +146,7 @@ create_distr ()
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll libmpg123-0.dll librcc.dll
+  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll libmpg123-0.dll librcd-0.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
@@ -165,10 +165,10 @@ create_distr ()
 
 case $1 in
   --download)
-    #download_qmmp_tarball
-    #download_plugins_tarball
-    download_qmmp_svn
-    download_plugins_svn
+    download_qmmp_tarball
+    download_plugins_tarball
+    #download_qmmp_svn
+    #download_plugins_svn
     download_qmmp_adplug_archive
   ;;
   --install)

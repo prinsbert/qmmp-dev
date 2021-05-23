@@ -144,6 +144,7 @@
   !insertmacro ${_action} ".xmr"
   !insertmacro ${_action} ".xmz"
   !insertmacro ${_action} ".au"
+  !insertmacro ${_action} ".m4b"
 !macroend
 
 !macro WriteRegStrSupportedTypes EXT
@@ -246,7 +247,21 @@ SectionEnd
 
 Section /o "Use Simple UI by default"
   SetOutPath "$INSTDIR"
-  File qmmprc.default
+  FileOpen $1 qmmprc.default a
+  FileSeek $1 0 END
+  FileWrite $1 "[Ui]$\r$\n"
+  FileWrite $1 "current_plugin=qsui$\r$\n"
+  FileClose $1
+SectionEnd
+
+Section /o "Use libRCD for ID3v1/ID3v2 charset detection"
+  SetOutPath "$INSTDIR"
+  FileOpen $2 qmmprc.default a
+  FileSeek $2 0 END
+  FileWrite $2 "[MPEG]$\r$\n"
+  FileWrite $2 "detect_encoding=true$\r$\n"
+  FileWrite $2 "ID3v1_encoding=windows-1251$\r$\n"
+  FileClose $2
 SectionEnd
 
 Section /o "AdLib formats support (AdPlug)"
