@@ -309,7 +309,7 @@ Version 1.3.2
 * updated French translation (Adrien Vigneron)
 
 Version 1.4.0
-* ported to qmmp 1.4 api
+* ported to qmmp 1.4 API
 * added Youtube plugin (uses youtube-dl)
 * improved ffap plugin
 * updated Portuguese translation (Sérgio Marques)
@@ -324,3 +324,28 @@ Version 1.4.0
 * updated Greek translation (Dimitrios Glentadakis)
 * updated Italian translation (Luigi Toscano)
 * updated German translation (Ettore Atalan)
+
+Version 1.4.1
+* fixed build with the latest ffmpeg version
+* fixed processor architecture detection under FreeBSD
+* updated Dutch translation (Heimen Stoffels)
+* updated Portuguese translation (Sérgio Marques)
+* updated French translation (Adrien Vigneron)
+
+Version 1.5.0
+* ported to qmmp 1.5 API
+* added Youtube stream seeking
+* replaced assembler optimizations by GCC attributes in the ffap plugin
+* updated Portuguese translation (Sérgio Marques)
+* updated Dutch translation (Heimen Stoffels)
+* updated Polish translation (mrerexx)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Spanish translation (Joel Barrios)
+* updated Russian translation (Ilya Kotov)
+* updated Ukrainian translation (Gennady Motsyo)
+* updated French translation (Adrien Vigneron)
+* updated Indonesian translation (Andika Triwidada)
+* updated Greek translation (Dimitrios Glentadakis)
+* updated Italian translation (Luigi Toscano)
+* updated German translation (Ettore Atalan)
+* updated Finnish translation (Jiri Grönroos, Kimmo Kujansuu)
