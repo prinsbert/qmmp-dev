@@ -28,6 +28,7 @@ override_dh_auto_configure:
 	  -DCMAKE_BUILD_WITH_INSTALL_RPATH:BOOL=TRUE \
 	  -DUSE_ARCHIVE=FALSE \
 	  -DUSE_FFMPEG=FALSE \
+	  -DUSE_LIBRCD=TRUE \
 	  $(EXTRA_CMAKE_ARGS)
 
 override_dh_auto_build:
