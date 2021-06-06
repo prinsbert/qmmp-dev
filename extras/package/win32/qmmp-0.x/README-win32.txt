@@ -27,7 +27,7 @@ List of the third-party libraries.
   unzip               5.51       http://www.info-zip.org/pub/infozip/UnZip.html
   taglib              1.12       http://taglib.github.io/
   libmad              0.15.1b    http://www.underbit.com/products/mad/
-  libogg              1.3.4      http://www.vorbis.com/
+  libogg              1.3.5      http://www.vorbis.com/
   libvorbis           1.3.7      http://www.vorbis.com/
   flac                1.3.3      https://xiph.org/flac/index.html
   wavpack             5.4.0      http://www.wavpack.com/
@@ -35,7 +35,7 @@ List of the third-party libraries.
   opus                1.3.1      http://www.opus-codec.org/
   opusfile            0.12       http://www.opus-codec.org/
   libbs2b             3.1.0      http://bs2b.sourceforge.net/
-  curl                7.76.1     http://curl.haxx.se/
+  curl                7.77.0     http://curl.haxx.se/
   libcdio             2.1.0      http://www.gnu.org/software/libcdio/
   libcdio-paranoia    10.2+2.0.1 http://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
@@ -46,13 +46,13 @@ List of the third-party libraries.
   musepack            r475       http://www.musepack.net/
   glew                2.2.0      http://glew.sourceforge.net/
   projectm            2.1.0      http://projectm.sourceforge.net/
-  libsidplayfp        2.1.2      http://sourceforge.net/projects/sidplay-residfp/
+  libsidplayfp        2.2.0      http://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       http://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
-  libxml2             2.9.10     http://xmlsoft.org/
+  libxml2             2.9.12     http://xmlsoft.org/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
   librcc              0.2.12     https://github.com/RusXMMS/librcc
-  mpg123              1.27.2     https://www.mpg123.de/
+  mpg123              1.28.0     https://www.mpg123.de/
 
 List of the third-party artwork.
 

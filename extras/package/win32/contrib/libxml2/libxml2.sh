@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=libxml2
-VERSION=2.9.10
+VERSION=2.9.12
 
 case $1 in
   --download)
