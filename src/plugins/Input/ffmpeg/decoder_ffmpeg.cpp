@@ -143,7 +143,11 @@ bool DecoderFFmpeg::initialize()
         qWarning("DecoderFFmpeg: too small buffer size: %d bytes", pd.buf_size);
         return false;
     }
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 0, 101)
     const AVInputFormat *fmt = av_probe_input_format(&pd, 1);
+#else
+    AVInputFormat *fmt = av_probe_input_format(&pd, 1);
+#endif
     if(!fmt)
     {
         qWarning("DecoderFFmpeg: usupported format");
@@ -273,8 +277,12 @@ bool DecoderFFmpeg::initialize()
 
     av_dump_format(ic,0,0,0);
 
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 0, 101)
     const AVCodec *codec = avcodec_find_decoder(c->codec_id);
-
+#else
+    AVCodec *codec = avcodec_find_decoder(c->codec_id);
+#endif
+    
     if (!codec)
     {
         qWarning("DecoderFFmpeg: unsupported codec for output stream");

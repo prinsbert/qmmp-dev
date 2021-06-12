@@ -26,7 +26,9 @@
 #include <taglib/fileref.h>
 #include <taglib/id3v1tag.h>
 #include <taglib/id3v2tag.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 12))
 #include <taglib/id3v2.h>
+#endif
 #include <taglib/apetag.h>
 #include <taglib/tfile.h>
 #include <taglib/mpegfile.h>
