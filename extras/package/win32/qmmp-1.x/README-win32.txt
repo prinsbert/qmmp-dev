@@ -49,7 +49,7 @@ List of the third-party libraries.
   musepack            r475       http://www.musepack.net/
   glew                2.2.0      http://glew.sourceforge.net/
   projectm            2.1.0      http://projectm.sourceforge.net/
-  libsidplayfp        2.2.0      http://sourceforge.net/projects/sidplay-residfp/
+  libsidplayfp        2.1.2      http://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       http://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   libxml2             2.9.12     http://xmlsoft.org/
