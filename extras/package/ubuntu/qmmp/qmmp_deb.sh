@@ -1,16 +1,14 @@
 #!/bin/sh
 
 QMMP_VERSION=0.12.13
-UBUNTU_CODENAMES='precise trusty xenial bionic'
+UBUNTU_CODENAMES='trusty xenial bionic'
 BUILD_ROOT=build-root
 
 
 prepare ()
 {
     cp ../qmmp-$QMMP_VERSION.tar.bz2 ./
-    bzip2 -dv ./qmmp-$QMMP_VERSION.tar.bz2
-    mv ./qmmp-$QMMP_VERSION.tar ./qmmp_$QMMP_VERSION.orig.tar
-    gzip ./qmmp_$QMMP_VERSION.orig.tar
+    mv ./qmmp-$QMMP_VERSION.tar.bz2 ./qmmp_$QMMP_VERSION.orig.tar.bz2
 }
 
 build ()
@@ -21,12 +19,12 @@ build ()
     tar xvjf ../../qmmp-$QMMP_VERSION.tar.bz2
     mkdir qmmp-$QMMP_VERSION/debian
     cp -rv ../../debian-$1/* -t qmmp-$QMMP_VERSION/debian/
-    cp ../qmmp_$QMMP_VERSION.orig.tar.gz ./
+    cp ../qmmp_$QMMP_VERSION.orig.tar.bz2 ./
     if [ "$1" = "xenial" ] || [ "$1" = "bionic" ] ; then
-        mv ./qmmp_$QMMP_VERSION.orig.tar.gz ./qmmp-qt4_$QMMP_VERSION.orig.tar.gz
+        mv ./qmmp_$QMMP_VERSION.orig.tar.bz2 ./qmmp-qt4_$QMMP_VERSION.orig.tar.bz2
     fi
     cd qmmp-$QMMP_VERSION
-    if [ "$1" = "precise" ] || [ "$1" = "xenial" ] ; then
+    if [ "$1" = "trusty" ] || [ "$1" = "xenial" ] ; then
         debuild -S -sa -d -kF594F6B4
     else
         debuild -S -sd -d -kF594F6B4
