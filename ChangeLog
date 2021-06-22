@@ -1540,3 +1540,4 @@ Version 0.12.13
 * fixed provider settings parsing in the lyrics plugin
 * fixed equalizer form in the qsui plugin
 * fixed build with the latest ffmpeg version
+* removed mp3lyrics.org lyrics provider (service was closed)
