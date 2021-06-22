@@ -1,3 +1,9 @@
+qmmp-qt4 (0.12.13-1ubuntu1~xenial0) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 22 Jun 2021 22:56:44 +0300
+
 qmmp-qt4 (0.12.12-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
