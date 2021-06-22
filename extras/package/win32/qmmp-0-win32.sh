@@ -22,10 +22,6 @@ download_qmmp_tarball()
   echo 'downloading qmmp...'
   wget -nc http://qmmp.ylsoftware.com/files/qmmp-${QMMP_VERSION}.tar.bz2
   tar xvjf qmmp-${QMMP_VERSION}.tar.bz2
-  cd qmmp-${QMMP_VERSION}
-  cp -v ../../qmmp-0.x/mingw32-build.patch ./
-  cat mingw32-build.patch | patch -p0
-  cd ..
   cd ..
 }
 
