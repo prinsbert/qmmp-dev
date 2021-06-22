@@ -52,7 +52,7 @@ List of the third-party libraries.
   libxml2             2.9.12     http://xmlsoft.org/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
   librcc              0.2.12     https://github.com/RusXMMS/librcc
-  mpg123              1.28.0     https://www.mpg123.de/
+  mpg123              1.27.2     https://www.mpg123.de/
 
 List of the third-party artwork.
 
