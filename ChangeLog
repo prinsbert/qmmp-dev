@@ -352,3 +352,4 @@ Version 1.5.0
 
 Version 2.0.0
 * switched to Qt6 and qmmp 2.0 API
+* added Korean translation (Jung Hee Lee)
