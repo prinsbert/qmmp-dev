@@ -349,3 +349,6 @@ Version 1.5.0
 * updated Italian translation (Luigi Toscano)
 * updated German translation (Ettore Atalan)
 * updated Finnish translation (Jiri Grönroos, Kimmo Kujansuu)
+
+Version 2.0.0
+* switched to Qt6 and qmmp 2.0 API
