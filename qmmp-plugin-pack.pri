@@ -60,11 +60,11 @@ unix {
   QMAKE_LIBDIR += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/lib
   INCLUDEPATH += /usr/local/include
 } else {
-  INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
-  QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+  INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-2.0/src
+  QMAKE_LIBDIR += C:/projects/qmmp-svn-stable/qmmp-2.0/bin
   EXTRA_INCDIR = C:/devel/mingw32-libs/include
-  QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
-  QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
+  QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} -I$${EXTRA_INCDIR}"
+  QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} -I$${EXTRA_INCDIR}"
   QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
 }
 
