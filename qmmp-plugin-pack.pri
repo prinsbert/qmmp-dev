@@ -63,8 +63,8 @@ unix {
   INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-2.0/src
   QMAKE_LIBDIR += C:/projects/qmmp-svn-stable/qmmp-2.0/bin
   EXTRA_INCDIR = C:/devel/mingw32-libs/include
-  QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} -I$${EXTRA_INCDIR}"
-  QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} -I$${EXTRA_INCDIR}"
+  QMAKE_CXXFLAGS += "-isystem $${EXTRA_INCDIR}"
+  QMAKE_CFLAGS += "-isystem $${EXTRA_INCDIR}"
   QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
 }
 
