@@ -34,12 +34,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="19"/>
         <source>Sample Rate (Hz):</source>
-        <translation>Taux d&apos;échantillonnage (Hz)&#xa0;:</translation>
+        <translation>Taux d&apos;échantillonnage (Hz) :</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="39"/>
         <source>Interpolation Engine:</source>
-        <translation>Moteur d&apos;interpolation&#xa0;:</translation>
+        <translation>Moteur d&apos;interpolation :</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="47"/>

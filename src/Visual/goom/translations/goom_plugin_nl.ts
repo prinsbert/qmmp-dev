@@ -11,7 +11,7 @@
     <message>
         <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
-        <translation>Verversingssnelheid</translation>
+        <translation>Vernieuw Frequentie</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="190"/>

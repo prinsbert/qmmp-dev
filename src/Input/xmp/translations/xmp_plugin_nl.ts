@@ -21,7 +21,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation>Qmmp XMP-audioplug-in</translation>
+        <translation>XMP-audioplug-in voor Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation>Samplesnelheid:</translation>
+        <translation>Samplefrequentie:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="33"/>
