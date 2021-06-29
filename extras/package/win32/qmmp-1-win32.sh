@@ -107,7 +107,7 @@ create_distr ()
   u2d ./ChangeLog.txt
   u2d ./ChangeLog.rus.txt
   #versions
-  ../../contrib/mingw-libs.sh --print-versions -v '' > versions.txt
+  #../../contrib/mingw-libs.sh --print-versions -v '' > versions.txt
 
   #Qt libs
   for LIB_NAME in Qt5Core.dll Qt5Gui.dll Qt5Widgets.dll Qt5Network.dll Qt5Sql.dll Qt5WinExtras.dll

@@ -5,7 +5,7 @@ QMMP_PLUGIN_PACK_VERSION=2.0.0
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
-export QT5_PATH=${DEV_PATH}/qt6
+export QT6_PATH=${DEV_PATH}/qt6
 export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
 export PREFIX=${DEV_PATH}/mingw32-libs
 export SVN_PATH=/c/Program\ Files/Subversion/bin
@@ -77,7 +77,7 @@ build ()
   mingw32-make -j${JOBS}
   cd ..
   cd qmmp-adplug-master
-  qmake CONFIG+=release INCLUDEPATH+=`dirs`/../qmmp-${QMMP_VERSION}/src QMAKE_LIBDIR+=`dirs`/../qmmp-${QMMP_VERSION}/bin LIBS+=-lqmmp1 QT+=widgets CONFIG+=link_pkgconfig PKGCONFIG+=adplug \
+  qmake CONFIG+=release INCLUDEPATH+=`dirs`/../qmmp-${QMMP_VERSION}/src QMAKE_LIBDIR+=`dirs`/../qmmp-${QMMP_VERSION}/bin LIBS+=-lqmmp2 QT+=widgets CONFIG+=link_pkgconfig PKGCONFIG+=adplug \
   CONFIG+=hide_symbols
   mingw32-make -j${JOBS}
   cd ..
@@ -107,10 +107,10 @@ create_distr ()
   u2d ./ChangeLog.txt
   u2d ./ChangeLog.rus.txt
   #versions
-  ../../contrib/mingw-libs.sh --print-versions -v '' > versions.txt
+  #../../contrib/mingw-libs.sh --print-versions -v '' > versions.txt
 
   #Qt libs
-  for LIB_NAME in Qt6Core.dll Qt6Gui.dll Qt6Widgets.dll Qt6Network.dll Qt6Sql.dll Qt6OpenGLWidgets.dll
+  for LIB_NAME in Qt6Core.dll Qt6Gui.dll Qt6Widgets.dll Qt6Network.dll Qt6Sql.dll Qt6OpenGL.dll Qt6OpenGLWidgets.dll
   do
     cp -v ${QT6_PATH}/bin/${LIB_NAME} ./
   done
@@ -168,10 +168,10 @@ create_distr ()
 
 case $1 in
   --download)
-    download_qmmp_tarball
-    download_plugins_tarball
-    #download_qmmp_svn
-    #download_plugins_svn
+    #download_qmmp_tarball
+    #download_plugins_tarball
+    download_qmmp_svn
+    download_plugins_svn
     download_qmmp_adplug_archive
   ;;
   --install)
