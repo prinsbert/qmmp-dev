@@ -21,7 +21,7 @@ download_qmmp_tarball()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  wget -nc http://qmmp.ylsoftware.com/files/qmmp-${QMMP_VERSION}.tar.bz2
+  wget -nc http://qmmp.ylsoftware.com/files/qmmp/2.0/qmmp-${QMMP_VERSION}.tar.bz2
   tar xvjf qmmp-${QMMP_VERSION}.tar.bz2
   cd ..
 }
@@ -31,7 +31,7 @@ download_plugins_tarball()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-plugin-pack...'
-  wget -nc http://qmmp.ylsoftware.com/files/plugins/qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
+  wget -nc http://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.0/qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
   tar xvjf qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
   cd ..
 }
@@ -168,10 +168,10 @@ create_distr ()
 
 case $1 in
   --download)
-    #download_qmmp_tarball
-    #download_plugins_tarball
-    download_qmmp_svn
-    download_plugins_svn
+    download_qmmp_tarball
+    download_plugins_tarball
+    #download_qmmp_svn
+    #download_plugins_svn
     download_qmmp_adplug_archive
   ;;
   --install)
