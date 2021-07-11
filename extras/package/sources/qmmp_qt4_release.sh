@@ -8,22 +8,23 @@ fi
 cd cache
 
 echo "Receiving sources.."
-if [ ! -d "qmmp-plugin-pack-svn" ]; then
-svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-0.12/ qmmp-plugin-pack-svn
+if [ ! -d "qmmp-qt4-svn" ]; then
+svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-0.12/ qmmp-qt4-svn
 fi
 
-cd qmmp-plugin-pack-svn
+cd qmmp-qt4-svn
 svn up
 echo "Creating changelog.."
 LC_MESSAGES=C svn log > ChangeLog.svn
 
-VERSION=`cat qmmp-plugin-pack.pri | grep "^QMMP_PLUGIN_PACK_VERSION =" | cut -d " " -f3`
+MAJOR=`cat src/qmmp/qmmp.h | grep "#define QMMP_VERSION_MAJOR" | cut -d " " -f3`
+MINOR=`cat src/qmmp/qmmp.h | grep "#define QMMP_VERSION_MINOR" | cut -d " " -f3`
+PATCH=`cat src/qmmp/qmmp.h | grep "#define QMMP_VERSION_PATCH" | cut -d " " -f3`
 
-TARBALL=qmmp-plugin-pack-$VERSION
+TARBALL=qmmp-$MAJOR.$MINOR.$PATCH
 
 
 echo Sources name: $TARBALL
-
 cd ..
 if [ -d $TARBALL ]; then
 echo "Removing previous directory.."
@@ -31,7 +32,7 @@ rm -rf $TARBALL
 fi
 
 echo "Copying sources.."
-cp -r qmmp-plugin-pack-svn $TARBALL
+cp -r qmmp-qt4-svn $TARBALL
 
 cd $TARBALL
 
@@ -40,9 +41,8 @@ cd utils
 ./remove_svn_tags.sh
 cd ..
 
-echo "Fixing versions.."
-sed 's/SET(SVN_VERSION TRUE)/SET(SVN_VERSION FALSE)/' -i CMakeLists.txt
-sed 's/CONFIG += SVN_VERSION/#CONFIG += SVN_VERSION/' -i qmmp-plugin-pack.pri
+echo "Fixing version.."
+sed 's/QMMP_VERSION_STABLE 0/QMMP_VERSION_STABLE 1/' -i src/qmmp/qmmp.h
 cd ..
 
 echo "Creating tarball.."
@@ -56,16 +56,11 @@ md5sum -b ${TARBALL}.tar.bz2 > ${TARBALL}.tar.bz2.md5sum
 
 echo "Moving released files.."
 cd ..
-if [ ! -d "files" ]; then
-mkdir files
-fi
-cd files
-if [ ! -d "plugins" ]; then
-mkdir plugins
-fi
-cd ..
-mv cache/${TARBALL}.tar.bz2 files/plugins/
-mv cache/${TARBALL}.tar.bz2.md5sum files/plugins/
+
+mkdir -p files/qmmp/$MAJOR.$MINOR
+
+mv cache/${TARBALL}.tar.bz2 files/qmmp/$MAJOR.$MINOR
+mv cache/${TARBALL}.tar.bz2.md5sum files/qmmp/$MAJOR.$MINOR
 
 echo ""
 echo "****** RELEASED FILES *******"

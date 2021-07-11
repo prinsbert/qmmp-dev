@@ -9,7 +9,7 @@ cd cache
 
 echo "Receiving sources.."
 if [ ! -d "qmmp-qt6-svn" ]; then
-svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-1.5/ qmmp-qt6-svn
+svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-2.0/ qmmp-qt6-svn
 fi
 
 cd qmmp-qt6-svn
@@ -56,11 +56,11 @@ md5sum -b ${TARBALL}.tar.bz2 > ${TARBALL}.tar.bz2.md5sum
 
 echo "Moving released files.."
 cd ..
-if [ ! -d "files" ]; then
-mkdir files
-fi
-mv cache/${TARBALL}.tar.bz2 files/
-mv cache/${TARBALL}.tar.bz2.md5sum files/
+
+mkdir -p files/qmmp/$MAJOR.$MINOR
+
+mv cache/${TARBALL}.tar.bz2 files/qmmp/$MAJOR.$MINOR
+mv cache/${TARBALL}.tar.bz2.md5sum files/qmmp/$MAJOR.$MINOR
 
 echo ""
 echo "****** RELEASED FILES *******"

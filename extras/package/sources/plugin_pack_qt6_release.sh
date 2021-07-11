@@ -9,7 +9,7 @@ cd cache
 
 echo "Receiving sources.."
 if [ ! -d "qmmp-plugin-pack-qt6-svn" ]; then
-svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-1.5/ qmmp-plugin-pack-qt6-svn
+svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-2.0/ qmmp-plugin-pack-qt6-svn
 fi
 
 cd qmmp-plugin-pack-qt6-svn
@@ -56,16 +56,12 @@ md5sum -b ${TARBALL}.tar.bz2 > ${TARBALL}.tar.bz2.md5sum
 
 echo "Moving released files.."
 cd ..
-if [ ! -d "files" ]; then
-mkdir files
-fi
-cd files
-if [ ! -d "plugins" ]; then
-mkdir plugins
-fi
-cd ..
-mv cache/${TARBALL}.tar.bz2 files/plugins/
-mv cache/${TARBALL}.tar.bz2.md5sum files/plugins/
+
+PARENT_DIR=`echo $VERSION |  cut -d "." -f1,2`
+
+mkdir -p files/qmmp-plugin-pack/${PARENT_DIR}
+mv cache/${TARBALL}.tar.bz2 files/qmmp-plugin-pack/${PARENT_DIR}/
+mv cache/${TARBALL}.tar.bz2.md5sum files/qmmp-plugin-pack/${PARENT_DIR}/
 
 echo ""
 echo "****** RELEASED FILES *******"

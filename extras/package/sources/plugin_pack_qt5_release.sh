@@ -56,16 +56,12 @@ md5sum -b ${TARBALL}.tar.bz2 > ${TARBALL}.tar.bz2.md5sum
 
 echo "Moving released files.."
 cd ..
-if [ ! -d "files" ]; then
-mkdir files
-fi
-cd files
-if [ ! -d "plugins" ]; then
-mkdir plugins
-fi
-cd ..
-mv cache/${TARBALL}.tar.bz2 files/plugins/
-mv cache/${TARBALL}.tar.bz2.md5sum files/plugins/
+
+PARENT_DIR=`echo $VERSION |  cut -d "." -f1,2`
+
+mkdir -p files/qmmp-plugin-pack/${PARENT_DIR}
+mv cache/${TARBALL}.tar.bz2 files/qmmp-plugin-pack/${PARENT_DIR}/
+mv cache/${TARBALL}.tar.bz2.md5sum files/qmmp-plugin-pack/${PARENT_DIR}/
 
 echo ""
 echo "****** RELEASED FILES *******"
