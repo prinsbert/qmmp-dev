@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.5.0
+PLUGIN_PACK_VERSION=1.5.1
 UBUNTU_CODENAMES='xenial bionic focal groovy hirsute'
 BUILD_ROOT=build-root
 
@@ -22,9 +22,9 @@ build ()
     cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.bz2 ./
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
     if [ "$1" = "xenial" ] ; then
-        debuild -S -sa -d -kF594F6B4
+        debuild -S -sa -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     else
-        debuild -S -sd -d -kF594F6B4
+        debuild -S -sd -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     fi
     cd ..
     cd ..
@@ -48,7 +48,7 @@ clean ()
 
 case $1 in
     --download)
-		wget http://qmmp.ylsoftware.com/files/plugins/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
+		wget http://qmmp.ylsoftware.com/files/qmmp-plugin-pack/1.5/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES

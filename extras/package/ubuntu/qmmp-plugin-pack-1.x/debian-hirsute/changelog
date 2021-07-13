@@ -1,3 +1,9 @@
+qmmp-plugin-pack (1.5.1-1ubuntu1~hirsute0) hirsute; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 13 Jul 2021 11:37:01 +0300
+
 qmmp-plugin-pack (1.5.0-1ubuntu1~hirsute0) hirsute; urgency=medium
 
   * New upstream release.
