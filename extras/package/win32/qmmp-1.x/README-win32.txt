@@ -1,7 +1,7 @@
 Qt-based Multimedia Player for Windows
 
 License: GNU General Public License v2.0 or later
-Offical web page: http://qmmp.ylsoftware.com
+Offical web page: https://qmmp.ylsoftware.com
 Bug tracker: https://sourceforge.net/p/qmmp-dev/tickets/
 Translation: https://www.transifex.com/qmmp-development-team/
 Maintainer: Ilya Kotov <forkotov02@ya.ru> or <iokotov@astralinux.ru>
@@ -11,7 +11,7 @@ Known issues:
     mpris, converter, kdenotify, gnome hotkey, archive, icecast;
   - packed Xmms skins (i.e. *.tar.gz, *.tar.bz2) are not supported. You should unpack them before usage.
 
-Extra plugins (see http://qmmp.ylsoftware.com/plugins.php):
+Extra plugins (see https://qmmp.ylsoftware.com/plugins.php):
   - FFap - enhanced Monkey's Audio (APE) decoder;
   - Goom - audio visualization based on goom project.
 
