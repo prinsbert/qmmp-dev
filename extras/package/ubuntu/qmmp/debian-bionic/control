@@ -12,7 +12,7 @@ Build-Depends: debhelper (>= 9), cmake, pkg-config, qtchooser, libqt4-dev,
   libwildmidi-dev, libsidplayfp-dev (>= 1.0.3), libbs2b-dev, libprojectm-dev,
   libenca-dev, libshout3-dev, libarchive-dev (>=3.2.1)
 Standards-Version: 3.9.6
-Homepage: http://qmmp.ylsoftware.com/
+Homepage: https://qmmp.ylsoftware.com/
 Vcs-Git: git://anonscm.debian.org/collab-maint/qmmp.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/qmmp.git
 

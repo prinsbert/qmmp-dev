@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 10), cmake, pkg-config,
   qttools5-dev-tools (>= 5.4), qttools5-dev (>= 5.4), qtchooser,
   libavcodec-dev (>= 7:3.2.0), libavformat-dev (>= 7:3.2.0), libavutil-dev (>= 7:3.2.0), libswscale-dev (>= 7:3.2.0)
 Standards-Version: 3.9.3
-Homepage: http://qmmp.ylsoftware.com/plugins.php
+Homepage: https://qmmp.ylsoftware.com/plugins.php
 
 Package: qmmp-plugin-pack
 Architecture: any

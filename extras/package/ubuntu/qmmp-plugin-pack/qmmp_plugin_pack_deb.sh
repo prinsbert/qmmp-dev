@@ -53,7 +53,7 @@ clean ()
 
 case $1 in
     --download)
-		wget http://qmmp.ylsoftware.com/files/plugins/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/plugins/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES

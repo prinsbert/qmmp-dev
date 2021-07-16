@@ -51,7 +51,7 @@ clean ()
 
 case $1 in
     --download)
-		wget http://qmmp.ylsoftware.com/files/qmmp-$QMMP_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/qmmp-$QMMP_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES

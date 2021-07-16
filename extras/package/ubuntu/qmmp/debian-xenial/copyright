@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Qmmp
 Upstream-Contact: Ilya Kotov <forkotov02@ya.ru> or <trialuser02@gmail.com>
-Source: http://qmmp.ylsoftware.com/
+Source: https://qmmp.ylsoftware.com/
 License: GPL-2+
 Comment:
  Qmms' code is based on many different programs, whose authors do not all appear

@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 7.0.50), libqt4-dev (>= 4:4.6.0), cmake (>= 2.8.6),
   oss4-dev, libopus-dev, libopusfile-dev, libenca-dev, libsidplayfp-dev (>= 1.0.3),
   libshout3-dev
 Standards-Version: 3.9.3
-Homepage: http://qmmp.ylsoftware.com
+Homepage: https://qmmp.ylsoftware.com
 
 Package: qmmp
 Architecture: any

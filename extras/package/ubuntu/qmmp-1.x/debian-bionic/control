@@ -16,7 +16,7 @@ Build-Depends: debhelper (>= 10), cmake, pkg-config, qtbase5-dev (>= 5.4),
   libbs2b-dev, libprojectm-dev [!armel !armhf !arm64], libenca-dev,
   libshout3-dev, libarchive-dev (>= 3.2.1), libxcb1-dev, librcd-dev
 Standards-Version: 3.9.8
-Homepage: http://qmmp.ylsoftware.com/
+Homepage: https://qmmp.ylsoftware.com/
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/qmmp.git
 Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/qmmp.git
 

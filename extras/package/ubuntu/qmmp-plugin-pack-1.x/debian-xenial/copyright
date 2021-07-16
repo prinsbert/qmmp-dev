@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: qmmp-plugin-pack
-Source: http://qmmp.ylsoftware.com
+Source: https://qmmp.ylsoftware.com
 
 Files: *
 Copyrights: 
