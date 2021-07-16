@@ -7,6 +7,6 @@
   <project_license>GPL-2.0+</project_license>
   <url type="bugtracker">https://sourceforge.net/p/qmmp-dev/tickets/</url>
   <url type="help">https://sourceforge.net/p/qmmp-dev/tickets/</url>
-  <url type="homepage">http://qmmp.ylsoftware.com/plugins.php</url>
+  <url type="homepage">https://qmmp.ylsoftware.com/plugins.php</url>
   <extends>qmmp.desktop</extends>
 </component>
