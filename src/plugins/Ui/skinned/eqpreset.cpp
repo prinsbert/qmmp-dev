@@ -23,12 +23,7 @@
 
 EQPreset::EQPreset()
  : QListWidgetItem()
-{
-    m_preamp = 0;
-    for(int i = 0; i < 10; ++i)
-    m_bands[i] = 0;
-}
-
+{}
 
 EQPreset::~EQPreset()
 {}

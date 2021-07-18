@@ -38,7 +38,6 @@ Dock::Dock (QObject *parent)
         : QObject (parent)
 {
     m_instance = this;
-    m_mainWidget = nullptr;
 }
 
 Dock::~Dock()
