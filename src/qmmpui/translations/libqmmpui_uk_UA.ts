@@ -34,47 +34,67 @@
         <translation>Ліцензія</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="62"/>
+        <location filename="../aboutdialog.cpp" line="70"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>Мультимедійний програвач на базі Qt (Qmmp)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="66"/>
+        <location filename="../aboutdialog.cpp" line="74"/>
         <source>Version: %1</source>
         <translation>Версія: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="67"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Використовується Qt %1 (зібрано з Qt %2)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="70"/>
+        <location filename="../aboutdialog.cpp" line="78"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(c) %1-%2 Команда розробників Qmmp</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
-        <source>Input plugins:</source>
-        <translation>Модулі введення:</translation>
+        <location filename="../aboutdialog.cpp" line="83"/>
+        <source>Transports:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="84"/>
+        <location filename="../aboutdialog.cpp" line="92"/>
+        <source>Decoders:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="103"/>
+        <source>Engines:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="114"/>
+        <source>Effects:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="152"/>
+        <source>File dialogs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="164"/>
+        <source>User interfaces:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="141"/>
         <source>Output plugins:</source>
         <translation>Модулі виведення:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="123"/>
         <source>Visual plugins:</source>
         <translation>Модулі візуалізації:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="102"/>
-        <source>Effect plugins:</source>
-        <translation>Модулі ефектів:</translation>
-    </message>
-    <message>
-        <location filename="../aboutdialog.cpp" line="111"/>
+        <location filename="../aboutdialog.cpp" line="132"/>
         <source>General plugins:</source>
         <translation>Загальні модулі:</translation>
     </message>

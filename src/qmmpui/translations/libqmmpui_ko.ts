@@ -34,47 +34,67 @@
         <translation>라이센스 계약</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="62"/>
+        <location filename="../aboutdialog.cpp" line="70"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>Qt 기반 멀티미디어 재생기 (Qmmp)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="66"/>
+        <location filename="../aboutdialog.cpp" line="74"/>
         <source>Version: %1</source>
         <translation>버전: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="67"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Qt %1 사용중 (Qt %2로 컴파일됨)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="70"/>
+        <location filename="../aboutdialog.cpp" line="78"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(c) %1-%2 Qmmp 개발 팀</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
-        <source>Input plugins:</source>
-        <translation>입력 플러그인:</translation>
+        <location filename="../aboutdialog.cpp" line="83"/>
+        <source>Transports:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="84"/>
+        <location filename="../aboutdialog.cpp" line="92"/>
+        <source>Decoders:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="103"/>
+        <source>Engines:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="114"/>
+        <source>Effects:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="152"/>
+        <source>File dialogs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="164"/>
+        <source>User interfaces:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="141"/>
         <source>Output plugins:</source>
         <translation>출력 플러그인:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="123"/>
         <source>Visual plugins:</source>
         <translation>시각 플러그인:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="102"/>
-        <source>Effect plugins:</source>
-        <translation>효과 플러그인:</translation>
-    </message>
-    <message>
-        <location filename="../aboutdialog.cpp" line="111"/>
+        <location filename="../aboutdialog.cpp" line="132"/>
         <source>General plugins:</source>
         <translation>일반 플러그인:</translation>
     </message>

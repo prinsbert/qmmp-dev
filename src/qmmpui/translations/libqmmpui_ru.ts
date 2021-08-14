@@ -34,47 +34,67 @@
         <translation>Лицензия</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="62"/>
+        <location filename="../aboutdialog.cpp" line="70"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>Медиаплеер на базе Qt (Qmmp)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="66"/>
+        <location filename="../aboutdialog.cpp" line="74"/>
         <source>Version: %1</source>
         <translation>Версия: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="67"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Используется Qt %1 (собрано с Qt %2)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="70"/>
+        <location filename="../aboutdialog.cpp" line="78"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(с) %1-%2 Команда разработчиков Qmmp</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
-        <source>Input plugins:</source>
-        <translation>Модули ввода:</translation>
+        <location filename="../aboutdialog.cpp" line="83"/>
+        <source>Transports:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="84"/>
+        <location filename="../aboutdialog.cpp" line="92"/>
+        <source>Decoders:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="103"/>
+        <source>Engines:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="114"/>
+        <source>Effects:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="152"/>
+        <source>File dialogs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="164"/>
+        <source>User interfaces:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../aboutdialog.cpp" line="141"/>
         <source>Output plugins:</source>
         <translation>Модули вывода:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="123"/>
         <source>Visual plugins:</source>
         <translation>Модули визуализации:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="102"/>
-        <source>Effect plugins:</source>
-        <translation>Модули эффектов:</translation>
-    </message>
-    <message>
-        <location filename="../aboutdialog.cpp" line="111"/>
+        <location filename="../aboutdialog.cpp" line="132"/>
         <source>General plugins:</source>
         <translation>Общие модули:</translation>
     </message>
