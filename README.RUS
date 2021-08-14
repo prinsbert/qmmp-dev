@@ -78,7 +78,7 @@ Qmmp - Qt-based multimedia player
 - музыкальная библиотека
 
 Требования:
-- Qt >= 6.1 (qtbase и qttools для сборки)
+- Qt >= 6.2 (qtbase и qttools для сборки)
 - tar, unzip, bzip2, gzip
 - libmad
 - libvorbis
