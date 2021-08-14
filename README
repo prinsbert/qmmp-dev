@@ -14,8 +14,8 @@ Description:
 - Ytb - audio playback from YouTube (uses youtube-dl)
 
 Requirements:
-- Qt >= 6.1 (qtbase and qttools for build)
-- qmmp 2.0.x
+- Qt >= 6.2 (qtbase and qttools for build)
+- qmmp 2.1.x
 - taglib >= 1.12
 - libxmp >= 4.2.0 (optional)
 - libsamplerate >= 0.1.2 (optional)

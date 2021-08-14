@@ -14,8 +14,8 @@ Qmmp Plugin Pack
 - Ytb - воспроизведение аудио с YouTube (используется youtube-dl)
 
 Требования:
-- Qt >= 6.1 (qtbase и qttools для сборки)
-- qmmp 2.0.x
+- Qt >= 6.2 (qtbase и qttools для сборки)
+- qmmp 2.1.x
 - taglib >= 1.12
 - libxmp >= 4.2.0 (опционально)
 - libsamplerate >= 0.1.2 (опционально)
