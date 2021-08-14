@@ -44,7 +44,6 @@ extern "C" {
 #undef KeyPress
 #undef Visual
 
-#include <qpa/qplatformnativeinterface.h>
 #include <qmmp/qmmp.h>
 #include <qmmp/soundcore.h>
 #include <qmmpui/mediaplayer.h>
@@ -226,12 +225,11 @@ Display *HotkeyManager::display()
 {
     if(!qApp)
         return nullptr;
-    QPlatformNativeInterface *native = qApp->platformNativeInterface();
-    if (!native)
+    QNativeInterface::QX11Application *app = qApp->nativeInterface<QNativeInterface::QX11Application>();
+    if(!app)
         return nullptr;
 
-    void *display = native->nativeResourceForIntegration(QByteArray("display"));
-    return reinterpret_cast<Display *>(display);
+    return app->display();
 }
 
 bool HotkeyManager::isPlatformX11()
@@ -243,13 +241,28 @@ quint32 HotkeyManager::appRootWindow()
 {
     if(!qApp)
         return 0;
-    QPlatformNativeInterface *native = qApp->platformNativeInterface();
-    if(!native)
+    QNativeInterface::QX11Application *app = qApp->nativeInterface<QNativeInterface::QX11Application>();
+    if(!app)
         return 0;
-    QScreen *scr = QGuiApplication::primaryScreen();
-    if(!scr)
+
+    xcb_connection_t *conn = app->connection();
+
+    if(!conn)
         return 0;
-    return static_cast<xcb_window_t>(reinterpret_cast<quintptr>(native->nativeResourceForScreen(QByteArrayLiteral("rootwindow"), scr)));
+
+    xcb_screen_t *scr = HotkeyManager::screenOfDisplay(conn, 0);
+
+    return scr ? scr->root : 0;
+}
+
+xcb_screen_t *HotkeyManager::screenOfDisplay(xcb_connection_t *conn, int screen)
+{
+    xcb_screen_iterator_t iter = xcb_setup_roots_iterator(xcb_get_setup(conn));
+    for (; iter.rem; --screen, xcb_screen_next (&iter))
+        if (screen == 0)
+            return iter.data;
+
+    return nullptr;
 }
 
 #include "moc_hotkeymanager.cpp"

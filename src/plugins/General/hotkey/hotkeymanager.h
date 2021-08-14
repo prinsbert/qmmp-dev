@@ -68,6 +68,8 @@ public:
 
 #ifdef QMMP_WS_X11
 typedef struct _XDisplay Display;
+struct xcb_screen_t;
+struct xcb_connection_t;
 #endif
 
 class HotkeyManager : public QObject, public QAbstractNativeEventFilter
@@ -88,6 +90,9 @@ public:
 #endif
 
 private:
+#ifdef QMMP_WS_X11
+    static xcb_screen_t *screenOfDisplay(xcb_connection_t *conn, int screen);
+#endif
     bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) override;
     QList <Hotkey *> m_grabbedKeys;
 };
