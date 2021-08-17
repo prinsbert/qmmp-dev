@@ -1,10 +1,16 @@
 #!/bin/sh
 
 LIB_NAMES+='pkg-config yasm taglib libmad mpg123 libogg libvorbis flac wavpack libsndfile opus opusfile '
-LIB_NAMES+='libbs2b curl libcdio libcdio-paranoia libgnurx libcddb ffmpeg libmodplug game-music-emu musepack '
+LIB_NAMES+='libbs2b curl libcdio libcdio-paranoia libgnurx libcddb libmodplug game-music-emu musepack '
 LIB_NAMES+='glew projectm xa libsidplayfp enca soxr '
 LIB_NAMES+='libxml2 librcd librcc taglib-rusxmms ' #rusxmms
-LIB_NAMES+='libbinio adplug' #adplug
+LIB_NAMES+='libbinio adplug ' #adplug
+
+if [ -n "`uname | grep 5.1`"  ]; then
+    LIB_NAMES+='ffmpeg-3.4'
+else
+    LIB_NAMES+='ffmpeg'
+fi
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32:${DEV_PATH}/mingw32/opt
@@ -32,6 +38,10 @@ case $1 in
     done
   ;;
   --install)
+    if [ -n "$2" ]; then
+        LIB_NAMES=$2
+    fi
+     
     for NAME in $LIB_NAMES
     do
         echo 'installing '${NAME}'...'
@@ -44,6 +54,7 @@ case $1 in
     if [ "$STRIP" == "true" ]; then
         strip -v ${PREFIX}/bin/*.dll
     fi
+    sh ./mingw-libs.sh --print-versions > ${PREFIX}/versions.txt
   ;;
   --clean)
     for NAME in $LIB_NAMES
@@ -70,15 +81,19 @@ case $1 in
     for NAME in $LIB_NAMES
     do
         cd $NAME
-        VERSION=`cat ./$NAME.sh | grep ^VERSION= | cut -d = -f 2` 
-        echo ${NAME}-${VERSION}
+        VERSION=`cat ./$NAME.sh | grep ^VERSION= | cut -d = -f 2`
+        if [ $NAME = "ffmpeg-3.4" ]; then
+           echo ffmpeg-${VERSION}
+        else 
+           echo ${NAME}-${VERSION}
+        fi
         cd ..
     done
   ;;
   *)
     echo "Commands:"
     echo "--download"
-    echo "--install"
+    echo "--install <name>"
     echo "--clean"
     echo "--clean-src"
     echo "--print-versions"
