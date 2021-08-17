@@ -47,8 +47,8 @@ unix {
   INCLUDEPATH += /usr/include/qmmp$${APP_NAME_SUFFIX}
   INCLUDEPATH += /usr/local/include/qmmp$${APP_NAME_SUFFIX}
 } else {
-  INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
-  QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+  INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/src
+  QMAKE_LIBDIR += C:/projects/qmmp-svn-stable/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/bin
   QMAKE_CFLAGS_ISYSTEM = -isystem
   EXTRA_INCDIR = C:/devel/mingw32-libs/include
   QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
