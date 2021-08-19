@@ -50,7 +50,7 @@
 #define SINCOS(f,s,c) {s=sin(f);c=cos(f);}
 #endif
 
-#include "mathtools.c"
+#include "mathtools_trig.h"
 
 #endif
 

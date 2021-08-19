@@ -27,7 +27,6 @@ SET(libgoom_SRCS
   graphic.c
   ifs.c
   lines.c
-  mathtools.c
   plugin_info.c
   sound_tester.c
   surf3d.c
@@ -62,6 +61,7 @@ SET(libgoom_HDRS
   ifs.h
   lines.h
   mathtools.h
+  mathtools_trig.h
   motif_goom1.h
   motif_goom2.h
   sound_tester.h
