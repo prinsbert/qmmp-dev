@@ -16,7 +16,6 @@ SET(libgoom_SRCS
   filters.c
   flying_stars_fx.c
   gfontlib.c
-  gfontrle.c
   goom_core.c
   goomsl.c
   goomsl_hash.c
@@ -43,6 +42,7 @@ SET(libgoom_HDRS
   default_scripts.h
   drawmethods.h
   gfontlib.h
+  gfontrle.h
   goom_config.h
   goom_config_param.h
   goom_filters.h
