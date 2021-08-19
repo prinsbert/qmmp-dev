@@ -16,7 +16,6 @@ SET(libgoom_SRCS
   filters.c
   flying_stars_fx.c
   gfontlib.c
-  gfontrle.c
   goom_core.c
   goomsl.c
   goomsl_hash.c
@@ -28,7 +27,6 @@ SET(libgoom_SRCS
   graphic.c
   ifs.c
   lines.c
-  mathtools.c
   plugin_info.c
   sound_tester.c
   surf3d.c

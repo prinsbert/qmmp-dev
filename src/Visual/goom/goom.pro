@@ -9,6 +9,7 @@ HEADERS += \
     default_scripts.h \
     drawmethods.h \
     gfontlib.h \
+    gfontrle.h \
     goom.h \
     goom_config.h \
     goom_config_param.h \
@@ -27,6 +28,7 @@ HEADERS += \
     ifs.h \
     lines.h \
     mathtools.h \
+    mathtools_trig.h \
     mmx.h \
     motif_goom1.h \
     motif_goom2.h \
@@ -46,7 +48,6 @@ SOURCES += \
     filters.c \
     flying_stars_fx.c \
     gfontlib.c \
-    gfontrle.c \
     goom_core.c \
     goomsl.c \
     goomsl_hash.c \
@@ -57,7 +58,6 @@ SOURCES += \
     graphic.c \
     ifs.c \
     lines.c \
-    mathtools.c \
     plugin_info.c \
     sound_tester.c \
     surf3d.c \
