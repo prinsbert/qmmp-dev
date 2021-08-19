@@ -9,6 +9,7 @@ HEADERS += \
     default_scripts.h \
     drawmethods.h \
     gfontlib.h \
+    gfontrle.h \
     goom.h \
     goom_config.h \
     goom_config_param.h \
@@ -46,7 +47,6 @@ SOURCES += \
     filters.c \
     flying_stars_fx.c \
     gfontlib.c \
-    gfontrle.c \
     goom_core.c \
     goomsl.c \
     goomsl_hash.c \

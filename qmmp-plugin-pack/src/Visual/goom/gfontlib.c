@@ -20,7 +20,7 @@
  ***************************************************************************/
 
 #include "goom_config.h"
-#include "gfontrle.c"
+#include "gfontrle.h"
 #include "gfontlib.h"
 #include <string.h>
 #include <stdlib.h>
