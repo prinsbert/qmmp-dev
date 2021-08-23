@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2015-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -51,8 +51,6 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.vblankCheckBox->setChecked(settings.value("vblank", false).toBool());
     m_ui.fx9BugCheckBox->setChecked(settings.value("fx9bug", false).toBool());
     settings.endGroup();
-
-    connect(m_ui.buttonBox, SIGNAL(clicked (QAbstractButton *)), SLOT(exec(QAbstractButton *)));
 }
 
 
@@ -84,7 +82,7 @@ void SettingsDialog::writeSettings()
     }
 }
 
-void SettingsDialog::exec(QAbstractButton *button)
+void SettingsDialog::on_buttonBox_clicked(QAbstractButton *button)
 {
     switch ((int) m_ui.buttonBox->buttonRole(button))
     {

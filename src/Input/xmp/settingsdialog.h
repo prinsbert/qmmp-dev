@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2015-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -36,7 +36,7 @@ public:
 
 private slots:
     void writeSettings();
-    void exec(QAbstractButton *);
+    void on_buttonBox_clicked(QAbstractButton *);
 
 private:
      Ui::SettingsDialog m_ui;
