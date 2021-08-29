@@ -66,7 +66,7 @@ ADD_DEFINITIONS(-DQMMP_WS_X11 -DQT_DISABLE_DEPRECATED_BEFORE=0x060200 -DQT_DEPRE
 ADD_COMPILE_OPTIONS(-Wall -Wextra)
 
 find_package(Qt6 6.2 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
-find_package(Qt6 6.2 CONFIG OPTIONAL_COMPONENTS DBus OpenGLWidgets Sql)
+find_package(Qt6 6.2 CONFIG OPTIONAL_COMPONENTS DBus OpenGLWidgets Sql Multimedia)
 
 get_target_property(QT_LRELEASE_EXECUTABLE Qt6::lrelease IMPORTED_LOCATION)
 
@@ -189,7 +189,7 @@ PRINT_SUMMARY ("Null output support ..................." USE_NULL 1)
 PRINT_SUMMARY ("Waveout support (Windows) ............." USE_WAVEOUT WINDOWS_H_FOUND)
 PRINT_SUMMARY ("DirectSound support (Windows) ........." USE_DSOUND DSOUND_H_FOUND)
 PRINT_SUMMARY ("WASAPI support (Windows) .............." USE_WASAPI WASAPI_FOUND)
-#PRINT_SUMMARY ("Qt Multimedia support ................." USE_QTMULTIMEDIA Qt6Multimedia_FOUND)
+PRINT_SUMMARY ("Qt Multimedia support ................." USE_QTMULTIMEDIA Qt6Multimedia_FOUND)
 PRINT_SUMMARY ("Icecast support ......................." USE_SHOUT SHOUT_FOUND)
 
 MESSAGE("")
