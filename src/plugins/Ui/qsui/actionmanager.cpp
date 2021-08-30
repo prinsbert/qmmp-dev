@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2021 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -248,6 +248,7 @@ void ActionManager::updateToolBar(QToolBar *toolBar, ActionManager::ToolBarInfo 
 {
     toolBar->clear();
     toolBar->setIconSize(info.iconSize);
+    toolBar->setWindowTitle(info.title);
     foreach (QString name, info.actionNames)
     {
         if(name == "separator")
