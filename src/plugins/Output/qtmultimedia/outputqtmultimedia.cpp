@@ -55,9 +55,13 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
     //Size of sample representation in input data. For 24-bit is 4, high byte is ignored.
     qint64 bytes_per_sample = AudioParameters::sampleSize(format);
 
+    if(format == Qmmp::PCM_S24LE)
+        format = Qmmp::PCM_S32LE;
+
     switch (format)
     {
     case Qmmp::PCM_U8:
+    case Qmmp::PCM_S8:
         qformat.setSampleFormat(QAudioFormat::UInt8);
         break;
     case Qmmp::PCM_S16LE:
@@ -72,6 +76,13 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
     default:
         break;
     }
+
+#if Q_BYTE_ORDER == Q_BIG_ENDIAN
+    if(format == Qmmp::PCM_S16LE)
+        format = Qmmp::PCM_S16BE;
+    else if(format == Qmmp::PCM_S32LE)
+        format = Qmmp::PCM_S32BE;
+#endif
 
     if (!qformat.isValid())
         return false;
@@ -109,6 +120,7 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
     qDebug() << "OutputQtMultimedia: Using output device: " << device_info.description();
 
     m_output = new QAudioSink(device_info, qformat);
+    m_output->setBufferSize(4096);
     m_buffer = m_output->start();
     m_control = new OutputControl(m_output);
 
@@ -119,7 +131,7 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
 
 qint64 OutputQtMultimedia::latency()
 {
-    return 0;
+    return (m_output->bufferSize() - m_output->bytesFree()) * 1000 / sampleSize() / channels() / sampleRate();
 }
 
 qint64 OutputQtMultimedia::writeAudio(unsigned char *data, qint64 maxSize)
@@ -129,6 +141,7 @@ qint64 OutputQtMultimedia::writeAudio(unsigned char *data, qint64 maxSize)
         //trying to play maxSize bytes, but not more than half of buffer.
         usleep(qMin(maxSize, static_cast<qint64>(m_output->bufferSize() / 2)) * 1000000 / m_bytes_per_second);
     }
+
     return m_buffer->write((const char*)data, maxSize);
 }
 
