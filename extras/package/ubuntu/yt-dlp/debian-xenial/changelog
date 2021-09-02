@@ -1,0 +1,5 @@
+yt-dlp (2021.09.02-1ubuntu1~xenial0) xenial; urgency=medium
+
+  * Initial release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 02 Sep 2021 20:53:02 +0300

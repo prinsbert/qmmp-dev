@@ -1,0 +1,34 @@
+From: Carlos Maddela <e7appew@gmail.com>
+Date: Tue, 1 Mar 2016 02:31:47 +1100
+Subject: Don't install support files via setup.py
+
+Description: Don't install support files via setup.py
+ for better control over where they should be installed.
+Author: Carlos Maddela <e7appew@gmail.com>
+Origin: vendor
+Forwarded: not-needed
+Last-Update: 2016-06-27
+---
+ setup.py | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
+
+Index: yt-dlp-2021.08.10/setup.py
+===================================================================
+--- yt-dlp-2021.08.10.orig/setup.py
++++ yt-dlp-2021.08.10/setup.py
+@@ -25,13 +25,8 @@ if sys.argv[1:2] == ['py2exe']:
+     raise NotImplementedError('py2exe is not currently supported; instead, use "pyinst.py" to build with pyinstaller')
+ 
+ 
+-files_spec = [
+-    ('share/bash-completion/completions', ['completions/bash/yt-dlp']),
+-    ('share/zsh/site-functions', ['completions/zsh/_yt-dlp']),
+-    ('share/fish/vendor_completions.d', ['completions/fish/yt-dlp.fish']),
+-    ('share/doc/yt_dlp', ['README.txt']),
+-    ('share/man/man1', ['yt-dlp.1'])
+-]
++files_spec = []
++
+ root = os.path.dirname(os.path.abspath(__file__))
+ data_files = []
+ for dirname, files in files_spec:
