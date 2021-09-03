@@ -9,32 +9,27 @@
         <translation>Wtyczka Youtube</translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="60"/>
-        <source>not found</source>
-        <translation>nie znaleziono</translation>
-    </message>
-    <message>
-        <location filename="../ytbinputfactory.cpp" line="62"/>
+        <location filename="../ytbinputfactory.cpp" line="69"/>
         <source>About Youtube Transport Plugin</source>
         <translation>O wtyczce transportu Youtube</translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="63"/>
+        <location filename="../ytbinputfactory.cpp" line="70"/>
         <source>Qmmp Youtube Transport Plugin</source>
         <translation>Wtyczka transportu Youtube</translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="64"/>
-        <source>This plugin adds feature to play audio from Youtube using &lt;a href=&quot;https://youtube-dl.org/&quot;&gt;youtube-dl&lt;/a&gt; utility</source>
-        <translation>Ta wtyczka dodaje funkcję odtwarzania audio z serwisu YouTube za pomocą narzędzia &lt;a href=&quot;https://youtube-dl.org/&quot;&gt;youtube-dl&lt;/a&gt; </translation>
+        <location filename="../ytbinputfactory.cpp" line="71"/>
+        <source>This plugin adds feature to play audio from Youtube using %1 utility</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="66"/>
-        <source>youtube-dl version: %1</source>
-        <translation>Wersja youtube-dl: %1</translation>
+        <location filename="../ytbinputfactory.cpp" line="73"/>
+        <source>%1 version: %2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="67"/>
+        <location filename="../ytbinputfactory.cpp" line="74"/>
         <source>Written by: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
         <translation>Napisana przez: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
@@ -42,17 +37,17 @@
 <context>
     <name>YtbInputSource</name>
     <message>
-        <location filename="../ytbinputsource.cpp" line="154"/>
+        <location filename="../ytbinputsource.cpp" line="184"/>
         <source>Uploader</source>
         <translation>Wrzucający</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="155"/>
+        <location filename="../ytbinputsource.cpp" line="185"/>
         <source>Upload date</source>
         <translation>Data wrzucenia</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="156"/>
+        <location filename="../ytbinputsource.cpp" line="186"/>
         <source>Duration</source>
         <translation>Długość</translation>
     </message>
