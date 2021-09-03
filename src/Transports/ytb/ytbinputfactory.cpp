@@ -52,18 +52,25 @@ void YtbInputFactory::showSettings(QWidget *parent)
 
 void YtbInputFactory::showAbout(QWidget *parent)
 {
-    QProcess p;
-    p.start("youtube-dl", QStringList() << "--version");
-    p.waitForFinished();
-    QString version = QString::fromLatin1(p.readAll()).trimmed();
-    if(version.isEmpty())
-        version = tr("not found");
+    QString version;
+    QString backend = YtbInputSource::findBackend(&version);
+    QString backendName = QString("<b>%1</b>").arg(backend);
+    if(backend.isEmpty() || version.isEmpty())
+    {
+        qWarning("YtbInputFactory: unable to find backend");
+        return;
+    }
+
+    if(backend == QLatin1String("yt-dlp"))
+        backendName = QLatin1String("<a href=\"https://github.com/yt-dlp/yt-dlp\">yt-dlp</a>");
+    else if(backend == QLatin1String("youtube-dl"))
+        backendName = QLatin1String("<a href=\"https://youtube-dl.org\">youtube-dl</a>");
 
     QMessageBox::about(parent, tr("About Youtube Transport Plugin"),
                        tr("Qmmp Youtube Transport Plugin") + "<br>" +
-                       tr("This plugin adds feature to play audio from Youtube using "
-                          "<a href=\"https://youtube-dl.org/\">youtube-dl</a> utility") + "<br>"+
-                       tr("youtube-dl version: %1").arg(version) + "<br>" +
+                       tr("This plugin adds feature to play audio from Youtube using %1 "
+                          "utility").arg(backendName) + "<br>" +
+                       tr("%1 version: %2").arg(backend).arg(version) + "<br>" +
                        tr("Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;"));
 }
 
