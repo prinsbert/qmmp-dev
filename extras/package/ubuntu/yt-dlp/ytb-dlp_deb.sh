@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VERSION=2021.09.02
-UBUNTU_CODENAMES='xenial bionic groovy hirsute'
+UBUNTU_CODENAMES='bionic groovy hirsute'
 BUILD_ROOT=build-root
 
 
@@ -20,7 +20,7 @@ build ()
     cp -rv ../../debian-$1/* -t yt-dlp-$VERSION/debian/
     cp ../yt-dlp_$VERSION.orig.tar.gz ./
     cd yt-dlp-$VERSION
-    if [ "$1" = "xenial" ] ; then
+    if [ "$1" = "bionic" ] ; then
         debuild -S -sa -d -kF594F6B4
     else
         debuild -S -sd -d -kF594F6B4
