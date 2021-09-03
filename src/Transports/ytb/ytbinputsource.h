@@ -39,6 +39,7 @@ public:
     explicit YtbInputSource(const QString &path, QObject *parent = nullptr);
     ~YtbInputSource();
 
+    static QString findBackend(QString *version = nullptr);
     QIODevice *ioDevice() const override;
     bool initialize() override;
     bool isReady() const override;
@@ -64,6 +65,7 @@ private:
     qint64 m_fileSize = -1;
     qint64 m_offset = 0;
     QNetworkRequest m_request;
+    QString m_backend;
 
 };
 
