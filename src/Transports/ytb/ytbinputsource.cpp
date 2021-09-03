@@ -26,6 +26,7 @@
 #include <QJsonObject>
 #include <QUrlQuery>
 #include <unistd.h>
+#include <stdlib.h>
 #include <qmmp/statehandler.h>
 #include <qmmp/qmmpsettings.h>
 #include "bufferdevice.h"
@@ -73,6 +74,26 @@ YtbInputSource::~YtbInputSource()
     }
 }
 
+QString YtbInputSource::findBackend(QString *version)
+{
+    static const QStringList backends = { "yt-dlp", "youtube-dl" };
+
+    for(const QString &backend : qAsConst(backends))
+    {
+        QProcess p;
+        p.start(backend, { "--version" });
+        p.waitForFinished();
+        if(p.exitCode() == EXIT_SUCCESS)
+        {
+            if(version)
+                *version = QString::fromLatin1(p.readAll()).trimmed();
+            return backend;
+        }
+    }
+
+    return QString();
+}
+
 QIODevice *YtbInputSource::ioDevice() const
 {
     return m_buffer;
@@ -80,6 +101,15 @@ QIODevice *YtbInputSource::ioDevice() const
 
 bool YtbInputSource::initialize()
 {
+    m_backend = findBackend();
+    if(m_backend.isEmpty())
+    {
+        qWarning("YtbInputSource: unable to find backend");
+        return false;
+    }
+
+    qWarning("YtbInputSource: using %s", qPrintable(m_backend));
+
     QString id;
     if(m_url.startsWith("ytb://"))
         id = m_url.section("://", -1);
@@ -88,12 +118,12 @@ bool YtbInputSource::initialize()
     else if(m_url.startsWith("https://youtu.be/"))
         id = QUrl(m_url).path().remove("/");
 
-    QStringList args = { "--print-json", "-s", QString("https://www.youtube.com/watch?v=%1").arg(id) };
+    const QStringList args = { "-j", QString("https://www.youtube.com/watch?v=%1").arg(id) };
 
     m_ready = false;
     m_buffer->open(QIODevice::ReadOnly);
-    m_process->start("youtube-dl", args);
-    qDebug("YtbInputSource: starting youtube-dl...");
+    m_process->start(m_backend, args);
+    qDebug("YtbInputSource: starting %s...", qPrintable(m_backend));
     return true;
 }
 
@@ -120,7 +150,7 @@ void YtbInputSource::stop()
 
 void YtbInputSource::onProcessErrorOccurred(QProcess::ProcessError)
 {
-    qWarning("YtbInputSource: unable to start process 'youtube-dl', error: %s", qPrintable(m_process->errorString()));
+    qWarning("YtbInputSource: unable to start process '%s', error: %s", qPrintable(m_backend), qPrintable(m_process->errorString()));
     emit error();
 }
 
@@ -128,7 +158,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 {
     if(exitCode != EXIT_SUCCESS || status != QProcess::NormalExit)
     {
-        qWarning("YtbInputSource: youtube-dl finished with error:\n%s", m_process->readAllStandardError().constData());
+        qWarning("YtbInputSource: %s finished with error:\n%s", qPrintable(m_backend), m_process->readAllStandardError().constData());
         emit error();
         return;
     }
@@ -136,7 +166,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     QJsonDocument document = QJsonDocument::fromJson(m_process->readAllStandardOutput());
     if(document.isEmpty())
     {
-        qWarning("YtbInputSource: unable to parse youtube-dl output");
+        qWarning("YtbInputSource: unable to parse %s output", qPrintable(m_backend));
         emit error();
         return;
     }
