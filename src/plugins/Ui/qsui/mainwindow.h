@@ -80,7 +80,7 @@ private slots:
     void jumpTo();
     void playPause();
     void readSettings();
-    void showTabMenu(QPoint pos);
+    void showTabMenu(const QPoint &pos);
     void savePlayList();
     void loadPlayList();
     void showBuffering(int percent);
