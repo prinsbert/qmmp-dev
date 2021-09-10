@@ -338,9 +338,9 @@ void MainWindow::showAppMenu()
 
     QPoint menuPos = pos();
 
-    for(QWidget *w : action->associatedWidgets())
+    for(QObject *o : action->associatedObjects())
     {
-        QToolButton *toolButton = qobject_cast<QToolButton *>(w);
+        QToolButton *toolButton = qobject_cast<QToolButton *>(o);
         if(toolButton && toolButton->parentWidget())
         {
             menuPos = toolButton->parentWidget()->mapToGlobal(toolButton->geometry().bottomLeft());
