@@ -126,7 +126,7 @@ PRINT_SUMMARY ("YouTube support ................." USE_YTB 1)
 MESSAGE("")
 MESSAGE("Input Plugins:")
 PRINT_SUMMARY ("FFap plugin (Monkey's audio) ...." USE_FFAP TAGLIB_FOUND)
-PRINT_SUMMARY ("XMP plugin ......................" USE_XMP XMP_FOUND)
+PRINT_SUMMARY ("ModPlug plugin .................." USE_MODPLUG MODPLUG_FOUND)
 
 MESSAGE("")
 MESSAGE("Engines:")

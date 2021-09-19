@@ -5,8 +5,8 @@ INCLUDE(CheckIncludeFile)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
+include_directories(${QMMP_INCLUDE_DIRS})
+link_directories( ${QMMP_LIBRARY_DIRS})
 
 # modplug
 pkg_search_module(MODPLUG libmodplug)
@@ -44,8 +44,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(MODPLUG_FOUND)
 ADD_LIBRARY(modplug MODULE ${libmodplug_SRCS})
-add_dependencies(modplug libqmmp)
-target_link_libraries(modplug PRIVATE Qt6::Widgets libqmmp ${MODPLUG_LDFLAGS})
+target_link_libraries(modplug PRIVATE Qt6::Widgets ${QMMP_LDFLAGS} ${MODPLUG_LDFLAGS})
 install(TARGETS modplug DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(MODPLUG_FOUND)
 
