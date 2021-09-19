@@ -1,12 +1,12 @@
-SET(USE_XMP    TRUE CACHE BOOL "enable/disable xmp plugin")
-SET(USE_FFAP   TRUE CACHE BOOL "enable/disable ffap plugin")
+SET(USE_MODPLUG TRUE CACHE BOOL "enable/disable modplug plugin")
+SET(USE_FFAP    TRUE CACHE BOOL "enable/disable ffap plugin")
 
 INCLUDE(FindPkgConfig)
 pkg_check_modules(TAGLIB taglib>=1.11)
 
-IF(USE_XMP)
-add_subdirectory(xmp)
-ENDIF(USE_XMP)
+IF(USE_MODPLUG)
+add_subdirectory(modplug)
+ENDIF(USE_MODPLUG)
 
 IF(USE_FFAP AND TAGLIB_FOUND)
 add_subdirectory(ffap)
