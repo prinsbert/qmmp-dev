@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VERSION=2021.06.06
-UBUNTU_CODENAMES='xenial bionic groovy hirsute'
+UBUNTU_CODENAMES='xenial bionic hirsute'
 BUILD_ROOT=build-root
 
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VERSION=2021.09.25
-UBUNTU_CODENAMES='bionic groovy hirsute impish'
+UBUNTU_CODENAMES='bionic hirsute impish'
 BUILD_ROOT=build-root
 
 
