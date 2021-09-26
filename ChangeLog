@@ -1726,3 +1726,12 @@ Version 1.5.1
 * fixed plugin cache cleanup
 * fixed build without mpg123
 * fixed ladspa plugin regression (Linearithmik)
+
+Version 1.5.2
+* fixed default settings in the ffmpeg pugin
+* fixed build warnings
+* fixed transition between http tracks
+* improved qsui plugin:
+  - fixed toolbar renaming
+  - fixed Wayland support
+  - fixed tab bar context menu
