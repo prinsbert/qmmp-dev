@@ -351,4 +351,7 @@ Version 1.5.0
 * updated Finnish translation (Jiri Grönroos, Kimmo Kujansuu)
 
 Version 1.5.1
-added Korean translation (Jung Hee Lee)
+* added Korean translation (Jung Hee Lee)
+
+Version 1.5.2
+* added yt-dlp support
