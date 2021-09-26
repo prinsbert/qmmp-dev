@@ -1,0 +1,3 @@
+#!/usr/bin/dh-exec
+#yt-dlp.fish usr/share/fish/completions
+#_yt-dlp => usr/share/zsh/vendor-completions/_yt-dlp

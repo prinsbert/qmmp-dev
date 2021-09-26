@@ -17,10 +17,10 @@ Last-Update: 2021-02-13
  yt_dlp/options.py  | 2 +-
  3 files changed, 7 insertions(+), 6 deletions(-)
 
-Index: yt-dlp-2021.09.02/README.md
+Index: yt-dlp-2021.09.25/README.md
 ===================================================================
---- yt-dlp-2021.09.02.orig/README.md
-+++ yt-dlp-2021.09.02/README.md
+--- yt-dlp-2021.09.25.orig/README.md
++++ yt-dlp-2021.09.25/README.md
 @@ -240,9 +240,6 @@ Then simply run `make`. You can also run
  ## General Options:
      -h, --help                       Print this help text and exit
@@ -28,14 +28,14 @@ Index: yt-dlp-2021.09.02/README.md
 -    -U, --update                     Update this program to latest version. Make
 -                                     sure that you have sufficient permissions
 -                                     (run with sudo if needed)
-     -i, --ignore-errors              Continue on download errors, for example to
-                                      skip unavailable videos in a playlist
-                                      (default) (Alias: --no-abort-on-error)
-Index: yt-dlp-2021.09.02/yt_dlp/__init__.py
+     -i, --ignore-errors              Ignore download and postprocessing errors.
+                                      The download will be considered successfull
+                                      even if the postprocessing fails
+Index: yt-dlp-2021.09.25/yt_dlp/__init__.py
 ===================================================================
---- yt-dlp-2021.09.02.orig/yt_dlp/__init__.py
-+++ yt-dlp-2021.09.02/yt_dlp/__init__.py
-@@ -743,11 +743,13 @@ def _real_main(argv=None):
+--- yt-dlp-2021.09.25.orig/yt_dlp/__init__.py
++++ yt-dlp-2021.09.25/yt_dlp/__init__.py
+@@ -744,11 +744,13 @@ def _real_main(argv=None):
  
          # Update version
          if opts.update_self:
@@ -54,10 +54,10 @@ Index: yt-dlp-2021.09.02/yt_dlp/__init__.py
  
          # Maybe do nothing
          if not actual_use:
-Index: yt-dlp-2021.09.02/yt_dlp/options.py
+Index: yt-dlp-2021.09.25/yt_dlp/options.py
 ===================================================================
---- yt-dlp-2021.09.02.orig/yt_dlp/options.py
-+++ yt-dlp-2021.09.02/yt_dlp/options.py
+--- yt-dlp-2021.09.25.orig/yt_dlp/options.py
++++ yt-dlp-2021.09.25/yt_dlp/options.py
 @@ -204,7 +204,7 @@ def parseOpts(overrideArguments=None):
      general.add_option(
          '-U', '--update',
@@ -65,5 +65,5 @@ Index: yt-dlp-2021.09.02/yt_dlp/options.py
 -        help='Update this program to latest version. Make sure that you have sufficient permissions (run with sudo if needed)')
 +        help=optparse.SUPPRESS_HELP)
      general.add_option(
-         '-i', '--ignore-errors', '--no-abort-on-error',
-         action='store_true', dest='ignoreerrors', default=None,
+         '-i', '--ignore-errors',
+         action='store_true', dest='ignoreerrors',
