@@ -6,27 +6,27 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
-        <translation>FFap-plug-in</translation>
+        <translation>FFap Module</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
         <source>Monkey&apos;s Audio Files</source>
-        <translation>Monkey&apos;s audiobestanden</translation>
+        <translation>Monkey&apos;s Audio Bestanden</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>About FFap Audio Plugin</source>
-        <translation>Over de FFap-audioplug-in</translation>
+        <translation>Over de FFap Audio Module</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation>FFap-audioplug-in voor Qmmp</translation>
+        <translation>FFap Audio Module voor Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation>Deze plug-in faciliteert in het afspelen van Monkey&apos;s audiobestanden (APE)</translation>
+        <translation>Deze module faciliteert in het afspelen van Monkey&apos;s Audio (APE) bestanden</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="153"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="154"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
-        <translation>Gebaseerd op de broncode van deadbeef, FFmpeg en rockbox</translation>
+        <translation>Gebasseerd op de broncode van deadbeef, FFmpeg en rockbox</translation>
     </message>
 </context>
 <context>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="65"/>
         <source>Samples</source>
-        <translation>Voorbeelden</translation>
+        <translation>Samples</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="66"/>

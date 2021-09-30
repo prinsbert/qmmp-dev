@@ -21,17 +21,17 @@
     <message>
         <location filename="../ytbinputfactory.cpp" line="71"/>
         <source>This plugin adds feature to play audio from Youtube using %1 utility</source>
-        <translation type="unfinished"></translation>
+        <translation>Este suplemento adiciona a possibilidade de reproduzir áudio do Youtube com o utilitário %1</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="73"/>
         <source>%1 version: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 versão: %2</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="74"/>
         <source>Written by: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation>Desenvolvido: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
+        <translation>Desenvolvido por: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
 </context>
 <context>

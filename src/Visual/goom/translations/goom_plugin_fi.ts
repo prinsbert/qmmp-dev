@@ -11,7 +11,7 @@
     <message>
         <location filename="../goomwidget.cpp" line="187"/>
         <source>Refresh Rate</source>
-        <translation>Päivitystaajuus</translation>
+        <translation>Virkistystaajuus</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="190"/>
@@ -49,27 +49,27 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="30"/>
         <source>Goom</source>
-        <translation type="unfinished"></translation>
+        <translation>Goom</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="49"/>
         <source>About Goom Visual Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja: Goom Visual Plugin</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="50"/>
         <source>Qmmp Goom Visual Plugin</source>
-        <translation>Qmmp:n Goom-visualisointiliitännäinen</translation>
+        <translation>Qmmp Goom Visual Plugin</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Toteuttanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="52"/>
         <source>Based on the source code from the Goom project</source>
-        <translation type="unfinished"></translation>
+        <translation>Perustuu Goom-projektin lähdekoodiin</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="53"/>
