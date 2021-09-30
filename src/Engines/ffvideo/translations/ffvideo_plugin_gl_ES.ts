@@ -81,7 +81,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="78"/>
         <source>Video size</source>
-        <translation>Tamaño do vídeo</translation>
+        <translation>Tamaño do video</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="79"/>

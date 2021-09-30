@@ -16,7 +16,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="155"/>
         <source>About FFVideo Plugin</source>
-        <translation>À propos du greffon FFVidéo</translation>
+        <translation>À propos du greffon FFVideo</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="156"/>

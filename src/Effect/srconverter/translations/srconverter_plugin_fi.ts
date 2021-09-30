@@ -6,22 +6,22 @@
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="30"/>
         <source>SRC Plugin</source>
-        <translation>SRC-liitännäinen</translation>
+        <translation>SRC Plugin</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="51"/>
         <source>About Sample Rate Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja: Sample Rate Converter Plugin</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="52"/>
         <source>Qmmp Sample Rate Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Sample Rate Converter Plugin</translation>
     </message>
     <message>
         <location filename="../effectsrconverterfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Toteuttanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -29,42 +29,42 @@
     <message>
         <location filename="../settingsdialog.ui" line="13"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset Sample Rate Converter Plugin</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="19"/>
         <source>Sample Rate (Hz):</source>
-        <translation>Näytteenottotaajuus (Hz):</translation>
+        <translation>Taajuus (Hz):</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="39"/>
         <source>Interpolation Engine:</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolointi moottori:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="47"/>
         <source>Best Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Paras Sinc-interpolointi</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>
         <source>Medium Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskitaso Sinc-interpolointi</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="57"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Nopea Sinc-interpolointi</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="62"/>
         <source>ZOH Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>ZOH-interpolointi</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="67"/>
         <source>Linear Interpolation</source>
-        <translation type="unfinished"></translation>
+        <translation>Suora interpolointi</translation>
     </message>
 </context>
 </TS>

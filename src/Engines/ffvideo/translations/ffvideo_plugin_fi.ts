@@ -6,7 +6,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="42"/>
         <source>FFmpeg Video Plugin</source>
-        <translation>FFmpeg-videoliitännäinen</translation>
+        <translation>FFmpeg Video Plugin</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="46"/>
@@ -16,22 +16,22 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="155"/>
         <source>About FFVideo Plugin</source>
-        <translation>Tietoja - FFVideo-liitännäinen</translation>
+        <translation>Tietoja: FFVideo Plugin</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="156"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
-        <translation>FFmpeg-pohjainen videoliitännäinen Qmmp:lle</translation>
+        <translation>Qmmp FFmpeg video plugin</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="157"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koostettu:</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="167"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Toteuttanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation>Äänen näytteenottotaajuus</translation>
+        <translation>Äänen näytetaajuus</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../videowindow.cpp" line="40"/>
         <source>FFmpeg Video</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg Video</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="45"/>
