@@ -69,7 +69,7 @@ download_plugins_svn()
 build ()
 { 
   cd qmmp-${QMMP_VERSION}
-  qmake CONFIG+=release
+  qmake CONFIG+=release DISABLED_PLUGINS+=modplug
   mingw32-make -j${JOBS}
   cd ..
   cd qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
@@ -141,7 +141,7 @@ create_distr ()
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libcurl.dll libenca-0.dll libgme.dll libgnurx-0.dll libmad-0.dll libmodplug-1.dll libmpcdec.dll libogg-0.dll
+  for LIB_NAME in libcurl.dll libenca-0.dll libgme.dll libgnurx-0.dll libmad-0.dll libxmp.dll libmpcdec.dll libogg-0.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done

@@ -8,12 +8,13 @@ Maintainer: Ilya Kotov <forkotov02@ya.ru> or <iokotov@astralinux.ru>
 
 Known issues:
   - disabled plugins: mms, wildmidi, aac, jack, pulseaudio, oss4, alsa, mplayer,
-    mpris, converter, kdenotify, gnome hotkey, archive, icecast;
+    mpris, converter, kdenotify, gnome hotkey, archive, icecast, modplug;
   - packed Xmms skins (i.e. *.tar.gz, *.tar.bz2) are not supported. You should unpack them before usage.
 
 Extra plugins (see https://qmmp.ylsoftware.com/plugins.php):
   - FFap - enhanced Monkey's Audio (APE) decoder;
-  - Goom - audio visualization based on goom project.
+  - Goom - audio visualization based on goom project;
+  - XMP - module player with use of the libxmp library.
 
 Third-party plugins:
   - qmmp-adplug - AdPlug-based AdLib input plugin for Qmmp (Web page: https://github.com/cspiegel/qmmp-adplug)
@@ -44,7 +45,7 @@ List of the third-party libraries.
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
   ffmpeg              4.4        https://ffmpeg.org/
-  libmodplug          0.8.9.0    http://modplug-xmms.sourceforge.net/
+  libxmp              4.5        https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       http://www.musepack.net/
   glew                2.2.0      http://glew.sourceforge.net/
