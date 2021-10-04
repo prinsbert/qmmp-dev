@@ -247,9 +247,8 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     qDebug("YtbInputSource: downloading stream...");
 
     QUrl streamUrl(url);
-    //QNetworkRequest request(streamUrl);
     m_request.setUrl(streamUrl);
-    QJsonObject::iterator it = headers.begin();
+    QJsonObject::const_iterator it = headers.begin();
     while (it != headers.end())
     {
         m_request.setRawHeader(it.key().toLatin1(), it.value().toString().toLatin1());
