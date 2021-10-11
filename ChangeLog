@@ -1728,7 +1728,7 @@ Version 1.5.1
 * fixed ladspa plugin regression (Linearithmik)
 
 Version 1.5.2
-* fixed default settings in the ffmpeg pugin
+* fixed default settings in the ffmpeg plugin
 * fixed build warnings
 * fixed transition between http tracks
 * improved qsui plugin:
