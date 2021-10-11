@@ -1,3 +1,9 @@
+yt-dlp (2021.10.10-1ubuntu1~hirsute0) hirsute; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 11 Oct 2021 19:43:04 +0300
+
 yt-dlp (2021.09.25-1ubuntu1~hirsute0) hirsute; urgency=medium
 
   * New upstream release.

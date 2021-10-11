@@ -1,7 +1,7 @@
-Index: yt-dlp-2021.09.02/Makefile
+Index: yt-dlp-2021.10.10/Makefile
 ===================================================================
---- yt-dlp-2021.09.02.orig/Makefile
-+++ yt-dlp-2021.09.02/Makefile
+--- yt-dlp-2021.10.10.orig/Makefile
++++ yt-dlp-2021.10.10/Makefile
 @@ -8,7 +8,7 @@ tar: yt-dlp.tar.gz
  # Keep this list in sync with MANIFEST.in
  # intended use: when building a source distribution,
@@ -11,11 +11,11 @@ Index: yt-dlp-2021.09.02/Makefile
  
  .PHONY: all clean install test tar pypi-files completions ot offlinetest codetest supportedsites
  
-Index: yt-dlp-2021.09.02/setup.py
+Index: yt-dlp-2021.10.10/setup.py
 ===================================================================
---- yt-dlp-2021.09.02.orig/setup.py
-+++ yt-dlp-2021.09.02/setup.py
-@@ -71,7 +71,6 @@ setup(
+--- yt-dlp-2021.10.10.orig/setup.py
++++ yt-dlp-2021.10.10/setup.py
+@@ -108,7 +108,6 @@ setup(
      long_description_content_type='text/markdown',
      url='https://github.com/yt-dlp/yt-dlp',
      packages=packages,

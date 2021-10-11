@@ -17,11 +17,11 @@ Last-Update: 2021-02-13
  yt_dlp/options.py  | 2 +-
  3 files changed, 7 insertions(+), 6 deletions(-)
 
-Index: yt-dlp-2021.09.25/README.md
+Index: yt-dlp-2021.10.10/README.md
 ===================================================================
---- yt-dlp-2021.09.25.orig/README.md
-+++ yt-dlp-2021.09.25/README.md
-@@ -240,9 +240,6 @@ Then simply run `make`. You can also run
+--- yt-dlp-2021.10.10.orig/README.md
++++ yt-dlp-2021.10.10/README.md
+@@ -249,9 +249,6 @@ Then simply run `make`. You can also run
  ## General Options:
      -h, --help                       Print this help text and exit
      --version                        Print program version and exit
@@ -31,11 +31,11 @@ Index: yt-dlp-2021.09.25/README.md
      -i, --ignore-errors              Ignore download and postprocessing errors.
                                       The download will be considered successfull
                                       even if the postprocessing fails
-Index: yt-dlp-2021.09.25/yt_dlp/__init__.py
+Index: yt-dlp-2021.10.10/yt_dlp/__init__.py
 ===================================================================
---- yt-dlp-2021.09.25.orig/yt_dlp/__init__.py
-+++ yt-dlp-2021.09.25/yt_dlp/__init__.py
-@@ -744,11 +744,13 @@ def _real_main(argv=None):
+--- yt-dlp-2021.10.10.orig/yt_dlp/__init__.py
++++ yt-dlp-2021.10.10/yt_dlp/__init__.py
+@@ -746,11 +746,13 @@ def _real_main(argv=None):
  
          # Update version
          if opts.update_self:
@@ -54,11 +54,11 @@ Index: yt-dlp-2021.09.25/yt_dlp/__init__.py
  
          # Maybe do nothing
          if not actual_use:
-Index: yt-dlp-2021.09.25/yt_dlp/options.py
+Index: yt-dlp-2021.10.10/yt_dlp/options.py
 ===================================================================
---- yt-dlp-2021.09.25.orig/yt_dlp/options.py
-+++ yt-dlp-2021.09.25/yt_dlp/options.py
-@@ -204,7 +204,7 @@ def parseOpts(overrideArguments=None):
+--- yt-dlp-2021.10.10.orig/yt_dlp/options.py
++++ yt-dlp-2021.10.10/yt_dlp/options.py
+@@ -205,7 +205,7 @@ def parseOpts(overrideArguments=None):
      general.add_option(
          '-U', '--update',
          action='store_true', dest='update_self',
