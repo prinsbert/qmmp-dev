@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.5.1
+PLUGIN_PACK_VERSION=1.5.2
 UBUNTU_CODENAMES='xenial bionic hirsute impish'
 BUILD_ROOT=build-root
 
