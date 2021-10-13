@@ -56,32 +56,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="83"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transporty:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="92"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dekodery:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="103"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>Silniki:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="114"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Efekty:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="152"/>
         <source>File dialogs:</source>
-        <translation type="unfinished"></translation>
+        <translation>Okna dialogowe plików:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="164"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>Interfejsy użytkownika:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="141"/>

@@ -56,32 +56,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="83"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>트랜스포트:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="92"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>디코더:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="103"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>엔진:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="114"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>효과:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="152"/>
         <source>File dialogs:</source>
-        <translation type="unfinished"></translation>
+        <translation>파일 대화상자:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="164"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>사용자 인터페이스:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="141"/>
@@ -596,7 +596,7 @@
     <message>
         <location filename="../configdialog.cpp" line="202"/>
         <source>Transports</source>
-        <translation>전송</translation>
+        <translation>트랜스포트</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="213"/>
