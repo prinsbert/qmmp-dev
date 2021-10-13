@@ -70,7 +70,7 @@
         <location filename="../modplugmetadatamodel.cpp" line="72"/>
         <location filename="../modplugmetadatamodel.cpp" line="93"/>
         <source>Samples</source>
-        <translation>Сэмплы</translation>
+        <translation>Сэмплов</translation>
     </message>
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="73"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="75"/>
         <source>Channels</source>
-        <translation>Каналы</translation>
+        <translation>Каналов</translation>
     </message>
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="107"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="74"/>
         <source>Channels</source>
-        <translation>Каналы</translation>
+        <translation>Каналов</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="80"/>
@@ -271,7 +271,7 @@ too high may cause clipping!</source>
     <message>
         <location filename="../settingsdialog.ui" line="671"/>
         <source>Misc</source>
-        <translation>Дополнительно</translation>
+        <translation>Другие</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="677"/>

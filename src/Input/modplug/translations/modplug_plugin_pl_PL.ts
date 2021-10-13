@@ -200,7 +200,7 @@
         <location filename="../settingsdialog.ui" line="202"/>
         <location filename="../settingsdialog.ui" line="467"/>
         <source>Depth (%)</source>
-        <translation>Głębia</translation>
+        <translation>Głębia (%)</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="234"/>
@@ -244,7 +244,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="458"/>
         <source>Surround</source>
-        <translation>Surround</translation>
+        <translation>Przestrzenny</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="551"/>
@@ -272,7 +272,7 @@ powodować zacinanie się utworu!</translation>
     <message>
         <location filename="../settingsdialog.ui" line="671"/>
         <source>Misc</source>
-        <translation>Inne</translation>
+        <translation>Różne</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="677"/>

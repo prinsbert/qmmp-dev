@@ -21,12 +21,12 @@
     <message>
         <location filename="../ytbinputfactory.cpp" line="71"/>
         <source>This plugin adds feature to play audio from Youtube using %1 utility</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze plug-in voegt een functie toe waarmee audio van YouTube kan worden afgespeeld middels %1</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="73"/>
         <source>%1 version: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1-versie: %2</translation>
     </message>
     <message>
         <location filename="../ytbinputfactory.cpp" line="74"/>
