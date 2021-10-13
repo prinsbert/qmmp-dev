@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="138"/>
         <source>Based on the Modplug Plugin for Xmms</source>
-        <translation>Baseado no Modplug Plugin for Xmms</translation>
+        <translation>Baseado em Modplug Plugin for Xmms</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="139"/>
@@ -169,22 +169,22 @@
     <message>
         <location filename="../settingsdialog.ui" line="152"/>
         <source>48000 Hz</source>
-        <translation>48000 Hz</translation>
+        <translation>48 000 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="159"/>
         <source>44100 Hz</source>
-        <translation>44100 Hz</translation>
+        <translation>44 100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="166"/>
         <source>22050 Hz</source>
-        <translation>22050 Hz</translation>
+        <translation>22 050 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="173"/>
         <source>11025 Hz</source>
-        <translation>11025 Hz</translation>
+        <translation>11 025 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="184"/>
@@ -265,13 +265,13 @@
         <location filename="../settingsdialog.ui" line="656"/>
         <source>Note: Setting the preamp
 too high may cause clipping!</source>
-        <translation>Definir o amplificador muito
-alto pode provocar distorção!</translation>
+        <translation>Nota: um amplificador alto
+pode provocar distorção!</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="671"/>
         <source>Misc</source>
-        <translation>Diversos</translation>
+        <translation>Outras</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="677"/>
@@ -306,12 +306,12 @@ alto pode provocar distorção!</translation>
     <message>
         <location filename="../settingsdialog.ui" line="726"/>
         <source>Don&apos;t loop</source>
-        <translation>Sem loop</translation>
+        <translation>Sem ciclos</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="733"/>
         <source>Loop</source>
-        <translation>Com loop</translation>
+        <translation>Com ciclos</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="750"/>

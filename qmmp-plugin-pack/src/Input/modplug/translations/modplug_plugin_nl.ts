@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="137"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Maker: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="138"/>
@@ -70,7 +70,7 @@
         <location filename="../modplugmetadatamodel.cpp" line="72"/>
         <location filename="../modplugmetadatamodel.cpp" line="93"/>
         <source>Samples</source>
-        <translation>Samples</translation>
+        <translation>Voorbeelden</translation>
     </message>
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="73"/>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="577"/>
         <source>Preamp</source>
-        <translation>Voorversterking</translation>
+        <translation>Voorversterken</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="586"/>
