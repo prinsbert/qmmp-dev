@@ -1,0 +1,69 @@
+From: Nicolas Braud-Santoni <nicolas@braud-santoni.eu>
+Date: Fri, 16 Mar 2018 14:17:40 -0300
+Subject: Disable upstream's autoupdate mechanism
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Description: Remove autoupdate mechanism
+Bug-Debian: https://bugs.debian.org/890119
+Forwarded: not-needed
+Author: Nicolas Braud-Santoni <nicolas@braud-santoni.eu>
+Reviewed-by: Rogério Theodoro de Brito <rbrito@gmail.com>
+Last-Update: 2021-02-13
+---
+ README.md              | 3 ---
+ yt_dlp/__init__.py | 8 ++++++--
+ yt_dlp/options.py  | 2 +-
+ 3 files changed, 7 insertions(+), 6 deletions(-)
+
+Index: yt-dlp-2021.10.10/README.md
+===================================================================
+--- yt-dlp-2021.10.10.orig/README.md
++++ yt-dlp-2021.10.10/README.md
+@@ -249,9 +249,6 @@ Then simply run `make`. You can also run
+ ## General Options:
+     -h, --help                       Print this help text and exit
+     --version                        Print program version and exit
+-    -U, --update                     Update this program to latest version. Make
+-                                     sure that you have sufficient permissions
+-                                     (run with sudo if needed)
+     -i, --ignore-errors              Ignore download and postprocessing errors.
+                                      The download will be considered successfull
+                                      even if the postprocessing fails
+Index: yt-dlp-2021.10.10/yt_dlp/__init__.py
+===================================================================
+--- yt-dlp-2021.10.10.orig/yt_dlp/__init__.py
++++ yt-dlp-2021.10.10/yt_dlp/__init__.py
+@@ -746,11 +746,13 @@ def _real_main(argv=None):
+ 
+         # Update version
+         if opts.update_self:
+-            # If updater returns True, exit. Required for windows
+-            if run_update(ydl):
+-                if actual_use:
+-                    sys.exit('ERROR: The program must exit for the update to complete')
+-                sys.exit()
++            parser.error(
++                "youtube-dl's self-update mechanism is disabled on Debian.\n"
++                "Please update youtube-dl using apt(8).\n"
++                "See https://packages.debian.org/sid/youtube-dl for the "
++                "latest packaged version.\n"
++            )
++            sys.exit()
+ 
+         # Maybe do nothing
+         if not actual_use:
+Index: yt-dlp-2021.10.10/yt_dlp/options.py
+===================================================================
+--- yt-dlp-2021.10.10.orig/yt_dlp/options.py
++++ yt-dlp-2021.10.10/yt_dlp/options.py
+@@ -205,7 +205,7 @@ def parseOpts(overrideArguments=None):
+     general.add_option(
+         '-U', '--update',
+         action='store_true', dest='update_self',
+-        help='Update this program to latest version. Make sure that you have sufficient permissions (run with sudo if needed)')
++        help=optparse.SUPPRESS_HELP)
+     general.add_option(
+         '-i', '--ignore-errors',
+         action='store_true', dest='ignoreerrors',
