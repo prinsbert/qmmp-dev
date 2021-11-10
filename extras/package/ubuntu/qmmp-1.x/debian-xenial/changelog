@@ -1,3 +1,9 @@
+qmmp (1.5.2-1ubuntu2~xenial0) xenial; urgency=medium
+
+  * skinned: fixed volume bar draw in the double size mode.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 10 Nov 2021 20:03:58 +0300
+
 qmmp (1.5.2-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
