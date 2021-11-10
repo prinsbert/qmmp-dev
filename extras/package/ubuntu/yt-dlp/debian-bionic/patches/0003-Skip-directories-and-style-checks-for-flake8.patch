@@ -8,11 +8,11 @@ Last-Update: 2020-04-10
  Makefile | 5 ++++-
  1 file changed, 4 insertions(+), 1 deletion(-)
 
-Index: yt-dlp-2021.09.25/Makefile
+Index: yt-dlp-2021.11.10.1/Makefile
 ===================================================================
---- yt-dlp-2021.09.25.orig/Makefile
-+++ yt-dlp-2021.09.25/Makefile
-@@ -48,7 +48,10 @@ install: yt-dlp yt-dlp.1 completions
+--- yt-dlp-2021.11.10.1.orig/Makefile
++++ yt-dlp-2021.11.10.1/Makefile
+@@ -48,7 +48,10 @@ install: lazy-extractors yt-dlp yt-dlp.1
  	install -Dm644 completions/fish/yt-dlp.fish $(DESTDIR)$(SHAREDIR)/fish/vendor_completions.d/yt-dlp.fish
  
  codetest:
