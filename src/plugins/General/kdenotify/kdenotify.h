@@ -54,6 +54,8 @@ private:
 private slots:
     void showMetaData();
     void notificationClosed(uint id, uint reason);
+    void onVolumeChanged(int percent);
+    void onMutedChanged(bool muted);
 };
 
 #endif // KDENOTIFY_H
