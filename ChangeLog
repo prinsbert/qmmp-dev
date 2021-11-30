@@ -1541,3 +1541,12 @@ Version 0.12.13
 * fixed equalizer form in the qsui plugin
 * fixed build with the latest ffmpeg version
 * removed mp3lyrics.org lyrics provider (service was closed)
+
+Version 0.12.14
+* fixed transition between http tracks
+* improved qsui plugin:
+  - fixed toolbar renaming
+  - fixed tab bar context menu
+* fixed transport plugins loading
+* fixed volume bar draw in the double size mode
+* fixed symlinks support
