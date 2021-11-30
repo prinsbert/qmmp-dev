@@ -429,7 +429,7 @@ void PlayListTask::run()
         foreach (QString p, dirs)
         {
             QDir dir(p);
-            dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+            dir.setFilter(QDir::Files | QDir::Hidden);
             dir.setSorting(QDir::Name);
             l << dir.entryInfoList(mm->nameFilters());
         }

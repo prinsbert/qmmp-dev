@@ -47,17 +47,17 @@ void SkinReader::generateThumbs()
 {
     m_previewMap.clear();
     QDir dir(Qmmp::configDir() + "/skins");
-    dir.setFilter( QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    dir.setFilter( QDir::Files | QDir::Hidden);
     QFileInfoList f = dir.entryInfoList();
 #if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
     dir.setPath(qApp->applicationDirPath() + "/skins");
 #else
     dir.setPath(Qmmp::dataPath() + "/skins");
 #endif
-    dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    dir.setFilter(QDir::Files | QDir::Hidden);
     f << dir.entryInfoList();
     QDir cache_dir(Qmmp::configDir() + "/cache/thumbs");
-    cache_dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    cache_dir.setFilter(QDir::Files | QDir::Hidden);
     QFileInfoList d = cache_dir.entryInfoList();
     //clear removed skins from cache
     foreach(QFileInfo thumbFile, d)
@@ -124,7 +124,7 @@ void SkinReader::unpackSkin(const QString &path)
 {
     //remove old skin
     QDir dir(Qmmp::configDir() + "/cache/skin");
-    dir.setFilter( QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    dir.setFilter( QDir::Files | QDir::Hidden);
     QFileInfoList f = dir.entryInfoList();
     foreach(QFileInfo file, f)
         dir.remove(file.fileName());
@@ -192,7 +192,7 @@ void SkinReader::unzip(const QString &from, const QString &to, bool preview)
         args << "-C" << "-j" << "-o" << "-qq" << "-d" << to << from << "main.*" << "*/main.*";
         QProcess::execute("unzip", args);
         QDir dir(to);
-        dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+        dir.setFilter(QDir::Files | QDir::Hidden);
         QFileInfoList fileList = dir.entryInfoList();
         foreach(QFileInfo thumbInfo, fileList)
         {

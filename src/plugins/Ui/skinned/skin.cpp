@@ -48,7 +48,7 @@ Skin *Skin::instance()
 
 QPixmap Skin::getPixmap (const QString &name, QDir dir)
 {
-    dir.setFilter (QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    dir.setFilter (QDir::Files | QDir::Hidden);
     dir.setNameFilters(QStringList() << name + ".*");
     QFileInfoList f = dir.entryInfoList();
     if(!f.isEmpty())
@@ -80,6 +80,7 @@ Skin::Skin (QObject *parent) : QObject (parent)
 Skin::~Skin()
 {}
 
+void Skin::setSkin (const QString& path)
 void Skin::setSkin (const QString& path)
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
@@ -399,7 +400,7 @@ void Skin::loadPlayList()
 
 QPixmap *Skin::getPixmap (const QString& name, const QString &fallback)
 {
-    m_skin_dir.setFilter (QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    m_skin_dir.setFilter (QDir::Files);
     foreach(QFileInfo info, m_skin_dir.entryInfoList(QStringList() << name + ".*"))
     {
         if(info.suffix().toLower() != "cur" && info.suffix().toLower() != "txt")
@@ -419,7 +420,7 @@ QPixmap *Skin::getPixmap (const QString& name, const QString &fallback)
 
 QString Skin::getPath (const QString& name)
 {
-    m_skin_dir.setFilter (QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    m_skin_dir.setFilter (QDir::Files | QDir::Hidden);
     QFileInfoList f = m_skin_dir.entryInfoList(QStringList() << name + ".*");
     bool nameHasExt = name.contains('.');
     for (int j = 0; j < f.size(); ++j)
@@ -844,7 +845,7 @@ QPixmap *Skin::correctSize(QPixmap *pixmap, int w, int h)
 QPixmap * Skin::getDummyPixmap(const QString &name, const QString &fallback)
 {
     QDir dir (":/glare");
-    dir.setFilter (QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    dir.setFilter (QDir::Files | QDir::Hidden);
     dir.setNameFilters(QStringList() << name + ".*");
     QFileInfoList f = dir.entryInfoList();
     if(!f.isEmpty())
@@ -875,7 +876,7 @@ QPixmap Skin::scalePixmap(const QPixmap &pix, int ratio)
 
 const QString Skin::findFile(const QString &name)
 {
-    m_skin_dir.setFilter (QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    m_skin_dir.setFilter (QDir::Files | QDir::Hidden);
     QFileInfoList f = m_skin_dir.entryInfoList(QStringList() << name);
     if(!f.isEmpty())
     {
@@ -883,7 +884,7 @@ const QString Skin::findFile(const QString &name)
     }
 
     QDir dir(":/glare");
-    dir.setFilter (QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+    dir.setFilter (QDir::Files | QDir::Hidden);
     dir.setNameFilters(QStringList() << name);
     f = dir.entryInfoList();
     if(!f.isEmpty())
