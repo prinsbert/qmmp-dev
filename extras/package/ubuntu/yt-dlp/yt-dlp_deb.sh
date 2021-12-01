@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2021.11.10.1
+VERSION=2021.12.01
 UBUNTU_CODENAMES='bionic focal hirsute impish'
 BUILD_ROOT=build-root
 
