@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2021.06.06
+VERSION=2021.12.17
 UBUNTU_CODENAMES='xenial bionic hirsute'
 BUILD_ROOT=build-root
 
