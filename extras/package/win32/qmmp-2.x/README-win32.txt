@@ -55,7 +55,7 @@ List of the third-party libraries.
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   libxml2             2.9.12     http://xmlsoft.org/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
-  mpg123              1.29.0     https://www.mpg123.de/
+  mpg123              1.29.3     https://www.mpg123.de/
   adplug              2.3.3      https://github.com/adplug/adplug
   libbinio            1.5        https://github.com/adplug/libbinio
 
