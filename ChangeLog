@@ -1738,3 +1738,9 @@ Version 1.5.2
 * updated Finnish translation (Kimmo Kujansuu, Jiri Grönroos)
 * updated Galician translation (Delio Docampo Cordeiro)
 * updated Italian translation (Luigi Toscano)
+
+Version 1.5.3
+* fixed transport plugins loading
+* fixed volume bar draw in the double size mode
+* fixed symlinks support
+* fixed some issues in the two-panel file dialog
