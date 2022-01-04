@@ -92,14 +92,11 @@ get_target_property(QtGui_enabled_features Qt6::Gui QT_ENABLED_PUBLIC_FEATURES)
 IF("xcb" IN_LIST QtGui_enabled_features)
   pkg_search_module(X11 x11)
   SET(XCB_ENABLED YES)
+  ADD_DEFINITIONS(-DQMMP_WS_X11)
 ENDIF()
 
 IF(X11_FOUND OR NOT XCB_ENABLED)
   SET(SKINNED_AVAILABLE YES)
-ENDIF()
-
-IF(X11_FOUND)
-  ADD_DEFINITIONS(-DQMMP_WS_X11)
 ENDIF()
 
 add_subdirectory(src/qmmp)
