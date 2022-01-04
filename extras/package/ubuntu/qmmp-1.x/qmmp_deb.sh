@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.5.2
+QMMP_VERSION=1.5.3
 UBUNTU_CODENAMES='xenial bionic focal hirsute impish'
 BUILD_ROOT=build-root
 
