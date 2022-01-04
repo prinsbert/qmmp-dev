@@ -403,3 +403,11 @@ LEGEND
 [+] libxmp-4.5
 [!] removed libmodplug
 [!] replaced modplug plugin by xmp plugin
+
+1.5.3
+[*] qmmp-1.5.3
+[*] curl-7.80
+[*] libsidplayfp-2.3.1
+[*] mpg123-1.29.3
+[*] qt-5.12.12
+[*] ffmpeg-4.4.1
