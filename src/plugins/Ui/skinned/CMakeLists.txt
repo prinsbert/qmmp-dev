@@ -79,10 +79,8 @@ SET(skinned_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 SET(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/forms)
 
-IF(X11_FOUND)
 ADD_LIBRARY(skinned MODULE ${skinned_SRCS} ${skinned_UIS_H})
 add_dependencies(skinned libqmmpui libqmmp)
 target_link_libraries(skinned PRIVATE Qt6::Widgets libqmmpui libqmmp ${X11_LDFLAGS})
 install(TARGETS skinned DESTINATION ${PLUGIN_DIR}/Ui)
 install(FILES scripts/kwin.sh DESTINATION ${CMAKE_INSTALL_DATADIR}/qmmp${APP_NAME_SUFFIX}/scripts)
-ENDIF(X11_FOUND)
