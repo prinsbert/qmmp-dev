@@ -405,8 +405,8 @@ LEGEND
 [!] removed libmodplug
 [!] replaced modplug plugin by xmp plugin
 
-2.0.2
-[*] qmmp-2.0.2
+2.0.3
+[*] qmmp-2.0.3
 [*] curl-7.80
 [*] libsidplayfp-2.3.1
 [*] mpg123-1.29.3
