@@ -57,7 +57,7 @@ download_plugins_svn()
 build ()
 { 
   cd qmmp-${QMMP_VERSION}
-  qmake CONFIG+=release DISABLED_PLUGINS+=modplug
+  qmake CONFIG+=release DISABLED_PLUGINS+=MODPLUG_PLUGIN
   mingw32-make -j${JOBS}
   cd ..
   cd qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
