@@ -364,6 +364,7 @@ LEGEND
 
 0.12.14
 [*] qmmp-0.12.14
+[*] qmmp-plugin-pack-0.12.3-svn
 [*] curl-7.80.0
 [*] ffmpeg-3.4.9
 [*] mpg123-1.29.3
