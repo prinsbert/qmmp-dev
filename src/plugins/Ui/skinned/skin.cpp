@@ -81,7 +81,6 @@ Skin::~Skin()
 {}
 
 void Skin::setSkin (const QString& path)
-void Skin::setSkin (const QString& path)
 {
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_use_cursors = settings.value("Skinned/skin_cursors", false).toBool();
