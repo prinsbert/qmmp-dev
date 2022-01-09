@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=0.12.13
+QMMP_VERSION=0.12.14
 UBUNTU_CODENAMES='trusty xenial bionic'
 BUILD_ROOT=build-root
 
@@ -51,7 +51,7 @@ clean ()
 
 case $1 in
     --download)
-		wget https://qmmp.ylsoftware.com/files/qmmp-$QMMP_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/qmmp/0.12/qmmp-$QMMP_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES
