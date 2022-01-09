@@ -8,12 +8,13 @@ Maintainer: Ilya Kotov <forkotov02@ya.ru> or <iokotov@astralinux.ru>
 
 Known issues:
   - disabled plugins: mms, wildmidi, aac, jack, pulseaudio, oss4, alsa, mplayer,
-    mpris, converter, kdenotify, gnome hotkey, archive, icecast;
+    mpris, converter, kdenotify, gnome hotkey, archive, icecast, modplug;
   - packed Xmms skins (i.e. *.tar.gz, *.tar.bz2) are not supported. You should unpack them before usage.
 
 Extra plugins (see https://qmmp.ylsoftware.com/plugins.php):
   - FFap - enhanced Monkey's Audio (APE) decoder;
-  - Goom - audio visualization based on goom project.
+  - Goom - audio visualization based on goom project;
+  - XMP - module player with use of the libxmp library.
 
 This archive also contains third-party libraries. Source code of these libraries
 is freely available on the Internet.
