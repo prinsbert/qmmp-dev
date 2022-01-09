@@ -1550,3 +1550,4 @@ Version 0.12.14
 * fixed transport plugins loading
 * fixed volume bar draw in the double size mode
 * fixed symlinks support
+* fixed some issues in the two-panel file dialog
