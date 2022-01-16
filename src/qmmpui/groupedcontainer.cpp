@@ -90,7 +90,7 @@ void GroupedContainer::addTracks(const QList<PlayListTrack *> &tracks)
     m_update = true;
 }
 
-void GroupedContainer::insertTrack(int index, PlayListTrack *track)
+int GroupedContainer::insertTrack(int index, PlayListTrack *track)
 {
     int firstIndex = 0, lastIndex = 0;
     //insert if possible
@@ -112,11 +112,12 @@ void GroupedContainer::insertTrack(int index, PlayListTrack *track)
         {
             m_groups[i]->trackList.insert(index - firstIndex - 1, track);
             m_update = true;
-            return;
+            return index;
         }
     }
     //just add otherwise
     addTrack(track);
+    return m_items.count() - 1;
 }
 
 void GroupedContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
