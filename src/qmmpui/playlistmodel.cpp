@@ -191,7 +191,7 @@ void PlayListModel::insert(int index, QList<PlayListTrack *> tracks)
 
     foreach(PlayListTrack *track, tracks)
     {
-        m_container->insertTrack(index, track);
+        index = m_container->insertTrack(index, track) + 1;
         m_total_duration += track->duration();
         if(m_container->trackCount() == 1)
         {
