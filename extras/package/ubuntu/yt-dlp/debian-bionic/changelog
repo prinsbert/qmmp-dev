@@ -1,3 +1,9 @@
+yt-dlp (2022.01.21-1ubuntu1~bionic0) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 23 Jan 2022 21:19:39 +0300
+
 yt-dlp (2021.12.27-1ubuntu1~bionic0) bionic; urgency=medium
 
   * New upstream release.
