@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -60,7 +60,7 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
         {
             m_shortName = values.at(0);
             m_priority = values.at(1).toInt();
-            m_filters = values.at(2).split(";");
+            m_filters = values.at(2).split(";", QString::SkipEmptyParts);
             update = (info.lastModified().toString(Qt::ISODate) != values.at(3));
         }
     }
