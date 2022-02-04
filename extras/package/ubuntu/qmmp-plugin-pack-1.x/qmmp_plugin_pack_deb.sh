@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=1.5.2
-UBUNTU_CODENAMES='xenial bionic focal hirsute impish'
+UBUNTU_CODENAMES='xenial bionic focal impish'
 BUILD_ROOT=build-root
 
 
