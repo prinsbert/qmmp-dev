@@ -30,7 +30,7 @@ class SettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit SettingsDialog(QWidget *parent = nullptr);
 
     ~SettingsDialog();
 
