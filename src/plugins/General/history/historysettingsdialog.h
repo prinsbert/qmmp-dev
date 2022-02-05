@@ -32,7 +32,7 @@ class HistorySettingsDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit Historyexplicit SettingsDialog(QWidget *parent = nullptr);
+    explicit HistorySettingsDialog(QWidget *parent = nullptr);
     ~HistorySettingsDialog();
 
 public slots:
