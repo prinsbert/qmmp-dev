@@ -21,6 +21,7 @@
 #include <QFileInfo>
 #include <QDateTime>
 #include <QTime>
+#include <QSet>
 #include <algorithm>
 #include <qmmp/metadatamanager.h>
 #include "qmmpuisettings.h"
@@ -354,11 +355,10 @@ void PlayListTask::run()
     }
     else if(m_task == REMOVE_INVALID)
     {
-        TrackField *f = nullptr;
         bool ok = false;
         for(int i = 0; i < m_fields.count(); ++i)
         {
-            f = m_fields.at(i);
+            TrackField *f = m_fields.at(i);
 
             if(f->value.contains("://"))
                 ok = MetaDataManager::instance()->protocols().contains(f->value.section("://",0,0)); //url
@@ -371,11 +371,12 @@ void PlayListTask::run()
     }
     else if(m_task == REMOVE_DUPLICATES)
     {
-        QStringList urls;
-        TrackField *f = nullptr;
+        QSet<QString> urls;
+        urls.reserve(m_fields.count());
+
         for(int i = 0; i < m_fields.count(); ++i)
         {
-            f = m_fields.at(i);
+            TrackField *f = m_fields.at(i);
 
             if(urls.contains(f->value))
             {
@@ -383,13 +384,12 @@ void PlayListTask::run()
             }
             else
             {
-                urls.append(f->value);
+                urls.insert(f->value);
             }
         }
     }
     else if(m_task == REFRESH)
     {
-        TrackField *f = nullptr;
         MetaDataManager *mm = MetaDataManager::instance();
         QStringList protocols = mm->protocols();
         QList<QRegularExpression> regExps = mm->regExps();
@@ -397,7 +397,7 @@ void PlayListTask::run()
         //find invalid files
         for(int i = 0; i < m_fields.count(); ++i)
         {
-            f = m_fields.at(i);
+            TrackField *f = m_fields.at(i);
 
             if(f->value.contains("://"))
                 ok = protocols.contains(f->value.section("://",0,0)) || MetaDataManager::hasMatch(regExps, f->value) ; //url
@@ -411,7 +411,7 @@ void PlayListTask::run()
         QStringList dirs; QString path;
         for(int i = 0; i < m_fields.count(); ++i)
         {
-            f = m_fields.at(i);
+            TrackField *f = m_fields.at(i);
 
             if(f->value.contains("://")) //skip urls
                 continue;
@@ -431,9 +431,10 @@ void PlayListTask::run()
             l << dir.entryInfoList(mm->nameFilters());
         }
         //generate URLs for the current playlist
-        QStringList urls;
+        QSet<QString> urls;
+        urls.reserve(m_fields.count());
         for(const TrackField *t : qAsConst(m_fields))
-            urls.append(t->value);
+            urls.insert(t->value);
 
         //find files that have already been added
         QList<int> indexes;
@@ -443,7 +444,7 @@ void PlayListTask::run()
             if(urls.contains(info.canonicalFilePath()))
                 indexes.append(i);
             else
-                urls.append(info.canonicalFilePath());
+                urls.insert(info.canonicalFilePath());
         }
         //remove existing URLs
         for(int i = indexes.count() - 1; i >= 0; i--)
