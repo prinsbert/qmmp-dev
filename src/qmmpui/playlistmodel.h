@@ -28,6 +28,7 @@
 #include <QPointer>
 #include <QVector>
 #include <QUrl>
+#include <QSet>
 #include "playlistitem.h"
 #include "playlisttrack.h"
 #include "playlistgroup.h"
@@ -605,6 +606,7 @@ private:
     PlayListContainer *m_container;
     QmmpUiSettings *m_ui_settings;
     PlayListTask *m_task;
+    QSet<QString> m_paths;
 };
 
 Q_DECLARE_METATYPE(PlayListModel::SortMode)

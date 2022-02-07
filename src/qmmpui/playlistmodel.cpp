@@ -210,10 +210,40 @@ void PlayListModel::insert(int index, const QByteArray &json)
 
 void PlayListModel::insert(PlayListItem *before, const QList<PlayListTrack *> &tracks)
 {
-    if(before)
-        insert(m_container->indexOf(before), tracks);
+    if(m_ui_settings->skipExistingTracks() && sender() == m_loader)
+    {
+        if(m_paths.isEmpty())
+        {
+            m_paths.reserve(m_container->trackCount());
+            for(const PlayListItem *item : qAsConst(m_container->items()))
+            {
+                if(!item->isGroup())
+                    m_paths.insert(static_cast<const PlayListTrack *>(item)->path());
+            }
+        }
+
+        QList<PlayListTrack *> uniqueTracks;
+        for(PlayListTrack *track : qAsConst(tracks))
+        {
+            if(!m_paths.contains(track->path()))
+            {
+                m_paths.insert(track->path());
+                uniqueTracks << track;
+            }
+        }
+
+        if(before)
+            insert(m_container->indexOf(before), uniqueTracks);
+        else
+            add(uniqueTracks);
+    }
     else
-        add(tracks);
+    {
+        if(before)
+            insert(m_container->indexOf(before), tracks);
+        else
+            add(tracks);
+    }
 }
 
 void PlayListModel::insert(int index, const QString &path)
@@ -1125,6 +1155,8 @@ bool PlayListModel::isLoaderRunning() const
 void PlayListModel::preparePlayState()
 {
     m_play_state->prepare();
+    m_paths.clear();
+    m_paths.squeeze();
 }
 
 void PlayListModel::removeInvalidTracks()
