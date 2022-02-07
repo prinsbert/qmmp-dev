@@ -39,7 +39,7 @@ public:
     void replaceTracks(const QList<PlayListTrack *> &tracks) override;
     QList<PlayListGroup *> groups() const override;
     QList<PlayListTrack *> tracks() const override;
-    QList<PlayListItem *> items() const override;
+    const QList<PlayListItem *> &items() const override;
     int count() const override;
     int trackCount() const override;
     QList<PlayListItem *> mid(int pos, int count) const override;

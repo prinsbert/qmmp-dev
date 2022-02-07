@@ -180,6 +180,18 @@ public:
      */
     bool clearPreviousPlayList() const;
     /*!
+     * Enable/disable feature to skip already existing track when adding to the playlist.
+     * @param enabled New setting for this option (\b true to enable)
+     */
+    void setSkipExistingTracks(bool enabled);
+    /*!
+     * Returns the current setting for the option to skip already existing tracks when
+     * adding to the playlist.
+     * @return \b true if the already existing tracks should be skipped, \b false
+     *         otherwise.
+     */
+    bool skipExistingTracks() const;
+    /*!
      * Returns the current setting for the option to read tags when loading a playlist.
      * \return \b true if tag reading is enabled, \b false otherwise.
      */
@@ -282,6 +294,7 @@ private:
     bool m_clear_prev_playlist;
     bool m_read_metadata_for_playlist;
     bool m_transit_between_playlists;
+    bool m_skip_existing_tracks;
     //general
     bool m_resume_on_startup;
     QStringList m_exclude_filters, m_restrict_filters;

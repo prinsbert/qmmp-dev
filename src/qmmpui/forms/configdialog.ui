@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>836</width>
-    <height>618</height>
+    <height>658</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -220,6 +220,13 @@
             <widget class="QCheckBox" name="clearPrevPLCheckBox">
              <property name="text">
               <string>Clear previous playlist when opening new one</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="skipExistingTracksCheckBox">
+             <property name="text">
+              <string>Skip already existing tracks</string>
              </property>
             </widget>
            </item>

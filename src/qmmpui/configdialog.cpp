@@ -115,6 +115,7 @@ void ConfigDialog::readSettings()
         m_ui->underscoresCheckBox->setChecked(guis->convertUnderscore());
         m_ui->per20CheckBox->setChecked(guis->convertTwenty());
         m_ui->clearPrevPLCheckBox->setChecked(guis->clearPreviousPlayList());
+        m_ui->skipExistingTracksCheckBox->setChecked(guis->skipExistingTracks());
         //resume playback on startup
         m_ui->continuePlaybackCheckBox->setChecked(guis->resumeOnStartup());
         //directory filters
@@ -399,6 +400,7 @@ void ConfigDialog::saveSettings()
         guis->setConvertUnderscore(m_ui->underscoresCheckBox->isChecked());
         guis->setConvertTwenty(m_ui->per20CheckBox->isChecked());
         guis->setClearPreviousPlayList(m_ui->clearPrevPLCheckBox->isChecked());
+        guis->setSkipExistingTracks(m_ui->skipExistingTracksCheckBox->isChecked());
         guis->setResumeOnStartup(m_ui->continuePlaybackCheckBox->isChecked());
         guis->setRestrictFilters(m_ui->dirRestrictLineEdit->text());
         guis->setExcludeFilters(m_ui->dirExcludeLineEdit->text());

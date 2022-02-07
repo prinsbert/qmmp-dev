@@ -26,7 +26,6 @@ NormalContainer::NormalContainer()
 
 NormalContainer::~NormalContainer()
 {
-    clear();
 }
 
 void NormalContainer::addTracks(const QList<PlayListTrack *> &tracks)
@@ -76,7 +75,7 @@ QList<PlayListTrack *> NormalContainer::tracks() const
     return trackList;
 }
 
-QList<PlayListItem *> NormalContainer::items() const
+const QList<PlayListItem *> &NormalContainer::items() const
 {
     return m_items;
 }
