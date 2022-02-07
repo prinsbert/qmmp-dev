@@ -43,7 +43,7 @@ public:
     virtual int insertTrack(int index, PlayListTrack *track) = 0;
     virtual void replaceTracks(const QList<PlayListTrack *> &tracks) = 0;
     virtual QList<PlayListGroup *> groups() const = 0;
-    virtual QList<PlayListItem *> items() const = 0;
+    virtual const QList<PlayListItem *> &items() const = 0;
     virtual QList<PlayListTrack *> tracks() const = 0;
     virtual int count() const = 0;
     virtual int trackCount() const = 0;

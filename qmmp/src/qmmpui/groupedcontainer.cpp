@@ -145,7 +145,7 @@ QList<PlayListTrack *> GroupedContainer::tracks() const
     return trackList;
 }
 
-QList<PlayListItem *> GroupedContainer::items() const
+const QList<PlayListItem *> &GroupedContainer::items() const
 {
     updateCache();
     return m_items;
