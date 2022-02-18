@@ -553,11 +553,8 @@ const QString ListWidget::getExtraString(int i)
     if (m_show_protocol && track->path().contains("://"))
         extra_string = "[" + track->path().split("://").at(0) + "]";
 
-    if (m_model->isQueued(track))
-    {
-        int index = m_model->queuedIndex(track);
-        extra_string += "|"+QString::number(index + 1)+"|";
-    }
+    if (track->isQueued())
+        extra_string += "|"+QString::number(track->queuedIndex() + 1)+"|";
 
     if(m_model->currentIndex() == i && m_ui_settings->isRepeatableTrack())
         extra_string += "|R|";

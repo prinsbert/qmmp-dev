@@ -92,10 +92,9 @@ public:
      * Default implementation returns -1.
      */
     int trackIndex() const override;
-    /*!
-     * Sets the index of the track.
-     */
-    void setTrackIndex(int track_index);
+
+    int queuedIndex() const;
+    bool isQueued() const;
     /*!
      * Prepares for usage.
      * Increases reference counter.
@@ -130,9 +129,14 @@ private:
     QString m_groupFormat;
     QmmpUiSettings *m_settings;
     int m_refCount = 0;
-    int m_track_index = -1;
     bool m_sheduledForDeletion = false;
     MetaDataHelper *m_helper;
+    friend class PlayListContainer;
+    friend class NormalContainer;
+    friend class GroupedContainer;
+    int m_queued_index = -1;
+    int m_track_index = -1;
+
 };
 
 #endif

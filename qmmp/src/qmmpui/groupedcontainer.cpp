@@ -63,7 +63,7 @@ void GroupedContainer::addTrack(PlayListTrack *track)
     m_groups.append(group);
     m_items.append(group);
     m_items.append(track);
-    track->setTrackIndex(trackCount() - 1);
+    track->m_track_index = trackCount() - 1;
 }
 
 void GroupedContainer::addTracks(const QList<PlayListTrack *> &tracks)
@@ -379,6 +379,7 @@ QList<PlayListTrack *> GroupedContainer::takeAllTracks()
 
 void GroupedContainer::clear()
 {
+    clearQueue();
     while(!m_groups.isEmpty())
     {
         delete m_groups.takeFirst();
@@ -428,7 +429,7 @@ void GroupedContainer::updateCache() const
         m_items.append(m_groups.at(i));
         for(PlayListTrack *track : m_groups.at(i)->trackList)
         {
-            track->setTrackIndex(t++);
+            track->m_track_index = t++;
             m_items.append(track);
         }
     }
