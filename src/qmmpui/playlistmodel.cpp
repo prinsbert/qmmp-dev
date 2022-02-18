@@ -581,7 +581,7 @@ void PlayListModel::removeTracks(const QList<PlayListTrack *> &tracks)
 {
     QList<PlayListItem *> items;
     for(PlayListTrack *track : tracks)
-        items << dynamic_cast<PlayListItem *>(track);
+        items << static_cast<PlayListItem *>(track);
 
     removeTracks(items);
 }
@@ -828,7 +828,7 @@ QList<PlayListTrack *> PlayListModel::selectedTracks() const
     for(PlayListItem *item : m_container->items())
     {
         if(!item->isGroup() && item->isSelected())
-            selected_tracks.append(dynamic_cast<PlayListTrack *>(item));
+            selected_tracks.append(static_cast<PlayListTrack *>(item));
     }
     return selected_tracks;
 }
@@ -860,6 +860,11 @@ void PlayListModel::setQueued(PlayListTrack *item)
 bool PlayListModel::isQueued(PlayListTrack *f) const
 {
     return m_queued_songs.contains(f);
+}
+
+const QList<PlayListTrack *> &PlayListModel::queuedTracks() const
+{
+    return m_queued_songs;
 }
 
 bool PlayListModel::isEmptyQueue() const

@@ -28,7 +28,9 @@ void PlayListContainer::addTrack(PlayListTrack *track)
 
 void PlayListContainer::swapTrackNumbers(QList<PlayListItem *> *container, int index1, int index2)
 {
-    int number = container->at(index1)->trackIndex();
-    container->at(index1)->setTrackIndex(container->at(index2)->trackIndex());
-    container->at(index2)->setTrackIndex(number);
+    PlayListTrack *track1 = static_cast<PlayListTrack *>(container->at(index1));
+    PlayListTrack *track2 = static_cast<PlayListTrack *>(container->at(index2));
+    int number = track1->trackIndex();
+    track1->setTrackIndex(track2->trackIndex());
+    track2->setTrackIndex(number);
 }
