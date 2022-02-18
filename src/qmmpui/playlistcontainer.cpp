@@ -42,9 +42,12 @@ void PlayListContainer::enqueue(PlayListTrack *track)
 
 void PlayListContainer::removeFromQueue(PlayListTrack *track)
 {
-    m_queue.removeAll(track);
-    track->m_queued_index = -1;
-    updateQueueIndexes();
+    if(track->isQueued())
+    {
+        m_queue.removeAll(track);
+        track->m_queued_index = -1;
+        updateQueueIndexes();
+    }
 }
 
 void PlayListContainer::clearQueue()
@@ -53,6 +56,14 @@ void PlayListContainer::clearQueue()
         m_queue[i]->m_queued_index = -1;
 
     m_queue.clear();
+}
+
+void PlayListContainer::restoreQueue(const QList<PlayListTrack *> &tracks)
+{
+    m_queue.clear();
+    for(PlayListTrack *t : qAsConst(tracks))
+        m_queue.enqueue(t);
+    updateQueueIndexes();
 }
 
 const QList<PlayListTrack *> &PlayListContainer::queuedTracks() const

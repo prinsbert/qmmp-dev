@@ -73,6 +73,7 @@ public:
     void enqueue(PlayListTrack *track);
     void removeFromQueue(PlayListTrack *track);
     void clearQueue();
+    void restoreQueue(const QList<PlayListTrack *> &tracks);
     const QList<PlayListTrack *> &queuedTracks() const;
 
 protected:
