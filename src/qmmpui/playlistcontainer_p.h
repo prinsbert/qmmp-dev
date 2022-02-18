@@ -22,6 +22,7 @@
 #define PLAYLISTCONTAINER_P_H
 
 #include <QList>
+#include <QQueue>
 #include "playlistitem.h"
 #include "playlisttrack.h"
 #include "playlistgroup.h"
@@ -68,8 +69,19 @@ public:
     virtual void reverseList() = 0;
     virtual void randomizeList() = 0;
 
+    PlayListTrack *dequeue();
+    void enqueue(PlayListTrack *track);
+    void removeFromQueue(PlayListTrack *track);
+    void clearQueue();
+    void restoreQueue(const QList<PlayListTrack *> &tracks);
+    const QList<PlayListTrack *> &queuedTracks() const;
+
 protected:
     void swapTrackNumbers(QList<PlayListItem *> *container, int index1, int index2);
+
+private:
+    void updateQueueIndexes();
+    QQueue<PlayListTrack *> m_queue; /*!< Songs in play queue. */
 };
 
 #endif // PLAYLISTCONTAINER_P_H

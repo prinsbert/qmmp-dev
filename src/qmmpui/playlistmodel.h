@@ -236,17 +236,13 @@ public:
      */
     void moveItems(int from, int to);
     /*!
-     * Returns \b true if \b f file is in play queue, otherwise returns \b false.
+     * Returns a list of queued tracks.
      */
-    bool isQueued(PlayListTrack *item) const;
+    const QList<PlayListTrack *> &queuedTracks() const;
     /*!
      * Returns \b true if play queue is empty,otherwise returns - \b false.
      */
     bool isEmptyQueue()const;
-    /*!
-     * Returns index of \b f file in queue.e
-     */
-    int queuedIndex(PlayListTrack *track) const;
     /*!
      * Returns the number of items in the queue
      */
@@ -525,9 +521,9 @@ public slots:
      */
     void addToQueue();
     /*!
-     * Adds/removes item \b f to/from playback queue.
+     * Adds/removes track \b t to/from playback queue.
      */
-    void setQueued(PlayListTrack* item);
+    void setQueued(PlayListTrack* t);
     /*!
      * Removes invalid tracks from playlist
      */
@@ -598,7 +594,6 @@ private:
     PlayListTrack *m_stop_track = nullptr;
     int m_current = 0;
     SimpleSelection m_selection;  /*!< This flyweight object represents current selection. */
-    QQueue <PlayListTrack*> m_queued_songs; /*!< Songs in play queue. */
     PlayState* m_play_state; /*!< Current playing state (Normal or Shuffle) */
     qint64 m_total_duration = 0;
     FileLoader *m_loader;

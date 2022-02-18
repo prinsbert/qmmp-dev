@@ -67,11 +67,6 @@ public:
      */
     virtual bool isGroup() const = 0;
     /*!
-     * Sets the index of the track.
-     * Default implementation does nothing.
-     */
-    virtual void setTrackIndex(int number);
-    /*!
      * Returns the index of the track.
      * Default implementation returns -1.
      */

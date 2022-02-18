@@ -33,31 +33,34 @@ void NormalContainer::addTracks(const QList<PlayListTrack *> &tracks)
     for(PlayListTrack *track : qAsConst(tracks))
     {
         m_items.append(track);
-        track->setTrackIndex(m_items.count() - 1);
+        track->m_queued_index = -1;
+        track->m_track_index = m_items.count() - 1;
     }
 }
 
 int NormalContainer::insertTrack(int index, PlayListTrack *track)
 {
+    track->m_queued_index = -1;
     if(index >= 0 && index < m_items.count())
     {
         m_items.insert(index, track);
-        track->setTrackIndex(index);
+        track->m_track_index = index;
         //update indexes
         for(int i = index; i < m_items.count(); ++i)
-            m_items[i]->setTrackIndex(i);
+            static_cast<PlayListTrack *>(m_items[i])->m_track_index = i;
         return index;
     }
     else
     {
         m_items.append(track);
-        track->setTrackIndex(m_items.count() - 1);
+        track->m_track_index = m_items.count() - 1;
         return m_items.count() - 1;
     }
 }
 
 void NormalContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
 {
+    clearQueue();
     m_items.clear();
     addTracks(tracks);
 }
@@ -175,10 +178,13 @@ void NormalContainer::removeTrack(PlayListTrack *track)
 void NormalContainer::removeTracks(QList<PlayListTrack *> tracks)
 {
     for(PlayListTrack *t : qAsConst(tracks))
+    {
         m_items.removeAll(t);
+        removeFromQueue(t);
+    }
 
     for(int i = 0; i < m_items.count(); ++i)
-        m_items[i]->setTrackIndex(i);
+        static_cast<PlayListTrack *>(m_items[i])->m_track_index = i;
 }
 
 bool NormalContainer::move(const QList<int> &indexes, int from, int to)
@@ -215,6 +221,7 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
 
 QList<PlayListTrack *> NormalContainer::takeAllTracks()
 {
+    clearQueue();
     QList<PlayListTrack *> tracks;
     while(!m_items.isEmpty())
         tracks.append(static_cast<PlayListTrack *>(m_items.takeFirst()));
@@ -223,6 +230,7 @@ QList<PlayListTrack *> NormalContainer::takeAllTracks()
 
 void NormalContainer::clear()
 {
+    clearQueue();
     qDeleteAll(m_items);
     m_items.clear();
 }
@@ -244,5 +252,5 @@ void NormalContainer::randomizeList()
         m_items.swapItemsAt(rg->generate() % m_items.size(), rg->generate() % m_items.size());
 
     for(int i = 0; i < m_items.count(); ++i)
-        m_items[i]->setTrackIndex(i);
+        static_cast<PlayListTrack *>(m_items[i])->m_track_index = i;
 }

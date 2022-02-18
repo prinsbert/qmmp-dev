@@ -111,14 +111,19 @@ bool PlayListTrack::isGroup() const
     return false;
 }
 
-void PlayListTrack::setTrackIndex(int track_index)
-{
-    m_track_index = track_index;
-}
-
 int PlayListTrack::trackIndex() const
 {
     return m_track_index;
+}
+
+int PlayListTrack::queuedIndex() const
+{
+    return m_queued_index;
+}
+
+bool PlayListTrack::isQueued() const
+{
+    return m_queued_index >= 0;
 }
 
 void PlayListTrack::beginUsage()
