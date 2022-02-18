@@ -26,11 +26,51 @@ void PlayListContainer::addTrack(PlayListTrack *track)
     addTracks(QList<PlayListTrack *> () << track);
 }
 
+PlayListTrack *PlayListContainer::dequeue()
+{
+    PlayListTrack *t = m_queue.dequeue();
+    t->m_queued_index = -1;
+    updateQueueIndexes();
+    return t;
+}
+
+void PlayListContainer::enqueue(PlayListTrack *track)
+{
+    m_queue.enqueue(track);
+    updateQueueIndexes();
+}
+
+void PlayListContainer::removeFromQueue(PlayListTrack *track)
+{
+    m_queue.removeAll(track);
+    track->m_queued_index = -1;
+    updateQueueIndexes();
+}
+
+void PlayListContainer::clearQueue()
+{
+    for(int i = 0; i < m_queue.size(); ++i)
+        m_queue[i]->m_queued_index = -1;
+
+    m_queue.clear();
+}
+
+const QList<PlayListTrack *> &PlayListContainer::queuedTracks() const
+{
+    return m_queue;
+}
+
 void PlayListContainer::swapTrackNumbers(QList<PlayListItem *> *container, int index1, int index2)
 {
     PlayListTrack *track1 = static_cast<PlayListTrack *>(container->at(index1));
     PlayListTrack *track2 = static_cast<PlayListTrack *>(container->at(index2));
     int number = track1->trackIndex();
-    track1->setTrackIndex(track2->trackIndex());
-    track2->setTrackIndex(number);
+    track1->m_track_index = track2->m_track_index;
+    track2->m_track_index = number;
+}
+
+void PlayListContainer::updateQueueIndexes()
+{
+    for(int i = 0; i < m_queue.size(); ++i)
+        m_queue[i]->m_queued_index = i;
 }

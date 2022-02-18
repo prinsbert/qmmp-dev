@@ -116,9 +116,14 @@ int PlayListTrack::trackIndex() const
     return m_track_index;
 }
 
-void PlayListTrack::setTrackIndex(int track_index)
+int PlayListTrack::queuedIndex() const
 {
-    m_track_index = track_index;
+    return m_queued_index;
+}
+
+bool PlayListTrack::isQueued() const
+{
+    return m_queued_index >= 0;
 }
 
 void PlayListTrack::beginUsage()
