@@ -36,6 +36,7 @@ GroupedContainer::~GroupedContainer()
 void GroupedContainer::addTrack(PlayListTrack *track)
 {
     int firstIndex = 0, lastIndex = 0;
+    track->m_queued_index = -1;
     //insert if possible
     for(int i = 0; i < m_groups.count(); ++i)
     {
@@ -71,6 +72,7 @@ void GroupedContainer::addTracks(const QList<PlayListTrack *> &tracks)
     for(int i = 0; i < tracks.count(); ++i)
     {
         bool found = false;
+        tracks[i]->m_queued_index = -1;
         for(int j = m_groups.count() - 1; j >= 0; --j)
         {
             if(m_groups.at(j)->formattedTitle() == tracks.at(i)->groupName())
@@ -93,6 +95,7 @@ void GroupedContainer::addTracks(const QList<PlayListTrack *> &tracks)
 int GroupedContainer::insertTrack(int index, PlayListTrack *track)
 {
     int firstIndex = 0, lastIndex = 0;
+    track->m_queued_index = -1;
     //insert if possible
     for(int i = 0; i < m_groups.count(); ++i)
     {
@@ -283,6 +286,8 @@ void GroupedContainer::removeTrack(PlayListTrack *track)
         }
         ++it;
     }
+
+    removeFromQueue(track);
 }
 
 void GroupedContainer::removeTracks(QList<PlayListTrack *> tracks)

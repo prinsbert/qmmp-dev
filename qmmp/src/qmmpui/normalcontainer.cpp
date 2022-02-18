@@ -37,12 +37,14 @@ void NormalContainer::addTracks(const QList<PlayListTrack *> &tracks)
     for(PlayListTrack *track : qAsConst(tracks))
     {
         m_items.append(track);
+        track->m_queued_index = -1;
         track->m_track_index = m_items.count() - 1;
     }
 }
 
 int NormalContainer::insertTrack(int index, PlayListTrack *track)
 {
+    track->m_queued_index = -1;
     if(index >= 0 && index < m_items.count())
     {
         m_items.insert(index, track);
@@ -62,6 +64,7 @@ int NormalContainer::insertTrack(int index, PlayListTrack *track)
 
 void NormalContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
 {
+    clearQueue();
     m_items.clear();
     addTracks(tracks);
 }
@@ -179,7 +182,10 @@ void NormalContainer::removeTrack(PlayListTrack *track)
 void NormalContainer::removeTracks(QList<PlayListTrack *> tracks)
 {
     for(PlayListTrack *t : qAsConst(tracks))
+    {
         m_items.removeAll(t);
+        removeFromQueue(t);
+    }
 
     for(int i = 0; i < m_items.count(); ++i)
         static_cast<PlayListTrack *>(m_items[i])->m_track_index = i;
@@ -219,6 +225,7 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
 
 QList<PlayListTrack *> NormalContainer::takeAllTracks()
 {
+    clearQueue();
     QList<PlayListTrack *> tracks;
     while(!m_items.isEmpty())
         tracks.append(static_cast<PlayListTrack *>(m_items.takeFirst()));
