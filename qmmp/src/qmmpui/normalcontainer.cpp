@@ -49,7 +49,7 @@ int NormalContainer::insertTrack(int index, PlayListTrack *track)
         track->setTrackIndex(index);
         //update indexes
         for(int i = index; i < m_items.count(); ++i)
-            m_items[i]->setTrackIndex(i);
+            static_cast<PlayListTrack *>(m_items[i])->setTrackIndex(i);
         return index;
     }
     else
@@ -182,7 +182,7 @@ void NormalContainer::removeTracks(QList<PlayListTrack *> tracks)
         m_items.removeAll(t);
 
     for(int i = 0; i < m_items.count(); ++i)
-        m_items[i]->setTrackIndex(i);
+        static_cast<PlayListTrack *>(m_items[i])->setTrackIndex(i);
 }
 
 bool NormalContainer::move(const QList<int> &indexes, int from, int to)
@@ -246,5 +246,5 @@ void NormalContainer::randomizeList()
         m_items.swapItemsAt(qrand()%m_items.size(), qrand()%m_items.size());
 
     for(int i = 0; i < m_items.count(); ++i)
-        m_items[i]->setTrackIndex(i);
+        static_cast<PlayListTrack *>(m_items[i])->setTrackIndex(i);
 }

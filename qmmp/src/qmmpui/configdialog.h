@@ -22,7 +22,6 @@
 
 #include <QDialog>
 #include <QIcon>
-#include <QStyledItemDelegate>
 #include <QApplication>
 #include <QMouseEvent>
 #include "qmmpui_export.h"

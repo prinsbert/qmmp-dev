@@ -240,6 +240,10 @@ public:
      */
     bool isQueued(PlayListTrack *item) const;
     /*!
+     * Returns a list of queued tracks.
+     */
+    const QList<PlayListTrack *> &queuedTracks() const;
+    /*!
      * Returns \b true if play queue is empty,otherwise returns - \b false.
      */
     bool isEmptyQueue()const;

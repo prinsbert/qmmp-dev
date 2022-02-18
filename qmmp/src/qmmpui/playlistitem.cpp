@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -36,11 +36,6 @@ void PlayListItem::setSelected(bool yes)
 bool PlayListItem::isSelected() const
 {
     return m_selected;
-}
-
-void PlayListItem::setTrackIndex(int number)
-{
-    Q_UNUSED(number);
 }
 
 int PlayListItem::trackIndex() const

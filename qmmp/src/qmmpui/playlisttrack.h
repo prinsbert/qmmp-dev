@@ -88,14 +88,14 @@ public:
      */
     bool isGroup() const override;
     /*!
-     * Sets the index of the track.
-     */
-    void setTrackIndex(int track_index) override;
-    /*!
      * Returns the index of the track.
      * Default implementation returns -1.
      */
     int trackIndex() const override;
+    /*!
+     * Sets the index of the track.
+     */
+    void setTrackIndex(int track_index);
     /*!
      * Prepares for usage.
      * Increases reference counter.
