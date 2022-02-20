@@ -241,14 +241,11 @@ void UiHelper::savePlayList(QWidget *parent, PlayListModel *model)
 void UiHelper::jumpToTrack(QWidget *parent, PlayListModel *model)
 {
     if(!m_jumpDialog)
-    {
         m_jumpDialog = new JumpToTrackDialog(model, parent);
-    }
+
     if(m_jumpDialog->isHidden())
-    {
         m_jumpDialog->show();
-        m_jumpDialog->refresh();
-    }
+
     m_jumpDialog->raise();
 }
 
