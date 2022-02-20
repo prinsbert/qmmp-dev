@@ -84,21 +84,8 @@
        <property name="text">
         <string>Queue</string>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="refreshPushButton">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="text">
-        <string>Refresh</string>
+       <property name="icon">
+        <iconset theme="go-top"/>
        </property>
       </widget>
      </item>
@@ -142,7 +129,6 @@
   <tabstop>filterLineEdit</tabstop>
   <tabstop>songsListView</tabstop>
   <tabstop>queuePushButton</tabstop>
-  <tabstop>refreshPushButton</tabstop>
   <tabstop>jumpToPushButton</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
