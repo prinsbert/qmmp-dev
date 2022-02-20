@@ -56,32 +56,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="84"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Транспорти:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="93"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>Декодери:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="104"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>Рушії:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="115"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ефекти:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="153"/>
         <source>File dialogs:</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлові діалоги:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="165"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>Інтерфейси користувача:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="142"/>
@@ -237,12 +237,12 @@
     <message>
         <location filename="../columneditor.cpp" line="102"/>
         <source>Parent Directory Name</source>
-        <translation type="unfinished">Ім&apos;я батьківської теки</translation>
+        <translation>Ім&apos;я батьківської теки</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="103"/>
         <source>Parent Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Шлях до батьківської теки</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="104"/>
@@ -353,7 +353,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="229"/>
         <source>Skip already existing tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Пропустити існуючі треки</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="277"/>
@@ -445,22 +445,22 @@
     <message>
         <location filename="../forms/configdialog.ui" line="521"/>
         <source>CUE Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактор CUE</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="527"/>
         <source>Use system font</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати системний шрифт</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="548"/>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="573"/>
         <source>???</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="612"/>
@@ -731,7 +731,7 @@
     <message>
         <location filename="../configdialog.cpp" line="358"/>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>Корейська</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="359"/>
@@ -851,33 +851,33 @@
     <message>
         <location filename="../forms/cueeditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished">Завантажити</translation>
+        <translation>Завантажити</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished">Видалити</translation>
+        <translation>Видалити</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="54"/>
         <source>Save as...</source>
-        <translation type="unfinished">Зберегти як...</translation>
+        <translation>Зберегти як...</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
         <source>Open CUE File</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити файл CUE</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="133"/>
         <location filename="../cueeditor.cpp" line="152"/>
         <source>CUE Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли CUE</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="150"/>
         <source>Save CUE File</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти файл CUE</translation>
     </message>
 </context>
 <context>
@@ -1129,7 +1129,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="57"/>
         <source>Parent Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Шлях до батьківської теки</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="59"/>
