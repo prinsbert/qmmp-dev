@@ -23,10 +23,11 @@
 
 #include <QDialog>
 #include <QList>
+#include <QSet>
 #include "metadataformatter.h"
 #include "ui_jumptotrackdialog.h"
 
-class QStringListModel;
+class TrackListModel;
 class QSortFilterProxyModel;
 class QEvent;
 class PlayListManager;
@@ -41,12 +42,12 @@ class JumpToTrackDialog : public QDialog, private Ui::JumpToTrackDialog
     Q_OBJECT
 
 public:
+    enum { QueueRole = Qt::UserRole + 1 };
+
     explicit JumpToTrackDialog(PlayListModel *model, QWidget* parent = nullptr);
     ~JumpToTrackDialog();
-    void refresh();
 
 private slots:
-    void on_refreshPushButton_clicked();
     void on_queuePushButton_clicked();
     void on_jumpToPushButton_clicked();
     void jumpTo(const QModelIndex&);
@@ -54,11 +55,35 @@ private slots:
 
 private:
     bool eventFilter(QObject *o, QEvent *e) override;
-    QStringListModel* m_listModel;
+    TrackListModel* m_listModel;
     QSortFilterProxyModel* m_proxyModel;
     PlayListManager *m_pl_manager;
     PlayListModel *m_model;
     QList<int> m_indexes;
+    QHash<int, QString> m_queueText;
 };
+
+/**
+   @internal
+   @author Ilya Kotov <forkotov02@ya.ru>
+ */
+class TrackListModel : public QAbstractListModel
+{
+    Q_OBJECT
+public:
+    explicit TrackListModel(PlayListModel *model, QObject *parent);
+
+    QVariant data(const QModelIndex &index, int role) const override;
+    int rowCount(const QModelIndex &parent) const override;
+
+private slots:
+    void onListChanged(int flags);
+
+private:
+    PlayListModel *m_model;
+    QSet<PlayListTrack *> m_queue;
+
+};
+
 
 #endif //JUMPTOTRACKDIALOG_P_H
