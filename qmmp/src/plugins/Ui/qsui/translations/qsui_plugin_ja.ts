@@ -1080,7 +1080,7 @@
         <translation>残映時間:</translation>
     </message>
     <message>
-        <location filename="../forms/popupsettings.ui" line="178"/>
+        <location filename="../forms/popupsettings.ui" line="165"/>
         <source>ms</source>
         <translation>ミリ秒</translation>
     </message>
