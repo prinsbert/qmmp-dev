@@ -1080,7 +1080,7 @@
         <translation>지연:</translation>
     </message>
     <message>
-        <location filename="../forms/popupsettings.ui" line="178"/>
+        <location filename="../forms/popupsettings.ui" line="165"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
