@@ -33,7 +33,6 @@
 #include <qmmpui/metadataformatter.h>
 #include <qmmp/soundcore.h>
 #include <qmmp/metadatamanager.h>
-
 #include "kdenotify.h"
 
 KdeNotify::KdeNotify(QObject *parent) : QObject(parent),m_useFreedesktopSpec(false)
@@ -44,12 +43,12 @@ KdeNotify::KdeNotify(QObject *parent) : QObject(parent),m_useFreedesktopSpec(fal
     if(m_notifier->lastError().type() != QDBusError::NoError)
     {
         delete(m_notifier);
-    m_notifier = new QDBusInterface("org.freedesktop.Notifications",
-                                  "/org/freedesktop/Notifications","org.freedesktop.Notifications",
-                                  QDBusConnection::sessionBus(), this);
+        m_notifier = new QDBusInterface("org.freedesktop.Notifications",
+                                        "/org/freedesktop/Notifications","org.freedesktop.Notifications",
+                                        QDBusConnection::sessionBus(), this);
         if(m_notifier->lastError().type() != QDBusError::NoError)
         {
-            qWarning() << "KdeNotify: Unable to create interface.";
+            qWarning() << "KdeNotify: Unable to create interface:" << m_notifier->lastError().message();
             return;
         }
         m_useFreedesktopSpec = true;
