@@ -1080,7 +1080,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/popupsettings.ui" line="178"/>
+        <location filename="../forms/popupsettings.ui" line="165"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
