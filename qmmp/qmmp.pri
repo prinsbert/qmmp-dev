@@ -42,7 +42,7 @@ QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
 QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
 }
 
-#APP_NAME_SUFFIX = "-1"
+APP_NAME_SUFFIX = "-1"
 
 unix {
   isEmpty(PREFIX): PREFIX=/usr

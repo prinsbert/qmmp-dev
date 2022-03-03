@@ -16,5 +16,5 @@ Name[pl_PL]=Otwórz za pomocą Qmmp
 Name[pt]=Abrir com Qmmp
 Name[ru]=Открыть с помощью Qmmp
 Name[tr]=Qmmp ile aç
-Exec=qmmp cdda://%d
-Icon=qmmp
+Exec=qmmp-1 cdda://%d
+Icon=qmmp-1
