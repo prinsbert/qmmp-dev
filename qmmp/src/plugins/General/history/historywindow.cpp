@@ -489,6 +489,7 @@ void HistoryWindow::on_historyTreeWidget_itemDoubleClicked(QTreeWidgetItem *item
 
 void HistoryWindow::on_historyTreeWidget_customContextMenuRequested(const QPoint &pos)
 {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
     QTreeWidgetItem *item = m_ui->historyTreeWidget->itemAt(pos);
     if(item && item->parent())
     {
@@ -500,6 +501,9 @@ void HistoryWindow::on_historyTreeWidget_customContextMenuRequested(const QPoint
         menu.addAction(QIcon::fromTheme("edit-delete"), tr("Remove from History"), [=] { removeTrack(item); } );
         menu.exec(m_ui->historyTreeWidget->viewport()->mapToGlobal(pos));
     }
+#else
+    Q_UNUSED(pos);
+#endif
 }
 
 void HistoryWindow::on_topSongsTreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int)
