@@ -42,14 +42,14 @@ int main(int argc, char *argv[])
     QApplication a (argc, argv );
     a.setApplicationName("qmmp");
     QIcon icon;
-    icon.addFile(":/16x16/qmmp.png");
-    icon.addFile(":/32x32/qmmp.png");
-    icon.addFile(":/48x48/qmmp.png");
-    icon.addFile(":/56x56/qmmp.png");
-    icon.addFile(":/64x64/qmmp.png");
-    icon.addFile(":/128x128/qmmp.png");
-    icon.addFile(":/256x256/qmmp.png");
-    icon.addFile(":/scalable/qmmp.svgz");
+    icon.addFile(":/16x16/qmmp-1.png");
+    icon.addFile(":/32x32/qmmp-1.png");
+    icon.addFile(":/48x48/qmmp-1.png");
+    icon.addFile(":/56x56/qmmp-1.png");
+    icon.addFile(":/64x64/qmmp-1.png");
+    icon.addFile(":/128x128/qmmp-1.png");
+    icon.addFile(":/256x256/qmmp-1.png");
+    icon.addFile(":/scalable/qmmp-1.svgz");
     a.setWindowIcon(icon);
 #ifdef Q_OS_WIN
     if(Qmmp::isPortable())
