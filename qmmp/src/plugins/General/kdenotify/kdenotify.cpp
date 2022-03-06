@@ -187,7 +187,7 @@ void KdeNotify::onVolumeChanged(int percent)
 {
     QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.plasmashell"), QStringLiteral("/org/kde/osdService"),
                                                       QStringLiteral("org.kde.osdService"), QStringLiteral("mediaPlayerVolumeChanged"));
-    msg.setArguments({ percent, "Qmmp", "qmmp-simple" });
+    msg.setArguments({ percent, "Qmmp", "qmmp-simple-1" });
     QDBusConnection::sessionBus().asyncCall(msg);
 }
 
