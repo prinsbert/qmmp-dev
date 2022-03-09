@@ -70,7 +70,7 @@
         <location filename="../modplugmetadatamodel.cpp" line="72"/>
         <location filename="../modplugmetadatamodel.cpp" line="93"/>
         <source>Samples</source>
-        <translation>Campionamenti</translation>
+        <translation>Campioni</translation>
     </message>
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="73"/>
