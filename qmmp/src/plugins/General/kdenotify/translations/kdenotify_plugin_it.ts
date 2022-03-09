@@ -4,7 +4,7 @@
 <context>
     <name>KdeNotify</name>
     <message>
-        <location filename="../kdenotify.cpp" line="128"/>
+        <location filename="../kdenotify.cpp" line="127"/>
         <source>Qmmp now playing:</source>
         <translation>In riproduzione da Qmmp:</translation>
     </message>
@@ -57,7 +57,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifica di modifica volume</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="95"/>

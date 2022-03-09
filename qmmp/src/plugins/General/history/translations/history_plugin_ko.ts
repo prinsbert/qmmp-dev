@@ -176,19 +176,19 @@
         <translation>MMMM dd</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="497"/>
-        <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../historywindow.cpp" line="498"/>
-        <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <source>Add to Playlist</source>
+        <translation>재생목록에 추가</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="500"/>
+        <location filename="../historywindow.cpp" line="499"/>
+        <source>&amp;View Track Details</source>
+        <translation>트랙 세부정보 보기(&amp;V)</translation>
+    </message>
+    <message>
+        <location filename="../historywindow.cpp" line="501"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>이력에서 제거</translation>
     </message>
 </context>
 </TS>
