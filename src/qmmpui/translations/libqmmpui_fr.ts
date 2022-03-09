@@ -132,7 +132,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="36"/>
         <source>Name:</source>
-        <translation>Nom&#xa0;:</translation>
+        <translation>Nom :</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="76"/>
@@ -455,7 +455,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="548"/>
         <source>Font:</source>
-        <translation>Police&#xa0;:</translation>
+        <translation>Police :</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="573"/>
@@ -1042,8 +1042,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="118"/>
-        <location filename="../jumptotrackdialog.cpp" line="149"/>
+        <location filename="../jumptotrackdialog.cpp" line="122"/>
+        <location filename="../jumptotrackdialog.cpp" line="153"/>
         <source>Queue</source>
         <translation>Queue</translation>
     </message>
@@ -1053,18 +1053,18 @@
         <translation>Sauter à</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="94"/>
+        <location filename="../jumptotrackdialog.cpp" line="98"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="95"/>
+        <location filename="../jumptotrackdialog.cpp" line="99"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="116"/>
-        <location filename="../jumptotrackdialog.cpp" line="147"/>
+        <location filename="../jumptotrackdialog.cpp" line="120"/>
+        <location filename="../jumptotrackdialog.cpp" line="151"/>
         <source>Unqueue</source>
         <translation>Enlever de la queue</translation>
     </message>
@@ -1404,7 +1404,7 @@
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 existe déjà.
-Voulez-vous le remplacer&#xa0;?</translation>
+Voulez-vous le remplacer ?</translation>
     </message>
 </context>
 <context>

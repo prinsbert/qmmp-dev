@@ -176,17 +176,17 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="497"/>
+        <location filename="../historywindow.cpp" line="498"/>
         <source>Add to Playlist</source>
         <translation>Додати до списку відтворення</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="498"/>
+        <location filename="../historywindow.cpp" line="499"/>
         <source>&amp;View Track Details</source>
         <translation>&amp;Інформація про трек</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="500"/>
+        <location filename="../historywindow.cpp" line="501"/>
         <source>Remove from History</source>
         <translation>Видалити з історії</translation>
     </message>

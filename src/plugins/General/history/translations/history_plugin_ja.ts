@@ -176,17 +176,17 @@
         <translation>MM月dd日</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="497"/>
+        <location filename="../historywindow.cpp" line="498"/>
         <source>Add to Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="498"/>
+        <location filename="../historywindow.cpp" line="499"/>
         <source>&amp;View Track Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="500"/>
+        <location filename="../historywindow.cpp" line="501"/>
         <source>Remove from History</source>
         <translation type="unfinished"></translation>
     </message>

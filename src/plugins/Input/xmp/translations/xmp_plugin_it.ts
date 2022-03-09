@@ -49,7 +49,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Missaggio stereo:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Number of patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di pattern</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Tracks per pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Tracce per pattern</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="60"/>
         <source>Module length in patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Lunghezza modulo in pattern</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="79"/>

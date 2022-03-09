@@ -49,7 +49,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation>LADSPA Plugin lista</translation>
+        <translation>LADSPA Plugin Catalog</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="52"/>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../settingsdialog.cpp" line="132"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation>LADSPA laajennus ei ole käyttäjän hallinnassa</translation>
+        <translation>LADSPA plugin ei ole käyttäjän hallinnassa</translation>
     </message>
 </context>
 </TS>

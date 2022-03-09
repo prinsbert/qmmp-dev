@@ -1042,8 +1042,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="118"/>
-        <location filename="../jumptotrackdialog.cpp" line="149"/>
+        <location filename="../jumptotrackdialog.cpp" line="122"/>
+        <location filename="../jumptotrackdialog.cpp" line="153"/>
         <source>Queue</source>
         <translation>Antrian</translation>
     </message>
@@ -1053,18 +1053,18 @@
         <translation>Lompat Ke</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="94"/>
+        <location filename="../jumptotrackdialog.cpp" line="98"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="95"/>
+        <location filename="../jumptotrackdialog.cpp" line="99"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="116"/>
-        <location filename="../jumptotrackdialog.cpp" line="147"/>
+        <location filename="../jumptotrackdialog.cpp" line="120"/>
+        <location filename="../jumptotrackdialog.cpp" line="151"/>
         <source>Unqueue</source>
         <translation>Tak Antri</translation>
     </message>
