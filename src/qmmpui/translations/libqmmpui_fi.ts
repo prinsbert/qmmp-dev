@@ -353,7 +353,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="229"/>
         <source>Skip already existing tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohita olemassa olevat kappaleet</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="277"/>

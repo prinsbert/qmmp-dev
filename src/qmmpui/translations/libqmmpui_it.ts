@@ -56,32 +56,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="83"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Protocolli di trasporto:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="92"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>Decodificatori:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="103"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>Meccanismi:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="114"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Effetti:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="152"/>
         <source>File dialogs:</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestre di dialogo dei file:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="164"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>Interfacce utente:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="141"/>
@@ -390,7 +390,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="388"/>
         <source>Display average bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra bit al secondo medi</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="398"/>
@@ -435,7 +435,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="505"/>
         <source>URL Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra URL</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="511"/>
@@ -566,7 +566,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="867"/>
         <source>Use dithering</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa dithering</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="63"/>
@@ -731,7 +731,7 @@
     <message>
         <location filename="../configdialog.cpp" line="358"/>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>Coreano:</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="359"/>

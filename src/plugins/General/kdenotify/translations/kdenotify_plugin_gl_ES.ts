@@ -57,7 +57,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Notificación de cambio de volume</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="95"/>

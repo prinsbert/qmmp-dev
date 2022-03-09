@@ -178,17 +178,17 @@
     <message>
         <location filename="../historywindow.cpp" line="497"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää soittolistaan</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="498"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Näy&amp;tä kappaleen tiedot</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="500"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista historiasta</translation>
     </message>
 </context>
 </TS>

@@ -19,7 +19,7 @@
     <message>
         <location filename="../history.cpp" line="58"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
 </context>
 <context>
@@ -178,12 +178,12 @@
     <message>
         <location filename="../historywindow.cpp" line="497"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi alla scaletta</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="498"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vedi i dettagli della traccia</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="500"/>

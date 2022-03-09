@@ -464,7 +464,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="101"/>
         <source>Application Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Menu applicazione</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="102"/>
@@ -580,7 +580,7 @@
     <message>
         <location filename="../equalizer.cpp" line="220"/>
         <source>Overwrite Request</source>
-        <translation type="unfinished"></translation>
+        <translation>Richiesta di sovrascrittura</translation>
     </message>
     <message>
         <location filename="../equalizer.cpp" line="221"/>
@@ -852,7 +852,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="402"/>
         <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra del menu</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="459"/>
@@ -1125,7 +1125,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="432"/>
         <source>Reset colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Ripristina colori</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="873"/>
@@ -1146,7 +1146,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1013"/>
         <source>Waveform:</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma d&apos;onda:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1054"/>
@@ -1327,7 +1327,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1276"/>
         <source>Tab position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione scheda:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1313"/>
@@ -1415,7 +1415,7 @@
     <message>
         <location filename="../qsuivisualization.cpp" line="142"/>
         <source>Cells</source>
-        <translation type="unfinished"></translation>
+        <translation>Celle</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="143"/>
@@ -1536,12 +1536,12 @@
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>In alto</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="51"/>
         <source>Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>In basso</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="52"/>
@@ -1579,7 +1579,7 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="102"/>
         <source>Buffering</source>
-        <translation type="unfinished"></translation>
+        <translation>Riempimento buffer</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="127"/>

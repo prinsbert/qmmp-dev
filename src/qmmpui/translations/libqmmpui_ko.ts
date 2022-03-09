@@ -353,7 +353,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="229"/>
         <source>Skip already existing tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>이미 존재하는 트랙 건너뛰기</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="277"/>

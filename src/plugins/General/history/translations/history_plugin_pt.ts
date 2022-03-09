@@ -178,17 +178,17 @@
     <message>
         <location filename="../historywindow.cpp" line="497"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar à lista de reprodução</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="498"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ver detalhes da faixa</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="500"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover do histórico</translation>
     </message>
 </context>
 </TS>

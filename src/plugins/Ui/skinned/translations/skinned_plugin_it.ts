@@ -421,12 +421,12 @@
     <message>
         <location filename="../actionmanager.cpp" line="89"/>
         <source>Show &amp;Tab Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Mos&amp;tra barra delle schede</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="89"/>
         <source>Alt+T</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+T</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="91"/>
