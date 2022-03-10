@@ -19,7 +19,7 @@ SET(USE_COPYPASTE TRUE CACHE BOOL "enable/disable copy/paste change plugin")
 SET(USE_HISTORY TRUE CACHE BOOL "enable/disable history plugin")
 SET(USE_SLEEPINHIBITOR TRUE CACHE BOOL "enable/disable sleep mode inhibition plugin")
 SET(USE_LIBRARY TRUE CACHE BOOL "enable/disable media library plugin")
-#SET(USE_TASKBAR TRUE CACHE BOOL "enable/disable taskbar plugin (Windows)")
+SET(USE_TASKBAR TRUE CACHE BOOL "enable/disable taskbar plugin (Windows)")
 SET(USE_RDETECT TRUE CACHE BOOL "enable/disable rdetect plugin (Windows)")
 
 IF(USE_MPRIS AND Qt6DBus_FOUND)
