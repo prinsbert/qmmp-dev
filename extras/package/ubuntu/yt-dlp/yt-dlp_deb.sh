@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2022.02.04
+VERSION=2022.03.08.1
 UBUNTU_CODENAMES='bionic focal impish'
 BUILD_ROOT=build-root
 
