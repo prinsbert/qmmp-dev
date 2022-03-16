@@ -8,8 +8,12 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libtaskbar_SRCS
-    taskbarhelper.cpp
+    qwinevent.cpp
+    qwineventfilter.cpp
+    qwintaskbarbutton.cpp
+    qwintaskbarprogress.cpp
     taskbarfactory.cpp
+    taskbarhelper.cpp
     translations/translations.qrc
 )
 
