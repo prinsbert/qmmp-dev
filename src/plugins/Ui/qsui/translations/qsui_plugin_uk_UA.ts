@@ -464,7 +464,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="101"/>
         <source>Application Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Меню додатка</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="102"/>
@@ -672,7 +672,7 @@
     <message>
         <location filename="../hotkeyeditor.cpp" line="100"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Інструменти</translation>
     </message>
 </context>
 <context>
@@ -700,7 +700,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="402"/>
         <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель меню</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="459"/>
@@ -1369,7 +1369,7 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1276"/>
         <source>Tab position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиція закладки:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1313"/>
@@ -1538,22 +1538,22 @@
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Згори</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="51"/>
         <source>Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Знизу</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="52"/>
         <source>Left</source>
-        <translation type="unfinished">За лівим краєм</translation>
+        <translation>За лівим краєм</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="53"/>
         <source>Right</source>
-        <translation type="unfinished">За правим краєм</translation>
+        <translation>За правим краєм</translation>
     </message>
 </context>
 <context>
