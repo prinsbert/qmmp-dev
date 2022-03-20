@@ -24,6 +24,7 @@
 #include <QLocale>
 #include <QFile>
 #include <QByteArray>
+#include <QStandardPaths>
 
 #define STR_HELPER(x) #x
 #define STR(x) STR_HELPER(x)
@@ -50,7 +51,10 @@ QString Qmmp::configDir()
     else
         return m_configDir;
 #else
-    return m_configDir.isEmpty() ? QDir::homePath() + QLatin1String("/.qmmp") : m_configDir;
+    if(m_configDir.isEmpty())
+        return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QStringLiteral("/") + QCoreApplication::organizationName();
+    else
+        return m_configDir;
 #endif
 }
 
