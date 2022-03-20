@@ -39,7 +39,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     connect(m_ui.bassRangeSlider, &QSlider::valueChanged, m_ui.label_14, qOverload<int>(&QLabel::setNum));
     connect(m_ui.bassAmountSlider, &QSlider::valueChanged, m_ui.label_13, qOverload<int>(&QLabel::setNum));
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("ModPlug");
     //general
     m_ui.noiseCheckBox->setChecked(settings.value("NoiseReduction", false).toBool());
@@ -114,7 +114,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("ModPlug");
     //general
     settings.setValue("NoiseReduction", m_ui.noiseCheckBox->isChecked());

@@ -67,7 +67,7 @@ Decoder *DecoderModPlugFactory::create(const QString &path, QIODevice *input)
 QList<TrackInfo *> DecoderModPlugFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
     QList <TrackInfo*> list;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     bool useFileName = settings.value("UseFileName", false).toBool();
 
     QByteArray buffer;

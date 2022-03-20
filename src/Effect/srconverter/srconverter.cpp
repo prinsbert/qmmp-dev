@@ -33,7 +33,7 @@ SRConverter::SRConverter() : Effect()
     m_sz = 0;
     m_src_data.data_in = nullptr;
     m_src_data.data_out = nullptr;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_overSamplingFs = settings.value("SRC/sample_rate",48000).toInt();
     m_converter_type = converter_type_array[settings.value("SRC/engine", 0).toInt()];
 }

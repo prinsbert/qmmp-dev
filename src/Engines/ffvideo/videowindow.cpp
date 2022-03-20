@@ -38,7 +38,7 @@ VideoWindow::VideoWindow(QWidget *parent) :
     setAutoFillBackground(true);
     setMinimumSize(100, 100);
     setWindowTitle(tr("FFmpeg Video"));
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     restoreGeometry(settings.value("FFVideo/geometry").toByteArray());
     m_core = SoundCore::instance();
     m_menu = new QMenu(this);
@@ -107,7 +107,7 @@ bool VideoWindow::event(QEvent *e)
 
 void VideoWindow::closeEvent(QCloseEvent *)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("FFVideo/geometry", saveGeometry());
 }
 
