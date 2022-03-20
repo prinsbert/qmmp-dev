@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
 #endif
     QApplication a (argc, argv );
     a.setApplicationName("qmmp");
+    a.setOrganizationName("qmmp");
     QIcon icon;
     icon.addFile(":/16x16/qmmp.png");
     icon.addFile(":/32x32/qmmp.png");
