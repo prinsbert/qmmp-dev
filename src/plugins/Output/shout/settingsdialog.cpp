@@ -29,7 +29,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
 {
     m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose, true);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Shout");
     m_ui->hostLineEdit->setText(settings.value("host", "127.0.0.1").toString());
     m_ui->portSpinBox->setValue(settings.value("port", 8000).toInt());
@@ -49,7 +49,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Shout");
     settings.setValue("host",  m_ui->hostLineEdit->text());
     settings.setValue("port", m_ui->portSpinBox->value());

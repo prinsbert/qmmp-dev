@@ -74,7 +74,7 @@ StatusIconPopupWidget::StatusIconPopupWidget(QWidget * parent)
     connect(m_timer,SIGNAL(timeout()),SLOT(deleteLater()));
     connect(SoundCore::instance(),SIGNAL(elapsedChanged(qint64)),this,SLOT(updateTime(qint64)));
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Tray");
     m_timer->setInterval(settings.value("tooltip_delay",2000).toInt());
     setWindowOpacity(1.0 - settings.value("tooltip_transparency",0).toInt()/100.0);

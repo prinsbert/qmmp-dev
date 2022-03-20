@@ -79,7 +79,7 @@ QString CUEMetaDataModel::cue() const
     file.open(QIODevice::ReadOnly);
     QByteArray data = file.readAll();
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("CUE");
 #ifdef WITH_ENCA
     EncaAnalyser analyser = nullptr;
@@ -110,7 +110,7 @@ void CUEMetaDataModel::setCue(const QString &content)
 {
     if(!m_codec)
     {
-        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+        QSettings settings;
         m_codec = new QmmpTextCodec(settings.value("CUE/encoding", "UTF-8").toByteArray());
     }
 

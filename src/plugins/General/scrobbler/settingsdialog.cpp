@@ -37,7 +37,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     connect(m_librefmAuth, SIGNAL(sessionRequestFinished(int)), SLOT(processSessionResponse(int)));
     connect(m_librefmAuth, SIGNAL(checkSessionFinished(int)), SLOT(processCheckResponse(int)));
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Scrobbler");
     m_ui.lastfmGroupBox->setChecked(settings.value("use_lastfm", false).toBool());
     m_ui.librefmGroupBox->setChecked(settings.value("use_librefm", false).toBool());
@@ -51,7 +51,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Scrobbler");
     settings.setValue("use_lastfm", m_ui.lastfmGroupBox->isChecked());
     settings.setValue("use_librefm", m_ui.librefmGroupBox->isChecked());
@@ -130,7 +130,7 @@ void SettingsDialog::processSessionResponse(int error)
     case ScrobblerAuth::NO_ERROR:
     {
         QMessageBox::information(this, tr("Message"), tr("New session has been received successfully"));
-        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+        QSettings settings;
         if(sender() == m_lastfmAuth)
         {
             m_ui.sessionLineEdit_lastfm->setText(m_lastfmAuth->session());

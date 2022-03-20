@@ -27,7 +27,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     QDialog(parent), m_ui(new Ui::SettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_ui->userTokenLineEdit->setText(settings.value("ListenBrainz/user_token").toString());
 }
 
@@ -38,7 +38,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("ListenBrainz/user_token", m_ui->userTokenLineEdit->text());
     QDialog::accept();
 }

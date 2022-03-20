@@ -30,7 +30,7 @@ SettingsDialog::SettingsDialog (QWidget *parent) : QDialog (parent)
     ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
-	const QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+	const QSettings settings;
     const QByteArray default_device = settings.value("QTMULTIMEDIA/device").toByteArray();
 
 	//Default item always has index = 0
@@ -55,7 +55,7 @@ SettingsDialog::~SettingsDialog()
 void SettingsDialog::accept()
 {
     qDebug("%s", Q_FUNC_INFO);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("QTMULTIMEDIA/device", ui.deviceComboBox->currentData().toByteArray());
     QDialog::accept();
 }

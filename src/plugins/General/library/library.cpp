@@ -59,7 +59,7 @@ Library::Library(QPointer<LibraryWidget> *libraryWidget, QObject *parent) :
     }
     QSqlDatabase::removeDatabase(CONNECTION_NAME);
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_dirs = settings.value("Library/dirs").toStringList();
 
     m_showAction = new QAction(QIcon::fromTheme("text-x-generic"), tr("Library"), this);

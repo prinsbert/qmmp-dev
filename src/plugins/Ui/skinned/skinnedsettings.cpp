@@ -107,7 +107,7 @@ void SkinnedSettings::on_mainFontButton_clicked()
 
 void SkinnedSettings::on_resetFontsButton_clicked()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.remove("Skinned/pl_font");
     settings.remove("Skinned/pl_header_font");
     settings.remove("Skinned/mw_font");
@@ -135,7 +135,7 @@ void SkinnedSettings::showEvent(QShowEvent *)
 void SkinnedSettings::loadFonts()
 {
     QFont font;
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
 
     QString fontname = settings.value ("Skinned/pl_font", qApp->font().toString()).toString();
     font.fromString(fontname);
@@ -237,7 +237,7 @@ void SkinnedSettings::addWindowTitleString(const QString &str)
 
 void SkinnedSettings::readSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     //playlist
     m_ui.protocolCheckBox->setChecked(settings.value ("pl_show_protocol", false).toBool());
@@ -279,7 +279,7 @@ void SkinnedSettings::readSettings()
 
 void SkinnedSettings::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     settings.setValue("pl_show_protocol", m_ui.protocolCheckBox->isChecked());
     settings.setValue("pl_show_numbers", m_ui.numbersCheckBox->isChecked());

@@ -468,7 +468,7 @@ void PlayList::readSettings()
     {
         QScreen *primaryScreen = QGuiApplication::primaryScreen();
         QRect availableGeometry = primaryScreen->availableGeometry();
-        QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+        QSettings settings;
         QPoint pos = settings.value ("Skinned/pl_pos", QPoint (100, 332)).toPoint();
         m_ratio = m_skin->ratio();
         //TODO QGuiApplication::screenAt
@@ -498,7 +498,7 @@ bool PlayList::event (QEvent *event)
 
 void PlayList::writeSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     //position
     settings.setValue ("Skinned/pl_pos", this->pos());
 }

@@ -691,7 +691,7 @@ void MainWindow::createActions()
 
 void MainWindow::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_titleFormatter.setPattern(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
 
@@ -848,7 +848,7 @@ void MainWindow::showTabMenu(const QPoint &pos)
 
 void MainWindow::writeSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Simple/mw_geometry", saveGeometry());
     settings.setValue("Simple/mw_state", saveState());
     settings.setValue("Simple/always_on_top", ACTION(ActionManager::WM_ALLWAYS_ON_TOP)->isChecked());

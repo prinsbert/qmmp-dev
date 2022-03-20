@@ -64,7 +64,7 @@ public:
 LibraryModel::LibraryModel(QObject *parent) : QAbstractItemModel(parent)
 {
     m_rootItem = new LibraryTreeItem;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_showYear = settings.value("Library/show_year", false).toBool();
     refresh();
 }

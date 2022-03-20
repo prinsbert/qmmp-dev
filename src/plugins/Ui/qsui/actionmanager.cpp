@@ -35,7 +35,7 @@ ActionManager::ActionManager(QObject *parent) :
     QObject(parent)
 {
     m_instance = this;
-    m_settings = new QSettings(Qmmp::configFile(), QSettings::IniFormat);
+    m_settings = new QSettings;
     m_settings->beginGroup("SimpleUiShortcuts");
 
     m_actions = {
@@ -192,7 +192,7 @@ void ActionManager::readStates()
 
 void ActionManager::saveStates()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     settings.setValue("pl_show_header", m_actions[PL_SHOW_HEADER]->isChecked());
     settings.endGroup();
@@ -200,7 +200,7 @@ void ActionManager::saveStates()
 
 void ActionManager::saveActions()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("SimpleUiShortcuts");
 
     for(const QAction *action : m_actions.values())
@@ -238,7 +238,7 @@ void ActionManager::registerAction(int id, QAction *action, const QString &confK
     if(m_actions.value(id))
         qFatal("ActionManager: invalid action id");
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("SimpleUiShortcuts");
     action->setShortcut(settings.value(confKey, key).toString());
     action->setProperty("defaultShortcut", key);
@@ -261,7 +261,7 @@ void ActionManager::registerWidget(int id, QWidget *w, const QString &text, cons
 
 void ActionManager::registerDockWidget(QDockWidget *w, const QString &confKey, const QString &key)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("SimpleUiShortcuts");
     w->toggleViewAction()->setShortcut(settings.value(confKey, key).toString());
     settings.endGroup();
@@ -330,7 +330,7 @@ ActionManager::ToolBarInfo ActionManager::defaultToolBar() const
 QList<ActionManager::ToolBarInfo> ActionManager::readToolBarSettings() const
 {
     QList<ToolBarInfo> list;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     int iconSize = settings.value("Simple/toolbar_icon_size", -1).toInt();
     if(iconSize <= 0)
         iconSize = qApp->style()->pixelMetric(QStyle::PM_ToolBarIconSize);
@@ -356,7 +356,7 @@ QList<ActionManager::ToolBarInfo> ActionManager::readToolBarSettings() const
 
 void ActionManager::writeToolBarSettings(const QList<ToolBarInfo> &l)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginWriteArray("SimpleUiToolbars");
     for(int i = 0; i < l.size(); ++i)
     {

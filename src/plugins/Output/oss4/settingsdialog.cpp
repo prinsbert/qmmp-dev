@@ -87,7 +87,7 @@ SettingsDialog::SettingsDialog (QWidget *parent) : QDialog (parent)
             ui.deviceComboBox->addItem(QString("%1 (%2)").arg(audio_info.name).arg(audio_info.devnode));
         }
     }
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     ui.deviceComboBox->setEditText(settings.value("OSS4/device", DEFAULT_DEV).toString());
     connect (ui.deviceComboBox, SIGNAL(activated(int)),SLOT(setText(int)));
 }
@@ -103,7 +103,7 @@ void SettingsDialog::setText(int n)
 void SettingsDialog::accept()
 {
     qDebug("%s", Q_FUNC_INFO);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("OSS4/device", ui.deviceComboBox->currentText ());
     QDialog::accept();
 }

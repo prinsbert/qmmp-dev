@@ -37,7 +37,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     for (size_t i = 0; i < n; ++i)
         m_ui.encaAnalyserComboBox->addItem(langs[i]);
 #endif
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("HTTP");
     int pos = m_ui.icyEncodingComboBox->findText(settings.value("icy_encoding","UTF-8").toString());
     m_ui.icyEncodingComboBox->setCurrentIndex(pos);
@@ -60,7 +60,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("HTTP");
     settings.setValue("icy_encoding", m_ui.icyEncodingComboBox->currentText());
     settings.setValue("buffer_size", m_ui.bufferSizeSpinBox->value());

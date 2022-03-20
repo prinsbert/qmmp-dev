@@ -49,7 +49,7 @@ CoverWidget::CoverWidget(QWidget *parent)
     addActions(m_menu->actions());
     m_size = 0;
     //settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_size = settings.value("CoverManager/size", 0).toInt();
     for(QAction *a : sizeMenu->actions ())
     {
@@ -104,6 +104,6 @@ void CoverWidget::processResizeAction(QAction *action)
     else
         resize(m_size, m_size);
     update();
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("CoverManager/size", m_size);
 }

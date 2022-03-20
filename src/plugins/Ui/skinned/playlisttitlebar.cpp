@@ -52,7 +52,7 @@ PlayListTitleBar::PlayListTitleBar(QWidget *parent)
     setMinimumWidth(275*m_ratio);
 
     readSettings();
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
 #ifdef QMMP_WS_X11
     if(m_pl->useCompiz())
         m_pl->setFixedSize(settings.value ("Skinned/pl_size", QSize (m_ratio*275, m_ratio*116)).toSize());
@@ -70,7 +70,7 @@ PlayListTitleBar::PlayListTitleBar(QWidget *parent)
 
 PlayListTitleBar::~PlayListTitleBar()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue ("Skinned/pl_size", QSize (m_pl->width(), m_shaded ? m_height:m_pl->height()));
     settings.setValue ("Skinned/pl_shaded", m_shaded);
 }
@@ -223,7 +223,7 @@ void PlayListTitleBar::setModel(PlayListModel *selected, PlayListModel *previous
 
 void PlayListTitleBar::readSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_font.fromString(settings.value("Skinned/pl_font", QApplication::font().toString()).toString());
     m_font.setPixelSize(12 * m_ratio);
 }

@@ -45,7 +45,7 @@ FileOps::FileOps(QObject *parent) : QObject(parent)
     QAction *separator2 = new QAction(this);
     separator2->setSeparator(true);
     //load settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("FileOps");
     if(!settings.value("name_0").isNull())
         UiHelper::instance()->addAction(separator1, UiHelper::PLAYLIST_MENU);

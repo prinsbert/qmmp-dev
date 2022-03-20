@@ -37,7 +37,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     m_ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("FileOps");
     int i = 0;
     while(!settings.value(QString("name_%1").arg(i)).isNull())
@@ -80,7 +80,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("FileOps");
     //remove all previous keys
     settings.remove(QString());

@@ -37,11 +37,6 @@ QString Qmmp::m_langID;
 QString Qmmp::m_appDir;
 #endif
 
-QString Qmmp::configFile()
-{
-    return configDir() + QLatin1String("/qmmp2rc");
-}
-
 QString Qmmp::configDir()
 {
 #ifdef Q_OS_WIN
@@ -132,7 +127,7 @@ QString Qmmp::systemLanguageID()
 
 QString Qmmp::uiLanguageID()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QString langID = settings.value("General/locale", "auto").toString();
     langID = langID.isEmpty() ? "auto" : langID;
     return langID;
@@ -140,7 +135,7 @@ QString Qmmp::uiLanguageID()
 
 void Qmmp::setUiLanguageID(const QString &code)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("General/locale", code);
     m_langID.clear();
 }

@@ -41,7 +41,7 @@ UDisksPlugin::UDisksPlugin(QObject *parent) : QObject(parent)
     connect(m_manager,SIGNAL(deviceRemoved(QDBusObjectPath)), SLOT(removeDevice(QDBusObjectPath)));
     connect(m_actions,SIGNAL(triggered (QAction *)), SLOT(processAction(QAction *)));
     //load settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("UDisks");
     m_detectCDA = settings.value("cda", true).toBool();
     m_detectRemovable = settings.value("removable", true).toBool();

@@ -50,7 +50,7 @@ PopupWidget::PopupWidget(QWidget *parent)
     setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 
     //settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Notifier");
     int delay = settings.value("message_delay", 2000).toInt();
     m_pos = settings.value("message_pos", PopupWidget::BOTTOMLEFT).toUInt();

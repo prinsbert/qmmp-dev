@@ -97,7 +97,7 @@ void PlayListHeader::readSettings()
         m_metrics = nullptr;
     }
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
 
     QFont header_font = qApp->font("QAbstractItemView");
@@ -759,7 +759,7 @@ int PlayListHeader::autoResizeColumn() const
 
 void PlayListHeader::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_model->saveSettings(&settings);
     QList<QVariant> sizes, alignment;

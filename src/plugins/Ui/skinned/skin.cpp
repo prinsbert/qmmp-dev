@@ -42,7 +42,7 @@ Skin *Skin::m_instance = nullptr;
 Skin::Skin(QObject *parent) : QObject (parent)
 {
     m_instance = this;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QString path = settings.value("Skinned/skin_path").toString();
 #ifdef Q_OS_WIN
     if(Qmmp::isPortable())
@@ -187,7 +187,7 @@ const QRegion Skin::getRegion(uint r) const
 
 void Skin::setSkin (const QString& path)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_use_cursors = settings.value("Skinned/skin_cursors", false).toBool();
     m_double_size = ACTION(ActionManager::WM_DOUBLE_SIZE)->isChecked();
     m_antialiasing = ACTION(ActionManager::WM_ANTIALIASING)->isChecked();

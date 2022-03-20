@@ -55,7 +55,7 @@ TitleBar::TitleBar(TimeIndicatorModel *model, QWidget *parent)
     connect(m_close, SIGNAL(clicked()), m_mw, SLOT(close()));
     setActive(false);
     connect(m_skin, SIGNAL(skinChanged()), this, SLOT(updateSkin()));
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     if (settings.value("Skinned/disp_shaded", false).toBool())
         shade();
     m_align = true;
@@ -66,7 +66,7 @@ TitleBar::TitleBar(TimeIndicatorModel *model, QWidget *parent)
 
 TitleBar::~TitleBar()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Skinned/disp_shaded", m_shaded);
 }
 

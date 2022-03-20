@@ -145,7 +145,7 @@ void EqWidget::setMimimalMode(bool b)
 
 void EqWidget::readSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QScreen *primaryScreen = QGuiApplication::primaryScreen();
     QRect availableGeometry = primaryScreen->availableGeometry();
     QPoint pos = settings.value("Skinned/eq_pos", QPoint(100, 216)).toPoint();
@@ -201,7 +201,7 @@ void EqWidget::readSettings()
 
 void EqWidget::writeSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue ("Skinned/eq_pos", this->pos()); //geometry
     settings.setValue ("Skinned/eq_auto", m_autoButton->isChecked());
     //equalizer presets

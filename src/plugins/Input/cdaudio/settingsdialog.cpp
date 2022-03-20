@@ -28,7 +28,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 {
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("cdaudio");
     m_ui.deviceLineEdit->setText(settings.value("device").toString());
     m_ui.deviceCheckBox->setChecked(!m_ui.deviceLineEdit->text().isEmpty());
@@ -49,7 +49,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("cdaudio");
     if(m_ui.deviceCheckBox->isChecked())
         settings.setValue("device", m_ui.deviceLineEdit->text());

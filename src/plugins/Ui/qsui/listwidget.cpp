@@ -79,7 +79,7 @@ ListWidget::~ListWidget()
 
 void ListWidget::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_show_protocol = settings.value ("pl_show_protocol", false).toBool();
     bool show_popup = settings.value("pl_show_popup", false).toBool();

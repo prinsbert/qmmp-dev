@@ -97,7 +97,7 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
 
 DecoderProperties DecoderFFmpegFactory::properties() const
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QSet<QString> filters = {
         "*.wma", "*.ape", "*.tta", "*.m4a", "*.m4b", "*.aac", "*.mp3", "*.ra", "*.shn", "*.vqf", "*.ac3", "*.tak", "*.dsf",
         "*.dsdiff", "*.mka"

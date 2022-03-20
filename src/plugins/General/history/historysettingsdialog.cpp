@@ -29,7 +29,7 @@ HistorySettingsDialog::HistorySettingsDialog(QWidget *parent) :
     m_ui(new Ui::HistorySettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_ui->titleLineEdit->setText(settings.value("History/title_format", "%if(%p,%p - %t,%t)").toString());
 
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
@@ -45,7 +45,7 @@ HistorySettingsDialog::~HistorySettingsDialog()
 
 void HistorySettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("History/title_format", m_ui->titleLineEdit->text());
     QDialog::accept();
 }

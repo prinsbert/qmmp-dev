@@ -40,7 +40,7 @@ HalPlugin::HalPlugin(QObject *parent) : QObject(parent)
     connect(m_manager,SIGNAL(deviceRemoved(const QString &)), SLOT(removeDevice(const QString &)));
     connect(m_actions,SIGNAL(triggered (QAction *)), SLOT(processAction(QAction *)));
     //load settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("HAL");
     m_detectCDA = settings.value("cda", true).toBool();
     m_detectRemovable = settings.value("removable", true).toBool();

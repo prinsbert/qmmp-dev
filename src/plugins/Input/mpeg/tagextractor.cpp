@@ -52,7 +52,7 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
     if (tag.isEmpty())
         return QMap<Qmmp::MetaData, QString>();
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("MPEG");
     QByteArray codecName = settings.value("ID3v2_encoding","UTF-8").toByteArray();
 

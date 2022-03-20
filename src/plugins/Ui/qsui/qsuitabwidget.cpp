@@ -86,7 +86,7 @@ void QSUiTabWidget::setCornerWidget(QWidget *widget, Qt::Corner corner)
 
 void QSUiTabWidget::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_tabBar->setTabsClosable(settings.value("pl_tabs_closable", false).toBool());
     QFont tab_font = qApp->font(m_tabBar);

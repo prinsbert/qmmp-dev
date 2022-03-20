@@ -97,7 +97,7 @@ RGScanDialog::RGScanDialog(QList <PlayListTrack *> tracks,  QWidget *parent) : Q
     m_ui.tableWidget->resizeColumnsToContents();
     m_ui.writeButton->setEnabled(false);
     //read settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     restoreGeometry(settings.value("RGScanner/geometry").toByteArray());
     m_ui.trackCheckBox->setChecked(settings.value("RGScanner/write_track",true).toBool());
     m_ui.albumCheckBox->setChecked(settings.value("RGScanner/write_album",true).toBool());
@@ -239,7 +239,7 @@ void RGScanDialog::onScanFinished(const QString &url)
 
 void RGScanDialog::reject()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("RGScanner/geometry", saveGeometry());
     settings.setValue("RGScanner/write_track", m_ui.trackCheckBox->isChecked());
     settings.setValue("RGScanner/write_album", m_ui.albumCheckBox->isChecked());

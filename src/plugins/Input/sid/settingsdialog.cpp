@@ -30,7 +30,7 @@ SettingsDialog::SettingsDialog(SidDatabase *db, QWidget *parent) : QDialog(paren
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("SID");
 
     m_ui.useHVSCCheckBox->setChecked(settings.value("use_hvsc", false).toBool());
@@ -64,7 +64,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("SID");
     settings.setValue("use_hvsc", m_ui.useHVSCCheckBox->isChecked());
     settings.setValue("hvsc_path", m_ui.hvscPathLineEdit->text());

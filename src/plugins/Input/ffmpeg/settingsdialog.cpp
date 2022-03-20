@@ -34,7 +34,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 {
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QStringList disabledFilters = { "*.mp3" };
     disabledFilters = settings.value("FFMPEG/disabled_filters", disabledFilters).toStringList();
 
@@ -103,7 +103,7 @@ void SettingsDialog::accept()
         disabledFilters << "*.tak";
     if (!m_ui.dsdCheckBox->isChecked())
         disabledFilters << "*.dsf" << "*.dsdiff";
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("FFMPEG/disabled_filters", disabledFilters);
     QDialog::accept();
 }

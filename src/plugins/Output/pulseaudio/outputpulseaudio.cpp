@@ -340,14 +340,14 @@ void OutputPulseAudio::stream_success_cb(pa_stream *, int success, void *data)
 VolumePulseAudio::VolumePulseAudio()
 {
     OutputPulseAudio::volumeControl = this;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_volume.left = settings.value("PulseAudio/left_volume", 100).toInt();
     m_volume.right = settings.value("PulseAudio/right_volume", 100).toInt();
 }
 
 VolumePulseAudio::~VolumePulseAudio()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("PulseAudio/left_volume", m_volume.left);
     settings.setValue("PulseAudio/right_volume", m_volume.right);
     OutputPulseAudio::volumeControl = nullptr;

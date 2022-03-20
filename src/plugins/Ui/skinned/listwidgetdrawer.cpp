@@ -42,7 +42,7 @@ ListWidgetDrawer::~ListWidgetDrawer()
 
 void ListWidgetDrawer::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     m_show_anchor = settings.value("pl_show_anchor", false).toBool();
     m_show_numbers = settings.value ("pl_show_numbers", true).toBool();

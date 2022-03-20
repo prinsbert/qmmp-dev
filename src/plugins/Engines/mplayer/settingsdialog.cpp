@@ -41,7 +41,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.audioComboBox->addItem("jack");
     m_ui.audioComboBox->addItem("nas");
     m_ui.audioComboBox->addItem("null");
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("mplayer");
     m_ui.audioComboBox->setEditText(settings.value("ao","default").toString().replace("default", tr("default")));
     m_ui.videoComboBox->setEditText(settings.value("vo","default").toString().replace("default", tr("default")));
@@ -56,7 +56,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("mplayer");
     settings.setValue("ao",m_ui.audioComboBox->currentText().replace(tr("default"), "default"));
     settings.setValue("vo",m_ui.videoComboBox->currentText().replace(tr("default"), "default"));

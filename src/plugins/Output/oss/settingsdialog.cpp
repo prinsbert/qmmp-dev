@@ -27,7 +27,7 @@ SettingsDialog::SettingsDialog ( QWidget *parent )
 {
     m_ui.setupUi ( this );
     setAttribute ( Qt::WA_DeleteOnClose );
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("OSS");
     m_ui.lineEdit->insert(settings.value("device","/dev/dsp").toString());
     m_ui.lineEdit_2->insert(settings.value("mixer_device","/dev/mixer").toString());
@@ -46,7 +46,7 @@ SettingsDialog::~SettingsDialog()
 void SettingsDialog::accept()
 {
     qDebug("SettingsDialog (OSS):: writeSettings()");
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("OSS");
     settings.setValue("device", m_ui.lineEdit->text());
     settings.setValue("buffer_time",m_ui.bufferSpinBox->value());

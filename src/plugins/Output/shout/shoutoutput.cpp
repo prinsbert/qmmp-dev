@@ -50,7 +50,7 @@ ShoutOutput::~ShoutOutput()
 
 bool ShoutOutput::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     float quality = settings.value("Shout/vorbis_quality", 0.8).toFloat();
     quint32 outFreq = settings.value("Shout/sample_rate", 44100).toInt();
 

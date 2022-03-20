@@ -107,7 +107,7 @@ bool DecoderMPEGFactory::canDecode(QIODevice *input) const
 
     QString decoderName;
 #if defined(WITH_MAD) && defined(WITH_MPG123)
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     decoderName = settings.value("MPEG/decoder", "mad").toString();
 #elif defined(WITH_MAD)
     decoderName = "mad";
@@ -191,7 +191,7 @@ Decoder *DecoderMPEGFactory::create(const QString &, QIODevice *input)
 {
     Decoder *d = nullptr;
 #if defined(WITH_MAD) && defined(WITH_MPG123)
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     if(settings.value("MPEG/decoder", "mad").toString() == "mpg123")
     {
         qDebug("DecoderMPEGFactory: using mpg123 decoder");
@@ -204,7 +204,7 @@ Decoder *DecoderMPEGFactory::create(const QString &, QIODevice *input)
         d = new DecoderMAD(crc, input);
     }
 #elif defined(WITH_MAD)
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     bool crc = settings.value("MPEG/enable_crc", false).toBool();
     d = new DecoderMAD(crc, input);
 #elif defined(WITH_MPG123)
@@ -225,7 +225,7 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
 
     if (parts & TrackInfo::MetaData)
     {
-        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+        QSettings settings;
         settings.beginGroup("MPEG");
 
         QList< QMap<Qmmp::MetaData, QString> > metaData;

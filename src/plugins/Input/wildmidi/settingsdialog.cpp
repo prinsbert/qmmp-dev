@@ -30,7 +30,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Midi");
     QStringList files = WildMidiHelper::instance()->configFiles();
     QString conf_path = files.isEmpty() ? QString() : files.first();
@@ -51,7 +51,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Midi");
     settings.setValue("conf_path", m_ui.confPathComboBox->currentText());
     settings.setValue("sample_rate",

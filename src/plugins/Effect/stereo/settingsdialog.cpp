@@ -28,7 +28,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 {
     ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose, true);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_level = settings.value("extra_stereo/intensity", 1.0).toDouble();
     ui.intensitySlider->setValue(m_level * 100 / 10.0);
 }
@@ -39,7 +39,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("extra_stereo/intensity", ui.intensitySlider->value() * 10.0 / 100);
     QDialog::accept();
 }

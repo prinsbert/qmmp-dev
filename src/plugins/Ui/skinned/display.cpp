@@ -139,7 +139,7 @@ MainDisplay::MainDisplay (MainWindow *parent)
 
 MainDisplay::~MainDisplay()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue ("Skinned/pl_visible",m_plButton->isChecked());
     settings.setValue ("Skinned/eq_visible",m_eqButton->isChecked());
 }

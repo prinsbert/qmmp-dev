@@ -89,7 +89,7 @@ Scrobbler::Scrobbler(const QString &scrobblerUrl, const QString &name, QObject *
       m_name(name)
 {
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_session = settings.value("Scrobbler/"+name+"_session").toString();
 
     connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(processResponse(QNetworkReply *)));

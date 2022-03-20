@@ -138,11 +138,6 @@ public:
         CHAN_SIDE_RIGHT   = 0x80,   /*!< Side right channel */
         CHAN_LFE          = 0x100,  /*!< Low-frequency effects channel */
     };
-
-    /*!
-     * Returns the configuration file name, including the path.
-     */
-    static QString configFile();
     /*!
      * Returns the configuration directory path.
      */

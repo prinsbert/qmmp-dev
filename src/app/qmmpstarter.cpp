@@ -252,11 +252,6 @@ void QMMPStarter::startPlayer()
     QIcon::setThemeSearchPaths(theme_paths);
 #endif
 
-    //copy config from previous version
-    QString oldConfig = Qmmp::configDir() + QLatin1String("/qmmprc");
-    if(!QFile::exists(Qmmp::configFile()) && QFile::exists(oldConfig))
-        QFile::copy(oldConfig, Qmmp::configFile());
-
     //prepare libqmmp and libqmmpui libraries for usage
     m_player = new MediaPlayer(this);
     m_core = SoundCore::instance();
@@ -279,7 +274,7 @@ void QMMPStarter::startPlayer()
     processCommandArgs(args, QDir::currentPath());
     if(args.isEmpty())
     {
-        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+        QSettings settings;
         settings.beginGroup("General");
         if(settings.value("resume_playback", false).toBool())
         {
@@ -293,17 +288,17 @@ void QMMPStarter::createInitialConfig()
 {
     QString defaultConfig = Qmmp::dataPath() + "/qmmprc.default";
 
-    if(!QFile::exists(Qmmp::configFile()) && QFile::exists(defaultConfig))
-    {
-        qDebug("QMMPStarter: creating initial config");
-        QDir("/").mkpath(Qmmp::configDir());
-        QFile::copy(defaultConfig, Qmmp::configFile());
-    }
+//    if(!QFile::exists(Qmmp::configFile()) && QFile::exists(defaultConfig))
+//    {
+//        qDebug("QMMPStarter: creating initial config");
+//        QDir("/").mkpath(Qmmp::configDir());
+//        QFile::copy(defaultConfig, Qmmp::configFile());
+//    }
 }
 
 void QMMPStarter::savePosition()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("General");
     settings.setValue("resume_playback",m_core->state() == Qmmp::Playing &&
                       QmmpUiSettings::instance()->resumeOnStartup());

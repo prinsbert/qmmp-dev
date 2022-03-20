@@ -31,7 +31,7 @@ MMSStreamReader::MMSStreamReader(const QString &url, MMSInputSource *parent) : Q
     m_url(url),
     m_parent(parent)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_prebuf_size = settings.value("MMS/buffer_size",384).toInt() * 1024;
     m_buffer_size = m_prebuf_size;
     m_buffer = (char *)malloc(m_buffer_size);

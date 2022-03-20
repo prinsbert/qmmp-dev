@@ -31,7 +31,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.setupUi(this);
     connect(m_ui.transparencySlider, &QSlider::valueChanged, m_ui.niceTooltipOpacityValueLabel, qOverload<int>(&QLabel::setNum));
     connect(m_ui.coverSizeSlider, &QSlider::valueChanged, m_ui.niceTooltipOpacityValueLabel_2, qOverload<int>(&QLabel::setNum));
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Tray");
     m_ui.messageGroupBox->setChecked(settings.value("show_message",false).toBool());
     m_ui.messageDelaySpinBox->setValue(settings.value("message_delay", 2000).toInt());
@@ -59,7 +59,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Tray");
     settings.setValue("show_message", m_ui.messageGroupBox->isChecked());
     settings.setValue("message_delay", m_ui.messageDelaySpinBox->value());

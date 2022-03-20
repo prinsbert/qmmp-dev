@@ -130,7 +130,7 @@ bool MplayerEngine::initialize()
     delete info;
     m_args.clear();
     m_args << "-slave";
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QString ao_str = settings.value("mplayer/ao","default").toString();
     QString vo_str = settings.value("mplayer/vo","default").toString();
     if (ao_str != "default")

@@ -34,7 +34,7 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
         qFatal("QmmpUiSettings: only one instance is allowed");
     m_instance = this;
     m_helper = new MetaDataHelper;
-    QSettings s (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings s;
     s.beginGroup("PlayList");
     m_group_format = s.value("group_format", "%p%if(%p&%a, - %if(%y,[%y] ,),)%a").toString();
     m_convertUnderscore = s.value ("convert_underscore", true).toBool();
@@ -175,7 +175,7 @@ bool QmmpUiSettings::useClipboard() const
 void QmmpUiSettings::sync()
 {
     qDebug("%s", Q_FUNC_INFO);
-    QSettings s(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings s;
     s.setValue("PlayList/group_format", m_group_format);
     s.setValue("PlayList/convert_underscore", m_convertUnderscore);
     s.setValue("PlayList/convert_twenty", m_convertTwenty);

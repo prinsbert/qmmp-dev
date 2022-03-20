@@ -32,7 +32,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     addMenu(m_ui.endOfPlayListButton);
     addMenu(m_ui.titleChangeButton);
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("TrackChange");
     m_ui.newTrackLineEdit->setText(settings.value("new_track_command").toString());
     m_ui.endOfTrackLineEdit->setText(settings.value("end_of_track_command").toString());
@@ -48,7 +48,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("TrackChange");
     settings.setValue("new_track_command", m_ui.newTrackLineEdit->text());
     settings.setValue("end_of_track_command",  m_ui.endOfTrackLineEdit->text());

@@ -75,7 +75,7 @@ ConverterDialog::ConverterDialog(const QList <PlayListTrack *> &tracks,  QWidget
     }
     m_ui.tableWidget->resizeColumnsToContents();
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Converter");
     QString music_path = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
     m_ui.outDirEdit->setText(settings.value("out_dir", music_path).toString());
@@ -180,7 +180,7 @@ void ConverterDialog::onConvertFinished(Converter *c)
 
 void ConverterDialog::reject()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Converter");
     settings.setValue("out_dir", m_ui.outDirEdit->text());
     settings.value("file_name", m_ui.outFileEdit->text());

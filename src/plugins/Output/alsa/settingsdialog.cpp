@@ -37,7 +37,7 @@ SettingsDialog::SettingsDialog ( QWidget *parent )
     getSoftDevices();
     connect (ui.deviceComboBox, SIGNAL(activated(int)),SLOT(setText(int)));
     connect(ui.mixerCardComboBox, SIGNAL(activated(int)), SLOT(showMixerDevices(int)));
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("ALSA");
     ui.deviceComboBox->setEditText(settings.value("device","default").toString());
     ui.bufferSpinBox->setValue(settings.value("buffer_time",500).toInt());
@@ -214,7 +214,7 @@ void SettingsDialog::setText(int n)
 void SettingsDialog::accept()
 {
     qDebug("SettingsDialog (ALSA):: writeSettings()");
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("ALSA");
     settings.setValue("device", ui.deviceComboBox->currentText ());
     settings.setValue("buffer_time",ui.bufferSpinBox->value());

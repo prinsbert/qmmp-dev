@@ -32,7 +32,7 @@
 
 DecoderSIDFactory::DecoderSIDFactory()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("SID");
     if(settings.value("use_hvsc", false).toBool())
     {

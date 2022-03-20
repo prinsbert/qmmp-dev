@@ -106,7 +106,7 @@ StreamWindow::StreamWindow(QWidget *parent)
     }
     connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(showText(QNetworkReply *)));
     //read settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("StreamBrowser");
     restoreGeometry(settings.value("geometry").toByteArray());
     m_ui->icecastTableView->horizontalHeader()->restoreState(settings.value("icecast_headers").toByteArray());
@@ -328,7 +328,7 @@ void StreamWindow::removeFromFavorites()
 
 void StreamWindow::closeEvent(QCloseEvent *)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("StreamBrowser");
     settings.setValue("geometry", saveGeometry());
     settings.setValue("icecast_headers", m_ui->icecastTableView->horizontalHeader()->saveState());

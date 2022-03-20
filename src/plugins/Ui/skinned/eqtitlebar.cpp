@@ -39,7 +39,7 @@ EqTitleBar::EqTitleBar(QWidget *parent)
     connect(m_close, SIGNAL(clicked()),m_eq, SIGNAL(closed()));
     m_shade = new Button(this, Skin::EQ_BT_SHADE1_N, Skin::EQ_BT_SHADE1_P, Skin::CUR_EQNORMAL);
     connect(m_shade, SIGNAL(clicked()), SLOT(shade()));
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     if (settings.value("Skinned/eq_shaded", false).toBool())
         shade();
     m_align = true;
@@ -52,7 +52,7 @@ EqTitleBar::EqTitleBar(QWidget *parent)
 
 EqTitleBar::~EqTitleBar()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Skinned/eq_shaded", m_shaded);
 }
 

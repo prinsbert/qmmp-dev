@@ -85,7 +85,7 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 
     QCoreApplication::instance()->installEventFilter(this);
     WId rootWindow = DefaultRootWindow(HotkeyManager::display());
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat); //load settings
+    QSettings settings; //load settings
     settings.beginGroup("Hotkey");
     for (int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
     {
