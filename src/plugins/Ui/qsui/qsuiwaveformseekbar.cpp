@@ -387,10 +387,14 @@ bool QSUiWaveformScanner::scan(const QString &path)
         delete decoder;
         return false;
     }
+    if(decoder->totalTime() <= 0)
+    {
+        source->deleteLater();
+        delete decoder;
+        return false;
+    }
     m_decoder = decoder;
     m_input = source;
-    if(!decoder->totalTime())
-        source->setOffset(-1);
     m_user_stop = false;
     start();
     return true;
