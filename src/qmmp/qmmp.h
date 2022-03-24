@@ -147,6 +147,10 @@ public:
      */
     static void setConfigDir(const QString &path);
     /*!
+     * Returns the cache directory path.
+     */
+    static QString cacheDir();
+    /*!
      * Returns %Qmmp library version.
      */
     static QString strVersion();

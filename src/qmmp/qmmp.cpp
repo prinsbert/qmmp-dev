@@ -52,7 +52,8 @@ QString Qmmp::configDir()
         return m_configDir;
 #else
     if(m_configDir.isEmpty())
-        return QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QStringLiteral("/") + QCoreApplication::organizationName();
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation))
+                .arg(QCoreApplication::organizationName());
     else
         return m_configDir;
 #endif
@@ -61,6 +62,19 @@ QString Qmmp::configDir()
 void Qmmp::setConfigDir(const QString &path)
 {
     m_configDir = path;
+}
+
+QString Qmmp::cacheDir()
+{
+#ifdef Q_OS_WIN
+    return configDir();
+#else
+    if(m_configDir.isEmpty())
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation))
+                .arg(QCoreApplication::organizationName());
+    else
+        return m_configDir;
+#endif
 }
 
 QString Qmmp::strVersion()
