@@ -1755,3 +1755,11 @@ Version 2.0.3
 * fixed some issues in the two-panel file dialog
 * removed KDE4 notifications support
 * updated Turkish translation (abcmen)
+
+Version 2.0.4
+* fixed drag-and-dropped tracks order
+* fixed issue with empty content type
+* disabled waveform seekbar for the tracks with unknown duration
+* fixed taskbar plugin
+* updated Ukrainian translation (Gennady Motsyo)
+
