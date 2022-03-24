@@ -49,7 +49,7 @@ KdeNotify::KdeNotify(QObject *parent) : QObject(parent)
     }
 
     qWarning() << "KdeNotify: DBus interfece created successfully.";
-    QDir dir(Qmmp::configDir());
+    QDir dir(Qmmp::cacheDir());
     if(!dir.exists("kdenotifycache"))
         dir.mkdir("kdenotifycache");
     dir.cd("kdenotifycache");

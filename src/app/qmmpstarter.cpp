@@ -63,7 +63,7 @@ QMMPStarter::QMMPStarter() : QObject()
 #ifdef Q_OS_WIN
     m_named_mutex = nullptr;
 #endif
-    createInitialConfig();
+    createPaths();
     m_option_manager = new BuiltinCommandLineOption(this);
     QStringList tmp = qApp->arguments().mid(1);
 
@@ -284,16 +284,10 @@ void QMMPStarter::startPlayer()
     }
 }
 
-void QMMPStarter::createInitialConfig()
+void QMMPStarter::createPaths()
 {
-    QString defaultConfig = Qmmp::dataPath() + "/qmmprc.default";
-
-//    if(!QFile::exists(Qmmp::configFile()) && QFile::exists(defaultConfig))
-//    {
-//        qDebug("QMMPStarter: creating initial config");
-//        QDir("/").mkpath(Qmmp::configDir());
-//        QFile::copy(defaultConfig, Qmmp::configFile());
-//    }
+    QDir("/").mkpath(Qmmp::configDir());
+    QDir("/").mkpath(Qmmp::cacheDir());
 }
 
 void QMMPStarter::savePosition()

@@ -84,7 +84,7 @@ Scrobbler::Scrobbler(const QString &scrobblerUrl, const QString &name, QObject *
       m_http(new QNetworkAccessManager(this)),
       m_core(SoundCore::instance()),
       m_time(new QElapsedTimer()),
-      m_cache(new ListenCache(Qmmp::configDir() + "/scrobbler_" + name + ".cache")),
+      m_cache(new ListenCache(Qmmp::cacheDir() + "/scrobbler_" + name + ".cache")),
       m_scrobblerUrl(scrobblerUrl),
       m_name(name)
 {

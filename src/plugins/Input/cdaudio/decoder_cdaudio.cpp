@@ -311,7 +311,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 
 void DecoderCDAudio::saveToCache(QList <CDATrack> tracks,  uint disc_id)
 {
-    QDir dir(Qmmp::configDir());
+    QDir dir(Qmmp::cacheDir());
     if(!dir.exists("cddbcache"))
         dir.mkdir("cddbcache");
     dir.cd("cddbcache");
