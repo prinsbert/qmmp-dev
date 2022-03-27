@@ -411,3 +411,8 @@ LEGEND
 [*] libsidplayfp-2.3.1
 [*] mpg123-1.29.3
 [*] ffmpeg-4.4.1
+
+2.0.4
+[*] qmmp-2.0.4
+[*] qmmp-plugin-pack-2.0.2
+[*] curl-7.82

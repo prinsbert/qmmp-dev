@@ -411,3 +411,8 @@ LEGEND
 [*] mpg123-1.29.3
 [*] qt-5.12.12
 [*] ffmpeg-4.4.1
+
+1.5.4
+[*] qmmp-1.5.4
+[*] qmmp-plugin-pack-1.5.3
+[*] curl-7.82
