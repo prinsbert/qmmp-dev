@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.5.2
-UBUNTU_CODENAMES='xenial bionic focal impish'
+PLUGIN_PACK_VERSION=1.5.3
+UBUNTU_CODENAMES='xenial bionic focal impish jammy'
 BUILD_ROOT=build-root
 
 

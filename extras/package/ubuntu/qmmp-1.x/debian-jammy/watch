@@ -1,0 +1,3 @@
+version=4
+https://qmmp.ylsoftware.com/files/ \
+  @PACKAGE@@ANY_VERSION@@ARCHIVE_EXT@ debian uupdate
