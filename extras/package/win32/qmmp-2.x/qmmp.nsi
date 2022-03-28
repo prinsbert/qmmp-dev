@@ -310,9 +310,6 @@ FunctionEnd
 Section "Uninstall"
     SetShellVarContext all
 
-    ; Remove file associations
-    NsExec::Exec '"$INSTDIR\qmmp.exe" --uninstall'
-
     ; Remove directories used
     RMDir /r "$SMPROGRAMS\Qt-based Multimedia Player"
     RMDir /r "$INSTDIR"
