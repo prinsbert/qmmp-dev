@@ -33,7 +33,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="filterLineEdit"/>
+      <widget class="QLineEdit" name="filterLineEdit">
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

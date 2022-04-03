@@ -37,6 +37,7 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QW
     m_lineEdit = new QLineEdit(this);
     m_lineEdit->installEventFilter(this);
     m_lineEdit->setContentsMargins(5,5,5,0);
+    m_lineEdit->setClearButtonEnabled(true);
     m_listView = new QListView(this);
     m_listView->setFrameStyle(QFrame::NoFrame);
     m_listView->setEditTriggers(QAbstractItemView::NoEditTriggers);
