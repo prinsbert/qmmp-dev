@@ -66,6 +66,7 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
 
     m_filterLineEdit = new QLineEdit(this);
     m_filterLineEdit->setContentsMargins(5,5,5,0);
+    m_filterLineEdit->setClearButtonEnabled(true);
     m_filterLineEdit->setVisible(false);
 
     QVBoxLayout *layout = new QVBoxLayout();
