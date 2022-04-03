@@ -118,7 +118,7 @@ void PlayListBrowser::updateCurrentRow(QModelIndex index, QModelIndex)
 
 bool PlayListBrowser::eventFilter(QObject *o, QEvent *e)
 {
-    if((o == m_lineEdit || o == m_listView) && e->type() == QEvent::ShortcutOverride)
+    if(o == m_lineEdit && e->type() == QEvent::ShortcutOverride)
     {
         e->accept();
         return false;
