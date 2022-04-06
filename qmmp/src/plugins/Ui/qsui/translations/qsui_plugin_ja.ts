@@ -591,22 +591,22 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="90"/>
+        <location filename="../filesystembrowser.cpp" line="91"/>
         <source>Add to Playlist</source>
         <translation>プレイリストに追加</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="94"/>
+        <location filename="../filesystembrowser.cpp" line="98"/>
         <source>Quick Search</source>
         <translation>絞り込み検索</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="168"/>
+        <location filename="../filesystembrowser.cpp" line="172"/>
         <source>Select Directory</source>
         <translation>ディレクトリーを選択</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="92"/>
+        <location filename="../filesystembrowser.cpp" line="93"/>
         <source>Change Directory</source>
         <translation>ディレクトリーを変更</translation>
     </message>
@@ -984,6 +984,14 @@
         <location filename="../mainwindow.cpp" line="280"/>
         <source>Rename Playlist</source>
         <translation>プレイリスト名を変更</translation>
+    </message>
+</context>
+<context>
+    <name>PlayListBrowser</name>
+    <message>
+        <location filename="../playlistbrowser.cpp" line="62"/>
+        <source>Quick Search</source>
+        <translation type="unfinished">絞り込み検索</translation>
     </message>
 </context>
 <context>
