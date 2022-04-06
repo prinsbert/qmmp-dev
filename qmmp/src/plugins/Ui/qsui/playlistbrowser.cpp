@@ -38,6 +38,8 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QW
     m_lineEdit->installEventFilter(this);
     m_lineEdit->setContentsMargins(5,5,5,0);
     m_lineEdit->setClearButtonEnabled(true);
+    m_lineEdit->setVisible(false);
+
     m_listView = new QListView(this);
     m_listView->setFrameStyle(QFrame::NoFrame);
     m_listView->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -54,6 +56,11 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QW
     m_listView->setContextMenuPolicy(Qt::ActionsContextMenu);
     m_listView->addAction(ACTION(ActionManager::PL_RENAME));
     m_listView->addAction(ACTION(ActionManager::PL_CLOSE));
+    QAction *separatorAction = new QAction(this);
+    separatorAction->setSeparator(true);
+    m_listView->addAction(separatorAction);
+    m_listView->addAction(m_showFilterAction = new QAction(tr("Quick Search"), this));
+    m_showFilterAction->setCheckable(true);
 
     m_listModel = new QStandardItemModel(this);
     m_proxyModel = new QSortFilterProxyModel(this);
@@ -65,11 +72,19 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QW
     connect(m_listView, SIGNAL(activated(QModelIndex)), SLOT(onListViewActivated(QModelIndex)));
     connect(m_listView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
             SLOT(updateCurrentRow(QModelIndex,QModelIndex)));
+    connect(m_showFilterAction, SIGNAL(toggled(bool)), m_lineEdit, SLOT(setVisible(bool)));
+    connect(m_showFilterAction, SIGNAL(triggered()), m_lineEdit, SLOT(clear()));
     updateList();
+    readSettings();
 }
 
 PlayListBrowser::~PlayListBrowser()
-{}
+{
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    settings.beginGroup("Simple");
+    settings.setValue("pl_browser_quick_search", m_showFilterAction->isChecked());
+    settings.endGroup();
+}
 
 void PlayListBrowser::updateList()
 {
@@ -154,4 +169,12 @@ bool PlayListBrowser::eventFilter(QObject *o, QEvent *e)
         }
     }
     return QWidget::eventFilter(o, e);
+}
+
+void PlayListBrowser::readSettings()
+{
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    settings.beginGroup("Simple");
+    m_showFilterAction->setChecked(settings.value("pl_browser_quick_search", true).toBool());
+    settings.endGroup();
 }
