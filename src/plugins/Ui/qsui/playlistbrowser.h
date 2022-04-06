@@ -49,11 +49,14 @@ private slots:
 
 private:
     bool eventFilter(QObject *o, QEvent *e) override;
+    void readSettings();
+
     QLineEdit *m_lineEdit;
     QListView *m_listView;
     PlayListManager *m_pl_manager;
     QStandardItemModel *m_listModel;
     QSortFilterProxyModel *m_proxyModel;
+    QAction *m_showFilterAction;
 };
 
 #endif // PLAYLISTBROWSER_H
