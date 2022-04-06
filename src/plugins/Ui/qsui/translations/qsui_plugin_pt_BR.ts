@@ -591,22 +591,22 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="90"/>
+        <location filename="../filesystembrowser.cpp" line="91"/>
         <source>Add to Playlist</source>
         <translation>Adicionar à lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="92"/>
+        <location filename="../filesystembrowser.cpp" line="93"/>
         <source>Change Directory</source>
         <translation>Mudar pasta</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="94"/>
+        <location filename="../filesystembrowser.cpp" line="98"/>
         <source>Quick Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="168"/>
+        <location filename="../filesystembrowser.cpp" line="172"/>
         <source>Select Directory</source>
         <translation>Selecionar pasta</translation>
     </message>
@@ -984,6 +984,14 @@
         <location filename="../mainwindow.cpp" line="426"/>
         <source>Show all tabs</source>
         <translation>Mostrar todos as abas</translation>
+    </message>
+</context>
+<context>
+    <name>PlayListBrowser</name>
+    <message>
+        <location filename="../playlistbrowser.cpp" line="62"/>
+        <source>Quick Search</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
