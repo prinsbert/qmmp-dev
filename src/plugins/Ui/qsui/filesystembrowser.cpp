@@ -92,6 +92,9 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     addAction(addToPlaylistAction);
     QAction *selectDirAction = new QAction(QIcon::fromTheme("folder"), tr("Change Directory"), this);
     addAction(selectDirAction);
+    QAction *separatorAction = new QAction(this);
+    separatorAction->setSeparator(true);
+    addAction(separatorAction);
     addAction(m_showFilterAction = new QAction(tr("Quick Search"), this));
     m_showFilterAction->setCheckable(true);
 
