@@ -980,19 +980,19 @@
         <translation>Фільтр:</translation>
     </message>
     <message>
-        <location filename="../forms/playlistbrowser.ui" line="43"/>
+        <location filename="../forms/playlistbrowser.ui" line="47"/>
         <source>New</source>
         <translation>Новий</translation>
     </message>
     <message>
-        <location filename="../forms/playlistbrowser.ui" line="50"/>
+        <location filename="../forms/playlistbrowser.ui" line="54"/>
         <location filename="../playlistbrowser.cpp" line="43"/>
         <source>Delete</source>
         <translation>Видалити</translation>
     </message>
     <message>
-        <location filename="../forms/playlistbrowser.ui" line="57"/>
-        <location filename="../forms/playlistbrowser.ui" line="67"/>
+        <location filename="../forms/playlistbrowser.ui" line="61"/>
+        <location filename="../forms/playlistbrowser.ui" line="71"/>
         <source>...</source>
         <translation>...</translation>
     </message>

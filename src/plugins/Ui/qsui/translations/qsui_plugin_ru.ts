@@ -591,22 +591,22 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="90"/>
+        <location filename="../filesystembrowser.cpp" line="91"/>
         <source>Add to Playlist</source>
         <translation>Добавить к списку воспроизведения</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="92"/>
+        <location filename="../filesystembrowser.cpp" line="93"/>
         <source>Change Directory</source>
         <translation>Сменить каталог</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="94"/>
+        <location filename="../filesystembrowser.cpp" line="98"/>
         <source>Quick Search</source>
         <translation>Быстрый поиск</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="168"/>
+        <location filename="../filesystembrowser.cpp" line="172"/>
         <source>Select Directory</source>
         <translation>Выберите каталог</translation>
     </message>
@@ -984,6 +984,14 @@
         <location filename="../mainwindow.cpp" line="427"/>
         <source>Show all tabs</source>
         <translation>Показать все вкладки</translation>
+    </message>
+</context>
+<context>
+    <name>PlayListBrowser</name>
+    <message>
+        <location filename="../playlistbrowser.cpp" line="62"/>
+        <source>Quick Search</source>
+        <translation type="unfinished">Быстрый поиск</translation>
     </message>
 </context>
 <context>
