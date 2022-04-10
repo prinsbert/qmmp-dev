@@ -991,7 +991,7 @@
     <message>
         <location filename="../playlistbrowser.cpp" line="62"/>
         <source>Quick Search</source>
-        <translation type="unfinished">Pikahaku</translation>
+        <translation>Pikahaku</translation>
     </message>
 </context>
 <context>

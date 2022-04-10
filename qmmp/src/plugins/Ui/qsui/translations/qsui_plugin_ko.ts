@@ -991,7 +991,7 @@
     <message>
         <location filename="../playlistbrowser.cpp" line="62"/>
         <source>Quick Search</source>
-        <translation type="unfinished">빠른 검색</translation>
+        <translation>빠른 검색</translation>
     </message>
 </context>
 <context>
