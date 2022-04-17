@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://www.tortall.net/projects/yasm/releases/$NAME-$VERSION.tar.gz
+    wget -nc https://github.com/yasm/yasm/releases/download/v1.3.0/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp
