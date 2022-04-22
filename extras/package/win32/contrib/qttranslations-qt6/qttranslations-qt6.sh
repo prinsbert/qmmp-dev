@@ -1,13 +1,13 @@
 #!/bin/sh
 
 NAME=qttranslations-everywhere-src
-VERSION=6.1.3
+VERSION=6.2.4
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate https://ftp.acc.umu.se/mirror/qt.io/qtproject/official_releases/qt/6.1/$VERSION/submodules/$NAME-$VERSION.tar.xz
+    wget -nc --no-check-certificate https://ftp.acc.umu.se/mirror/qt.io/qtproject/official_releases/qt/6.2/$VERSION/submodules/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp

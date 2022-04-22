@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qtbase-everywhere-src
-VERSION=6.1.3
+VERSION=6.2.4
 
 case $1 in
   --download)

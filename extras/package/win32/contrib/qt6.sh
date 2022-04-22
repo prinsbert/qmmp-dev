@@ -6,7 +6,7 @@ export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
 export QT6_PATH=${DEV_PATH}/qt6
 export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
-export PREFIX=${DEV_PATH}/qt6
+export PREFIX=C:\\devel\\qt6
 
 export PATH=${PATH}:${MINGW32_PATH}/bin:${QT6_PATH}/bin:${PREFIX}/bin
 

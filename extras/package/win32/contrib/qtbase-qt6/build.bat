@@ -6,4 +6,5 @@ configure.bat -prefix %PREFIX% ^
 -shared ^
 -nomake examples ^
 -nomake tests  ^
--no-dbus
+-no-dbus ^
+-no-pch
