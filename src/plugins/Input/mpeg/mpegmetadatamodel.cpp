@@ -97,7 +97,7 @@ QPixmap MPEGMetaDataModel::cover() const
 
     for(TagLib::ID3v2::FrameList::Iterator it = frames.begin(); it != frames.end(); ++it)
     {
-        TagLib::ID3v2::AttachedPictureFrame *frame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(*it);
+        TagLib::ID3v2::AttachedPictureFrame *frame = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(*it);
         if(frame && frame->type() == TagLib::ID3v2::AttachedPictureFrame::FrontCover)
         {
             QPixmap cover;
@@ -109,7 +109,7 @@ QPixmap MPEGMetaDataModel::cover() const
     //fallback image
     for(TagLib::ID3v2::FrameList::Iterator it = frames.begin(); it != frames.end(); ++it)
     {
-        TagLib::ID3v2::AttachedPictureFrame *frame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(*it);
+        TagLib::ID3v2::AttachedPictureFrame *frame = static_cast<TagLib::ID3v2::AttachedPictureFrame *>(*it);
         if(frame)
         {
             QPixmap cover;
@@ -144,6 +144,19 @@ void MPEGMetaDataModel::removeCover()
         m_file->ID3v2Tag()->removeFrames("APIC");
         m_file->save(TagLib::MPEG::File::ID3v2);
     }
+}
+
+QString MPEGMetaDataModel::lyrics() const
+{
+    for(const TagModel *tag : qAsConst(m_tags))
+    {
+        const MpegFileTagModel *mpegTag = static_cast<const MpegFileTagModel *>(tag);
+        QString lyrics = mpegTag->lyrics();
+        if(!lyrics.isEmpty())
+            return lyrics;
+    }
+
+    return QString();
 }
 
 MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file, TagLib::MPEG::File::TagTypes type)
@@ -214,14 +227,9 @@ QList<Qmmp::MetaData> MpegFileTagModel::keys() const
 
 QString MpegFileTagModel::value(Qmmp::MetaData key) const
 {
-    QTextCodec *codec = m_codec;
-
     if(m_tag)
     {
-        bool utf = codec->name().contains("UTF");
-        if(utf)
-            codec = QTextCodec::codecForName("UTF-8");
-
+        bool utf = m_codec->name().contains("UTF");
         TagLib::String str;
         switch((int) key)
         {
@@ -273,7 +281,7 @@ QString MpegFileTagModel::value(Qmmp::MetaData key) const
                && !m_file->ID3v2Tag()->frameListMap()["TPOS"].isEmpty())
                 str = m_file->ID3v2Tag()->frameListMap()["TPOS"].front()->toString();
         }
-        return codec->toUnicode(str.toCString(utf)).trimmed();
+        return m_codec->toUnicode(str.toCString(utf)).trimmed();
     }
     return QString();
 }
@@ -296,19 +304,9 @@ void MpegFileTagModel::setValue(Qmmp::MetaData key, const QString &value)
     {
         if(m_codec->name().contains("UTF"))
         {
-            type = TagLib::String::UTF8;
-            if(m_codec->name().contains("UTF-16"))
-                type = TagLib::String::UTF16;
-            else if(m_codec->name().contains("UTF-16LE"))
-                type = TagLib::String::UTF16LE;
-            else if(m_codec->name().contains("UTF-16BE"))
-                type = TagLib::String::UTF16BE;
-
-
             TagLib::ID3v2::FrameFactory *factory = TagLib::ID3v2::FrameFactory::instance();
-            factory->setDefaultTextEncoding(type);
-            m_codec = QTextCodec::codecForName("UTF-8");
             type = TagLib::String::UTF8;
+            factory->setDefaultTextEncoding(type);
         }
         else
         {
@@ -328,7 +326,7 @@ void MpegFileTagModel::setValue(Qmmp::MetaData key, const QString &value)
         if(!id3v2_key.isEmpty())
         {
             TagLib::String composer = TagLib::String(m_codec->fromUnicode(value).constData(), type);
-            TagLib::ID3v2::Tag *id3v2_tag = dynamic_cast<TagLib::ID3v2::Tag *>(m_tag);
+            TagLib::ID3v2::Tag *id3v2_tag = static_cast<TagLib::ID3v2::Tag *>(m_tag);
             if(value.isEmpty())
                 id3v2_tag->removeFrames(id3v2_key);
             else if(!id3v2_tag->frameListMap()[id3v2_key].isEmpty())
@@ -421,4 +419,22 @@ void MpegFileTagModel::save()
 #endif
     else
         m_file->strip(m_type);
+}
+
+QString MpegFileTagModel::lyrics() const
+{
+    if(m_type == TagLib::MPEG::File::ID3v2 && m_tag)
+    {
+        bool utf = m_codec->name().contains("UTF");
+        TagLib::ID3v2::Tag *id3v2_tag = static_cast<TagLib::ID3v2::Tag *>(m_tag);
+
+        const TagLib::ID3v2::FrameListMap& map = id3v2_tag->frameListMap();
+
+        if(!map["USLT"].isEmpty())
+            return m_codec->toUnicode(map["USLT"].front()->toString().toCString(utf));
+        else if(!map["SYLT"].isEmpty())
+            return m_codec->toUnicode(map["SYLT"].front()->toString().toCString(utf));
+    }
+
+    return QString();
 }

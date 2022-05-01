@@ -147,6 +147,7 @@ public:
      * Removes CUE file or tag. Default implementation doesn nothing.
      */
     virtual void removeCue();
+    virtual QString lyrics() const;
     /*!
      * Returns \b true if file is opened in read only mode. Otherwise returns \b false.
      */
