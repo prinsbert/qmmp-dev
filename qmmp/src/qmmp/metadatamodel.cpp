@@ -108,6 +108,11 @@ void MetaDataModel::setCue(const QString &content)
 void MetaDataModel::removeCue()
 {}
 
+QString MetaDataModel::lyrics() const
+{
+    return QString();
+}
+
 bool MetaDataModel::isReadOnly() const
 {
     return m_readOnly;
