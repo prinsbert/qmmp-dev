@@ -27,6 +27,7 @@
 #include <QDir>
 #include <QSettings>
 #include <QCryptographicHash>
+#include <qmmp/metadatamanager.h>
 #include <qmmp/qmmpsettings.h>
 #include <qmmp/qmmp.h>
 #include "lyricswidget.h"
@@ -102,7 +103,7 @@ void LyricsWidget::fetch(const TrackInfo *info)
 
     m_ui.providerComboBox->clear();
 
-    if(!loadFromCache())
+    if(!loadFromTag(info->path()) && !loadFromCache())
         on_refreshButton_clicked();
 }
 
@@ -216,6 +217,25 @@ QString LyricsWidget::cacheFilePath() const
     return m_cachePath + QString::fromLatin1(hash.toHex()) + ".html";
 }
 
+bool LyricsWidget::loadFromTag(const QString &path)
+{
+    MetaDataModel *model = MetaDataManager::instance()->createMetaDataModel(path, true);
+    QString content = model->lyrics();
+    delete model;
+
+    if(!content.isEmpty())
+    {
+        content.replace("\r\n", "<br>");
+        content.replace("\n", "<br>");
+        content.prepend(tr("<h2>%1 - %2</h2>").arg(m_ui.artistLineEdit->text()).arg(m_ui.titleLineEdit->text()));
+        m_ui.textBrowser->setHtml(content);
+        m_ui.providerComboBox->addItem(tr("Tag"));
+        return true;
+    }
+
+    return false;
+}
+
 bool LyricsWidget::loadFromCache()
 {
     QFile file(cacheFilePath());
@@ -230,7 +250,7 @@ bool LyricsWidget::loadFromCache()
     }
 
     m_ui.textBrowser->setHtml(QString::fromUtf8(file.readAll()));
-    m_ui.providerComboBox->addItem(tr("cache"));
+    m_ui.providerComboBox->addItem(tr("Cache"));
     return true;
 }
 
