@@ -49,6 +49,7 @@ private slots:
     void on_editButton_clicked(bool checked);
     void on_providerComboBox_activated(int index);
     QString cacheFilePath() const;
+    bool loadFromTag(const QString &path);
     bool loadFromCache();
     void saveToCache(const QString &text);
 
