@@ -37,6 +37,7 @@ public:
     QPixmap cover() const override;
     void setCover(const QPixmap &pix) override;
     void removeCover() override;
+    QString lyrics() const override;
 
 private:
     QString m_path;

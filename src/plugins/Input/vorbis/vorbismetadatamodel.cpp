@@ -111,6 +111,21 @@ void VorbisMetaDataModel::removeCover()
     }
 }
 
+QString VorbisMetaDataModel::lyrics() const
+{
+    if(m_tag && !m_tag->isEmpty())
+    {
+        const TagLib::Ogg::FieldListMap map = m_tag->fieldListMap();
+
+        if(!map["UNSYNCEDLYRICS"].isEmpty())
+            return TStringToQString(map["UNSYNCEDLYRICS"].front());
+        else if(!map["LYRICS"].isEmpty())
+            return TStringToQString(map["LYRICS"].front());
+    }
+
+    return QString();
+}
+
 VorbisCommentModel::VorbisCommentModel(VorbisMetaDataModel *model) : TagModel(TagModel::Save)
 {
     m_model = model;
