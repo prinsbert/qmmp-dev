@@ -168,6 +168,21 @@ void FLACMetaDataModel::removeCue()
     m_file->save();
 }
 
+QString FLACMetaDataModel::lyrics() const
+{
+    if(m_tag && !m_tag->isEmpty())
+    {
+        const TagLib::Ogg::FieldListMap map = m_tag->fieldListMap();
+
+        if(!map["UNSYNCEDLYRICS"].isEmpty())
+            return TStringToQString(map["UNSYNCEDLYRICS"].front());
+        else if(!map["LYRICS"].isEmpty())
+            return TStringToQString(map["LYRICS"].front());
+    }
+
+    return QString();
+}
+
 VorbisCommentModel::VorbisCommentModel(TagLib::Ogg::XiphComment *tag, TagLib::File *file) : TagModel(TagModel::Save)
 {
     m_file = file;

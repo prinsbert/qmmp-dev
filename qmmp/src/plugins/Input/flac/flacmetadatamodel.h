@@ -40,6 +40,7 @@ public:
     QString cue() const override;
     void setCue(const QString &content) override;
     void removeCue() override;
+    QString lyrics() const override;
 
 private:
     QString m_path;
