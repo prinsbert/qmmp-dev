@@ -913,117 +913,122 @@
         <translation>표지</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="295"/>
+        <location filename="../detailsdialog.cpp" line="284"/>
+        <source>Lyrics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="304"/>
         <source>Title</source>
         <translation>제목</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="296"/>
+        <location filename="../detailsdialog.cpp" line="305"/>
         <source>Artist</source>
         <translation>아티스트</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="297"/>
+        <location filename="../detailsdialog.cpp" line="306"/>
         <source>Album artist</source>
         <translation>앨범 아티스트</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="298"/>
+        <location filename="../detailsdialog.cpp" line="307"/>
         <source>Album</source>
         <translation>앨범</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="299"/>
+        <location filename="../detailsdialog.cpp" line="308"/>
         <source>Comment</source>
         <translation>해설</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="300"/>
+        <location filename="../detailsdialog.cpp" line="309"/>
         <source>Genre</source>
         <translation>장르</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="301"/>
+        <location filename="../detailsdialog.cpp" line="310"/>
         <source>Composer</source>
         <translation>작곡가</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="302"/>
+        <location filename="../detailsdialog.cpp" line="311"/>
         <source>Year</source>
         <translation>연도</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="303"/>
+        <location filename="../detailsdialog.cpp" line="312"/>
         <source>Track</source>
         <translation>트랙</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="304"/>
+        <location filename="../detailsdialog.cpp" line="313"/>
         <source>Disc number</source>
         <translation>CD 번호</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="322"/>
+        <location filename="../detailsdialog.cpp" line="331"/>
         <source>Duration</source>
         <translation>재생시간</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="325"/>
+        <location filename="../detailsdialog.cpp" line="334"/>
         <source>Bitrate</source>
         <translation>비트레이트</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="325"/>
+        <location filename="../detailsdialog.cpp" line="334"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="326"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Sample rate</source>
         <translation>샘플 레이트</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="326"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="327"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Channels</source>
         <translation>채널</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="328"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Sample size</source>
         <translation>샘플 크기</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="328"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>bits</source>
         <translation>비트</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="329"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Format name</source>
         <translation>형식 이름</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="330"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>File size</source>
         <translation>파일 크기</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="330"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="374"/>
+        <location filename="../detailsdialog.cpp" line="383"/>
         <source>Yes</source>
         <translation>예</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="374"/>
+        <location filename="../detailsdialog.cpp" line="383"/>
         <source>No</source>
         <translation>아니요</translation>
     </message>

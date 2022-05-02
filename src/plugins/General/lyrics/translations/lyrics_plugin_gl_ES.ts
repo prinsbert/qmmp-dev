@@ -95,29 +95,35 @@
         <translation>Ano:</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="138"/>
+        <location filename="../lyricswidget.cpp" line="139"/>
+        <location filename="../lyricswidget.cpp" line="230"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="149"/>
+        <location filename="../lyricswidget.cpp" line="150"/>
         <source>Not found</source>
         <translation>Non atopada</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="159"/>
+        <location filename="../lyricswidget.cpp" line="160"/>
         <source>Error: %1 - %2</source>
         <translation>Erro: %1 - %2</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="172"/>
+        <location filename="../lyricswidget.cpp" line="173"/>
         <source>Receiving</source>
         <translation>Recibindo</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="233"/>
-        <source>cache</source>
-        <translation>cache</translation>
+        <location filename="../lyricswidget.cpp" line="232"/>
+        <source>Tag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lyricswidget.cpp" line="253"/>
+        <source>Cache</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

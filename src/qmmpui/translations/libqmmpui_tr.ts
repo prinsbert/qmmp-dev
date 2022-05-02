@@ -913,117 +913,122 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="295"/>
-        <source>Title</source>
-        <translation>Başlık</translation>
-    </message>
-    <message>
-        <location filename="../detailsdialog.cpp" line="296"/>
-        <source>Artist</source>
-        <translation>Sanatçı</translation>
-    </message>
-    <message>
-        <location filename="../detailsdialog.cpp" line="297"/>
-        <source>Album artist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../detailsdialog.cpp" line="298"/>
-        <source>Album</source>
-        <translation>Albüm</translation>
-    </message>
-    <message>
-        <location filename="../detailsdialog.cpp" line="299"/>
-        <source>Comment</source>
-        <translation>Yorum</translation>
-    </message>
-    <message>
-        <location filename="../detailsdialog.cpp" line="300"/>
-        <source>Genre</source>
-        <translation>Tarz</translation>
-    </message>
-    <message>
-        <location filename="../detailsdialog.cpp" line="301"/>
-        <source>Composer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../detailsdialog.cpp" line="302"/>
-        <source>Year</source>
-        <translation>Yıl</translation>
-    </message>
-    <message>
-        <location filename="../detailsdialog.cpp" line="303"/>
-        <source>Track</source>
+        <location filename="../detailsdialog.cpp" line="284"/>
+        <source>Lyrics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="304"/>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="305"/>
+        <source>Artist</source>
+        <translation>Sanatçı</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="306"/>
+        <source>Album artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="307"/>
+        <source>Album</source>
+        <translation>Albüm</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="308"/>
+        <source>Comment</source>
+        <translation>Yorum</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="309"/>
+        <source>Genre</source>
+        <translation>Tarz</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="310"/>
+        <source>Composer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="311"/>
+        <source>Year</source>
+        <translation>Yıl</translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="312"/>
+        <source>Track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../detailsdialog.cpp" line="313"/>
         <source>Disc number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="322"/>
+        <location filename="../detailsdialog.cpp" line="331"/>
         <source>Duration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="325"/>
+        <location filename="../detailsdialog.cpp" line="334"/>
         <source>Bitrate</source>
         <translation>Bit hızı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="325"/>
+        <location filename="../detailsdialog.cpp" line="334"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="326"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Sample rate</source>
         <translation>Örnekleme oranı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="326"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="327"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Channels</source>
         <translation>Kanallar</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="328"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Sample size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="328"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>bits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="329"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Format name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="330"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>File size</source>
         <translation>Dosya boyutu</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="330"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>KiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="374"/>
+        <location filename="../detailsdialog.cpp" line="383"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="374"/>
+        <location filename="../detailsdialog.cpp" line="383"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
