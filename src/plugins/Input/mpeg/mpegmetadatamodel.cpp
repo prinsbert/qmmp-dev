@@ -146,6 +146,19 @@ void MPEGMetaDataModel::removeCover()
     }
 }
 
+QString MPEGMetaDataModel::lyrics() const
+{
+    for(const TagModel *tag : qAsConst(m_tags))
+    {
+        const MpegFileTagModel *mpegTag = static_cast<const MpegFileTagModel *>(tag);
+        QString lyrics = mpegTag->lyrics();
+        if(!lyrics.isEmpty())
+            return lyrics;
+    }
+
+    return QString();
+}
+
 MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file, TagLib::MPEG::File::TagTypes type)
         : TagModel(),
           m_using_rusxmms(using_rusxmms),
@@ -412,3 +425,22 @@ void MpegFileTagModel::save()
     else
         m_file->strip(m_type);
 }
+
+QString MpegFileTagModel::lyrics() const
+{
+    if(m_type == TagLib::MPEG::File::ID3v2 && m_tag)
+    {
+        bool utf = m_codec->name().contains("UTF");
+        TagLib::ID3v2::Tag *id3v2_tag = static_cast<TagLib::ID3v2::Tag *>(m_tag);
+
+        const TagLib::ID3v2::FrameListMap& map = id3v2_tag->frameListMap();
+
+        if(!map["USLT"].isEmpty())
+            return m_codec->toUnicode(map["USLT"].front()->toString().toCString(utf));
+        else if(!map["SYLT"].isEmpty())
+            return m_codec->toUnicode(map["SYLT"].front()->toString().toCString(utf));
+    }
+
+    return QString();
+}
+

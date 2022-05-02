@@ -275,6 +275,15 @@ void DetailsDialog::updatePage()
             m_ui->tabWidget->addTab(textEdit, item.name());
         }
 
+        QString lyrics = m_metaDataModel->lyrics();
+        if(!lyrics.isEmpty())
+        {
+            QTextEdit *textEdit = new QTextEdit(this);
+            textEdit->setReadOnly(true);
+            textEdit->setPlainText(lyrics);
+            m_ui->tabWidget->addTab(textEdit, tr("Lyrics"));
+        }
+
         if(m_metaDataModel->dialogHints() & MetaDataModel::IsCueEditable)
         {
             CueEditor *cueEditor = new CueEditor(m_metaDataModel, m_info, this);

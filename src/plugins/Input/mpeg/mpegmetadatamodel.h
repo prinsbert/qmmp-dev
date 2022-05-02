@@ -38,6 +38,7 @@ public:
     QPixmap cover() const override;
     void setCover(const QPixmap &pix) override;
     void removeCover() override;
+    QString lyrics() const override;
 
 private:
     QList<TagModel* > m_tags;
@@ -58,6 +59,7 @@ public:
     void create() override;
     void remove() override;
     void save() override;
+    QString lyrics() const;
 
 private:
     bool m_using_rusxmms;
