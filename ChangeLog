@@ -1751,3 +1751,24 @@ Version 1.5.4
 * fixed issue with empty content type
 * disabled waveform seekbar for the tracks with unknown duration
 * updated Ukrainian translation (Gennady Motsyo)
+
+Version 1.6.0
+* added feature to extract lyrics from tags (id3v2 tag and Xiph Comment)
+* added queue display in the "jump to track" dialog
+* added feature to skip already existing tracks
+* added volume change notification in the KDE notification plugin
+* replaced modplug plugin by xmp plugin
+* improved qsui plugin:
+  - added feature to hide playlist name filter
+  - added feature to hide menu panel
+  - added application menu
+  - enabled clear button for some search filters
+  - improved file system browser context menu
+- improved history plugin
+  - added feature to remove tracks from history
+  - added feature to show track details
+* improved "about..." dialog
+* improved file name filter configuration in the ffmpeg plugin 
+* optimized search for duplicated tracks
+* optimized track queue
+* resolved conflict between 1.x and 2.x versions
