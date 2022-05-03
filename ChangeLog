@@ -349,3 +349,21 @@ Version 1.5.0
 * updated Italian translation (Luigi Toscano)
 * updated German translation (Ettore Atalan)
 * updated Finnish translation (Jiri Grönroos, Kimmo Kujansuu)
+
+Version 1.5.1
+* added Korean translation (Jung Hee Lee)
+
+Version 1.5.2
+* added yt-dlp support
+* updated Finnish translation (Kimmo Kujansuu, Jiri Grönroos)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Italian translation (Luigi Toscano)
+
+Version 1.5.3
+* updated Ukrainian translation (Gennady Motsyo)
+* updated Turkish translation (abcmen)
+
+Version 1.6.0
+* ported to qmmp 1.6 API
+* added modplug plugin 
+* removed xmp plugin
