@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2014-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -52,11 +52,26 @@ void ChannelConverter::configure(quint32 srate, ChannelMap in_map)
     m_tmp_buf = new float[QMMP_BLOCK_FRAMES * in_map.count()];
     m_tmp_size = QMMP_BLOCK_FRAMES * in_map.count();
 
-    QStringList reorderStringList;    
+    QStringList reorderStringList;
     for(int i = 0; i < m_out_map.count(); ++i)
     {
         m_reorder_array[i] = m_out_map.indexOf(in_map.at(i % in_map.count()));
         reorderStringList << QString("%1").arg(m_reorder_array[i]);
+    }
+
+    //trying to use available channels for stereo output
+    if(m_out_map.count() == 2 && m_reorder_array[0] == -1 && m_reorder_array[1] == -1)
+    {
+        QList<Qmmp::ChannelPosition> leftChannels;
+        leftChannels << Qmmp::CHAN_FRONT_LEFT << Qmmp::CHAN_SIDE_LEFT << Qmmp::CHAN_REAR_LEFT;
+
+        //remapping is not necessary
+        if((m_disabled = (leftChannels.contains(in_map[0]) && leftChannels.contains(m_out_map[0]))))
+            return;
+
+        //swap channels
+        m_reorder_array[0] = 1;
+        m_reorder_array[1] = 0;
     }
 
     qDebug("ChannelConverter: {%s} ==> {%s}; {%s}", qPrintable(in_map.toString()),
