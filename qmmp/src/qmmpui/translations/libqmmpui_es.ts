@@ -731,7 +731,7 @@
     <message>
         <location filename="../configdialog.cpp" line="358"/>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>Coreano</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="359"/>
@@ -915,7 +915,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="284"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Letras</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="304"/>

@@ -915,7 +915,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="284"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Testi</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="304"/>

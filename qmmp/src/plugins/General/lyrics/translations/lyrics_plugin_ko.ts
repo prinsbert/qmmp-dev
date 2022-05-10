@@ -118,7 +118,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="232"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>태그</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="253"/>

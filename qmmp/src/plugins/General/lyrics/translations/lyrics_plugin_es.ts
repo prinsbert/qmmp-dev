@@ -29,7 +29,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Ctrl+2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+2</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="68"/>
@@ -118,7 +118,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="232"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="253"/>

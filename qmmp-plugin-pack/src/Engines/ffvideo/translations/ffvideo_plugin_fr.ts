@@ -26,7 +26,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="157"/>
         <source>Compiled against:</source>
-        <translation>Compilé contre :</translation>
+        <translation>Compilé contre&#xa0;:</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="167"/>
