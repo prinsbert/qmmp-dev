@@ -118,12 +118,12 @@
     <message>
         <location filename="../lyricswidget.cpp" line="232"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="253"/>
         <source>Cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Cache</translation>
     </message>
 </context>
 <context>
