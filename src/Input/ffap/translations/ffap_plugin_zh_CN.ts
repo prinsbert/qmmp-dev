@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
-        <translation>FFap　插件</translation>
+        <translation>FFap&#x3000;插件</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation>Qmmp FFap　音频插件</translation>
+        <translation>Qmmp FFap&#x3000;音频插件</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
