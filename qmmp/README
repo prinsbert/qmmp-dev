@@ -79,7 +79,7 @@ Other features:
 - media library
 
 Requirements:
-- Qt >= 5.4 (qtbase, qtx11extras/qtwinextras and qttools for build)
+- Qt >= 5.5 (qtbase, qtx11extras/qtwinextras and qttools for build)
 - tar, unzip, bzip2, gzip
 - libmad
 - libvorbis
