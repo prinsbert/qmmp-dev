@@ -366,5 +366,5 @@ Version 2.0.2
 
 Version 2.1.0
 * ported to qmmp 2.1 API
-* added modplug plugin 
+* added modplug plugin
 * removed xmp plugin
