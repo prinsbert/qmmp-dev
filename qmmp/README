@@ -94,7 +94,7 @@ Requirements:
 - libmpcdec >= 1.3.0 (optional)
 - jackit1 >= 0.121.0 or jackit2 >= 1.9.8 (optional)
 - libsoxr >= 0.1.0 (optional)
-- libmodplug >= 0.8.4 (optional)
+- libxmp >= 4.2.0 (optional)
 - libsndfile >= 1.0.22 (optional)
 - wavpack >= 4.41 (optional)
 - pulseaudio >= 0.9.15 (optional)
@@ -136,7 +136,7 @@ cmake ./ -DUSE_JACK:BOOL=FALSE
 
 Available options:
 - USE_CURL, USE_MMS (transports);
-- USE_MAD, USE_MPG123, USE_FLAC, USE_VORBIS, USE_MPC, USE_MODPLUG, USE_SNDFILE, USE_WAVPACK, USE_FFMPEG, USE_AAC, USE_CUE,
+- USE_MAD, USE_MPG123, USE_FLAC, USE_VORBIS, USE_MPC, USE_XMP, USE_SNDFILE, USE_WAVPACK, USE_FFMPEG, USE_AAC, USE_CUE,
   USE_MPLAYER, USE_CDA, USE_MIDI, USE_GME, USE_OPUS, USE_SID, USE_ARCHIVE (decoders);
 - USE_ALSA, USE_OSS, USE_JACK, USE_PULSE, USE_PIPEWIRE, USE_NULL, USE_OSS4, USE_WAVEOUT, UDE_DSOUND, USE_QTMULTIMEDIA,
   USE_WASAPI, USE_SHOUT (output plugins);
