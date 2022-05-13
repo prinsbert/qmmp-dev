@@ -1764,7 +1764,7 @@ Version 1.6.0
   - added application menu
   - enabled clear button for some search filters
   - improved file system browser context menu
-- improved history plugin
+* improved history plugin:
   - added feature to remove tracks from history
   - added feature to show track details
 * improved "about..." dialog
@@ -1772,3 +1772,13 @@ Version 1.6.0
 * optimized search for duplicated tracks
 * optimized track queue
 * resolved conflict between 1.x and 2.x versions
+* updated Dutch translation (Heimen Stoffels)
+* updated Ukrainian translation (Gennady Motsyo)
+* updated Polish transition (Marek Adamski)
+* updated Portuguese translation (Sérgio Marques)
+* updated Finnish translation (Kimmo Kujansuu)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Italian translation (Luigi Toscano)
+* updated Russian translation (Andrei Stepanov)
+* updated Korean translation (Jung Hee Lee)
+* updated Spanish translation (Joel Barrios)
