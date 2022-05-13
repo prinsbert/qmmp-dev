@@ -7,7 +7,7 @@ Translation: https://www.transifex.com/qmmp-development-team/
 
 Description:
 - FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
-- XMP - module player with use of the libxmp library
+- ModPlug - module player with use of the libmodplug library
 - Sample Rate Converter - resampler based on libsamplerate library
 - Goom - audio visualization based on goom project
 - FFVideo - video playback engine based on FFmpeg library
@@ -17,7 +17,7 @@ Requirements:
 - Qt >= 6.2 (qtbase and qttools for build)
 - qmmp 2.1.x
 - taglib >= 1.12
-- libxmp >= 4.2.0 (optional)
+- libmodplug >= 0.8.4 (optional)
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.4 (optional)
 - youtube-dl (latest version, optional)
@@ -39,7 +39,7 @@ by running the following command:
 cmake ./ -DUSE_XMP:BOOL=FALSE
 
 Available options:
-- USE_FFAP, USE_XMP, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB (plugins)
+- USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB (plugins)
 
 Also you can use ccmake to change plugin configuration.
 By default program will be installed in /usr/local. You can change default path by running:
@@ -76,9 +76,9 @@ cmake ./ -DLIB_DIR=lib64
 
 To avoid some problems please read below carefully.
 
-How to enable XMP plugin.
-By default ModPlug plugin has higher priority than XMP.
-To fix this go to the "settings"->"plugins" and disable ModPlug plugin.
+How to enable ModPlug plugin.
+By default XMP plugin has higher priority than ModPlug.
+To fix this go to the "settings"->"plugins" and disable XMP plugin.
 
 How to enable FFap plugin.
 Go to the FFmpeg plugin settings and disable Monkey's Audio support.
