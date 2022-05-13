@@ -363,3 +363,8 @@ Version 2.0.1
 Version 2.0.2
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Turkish translation (abcmen)
+
+Version 2.1.0
+* ported to qmmp 2.1 API
+* added modplug plugin 
+* removed xmp plugin
