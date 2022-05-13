@@ -55,6 +55,7 @@ DecoderProperties DecoderModPlugFactory::properties() const
     properties.hasSettings = true;
     properties.noInput = true;
     properties.protocols = QStringList { "file" };
+    properties.priority = 10;
     return properties;
 }
 
