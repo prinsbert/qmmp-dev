@@ -68,7 +68,7 @@ Qmmp - Qt-based multimedia player
 - сканер ReplayGain
 
 Вимоги:
-- Qt >= 5.4 (qtbase, qtx11extras та qttools для компіляції)
+- Qt >= 5.5 (qtbase, qtx11extras та qttools для компіляції)
 - tar, unzip, bzip2, gzip
 - libmad
 - libvorbis
@@ -81,7 +81,7 @@ Qmmp - Qt-based multimedia player
 - libmpcdec >= 1.3.0 (Опціонально)
 - jackit1 >= 0.121.0 чи jackit2 >= 1.9.8 (Опціонально)
 - libsamplerate >= 0.1.2 (Опціонально)
-- libmodplug >= 0.8.4 (Опціонально)
+- libxmp >= 4.2.0 (Опціонально)
 - libsndfile >= 1.0.21 (Опціонально)
 - wavpack >= 4.41 (Опціонально)
 - pulseaudio >= 0.9.15 (Опціонально)
