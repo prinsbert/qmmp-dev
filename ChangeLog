@@ -353,3 +353,13 @@ Version 1.5.0
 Version 2.0.0
 * switched to Qt6 and qmmp 2.0 API
 * added Korean translation (Jung Hee Lee)
+
+Version 2.0.1
+* added yt-dlp support
+* updated Finnish translation (Kimmo Kujansuu, Jiri Grönroos)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Italian translation (Luigi Toscano)
+
+Version 2.0.2
+* updated Ukrainian translation (Gennady Motsyo)
+* updated Turkish translation (abcmen)
