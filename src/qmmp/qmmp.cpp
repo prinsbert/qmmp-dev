@@ -167,6 +167,19 @@ QString Qmmp::dataPath()
 #endif
 }
 
+QString Qmmp::userDataPath()
+{
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+    return configDir();
+#else
+    if(m_configDir.isEmpty())
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation))
+                .arg(QCoreApplication::organizationName());
+    else
+        return m_configDir;
+#endif
+}
+
 #ifdef Q_OS_WIN
 bool Qmmp::isPortable()
 {

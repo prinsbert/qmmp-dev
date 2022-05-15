@@ -180,6 +180,7 @@ public:
      * Returns a directory location where persistent application data can be stored.
      */
     static QString dataPath();
+    static QString userDataPath();
 #ifdef Q_OS_WIN
     /*!
      * Returns \b true if portable mode is enabled. Otherwise returns \b false.

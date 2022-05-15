@@ -21,6 +21,7 @@
 #include <QSettings>
 #include <QDir>
 #include <QFontDialog>
+#include <QStandardPaths>
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
 #include <qmmpui/uihelper.h>
@@ -186,22 +187,33 @@ void SkinnedSettings::createActions()
 
 void SkinnedSettings::loadSkins()
 {
-    m_reader->generateThumbs();
+    QStringList skinPaths = {
+        Qmmp::configDir() + QStringLiteral("/skins"),
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+        qApp->applicationDirPath() + QStringLiteral("/skins")
+#else
+        Qmmp::userDataPath() + QStringLiteral("/skins"),
+        Qmmp::dataPath() + QStringLiteral("/skins"),
+        //1.x version compatibility
+        QDir(qApp->applicationDirPath() +  QStringLiteral("/../share/qmmp-1/skins")).absolutePath()
+#endif
+    };
+
+    skinPaths.removeDuplicates();
+
+    m_reader->generateThumbs(skinPaths);
     m_skinList.clear();
     m_ui.listWidget->clear();
     QFileInfo fileInfo (":/glare");
     QPixmap preview = Skin::getPixmap ("main", QDir (fileInfo.filePath()));
     QListWidgetItem *item = new QListWidgetItem (fileInfo.fileName ());
     item->setIcon (preview);
-    m_ui.listWidget->addItem (item);
+    m_ui.listWidget->addItem(item);
     m_skinList << fileInfo;
 
-    findSkins(Qmmp::configDir() + "/skins");
-#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
-    findSkins(qApp->applicationDirPath()+"/skins");
-#else
-    findSkins(Qmmp::dataPath());
-#endif
+    for(const QString &skinPath : qAsConst(skinPaths))
+        findSkins(skinPath);
+
     for(const QString &path : m_reader->skins())
     {
         item = new QListWidgetItem (path.section('/', -1));
