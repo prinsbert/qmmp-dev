@@ -162,7 +162,7 @@ QString Qmmp::userDataPath()
 #else
     if(m_configDir.isEmpty())
         return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation))
-                .arg(QStringLiteral("qmmp" APP_NAME_SUFFIX));
+                .arg(QStringLiteral("qmmp"));
     else
         return m_configDir;
 #endif

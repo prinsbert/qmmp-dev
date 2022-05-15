@@ -21,7 +21,6 @@
 #include <QSettings>
 #include <QDir>
 #include <QFontDialog>
-#include <QStandardPaths>
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
 #include <qmmpui/uihelper.h>
@@ -192,7 +191,6 @@ void SkinnedSettings::loadSkins()
         Qmmp::userDataPath() + QStringLiteral("/skins"),
         Qmmp::dataPath() + QStringLiteral("/skins"),
         //2.x version compatibility
-        QStringLiteral("%1/qmmp/skins").arg(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)),
         QDir(qApp->applicationDirPath() +  QStringLiteral("/../share/qmmp/skins")).absolutePath()
 #endif
     };
