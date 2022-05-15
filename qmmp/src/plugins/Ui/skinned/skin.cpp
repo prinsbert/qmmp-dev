@@ -49,7 +49,7 @@ Skin::Skin(QObject *parent) : QObject (parent)
         path.prepend(QApplication::applicationDirPath() + "/");
 #endif
     if (path.isEmpty() || !QDir(path).exists ())
-        path = ":/glare";
+        path = QStringLiteral(":/") + Skin::defaultSkinName();
     m_double_size = settings.value("Skinned/double_size", false).toBool();
     m_antialiasing = settings.value("Skinned/antialiasing", false).toBool();
     ACTION(ActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
@@ -57,7 +57,7 @@ Skin::Skin(QObject *parent) : QObject (parent)
     setSkin (QDir::cleanPath(path));
     /* skin directory */
     QDir skinDir(Qmmp::configDir());
-    skinDir.mkdir ("skins");
+    skinDir.mkdir("skins");
 }
 
 Skin::~Skin()
@@ -78,6 +78,11 @@ QPixmap Skin::getPixmap (const QString &name, QDir dir)
     if(!f.isEmpty())
         return QPixmap(f.first().filePath());
     return QPixmap();
+}
+
+QString Skin::defaultSkinName()
+{
+    return QStringLiteral("glare");
 }
 
 int Skin::ratio() const
