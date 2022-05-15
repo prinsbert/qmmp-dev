@@ -24,6 +24,7 @@
 #include <QLocale>
 #include <QFile>
 #include <QByteArray>
+#include <QStandardPaths>
 
 #define STR_HELPER(x) #x
 #define STR(x) STR_HELPER(x)
@@ -151,6 +152,19 @@ QString Qmmp::dataPath()
     return qApp->applicationDirPath();
 #else
     return QDir(qApp->applicationDirPath() + "/../share/qmmp" APP_NAME_SUFFIX).absolutePath();
+#endif
+}
+
+QString Qmmp::userDataPath()
+{
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+    return configDir();
+#else
+    if(m_configDir.isEmpty())
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation))
+                .arg(QStringLiteral("qmmp" APP_NAME_SUFFIX));
+    else
+        return m_configDir;
 #endif
 }
 
