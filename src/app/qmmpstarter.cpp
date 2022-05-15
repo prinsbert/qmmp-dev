@@ -251,7 +251,6 @@ void QMMPStarter::startPlayer()
     theme_paths << share_path + QLatin1String("/icons");
     theme_paths.removeDuplicates();
     QIcon::setThemeSearchPaths(theme_paths);
-#endif
 
     //copy config from previous version
     QString configFile = Qmmp::configDir() + QStringLiteral("/qmmp.conf");
@@ -275,6 +274,7 @@ void QMMPStarter::startPlayer()
                                                       Qmmp::configDir() });
         }
     }
+#endif
 
     //prepare libqmmp and libqmmpui libraries for usage
     m_player = new MediaPlayer(this);
