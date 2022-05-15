@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -201,7 +201,7 @@ void SkinnedSettings::loadSkins()
 #if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
     findSkins(qApp->applicationDirPath()+"/skins");
 #else
-    findSkins(Qmmp::dataPath());
+    findSkins(Qmmp::dataPath() + "/skins");
 #endif
     foreach(QString path, m_reader->skins())
     {
