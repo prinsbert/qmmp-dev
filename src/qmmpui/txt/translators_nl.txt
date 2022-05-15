@@ -24,7 +24,7 @@ Tsjechisch:
     Karel Volný <kvolny@redhat.com>
 
 Nederlands:
-    Heimen Stoffels
+    Heimen Stoffels <vistausss@fastmail.com>
     Ronald Uitermark <ronald645@gmail.com>
 
 Fins:
@@ -75,9 +75,9 @@ Litouws:
     Algirdas Butkus <butkus.algirdas@gmail.com>
 
 Pools:
+    Marek Adamski
     Daniel Krawczyk
     Grzegorz Gibas <amigib@gmail.com>
-    mrerexx
 
 Portugees:
     Sérgio Marques <smarquespt@gmail.com>
@@ -85,6 +85,7 @@ Portugees:
 Russisch:
     Alexey Loginov <loginov.alex.valer.gmail.com>
     Ilya Kotov <forkotov02@ya.ru>
+    Andrei Stepanov
     Viktor Eruhin
 
 Servisch:
