@@ -11,7 +11,7 @@ Description:
 - Sample Rate Converter - resampler based on libsamplerate library
 - Goom - audio visualization based on goom project
 - FFVideo - video playback engine based on FFmpeg library
-- Ytb - audio playback from YouTube (uses youtube-dl)
+- Ytb - audio playback from YouTube (uses yt-dlp)
 
 Requirements:
 - Qt >= 6.2 (qtbase and qttools for build)
