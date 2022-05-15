@@ -61,7 +61,7 @@ void SkinnedSettings::on_listWidget_itemClicked(QListWidgetItem *)
     else if (m_skinList.at (row).isFile())
     {
         m_reader->unpackSkin(m_skinList.at (row).canonicalFilePath());
-        m_skin->setSkin(Qmmp::configDir() + "/cache/skin");
+        m_skin->setSkin(Qmmp::cacheDir() + QStringLiteral("/skinned/skin"));
     }
     if(m_ui.listWidget->currentItem())
         m_currentSkinName = m_ui.listWidget->currentItem()->text();

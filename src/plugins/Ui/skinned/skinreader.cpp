@@ -34,9 +34,9 @@ SkinReader::SkinReader(QObject *parent)
 {
     m_process = new QProcess(this);
     //create cache dir
-    QDir dir(Qmmp::configDir());
-    dir.mkdir("cache");
-    dir.cd("cache");
+    QDir dir(Qmmp::cacheDir());
+    dir.mkdir("skinned");
+    dir.cd("skinned");
     dir.mkdir("thumbs");
     dir.mkdir("skin");
 }
@@ -57,7 +57,7 @@ void SkinReader::generateThumbs()
 #endif
     dir.setFilter(QDir::Files | QDir::Hidden);
     f << dir.entryInfoList();
-    QDir cache_dir(Qmmp::configDir() + "/cache/thumbs");
+    QDir cache_dir(Qmmp::cacheDir() + "/skinned/thumbs");
     cache_dir.setFilter(QDir::Files | QDir::Hidden);
     QFileInfoList d = cache_dir.entryInfoList();
     //clear removed skins from cache
@@ -110,7 +110,7 @@ void SkinReader::generateThumbs()
 void SkinReader::unpackSkin(const QString &path)
 {
     //remove old skin
-    QDir dir(Qmmp::configDir() + "/cache/skin");
+    QDir dir(Qmmp::cacheDir() + QStringLiteral("/skinned/skin"));
     dir.setFilter( QDir::Files | QDir::Hidden);
     const QFileInfoList f = dir.entryInfoList();
     for(const QFileInfo &file : qAsConst(f))
@@ -118,9 +118,9 @@ void SkinReader::unpackSkin(const QString &path)
     //unpack
     QString name = QFileInfo(path).fileName().toLower();
     if (name.endsWith(".tgz") || name.endsWith(".tar.gz") || name.endsWith(".tar.bz2"))
-        untar(path, Qmmp::configDir() + "/cache/skin", false);
+        untar(path, Qmmp::cacheDir() + QStringLiteral("/skinned/skin"), false);
     else if (name.endsWith(".zip") || name.endsWith(".wsz"))
-        unzip(path, Qmmp::configDir() + "/cache/skin", false);
+        unzip(path, Qmmp::cacheDir() + QStringLiteral("/skinned/skin"), false);
 }
 
 const QStringList SkinReader::skins()
