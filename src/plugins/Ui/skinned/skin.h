@@ -40,6 +40,7 @@ public:
 
     static Skin *instance();
     static QPixmap getPixmap(const QString &name, QDir dir);
+    static QString defaultSkinName();
     int ratio() const;
     const QPixmap &getMain() const;
     const QPixmap getButton(uint bt) const;
