@@ -183,7 +183,16 @@ void SkinnedSettings::createActions()
 
 void SkinnedSettings::loadSkins()
 {
-    m_reader->generateThumbs();
+    const QStringList skinPaths = {
+        Qmmp::configDir() + QStringLiteral("/skins"),
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+        qApp->applicationDirPath() + QStringLiteral("/skins")
+#else
+        Qmmp::dataPath() + QStringLiteral("/skins")
+#endif
+    };
+
+    m_reader->generateThumbs(skinPaths);
     m_skinList.clear();
     m_ui.listWidget->clear();
     QFileInfo fileInfo (":/glare");
@@ -193,12 +202,9 @@ void SkinnedSettings::loadSkins()
     m_ui.listWidget->addItem (item);
     m_skinList << fileInfo;
 
-    findSkins(Qmmp::configDir() + "/skins");
-#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
-    findSkins(qApp->applicationDirPath()+"/skins");
-#else
-    findSkins(Qmmp::dataPath());
-#endif
+    for(const QString &skinPath : qAsConst(skinPaths))
+        findSkins(skinPath);
+
     for(const QString &path : m_reader->skins())
     {
         item = new QListWidgetItem (path.section('/', -1));

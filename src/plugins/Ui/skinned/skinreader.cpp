@@ -44,19 +44,16 @@ SkinReader::SkinReader(QObject *parent)
 SkinReader::~SkinReader()
 {}
 
-void SkinReader::generateThumbs()
+void SkinReader::generateThumbs(const QStringList &paths)
 {
     m_previewMap.clear();
-    QDir dir(Qmmp::configDir() + "/skins");
-    dir.setFilter( QDir::Files | QDir::Hidden);
-    QFileInfoList f = dir.entryInfoList();
-#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
-    dir.setPath(qApp->applicationDirPath() + "/skins");
-#else
-    dir.setPath(Qmmp::dataPath() + "/skins");
-#endif
-    dir.setFilter(QDir::Files | QDir::Hidden);
-    f << dir.entryInfoList();
+    QFileInfoList f;
+    for(const QString &path : qAsConst(paths))
+    {
+        QDir dir(path);
+        dir.setFilter( QDir::Files | QDir::Hidden);
+        f << dir.entryInfoList();
+    }
     QDir cache_dir(Qmmp::configDir() + "/cache/thumbs");
     cache_dir.setFilter(QDir::Files | QDir::Hidden);
     QFileInfoList d = cache_dir.entryInfoList();

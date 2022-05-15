@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,6 +23,7 @@
 #include <QObject>
 #include <QMap>
 #include <QPixmap>
+#include <QStringList>
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -37,7 +38,7 @@ public:
 
     ~SkinReader();
 
-    void generateThumbs();
+    void generateThumbs(const QStringList &paths);
     void unpackSkin(const QString &path);
     const QStringList skins();
     const QPixmap getPreview(const QString &skinPath);
