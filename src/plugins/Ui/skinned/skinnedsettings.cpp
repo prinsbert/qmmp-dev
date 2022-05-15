@@ -253,7 +253,10 @@ void SkinnedSettings::readSettings()
     m_ui.plTransparencySlider->setValue(100 - settings.value("pl_opacity", 1.0).toDouble()*100);
     //view
     m_ui.skinCursorsCheckBox->setChecked(settings.value("skin_cursors", false).toBool());
-    m_currentSkinName = settings.value("skin_name", "glare").toString();
+    m_currentSkinName = settings.value("skin_name", Skin::defaultSkinName()).toString();
+    QString currentSkinPath = settings.value("Skinned/skin_path").toString();
+    if(currentSkinPath.isEmpty() || !QDir(currentSkinPath).exists())
+        m_currentSkinName = Skin::defaultSkinName();
     m_ui.hiddenCheckBox->setChecked(settings.value("start_hidden", false).toBool());
     m_ui.hideOnCloseCheckBox->setChecked(settings.value("hide_on_close", false).toBool());
     m_ui.windowTitleLineEdit->setText(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
