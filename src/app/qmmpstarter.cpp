@@ -24,6 +24,7 @@
 #include <QLocalSocket>
 #include <QSettings>
 #include <QIcon>
+#include <QProcess>
 #include <cstdlib>
 #include <iostream>
 #include <unistd.h>
@@ -251,6 +252,29 @@ void QMMPStarter::startPlayer()
     theme_paths.removeDuplicates();
     QIcon::setThemeSearchPaths(theme_paths);
 #endif
+
+    //copy config from previous version
+    QString configFile = Qmmp::configDir() + QStringLiteral("/qmmp.conf");
+    if(!QFile::exists(configFile))
+    {
+        QString oldConfigFile = QDir::homePath() + QStringLiteral("/.qmmp/qmmp2rc");
+        if(!QFile::exists(oldConfigFile))
+            oldConfigFile = QDir::homePath() + QStringLiteral("/.qmmp/qmmprc");
+
+        if(QFile::exists(oldConfigFile))
+        {
+            QFile::copy(oldConfigFile, configFile);
+            static const QStringList filesToCopy = {
+                "converterrc",  "eq.auto_preset", "history.sqlite", "library.sqlite", "playlist.txt", "Songlengths.txt", "winamp_presets"
+            };
+
+            for(const QString &name : qAsConst(filesToCopy))
+                QFile::copy(QDir::homePath() + QStringLiteral("/.qmmp/") + name, Qmmp::configDir() + "/" + name);
+
+            QProcess::execute(QStringLiteral("cp"), { QStringLiteral("-r"), QDir::homePath() + QStringLiteral("/.qmmp/skins"),
+                                                      Qmmp::configDir() });
+        }
+    }
 
     //prepare libqmmp and libqmmpui libraries for usage
     m_player = new MediaPlayer(this);
