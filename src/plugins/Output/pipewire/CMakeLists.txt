@@ -23,6 +23,8 @@ SET(libpipewire_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+add_compile_options(-Wno-missing-field-initializers)
+
 IF(PIPEWIRE_FOUND)
 ADD_LIBRARY(pipewire MODULE ${libpipewire_SRCS})
 add_dependencies(pipewire libqmmp)
