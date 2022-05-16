@@ -112,7 +112,7 @@ Qmmp - Qt-based multimedia player
 - libprojectM >= 2.0.0 (опционально)
 - libenca >= 1.9 (опционально)
 - libarchive >= 3.2.0 (опционально)
-- libshout (опционально)
+- libshout >= 2.4.3 (опционально)
 - mplayer (опционально)
 - libx11, libxcb, xorgproto (опционально)
 - librcd >= 0.1.13 (опционально)
