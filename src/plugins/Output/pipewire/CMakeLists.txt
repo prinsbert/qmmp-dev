@@ -30,6 +30,8 @@ QT5_ADD_RESOURCES(libpipewire_RCC_SRCS ${libpipewire_RCCS})
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+add_compile_options(-Wno-missing-field-initializers)
+
 IF(PIPEWIRE_FOUND)
 ADD_LIBRARY(pipewire MODULE ${libpipewire_SRCS} ${libpipewire_UIS_H}
   ${libpipewire_RCC_SRCS} ${libpipewire_HDRS})
