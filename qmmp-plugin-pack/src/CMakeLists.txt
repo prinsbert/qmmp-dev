@@ -1,5 +1,0 @@
-add_subdirectory(Transports)
-add_subdirectory(Input)
-add_subdirectory(Effect)
-add_subdirectory(Visual)
-add_subdirectory(Engines)
