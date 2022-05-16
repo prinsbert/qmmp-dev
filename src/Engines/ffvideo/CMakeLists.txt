@@ -24,13 +24,8 @@ SET(libffvideo_SRCS
   packetbuffer.cpp
   videothread.cpp
   videowindow.cpp
+  translations/translations.qrc
 )
-
-SET(libffvideo_HDRS
-  ffvideodecoder.h
-)
-
-SET(libffvideo_RCCS translations/translations.qrc)
 
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
@@ -38,6 +33,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(FFMPEG_FOUND)
 ADD_LIBRARY(ffvideo MODULE ${libffvideo_SRCS} ${libffvideo_RCC_SRCS} ${libffvideo_HDRS})
-target_link_libraries(ffvideo Qt5::Widgets ${QMMP_LDFLAGS} ${FFMPEG_LDFLAGS})
+target_link_libraries(ffvideo PRIVATE Qt6::Widgets ${QMMP_LDFLAGS} ${FFMPEG_LDFLAGS})
 install(TARGETS ffvideo DESTINATION ${PLUGIN_DIR}/Engines)
 ENDIF(FFMPEG_FOUND)

@@ -55,6 +55,7 @@ DecoderProperties DecoderModPlugFactory::properties() const
     properties.hasSettings = true;
     properties.noInput = true;
     properties.protocols = QStringList { "file" };
+    properties.priority = 10;
     return properties;
 }
 
@@ -67,7 +68,7 @@ Decoder *DecoderModPlugFactory::create(const QString &path, QIODevice *input)
 QList<TrackInfo *> DecoderModPlugFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
     QList <TrackInfo*> list;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     bool useFileName = settings.value("UseFileName", false).toBool();
 
     QByteArray buffer;

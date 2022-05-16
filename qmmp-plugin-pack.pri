@@ -14,18 +14,18 @@ RCC_DIR=./.build/rcc
 
 DEFINES += QT_NO_CAST_FROM_BYTEARRAY QT_STRICT_ITERATORS QT_NO_FOREACH
 unix:DEFINES += QMMP_WS_X11
-DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x050400 QT_DEPRECATED_WARNINGS
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060200 QT_DEPRECATED_WARNINGS
 
 #Configuration
 
 CONFIG += SVN_VERSION
 CONFIG += hide_symbols
-CONFIG += c++11
+CONFIG += c++17
 QT += widgets
 
 #Version
 
-QMMP_PLUGIN_PACK_VERSION = 1.6.0
+QMMP_PLUGIN_PACK_VERSION = 2.1.0
 
 #Install paths
 
@@ -34,7 +34,7 @@ VERSIONS = $$split(QMMP_PLUGIN_PACK_VERSION, ".")
 QMMP_PLUGIN_PACK_VERSION_MAJOR = $$member(VERSIONS, 0)
 QMMP_PLUGIN_PACK_VERSION_MINOR = $$member(VERSIONS, 1)
 
-APP_NAME_SUFFIX = "-1"
+#APP_NAME_SUFFIX = "-1"
 
 #QMAKE_LFLAGS_DEBUG += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
 #QMAKE_LFLAGS += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
@@ -60,11 +60,11 @@ unix {
   QMAKE_LIBDIR += /home/user/qmmp-$${QMMP_PLUGIN_PACK_VERSION_MAJOR}.$${QMMP_PLUGIN_PACK_VERSION_MINOR}/lib
   INCLUDEPATH += /usr/local/include
 } else {
-  INCLUDEPATH += C:/projects/qmmp-svn-trunk/qmmp/src
-  QMAKE_LIBDIR += C:/projects/qmmp-svn-trunk/qmmp/bin
+  INCLUDEPATH += C:/projects/qmmp-svn-stable/qmmp-2.0/src
+  QMAKE_LIBDIR += C:/projects/qmmp-svn-stable/qmmp-2.0/bin
   EXTRA_INCDIR = C:/devel/mingw32-libs/include
-  QMAKE_CXXFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
-  QMAKE_CFLAGS += "$${QMAKE_CFLAGS_ISYSTEM} $${EXTRA_INCDIR}"
+  QMAKE_CXXFLAGS += "-isystem $${EXTRA_INCDIR}"
+  QMAKE_CFLAGS += "-isystem $${EXTRA_INCDIR}"
   QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
 }
 

@@ -101,7 +101,7 @@ void GoomWidget::toggleFullScreen()
 
 void GoomWidget::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Goom");
     m_fps = settings.value("refresh_rate", 25).toInt();
     m_timer->setInterval(1000 / m_fps);
@@ -123,7 +123,7 @@ void GoomWidget::readSettings()
 
 void GoomWidget::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Goom");
     QAction *act = m_fpsGroup->checkedAction ();
     settings.setValue("refresh_rate", act ? act->data().toInt() : 25);
@@ -155,7 +155,7 @@ void GoomWidget::showEvent (QShowEvent *)
 void GoomWidget::closeEvent (QCloseEvent *event)
 {
     //save geometry
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Goom/geometry", saveGeometry());
     Visual::closeEvent(event); //removes visualization object
 }
@@ -169,7 +169,7 @@ void GoomWidget::paintEvent (QPaintEvent *)
 void GoomWidget::mousePressEvent(QMouseEvent *e)
 {
     if (e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPos());
+        m_menu->exec(e->globalPosition().toPoint());
 }
 
 void GoomWidget::clear()

@@ -166,7 +166,7 @@ void DecoderModPlug::readSettings()
 {
     if (!m_soundFile)
         return;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("ModPlug");
     CSoundFile::SetWaveConfig
     (

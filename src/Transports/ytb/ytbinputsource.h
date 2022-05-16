@@ -22,7 +22,6 @@
 #define YTBINPUTSOURCE_H
 
 #include <QNetworkAccessManager>
-#include <QNetworkRequest>
 #include <QProcess>
 #include <qmmp/inputsource.h>
 

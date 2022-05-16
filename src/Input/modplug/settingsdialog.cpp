@@ -32,7 +32,14 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    connect(m_ui.surDepthSlider, &QSlider::valueChanged, m_ui.label_11, qOverload<int>(&QLabel::setNum));
+    connect(m_ui.surDelaySlider, &QSlider::valueChanged, m_ui.label_12, qOverload<int>(&QLabel::setNum));
+    connect(m_ui.reverbDepthSlider, &QSlider::valueChanged, m_ui.label_9, qOverload<int>(&QLabel::setNum));
+    connect(m_ui.reverbDelaySlider, &QSlider::valueChanged, m_ui.label_10, qOverload<int>(&QLabel::setNum));
+    connect(m_ui.bassRangeSlider, &QSlider::valueChanged, m_ui.label_14, qOverload<int>(&QLabel::setNum));
+    connect(m_ui.bassAmountSlider, &QSlider::valueChanged, m_ui.label_13, qOverload<int>(&QLabel::setNum));
+
+    QSettings settings;
     settings.beginGroup("ModPlug");
     //general
     m_ui.noiseCheckBox->setChecked(settings.value("NoiseReduction", false).toBool());
@@ -107,7 +114,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("ModPlug");
     //general
     settings.setValue("NoiseReduction", m_ui.noiseCheckBox->isChecked());
