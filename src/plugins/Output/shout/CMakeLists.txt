@@ -7,7 +7,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 # libshout and other required libraries
-pkg_check_modules(SHOUT ogg vorbis vorbisenc shout soxr)
+pkg_check_modules(SHOUT ogg vorbis vorbisenc shout>=2.4.3 soxr)
 include_directories(${SHOUT_INCLUDE_DIRS})
 link_directories(${SHOUT_LIBRARY_DIRS})
 ADD_DEFINITIONS(${SHOUT_CFLAGS})
