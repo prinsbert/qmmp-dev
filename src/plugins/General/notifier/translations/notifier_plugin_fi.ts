@@ -121,7 +121,7 @@
         <translation>Käytä kirjautumisen ilmoitusta</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="109"/>
+        <location filename="../settingsdialog.cpp" line="112"/>
         <source>Notification Template</source>
         <translation>Ilmoituksen malli</translation>
     </message>

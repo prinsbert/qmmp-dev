@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Ilya Kotov                                      *
+ *   Copyright (C) 2010-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,7 +17,6 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#include <QTextCodec>
 #include <QSettings>
 #include <qmmp/qmmp.h>
 #ifdef WITH_ENCA
@@ -30,7 +29,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 {
     ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     ui.bufferSizeSpinBox->setValue(settings.value("MMS/buffer_size",384).toInt());
 }
 
@@ -40,7 +39,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("MMS/buffer_size", ui.bufferSizeSpinBox->value());
     QDialog::accept();
 }

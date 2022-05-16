@@ -34,67 +34,67 @@
         <translation>Acordo de licenza</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="71"/>
+        <location filename="../aboutdialog.cpp" line="70"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>Reprodutor multimedia basado en Qt (qmmp)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
+        <location filename="../aboutdialog.cpp" line="74"/>
         <source>Version: %1</source>
         <translation>Versión: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="76"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Usando Qt %1 (compilado con Qt %2)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="79"/>
+        <location filename="../aboutdialog.cpp" line="78"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(c) %1-%2 Equipo de desenvolvemento de Qmmp</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="84"/>
+        <location filename="../aboutdialog.cpp" line="83"/>
         <source>Transports:</source>
         <translation>Transportes:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="92"/>
         <source>Decoders:</source>
         <translation>Descodificadores:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="104"/>
+        <location filename="../aboutdialog.cpp" line="103"/>
         <source>Engines:</source>
         <translation>Motores:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="115"/>
+        <location filename="../aboutdialog.cpp" line="114"/>
         <source>Effects:</source>
         <translation>Efectos:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="153"/>
+        <location filename="../aboutdialog.cpp" line="152"/>
         <source>File dialogs:</source>
         <translation>Diálogos de ficheiro:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="165"/>
+        <location filename="../aboutdialog.cpp" line="164"/>
         <source>User interfaces:</source>
         <translation>Interfaces de usuario:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="142"/>
+        <location filename="../aboutdialog.cpp" line="141"/>
         <source>Output plugins:</source>
         <translation>Engadidos de saída:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="124"/>
+        <location filename="../aboutdialog.cpp" line="123"/>
         <source>Visual plugins:</source>
         <translation>Engadidos de visualización:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="133"/>
+        <location filename="../aboutdialog.cpp" line="132"/>
         <source>General plugins:</source>
         <translation>Engadidos xerais:</translation>
     </message>
@@ -107,12 +107,12 @@
         <translation>Introduza URL para engadir</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="46"/>
+        <location filename="../forms/addurldialog.ui" line="55"/>
         <source>&amp;Add</source>
         <translation>&amp;Engadir</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="53"/>
+        <location filename="../forms/addurldialog.ui" line="62"/>
         <source>&amp;Cancel</source>
         <translation>&amp;Cancelar</translation>
     </message>
@@ -915,7 +915,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="284"/>
         <source>Lyrics</source>
-        <translation>Letras</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="304"/>
@@ -1047,8 +1047,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="122"/>
-        <location filename="../jumptotrackdialog.cpp" line="153"/>
+        <location filename="../jumptotrackdialog.cpp" line="118"/>
+        <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Queue</source>
         <translation>Cola</translation>
     </message>
@@ -1058,18 +1058,18 @@
         <translation>Saltar a</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="98"/>
+        <location filename="../jumptotrackdialog.cpp" line="94"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="99"/>
+        <location filename="../jumptotrackdialog.cpp" line="95"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="120"/>
-        <location filename="../jumptotrackdialog.cpp" line="151"/>
+        <location filename="../jumptotrackdialog.cpp" line="116"/>
+        <location filename="../jumptotrackdialog.cpp" line="147"/>
         <source>Unqueue</source>
         <translation>Sacar da cola</translation>
     </message>
@@ -1367,45 +1367,45 @@
 <context>
     <name>UiHelper</name>
     <message>
-        <location filename="../uihelper.cpp" line="138"/>
-        <location filename="../uihelper.cpp" line="150"/>
+        <location filename="../uihelper.cpp" line="136"/>
+        <location filename="../uihelper.cpp" line="148"/>
         <source>All Supported Bitstreams</source>
         <translation>Tódolos bitstreams soportados</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="144"/>
+        <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
         <translation>Selecciona un ou máis ficheiros para abrir</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="156"/>
+        <location filename="../uihelper.cpp" line="154"/>
         <source>Select one or more files to play</source>
         <translation>Seleccione un ou máis arquivos a reproducir</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="164"/>
+        <location filename="../uihelper.cpp" line="162"/>
         <source>Choose a directory</source>
         <translation>Escolla un directorio</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="180"/>
-        <location filename="../uihelper.cpp" line="206"/>
+        <location filename="../uihelper.cpp" line="178"/>
+        <location filename="../uihelper.cpp" line="204"/>
         <source>Playlist Files</source>
         <translation>Arquivos de lista de reprodución</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="182"/>
+        <location filename="../uihelper.cpp" line="180"/>
         <source>Open Playlist</source>
         <translation>Abrir lista de reprodución</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="209"/>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="207"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>Save Playlist</source>
         <translation>Gardar a lista de reprodución</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 xa existe
@@ -1415,37 +1415,37 @@ Quere reemplazalo?</translation>
 <context>
     <name>WinFileAssocPage</name>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="17"/>
+        <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
         <translation>Arquivos multimedia soportados por Qmmp:</translation>
     </message>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="49"/>
+        <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Select All</source>
         <translation>Seleccionar todos</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="116"/>
+        <location filename="../winfileassocpage.cpp" line="114"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="117"/>
+        <location filename="../winfileassocpage.cpp" line="115"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
         <translation>Non tódolos arquivos poden ser asociados. Por favor, comproba os permisos de seguridade e reintentao.</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="124"/>
+        <location filename="../winfileassocpage.cpp" line="122"/>
         <source>Check all file types in the list</source>
         <translation>Marcar tódolos tipos de arquivo da lista</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="125"/>
+        <location filename="../winfileassocpage.cpp" line="123"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
         <translation>Marca tódolas extensións de arquivo que queiras asociar a Qmmp. Cando premas Aplicar, os arquivos marcados serán asociados con Qmmp. Se desmarcas un tipo multimedia, a asociación do arquivo será restaurada.</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="129"/>
+        <location filename="../winfileassocpage.cpp" line="127"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
         <translation>&lt;b&gt;Nota:&lt;/b&gt; A restauración non funciona en Windows Vista/7.</translation>
     </message>

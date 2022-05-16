@@ -24,6 +24,7 @@
 #include <QLocalSocket>
 #include <QSettings>
 #include <QIcon>
+#include <QProcess>
 #include <cstdlib>
 #include <iostream>
 #include <unistd.h>
@@ -63,7 +64,7 @@ QMMPStarter::QMMPStarter() : QObject()
 #ifdef Q_OS_WIN
     m_named_mutex = nullptr;
 #endif
-    createInitialConfig();
+    createPaths();
     m_option_manager = new BuiltinCommandLineOption(this);
     QStringList tmp = qApp->arguments().mid(1);
 
@@ -236,20 +237,43 @@ int QMMPStarter::exitCode() const
 void QMMPStarter::startPlayer()
 {
     connect(m_server, SIGNAL(newConnection()), SLOT(readCommand()));
-    QStringList args = argString.split("|||", QString::SkipEmptyParts);
+    QStringList args = argString.split("|||", Qt::SkipEmptyParts);
 
 #ifdef Q_OS_WIN
-    QIcon::setThemeSearchPaths(QStringList() << qApp->applicationDirPath() + "/themes/");
+    QIcon::setThemeSearchPaths(QStringList() << qApp->applicationDirPath() + QLatin1String("/themes/"));
     QIcon::setThemeName("oxygen");
 #else
     //add extra theme path;
     QStringList theme_paths = QIcon::themeSearchPaths();
     QString share_path = qgetenv("XDG_DATA_HOME");
     if(share_path.isEmpty())
-        share_path = QDir::homePath() + "/.local/share";
-    theme_paths << share_path + "/icons";
+        share_path = QDir::homePath() + QLatin1String("/.local/share");
+    theme_paths << share_path + QLatin1String("/icons");
     theme_paths.removeDuplicates();
     QIcon::setThemeSearchPaths(theme_paths);
+
+    //copy config from previous version
+    QString configFile = Qmmp::configDir() + QStringLiteral("/qmmp.conf");
+    if(!QFile::exists(configFile))
+    {
+        QString oldConfigFile = QDir::homePath() + QStringLiteral("/.qmmp/qmmp2rc");
+        if(!QFile::exists(oldConfigFile))
+            oldConfigFile = QDir::homePath() + QStringLiteral("/.qmmp/qmmprc");
+
+        if(QFile::exists(oldConfigFile))
+        {
+            QFile::copy(oldConfigFile, configFile);
+            static const QStringList filesToCopy = {
+                "converterrc",  "eq.auto_preset", "history.sqlite", "library.sqlite", "playlist.txt", "Songlengths.txt", "winamp_presets"
+            };
+
+            for(const QString &name : qAsConst(filesToCopy))
+                QFile::copy(QDir::homePath() + QStringLiteral("/.qmmp/") + name, Qmmp::configDir() + "/" + name);
+
+            QProcess::execute(QStringLiteral("cp"), { QStringLiteral("-r"), QDir::homePath() + QStringLiteral("/.qmmp/skins"),
+                                                      Qmmp::configDir() });
+        }
+    }
 #endif
 
     //prepare libqmmp and libqmmpui libraries for usage
@@ -274,7 +298,7 @@ void QMMPStarter::startPlayer()
     processCommandArgs(args, QDir::currentPath());
     if(args.isEmpty())
     {
-        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+        QSettings settings;
         settings.beginGroup("General");
         if(settings.value("resume_playback", false).toBool())
         {
@@ -284,21 +308,15 @@ void QMMPStarter::startPlayer()
     }
 }
 
-void QMMPStarter::createInitialConfig()
+void QMMPStarter::createPaths()
 {
-    QString defaultConfig = Qmmp::dataPath() + "/qmmprc.default";
-
-    if(!QFile::exists(Qmmp::configFile()) && QFile::exists(defaultConfig))
-    {
-        qDebug("QMMPStarter: creating initial config");
-        QDir("/").mkpath(Qmmp::configDir());
-        QFile::copy(defaultConfig, Qmmp::configFile());
-    }
+    QDir("/").mkpath(Qmmp::configDir());
+    QDir("/").mkpath(Qmmp::cacheDir());
 }
 
 void QMMPStarter::savePosition()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("General");
     settings.setValue("resume_playback",m_core->state() == Qmmp::Playing &&
                       QmmpUiSettings::instance()->resumeOnStartup());
@@ -350,7 +368,7 @@ void QMMPStarter::readCommand()
         socket->deleteLater();
         return;
     }
-    QStringList slist = QString::fromUtf8(inputArray.data()).split("|||",QString::SkipEmptyParts);
+    QStringList slist = QString::fromUtf8(inputArray.data()).split("|||",Qt::SkipEmptyParts);
     QString cwd = slist.takeAt(0);
     QString out = processCommandArgs(slist, cwd);
     if(!out.isEmpty())

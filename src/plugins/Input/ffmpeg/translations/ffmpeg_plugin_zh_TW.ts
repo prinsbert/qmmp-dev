@@ -9,27 +9,27 @@
         <translation>FFmpeg 外掛</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="152"/>
+        <location filename="../decoderffmpegfactory.cpp" line="148"/>
         <source>FFmpeg Formats</source>
         <translation>FFmpeg 格式</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="343"/>
+        <location filename="../decoderffmpegfactory.cpp" line="339"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>關於 FFmpeg 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="344"/>
+        <location filename="../decoderffmpegfactory.cpp" line="340"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Qmmp FFmpeg 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="345"/>
+        <location filename="../decoderffmpegfactory.cpp" line="341"/>
         <source>Compiled against:</source>
         <translation>編譯使用：</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="358"/>
+        <location filename="../decoderffmpegfactory.cpp" line="354"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

@@ -37,7 +37,7 @@ TrackChange::TrackChange(QObject *parent) : QObject(parent)
     connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(onStateChanged(Qmmp::State)));
     connect(m_core, SIGNAL(trackInfoChanged()), SLOT(onTrackInfoChanged()));
     connect(m_core, SIGNAL(finished()), SLOT(onFinised()));
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("TrackChange");
     m_newTrackCommand = settings.value("new_track_command").toString();
     m_endOfTrackCommand = settings.value("end_of_track_command").toString();

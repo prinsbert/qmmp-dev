@@ -31,7 +31,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose, true);
     ui.feedSlider->setRange(BS2B_MINFEED, BS2B_MAXFEED);
     ui.freqSlider->setRange(BS2B_MINFCUT, BS2B_MAXFCUT);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_level = settings.value("bs2b/level", BS2B_DEFAULT_CLEVEL).toUInt();
     ui.feedSlider->setValue(m_level >> 16);
     ui.freqSlider->setValue(m_level & 0xffff);
@@ -43,7 +43,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("bs2b/level", ui.feedSlider->value() << 16 | ui.freqSlider->value());
     QDialog::accept();
 }

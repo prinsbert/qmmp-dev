@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -41,15 +41,16 @@ int main(int argc, char *argv[])
 #endif
     QApplication a (argc, argv );
     a.setApplicationName("qmmp");
+    a.setOrganizationName("qmmp");
     QIcon icon;
-    icon.addFile(":/16x16/qmmp-1.png");
-    icon.addFile(":/32x32/qmmp-1.png");
-    icon.addFile(":/48x48/qmmp-1.png");
-    icon.addFile(":/56x56/qmmp-1.png");
-    icon.addFile(":/64x64/qmmp-1.png");
-    icon.addFile(":/128x128/qmmp-1.png");
-    icon.addFile(":/256x256/qmmp-1.png");
-    icon.addFile(":/scalable/qmmp-1.svgz");
+    icon.addFile(":/16x16/qmmp.png");
+    icon.addFile(":/32x32/qmmp.png");
+    icon.addFile(":/48x48/qmmp.png");
+    icon.addFile(":/56x56/qmmp.png");
+    icon.addFile(":/64x64/qmmp.png");
+    icon.addFile(":/128x128/qmmp.png");
+    icon.addFile(":/256x256/qmmp.png");
+    icon.addFile(":/scalable/qmmp.svgz");
     a.setWindowIcon(icon);
 #ifdef Q_OS_WIN
     if(Qmmp::isPortable())
@@ -61,7 +62,7 @@ int main(int argc, char *argv[])
         a.installTranslator(&translator);
 
     QTranslator qt_translator;
-    if(qt_translator.load(QLibraryInfo::location(QLibraryInfo::TranslationsPath) + "/qtbase_" + locale))
+    if(qt_translator.load(QLibraryInfo::path(QLibraryInfo::TranslationsPath) + "/qtbase_" + locale))
         a.installTranslator(&qt_translator);
 
     QMMPStarter starter;

@@ -36,14 +36,14 @@ CoverViewer::CoverViewer(QWidget *parent)
     connect(saveAsAction, SIGNAL(triggered()), SLOT(saveAs()));
     addAction(saveAsAction);
     setContextMenuPolicy(Qt::ActionsContextMenu);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_lastDir = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
     m_lastDir = settings.value("CoverEditor/last_dir", m_lastDir).toString();
 }
 
 CoverViewer::~CoverViewer()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("CoverEditor/last_dir", m_lastDir);
 }
 

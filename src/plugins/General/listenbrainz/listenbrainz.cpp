@@ -48,7 +48,7 @@ ListenBrainz::ListenBrainz(QObject *parent)
     m_ua = QString("qmmp-plugins/%1").arg(Qmmp::strVersion().toLower()).toLatin1();
     m_http = new QNetworkAccessManager(this);
     m_core = SoundCore::instance();
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_token = settings.value("ListenBrainz/user_token").toString().trimmed();
 
     connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(processResponse(QNetworkReply *)));
@@ -131,7 +131,7 @@ void ListenBrainz::updateMetaData()
     if(!info.value(Qmmp::TITLE).isEmpty() && !info.value(Qmmp::ARTIST).isEmpty())
     {
         m_song = TrackMetaData(info);
-        m_song.setTimeStamp(QDateTime::currentDateTime().toTime_t());
+        m_song.setTimeStamp(QDateTime::currentDateTime().toSecsSinceEpoch());
         sendNotification(m_song);
     }
     m_time->restart();

@@ -118,7 +118,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="232"/>
         <source>Tag</source>
-        <translation>Etiqueta</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="253"/>
@@ -142,7 +142,7 @@
 <context>
     <name>UltimateLyricsParser</name>
     <message>
-        <location filename="../ultimatelyricsparser.cpp" line="120"/>
+        <location filename="../ultimatelyricsparser.cpp" line="117"/>
         <source>%1 (line: %2)</source>
         <translation>%1 (liña: %2)</translation>
     </message>

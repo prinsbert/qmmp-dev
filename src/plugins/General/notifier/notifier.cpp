@@ -22,12 +22,12 @@
 #include <QFile>
 #include <QDir>
 #include <QSettings>
+#include <QGuiApplication>
 #define Visual VisualQmmp
 #include <qmmp/soundcore.h>
 #undef Visual
 
 #ifdef X11_FOUND
-#include <QX11Info>
 #include <X11/X.h>
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
@@ -41,7 +41,7 @@
 
 Notifier::Notifier(QObject *parent) : QObject(parent)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Notifier");
     m_desktop = settings.value("song_notification", true).toBool();
     m_resumeNotification = settings.value("resume_notification", false).toBool();
@@ -174,14 +174,14 @@ void Notifier::removePsiTuneFiles()
 #ifdef X11_FOUND
 bool Notifier::hasFullscreenWindow() const
 {
-    if(!m_disableForFullScreen || !QX11Info::isPlatformX11())
+    if(!m_disableForFullScreen || !Notifier::isPlatformX11())
         return false;
     Atom type = None;
     int format = 0;
     unsigned long nitems = 0, bytes_after = 0;
     unsigned char *prop;
 
-    Display *display = QX11Info::display();
+    Display *display = Notifier::display();
 
     Atom filter = XInternAtom(display, "_NET_WM_STATE_FULLSCREEN", False);
     Atom net_wm_state = XInternAtom(display, "_NET_WM_STATE", False);
@@ -209,6 +209,22 @@ bool Notifier::hasFullscreenWindow() const
     }
     XFree(prop);
     return false;
+}
+
+Display *Notifier::display()
+{
+    if(!qApp)
+        return nullptr;
+    QNativeInterface::QX11Application *app = qApp->nativeInterface<QNativeInterface::QX11Application>();
+    if(!app)
+        return nullptr;
+
+    return app->display();
+}
+
+bool Notifier::isPlatformX11()
+{
+    return QGuiApplication::platformName() == QLatin1String("xcb");
 }
 #elif defined(Q_OS_WIN)
 bool Notifier::hasFullscreenWindow() const

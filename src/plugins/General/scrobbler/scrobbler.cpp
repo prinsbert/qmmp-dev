@@ -84,12 +84,12 @@ Scrobbler::Scrobbler(const QString &scrobblerUrl, const QString &name, QObject *
       m_http(new QNetworkAccessManager(this)),
       m_core(SoundCore::instance()),
       m_time(new QElapsedTimer()),
-      m_cache(new ListenCache(Qmmp::configDir() + "/scrobbler_" + name + ".cache")),
+      m_cache(new ListenCache(Qmmp::cacheDir() + "/scrobbler_" + name + ".cache")),
       m_scrobblerUrl(scrobblerUrl),
       m_name(name)
 {
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_session = settings.value("Scrobbler/"+name+"_session").toString();
 
     connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(processResponse(QNetworkReply *)));
@@ -173,7 +173,7 @@ void Scrobbler::updateMetaData()
     if(!info.value(Qmmp::TITLE).isEmpty() && !info.value(Qmmp::ARTIST).isEmpty())
     {
         m_song = SongInfo(info);
-        m_song.setTimeStamp(QDateTime::currentDateTime().toTime_t());
+        m_song.setTimeStamp(QDateTime::currentDateTime().toSecsSinceEpoch());
         sendNotification(m_song);
     }
     m_time->restart();

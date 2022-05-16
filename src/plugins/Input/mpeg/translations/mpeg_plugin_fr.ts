@@ -14,32 +14,32 @@
         <translation>Fichiers MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="412"/>
+        <location filename="../decodermpegfactory.cpp" line="411"/>
         <source>About MPEG Audio Plugin</source>
         <translation>À propos du greffon audio MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="413"/>
+        <location filename="../decodermpegfactory.cpp" line="412"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation>MPEG 1.0/2.0/2.5 couche 1/2/3 décodeur audio</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="414"/>
+        <location filename="../decodermpegfactory.cpp" line="413"/>
         <source>Compiled against:</source>
         <translation>Compilé contre&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="423"/>
+        <location filename="../decodermpegfactory.cpp" line="422"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API version: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="427"/>
+        <location filename="../decodermpegfactory.cpp" line="426"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="428"/>
+        <location filename="../decodermpegfactory.cpp" line="427"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Code source basé sur les projets mq3 et madplay</translation>
     </message>

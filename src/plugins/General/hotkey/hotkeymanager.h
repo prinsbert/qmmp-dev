@@ -66,6 +66,12 @@ public:
     static quint32 defaultKey(int act);
 };
 
+#ifdef QMMP_WS_X11
+typedef struct _XDisplay Display;
+struct xcb_screen_t;
+struct xcb_connection_t;
+#endif
+
 class HotkeyManager : public QObject, public QAbstractNativeEventFilter
 {
     Q_OBJECT
@@ -77,9 +83,17 @@ public:
     static const QString getKeyString(quint32 key, quint32 modifiers);
     static QList<long> ignModifiersList();
     static quint32 keycodeToKeysym(quint32 keycode);
+#ifdef QMMP_WS_X11
+    static Display* display();
+    static bool isPlatformX11();
+    static quint32 appRootWindow();
+#endif
 
 private:
-    bool nativeEventFilter(const QByteArray &eventType, void *message, long *result) override;
+#ifdef QMMP_WS_X11
+    static xcb_screen_t *screenOfDisplay(xcb_connection_t *conn, int screen);
+#endif
+    bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) override;
     QList <Hotkey *> m_grabbedKeys;
 };
 

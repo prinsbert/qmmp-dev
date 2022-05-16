@@ -121,7 +121,7 @@ void MainVisual::mousePressEvent (QMouseEvent *e)
 {
     if (e->button() == Qt::RightButton)
     {
-        m_menu->exec(e->globalPos());
+        m_menu->exec(e->globalPosition().toPoint());
         return;
     }
 
@@ -184,7 +184,7 @@ void MainVisual::drawBackGround()
 
 void MainVisual::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     QAction *act = m_peaksFalloffGroup->checkedAction ();
     settings.setValue("vis_peaks_falloff", act ? act->data().toDouble() : 0.2);
@@ -296,7 +296,7 @@ void MainVisual::createMenu()
 
 void MainVisual::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     QString vis_name = settings.value("vis_type","Analyzer").toString();
     if(!m_update)
@@ -372,7 +372,7 @@ Analyzer::Analyzer()
     m_skin = Skin::instance();
     m_size = QSize(76*m_skin->ratio(), 16*m_skin->ratio());
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     m_peaks_falloff = settings.value("vis_peaks_falloff", 0.2).toDouble();
     m_analyzer_falloff = settings.value("vis_analyzer_falloff", 2.2).toDouble();

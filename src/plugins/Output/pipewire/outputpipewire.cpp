@@ -444,7 +444,7 @@ void OutputPipeWire::onRegistryEventGlobal(void *data, uint32_t id, uint32_t per
 //volume control
 VolumePipeWire::VolumePipeWire()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_volume.left = settings.value("OutputPipeWire/left_volume", 100).toInt();
     m_volume.right = settings.value("OutputPipeWire/right_volume", 100).toInt();
     OutputPipeWire::volumeControl = this;
@@ -452,7 +452,7 @@ VolumePipeWire::VolumePipeWire()
 
 VolumePipeWire::~VolumePipeWire()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("OutputPipeWire/left_volume", m_volume.left);
     settings.setValue("OutputPipeWire/right_volume", m_volume.right);
     OutputPipeWire::volumeControl = nullptr;

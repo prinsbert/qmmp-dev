@@ -23,7 +23,6 @@
 #include <QtGlobal>
 #ifdef QMMP_WS_X11
 #include <QSettings>
-#include <QX11Info>
 #include <QtDebug>
 #include <QEvent>
 #include <QKeyEvent>
@@ -78,15 +77,15 @@ quint32 Hotkey::defaultKey(int act)
 
 HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 {
-    if(!QX11Info::isPlatformX11())
+    if(!HotkeyManager::isPlatformX11())
     {
         qWarning("HotkeyManager: X11 not found. Plugin disabled");
         return;
     }
 
     QCoreApplication::instance()->installEventFilter(this);
-    WId rootWindow = DefaultRootWindow(QX11Info::display());
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat); //load settings
+    WId rootWindow = DefaultRootWindow(HotkeyManager::display());
+    QSettings settings; //load settings
     settings.beginGroup("Hotkey");
     for (int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
     {
@@ -100,11 +99,11 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
                 Hotkey *hotkey = new Hotkey;
                 hotkey->action = i;
                 hotkey->key = key;
-                hotkey->code = XKeysymToKeycode(QX11Info::display(), hotkey->key);
+                hotkey->code = XKeysymToKeycode(HotkeyManager::display(), hotkey->key);
                 if(!hotkey->code)
                     continue;
 
-                XGrabKey(QX11Info::display(),  hotkey->code, mod | mask_mod, rootWindow, True,
+                XGrabKey(HotkeyManager::display(),  hotkey->code, mod | mask_mod, rootWindow, True,
                          GrabModeAsync, GrabModeAsync);
                 hotkey->mod = mod | mask_mod;
                 m_grabbedKeys << hotkey;
@@ -112,7 +111,7 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
         }
     }
     settings.endGroup();
-    XSync(QX11Info::display(), False);
+    XSync(HotkeyManager::display(), False);
     qApp->installNativeEventFilter(this);
 }
 
@@ -123,7 +122,7 @@ HotkeyManager::~HotkeyManager()
     {
         Hotkey *key = m_grabbedKeys.takeFirst ();
         if(key->code)
-            XUngrabKey(QX11Info::display(), key->code, key->mod, QX11Info::appRootWindow());
+            XUngrabKey(HotkeyManager::display(), key->code, key->mod, HotkeyManager::appRootWindow());
         delete key;
     }
 }
@@ -142,7 +141,7 @@ const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
     return keyStr;
 }
 
-bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message, long *result)
+bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
 {
     Q_UNUSED(eventType);
     Q_UNUSED(result);
@@ -219,7 +218,51 @@ QList<long> HotkeyManager::ignModifiersList()
 
 quint32 HotkeyManager::keycodeToKeysym(quint32 keycode)
 {
-    return XkbKeycodeToKeysym(QX11Info::display(), keycode, 0, 0);
+    return XkbKeycodeToKeysym(HotkeyManager::display(), keycode, 0, 0);
+}
+
+Display *HotkeyManager::display()
+{
+    if(!qApp)
+        return nullptr;
+    QNativeInterface::QX11Application *app = qApp->nativeInterface<QNativeInterface::QX11Application>();
+    if(!app)
+        return nullptr;
+
+    return app->display();
+}
+
+bool HotkeyManager::isPlatformX11()
+{
+    return QGuiApplication::platformName() == QLatin1String("xcb");
+}
+
+quint32 HotkeyManager::appRootWindow()
+{
+    if(!qApp)
+        return 0;
+    QNativeInterface::QX11Application *app = qApp->nativeInterface<QNativeInterface::QX11Application>();
+    if(!app)
+        return 0;
+
+    xcb_connection_t *conn = app->connection();
+
+    if(!conn)
+        return 0;
+
+    xcb_screen_t *scr = HotkeyManager::screenOfDisplay(conn, 0);
+
+    return scr ? scr->root : 0;
+}
+
+xcb_screen_t *HotkeyManager::screenOfDisplay(xcb_connection_t *conn, int screen)
+{
+    xcb_screen_iterator_t iter = xcb_setup_roots_iterator(xcb_get_setup(conn));
+    for (; iter.rem; --screen, xcb_screen_next (&iter))
+        if (screen == 0)
+            return iter.data;
+
+    return nullptr;
 }
 
 #include "moc_hotkeymanager.cpp"

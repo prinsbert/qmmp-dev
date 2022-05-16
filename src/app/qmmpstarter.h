@@ -73,7 +73,7 @@ private:
     void printVersion();
     void printUserInterfaces();
     void startPlayer();
-    void createInitialConfig();
+    void createPaths();
 
 private:
     MediaPlayer *m_player = nullptr;

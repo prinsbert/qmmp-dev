@@ -213,12 +213,12 @@ void QSUIVisualization::updateCover()
 void QSUIVisualization::mousePressEvent (QMouseEvent *e)
 {
     if (e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPos());
+        m_menu->exec(e->globalPosition().toPoint());
 }
 
 void QSUIVisualization::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     //general settings
     m_show_cover = settings.value("vis_show_cover", true).toBool();
@@ -284,7 +284,7 @@ void QSUIVisualization::readSettings()
 
 void QSUIVisualization::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
 
     QAction *act = m_fpsGroup->checkedAction ();
@@ -387,7 +387,7 @@ void QSUiScope::clear()
 
 void QSUiScope::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_color1.setNamedColor(settings.value("vis_color1", "#BECBFF").toString());
     m_color2.setNamedColor(settings.value("vis_color2", "#BECBFF").toString());
@@ -518,7 +518,7 @@ void QSUiAnalyzer::clear()
 
 void QSUiAnalyzer::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_color1.setNamedColor(settings.value("vis_color1", "#BECBFF").toString());
     m_color2.setNamedColor(settings.value("vis_color2", "#BECBFF").toString());

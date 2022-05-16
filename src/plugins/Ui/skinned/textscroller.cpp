@@ -35,9 +35,6 @@
 #include "actionmanager.h"
 #include "textscroller.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
-#define horizontalAdvance width
-#endif
 
 #define SCROLL_SEP "   *** "
 #define TITLE_FORMAT "%p%if(%p&%t, - ,)%t%if(%p,,%if(%t,,%f))%if(%l, - %l,)"
@@ -69,7 +66,7 @@ TextScroller::TextScroller (QWidget *parent) : QWidget (parent),
 
 TextScroller::~TextScroller()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Skinned/autoscroll", m_scrollAction->isChecked());
     settings.setValue("Skinned/scroller_transparency", m_transparencyAction->isChecked());
     if(m_metrics)
@@ -107,7 +104,7 @@ void TextScroller::updateSkin()
 {
     setCursor(m_skin->getCursor(Skin::CUR_SONGNAME));
     m_color = m_skin->getMainColor(Skin::MW_FOREGROUND);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_bitmap = settings.value("Skinned/bitmap_font", false).toBool();
     m_ratio = m_skin->ratio();
     QString fontname = settings.value("Skinned/mw_font", QApplication::font().toString()).toString();
@@ -174,11 +171,11 @@ void TextScroller::paintEvent (QPaintEvent *)
 void TextScroller::mousePressEvent (QMouseEvent *e)
 {
     if (e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPos());
+        m_menu->exec(e->globalPosition().toPoint());
     else if (e->button() == Qt::LeftButton && m_scroll)
     {
         m_timer->stop();
-        m_press_pos = e->x() - m_x1;
+        m_press_pos = e->position().x() - m_x1;
         m_pressed = true;
     }
     else
@@ -188,7 +185,7 @@ void TextScroller::mousePressEvent (QMouseEvent *e)
 void TextScroller::mouseReleaseEvent (QMouseEvent *e)
 {
    if(e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPos());
+        m_menu->exec(e->globalPosition().toPoint());
     else if (e->button() == Qt::LeftButton && m_scroll)
         m_timer->start();
     else
@@ -201,7 +198,7 @@ void TextScroller::mouseMoveEvent (QMouseEvent *e)
     if (m_pressed)
     {
         int bound = m_pixmap.width();
-        m_x1 = (e->x() - m_press_pos) % bound;
+        m_x1 = (qRound(e->position().x()) - m_press_pos) % bound;
         if (m_x1 > 0)
             m_x1 -= bound;
         m_x2 = m_x1 + m_pixmap.width();

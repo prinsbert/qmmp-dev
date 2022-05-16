@@ -26,7 +26,7 @@
 SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 {
     m_ui.setupUi(this);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Analyzer");
     m_ui.colorWidget1->setColor(settings.value("color1", "Green").toString());
     m_ui.colorWidget2->setColor(settings.value("color2", "Yellow").toString());
@@ -45,7 +45,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Analyzer");
     settings.setValue("color1", m_ui.colorWidget1->colorName());
     settings.setValue("color2", m_ui.colorWidget2->colorName());

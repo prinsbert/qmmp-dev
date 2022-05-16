@@ -34,67 +34,67 @@
         <translation>許可協定</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="71"/>
+        <location filename="../aboutdialog.cpp" line="70"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>基於 Qt 的多媒體播放器 (Qmmp)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
+        <location filename="../aboutdialog.cpp" line="74"/>
         <source>Version: %1</source>
         <translation>版本號: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="76"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>使用 Qt版本 %1 (編繹使用 Qt版本 %2)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="79"/>
+        <location filename="../aboutdialog.cpp" line="78"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(c) %1-%2 Qmmp 研發團隊</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="84"/>
+        <location filename="../aboutdialog.cpp" line="83"/>
         <source>Transports:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="92"/>
         <source>Decoders:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="104"/>
+        <location filename="../aboutdialog.cpp" line="103"/>
         <source>Engines:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="115"/>
+        <location filename="../aboutdialog.cpp" line="114"/>
         <source>Effects:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="153"/>
+        <location filename="../aboutdialog.cpp" line="152"/>
         <source>File dialogs:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="165"/>
+        <location filename="../aboutdialog.cpp" line="164"/>
         <source>User interfaces:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="142"/>
+        <location filename="../aboutdialog.cpp" line="141"/>
         <source>Output plugins:</source>
         <translation>匯出插件</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="124"/>
+        <location filename="../aboutdialog.cpp" line="123"/>
         <source>Visual plugins:</source>
         <translation>可視化插件</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="133"/>
+        <location filename="../aboutdialog.cpp" line="132"/>
         <source>General plugins:</source>
         <translation>常規插件：</translation>
     </message>
@@ -107,12 +107,12 @@
         <translation>輸入要加入的網址</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="46"/>
+        <location filename="../forms/addurldialog.ui" line="55"/>
         <source>&amp;Add</source>
         <translation>(&amp;A)加入</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="53"/>
+        <location filename="../forms/addurldialog.ui" line="62"/>
         <source>&amp;Cancel</source>
         <translation>(&amp;C)取消</translation>
     </message>
@@ -1047,8 +1047,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="122"/>
-        <location filename="../jumptotrackdialog.cpp" line="153"/>
+        <location filename="../jumptotrackdialog.cpp" line="118"/>
+        <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Queue</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1058,18 +1058,18 @@
         <translation>跳至</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="98"/>
+        <location filename="../jumptotrackdialog.cpp" line="94"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="99"/>
+        <location filename="../jumptotrackdialog.cpp" line="95"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="120"/>
-        <location filename="../jumptotrackdialog.cpp" line="151"/>
+        <location filename="../jumptotrackdialog.cpp" line="116"/>
+        <location filename="../jumptotrackdialog.cpp" line="147"/>
         <source>Unqueue</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1367,45 +1367,45 @@
 <context>
     <name>UiHelper</name>
     <message>
-        <location filename="../uihelper.cpp" line="138"/>
-        <location filename="../uihelper.cpp" line="150"/>
+        <location filename="../uihelper.cpp" line="136"/>
+        <location filename="../uihelper.cpp" line="148"/>
         <source>All Supported Bitstreams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="144"/>
+        <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="156"/>
+        <location filename="../uihelper.cpp" line="154"/>
         <source>Select one or more files to play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="164"/>
+        <location filename="../uihelper.cpp" line="162"/>
         <source>Choose a directory</source>
         <translation>選取一個目錄</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="180"/>
-        <location filename="../uihelper.cpp" line="206"/>
+        <location filename="../uihelper.cpp" line="178"/>
+        <location filename="../uihelper.cpp" line="204"/>
         <source>Playlist Files</source>
         <translation>播放清單檔案</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="182"/>
+        <location filename="../uihelper.cpp" line="180"/>
         <source>Open Playlist</source>
         <translation>開啟播放清單</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="209"/>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="207"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>Save Playlist</source>
         <translation>儲存播放清單</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation type="unfinished"></translation>
@@ -1414,37 +1414,37 @@ Do you want to replace it?</source>
 <context>
     <name>WinFileAssocPage</name>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="17"/>
+        <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="49"/>
+        <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Select All</source>
         <translation>全選</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="116"/>
+        <location filename="../winfileassocpage.cpp" line="114"/>
         <source>Warning</source>
         <translation>注意</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="117"/>
+        <location filename="../winfileassocpage.cpp" line="115"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="124"/>
+        <location filename="../winfileassocpage.cpp" line="122"/>
         <source>Check all file types in the list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="125"/>
+        <location filename="../winfileassocpage.cpp" line="123"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="129"/>
+        <location filename="../winfileassocpage.cpp" line="127"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
         <translation>&lt;b&gt;注意:&lt;/b&gt; 回復功能在 Windows Vista/7. 上無法運作</translation>
     </message>

@@ -49,7 +49,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_ui.tableWidget->setItem(11,0, new QTableWidgetItem(tr("Jump to track")));
     m_ui.tableWidget->setItem(12,0, new QTableWidgetItem(tr("Mute")));
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Hotkey");
     for (int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
     {
@@ -73,7 +73,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Hotkey");
     for(const Hotkey *k : qAsConst(m_hotkeys))
     {

@@ -463,3 +463,27 @@ source_lang = en
 source_file = src/qmmpui/txt/thanks.txt
 type = TXT
 
+[qmmp.qmmp-desktop]
+file_filter = src/app/desktop-translations/qmmp_<lang>.desktop.in
+source_lang = en
+source_file = src/app/qmmp.desktop
+type = DESKTOP
+
+[qmmp.qmmp-dir-desktop]
+file_filter = src/app/desktop-translations/qmmp-dir_<lang>.desktop.in
+source_lang = en
+source_file = src/app/qmmp-dir.desktop
+type = DESKTOP
+
+[qmmp.qmmp-enqueue-desktop]
+file_filter = src/app/desktop-translations/qmmp-enqueue_<lang>.desktop.in
+source_lang = en
+source_file = src/app/qmmp-enqueue.desktop
+type = DESKTOP
+
+[qmmp.qmmp-opencda-desktop]
+file_filter = src/app/desktop-translations/qmmp-opencda_<lang>.desktop.in
+source_lang = en
+source_file = src/app/qmmp-opencda.desktop
+type = DESKTOP
+

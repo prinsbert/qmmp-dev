@@ -55,7 +55,7 @@ TitleBar::TitleBar(TimeIndicatorModel *model, QWidget *parent)
     connect(m_close, SIGNAL(clicked()), m_mw, SLOT(close()));
     setActive(false);
     connect(m_skin, SIGNAL(skinChanged()), this, SLOT(updateSkin()));
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     if (settings.value("Skinned/disp_shaded", false).toBool())
         shade();
     m_align = true;
@@ -66,7 +66,7 @@ TitleBar::TitleBar(TimeIndicatorModel *model, QWidget *parent)
 
 TitleBar::~TitleBar()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Skinned/disp_shaded", m_shaded);
 }
 
@@ -97,7 +97,7 @@ void TitleBar::mousePressEvent(QMouseEvent* event)
         Dock::instance()->updateDock();
         break;
     case Qt::RightButton:
-        m_mw->menu()->exec(event->globalPos());
+        m_mw->menu()->exec(event->globalPosition().toPoint());
     }
 }
 
@@ -109,7 +109,7 @@ void TitleBar::mouseMoveEvent(QMouseEvent* event)
 {
     if (m_pos.x() < width() - m_skin->ratio() * 37)
     {
-        QPoint npos = (event->globalPos()-m_pos);
+        QPoint npos = (event->globalPosition().toPoint() - m_pos);
         Dock::instance()->move(m_mw, npos);
     }
 }

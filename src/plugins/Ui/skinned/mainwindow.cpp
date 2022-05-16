@@ -247,7 +247,7 @@ void MainWindow::changeEvent (QEvent * event)
 
 void MainWindow::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     m_titleFormatter.setPattern(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
 
@@ -340,7 +340,7 @@ void MainWindow::readSettings()
 
 void MainWindow::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     //geometry
     settings.setValue("mw_pos", this->pos());

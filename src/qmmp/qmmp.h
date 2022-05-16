@@ -23,8 +23,8 @@
 #include <QString>
 #include "qmmp_export.h"
 
-#define QMMP_VERSION_MAJOR 1
-#define QMMP_VERSION_MINOR 6
+#define QMMP_VERSION_MAJOR 2
+#define QMMP_VERSION_MINOR 1
 #define QMMP_VERSION_PATCH 0
 #define QMMP_VERSION_STABLE 0
 
@@ -37,15 +37,6 @@
 #define QStringToFileName(s) TagLib::FileName(reinterpret_cast<const wchar_t *>(s.utf16()))
 #else
 #define QStringToFileName(s) s.toLocal8Bit().constData()
-#endif
-
-#if (QT_VERSION < QT_VERSION_CHECK(5, 7, 0))
-// this adds const to non-const objects (like std::as_const)
-template <typename T>
-Q_DECL_CONSTEXPR typename std::add_const<T>::type &qAsConst(T &t) noexcept { return t; }
-// prevent rvalue arguments:
-template <typename T>
-void qAsConst(const T &&) = delete;
 #endif
 
 
@@ -147,11 +138,6 @@ public:
         CHAN_SIDE_RIGHT   = 0x80,   /*!< Side right channel */
         CHAN_LFE          = 0x100,  /*!< Low-frequency effects channel */
     };
-
-    /*!
-     * Returns the configuration file name, including the path.
-     */
-    static QString configFile();
     /*!
      * Returns the configuration directory path.
      */
@@ -160,6 +146,10 @@ public:
      * Overrides default configuration directory path.
      */
     static void setConfigDir(const QString &path);
+    /*!
+     * Returns the cache directory path.
+     */
+    static QString cacheDir();
     /*!
      * Returns %Qmmp library version.
      */
@@ -190,16 +180,12 @@ public:
      * Returns a directory location where persistent application data can be stored.
      */
     static QString dataPath();
+    static QString userDataPath();
 #ifdef Q_OS_WIN
     /*!
      * Returns \b true if portable mode is enabled. Otherwise returns \b false.
      */
     static bool isPortable();
-#endif
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 12, 0)
-    static QString wildcardToRegularExpression(const QString &pattern);
-    static QString anchoredPattern(const QString &expression);
 #endif
 
 private:

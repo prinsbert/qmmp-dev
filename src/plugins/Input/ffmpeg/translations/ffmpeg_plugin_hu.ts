@@ -9,27 +9,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="152"/>
+        <location filename="../decoderffmpegfactory.cpp" line="148"/>
         <source>FFmpeg Formats</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="343"/>
+        <location filename="../decoderffmpegfactory.cpp" line="339"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="344"/>
+        <location filename="../decoderffmpegfactory.cpp" line="340"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="345"/>
+        <location filename="../decoderffmpegfactory.cpp" line="341"/>
         <source>Compiled against:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="358"/>
+        <location filename="../decoderffmpegfactory.cpp" line="354"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

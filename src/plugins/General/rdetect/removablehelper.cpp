@@ -35,7 +35,7 @@ RemovableHelper::RemovableHelper(QObject *parent): QObject(parent)
     m_actions = new QActionGroup(this);
     connect(m_actions,SIGNAL(triggered(QAction *)), SLOT(processAction(QAction *)));
     //load settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("rdetect");
     m_detectCDA = settings.value("cda", true).toBool();
     m_detectRemovable = settings.value("removable", true).toBool();
@@ -57,7 +57,7 @@ RemovableHelper::~RemovableHelper()
     qApp->removeNativeEventFilter(this);
 }
 
-bool RemovableHelper::nativeEventFilter(const QByteArray &eventType, void *message, long *result)
+bool RemovableHelper::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
 {
     Q_UNUSED(result);
 

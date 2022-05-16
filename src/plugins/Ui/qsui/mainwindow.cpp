@@ -78,7 +78,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     connect(m_uiHelper, SIGNAL(toggleVisibilityCalled()), SLOT(toggleVisibility()));
     connect(m_uiHelper, SIGNAL(showMainWindowCalled()), SLOT(showAndRaise()));
     m_visMenu = new VisualMenu(this); //visual menu
-    m_ui.actionVisualization->setMenu(m_visMenu);
+    m_ui.menuTools->addMenu(m_visMenu);
+    m_ui.menuTools->addSeparator();
     m_pl_menu = new QMenu(this); //playlist menu
     new ActionManager(this); //action manager
     createWidgets(); //widgets
@@ -337,9 +338,9 @@ void MainWindow::showAppMenu()
 
     QPoint menuPos = pos();
 
-    for(QWidget *w : action->associatedWidgets())
+    for(QObject *o : action->associatedObjects())
     {
-        QToolButton *toolButton = qobject_cast<QToolButton *>(w);
+        QToolButton *toolButton = qobject_cast<QToolButton *>(o);
         if(toolButton && toolButton->parentWidget())
         {
             menuPos = toolButton->parentWidget()->mapToGlobal(toolButton->geometry().bottomLeft());
@@ -690,7 +691,7 @@ void MainWindow::createActions()
 
 void MainWindow::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_titleFormatter.setPattern(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
 
@@ -847,7 +848,7 @@ void MainWindow::showTabMenu(const QPoint &pos)
 
 void MainWindow::writeSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Simple/mw_geometry", saveGeometry());
     settings.setValue("Simple/mw_state", saveState());
     settings.setValue("Simple/always_on_top", ACTION(ActionManager::WM_ALLWAYS_ON_TOP)->isChecked());

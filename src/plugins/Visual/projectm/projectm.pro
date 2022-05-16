@@ -1,5 +1,7 @@
 include(../../plugins.pri)
 
+QT += openglwidgets
+
 TARGET = $$PLUGINS_PREFIX/Visual/projectm
 
 HEADERS += projectmwidget.h \
@@ -32,5 +34,5 @@ unix {
 }
 
 win32 {
-    LIBS += -lprojectM.dll
+    LIBS += -lprojectM.dll -lopengl32
 }

@@ -99,7 +99,7 @@ void TimeIndicatorModel::toggleElapsed()
 
 void TimeIndicatorModel::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     m_elapsed  = settings.value("disp_elapsed",true).toBool();
     settings.endGroup();
@@ -107,7 +107,7 @@ void TimeIndicatorModel::readSettings()
 
 void TimeIndicatorModel::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     settings.setValue("disp_elapsed",m_elapsed);
     settings.endGroup();

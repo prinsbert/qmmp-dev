@@ -24,6 +24,7 @@
 #include <QLocale>
 #include <QFile>
 #include <QByteArray>
+#include <QStandardPaths>
 
 #define STR_HELPER(x) #x
 #define STR(x) STR_HELPER(x)
@@ -36,11 +37,6 @@ QString Qmmp::m_langID;
 #ifdef Q_OS_WIN
 QString Qmmp::m_appDir;
 #endif
-
-QString Qmmp::configFile()
-{
-    return configDir() + "/qmmprc";
-}
 
 QString Qmmp::configDir()
 {
@@ -55,13 +51,30 @@ QString Qmmp::configDir()
     else
         return m_configDir;
 #else
-    return m_configDir.isEmpty() ? QDir::homePath() +"/.qmmp" : m_configDir;
+    if(m_configDir.isEmpty())
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation))
+                .arg(QCoreApplication::organizationName());
+    else
+        return m_configDir;
 #endif
 }
 
 void Qmmp::setConfigDir(const QString &path)
 {
     m_configDir = path;
+}
+
+QString Qmmp::cacheDir()
+{
+#ifdef Q_OS_WIN
+    return configDir();
+#else
+    if(m_configDir.isEmpty())
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation))
+                .arg(QCoreApplication::organizationName());
+    else
+        return m_configDir;
+#endif
 }
 
 QString Qmmp::strVersion()
@@ -132,7 +145,7 @@ QString Qmmp::systemLanguageID()
 
 QString Qmmp::uiLanguageID()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QString langID = settings.value("General/locale", "auto").toString();
     langID = langID.isEmpty() ? "auto" : langID;
     return langID;
@@ -140,7 +153,7 @@ QString Qmmp::uiLanguageID()
 
 void Qmmp::setUiLanguageID(const QString &code)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("General/locale", code);
     m_langID.clear();
 }
@@ -154,102 +167,24 @@ QString Qmmp::dataPath()
 #endif
 }
 
+QString Qmmp::userDataPath()
+{
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+    return configDir();
+#else
+    if(m_configDir.isEmpty())
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation))
+                .arg(QCoreApplication::organizationName());
+    else
+        return m_configDir;
+#endif
+}
+
 #ifdef Q_OS_WIN
 bool Qmmp::isPortable()
 {
     if(m_appDir.isEmpty())
         m_appDir = QCoreApplication::applicationDirPath();
     return QFile::exists(m_appDir + "/qmmp_portable.txt");
-}
-#endif
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 12, 0)
-QString Qmmp::wildcardToRegularExpression(const QString &pattern)
-{
-    const int wclen = pattern.length();
-    QString rx;
-    rx.reserve(wclen + wclen / 16);
-    int i = 0;
-    const QChar *wc = pattern.data();
-
-#ifdef Q_OS_WIN
-    const QLatin1Char nativePathSeparator('\\');
-    const QLatin1String starEscape("[^/\\\\]*");
-    const QLatin1String questionMarkEscape("[^/\\\\]");
-#else
-    const QLatin1Char nativePathSeparator('/');
-    const QLatin1String starEscape("[^/]*");
-    const QLatin1String questionMarkEscape("[^/]");
-#endif
-
-    while (i < wclen) {
-        const QChar c = wc[i++];
-        switch (c.unicode())
-        {
-        case '*':
-            rx += starEscape;
-            break;
-        case '?':
-            rx += questionMarkEscape;
-            break;
-        case '\\':
-#ifdef Q_OS_WIN
-        case '/':
-            rx += QLatin1String("[/\\\\]");
-            break;
-#endif
-        case '$':
-        case '(':
-        case ')':
-        case '+':
-        case '.':
-        case '^':
-        case '{':
-        case '|':
-        case '}':
-            rx += QLatin1Char('\\');
-            rx += c;
-            break;
-        case '[':
-            rx += c;
-            // Support for the [!abc] or [!a-c] syntax
-            if (i < wclen) {
-                if (wc[i] == QLatin1Char('!'))
-                {
-                    rx += QLatin1Char('^');
-                    ++i;
-                }
-
-                if (i < wclen && wc[i] == QLatin1Char(']'))
-                    rx += wc[i++];
-
-                while (i < wclen && wc[i] != QLatin1Char(']'))
-                {
-                    // The '/' appearing in a character class invalidates the
-                    // regular expression parsing. It also concerns '\\' on
-                    // Windows OS types.
-                    if (wc[i] == QLatin1Char('/') || wc[i] == nativePathSeparator)
-                        return rx;
-                    if (wc[i] == QLatin1Char('\\'))
-                        rx += QLatin1Char('\\');
-                    rx += wc[i++];
-                }
-            }
-            break;
-        default:
-            rx += c;
-            break;
-        }
-    }
-
-    return anchoredPattern(rx);
-}
-
-QString Qmmp::anchoredPattern(const QString &expression)
-{
-    return QString()
-            + QLatin1String("\\A(?:")
-            + expression
-            + QLatin1String(")\\z");
 }
 #endif

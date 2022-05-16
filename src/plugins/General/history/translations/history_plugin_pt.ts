@@ -176,17 +176,17 @@
         <translation>dd-MMM-yyyy</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="498"/>
+        <location filename="../historywindow.cpp" line="497"/>
         <source>Add to Playlist</source>
         <translation>Adicionar à lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="499"/>
+        <location filename="../historywindow.cpp" line="498"/>
         <source>&amp;View Track Details</source>
         <translation>&amp;Ver detalhes da faixa</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="501"/>
+        <location filename="../historywindow.cpp" line="500"/>
         <source>Remove from History</source>
         <translation>Remover do histórico</translation>
     </message>

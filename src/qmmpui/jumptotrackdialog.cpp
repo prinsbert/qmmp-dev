@@ -33,10 +33,6 @@
 #include "mediaplayer.h"
 #include "jumptotrackdialog_p.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
-#define horizontalAdvance width
-#endif
-
 class TrackItemDelegate : public QStyledItemDelegate
 {
 public:
@@ -213,11 +209,7 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
 ///TrackListModel
 TrackListModel::TrackListModel(PlayListModel *model, QObject *parent) : QAbstractListModel(parent), m_model(model)
 {
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
-#else
-    m_queue = QSet<PlayListTrack *>::fromList(m_model->queuedTracks());
-#endif
     connect(m_model, SIGNAL(listChanged(int)), SLOT(onListChanged(int)));
 }
 
@@ -265,21 +257,13 @@ void TrackListModel::onListChanged(int flags)
     if(flags & PlayListModel::STRUCTURE)
     {
         beginResetModel();
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
         m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
-#else
-        m_queue = QSet<PlayListTrack *>::fromList(m_model->queuedTracks());
-#endif
         endResetModel();
     }
     else if(flags & PlayListModel::QUEUE)
     {
         QSet<PlayListTrack *> changed = m_queue;
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
         m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
-#else
-        m_queue = QSet<PlayListTrack *>::fromList(m_model->queuedTracks());
-#endif
         changed.unite(m_queue);
 
         for(PlayListTrack *t : qAsConst(changed))

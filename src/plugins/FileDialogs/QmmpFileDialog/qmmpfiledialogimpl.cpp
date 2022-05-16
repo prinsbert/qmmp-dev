@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+*   Copyright (C) 2008-2022 by Ilya Kotov                                 *
 *   forkotov02@ya.ru                                                      *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -19,8 +19,6 @@
 ***************************************************************************/
 
 #include "qmmpfiledialogimpl.h"
-
-#include <QDirModel>
 #include <QApplication>
 #include <QFileInfo>
 #include <QStyle>
@@ -54,7 +52,7 @@ static QStringList qt_clean_filter_list(const QString &filter)
     QRegularExpressionMatch match = regexp.match(f);
     if (match.hasMatch())
         f = match.captured(2);
-    return f.split(QLatin1Char(' '), QString::SkipEmptyParts);
+    return f.split(QLatin1Char(' '), Qt::SkipEmptyParts);
 }
 
 QmmpFileDialogImpl::QmmpFileDialogImpl(QWidget * parent, Qt::WindowFlags f) : QDialog(parent,f)
@@ -82,7 +80,7 @@ QmmpFileDialogImpl::QmmpFileDialogImpl(QWidget * parent, Qt::WindowFlags f) : QD
             SIGNAL(selectionChanged (QItemSelection, QItemSelection)), SLOT(updateSelection ()));
     PathCompleter* completer = new PathCompleter (m_model, fileListView, this);
     fileNameLineEdit->setCompleter (completer);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     closeOnAddToolButton->setChecked(settings.value("QMMPFileDialog/close_on_add", false).toBool());
     restoreGeometry(settings.value("QMMPFileDialog/geometry").toByteArray());
     m_history = settings.value("QMMPFileDialog/history").toStringList();
@@ -127,10 +125,10 @@ QStringList QmmpFileDialogImpl::selectedFiles ()
 void QmmpFileDialogImpl::on_mountPointsListWidget_itemClicked(QListWidgetItem *item)
 {
     lookInComboBox->setEditText(item->data(Qt::UserRole).toString());
-    on_lookInComboBox_activated(item->data(Qt::UserRole).toString());
+    on_lookInComboBox_textActivated(item->data(Qt::UserRole).toString());
 }
 
-void QmmpFileDialogImpl::on_lookInComboBox_activated(const QString &path)
+void QmmpFileDialogImpl::on_lookInComboBox_textActivated(const QString &path)
 {
     if (QDir(path).exists ())
     {
@@ -353,7 +351,7 @@ void QmmpFileDialogImpl::on_fileTypeComboBox_activated(int index)
 
 void QmmpFileDialogImpl::hideEvent (QHideEvent *event)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("QMMPFileDialog/close_on_add", closeOnAddToolButton->isChecked());
     settings.setValue("QMMPFileDialog/geometry", saveGeometry());
     settings.setValue("QMMPFileDialog/history", m_history);
@@ -448,11 +446,7 @@ void QmmpFileDialogImpl::addFiles(const QStringList &list)
         bool contains = false;
         for(const QString &str : qt_clean_filter_list(fileTypeComboBox->currentText()))
         {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
             QRegularExpression regExp(QRegularExpression::wildcardToRegularExpression(str));
-#else
-            QRegularExpression regExp(Qmmp::wildcardToRegularExpression(str));
-#endif
             if (f_name.contains(regExp))
             {
                 contains = true;

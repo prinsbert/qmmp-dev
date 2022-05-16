@@ -17,7 +17,6 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#include <QTextCodec>
 #include <QSettings>
 #include <QDir>
 #include <qmmp/qmmp.h>
@@ -29,7 +28,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 {
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("cdaudio");
     m_ui.deviceLineEdit->setText(settings.value("device").toString());
     m_ui.deviceCheckBox->setChecked(!m_ui.deviceLineEdit->text().isEmpty());
@@ -50,7 +49,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("cdaudio");
     if(m_ui.deviceCheckBox->isChecked())
         settings.setValue("device", m_ui.deviceLineEdit->text());
@@ -75,7 +74,7 @@ void SettingsDialog::accept()
 
 void SettingsDialog::on_clearCacheButton_clicked()
 {
-    QDir dir(Qmmp::configDir());
+    QDir dir(Qmmp::cacheDir());
     dir.cd("cddbcache");
     const QStringList list = dir.entryList(QStringList() << "*", QDir::Files);
     for(const QString &name : qAsConst(list))

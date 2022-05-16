@@ -34,67 +34,67 @@
         <translation>Contratto di licenza</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="71"/>
+        <location filename="../aboutdialog.cpp" line="70"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>Qt-based Multimedia Player (Qmmp)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
+        <location filename="../aboutdialog.cpp" line="74"/>
         <source>Version: %1</source>
         <translation>Versione: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="76"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Utilizza Qt %1 (compilato con Qt %2)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="79"/>
+        <location filename="../aboutdialog.cpp" line="78"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(c) %1-%2 la squadra di sviluppo di Qmmp</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="84"/>
+        <location filename="../aboutdialog.cpp" line="83"/>
         <source>Transports:</source>
         <translation>Protocolli di trasporto:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="92"/>
         <source>Decoders:</source>
         <translation>Decodificatori:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="104"/>
+        <location filename="../aboutdialog.cpp" line="103"/>
         <source>Engines:</source>
         <translation>Meccanismi:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="115"/>
+        <location filename="../aboutdialog.cpp" line="114"/>
         <source>Effects:</source>
         <translation>Effetti:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="153"/>
+        <location filename="../aboutdialog.cpp" line="152"/>
         <source>File dialogs:</source>
         <translation>Finestre di dialogo dei file:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="165"/>
+        <location filename="../aboutdialog.cpp" line="164"/>
         <source>User interfaces:</source>
         <translation>Interfacce utente:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="142"/>
+        <location filename="../aboutdialog.cpp" line="141"/>
         <source>Output plugins:</source>
         <translation>Estensioni d&apos;uscita : </translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="124"/>
+        <location filename="../aboutdialog.cpp" line="123"/>
         <source>Visual plugins:</source>
         <translation>Estensioni di visualizzazione: </translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="133"/>
+        <location filename="../aboutdialog.cpp" line="132"/>
         <source>General plugins:</source>
         <translation>Estensioni generali: </translation>
     </message>
@@ -107,12 +107,12 @@
         <translation>Inserisci un URL da aggiungere</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="46"/>
+        <location filename="../forms/addurldialog.ui" line="55"/>
         <source>&amp;Add</source>
         <translation>&amp;Aggiungi</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="53"/>
+        <location filename="../forms/addurldialog.ui" line="62"/>
         <source>&amp;Cancel</source>
         <translation>Annu&amp;lla</translation>
     </message>
@@ -1047,8 +1047,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="122"/>
-        <location filename="../jumptotrackdialog.cpp" line="153"/>
+        <location filename="../jumptotrackdialog.cpp" line="118"/>
+        <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Queue</source>
         <translation>Accoda</translation>
     </message>
@@ -1058,18 +1058,18 @@
         <translation>Passa a</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="98"/>
+        <location filename="../jumptotrackdialog.cpp" line="94"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="99"/>
+        <location filename="../jumptotrackdialog.cpp" line="95"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="120"/>
-        <location filename="../jumptotrackdialog.cpp" line="151"/>
+        <location filename="../jumptotrackdialog.cpp" line="116"/>
+        <location filename="../jumptotrackdialog.cpp" line="147"/>
         <source>Unqueue</source>
         <translation>Rimuovi dalla coda</translation>
     </message>
@@ -1367,45 +1367,45 @@
 <context>
     <name>UiHelper</name>
     <message>
-        <location filename="../uihelper.cpp" line="138"/>
-        <location filename="../uihelper.cpp" line="150"/>
+        <location filename="../uihelper.cpp" line="136"/>
+        <location filename="../uihelper.cpp" line="148"/>
         <source>All Supported Bitstreams</source>
         <translation>Tutti i tipi di flusso supportati</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="144"/>
+        <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
         <translation>Seleziona uno o più file da aprire</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="156"/>
+        <location filename="../uihelper.cpp" line="154"/>
         <source>Select one or more files to play</source>
         <translation>Seleziona uno o più file da riprodurre</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="164"/>
+        <location filename="../uihelper.cpp" line="162"/>
         <source>Choose a directory</source>
         <translation>Scegli una cartella</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="180"/>
-        <location filename="../uihelper.cpp" line="206"/>
+        <location filename="../uihelper.cpp" line="178"/>
+        <location filename="../uihelper.cpp" line="204"/>
         <source>Playlist Files</source>
         <translation>File di scaletta</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="182"/>
+        <location filename="../uihelper.cpp" line="180"/>
         <source>Open Playlist</source>
         <translation>Apri scaletta</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="209"/>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="207"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>Save Playlist</source>
         <translation>Salva scaletta</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 esiste già.
@@ -1415,37 +1415,37 @@ Vuoi sostituirlo?</translation>
 <context>
     <name>WinFileAssocPage</name>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="17"/>
+        <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
         <translation>File multimediali gestiti da Qmmp:</translation>
     </message>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="49"/>
+        <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Select All</source>
         <translation>Seleziona tutti</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="116"/>
+        <location filename="../winfileassocpage.cpp" line="114"/>
         <source>Warning</source>
         <translation>Avviso</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="117"/>
+        <location filename="../winfileassocpage.cpp" line="115"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
         <translation>Non è stato possibile associare tutti i file. Verifica i tuoi permessi di sicurezza e riprova.</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="124"/>
+        <location filename="../winfileassocpage.cpp" line="122"/>
         <source>Check all file types in the list</source>
         <translation>Seleziona tutti i tipi di file nell&apos;elenco</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="125"/>
+        <location filename="../winfileassocpage.cpp" line="123"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
         <translation>Verifica le estensioni di file multimediali che vuoi far gestire a Qmmp. Facendo clic su Applica i file selezionati saranno associati a Qmmp. Deselezionando un tipo di file multimediale l&apos;associazione sarà ripristinata.</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="129"/>
+        <location filename="../winfileassocpage.cpp" line="127"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
         <translation>&lt;b&gt;Nota:&lt;/b&gt; Il ripristino non funziona su Windows Vista/7.</translation>
     </message>

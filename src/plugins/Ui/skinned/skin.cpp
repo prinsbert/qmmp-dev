@@ -42,14 +42,14 @@ Skin *Skin::m_instance = nullptr;
 Skin::Skin(QObject *parent) : QObject (parent)
 {
     m_instance = this;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QString path = settings.value("Skinned/skin_path").toString();
 #ifdef Q_OS_WIN
     if(Qmmp::isPortable())
         path.prepend(QApplication::applicationDirPath() + "/");
 #endif
     if (path.isEmpty() || !QDir(path).exists ())
-        path = ":/glare";
+        path = QStringLiteral(":/") + Skin::defaultSkinName();
     m_double_size = settings.value("Skinned/double_size", false).toBool();
     m_antialiasing = settings.value("Skinned/antialiasing", false).toBool();
     ACTION(ActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
@@ -57,7 +57,7 @@ Skin::Skin(QObject *parent) : QObject (parent)
     setSkin (QDir::cleanPath(path));
     /* skin directory */
     QDir skinDir(Qmmp::configDir());
-    skinDir.mkdir ("skins");
+    skinDir.mkdir("skins");
 }
 
 Skin::~Skin()
@@ -78,6 +78,11 @@ QPixmap Skin::getPixmap (const QString &name, QDir dir)
     if(!f.isEmpty())
         return QPixmap(f.first().filePath());
     return QPixmap();
+}
+
+QString Skin::defaultSkinName()
+{
+    return QStringLiteral("glare");
 }
 
 int Skin::ratio() const
@@ -187,7 +192,7 @@ const QRegion Skin::getRegion(uint r) const
 
 void Skin::setSkin (const QString& path)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_use_cursors = settings.value("Skinned/skin_cursors", false).toBool();
     m_double_size = ACTION(ActionManager::WM_DOUBLE_SIZE)->isChecked();
     m_antialiasing = ACTION(ActionManager::WM_ANTIALIASING)->isChecked();
@@ -751,13 +756,13 @@ void Skin::loadLetters(void)
     /* alphabet */
     for (uint i = 97; i < 123; i++)
     {
-        m_letters.insert(i, letters[0][i-97]);
+        m_letters.insert(QChar(i), letters[0][i-97]);
     }
 
     /* digits */
     for (uint i = 0; i <= 9; i++)
     {
-        m_letters.insert (i+48, letters[1][i]);
+        m_letters.insert (QChar(i + 48), letters[1][i]);
     }
 
     /* special characters */
@@ -785,9 +790,9 @@ void Skin::loadLetters(void)
     m_letters.insert('$',  letters[1][29]);
     m_letters.insert('#',  letters[1][30]);
 
-    m_letters.insert(229, letters[2][0]);
-    m_letters.insert(246, letters[2][1]);
-    m_letters.insert(228, letters[2][2]);
+    m_letters.insert(QChar(229), letters[2][0]);
+    m_letters.insert(QChar(246), letters[2][1]);
+    m_letters.insert(QChar(228), letters[2][2]);
     m_letters.insert('?', letters[2][3]);
     m_letters.insert('*', letters[2][4]);
     m_letters.insert(' ', letters[2][5]);
@@ -908,7 +913,7 @@ QRegion Skin::createRegion(const QString &path, const QString &group)
     settings.endGroup();
     QStringList numbers;
     for(const QString &str : qAsConst(value))
-        numbers << str.split(" ", QString::SkipEmptyParts);
+        numbers << str.split(" ", Qt::SkipEmptyParts);
 
     QList<QString>::const_iterator n = numbers.constBegin();
     int r = m_double_size ? 2 : 1;

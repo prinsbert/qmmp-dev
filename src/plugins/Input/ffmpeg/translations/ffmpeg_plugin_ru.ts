@@ -9,27 +9,27 @@
         <translation>Модуль FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="152"/>
+        <location filename="../decoderffmpegfactory.cpp" line="148"/>
         <source>FFmpeg Formats</source>
         <translation>Форматы FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="343"/>
+        <location filename="../decoderffmpegfactory.cpp" line="339"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>Об аудио-модуле FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="344"/>
+        <location filename="../decoderffmpegfactory.cpp" line="340"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Аудио-модуль FFmpeg для Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="345"/>
+        <location filename="../decoderffmpegfactory.cpp" line="341"/>
         <source>Compiled against:</source>
         <translation>Собрано с библиотеками:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="358"/>
+        <location filename="../decoderffmpegfactory.cpp" line="354"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>

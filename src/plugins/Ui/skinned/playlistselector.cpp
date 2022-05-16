@@ -34,10 +34,6 @@
 #include "skin.h"
 #include "playlistselector.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
-#define horizontalAdvance width
-#endif
-
 PlayListSelector::PlayListSelector(PlayListManager *manager, QWidget *parent) : QWidget(parent)
 {
     m_pl_manager = manager;
@@ -60,7 +56,7 @@ PlayListSelector::~PlayListSelector()
 
 void PlayListSelector::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     m_font.fromString(settings.value("pl_font", QApplication::font().toString()).toString());
     if (m_metrics)
@@ -246,10 +242,10 @@ void PlayListSelector::mousePressEvent (QMouseEvent *e)
     if(e->button() == Qt::RightButton)
     {
         update();
-        m_menu->exec(e->globalPos());
+        m_menu->exec(e->globalPosition().toPoint());
         return;
     }
-    else if(e->button() == Qt::MidButton && selected)
+    else if(e->button() == Qt::MiddleButton && selected)
     {
         m_pl_manager->removePlayList(m_pl_manager->selectedPlayList());
     }
@@ -294,7 +290,7 @@ void PlayListSelector::mouseReleaseEvent (QMouseEvent *e)
 
 void PlayListSelector::mouseDoubleClickEvent (QMouseEvent *e)
 {
-    if(e->button() == Qt::LeftButton && !(m_scrollable && (e->x() > width() - 40)))
+    if(e->button() == Qt::LeftButton && !(m_scrollable && (e->position().x() > width() - 40)))
         ACTION(ActionManager::PL_RENAME)->trigger();
     else
         QWidget::mouseDoubleClickEvent(e);

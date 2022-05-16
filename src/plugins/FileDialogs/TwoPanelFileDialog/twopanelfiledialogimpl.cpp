@@ -18,7 +18,6 @@
 *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
 ***************************************************************************/
 
-#include <QDirModel>
 #include <QApplication>
 #include <QFileInfo>
 #include <QStyle>
@@ -26,6 +25,7 @@
 #include <QMessageBox>
 #include <QHeaderView>
 #include <QRegularExpression>
+#include <QAbstractFileIconProvider>
 #include <qmmp/qmmp.h>
 #include "twopanelfiledialogimpl.h"
 
@@ -51,7 +51,7 @@ static QStringList qt_clean_filter_list(const QString &filter)
     QRegularExpressionMatch match = regexp.match(f);
     if (match.hasMatch())
         f = match.captured(2);
-    return f.split(QLatin1Char(' '), QString::SkipEmptyParts);
+    return f.split(QLatin1Char(' '), Qt::SkipEmptyParts);
 }
 
 TwoPanelFileDialogImpl::TwoPanelFileDialogImpl(QWidget * parent) : QDialog(parent)
@@ -73,7 +73,7 @@ TwoPanelFileDialogImpl::TwoPanelFileDialogImpl(QWidget * parent) : QDialog(paren
 
     connect(m_ui.fileListWidget, SIGNAL(itemSelectionChanged()), SLOT(updateFileSelection ()));
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     restoreGeometry(settings.value("TwoPanelFileDialog/geometry").toByteArray());
     m_history = settings.value("TwoPanelFileDialog/history").toStringList();
     m_ui.lookInComboBox->addItems(m_history);
@@ -409,7 +409,7 @@ void TwoPanelFileDialogImpl::updateFileList(const QString &path)
 
 void TwoPanelFileDialogImpl::hideEvent (QHideEvent *event)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("TwoPanelFileDialog/geometry", saveGeometry());
     settings.setValue("TwoPanelFileDialog/history", m_history);
     QWidget::hideEvent(event);
@@ -446,11 +446,8 @@ void TwoPanelFileDialogImpl::addFiles(const QStringList &list, bool play)
         bool contains = false;
         for(const QString &str : qt_clean_filter_list(m_ui.fileTypeComboBox->currentText()))
         {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
             QRegularExpression regExp(QRegularExpression::wildcardToRegularExpression(str));
-#else
-            QRegularExpression regExp(Qmmp::wildcardToRegularExpression(str));
-#endif
+
             if (f_name.contains(regExp))
             {
                 contains = true;

@@ -48,7 +48,7 @@ PopupWidget::PopupWidget(QWidget *parent)
     hlayout->addWidget (m_label1);
 
     //settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     setWindowOpacity(settings.value("popup_opacity", 1.0).toDouble());
     m_coverSize = settings.value("popup_cover_size", 48).toInt();

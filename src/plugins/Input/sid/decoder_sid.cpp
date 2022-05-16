@@ -86,7 +86,7 @@ bool DecoderSID::initialize()
     addMetaData(metadata);
 
     //read settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("SID");
     if(settings.value("use_hvsc", false).toBool())
     {

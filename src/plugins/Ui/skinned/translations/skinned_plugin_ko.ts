@@ -1005,50 +1005,50 @@
 <context>
     <name>PlayListHeader</name>
     <message>
-        <location filename="../playlistheader.cpp" line="81"/>
+        <location filename="../playlistheader.cpp" line="77"/>
         <source>Add Column</source>
         <translation>열 추가</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="82"/>
+        <location filename="../playlistheader.cpp" line="78"/>
         <source>Edit Column</source>
         <translation>열 편집</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="83"/>
+        <location filename="../playlistheader.cpp" line="79"/>
         <source>Show Queue/Protocol</source>
         <translation>대기열/프로토콜 표시</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="85"/>
+        <location filename="../playlistheader.cpp" line="81"/>
         <source>Auto-resize</source>
         <translation>자동 크기 조정</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="88"/>
+        <location filename="../playlistheader.cpp" line="84"/>
         <source>Alignment</source>
         <translation>맞춤</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="89"/>
+        <location filename="../playlistheader.cpp" line="85"/>
         <source>Left</source>
         <comment>alignment</comment>
         <translation>왼쪽</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="90"/>
+        <location filename="../playlistheader.cpp" line="86"/>
         <source>Right</source>
         <comment>alignment</comment>
         <translation>오른쪽</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="91"/>
+        <location filename="../playlistheader.cpp" line="87"/>
         <source>Center</source>
         <comment>alignment</comment>
         <translation>가운데</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="101"/>
+        <location filename="../playlistheader.cpp" line="97"/>
         <source>Remove Column</source>
         <translation>열 제거</translation>
     </message>
@@ -1465,22 +1465,22 @@
         <translation>&apos;새 재생목록&apos; 버튼 표시</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="116"/>
+        <location filename="../skinnedsettings.cpp" line="119"/>
         <source>Select Skin Files</source>
         <translation>스킨 파일 선택</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="117"/>
+        <location filename="../skinnedsettings.cpp" line="120"/>
         <source>Skin files</source>
         <translation>스킨 파일</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="169"/>
+        <location filename="../skinnedsettings.cpp" line="172"/>
         <source>Unarchived skin</source>
         <translation>압축되지 않은 스킨</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="206"/>
+        <location filename="../skinnedsettings.cpp" line="209"/>
         <source>Archived skin</source>
         <translation>압축된 스킨</translation>
     </message>
@@ -1488,17 +1488,17 @@
 <context>
     <name>TextScroller</name>
     <message>
-        <location filename="../textscroller.cpp" line="58"/>
+        <location filename="../textscroller.cpp" line="55"/>
         <source>Autoscroll Songname</source>
         <translation>자동 스크롤 곡 제목</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="59"/>
+        <location filename="../textscroller.cpp" line="56"/>
         <source>Transparent Background</source>
         <translation>투명 배경</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="130"/>
+        <location filename="../textscroller.cpp" line="127"/>
         <source>Buffering: %1%</source>
         <translation>버퍼링: %1%</translation>
     </message>

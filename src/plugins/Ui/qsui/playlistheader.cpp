@@ -40,10 +40,6 @@
 #include "playlistheader.h"
 #include "listwidgetdrawer.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
-#define horizontalAdvance width
-#endif
-
 #define INITAL_SIZE 150
 #define MIN_SIZE 30
 #define MAX_COLUMNS 7
@@ -101,7 +97,7 @@ void PlayListHeader::readSettings()
         m_metrics = nullptr;
     }
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
 
     QFont header_font = qApp->font("QAbstractItemView");
@@ -763,7 +759,7 @@ int PlayListHeader::autoResizeColumn() const
 
 void PlayListHeader::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_model->saveSettings(&settings);
     QList<QVariant> sizes, alignment;

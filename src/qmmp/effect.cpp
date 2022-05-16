@@ -80,7 +80,7 @@ void Effect::loadPlugins()
         return;
 
     m_cache = new QList<QmmpPluginCache *>;
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     for(const QString &filePath : Qmmp::findPlugins("Effect"))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
@@ -163,7 +163,7 @@ void Effect::setEnabled(EffectFactory *factory, bool enable)
 
     m_enabledNames.removeDuplicates();
 
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Effect/enabled_plugins", m_enabledNames);
     QmmpPluginCache::cleanup(&settings);
 }

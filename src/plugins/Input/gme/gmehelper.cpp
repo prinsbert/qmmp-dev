@@ -27,7 +27,7 @@ GmeHelper::GmeHelper()
 {
      m_emu = nullptr;
 
-     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+     QSettings settings;
      m_fade_length = settings.value("GME/fadeout_length", 7000).toInt();
      if(settings.value("GME/fadeout", false).toBool())
          m_fade_length = 0;

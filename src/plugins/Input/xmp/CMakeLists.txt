@@ -17,30 +17,17 @@ SET(libxmp_SRCS
   xmpmetadatamodel.cpp
   settingsdialog.cpp
   xmpmetadatamodel.cpp
+  settingsdialog.ui
+  translations/translations.qrc
 )
 
-SET(libxmp_HDRS
-  decoder_xmp.h
-)
-
-SET(libxmp_RCCS translations/translations.qrc)
-
-QT5_ADD_RESOURCES(libxmp_RCC_SRCS ${libxmp_RCCS})
-
-# user interface
-
-SET(libxmp_UIS
-    settingsdialog.ui
-)
-
-QT5_WRAP_UI(libxmp_UIS_H ${libxmp_UIS})
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 IF(XMP_FOUND)
-ADD_LIBRARY(xmp MODULE ${libxmp_SRCS} ${libxmp_UIS_H} ${libxmp_RCC_SRCS} ${libxmp_HDRS})
+ADD_LIBRARY(xmp MODULE ${libxmp_SRCS} ${libxmp_UIS_H})
 add_dependencies(xmp libqmmp)
-target_link_libraries(xmp Qt5::Widgets libqmmp ${XMP_LDFLAGS})
+target_link_libraries(xmp PRIVATE Qt6::Widgets libqmmp ${XMP_LDFLAGS})
 install(TARGETS xmp DESTINATION ${PLUGIN_DIR}/Input)
 ENDIF(XMP_FOUND)

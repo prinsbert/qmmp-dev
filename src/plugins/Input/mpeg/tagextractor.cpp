@@ -22,13 +22,13 @@
 #include <QSettings>
 #include <QByteArray>
 #include <QBuffer>
-#include <QTextCodec>
 #include <QSettings>
 #include <QSet>
 #include <stdlib.h>
 #ifdef WITH_LIBRCD
 #include <librcd.h>
 #endif
+#include <qmmp/qmmptextcodec.h>
 #include "tagextractor.h"
 
 #define CSTR_TO_QSTR(str,utf) codec->toUnicode(str.toCString(utf)).trimmed()
@@ -52,25 +52,22 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
     if (tag.isEmpty())
         return QMap<Qmmp::MetaData, QString>();
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("MPEG");
-    QByteArray codecName = settings.value("ID3v2_encoding","UTF-8").toByteArray ();
-    QTextCodec *codec = nullptr;
+    QByteArray codecName = settings.value("ID3v2_encoding","UTF-8").toByteArray();
 
-    if(m_using_rusxmms || codecName.contains("UTF"))
-        codec = QTextCodec::codecForName("UTF-8");
-    else if(!codecName.isEmpty())
-        codec = QTextCodec::codecForName(codecName);
-
-    if (!codec)
-        codec = QTextCodec::codecForName("UTF-8");
+    if(m_using_rusxmms || codecName.contains("UTF") || codecName.isEmpty())
+        codecName = "UTF-8";
 
     if(!m_using_rusxmms && settings.value("detect_encoding", false).toBool())
     {
-        QTextCodec *detectedCodec = detectCharset(&tag);
-        codec = detectedCodec ? detectedCodec : codec;
+        QByteArray detectedCharset = TagExtractor::detectCharset(&tag);
+        if(!detectedCharset.isEmpty())
+            codecName = detectedCharset;
     }
     settings.endGroup();
+
+    QmmpTextCodec *codec = new QmmpTextCodec(codecName);
 
     bool utf = codec->name().contains("UTF");
 
@@ -94,6 +91,9 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
         TagLib::String disc = tag.frameListMap()["TPOS"].front()->toString();
         tags.insert(Qmmp::DISCNUMBER, QString(disc.toCString()).trimmed());
     }
+
+    delete codec;
+
     return tags;
 }
 
@@ -102,13 +102,12 @@ void TagExtractor::setForceUtf8(bool enabled)
     m_using_rusxmms = enabled;
 }
 
-QTextCodec *TagExtractor::detectCharset(const TagLib::Tag *tag)
+QByteArray TagExtractor::detectCharset(const TagLib::Tag *tag)
 {
     if(tag->title().isLatin1() && tag->album().isLatin1() &&
             tag->artist().isLatin1() && tag->comment().isLatin1())
     {
 #ifdef WITH_LIBRCD
-        QTextCodec *codec = nullptr;
         QSet<int> charsets;
         charsets << rcdGetRussianCharset(tag->title().toCString(), 0);
         charsets << rcdGetRussianCharset(tag->artist().toCString(), 0);
@@ -116,22 +115,20 @@ QTextCodec *TagExtractor::detectCharset(const TagLib::Tag *tag)
         charsets << rcdGetRussianCharset(tag->comment().toCString(), 0);
 
         if(charsets.contains(RUSSIAN_CHARSET_WIN))
-            codec = QTextCodec::codecForName("WINDOWS-1251");
+            return "WINDOWS-1251";
         else if(charsets.contains(RUSSIAN_CHARSET_ALT))
-            codec = QTextCodec::codecForName("IBM866");
+            return "IBM866";
         else if(charsets.contains(RUSSIAN_CHARSET_KOI))
-            codec = QTextCodec::codecForName("KOI8-R");
+            return "KOI8-R";
         else if(charsets.contains(RUSSIAN_CHARSET_UTF8))
-            codec = QTextCodec::codecForName("UTF-8");
+            return "UTF-8";
         else if(charsets.contains(RUSSIAN_CHARSET_LATIN))
-            codec = QTextCodec::codecForName("ISO-8859-1");
-
-        return codec;
+            return "ISO-8859-1";
 #else
-        return nullptr;
+        return QByteArray();
 #endif
     }
-    return QTextCodec::codecForName("UTF-8");
+    return "UTF-8";
 }
 
 ID3v2Tag::ID3v2Tag(QByteArray *array, long offset) : TagLib::ID3v2::Tag(),

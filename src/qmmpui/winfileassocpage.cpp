@@ -2,7 +2,7 @@
  * Based on smplayer - GUI front-end for mplayer                           *
  *                                                                         *
  * Copyright (C) 2006-2014 Ricardo Villalba <rvm@users.sourceforge.net>    *
- * Copyright (C) 2014-2020 Ilya Kotov forkotov02@ya.ru                     *
+ * Copyright (C) 2014-2022 Ilya Kotov forkotov02@ya.ru                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -77,8 +77,6 @@ void WinFileAssocPage::loadAssociations()
             if (m_regExtensions.contains(pItem->text()))
             {
                 pItem->setCheckState(Qt::Checked);
-                //Don't allow de-selection in windows VISTA if extension is registered.
-                //VISTA doesn't seem to support extension 'restoration' in the API.
                 pItem->setFlags(Qt::NoItemFlags);
             }
             else

@@ -130,5 +130,4 @@ unix {
     INSTALLS += target
     PKGCONFIG += x11
     DEFINES += QMMP_WS_X11
-    QT += x11extras
 }

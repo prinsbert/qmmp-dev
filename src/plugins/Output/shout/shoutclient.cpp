@@ -44,7 +44,7 @@ ShoutClient::~ShoutClient()
 
 void ShoutClient::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Shout");
     shout_set_host(m_shout_conn, settings.value("host", "127.0.0.1").toString().toLatin1().constData());
     shout_set_port(m_shout_conn, settings.value("port", 8000).toInt());

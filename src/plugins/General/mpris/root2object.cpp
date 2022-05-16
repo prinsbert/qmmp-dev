@@ -49,7 +49,7 @@ bool Root2Object::canRaise() const
 
 QString Root2Object::desktopEntry() const
 {
-    return "qmmp-1";
+    return "qmmp";
 }
 
 bool Root2Object::hasTrackList() const

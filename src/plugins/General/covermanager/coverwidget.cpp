@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,6 +23,7 @@
 #include <QPaintEvent>
 #include <QMenu>
 #include <QAction>
+#include <QActionGroup>
 #include <QSettings>
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
@@ -48,7 +49,7 @@ CoverWidget::CoverWidget(QWidget *parent)
     addActions(m_menu->actions());
     m_size = 0;
     //settings
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_size = settings.value("CoverManager/size", 0).toInt();
     for(QAction *a : sizeMenu->actions ())
     {
@@ -82,7 +83,7 @@ void CoverWidget::paintEvent(QPaintEvent *p)
 void CoverWidget::mousePressEvent(QMouseEvent *e)
 {
     if(e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPos());
+        m_menu->exec(e->globalPosition().toPoint());
 }
 
 void CoverWidget::saveAs()
@@ -103,6 +104,6 @@ void CoverWidget::processResizeAction(QAction *action)
     else
         resize(m_size, m_size);
     update();
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("CoverManager/size", m_size);
 }

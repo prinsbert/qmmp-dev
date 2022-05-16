@@ -34,67 +34,67 @@
         <translation>라이센스 계약</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="71"/>
+        <location filename="../aboutdialog.cpp" line="70"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>Qt 기반 멀티미디어 재생기 (Qmmp)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
+        <location filename="../aboutdialog.cpp" line="74"/>
         <source>Version: %1</source>
         <translation>버전: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="76"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Qt %1 사용중 (Qt %2로 컴파일됨)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="79"/>
+        <location filename="../aboutdialog.cpp" line="78"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(c) %1-%2 Qmmp 개발 팀</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="84"/>
+        <location filename="../aboutdialog.cpp" line="83"/>
         <source>Transports:</source>
         <translation>트랜스포트:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="92"/>
         <source>Decoders:</source>
         <translation>디코더:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="104"/>
+        <location filename="../aboutdialog.cpp" line="103"/>
         <source>Engines:</source>
         <translation>엔진:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="115"/>
+        <location filename="../aboutdialog.cpp" line="114"/>
         <source>Effects:</source>
         <translation>효과:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="153"/>
+        <location filename="../aboutdialog.cpp" line="152"/>
         <source>File dialogs:</source>
         <translation>파일 대화상자:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="165"/>
+        <location filename="../aboutdialog.cpp" line="164"/>
         <source>User interfaces:</source>
         <translation>사용자 인터페이스:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="142"/>
+        <location filename="../aboutdialog.cpp" line="141"/>
         <source>Output plugins:</source>
         <translation>출력 플러그인:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="124"/>
+        <location filename="../aboutdialog.cpp" line="123"/>
         <source>Visual plugins:</source>
         <translation>시각 플러그인:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="133"/>
+        <location filename="../aboutdialog.cpp" line="132"/>
         <source>General plugins:</source>
         <translation>일반 플러그인:</translation>
     </message>
@@ -107,12 +107,12 @@
         <translation>추가할 URL 입력</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="46"/>
+        <location filename="../forms/addurldialog.ui" line="55"/>
         <source>&amp;Add</source>
         <translation>추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="53"/>
+        <location filename="../forms/addurldialog.ui" line="62"/>
         <source>&amp;Cancel</source>
         <translation>취소(&amp;C)</translation>
     </message>
@@ -1047,8 +1047,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="122"/>
-        <location filename="../jumptotrackdialog.cpp" line="153"/>
+        <location filename="../jumptotrackdialog.cpp" line="118"/>
+        <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Queue</source>
         <translation>대기열</translation>
     </message>
@@ -1058,18 +1058,18 @@
         <translation>넘어가기</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="98"/>
+        <location filename="../jumptotrackdialog.cpp" line="94"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="99"/>
+        <location filename="../jumptotrackdialog.cpp" line="95"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="120"/>
-        <location filename="../jumptotrackdialog.cpp" line="151"/>
+        <location filename="../jumptotrackdialog.cpp" line="116"/>
+        <location filename="../jumptotrackdialog.cpp" line="147"/>
         <source>Unqueue</source>
         <translation>대기열 해제</translation>
     </message>
@@ -1367,45 +1367,45 @@
 <context>
     <name>UiHelper</name>
     <message>
-        <location filename="../uihelper.cpp" line="138"/>
-        <location filename="../uihelper.cpp" line="150"/>
+        <location filename="../uihelper.cpp" line="136"/>
+        <location filename="../uihelper.cpp" line="148"/>
         <source>All Supported Bitstreams</source>
         <translation>지원되는 모든 비트스트림</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="144"/>
+        <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
         <translation>열기할 파일 하나 이상 선택</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="156"/>
+        <location filename="../uihelper.cpp" line="154"/>
         <source>Select one or more files to play</source>
         <translation>재생할 파일 하나 이상 선택</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="164"/>
+        <location filename="../uihelper.cpp" line="162"/>
         <source>Choose a directory</source>
         <translation>디렉토리 선택하기</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="180"/>
-        <location filename="../uihelper.cpp" line="206"/>
+        <location filename="../uihelper.cpp" line="178"/>
+        <location filename="../uihelper.cpp" line="204"/>
         <source>Playlist Files</source>
         <translation>재생목록 파일</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="182"/>
+        <location filename="../uihelper.cpp" line="180"/>
         <source>Open Playlist</source>
         <translation>재생목록 열기</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="209"/>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="207"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>Save Playlist</source>
         <translation>재생목록 저장</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>% 1이(가) 이미 존재합니다.
@@ -1415,37 +1415,37 @@ Do you want to replace it?</source>
 <context>
     <name>WinFileAssocPage</name>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="17"/>
+        <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
         <translation>Qmmp에서 처리한 미디어 파일:</translation>
     </message>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="49"/>
+        <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Select All</source>
         <translation>모두 선택</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="116"/>
+        <location filename="../winfileassocpage.cpp" line="114"/>
         <source>Warning</source>
         <translation>경고</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="117"/>
+        <location filename="../winfileassocpage.cpp" line="115"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
         <translation>일부 파일을 연결할 수 없습니다. 보안 사용 권한을 확인한 후 다시 시도하십시오.</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="124"/>
+        <location filename="../winfileassocpage.cpp" line="122"/>
         <source>Check all file types in the list</source>
         <translation>목록의 모든 파일 유형 확인</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="125"/>
+        <location filename="../winfileassocpage.cpp" line="123"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
         <translation>Qmmp에서 처리할 미디어 파일 확장자를 확인합니다. 적용을 클릭하면 선택한 파일이 Qmmp와 연결됩니다. 미디어 유형을 선택 해제하면 파일 연결이 복원됩니다.</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="129"/>
+        <location filename="../winfileassocpage.cpp" line="127"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
         <translation>&lt;b&gt;참고:&lt;/b&gt; Windows Vista/7에서는 복원이 작동하지 않습니다.</translation>
     </message>

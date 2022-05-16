@@ -97,7 +97,7 @@ quint32 Hotkey::defaultKey(int act)
 HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 {
     qApp->installNativeEventFilter(this);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat); //load settings
+    QSettings settings; //load settings
     settings.beginGroup("Hotkey");
     for (int i = Hotkey::PLAY; i <= Hotkey::JUMP_TO_TRACK; ++i)
     {
@@ -218,7 +218,7 @@ quint32 HotkeyManager::keycodeToKeysym(quint32 keycode)
     return MapVirtualKey(keycode, 1);
 }
 
-bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message, long *result)
+bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
 {
     Q_UNUSED(eventType);
     Q_UNUSED(result);

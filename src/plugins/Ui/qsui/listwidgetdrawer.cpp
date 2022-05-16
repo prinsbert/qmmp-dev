@@ -25,10 +25,6 @@
 #include <qmmpui/playlistmanager.h>
 #include "listwidgetdrawer.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
-#define horizontalAdvance width
-#endif
-
 // |= number=|=row1=|=row2=|=extra= duration=|
 
 ListWidgetDrawer::ListWidgetDrawer()
@@ -49,7 +45,7 @@ ListWidgetDrawer::~ListWidgetDrawer()
 
 void ListWidgetDrawer::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_show_anchor = settings.value("pl_show_anchor", false).toBool();
     m_show_number = settings.value("pl_show_numbers", true).toBool();

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Ilya Kotov                                      *
+ *   Copyright (C) 2009-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,18 +17,15 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#include <QTextCodec>
 #include <QSettings>
-
 #include <qmmp/qmmp.h>
-
 #include "settingsdialog.h"
 
 SettingsDialog::SettingsDialog(QWidget *parent)
         : QDialog(parent)
 {
     ui.setupUi(this);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("HAL");
     ui.cdGroupBox->setChecked(settings.value("cda", true).toBool());
     ui.addTracksCheckBox->setChecked(settings.value("add_tracks", false).toBool());
@@ -45,7 +42,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("HAL");
     settings.setValue("cda", ui.cdGroupBox->isChecked());
     settings.setValue("add_tracks", ui.addTracksCheckBox->isChecked());

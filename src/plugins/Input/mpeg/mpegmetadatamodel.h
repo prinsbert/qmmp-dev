@@ -25,7 +25,7 @@
 #include <taglib/mpegfile.h>
 #include <taglib/tfilestream.h>
 
-class QTextCodec;
+class QmmpTextCodec;
 
 class MPEGMetaDataModel : public MetaDataModel
 {
@@ -63,10 +63,10 @@ public:
 
 private:
     bool m_using_rusxmms;
-    QTextCodec *m_codec;
     TagLib::MPEG::File *m_file;
     TagLib::Tag *m_tag;
     TagLib::MPEG::File::TagTypes m_type;
+    QmmpTextCodec *m_codec = nullptr;
 };
 
 #endif // MPEGMETADATAMODEL_H

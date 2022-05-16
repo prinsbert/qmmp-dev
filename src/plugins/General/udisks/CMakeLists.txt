@@ -13,24 +13,15 @@ SET(libudisks_SRCS
     udisksplugin.cpp
     udisksdevice.cpp
     settingsdialog.cpp
-)
-
-SET(libudisks_RCCS translations/translations.qrc)
-
-QT5_ADD_RESOURCES(libudisks_RCC_SRCS ${libudisks_RCCS})
-
-# user interface
-
-SET(libudisks_UIS
     settingsdialog.ui
+    translations/translations.qrc
 )
 
-QT5_WRAP_UI(libudisks_UIS_H ${libudisks_UIS})
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-ADD_LIBRARY(udisks MODULE ${libudisks_SRCS} ${libudisks_UIS_H} ${libudisks_RCC_SRCS})
+ADD_LIBRARY(udisks MODULE ${libudisks_SRCS})
 add_dependencies(udisks libqmmpui)
-target_link_libraries(udisks Qt5::Widgets Qt5::DBus libqmmpui libqmmp)
+target_link_libraries(udisks PRIVATE Qt6::Widgets Qt6::DBus libqmmpui libqmmp)
 install(TARGETS udisks DESTINATION ${PLUGIN_DIR}/General)

@@ -31,6 +31,9 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 {
     m_ui.setupUi(this);
 
+    connect(m_ui.transparencySlider, &QSlider::valueChanged, m_ui.transparencyLabel, qOverload<int>(&QLabel::setNum));
+    connect(m_ui.coverSizeSlider, &QSlider::valueChanged, m_ui.coverSizeLabel, qOverload<int>(&QLabel::setNum));
+
     m_buttons.insert(PopupWidget::TOPLEFT, m_ui.topLeftButton);
     m_buttons.insert(PopupWidget::TOP, m_ui.topButton);
     m_buttons.insert(PopupWidget::TOPRIGHT, m_ui.topRightButton);
@@ -41,7 +44,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     m_buttons.insert(PopupWidget::LEFT, m_ui.leftButton);
     m_buttons.insert(PopupWidget::CENTER, m_ui.centerButton);
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Notifier");
     m_ui.messageDelaySpinBox->setValue(settings.value("message_delay", 2000).toInt());
     uint pos = settings.value("message_pos", PopupWidget::BOTTOMLEFT).toUInt();
@@ -69,7 +72,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Notifier");
     settings.setValue ("message_delay", m_ui.messageDelaySpinBox->value());
     uint pos = PopupWidget::BOTTOMLEFT;

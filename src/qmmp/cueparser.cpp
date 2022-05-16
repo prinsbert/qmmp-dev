@@ -18,7 +18,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 #include <QTextStream>
-#include <QTextCodec>
 #include "cueparser.h"
 
 CueParser::CueParser()
@@ -36,18 +35,18 @@ CueParser::~CueParser()
 
 void CueParser::loadData(const QByteArray &data, const QByteArray &codecName)
 {
-    loadData(data, QTextCodec::codecForName(codecName));
+    QmmpTextCodec codec(codecName);
+    loadData(data, &codec);
 }
 
-void CueParser::loadData(const QByteArray &data, QTextCodec *codec)
+void CueParser::loadData(const QByteArray &data, QmmpTextCodec *codec)
 {
     clear();
 
     QString artist, album, genre, date, comment, file;
     double album_peak = 0.0, album_gain = 0.0;
-    QTextStream textStream(data);
-
-    textStream.setCodec(codec ? codec : QTextCodec::codecForName("UTF-8"));
+    QString str = codec->toUnicode(data);
+    QTextStream textStream(&str, QIODeviceBase::ReadOnly);
 
     while (!textStream.atEnd())
     {

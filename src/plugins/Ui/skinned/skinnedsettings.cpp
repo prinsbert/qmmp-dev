@@ -21,6 +21,7 @@
 #include <QSettings>
 #include <QDir>
 #include <QFontDialog>
+#include <QStandardPaths>
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
 #include <qmmpui/uihelper.h>
@@ -37,6 +38,9 @@ SkinnedSettings::SkinnedSettings(QWidget *parent) : QWidget(parent)
     m_skin = Skin::instance();
     m_reader = new SkinReader(this);
     connect(m_ui.skinReloadButton, SIGNAL (clicked()), SLOT(loadSkins()));
+    connect(m_ui.plTransparencySlider, &QSlider::valueChanged, m_ui.plTransparencyLabel, qOverload<int>(&QLabel::setNum));
+    connect(m_ui.mwTransparencySlider, &QSlider::valueChanged, m_ui.mwTransparencyLabel, qOverload<int>(&QLabel::setNum));
+    connect(m_ui.eqTransparencySlider, &QSlider::valueChanged, m_ui.eqTransparencyLabel, qOverload<int>(&QLabel::setNum));
     readSettings();
     loadSkins();
     loadFonts();
@@ -58,7 +62,7 @@ void SkinnedSettings::on_listWidget_itemClicked(QListWidgetItem *)
     else if (m_skinList.at (row).isFile())
     {
         m_reader->unpackSkin(m_skinList.at (row).canonicalFilePath());
-        m_skin->setSkin(Qmmp::configDir() + "/cache/skin");
+        m_skin->setSkin(Qmmp::cacheDir() + QStringLiteral("/skinned/skin"));
     }
     if(m_ui.listWidget->currentItem())
         m_currentSkinName = m_ui.listWidget->currentItem()->text();
@@ -104,7 +108,7 @@ void SkinnedSettings::on_mainFontButton_clicked()
 
 void SkinnedSettings::on_resetFontsButton_clicked()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.remove("Skinned/pl_font");
     settings.remove("Skinned/pl_header_font");
     settings.remove("Skinned/mw_font");
@@ -132,7 +136,7 @@ void SkinnedSettings::showEvent(QShowEvent *)
 void SkinnedSettings::loadFonts()
 {
     QFont font;
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
 
     QString fontname = settings.value ("Skinned/pl_font", qApp->font().toString()).toString();
     font.fromString(fontname);
@@ -183,22 +187,33 @@ void SkinnedSettings::createActions()
 
 void SkinnedSettings::loadSkins()
 {
-    m_reader->generateThumbs();
+    QStringList skinPaths = {
+        Qmmp::configDir() + QStringLiteral("/skins"),
+#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
+        qApp->applicationDirPath() + QStringLiteral("/skins")
+#else
+        Qmmp::userDataPath() + QStringLiteral("/skins"),
+        Qmmp::dataPath() + QStringLiteral("/skins"),
+        //1.x version compatibility
+        QDir(qApp->applicationDirPath() +  QStringLiteral("/../share/qmmp-1/skins")).absolutePath()
+#endif
+    };
+
+    skinPaths.removeDuplicates();
+
+    m_reader->generateThumbs(skinPaths);
     m_skinList.clear();
     m_ui.listWidget->clear();
     QFileInfo fileInfo (":/glare");
     QPixmap preview = Skin::getPixmap ("main", QDir (fileInfo.filePath()));
     QListWidgetItem *item = new QListWidgetItem (fileInfo.fileName ());
     item->setIcon (preview);
-    m_ui.listWidget->addItem (item);
+    m_ui.listWidget->addItem(item);
     m_skinList << fileInfo;
 
-    findSkins(Qmmp::configDir() + "/skins");
-#if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
-    findSkins(qApp->applicationDirPath()+"/skins");
-#else
-    findSkins(Qmmp::dataPath());
-#endif
+    for(const QString &skinPath : qAsConst(skinPaths))
+        findSkins(skinPath);
+
     for(const QString &path : m_reader->skins())
     {
         item = new QListWidgetItem (path.section('/', -1));
@@ -234,7 +249,7 @@ void SkinnedSettings::addWindowTitleString(const QString &str)
 
 void SkinnedSettings::readSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     //playlist
     m_ui.protocolCheckBox->setChecked(settings.value ("pl_show_protocol", false).toBool());
@@ -253,7 +268,10 @@ void SkinnedSettings::readSettings()
     m_ui.plTransparencySlider->setValue(100 - settings.value("pl_opacity", 1.0).toDouble()*100);
     //view
     m_ui.skinCursorsCheckBox->setChecked(settings.value("skin_cursors", false).toBool());
-    m_currentSkinName = settings.value("skin_name", "glare").toString();
+    m_currentSkinName = settings.value("skin_name", Skin::defaultSkinName()).toString();
+    QString currentSkinPath = settings.value("Skinned/skin_path").toString();
+    if(currentSkinPath.isEmpty() || !QDir(currentSkinPath).exists())
+        m_currentSkinName = Skin::defaultSkinName();
     m_ui.hiddenCheckBox->setChecked(settings.value("start_hidden", false).toBool());
     m_ui.hideOnCloseCheckBox->setChecked(settings.value("hide_on_close", false).toBool());
     m_ui.windowTitleLineEdit->setText(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
@@ -276,7 +294,7 @@ void SkinnedSettings::readSettings()
 
 void SkinnedSettings::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     settings.setValue("pl_show_protocol", m_ui.protocolCheckBox->isChecked());
     settings.setValue("pl_show_numbers", m_ui.numbersCheckBox->isChecked());

@@ -22,9 +22,6 @@
 #include <QDBusConnection>
 #include <QByteArray>
 #include <QDBusMetaType>
-#if (QT_VERSION < QT_VERSION_CHECK(5, 7, 0)) //qAsConst template
-#include <qmmp/qmmp.h>
-#endif
 #include "udisksdevice.h"
 
 UDisksDevice::UDisksDevice(QDBusObjectPath o, QObject *parent) : QObject(parent)

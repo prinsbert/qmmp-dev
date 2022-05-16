@@ -53,7 +53,7 @@ QSize QSUiWaveformSeekBar::sizeHint() const
 
 void QSUiWaveformSeekBar::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_bgColor.setNamedColor(settings.value("wfsb_bg_color", "Black").toString());
     m_rmsColor.setNamedColor(settings.value("wfsb_rms_color", "#DDDDDD").toString());
@@ -139,7 +139,7 @@ void QSUiWaveformSeekBar::onElapsedChanged(qint64 elapsed)
 
 void QSUiWaveformSeekBar::writeSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     settings.setValue("wfsb_show_two_channels", m_showTwoChannelsAction->isChecked());
     settings.setValue("wfsb_show_rms", m_showRmsAction->isChecked());
@@ -186,7 +186,7 @@ void QSUiWaveformSeekBar::mousePressEvent(QMouseEvent *e)
         update();
     }
     else if(e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPos());
+        m_menu->exec(e->globalPosition().toPoint());
 }
 
 void QSUiWaveformSeekBar::mouseReleaseEvent(QMouseEvent *)

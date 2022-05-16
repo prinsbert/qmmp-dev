@@ -34,10 +34,6 @@
 #include <qmmp/qmmpsettings.h>
 #include "equalizer.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 11, 0)
-#define horizontalAdvance width
-#endif
-
 Equalizer::Equalizer(QWidget *parent) : QDialog(parent)
 {
     setWindowTitle(tr("Equalizer"));
@@ -45,7 +41,7 @@ Equalizer::Equalizer(QWidget *parent) : QDialog(parent)
     m_layout = new QVBoxLayout(this);
     setLayout(m_layout);
     m_layout->setSpacing(5);
-    m_layout->setMargin(5);
+    m_layout->setContentsMargins(5,5,5,5);
 
     QHBoxLayout *buttonsLayout = new QHBoxLayout;
     buttonsLayout->setSpacing(5);

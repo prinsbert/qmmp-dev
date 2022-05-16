@@ -48,13 +48,13 @@ UiHelper::UiHelper(QObject *parent)
 {
     m_instance = this;
     General::create(parent);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_lastDir = settings.value("General/last_dir", QDir::homePath()).toString(); //last directory
 }
 
 UiHelper::~UiHelper()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("General/last_dir",m_lastDir);
 }
 
@@ -72,9 +72,7 @@ void UiHelper::addAction(QAction *action, MenuType type)
     if(!m_menus[type].actions.contains(action))
     {
         m_menus[type].actions.append(action);
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
         action->setShortcutVisibleInContextMenu(true);
-#endif
     }
     if(m_menus[type].menu && !m_menus[type].menu->actions().contains(action))
     {

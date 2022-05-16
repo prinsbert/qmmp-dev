@@ -78,7 +78,7 @@ void Output::loadPlugins()
         return;
 
     m_cache = new QList<QmmpPluginCache *>;
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     for(const QString &filePath : Qmmp::findPlugins("Output"))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
@@ -135,7 +135,7 @@ void Output::setCurrentFactory(const OutputFactory *factory)
     loadPlugins();
     if (file(factory).isEmpty())
         return;
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue ("Output/current_plugin", factory->properties().shortName);
 }
 
@@ -143,7 +143,7 @@ OutputFactory *Output::currentFactory()
 {
     loadPlugins();
 
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
 #ifdef QMMP_DEFAULT_OUTPUT
     QString name = settings.value("Output/current_plugin", QMMP_DEFAULT_OUTPUT).toString();
 #else

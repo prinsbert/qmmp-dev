@@ -39,7 +39,7 @@ EqTitleBar::EqTitleBar(QWidget *parent)
     connect(m_close, SIGNAL(clicked()),m_eq, SIGNAL(closed()));
     m_shade = new Button(this, Skin::EQ_BT_SHADE1_N, Skin::EQ_BT_SHADE1_P, Skin::CUR_EQNORMAL);
     connect(m_shade, SIGNAL(clicked()), SLOT(shade()));
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     if (settings.value("Skinned/eq_shaded", false).toBool())
         shade();
     m_align = true;
@@ -52,7 +52,7 @@ EqTitleBar::EqTitleBar(QWidget *parent)
 
 EqTitleBar::~EqTitleBar()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("Skinned/eq_shaded", m_shaded);
 }
 
@@ -95,7 +95,7 @@ void EqTitleBar::mousePressEvent(QMouseEvent* event)
         m_pos = event->pos();
         break;
     case Qt::RightButton:
-        m_mw->menu()->exec(event->globalPos());
+        m_mw->menu()->exec(event->globalPosition().toPoint());
     }
 }
 
@@ -103,7 +103,7 @@ void EqTitleBar::mouseMoveEvent(QMouseEvent* event)
 {
     if (m_pos.x() < width() - 30 * m_skin->ratio())
     {
-        QPoint npos = (event->globalPos()-m_pos);
+        QPoint npos = (event->globalPosition().toPoint()-m_pos);
         Dock::instance()->move(m_eq, npos);
     }
 }

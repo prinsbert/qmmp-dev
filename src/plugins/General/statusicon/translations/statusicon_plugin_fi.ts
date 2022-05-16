@@ -65,7 +65,7 @@
         <translation>Käytä vakiokuvakkeita</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="80"/>
+        <location filename="../settingsdialog.cpp" line="82"/>
         <source>Tooltip Template</source>
         <translation>Työkaluvihjeen malli</translation>
     </message>

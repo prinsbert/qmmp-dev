@@ -37,7 +37,7 @@ StereoPlugin::StereoPlugin() : Effect()
     m_tmp = 0;
     m_mul = 2.0;
     m_chan = 0;
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_mul = settings.value("extra_stereo/intensity", 1.0).toDouble();
 }
 

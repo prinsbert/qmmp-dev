@@ -34,67 +34,67 @@
         <translation>使用許諾契約</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="71"/>
+        <location filename="../aboutdialog.cpp" line="70"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>Qt 製マルティミディアプレイヤー QMMP</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
+        <location filename="../aboutdialog.cpp" line="74"/>
         <source>Version: %1</source>
         <translation>バージョン: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="76"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Qt %1 を現在使用しています (コンパイルは Qt %2 で行われました)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="79"/>
+        <location filename="../aboutdialog.cpp" line="78"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(c) %1-%2 Qmmp Development Team (開発者チーム)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="84"/>
+        <location filename="../aboutdialog.cpp" line="83"/>
         <source>Transports:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="92"/>
         <source>Decoders:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="104"/>
+        <location filename="../aboutdialog.cpp" line="103"/>
         <source>Engines:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="115"/>
+        <location filename="../aboutdialog.cpp" line="114"/>
         <source>Effects:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="153"/>
+        <location filename="../aboutdialog.cpp" line="152"/>
         <source>File dialogs:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="165"/>
+        <location filename="../aboutdialog.cpp" line="164"/>
         <source>User interfaces:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="142"/>
+        <location filename="../aboutdialog.cpp" line="141"/>
         <source>Output plugins:</source>
         <translation>出力側プラグイン:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="124"/>
+        <location filename="../aboutdialog.cpp" line="123"/>
         <source>Visual plugins:</source>
         <translation>視覚効果プラグイン:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="133"/>
+        <location filename="../aboutdialog.cpp" line="132"/>
         <source>General plugins:</source>
         <translation>一般プラグイン:</translation>
     </message>
@@ -107,12 +107,12 @@
         <translation>追加したい URL をここに記入</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="46"/>
+        <location filename="../forms/addurldialog.ui" line="55"/>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../forms/addurldialog.ui" line="53"/>
+        <location filename="../forms/addurldialog.ui" line="62"/>
         <source>&amp;Cancel</source>
         <translation>キャンセル(&amp;C)</translation>
     </message>
@@ -1047,8 +1047,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="122"/>
-        <location filename="../jumptotrackdialog.cpp" line="153"/>
+        <location filename="../jumptotrackdialog.cpp" line="118"/>
+        <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Queue</source>
         <translation>キューに入れる</translation>
     </message>
@@ -1058,18 +1058,18 @@
         <translation>この曲に跳ぶ</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="98"/>
+        <location filename="../jumptotrackdialog.cpp" line="94"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="99"/>
+        <location filename="../jumptotrackdialog.cpp" line="95"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="120"/>
-        <location filename="../jumptotrackdialog.cpp" line="151"/>
+        <location filename="../jumptotrackdialog.cpp" line="116"/>
+        <location filename="../jumptotrackdialog.cpp" line="147"/>
         <source>Unqueue</source>
         <translation>キューから除く</translation>
     </message>
@@ -1367,45 +1367,45 @@
 <context>
     <name>UiHelper</name>
     <message>
-        <location filename="../uihelper.cpp" line="138"/>
-        <location filename="../uihelper.cpp" line="150"/>
+        <location filename="../uihelper.cpp" line="136"/>
+        <location filename="../uihelper.cpp" line="148"/>
         <source>All Supported Bitstreams</source>
         <translation>サポート対象のすべてのデジタル録音物</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="144"/>
+        <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
         <translation>開きたいファイルを選ぶ (複数可)</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="156"/>
+        <location filename="../uihelper.cpp" line="154"/>
         <source>Select one or more files to play</source>
         <translation>再生したいファイルを 1 つ以上選ぶ</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="164"/>
+        <location filename="../uihelper.cpp" line="162"/>
         <source>Choose a directory</source>
         <translation>ディレクトリを選択</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="180"/>
-        <location filename="../uihelper.cpp" line="206"/>
+        <location filename="../uihelper.cpp" line="178"/>
+        <location filename="../uihelper.cpp" line="204"/>
         <source>Playlist Files</source>
         <translation>プレイリストファイル</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="182"/>
+        <location filename="../uihelper.cpp" line="180"/>
         <source>Open Playlist</source>
         <translation>プレイリストを開く</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="209"/>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="207"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>Save Playlist</source>
         <translation>プレイリストを保存</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="228"/>
+        <location filename="../uihelper.cpp" line="226"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation type="unfinished"></translation>
@@ -1414,37 +1414,37 @@ Do you want to replace it?</source>
 <context>
     <name>WinFileAssocPage</name>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="17"/>
+        <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
         <translation>QMMP が扱うメディアファイル:</translation>
     </message>
     <message>
-        <location filename="../forms/winfileassocpage.ui" line="49"/>
+        <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Select All</source>
         <translation>すべて選択</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="116"/>
+        <location filename="../winfileassocpage.cpp" line="114"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="117"/>
+        <location filename="../winfileassocpage.cpp" line="115"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
         <translation>一部に関連づけのできないファイルがありました。 ご使用のコンピューターのセキュリティ上の許可設定についてお確かめのうえやりなおしてみてください。</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="124"/>
+        <location filename="../winfileassocpage.cpp" line="122"/>
         <source>Check all file types in the list</source>
         <translation>リスト上のすべてのファイル形式にチェックを入れる</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="125"/>
+        <location filename="../winfileassocpage.cpp" line="123"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
         <translation>QMMP で扱わせたいメディアファイルの拡張子にチェックを入れます。 適用ボタンをクリックすればチェックの入ったファイルと QMMP の関連づけが行なわれます。 チェックを外せばメディアの形式の関連づけが以前の状態に戻ります。</translation>
     </message>
     <message>
-        <location filename="../winfileassocpage.cpp" line="129"/>
+        <location filename="../winfileassocpage.cpp" line="127"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
         <translation>&lt;b&gt;ご注意&lt;/b&gt; Windows Vista/7 の場合はチェックを外しても元の関連づけに戻りません。</translation>
     </message>

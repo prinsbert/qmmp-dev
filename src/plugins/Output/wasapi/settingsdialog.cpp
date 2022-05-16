@@ -36,7 +36,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
 
     enumDevices();
 
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     QString id = settings.value("WASAPI/device", "default").toString();
     int index = m_ui.deviceComboBox->findData(id);
     m_ui.exclusiveModeCheckBox->setChecked(settings.value("WASAPI/exclusive_mode", false).toBool());
@@ -45,7 +45,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     int index = m_ui.deviceComboBox->currentIndex();
     settings.setValue("WASAPI/device", m_ui.deviceComboBox->itemData(index).toString());
     settings.setValue("WASAPI/exclusive_mode", m_ui.exclusiveModeCheckBox->isChecked());

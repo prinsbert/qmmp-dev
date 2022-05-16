@@ -32,7 +32,7 @@ ActionManager::ActionManager(QObject *parent) :
     QObject(parent)
 {
     m_instance = this;
-    m_settings = new QSettings(Qmmp::configFile(), QSettings::IniFormat);
+    m_settings = new QSettings;
     m_settings->beginGroup("SkinnedShortcuts");
     m_actions = {
         //playback
@@ -133,9 +133,7 @@ ActionManager* ActionManager::instance()
 QAction *ActionManager::createAction(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
 {
     QAction *action = new QAction(name, this);
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
     action->setShortcutVisibleInContextMenu(true);
-#endif
     action->setShortcut(m_settings->value(confKey, key).toString());
     action->setProperty("defaultShortcut", key);
     action->setObjectName(confKey);
@@ -165,7 +163,7 @@ void ActionManager::readStates()
 
 void ActionManager::saveStates()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Skinned");
     settings.setValue("pl_show_header", m_actions[PL_SHOW_HEADER]->isChecked());
     settings.setValue("pl_show_tabbar", m_actions[PL_SHOW_TABBAR]->isChecked());
@@ -174,7 +172,7 @@ void ActionManager::saveStates()
 
 void ActionManager::saveActions()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     for(const QAction *action : m_actions.values())
     {
         settings.setValue(QString("SkinnedShortcuts/")+action->objectName(), action->shortcut());

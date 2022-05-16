@@ -65,7 +65,7 @@
         <translation>표준 아이콘 사용</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="80"/>
+        <location filename="../settingsdialog.cpp" line="82"/>
         <source>Tooltip Template</source>
         <translation>툴팁 템플릿</translation>
     </message>

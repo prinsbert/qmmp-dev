@@ -107,7 +107,7 @@ void QSUiSettings::loadFonts()
 {
     QString fontName;
     QFont font;
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
 
     m_ui.systemFontsCheckBox->setChecked(settings.value("use_system_fonts", true).toBool());
@@ -151,7 +151,7 @@ void QSUiSettings::on_customizeToolBarButton_clicked()
 
 void QSUiSettings::on_resetFontsButton_clicked()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.remove("Simple/pl_font");
     settings.remove("Simple/pl_tabs_font");
     settings.remove("Simple/pl_header_font");
@@ -169,7 +169,7 @@ void QSUiSettings::on_resetColorsButton_clicked()
 
 void QSUiSettings::readSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     //playlist
     m_ui.protocolCheckBox->setChecked(settings.value("pl_show_protocol", false).toBool());
@@ -229,7 +229,7 @@ void QSUiSettings::readSettings()
 
 void QSUiSettings::writeSettings()
 {
-    QSettings settings (Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     settings.setValue("pl_show_protocol", m_ui.protocolCheckBox->isChecked());
     settings.setValue("pl_show_numbers", m_ui.numbersCheckBox->isChecked());

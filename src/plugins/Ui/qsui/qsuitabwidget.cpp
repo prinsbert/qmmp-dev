@@ -86,7 +86,7 @@ void QSUiTabWidget::setCornerWidget(QWidget *widget, Qt::Corner corner)
 
 void QSUiTabWidget::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Simple");
     m_tabBar->setTabsClosable(settings.value("pl_tabs_closable", false).toBool());
     QFont tab_font = qApp->font(m_tabBar);
@@ -313,7 +313,7 @@ void QSUiTabWidget::tabRemoved(int index)
 
 void QSUiTabWidget::mousePressEvent(QMouseEvent *e)
 {
-    if((e->button() == Qt::MidButton) &&
+    if((e->button() == Qt::MiddleButton) &&
             (childAt(e->pos()) == nullptr))
     {
         e->accept();

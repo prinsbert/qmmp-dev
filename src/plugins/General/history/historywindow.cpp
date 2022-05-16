@@ -353,7 +353,7 @@ void HistoryWindow::loadTopGenres()
 
 void HistoryWindow::readSettings()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("History");
     restoreGeometry(settings.value("geometry").toByteArray());
     m_ui->historyTreeWidget->header()->restoreState(settings.value("history_state").toByteArray());
@@ -423,7 +423,7 @@ void HistoryWindow::showInformation(QTreeWidgetItem *item)
 
 void HistoryWindow::closeEvent(QCloseEvent *)
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("History");
     settings.setValue("geometry", saveGeometry());
     settings.setValue("history_state", m_ui->historyTreeWidget->header()->saveState());
@@ -489,7 +489,6 @@ void HistoryWindow::on_historyTreeWidget_itemDoubleClicked(QTreeWidgetItem *item
 
 void HistoryWindow::on_historyTreeWidget_customContextMenuRequested(const QPoint &pos)
 {
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
     QTreeWidgetItem *item = m_ui->historyTreeWidget->itemAt(pos);
     if(item && item->parent())
     {
@@ -501,9 +500,6 @@ void HistoryWindow::on_historyTreeWidget_customContextMenuRequested(const QPoint
         menu.addAction(QIcon::fromTheme("edit-delete"), tr("Remove from History"), [=] { removeTrack(item); } );
         menu.exec(m_ui->historyTreeWidget->viewport()->mapToGlobal(pos));
     }
-#else
-    Q_UNUSED(pos);
-#endif
 }
 
 void HistoryWindow::on_topSongsTreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int)

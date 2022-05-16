@@ -33,35 +33,30 @@
 #include <qmmpui/metadataformatter.h>
 #include <qmmp/soundcore.h>
 #include <qmmp/metadatamanager.h>
+
 #include "kdenotify.h"
 
-KdeNotify::KdeNotify(QObject *parent) : QObject(parent),m_useFreedesktopSpec(false)
+KdeNotify::KdeNotify(QObject *parent) : QObject(parent)
 {
-    m_notifier = new QDBusInterface("org.kde.VisualNotifications",
-                                      "/VisualNotifications", "org.kde.VisualNotifications",
-                                      QDBusConnection::sessionBus(), this);
+
+    m_notifier = new QDBusInterface("org.freedesktop.Notifications",
+                                  "/org/freedesktop/Notifications","org.freedesktop.Notifications",
+                                  QDBusConnection::sessionBus(), this);
     if(m_notifier->lastError().type() != QDBusError::NoError)
     {
-        delete(m_notifier);
-        m_notifier = new QDBusInterface("org.freedesktop.Notifications",
-                                        "/org/freedesktop/Notifications","org.freedesktop.Notifications",
-                                        QDBusConnection::sessionBus(), this);
-        if(m_notifier->lastError().type() != QDBusError::NoError)
-        {
-            qWarning() << "KdeNotify: Unable to create interface:" << m_notifier->lastError().message();
-            return;
-        }
-        m_useFreedesktopSpec = true;
+        qWarning() << "KdeNotify: Unable to create interface:" << m_notifier->lastError().message();
+        return;
     }
+
     qWarning() << "KdeNotify: DBus interfece created successfully.";
-    QDir dir(Qmmp::configDir());
+    QDir dir(Qmmp::cacheDir());
     if(!dir.exists("kdenotifycache"))
         dir.mkdir("kdenotifycache");
     dir.cd("kdenotifycache");
     m_coverPath = dir.absolutePath() + "/cover.jpg";
     m_imagesDir = Qmmp::dataPath() + "/images";
 
-    QSettings settings(Qmmp::configFile(),QSettings::IniFormat);
+    QSettings settings;
     settings.beginGroup("Kde_Notifier");
     m_notifyDuration = settings.value("notify_duration",5000).toInt();
     m_showCovers = settings.value("show_covers",true).toBool();
@@ -121,8 +116,6 @@ QList<QVariant> KdeNotify::prepareNotification()
     QList<QVariant> args;
     args.append("Qmmp"); //app-name
     args.append(m_currentNotifyId); //replaces-id;
-    if(!m_useFreedesktopSpec)
-        args.append(QString()); //event-id
     args.append(m_imagesDir + "/app-icon.png");  //app-icon(path to icon on disk)
     args.append(tr("Qmmp now playing:")); //summary (notification title)
 
@@ -142,17 +135,7 @@ QList<QVariant> KdeNotify::prepareNotification()
     if(coverPath.isEmpty())
         coverPath = m_imagesDir + "/empty_cover.png";
 
-    if(m_useFreedesktopSpec)
-        args.append(body); //body
-    else
-    {
-        QString nBody;
-        nBody.append("<table padding=\"3px\"><tr><td width=\"80px\" height=\"80px\" padding=\"3px\">");
-        nBody.append("<img height=\"80\" width=\"80\" src=\"%1\"></td><td width=\"10\"></td><td>%2</td></tr></table>");
-        nBody = nBody.arg(coverPath,body);
-        args.append(nBody);
-    }
-
+    args.append(body); //body
     args.append(QStringList()); //actions
     QVariantMap hints;
     hints.insert("image_path",coverPath);
@@ -187,7 +170,7 @@ void KdeNotify::onVolumeChanged(int percent)
 {
     QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.plasmashell"), QStringLiteral("/org/kde/osdService"),
                                                       QStringLiteral("org.kde.osdService"), QStringLiteral("mediaPlayerVolumeChanged"));
-    msg.setArguments({ percent, "Qmmp", "qmmp-simple-1" });
+    msg.setArguments({ percent, "Qmmp", "qmmp-simple" });
     QDBusConnection::sessionBus().asyncCall(msg);
 }
 

@@ -28,7 +28,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 {
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose, true);
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     m_ui.srSpinBox->setValue(settings.value("SOXR/sample_rate",48000).toInt());
 
     m_ui.qualityComboBox->addItem(tr("Quick"), SOXR_QQ);
@@ -48,7 +48,7 @@ SettingsDialog::~SettingsDialog()
 
 void SettingsDialog::accept()
 {
-    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    QSettings settings;
     settings.setValue("SOXR/sample_rate",m_ui.srSpinBox->value());
     settings.setValue("SOXR/quality", m_ui.qualityComboBox->itemData(m_ui.qualityComboBox->currentIndex()).toInt());
     QDialog::accept();
