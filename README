@@ -113,7 +113,7 @@ Requirements:
 - libprojectM >= 2.0.0 (optional)
 - libenca >= 1.9 (optional)
 - libarchive >= 3.2.0 (optional)
-- libshout (optional)
+- libshout >= 2.4.3 (optional)
 - mplayer (optional)
 - libx11, libxcb, xorgproto (optional)
 - librcd >= 0.1.13 (optional)
