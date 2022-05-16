@@ -155,7 +155,7 @@ ADD_CUSTOM_COMMAND(
     COMMAND find
     ARGS ${CMAKE_CURRENT_BINARY_DIR} -name *_automoc.dir | xargs rm -rf
     COMMAND rm
-    ARGS -rf ${CMAKE_CURRENT_BINARY_DIR}/doc/html
+    ARGS -rf ${CMAKE_CURRENT_BINARY_DIR}/doc/html .qt config.tests
     TARGET  distclean
 )
 ENDIF(UNIX)
