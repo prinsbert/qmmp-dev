@@ -31,6 +31,10 @@ QT5_ADD_RESOURCES(libffap_RCC_SRCS ${libffap_RCCS})
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+IF(CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_LESSER 8.0)
+  SET_TARGET_PROPERTIES(ffap PROPERTIES LINK_FLAGS -lgcc -lgcc_s)
+ENDIF()
+
 
 ADD_LIBRARY(ffap MODULE ${libffap_SRCS} ${libffap_RCC_SRCS} ${libffap_HDRS})
 target_link_libraries(ffap Qt5::Widgets ${QMMP_LDFLAGS} ${ffap_LDFLAGS} ${TAGLIB_LDFLAGS})
