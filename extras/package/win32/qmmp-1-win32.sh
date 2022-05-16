@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=1.5.4
-QMMP_PLUGIN_PACK_VERSION=1.5.3
+QMMP_VERSION=1.6.0
+QMMP_PLUGIN_PACK_VERSION=1.6.0
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
@@ -21,7 +21,7 @@ download_qmmp_tarball()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  wget -nc http://qmmp.ylsoftware.com/files/qmmp/1.5/qmmp-${QMMP_VERSION}.tar.bz2
+  wget -nc http://qmmp.ylsoftware.com/files/qmmp/1.6/qmmp-${QMMP_VERSION}.tar.bz2
   tar xvjf qmmp-${QMMP_VERSION}.tar.bz2
   cd ..
 }
@@ -31,7 +31,7 @@ download_plugins_tarball()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-plugin-pack...'
-  wget -nc http://qmmp.ylsoftware.com/files/qmmp-plugin-pack/1.5/qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
+  wget -nc http://qmmp.ylsoftware.com/files/qmmp-plugin-pack/1.6/qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
   tar xvjf qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
   cd ..
 }
@@ -69,11 +69,11 @@ download_plugins_svn()
 build ()
 { 
   cd qmmp-${QMMP_VERSION}
-  qmake CONFIG+=release DISABLED_PLUGINS+=MODPLUG_PLUGIN
+  qmake CONFIG+=release
   mingw32-make -j${JOBS}
   cd ..
   cd qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
-  qmake CONFIG+=release INCLUDEPATH+=`dirs`/../qmmp-${QMMP_VERSION}/src QMAKE_LIBDIR+=`dirs`/../qmmp-${QMMP_VERSION}/bin
+  qmake CONFIG+=release DISABLED_PLUGINS+=MODPLUG_PLUGIN INCLUDEPATH+=`dirs`/../qmmp-${QMMP_VERSION}/src QMAKE_LIBDIR+=`dirs`/../qmmp-${QMMP_VERSION}/bin
   mingw32-make -j${JOBS}
   cd ..
   cd qmmp-adplug-master
@@ -137,7 +137,7 @@ create_distr ()
     cp -v ${MINGW32_PATH}/bin/${LIB_NAME} ./
   done
   #third party libs   
-  for LIB_NAME in avcodec-57.dll avformat-57.dll avutil-55.dll glew32.dll libFLAC-8.dll libcddb-2.dll libcdio-19.dll libcdio_cdda-2.dll libcdio_paranoia-2.dll
+  for LIB_NAME in avcodec-*.dll avformat-*.dll avutil-*.dll glew32.dll libFLAC-8.dll libcddb-2.dll libcdio-19.dll libcdio_cdda-2.dll libcdio_paranoia-2.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done

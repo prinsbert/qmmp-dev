@@ -13,8 +13,7 @@ Known issues:
 
 Extra plugins (see https://qmmp.ylsoftware.com/plugins.php):
   - FFap - enhanced Monkey's Audio (APE) decoder;
-  - Goom - audio visualization based on goom project;
-  - XMP - module player with use of the libxmp library.
+  - Goom - audio visualization based on goom project.
 
 Third-party plugins:
   - qmmp-adplug - AdPlug-based AdLib input plugin for Qmmp (Web page: https://github.com/cspiegel/qmmp-adplug)
@@ -39,12 +38,12 @@ List of the third-party libraries.
   opus                1.3.1      http://www.opus-codec.org/
   opusfile            0.12       http://www.opus-codec.org/
   libbs2b             3.1.0      http://bs2b.sourceforge.net/
-  curl                7.82.0     http://curl.haxx.se/
+  curl                7.83.1     http://curl.haxx.se/
   libcdio             2.1.0      http://www.gnu.org/software/libcdio/
   libcdio-paranoia    10.2+2.0.1 http://www.gnu.org/software/libcdio/  
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
-  ffmpeg              4.4.1      https://ffmpeg.org/
+  ffmpeg              4.4.2      https://ffmpeg.org/
   libxmp              4.5        https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       http://www.musepack.net/
