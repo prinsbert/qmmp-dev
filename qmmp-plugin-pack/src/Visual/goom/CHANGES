@@ -1,0 +1,9 @@
+Changes since the original code from the Goom project:
+
+* changed licence from LGPLv2+ to GPLv2+
+* removed PPC support
+* fixed memory leaks and other bugs (with use of Xine and VLC patches)
+* fixed recent gcc support
+* fixed cpu detection
+
+Original code you can find here: https://sourceforge.net/projects/goom/

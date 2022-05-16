@@ -1,0 +1,90 @@
+Qmmp Plugin Pack
+
+Plugin pack is a set of extra plugins for Qmmp.
+Official home page: https://qmmp.ylsoftware.com/plugins.php
+Development: https://sourceforge.net/projects/qmmp-dev/
+Translation: https://www.transifex.com/qmmp-development-team/
+
+Description:
+- FFap - enhanced Monkey's Audio (APE) decoder (24-bit samples and embedded cue support)
+- ModPlug - module player with use of the libmodplug library
+- Sample Rate Converter - resampler based on libsamplerate library
+- Goom - audio visualization based on goom project
+- FFVideo - video playback engine based on FFmpeg library
+- Ytb - audio playback from YouTube (uses yt-dlp)
+
+Requirements:
+- Qt >= 6.2 (qtbase and qttools for build)
+- qmmp 2.1.x
+- taglib >= 1.12
+- libmodplug >= 0.8.4 (optional)
+- libsamplerate >= 0.1.2 (optional)
+- ffmpeg >= 3.4 (optional)
+- yt-dlp (latest version, optional)
+- cmake >= 3.18.0 (for build only)
+
+Attention! Plugin Pack build needs lrelease installed.
+
+Configure:
+cmake ./
+
+Build:
+make
+
+Installation:
+make install
+
+If someone plugin (for example, MODPLUG plugin) doesn't build or doesn't needed you can disable it
+by running the following command:
+cmake ./ -DUSE_MODPLUG:BOOL=FALSE
+
+Available options:
+- USE_FFAP, USE_MODPLUG, USE_SRC, USE_GOOM, USE_FFVIDEO, USE_YTB (plugins)
+
+Also you can use ccmake to change plugin configuration.
+By default program will be installed in /usr/local. You can change default path by running:
+cmake ./ -DCMAKE_INSTALL_PREFIX=custom_path
+
+For more information see GNUInstallDirs module documentation:
+https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html
+
+
+In some cases, you can use qmake for building and installation.
+
+Configure:
+qmake PREFIX=custom_path (default: /usr)
+
+Build:
+make
+
+Installation:
+make install
+
+If someone module doesn't build or doesn't needed you can disable it in qmmp-plugin-pack.pri file - just comment
+corresponding line( symbol '#') or execute qmake with the special parameters:
+qmake DISABLED_PLUGINS+=XMP_PLUGIN DISABLED_PLUGINS+=FFAP_PLUGIN
+
+Attention! By default all plugins are enabled by default.
+
+Changing shared library install path (for some 64-bit distributions).
+By default, all libraries and plugins will be installed to $(INSTALL PREFIX)/lib. You can change "lib"
+to "lib64" by running qmake or cmake with the special parameter:
+qmake LIB_DIR=/usr/lib64
+or
+cmake ./ -DLIB_DIR=lib64
+
+
+To avoid some problems please read below carefully.
+
+How to enable ModPlug plugin.
+By default XMP plugin has higher priority than ModPlug.
+To fix this go to the "settings"->"plugins" and disable XMP plugin.
+
+How to enable FFap plugin.
+Go to the FFmpeg plugin settings and disable Monkey's Audio support.
+
+How to enable FFVideo plugin.
+Go to the "settings"->"plugins" and disable MPlayer plugin.
+
+All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets or
+forkotov02@ya.ru
