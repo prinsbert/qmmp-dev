@@ -1780,7 +1780,8 @@ Version 2.1.0
   - added feature to remove tracks from history
   - added feature to show track details
 * improved "about..." dialog
-* improved file name filter configuration in the ffmpeg plugin 
+* improved file name filter configuration in the ffmpeg plugin
+* increased the minimal required Qt version to 5.5
 * optimized search for duplicated tracks
 * optimized track queue
 * resolved conflict between 1.x and 2.x versions
