@@ -51,10 +51,10 @@ void ShoutClient::readSettings()
     shout_set_password(m_shout_conn, settings.value("passw", "hackme").toString().toLatin1().constData());
     shout_set_mount(m_shout_conn, QString("/%1").arg(settings.value("mount", "qmmp.out").toString()).
                     toLatin1().constData());
-    shout_set_name(m_shout_conn, "qmmp");
+    shout_set_meta(m_shout_conn, SHOUT_META_NAME, "qmmp");
     shout_set_user(m_shout_conn, settings.value("user", "source").toString().toLatin1().constData());
     shout_set_public(m_shout_conn, settings.value("public", false).toBool() ? 1 : 0);
-    shout_set_format(m_shout_conn, SHOUT_FORMAT_OGG);
+    shout_set_content_format(m_shout_conn, SHOUT_FORMAT_OGG, SHOUT_USAGE_AUDIO, nullptr);
     shout_set_protocol(m_shout_conn, SHOUT_PROTOCOL_HTTP);
     shout_set_agent(m_shout_conn, "qmmp");
     shout_set_audio_info(m_shout_conn, SHOUT_AI_CHANNELS, "2");
