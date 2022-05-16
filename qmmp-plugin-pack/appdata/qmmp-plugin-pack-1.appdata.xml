@@ -8,5 +8,5 @@
   <url type="bugtracker">https://sourceforge.net/p/qmmp-dev/tickets/</url>
   <url type="help">https://sourceforge.net/p/qmmp-dev/tickets/</url>
   <url type="homepage">https://qmmp.ylsoftware.com/plugins.php</url>
-  <extends>qmmp.desktop</extends>
+  <extends>qmmp-1.desktop</extends>
 </component>
