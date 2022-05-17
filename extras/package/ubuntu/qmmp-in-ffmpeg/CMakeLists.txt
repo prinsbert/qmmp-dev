@@ -16,7 +16,7 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
   
-SET(QMMP_PLUGIN_PACK_VERSION 1.5.0)
+SET(QMMP_PLUGIN_PACK_VERSION 1.6.0)
 SET(SVN_VERSION TRUE)
 
 string(REPLACE "." ";" VERSIONS ${QMMP_PLUGIN_PACK_VERSION})
@@ -27,11 +27,12 @@ list(GET VERSIONS 2 QMMP_PLUGIN_PACK_VERSION_PATCH)
 INCLUDE(FindPkgConfig)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-find_package(Qt5Widgets 5.4.0 REQUIRED)
-find_package(Qt5LinguistTools 5.4.0 REQUIRED)
+find_package(Qt5Widgets 5.5.0 REQUIRED)
+find_package(Qt5LinguistTools 5.5.0 REQUIRED)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
 set(CMAKE_CXX_STANDARD 11)
+set(APP_NAME_SUFFIX "-1")
 
 get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
@@ -57,7 +58,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 # minimal supported versions
 # ffmpeg-3.2: libavcodec-57.64.100, libavformat-56.40.0, libavutil-55.34.100
 pkg_check_modules(FFMPEG libavcodec>=56.60.0 libavformat>=56.40.0 libavutil>=54.31.0 REQUIRED)
-pkg_check_modules(QMMP qmmp${APP_NAME_SUFFIX}>=1.5.0 REQUIRED)
+pkg_check_modules(QMMP qmmp${APP_NAME_SUFFIX}>=1.6.0 REQUIRED)
 
 include_directories(${FFMPEG_INCLUDE_DIRS})
 link_directories(${FFMPEG_LIBRARY_DIRS})
