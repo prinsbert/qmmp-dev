@@ -420,5 +420,8 @@ LEGEND
 2.1.0
 [*] qmmp-2.1.0
 [*] qmmp-plugin-pack-2.1.0
+[*] qt-6.2.4
 [*] curl-7.83.1
 [*] ffmpeg-4.4.2
+[*] libsndfile-1.1.0
+[*] mingw-w64 toolchain: i686-11.2.0-release-posix-dwarf-rt_v9-rev4

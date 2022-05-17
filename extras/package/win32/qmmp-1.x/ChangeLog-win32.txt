@@ -422,3 +422,4 @@ LEGEND
 [*] qmmp-plugin-pack-1.6.0
 [*] curl-7.83.1
 [*] ffmpeg-4.4.2
+[*] libsndfile-1.1.0

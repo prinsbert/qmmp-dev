@@ -20,6 +20,7 @@ export PREFIX=${DEV_PATH}/mingw32-libs
 
 export PATH=${PATH}:${MINGW32_PATH}/bin:${QT4_PATH}/bin:${PREFIX}/bin:${DEV_PATH}/msys/bin
 
+export LDFLAGS="-lssp"
 export STRIP=false
 export JOBS=2
 

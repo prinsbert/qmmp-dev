@@ -17,6 +17,7 @@ case $1 in
     cat ../../475-cflags.patch | patch -p2
     cat ../../475-cmake-install.patch | patch -p2
     cat ../../disable-static.patch | patch -p1
+    cat ../../extern-constants.patch | patch -p1
     cmake ./ -DCMAKE_INSTALL_PREFIX=$PREFIX -G "MSYS Makefiles" -DSHARED=ON -DBUILD_TOOLS=OFF \
     -DCMAKE_COLOR_MAKEFILE:BOOL=OFF
     make -j${JOBS}

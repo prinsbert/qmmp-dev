@@ -154,8 +154,8 @@
 ;Check windows version
 
 Function .onInit
-  ${IfNot} ${AtLeastWinVista}
-    MessageBox MB_OK "Vista or above is required"
+  ${IfNot} ${AtLeastWin10}
+    MessageBox MB_OK "Windows 10 or above is required"
     Quit
   ${EndIf}
 FunctionEnd
