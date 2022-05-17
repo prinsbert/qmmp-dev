@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.5.4
+QMMP_VERSION=1.6.0
 UBUNTU_CODENAMES='xenial bionic focal impish jammy'
 BUILD_ROOT=build-root
 
@@ -48,7 +48,7 @@ clean ()
 
 case $1 in
     --download)
-		wget https://qmmp.ylsoftware.com/files/qmmp/1.5/qmmp-$QMMP_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/qmmp/1.6/qmmp-$QMMP_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES
