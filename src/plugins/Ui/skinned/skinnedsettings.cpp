@@ -265,7 +265,7 @@ void SkinnedSettings::readSettings()
     //view
     m_ui.skinCursorsCheckBox->setChecked(settings.value("skin_cursors", false).toBool());
     m_currentSkinName = settings.value("skin_name", Skin::defaultSkinName()).toString();
-    QString currentSkinPath = settings.value("Skinned/skin_path").toString();
+    QString currentSkinPath = settings.value("skin_path").toString();
     if(currentSkinPath.isEmpty() || !QDir(currentSkinPath).exists())
         m_currentSkinName = Skin::defaultSkinName();
     m_ui.hiddenCheckBox->setChecked(settings.value("start_hidden", false).toBool());

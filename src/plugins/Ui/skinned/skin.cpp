@@ -48,13 +48,16 @@ Skin::Skin(QObject *parent) : QObject (parent)
     if(Qmmp::isPortable())
         path.prepend(QApplication::applicationDirPath() + "/");
 #endif
-    if (path.isEmpty() || !QDir(path).exists ())
+    if(path.isEmpty() || !QDir(path).exists () || QDir(path).count() < 4)
+    {
         path = QStringLiteral(":/") + Skin::defaultSkinName();
+        settings.setValue("Skinned/skin_name", Skin::defaultSkinName());
+    }
     m_double_size = settings.value("Skinned/double_size", false).toBool();
     m_antialiasing = settings.value("Skinned/antialiasing", false).toBool();
     ACTION(ActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
     ACTION(ActionManager::WM_ANTIALIASING)->setChecked(m_antialiasing);
-    setSkin (QDir::cleanPath(path));
+    setSkin(QDir::cleanPath(path));
     /* skin directory */
     QDir skinDir(Qmmp::configDir());
     skinDir.mkdir("skins");
