@@ -1,0 +1,4 @@
+version=4
+opts="dversionmangle=s/\+dfsg\d*$//" \
+https://github.com/yt-dlp/yt-dlp/releases \
+     (?:.*?/)([\d\.]+)\.tar\.gz

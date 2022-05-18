@@ -12,57 +12,61 @@ Author: Nicolas Braud-Santoni <nicolas@braud-santoni.eu>
 Reviewed-by: Rogério Theodoro de Brito <rbrito@gmail.com>
 Last-Update: 2021-02-13
 ---
- README.md              | 3 ---
- yt_dlp/__init__.py | 8 ++++++--
- yt_dlp/options.py  | 2 +-
- 3 files changed, 7 insertions(+), 6 deletions(-)
+ README.md          |    3 ---
+ yt_dlp/__init__.py |   11 ++++++-----
+ yt_dlp/options.py  |    2 +-
+ 3 files changed, 7 insertions(+), 9 deletions(-)
 
-Index: yt-dlp-2021.11.10.1/README.md
+Index: yt-dlp-2022.05.18/README.md
 ===================================================================
---- yt-dlp-2021.11.10.1.orig/README.md
-+++ yt-dlp-2021.11.10.1/README.md
-@@ -299,9 +299,6 @@ You can also fork the project on github
+--- yt-dlp-2022.05.18.orig/README.md
++++ yt-dlp-2022.05.18/README.md
+@@ -322,7 +322,6 @@ You can also fork the project on github
  ## General Options:
      -h, --help                       Print this help text and exit
      --version                        Print program version and exit
--    -U, --update                     Update this program to latest version. Make
--                                     sure that you have sufficient permissions
--                                     (run with sudo if needed)
+-    -U, --update                     Update this program to latest version
      -i, --ignore-errors              Ignore download and postprocessing errors.
                                       The download will be considered successful
                                       even if the postprocessing fails
-Index: yt-dlp-2021.11.10.1/yt_dlp/__init__.py
+Index: yt-dlp-2022.05.18/yt_dlp/__init__.py
 ===================================================================
---- yt-dlp-2021.11.10.1.orig/yt_dlp/__init__.py
-+++ yt-dlp-2021.11.10.1/yt_dlp/__init__.py
-@@ -762,11 +762,13 @@ def _real_main(argv=None):
- 
+--- yt-dlp-2022.05.18.orig/yt_dlp/__init__.py
++++ yt-dlp-2022.05.18/yt_dlp/__init__.py
+@@ -24,7 +24,6 @@ from .postprocessor import (
+     MetadataFromFieldPP,
+     MetadataParserPP,
+ )
+-from .update import run_update
+ from .utils import (
+     NO_DEFAULT,
+     POSTPROCESS_WHEN,
+@@ -825,10 +824,12 @@ def _real_main(argv=None):
          # Update version
          if opts.update_self:
--            # If updater returns True, exit. Required for windows
+             # If updater returns True, exit. Required for windows
 -            if run_update(ydl):
 -                if actual_use:
 -                    sys.exit('ERROR: The program must exit for the update to complete')
 -                sys.exit()
 +            parser.error(
-+                "youtube-dl's self-update mechanism is disabled on Debian.\n"
-+                "Please update youtube-dl using apt(8).\n"
-+                "See https://packages.debian.org/sid/youtube-dl for the "
++                "yt-dlp's self-update mechanism is disabled on Debian.\n"
++                "Please update yt-dlp using apt(8).\n"
++                "See https://packages.debian.org/sid/yt-dlp for the "
 +                "latest packaged version.\n"
 +            )
-+            sys.exit()
  
          # Maybe do nothing
          if not actual_use:
-Index: yt-dlp-2021.11.10.1/yt_dlp/options.py
+Index: yt-dlp-2022.05.18/yt_dlp/options.py
 ===================================================================
---- yt-dlp-2021.11.10.1.orig/yt_dlp/options.py
-+++ yt-dlp-2021.11.10.1/yt_dlp/options.py
-@@ -205,7 +205,7 @@ def parseOpts(overrideArguments=None):
+--- yt-dlp-2022.05.18.orig/yt_dlp/options.py
++++ yt-dlp-2022.05.18/yt_dlp/options.py
+@@ -236,7 +236,7 @@ def create_parser():
      general.add_option(
          '-U', '--update',
          action='store_true', dest='update_self',
--        help='Update this program to latest version. Make sure that you have sufficient permissions (run with sudo if needed)')
+-        help='Update this program to latest version')
 +        help=optparse.SUPPRESS_HELP)
      general.add_option(
          '-i', '--ignore-errors',

@@ -12,11 +12,11 @@ Last-Update: 2016-06-27
  setup.py | 7 +------
  1 file changed, 1 insertion(+), 6 deletions(-)
 
-Index: yt-dlp-2021.10.10/setup.py
+Index: yt-dlp-2022.05.18/setup.py
 ===================================================================
---- yt-dlp-2021.10.10.orig/setup.py
-+++ yt-dlp-2021.10.10/setup.py
-@@ -55,13 +55,7 @@ if sys.argv[1:2] == ['py2exe']:
+--- yt-dlp-2022.05.18.orig/setup.py
++++ yt-dlp-2022.05.18/setup.py
+@@ -66,13 +66,7 @@ if sys.argv[1:2] == ['py2exe']:
      }
  
  else:
