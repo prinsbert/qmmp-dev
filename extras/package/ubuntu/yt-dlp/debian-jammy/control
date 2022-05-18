@@ -11,6 +11,7 @@ Build-Depends:
  python3-pkg-resources,
  python3-setuptools,
  python3-pycryptodome,
+ python3-pytest,
  zip
 Build-Depends-Indep:
  python3
