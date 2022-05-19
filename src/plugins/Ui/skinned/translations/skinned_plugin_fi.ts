@@ -1480,7 +1480,7 @@
         <translation>Arkistoimaton ulkoasu</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="206"/>
+        <location filename="../skinnedsettings.cpp" line="217"/>
         <source>Archived skin</source>
         <translation>Arkistoitu ulkoasu</translation>
     </message>

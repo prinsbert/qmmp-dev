@@ -1480,7 +1480,7 @@
         <translation>Uitgepakt thema</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="206"/>
+        <location filename="../skinnedsettings.cpp" line="217"/>
         <source>Archived skin</source>
         <translation>Ingepakt thema</translation>
     </message>

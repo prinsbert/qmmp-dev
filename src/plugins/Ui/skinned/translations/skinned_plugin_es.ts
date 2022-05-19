@@ -36,7 +36,7 @@
     <message>
         <location filename="../actionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation>&amp;Previo</translation>
+        <translation>&amp;Anterior</translation>
     </message>
     <message>
         <location filename="../actionmanager.cpp" line="42"/>
@@ -1480,7 +1480,7 @@
         <translation>Piel sin archivar</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="206"/>
+        <location filename="../skinnedsettings.cpp" line="217"/>
         <source>Archived skin</source>
         <translation>Piel archivada</translation>
     </message>

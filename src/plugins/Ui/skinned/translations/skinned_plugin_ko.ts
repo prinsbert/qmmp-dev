@@ -1480,7 +1480,7 @@
         <translation>압축되지 않은 스킨</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="206"/>
+        <location filename="../skinnedsettings.cpp" line="217"/>
         <source>Archived skin</source>
         <translation>압축된 스킨</translation>
     </message>

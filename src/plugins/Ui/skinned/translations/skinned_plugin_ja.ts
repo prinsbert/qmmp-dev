@@ -1481,7 +1481,7 @@
         <translation>非書庫化スキン</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="206"/>
+        <location filename="../skinnedsettings.cpp" line="217"/>
         <source>Archived skin</source>
         <translation>書庫化スキン</translation>
     </message>
