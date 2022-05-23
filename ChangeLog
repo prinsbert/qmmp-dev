@@ -1551,3 +1551,10 @@ Version 0.12.14
 * fixed volume bar draw in the double size mode
 * fixed symlinks support
 * fixed some issues in the two-panel file dialog
+
+Version 0.12.15
+* fixed drag-and-dropped tracks order
+* fixed issue with empty content type
+* fixed desktop entry name in the mpris plugin
+* fixed shared skins search path
+* improved channel remapping in some cases
