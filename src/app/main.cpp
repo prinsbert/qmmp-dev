@@ -51,10 +51,7 @@ int main(int argc, char *argv[])
     icon.addFile(":/256x256/qmmp-1.png");
     icon.addFile(":/scalable/qmmp-1.svgz");
     a.setWindowIcon(icon);
-#ifdef Q_OS_WIN
-    if(Qmmp::isPortable())
-        qputenv("HOMEPATH", Qmmp::configDir().toLatin1()); //librcc database path
-#endif
+
     QTranslator translator;
     QString locale = Qmmp::systemLanguageID();
     if(translator.load(QString(":/qmmp_") + locale))
