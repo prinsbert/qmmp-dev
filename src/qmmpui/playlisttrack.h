@@ -92,8 +92,13 @@ public:
      * Default implementation returns -1.
      */
     int trackIndex() const override;
-
+    /*!
+     * Returns index of the queued track. Unqueued track returns \b -1.
+     */
     int queuedIndex() const;
+    /*!
+     * Returns \b true if track is queued. Otherwise returns \b false.
+     */
     bool isQueued() const;
     /*!
      * Prepares for usage.

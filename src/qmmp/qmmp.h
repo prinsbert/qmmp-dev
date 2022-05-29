@@ -180,6 +180,10 @@ public:
      * Returns a directory location where persistent application data can be stored.
      */
     static QString dataPath();
+    /*!
+     * Returns a directory location where user writable application data can be stored
+     * (see XDG Base Directory specification).
+     */
     static QString userDataPath();
 #ifdef Q_OS_WIN
     /*!
