@@ -144,9 +144,12 @@ public:
      */
     virtual void setCue(const QString &content);
     /*!
-     * Removes CUE file or tag. Default implementation doesn nothing.
+     * Removes CUE file or tag. Default implementation does nothing.
      */
     virtual void removeCue();
+    /*!
+     * Returns song lyrics. Default returns empty string.
+     */
     virtual QString lyrics() const;
     /*!
      * Returns \b true if file is opened in read only mode. Otherwise returns \b false.
