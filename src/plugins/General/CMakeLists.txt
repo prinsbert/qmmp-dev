@@ -50,9 +50,9 @@ IF(USE_HAL AND Qt5DBus_FOUND)
 add_subdirectory(hal)
 ENDIF(USE_HAL AND Qt5DBus_FOUND)
 
-IF(USE_UDISKS2 AND Qt5DBus_FOUND)
-add_subdirectory(udisks2)
-ENDIF(USE_UDISKS2 AND Qt5DBus_FOUND)
+IF(USE_UDISKS AND Qt5DBus_FOUND)
+add_subdirectory(udisks)
+ENDIF(USE_UDISKS AND Qt5DBus_FOUND)
 
 IF(USE_HOTKEY AND Qt5X11Extras_FOUND)
 add_subdirectory(hotkey)
