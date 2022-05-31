@@ -123,7 +123,7 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 
             hotkey->id = hotkey->mods^hotkey->key;
 
-            if(RegisterHotKey(NULL, hotkey->id,  hotkey->mods, hotkey->key))
+            if(RegisterHotKey(nullptr, hotkey->id,  hotkey->mods, hotkey->key))
             {
                 qDebug("HotkeyManager: registered key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
             }
@@ -146,7 +146,7 @@ HotkeyManager::~HotkeyManager()
     {
         Hotkey *key = m_grabbedKeys.takeFirst ();
         if(key->id)
-             UnregisterHotKey(NULL, key->id);
+             UnregisterHotKey(nullptr, key->id);
         delete key;
     }
 }
