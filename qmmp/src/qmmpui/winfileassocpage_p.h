@@ -43,7 +43,6 @@ public:
 
 private slots:
     void on_selectAll_clicked();
-    void on_selectNone_clicked();
 
 private:
     void loadAssociations();
