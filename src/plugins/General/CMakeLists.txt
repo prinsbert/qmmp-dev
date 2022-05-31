@@ -51,7 +51,7 @@ add_subdirectory(hal)
 ENDIF(USE_HAL AND Qt6DBus_FOUND)
 
 IF(USE_UDISKS2 AND Qt6DBus_FOUND)
-add_subdirectory(udisks2)
+add_subdirectory(udisks)
 ENDIF(USE_UDISKS2 AND Qt6DBus_FOUND)
 
 IF(USE_HOTKEY AND X11_FOUND)
