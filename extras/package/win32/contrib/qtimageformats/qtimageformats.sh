@@ -1,8 +1,8 @@
 #!/bin/sh
 
-NAME=qttranslations-everywhere-opensource-src
+NAME=qtimageformats-everywhere-opensource-src
 VERSION=5.15.4
-BUILD_ROOT=qttranslations-everywhere-src-$VERSION
+BUILD_ROOT=qtimageformats-everywhere-src-$VERSION
 
 case $1 in
   --download)
