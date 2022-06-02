@@ -23,11 +23,9 @@ unix {
 win32 {
     TARGET = ../../../bin/qmmpui
     LIBS += -L../../bin -lqmmp2 -lole32
-    HEADERS += winfileassoc.h \
-               winfileassocpage_p.h
-    SOURCES += winfileassoc.cpp \
-               winfileassocpage.cpp
-    FORMS += forms/winfileassocpage.ui
+    HEADERS +=
+    SOURCES +=
+    FORMS +=
 }
 
 HEADERS += general.h \
