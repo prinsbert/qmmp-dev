@@ -70,7 +70,7 @@ OutputWASAPI::~OutputWASAPI()
 
 bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat format)
 {
-    HRESULT result = CoCreateInstance(CLSID_MMDeviceEnumerator, NULL, CLSCTX_ALL, IID_IMMDeviceEnumerator, (void**)&m_pEnumerator);
+    HRESULT result = CoCreateInstance(CLSID_MMDeviceEnumerator, nullptr, CLSCTX_ALL, IID_IMMDeviceEnumerator, (void**)&m_pEnumerator);
     if(result != S_OK)
     {
         qWarning("OutputWASAPI: CoCreateInstance failed, error code = 0x%lx", result);
@@ -103,7 +103,7 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
         }
     }
 
-    if((result = m_pDevice->Activate(IID_IAudioClient, CLSCTX_ALL, NULL, (void**)&m_pAudioClient)) != S_OK)
+    if((result = m_pDevice->Activate(IID_IAudioClient, CLSCTX_ALL, nullptr, (void**)&m_pAudioClient)) != S_OK)
     {
         qWarning("OutputWASAPI: IMMDevice::Activate failed, error code = 0x%lx", result);
         m_pAudioClient = nullptr;
@@ -167,7 +167,7 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
         qDebug("OutputWASAPI: format is not supported, using converter");
     }
 
-    if((result = m_pAudioClient->Initialize(mode, streamFlags, WASAPI_BUFSIZE, 0, (WAVEFORMATEX *)&wfex, NULL)) != S_OK)
+    if((result = m_pAudioClient->Initialize(mode, streamFlags, WASAPI_BUFSIZE, 0, (WAVEFORMATEX *)&wfex, nullptr)) != S_OK)
     {
         qWarning("OutputWASAPI: IAudioClient::Initialize failed, error code = 0x%lx", result);
         return false;

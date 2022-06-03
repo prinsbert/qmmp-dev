@@ -54,7 +54,7 @@ QtFileDialog::~QtFileDialog()
 QStringList QtFileDialog::exec(QWidget *parent, const QString &dir, FileDialog::Mode mode,
                                const QString &caption, const QString &filter, QString *selectedFilter)
 {
-    QCoreApplication::sendPostedEvents(Q_NULLPTR, QEvent::LanguageChange); //prevents crash when using KDE file dialog
+    QCoreApplication::sendPostedEvents(nullptr, QEvent::LanguageChange); //prevents crash when using KDE file dialog
     QStringList list;
     if(mode == AddFile)
     {

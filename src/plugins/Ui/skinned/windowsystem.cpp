@@ -70,13 +70,13 @@ QString WindowSystem::netWindowManagerName()
     WId root = DefaultRootWindow(dsp);
 
     unsigned char* retValue1 = getWindowProperty(root, "_NET_SUPPORTING_WM_CHECK");
-    if (retValue1 == NULL)
+    if (retValue1 == nullptr)
         return QString();
 
     WId win = *(reinterpret_cast<unsigned long*>(retValue1));
 
     unsigned char* retValue2 = getWindowProperty(win, "_NET_SUPPORTING_WM_CHECK");
-    if (retValue2 == NULL)
+    if (retValue2 == nullptr)
     {
         XFree(retValue1);
         return QString();
@@ -93,7 +93,7 @@ QString WindowSystem::netWindowManagerName()
     retValue2 = getWindowProperty(win, "_NET_WM_NAME");
 
     XFree(retValue1);
-    if (retValue2 == NULL)
+    if (retValue2 == nullptr)
         return QString();
 
     QString name = QString((char *)retValue2);
@@ -117,7 +117,7 @@ void WindowSystem::changeWinSticky(WId win, bool stick)
     {
         unsigned char* tmp = getWindowProperty(root, "_NET_CURRENT_DESKTOP");
 
-        if (tmp == NULL)
+        if (tmp == nullptr)
             qWarning("WindowSystem: error reading current desktop property.");
         else
         {
@@ -163,13 +163,13 @@ unsigned char* WindowSystem::getWindowProperty(WId win, const char* prop)
     Atom reqAtom = XInternAtom(dsp, prop, True);
 
     if (reqAtom == None)
-        return NULL;
+        return nullptr;
 
     Atom retType = None;
     int retFormat = 0;
     unsigned long retItems = 0UL;
     unsigned long retMoreBytes = 0UL;
-    unsigned char* retValue = NULL;
+    unsigned char* retValue = nullptr;
 
     // Check if the property exists and calculate its length.
     int retCheck = XGetWindowProperty(dsp, win,
@@ -178,16 +178,16 @@ unsigned char* WindowSystem::getWindowProperty(WId win, const char* prop)
 
     // The value is most probably empty, since we requested to read
     // only 0L length, thus, it's just useless...
-    if (retValue != NULL)
+    if (retValue != nullptr)
     {
         XFree(retValue);
-        retValue = NULL;
+        retValue = nullptr;
     }
 
     if (retCheck != Success ||
             retType == None ||
             retMoreBytes == 0)
-        return NULL;
+        return nullptr;
 
     // These are not needed for now.
     retFormat = 0;
@@ -206,9 +206,9 @@ unsigned char* WindowSystem::getWindowProperty(WId win, const char* prop)
     if (retCheck != Success ||
             retMoreBytes != 0)
     {
-        if (retValue != NULL)
+        if (retValue != nullptr)
             XFree(retValue);
-        return NULL;
+        return nullptr;
     }
 
     return retValue;

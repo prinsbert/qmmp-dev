@@ -468,7 +468,7 @@ int VolumeALSA::setupMixer(QString card, QString device)
     if((err = snd_mixer_selem_set_playback_volume_range(pcm_element, 0, 100)) < 0)
     {
         qWarning("OutputALSA: Unable to set volume range: %s", snd_strerror(-err));
-        pcm_element = NULL;
+        pcm_element = nullptr;
         return -1;
     }
 
@@ -499,7 +499,7 @@ void VolumeALSA::parseMixerName(char *str, char **name, int *index)
     while (isspace(*str))
         str++;
 
-    if ((end = strchr(str, ',')) != NULL)
+    if ((end = strchr(str, ',')) != nullptr)
     {
         *name = strndup(str, end - str);
         end++;
@@ -520,7 +520,7 @@ snd_mixer_elem_t* VolumeALSA::getMixerElem(snd_mixer_t *mixer, char *name, int i
 
     if (index != -1)
         snd_mixer_selem_id_set_index(selem_id, index);
-    if (name != NULL)
+    if (name != nullptr)
         snd_mixer_selem_id_set_name(selem_id, name);
 
     elem = snd_mixer_find_selem(mixer, selem_id);
@@ -536,7 +536,7 @@ int VolumeALSA::getMixer(snd_mixer_t **mixer, QString card)
     {
         qWarning("OutputALSA: Failed to open empty mixer: %s",
                  snd_strerror(-err));
-        mixer = NULL;
+        mixer = nullptr;
         return -1;
     }
 
@@ -558,5 +558,5 @@ int VolumeALSA::getMixer(snd_mixer_t **mixer, QString card)
                  snd_strerror(-err));
         return -1;
     }
-    return (*mixer != NULL);
+    return (*mixer != nullptr);
 }

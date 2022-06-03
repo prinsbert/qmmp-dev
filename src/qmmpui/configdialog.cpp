@@ -45,7 +45,6 @@
 #include "mediaplayer.h"
 #include "qmmpuisettings.h"
 #include "playlistmodel.h"
-#include "winfileassocpage_p.h"
 #include "metadataformattermenu.h"
 #include "configdialog.h"
 
@@ -78,15 +77,6 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     //setup icons
     m_ui->preferencesButton->setIcon(QIcon::fromTheme("configure"));
     m_ui->informationButton->setIcon(QIcon::fromTheme("dialog-information"));
-    //file associations
-#ifdef Q_OS_WIN
-    if(!Qmmp::isPortable())
-    {
-        m_ui->stackedWidget->addWidget(new WinFileAssocPage(this));
-        m_ui->contentsWidget->addItem(tr("File Types"));
-        m_ui->contentsWidget->item(m_ui->contentsWidget->count() - 1)->setIcon(QIcon(":associations.png"));
-    }
-#endif
 }
 
 ConfigDialog::~ConfigDialog()
