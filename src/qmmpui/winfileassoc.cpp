@@ -83,11 +83,11 @@ int WinFileAssoc::VistaSetAppsAsDefault(const QStringList &fileExtensions)
 {
     IApplicationAssociationRegistration *pAAR;
     HRESULT hr = CoCreateInstance(CLSID_ApplicationAssociationReg,
-                                  NULL, CLSCTX_INPROC, IID_IApplicationAssociationReg,	(void **)&pAAR);
+                                  nullptr, CLSCTX_INPROC, IID_IApplicationAssociationReg,	(void **)&pAAR);
 
     int count = 0;
 
-    if (SUCCEEDED(hr) && (pAAR != NULL)) {
+    if (SUCCEEDED(hr) && (pAAR != nullptr)) {
         for(const QString &fileExtension : qAsConst(fileExtensions)) {
             hr = pAAR->SetAppAsDefault((const WCHAR *)m_AppName.utf16(),
                                        (const WCHAR *)QString("." + fileExtension).utf16(),
@@ -107,9 +107,9 @@ bool WinFileAssoc::VistaGetDefaultApps(const QStringList &extensions, QStringLis
     IApplicationAssociationRegistration *pAAR;
 
     HRESULT hr = CoCreateInstance(CLSID_ApplicationAssociationReg,
-                                  NULL, CLSCTX_INPROC, IID_IApplicationAssociationReg,	(void **)&pAAR);
+                                  nullptr, CLSCTX_INPROC, IID_IApplicationAssociationReg,	(void **)&pAAR);
 
-    if (SUCCEEDED(hr) && (pAAR != NULL)) {
+    if (SUCCEEDED(hr) && (pAAR != nullptr)) {
         for(const QString &fileExtension : qAsConst(extensions)) {
             BOOL bIsDefault = false;
             hr = pAAR->QueryAppIsDefault((const WCHAR *)QString("." + fileExtension).utf16(),
