@@ -247,7 +247,7 @@ SectionEnd
 
 Section /o "Use Simple UI by default"
   SetOutPath "$INSTDIR"
-  FileOpen $1 qmmprc.default a
+  FileOpen $1 qmmp-default.ini a
   FileSeek $1 0 END
   FileWrite $1 "[Ui]$\r$\n"
   FileWrite $1 "current_plugin=qsui$\r$\n"
@@ -256,7 +256,7 @@ SectionEnd
 
 Section /o "Use libRCD for ID3v1/ID3v2 charset detection"
   SetOutPath "$INSTDIR"
-  FileOpen $2 qmmprc.default a
+  FileOpen $2 qmmp-default.ini a
   FileSeek $2 0 END
   FileWrite $2 "[MPEG]$\r$\n"
   FileWrite $2 "detect_encoding=true$\r$\n"

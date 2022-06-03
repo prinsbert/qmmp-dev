@@ -61,10 +61,22 @@ QMMPStarter::QMMPStarter() : QObject()
 #ifndef QT_NO_SESSIONMANAGER
     connect(qApp, SIGNAL(commitDataRequest(QSessionManager&)), SLOT(commitData(QSessionManager&)), Qt::DirectConnection);
 #endif
-#ifdef Q_OS_WIN
-    m_named_mutex = nullptr;
-#endif
     createPaths();
+#ifdef Q_OS_WIN
+    QString defaultConfig = Qmmp::dataPath() + QStringLiteral("/qmmp-default.ini");
+    QString userConfig = Qmmp::configDir() + QStringLiteral("/qmmp.ini");
+    if(!QFile::exists(userConfig) && QFile::exists(defaultConfig))
+    {
+        qDebug("QMMPStarter: creating initial config");
+        QFile::copy(defaultConfig, userConfig);
+    }
+
+    QFileInfo configDirInfo(Qmmp::configDir());
+    QCoreApplication::setOrganizationName(configDirInfo.fileName());
+    QSettings::setDefaultFormat(QSettings::IniFormat);
+    QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, configDirInfo.canonicalPath());
+#endif
+
     m_option_manager = new BuiltinCommandLineOption(this);
     QStringList tmp = qApp->arguments().mid(1);
 

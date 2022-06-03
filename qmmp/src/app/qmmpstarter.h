@@ -86,7 +86,7 @@ private:
     bool m_finished = false;
     int m_exit_code = EXIT_SUCCESS;
 #ifdef Q_OS_WIN
-    HANDLE m_named_mutex;
+    HANDLE m_named_mutex = nullptr;
 #endif
 };
 
