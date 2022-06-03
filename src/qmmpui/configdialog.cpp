@@ -21,6 +21,9 @@
 #include <QSettings>
 #include <QFontDialog>
 #include <QTreeWidgetItem>
+#ifdef Q_OS_WIN
+#include <QSysInfo>
+#endif
 #include <qmmp/decoder.h>
 #include <qmmp/output.h>
 #include <qmmp/decoderfactory.h>
@@ -80,7 +83,7 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     m_ui->informationButton->setIcon(QIcon::fromTheme("dialog-information"));
     //file associations
 #ifdef Q_OS_WIN
-    if(!Qmmp::isPortable())
+    if(!Qmmp::isPortable() && QSysInfo::productVersion().startsWith("7"))
     {
         m_ui->stackedWidget->addWidget(new WinFileAssocPage(this));
         m_ui->contentsWidget->addItem(tr("File Types"));
