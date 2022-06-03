@@ -92,88 +92,88 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="402"/>
+        <location filename="../qmmpstarter.cpp" line="438"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Употреба: qmmp [опције] [фајлови]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="403"/>
+        <location filename="../qmmpstarter.cpp" line="439"/>
         <source>Options:</source>
         <translation>Опције:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="409"/>
+        <location filename="../qmmpstarter.cpp" line="445"/>
         <source>Start qmmp with the specified user interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="410"/>
+        <location filename="../qmmpstarter.cpp" line="446"/>
         <source>List all available user interfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="411"/>
+        <location filename="../qmmpstarter.cpp" line="447"/>
         <source>Don&apos;t start the application</source>
         <translation>Не покрећи програм</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="413"/>
+        <location filename="../qmmpstarter.cpp" line="449"/>
         <source>Print version number and exit</source>
         <translation>Прикажи издање и изађи</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="415"/>
+        <location filename="../qmmpstarter.cpp" line="451"/>
         <source>Home page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="416"/>
+        <location filename="../qmmpstarter.cpp" line="452"/>
         <source>Development page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="417"/>
+        <location filename="../qmmpstarter.cpp" line="453"/>
         <source>Bug tracker: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="130"/>
-        <location filename="../qmmpstarter.cpp" line="422"/>
+        <location filename="../qmmpstarter.cpp" line="143"/>
+        <location filename="../qmmpstarter.cpp" line="458"/>
         <source>Command Line Help</source>
         <translation>Помоћ командне линије</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="435"/>
+        <location filename="../qmmpstarter.cpp" line="471"/>
         <source>QMMP version: %1</source>
         <translation>КуМП: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="436"/>
+        <location filename="../qmmpstarter.cpp" line="472"/>
         <source>Compiled with Qt version: %1</source>
         <translation>Комилован Кут издањем: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="437"/>
+        <location filename="../qmmpstarter.cpp" line="473"/>
         <source>Using Qt version: %1</source>
         <translation>Користим Кут издање: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="440"/>
+        <location filename="../qmmpstarter.cpp" line="476"/>
         <source>Qmmp Version</source>
         <translation>Издање Кумпа</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="457"/>
+        <location filename="../qmmpstarter.cpp" line="493"/>
         <source>User Interfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="412"/>
+        <location filename="../qmmpstarter.cpp" line="448"/>
         <source>Display this text and exit</source>
         <translation>Прикажи овај текст и изађи</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="108"/>
+        <location filename="../qmmpstarter.cpp" line="121"/>
         <source>Unknown command</source>
         <translation>Непозната наредба</translation>
     </message>

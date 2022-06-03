@@ -357,13 +357,13 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="277"/>
-        <location filename="../configdialog.cpp" line="328"/>
+        <location filename="../configdialog.cpp" line="318"/>
         <source>Preferences</source>
         <translation>プラグイン調整</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="290"/>
-        <location filename="../configdialog.cpp" line="331"/>
+        <location filename="../configdialog.cpp" line="321"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
@@ -569,222 +569,217 @@
         <translation>ディザ効果を利用</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="63"/>
+        <location filename="../configdialog.cpp" line="62"/>
         <source>Track</source>
         <translation>トラック</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="64"/>
+        <location filename="../configdialog.cpp" line="63"/>
         <source>Album</source>
         <translation>アルバム</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="65"/>
+        <location filename="../configdialog.cpp" line="64"/>
         <source>Disabled</source>
         <translation>無効</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="72"/>
+        <location filename="../configdialog.cpp" line="71"/>
         <source>HTTP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="73"/>
+        <location filename="../configdialog.cpp" line="72"/>
         <source>SOCKS5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="86"/>
-        <source>File Types</source>
-        <translation>ファイル形式</translation>
-    </message>
-    <message>
-        <location filename="../configdialog.cpp" line="203"/>
+        <location filename="../configdialog.cpp" line="193"/>
         <source>Transports</source>
         <translation>搬送</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="214"/>
+        <location filename="../configdialog.cpp" line="204"/>
         <source>Decoders</source>
         <translation>デコーダー</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="225"/>
+        <location filename="../configdialog.cpp" line="215"/>
         <source>Engines</source>
         <translation>エンジン</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="236"/>
+        <location filename="../configdialog.cpp" line="226"/>
         <source>Effects</source>
         <translation>音響効果</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="247"/>
+        <location filename="../configdialog.cpp" line="237"/>
         <source>Visualization</source>
         <translation>視覚効果</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="258"/>
+        <location filename="../configdialog.cpp" line="248"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="269"/>
+        <location filename="../configdialog.cpp" line="259"/>
         <source>Output</source>
         <translation>出力</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="280"/>
+        <location filename="../configdialog.cpp" line="270"/>
         <source>File Dialogs</source>
         <translation>ファイルダイアログ</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="291"/>
+        <location filename="../configdialog.cpp" line="281"/>
         <source>User Interfaces</source>
         <translation>ユーザーインターフェイス</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="341"/>
+        <location filename="../configdialog.cpp" line="331"/>
         <source>&lt;Autodetect&gt;</source>
         <translation>&lt;自動判定&gt;</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="342"/>
+        <location filename="../configdialog.cpp" line="332"/>
         <source>Brazilian Portuguese</source>
         <translation>ブラジル ポルトガル語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="343"/>
+        <location filename="../configdialog.cpp" line="333"/>
         <source>Chinese Simplified</source>
         <translation>簡体字中国語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="344"/>
+        <location filename="../configdialog.cpp" line="334"/>
         <source>Chinese Traditional</source>
         <translation>繁体字中国語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="345"/>
+        <location filename="../configdialog.cpp" line="335"/>
         <source>Czech</source>
         <translation>チェコ語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="346"/>
+        <location filename="../configdialog.cpp" line="336"/>
         <source>Dutch</source>
         <translation>オランダ語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="347"/>
+        <location filename="../configdialog.cpp" line="337"/>
         <source>English</source>
         <translation>英語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="348"/>
+        <location filename="../configdialog.cpp" line="338"/>
         <source>French</source>
         <translation>フランス語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="349"/>
+        <location filename="../configdialog.cpp" line="339"/>
         <source>Galician</source>
         <translation>ガリシア語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="350"/>
+        <location filename="../configdialog.cpp" line="340"/>
         <source>German</source>
         <translation>ドイツ語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="351"/>
+        <location filename="../configdialog.cpp" line="341"/>
         <source>Greek</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="352"/>
+        <location filename="../configdialog.cpp" line="342"/>
         <source>Hebrew</source>
         <translation>ヘブライ語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="353"/>
+        <location filename="../configdialog.cpp" line="343"/>
         <source>Hungarian</source>
         <translation>ハンガリー語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="354"/>
+        <location filename="../configdialog.cpp" line="344"/>
         <source>Indonesian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="355"/>
+        <location filename="../configdialog.cpp" line="345"/>
         <source>Italian</source>
         <translation>イタリア語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="356"/>
+        <location filename="../configdialog.cpp" line="346"/>
         <source>Japanese</source>
         <translation>日本語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="357"/>
+        <location filename="../configdialog.cpp" line="347"/>
         <source>Kazakh</source>
         <translation>カザフ語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="358"/>
+        <location filename="../configdialog.cpp" line="348"/>
         <source>Korean</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="359"/>
+        <location filename="../configdialog.cpp" line="349"/>
         <source>Lithuanian</source>
         <translation>リトアニア語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="360"/>
+        <location filename="../configdialog.cpp" line="350"/>
         <source>Polish</source>
         <translation>ポーランド語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="361"/>
+        <location filename="../configdialog.cpp" line="351"/>
         <source>Portuguese</source>
         <translation>ポルトガル語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="362"/>
+        <location filename="../configdialog.cpp" line="352"/>
         <source>Russian</source>
         <translation>ロシア語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="363"/>
+        <location filename="../configdialog.cpp" line="353"/>
         <source>Serbian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="364"/>
+        <location filename="../configdialog.cpp" line="354"/>
         <source>Slovak</source>
         <translation>スロバキア語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="365"/>
+        <location filename="../configdialog.cpp" line="355"/>
         <source>Spanish</source>
         <translation>スペイン語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="366"/>
+        <location filename="../configdialog.cpp" line="356"/>
         <source>Turkish</source>
         <translation>トルコ語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="367"/>
+        <location filename="../configdialog.cpp" line="357"/>
         <source>Ukrainian</source>
         <translation>ウクライナ語</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="368"/>
+        <location filename="../configdialog.cpp" line="358"/>
         <source>Serbian (Ijekavian)</source>
         <translation>セルビア語 (Ijekavian)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="369"/>
+        <location filename="../configdialog.cpp" line="359"/>
         <source>Serbian (Ekavian)</source>
         <translation>セルビア語 (Ekavian)</translation>
     </message>
@@ -1422,31 +1417,6 @@ Do you want to replace it?</source>
         <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Select All</source>
         <translation>すべて選択</translation>
-    </message>
-    <message>
-        <location filename="../winfileassocpage.cpp" line="114"/>
-        <source>Warning</source>
-        <translation>警告</translation>
-    </message>
-    <message>
-        <location filename="../winfileassocpage.cpp" line="115"/>
-        <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>一部に関連づけのできないファイルがありました。 ご使用のコンピューターのセキュリティ上の許可設定についてお確かめのうえやりなおしてみてください。</translation>
-    </message>
-    <message>
-        <location filename="../winfileassocpage.cpp" line="122"/>
-        <source>Check all file types in the list</source>
-        <translation>リスト上のすべてのファイル形式にチェックを入れる</translation>
-    </message>
-    <message>
-        <location filename="../winfileassocpage.cpp" line="123"/>
-        <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>QMMP で扱わせたいメディアファイルの拡張子にチェックを入れます。 適用ボタンをクリックすればチェックの入ったファイルと QMMP の関連づけが行なわれます。 チェックを外せばメディアの形式の関連づけが以前の状態に戻ります。</translation>
-    </message>
-    <message>
-        <location filename="../winfileassocpage.cpp" line="127"/>
-        <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation>&lt;b&gt;ご注意&lt;/b&gt; Windows Vista/7 の場合はチェックを外しても元の関連づけに戻りません。</translation>
     </message>
 </context>
 </TS>
