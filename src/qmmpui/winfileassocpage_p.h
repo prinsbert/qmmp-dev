@@ -40,10 +40,8 @@ public:
     WinFileAssocPage(QWidget *parent = nullptr);
     virtual ~WinFileAssocPage();
 
-
 private slots:
     void on_selectAll_clicked();
-    void on_selectNone_clicked();
 
 private:
     void loadAssociations();

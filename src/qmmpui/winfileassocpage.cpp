@@ -55,13 +55,6 @@ void WinFileAssocPage::on_selectAll_clicked()
     m_ui->listWidget->setFocus();
 }
 
-void WinFileAssocPage::on_selectNone_clicked()
-{
-    for (int k = 0; k < m_ui->listWidget->count(); k++)
-        m_ui->listWidget->item(k)->setCheckState(Qt::Unchecked);
-    m_ui->listWidget->setFocus();
-}
-
 void WinFileAssocPage::loadAssociations()
 {
     m_regExtensions.clear();
