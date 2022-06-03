@@ -49,7 +49,11 @@ void TaskbarFactory::showAbout(QWidget *parent)
     QMessageBox::about (parent, tr("About Taskbar Plugin"),
                         tr("Qmmp Taskbar Plugin")+"\n"+
                         tr("This plugin adds support for progress indicator in the Windows taskbar")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + "\n" +
+                        tr("Based on QtWinExtras module of the Qt Toolkit") + "\n" +
+                        tr("QtWinExtras developers:") + "\n" +
+                        tr("Ivan Vizir <define-true-false@yandex.com>") + "\n" +
+                        tr("The Qt Company Ltd."));
 }
 
 QString TaskbarFactory::translation() const
