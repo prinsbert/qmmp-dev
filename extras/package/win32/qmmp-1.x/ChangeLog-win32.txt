@@ -423,3 +423,10 @@ LEGEND
 [*] curl-7.83.1
 [*] ffmpeg-4.4.2
 [*] libsndfile-1.1.0
+
+1.6.1
+[*] qmmp-1.6.1
+[*] qt-5.15.4
+[*] ffmpeg-5.0.1
+[*] mingw-w64 toolchain: i686-11.2.0-release-posix-dwarf-rt_v9-rev4
+[+] webp support

@@ -25,8 +25,8 @@ List of the third-party libraries.
 
   Name                Version    Web page
 
-  MinGW-w64           4.3.5      http://mingw-w64.sourceforge.net/
-  Qt                  5.12.12    http://qt.io/
+  MinGW-w64           5.0.0      http://mingw-w64.sourceforge.net/
+  Qt                  5.15.4     http://qt.io/
   unzip               5.51       http://www.info-zip.org/pub/infozip/UnZip.html
   taglib              1.12       http://taglib.github.io/
   libmad              0.15.1b    http://www.underbit.com/products/mad/
@@ -43,7 +43,7 @@ List of the third-party libraries.
   libcdio-paranoia    10.2+2.0.1 http://www.gnu.org/software/libcdio/  
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
-  ffmpeg              4.4.1      https://ffmpeg.org/
+  ffmpeg              5.0.1      https://ffmpeg.org/
   libxmp              4.5        https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       http://www.musepack.net/

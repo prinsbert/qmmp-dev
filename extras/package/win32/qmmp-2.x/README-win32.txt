@@ -43,7 +43,7 @@ List of the third-party libraries.
   libcdio-paranoia    10.2+2.0.1 http://www.gnu.org/software/libcdio/  
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      http://libcddb.sourceforge.net/
-  ffmpeg              4.4.2      https://ffmpeg.org/
+  ffmpeg              5.0.1      https://ffmpeg.org/
   libxmp              4.5        https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       http://www.musepack.net/

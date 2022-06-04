@@ -425,3 +425,8 @@ LEGEND
 [*] ffmpeg-4.4.2
 [*] libsndfile-1.1.0
 [*] mingw-w64 toolchain: i686-11.2.0-release-posix-dwarf-rt_v9-rev4
+
+1.6.1
+[*] qmmp-2.1.1
+[*] ffmpeg-5.0.1
+[+] webp support
