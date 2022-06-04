@@ -10,7 +10,7 @@
  ;-------------------------------
  ;Defines
  
-   !define QMMP_VERSION "2.1.0"
+   !define QMMP_VERSION "2.1.1"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
    !define QMMP_UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
    !define APP_DESCRIPTION "Qt-based multimedia player with support of many formats"
@@ -260,7 +260,7 @@ Section /o "Use libRCD for ID3v1/ID3v2 charset detection"
   FileSeek $2 0 END
   FileWrite $2 "[MPEG]$\r$\n"
   FileWrite $2 "detect_encoding=true$\r$\n"
-  FileWrite $2 "ID3v1_encoding=windows-1251$\r$\n"
+  FileWrite $2 "ID3v1_encoding=WINDOWS-1251$\r$\n"
   FileClose $2
 SectionEnd
 
