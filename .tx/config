@@ -355,12 +355,6 @@ source_lang = en
 source_file = src/plugins/General/sleepinhibitor/translations/sleepinhibitor_plugin_en.ts
 type = QT
 
-[qmmp.hal]
-file_filter = src/plugins/General/hal/translations/hal_plugin_<lang>.ts
-source_lang = en
-source_file = src/plugins/General/hal/translations/hal_plugin_en.ts
-type = QT
-
 [qmmp.streambrowser]
 file_filter = src/plugins/General/streambrowser/translations/streambrowser_plugin_<lang>.ts
 source_lang = en
