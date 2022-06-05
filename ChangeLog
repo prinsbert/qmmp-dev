@@ -1795,3 +1795,12 @@ Version 2.1.0
 * updated Russian translation (Andrei Stepanov)
 * updated Korean translation (Jung Hee Lee)
 * updated Spanish translation (Joel Barrios)
+
+Version 2.1.1
+* fixed skin selection setting
+* fixed API documentation
+* fixed udisks plugin build
+* fixed build with mingw 5.0
+* fixed Windows 10 support
+* fixed portable mode under Windows
+* removed hal plugin
