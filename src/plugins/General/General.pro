@@ -23,10 +23,6 @@ contains(CONFIG, UDISKS_PLUGIN){
     unix:SUBDIRS += udisks
 }
 
-contains(CONFIG, HAL_PLUGIN){
-    unix:SUBDIRS += hal
-}
-
 contains(CONFIG, SLEEPINHIBITOR_PLUGIN){
     unix:SUBDIRS += sleepinhibitor
 }
