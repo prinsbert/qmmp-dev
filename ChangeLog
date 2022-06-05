@@ -1800,7 +1800,6 @@ Version 2.1.1
 * fixed skin selection setting
 * fixed API documentation
 * fixed udisks plugin build
-* fixed build with MinGW-W64 5.0
 * fixed Windows 10 support
 * fixed portable mode under Windows
 * removed hal plugin
