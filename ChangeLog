@@ -1788,6 +1788,6 @@ Version 1.6.1
 * fixed skin selection setting
 * fixed API documentation
 * fixed udisks plugin build
-* fixed build with mingw 5.0
+* fixed build with MinGW-W64 5.0
 * fixed Windows 10 support
 * removed hal plugin
