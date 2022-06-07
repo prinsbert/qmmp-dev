@@ -120,15 +120,23 @@ public:
      */
     void setValue(Qmmp::MetaData key, const QVariant &value);
     /*!
-     * Sets track property \b key to \b value.
+     * Sets metadata \b key to \b value.
+     */
+    void setValue(Qmmp::MetaData key, const char *value);
+    /*!
+     * Sets track property \b key to \b value. This is an overloaded function.
      */
     void setValue(Qmmp::TrackProperty key, const QVariant &value);
+    /*!
+     * Sets track property \b key to \b value. This is an overloaded function.
+     */
+    void setValue(Qmmp::TrackProperty key, const char *value);
     /*!
      * Sets ReplayGain value \b key to \b value.
      */
     void setValue(Qmmp::ReplayGainKey key, double value);
     /*!
-     * Sets ReplayGain value \b key to \b value (string is converted to double).
+     * Sets ReplayGain value \b key to \b value (string is converted to double). This is an overloaded function.
      */
     void setValue(Qmmp::ReplayGainKey key, const QString &value);
     /*!
