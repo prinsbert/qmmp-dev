@@ -1802,4 +1802,5 @@ Version 2.1.1
 * fixed udisks plugin build
 * fixed Windows 10 support
 * fixed portable mode under Windows
+* fixed build with Qt 6.4
 * removed hal plugin
