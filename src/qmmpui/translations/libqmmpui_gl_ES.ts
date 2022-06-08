@@ -353,7 +353,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="229"/>
         <source>Skip already existing tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Saltar pistas xa existentes</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="277"/>
@@ -910,7 +910,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="284"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Letras</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="304"/>
