@@ -1790,4 +1790,5 @@ Version 1.6.1
 * fixed udisks plugin build
 * fixed build with MinGW-W64 5.0
 * fixed Windows 10 support
+* fixed AppStream metadata (Matthias Mailänder)
 * removed hal plugin
