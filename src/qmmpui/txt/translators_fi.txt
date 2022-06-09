@@ -19,7 +19,7 @@ Kiina yksinkertaistettu:
     Mingcong Bai
     Mingye Wang
 
-Tšekki:
+Tšekki
     Jaroslav Lichtblau
     Karel Volný <kvolny@redhat.com>
 
@@ -31,7 +31,7 @@ Suomi:
     Jiri Grönroos
     Kimmo Kujansuu
 
-Ranska:
+Ranska
     Adrien Vigneron - VRad <adrienvigneron@ml1.net>
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>
@@ -75,9 +75,9 @@ Liettua:
     Algirdas Butkus <butkus.algirdas@gmail.com>
 
 Puola:
+    Marek Adamski
     Daniel Krawczyk
     Grzegorz Gibas <amigib@gmail.com>
-    Mrerexx
 
 Portugali:
     Sérgio Marques <smarquespt@gmail.com>
@@ -85,6 +85,7 @@ Portugali:
 Venäjä:
     Alexey Loginov <loginov.alex.valer.gmail.com>
     Ilya Kotov <forkotov02@ya.ru>
+    Andrei Stepanov
     Viktor Eruhin
 
 Serbia:

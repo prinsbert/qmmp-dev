@@ -26,7 +26,7 @@
     <message>
         <location filename="../taskbarfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Napisane przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 </TS>

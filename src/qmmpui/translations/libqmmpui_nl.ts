@@ -1432,22 +1432,22 @@ Wil je het overschrijven?</translation>
     <message>
         <location filename="../winfileassocpage.cpp" line="110"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>Niet alle bestanden konden worden toegewezen. Controleer je gebruikersmachtigingen en probeer het opnieuw.</translation>
+        <translation>Niet alle bestanden konden worden gelinkt. Controleer uw security rechten en probeer op nieuw.</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="117"/>
         <source>Check all file types in the list</source>
-        <translation>Alle bestandstypen op de lijst aanvinken</translation>
+        <translation>Vink alle bestandstypes aan in de lijst</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="118"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Vink de mediasoorten aan die je aan Qmmp wilt toewijzen. Als je op &quot;Toepassen&quot; klikt, dan worden de aangevinkte bestanden toegewezen aan Qmmp. Als je een mediasoort uitvinkt, dan wordt de oorspronkelijke toewijzing hersteld.</translation>
+        <translation>Vink de media types aan die je aan Qmmp wil linken. Als je &quot;Toepassen&quot; klikt, worden de aangevinkte bestanden geassocieerd met Qmmp. Als je een media type uitvinkt wordt de link teruggezet.</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="122"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation>&lt;b&gt;Let op:&lt;/b&gt; herstellen werkt niet op Windows Vista en 7.</translation>
+        <translation>&lt;b&gt;Opgelet:&lt;/b&gt; Terugzetten werkt niet op Windows Vista/7.</translation>
     </message>
 </context>
 </TS>
