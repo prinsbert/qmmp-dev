@@ -123,7 +123,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="253"/>
         <source>Cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Cache</translation>
     </message>
 </context>
 <context>

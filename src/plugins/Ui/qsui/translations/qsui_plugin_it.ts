@@ -1623,7 +1623,7 @@
         <location filename="../qsuistatusbar.cpp" line="158"/>
         <source>%n channels</source>
         <translation>
-            <numerusform>%n canale</numerusform>
+            <numerusform>1 canale</numerusform>
             <numerusform>%n canali</numerusform>
         </translation>
     </message>

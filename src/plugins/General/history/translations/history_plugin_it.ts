@@ -188,7 +188,7 @@
     <message>
         <location filename="../historywindow.cpp" line="500"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi dalla cronologia</translation>
     </message>
 </context>
 </TS>
