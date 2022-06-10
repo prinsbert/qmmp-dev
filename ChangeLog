@@ -1805,3 +1805,11 @@ Version 2.1.1
 * fixed build with Qt 6.4
 * fixed AppStream metadata (Matthias Mailänder)
 * removed hal plugin
+* updated Dutch translation (Heimen Stoffels)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Korean translation (Jung Hee Lee)
+* updated Polish transition (Marek Adamski)
+* updated Portuguese translation (Sérgio Marques)
+* updated Russian translation
+* updated Finnish translation (Kimmo Kujansuu)
+* updated Italian translation (Luigi Toscano)
