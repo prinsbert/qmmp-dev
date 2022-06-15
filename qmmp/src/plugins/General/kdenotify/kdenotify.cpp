@@ -139,7 +139,7 @@ QList<QVariant> KdeNotify::prepareNotification()
     args.append(body); //body
     args.append(QStringList()); //actions
     QVariantMap hints;
-    hints.insert("image_path",coverPath);
+    hints.insert("image-path",coverPath);
     args.append(hints); //hints
 
     args.append(m_notifyDuration); //timeout
