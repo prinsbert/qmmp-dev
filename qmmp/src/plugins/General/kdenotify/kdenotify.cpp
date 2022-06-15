@@ -121,6 +121,7 @@ QList<QVariant> KdeNotify::prepareNotification()
 
     MetaDataFormatter f(m_template);
     QString body = f.format(info);
+    body.replace("<br>", "\n");
 
     QString coverPath;
     if(m_showCovers)
