@@ -17,57 +17,51 @@ Last-Update: 2021-02-13
  yt_dlp/options.py  |    2 +-
  3 files changed, 7 insertions(+), 9 deletions(-)
 
-Index: yt-dlp-2022.05.18/README.md
+Index: yt-dlp-2022.06.22.1/README.md
 ===================================================================
---- yt-dlp-2022.05.18.orig/README.md
-+++ yt-dlp-2022.05.18/README.md
-@@ -322,7 +322,6 @@ You can also fork the project on github
+--- yt-dlp-2022.06.22.1.orig/README.md
++++ yt-dlp-2022.06.22.1/README.md
+@@ -363,7 +363,6 @@ You can also fork the project on github
  ## General Options:
-     -h, --help                       Print this help text and exit
-     --version                        Print program version and exit
--    -U, --update                     Update this program to latest version
-     -i, --ignore-errors              Ignore download and postprocessing errors.
-                                      The download will be considered successful
-                                      even if the postprocessing fails
-Index: yt-dlp-2022.05.18/yt_dlp/__init__.py
+     -h, --help                      Print this help text and exit
+     --version                       Print program version and exit
+-    -U, --update                    Update this program to latest version
+     --no-update                     Do not update (default)
+     -i, --ignore-errors             Ignore download and postprocessing errors.
+                                     The download will be considered successful
+Index: yt-dlp-2022.06.22.1/yt_dlp/__init__.py
 ===================================================================
---- yt-dlp-2022.05.18.orig/yt_dlp/__init__.py
-+++ yt-dlp-2022.05.18/yt_dlp/__init__.py
-@@ -24,7 +24,6 @@ from .postprocessor import (
-     MetadataFromFieldPP,
-     MetadataParserPP,
- )
--from .update import run_update
- from .utils import (
-     NO_DEFAULT,
-     POSTPROCESS_WHEN,
-@@ -825,10 +824,12 @@ def _real_main(argv=None):
-         # Update version
-         if opts.update_self:
-             # If updater returns True, exit. Required for windows
--            if run_update(ydl):
--                if actual_use:
--                    sys.exit('ERROR: The program must exit for the update to complete')
--                sys.exit()
+--- yt-dlp-2022.06.22.1.orig/yt_dlp/__init__.py
++++ yt-dlp-2022.06.22.1/yt_dlp/__init__.py
+@@ -887,12 +887,12 @@ def _real_main(argv=None):
+ 
+         updater = Updater(ydl)
+         if opts.update_self and updater.update() and actual_use:
+-            if updater.cmd:
+-                return updater.restart()
+-            # This code is reachable only for zip variant in py < 3.10
+-            # It makes sense to exit here, but the old behavior is to continue
+-            ydl.report_warning('Restart yt-dlp to use the updated version')
+-            # return 100, 'ERROR: The program must exit for the update to complete'
 +            parser.error(
 +                "yt-dlp's self-update mechanism is disabled on Debian.\n"
 +                "Please update yt-dlp using apt(8).\n"
 +                "See https://packages.debian.org/sid/yt-dlp for the "
-+                "latest packaged version.\n"
++               "latest packaged version.\n"
 +            )
  
-         # Maybe do nothing
          if not actual_use:
-Index: yt-dlp-2022.05.18/yt_dlp/options.py
+             if pre_process:
+Index: yt-dlp-2022.06.22.1/yt_dlp/options.py
 ===================================================================
---- yt-dlp-2022.05.18.orig/yt_dlp/options.py
-+++ yt-dlp-2022.05.18/yt_dlp/options.py
-@@ -236,7 +236,7 @@ def create_parser():
+--- yt-dlp-2022.06.22.1.orig/yt_dlp/options.py
++++ yt-dlp-2022.06.22.1/yt_dlp/options.py
+@@ -315,7 +315,7 @@ def create_parser():
      general.add_option(
          '-U', '--update',
          action='store_true', dest='update_self',
 -        help='Update this program to latest version')
 +        help=optparse.SUPPRESS_HELP)
      general.add_option(
-         '-i', '--ignore-errors',
-         action='store_true', dest='ignoreerrors',
+         '--no-update',
+         action='store_false', dest='update_self',

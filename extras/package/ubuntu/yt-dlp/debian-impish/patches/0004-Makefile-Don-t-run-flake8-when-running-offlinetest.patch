@@ -12,11 +12,11 @@ Therefore, I'm disabling this.
  Makefile |    2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-Index: yt-dlp-2022.05.18/Makefile
+Index: yt-dlp-2022.06.22.1/Makefile
 ===================================================================
---- yt-dlp-2022.05.18.orig/Makefile
-+++ yt-dlp-2022.05.18/Makefile
-@@ -70,7 +70,7 @@ test:
+--- yt-dlp-2022.06.22.1.orig/Makefile
++++ yt-dlp-2022.06.22.1/Makefile
+@@ -71,7 +71,7 @@ test:
  	$(PYTHON) -m pytest
  	$(MAKE) codetest
  
