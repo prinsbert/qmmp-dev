@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qtbase-everywhere-opensource-src
-VERSION=5.15.4
+VERSION=5.15.5
 BUILD_ROOT=qtbase-everywhere-src-$VERSION
 
 case $1 in
@@ -14,7 +14,6 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz -C $DEV_PATH
     cp ../build.bat $DEV_PATH/$BUILD_ROOT
-    cat ../gcc_11_limits.patch | patch -p1 -d $DEV_PATH/$BUILD_ROOT
     cat ../mingw_w64_9.0.patch | patch -p1 -d $DEV_PATH/$BUILD_ROOT
     cd $DEV_PATH/$BUILD_ROOT
     cmd /c build.bat
