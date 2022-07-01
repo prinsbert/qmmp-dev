@@ -6,9 +6,7 @@
 
 DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
 
-ifeq ($(DEB_HOST_ARCH_OS),linux)
-	EXTRA_CMAKE_ARGS = -DUSE_HAL:BOOL=FALSE
-else
+ifneq ($(DEB_HOST_ARCH_OS),linux)
 	EXTRA_CMAKE_ARGS = -DUSE_ALSA:BOOL=FALSE -DUSE_UDISKS:BOOL=FALSE
 endif
 

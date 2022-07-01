@@ -23,8 +23,7 @@ Vcs-Browser: https://salsa.debian.org/debian/qmmp
 Package: qmmp
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Suggests: qmmp-plugin-projectm, ffmpeg, mplayer, unzip, udisks2 [linux-any],
-  hal [!linux-any]
+Suggests: qmmp-plugin-projectm, ffmpeg, mplayer, unzip, udisks2 [linux-any]
 Replaces: libqmmp0 (<< 0.8), libqmmpui0 (<< 0.8), libqmmp-misc (<< 0.8)
 Breaks: libqmmp0 (<< 0.8), libqmmpui0 (<< 0.8), libqmmp-misc (<< 0.8)
 Description: feature-rich audio player with support of many formats
