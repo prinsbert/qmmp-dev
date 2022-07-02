@@ -1,0 +1,86 @@
+#!/bin/sh
+
+QMMP_VERSION=2.1.1
+UBUNTU_CODENAMES='jammy'
+BUILD_ROOT=build-root
+
+
+prepare ()
+{
+    cp ../qmmp-$QMMP_VERSION.tar.bz2 ./
+    mv ./qmmp-$QMMP_VERSION.tar.bz2 ./qmmp-qt6_$QMMP_VERSION.orig.tar.bz2
+}
+
+build ()
+{
+    echo '****'$1'****'
+    mkdir $1
+    cd $1
+    tar xvjf ../../qmmp-$QMMP_VERSION.tar.bz2
+    mkdir qmmp-$QMMP_VERSION/debian
+    cp -rv ../../debian-$1/* -t qmmp-$QMMP_VERSION/debian/
+    cp ../qmmp-qt6_$QMMP_VERSION.orig.tar.bz2 ./
+    cd qmmp-$QMMP_VERSION
+    if [ "$1" = "jammy" ] ; then
+        debuild -S -d -sa -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
+    else
+        debuild -S -d -sd -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
+    fi
+    cd ..
+    cd ..
+}
+
+update ()
+{
+    dch -m --newversion ${QMMP_VERSION}-1ubuntu1~${1}0 -D ${1} -c debian-$1/changelog "New upstream release."
+}
+
+upload ()
+{
+	dput ppa:forkotov02/ppa $1/*.changes
+}
+
+clean ()
+{
+    rm -rf $BUILD_ROOT
+    rm qmmp-$QMMP_VERSION.tar.bz2
+}
+
+case $1 in
+    --download)
+		wget https://qmmp.ylsoftware.com/files/qmmp/1.6/qmmp-$QMMP_VERSION.tar.bz2
+    ;;
+    --update)
+		for CODENAME in $UBUNTU_CODENAMES
+		do
+			update $CODENAME
+		done
+    ;;
+    --build)
+		rm -rf $BUILD_ROOT
+		mkdir $BUILD_ROOT
+		cd $BUILD_ROOT
+		prepare
+		for CODENAME in $UBUNTU_CODENAMES
+		do
+			build $CODENAME
+		done
+    ;;
+    --upload)
+       cd $BUILD_ROOT
+       for CODENAME in $UBUNTU_CODENAMES
+		do
+			upload $CODENAME
+		done
+    ;;
+    --clean)
+		clean
+    ;;
+    *)
+		echo "Commands:"
+		echo "--download"
+		echo "--update"
+		echo "--build"
+		echo "--upload"
+		echo "--clean"
+esac
