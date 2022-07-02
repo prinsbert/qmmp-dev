@@ -23,7 +23,7 @@ Vcs-Browser: https://salsa.debian.org/debian/qmmp
 
 Package: qmmp
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, libqt5sql5-sqlite
 Suggests: qmmp-plugin-projectm, ffmpeg, mplayer, unzip, udisks2 [linux-any]
 Replaces: libqmmp0 (<< 0.8), libqmmpui0 (<< 0.8), libqmmp-misc (<< 0.8)
 Breaks: libqmmp0 (<< 0.8), libqmmpui0 (<< 0.8), libqmmp-misc (<< 0.8)

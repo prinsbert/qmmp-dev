@@ -9,7 +9,7 @@ Homepage: https://qmmp.ylsoftware.com/plugins.php
 
 Package: qmmp-plugin-pack-qt4
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqt4-sql-sqlite
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Extra plugins for Qmmp (Qt4-version)
  Plugin pack is a set of extra plugins for Qmmp (Qt-based mutimedia player)
  Plugins list:
