@@ -64,6 +64,7 @@ private slots:
 
 private:
     void createActions();
+    void findPresets(const QString &path);
     ProjectMWrapper *m_projectM;
     QMenu *m_menu;
     QListWidget *m_listWidget;
