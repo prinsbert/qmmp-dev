@@ -102,19 +102,8 @@ void ProjectMWidget::initializeGL()
 #else
         m_projectM = new ProjectMWrapper(PROJECTM_CONFIG, projectM::FLAG_DISABLE_PLAYLIST_LOAD, this);
 #endif
-        QString presetPath = QString::fromLocal8Bit(m_projectM->settings().presetURL.c_str());
-        QDir presetDir(presetPath);
-        presetDir.setFilter(QDir::Files);
-        const QStringList filters = { "*.prjm", "*.milk" };
-        const QFileInfoList l = presetDir.entryInfoList(filters);
+        findPresets(QString::fromLocal8Bit(m_projectM->settings().presetURL.c_str()));
 
-        const RatingList list = { 3, 3 };
-        for(const QFileInfo &info : qAsConst(l))
-        {
-            m_projectM->addPresetURL (info.absoluteFilePath().toStdString(), info.fileName().toStdString(), list);
-            m_listWidget->addItem(info.fileName());
-            m_listWidget->setCurrentRow(0,QItemSelectionModel::Select);
-        }
         connect(m_listWidget, SIGNAL(currentRowChanged(int)), m_projectM, SLOT(selectPreset(int)));
         connect(m_projectM, SIGNAL(currentPresetChanged(int)), SLOT(setCurrentRow(int)));
         updateTitle();
@@ -157,6 +146,25 @@ void ProjectMWidget::createActions()
     m_menu->addAction(tr("&Fullscreen"), this, SIGNAL(fullscreenToggled(bool)), tr("F"))->setCheckable(true);
     m_menu->addSeparator();
     addActions(m_menu->actions());
+}
+
+void ProjectMWidget::findPresets(const QString &path)
+{
+    QDir presetDir(path);
+    presetDir.setFilter(QDir::Files);
+    const QFileInfoList files = presetDir.entryInfoList({ "*.prjm", "*.milk" }, QDir::Files);
+
+    const RatingList list = { 3, 3 };
+    for(const QFileInfo &info : qAsConst(files))
+    {
+        m_projectM->addPresetURL(info.absoluteFilePath().toStdString(), info.fileName().toStdString(), list);
+        m_listWidget->addItem(info.fileName());
+        m_listWidget->setCurrentRow(0,QItemSelectionModel::Select);
+    }
+
+    const QFileInfoList dirs = presetDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+    for(const QFileInfo &info : qAsConst(dirs))
+        findPresets(info.canonicalFilePath());
 }
 
 void ProjectMWidget::showHelp()
