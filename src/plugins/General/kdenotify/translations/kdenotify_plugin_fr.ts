@@ -6,7 +6,7 @@
     <message>
         <location filename="../kdenotify.cpp" line="127"/>
         <source>Qmmp now playing:</source>
-        <translation>Qmmp joue :</translation>
+        <translation>Qmmp joue&#xa0;:</translation>
     </message>
 </context>
 <context>
