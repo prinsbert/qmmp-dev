@@ -1443,12 +1443,12 @@
     <message>
         <location filename="../qsuivisualization.cpp" line="157"/>
         <source>50 fps</source>
-        <translation>50 Гц</translation>
+        <translation>50 кадр/c</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="158"/>
         <source>25 fps</source>
-        <translation>25 Гц</translation>
+        <translation>25 кадр/c</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="159"/>
