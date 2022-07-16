@@ -132,7 +132,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="36"/>
         <source>Name:</source>
-        <translation>Nom :</translation>
+        <translation>Nom&#xa0;:</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="76"/>
@@ -455,7 +455,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="548"/>
         <source>Font:</source>
-        <translation>Police :</translation>
+        <translation>Police&#xa0;:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="573"/>
@@ -1404,7 +1404,7 @@
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 existe déjà.
-Voulez-vous le remplacer ?</translation>
+Voulez-vous le remplacer&#xa0;?</translation>
     </message>
 </context>
 <context>
