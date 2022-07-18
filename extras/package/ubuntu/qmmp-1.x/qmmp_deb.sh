@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=1.6.1
-UBUNTU_CODENAMES='xenial bionic focal impish jammy'
+UBUNTU_CODENAMES='xenial bionic focal jammy'
 BUILD_ROOT=build-root
 
 

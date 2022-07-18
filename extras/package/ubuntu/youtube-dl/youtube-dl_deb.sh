@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VERSION=2021.12.17
-UBUNTU_CODENAMES='xenial bionic focal impish'
+UBUNTU_CODENAMES='xenial bionic focal'
 BUILD_ROOT=build-root
 
 
