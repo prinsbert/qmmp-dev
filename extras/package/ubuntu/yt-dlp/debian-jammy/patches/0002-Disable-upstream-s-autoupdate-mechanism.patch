@@ -17,11 +17,11 @@ Last-Update: 2021-02-13
  yt_dlp/options.py  |    2 +-
  3 files changed, 7 insertions(+), 9 deletions(-)
 
-Index: yt-dlp-2022.06.22.1/README.md
+Index: yt-dlp-2022.07.18/README.md
 ===================================================================
---- yt-dlp-2022.06.22.1.orig/README.md
-+++ yt-dlp-2022.06.22.1/README.md
-@@ -363,7 +363,6 @@ You can also fork the project on github
+--- yt-dlp-2022.07.18.orig/README.md
++++ yt-dlp-2022.07.18/README.md
+@@ -361,7 +361,6 @@ You can also fork the project on github
  ## General Options:
      -h, --help                      Print this help text and exit
      --version                       Print program version and exit
@@ -29,11 +29,11 @@ Index: yt-dlp-2022.06.22.1/README.md
      --no-update                     Do not update (default)
      -i, --ignore-errors             Ignore download and postprocessing errors.
                                      The download will be considered successful
-Index: yt-dlp-2022.06.22.1/yt_dlp/__init__.py
+Index: yt-dlp-2022.07.18/yt_dlp/__init__.py
 ===================================================================
---- yt-dlp-2022.06.22.1.orig/yt_dlp/__init__.py
-+++ yt-dlp-2022.06.22.1/yt_dlp/__init__.py
-@@ -887,12 +887,12 @@ def _real_main(argv=None):
+--- yt-dlp-2022.07.18.orig/yt_dlp/__init__.py
++++ yt-dlp-2022.07.18/yt_dlp/__init__.py
+@@ -908,12 +908,12 @@ def _real_main(argv=None):
  
          updater = Updater(ydl)
          if opts.update_self and updater.update() and actual_use:
@@ -52,11 +52,11 @@ Index: yt-dlp-2022.06.22.1/yt_dlp/__init__.py
  
          if not actual_use:
              if pre_process:
-Index: yt-dlp-2022.06.22.1/yt_dlp/options.py
+Index: yt-dlp-2022.07.18/yt_dlp/options.py
 ===================================================================
---- yt-dlp-2022.06.22.1.orig/yt_dlp/options.py
-+++ yt-dlp-2022.06.22.1/yt_dlp/options.py
-@@ -315,7 +315,7 @@ def create_parser():
+--- yt-dlp-2022.07.18.orig/yt_dlp/options.py
++++ yt-dlp-2022.07.18/yt_dlp/options.py
+@@ -332,7 +332,7 @@ def create_parser():
      general.add_option(
          '-U', '--update',
          action='store_true', dest='update_self',

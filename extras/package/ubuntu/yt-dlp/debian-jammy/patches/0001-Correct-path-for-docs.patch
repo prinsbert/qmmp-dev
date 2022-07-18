@@ -6,11 +6,11 @@ Forwarded: not-needed
  setup.py |    2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-Index: yt-dlp-2022.05.18/setup.py
+Index: yt-dlp-2022.07.18/setup.py
 ===================================================================
---- yt-dlp-2022.05.18.orig/setup.py
-+++ yt-dlp-2022.05.18/setup.py
-@@ -70,7 +70,7 @@ else:
+--- yt-dlp-2022.07.18.orig/setup.py
++++ yt-dlp-2022.07.18/setup.py
+@@ -85,7 +85,7 @@ def build_params():
          ('share/bash-completion/completions', ['completions/bash/yt-dlp']),
          ('share/zsh/site-functions', ['completions/zsh/_yt-dlp']),
          ('share/fish/vendor_completions.d', ['completions/fish/yt-dlp.fish']),
@@ -18,4 +18,4 @@ Index: yt-dlp-2022.05.18/setup.py
 +        ('share/doc/yt-dlp', ['README.txt']),
          ('share/man/man1', ['yt-dlp.1'])
      ]
-     root = os.path.dirname(os.path.abspath(__file__))
+     data_files = []

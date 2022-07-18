@@ -1,5 +1,5 @@
-0001-Don-t-install-support-files-via-setup.py.patch
+0001-Correct-path-for-docs.patch
 0002-Disable-upstream-s-autoupdate-mechanism.patch
-0003-Skip-directories-and-style-checks-for-flake8.patch
-
-0004-Fix-some-issues.patch
+0003-Remove-use-of-git.patch
+0004-Makefile-Don-t-run-flake8-when-running-offlinetest.patch
+0005-Fix-some-issues.patch
