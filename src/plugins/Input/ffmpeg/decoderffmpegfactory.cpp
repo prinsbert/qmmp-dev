@@ -227,7 +227,11 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
             AVCodecParameters *c = in->streams[idx]->codecpar;
             info->setValue(Qmmp::BITRATE, int(c->bit_rate) / 1000);
             info->setValue(Qmmp::SAMPLERATE, c->sample_rate);
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,39,100)) //ffmpeg-5.1
+            info->setValue(Qmmp::CHANNELS, c->ch_layout.nb_channels);
+#else
             info->setValue(Qmmp::CHANNELS, c->channels);
+#endif
             info->setValue(Qmmp::BITS_PER_SAMPLE, c->bits_per_raw_sample);
 
             const AVCodec *codec = avcodec_find_decoder(c->codec_id);
