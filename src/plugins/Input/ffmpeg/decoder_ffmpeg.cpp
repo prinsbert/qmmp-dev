@@ -65,6 +65,25 @@ static int64_t ffmpeg_seek(void *data, int64_t offset, int whence)
     return d->input()->seek(absolute_pos);
 }
 
+//channel map
+
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 0, 101)
+const QHash<AVChannel, Qmmp::ChannelPosition> DecoderFFmpeg::m_ff_channels = {
+
+    { AV_CHAN_NONE, Qmmp::CHAN_NULL },
+    { AV_CHAN_FRONT_LEFT, Qmmp::CHAN_FRONT_LEFT },
+    { AV_CHAN_FRONT_RIGHT, Qmmp::CHAN_FRONT_RIGHT },
+    { AV_CHAN_FRONT_CENTER, Qmmp::CHAN_FRONT_CENTER },
+    { AV_CHAN_LOW_FREQUENCY, Qmmp::CHAN_LFE },
+    { AV_CHAN_BACK_LEFT, Qmmp::CHAN_REAR_LEFT },
+    { AV_CHAN_BACK_RIGHT, Qmmp::CHAN_REAR_RIGHT },
+    { AV_CHAN_BACK_CENTER, Qmmp::CHAN_REAR_CENTER },
+    { AV_CHAN_SIDE_LEFT, Qmmp::CHAN_SIDE_LEFT },
+    { AV_CHAN_SIDE_RIGHT, Qmmp::CHAN_SIDE_RIGHT }
+};
+#endif
+
+
 // Decoder class
 DecoderFFmpeg::DecoderFFmpeg(const QString &path, QIODevice *i) : Decoder(i),
     m_path(path)
@@ -216,16 +235,29 @@ bool DecoderFFmpeg::initialize()
 
     avcodec_parameters_to_context(m_codecContext, m_formatContext->streams[m_audioIndex]->codecpar);
 
-    if (m_codecContext->channels == 1)
+    ChannelMap map;
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,39,100)) //ffmpeg-5.1
+    m_channels = m_codecContext->ch_layout.nb_channels;
+
+    for(int i = 0; i < m_codecContext->ch_layout.nb_channels; ++i)
+    {
+        AVChannel ch = av_channel_layout_channel_from_index(&m_codecContext->ch_layout, i);
+        map << m_ff_channels.value(ch, Qmmp::CHAN_NULL);
+    }
+#else
+    if(m_codecContext->channels == 1)
     {
         m_codecContext->request_channel_layout = AV_CH_LAYOUT_MONO;
         m_channels = m_codecContext->channels;
+        map = ChannelMap(1);
     }
     else
     {
         m_codecContext->request_channel_layout = AV_CH_LAYOUT_STEREO;
         m_channels = 2;
+        map = ChannelMap(2);
     }
+#endif
 
     av_dump_format(m_formatContext,0,nullptr,0);
 
@@ -275,7 +307,7 @@ bool DecoderFFmpeg::initialize()
     }
 
     setProperty(Qmmp::FORMAT_NAME, QString::fromLatin1(m_codecContext->codec->name));
-    configure(m_codecContext->sample_rate, m_channels, format);
+    configure(m_codecContext->sample_rate, map, format);
 
     if(m_formatContext->bit_rate)
         m_bitrate = m_formatContext->bit_rate/1000;
@@ -428,7 +460,11 @@ void DecoderFFmpeg::fillBuffer()
         if(!recv_error)
         {
             m_output_size = av_samples_get_buffer_size(nullptr,
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,39,100)) //ffmpeg-5.1
+                                                     m_codecContext->ch_layout.nb_channels,
+#else
                                                      m_codecContext->channels,
+#endif
                                                      m_frame->nb_samples,
                                                      m_codecContext->sample_fmt, 1);
             if(m_codecContext->bit_rate)
