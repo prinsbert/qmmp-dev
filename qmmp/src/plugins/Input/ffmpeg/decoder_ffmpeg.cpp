@@ -254,7 +254,8 @@ bool DecoderFFmpeg::initialize()
     else
     {
         m_codecContext->request_channel_layout = AV_CH_LAYOUT_STEREO;
-        m_channels = ChannelMap(2);
+        m_channels = 2;
+        map = ChannelMap(2);
     }
 #endif
 
