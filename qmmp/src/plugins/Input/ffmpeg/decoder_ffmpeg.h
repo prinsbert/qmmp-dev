@@ -21,6 +21,8 @@
 #ifndef DECODER_FFMPEG_H
 #define DECODER_FFMPEG_H
 
+#include <QHash>
+
 extern "C"{
 #include <libavformat/avformat.h>
 #include <libavcodec/avcodec.h>
@@ -66,7 +68,9 @@ private:
     int m_channels = 0;
     bool m_eof = false;
 
-
+#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 0, 101)
+    static const QHash<AVChannel, Qmmp::ChannelPosition> m_ff_channels;
+#endif
 };
 
 
