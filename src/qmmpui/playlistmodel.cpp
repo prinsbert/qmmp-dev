@@ -987,7 +987,7 @@ void PlayListModel::onTaskFinished()
         int flags = METADATA;
         if(prev_count != m_container->count())
         {
-            int flags = STRUCTURE;
+            flags = STRUCTURE;
             m_current = m_container->indexOf(m_current_track);
             if(prev_current_track != m_current_track)
                 flags |= CURRENT;
