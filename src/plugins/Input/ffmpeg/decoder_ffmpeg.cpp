@@ -67,7 +67,7 @@ static int64_t ffmpeg_seek(void *data, int64_t offset, int whence)
 
 //channel map
 
-#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 0, 101)
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(57, 28, 100) //ffmpeg-5.1
 const QHash<AVChannel, Qmmp::ChannelPosition> DecoderFFmpeg::m_ff_channels = {
 
     { AV_CHAN_NONE, Qmmp::CHAN_NULL },
@@ -236,7 +236,7 @@ bool DecoderFFmpeg::initialize()
     avcodec_parameters_to_context(m_codecContext, m_formatContext->streams[m_audioIndex]->codecpar);
 
     ChannelMap map;
-#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,39,100)) //ffmpeg-5.1
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 37, 100)) //ffmpeg-5.1
     m_channels = m_codecContext->ch_layout.nb_channels;
 
     for(int i = 0; i < m_codecContext->ch_layout.nb_channels; ++i)
@@ -460,7 +460,7 @@ void DecoderFFmpeg::fillBuffer()
         if(!recv_error)
         {
             m_output_size = av_samples_get_buffer_size(nullptr,
-#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,39,100)) //ffmpeg-5.1
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,37,100)) //ffmpeg-5.1
                                                      m_codecContext->ch_layout.nb_channels,
 #else
                                                      m_codecContext->channels,
