@@ -68,7 +68,7 @@ private:
     int m_channels = 0;
     bool m_eof = false;
 
-#if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 0, 101)
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(57, 28, 100) //ffmpeg-5.1
     static const QHash<AVChannel, Qmmp::ChannelPosition> m_ff_channels;
 #endif
 };
