@@ -61,11 +61,18 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
         return false;
     }
 
-    if(!(m_ctx = pa_context_new(pa_mainloop_get_api(m_loop), "Qmmp")))
+    pa_proplist* proplist = pa_proplist_new ();
+    pa_proplist_sets(proplist, PA_PROP_MEDIA_ROLE, "music");
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "qmmp");
+
+    if(!(m_ctx = pa_context_new_with_proplist(pa_mainloop_get_api(m_loop), "Qmmp", proplist)))
     {
         qWarning("OutputPulseAudio: unable to instantiate a new connection context");
+        pa_proplist_free(proplist);
         return false;
     }
+
+    pa_proplist_free(proplist);
 
     if(pa_context_connect(m_ctx, nullptr, (pa_context_flags_t)0, nullptr) < 0)
     {
