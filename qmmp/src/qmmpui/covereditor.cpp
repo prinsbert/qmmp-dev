@@ -38,14 +38,14 @@ CoverEditor::CoverEditor(MetaDataModel *model, const QString &coverPath, QWidget
     layout->addWidget(m_viewer);
     m_ui.frame->setLayout(layout);
 
-    if(m_model && !m_model->cover().isNull())
+    if((m_model && !m_model->cover().isNull()) || (m_editable && m_coverPath.isEmpty()))
         m_ui.sourceComboBox->setCurrentIndex(1);
     else
         m_ui.sourceComboBox->setCurrentIndex(0);
 
     on_sourceComboBox_activated(m_ui.sourceComboBox->currentIndex());
 
-    if(!m_model || m_coverPath.isEmpty() || (!m_editable && m_model->cover().isNull()))
+    if(!m_editable || m_coverPath.isEmpty())
         m_ui.sourceComboBox->setEnabled(false);
 }
 
