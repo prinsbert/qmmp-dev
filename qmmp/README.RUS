@@ -96,7 +96,7 @@ Qmmp - Qt-based multimedia player
 - libxmp >= 4.2.0 (опционально)
 - libsndfile >= 1.0.22 (опционально)
 - wavpack >= 4.41 (опционально)
-- pulseaudio >= 0.9.15 (опционально)
+- pulseaudio >= 0.9.19 (опционально)
 - pipewire >= 0.3.26 (опционально)
 - ffmpeg >= 3.4 (опционально)
 - libcdio >= 1.0 (опционально)
