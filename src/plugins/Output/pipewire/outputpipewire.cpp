@@ -152,7 +152,7 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
     pw_properties *props = pw_properties_new(PW_KEY_MEDIA_TYPE, "Audio",
                                              PW_KEY_MEDIA_CATEGORY, "Playback",
                                              PW_KEY_MEDIA_ROLE, "Music",
-                                             PW_KEY_MEDIA_ICON_NAME, "qmmp",
+                                             PW_KEY_MEDIA_ICON_NAME, "qmmp-1",
                                              nullptr);
     pw_properties_setf(props, PW_KEY_NODE_LATENCY, "%u/%u", m_frames, freq);
 

@@ -63,7 +63,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
 
     pa_proplist* proplist = pa_proplist_new ();
     pa_proplist_sets(proplist, PA_PROP_MEDIA_ROLE, "music");
-    pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "qmmp");
+    pa_proplist_sets(proplist, PA_PROP_APPLICATION_ICON_NAME, "qmmp-1");
 
     if(!(m_ctx = pa_context_new_with_proplist(pa_mainloop_get_api(m_loop), "Qmmp", proplist)))
     {
