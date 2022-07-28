@@ -83,10 +83,18 @@ QList<TagModel* > FLACMetaDataModel::tags() const
 
 QPixmap FLACMetaDataModel::cover() const
 {
-    if(!m_tag || m_tag->isEmpty())
-        return QPixmap();
+    TagLib::FLAC::File *flacFile = dynamic_cast<TagLib::FLAC::File *>(m_file);
+    TagLib::List<TagLib::FLAC::Picture *> list;
 
-    TagLib::List<TagLib::FLAC::Picture *> list = m_tag->pictureList();
+    if(flacFile)
+    {
+        list = flacFile->pictureList(); //native flac
+    }
+    else if(m_tag && !m_tag->isEmpty())
+    {
+        list = m_tag->pictureList(); //ogg flac
+    }
+
     for(uint i = 0; i < list.size(); ++i)
     {
         if(list[i]->type() == TagLib::FLAC::Picture::FrontCover)
@@ -107,17 +115,24 @@ QString FLACMetaDataModel::coverPath() const
 void FLACMetaDataModel::setCover(const QPixmap &pix)
 {
     removeCover();
-    if(m_tag && !m_tag->isEmpty())
-    {
-        TagLib::FLAC::Picture *picture = new TagLib::FLAC::Picture();
-        picture->setType(TagLib::FLAC::Picture::FrontCover);
 
-        QByteArray data;
-        QBuffer buffer(&data);
-        buffer.open(QIODevice::WriteOnly);
-        pix.save(&buffer, "JPEG");
-        picture->setMimeType("image/jpeg");
-        picture->setData(TagLib::ByteVector(data.constData(), data.size()));
+    TagLib::FLAC::File *flacFile = dynamic_cast<TagLib::FLAC::File *>(m_file);
+    TagLib::FLAC::Picture *picture = new TagLib::FLAC::Picture();
+    picture->setType(TagLib::FLAC::Picture::FrontCover);
+
+    QByteArray data;
+    QBuffer buffer(&data);
+    buffer.open(QIODevice::WriteOnly);
+    pix.save(&buffer, "JPEG");
+    picture->setMimeType("image/jpeg");
+    picture->setData(TagLib::ByteVector(data.constData(), data.size()));
+    if(flacFile)
+    {
+        flacFile->addPicture(picture);
+        flacFile->save();
+    }
+    else if(m_tag)
+    {
         m_tag->addPicture(picture);
         m_file->save();
     }
@@ -125,22 +140,34 @@ void FLACMetaDataModel::setCover(const QPixmap &pix)
 
 void FLACMetaDataModel::removeCover()
 {
-    if(m_tag && !m_tag->isEmpty())
+    TagLib::FLAC::File *flacFile = dynamic_cast<TagLib::FLAC::File *>(m_file);
+    TagLib::List<TagLib::FLAC::Picture *> list;
+    bool save = false;
+
+    if(flacFile)
     {
-        bool save = false;
-        TagLib::List<TagLib::FLAC::Picture *> list = m_tag->pictureList();
-        for(uint i = 0; i < list.size(); ++i)
+        list = flacFile->pictureList(); //native flac
+    }
+    else if(m_tag && !m_tag->isEmpty())
+    {
+        list = m_tag->pictureList(); //ogg flac
+    }
+
+    for(uint i = 0; i < list.size(); ++i)
+    {
+        if(list[i]->type() == TagLib::FLAC::Picture::FrontCover)
         {
-            if(list[i]->type() == TagLib::FLAC::Picture::FrontCover)
-            {
+            if(flacFile)
+                flacFile->removePicture(list[i], false);
+            else
                 m_tag->removePicture(list[i], false);
-                save = true;
-            }
+            save = true;
         }
-        if(save)
-        {
-            m_file->save();
-        }
+    }
+
+    if(save)
+    {
+        m_file->save();
     }
 }
 
