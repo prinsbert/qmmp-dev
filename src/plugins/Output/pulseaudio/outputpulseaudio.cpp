@@ -74,7 +74,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
 
     pa_proplist_free(proplist);
 
-    if(pa_context_connect(m_ctx, nullptr, (pa_context_flags_t)0, nullptr) < 0)
+    if(pa_context_connect(m_ctx, nullptr, PA_CONTEXT_NOFLAGS, nullptr) < 0)
     {
         qWarning("OutputPulseAudio: unable to connect the context: %s", pa_strerror(pa_context_errno(m_ctx)));
         return false;
