@@ -1817,7 +1817,10 @@ Version 2.1.1
 Version 2.1.2
 * added FFmpeg 5.1 support
 * added recursive search for presets in the projectm plugin
+* added application icon in the pulseaudio plugin
 * fixed title formatting in the KDE notification plugin
 * fixed "fact" chunks support in the sndfile plugin
+* fixed embedded cover art support in the flac plugin
+* fixed tag editor behavior
 * fixed Russian translation
 * updated Finnish translation (Kimmo Kujansuu)
