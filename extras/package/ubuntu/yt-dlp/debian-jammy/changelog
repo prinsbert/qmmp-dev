@@ -1,26 +1,55 @@
-yt-dlp (2022.07.18-1ubuntu1~jammy0) jammy; urgency=medium
+yt-dlp (2022.08.08-1ubuntu1~jammy0) jammy; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 18 Jul 2022 21:52:37 +0300
+ -- Unit 193 <unit193@debian.org>  Tue, 09 Aug 2022 22:35:24 +0300
 
-yt-dlp (2022.06.29-1ubuntu1~jammy0) jammy; urgency=medium
+yt-dlp (2022.08.08-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2022.08.08.
+    - Refresh supported sites.
+  * d/p/0002-Disable-upstream-s-autoupdate-mechanism.patch:
+    - Drop, refresh remaining.
+  * d/rules: Use new upstream feature to set variant and update message.
+    (Closes: #1001776)
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 29 Jun 2022 23:09:55 +0300
+ -- Unit 193 <unit193@debian.org>  Mon, 08 Aug 2022 23:57:25 -0400
 
-yt-dlp (2022.06.22.1-1ubuntu1~jammy1) jammy; urgency=medium
+yt-dlp (2022.07.18-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2022.07.18.
+    - [build] Consistent order for lazy extractors by lamby. (Closes: #1014041)
+    - Refresh supported sites.
+    - Refresh patches.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 22 Jun 2022 21:20:11 +0300
+ -- Unit 193 <unit193@debian.org>  Mon, 18 Jul 2022 23:36:50 -0400
 
-yt-dlp (2022.05.18-1ubuntu1~jammy0) jammy; urgency=medium
+yt-dlp (2022.06.29-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2022.06.29.
+    - Refresh supported sites.
+    - Refresh patches.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 18 May 2022 18:32:46 +0300
+ -- Unit 193 <unit193@debian.org>  Thu, 30 Jun 2022 22:22:01 -0400
+
+yt-dlp (2022.06.22.1-1) unstable; urgency=medium
+
+  * New upstream version 2022.06.22.1. (Closes: #1013332)
+    - Refresh supported sites.
+    - Refresh patches.
+  * d/control: Lower mpv to suggests, it's only used in rtsp
+    streams and seems those are unpopular.
+
+ -- Unit 193 <unit193@debian.org>  Wed, 22 Jun 2022 18:45:03 -0400
+
+yt-dlp (2022.05.18-1) unstable; urgency=medium
+
+  * New upstream version 2022.05.18.
+    - Refresh supported sites.
+    - Refresh patches.
+  * Update Standards-Version to 4.6.1.
+
+ -- Unit 193 <unit193@debian.org>  Thu, 19 May 2022 05:25:24 -0400
 
 yt-dlp (2022.04.08-1) unstable; urgency=medium
 

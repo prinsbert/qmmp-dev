@@ -2,19 +2,27 @@
 
 #export DH_VERBOSE = 1
 export PYBUILD_NAME = yt_dlp
-export PATH := $(CURDIR)/debian/utils:$(PATH)
 
 %:
-	dh $@ --with python3 --buildsystem=pybuild --with bash-completion
+	dh $@ --with python3 --buildsystem=pybuild
 
 override_dh_auto_configure:
 	PREFIX=/usr SYSCONFDIR=/etc make
-	mv Makefile Makefile.inactive
+	python3 devscripts/set-variant.py debian -M "As yt-dlp has been installed via apt, you should use that to update.  If you're on a stable release, also check backports."
 	rm yt-dlp
 
 override_dh_clean:
-	test -f Makefile || mv Makefile.inactive Makefile
 	make clean
 	dh_clean
 
 override_dh_auto_test:
+	make offlinetest PYTHON=python3
+
+override_dh_installchangelogs:
+	dh_installchangelogs Changelog.md
+
+	
+basenum = $(shell sed -n '/Currently supported sites/=' debian/control)
+generate_supported_sites:
+	$(shell head -n +$$(expr $(basenum) + 1) debian/control > debian/control.new; \
+	sed -n -e 's/.* \- \*\*/ /g' -e 's/:.*//' -e 's/\*\*.*/,/p' supportedsites.md | fmt >> debian/control.new)

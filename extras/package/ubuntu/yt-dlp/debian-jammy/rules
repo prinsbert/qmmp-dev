@@ -8,6 +8,7 @@ export PYBUILD_NAME = yt_dlp
 
 override_dh_auto_configure:
 	PREFIX=/usr SYSCONFDIR=/etc make
+	python3 devscripts/set-variant.py debian -M "As yt-dlp has been installed via apt, you should use that to update.  If you're on a stable release, also check backports."
 	rm yt-dlp
 
 override_dh_clean:

@@ -6,11 +6,9 @@ Forwarded: not-needed
  Makefile |    2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-Index: yt-dlp-2022.06.22.1/Makefile
-===================================================================
---- yt-dlp-2022.06.22.1.orig/Makefile
-+++ yt-dlp-2022.06.22.1/Makefile
-@@ -9,7 +9,7 @@ tar: yt-dlp.tar.gz
+--- a/Makefile	2022-06-22 18:43:02.160931443 -0400
++++ b/Makefile	2022-06-22 18:43:02.156931457 -0400
+@@ -9,7 +9,7 @@
  # Keep this list in sync with MANIFEST.in
  # intended use: when building a source distribution,
  # make pypi-files && python setup.py sdist
