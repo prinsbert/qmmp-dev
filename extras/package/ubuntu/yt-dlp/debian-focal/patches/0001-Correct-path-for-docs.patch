@@ -1,0 +1,19 @@
+Description: Correct path for docs.
+Author: Unit 193 <unit193@debian.org>
+Forwarded: not-needed
+
+---
+ setup.py |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/setup.py	2022-08-08 23:53:00.923658276 -0400
++++ b/setup.py	2022-08-08 23:53:00.919658290 -0400
+@@ -75,7 +75,7 @@
+         ('share/bash-completion/completions', ['completions/bash/yt-dlp']),
+         ('share/zsh/site-functions', ['completions/zsh/_yt-dlp']),
+         ('share/fish/vendor_completions.d', ['completions/fish/yt-dlp.fish']),
+-        ('share/doc/yt_dlp', ['README.txt']),
++        ('share/doc/yt-dlp', ['README.txt']),
+         ('share/man/man1', ['yt-dlp.1'])
+     ]
+     data_files = []
