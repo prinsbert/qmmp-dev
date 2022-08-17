@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2022.08.08
+VERSION=2022.08.14
 UBUNTU_CODENAMES='bionic focal jammy'
 BUILD_ROOT=build-root
 
@@ -20,11 +20,11 @@ build ()
     cp -rv ../../debian-$1/* -t yt-dlp-$VERSION/debian/
     cp ../yt-dlp_$VERSION.orig.tar.gz ./
     cd yt-dlp-$VERSION
-    if [ "$1" = "bionic" ] ; then
-        debuild -S -sa -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
-    else
+    #if [ "$1" = "bionic" ] ; then
+    #    debuild -S -sa -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
+    #else
         debuild -S -sd -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
-    fi
+    #fi
     cd ..
     cd ..
 }

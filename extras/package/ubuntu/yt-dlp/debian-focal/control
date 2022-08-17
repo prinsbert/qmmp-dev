@@ -4,7 +4,7 @@ Section: web
 Priority: optional
 Build-Depends:
  debhelper-compat (= 12),
- dh-python (>= 5.20211213~),
+ dh-python (>= 4.20191017~),
  pandoc,
  python3-pkg-resources,
  python3-pytest <!nocheck>,

@@ -1,0 +1,26 @@
+From 4dc2b3304424ed983f80ae9eb2603f042dac6a8d Mon Sep 17 00:00:00 2001
+From: Lesmiscore <nao20010128@gmail.com>
+Date: Mon, 15 Aug 2022 15:43:43 +0900
+Subject: [PATCH] [setup.py] Do not include devscripts/ as a package
+
+Closes #4667
+---
+ setup.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index aebe1dead..e376a694a 100644
+--- a/setup.py
++++ b/setup.py
+@@ -28,7 +28,7 @@
+ 
+ def packages():
+     if setuptools_available:
+-        return find_packages(exclude=('youtube_dl', 'youtube_dlc', 'test', 'ytdlp_plugins'))
++        return find_packages(exclude=('youtube_dl', 'youtube_dlc', 'test', 'ytdlp_plugins', 'devscripts'))
+ 
+     return [
+         'yt_dlp', 'yt_dlp.extractor', 'yt_dlp.downloader', 'yt_dlp.postprocessor', 'yt_dlp.compat',
+-- 
+2.30.2
+

@@ -1,8 +1,14 @@
+yt-dlp (2022.08.14-1ubuntu3~jammy0) jammy; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 17 Aug 2022 22:38:04 +0300
+
 yt-dlp (2022.08.08-1ubuntu1~jammy0) jammy; urgency=medium
 
   * New upstream release.
 
- -- Unit 193 <unit193@debian.org>  Tue, 09 Aug 2022 22:35:24 +0300
+ -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 09 Aug 2022 22:35:24 +0300
 
 yt-dlp (2022.08.08-1) unstable; urgency=medium
 
