@@ -2,3 +2,4 @@
 0003-Remove-use-of-git.patch
 0004-Makefile-Don-t-run-flake8-when-running-offlinetest.patch
 0005-Fix-some-issues.patch
+0006-Fix-offline-tests.patch

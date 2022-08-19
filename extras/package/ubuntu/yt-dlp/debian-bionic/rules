@@ -2,13 +2,14 @@
 
 #export DH_VERBOSE = 1
 export PYBUILD_NAME = yt_dlp
+export PYBUILD_INTERPRETERS=python3.8
 
 %:
 	dh $@ --with python3 --buildsystem=pybuild
 
 override_dh_auto_configure:
-	PREFIX=/usr SYSCONFDIR=/etc make
-	python3 devscripts/set-variant.py debian -M "As yt-dlp has been installed via apt, you should use that to update.  If you're on a stable release, also check backports."
+	PREFIX=/usr SYSCONFDIR=/etc PYTHON='/usr/bin/env python3.8' make
+	python3.8 devscripts/set-variant.py debian -M "As yt-dlp has been installed via apt, you should use that to update.  If you're on a stable release, also check backports."
 	rm yt-dlp
 
 override_dh_clean:
@@ -16,7 +17,7 @@ override_dh_clean:
 	dh_clean
 
 override_dh_auto_test:
-	make offlinetest PYTHON=python3
+	make offlinetest PYTHON=python3.8
 
 override_dh_installchangelogs:
 	dh_installchangelogs Changelog.md

@@ -1,0 +1,13 @@
+Index: yt-dlp-2022.08.19/setup.cfg
+===================================================================
+--- yt-dlp-2022.08.19.orig/setup.cfg
++++ yt-dlp-2022.08.19/setup.cfg
+@@ -11,7 +11,7 @@ per_file_ignores =
+ 
+ 
+ [tool:pytest]
+-addopts = -ra -v --strict-markers
++addopts = -ra -v
+ markers =
+     download
+ 
