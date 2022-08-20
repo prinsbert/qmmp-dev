@@ -21,7 +21,7 @@ Package: qmmp
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, libtag1v5 (>= 1.10), libqt5sql5-sqlite
 Recommends: qmmp-in-ffmpeg
-Suggests: qmmp-plugin-projectm, mplayer2, unzip, udisks2 [linux-any]
+Suggests: qmmp-plugin-projectm, mplayer2, unzip, udisks2 [linux-any], libwildmidi-config
 Replaces: libqmmp0 (<< 1.0), libqmmpui0 (<< 1.0), libqmmp-misc (<< 1.0)
 Breaks: libqmmp0 (<< 1.0), libqmmpui0 (<< 1.0), libqmmp-misc (<< 1.0)
 Description: feature-rich audio player with support of many formats

@@ -20,7 +20,7 @@ Package: qmmp-qt4
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, libtag1v5 (>= 1.10), libqt4-sql-sqlite
 Suggests: qmmp-qt4-plugin-projectm, mplayer2, unzip, udisks2 [linux-any],
-  hal [!linux-any]
+  hal [!linux-any], libwildmidi-config
 Replaces: libqmmp0 (<< 0.9), libqmmpui0 (<< 0.9), libqmmp-misc (<< 0.9)
 Breaks: libqmmp0 (<< 0.9), libqmmpui0 (<< 0.9), libqmmp-misc (<< 0.9) 
 Conflicts: qmmp (>>1.0), qmmp-plugin-projectm (>>1.0)

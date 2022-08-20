@@ -24,7 +24,7 @@ Vcs-Browser: https://salsa.debian.org/debian/qmmp
 Package: qmmp-qt6
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Suggests: qmmp-plugin-projectm-qt6, ffmpeg, mplayer, unzip, udisks2 [linux-any]
+Suggests: qmmp-plugin-projectm-qt6, ffmpeg, mplayer, unzip, udisks2 [linux-any], libwildmidi-config
 Description: feature-rich audio player with support of many formats
  Qmmp is feature-rich audio player with support of many formats.
  It is written in Qt.
