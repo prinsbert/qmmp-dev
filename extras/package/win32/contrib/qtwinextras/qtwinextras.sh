@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qtwinextras-everywhere-opensource-src
-VERSION=5.15.5
+VERSION=5.15.6
 BUILD_ROOT=qtwinextras-everywhere-src-$VERSION
 
 case $1 in
