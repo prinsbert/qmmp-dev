@@ -14,22 +14,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="339"/>
+        <location filename="../decoderffmpegfactory.cpp" line="343"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="340"/>
+        <location filename="../decoderffmpegfactory.cpp" line="344"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="341"/>
+        <location filename="../decoderffmpegfactory.cpp" line="345"/>
         <source>Compiled against:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="354"/>
+        <location filename="../decoderffmpegfactory.cpp" line="358"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
