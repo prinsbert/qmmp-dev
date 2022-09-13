@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=flac
-VERSION=1.3.4
+VERSION=1.4.0
 
 case $1 in
   --download)
