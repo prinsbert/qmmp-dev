@@ -430,3 +430,11 @@ LEGEND
 [*] ffmpeg-5.0.1
 [*] mingw-w64 toolchain: i686-11.2.0-release-posix-dwarf-rt_v9-rev4
 [+] webp support
+
+1.6.2
+[*] qmmp-1.6.2
+[*] qt-5.15.6
+[*] curl-7.85.0
+[*] ffmpeg-5.1.1
+[*] flac-1.4.0
+[*] mpg123-1.30.2
