@@ -1805,6 +1805,7 @@ Version 1.6.2
 * added FFmpeg 5.1 support
 * added recursive search for presets in the projectm plugin
 * added application icon in the pulseaudio plugin
+* improved visualization synchronization
 * fixed title formatting in the KDE notification plugin
 * fixed "fact" chunks support in the sndfile plugin
 * fixed embedded cover art support in the flac plugin
