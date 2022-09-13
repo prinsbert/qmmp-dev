@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.6.1
+QMMP_VERSION=1.6.2
 QMMP_PLUGIN_PACK_VERSION=1.6.0
 
 export DEV_PATH=/c/devel
@@ -137,7 +137,7 @@ create_distr ()
     cp -v ${MINGW32_PATH}/bin/${LIB_NAME} ./
   done
   #third party libs   
-  for LIB_NAME in avcodec-*.dll avformat-*.dll avutil-*.dll glew32.dll libFLAC-8.dll libcddb-2.dll libcdio-19.dll libcdio_cdda-2.dll libcdio_paranoia-2.dll
+  for LIB_NAME in avcodec-*.dll avformat-*.dll avutil-*.dll glew32.dll libFLAC-12.dll libcddb-2.dll libcdio-19.dll libcdio_cdda-2.dll libcdio_paranoia-2.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
@@ -168,9 +168,9 @@ create_distr ()
 
 case $1 in
   --download)
-    download_qmmp_tarball
+    #download_qmmp_tarball
     #download_plugins_tarball
-    #download_qmmp_svn
+    download_qmmp_svn
     download_plugins_svn
     download_qmmp_adplug_archive
   ;;
