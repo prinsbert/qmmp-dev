@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=2.1.0
-UBUNTU_CODENAMES='jammy'
+UBUNTU_CODENAMES='jammy kinetic'
 BUILD_ROOT=build-root
 
 
@@ -48,7 +48,7 @@ clean ()
 
 case $1 in
     --download)
-		wget https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/1.6/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.1/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES
