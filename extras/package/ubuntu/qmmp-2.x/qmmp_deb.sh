@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=2.1.1
-UBUNTU_CODENAMES='jammy'
+QMMP_VERSION=2.1.2
+UBUNTU_CODENAMES='jammy kinetic'
 BUILD_ROOT=build-root
 
 
@@ -48,7 +48,7 @@ clean ()
 
 case $1 in
     --download)
-		wget https://qmmp.ylsoftware.com/files/qmmp/1.6/qmmp-$QMMP_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/qmmp/2.1/qmmp-$QMMP_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES

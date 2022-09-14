@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=1.6.1
-UBUNTU_CODENAMES='xenial bionic focal jammy'
+QMMP_VERSION=1.6.2
+UBUNTU_CODENAMES='bionic focal jammy kinetic'
 BUILD_ROOT=build-root
 
 
@@ -21,7 +21,7 @@ build ()
     cp -rv ../../debian-$1/* -t qmmp-$QMMP_VERSION/debian/
     cp ../qmmp_$QMMP_VERSION.orig.tar.bz2 ./
     cd qmmp-$QMMP_VERSION
-    if [ "$1" = "xenial" ] ; then
+    if [ "$1" = "bionic" ] ; then
         debuild -S -d -sa -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     else
         debuild -S -d -sd -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
