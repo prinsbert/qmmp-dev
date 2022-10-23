@@ -358,6 +358,11 @@ void LADSPAHost::activateEffect(LADSPAEffect *e)
     for(int i = 0; i < instance_count; ++i)
     {
         LADSPA_Handle handle = desc->instantiate(desc, m_freq);
+        if(!handle)
+        {
+            qWarning("LADSPAHost: failed to instantiate plugin: %s", desc->Name);
+            continue;
+        }
 
         foreach (LADSPAControl *c, e->controls)
         {
