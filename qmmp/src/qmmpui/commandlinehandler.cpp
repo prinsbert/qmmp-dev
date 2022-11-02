@@ -39,8 +39,8 @@ QString CommandLineHandler::helpString(int id) const
 {
     if(m_options[id].values.isEmpty())
         return m_options[id].names.join(", ") + "||" + m_options[id].helpString;
-    else
-        return m_options[id].names.join(", ") + " <" + m_options[id].values.join("> <") + ">||" + m_options[id].helpString;
+
+    return m_options[id].names.join(", ") + " <" + m_options[id].values.join("> <") + ">||" + m_options[id].helpString;
 }
 
 int CommandLineHandler::identify(const QString &name) const

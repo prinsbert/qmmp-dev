@@ -68,10 +68,10 @@ TwoPanelFileDialogImpl::TwoPanelFileDialogImpl(QWidget * parent) : QDialog(paren
     m_dirModel->setNameFilterDisables (false);
 
     connect(m_ui.dirListView->selectionModel(),
-            SIGNAL(selectionChanged (QItemSelection, QItemSelection)),
-            SLOT(updateDirSelection (QItemSelection, QItemSelection)));
+            SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
+            SLOT(updateDirSelection(QItemSelection,QItemSelection)));
 
-    connect(m_ui.fileListWidget, SIGNAL(itemSelectionChanged()), SLOT(updateFileSelection ()));
+    connect(m_ui.fileListWidget, SIGNAL(itemSelectionChanged()), SLOT(updateFileSelection()));
 
     QSettings settings;
     restoreGeometry(settings.value("TwoPanelFileDialog/geometry").toByteArray());
@@ -242,7 +242,7 @@ void TwoPanelFileDialogImpl::on_fileNameLineEdit_textChanged(const QString &text
     else
         path = m_dirModel->filePath(m_ui.dirListView->currentIndex()) + "/" + text;
 
-    if (!QFileInfo(path).exists())
+    if (!QFileInfo::exists(path))
         return;
 
     for(int i = 0; i < m_ui.fileListWidget->count(); ++i)

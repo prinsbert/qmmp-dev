@@ -24,7 +24,6 @@
 #include <QScreen>
 #include <QTimer>
 #include <QSettings>
-#include <QApplication>
 #include <qmmp/soundcore.h>
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/playlistitem.h>
@@ -59,9 +58,9 @@ PopupWidget::PopupWidget(QWidget *parent)
     m_timer = new QTimer(this);
     m_timer->setInterval(delay);
     m_timer->setSingleShot (true);
-    connect(m_timer, SIGNAL(timeout ()), SLOT(show()));
+    connect(m_timer, SIGNAL(timeout()), SLOT(show()));
     if(show_cover)
-        connect(m_timer, SIGNAL(timeout ()), SLOT(loadCover()));
+        connect(m_timer, SIGNAL(timeout()), SLOT(loadCover()));
     else
         m_pixlabel->hide();
     setMouseTracking(true);

@@ -35,14 +35,11 @@ DecoderCUE::DecoderCUE(const QString &url) : Decoder(),
 
 DecoderCUE::~DecoderCUE()
 {
-    if(m_decoder)
-        delete m_decoder;
+    delete m_decoder;
     m_decoder = nullptr;
-    if(m_cueFile)
-        delete m_cueFile;
+    delete m_cueFile;
     m_cueFile = nullptr;
-    if(m_buf)
-        delete [] m_buf;
+    delete [] m_buf;
     m_buf = nullptr;
     if(m_input)
         m_input->deleteLater();
@@ -149,8 +146,7 @@ qint64 DecoderCUE::read(unsigned char *data, qint64 size)
     len2 = (len2 / m_sz) * m_sz; //whole of samples of each channel
     m_totalBytes += len2;
     //save data of the next track
-    if(m_buf)
-        delete[] m_buf;
+    delete[] m_buf;
     m_buf_size = len - len2;
     m_buf = new char[m_buf_size];
     memmove(m_buf, data + len2, m_buf_size);
@@ -166,8 +162,8 @@ const QString DecoderCUE::nextURL() const
 {
     if(m_track +1 <= m_cueFile->count() && m_cueFile->dataFilePath(m_track) == m_cueFile->dataFilePath(m_track + 1))
         return m_cueFile->url(m_track + 1);
-    else
-        return QString();
+
+    return QString();
 }
 
 void DecoderCUE::next()

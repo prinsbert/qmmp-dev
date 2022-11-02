@@ -280,13 +280,11 @@ bool DecoderMAD::findHeader()
                 }
                 continue;
             }
-            else if (m_stream.error == MAD_ERROR_BUFLEN || MAD_RECOVERABLE(m_stream.error))
+           if (m_stream.error == MAD_ERROR_BUFLEN || MAD_RECOVERABLE(m_stream.error))
                 continue;
-            else
-            {
-                qDebug ("DecoderMAD: Can't decode header: %s", mad_stream_errorstr(&m_stream));
-                break;
-            }
+
+           qDebug ("DecoderMAD: Can't decode header: %s", mad_stream_errorstr(&m_stream));
+           break;
         }
         result = true;
 
@@ -402,7 +400,8 @@ qint64 DecoderMAD::read(unsigned char *data, qint64 size)
             m_skip_bytes -= l;
             continue;
         }
-        else if(m_skip_bytes < l)
+
+        if(m_skip_bytes < l)
         {
             l -= m_skip_bytes;
             memmove(data, data + m_skip_bytes, l);
@@ -410,11 +409,9 @@ qint64 DecoderMAD::read(unsigned char *data, qint64 size)
             m_play_bytes -= l;
             return l;
         }
-        else
-        {
-            m_skip_bytes = 0;
-            break;
-        }
+
+        m_skip_bytes = 0;
+        break;
     }
 
     if(!decodeFrame())
@@ -462,12 +459,13 @@ bool DecoderMAD::fillBuffer()
         memmove(m_input_buf, m_stream.next_frame, m_input_bytes);
     }
     int len = input()->read((char *) m_input_buf + m_input_bytes, INPUT_BUFFER_SIZE - m_input_bytes);
-    if (!len)
+    if(!len)
     {
         qDebug("DecoderMAD: end of file");
         return false;
     }
-    else if(len < 0)
+
+    if(len < 0)
     {
         qWarning("DecoderMAD: error");
         return false;

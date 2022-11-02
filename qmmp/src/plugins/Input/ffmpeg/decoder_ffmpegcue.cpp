@@ -31,14 +31,11 @@ DecoderFFmpegCue::DecoderFFmpegCue(const QString &url) : Decoder(),
 
 DecoderFFmpegCue::~DecoderFFmpegCue()
 {
-    if(m_decoder)
-        delete m_decoder;
+    delete m_decoder;
     m_decoder = nullptr;
-    if(m_parser)
-        delete m_parser;
+    delete m_parser;
     m_parser = nullptr;
-    if(m_buf)
-        delete [] m_buf;
+    delete [] m_buf;
     m_buf = nullptr;
     if(m_input)
         m_input->deleteLater();
@@ -168,8 +165,7 @@ qint64 DecoderFFmpegCue::read(unsigned char *data, qint64 size)
     len2 = (len2 / m_frameSize) * m_frameSize; //integer number of samples
     m_written += len2;
     //save data of the next track
-    if(m_buf)
-        delete[] m_buf;
+    delete[] m_buf;
     m_bufSize = len - len2;
     m_buf = new char[m_bufSize];
     memmove(m_buf, data + len2, m_bufSize);
@@ -185,8 +181,8 @@ const QString DecoderFFmpegCue::nextURL() const
 {
     if(m_track +1 <= m_parser->count())
         return m_parser->url(m_track + 1);
-    else
-        return QString();
+
+    return QString();
 }
 
 void DecoderFFmpegCue::next()

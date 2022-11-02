@@ -228,8 +228,8 @@ void Converter::run()
         m_mutex.unlock();
         return;
     }
-    else
-        qDebug("Converter: task '%s' finished with success", qPrintable(m_preset["name"].toString()));
+
+    qDebug("Converter: task '%s' finished with success", qPrintable(m_preset["name"].toString()));
     m_mutex.unlock();
 
     if(use_file)

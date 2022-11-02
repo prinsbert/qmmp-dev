@@ -205,7 +205,8 @@ void RGScanner::run()
             error = true;
             break;
         }
-        else if(len == 0)
+
+        if(len == 0)
             break;
 
         samples = len / ap.sampleSize();

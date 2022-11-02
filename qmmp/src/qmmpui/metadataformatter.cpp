@@ -132,8 +132,8 @@ QString MetaDataFormatter::formatDuration(qint64 duration, bool hideZero, bool s
     {
         if(hideZero)
             return QString();
-        else
-            return showMs ? QLatin1String("0:00.000") : QLatin1String("0:00");
+
+        return showMs ? QLatin1String("0:00.000") : QLatin1String("0:00");
     }
 
     QString out;
@@ -543,23 +543,23 @@ QString MetaDataFormatter::printField(int field, const TrackInfo *info, int trac
         }
         return info->value((Qmmp::MetaData) field);
     }
-    else if(field == Param::PATH)
+    if(field == Param::PATH)
     {
         return info->path();
     }
-    else if(field == Param::TWO_DIGIT_TRACK)
+    if(field == Param::TWO_DIGIT_TRACK)
     {
         return QString("%1").arg(info->value(Qmmp::TRACK),2,'0');
     }
-    else if(field == Param::DURATION)
+    if(field == Param::DURATION)
     {
         return formatDuration(info->duration());
     }
-    else if(field == Param::FILE_NAME)
+    if(field == Param::FILE_NAME)
     {
         return info->path().section('/',-1);
     }
-    else if(field == Param::TRACK_INDEX)
+    if(field == Param::TRACK_INDEX)
     {
         return QString::number(trackIndex + 1);
     }

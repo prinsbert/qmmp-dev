@@ -34,7 +34,7 @@ public:
     virtual ~ProjectMWrapper();
 
 signals:
-    void currentPresetChanged(int index) const;
+    void currentPresetChanged(int index);
 
 public slots:
     void selectPreset(int index);

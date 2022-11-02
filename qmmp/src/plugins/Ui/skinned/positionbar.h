@@ -36,11 +36,12 @@ public:
     PositionBar(QWidget *parent = nullptr);
     virtual ~PositionBar();
 
+    qint64 value()const{return m_value;}
+    qint64 maximum() const {return m_max;}
+
 public slots:
     void setValue(qint64);
-    qint64 value()const{return m_value;}
     void setMaximum(qint64);
-    qint64 maximum() const {return m_max;}
 
 signals:
     void sliderMoved (qint64);

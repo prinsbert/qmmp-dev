@@ -38,8 +38,7 @@ DecoderWavPack::DecoderWavPack(const QString &path) : Decoder(),
 DecoderWavPack::~DecoderWavPack()
 {
     deinit();
-    if (m_output_buf)
-        delete [] m_output_buf;
+    delete [] m_output_buf;
     m_output_buf = nullptr;
 }
 
@@ -171,8 +170,7 @@ void DecoderWavPack::deinit()
     if (m_context)
         WavpackCloseFile (m_context);
     m_context = nullptr;
-    if(m_parser)
-        delete m_parser;
+    delete m_parser;
     m_parser = nullptr;
 }
 
@@ -206,8 +204,8 @@ const QString DecoderWavPack::nextURL() const
 {
     if(m_parser && m_track +1 <= m_parser->count())
         return m_parser->url(m_track + 1);
-    else
-        return QString();
+
+    return QString();
 }
 
 void DecoderWavPack::next()

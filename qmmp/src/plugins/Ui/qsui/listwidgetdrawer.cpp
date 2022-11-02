@@ -35,12 +35,9 @@ ListWidgetDrawer::ListWidgetDrawer()
 
 ListWidgetDrawer::~ListWidgetDrawer()
 {
-    if(m_metrics)
-        delete m_metrics;
-    if(m_extra_metrics)
-        delete m_extra_metrics;
-    if(m_bold_metrics)
-        delete m_bold_metrics;
+    delete m_metrics;
+    delete m_extra_metrics;
+    delete m_bold_metrics;
 }
 
 void ListWidgetDrawer::readSettings()
@@ -191,7 +188,8 @@ void ListWidgetDrawer::prepareRow(ListWidgetRow *row)
         row->titles[0] = metrics->elidedText (row->titles[0], Qt::ElideRight, visible_width - 2 * m_padding);
         return;
     }
-    else if(row->titles.count() == 1)
+
+    if(row->titles.count() == 1)
     {
         row->titles[0] = metrics->elidedText (row->titles[0], Qt::ElideRight, visible_width - m_padding);
         return;

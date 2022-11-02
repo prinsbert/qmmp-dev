@@ -135,14 +135,14 @@ void ConverterDialog::on_convertButton_clicked()
             delete converter;
             continue;
         }
-        else
-            m_ui.tableWidget->item(i, 2)->setText(tr("Waiting"));
+
+        m_ui.tableWidget->item(i, 2)->setText(tr("Waiting"));
 
         converter->setAutoDelete(false);
         m_converters.append(converter);
         connect(converter, SIGNAL(progress(int)), m_ui.tableWidget->cellWidget(i, 1), SLOT(setValue(int)));
-        connect(converter, SIGNAL(finished(Converter *)), SLOT(onConvertFinished(Converter *)));
-        connect(converter, SIGNAL(message(int, QString)), SLOT(onStateChanged(int, QString)));
+        connect(converter, SIGNAL(finished(Converter*)), SLOT(onConvertFinished(Converter*)));
+        connect(converter, SIGNAL(message(int,QString)), SLOT(onStateChanged(int,QString)));
         QThreadPool::globalInstance()->start(converter);
     }
     m_ui.tableWidget->resizeColumnsToContents();
@@ -359,7 +359,8 @@ bool ConverterDialog::checkPreset(const QVariantMap &preset)
                              .arg(program));
         return false;
     }
-    else if(result < 0)
+
+    if(result < 0)
     {
         QMessageBox::warning(this, tr("Error"), tr("Process \"%1\" finished with error.")
                              .arg(program));

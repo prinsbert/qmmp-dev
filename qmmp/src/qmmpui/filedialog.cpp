@@ -211,8 +211,8 @@ void FileDialog::init(QObject* receiver, const char* member, QString *dir)
         disconnect();
     if (receiver &&  member)
     {
-        connect(this,SIGNAL(filesSelected(QStringList, bool)), receiver, member);
-        connect(this,SIGNAL(filesSelected(QStringList)), SLOT(updateLastDir(QStringList)));
+        connect(this, SIGNAL(filesSelected(QStringList,bool)), receiver, member);
+        connect(this, SIGNAL(filesSelected(QStringList)), SLOT(updateLastDir(QStringList)));
         m_initialized = true;
     }
 }

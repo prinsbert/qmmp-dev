@@ -43,16 +43,6 @@ EditStreamDialog::~EditStreamDialog()
     delete m_ui;
 }
 
-void EditStreamDialog::accept()
-{
-    m_values[URL] = m_ui->urlLineEdit->text();
-    m_values[NAME] = m_ui->nameLineEdit->text();
-    m_values[GENRE] = m_ui->genreLineEdit->text();
-    m_values[BITRATE] = m_ui->bitrateLineEdit->text();
-    m_values[TYPE] = m_ui->typeComboBox->currentText();
-    QDialog::accept();
-}
-
 void EditStreamDialog::setValues(const QMap<EditStreamDialog::Key, QString> &values)
 {
     m_values = values;
@@ -66,6 +56,16 @@ void EditStreamDialog::setValues(const QMap<EditStreamDialog::Key, QString> &val
 const QMap<EditStreamDialog::Key, QString> &EditStreamDialog::values() const
 {
     return m_values;
+}
+
+void EditStreamDialog::accept()
+{
+    m_values[URL] = m_ui->urlLineEdit->text();
+    m_values[NAME] = m_ui->nameLineEdit->text();
+    m_values[GENRE] = m_ui->genreLineEdit->text();
+    m_values[BITRATE] = m_ui->bitrateLineEdit->text();
+    m_values[TYPE] = m_ui->typeComboBox->currentText();
+    QDialog::accept();
 }
 
 void EditStreamDialog::validate()

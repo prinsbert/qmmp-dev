@@ -32,7 +32,7 @@ RGScanHelper::RGScanHelper(QObject *parent) : QObject(parent)
     QAction *action = new QAction(tr("ReplayGain Scanner"), this);
     action->setShortcut(tr("Meta+R"));
     UiHelper::instance()->addAction(action, UiHelper::PLAYLIST_MENU);
-    connect (action, SIGNAL(triggered ()), SLOT(openRGScaner()));
+    connect(action, SIGNAL(triggered()), SLOT(openRGScaner()));
 }
 
 RGScanHelper::~RGScanHelper()

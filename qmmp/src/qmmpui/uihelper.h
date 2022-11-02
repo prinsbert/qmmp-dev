@@ -26,7 +26,6 @@
 #include <QPointer>
 #include <QStringList>
 #include <QApplication>
-#include <QPointer>
 #include "playlistmanager.h"
 #include "playlistmodel.h"
 #include "qmmpui_export.h"

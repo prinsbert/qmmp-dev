@@ -53,7 +53,7 @@ bool WildMidiHelper::initialize()
     QSettings settings;
     settings.beginGroup("Midi");
     unsigned short int mixer_options = 0;
-    QString conf_path = configFiles().isEmpty() ? QString() : configFiles().first();
+    QString conf_path = configFiles().isEmpty() ? QString() : configFiles().constFirst();
     conf_path = settings.value("conf_path", conf_path).toString();
     if(conf_path.isEmpty() || !QFile::exists(conf_path))
     {

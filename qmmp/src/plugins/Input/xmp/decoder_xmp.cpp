@@ -21,7 +21,6 @@
 #include <QObject>
 #include <QSettings>
 #include <QDir>
-#include <QSettings>
 #include "decoder_xmp.h"
 
 // Decoder class
@@ -89,7 +88,7 @@ qint64 DecoderXmp::read(unsigned char *audio, qint64 maxSize)
 
     if(c == 0)
         return maxSize;
-    else if(c == -XMP_END)
+    if(c == -XMP_END)
         return 0;
 
     return -1;

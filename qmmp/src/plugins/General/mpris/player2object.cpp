@@ -39,8 +39,8 @@ Player2Object::Player2Object(QObject *parent) : QDBusAbstractAdaptor(parent)
     m_ui_settings = QmmpUiSettings::instance();
     connect(m_core, SIGNAL(trackInfoChanged()), SLOT(updateId()));
     connect(m_core, SIGNAL(trackInfoChanged()), SLOT(emitPropertiesChanged()));
-    connect(m_core, SIGNAL(stateChanged (Qmmp::State)), SLOT(checkState(Qmmp::State)));
-    connect(m_core, SIGNAL(stateChanged (Qmmp::State)), SLOT(emitPropertiesChanged()));
+    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(checkState(Qmmp::State)));
+    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(emitPropertiesChanged()));
     connect(m_core, SIGNAL(volumeChanged(int,int)), SLOT(emitPropertiesChanged()));
     connect(m_core, SIGNAL(elapsedChanged(qint64)), SLOT(checkSeeking(qint64)));
     connect(m_ui_settings, SIGNAL(repeatableListChanged(bool)), SLOT(emitPropertiesChanged()));
@@ -89,10 +89,11 @@ QString Player2Object::loopStatus() const
 {
     if(m_ui_settings->isRepeatableTrack())
         return "Track";
-    else if(m_ui_settings->isRepeatableList())
+
+    if(m_ui_settings->isRepeatableList())
         return "Playlist";
-    else
-        return "None";
+
+    return "None";
 }
 
 void Player2Object::setLoopStatus(const QString &value)
@@ -169,8 +170,10 @@ QString Player2Object::playbackStatus() const
 {
     if(m_core->state() == Qmmp::Playing)
         return "Playing";
-    else if (m_core->state() == Qmmp::Paused)
+
+    if (m_core->state() == Qmmp::Paused)
         return "Paused";
+
     return "Stopped";
 }
 

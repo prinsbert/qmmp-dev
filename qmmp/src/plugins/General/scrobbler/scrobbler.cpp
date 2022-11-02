@@ -92,10 +92,10 @@ Scrobbler::Scrobbler(const QString &scrobblerUrl, const QString &name, QObject *
     QSettings settings;
     m_session = settings.value("Scrobbler/"+name+"_session").toString();
 
-    connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(processResponse(QNetworkReply *)));
+    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(processResponse(QNetworkReply*)));
     connect(QmmpSettings::instance(), SIGNAL(networkSettingsChanged()), SLOT(setupProxy()));
     connect(m_core, SIGNAL(trackInfoChanged()), SLOT(updateMetaData()));
-    connect(m_core, SIGNAL(stateChanged (Qmmp::State)), SLOT(setState(Qmmp::State)));
+    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(setState(Qmmp::State)));
 
     setupProxy();
     m_cachedSongs = m_cache->load();
@@ -388,7 +388,7 @@ ScrobblerAuth::ScrobblerAuth(const QString &scrobblerUrl, const QString &authUrl
     m_authUrl(authUrl),
     m_name(name)
 {
-    connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(processResponse(QNetworkReply *)));
+    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(processResponse(QNetworkReply*)));
 
     QmmpSettings *gs = QmmpSettings::instance();
     if (gs->isProxyEnabled())
@@ -525,7 +525,7 @@ void ScrobblerAuth::processResponse(QNetworkReply *reply)
             m_token = response.token;
             qDebug("ScrobblerAuth[%s]: token: %s", qPrintable(m_name), qPrintable(m_token));
             QDesktopServices::openUrl(m_authUrl + "?api_key=" API_KEY "&token="+m_token);
-            emit(tokenRequestFinished(NO_ERROR));
+            emit tokenRequestFinished(NO_ERROR);
         }
         else if(error_code.isEmpty())
         {

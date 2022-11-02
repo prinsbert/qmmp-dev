@@ -70,11 +70,9 @@ QString TemplateEditor::getTemplate (QWidget *parent, const QString &title, cons
         editor->deleteLater();
         return t;
     }
-    else
-    {
-        if(ok)
-            *ok = false;
-        editor->deleteLater();
-        return QString();
-    }
+
+    if(ok)
+        *ok = false;
+    editor->deleteLater();
+    return QString();
 }

@@ -204,16 +204,17 @@ MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file,
 
 MpegFileTagModel::~MpegFileTagModel()
 {
-    if(m_codec)
-        delete m_codec;
+    delete m_codec;
 }
 
 QString MpegFileTagModel::name() const
 {
     if(m_type == TagLib::MPEG::File::ID3v1)
         return "ID3v1";
-    else if(m_type == TagLib::MPEG::File::ID3v2)
+
+    if(m_type == TagLib::MPEG::File::ID3v2)
         return "ID3v2";
+
     return "APE";
 }
 
@@ -222,7 +223,8 @@ QList<Qmmp::MetaData> MpegFileTagModel::keys() const
     QList<Qmmp::MetaData> list = TagModel::keys();
     if(m_type == TagLib::MPEG::File::ID3v2)
         return list;
-    else if(m_type == TagLib::MPEG::File::APE)
+
+    if(m_type == TagLib::MPEG::File::APE)
     {
         list.removeAll(Qmmp::DISCNUMBER);
         return list;
@@ -364,7 +366,8 @@ void MpegFileTagModel::setValue(Qmmp::MetaData key, const QString &value)
             m_file->APETag()->addValue("COMPOSER", str, true);
             return;
         }
-        else if(key == Qmmp::ALBUMARTIST)
+
+        if(key == Qmmp::ALBUMARTIST)
         {
             m_file->APETag()->addValue("ALBUM ARTIST", str, true);
             return;
@@ -437,7 +440,8 @@ QString MpegFileTagModel::lyrics() const
 
         if(!map["USLT"].isEmpty())
             return m_codec->toUnicode(map["USLT"].front()->toString().toCString(utf));
-        else if(!map["SYLT"].isEmpty())
+
+        if(!map["SYLT"].isEmpty())
             return m_codec->toUnicode(map["SYLT"].front()->toString().toCString(utf));
     }
 

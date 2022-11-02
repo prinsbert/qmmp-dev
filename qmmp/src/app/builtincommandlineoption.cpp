@@ -24,7 +24,6 @@
 #include <qmmpui/mediaplayer.h>
 #include <qmmpui/uihelper.h>
 #include <qmmpui/filedialog.h>
-#include <qmmpui/uihelper.h>
 #include <qmmpui/qmmpuisettings.h>
 #include <qmmpui/playlistdownloader.h>
 #include <qmmpui/playlistparser.h>
@@ -101,7 +100,7 @@ QString BuiltinCommandLineOption::executeCommand(const QString &option_string, c
         if(args.isEmpty())
             return out;
         QStringList full_path_list, remote_pls_list;
-        for(QString s : qAsConst(args))
+        for(const QString &s : qAsConst(args))
         {
 #ifdef Q_OS_WIN
             s.replace("\\","/");

@@ -30,7 +30,6 @@
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/filedialog.h>
-#include <qmmpui/playlistmanager.h>
 #include <qmmp/qmmp.h>
 #include "elidinglabel.h"
 #include "filesystembrowser.h"

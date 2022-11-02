@@ -203,7 +203,8 @@ QMMPStarter::QMMPStarter() : QObject()
                 m_finished = true;
                 return;
             }
-            else if(m_server->listen (UDS_PATH))
+
+            if(m_server->listen (UDS_PATH))
             {
 #ifndef Q_OS_WIN
                 chmod(UDS_PATH, S_IRUSR | S_IWUSR);
@@ -228,8 +229,7 @@ QMMPStarter::QMMPStarter() : QObject()
 
 QMMPStarter::~QMMPStarter()
 {
-    if (m_ui)
-        delete m_ui;
+    delete m_ui;
 #ifdef Q_OS_WIN
     if(m_named_mutex)
         ReleaseMutex(m_named_mutex);
@@ -360,7 +360,7 @@ void QMMPStarter::writeCommand()
     m_socket->flush();
     //reading answer
     while(m_socket->waitForReadyRead(1500))
-        cout << m_socket->readAll().data();
+        cout << m_socket->readAll().constData();
 
 #ifndef Q_OS_WIN
     if (argString.isEmpty())
@@ -419,7 +419,7 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
             continue;
         if (CommandLineManager::hasOption(key))
             return CommandLineManager::executeCommand(key, commands.value(key));
-        else if (m_option_manager->identify(key))
+        if (m_option_manager->identify(key))
             out += m_option_manager->executeCommand(key, commands.value(key), cwd);
         else
             return QString();

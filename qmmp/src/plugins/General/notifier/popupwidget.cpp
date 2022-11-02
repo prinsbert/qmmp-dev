@@ -26,7 +26,6 @@
 #include <QPalette>
 #include <QSettings>
 #include <QDir>
-#include <QApplication>
 #include <QFont>
 #include <qmmp/soundcore.h>
 #include <qmmp/metadatamanager.h>
@@ -68,7 +67,7 @@ PopupWidget::PopupWidget(QWidget *parent)
     m_timer = new QTimer(this);
     m_timer->setInterval(delay);
     m_timer->setSingleShot (true);
-    connect(m_timer, SIGNAL(timeout ()), SLOT(hide()));
+    connect(m_timer, SIGNAL(timeout()), SLOT(hide()));
 }
 
 PopupWidget::~PopupWidget()

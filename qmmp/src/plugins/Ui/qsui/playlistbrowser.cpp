@@ -159,7 +159,8 @@ bool PlayListBrowser::eventFilter(QObject *o, QEvent *e)
                 m_listView->setCurrentIndex(index);
             return true;
         }
-        else if(key_event->key() == Qt::Key_Down)
+
+        if(key_event->key() == Qt::Key_Down)
         {
             if(!select_first)
                 index = m_proxyModel->index(index.row() + 1, index.column());

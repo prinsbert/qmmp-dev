@@ -20,7 +20,6 @@
 
 #include <QMouseEvent>
 #include <QPainter>
-#include <QPainter>
 #include <math.h>
 #include "skin.h"
 #include "shadedbar.h"

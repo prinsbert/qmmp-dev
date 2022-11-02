@@ -31,7 +31,6 @@
 #include <taglib/tfile.h>
 #include <taglib/mpegfile.h>
 #include <taglib/tfilestream.h>
-#include <taglib/id3v2tag.h>
 #include <taglib/id3v2header.h>
 #include <taglib/textidentificationframe.h>
 #include <taglib/id3v2framefactory.h>

@@ -50,12 +50,10 @@ int NormalContainer::insertTrack(int index, PlayListTrack *track)
             static_cast<PlayListTrack *>(m_items[i])->m_track_index = i;
         return index;
     }
-    else
-    {
-        m_items.append(track);
-        track->m_track_index = m_items.count() - 1;
-        return m_items.count() - 1;
-    }
+
+    m_items.append(track);
+    track->m_track_index = m_items.count() - 1;
+    return m_items.count() - 1;
 }
 
 void NormalContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
@@ -196,11 +194,8 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
             if (i + to - from < 0)
                 break;
 
-            else
-            {
-                m_items.move(i,i + to - from);
-                swapTrackNumbers(&m_items,i,i + to - from);
-            }
+            m_items.move(i,i + to - from);
+            swapTrackNumbers(&m_items,i,i + to - from);
         }
     }
     else
@@ -209,11 +204,9 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
         {
             if (indexes[i] + to - from >= m_items.count())
                 break;
-            else
-            {
-                m_items.move(indexes[i], indexes[i] + to - from);
-                swapTrackNumbers(&m_items,indexes[i], indexes[i] + to - from);
-            }
+
+            m_items.move(indexes[i], indexes[i] + to - from);
+            swapTrackNumbers(&m_items,indexes[i], indexes[i] + to - from);
         }
     }
     return true;

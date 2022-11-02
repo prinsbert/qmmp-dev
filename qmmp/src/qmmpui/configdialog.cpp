@@ -434,7 +434,7 @@ void ConfigDialog::saveSettings()
     eqs.setTwoPasses(m_ui->twoPassEqCheckBox->isChecked());
     gs->setEqSettings(eqs);
     QList<QVariant> var_sizes;
-    var_sizes << m_ui->splitter->sizes().first() << m_ui->splitter->sizes().last();
+    var_sizes << m_ui->splitter->sizes().constFirst() << m_ui->splitter->sizes().constLast();
     QSettings settings;
     settings.setValue("ConfigDialog/splitter_sizes", var_sizes);
     settings.setValue("ConfigDialog/window_size", size());

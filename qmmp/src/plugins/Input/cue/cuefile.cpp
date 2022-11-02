@@ -182,7 +182,8 @@ QString CueFile::getDirtyPath(const QString &cue_path, const QString &path)
 
     if (candidates.isEmpty())
         return path;
-    else if (candidates.count() == 1)
+
+    if (candidates.count() == 1)
         return candidates.first();
 
     int dot = cue_path.lastIndexOf('.');

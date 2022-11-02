@@ -74,7 +74,7 @@ void PositionSlider::mouseReleaseEvent (QMouseEvent *event)
 void PositionSlider::wheelEvent(QWheelEvent *event)
 {
     setValue(value() + event->angleDelta().y() / 20);
-    sliderReleased();
+    emit sliderReleased();
 }
 
 void PositionSlider::onSliderMoved(int pos)

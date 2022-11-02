@@ -33,7 +33,7 @@ ConverterHelper::ConverterHelper(QObject *parent) : QObject(parent)
     m_action = new QAction(tr("Convert"), this);
     m_action->setShortcut(tr("Meta+C"));
     UiHelper::instance()->addAction(m_action, UiHelper::PLAYLIST_MENU);
-    connect (m_action, SIGNAL(triggered ()), SLOT(openConverter()));
+    connect (m_action, SIGNAL(triggered()), SLOT(openConverter()));
 
 }
 

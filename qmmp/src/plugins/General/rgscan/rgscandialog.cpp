@@ -21,7 +21,6 @@
 #include <QSettings>
 #include <QProgressBar>
 #include <QThreadPool>
-#include <QSettings>
 #include <qmmpui/playlisttrack.h>
 #include <qmmpui/metadataformatter.h>
 #include <qmmpui/filedialog.h>

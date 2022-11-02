@@ -173,8 +173,7 @@ HttpStreamReader::~HttpStreamReader()
     if(m_analyser)
         enca_analyser_free(m_analyser);
 #endif
-    if(m_codec)
-        delete m_codec;
+    delete m_codec;
 }
 
 bool HttpStreamReader::atEnd () const
@@ -402,10 +401,11 @@ qint64 HttpStreamReader::readBuffer(char* data, qint64 maxlen)
         memmove(m_stream.buf, m_stream.buf + len, m_stream.buf_fill);
         return len;
     }
-    else if (m_stream.aborted)
+
+    if (m_stream.aborted)
         return -1;
-    else
-        return 0;
+
+    return 0;
 }
 
 void HttpStreamReader::checkBuffer()

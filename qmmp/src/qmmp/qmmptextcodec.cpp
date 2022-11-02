@@ -58,7 +58,7 @@ QString QmmpTextCodec::toUnicode(const QByteArray &a) const
 {
     if(m_name == "UTF-16")
         return QString::fromUtf16(reinterpret_cast<const char16_t *>(a.data()), a.size() / 2);
-    else if(!m_from || m_name == "UTF-8")
+    if(!m_from || m_name == "UTF-8")
         return QString::fromUtf8(a);
 
     size_t inBytesLeft = 0;
@@ -91,7 +91,8 @@ QString QmmpTextCodec::toUnicode(const QByteArray &a) const
 
             if(errno == EINVAL)
                 break;
-            else if(errno == EILSEQ)
+
+            if(errno == EILSEQ)
             {
                 // skip the next character
                 ++inBytes;
@@ -116,7 +117,7 @@ QByteArray QmmpTextCodec::fromUnicode(const QString &str) const
 {
     if(m_name == "UTF-16")
         return QByteArray(reinterpret_cast<const char*>(str.utf16()), str.size() * 2);
-    else if(!m_from || m_name == "UTF-8")
+    if(!m_from || m_name == "UTF-8")
         return str.toUtf8();
 
     size_t inBytesLeft = 0;
@@ -150,7 +151,8 @@ QByteArray QmmpTextCodec::fromUnicode(const QString &str) const
 
             if(errno == EINVAL)
                 break;
-            else if(errno == EILSEQ)
+
+            if(errno == EILSEQ)
             {
                 // skip the next character
                 ++inBytes;

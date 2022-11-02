@@ -70,27 +70,27 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
 
     if(filters.contains("*.wma") && formats.contains("asf"))
         return true;
-    else if(filters.contains("*.mp3") && formats.contains("mp3"))
+    if(filters.contains("*.mp3") && formats.contains("mp3"))
         return true;
-    else if(filters.contains("*.aac") && formats.contains("aac"))
+    if(filters.contains("*.aac") && formats.contains("aac"))
         return true;
-    else if(filters.contains("*.ac3") && formats.contains("eac3"))
+    if(filters.contains("*.ac3") && formats.contains("eac3"))
         return true;
-    else if(filters.contains("*.dts") && formats.contains("dts"))
+    if(filters.contains("*.dts") && formats.contains("dts"))
         return true;
-    else if(filters.contains("*.mka") && (formats.contains("mka") || formats.contains("matroska")))
+    if(filters.contains("*.mka") && (formats.contains("mka") || formats.contains("matroska")))
         return true;
-    else if(filters.contains("*.vqf") && formats.contains("vqf"))
+    if(filters.contains("*.vqf") && formats.contains("vqf"))
         return true;
-    else if(filters.contains("*.ape") && formats.contains("ape"))
+    if(filters.contains("*.ape") && formats.contains("ape"))
         return true;
-    else if(filters.contains("*.tta") && formats.contains("tta"))
+    if(filters.contains("*.tta") && formats.contains("tta"))
         return true;
-    else if(filters.contains("*.m4a") && (formats.contains("m4a") || formats.contains("mp4")))
+    if(filters.contains("*.m4a") && (formats.contains("m4a") || formats.contains("mp4")))
         return true;
-    else if(filters.contains("*.tak") && formats.contains("tak"))
+    if(filters.contains("*.tak") && formats.contains("tak"))
         return true;
-    else if(formats.contains("matroska") && avcodec_find_decoder(AV_CODEC_ID_OPUS) && i->isSequential()) //audio from YouTube
+    if(formats.contains("matroska") && avcodec_find_decoder(AV_CODEC_ID_OPUS) && i->isSequential()) //audio from YouTube
         return true;
     return false;
 }
@@ -179,10 +179,11 @@ Decoder *DecoderFFmpegFactory::create(const QString &path, QIODevice *input)
 {
     if(path.startsWith("ffmpeg://"))
         return new DecoderFFmpegCue(path);
-    else if(path.startsWith("m4b://"))
+
+    if(path.startsWith("m4b://"))
         return new DecoderFFmpegM4b(this, path);
-    else
-        return new DecoderFFmpeg(path, input);
+
+    return new DecoderFFmpeg(path, input);
 }
 
 QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
@@ -256,7 +257,8 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
             delete info;
             return parser.createPlayList(trackNumber);
         }
-        else if(trackNumber > 0 && path.startsWith("ffmpeg://")) //invalid track
+
+        if(trackNumber > 0 && path.startsWith("ffmpeg://")) //invalid track
         {
             avformat_close_input(&in);
             delete info;
@@ -315,7 +317,8 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
             delete info;
             return tracks;
         }
-        else if(trackNumber > 0 && path.startsWith("m4b://")) //invalid chapter
+
+        if(trackNumber > 0 && path.startsWith("m4b://")) //invalid chapter
         {
             avformat_close_input(&in);
             delete info;

@@ -48,8 +48,8 @@ LADSPASlider::LADSPASlider(double min, double max, double step,
     m_slider->setPageStep(10);
     m_slider->setValue((*value-min)/step);
 
-    connect(m_spinBox, SIGNAL(valueChanged (double)), SLOT(setValue(double)));
-    connect(m_slider, SIGNAL(valueChanged (int)),SLOT(setValue(int)));
+    connect(m_spinBox, SIGNAL(valueChanged(double)), SLOT(setValue(double)));
+    connect(m_slider, SIGNAL(valueChanged(int)),SLOT(setValue(int)));
 }
 
 void LADSPASlider::setValue(double v)

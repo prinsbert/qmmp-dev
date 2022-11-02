@@ -332,7 +332,7 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
         snd_pcm_wait(pcm_handle, 500);
         return 0;
     }
-    else if (m >= 0)
+    if (m >= 0)
     {
         if (m < size)
         {
@@ -340,7 +340,7 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
         }
         return m;
     }
-    else if (m == -EPIPE)
+    if (m == -EPIPE)
     {
         qDebug ("OutputALSA: buffer underrun!");
         if ((m = snd_pcm_prepare(pcm_handle)) < 0)
@@ -353,7 +353,7 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
         return 0;
     }
 #ifdef ESTRPIPE
-    else if (m == -ESTRPIPE)
+    if (m == -ESTRPIPE)
     {
         qDebug ("OutputALSA: Suspend, trying to resume");
         while ((m = snd_pcm_resume(pcm_handle))

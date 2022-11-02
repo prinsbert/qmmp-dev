@@ -27,7 +27,7 @@
 QmmpFileDialog::QmmpFileDialog()
 {
     m_dialog = new QmmpFileDialogImpl();
-    connect(m_dialog,SIGNAL(filesSelected(QStringList, bool)),SIGNAL(filesSelected(QStringList, bool)));
+    connect(m_dialog,SIGNAL(filesSelected(QStringList,bool)),SIGNAL(filesSelected(QStringList,bool)));
 }
 
 QmmpFileDialog::~QmmpFileDialog()

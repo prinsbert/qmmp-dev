@@ -86,13 +86,9 @@ QString CommandLineManager::executeCommand(const QString &name, const QStringLis
 
         if(started || (opt->flags(id) & CommandLineHandler::NoStart))
             return opt->executeCommand(id, args);
-        else
-        {
-            qWarning("CommandLineManager: player objects are not created");
-            return QString();
-        }
 
-
+        qWarning("CommandLineManager: player objects are not created");
+        return QString();
     }
     return QString();
 }

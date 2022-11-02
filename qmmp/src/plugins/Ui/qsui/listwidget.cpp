@@ -62,7 +62,7 @@ ListWidget::ListWidget(PlayListModel *model, QWidget *parent) : QWidget(parent),
     readSettings();
     connect(m_ui_settings, SIGNAL(repeatableTrackChanged(bool)), SLOT(updateRepeatIndicator()));
     connect(m_timer, SIGNAL(timeout()), SLOT(autoscroll()));
-    connect(m_scrollBar, SIGNAL(valueChanged (int)), SLOT(setViewPosition(int)));
+    connect(m_scrollBar, SIGNAL(valueChanged(int)), SLOT(setViewPosition(int)));
     connect(m_hslider, SIGNAL(valueChanged(int)), m_header, SLOT(scroll(int)));
     connect(m_hslider, SIGNAL(valueChanged(int)), this, SLOT(update()));
     connect(m_model, SIGNAL(scrollToRequest(int)), SLOT(scrollTo(int)));

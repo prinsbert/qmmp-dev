@@ -44,8 +44,7 @@ VolumeHandler::VolumeHandler(QObject *parent) : QObject(parent)
 VolumeHandler::~VolumeHandler()
 {
     m_instance = nullptr;
-    if(m_volume)
-        delete m_volume;
+    delete m_volume;
 
     QSettings settings;
     settings.setValue("Volume/left", m_settings.left);
