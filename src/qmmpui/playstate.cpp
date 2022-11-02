@@ -41,8 +41,8 @@ bool ShufflePlayState::next()
     {
         if (!m_ui_settings->isRepeatableList())
             return false;
-        else
-            prepare();
+
+        prepare();
     }
     else
         m_shuffled_current = (m_shuffled_current + 1) % m_shuffled_indexes.count();
@@ -60,8 +60,8 @@ int ShufflePlayState::nextIndex()
     {
         if (!m_ui_settings->isRepeatableList())
             return -1;
-        else
-            prepare();
+
+        prepare();
     }
     return m_shuffled_indexes.at((m_shuffled_current + 1) % m_shuffled_indexes.count());
 }
@@ -75,11 +75,9 @@ bool ShufflePlayState::previous()
     {
         if (!m_ui_settings->isRepeatableList())
             return false;
-        else
-        {
-            prepare();
-            m_shuffled_current = m_shuffled_indexes.count() - 1;
-        }
+
+        prepare();
+        m_shuffled_current = m_shuffled_indexes.count() - 1;
     }
 
     if (m_model->count() > 1)
@@ -123,19 +121,19 @@ bool NormalPlayState::next()
     {
         if(m_model->track(0))
             return m_model->setCurrent(0);
-        else if(m_model->count() >= 2 && m_model->track(1))
+        if(m_model->count() >= 2 && m_model->track(1))
             return m_model->setCurrent(1);
-        else
-            return false;
+
+        return false;
     }
 
     if(m_model->currentIndex() + 1 >= m_model->count())
         return false;
-    else if(m_model->track((m_model->currentIndex() + 1)))
+    if(m_model->track((m_model->currentIndex() + 1)))
         return m_model->setCurrent(m_model->currentIndex() + 1);
-    else if(m_model->currentIndex() + 2 > m_model->count() - 1)
+    if(m_model->currentIndex() + 2 > m_model->count() - 1)
         return false;
-    else if(m_model->track(m_model->currentIndex() + 2))
+    if(m_model->track(m_model->currentIndex() + 2))
         return m_model->setCurrent(m_model->currentIndex() + 2);
     return false;
 }
@@ -155,11 +153,11 @@ bool NormalPlayState::previous()
 
     if(m_model->currentIndex() == 1 && !m_model->isTrack(0))
         return false;
-    else if(m_model->currentIndex() == 0)
+    if(m_model->currentIndex() == 0)
         return false;
-    else if(m_model->isTrack(m_model->currentIndex() - 1))
+    if(m_model->isTrack(m_model->currentIndex() - 1))
         return m_model->setCurrent(m_model->currentIndex() - 1);
-    else if(m_model->currentIndex() >= 2 && m_model->isTrack(m_model->currentIndex() - 2))
+    if(m_model->currentIndex() >= 2 && m_model->isTrack(m_model->currentIndex() - 2))
         return m_model->setCurrent(m_model->currentIndex() - 2);
     return false;
 }
@@ -175,16 +173,16 @@ int NormalPlayState::nextIndex()
         {
             if(m_model->isTrack(0))
                 return 0;
-            else if(m_model->isTrack(1))
+            if(m_model->isTrack(1))
                 return 1;
         }
         return -1;
     }
     if(m_model->isTrack(m_model->currentIndex() + 1))
         return m_model->currentIndex() + 1;
-    else if(m_model->currentIndex() + 2 > m_model->count() - 1)
+    if(m_model->currentIndex() + 2 > m_model->count() - 1)
         return -1;
-    else if(m_model->isTrack(m_model->currentIndex() + 2))
+    if(m_model->isTrack(m_model->currentIndex() + 2))
         return m_model->currentIndex() + 2;
     return -1;
 }

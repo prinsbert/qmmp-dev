@@ -65,7 +65,7 @@ LyricsWidget::LyricsWidget(bool dialog, QWidget *parent) : QWidget(parent)
         }
         m_http->setProxy(proxy);
     }
-    connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(onRequestFinished(QNetworkReply *)));
+    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(onRequestFinished(QNetworkReply*)));
 
     if(!m_parser.load(":/ultimate_providers.xml"))
     {
@@ -105,6 +105,13 @@ void LyricsWidget::fetch(const TrackInfo *info)
 
     if(!loadFromTag(info->path()) && !loadFromCache())
         on_refreshButton_clicked();
+}
+
+QString LyricsWidget::cacheFilePath() const
+{
+    QString name = m_ui.artistLineEdit->text() + "_" + m_ui.titleLineEdit->text();
+    QByteArray hash = QCryptographicHash::hash(name.toUtf8(), QCryptographicHash::Md5);
+    return m_cachePath + QString::fromLatin1(hash.toHex()) + ".html";
 }
 
 void LyricsWidget::onRequestFinished(QNetworkReply *reply)
@@ -208,13 +215,6 @@ void LyricsWidget::on_editButton_clicked(bool checked)
 void LyricsWidget::on_providerComboBox_activated(int index)
 {
     m_ui.textBrowser->setHtml(m_ui.providerComboBox->itemData(index).toString());
-}
-
-QString LyricsWidget::cacheFilePath() const
-{
-    QString name = m_ui.artistLineEdit->text() + "_" + m_ui.titleLineEdit->text();
-    QByteArray hash = QCryptographicHash::hash(name.toUtf8(), QCryptographicHash::Md5);
-    return m_cachePath + QString::fromLatin1(hash.toHex()) + ".html";
 }
 
 bool LyricsWidget::loadFromTag(const QString &path)

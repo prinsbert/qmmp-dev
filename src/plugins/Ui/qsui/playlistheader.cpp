@@ -36,7 +36,6 @@
 #include <qmmp/qmmp.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/playlistheadermodel.h>
-#include <qmmpui/playlistmanager.h>
 #include "playlistheader.h"
 #include "listwidgetdrawer.h"
 
@@ -84,8 +83,7 @@ PlayListHeader::PlayListHeader(QWidget *parent) :
 
 PlayListHeader::~PlayListHeader()
 {
-    if (m_metrics)
-        delete m_metrics;
+    delete m_metrics;
     m_metrics = nullptr;
 }
 

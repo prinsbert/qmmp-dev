@@ -106,27 +106,25 @@ MetaDataModel* MetaDataManager::createMetaDataModel(const QString &path, bool re
     {
         if(!QFile::exists(path))
             return nullptr;
-        else if((fact = Decoder::findByFilePath(path, m_settings->determineFileTypeByContent())))
+        if((fact = Decoder::findByFilePath(path, m_settings->determineFileTypeByContent())))
             return fact->createMetaDataModel(path, readOnly);
-        else if((efact = AbstractEngine::findByFilePath(path)))
+        if((efact = AbstractEngine::findByFilePath(path)))
             return efact->createMetaDataModel(path, readOnly);
         return nullptr;
     }
-    else
+
+    QString scheme = path.section("://",0,0);
+    MetaDataModel *model = nullptr;
+    if((fact = Decoder::findByProtocol(scheme)))
     {
-        QString scheme = path.section("://",0,0);
-        MetaDataModel *model = nullptr;
-        if((fact = Decoder::findByProtocol(scheme)))
-        {
-            return fact->createMetaDataModel(path, readOnly);
-        }
-        for(EngineFactory *efact : AbstractEngine::enabledFactories())
-        {
-            if(efact->properties().protocols.contains(scheme))
-                model = efact->createMetaDataModel(path, readOnly);
-            if(model)
-                return model;
-        }
+        return fact->createMetaDataModel(path, readOnly);
+    }
+    for(EngineFactory *efact : AbstractEngine::enabledFactories())
+    {
+        if(efact->properties().protocols.contains(scheme))
+            model = efact->createMetaDataModel(path, readOnly);
+        if(model)
+            return model;
     }
     return nullptr;
 }

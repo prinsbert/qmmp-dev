@@ -67,7 +67,7 @@ MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
         addAction(tr("File Size"))->setData("%{filesize}");
     }
 
-    connect(this, SIGNAL(triggered (QAction *)), SLOT(onActionTriggered(QAction*)));
+    connect(this, SIGNAL(triggered(QAction*)), SLOT(onActionTriggered(QAction*)));
 }
 
 void MetaDataFormatterMenu::onActionTriggered(QAction *action)

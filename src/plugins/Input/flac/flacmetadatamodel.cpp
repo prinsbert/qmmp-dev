@@ -67,13 +67,9 @@ FLACMetaDataModel::~FLACMetaDataModel()
 {
     while(!m_tags.isEmpty())
         delete m_tags.takeFirst();
-    if(m_file)
-    {
-        delete m_file;
-        m_file = nullptr;
-    }
-    if(m_stream)
-        delete m_stream;
+
+    delete m_file;
+    delete m_stream;
 }
 
 QList<TagModel* > FLACMetaDataModel::tags() const
@@ -203,7 +199,7 @@ QString FLACMetaDataModel::lyrics() const
 
         if(!map["UNSYNCEDLYRICS"].isEmpty())
             return TStringToQString(map["UNSYNCEDLYRICS"].front());
-        else if(!map["LYRICS"].isEmpty())
+        if(!map["LYRICS"].isEmpty())
             return TStringToQString(map["LYRICS"].front());
     }
 

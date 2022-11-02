@@ -23,7 +23,6 @@
 #include <qmmp/decoderfactory.h>
 #include <qmmp/abstractengine.h>
 #include <qmmp/enginefactory.h>
-#include <qmmp/enginefactory.h>
 #include <qmmp/inputsource.h>
 #include <qmmp/inputsourcefactory.h>
 #include <qmmp/metadatamanager.h>

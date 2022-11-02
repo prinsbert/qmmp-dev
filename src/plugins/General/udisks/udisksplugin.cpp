@@ -76,10 +76,8 @@ void UDisksPlugin::removeDevice(QDBusObjectPath o)
             updateActions();
             break;
         }
-        else
-        {
-            ++it;
-        }
+
+        ++it;
     }
 }
 
@@ -230,7 +228,8 @@ void UDisksPlugin::addPath(const QString &path)
         PlayListManager::instance()->selectedPlayList()->add(path);
         return;
     }
-    else if (!path.startsWith("cdda://") && m_addFiles)
+
+    if (!path.startsWith("cdda://") && m_addFiles)
         PlayListManager::instance()->selectedPlayList()->add(path);
 }
 

@@ -235,9 +235,10 @@ QString LyricsProvider::extract(const QString &content, const Rule &rule) const
             url.replace("{id}", id);
             return url;
         }
-        else if(!item.tag.isEmpty())
+
+        if(!item.tag.isEmpty())
         {
-            const QRegularExpression re("<(\\w+).*>");
+            static const QRegularExpression re("<(\\w+).*>");
             QRegularExpressionMatch m = re.match(item.tag);
             out = out.section(item.tag, 1).section(QString("</%1>").arg(m.captured(1)), 0, 0);
         }
@@ -257,7 +258,7 @@ QString LyricsProvider::exclude(const QString &content, const LyricsProvider::Ru
     {
         if(!item.tag.isEmpty())
         {
-            const QRegularExpression re("<(\\w+).*>");
+            static const QRegularExpression re("<(\\w+).*>");
             QRegularExpressionMatch m = re.match(item.tag);
             out = out.section(item.tag, 0, 0) + out.section(item.tag, 1).section(QString("</%1>").arg(m.captured(1)), 1);
         }

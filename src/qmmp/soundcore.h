@@ -124,6 +124,10 @@ public:
      */
     bool nextTrackAccepted() const;
     /*!
+     *  This function returns file path or stream url.
+     */
+    const QString path() const;
+    /*!
      * Returns a pointer to the SoundCore instance.
      */
     static SoundCore* instance();
@@ -180,10 +184,6 @@ public slots:
      *  This function sets the current play position to \p pos in milliseconds.
      */
     void seek(qint64 pos);
-    /*!
-     *  This function returns file path or stream url.
-     */
-    const QString path() const;
 
 signals:
     /*!

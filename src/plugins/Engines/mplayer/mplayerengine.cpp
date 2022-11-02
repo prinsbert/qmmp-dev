@@ -38,12 +38,12 @@
 
 TrackInfo *MplayerInfo::createTrackInfo(const QString &path)
 {
-    QRegularExpression rx_id_length("^ID_LENGTH=([0-9,.]+)*");
-    QRegularExpression rx_id_audio_bitrate("^ID_AUDIO_BITRATE=([0-9,.]+)*");
-    QRegularExpression rx_id_audio_rate("^ID_AUDIO_RATE=([0-9,.]+)*");
-    QRegularExpression rx_id_audio_nch("^ID_AUDIO_NCH=([0-9,.]+)*");
-    QRegularExpression rx_id_audio_codec("^ID_AUDIO_CODEC=(.*)");
-    QStringList args = { "-slave", "-identify", "-frames", "0", "-vo", "null", "-ao", "null", path };
+    static const QRegularExpression rx_id_length("^ID_LENGTH=([0-9,.]+)*");
+    static const QRegularExpression rx_id_audio_bitrate("^ID_AUDIO_BITRATE=([0-9,.]+)*");
+    static const QRegularExpression rx_id_audio_rate("^ID_AUDIO_RATE=([0-9,.]+)*");
+    static const QRegularExpression rx_id_audio_nch("^ID_AUDIO_NCH=([0-9,.]+)*");
+    static const QRegularExpression rx_id_audio_codec("^ID_AUDIO_CODEC=(.*)");
+    const QStringList args = { "-slave", "-identify", "-frames", "0", "-vo", "null", "-ao", "null", path };
     QProcess mplayer_process;
     mplayer_process.start("mplayer", args);
     mplayer_process.waitForFinished(1500);
@@ -274,8 +274,7 @@ void MplayerEngine::onStateChanged(QProcess::ProcessState state)
 void MplayerEngine::startMplayerProcess()
 {
     initialize();
-    if(m_process)
-        delete m_process;
+    delete m_process;
     m_process = new QProcess(this);
     connect(m_process, SIGNAL(readyReadStandardOutput()), SLOT(readStdOut()));
     connect(m_process, SIGNAL(error(QProcess::ProcessError)), SLOT(onError(QProcess::ProcessError)));

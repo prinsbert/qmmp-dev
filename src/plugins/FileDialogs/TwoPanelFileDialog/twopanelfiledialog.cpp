@@ -27,7 +27,7 @@
 TwoPanelFileDialog::TwoPanelFileDialog()
 {
     m_dialog = new TwoPanelFileDialogImpl();
-    connect(m_dialog, SIGNAL(filesSelected(QStringList, bool)), SIGNAL(filesSelected(QStringList,bool)));
+    connect(m_dialog, SIGNAL(filesSelected(QStringList,bool)), SIGNAL(filesSelected(QStringList,bool)));
 }
 
 TwoPanelFileDialog::~TwoPanelFileDialog()

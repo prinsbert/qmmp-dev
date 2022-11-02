@@ -183,7 +183,8 @@ qint64 DecoderMPG123::read(unsigned char *data, qint64 size)
         }
         return -1;
     }
-    else if(err != MPG123_DONE && err != MPG123_OK)
+
+    if(err != MPG123_DONE && err != MPG123_OK)
     {
         qWarning("DecoderMPG123: decoder error: %s", mpg123_plain_strerror(err));
         return -1;

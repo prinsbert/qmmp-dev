@@ -84,10 +84,10 @@ JumpToTrackDialog::JumpToTrackDialog(PlayListModel *model, QWidget* parent)
     songsListView->setItemDelegate(new TrackItemDelegate(this));
     songsListView->setModel(m_proxyModel);
 
-    connect(songsListView,SIGNAL(doubleClicked(QModelIndex)),SLOT(jumpTo(QModelIndex)));
-    connect(songsListView,SIGNAL(doubleClicked(QModelIndex)),SLOT(accept()));
-    connect(songsListView->selectionModel(),SIGNAL(currentRowChanged(QModelIndex, QModelIndex)),
-            SLOT(queueUnqueue(QModelIndex, QModelIndex)));
+    connect(songsListView,SIGNAL(doubleClicked(QModelIndex)), SLOT(jumpTo(QModelIndex)));
+    connect(songsListView,SIGNAL(doubleClicked(QModelIndex)), SLOT(accept()));
+    connect(songsListView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+            SLOT(queueUnqueue(QModelIndex,QModelIndex)));
 
     connect(m_model, SIGNAL(destroyed()), SLOT(close()));
 
@@ -170,7 +170,7 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
                 songsListView->setCurrentIndex(index);
             return true;
         }
-        else if(key_event->key() == Qt::Key_Down)
+        if(key_event->key() == Qt::Key_Down)
         {
             if(!select_first)
                 index = m_proxyModel->index(index.row() + 1, index.column());
@@ -178,7 +178,7 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
                 songsListView->setCurrentIndex(index);
             return true;
         }
-        else if(key_event->key() == Qt::Key_Return)
+        if(key_event->key() == Qt::Key_Return)
         {
             if(index.isValid())
             {

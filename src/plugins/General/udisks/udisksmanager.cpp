@@ -39,7 +39,7 @@ UDisksManager::UDisksManager(QObject *parent)
 
     m_interface->connection().connect("org.freedesktop.UDisks2", "/org/freedesktop/UDisks2",
                                       "org.freedesktop.DBus.ObjectManager", "InterfacesRemoved",
-                                      this, SIGNAL(onInterfacesRemoved(QDBusObjectPath, QStringList)));
+                                      this, SIGNAL(onInterfacesRemoved(QDBusObjectPath,QStringList)));
 }
 
 

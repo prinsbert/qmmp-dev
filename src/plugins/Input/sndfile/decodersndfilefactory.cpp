@@ -65,16 +65,15 @@ bool DecoderSndFileFactory::canDecode(QIODevice *input) const
                     subformat = (quint16(buf[9]) << 8) + buf[8];
                     break;
                 }
-                else if(!memcmp(buf, "JUNK", 4) || !memcmp(buf, "bext", 4) || !memcmp(buf, "fact", 4))
+
+                if(!memcmp(buf, "JUNK", 4) || !memcmp(buf, "bext", 4) || !memcmp(buf, "fact", 4))
                 {
                     size_t size = buf[4] + (buf[5] << 8) + (buf[6] << 16) + (buf[7] << 24);
                     if(!input->seek(input->pos() + size + 8))
                         break;
                 }
-                else
-                {
-                    break;
-                }
+
+                break;
             }
             input->seek(0);
         }

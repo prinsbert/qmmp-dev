@@ -51,11 +51,11 @@ void StateHandler::dispatch(qint64 elapsed, int bitrate)
     if (qAbs(m_elapsed - elapsed) > TICK_INTERVAL)
     {
         m_elapsed = elapsed;
-        emit (elapsedChanged(elapsed));
+        emit elapsedChanged(elapsed);
         if (m_bitrate != bitrate)
         {
             m_bitrate = bitrate;
-            emit (bitrateChanged(bitrate));
+            emit bitrateChanged(bitrate);
         }
         if((SoundCore::instance()->duration() > PREFINISH_TIME)
                  && (m_duration - m_elapsed < PREFINISH_TIME)

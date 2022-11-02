@@ -104,7 +104,7 @@ StreamWindow::StreamWindow(QWidget *parent)
         }
         m_http->setProxy(proxy);
     }
-    connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(showText(QNetworkReply *)));
+    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(showText(QNetworkReply*)));
     //read settings
     QSettings settings;
     settings.beginGroup("StreamBrowser");

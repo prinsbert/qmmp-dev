@@ -65,8 +65,8 @@ HistoryWindow::HistoryWindow(QSqlDatabase db, QWidget *parent) :
     m_ui->historyTreeWidget->header()->setSectionsClickable(true);
     m_ui->historyTreeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     readSettings();
-    connect(m_ui->historyTreeWidget->header(), SIGNAL(sortIndicatorChanged(int, Qt::SortOrder)),
-            SLOT(onSortIndicatorChanged(int, Qt::SortOrder)));
+    connect(m_ui->historyTreeWidget->header(), SIGNAL(sortIndicatorChanged(int,Qt::SortOrder)),
+            SLOT(onSortIndicatorChanged(int,Qt::SortOrder)));
     m_order = m_ui->historyTreeWidget->header()->sortIndicatorOrder();
 
     on_executeButton_clicked();

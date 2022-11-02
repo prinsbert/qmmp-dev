@@ -541,7 +541,9 @@ QString Skin::getPath (const QString& name)
         if (!nameHasExt && fn.section (".",0,0) == name)
         {
             return fileInfo.filePath();
-        } else if (nameHasExt && fn == name)
+        }
+
+        if (nameHasExt && fn == name)
         {
             return fileInfo.filePath();
         }

@@ -96,7 +96,8 @@ bool ArchiveInputDevice::seek(qint64 pos)
                 delta -= r;
                 continue;
             }
-            else if(r < 0)
+
+            if(r < 0)
             {
                 qWarning("ArchiveInputDevice: seeking failed; libarchive error: %s", archive_error_string(m_archive));
                 setErrorString(QString::fromLocal8Bit(archive_error_string(m_archive)));

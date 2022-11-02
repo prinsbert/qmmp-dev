@@ -45,11 +45,11 @@ public:
         TYPE
     };
 
-public slots:
-    void accept() override;
-
     void setValues(const QMap<Key, QString> &values);
     const QMap<Key, QString> &values() const;
+
+public slots:
+    void accept() override;
 
 private slots:
     void validate();

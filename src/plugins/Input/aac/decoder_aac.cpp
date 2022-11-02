@@ -42,8 +42,8 @@ DecoderAAC::~DecoderAAC()
         delete data();
         m_data = nullptr;
     }
-    if (m_input_buf)
-        delete [] m_input_buf;
+
+    delete [] m_input_buf;
     m_input_buf = nullptr;
     m_bitrate = 0;
 }
@@ -153,7 +153,8 @@ qint64 DecoderAAC::read(unsigned char *audio, qint64 maxSize)
 
         if(eof && frame_info.error > 0) //ignore error on end of file
             return 0;
-        else if (frame_info.error > 0)
+
+        if (frame_info.error > 0)
         {
             m_input_at = 0;
             qDebug("DecoderAAC: %s", NeAACDecGetErrorMessage(frame_info.error));

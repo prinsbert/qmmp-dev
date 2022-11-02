@@ -68,8 +68,7 @@ MainVisual::~MainVisual()
 void MainVisual::setVisual (VisualBase *newvis)
 {
     m_timer->stop();
-    if (m_vis)
-        delete m_vis;
+    delete m_vis;
     m_vis = newvis;
     if (m_vis)
         m_timer->start();
@@ -209,8 +208,8 @@ void MainVisual::writeSettings()
 void MainVisual::createMenu()
 {
     m_menu = new QMenu (this);
-    connect(m_menu, SIGNAL(triggered (QAction *)),SLOT(writeSettings()));
-    connect(m_menu, SIGNAL(triggered (QAction *)),SLOT(readSettings()));
+    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(writeSettings()));
+    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(readSettings()));
     QMenu *visMode = m_menu->addMenu(tr("Visualization Mode"));
     m_visModeGroup = new QActionGroup(this);
     m_visModeGroup->setExclusive(true);

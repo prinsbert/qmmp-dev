@@ -61,11 +61,9 @@ QList<TrackInfo *> DecoderCUEFactory::createPlayList(const QString &path, TrackI
         int track = path.section("#", -1).toInt();
         return cueFile.createPlayList(track);
     }
-    else
-    {
-        ignoredPaths->append(cueFile.dataFilePaths());
-        return cueFile.createPlayList();
-    }
+
+    ignoredPaths->append(cueFile.dataFilePaths());
+    return cueFile.createPlayList();
 }
 
 MetaDataModel* DecoderCUEFactory::createMetaDataModel(const QString &path, bool readOnly)

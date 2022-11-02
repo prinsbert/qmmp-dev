@@ -49,8 +49,7 @@ PlayListSelector::PlayListSelector(PlayListManager *manager, QWidget *parent) : 
 
 PlayListSelector::~PlayListSelector()
 {
-    if (m_metrics)
-        delete m_metrics;
+    delete m_metrics;
     m_metrics = nullptr;
 }
 
@@ -245,7 +244,8 @@ void PlayListSelector::mousePressEvent (QMouseEvent *e)
         m_menu->exec(e->globalPosition().toPoint());
         return;
     }
-    else if(e->button() == Qt::MiddleButton && selected)
+
+    if(e->button() == Qt::MiddleButton && selected)
     {
         m_pl_manager->removePlayList(m_pl_manager->selectedPlayList());
     }
@@ -420,7 +420,7 @@ int PlayListSelector::findButton(QPoint pos)
     {
         if(pos.x() > width() - 20)
             return BUTTON_RIGHT;
-        else if ((width() - 40 < pos.x()) && (pos.x() <= width() - 20))
+        if ((width() - 40 < pos.x()) && (pos.x() <= width() - 20))
             return BUTTON_LEFT;
     }
 

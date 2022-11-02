@@ -25,7 +25,6 @@
 #include <taglib/vorbisfile.h>
 #include <taglib/xiphcomment.h>
 #include <taglib/tfilestream.h>
-#include <taglib/tfilestream.h>
 
 class VorbisCommentModel;
 

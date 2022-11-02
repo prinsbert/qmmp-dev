@@ -72,7 +72,7 @@ void PresetEditor::createMenus()
 
     m_ui->commandToolButton->setMenu(commandMenu);
     m_ui->commandToolButton->setPopupMode(QToolButton::InstantPopup);
-    connect(commandMenu, SIGNAL(triggered(QAction *)), SLOT(addCommandString(QAction *)));
+    connect(commandMenu, SIGNAL(triggered(QAction*)), SLOT(addCommandString(QAction*)));
 }
 
 void PresetEditor::addCommandString(QAction *a)

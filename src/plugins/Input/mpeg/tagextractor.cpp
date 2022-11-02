@@ -22,7 +22,6 @@
 #include <QSettings>
 #include <QByteArray>
 #include <QBuffer>
-#include <QSettings>
 #include <QSet>
 #include <stdlib.h>
 #ifdef WITH_LIBRCD
@@ -116,13 +115,13 @@ QByteArray TagExtractor::detectCharset(const TagLib::Tag *tag)
 
         if(charsets.contains(RUSSIAN_CHARSET_WIN))
             return "WINDOWS-1251";
-        else if(charsets.contains(RUSSIAN_CHARSET_ALT))
+        if(charsets.contains(RUSSIAN_CHARSET_ALT))
             return "IBM866";
-        else if(charsets.contains(RUSSIAN_CHARSET_KOI))
+        if(charsets.contains(RUSSIAN_CHARSET_KOI))
             return "KOI8-R";
-        else if(charsets.contains(RUSSIAN_CHARSET_UTF8))
+        if(charsets.contains(RUSSIAN_CHARSET_UTF8))
             return "UTF-8";
-        else if(charsets.contains(RUSSIAN_CHARSET_LATIN))
+        if(charsets.contains(RUSSIAN_CHARSET_LATIN))
             return "ISO-8859-1";
 #else
         return QByteArray();
@@ -150,7 +149,7 @@ void ID3v2Tag::read ()
     uint to_read = TagLib::ID3v2::Header::size();
     if (to_read > 2048 - uint(m_offset))
         return;
-    header()->setData(TagLib::ByteVector(m_buf->read(to_read).data(), to_read));
+    header()->setData(TagLib::ByteVector(m_buf->read(to_read).constData(), to_read));
     to_read = header()->tagSize();
     if (!to_read ||  2048 < m_offset + TagLib::ID3v2::Header::size())
         return;

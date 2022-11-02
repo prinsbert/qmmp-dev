@@ -45,8 +45,7 @@ QSUIVisualization::QSUIVisualization(QWidget *parent) : Visual (parent)
 
 QSUIVisualization::~QSUIVisualization()
 {
-    if(m_drawer)
-        delete m_drawer;
+    delete m_drawer;
 }
 
 void QSUIVisualization::clear()
@@ -120,8 +119,8 @@ void QSUIVisualization::process()
 void QSUIVisualization::createMenu()
 {
     m_menu = new QMenu (this);
-    connect(m_menu, SIGNAL(triggered (QAction *)),SLOT(writeSettings()));
-    connect(m_menu, SIGNAL(triggered (QAction *)),SLOT(readSettings()));
+    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(writeSettings()));
+    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(readSettings()));
 
     m_coverAction = m_menu->addAction(tr("Cover"));
     m_coverAction->setCheckable(true);
@@ -270,8 +269,7 @@ void QSUIVisualization::readSettings()
 
     if(!m_drawer || m_drawer->name() != visName)
     {
-        if(m_drawer)
-            delete m_drawer;
+        delete m_drawer;
 
         if(visName == "scope")
             m_drawer = new QSUiScope;
@@ -318,8 +316,7 @@ void QSUIVisualization::stop()
 
 QSUiScope::~QSUiScope()
 {
-    if(m_intern_vis_data)
-        delete [] m_intern_vis_data;
+    delete [] m_intern_vis_data;
 }
 
 QString QSUiScope::name() const
@@ -335,10 +332,7 @@ void QSUiScope::process(float *buffer, int width, int height)
     if(m_width != width )
     {
         m_width = width;
-
-        if(m_intern_vis_data)
-            delete [] m_intern_vis_data;
-
+        delete [] m_intern_vis_data;
         m_intern_vis_data = new int[m_width]{ 0 };
     }
 
@@ -400,12 +394,9 @@ QSUiVisualDrawer::~QSUiVisualDrawer()
 
 QSUiAnalyzer::~QSUiAnalyzer()
 {
-    if(m_intern_vis_data)
-        delete [] m_intern_vis_data;
-    if(m_peaks)
-        delete [] m_peaks;
-    if(m_x_scale)
-        delete [] m_x_scale;
+    delete [] m_intern_vis_data;
+    delete [] m_peaks;
+    delete [] m_x_scale;
 }
 
 QString QSUiAnalyzer::name() const

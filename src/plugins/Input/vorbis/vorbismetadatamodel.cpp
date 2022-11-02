@@ -119,7 +119,7 @@ QString VorbisMetaDataModel::lyrics() const
 
         if(!map["UNSYNCEDLYRICS"].isEmpty())
             return TStringToQString(map["UNSYNCEDLYRICS"].front());
-        else if(!map["LYRICS"].isEmpty())
+        if(!map["LYRICS"].isEmpty())
             return TStringToQString(map["LYRICS"].front());
     }
 

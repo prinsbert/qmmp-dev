@@ -280,8 +280,8 @@ DecoderFLAC::~DecoderFLAC()
         delete m_data;
         m_data = nullptr;
     }
-    if(m_buf)
-        delete[] m_buf;
+
+    delete[] m_buf;
     m_buf = nullptr;
 }
 
@@ -524,8 +524,7 @@ qint64 DecoderFLAC::read(unsigned char *buf, qint64 size)
         len2 = (len2 / m_sz) * m_sz; //returned size must contain integer number of samples
         m_totalBytes += len2;
         //save data of the next track
-        if(m_buf)
-            delete[] m_buf;
+        delete[] m_buf;
         m_buf_size = len - len2;
         m_buf = new char[m_buf_size];
         memmove(m_buf, buf + len2, m_buf_size);
@@ -545,8 +544,7 @@ void DecoderFLAC::deinit()
         delete m_data->input;
         m_data->input = nullptr;
     };
-    if(m_parser)
-        delete m_parser;
+    delete m_parser;
     m_parser = nullptr;
 }
 
@@ -554,8 +552,8 @@ const QString DecoderFLAC::nextURL() const
 {
     if(m_parser && m_track +1 <= m_parser->count())
         return m_parser->url(m_track + 1);
-    else
-        return QString();
+
+    return QString();
 }
 
 void DecoderFLAC::next()

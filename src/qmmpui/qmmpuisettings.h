@@ -237,7 +237,7 @@ signals:
      * Emitted when state of the "transition between playlists" option changes
      * @param enabled State of transition (\b true - enabled, \b false - disabled)
      */
-    void playListTransitionChanged(bool enabled) const;
+    void playListTransitionChanged(bool enabled);
 
 public slots:
     /*!

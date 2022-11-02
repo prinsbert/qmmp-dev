@@ -34,7 +34,7 @@ Lyrics::Lyrics(QPointer<LyricsWidget> *lyricsWidget, QObject *parent) : QObject(
     m_action = new QAction(tr("View Lyrics"), this);
     m_action->setShortcut(tr("Ctrl+L"));
     UiHelper::instance()->addAction(m_action, UiHelper::PLAYLIST_MENU);
-    connect(m_action, SIGNAL(triggered ()), SLOT(showLyrics()));
+    connect(m_action, SIGNAL(triggered()), SLOT(showLyrics()));
     connect(SoundCore::instance(), SIGNAL(trackInfoChanged()), SLOT(onTrackInfoChanged()));
 }
 

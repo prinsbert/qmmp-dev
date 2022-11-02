@@ -105,8 +105,8 @@ PlayList::PlayList (PlayListManager *manager, QWidget *parent)
     connect(m_listWidget, SIGNAL(doubleClicked()), parent, SLOT(replay()));
 
     connect(m_plslider, SIGNAL(sliderMoved(int)), m_listWidget, SLOT(setViewPosition(int)));
-    connect(m_listWidget, SIGNAL(positionChanged(int, int)), m_plslider,
-             SLOT(setPos (int, int)));
+    connect(m_listWidget, SIGNAL(positionChanged(int,int)), m_plslider,
+             SLOT(setPos(int,int)));
     connect(m_skin, SIGNAL(skinChanged()), SLOT(updateSkin()));
     connect(m_buttonAdd, SIGNAL(clicked()), SLOT(showAddMenu()));
     connect(m_buttonSub, SIGNAL(clicked()), SLOT(showSubMenu()));
@@ -121,8 +121,8 @@ PlayList::PlayList (PlayListManager *manager, QWidget *parent)
     connect(m_pl_control, SIGNAL(stopClicked()), SIGNAL(stop()));
     connect(m_pl_control, SIGNAL(ejectClicked()), SIGNAL(eject()));
 
-    connect(m_pl_manager, SIGNAL(selectedPlayListChanged(PlayListModel *, PlayListModel *)),
-            m_listWidget, SLOT(setModel(PlayListModel*, PlayListModel*)));
+    connect(m_pl_manager, SIGNAL(selectedPlayListChanged(PlayListModel*,PlayListModel*)),
+            m_listWidget, SLOT(setModel(PlayListModel*,PlayListModel*)));
     m_listWidget->setModel(m_pl_manager->selectedPlayList());
 
     createMenus();
@@ -132,7 +132,7 @@ PlayList::PlayList (PlayListManager *manager, QWidget *parent)
     m_titleBar = new PlayListTitleBar (this);
     m_titleBar->setMinimumSize(0,0);
     m_titleBar->move(0,0);
-    connect(m_pl_manager, SIGNAL(currentPlayListChanged(PlayListModel *, PlayListModel *)),
+    connect(m_pl_manager, SIGNAL(currentPlayListChanged(PlayListModel*,PlayListModel*)),
             SLOT(onCurrentPlayListChanged(PlayListModel*,PlayListModel*)));
     connect(m_pl_manager->currentPlayList(), SIGNAL(listChanged(int)), SLOT(onListChanged(int)));
     m_titleBar->setModel(m_pl_manager->currentPlayList());
@@ -198,8 +198,8 @@ void PlayList::createMenus()
     m_copySelectedMenu->setIcon(QIcon::fromTheme("edit-copy"));
     connect(m_copySelectedMenu, SIGNAL(aboutToShow()),
             SLOT(generateCopySelectedMenu()));
-    connect(m_copySelectedMenu, SIGNAL(triggered(QAction *)),
-            SLOT(copySelectedMenuActionTriggered(QAction *)));
+    connect(m_copySelectedMenu, SIGNAL(triggered(QAction*)),
+            SLOT(copySelectedMenuActionTriggered(QAction*)));
 }
 
 void PlayList::createActions()

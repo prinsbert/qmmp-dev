@@ -91,7 +91,7 @@ void MediaKeys::onRegisterFinished(QDBusPendingCallWatcher *watcher)
                                       "/org/gnome/SettingsDaemon/MediaKeys",
                                       "org.gnome.SettingsDaemon.MediaKeys",
                                       "MediaPlayerKeyPressed", this,
-                                      SLOT(onKeyPressed(const QString&, const QString&)));
+                                      SLOT(onKeyPressed(QString,QString)));
     m_isRegistered = true;
     qDebug("MediaKeys: registered");
 

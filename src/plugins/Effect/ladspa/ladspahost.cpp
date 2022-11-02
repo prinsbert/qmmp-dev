@@ -23,7 +23,6 @@
 #include <QByteArray>
 #include <QDir>
 #include <QFileInfo>
-#include <QSettings>
 #include <math.h>
 #include <stdlib.h>
 #include <dlfcn.h>
@@ -321,7 +320,8 @@ void LADSPAHost::activateEffect(LADSPAEffect *e)
         qWarning("LADSPAHost: unsupported plugin: %s", desc->Name);
         return;
     }
-    else if(e->in_ports.isEmpty())
+
+    if(e->in_ports.isEmpty())
     {
         if(m_chan % e->out_ports.count())
         {

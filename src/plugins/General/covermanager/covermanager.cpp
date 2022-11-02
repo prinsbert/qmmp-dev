@@ -35,7 +35,7 @@ CoverManager::CoverManager(QObject *parent) : QObject(parent)
     m_action = new QAction(tr("Show Cover"), this);
     m_action->setShortcut(tr("Ctrl+M"));
     UiHelper::instance()->addAction(m_action, UiHelper::PLAYLIST_MENU);
-    connect (m_action, SIGNAL(triggered ()), SLOT(showWindow()));
+    connect (m_action, SIGNAL(triggered()), SLOT(showWindow()));
 }
 
 void CoverManager::showWindow()

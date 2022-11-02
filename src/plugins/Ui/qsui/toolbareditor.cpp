@@ -39,10 +39,10 @@ ToolBarEditor::ToolBarEditor(QWidget *parent) :
     m_ui->addToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_ArrowRight));
     m_ui->removeToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_ArrowLeft));
 
-    connect(m_ui->actionsListWidget->model(), SIGNAL(rowsAboutToBeRemoved(const QModelIndex &,int,int)),
-            SLOT(onRowsAboutToBeRemoved(const QModelIndex &, int, int)));
-    connect(m_ui->activeActionsListWidget->model(), SIGNAL(rowsAboutToBeRemoved(const QModelIndex &,int,int)),
-            SLOT(onRowsAboutToBeRemoved(const QModelIndex &, int, int)));
+    connect(m_ui->actionsListWidget->model(), SIGNAL(rowsAboutToBeRemoved(QModelIndex,int,int)),
+            SLOT(onRowsAboutToBeRemoved(QModelIndex,int,int)));
+    connect(m_ui->activeActionsListWidget->model(), SIGNAL(rowsAboutToBeRemoved(QModelIndex,int,int)),
+            SLOT(onRowsAboutToBeRemoved(QModelIndex,int,int)));
 
     m_toolBarInfoList = ActionManager::instance()->readToolBarSettings();
 

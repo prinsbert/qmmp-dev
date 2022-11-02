@@ -23,7 +23,6 @@
 #include <QAction>
 #include <QMenu>
 #include <QMouseEvent>
-#include <QSettings>
 #include <QApplication>
 #include <qmmp/qmmp.h>
 #include <qmmp/soundcore.h>
@@ -69,8 +68,7 @@ TextScroller::~TextScroller()
     QSettings settings;
     settings.setValue("Skinned/autoscroll", m_scrollAction->isChecked());
     settings.setValue("Skinned/scroller_transparency", m_transparencyAction->isChecked());
-    if(m_metrics)
-        delete m_metrics;
+    delete m_metrics;
 }
 
 void TextScroller::setText(const QString &text)
@@ -109,15 +107,12 @@ void TextScroller::updateSkin()
     m_ratio = m_skin->ratio();
     QString fontname = settings.value("Skinned/mw_font", QApplication::font().toString()).toString();
     m_font.fromString(fontname);
-    if (m_metrics)
-    {
-        delete m_metrics;
-    }
-    else
+    if(!m_metrics)
     {
         m_scrollAction->setChecked(settings.value("Skinned/autoscroll", true).toBool());
         m_transparencyAction->setChecked(settings.value("Skinned/scroller_transparency", true).toBool());
     }
+    delete m_metrics;
     m_metrics = new QFontMetrics(m_font);
     updateText();
 }

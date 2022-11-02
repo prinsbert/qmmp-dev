@@ -52,8 +52,8 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
         m_play_state = new NormalPlayState(this);
     connect(m_ui_settings, SIGNAL(groupsChanged(bool)), SLOT(prepareGroups(bool)));
     connect(m_ui_settings, SIGNAL(shuffleChanged(bool)), SLOT(prepareForShufflePlaying(bool)));
-    connect(m_loader, SIGNAL(newTracksToInsert(PlayListItem*, QList<PlayListTrack*>)),
-            SLOT(insert(PlayListItem*, QList<PlayListTrack*>)), Qt::QueuedConnection);
+    connect(m_loader, SIGNAL(newTracksToInsert(PlayListItem*,QList<PlayListTrack*>)),
+            SLOT(insert(PlayListItem*,QList<PlayListTrack*>)), Qt::QueuedConnection);
     connect(m_loader, SIGNAL(finished()), SLOT(preparePlayState()));
     connect(m_loader, SIGNAL(finished()), SIGNAL(loaderFinished()));
     connect(m_task, SIGNAL(finished()), SLOT(onTaskFinished()));
@@ -777,8 +777,8 @@ int PlayListModel::topmostInSelection(int row)
     {
         if(isSelected(i))
             continue;
-        else
-            return i + 1;
+
+        return i + 1;
     }
     return 0;
 }
@@ -792,8 +792,8 @@ int PlayListModel::bottommostInSelection(int row)
     {
         if(isSelected(i))
             continue;
-        else
-            return i - 1;
+
+        return i - 1;
     }
     return count() - 1;
 }
@@ -921,8 +921,7 @@ void PlayListModel::sortByColumn(int column)
 
 void PlayListModel::prepareForShufflePlaying(bool val)
 {
-    if(m_play_state)
-        delete m_play_state;
+    delete m_play_state;
 
     if(val)
         m_play_state = new ShufflePlayState(this);

@@ -26,7 +26,6 @@
 #include <QMessageBox>
 #include <QHeaderView>
 #include <QStorageInfo>
-#include <QStyle>
 #include <QRegularExpression>
 #include <qmmp/qmmp.h>
 
@@ -75,10 +74,10 @@ QmmpFileDialogImpl::QmmpFileDialogImpl(QWidget * parent, Qt::WindowFlags f) : QD
     closeOnAddToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogOkButton));
     detailsToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_FileDialogDetailedView));
     connect(fileListView->selectionModel(),
-            SIGNAL(selectionChanged (QItemSelection, QItemSelection)), SLOT(updateSelection ()));
+            SIGNAL(selectionChanged(QItemSelection,QItemSelection)), SLOT(updateSelection()));
     connect(treeView->selectionModel(),
-            SIGNAL(selectionChanged (QItemSelection, QItemSelection)), SLOT(updateSelection ()));
-    PathCompleter* completer = new PathCompleter (m_model, fileListView, this);
+            SIGNAL(selectionChanged(QItemSelection,QItemSelection)), SLOT(updateSelection()));
+    PathCompleter* completer = new PathCompleter(m_model, fileListView, this);
     fileNameLineEdit->setCompleter (completer);
     QSettings settings;
     closeOnAddToolButton->setChecked(settings.value("QMMPFileDialog/close_on_add", false).toBool());
@@ -456,7 +455,7 @@ void QmmpFileDialogImpl::addFiles(const QStringList &list)
         //add extensio to file name
         if (!contains)
         {
-            QString ext = qt_clean_filter_list(fileTypeComboBox->currentText())[0];
+            QString ext = qt_clean_filter_list(fileTypeComboBox->currentText()).constFirst();
             ext.remove("*");
             if (!ext.isEmpty() && ext != ".")
             {

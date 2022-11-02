@@ -106,14 +106,14 @@ int HorizontalSlider::convert(int p) const
 {
     if(m_max > m_min)
         return ceil((m_max - m_min) * p / (width() - sliderSize())) + m_min;
-    else
-        return 0;
+
+    return 0;
 }
 
 int HorizontalSlider::sliderSize() const
 {
     if(m_max > m_min)
         return qMax(width() - abs(m_max - m_min), MIN_SLIDER_SIZE * m_skin->ratio());
-    else
-        return MIN_SLIDER_SIZE;
+
+    return MIN_SLIDER_SIZE;
 }

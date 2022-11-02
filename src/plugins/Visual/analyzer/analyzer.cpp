@@ -45,12 +45,9 @@ Analyzer::Analyzer (QWidget *parent) : Visual (parent)
 
 Analyzer::~Analyzer()
 {
-    if(m_peaks)
-        delete [] m_peaks;
-    if(m_intern_vis_data)
-        delete [] m_intern_vis_data;
-    if(m_x_scale)
-        delete [] m_x_scale;
+    delete [] m_peaks;
+    delete [] m_intern_vis_data;
+    delete [] m_x_scale;
 }
 
 void Analyzer::start()
@@ -205,12 +202,9 @@ void Analyzer::process()
     {
         m_rows = rows;
         m_cols = cols;
-        if(m_peaks)
-            delete [] m_peaks;
-        if(m_intern_vis_data)
-            delete [] m_intern_vis_data;
-        if(m_x_scale)
-            delete [] m_x_scale;
+        delete [] m_peaks;
+        delete [] m_intern_vis_data;
+        delete [] m_x_scale;
         m_peaks = new double[m_cols * 2];
         m_intern_vis_data = new double[m_cols * 2];
         m_x_scale = new int[m_cols + 1];
@@ -317,8 +311,8 @@ void Analyzer::draw(QPainter *p)
 void Analyzer::createMenu()
 {
     m_menu = new QMenu (this);
-    connect(m_menu, SIGNAL(triggered (QAction *)),SLOT(writeSettings()));
-    connect(m_menu, SIGNAL(triggered (QAction *)),SLOT(readSettings()));
+    connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(writeSettings()));
+    connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(readSettings()));
 
     m_peaksAction = m_menu->addAction(tr("Peaks"));
     m_peaksAction->setCheckable(true);

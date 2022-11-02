@@ -44,7 +44,7 @@ CoverWidget::CoverWidget(QWidget *parent)
     sizeGroup->addAction(tr("512x512"))->setData(512);
     sizeGroup->addAction(tr("1024x1024"))->setData(1024);
     sizeMenu->addActions(sizeGroup->actions());
-    connect(sizeMenu, SIGNAL(triggered (QAction *)), SLOT(processResizeAction(QAction *)));
+    connect(sizeMenu, SIGNAL(triggered(QAction*)), SLOT(processResizeAction(QAction*)));
     m_menu->addAction(tr("&Close"), this, SLOT(close()), tr("Alt+F4"));
     addActions(m_menu->actions());
     m_size = 0;

@@ -51,8 +51,8 @@ Notifier::Notifier(QObject *parent) : QObject(parent)
     settings.endGroup();
     m_core = SoundCore::instance();
     connect (m_core, SIGNAL(trackInfoChanged()), SLOT(showMetaData()));
-    connect (m_core, SIGNAL(stateChanged (Qmmp::State)), SLOT(setState(Qmmp::State)));
-    connect (m_core, SIGNAL(volumeChanged(int, int)), SLOT(showVolume(int, int)));
+    connect (m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(setState(Qmmp::State)));
+    connect (m_core, SIGNAL(volumeChanged(int,int)), SLOT(showVolume(int,int)));
 
     //psi tune files (thousands of them!)
     QString psi_data_dir = qgetenv("PSIDATADIR");
@@ -81,8 +81,7 @@ Notifier::Notifier(QObject *parent) : QObject(parent)
 Notifier::~Notifier()
 {
     removePsiTuneFiles();
-    if (m_popupWidget)
-        delete m_popupWidget;
+    delete m_popupWidget;
 }
 
 void Notifier::setState(Qmmp::State state)

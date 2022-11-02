@@ -340,13 +340,11 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
         {
             if (i + to - from < 0)
                 break;
-            else
-            {
-                m_items.move(i,i + to - from);
-                swapTrackNumbers(&m_items,i,i + to - from);
-                group->trackList.move(i - firstIndex - 1,
-                                      i + to - from  - firstIndex - 1);
-            }
+
+            m_items.move(i,i + to - from);
+            swapTrackNumbers(&m_items,i,i + to - from);
+            group->trackList.move(i - firstIndex - 1,
+                                  i + to - from  - firstIndex - 1);
         }
     }
     else
@@ -355,13 +353,11 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
         {
             if (indexes[i] + to - from >= m_items.count())
                 break;
-            else
-            {
-                m_items.move(indexes[i], indexes[i] + to - from);
-                swapTrackNumbers(&m_items,indexes[i], indexes[i] + to - from);
-                group->trackList.move(indexes[i] - firstIndex - 1,
-                                      indexes[i] + to - from - firstIndex - 1);
-            }
+
+            m_items.move(indexes[i], indexes[i] + to - from);
+            swapTrackNumbers(&m_items,indexes[i], indexes[i] + to - from);
+            group->trackList.move(indexes[i] - firstIndex - 1,
+                                  indexes[i] + to - from - firstIndex - 1);
         }
     }
     return true;

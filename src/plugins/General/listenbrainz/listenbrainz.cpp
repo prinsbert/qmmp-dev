@@ -51,10 +51,10 @@ ListenBrainz::ListenBrainz(QObject *parent)
     QSettings settings;
     m_token = settings.value("ListenBrainz/user_token").toString().trimmed();
 
-    connect(m_http, SIGNAL(finished (QNetworkReply *)), SLOT(processResponse(QNetworkReply *)));
+    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(processResponse(QNetworkReply*)));
     connect(QmmpSettings::instance(), SIGNAL(networkSettingsChanged()), SLOT(setupProxy()));
     connect(m_core, SIGNAL(trackInfoChanged()), SLOT(updateMetaData()));
-    connect(m_core, SIGNAL(stateChanged (Qmmp::State)), SLOT(setState(Qmmp::State)));
+    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(setState(Qmmp::State)));
 
     setupProxy();
     m_cachedSongs = m_cache->load();

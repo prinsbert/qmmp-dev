@@ -84,8 +84,8 @@ Qt::ItemFlags LibraryModel::flags(const QModelIndex &index) const
 {
     if(index.isValid())
         return QAbstractItemModel::flags(index) | Qt::ItemIsDragEnabled;
-    else
-        return QAbstractItemModel::flags(index);
+
+    return QAbstractItemModel::flags(index);
 }
 
 QStringList LibraryModel::mimeTypes() const
@@ -116,8 +116,8 @@ bool LibraryModel::canFetchMore(const QModelIndex &parent) const
     LibraryTreeItem *parentItem = static_cast<LibraryTreeItem *>(parent.internalPointer());
     if(parentItem == m_rootItem || parentItem->type == Qmmp::TITLE)
         return false;
-    else
-        return parentItem->children.isEmpty();
+
+    return parentItem->children.isEmpty();
 }
 
 void LibraryModel::fetchMore(const QModelIndex &parent)
@@ -202,8 +202,8 @@ QVariant LibraryModel::data(const QModelIndex &index, int role) const
     LibraryTreeItem *item = static_cast<LibraryTreeItem *>(index.internalPointer());
     if(item->type == Qmmp::ALBUM && m_showYear && item->year > 0)
         return tr("%1 - %2").arg(item->year).arg(item->name);
-    else
-        return item->name;
+
+    return item->name;
 }
 
 QModelIndex LibraryModel::parent(const QModelIndex &child) const
@@ -230,8 +230,8 @@ QModelIndex LibraryModel::index(int row, int column, const QModelIndex &parent) 
 
     if(row >= 0 && row < parentItem->children.count())
         return createIndex(row, column, parentItem->children.at(row));
-    else
-        return QModelIndex();
+
+    return QModelIndex();
 }
 
 int LibraryModel::columnCount(const QModelIndex &parent) const
@@ -248,8 +248,8 @@ int LibraryModel::rowCount(const QModelIndex &parent) const
     LibraryTreeItem *parentItem = static_cast<LibraryTreeItem *>(parent.internalPointer());
     if(parentItem->type == Qmmp::TITLE)
         return 0;
-    else
-        return qMax(1, parentItem->children.count());
+
+    return qMax(1, parentItem->children.count());
 }
 
 void LibraryModel::setFilter(const QString &filter)
