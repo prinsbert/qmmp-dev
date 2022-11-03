@@ -80,12 +80,12 @@ bool DecoderWavPack::initialize()
             return false;
         }
         int cue_len = WavpackGetTagItem (m_context, "cuesheet", NULL, 0);
-        char *value;
         if (cue_len)
         {
-            value = (char*)malloc (cue_len * 2 + 1);
+            char *value = (char*)malloc (cue_len * 2 + 1);
             WavpackGetTagItem (m_context, "cuesheet", value, cue_len + 1);
             m_parser = new CUEParser(value, p);
+            free(value);
             m_track = m_path.section("#", -1).toInt();
             if(m_track > m_parser->count())
             {
