@@ -234,13 +234,14 @@ QVariant TrackListModel::data(const QModelIndex &index, int role) const
 
         return title;
     }
-    else if(role == JumpToTrackDialog::QueueRole)
+
+    if(role == JumpToTrackDialog::QueueRole)
     {
         PlayListTrack *track = m_model->findTrack(index.row());
         if(track->isQueued())
             return QStringLiteral("[%1]").arg(track->queuedIndex() + 1);
-        else
-            return QVariant();
+
+        return QVariant();
     }
 
     return QVariant();

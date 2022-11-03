@@ -282,9 +282,9 @@ void SoundCore::startNextSource()
         s->deleteLater();
         m_handler->dispatch(Qmmp::NormalError);
         return;
-
     }
-    else if(AbstractEngine::isEnabled(m_engine) && m_engine->enqueue(s))
+
+    if(AbstractEngine::isEnabled(m_engine) && m_engine->enqueue(s))
     {
         if(state() == Qmmp::Stopped || state() == Qmmp::Buffering)
         {

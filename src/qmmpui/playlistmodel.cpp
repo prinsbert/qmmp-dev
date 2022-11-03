@@ -892,7 +892,7 @@ void PlayListModel::reverseList()
     emit listChanged(STRUCTURE);
 }
 
-void PlayListModel::sortSelection(SortMode mode)
+void PlayListModel::sortSelection(PlayListModel::SortMode mode)
 {
     if(m_container->isEmpty())
         return;
@@ -900,7 +900,7 @@ void PlayListModel::sortSelection(SortMode mode)
     m_task->sortSelection(m_container->tracks(), mode);
 }
 
-void PlayListModel::sort(SortMode mode)
+void PlayListModel::sort(PlayListModel::SortMode mode)
 {
     if(m_container->isEmpty())
         return;

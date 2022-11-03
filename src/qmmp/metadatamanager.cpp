@@ -174,11 +174,11 @@ bool MetaDataManager::supports(const QString &fileName) const
 {
     if (!fileName.contains("://")) //local file
     {
-        if (!QFile::exists(fileName))
+        if(!QFile::exists(fileName))
             return false;
         if(Decoder::findByFilePath(fileName))
             return true;
-        else if(AbstractEngine::findByFilePath(fileName))
+        if(AbstractEngine::findByFilePath(fileName))
             return true;
         return false;
     }
@@ -324,7 +324,6 @@ MetaDataManager *MetaDataManager::instance()
 
 void MetaDataManager::destroy()
 {
-    if(m_instance)
-        delete m_instance;
+    delete m_instance;
     m_instance = nullptr;
 }
