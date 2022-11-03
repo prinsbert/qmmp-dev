@@ -102,11 +102,8 @@ void ListWidgetDrawer::readSettings()
 
     settings.endGroup();
 
-    if(m_metrics)
-        delete m_metrics;
-
-    if(m_extra_metrics)
-        delete m_extra_metrics;
+    delete m_metrics;
+    delete m_extra_metrics;
 
     m_metrics = new QFontMetrics(m_font);
     m_extra_metrics = new QFontMetrics(m_extra_font);

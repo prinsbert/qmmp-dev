@@ -81,8 +81,7 @@ bool OutputWriter::initialize(quint32 freq, ChannelMap map)
         return false;
     }
 
-    if(m_output_buf)
-        delete[] m_output_buf;
+    delete[] m_output_buf;
     m_output_size = QMMP_BLOCK_FRAMES * m_channels * 4;
     m_output_buf = new unsigned char[m_output_size * m_output->sampleSize()];
 

@@ -507,11 +507,11 @@ public slots:
     /*!
      * Sorts selected items in \b mode sort mode.
      */
-    void sortSelection(SortMode mode);
+    void sortSelection(PlayListModel::SortMode mode);
     /*!
      * Sorts items in \b mode sort mode.
      */
-    void sort(SortMode mode);
+    void sort(PlayListModel::SortMode mode);
     /*!
      * Sorts tracks by the column with index \b column.
      */

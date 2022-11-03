@@ -252,14 +252,14 @@ void MainDisplay::setEQ (QWidget* w)
     ACTION(ActionManager::SHOW_EQUALIZER)->setChecked(m_equlizer->isVisible());
 
     connect (ACTION(ActionManager::SHOW_EQUALIZER), SIGNAL(triggered(bool)),
-             m_equlizer, SLOT (setVisible (bool)));
+             m_equlizer, SLOT(setVisible(bool)));
     connect (ACTION(ActionManager::SHOW_EQUALIZER), SIGNAL(triggered(bool)),
-             m_eqButton, SLOT (setChecked (bool)));
+             m_eqButton, SLOT(setChecked(bool)));
 
     connect (m_eqButton, SIGNAL(clicked(bool)),
-             ACTION(ActionManager::SHOW_EQUALIZER), SLOT(setChecked (bool)));
-    connect (m_eqButton, SIGNAL(clicked(bool)), m_equlizer, SLOT (setVisible (bool)));
-    connect (m_equlizer, SIGNAL(closed ()), m_eqButton, SLOT (click()));
+             ACTION(ActionManager::SHOW_EQUALIZER), SLOT(setChecked(bool)));
+    connect (m_eqButton, SIGNAL(clicked(bool)), m_equlizer, SLOT(setVisible(bool)));
+    connect (m_equlizer, SIGNAL(closed()), m_eqButton, SLOT(click()));
 }
 
 void MainDisplay::setPL (QWidget* w)
@@ -268,15 +268,15 @@ void MainDisplay::setPL (QWidget* w)
     m_plButton->setChecked (m_playlist->isVisible());
     ACTION(ActionManager::SHOW_PLAYLIST)->setChecked(m_playlist->isVisible());
 
-    connect (ACTION(ActionManager::SHOW_PLAYLIST), SIGNAL(triggered(bool)),
-             m_playlist, SLOT (setVisible (bool)));
-    connect (ACTION(ActionManager::SHOW_PLAYLIST), SIGNAL(triggered(bool)),
-             m_plButton, SLOT (setChecked (bool)));
+    connect(ACTION(ActionManager::SHOW_PLAYLIST), SIGNAL(triggered(bool)),
+            m_playlist, SLOT(setVisible(bool)));
+    connect(ACTION(ActionManager::SHOW_PLAYLIST), SIGNAL(triggered(bool)),
+            m_plButton, SLOT(setChecked(bool)));
 
-    connect (m_plButton, SIGNAL(clicked(bool)),
-             ACTION(ActionManager::SHOW_PLAYLIST), SLOT(setChecked (bool)));
-    connect (m_plButton, SIGNAL (clicked (bool)), m_playlist, SLOT (setVisible (bool)));
-    connect (m_playlist, SIGNAL (closed ()), m_plButton, SLOT (click()));
+    connect(m_plButton, SIGNAL(clicked(bool)),
+            ACTION(ActionManager::SHOW_PLAYLIST), SLOT(setChecked(bool)));
+    connect(m_plButton, SIGNAL(clicked(bool)), m_playlist, SLOT(setVisible(bool)));
+    connect(m_playlist, SIGNAL(closed()), m_plButton, SLOT(click()));
 }
 
 bool MainDisplay::isPlaylistVisible() const

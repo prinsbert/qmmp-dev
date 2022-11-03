@@ -639,7 +639,7 @@ void PlayListHeader::contextMenuEvent(QContextMenuEvent *e)
     {
         for(QAction *action : m_menu->actions())
         {
-            if(action == m_menu->actions().first())
+            if(action == m_menu->actions().constFirst())
                 action->setVisible(m_model->count() < MAX_COLUMNS);
             else
                 action->setVisible(false);

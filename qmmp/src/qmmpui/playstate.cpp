@@ -147,7 +147,7 @@ bool NormalPlayState::previous()
     {
         if(m_model->currentIndex() == 1 && !m_model->isTrack(0))
             return (m_model->setCurrent(m_model->count() - 1));
-        else if(m_model->currentIndex() == 0)
+        if(m_model->currentIndex() == 0)
             return m_model->setCurrent(m_model->count() - 1);
     }
 

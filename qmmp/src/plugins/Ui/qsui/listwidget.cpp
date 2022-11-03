@@ -353,7 +353,8 @@ bool ListWidget::event (QEvent *e)
             m_popupWidget->prepare(m_model->track(index), helpEvent->globalPos());
             return true;
         }
-        else if(e->type() == QEvent::Leave)
+
+        if(e->type() == QEvent::Leave)
             m_popupWidget->deactivate();
     }
     if(e->type() == QEvent::StyleChange)
