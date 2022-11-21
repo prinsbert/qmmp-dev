@@ -1,8 +1,8 @@
-Index: yt-dlp-2022.08.19/setup.cfg
+Index: yt-dlp-2022.11.11/setup.cfg
 ===================================================================
---- yt-dlp-2022.08.19.orig/setup.cfg
-+++ yt-dlp-2022.08.19/setup.cfg
-@@ -11,7 +11,7 @@ per_file_ignores =
+--- yt-dlp-2022.11.11.orig/setup.cfg
++++ yt-dlp-2022.11.11/setup.cfg
+@@ -19,7 +19,7 @@ remove-unused-variables = true
  
  
  [tool:pytest]

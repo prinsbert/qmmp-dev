@@ -1,12 +1,12 @@
-Index: yt-dlp-2022.08.08/setup.py
+Index: yt-dlp-2022.11.11/setup.py
 ===================================================================
---- yt-dlp-2022.08.08.orig/setup.py
-+++ yt-dlp-2022.08.08/setup.py
-@@ -125,7 +125,6 @@ setup(
-     long_description_content_type='text/markdown',
-     url='https://github.com/yt-dlp/yt-dlp',
-     packages=packages(),
--    install_requires=REQUIREMENTS,
-     python_requires='>=3.7',
-     project_urls={
-         'Documentation': 'https://github.com/yt-dlp/yt-dlp#readme',
+--- yt-dlp-2022.11.11.orig/setup.py
++++ yt-dlp-2022.11.11/setup.py
+@@ -136,7 +136,6 @@ def main():
+         long_description_content_type='text/markdown',
+         url='https://github.com/yt-dlp/yt-dlp',
+         packages=packages(),
+-        install_requires=REQUIREMENTS,
+         python_requires='>=3.7',
+         project_urls={
+             'Documentation': 'https://github.com/yt-dlp/yt-dlp#readme',
