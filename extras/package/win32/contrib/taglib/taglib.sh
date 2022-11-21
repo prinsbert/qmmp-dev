@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=taglib
-VERSION=1.12
+VERSION=1.13
 
 case $1 in
   --download)
