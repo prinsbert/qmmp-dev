@@ -1,0 +1,63 @@
+diff -U3 -r libsidplayfp-2.2.2-old/src/utils/SidDatabase.cpp libsidplayfp-2.2.2-new/src/utils/SidDatabase.cpp
+--- libsidplayfp-2.2.2-old/src/utils/SidDatabase.cpp	2021-08-07 10:21:14 +0300
++++ libsidplayfp-2.2.2-new/src/utils/SidDatabase.cpp	2021-08-14 20:27:30 +0300
+@@ -115,7 +115,7 @@
+ }
+ 
+ #ifdef _WIN32
+-bool SidDatabase::open(const wchar_t* filename)
++/*bool SidDatabase::open(const wchar_t* filename)
+ {
+     delete m_parser;
+     m_parser = new libsidplayfp::iniParser();
+@@ -128,7 +128,7 @@
+     }
+ 
+     return true;
+-}
++}*/
+ #endif
+ 
+ void SidDatabase::close()
+diff -U3 -r libsidplayfp-2.2.2-old/src/utils/SidDatabase.h libsidplayfp-2.2.2-new/src/utils/SidDatabase.h
+--- libsidplayfp-2.2.2-old/src/utils/SidDatabase.h	2021-08-07 10:21:14 +0300
++++ libsidplayfp-2.2.2-new/src/utils/SidDatabase.h	2021-08-14 20:27:06 +0300
+@@ -57,7 +57,7 @@
+      */
+     bool open(const char *filename);
+ #ifdef _WIN32
+-    bool open(const wchar_t* filename);
++    //bool open(const wchar_t* filename);
+ #endif
+ 
+     /**
+diff -U3 -r libsidplayfp-2.2.2-old/src/utils/iniParser.cpp libsidplayfp-2.2.2-new/src/utils/iniParser.cpp
+--- libsidplayfp-2.2.2-old/src/utils/iniParser.cpp	2021-08-07 10:21:14 +0300
++++ libsidplayfp-2.2.2-new/src/utils/iniParser.cpp	2021-08-14 20:27:18 +0300
+@@ -61,12 +61,12 @@
+ }
+ 
+ #ifdef _WIN32
+-bool iniParser::open(const wchar_t *fName)
++/*bool iniParser::open(const wchar_t *fName)
+ {
+     std::ifstream iniFile(fName);
+ 
+     return open_internal(iniFile);
+-}
++}*/
+ #endif
+ 
+ bool iniParser::open_internal(std::ifstream & iniFile)
+diff -U3 -r libsidplayfp-2.2.2-old/src/utils/iniParser.h libsidplayfp-2.2.2-new/src/utils/iniParser.h
+--- libsidplayfp-2.2.2-old/src/utils/iniParser.h	2021-08-07 10:21:14 +0300
++++ libsidplayfp-2.2.2-new/src/utils/iniParser.h	2021-08-14 20:26:50 +0300
+@@ -48,7 +48,7 @@
+ public:
+     bool open(const char *fName);
+ #ifdef _WIN32
+-    bool open(const wchar_t* fName);
++    //bool open(const wchar_t* fName);
+ #endif
+     void close();
+ 
