@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2022.11.11
+VERSION=2023.01.02
 UBUNTU_CODENAMES='bionic focal jammy'
 BUILD_ROOT=build-root
 
