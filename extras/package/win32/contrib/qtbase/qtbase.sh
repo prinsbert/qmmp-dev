@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qtbase-everywhere-opensource-src
-VERSION=5.15.7
+VERSION=5.15.8
 BUILD_ROOT=qtbase-everywhere-src-$VERSION
 
 case $1 in
