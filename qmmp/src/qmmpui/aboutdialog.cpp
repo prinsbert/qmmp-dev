@@ -72,7 +72,7 @@ QString AboutDialog::loadAbout()
     text.append("<p>"+getStringFromResource(":description")+"</p>");
 
     text.append("<p><b>"+tr("Version: %1").arg(Qmmp::strVersion()) + "</b><br>");
-    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(qVersion()).arg(QT_VERSION_STR) + "</p>");
+    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(qVersion(), QT_VERSION_STR) + "</p>");
 
     text.append("<p>");
     text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2022)+"<br>");
@@ -89,6 +89,7 @@ QString AboutDialog::loadAbout()
         text.append("</li>");
     }
     text.append("</ul>");
+
     text.append("<h5>"+tr("Decoders:")+"</h5>");
     text.append("<ul type=\"square\">");
     for(const DecoderFactory *fact : Decoder::factories())
@@ -98,6 +99,7 @@ QString AboutDialog::loadAbout()
         text.append("</li>");
     }
     text.append("</ul>");
+
     if(!AbstractEngine::factories().isEmpty())
     {
         text.append("<h5>"+tr("Engines:")+"</h5>");
@@ -120,15 +122,20 @@ QString AboutDialog::loadAbout()
         text.append("</li>");
     }
     text.append("</ul>");
-    text.append("<h5>"+tr("Visual plugins:")+"</h5>");
-    text.append("<ul type=\"square\">");
-    for(const VisualFactory *fact : Visual::factories())
+
+    if(!Visual::factories().isEmpty())
     {
-        text.append("<li>");
-        text.append(fact->properties().name);
-        text.append("</li>");
+        text.append("<h5>"+tr("Visual plugins:")+"</h5>");
+        text.append("<ul type=\"square\">");
+        for(const VisualFactory *fact : Visual::factories())
+        {
+            text.append("<li>");
+            text.append(fact->properties().name);
+            text.append("</li>");
+        }
+        text.append("</ul>");
     }
-    text.append("</ul>");
+
     text.append("<h5>"+tr("General plugins:")+"</h5>");
     text.append("<ul type=\"square\">");
     for(const GeneralFactory *fact : General::factories())
@@ -138,6 +145,7 @@ QString AboutDialog::loadAbout()
         text.append("</li>");
     }
     text.append("</ul>");
+
     text.append("<h5>"+tr("Output plugins:")+"</h5>");
     text.append("<ul type=\"square\">");
     for(const OutputFactory *fact : Output::factories())
@@ -147,6 +155,7 @@ QString AboutDialog::loadAbout()
         text.append("</li>");
     }
     text.append("</ul>");
+
     if(!FileDialog::factories().isEmpty())
     {
         text.append("<h5>"+tr("File dialogs:")+"</h5>");
@@ -159,6 +168,7 @@ QString AboutDialog::loadAbout()
         }
         text.append("</ul>");
     }
+
     if(!UiLoader::factories().isEmpty())
     {
         text.append("<h5>"+tr("User interfaces:")+"</h5>");
