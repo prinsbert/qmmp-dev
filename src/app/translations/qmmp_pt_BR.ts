@@ -4,87 +4,87 @@
 <context>
     <name>BuiltinCommandLineOption</name>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="71"/>
+        <location filename="../builtincommandlineoption.cpp" line="70"/>
         <source>Don&apos;t clear the playlist</source>
         <translation>Não limpar a lista de música</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="72"/>
+        <location filename="../builtincommandlineoption.cpp" line="71"/>
         <source>Start playing current song</source>
         <translation>Começar a tocar a música atual</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="73"/>
+        <location filename="../builtincommandlineoption.cpp" line="72"/>
         <source>Pause current song</source>
         <translation>Pausar a música atual</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="74"/>
+        <location filename="../builtincommandlineoption.cpp" line="73"/>
         <source>Pause if playing, play otherwise</source>
         <translation>Pausar se tocando, tocar se pausado</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="75"/>
+        <location filename="../builtincommandlineoption.cpp" line="74"/>
         <source>Stop current song</source>
         <translation>Parar de tocar a música atual</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="76"/>
+        <location filename="../builtincommandlineoption.cpp" line="75"/>
         <source>Display Jump to File dialog</source>
         <translation>Exibir a janela Ir para Arquivo</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="77"/>
+        <location filename="../builtincommandlineoption.cpp" line="76"/>
         <source>Quit application</source>
         <translation>Sair do programa</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="78"/>
+        <location filename="../builtincommandlineoption.cpp" line="77"/>
         <source>Set playback volume (example: qmmp --volume 20)</source>
         <translation>Ajustar o volume do áudio (exemplo: qmmp --volume 20)</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="79"/>
+        <location filename="../builtincommandlineoption.cpp" line="78"/>
         <source>Print volume level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="80"/>
+        <location filename="../builtincommandlineoption.cpp" line="79"/>
         <source>Mute/Restore volume</source>
         <translation>Silenciar/Restaurar volume do áudio</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="81"/>
+        <location filename="../builtincommandlineoption.cpp" line="80"/>
         <source>Print mute status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="82"/>
+        <location filename="../builtincommandlineoption.cpp" line="81"/>
         <source>Skip forward in playlist</source>
         <translation>Ir para a próxima música na lista</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="83"/>
+        <location filename="../builtincommandlineoption.cpp" line="82"/>
         <source>Skip backwards in playlist</source>
         <translation>Ir para a música anterior na lista</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="84"/>
+        <location filename="../builtincommandlineoption.cpp" line="83"/>
         <source>Show/hide application</source>
         <translation>Exibir/Esconder aplicativo</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="85"/>
+        <location filename="../builtincommandlineoption.cpp" line="84"/>
         <source>Show main window</source>
         <translation>Mostrar janela principal</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="86"/>
+        <location filename="../builtincommandlineoption.cpp" line="85"/>
         <source>Display Add File dialog</source>
         <translation>Exibir a janela Adicionar Arquivo</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="87"/>
+        <location filename="../builtincommandlineoption.cpp" line="86"/>
         <source>Display Add Directory dialog</source>
         <translation>Exibir a janela Adicionar Pasta</translation>
     </message>

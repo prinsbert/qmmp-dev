@@ -14,22 +14,22 @@
         <translation>FFmpeg 형식</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="339"/>
+        <location filename="../decoderffmpegfactory.cpp" line="346"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>FFmpeg 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="340"/>
+        <location filename="../decoderffmpegfactory.cpp" line="347"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Qmmp FFmpeg 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="341"/>
+        <location filename="../decoderffmpegfactory.cpp" line="348"/>
         <source>Compiled against:</source>
         <translation>컴파일 대상:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="354"/>
+        <location filename="../decoderffmpegfactory.cpp" line="361"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

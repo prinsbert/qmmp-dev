@@ -96,7 +96,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="134"/>
         <location filename="../converterdialog.cpp" line="358"/>
-        <location filename="../converterdialog.cpp" line="364"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
@@ -126,7 +126,7 @@
         <translation>לא מסוגל לבצע &quot;%1&quot;. תוכנית לא נמצאה.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="364"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>תהליך &quot;%1&quot; נסתיים עם שגיאה.</translation>
     </message>

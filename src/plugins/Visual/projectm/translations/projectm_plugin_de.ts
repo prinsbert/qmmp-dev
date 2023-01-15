@@ -12,92 +12,92 @@
 <context>
     <name>ProjectMWidget</name>
     <message>
-        <location filename="../projectmwidget.cpp" line="147"/>
+        <location filename="../projectmwidget.cpp" line="136"/>
         <source>&amp;Help</source>
         <translation>&amp;Hilfe</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="147"/>
+        <location filename="../projectmwidget.cpp" line="136"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="148"/>
+        <location filename="../projectmwidget.cpp" line="137"/>
         <source>&amp;Show Song Title</source>
         <translation>Liedna&amp;me anzeigen</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="148"/>
+        <location filename="../projectmwidget.cpp" line="137"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="149"/>
+        <location filename="../projectmwidget.cpp" line="138"/>
         <source>&amp;Show Preset Name</source>
         <translation>N&amp;ame der Voreinstellung anzeigen</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="149"/>
+        <location filename="../projectmwidget.cpp" line="138"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="150"/>
+        <location filename="../projectmwidget.cpp" line="139"/>
         <source>&amp;Show Menu</source>
         <translation>Menü an&amp;zeigen</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="150"/>
+        <location filename="../projectmwidget.cpp" line="139"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="152"/>
+        <location filename="../projectmwidget.cpp" line="141"/>
         <source>&amp;Next Preset</source>
         <translation>&amp;Nächste Voreinstellung</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="152"/>
+        <location filename="../projectmwidget.cpp" line="141"/>
         <source>N</source>
         <translation>N</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="153"/>
+        <location filename="../projectmwidget.cpp" line="142"/>
         <source>&amp;Previous Preset</source>
         <translation>Vor&amp;herige Voreinstellung</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="153"/>
+        <location filename="../projectmwidget.cpp" line="142"/>
         <source>P</source>
         <translation>H</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="154"/>
+        <location filename="../projectmwidget.cpp" line="143"/>
         <source>&amp;Random Preset</source>
         <translation>&amp;Zufällige Voreinstellung</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="154"/>
+        <location filename="../projectmwidget.cpp" line="143"/>
         <source>R</source>
         <translation>Z</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="155"/>
+        <location filename="../projectmwidget.cpp" line="144"/>
         <source>&amp;Lock Preset</source>
         <translation>V&amp;oreinstellung sperren</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="155"/>
+        <location filename="../projectmwidget.cpp" line="144"/>
         <source>L</source>
         <translation>O</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="157"/>
+        <location filename="../projectmwidget.cpp" line="146"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Vollbild</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="157"/>
+        <location filename="../projectmwidget.cpp" line="146"/>
         <source>F</source>
         <translation>V</translation>
     </message>

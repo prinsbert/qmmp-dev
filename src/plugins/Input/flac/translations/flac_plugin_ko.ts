@@ -14,17 +14,17 @@
         <translation>FLAC 파일</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="221"/>
+        <location filename="../decoderflacfactory.cpp" line="214"/>
         <source>About FLAC Audio Plugin</source>
         <translation>FLAC 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="222"/>
+        <location filename="../decoderflacfactory.cpp" line="215"/>
         <source>Qmmp FLAC Audio Plugin</source>
         <translation>Qmmp FLAC 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="223"/>
+        <location filename="../decoderflacfactory.cpp" line="216"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

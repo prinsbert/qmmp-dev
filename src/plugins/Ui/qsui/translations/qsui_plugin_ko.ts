@@ -591,22 +591,22 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="91"/>
+        <location filename="../filesystembrowser.cpp" line="90"/>
         <source>Add to Playlist</source>
         <translation>재생목록에 추가</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="93"/>
+        <location filename="../filesystembrowser.cpp" line="92"/>
         <source>Change Directory</source>
         <translation>디렉토리 변경</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="98"/>
+        <location filename="../filesystembrowser.cpp" line="97"/>
         <source>Quick Search</source>
         <translation>빠른 검색</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="172"/>
+        <location filename="../filesystembrowser.cpp" line="171"/>
         <source>Select Directory</source>
         <translation>디렉토리 선택</translation>
     </message>
@@ -997,50 +997,50 @@
 <context>
     <name>PlayListHeader</name>
     <message>
-        <location filename="../playlistheader.cpp" line="55"/>
+        <location filename="../playlistheader.cpp" line="54"/>
         <source>Add Column</source>
         <translation>열 추가</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="56"/>
+        <location filename="../playlistheader.cpp" line="55"/>
         <source>Edit Column</source>
         <translation>열 편집</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="57"/>
+        <location filename="../playlistheader.cpp" line="56"/>
         <source>Show Queue/Protocol</source>
         <translation>대기열/프로토콜 표시</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="59"/>
+        <location filename="../playlistheader.cpp" line="58"/>
         <source>Auto-resize</source>
         <translation>자동 크기 조정</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="62"/>
+        <location filename="../playlistheader.cpp" line="61"/>
         <source>Alignment</source>
         <translation>맞춤</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="63"/>
+        <location filename="../playlistheader.cpp" line="62"/>
         <source>Left</source>
         <comment>alignment</comment>
         <translation>왼쪽</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="64"/>
+        <location filename="../playlistheader.cpp" line="63"/>
         <source>Right</source>
         <comment>alignment</comment>
         <translation>오른쪽</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="65"/>
+        <location filename="../playlistheader.cpp" line="64"/>
         <source>Center</source>
         <comment>alignment</comment>
         <translation>가운데</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="75"/>
+        <location filename="../playlistheader.cpp" line="74"/>
         <source>Remove Column</source>
         <translation>열 제거</translation>
     </message>
@@ -1396,107 +1396,107 @@
 <context>
     <name>QSUIVisualization</name>
     <message>
-        <location filename="../qsuivisualization.cpp" line="126"/>
+        <location filename="../qsuivisualization.cpp" line="125"/>
         <source>Cover</source>
         <translation>표지</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="129"/>
+        <location filename="../qsuivisualization.cpp" line="128"/>
         <source>Visualization Mode</source>
         <translation>시각화 모드</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="132"/>
+        <location filename="../qsuivisualization.cpp" line="131"/>
         <source>Analyzer</source>
         <translation>애널라이저</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="133"/>
+        <location filename="../qsuivisualization.cpp" line="132"/>
         <source>Scope</source>
         <translation>범위</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="140"/>
+        <location filename="../qsuivisualization.cpp" line="139"/>
         <source>Analyzer Mode</source>
         <translation>애널라이저 모드</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="142"/>
+        <location filename="../qsuivisualization.cpp" line="141"/>
         <source>Cells</source>
         <translation>셀</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="143"/>
+        <location filename="../qsuivisualization.cpp" line="142"/>
         <source>Lines</source>
         <translation>선</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="151"/>
+        <location filename="../qsuivisualization.cpp" line="150"/>
         <source>Peaks</source>
         <translation>피크</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="154"/>
+        <location filename="../qsuivisualization.cpp" line="153"/>
         <source>Refresh Rate</source>
         <translation>리프레시 비율</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="157"/>
+        <location filename="../qsuivisualization.cpp" line="156"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="158"/>
+        <location filename="../qsuivisualization.cpp" line="157"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="159"/>
+        <location filename="../qsuivisualization.cpp" line="158"/>
         <source>10 fps</source>
         <translation>10 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="160"/>
+        <location filename="../qsuivisualization.cpp" line="159"/>
         <source>5 fps</source>
         <translation>5 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="167"/>
+        <location filename="../qsuivisualization.cpp" line="166"/>
         <source>Analyzer Falloff</source>
         <translation>애널라이저 하락</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="170"/>
-        <location filename="../qsuivisualization.cpp" line="184"/>
+        <location filename="../qsuivisualization.cpp" line="169"/>
+        <location filename="../qsuivisualization.cpp" line="183"/>
         <source>Slowest</source>
         <translation>가장 느림</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="171"/>
-        <location filename="../qsuivisualization.cpp" line="185"/>
+        <location filename="../qsuivisualization.cpp" line="170"/>
+        <location filename="../qsuivisualization.cpp" line="184"/>
         <source>Slow</source>
         <translation>느림</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="172"/>
-        <location filename="../qsuivisualization.cpp" line="186"/>
+        <location filename="../qsuivisualization.cpp" line="171"/>
+        <location filename="../qsuivisualization.cpp" line="185"/>
         <source>Medium</source>
         <translation>중간</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="173"/>
-        <location filename="../qsuivisualization.cpp" line="187"/>
+        <location filename="../qsuivisualization.cpp" line="172"/>
+        <location filename="../qsuivisualization.cpp" line="186"/>
         <source>Fast</source>
         <translation>빠름</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="174"/>
-        <location filename="../qsuivisualization.cpp" line="188"/>
+        <location filename="../qsuivisualization.cpp" line="173"/>
+        <location filename="../qsuivisualization.cpp" line="187"/>
         <source>Fastest</source>
         <translation>가장 빠름</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="181"/>
+        <location filename="../qsuivisualization.cpp" line="180"/>
         <source>Peaks Falloff</source>
         <translation>피크 하락</translation>
     </message>

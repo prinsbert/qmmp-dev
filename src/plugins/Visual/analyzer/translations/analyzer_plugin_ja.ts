@@ -9,82 +9,82 @@
         <translation>QMMP アナライザー</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="323"/>
+        <location filename="../analyzer.cpp" line="317"/>
         <source>Peaks</source>
         <translation>ピーク図</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="326"/>
+        <location filename="../analyzer.cpp" line="320"/>
         <source>Refresh Rate</source>
         <translation>再描画の頻度</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="329"/>
+        <location filename="../analyzer.cpp" line="323"/>
         <source>50 fps</source>
         <translation>50 フレーム毎秒</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="330"/>
+        <location filename="../analyzer.cpp" line="324"/>
         <source>25 fps</source>
         <translation>25 フレーム毎秒</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="331"/>
+        <location filename="../analyzer.cpp" line="325"/>
         <source>10 fps</source>
         <translation>10 フレーム毎秒</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="332"/>
+        <location filename="../analyzer.cpp" line="326"/>
         <source>5 fps</source>
         <translation>5 フレーム毎秒</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="339"/>
+        <location filename="../analyzer.cpp" line="333"/>
         <source>Analyzer Falloff</source>
         <translation>アナライザー減衰速度</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="342"/>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="336"/>
+        <location filename="../analyzer.cpp" line="350"/>
         <source>Slowest</source>
         <translation>さらに遅く</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="343"/>
-        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="337"/>
+        <location filename="../analyzer.cpp" line="351"/>
         <source>Slow</source>
         <translation>遅く</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="344"/>
-        <location filename="../analyzer.cpp" line="358"/>
+        <location filename="../analyzer.cpp" line="338"/>
+        <location filename="../analyzer.cpp" line="352"/>
         <source>Medium</source>
         <translation>適度</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="345"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="339"/>
+        <location filename="../analyzer.cpp" line="353"/>
         <source>Fast</source>
         <translation>速く</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="346"/>
-        <location filename="../analyzer.cpp" line="360"/>
+        <location filename="../analyzer.cpp" line="340"/>
+        <location filename="../analyzer.cpp" line="354"/>
         <source>Fastest</source>
         <translation>さらに速く</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="353"/>
+        <location filename="../analyzer.cpp" line="347"/>
         <source>Peaks Falloff</source>
         <translation>ピーク減衰速度</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="361"/>
         <source>F</source>
         <translation>F</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="361"/>
         <source>&amp;Full Screen</source>
         <translation>フルスクリーン(&amp;F)</translation>
     </message>

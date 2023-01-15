@@ -591,22 +591,22 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="91"/>
+        <location filename="../filesystembrowser.cpp" line="90"/>
         <source>Add to Playlist</source>
         <translation>Aggiungi alla scaletta</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="93"/>
+        <location filename="../filesystembrowser.cpp" line="92"/>
         <source>Change Directory</source>
         <translation>Cambia cartella</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="98"/>
+        <location filename="../filesystembrowser.cpp" line="97"/>
         <source>Quick Search</source>
         <translation>Ricerca rapida</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="172"/>
+        <location filename="../filesystembrowser.cpp" line="171"/>
         <source>Select Directory</source>
         <translation>Seleziona cartella</translation>
     </message>
@@ -997,50 +997,50 @@
 <context>
     <name>PlayListHeader</name>
     <message>
-        <location filename="../playlistheader.cpp" line="55"/>
+        <location filename="../playlistheader.cpp" line="54"/>
         <source>Add Column</source>
         <translation>Aggiungi colonna</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="56"/>
+        <location filename="../playlistheader.cpp" line="55"/>
         <source>Edit Column</source>
         <translation>Modifica colonna</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="57"/>
+        <location filename="../playlistheader.cpp" line="56"/>
         <source>Show Queue/Protocol</source>
         <translation>Mostra coda/protocollo</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="59"/>
+        <location filename="../playlistheader.cpp" line="58"/>
         <source>Auto-resize</source>
         <translation>Ridimensionamento automatico</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="62"/>
+        <location filename="../playlistheader.cpp" line="61"/>
         <source>Alignment</source>
         <translation>Allineamento</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="63"/>
+        <location filename="../playlistheader.cpp" line="62"/>
         <source>Left</source>
         <comment>alignment</comment>
         <translation>A sinistra</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="64"/>
+        <location filename="../playlistheader.cpp" line="63"/>
         <source>Right</source>
         <comment>alignment</comment>
         <translation>A destra</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="65"/>
+        <location filename="../playlistheader.cpp" line="64"/>
         <source>Center</source>
         <comment>alignment</comment>
         <translation>Al centro</translation>
     </message>
     <message>
-        <location filename="../playlistheader.cpp" line="75"/>
+        <location filename="../playlistheader.cpp" line="74"/>
         <source>Remove Column</source>
         <translation>Rimuovi colonna</translation>
     </message>
@@ -1396,107 +1396,107 @@
 <context>
     <name>QSUIVisualization</name>
     <message>
-        <location filename="../qsuivisualization.cpp" line="126"/>
+        <location filename="../qsuivisualization.cpp" line="125"/>
         <source>Cover</source>
         <translation>Copertina</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="129"/>
+        <location filename="../qsuivisualization.cpp" line="128"/>
         <source>Visualization Mode</source>
         <translation>Modo visualizzazione</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="132"/>
+        <location filename="../qsuivisualization.cpp" line="131"/>
         <source>Analyzer</source>
         <translation>Analizzatore</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="133"/>
+        <location filename="../qsuivisualization.cpp" line="132"/>
         <source>Scope</source>
         <translation>Oscilloscopio</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="140"/>
+        <location filename="../qsuivisualization.cpp" line="139"/>
         <source>Analyzer Mode</source>
         <translation>Modo analizzatore</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="142"/>
+        <location filename="../qsuivisualization.cpp" line="141"/>
         <source>Cells</source>
         <translation>Celle</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="143"/>
+        <location filename="../qsuivisualization.cpp" line="142"/>
         <source>Lines</source>
         <translation>Linee</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="151"/>
+        <location filename="../qsuivisualization.cpp" line="150"/>
         <source>Peaks</source>
         <translation>Picchi</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="154"/>
+        <location filename="../qsuivisualization.cpp" line="153"/>
         <source>Refresh Rate</source>
         <translation>Velocità di aggiornamento</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="157"/>
+        <location filename="../qsuivisualization.cpp" line="156"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="158"/>
+        <location filename="../qsuivisualization.cpp" line="157"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="159"/>
+        <location filename="../qsuivisualization.cpp" line="158"/>
         <source>10 fps</source>
         <translation>10 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="160"/>
+        <location filename="../qsuivisualization.cpp" line="159"/>
         <source>5 fps</source>
         <translation>5 fps</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="167"/>
+        <location filename="../qsuivisualization.cpp" line="166"/>
         <source>Analyzer Falloff</source>
         <translation>Ricaduta analizzatore</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="170"/>
-        <location filename="../qsuivisualization.cpp" line="184"/>
+        <location filename="../qsuivisualization.cpp" line="169"/>
+        <location filename="../qsuivisualization.cpp" line="183"/>
         <source>Slowest</source>
         <translation>Molto lenta</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="171"/>
-        <location filename="../qsuivisualization.cpp" line="185"/>
+        <location filename="../qsuivisualization.cpp" line="170"/>
+        <location filename="../qsuivisualization.cpp" line="184"/>
         <source>Slow</source>
         <translation>Lenta</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="172"/>
-        <location filename="../qsuivisualization.cpp" line="186"/>
+        <location filename="../qsuivisualization.cpp" line="171"/>
+        <location filename="../qsuivisualization.cpp" line="185"/>
         <source>Medium</source>
         <translation>Media</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="173"/>
-        <location filename="../qsuivisualization.cpp" line="187"/>
+        <location filename="../qsuivisualization.cpp" line="172"/>
+        <location filename="../qsuivisualization.cpp" line="186"/>
         <source>Fast</source>
         <translation>Rapida</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="174"/>
-        <location filename="../qsuivisualization.cpp" line="188"/>
+        <location filename="../qsuivisualization.cpp" line="173"/>
+        <location filename="../qsuivisualization.cpp" line="187"/>
         <source>Fastest</source>
         <translation>Molto veloce</translation>
     </message>
     <message>
-        <location filename="../qsuivisualization.cpp" line="181"/>
+        <location filename="../qsuivisualization.cpp" line="180"/>
         <source>Peaks Falloff</source>
         <translation>Ricaduta picchi</translation>
     </message>

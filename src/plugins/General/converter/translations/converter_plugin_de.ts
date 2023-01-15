@@ -96,7 +96,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="134"/>
         <location filename="../converterdialog.cpp" line="358"/>
-        <location filename="../converterdialog.cpp" line="364"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
@@ -126,7 +126,7 @@
         <translation>&quot;%1&quot; kann nicht ausgeführt werden. Programm nicht gefunden.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="364"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>Prozess &quot;%1&quot; mit Fehler fertiggestellt.</translation>
     </message>
