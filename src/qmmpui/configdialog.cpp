@@ -220,6 +220,7 @@ void ConfigDialog::loadPluginsInfo()
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
+    item->setHidden(!item->childCount());
     /*
         load effect plugin information
     */
@@ -242,6 +243,7 @@ void ConfigDialog::loadPluginsInfo()
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
+    item->setHidden(!item->childCount());
     /*
         load general plugin information
     */
@@ -275,6 +277,7 @@ void ConfigDialog::loadPluginsInfo()
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
+    item->setHidden(!item->childCount());
     /*
         load user interfaces information
     */
