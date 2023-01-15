@@ -1,19 +1,19 @@
 #!/bin/sh
 
 NAME=wavpack
-VERSION=5.5.0
+VERSION=5.6.0
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://www.wavpack.com/$NAME-$VERSION.tar.bz2
+    wget -nc https://github.com/dbry/WavPack/releases/download/$VERSION/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp
-    tar xvjf $NAME-$VERSION.tar.bz2
+    tar xvJf $NAME-$VERSION.tar.xz
     cd $NAME-$VERSION
-    cat ../../seeking_mingw.diff | patch -p1
+    #cat ../../seeking_mingw.diff | patch -p1
     ./configure --prefix=$PREFIX --enable-shared --disable-static
     make -j${JOBS}
     make install
