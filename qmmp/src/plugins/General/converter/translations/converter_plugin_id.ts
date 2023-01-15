@@ -96,7 +96,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="134"/>
         <location filename="../converterdialog.cpp" line="358"/>
-        <location filename="../converterdialog.cpp" line="364"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
         <translation>Galat</translation>
     </message>
@@ -126,7 +126,7 @@
         <translation>Tak dapat mengeksekusi &quot;%1&quot; Program tidak ditemukan.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="364"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>Proses &quot;%1&quot; selesai dengan galat.</translation>
     </message>

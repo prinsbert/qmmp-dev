@@ -64,16 +64,16 @@
         <translation>앨범 게인/피크 쓰기</translation>
     </message>
     <message>
-        <location filename="../rgscandialog.cpp" line="125"/>
-        <location filename="../rgscandialog.cpp" line="230"/>
+        <location filename="../rgscandialog.cpp" line="124"/>
+        <location filename="../rgscandialog.cpp" line="229"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
+        <location filename="../rgscandialog.cpp" line="134"/>
         <location filename="../rgscandialog.cpp" line="135"/>
-        <location filename="../rgscandialog.cpp" line="136"/>
-        <location filename="../rgscandialog.cpp" line="160"/>
-        <location filename="../rgscandialog.cpp" line="225"/>
+        <location filename="../rgscandialog.cpp" line="159"/>
+        <location filename="../rgscandialog.cpp" line="224"/>
         <source>%1 dB</source>
         <translation>%1 dB</translation>
     </message>

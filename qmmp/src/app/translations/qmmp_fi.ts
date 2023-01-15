@@ -4,87 +4,87 @@
 <context>
     <name>BuiltinCommandLineOption</name>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="71"/>
+        <location filename="../builtincommandlineoption.cpp" line="70"/>
         <source>Don&apos;t clear the playlist</source>
         <translation>Älä tyhjennä soittolistaa</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="72"/>
+        <location filename="../builtincommandlineoption.cpp" line="71"/>
         <source>Start playing current song</source>
         <translation>Käynnistä nykyisen kappaleen toistaminen</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="73"/>
+        <location filename="../builtincommandlineoption.cpp" line="72"/>
         <source>Pause current song</source>
         <translation>Keskeytä nykyinen kappale</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="74"/>
+        <location filename="../builtincommandlineoption.cpp" line="73"/>
         <source>Pause if playing, play otherwise</source>
         <translation>Keskeytä jos toistetaan, toista muussa tapauksessa</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="75"/>
+        <location filename="../builtincommandlineoption.cpp" line="74"/>
         <source>Stop current song</source>
         <translation>Pysäytä nykyinen kappale</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="76"/>
+        <location filename="../builtincommandlineoption.cpp" line="75"/>
         <source>Display Jump to File dialog</source>
         <translation>Näytä &quot;Siirry tiedostoon&quot;-ikkuna</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="77"/>
+        <location filename="../builtincommandlineoption.cpp" line="76"/>
         <source>Quit application</source>
         <translation>Sulje sovellus</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="78"/>
+        <location filename="../builtincommandlineoption.cpp" line="77"/>
         <source>Set playback volume (example: qmmp --volume 20)</source>
         <translation>Aseta toiston äänenvoimakkuus (esimerkki: qmmp --volume 20)</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="79"/>
+        <location filename="../builtincommandlineoption.cpp" line="78"/>
         <source>Print volume level</source>
         <translation>Tulosta äänenvoimakkuuden taso</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="80"/>
+        <location filename="../builtincommandlineoption.cpp" line="79"/>
         <source>Mute/Restore volume</source>
         <translation>Mykistä/palauta äänenvoimakkuus</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="81"/>
+        <location filename="../builtincommandlineoption.cpp" line="80"/>
         <source>Print mute status</source>
         <translation>Tulosta mykistyksen tila</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="82"/>
+        <location filename="../builtincommandlineoption.cpp" line="81"/>
         <source>Skip forward in playlist</source>
         <translation>Siirry eteenpäin soittolistassa</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="83"/>
+        <location filename="../builtincommandlineoption.cpp" line="82"/>
         <source>Skip backwards in playlist</source>
         <translation>Siirry taaksepäin soittolistassa</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="84"/>
+        <location filename="../builtincommandlineoption.cpp" line="83"/>
         <source>Show/hide application</source>
         <translation>Näytä/piilota sovellus</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="85"/>
+        <location filename="../builtincommandlineoption.cpp" line="84"/>
         <source>Show main window</source>
         <translation>Näytä pääikkuna</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="86"/>
+        <location filename="../builtincommandlineoption.cpp" line="85"/>
         <source>Display Add File dialog</source>
         <translation>Näytä &quot;Lisää tiedosto&quot;-ikkuna</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="87"/>
+        <location filename="../builtincommandlineoption.cpp" line="86"/>
         <source>Display Add Directory dialog</source>
         <translation>Näytä &quot;Lisää kansio&quot;-ikkuna</translation>
     </message>

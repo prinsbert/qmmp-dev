@@ -88,22 +88,22 @@ Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
 <context>
     <name>QmmpFileDialogImpl</name>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="261"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="260"/>
         <source>Add</source>
         <translation>추가</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="274"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="273"/>
         <source>Save</source>
         <translation>저장</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="288"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="287"/>
         <source>Directories</source>
         <translation>디렉토리</translation>
     </message>
     <message>
-        <location filename="../qmmpfiledialogimpl.cpp" line="474"/>
+        <location filename="../qmmpfiledialogimpl.cpp" line="473"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>% 1이(가) 이미 존재합니다.

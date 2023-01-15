@@ -95,23 +95,23 @@
         <translation>Año:</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="139"/>
+        <location filename="../lyricswidget.cpp" line="146"/>
         <location filename="../lyricswidget.cpp" line="230"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="150"/>
+        <location filename="../lyricswidget.cpp" line="157"/>
         <source>Not found</source>
         <translation>No encontrado</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="160"/>
+        <location filename="../lyricswidget.cpp" line="167"/>
         <source>Error: %1 - %2</source>
         <translation>Error: %1 - %2</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="173"/>
+        <location filename="../lyricswidget.cpp" line="180"/>
         <source>Receiving</source>
         <translation>Recibiendo</translation>
     </message>

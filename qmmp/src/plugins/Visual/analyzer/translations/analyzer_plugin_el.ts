@@ -9,82 +9,82 @@
         <translation>Αναλυτής Qmmp</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="323"/>
+        <location filename="../analyzer.cpp" line="317"/>
         <source>Peaks</source>
         <translation>Αιχμές</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="326"/>
+        <location filename="../analyzer.cpp" line="320"/>
         <source>Refresh Rate</source>
         <translation>Ρυθμός ανανέωσης</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="329"/>
+        <location filename="../analyzer.cpp" line="323"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="330"/>
+        <location filename="../analyzer.cpp" line="324"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="331"/>
+        <location filename="../analyzer.cpp" line="325"/>
         <source>10 fps</source>
         <translation>10 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="332"/>
+        <location filename="../analyzer.cpp" line="326"/>
         <source>5 fps</source>
         <translation>5 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="339"/>
+        <location filename="../analyzer.cpp" line="333"/>
         <source>Analyzer Falloff</source>
         <translation>Πτώση Αναλυτή</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="342"/>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="336"/>
+        <location filename="../analyzer.cpp" line="350"/>
         <source>Slowest</source>
         <translation>Βραδύτατη</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="343"/>
-        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="337"/>
+        <location filename="../analyzer.cpp" line="351"/>
         <source>Slow</source>
         <translation>Αργή</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="344"/>
-        <location filename="../analyzer.cpp" line="358"/>
+        <location filename="../analyzer.cpp" line="338"/>
+        <location filename="../analyzer.cpp" line="352"/>
         <source>Medium</source>
         <translation>Μέση</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="345"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="339"/>
+        <location filename="../analyzer.cpp" line="353"/>
         <source>Fast</source>
         <translation>Γρήγορη</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="346"/>
-        <location filename="../analyzer.cpp" line="360"/>
+        <location filename="../analyzer.cpp" line="340"/>
+        <location filename="../analyzer.cpp" line="354"/>
         <source>Fastest</source>
         <translation>Τάχιστη</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="353"/>
+        <location filename="../analyzer.cpp" line="347"/>
         <source>Peaks Falloff</source>
         <translation>Πτώση αιχμών</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="361"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Πλήρης οθόνη</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="361"/>
         <source>F</source>
         <translation>F</translation>
     </message>

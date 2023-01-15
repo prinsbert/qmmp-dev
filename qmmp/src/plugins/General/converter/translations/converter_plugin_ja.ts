@@ -91,7 +91,7 @@
     <message>
         <location filename="../converterdialog.cpp" line="134"/>
         <location filename="../converterdialog.cpp" line="358"/>
-        <location filename="../converterdialog.cpp" line="364"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
         <translation>エラーです</translation>
     </message>
@@ -126,7 +126,7 @@
         <translation>&quot;%1&quot; を実行できません。プログラムがみつかりません。</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="364"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>プロセス &quot;%1&quot; がエラーで終了しました。</translation>
     </message>

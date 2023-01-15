@@ -4,87 +4,87 @@
 <context>
     <name>BuiltinCommandLineOption</name>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="82"/>
+        <location filename="../builtincommandlineoption.cpp" line="81"/>
         <source>Skip forward in playlist</source>
         <translation>Прескочи напријед у листи нумера</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="83"/>
+        <location filename="../builtincommandlineoption.cpp" line="82"/>
         <source>Skip backwards in playlist</source>
         <translation>Прескочи назад у листи нумера</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="72"/>
+        <location filename="../builtincommandlineoption.cpp" line="71"/>
         <source>Start playing current song</source>
         <translation>Пусти текућу нумеру</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="71"/>
+        <location filename="../builtincommandlineoption.cpp" line="70"/>
         <source>Don&apos;t clear the playlist</source>
         <translation>Не чисти листу нумера</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="73"/>
+        <location filename="../builtincommandlineoption.cpp" line="72"/>
         <source>Pause current song</source>
         <translation>Паузирај текућу нумеру</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="74"/>
+        <location filename="../builtincommandlineoption.cpp" line="73"/>
         <source>Pause if playing, play otherwise</source>
         <translation>Паузирај/пусти</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="75"/>
+        <location filename="../builtincommandlineoption.cpp" line="74"/>
         <source>Stop current song</source>
         <translation>Заустави текућу нумеру</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="76"/>
+        <location filename="../builtincommandlineoption.cpp" line="75"/>
         <source>Display Jump to File dialog</source>
         <translation>Прикажи дијалог Скочи на</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="77"/>
+        <location filename="../builtincommandlineoption.cpp" line="76"/>
         <source>Quit application</source>
         <translation>Напусти програм</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="78"/>
+        <location filename="../builtincommandlineoption.cpp" line="77"/>
         <source>Set playback volume (example: qmmp --volume 20)</source>
         <translation>Постави јачину звука (примјер: qmmp --volume 20)</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="79"/>
+        <location filename="../builtincommandlineoption.cpp" line="78"/>
         <source>Print volume level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="80"/>
+        <location filename="../builtincommandlineoption.cpp" line="79"/>
         <source>Mute/Restore volume</source>
         <translation>Утишај/врати звук</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="81"/>
+        <location filename="../builtincommandlineoption.cpp" line="80"/>
         <source>Print mute status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="84"/>
+        <location filename="../builtincommandlineoption.cpp" line="83"/>
         <source>Show/hide application</source>
         <translation>Прикажи/сакриј програм</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="85"/>
+        <location filename="../builtincommandlineoption.cpp" line="84"/>
         <source>Show main window</source>
         <translation>Прикажи главни прозор</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="86"/>
+        <location filename="../builtincommandlineoption.cpp" line="85"/>
         <source>Display Add File dialog</source>
         <translation>Прикажи дијалог додавања фајла</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="87"/>
+        <location filename="../builtincommandlineoption.cpp" line="86"/>
         <source>Display Add Directory dialog</source>
         <translation>Прикажи дијалог додавања фасцикле</translation>
     </message>

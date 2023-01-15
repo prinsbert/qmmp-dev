@@ -9,82 +9,82 @@
         <translation>Qmmp 可视化分析器</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="323"/>
+        <location filename="../analyzer.cpp" line="317"/>
         <source>Peaks</source>
         <translation>峰</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="326"/>
+        <location filename="../analyzer.cpp" line="320"/>
         <source>Refresh Rate</source>
         <translation>刷新率</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="329"/>
+        <location filename="../analyzer.cpp" line="323"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="330"/>
+        <location filename="../analyzer.cpp" line="324"/>
         <source>25 fps</source>
         <translation>25 帧每秒</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="331"/>
+        <location filename="../analyzer.cpp" line="325"/>
         <source>10 fps</source>
         <translation>10 帧每秒</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="332"/>
+        <location filename="../analyzer.cpp" line="326"/>
         <source>5 fps</source>
         <translation>5 帧每秒</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="339"/>
+        <location filename="../analyzer.cpp" line="333"/>
         <source>Analyzer Falloff</source>
         <translation>分析器坠落</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="342"/>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="336"/>
+        <location filename="../analyzer.cpp" line="350"/>
         <source>Slowest</source>
         <translation>最慢</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="343"/>
-        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="337"/>
+        <location filename="../analyzer.cpp" line="351"/>
         <source>Slow</source>
         <translation>慢</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="344"/>
-        <location filename="../analyzer.cpp" line="358"/>
+        <location filename="../analyzer.cpp" line="338"/>
+        <location filename="../analyzer.cpp" line="352"/>
         <source>Medium</source>
         <translation>中等</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="345"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="339"/>
+        <location filename="../analyzer.cpp" line="353"/>
         <source>Fast</source>
         <translation>快</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="346"/>
-        <location filename="../analyzer.cpp" line="360"/>
+        <location filename="../analyzer.cpp" line="340"/>
+        <location filename="../analyzer.cpp" line="354"/>
         <source>Fastest</source>
         <translation>最快</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="353"/>
+        <location filename="../analyzer.cpp" line="347"/>
         <source>Peaks Falloff</source>
         <translation>顶峰坠落</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="361"/>
         <source>&amp;Full Screen</source>
         <translation>全屏(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="367"/>
+        <location filename="../analyzer.cpp" line="361"/>
         <source>F</source>
         <translation>F</translation>
     </message>
