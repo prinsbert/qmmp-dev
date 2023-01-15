@@ -596,7 +596,7 @@
     <message>
         <location filename="../configdialog.cpp" line="89"/>
         <source>File Types</source>
-        <translation>Типы файлов</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="206"/>
@@ -731,7 +731,7 @@
     <message>
         <location filename="../configdialog.cpp" line="364"/>
         <source>Korean</source>
-        <translation>Корейский</translation>
+        <translation>корейский</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="365"/>
@@ -766,7 +766,7 @@
     <message>
         <location filename="../configdialog.cpp" line="371"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>шведский</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="372"/>
@@ -786,12 +786,12 @@
     <message>
         <location filename="../configdialog.cpp" line="375"/>
         <source>Serbian (Ijekavian)</source>
-        <translation>Сербский (иекавский)</translation>
+        <translation>сербский (иекавский)</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="376"/>
         <source>Serbian (Ekavian)</source>
-        <translation>Сербский (экавский)</translation>
+        <translation>сербский (экавский)</translation>
     </message>
 </context>
 <context>
@@ -1432,27 +1432,27 @@ Do you want to replace it?</source>
     <message>
         <location filename="../winfileassocpage.cpp" line="109"/>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="110"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>Не все файлы могут быть ассоциированы. Проверьте свои права и попытайтесь снова.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="117"/>
         <source>Check all file types in the list</source>
-        <translation>Выбрать все типы файлов в списке</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="118"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Отметьте типы файлов, которые хотите связать с Qmmp. После нажатия Применить, отмеченные типы файлов будут ассоциированы с Qmmp. Если убрать отметку, файловая ассоциация будет восстановлена.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="122"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation>&lt;b&gt;Примечание:&lt;/b&gt; Восстановление ассоциаций не работает в Windows Vista/7.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
