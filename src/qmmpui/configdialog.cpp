@@ -368,6 +368,7 @@ void ConfigDialog::loadLanguages()
         { "ru_RU", tr("Russian") },
         { "sr_RS", tr("Serbian") },
         { "sk", tr("Slovak") },
+        { "sw", tr("Swedish") },
         { "es", tr("Spanish") },
         { "tr", tr("Turkish") },
         { "uk_UA", tr("Ukrainian") },
