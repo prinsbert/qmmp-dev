@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -368,7 +368,7 @@ void ConfigDialog::loadLanguages()
         { "ru_RU", tr("Russian") },
         { "sr_RS", tr("Serbian") },
         { "sk", tr("Slovak") },
-        { "sw", tr("Swedish") },
+        { "sv", tr("Swedish") },
         { "es", tr("Spanish") },
         { "tr", tr("Turkish") },
         { "uk_UA", tr("Ukrainian") },
