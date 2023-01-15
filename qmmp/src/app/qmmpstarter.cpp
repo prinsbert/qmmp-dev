@@ -25,6 +25,8 @@
 #include <QSettings>
 #include <QIcon>
 #include <QProcess>
+#include <QTranslator>
+#include <QLibraryInfo>
 #include <cstdlib>
 #include <iostream>
 #include <unistd.h>
@@ -76,6 +78,15 @@ QMMPStarter::QMMPStarter() : QObject()
     QSettings::setDefaultFormat(QSettings::IniFormat);
     QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, configDirInfo.canonicalPath());
 #endif
+
+    QTranslator *translator = new QTranslator(qApp);
+    QString locale = Qmmp::systemLanguageID();
+    if(translator->load(QString(":/qmmp_") + locale))
+        qApp->installTranslator(translator);
+
+    QTranslator *qt_translator = new QTranslator(qApp);
+    if(qt_translator->load(QLibraryInfo::path(QLibraryInfo::TranslationsPath) + "/qtbase_" + locale))
+        qApp->installTranslator(qt_translator);
 
     m_option_manager = new BuiltinCommandLineOption(this);
     QStringList tmp = qApp->arguments().mid(1);

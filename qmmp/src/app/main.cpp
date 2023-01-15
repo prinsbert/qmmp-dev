@@ -20,9 +20,7 @@
 
 #include <QApplication>
 #include <QLocale>
-#include <QLibraryInfo>
 #include <QIcon>
-#include <QTranslator>
 #include <stdio.h>
 #include <stdlib.h>
 #ifdef Q_OS_WIN
@@ -52,15 +50,6 @@ int main(int argc, char *argv[])
     icon.addFile(":/256x256/qmmp.png");
     icon.addFile(":/scalable/qmmp.svgz");
     a.setWindowIcon(icon);
-
-    QTranslator translator;
-    QString locale = Qmmp::systemLanguageID();
-    if(translator.load(QString(":/qmmp_") + locale))
-        a.installTranslator(&translator);
-
-    QTranslator qt_translator;
-    if(qt_translator.load(QLibraryInfo::path(QLibraryInfo::TranslationsPath) + "/qtbase_" + locale))
-        a.installTranslator(&qt_translator);
 
     QMMPStarter starter;
 
