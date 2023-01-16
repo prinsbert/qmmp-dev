@@ -13,7 +13,6 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz
     cd $NAME-$VERSION
-    #cat ../../seeking_mingw.diff | patch -p1
     ./configure --prefix=$PREFIX --enable-shared --disable-static
     make -j${JOBS}
     make install
