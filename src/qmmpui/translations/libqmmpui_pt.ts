@@ -596,7 +596,7 @@
     <message>
         <location filename="../configdialog.cpp" line="89"/>
         <source>File Types</source>
-        <translation>Tipos de ficheiro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="206"/>
@@ -766,7 +766,7 @@
     <message>
         <location filename="../configdialog.cpp" line="371"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Sueco</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="372"/>
@@ -1432,27 +1432,27 @@ Gostaria de o substituir?</translation>
     <message>
         <location filename="../winfileassocpage.cpp" line="109"/>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="110"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>Nem todos os tipos de ficheiro foram associados. Verifique as suas permissões e tente novamente.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="117"/>
         <source>Check all file types in the list</source>
-        <translation>Marcar todos os tipos de ficheiro da lista</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="118"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Assinale as extensões de ficheiros que pretende gerir com o Qmmp. Se clicar em Aplicar, os tipos de ficheiro marcados serão associados. Se desmarcar um tipo, a associação original será restaurada.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="122"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation>&lt;b&gt;Nota:&lt;/b&gt; o restauro não funciona nos sistemas Windows Vista/7.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -596,7 +596,7 @@
     <message>
         <location filename="../configdialog.cpp" line="89"/>
         <source>File Types</source>
-        <translation>Tiedostotyypit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="206"/>
@@ -1432,27 +1432,27 @@ Haluatko korvata sen?</translation>
     <message>
         <location filename="../winfileassocpage.cpp" line="109"/>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="110"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>Kaikkia tiedostoja ei voitu yhdistää. Tarkista oikeutesi ja yritä uudelleen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="117"/>
         <source>Check all file types in the list</source>
-        <translation>Tarkista listan kaikki tiedostotyypit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="118"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Tarkista mediatiedostot, joita haluat Qmmp:n käsittelevän. Kun napsautat &quot;Käytä&quot;, tarkistetut tiedostot liitetään Qmmp:lle. Jos poistat mediatyypin valinnan, kytkentä palautetaan.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="122"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation>&lt;b&gt;Huomaa:&lt;/b&gt; Windows Vista ja 7, palautus ei toimi.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

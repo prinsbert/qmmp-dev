@@ -31,7 +31,7 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="105"/>
         <source>License Agreement</source>
-        <translation>라이센스 계약</translation>
+        <translation>라이선스 계약</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="71"/>
@@ -596,7 +596,7 @@
     <message>
         <location filename="../configdialog.cpp" line="89"/>
         <source>File Types</source>
-        <translation>파일 유형</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="206"/>
@@ -766,7 +766,7 @@
     <message>
         <location filename="../configdialog.cpp" line="371"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>스웨덴어</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="372"/>
@@ -1432,27 +1432,27 @@ Do you want to replace it?</source>
     <message>
         <location filename="../winfileassocpage.cpp" line="109"/>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="110"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>일부 파일을 연결할 수 없습니다. 보안 사용 권한을 확인한 후 다시 시도하십시오.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="117"/>
         <source>Check all file types in the list</source>
-        <translation>목록의 모든 파일 유형 확인</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="118"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Qmmp에서 처리할 미디어 파일 확장자를 확인합니다. 적용을 클릭하면 선택한 파일이 Qmmp와 연결됩니다. 미디어 유형을 선택 해제하면 파일 연결이 복원됩니다.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="122"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation>&lt;b&gt;참고:&lt;/b&gt; Windows Vista/7에서는 복원이 작동하지 않습니다.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

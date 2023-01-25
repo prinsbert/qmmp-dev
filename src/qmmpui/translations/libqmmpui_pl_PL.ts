@@ -596,7 +596,7 @@
     <message>
         <location filename="../configdialog.cpp" line="89"/>
         <source>File Types</source>
-        <translation>Typy plików</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="206"/>
@@ -766,7 +766,7 @@
     <message>
         <location filename="../configdialog.cpp" line="371"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Szwedzki</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="372"/>
@@ -1432,27 +1432,27 @@ Chcesz nadpisać?</translation>
     <message>
         <location filename="../winfileassocpage.cpp" line="109"/>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="110"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>Nie wszystkie pliki zostały skojarzone. Proszę sprawdzić uprawienia systemowe i ponowić.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="117"/>
         <source>Check all file types in the list</source>
-        <translation>Zaznacza wszystkie typy plików na liście</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="118"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Zaznacz rozszerzenia plików, które Qmmp ma obsługiwać. Po kliknięciu Zastosuj zaznaczone pliki zostaną skojarzone z Qmmp. Jeśli odznaczysz typ pliku, pierwotne skojarzenie zostanie przywrócone.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="122"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation>&lt;b&gt;Uwaga:&lt;/b&gt; Przywracanie nie działa na Windows Vista/7.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

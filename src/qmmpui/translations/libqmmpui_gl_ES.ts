@@ -596,7 +596,7 @@
     <message>
         <location filename="../configdialog.cpp" line="89"/>
         <source>File Types</source>
-        <translation>Tipos de arquivo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="206"/>
@@ -1432,27 +1432,27 @@ Quere reemplazalo?</translation>
     <message>
         <location filename="../winfileassocpage.cpp" line="109"/>
         <source>Warning</source>
-        <translation>Advertencia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="110"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation>Non tódolos arquivos poden ser asociados. Por favor, comproba os permisos de seguridade e reintentao.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="117"/>
         <source>Check all file types in the list</source>
-        <translation>Marcar tódolos tipos de arquivo da lista</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="118"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation>Marca tódolas extensións de arquivo que queiras asociar a Qmmp. Cando premas Aplicar, os arquivos marcados serán asociados con Qmmp. Se desmarcas un tipo multimedia, a asociación do arquivo será restaurada.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="122"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation>&lt;b&gt;Nota:&lt;/b&gt; A restauración non funciona en Windows Vista/7.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
