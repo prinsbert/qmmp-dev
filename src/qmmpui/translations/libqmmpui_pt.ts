@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="pt">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -596,7 +594,7 @@
     <message>
         <location filename="../configdialog.cpp" line="89"/>
         <source>File Types</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipos de ficheiro</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="206"/>
@@ -1432,27 +1430,27 @@ Gostaria de o substituir?</translation>
     <message>
         <location filename="../winfileassocpage.cpp" line="109"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="110"/>
         <source>Not all files could be associated. Please check your security permissions and retry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem todos os tipos de ficheiro foram associados. Verifique as suas permissões e tente novamente.</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="117"/>
         <source>Check all file types in the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcar todos os tipos de ficheiro da lista</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="118"/>
         <source>Check the media file extensions you would like Qmmp to handle. When you click Apply, the checked files will be associated with Qmmp. If you uncheck a media type, the file association will be restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Assinale as extensões de ficheiros que pretende gerir com o Qmmp. Se clicar em Aplicar, os tipos de ficheiro marcados serão associados. Se desmarcar um tipo, a associação original será restaurada.</translation>
     </message>
     <message>
         <location filename="../winfileassocpage.cpp" line="122"/>
         <source>&lt;b&gt;Note:&lt;/b&gt; Restoration doesn&apos;t work on Windows Vista/7.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Nota:&lt;/b&gt; o restauro não funciona nos sistemas Windows Vista/7.</translation>
     </message>
 </context>
 </TS>
