@@ -31,7 +31,7 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="105"/>
         <source>License Agreement</source>
-        <translation>라이센스 계약</translation>
+        <translation>라이선스 계약</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="70"/>
@@ -761,7 +761,7 @@
     <message>
         <location filename="../configdialog.cpp" line="358"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>스웨덴어</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="359"/>

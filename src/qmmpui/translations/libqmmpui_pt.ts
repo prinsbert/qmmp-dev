@@ -761,7 +761,7 @@
     <message>
         <location filename="../configdialog.cpp" line="358"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Sueco</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="359"/>
