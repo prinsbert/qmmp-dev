@@ -120,7 +120,7 @@ static size_t curl_header(void *data, size_t size, size_t nmemb,
     return data_size;
 }
 
-int curl_progress(void *pointer, double dltotal, double dlnow, double ultotal, double ulnow)
+int curl_progress(void *pointer, curl_off_t dltotal, curl_off_t dlnow, curl_off_t ultotal, curl_off_t ulnow)
 {
     Q_UNUSED(dltotal);
     Q_UNUSED(dlnow);
@@ -346,8 +346,8 @@ void HttpStreamReader::run()
     curl_easy_setopt(m_handle, CURLOPT_SSL_VERIFYHOST, 0);
     // Enable progress meter
     curl_easy_setopt(m_handle, CURLOPT_NOPROGRESS, 0);
-    curl_easy_setopt(m_handle, CURLOPT_PROGRESSDATA, this);
-    curl_easy_setopt(m_handle, CURLOPT_PROGRESSFUNCTION, curl_progress);
+    curl_easy_setopt(m_handle, CURLOPT_XFERINFODATA, this);
+    curl_easy_setopt(m_handle, CURLOPT_XFERINFOFUNCTION, curl_progress);
     // Any kind of authentication
     curl_easy_setopt(m_handle, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
     curl_easy_setopt(m_handle, CURLOPT_VERBOSE, 1);
