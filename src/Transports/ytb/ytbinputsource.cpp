@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2019-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -134,7 +134,7 @@ bool YtbInputSource::isReady() const
 
 bool YtbInputSource::isWaiting() const
 {
-    return !m_ready;
+    return m_getStreamReply && !m_buffer->hasEnougthData();
 }
 
 QString YtbInputSource::contentType() const
@@ -266,7 +266,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
     m_getStreamReply = m_manager->get(m_request);
     m_getStreamReply->setReadBufferSize(0);
-    connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+    connect(m_getStreamReply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(onDownloadProgress(qint64,qint64)));
 }
 
 void YtbInputSource::onFinished(QNetworkReply *reply)
@@ -301,7 +301,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
             m_buffer->setOffset(m_offset);
             m_getStreamReply = m_manager->get(m_request);
             m_getStreamReply->setReadBufferSize(0);
-            connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+            connect(m_getStreamReply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(onDownloadProgress(qint64,qint64)));
         }
     }
 
@@ -348,6 +348,6 @@ void YtbInputSource::onSeekRequest()
         m_buffer->setOffset(m_offset);
         m_getStreamReply = m_manager->get(m_request);
         m_getStreamReply->setReadBufferSize(0);
-        connect(m_getStreamReply, SIGNAL(downloadProgress(qint64, qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+        connect(m_getStreamReply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(onDownloadProgress(qint64,qint64)));
     }
 }
