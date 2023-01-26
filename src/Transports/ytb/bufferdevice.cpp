@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019 by Ilya Kotov                                      *
+ *   Copyright (C) 2019-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -126,6 +126,11 @@ void BufferDevice::stop()
     m_waitCondition.wakeAll();
 }
 
+bool BufferDevice::hasEnougthData() const
+{
+    return ((m_writeAt - m_readAt) >= PREBUFFER_SIZE) || ((m_offset + m_writeAt) == m_size);
+}
+
 qint64 BufferDevice::readData(char *data, qint64 maxSize)
 {
     QMutexLocker locker(&m_mutex);
@@ -143,7 +148,7 @@ qint64 BufferDevice::readData(char *data, qint64 maxSize)
     }
 
     if(m_stopped)
-        return 0;
+        return -1;
 
     qint64 size = qMin(maxSize, m_writeAt - m_readAt);
     memcpy(data, m_buffer + m_readAt, size);
