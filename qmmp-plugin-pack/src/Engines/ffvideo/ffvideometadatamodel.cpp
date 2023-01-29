@@ -69,7 +69,11 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
          AVCodecParameters *c = m_in->streams[audioIndex]->codecpar;
          ep << MetaDataItem(tr("Audio bitrate"), qint64(c->bit_rate / 1000), tr("kbps"));
          ep << MetaDataItem(tr("Audio sample rate"), c->sample_rate, tr("Hz"));
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,37,100)) //ffmpeg-5.1
+         ep << MetaDataItem(tr("Audio channels"), c->ch_layout.nb_channels);
+#else
          ep << MetaDataItem(tr("Audio channels"), c->channels);
+#endif
     }
 
     if(videoIndex >= 0)

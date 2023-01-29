@@ -31,6 +31,8 @@ SET(libffvideo_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+add_compile_options(-Wno-missing-field-initializers)
+
 IF(FFMPEG_FOUND)
 ADD_LIBRARY(ffvideo MODULE ${libffvideo_SRCS} ${libffvideo_RCC_SRCS} ${libffvideo_HDRS})
 target_link_libraries(ffvideo PRIVATE Qt6::Widgets ${QMMP_LDFLAGS} ${FFMPEG_LDFLAGS})

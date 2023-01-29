@@ -24,6 +24,9 @@ RESOURCES = translations/translations.qrc
 
 DEFINES += __STDC_CONSTANT_MACROS
 
+PKGCONFIG += libavcodec libavformat libavutil libswscale libswresample
+
+QMAKE_CXXFLAGS += -Wno-missing-field-initializers
+
 target.path = $$PLUGIN_DIR/Engines
 INSTALLS += target
-PKGCONFIG += libavcodec libavformat libavutil libswscale libswresample
