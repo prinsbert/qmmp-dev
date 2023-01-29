@@ -119,10 +119,8 @@ void VideoThread::run()
                 timer_offset += timer.elapsed();
                 continue;
             }
-            else
-            {
-                timer.restart();
-            }
+
+            timer.restart();
             m_prev_pause = m_pause;
         }
         m_buffer->mutex()->lock();

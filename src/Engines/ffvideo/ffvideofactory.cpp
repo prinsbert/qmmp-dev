@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,7 +21,6 @@
 #include <QMessageBox>
 #include <QtPlugin>
 #include <QDir>
-#include "ffvideofactory.h"
 #include "ffmpegengine.h"
 #include "ffvideometadatamodel.h"
 #include "ffvideofactory.h"
@@ -152,19 +151,19 @@ void FFVideoFactory::showSettings(QWidget *)
 
 void FFVideoFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About FFVideo Plugin"),
-                        tr("FFmpeg-based video plugin for Qmmp")+"\n"+
-                        tr("Compiled against:") + "\n"+
-                        QString("libavformat-%1\n"
-                                "libavcodec-%2\n"
-                                "libavutil-%3\n"
-                                "libswscale-%4")
-                        .arg(AV_STRINGIFY(LIBAVFORMAT_VERSION))
-                        .arg(AV_STRINGIFY(LIBAVCODEC_VERSION))
-                        .arg(AV_STRINGIFY(LIBAVUTIL_VERSION))
-                        .arg(AV_STRINGIFY(LIBSWSCALE_VERSION))
-                        +"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About FFVideo Plugin"),
+                       tr("FFmpeg-based video plugin for Qmmp")+"\n"+
+                       tr("Compiled against:") + "\n"+
+                       QString("libavformat-%1\n"
+                               "libavcodec-%2\n"
+                               "libavutil-%3\n"
+                               "libswscale-%4")
+                       .arg(AV_STRINGIFY(LIBAVFORMAT_VERSION),
+                            AV_STRINGIFY(LIBAVCODEC_VERSION),
+                            AV_STRINGIFY(LIBAVUTIL_VERSION),
+                            AV_STRINGIFY(LIBSWSCALE_VERSION))
+                       +"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString FFVideoFactory::translation() const

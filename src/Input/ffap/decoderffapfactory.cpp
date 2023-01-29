@@ -57,8 +57,8 @@ Decoder *DecoderFFapFactory::create(const QString &path, QIODevice *i)
 {
     if(path.startsWith("ape://"))
         return new DecoderFFapCUE(path);
-    else
-        return new DecoderFFap(path, i);
+
+    return new DecoderFFap(path, i);
 }
 
 QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
