@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2016-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -181,8 +181,8 @@ void GoomWidget::clear()
 void GoomWidget::createMenu()
 {
     m_menu = new QMenu (this);
-    connect(m_menu, SIGNAL(triggered (QAction *)),SLOT(writeSettings()));
-    connect(m_menu, SIGNAL(triggered (QAction *)),SLOT(readSettings()));
+    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(writeSettings()));
+    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(readSettings()));
 
     QMenu *refreshRate = m_menu->addMenu(tr("Refresh Rate"));
     m_fpsGroup = new QActionGroup(this);

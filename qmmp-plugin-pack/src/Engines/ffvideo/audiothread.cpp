@@ -138,9 +138,8 @@ void AudioThread::run()
                 m_prev_pause = m_pause;
                 continue;
             }
-            else
-                m_output->resume();
 
+            m_output->resume();
             m_prev_pause = m_pause;
         }
         m_buffer->mutex()->lock();

@@ -57,12 +57,14 @@ QByteArray ArchiveReader::unpack(const QString &path)
             lPath.endsWith(".xmz") ||
             lPath.endsWith(".itz"))
         return unzip(path);
-    else if (lPath.endsWith(".mdgz") ||
+
+    if (lPath.endsWith(".mdgz") ||
              lPath.endsWith(".s3gz") ||
              lPath.endsWith(".xmgz") ||
              lPath.endsWith(".itgz"))
         return gunzip(path);
-    else if (lPath.endsWith(".mdbz"))
+
+    if (lPath.endsWith(".mdbz"))
         return bunzip2(path);
 
     return QByteArray();

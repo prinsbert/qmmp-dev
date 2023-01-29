@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2019-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -70,7 +70,7 @@ void YtbInputFactory::showAbout(QWidget *parent)
                        tr("Qmmp Youtube Transport Plugin") + "<br>" +
                        tr("This plugin adds feature to play audio from Youtube using %1 "
                           "utility").arg(backendName) + "<br>" +
-                       tr("%1 version: %2").arg(backend).arg(version) + "<br>" +
+                       tr("%1 version: %2").arg(backend, version) + "<br>" +
                        tr("Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;"));
 }
 

@@ -34,18 +34,11 @@ DecoderFFapCUE::DecoderFFapCUE(const QString &url) : Decoder(),
 
 DecoderFFapCUE::~DecoderFFapCUE()
 {
-    if(m_decoder)
-        delete m_decoder;
-    m_decoder = nullptr;
-    if(m_parser)
-        delete m_parser;
-    m_parser = nullptr;
-    if(m_buf)
-        delete [] m_buf;
-    m_buf = nullptr;
+    delete m_decoder;
+    delete m_parser;
+    delete [] m_buf;
     if(m_input)
         m_input->deleteLater();
-    m_input = nullptr;
 }
 
 bool DecoderFFapCUE::initialize()
@@ -165,8 +158,7 @@ qint64 DecoderFFapCUE::read(unsigned char *data, qint64 size)
     len2 = (len2 / m_frameSize) * m_frameSize; //whole of samples of each channel
     m_written += len2;
     //save data of the next track
-    if(m_buf)
-        delete[] m_buf;
+    delete[] m_buf;
     m_buf_size = len - len2;
     m_buf = new char[m_buf_size];
     memmove(m_buf, data + len2, m_buf_size);
@@ -182,8 +174,8 @@ const QString DecoderFFapCUE::nextURL() const
 {
     if(m_track +1 <= m_parser->count())
         return m_parser->url(m_track + 1);
-    else
-        return QString();
+
+    return QString();
 }
 
 void DecoderFFapCUE::next()
