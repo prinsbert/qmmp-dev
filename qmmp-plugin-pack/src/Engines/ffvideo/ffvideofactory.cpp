@@ -130,7 +130,7 @@ QList<TrackInfo *> FFVideoFactory::createPlayList(const QString &path, TrackInfo
             info->setValue(Qmmp::SAMPLERATE, c->sample_rate);
 #if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,37,100)) //ffmpeg-5.1
             info->setValue(Qmmp::CHANNELS, c->ch_layout.nb_channels);
-#elif
+#else
             info->setValue(Qmmp::CHANNELS, c->channels);
 #endif
 
