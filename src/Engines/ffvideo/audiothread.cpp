@@ -115,6 +115,18 @@ void AudioThread::run()
     m_prev_pause = false;
     AVFrame *frame = av_frame_alloc();
     AVFrame *oframe = av_frame_alloc();
+#if (LIBSWRESAMPLE_VERSION_INT >= AV_VERSION_INT(4,5,100)) //ffmpeg-5.1
+    AVChannelLayout outChLayout = AV_CHANNEL_LAYOUT_STEREO;
+    SwrContext *swr = nullptr;
+    swr_alloc_set_opts2(&swr,                      // we're allocating a new context
+                        &outChLayout,              // out_ch_layout
+                        AV_SAMPLE_FMT_S16,         // out_sample_fmt
+                        44100,                     // out_sample_rate
+                        &m_context->ch_layout,     // in_ch_layout
+                        m_context->sample_fmt,     // in_sample_fmt
+                        m_context->sample_rate,    // in_sample_rate
+                        0, nullptr);
+#else
     SwrContext *swr = swr_alloc_set_opts(nullptr,                   // we're allocating a new context
                                          AV_CH_LAYOUT_STEREO,       // out_ch_layout
                                          AV_SAMPLE_FMT_S16,         // out_sample_fmt
@@ -123,6 +135,7 @@ void AudioThread::run()
                                          m_context->sample_fmt,     // in_sample_fmt
                                          m_context->sample_rate,    // in_sample_rate
                                          0, nullptr);
+#endif
 
     StateHandler::instance()->dispatch(m_output->audioParameters());
 
@@ -194,7 +207,11 @@ void AudioThread::run()
 
         if((err = avcodec_receive_frame(m_context, frame)) == 0)
         {
+#if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,37,100)) //ffmpeg-5.1
+            oframe->ch_layout = AV_CHANNEL_LAYOUT_STEREO;
+#else
             oframe->channel_layout = AV_CH_LAYOUT_STEREO;
+#endif
             oframe->sample_rate = 44100;
             oframe->format = AV_SAMPLE_FMT_S16;
             oframe->pts = frame->pts;
