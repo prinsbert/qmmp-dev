@@ -31,7 +31,7 @@
     <message>
         <location filename="../ytbinputfactory.cpp" line="74"/>
         <source>Written by: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation>Desenvolvido: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
+        <translation>Desenvolvido por: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
 </context>
 <context>

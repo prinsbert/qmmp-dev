@@ -14,22 +14,22 @@
         <translation>映像ファイル</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="155"/>
+        <location filename="../ffvideofactory.cpp" line="160"/>
         <source>About FFVideo Plugin</source>
         <translation>FFVideo プラグインについて</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="156"/>
+        <location filename="../ffvideofactory.cpp" line="161"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>FFmpeg を使用する QMMP 用映像プラグイン</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="157"/>
+        <location filename="../ffvideofactory.cpp" line="162"/>
         <source>Compiled against:</source>
         <translation>コンパイルに使用したライブラリ:</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="167"/>
+        <location filename="../ffvideofactory.cpp" line="172"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
-        <location filename="../ffvideometadatamodel.cpp" line="79"/>
+        <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>kbps</source>
         <translation type="unfinished"></translation>
     </message>
@@ -74,17 +74,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="72"/>
+        <location filename="../ffvideometadatamodel.cpp" line="73"/>
+        <location filename="../ffvideometadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
         <translation>音声チャンネル数</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="78"/>
+        <location filename="../ffvideometadatamodel.cpp" line="82"/>
         <source>Video size</source>
         <translation>映像の寸法</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="79"/>
+        <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>Video bitrate</source>
         <translation>映像ビットレート</translation>
     </message>
