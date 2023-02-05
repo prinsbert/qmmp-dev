@@ -1,0 +1,19 @@
+Description: Remove use of git during build
+Author: Unit 193 <unit193@debian.org>
+Forwarded: not-needed
+
+---
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/Makefile	2022-06-22 18:43:02.160931443 -0400
++++ b/Makefile	2022-06-22 18:43:02.156931457 -0400
+@@ -9,7 +9,7 @@
+ # Keep this list in sync with MANIFEST.in
+ # intended use: when building a source distribution,
+ # make pypi-files && python setup.py sdist
+-pypi-files: AUTHORS Changelog.md LICENSE README.md README.txt supportedsites \
++pypi-files: Changelog.md LICENSE README.md README.txt supportedsites \
+ 	        completions yt-dlp.1 requirements.txt setup.cfg devscripts/* test/*
+ 
+ .PHONY: all clean install test tar pypi-files completions ot offlinetest codetest supportedsites
