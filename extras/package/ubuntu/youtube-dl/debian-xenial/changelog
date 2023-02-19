@@ -1,3 +1,9 @@
+youtube-dl (2023.02.19~git20230219.2dd6c6e-1ubuntu1~xenial0) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 19 Feb 2023 11:14:04 +0300
+
 youtube-dl (2021.12.17-1ubuntu1~xenial1) xenial; urgency=medium
 
   * New upstream release.

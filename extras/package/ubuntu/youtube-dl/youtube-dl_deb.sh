@@ -1,14 +1,15 @@
 #!/bin/sh
 
-VERSION=2021.12.17
+VERSION=2023.02.19~git20230219.2dd6c6e
 UBUNTU_CODENAMES='xenial bionic focal'
 BUILD_ROOT=build-root
 
 
 prepare ()
 {
-    cp ../youtube-dl-$VERSION.tar.gz ./
-    mv ./youtube-dl-$VERSION.tar.gz ./youtube-dl_$VERSION.orig.tar.gz
+    unzip ../master.zip
+    tar -czvf youtube-dl_$VERSION.orig.tar.gz youtube-dl-master
+    rm -rf youtube-dl-master
 }
 
 build ()
@@ -16,15 +17,15 @@ build ()
     echo '****'$1'****'
     mkdir $1
     cd $1
-    tar xvzf ../../youtube-dl-$VERSION.tar.gz
-    mkdir youtube-dl/debian
-    cp -rv ../../debian-$1/* -t youtube-dl/debian/
+    tar xvzf ../youtube-dl_$VERSION.orig.tar.gz
+    mkdir youtube-dl-master/debian
+    cp -rv ../../debian-$1/* -t youtube-dl-master/debian/
     cp ../youtube-dl_$VERSION.orig.tar.gz ./
-    cd youtube-dl
-    if [ "$1" = "xenial" ] ; then
-        debuild -S -sa -d -kF594F6B4
+    cd youtube-dl-master
+    if [ "$1" = "bionic" ] ; then
+        debuild -S -sa -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     else
-        debuild -S -sd -d -kF594F6B4
+        debuild -S -sd -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     fi
     cd ..
     cd ..
@@ -43,12 +44,12 @@ upload ()
 clean ()
 {
     rm -rf $BUILD_ROOT
-    rm youtube-dl-$VERSION.tar.gz
+    rm master.zip
 }
 
 case $1 in
     --download)
-		wget https://youtube-dl.org/downloads/latest/youtube-dl-${VERSION}.tar.gz
+		wget https://github.com/ytdl-org/youtube-dl/archive/refs/heads/master.zip
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES
