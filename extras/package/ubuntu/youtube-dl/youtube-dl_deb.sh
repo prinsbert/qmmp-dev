@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2023.02.19~git20230219.2dd6c6e
+VERSION=2023.02.19~git20230219.2dd6c6e-1
 UBUNTU_CODENAMES='xenial bionic focal'
 BUILD_ROOT=build-root
 
@@ -22,7 +22,7 @@ build ()
     cp -rv ../../debian-$1/* -t youtube-dl-master/debian/
     cp ../youtube-dl_$VERSION.orig.tar.gz ./
     cd youtube-dl-master
-    if [ "$1" = "bionic" ] ; then
+    if [ "$1" = "xenial" ] ; then
         debuild -S -sa -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     else
         debuild -S -sd -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4

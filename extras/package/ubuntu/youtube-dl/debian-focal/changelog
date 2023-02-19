@@ -1,3 +1,9 @@
+youtube-dl (2023.02.19~git20230219.2dd6c6e-1-1ubuntu1~focal0) focal; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 19 Feb 2023 13:52:43 +0300
+
 youtube-dl (2023.02.19~git20230219.2dd6c6e-1ubuntu1~focal0) focal; urgency=medium
 
   * New upstream release.
