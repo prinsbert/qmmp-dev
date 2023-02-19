@@ -1826,3 +1826,11 @@ Version 2.1.2
 * fixed Russian translation
 * updated Finnish translation (Kimmo Kujansuu)
 * updated Spanish translation (Joel Barrios)
+
+Version 2.1.3
+* fixed latest cURL API support
+* fixed crash in the ladspa plugin (Linearithmik)
+* fixed memory leak in the wavpack plugin
+* fixed locale override under Windows
+* fixed ADTS header detection in the aac plugin
+* hide empty plugin categories
