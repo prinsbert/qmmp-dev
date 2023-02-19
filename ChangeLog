@@ -1817,4 +1817,5 @@ Version 1.6.3
 * fixed crash in the ladspa plugin (Linearithmik)
 * fixed memory leak in the wavpack plugin
 * fixed ADTS header detection in the aac plugin
+* fixed error handling in the ffmpeg plugin
 * hide empty plugin categories
