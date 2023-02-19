@@ -298,3 +298,8 @@ Version 0.12.1
 Version 0.12.2
 * fixed cmake warning
 * updated French translation (Adrien Vigneron)
+
+Version 0.12.3
+* fixed build with FFmpeg 5.1
+* enabled libxmp plugin under Windows
+* updated home page
