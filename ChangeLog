@@ -367,3 +367,7 @@ Version 1.6.0
 * ported to qmmp 1.6 API
 * added modplug plugin
 * removed xmp plugin
+
+Version 1.6.1
+* added FFmpeg 5.1 support in the ffvideo plugin
+* fixed hang-up in the ytb plugin
