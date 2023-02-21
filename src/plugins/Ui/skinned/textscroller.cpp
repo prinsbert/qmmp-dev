@@ -267,14 +267,14 @@ void TextScroller::preparePixmap(const QString &text, bool scrollable)
     {
          int textWidth = m_bitmap ? QString(text + SCROLL_SEP).size() * 5
                                   : m_metrics->width(text + SCROLL_SEP);
-         int count = 150*m_ratio / textWidth + 1;
+         int count = 154 * m_ratio / textWidth + 1;
          int width = count * textWidth;
          QString fullText;
          for(int i = 0; i < count; ++i)
          {
              fullText.append(text + SCROLL_SEP);
          }
-         m_pixmap = QPixmap(width,15*m_ratio);
+         m_pixmap = QPixmap(width, 14 * m_ratio);
          if(m_transparencyAction->isChecked())
              m_pixmap.fill(Qt::transparent);
          else
@@ -291,7 +291,7 @@ void TextScroller::preparePixmap(const QString &text, bool scrollable)
     }
     else
     {
-        m_pixmap = QPixmap(150*m_ratio,15*m_ratio);
+        m_pixmap = QPixmap(154 * m_ratio,15 * m_ratio);
         if(m_transparencyAction->isChecked())
             m_pixmap.fill(Qt::transparent);
         else
@@ -331,7 +331,7 @@ void TextScroller::updateText() //draw text according priority
     else
     {
         m_timer->stop();
-        m_pixmap = QPixmap (150*m_ratio,15*m_ratio);
+        m_pixmap = QPixmap (154*m_ratio,14*m_ratio);
         m_pixmap.fill(Qt::transparent);
         m_scroll = false;
     }
