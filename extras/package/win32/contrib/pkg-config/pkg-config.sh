@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/${NAME}_${VERSION}.zip
+    wget --no-check-certificate -nc https://download.gnome.org/binaries/win32/dependencies/${NAME}_${VERSION}.zip
   ;;
   --install)
     cd temp
