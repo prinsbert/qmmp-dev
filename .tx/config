@@ -433,49 +433,49 @@ source_lang = en
 source_file = src/plugins/Engines/mplayer/translations/mplayer_plugin_en.ts
 type = QT
 
-[qmmp-stable.description]
+[o:qmmp-development-team:p:qmmp-stable:r:description]
 file_filter = src/qmmpui/txt/description_<lang>.txt
 source_lang = en
 source_file = src/qmmpui/txt/description.txt
 type = TXT
 
-[qmmp-stable.authors]
+[o:qmmp-development-team:p:qmmp-stable:r:authors]
 file_filter = src/qmmpui/txt/authors_<lang>.txt
 source_lang = en
 source_file = src/qmmpui/txt/authors.txt
 type = TXT
 
-[qmmp-stable.translators]
+[o:qmmp-development-team:p:qmmp-stable:r:translators]
 file_filter = src/qmmpui/txt/translators_<lang>.txt
 source_lang = en
 source_file = src/qmmpui/txt/translators.txt
 type = TXT
 
-[qmmp-stable.thanks]
+[o:qmmp-development-team:p:qmmp-stable:r:thanks]
 file_filter = src/qmmpui/txt/thanks_<lang>.txt
 source_lang = en
 source_file = src/qmmpui/txt/thanks.txt
 type = TXT
 
-[qmmp-stable.qmmp-desktop]
+[o:qmmp-development-team:p:qmmp-stable:r:qmmp-desktop]
 file_filter = src/app/desktop-translations/qmmp_<lang>.desktop.in
 source_lang = en
 source_file = src/app/qmmp.desktop
 type = DESKTOP
 
-[qmmp-stable.qmmp-dir-desktop]
+[o:qmmp-development-team:p:qmmp-stable:r:qmmp-dir-desktop]
 file_filter = src/app/desktop-translations/qmmp-dir_<lang>.desktop.in
 source_lang = en
 source_file = src/app/qmmp-dir.desktop
 type = DESKTOP
 
-[qmmp-stable.qmmp-enqueue-desktop]
+[o:qmmp-development-team:p:qmmp-stable:r:qmmp-enqueue-desktop]
 file_filter = src/app/desktop-translations/qmmp-enqueue_<lang>.desktop.in
 source_lang = en
 source_file = src/app/qmmp-enqueue.desktop
 type = DESKTOP
 
-[qmmp-stable.qmmp-opencda-desktop]
+[o:qmmp-development-team:p:qmmp-stable:r:qmmp-opencda-desktop]
 file_filter = src/app/desktop-translations/qmmp-opencda_<lang>.desktop.in
 source_lang = en
 source_file = src/app/qmmp-opencda.desktop
