@@ -99,7 +99,7 @@ Espanja:
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
 
-Swedish:
+Ruotsi:
     Luna Jernberg <droidbittin@gmail.com>
 
 Turkki:
