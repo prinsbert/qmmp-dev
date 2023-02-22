@@ -45,11 +45,12 @@ do
             plug_name="qmmp"
         ;;
      esac
-     
+
      echo "Updating ${plug_name}"
 
      file_filter=`echo ${tr_dir} | sed 's/..\///'`
-     echo "[${PROJECT_NAME}.${plug_name}]" >> ${TX_CONFIG}
+
+     echo "[o:qmmp-development-team:p:${PROJECT_NAME}:r:${plug_name}]" >> ${TX_CONFIG}
 
      if [ "$plug_name" = "qmmp" ] || [ "$plug_name" = "libqmmpui" ]; then
         echo "file_filter = ${file_filter}/${plug_name}_<lang>.ts" >> ${TX_CONFIG}
