@@ -1567,3 +1567,4 @@ Version 0.12.16
 * fixed linking with the latest cURL version under Windows
 * fixed ADTS header detection in the aac plugin
 * fixed error handling in the ffmpeg plugin
+* fixed text scroller geometry in the skinned plugin
