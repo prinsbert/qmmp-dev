@@ -1,3 +1,9 @@
+qmmp-plugin-pack (0.12.3-1ubuntu1~trusty0) trusty; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 22 Feb 2023 23:26:01 +0300
+
 qmmp-plugin-pack (0.12.2-1ubuntu1~trusty0) trusty; urgency=medium
 
   * New upstream release.

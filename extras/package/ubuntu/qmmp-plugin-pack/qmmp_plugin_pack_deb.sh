@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=0.12.2
-UBUNTU_CODENAMES='precise trusty xenial bionic'
+PLUGIN_PACK_VERSION=0.12.3
+UBUNTU_CODENAMES='trusty xenial bionic'
 BUILD_ROOT=build-root
 
 
@@ -26,7 +26,7 @@ build ()
         mv ./qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.gz ./qmmp-plugin-pack-qt4_$PLUGIN_PACK_VERSION.orig.tar.gz
     fi
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
-    if [ "$1" = "precise" ] || [ "$1" = "xenial" ] ; then
+    if [ "$1" = "trusty" ] || [ "$1" = "xenial" ] ; then
         debuild -S -sa -d -kF594F6B4
     else
         debuild -S -sd -d -kF594F6B4
@@ -53,7 +53,7 @@ clean ()
 
 case $1 in
     --download)
-		wget https://qmmp.ylsoftware.com/files/plugins/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/0.12/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES
