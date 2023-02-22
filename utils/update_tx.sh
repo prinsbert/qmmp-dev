@@ -1,6 +1,7 @@
 #!/bin/sh
 
 PROJECT_NAME=qmmp-plugin-pack-stable
+PROJECT_ORGANIZATION=qmmp-development-team
 TX_CONFIG="../.tx/config"
 
 echo "[main]" > ${TX_CONFIG}
@@ -19,7 +20,7 @@ do
      echo "Updating ${plug_name}"
 
      file_filter=`echo ${tr_dir} | sed 's/..\///'`
-     echo "[${PROJECT_NAME}.${plug_name}]" >> ${TX_CONFIG}
+     echo "[o:${PROJECT_ORGANIZATION}:p:${PROJECT_NAME}:r:${plug_name}]" >> ${TX_CONFIG}
      echo "file_filter = ${file_filter}/${plug_name}_plugin_<lang>.ts" >> ${TX_CONFIG}
      echo "source_lang = en" >> ${TX_CONFIG}
      echo "source_file = ${file_filter}/${plug_name}_plugin_en.ts" >> ${TX_CONFIG}
