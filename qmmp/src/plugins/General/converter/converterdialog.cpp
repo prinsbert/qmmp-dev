@@ -319,13 +319,11 @@ void ConverterDialog::savePresets()
         QVariantMap data = m_ui.presetComboBox->itemData(i).toMap();
         if(data["read_only"].toBool())
             continue;
-        file.write(QString("%1=%2\n").arg("name").arg(data["name"].toString()).toUtf8());
-        file.write(QString("%1=%2\n").arg("ext").arg(data["ext"].toString()).toUtf8());
-        file.write(QString("%1=%2\n").arg("command").arg(data["command"].toString()).toUtf8());
-        file.write(QString("%1=%2\n").arg("use_16bit")
-                   .arg(data["use_16bit"].toBool() ? "true" : "false" ).toUtf8());
-        file.write(QString("%1=%2\n").arg("tags")
-                   .arg(data["tags"].toBool() ? "true" : "false" ).toUtf8());
+        file.write(QString("%1=%2\n").arg("name", data["name"].toString()).toUtf8());
+        file.write(QString("%1=%2\n").arg("ext", data["ext"].toString()).toUtf8());
+        file.write(QString("%1=%2\n").arg("command", data["command"].toString()).toUtf8());
+        file.write(QString("%1=%2\n").arg("use_16bit", data["use_16bit"].toBool() ? "true" : "false").toUtf8());
+        file.write(QString("%1=%2\n").arg("tags", data["tags"].toBool() ? "true" : "false").toUtf8());
         file.write("\n");
     }
 }

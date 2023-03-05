@@ -84,7 +84,7 @@ SettingsDialog::SettingsDialog (QWidget *parent) : QDialog (parent)
         if (audio_info.caps & PCM_CAP_OUTPUT)
         {
             m_devices << audio_info.devnode;
-            ui.deviceComboBox->addItem(QString("%1 (%2)").arg(audio_info.name).arg(audio_info.devnode));
+            ui.deviceComboBox->addItem(QString("%1 (%2)").arg(audio_info.name, audio_info.devnode));
         }
     }
     QSettings settings;

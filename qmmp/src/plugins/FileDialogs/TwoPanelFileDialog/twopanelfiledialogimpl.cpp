@@ -457,7 +457,7 @@ void TwoPanelFileDialogImpl::addFiles(const QStringList &list, bool play)
         //add extensio to file name
         if (!contains)
         {
-            QString ext = qt_clean_filter_list(m_ui.fileTypeComboBox->currentText())[0];
+            QString ext = qt_clean_filter_list(m_ui.fileTypeComboBox->currentText()).constFirst();
             ext.remove("*");
             if (!ext.isEmpty() && ext != ".")
             {

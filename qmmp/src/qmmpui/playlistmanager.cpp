@@ -371,13 +371,13 @@ void PlayListManager::writePlayLists()
             for(QHash<QString, Qmmp::MetaData>::const_iterator it = m_metaKeys.constBegin(); it != m_metaKeys.constEnd(); ++it)
             {
                 if(!(value = t->value(it.value())).isEmpty())
-                    plFile.write(QString("%1=%2\n").arg(it.key()).arg(value).toUtf8());
+                    plFile.write(QString("%1=%2\n").arg(it.key(), value).toUtf8());
             }
 
             for(QHash<QString, Qmmp::TrackProperty>::const_iterator it = m_propKeys.constBegin(); it != m_propKeys.constEnd(); ++it)
             {
                 if(!(value = t->value(it.value())).isEmpty())
-                    plFile.write(QString("%1=%2\n").arg(it.key()).arg(value).toLatin1());
+                    plFile.write(QString("%1=%2\n").arg(it.key(), value).toLatin1());
             }
 
             if(t->duration() > 0)
