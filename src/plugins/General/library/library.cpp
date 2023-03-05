@@ -208,7 +208,7 @@ void Library::addTrack(TrackInfo *track, const QString &filePath)
     query.bindValue(":audioinfo", serializeAudioInfo(track->properties()));
     query.bindValue(":url", track->path());
     query.bindValue(":filepath", filePath);
-    query.bindValue(":searchstring", QString("%1|||%2|||%3").arg(artist).arg(album).arg(title).toLower());
+    query.bindValue(":searchstring", QString("%1|||%2|||%3").arg(artist, album, title).toLower());
     if(!query.exec())
         qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
 }
