@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=2.1.0
-UBUNTU_CODENAMES='jammy kinetic'
+UBUNTU_CODENAMES='jammy kinetic lunar'
 BUILD_ROOT=build-root
 
 
