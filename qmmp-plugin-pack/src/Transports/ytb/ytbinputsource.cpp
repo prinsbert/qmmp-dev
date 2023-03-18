@@ -197,9 +197,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
         if(obj["abr"].toDouble() > bitrate && obj["acodec"].toString() == "opus" && obj["vcodec"].toString() == "none")
         {
-            url = obj["protocol"].toString() == "http_dash_segments" ?
-                        obj["fragment_base_url"].toString() : obj["url"].toString();
-
+            url = obj.contains("fragment_base_url") ? obj["fragment_base_url"].toString() : obj["url"].toString();
             bitrate = obj["abr"].toDouble();
             headers = obj["http_headers"].toObject();
             codec = obj["acodec"].toString();
@@ -216,9 +214,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
             if(obj["abr"].toDouble() > bitrate && obj["vcodec"].toString() == "none")
             {
-                url = obj["protocol"].toString() == "http_dash_segments" ?
-                            obj["fragment_base_url"].toString() : obj["url"].toString();
-
+                url = obj.contains("fragment_base_url") ? obj["fragment_base_url"].toString() : obj["url"].toString();
                 bitrate = obj["abr"].toDouble();
                 headers = obj["http_headers"].toObject();
                 codec = obj["acodec"].toString();
@@ -233,9 +229,6 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
         emit error();
         return;
     }
-
-    if(codec != "opus") //disable seeking for other streams
-        m_fileSize = 0;
 
     setProperty(Qmmp::BITRATE, int(bitrate));
     setProperty(Qmmp::FILE_SIZE, m_fileSize);
