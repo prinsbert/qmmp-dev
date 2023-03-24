@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>DecoderModPlugFactory</name>
     <message>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="75"/>
         <source>Channels</source>
-        <translation>チャンネル</translation>
+        <translation>チャンネル数</translation>
     </message>
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="107"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="74"/>
         <source>Channels</source>
-        <translation>チャンネル</translation>
+        <translation>チャンネル数</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="80"/>
@@ -276,7 +276,7 @@ too high may cause clipping!</source>
     <message>
         <location filename="../settingsdialog.ui" line="677"/>
         <source>General</source>
-        <translation>一般</translation>
+        <translation>総合</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="683"/>
@@ -311,7 +311,6 @@ too high may cause clipping!</source>
     <message>
         <location filename="../settingsdialog.ui" line="733"/>
         <source>Loop</source>
-        <translatorcomment>繰り返しを [n] 回行なう</translatorcomment>
         <translation>繰り返しを</translation>
     </message>
     <message>

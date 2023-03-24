@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>YtbInputFactory</name>
     <message>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../ytbinputsource.cpp" line="186"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>演奏時間</translation>
     </message>
 </context>
 </TS>

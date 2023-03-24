@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>DecoderFFapFactory</name>
     <message>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="65"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>サンプル</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="66"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>版</translation>
     </message>
 </context>
 </TS>
