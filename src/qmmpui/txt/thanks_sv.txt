@@ -1,0 +1,31 @@
+Tack till:
+
+    Adria Arrufat <swiftscythe@gmail.com> - bug reports
+    Adrian Knoth <adi@drcomp.erfurt.thur.de> - JACK plugin fixes, bug reports
+    Anton Petrusevich <casus@casus.us> - slumpmässiga uppspelningsförbättringar
+    Avihay Baratz <avihayb@gmail.com> - auto stop feature, bug fixes
+    Brice Videau <brice.videau@gmail.com> - bug fixes
+    Cristian Rodríguez <judas.iscariote@gmail.com> - scrobbler fixar
+    Csaba Hruska <csaba.hruska@gmail.com> - FFmpeg-pluginfixar
+    Dmitry Kostin <kostindima@gmail.com> - iso.wv stöd
+    Dmitry Misharov <Dmitry.Misharov@gmail.com> - album artist tag support
+    Evgeny Gleyzerman <evgley@gmail.com> - förbättringar av cue parsing
+    Ferdinand Vesely <erdofves@gmail.com> - scrobbler förbättringar
+    Gennadi Motsyo <drool@altlinux.ru> - bug reports
+    Hon Jen Yee (PCMan) <pcman.tw@gmail.com> - optimering
+    Vadim Kalinnikov <moose@ylsoftware.com> - project hosting
+    Erik Ölsar <erlk.ozlr@gmail.com> - skinned cursors, ui improvements
+    Funda Wang <fundawang@gmail.com> - cmake files fixes
+    Ivan Ponomarev ivantrue@gmail.com - QtMultimedia output, MacOS X port
+    Karel Volný <kvolny@redhat.com> - olika fixar
+    Makis Kalofolias <makskafl@gmail.com> - EAC3, DTS, och Dolby TrueHD stöd
+    Michail Zheludkov <zheludkovm@mail.ru> - FFmpeg-pluginfixar
+    Michał Grosicki <grosik88@o2.pl> - ALSA pluginfixar
+    Panagiotis Papadopoulos <pano_90@gmx.net> - ui fixes, bug reports
+    Pino Toscano <toscano.pino@tiscali.it> - portabilitetspatchar
+    Ryota Shimamoto <liangtai.s16@gmail.com> - FreeBSD patchar
+    Sebastian Pipping <webmaster@hartwork.org> - bs2b patchar
+    Stefan Koelling <stefankoelling.ext@googlemail.com> - några byggfixar
+    Thomas Perl - gui förbättringar
+    Ville Skyttä - ModPlug-plugin-förbättringar
+    Yaakov Selkowitz <yselkowitz@gmail.com> - cygwin patchar

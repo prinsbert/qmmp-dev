@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>EffectFileWriterFactory</name>
     <message>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../effectfilewriterfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriven av: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -37,11 +37,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="36"/>
-        <source>Quality:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../settingsdialog.ui" line="95"/>
         <source>Output file name:</source>
         <translation type="unfinished"></translation>
@@ -52,9 +47,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../settingsdialog.ui" line="36"/>
+        <source>Quality:</source>
+        <translation>Kvalitet:</translation>
+    </message>
+    <message>
         <location filename="../settingsdialog.cpp" line="71"/>
         <source>Choose a directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj en katalog</translation>
     </message>
 </context>
 </TS>

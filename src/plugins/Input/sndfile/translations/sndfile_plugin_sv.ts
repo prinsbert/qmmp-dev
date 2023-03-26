@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>DecoderSndFileFactory</name>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="118"/>
         <source>Sndfile Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Sndfile Plugin</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="120"/>
         <source>PCM Files</source>
-        <translation type="unfinished"></translation>
+        <translation>PCM filer</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="223"/>
         <source>About Sndfile Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Om Sndfile ljudplugin</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="224"/>
         <source>Qmmp Sndfile Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Sndfile ljudplugin</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="225"/>
         <source>Compiled against</source>
-        <translation type="unfinished"></translation>
+        <translation>Kompilerad mot</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="226"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriven av: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 </TS>

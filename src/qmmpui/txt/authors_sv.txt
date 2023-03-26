@@ -1,0 +1,14 @@
+Huvudutvecklare:
+
+    Ilya Kotov <forkotov02@ya.ru> - idé och baskod
+
+Former Developers:
+
+    Artur Guzik <aguzik88@gmail.com> - kde4 notification plugin, tray icon improvements
+    Vladimir Kuznetsov <vovanec@gmail.com> - look&feel and many improvements
+    Yuriy Zhuravlev <stalkerg@gmail.com>  - JACK och OSS plugins
+
+Artwork:
+
+    Andrey Adreev <andreev00@gmail.com> - ikoner och standard skin (för versioner 0.2-0.8)
+    sixsixfive <http://sixsixfive.deviantart.com/> - standard skin

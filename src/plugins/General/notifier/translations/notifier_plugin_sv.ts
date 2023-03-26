@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>NotifierFactory</name>
     <message>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../notifierfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriven av: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../popupwidget.cpp" line="116"/>
         <source>Volume:</source>
-        <translation type="unfinished"></translation>
+        <translation>Volym:</translation>
     </message>
 </context>
 <context>
@@ -47,38 +47,38 @@
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Teckensnitt:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
         <location filename="../settingsdialog.ui" line="279"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="85"/>
         <source>Transparency:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparens:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="229"/>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="251"/>
         <source>Edit template</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändra mall</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="299"/>
         <source>Cover size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Omslagsstorlek:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="325"/>
@@ -88,7 +88,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="332"/>
         <source>Delay (ms):</source>
-        <translation type="unfinished"></translation>
+        <translation>Fördröjning (ms):</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="361"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../settingsdialog.cpp" line="112"/>
         <source>Notification Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifikationsmall</translation>
     </message>
 </context>
 </TS>

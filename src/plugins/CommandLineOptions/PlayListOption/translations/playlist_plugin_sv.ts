@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>PlayListOption</name>
     <message>
@@ -11,22 +11,22 @@
     <message>
         <location filename="../playlistoption.cpp" line="34"/>
         <source>List all available playlists</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista alla tillgängliga spellistor</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="35"/>
         <source>Show playlist content</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa innehåll i spellistan</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="36"/>
         <source>Play track &lt;track&gt; in playlist &lt;id&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Spela spår &lt;track&gt; i spellista &lt;id&gt;</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="37"/>
         <source>Clear playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Rensa spellista</translation>
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="38"/>

@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>DecoderSIDFactory</name>
     <message>
         <location filename="../decodersidfactory.cpp" line="57"/>
         <source>SID Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>SID Plugin</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="59"/>
         <source>SID Files</source>
-        <translation type="unfinished"></translation>
+        <translation>SID filer</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="113"/>
         <source>About SID Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Om SID ljudplugin</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="114"/>
         <source>Qmmp SID Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>QMMP SID ljudplugin</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="115"/>
         <source>This plugin plays Commodore 64 music files using libsidplayfp library</source>
-        <translation type="unfinished"></translation>
+        <translation>Denna plugin spelar Commodore 64-musikfiler med libsidplayfp-biblioteket</translation>
     </message>
     <message>
         <location filename="../decodersidfactory.cpp" line="116"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriven av: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>SID Plugin inställningar</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Snabb omsampling</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="62"/>
@@ -54,12 +54,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation type="unfinished"></translation>
+        <translation>HVSC databasfil:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Omsamplingsmetod:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="93"/>
@@ -69,22 +69,22 @@
     <message>
         <location filename="../settingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera HVSC-låtlängdsdatabas</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Emulation:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

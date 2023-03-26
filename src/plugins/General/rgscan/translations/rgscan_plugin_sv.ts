@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>RGScanDialog</name>
     <message>
@@ -9,9 +9,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../rgscandialog.ui" line="84"/>
+        <source>Write track gain/peak</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../rgscandialog.ui" line="42"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <location filename="../rgscandialog.ui" line="47"/>
@@ -44,16 +49,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rgscandialog.ui" line="84"/>
-        <source>Write track gain/peak</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../rgscandialog.ui" line="91"/>
-        <source>Write album gain/peak</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../rgscandialog.ui" line="113"/>
         <source>Calculate</source>
         <translation type="unfinished"></translation>
@@ -64,10 +59,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../rgscandialog.ui" line="91"/>
+        <source>Write album gain/peak</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../rgscandialog.cpp" line="125"/>
         <location filename="../rgscandialog.cpp" line="230"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../rgscandialog.cpp" line="135"/>
@@ -75,7 +75,7 @@
         <location filename="../rgscandialog.cpp" line="160"/>
         <location filename="../rgscandialog.cpp" line="225"/>
         <source>%1 dB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dB</translation>
     </message>
 </context>
 <context>
@@ -103,27 +103,27 @@
     <message>
         <location filename="../rgscanfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriven av: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="53"/>
         <source>Based on source code by:</source>
-        <translation type="unfinished"></translation>
+        <translation>Baserat på källkod av:</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="54"/>
         <source>David Robinson &lt;David@Robinson.org&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>David Robinson &lt;David@Robinson.org&gt;</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="55"/>
         <source>Glen Sawyer &lt;mp3gain@hotmail.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Glen Sawyer &lt;mp3gain@hotmail.com&gt;</translation>
     </message>
     <message>
         <location filename="../rgscanfactory.cpp" line="56"/>
         <source>Frank Klemm</source>
-        <translation type="unfinished"></translation>
+        <translation>Frank Klemm</translation>
     </message>
 </context>
 <context>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../rgscanhelper.cpp" line="33"/>
         <source>Meta+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta+R</translation>
     </message>
 </context>
 </TS>
