@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>StatusOption</name>
     <message>
         <location filename="../statusoption.cpp" line="30"/>
         <source>Print playback status</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv ut uppspelningsstatus</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="31"/>
         <source>Print formatted track name (example: qmmp --nowplaying &quot;%t - %a&quot;)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv ut formaterat spårnamn (exempel: qmmp --nowplaying &quot;%t - %a&quot;)</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="33"/>
         <source>Print --nowplaying syntax</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv ut --nowplaying syntax</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="94"/>
         <source>Syntax:</source>
-        <translation type="unfinished"></translation>
+        <translation>Syntax:</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="95"/>
         <source>%p - artist</source>
-        <translation type="unfinished"></translation>
+        <translation>%p - artist</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="96"/>
         <source>%a - album</source>
-        <translation type="unfinished"></translation>
+        <translation>%a - album</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="97"/>
         <source>%aa - album artist</source>
-        <translation type="unfinished"></translation>
+        <translation>%aa - album artist</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="98"/>
         <source>%t - title</source>
-        <translation type="unfinished"></translation>
+        <translation>%t - titel</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="99"/>
         <source>%n - track</source>
-        <translation type="unfinished"></translation>
+        <translation>%n - spår</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="100"/>
@@ -56,27 +56,27 @@
     <message>
         <location filename="../statusoption.cpp" line="101"/>
         <source>%g - genre</source>
-        <translation type="unfinished"></translation>
+        <translation>%g - genre</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="102"/>
         <source>%c - comment</source>
-        <translation type="unfinished"></translation>
+        <translation>%c - kommentar</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="103"/>
         <source>%C - composer</source>
-        <translation type="unfinished"></translation>
+        <translation>%C - kompositör</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="104"/>
         <source>%D - disc number</source>
-        <translation type="unfinished"></translation>
+        <translation>%D - skivnummer</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="105"/>
         <source>%f - file name</source>
-        <translation type="unfinished"></translation>
+        <translation>%f - filnamn</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="106"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../statusoption.cpp" line="107"/>
         <source>%y - year</source>
-        <translation type="unfinished"></translation>
+        <translation>%y - år</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="108"/>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../statusoption.cpp" line="115"/>
         <source>%{filesize} - file size</source>
-        <translation type="unfinished"></translation>
+        <translation>%{filesize} - filstorlek</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="116"/>

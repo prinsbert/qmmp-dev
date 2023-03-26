@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>DecoderGmeFactory</name>
     <message>
         <location filename="../decodergmefactory.cpp" line="38"/>
         <source>GME Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>GME Plugin</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="41"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decodergmefactory.cpp" line="103"/>
         <source>About GME Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Om GME ljudplugin</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="104"/>
         <source>Qmmp GME Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp GME ljudplugin</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="105"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodergmefactory.cpp" line="106"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriven av: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="57"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>OutputQtMultimediaFactory</name>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="32"/>
         <source>Qt Multimedia Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt Multimedia Plugin</translation>
     </message>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="57"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="59"/>
         <source>Written by: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrivet av: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</translation>
     </message>
 </context>
 <context>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Enhet:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard</translation>
     </message>
 </context>
 </TS>

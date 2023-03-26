@@ -1,0 +1,1 @@
+Det här programmet är en ljudspelare, skriven med hjälp av Qt-biblioteket.

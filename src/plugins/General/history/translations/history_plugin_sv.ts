@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv_SE">
+<TS version="2.1" language="sv">
 <context>
     <name>DateInputDialog</name>
     <message>
         <location filename="../dateinputdialog.ui" line="14"/>
         <source>Select Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj datum</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../history.cpp" line="57"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Historik</translation>
     </message>
     <message>
         <location filename="../history.cpp" line="58"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
 </context>
 <context>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriven av: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -69,7 +69,7 @@
         <location filename="../historywindow.ui" line="14"/>
         <location filename="../historywindow.ui" line="110"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Historik</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="29"/>
@@ -79,38 +79,38 @@
     <message>
         <location filename="../historywindow.ui" line="35"/>
         <source>From:</source>
-        <translation type="unfinished"></translation>
+        <translation>Från:</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="52"/>
         <source>To:</source>
-        <translation type="unfinished"></translation>
+        <translation>Till:</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="69"/>
         <source>Last week</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaste veckan</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="76"/>
         <source>Last month</source>
-        <translation type="unfinished"></translation>
+        <translation>Senaste månaden</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="83"/>
         <source>Execute</source>
-        <translation type="unfinished"></translation>
+        <translation>Exekvera</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="129"/>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tid</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="134"/>
         <location filename="../historywindow.ui" line="183"/>
         <source>Song</source>
-        <translation type="unfinished"></translation>
+        <translation>Sång</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="143"/>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../historywindow.ui" line="156"/>
         <source>Day</source>
-        <translation type="unfinished"></translation>
+        <translation>Dag</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="161"/>
@@ -143,7 +143,7 @@
     <message>
         <location filename="../historywindow.ui" line="210"/>
         <source>Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Artist</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="224"/>
@@ -153,42 +153,42 @@
     <message>
         <location filename="../historywindow.ui" line="237"/>
         <source>Genre</source>
-        <translation type="unfinished"></translation>
+        <translation>Genre</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="128"/>
         <source>dd MMMM yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>dd MMMM åååå</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="129"/>
         <source>hh:mm:ss</source>
-        <translation type="unfinished"></translation>
+        <translation>tt:mm:ss</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="196"/>
         <source>MM-yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>MM-åååå</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="197"/>
         <source>dd MMMM</source>
-        <translation type="unfinished"></translation>
+        <translation>dd MMMM</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="498"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till i spellista</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="499"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Visa spårdetaljer</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="501"/>
         <source>Remove from History</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort från historik</translation>
     </message>
 </context>
 </TS>

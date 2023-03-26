@@ -1,0 +1,111 @@
+Brasiliansk portugisiska:
+    Bruno Gonçalves
+    Klaos Lacerda
+    Heitor Thury Barreiros Barbosa <hthury@gmail.com>
+    Vitor Pereira
+
+Bulgariska:
+    Kiril Kirilov
+    Miroslav Mihov
+
+Traditionell kinesiska:
+    Cosmos Chen
+    lon <lon83129@126.com>
+    Jeff Huang
+
+Förenklad kinesiska:
+    lon <lon83129@126.com>
+    mabier
+    Mingcong Bai
+    Mingye Wang
+
+Tjeckiska:
+    Jaroslav Lichtblau
+    Karel Volný <kvolny@redhat.com>
+
+Nederländska:
+    Heimen Stoffels
+    Ronald Uitermark <ronald645@gmail.com>
+
+Finska:
+    Jiri Grönroos
+    Kimmo Kujansuu
+
+Franska:
+    Adrien Vigneron - VRad <adrienvigneron@ml1.net>
+    Sébastien Aperghis-Tramoni (maddingue)
+    Stanislas Zeller <uncensored.assault@gmail.com>
+
+Galiciska:
+    Delio Docampo Cordeiro
+    Óscar Pereira <oscarpereira1989@gmail.com>
+
+Tyska:
+    Ettore Atalan
+    Stefan Koelling <stefankoelling.ext@googlemail.com>
+    Panagiotis Papadopoulos <pano_90@gmx.net>
+
+Grekiska:
+    Dimitrios Glentadakis
+
+Hebreiska:
+    Genghis Khan <genghiskhan@gmx.ca>
+
+Ungerska:
+    Németh Gábor <sutee84@freemail.hu>
+
+Indonesiska:
+    Andika Triwidada
+    Wantoyo <wantoyek@gmail.com>
+
+Italienska:
+    Gian Paolo Renello <emmerkar@gmail.com>
+    Luigi Toscano
+
+Japanska:
+    Ryota Shimamoto <liangtai.s16@gmail.com>
+
+Kazakiska:
+    Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+
+Koreanska:
+   Jung Hee Lee <daemul72@gmail.com>
+
+Litauiska:
+    Algirdas Butkus <butkus.algirdas@gmail.com>
+
+Polska:
+    Marek Adamski
+    Daniel Krawczyk
+    Grzegorz Gibas <amigib@gmail.com>
+
+Portugisiska:
+    Sérgio Marques <smarquespt@gmail.com>
+
+Ryska:
+    Alexey Loginov <loginov.alex.valer.gmail.com>
+    Ilya Kotov <forkotov02@ya.ru>
+    Andrei Stepanov
+    Viktor Eruhin
+
+Serbiska:
+    Mladen Pejaković <pejakm@autistici.org>
+
+Slovakiska:
+    Ján Ďanovský <dagsoftware@yahoo.com>
+
+Spanska:
+    Bohdan Shuba
+    Félix Medrano <xukosky@yahoo.es>
+    Joel Barrios <darkshram@gmail.com>
+
+Swedish:
+    Luna Jernberg <droidbittin@gmail.com>
+
+Turkiska:
+    Mustafa GUNAY <mustafagunay@pgmail.com>
+    Bilgesu Güngör <h.ibrahim.gungor@gmail.com>
+    Uğur KUYU
+
+Ukrainska:
+    Gennadi Motsyo <drool@altlinux.ru>
