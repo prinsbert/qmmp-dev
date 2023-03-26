@@ -61,7 +61,7 @@ List of the third-party artwork.
 
   Oxygen icons        https://community.kde.org/Frameworks
   Bunjee skin         https://www.gnome-look.org/p/1008373
-  Vortigo skin        https://www.gnome-look.org/p/1008374
-  Azenis skin         https://packages.altlinux.org/ru/sisyphus/srpms/qmmp-skins-azenis/
+  Vortigo skin        https://www.gnome-look.org/p/1008374/
+  Azenis skin         https://packages.altlinux.org/ru/Sisyphus/srpms/qmmp-skins-azenis
 
 Patches and build scripts: https://sourceforge.net/p/qmmp-dev/code/HEAD/tree/trunk/extras/package/win32/
