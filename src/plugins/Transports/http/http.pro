@@ -31,7 +31,7 @@ unix {
     INSTALLS += target
 }
 win32 {
-    LIBS += -lcurl.dll
+    LIBS += -lcurl
 }
 
 
