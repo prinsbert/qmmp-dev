@@ -1820,3 +1820,4 @@ Version 1.6.3
 * fixed error handling in the ffmpeg plugin
 * fixed text scroller geometry in the skinned plugin
 * hide empty plugin categories
+* added partial Swedish translation (Luna Jernberg)
