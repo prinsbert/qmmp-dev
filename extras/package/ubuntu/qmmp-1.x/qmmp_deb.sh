@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.6.2
+QMMP_VERSION=1.6.3
 UBUNTU_CODENAMES='bionic focal jammy kinetic lunar'
 BUILD_ROOT=build-root
 
