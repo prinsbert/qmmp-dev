@@ -25,7 +25,7 @@
 #define SKIN_H
 
 #include <QObject>
-#include <QMap>
+#include <QHash>
 #include <QPixmap>
 #include <QDir>
 #include <QRegion>
@@ -39,8 +39,6 @@ public:
     ~Skin();
 
     static Skin *instance();
-    static QPixmap getPixmap(const QString &name, QDir dir);
-    static QString defaultSkinPath();
     int ratio() const;
     const QPixmap &getMain() const;
     const QPixmap getButton(uint bt) const;
@@ -63,7 +61,7 @@ public:
     const QPixmap getItem(uint n) const;
     const QPixmap &getVolumeBar(int n) const;
     const QPixmap &getBalanceBar(int n) const;
-    const QByteArray getPLValue (QByteArray c) const;
+    const QByteArray getPLValue(QByteArray c) const;
     const QColor getMainColor(int n) const;
     const QColor &getVisColor(int n) const;
     const QRegion getRegion(uint r) const;
@@ -290,25 +288,25 @@ private:
     QPixmap scalePixmap(const QPixmap &pix, int ratio = 2);
     static Skin *m_instance;
     QDir m_skin_dir;
-    QMap<uint, QPixmap> m_buttons;
-    QMap<uint, QCursor> m_cursors;
-    QMap<uint, QPixmap> m_titlebar;
-    QMap<uint, QPixmap> m_pl_parts;
-    QMap<uint, QPixmap> m_eq_parts;
-    QMap<uint, QPixmap> m_ms_parts;
-    QMap<uint, QPixmap> m_parts;
-    QMap<QChar, QPixmap> m_letters;
-    QMap<QByteArray, QByteArray> m_pledit_txt;
-    QMap<uint, QRegion> m_regions;
+    QHash<uint, QPixmap> m_buttons;
+    QHash<uint, QCursor> m_cursors;
+    QHash<uint, QPixmap> m_titlebar;
+    QHash<uint, QPixmap> m_pl_parts;
+    QHash<uint, QPixmap> m_eq_parts;
+    QHash<uint, QPixmap> m_ms_parts;
+    QHash<uint, QPixmap> m_parts;
+    QHash<QChar, QPixmap> m_letters;
+    QHash<QByteArray, QByteArray> m_pledit_txt;
+    QHash<uint, QRegion> m_regions;
     QPixmap m_main;
-    QPixmap posbar;
+    QPixmap m_posbar;
     QList<QPixmap> m_numbers;
     QList<QPixmap> m_eq_bar;
     QList<QPixmap> m_eq_spline;
     QList<QPixmap> m_volume;
     QList<QPixmap> m_balance;
     QList<QColor> m_vis_colors;
-    QMap<uint, QColor> m_main_colors;
+    QHash<uint, QColor> m_main_colors;
     bool m_use_cursors;
     bool m_double_size;
     bool m_antialiasing;

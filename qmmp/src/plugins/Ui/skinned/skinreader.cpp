@@ -170,9 +170,23 @@ void SkinReader::unpackSkin(const QString &path)
         unzip(path, unpackedSkinPath(), false);
 }
 
+QPixmap SkinReader::getPixmapFromDirectory(const QString &name, const QString &path)
+{
+    QDir dir(path);
+    QFileInfoList f = dir.entryInfoList({ name + QStringLiteral(".*") }, QDir::Files | QDir::Hidden);
+    if(!f.isEmpty())
+        return QPixmap(f.constFirst().filePath());
+    return QPixmap();
+}
+
 QString SkinReader::unpackedSkinPath()
 {
     return Qmmp::cacheDir() + QStringLiteral("/skinned/skin");
+}
+
+QString SkinReader::defaultSkinPath()
+{
+    return QStringLiteral(":/glare");
 }
 
 void SkinReader::untar(const QString &from, const QString &to, bool preview)

@@ -170,9 +170,9 @@ void SkinnedSettings::loadSkins()
     m_ui.listWidget->clear();
 
     //default skin
-    QFileInfo fileInfo(Skin::defaultSkinPath());
+    QFileInfo fileInfo(SkinReader::defaultSkinPath());
     QListWidgetItem *item = new QListWidgetItem(fileInfo.fileName());
-    item->setIcon(Skin::getPixmap("main", QDir(fileInfo.filePath())));
+    item->setIcon(SkinReader::getPixmapFromDirectory("main", fileInfo.filePath()));
     item->setData(Qt::UserRole, fileInfo.filePath());
     item->setToolTip("Default skin");
     m_ui.listWidget->addItem(item);
@@ -235,9 +235,9 @@ void SkinnedSettings::readSettings()
     m_ui.plTransparencySlider->setValue(100 - settings.value("pl_opacity", 1.0).toDouble()*100);
     //view
     m_ui.skinCursorsCheckBox->setChecked(settings.value("skin_cursors", false).toBool());
-    m_currentSkinPath = settings.value("skin_path", Skin::defaultSkinPath()).toString();
+    m_currentSkinPath = settings.value("skin_path", SkinReader::defaultSkinPath()).toString();
     if(!QFile::exists(m_currentSkinPath))
-        m_currentSkinPath = Skin::defaultSkinPath();
+        m_currentSkinPath = SkinReader::defaultSkinPath();
     m_ui.hiddenCheckBox->setChecked(settings.value("start_hidden", false).toBool());
     m_ui.hideOnCloseCheckBox->setChecked(settings.value("hide_on_close", false).toBool());
     m_ui.windowTitleLineEdit->setText(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());

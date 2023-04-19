@@ -44,7 +44,7 @@ Skin::Skin(QObject *parent) : QObject (parent)
 {
     m_instance = this;
     QSettings settings;
-    QString path = settings.value("Skinned/skin_path", Skin::defaultSkinPath()).toString();
+    QString path = settings.value("Skinned/skin_path", SkinReader::defaultSkinPath()).toString();
 #ifdef Q_OS_WIN
     if(Qmmp::isPortable())
         path.prepend(QApplication::applicationDirPath() + "/");
@@ -67,21 +67,6 @@ Skin *Skin::instance()
     if (!m_instance)
         m_instance = new Skin();
     return m_instance;
-}
-
-QPixmap Skin::getPixmap(const QString &name, QDir dir)
-{
-    dir.setFilter (QDir::Files | QDir::Hidden);
-    dir.setNameFilters(QStringList() << name + ".*");
-    QFileInfoList f = dir.entryInfoList();
-    if(!f.isEmpty())
-        return QPixmap(f.first().filePath());
-    return QPixmap();
-}
-
-QString Skin::defaultSkinPath()
-{
-    return QStringLiteral(":/glare");
 }
 
 int Skin::ratio() const
@@ -111,7 +96,7 @@ const QPixmap Skin::getTitleBar(uint tb) const
 
 const QPixmap &Skin::getPosBar() const
 {
-    return posbar;
+    return m_posbar;
 }
 
 const QPixmap &Skin::getNumber(uint n) const
@@ -211,8 +196,8 @@ void Skin::setSkin(const QString &path, bool force)
     QFileInfo info(path);
     if(!info.exists())
     {
-        m_skin_dir = QDir(defaultSkinPath());
-        qDebug("Skin: unable find %s, using %s as fallback", qPrintable(path), qPrintable(defaultSkinPath()));
+        m_skin_dir = QDir(SkinReader::defaultSkinPath());
+        qDebug("Skin: unable find %s, using %s as fallback", qPrintable(path), qPrintable(SkinReader::defaultSkinPath()));
     }
     else if(info.isDir())
     {
@@ -229,7 +214,7 @@ void Skin::setSkin(const QString &path, bool force)
     }
 
     if(!m_skin_dir.exists() || m_skin_dir.count() <= 4)
-        m_skin_dir = QDir(defaultSkinPath());
+        m_skin_dir = QDir(SkinReader::defaultSkinPath());
 
     //clear old values
     m_pledit_txt.clear();
@@ -263,36 +248,34 @@ void Skin::setSkin(const QString &path, bool force)
     loadColors();
     if(m_double_size)
     {
-        for(uint key : m_buttons.keys())
-            m_buttons[key] = scalePixmap(m_buttons[key]);
-        for(uint key : m_titlebar.keys())
-            m_titlebar[key] = scalePixmap(m_titlebar[key]);
-        for(uint key : m_pl_parts.keys())
-            m_pl_parts[key] = scalePixmap(m_pl_parts[key]);
-        for(uint key : m_eq_parts.keys())
-            m_eq_parts[key] = scalePixmap(m_eq_parts[key]);
-        for(uint key : m_ms_parts.keys())
-            m_ms_parts[key] = scalePixmap(m_ms_parts[key]);
-        for(uint key : m_parts.keys())
-            m_parts[key] = scalePixmap(m_parts[key]);
-        for(const QChar &c : m_letters.keys())
-            m_letters[c] = scalePixmap(m_letters[c]);
+        for(QPixmap &pixmap : m_buttons)
+            pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_titlebar)
+             pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_pl_parts)
+             pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_eq_parts)
+             pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_ms_parts)
+             pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_parts)
+             pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_letters)
+             pixmap = scalePixmap(pixmap);
+
         m_main = scalePixmap(m_main);
-        posbar = scalePixmap(posbar);
-        int i;
-        for(i = 0; i < m_numbers.size(); ++i)
-            m_numbers[i] = scalePixmap(m_numbers[i]);
+        m_posbar = scalePixmap(m_posbar);
 
-        for(i = 0; i < m_eq_bar.size(); ++i)
-            m_eq_bar[i] = scalePixmap(m_eq_bar[i]);
-
-        for(i = 0; i < m_eq_spline.size(); ++i)
-            m_eq_spline[i] = scalePixmap(m_eq_spline[i]);
-
-        for(i = 0; i < m_volume.size(); ++i)
-            m_volume[i] = scalePixmap(m_volume[i]);
-        for(i = 0; i < m_balance.size(); ++i)
-            m_balance[i] = scalePixmap(m_balance[i]);
+        for(QPixmap &pixmap : m_numbers)
+            pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_eq_bar)
+            pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_eq_spline)
+           pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_volume)
+            pixmap = scalePixmap(pixmap);
+        for(QPixmap &pixmap : m_balance)
+            pixmap = scalePixmap(pixmap);
     }
     emit skinChanged();
 }
@@ -300,7 +283,7 @@ void Skin::setSkin(const QString &path, bool force)
 void Skin::reloadSkin()
 {
     QSettings settings;
-    setSkin(settings.value("Skinned/skin_path", Skin::defaultSkinPath()).toString(), false);
+    setSkin(settings.value("Skinned/skin_path", SkinReader::defaultSkinPath()).toString(), false);
 }
 
 void Skin::loadMain()
@@ -443,7 +426,7 @@ void Skin::loadPosBar()
         m_buttons[BT_POSBAR_N] = dummy;
         m_buttons[BT_POSBAR_P] = dummy;
     }
-    posbar = pixmap->copy (0,0,248, qMin(pixmap->height(), 10));
+    m_posbar = pixmap->copy (0,0,248, qMin(pixmap->height(), 10));
     delete pixmap;
 }
 
@@ -528,7 +511,7 @@ void Skin::loadPlayList()
 
 }
 
-QPixmap *Skin::getPixmap (const QString& name, const QString &fallback)
+QPixmap *Skin::getPixmap(const QString& name, const QString &fallback)
 {
     m_skin_dir.setFilter (QDir::Files);
     for(const QFileInfo &info : m_skin_dir.entryInfoList(QStringList() << name + ".*"))
@@ -548,7 +531,7 @@ QPixmap *Skin::getPixmap (const QString& name, const QString &fallback)
     return getDummyPixmap(name, fallback);
 }
 
-QString Skin::getPath (const QString& name)
+QString Skin::getPath(const QString& name)
 {
     m_skin_dir.setFilter (QDir::Files | QDir::Hidden);
     QFileInfoList f = m_skin_dir.entryInfoList(QStringList() << name + ".*");
@@ -569,7 +552,6 @@ QString Skin::getPath (const QString& name)
     }
     return QString();
 }
-
 
 void Skin::loadPLEdit()
 {
@@ -976,7 +958,7 @@ QPixmap *Skin::correctSize(QPixmap *pixmap, int w, int h)
 
 QPixmap * Skin::getDummyPixmap(const QString &name, const QString &fallback)
 {
-    QDir dir (":/glare");
+    QDir dir(SkinReader::defaultSkinPath());
     dir.setFilter (QDir::Files | QDir::Hidden);
     dir.setNameFilters(QStringList() << name + ".*");
     QFileInfoList f = dir.entryInfoList();
@@ -1015,7 +997,7 @@ const QString Skin::findFile(const QString &name)
         return f.first().filePath();
     }
 
-    QDir dir(":/glare");
+    QDir dir(SkinReader::defaultSkinPath());
     dir.setFilter (QDir::Files | QDir::Hidden);
     dir.setNameFilters(QStringList() << name);
     f = dir.entryInfoList();
