@@ -43,7 +43,9 @@ public:
     const QPixmap getPreview(const QString &skinPath) const;
 
     static void unpackSkin(const QString &path);
+    static QPixmap getPixmapFromDirectory(const QString &name, const QString &path);
     static QString unpackedSkinPath();
+    static QString defaultSkinPath();
 
 private:
     static void untar(const QString &from, const QString &to, bool preview);
