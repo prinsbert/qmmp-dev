@@ -1270,7 +1270,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="526"/>
         <source>Background #2:</source>
-        <translation>Фон #2:</translation>
+        <translation>Фон №2:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="590"/>
@@ -1325,7 +1325,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="449"/>
         <source>Background #1:</source>
-        <translation>Фон #1:</translation>
+        <translation>Фон №1:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="825"/>
@@ -1477,12 +1477,12 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="186"/>
         <source>Unarchived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Распакованная тема %1</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="186"/>
         <source>Archived skin %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Распакованная тема %1</translation>
     </message>
 </context>
 <context>
