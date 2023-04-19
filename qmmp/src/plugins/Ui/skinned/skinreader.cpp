@@ -25,6 +25,8 @@
 #include <QByteArray>
 #include <QApplication>
 #include <QFile>
+#include <QtDebug>
+#include <QSet>
 #include <algorithm>
 #include <qmmp/qmmp.h>
 #include "skinreader.h"
@@ -32,7 +34,6 @@
 SkinReader::SkinReader(QObject *parent)
         : QObject(parent)
 {
-    m_process = new QProcess(this);
     //create cache dir
     QDir dir(Qmmp::cacheDir());
     dir.mkdir("skinned");
@@ -44,112 +45,156 @@ SkinReader::SkinReader(QObject *parent)
 SkinReader::~SkinReader()
 {}
 
-void SkinReader::generateThumbs(const QStringList &paths)
+void SkinReader::loadSkins(const QStringList &paths)
 {
-    m_previewMap.clear();
-    QFileInfoList f;
+    m_skins.clear();
+    m_previewHash.clear();
+    QFileInfoList infoList;
+    //find all file and directories
     for(const QString &path : qAsConst(paths))
     {
         QDir dir(path);
-        dir.setFilter( QDir::Files | QDir::Hidden);
-        f << dir.entryInfoList();
+        dir.setSorting(QDir::Name);
+        infoList << dir.entryInfoList(QDir::Files | QDir::Hidden | QDir::Dirs | QDir::NoDotAndDotDot);
     }
-    QDir cache_dir(Qmmp::cacheDir() + "/skinned/thumbs");
-    cache_dir.setFilter(QDir::Files | QDir::Hidden);
-    QFileInfoList d = cache_dir.entryInfoList();
-    //clear removed skins from cache
-    for(const QFileInfo &thumbFile : qAsConst(d))
+
+    //find skins and generate thumbnailes
+    QDir cacheDir(Qmmp::cacheDir() + QStringLiteral("/skinned/thumbs"));
+    QHash<QString, QString> thumbnailHash; //base name, full path
+    QFileInfoList thumbnailes = cacheDir.entryInfoList(QDir::Files | QDir::Hidden);
+
+    for(const QFileInfo &i : qAsConst(thumbnailes))
+        thumbnailHash.insert(i.baseName(), i.canonicalFilePath());
+
+    for(const QFileInfo &info : qAsConst(infoList))
     {
-        bool del = std::none_of(f.cbegin(), f.cend(),
-                                [thumbFile](const QFileInfo &fileInfo){ return fileInfo.baseName() == thumbFile.baseName(); });
-
-        if (del)
+        if(info.isDir())
         {
-            qDebug("SkinReader: deleting %s from cache",
-                   qPrintable(thumbFile.fileName ()));
+            QDir dir(info.canonicalFilePath());
+            const QFileInfoList files = dir.entryInfoList({ QStringLiteral("main.*") }, QDir::Files | QDir::Hidden);
+            if(!files.isEmpty())
+            {
+                m_skins << info.canonicalFilePath();
+                m_previewHash.insert(info.canonicalFilePath(), files.constFirst().canonicalFilePath());
+            }
+        }
+        else if(info.isFile())
+        {
+            QString thumbnailPath = thumbnailHash.value(info.baseName());
 
-            cache_dir.remove(thumbFile.fileName ());
+            if(thumbnailPath.isEmpty())
+            {
+                QString name = info.fileName().toLower();
+
+                if(name.endsWith(".tgz") || name.endsWith(".tar.gz") || name.endsWith(".tar.bz2"))
+                {
+                    untar(info.filePath(), cacheDir.absolutePath(), true);
+                    m_skins << info.canonicalFilePath();
+                    m_previewHash.insert(info.canonicalFilePath(), QString());
+                }
+                else if(name.endsWith(".zip") || name.endsWith(".wsz"))
+                {
+                    unzip(info.filePath(), cacheDir.absolutePath(), true);
+                    m_skins << info.canonicalFilePath();
+                    m_previewHash.insert(info.canonicalFilePath(), QString());
+                }
+            }
+            else
+            {
+                m_skins << info.canonicalFilePath();
+                m_previewHash.insert(info.canonicalFilePath(), thumbnailPath);
+            }
         }
     }
+
+
     //add new skins to cache
-    for(const QFileInfo &fileInfo : qAsConst(f))
+    cacheDir.refresh();
+    thumbnailHash.clear();
+    thumbnailes = cacheDir.entryInfoList(QDir::Files | QDir::Hidden);
+
+    for(const QFileInfo &i : qAsConst(thumbnailes))
+        thumbnailHash.insert(i.baseName(), i.canonicalFilePath());
+
+    for(const QFileInfo &info : qAsConst(infoList))
     {
-        bool create = std::none_of(d.cbegin(), d.cend(),
-                                   [fileInfo](const QFileInfo &thumbInfo){ return fileInfo.baseName() == thumbInfo.baseName(); });
+        if(info.isDir())
+            continue;
 
-        if (create)
+        if(m_previewHash.contains(info.canonicalFilePath()) && m_previewHash.value(info.canonicalFilePath()).isEmpty())
         {
-            qDebug("SkinReader: adding %s to cache",
-                   qPrintable(fileInfo.fileName ()));
-            QString name = fileInfo.fileName ().toLower();
-
-            if (name.endsWith(".tgz") || name.endsWith(".tar.gz") || name.endsWith(".tar.bz2"))
-                untar(fileInfo.filePath (), cache_dir.absolutePath (), true);
-            else if (name.endsWith(".zip") || name.endsWith(".wsz"))
-                unzip(fileInfo.filePath (), cache_dir.absolutePath (), true);
+            QString thumbnailPath = thumbnailHash.value(info.baseName());
+            if(!thumbnailPath.isEmpty())
+            {
+                qDebug("SkinReader: adding %s to cache", qPrintable(info.fileName()));
+                m_previewHash.insert(info.canonicalFilePath(), thumbnailPath);
+            }
         }
     }
-    //add thumbs to map
-    cache_dir.refresh();
-    d = cache_dir.entryInfoList();
-    for(const QFileInfo &fileInfo : qAsConst(f))
-    {
-        auto it = std::find_if(d.cbegin(), d.cend(),
-                               [fileInfo](const QFileInfo &thumbInfo){ return fileInfo.baseName() == thumbInfo.baseName(); });
 
-        if(it != d.cend())
+    //clear removed skins from cache
+    const QSet<QString> usedThumbnails(m_previewHash.constBegin(), m_previewHash.constEnd());
+    for(const QFileInfo &i : qAsConst(thumbnailes))
+    {
+        if(!usedThumbnails.contains(i.canonicalFilePath()))
         {
-            m_previewMap.insert(fileInfo.absoluteFilePath (), (*it).absoluteFilePath());
+            QFile::remove(i.canonicalFilePath());
+            qDebug("SkinReader: deleting %s from cache", qPrintable(i.fileName()));
         }
     }
+}
+
+const QStringList &SkinReader::skins() const
+{
+    return m_skins;
+}
+
+const QPixmap SkinReader::getPreview(const QString &skinPath) const
+{
+    return QPixmap(m_previewHash.value(skinPath));
 }
 
 void SkinReader::unpackSkin(const QString &path)
 {
     //remove old skin
-    QDir dir(Qmmp::cacheDir() + QStringLiteral("/skinned/skin"));
-    dir.setFilter( QDir::Files | QDir::Hidden);
+    QDir dir(unpackedSkinPath());
+    dir.setFilter(QDir::Files | QDir::Hidden);
     const QFileInfoList f = dir.entryInfoList();
     for(const QFileInfo &file : qAsConst(f))
         dir.remove(file.fileName());
     //unpack
     QString name = QFileInfo(path).fileName().toLower();
     if (name.endsWith(".tgz") || name.endsWith(".tar.gz") || name.endsWith(".tar.bz2"))
-        untar(path, Qmmp::cacheDir() + QStringLiteral("/skinned/skin"), false);
+        untar(path, unpackedSkinPath(), false);
     else if (name.endsWith(".zip") || name.endsWith(".wsz"))
-        unzip(path, Qmmp::cacheDir() + QStringLiteral("/skinned/skin"), false);
+        unzip(path, unpackedSkinPath(), false);
 }
 
-const QStringList SkinReader::skins()
+QString SkinReader::unpackedSkinPath()
 {
-    return m_previewMap.keys();
-}
-
-const QPixmap SkinReader::getPreview(const QString &skinPath)
-{
-    return QPixmap(m_previewMap.value(skinPath));
+    return Qmmp::cacheDir() + QStringLiteral("/skinned/skin");
 }
 
 void SkinReader::untar(const QString &from, const QString &to, bool preview)
 {
-    QByteArray array;
-    QStringList args = { "tf", from };  //list archive
-    m_process->start("tar", args);
-    m_process->waitForFinished();
-    array = m_process->readAllStandardOutput ();
+    QProcess process;
+    process.start("tar", { "tf", from }); //list archive
+    process.waitForFinished();
+    QByteArray array = process.readAllStandardOutput ();
     const QStringList outputList = QString(array).split("\n", Qt::SkipEmptyParts);
+
     for(QString str : qAsConst(outputList))
     {
         str = str.trimmed();
-        args.clear();
+
         if (!preview || (str.contains("/main.", Qt::CaseInsensitive)
                          || str.startsWith("main.", Qt::CaseInsensitive)))
         {
-            args << "xvfk" << from << "-O" << str;
-            m_process->start("tar", args);
-            m_process->waitForStarted();
-            m_process->waitForFinished();
-            array = m_process->readAllStandardOutput ();
+            QStringList args = { "xvfk" , from , "-O" , str };
+            process.start("tar", args);
+            process.waitForStarted();
+            process.waitForFinished();
+            array = process.readAllStandardOutput();
 
             QString name;
             if (preview)
@@ -169,7 +214,7 @@ void SkinReader::unzip(const QString &from, const QString &to, bool preview)
 {
     if (preview)
     {
-        QStringList args = { "-C", "-j", "-o", "-qq", "-d", to, from, "main.*", "*/main.*" };
+        QStringList args = { "-C", "-j", "-o", "-qq", "-d", to, from, "main.???", "*/main.???" };
         QProcess::execute("unzip", args);
         QDir dir(to);
         dir.setFilter(QDir::Files | QDir::Hidden);
