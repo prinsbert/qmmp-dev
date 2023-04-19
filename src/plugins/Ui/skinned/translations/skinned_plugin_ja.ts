@@ -1466,24 +1466,24 @@
         <translation>曲番号のみを表示</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="120"/>
+        <location filename="../skinnedsettings.cpp" line="106"/>
         <source>Select Skin Files</source>
         <translation>スキンファイルを選択</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="121"/>
+        <location filename="../skinnedsettings.cpp" line="107"/>
         <source>Skin files</source>
         <translation>スキンファイル</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="173"/>
-        <source>Unarchived skin</source>
-        <translation>非書庫化スキン</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Unarchived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="221"/>
-        <source>Archived skin</source>
-        <translation>書庫化スキン</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Archived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

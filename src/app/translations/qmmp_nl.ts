@@ -92,88 +92,88 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="121"/>
+        <location filename="../qmmpstarter.cpp" line="132"/>
         <source>Unknown command</source>
         <translation>Onbekende opdracht</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="438"/>
+        <location filename="../qmmpstarter.cpp" line="449"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Gebruik: qmmp [opties] [bestanden]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="439"/>
+        <location filename="../qmmpstarter.cpp" line="450"/>
         <source>Options:</source>
         <translation>Opties:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="445"/>
+        <location filename="../qmmpstarter.cpp" line="456"/>
         <source>Start qmmp with the specified user interface</source>
         <translation>Qmmp starten met het opgegeven uiterlijk</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="446"/>
+        <location filename="../qmmpstarter.cpp" line="457"/>
         <source>List all available user interfaces</source>
         <translation>Alle uiterlijke varianten tonen</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="447"/>
+        <location filename="../qmmpstarter.cpp" line="458"/>
         <source>Don&apos;t start the application</source>
         <translation>Programma niet starten</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="448"/>
+        <location filename="../qmmpstarter.cpp" line="459"/>
         <source>Display this text and exit</source>
         <translation>Deze tekst tonen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="449"/>
+        <location filename="../qmmpstarter.cpp" line="460"/>
         <source>Print version number and exit</source>
         <translation>Versienummer tonen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="451"/>
+        <location filename="../qmmpstarter.cpp" line="462"/>
         <source>Home page: %1</source>
         <translation>Website: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="452"/>
+        <location filename="../qmmpstarter.cpp" line="463"/>
         <source>Development page: %1</source>
         <translation>Ontwikkelaarspagina: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="453"/>
+        <location filename="../qmmpstarter.cpp" line="464"/>
         <source>Bug tracker: %1</source>
         <translation>Bugtracker: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="143"/>
-        <location filename="../qmmpstarter.cpp" line="458"/>
+        <location filename="../qmmpstarter.cpp" line="154"/>
+        <location filename="../qmmpstarter.cpp" line="469"/>
         <source>Command Line Help</source>
         <translation>Opdrachtregelhulp</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="471"/>
+        <location filename="../qmmpstarter.cpp" line="482"/>
         <source>QMMP version: %1</source>
         <translation>QMMP-versie: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="472"/>
+        <location filename="../qmmpstarter.cpp" line="483"/>
         <source>Compiled with Qt version: %1</source>
         <translation>Gebouwd met Qt-versie: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="473"/>
+        <location filename="../qmmpstarter.cpp" line="484"/>
         <source>Using Qt version: %1</source>
         <translation>Gebruikte Qt-versie: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="476"/>
+        <location filename="../qmmpstarter.cpp" line="487"/>
         <source>Qmmp Version</source>
         <translation>QMMP-versie</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="493"/>
+        <location filename="../qmmpstarter.cpp" line="504"/>
         <source>User Interfaces</source>
         <translation>Uiterlijk</translation>
     </message>

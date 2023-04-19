@@ -95,8 +95,8 @@
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="134"/>
-        <location filename="../converterdialog.cpp" line="358"/>
-        <location filename="../converterdialog.cpp" line="365"/>
+        <location filename="../converterdialog.cpp" line="356"/>
+        <location filename="../converterdialog.cpp" line="363"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
@@ -121,12 +121,12 @@
         <translation>Verwijderen</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="358"/>
+        <location filename="../converterdialog.cpp" line="356"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>Kan &apos;%1&apos; niet uitvoeren: programma niet aangetroffen.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="365"/>
+        <location filename="../converterdialog.cpp" line="363"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>Het proces &apos;%1&apos; is afgerond, maar met fouten.</translation>
     </message>

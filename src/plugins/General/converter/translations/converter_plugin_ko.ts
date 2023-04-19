@@ -95,8 +95,8 @@
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="134"/>
-        <location filename="../converterdialog.cpp" line="358"/>
-        <location filename="../converterdialog.cpp" line="365"/>
+        <location filename="../converterdialog.cpp" line="356"/>
+        <location filename="../converterdialog.cpp" line="363"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
@@ -121,12 +121,12 @@
         <translation>삭제</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="358"/>
+        <location filename="../converterdialog.cpp" line="356"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>%1을(를) 실행할 수 없습니다. 프로그램을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="365"/>
+        <location filename="../converterdialog.cpp" line="363"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>&quot;%1&quot; 프로세스가 오류와 함께 완료되었습니다.</translation>
     </message>

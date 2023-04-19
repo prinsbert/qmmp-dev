@@ -1042,8 +1042,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
-        <source>Filter:</source>
-        <translation>필터:</translation>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
@@ -1053,7 +1053,7 @@
         <translation>대기열</translation>
     </message>
     <message>
-        <location filename="../forms/jumptotrackdialog.ui" line="104"/>
+        <location filename="../forms/jumptotrackdialog.ui" line="105"/>
         <source>Jump To</source>
         <translation>넘어가기</translation>
     </message>
