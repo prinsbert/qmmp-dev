@@ -41,14 +41,14 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Filter:</string>
+      <widget class="QLineEdit" name="filterLineEdit">
+       <property name="placeholderText">
+        <string>Filter</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
        </property>
       </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="filterLineEdit"/>
      </item>
     </layout>
    </item>
@@ -85,7 +85,8 @@
         <string>Queue</string>
        </property>
        <property name="icon">
-        <iconset theme="go-top"/>
+        <iconset theme="go-top">
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
