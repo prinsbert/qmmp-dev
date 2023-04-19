@@ -1042,7 +1042,7 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
-        <source>Filter:</source>
+        <source>Filter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1053,7 +1053,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/jumptotrackdialog.ui" line="104"/>
+        <location filename="../forms/jumptotrackdialog.ui" line="105"/>
         <source>Jump To</source>
         <translation type="unfinished"></translation>
     </message>

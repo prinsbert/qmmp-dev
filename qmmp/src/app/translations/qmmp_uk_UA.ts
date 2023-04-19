@@ -92,88 +92,88 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="438"/>
+        <location filename="../qmmpstarter.cpp" line="449"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Використання: qmmp [options] [files]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="439"/>
+        <location filename="../qmmpstarter.cpp" line="450"/>
         <source>Options:</source>
         <translation>Опції:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="445"/>
+        <location filename="../qmmpstarter.cpp" line="456"/>
         <source>Start qmmp with the specified user interface</source>
         <translation>Запустити qmmp з вказаним інтерфейсом користувача</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="446"/>
+        <location filename="../qmmpstarter.cpp" line="457"/>
         <source>List all available user interfaces</source>
         <translation>Перелік доступних інтерфейсів користувача</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="447"/>
+        <location filename="../qmmpstarter.cpp" line="458"/>
         <source>Don&apos;t start the application</source>
         <translation>Не запускати програму</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="449"/>
+        <location filename="../qmmpstarter.cpp" line="460"/>
         <source>Print version number and exit</source>
         <translation>Показати версію та вийти</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="451"/>
+        <location filename="../qmmpstarter.cpp" line="462"/>
         <source>Home page: %1</source>
         <translation>Домашня сторінка: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="452"/>
+        <location filename="../qmmpstarter.cpp" line="463"/>
         <source>Development page: %1</source>
         <translation>Сторінка розробки: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="453"/>
+        <location filename="../qmmpstarter.cpp" line="464"/>
         <source>Bug tracker: %1</source>
         <translation>Трекер помилок: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="143"/>
-        <location filename="../qmmpstarter.cpp" line="458"/>
+        <location filename="../qmmpstarter.cpp" line="154"/>
+        <location filename="../qmmpstarter.cpp" line="469"/>
         <source>Command Line Help</source>
         <translation>Довідка по командному рядку</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="471"/>
+        <location filename="../qmmpstarter.cpp" line="482"/>
         <source>QMMP version: %1</source>
         <translation>Версія QMMP: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="472"/>
+        <location filename="../qmmpstarter.cpp" line="483"/>
         <source>Compiled with Qt version: %1</source>
         <translation>Зібрано з Qt версії: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="473"/>
+        <location filename="../qmmpstarter.cpp" line="484"/>
         <source>Using Qt version: %1</source>
         <translation>Використовується Qt версії: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="476"/>
+        <location filename="../qmmpstarter.cpp" line="487"/>
         <source>Qmmp Version</source>
         <translation>Версія Qmmp</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="493"/>
+        <location filename="../qmmpstarter.cpp" line="504"/>
         <source>User Interfaces</source>
         <translation>Інтерфейси користувача</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="448"/>
+        <location filename="../qmmpstarter.cpp" line="459"/>
         <source>Display this text and exit</source>
         <translation>Показати цей текст та вийти</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="121"/>
+        <location filename="../qmmpstarter.cpp" line="132"/>
         <source>Unknown command</source>
         <translation>Невідома команда</translation>
     </message>

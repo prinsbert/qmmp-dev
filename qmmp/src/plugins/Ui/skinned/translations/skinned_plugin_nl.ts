@@ -1465,24 +1465,24 @@
         <translation>Knop &apos;Nieuwe afspeellijst&apos; tonen</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="120"/>
+        <location filename="../skinnedsettings.cpp" line="106"/>
         <source>Select Skin Files</source>
         <translation>Kies themabestanden</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="121"/>
+        <location filename="../skinnedsettings.cpp" line="107"/>
         <source>Skin files</source>
         <translation>Themabestanden</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="173"/>
-        <source>Unarchived skin</source>
-        <translation>Uitgepakt thema</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Unarchived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="221"/>
-        <source>Archived skin</source>
-        <translation>Ingepakt thema</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Archived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1467,24 +1467,24 @@
         <translation>Lygiuoti dainų numerius</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="120"/>
+        <location filename="../skinnedsettings.cpp" line="106"/>
         <source>Select Skin Files</source>
         <translation>Pasirinkti temų bylas</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="121"/>
+        <location filename="../skinnedsettings.cpp" line="107"/>
         <source>Skin files</source>
         <translation>Temų bylos</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="173"/>
-        <source>Unarchived skin</source>
-        <translation>Išskleista tema</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Unarchived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="221"/>
-        <source>Archived skin</source>
-        <translation>Suspausta tema</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Archived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

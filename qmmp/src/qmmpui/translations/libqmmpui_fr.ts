@@ -1042,8 +1042,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
-        <source>Filter:</source>
-        <translation>Filtre:</translation>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
@@ -1053,7 +1053,7 @@
         <translation>Queue</translation>
     </message>
     <message>
-        <location filename="../forms/jumptotrackdialog.ui" line="104"/>
+        <location filename="../forms/jumptotrackdialog.ui" line="105"/>
         <source>Jump To</source>
         <translation>Sauter à</translation>
     </message>

@@ -90,8 +90,8 @@
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="134"/>
-        <location filename="../converterdialog.cpp" line="358"/>
-        <location filename="../converterdialog.cpp" line="365"/>
+        <location filename="../converterdialog.cpp" line="356"/>
+        <location filename="../converterdialog.cpp" line="363"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
@@ -121,12 +121,12 @@
         <translation>Видалити</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="358"/>
+        <location filename="../converterdialog.cpp" line="356"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>Неможливо запустити &quot;%1&quot;. Програму не найдено.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="365"/>
+        <location filename="../converterdialog.cpp" line="363"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>Процес &quot;%1&quot; завершено з помилкою.</translation>
     </message>
