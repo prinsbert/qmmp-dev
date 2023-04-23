@@ -220,6 +220,8 @@ QString LyricsWidget::cacheFilePath() const
 bool LyricsWidget::loadFromTag(const QString &path)
 {
     MetaDataModel *model = MetaDataManager::instance()->createMetaDataModel(path, true);
+    if(!model)
+        return false;
     QString content = model->lyrics();
     delete model;
 
