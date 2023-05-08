@@ -140,6 +140,7 @@ protected:
     bool takeData(float *left, float *right = nullptr);
 
 private:
+    static void createVisualization(VisualFactory *factory, QWidget *parent);
     static QList<VisualFactory*> *m_factories;
     static QHash <const VisualFactory*, QString> *m_files;
     static void checkFactories();
