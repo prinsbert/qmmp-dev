@@ -125,16 +125,7 @@ void Visual::setEnabled(VisualFactory *factory, bool enable)
             visList << name;
         if (!m_vis_map.value(factory) && m_parentWidget)
         {
-            Visual* visual = factory->create(m_parentWidget);
-            if (m_receiver && m_member)
-                connect(visual, SIGNAL(closedByUser()), m_receiver, m_member);
-            visual->setWindowFlags(Qt::Window);
-            m_vis_map.insert (factory, visual);
-            Qmmp::State st = StateHandler::instance()->state();
-            if(st == Qmmp::Playing || st == Qmmp::Buffering || st == Qmmp::Paused)
-                visual->start();
-            m_visuals.append(visual);
-            visual->show();
+            createVisualization(factory, m_parentWidget);
         }
     }
     else
@@ -163,7 +154,7 @@ void Visual::add(Visual *visual)
 {
     if (!m_visuals.contains(visual))
     {
-        Qmmp::State st = StateHandler::instance()->state();
+        Qmmp::State st = StateHandler::instance() ? StateHandler::instance()->state() : Qmmp::Stopped;
         if(st == Qmmp::Playing || st == Qmmp::Buffering || st == Qmmp::Paused)
             visual->start();
         m_visuals.append(visual);
@@ -182,16 +173,9 @@ void Visual::initialize(QWidget *parent , QObject *receiver, const char *member)
     m_parentWidget = parent;
     for(VisualFactory *factory : factories())
     {
-        if (isEnabled(factory))
+        if(isEnabled(factory))
         {
-            Visual* visual = factory->create(parent);
-            if (m_receiver && m_member)
-                connect(visual, SIGNAL(closedByUser()), m_receiver, m_member);
-            visual->setWindowFlags(visual->windowFlags() | Qt::Window);
-            qDebug("Visual: added visualization: %s", qPrintable(factory->properties().shortName));
-            m_vis_map.insert (factory, visual);
-            m_visuals.append(visual);
-            QTimer::singleShot(0, visual, SLOT(show()));
+            QTimer::singleShot(0, parent, [factory, parent] { createVisualization(factory, parent); });
         }
     }
 }
@@ -212,13 +196,7 @@ void Visual::showSettings(VisualFactory *factory, QWidget *parent)
         Visual *visual = m_vis_map.value(factory);
         remove(visual);
         visual->close();
-        visual = factory->create(m_parentWidget);
-        if (m_receiver && m_member)
-            connect(visual, SIGNAL(closedByUser()), m_receiver, m_member);
-        visual->setWindowFlags(Qt::Window);
-        m_vis_map[factory] = visual;
-        visual->show();
-        add(visual);
+        createVisualization(factory, m_parentWidget);
     }
     dialog->deleteLater();
 }
@@ -278,4 +256,16 @@ void Visual::checkFactories()
             }
         }
     }
+}
+
+void Visual::createVisualization(VisualFactory *factory, QWidget *parent)
+{
+    Visual *visual = factory->create(parent);
+    if (m_receiver && m_member)
+        connect(visual, SIGNAL(closedByUser()), m_receiver, m_member);
+    visual->setWindowFlags(visual->windowFlags() | Qt::Window);
+    qDebug("Visual: added visualization: %s", qPrintable(factory->properties().shortName));
+    m_vis_map.insert(factory, visual);
+    add(visual);
+    visual->show();
 }
