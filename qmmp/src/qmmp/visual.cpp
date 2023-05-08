@@ -28,6 +28,7 @@
 #include <QDialog>
 #include <QPluginLoader>
 #include <QTranslator>
+#include <QTimer>
 #include "statehandler.h"
 #include "visualfactory.h"
 #include "visualbuffer_p.h"
@@ -187,10 +188,10 @@ void Visual::initialize(QWidget *parent , QObject *receiver, const char *member)
             if (m_receiver && m_member)
                 connect(visual, SIGNAL(closedByUser()), m_receiver, m_member);
             visual->setWindowFlags(visual->windowFlags() | Qt::Window);
-            qDebug("Visual: added visualization: %s", qPrintable(factory->properties().name));
+            qDebug("Visual: added visualization: %s", qPrintable(factory->properties().shortName));
             m_vis_map.insert (factory, visual);
             m_visuals.append(visual);
-            visual->show();
+            QTimer::singleShot(0, visual, SLOT(show()));
         }
     }
 }
