@@ -39,7 +39,7 @@ public:
 
     ~ProjectMWidget();
 
-    projectM *projectMInstance();
+    void addPCM(float *left, float *right);
 
 signals:
     void showMenuToggled(bool);
@@ -68,6 +68,7 @@ private:
     ProjectMWrapper *m_projectM = nullptr;
     QMenu *m_menu;
     QListWidget *m_listWidget;
+    short m_buf[2][512];
 };
 
 #endif

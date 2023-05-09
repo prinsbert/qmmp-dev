@@ -27,7 +27,11 @@
 class QTimer;
 class QSplitter;
 class Buffer;
+#ifdef PROJECTM_4
+class ProjectM4Widget;
+#else
 class ProjectMWidget;
+#endif
 
 class ProjectMPlugin : public Visual
 {
@@ -49,7 +53,11 @@ private:
     void showEvent(QShowEvent *) override;
     void hideEvent(QHideEvent *) override;
     QTimer *m_timer;
+#ifdef PROJECTM_4
+    ProjectM4Widget *m_projectMWidget;
+#else
     ProjectMWidget *m_projectMWidget;
+#endif
     QSplitter *m_splitter;
     short m_buf[2][512];
     float m_left[QMMP_VISUAL_NODE_SIZE];
