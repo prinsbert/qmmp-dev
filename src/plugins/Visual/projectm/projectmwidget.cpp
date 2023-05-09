@@ -50,9 +50,17 @@ ProjectMWidget::ProjectMWidget(QListWidget *listWidget, QWidget *parent)
 ProjectMWidget::~ProjectMWidget()
 {}
 
-projectM *ProjectMWidget::projectMInstance()
+void ProjectMWidget::addPCM(float *left, float *right)
 {
-    return m_projectM;
+    if(!m_projectM)
+        return;
+
+    for(size_t i = 0; i < qMin(512, QMMP_VISUAL_NODE_SIZE); i++)
+    {
+        m_buf[0][i] = left[i] * 32767.0;
+        m_buf[1][i] = right[i] * 32767.0;
+    }
+    m_projectM->pcm()->addPCM16(m_buf);
 }
 
 void ProjectMWidget::initializeGL()

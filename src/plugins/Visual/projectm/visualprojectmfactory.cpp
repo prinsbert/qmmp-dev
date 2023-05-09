@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,8 +20,9 @@
 
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "visualprojectmfactory.h"
 #include "projectmplugin.h"
+#include "visualprojectmfactory.h"
+
 
 VisualProperties VisualProjectMFactory::properties() const
 {
