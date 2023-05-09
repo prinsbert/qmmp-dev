@@ -159,7 +159,7 @@ void ProjectM4Widget::createActions()
     m_menu->addSeparator();
     m_menu->addAction(tr("&Next Preset"), this, SLOT(nextPreset()), tr("N"));
     m_menu->addAction(tr("&Previous Preset"), this, SLOT(previousPreset()), tr("P"));
-    m_menu->addAction(tr("&Random Mode"), this, SLOT(setRandomMode(bool)), tr("R"))->setCheckable(true);
+    m_menu->addAction(tr("&Shuffle"), this, SLOT(setShuffle(bool)), tr("R"))->setCheckable(true);
     m_menu->addAction(tr("&Lock Preset"), this, SLOT(lockPreset(bool)), tr("L"))->setCheckable(true);
     m_menu->addSeparator();
     m_menu->addAction(tr("&Fullscreen"), this, SIGNAL(fullscreenToggled(bool)), tr("F"))->setCheckable(true);
@@ -197,7 +197,7 @@ void ProjectM4Widget::previousPreset()
         projectm_playlist_play_previous(m_playlistHandle, true);
 }
 
-void ProjectM4Widget::setRandomMode(bool enabled)
+void ProjectM4Widget::setShuffle(bool enabled)
 {
     if(m_playlistHandle)
         projectm_playlist_set_shuffle(m_playlistHandle, enabled);
