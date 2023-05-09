@@ -96,7 +96,7 @@
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="146"/>
-        <location filename="../lyricswidget.cpp" line="230"/>
+        <location filename="../lyricswidget.cpp" line="232"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
@@ -116,12 +116,12 @@
         <translation>받는 중</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="232"/>
+        <location filename="../lyricswidget.cpp" line="234"/>
         <source>Tag</source>
         <translation>태그</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="253"/>
+        <location filename="../lyricswidget.cpp" line="255"/>
         <source>Cache</source>
         <translation type="unfinished"></translation>
     </message>
