@@ -13,7 +13,7 @@ SOURCES += visualprojectmfactory.cpp \
 RESOURCES = translations/translations.qrc
 
 #DEFINES += PROJECTM_31
-DEFINES += PROJECTM_4
+#DEFINES += PROJECTM_4
 
 contains(DEFINES, PROJECTM_4) {
     HEADERS += projectm4widget.h
