@@ -56,7 +56,7 @@ protected:
 private slots:
     void nextPreset();
     void previousPreset();
-    void setRandomMode(bool enabled);
+    void setShuffle(bool enabled);
     void lockPreset(bool lock);
     void setCurrentRow(int row);
     void selectPreset(int index);
