@@ -170,8 +170,8 @@ MetaDataModel* DecoderWavPackFactory::createMetaDataModel(const QString &path, b
 {
     if (!path.contains("://") || path.startsWith("wvpack://"))
         return new WavPackMetaDataModel(path, readOnly);
-    else
-        return nullptr;
+
+    return nullptr;
 }
 
 void DecoderWavPackFactory::showSettings(QWidget *)

@@ -343,8 +343,8 @@ void MainVisual::readSettings()
         //update settings from previous version
         if(!m_analyzerFalloffGroup->checkedAction() || !m_peaksFalloffGroup->checkedAction())
         {
-            m_analyzerFalloffGroup->actions()[2]->setChecked(true);
-            m_peaksFalloffGroup->actions()[2]->setChecked(true);
+            m_analyzerFalloffGroup->actions().at(2)->setChecked(true);
+            m_peaksFalloffGroup->actions().at(2)->setChecked(true);
             writeSettings();
         }
     }

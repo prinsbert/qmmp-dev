@@ -649,7 +649,8 @@ QList<MetaDataFormatter::Node> MetaDataFormatter::compile(const QString &expr)
             }
             continue;
         }
-        else if((*i) == QChar('&'))
+
+        if((*i) == QChar('&'))
         {
             ++i;
             Node node;

@@ -1096,7 +1096,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
             qDeleteAll(list);
     }
 
-    qDeleteAll(cache.values());
+    qDeleteAll(cache);
     cache.clear();
 
     if(!tracksToRemove.isEmpty())

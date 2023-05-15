@@ -105,8 +105,7 @@ PlayListHeader::PlayListHeader(QWidget *parent) :
 
 PlayListHeader::~PlayListHeader()
 {
-    if (m_metrics)
-        delete m_metrics;
+    delete m_metrics;
     m_metrics = nullptr;
     writeSettings();
 }

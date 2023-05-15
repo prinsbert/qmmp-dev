@@ -50,8 +50,8 @@ QString Qmmp::configDir()
     }
 #else
     if(m_configDir.isEmpty())
-        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation))
-                .arg(QCoreApplication::organizationName());
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation),
+                                           QCoreApplication::organizationName());
 
 #endif
     return m_configDir;
@@ -68,10 +68,9 @@ QString Qmmp::cacheDir()
     return configDir();
 #else
     if(m_configDir.isEmpty())
-        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation))
-                .arg(QCoreApplication::organizationName());
-    else
-        return m_configDir;
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation),
+                                           QCoreApplication::organizationName());
+    return m_configDir;
 #endif
 }
 
