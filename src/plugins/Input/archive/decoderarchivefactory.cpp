@@ -113,10 +113,7 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
 
             if(!filtered.isEmpty())
             {
-                list << new TrackInfo(QString("%1://%2#%3")
-                                     .arg(archivePath.section(".", -1)).toLower()
-                                     .arg(archivePath)
-                                     .arg(filePath));
+                list << new TrackInfo(QString("%1://%2#%3").arg(archivePath.section(".", -1).toLower(), archivePath, filePath));
 
                 ArchiveInputDevice dev(a, entry, nullptr);
                 ArchiveTagReader reader(&dev, list.last()->path());

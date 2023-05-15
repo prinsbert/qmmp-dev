@@ -27,7 +27,8 @@ QStringList CommandLineHandler::helpString() const
     {
         if(opt.flags & HiddenFromHelp)
             continue;
-        else if(opt.values.isEmpty())
+
+        if(opt.values.isEmpty())
             out << opt.names.join(", ") + "||" + opt.helpString;
         else
             out << opt.names.join(", ") + " <" + opt.values.join("> <") + ">||" + opt.helpString;

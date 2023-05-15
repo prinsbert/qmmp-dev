@@ -130,7 +130,7 @@ QString CommandLineManager::formatHelpString(const QString &line)
     QStringList list = line.split("||", Qt::SkipEmptyParts);
     if(list.count() == 1)
         return list.at(0);
-    else if(list.count() >= 2)
+    if(list.count() >= 2)
         return list.at(0).leftJustified(25) + list.at(1);
     return QString();
 }

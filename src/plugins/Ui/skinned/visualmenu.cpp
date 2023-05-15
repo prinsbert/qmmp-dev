@@ -40,7 +40,7 @@ void VisualMenu::updateActions()
 {
     for(int i = 0; i < Visual::factories().size(); ++i)
     {
-        actions()[i]->setChecked(Visual::isEnabled(Visual::factories().at(i)));
+        actions().at(i)->setChecked(Visual::isEnabled(Visual::factories().at(i)));
     }
 }
 

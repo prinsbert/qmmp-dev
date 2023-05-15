@@ -143,7 +143,7 @@ void LyricsWidget::onRequestFinished(QNetworkReply *reply)
             }
             else if(!content.isEmpty())
             {
-                content.prepend(tr("<h2>%1 - %2</h2>").arg(m_info.value(Qmmp::ARTIST)).arg(m_info.value(Qmmp::TITLE)));
+                content.prepend(tr("<h2>%1 - %2</h2>").arg(m_info.value(Qmmp::ARTIST), m_info.value(Qmmp::TITLE)));
                 m_ui.providerComboBox->addItem(name, content);
                 if(m_ui.providerComboBox->count() == 1)
                 {

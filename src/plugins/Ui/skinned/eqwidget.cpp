@@ -69,7 +69,7 @@ EqWidget::EqWidget (QWidget *parent)
     for (int i = 0; i<10; ++i)
     {
         m_sliders << new EqSlider (this);
-        connect (m_sliders.at (i), SIGNAL (sliderMoved (double)),SLOT (writeEq()));
+        connect(m_sliders.at(i), SIGNAL(sliderMoved(double)), SLOT(writeEq()));
     }
     readSettings();
     createActions();
