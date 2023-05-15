@@ -251,7 +251,8 @@ void QSUiTabWidget::showEvent(QShowEvent *)
 void QSUiTabWidget::resizeEvent(QResizeEvent *e)
 {
     QWidget::resizeEvent(e);
-    setUpLayout();
+    if(isVisible())
+        setUpLayout();
 }
 
 void QSUiTabWidget::paintEvent(QPaintEvent *)
