@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>ProjectM4Widget</name>
     <message>
-        <location filename="../projectm4widget.cpp" line="158"/>
+        <location filename="../projectm4widget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished">メニューを表示(&amp;S)</translation>
+        <translation>メニューを表示(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="158"/>
+        <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="160"/>
+        <location filename="../projectm4widget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
-        <translation type="unfinished">次のプリセット(&amp;N)</translation>
+        <translation>次のプリセット(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="160"/>
+        <location filename="../projectm4widget.cpp" line="165"/>
         <source>N</source>
-        <translation type="unfinished">N</translation>
+        <translation>N</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="161"/>
+        <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation type="unfinished">前のプリセット(&amp;P)</translation>
+        <translation>前のプリセット(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="161"/>
+        <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="162"/>
+        <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>シャッフル(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="162"/>
+        <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4widget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
-        <translation type="unfinished">プリセットをロック(&amp;L)</translation>
+        <translation>プリセットをロック(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4widget.cpp" line="168"/>
         <source>L</source>
-        <translation type="unfinished">L</translation>
+        <translation>L</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4widget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished">フルスクリーン(&amp;F)</translation>
+        <translation>フルスクリーン(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
