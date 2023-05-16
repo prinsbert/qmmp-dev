@@ -6,6 +6,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
+IF(POLICY CMP0072)
+  CMAKE_POLICY(SET CMP0072 NEW)
+ENDIF()
+
 
 # projectM
 MESSAGE(STATUS "Found OpenGL implementation: ${Qt5Gui_OPENGL_IMPLEMENTATION}")
