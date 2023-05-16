@@ -96,7 +96,7 @@
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="139"/>
-        <location filename="../lyricswidget.cpp" line="230"/>
+        <location filename="../lyricswidget.cpp" line="232"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
@@ -116,12 +116,12 @@
         <translation>Bezig met ophalen…</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="232"/>
+        <location filename="../lyricswidget.cpp" line="234"/>
         <source>Tag</source>
         <translation>Tag</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="253"/>
+        <location filename="../lyricswidget.cpp" line="255"/>
         <source>Cache</source>
         <translation>Cache</translation>
     </message>
