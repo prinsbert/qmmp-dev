@@ -4,62 +4,62 @@
 <context>
     <name>ProjectM4Widget</name>
     <message>
-        <location filename="../projectm4widget.cpp" line="158"/>
+        <location filename="../projectm4widget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="158"/>
+        <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="160"/>
+        <location filename="../projectm4widget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
         <translation type="unfinished">&amp;Další předvolby</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="160"/>
+        <location filename="../projectm4widget.cpp" line="165"/>
         <source>N</source>
         <translation type="unfinished">N</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="161"/>
+        <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
         <translation type="unfinished">Př&amp;edchozí předvolby</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="161"/>
+        <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
         <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="162"/>
+        <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="162"/>
+        <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
         <translation type="unfinished">R</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4widget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
         <translation type="unfinished">U&amp;zamknout předvolby</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4widget.cpp" line="168"/>
         <source>L</source>
         <translation type="unfinished">L</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4widget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
         <translation type="unfinished">&amp;Celá obrazovka</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
         <translation type="unfinished">F</translation>
     </message>

@@ -4,64 +4,64 @@
 <context>
     <name>ProjectM4Widget</name>
     <message>
-        <location filename="../projectm4widget.cpp" line="158"/>
+        <location filename="../projectm4widget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished">Прикажи &amp;мени</translation>
+        <translation>Прикажи &amp;мени</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="158"/>
+        <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished">М</translation>
+        <translation>M</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="160"/>
+        <location filename="../projectm4widget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
-        <translation type="unfinished">&amp;Следећа поставка</translation>
+        <translation>&amp;Следећа поставка</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="160"/>
+        <location filename="../projectm4widget.cpp" line="165"/>
         <source>N</source>
-        <translation type="unfinished">Н</translation>
+        <translation>Н</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="161"/>
+        <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation type="unfinished">П&amp;ретходна поставка</translation>
+        <translation>П&amp;ретходна поставка</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="161"/>
+        <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
-        <translation type="unfinished">П</translation>
+        <translation>P</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="162"/>
+        <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>На&amp;сумично</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="162"/>
+        <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
-        <translation type="unfinished">Р</translation>
+        <translation>R</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4widget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
-        <translation type="unfinished">&amp;Закључај поставку</translation>
+        <translation>&amp;Закључај поставку</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="163"/>
+        <location filename="../projectm4widget.cpp" line="168"/>
         <source>L</source>
-        <translation type="unfinished">Л</translation>
+        <translation>Л</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4widget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished">&amp;Цео екран</translation>
+        <translation>&amp;Цео екран</translation>
     </message>
     <message>
-        <location filename="../projectm4widget.cpp" line="165"/>
+        <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished">Ф</translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
