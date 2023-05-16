@@ -34,9 +34,14 @@
 #include <qmmp/qmmp.h>
 #include "projectm4widget.h"
 
-#ifndef PROJECTM_CONFIG
-#define PROJECTM_CONFIG "/usr/share/projectM/config.inp"
+#ifndef PROJECTM_PRESET_PATH
+#define PROJECTM_PRESET_PATH "/usr/share/projectM/presets"
 #endif
+
+#ifndef PROJECTM_TEXTURE_PATH
+#define PROJECTM_TEXTURE_PATH "/usr/share/projectM/textures"
+#endif
+
 
 ProjectM4Widget::ProjectM4Widget(QListWidget *listWidget, QWidget *parent)
         : QOpenGLWidget(parent)
@@ -108,7 +113,7 @@ void ProjectM4Widget::initializeGL()
             return;
         }
 
-        const char *texture_paths[] = { "/usr/share/projectM/presets" };
+        const char *texture_paths[] = { PROJECTM_TEXTURE_PATH };
         projectm_set_texture_search_paths(m_handle, texture_paths, 1);
         projectm_set_fps(m_handle, 60);
         projectm_set_mesh_size(m_handle, 220, 125);
@@ -123,7 +128,7 @@ void ProjectM4Widget::initializeGL()
         m_playlistHandle = projectm_playlist_create(m_handle);
         projectm_playlist_set_shuffle(m_playlistHandle, false);
         projectm_playlist_set_preset_switched_event_callback(m_playlistHandle, &ProjectM4Widget::presetSwitchedEvent, this);
-        findPresets("/usr/share/projectM/presets");
+        findPresets(QStringLiteral(PROJECTM_PRESET_PATH));
         connect(m_listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(selectPreset(int)));
     }
 }
