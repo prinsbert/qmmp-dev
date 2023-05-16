@@ -17,28 +17,30 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef PROJECTMWIDGET_H
-#define PROJECTMWIDGET_H
+#ifndef PROJECTM4WIDGET_H
+#define PROJECTM4WIDGET_H
 
 #include <QOpenGLWidget>
+#include <projectM-4/types.h>
+#include <projectM-4/playlist_core.h>
+#include <qmmp/visual.h>
 
 class QMenu;
 class QTimer;
 class QListWidget;
-class ProjectMWrapper;
-class projectM;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ProjectMWidget : public QOpenGLWidget
+class ProjectM4Widget : public QOpenGLWidget
 {
     Q_OBJECT
 public:
-    explicit ProjectMWidget(QListWidget *listWidget, QWidget *parent = nullptr);
+    explicit ProjectM4Widget(QListWidget *listWidget, QWidget *parent = nullptr);
 
-    ~ProjectMWidget();
+    ~ProjectM4Widget();
 
+    projectm_handle handle();
     void addPCM(float *left, float *right);
 
 signals:
@@ -49,26 +51,26 @@ protected:
     virtual void initializeGL() override;
     virtual void resizeGL(int width, int height) override;
     virtual void paintGL() override;
-    virtual void mousePressEvent (QMouseEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override;
 
 private slots:
-    void showHelp();
-    void showPresetName();
-    void showTitle();
     void nextPreset();
     void previousPreset();
-    void randomPreset();
+    void setShuffle(bool enabled);
     void lockPreset(bool lock);
-    void updateTitle();
     void setCurrentRow(int row);
+    void selectPreset(int index);
 
 private:
     void createActions();
     void findPresets(const QString &path);
-    ProjectMWrapper *m_projectM = nullptr;
+    static void presetSwitchedEvent(bool isHardCut, unsigned int index, void *data);
+
+    projectm_handle m_handle = nullptr;
+    projectm_playlist_handle m_playlistHandle = nullptr;
     QMenu *m_menu;
     QListWidget *m_listWidget;
-    short m_buf[2][512];
+    float m_buf[QMMP_VISUAL_NODE_SIZE * 2] = { 0 };
 };
 
 #endif
