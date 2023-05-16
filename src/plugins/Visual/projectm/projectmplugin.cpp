@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,13 +25,13 @@
 #include <QHBoxLayout>
 #include <QSplitter>
 #include <QListWidget>
-#include <math.h>
 #include <stdlib.h>
 #include <locale.h>
-#include <libprojectM/projectM.hpp>
-#include <qmmp/buffer.h>
-#include <qmmp/output.h>
+#ifdef PROJECTM_4
+#include "projectm4widget.h"
+#else
 #include "projectmwidget.h"
+#endif
 #include "projectmplugin.h"
 
 ProjectMPlugin::ProjectMPlugin (QWidget *parent)
@@ -45,7 +45,11 @@ ProjectMPlugin::ProjectMPlugin (QWidget *parent)
     QListWidget *listWidget = new QListWidget(m_splitter);
     listWidget->setAlternatingRowColors(true);
     m_splitter->addWidget(listWidget);
+#ifdef PROJECTM_4
+    m_projectMWidget = new ProjectM4Widget(listWidget, m_splitter);
+#else
     m_projectMWidget = new ProjectMWidget(listWidget, m_splitter);
+#endif
     m_splitter->addWidget(m_projectMWidget);
 
     m_splitter->setStretchFactor(1,1);
@@ -84,19 +88,9 @@ void ProjectMPlugin::stop()
 
 void ProjectMPlugin::onTimeout()
 {
-    projectM *instance = m_projectMWidget->projectMInstance();
-    if (!instance)
-        return;
-
     if(takeData(m_left, m_right))
     {
-        for(size_t i = 0; i < 512; i++)
-        {
-            m_buf[0][i] = m_left[i] * 32767.0;
-            m_buf[1][i] = m_right[i] * 32767.0;
-        }
-
-        m_projectMWidget->projectMInstance()->pcm()->addPCM16(m_buf);
+        m_projectMWidget->addPCM(m_left, m_right);
     }
 
     m_projectMWidget->update();
@@ -110,7 +104,7 @@ void ProjectMPlugin::setFullScreen(bool yes)
         setWindowState(windowState() & ~Qt::WindowFullScreen);
 }
 
-void ProjectMPlugin::closeEvent (QCloseEvent *event)
+void ProjectMPlugin::closeEvent(QCloseEvent *event)
 {
     //save geometry
     QSettings settings;

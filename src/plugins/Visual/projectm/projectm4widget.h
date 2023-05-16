@@ -17,29 +17,60 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef VISUALPROJECTMFACTORY_H
-#define VISUALPROJECTMFACTORY_H
+#ifndef PROJECTM4WIDGET_H
+#define PROJECTM4WIDGET_H
 
-#include <QObject>
-#include <qmmp/visualfactory.h>
+#include <QOpenGLWidget>
+#include <projectM-4/types.h>
+#include <projectM-4/playlist_core.h>
 #include <qmmp/visual.h>
+
+class QMenu;
+class QTimer;
+class QListWidget;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class VisualProjectMFactory : public QObject, public VisualFactory
+class ProjectM4Widget : public QOpenGLWidget
 {
-Q_OBJECT
-Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.VisualFactoryInterface.1.0")
-Q_INTERFACES(VisualFactory)
-
+    Q_OBJECT
 public:
-    VisualProperties properties() const override;
-    Visual *create(QWidget *parent) override;
-    QDialog *createConfigDialog(QWidget *parent) override;
-    void showAbout(QWidget *parent) override;
-    QString translation() const override;
-};
+    explicit ProjectM4Widget(QListWidget *listWidget, QWidget *parent = nullptr);
 
+    ~ProjectM4Widget();
+
+    projectm_handle handle();
+    void addPCM(float *left, float *right);
+
+signals:
+    void showMenuToggled(bool);
+    void fullscreenToggled(bool);
+
+protected:
+    virtual void initializeGL() override;
+    virtual void resizeGL(int width, int height) override;
+    virtual void paintGL() override;
+    virtual void mousePressEvent(QMouseEvent *event) override;
+
+private slots:
+    void nextPreset();
+    void previousPreset();
+    void setShuffle(bool enabled);
+    void lockPreset(bool lock);
+    void setCurrentRow(int row);
+    void selectPreset(int index);
+
+private:
+    void createActions();
+    void findPresets(const QString &path);
+    static void presetSwitchedEvent(bool isHardCut, unsigned int index, void *data);
+
+    projectm_handle m_handle = nullptr;
+    projectm_playlist_handle m_playlistHandle = nullptr;
+    QMenu *m_menu;
+    QListWidget *m_listWidget;
+    float m_buf[QMMP_VISUAL_NODE_SIZE * 2] = { 0 };
+};
 
 #endif

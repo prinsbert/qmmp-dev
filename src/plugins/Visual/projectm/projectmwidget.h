@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -39,7 +39,7 @@ public:
 
     ~ProjectMWidget();
 
-    projectM *projectMInstance();
+    void addPCM(float *left, float *right);
 
 signals:
     void showMenuToggled(bool);
@@ -65,9 +65,10 @@ private slots:
 private:
     void createActions();
     void findPresets(const QString &path);
-    ProjectMWrapper *m_projectM;
+    ProjectMWrapper *m_projectM = nullptr;
     QMenu *m_menu;
     QListWidget *m_listWidget;
+    short m_buf[2][512];
 };
 
 #endif
