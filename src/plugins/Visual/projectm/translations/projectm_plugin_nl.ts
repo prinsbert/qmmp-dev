@@ -2,6 +2,69 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="nl">
 <context>
+    <name>ProjectM4Widget</name>
+    <message>
+        <location filename="../projectm4widget.cpp" line="163"/>
+        <source>&amp;Show Menu</source>
+        <translation type="unfinished">Menu &amp;tonen</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="163"/>
+        <source>M</source>
+        <translation type="unfinished">M</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="165"/>
+        <source>&amp;Next Preset</source>
+        <translation type="unfinished">Volge&amp;nde voorinstelling</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="165"/>
+        <source>N</source>
+        <translation type="unfinished">N</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="166"/>
+        <source>&amp;Previous Preset</source>
+        <translation type="unfinished">&amp;Vorige voorinstelling</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="166"/>
+        <source>P</source>
+        <translation type="unfinished">P</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="167"/>
+        <source>&amp;Shuffle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="167"/>
+        <source>R</source>
+        <translation type="unfinished">R</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="168"/>
+        <source>&amp;Lock Preset</source>
+        <translation type="unfinished">Voorinste&amp;lling vastzetten</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="168"/>
+        <source>L</source>
+        <translation type="unfinished">L</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="170"/>
+        <source>&amp;Fullscreen</source>
+        <translation type="unfinished">Beeld&amp;vullend</translation>
+    </message>
+    <message>
+        <location filename="../projectm4widget.cpp" line="170"/>
+        <source>F</source>
+        <translation type="unfinished">F</translation>
+    </message>
+</context>
+<context>
     <name>ProjectMPlugin</name>
     <message>
         <location filename="../projectmplugin.cpp" line="41"/>
@@ -12,92 +75,92 @@
 <context>
     <name>ProjectMWidget</name>
     <message>
-        <location filename="../projectmwidget.cpp" line="136"/>
+        <location filename="../projectmwidget.cpp" line="143"/>
         <source>&amp;Help</source>
         <translation>&amp;Hulp</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="136"/>
+        <location filename="../projectmwidget.cpp" line="143"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="137"/>
+        <location filename="../projectmwidget.cpp" line="144"/>
         <source>&amp;Show Song Title</source>
         <translation>Naam van &amp;nummer tonen</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="137"/>
+        <location filename="../projectmwidget.cpp" line="144"/>
         <source>F2</source>
         <translation>F2</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="138"/>
+        <location filename="../projectmwidget.cpp" line="145"/>
         <source>&amp;Show Preset Name</source>
         <translation>Naam van voorin&amp;stelling tonen</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="138"/>
+        <location filename="../projectmwidget.cpp" line="145"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="139"/>
+        <location filename="../projectmwidget.cpp" line="146"/>
         <source>&amp;Show Menu</source>
         <translation>Menu &amp;tonen</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="139"/>
+        <location filename="../projectmwidget.cpp" line="146"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="141"/>
+        <location filename="../projectmwidget.cpp" line="148"/>
         <source>&amp;Next Preset</source>
         <translation>Volge&amp;nde voorinstelling</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="141"/>
+        <location filename="../projectmwidget.cpp" line="148"/>
         <source>N</source>
         <translation>N</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="142"/>
+        <location filename="../projectmwidget.cpp" line="149"/>
         <source>&amp;Previous Preset</source>
         <translation>&amp;Vorige voorinstelling</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="142"/>
+        <location filename="../projectmwidget.cpp" line="149"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="143"/>
+        <location filename="../projectmwidget.cpp" line="150"/>
         <source>&amp;Random Preset</source>
         <translation>Willekeu&amp;rige voorinstelling</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="143"/>
+        <location filename="../projectmwidget.cpp" line="150"/>
         <source>R</source>
         <translation>R</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="144"/>
+        <location filename="../projectmwidget.cpp" line="151"/>
         <source>&amp;Lock Preset</source>
         <translation>Voorinste&amp;lling vastzetten</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="144"/>
+        <location filename="../projectmwidget.cpp" line="151"/>
         <source>L</source>
         <translation>L</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="146"/>
+        <location filename="../projectmwidget.cpp" line="153"/>
         <source>&amp;Fullscreen</source>
         <translation>Beeld&amp;vullend</translation>
     </message>
     <message>
-        <location filename="../projectmwidget.cpp" line="146"/>
+        <location filename="../projectmwidget.cpp" line="153"/>
         <source>F</source>
         <translation>F</translation>
     </message>
