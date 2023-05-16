@@ -6,6 +6,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
+
 # projectM
 
 IF(QT_FEATURE_opengl)
@@ -15,6 +16,12 @@ IF(QT_FEATURE_opengl)
   IF(projectM4_FOUND)
     ADD_DEFINITIONS(-DPROJECTM_4)
     SET(PROJECTM_FOUND TRUE CACHE INTERNAL "projectm")
+    SET(PROJECTM_PRESET_PATH ${CMAKE_INSTALL_DATADIR}/presets CACHE STRING "projectM preset search path")
+    SET(PROJECTM_TEXTURE_PATH ${CMAKE_INSTALL_DATADIR}/textures CACHE STRING "projectM texture search path")
+    SET(libprojectm_DEFINES ${libprojectm_DEFINES}
+        PROJECTM_PRESET_PATH=\"${PROJECTM_PRESET_PATH}\"
+        PROJECTM_TEXTURE_PATH=\"${PROJECTM_TEXTURE_PATH}\"
+    )
     MESSAGE(STATUS "Found projectM 4.x")
   ELSE(projectM4_FOUND)
   # projectM 2.x/3.x 
@@ -36,7 +43,7 @@ ELSE(QT_FEATURE_opengl)
 ENDIF(QT_FEATURE_opengl)
 
 IF(PROJECTM_CONFIG)
-  SET(libprojectm_DEFINES PROJECTM_CONFIG=\"${PROJECTM_CONFIG}\")
+  SET(libprojectm_DEFINES ${libprojectm_DEFINES} PROJECTM_CONFIG=\"${PROJECTM_CONFIG}\")
   MESSAGE(STATUS "Found projectM configuration: ${PROJECTM_CONFIG}")
 ENDIF(PROJECTM_CONFIG)
 
