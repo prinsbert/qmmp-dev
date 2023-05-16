@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>ProjectM4Widget</name>
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished">&amp;Показати меню</translation>
+        <translation>&amp;Показати меню</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished"></translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
-        <translation type="unfinished">&amp;Наступна предустановка</translation>
+        <translation>&amp;Наступний пресет</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>N</source>
-        <translation type="unfinished"></translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation type="unfinished">&amp;Попередня предустановка</translation>
+        <translation>&amp;Попередній пресет</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
-        <translation type="unfinished"></translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Перемішати</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
-        <translation type="unfinished"></translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
-        <translation type="unfinished">&amp;Заблокувати предустановку</translation>
+        <translation>&amp;Заблокувати пресет</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>L</source>
-        <translation type="unfinished"></translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished">&amp;Повноекранний режим</translation>
+        <translation>&amp;Повноекранно</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../projectmplugin.cpp" line="41"/>
         <source>ProjectM</source>
-        <translation></translation>
+        <translation>ProjectM</translation>
     </message>
 </context>
 <context>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="143"/>
         <source>F1</source>
-        <translation></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="144"/>
@@ -92,17 +92,17 @@
     <message>
         <location filename="../projectmwidget.cpp" line="144"/>
         <source>F2</source>
-        <translation></translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="145"/>
         <source>&amp;Show Preset Name</source>
-        <translation>&amp;Показати ім&apos;я предустановки</translation>
+        <translation>&amp;Показати ім&apos;я пресету</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="145"/>
         <source>F3</source>
-        <translation></translation>
+        <translation>F3</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="146"/>
@@ -112,57 +112,57 @@
     <message>
         <location filename="../projectmwidget.cpp" line="146"/>
         <source>M</source>
-        <translation></translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="148"/>
         <source>&amp;Next Preset</source>
-        <translation>&amp;Наступна предустановка</translation>
+        <translation>&amp;Наступний пресет</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="148"/>
         <source>N</source>
-        <translation></translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="149"/>
         <source>&amp;Previous Preset</source>
-        <translation>&amp;Попередня предустановка</translation>
+        <translation>&amp;Попередній пресет</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="149"/>
         <source>P</source>
-        <translation></translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="150"/>
         <source>&amp;Random Preset</source>
-        <translation>&amp;Випадкова предустановка</translation>
+        <translation>&amp;Випадковий пресет</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="150"/>
         <source>R</source>
-        <translation></translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="151"/>
         <source>&amp;Lock Preset</source>
-        <translation>&amp;Заблокувати предустановку</translation>
+        <translation>&amp;Заблокувати пресет</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="151"/>
         <source>L</source>
-        <translation></translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="153"/>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;Повноекранний режим</translation>
+        <translation>&amp;Повноекранно</translation>
     </message>
     <message>
         <location filename="../projectmwidget.cpp" line="153"/>
         <source>F</source>
-        <translation></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
@@ -170,22 +170,22 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="29"/>
         <source>ProjectM</source>
-        <translation></translation>
+        <translation>ProjectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="49"/>
         <source>About ProjectM Visual Plugin</source>
-        <translation>Про модуль ProjectM для Qmmp</translation>
+        <translation>Про втулок ProjectM для Qmmp</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="50"/>
         <source>Qmmp ProjectM Visual Plugin</source>
-        <translation>Модуль projectM для Qmmp</translation>
+        <translation>Втулок projectM для Qmmp</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="51"/>
         <source>This plugin adds projectM visualization</source>
-        <translation>Цей модуль додає візуалізацію projectM</translation>
+        <translation>Цей втулок додає унаочнення projectM</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="52"/>

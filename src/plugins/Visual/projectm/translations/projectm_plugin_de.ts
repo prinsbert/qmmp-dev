@@ -6,62 +6,62 @@
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished">Menü an&amp;zeigen</translation>
+        <translation>Menü an&amp;zeigen</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
-        <translation type="unfinished">&amp;Nächste Voreinstellung</translation>
+        <translation>&amp;Nächste Voreinstellung</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>N</source>
-        <translation type="unfinished">N</translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation type="unfinished">Vor&amp;herige Voreinstellung</translation>
+        <translation>Vor&amp;herige Voreinstellung</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
-        <translation type="unfinished">H</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Zufallswiedergabe</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
-        <translation type="unfinished">Z</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
-        <translation type="unfinished">V&amp;oreinstellung sperren</translation>
+        <translation>V&amp;oreinstellung sperren</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>L</source>
-        <translation type="unfinished">O</translation>
+        <translation>O</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished">&amp;Vollbild</translation>
+        <translation>&amp;Vollbild</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished">V</translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>

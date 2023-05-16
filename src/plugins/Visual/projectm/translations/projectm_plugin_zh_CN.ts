@@ -6,62 +6,62 @@
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished">显示菜单(&amp;S)</translation>
+        <translation>显示菜单(&amp;S)</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
-        <translation type="unfinished">下一边框形式(&amp;N)</translation>
+        <translation>下一边框形式(&amp;N)</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>N</source>
-        <translation type="unfinished">N</translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation type="unfinished">上一边框形式(&amp;P)</translation>
+        <translation>上一边框形式(&amp;P)</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>乱序(&amp;S)</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
-        <translation type="unfinished">锁定边框形式(&amp;L)</translation>
+        <translation>锁定边框形式(&amp;L)</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>L</source>
-        <translation type="unfinished">L</translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished">全屏(&amp;F)</translation>
+        <translation>全屏(&amp;F)</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
