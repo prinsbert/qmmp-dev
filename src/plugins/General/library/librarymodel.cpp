@@ -28,6 +28,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QWidget>
+#include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include <qmmpui/playlistparser.h>
 #include <qmmpui/playlistmanager.h>
@@ -147,7 +148,7 @@ void LibraryModel::fetchMore(const QModelIndex &parent)
 
         if(!query.exec())
         {
-            qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
             return;
         }
 
@@ -179,7 +180,7 @@ void LibraryModel::fetchMore(const QModelIndex &parent)
 
         if(!query.exec())
         {
-            qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
             return;
         }
 
@@ -293,7 +294,7 @@ void LibraryModel::refresh()
     }
 
     if(!query.exec())
-        qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+        qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
 
     while(query.next())
     {
@@ -311,7 +312,7 @@ void LibraryModel::add(const QModelIndexList &indexes)
     PlayListManager::instance()->add(getTracks(indexes));
 }
 
-void LibraryModel::showInformation(const QModelIndexList &indexes, QWidget *parent)
+void LibraryModel::showTrackInformation(const QModelIndexList &indexes, QWidget *parent)
 {
     QList<PlayListTrack *> tracks = getTracks(indexes);
 
@@ -319,6 +320,55 @@ void LibraryModel::showInformation(const QModelIndexList &indexes, QWidget *pare
     dialog->setAttribute(Qt::WA_DeleteOnClose, true);
     dialog->show();
     connect(dialog, &QObject::destroyed, [=]() { qDeleteAll(tracks); });
+}
+
+void LibraryModel::showLibraryInformation(QWidget *parent)
+{
+    QSqlDatabase db = QSqlDatabase::database(CONNECTION_NAME);
+    if(!db.isOpen())
+    {
+        QMessageBox::critical(parent, tr("Error"), tr("Unable to connect to database"));
+        return;
+    }
+
+    QSqlQuery query(db);
+    query.prepare("select COUNT(id),COUNT(DISTINCT Album||Artist),COUNT(DISTINCT Artist),SUM(Duration) from track_library");
+
+    if(!query.exec())
+    {
+        qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
+        return;
+    }
+    query.next();
+
+    int tracks = query.value(0).toInt();
+    int albums = query.value(1).toInt();
+    int artists = query.value(2).toInt();
+    qint64 duration = query.value(3).toLongLong() / 1000;
+    int days = duration / (3600 * 24);
+    int hours = (duration / 3600) % 24;
+
+    QString daysText = tr("%n day(s)", "", days);
+    QString hoursText = tr("%n hour(s)", "", hours);
+    QString minutesText = tr("%n minute(s)", "", duration % 3600 / 60);
+    QString secondsText = tr("%n second(s)", "", duration % 60);
+    QString durationText;
+
+    if(days > 0)
+        durationText = tr("%1 %2 %3 %4", "days hours minutes seconds").arg(daysText, hoursText, minutesText, secondsText);
+    else if(hours > 0)
+        durationText = tr("%1 %2 %3", "hours minutes seconds").arg(hoursText, minutesText, secondsText);
+    else
+        durationText = tr("%1 %2", "minutes seconds").arg(minutesText, secondsText);
+
+    QStringList lines = {
+        tr("Number of tracks: <b>%1</b>").arg(tracks),
+        tr("Number of albums: <b>%1</b>").arg(albums),
+        tr("Number of artists: <b>%1</b>").arg(artists),
+        tr("Total duration: <b>%1</b>").arg(durationText),
+    };
+
+    QMessageBox::information(parent, tr("Library Information"), lines.join("<br>"));
 }
 
 QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndexList &indexes) const
@@ -355,7 +405,7 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
 
         if(!query.exec())
         {
-            qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
             return tracks;
         }
 
@@ -373,7 +423,7 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
 
         if(!query.exec())
         {
-            qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
             return tracks;
         }
 
@@ -390,7 +440,7 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
 
         if(!query.exec())
         {
-            qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
             return tracks;
         }
 

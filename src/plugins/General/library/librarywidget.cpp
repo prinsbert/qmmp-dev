@@ -49,9 +49,10 @@ LibraryWidget::LibraryWidget(bool dialog, QWidget *parent) :
 
     m_menu = new QMenu(this);
     m_menu->addAction(QIcon::fromTheme("list-add"), tr("&Add to Playlist"), this, SLOT(addSelected()));
-    m_menu->addAction(QIcon::fromTheme("dialog-information"), tr("&View Track Details"), this, SLOT(showInformation()));
+    m_menu->addAction(QIcon::fromTheme("dialog-information"), tr("&View Track Details"), this, SLOT(showTrackInformation()));
     m_menu->addSeparator();
     m_filterAction = m_menu->addAction(tr("Quick Search"), m_ui->filterLineEdit, SLOT(setVisible(bool)));
+    m_menu->addAction(tr("&Library Information"), this, SLOT(showLibraryInformation()));
     m_filterAction->setCheckable(true);
 
     QSettings settings;
@@ -129,7 +130,12 @@ void LibraryWidget::addSelected()
     m_model->add(m_ui->treeView->selectionModel()->selectedIndexes());
 }
 
-void LibraryWidget::showInformation()
+void LibraryWidget::showTrackInformation()
 {
-    m_model->showInformation(m_ui->treeView->selectionModel()->selectedIndexes());
+    m_model->showTrackInformation(m_ui->treeView->selectionModel()->selectedIndexes(), qApp->activeWindow());
+}
+
+void LibraryWidget::showLibraryInformation()
+{
+    m_model->showLibraryInformation(qApp->activeWindow());
 }
