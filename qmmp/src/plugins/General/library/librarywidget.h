@@ -51,7 +51,8 @@ private:
 private slots:
     void on_filterLineEdit_textChanged(const QString &text);
     void addSelected();
-    void showInformation();
+    void showTrackInformation();
+    void showLibraryInformation();
 
 private:
     Ui::LibraryWidget *m_ui;
