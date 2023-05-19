@@ -170,10 +170,11 @@ QString Qmmp::userDataPath()
     return configDir();
 #else
     if(m_configDir.isEmpty())
-        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation))
-                .arg(QCoreApplication::organizationName());
-    else
-        return m_configDir;
+    {
+        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation),
+                                           QCoreApplication::organizationName());
+    }
+    return m_configDir;
 #endif
 }
 
