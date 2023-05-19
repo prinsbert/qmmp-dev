@@ -73,10 +73,10 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
 {
     if(state == Qmmp::Playing || state == Qmmp::Paused)
     {        
-        for(QLabel *label : m_labels.values())
+        for(QLabel *label : qAsConst(m_labels))
             label->show();
 
-        for(QFrame *sep : m_separators.values())
+        for(QFrame *sep : qAsConst(m_separators))
             sep->show();
 
         m_labels[BitrateLabel]->setMinimumWidth(0);

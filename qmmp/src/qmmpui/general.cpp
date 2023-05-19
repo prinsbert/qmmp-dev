@@ -168,7 +168,7 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
     if(!m_generals)
         return;
 
-    if (enable == m_generals->keys().contains(factory))
+    if (enable == m_generals->contains(factory))
         return;
 
     if (enable)
