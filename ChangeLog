@@ -1821,3 +1821,8 @@ Version 1.6.3
 * fixed text scroller geometry in the skinned plugin
 * hide empty plugin categories
 * added partial Swedish translation (Luna Jernberg)
+
+Version 1.6.4
+* added projectM 4.0 support (experimental)
+* fixed crash on streams in the lyrics plugin
+* fixed issues with visualization windows on application startup
