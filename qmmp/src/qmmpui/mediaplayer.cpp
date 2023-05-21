@@ -53,6 +53,7 @@ MediaPlayer::MediaPlayer(QObject *parent)
     connect(m_core, SIGNAL(finished()), SLOT(playNext()));
     connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(processState(Qmmp::State)));
     connect(m_core, SIGNAL(trackInfoChanged()),SLOT(updateMetaData()));
+    connect(m_pl_manager, SIGNAL(currentTrackRemoved()), SLOT(onCurrentTrackRemoved()));
 }
 
 MediaPlayer::~MediaPlayer()
@@ -254,4 +255,10 @@ void MediaPlayer::updateMetaData()
         pl->currentTrack()->updateMetaData(&info);
         pl->updateMetaData();
     }
+}
+
+void MediaPlayer::onCurrentTrackRemoved()
+{
+    if(m_settings->stopAfterRemovingOfCurrentTrack())
+        m_core->stop();
 }

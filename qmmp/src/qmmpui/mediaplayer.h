@@ -84,6 +84,7 @@ private slots:
     void updateNextUrl();
     void processState(Qmmp::State state);
     void updateMetaData();
+    void onCurrentTrackRemoved();
 
 private:
     QmmpUiSettings *m_settings;

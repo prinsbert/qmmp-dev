@@ -106,6 +106,7 @@ void ConfigDialog::readSettings()
         m_ui->per20CheckBox->setChecked(guis->convertTwenty());
         m_ui->clearPrevPLCheckBox->setChecked(guis->clearPreviousPlayList());
         m_ui->skipExistingTracksCheckBox->setChecked(guis->skipExistingTracks());
+        m_ui->stopAfterRemovingCheckBox->setChecked(guis->stopAfterRemovingOfCurrentTrack());
         //resume playback on startup
         m_ui->continuePlaybackCheckBox->setChecked(guis->resumeOnStartup());
         //directory filters
@@ -395,6 +396,7 @@ void ConfigDialog::saveSettings()
         guis->setConvertTwenty(m_ui->per20CheckBox->isChecked());
         guis->setClearPreviousPlayList(m_ui->clearPrevPLCheckBox->isChecked());
         guis->setSkipExistingTracks(m_ui->skipExistingTracksCheckBox->isChecked());
+        guis->setStopAfterRemovingOfCurrentTrack(m_ui->stopAfterRemovingCheckBox->isChecked());
         guis->setResumeOnStartup(m_ui->continuePlaybackCheckBox->isChecked());
         guis->setRestrictFilters(m_ui->dirRestrictLineEdit->text());
         guis->setExcludeFilters(m_ui->dirExcludeLineEdit->text());
