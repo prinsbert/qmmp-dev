@@ -98,13 +98,13 @@ signals:
      * @param current Current playlist.
      * @param previous Previous playlist.
      */
-    void currentPlayListChanged (PlayListModel *current, PlayListModel *previous);
+    void currentPlayListChanged(PlayListModel *current, PlayListModel *previous);
     /*!
      * Emitted when selected playlist changes.
      * @param selected Selected playlist.
      * @param previous Previous selected playlist.
      */
-    void selectedPlayListChanged (PlayListModel *selected, PlayListModel *previous);
+    void selectedPlayListChanged(PlayListModel *selected, PlayListModel *previous);
     /*!
      * Emitted when the playlist with index \b index is added.
      */
@@ -121,6 +121,7 @@ signals:
      * Emitted when the list of playlists is changed.
      */
     void playListsChanged();
+    void currentTrackRemoved();
 
 public slots:
     /*!
@@ -263,6 +264,7 @@ public slots:
 private slots:
     void writePlayLists();
     void onListChanged(int flags);
+    void onCurrentTrackRemoved();
 
 private:
     void readPlayLists();

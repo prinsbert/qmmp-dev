@@ -191,6 +191,9 @@ public:
      *         otherwise.
      */
     bool skipExistingTracks() const;
+
+    bool stopAfterRemovingOfCurrentTrack() const;
+    void setStopAfterRemovingOfCurrentTrack(bool enabled);
     /*!
      * Returns the current setting for the option to read tags when loading a playlist.
      * \return \b true if tag reading is enabled, \b false otherwise.
@@ -295,6 +298,7 @@ private:
     bool m_read_metadata_for_playlist;
     bool m_transit_between_playlists;
     bool m_skip_existing_tracks;
+    bool m_stop_after_removing_of_current;
     //general
     bool m_resume_on_startup;
     QStringList m_exclude_filters, m_restrict_filters;

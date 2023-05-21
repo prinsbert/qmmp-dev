@@ -378,6 +378,7 @@ signals:
      * @param reverted Sort direction.
      */
     void sortingByColumnFinished(int column, bool reverted);
+    void currentTrackRemoved();
 
 public slots:
     /*!

@@ -50,6 +50,7 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
     m_read_metadata_for_playlist = s.value("read_metadata_for_playlist", true).toBool();
     m_transit_between_playlists = s.value("transit_between_playlists", false).toBool();
     m_skip_existing_tracks = s.value("skip_existing_tracks", false).toBool();
+    m_stop_after_removing_of_current = s.value("stop_after_removing_of_current", false).toBool();
     s.endGroup();
     s.beginGroup("General");
     m_resume_on_startup = s.value("resume_on_startup", false).toBool();
@@ -190,6 +191,7 @@ void QmmpUiSettings::sync()
     s.setValue("PlayList/read_metadata_for_playlist", m_read_metadata_for_playlist);
     s.setValue("PlayList/transit_between_playlists", m_transit_between_playlists);
     s.setValue("PlayList/skip_existing_tracks", m_skip_existing_tracks);
+    s.setValue("PlayList/stop_after_removing_of_current", m_stop_after_removing_of_current);
     s.setValue("General/resume_on_startup", m_resume_on_startup);
     s.setValue("General/restrict_filters", m_restrict_filters);
     s.setValue("General/exclude_filters", m_exclude_filters);
@@ -335,6 +337,17 @@ void QmmpUiSettings::setSkipExistingTracks(bool enabled)
 bool QmmpUiSettings::skipExistingTracks() const
 {
     return m_skip_existing_tracks;
+}
+
+bool QmmpUiSettings::stopAfterRemovingOfCurrentTrack() const
+{
+    return m_stop_after_removing_of_current;
+}
+
+void QmmpUiSettings::setStopAfterRemovingOfCurrentTrack(bool enabled)
+{
+    m_stop_after_removing_of_current = enabled;
+    m_timer->start();
 }
 
 bool QmmpUiSettings::readMetaDataForPlayLists() const

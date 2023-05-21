@@ -197,6 +197,7 @@ PlayListModel *PlayListManager::createPlayList(const QString &name)
     m_models.append(model);
     connect(model, SIGNAL(nameChanged(QString)), SIGNAL(playListsChanged()));
     connect(model, SIGNAL(listChanged(int)), SLOT(onListChanged(int)));
+    connect(model, SIGNAL(currentTrackRemoved()), SLOT(onCurrentTrackRemoved()));
     emit playListAdded(m_models.indexOf(model));
     selectPlayList(model);
     return model;
@@ -213,6 +214,7 @@ void PlayListManager::removePlayList(PlayListModel *model)
      {
          m_current = m_models.at((i > 0) ? (i - 1) : (i + 1));
          emit currentPlayListChanged(m_current, model);
+         emit currentTrackRemoved();
      }
      if(m_selected == model)
      {
@@ -339,6 +341,7 @@ void PlayListManager::readPlayLists()
     {
         connect(model, SIGNAL(nameChanged(QString)), SIGNAL(playListsChanged()));
         connect(model, SIGNAL(listChanged(int)), SLOT(onListChanged(int)));
+        connect(model, SIGNAL(currentTrackRemoved()), SLOT(onCurrentTrackRemoved()));
     }
 }
 
@@ -391,6 +394,12 @@ void PlayListManager::onListChanged(int flags)
 {
     if((flags & PlayListModel::STRUCTURE) && m_ui_settings->autoSavePlayList())
         m_timer->start();
+}
+
+void PlayListManager::onCurrentTrackRemoved()
+{
+    if(sender() == m_current)
+        emit currentTrackRemoved();
 }
 
 void PlayListManager::clear()

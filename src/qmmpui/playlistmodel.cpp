@@ -406,6 +406,11 @@ void PlayListModel::clear()
 {
     m_loader->finish();
     m_current = 0;
+    if(m_current_track)
+    {
+        m_current_track = nullptr;
+        emit currentTrackRemoved();
+    }
     m_stop_track = nullptr;
     m_container->clear();
     m_total_duration = 0;
@@ -656,6 +661,7 @@ int PlayListModel::removeTrackInternal(int i)
                                                   m_container->track(1);
             }
         }
+        emit currentTrackRemoved();
     }
 
     if(track->isUsed())
@@ -989,7 +995,10 @@ void PlayListModel::onTaskFinished()
             flags = STRUCTURE;
             m_current = m_container->indexOf(m_current_track);
             if(prev_current_track != m_current_track)
+            {
                 flags |= CURRENT;
+                emit currentTrackRemoved();
+            }
 
             if(m_stop_track && !m_container->contains(m_stop_track))
             {

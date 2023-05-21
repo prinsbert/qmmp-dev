@@ -230,6 +230,13 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QCheckBox" name="stopAfterRemovingCheckBox">
+             <property name="text">
+              <string>Stop playback after removing of current track</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
