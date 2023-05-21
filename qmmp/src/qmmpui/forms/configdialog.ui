@@ -226,7 +226,7 @@
            <item>
             <widget class="QCheckBox" name="skipExistingTracksCheckBox">
              <property name="text">
-              <string>Skip already existing tracks</string>
+              <string>Skip already existing tracks when adding</string>
              </property>
             </widget>
            </item>
