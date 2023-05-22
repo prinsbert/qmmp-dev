@@ -134,6 +134,9 @@ void FileOps::execAction()
             if(PlayListManager::instance()->selectedPlayList() != model)
                 break;
 
+            if(PlayListManager::instance()->currentPlayList()->currentTrack() == track)
+                SoundCore::instance()->stop();
+
             if(isValid(track) && QFile::exists(track->path()) && QFile::remove(track->path()))
                 model->removeTrack(track);
         }
@@ -242,6 +245,9 @@ void FileOps::rename(const QList<PlayListTrack *> &tracks, const MetaDataFormatt
         if(PlayListManager::instance()->selectedPlayList() != model)
             break;
 
+        if(PlayListManager::instance()->currentPlayList()->currentTrack() == track)
+            SoundCore::instance()->stop();
+
         QString fileName = formatter->format(track); //generate file name
 
         QString ext = QString(".") + track->path().section(".", -1).toLower();
@@ -277,6 +283,9 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
 
         if(PlayListManager::instance()->selectedPlayList() != model)
             break;
+
+        if(PlayListManager::instance()->currentPlayList()->currentTrack() == track)
+            SoundCore::instance()->stop();
 
         QString fileName = formatter->format(track); //generate file name
 
