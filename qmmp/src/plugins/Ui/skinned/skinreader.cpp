@@ -162,6 +162,9 @@ void SkinReader::unpackSkin(const QString &path)
     const QFileInfoList f = dir.entryInfoList();
     for(const QFileInfo &file : qAsConst(f))
         dir.remove(file.fileName());
+    //create skin cache directory
+    if(!QFile::exists(unpackedSkinPath()))
+        QDir::root().mkpath(unpackedSkinPath());
     //unpack
     QString name = QFileInfo(path).fileName().toLower();
     if (name.endsWith(".tgz") || name.endsWith(".tar.gz") || name.endsWith(".tar.bz2"))
