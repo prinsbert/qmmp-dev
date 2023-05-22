@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2020 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2023 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -121,10 +121,13 @@ void FileOps::execAction(int n)
 
         foreach(PlayListTrack *track, tracks)
         {
-            if (PlayListManager::instance()->selectedPlayList() != model)
+            if(PlayListManager::instance()->selectedPlayList() != model)
                 break;
 
-            if (isValid(track) && QFile::exists(track->path()) && QFile::remove(track->path()))
+            if(PlayListManager::instance()->currentPlayList()->currentTrack() == track)
+                SoundCore::instance()->stop();
+
+            if(isValid(track) && QFile::exists(track->path()) && QFile::remove(track->path()))
                 model->removeTrack(track);
         }
         break;
@@ -226,6 +229,9 @@ void FileOps::rename(const QList<PlayListTrack *> &tracks, const MetaDataFormatt
         if (PlayListManager::instance()->selectedPlayList() != model)
             break;
 
+        if(PlayListManager::instance()->currentPlayList()->currentTrack() == track)
+            SoundCore::instance()->stop();
+
         QString fileName = formatter->format(track); //generate file name
 
         QString ext = QString(".") + track->path().section(".", -1).toLower();
@@ -261,6 +267,9 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
 
         if (PlayListManager::instance()->selectedPlayList() != model)
             break;
+
+        if(PlayListManager::instance()->currentPlayList()->currentTrack() == track)
+            SoundCore::instance()->stop();
 
         QString fileName = formatter->format(track); //generate file name
 
