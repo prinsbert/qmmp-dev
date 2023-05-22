@@ -40,7 +40,7 @@ public:
 
     static Skin *instance();
     static QPixmap getPixmap(const QString &name, QDir dir);
-    static QString defaultSkinName();
+    static QString defaultSkinPath();
     int ratio() const;
     const QPixmap &getMain() const;
     const QPixmap getButton(uint bt) const;
@@ -67,6 +67,7 @@ public:
     const QColor getMainColor(int n) const;
     const QColor &getVisColor(int n) const;
     const QRegion getRegion(uint r) const;
+    void setSkin(const QString &path, bool force);
 
     enum Button
     {
@@ -270,7 +271,6 @@ public:
     };
 
 public slots:
-    void setSkin(const QString& path);
     void reloadSkin();
 
 signals:

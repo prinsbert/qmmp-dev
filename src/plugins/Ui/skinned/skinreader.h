@@ -22,13 +22,13 @@
 
 #include <QObject>
 #include <QMap>
+#include <QHash>
 #include <QPixmap>
 #include <QStringList>
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class QProcess;
 
 class SkinReader : public QObject
 {
@@ -38,16 +38,19 @@ public:
 
     ~SkinReader();
 
-    void generateThumbs(const QStringList &paths);
-    void unpackSkin(const QString &path);
-    const QStringList skins();
-    const QPixmap getPreview(const QString &skinPath);
+    void loadSkins(const QStringList &paths);
+    const QStringList &skins() const;
+    const QPixmap getPreview(const QString &skinPath) const;
+
+    static void unpackSkin(const QString &path);
+    static QString unpackedSkinPath();
 
 private:
-    QProcess *m_process;
-    void untar(const QString &from, const QString &to, bool preview);
-    void unzip(const QString &from, const QString &to,  bool preview);
-    QMap <QString, QString> m_previewMap;
+    static void untar(const QString &from, const QString &to, bool preview);
+    static void unzip(const QString &from, const QString &to,  bool preview);
+
+    QStringList m_skins;
+    QHash<QString, QString> m_previewHash; //skin path, thumbnail path
 };
 
 #endif

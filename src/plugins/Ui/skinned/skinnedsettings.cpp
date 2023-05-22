@@ -50,24 +50,10 @@ SkinnedSettings::SkinnedSettings(QWidget *parent) : QWidget(parent)
 SkinnedSettings::~SkinnedSettings()
 {}
 
-void SkinnedSettings::on_listWidget_itemClicked(QListWidgetItem *)
+void SkinnedSettings::on_listWidget_itemClicked(QListWidgetItem *item)
 {
-    int row = m_ui.listWidget->currentRow();
-    QString path;
-    if (m_skinList.at (row).isDir())
-    {
-        path = m_skinList.at (row).canonicalFilePath();
-        m_skin->setSkin (path);
-    }
-    else if (m_skinList.at (row).isFile())
-    {
-        m_reader->unpackSkin(m_skinList.at (row).canonicalFilePath());
-        m_skin->setSkin(Qmmp::cacheDir() + QStringLiteral("/skinned/skin"));
-    }
-    if(m_ui.listWidget->currentItem())
-        m_currentSkinName = m_ui.listWidget->currentItem()->text();
-    else
-        m_currentSkinName.clear();
+    m_currentSkinPath = item->data(Qt::UserRole).toString();
+    m_skin->setSkin(m_currentSkinPath, true);
 }
 
 void SkinnedSettings::on_plFontButton_clicked()
@@ -156,27 +142,6 @@ void SkinnedSettings::loadFonts()
     m_ui.useBitmapCheckBox->setChecked(settings.value("Skinned/bitmap_font", false).toBool());
 }
 
-void SkinnedSettings::findSkins(const QString &path)
-{
-    QDir dir(path);
-    dir.setFilter (QDir::Dirs | QDir::NoDotAndDotDot);
-    const QList <QFileInfo> fileList = dir.entryInfoList();
-    if (fileList.count() == 0)
-        return;
-    for(const QFileInfo &fileInfo : qAsConst(fileList))
-    {
-        QPixmap preview = Skin::getPixmap ("main", QDir(fileInfo.filePath ()));
-        if (!preview.isNull())
-        {
-            QListWidgetItem *item = new QListWidgetItem (fileInfo.fileName ());
-            item->setIcon (preview);
-            item->setToolTip(tr("Unarchived skin") + " " + fileInfo.filePath ());
-            m_ui.listWidget->addItem (item);
-            m_skinList << fileInfo;
-        }
-    }
-}
-
 void SkinnedSettings::createActions()
 {
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
@@ -201,30 +166,32 @@ void SkinnedSettings::loadSkins()
 
     skinPaths.removeDuplicates();
 
-    m_reader->generateThumbs(skinPaths);
-    m_skinList.clear();
+    m_reader->loadSkins(skinPaths);
     m_ui.listWidget->clear();
-    QFileInfo fileInfo (":/glare");
-    QPixmap preview = Skin::getPixmap ("main", QDir (fileInfo.filePath()));
-    QListWidgetItem *item = new QListWidgetItem (fileInfo.fileName ());
-    item->setIcon (preview);
+
+    //default skin
+    QFileInfo fileInfo(Skin::defaultSkinPath());
+    QListWidgetItem *item = new QListWidgetItem(fileInfo.fileName());
+    item->setIcon(Skin::getPixmap("main", QDir(fileInfo.filePath())));
+    item->setData(Qt::UserRole, fileInfo.filePath());
+    item->setToolTip("Default skin");
     m_ui.listWidget->addItem(item);
-    m_skinList << fileInfo;
 
-    for(const QString &skinPath : qAsConst(skinPaths))
-        findSkins(skinPath);
-
-    for(const QString &path : m_reader->skins())
+    for(const QString &path : qAsConst(m_reader->skins()))
     {
-        item = new QListWidgetItem (path.section('/', -1));
-        item->setIcon (m_reader->getPreview(path));
-        item->setToolTip(tr("Archived skin") + " " + path);
-        m_ui.listWidget->addItem (item);
-        m_skinList << QFileInfo(path);
+        fileInfo.setFile(path);
+        item = new QListWidgetItem(fileInfo.fileName());
+        item->setIcon(m_reader->getPreview(path));
+        item->setData(Qt::UserRole, path);
+        item->setToolTip(fileInfo.isDir() ? tr("Unarchived skin %1").arg(path) : tr("Archived skin %1").arg(path));
+        m_ui.listWidget->addItem(item);
     }
+
+    qDebug() << m_currentSkinPath;
+
     for(int i = 0; i < m_ui.listWidget->count(); ++i)
     {
-        if(m_ui.listWidget->item(i)->text() == m_currentSkinName)
+        if(m_ui.listWidget->item(i)->data(Qt::UserRole).toString() == m_currentSkinPath)
         {
             m_ui.listWidget->setCurrentRow(i, QItemSelectionModel::Select);
             break;
@@ -268,10 +235,9 @@ void SkinnedSettings::readSettings()
     m_ui.plTransparencySlider->setValue(100 - settings.value("pl_opacity", 1.0).toDouble()*100);
     //view
     m_ui.skinCursorsCheckBox->setChecked(settings.value("skin_cursors", false).toBool());
-    m_currentSkinName = settings.value("skin_name", Skin::defaultSkinName()).toString();
-    QString currentSkinPath = settings.value("skin_path").toString();
-    if(currentSkinPath.isEmpty() || !QDir(currentSkinPath).exists())
-        m_currentSkinName = Skin::defaultSkinName();
+    m_currentSkinPath = settings.value("skin_path", Skin::defaultSkinPath()).toString();
+    if(!QFile::exists(m_currentSkinPath))
+        m_currentSkinPath = Skin::defaultSkinPath();
     m_ui.hiddenCheckBox->setChecked(settings.value("start_hidden", false).toBool());
     m_ui.hideOnCloseCheckBox->setChecked(settings.value("hide_on_close", false).toBool());
     m_ui.windowTitleLineEdit->setText(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
@@ -311,7 +277,7 @@ void SkinnedSettings::writeSettings()
     settings.setValue("pl_opacity", 1.0 - (double)m_ui.plTransparencySlider->value()/100);
     settings.setValue("bitmap_font", m_ui.useBitmapCheckBox->isChecked());
     settings.setValue("skin_cursors", m_ui.skinCursorsCheckBox->isChecked());
-    settings.setValue("skin_name", m_currentSkinName);
+    settings.setValue("skin_path", m_currentSkinPath);
     settings.setValue("start_hidden", m_ui.hiddenCheckBox->isChecked());
     settings.setValue("hide_on_close", m_ui.hideOnCloseCheckBox->isChecked());
     settings.setValue("window_title_format", m_ui.windowTitleLineEdit->text());

@@ -34,6 +34,7 @@
 #endif
 #include <qmmp/qmmp.h>
 #include "actionmanager.h"
+#include "skinreader.h"
 #include "skin.h"
 #include "cursorimage.h"
 
@@ -43,21 +44,16 @@ Skin::Skin(QObject *parent) : QObject (parent)
 {
     m_instance = this;
     QSettings settings;
-    QString path = settings.value("Skinned/skin_path").toString();
+    QString path = settings.value("Skinned/skin_path", Skin::defaultSkinPath()).toString();
 #ifdef Q_OS_WIN
     if(Qmmp::isPortable())
         path.prepend(QApplication::applicationDirPath() + "/");
 #endif
-    if(path.isEmpty() || !QDir(path).exists () || QDir(path).count() < 4)
-    {
-        path = QStringLiteral(":/") + Skin::defaultSkinName();
-        settings.setValue("Skinned/skin_name", Skin::defaultSkinName());
-    }
     m_double_size = settings.value("Skinned/double_size", false).toBool();
     m_antialiasing = settings.value("Skinned/antialiasing", false).toBool();
     ACTION(ActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
     ACTION(ActionManager::WM_ANTIALIASING)->setChecked(m_antialiasing);
-    setSkin(QDir::cleanPath(path));
+    setSkin(QDir::cleanPath(path), false);
     /* skin directory */
     QDir skinDir(Qmmp::configDir());
     skinDir.mkdir("skins");
@@ -73,7 +69,7 @@ Skin *Skin::instance()
     return m_instance;
 }
 
-QPixmap Skin::getPixmap (const QString &name, QDir dir)
+QPixmap Skin::getPixmap(const QString &name, QDir dir)
 {
     dir.setFilter (QDir::Files | QDir::Hidden);
     dir.setNameFilters(QStringList() << name + ".*");
@@ -83,9 +79,9 @@ QPixmap Skin::getPixmap (const QString &name, QDir dir)
     return QPixmap();
 }
 
-QString Skin::defaultSkinName()
+QString Skin::defaultSkinPath()
 {
-    return QStringLiteral("glare");
+    return QStringLiteral(":/glare");
 }
 
 int Skin::ratio() const
@@ -193,7 +189,7 @@ const QRegion Skin::getRegion(uint r) const
     return m_regions[r];
 }
 
-void Skin::setSkin (const QString& path)
+void Skin::setSkin(const QString &path, bool force)
 {
     QSettings settings;
     m_use_cursors = settings.value("Skinned/skin_cursors", false).toBool();
@@ -210,9 +206,31 @@ void Skin::setSkin (const QString& path)
     }
     else
 #endif
-        settings.setValue("Skinned/skin_path",path);
-    qDebug ("Skin: using %s",qPrintable(path));
-    m_skin_dir = QDir (path);
+        settings.setValue("Skinned/skin_path", path);
+    qDebug("Skin: using %s", qPrintable(path));
+    QFileInfo info(path);
+    if(!info.exists())
+    {
+        m_skin_dir = QDir(defaultSkinPath());
+        qDebug("Skin: unable find %s, using %s as fallback", qPrintable(path), qPrintable(defaultSkinPath()));
+    }
+    else if(info.isDir())
+    {
+        m_skin_dir = QDir(path);
+    }
+    else if(info.isFile())
+    {
+        m_skin_dir = QDir(SkinReader::unpackedSkinPath());
+        if(force || !m_skin_dir.exists())
+        {
+            SkinReader::unpackSkin(path);
+            m_skin_dir.refresh();
+        }
+    }
+
+    if(!m_skin_dir.exists() || m_skin_dir.count() <= 4)
+        m_skin_dir = QDir(defaultSkinPath());
+
     //clear old values
     m_pledit_txt.clear();
     m_buttons.clear();
@@ -281,7 +299,8 @@ void Skin::setSkin (const QString& path)
 
 void Skin::reloadSkin()
 {
-    setSkin (m_skin_dir.absolutePath ());
+    QSettings settings;
+    setSkin(settings.value("Skinned/skin_path", Skin::defaultSkinPath()).toString(), false);
 }
 
 void Skin::loadMain()

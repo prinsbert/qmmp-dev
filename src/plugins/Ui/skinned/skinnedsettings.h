@@ -37,7 +37,7 @@ public:
     void writeSettings();
 
 private slots:
-    void on_listWidget_itemClicked(QListWidgetItem *);
+    void on_listWidget_itemClicked(QListWidgetItem *item);
     void on_plFontButton_clicked();
     void on_headerFontButton_clicked();
     void on_mainFontButton_clicked();
@@ -51,13 +51,11 @@ private slots:
 private:
     void showEvent(QShowEvent *) override;
     void loadFonts();
-    void findSkins(const QString &path);
     void createActions();
     void readSettings();
 
     Ui::SkinnedSettings m_ui;
-    QList <QFileInfo> m_skinList;
-    QString m_currentSkinName;
+    QString m_currentSkinPath;
     Skin *m_skin;
     SkinReader *m_reader;
 
