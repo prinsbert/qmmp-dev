@@ -190,6 +190,9 @@ void SkinReader::untar(const QString &from, const QString &to, bool preview)
     {
         str = str.trimmed();
 
+        if(str.endsWith("/"))
+            continue;
+
         if (!preview || (str.contains("/main.", Qt::CaseInsensitive)
                          || str.startsWith("main.", Qt::CaseInsensitive)))
         {
