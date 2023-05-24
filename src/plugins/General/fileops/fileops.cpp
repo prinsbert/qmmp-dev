@@ -383,7 +383,8 @@ void FileOps::execute(const QList<PlayListTrack *> &tracks, const MetaDataFormat
         qDebug("FileOps: exec command: %s", qPrintable(command));
 
 #ifdef Q_OS_WIN
-        QProcess::startDetached(QString("cmd.exe /C %1").arg(command));
+        QStringList args = { "/C", command };
+        QProcess::startDetached("cmd.exe", args);
 #else
         QStringList args = { "-c", command };
         QProcess::startDetached("sh", args);
