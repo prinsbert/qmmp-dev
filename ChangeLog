@@ -1824,5 +1824,7 @@ Version 1.6.3
 
 Version 1.6.4
 * added projectM 4.0 support (experimental)
+* fixed command execution under Windows in the file operations plugin
+* fixed removing of the current playing file in the file operations plugin
 * fixed crash on streams in the lyrics plugin
 * fixed issues with visualization windows on application startup
