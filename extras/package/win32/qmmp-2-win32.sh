@@ -69,7 +69,6 @@ download_plugins_svn()
 build ()
 { 
   cd qmmp-${QMMP_VERSION}
-  sed  -i 's/-lcurldll/-lcurl.dll/' -i src/Plugins/Transports/http/http.pro
   qmake CONFIG+=release
   mingw32-make -j${JOBS}
   cd ..
