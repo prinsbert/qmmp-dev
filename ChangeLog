@@ -1840,6 +1840,9 @@ Version 2.1.3
 
 Version 2.1.4
 * added projectM 4.0 support (experimental)
+* rebuild skin cache if missing
+* fixed command execution under Windows in the file operations plugin
+* fixed removing of the current playing file in the file operations plugin
 * fixed crash on streams in the lyrics plugin
 * fixed issues with tabbar in the simple ui plugin
 * fixed issues with visualization windows on application startup
