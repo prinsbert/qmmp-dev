@@ -1465,24 +1465,24 @@
         <translation>显示’新播放列表中‘按钮</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="120"/>
+        <location filename="../skinnedsettings.cpp" line="106"/>
         <source>Select Skin Files</source>
         <translation>选择皮肤文件</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="121"/>
+        <location filename="../skinnedsettings.cpp" line="107"/>
         <source>Skin files</source>
         <translation>皮肤文件</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="173"/>
-        <source>Unarchived skin</source>
-        <translation>未存档皮肤</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Unarchived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="221"/>
-        <source>Archived skin</source>
-        <translation>存档的皮肤</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Archived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -5,51 +5,51 @@
     <name>FileOps</name>
     <message>
         <location filename="../fileops.cpp" line="107"/>
-        <location filename="../fileops.cpp" line="147"/>
+        <location filename="../fileops.cpp" line="150"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="108"/>
-        <location filename="../fileops.cpp" line="148"/>
+        <location filename="../fileops.cpp" line="151"/>
         <source>Destination directory doesn&apos;t exist</source>
         <translation>대상 디렉토리가 없습니다</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="151"/>
+        <location filename="../fileops.cpp" line="154"/>
         <source>Move Files</source>
         <translation>파일 이동</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileops.cpp" line="152"/>
+        <location filename="../fileops.cpp" line="155"/>
         <source>Are you sure you want to move %n file(s)?</source>
         <translation>
             <numerusform>%n개의 파일을 이동하시겠습니까?</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="174"/>
+        <location filename="../fileops.cpp" line="177"/>
         <source>Copying</source>
         <translation>복사하는 중</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="175"/>
-        <location filename="../fileops.cpp" line="269"/>
+        <location filename="../fileops.cpp" line="178"/>
+        <location filename="../fileops.cpp" line="275"/>
         <source>Stop</source>
         <translation>중지</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="220"/>
+        <location filename="../fileops.cpp" line="223"/>
         <source>Copying file %1/%2</source>
         <translation>%1/%2 파일 복사 중</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="268"/>
+        <location filename="../fileops.cpp" line="274"/>
         <source>Moving</source>
         <translation>이동 중</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="304"/>
+        <location filename="../fileops.cpp" line="313"/>
         <source>Moving file %1/%2</source>
         <translation>%1/%2 파일 이동 중</translation>
     </message>

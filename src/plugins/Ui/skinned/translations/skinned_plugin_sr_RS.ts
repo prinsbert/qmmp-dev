@@ -1465,24 +1465,24 @@
         <translation>Дугме „Нова листа нумера“</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="120"/>
+        <location filename="../skinnedsettings.cpp" line="106"/>
         <source>Select Skin Files</source>
         <translation>Избор фајлова маске</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="121"/>
+        <location filename="../skinnedsettings.cpp" line="107"/>
         <source>Skin files</source>
         <translation>Фајлови маске</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="173"/>
-        <source>Unarchived skin</source>
-        <translation>Неархивирана маска</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Unarchived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="221"/>
-        <source>Archived skin</source>
-        <translation>Архивирана маска</translation>
+        <location filename="../skinnedsettings.cpp" line="186"/>
+        <source>Archived skin %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

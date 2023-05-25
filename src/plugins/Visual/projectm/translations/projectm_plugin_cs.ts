@@ -16,52 +16,52 @@
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
-        <translation type="unfinished">&amp;Další předvolby</translation>
+        <translation>&amp;Další předvolby</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>N</source>
-        <translation type="unfinished">N</translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation type="unfinished">Př&amp;edchozí předvolby</translation>
+        <translation>Př&amp;edchozí předvolby</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>Za&amp;míchat</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>O</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
-        <translation type="unfinished">U&amp;zamknout předvolby</translation>
+        <translation>U&amp;zamknout předvolby</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>L</source>
-        <translation type="unfinished">L</translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished">&amp;Celá obrazovka</translation>
+        <translation>&amp;Celá obrazovka</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
