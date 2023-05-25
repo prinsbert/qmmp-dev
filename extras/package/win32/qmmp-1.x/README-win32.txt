@@ -26,7 +26,7 @@ List of the third-party libraries.
   Name                Version    Web page
 
   MinGW-w64           5.0.0      http://mingw-w64.sourceforge.net/
-  Qt                  5.15.8     http://qt.io/
+  Qt                  5.15.9     http://qt.io/
   unzip               5.51       http://www.info-zip.org/pub/infozip/UnZip.html
   taglib              1.13       http://taglib.github.io/
   libmad              0.15.1b    http://www.underbit.com/products/mad/
@@ -35,10 +35,10 @@ List of the third-party libraries.
   flac                1.4.2      https://xiph.org/flac/index.html
   wavpack             5.6.0      http://www.wavpack.com/
   libsndfile          1.2.0      http://www.mega-nerd.com/libsndfile/
-  opus                1.3.1      http://www.opus-codec.org/
+  opus                1.4        http://www.opus-codec.org/
   opusfile            0.12       http://www.opus-codec.org/
   libbs2b             3.1.0      http://bs2b.sourceforge.net/
-  curl                8.0.1      http://curl.haxx.se/
+  curl                8.1.1      http://curl.haxx.se/
   libcdio             2.1.0      http://www.gnu.org/software/libcdio/
   libcdio-paranoia    10.2+2.0.1 http://www.gnu.org/software/libcdio/  
   mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
