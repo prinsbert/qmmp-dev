@@ -61,7 +61,7 @@
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ф</translation>
     </message>
 </context>
 <context>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../projectmwidget.cpp" line="153"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>Ф</translation>
     </message>
 </context>
 <context>
@@ -190,7 +190,7 @@
     <message>
         <location filename="../visualprojectmfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Написана от Илия Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../visualprojectmfactory.cpp" line="53"/>

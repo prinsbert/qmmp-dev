@@ -11,7 +11,7 @@
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
@@ -31,17 +31,17 @@
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Zamiešať</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>

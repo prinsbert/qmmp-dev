@@ -5,51 +5,51 @@
     <name>FileOps</name>
     <message>
         <location filename="../fileops.cpp" line="107"/>
-        <location filename="../fileops.cpp" line="147"/>
+        <location filename="../fileops.cpp" line="150"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="108"/>
-        <location filename="../fileops.cpp" line="148"/>
+        <location filename="../fileops.cpp" line="151"/>
         <source>Destination directory doesn&apos;t exist</source>
         <translation>目标目录不存在</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="151"/>
+        <location filename="../fileops.cpp" line="154"/>
         <source>Move Files</source>
         <translation>转移文件</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileops.cpp" line="152"/>
+        <location filename="../fileops.cpp" line="155"/>
         <source>Are you sure you want to move %n file(s)?</source>
         <translation>
             <numerusform>你确定你希望移动%n文件(文件组)吗？</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="174"/>
+        <location filename="../fileops.cpp" line="177"/>
         <source>Copying</source>
         <translation>正在复制</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="175"/>
-        <location filename="../fileops.cpp" line="269"/>
+        <location filename="../fileops.cpp" line="178"/>
+        <location filename="../fileops.cpp" line="275"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="220"/>
+        <location filename="../fileops.cpp" line="223"/>
         <source>Copying file %1/%2</source>
         <translation>正在复制文件 %1/%2</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="268"/>
+        <location filename="../fileops.cpp" line="274"/>
         <source>Moving</source>
         <translation>移动中</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="304"/>
+        <location filename="../fileops.cpp" line="313"/>
         <source>Moving file %1/%2</source>
         <translation>正在移动文件%1%2</translation>
     </message>

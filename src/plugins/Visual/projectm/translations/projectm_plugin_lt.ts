@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="lt" sourcelanguage="lt">
+<TS version="2.1" language="lt">
 <context>
     <name>ProjectM4Widget</name>
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>&amp;Show Menu</source>
-        <translation type="unfinished">&amp;Rodyti Meniu</translation>
+        <translation>&amp;Rodyti Meniu</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="163"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>&amp;Next Preset</source>
-        <translation type="unfinished">&amp;Sekanti</translation>
+        <translation>&amp;Sekanti</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="165"/>
         <source>N</source>
-        <translation type="unfinished">N</translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>&amp;Previous Preset</source>
-        <translation type="unfinished">&amp;Atgal</translation>
+        <translation>&amp;Atgal</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="166"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sumaišyti</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="167"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>&amp;Lock Preset</source>
-        <translation type="unfinished">&amp;Užrakinti</translation>
+        <translation>&amp;Užrakinti</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="168"/>
         <source>L</source>
-        <translation type="unfinished">L</translation>
+        <translation>L</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished">&amp;Visas ekranas</translation>
+        <translation>&amp;Visas ekranas</translation>
     </message>
     <message>
         <location filename="../projectm4widget.cpp" line="170"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
