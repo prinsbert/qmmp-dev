@@ -592,22 +592,27 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="90"/>
+        <location filename="../filesystembrowser.cpp" line="97"/>
         <source>Add to Playlist</source>
         <translation>Додати до списку відтворення</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="97"/>
+        <location filename="../filesystembrowser.cpp" line="104"/>
+        <source>Tree View Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="106"/>
         <source>Quick Search</source>
         <translation>Швидкий пошук</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="171"/>
+        <location filename="../filesystembrowser.cpp" line="183"/>
         <source>Select Directory</source>
         <translation>Виберіть теку</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="92"/>
+        <location filename="../filesystembrowser.cpp" line="99"/>
         <source>Change Directory</source>
         <translation>Змінити теку</translation>
     </message>

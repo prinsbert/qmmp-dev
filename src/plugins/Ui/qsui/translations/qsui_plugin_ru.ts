@@ -591,22 +591,27 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="90"/>
+        <location filename="../filesystembrowser.cpp" line="97"/>
         <source>Add to Playlist</source>
         <translation>Добавить к списку воспроизведения</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="92"/>
+        <location filename="../filesystembrowser.cpp" line="99"/>
         <source>Change Directory</source>
         <translation>Сменить каталог</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="97"/>
+        <location filename="../filesystembrowser.cpp" line="104"/>
+        <source>Tree View Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="106"/>
         <source>Quick Search</source>
         <translation>Быстрый поиск</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="171"/>
+        <location filename="../filesystembrowser.cpp" line="183"/>
         <source>Select Directory</source>
         <translation>Выберите каталог</translation>
     </message>
