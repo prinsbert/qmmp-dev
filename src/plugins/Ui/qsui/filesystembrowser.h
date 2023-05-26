@@ -25,7 +25,7 @@
 
 class QFileSystemModel;
 class QModelIndex;
-class QListView;
+class QTreeView;
 class QAction;
 class QLineEdit;
 class FileSystemFilterProxyModel;
@@ -52,16 +52,18 @@ private slots:
     void addToPlayList();
     void selectDirectory();
     void onFilterLineEditTextChanged(const QString &str);
+    void setTreeViewMode(bool enabled);
 
 private:
     void setCurrentDirectory(const QString &path);
     bool m_update = false;
     Utils::ElidingLabel *m_label;
     QFileSystemModel *m_fileSystemModel;
-    QListView *m_listView;
+    QTreeView *m_treeView;
     FileSystemFilterProxyModel  *m_proxyModel;
     QLineEdit *m_filterLineEdit;
     QAction *m_showFilterAction;
+    QAction *m_treeModeAction;
 
 };
 
