@@ -5,23 +5,23 @@
     <name>FileOps</name>
     <message>
         <location filename="../fileops.cpp" line="107"/>
-        <location filename="../fileops.cpp" line="147"/>
+        <location filename="../fileops.cpp" line="150"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="108"/>
-        <location filename="../fileops.cpp" line="148"/>
+        <location filename="../fileops.cpp" line="151"/>
         <source>Destination directory doesn&apos;t exist</source>
         <translation>A pasta de destino não existe</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="151"/>
+        <location filename="../fileops.cpp" line="154"/>
         <source>Move Files</source>
         <translation>Mover arquivos</translation>
     </message>
     <message numerus="yes">
-        <location filename="../fileops.cpp" line="152"/>
+        <location filename="../fileops.cpp" line="155"/>
         <source>Are you sure you want to move %n file(s)?</source>
         <translation>
             <numerusform>Tem certeza que deseja mover %n arquivo?</numerusform>
@@ -29,28 +29,28 @@
         </translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="174"/>
+        <location filename="../fileops.cpp" line="177"/>
         <source>Copying</source>
         <translation>Copiando</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="175"/>
-        <location filename="../fileops.cpp" line="269"/>
+        <location filename="../fileops.cpp" line="178"/>
+        <location filename="../fileops.cpp" line="275"/>
         <source>Stop</source>
         <translation>Parar</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="220"/>
+        <location filename="../fileops.cpp" line="223"/>
         <source>Copying file %1/%2</source>
         <translation>Copiando arquivo %1/%2</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="268"/>
+        <location filename="../fileops.cpp" line="274"/>
         <source>Moving</source>
         <translation>Movendo</translation>
     </message>
     <message>
-        <location filename="../fileops.cpp" line="304"/>
+        <location filename="../fileops.cpp" line="313"/>
         <source>Moving file %1/%2</source>
         <translation>Movendo arquivo %1/%2</translation>
     </message>
