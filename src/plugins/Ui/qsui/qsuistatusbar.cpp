@@ -95,7 +95,7 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
         for(int i = SampleRateLabel; i <= TimeLabel; ++i)
             m_labels[LabelType(i)]->hide();
 
-        for(QFrame *sep : m_separators.values())
+        for(QFrame *sep : qAsConst(m_separators))
             sep->hide();
 
         m_labels[StatusLabel]->show();
@@ -132,7 +132,7 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
         for(int i = SampleRateLabel; i <= TimeLabel; ++i)
             m_labels[LabelType(i)]->hide();
 
-        for(QFrame *sep : m_separators.values())
+        for(QFrame *sep : qAsConst(m_separators))
             sep->hide();
 
         m_labels[StatusLabel]->show();

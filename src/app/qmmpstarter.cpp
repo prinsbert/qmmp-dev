@@ -94,25 +94,25 @@ QMMPStarter::QMMPStarter() : QObject()
     argString = tmp.join("|||");
     QHash <QString, QStringList> commands = m_option_manager->splitArgs(tmp);
 
-    if(commands.keys().contains("--help") || commands.keys().contains("-h"))
+    if(commands.contains("--help") || commands.contains("-h"))
     {
         printUsage();
         m_finished = true;
         return;
     }
-    if(commands.keys().contains("--version") || commands.keys().contains("-v"))
+    if(commands.contains("--version") || commands.contains("-v"))
     {
         printVersion();
         m_finished = true;
         return;
     }
-    if(commands.keys().contains("--ui-list"))
+    if(commands.contains("--ui-list"))
     {
         printUserInterfaces();
         m_finished = true;
         return;
     }
-    if(commands.keys().contains("--ui"))
+    if(commands.contains("--ui"))
     {
         QStringList args = commands.value("--ui");
         if(args.size() == 1)
@@ -163,7 +163,7 @@ QMMPStarter::QMMPStarter() : QObject()
 
     m_server = new QLocalServer(this);
     m_socket = new QLocalSocket(this);
-    bool noStart = commands.keys().contains("--no-start") || commands.keys().contains("--quit");
+    bool noStart = commands.contains("--no-start") || commands.contains("--quit");
 
 #ifdef Q_OS_WIN
     //Windows IPC implementation (named mutex and named pipe)
