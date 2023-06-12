@@ -47,7 +47,7 @@ QDialog *HotkeyFactory::createConfigDialog(QWidget *parent)
     if(General::isEnabled(this))
     {
         General::setEnabled(this, false);
-        connect(dialog, &QDialog::finished, [this] { General::setEnabled(this); });
+        connect(dialog, &QDialog::finished, this, [this] { General::setEnabled(this); });
     }
     return dialog;
 }

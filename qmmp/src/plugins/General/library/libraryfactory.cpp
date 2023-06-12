@@ -64,7 +64,7 @@ QWidget *LibraryFactory::createWidget(int id, QWidget *parent)
 
             m_library->showAction()->setVisible(false);
         }
-        connect(m_libraryWidget, &QObject::destroyed, [=]() {
+        connect(m_libraryWidget, &QObject::destroyed, this, [=]() {
             if(!m_library.isNull())
                 m_library->showAction()->setVisible(true);
         });
