@@ -1,0 +1,5 @@
+Tests: upstream-tests.sh
+Depends:
+ @,
+ @builddeps@,
+ python3-all,

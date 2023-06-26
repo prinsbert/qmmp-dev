@@ -1,68 +1,89 @@
-yt-dlp (2023.06.22-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2023.06.22-1ubuntu1~lunar0) lunar; urgency=medium
 
   * New upstream release.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 26 Jun 2023 22:54:16 +0300
+ -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 26 Jun 2023 23:00:42 +0300
 
-yt-dlp (2023.03.04-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2023.03.04-1) unstable; urgency=medium
 
-  * New upstream release.
+  * d/control, d/gbp.conf, d/rules: Move generation of extractors to buildtime.
+    Thanks to Paul Wise.
+  * New upstream version 2023.03.04.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 09 Mar 2023 22:25:53 +0300
+ -- Unit 193 <unit193@debian.org>  Mon, 06 Mar 2023 01:34:38 -0500
 
-yt-dlp (2023.02.17-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2023.02.17-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2023.02.17.
+    - youtube: Fix uploader_id extraction. (Closes: #1031522)
+    - Refresh supported sites.
+  * d/rules: Opt-out of trimmed changelogs.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Fri, 17 Feb 2023 18:14:44 +0300
+ -- Unit 193 <unit193@debian.org>  Fri, 17 Feb 2023 18:37:11 -0500
 
-yt-dlp (2023.01.06-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2023.01.06-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2023.01.06.
+    - Refresh supported sites.
+    - Refresh patch.
+  * d/control: Build-Depend on pybuild-plugin-pyproject.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Sun, 05 Feb 2023 17:13:51 +0300
+ -- Unit 193 <unit193@debian.org>  Fri, 06 Jan 2023 20:33:39 -0500
 
-yt-dlp (2023.01.02-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2023.01.02-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2023.01.02.
+    - Refresh supported sites.
+  * d/copyright: Bump years.
+  * Update Standards-Version to 4.6.2.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 04 Jan 2023 21:50:29 +0300
+ -- Unit 193 <unit193@debian.org>  Tue, 03 Jan 2023 04:09:06 -0500
 
-yt-dlp (2022.11.11-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2022.11.11-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2022.11.11.
+    - Refresh supported sites.
+    - Refresh patch.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 16 Nov 2022 21:34:30 +0300
+ -- Unit 193 <unit193@debian.org>  Sat, 12 Nov 2022 19:17:05 -0500
 
-yt-dlp (2022.10.04-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2022.10.04-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2022.10.04.
+    - Refresh supported sites.
+    - Refresh patches.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 08 Oct 2022 10:53:00 +0300
+ -- Unit 193 <unit193@debian.org>  Tue, 04 Oct 2022 04:52:29 -0400
 
-yt-dlp (2022.09.01-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2022.09.01-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2022.09.01.
+    - Refresh supported sites.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 03 Sep 2022 20:47:54 +0300
+ -- Unit 193 <unit193@debian.org>  Thu, 01 Sep 2022 17:35:30 -0400
 
-yt-dlp (2022.08.19-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2022.08.19-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2022.08.19.
+    - Refresh supported sites.
+  * d/p/0002-setup.py-Do-not-include-devscripts-as-a-package.patch:
+     - Drop upstream patch.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Fri, 19 Aug 2022 19:51:54 +0300
+ -- Unit 193 <unit193@debian.org>  Thu, 18 Aug 2022 22:30:28 -0400
 
-yt-dlp (2022.08.14-1ubuntu3~focal0) focal; urgency=medium
+yt-dlp (2022.08.14-2) unstable; urgency=medium
 
-  * New upstream release.
+  * d/p/0002-setup.py-Do-not-include-devscripts-as-a-package.patch:
+    - Grab an upstream commit to exclude the devscripts from the package.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 17 Aug 2022 22:38:04 +0300
+ -- Unit 193 <unit193@debian.org>  Mon, 15 Aug 2022 04:24:18 -0400
 
-yt-dlp (2022.08.08-1ubuntu1~focal0) focal; urgency=medium
+yt-dlp (2022.08.14-1) unstable; urgency=medium
 
-  * New upstream release.
+  * New upstream version 2022.08.14.
+    - Refresh supported sites.
 
- -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 09 Aug 2022 22:35:24 +0300
+ -- Unit 193 <unit193@debian.org>  Sun, 14 Aug 2022 22:28:53 -0400
 
 yt-dlp (2022.08.08-1) unstable; urgency=medium
 
