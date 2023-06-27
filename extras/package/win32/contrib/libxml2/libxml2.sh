@@ -1,13 +1,13 @@
 #!/bin/sh
 
 NAME=libxml2
-VERSION=2.10.4
+VERSION=2.11.4
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget --no-check-certificate -nc https://download.gnome.org/sources/libxml2/2.10/$NAME-$VERSION.tar.xz
+    wget --no-check-certificate -nc https://download.gnome.org/sources/libxml2/2.11/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp
