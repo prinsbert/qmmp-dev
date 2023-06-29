@@ -229,77 +229,77 @@ void PlayList::createActions()
     sort_mode_menu->setIcon(QIcon::fromTheme("view-sort-ascending"));
 
     QAction *titleAct = sort_mode_menu->addAction(tr ("By Title"));
-    connect(titleAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::TITLE); } );
+    connect(titleAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::TITLE); } );
 
     QAction *albumAct = sort_mode_menu->addAction(tr ("By Album"));
-    connect(albumAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::ALBUM); } );
+    connect(albumAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::ALBUM); } );
 
     QAction *artistAct = sort_mode_menu->addAction(tr ("By Artist"));
-    connect(artistAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::ARTIST); } );
+    connect(artistAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::ARTIST); } );
 
     QAction *albumArtistAct = sort_mode_menu->addAction(tr ("By Album Artist"));
-    connect(albumArtistAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::ALBUMARTIST); } );
+    connect(albumArtistAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::ALBUMARTIST); } );
 
     QAction *nameAct = sort_mode_menu->addAction(tr ("By Filename"));
-    connect(nameAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::FILENAME); } );
+    connect(nameAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::FILENAME); } );
 
     QAction *pathnameAct = sort_mode_menu->addAction(tr ("By Path + Filename"));
-    connect(pathnameAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::PATH_AND_FILENAME); } );
+    connect(pathnameAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::PATH_AND_FILENAME); } );
 
     QAction *dateAct = sort_mode_menu->addAction(tr ("By Date"));
-    connect(dateAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::DATE); } );
+    connect(dateAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::DATE); } );
 
     QAction *trackAct = sort_mode_menu->addAction(tr("By Track Number"));
-    connect(trackAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::TRACK); } );
+    connect(trackAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::TRACK); } );
 
     QAction *discAct = sort_mode_menu->addAction(tr("By Disc Number"));
-    connect(discAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::DISCNUMBER); } );
+    connect(discAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::DISCNUMBER); } );
 
     QAction *fileCreationDateAct = sort_mode_menu->addAction(tr("By File Creation Date"));
-    connect(fileCreationDateAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::FILE_CREATION_DATE); } );
+    connect(fileCreationDateAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::FILE_CREATION_DATE); } );
 
     QAction *fileModificationDateAct = sort_mode_menu->addAction(tr("By File Modification Date"));
-    connect(fileModificationDateAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::FILE_MODIFICATION_DATE); } );
+    connect(fileModificationDateAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::FILE_MODIFICATION_DATE); } );
 
     QAction *groupAct = sort_mode_menu->addAction(tr("By Group"));
-    connect(groupAct, &QAction::triggered, [this]{ m_pl_manager->sort(PlayListModel::GROUP); } );
+    connect(groupAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::GROUP); } );
 
     m_sortMenu->addMenu (sort_mode_menu);
 
     sort_mode_menu = new QMenu (tr("Sort Selection"), m_sortMenu);
     sort_mode_menu->setIcon(QIcon::fromTheme("view-sort-ascending"));
     titleAct = sort_mode_menu->addAction(tr ("By Title"));
-    connect(titleAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::TITLE); });
+    connect(titleAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::TITLE); });
 
     albumAct = sort_mode_menu->addAction(tr ("By Album"));
-    connect(albumAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::ALBUM); });
+    connect(albumAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::ALBUM); });
 
     artistAct = sort_mode_menu->addAction(tr ("By Artist"));
-    connect(artistAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::ARTIST); });
+    connect(artistAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::ARTIST); });
 
     albumArtistAct = sort_mode_menu->addAction(tr ("By Album Artist"));
-    connect(albumArtistAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::ALBUMARTIST); });
+    connect(albumArtistAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::ALBUMARTIST); });
 
     nameAct = sort_mode_menu->addAction(tr ("By Filename"));
-    connect(nameAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::FILENAME); });
+    connect(nameAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::FILENAME); });
 
     pathnameAct = sort_mode_menu->addAction(tr ("By Path + Filename"));
-    connect(pathnameAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::PATH_AND_FILENAME); });
+    connect(pathnameAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::PATH_AND_FILENAME); });
 
     dateAct = sort_mode_menu->addAction(tr ("By Date"));
-    connect(dateAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::DATE); });
+    connect(dateAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::DATE); });
 
     trackAct = sort_mode_menu->addAction(tr ("By Track Number"));
-    connect(trackAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::TRACK); });
+    connect(trackAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::TRACK); });
 
     discAct = sort_mode_menu->addAction(tr("By Disc Number"));
-    connect(discAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::DISCNUMBER); });
+    connect(discAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::DISCNUMBER); });
 
     fileCreationDateAct = sort_mode_menu->addAction(tr("By File Creation Date"));
-    connect(fileCreationDateAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::FILE_CREATION_DATE); });
+    connect(fileCreationDateAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::FILE_CREATION_DATE); });
 
     fileModificationDateAct = sort_mode_menu->addAction(tr("By File Modification Date"));
-    connect(fileModificationDateAct, &QAction::triggered, [this]{ m_pl_manager->sortSelection(PlayListModel::FILE_MODIFICATION_DATE ); });
+    connect(fileModificationDateAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::FILE_MODIFICATION_DATE ); });
 
     m_sortMenu->addMenu (sort_mode_menu);
     m_sortMenu->addSeparator();

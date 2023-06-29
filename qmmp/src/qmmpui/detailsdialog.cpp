@@ -318,8 +318,9 @@ void DetailsDialog::printInfo()
     //stream information
     if(core->state() == Qmmp::Playing && core->path() == m_info.path())
     {
-        for(const QString &key : core->streamInfo().keys())
-            streamInfoRows += formatRow(key, core->streamInfo().value(key));
+        const QHash<QString, QString> &streamInfo = core->streamInfo();
+        for(auto it = streamInfo.cbegin(); it != streamInfo.cend(); ++it)
+            streamInfoRows += formatRow(it.key(), it.value());
     }
     streamInfoRows = streamInfoRows.trimmed();
     if(!streamInfoRows.isEmpty())

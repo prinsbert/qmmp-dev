@@ -229,7 +229,7 @@ bool LyricsWidget::loadFromTag(const QString &path)
     {
         content.replace("\r\n", "<br>");
         content.replace("\n", "<br>");
-        content.prepend(tr("<h2>%1 - %2</h2>").arg(m_ui.artistLineEdit->text()).arg(m_ui.titleLineEdit->text()));
+        content.prepend(tr("<h2>%1 - %2</h2>").arg(m_ui.artistLineEdit->text(), m_ui.titleLineEdit->text()));
         m_ui.textBrowser->setHtml(content);
         m_ui.providerComboBox->addItem(tr("Tag"));
         return true;
