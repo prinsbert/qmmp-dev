@@ -417,7 +417,7 @@ void QSUiAnalyzer::process(float *buffer, int width, int height)
         delete [] m_peaks;
         delete [] m_intern_vis_data;
         delete [] m_x_scale;
-        m_peaks = new double[m_cols];
+        m_peaks = new double[m_cols] { 0 };
         m_intern_vis_data = new double[m_cols] { 0 };
         m_x_scale = new int[m_cols + 1] { 0 };
 
