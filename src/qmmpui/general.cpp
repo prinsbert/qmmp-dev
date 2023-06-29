@@ -198,7 +198,7 @@ void General::showSettings(GeneralFactory *factory, QWidget *parentWidget)
 
     if (m_generals && dialog->exec() == QDialog::Accepted)
     {
-        if(m_generals->keys().contains(factory))
+        if(m_generals->contains(factory))
             delete m_generals->take(factory);
 
         QObject *general = factory->create(m_parent);
