@@ -365,7 +365,7 @@ void HttpStreamReader::run()
     curl_easy_setopt(m_handle, CURLOPT_MAXREDIRS, 15);
     // user agent
     curl_easy_setopt(m_handle, CURLOPT_USERAGENT, qPrintable(m_userAgent));
-    curl_easy_setopt(m_handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
+    curl_easy_setopt(m_handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
     // error message
     curl_easy_setopt(m_handle, CURLOPT_ERRORBUFFER, errorBuffer);
 
