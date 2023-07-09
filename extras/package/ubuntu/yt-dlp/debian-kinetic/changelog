@@ -1,3 +1,9 @@
+yt-dlp (2023.07.06-1ubuntu1~kinetic0) kinetic; urgency=medium
+
+  * New upstream release.
+
+ -- Unit 193 <unit193@debian.org>  Sun, 09 Jul 2023 21:03:45 +0300
+
 yt-dlp (2023.06.22-1ubuntu1~kinetic0) kinetic; urgency=medium
 
   * New upstream release.

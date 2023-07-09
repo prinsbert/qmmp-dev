@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2023.06.22
+VERSION=2023.07.06
 UBUNTU_CODENAMES='bionic focal jammy kinetic lunar'
 BUILD_ROOT=build-root
 
