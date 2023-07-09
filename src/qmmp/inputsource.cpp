@@ -215,6 +215,9 @@ InputSourceFactory *InputSource::findByUrl(const QString &url)
             continue;
 
         InputSourceFactory *factory = item->inputSourceFactory();
+        if(!factory)
+            continue;
+
         for(const QRegularExpression &r : factory->properties().regExps)
         {
             if(r.match(url).hasMatch())
