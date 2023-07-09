@@ -318,9 +318,6 @@
        </item>
        <item>
         <widget class="QCheckBox" name="showNewPLCheckBox">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
          <property name="text">
           <string>Show 'New Playlist' button</string>
          </property>
@@ -337,9 +334,6 @@
          </item>
          <item>
           <widget class="QLineEdit" name="plSeplineEdit">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -1072,12 +1066,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>182</x>
-     <y>398</y>
+     <x>193</x>
+     <y>385</y>
     </hint>
     <hint type="destinationlabel">
-     <x>128</x>
-     <y>439</y>
+     <x>140</x>
+     <y>424</y>
     </hint>
    </hints>
   </connection>
@@ -1108,8 +1102,8 @@
      <y>85</y>
     </hint>
     <hint type="destinationlabel">
-     <x>133</x>
-     <y>105</y>
+     <x>161</x>
+     <y>202</y>
     </hint>
    </hints>
   </connection>
@@ -1140,8 +1134,8 @@
      <y>231</y>
     </hint>
     <hint type="destinationlabel">
-     <x>205</x>
-     <y>257</y>
+     <x>260</x>
+     <y>274</y>
     </hint>
    </hints>
   </connection>
@@ -1172,8 +1166,8 @@
      <y>284</y>
     </hint>
     <hint type="destinationlabel">
-     <x>208</x>
-     <y>310</y>
+     <x>260</x>
+     <y>330</y>
     </hint>
    </hints>
   </connection>
