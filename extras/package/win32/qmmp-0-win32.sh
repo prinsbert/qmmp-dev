@@ -115,7 +115,7 @@ create_distr ()
   do
     cp -v ${MINGW32_PATH}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libcrypto-1_1.dll libssl-1_1.dll
+  for LIB_NAME in ssleay32.dll libeay32.dll
   do
     cp -v ${MINGW32_PATH}/opt/bin/${LIB_NAME} ./
   done
