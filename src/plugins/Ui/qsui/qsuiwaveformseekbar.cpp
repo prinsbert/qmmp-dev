@@ -26,6 +26,7 @@
 #include <QAction>
 #include <QMutexLocker>
 #include <cmath>
+#include <numeric>
 #include <qmmp/soundcore.h>
 #include <qmmp/inputsource.h>
 #include <qmmp/decoder.h>
@@ -36,6 +37,8 @@
 #include "qsuiwaveformseekbar.h"
 
 #define NUMBER_OF_VALUES (4096)
+#define FLOATS_PER_LANE (4) // Number of floats fitting into a 128-bit XMM register
+#define VECTORIZE_HINT (8)
 
 QSUiWaveformSeekBar::QSUiWaveformSeekBar(QWidget *parent) : QWidget(parent)
 {
@@ -437,57 +440,125 @@ const AudioParameters &QSUiWaveformScanner::audioParameters() const
 void QSUiWaveformScanner::run()
 {
     m_ap = m_decoder->audioParameters();
-    unsigned char tmp[QMMP_BLOCK_FRAMES * m_ap.frameSize() * 4];
-    float out[QMMP_BLOCK_FRAMES * m_ap.channels() * sizeof(float)];
+    int channels = m_ap.channels();
+    int frame_size = m_ap.frameSize();
+    int sample_size = m_ap.sampleSize();
+    qint64 frames = m_decoder->totalTime() * m_ap.sampleRate() / 1000;
+    qint64 frames_per_value = frames / NUMBER_OF_VALUES;
+
+    int tmp_size = QMMP_BLOCK_FRAMES * frame_size * 4;
+    unsigned char* tmp = new unsigned char[tmp_size];
+    float* out = new float[QMMP_BLOCK_FRAMES * channels * 4];
+
     AudioConverter converter;
     converter.configure(m_ap.format());
+
+    // Number of elements in each stat buffer
+    //  channels = 1, items = 4,  layout = |1111|
+    //  channels = 2, items = 4,  layout = |1212|
+    //  channels = 3, items = 12, layout = |1231|2312|3123|
+    //  channels = 4, items = 4,  layout = |1234|
+    //  channels = 5, items = 20, layout = |1234|5123|4512|3451|2345|
+    //  channels = 6, items = 12, layout = |1234|5612|3456|
+    //  channels = 7, items = 28, layout = |1234|5671|2345|6712|3456|7123|4567|
+    //  channels = 8, items = 8,  layout = |1234|5678|
+    //
+    // For layouts containing less than 16 items, GCC or Clang do not produce
+    // vectorized code at -O2. However, multiplying 'samples_per_stat' by a constant
+    // results in the desired output.
+    int samples_per_stat = std::lcm(FLOATS_PER_LANE, channels) * VECTORIZE_HINT;
+    int frames_per_stat = samples_per_stat / channels;
+
+    float *vmax = new float[samples_per_stat]{ -1.f };
+    float *vmin = new float[samples_per_stat]{  1.f };
+    float *vrms = new float[samples_per_stat]{  0.f };
+
+    qint64 frame_counter = 0;
+    qint64 frames_left = frames_per_value;
+
     m_data.clear();
-
-    qint64 frames = m_decoder->totalTime() * m_ap.sampleRate() / 1000;
-    int samplesPerValue = frames / NUMBER_OF_VALUES * m_ap.channels();
-
     m_mutex.lock();
-    float *max = new float[m_ap.channels()]{ -1.0 };
-    float *min = new float[m_ap.channels()]{ 1.0 };
-    float *rms = new float[m_ap.channels()]{ 0 };
-    int counter = 0;
-    int channels = m_ap.channels();
-    float value = 0.f;
+
     while (!m_user_stop)
     {
         m_mutex.unlock();
-        qint64 len = m_decoder->read(tmp, sizeof(tmp));
+        qint64 len = m_decoder->read(tmp, tmp_size);
         if(len > 0)
         {
-            auto sample_count = len / m_ap.sampleSize();
-            converter.toFloat(tmp, out, sample_count);
+            qint64 samples = len / sample_size;
+            converter.toFloat(tmp, out, samples);
 
-            for(uint sample = 0; sample < sample_count - channels; sample += channels)
+            for(qint64 sample = 0, samples_left = samples; sample < samples;)
             {
-                for(int ch = 0; ch < channels; ++ch)
+                // Vectorized path which should be taken most of the time
+                if(frames_left >= frames_per_stat && samples_left >= samples_per_stat)
                 {
-                    value = out[sample + ch];
-                    min[ch] = qMin(min[ch], value);
-                    max[ch] = qMax(max[ch], value);
-                    rms[ch] += (value * value);
+                    for(int i = 0; i < samples_per_stat; ++i)
+                    {
+                        float value = out[sample + i];
+                        vmin[i] = qMin(vmin[i], value);
+                        vmax[i] = qMax(vmax[i], value);
+                        vrms[i] += (value * value);
+                    }
+
+                    sample += samples_per_stat;
+                    samples_left -= samples_per_stat;
+                    frame_counter += frames_per_stat;
+                    frames_left -= frames_per_stat;
+
+                    // Collect stats into the first frame when transitioning to the scalar path
+                    if(frames_left < frames_per_stat || samples_left < samples_per_stat)
+                    {
+                        for(int i = 1; i < frames_per_stat; ++i)
+                        {
+                            for(int ch = 0; ch < channels; ++ch)
+                            {
+                                int offset = channels * i + ch;
+                                vmin[ch] = qMin(vmin[ch], vmin[offset]);
+                                vmax[ch] = qMax(vmax[ch], vmax[offset]);
+                                vrms[ch] += vrms[offset];
+                                vmin[offset] =  1.f;
+                                vmax[offset] = -1.f;
+                                vrms[offset] =  0.f;
+                            }
+                        }
+                    }
                 }
-                counter += channels;
-                if(counter >= samplesPerValue)
+                // Scalar path which should be taken when either
+                // - the sample buffer is almost exhasted
+                // - or, there are almost enough frames to emit a value
+                else
+                {
+                    for(int ch = 0; ch < channels; ++ch)
+                    {
+                        float value = out[sample + ch];
+                        vmin[ch] = qMin(vmin[ch], value);
+                        vmax[ch] = qMax(vmax[ch], value);
+                        vrms[ch] += (value * value);
+                    }
+                    sample += channels;
+                    samples_left -= channels;
+                    ++frame_counter;
+                    --frames_left;
+                }
+
+                if(frame_counter >= frames_per_value)
                 {
                     m_mutex.lock();
                     for(int ch = 0; ch < channels; ++ch)
                     {
-                        m_data << max[ch] * 1000;
-                        m_data << min[ch] * 1000;
-                        m_data << std::sqrt(rms[ch] / (counter / channels)) * 1000;
-                        max[ch] = -1.0;
-                        min[ch] = 1.0;
-                        rms[ch] = 0;
+                        m_data << vmax[ch] * 1000;
+                        m_data << vmin[ch] * 1000;
+                        m_data << std::sqrt(vrms[ch] / frame_counter) * 1000;
+                        vmax[ch] = -1.f;
+                        vmin[ch] =  1.f;
+                        vrms[ch] =  0.f;
                     }
                     if(m_data.size() / 3 / channels % (NUMBER_OF_VALUES / 64) == 0)
                         emit dataChanged();
                     m_mutex.unlock();
-                    counter = 0;
+                    frame_counter = 0;
+                    frames_left = frames_per_value;
                 }
             }
         }
@@ -499,8 +570,10 @@ void QSUiWaveformScanner::run()
 
         m_mutex.lock();
     }
-    delete [] min;
-    delete [] max;
-    delete [] rms;
+    delete [] tmp;
+    delete [] out;
+    delete [] vmin;
+    delete [] vmax;
+    delete [] vrms;
     m_mutex.unlock();
 }
