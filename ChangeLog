@@ -1846,3 +1846,10 @@ Version 2.1.4
 * fixed crash on streams in the lyrics plugin
 * fixed issues with tabbar in the simple ui plugin
 * fixed issues with visualization windows on application startup
+
+Version 2.1.5
+* added waveform seekbar optimization (Linearithmik)
+* fixed visualization initialization in the simple user interface
+* fixed playlist settings in the skinned user interface
+* fixed possible crash
+* fixed http version
