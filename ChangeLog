@@ -1828,3 +1828,10 @@ Version 1.6.4
 * fixed removing of the current playing file in the file operations plugin
 * fixed crash on streams in the lyrics plugin
 * fixed issues with visualization windows on application startup
+
+Version 1.6.5
+* added waveform seekbar optimization (Linearithmik)
+* fixed visualization initialization in the simple user interface
+* fixed playlist settings in the skinned user interface
+* fixed possible crash
+* fixed http version
