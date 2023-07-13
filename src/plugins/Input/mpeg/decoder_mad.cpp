@@ -3,7 +3,7 @@
  *                                                                         *
  * Copyright (c) 2000-2001 Brad Hughes <bhughes@trolltech.com>             *
  * Copyright (C) 2000-2004 Robert Leslie <rob@mars.org>                    *
- * Copyright (C) 2009-2018 Ilya Kotov forkotov02@ya.ru                     *
+ * Copyright (C) 2009-2020 Ilya Kotov forkotov02@ya.ru                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -33,21 +33,21 @@
 #define LAME_MAGIC (('L' << 24) | ('A' << 16) | ('M' << 8) | 'E')
 #define INPUT_BUFFER_SIZE (32*1024)
 
-DecoderMAD::DecoderMAD(QIODevice *i) : Decoder(i)
-{
-    m_inited = false;
-    m_totalTime = 0;
-    m_channels = 0;
-    m_bitrate = 0;
-    m_freq = 0;
-    m_len = 0;
-    m_input_buf = 0;
-    m_input_bytes = 0;
-    m_skip_frames = 0;
-    m_eof = false;
-    m_skip_bytes = 0;
-    m_play_bytes = -1;
-}
+DecoderMAD::DecoderMAD(bool crc, QIODevice *i) : Decoder(i),
+    m_inited(false),
+    m_eof(false),
+    m_totalTime(0),
+    m_channels(0),
+    m_skip_frames(0),
+    m_bitrate(0),
+    m_freq(0),
+    m_len(0),
+    m_input_buf(0),
+    m_input_bytes(0),
+    m_skip_bytes(0),
+    m_play_bytes(-1),
+    m_crc(crc)
+{}
 
 DecoderMAD::~DecoderMAD()
 {
@@ -87,7 +87,8 @@ bool DecoderMAD::initialize()
     }
 
     mad_stream_init(&m_stream);
-    mad_stream_options(&m_stream, MAD_OPTION_IGNORECRC);
+    if(!m_crc)
+        mad_stream_options(&m_stream, MAD_OPTION_IGNORECRC);
     mad_frame_init(&m_frame);
     mad_synth_init(&m_synth);
 

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -32,13 +32,12 @@
 #include <taglib/apetag.h>
 #include <taglib/tfile.h>
 #include <taglib/mpegfile.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 #include <taglib/id3v2tag.h>
 #include <taglib/id3v2header.h>
 #include <taglib/textidentificationframe.h>
 #include <taglib/id3v2framefactory.h>
+#include "tagextractor.h"
 #include "mpegmetadatamodel.h"
 #include "settingsdialog.h"
 #ifdef WITH_MAD
@@ -49,7 +48,6 @@
 #endif
 #include "decodermpegfactory.h"
 
-
 #define CSTR_TO_QSTR(str,utf) codec->toUnicode(str.toCString(utf)).trimmed()
 
 // DecoderMPEGFactory
@@ -59,12 +57,13 @@ DecoderMPEGFactory::DecoderMPEGFactory()
     //detecting rusxmms patch
     m_using_rusxmms = false;
     char str[] = { char(0xF2), char(0xE5), char(0xF1), char(0xF2), '\0'};
-    QTextCodec *codec = QTextCodec::codecForName ("windows-1251");
+    QTextCodec *codec = QTextCodec::codecForName("windows-1251");
     TagLib::String tstr(str);
     if(codec->toUnicode(str) == QString::fromUtf8(tstr.toCString(true)))
     {
         qDebug("DecoderMADFactory: found taglib with rusxmms patch");
         m_using_rusxmms = true;
+        TagExtractor::setForceUtf8(m_using_rusxmms);
     }
 }
 
@@ -181,9 +180,9 @@ DecoderProperties DecoderMPEGFactory::properties() const
     DecoderProperties properties;
     properties.name = tr("MPEG Plugin");
     properties.shortName = "mpeg";
-    properties.filters << "*.mp1" << "*.mp2" << "*.mp3" << "*.wav";
+    properties.filters = QStringList { "*.mp1", "*.mp2", "*.mp3", "*.wav" };
     properties.description = tr("MPEG Files");
-    properties.contentTypes << "audio/mp3" << "audio/mpeg";
+    properties.contentTypes = QStringList { "audio/mp3", "audio/mpeg" };
     properties.hasAbout = true;
     properties.hasSettings = true;
     return properties;
@@ -202,10 +201,13 @@ Decoder *DecoderMPEGFactory::create(const QString &, QIODevice *input)
     else
     {
         qDebug("DecoderMPEGFactory: using MAD decoder");
-        d = new DecoderMAD(input);
+        bool crc = settings.value("MPEG/enable_crc", false).toBool();
+        d = new DecoderMAD(crc, input);
     }
 #elif defined(WITH_MAD)
-    d = new DecoderMAD(input);
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
+    bool crc = settings.value("MPEG/enable_crc", false).toBool();
+    d = new DecoderMAD(crc, input);
 #elif defined(WITH_MPG123)
     d = new DecoderMPG123(input);
 #endif
@@ -216,33 +218,30 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
 {
     TrackInfo *info = new TrackInfo(path);
 
-    if(parts == TrackInfo::NoParts)
+    if(parts == TrackInfo::Parts())
         return QList<TrackInfo*>() << info;
 
-    TagLib::Tag *tag = 0;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream stream(QStringToFileName(path), true);
     TagLib::MPEG::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
-#else
-    TagLib::MPEG::File fileRef(QStringToFileName(path));
-#endif
 
     if (parts & TrackInfo::MetaData)
     {
         QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         settings.beginGroup("MPEG");
 
-        QTextCodec *codec = 0;
-
+        QList< QMap<Qmmp::MetaData, QString> > metaData;
         uint tag_array[3];
         tag_array[0] = settings.value("tag_1", SettingsDialog::ID3v2).toInt();
         tag_array[1] = settings.value("tag_2", SettingsDialog::APE).toInt();
         tag_array[2] = settings.value("tag_3", SettingsDialog::ID3v1).toInt();
+        bool merge = settings.value("merge_tags", false).toBool();
 
-        QByteArray codecName;
         for (int i = 0; i < 3; ++i)
         {
-            codecName.clear();
+            QTextCodec *codec = 0;
+            TagLib::Tag *tag = 0;
+            QByteArray codecName;
+
             switch ((uint) tag_array[i])
             {
             case SettingsDialog::ID3v1:
@@ -250,7 +249,7 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
                 tag = fileRef.ID3v1Tag();
                 break;
             case SettingsDialog::ID3v2:
-                codecName = settings.value("ID3v2_encoding","UTF-8").toByteArray ();
+                codecName = settings.value("ID3v2_encoding","UTF-8").toByteArray();
                 tag = fileRef.ID3v2Tag();
                 break;
             case SettingsDialog::APE:
@@ -260,61 +259,79 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
             case SettingsDialog::Disabled:
                 break;
             }
-            if (tag && !tag->isEmpty())
+
+            if(m_using_rusxmms || codecName.contains("UTF"))
+                codec = QTextCodec::codecForName("UTF-8");
+            else if(!codecName.isEmpty())
+                codec = QTextCodec::codecForName(codecName);
+
+            if (!codec)
+                codec = QTextCodec::codecForName("UTF-8");
+
+            if (tag && codec && !tag->isEmpty())
             {
-                if(codecName.contains("UTF"))
-                    codecName = "UTF-8";
-                if(!codecName.isEmpty())
-                    codec = QTextCodec::codecForName(codecName);
-                break;
+                if((tag == fileRef.ID3v1Tag() || tag == fileRef.ID3v2Tag()) && !m_using_rusxmms &&
+                        settings.value("detect_encoding", false).toBool())
+                {
+                    QTextCodec *detectedCodec = TagExtractor::detectCharset(tag);
+                    codec = detectedCodec ? detectedCodec : codec;
+                }
+
+                bool utf = codec->name().contains("UTF");
+
+                QMap<Qmmp::MetaData, QString> tags;
+                tags.insert(Qmmp::ARTIST, CSTR_TO_QSTR(tag->artist(), utf));
+                tags.insert(Qmmp::ALBUM, CSTR_TO_QSTR(tag->album(), utf));
+                tags.insert(Qmmp::COMMENT, CSTR_TO_QSTR(tag->comment(), utf));
+                tags.insert(Qmmp::GENRE, CSTR_TO_QSTR(tag->genre(), utf));
+                tags.insert(Qmmp::TITLE, CSTR_TO_QSTR(tag->title(), utf));
+                tags.insert(Qmmp::YEAR, QString::number(tag->year()));
+                tags.insert(Qmmp::TRACK, QString::number(tag->track()));
+
+                if(tag == fileRef.ID3v2Tag())
+                {
+                    if(!fileRef.ID3v2Tag()->frameListMap()["TPE2"].isEmpty())
+                    {
+                        TagLib::String albumArtist = fileRef.ID3v2Tag()->frameListMap()["TPE2"].front()->toString();
+                        tags.insert(Qmmp::ALBUMARTIST, CSTR_TO_QSTR(albumArtist, utf));
+                    }
+                    if(!fileRef.ID3v2Tag()->frameListMap()["TCOM"].isEmpty())
+                    {
+                        TagLib::String composer = fileRef.ID3v2Tag()->frameListMap()["TCOM"].front()->toString();
+                        tags.insert(Qmmp::COMPOSER, CSTR_TO_QSTR(composer, utf));
+                    }
+                    if(!fileRef.ID3v2Tag()->frameListMap()["TPOS"].isEmpty())
+                    {
+                        TagLib::String disc = fileRef.ID3v2Tag()->frameListMap()["TPOS"].front()->toString();
+                        tags.insert(Qmmp::DISCNUMBER, CSTR_TO_QSTR(disc, utf));
+                    }
+                }
+                else if(tag == fileRef.APETag())
+                {
+                    TagLib::APE::Item fld;
+                    if(!(fld = fileRef.APETag()->itemListMap()["ALBUM ARTIST"]).isEmpty())
+                        tags.insert(Qmmp::ALBUMARTIST, CSTR_TO_QSTR(fld.toString(), true));
+                    if(!(fld = fileRef.APETag()->itemListMap()["COMPOSER"]).isEmpty())
+                        tags.insert(Qmmp::COMPOSER, CSTR_TO_QSTR(fld.toString(), true));
+                }
+
+                metaData << tags;
+
+                if(!merge)
+                    break;
             }
         }
         settings.endGroup();
 
-        if(m_using_rusxmms)
-            codec = QTextCodec::codecForName("UTF-8");
-
-        if (!codec)
-            codec = QTextCodec::codecForName("UTF-8");
-
-        if (tag && codec)
+        for(int j = 0; j < metaData.size(); ++j)
         {
-            bool utf = codec->name().contains("UTF");
-            info->setValue(Qmmp::ALBUM, CSTR_TO_QSTR(tag->album(), utf));
-            info->setValue(Qmmp::ARTIST, CSTR_TO_QSTR(tag->artist(), utf));
-            info->setValue(Qmmp::COMMENT, CSTR_TO_QSTR(tag->comment(), utf));
-            info->setValue(Qmmp::GENRE, CSTR_TO_QSTR(tag->genre(), utf));
-            info->setValue(Qmmp::TITLE, CSTR_TO_QSTR(tag->title(), utf));
-            info->setValue(Qmmp::YEAR, tag->year());
-            info->setValue(Qmmp::TRACK, tag->track());
+            QMap<Qmmp::MetaData, QString> &tags = metaData[j];
 
-            if(tag == fileRef.ID3v2Tag())
+            for(int i = Qmmp::TITLE; i <= Qmmp::DISCNUMBER; ++i)
             {
-                if(!fileRef.ID3v2Tag()->frameListMap()["TPE2"].isEmpty())
-                {
-                    TagLib::String albumArtist;
-                    albumArtist = fileRef.ID3v2Tag()->frameListMap()["TPE2"].front()->toString();
-                    info->setValue(Qmmp::ALBUMARTIST, CSTR_TO_QSTR(albumArtist, utf));
-                }
-                if(!fileRef.ID3v2Tag()->frameListMap()["TCOM"].isEmpty())
-                {
-                    TagLib::String composer;
-                    composer = fileRef.ID3v2Tag()->frameListMap()["TCOM"].front()->toString();
-                    info->setValue(Qmmp::COMPOSER, CSTR_TO_QSTR(composer, utf));
-                }
-                if(!fileRef.ID3v2Tag()->frameListMap()["TPOS"].isEmpty())
-                {
-                    TagLib::String disc = fileRef.ID3v2Tag()->frameListMap()["TPOS"].front()->toString();
-                    info->setValue(Qmmp::DISCNUMBER, CSTR_TO_QSTR(disc, utf));
-                }
-            }
-            else if(tag == fileRef.APETag())
-            {
-                TagLib::APE::Item fld;
-                if(!(fld = fileRef.APETag()->itemListMap()["ALBUM ARTIST"]).isEmpty())
-                    info->setValue(Qmmp::ALBUMARTIST, CSTR_TO_QSTR(fld.toString(), true));
-                if(!(fld = fileRef.APETag()->itemListMap()["COMPOSER"]).isEmpty())
-                    info->setValue(Qmmp::COMPOSER, CSTR_TO_QSTR(fld.toString(), true));
+                Qmmp::MetaData key = static_cast<Qmmp::MetaData>(i);
+                if(info->value(key).length() < tags.value(key).length())
+                    info->setValue(key, tags.value(key));
             }
         }
     }
@@ -336,11 +353,7 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
         case TagLib::MPEG::Header::Version2_5:
             info->setValue(Qmmp::FORMAT_NAME, QString("MPEG-2.5 layer %1").arg(fileRef.audioProperties()->layer()));
         }
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 10))
         info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
-#else
-        info->setDuration(fileRef.audioProperties()->length() * 1000);
-#endif
     }
 
     if(parts & TrackInfo::ReplayGainInfo)
@@ -348,7 +361,7 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
         if(fileRef.ID3v2Tag() && !fileRef.ID3v2Tag()->isEmpty())
         {
             TagLib::ID3v2::Tag *tag = fileRef.ID3v2Tag();
-            TagLib::ID3v2::UserTextIdentificationFrame* frame = 0;
+            TagLib::ID3v2::UserTextIdentificationFrame *frame = 0;
             TagLib::ID3v2::FrameList frames = tag->frameList("TXXX");
             for(TagLib::ID3v2::FrameList::Iterator it = frames.begin(); it != frames.end(); ++it)
             {

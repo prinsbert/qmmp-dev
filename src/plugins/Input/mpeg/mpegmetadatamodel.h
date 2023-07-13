@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,9 +23,7 @@
 
 #include <qmmp/metadatamodel.h>
 #include <taglib/mpegfile.h>
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
-#endif
 
 class QTextCodec;
 
@@ -44,9 +42,7 @@ public:
 private:
     QList<TagModel* > m_tags;
     TagLib::MPEG::File *m_file;
-#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream *m_stream;
-#endif
 };
 
 class MpegFileTagModel : public TagModel
@@ -68,7 +64,7 @@ private:
     QTextCodec *m_codec;
     TagLib::MPEG::File *m_file;
     TagLib::Tag *m_tag;
-    TagLib::MPEG::File::TagTypes m_tagType;
+    TagLib::MPEG::File::TagTypes m_type;
 };
 
 #endif // MPEGMETADATAMODEL_H

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,7 +30,7 @@ class QIODevice;
 class DecoderMPG123 : public Decoder
 {
 public:
-    DecoderMPG123(QIODevice *i);
+    explicit DecoderMPG123(QIODevice *i);
     virtual ~DecoderMPG123();
 
     // standard decoder API

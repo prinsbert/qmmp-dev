@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,6 +20,7 @@
 #include <QTextCodec>
 #include <QSettings>
 #include <QFile>
+#include <QRegExp>
 #include <qmmp/qmmp.h>
 #include "settingsdialog.h"
 
@@ -29,7 +30,7 @@ SettingsDialog::SettingsDialog(bool using_rusxmms, QWidget *parent)
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     findCodecs();
-    foreach (QTextCodec *codec, codecs)
+    foreach (const QTextCodec *codec, codecs)
     {
         m_ui.id3v1EncComboBox->addItem(codec->name());
         m_ui.id3v2EncComboBox->addItem(codec->name());
@@ -41,6 +42,7 @@ SettingsDialog::SettingsDialog(bool using_rusxmms, QWidget *parent)
     QString decoderName = settings.value("decoder", "mad").toString();
     m_ui.madRadioButton->setChecked(true);
     m_ui.mpg123RadioButton->setChecked(decoderName == "mpg123");
+    m_ui.enableCrcCheckBox->setChecked(settings.value("enable_crc", false).toBool());
 #elif defined(WITH_MAD)
     m_ui.madRadioButton->setChecked(true);
     m_ui.decoderGroupBox->setEnabled(false);
@@ -49,16 +51,16 @@ SettingsDialog::SettingsDialog(bool using_rusxmms, QWidget *parent)
     m_ui.decoderGroupBox->setEnabled(false);
 #endif
 
-    int pos = m_ui.id3v1EncComboBox->findText
-        (settings.value("ID3v1_encoding","ISO-8859-1").toString());
+    int pos = m_ui.id3v1EncComboBox->findText(settings.value("ID3v1_encoding","ISO-8859-1").toString());
     m_ui.id3v1EncComboBox->setCurrentIndex(pos);
-    pos = m_ui.id3v2EncComboBox->findText
-        (settings.value("ID3v2_encoding","UTF-8").toString());
+    pos = m_ui.id3v2EncComboBox->findText(settings.value("ID3v2_encoding","UTF-8").toString());
     m_ui.id3v2EncComboBox->setCurrentIndex(pos);
 
     m_ui.firstTagComboBox->setCurrentIndex(settings.value("tag_1", ID3v2).toInt());
     m_ui.secondTagComboBox->setCurrentIndex(settings.value("tag_2", APE).toInt());
     m_ui.thirdTagComboBox->setCurrentIndex(settings.value("tag_3", ID3v1).toInt());
+    m_ui.mergeTagsCheckBox->setChecked(settings.value("merge_tags", false).toBool());
+    m_ui.detectEncodingCheckBox->setChecked(settings.value("detect_encoding", false).toBool());
 
     settings.endGroup();
 
@@ -66,9 +68,9 @@ SettingsDialog::SettingsDialog(bool using_rusxmms, QWidget *parent)
     {
         m_ui.id3v1EncComboBox->setEnabled(false);
         m_ui.id3v2EncComboBox->setEnabled(false);
+        m_ui.detectEncodingCheckBox->setEnabled(false);
     }
 }
-
 
 SettingsDialog::~SettingsDialog()
 {}
@@ -78,11 +80,14 @@ void SettingsDialog::accept()
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("MPEG");
     settings.setValue("decoder", m_ui.mpg123RadioButton->isChecked() ? "mpg123" : "mad");
+    settings.setValue("enable_crc", m_ui.enableCrcCheckBox->isChecked());
     settings.setValue("ID3v1_encoding", m_ui.id3v1EncComboBox->currentText());
     settings.setValue("ID3v2_encoding", m_ui.id3v2EncComboBox->currentText());
+    settings.setValue("detect_encoding", m_ui.detectEncodingCheckBox->isChecked());
     settings.setValue("tag_1", m_ui.firstTagComboBox->currentIndex());
     settings.setValue("tag_2", m_ui.secondTagComboBox->currentIndex());
     settings.setValue("tag_3", m_ui.thirdTagComboBox->currentIndex());
+    settings.setValue("merge_tags", m_ui.mergeTagsCheckBox->isChecked());
     settings.endGroup();
     QDialog::accept();
 }

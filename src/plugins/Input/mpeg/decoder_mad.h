@@ -3,7 +3,7 @@
  *                                                                         *
  * Copyright (c) 2000-2001 Brad Hughes <bhughes@trolltech.com>             *
  * Copyright (C) 2000-2004 Robert Leslie <rob@mars.org>                    *
- * Copyright (C) 2009-2018 Ilya Kotov forkotov02@ya.ru                     *
+ * Copyright (C) 2009-2020 Ilya Kotov forkotov02@ya.ru                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -31,7 +31,7 @@
 class DecoderMAD : public Decoder
 {
 public:
-    DecoderMAD(QIODevice *i);
+    explicit DecoderMAD(bool crc, QIODevice *i);
     virtual ~DecoderMAD();
 
     // standard decoder API
@@ -52,26 +52,6 @@ private:
         unsigned short end_padding;
         qint8 gain;
     };
-    // helper functions
-    bool decodeFrame();
-    qint64 madOutputFloat(float *data, qint64 samples);
-    bool fillBuffer();
-    void deinit();
-    bool findHeader();
-    bool findXingHeader(struct mad_bitptr, unsigned int bitlen);
-    LameHeader *findLameHeader(struct mad_bitptr ptr, unsigned int bitlen);
-    uint findID3v2(uchar *data, ulong size);
-    bool m_inited, m_eof;
-    qint64 m_totalTime;
-    int m_channels, m_skip_frames;
-    uint m_bitrate;
-    long m_freq, m_len;
-
-    // file input buffer
-    char *m_input_buf;
-    qint64 m_input_bytes;
-
-    // MAD decoder
 
     //xing header
     struct XingHeader
@@ -88,6 +68,8 @@ private:
             flags = 0;
             frames = 0;
             bytes = 0;
+            for(int i = 0; i < 100; ++i)
+                toc[i] = 0;
             scale = 0;
             lame = 0;
         }
@@ -102,11 +84,32 @@ private:
         XING_SCALE  = 0x0008
     };
 
+    // helper functions
+    bool decodeFrame();
+    qint64 madOutputFloat(float *data, qint64 samples);
+    bool fillBuffer();
+    void deinit();
+    bool findHeader();
+    bool findXingHeader(struct mad_bitptr, unsigned int bitlen);
+    LameHeader *findLameHeader(struct mad_bitptr ptr, unsigned int bitlen);
+    uint findID3v2(uchar *data, ulong size);
+
+    bool m_inited, m_eof;
+    qint64 m_totalTime;
+    int m_channels, m_skip_frames;
+    uint m_bitrate;
+    long m_freq, m_len;
+
+    // file input buffer
+    char *m_input_buf;
+    qint64 m_input_bytes;
+
+    // MAD decoder
     struct mad_stream m_stream;
     struct mad_frame m_frame;
     struct mad_synth m_synth;
     qint64 m_skip_bytes, m_play_bytes;
-
+    bool m_crc;
 };
 
 

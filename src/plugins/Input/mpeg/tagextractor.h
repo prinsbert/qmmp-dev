@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2020 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,13 +21,12 @@
 #define TAGEXTRACTOR_H
 
 #include <QMap>
-
+#include <QTextCodec>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/id3v1tag.h>
 #include <taglib/id3v2tag.h>
 #include <taglib/id3v2header.h>
-
 #include <qmmp/qmmp.h>
 
 class QIODevice;
@@ -40,16 +39,18 @@ class QByteArray;
 class TagExtractor
 {
 public:
-    TagExtractor(QIODevice *d);
+    explicit TagExtractor(QIODevice *d);
 
     ~TagExtractor();
 
-    const QMap<Qmmp::MetaData, QString> id3v2tag();
+    QMap<Qmmp::MetaData, QString> id3v2tag() const;
+    static void setForceUtf8(bool enabled);
+    static QTextCodec *detectCharset(const TagLib::Tag *tag);
 
 private:
     QMap<Qmmp::MetaData, QString> m_tag;
-    QIODevice *m_d;
-
+    QIODevice *m_input;
+    static bool m_using_rusxmms;
 };
 
 class ID3v2Tag : public TagLib::ID3v2::Tag
@@ -59,7 +60,7 @@ public:
     ~ID3v2Tag();
 
 protected:
-    void read ();
+    void read();
 
 private:
     QBuffer *m_buf;

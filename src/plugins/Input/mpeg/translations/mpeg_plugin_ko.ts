@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pt">
+<TS version="2.1" language="ko">
 <context>
     <name>DecoderMPEGFactory</name>
     <message>
         <location filename="../decodermpegfactory.cpp" line="180"/>
         <source>MPEG Plugin</source>
-        <translation>Suplemento MPEG</translation>
+        <translation>MPEG 플러그인</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="183"/>
         <source>MPEG Files</source>
-        <translation>Ficheiros MPEG</translation>
+        <translation>MPEG 파일</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="412"/>
         <source>About MPEG Audio Plugin</source>
-        <translation>Acerca de suplemento MPEG Audio</translation>
+        <translation>MPEG 오디오 플러그인 정보</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="413"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
-        <translation>Descodificador de áudio MPEG 1.0/2.0/2.5 layer 1/2/3</translation>
+        <translation>MPEG 1.0/2.0/2.5 레이어 1/2/3 오디오 디코더</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="414"/>
         <source>Compiled against:</source>
-        <translation>Compilado com:</translation>
+        <translation>컴파일 대상:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="423"/>
         <source>mpg123, API version: %1</source>
-        <translation>mpg123, versão da API: %1</translation>
+        <translation>mpg123, API 버전: %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="427"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation>Baseado no código fonte dos projetos mq3 e madplay</translation>
+        <translation>mq3 및 madplay 프로젝트에 기반한 소스 코드</translation>
     </message>
 </context>
 <context>
@@ -52,22 +52,22 @@
         <location filename="../mpegmetadatamodel.cpp" line="72"/>
         <location filename="../mpegmetadatamodel.cpp" line="75"/>
         <source>Mode</source>
-        <translation>Modo</translation>
+        <translation>모드</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="78"/>
         <source>Protection</source>
-        <translation>Proteção</translation>
+        <translation>보호</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="79"/>
         <source>Copyright</source>
-        <translation>Copyright</translation>
+        <translation>저작권</translation>
     </message>
     <message>
         <location filename="../mpegmetadatamodel.cpp" line="80"/>
         <source>Original</source>
-        <translation>Original</translation>
+        <translation>원본</translation>
     </message>
 </context>
 <context>
@@ -75,12 +75,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation>Definições</translation>
+        <translation>MPEG 플러그인 설정</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="35"/>
         <source>Decoder</source>
-        <translation>Descodificador</translation>
+        <translation>디코더</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="41"/>
@@ -95,17 +95,17 @@
     <message>
         <location filename="../settingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
-        <translation>Ativar verificação CRC</translation>
+        <translation>CRC 검사 활성화</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation>Prioridade das etiquetas</translation>
+        <translation>태그 우선순위</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation>Primeiro:</translation>
+        <translation>첫 번째:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="119"/>
@@ -133,42 +133,42 @@
         <location filename="../settingsdialog.ui" line="183"/>
         <location filename="../settingsdialog.ui" line="232"/>
         <source>Disabled</source>
-        <translation>Inativo</translation>
+        <translation>비활성화됨</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation>Segundo:</translation>
+        <translation>두 번째:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation>Terceiro:</translation>
+        <translation>세 번째:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
-        <translation>Unir tipo de etiquetas selecionadas</translation>
+        <translation>선택한 태그 유형 병합</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="272"/>
         <source>Encodings</source>
-        <translation>Codificação</translation>
+        <translation>인코딩</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="333"/>
         <source>ID3v1 encoding:</source>
-        <translation>Codificação ID3v1:</translation>
+        <translation>ID3v1 인코딩:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
-        <translation>Tentar detetar codificação</translation>
+        <translation>인코딩 감지 시도</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="294"/>
         <source>ID3v2 encoding:</source>
-        <translation>Codificação ID3v2:</translation>
+        <translation>ID3v2 인코딩:</translation>
     </message>
 </context>
 </TS>

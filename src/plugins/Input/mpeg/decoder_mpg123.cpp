@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -29,13 +29,13 @@
 
 ssize_t mpg123_read_cb (void *src, void *buf, size_t size)
 {
-    DecoderMPG123 *d = (DecoderMPG123 *) src;
+    DecoderMPG123 *d = static_cast<DecoderMPG123 *>(src);
     return d->input()->read((char *)buf, size);
 }
 
 off_t mpg123_seek_cb(void *src, off_t offset, int whence)
 {
-    DecoderMPG123 *d = (DecoderMPG123 *) src;
+    DecoderMPG123 *d = static_cast<DecoderMPG123 *>(src);
     if (d->input()->isSequential())
             return -1;
 
@@ -60,15 +60,13 @@ off_t mpg123_seek_cb(void *src, off_t offset, int whence)
         return d->input()->pos();
 }
 
-DecoderMPG123::DecoderMPG123(QIODevice *i) : Decoder(i)
-{
-    m_totalTime = 0;
-    m_rate = 0;
-    m_frame_info.bitrate = 0;
-    m_mpg123_encoding = MPG123_ENC_SIGNED_16;
-    m_handle = 0;
-    m_errors = 0;
-}
+DecoderMPG123::DecoderMPG123(QIODevice *i) : Decoder(i),
+    m_handle(0),
+    m_totalTime(0),
+    m_rate(0),
+    m_mpg123_encoding(MPG123_ENC_SIGNED_16),
+    m_errors(0)
+{}
 
 DecoderMPG123::~DecoderMPG123()
 {

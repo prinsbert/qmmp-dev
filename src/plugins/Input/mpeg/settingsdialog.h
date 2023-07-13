@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,7 +30,7 @@ class SettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    SettingsDialog(bool using_rusxmms, QWidget *parent = 0);
+    explicit SettingsDialog(bool using_rusxmms, QWidget *parent = 0);
 
     ~SettingsDialog();
 
