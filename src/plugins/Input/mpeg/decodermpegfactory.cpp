@@ -180,9 +180,9 @@ DecoderProperties DecoderMPEGFactory::properties() const
     DecoderProperties properties;
     properties.name = tr("MPEG Plugin");
     properties.shortName = "mpeg";
-    properties.filters = QStringList { "*.mp1", "*.mp2", "*.mp3", "*.wav" };
+    properties.filters << "*.mp1" << "*.mp2" << "*.mp3" << "*.wav";
     properties.description = tr("MPEG Files");
-    properties.contentTypes = QStringList { "audio/mp3", "audio/mpeg" };
+    properties.contentTypes << "audio/mp3" << "audio/mpeg";
     properties.hasAbout = true;
     properties.hasSettings = true;
     return properties;
