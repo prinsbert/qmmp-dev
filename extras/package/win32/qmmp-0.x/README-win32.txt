@@ -50,9 +50,7 @@ List of the third-party libraries.
   libsidplayfp        2.3.1      https://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       https://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
-  libxml2             2.10.3     https://download.gnome.org/sources/libxml2/
-  librcd              0.1.14     https://github.com/RusXMMS/librcd
-  librcc              0.2.12     https://github.com/RusXMMS/librcc
+  librcd              0.1.14     https://github.com/RusXMMS/librcd  
   mpg123              1.31.2     https://www.mpg123.de/
 
 List of the third-party artwork.

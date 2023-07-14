@@ -132,19 +132,12 @@ create_distr ()
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
-  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll libmpg123-0.dll
+  for LIB_NAME in libvorbisfile-3.dll libwavpack-1.dll libsoxr.dll libmpg123-0.dll librcd-0.dll
   do
     cp -v ${PREFIX}/bin/${LIB_NAME} ./
   done
   #projectM presets
-  cp -rv ${PREFIX}/share/projectM/ ./
-  #rusxmms
-  mkdir -p rusxmms
-  for LIB_NAME in libxml2-2.dll librcd-0.dll librcc.dll
-  do
-    cp -v ${PREFIX}/bin/${LIB_NAME} ./rusxmms
-  done
-  cp -v	${PREFIX}/taglib-rusxmms/bin/libtag.dll ./rusxmms	     
+  cp -rv ${PREFIX}/share/projectM/ ./	     
   cd ..
 }
 
