@@ -1568,3 +1568,11 @@ Version 0.12.16
 * fixed ADTS header detection in the aac plugin
 * fixed error handling in the ffmpeg plugin
 * fixed text scroller geometry in the skinned plugin
+
+Version 0.12.17
+* improved mpeg pluging:
+  - added ID3v1/ID3v2 charset detection using librcd library
+  - added option to enable CRC checking
+  - added feature to merge different tag types
+* fixed removing of the current playing file in the file operations plugin
+* fixed http version
