@@ -1,15 +1,15 @@
 #!/bin/sh
 
 NAME=taglib
-VERSION=1.13
+VERSION=1.13.1
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp    
-    wget -nc --no-check-certificate https://github.com/taglib/taglib/releases/download/v$VERSION/$NAME-$VERSION.tar.gz \
-    -O $NAME-$VERSION.tar.gz
+    wget -nc --no-check-certificate https://taglib.org/releases/$NAME-$VERSION.tar.gz 
   ;;
+
   --install)
     cd temp
     tar xvzf $NAME-$VERSION.tar.gz
