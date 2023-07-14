@@ -1,5 +1,7 @@
 project(libmpeg)
 
+include(CheckIncludeFileCXX)
+
 # qt plugin
 ADD_DEFINITIONS( -Wall )
 ADD_DEFINITIONS(${QT_DEFINITIONS})
