@@ -23,13 +23,15 @@
 
 #include <qmmp/metadatamodel.h>
 #include <taglib/mpegfile.h>
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
 #include <taglib/tfilestream.h>
+#endif
 
 class QTextCodec;
 
 class MPEGMetaDataModel : public MetaDataModel
 {
-    Q_DECLARE_TR_FUNCTIONS(MPEGMetaDataModel)
+	Q_DECLARE_TR_FUNCTIONS(MPEGMetaDataModel)
 public:
     MPEGMetaDataModel(bool using_rusxmms, const QString &path, bool readOnly);
     ~MPEGMetaDataModel();
@@ -42,7 +44,9 @@ public:
 private:
     QList<TagModel* > m_tags;
     TagLib::MPEG::File *m_file;
+#if (TAGLIB_MAJOR_VERSION > 1) || ((TAGLIB_MAJOR_VERSION == 1) && (TAGLIB_MINOR_VERSION >= 8))
     TagLib::FileStream *m_stream;
+#endif
 };
 
 class MpegFileTagModel : public TagModel
