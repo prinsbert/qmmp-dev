@@ -2,8 +2,7 @@
 
 LIB_NAMES+='pkg-config yasm taglib libmad mpg123 libogg libvorbis flac wavpack libsndfile opus opusfile '
 LIB_NAMES+='libbs2b curl libcdio libcdio-paranoia libgnurx libcddb game-music-emu libxmp musepack '
-LIB_NAMES+='glew projectm xa enca soxr '
-LIB_NAMES+='librcd ' #rusxmms
+LIB_NAMES+='glew projectm xa enca soxr librcd '
 LIB_NAMES+='libbinio adplug ' #adplug
 
 if [ -n "`uname | grep 5.1`"  ]; then
