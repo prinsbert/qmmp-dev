@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://www.floodgap.com/retrotech/xa/dists/$NAME-$VERSION.tar.gz
+    wget -nc http://ftp.jaist.ac.jp/pub/Linux/Gentoo/distfiles/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp
