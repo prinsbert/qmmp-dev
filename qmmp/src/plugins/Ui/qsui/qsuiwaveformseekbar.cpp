@@ -366,7 +366,7 @@ bool QSUiWaveformScanner::scan(const QString &path)
     DecoderFactory *factory = nullptr;
 
     if(!source->path().contains("://"))
-        factory = Decoder::findByFilePath(source->path());
+        factory = Decoder::findByFilePath(source->path(), QmmpSettings::instance()->determineFileTypeByContent());
     if(!factory)
         factory = Decoder::findByMime(source->contentType());
     if(!factory && source->ioDevice() && source->path().contains("://")) //ignore content of local files
