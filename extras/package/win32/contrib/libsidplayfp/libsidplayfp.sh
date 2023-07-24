@@ -1,19 +1,18 @@
 #!/bin/sh
 
 NAME=libsidplayfp
-VERSION=2.4.2
+VERSION=2.5.0
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate http://sourceforge.net/projects/sidplay-residfp/files/$NAME/2.4/$NAME-$VERSION.tar.gz
+    wget -nc --no-check-certificate http://sourceforge.net/projects/sidplay-residfp/files/$NAME/2.5/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp
     tar xvzf $NAME-$VERSION.tar.gz
     cd $NAME-$VERSION
-    cat ../../libsidplayfp-mingw32.patch | patch -p1
     ./configure --prefix=$PREFIX --enable-shared --disable-static
     make -j${JOBS}
     make install
