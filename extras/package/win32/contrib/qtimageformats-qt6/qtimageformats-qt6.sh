@@ -1,7 +1,8 @@
 #!/bin/sh
 
-NAME=qtimageformats-everywhere-src
-VERSION=6.2.4
+NAME=qtimageformats-everywhere-opensource-src
+VERSION=6.2.5
+BUILD_ROOT=qtimageformats-everywhere-src-$VERSION
 
 case $1 in
   --download)
@@ -12,14 +13,14 @@ case $1 in
   --install)
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz
-    cd $NAME-$VERSION
-    CMAKE_PREFIX=${QT6_PATH} cmake ./ -DCMAKE_INSTALL_PREFIX=${QT6_PATH} -G "MSYS Makefiles"
+    cd $BUILD_ROOT
+    CMAKE_PREFIX=${QT6_PATH} cmake ./ -DCMAKE_INSTALL_PREFIX=${QT6_PATH} -GNinja
     cmake --build . --parallel ${JOBS}
     cmake --install . 
   ;;
   --clean)
     cd temp
-    rm -rf $NAME-$VERSION
+    rm -rf $BUILD_ROOT
     cd ..
   ;;
 esac

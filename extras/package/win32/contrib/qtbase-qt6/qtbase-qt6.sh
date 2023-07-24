@@ -1,7 +1,8 @@
 #!/bin/sh
 
-NAME=qtbase-everywhere-src
-VERSION=6.2.4
+NAME=qtbase-everywhere-opensource-src
+VERSION=6.2.5
+BUILD_ROOT=qtbase-everywhere-src-$VERSION
 
 case $1 in
   --download)
@@ -12,15 +13,15 @@ case $1 in
   --install)
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz -C $DEV_PATH
-    cp ../build.bat $DEV_PATH/$NAME-$VERSION
-    cd $DEV_PATH/$NAME-$VERSION
+    cp ../build.bat $DEV_PATH/$BUILD_ROOT
+    cd $DEV_PATH/$BUILD_ROOT
     cmd /c build.bat
     cmake --build . --parallel ${JOBS}
     cmake --install .
   ;;
   --clean)
     cd temp
-    rm -rf $DEV_PATH/$NAME-$VERSION
+    rm -rf $DEV_PATH/$BUILD_ROOT
     cd ..
   ;;
 esac
