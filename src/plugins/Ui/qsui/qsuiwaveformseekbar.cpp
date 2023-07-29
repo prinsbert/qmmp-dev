@@ -466,7 +466,7 @@ void QSUiWaveformScanner::run()
     // For layouts containing less than 16 items, GCC or Clang do not produce
     // vectorized code at -O2. However, multiplying 'samples_per_stat' by a constant
     // results in the desired output.
-    int samples_per_stat = std::lcm(FLOATS_PER_LANE, channels) * VECTORIZE_HINT;
+    int samples_per_stat = FLOATS_PER_LANE * channels / std::__gcd(FLOATS_PER_LANE, channels) * VECTORIZE_HINT;
     int frames_per_stat = samples_per_stat / channels;
 
     float *vmax = new float[samples_per_stat]{ -1.f };
