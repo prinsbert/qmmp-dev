@@ -40,6 +40,11 @@
 #define FLOATS_PER_LANE (4) // Number of floats fitting into a 128-bit XMM register
 #define VECTORIZE_HINT (8)
 
+static inline int gcd(int a, int b)
+{
+    return b ? gcd(b, a % b) : a;
+}
+
 QSUiWaveformSeekBar::QSUiWaveformSeekBar(QWidget *parent) : QWidget(parent)
 {
     m_core = SoundCore::instance();
@@ -466,7 +471,7 @@ void QSUiWaveformScanner::run()
     // For layouts containing less than 16 items, GCC or Clang do not produce
     // vectorized code at -O2. However, multiplying 'samples_per_stat' by a constant
     // results in the desired output.
-    int samples_per_stat = FLOATS_PER_LANE * channels / std::__gcd(FLOATS_PER_LANE, channels) * VECTORIZE_HINT;
+    int samples_per_stat = FLOATS_PER_LANE * channels / gcd(FLOATS_PER_LANE, channels) * VECTORIZE_HINT;
     int frames_per_stat = samples_per_stat / channels;
 
     float *vmax = new float[samples_per_stat]{ -1.f };
