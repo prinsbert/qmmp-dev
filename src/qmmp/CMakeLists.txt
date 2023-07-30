@@ -1,5 +1,7 @@
 project(libqmmp)
 
+INCLUDE(FindIconv)
+
 ADD_DEFINITIONS(-DQMMP_LIBRARY)
 SET(libqmmp_DEFINES
     LIB_DIR="/${LIB_DIR}"
@@ -112,6 +114,14 @@ target_compile_definitions(libqmmp PRIVATE ${libqmmp_DEFINES})
 install(TARGETS libqmmp LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
                         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
                         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+
+IF(Iconv_FOUND)
+    IF(NOT Iconv_IS_BUILT_IN)
+        target_link_libraries(libqmmp PRIVATE Iconv::Iconv)
+    ENDIF()
+ELSE()
+    MESSAGE(FATAL_ERROR "unable to find iconv library")
+ENDIF()
 
 IF(APP_NAME_SUFFIX)
     install(FILES ${libqmmp_DEVEL_HDRS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qmmp${APP_NAME_SUFFIX}/qmmp)
