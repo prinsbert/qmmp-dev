@@ -13,6 +13,8 @@ RESOURCES = translations/translations.qrc
 #DEFINES += PROJECTM_31
 #DEFINES += PROJECTM_4
 
+freebsd:DEFINES += PROJECTM_31
+
 contains(DEFINES, PROJECTM_4) {
     HEADERS += projectm4widget.h
 
