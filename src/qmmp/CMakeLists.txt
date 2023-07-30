@@ -113,6 +113,12 @@ install(TARGETS libqmmp LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
                         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
                         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
+#freebsd support
+IF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+    target_link_directories(libqmmp PRIVATE /usr/local/lib)
+    target_link_libraries(libqmmp PRIVATE iconv)
+ENDIF()
+
 IF(APP_NAME_SUFFIX)
     install(FILES ${libqmmp_DEVEL_HDRS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qmmp${APP_NAME_SUFFIX}/qmmp)
     SET(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR}/qmmp${APP_NAME_SUFFIX})
