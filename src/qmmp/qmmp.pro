@@ -159,6 +159,7 @@ unix {
 }
 INCLUDEPATH += ./
 
+freebsd:LIBS += -liconv
 
 unix {
     CONFIG += create_pc create_prl no_install_prl
