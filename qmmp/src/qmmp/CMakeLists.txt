@@ -112,10 +112,10 @@ target_compile_definitions(libqmmp PRIVATE ${libqmmp_DEFINES})
 install(TARGETS libqmmp LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
                         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
                         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
-                        
+
 #freebsd support
 IF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-    link_directories(/usr/local/lib)
+    target_link_directories(libqmmp PRIVATE /usr/local/lib)
     target_link_libraries(libqmmp PRIVATE iconv)
 ENDIF()
 
