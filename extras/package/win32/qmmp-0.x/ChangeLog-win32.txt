@@ -399,6 +399,7 @@ LEGEND
 [*] curl-8.2.1
 [*] ffmpeg-3.4.13
 [*] mpg123-1.31.3
+[*] mingw-w64 toolchain: i686-4.9.4-release-posix-dwarf-rt_v5-rev0.7z
 [!] removed libxml2
 [!] fixed https support
 

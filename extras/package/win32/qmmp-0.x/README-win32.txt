@@ -23,7 +23,7 @@ List of the third-party libraries.
 
   Name                Version    Web page
 
-  MinGW-w64           4.2.0      https://mingw-w64.sourceforge.net/
+  MinGW-w64           4.3.3      https://mingw-w64.sourceforge.net/
   Qt                  4.8.7-git  https://qt.io/
   unzip               5.51       https://www.info-zip.org/pub/infozip/UnZip.html
   taglib              1.13.1     https://taglib.github.io/
@@ -32,7 +32,7 @@ List of the third-party libraries.
   libvorbis           1.3.7      https://www.vorbis.com/
   flac                1.4.3      https://xiph.org/flac/index.html
   wavpack             5.6.0      https://www.wavpack.com/
-  libsndfile          1.2.0      http://www.mega-nerd.com/libsndfile/
+  libsndfile          1.2.0      https://github.com/libsndfile/libsndfile
   opus                1.4        https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/

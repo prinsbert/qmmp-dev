@@ -26,31 +26,31 @@ List of the third-party libraries.
   Name                Version    Web page
 
   MinGW-w64           5.0.0      https://github.com/cristianadam/mingw-builds/
-  Qt                  6.2.4      http://qt.io/
-  unzip               5.51       http://www.info-zip.org/pub/infozip/UnZip.html
-  taglib              1.13       http://taglib.github.io/
-  libmad              0.15.1b    http://www.underbit.com/products/mad/
-  libogg              1.3.5      http://www.vorbis.com/
-  libvorbis           1.3.7      http://www.vorbis.com/
+  Qt                  6.2.4      https://qt.io/
+  unzip               5.51       https://www.info-zip.org/pub/infozip/UnZip.html
+  taglib              1.13       https://taglib.github.io/
+  libmad              0.15.1b    https://www.underbit.com/products/mad/
+  libogg              1.3.5      https://www.vorbis.com/
+  libvorbis           1.3.7      https://www.vorbis.com/
   flac                1.4.2      https://xiph.org/flac/index.html
-  wavpack             5.6.0      http://www.wavpack.com/
-  libsndfile          1.2.0      http://www.mega-nerd.com/libsndfile/
-  opus                1.4        http://www.opus-codec.org/
-  opusfile            0.12       http://www.opus-codec.org/
-  libbs2b             3.1.0      http://bs2b.sourceforge.net/
-  curl                8.1.1      http://curl.haxx.se/
-  libcdio             2.1.0      http://www.gnu.org/software/libcdio/
-  libcdio-paranoia    10.2+2.0.1 http://www.gnu.org/software/libcdio/  
-  mingw-libgnurx      2.5.1      http://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
-  libcddb             1.3.2      http://libcddb.sourceforge.net/
+  wavpack             5.6.0      https://www.wavpack.com/
+  libsndfile          1.2.0      https://github.com/libsndfile/libsndfile
+  opus                1.4        https://www.opus-codec.org/
+  opusfile            0.12       https://www.opus-codec.org/
+  libbs2b             3.1.0      https://bs2b.sourceforge.net/
+  curl                8.1.1      https://curl.haxx.se/
+  libcdio             2.1.0      https://www.gnu.org/software/libcdio/
+  libcdio-paranoia    10.2+2.0.1 https://www.gnu.org/software/libcdio/  
+  mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
+  libcddb             1.3.2      https://libcddb.sourceforge.net/
   ffmpeg              5.1.3      https://ffmpeg.org/
   libxmp              4.5        https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
-  musepack            r475       http://www.musepack.net/
-  glew                2.2.0      http://glew.sourceforge.net/
-  projectm            2.1.0      http://projectm.sourceforge.net/
-  libsidplayfp        2.4.2      http://sourceforge.net/projects/sidplay-residfp/
-  enca                1.19       http://cihar.com/software/enca/
+  musepack            r475       https://www.musepack.net/
+  glew                2.2.0      https://glew.sourceforge.net/
+  projectm            2.1.0      https://projectm.sourceforge.net/
+  libsidplayfp        2.4.2      https://sourceforge.net/projects/sidplay-residfp/
+  enca                1.19       https://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
   mpg123              1.31.3     https://www.mpg123.de/
