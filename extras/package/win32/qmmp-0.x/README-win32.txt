@@ -26,22 +26,22 @@ List of the third-party libraries.
   MinGW-w64           4.2.0      https://mingw-w64.sourceforge.net/
   Qt                  4.8.7-git  https://qt.io/
   unzip               5.51       https://www.info-zip.org/pub/infozip/UnZip.html
-  taglib              1.13       https://taglib.github.io/
+  taglib              1.13.1     https://taglib.github.io/
   libmad              0.15.1b    https://www.underbit.com/products/mad/
   libogg              1.3.5      https://www.vorbis.com/
   libvorbis           1.3.7      https://www.vorbis.com/
-  flac                1.4.2      https://xiph.org/flac/index.html
+  flac                1.4.3      https://xiph.org/flac/index.html
   wavpack             5.6.0      https://www.wavpack.com/
   libsndfile          1.2.0      http://www.mega-nerd.com/libsndfile/
-  opus                1.3.1      https://www.opus-codec.org/
+  opus                1.4        https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
-  curl                7.88.1     https://curl.haxx.se/
+  curl                8.2.1      https://curl.haxx.se/
   libcdio             2.1.0      https://www.gnu.org/software/libcdio/
   libcdio-paranoia    10.2+2.0.1 https://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
-  ffmpeg              3.4.12     https://ffmpeg.org/
+  ffmpeg              3.4.13     https://ffmpeg.org/
   libxmp              4.5        https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       https://www.musepack.net/
@@ -51,7 +51,7 @@ List of the third-party libraries.
   enca                1.19       https://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd  
-  mpg123              1.31.2     https://www.mpg123.de/
+  mpg123              1.31.3     https://www.mpg123.de/
 
 List of the third-party artwork.
 

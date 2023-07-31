@@ -393,6 +393,12 @@ LEGEND
 
 0.12.17
 [*] qmmp-0.12.17
+[*] taglib-1.13.1
+[*] flac-1.4.3
+[*] opus-1.4
+[*] curl-8.2.1
+[*] ffmpeg-3.4.13
+[*] mpg123-1.31.3
 [!] removed libxml2
 [!] fixed https support
 
