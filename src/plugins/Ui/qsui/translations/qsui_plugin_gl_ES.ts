@@ -1641,12 +1641,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="325"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="333"/>
         <source>2 Channels</source>
         <translation>2 Canles</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="336"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS</translation>

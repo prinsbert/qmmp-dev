@@ -43,8 +43,8 @@
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
-        <source> Amplification factor:</source>
-        <translation>Vahvistuskerroin:</translation>
+        <source>Amplification factor:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
