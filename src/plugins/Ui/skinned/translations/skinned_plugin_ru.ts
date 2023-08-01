@@ -1253,127 +1253,127 @@
         <translation>Альтернативный цвет разделителей</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="421"/>
+        <location filename="../forms/skinnedsettings.ui" line="415"/>
         <source>Colors</source>
         <translation>Цвета</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="427"/>
+        <location filename="../forms/skinnedsettings.ui" line="421"/>
         <source>Playlist Colors</source>
         <translation>Цвета списка воспроиведения</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="433"/>
+        <location filename="../forms/skinnedsettings.ui" line="427"/>
         <source>Use skin colors</source>
         <translation>Использовать цвета обложки</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="526"/>
+        <location filename="../forms/skinnedsettings.ui" line="520"/>
         <source>Background #2:</source>
         <translation>Фон #2:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="590"/>
+        <location filename="../forms/skinnedsettings.ui" line="584"/>
         <source>Highlighted background:</source>
         <translation>Выделенный фон:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="494"/>
+        <location filename="../forms/skinnedsettings.ui" line="488"/>
         <source>Normal text:</source>
         <translation>Обычный текст:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="657"/>
+        <location filename="../forms/skinnedsettings.ui" line="651"/>
         <source>Splitter:</source>
         <translation>Разделитель:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="558"/>
+        <location filename="../forms/skinnedsettings.ui" line="552"/>
         <source>Current text:</source>
         <translation>Текущий текст:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="622"/>
+        <location filename="../forms/skinnedsettings.ui" line="616"/>
         <source>Highlighted text:</source>
         <translation>Выделенный текст:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="765"/>
+        <location filename="../forms/skinnedsettings.ui" line="759"/>
         <source>Current track background:</source>
         <translation>Фон текущего трека:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="867"/>
+        <location filename="../forms/skinnedsettings.ui" line="861"/>
         <source>Override current track background</source>
         <translation>Переопределить фон текущего трека</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="730"/>
+        <location filename="../forms/skinnedsettings.ui" line="724"/>
         <source>Group background:</source>
         <translation>Фон группы:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="860"/>
+        <location filename="../forms/skinnedsettings.ui" line="854"/>
         <source>Override group background</source>
         <translation>Переопределить фон группы</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="698"/>
+        <location filename="../forms/skinnedsettings.ui" line="692"/>
         <source>Group text:</source>
         <translation>Текст группы:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="449"/>
+        <location filename="../forms/skinnedsettings.ui" line="443"/>
         <source>Background #1:</source>
         <translation>Фон #1:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="825"/>
+        <location filename="../forms/skinnedsettings.ui" line="819"/>
         <source>Load skin colors</source>
         <translation>Загрузить цвета обложки</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="894"/>
+        <location filename="../forms/skinnedsettings.ui" line="888"/>
         <source>Fonts</source>
         <translation>Шрифты</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="948"/>
+        <location filename="../forms/skinnedsettings.ui" line="942"/>
         <source>Playlist:</source>
         <translation>Список:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="984"/>
+        <location filename="../forms/skinnedsettings.ui" line="978"/>
         <source>Column headers:</source>
         <translation>Названия колонок:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="906"/>
+        <location filename="../forms/skinnedsettings.ui" line="900"/>
         <source>Player:</source>
         <translation>Плеер:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="928"/>
-        <location filename="../forms/skinnedsettings.ui" line="970"/>
-        <location filename="../forms/skinnedsettings.ui" line="997"/>
+        <location filename="../forms/skinnedsettings.ui" line="922"/>
+        <location filename="../forms/skinnedsettings.ui" line="964"/>
+        <location filename="../forms/skinnedsettings.ui" line="991"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="142"/>
-        <location filename="../forms/skinnedsettings.ui" line="935"/>
-        <location filename="../forms/skinnedsettings.ui" line="977"/>
-        <location filename="../forms/skinnedsettings.ui" line="1004"/>
+        <location filename="../forms/skinnedsettings.ui" line="929"/>
+        <location filename="../forms/skinnedsettings.ui" line="971"/>
+        <location filename="../forms/skinnedsettings.ui" line="998"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1026"/>
+        <location filename="../forms/skinnedsettings.ui" line="1020"/>
         <source>Reset fonts</source>
         <translation>Сбросить шрифты</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1035"/>
+        <location filename="../forms/skinnedsettings.ui" line="1029"/>
         <source>Use bitmap font if available</source>
         <translation>Использовать растровые шрифты, если возможно</translation>
     </message>
@@ -1445,22 +1445,22 @@
         <translation>Показывать &quot;якорь&quot;</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="369"/>
+        <location filename="../forms/skinnedsettings.ui" line="363"/>
         <source>Show popup information</source>
         <translation>Показывать всплывающее окно с информацией</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="381"/>
+        <location filename="../forms/skinnedsettings.ui" line="375"/>
         <source>Edit template</source>
         <translation>Редактировать шаблон</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="334"/>
+        <location filename="../forms/skinnedsettings.ui" line="331"/>
         <source>Playlist separator:</source>
         <translation>Разделитель списков:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="325"/>
+        <location filename="../forms/skinnedsettings.ui" line="322"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Показывать кнопку &quot;Новый список&quot;</translation>
     </message>
