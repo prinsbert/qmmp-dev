@@ -73,87 +73,87 @@
     <message>
         <location filename="../librarymodel.cpp" line="330"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="330"/>
         <source>Unable to connect to database</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietokantaan yhdistäminen ei onnistu</translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="351"/>
         <source>%n day(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n päivää</numerusform>
+            <numerusform>%n päivää</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="352"/>
         <source>%n hour(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n tuntia</numerusform>
+            <numerusform>%n tuntia</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="353"/>
         <source>%n minute(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n minuutia</numerusform>
+            <numerusform>%n minuuttia</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="354"/>
         <source>%n second(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n sekuntia</numerusform>
+            <numerusform>%n sekuntia</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="358"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3 %4</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="360"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="362"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="365"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Kappaleita: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="366"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Albumeita: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="367"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Artisteja: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="368"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesto: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="371"/>
         <source>Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjaston tiedot</translation>
     </message>
 </context>
 <context>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="55"/>
         <source>&amp;Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kirjaston tiedot</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="89"/>

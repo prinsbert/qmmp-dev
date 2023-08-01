@@ -41,7 +41,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="77"/>
         <source>Set playback volume (example: qmmp --volume 20)</source>
-        <translation>재생 볼륨 지정 (예: qmmp --volume 20)</translation>
+        <translation>플레이백 볼륨 지정 (예: qmmp --volume 20)</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="78"/>

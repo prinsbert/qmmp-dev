@@ -603,7 +603,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="104"/>
         <source>Tree View Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>트리 보기 모드</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="106"/>
@@ -611,7 +611,7 @@
         <translation>빠른 검색</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="183"/>
+        <location filename="../filesystembrowser.cpp" line="184"/>
         <source>Select Directory</source>
         <translation>디렉토리 선택</translation>
     </message>
@@ -651,7 +651,7 @@
     <message>
         <location filename="../hotkeyeditor.cpp" line="68"/>
         <source>Playback</source>
-        <translation>재생</translation>
+        <translation>플레이백</translation>
     </message>
     <message>
         <location filename="../hotkeyeditor.cpp" line="74"/>
@@ -710,7 +710,7 @@
     <message>
         <location filename="../forms/mainwindow.ui" line="55"/>
         <source>&amp;Playback</source>
-        <translation>재생(&amp;P)</translation>
+        <translation>플레이백(&amp;P)</translation>
     </message>
     <message>
         <location filename="../forms/mainwindow.ui" line="60"/>
@@ -1645,12 +1645,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="325"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
         <source>2 Channels</source>
         <translation>2 채널</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS</translation>

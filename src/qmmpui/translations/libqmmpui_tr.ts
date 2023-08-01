@@ -973,67 +973,67 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="331"/>
+        <location filename="../detailsdialog.cpp" line="332"/>
         <source>Duration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="334"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Bitrate</source>
         <translation>Bit hızı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="334"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Sample rate</source>
         <translation>Örnekleme oranı</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="336"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Channels</source>
         <translation>Kanallar</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Sample size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>bits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="338"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>Format name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>File size</source>
         <translation>Dosya boyutu</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>KiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="383"/>
+        <location filename="../detailsdialog.cpp" line="384"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="383"/>
+        <location filename="../detailsdialog.cpp" line="384"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>

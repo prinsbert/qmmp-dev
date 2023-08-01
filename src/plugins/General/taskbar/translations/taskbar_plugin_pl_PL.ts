@@ -26,27 +26,27 @@
     <message>
         <location filename="../taskbarfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Napisane przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="53"/>
         <source>Based on QtWinExtras module of the Qt Toolkit</source>
-        <translation type="unfinished"></translation>
+        <translation>Na podstawie modułu QtWinExtras z zestawu Qt Toolkit</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="54"/>
         <source>QtWinExtras developers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Programiści QtWinExtras:</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="55"/>
         <source>Ivan Vizir &lt;define-true-false@yandex.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ivan Vizir &lt;define-true-false@yandex.com&gt;</translation>
     </message>
     <message>
         <location filename="../taskbarfactory.cpp" line="56"/>
         <source>The Qt Company Ltd.</source>
-        <translation type="unfinished"></translation>
+        <translation>The Qt Company Ltd.</translation>
     </message>
 </context>
 </TS>

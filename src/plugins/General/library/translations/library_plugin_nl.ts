@@ -73,87 +73,87 @@
     <message>
         <location filename="../librarymodel.cpp" line="330"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="330"/>
         <source>Unable to connect to database</source>
-        <translation type="unfinished"></translation>
+        <translation>Er kan geen verbinding met de databank worden gemaakt</translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="351"/>
         <source>%n day(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n dag</numerusform>
+            <numerusform>%n dagen</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="352"/>
         <source>%n hour(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n uur</numerusform>
+            <numerusform>%n uur</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="353"/>
         <source>%n minute(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n minuut</numerusform>
+            <numerusform>%n minuten</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="354"/>
         <source>%n second(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n seconde</numerusform>
+            <numerusform>%n seconden</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="358"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3 %4</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="360"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="362"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="365"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal nummers: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="366"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal albums: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="367"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal artiesten: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="368"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Totale duur: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="371"/>
         <source>Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzamelingsinformatie</translation>
     </message>
 </context>
 <context>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="55"/>
         <source>&amp;Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzame&amp;lingsinformatie</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="89"/>

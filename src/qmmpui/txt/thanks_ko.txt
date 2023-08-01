@@ -2,7 +2,7 @@
 
     Adria Arrufat <swiftscythe@gmail.com> - 버그 리포트
     Adrian Knoth <adi@drcomp.erfurt.thur.de> - JACK 플러그인 수정, 버그 리포트
-    Anton Petrusevich <casus@casus.us> - 무작위 재생 개선
+    Anton Petrusevich <casus@casus.us> - 무작위 플레이백 개선
     Avihay Baratz <avihayb@gmail.com> - 자동 정지 기능, 버그 수정
     Brice Videau <brice.videau@gmail.com> - 버그 수정
     Cristian Rodríguez <judas.iscariote@gmail.com> - scrobbler 수정

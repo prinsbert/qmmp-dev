@@ -9,82 +9,82 @@
         <translation>Qmmp-analyse</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="317"/>
+        <location filename="../analyzer.cpp" line="312"/>
         <source>Peaks</source>
         <translation>Pieken</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="320"/>
+        <location filename="../analyzer.cpp" line="315"/>
         <source>Refresh Rate</source>
         <translation>Verversingssnelheid</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="323"/>
+        <location filename="../analyzer.cpp" line="318"/>
         <source>50 fps</source>
         <translation>50 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="324"/>
+        <location filename="../analyzer.cpp" line="319"/>
         <source>25 fps</source>
         <translation>25 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="325"/>
+        <location filename="../analyzer.cpp" line="320"/>
         <source>10 fps</source>
         <translation>10 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="326"/>
+        <location filename="../analyzer.cpp" line="321"/>
         <source>5 fps</source>
         <translation>5 fps</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="333"/>
+        <location filename="../analyzer.cpp" line="328"/>
         <source>Analyzer Falloff</source>
         <translation>Analyse-uitval</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="336"/>
-        <location filename="../analyzer.cpp" line="350"/>
+        <location filename="../analyzer.cpp" line="331"/>
+        <location filename="../analyzer.cpp" line="345"/>
         <source>Slowest</source>
         <translation>Traagst</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="337"/>
-        <location filename="../analyzer.cpp" line="351"/>
+        <location filename="../analyzer.cpp" line="332"/>
+        <location filename="../analyzer.cpp" line="346"/>
         <source>Slow</source>
         <translation>Traag</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="338"/>
-        <location filename="../analyzer.cpp" line="352"/>
+        <location filename="../analyzer.cpp" line="333"/>
+        <location filename="../analyzer.cpp" line="347"/>
         <source>Medium</source>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="339"/>
-        <location filename="../analyzer.cpp" line="353"/>
+        <location filename="../analyzer.cpp" line="334"/>
+        <location filename="../analyzer.cpp" line="348"/>
         <source>Fast</source>
         <translation>Snel</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="340"/>
-        <location filename="../analyzer.cpp" line="354"/>
+        <location filename="../analyzer.cpp" line="335"/>
+        <location filename="../analyzer.cpp" line="349"/>
         <source>Fastest</source>
         <translation>Snelst</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="347"/>
+        <location filename="../analyzer.cpp" line="342"/>
         <source>Peaks Falloff</source>
         <translation>Piekuitval</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="361"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>&amp;Full Screen</source>
         <translation>Beeld&amp;vullend</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="361"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>F</source>
         <translation>F</translation>
     </message>

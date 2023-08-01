@@ -607,7 +607,7 @@
         <translation>Швидкий пошук</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="183"/>
+        <location filename="../filesystembrowser.cpp" line="184"/>
         <source>Select Directory</source>
         <translation>Виберіть теку</translation>
     </message>
@@ -1649,12 +1649,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="325"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
         <source>2 Channels</source>
         <translation>2 канала</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>Середньоквадратичне</translation>

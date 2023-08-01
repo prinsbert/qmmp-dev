@@ -556,12 +556,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="229"/>
         <source>Skip already existing tracks when adding</source>
-        <translation type="unfinished"></translation>
+        <translation>Ao adicionar, ignorar faixas já existentes</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="236"/>
         <source>Stop playback after removing of current track</source>
-        <translation type="unfinished"></translation>
+        <translation>Parar reprodução após remoção da faixa atual</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="933"/>
@@ -766,7 +766,7 @@
     <message>
         <location filename="../configdialog.cpp" line="359"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Sueco</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="360"/>
@@ -973,67 +973,67 @@
         <translation>Número do disco</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="331"/>
+        <location filename="../detailsdialog.cpp" line="332"/>
         <source>Duration</source>
         <translation>Duração</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="334"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Bitrate</source>
         <translation>Taxa de dados</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="334"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Sample rate</source>
         <translation>Frequência</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="336"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Channels</source>
         <translation>Canais</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Sample size</source>
         <translation>Tamanho da amostra</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>bits</source>
         <translation>bits</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="338"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>Format name</source>
         <translation>Nome do formato</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>File size</source>
         <translation>Tamanho do ficheiro</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="383"/>
+        <location filename="../detailsdialog.cpp" line="384"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="383"/>
+        <location filename="../detailsdialog.cpp" line="384"/>
         <source>No</source>
         <translation>Não</translation>
     </message>
@@ -1048,7 +1048,7 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
