@@ -99,6 +99,9 @@ Spaans:
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
 
+Zweeds:
+    Luna Jernberg <droidbittin@gmail.com>
+
 Turks:
     Mustafa GUNAY <mustafagunay@pgmail.com>
     Bilgesu Güngör <h.ibrahim.gungor@gmail.com>

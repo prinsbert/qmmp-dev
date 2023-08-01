@@ -75,9 +75,9 @@ Liettua:
     Algirdas Butkus <butkus.algirdas@gmail.com>
 
 Puola:
+    Marek Adamski
     Daniel Krawczyk
     Grzegorz Gibas <amigib@gmail.com>
-    Mrerexx
 
 Portugali:
     Sérgio Marques <smarquespt@gmail.com>
@@ -85,6 +85,7 @@ Portugali:
 Venäjä:
     Alexey Loginov <loginov.alex.valer.gmail.com>
     Ilya Kotov <forkotov02@ya.ru>
+    Andrei Stepanov
     Viktor Eruhin
 
 Serbia:
@@ -97,6 +98,9 @@ Espanja:
     Bohdan Shuba
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
+
+Ruotsi:
+    Luna Jernberg <droidbittin@gmail.com>
 
 Turkki:
     Mustafa GUNAY <mustafagunay@pgmail.com>

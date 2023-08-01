@@ -75,9 +75,9 @@
     Algirdas Butkus <butkus.algirdas@gmail.com>
 
 폴란드어:
+    Marek Adamski
     Daniel Krawczyk
     Grzegorz Gibas <amigib@gmail.com>
-    mrerexx
 
 포르투갈어:
     Sérgio Marques <smarquespt@gmail.com>
@@ -85,6 +85,7 @@
 러시아어:
     Alexey Loginov <loginov.alex.valer.gmail.com>
     Ilya Kotov <forkotov02@ya.ru>
+    Andrei Stepanov
     Viktor Eruhin
 
 세르비아어:
@@ -97,6 +98,9 @@
     Bohdan Shuba
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
+
+스웨덴어:
+    Luna Jernberg <droidbittin@gmail.com>
 
 터키어:
     Mustafa GUNAY <mustafagunay@pgmail.com>

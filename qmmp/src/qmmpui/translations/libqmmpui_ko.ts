@@ -31,7 +31,7 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="105"/>
         <source>License Agreement</source>
-        <translation>라이센스 계약</translation>
+        <translation>라이선스 계약</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="70"/>
@@ -390,12 +390,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="405"/>
         <source>Playback</source>
-        <translation>재생</translation>
+        <translation>플레이백</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="411"/>
         <source>Continue playback on startup</source>
-        <translation>시작 시 재생 계속</translation>
+        <translation>시작 시 플레이백 계속</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="418"/>
@@ -556,12 +556,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="229"/>
         <source>Skip already existing tracks when adding</source>
-        <translation type="unfinished"></translation>
+        <translation>추가할 때 기존 트랙 건너뛰기</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="236"/>
         <source>Stop playback after removing of current track</source>
-        <translation type="unfinished"></translation>
+        <translation>현재 트랙 제거 후 플레이백 중지</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="933"/>
@@ -766,7 +766,7 @@
     <message>
         <location filename="../configdialog.cpp" line="359"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>스웨덴어</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="360"/>
@@ -973,67 +973,67 @@
         <translation>CD 번호</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="331"/>
+        <location filename="../detailsdialog.cpp" line="332"/>
         <source>Duration</source>
         <translation>재생시간</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="334"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Bitrate</source>
         <translation>비트레이트</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="334"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Sample rate</source>
         <translation>샘플 레이트</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="336"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Channels</source>
         <translation>채널</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Sample size</source>
         <translation>샘플 크기</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>bits</source>
         <translation>비트</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="338"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>Format name</source>
         <translation>형식 이름</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>File size</source>
         <translation>파일 크기</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="383"/>
+        <location filename="../detailsdialog.cpp" line="384"/>
         <source>Yes</source>
         <translation>예</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="383"/>
+        <location filename="../detailsdialog.cpp" line="384"/>
         <source>No</source>
         <translation>아니요</translation>
     </message>
@@ -1048,7 +1048,7 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>필터</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>

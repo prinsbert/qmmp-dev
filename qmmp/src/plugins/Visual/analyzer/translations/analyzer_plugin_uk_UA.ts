@@ -9,82 +9,82 @@
         <translation>Аналізатор Qmmp</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="317"/>
+        <location filename="../analyzer.cpp" line="312"/>
         <source>Peaks</source>
         <translation>Піки</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="320"/>
+        <location filename="../analyzer.cpp" line="315"/>
         <source>Refresh Rate</source>
         <translation>Частота оновлення</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="323"/>
+        <location filename="../analyzer.cpp" line="318"/>
         <source>50 fps</source>
         <translation>50 кадр/c</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="324"/>
+        <location filename="../analyzer.cpp" line="319"/>
         <source>25 fps</source>
         <translation>25 кадр/c</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="325"/>
+        <location filename="../analyzer.cpp" line="320"/>
         <source>10 fps</source>
         <translation>10 кадр/c</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="326"/>
+        <location filename="../analyzer.cpp" line="321"/>
         <source>5 fps</source>
         <translation>5 кадр/c</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="333"/>
+        <location filename="../analyzer.cpp" line="328"/>
         <source>Analyzer Falloff</source>
         <translation>Падіння аналізатора</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="336"/>
-        <location filename="../analyzer.cpp" line="350"/>
+        <location filename="../analyzer.cpp" line="331"/>
+        <location filename="../analyzer.cpp" line="345"/>
         <source>Slowest</source>
         <translation>Найповільніше</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="337"/>
-        <location filename="../analyzer.cpp" line="351"/>
+        <location filename="../analyzer.cpp" line="332"/>
+        <location filename="../analyzer.cpp" line="346"/>
         <source>Slow</source>
         <translation>Повільне</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="338"/>
-        <location filename="../analyzer.cpp" line="352"/>
+        <location filename="../analyzer.cpp" line="333"/>
+        <location filename="../analyzer.cpp" line="347"/>
         <source>Medium</source>
         <translation>Середнє</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="339"/>
-        <location filename="../analyzer.cpp" line="353"/>
+        <location filename="../analyzer.cpp" line="334"/>
+        <location filename="../analyzer.cpp" line="348"/>
         <source>Fast</source>
         <translation>Швидке</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="340"/>
-        <location filename="../analyzer.cpp" line="354"/>
+        <location filename="../analyzer.cpp" line="335"/>
+        <location filename="../analyzer.cpp" line="349"/>
         <source>Fastest</source>
         <translation>Найшвидше</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="347"/>
+        <location filename="../analyzer.cpp" line="342"/>
         <source>Peaks Falloff</source>
         <translation>Падіння піків</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="361"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="361"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Повний екран</translation>
     </message>

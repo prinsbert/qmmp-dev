@@ -1253,127 +1253,127 @@
         <translation>Warna pemisah alternatif</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="421"/>
+        <location filename="../forms/skinnedsettings.ui" line="415"/>
         <source>Colors</source>
         <translation>Warna</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="427"/>
+        <location filename="../forms/skinnedsettings.ui" line="421"/>
         <source>Playlist Colors</source>
         <translation>Warna Daftarmain</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="433"/>
+        <location filename="../forms/skinnedsettings.ui" line="427"/>
         <source>Use skin colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="526"/>
+        <location filename="../forms/skinnedsettings.ui" line="520"/>
         <source>Background #2:</source>
         <translation>Background #2:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="590"/>
+        <location filename="../forms/skinnedsettings.ui" line="584"/>
         <source>Highlighted background:</source>
         <translation>Background tersorot:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="494"/>
+        <location filename="../forms/skinnedsettings.ui" line="488"/>
         <source>Normal text:</source>
         <translation>Teks normal:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="657"/>
+        <location filename="../forms/skinnedsettings.ui" line="651"/>
         <source>Splitter:</source>
         <translation>Pembelah:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="558"/>
+        <location filename="../forms/skinnedsettings.ui" line="552"/>
         <source>Current text:</source>
         <translation>Teks saat ini:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="622"/>
+        <location filename="../forms/skinnedsettings.ui" line="616"/>
         <source>Highlighted text:</source>
         <translation>Teks tersorot:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="765"/>
+        <location filename="../forms/skinnedsettings.ui" line="759"/>
         <source>Current track background:</source>
         <translation>Latar belakang trek saat ini:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="867"/>
+        <location filename="../forms/skinnedsettings.ui" line="861"/>
         <source>Override current track background</source>
         <translation>Timpa latar belakang trek saat ini</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="730"/>
+        <location filename="../forms/skinnedsettings.ui" line="724"/>
         <source>Group background:</source>
         <translation>Background kelompok:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="860"/>
+        <location filename="../forms/skinnedsettings.ui" line="854"/>
         <source>Override group background</source>
         <translation>Timpa latar belakang grup</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="698"/>
+        <location filename="../forms/skinnedsettings.ui" line="692"/>
         <source>Group text:</source>
         <translation>Teks kelompok:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="449"/>
+        <location filename="../forms/skinnedsettings.ui" line="443"/>
         <source>Background #1:</source>
         <translation>Background #1:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="825"/>
+        <location filename="../forms/skinnedsettings.ui" line="819"/>
         <source>Load skin colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="894"/>
+        <location filename="../forms/skinnedsettings.ui" line="888"/>
         <source>Fonts</source>
         <translation>Fonta</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="948"/>
+        <location filename="../forms/skinnedsettings.ui" line="942"/>
         <source>Playlist:</source>
         <translation>Daftarmain:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="984"/>
+        <location filename="../forms/skinnedsettings.ui" line="978"/>
         <source>Column headers:</source>
         <translation>Header kolom:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="906"/>
+        <location filename="../forms/skinnedsettings.ui" line="900"/>
         <source>Player:</source>
         <translation>Pemutar:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="928"/>
-        <location filename="../forms/skinnedsettings.ui" line="970"/>
-        <location filename="../forms/skinnedsettings.ui" line="997"/>
+        <location filename="../forms/skinnedsettings.ui" line="922"/>
+        <location filename="../forms/skinnedsettings.ui" line="964"/>
+        <location filename="../forms/skinnedsettings.ui" line="991"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="142"/>
-        <location filename="../forms/skinnedsettings.ui" line="935"/>
-        <location filename="../forms/skinnedsettings.ui" line="977"/>
-        <location filename="../forms/skinnedsettings.ui" line="1004"/>
+        <location filename="../forms/skinnedsettings.ui" line="929"/>
+        <location filename="../forms/skinnedsettings.ui" line="971"/>
+        <location filename="../forms/skinnedsettings.ui" line="998"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1026"/>
+        <location filename="../forms/skinnedsettings.ui" line="1020"/>
         <source>Reset fonts</source>
         <translation>Setel-ulang fonta</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1035"/>
+        <location filename="../forms/skinnedsettings.ui" line="1029"/>
         <source>Use bitmap font if available</source>
         <translation>Gunakan fonta bitmap jika tersedia</translation>
     </message>
@@ -1445,22 +1445,22 @@
         <translation>Tampakkan jangkar</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="369"/>
+        <location filename="../forms/skinnedsettings.ui" line="363"/>
         <source>Show popup information</source>
         <translation>Tampakkan tongol informasi</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="381"/>
+        <location filename="../forms/skinnedsettings.ui" line="375"/>
         <source>Edit template</source>
         <translation>Edit template</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="334"/>
+        <location filename="../forms/skinnedsettings.ui" line="331"/>
         <source>Playlist separator:</source>
         <translation>Pemisah daftarmain:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="325"/>
+        <location filename="../forms/skinnedsettings.ui" line="322"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Tampakkan tombol &apos;Daftarmain Baru&apos;</translation>
     </message>

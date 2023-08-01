@@ -93,7 +93,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
-        <translation>재생 재개 알림</translation>
+        <translation>플레이백 재개 알림</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="368"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../statusoption.cpp" line="30"/>
         <source>Print playback status</source>
-        <translation>재생 상태 출력</translation>
+        <translation>플레이백 상태 출력</translation>
     </message>
     <message>
         <location filename="../statusoption.cpp" line="31"/>
