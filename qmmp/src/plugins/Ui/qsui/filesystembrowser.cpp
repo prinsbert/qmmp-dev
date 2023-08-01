@@ -136,6 +136,7 @@ void FileSystemBrowser::readSettings()
         setCurrentDirectory(settings.value("fsbrowser_current_dir", QDir::homePath()).toString());
         m_showFilterAction->setChecked(settings.value("fsbrowser_quick_search", false).toBool());
         setTreeViewMode(settings.value("fsbrowser_tree_mode", false).toBool());
+        m_treeModeAction->setChecked(m_treeView->rootIsDecorated());
     }
     settings.endGroup();
     m_fileSystemModel->setNameFilters(MetaDataManager::instance()->nameFilters());
