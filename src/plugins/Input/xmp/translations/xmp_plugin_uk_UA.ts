@@ -6,7 +6,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="39"/>
         <source>XMP Plugin</source>
-        <translation>Модуль XMP</translation>
+        <translation>Втулок XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="52"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="108"/>
         <source>About XMP Audio Plugin</source>
-        <translation>Про аудіо-модуль XMP</translation>
+        <translation>Про авдіовтулок XMP</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation>Аудіо-модуль XMP для Qmmp</translation>
+        <translation>Авдіовтулок XMP для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Розробник: Ілля Котов  &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../settingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation>Налаштування модуля XMP</translation>
+        <translation>Налаштування втулка XMP</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Підсилення:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation> Тип інтерполяції:</translation>
+        <translation>Тип інтерполяції:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="78"/>
@@ -122,17 +122,17 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Number of tracks</source>
-        <translation>Кількість треків</translation>
+        <translation>Кількість доріжок</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Tracks per pattern</source>
-        <translation>Треків на паттерн</translation>
+        <translation>Доріжок на паттерн</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Number of instruments</source>
-        <translation>ількість інструментів</translation>
+        <translation>Кількість знадобів</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="57"/>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Initial BPM</source>
-        <translation>Початкова кількість нот за хвилину</translation>
+        <translation>Початкова кількість нот на хвилину</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="60"/>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="87"/>
         <source>Instruments</source>
-        <translation>Інструменти</translation>
+        <translation>Знадоби</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="92"/>

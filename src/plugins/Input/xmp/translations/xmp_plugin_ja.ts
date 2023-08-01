@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>DecoderXmpFactory</name>
     <message>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation> 増幅率:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>

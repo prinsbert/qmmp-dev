@@ -44,7 +44,7 @@
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fator de amplificação:</translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
