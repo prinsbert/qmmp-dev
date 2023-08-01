@@ -43,8 +43,8 @@
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="34"/>
-        <source> Amplification factor:</source>
-        <translation>扩音比率：</translation>
+        <source>Amplification factor:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingsdialog.ui" line="51"/>
