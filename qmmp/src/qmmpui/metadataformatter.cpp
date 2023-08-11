@@ -57,28 +57,32 @@ Syntax:
 
 MetaDataFormatter::MetaDataFormatter(const QString &pattern)
 {
-    m_fieldNames.insert("t", Qmmp::TITLE);
-    m_fieldNames.insert("p", Qmmp::ARTIST);
-    m_fieldNames.insert("aa", Qmmp::ALBUMARTIST);
-    m_fieldNames.insert("a", Qmmp::ALBUM);
-    m_fieldNames.insert("c", Qmmp::COMMENT);
-    m_fieldNames.insert("g", Qmmp::GENRE);
-    m_fieldNames.insert("C", Qmmp::COMPOSER);
-    m_fieldNames.insert("y", Qmmp::YEAR);
-    m_fieldNames.insert("n", Qmmp::TRACK);
-    m_fieldNames.insert("D", Qmmp::DISCNUMBER);
-    m_fieldNames.insert("F", Param::PATH);
-    m_fieldNames.insert("NN", Param::TWO_DIGIT_TRACK);
-    m_fieldNames.insert("l", Param::DURATION);
-    m_fieldNames.insert("f", Param::FILE_NAME);
-    m_fieldNames.insert("I", Param::TRACK_INDEX);
-    m_propertyNames.insert("bitrate", Qmmp::BITRATE);
-    m_propertyNames.insert("samplerate", Qmmp::SAMPLERATE);
-    m_propertyNames.insert("channels", Qmmp::CHANNELS);
-    m_propertyNames.insert("samplesize", Qmmp::BITS_PER_SAMPLE);
-    m_propertyNames.insert("format", Qmmp::FORMAT_NAME);
-    m_propertyNames.insert("decoder", Qmmp::DECODER);
-    m_propertyNames.insert("filesize", Qmmp::FILE_SIZE);
+    m_fieldNames = {
+        { QStringLiteral("t"), Qmmp::TITLE },
+        { QStringLiteral("p"), Qmmp::ARTIST },
+        { QStringLiteral("aa"), Qmmp::ALBUMARTIST },
+        { QStringLiteral("a"), Qmmp::ALBUM },
+        { QStringLiteral("c"), Qmmp::COMMENT },
+        { QStringLiteral("g"), Qmmp::GENRE },
+        { QStringLiteral("C"), Qmmp::COMPOSER },
+        { QStringLiteral("y"), Qmmp::YEAR },
+        { QStringLiteral("n"), Qmmp::TRACK },
+        { QStringLiteral("D"), Qmmp::DISCNUMBER },
+        { QStringLiteral("F"), Param::PATH },
+        { QStringLiteral("NN"), Param::TWO_DIGIT_TRACK },
+        { QStringLiteral("l"), Param::DURATION },
+        { QStringLiteral("f"), Param::FILE_NAME },
+        { QStringLiteral("I"), Param::TRACK_INDEX }
+    };
+    m_propertyNames = {
+        { QStringLiteral("bitrate"), Qmmp::BITRATE },
+        { QStringLiteral("samplerate"), Qmmp::SAMPLERATE },
+        { QStringLiteral("channels"), Qmmp::CHANNELS },
+        { QStringLiteral("samplesize"), Qmmp::BITS_PER_SAMPLE },
+        { QStringLiteral("format"), Qmmp::FORMAT_NAME },
+        { QStringLiteral("decoder"), Qmmp::DECODER },
+        { QStringLiteral("filesize"), Qmmp::FILE_SIZE }
+    };
 
     if(!pattern.isEmpty())
         setPattern(pattern);
@@ -133,18 +137,18 @@ QString MetaDataFormatter::formatDuration(qint64 duration, bool hideZero, bool s
         if(hideZero)
             return QString();
 
-        return showMs ? QLatin1String("0:00.000") : QLatin1String("0:00");
+        return showMs ? QStringLiteral("0:00.000") : QStringLiteral("0:00");
     }
 
     QString out;
     qint64 durationInSeconds = duration / 1000;
     if(durationInSeconds >= 3600)
-        out = QString("%1:%2").arg(durationInSeconds / 3600).arg(durationInSeconds % 3600 / 60, 2, 10, QChar('0'));
+        out = QStringLiteral("%1:%2").arg(durationInSeconds / 3600).arg(durationInSeconds % 3600 / 60, 2, 10, QChar('0'));
     else
-        out = QString("%1").arg(durationInSeconds % 3600 / 60);
-    out += QString(":%1").arg(durationInSeconds % 60, 2, 10, QChar('0'));
+        out = QStringLiteral("%1").arg(durationInSeconds % 3600 / 60);
+    out += QStringLiteral(":%1").arg(durationInSeconds % 60, 2, 10, QChar('0'));
     if(showMs)
-        out += QString(".%1").arg(duration % 1000, 3, 10, QChar('0'));
+        out += QStringLiteral(".%1").arg(duration % 1000, 3, 10, QChar('0'));
     return out;
 }
 
@@ -404,12 +408,10 @@ bool MetaDataFormatter::parseDir(QList<MetaDataFormatter::Node> *nodes, QString:
         return false;
     }
 
-    Param param;
-    param.type = Param::NUMERIC;
-    bool ok = false;
-    param.number = var.toInt(&ok);
-    if(!ok)
-        param.number = 0;
+    Param param = {
+        .type = Param::NUMERIC,
+        .number = var.toInt()
+    };
     node.params << param;
     nodes->append(node);
     return true;
@@ -466,7 +468,7 @@ QString MetaDataFormatter::evalute(const QList<Node> *nodes, const TrackInfo *in
         else if(node.command == Node::IF_KEYWORD)
         {
             QString var1 = printParam(&node.params[0], info, trackIndex);
-            if(var1.isEmpty() || var1 == "0")
+            if(var1.isEmpty() || var1 == QLatin1String("0"))
                 out.append(printParam(&node.params[2], info, trackIndex));
             else
                 out.append(printParam(&node.params[1], info, trackIndex));
@@ -476,18 +478,18 @@ QString MetaDataFormatter::evalute(const QList<Node> *nodes, const TrackInfo *in
             QString var1 = printParam(&node.params[0], info, trackIndex);
             QString var2 = printParam(&node.params[1], info, trackIndex);
             if(!var1.isEmpty() && !var2.isEmpty())
-                out.append("1");
+                out.append(QChar('1'));
         }
         else if(node.command == Node::OR_OPERATOR)
         {
             QString var1 = printParam(&node.params[0], info, trackIndex);
             if(!var1.isEmpty())
-                out.append("1");
+                out.append(QChar('1'));
             else
             {
                 QString var2 = printParam(&node.params[1], info, trackIndex);
                 if(!var2.isEmpty())
-                    out.append("1");
+                    out.append(QChar('1'));
             }
         }
         else if(node.command == Node::DIR_FUNCTION)
@@ -507,18 +509,14 @@ QString MetaDataFormatter::printParam(MetaDataFormatter::Param *p, const TrackIn
     {
     case Param::FIELD:
         return printField(p->field, info, trackIndex);
-        break;
     case Param::PROPERTY:
         return printProperty(p->field, info);
-        break;
     case Param::TEXT:
         return p->text;
-        break;
     case Param::NODES:
         return evalute(&p->children, info, trackIndex);
-        break;
     default:
-        break;
+        ;
     }
     return QString();
 }
