@@ -116,7 +116,10 @@ bool YtbInputSource::initialize()
     else if(m_url.startsWith("https://youtu.be/"))
         id = QUrl(m_url).path().remove("/");
 
-    const QStringList args = { "-j", QString("https://www.youtube.com/watch?v=%1").arg(id) };
+    QStringList args = { "-j", QString("https://www.youtube.com/watch?v=%1").arg(id) };
+
+    if(QmmpSettings::instance()->isProxyEnabled())
+        args << QStringLiteral("--proxy") << QmmpSettings::instance()->proxy().toString();
 
     m_ready = false;
     m_buffer->open(QIODevice::ReadOnly);
