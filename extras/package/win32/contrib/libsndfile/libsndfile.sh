@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=libsndfile
-VERSION=1.2.0
+VERSION=1.2.2
 
 case $1 in
   --download)
