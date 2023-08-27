@@ -99,6 +99,9 @@ Español:
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
 
+Swedish:
+    Luna Jernberg <droidbittin@gmail.com>
+
 Turco:
     Mustafa GUNAY <mustafagunay@pgmail.com>
     Bilgesu Güngör <h.ibrahim.gungor@gmail.com>
