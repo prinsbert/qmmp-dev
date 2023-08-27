@@ -1832,6 +1832,7 @@ Version 1.6.4
 Version 1.6.5
 * added waveform seekbar optimization (Linearithmik)
 * fixed visualization initialization in the simple user interface
+* fixed playlist geometry issues in the simple user interface
 * fixed playlist settings in the skinned user interface
 * fixed possible crash
 * fixed http version
