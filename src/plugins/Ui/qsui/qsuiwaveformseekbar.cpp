@@ -235,7 +235,7 @@ void QSUiWaveformSeekBar::drawWaveform()
     painter.setPen(m_waveFormColor);
     painter.setBrush(m_waveFormColor);
 
-    for(int i = 0; i < m_data.size() - m_channels * 3; i+=3)
+    for(int i = 0; i < m_data.size() - m_channels * 3 - 1; i+=3)
     {
         int ch = (i / 3) % m_channels;
         float x1 = step * (i / m_channels / 3);
@@ -282,7 +282,7 @@ void QSUiWaveformSeekBar::drawWaveform()
     painter.setPen(m_rmsColor);
     painter.setBrush(m_rmsColor);
 
-    for(int i = 0; i < m_data.size() - m_channels * 3; i+=3)
+    for(int i = 0; i < m_data.size() - m_channels * 3 - 2; i+=3)
     {
         int ch = (i / 3) % m_channels;
         float x1 = step * (i / m_channels / 3);
@@ -308,6 +308,7 @@ void QSUiWaveformSeekBar::drawWaveform()
             float y2 = zeroPos - m_data[i + 2] * ratio;
             float y3 = zeroPos + m_data[i + m_channels * 3 + 2] * ratio;
             float y4 = zeroPos - m_data[i + m_channels * 3 + 2] * ratio;
+
 
             QPointF points[4] = {
                 { x1, y1 },
