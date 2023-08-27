@@ -367,6 +367,7 @@ void ListWidget::updateList(int flags)
 {
     m_hslider->setRange(0, m_header->maxScrollValue());
     m_hslider->setValue(m_header->offset());
+    m_hslider->setVisible(m_header->maxScrollValue() > 0);
 
     if(updateRowCount())
         flags |= PlayListModel::STRUCTURE;
@@ -452,14 +453,13 @@ void ListWidget::updateList(int flags)
         m_header->setNumberWidth(m_drawer.numberWidth());
     }
 
-    updateScrollBars();
-
     int scroll_bar_width = m_scrollBar->isVisibleTo(this) ? m_scrollBar->sizeHint().width() : 0;
     int trackStateColumn = m_header->trackStateColumn();
     int rowWidth = width() + m_header->maxScrollValue() - 10 - scroll_bar_width;
     bool rtl = layoutDirection() == Qt::RightToLeft;
     m_header->setScrollBarWidth(scroll_bar_width);
-    m_hslider->setVisible(m_header->maxScrollValue() > 0);
+
+    updateScrollBars();
 
     for(int i = 0; i < items.count(); ++i)
     {
