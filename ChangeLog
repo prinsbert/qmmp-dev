@@ -1853,3 +1853,4 @@ Version 2.1.5
 * fixed playlist settings in the skinned user interface
 * fixed possible crash
 * fixed http version
+* fixed file type determination by content in the waveform seekbar
