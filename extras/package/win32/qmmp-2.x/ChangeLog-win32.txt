@@ -453,3 +453,14 @@ LEGEND
 [*] qmmp-2.1.4
 [*] opus-1.4
 [*] curl-8.1.1
+
+2.1.5
+[*] qmmp-2.1.5
+[*] qt-6.2.5
+[*] taglib-1.13.1
+[*] flac-1.4.3
+[*] libsndfile-1.2.2
+[*] curl-8.2.1
+[*] libxmp-4.6.0
+[*] libsidplayfp-2.5.0
+[!] fixed https support
