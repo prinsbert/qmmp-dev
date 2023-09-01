@@ -427,6 +427,7 @@ void GroupedContainer::updateCache() const
     for(int i = 0; i < m_groups.count(); ++i)
     {
         m_items.append(m_groups.at(i));
+        m_items.reserve(m_items.count() + m_groups.at(i)->trackList.count());
         for(PlayListTrack *track : qAsConst(m_groups.at(i)->trackList))
         {
             track->m_track_index = t++;
