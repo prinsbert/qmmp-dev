@@ -20,7 +20,6 @@
 #ifndef STATUSICON_H
 #define STATUSICON_H
 
-#include <QMap>
 #include <qmmpui/general.h>
 #include <qmmp/qmmp.h>
 #include <qmmpui/metadataformatter.h>
@@ -52,7 +51,6 @@ private slots:
 private:
     QmmpTrayIcon *m_tray;
     bool m_showMessage;
-    bool m_hideToTray;
     bool m_useStandardIcons;
     bool m_showToolTip;
     QString m_toolTipTemplate;
