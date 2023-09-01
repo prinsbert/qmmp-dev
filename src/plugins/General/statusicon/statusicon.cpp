@@ -44,7 +44,6 @@ StatusIcon::StatusIcon(QObject *parent) : QObject(parent)
     settings.beginGroup("Tray");
     m_showMessage = settings.value("show_message",false).toBool();
     m_messageDelay = settings.value("message_delay", 2000).toInt();
-    m_hideToTray = settings.value("hide_on_close", false).toBool();
     m_useStandardIcons = settings.value("use_standard_icons",false).toBool();
     m_showToolTip = settings.value("show_tooltip",true).toBool();
     m_splitFileName = settings.value("split_file_name",true).toBool();
