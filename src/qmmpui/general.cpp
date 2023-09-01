@@ -33,7 +33,7 @@ QObject *General::m_parent = nullptr;
 
 void General::loadPlugins()
 {
-    if (m_cache)
+    if(m_cache)
         return;
 
     m_cache = new QList<QmmpUiPluginCache*>;
@@ -64,7 +64,7 @@ void General::create(QObject *parent)
         if(!m_enabledNames.contains(item->shortName()))
             continue;
         GeneralFactory *factory = item->generalFactory();
-        if (factory)
+        if(factory)
         {
             QObject *general = factory->create(parent);
             if(general)
@@ -150,7 +150,7 @@ QString General::file(const GeneralFactory *factory)
 void General::setEnabled(GeneralFactory *factory, bool enable)
 {
     loadPlugins();
-    if (!factories().contains(factory))
+    if(!factories().contains(factory))
         return;
 
     if(enable == isEnabled(factory))
@@ -158,7 +158,7 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
 
     QSettings settings;
 
-    if (enable)
+    if(enable)
         m_enabledNames << factory->properties().shortName;
     else
         m_enabledNames.removeAll(factory->properties().shortName);
@@ -168,22 +168,22 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
     if(!m_generals)
         return;
 
-    if (enable == m_generals->contains(factory))
+    if(enable == m_generals->contains(factory))
         return;
 
-    if (enable)
+    if(enable)
     {
         QObject *general = factory->create(m_parent);
         if(general)
             m_generals->insert(factory, general);
 
         for(const WidgetDescription &d : factory->properties().widgets)
-            UiHelper::instance()->widgetAdded(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
+            emit UiHelper::instance()->widgetAdded(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
     }
     else
     {
         for(const WidgetDescription &d : factory->properties().widgets)
-            UiHelper::instance()->widgetRemoved(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
+            emit UiHelper::instance()->widgetRemoved(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
 
         if(m_generals->value(factory))
             delete m_generals->take(factory);
@@ -193,10 +193,10 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
 void General::showSettings(GeneralFactory *factory, QWidget *parentWidget)
 {
     QDialog *dialog = factory->createConfigDialog(parentWidget);
-    if (!dialog)
+    if(!dialog)
         return;
 
-    if (m_generals && dialog->exec() == QDialog::Accepted)
+    if(m_generals && dialog->exec() == QDialog::Accepted)
     {
         if(m_generals->contains(factory))
             delete m_generals->take(factory);
@@ -206,7 +206,7 @@ void General::showSettings(GeneralFactory *factory, QWidget *parentWidget)
             m_generals->insert(factory, general);
 
         for(const WidgetDescription &d : factory->properties().widgets)
-            UiHelper::instance()->widgetUpdated(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
+            emit UiHelper::instance()->widgetUpdated(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
     }
     dialog->deleteLater();
 }
