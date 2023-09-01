@@ -30,6 +30,8 @@ NormalContainer::~NormalContainer()
 
 void NormalContainer::addTracks(const QList<PlayListTrack *> &tracks)
 {
+    m_items.reserve(m_items.count() + tracks.count());
+
     for(PlayListTrack *track : qAsConst(tracks))
     {
         m_items.append(track);
