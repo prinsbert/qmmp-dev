@@ -137,9 +137,9 @@ private:
             TRACK_INDEX
         };
 
-        int field;
+        int field = -1;
         QString text;
-        int number;
+        int number = 0;
         QList<Node> children;
     };
 

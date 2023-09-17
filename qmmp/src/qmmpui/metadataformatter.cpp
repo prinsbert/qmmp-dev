@@ -408,10 +408,10 @@ bool MetaDataFormatter::parseDir(QList<MetaDataFormatter::Node> *nodes, QString:
         return false;
     }
 
-    Param param = {
-        .type = Param::NUMERIC,
-        .number = var.toInt()
-    };
+    Param param;
+    param.type = Param::NUMERIC;
+    param.number = var.toInt();
+
     node.params << param;
     nodes->append(node);
     return true;
