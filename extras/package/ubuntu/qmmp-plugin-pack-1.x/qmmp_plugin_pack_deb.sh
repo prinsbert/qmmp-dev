@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=1.6.1
-UBUNTU_CODENAMES='bionic focal jammy lunar'
+UBUNTU_CODENAMES='bionic focal jammy lunar mantic'
 BUILD_ROOT=build-root
 
 

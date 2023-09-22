@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=2.1.1
-UBUNTU_CODENAMES='jammy lunar'
+UBUNTU_CODENAMES='jammy lunar mantic'
 BUILD_ROOT=build-root
 
 

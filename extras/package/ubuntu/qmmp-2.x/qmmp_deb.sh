@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=2.1.5
-UBUNTU_CODENAMES='jammy lunar'
+UBUNTU_CODENAMES='jammy lunar mantic'
 BUILD_ROOT=build-root
 
 
