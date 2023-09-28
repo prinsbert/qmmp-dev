@@ -1,3 +1,9 @@
+yt-dlp (2023.09.24-1ubuntu1~jammy0) jammy; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 28 Sep 2023 20:56:55 +0300
+
 yt-dlp (2023.07.06-1ubuntu1~jammy0) jammy; urgency=medium
 
   * New upstream release.
