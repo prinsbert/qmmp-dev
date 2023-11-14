@@ -59,6 +59,8 @@ SET(libqmmpui_SRCS
     covereditor.cpp
     generalfactory.cpp
     cueeditor.cpp
+    groupedcontainer2.cpp
+    playlistcontainer2.cpp
     forms/detailsdialog.ui
     forms/tageditor.ui
     forms/templateeditor.ui

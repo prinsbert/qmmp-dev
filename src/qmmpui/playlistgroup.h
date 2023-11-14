@@ -78,6 +78,7 @@ public:
 private:
     QList<PlayListTrack *> trackList; //A list of tracks
     friend class GroupedContainer;
+    friend class GroupedContainer2;
 
     QString m_name;
 };
