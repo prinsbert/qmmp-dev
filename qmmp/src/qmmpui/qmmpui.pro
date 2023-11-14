@@ -31,6 +31,7 @@ win32 {
 HEADERS += general.h \
     generalfactory.h \
     groupedcontainer2_p.h \
+    normalcontainer2_p.h \
     playlistcontainer2_p.h \
     playlistformat.h \
     playlistparser.h \
@@ -78,6 +79,7 @@ HEADERS += general.h \
 
 SOURCES += general.cpp \
     groupedcontainer2.cpp \
+    normalcontainer2.cpp \
     playlistcontainer2.cpp \
     playlistparser.cpp \
     commandlinemanager.cpp \

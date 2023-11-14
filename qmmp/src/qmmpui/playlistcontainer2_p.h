@@ -42,11 +42,10 @@ public:
     virtual void addTrack(PlayListTrack *track) = 0;
     virtual void addTracks(const QList<PlayListTrack *> &tracks) = 0;
     virtual int insertTrack(int index, PlayListTrack *track) = 0;
-
     virtual void replaceTracks(const QList<PlayListTrack *> &tracks) = 0;
     virtual QList<PlayListGroup *> groups() const = 0;
-    virtual const QList<PlayListItem *> &items() const = 0;
     virtual QList<PlayListTrack *> tracks() const = 0;
+
     virtual int groupCount() const = 0;
     virtual int trackCount() const = 0;
     virtual QList<PlayListTrack *> mid(int pos, int count) const = 0;
@@ -54,7 +53,7 @@ public:
     virtual bool isSelected(int index) const = 0;
     virtual void setSelected(int index, bool selected) = 0;
     virtual void clearSelection() = 0;
-    virtual int indexOf(PlayListItem *track) const = 0;
+    virtual int indexOf(PlayListItem *item) const = 0;
     virtual PlayListTrack *track(int index) const = 0;
     virtual PlayListGroup *group(int index) const = 0;
     virtual bool contains(PlayListItem *item) const = 0;

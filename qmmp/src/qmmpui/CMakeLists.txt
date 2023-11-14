@@ -60,6 +60,7 @@ SET(libqmmpui_SRCS
     generalfactory.cpp
     cueeditor.cpp
     groupedcontainer2.cpp
+    normalcontainer2.cpp
     playlistcontainer2.cpp
     forms/detailsdialog.ui
     forms/tageditor.ui
