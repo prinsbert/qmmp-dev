@@ -24,7 +24,7 @@ public:
     bool isSelected(int index) const override;
     void setSelected(int index, bool selected) override;
     void clearSelection() override;
-    int indexOf(PlayListTrack *track) const override;
+    int indexOf(PlayListItem *item) const override;
     PlayListTrack *track(int index) const override;
     PlayListGroup *group(int index) const override;
     bool contains(PlayListItem *item) const override;
