@@ -145,9 +145,9 @@ void GroupedContainer2::clearSelection()
         track->setSelected(false);
 }
 
-int GroupedContainer2::indexOf(PlayListTrack *track) const
+int GroupedContainer2::indexOf(PlayListItem *item) const
 {
-    return m_tracks.indexOf(track);
+    return item->isGroup() ? m_groups.indexOf(item) : m_tracks.indexOf(item);
 }
 
 PlayListTrack *GroupedContainer2::track(int index) const

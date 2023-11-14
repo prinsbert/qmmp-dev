@@ -54,22 +54,15 @@ public:
     virtual bool isSelected(int index) const = 0;
     virtual void setSelected(int index, bool selected) = 0;
     virtual void clearSelection() = 0;
-    virtual int indexOf(PlayListTrack *track) const = 0;
+    virtual int indexOf(PlayListItem *track) const = 0;
     virtual PlayListTrack *track(int index) const = 0;
     virtual PlayListGroup *group(int index) const = 0;
     virtual bool contains(PlayListItem *item) const = 0;
-
-
-
-
-
     virtual void removeTrack(PlayListTrack *track) = 0;
     virtual void removeTracks(QList<PlayListTrack *> tracks) = 0;
     virtual bool move(const QList<int> &indexes, int from, int to) = 0;
-
     virtual QList<PlayListTrack *> takeAllTracks() = 0;
     virtual void clear() = 0;
-
     virtual void reverseList() = 0;
     virtual void randomizeList() = 0;
 
