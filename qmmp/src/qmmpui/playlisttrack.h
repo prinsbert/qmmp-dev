@@ -139,6 +139,9 @@ private:
     friend class PlayListContainer;
     friend class NormalContainer;
     friend class GroupedContainer;
+    friend class PlayListContainer2;
+    friend class NormalContainer2;
+    friend class GroupedContainer2;
     int m_queued_index = -1;
     int m_track_index = -1;
 
