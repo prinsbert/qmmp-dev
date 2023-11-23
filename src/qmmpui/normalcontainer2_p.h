@@ -59,6 +59,9 @@ public:
     void reverseList() override;
     void randomizeList() override;
 
+    int lineCount() const override;
+    PlayListLine lineAt(int lineIndex) const override;
+
 private:
     QList<PlayListTrack *> m_tracks;
 };

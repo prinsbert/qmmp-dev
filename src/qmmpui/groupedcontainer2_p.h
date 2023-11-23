@@ -37,18 +37,10 @@ public:
     void randomizeList() override;
 
     //playlist view api
-    int lineCount() const;
-    int groupAtLine(int line) const;
-    int sublineAtLine(int line) const;
-    int trackAtLine(int line) const;
+    int lineCount() const override;
+    PlayListLine lineAt(int lineIndex) const override;
 
 private:
-    struct PlayListLine
-    {
-      bool isGroup = false;
-      int index = 0;
-      int subindex = 0;
-    };
 
     void updateCache() const;
 

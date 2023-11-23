@@ -309,22 +309,10 @@ int GroupedContainer2::lineCount() const
     return m_lines.count();
 }
 
-int GroupedContainer2::groupAtLine(int line) const
+PlayListContainer2::PlayListLine GroupedContainer2::lineAt(int lineIndex) const
 {
     updateCache();
-    return m_lines[line].isGroup ? m_lines[line].index : -1;
-}
-
-int GroupedContainer2::sublineAtLine(int line) const
-{
-    updateCache();
-    return m_lines[line].isGroup ? m_lines[line].subindex : -1;
-}
-
-int GroupedContainer2::trackAtLine(int line) const
-{
-    updateCache();
-    return m_lines[line].isGroup ? -1 : m_lines[line].index;
+    return m_lines.at(lineIndex);
 }
 
 void GroupedContainer2::updateCache() const

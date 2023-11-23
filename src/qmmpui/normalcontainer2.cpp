@@ -224,3 +224,13 @@ void NormalContainer2::randomizeList()
     for(int i = 0; i < m_tracks.count(); ++i)
         static_cast<PlayListTrack *>(m_tracks[i])->m_track_index = i;
 }
+
+int NormalContainer2::lineCount() const
+{
+    return m_tracks.count();
+}
+
+PlayListContainer2::PlayListLine NormalContainer2::lineAt(int lineIndex) const
+{
+    return PlayListContainer2::PlayListLine{ .isGroup = false, .index = lineIndex, .subindex = 0 };
+}
