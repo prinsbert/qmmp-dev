@@ -232,5 +232,16 @@ int NormalContainer2::lineCount() const
 
 PlayListContainer2::PlayListLine NormalContainer2::lineAt(int lineIndex) const
 {
-    return PlayListContainer2::PlayListLine{ .isGroup = false, .index = lineIndex, .subindex = 0 };
+    return PlayListContainer2::PlayListLine{ .isGroup = false, .index = lineIndex, .subindex = 0, .item = track(lineIndex) };
+}
+
+QList<PlayListContainer2::PlayListLine> NormalContainer2::getLines(int pos, int length) const
+{
+    const QList<PlayListTrack *> tracks = m_tracks.mid(pos, length);
+    QList<PlayListContainer2::PlayListLine> out;
+
+    for(PlayListTrack *t : qAsConst(tracks))
+        out << PlayListLine { .isGroup = false, .index = pos++, .subindex = 0, .item = t };
+
+    return out;
 }

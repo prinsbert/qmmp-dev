@@ -61,6 +61,7 @@ public:
 
     int lineCount() const override;
     PlayListLine lineAt(int lineIndex) const override;
+    QList<PlayListLine> getLines(int pos, int length = -1) const override;
 
 private:
     QList<PlayListTrack *> m_tracks;

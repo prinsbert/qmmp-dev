@@ -312,7 +312,27 @@ int GroupedContainer2::lineCount() const
 PlayListContainer2::PlayListLine GroupedContainer2::lineAt(int lineIndex) const
 {
     updateCache();
-    return m_lines.at(lineIndex);
+    PlayListLine line = m_lines.at(lineIndex);
+    if(line.isGroup)
+        line.item = m_groups.at(line.index);
+    else
+        line.item = m_tracks.at(line.index);
+    return line;
+}
+
+QList<PlayListContainer2::PlayListLine> GroupedContainer2::getLines(int pos, int length) const
+{
+    updateCache();
+    QList<PlayListLine> lines = m_lines.mid(pos, length);
+    for (PlayListLine &line : lines)
+    {
+        if(line.isGroup)
+            line.item = m_groups.at(line.index);
+        else
+            line.item = m_tracks.at(line.index);
+    }
+
+    return lines;
 }
 
 void GroupedContainer2::updateCache() const

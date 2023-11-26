@@ -39,9 +39,9 @@ public:
     //playlist view api
     int lineCount() const override;
     PlayListLine lineAt(int lineIndex) const override;
+    QList<PlayListLine> getLines(int pos, int length = -1) const override;
 
 private:
-
     void updateCache() const;
 
     QList<PlayListTrack *> m_tracks;
