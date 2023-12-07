@@ -230,18 +230,22 @@ int NormalContainer2::lineCount() const
     return m_tracks.count();
 }
 
-PlayListContainer2::PlayListLine NormalContainer2::lineAt(int lineIndex) const
+PlayListItem *NormalContainer2::itemAtLine(int lineIndex) const
 {
-    return PlayListContainer2::PlayListLine{ .isGroup = false, .index = lineIndex, .subindex = 0, .item = track(lineIndex) };
+    return track(lineIndex);
 }
 
-QList<PlayListContainer2::PlayListLine> NormalContainer2::getLines(int pos, int length) const
+QList<PlayListItem *> NormalContainer2::itemsAtLines(int pos, int length) const
 {
-    const QList<PlayListTrack *> tracks = m_tracks.mid(pos, length);
-    QList<PlayListContainer2::PlayListLine> out;
-
+    QList<PlayListTrack *> tracks = m_tracks.mid(pos, length);
+    QList<PlayListItem *> items;
     for(PlayListTrack *t : qAsConst(tracks))
-        out << PlayListLine { .isGroup = false, .index = pos++, .subindex = 0, .item = t };
+        items << t;
+    return items;
+}
 
-    return out;
+int NormalContainer2::subindexOfLine(int lineIndex) const
+{
+    Q_UNUSED(lineIndex);
+    return 0;
 }

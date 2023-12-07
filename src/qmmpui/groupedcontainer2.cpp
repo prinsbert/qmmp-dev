@@ -309,30 +309,36 @@ int GroupedContainer2::lineCount() const
     return m_lines.count();
 }
 
-PlayListContainer2::PlayListLine GroupedContainer2::lineAt(int lineIndex) const
+PlayListItem *GroupedContainer2::itemAtLine(int lineIndex) const
 {
     updateCache();
     PlayListLine line = m_lines.at(lineIndex);
     if(line.isGroup)
-        line.item = m_groups.at(line.index);
-    else
-        line.item = m_tracks.at(line.index);
-    return line;
+        return m_groups.at(line.index);
+
+    return m_tracks.at(line.index);
 }
 
-QList<PlayListContainer2::PlayListLine> GroupedContainer2::getLines(int pos, int length) const
+QList<PlayListItem *> GroupedContainer2::itemsAtLines(int pos, int length) const
 {
     updateCache();
     QList<PlayListLine> lines = m_lines.mid(pos, length);
-    for (PlayListLine &line : lines)
+    QList<PlayListItem *> out;
+    for (const PlayListLine &line : qAsConst(lines))
     {
         if(line.isGroup)
-            line.item = m_groups.at(line.index);
+            out << m_groups.at(line.index);
         else
-            line.item = m_tracks.at(line.index);
+            out << m_tracks.at(line.index);
     }
 
-    return lines;
+    return out;
+}
+
+int GroupedContainer2::subindexOfLine(int lineIndex) const
+{
+    updateCache();
+    return m_lines[lineIndex].subindex;
 }
 
 void GroupedContainer2::updateCache() const
