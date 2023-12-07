@@ -36,14 +36,6 @@
 class PlayListContainer2
 {
 public:
-    struct PlayListLine
-    {
-      bool isGroup = false;
-      int index = -1;
-      int subindex = -1;
-      PlayListItem *item = nullptr;
-    };
-
     PlayListContainer2(){}
     virtual ~PlayListContainer2(){}
 
@@ -81,8 +73,9 @@ public:
     const QList<PlayListTrack *> &queuedTracks() const;
 
     virtual int lineCount() const = 0;
-    virtual PlayListLine lineAt(int lineIndex) const = 0;
-    virtual QList<PlayListLine> getLines(int pos, int length = -1) const = 0;
+    virtual PlayListItem *itemAtLine(int lineIndex) const = 0;
+    virtual QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const = 0;
+    virtual int subindexOfLine(int lineIndex) const = 0;
 
 protected:
     void swapTrackNumbers(QList<PlayListItem *> *container, int index1, int index2);

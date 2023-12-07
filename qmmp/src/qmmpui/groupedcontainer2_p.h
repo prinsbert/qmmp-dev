@@ -38,11 +38,19 @@ public:
 
     //playlist view api
     int lineCount() const override;
-    PlayListLine lineAt(int lineIndex) const override;
-    QList<PlayListLine> getLines(int pos, int length = -1) const override;
+    PlayListItem *itemAtLine(int lineIndex) const override;
+    QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const override;
+    int subindexOfLine(int lineIndex) const override;
 
 private:
     void updateCache() const;
+
+    struct PlayListLine
+    {
+      bool isGroup = false;
+      int index = -1;
+      int subindex = -1;
+    };
 
     QList<PlayListTrack *> m_tracks;
     QList<PlayListGroup *> m_groups;
