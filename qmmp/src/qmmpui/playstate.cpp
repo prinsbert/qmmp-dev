@@ -34,7 +34,7 @@ ShufflePlayState::ShufflePlayState(PlayListModel * model) : PlayState(model)
 
 bool ShufflePlayState::next()
 {
-    if(!m_model->count())
+    if(m_model->isEmpty())
         return false;
 
     if (m_shuffled_current >= m_shuffled_indexes.count() - 1)
@@ -53,7 +53,7 @@ bool ShufflePlayState::next()
 
 int ShufflePlayState::nextIndex()
 {
-    if(!m_model->count())
+    if(m_model->isEmpty())
         return -1;
 
     if (m_shuffled_current >= m_shuffled_indexes.count() - 1)
@@ -68,7 +68,7 @@ int ShufflePlayState::nextIndex()
 
 bool ShufflePlayState::previous()
 {
-    if(!m_model->count())
+    if(m_model->isEmpty())
         return false;
 
     if (m_shuffled_current <= 0)
@@ -80,7 +80,7 @@ bool ShufflePlayState::previous()
         m_shuffled_current = m_shuffled_indexes.count() - 1;
     }
 
-    if (m_model->count() > 1)
+    if (m_model->trackCount() > 1)
         m_shuffled_current--;
 
     return m_model->setCurrent(m_shuffled_indexes.at(m_shuffled_current));
@@ -114,7 +114,7 @@ NormalPlayState::NormalPlayState(PlayListModel * model) : PlayState(model)
 
 bool NormalPlayState::next()
 {
-    if(!m_model->count())
+    if(m_model->isEmpty())
         return false;
 
     if (m_ui_settings->isRepeatableList() && m_model->currentIndex() == m_model->count() - 1)
@@ -140,7 +140,7 @@ bool NormalPlayState::next()
 
 bool NormalPlayState::previous()
 {
-    if(!m_model->count())
+    if(m_model->isEmpty())
         return false;
 
     if(m_ui_settings->isRepeatableList())
@@ -164,7 +164,7 @@ bool NormalPlayState::previous()
 
 int NormalPlayState::nextIndex()
 {
-    if(!m_model->count())
+    if(m_model->isEmpty())
         return -1;
 
     if (m_model->currentIndex() == m_model->count() - 1)

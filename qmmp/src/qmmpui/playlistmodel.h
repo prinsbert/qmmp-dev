@@ -78,20 +78,25 @@ struct SimpleSelection
  * @author Vladimir Kuznetsov <vovanec@gmail.com>
  * @author Ilya Kotov <forkotov02@ya.ru>
  *
- *         Playlist Structure
- *      -----------------------
- *     | item  | track | item  |
- *     | index | index | type  |
- *      -----------------------
- *     |  0    |       | group |
- *     |  1    |  0    | track |
- *     |  2    |  1    | track |
- *     |  3    |  2    | track |
- *     |  4    |  3    | track |
- *     |  5    |       | group |
- *     |  6    |  4    | track |
- *     |  7    |  5    | track |
- *     |  8    |  6    | track |
+ *              Playlist Structure
+ *      ----------------------------------
+ *     | line  | sub-line | item  | item  |
+ *     | index | index    | index | type  |
+ *      ----------------------------------
+ *     |  0    |  0       |  0    | group |
+ *     |  1    |  1       |  0    | group |
+ *     |  2    |  2       |  0    | group |
+ *      ----------------------------------
+ *     |  3    |  0       |  0    | track |
+ *     |  4    |  0       |  1    | track |
+ *     |  5    |  0       |  2    | track |
+ *      ----------------------------------
+ *     |  6    |  0       |  1    | group |
+ *     |  7    |  1       |  1    | group |
+ *     |  8    |  2       |  1    | group |
+ *      ----------------------------------
+ *     |  9    |  0       |  3    | track |
+ *     | 10    |  0       |  4    | track |
  */
 class QMMPUI_EXPORT PlayListModel : public QObject
 {
@@ -116,9 +121,9 @@ public:
      */
     void setName(const QString &name);
     /*!
-     * Returns number of items.
+     * Returns number of groups.
      */
-    int count() const;
+    int groupCount() const;
     /*!
      * Returns number of tracks.
      */
@@ -144,10 +149,6 @@ public:
      */
     int indexOf(PlayListItem* item) const;
     /*!
-     * Returns the item with the index \b index or 0 if item doesn't exist.
-     */
-    PlayListItem* item(int index) const;
-    /*!
      * Returns the track with the index \b index or 0 if track doesn't exist.
      */
     PlayListTrack* track(int index) const;
@@ -156,32 +157,22 @@ public:
      */
     PlayListGroup* group(int index) const;
     /*!
-     * Returns index of the current item.
+     * Returns index of the current track.
      */
     int currentIndex() const;
     /*!
-     * Sets current index.
-     * Returns \b false if item with this index doesn't exist, otherwise returns \b true
-     * @param index Number of item.
+     * Sets current track index.
+     * Returns \b false if the track with this index doesn't exist, otherwise returns \b true
+     * @param index Number of the track.
      */
-    bool setCurrent (int index);
+    bool setCurrent(int index);
     /*!
      * Sets current item to \b item.
      * Returns \b true if success, otherwise returns \b false
      */
-    bool setCurrent(PlayListTrack *item);
+    bool setCurrent(PlayListTrack *track);
     /*!
-     * Returns \b true if a playlist contains track with the index \b index.
-     * Otherwise returns \b false.
-     */
-    bool isTrack(int index) const;
-    /*!
-     * Returns \b true if a playlist contains group separator with the index \b index.
-     * Otherwise returns \b false.
-     */
-    bool isGroup(int index) const;
-    /*!
-     * Returns \b true if item with \b index is selected, otherwise returns \b false
+     * Returns \b true if track with \b index is selected, otherwise returns \b false
      */
     bool isSelected(int index) const;
     /*!
