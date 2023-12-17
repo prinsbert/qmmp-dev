@@ -21,11 +21,6 @@
 #include "playlistmodel.h"
 #include "playlistcontainer_p.h"
 
-void PlayListContainer::addTrack(PlayListTrack *track)
-{
-    addTracks(QList<PlayListTrack *> () << track);
-}
-
 PlayListTrack *PlayListContainer::dequeue()
 {
     PlayListTrack *t = m_queue.dequeue();

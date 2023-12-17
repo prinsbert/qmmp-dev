@@ -30,9 +30,6 @@ win32 {
 
 HEADERS += general.h \
     generalfactory.h \
-    groupedcontainer2_p.h \
-    normalcontainer2_p.h \
-    playlistcontainer2_p.h \
     playlistformat.h \
     playlistparser.h \
     commandlinemanager.h \
@@ -78,9 +75,6 @@ HEADERS += general.h \
     cueeditor_p.h
 
 SOURCES += general.cpp \
-    groupedcontainer2.cpp \
-    normalcontainer2.cpp \
-    playlistcontainer2.cpp \
     playlistparser.cpp \
     commandlinemanager.cpp \
     filedialog.cpp \

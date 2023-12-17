@@ -28,40 +28,45 @@ NormalContainer::~NormalContainer()
 {
 }
 
+void NormalContainer::addTrack(PlayListTrack *track)
+{
+    addTracks({ track });
+}
+
 void NormalContainer::addTracks(const QList<PlayListTrack *> &tracks)
 {
-    m_items.reserve(m_items.count() + tracks.count());
+    m_tracks.reserve(m_tracks.count() + tracks.count());
 
     for(PlayListTrack *track : qAsConst(tracks))
     {
-        m_items.append(track);
+        m_tracks.append(track);
         track->m_queued_index = -1;
-        track->m_track_index = m_items.count() - 1;
+        track->m_track_index = m_tracks.count() - 1;
     }
 }
 
 int NormalContainer::insertTrack(int index, PlayListTrack *track)
 {
     track->m_queued_index = -1;
-    if(index >= 0 && index < m_items.count())
+    if(index >= 0 && index < m_tracks.count())
     {
-        m_items.insert(index, track);
+        m_tracks.insert(index, track);
         track->m_track_index = index;
         //update indexes
-        for(int i = index; i < m_items.count(); ++i)
-            static_cast<PlayListTrack *>(m_items[i])->m_track_index = i;
+        for(int i = index; i < m_tracks.count(); ++i)
+            static_cast<PlayListTrack *>(m_tracks[i])->m_track_index = i;
         return index;
     }
 
-    m_items.append(track);
-    track->m_track_index = m_items.count() - 1;
-    return m_items.count() - 1;
+    m_tracks.append(track);
+    track->m_track_index = m_tracks.count() - 1;
+    return m_tracks.count() - 1;
 }
 
 void NormalContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
 {
     clearQueue();
-    m_items.clear();
+    m_tracks.clear();
     addTracks(tracks);
 }
 
@@ -72,53 +77,45 @@ QList<PlayListGroup *> NormalContainer::groups() const
 
 QList<PlayListTrack *> NormalContainer::tracks() const
 {
-    QList<PlayListTrack *> trackList;
-    for(int i = 0; i < m_items.count(); ++i)
-        trackList.append(static_cast<PlayListTrack *>(m_items[i]));
-    return trackList;
-}
-
-const QList<PlayListItem *> &NormalContainer::items() const
-{
-    return m_items;
-}
-
-int NormalContainer::count() const
-{
-    return m_items.count();
+    return m_tracks;
 }
 
 int NormalContainer::trackCount() const
 {
-    return m_items.count();
+    return m_tracks.count();
 }
 
-QList<PlayListItem *> NormalContainer::mid(int pos, int count) const
+int NormalContainer::groupCount() const
 {
-    return m_items.mid(pos, count);
+    return 0;
+}
+
+QList<PlayListTrack *> NormalContainer::mid(int pos, int count) const
+{
+    return m_tracks.mid(pos, count);
 }
 
 bool NormalContainer::isEmpty() const
 {
-    return m_items.isEmpty();
+    return m_tracks.isEmpty();
 }
 
 bool NormalContainer::isSelected(int index) const
 {
-    if (0 <= index && index < m_items.count())
-        return m_items.at(index)->isSelected();
+    if (0 <= index && index < m_tracks.count())
+        return m_tracks.at(index)->isSelected();
     return false;
 }
 
 void NormalContainer::setSelected(int index, bool selected)
 {
-    if (0 <= index && index < m_items.count())
-        m_items.at(index)->setSelected(selected);
+    if (0 <= index && index < m_tracks.count())
+        m_tracks.at(index)->setSelected(selected);
 }
 
 void NormalContainer::clearSelection()
 {
-    for(PlayListItem *item : qAsConst(m_items))
+    for(PlayListItem *item : qAsConst(m_tracks))
     {
         item->setSelected(false);
     }
@@ -126,23 +123,15 @@ void NormalContainer::clearSelection()
 
 int NormalContainer::indexOf(PlayListItem *item) const
 {
-    return m_items.indexOf(item);
-}
-
-PlayListItem *NormalContainer::item(int index) const
-{
-    if(index >= count() || index < 0)
-    {
-        qWarning("NormalContainer: index is out of range");
-        return nullptr;
-    }
-    return m_items.at(index);
+    return m_tracks.indexOf(item);
 }
 
 PlayListTrack *NormalContainer::track(int index) const
 {
-    PlayListItem *i = item(index);
-    return static_cast<PlayListTrack *> (i);
+   if (0 <= index && index < m_tracks.count())
+       return m_tracks.at(index);
+
+   return nullptr;
 }
 
 PlayListGroup *NormalContainer::group(int index) const
@@ -153,21 +142,7 @@ PlayListGroup *NormalContainer::group(int index) const
 
 bool NormalContainer::contains(PlayListItem *item) const
 {
-    return m_items.contains(item);
-}
-
-int NormalContainer::indexOfTrack(int index) const
-{
-    return index;
-}
-
-PlayListTrack *NormalContainer::findTrack(int number) const
-{
-    if(number >= count() || number < 0)
-    {
-        return nullptr;
-    }
-    return static_cast<PlayListTrack *> (m_items.at(number));
+    return m_tracks.contains(item);
 }
 
 void NormalContainer::removeTrack(PlayListTrack *track)
@@ -179,12 +154,12 @@ void NormalContainer::removeTracks(QList<PlayListTrack *> tracks)
 {
     for(PlayListTrack *t : qAsConst(tracks))
     {
-        m_items.removeAll(t);
+        m_tracks.removeAll(t);
         removeFromQueue(t);
     }
 
-    for(int i = 0; i < m_items.count(); ++i)
-        static_cast<PlayListTrack *>(m_items[i])->m_track_index = i;
+    for(int i = 0; i < m_tracks.count(); ++i)
+        static_cast<PlayListTrack *>(m_tracks[i])->m_track_index = i;
 }
 
 bool NormalContainer::move(const QList<int> &indexes, int from, int to)
@@ -196,19 +171,19 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
             if (i + to - from < 0)
                 break;
 
-            m_items.move(i,i + to - from);
-            swapTrackNumbers(&m_items,i,i + to - from);
+            m_tracks.move(i,i + to - from);
+            //swapTrackNumbers(&m_tracks,i,i + to - from);
         }
     }
     else
     {
         for (int i = indexes.count() - 1; i >= 0; i--)
         {
-            if (indexes[i] + to - from >= m_items.count())
+            if (indexes[i] + to - from >= m_tracks.count())
                 break;
 
-            m_items.move(indexes[i], indexes[i] + to - from);
-            swapTrackNumbers(&m_items,indexes[i], indexes[i] + to - from);
+            m_tracks.move(indexes[i], indexes[i] + to - from);
+            //swapTrackNumbers(&m_tracks,indexes[i], indexes[i] + to - from);
         }
     }
     return true;
@@ -218,24 +193,24 @@ QList<PlayListTrack *> NormalContainer::takeAllTracks()
 {
     clearQueue();
     QList<PlayListTrack *> tracks;
-    while(!m_items.isEmpty())
-        tracks.append(static_cast<PlayListTrack *>(m_items.takeFirst()));
+    while(!m_tracks.isEmpty())
+        tracks.append(static_cast<PlayListTrack *>(m_tracks.takeFirst()));
     return tracks;
 }
 
 void NormalContainer::clear()
 {
     clearQueue();
-    qDeleteAll(m_items);
-    m_items.clear();
+    qDeleteAll(m_tracks);
+    m_tracks.clear();
 }
 
 void NormalContainer::reverseList()
 {
-    for (int i = 0; i < m_items.size()/2; i++)
+    for (int i = 0; i < m_tracks.size()/2; i++)
     {
-        m_items.swapItemsAt(i, m_items.size() - i - 1);
-        swapTrackNumbers(&m_items, i, m_items.size() - i - 1);
+        m_tracks.swapItemsAt(i, m_tracks.size() - i - 1);
+        //swapTrackNumbers(&m_tracks, i, m_tracks.size() - i - 1);
     }
 }
 
@@ -243,9 +218,34 @@ void NormalContainer::randomizeList()
 {
     QRandomGenerator *rg = QRandomGenerator::global();
 
-    for (int i = 0; i < m_items.size(); i++)
-        m_items.swapItemsAt(rg->generate() % m_items.size(), rg->generate() % m_items.size());
+    for (int i = 0; i < m_tracks.size(); i++)
+        m_tracks.swapItemsAt(rg->generate() % m_tracks.size(), rg->generate() % m_tracks.size());
 
-    for(int i = 0; i < m_items.count(); ++i)
-        static_cast<PlayListTrack *>(m_items[i])->m_track_index = i;
+    for(int i = 0; i < m_tracks.count(); ++i)
+        static_cast<PlayListTrack *>(m_tracks[i])->m_track_index = i;
+}
+
+int NormalContainer::lineCount() const
+{
+    return m_tracks.count();
+}
+
+PlayListItem *NormalContainer::itemAtLine(int lineIndex) const
+{
+    return track(lineIndex);
+}
+
+QList<PlayListItem *> NormalContainer::itemsAtLines(int pos, int length) const
+{
+    QList<PlayListTrack *> tracks = m_tracks.mid(pos, length);
+    QList<PlayListItem *> items;
+    for(PlayListTrack *t : qAsConst(tracks))
+        items << t;
+    return items;
+}
+
+int NormalContainer::subIndexOfLine(int lineIndex) const
+{
+    Q_UNUSED(lineIndex);
+    return 0;
 }
