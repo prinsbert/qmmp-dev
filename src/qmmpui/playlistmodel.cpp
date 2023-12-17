@@ -273,9 +273,9 @@ void PlayListModel::insert(int index, const QList<QUrl> &urls)
     insert(index, paths);
 }
 
-int PlayListModel::count() const
+int PlayListModel::groupCount() const
 {
-    return m_container->count();
+    return m_container->groupCount();
 }
 
 int PlayListModel::trackCount() const
@@ -317,11 +317,6 @@ int PlayListModel::indexOf(PlayListItem* item) const
     return m_container->indexOf(item);
 }
 
-PlayListItem* PlayListModel::item(int index) const
-{
-    return m_container->item(index);
-}
-
 PlayListTrack* PlayListModel::track(int index) const
 {
     return m_container->track(index);
@@ -358,20 +353,6 @@ bool PlayListModel::setCurrent(PlayListTrack *track)
     if(!m_container->contains(track))
         return false;
     return setCurrent(m_container->indexOf(track));
-}
-
-bool PlayListModel::isTrack(int index) const
-{
-    if(index > count()-1 || index < 0)
-        return false;
-    return !m_container->item(index)->isGroup();
-}
-
-bool PlayListModel::isGroup(int index) const
-{
-    if(index > count()-1 || index < 0)
-        return false;
-    return m_container->item(index)->isGroup();
 }
 
 bool PlayListModel::next()

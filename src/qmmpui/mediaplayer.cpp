@@ -197,7 +197,7 @@ void MediaPlayer::processState(Qmmp::State state)
     case Qmmp::NormalError:
         m_core->stop();
         m_nextUrl.clear();
-        if (m_skips <= m_pl_manager->currentPlayList()->count())
+        if (m_skips <= m_pl_manager->currentPlayList()->trackCount())
         {
             m_skips++;
             playNext();
