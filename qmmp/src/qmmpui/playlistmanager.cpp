@@ -347,47 +347,47 @@ void PlayListManager::readPlayLists()
 
 void PlayListManager::writePlayLists()
 {
-    qDebug("PlayListManager: saving playlists...");
-    QString value;
-    QString plFilePath = Qmmp::configDir() + "/playlist.txt";
-    QSaveFile plFile(plFilePath);
-    if(!plFile.open(QIODevice::WriteOnly))
-    {
-        qDebug("PlayListManager: error: %s", qPrintable(plFile.errorString()));
-        return;
-    }
-    plFile.write(QString("current_playlist=%1\n").arg(m_models.indexOf(m_current)).toUtf8());
-    for(const PlayListModel *model : qAsConst(m_models))
-    {
-        plFile.write(QString("playlist=%1\n").arg(model->name()).toUtf8());
-        if(model->isEmpty())
-            continue;
-        const QList<PlayListItem *> items = model->items();
-        plFile.write(QString("current=%1\n").arg(model->indexOfTrack(model->currentIndex())).toUtf8());
-        for(PlayListItem *m : qAsConst(items))
-        {
-            if(m->isGroup())
-                continue;
-            PlayListTrack *t = dynamic_cast<PlayListTrack *>(m);
-            plFile.write(QString("file=%1\n").arg(t->path()).toUtf8());
+//    qDebug("PlayListManager: saving playlists...");
+//    QString value;
+//    QString plFilePath = Qmmp::configDir() + "/playlist.txt";
+//    QSaveFile plFile(plFilePath);
+//    if(!plFile.open(QIODevice::WriteOnly))
+//    {
+//        qDebug("PlayListManager: error: %s", qPrintable(plFile.errorString()));
+//        return;
+//    }
+//    plFile.write(QString("current_playlist=%1\n").arg(m_models.indexOf(m_current)).toUtf8());
+//    for(const PlayListModel *model : qAsConst(m_models))
+//    {
+//        plFile.write(QString("playlist=%1\n").arg(model->name()).toUtf8());
+//        if(model->isEmpty())
+//            continue;
+//        const QList<PlayListItem *> items = model->items();
+//        plFile.write(QString("current=%1\n").arg(model->indexOfTrack(model->currentIndex())).toUtf8());
+//        for(PlayListItem *m : qAsConst(items))
+//        {
+//            if(m->isGroup())
+//                continue;
+//            PlayListTrack *t = dynamic_cast<PlayListTrack *>(m);
+//            plFile.write(QString("file=%1\n").arg(t->path()).toUtf8());
 
-            for(QHash<QString, Qmmp::MetaData>::const_iterator it = m_metaKeys.constBegin(); it != m_metaKeys.constEnd(); ++it)
-            {
-                if(!(value = t->value(it.value())).isEmpty())
-                    plFile.write(QString("%1=%2\n").arg(it.key(), value).toUtf8());
-            }
+//            for(QHash<QString, Qmmp::MetaData>::const_iterator it = m_metaKeys.constBegin(); it != m_metaKeys.constEnd(); ++it)
+//            {
+//                if(!(value = t->value(it.value())).isEmpty())
+//                    plFile.write(QString("%1=%2\n").arg(it.key(), value).toUtf8());
+//            }
 
-            for(QHash<QString, Qmmp::TrackProperty>::const_iterator it = m_propKeys.constBegin(); it != m_propKeys.constEnd(); ++it)
-            {
-                if(!(value = t->value(it.value())).isEmpty())
-                    plFile.write(QString("%1=%2\n").arg(it.key(), value).toLatin1());
-            }
+//            for(QHash<QString, Qmmp::TrackProperty>::const_iterator it = m_propKeys.constBegin(); it != m_propKeys.constEnd(); ++it)
+//            {
+//                if(!(value = t->value(it.value())).isEmpty())
+//                    plFile.write(QString("%1=%2\n").arg(it.key(), value).toLatin1());
+//            }
 
-            if(t->duration() > 0)
-                plFile.write(QString("duration=%1\n").arg(t->duration()).toLatin1());
-        }
-    }
-    plFile.commit();
+//            if(t->duration() > 0)
+//                plFile.write(QString("duration=%1\n").arg(t->duration()).toLatin1());
+//        }
+//    }
+//    plFile.commit();
 }
 
 void PlayListManager::onListChanged(int flags)
@@ -422,15 +422,15 @@ void PlayListManager::removeUnselected()
     m_selected->removeUnselected();
 }
 
-void PlayListManager::removeTrack (int i)
-{
-    m_selected->removeTrack(i);
-}
+//void PlayListManager::removeTrack (int i)
+//{
+//    m_selected->removeTrack(i);
+//}
 
-void PlayListManager::removeTrack (PlayListTrack *track)
-{
-    m_selected->removeTrack(track);
-}
+//void PlayListManager::removeTrack (PlayListTrack *track)
+//{
+//    m_selected->removeTrack(track);
+//}
 
 void PlayListManager::invertSelection()
 {
@@ -482,10 +482,10 @@ void PlayListManager::sort(PlayListModel::SortMode mode)
     m_selected->sort(mode);
 }
 
-void PlayListManager::addToQueue()
-{
-    m_selected->addToQueue();
-}
+//void PlayListManager::addToQueue()
+//{
+//    m_selected->addToQueue();
+//}
 
 void PlayListManager::removeInvalidTracks()
 {
@@ -507,7 +507,7 @@ void PlayListManager::clearQueue()
     m_selected->clearQueue();
 }
 
-void PlayListManager::stopAfterSelected()
-{
-    m_selected->stopAfterSelected();
-}
+//void PlayListManager::stopAfterSelected()
+//{
+//    m_selected->stopAfterSelected();
+//}

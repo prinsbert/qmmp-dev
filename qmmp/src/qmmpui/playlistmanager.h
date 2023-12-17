@@ -191,11 +191,11 @@ public slots:
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->removeAt(i)
      */
-    void removeTrack (int i);
+    //void removeTrack (int i);
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->removeItem(item)
      */
-    void removeTrack (PlayListTrack *item);
+    //void removeTrack (PlayListTrack *item);
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->invertSelection()
      */
@@ -239,7 +239,7 @@ public slots:
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->addToQueue()
      */
-    void addToQueue();
+    //void addToQueue();
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->clearInvalidItems()
      */
@@ -259,7 +259,7 @@ public slots:
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->stopAfterSelected()
      */
-    void stopAfterSelected();
+    //void stopAfterSelected();
 
 private slots:
     void writePlayLists();

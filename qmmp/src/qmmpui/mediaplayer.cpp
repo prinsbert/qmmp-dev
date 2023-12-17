@@ -80,7 +80,7 @@ void MediaPlayer::play(qint64 offset)
         return;
     }
 
-    if (m_pl_manager->currentPlayList()->count() == 0)
+    if (m_pl_manager->currentPlayList()->isEmpty())
         return;
 
     QString s = m_pl_manager->currentPlayList()->currentTrack()->path();

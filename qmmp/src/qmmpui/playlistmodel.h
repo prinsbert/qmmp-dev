@@ -199,7 +199,7 @@ public:
      * @param last Last item in the range.
      * @param selected Selection state (\b true - select, \b false - unselect).
      */
-    void setSelected(int first, int last, bool selected = true);
+    //void setSelected(int first, int last, bool selected = true);
     /*!
      * Sets the selected state of the items with \b indexes to \b select
      * @param indexes List of item \b indexes.
@@ -221,11 +221,11 @@ public:
      * \param pos First item position.
      * \param count A number of items. If \b count is -1 (the default), all items from pos are returned.
      */
-    QList<PlayListItem *> mid(int pos, int count = -1) const;
+    //QList<PlayListItem *> mid(int pos, int count = -1) const;
     /*!
      *  Moves the item at index position \b from to index position \b to.
      */
-    void moveItems(int from, int to);
+    //void moveItems(int from, int to);
     /*!
      * Returns a list of queued tracks.
      */
@@ -254,11 +254,11 @@ public:
     /*!
      * Returns list of \b PlayListItem pointers that are selected.
      */
-    QList<PlayListTrack *> selectedTracks() const;
+    //QList<PlayListTrack *> selectedTracks() const;
     /*!
      * Returns list of all \b PlayListItem pointers.
      */
-    QList<PlayListItem*> items() const;
+    //QList<PlayListItem*> items() const;
     /*!
      * Returns number of first item that selected upper the \b row item.
      */
@@ -312,11 +312,6 @@ public:
         GROUP                   /*!< by group name */
     };
     /*!
-     * Converts item index \b index to track index
-     * Returns \b -1 if item with index \b index is not a track or does not exist.
-     */
-    int indexOfTrack(int index) const;
-    /*!
      * Finds track with index \b track_index.
      * Returns null pointer if playlist does not contain track with index \b track_index.
      */
@@ -325,7 +320,7 @@ public:
      * Finds tracks by string \b str. The search is case insensitive.
      * Returns a list of \b PlayListItem pointers.
      */
-    QList<PlayListItem *> findTracks(const QString &str) const;
+    //QList<PlayListItem *> findTracks(const QString &str) const;
     /*!
      * Enum of the playlist update flags.
      */
@@ -411,7 +406,7 @@ public slots:
     /*!
      * Inserts \b tracks after item \b before in the playlist.
      */
-    void insert(PlayListItem *before, const QList<PlayListTrack *> &tracks);
+    void insert(PlayListTrack *before, const QList<PlayListTrack *> &tracks);
     /*!
      * Inserts file or directory at index position \b index in the playlist.
      * @param path Full path of file or directory.
@@ -449,19 +444,19 @@ public slots:
     /*!
      * Removes track with \b i index.
      */
-    void removeTrack(int i);
+    //void removeTrack(int i);
     /*!
      * Removes track \b track from playlist.
      */
-    void removeTrack(PlayListItem *track);
+    //void removeTrack(PlayListItem *track);
     /*!
      * Removes tracks \b items from playlist.
      */
-    void removeTracks(const QList<PlayListItem *> &items);
+    //void removeTracks(const QList<PlayListItem *> &items);
     /*!
      * Removes tracks \b tracks from playlist.
      */
-    void removeTracks(const QList<PlayListTrack *> &tracks);
+    //void removeTracks(const QList<PlayListTrack *> &tracks);
     /*!
      * Inverts selection (selects unselected items and unselects selected items)
      */
@@ -511,7 +506,7 @@ public slots:
     /*!
      * Adds/removes selected items to/from playback queue.
      */
-    void addToQueue();
+    //void addToQueue();
     /*!
      * Adds/removes track \b t to/from playback queue.
      */
@@ -535,7 +530,7 @@ public slots:
     /*!
      * Toggles 'stop after selected' feature.
      */
-    void stopAfterSelected();
+    //void stopAfterSelected();
     /*!
      * Rebuilds groups
      */
@@ -558,9 +553,9 @@ private:
      * Removes items from model. If \b inverted is \b false -
      * selected items will be removed, else - unselected.
      */
-    void removeSelection(bool inverted = false);
+    //void removeSelection(bool inverted = false);
 
-    int removeTrackInternal(int i);
+    //int removeTrackInternal(int i);
 
 private slots:
     /*!

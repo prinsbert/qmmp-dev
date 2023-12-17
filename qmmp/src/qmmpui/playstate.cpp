@@ -91,9 +91,9 @@ void ShufflePlayState::prepare()
     QRandomGenerator *rg = QRandomGenerator::global();
 
     resetState();
-    for(int i = 0; i < m_model->count(); i++)
+    for(int i = 0; i < m_model->trackCount(); i++)
     {
-        if (i != m_model->currentIndex() && m_model->isTrack(i))
+        if (i != m_model->currentIndex())
             m_shuffled_indexes << i;
     }
 
@@ -117,25 +117,13 @@ bool NormalPlayState::next()
     if(m_model->isEmpty())
         return false;
 
-    if (m_ui_settings->isRepeatableList() && m_model->currentIndex() == m_model->count() - 1)
-    {
-        if(m_model->track(0))
-            return m_model->setCurrent(0);
-        if(m_model->count() >= 2 && m_model->track(1))
-            return m_model->setCurrent(1);
+    if(m_ui_settings->isRepeatableList() && m_model->currentIndex() == m_model->trackCount() - 1)
+        return m_model->setCurrent(0);
 
+    if(m_model->currentIndex() + 1 >= m_model->trackCount())
         return false;
-    }
 
-    if(m_model->currentIndex() + 1 >= m_model->count())
-        return false;
-    if(m_model->track((m_model->currentIndex() + 1)))
-        return m_model->setCurrent(m_model->currentIndex() + 1);
-    if(m_model->currentIndex() + 2 > m_model->count() - 1)
-        return false;
-    if(m_model->track(m_model->currentIndex() + 2))
-        return m_model->setCurrent(m_model->currentIndex() + 2);
-    return false;
+    return m_model->setCurrent(m_model->currentIndex() + 1);
 }
 
 bool NormalPlayState::previous()
@@ -145,21 +133,14 @@ bool NormalPlayState::previous()
 
     if(m_ui_settings->isRepeatableList())
     {
-        if(m_model->currentIndex() == 1 && !m_model->isTrack(0))
-            return (m_model->setCurrent(m_model->count() - 1));
         if(m_model->currentIndex() == 0)
-            return m_model->setCurrent(m_model->count() - 1);
+            return m_model->setCurrent(m_model->trackCount() - 1);
     }
 
-    if(m_model->currentIndex() == 1 && !m_model->isTrack(0))
-        return false;
     if(m_model->currentIndex() == 0)
         return false;
-    if(m_model->isTrack(m_model->currentIndex() - 1))
-        return m_model->setCurrent(m_model->currentIndex() - 1);
-    if(m_model->currentIndex() >= 2 && m_model->isTrack(m_model->currentIndex() - 2))
-        return m_model->setCurrent(m_model->currentIndex() - 2);
-    return false;
+
+    return m_model->setCurrent(m_model->currentIndex() - 1);
 }
 
 int NormalPlayState::nextIndex()
@@ -167,22 +148,8 @@ int NormalPlayState::nextIndex()
     if(m_model->isEmpty())
         return -1;
 
-    if (m_model->currentIndex() == m_model->count() - 1)
-    {
-        if (m_ui_settings->isRepeatableList())
-        {
-            if(m_model->isTrack(0))
-                return 0;
-            if(m_model->isTrack(1))
-                return 1;
-        }
-        return -1;
-    }
-    if(m_model->isTrack(m_model->currentIndex() + 1))
-        return m_model->currentIndex() + 1;
-    if(m_model->currentIndex() + 2 > m_model->count() - 1)
-        return -1;
-    if(m_model->isTrack(m_model->currentIndex() + 2))
-        return m_model->currentIndex() + 2;
-    return -1;
+    if (m_model->currentIndex() == m_model->trackCount() - 1)
+        return m_ui_settings->isRepeatableList() ? 0 : -1;
+
+    return m_model->currentIndex() + 1;
 }
