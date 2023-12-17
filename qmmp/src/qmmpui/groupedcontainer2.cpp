@@ -335,7 +335,7 @@ QList<PlayListItem *> GroupedContainer2::itemsAtLines(int pos, int length) const
     return out;
 }
 
-int GroupedContainer2::subindexOfLine(int lineIndex) const
+int GroupedContainer2::subIndexOfLine(int lineIndex) const
 {
     updateCache();
     return m_lines[lineIndex].subindex;
@@ -346,7 +346,7 @@ void GroupedContainer2::updateCache() const
     if(!m_update)
         return;
 
-    int group_height = 3;
+    int group_height = 1;
     int t = 0;
 
     m_lines.clear();

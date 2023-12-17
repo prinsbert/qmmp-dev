@@ -40,7 +40,7 @@ public:
     int lineCount() const override;
     PlayListItem *itemAtLine(int lineIndex) const override;
     QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const override;
-    int subindexOfLine(int lineIndex) const override;
+    int subIndexOfLine(int lineIndex) const override;
 
 private:
     void updateCache() const;

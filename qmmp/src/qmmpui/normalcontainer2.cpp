@@ -244,7 +244,7 @@ QList<PlayListItem *> NormalContainer2::itemsAtLines(int pos, int length) const
     return items;
 }
 
-int NormalContainer2::subindexOfLine(int lineIndex) const
+int NormalContainer2::subIndexOfLine(int lineIndex) const
 {
     Q_UNUSED(lineIndex);
     return 0;
