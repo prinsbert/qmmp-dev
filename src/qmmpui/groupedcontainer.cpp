@@ -19,105 +19,93 @@
  ***************************************************************************/
 
 #include <QRandomGenerator>
-#include "playlistmodel.h"
 #include "groupedcontainer_p.h"
 
 GroupedContainer::GroupedContainer()
-{}
-
-GroupedContainer::~GroupedContainer()
 {
-    clear();
+
 }
 
 void GroupedContainer::addTrack(PlayListTrack *track)
 {
     int firstIndex = 0, lastIndex = 0;
-    track->m_queued_index = -1;
     //insert if possible
     for(int i = 0; i < m_groups.count(); ++i)
     {
         if(i == 0)
         {
            firstIndex = 0;
-           lastIndex = m_groups[i]->count();
+           lastIndex = m_groups[i]->count() - 1;
         }
         else
         {
             firstIndex = lastIndex + 1;
-            lastIndex = firstIndex + m_groups[i]->count();
+            lastIndex = firstIndex + m_groups[i]->count() - 1;
         }
 
         if(track->groupName() == m_groups[i]->formattedTitle())
         {
             m_groups[i]->trackList.append(track);
-            m_items.insert(lastIndex + 1, track);
+            m_tracks.insert(lastIndex + 1, track);
             m_update = true;
             return;
         }
     }
     PlayListGroup *group = new PlayListGroup(track->groupName());
     group->trackList.append(track);
+    m_tracks.append(track);
     m_groups.append(group);
-    m_items.append(group);
-    m_items.append(track);
-    track->m_track_index = trackCount() - 1;
+
+    if(!m_update)
+    {
+        int group_height = 3;
+
+        for(int j = 0; j < group_height; ++j)
+        {
+            PlayListLine line = { .isGroup = true, .index = int(m_groups.count() - 1), .subindex = j };
+            m_lines << line;
+        }
+
+        m_lines << PlayListLine { .isGroup = false, .index = int(m_tracks.count() - 1), .subindex = 0 };
+    }
 }
 
 void GroupedContainer::addTracks(const QList<PlayListTrack *> &tracks)
 {
-    for(int i = 0; i < tracks.count(); ++i)
-    {
-        bool found = false;
-        tracks[i]->m_queued_index = -1;
-        for(int j = m_groups.count() - 1; j >= 0; --j)
-        {
-            if(m_groups.at(j)->formattedTitle() == tracks.at(i)->groupName())
-            {
-                found = true;
-                m_groups.at(j)->trackList.append(tracks[i]);
-                break;
-            }
-        }
-
-        if(found)
-            continue;
-
-        m_groups << new PlayListGroup(tracks.at(i)->groupName());
-        m_groups.last()->trackList.append(tracks.at(i));
-    }
-    m_update = true;
+    m_tracks.reserve(m_tracks.count() + tracks.count());
+    for(PlayListTrack *track : qAsConst(tracks))
+        addTrack(track);
 }
 
 int GroupedContainer::insertTrack(int index, PlayListTrack *track)
 {
     int firstIndex = 0, lastIndex = 0;
-    track->m_queued_index = -1;
     //insert if possible
     for(int i = 0; i < m_groups.count(); ++i)
     {
         if(i == 0)
         {
            firstIndex = 0;
-           lastIndex = m_groups[i]->count();
+           lastIndex = m_groups[i]->count() - 1;
         }
         else
         {
             firstIndex = lastIndex + 1;
-            lastIndex = firstIndex + m_groups[i]->count();
+            lastIndex = firstIndex + m_groups[i]->count() - 1;
         }
 
         if(track->groupName() == m_groups[i]->formattedTitle() &&
-                index > firstIndex && index <= lastIndex + 1)
+                index >= firstIndex && index <= lastIndex + 1)
         {
-            m_groups[i]->trackList.insert(index - firstIndex - 1, track);
+            m_groups[i]->trackList.insert(index - firstIndex, track);
+            m_tracks.insert(index, track);
             m_update = true;
             return index;
         }
     }
     //just add otherwise
     addTrack(track);
-    return m_items.count() - 1;
+    return m_tracks.count() - 1;
 }
 
 void GroupedContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
@@ -137,130 +125,64 @@ QList<PlayListGroup *> GroupedContainer::groups() const
 
 QList<PlayListTrack *> GroupedContainer::tracks() const
 {
-    QList<PlayListTrack *> trackList;
-    for(int i = 0; i < m_groups.count(); ++i)
-    {
-        trackList.append(m_groups[i]->trackList);
-    }
-    return trackList;
+    return m_tracks;
 }
 
-const QList<PlayListItem *> &GroupedContainer::items() const
+int GroupedContainer::groupCount() const
 {
-    updateCache();
-    return m_items;
-}
-
-int GroupedContainer::count() const
-{
-    updateCache();
-    return m_items.count();
+    return m_groups.count();
 }
 
 int GroupedContainer::trackCount() const
 {
-    updateCache();
-    return m_items.count() - m_groups.count();
+    return m_tracks.count();
 }
 
-QList<PlayListItem *> GroupedContainer::mid(int pos, int count) const
+QList<PlayListTrack *> GroupedContainer::mid(int pos, int count) const
 {
     updateCache();
-    return m_items.mid(pos, count);
+    return m_tracks.mid(pos, count);
 }
 
 bool GroupedContainer::isEmpty() const
 {
-    return m_groups.isEmpty();
+    return m_tracks.isEmpty();
 }
 
 bool GroupedContainer::isSelected(int index) const
 {
-    updateCache();
-    if (0 <= index && index < m_items.count())
-        return m_items.at(index)->isSelected();
-    return false;
+    return m_tracks.at(index)->isSelected();
 }
 
 void GroupedContainer::setSelected(int index, bool selected)
 {
-    updateCache();
-    if (0 <= index && index < m_items.count())// && !m_items.at(index)->isGroup())
-        m_items.at(index)->setSelected(selected);
+    return m_tracks.at(index)->setSelected(selected);
 }
 
 void GroupedContainer::clearSelection()
 {
-    updateCache();
-    for(PlayListItem *item : qAsConst(m_items))
-    {
-        item->setSelected(false);
-    }
+    for(PlayListTrack *track : qAsConst(m_tracks))
+        track->setSelected(false);
 }
 
 int GroupedContainer::indexOf(PlayListItem *item) const
 {
-    updateCache();
-    return m_items.indexOf(item);
-}
-
-PlayListItem *GroupedContainer::item(int index) const
-{
-    updateCache();
-    if(index >= count() || index < 0)
-    {
-        qWarning("GroupedContainer: index is out of range");
-        return nullptr;
-    }
-    return m_items.at(index);
+    return item->isGroup() ? m_groups.indexOf(item) : m_tracks.indexOf(item);
 }
 
 PlayListTrack *GroupedContainer::track(int index) const
 {
-    updateCache();
-    PlayListItem *i = item(index);
-    if(!i || i->isGroup())
-        return nullptr;
-    return static_cast<PlayListTrack *> (i);
+    return m_tracks.at(index);
 }
 
 PlayListGroup *GroupedContainer::group(int index) const
 {
-    PlayListItem *i = item(index);
-    if(i && i->isGroup())
-        return static_cast<PlayListGroup *> (i);
-    return nullptr;
+    return m_groups.at(index);
 }
 
 bool GroupedContainer::contains(PlayListItem *item) const
 {
-    updateCache();
-    return m_items.contains(item);
-}
-
-int GroupedContainer::indexOfTrack(int index) const
-{
-    updateCache();
-    if(index >= count() || index < 0)
-    {
-        qWarning("GroupedContainer: index is out of range");
-        return -1;
-    }
-    return m_items.at(index)->trackIndex();
-}
-
-PlayListTrack *GroupedContainer::findTrack(int number) const
-{
-    int firstNumber = 0;
-    for(const PlayListGroup *group : qAsConst(m_groups))
-    {
-        if(number >= firstNumber && number < firstNumber + group->count())
-        {
-            return group->trackList.at(number - firstNumber);
-        }
-        firstNumber += group->count();
-    }
-    return nullptr;
+    return item->isGroup() ? m_groups.contains(item) : m_tracks.contains(item);
 }
 
 void GroupedContainer::removeTrack(PlayListTrack *track)
@@ -271,12 +193,11 @@ void GroupedContainer::removeTrack(PlayListTrack *track)
         if((*it)->contains(track))
         {
             (*it)->trackList.removeAll(track);
-            m_items.removeAll(track);
+            m_tracks.removeAll(track);
             if((*it)->isEmpty())
             {
                 PlayListGroup *group = *it;
                 m_groups.removeAll(group);
-                m_items.removeAll(group);
                 delete group;
             }
             return;
@@ -284,7 +205,7 @@ void GroupedContainer::removeTrack(PlayListTrack *track)
         ++it;
     }
 
-    removeFromQueue(track);
+    m_update = true;
 }
 
 void GroupedContainer::removeTracks(QList<PlayListTrack *> tracks)
@@ -295,7 +216,6 @@ void GroupedContainer::removeTracks(QList<PlayListTrack *> tracks)
 
 bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 {
-    updateCache();
     PlayListGroup *group = nullptr;
     int firstIndex = 0, lastIndex = 0;
 
@@ -304,12 +224,12 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
         if(i == 0)
         {
            firstIndex = 0;
-           lastIndex = m_groups[i]->count();
+           lastIndex = m_groups[i]->count() - 1;
         }
         else
         {
             firstIndex = lastIndex + 1;
-            lastIndex = firstIndex + m_groups[i]->count();
+            lastIndex = firstIndex + m_groups[i]->count() + 1;
         }
 
         if(from > firstIndex && from <= lastIndex && to > firstIndex && to <= lastIndex)
@@ -341,8 +261,7 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
             if (i + to - from < 0)
                 break;
 
-            m_items.move(i,i + to - from);
-            swapTrackNumbers(&m_items,i,i + to - from);
+            m_tracks.move(i,i + to - from);
             group->trackList.move(i - firstIndex - 1,
                                   i + to - from  - firstIndex - 1);
         }
@@ -351,11 +270,10 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
     {
         for (int i = indexes.count() - 1; i >= 0; i--)
         {
-            if (indexes[i] + to - from >= m_items.count())
+            if (indexes[i] + to - from >= m_tracks.count())
                 break;
 
-            m_items.move(indexes[i], indexes[i] + to - from);
-            swapTrackNumbers(&m_items,indexes[i], indexes[i] + to - from);
+            m_tracks.move(indexes[i], indexes[i] + to - from);
             group->trackList.move(indexes[i] - firstIndex - 1,
                                   indexes[i] + to - from - firstIndex - 1);
         }
@@ -365,10 +283,9 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 
 QList<PlayListTrack *> GroupedContainer::takeAllTracks()
 {
-    QList<PlayListTrack *> tracks;
+    QList<PlayListTrack *> tracks = m_tracks;
     for(PlayListGroup *g : qAsConst(m_groups))
     {
-        tracks.append(g->trackList);
         g->trackList.clear();
     }
     clear();
@@ -377,19 +294,20 @@ QList<PlayListTrack *> GroupedContainer::takeAllTracks()
 
 void GroupedContainer::clear()
 {
-    clearQueue();
+    //clearQueue();
     while(!m_groups.isEmpty())
     {
         delete m_groups.takeFirst();
     }
-    m_items.clear();
+    m_tracks.clear();
+    m_lines.clear();
 }
 
 void GroupedContainer::reverseList()
 {
     QList<PlayListTrack *> tracks = takeAllTracks();
 
-    for (int i = 0; i < tracks.size()/2 ;i++)
+    for (int i = 0; i < tracks.size() / 2 ;i++)
         tracks.swapItemsAt(i, tracks.size() - i - 1);
 
     addTracks(tracks);
@@ -398,22 +316,49 @@ void GroupedContainer::reverseList()
 void GroupedContainer::randomizeList()
 {
     QRandomGenerator *rg = QRandomGenerator::global();
+    QList<PlayListTrack *> tracks = takeAllTracks();
 
-    for(int i = 0; i < m_groups.count(); ++i)
+    for (int i = 0; i < tracks.size(); i++)
+        tracks.swapItemsAt(rg->generate() % tracks.size(), rg->generate() % tracks.size());
+    addTracks(tracks);
+}
+
+int GroupedContainer::lineCount() const
+{
+    updateCache();
+    return m_lines.count();
+}
+
+PlayListItem *GroupedContainer::itemAtLine(int lineIndex) const
+{
+    updateCache();
+    PlayListLine line = m_lines.at(lineIndex);
+    if(line.isGroup)
+        return m_groups.at(line.index);
+
+    return m_tracks.at(line.index);
+}
+
+QList<PlayListItem *> GroupedContainer::itemsAtLines(int pos, int length) const
+{
+    updateCache();
+    QList<PlayListLine> lines = m_lines.mid(pos, length);
+    QList<PlayListItem *> out;
+    for (const PlayListLine &line : qAsConst(lines))
     {
-        for (int j = 0; j < m_groups[i]->trackList.size(); j++)
-        {
-            m_groups[i]->trackList.swapItemsAt(rg->generate() % m_groups[i]->trackList.size(),
-                                               rg->generate() % m_groups[i]->trackList.size());
-        }
+        if(line.isGroup)
+            out << m_groups.at(line.index);
+        else
+            out << m_tracks.at(line.index);
     }
 
-    for(int i = 0; i < m_groups.count(); ++i)
-    {
-        m_groups.swapItemsAt(rg->generate() % m_groups.size(), rg->generate() % m_groups.size());
-    }
+    return out;
+}
 
-    m_update = true;
+int GroupedContainer::subIndexOfLine(int lineIndex) const
+{
+    updateCache();
+    return m_lines[lineIndex].subindex;
 }
 
 void GroupedContainer::updateCache() const
@@ -421,17 +366,33 @@ void GroupedContainer::updateCache() const
     if(!m_update)
         return;
 
-    m_items.clear();
+    int group_height = 1;
     int t = 0;
 
-    for(int i = 0; i < m_groups.count(); ++i)
+    m_lines.clear();
+    m_lines.reserve(group_height * m_groups.count() + m_tracks.count());
+
+    for(int g = 0; g < m_groups.count(); ++g)
     {
-        m_items.append(m_groups.at(i));
-        m_items.reserve(m_items.count() + m_groups.at(i)->trackList.count());
-        for(PlayListTrack *track : qAsConst(m_groups.at(i)->trackList))
+
+        for(int j = 0; j < group_height; ++j)
         {
-            track->m_track_index = t++;
-            m_items.append(track);
+            PlayListLine line = {
+                .isGroup = true,
+                .index = g,
+                .subindex = j
+            };
+            m_lines << line;
+        }
+
+        for(int i = 0; i < m_groups.at(g)->trackList.count(); ++i)
+        {
+            PlayListLine line = {
+                .isGroup = false,
+                .index = t++,
+                .subindex = 0
+            };
+            m_lines << line;
         }
     }
     m_update = false;

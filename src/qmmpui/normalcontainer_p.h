@@ -34,37 +34,38 @@ public:
     NormalContainer();
     virtual ~NormalContainer();
 
+    void addTrack(PlayListTrack *track) override;
     void addTracks(const QList<PlayListTrack *> &tracks) override;
     int insertTrack(int index, PlayListTrack *track) override;
     void replaceTracks(const QList<PlayListTrack *> &tracks) override;
     QList<PlayListGroup *> groups() const override;
     QList<PlayListTrack *> tracks() const override;
-    const QList<PlayListItem *> &items() const override;
-    int count() const override;
     int trackCount() const override;
-    QList<PlayListItem *> mid(int pos, int count) const override;
+    int groupCount() const override;
+    QList<PlayListTrack *> mid(int pos, int count) const override;
     bool isEmpty() const override;
     bool isSelected(int index) const override;
     void setSelected(int index, bool selected) override;
     void clearSelection() override;
     int indexOf(PlayListItem *item) const override;
-    PlayListItem *item(int index) const override;
     PlayListTrack *track(int index) const override;
     PlayListGroup *group(int index) const override;
     bool contains(PlayListItem *item) const override;
-    int indexOfTrack(int index) const override;
-    PlayListTrack *findTrack(int number) const override;
     void removeTrack(PlayListTrack *track) override;
     void removeTracks(QList<PlayListTrack *> tracks) override;
     bool move(const QList<int> &indexes, int from, int to) override;
     QList<PlayListTrack *> takeAllTracks() override;
     void clear() override;
-
     void reverseList() override;
     void randomizeList() override;
 
+    int lineCount() const override;
+    PlayListItem *itemAtLine(int lineIndex) const override;
+    QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const override;
+    int subIndexOfLine(int lineIndex) const override;
+
 private:
-    QList<PlayListItem *> m_items;
+    QList<PlayListTrack *> m_tracks;
 };
 
 #endif // NORMALCONTAINER_P_H

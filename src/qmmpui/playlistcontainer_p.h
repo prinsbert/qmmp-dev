@@ -39,33 +39,29 @@ public:
     PlayListContainer(){}
     virtual ~PlayListContainer(){}
 
-    virtual void addTrack(PlayListTrack *track);
+    virtual void addTrack(PlayListTrack *track) = 0;
     virtual void addTracks(const QList<PlayListTrack *> &tracks) = 0;
     virtual int insertTrack(int index, PlayListTrack *track) = 0;
     virtual void replaceTracks(const QList<PlayListTrack *> &tracks) = 0;
     virtual QList<PlayListGroup *> groups() const = 0;
-    virtual const QList<PlayListItem *> &items() const = 0;
     virtual QList<PlayListTrack *> tracks() const = 0;
-    virtual int count() const = 0;
+
+    virtual int groupCount() const = 0;
     virtual int trackCount() const = 0;
-    virtual QList<PlayListItem *> mid(int pos, int count) const = 0;
+    virtual QList<PlayListTrack *> mid(int pos, int count) const = 0;
     virtual bool isEmpty() const = 0;
     virtual bool isSelected(int index) const = 0;
     virtual void setSelected(int index, bool selected) = 0;
     virtual void clearSelection() = 0;
     virtual int indexOf(PlayListItem *item) const = 0;
-    virtual PlayListItem *item(int index) const = 0;
     virtual PlayListTrack *track(int index) const = 0;
     virtual PlayListGroup *group(int index) const = 0;
     virtual bool contains(PlayListItem *item) const = 0;
-    virtual int indexOfTrack(int index) const = 0;
-    virtual PlayListTrack *findTrack(int number) const = 0;
     virtual void removeTrack(PlayListTrack *track) = 0;
     virtual void removeTracks(QList<PlayListTrack *> tracks) = 0;
     virtual bool move(const QList<int> &indexes, int from, int to) = 0;
     virtual QList<PlayListTrack *> takeAllTracks() = 0;
     virtual void clear() = 0;
-
     virtual void reverseList() = 0;
     virtual void randomizeList() = 0;
 
@@ -75,6 +71,11 @@ public:
     void clearQueue();
     void restoreQueue(const QList<PlayListTrack *> &tracks);
     const QList<PlayListTrack *> &queuedTracks() const;
+
+    virtual int lineCount() const = 0;
+    virtual PlayListItem *itemAtLine(int lineIndex) const = 0;
+    virtual QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const = 0;
+    virtual int subIndexOfLine(int lineIndex) const = 0;
 
 protected:
     void swapTrackNumbers(QList<PlayListItem *> *container, int index1, int index2);
