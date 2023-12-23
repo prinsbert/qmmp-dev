@@ -124,7 +124,7 @@ private:
     int m_pressed_index, m_drop_index, m_anchor_index;
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
-    int m_row_count = 0, m_first = 0, m_count = 0; //visible rows, first visible index, total item count
+    int m_row_count = 0, m_first = 0, m_lineCount = 0; //visible rows, first visible index, total item count
     PlayListItem *m_firstItem = nullptr; //first visible item
     /*!
      * Scroll direction that is performing in current moment.
