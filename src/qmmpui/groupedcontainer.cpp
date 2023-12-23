@@ -366,7 +366,7 @@ void GroupedContainer::updateCache() const
     if(!m_update)
         return;
 
-    int group_height = 1;
+    int group_height = 3;
     int t = 0;
 
     m_lines.clear();

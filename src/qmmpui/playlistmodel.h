@@ -222,6 +222,11 @@ public:
      * \param count A number of items. If \b count is -1 (the default), all items from pos are returned.
      */
     //QList<PlayListItem *> mid(int pos, int count = -1) const;
+
+    int lineCount() const;
+    PlayListItem *itemAtLine(int lineIndex) const;
+    QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const;
+    int subIndexOfLine(int lineIndex) const;
     /*!
      *  Moves the item at index position \b from to index position \b to.
      */
@@ -320,7 +325,7 @@ public:
      * Finds tracks by string \b str. The search is case insensitive.
      * Returns a list of \b PlayListItem pointers.
      */
-    //QList<PlayListItem *> findTracks(const QString &str) const;
+    QList<PlayListItem *> findTracks(const QString &str) const;
     /*!
      * Enum of the playlist update flags.
      */

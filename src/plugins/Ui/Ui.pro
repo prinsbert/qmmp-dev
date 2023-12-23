@@ -7,5 +7,5 @@ TEMPLATE = subdirs
 #}
 
 contains(CONFIG, WITH_QSUI){
-#SUBDIRS += qsui
+SUBDIRS += qsui
 }

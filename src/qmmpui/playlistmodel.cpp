@@ -377,6 +377,26 @@ bool PlayListModel::previous()
     return m_play_state->previous();
 }
 
+int PlayListModel::lineCount() const
+{
+    return m_container->lineCount();
+}
+
+PlayListItem *PlayListModel::itemAtLine(int lineIndex) const
+{
+    return m_container->itemAtLine(lineIndex);
+}
+
+QList<PlayListItem *> PlayListModel::itemsAtLines(int pos, int length) const
+{
+    return m_container->itemsAtLines(pos, length);
+}
+
+int PlayListModel::subIndexOfLine(int lineIndex) const
+{
+    return m_container->subIndexOfLine(lineIndex);
+}
+
 void PlayListModel::clear()
 {
     m_loader->finish();
@@ -425,24 +445,22 @@ PlayListTrack *PlayListModel::findTrack(int track_index) const
     return m_container->track(track_index);
 }
 
-//QList<PlayListItem *> PlayListModel::findTracks(const QString &str) const
-//{
-//    QList<PlayListItem *> items;
-//    PlayListItem *item = nullptr;
-//    if(str.isEmpty())
-//        return items;
+QList<PlayListItem *> PlayListModel::findTracks(const QString &str) const
+{
+    QList<PlayListItem *> items;
+    PlayListItem *item = nullptr;
+    if(str.isEmpty())
+        return items;
 
-//    for(int i = 0; i < m_container->count(); ++i)
-//    {
-//        item = m_container->item(i);
-//        if(item->isGroup())
-//            continue;
+    for(int i = 0; i < m_container->trackCount(); ++i)
+    {
+        item = m_container->track(i);
 
-//        if(!item->formattedTitles().filter(str, Qt::CaseInsensitive).isEmpty())
-//            items.append(item);
-//    }
-//    return items;
-//}
+        if(!item->formattedTitles().filter(str, Qt::CaseInsensitive).isEmpty())
+            items.append(item);
+    }
+    return items;
+}
 
 void PlayListModel::setSelected(int index, bool selected)
 {
