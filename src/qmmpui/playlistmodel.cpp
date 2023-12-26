@@ -811,16 +811,16 @@ QList<int> PlayListModel::selectedIndexes() const
     return selected_rows;
 }
 
-//QList<PlayListTrack *> PlayListModel::selectedTracks() const
-//{
-//    QList<PlayListTrack*> selected_tracks;
-//    for(PlayListItem *item : m_container->items())
-//    {
-//        if(!item->isGroup() && item->isSelected())
-//            selected_tracks.append(static_cast<PlayListTrack *>(item));
-//    }
-//    return selected_tracks;
-//}
+QList<PlayListTrack *> PlayListModel::selectedTracks() const
+{
+    QList<PlayListTrack *> selected_tracks;
+    for(PlayListTrack *track : m_container->tracks())
+    {
+        if(track->isSelected())
+            selected_tracks << track;
+    }
+    return selected_tracks;
+}
 
 //QList<PlayListItem *> PlayListModel::items() const
 //{

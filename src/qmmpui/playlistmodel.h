@@ -257,9 +257,9 @@ public:
      */
     QList<int> selectedIndexes() const;
     /*!
-     * Returns list of \b PlayListItem pointers that are selected.
+     * Returns list of \b PlayListTrack pointers that are selected.
      */
-    //QList<PlayListTrack *> selectedTracks() const;
+    QList<PlayListTrack *> selectedTracks() const;
     /*!
      * Returns list of all \b PlayListItem pointers.
      */
