@@ -63,6 +63,7 @@ public:
     PlayListItem *itemAtLine(int lineIndex) const override;
     QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const override;
     int subIndexOfLine(int lineIndex) const override;
+    int trackIndexAtLine(int lineIndex) const override;
 
 private:
     QList<PlayListTrack *> m_tracks;

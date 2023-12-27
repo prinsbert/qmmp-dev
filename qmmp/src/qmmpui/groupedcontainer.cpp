@@ -361,6 +361,12 @@ int GroupedContainer::subIndexOfLine(int lineIndex) const
     return m_lines[lineIndex].subindex;
 }
 
+int GroupedContainer::trackIndexAtLine(int lineIndex) const
+{
+    updateCache();
+    return m_lines[lineIndex].isGroup ? -1 : m_lines[lineIndex].index;
+}
+
 void GroupedContainer::updateCache() const
 {
     if(!m_update)
