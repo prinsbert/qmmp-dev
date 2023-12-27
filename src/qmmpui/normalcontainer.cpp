@@ -249,3 +249,8 @@ int NormalContainer::subIndexOfLine(int lineIndex) const
     Q_UNUSED(lineIndex);
     return 0;
 }
+
+int NormalContainer::trackIndexAtLine(int lineIndex) const
+{
+    return lineIndex;
+}

@@ -227,6 +227,7 @@ public:
     PlayListItem *itemAtLine(int lineIndex) const;
     QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const;
     int subIndexOfLine(int lineIndex) const;
+    int trackIndexAtLine(int lineIndex) const;
     /*!
      *  Moves the item at index position \b from to index position \b to.
      */
