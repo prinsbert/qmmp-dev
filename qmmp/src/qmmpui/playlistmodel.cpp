@@ -399,7 +399,7 @@ int PlayListModel::subIndexOfLine(int lineIndex) const
 
 int PlayListModel::trackIndexAtLine(int lineIndex) const
 {
-    return m_container->subIndexOfLine(lineIndex);
+    return m_container->trackIndexAtLine(lineIndex);
 }
 
 void PlayListModel::clear()
