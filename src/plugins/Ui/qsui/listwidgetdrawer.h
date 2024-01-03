@@ -27,30 +27,21 @@
 #include <QRect>
 #include <QFontMetrics>
 
-
 class QPainter;
 class PlayListHeaderModel;
 
 struct ListWidgetRow
 {
-    ListWidgetRow()
-    {
-        flags = NO_FLAGS;
-        numberColumnWidth = 0;
-        lengthColumnWidth = 0;
-        trackStateColumn = -1;
-        autoResize = false;
-        number = 0;
-    }
     QStringList titles;
     QList<int> sizes;
     QList<int> alignment;
     QString length;
     QString extraString;
-    int number;
-    int numberColumnWidth;
-    int lengthColumnWidth;
-    int trackStateColumn;
+    int number = 0;
+    int numberColumnWidth = 0;
+    int lengthColumnWidth = 0;
+    int trackStateColumn = 0;
+    int subIndex = 0;
     enum
     {
         NO_FLAGS = 0x00,
@@ -67,9 +58,9 @@ struct ListWidgetRow
         ALIGN_RIGHT,
     };
 
-    int flags;
+    int flags = NO_FLAGS;
     QRect rect; //geometry
-    bool autoResize;
+    bool autoResize = false;
 };
 
 /**

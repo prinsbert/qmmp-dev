@@ -90,7 +90,7 @@ protected:
     void resizeEvent(QResizeEvent *) override;
     void wheelEvent(QWheelEvent *) override;
     void showEvent(QShowEvent *) override;
-    int indexAt(int)const;
+    int lineAt(int)const;
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;
     void dragLeaveEvent(QDragLeaveEvent *) override;
@@ -124,7 +124,7 @@ private:
     int m_pressed_index, m_drop_index, m_anchor_index;
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
-    int m_row_count = 0, m_first = 0, m_lineCount = 0; //visible rows, first visible index, total item count
+    int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
     PlayListItem *m_firstItem = nullptr; //first visible item
     /*!
      * Scroll direction that is performing in current moment.
@@ -145,7 +145,6 @@ private:
     QString m_filterString;
     bool m_filterMode = false;
     QList<PlayListItem *> m_filteredItems;
-
 };
 
 #endif
