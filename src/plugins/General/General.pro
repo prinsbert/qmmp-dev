@@ -4,7 +4,7 @@ SUBDIRS += statusicon \
            notifier \
            lyrics \
            scrobbler \
-           fileops \
+#           fileops \
            covermanager \
            streambrowser \
            trackchange \
@@ -20,7 +20,7 @@ unix:SUBDIRS += mpris \
                 gnomehotkey
 
 contains(CONFIG, UDISKS_PLUGIN){
-    unix:SUBDIRS += udisks
+#    unix:SUBDIRS += udisks
 }
 
 contains(CONFIG, SLEEPINHIBITOR_PLUGIN){

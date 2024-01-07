@@ -2,7 +2,7 @@ TEMPLATE = subdirs
 
 SUBDIRS += Input \
            Output \
-#           General \
+           General \
            Visual \
            Transports \
            Effect \
