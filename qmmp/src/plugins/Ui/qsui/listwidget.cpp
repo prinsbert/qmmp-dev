@@ -215,7 +215,7 @@ void ListWidget::paintEvent(QPaintEvent *)
     }
 }
 
-void ListWidget::mouseDoubleClickEvent (QMouseEvent *e)
+void ListWidget::mouseDoubleClickEvent(QMouseEvent *e)
 {
     int y = e->position().y();
     int index = lineAt(y);
@@ -245,36 +245,39 @@ void ListWidget::mousePressEvent(QMouseEvent *e)
     if(m_popupWidget)
         m_popupWidget->hide();
 
-    int pressedLineIndex = lineAt(e->position().y());
+    int pressedLine = lineAt(e->position().y());
 
-    if (INVALID_INDEX != pressedLineIndex && m_model->lineCount() > pressedLineIndex)
+    if(pressedLine != INVALID_INDEX && pressedLine < m_model->lineCount())
     {
-        m_pressed_index = m_model->trackIndexAtLine(pressedLineIndex);
-        if(e->button() == Qt::RightButton)
+        m_pressed_index = m_model->trackIndexAtLine(pressedLine);
+        PlayListItem *item = m_model->itemAtLine(pressedLine);
+
+        if(e->button() == Qt::RightButton && item)
         {
-            if(!m_model->isSelected(m_pressed_index))
+            if(!item->isSelected())
             {
                 m_anchor_index = m_pressed_index;
                 m_model->clearSelection();
-                m_model->setSelected(m_pressed_index, true);
+                m_model->setSelected(item);
             }
-//            if(m_model->isGroup(index) && m_model->selectedTracks().isEmpty())
-//            {
-//                m_anchor_index = m_pressed_index;
-//                PlayListGroup *group = m_model->group(index);
-//                m_model->setSelected(group->tracks());
-//            }
+            if(item->isGroup() && m_model->selectedTracks().isEmpty())
+            {
+                m_anchor_index = m_pressed_index;
+                PlayListGroup *group = static_cast<PlayListGroup *>(item);
+                m_model->setSelected(group->tracks());
+            }
             QWidget::mousePressEvent(e);
             return;
         }
 
-        if (m_model->isSelected(m_pressed_index) && (e->modifiers() == Qt::NoModifier))
+        if (item && item->isSelected() && (e->modifiers() == Qt::NoModifier))
         {
             m_select_on_release = true;
             QWidget::mousePressEvent(e);
             return;
         }
 
+        /*
         if ((Qt::ShiftModifier & e->modifiers()))
         {
             int prev_anchor_index = m_anchor_index;
@@ -295,6 +298,7 @@ void ListWidget::mousePressEvent(QMouseEvent *e)
             }
 
         }
+        */
         update();
     }
     QWidget::mousePressEvent(e);
@@ -835,17 +839,17 @@ void ListWidget::mouseMoveEvent(QMouseEvent *e)
 
 void ListWidget::mouseReleaseEvent(QMouseEvent *e)
 {
-    if (m_select_on_release)
-    {
-        m_model->clearSelection();
-        m_model->setSelected(m_pressed_index,true);
-        m_anchor_index = m_pressed_index;
-        m_select_on_release = false;
-    }
-    m_pressed_index = INVALID_INDEX;
-    m_scroll_direction = NONE;
-    m_timer->stop();
-    QWidget::mouseReleaseEvent(e);
+//    if (m_select_on_release)
+//    {
+//        m_model->clearSelection();
+//        m_model->setSelected(m_pressed_index,true);
+//        m_anchor_index = m_pressed_index;
+//        m_select_on_release = false;
+//    }
+//    m_pressed_index = INVALID_INDEX;
+//    m_scroll_direction = NONE;
+//    m_timer->stop();
+//    QWidget::mouseReleaseEvent(e);
 }
 
 int ListWidget::lineAt(int y) const

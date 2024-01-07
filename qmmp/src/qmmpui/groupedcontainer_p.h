@@ -21,8 +21,6 @@ public:
     int trackCount() const override;
     QList<PlayListTrack *> mid(int pos, int count) const override;
     bool isEmpty() const override;
-    bool isSelected(int index) const override;
-    void setSelected(int index, bool selected) override;
     void clearSelection() override;
     int indexOf(PlayListItem *item) const override;
     PlayListTrack *track(int index) const override;

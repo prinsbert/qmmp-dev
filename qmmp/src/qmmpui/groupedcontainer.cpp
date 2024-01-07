@@ -149,20 +149,13 @@ bool GroupedContainer::isEmpty() const
     return m_tracks.isEmpty();
 }
 
-bool GroupedContainer::isSelected(int index) const
-{
-    return m_tracks.at(index)->isSelected();
-}
-
-void GroupedContainer::setSelected(int index, bool selected)
-{
-    return m_tracks.at(index)->setSelected(selected);
-}
-
 void GroupedContainer::clearSelection()
 {
     for(PlayListTrack *track : qAsConst(m_tracks))
         track->setSelected(false);
+
+    for(PlayListGroup *group : qAsConst(m_groups))
+        group->setSelected(false);
 }
 
 int GroupedContainer::indexOf(PlayListItem *item) const

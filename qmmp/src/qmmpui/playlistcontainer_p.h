@@ -50,8 +50,6 @@ public:
     virtual int trackCount() const = 0;
     virtual QList<PlayListTrack *> mid(int pos, int count) const = 0;
     virtual bool isEmpty() const = 0;
-    virtual bool isSelected(int index) const = 0;
-    virtual void setSelected(int index, bool selected) = 0;
     virtual void clearSelection() = 0;
     virtual int indexOf(PlayListItem *item) const = 0;
     virtual PlayListTrack *track(int index) const = 0;
