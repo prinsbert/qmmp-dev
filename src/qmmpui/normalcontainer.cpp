@@ -100,19 +100,6 @@ bool NormalContainer::isEmpty() const
     return m_tracks.isEmpty();
 }
 
-bool NormalContainer::isSelected(int index) const
-{
-    if (0 <= index && index < m_tracks.count())
-        return m_tracks.at(index)->isSelected();
-    return false;
-}
-
-void NormalContainer::setSelected(int index, bool selected)
-{
-    if (0 <= index && index < m_tracks.count())
-        m_tracks.at(index)->setSelected(selected);
-}
-
 void NormalContainer::clearSelection()
 {
     for(PlayListItem *item : qAsConst(m_tracks))

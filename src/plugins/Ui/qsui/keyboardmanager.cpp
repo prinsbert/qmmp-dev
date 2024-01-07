@@ -233,19 +233,19 @@ void KeyboardManager::processEnter()
 
 void KeyboardManager::processPgUp()
 {
-    if(!m_listWidget || m_listWidget->filterMode())
-        return;
+//    if(!m_listWidget || m_listWidget->filterMode())
+//        return;
 
-    int first = m_listWidget->firstVisibleIndex();
-    int offset = qMax(m_listWidget->firstVisibleIndex() - m_listWidget->visibleRows(), 0);
-    m_listWidget->setViewPosition (offset);
+//    int first = m_listWidget->firstVisibleIndex();
+//    int offset = qMax(m_listWidget->firstVisibleIndex() - m_listWidget->visibleRows(), 0);
+//    m_listWidget->setViewPosition (offset);
 
-    m_listWidget->model()->clearSelection();
-    if(m_listWidget->firstVisibleIndex() == first)
-        m_listWidget->setAnchorIndex(0);
-    else
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex() + m_listWidget->visibleRows()/2);
-    m_listWidget->model()->setSelected(m_listWidget->anchorIndex(), true);
+//    m_listWidget->model()->clearSelection();
+//    if(m_listWidget->firstVisibleIndex() == first)
+//        m_listWidget->setAnchorIndex(0);
+//    else
+//        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex() + m_listWidget->visibleRows()/2);
+//    m_listWidget->model()->setSelected(m_listWidget->anchorIndex(), true);
 }
 
 void KeyboardManager::processPgDown()

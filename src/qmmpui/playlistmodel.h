@@ -174,13 +174,14 @@ public:
     /*!
      * Returns \b true if track with \b index is selected, otherwise returns \b false
      */
-    bool isSelected(int index) const;
+    //bool isSelected(int index) const;
     /*!
      * Sets the selected state of the item to \b select
      * @param index Number of item.
      * @param selected Selection state (\b true - select, \b false - unselect)
      */
-    void setSelected(int index, bool selected = true);
+    //void setSelected(int index, bool selected = true);
+    void setSelected(PlayListItem *item, bool selected = true);
     /*!
      * Sets the selected state of the list of tracks to \b select
      * @param tracks List of tracks.
@@ -205,7 +206,7 @@ public:
      * @param indexes List of item \b indexes.
      * @param selected Selection state (\b true - select, \b false - unselect)
      */
-    void setSelected(const QList<int> &indexes, bool selected = true);
+    //void setSelected(const QList<int> &indexes, bool selected = true);
     /*!
      * Advances to the next item. Returns \b false if next iten doesn't exist,
      * otherwise returns \b true
