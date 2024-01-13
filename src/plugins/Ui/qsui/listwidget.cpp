@@ -218,24 +218,37 @@ void ListWidget::paintEvent(QPaintEvent *)
 void ListWidget::mouseDoubleClickEvent(QMouseEvent *e)
 {
     int y = e->position().y();
-    int index = lineAt(y);
+    int lineIndex = lineAt(y);
 
-    if (INVALID_INDEX != index)
+    if(INVALID_INDEX != lineIndex)
     {
         if(m_filterMode)
         {
             m_filterMode = false;
             m_filteredItems.clear();
-            scrollTo(index);
+            scrollTo(lineIndex);
         }
 
-        m_model->setCurrent(index);
+        PlayListItem *item = m_model->itemAtLine(lineIndex);
+        if(!item)
+            return;
+
+        if(item->isGroup())
+        {
+            PlayListGroup *group = static_cast<PlayListGroup *>(item);
+            m_model->setCurrent(group->tracks().constFirst());
+        }
+        else
+        {
+            PlayListTrack *track = static_cast<PlayListTrack *>(item);
+            m_model->setCurrent(track);
+        }
+
         MediaPlayer *player = MediaPlayer::instance();
         player->playListManager()->selectPlayList(m_model);
         player->playListManager()->activatePlayList(m_model);
         player->stop();
         player->play();
-        emit doubleClicked();
         update();
     }
 }
@@ -312,7 +325,7 @@ void ListWidget::resizeEvent(QResizeEvent *e)
     QWidget::resizeEvent(e);
 }
 
-void ListWidget::wheelEvent (QWheelEvent *e)
+void ListWidget::wheelEvent(QWheelEvent *e)
 {
     if(m_hslider->underMouse())
         return;
@@ -856,7 +869,7 @@ int ListWidget::lineAt(int y) const
 
     if(m_filterMode)
     {
-        for (int i = 0; i < qMin(m_row_count, m_filteredItems.count() - m_firstLine); ++i)
+        for(int i = 0; i < qMin(m_row_count, m_filteredItems.count() - m_firstLine); ++i)
         {
             if ((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
                 return m_model->indexOf(m_filteredItems.at(m_firstLine + i));
@@ -864,7 +877,7 @@ int ListWidget::lineAt(int y) const
     }
     else
     {
-        for (int i = 0; i < qMin(m_row_count, m_model->lineCount() - m_firstLine); ++i)
+        for(int i = 0; i < qMin(m_row_count, m_model->lineCount() - m_firstLine); ++i)
         {
             if ((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
                 return m_firstLine + i;

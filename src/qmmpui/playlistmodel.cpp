@@ -344,8 +344,6 @@ bool PlayListModel::setCurrent(int index)
 
 bool PlayListModel::setCurrent(PlayListTrack *track)
 {
-    if(!m_container->contains(track))
-        return false;
     return setCurrent(m_container->indexOf(track));
 }
 

@@ -78,7 +78,6 @@ public slots:
     void removeUnselected();
 
 signals:
-    void doubleClicked();
     void positionChanged(int, int); //current position, maximum value
 
 protected:
