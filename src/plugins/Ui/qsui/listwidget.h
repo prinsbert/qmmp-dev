@@ -89,7 +89,7 @@ protected:
     void resizeEvent(QResizeEvent *) override;
     void wheelEvent(QWheelEvent *) override;
     void showEvent(QShowEvent *) override;
-    int lineAt(int)const;
+    int lineAt(int) const;
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;
     void dragLeaveEvent(QDragLeaveEvent *) override;

@@ -850,17 +850,18 @@ void ListWidget::mouseMoveEvent(QMouseEvent *e)
 
 void ListWidget::mouseReleaseEvent(QMouseEvent *e)
 {
-//    if (m_select_on_release)
-//    {
-//        m_model->clearSelection();
-//        m_model->setSelected(m_pressed_index,true);
-//        m_anchor_index = m_pressed_index;
-//        m_select_on_release = false;
-//    }
-//    m_pressed_index = INVALID_INDEX;
-//    m_scroll_direction = NONE;
-//    m_timer->stop();
-//    QWidget::mouseReleaseEvent(e);
+    if(m_select_on_release)
+    {
+        m_model->clearSelection();
+        PlayListItem *item = m_model->itemAtLine(m_pressedLine);
+        m_model->setSelected(item, true);
+        m_anchorLine = m_pressedLine;
+        m_select_on_release = false;
+    }
+    m_pressedLine = INVALID_INDEX;
+    m_scroll_direction = NONE;
+    m_timer->stop();
+    QWidget::mouseReleaseEvent(e);
 }
 
 int ListWidget::lineAt(int y) const
