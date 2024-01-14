@@ -267,6 +267,7 @@ public:
      * Returns list of all \b PlayListItem pointers.
      */
     //QList<PlayListItem*> items() const;
+    QList<PlayListTrack *> tracks() const;
     /*!
      * Returns number of first item that selected upper the \b row item.
      */

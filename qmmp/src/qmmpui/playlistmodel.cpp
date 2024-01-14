@@ -859,6 +859,11 @@ QList<PlayListTrack *> PlayListModel::selectedTracks() const
     return selected_tracks;
 }
 
+QList<PlayListTrack *> PlayListModel::tracks() const
+{
+    return m_container->tracks();
+}
+
 //QList<PlayListItem *> PlayListModel::items() const
 //{
 //    return m_container->items();
