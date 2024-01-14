@@ -691,16 +691,26 @@ void PlayListModel::removeUnselected()
 
 void PlayListModel::invertSelection()
 {
-//    for(int i = 0; i < m_container->trackCount(); ++i)
-//        m_container->setSelected(i, !m_container->isSelected(i));
-//    emit listChanged(SELECTION);
+    for(int i = 0; i < m_container->trackCount(); ++i)
+    {
+        PlayListTrack *track = m_container->track(i);
+        track->setSelected(!track->isSelected());
+    }
+    for(int i = 0; i < m_container->groupCount(); ++i)
+    {
+        PlayListGroup *group = m_container->group(i);
+        group->setSelected(!group->isSelected());
+    }
+    emit listChanged(SELECTION);
 }
 
 void PlayListModel::selectAll()
 {
-//    for(int i = 0; i < m_container->trackCount(); ++i)
-//        m_container->setSelected(i, true);
-//    emit listChanged(SELECTION);
+    for(int i = 0; i < m_container->trackCount(); ++i)
+        m_container->track(i)->setSelected(true);
+    for(int i = 0; i < m_container->groupCount(); ++i)
+        m_container->group(i)->setSelected(true);
+    emit listChanged(SELECTION);
 }
 
 void PlayListModel::showDetails(QWidget *parent)
