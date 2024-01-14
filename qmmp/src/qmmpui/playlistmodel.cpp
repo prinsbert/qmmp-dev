@@ -491,6 +491,24 @@ void PlayListModel::setSelected(const QList<PlayListItem *> &items, bool selecte
     emit listChanged(SELECTION);
 }
 
+void PlayListModel::setSelectedAtLines(int firstLine, int lastLine, bool selected)
+{
+    if(firstLine > lastLine)
+    {
+        setSelectedAtLines(lastLine, firstLine, selected);
+        return;
+    }
+
+    for(int index = firstLine; index <= lastLine; ++index)
+    {
+        PlayListItem *item = m_container->itemAtLine(index);
+        if(item)
+            item->setSelected(selected);
+    }
+
+    emit listChanged(SELECTION);
+}
+
 //void PlayListModel::setSelected(int first, int last, bool selected)
 //{
 //    if(first > last)
