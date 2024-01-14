@@ -267,7 +267,8 @@ void ListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row, int
 
     if(m_show_anchor && (row->flags & ListWidgetRow::ANCHOR))
     {
-        painter->setPen(m_normal);
+        //painter->setPen(m_normal);
+        painter->setPen("cyan");
     }
     else if(row->flags & ListWidgetRow::SELECTED)
     {

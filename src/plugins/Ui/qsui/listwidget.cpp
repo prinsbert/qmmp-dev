@@ -39,12 +39,7 @@
 #include "actionmanager.h"
 #include "popupwidget.h"
 
-#define INVALID_INDEX -1
-
 ListWidget::ListWidget(PlayListModel *model, QWidget *parent) : QWidget(parent),
-    m_pressedLine(INVALID_INDEX),
-    m_drop_index(INVALID_INDEX),
-    m_anchorLine(INVALID_INDEX),
     m_model(model)
 {
     setFocusPolicy(Qt::StrongFocus);
@@ -201,14 +196,15 @@ void ListWidget::paintEvent(QPaintEvent *)
 
         if(m_rows[i]->flags & ListWidgetRow::GROUP)
         {
-            m_drawer.drawSeparator(&painter, m_rows[i], rtl);
+            if (m_rows[i]->subIndex == 1)
+                m_drawer.drawSeparator(&painter, m_rows[i], rtl);
             continue;
         }
 
         m_drawer.drawTrack(&painter, m_rows[i], rtl);
     }
     //draw drop line
-    if(m_drop_index != INVALID_INDEX)
+    if(m_drop_index >= 0)
     {
         m_drawer.drawDropLine(&painter, m_drop_index - m_firstLine, width(),
                               m_header->isVisible() ? m_header->height() : 0);
@@ -220,7 +216,7 @@ void ListWidget::mouseDoubleClickEvent(QMouseEvent *e)
     int y = e->position().y();
     int lineIndex = lineAt(y);
 
-    if(INVALID_INDEX != lineIndex)
+    if(lineIndex >= 0)
     {
         if(m_filterMode)
         {
@@ -260,7 +256,7 @@ void ListWidget::mousePressEvent(QMouseEvent *e)
 
     int pressedLine = lineAt(e->position().y());
 
-    if(pressedLine != INVALID_INDEX && pressedLine < m_model->lineCount())
+    if(pressedLine >= 0 && pressedLine < m_model->lineCount())
     {
         m_pressedLine = pressedLine;
         PlayListItem *item = m_model->itemAtLine(pressedLine);
@@ -283,18 +279,18 @@ void ListWidget::mousePressEvent(QMouseEvent *e)
             return;
         }
 
-        if (item->isSelected() && (e->modifiers() == Qt::NoModifier))
+        if(item->isSelected() && (e->modifiers() == Qt::NoModifier))
         {
             m_select_on_release = true;
             QWidget::mousePressEvent(e);
             return;
         }
 
-        if ((Qt::ShiftModifier & e->modifiers()))
+        if((Qt::ShiftModifier & e->modifiers()))
         {
             int prevAnchorLine = m_anchorLine;
             m_anchorLine = m_pressedLine;
-//            m_model->setSelected(m_pressed_index, prev_anchor_index, true);
+            m_model->setSelectedAtLines(m_pressedLine, prevAnchorLine, true);
         }
         else //ShiftModifier released
         {
@@ -665,7 +661,7 @@ void ListWidget::dropEvent(QDropEvent *event)
         QApplication::restoreOverrideCursor();
 
         int index = lineAt(event->position().y());
-        if(index == INVALID_INDEX)
+        if(index < 0)
             index = qMin(m_firstLine + m_row_count, m_model->lineCount());
 
         if(event->mimeData()->hasUrls())
@@ -679,19 +675,19 @@ void ListWidget::dropEvent(QDropEvent *event)
             m_model->insert(index, json);
         }
     }
-    m_drop_index = INVALID_INDEX;
+    m_drop_index = -1;
 }
 
 void ListWidget::dragLeaveEvent(QDragLeaveEvent *)
 {
-    m_drop_index = INVALID_INDEX;
+    m_drop_index = -1;
     update();
 }
 
 void ListWidget::dragMoveEvent(QDragMoveEvent *event)
 {
     int index = lineAt(event->position().y());
-    if(index == INVALID_INDEX)
+    if(index < 0)
         index = qMin(m_firstLine + m_row_count, m_model->lineCount());
     if(index != m_drop_index)
     {
@@ -820,7 +816,7 @@ void ListWidget::mouseMoveEvent(QMouseEvent *e)
 
         int index = lineAt(e->position().y());
 
-        if (INVALID_INDEX != index)
+        if(index < 0)
         {
             m_anchorLine = index;
             SimpleSelection sel = m_model->getSelection(m_pressedLine);
@@ -858,7 +854,7 @@ void ListWidget::mouseReleaseEvent(QMouseEvent *e)
         m_anchorLine = m_pressedLine;
         m_select_on_release = false;
     }
-    m_pressedLine = INVALID_INDEX;
+    m_pressedLine = -1;
     m_scroll_direction = NONE;
     m_timer->stop();
     QWidget::mouseReleaseEvent(e);
@@ -884,7 +880,7 @@ int ListWidget::lineAt(int y) const
                 return m_firstLine + i;
         }
     }
-    return INVALID_INDEX;
+    return -1;
 }
 
 void ListWidget::contextMenuEvent(QContextMenuEvent * event)

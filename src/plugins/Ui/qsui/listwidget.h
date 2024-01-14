@@ -120,7 +120,7 @@ private:
     void updateScrollBars();
 
     bool m_update = false;
-    int m_pressedLine, m_drop_index, m_anchorLine;
+    int m_pressedLine = -1, m_drop_index = -1, m_anchorLine = -1;
     QMenu *m_menu = nullptr;
     PlayListModel *m_model;
     int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
