@@ -637,57 +637,53 @@ void PlayListModel::removeUnselected()
 //        emit listChanged(flags);
 //}
 
-//int PlayListModel::removeTrackInternal(int i)
-//{
-//    if((i < 0) || (i >= count()))
-//        return 0;
+int PlayListModel::removeTrackInternal(int i)
+{
+    if((i < 0) || (i >= m_container->trackCount()))
+        return 0;
 
-//    int flags = 0;
-//    PlayListTrack* track = m_container->track(i);
-//    if(!track)
-//        return flags;
-//    if(track->isQueued())
-//        flags |= QUEUE;
-//    m_container->removeTrack(track);
-//    if(m_stop_track == track)
-//    {
-//        flags |= STOP_AFTER;
-//        m_stop_track = nullptr;
-//    }
-//    if(track->isSelected())
-//        flags |= SELECTION;
+    int flags = 0;
+    PlayListTrack* track = m_container->track(i);
+    if(!track)
+        return flags;
+    if(track->isQueued())
+        flags |= QUEUE;
+    m_container->removeTrack(track);
+    if(m_stop_track == track)
+    {
+        flags |= STOP_AFTER;
+        m_stop_track = nullptr;
+    }
+    if(track->isSelected())
+        flags |= SELECTION;
 
-//    m_total_duration -= track->duration();
-//    m_total_duration = qMax(Q_INT64_C(0), m_total_duration);
+    m_total_duration -= track->duration();
+    m_total_duration = qMax(0LL, m_total_duration);
 
-//    if(m_current_track == track)
-//    {
-//        flags |= CURRENT;
-//        if(m_container->isEmpty())
-//            m_current_track = nullptr;
-//        else
-//        {
-//            m_current = i > 0 ? qMin(i - 1, m_container->count() - 1) : 0;
-//            if(!(m_current_track = m_container->track(m_current)))
-//            {
-//                m_current_track = m_current > 0 ? m_container->track(m_current - 1) :
-//                                                  m_container->track(1);
-//            }
-//        }
-//        emit currentTrackRemoved();
-//    }
+    if(m_current_track == track)
+    {
+        flags |= CURRENT;
+        if(m_container->isEmpty())
+            m_current_track = nullptr;
+        else
+        {
+            m_current = i > 0 ? qMin(i - 1, m_container->trackCount() - 1) : 0;
+            m_current_track = m_container->track(m_current);
+            emit currentTrackRemoved();
+        }
+    }
 
-//    if(track->isUsed())
-//        track->deleteLater();
-//    else
-//        delete track;
+    if(track->isUsed())
+        track->deleteLater();
+    else
+        delete track;
 
-//    m_current = m_current_track ? m_container->indexOf(m_current_track) : -1;
-//    m_play_state->prepare();
+    m_current = m_current_track ? m_container->indexOf(m_current_track) : -1;
+    m_play_state->prepare();
 
-//    flags |= STRUCTURE;
-//    return flags;
-//}
+    flags |= STRUCTURE;
+    return flags;
+}
 
 void PlayListModel::invertSelection()
 {

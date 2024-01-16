@@ -564,7 +564,7 @@ private:
      */
     //void removeSelection(bool inverted = false);
 
-    //int removeTrackInternal(int i);
+    int removeTrackInternal(int i);
 
 private slots:
     /*!
