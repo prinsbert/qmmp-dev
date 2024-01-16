@@ -715,24 +715,15 @@ void PlayListModel::selectAll()
 
 void PlayListModel::showDetails(QWidget *parent)
 {
-//    QList<PlayListTrack *> selected_tracks;
+    QList<PlayListTrack *> selected_tracks = selectedTracks();
 
-//    for(int i = 0; i < m_container->trackCount(); ++i)
-//    {
-//        if(!m_container->isSelected(i))
-//            continue;
-//        PlayListTrack *track = m_container->track(i);
-//        if(track)
-//            selected_tracks.append(track);
-//    }
-
-//    if(!selected_tracks.isEmpty())
-//    {
-//        DetailsDialog *d = new DetailsDialog(selected_tracks, parent);
-//        d->setAttribute(Qt::WA_DeleteOnClose, true);
-//        connect(d, SIGNAL(metaDataChanged(QStringList)), SLOT(updateMetaData(QStringList)));
-//        d->show();
-//    }
+    if(!selected_tracks.isEmpty())
+    {
+        DetailsDialog *d = new DetailsDialog(selected_tracks, parent);
+        d->setAttribute(Qt::WA_DeleteOnClose, true);
+        connect(d, SIGNAL(metaDataChanged(QStringList)), SLOT(updateMetaData(QStringList)));
+        d->show();
+    }
 }
 
 void PlayListModel::showDetailsForCurrent(QWidget *parent)
