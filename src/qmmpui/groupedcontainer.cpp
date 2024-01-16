@@ -222,10 +222,10 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
         else
         {
             firstIndex = lastIndex + 1;
-            lastIndex = firstIndex + m_groups[i]->count() + 1;
+            lastIndex = firstIndex + m_groups[i]->count();
         }
 
-        if(from > firstIndex && from <= lastIndex && to > firstIndex && to <= lastIndex)
+        if(from >= firstIndex && from <= lastIndex && to >= firstIndex && to <= lastIndex)
         {
             group = m_groups.at(i);
             break;
@@ -237,13 +237,11 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 
     for(int i : qAsConst(indexes))
     {
-        if(i <= firstIndex || i > lastIndex)
+        if(i < firstIndex || i > lastIndex)
             return false;
-        if(i + to - from - firstIndex - 1 >= group->count())
+        if(i + to - from > lastIndex)
             return false;
-        if(i + to - from - firstIndex - 1 < 0)
-            return false;
-        if(i + to - from < 0)
+        if(i + to - from < firstIndex)
             return false;
     }
 
@@ -254,9 +252,9 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
             if (i + to - from < 0)
                 break;
 
-            m_tracks.move(i,i + to - from);
-            group->trackList.move(i - firstIndex - 1,
-                                  i + to - from  - firstIndex - 1);
+            m_tracks.move(i, i + to - from);
+            swapTrackNumbers(&m_tracks, i, i + to - from);
+            group->trackList.move(i - firstIndex, i + to - from - firstIndex);
         }
     }
     else
@@ -267,8 +265,8 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
                 break;
 
             m_tracks.move(indexes[i], indexes[i] + to - from);
-            group->trackList.move(indexes[i] - firstIndex - 1,
-                                  indexes[i] + to - from - firstIndex - 1);
+            swapTrackNumbers(&m_tracks,indexes[i], indexes[i] + to - from);
+            group->trackList.move(indexes[i] - firstIndex, indexes[i] + to - from - firstIndex);
         }
     }
     return true;
@@ -384,13 +382,14 @@ void GroupedContainer::updateCache() const
             m_lines << line;
         }
 
-        for(int i = 0; i < m_groups.at(g)->trackList.count(); ++i)
+        for(PlayListTrack *track : qAsConst(m_groups.at(g)->trackList))
         {
             PlayListLine line = {
                 .isGroup = false,
                 .index = t++,
                 .subindex = 0
             };
+            track->m_track_index = line.index;
             m_lines << line;
         }
     }

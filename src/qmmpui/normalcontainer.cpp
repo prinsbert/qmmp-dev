@@ -158,8 +158,8 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
             if (i + to - from < 0)
                 break;
 
-            m_tracks.move(i,i + to - from);
-            //swapTrackNumbers(&m_tracks,i,i + to - from);
+            m_tracks.move(i, i + to - from);
+            swapTrackNumbers(&m_tracks, i, i + to - from);
         }
     }
     else
@@ -170,7 +170,7 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
                 break;
 
             m_tracks.move(indexes[i], indexes[i] + to - from);
-            //swapTrackNumbers(&m_tracks,indexes[i], indexes[i] + to - from);
+            swapTrackNumbers(&m_tracks, indexes[i], indexes[i] + to - from);
         }
     }
     return true;
@@ -197,7 +197,7 @@ void NormalContainer::reverseList()
     for (int i = 0; i < m_tracks.size()/2; i++)
     {
         m_tracks.swapItemsAt(i, m_tracks.size() - i - 1);
-        //swapTrackNumbers(&m_tracks, i, m_tracks.size() - i - 1);
+        swapTrackNumbers(&m_tracks, i, m_tracks.size() - i - 1);
     }
 }
 
@@ -209,7 +209,7 @@ void NormalContainer::randomizeList()
         m_tracks.swapItemsAt(rg->generate() % m_tracks.size(), rg->generate() % m_tracks.size());
 
     for(int i = 0; i < m_tracks.count(); ++i)
-        static_cast<PlayListTrack *>(m_tracks[i])->m_track_index = i;
+        m_tracks[i]->m_track_index = i;
 }
 
 int NormalContainer::lineCount() const

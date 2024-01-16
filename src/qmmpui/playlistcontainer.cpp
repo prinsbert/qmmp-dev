@@ -66,10 +66,10 @@ const QList<PlayListTrack *> &PlayListContainer::queuedTracks() const
     return m_queue;
 }
 
-void PlayListContainer::swapTrackNumbers(QList<PlayListItem *> *container, int index1, int index2)
+void PlayListContainer::swapTrackNumbers(QList<PlayListTrack *> *container, int index1, int index2)
 {
-    PlayListTrack *track1 = static_cast<PlayListTrack *>(container->at(index1));
-    PlayListTrack *track2 = static_cast<PlayListTrack *>(container->at(index2));
+    PlayListTrack *track1 = container->at(index1);
+    PlayListTrack *track2 = container->at(index2);
     int number = track1->trackIndex();
     track1->m_track_index = track2->m_track_index;
     track2->m_track_index = number;
