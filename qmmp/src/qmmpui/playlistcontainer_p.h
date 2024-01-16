@@ -77,7 +77,7 @@ public:
     virtual int trackIndexAtLine(int lineIndex) const = 0;
 
 protected:
-    void swapTrackNumbers(QList<PlayListItem *> *container, int index1, int index2);
+    void swapTrackNumbers(QList<PlayListTrack *> *container, int index1, int index2);
 
 private:
     void updateQueueIndexes();
