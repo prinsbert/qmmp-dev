@@ -193,7 +193,7 @@ void GroupedContainer::removeTrack(PlayListTrack *track)
                 m_groups.removeAll(group);
                 delete group;
             }
-            return;
+            break;
         }
         ++it;
     }

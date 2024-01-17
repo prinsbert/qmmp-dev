@@ -562,7 +562,7 @@ private:
      * Removes items from model. If \b inverted is \b false -
      * selected items will be removed, else - unselected.
      */
-    //void removeSelection(bool inverted = false);
+    void removeSelection(bool inverted = false);
 
     int removeTrackInternal(int i);
 
