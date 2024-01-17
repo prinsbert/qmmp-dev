@@ -535,12 +535,12 @@ void PlayListModel::setSelectedAtLines(int firstLine, int lastLine, bool selecte
 
 void PlayListModel::removeSelected()
 {
-    //removeSelection(false);
+    removeSelection(false);
 }
 
 void PlayListModel::removeUnselected()
 {
-    //removeSelection(true);
+    removeSelection(true);
 }
 
 //void PlayListModel::removeTrack (int i)
@@ -601,41 +601,42 @@ void PlayListModel::removeUnselected()
 //    removeTracks(items);
 //}
 
-//void PlayListModel::removeSelection(bool inverted)
-//{
-//    int i = 0;
-//    int select_after_delete = -1;
-//    int flags = 0;
+void PlayListModel::removeSelection(bool inverted)
+{
+    int i = 0;
+    int select_after_delete = -1;
+    int flags = 0;
 
-//    while (!m_container->isEmpty() && i < m_container->count())
-//    {
-//        PlayListItem *item = m_container->item(i);
-//        if(!item->isGroup() && item->isSelected() ^ inverted)
-//        {
-//            flags |= removeTrackInternal(i);
+    while(!m_container->isEmpty() && i < m_container->trackCount())
+    {
+        PlayListTrack *track = m_container->track(i);
+        if(track->isSelected() ^ inverted)
+        {
+            flags |= removeTrackInternal(i);
 
-//            if(m_container->isEmpty())
-//                continue;
+            if(m_container->isEmpty())
+                continue;
 
-//            select_after_delete = i;
-//        }
-//        else
-//            i++;
-//    }
+            select_after_delete = i;
+            continue;
+        }
 
-//    select_after_delete = qMin(select_after_delete, m_container->count() - 1);
+        i++;
+    }
 
-//    if(select_after_delete >= 0)
-//    {
-//        m_container->setSelected(select_after_delete, true);
-//        flags |= SELECTION;
-//    }
+    select_after_delete = qMin(select_after_delete, m_container->trackCount() - 1);
 
-//    m_play_state->prepare();
+    if(select_after_delete >= 0)
+    {
+        m_container->track(select_after_delete)->setSelected(true);
+        flags |= SELECTION;
+    }
 
-//    if(flags)
-//        emit listChanged(flags);
-//}
+    m_play_state->prepare();
+
+    if(flags)
+        emit listChanged(flags);
+}
 
 int PlayListModel::removeTrackInternal(int i)
 {
