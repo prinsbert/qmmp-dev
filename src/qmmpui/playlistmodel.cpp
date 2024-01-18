@@ -1129,8 +1129,8 @@ void PlayListModel::updateMetaData(const QStringList &paths)
     qDeleteAll(cache);
     cache.clear();
 
-//    if(!tracksToRemove.isEmpty())
-//        removeTracks(tracksToRemove);
+    if(!tracksToRemove.isEmpty())
+        removeTracks(tracksToRemove);
     if(!tracksToAdd.isEmpty())
         add(tracksToAdd);
 
@@ -1161,13 +1161,7 @@ void PlayListModel::loadPlaylist(const QString &fmt, const QByteArray &data)
 
 void PlayListModel::savePlaylist(const QString &f_name)
 {
-//    QList <PlayListTrack *> songs;
-//    for(int i = 0; i < m_container->trackCount(); ++i)
-//    {
-//        if(isTrack(i))
-//            songs << m_container->track(i);
-//    }
-//    PlayListParser::savePlayList(songs, f_name);
+    PlayListParser::savePlayList(m_container->tracks(), f_name);
 }
 
 bool PlayListModel::isLoaderRunning() const
