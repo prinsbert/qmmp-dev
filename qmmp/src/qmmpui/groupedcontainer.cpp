@@ -323,6 +323,9 @@ int GroupedContainer::lineCount() const
 PlayListItem *GroupedContainer::itemAtLine(int lineIndex) const
 {
     updateCache();
+    if (lineIndex < 0 || lineIndex >= m_lines.count())
+        return nullptr;
+
     PlayListLine line = m_lines.at(lineIndex);
     if(line.isGroup)
         return m_groups.at(line.index);

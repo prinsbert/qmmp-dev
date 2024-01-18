@@ -473,8 +473,11 @@ QList<PlayListItem *> PlayListModel::findTracks(const QString &str) const
 
 void PlayListModel::setSelected(PlayListItem *item, bool selected)
 {
-    item->setSelected(selected);
-    emit listChanged(SELECTION);
+    if(item)
+    {
+        item->setSelected(selected);
+        emit listChanged(SELECTION);
+    }
 }
 
 void PlayListModel::setSelected(const QList<PlayListTrack *> &tracks, bool selected)
