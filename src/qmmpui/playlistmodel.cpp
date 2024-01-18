@@ -543,63 +543,65 @@ void PlayListModel::removeUnselected()
     removeSelection(true);
 }
 
-//void PlayListModel::removeTrack (int i)
-//{
-//    int flags = removeTrackInternal(i);
-//    if(flags)
-//        emit listChanged(flags);
-//}
+void PlayListModel::removeTrack(int i)
+{
+    int flags = removeTrackInternal(i);
+    if(flags)
+        emit listChanged(flags);
+}
 
-//void PlayListModel::removeTrack (PlayListItem *track)
-//{
-//    if(m_container->contains(track))
-//        removeTrack (m_container->indexOf(track));
-//}
+void PlayListModel::removeTrack(PlayListItem *track)
+{
+    if(m_container->contains(track))
+        removeTrack(m_container->indexOf(track));
+}
 
-//void PlayListModel::removeTracks(const QList<PlayListItem *> &items)
-//{
-//    int i = 0;
-//    int select_after_delete = -1;
-//    int flags = 0;
+void PlayListModel::removeTracks(const QList<PlayListItem *> &items)
+{
+    int i = 0;
+    int select_after_delete = -1;
+    int flags = 0;
 
-//    while (!m_container->isEmpty() && i < m_container->count())
-//    {
-//        PlayListItem *item = m_container->item(i);
-//        if(!item->isGroup() && items.contains(item))
-//        {
-//            flags |= removeTrackInternal(i);
+    while (!m_container->isEmpty() && i < m_container->trackCount())
+    {
+        PlayListItem *item = m_container->track(i);
+        if(!item->isGroup() && items.contains(item))
+        {
+            flags |= removeTrackInternal(i);
 
-//            if(m_container->isEmpty())
-//                continue;
+            if(m_container->isEmpty())
+                continue;
 
-//            select_after_delete = i;
-//        }
-//        else
-//            i++;
-//    }
+            select_after_delete = i;
+        }
+        else
+        {
+            i++;
+        }
+    }
 
-//    select_after_delete = qMin(select_after_delete, m_container->count() - 1);
+    select_after_delete = qMin(select_after_delete, m_container->trackCount() - 1);
 
-//    if(select_after_delete >= 0)
-//    {
-//        m_container->setSelected(select_after_delete, true);
-//        flags |= SELECTION;
-//    }
+    if(select_after_delete >= 0)
+    {
+        m_container->track(select_after_delete)->setSelected(true);
+        flags |= SELECTION;
+    }
 
-//    m_play_state->prepare();
+    m_play_state->prepare();
 
-//    if(flags)
-//        emit listChanged(flags);
-//}
+    if(flags)
+        emit listChanged(flags);
+}
 
-//void PlayListModel::removeTracks(const QList<PlayListTrack *> &tracks)
-//{
-//    QList<PlayListItem *> items;
-//    for(PlayListTrack *track : tracks)
-//        items << static_cast<PlayListItem *>(track);
+void PlayListModel::removeTracks(const QList<PlayListTrack *> &tracks)
+{
+    QList<PlayListItem *> items;
+    for(PlayListTrack *track : tracks)
+        items << static_cast<PlayListItem *>(track);
 
-//    removeTracks(items);
-//}
+    removeTracks(items);
+}
 
 void PlayListModel::removeSelection(bool inverted)
 {
