@@ -596,7 +596,7 @@ void ListWidget::clear()
 {
     if(m_filterMode)
     {
-//        m_model->removeTracks(m_filteredItems);
+        m_model->removeTracks(m_filteredItems);
         m_filteredItems.clear();
     }
     else
@@ -615,7 +615,7 @@ void ListWidget::removeSelected()
             if(item->isSelected())
                 items << item;
         }
-//        m_model->removeTracks(items);
+        m_model->removeTracks(items);
     }
     else
     {
@@ -633,7 +633,7 @@ void ListWidget::removeUnselected()
             if(!item->isSelected())
                 items << item;
         }
-//        m_model->removeTracks(items);
+        m_model->removeTracks(items);
     }
     else
     {
