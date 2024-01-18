@@ -846,7 +846,7 @@ void ListWidget::mouseMoveEvent(QMouseEvent *e)
 
 void ListWidget::mouseReleaseEvent(QMouseEvent *e)
 {
-    if(m_select_on_release)
+    if(m_select_on_release && m_pressedLine >= 0)
     {
         m_model->clearSelection();
         PlayListItem *item = m_model->itemAtLine(m_pressedLine);
