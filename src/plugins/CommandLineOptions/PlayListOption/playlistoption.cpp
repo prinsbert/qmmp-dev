@@ -108,12 +108,10 @@ QString PlayListOption::executeCommand(int id, const QStringList &args)
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
             return tr("Invalid playlist ID") + "\n";
-        for(int i = 0; i < model->count(); ++i)
+        for(int i = 0; i < model->trackCount(); ++i)
         {
             PlayListTrack *track = model->track(i);
-            if(!track)
-                continue;
-            out += QString("%1. %2").arg(model->indexOfTrack(i) + 1).arg(formatter.format(track));
+            out += QString("%1. %2").arg(track->trackIndex() + 1).arg(formatter.format(track));
             if(i == model->currentIndex())
                 out += " [*]";
             out += "\n";

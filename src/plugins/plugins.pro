@@ -6,10 +6,10 @@ SUBDIRS += Input \
            Visual \
            Transports \
            Effect \
- #          PlayListFormats \
+           PlayListFormats \
            FileDialogs \
-           Ui
- #          CommandLineOptions
+           Ui \
+           CommandLineOptions
 
 unix:SUBDIRS += Engines
 
