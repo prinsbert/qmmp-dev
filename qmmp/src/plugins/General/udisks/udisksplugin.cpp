@@ -215,13 +215,8 @@ void UDisksPlugin::addPath(const QString &path)
 {
     PlayListModel *model = PlayListManager::instance()->selectedPlayList();
 
-    for(PlayListItem *item : model->items()) // Is it already exist?
-    {
-        if(item->isGroup())
-            continue;
-        if (dynamic_cast<PlayListTrack *>(item)->path().startsWith(path))
-            return;
-    }
+    if (model->contains(path))
+        return;
 
     if (path.startsWith("cdda://") && m_addTracks)
     {
@@ -242,9 +237,9 @@ void UDisksPlugin::removePath(const QString &path)
     PlayListModel *model = PlayListManager::instance()->selectedPlayList();
 
     int i = 0;
-    while (model->count() > 0 && i < model->count())
+    while (!model->isEmpty() && i < model->trackCount())
     {
-        if (model->isTrack(i) && model->track(i)->path().startsWith(path))
+        if (model->track(i)->path().startsWith(path))
             model->removeTrack(i);
         else
             ++i;
