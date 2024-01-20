@@ -245,6 +245,7 @@ void ListWidget::mouseDoubleClickEvent(QMouseEvent *e)
         player->playListManager()->activatePlayList(m_model);
         player->stop();
         player->play();
+        emit doubleClicked();
         update();
     }
 }
