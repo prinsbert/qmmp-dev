@@ -750,21 +750,21 @@ void PlayListModel::showDetailsForCurrent(QWidget *parent)
 
 int PlayListModel::firstSelectedUpper(int row)
 {
-//    for(int i = row - 1;i >= 0;i--)
-//    {
-//        if(isSelected(i))
-//            return i;
-//    }
+    for(int i = row - 1;i >= 0;i--)
+    {
+        if(m_container->track(i)->isSelected())
+             return i;
+    }
     return -1;
 }
 
 int PlayListModel::firstSelectedLower(int row)
 {
-//    for(int i = row + 1;i < trackCount() ;i++)
-//    {
-//        if(isSelected(i))
-//            return i;
-//    }
+    for(int i = row + 1;i < trackCount() ;i++)
+    {
+        if(m_container->track(i)->isSelected())
+             return i;
+    }
     return -1;
 }
 
@@ -773,59 +773,60 @@ qint64 PlayListModel::totalDuration() const
     return m_total_duration;
 }
 
-//void PlayListModel::moveItems(int from, int to)
-//{
-//    // Get rid of useless work
-//    if(from == to)
-//        return;
+void PlayListModel::moveItems(int from, int to)
+{
+    // Get rid of useless work
+    if(from == to || from < 0 || to < 0)
+        return;
 
-//    QList<int> selected_indexes = selectedIndexes();
+    QList<int> selected_indexes = selectedIndexes();
+    QList<PlayListGroup *> groups = m_container->groups();
 
-//    if(selected_indexes.isEmpty())
-//        return;
+    if(selected_indexes.isEmpty())
+        return;
 
-//    if(std::any_of(selected_indexes.cbegin(), selected_indexes.cend(), [this](int i){ return !isTrack(i); }))
-//        return;
+    if(std::any_of(groups.cbegin(), groups.cend(), [](PlayListGroup *g){ return g->isSelected(); }))
+        return;
 
-//    if(bottommostInSelection(from) == INVALID_INDEX ||
-//            from == INVALID_INDEX ||
-//            topmostInSelection(from) == INVALID_INDEX)
-//        return;
+    if(bottommostInSelection(from) == INVALID_INDEX ||
+            from == INVALID_INDEX ||
+            topmostInSelection(from) == INVALID_INDEX)
+        return;
 
-//    if(m_container->move(selected_indexes, from, to))
-//    {
-//        m_current = m_container->indexOf(m_current_track);
-//        emit listChanged(STRUCTURE);
-//    }
-//}
+    if(m_container->move(selected_indexes, from, to))
+    {
+        m_current = m_container->indexOf(m_current_track);
+        emit listChanged(STRUCTURE);
+    }
+}
 
 int PlayListModel::topmostInSelection(int row)
 {
-//    if(row == 0)
-//        return 0;
+    if(row == 0)
+        return 0;
 
-//    for(int i = row - 1;i >= 0;i--)
-//    {
-//        if(isSelected(i))
-//            continue;
+    for(int i = row - 1; i >= 0; i--)
+    {
+        if(m_container->track(i)->isSelected())
+            continue;
 
-//        return i + 1;
-//    }
+        return i + 1;
+    }
     return 0;
 }
 
 int PlayListModel::bottommostInSelection(int row)
 {
-//    if(row >= trackCount() - 1)
-//        return row;
+    if(row >= trackCount() - 1)
+        return row;
 
-//    for(int i = row + 1; i < trackCount(); i++)
-//    {
-//        if(isSelected(i))
-//            continue;
+    for(int i = row + 1; i < trackCount(); i++)
+    {
+        if(m_container->track(i)->isSelected())
+            continue;
 
-//        return i - 1;
-//    }
+        return i - 1;
+    }
     return trackCount() - 1;
 }
 

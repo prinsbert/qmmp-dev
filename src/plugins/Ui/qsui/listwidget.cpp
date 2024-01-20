@@ -534,6 +534,7 @@ void ListWidget::autoscroll()
     if(m_filterMode)
         return;
 
+    /*
     SimpleSelection sel = m_model->getSelection(m_pressedLine);
     if ((sel.m_top == 0 && m_scroll_direction == TOP && sel.count() > 1) ||
         (sel.m_bottom == m_model->lineCount() - 1 && m_scroll_direction == DOWN && sel.count() > 1))
@@ -552,6 +553,7 @@ void ListWidget::autoscroll()
         //m_model->moveItems(m_pressed_index, m_first);
         m_pressedLine = m_firstLine;
     }
+    */
 }
 
 void ListWidget::updateRepeatIndicator()
@@ -817,21 +819,23 @@ void ListWidget::mouseMoveEvent(QMouseEvent *e)
 
         int index = lineAt(e->position().y());
 
-        if(index < 0)
+        if(index >= 0)
         {
             m_anchorLine = index;
-            SimpleSelection sel = m_model->getSelection(m_pressedLine);
+            SimpleSelection sel = m_model->getSelection(m_model->trackIndexAtLine(m_pressedLine));
             if(sel.count() > 1 && m_scroll_direction == TOP)
             {
-                if(sel.m_top == 0 || sel.m_top == m_firstLine)
+                if(sel.m_top == 0 || sel.m_top == m_model->trackIndexAtLine(m_firstLine))
                     return;
             }
             else if(sel.count() > 1 && m_scroll_direction == DOWN)
             {
-                if(sel.m_bottom == m_model->lineCount() - 1 || sel.m_bottom == m_firstLine + m_row_count)
+                if(sel.m_bottom == m_model->trackIndexAtLine(m_model->lineCount() - 1) ||
+                        sel.m_bottom == m_model->trackIndexAtLine(m_firstLine + m_row_count))
                     return;
             }
-//            m_model->moveItems(m_pressed_index,index);
+            m_model->moveItems(m_model->trackIndexAtLine(m_pressedLine),
+                               m_model->trackIndexAtLine(index));
 
             m_prev_y = e->position().y();
             m_pressedLine = index;

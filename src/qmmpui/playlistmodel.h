@@ -234,7 +234,7 @@ public:
     /*!
      *  Moves the item at index position \b from to index position \b to.
      */
-    //void moveItems(int from, int to);
+    void moveItems(int from, int to);
     /*!
      * Returns a list of queued tracks.
      */
