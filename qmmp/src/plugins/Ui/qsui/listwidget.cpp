@@ -196,7 +196,7 @@ void ListWidget::paintEvent(QPaintEvent *)
 
         if(m_rows[i]->flags & ListWidgetRow::GROUP)
         {
-            if (m_rows[i]->subIndex == 1)
+            if (m_rows[i]->subIndex == m_model->linesPerGroup() / 2)
                 m_drawer.drawSeparator(&painter, m_rows[i], rtl);
             continue;
         }
