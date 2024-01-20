@@ -69,6 +69,8 @@ public:
     void clearQueue();
     void restoreQueue(const QList<PlayListTrack *> &tracks);
     const QList<PlayListTrack *> &queuedTracks() const;
+    int linesPerGroup() const;
+    void setLinesPerGroup(int lines);
 
     virtual int lineCount() const = 0;
     virtual PlayListItem *itemAtLine(int lineIndex) const = 0;
@@ -82,6 +84,7 @@ protected:
 private:
     void updateQueueIndexes();
     QQueue<PlayListTrack *> m_queue; /*!< Songs in play queue. */
+    int m_linesPerGroup = 1;
 };
 
 #endif // PLAYLISTCONTAINER_P_H

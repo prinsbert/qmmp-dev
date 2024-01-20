@@ -366,16 +366,16 @@ void GroupedContainer::updateCache() const
     if(!m_update)
         return;
 
-    int group_height = 3;
+    int lines = linesPerGroup();
     int t = 0;
 
     m_lines.clear();
-    m_lines.reserve(group_height * m_groups.count() + m_tracks.count());
+    m_lines.reserve(lines * m_groups.count() + m_tracks.count());
 
     for(int g = 0; g < m_groups.count(); ++g)
     {
 
-        for(int j = 0; j < group_height; ++j)
+        for(int j = 0; j < lines; ++j)
         {
             PlayListLine line = {
                 .isGroup = true,

@@ -66,6 +66,16 @@ const QList<PlayListTrack *> &PlayListContainer::queuedTracks() const
     return m_queue;
 }
 
+int PlayListContainer::linesPerGroup() const
+{
+    return m_linesPerGroup;
+}
+
+void PlayListContainer::setLinesPerGroup(int lines)
+{
+    m_linesPerGroup = lines;
+}
+
 void PlayListContainer::swapTrackNumbers(QList<PlayListTrack *> *container, int index1, int index2)
 {
     PlayListTrack *track1 = container->at(index1);

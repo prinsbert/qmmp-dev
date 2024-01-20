@@ -42,10 +42,14 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
 
     m_loader = new FileLoader(this);
     m_task = new PlayListTask(this);
+
     if(m_ui_settings->isGroupsEnabled())
         m_container = new GroupedContainer;
     else
         m_container = new NormalContainer;
+
+    m_container->setLinesPerGroup(3);
+
     if(m_ui_settings->isShuffle())
         m_play_state = new ShufflePlayState(this);
     else
@@ -398,6 +402,11 @@ int PlayListModel::subIndexOfLine(int lineIndex) const
 int PlayListModel::trackIndexAtLine(int lineIndex) const
 {
     return m_container->trackIndexAtLine(lineIndex);
+}
+
+int PlayListModel::linesPerGroup() const
+{
+    return m_container->linesPerGroup();
 }
 
 void PlayListModel::clear()
@@ -963,6 +972,7 @@ void PlayListModel::prepareGroups(bool enabled)
         container = new GroupedContainer;
     else
         container = new NormalContainer;
+    container->setLinesPerGroup(m_container->linesPerGroup());
     container->addTracks(m_container->takeAllTracks());
     delete m_container;
     m_container = container;
