@@ -389,6 +389,12 @@ PlayListItem *PlayListModel::itemAtLine(int lineIndex) const
     return m_container->itemAtLine(lineIndex);
 }
 
+PlayListTrack *PlayListModel::trackAtLine(int lineIndex) const
+{
+    int l = m_container->trackIndexAtLine(lineIndex);
+    return l >= 0 ? m_container->track(l) : nullptr;
+}
+
 QList<PlayListItem *> PlayListModel::itemsAtLines(int pos, int length) const
 {
     return m_container->itemsAtLines(pos, length);

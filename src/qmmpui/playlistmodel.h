@@ -227,6 +227,7 @@ public:
 
     int lineCount() const;
     PlayListItem *itemAtLine(int lineIndex) const;
+    PlayListTrack *trackAtLine(int lineIndex) const;
     QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const;
     int subIndexOfLine(int lineIndex) const;
     int trackIndexAtLine(int lineIndex) const;
