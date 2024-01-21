@@ -34,6 +34,7 @@ class QTimer;
 class QScrollBar;
 class PlayListModel;
 class PlayListItem;
+class PlayListTrack;
 class QmmpUiSettings;
 class PlayListHeader;
 namespace PlayListPopup{
@@ -90,7 +91,8 @@ protected:
     void resizeEvent(QResizeEvent *) override;
     void wheelEvent(QWheelEvent *) override;
     void showEvent(QShowEvent *) override;
-    int lineAt(int) const;
+    int lineAt(int y) const;
+    PlayListTrack *trackAt(int y) const;
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;
     void dragLeaveEvent(QDragLeaveEvent *) override;

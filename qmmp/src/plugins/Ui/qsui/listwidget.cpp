@@ -355,14 +355,14 @@ bool ListWidget::event(QEvent *e)
         if(e->type() == QEvent::ToolTip)
         {
             QHelpEvent *helpEvent = (QHelpEvent *) e;
-            int index = lineAt(helpEvent->y());
-//            if(index < 0 || !m_model->isTrack(index))
-//            {
-//                m_popupWidget->deactivate();
-//                return QWidget::event(e);
-//            }
+            PlayListTrack *track = trackAt(helpEvent->y());
+            if(!track)
+            {
+                m_popupWidget->deactivate();
+                return QWidget::event(e);
+            }
             e->accept();
-            m_popupWidget->prepare(m_model->track(index), helpEvent->globalPos());
+            m_popupWidget->prepare(track, helpEvent->globalPos());
             return true;
         }
 
@@ -843,9 +843,9 @@ void ListWidget::mouseMoveEvent(QMouseEvent *e)
     }
     else if(m_popupWidget)
     {
-//        int index = indexAt(e->position().y());
-//        if(index < 0 || !m_model->isTrack(index) || m_popupWidget->url() != m_model->track(index)->path())
-//            m_popupWidget->deactivate();
+        PlayListTrack *track = trackAt(e->position().y());
+        if(!track || m_popupWidget->url() != track->path())
+            m_popupWidget->deactivate();
     }
 }
 
@@ -886,6 +886,12 @@ int ListWidget::lineAt(int y) const
         }
     }
     return -1;
+}
+
+PlayListTrack *ListWidget::trackAt(int y) const
+{
+    int line = lineAt(y);
+    return line >= 0 ? m_model->trackAtLine(line) : nullptr;
 }
 
 void ListWidget::contextMenuEvent(QContextMenuEvent * event)

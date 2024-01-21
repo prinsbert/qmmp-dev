@@ -227,7 +227,7 @@ void KeyboardManager::processEnter()
         return;
     SoundCore::instance()->stop();
     PlayListManager::instance()->activatePlayList(m_listWidget->model());
-    m_listWidget->model()->setCurrent (rows.first());
+    m_listWidget->model()->setCurrent(rows.first());
     MediaPlayer::instance()->play();
 }
 
