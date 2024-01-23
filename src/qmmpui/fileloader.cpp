@@ -51,7 +51,7 @@ QList<PlayListTrack *> FileLoader::processFile(const QString &path, QStringList 
     return tracks;
 }
 
-void FileLoader::insertPlayList(const QString &fmt, const QByteArray &contents, PlayListItem *before)
+void FileLoader::insertPlayList(const QString &fmt, const QByteArray &contents, PlayListTrack *before)
 {
     QList<PlayListTrack *> tracks = PlayListParser::loadPlaylist(fmt, contents);
 
@@ -79,7 +79,7 @@ void FileLoader::insertPlayList(const QString &fmt, const QByteArray &contents, 
     tracks.clear();
 }
 
-void FileLoader::insertPlayList(const QString &path, PlayListItem *before)
+void FileLoader::insertPlayList(const QString &path, PlayListTrack *before)
 {
     QList<PlayListTrack *> tracks = PlayListParser::loadPlaylist(path);
 
@@ -161,7 +161,7 @@ void FileLoader::insertPlayList(const QString &path, PlayListItem *before)
     tracks.clear();
 }
 
-void FileLoader::addDirectory(const QString& s, PlayListItem *before)
+void FileLoader::addDirectory(const QString& s, PlayListTrack *before)
 {
     QList<PlayListTrack *> tracks;
     QStringList ignoredPaths;
@@ -232,7 +232,7 @@ void FileLoader::run()
         m_mutex.lock();
         LoaderTask i = m_tasks.dequeue();
         m_mutex.unlock();
-        PlayListItem *before = i.before;
+        PlayListTrack *before = i.before;
         QString path = i.path;
 
         if(!path.isEmpty())
@@ -302,12 +302,12 @@ void FileLoader::addPlayList(const QString &fmt, const QByteArray &data)
     start(QThread::IdlePriority);
 }
 
-void FileLoader::insert(PlayListItem *before, const QString &path)
+void FileLoader::insert(PlayListTrack *before, const QString &path)
 {
     insert(before, QStringList() << path);
 }
 
-void FileLoader::insert(PlayListItem *before, const QStringList &paths)
+void FileLoader::insert(PlayListTrack *before, const QStringList &paths)
 {
     m_mutex.lock();
     for(const QString &path : qAsConst(paths))
