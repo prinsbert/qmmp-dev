@@ -64,8 +64,8 @@ public:
     void add(const QStringList &paths);
     void addPlayList(const QString &fmt, const QByteArray &data);
 
-    void insert(PlayListItem *before, const QString &path);
-    void insert(PlayListItem *before, const QStringList &paths);
+    void insert(PlayListTrack *before, const QString &path);
+    void insert(PlayListTrack *before, const QStringList &paths);
 
 
 public slots:
@@ -79,21 +79,21 @@ signals:
      * Emitted when new playlist tracks are available.
      * @param tracks List of the pointers to the \b PlayListTrack objects.
      */
-    void newTracksToInsert(PlayListItem *before, QList<PlayListTrack *> tracks);
+    void newTracksToInsert(PlayListTrack *before, QList<PlayListTrack *> tracks);
 
 private:
     void run() override;
     QList<PlayListTrack*> processFile(const QString &path, QStringList *ignoredPaths = nullptr);
-    void insertPlayList(const QString &fmt, const QByteArray &contents, PlayListItem *before);
-    void insertPlayList(const QString &path, PlayListItem *before);
-    void addDirectory(const QString &s, PlayListItem *before = nullptr);
+    void insertPlayList(const QString &fmt, const QByteArray &contents, PlayListTrack *before);
+    void insertPlayList(const QString &path, PlayListTrack *before);
+    void addDirectory(const QString &s, PlayListTrack *before = nullptr);
     bool checkRestrictFilters(const QFileInfo &info);
     bool checkExcludeFilters(const QFileInfo &info);
     void removeIgnoredTracks(QList<PlayListTrack *> *tracks, const QStringList &ignoredPaths);
     struct LoaderTask
     {
         QString path;
-        PlayListItem *before;
+        PlayListTrack *before;
         QString playListFormat;
         QByteArray playListContent;
     };

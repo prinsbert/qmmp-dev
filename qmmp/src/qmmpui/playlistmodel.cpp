@@ -56,8 +56,8 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
         m_play_state = new NormalPlayState(this);
     connect(m_ui_settings, SIGNAL(groupsChanged(bool)), SLOT(prepareGroups(bool)));
     connect(m_ui_settings, SIGNAL(shuffleChanged(bool)), SLOT(prepareForShufflePlaying(bool)));
-    connect(m_loader, SIGNAL(newTracksToInsert(PlayListItem*,QList<PlayListTrack*>)),
-            SLOT(insert(PlayListItem*,QList<PlayListTrack*>)), Qt::QueuedConnection);
+    connect(m_loader, SIGNAL(newTracksToInsert(PlayListTrack*,QList<PlayListTrack*>)),
+            SLOT(insert(PlayListTrack*,QList<PlayListTrack*>)), Qt::QueuedConnection);
     connect(m_loader, SIGNAL(finished()), SLOT(preparePlayState()));
     connect(m_loader, SIGNAL(finished()), SIGNAL(loaderFinished()));
     connect(m_task, SIGNAL(finished()), SLOT(onTaskFinished()));
