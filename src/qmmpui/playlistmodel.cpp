@@ -33,10 +33,8 @@
 #include "qmmpuisettings.h"
 #include "playlistmodel.h"
 
-#define INVALID_INDEX -1
-
 PlayListModel::PlayListModel(const QString &name, QObject *parent)
-    : QObject(parent) , m_name(name)
+    : QObject(parent), m_name(name)
 {
     m_ui_settings = QmmpUiSettings::instance();
 
@@ -398,6 +396,16 @@ PlayListTrack *PlayListModel::trackAtLine(int lineIndex) const
 QList<PlayListItem *> PlayListModel::itemsAtLines(int pos, int length) const
 {
     return m_container->itemsAtLines(pos, length);
+}
+
+int PlayListModel::findLine(PlayListItem *item) const
+{
+    for(int i = 0; i < m_container->lineCount(); ++i)
+    {
+        if(m_container->itemAtLine(i) == item)
+            return i;
+    }
+    return -1;
 }
 
 int PlayListModel::subIndexOfLine(int lineIndex) const
@@ -794,9 +802,7 @@ void PlayListModel::moveItems(int from, int to)
     if(std::any_of(groups.cbegin(), groups.cend(), [](PlayListGroup *g){ return g->isSelected(); }))
         return;
 
-    if(bottommostInSelection(from) == INVALID_INDEX ||
-            from == INVALID_INDEX ||
-            topmostInSelection(from) == INVALID_INDEX)
+    if(from == -1 || bottommostInSelection(from) == -1 || topmostInSelection(from) == -1)
         return;
 
     if(m_container->move(selected_indexes, from, to))
@@ -842,6 +848,17 @@ const SimpleSelection& PlayListModel::getSelection(int row)
     m_selection.m_bottom = bottommostInSelection(row);
     m_selection.m_selected_indexes = selectedIndexes();
     return m_selection;
+}
+
+QList<int> PlayListModel::selectedLines() const
+{
+    QList<int> lines;
+    for(int i = 0; i < m_container->lineCount(); i++)
+    {
+        if(m_container->itemAtLine(i)->isSelected())
+            lines.append(i);
+    }
+    return lines;
 }
 
 QList<int> PlayListModel::selectedIndexes() const
