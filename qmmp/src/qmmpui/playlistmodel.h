@@ -229,8 +229,10 @@ public:
     PlayListItem *itemAtLine(int lineIndex) const;
     PlayListTrack *trackAtLine(int lineIndex) const;
     QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const;
+    int findLine(PlayListItem *item) const;
     int subIndexOfLine(int lineIndex) const;
     int trackIndexAtLine(int lineIndex) const;
+    int lineAtTrack() const;
     int linesPerGroup() const;
     /*!
      *  Moves the item at index position \b from to index position \b to.
@@ -257,6 +259,7 @@ public:
      * this method returns selection which \b row belongs to)
      */
     const SimpleSelection& getSelection(int row);
+    QList<int> selectedLines() const;
     /*!
      * Returns list with selected items indexes.
      */
