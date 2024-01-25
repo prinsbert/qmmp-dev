@@ -29,22 +29,11 @@
     </extract>
     <invalidIndicator value="The page you requested was not found on DarkLyrics.com."/>
   </provider>
-  <provider name="directlyrics.com" title="{artist} - {title} lyrics" charset="iso-8859-1" url="https://www.directlyrics.com/{artist}-{title}-lyrics.html">
-    <urlFormat replace=" _@,;&amp;\/'&quot;" with="-"/>
-    <urlFormat replace="." with=""/>
-    <extract>
-      <item tag="&lt;div id=&quot;lyricsContent&quot;&gt;"/>
-      <item tag="&lt;p&gt;"/>
-    </extract>
-    <exclude>
-      <item begin="&lt;b&gt;" end="&lt;/b&gt;"/>
-    </exclude>
-  </provider>
-  <provider name="elyrics.net" title="{title} Lyrics - {artist}" charset="iso-8859-1" url="https://www.elyrics.net/read/{a}/{artist}-lyrics/{title}-lyrics.html">
+  <provider name="elyrics.net" title="{title} Lyrics - {artist}" charset="utf-8" url="https://www.elyrics.net/read/{a}/{artist}-lyrics/{title}-lyrics.html">
     <urlFormat replace=" _@;&amp;\/&quot;" with="-"/>
     <urlFormat replace="'" with="_"/>
     <extract>
-      <item tag="&lt;div class='ly' style='font-size:12px;'&gt;"/>
+      <item tag="&lt;div id='inlyr'&gt;"/>
     </extract>
     <exclude>
       <item tag="&lt;strong&gt;"/>
@@ -60,7 +49,7 @@
     <invalidIndicator value="&quot;iTotalRecords&quot;: 0"/>
     <invalidIndicator value="lyrics not available"/>
   </provider>
-  <provider name="genius.com" charset="utf-8" url="https://www.genius.com/{artist}-{title}-lyrics">
+  <provider name="genius.com" charset="utf-8" url="https://genius.com/{Artist}-{title}-lyrics">
     <urlFormat replace=",._@!#%^*+;\/&quot;'()[]" with=""/>
     <urlFormat replace=" :" with="-"/>
     <!-- When $ is used as the dollar sign it is omitted from the url
@@ -80,7 +69,7 @@
     <urlFormat replace="ß" with="ss"/>
     <urlFormat replace="&amp;" with="and"/>
     <extract>
-      <item tag="&lt;div class=&quot;lyrics&quot;&gt;"/>
+      <item tag="&lt;div data-lyrics-container=&quot;true&quot;"/>
     </extract>
     <exclude>
       <item begin="&lt;!--" end="--&gt;"/>
