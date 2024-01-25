@@ -221,7 +221,11 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
         return QList<TrackInfo*>() << info;
 
     TagLib::FileStream stream(QStringToFileName(path), true);
+#if TAGLIB_MAJOR_VERSION >= 2
+    TagLib::MPEG::File fileRef(&stream);
+#else
     TagLib::MPEG::File fileRef(&stream, TagLib::ID3v2::FrameFactory::instance());
+#endif
 
     if (parts & TrackInfo::MetaData)
     {
@@ -350,6 +354,11 @@ QList<TrackInfo *> DecoderMPEGFactory::createPlayList(const QString &path, Track
             break;
         case TagLib::MPEG::Header::Version2_5:
             info->setValue(Qmmp::FORMAT_NAME, QString("MPEG-2.5 layer %1").arg(fileRef.audioProperties()->layer()));
+            break;
+#if TAGLIB_MAJOR_VERSION >= 2
+        case TagLib::MPEG::Header::Version4:
+            info->setValue(Qmmp::FORMAT_NAME, QString("MPEG-4 layer %1").arg(fileRef.audioProperties()->layer()));
+#endif
         }
         info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
     }
