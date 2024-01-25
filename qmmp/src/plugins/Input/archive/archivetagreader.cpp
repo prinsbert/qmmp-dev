@@ -42,7 +42,11 @@ public:
         return m_fileName.constData();
 #endif
     }
+#if TAGLIB_MAJOR_VERSION >= 2
+    virtual TagLib::ByteVector readBlock(size_t length) override
+#else
     virtual TagLib::ByteVector readBlock(unsigned long length) override
+#endif
     {
         char data[length];
         qint64 l = m_input->read(data, length);
@@ -55,10 +59,17 @@ public:
     }
     virtual void writeBlock(const TagLib::ByteVector &) override
     {}
+#if TAGLIB_MAJOR_VERSION >= 2
+    virtual void insert(const TagLib::ByteVector &, TagLib::offset_t, size_t) override
+    {}
+    virtual void removeBlock(TagLib::offset_t, size_t) override
+    {}
+#else
     virtual void insert(const TagLib::ByteVector &, unsigned long, unsigned long) override
     {}
     virtual void removeBlock(unsigned long, unsigned long) override
     {}
+#endif
     virtual bool readOnly() const override
     {
         return true;
