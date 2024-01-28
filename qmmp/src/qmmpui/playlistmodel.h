@@ -201,7 +201,7 @@ public:
      * @param selected Selection state (\b true - select, \b false - unselect).
      */
     //void setSelected(int first, int last, bool selected = true);
-    void setSelectedAtLines(int firstLine, int lastLine, bool selected = true);
+    void setSelectedLines(int firstLine, int lastLine, bool selected = true);
     /*!
      * Sets the selected state of the items with \b indexes to \b select
      * @param indexes List of item \b indexes.
@@ -260,6 +260,7 @@ public:
      */
     const SimpleSelection& getSelection(int row);
     QList<int> selectedLines() const;
+    void setSelectedLine(int line, bool selected = true);
     /*!
      * Returns list with selected items indexes.
      */

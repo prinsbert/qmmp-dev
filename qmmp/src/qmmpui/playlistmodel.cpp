@@ -517,11 +517,11 @@ void PlayListModel::setSelected(const QList<PlayListItem *> &items, bool selecte
     emit listChanged(SELECTION);
 }
 
-void PlayListModel::setSelectedAtLines(int firstLine, int lastLine, bool selected)
+void PlayListModel::setSelectedLines(int firstLine, int lastLine, bool selected)
 {
     if(firstLine > lastLine)
     {
-        setSelectedAtLines(lastLine, firstLine, selected);
+        setSelectedLines(lastLine, firstLine, selected);
         return;
     }
 
@@ -859,6 +859,16 @@ QList<int> PlayListModel::selectedLines() const
             lines.append(i);
     }
     return lines;
+}
+
+void PlayListModel::setSelectedLine(int line, bool selected)
+{
+    PlayListItem *item = m_container->itemAtLine(line);
+    if(item)
+    {
+        item->setSelected(selected);
+        emit listChanged(SELECTION);
+    }
 }
 
 QList<int> PlayListModel::selectedIndexes() const
