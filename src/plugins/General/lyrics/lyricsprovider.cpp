@@ -99,7 +99,7 @@ QString LyricsProvider::getUrl(const TrackInfo &track) const
         for(const UrlFormat &format: m_urlFormats)
             value.replace(QRegularExpression(QString("[%1]").arg(QRegularExpression::escape(format.replace))), format.with);
 
-        url.replace(it.key(), it.value());
+        url.replace(it.key(), value);
 
         ++it;
     }
