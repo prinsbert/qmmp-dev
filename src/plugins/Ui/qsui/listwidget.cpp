@@ -291,7 +291,7 @@ void ListWidget::mousePressEvent(QMouseEvent *e)
         {
             int prevAnchorLine = m_anchorLine;
             m_anchorLine = m_pressedLine;
-            m_model->setSelectedAtLines(m_pressedLine, prevAnchorLine, true);
+            m_model->setSelectedLines(m_pressedLine, prevAnchorLine, true);
         }
         else //ShiftModifier released
         {
