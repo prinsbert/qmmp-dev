@@ -264,7 +264,12 @@ QString LyricsProvider::exclude(const QString &content, const LyricsProvider::Ru
         }
         else
         {
-            out = out.section(item.begin, 0, 0) + out.section(item.begin, 1).section(item.end, 1);
+            QString prev;
+            while(prev != out)
+            {
+                prev = out;
+                out = out.section(item.begin, 0, 0) + out.section(item.begin, 1).section(item.end, 1);
+            }
         }
     }
     return out.trimmed();
