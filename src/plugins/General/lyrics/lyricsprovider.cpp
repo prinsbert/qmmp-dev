@@ -171,6 +171,10 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
         out = out.trimmed();
     }
 
+    //plain text support
+    if(out.contains(QChar::LineFeed) && !out.contains('<'))
+        out.replace(QChar::LineFeed, QStringLiteral("<br>"));
+
     return out;
 }
 
