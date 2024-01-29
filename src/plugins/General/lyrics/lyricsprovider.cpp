@@ -24,7 +24,6 @@
 #include <QtDebug>
 #include <QRegularExpression>
 #include <qmmp/trackinfo.h>
-#include <qmmp/qmmptextcodec.h>
 #include "lyricsprovider.h"
 
 LyricsProvider::LyricsProvider()
@@ -38,11 +37,6 @@ void LyricsProvider::setName(const QString &name)
 void LyricsProvider::setTitle(const QString &title)
 {
     m_title = title;
-}
-
-void LyricsProvider::setCharset(const QString &charset)
-{
-    m_charset = charset;
 }
 
 void LyricsProvider::setUrl(const QString &url)
@@ -109,9 +103,7 @@ QString LyricsProvider::getUrl(const TrackInfo &track) const
 
 QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) const
 {
-    QmmpTextCodec codec(m_charset.toLatin1());
-
-    const QString content = codec.toUnicode(data);
+    const QString content = QString::fromUtf8(data);
     QString out;
 
     for(const QString &indicator : qAsConst(m_invalidIndicators))
