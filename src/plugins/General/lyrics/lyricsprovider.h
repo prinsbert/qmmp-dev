@@ -38,7 +38,6 @@ public:
 
     void setName(const QString &name);
     void setTitle(const QString &title);
-    void setCharset(const QString &charset);
     void setUrl(const QString &url);
     void addUrlFormat(const QString &replace, const QString &with);
     void addRule(const QList<QPair<QString, QString> > &args, bool exclude = false);
@@ -68,7 +67,6 @@ private:
     QString exclude(const QString &content, const Rule &rule) const;
 
     QString m_name, m_title;
-    QString m_charset = QLatin1String("utf-8");
     QString m_url;
     QList<UrlFormat> m_urlFormats;
     QList<Rule> m_extractRules;
