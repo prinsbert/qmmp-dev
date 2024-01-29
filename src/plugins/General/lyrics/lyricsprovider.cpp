@@ -40,11 +40,6 @@ void LyricsProvider::setTitle(const QString &title)
     m_title = title;
 }
 
-void LyricsProvider::setCharset(const QString &charset)
-{
-    m_charset = charset;
-}
-
 void LyricsProvider::setUrl(const QString &url)
 {
     m_url = url;
@@ -99,7 +94,7 @@ QString LyricsProvider::getUrl(const TrackInfo &track) const
         for(const UrlFormat &format: m_urlFormats)
             value.replace(QRegularExpression(QString("[%1]").arg(QRegularExpression::escape(format.replace))), format.with);
 
-        url.replace(it.key(), it.value());
+        url.replace(it.key(), value);
 
         ++it;
     }
@@ -109,11 +104,7 @@ QString LyricsProvider::getUrl(const TrackInfo &track) const
 
 QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) const
 {
-    QTextCodec *codec = QTextCodec::codecForName(m_charset.toLatin1().constData());
-    if(!codec)
-        codec = QTextCodec::codecForName("UTF-8");
-
-    const QString content = codec->toUnicode(data);
+    const QString content = QString::fromUtf8(data);
     QString out;
 
     for(const QString &indicator : qAsConst(m_invalidIndicators))
@@ -172,6 +163,10 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
         out.chop(4);
         out = out.trimmed();
     }
+
+    //plain text support
+    if(out.contains(QChar::LineFeed) && !out.contains(QChar('<')))
+        out.replace(QChar::LineFeed, QStringLiteral("<br>"));
 
     return out;
 }
@@ -265,7 +260,12 @@ QString LyricsProvider::exclude(const QString &content, const LyricsProvider::Ru
         }
         else
         {
-            out = out.section(item.begin, 0, 0) + out.section(item.begin, 1).section(item.end, 1);
+            QString prev;
+            while(prev != out)
+            {
+                prev = out;
+                out = out.section(item.begin, 0, 0) + out.section(item.begin, 1).section(item.end, 1);
+            }
         }
     }
     return out.trimmed();
