@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019-2020 by Ilya Kotov                                 *
+ *   Copyright (C) 2019-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Based on Amarok 2 Ultimate Lyrics script                              *
@@ -40,7 +40,6 @@ public:
 
     void setName(const QString &name);
     void setTitle(const QString &title);
-    void setCharset(const QString &charset);
     void setUrl(const QString &url);
     void addUrlFormat(const QString &replace, const QString &with);
     void addRule(const QList<QPair<QString, QString> > &args, bool exclude = false);
@@ -70,7 +69,6 @@ private:
     QString exclude(const QString &content, const Rule &rule) const;
 
     QString m_name, m_title;
-    QString m_charset;
     QString m_url;
     QList<UrlFormat> m_urlFormats;
     QList<Rule> m_extractRules;
