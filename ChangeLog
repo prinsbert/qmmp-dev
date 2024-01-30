@@ -1855,3 +1855,11 @@ Version 2.1.5
 * fixed possible crash
 * fixed http version
 * fixed file type determination by content in the waveform seekbar
+
+Version 2.1.6
+* added TagLib 2.0 support
+* fixed settings form in the simple user interface
+* improved lyrics plugin:
+  - fixed issue with URL formatting
+  - updated lyrics providers
+  - using UTF-8 for all lyrics providers
