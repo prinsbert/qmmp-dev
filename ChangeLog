@@ -1839,7 +1839,7 @@ Version 1.6.5
 * fixed file type determination by content in the waveform seekbar
 
 Version 1.6.6
-* added TagLib 2.0 support 
+* added TagLib 2.0 support
 * fixed settings form in the simple user interface
 * improved lyrics plugin:
   - fixed issue with URL formatting
