@@ -192,16 +192,19 @@ void ListWidget::paintEvent(QPaintEvent *)
 
     for(int i = 0; i < m_rows.size(); ++i)
     {
-        m_drawer.drawBackground(&painter, m_rows[i], i);
-
         if(m_rows[i]->flags & ListWidgetRow::GROUP)
         {
-            if (m_rows[i]->subIndex == m_model->linesPerGroup() / 2)
+            if (m_rows[i]->subIndex == 0 || (i == 0 && m_rows[i]->subIndex > 0))
+            {
+                m_drawer.drawBackground(&painter, m_rows[i], i);
                 m_drawer.drawSeparator(&painter, m_rows[i], rtl);
-            continue;
+            }
         }
-
-        m_drawer.drawTrack(&painter, m_rows[i], rtl);
+        else
+        {
+            m_drawer.drawBackground(&painter, m_rows[i], i);
+            m_drawer.drawTrack(&painter, m_rows[i], rtl);
+        }
     }
     //draw drop line
     if(m_drop_index >= 0)
@@ -471,7 +474,6 @@ void ListWidget::updateList(int flags)
 
     int scroll_bar_width = m_scrollBar->isVisibleTo(this) ? m_scrollBar->sizeHint().width() : 0;
     int trackStateColumn = m_header->trackStateColumn();
-    int rowWidth = width() + m_header->maxScrollValue() - 10 - scroll_bar_width;
     bool rtl = layoutDirection() == Qt::RightToLeft;
     m_header->setScrollBarWidth(scroll_bar_width);
 
@@ -520,18 +522,18 @@ void ListWidget::updateList(int flags)
             row->extraString = getExtraString(items.at(i));
         }
 
+        int rect_w = width() + m_header->maxScrollValue() - 10 - scroll_bar_width;
+        int rect_h = m_drawer.rowHeight() - 1;
+        int rect_x = rtl ? (width() - rect_w - 5) : 5;
         int rect_y = (m_header->isVisibleTo(this) ? m_header->height() : 0) + i * m_drawer.rowHeight();
 
-        if(rtl)
+        if((row->flags & ListWidgetRow::GROUP) && m_model->linesPerGroup() > 1)
         {
-            row->rect = QRect(width() - rowWidth - 5, rect_y, rowWidth, m_drawer.rowHeight() - 1);
-        }
-        else
-        {
-            row->rect = QRect(5, rect_y, rowWidth, m_drawer.rowHeight() - 1);
+            rect_h += (m_model->linesPerGroup() - 1) * m_drawer.rowHeight();
+            rect_y -= row->subIndex * m_drawer.rowHeight();
         }
 
-
+        row->rect = QRect(rect_x, rect_y, rect_w, rect_h);
         m_drawer.prepareRow(row);  //elide titles
     }
     update();
