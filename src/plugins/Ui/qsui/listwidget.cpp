@@ -484,32 +484,27 @@ void ListWidget::updateList(int flags)
         row->trackStateColumn = trackStateColumn;
         row->subIndex = m_model->subIndexOfLine(m_firstLine + i);
 
-        items[i]->isSelected() ? row->flags |= ListWidgetRow::SELECTED :
-                row->flags &= ~ListWidgetRow::SELECTED;
+        if(items[i]->isSelected())
+            row->flags |= ListWidgetRow::SELECTED;
+        else
+            row->flags &= ~ListWidgetRow::SELECTED;
 
-        i == (m_anchorLine - m_firstLine) ? row->flags |= ListWidgetRow::ANCHOR :
-                row->flags &= ~ListWidgetRow::ANCHOR;
+        if(i == (m_anchorLine - m_firstLine))
+            row->flags |= ListWidgetRow::ANCHOR;
+        else
+            row->flags &= ~ListWidgetRow::ANCHOR;
 
         if(flags == PlayListModel::SELECTION)
             continue;
-
-        if(rtl)
-        {
-            row->rect = QRect(width() - 5 - rowWidth, (m_header->isVisibleTo(this) ? m_header->height() : 0) + i * m_drawer.rowHeight(),
-                              rowWidth, m_drawer.rowHeight() - 1);
-        }
-        else
-        {
-            row->rect = QRect(5, (m_header->isVisibleTo(this) ? m_header->height() : 0) + i * m_drawer.rowHeight(),
-                              rowWidth, m_drawer.rowHeight() - 1);
-        }
 
         row->titles = items[i]->formattedTitles();
         row->sizes = m_header->sizes();
         row->alignment = m_header->alignment();
 
-        items[i] == m_model->currentTrack() ? row->flags |= ListWidgetRow::CURRENT :
-                row->flags &= ~ListWidgetRow::CURRENT;
+        if(items[i] == m_model->currentTrack())
+            row->flags |= ListWidgetRow::CURRENT;
+        else
+            row->flags &= ~ListWidgetRow::CURRENT;
 
         if(items[i]->isGroup())
         {
@@ -524,6 +519,19 @@ void ListWidget::updateList(int flags)
             row->length = items.at(i)->formattedLength();
             row->extraString = getExtraString(items.at(i));
         }
+
+        int rect_y = (m_header->isVisibleTo(this) ? m_header->height() : 0) + i * m_drawer.rowHeight();
+
+        if(rtl)
+        {
+            row->rect = QRect(width() - rowWidth - 5, rect_y, rowWidth, m_drawer.rowHeight() - 1);
+        }
+        else
+        {
+            row->rect = QRect(5, rect_y, rowWidth, m_drawer.rowHeight() - 1);
+        }
+
+
         m_drawer.prepareRow(row);  //elide titles
     }
     update();
