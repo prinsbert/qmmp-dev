@@ -194,10 +194,15 @@ void ListWidget::paintEvent(QPaintEvent *)
     {
         if(m_rows[i]->flags & ListWidgetRow::GROUP)
         {
-            if (m_rows[i]->subIndex == 0 || (i == 0 && m_rows[i]->subIndex > 0))
+            if(m_model->linesPerGroup() == 1)
             {
                 m_drawer.drawBackground(&painter, m_rows[i], i);
                 m_drawer.drawSeparator(&painter, m_rows[i], rtl);
+            }
+            else if(m_rows[i]->subIndex == 0 || (i == 0 && m_rows[i]->subIndex > 0))
+            {
+                m_drawer.drawBackground(&painter, m_rows[i], i);
+                m_drawer.drawSeparator2(&painter, m_rows[i], m_model->linesPerGroup(), rtl);
             }
         }
         else

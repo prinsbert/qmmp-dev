@@ -82,6 +82,7 @@ public:
     void fillBackground(QPainter *painter, int width, int height);
     void drawBackground(QPainter *painter, ListWidgetRow *row, int index);
     void drawSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
+    void drawSeparator2(QPainter *painter, ListWidgetRow *row, int linesPerGroup, bool rtl);
     void drawTrack(QPainter *painter, ListWidgetRow *row, bool rtl);
     void drawDropLine(QPainter *painter, int row_number, int width, int header_height);
 
