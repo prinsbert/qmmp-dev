@@ -267,8 +267,7 @@ void ListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row, int
 
     if(m_show_anchor && (row->flags & ListWidgetRow::ANCHOR))
     {
-        //painter->setPen(m_normal);
-        painter->setPen("cyan");
+        painter->setPen(m_normal);
     }
     else if(row->flags & ListWidgetRow::SELECTED)
     {
@@ -279,17 +278,12 @@ void ListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row, int
 
 void ListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *row, bool rtl)
 {
-    int sx = 50 + row->numberColumnWidth;
-    int sy =  row->rect.y() + m_metrics->overlinePos() - 1;
+    int sx = rtl ? (row->rect.right() - 50 - row->numberColumnWidth - m_metrics->horizontalAdvance(row->titles[0])) :
+        (row->rect.x() + row->numberColumnWidth + 50);
+    int sy = row->rect.y() + m_metrics->overlinePos() - 1;
 
     painter->setFont(m_font);
     painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
-
-    if(rtl)
-        sx = row->rect.right() - sx - m_metrics->horizontalAdvance(row->titles[0]);
-    else
-        sx += row->rect.x();
-
     painter->drawText(sx, sy, row->titles[0]);
 
     sy -= m_metrics->lineSpacing()/2 - 2;
@@ -311,6 +305,53 @@ void ListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *row, bool
         painter->drawLine(sx - 45, sy, sx - 5, sy);
         painter->drawLine(sx + m_metrics->horizontalAdvance(row->titles[0]) + 5, sy,
                 row->rect.width(), sy);
+        if(m_show_splitters && row->numberColumnWidth)
+        {
+            painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_splitter);
+            painter->drawLine(row->rect.left() + row->numberColumnWidth, row->rect.top(),
+                              row->rect.left() + row->numberColumnWidth, row->rect.bottom() + 1);
+        }
+    }
+}
+
+void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int linesPerGroup, bool rtl)
+{
+    int sx = rtl ? (row->rect.right() - row->numberColumnWidth - m_padding - m_metrics->horizontalAdvance(row->titles[0])) :
+        (row->rect.x() + m_padding + row->numberColumnWidth);
+
+    painter->setFont(m_font);
+    painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
+
+    if(linesPerGroup == 1)
+    {
+        int sy = row->rect.y() + row->rect.height() / 2 + m_metrics->overlinePos() / 2;
+        painter->drawText(sx, sy, row->titles[0]);
+
+    }
+    else if(linesPerGroup >= 2)
+    {
+        QPixmap pix(":/qsui/ui_no_cover.png");
+        painter->drawPixmap(row->rect.x() + 5, row->rect.y() + 5, row->rect.height() - 10, row->rect.height() - 10, pix);
+        sx += row->rect.height();
+
+        int spacing = (row->rect.height() - 2 * (m_metrics->overlinePos() + m_metrics->underlinePos())) / 3;
+        int sy = row->rect.y() +  spacing + m_metrics->overlinePos();
+        painter->drawText(sx, sy, row->titles[0]);
+        sy = row->rect.bottom() - spacing - m_metrics->underlinePos();
+        painter->drawText(sx, sy, "title 2");
+    }
+
+    if(rtl)
+    {
+        if(m_show_splitters && row->numberColumnWidth)
+        {
+            painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_splitter);
+            painter->drawLine(row->rect.right() - row->numberColumnWidth, row->rect.top(),
+                              row->rect.right() - row->numberColumnWidth, row->rect.bottom() + 1);
+        }
+    }
+    else
+    {
         if(m_show_splitters && row->numberColumnWidth)
         {
             painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_splitter);
