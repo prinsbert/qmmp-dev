@@ -338,7 +338,7 @@ QList<PlayListItem *> GroupedContainer::itemsAtLines(int pos, int length) const
     updateCache();
     QList<PlayListLine> lines = m_lines.mid(pos, length);
     QList<PlayListItem *> out;
-    for (const PlayListLine &line : qAsConst(lines))
+    for(const PlayListLine &line : qAsConst(lines))
     {
         if(line.isGroup)
             out << m_groups.at(line.index);
@@ -358,6 +358,9 @@ int GroupedContainer::subIndexOfLine(int lineIndex) const
 int GroupedContainer::trackIndexAtLine(int lineIndex) const
 {
     updateCache();
+    if(lineIndex < 0 || lineIndex >= m_lines.count())
+        return -1;
+
     return m_lines[lineIndex].isGroup ? -1 : m_lines[lineIndex].index;
 }
 
