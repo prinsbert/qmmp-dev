@@ -76,3 +76,24 @@ bool PlayListGroup::isGroup() const
 {
     return true;
 }
+
+QString PlayListGroup::firstTrackPath() const
+{
+    return trackList.isEmpty() ? QString() : trackList.constFirst()->path();
+}
+
+bool PlayListGroup::isCoverLoaded() const
+{
+    return m_isCoverLoaded;
+}
+
+QPixmap PlayListGroup::cover() const
+{
+    return m_cover;
+}
+
+void PlayListGroup::setCover(const QPixmap &cover)
+{
+    m_isCoverLoaded = true;
+    m_cover = cover;
+}

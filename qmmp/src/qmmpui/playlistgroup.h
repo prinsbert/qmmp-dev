@@ -21,6 +21,7 @@
 #ifndef PLAYLISTGROUP_H
 #define PLAYLISTGROUP_H
 
+#include <QPixmap>
 #include "playlisttrack.h"
 #include "playlistitem.h"
 #include "qmmpui_export.h"
@@ -75,12 +76,19 @@ public:
      */
     bool isGroup() const override;
 
+    QString firstTrackPath() const;
+    bool isCoverLoaded() const;
+    QPixmap cover() const;
+    void setCover(const QPixmap &cover);
+
 private:
     QList<PlayListTrack *> trackList; //A list of tracks
     friend class GroupedContainer;
-    friend class GroupedContainer2;
 
     QString m_name;
+    bool m_isCoverLoaded = false;
+    QPixmap m_cover;
+
 };
 
 #endif // PLAYLISTGROUP_H
