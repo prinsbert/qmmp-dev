@@ -88,6 +88,7 @@ void PlayListModel::add(PlayListTrack *track)
 {
     m_container->addTrack(track);
     m_total_duration += track->duration();
+
     int flags = 0;
 
     if(m_container->trackCount() == 1)
@@ -101,7 +102,10 @@ void PlayListModel::add(PlayListTrack *track)
         //update current index for grouped container only
         m_current = m_container->indexOf(m_current_track);
     }
+    if(sender() != m_loader)
+        preparePlayState();
     flags |= STRUCTURE;
+    emit trackAdded(track);
     emit listChanged(flags);
 }
 
@@ -131,7 +135,8 @@ void PlayListModel::add(const QList<PlayListTrack *> &tracks)
         m_total_duration += track->duration();
         emit trackAdded(track);
     }
-    preparePlayState();
+    if(sender() != m_loader)
+        preparePlayState();
     flags |= STRUCTURE;
     emit listChanged(flags);
 }
@@ -164,6 +169,8 @@ void PlayListModel::insert(int index, PlayListTrack *track)
         //update current index
         m_current = m_container->indexOf(m_current_track);
     }
+    if(sender() != m_loader)
+        preparePlayState();
     emit trackAdded(track);
     flags |= STRUCTURE;
     emit listChanged(flags);
@@ -198,7 +205,8 @@ void PlayListModel::insert(int index, const QList<PlayListTrack *> &tracks)
     }
     //update current index
     m_current = m_container->indexOf(m_current_track);
-    preparePlayState();
+    if (sender() != m_loader)
+        preparePlayState();
     flags |= STRUCTURE;
     emit listChanged(flags);
 }
@@ -212,21 +220,21 @@ void PlayListModel::insert(PlayListTrack *before, const QList<PlayListTrack *> &
 {
     if(m_ui_settings->skipExistingTracks() && sender() == m_loader)
     {
-        if(m_paths.isEmpty())
+        if(m_uniquePaths.isEmpty())
         {
-            m_paths.reserve(m_container->trackCount());
+            m_uniquePaths.reserve(m_container->trackCount());
             for(const PlayListTrack *track : m_container->tracks())
             {
-                m_paths.insert(track->path());
+                m_uniquePaths.insert(track->path());
             }
         }
 
         QList<PlayListTrack *> uniqueTracks;
         for(PlayListTrack *track : qAsConst(tracks))
         {
-            if(!m_paths.contains(track->path()))
+            if(!m_uniquePaths.contains(track->path()))
             {
-                m_paths.insert(track->path());
+                m_uniquePaths.insert(track->path());
                 uniqueTracks << track;
             }
         }
@@ -1085,6 +1093,8 @@ void PlayListModel::onTaskFinished()
                     ++it;
                 }
             }
+
+            preparePlayState();
         }
         m_container->restoreQueue(queuedTracks);
         emit listChanged(flags);
@@ -1216,8 +1226,8 @@ bool PlayListModel::isLoaderRunning() const
 void PlayListModel::preparePlayState()
 {
     m_play_state->prepare();
-    m_paths.clear();
-    m_paths.squeeze();
+    m_uniquePaths.clear();
+    m_uniquePaths.squeeze();
 }
 
 void PlayListModel::removeInvalidTracks()

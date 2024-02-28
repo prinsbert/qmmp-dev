@@ -359,6 +359,7 @@ signals:
      * Emitted when new track has added.
      * @param track Pointer of the new playlist track.
      */
+    //TODO rename to tracksAdded
     void trackAdded(PlayListTrack *track);
     /*!
      * Emitted when playlist name has chanded.
@@ -603,7 +604,7 @@ private:
     PlayListContainer *m_container;
     QmmpUiSettings *m_ui_settings;
     PlayListTask *m_task;
-    QSet<QString> m_paths;
+    QSet<QString> m_uniquePaths;
 };
 
 Q_DECLARE_METATYPE(PlayListModel::SortMode)
