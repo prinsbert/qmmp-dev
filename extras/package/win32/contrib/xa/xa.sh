@@ -1,13 +1,13 @@
 #!/bin/sh
 
 NAME=xa
-VERSION=2.3.14
+VERSION=2.4.1
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://ftp.jaist.ac.jp/pub/Linux/Gentoo/distfiles/$NAME-$VERSION.tar.gz
+    wget -nc https://www.floodgap.com/retrotech/xa/dists/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp
