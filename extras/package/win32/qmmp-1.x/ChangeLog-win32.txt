@@ -467,3 +467,12 @@ LEGEND
 [*] libxmp-4.6.0
 [*] libsidplayfp-2.5.0
 [!] fixed https support
+
+1.6.6
+[*] qmmp-1.6.6
+[*] qt-5.15.13
+[*] wavpack-5.7.0
+[*] curl-8.6.0
+[*] ffmpeg-5.1.4
+[*] libsidplayfp-2.6.0
+[*] mpg123-1.32.5
