@@ -1288,47 +1288,47 @@
         <translation>播放列表颜色</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="860"/>
+        <location filename="../forms/qsuisettings.ui" line="466"/>
         <source>Background #1:</source>
         <translation>背景#1：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="669"/>
+        <location filename="../forms/qsuisettings.ui" line="498"/>
         <source>Normal text:</source>
         <translation>正常文本：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="617"/>
+        <location filename="../forms/qsuisettings.ui" line="530"/>
         <source>Background #2:</source>
         <translation>背景#2：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="717"/>
+        <location filename="../forms/qsuisettings.ui" line="562"/>
         <source>Current text:</source>
         <translation>当前文本：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="662"/>
+        <location filename="../forms/qsuisettings.ui" line="594"/>
         <source>Highlighted background:</source>
         <translation>高亮显示的背景：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="724"/>
+        <location filename="../forms/qsuisettings.ui" line="626"/>
         <source>Highlighted text:</source>
         <translation>高亮显示的文本：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="766"/>
+        <location filename="../forms/qsuisettings.ui" line="814"/>
         <source>Override current track background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="734"/>
+        <location filename="../forms/qsuisettings.ui" line="769"/>
         <source>Current track background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="821"/>
+        <location filename="../forms/qsuisettings.ui" line="860"/>
         <source>Override group background</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1358,17 +1358,17 @@
         <translation>使用系统颜色</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="814"/>
+        <location filename="../forms/qsuisettings.ui" line="734"/>
         <source>Group background:</source>
         <translation>分组背景：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="828"/>
+        <location filename="../forms/qsuisettings.ui" line="702"/>
         <source>Group text:</source>
         <translation>分组文本：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="710"/>
+        <location filename="../forms/qsuisettings.ui" line="661"/>
         <source>Splitter:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1640,12 +1640,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="329"/>
         <source>2 Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="332"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>

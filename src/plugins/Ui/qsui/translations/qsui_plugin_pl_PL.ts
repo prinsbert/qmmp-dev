@@ -1288,47 +1288,47 @@
         <translation>Kolory list odtwarzania</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="860"/>
+        <location filename="../forms/qsuisettings.ui" line="466"/>
         <source>Background #1:</source>
         <translation>Tło #1:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="669"/>
+        <location filename="../forms/qsuisettings.ui" line="498"/>
         <source>Normal text:</source>
         <translation>Normalny tekst:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="617"/>
+        <location filename="../forms/qsuisettings.ui" line="530"/>
         <source>Background #2:</source>
         <translation>Tło #2:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="717"/>
+        <location filename="../forms/qsuisettings.ui" line="562"/>
         <source>Current text:</source>
         <translation>Aktualny tekst:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="662"/>
+        <location filename="../forms/qsuisettings.ui" line="594"/>
         <source>Highlighted background:</source>
         <translation>Podświetlone tło:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="724"/>
+        <location filename="../forms/qsuisettings.ui" line="626"/>
         <source>Highlighted text:</source>
         <translation>Podświetlony tekst:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="766"/>
+        <location filename="../forms/qsuisettings.ui" line="814"/>
         <source>Override current track background</source>
         <translation>Zastąp tło aktualnego utworu</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="734"/>
+        <location filename="../forms/qsuisettings.ui" line="769"/>
         <source>Current track background:</source>
         <translation>Tło aktualnego utworu:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="821"/>
+        <location filename="../forms/qsuisettings.ui" line="860"/>
         <source>Override group background</source>
         <translation>Zastąp tło grupy</translation>
     </message>
@@ -1358,17 +1358,17 @@
         <translation>Użyj systemowych kolorów</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="814"/>
+        <location filename="../forms/qsuisettings.ui" line="734"/>
         <source>Group background:</source>
         <translation>Tło grupy:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="828"/>
+        <location filename="../forms/qsuisettings.ui" line="702"/>
         <source>Group text:</source>
         <translation>Tekst grupy:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="710"/>
+        <location filename="../forms/qsuisettings.ui" line="661"/>
         <source>Splitter:</source>
         <translation>Rozdzielacz:</translation>
     </message>
@@ -1642,12 +1642,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="329"/>
         <source>2 Channels</source>
         <translation>2 kanały</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="332"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>Średnia kwadratowa</translation>

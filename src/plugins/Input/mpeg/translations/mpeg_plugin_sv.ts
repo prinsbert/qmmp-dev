@@ -14,32 +14,32 @@
         <translation>MPEG filer</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="411"/>
+        <location filename="../decodermpegfactory.cpp" line="420"/>
         <source>About MPEG Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="412"/>
+        <location filename="../decodermpegfactory.cpp" line="421"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="413"/>
+        <location filename="../decodermpegfactory.cpp" line="422"/>
         <source>Compiled against:</source>
         <translation>Kompilerad mot:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="422"/>
+        <location filename="../decodermpegfactory.cpp" line="431"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API version: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="426"/>
+        <location filename="../decodermpegfactory.cpp" line="435"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Skriven av: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="427"/>
+        <location filename="../decodermpegfactory.cpp" line="436"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Källkod baserad på mq3 och madplay-projekten</translation>
     </message>
@@ -47,25 +47,25 @@
 <context>
     <name>MPEGMetaDataModel</name>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="66"/>
-        <location filename="../mpegmetadatamodel.cpp" line="69"/>
-        <location filename="../mpegmetadatamodel.cpp" line="72"/>
-        <location filename="../mpegmetadatamodel.cpp" line="75"/>
+        <location filename="../mpegmetadatamodel.cpp" line="70"/>
+        <location filename="../mpegmetadatamodel.cpp" line="73"/>
+        <location filename="../mpegmetadatamodel.cpp" line="76"/>
+        <location filename="../mpegmetadatamodel.cpp" line="79"/>
         <source>Mode</source>
         <translation>Läge</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="78"/>
+        <location filename="../mpegmetadatamodel.cpp" line="82"/>
         <source>Protection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="79"/>
+        <location filename="../mpegmetadatamodel.cpp" line="83"/>
         <source>Copyright</source>
         <translation>Copyright</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="80"/>
+        <location filename="../mpegmetadatamodel.cpp" line="84"/>
         <source>Original</source>
         <translation>Original</translation>
     </message>

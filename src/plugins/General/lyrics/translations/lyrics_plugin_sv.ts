@@ -142,7 +142,7 @@
 <context>
     <name>UltimateLyricsParser</name>
     <message>
-        <location filename="../ultimatelyricsparser.cpp" line="117"/>
+        <location filename="../ultimatelyricsparser.cpp" line="116"/>
         <source>%1 (line: %2)</source>
         <translation>%1 (rad: %2)</translation>
     </message>
