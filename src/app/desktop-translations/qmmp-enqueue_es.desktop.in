@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[es]=qmmp
-Name[es]=Encolar en Qmmp
 Comment[es]=Añadir archivo(s) a la lista de reproducción de Qmmp
+Name[es]=Encolar en Qmmp
+Icon[es]=qmmp
