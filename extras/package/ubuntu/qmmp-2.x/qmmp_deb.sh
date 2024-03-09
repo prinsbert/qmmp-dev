@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=2.1.5
+QMMP_VERSION=2.1.6
 UBUNTU_CODENAMES='jammy lunar mantic'
 BUILD_ROOT=build-root
 

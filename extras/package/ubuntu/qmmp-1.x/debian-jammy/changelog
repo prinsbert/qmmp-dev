@@ -1,3 +1,9 @@
+qmmp (1.6.6-1ubuntu1~jammy0) jammy; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 09 Mar 2024 16:26:50 +0300
+
 qmmp (1.6.5-1ubuntu1~jammy0) jammy; urgency=medium
 
   * New upstream release.
