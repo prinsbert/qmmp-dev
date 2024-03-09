@@ -14,32 +14,32 @@
         <translation>Αρχεία MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="412"/>
+        <location filename="../decodermpegfactory.cpp" line="421"/>
         <source>About MPEG Audio Plugin</source>
         <translation>Σχετικά με το πρόσθετο ήχου MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="413"/>
+        <location filename="../decodermpegfactory.cpp" line="422"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation>MPEG 1.0/2.0/2.5 στρώση 1/2/3 αποκωδικοποιητής ήχου</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="414"/>
+        <location filename="../decodermpegfactory.cpp" line="423"/>
         <source>Compiled against:</source>
         <translation>Μεταγλωττίστηκε χρησιμοποιώντας:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="423"/>
+        <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API έκδοση: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="427"/>
+        <location filename="../decodermpegfactory.cpp" line="436"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="428"/>
+        <location filename="../decodermpegfactory.cpp" line="437"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>Ο πηγαίος κώδικας έχει βασιστεί στα έργα mq3 και madplay</translation>
     </message>
@@ -47,25 +47,25 @@
 <context>
     <name>MPEGMetaDataModel</name>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="66"/>
-        <location filename="../mpegmetadatamodel.cpp" line="69"/>
-        <location filename="../mpegmetadatamodel.cpp" line="72"/>
-        <location filename="../mpegmetadatamodel.cpp" line="75"/>
+        <location filename="../mpegmetadatamodel.cpp" line="70"/>
+        <location filename="../mpegmetadatamodel.cpp" line="73"/>
+        <location filename="../mpegmetadatamodel.cpp" line="76"/>
+        <location filename="../mpegmetadatamodel.cpp" line="79"/>
         <source>Mode</source>
         <translation>Λειτουργία</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="78"/>
+        <location filename="../mpegmetadatamodel.cpp" line="82"/>
         <source>Protection</source>
         <translation>Προστασία</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="79"/>
+        <location filename="../mpegmetadatamodel.cpp" line="83"/>
         <source>Copyright</source>
         <translation>Πνευματικά δικαιώματα</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="80"/>
+        <location filename="../mpegmetadatamodel.cpp" line="84"/>
         <source>Original</source>
         <translation>Αρχικό</translation>
     </message>

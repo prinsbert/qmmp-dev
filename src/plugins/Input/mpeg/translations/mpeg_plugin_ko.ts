@@ -14,32 +14,32 @@
         <translation>MPEG 파일</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="412"/>
+        <location filename="../decodermpegfactory.cpp" line="421"/>
         <source>About MPEG Audio Plugin</source>
         <translation>MPEG 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="413"/>
+        <location filename="../decodermpegfactory.cpp" line="422"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation>MPEG 1.0/2.0/2.5 레이어 1/2/3 오디오 디코더</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="414"/>
+        <location filename="../decodermpegfactory.cpp" line="423"/>
         <source>Compiled against:</source>
         <translation>컴파일 대상:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="423"/>
+        <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>mpg123, API version: %1</source>
         <translation>mpg123, API 버전: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="427"/>
+        <location filename="../decodermpegfactory.cpp" line="436"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="428"/>
+        <location filename="../decodermpegfactory.cpp" line="437"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation>mq3 및 madplay 프로젝트에 기반한 소스 코드</translation>
     </message>
@@ -47,25 +47,25 @@
 <context>
     <name>MPEGMetaDataModel</name>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="66"/>
-        <location filename="../mpegmetadatamodel.cpp" line="69"/>
-        <location filename="../mpegmetadatamodel.cpp" line="72"/>
-        <location filename="../mpegmetadatamodel.cpp" line="75"/>
+        <location filename="../mpegmetadatamodel.cpp" line="70"/>
+        <location filename="../mpegmetadatamodel.cpp" line="73"/>
+        <location filename="../mpegmetadatamodel.cpp" line="76"/>
+        <location filename="../mpegmetadatamodel.cpp" line="79"/>
         <source>Mode</source>
         <translation>모드</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="78"/>
+        <location filename="../mpegmetadatamodel.cpp" line="82"/>
         <source>Protection</source>
         <translation>보호</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="79"/>
+        <location filename="../mpegmetadatamodel.cpp" line="83"/>
         <source>Copyright</source>
         <translation>저작권</translation>
     </message>
     <message>
-        <location filename="../mpegmetadatamodel.cpp" line="80"/>
+        <location filename="../mpegmetadatamodel.cpp" line="84"/>
         <source>Original</source>
         <translation>원본</translation>
     </message>

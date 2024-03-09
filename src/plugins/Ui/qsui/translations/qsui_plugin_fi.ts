@@ -1288,47 +1288,47 @@
         <translation>Soittolistan värit</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="860"/>
+        <location filename="../forms/qsuisettings.ui" line="466"/>
         <source>Background #1:</source>
         <translation>Tausta #1:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="669"/>
+        <location filename="../forms/qsuisettings.ui" line="498"/>
         <source>Normal text:</source>
         <translation>Normaali teksti:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="617"/>
+        <location filename="../forms/qsuisettings.ui" line="530"/>
         <source>Background #2:</source>
         <translation>Tausta #2:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="717"/>
+        <location filename="../forms/qsuisettings.ui" line="562"/>
         <source>Current text:</source>
         <translation>Nykyinen teksti:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="662"/>
+        <location filename="../forms/qsuisettings.ui" line="594"/>
         <source>Highlighted background:</source>
         <translation>Korostettu tausta:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="724"/>
+        <location filename="../forms/qsuisettings.ui" line="626"/>
         <source>Highlighted text:</source>
         <translation>Korostettu teksti:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="766"/>
+        <location filename="../forms/qsuisettings.ui" line="814"/>
         <source>Override current track background</source>
         <translation>Ohita nykyisen kappaleen tausta</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="734"/>
+        <location filename="../forms/qsuisettings.ui" line="769"/>
         <source>Current track background:</source>
         <translation>Nykyisen kappaleen tausta:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="821"/>
+        <location filename="../forms/qsuisettings.ui" line="860"/>
         <source>Override group background</source>
         <translation>Ohita ryhmän tausta</translation>
     </message>
@@ -1358,17 +1358,17 @@
         <translation>Käytä järjestelmän värejä</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="814"/>
+        <location filename="../forms/qsuisettings.ui" line="734"/>
         <source>Group background:</source>
         <translation>Ryhmän tausta:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="828"/>
+        <location filename="../forms/qsuisettings.ui" line="702"/>
         <source>Group text:</source>
         <translation>Ryhmän teksti:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="710"/>
+        <location filename="../forms/qsuisettings.ui" line="661"/>
         <source>Splitter:</source>
         <translation>Jakaja:</translation>
     </message>
@@ -1641,12 +1641,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="333"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="334"/>
         <source>2 Channels</source>
         <translation>2 kanavaa</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="336"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="337"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS</translation>

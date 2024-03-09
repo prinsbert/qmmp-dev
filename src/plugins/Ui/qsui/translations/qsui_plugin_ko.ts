@@ -1288,47 +1288,47 @@
         <translation>재생목록 색상</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="860"/>
+        <location filename="../forms/qsuisettings.ui" line="466"/>
         <source>Background #1:</source>
         <translation>배경 #1:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="669"/>
+        <location filename="../forms/qsuisettings.ui" line="498"/>
         <source>Normal text:</source>
         <translation>일반 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="617"/>
+        <location filename="../forms/qsuisettings.ui" line="530"/>
         <source>Background #2:</source>
         <translation>배경 #2:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="717"/>
+        <location filename="../forms/qsuisettings.ui" line="562"/>
         <source>Current text:</source>
         <translation>현재 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="662"/>
+        <location filename="../forms/qsuisettings.ui" line="594"/>
         <source>Highlighted background:</source>
         <translation>강조 표시된 배경:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="724"/>
+        <location filename="../forms/qsuisettings.ui" line="626"/>
         <source>Highlighted text:</source>
         <translation>강조 표시된 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="766"/>
+        <location filename="../forms/qsuisettings.ui" line="814"/>
         <source>Override current track background</source>
         <translation>현재 트랙 배경 재정의</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="734"/>
+        <location filename="../forms/qsuisettings.ui" line="769"/>
         <source>Current track background:</source>
         <translation>현재 트랙 배경</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="821"/>
+        <location filename="../forms/qsuisettings.ui" line="860"/>
         <source>Override group background</source>
         <translation>그룹 배경 재정의</translation>
     </message>
@@ -1358,17 +1358,17 @@
         <translation>시스템 색상 사용</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="814"/>
+        <location filename="../forms/qsuisettings.ui" line="734"/>
         <source>Group background:</source>
         <translation>그룹 배경:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="828"/>
+        <location filename="../forms/qsuisettings.ui" line="702"/>
         <source>Group text:</source>
         <translation>그룹 텍스트:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="710"/>
+        <location filename="../forms/qsuisettings.ui" line="661"/>
         <source>Splitter:</source>
         <translation>스플리터:</translation>
     </message>
@@ -1640,12 +1640,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="333"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="334"/>
         <source>2 Channels</source>
         <translation>2 채널</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="336"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="337"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation>RMS</translation>
