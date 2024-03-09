@@ -1845,3 +1845,4 @@ Version 1.6.6
   - fixed issue with URL formatting
   - updated lyrics providers
   - using UTF-8 for all lyrics providers
+* updated Spanish translation (Darwin Toledo)
