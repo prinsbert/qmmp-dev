@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate http://downloads.xiph.org/releases/flac/$NAME-$VERSION.tar.xz
+    wget -nc https://ftp.osuosl.org/pub/xiph/releases/flac/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp

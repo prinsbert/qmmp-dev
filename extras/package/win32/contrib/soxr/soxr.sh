@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate http://sourceforge.net/projects/soxr/files/$NAME-$VERSION-Source.tar.xz
+    wget -nc https://sourceforge.net/projects/soxr/files/$NAME-$VERSION-Source.tar.xz
   ;;
   --install)
     cd temp

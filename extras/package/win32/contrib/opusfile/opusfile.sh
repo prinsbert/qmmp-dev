@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate http://downloads.xiph.org/releases/opus/$NAME-$VERSION.tar.gz
+    wget -nc https://ftp.osuosl.org/pub/xiph/releases/opus/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp

@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate https://launchpad.net/ubuntu/+archive/primary/+files/${NAME}_${VERSION}+dfsg.orig.tar.gz 
+    wget -nc https://launchpad.net/ubuntu/+archive/primary/+files/${NAME}_${VERSION}+dfsg.orig.tar.gz 
 
   ;;
   --install)

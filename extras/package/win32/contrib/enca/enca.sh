@@ -8,7 +8,7 @@ case $1 in
     mkdir -p temp
     cd temp
     #wget -nc http://dl.cihar.com/enca/$NAME-$VERSION.tar.gz
-    wget -nc --no-check-certificate https://github.com/nijel/enca/archive/$VERSION.tar.gz \
+    wget -nc https://github.com/nijel/enca/archive/$VERSION.tar.gz \
     -O $NAME-$VERSION.tar.gz
   ;;
   --install)

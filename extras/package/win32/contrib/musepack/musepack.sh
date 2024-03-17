@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate http://files.musepack.net/source/${NAME}_src_r${VERSION}.tar.gz
+    wget -nc https://files.musepack.net/source/${NAME}_src_r${VERSION}.tar.gz
   ;;
   --install)
     cd temp

@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp    
-    wget -nc --no-check-certificate https://github.com/adplug/adplug/releases/download/$NAME-$VERSION/$NAME-$VERSION.tar.bz2 \
+    wget -nc https://github.com/adplug/adplug/releases/download/$NAME-$VERSION/$NAME-$VERSION.tar.bz2 \
     -O $NAME-$VERSION.tar.bz2
   ;;
   --install)

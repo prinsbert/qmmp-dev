@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc --no-check-certificate https://curl.haxx.se/download/$NAME-$VERSION.tar.gz
+    wget -nc https://curl.haxx.se/download/$NAME-$VERSION.tar.gz
   ;;
   --install)
     cd temp

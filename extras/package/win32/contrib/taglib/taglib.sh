@@ -7,7 +7,7 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp    
-    wget -nc --no-check-certificate https://taglib.org/releases/$NAME-$VERSION.tar.gz 
+    wget -nc https://taglib.org/releases/$NAME-$VERSION.tar.gz 
   ;;
 
   --install)
