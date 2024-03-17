@@ -57,6 +57,7 @@ SET(libqmmpui_SRCS
     metadatahelper.cpp
     coverviewer.cpp
     covereditor.cpp
+    coverloader.cpp
     generalfactory.cpp
     cueeditor.cpp
     forms/detailsdialog.ui

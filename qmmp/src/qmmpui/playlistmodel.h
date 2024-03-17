@@ -32,6 +32,7 @@
 #include "playlistitem.h"
 #include "playlisttrack.h"
 #include "playlistgroup.h"
+#include "coverloader_p.h"
 #include "qmmpui_export.h"
 
 class FileLoader;
@@ -600,6 +601,7 @@ private:
     PlayState* m_play_state; /*!< Current playing state (Normal or Shuffle) */
     qint64 m_total_duration = 0;
     FileLoader *m_loader;
+    CoverLoader *m_coverLoder;
     QString m_name;
     PlayListContainer *m_container;
     QmmpUiSettings *m_ui_settings;

@@ -330,7 +330,7 @@ void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int
     }
     else if(linesPerGroup >= 2)
     {
-        QPixmap pix(":/qsui/ui_no_cover.png");
+        QPixmap pix = row->cover.isNull() ? QPixmap(":/qsui/ui_no_cover.png") : row->cover;
         painter->drawPixmap(row->rect.x() + 5, row->rect.y() + 5, row->rect.height() - 10, row->rect.height() - 10, pix);
         sx += row->rect.height();
 
