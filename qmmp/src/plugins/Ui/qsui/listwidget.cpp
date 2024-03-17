@@ -918,7 +918,7 @@ void ListWidget::contextMenuEvent(QContextMenuEvent * event)
 
 void ListWidget::recenterTo(int index)
 {
-    if (m_row_count && !m_filterMode)
+    if (m_row_count && index >= 0 && !m_filterMode)
     {
         int line = m_model->findLine(m_model->track(index));
 
