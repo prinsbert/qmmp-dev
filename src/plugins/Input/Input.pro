@@ -19,10 +19,6 @@ contains(CONFIG, MODPLUG_PLUGIN){
     SUBDIRS += modplug
 }
 
-contains(CONFIG, FFMPEG_PLUGIN){
-       SUBDIRS += ffmpeg
-}
-
 contains(CONFIG, GME_PLUGIN){
   SUBDIRS += gme
 }
@@ -40,6 +36,10 @@ contains(CONFIG, SID_PLUGIN){
 }
 
 unix{
+
+contains(CONFIG, MODPLUG_PLUGIN){
+    SUBDIRS += modplug
+}
 
 contains(CONFIG, AAC_PLUGIN){
   SUBDIRS += aac
