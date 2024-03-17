@@ -39,6 +39,7 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
     m_ui_settings = QmmpUiSettings::instance();
 
     m_loader = new FileLoader(this);
+    m_coverLoder = new CoverLoader(this);
     m_task = new PlayListTask(this);
 
     if(m_ui_settings->isGroupsEnabled())
@@ -58,6 +59,14 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
             SLOT(insert(PlayListTrack*,QList<PlayListTrack*>)), Qt::QueuedConnection);
     connect(m_loader, SIGNAL(finished()), SLOT(preparePlayState()));
     connect(m_loader, SIGNAL(finished()), SIGNAL(loaderFinished()));
+    connect(m_coverLoder, &CoverLoader::ready, this, [this](const QString &path, const QPixmap &pixmap){
+        for(PlayListGroup *g : m_container->groups())
+        {
+            if(g->firstTrackPath() == path)
+                g->setCover(pixmap);
+        }
+        emit listChanged(METADATA);
+    });
     connect(m_task, SIGNAL(finished()), SLOT(onTaskFinished()));
 }
 
@@ -1228,6 +1237,19 @@ void PlayListModel::preparePlayState()
     m_play_state->prepare();
     m_uniquePaths.clear();
     m_uniquePaths.squeeze();
+
+    if(linesPerGroup() > 1)
+    {
+        const QList<PlayListGroup *> groups = m_container->groups();
+        QStringList paths;
+        for(const PlayListGroup *g : qAsConst(groups))
+        {
+            if(!g->isCoverLoaded() && !g->firstTrackPath().isEmpty())
+                paths << g->firstTrackPath();
+        }
+
+        m_coverLoder->add(paths);
+    }
 }
 
 void PlayListModel::removeInvalidTracks()

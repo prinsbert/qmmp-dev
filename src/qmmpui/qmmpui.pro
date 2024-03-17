@@ -29,6 +29,7 @@ win32 {
 }
 
 HEADERS += general.h \
+    coverloader_p.h \
     generalfactory.h \
     playlistformat.h \
     playlistparser.h \
@@ -75,6 +76,7 @@ HEADERS += general.h \
     cueeditor_p.h
 
 SOURCES += general.cpp \
+    coverloader.cpp \
     playlistparser.cpp \
     commandlinemanager.cpp \
     filedialog.cpp \
