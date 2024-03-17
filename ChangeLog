@@ -1576,3 +1576,9 @@ Version 0.12.17
   - added feature to merge different tag types
 * fixed removing of the current playing file in the file operations plugin
 * fixed http version
+
+Version 0.12.18
+* improved lyrics plugin:
+  - fixed issue with URL formatting
+  - updated lyrics providers
+  - using UTF-8 for all lyrics providers
