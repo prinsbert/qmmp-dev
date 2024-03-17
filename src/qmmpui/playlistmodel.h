@@ -233,7 +233,6 @@ public:
     int findLine(PlayListItem *item) const;
     int subIndexOfLine(int lineIndex) const;
     int trackIndexAtLine(int lineIndex) const;
-    int lineAtTrack() const;
     int linesPerGroup() const;
     /*!
      *  Moves the item at index position \b from to index position \b to.
