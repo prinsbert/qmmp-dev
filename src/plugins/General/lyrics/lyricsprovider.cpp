@@ -109,7 +109,7 @@ QString LyricsProvider::getUrl(const TrackInfo &track) const
 
 QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) const
 {
-    const QString content = QString::fromUtf8(data);
+    const QString content = QString::fromUtf8(data.constData());
     QString out;
 
     foreach(const QString &indicator, m_invalidIndicators)
@@ -170,8 +170,8 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
     }
 
     //plain text support
-    if(out.contains(QChar::LineFeed) && !out.contains(QChar('<')))
-        out.replace(QChar::LineFeed, QStringLiteral("<br>"));
+    if(out.contains(QChar('\n')) && !out.contains(QChar('<')))
+        out.replace(QChar('\n'), QString("<br>"));
 
     return out;
 }
