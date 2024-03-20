@@ -930,15 +930,15 @@ QList<PlayListTrack *> PlayListModel::tracks() const
 //    return m_container->items();
 //}
 
-//void PlayListModel::addToQueue()
-//{
-//    const QList<PlayListTrack*> selected_tracks = selectedTracks();
-//    blockSignals(true);
-//    for(PlayListTrack *track : qAsConst(selected_tracks))
-//        setQueued(track);
-//    blockSignals(false);
-//    emit listChanged(QUEUE);
-//}
+void PlayListModel::addToQueue()
+{
+    const QList<PlayListTrack*> selected_tracks = selectedTracks();
+    blockSignals(true);
+    for(PlayListTrack *track : qAsConst(selected_tracks))
+        setQueued(track);
+    blockSignals(false);
+    emit listChanged(QUEUE);
+}
 
 void PlayListModel::setQueued(PlayListTrack *t)
 {
@@ -1282,29 +1282,29 @@ void PlayListModel::clearQueue()
      emit listChanged(QUEUE);
 }
 
-//void PlayListModel::stopAfterSelected()
-//{
-//    QList<PlayListTrack*> selected_tracks = selectedTracks();
+void PlayListModel::stopAfterSelected()
+{
+    QList<PlayListTrack*> selected_tracks = selectedTracks();
 
-//    if(!isEmptyQueue())
-//    {
-//        m_stop_track = m_stop_track != m_container->queuedTracks().last() ? m_container->queuedTracks().last() : nullptr;
-//        emit listChanged(STOP_AFTER);
-//    }
-//    else if(selected_tracks.count() == 1)
-//    {
-//        m_stop_track = m_stop_track != selected_tracks.first() ? selected_tracks.first() : nullptr;
-//        emit listChanged(STOP_AFTER);
-//    }
-//    else if(selected_tracks.count() > 1)
-//    {
-//        blockSignals(true);
-//        addToQueue();
-//        blockSignals(false);
-//        m_stop_track = m_container->queuedTracks().last();
-//        emit listChanged(STOP_AFTER | QUEUE);
-//    }
-//}
+    if(!isEmptyQueue())
+    {
+        m_stop_track = m_stop_track != m_container->queuedTracks().constLast() ? m_container->queuedTracks().constLast() : nullptr;
+        emit listChanged(STOP_AFTER);
+    }
+    else if(selected_tracks.count() == 1)
+    {
+        m_stop_track = m_stop_track != selected_tracks.first() ? selected_tracks.first() : nullptr;
+        emit listChanged(STOP_AFTER);
+    }
+    else if(selected_tracks.count() > 1)
+    {
+        blockSignals(true);
+        addToQueue();
+        blockSignals(false);
+        m_stop_track = m_container->queuedTracks().last();
+        emit listChanged(STOP_AFTER | QUEUE);
+    }
+}
 
 void PlayListModel::rebuildGroups()
 {

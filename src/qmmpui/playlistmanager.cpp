@@ -479,10 +479,10 @@ void PlayListManager::sort(PlayListModel::SortMode mode)
     m_selected->sort(mode);
 }
 
-//void PlayListManager::addToQueue()
-//{
-//    m_selected->addToQueue();
-//}
+void PlayListManager::addToQueue()
+{
+    m_selected->addToQueue();
+}
 
 void PlayListManager::removeInvalidTracks()
 {
@@ -504,7 +504,7 @@ void PlayListManager::clearQueue()
     m_selected->clearQueue();
 }
 
-//void PlayListManager::stopAfterSelected()
-//{
-//    m_selected->stopAfterSelected();
-//}
+void PlayListManager::stopAfterSelected()
+{
+    m_selected->stopAfterSelected();
+}
