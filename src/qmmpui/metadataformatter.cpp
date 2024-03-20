@@ -461,7 +461,7 @@ QString MetaDataFormatter::evalute(const QList<Node> *nodes, const TrackInfo *in
         Node node = nodes->at(i);
         if(node.command == Node::PRINT_TEXT)
         {
-            Param p = node.params.first();
+            Param p = node.params.constFirst();
             out.append(printParam(&p, info, trackIndex));
 
         }

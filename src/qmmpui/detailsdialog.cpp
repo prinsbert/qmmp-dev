@@ -213,12 +213,12 @@ void DetailsDialog::updatePage()
     QList<TrackInfo *> infoList = MetaDataManager::instance()->createPlayList(m_info.path());
     if(!infoList.isEmpty())
     {
-        if(infoList.first()->parts() & TrackInfo::MetaData)
-            m_info.setValues(infoList.first()->metaData());
-        if(infoList.first()->parts() & TrackInfo::Properties)
+        if(infoList.constFirst()->parts() & TrackInfo::MetaData)
+            m_info.setValues(infoList.constFirst()->metaData());
+        if(infoList.constFirst()->parts() & TrackInfo::Properties)
         {
-            m_info.updateValues(infoList.first()->properties());
-            m_info.setDuration(infoList.first()->duration());
+            m_info.updateValues(infoList.constFirst()->properties());
+            m_info.setDuration(infoList.constFirst()->duration());
         }
     }
     qDeleteAll(infoList);

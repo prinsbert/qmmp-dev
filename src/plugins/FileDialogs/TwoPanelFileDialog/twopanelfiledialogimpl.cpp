@@ -99,9 +99,9 @@ QStringList TwoPanelFileDialogImpl::selectedFiles() const
     if (m_mode == FileDialog::SaveFile)
     {
         QModelIndexList indexes = m_ui.dirListView->selectionModel()->selectedRows(0);
-        if(!indexes.isEmpty() && indexes.first().isValid())
+        if(!indexes.isEmpty() && indexes.constFirst().isValid())
         {
-            l << m_dirModel->filePath(indexes.first()) + "/" + m_ui.fileNameLineEdit->text();
+            l << m_dirModel->filePath(indexes.constFirst()) + "/" + m_ui.fileNameLineEdit->text();
         }
     }
     else if(m_mode == FileDialog::AddDir || m_mode == FileDialog::AddDirs)
@@ -137,7 +137,7 @@ void TwoPanelFileDialogImpl::updateDirSelection(const QItemSelection &s, const Q
     if(s.indexes().isEmpty())
         return;
 
-    QModelIndex index = s.indexes().first();
+    QModelIndex index = s.indexes().constFirst();
 
     if(index.isValid())
         updateFileList(m_dirModel->filePath(index));
@@ -261,7 +261,7 @@ void TwoPanelFileDialogImpl::on_addButton_clicked()
 
     if(!l.isEmpty())
     {
-        addToHistory(l.first());
+        addToHistory(l.constFirst());
         addFiles(l, false);
     }
 }
@@ -272,7 +272,7 @@ void TwoPanelFileDialogImpl::on_playButton_clicked()
 
     if(!l.isEmpty())
     {
-        addToHistory(l.first());
+        addToHistory(l.constFirst());
         addFiles(l, true);
     }
 }
@@ -387,8 +387,8 @@ void TwoPanelFileDialogImpl::on_fileTypeComboBox_activated(int index)
 
     QModelIndexList indexes = m_ui.dirListView->selectionModel()->selectedRows(0);
 
-    if(!indexes.isEmpty() && indexes.first().isValid())
-        updateFileList(m_dirModel->filePath(indexes.first()));
+    if(!indexes.isEmpty() && indexes.constFirst().isValid())
+        updateFileList(m_dirModel->filePath(indexes.constFirst()));
 }
 
 void TwoPanelFileDialogImpl::updateFileList(const QString &path)

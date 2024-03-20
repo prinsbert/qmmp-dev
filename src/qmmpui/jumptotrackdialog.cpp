@@ -108,7 +108,7 @@ void JumpToTrackDialog::on_queuePushButton_clicked()
     QModelIndexList selectedRows = songsListView->selectionModel()->selectedRows();
     if (!selectedRows.isEmpty())
     {
-        int selected = (m_proxyModel->mapToSource(selectedRows.first())).row();
+        int selected = (m_proxyModel->mapToSource(selectedRows.constFirst())).row();
         PlayListTrack *track = m_model->findTrack(selected);
         m_model->setQueued(track);
 

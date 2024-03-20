@@ -97,7 +97,7 @@ void SettingsDialog::on_tableWidget_itemDoubleClicked (QTableWidgetItem *item)
     {
         QString keyString = HotkeyManager::getKeyString(dialog->keySym (), dialog->nativeModifiers ());
         QList<QTableWidgetItem*> items =  m_ui.tableWidget->findItems(keyString, Qt::MatchFixedString);
-        if(keyString.isEmpty() || items.isEmpty() || items.first() == item)
+        if(keyString.isEmpty() || items.isEmpty() || items.constFirst() == item)
         {
             item->setText(keyString);
             key->key = dialog->keySym ();

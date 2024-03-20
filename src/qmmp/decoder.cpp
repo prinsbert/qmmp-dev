@@ -225,7 +225,7 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
     }
 
     if(!filtered.isEmpty() && !useContent) //fallback
-        return filtered.first();
+        return filtered.constFirst();
 
     return nullptr;
 }

@@ -129,7 +129,7 @@ void PlayListModel::add(const QList<PlayListTrack *> &tracks)
 
     if(m_container->trackCount() == tracks.count())
     {
-        m_current_track = tracks.first();
+        m_current_track = tracks.constFirst();
         m_current = m_container->indexOf(m_current_track);
         flags |= CURRENT;
     }
@@ -323,7 +323,7 @@ PlayListTrack *PlayListModel::nextTrack() const
     if(m_stop_track && m_stop_track == currentTrack())
         return nullptr;
     if(!isEmptyQueue())
-        return m_container->queuedTracks().first();
+        return m_container->queuedTracks().constFirst();
     int index = m_play_state->nextIndex();
     if(index < 0 || (index + 1 > m_container->trackCount()))
         return nullptr;
@@ -1181,11 +1181,11 @@ void PlayListModel::updateMetaData(const QStringList &paths)
                     tracksToRemove << track;
                 else if(list.count() == 1)
                 {
-                    track->updateMetaData(list.first()); //update single track
+                    track->updateMetaData(list.constFirst()); //update single track
                 }
                 else //replace single track by multiple tracks
                 {
-                    track->updateMetaData(list.first()); //update existing track
+                    track->updateMetaData(list.constFirst()); //update existing track
                     delete list.takeFirst();
                     for(const TrackInfo *info : qAsConst(list)) //add remaining tracks
                         tracksToAdd << new PlayListTrack(info);
@@ -1293,7 +1293,7 @@ void PlayListModel::stopAfterSelected()
     }
     else if(selected_tracks.count() == 1)
     {
-        m_stop_track = m_stop_track != selected_tracks.first() ? selected_tracks.first() : nullptr;
+        m_stop_track = m_stop_track != selected_tracks.constFirst() ? selected_tracks.constFirst() : nullptr;
         emit listChanged(STOP_AFTER);
     }
     else if(selected_tracks.count() > 1)
