@@ -231,6 +231,7 @@ public:
     PlayListTrack *trackAtLine(int lineIndex) const;
     QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const;
     int findLine(PlayListItem *item) const;
+    int findLine(int trackIndex) const;
     int subIndexOfLine(int lineIndex) const;
     int trackIndexAtLine(int lineIndex) const;
     int linesPerGroup() const;
