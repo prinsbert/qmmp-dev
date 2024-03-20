@@ -920,7 +920,9 @@ void ListWidget::recenterTo(int index)
 {
     if (m_row_count && index >= 0 && !m_filterMode)
     {
-        int line = m_model->findLine(m_model->track(index));
+        int line = m_model->findLine(index);
+        if (line < 0)
+            return;
 
         if (m_firstLine + m_row_count < line + 1)
             m_firstLine = qMin(m_model->lineCount() - m_row_count, line - m_row_count / 2);
