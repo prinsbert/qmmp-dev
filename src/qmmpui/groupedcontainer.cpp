@@ -165,12 +165,18 @@ int GroupedContainer::indexOf(PlayListItem *item) const
 
 PlayListTrack *GroupedContainer::track(int index) const
 {
-    return m_tracks.at(index);
+    if (0 <= index && index < m_tracks.count())
+        return m_tracks.at(index);
+
+    return nullptr;
 }
 
 PlayListGroup *GroupedContainer::group(int index) const
 {
-    return m_groups.at(index);
+    if (0 <= index && index < m_groups.count())
+        return m_groups.at(index);
+
+    return nullptr;
 }
 
 bool GroupedContainer::contains(PlayListItem *item) const
