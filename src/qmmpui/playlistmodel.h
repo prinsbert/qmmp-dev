@@ -158,7 +158,7 @@ public:
      */
     PlayListGroup* group(int index) const;
     /*!
-     * Returns index of the current track.
+     * Returns index of the current track or -1 if model is empty.
      */
     int currentIndex() const;
     /*!
@@ -595,7 +595,7 @@ private slots:
 private:
     PlayListTrack *m_current_track = nullptr;
     PlayListTrack *m_stop_track = nullptr;
-    int m_current = 0;
+    int m_current = -1;
     SimpleSelection m_selection;  /*!< This flyweight object represents current selection. */
     PlayState* m_play_state; /*!< Current playing state (Normal or Shuffle) */
     qint64 m_total_duration = 0;

@@ -443,7 +443,7 @@ int PlayListModel::linesPerGroup() const
 void PlayListModel::clear()
 {
     m_loader->finish();
-    m_current = 0;
+    m_current = -1;
     if(m_current_track)
     {
         m_current_track = nullptr;
@@ -1203,7 +1203,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
 void PlayListModel::doCurrentVisibleRequest()
 {
     if(!m_container->isEmpty() && m_current >= 0)
-        emit scrollToRequest(currentIndex());
+        emit scrollToRequest(m_current);
 }
 
 void PlayListModel::scrollTo(int index)
