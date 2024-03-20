@@ -417,12 +417,20 @@ QList<PlayListItem *> PlayListModel::itemsAtLines(int pos, int length) const
 
 int PlayListModel::findLine(PlayListItem *item) const
 {
+    if(!item)
+        return -1;
+
     for(int i = 0; i < m_container->lineCount(); ++i)
     {
         if(m_container->itemAtLine(i) == item)
             return i;
     }
     return -1;
+}
+
+int PlayListModel::findLine(int trackIndex) const
+{
+    return findLine(m_container->track(trackIndex));
 }
 
 int PlayListModel::subIndexOfLine(int lineIndex) const
