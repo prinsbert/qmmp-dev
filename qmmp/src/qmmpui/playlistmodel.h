@@ -523,7 +523,7 @@ public slots:
     /*!
      * Adds/removes selected items to/from playback queue.
      */
-    //void addToQueue();
+    void addToQueue();
     /*!
      * Adds/removes track \b t to/from playback queue.
      */
@@ -547,7 +547,7 @@ public slots:
     /*!
      * Toggles 'stop after selected' feature.
      */
-    //void stopAfterSelected();
+    void stopAfterSelected();
     /*!
      * Rebuilds groups
      */

@@ -239,7 +239,7 @@ public slots:
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->addToQueue()
      */
-    //void addToQueue();
+    void addToQueue();
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->clearInvalidItems()
      */
@@ -259,7 +259,7 @@ public slots:
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->stopAfterSelected()
      */
-    //void stopAfterSelected();
+    void stopAfterSelected();
 
 private slots:
     void writePlayLists();
