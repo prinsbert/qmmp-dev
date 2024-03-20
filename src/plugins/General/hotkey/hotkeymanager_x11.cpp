@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Copyright (C) 2003-2007 by Justin Karneges and Michail Pishchagin     *
@@ -98,7 +98,10 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
                 hotkey->key = key;
                 hotkey->code = XKeysymToKeycode(QX11Info::display(), hotkey->key);
                 if(!hotkey->code)
+                {
+                    delete hotkey;
                     continue;
+                }
                 XGrabKey(QX11Info::display(),  hotkey->code, mod | mask_mod, rootWindow, False,
                          GrabModeAsync, GrabModeAsync);
                 hotkey->mod = mod | mask_mod;
