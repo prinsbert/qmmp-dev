@@ -118,7 +118,7 @@ void UDisksPlugin::updateActions()
                   device->property("IdType").toString() == "udf" ||
                   device->property("IdType").toString() == "ext2")) //mounted volume
         {
-            dev_path = device->mountPoints().first();
+            dev_path = device->mountPoints().constFirst();
         }
         else
             continue;
@@ -203,7 +203,7 @@ UDisksDevice *UDisksPlugin::findDevice(QAction *action)
         }
         if (device->isMounted())
         {
-            dev_path = device->mountPoints().first();
+            dev_path = device->mountPoints().constFirst();
             if (dev_path == action->data().toString())
                 return device;
         }

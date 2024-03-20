@@ -140,7 +140,7 @@ void Converter::run()
         return;
     }
 
-    TrackInfo info = *list.first();
+    TrackInfo info = *list.constFirst();
     qDeleteAll(list);
     list.clear();
     MetaDataFormatter formatter(pattern);

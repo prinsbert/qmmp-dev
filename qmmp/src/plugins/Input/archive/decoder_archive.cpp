@@ -79,7 +79,7 @@ bool DecoderArchive::initialize()
 
     DecoderFactory *factory = nullptr;
     if(filtered.size() == 1)
-        factory = filtered.first();
+        factory = filtered.constFirst();
     else
     {
         //multiple factories, so trying to determine by content

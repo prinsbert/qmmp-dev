@@ -116,7 +116,7 @@ QMMPStarter::QMMPStarter() : QObject()
     {
         QStringList args = commands.value("--ui");
         if(args.size() == 1)
-            UiLoader::select(args.first());
+            UiLoader::select(args.constFirst());
     }
 
 

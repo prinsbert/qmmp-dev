@@ -33,7 +33,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     QSettings settings;
     settings.beginGroup("Midi");
     QStringList files = WildMidiHelper::instance()->configFiles();
-    QString conf_path = files.isEmpty() ? QString() : files.first();
+    QString conf_path = files.isEmpty() ? QString() : files.constFirst();
     m_ui.confPathComboBox->addItems(files);
     m_ui.confPathComboBox->setEditText(settings.value("conf_path", conf_path).toString());
     m_ui.sampleRateComboBox->addItem(tr("44100 Hz"), 44100);

@@ -56,9 +56,9 @@ QString SeekOption::executeCommand(int id, const QStringList &args)
     static const QRegularExpression seek_regexp2 ("^([0-9]{1,2}):([0-9]{1,2})$");
 
     QRegularExpressionMatch match;
-    if((match = seek_regexp1.match(args.first())).hasMatch())
+    if((match = seek_regexp1.match(args.constFirst())).hasMatch())
         seek_pos = match.captured(1).toInt();
-    else if((match = seek_regexp2.match(args.first())).hasMatch())
+    else if((match = seek_regexp2.match(args.constFirst())).hasMatch())
         seek_pos = match.captured(1).toInt()*60 + match.captured(2).toInt();
 
     switch (id) {

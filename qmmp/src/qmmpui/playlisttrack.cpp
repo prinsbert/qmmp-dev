@@ -88,9 +88,9 @@ void PlayListTrack::updateMetaData(const TrackInfo *info)
 void PlayListTrack::updateMetaData()
 {
     QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path());
-    if(list.count() == 1 && list.first()->path() == path() && list.first()->parts() != TrackInfo::Parts())
+    if(list.count() == 1 && list.constFirst()->path() == path() && list.constFirst()->parts() != TrackInfo::Parts())
     {
-        TrackInfo *info = list.first();
+        TrackInfo *info = list.constFirst();
         updateMetaData(info);
     }
     qDeleteAll(list);

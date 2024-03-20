@@ -347,7 +347,7 @@ bool ConverterDialog::checkPreset(const QVariantMap &preset)
     if(programAndArgs.isEmpty())
         return false;
 
-    QString program = programAndArgs.first();
+    QString program = programAndArgs.constFirst();
 
     int result = QProcess::execute(program, QStringList());
 

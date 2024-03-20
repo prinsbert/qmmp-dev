@@ -167,7 +167,7 @@ void ConfigDialog::readSettings()
         var_sizes << 180 << width()-180;
     }
     QList<int> sizes;
-    sizes << var_sizes.first().toInt() << var_sizes.last().toInt();
+    sizes << var_sizes.constFirst().toInt() << var_sizes.last().toInt();
     m_ui->splitter->setSizes(sizes);
     //fonts
     QFont font;

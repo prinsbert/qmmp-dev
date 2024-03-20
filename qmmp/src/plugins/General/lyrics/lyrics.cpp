@@ -52,12 +52,12 @@ void Lyrics::showLyrics()
 
         if(!m_lyricsWidget->isNull() && m_lyricsWidget->data()->isVisible())
         {
-            m_lyricsWidget->data()->fetch(tracks.first());
+            m_lyricsWidget->data()->fetch(tracks.constFirst());
         }
         else
         {
             LyricsWidget *w = new LyricsWidget(true, qApp->activeWindow());
-            w->fetch(tracks.first());
+            w->fetch(tracks.constFirst());
             w->show();
         }
     }

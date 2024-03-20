@@ -67,9 +67,9 @@ void FileLoader::insertPlayList(const QString &fmt, const QByteArray &contents, 
             continue;
         }
 
-        TrackInfo *info = infoList.first();
+        TrackInfo *info = infoList.constFirst();
         if(!info->value(Qmmp::ALBUM).isEmpty() && !info->value(Qmmp::ARTIST).isEmpty())
-            t->updateMetaData(infoList.first());
+            t->updateMetaData(infoList.constFirst());
 
         emit newTracksToInsert(before, QList<PlayListTrack *>() << t);
         delete info;
@@ -98,8 +98,8 @@ void FileLoader::insertPlayList(const QString &path, PlayListTrack *before)
                 continue;
             }
 
-            if(!infoList.first()->value(Qmmp::ALBUM).isEmpty() && !infoList.first()->value(Qmmp::ARTIST).isEmpty())
-                t->updateMetaData(infoList.first());
+            if(!infoList.constFirst()->value(Qmmp::ALBUM).isEmpty() && !infoList.constFirst()->value(Qmmp::ARTIST).isEmpty())
+                t->updateMetaData(infoList.constFirst());
             delete infoList.takeFirst();
             tmp << t;
             if(tmp.count() > 30)

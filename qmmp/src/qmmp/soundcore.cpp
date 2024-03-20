@@ -316,7 +316,7 @@ void SoundCore::startNextEngine()
     {
         if(m_sources.isEmpty())
             m_nextState = NO_ENGINE;
-        else if(!m_sources.first()->isReady() && state() == Qmmp::Stopped)
+        else if(!m_sources.constFirst()->isReady() && state() == Qmmp::Stopped)
             m_handler->dispatch(Qmmp::Buffering);
         break;
     }
