@@ -1582,3 +1582,4 @@ Version 0.12.18
   - fixed issue with URL formatting
   - updated lyrics providers
   - using UTF-8 for all lyrics providers
+* fixed memort leak
