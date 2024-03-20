@@ -102,7 +102,10 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
                 hotkey->key = key;
                 hotkey->code = XKeysymToKeycode(QX11Info::display(), hotkey->key);
                 if(!hotkey->code)
+                {
+                    delete hotkey;
                     continue;
+                }
 
                 XGrabKey(QX11Info::display(),  hotkey->code, mod | mask_mod, rootWindow, True,
                          GrabModeAsync, GrabModeAsync);
