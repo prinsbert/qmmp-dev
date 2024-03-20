@@ -42,3 +42,8 @@ int PlayListItem::trackIndex() const
 {
     return -1;
 }
+
+QPixmap PlayListItem::cover() const
+{
+    return QPixmap();
+}

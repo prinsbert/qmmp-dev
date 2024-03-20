@@ -78,7 +78,7 @@ public:
 
     QString firstTrackPath() const;
     bool isCoverLoaded() const;
-    QPixmap cover() const;
+    QPixmap cover() const override;
     void setCover(const QPixmap &cover);
 
 private:

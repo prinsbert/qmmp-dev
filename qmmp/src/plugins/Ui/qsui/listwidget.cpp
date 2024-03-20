@@ -517,7 +517,7 @@ void ListWidget::updateList(int flags)
         {
             row->flags |= ListWidgetRow::GROUP;
             row->number = -1;
-            row->cover = static_cast<PlayListGroup *>(items.at(i))->cover();
+            row->cover = items.at(i)->cover();
             row->length.clear();
         }
         else
