@@ -21,6 +21,7 @@
 #define PLAYLISTITEM_H
 
 #include <QMap>
+#include <QPixmap>
 #include <qmmp/qmmp.h>
 #include "qmmpui_export.h"
 
@@ -71,6 +72,8 @@ public:
      * Default implementation returns -1.
      */
     virtual int trackIndex() const;
+
+    virtual QPixmap cover() const;
 
 private:
     bool m_selected = false;

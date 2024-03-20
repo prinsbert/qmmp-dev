@@ -96,6 +96,7 @@ private:
     QFontMetrics *m_bold_metrics = nullptr;
     PlayListHeaderModel *m_header_model;
     QFont m_font, m_extra_font;
+    QPixmap m_emptyCover;
     bool m_update = false;
     bool m_show_number = false;
     bool m_show_anchor = false;

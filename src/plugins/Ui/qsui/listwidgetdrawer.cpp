@@ -27,7 +27,8 @@
 
 // |= number=|=row1=|=row2=|=extra= duration=|
 
-ListWidgetDrawer::ListWidgetDrawer()
+ListWidgetDrawer::ListWidgetDrawer() :
+    m_emptyCover(":/qsui/ui_no_cover.png")
 {
     m_header_model = PlayListManager::instance()->headerModel();
     readSettings();
@@ -330,7 +331,7 @@ void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int
     }
     else if(linesPerGroup >= 2)
     {
-        QPixmap pix = row->cover.isNull() ? QPixmap(":/qsui/ui_no_cover.png") : row->cover;
+        QPixmap pix = row->cover.isNull() ? m_emptyCover : row->cover;
         painter->drawPixmap(row->rect.x() + 5, row->rect.y() + 5, row->rect.height() - 10, row->rect.height() - 10, pix);
         sx += row->rect.height();
 
