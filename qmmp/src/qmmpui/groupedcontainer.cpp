@@ -226,7 +226,7 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
         else
         {
             firstIndex = lastIndex + 1;
-            lastIndex = firstIndex + m_groups[i]->count();
+            lastIndex = firstIndex + m_groups[i]->count() - 1;
         }
 
         if(from >= firstIndex && from <= lastIndex && to >= firstIndex && to <= lastIndex)
@@ -251,10 +251,11 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 
     if (from > to)
     {
-        for(const int &i : qAsConst(indexes))
+        for(int i : qAsConst(indexes))
         {
             if (i + to - from < 0)
                 break;
+
 
             m_tracks.move(i, i + to - from);
             swapTrackNumbers(&m_tracks, i, i + to - from);
