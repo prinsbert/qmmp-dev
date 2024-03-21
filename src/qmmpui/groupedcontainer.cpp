@@ -58,9 +58,7 @@ void GroupedContainer::addTrack(PlayListTrack *track)
 
     if(!m_update)
     {
-        int group_height = 3;
-
-        for(int j = 0; j < group_height; ++j)
+        for(int j = 0; j < linesPerGroup(); ++j)
         {
             PlayListLine line = { .isGroup = true, .index = int(m_groups.count() - 1), .subindex = j };
             m_lines << line;
