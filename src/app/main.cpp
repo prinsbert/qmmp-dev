@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
     //allows to activate main window from other instances
     AllowSetForegroundWindow(ASFW_ANY);
 #endif
+    QCoreApplication::setQuitLockEnabled(false);
     QApplication a (argc, argv );
     a.setApplicationName("qmmp");
     a.setOrganizationName("qmmp");
