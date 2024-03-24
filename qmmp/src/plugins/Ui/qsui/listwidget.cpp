@@ -757,36 +757,36 @@ bool ListWidget::updateRowCount()
 
 void ListWidget::restoreFirstVisible()
 {
-//    if(m_first < m_model->lineCount() && m_firstItem == m_model->item(m_first))
-//        return;
+    if(m_firstLine < m_model->lineCount() && m_firstItem == m_model->itemAtLine(m_firstLine))
+        return;
 
-//    int delta = m_model->lineCount() - m_lineCount;
+    int delta = m_model->lineCount() - m_lineCount;
 
-//    //try to find and restore first visible index
-//    if(delta > 0)
-//    {
-//        int from = qMin(m_model->lineCount() - 1, m_first + 1);
-//        for(int i = from; i <= qMin(m_model->lineCount() - 1, m_first + delta); ++i)
-//        {
-//            if(m_model->item(i) == m_firstItem)
-//            {
-//                m_first = i;
-//                break;
-//            }
-//        }
-//    }
-//    else
-//    {
-//        int from = qMin(m_model->lineCount() - 1, m_first - 1);
-//        for(int i = from; i >= qMax(0, m_first + delta); --i)
-//        {
-//            if(m_model->item(i) == m_firstItem)
-//            {
-//                m_first = i;
-//                break;
-//            }
-//        }
-//    }
+    //try to find and restore first visible line index
+    if(delta > 0)
+    {
+        int from = qMin(m_model->lineCount() - 1, m_firstLine + 1);
+        for(int i = from; i <= qMin(m_model->lineCount() - 1, m_firstLine + delta); ++i)
+        {
+            if(m_model->itemAtLine(i) == m_firstItem)
+            {
+                m_firstLine = i;
+                break;
+            }
+        }
+    }
+    else
+    {
+        int from = qMin(m_model->lineCount() - 1, m_firstLine - 1);
+        for(int i = from; i >= qMax(0, m_firstLine + delta); --i)
+        {
+            if(m_model->itemAtLine(i) == m_firstItem)
+            {
+                m_firstLine = i;
+                break;
+            }
+        }
+    }
 }
 
 void ListWidget::updateScrollBars()
