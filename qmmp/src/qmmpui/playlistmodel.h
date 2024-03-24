@@ -593,6 +593,9 @@ private slots:
 
     void updateMetaData(const QStringList &paths);
 
+    void startCoverLoader();
+    void setCover(const QString &path, const QPixmap &pixmap);
+
 private:
     PlayListTrack *m_current_track = nullptr;
     PlayListTrack *m_stop_track = nullptr;

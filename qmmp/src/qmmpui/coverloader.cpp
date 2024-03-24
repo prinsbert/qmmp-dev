@@ -42,6 +42,14 @@ void CoverLoader::add(const QStringList &paths)
     start(QThread::IdlePriority);
 }
 
+void CoverLoader::finish()
+{
+    m_mutex.lock();
+    m_paths.clear();
+    m_mutex.unlock();
+    wait();
+}
+
 void CoverLoader::run()
 {
     m_mutex.lock();
