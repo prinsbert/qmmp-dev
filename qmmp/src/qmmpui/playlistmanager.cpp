@@ -331,7 +331,7 @@ void PlayListManager::readPlayLists()
     else if(!tracks.isEmpty())
     {
         m_models.last()->add(tracks);
-        m_models.last()->setCurrent(tracks.at(qBound(0, current, tracks.count()-1)));
+        m_models.last()->setCurrent(tracks.at(qBound(0, current, tracks.count() - 1)));
     }
     if(pl < 0 || pl >= m_models.count())
         pl = 0;
@@ -419,15 +419,15 @@ void PlayListManager::removeUnselected()
     m_selected->removeUnselected();
 }
 
-//void PlayListManager::removeTrack (int i)
-//{
-//    m_selected->removeTrack(i);
-//}
+void PlayListManager::removeTrack(int i)
+{
+    m_selected->removeTrack(i);
+}
 
-//void PlayListManager::removeTrack (PlayListTrack *track)
-//{
-//    m_selected->removeTrack(track);
-//}
+void PlayListManager::removeTrack(PlayListTrack *track)
+{
+    m_selected->removeTrack(track);
+}
 
 void PlayListManager::invertSelection()
 {
