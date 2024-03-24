@@ -59,21 +59,17 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
             SLOT(insert(PlayListTrack*,QList<PlayListTrack*>)), Qt::QueuedConnection);
     connect(m_loader, SIGNAL(finished()), SLOT(preparePlayState()));
     connect(m_loader, SIGNAL(finished()), SIGNAL(loaderFinished()));
-    connect(m_coverLoder, &CoverLoader::ready, this, [this](const QString &path, const QPixmap &pixmap){
-        for(PlayListGroup *g : m_container->groups())
-        {
-            if(g->firstTrackPath() == path)
-                g->setCover(pixmap);
-        }
-        emit listChanged(METADATA);
-    });
+    connect(m_loader, SIGNAL(finished()), this, SLOT(startCoverLoader()));
+    connect(m_coverLoder, &CoverLoader::ready, this, &PlayListModel::setCover);
     connect(m_task, SIGNAL(finished()), SLOT(onTaskFinished()));
+    connect(m_task, SIGNAL(finished()), SLOT(startCoverLoader()));
 }
 
 PlayListModel::~PlayListModel()
 {
     blockSignals(true);
     m_loader->finish();
+    m_coverLoder->finish();
     clear();
     delete m_play_state;
     delete m_container;
@@ -112,7 +108,10 @@ void PlayListModel::add(PlayListTrack *track)
         m_current = m_container->indexOf(m_current_track);
     }
     if(sender() != m_loader)
+    {
         preparePlayState();
+        startCoverLoader();
+    }
     flags |= STRUCTURE;
     emit trackAdded(track);
     emit listChanged(flags);
@@ -145,7 +144,10 @@ void PlayListModel::add(const QList<PlayListTrack *> &tracks)
         emit trackAdded(track);
     }
     if(sender() != m_loader)
+    {
         preparePlayState();
+        startCoverLoader();
+    }
     flags |= STRUCTURE;
     emit listChanged(flags);
 }
@@ -179,7 +181,10 @@ void PlayListModel::insert(int index, PlayListTrack *track)
         m_current = m_container->indexOf(m_current_track);
     }
     if(sender() != m_loader)
+    {
         preparePlayState();
+        startCoverLoader();
+    }
     emit trackAdded(track);
     flags |= STRUCTURE;
     emit listChanged(flags);
@@ -215,7 +220,10 @@ void PlayListModel::insert(int index, const QList<PlayListTrack *> &tracks)
     //update current index
     m_current = m_container->indexOf(m_current_track);
     if (sender() != m_loader)
+    {
         preparePlayState();
+        startCoverLoader();
+    }
     flags |= STRUCTURE;
     emit listChanged(flags);
 }
@@ -451,6 +459,7 @@ int PlayListModel::linesPerGroup() const
 void PlayListModel::clear()
 {
     m_loader->finish();
+    m_coverLoder->finish();
     m_current = -1;
     if(m_current_track)
     {
@@ -598,7 +607,10 @@ void PlayListModel::removeTrack(int i)
 {
     int flags = removeTrackInternal(i);
     if(flags)
+    {
         emit listChanged(flags);
+        preparePlayState();
+    }
 }
 
 void PlayListModel::removeTrack(PlayListItem *track)
@@ -639,7 +651,7 @@ void PlayListModel::removeTracks(const QList<PlayListItem *> &items)
         flags |= SELECTION;
     }
 
-    m_play_state->prepare();
+    preparePlayState();
 
     if(flags)
         emit listChanged(flags);
@@ -685,7 +697,7 @@ void PlayListModel::removeSelection(bool inverted)
         flags |= SELECTION;
     }
 
-    m_play_state->prepare();
+    preparePlayState();
 
     if(flags)
         emit listChanged(flags);
@@ -733,7 +745,6 @@ int PlayListModel::removeTrackInternal(int i)
         delete track;
 
     m_current = m_current_track ? m_container->indexOf(m_current_track) : -1;
-    m_play_state->prepare();
 
     flags |= STRUCTURE;
     return flags;
@@ -1208,6 +1219,32 @@ void PlayListModel::updateMetaData(const QStringList &paths)
     updateMetaData();
 }
 
+void PlayListModel::startCoverLoader()
+{
+    if(linesPerGroup() > 1)
+    {
+        const QList<PlayListGroup *> groups = m_container->groups();
+        QStringList paths;
+        for(const PlayListGroup *g : qAsConst(groups))
+        {
+            if(!g->isCoverLoaded() && !g->firstTrackPath().isEmpty())
+                paths << g->firstTrackPath();
+        }
+
+        m_coverLoder->add(paths);
+    }
+}
+
+void PlayListModel::setCover(const QString &path, const QPixmap &pixmap)
+{
+    for(PlayListGroup *g : m_container->groups())
+    {
+        if(g->firstTrackPath() == path)
+            g->setCover(pixmap);
+    }
+    emit listChanged(METADATA);
+}
+
 void PlayListModel::doCurrentVisibleRequest()
 {
     if(!m_container->isEmpty() && m_current >= 0)
@@ -1245,19 +1282,6 @@ void PlayListModel::preparePlayState()
     m_play_state->prepare();
     m_uniquePaths.clear();
     m_uniquePaths.squeeze();
-
-    if(linesPerGroup() > 1)
-    {
-        const QList<PlayListGroup *> groups = m_container->groups();
-        QStringList paths;
-        for(const PlayListGroup *g : qAsConst(groups))
-        {
-            if(!g->isCoverLoaded() && !g->firstTrackPath().isEmpty())
-                paths << g->firstTrackPath();
-        }
-
-        m_coverLoder->add(paths);
-    }
 }
 
 void PlayListModel::removeInvalidTracks()

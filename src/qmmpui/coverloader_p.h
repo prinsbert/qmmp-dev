@@ -34,6 +34,7 @@ public:
     explicit CoverLoader(QObject *parent = nullptr);
 
     void add(const QStringList &paths);
+    void finish();
 
 signals:
     void ready(const QString &path, const QPixmap &pixmap);
