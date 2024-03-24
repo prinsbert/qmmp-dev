@@ -1049,6 +1049,7 @@ void PlayListModel::prepareGroups(bool enabled)
     if(!m_container->isEmpty())
         m_current = m_container->indexOf(m_current_track);
     emit listChanged(STRUCTURE);
+    startCoverLoader();
 }
 
 void PlayListModel::updateMetaData()
@@ -1221,7 +1222,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
 
 void PlayListModel::startCoverLoader()
 {
-    if(linesPerGroup() > 1)
+    if(m_container->groupCount() > 0 && m_container->linesPerGroup() > 1)
     {
         const QList<PlayListGroup *> groups = m_container->groups();
         QStringList paths;
