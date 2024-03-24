@@ -668,39 +668,15 @@ void PlayListModel::removeTracks(const QList<PlayListTrack *> &tracks)
 
 void PlayListModel::removeSelection(bool inverted)
 {
-    int i = 0;
-    int select_after_delete = -1;
-    int flags = 0;
+    QList<PlayListItem *> tracksToRemove;
 
-    while(!m_container->isEmpty() && i < m_container->trackCount())
+    for(PlayListTrack *t : m_container->tracks())
     {
-        PlayListTrack *track = m_container->track(i);
-        if(track->isSelected() ^ inverted)
-        {
-            flags |= removeTrackInternal(i);
-
-            if(m_container->isEmpty())
-                continue;
-
-            select_after_delete = i;
-            continue;
-        }
-
-        i++;
+        if(t->isSelected() ^ inverted)
+            tracksToRemove << t;
     }
 
-    select_after_delete = qMin(select_after_delete, m_container->trackCount() - 1);
-
-    if(select_after_delete >= 0)
-    {
-        m_container->track(select_after_delete)->setSelected(true);
-        flags |= SELECTION;
-    }
-
-    preparePlayState();
-
-    if(flags)
-        emit listChanged(flags);
+    removeTracks(tracksToRemove);
 }
 
 int PlayListModel::removeTrackInternal(int i)
