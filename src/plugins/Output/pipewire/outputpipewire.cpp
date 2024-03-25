@@ -154,6 +154,7 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
                                              PW_KEY_MEDIA_ROLE, "Music",
                                              PW_KEY_MEDIA_ICON_NAME, "qmmp",
                                              nullptr);
+    pw_properties_setf(props, PW_KEY_NODE_RATE, "1/%u", freq);
     pw_properties_setf(props, PW_KEY_NODE_LATENCY, "%u/%u", m_frames, freq);
 
     pw_thread_loop_lock(m_loop);
