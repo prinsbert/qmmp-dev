@@ -75,9 +75,9 @@ public:
      */
     const QString pattern() const;
     /*!
-     * Converts metadata of item \b item to one string using template.
+     * Converts metadata of track \b track to one string using template.
      */
-    QString format(const PlayListTrack *item) const;
+    QString format(const PlayListTrack *track) const;
     /*!
      * Converts metadata of \b TrackInfo reference \b info to one string using template.
      * \param info pointer to \b TrackInfo object.

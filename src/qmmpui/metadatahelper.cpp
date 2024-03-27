@@ -26,6 +26,9 @@ MetaDataHelper::MetaDataHelper()
 {
     m_instance = this;
     m_group_formatter = new MetaDataFormatter();
+    m_group_formatter2 = new MetaDataFormatter();
+
+    m_group_formatter2->setPattern("%y | %l | %{bitrate} kb/s");
     m_title_formatters << new MetaDataFormatter();
 }
 
@@ -67,6 +70,11 @@ const MetaDataFormatter *MetaDataHelper::titleFormatter(int index) const
 const MetaDataFormatter *MetaDataHelper::groupFormatter() const
 {
     return m_group_formatter;
+}
+
+const MetaDataFormatter *MetaDataHelper::groupFormatter2() const
+{
+    return m_group_formatter2;
 }
 
 MetaDataHelper *MetaDataHelper::instance()

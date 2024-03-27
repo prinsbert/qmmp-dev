@@ -18,16 +18,21 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include "qmmpuisettings.h"
+#include "metadatahelper_p.h"
 #include "playlistgroup.h"
 
 PlayListGroup::PlayListGroup(const QString &name) : m_name(name)
-{}
+{
+    m_settings = QmmpUiSettings::instance();
+    m_helper = MetaDataHelper::instance();
+}
 
 PlayListGroup::~PlayListGroup()
 {
-    while(!trackList.isEmpty())
+    while(!m_trackList.isEmpty())
     {
-        PlayListTrack* mf = trackList.takeFirst();
+        PlayListTrack* mf = m_trackList.takeFirst();
 
         if (mf->isUsed())
             mf->deleteLater();
@@ -38,33 +43,49 @@ PlayListGroup::~PlayListGroup()
 
 QString PlayListGroup::formattedTitle(int column) const
 {
-    Q_UNUSED(column);
-    return m_name;
+    if(column == 0)
+        return m_name;
+
+    if(column == 1)
+    {
+        if(m_extraTitle.isEmpty())
+            m_extraTitle = formatExtraTitle();
+
+        return m_extraTitle;
+    }
+
+    return QString();
 }
 
 QStringList PlayListGroup::formattedTitles() const
 {
-    return QStringList() << m_name;
+    if(m_extraTitle.isEmpty())
+        m_extraTitle = formatExtraTitle();
+
+    if(!m_extraTitle.isEmpty())
+        return { m_name, m_extraTitle };
+
+    return { m_name };
 }
 
 bool PlayListGroup::contains(PlayListTrack *track) const
 {
-    return trackList.contains(track);
+    return m_trackList.contains(track);
 }
 
 bool PlayListGroup::isEmpty() const
 {
-    return trackList.isEmpty();
+    return m_trackList.isEmpty();
 }
 
 QList<PlayListTrack *> PlayListGroup::tracks() const
 {
-    return trackList;
+    return m_trackList;
 }
 
 int PlayListGroup::count() const
 {
-    return trackList.count();
+    return m_trackList.count();
 }
 
 QString PlayListGroup::formattedDuration() const
@@ -79,7 +100,7 @@ bool PlayListGroup::isGroup() const
 
 QString PlayListGroup::firstTrackPath() const
 {
-    return trackList.isEmpty() ? QString() : trackList.constFirst()->path();
+    return m_trackList.isEmpty() ? QString() : m_trackList.constFirst()->path();
 }
 
 bool PlayListGroup::isCoverLoaded() const
@@ -96,4 +117,19 @@ void PlayListGroup::setCover(const QPixmap &cover)
 {
     m_isCoverLoaded = true;
     m_cover = cover;
+}
+
+QString PlayListGroup::formatExtraTitle() const
+{
+    if(m_trackList.isEmpty())
+        return QString();
+
+    qint64 duration = 0;
+    for(const PlayListTrack *t : qAsConst(m_trackList))
+        duration += t->duration();
+
+    TrackInfo info = *m_trackList.constFirst();
+    info.setDuration(duration);
+
+    return m_helper->groupFormatter2()->format(info);
 }

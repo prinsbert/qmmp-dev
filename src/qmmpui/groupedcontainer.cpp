@@ -45,14 +45,16 @@ void GroupedContainer::addTrack(PlayListTrack *track)
 
         if(track->groupName() == m_groups[i]->formattedTitle())
         {
-            m_groups[i]->trackList.append(track);
+            m_groups[i]->m_trackList.append(track);
+            m_groups[i]->m_extraTitle.clear();
             m_tracks.insert(lastIndex + 1, track);
             m_update = true;
             return;
         }
     }
     PlayListGroup *group = new PlayListGroup(track->groupName());
-    group->trackList.append(track);
+    group->m_trackList.append(track);
+    group->m_extraTitle.clear();
     m_tracks.append(track);
     m_groups.append(group);
 
@@ -95,7 +97,8 @@ int GroupedContainer::insertTrack(int index, PlayListTrack *track)
         if(track->groupName() == m_groups[i]->formattedTitle() &&
                 index >= firstIndex && index <= lastIndex + 1)
         {
-            m_groups[i]->trackList.insert(index - firstIndex, track);
+            m_groups[i]->m_trackList.insert(index - firstIndex, track);
+            m_groups[i]->m_extraTitle.clear();
             m_tracks.insert(index, track);
             m_update = true;
             return index;
@@ -110,7 +113,8 @@ void GroupedContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
 {
     for(PlayListGroup *g : qAsConst(m_groups))
     {
-        g->trackList.clear();
+        g->m_trackList.clear();
+        g->m_extraTitle.clear();
     }
     clear();
     addTracks(tracks);
@@ -189,7 +193,8 @@ void GroupedContainer::removeTrack(PlayListTrack *track)
     {
         if((*it)->contains(track))
         {
-            (*it)->trackList.removeAll(track);
+            (*it)->m_trackList.removeAll(track);
+            (*it)->m_extraTitle.clear();
             m_tracks.removeAll(track);
             if((*it)->isEmpty())
             {
@@ -259,7 +264,7 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 
             m_tracks.move(i, i + to - from);
             swapTrackNumbers(&m_tracks, i, i + to - from);
-            group->trackList.move(i - firstIndex, i + to - from - firstIndex);
+            group->m_trackList.move(i - firstIndex, i + to - from - firstIndex);
         }
     }
     else
@@ -271,7 +276,7 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 
             m_tracks.move(indexes[i], indexes[i] + to - from);
             swapTrackNumbers(&m_tracks,indexes[i], indexes[i] + to - from);
-            group->trackList.move(indexes[i] - firstIndex, indexes[i] + to - from - firstIndex);
+            group->m_trackList.move(indexes[i] - firstIndex, indexes[i] + to - from - firstIndex);
         }
     }
     return true;
@@ -282,7 +287,8 @@ QList<PlayListTrack *> GroupedContainer::takeAllTracks()
     QList<PlayListTrack *> tracks = m_tracks;
     for(PlayListGroup *g : qAsConst(m_groups))
     {
-        g->trackList.clear();
+        g->m_trackList.clear();
+        g->m_extraTitle.clear();
     }
     clear();
     return tracks;
@@ -393,7 +399,7 @@ void GroupedContainer::updateCache() const
             m_lines << line;
         }
 
-        for(PlayListTrack *track : qAsConst(m_groups.at(g)->trackList))
+        for(PlayListTrack *track : qAsConst(m_groups.at(g)->m_trackList))
         {
             PlayListLine line = {
                 .isGroup = false,

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2015-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -40,6 +40,7 @@ public:
     int columnCount() const;
     const MetaDataFormatter *titleFormatter(int index) const;
     const MetaDataFormatter *groupFormatter() const;
+    const MetaDataFormatter *groupFormatter2() const;
 
     static MetaDataHelper *instance();
 
@@ -47,6 +48,7 @@ private:
     static MetaDataHelper *m_instance;
 
     MetaDataFormatter *m_group_formatter;
+    MetaDataFormatter *m_group_formatter2;
     QList <MetaDataFormatter*> m_title_formatters;
 
 

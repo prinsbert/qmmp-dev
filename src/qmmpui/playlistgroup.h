@@ -27,6 +27,8 @@
 #include "qmmpui_export.h"
 
 class GroupedContainer;
+class QmmpUiSettings;
+class MetaDataHelper;
 
 /** @brief The PlayListTrack class provides a group for use with the PlayListModel class.
  * @author Ilya Kotov <forkotov02@ya.ru>
@@ -82,13 +84,19 @@ public:
     void setCover(const QPixmap &cover);
 
 private:
-    QList<PlayListTrack *> trackList; //A list of tracks
-    friend class GroupedContainer;
+    QString formatExtraTitle() const;
+
+    QList<PlayListTrack *> m_trackList; //A list of tracks
+    mutable QString m_extraTitle;
 
     QString m_name;
     bool m_isCoverLoaded = false;
     QPixmap m_cover;
 
+    QmmpUiSettings *m_settings;
+    MetaDataHelper *m_helper;
+
+    friend class GroupedContainer;
 };
 
 #endif // PLAYLISTGROUP_H
