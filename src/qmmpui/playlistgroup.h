@@ -47,8 +47,8 @@ public:
      * Returns formatted title of the  group.
      * @param column Number of column (unused).
      */
-    QString formattedTitle(int column = 0) override;
-    QStringList formattedTitles() override;
+    QString formattedTitle(int column = 0) const override;
+    QStringList formattedTitles() const override;
     /*!
      * Returns \b true if the group contains track \b track.
      * Otherwise returns \b false.
@@ -70,7 +70,7 @@ public:
     /*!
      *  Returns formatted length of the item.
      */
-    QString formattedLength() override;
+    QString formattedDuration() const override;
     /*!
      * Returns \b true.
      */

@@ -151,7 +151,7 @@ bool PlayListTrack::isUsed() const
     return (m_refCount != 0);
 }
 
-QString PlayListTrack::formattedTitle(int column)
+QString PlayListTrack::formattedTitle(int column) const
 {
     if(m_formattedTitles.count() != m_helper->columnCount())
     {
@@ -182,7 +182,7 @@ QString PlayListTrack::formattedTitle(int column)
     return m_formattedTitles[column];
 }
 
-QStringList PlayListTrack::formattedTitles()
+QStringList PlayListTrack::formattedTitles() const
 {
     if(m_formattedTitles.count() != m_helper->columnCount())
     {
@@ -213,7 +213,7 @@ QStringList PlayListTrack::formattedTitles()
     return m_formattedTitles;
 }
 
-QString PlayListTrack::formattedLength()
+QString PlayListTrack::formattedDuration() const
 {
     if(duration() > 0 && m_formattedLength.isEmpty())
         m_formattedLength = MetaDataFormatter::formatDuration(duration());
@@ -222,7 +222,7 @@ QString PlayListTrack::formattedLength()
     return m_formattedLength;
 }
 
-void PlayListTrack::formatTitle(int column)
+void PlayListTrack::formatTitle(int column) const
 {
     m_formattedTitles[column] = m_helper->titleFormatter(column)->format(this);
     if(m_formattedTitles.count() == 1)
@@ -238,7 +238,7 @@ void PlayListTrack::formatTitle(int column)
         m_formattedTitles[column].replace("%20", " ");
 }
 
-void PlayListTrack::formatGroup()
+void PlayListTrack::formatGroup() const
 {
     if(path().contains("://") && !path().contains("#"))
     {
