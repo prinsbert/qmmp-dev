@@ -339,7 +339,7 @@ void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int
         int sy = row->rect.y() +  spacing + m_metrics->overlinePos();
         painter->drawText(sx, sy, row->titles[0]);
         sy = row->rect.bottom() - spacing - m_metrics->underlinePos();
-        painter->drawText(sx, sy, "title 2");
+        painter->drawText(sx, sy, row->titles[1]);
     }
 
     if(rtl)

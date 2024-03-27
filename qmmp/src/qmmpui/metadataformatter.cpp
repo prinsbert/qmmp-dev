@@ -115,9 +115,9 @@ const QString MetaDataFormatter::pattern() const
     return m_pattern;
 }
 
-QString MetaDataFormatter::format(const PlayListTrack *item) const
+QString MetaDataFormatter::format(const PlayListTrack *track) const
 {
-    return evalute(&m_nodes, item, item->trackIndex());
+    return evalute(&m_nodes, track, track->trackIndex());
 }
 
 QString MetaDataFormatter::format(const TrackInfo &info, int trackIndex) const
