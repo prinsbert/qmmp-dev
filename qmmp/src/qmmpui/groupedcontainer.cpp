@@ -46,7 +46,7 @@ void GroupedContainer::addTrack(PlayListTrack *track)
         if(track->groupName() == m_groups[i]->formattedTitle())
         {
             m_groups[i]->m_trackList.append(track);
-            m_groups[i]->m_extraTitle.clear();
+            m_groups[i]->m_title2.clear();
             m_tracks.insert(lastIndex + 1, track);
             m_update = true;
             return;
@@ -98,7 +98,7 @@ int GroupedContainer::insertTrack(int index, PlayListTrack *track)
                 index >= firstIndex && index <= lastIndex + 1)
         {
             m_groups[i]->m_trackList.insert(index - firstIndex, track);
-            m_groups[i]->m_extraTitle.clear();
+            m_groups[i]->m_title2.clear();
             m_tracks.insert(index, track);
             m_update = true;
             return index;
@@ -194,7 +194,7 @@ void GroupedContainer::removeTrack(PlayListTrack *track)
         if((*it)->contains(track))
         {
             (*it)->m_trackList.removeAll(track);
-            (*it)->m_extraTitle.clear();
+            (*it)->m_title2.clear();
             m_tracks.removeAll(track);
             if((*it)->isEmpty())
             {
