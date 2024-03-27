@@ -54,7 +54,7 @@ void GroupedContainer::addTrack(PlayListTrack *track)
     }
     PlayListGroup *group = new PlayListGroup(track->groupName());
     group->m_trackList.append(track);
-    group->m_extraTitle.clear();
+    group->m_title2.clear();
     m_tracks.append(track);
     m_groups.append(group);
 
@@ -114,7 +114,7 @@ void GroupedContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
     for(PlayListGroup *g : qAsConst(m_groups))
     {
         g->m_trackList.clear();
-        g->m_extraTitle.clear();
+        g->m_title2.clear();
     }
     clear();
     addTracks(tracks);
@@ -288,7 +288,7 @@ QList<PlayListTrack *> GroupedContainer::takeAllTracks()
     for(PlayListGroup *g : qAsConst(m_groups))
     {
         g->m_trackList.clear();
-        g->m_extraTitle.clear();
+        g->m_title2.clear();
     }
     clear();
     return tracks;

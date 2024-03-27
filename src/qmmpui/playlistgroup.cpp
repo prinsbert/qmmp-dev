@@ -22,7 +22,7 @@
 #include "metadatahelper_p.h"
 #include "playlistgroup.h"
 
-PlayListGroup::PlayListGroup(const QString &name) : m_name(name)
+PlayListGroup::PlayListGroup(const QString &name) : m_title(name)
 {
     m_settings = QmmpUiSettings::instance();
     m_helper = MetaDataHelper::instance();
@@ -44,14 +44,14 @@ PlayListGroup::~PlayListGroup()
 QString PlayListGroup::formattedTitle(int column) const
 {
     if(column == 0)
-        return m_name;
+        return m_title;
 
     if(column == 1)
     {
-        if(m_extraTitle.isEmpty())
-            m_extraTitle = formatExtraTitle();
+        if(m_title2.isEmpty())
+            m_title2 = formatTitle2();
 
-        return m_extraTitle;
+        return m_title2;
     }
 
     return QString();
@@ -59,13 +59,13 @@ QString PlayListGroup::formattedTitle(int column) const
 
 QStringList PlayListGroup::formattedTitles() const
 {
-    if(m_extraTitle.isEmpty())
-        m_extraTitle = formatExtraTitle();
+    if(m_title2.isEmpty())
+        m_title2 = formatTitle2();
 
-    if(!m_extraTitle.isEmpty())
-        return { m_name, m_extraTitle };
+    if(!m_title2.isEmpty())
+        return { m_title, m_title2 };
 
-    return { m_name };
+    return { m_title };
 }
 
 bool PlayListGroup::contains(PlayListTrack *track) const
@@ -119,7 +119,7 @@ void PlayListGroup::setCover(const QPixmap &cover)
     m_cover = cover;
 }
 
-QString PlayListGroup::formatExtraTitle() const
+QString PlayListGroup::formatTitle2() const
 {
     if(m_trackList.isEmpty())
         return QString();

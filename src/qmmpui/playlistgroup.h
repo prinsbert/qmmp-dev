@@ -84,12 +84,12 @@ public:
     void setCover(const QPixmap &cover);
 
 private:
-    QString formatExtraTitle() const;
+    QString formatTitle2() const;
 
     QList<PlayListTrack *> m_trackList; //A list of tracks
-    mutable QString m_extraTitle;
+    QString m_title;
+    mutable QString m_title2;
 
-    QString m_name;
     bool m_isCoverLoaded = false;
     QPixmap m_cover;
 
