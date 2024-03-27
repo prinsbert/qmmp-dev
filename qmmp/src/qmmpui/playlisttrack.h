@@ -61,15 +61,15 @@ public:
      * Returns formatted title of the item.
      * @param column Number of column.
      */
-    QString formattedTitle(int column) override;
+    QString formattedTitle(int column) const override;
     /*!
      * Returns the list of the formatted titles for all columns.
      */
-    QStringList formattedTitles() override;
+    QStringList formattedTitles() const override;
     /*!
      *  Returns formatted length of the item.
      */
-    QString formattedLength() override;
+    QString formattedDuration() const override;
     /*!
      *  Updates current metadata.
      *  @param info Track information.
@@ -125,12 +125,12 @@ public:
     bool isUsed() const;
 
 private:
-    void formatTitle(int column);
-    void formatGroup();
-    QStringList m_formattedTitles;
-    QString m_formattedLength;
-    QString m_group;
-    QStringList m_titleFormats;
+    void formatTitle(int column) const;
+    void formatGroup() const;
+    mutable QStringList m_formattedTitles;
+    mutable QString m_formattedLength;
+    mutable QString m_group;
+    mutable QStringList m_titleFormats;
     QString m_groupFormat;
     QmmpUiSettings *m_settings;
     int m_refCount = 0;
@@ -139,9 +139,6 @@ private:
     friend class PlayListContainer;
     friend class NormalContainer;
     friend class GroupedContainer;
-    friend class PlayListContainer2;
-    friend class NormalContainer2;
-    friend class GroupedContainer2;
     int m_queued_index = -1;
     int m_track_index = -1;
 

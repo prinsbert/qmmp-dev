@@ -36,13 +36,13 @@ PlayListGroup::~PlayListGroup()
     }
 }
 
-QString PlayListGroup::formattedTitle(int column)
+QString PlayListGroup::formattedTitle(int column) const
 {
     Q_UNUSED(column);
     return m_name;
 }
 
-QStringList PlayListGroup::formattedTitles()
+QStringList PlayListGroup::formattedTitles() const
 {
     return QStringList() << m_name;
 }
@@ -67,7 +67,7 @@ int PlayListGroup::count() const
     return trackList.count();
 }
 
-QString PlayListGroup::formattedLength()
+QString PlayListGroup::formattedDuration() const
 {
     return QString();
 }

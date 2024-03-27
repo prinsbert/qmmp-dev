@@ -505,6 +505,7 @@ void ListWidget::updateList(int flags)
             continue;
 
         row->titles = items[i]->formattedTitles();
+        row->length = items.at(i)->formattedDuration();
         row->sizes = m_header->sizes();
         row->alignment = m_header->alignment();
 
@@ -524,7 +525,6 @@ void ListWidget::updateList(int flags)
         {
             row->flags &= ~ListWidgetRow::GROUP;
             row->number = items.at(i)->trackIndex() + 1;
-            row->length = items.at(i)->formattedLength();
             row->extraString = getExtraString(items.at(i));
         }
 

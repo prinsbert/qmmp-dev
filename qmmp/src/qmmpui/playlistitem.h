@@ -53,16 +53,16 @@ public:
      * Returns formatted title of the item.
      * @param column Number of column.
      */
-    virtual QString formattedTitle(int column) = 0;
+    virtual QString formattedTitle(int column) const = 0;
     /*!
      * Returns the list of the formatted titles for all columns.
      * Group separators contain only one title.
      */
-    virtual QStringList formattedTitles() = 0;
+    virtual QStringList formattedTitles() const = 0;
     /*!
      *  Returns formatted length of the item.
      */
-    virtual QString formattedLength() = 0;
+    virtual QString formattedDuration() const = 0;
     /*!
      * Returns \b true if the \b PlayListItem is group separator. Otherwise returns \b false.
      */
