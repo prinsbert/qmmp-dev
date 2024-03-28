@@ -36,8 +36,8 @@ public:
     friend class VorbisCommentModel;
 
     QList<TagModel* > tags() const override;
-    QPixmap cover() const override;
-    void setCover(const QPixmap &pix) override;
+    QImage cover() const override;
+    void setCover(const QImage &pix) override;
     void removeCover() override;
     QString lyrics() const override;
 

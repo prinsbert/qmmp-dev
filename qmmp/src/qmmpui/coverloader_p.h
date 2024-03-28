@@ -37,7 +37,7 @@ public:
     void finish();
 
 signals:
-    void ready(const QString &path, const QPixmap &pixmap);
+    void ready(const QString &path, const QImage &img);
 
 private:
     void run() override;

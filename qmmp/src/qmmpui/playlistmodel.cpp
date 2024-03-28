@@ -1212,12 +1212,12 @@ void PlayListModel::startCoverLoader()
     }
 }
 
-void PlayListModel::setCover(const QString &path, const QPixmap &pixmap)
+void PlayListModel::setCover(const QString &path, const QImage &img)
 {
     for(PlayListGroup *g : m_container->groups())
     {
         if(g->firstTrackPath() == path)
-            g->setCover(pixmap);
+            g->setCover(img);
     }
     emit listChanged(METADATA);
 }

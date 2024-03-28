@@ -21,7 +21,7 @@
 #define PIXMAPWIDGET_H
 
 #include <QWidget>
-#include <QPixmap>
+#include <QImage>
 
 /**
 	@author Ilya Kotov <forkotov02@ya.ru>
@@ -35,13 +35,13 @@ public:
 
     ~CoverWidget();
 
-    virtual void setPixmap(const QPixmap&);
+    virtual void setImage(const QImage &img);
 
 protected:
     void paintEvent (QPaintEvent *event) override;
 
 private: 
-      QPixmap m_pixmap;
+      QImage m_image;
 
 
 

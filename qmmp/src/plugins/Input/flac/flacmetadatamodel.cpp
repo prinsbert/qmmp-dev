@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QPixmap>
+#include <QImage>
 #include <QBuffer>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
@@ -81,7 +81,7 @@ QList<TagModel* > FLACMetaDataModel::tags() const
     return m_tags;
 }
 
-QPixmap FLACMetaDataModel::cover() const
+QImage FLACMetaDataModel::cover() const
 {
     TagLib::FLAC::File *flacFile = dynamic_cast<TagLib::FLAC::File *>(m_file);
     TagLib::List<TagLib::FLAC::Picture *> list;
@@ -99,12 +99,12 @@ QPixmap FLACMetaDataModel::cover() const
     {
         if(list[i]->type() == TagLib::FLAC::Picture::FrontCover)
         {
-            QPixmap cover;
+            QImage cover;
             cover.loadFromData(QByteArray(list[i]->data().data(), list[i]->data().size())); //read binary picture data
             return cover;
         }
     }
-    return QPixmap();
+    return QImage();
 }
 
 QString FLACMetaDataModel::coverPath() const
@@ -112,7 +112,7 @@ QString FLACMetaDataModel::coverPath() const
     return MetaDataManager::instance()->findCoverFile(m_path);
 }
 
-void FLACMetaDataModel::setCover(const QPixmap &pix)
+void FLACMetaDataModel::setCover(const QImage &img)
 {
     removeCover();
 
@@ -123,7 +123,7 @@ void FLACMetaDataModel::setCover(const QPixmap &pix)
     QByteArray data;
     QBuffer buffer(&data);
     buffer.open(QIODevice::WriteOnly);
-    pix.save(&buffer, "JPEG");
+    img.save(&buffer, "JPEG");
     picture->setMimeType("image/jpeg");
     picture->setData(TagLib::ByteVector(data.constData(), data.size()));
     if(flacFile)

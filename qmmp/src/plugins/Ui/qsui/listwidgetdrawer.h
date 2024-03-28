@@ -26,7 +26,7 @@
 #include <QColor>
 #include <QRect>
 #include <QFontMetrics>
-#include <QPixmap>
+#include <QImage>
 
 class QPainter;
 class PlayListHeaderModel;
@@ -36,7 +36,7 @@ struct ListWidgetRow
     QStringList titles;
     QList<int> sizes;
     QList<int> alignment;
-    QPixmap cover;
+    QImage cover;
     QString length;
     QString extraString;
     int number = 0;
@@ -96,7 +96,7 @@ private:
     QFontMetrics *m_bold_metrics = nullptr;
     PlayListHeaderModel *m_header_model;
     QFont m_font, m_extra_font;
-    QPixmap m_emptyCover;
+    QImage m_emptyCover;
     bool m_update = false;
     bool m_show_number = false;
     bool m_show_anchor = false;

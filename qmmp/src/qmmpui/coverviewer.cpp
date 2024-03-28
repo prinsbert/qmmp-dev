@@ -47,20 +47,20 @@ CoverViewer::~CoverViewer()
     settings.setValue("CoverEditor/last_dir", m_lastDir);
 }
 
-void CoverViewer::setPixmap(const QPixmap &pixmap)
+void CoverViewer::setImage(const QImage &img)
 {
-    m_pixmap = pixmap;
+    m_image = img;
     update();
 }
 
-bool CoverViewer::hasPixmap() const
+bool CoverViewer::hasImage() const
 {
-    return !m_pixmap.isNull();
+    return !m_image.isNull();
 }
 
-const QPixmap &CoverViewer::pixmap() const
+const QImage &CoverViewer::image() const
 {
-    return m_pixmap;
+    return m_image;
 }
 
 void CoverViewer::saveAs()
@@ -72,7 +72,7 @@ void CoverViewer::saveAs()
     if (!path.isEmpty())
     {
         m_lastDir = QFileInfo(path).absoluteDir().path();
-        m_pixmap.save(path);
+        m_image.save(path);
     }
 }
 
@@ -84,25 +84,25 @@ void CoverViewer::load()
     if(!path.isEmpty())
     {
         m_lastDir = QFileInfo(path).absoluteDir().path();
-        m_pixmap.load(path);
-        if(m_pixmap.width() > 512)
-            m_pixmap = m_pixmap.scaled(512, 512, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        m_image.load(path);
+        if(m_image.width() > 512)
+            m_image = m_image.scaled(512, 512, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     }
     update();
 }
 
 void CoverViewer::clear()
 {
-    m_pixmap = QPixmap();
+    m_image = QImage();
     update();
 }
 
 void CoverViewer::paintEvent(QPaintEvent *)
 {
-    if(!m_pixmap.isNull())
+    if(!m_image.isNull())
     {
         QPainter paint(this);
-        QPixmap pixmap = m_pixmap.scaled(size().width() - 10, size().height() - 10, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        paint.drawPixmap((width() - pixmap.width()) / 2, (height() - pixmap.height()) / 2, pixmap);
+        QImage image = m_image.scaled(size().width() - 10, size().height() - 10, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        paint.drawImage((width() - image.width()) / 2, (height() - image.height()) / 2, image);
     }
 }

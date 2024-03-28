@@ -34,8 +34,8 @@ public:
     ~OpusMetaDataModel();
     QList<MetaDataItem> extraProperties() const override;
     QList<TagModel* > tags() const override;
-    QPixmap cover() const override;
-    void setCover(const QPixmap &pix) override;
+    QImage cover() const override;
+    void setCover(const QImage &img) override;
     void removeCover() override;
     QString lyrics() const override;
 

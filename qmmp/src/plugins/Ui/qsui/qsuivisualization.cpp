@@ -59,7 +59,7 @@ void QSUIVisualization::clear()
 
 void QSUIVisualization::clearCover()
 {
-    m_cover = QPixmap();
+    m_cover = QImage();
     updateCover();
     update();
 }
@@ -69,9 +69,9 @@ QSize QSUIVisualization::sizeHint() const
     return QSize(200, 100);
 }
 
-void QSUIVisualization::setCover(const QPixmap &pixmap)
+void QSUIVisualization::setCover(const QImage &img)
 {
-    m_cover = pixmap;
+    m_cover = img;
     updateCover();
 }
 
@@ -199,7 +199,7 @@ void QSUIVisualization::updateCover()
     {
         m_offset = height();
         m_pixLabel->setGeometry(10,10, height() - 20, height() - 20);
-        m_pixLabel->setPixmap(m_cover.scaled(m_pixLabel->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+        m_pixLabel->setPixmap(QPixmap::fromImage(m_cover.scaled(m_pixLabel->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation)));
         m_pixLabel->show();
     }
     else

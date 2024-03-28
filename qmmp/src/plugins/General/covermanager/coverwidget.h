@@ -21,7 +21,7 @@
 #define PIXMAPWIDGET_H
 
 #include <QWidget>
-#include <QPixmap>
+#include <QImage>
 
 class QMenu;
 class QMouseEvent;
@@ -38,18 +38,18 @@ public:
 
     ~CoverWidget();
 
-    virtual void setPixmap(const QPixmap&);
+    virtual void setImage(const QImage &img);
 
 protected:
-    void paintEvent (QPaintEvent *event) override;
-    void mousePressEvent (QMouseEvent * event) override;
+    void paintEvent(QPaintEvent *event) override;
+    void mousePressEvent(QMouseEvent * event) override;
 
 private slots:
     void saveAs();
     void processResizeAction(QAction *action);
 
 private: 
-    QPixmap m_pixmap;
+    QImage m_image;
     QMenu *m_menu;
     int m_size;
 };

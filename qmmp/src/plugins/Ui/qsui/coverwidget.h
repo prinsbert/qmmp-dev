@@ -36,7 +36,7 @@ public:
 
     ~CoverWidget();
 
-    void setCover(const QPixmap&);
+    void setCover(const QImage &img);
     void clearCover();
 
 private slots:
@@ -44,7 +44,7 @@ private slots:
 
 private:
     void paintEvent (QPaintEvent *) override;
-    QPixmap m_pixmap;
+    QImage m_image;
 };
 
 #endif

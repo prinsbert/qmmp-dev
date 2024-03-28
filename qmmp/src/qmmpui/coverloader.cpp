@@ -59,9 +59,9 @@ void CoverLoader::run()
         QString path = m_paths.pop();
 
         m_mutex.unlock();
-        QPixmap pixmap = MetaDataManager::instance()->getCover(path);
-        if(!pixmap.isNull())
-            emit ready(path, pixmap.scaled(128, 128, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        QImage img = MetaDataManager::instance()->getCover(path);
+        if(!img.isNull())
+            emit ready(path, img.scaled(128, 128, Qt::KeepAspectRatio, Qt::SmoothTransformation));
         m_mutex.lock();
     }
 

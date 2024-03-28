@@ -25,7 +25,7 @@
 #include <QList>
 #include <QString>
 #include <QCoreApplication>
-#include <QPixmap>
+#include <QImage>
 #include <QVariant>
 #include <QFlags>
 #include "tagmodel.h"
@@ -116,16 +116,16 @@ public:
      */
     virtual QList<TagModel* > tags() const;
     /*!
-     * Returns cover pixmap.
+     * Returns cover image.
      * Subclass should reimplement this function. Default implementation returns empty pixmap.
      */
-    virtual QPixmap cover() const;
+    virtual QImage cover() const;
     /*!
      * Sets cover.
-     * @param pix Cover pixmap.
+     * @param pix Cover image.
      * Subclass should reimplement this function. Default implementation does nothing.
      */
-    virtual void setCover(const QPixmap &pix);
+    virtual void setCover(const QImage &img);
     /*!
      * Removes cover.
      * Subclass should reimplement this function. Default implementation does nothing.

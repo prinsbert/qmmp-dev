@@ -44,10 +44,10 @@ void CoverManager::showWindow()
     if (!tracks.isEmpty())
     {
         CoverWidget *w = new CoverWidget(qApp->activeWindow ());
-        QPixmap pix = MetaDataManager::instance()->getCover(tracks.constFirst()->path());
-        if(pix.isNull())
-            pix = QPixmap(":/cm_no_cover.png");
-        w->setPixmap(pix);
+        QImage img = MetaDataManager::instance()->getCover(tracks.constFirst()->path());
+        if(img.isNull())
+            img = QImage(":/cm_no_cover.png");
+        w->setImage(img);
         MetaDataFormatter formatter("%p%if(%p&%t, - ,)%if(%t,%t,%f)");
         w->setWindowTitle(formatter.format(tracks.at(0)));
         w->show();

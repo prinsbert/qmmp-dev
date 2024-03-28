@@ -21,7 +21,7 @@
 #define COVERVIEWER_H
 
 #include <QWidget>
-#include <QPixmap>
+#include <QImage>
 
 class QMouseEvent;
 
@@ -38,9 +38,9 @@ public:
 
     ~CoverViewer();
 
-    void setPixmap(const QPixmap&);
-    bool hasPixmap() const;
-    const QPixmap &pixmap() const;
+    void setImage(const QImage &img);
+    bool hasImage() const;
+    const QImage &image() const;
 
 public slots:
     void saveAs();
@@ -49,7 +49,7 @@ public slots:
 
 private:
     void paintEvent(QPaintEvent *) override;
-    QPixmap m_pixmap;
+    QImage m_image;
     QString m_lastDir;
 };
 

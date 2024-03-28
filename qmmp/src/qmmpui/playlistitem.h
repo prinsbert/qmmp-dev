@@ -21,7 +21,7 @@
 #define PLAYLISTITEM_H
 
 #include <QMap>
-#include <QPixmap>
+#include <QImage>
 #include <qmmp/qmmp.h>
 #include "qmmpui_export.h"
 
@@ -73,7 +73,7 @@ public:
      */
     virtual int trackIndex() const;
 
-    virtual QPixmap cover() const;
+    virtual QImage cover() const;
 
 private:
     bool m_selected = false;

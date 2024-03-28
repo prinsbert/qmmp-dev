@@ -108,12 +108,12 @@ bool PlayListGroup::isCoverLoaded() const
     return m_isCoverLoaded;
 }
 
-QPixmap PlayListGroup::cover() const
+QImage PlayListGroup::cover() const
 {
     return m_cover;
 }
 
-void PlayListGroup::setCover(const QPixmap &cover)
+void PlayListGroup::setCover(const QImage &cover)
 {
     m_isCoverLoaded = true;
     m_cover = cover;

@@ -331,8 +331,8 @@ void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int
     }
     else if(linesPerGroup >= 2)
     {
-        QPixmap pix = row->cover.isNull() ? m_emptyCover : row->cover;
-        painter->drawPixmap(row->rect.x() + 5, row->rect.y() + 5, row->rect.height() - 10, row->rect.height() - 10, pix);
+        QImage img = row->cover.isNull() ? m_emptyCover : row->cover;
+        painter->drawImage(QRect(row->rect.x() + 5, row->rect.y() + 5, row->rect.height() - 10, row->rect.height() - 10), img);
         sx += row->rect.height();
 
         int spacing = (row->rect.height() - 2 * (m_metrics->overlinePos() + m_metrics->underlinePos())) / 3;

@@ -39,7 +39,7 @@ public:
     explicit QSUIVisualization(QWidget *parent = nullptr);
     virtual ~QSUIVisualization();
 
-    void setCover(const QPixmap &pixmap);
+    void setCover(const QImage &img);
     void clear();
     void clearCover();
     QSize sizeHint() const override;
@@ -63,7 +63,7 @@ private:
     void createMenu();
     void updateCover();
 
-    QPixmap m_cover;
+    QImage m_cover;
     QTimer *m_timer;
     QColor m_bgColor;
     bool m_show_cover = false;

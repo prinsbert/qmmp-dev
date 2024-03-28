@@ -100,13 +100,13 @@ void StatusIconPopupWidget::updateMetaData(const QString &message)
     m_textLabel->setText(message);
     if(core->state() == Qmmp::Playing || core->state() == Qmmp::Paused)
     {
-        QPixmap cover = MetaDataManager::instance()->getCover(core->trackInfo().path());
+        QImage cover = MetaDataManager::instance()->getCover(core->trackInfo().path());
         m_cover->show();
         m_bar->show();
         if(cover.isNull())
-            m_cover->setPixmap(QPixmap(":/empty_cover.png"));
+            m_cover->setImage(QImage(":/empty_cover.png"));
         else
-            m_cover->setPixmap(cover);
+            m_cover->setImage(cover);
         updateTime(core->elapsed());
         m_bar->setVisible(m_showProgress);
     }

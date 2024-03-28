@@ -225,7 +225,7 @@ void DetailsDialog::updatePage()
     infoList.clear();
 
     QString coverPath;
-    QPixmap coverPixmap;
+    QImage coverImage;
     bool readOnly = false;
 
     if(m_info.path().contains("://") && m_info.path().contains("#")) //track of multi-track file
@@ -247,12 +247,12 @@ void DetailsDialog::updatePage()
     if(m_metaDataModel)
     {
         coverPath = coverPath.isEmpty() ? m_metaDataModel->coverPath() : coverPath;
-        coverPixmap = m_metaDataModel->cover();
+        coverImage = m_metaDataModel->cover();
     }
 
     if((m_metaDataModel && (m_metaDataModel->dialogHints() & MetaDataModel::IsCoverEditable)) ||
             !coverPath.isEmpty() ||
-            !coverPixmap.isNull())
+            !coverImage.isNull())
     {
         CoverEditor *coverEditor = new CoverEditor(m_metaDataModel, coverPath, this);
         m_ui->tabWidget->addTab(coverEditor, tr("Cover"));
