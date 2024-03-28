@@ -91,20 +91,20 @@ QList<TagModel* > MPEGMetaDataModel::tags() const
     return m_tags;
 }
 
-QPixmap MPEGMetaDataModel::cover() const
+QImage MPEGMetaDataModel::cover() const
 {
     if(!m_file->ID3v2Tag())
-        return QPixmap();
+        return QImage();
     TagLib::ID3v2::FrameList frames = m_file->ID3v2Tag()->frameListMap()["APIC"];
     if(frames.isEmpty())
-        return QPixmap();
+        return QImage();
 
     for(TagLib::ID3v2::FrameList::Iterator it = frames.begin(); it != frames.end(); ++it)
     {
         TagLib::ID3v2::AttachedPictureFrame *frame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(*it);
         if(frame && frame->type() == TagLib::ID3v2::AttachedPictureFrame::FrontCover)
         {
-            QPixmap cover;
+            QImage cover;
             cover.loadFromData((const uchar *)frame->picture().data(),
                                      frame->picture().size());
             return cover;
@@ -116,16 +116,16 @@ QPixmap MPEGMetaDataModel::cover() const
         TagLib::ID3v2::AttachedPictureFrame *frame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(*it);
         if(frame)
         {
-            QPixmap cover;
+            QImage cover;
             cover.loadFromData((const uchar *)frame->picture().data(),
                                      frame->picture().size());
             return cover;
         }
     }
-    return QPixmap();
+    return QImage();
 }
 
-void MPEGMetaDataModel::setCover(const QPixmap &pix)
+void MPEGMetaDataModel::setCover(const QImage &img)
 {
     TagLib::ID3v2::Tag *tag = m_file->ID3v2Tag(true);
     tag->removeFrames("APIC");
@@ -134,7 +134,7 @@ void MPEGMetaDataModel::setCover(const QPixmap &pix)
     QByteArray data;
     QBuffer buffer(&data);
     buffer.open(QIODevice::WriteOnly);
-    pix.save(&buffer, "JPEG");
+    img.save(&buffer, "JPEG");
     frame->setMimeType("image/jpeg");
     frame->setPicture(TagLib::ByteVector(data.constData(), data.size()));
     tag->addFrame(frame);

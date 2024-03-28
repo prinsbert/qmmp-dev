@@ -56,40 +56,40 @@ bool CoverEditor::isEditable() const
 
 void CoverEditor::save()
 {
-    m_viewer->hasPixmap() ? m_model->setCover(m_viewer->pixmap()) : m_model->removeCover();
+    m_viewer->hasImage() ? m_model->setCover(m_viewer->image()) : m_model->removeCover();
 }
 
 void CoverEditor::on_sourceComboBox_activated(int index)
 {
     if(index == 0)
     {
-        m_viewer->setPixmap(QPixmap(m_coverPath));
+        m_viewer->setImage(QImage(m_coverPath));
         m_ui.loadButton->setEnabled(false);
         m_ui.deleteButton->setEnabled(false);
-        m_ui.saveAsButton->setEnabled(m_viewer->hasPixmap());
+        m_ui.saveAsButton->setEnabled(m_viewer->hasImage());
     }
     else if(index == 1)
     {
         if(m_model)
-            m_viewer->setPixmap(m_model->cover());
+            m_viewer->setImage(m_model->cover());
         m_ui.loadButton->setEnabled(m_editable);
-        m_ui.deleteButton->setEnabled(m_editable && m_viewer->hasPixmap());
-        m_ui.saveAsButton->setEnabled(m_viewer->hasPixmap());
+        m_ui.deleteButton->setEnabled(m_editable && m_viewer->hasImage());
+        m_ui.saveAsButton->setEnabled(m_viewer->hasImage());
     }
 }
 
 void CoverEditor::on_loadButton_clicked()
 {
     m_viewer->load();
-    m_ui.deleteButton->setEnabled(m_viewer->hasPixmap());
-    m_ui.saveAsButton->setEnabled(m_viewer->hasPixmap());
+    m_ui.deleteButton->setEnabled(m_viewer->hasImage());
+    m_ui.saveAsButton->setEnabled(m_viewer->hasImage());
 }
 
 void CoverEditor::on_deleteButton_clicked()
 {
     m_viewer->clear();
-    m_ui.deleteButton->setEnabled(m_viewer->hasPixmap());
-    m_ui.saveAsButton->setEnabled(m_viewer->hasPixmap());
+    m_ui.deleteButton->setEnabled(m_viewer->hasImage());
+    m_ui.saveAsButton->setEnabled(m_viewer->hasImage());
 }
 
 void CoverEditor::on_saveAsButton_clicked()

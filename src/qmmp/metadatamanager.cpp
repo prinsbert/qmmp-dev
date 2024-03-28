@@ -185,13 +185,13 @@ bool MetaDataManager::supports(const QString &fileName) const
     return false;
 }
 
-QPixmap MetaDataManager::getCover(const QString &url) const
+QImage MetaDataManager::getCover(const QString &url) const
 {
     QMutexLocker locker(&m_mutex);
     for(int i = 0; i < m_cover_cache.size(); ++i)
     {
         if(m_cover_cache[i]->url == url)
-            return m_cover_cache[i]->coverPixmap;
+            return m_cover_cache[i]->coverImage;
     }
 
     m_cover_cache << createCoverCacheItem(url);
@@ -199,7 +199,7 @@ QPixmap MetaDataManager::getCover(const QString &url) const
     while(m_cover_cache.size() > COVER_CACHE_SIZE)
         delete m_cover_cache.takeFirst();
 
-    return m_cover_cache.last()->coverPixmap;
+    return m_cover_cache.last()->coverImage;
 }
 
 QString MetaDataManager::getCoverPath(const QString &url) const
@@ -274,16 +274,16 @@ MetaDataManager::CoverCacheItem *MetaDataManager::createCoverCacheItem(const QSt
         if(model)
         {
             item->coverPath = model->coverPath();
-            item->coverPixmap = model->cover();
+            item->coverImage = model->cover();
             delete model;
         }
     }
 
-    if(!item->coverPath.isEmpty() && item->coverPixmap.isNull())
-        item->coverPixmap = QPixmap(item->coverPath);
+    if(!item->coverPath.isEmpty() && item->coverImage.isNull())
+        item->coverImage = QImage(item->coverPath);
 
-    if(item->coverPixmap.width() > 1024 || item->coverPixmap.height() > 1024)
-        item->coverPixmap = item->coverPixmap.scaled(1024, 1024, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    if(item->coverImage.width() > 1024 || item->coverImage.height() > 1024)
+        item->coverImage = item->coverImage.scaled(1024, 1024, Qt::KeepAspectRatio, Qt::SmoothTransformation);
 
     return item;
 }

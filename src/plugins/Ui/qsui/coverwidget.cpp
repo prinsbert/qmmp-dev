@@ -32,31 +32,31 @@ CoverWidget::CoverWidget(QWidget *parent)
     QAction *saveAsAction = new QAction(tr("&Save As..."), this);
     connect(saveAsAction, SIGNAL(triggered()), SLOT(saveAs()));
     addAction(saveAsAction);
-    m_pixmap = QPixmap(":/qsui/ui_no_cover.png");
+    m_image = QImage(":/qsui/ui_no_cover.png");
 }
 
 CoverWidget::~CoverWidget()
 {}
 
-void CoverWidget::setCover(const QPixmap &pixmap)
+void CoverWidget::setCover(const QImage &img)
 {
-    m_pixmap = pixmap.isNull() ? QPixmap(":/qsui/ui_no_cover.png") : pixmap;
+    m_image = img.isNull() ? QImage(":/qsui/ui_no_cover.png") : img;
     update();
 }
 
 void CoverWidget::clearCover()
 {
-    setCover(QPixmap());
+    setCover(QImage());
     update();
 }
 
 void CoverWidget::paintEvent(QPaintEvent *)
 {
-    if(!m_pixmap.isNull())
+    if(!m_image.isNull())
     {
         QPainter paint(this);
-        QPixmap pixmap = m_pixmap.scaled(size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        paint.drawPixmap((width() - pixmap.width()) / 2, (height() - pixmap.height()) / 2, pixmap);
+        QImage img = m_image.scaled(size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        paint.drawImage((width() - img.width()) / 2, (height() - img.height()) / 2, img);
     }
 }
 
@@ -67,5 +67,5 @@ void CoverWidget::saveAs()
                                                  tr("Images") +" (*.png *.jpg)");
 
     if (!path.isEmpty())
-        m_pixmap.save(path);
+        m_image.save(path);
 }

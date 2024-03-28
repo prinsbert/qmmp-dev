@@ -30,15 +30,15 @@ CoverWidget::CoverWidget(QWidget *parent)
 CoverWidget::~CoverWidget()
 {}
 
-void CoverWidget::setPixmap(const QPixmap &pixmap)
+void CoverWidget::setImage(const QImage &img)
 {
-    m_pixmap = pixmap;
+    m_image = img;
     update();
 }
 
 void CoverWidget::paintEvent (QPaintEvent *p)
 {
     QPainter paint(this);
-    if(!m_pixmap.isNull())
-        paint.drawPixmap(0,0, m_pixmap.scaled(p->rect().size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    if(!m_image.isNull())
+        paint.drawImage(0,0, m_image.scaled(p->rect().size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
 }

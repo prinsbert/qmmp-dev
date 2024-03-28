@@ -21,7 +21,7 @@
 #ifndef PLAYLISTGROUP_H
 #define PLAYLISTGROUP_H
 
-#include <QPixmap>
+#include <QImage>
 #include "playlisttrack.h"
 #include "playlistitem.h"
 #include "qmmpui_export.h"
@@ -80,8 +80,8 @@ public:
 
     QString firstTrackPath() const;
     bool isCoverLoaded() const;
-    QPixmap cover() const override;
-    void setCover(const QPixmap &cover);
+    QImage cover() const override;
+    void setCover(const QImage &cover);
 
 private:
     QString formatTitle2() const;
@@ -91,7 +91,7 @@ private:
     mutable QString m_title2;
 
     bool m_isCoverLoaded = false;
-    QPixmap m_cover;
+    QImage m_cover;
 
     QmmpUiSettings *m_settings;
     MetaDataHelper *m_helper;

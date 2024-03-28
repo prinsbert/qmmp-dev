@@ -87,11 +87,11 @@ void PopupWidget::showMetaData()
 
     m_label1->setText(title);
 
-    QPixmap pix = MetaDataManager::instance()->getCover(core->path());
-    if(!pix.isNull())
+    QImage img = MetaDataManager::instance()->getCover(core->path());
+    if(!img.isNull())
     {
         m_pixlabel->setFixedSize(m_coverSize,m_coverSize);
-        m_pixlabel->setPixmap(pix.scaled(m_coverSize,m_coverSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+        m_pixlabel->setPixmap(QPixmap::fromImage(img.scaled(m_coverSize,m_coverSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation)));
     }
     else
     {

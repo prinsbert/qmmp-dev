@@ -126,7 +126,7 @@ QList<QVariant> KdeNotify::prepareNotification()
     QString coverPath;
     if(m_showCovers)
     {
-        QPixmap cover = MetaDataManager::instance()->getCover(info.path());
+        QImage cover = MetaDataManager::instance()->getCover(info.path());
         if(!cover.isNull())
         {
             coverPath = m_coverPath;

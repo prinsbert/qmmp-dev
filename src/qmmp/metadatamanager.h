@@ -23,7 +23,7 @@
 
 #include <QList>
 #include <QStringList>
-#include <QPixmap>
+#include <QImage>
 #include <QDir>
 #include <QRecursiveMutex>
 #include <QRegularExpression>
@@ -79,11 +79,11 @@ public:
      */
     bool supports(const QString &file) const;
     /*!
-     * Returns the cover pixmap for the given file \b url,
-     * or returns an empty pixmap if cover is not available.
+     * Returns the cover image for the given file \b url,
+     * or returns an empty image if cover is not available.
      * IMPORTANT: to avoid infinite recursion, do not use this function inside \b MetaDataModel reimplementation.
      */
-    QPixmap getCover(const QString &url) const;
+    QImage getCover(const QString &url) const;
     /*!
      * Returns the cover file path for the given file \b url, or returns
      * an empty string if the cover file is not available. This function does not work
@@ -125,12 +125,12 @@ private:
     {
         QString url;
         QString coverPath;
-        QPixmap coverPixmap;
+        QImage coverImage;
     };
 
     QFileInfoList findCoverFiles(QDir dir, int depth) const;
     CoverCacheItem *createCoverCacheItem(const QString &url) const;
-    mutable QList <CoverCacheItem *> m_cover_cache;
+    mutable QList<CoverCacheItem *> m_cover_cache;
     QmmpSettings *m_settings;
     mutable QRecursiveMutex m_mutex;
 

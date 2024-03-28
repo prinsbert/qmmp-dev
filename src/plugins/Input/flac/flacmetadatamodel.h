@@ -33,9 +33,9 @@ public:
     FLACMetaDataModel(const QString &path, bool readOnly);
     ~FLACMetaDataModel();
     QList<TagModel* > tags() const override;
-    QPixmap cover() const override;
+    QImage cover() const override;
     QString coverPath() const override;
-    void setCover(const QPixmap &pix) override;
+    void setCover(const QImage &img) override;
     void removeCover() override;
     QString cue() const override;
     void setCue(const QString &content) override;
