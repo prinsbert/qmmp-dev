@@ -527,6 +527,8 @@ void MainWindow::createActions()
     m_ui.menuView->addAction(SET_ACTION(ActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), SLOT(setVisible(bool))));
     m_ui.menuView->addAction(SET_ACTION(ActionManager::UI_SHOW_TITLEBARS, this, SLOT(setTitleBarsVisible(bool))));
     m_ui.menuView->addAction(ACTION(ActionManager::PL_SHOW_HEADER));
+    m_ui.menuView->addAction(SET_ACTION(ActionManager::PL_GROUP_TRACKS, m_ui_settings, SLOT(setGroupsEnabled(bool))));
+    ACTION(ActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
     m_ui.menuView->addSeparator();
     m_ui.menuView->addAction(SET_ACTION(ActionManager::UI_BLOCK_TOOLBARS, this, SLOT(setToolBarsBlocked(bool))));
     m_ui.menuView->addAction(tr("Edit Toolbars"), this, SLOT(editToolBar()));
@@ -614,8 +616,6 @@ void MainWindow::createActions()
                               m_pl_manager, SLOT(randomizeList()));
     m_ui.menuEdit->addAction(QIcon::fromTheme("view-sort-descending"), tr("Reverse List"),
                               m_pl_manager, SLOT(reverseList()));
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::PL_GROUP_TRACKS, m_ui_settings, SLOT(setGroupsEnabled(bool))));
-    ACTION(ActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
     m_ui.menuEdit->addSeparator();
     m_ui.menuEdit->addAction(SET_ACTION(ActionManager::SETTINGS, this, SLOT(showSettings())));
 
