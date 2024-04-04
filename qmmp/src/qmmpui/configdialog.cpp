@@ -58,7 +58,11 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     m_ui->informationButton->setEnabled(false);
     m_ui->treeWidget->setItemDelegate(new RadioItemDelegate(this));
     m_ui->treeWidget->header()->setSectionsMovable(false);
-    connect (this, SIGNAL(rejected()),SLOT(saveSettings()));
+    connect(this, SIGNAL(rejected()),SLOT(saveSettings()));
+    m_ui->linesPerGroupComboBox->addItem(tr("1 row"), 1);
+    m_ui->linesPerGroupComboBox->addItem(tr("3 rows"), 3);
+    m_ui->linesPerGroupComboBox->addItem(tr("4 rows"), 4);
+    m_ui->linesPerGroupComboBox->addItem(tr("5 rows"), 5);
     m_ui->replayGainModeComboBox->addItem (tr("Track"), QmmpSettings::REPLAYGAIN_TRACK);
     m_ui->replayGainModeComboBox->addItem (tr("Album"), QmmpSettings::REPLAYGAIN_ALBUM);
     m_ui->replayGainModeComboBox->addItem (tr("Disabled"), QmmpSettings::REPLAYGAIN_DISABLED);
@@ -95,11 +99,16 @@ void ConfigDialog::addPage(const QString &name, QWidget *widget, const QIcon &ic
 
 void ConfigDialog::readSettings()
 {
-    if (MediaPlayer::instance())
+    if(MediaPlayer::instance())
     {
         //playlist options
         QmmpUiSettings *guis = QmmpUiSettings::instance();
         m_ui->groupLineEdit->setText(guis->groupFormat());
+        m_ui->extraRowFormatLineEdit->setText(guis->groupExtraRowFormat());
+        m_ui->linesPerGroupComboBox->setCurrentIndex(m_ui->linesPerGroupComboBox->findData(guis->linesPerGroup()));
+        m_ui->groupsShowCoverCheckBox->setChecked(guis->groupCoverVisible());
+        m_ui->showDividingLineCheckBox->setChecked(guis->groupDividingLineVisible());
+        m_ui->showExtraRowCheckBox->setChecked(guis->groupExtraRowVisible());
         m_ui->metaDataCheckBox->setChecked(guis->useMetaData());
         m_ui->plMetaDataCheckBox->setChecked(guis->readMetaDataForPlayLists());
         m_ui->underscoresCheckBox->setChecked(guis->convertUnderscore());
@@ -390,6 +399,11 @@ void ConfigDialog::saveSettings()
     if (QmmpUiSettings *guis = QmmpUiSettings::instance())
     {
         guis->setGroupFormat(m_ui->groupLineEdit->text().trimmed());
+        guis->setGroupExtraRowFormat(m_ui->extraRowFormatLineEdit->text().trimmed());
+        guis->setLinesPerGroup(m_ui->linesPerGroupComboBox->currentData().toInt());
+        guis->setGroupCoverVisible(m_ui->groupsShowCoverCheckBox->isChecked());
+        guis->setGroupDividingLineVisible(m_ui->showDividingLineCheckBox->isChecked());
+        guis->setGroupExtraRowVisible(m_ui->showExtraRowCheckBox->isChecked());
         guis->setUseMetaData(m_ui->metaDataCheckBox->isChecked());
         guis->setReadMetaDataForPlayLists(m_ui->plMetaDataCheckBox->isChecked());
         guis->setConvertUnderscore(m_ui->underscoresCheckBox->isChecked());

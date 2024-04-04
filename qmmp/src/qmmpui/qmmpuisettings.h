@@ -62,7 +62,12 @@ public:
     /*!
      * Returns playlist group format.
      */
-    const QString &groupFormat() const;
+    QString groupFormat() const;
+    QString groupExtraRowFormat() const;
+    int linesPerGroup() const;
+    bool groupExtraRowVisible() const;
+    bool groupCoverVisible() const;
+    bool groupDividingLineVisible() const;
     /*!
      * Returns state of "Repeat All" option.
      */
@@ -102,6 +107,11 @@ public:
      * \param groupFormat group format. \sa MetaDataFormatter
      */
     void setGroupFormat(const QString &groupFormat);
+    void setGroupExtraRowFormat(const QString &extraRowFormat);
+    void setLinesPerGroup(int lines);
+    void setGroupExtraRowVisible(bool enabled);
+    void setGroupCoverVisible(bool enabled);
+    void setGroupDividingLineVisible(bool enabled);
     /*!
      * Sets metadata usage option state to \b enabled
      * @param enabled Option state (\b true - enabled, \b false - disabled)
@@ -286,8 +296,13 @@ private:
     static QmmpUiSettings* m_instance;
     //playlist
     QString m_group_format;
-    bool m_convertUnderscore, m_convertTwenty;
-    bool m_useMetaData;
+    QString m_group_extra_row_format;
+    int m_lines_per_group;
+    bool m_group_extra_row_visible;
+    bool m_group_cover_visible;
+    bool m_group_dividing_line_visible;
+    bool m_convert_underscore, m_convert_twenty;
+    bool m_use_metadata;
     bool m_autosave_playlist;
     bool m_repeate_list;
     bool m_shuffle;
