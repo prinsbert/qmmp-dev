@@ -37,9 +37,14 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
     QSettings s;
     s.beginGroup("PlayList");
     m_group_format = s.value("group_format", "%p%if(%p&%a, - %if(%y,[%y] ,),)%a").toString();
-    m_convertUnderscore = s.value ("convert_underscore", true).toBool();
-    m_convertTwenty = s.value ("convert_twenty", true).toBool();
-    m_useMetaData = s.value ("load_metadata", true).toBool();
+    m_group_extra_row_format = s.value("group_extra_row_format", "%y | %l | %{bitrate} kb/s").toString();
+    m_lines_per_group = s.value("lines_per_group", 1).toInt();
+    m_group_extra_row_visible = s.value("group_extra_row_visible", true).toBool();
+    m_group_cover_visible = s.value("group_cover_visible", true).toBool();
+    m_group_dividing_line_visible = s.value("group_dividing_line_visible", true).toBool();
+    m_convert_underscore = s.value ("convert_underscore", true).toBool();
+    m_convert_twenty = s.value ("convert_twenty", true).toBool();
+    m_use_metadata = s.value ("load_metadata", true).toBool();
     m_autosave_playlist = s.value("autosave", true).toBool();
     m_repeate_list = s.value("repeate_list", false).toBool();
     m_shuffle = s.value("shuffle", false).toBool();
@@ -75,9 +80,34 @@ QmmpUiSettings::~QmmpUiSettings()
     delete m_helper;
 }
 
-const QString &QmmpUiSettings::groupFormat() const
+QString QmmpUiSettings::groupFormat() const
 {
     return m_group_format;
+}
+
+QString QmmpUiSettings::groupExtraRowFormat() const
+{
+    return m_group_extra_row_format;
+}
+
+int QmmpUiSettings::linesPerGroup() const
+{
+    return m_lines_per_group;
+}
+
+bool QmmpUiSettings::groupExtraRowVisible() const
+{
+    return m_group_extra_row_visible;
+}
+
+bool QmmpUiSettings::groupCoverVisible() const
+{
+    return m_group_cover_visible;
+}
+
+bool QmmpUiSettings::groupDividingLineVisible() const
+{
+    return m_group_dividing_line_visible;
 }
 
 bool QmmpUiSettings::isRepeatableList() const
@@ -112,27 +142,29 @@ bool QmmpUiSettings::isPlayListTransitionEnabled() const
 
 bool QmmpUiSettings::convertUnderscore() const
 {
-    return m_convertUnderscore;
+    return m_convert_underscore;
 }
 
 bool QmmpUiSettings::convertTwenty() const
 {
-    return m_convertTwenty;
+    return m_convert_twenty;
 }
 
 bool QmmpUiSettings::useMetaData() const
 {
-    return m_useMetaData;
+    return m_use_metadata;
 }
 
 void QmmpUiSettings::setConvertUnderscore(bool yes)
 {
-    m_convertUnderscore = yes;
+    m_convert_underscore = yes;
+    m_timer->start();
 }
 
 void  QmmpUiSettings::setConvertTwenty(bool yes)
 {
-    m_convertTwenty = yes;
+    m_convert_twenty = yes;
+    m_timer->start();
 }
 
 void QmmpUiSettings::setGroupFormat(const QString &groupFormat)
@@ -145,12 +177,44 @@ void QmmpUiSettings::setGroupFormat(const QString &groupFormat)
         {
             model->rebuildGroups();
         }
+        m_timer->start();
     }
+}
+
+void QmmpUiSettings::setGroupExtraRowFormat(const QString &extraRowFormat)
+{
+    m_group_extra_row_format = extraRowFormat;
+    m_timer->start();
+}
+
+void QmmpUiSettings::setLinesPerGroup(int lines)
+{
+    m_lines_per_group = lines;
+    m_timer->start();
+}
+
+void QmmpUiSettings::setGroupExtraRowVisible(bool enabled)
+{
+    m_group_extra_row_visible = enabled;
+    m_timer->start();
+}
+
+void QmmpUiSettings::setGroupCoverVisible(bool enabled)
+{
+    m_group_cover_visible = enabled;
+    m_timer->start();
+}
+
+void QmmpUiSettings::setGroupDividingLineVisible(bool enabled)
+{
+    m_group_dividing_line_visible = enabled;
+    m_timer->start();
 }
 
 void QmmpUiSettings::setUseMetaData(bool yes)
 {
-    m_useMetaData = yes;
+    m_use_metadata = yes;
+    m_timer->start();
 }
 
 bool QmmpUiSettings::resumeOnStartup() const
@@ -161,11 +225,13 @@ bool QmmpUiSettings::resumeOnStartup() const
 void QmmpUiSettings::setResumeOnStartup(bool enabled)
 {
     m_resume_on_startup = enabled;
+    m_timer->start();
 }
 
 void QmmpUiSettings::setUseClipboard(bool enabled)
 {
     m_use_clipboard = enabled;
+    m_timer->start();
 }
 
 bool QmmpUiSettings::useClipboard() const
@@ -178,9 +244,14 @@ void QmmpUiSettings::sync()
     qDebug("%s", Q_FUNC_INFO);
     QSettings s;
     s.setValue("PlayList/group_format", m_group_format);
-    s.setValue("PlayList/convert_underscore", m_convertUnderscore);
-    s.setValue("PlayList/convert_twenty", m_convertTwenty);
-    s.setValue("PlayList/load_metadata", m_useMetaData);
+    s.setValue("PlayList/group_extra_row_format", m_group_extra_row_format);
+    s.setValue("PlayList/lines_per_group", m_lines_per_group);
+    s.setValue("PlayList/group_extra_row_visible", m_group_extra_row_visible);
+    s.setValue("PlayList/group_cover_visible", m_group_cover_visible);
+    s.setValue("PlayList/group_dividing_line_visible", m_group_dividing_line_visible);
+    s.setValue("PlayList/convert_underscore", m_convert_underscore);
+    s.setValue("PlayList/convert_twenty", m_convert_twenty);
+    s.setValue("PlayList/load_metadata", m_use_metadata);
     s.setValue("PlayList/autosave", m_autosave_playlist);
     s.setValue("PlayList/repeate_list", m_repeate_list);
     s.setValue("PlayList/shuffle", m_shuffle);
