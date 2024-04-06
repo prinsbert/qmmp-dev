@@ -28,7 +28,7 @@ MetaDataHelper::MetaDataHelper()
     m_group_formatter = new MetaDataFormatter();
     m_group_formatter2 = new MetaDataFormatter();
 
-    m_group_formatter2->setPattern("%y | %l | %{bitrate} kb/s");
+    m_group_formatter2->setPattern("%y | %l | %{bitrate} kbps");
     m_title_formatters << new MetaDataFormatter();
 }
 

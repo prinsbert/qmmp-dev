@@ -325,7 +325,16 @@ void ConfigDialog::createMenus()
     MetaDataFormatterMenu *groupMenu = new MetaDataFormatterMenu(MetaDataFormatterMenu::GROUP_MENU, this);
     m_ui->groupButton->setMenu(groupMenu);
     m_ui->groupButton->setPopupMode(QToolButton::InstantPopup);
-    connect(groupMenu, SIGNAL(patternSelected(QString)), SLOT(addGroupString(QString)));
+    connect(groupMenu, &MetaDataFormatterMenu::patternSelected, this, [this] (const QString &str) {
+        m_ui->groupLineEdit->insert(m_ui->groupLineEdit->cursorPosition() < 1 ? str : (" - " + str));
+    });
+
+    MetaDataFormatterMenu *extraRowFormatMenu = new MetaDataFormatterMenu(MetaDataFormatterMenu::GROUP_EXTRA_ROW_MENU, this);
+    m_ui->extraRowFormatButton->setMenu(extraRowFormatMenu);
+    m_ui->extraRowFormatButton->setPopupMode(QToolButton::InstantPopup);
+    connect(extraRowFormatMenu, &MetaDataFormatterMenu::patternSelected, this, [this] (const QString &str) {
+        m_ui->extraRowFormatLineEdit->insert(m_ui->extraRowFormatLineEdit->cursorPosition() < 1 ? str : (" - " + str));
+    });
 
     m_ui->treeWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
     m_preferencesAction = new QAction(QIcon::fromTheme("configure"),tr("Preferences"), m_ui->treeWidget);
@@ -384,14 +393,6 @@ void ConfigDialog::loadLanguages()
     if(index < 0)
         index = m_ui->langComboBox->findData("auto");
     m_ui->langComboBox->setCurrentIndex(index);
-}
-
-void ConfigDialog::addGroupString(const QString &str)
-{
-    if (m_ui->groupLineEdit->cursorPosition () < 1)
-        m_ui->groupLineEdit->insert(str);
-    else
-        m_ui->groupLineEdit->insert(" - "+str);
 }
 
 void ConfigDialog::saveSettings()

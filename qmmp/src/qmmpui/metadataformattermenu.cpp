@@ -51,8 +51,13 @@ MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
     }
     else if(type == GROUP_MENU)
     {
-        addAction(tr("Artist - [Year] Album"))->setData("%p%if(%p&%a, - %if(%y,[%y] ,),)%a");
         addAction(tr("Artist - Album"))->setData("%if(%p,%p - %a,%a)");
+        addAction(tr("Artist - [Year] Album"))->setData("%p%if(%p&%a, - %if(%y,[%y] ,),)%a");
+    }
+    else if(type == GROUP_EXTRA_ROW_MENU)
+    {
+        addAction(tr("Duration"))->setData("%l");
+        addAction(tr("Year | Duration | Bitrate"))->setData("%y | %l | %{bitrate} kbps");
     }
     addAction(tr("Parent Directory Name"))->setData("%dir(0)");
     addAction(tr("Parent Directory Path"))->setData("%dir");
