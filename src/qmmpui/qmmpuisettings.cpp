@@ -37,7 +37,7 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
     QSettings s;
     s.beginGroup("PlayList");
     m_group_format = s.value("group_format", "%p%if(%p&%a, - %if(%y,[%y] ,),)%a").toString();
-    m_group_extra_row_format = s.value("group_extra_row_format", "%y | %l | %{bitrate} kb/s").toString();
+    m_group_extra_row_format = s.value("group_extra_row_format", "%y | %l | %{bitrate} kbps").toString();
     m_lines_per_group = s.value("lines_per_group", 1).toInt();
     m_group_extra_row_visible = s.value("group_extra_row_visible", true).toBool();
     m_group_cover_visible = s.value("group_cover_visible", true).toBool();

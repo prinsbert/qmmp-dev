@@ -35,6 +35,7 @@ public:
     {
         TITLE_MENU = 0,
         GROUP_MENU,
+        GROUP_EXTRA_ROW_MENU,
         COLUMN_MENU
     };
 
