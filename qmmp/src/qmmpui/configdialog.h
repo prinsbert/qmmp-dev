@@ -62,11 +62,11 @@ private slots:
     void on_contentsWidget_currentItemChanged (QListWidgetItem *current, QListWidgetItem *previous);
     void on_preferencesButton_clicked();
     void on_informationButton_clicked();
-    void saveSettings();
     void on_treeWidget_itemChanged (QTreeWidgetItem *item, int column);
     void on_treeWidget_currentItemChanged (QTreeWidgetItem *current, QTreeWidgetItem *);
     void on_cueFontButton_clicked();
-
+    void saveSettings();
+    void updateGroupSettings();
 
 private:
     void readSettings();

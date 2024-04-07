@@ -63,9 +63,9 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     m_ui->linesPerGroupComboBox->addItem(tr("3 rows"), 3);
     m_ui->linesPerGroupComboBox->addItem(tr("4 rows"), 4);
     m_ui->linesPerGroupComboBox->addItem(tr("5 rows"), 5);
-    m_ui->replayGainModeComboBox->addItem (tr("Track"), QmmpSettings::REPLAYGAIN_TRACK);
-    m_ui->replayGainModeComboBox->addItem (tr("Album"), QmmpSettings::REPLAYGAIN_ALBUM);
-    m_ui->replayGainModeComboBox->addItem (tr("Disabled"), QmmpSettings::REPLAYGAIN_DISABLED);
+    m_ui->replayGainModeComboBox->addItem(tr("Track"), QmmpSettings::REPLAYGAIN_TRACK);
+    m_ui->replayGainModeComboBox->addItem(tr("Album"), QmmpSettings::REPLAYGAIN_ALBUM);
+    m_ui->replayGainModeComboBox->addItem(tr("Disabled"), QmmpSettings::REPLAYGAIN_DISABLED);
     m_ui->bitDepthComboBox->addItem("16", Qmmp::PCM_S16LE);
     m_ui->bitDepthComboBox->addItem("24", Qmmp::PCM_S24LE);
     m_ui->bitDepthComboBox->addItem("32", Qmmp::PCM_S32LE);
@@ -78,9 +78,13 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     loadPluginsInfo();
     loadLanguages();
     createMenus();
+    updateGroupSettings();
     //setup icons
     m_ui->preferencesButton->setIcon(QIcon::fromTheme("configure"));
     m_ui->informationButton->setIcon(QIcon::fromTheme("dialog-information"));
+    //connections
+    connect(m_ui->linesPerGroupComboBox, &QComboBox::currentIndexChanged, this, &ConfigDialog::updateGroupSettings);
+    connect(m_ui->showExtraRowCheckBox, &QCheckBox::clicked, this, &ConfigDialog::updateGroupSettings);
 }
 
 ConfigDialog::~ConfigDialog()
@@ -466,6 +470,16 @@ void ConfigDialog::saveSettings()
     //fonts
     settings.setValue("CueEditor/font", m_ui->cueFontLabel->font().toString());
     settings.setValue("CueEditor/use_system_font", m_ui->cueSystemFontCheckBox->isChecked());
+}
+
+void ConfigDialog::updateGroupSettings()
+{
+    int linesPerGroup = m_ui->linesPerGroupComboBox->currentData().toInt();
+    m_ui->groupsShowCoverCheckBox->setEnabled(linesPerGroup > 1);
+    m_ui->showExtraRowCheckBox->setEnabled(linesPerGroup > 1);
+    m_ui->extraRowFormatLineEdit->setEnabled(linesPerGroup > 1 && m_ui->showExtraRowCheckBox->isChecked());
+    m_ui->extraRowFormatButton->setEnabled(linesPerGroup > 1 && m_ui->showExtraRowCheckBox->isChecked());
+    m_ui->extraRowFormatLabel->setEnabled(linesPerGroup > 1 && m_ui->showExtraRowCheckBox->isChecked());
 }
 
 void ConfigDialog::on_treeWidget_itemChanged (QTreeWidgetItem *item, int column)
