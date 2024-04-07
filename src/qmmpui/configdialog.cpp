@@ -79,9 +79,6 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     loadLanguages();
     createMenus();
     updateGroupSettings();
-    //setup icons
-    m_ui->preferencesButton->setIcon(QIcon::fromTheme("configure"));
-    m_ui->informationButton->setIcon(QIcon::fromTheme("dialog-information"));
     //connections
     connect(m_ui->linesPerGroupComboBox, &QComboBox::currentIndexChanged, this, &ConfigDialog::updateGroupSettings);
     connect(m_ui->showExtraRowCheckBox, &QCheckBox::clicked, this, &ConfigDialog::updateGroupSettings);
