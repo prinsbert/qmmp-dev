@@ -20,7 +20,6 @@
 
 #include <QSettings>
 #include <QApplication>
-#include <QTimer>
 #include <qmmp/qmmp.h>
 #include "metadatahelper_p.h"
 #include "playlistmanager.h"
@@ -65,12 +64,9 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
     m_default_pl_name = s.value("default_pl_name", tr("Playlist")).toString();
     s.endGroup();
     m_use_clipboard = s.value("URLDialog/use_clipboard", false).toBool();
-    m_timer = new QTimer(this);
-    m_timer->setInterval(5000);
-    m_timer->setSingleShot(true);
-    connect(m_timer, SIGNAL(timeout()), SLOT(sync()));
 
     m_helper->setGroupFormat(m_group_format);
+    m_helper->setGroupFormat2(m_group_extra_row_format);
 }
 
 QmmpUiSettings::~QmmpUiSettings()
@@ -158,13 +154,13 @@ bool QmmpUiSettings::useMetaData() const
 void QmmpUiSettings::setConvertUnderscore(bool yes)
 {
     m_convert_underscore = yes;
-    m_timer->start();
+    saveSettings();
 }
 
 void  QmmpUiSettings::setConvertTwenty(bool yes)
 {
     m_convert_twenty = yes;
-    m_timer->start();
+    saveSettings();
 }
 
 void QmmpUiSettings::setGroupFormat(const QString &groupFormat)
@@ -173,48 +169,60 @@ void QmmpUiSettings::setGroupFormat(const QString &groupFormat)
     {
         m_group_format = groupFormat;
         m_helper->setGroupFormat(m_group_format);
-        for(PlayListModel *model : PlayListManager::instance()->playLists())
-        {
-            model->rebuildGroups();
-        }
-        m_timer->start();
+        saveSettings(true);
     }
 }
 
 void QmmpUiSettings::setGroupExtraRowFormat(const QString &extraRowFormat)
 {
-    m_group_extra_row_format = extraRowFormat;
-    m_timer->start();
+    if(m_group_extra_row_format != extraRowFormat)
+    {
+        m_group_extra_row_format = extraRowFormat;
+        m_helper->setGroupFormat2(m_group_extra_row_format);
+        saveSettings(true);
+    }
 }
 
 void QmmpUiSettings::setLinesPerGroup(int lines)
 {
-    m_lines_per_group = lines;
-    m_timer->start();
+    if(m_lines_per_group != lines)
+    {
+        m_lines_per_group = lines;
+        saveSettings(true);
+    }
 }
 
 void QmmpUiSettings::setGroupExtraRowVisible(bool enabled)
 {
-    m_group_extra_row_visible = enabled;
-    m_timer->start();
+    if(m_group_extra_row_visible != enabled)
+    {
+        m_group_extra_row_visible = enabled;
+        saveSettings(true);
+    }
 }
 
 void QmmpUiSettings::setGroupCoverVisible(bool enabled)
 {
-    m_group_cover_visible = enabled;
-    m_timer->start();
+    if(m_group_cover_visible != enabled)
+    {
+        m_group_cover_visible = enabled;
+        saveSettings(true);
+    }
 }
 
 void QmmpUiSettings::setGroupDividingLineVisible(bool enabled)
 {
-    m_group_dividing_line_visible = enabled;
-    m_timer->start();
+    if(m_group_dividing_line_visible != enabled)
+    {
+        m_group_dividing_line_visible = enabled;
+        saveSettings(true);
+    }
 }
 
 void QmmpUiSettings::setUseMetaData(bool yes)
 {
     m_use_metadata = yes;
-    m_timer->start();
+    saveSettings();
 }
 
 bool QmmpUiSettings::resumeOnStartup() const
@@ -225,13 +233,13 @@ bool QmmpUiSettings::resumeOnStartup() const
 void QmmpUiSettings::setResumeOnStartup(bool enabled)
 {
     m_resume_on_startup = enabled;
-    m_timer->start();
+    saveSettings();
 }
 
 void QmmpUiSettings::setUseClipboard(bool enabled)
 {
     m_use_clipboard = enabled;
-    m_timer->start();
+    saveSettings();
 }
 
 bool QmmpUiSettings::useClipboard() const
@@ -241,34 +249,55 @@ bool QmmpUiSettings::useClipboard() const
 
 void QmmpUiSettings::sync()
 {
-    qDebug("%s", Q_FUNC_INFO);
-    QSettings s;
-    s.setValue("PlayList/group_format", m_group_format);
-    s.setValue("PlayList/group_extra_row_format", m_group_extra_row_format);
-    s.setValue("PlayList/lines_per_group", m_lines_per_group);
-    s.setValue("PlayList/group_extra_row_visible", m_group_extra_row_visible);
-    s.setValue("PlayList/group_cover_visible", m_group_cover_visible);
-    s.setValue("PlayList/group_dividing_line_visible", m_group_dividing_line_visible);
-    s.setValue("PlayList/convert_underscore", m_convert_underscore);
-    s.setValue("PlayList/convert_twenty", m_convert_twenty);
-    s.setValue("PlayList/load_metadata", m_use_metadata);
-    s.setValue("PlayList/autosave", m_autosave_playlist);
-    s.setValue("PlayList/repeate_list", m_repeate_list);
-    s.setValue("PlayList/shuffle", m_shuffle);
-    s.setValue("PlayList/groups", m_groups_enabled);
-    s.setValue("PlayList/repeate_track", m_repeat_track);
-    s.setValue("PlayList/no_advance", m_no_pl_advance);
-    s.setValue("PlayList/clear_previous", m_clear_prev_playlist);
-    s.setValue("PlayList/read_metadata_for_playlist", m_read_metadata_for_playlist);
-    s.setValue("PlayList/transit_between_playlists", m_transit_between_playlists);
-    s.setValue("PlayList/skip_existing_tracks", m_skip_existing_tracks);
-    s.setValue("PlayList/stop_after_removing_of_current", m_stop_after_removing_of_current);
-    s.setValue("General/resume_on_startup", m_resume_on_startup);
-    s.setValue("General/restrict_filters", m_restrict_filters);
-    s.setValue("General/exclude_filters", m_exclude_filters);
-    s.setValue("General/use_default_pl", m_use_default_pl);
-    s.setValue("General/default_pl_name", m_default_pl_name);
-    s.setValue("URLDialog/use_clipboard", m_use_clipboard);
+    if(m_saveSettings)
+    {
+        qDebug("QmmpUiSettings: saving settings...");
+        QSettings s;
+        s.setValue("PlayList/group_format", m_group_format);
+        s.setValue("PlayList/group_extra_row_format", m_group_extra_row_format);
+        s.setValue("PlayList/lines_per_group", m_lines_per_group);
+        s.setValue("PlayList/group_extra_row_visible", m_group_extra_row_visible);
+        s.setValue("PlayList/group_cover_visible", m_group_cover_visible);
+        s.setValue("PlayList/group_dividing_line_visible", m_group_dividing_line_visible);
+        s.setValue("PlayList/convert_underscore", m_convert_underscore);
+        s.setValue("PlayList/convert_twenty", m_convert_twenty);
+        s.setValue("PlayList/load_metadata", m_use_metadata);
+        s.setValue("PlayList/autosave", m_autosave_playlist);
+        s.setValue("PlayList/repeate_list", m_repeate_list);
+        s.setValue("PlayList/shuffle", m_shuffle);
+        s.setValue("PlayList/groups", m_groups_enabled);
+        s.setValue("PlayList/repeate_track", m_repeat_track);
+        s.setValue("PlayList/no_advance", m_no_pl_advance);
+        s.setValue("PlayList/clear_previous", m_clear_prev_playlist);
+        s.setValue("PlayList/read_metadata_for_playlist", m_read_metadata_for_playlist);
+        s.setValue("PlayList/transit_between_playlists", m_transit_between_playlists);
+        s.setValue("PlayList/skip_existing_tracks", m_skip_existing_tracks);
+        s.setValue("PlayList/stop_after_removing_of_current", m_stop_after_removing_of_current);
+        s.setValue("General/resume_on_startup", m_resume_on_startup);
+        s.setValue("General/restrict_filters", m_restrict_filters);
+        s.setValue("General/exclude_filters", m_exclude_filters);
+        s.setValue("General/use_default_pl", m_use_default_pl);
+        s.setValue("General/default_pl_name", m_default_pl_name);
+        s.setValue("URLDialog/use_clipboard", m_use_clipboard);
+        m_saveSettings = false; //protect from multiple calls
+    }
+
+    if(m_rebuildGroups)
+    {
+        qDebug("QmmpUiSettings: rebuilding groups...");
+        PlayListManager::instance()->rebuildGroups();
+        m_rebuildGroups = false; //protect from multiple calls
+    }
+}
+
+void QmmpUiSettings::saveSettings(bool rebuildGroups)
+{
+    m_saveSettings = true;
+
+    if(rebuildGroups)
+        m_rebuildGroups = true;
+
+    QMetaObject::invokeMethod(this, &QmmpUiSettings::sync, Qt::QueuedConnection);
 }
 
 void QmmpUiSettings::setRepeatableList(bool r)
@@ -276,7 +305,7 @@ void QmmpUiSettings::setRepeatableList(bool r)
     if(m_repeate_list != r)
     {
         m_repeate_list = r;
-        m_timer->start();
+        saveSettings();
         emit repeatableListChanged(r);
     }
 }
@@ -286,7 +315,7 @@ void QmmpUiSettings::setShuffle(bool s)
     if(m_shuffle != s)
     {
         m_shuffle = s;
-        m_timer->start();
+        saveSettings();
         emit shuffleChanged(s);
     }
 }
@@ -296,7 +325,7 @@ void QmmpUiSettings::setGroupsEnabled(bool enabled)
     if(m_groups_enabled != enabled)
     {
         m_groups_enabled = enabled;
-        m_timer->start();
+        saveSettings();
         emit groupsChanged(enabled);
     }
 }
@@ -306,7 +335,7 @@ void QmmpUiSettings::setRepeatableTrack(bool enabled)
     if(m_repeat_track != enabled)
     {
         m_repeat_track = enabled;
-        m_timer->start();
+        saveSettings();
         emit repeatableTrackChanged(enabled);
     }
 }
@@ -316,7 +345,7 @@ void QmmpUiSettings::setNoPlayListAdvance(bool enabled)
     if(m_no_pl_advance != enabled)
     {
         m_no_pl_advance = enabled;
-        m_timer->start();
+        saveSettings();
         emit noPlayListAdvanceChanged(enabled);
     }
 }
@@ -326,7 +355,7 @@ void QmmpUiSettings::setPlayListTransitionEnabled(bool enabled)
     if(m_transit_between_playlists != enabled)
     {
         m_transit_between_playlists = enabled;
-        m_timer->start();
+        saveSettings();
         emit playListTransitionChanged(enabled);
     }
 }
@@ -339,7 +368,7 @@ const QStringList &QmmpUiSettings::restrictFilters() const
 void QmmpUiSettings::setRestrictFilters(const QString &filters)
 {
     m_restrict_filters = filters.trimmed().split(",", Qt::SkipEmptyParts);
-    m_timer->start();
+    saveSettings();
 }
 
 const QStringList &QmmpUiSettings::excludeFilters() const
@@ -350,7 +379,7 @@ const QStringList &QmmpUiSettings::excludeFilters() const
 void QmmpUiSettings::setExcludeFilters(const QString &filters)
 {
     m_exclude_filters = filters.trimmed().split(",", Qt::SkipEmptyParts);
-    m_timer->start();
+    saveSettings();
 }
 
 bool QmmpUiSettings::useDefaultPlayList() const
@@ -374,13 +403,13 @@ void QmmpUiSettings::setDefaultPlayList(const QString &name, bool enabled)
 {
     m_use_default_pl = enabled;
     m_default_pl_name = name;
-    m_timer->start();
+    saveSettings();
 }
 
 void QmmpUiSettings::setAutoSavePlayList(bool enabled)
 {
     m_autosave_playlist = enabled;
-    m_timer->start();
+    saveSettings();
 }
 
 bool QmmpUiSettings::autoSavePlayList() const
@@ -391,7 +420,7 @@ bool QmmpUiSettings::autoSavePlayList() const
 void QmmpUiSettings::setClearPreviousPlayList(bool enabled)
 {
     m_clear_prev_playlist = enabled;
-    m_timer->start();
+    saveSettings();
 }
 
 bool QmmpUiSettings::clearPreviousPlayList() const
@@ -402,7 +431,7 @@ bool QmmpUiSettings::clearPreviousPlayList() const
 void QmmpUiSettings::setSkipExistingTracks(bool enabled)
 {
     m_skip_existing_tracks = enabled;
-    m_timer->start();
+    saveSettings();
 }
 
 bool QmmpUiSettings::skipExistingTracks() const
@@ -418,7 +447,7 @@ bool QmmpUiSettings::stopAfterRemovingOfCurrentTrack() const
 void QmmpUiSettings::setStopAfterRemovingOfCurrentTrack(bool enabled)
 {
     m_stop_after_removing_of_current = enabled;
-    m_timer->start();
+    saveSettings();
 }
 
 bool QmmpUiSettings::readMetaDataForPlayLists() const
@@ -429,5 +458,5 @@ bool QmmpUiSettings::readMetaDataForPlayLists() const
 void QmmpUiSettings::setReadMetaDataForPlayLists(bool enabled)
 {
     m_read_metadata_for_playlist = enabled;
-    m_timer->start();
+    saveSettings();
 }

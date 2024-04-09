@@ -261,6 +261,8 @@ public slots:
      */
     void stopAfterSelected();
 
+    void rebuildGroups();
+
 private slots:
     void writePlayLists();
     void onListChanged(int flags);

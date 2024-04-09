@@ -101,7 +101,7 @@ int PlayListManager::currentPlayListIndex() const
     return indexOf(m_current);
 }
 
-QList <PlayListModel *> PlayListManager::playLists() const
+QList<PlayListModel *> PlayListManager::playLists() const
 {
     return m_models;
 }
@@ -507,4 +507,10 @@ void PlayListManager::clearQueue()
 void PlayListManager::stopAfterSelected()
 {
     m_selected->stopAfterSelected();
+}
+
+void PlayListManager::rebuildGroups()
+{
+    for(PlayListModel *model : qAsConst(m_models))
+        model->rebuildGroups();
 }

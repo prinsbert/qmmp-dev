@@ -28,7 +28,6 @@ MetaDataHelper::MetaDataHelper()
     m_group_formatter = new MetaDataFormatter();
     m_group_formatter2 = new MetaDataFormatter();
 
-    m_group_formatter2->setPattern("%y | %l | %{bitrate} kbps");
     m_title_formatters << new MetaDataFormatter();
 }
 
@@ -55,6 +54,11 @@ void MetaDataHelper::setTitleFormats(const QStringList &titleFormats)
 void MetaDataHelper::setGroupFormat(const QString &groupFormat)
 {
     m_group_formatter->setPattern(groupFormat);
+}
+
+void MetaDataHelper::setGroupFormat2(const QString &groupFormat)
+{
+    m_group_formatter2->setPattern(groupFormat);
 }
 
 int MetaDataHelper::columnCount() const
