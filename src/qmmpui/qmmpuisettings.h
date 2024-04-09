@@ -27,7 +27,6 @@
 #include "metadataformatter.h"
 #include "qmmpui_export.h"
 
-class QTimer;
 class MetaDataHelper;
 
 /*! @brief The QmmpUiSettings class provides access to global libqmmpui library settings.
@@ -291,8 +290,9 @@ private slots:
      */
     void sync();
 
-
 private:
+    void saveSettings(bool rebuildGroups = false);
+
     static QmmpUiSettings* m_instance;
     //playlist
     QString m_group_format;
@@ -322,10 +322,11 @@ private:
     QString m_default_pl_name;
     //url dialog
     bool m_use_clipboard;
-    //timer
-    QTimer *m_timer;
     //formatters
     MetaDataHelper *m_helper;
+    //protect from multiple calls
+    bool m_saveSettings = false;
+    bool m_rebuildGroups = false;
 };
 
 #endif // QMMPUISETTINGS_H

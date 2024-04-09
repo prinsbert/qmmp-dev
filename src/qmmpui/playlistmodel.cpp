@@ -47,7 +47,7 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
     else
         m_container = new NormalContainer;
 
-    m_container->setLinesPerGroup(3);
+    m_container->setLinesPerGroup(m_ui_settings->linesPerGroup());
 
     if(m_ui_settings->isShuffle())
         m_play_state = new ShufflePlayState(this);
@@ -1018,7 +1018,7 @@ void PlayListModel::prepareGroups(bool enabled)
         container = new GroupedContainer;
     else
         container = new NormalContainer;
-    container->setLinesPerGroup(m_container->linesPerGroup());
+    container->setLinesPerGroup(m_ui_settings->linesPerGroup());
     container->addTracks(m_container->takeAllTracks());
     delete m_container;
     m_container = container;

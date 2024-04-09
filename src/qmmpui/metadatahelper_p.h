@@ -36,6 +36,7 @@ public:
 
     void setTitleFormats(const QStringList &titleFormats);
     void setGroupFormat(const QString &groupFormat);
+    void setGroupFormat2(const QString &groupFormat);
 
     int columnCount() const;
     const MetaDataFormatter *titleFormatter(int index) const;
