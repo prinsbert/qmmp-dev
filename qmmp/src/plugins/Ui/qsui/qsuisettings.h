@@ -36,11 +36,7 @@ public:
     virtual ~QSUiSettings();
     void writeSettings();
 
-
 private slots:
-    void on_plFontButton_clicked();
-    void on_columnFontButton_clicked();
-    void on_tabsFontButton_clicked();
     void on_popupTemplateButton_clicked();
     void on_customizeToolBarButton_clicked();
     void on_resetFontsButton_clicked();
@@ -49,6 +45,8 @@ private slots:
 
 private:
     void showEvent(QShowEvent *) override;
+    void selectFont(QLabel *label);
+    void setFont(QLabel *label, const QString &fontName);
     void loadFonts();
     void createActions();
     void readSettings();
