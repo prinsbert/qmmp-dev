@@ -95,7 +95,7 @@ private:
     QFontMetrics *m_extra_metrics = nullptr;
     QFontMetrics *m_bold_metrics = nullptr;
     PlayListHeaderModel *m_header_model;
-    QFont m_font, m_extra_font;
+    QFont m_font, m_extra_font, m_pl_group_font, m_pl_extra_row_font;
     QImage m_emptyCover;
     bool m_update = false;
     bool m_show_number = false;
