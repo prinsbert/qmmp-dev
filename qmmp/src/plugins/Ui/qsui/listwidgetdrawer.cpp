@@ -50,10 +50,17 @@ void ListWidgetDrawer::readSettings()
     m_show_lengths = settings.value("pl_show_lengths", true).toBool();
     m_align_numbres = settings.value("pl_align_numbers", false).toBool();
     m_show_splitters = settings.value("pl_show_splitters", true).toBool();
-    m_font = qApp->font("QAbstractItemView");
+    QFont defaultFont = qApp->font("QAbstractItemView");
+    m_font = defaultFont;
+    m_pl_group_font = defaultFont;
+    m_pl_extra_row_font = defaultFont;
 
     if(!settings.value("use_system_fonts", true).toBool())
-        m_font.fromString(settings.value("pl_font", m_font.toString()).toString());
+    {
+        m_font.fromString(settings.value("pl_font", defaultFont.toString()).toString());
+        m_pl_group_font.fromString(settings.value("pl_group_font", defaultFont.toString()).toString());
+        m_pl_extra_row_font.fromString(settings.value("pl_extra_row_font", defaultFont.toString()).toString());
+    }
 
     m_extra_font = m_font;
     m_extra_font.setPointSize(m_font.pointSize() - 1);
@@ -320,7 +327,7 @@ void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int
     int sx = rtl ? (row->rect.right() - row->numberColumnWidth - m_padding - m_metrics->horizontalAdvance(row->titles[0])) :
         (row->rect.x() + m_padding + row->numberColumnWidth);
 
-    painter->setFont(m_font);
+    painter->setFont(m_pl_group_font);
     painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
 
     if(linesPerGroup == 1)
@@ -339,6 +346,7 @@ void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int
         int sy = row->rect.y() +  spacing + m_metrics->overlinePos();
         painter->drawText(sx, sy, row->titles[0]);
         sy = row->rect.bottom() - spacing - m_metrics->underlinePos();
+        painter->setFont(m_pl_extra_row_font);
         painter->drawText(sx, sy, row->titles[1]);
     }
 
