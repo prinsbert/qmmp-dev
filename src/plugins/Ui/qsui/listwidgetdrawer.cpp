@@ -345,6 +345,13 @@ void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int
         int spacing = (row->rect.height() - 2 * (m_metrics->overlinePos() + m_metrics->underlinePos())) / 3;
         int sy = row->rect.y() +  spacing + m_metrics->overlinePos();
         painter->drawText(sx, sy, row->titles[0]);
+
+        painter->drawLine(row->rect.x() + row->rect.height(),
+                          row->rect.y() + row->rect.height() / 2,
+                          row->rect.x() + row->rect.width() - 10,
+                          row->rect.y() + row->rect.height() / 2);
+
+
         sy = row->rect.bottom() - spacing - m_metrics->underlinePos();
         painter->setFont(m_pl_extra_row_font);
         painter->drawText(sx, sy, row->titles[1]);
