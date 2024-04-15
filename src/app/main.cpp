@@ -33,13 +33,28 @@
 #include <qmmp/qmmp.h>
 #include "qmmpstarter.h"
 
+#ifdef Q_OS_UNIX
+#include <QSettings>
+#endif
+
 int main(int argc, char *argv[])
 {
 #ifdef Q_OS_WIN
     //allows to activate main window from other instances
     AllowSetForegroundWindow(ASFW_ANY);
 #endif
-    QApplication a (argc, argv );
+
+#ifdef Q_OS_UNIX
+    //using XWayland for skinned user interface
+    if(qEnvironmentVariable("XDG_SESSION_TYPE") == QLatin1String("wayland") && !qEnvironmentVariableIsSet("QT_QPA_PLATFORM"))
+    {
+        QSettings settings(QStringLiteral("qmmp"), QStringLiteral("qmmp"));
+        if(settings.value(QStringLiteral("Ui/current_plugin")).toString() == QLatin1String("skinned"))
+            qputenv("QT_QPA_PLATFORM", "xcb");
+    }
+#endif
+
+    QApplication a(argc, argv);
     a.setApplicationName("qmmp");
     QIcon icon;
     icon.addFile(":/16x16/qmmp-1.png");
