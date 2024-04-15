@@ -83,7 +83,6 @@ void QSUiSettings::selectFont(QLabel *label)
 
 void QSUiSettings::setFont(QLabel *label, const QString &fontName)
 {
-    qDebug() << Q_FUNC_INFO << fontName;
     QFont font;
     font.fromString(fontName);
     label->setText(font.family() + " " + QString::number(font.pointSize()));
@@ -92,12 +91,16 @@ void QSUiSettings::setFont(QLabel *label, const QString &fontName)
 
 void QSUiSettings::loadFonts()
 {
+    QFont extraRowDefaultFont = qApp->font("QAbstractItemView");
+    extraRowDefaultFont.setPointSize(extraRowDefaultFont.pointSize() - 1);
+    extraRowDefaultFont.setStyle(QFont::StyleItalic);
+
     QSettings settings;
     settings.beginGroup("Simple");
     m_ui.systemFontsCheckBox->setChecked(settings.value("use_system_fonts", true).toBool());
     setFont(m_ui.plFontLabel, settings.value("pl_font", qApp->font("QAbstractItemView").toString()).toString());
     setFont(m_ui.groupFontLabel, settings.value("pl_group_font", qApp->font("QAbstractItemView").toString()).toString());
-    setFont(m_ui.extraRowFontLabel, settings.value("pl_extra_row_font", qApp->font("QAbstractItemView").toString()).toString());
+    setFont(m_ui.extraRowFontLabel, settings.value("pl_extra_row_font", extraRowDefaultFont.toString()).toString());
     setFont(m_ui.tabsFontLabel, settings.value("pl_tabs_font", qApp->font("QTabWidget").toString()).toString());
     setFont(m_ui.columnFontLabel, settings.value("pl_header_font", qApp->font("QAbstractItemView").toString()).toString());
     settings.endGroup();
