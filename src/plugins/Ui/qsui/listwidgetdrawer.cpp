@@ -54,12 +54,14 @@ void ListWidgetDrawer::readSettings()
     m_font = defaultFont;
     m_pl_group_font = defaultFont;
     m_pl_extra_row_font = defaultFont;
+    m_pl_extra_row_font.setPointSize(m_pl_extra_row_font.pointSize() - 1);
+    m_pl_extra_row_font.setStyle(QFont::StyleItalic);
 
     if(!settings.value("use_system_fonts", true).toBool())
     {
-        m_font.fromString(settings.value("pl_font", defaultFont.toString()).toString());
-        m_pl_group_font.fromString(settings.value("pl_group_font", defaultFont.toString()).toString());
-        m_pl_extra_row_font.fromString(settings.value("pl_extra_row_font", defaultFont.toString()).toString());
+        m_font.fromString(settings.value("pl_font", m_font.toString()).toString());
+        m_pl_group_font.fromString(settings.value("pl_group_font", m_pl_group_font.toString()).toString());
+        m_pl_extra_row_font.fromString(settings.value("pl_extra_row_font", m_pl_extra_row_font.toString()).toString());
     }
 
     m_extra_font = m_font;
