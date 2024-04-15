@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     //using XWayland for skinned user interface
     if(qEnvironmentVariable("XDG_SESSION_TYPE") == QLatin1String("wayland") && !qEnvironmentVariableIsSet("QT_QPA_PLATFORM"))
     {
-        QSettings settings(QStringLiteral("qmmp"), QStringLiteral("qmmp"));
+        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         if(settings.value(QStringLiteral("Ui/current_plugin")).toString() == QLatin1String("skinned"))
             qputenv("QT_QPA_PLATFORM", "xcb");
     }
