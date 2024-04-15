@@ -89,15 +89,21 @@ public:
     void drawDropLine(QPainter *painter, int row_number, int width, int header_height);
 
 private:
+
+    enum Font
+    {
+        MAIN_FONT_NORMAL = 0,
+        MAIN_FONT_BOLD,
+        MAIN_FONT_EXTRA,
+        PL_GROUP_FONT,
+        PL_GROUP_FONT_EXTRA
+    };
+    QFont m_fonts[PL_GROUP_FONT_EXTRA + 1];
+    QFontMetrics *m_metrics[PL_GROUP_FONT_EXTRA + 1] = { nullptr };
     QColor m_normal, m_current, m_normal_bg, m_selected_bg, m_alternate, m_highlighted, m_splitter;
     QColor m_group_bg, m_group_alt_bg, m_group_text, m_current_bg, m_current_alt_bg;
-    QFontMetrics *m_metrics = nullptr;
-    QFontMetrics *m_extra_metrics = nullptr;
-    QFontMetrics *m_bold_metrics = nullptr;
     PlayListHeaderModel *m_header_model;
-    QFont m_font, m_extra_font, m_pl_group_font, m_pl_extra_row_font;
     QImage m_emptyCover;
-    bool m_update = false;
     bool m_show_number = false;
     bool m_show_anchor = false;
     bool m_align_numbres = false;
