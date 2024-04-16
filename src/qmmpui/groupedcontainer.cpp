@@ -375,6 +375,15 @@ int GroupedContainer::trackIndexAtLine(int lineIndex) const
     return m_lines[lineIndex].isGroup ? -1 : m_lines[lineIndex].index;
 }
 
+bool GroupedContainer::alternateColor(int lineIndex) const
+{
+    updateCache();
+    if(lineIndex < 0 || lineIndex >= m_lines.count())
+        return false;
+
+    return m_lines[lineIndex].alternateColor;
+}
+
 void GroupedContainer::updateCache() const
 {
     if(!m_update)
@@ -382,6 +391,7 @@ void GroupedContainer::updateCache() const
 
     int lines = linesPerGroup();
     int t = 0;
+    bool alternateColor = false;
 
     m_lines.clear();
     m_lines.reserve(lines * m_groups.count() + m_tracks.count());
@@ -394,20 +404,25 @@ void GroupedContainer::updateCache() const
             PlayListLine line = {
                 .isGroup = true,
                 .index = g,
-                .subindex = j
+                .subindex = j,
+                .alternateColor = alternateColor
             };
             m_lines << line;
         }
+
+        alternateColor = !alternateColor;
 
         for(PlayListTrack *track : qAsConst(m_groups.at(g)->m_trackList))
         {
             PlayListLine line = {
                 .isGroup = false,
                 .index = t++,
-                .subindex = 0
+                .subindex = 0,
+                .alternateColor = alternateColor
             };
             track->m_track_index = line.index;
             m_lines << line;
+            alternateColor = !alternateColor;
         }
     }
     m_update = false;

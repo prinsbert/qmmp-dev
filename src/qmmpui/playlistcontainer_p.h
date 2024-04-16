@@ -77,6 +77,7 @@ public:
     virtual QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const = 0;
     virtual int subIndexOfLine(int lineIndex) const = 0;
     virtual int trackIndexAtLine(int lineIndex) const = 0;
+    virtual bool alternateColor(int lineIndex) const = 0;
 
 protected:
     void swapTrackNumbers(QList<PlayListTrack *> *container, int index1, int index2);

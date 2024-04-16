@@ -40,6 +40,7 @@ public:
     QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const override;
     int subIndexOfLine(int lineIndex) const override;
     int trackIndexAtLine(int lineIndex) const override;
+    bool alternateColor(int lineIndex) const override;
 
 private:
     void updateCache() const;
@@ -49,6 +50,7 @@ private:
       bool isGroup = false;
       int index = -1;
       int subindex = -1;
+      bool alternateColor = false;
     };
 
     QList<PlayListTrack *> m_tracks;

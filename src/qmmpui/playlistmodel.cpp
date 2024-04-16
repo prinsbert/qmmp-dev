@@ -451,6 +451,11 @@ int PlayListModel::trackIndexAtLine(int lineIndex) const
     return m_container->trackIndexAtLine(lineIndex);
 }
 
+bool PlayListModel::alternateColor(int lineIndex) const
+{
+    return m_container->alternateColor(lineIndex);
+}
+
 int PlayListModel::linesPerGroup() const
 {
     return m_container->linesPerGroup();

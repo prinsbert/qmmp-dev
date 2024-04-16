@@ -196,18 +196,18 @@ void ListWidget::paintEvent(QPaintEvent *)
         {
             if(m_model->linesPerGroup() == 1)
             {
-                m_drawer.drawBackground(&painter, m_rows[i], 0);
+                m_drawer.drawBackground(&painter, m_rows[i]);
                 m_drawer.drawSeparator(&painter, m_rows[i], rtl);
             }
             else if(m_rows[i]->subIndex == 0 || (i == 0 && m_rows[i]->subIndex > 0))
             {
-                m_drawer.drawBackground(&painter, m_rows[i], 0);
+                m_drawer.drawBackground(&painter, m_rows[i]);
                 m_drawer.drawMultiLineSeparator(&painter, m_rows[i], rtl);
             }
         }
         else
         {
-            m_drawer.drawBackground(&painter, m_rows[i], m_rows[i]->number);
+            m_drawer.drawBackground(&painter, m_rows[i]);
             m_drawer.drawTrack(&painter, m_rows[i], rtl);
         }
     }
@@ -490,6 +490,7 @@ void ListWidget::updateList(int flags)
         row->autoResize = m_header->hasAutoResizeColumn();
         row->trackStateColumn = trackStateColumn;
         row->subIndex = m_model->subIndexOfLine(m_firstLine + i);
+        row->alternateColor = m_model->alternateColor(m_firstLine + i);
 
         if(items[i]->isSelected())
             row->flags |= ListWidgetRow::SELECTED;

@@ -45,6 +45,7 @@ struct ListWidgetRow
     int lengthColumnWidth = 0;
     int trackStateColumn = 0;
     int subIndex = 0;
+    bool alternateColor = false;
     enum
     {
         NO_FLAGS = 0x00,
@@ -83,7 +84,7 @@ public:
     void setSingleColumnMode(int enabled);
     void prepareRow(ListWidgetRow *row);
     void fillBackground(QPainter *painter, int width, int height);
-    void drawBackground(QPainter *painter, ListWidgetRow *row, int index);
+    void drawBackground(QPainter *painter, ListWidgetRow *row);
     void drawSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
     void drawMultiLineSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
     void drawTrack(QPainter *painter, ListWidgetRow *row, bool rtl);
