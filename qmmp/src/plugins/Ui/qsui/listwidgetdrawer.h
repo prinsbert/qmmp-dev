@@ -30,6 +30,7 @@
 
 class QPainter;
 class PlayListHeaderModel;
+class QmmpUiSettings;
 
 struct ListWidgetRow
 {
@@ -84,7 +85,7 @@ public:
     void fillBackground(QPainter *painter, int width, int height);
     void drawBackground(QPainter *painter, ListWidgetRow *row, int index);
     void drawSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
-    void drawSeparator2(QPainter *painter, ListWidgetRow *row, int linesPerGroup, bool rtl);
+    void drawMultiLineSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
     void drawTrack(QPainter *painter, ListWidgetRow *row, bool rtl);
     void drawDropLine(QPainter *painter, int row_number, int width, int header_height);
 
@@ -103,6 +104,7 @@ private:
     QColor m_normal, m_current, m_normal_bg, m_selected_bg, m_alternate, m_highlighted, m_splitter;
     QColor m_group_bg, m_group_alt_bg, m_group_text, m_current_bg, m_current_alt_bg;
     PlayListHeaderModel *m_header_model;
+    QmmpUiSettings *m_ui_settings;
     QImage m_emptyCover;
     bool m_show_number = false;
     bool m_show_anchor = false;
