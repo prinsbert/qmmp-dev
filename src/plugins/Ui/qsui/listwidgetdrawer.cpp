@@ -23,6 +23,7 @@
 #include <QApplication>
 #include <qmmp/qmmp.h>
 #include <qmmpui/playlistmanager.h>
+#include <qmmpui/qmmpuisettings.h>
 #include "listwidgetdrawer.h"
 
 // |= number=|=row1=|=row2=|=extra= duration=|
@@ -31,6 +32,7 @@ ListWidgetDrawer::ListWidgetDrawer() :
     m_emptyCover(":/qsui/ui_no_cover.png")
 {
     m_header_model = PlayListManager::instance()->headerModel();
+    m_ui_settings = QmmpUiSettings::instance();
     readSettings();
 }
 
@@ -110,7 +112,7 @@ void ListWidgetDrawer::readSettings()
         m_metrics[i] = new QFontMetrics(m_fonts[i]);
     }
 
-    m_padding = m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance("9")/2;
+    m_padding = m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance("9") / 2;
     m_row_height = m_metrics[MAIN_FONT_NORMAL]->lineSpacing() + 1;
 }
 
@@ -288,18 +290,22 @@ void ListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *row, bool
     int sx = rtl ? (row->rect.right() - 50 - row->numberColumnWidth - m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0])) :
         (row->rect.x() + row->numberColumnWidth + 50);
     int sy = row->rect.y() + m_metrics[MAIN_FONT_NORMAL]->overlinePos() - 1;
+    bool dividingLine = m_ui_settings->groupDividingLineVisible();
 
     painter->setFont(m_fonts[MAIN_FONT_NORMAL]);
     painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
     painter->drawText(sx, sy, row->titles[0]);
 
-    sy -= m_metrics[MAIN_FONT_NORMAL]->lineSpacing()/2 - 2;
+    sy -= m_metrics[MAIN_FONT_NORMAL]->lineSpacing() / 2 - 2;
 
     if(rtl)
     {
-        painter->drawLine(row->rect.x() + 5, sy, sx - 5, sy);
-        painter->drawLine(sx + m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0]) + 5, sy,
-                row->rect.right() - row->numberColumnWidth - m_padding, sy);
+        if(dividingLine)
+        {
+            painter->drawLine(row->rect.x() + 5, sy, sx - 5, sy);
+            painter->drawLine(sx + m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0]) + 5, sy,
+                    row->rect.right() - row->numberColumnWidth - m_padding, sy);
+        }
         if(m_show_splitters && row->numberColumnWidth)
         {
             painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_splitter);
@@ -309,9 +315,12 @@ void ListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *row, bool
     }
     else
     {
-        painter->drawLine(sx - 45, sy, sx - 5, sy);
-        painter->drawLine(sx + m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0]) + 5, sy,
-                row->rect.width(), sy);
+        if(dividingLine)
+        {
+            painter->drawLine(sx - 45, sy, sx - 5, sy);
+            painter->drawLine(sx + m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0]) + 5, sy,
+                    row->rect.width(), sy);
+        }
         if(m_show_splitters && row->numberColumnWidth)
         {
             painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_splitter);
@@ -321,40 +330,48 @@ void ListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *row, bool
     }
 }
 
-void ListWidgetDrawer::drawSeparator2(QPainter *painter, ListWidgetRow *row, int linesPerGroup, bool rtl)
+void ListWidgetDrawer::drawMultiLineSeparator(QPainter *painter, ListWidgetRow *row, bool rtl)
 {
     int sx = rtl ? (row->rect.right() - row->numberColumnWidth - m_padding - m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0])) :
         (row->rect.x() + m_padding + row->numberColumnWidth);
 
+    bool extraRowVisible = m_ui_settings->groupExtraRowVisible();
+    bool coverVisible = m_ui_settings->groupCoverVisible();
+    bool dividingLine = m_ui_settings->groupDividingLineVisible();
+    int cy = row->rect.y() + row->rect.height() / 2; //center
+
     painter->setFont(m_fonts[PL_GROUP_FONT]);
     painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
 
-    if(linesPerGroup == 1)
-    {
-        int sy = row->rect.y() + row->rect.height() / 2 + m_metrics[MAIN_FONT_NORMAL]->overlinePos() / 2;
-        painter->drawText(sx, sy, row->titles[0]);
-
-    }
-    else if(linesPerGroup >= 2)
+    if(coverVisible)
     {
         QImage img = row->cover.isNull() ? m_emptyCover : row->cover;
-        painter->drawImage(QRect(row->rect.x() + 5, row->rect.y() + 5, row->rect.height() - 10, row->rect.height() - 10), img);
+        painter->drawImage(QRect(row->rect.x() + m_padding, row->rect.y() + m_padding,
+                                 row->rect.height() - 2 * m_padding, row->rect.height() - 2 * m_padding), img);
         sx += row->rect.height();
-
-        int spacing = (row->rect.height() - 2 * (m_metrics[MAIN_FONT_NORMAL]->overlinePos() + m_metrics[MAIN_FONT_NORMAL]->underlinePos())) / 3;
-        int sy = row->rect.y() +  spacing + m_metrics[MAIN_FONT_NORMAL]->overlinePos();
-        painter->drawText(sx, sy, row->titles[0]);
-
-        painter->drawLine(row->rect.x() + row->rect.height(),
-                          row->rect.y() + row->rect.height() / 2,
-                          row->rect.x() + row->rect.width() - 10,
-                          row->rect.y() + row->rect.height() / 2);
-
-
-        sy = row->rect.bottom() - spacing - m_metrics[MAIN_FONT_NORMAL]->underlinePos();
-        painter->setFont(m_fonts[PL_GROUP_FONT_EXTRA]);
-        painter->drawText(sx, sy, row->titles[1]);
     }
+
+    if(extraRowVisible)
+    {
+        int offset = dividingLine ? m_padding : (m_padding / 2);
+        painter->drawText(sx, cy - m_metrics[PL_GROUP_FONT]->underlinePos() - offset, row->titles[0]);
+        painter->setFont(m_fonts[PL_GROUP_FONT_EXTRA]);
+        painter->drawText(sx, cy + m_metrics[PL_GROUP_FONT_EXTRA]->overlinePos() + offset, row->titles[1]);
+
+        if(dividingLine)
+            painter->drawLine(sx, cy, row->rect.x() + row->rect.width() - 2 * m_padding, cy);
+    }
+    else
+    {
+        painter->drawText(sx, cy + m_metrics[PL_GROUP_FONT]->strikeOutPos(), row->titles[0]);
+
+        if(dividingLine)
+        {
+            sx += m_metrics[PL_GROUP_FONT]->horizontalAdvance(row->titles[0]) + m_padding;
+            painter->drawLine(sx, cy, row->rect.x() + row->rect.width() - 10, cy);
+        }
+    }
+
 
     if(rtl)
     {
