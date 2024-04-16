@@ -234,6 +234,7 @@ public:
     int findLine(int trackIndex) const;
     int subIndexOfLine(int lineIndex) const;
     int trackIndexAtLine(int lineIndex) const;
+    bool alternateColor(int lineIndex) const;
     int linesPerGroup() const;
     /*!
      *  Moves the item at index position \b from to index position \b to.

@@ -241,3 +241,8 @@ int NormalContainer::trackIndexAtLine(int lineIndex) const
 {
     return lineIndex;
 }
+
+bool NormalContainer::alternateColor(int lineIndex) const
+{
+    return lineIndex % 2;
+}

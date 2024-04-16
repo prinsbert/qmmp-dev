@@ -228,7 +228,7 @@ void ListWidgetDrawer::fillBackground(QPainter *painter, int width, int height)
     painter->drawRect(0,0,width,height);
 }
 
-void ListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row, int index)
+void ListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row)
 {
     if(row->flags & ListWidgetRow::SELECTED)
     {
@@ -236,7 +236,7 @@ void ListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row, int
     }
     else if(row->flags & ListWidgetRow::GROUP)
     {
-        if(index % 2)
+        if(row->alternateColor)
         {
             painter->setBrush(QBrush(m_group_alt_bg));
             painter->setPen(m_group_alt_bg);
@@ -249,7 +249,7 @@ void ListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row, int
     }
     else if(row->flags & ListWidgetRow::CURRENT)
     {
-        if(index % 2)
+        if(row->alternateColor)
         {
             painter->setBrush(QBrush(m_current_alt_bg));
             painter->setPen(m_current_alt_bg);
@@ -262,7 +262,7 @@ void ListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row, int
     }
     else
     {
-        if(index % 2)
+        if(row->alternateColor)
         {
             painter->setBrush(QBrush(m_alternate));
             painter->setPen(m_alternate);
