@@ -36,6 +36,7 @@
 #define WAVE_FORMAT_IEEE_FLOAT 0x0003
 #define WAVE_FORMAT_ALAW 0x0006
 #define WAVE_FORMAT_MULAW 0x0007
+#define WAVE_FORMAT_EXTENSIBLE 0xfffe
 
 // DecoderSndFileFactory
 bool DecoderSndFileFactory::canDecode(QIODevice *input) const
@@ -50,7 +51,7 @@ bool DecoderSndFileFactory::canDecode(QIODevice *input) const
 
         if(!memcmp(buf + 12, "fmt ", 4))
         {
-            subformat = (quint16(buf[21]) << 8) + buf[20];
+            subformat = buf[21] << 8 | buf[20];
         }
         else if(!input->isSequential())
         {
@@ -68,7 +69,7 @@ bool DecoderSndFileFactory::canDecode(QIODevice *input) const
                 }
                 else if(!memcmp(buf, "JUNK", 4) || !memcmp(buf, "bext", 4) || !memcmp(buf, "fact", 4))
                 {
-                    size_t size = buf[4] + (buf[5] << 8) + (buf[6] << 16) + (buf[7] << 24);
+                    size_t size = buf[4] | buf[5] << 8 | buf[6] << 16 | buf[7] << 24;
                     if(!input->seek(input->pos() + size + 8))
                         break;
                 }
@@ -87,6 +88,7 @@ bool DecoderSndFileFactory::canDecode(QIODevice *input) const
         case WAVE_FORMAT_IEEE_FLOAT:
         case WAVE_FORMAT_ALAW:
         case WAVE_FORMAT_MULAW:
+        case WAVE_FORMAT_EXTENSIBLE:
             return true;
         default:
             return false;
