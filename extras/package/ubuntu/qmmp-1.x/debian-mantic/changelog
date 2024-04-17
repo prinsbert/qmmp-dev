@@ -1,3 +1,9 @@
+qmmp (1.6.7-1ubuntu1~mantic0) mantic; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 17 Apr 2024 18:42:05 +0300
+
 qmmp (1.6.6-1ubuntu1~mantic0) mantic; urgency=medium
 
   * New upstream release.

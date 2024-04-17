@@ -1,52 +1,52 @@
-qmmp (1.6.7-1ubuntu1~jammy0) jammy; urgency=medium
+qmmp (1.6.7-1ubuntu1~noble0) noble; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 17 Apr 2024 18:42:05 +0300
 
-qmmp (1.6.6-1ubuntu1~jammy0) jammy; urgency=medium
+qmmp (1.6.6-1ubuntu1~mantic0) mantic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 09 Mar 2024 16:26:50 +0300
 
-qmmp (1.6.5-1ubuntu1~jammy0) jammy; urgency=medium
+qmmp (1.6.5-1ubuntu1~mantic0) mantic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 29 Aug 2023 22:25:08 +0300
 
-qmmp (1.6.4-1ubuntu1~jammy0) jammy; urgency=medium
+qmmp (1.6.4-1ubuntu1~lunar0) lunar; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 25 May 2023 21:19:23 +0300
 
-qmmp (1.6.3-1ubuntu1~jammy0) jammy; urgency=medium
+qmmp (1.6.3-1ubuntu1~lunar0) lunar; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Thu, 30 Mar 2023 22:53:03 +0300
 
-qmmp (1.6.2-1ubuntu2~jammy0) jammy; urgency=medium
+qmmp (1.6.2-1ubuntu2~lunar0) lunar; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Wed, 14 Sep 2022 22:41:44 +0300
 
-qmmp (1.6.1-1ubuntu1~jammy1) jammy; urgency=medium
+qmmp (1.6.1-1ubuntu1~kinetic1) kinetic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Fri, 10 Jun 2022 21:07:34 +0300
 
-qmmp (1.6.0-1ubuntu1~jammy2) jammy; urgency=medium
+qmmp (1.6.0-1ubuntu1~kinetic2) kinetic; urgency=medium
 
   * New upstream release.
 
  -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 17 May 2022 22:18:36 +0300
 
-qmmp (1.5.4-1ubuntu1~jammy0) jammy; urgency=medium
+qmmp (1.5.4-1ubuntu1~kinetic0) kinetic; urgency=medium
 
   * New upstream release.
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=2.1.6
-UBUNTU_CODENAMES='jammy mantic'
+QMMP_VERSION=2.1.7
+UBUNTU_CODENAMES='jammy mantic noble'
 BUILD_ROOT=build-root
 
 
