@@ -33,7 +33,7 @@
 #include <qmmp/qmmp.h>
 #include "qmmpstarter.h"
 
-#ifdef Q_OS_UNIX
+#if defined(Q_OS_UNIX) && (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
 #include <QSettings>
 #endif
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     AllowSetForegroundWindow(ASFW_ANY);
 #endif
 
-#ifdef Q_OS_UNIX
+#if defined(Q_OS_UNIX) && (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
     //using XWayland for skinned user interface
     if(qEnvironmentVariable("XDG_SESSION_TYPE") == QLatin1String("wayland") && !qEnvironmentVariableIsSet("QT_QPA_PLATFORM"))
     {
