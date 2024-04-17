@@ -279,517 +279,568 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="94"/>
-        <location filename="../forms/configdialog.ui" line="861"/>
+        <location filename="../forms/configdialog.ui" line="963"/>
         <source>Audio</source>
         <translation>오디오</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="123"/>
+        <location filename="../forms/configdialog.ui" line="153"/>
         <source>Metadata</source>
         <translation>메타데이터</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="143"/>
+        <location filename="../forms/configdialog.ui" line="183"/>
         <source>Convert %20 to blanks</source>
         <translation>%20을 공백으로 변환</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="129"/>
+        <location filename="../forms/configdialog.ui" line="159"/>
         <source>Load metadata from files</source>
         <translation>파일에서 메타데이터 불러오기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="136"/>
+        <location filename="../forms/configdialog.ui" line="176"/>
         <source>Convert underscores to blanks</source>
         <translation>밑줄을 공백으로 변환</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="150"/>
+        <location filename="../forms/configdialog.ui" line="226"/>
         <source>Group format:</source>
         <translation>그룹 형식:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="160"/>
-        <location filename="../forms/configdialog.ui" line="590"/>
+        <location filename="../forms/configdialog.ui" line="238"/>
+        <location filename="../forms/configdialog.ui" line="259"/>
+        <location filename="../forms/configdialog.ui" line="692"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="170"/>
+        <location filename="../forms/configdialog.ui" line="169"/>
         <source>Read tags while loading a playlist</source>
         <translation>재생목록을 불러오는 동안 태그 읽기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="180"/>
+        <location filename="../forms/configdialog.ui" line="193"/>
+        <source>Group Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/configdialog.ui" line="202"/>
+        <source>Group size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/configdialog.ui" line="219"/>
+        <source>Show dividing line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/configdialog.ui" line="247"/>
+        <source>Extra row format:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/configdialog.ui" line="268"/>
+        <source>Show extra row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/configdialog.ui" line="275"/>
+        <source>Show cover</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/configdialog.ui" line="285"/>
         <source>Directory Scanning Options</source>
         <translation>디렉토리 검색 옵션</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="186"/>
+        <location filename="../forms/configdialog.ui" line="291"/>
         <source>Restrict files to:</source>
         <translation>다음으로 파일 제한:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="196"/>
-        <location filename="../forms/configdialog.ui" line="468"/>
+        <location filename="../forms/configdialog.ui" line="301"/>
+        <location filename="../forms/configdialog.ui" line="570"/>
         <source>Exclude files:</source>
         <translation>제외 파일:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="209"/>
+        <location filename="../forms/configdialog.ui" line="314"/>
         <source>Miscellaneous</source>
         <translation>기타</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="215"/>
+        <location filename="../forms/configdialog.ui" line="320"/>
         <source>Auto-save playlist when modified</source>
         <translation>수정 시 재생목록 자동 저장</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="222"/>
+        <location filename="../forms/configdialog.ui" line="327"/>
         <source>Clear previous playlist when opening new one</source>
         <translation>새 재생목록을 열 때 이전 재생목록 지우기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="284"/>
-        <location filename="../configdialog.cpp" line="322"/>
+        <location filename="../forms/configdialog.ui" line="380"/>
+        <location filename="../configdialog.cpp" line="341"/>
         <source>Preferences</source>
         <translation>기본 설정</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="297"/>
-        <location filename="../configdialog.cpp" line="325"/>
+        <location filename="../forms/configdialog.ui" line="396"/>
+        <location filename="../configdialog.cpp" line="344"/>
         <source>Information</source>
         <translation>정보</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="339"/>
+        <location filename="../forms/configdialog.ui" line="441"/>
         <source>Description</source>
         <translation>설명</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="344"/>
+        <location filename="../forms/configdialog.ui" line="446"/>
         <source>Filename</source>
         <translation>파일이름</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="356"/>
+        <location filename="../forms/configdialog.ui" line="458"/>
         <source>Look and Feel</source>
         <translation>사용자 환경</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="362"/>
+        <location filename="../forms/configdialog.ui" line="464"/>
         <source>Language:</source>
         <translation>언어:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="395"/>
+        <location filename="../forms/configdialog.ui" line="497"/>
         <source>Display average bitrate</source>
         <translation>평균 비트레이트 화면표시</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="405"/>
+        <location filename="../forms/configdialog.ui" line="507"/>
         <source>Playback</source>
         <translation>플레이백</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="411"/>
+        <location filename="../forms/configdialog.ui" line="513"/>
         <source>Continue playback on startup</source>
         <translation>시작 시 플레이백 계속</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="418"/>
+        <location filename="../forms/configdialog.ui" line="520"/>
         <source>Determine file type by content</source>
         <translation>콘텐츠별로 파일 유형 결정</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="425"/>
+        <location filename="../forms/configdialog.ui" line="527"/>
         <source>Add files from command line to this playlist:</source>
         <translation>명령줄에서 이 재생목록에 파일 추가:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="442"/>
+        <location filename="../forms/configdialog.ui" line="544"/>
         <source>Cover Image Retrieve</source>
         <translation>표지 이미지 검색하기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="448"/>
+        <location filename="../forms/configdialog.ui" line="550"/>
         <source>Use separate image files</source>
         <translation>별도의 이미지 파일 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="458"/>
+        <location filename="../forms/configdialog.ui" line="560"/>
         <source>Include files:</source>
         <translation>포함 파일:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="480"/>
+        <location filename="../forms/configdialog.ui" line="582"/>
         <source>Recursive search depth:</source>
         <translation>되부름 검색 깊이:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="512"/>
+        <location filename="../forms/configdialog.ui" line="614"/>
         <source>URL Dialog</source>
         <translation>URL 대화상자</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="518"/>
+        <location filename="../forms/configdialog.ui" line="620"/>
         <source>Auto-paste URL from clipboard</source>
         <translation>클립보드에서 URL 자동 붙여넣기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="528"/>
+        <location filename="../forms/configdialog.ui" line="630"/>
         <source>CUE Editor</source>
         <translation>CUE 편집기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="534"/>
+        <location filename="../forms/configdialog.ui" line="636"/>
         <source>Use system font</source>
         <translation>시스템 글꼴 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="555"/>
+        <location filename="../forms/configdialog.ui" line="657"/>
         <source>Font:</source>
         <translation>글꼴:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="580"/>
+        <location filename="../forms/configdialog.ui" line="682"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="619"/>
+        <location filename="../forms/configdialog.ui" line="721"/>
         <source>Proxy</source>
         <translation>프록시</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="631"/>
+        <location filename="../forms/configdialog.ui" line="733"/>
         <source>Enable proxy usage</source>
         <translation>프록시 사용 활성화</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="638"/>
+        <location filename="../forms/configdialog.ui" line="740"/>
         <source>Proxy type:</source>
         <translation>프록시 유형:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="648"/>
+        <location filename="../forms/configdialog.ui" line="750"/>
         <source>Proxy host name:</source>
         <translation>프록시 호스트 이름:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="661"/>
+        <location filename="../forms/configdialog.ui" line="763"/>
         <source>Proxy port:</source>
         <translation>프록시 포트:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="674"/>
+        <location filename="../forms/configdialog.ui" line="776"/>
         <source>Use authentication with proxy</source>
         <translation>프록시와 함께 인증 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="681"/>
+        <location filename="../forms/configdialog.ui" line="783"/>
         <source>Proxy user name:</source>
         <translation>프록시 사용자 이름:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="694"/>
+        <location filename="../forms/configdialog.ui" line="796"/>
         <source>Proxy password:</source>
         <translation>프록시 암호:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="731"/>
+        <location filename="../forms/configdialog.ui" line="833"/>
         <source>Replay Gain</source>
         <translation>Replay 게인</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="737"/>
+        <location filename="../forms/configdialog.ui" line="839"/>
         <source>Replay Gain mode:</source>
         <translation>Replay 게인 모드:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="754"/>
+        <location filename="../forms/configdialog.ui" line="856"/>
         <source>Preamp:</source>
         <translation>프리앰프:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="786"/>
-        <location filename="../forms/configdialog.ui" line="831"/>
+        <location filename="../forms/configdialog.ui" line="888"/>
+        <location filename="../forms/configdialog.ui" line="933"/>
         <source>dB</source>
         <translation>dB</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="799"/>
+        <location filename="../forms/configdialog.ui" line="901"/>
         <source>Default gain:</source>
         <translation>기본 게인:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="851"/>
+        <location filename="../forms/configdialog.ui" line="953"/>
         <source>Use  peak info to prevent clipping</source>
         <translation>피크 정보를 사용하여 클리핑 방지</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="867"/>
+        <location filename="../forms/configdialog.ui" line="969"/>
         <source>Buffer size:</source>
         <translation>버퍼 크기:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="893"/>
+        <location filename="../forms/configdialog.ui" line="995"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="926"/>
+        <location filename="../forms/configdialog.ui" line="1028"/>
         <source>Use software volume control</source>
         <translation>소프트웨어 볼륨 컨트롤 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="966"/>
+        <location filename="../forms/configdialog.ui" line="1068"/>
         <source>Use two passes for equalizer</source>
         <translation>이퀄라이저에 2패스 사용</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="909"/>
+        <location filename="../forms/configdialog.ui" line="1011"/>
         <source>Volume adjustment step:</source>
         <translation>볼륨 조절 단계:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="229"/>
+        <location filename="../forms/configdialog.ui" line="334"/>
         <source>Skip already existing tracks when adding</source>
         <translation>추가할 때 기존 트랙 건너뛰기</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="236"/>
+        <location filename="../forms/configdialog.ui" line="341"/>
         <source>Stop playback after removing of current track</source>
         <translation>현재 트랙 제거 후 플레이백 중지</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="933"/>
+        <location filename="../forms/configdialog.ui" line="1035"/>
         <source>Output bit depth:</source>
         <translation>출력 비트 깊이:</translation>
     </message>
     <message>
-        <location filename="../forms/configdialog.ui" line="874"/>
+        <location filename="../forms/configdialog.ui" line="976"/>
         <source>Use dithering</source>
         <translation>디더링 사용</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="62"/>
+        <source>1 row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configdialog.cpp" line="63"/>
+        <source>3 rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configdialog.cpp" line="64"/>
+        <source>4 rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configdialog.cpp" line="65"/>
+        <source>5 rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configdialog.cpp" line="66"/>
         <source>Track</source>
         <translation>트랙</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="63"/>
+        <location filename="../configdialog.cpp" line="67"/>
         <source>Album</source>
         <translation>앨범</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="64"/>
+        <location filename="../configdialog.cpp" line="68"/>
         <source>Disabled</source>
         <translation>비활성화됨</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="71"/>
+        <location filename="../configdialog.cpp" line="75"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="72"/>
+        <location filename="../configdialog.cpp" line="76"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="194"/>
+        <location filename="../configdialog.cpp" line="204"/>
         <source>Transports</source>
         <translation>트랜스포트</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="205"/>
+        <location filename="../configdialog.cpp" line="215"/>
         <source>Decoders</source>
         <translation>디코더</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="216"/>
+        <location filename="../configdialog.cpp" line="226"/>
         <source>Engines</source>
         <translation>엔진</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="228"/>
+        <location filename="../configdialog.cpp" line="238"/>
         <source>Effects</source>
         <translation>효과</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="239"/>
+        <location filename="../configdialog.cpp" line="249"/>
         <source>Visualization</source>
         <translation>시각화</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="251"/>
+        <location filename="../configdialog.cpp" line="261"/>
         <source>General</source>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="262"/>
+        <location filename="../configdialog.cpp" line="272"/>
         <source>Output</source>
         <translation>출력</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="273"/>
+        <location filename="../configdialog.cpp" line="283"/>
         <source>File Dialogs</source>
         <translation>파일 대화상자</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="285"/>
+        <location filename="../configdialog.cpp" line="295"/>
         <source>User Interfaces</source>
         <translation>사용자 인터페이스</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="335"/>
+        <location filename="../configdialog.cpp" line="354"/>
         <source>&lt;Autodetect&gt;</source>
         <translation>&lt;자동감지&gt;</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="336"/>
+        <location filename="../configdialog.cpp" line="355"/>
         <source>Brazilian Portuguese</source>
         <translation>브라질 포르투갈어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="337"/>
+        <location filename="../configdialog.cpp" line="356"/>
         <source>Chinese Simplified</source>
         <translation>중국어 간체</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="338"/>
+        <location filename="../configdialog.cpp" line="357"/>
         <source>Chinese Traditional</source>
         <translation>중국어 번체</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="339"/>
+        <location filename="../configdialog.cpp" line="358"/>
         <source>Czech</source>
         <translation>체코어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="340"/>
+        <location filename="../configdialog.cpp" line="359"/>
         <source>Dutch</source>
         <translation>네덜란드어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="341"/>
+        <location filename="../configdialog.cpp" line="360"/>
         <source>English</source>
         <translation>영어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="342"/>
+        <location filename="../configdialog.cpp" line="361"/>
         <source>French</source>
         <translation>프랑스어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="343"/>
+        <location filename="../configdialog.cpp" line="362"/>
         <source>Galician</source>
         <translation>갈리시아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="344"/>
+        <location filename="../configdialog.cpp" line="363"/>
         <source>German</source>
         <translation>독일어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="345"/>
+        <location filename="../configdialog.cpp" line="364"/>
         <source>Greek</source>
         <translation>그리스어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="346"/>
+        <location filename="../configdialog.cpp" line="365"/>
         <source>Hebrew</source>
         <translation>히브리어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="347"/>
+        <location filename="../configdialog.cpp" line="366"/>
         <source>Hungarian</source>
         <translation>헝가리어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="348"/>
+        <location filename="../configdialog.cpp" line="367"/>
         <source>Indonesian</source>
         <translation>인도네시아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="349"/>
+        <location filename="../configdialog.cpp" line="368"/>
         <source>Italian</source>
         <translation>이탈리아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="350"/>
+        <location filename="../configdialog.cpp" line="369"/>
         <source>Japanese</source>
         <translation>일본어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="351"/>
+        <location filename="../configdialog.cpp" line="370"/>
         <source>Kazakh</source>
         <translation>카자흐스탄어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="352"/>
+        <location filename="../configdialog.cpp" line="371"/>
         <source>Korean</source>
         <translation>한국어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="353"/>
+        <location filename="../configdialog.cpp" line="372"/>
         <source>Lithuanian</source>
         <translation>리투아니아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="354"/>
+        <location filename="../configdialog.cpp" line="373"/>
         <source>Polish</source>
         <translation>폴란드어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="355"/>
+        <location filename="../configdialog.cpp" line="374"/>
         <source>Portuguese</source>
         <translation>포르투갈어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="356"/>
+        <location filename="../configdialog.cpp" line="375"/>
         <source>Russian</source>
         <translation>러시아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="357"/>
+        <location filename="../configdialog.cpp" line="376"/>
         <source>Serbian</source>
         <translation>세르비아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="358"/>
+        <location filename="../configdialog.cpp" line="377"/>
         <source>Slovak</source>
         <translation>슬로바키아어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="359"/>
+        <location filename="../configdialog.cpp" line="378"/>
         <source>Swedish</source>
         <translation>스웨덴어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="360"/>
+        <location filename="../configdialog.cpp" line="379"/>
         <source>Spanish</source>
         <translation>스페인어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="361"/>
+        <location filename="../configdialog.cpp" line="380"/>
         <source>Turkish</source>
         <translation>터키어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="362"/>
+        <location filename="../configdialog.cpp" line="381"/>
         <source>Ukrainian</source>
         <translation>우크라이나어</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="363"/>
+        <location filename="../configdialog.cpp" line="382"/>
         <source>Serbian (Ijekavian)</source>
         <translation>세르비아어 (Ijekavian)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="364"/>
+        <location filename="../configdialog.cpp" line="383"/>
         <source>Serbian (Ekavian)</source>
         <translation>세르비아어 (Ekavian)</translation>
     </message>
@@ -1133,46 +1184,57 @@
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="46"/>
+        <location filename="../metadataformattermenu.cpp" line="59"/>
         <source>Duration</source>
         <translation>재생시간</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="57"/>
+        <location filename="../metadataformattermenu.cpp" line="54"/>
+        <source>Artist - Album</source>
+        <translation type="unfinished">아티스트 - 앨범</translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="60"/>
+        <source>Year | Duration | Bitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Parent Directory Path</source>
         <translation>상위 디렉토리 경로</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="59"/>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Bitrate</source>
         <translation>비트레이트</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="60"/>
+        <location filename="../metadataformattermenu.cpp" line="66"/>
         <source>Sample Rate</source>
         <translation>샘플 레이트</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="61"/>
+        <location filename="../metadataformattermenu.cpp" line="67"/>
         <source>Number of Channels</source>
         <translation>채널 수</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Sample Size</source>
         <translation>샘플 크기</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <location filename="../metadataformattermenu.cpp" line="69"/>
         <source>Format</source>
         <translation>형식</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="64"/>
+        <location filename="../metadataformattermenu.cpp" line="70"/>
         <source>Decoder</source>
         <translation>디코더</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="67"/>
+        <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>File Size</source>
         <translation>파일 크기</translation>
     </message>
@@ -1207,12 +1269,12 @@
         <translation>아티스트 - 제목</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="54"/>
+        <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - [Year] Album</source>
         <translation>아티스트 - [연도] 앨범</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="56"/>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Parent Directory Name</source>
         <translation>상위 디렉토리 이름</translation>
     </message>
@@ -1268,7 +1330,7 @@
 <context>
     <name>QmmpUiSettings</name>
     <message>
-        <location filename="../qmmpuisettings.cpp" line="60"/>
+        <location filename="../qmmpuisettings.cpp" line="64"/>
         <source>Playlist</source>
         <translation>재생목록</translation>
     </message>
