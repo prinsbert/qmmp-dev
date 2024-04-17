@@ -1578,8 +1578,10 @@ Version 0.12.17
 * fixed http version
 
 Version 0.12.18
+* using floating point output in the sndfile plugin
 * improved lyrics plugin:
   - fixed issue with URL formatting
   - updated lyrics providers
   - using UTF-8 for all lyrics providers
-* fixed memort leak
+* fixed memort leak in the hotkey plugin
+* fixed file type determination by content in the sndfile plugin
