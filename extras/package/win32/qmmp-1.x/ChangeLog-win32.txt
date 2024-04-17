@@ -476,3 +476,10 @@ LEGEND
 [*] ffmpeg-5.1.4
 [*] libsidplayfp-2.6.0
 [*] mpg123-1.32.5
+
+1.6.7
+[*] qmmp-1.6.7
+[*] libsidplayfp-2.7.0
+[*] mpg123-1.32.6
+[*] opus-1.5.2
+[*] curl-8.7.1
