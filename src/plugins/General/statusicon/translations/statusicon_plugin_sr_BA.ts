@@ -73,42 +73,42 @@
 <context>
     <name>StatusIcon</name>
     <message>
-        <location filename="../statusicon.cpp" line="71"/>
+        <location filename="../statusicon.cpp" line="70"/>
         <source>Play</source>
         <translation>Пусти</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="72"/>
+        <location filename="../statusicon.cpp" line="71"/>
         <source>Pause</source>
         <translation>Паузирај</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="73"/>
+        <location filename="../statusicon.cpp" line="72"/>
         <source>Stop</source>
         <translation>Заустави</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="75"/>
+        <location filename="../statusicon.cpp" line="74"/>
         <source>Next</source>
         <translation>Сљедећа</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="76"/>
+        <location filename="../statusicon.cpp" line="75"/>
         <source>Previous</source>
         <translation>Претходна</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="78"/>
+        <location filename="../statusicon.cpp" line="77"/>
         <source>Exit</source>
         <translation>Напусти</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="120"/>
+        <location filename="../statusicon.cpp" line="119"/>
         <source>Stopped</source>
         <translation type="unfinished">Заустављено</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="145"/>
+        <location filename="../statusicon.cpp" line="144"/>
         <source>Now Playing</source>
         <translation>Тренутна свирка</translation>
     </message>

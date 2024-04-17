@@ -880,98 +880,98 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="532"/>
+        <location filename="../mainwindow.cpp" line="534"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Sort List</source>
         <translation>清單排序</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="537"/>
-        <location filename="../mainwindow.cpp" line="578"/>
+        <location filename="../mainwindow.cpp" line="539"/>
+        <location filename="../mainwindow.cpp" line="580"/>
         <source>By Title</source>
         <translation>按標題</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="540"/>
-        <location filename="../mainwindow.cpp" line="581"/>
+        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="../mainwindow.cpp" line="583"/>
         <source>By Album</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="543"/>
-        <location filename="../mainwindow.cpp" line="584"/>
+        <location filename="../mainwindow.cpp" line="545"/>
+        <location filename="../mainwindow.cpp" line="586"/>
         <source>By Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="546"/>
-        <location filename="../mainwindow.cpp" line="587"/>
+        <location filename="../mainwindow.cpp" line="548"/>
+        <location filename="../mainwindow.cpp" line="589"/>
         <source>By Album Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="549"/>
-        <location filename="../mainwindow.cpp" line="590"/>
+        <location filename="../mainwindow.cpp" line="551"/>
+        <location filename="../mainwindow.cpp" line="592"/>
         <source>By Filename</source>
         <translation>按檔名</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="552"/>
-        <location filename="../mainwindow.cpp" line="593"/>
+        <location filename="../mainwindow.cpp" line="554"/>
+        <location filename="../mainwindow.cpp" line="595"/>
         <source>By Path + Filename</source>
         <translation>按路徑+檔名</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="555"/>
-        <location filename="../mainwindow.cpp" line="596"/>
+        <location filename="../mainwindow.cpp" line="557"/>
+        <location filename="../mainwindow.cpp" line="598"/>
         <source>By Date</source>
         <translation>按日期</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="558"/>
-        <location filename="../mainwindow.cpp" line="599"/>
+        <location filename="../mainwindow.cpp" line="560"/>
+        <location filename="../mainwindow.cpp" line="601"/>
         <source>By Track Number</source>
         <translation>按音軌</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="561"/>
-        <location filename="../mainwindow.cpp" line="602"/>
+        <location filename="../mainwindow.cpp" line="563"/>
+        <location filename="../mainwindow.cpp" line="604"/>
         <source>By Disc Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="564"/>
-        <location filename="../mainwindow.cpp" line="605"/>
+        <location filename="../mainwindow.cpp" line="566"/>
+        <location filename="../mainwindow.cpp" line="607"/>
         <source>By File Creation Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="567"/>
-        <location filename="../mainwindow.cpp" line="608"/>
+        <location filename="../mainwindow.cpp" line="569"/>
+        <location filename="../mainwindow.cpp" line="610"/>
         <source>By File Modification Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="570"/>
+        <location filename="../mainwindow.cpp" line="572"/>
         <source>By Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="575"/>
+        <location filename="../mainwindow.cpp" line="577"/>
         <source>Sort Selection</source>
         <translation>選取排序</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="613"/>
+        <location filename="../mainwindow.cpp" line="615"/>
         <source>Randomize List</source>
         <translation>隨機產生清單</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="615"/>
+        <location filename="../mainwindow.cpp" line="617"/>
         <source>Reverse List</source>
         <translation>逆串列表</translation>
     </message>
@@ -1116,78 +1116,68 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="206"/>
+        <location filename="../forms/qsuisettings.ui" line="210"/>
         <source>Visualization Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="212"/>
+        <location filename="../forms/qsuisettings.ui" line="216"/>
         <source>Color #1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="279"/>
+        <location filename="../forms/qsuisettings.ui" line="283"/>
         <source>Color #2:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="343"/>
+        <location filename="../forms/qsuisettings.ui" line="347"/>
         <source>Color #3:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="432"/>
+        <location filename="../forms/qsuisettings.ui" line="436"/>
         <source>Reset colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="873"/>
+        <location filename="../forms/qsuisettings.ui" line="877"/>
         <source>Waveform Seekbar Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="879"/>
+        <location filename="../forms/qsuisettings.ui" line="883"/>
         <source>Progress bar:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="968"/>
+        <location filename="../forms/qsuisettings.ui" line="972"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1013"/>
+        <location filename="../forms/qsuisettings.ui" line="1017"/>
         <source>Waveform:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1054"/>
+        <location filename="../forms/qsuisettings.ui" line="1058"/>
         <source>Fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1060"/>
+        <location filename="../forms/qsuisettings.ui" line="1064"/>
         <source>Use system fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1108"/>
+        <location filename="../forms/qsuisettings.ui" line="1138"/>
         <source>Playlist:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1088"/>
-        <location filename="../forms/qsuisettings.ui" line="1153"/>
-        <location filename="../forms/qsuisettings.ui" line="1172"/>
-        <source>???</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../forms/qsuisettings.ui" line="62"/>
-        <location filename="../forms/qsuisettings.ui" line="1095"/>
-        <location filename="../forms/qsuisettings.ui" line="1118"/>
-        <location filename="../forms/qsuisettings.ui" line="1179"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -1212,17 +1202,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="144"/>
+        <location filename="../forms/qsuisettings.ui" line="148"/>
         <source>Show song numbers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="151"/>
+        <location filename="../forms/qsuisettings.ui" line="155"/>
         <source>Show song lengths</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="161"/>
+        <location filename="../forms/qsuisettings.ui" line="165"/>
         <source>Align song numbers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1242,22 +1232,22 @@
         <translation>編輯模板</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1201"/>
+        <location filename="../forms/qsuisettings.ui" line="1205"/>
         <source>Reset fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1216"/>
+        <location filename="../forms/qsuisettings.ui" line="1154"/>
         <source>Column headers:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1131"/>
+        <location filename="../forms/qsuisettings.ui" line="1220"/>
         <source>Tab names:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1243"/>
+        <location filename="../forms/qsuisettings.ui" line="1301"/>
         <source>Miscellaneous</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1267,133 +1257,143 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="138"/>
+        <location filename="../forms/qsuisettings.ui" line="142"/>
         <source>Single Column Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="185"/>
+        <location filename="../forms/qsuisettings.ui" line="189"/>
         <source>Colors</source>
         <translation>色彩</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="247"/>
+        <location filename="../forms/qsuisettings.ui" line="251"/>
         <source>Peaks:</source>
         <translation>峰值：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="311"/>
-        <location filename="../forms/qsuisettings.ui" line="961"/>
+        <location filename="../forms/qsuisettings.ui" line="315"/>
+        <location filename="../forms/qsuisettings.ui" line="965"/>
         <source>Background:</source>
         <translation>背景：</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="444"/>
+        <location filename="../forms/qsuisettings.ui" line="448"/>
         <source>Playlist Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="860"/>
+        <location filename="../forms/qsuisettings.ui" line="470"/>
         <source>Background #1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="669"/>
+        <location filename="../forms/qsuisettings.ui" line="502"/>
         <source>Normal text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="617"/>
+        <location filename="../forms/qsuisettings.ui" line="534"/>
         <source>Background #2:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="717"/>
+        <location filename="../forms/qsuisettings.ui" line="566"/>
         <source>Current text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="662"/>
+        <location filename="../forms/qsuisettings.ui" line="598"/>
         <source>Highlighted background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="724"/>
+        <location filename="../forms/qsuisettings.ui" line="630"/>
         <source>Highlighted text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="766"/>
+        <location filename="../forms/qsuisettings.ui" line="818"/>
         <source>Override current track background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="734"/>
+        <location filename="../forms/qsuisettings.ui" line="773"/>
         <source>Current track background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="821"/>
+        <location filename="../forms/qsuisettings.ui" line="864"/>
         <source>Override group background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1276"/>
+        <location filename="../forms/qsuisettings.ui" line="1230"/>
+        <source>Groups:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="1237"/>
+        <source>Extra group row:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="1334"/>
         <source>Tab position:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1313"/>
+        <location filename="../forms/qsuisettings.ui" line="1371"/>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1321"/>
+        <location filename="../forms/qsuisettings.ui" line="1379"/>
         <source>Icon size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1346"/>
+        <location filename="../forms/qsuisettings.ui" line="1404"/>
         <source>Customize...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="450"/>
+        <location filename="../forms/qsuisettings.ui" line="454"/>
         <source>Use system colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="814"/>
+        <location filename="../forms/qsuisettings.ui" line="738"/>
         <source>Group background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="828"/>
+        <location filename="../forms/qsuisettings.ui" line="706"/>
         <source>Group text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="710"/>
+        <location filename="../forms/qsuisettings.ui" line="665"/>
         <source>Splitter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1249"/>
+        <location filename="../forms/qsuisettings.ui" line="1307"/>
         <source>Tabs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1255"/>
+        <location filename="../forms/qsuisettings.ui" line="1313"/>
         <source>Show close buttons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1262"/>
+        <location filename="../forms/qsuisettings.ui" line="1320"/>
         <source>Show tab list menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1269"/>
+        <location filename="../forms/qsuisettings.ui" line="1327"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1517,52 +1517,52 @@
 <context>
     <name>QSUiSettings</name>
     <message>
-        <location filename="../qsuisettings.cpp" line="43"/>
+        <location filename="../qsuisettings.cpp" line="40"/>
         <source>Default</source>
         <translation type="unfinished">默認</translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="44"/>
+        <location filename="../qsuisettings.cpp" line="41"/>
         <source>16x16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="45"/>
+        <location filename="../qsuisettings.cpp" line="42"/>
         <source>22x22</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="46"/>
+        <location filename="../qsuisettings.cpp" line="43"/>
         <source>32x32</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="47"/>
+        <location filename="../qsuisettings.cpp" line="44"/>
         <source>48x48</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="48"/>
+        <location filename="../qsuisettings.cpp" line="45"/>
         <source>64x64</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="50"/>
+        <location filename="../qsuisettings.cpp" line="47"/>
         <source>Top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="51"/>
+        <location filename="../qsuisettings.cpp" line="48"/>
         <source>Bottom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="52"/>
+        <location filename="../qsuisettings.cpp" line="49"/>
         <source>Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="53"/>
+        <location filename="../qsuisettings.cpp" line="50"/>
         <source>Right</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1645,12 +1645,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="329"/>
         <source>2 Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="332"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>

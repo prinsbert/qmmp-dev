@@ -73,42 +73,42 @@
 <context>
     <name>StatusIcon</name>
     <message>
-        <location filename="../statusicon.cpp" line="71"/>
+        <location filename="../statusicon.cpp" line="70"/>
         <source>Play</source>
         <translation>재생</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="72"/>
+        <location filename="../statusicon.cpp" line="71"/>
         <source>Pause</source>
         <translation>일시중지</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="73"/>
+        <location filename="../statusicon.cpp" line="72"/>
         <source>Stop</source>
         <translation>중지</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="75"/>
+        <location filename="../statusicon.cpp" line="74"/>
         <source>Next</source>
         <translation>다음</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="76"/>
+        <location filename="../statusicon.cpp" line="75"/>
         <source>Previous</source>
         <translation>이전</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="78"/>
+        <location filename="../statusicon.cpp" line="77"/>
         <source>Exit</source>
         <translation>종료</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="120"/>
+        <location filename="../statusicon.cpp" line="119"/>
         <source>Stopped</source>
         <translation>중지됨</translation>
     </message>
     <message>
-        <location filename="../statusicon.cpp" line="145"/>
+        <location filename="../statusicon.cpp" line="144"/>
         <source>Now Playing</source>
         <translation>현재 재생 중</translation>
     </message>

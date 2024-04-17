@@ -14,17 +14,17 @@
         <translation>FLAC bylos</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="214"/>
+        <location filename="../decoderflacfactory.cpp" line="218"/>
         <source>About FLAC Audio Plugin</source>
         <translation>Apie FLAC audio įskiepį</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="215"/>
+        <location filename="../decoderflacfactory.cpp" line="219"/>
         <source>Qmmp FLAC Audio Plugin</source>
         <translation>Qmmp FLAC audio įskiepis</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="216"/>
+        <location filename="../decoderflacfactory.cpp" line="220"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov  &lt;forkotov02@ya.ru&gt;</translation>
     </message>

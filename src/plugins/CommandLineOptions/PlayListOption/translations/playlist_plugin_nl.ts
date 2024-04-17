@@ -55,18 +55,18 @@
     </message>
     <message>
         <location filename="../playlistoption.cpp" line="110"/>
-        <location filename="../playlistoption.cpp" line="132"/>
-        <location filename="../playlistoption.cpp" line="171"/>
+        <location filename="../playlistoption.cpp" line="130"/>
+        <location filename="../playlistoption.cpp" line="169"/>
         <source>Invalid playlist ID</source>
         <translation>Ongeldige afspeellijst-id</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="126"/>
+        <location filename="../playlistoption.cpp" line="124"/>
         <source>Invalid number of arguments</source>
         <translation>Ongeldig aantal aanvullende opties</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="136"/>
+        <location filename="../playlistoption.cpp" line="134"/>
         <source>Invalid track ID</source>
         <translation>Ongeldige nummer-id</translation>
     </message>
