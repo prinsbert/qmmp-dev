@@ -115,12 +115,9 @@ bool DecoderSndFile::initialize()
     m_freq = snd_info.samplerate;
     int chan = snd_info.channels;
     m_totalTime = snd_info.frames * 1000 / m_freq;
-    m_bitrate =  input()->size () * 8.0 / m_totalTime + 0.5;
+    m_bitrate = input()->size () * 8.0 / m_totalTime + 0.5;
 
-    if((snd_info.format & SF_FORMAT_SUBMASK) == SF_FORMAT_FLOAT)
-        sf_command (m_sndfile, SFC_SET_SCALE_FLOAT_INT_READ, NULL, SF_TRUE);
-
-    configure(m_freq, chan, Qmmp::PCM_S16LE);
+    configure(m_freq, chan, Qmmp::PCM_FLOAT);
     qDebug("DecoderSndFile: detected format: %08X", snd_info.format);
     qDebug("DecoderSndFile: initialize succes");
     return true;
@@ -148,7 +145,7 @@ int DecoderSndFile::bitrate() const
 
 qint64 DecoderSndFile::read(unsigned char *audio, qint64 maxSize)
 {
-    return sizeof(short)* sf_read_short  (m_sndfile, (short *)audio, maxSize / sizeof(short));
+    return sizeof(float) * sf_read_float(m_sndfile, (float *)audio, maxSize / sizeof(float));
 }
 
 void DecoderSndFile::seek(qint64 pos)
