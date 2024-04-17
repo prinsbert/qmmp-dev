@@ -1864,3 +1864,11 @@ Version 2.1.6
   - updated lyrics providers
   - using UTF-8 for all lyrics providers
 * updated Spanish translation (Darwin Toledo)
+
+Version 2.1.7
+* using XWayland for skinned user interface
+* using floating point output in the sndfile plugin
+* fixed file type determination by content in the sndfile plugin
+* fixed memory leak in the hotkey plugin
+* fixed stream sample rate in the pipewire plugin
+* fixed issue with KDE6 file dialog (Jonas Kvinge)
