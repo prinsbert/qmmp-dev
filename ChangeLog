@@ -1846,3 +1846,10 @@ Version 1.6.6
   - updated lyrics providers
   - using UTF-8 for all lyrics providers
 * updated Spanish translation (Darwin Toledo)
+
+Version 1.6.7
+* using XWayland for skinned user interface
+* using floating point output in the sndfile plugin
+* fixed file type determination by content in the sndfile plugin
+* fixed memory leak in the hotkey plugin
+* fixed stream sample rate in the pipewire plugin
