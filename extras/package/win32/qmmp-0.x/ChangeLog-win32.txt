@@ -403,3 +403,11 @@ LEGEND
 [!] removed libxml2
 [!] fixed https support
 
+0.12.18
+[*] qmmp-0.12.18
+[*] wavpack-5.7.0
+[*] libsndfile-1.2.2
+[*] opus-1.5.2
+[*] curl-8.7.1
+[*] libxmp-4.6.0
+[*] mpg123-1.32.6
