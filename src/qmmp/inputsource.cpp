@@ -72,7 +72,7 @@ QMap<Qmmp::MetaData, QString> InputSource::takeMetaData()
 void InputSource::setProperty(Qmmp::TrackProperty key, const QVariant &value)
 {
     QString strValue = value.toString();
-    if(strValue.isEmpty() || strValue == "0")
+    if(strValue.isEmpty() || strValue == "0"_L1)
         m_properties.remove(key);
     else
         m_properties[key] = strValue;
@@ -81,9 +81,7 @@ void InputSource::setProperty(Qmmp::TrackProperty key, const QVariant &value)
 void InputSource::setProperties(const QMap<Qmmp::TrackProperty, QString> &properties)
 {
     for(auto it = properties.cbegin(); it != properties.cend(); ++it)
-    {
         setProperty(it.key(), it.value());
-    }
 }
 
 const QMap<Qmmp::TrackProperty, QString> &InputSource::properties() const
@@ -121,7 +119,7 @@ QList<QmmpPluginCache*> *InputSource::m_cache = nullptr;
 InputSource *InputSource::create(const QString &url, QObject *parent)
 {
     loadPlugins();
-    if(!url.contains("://")) //local file path doesn't contain "://"
+    if(!url.contains(u"://"_s)) //local file path doesn't contain "://"
     {
         qDebug("InputSource: using file transport");
         return new FileInputSource(url, parent);
@@ -131,7 +129,7 @@ InputSource *InputSource::create(const QString &url, QObject *parent)
 
     if(factory)
     {
-        qDebug("InputSource: using %s transport", qPrintable(url.section("://", 0, 0)));
+        qDebug("InputSource: using %s transport", qPrintable(url.section(u"://"_s, 0, 0)));
         return factory->create(url, parent);
     }
 
@@ -230,7 +228,7 @@ InputSourceFactory *InputSource::findByUrl(const QString &url)
 
         InputSourceFactory *factory = item->inputSourceFactory();
 
-        if(factory && factory->properties().protocols.contains(url.section("://", 0, 0)))
+        if(factory && factory->properties().protocols.contains(url.section(u"://"_s, 0, 0)))
             return factory;
     }
 
@@ -240,7 +238,7 @@ InputSourceFactory *InputSource::findByUrl(const QString &url)
 void InputSource::setEnabled(InputSourceFactory *factory, bool enable)
 {
     loadPlugins();
-    if (!factories().contains(factory))
+    if(!factories().contains(factory))
         return;
 
     if(enable == isEnabled(factory))
@@ -269,7 +267,7 @@ void InputSource::loadPlugins()
 
     m_cache = new QList<QmmpPluginCache*>;
     QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins("Transports"))
+    for(const QString &filePath : Qmmp::findPlugins(u"Transports"_s))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
         if(item->hasError())
@@ -279,6 +277,6 @@ void InputSource::loadPlugins()
         }
         m_cache->append(item);
     }
-    m_disabledNames = settings.value("Transports/disabled_plugins").toStringList();
+    m_disabledNames = settings.value(u"Transports/disabled_plugins"_s).toStringList();
     QmmpPluginCache::cleanup(&settings);
 }

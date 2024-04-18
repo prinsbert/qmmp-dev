@@ -39,6 +39,8 @@
 #define QStringToFileName(s) s.toLocal8Bit().constData()
 #endif
 
+using namespace Qt::Literals::StringLiterals;
+
 
 /*! @brief The Qmmp class stores global settings and enums.
  * @author Ilya Kotov <forkotov02@ya.ru>

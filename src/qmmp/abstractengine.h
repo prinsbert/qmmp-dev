@@ -48,7 +48,7 @@ public:
     /*!
      * Destructor.
      */
-    virtual ~AbstractEngine();
+    virtual ~AbstractEngine() = default;
     /*!
      * Prepares decoder for usage.
      * Subclass should reimplement this function.

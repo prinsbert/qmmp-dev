@@ -42,16 +42,16 @@ QmmpAudioEngine::QmmpAudioEngine(QObject *parent) : AbstractEngine(parent)
 {
     m_converter = new AudioConverter;
     m_settings = QmmpSettings::instance();
-    connect(m_settings,SIGNAL(replayGainSettingsChanged()), SLOT(updateReplayGainSettings()));
-    connect(m_settings,SIGNAL(audioSettingsChanged()), SLOT(updateAudioSettings()));
-    connect(m_settings, SIGNAL(eqSettingsChanged()), SLOT(updateEqSettings()));
+    connect(m_settings, &QmmpSettings::replayGainSettingsChanged, this, &QmmpAudioEngine::updateReplayGainSettings);
+    connect(m_settings, &QmmpSettings::audioSettingsChanged, this, &QmmpAudioEngine::updateAudioSettings);
+    connect(m_settings, &QmmpSettings::eqSettingsChanged, this, &QmmpAudioEngine::updateEqSettings);
     reset();
     m_instance = this;
 }
 
 QmmpAudioEngine::~QmmpAudioEngine()
 {
-    stop();
+    QmmpAudioEngine::stop();
     reset();
     delete [] m_output_buf;
     m_output_buf = nullptr;
@@ -121,16 +121,16 @@ bool QmmpAudioEngine::enqueue(InputSource *source)
 
     DecoderFactory *factory = nullptr;
 
-    if(!source->path().contains("://"))
+    if(!source->path().contains(u"://"_s))
         factory = Decoder::findByFilePath(source->path(), m_settings->determineFileTypeByContent());
     if(!factory)
         factory = Decoder::findByMime(source->contentType());
-    if(factory && !factory->properties().noInput && source->ioDevice() && source->path().contains("://"))
+    if(factory && !factory->properties().noInput && source->ioDevice() && source->path().contains(u"://"_s))
         factory = (factory->canDecode(source->ioDevice()) ? factory : nullptr);
-    if(!factory && source->ioDevice() && source->path().contains("://")) //ignore content of local files
+    if(!factory && source->ioDevice() && source->path().contains(u"://"_s)) //ignore content of local files
         factory = Decoder::findByContent(source->ioDevice());
-    if(!factory && source->path().contains("://"))
-        factory = Decoder::findByProtocol(source->path().section("://",0,0));
+    if(!factory && source->path().contains(u"://"_s))
+        factory = Decoder::findByProtocol(source->path().section(u"://"_s, 0, 0));
     if(!factory)
     {
         qWarning("QmmpAudioEngine: unsupported file format");
@@ -163,8 +163,7 @@ void QmmpAudioEngine::addEffect(EffectFactory *factory)
     {
         if(effect->factory() == factory)
         {
-            qWarning("QmmpAudioEngine: effect %s already exists",
-                     qPrintable(factory->properties().shortName));
+            qWarning("QmmpAudioEngine: effect %s already exists", qPrintable(factory->properties().shortName));
             return;
         }
     }
@@ -583,7 +582,7 @@ void QmmpAudioEngine::addOffset()
 void QmmpAudioEngine::attachMetaData(Decoder *decoder, DecoderFactory *factory, InputSource *source)
 {
     QString path = source->path();
-    QString scheme = path.section("://",0,0);
+    QString scheme = path.section(u"://"_s,0,0);
     QFileInfo fileInfo(path);
 
     if(fileInfo.isFile() || factory->properties().protocols.contains(scheme))

@@ -35,10 +35,8 @@
 
 MetaDataManager* MetaDataManager::m_instance = nullptr;
 
-MetaDataManager::MetaDataManager()
-{
-    m_settings = QmmpSettings::instance();
-}
+MetaDataManager::MetaDataManager() : m_settings(QmmpSettings::instance())
+{}
 
 MetaDataManager::~MetaDataManager()
 {
@@ -54,7 +52,7 @@ QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInf
     if(!ignoredPaths)
         ignoredPaths = &dummyList;
 
-    if (!path.contains("://")) //local file
+    if(!path.contains(u"://"_s)) //local file
     {
         if(!QFile::exists(path))
             return list;
@@ -64,7 +62,7 @@ QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInf
     }
     else
     {
-        QString scheme = path.section("://",0,0);
+        QString scheme = path.section(u"://"_s, 0, 0);
         if(InputSource::findByUrl(path))
         {
             list << new TrackInfo(path);
@@ -91,7 +89,7 @@ QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInf
     {
         if(info->value(Qmmp::DECODER).isEmpty() && (fact || efact))
             info->setValue(Qmmp::DECODER, fact ? fact->properties().shortName : efact->properties().shortName);
-        if(info->value(Qmmp::FILE_SIZE).isEmpty() && !path.contains("://"))
+        if(info->value(Qmmp::FILE_SIZE).isEmpty() && !path.contains(u"://"_s))
             info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
     }
     return list;
@@ -102,7 +100,7 @@ MetaDataModel* MetaDataManager::createMetaDataModel(const QString &path, bool re
     DecoderFactory *fact = nullptr;
     EngineFactory *efact = nullptr;
 
-    if (!path.contains("://")) //local file
+    if (!path.contains(u"://"_s)) //local file
     {
         if(!QFile::exists(path))
             return nullptr;
@@ -113,7 +111,7 @@ MetaDataModel* MetaDataManager::createMetaDataModel(const QString &path, bool re
         return nullptr;
     }
 
-    QString scheme = path.section("://",0,0);
+    QString scheme = path.section(u"://"_s, 0, 0);
     MetaDataModel *model = nullptr;
     if((fact = Decoder::findByProtocol(scheme)))
     {
@@ -135,12 +133,12 @@ QStringList MetaDataManager::filters() const
     for(const DecoderFactory *fact : Decoder::enabledFactories())
     {
         if (!fact->properties().filters.isEmpty())
-            filters << fact->properties().description + " (" + fact->properties().filters.join(" ") + ")";
+            filters << QStringLiteral("%1 (%2)").arg(fact->properties().description, fact->properties().filters.join(QChar::Space));
     }
     for(const EngineFactory *fact : AbstractEngine::enabledFactories())
     {
         if (!fact->properties().filters.isEmpty())
-            filters << fact->properties().description + " (" + fact->properties().filters.join(" ") + ")";
+            filters << QStringLiteral("%1 (%2)").arg(fact->properties().description, fact->properties().filters.join(QChar::Space));
     }
     return filters;
 }
@@ -150,7 +148,7 @@ QStringList MetaDataManager::nameFilters() const
     QStringList filters = Decoder::nameFilters();
     filters << AbstractEngine::nameFilters();
     if(m_settings->determineFileTypeByContent())
-        filters << "*";
+        filters << u"*"_s;
     filters.removeDuplicates();
     return filters;
 }
@@ -172,7 +170,7 @@ QList<QRegularExpression> MetaDataManager::regExps() const
 
 bool MetaDataManager::supports(const QString &fileName) const
 {
-    if (!fileName.contains("://")) //local file
+    if (!fileName.contains(u"://"_s)) //local file
     {
         if(!QFile::exists(fileName))
             return false;
@@ -250,6 +248,7 @@ QFileInfoList MetaDataManager::findCoverFiles(QDir dir, int depth) const
     }
     if(!depth || !file_list.isEmpty())
         return file_list;
+
     depth--;
     dir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
     dir.setSorting(QDir::Name);
@@ -265,7 +264,7 @@ MetaDataManager::CoverCacheItem *MetaDataManager::createCoverCacheItem(const QSt
 {
     CoverCacheItem *item = new CoverCacheItem;
     item->url = url;
-    if(!url.contains("://") && m_settings->useCoverFiles())
+    if(!url.contains(u"://"_s) && m_settings->useCoverFiles())
         item->coverPath = findCoverFile(url);
 
     if(item->coverPath.isEmpty())

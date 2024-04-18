@@ -92,7 +92,7 @@ QMap<Qmmp::MetaData, QString> Decoder::takeMetaData()
 void Decoder::setProperty(Qmmp::TrackProperty key, const QVariant &value)
 {
     QString strValue = value.toString();
-    if(strValue.isEmpty() || strValue == "0")
+    if(strValue.isEmpty() || strValue == "0"_L1)
         m_properties.remove(key);
     else
         m_properties[key] = strValue;
@@ -100,13 +100,11 @@ void Decoder::setProperty(Qmmp::TrackProperty key, const QVariant &value)
 
 void Decoder::setProperties(const QMap<Qmmp::TrackProperty, QString> &properties)
 {
-    for(const Qmmp::TrackProperty &key : properties.keys())
-    {
-        setProperty(key, properties.value(key));
-    }
+    for(auto it = properties.cbegin(); it != properties.cend(); ++it)
+        setProperty(it.key(), it.value());
 }
 
-const QMap<Qmmp::TrackProperty, QString> &Decoder::properties() const
+QMap<Qmmp::TrackProperty, QString> Decoder::properties() const
 {
     return m_properties;
 }
@@ -116,7 +114,7 @@ QStringList Decoder::m_disabledNames;
 QList<QmmpPluginCache*> *Decoder::m_cache = nullptr;
 
 //sort cache items by priority
-static bool _pluginCacheLessComparator(QmmpPluginCache* f1, QmmpPluginCache* f2)
+static bool _pluginCacheLessComparator(const QmmpPluginCache* f1, const QmmpPluginCache* f2)
 {
     return f1->priority() < f2->priority();
 }
@@ -128,7 +126,7 @@ void Decoder::loadPlugins()
 
     m_cache = new QList<QmmpPluginCache*>;
     QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins("Input"))
+    for(const QString &filePath : Qmmp::findPlugins(u"Input"_s))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
         if(item->hasError())
@@ -138,7 +136,7 @@ void Decoder::loadPlugins()
         }
         m_cache->append(item);
     }
-    m_disabledNames = settings.value("Decoder/disabled_plugins").toStringList();
+    m_disabledNames = settings.value(u"Decoder/disabled_plugins"_s).toStringList();
     std::stable_sort(m_cache->begin(), m_cache->end(), _pluginCacheLessComparator);
     QmmpPluginCache::cleanup(&settings);
 }
@@ -309,7 +307,7 @@ void Decoder::setEnabled(DecoderFactory *factory, bool enable)
 
     m_disabledNames.removeDuplicates();
     QSettings settings;
-    settings.setValue("Decoder/disabled_plugins", m_disabledNames);
+    settings.setValue(u"Decoder/disabled_plugins"_s, m_disabledNames);
 }
 
 bool Decoder::isEnabled(const DecoderFactory *factory)

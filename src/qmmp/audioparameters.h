@@ -109,7 +109,7 @@ public:
      * Returns string represention of the audio parameters.
      * May be useful for debug purposes.
      */
-    const QString toString() const;
+    QString toString() const;
     /*!
      * Returns sample size in bytes of the given pcm data \b format.
      */

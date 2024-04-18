@@ -99,7 +99,7 @@ public:
     /*!
      * Destructor.
      */
-    virtual ~MetaDataModel();
+    virtual ~MetaDataModel() = default;
     /*!
      * Returns extra properties of the media source (in addition to the \b Qmmp::TrackProperty values).
      * Default implemetation returns empty array.

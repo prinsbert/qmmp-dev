@@ -120,7 +120,7 @@ void TrackInfo::setDuration(qint64 duration)
 void TrackInfo::setValue(Qmmp::MetaData key, const QVariant &value)
 {
     QString strValue = value.toString().trimmed();
-    if(strValue.isEmpty() || strValue == "0")
+    if(strValue.isEmpty() || strValue == "0"_L1)
         m_metaData.remove(key);
     else
         m_metaData[key] = strValue;
@@ -135,7 +135,7 @@ void TrackInfo::setValue(Qmmp::MetaData key, const char *value)
 void TrackInfo::setValue(Qmmp::TrackProperty key, const QVariant &value)
 {
     QString strValue = value.toString();
-    if(strValue.isEmpty() || strValue == "0")
+    if(strValue.isEmpty() || strValue == "0"_L1)
         m_properties.remove(key);
     else
         m_properties[key] = strValue;
@@ -159,7 +159,7 @@ void TrackInfo::setValue(Qmmp::ReplayGainKey key, double value)
 void TrackInfo::setValue(Qmmp::ReplayGainKey key, const QString &value)
 {
     QString str = value;
-    str.remove(QRegularExpression("[\\sA-Za-z]"));
+    str.remove(QRegularExpression(u"[\\sA-Za-z]"_s));
     str = str.trimmed();
     bool ok = false;
     double v = str.toDouble(&ok);
@@ -187,20 +187,20 @@ void TrackInfo::setValues(const QMap<Qmmp::ReplayGainKey, double> &replayGainInf
 
 void TrackInfo::updateValues(const QMap<Qmmp::MetaData, QString> &metaData)
 {
-    for(const Qmmp::MetaData &key : metaData.keys())
-        setValue(key, metaData[key]);
+    for(auto it = metaData.cbegin(); it != metaData.cend(); ++it)
+        setValue(it.key(), it.value());
 }
 
 void TrackInfo::updateValues(const QMap<Qmmp::TrackProperty, QString> &properties)
 {
-    for(const Qmmp::TrackProperty &key : properties.keys())
-        setValue(key, properties[key]);
+    for(auto it = properties.cbegin(); it != properties.cend(); ++it)
+        setValue(it.key(), it.value());
 }
 
 void TrackInfo::updateValues(const QMap<Qmmp::ReplayGainKey, double> &replayGainInfo)
 {
-    for(const Qmmp::ReplayGainKey &key : replayGainInfo.keys())
-        setValue(key, replayGainInfo[key]);
+    for(auto it = replayGainInfo.cbegin(); it != replayGainInfo.cend(); ++it)
+        setValue(it.key(), it.value());
 }
 
 void TrackInfo::setPath(const QString &path)

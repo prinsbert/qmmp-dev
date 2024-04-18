@@ -55,26 +55,26 @@ void CueParser::loadData(const QByteArray &data, QmmpTextCodec *codec)
         if(words.size() < 2)
             continue;
 
-        if(words[0] == "FILE")
+        if(words[0] == "FILE"_L1)
         {
             file = words[1];
             m_files << file;
         }
-        else if(words[0] == "PERFORMER")
+        else if(words[0] == "PERFORMER"_L1)
         {
             if(m_tracks.isEmpty())
                 artist = words[1];
             else
                 m_tracks.last()->info.setValue(Qmmp::ARTIST, words[1]);
         }
-        else if(words[0] == "TITLE")
+        else if(words[0] == "TITLE"_L1)
         {
             if(m_tracks.isEmpty())
                 album = words[1];
             else
                 m_tracks.last()->info.setValue(Qmmp::TITLE, words[1]);
         }
-        else if(words[0] == "TRACK")
+        else if(words[0] == "TRACK"_L1)
         {
             TrackInfo info;
             info.setValue(Qmmp::TRACK, words[1].toInt());
@@ -91,45 +91,45 @@ void CueParser::loadData(const QByteArray &data, QmmpTextCodec *codec)
             m_tracks.last()->info = info;
             m_tracks.last()->offset = 0;
         }
-        else if(words[0] == "INDEX" && words[1] == "01")
+        else if(words[0] == "INDEX"_L1 && words[1] == "01"_L1)
         {
             if(m_tracks.isEmpty())
                 continue;
             m_tracks.last()->offset = getLength(words[2]);
             m_tracks.last()->file = file;
         }
-        else if(words[0] == "REM")
+        else if(words[0] == "REM"_L1)
         {
             if(words.size() < 3)
                 continue;
-            if(words[1] == "GENRE")
+            if(words[1] == "GENRE"_L1)
             {
                 if(m_tracks.isEmpty())
                     genre = words[2];
                 else
                     m_tracks.last()->info.setValue(Qmmp::GENRE, words[2]);
             }
-            else if(words[1] == "DATE")
+            else if(words[1] == "DATE"_L1)
             {
                  if(m_tracks.isEmpty())
                      date = words[2];
                  else
                      m_tracks.last()->info.setValue(Qmmp::YEAR, words[2]);
             }
-            else if(words[1] == "COMMENT")
+            else if(words[1] == "COMMENT"_L1)
             {
                  if(m_tracks.isEmpty())
                      comment = words[2];
                  else
                      m_tracks.last()->info.setValue(Qmmp::COMMENT, words[2]);
             }
-            else if(words[1] == "REPLAYGAIN_ALBUM_GAIN")
+            else if(words[1] == "REPLAYGAIN_ALBUM_GAIN"_L1)
                 album_gain = words[2].toDouble();
-            else if(words[1] == "REPLAYGAIN_ALBUM_PEAK")
+            else if(words[1] == "REPLAYGAIN_ALBUM_PEAK"_L1)
                 album_peak = words[2].toDouble();
-            else if(words[1] == "REPLAYGAIN_TRACK_GAIN" && !m_tracks.isEmpty())
+            else if(words[1] == "REPLAYGAIN_TRACK_GAIN"_L1 && !m_tracks.isEmpty())
                 m_tracks.last()->info.setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, words[2].toDouble());
-            else if(words[1] == "REPLAYGAIN_TRACK_PEAK" && !m_tracks.isEmpty())
+            else if(words[1] == "REPLAYGAIN_TRACK_PEAK"_L1 && !m_tracks.isEmpty())
                 m_tracks.last()->info.setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, words[2].toDouble());
         }
     }
@@ -284,7 +284,7 @@ void CueParser::setMetaData(int track, Qmmp::MetaData key, const QVariant &value
 void CueParser::setUrl(const QString &scheme, const QString &path)
 {
     for(int i = 0; i < m_tracks.count(); ++i)
-        m_tracks.at(i)->info.setPath(QString("%1://%2#%3").arg(scheme, path, m_tracks.at(i)->info.value(Qmmp::TRACK)));
+        m_tracks.at(i)->info.setPath(QStringLiteral("%1://%2#%3").arg(scheme, path, m_tracks.at(i)->info.value(Qmmp::TRACK)));
 }
 
 void CueParser::clear()
@@ -304,9 +304,9 @@ QStringList CueParser::splitLine(const QString &line)
     while (!buf.isEmpty())
     {
         //qDebug(qPrintable(buf));
-        if(buf.startsWith('"'))
+        if(buf.startsWith(QChar('"')))
         {
-            int end = buf.indexOf('"',1);
+            int end = buf.indexOf(QChar('"'), 1);
             if(end == -1) //ignore invalid line
             {
                 list.clear();
@@ -314,11 +314,11 @@ QStringList CueParser::splitLine(const QString &line)
                 return list;
             }
             list << buf.mid (1, end - 1);
-            buf.remove (0, end+1);
+            buf.remove (0, end + 1);
         }
         else
         {
-            int end = buf.indexOf(' ', 0);
+            int end = buf.indexOf(QChar::Space, 0);
             if(end < 0)
                 end = buf.size();
             list << buf.mid (0, end);
@@ -331,10 +331,10 @@ QStringList CueParser::splitLine(const QString &line)
 
 qint64 CueParser::getLength(const QString &str)
 {
-    QStringList list = str.split(":");
+    QStringList list = str.split(QChar(':'));
     if(list.size() == 2)
-        return (qint64)list.at(0).toInt()*60000 + list.at(1).toInt()*1000;
+        return (qint64)list.at(0).toInt() * 60000 + list.at(1).toInt() * 1000;
     if(list.size() == 3)
-        return (qint64)list.at(0).toInt()*60000 + list.at(1).toInt()*1000 + list.at(2).toInt()*1000/75;
+        return (qint64)list.at(0).toInt() * 60000 + list.at(1).toInt() * 1000 + list.at(2).toInt() * 1000 / 75;
     return 0;
 }

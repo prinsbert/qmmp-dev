@@ -33,10 +33,6 @@ AbstractEngine::AbstractEngine(QObject *parent) : QThread(parent)
 {
 }
 
-AbstractEngine::~AbstractEngine()
-{
-}
-
 QMutex *AbstractEngine::mutex()
 {
     return &m_mutex;
@@ -53,7 +49,7 @@ void AbstractEngine::loadPlugins()
 
     m_cache = new QList<QmmpPluginCache*>;
     QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins("Engines"))
+    for(const QString &filePath : Qmmp::findPlugins(u"Engines"_s))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
         if(item->hasError())
@@ -63,7 +59,7 @@ void AbstractEngine::loadPlugins()
         }
         m_cache->append(item);
     }
-    m_disabledNames = settings.value("Engine/disabled_plugins").toStringList();
+    m_disabledNames = settings.value(u"Engine/disabled_plugins"_s).toStringList();
     QmmpPluginCache::cleanup(&settings);
 }
 
@@ -184,7 +180,7 @@ void AbstractEngine::setEnabled(EngineFactory *factory, bool enable)
 
     m_disabledNames.removeDuplicates();
     QSettings settings;
-    settings.setValue("Engine/disabled_plugins", m_disabledNames);
+    settings.setValue(u"Engine/disabled_plugins"_s, m_disabledNames);
 }
 
 bool AbstractEngine::isEnabled(const EngineFactory *factory)

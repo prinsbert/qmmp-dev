@@ -117,7 +117,7 @@ void Visual::setEnabled(VisualFactory *factory, bool enable)
 
     QString name = factory->properties().shortName;
     QSettings settings;
-    QStringList visList = settings.value("Visualization/enabled_plugins").toStringList();
+    QStringList visList = settings.value(u"Visualization/enabled_plugins"_s).toStringList();
 
     if (enable)
     {
@@ -138,7 +138,7 @@ void Visual::setEnabled(VisualFactory *factory, bool enable)
             m_vis_map.remove (factory);
         }
     }
-    settings.setValue("Visualization/enabled_plugins", visList);
+    settings.setValue(u"Visualization/enabled_plugins"_s, visList);
 }
 
 bool Visual::isEnabled(const VisualFactory *factory)
@@ -146,7 +146,7 @@ bool Visual::isEnabled(const VisualFactory *factory)
     checkFactories();
     QString name = factory->properties().shortName;
     QSettings settings;
-    QStringList visList = settings.value("Visualization/enabled_plugins").toStringList();
+    QStringList visList = settings.value(u"Visualization/enabled_plugins"_s).toStringList();
     return visList.contains(name);
 }
 
@@ -228,7 +228,7 @@ void Visual::checkFactories()
         m_factories = new QList<VisualFactory *>;
         m_files = new QHash <const VisualFactory*, QString>;
 
-        for(const QString &filePath : Qmmp::findPlugins("Visual"))
+        for(const QString &filePath : Qmmp::findPlugins(u"Visual"_s))
         {
             QPluginLoader loader(filePath);
             QObject *plugin = loader.instance();

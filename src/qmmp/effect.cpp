@@ -50,7 +50,7 @@ int Effect::channels() const
     return m_channels;
 }
 
-const ChannelMap Effect::channelMap() const
+const ChannelMap &Effect::channelMap() const
 {
     return m_chan_map;
 }
@@ -81,7 +81,7 @@ void Effect::loadPlugins()
 
     m_cache = new QList<QmmpPluginCache *>;
     QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins("Effect"))
+    for(const QString &filePath : Qmmp::findPlugins(u"Effect"_s))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
         if(item->hasError())
@@ -93,7 +93,7 @@ void Effect::loadPlugins()
     }
 
     std::stable_sort(m_cache->begin(), m_cache->end(), _effectCacheCompareFunc);
-    m_enabledNames = settings.value("Effect/enabled_plugins").toStringList();
+    m_enabledNames = settings.value(u"Effect/enabled_plugins"_s).toStringList();
 }
 
 Effect* Effect::create(EffectFactory *factory)
@@ -164,7 +164,7 @@ void Effect::setEnabled(EffectFactory *factory, bool enable)
     m_enabledNames.removeDuplicates();
 
     QSettings settings;
-    settings.setValue("Effect/enabled_plugins", m_enabledNames);
+    settings.setValue(u"Effect/enabled_plugins"_s, m_enabledNames);
     QmmpPluginCache::cleanup(&settings);
 }
 

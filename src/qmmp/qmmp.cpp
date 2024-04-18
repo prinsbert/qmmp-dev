@@ -95,7 +95,7 @@ QString Qmmp::pluginPath()
     QByteArray path = qgetenv("QMMP_PLUGINS");
     if(!path.isEmpty())
         return path;
-    QString fallbackPath = qApp->applicationDirPath() + "/../lib/qmmp-" STR(QMMP_VERSION_MAJOR) "." STR(QMMP_VERSION_MINOR);
+    QString fallbackPath = QStringLiteral("%1/../lib/qmmp-" STR(QMMP_VERSION_MAJOR) "." STR(QMMP_VERSION_MINOR)).arg(qApp->applicationDirPath());
 #ifdef QMMP_PLUGIN_DIR
     QDir dir(QMMP_PLUGIN_DIR);
 #elif defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
@@ -110,9 +110,9 @@ QString Qmmp::pluginPath()
 
 QStringList Qmmp::findPlugins(const QString &prefix)
 {
-    QDir pluginDir(pluginPath() + "/" + prefix);
+    QDir pluginDir(pluginPath() + u"/"_s + prefix);
     QStringList paths;
-    for(const QFileInfo &info : pluginDir.entryInfoList(QStringList() << "*.dll" << "*.so", QDir::Files))
+    for(const QFileInfo &info : pluginDir.entryInfoList({ u"*.dll"_s, u"*.so"_s }, QDir::Files))
         paths << info.canonicalFilePath();
     return paths;
 }
@@ -125,7 +125,7 @@ QString Qmmp::systemLanguageID()
         //qDebug("Qmmp: setting ui language to '%s'", qPrintable(m_langID));
     }
 
-    if(m_langID != "auto")
+    if(m_langID != "auto"_L1)
         return m_langID;
 
 #ifdef Q_OS_UNIX
@@ -143,15 +143,15 @@ QString Qmmp::systemLanguageID()
 QString Qmmp::uiLanguageID()
 {
     QSettings settings;
-    QString langID = settings.value("General/locale", "auto").toString();
-    langID = langID.isEmpty() ? "auto" : langID;
+    QString langID = settings.value(u"General/locale"_s, u"auto"_s).toString();
+    langID = langID.isEmpty() ? u"auto"_s : langID;
     return langID;
 }
 
 void Qmmp::setUiLanguageID(const QString &code)
 {
     QSettings settings;
-    settings.setValue("General/locale", code);
+    settings.setValue(u"General/locale"_s, code);
     m_langID.clear();
 }
 
@@ -160,7 +160,7 @@ QString Qmmp::dataPath()
 #if defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
     return qApp->applicationDirPath();
 #else
-    return QDir(qApp->applicationDirPath() + "/../share/qmmp" APP_NAME_SUFFIX).absolutePath();
+    return QDir(QStringLiteral("%1/../share/qmmp" APP_NAME_SUFFIX).arg(qApp->applicationDirPath())).absolutePath();
 #endif
 }
 
@@ -183,6 +183,6 @@ bool Qmmp::isPortable()
 {
     if(m_appDir.isEmpty())
         m_appDir = QCoreApplication::applicationDirPath();
-    return QFile::exists(m_appDir + "/qmmp_portable.txt");
+    return QFile::exists(m_appDir + QStringLiteral("/qmmp_portable.txt"));
 }
 #endif

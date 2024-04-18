@@ -47,7 +47,7 @@ StreamInfoChangedEvent::StreamInfoChangedEvent(const QHash<QString, QString> &in
 
 StreamInfoChangedEvent::~StreamInfoChangedEvent(){}
 
-const QHash<QString, QString> &StreamInfoChangedEvent::streamInfo() const
+QHash<QString, QString> StreamInfoChangedEvent::streamInfo() const
 {
     return m_streamInfo;
 }
@@ -56,8 +56,6 @@ TrackInfoEvent::TrackInfoEvent(const TrackInfo &info) : QEvent(EVENT_TRACK_INFO_
 {
     m_info = info;
 }
-
-TrackInfoEvent::~TrackInfoEvent(){}
 
 const TrackInfo &TrackInfoEvent::trackInfo() const
 {

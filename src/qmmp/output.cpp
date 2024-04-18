@@ -79,7 +79,7 @@ void Output::loadPlugins()
 
     m_cache = new QList<QmmpPluginCache *>;
     QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins("Output"))
+    for(const QString &filePath : Qmmp::findPlugins(u"Output"_s))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
         if(item->hasError())
@@ -136,7 +136,7 @@ void Output::setCurrentFactory(const OutputFactory *factory)
     if (file(factory).isEmpty())
         return;
     QSettings settings;
-    settings.setValue ("Output/current_plugin", factory->properties().shortName);
+    settings.setValue(u"Output/current_plugin"_s, factory->properties().shortName);
 }
 
 OutputFactory *Output::currentFactory()
@@ -145,16 +145,16 @@ OutputFactory *Output::currentFactory()
 
     QSettings settings;
 #ifdef QMMP_DEFAULT_OUTPUT
-    QString name = settings.value("Output/current_plugin", QMMP_DEFAULT_OUTPUT).toString();
+    QString name = settings.value(u"Output/current_plugin"_s, QMMP_DEFAULT_OUTPUT).toString();
 #else
 #ifdef Q_OS_LINUX
-    QString name = settings.value("Output/current_plugin", "alsa").toString();
+    QString name = settings.value(u"Output/current_plugin"_s, u"alsa"_s).toString();
 #elif defined Q_WS_WIN
-    QString name = settings.value("Output/current_plugin", "directsound").toString();
+    QString name = settings.value(u"Output/current_plugin"_s, u"directsound"_s).toString();
 #elif defined Q_OS_MAC
-    QString name = settings.value("Output/current_plugin", "qtmultimedia").toString();
+    QString name = settings.value(u"Output/current_plugin"_s, u"qtmultimedia"_s).toString();
 #else
-    QString name = settings.value("Output/current_plugin", "oss4").toString();
+    QString name = settings.value(u"Output/current_plugin"_s, u"oss4"_s).toString();
 #endif
 #endif //QMMP_DEFAULT_OUTPUT
     for(QmmpPluginCache *item : qAsConst(*m_cache))
@@ -162,7 +162,7 @@ OutputFactory *Output::currentFactory()
         if (item->shortName() == name && item->outputFactory())
             return item->outputFactory();
     }
-    if (!m_cache->isEmpty())
+    if(!m_cache->isEmpty())
         return m_cache->at(0)->outputFactory();
     return nullptr;
 }
