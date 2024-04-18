@@ -23,7 +23,7 @@
 QStringList CommandLineHandler::helpString() const
 {
     QStringList out;
-    for(const CommandLineOption &opt : m_options.values())
+    for(const CommandLineOption &opt : qAsConst(m_options))
     {
         if(opt.flags & HiddenFromHelp)
             continue;
@@ -46,7 +46,7 @@ QString CommandLineHandler::helpString(int id) const
 
 int CommandLineHandler::identify(const QString &name) const
 {
-    for(const CommandLineOption &opt : m_options.values())
+    for(const CommandLineOption &opt : qAsConst(m_options))
     {
         if(opt.names.contains(name))
             return m_options.key(opt);
