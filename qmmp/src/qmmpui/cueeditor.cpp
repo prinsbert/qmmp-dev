@@ -42,7 +42,7 @@ private:
         QTextCharFormat textFormat;
         textFormat.setForeground(Qt::darkGreen);
 
-        QRegularExpression textExpr("\\\".*\\\"");
+        static const QRegularExpression textExpr("\\\".*\\\"");
         QRegularExpressionMatchIterator i = textExpr.globalMatch(text);
         while(i.hasNext())
         {
@@ -53,7 +53,7 @@ private:
         QTextCharFormat trackFormat;
         trackFormat.setFontWeight(QFont::Bold);
 
-        QRegularExpression trackExpr("TRACK\\s+\\d+\\s*\\D*");
+        static const QRegularExpression trackExpr("TRACK\\s+\\d+\\s*\\D*");
         i = trackExpr.globalMatch(text);
         while(i.hasNext())
         {

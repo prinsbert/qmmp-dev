@@ -29,7 +29,7 @@ PlayState::PlayState(PlayListModel *model) : m_model(model)
 
 ShufflePlayState::ShufflePlayState(PlayListModel * model) : PlayState(model)
 {
-    prepare();
+    ShufflePlayState::prepare();
 }
 
 bool ShufflePlayState::next()
