@@ -179,7 +179,6 @@ void VolumeHandler::checkVolume()
 {
     if(!m_volume) //soft volume
     {
-        emit volumeChanged(m_settings.left, m_settings.right);
         emit volumeChanged(volume());
         emit balanceChanged(balance());
         return;
@@ -199,13 +198,11 @@ void VolumeHandler::checkVolume()
     if (m_settings != v) //volume has been changed
     {
         m_settings = v;
-        emit volumeChanged(v.left, v.right);
         emit volumeChanged(volume());
         emit balanceChanged(balance());
     }
     else if(m_prev_block && !signalsBlocked ()) //signals have been unblocked
     {
-        emit volumeChanged(v.left, v.right);
         emit volumeChanged(volume());
         emit balanceChanged(balance());
     }

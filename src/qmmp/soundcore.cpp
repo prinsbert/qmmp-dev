@@ -52,8 +52,7 @@ SoundCore::SoundCore(QObject *parent)
     connect(m_handler, &StateHandler::bufferingProgress, this, &SoundCore::bufferingProgress);
     connect(QmmpSettings::instance(), &QmmpSettings::eqSettingsChanged, this, &SoundCore::eqSettingsChanged);
     connect(QmmpSettings::instance(), &QmmpSettings::audioSettingsChanged, m_volumeControl, &VolumeHandler::reload);
-    connect(m_volumeControl, SIGNAL(volumeChanged(int,int)), SIGNAL(volumeChanged(int,int)));
-    connect(m_volumeControl, SIGNAL(volumeChanged(int)), SIGNAL(volumeChanged(int)));
+    connect(m_volumeControl, &VolumeHandler::volumeChanged, this, &SoundCore::volumeChanged);
     connect(m_volumeControl, &VolumeHandler::balanceChanged, this, &SoundCore::balanceChanged);
     connect(m_volumeControl, &VolumeHandler::mutedChanged, this, &SoundCore::mutedChanged);
 }
