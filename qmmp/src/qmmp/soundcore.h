@@ -217,17 +217,11 @@ signals:
     /*!
      * This signal is emitted when the state of the SoundCore has changed.
      */
-    void stateChanged (Qmmp::State newState);
+    void stateChanged(Qmmp::State newState);
     /*!
      * Emitted when playback has finished.
      */
     void finished();
-    /*!
-     * Emitted when volume has changed.
-     * @param left Left channel volume level. It should be \b [0..100]
-     * @param right Right channel volume level. It should be \b [0..100]
-     */
-    void volumeChanged(int left, int right);
     /*!
      * Emitted when volume has muted or restored
      * @param muted new state of the volume (\b true - muted, \b false - unmuted)

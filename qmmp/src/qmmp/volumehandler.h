@@ -105,12 +105,6 @@ public:
 
 signals:
     /*!
-     * Emitted when volume is changed.
-     * @param left Left channel volume level. It should be \b 0..100
-     * @param right Right channel volume level. It should be \b 0..100
-     */
-    void volumeChanged(int left, int right);
-    /*!
      * Emitted when the highest volume of the left and right channels has changed.
      * @param volume New value of the highest volume of the left and right channels.
      */
