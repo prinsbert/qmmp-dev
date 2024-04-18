@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=0.12.17
+QMMP_VERSION=0.12.18
 UBUNTU_CODENAMES='trusty xenial bionic'
 BUILD_ROOT=build-root
 
@@ -25,9 +25,9 @@ build ()
     fi
     cd qmmp-$QMMP_VERSION
     if [ "$1" = "trusty" ] || [ "$1" = "xenial" ] ; then
-        debuild -S -sa -d -kF594F6B4
+        debuild -S -sa -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     else
-        debuild -S -sd -d -kF594F6B4
+        debuild -S -sd -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     fi
     cd ..
     cd ..
