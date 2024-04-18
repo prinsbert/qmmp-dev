@@ -52,7 +52,7 @@ Notifier::Notifier(QObject *parent) : QObject(parent)
     m_core = SoundCore::instance();
     connect (m_core, SIGNAL(trackInfoChanged()), SLOT(showMetaData()));
     connect (m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(setState(Qmmp::State)));
-    connect (m_core, SIGNAL(volumeChanged(int,int)), SLOT(showVolume(int,int)));
+    connect (m_core, SIGNAL(volumeChanged(int)), SLOT(showVolume(int)));
 
     //psi tune files (thousands of them!)
     QString psi_data_dir = qgetenv("PSIDATADIR");
@@ -146,18 +146,17 @@ void Notifier::showMetaData()
     }
 }
 
-void Notifier::showVolume(int l, int r)
+void Notifier::showVolume(int v)
 {
-    if (((m_l != l) || (m_r != r)) && m_showVolume)
+    if ((m_volume != v) && m_showVolume)
     {
-        if (m_l >= 0 && !hasFullscreenWindow())
+        if (m_volume >= 0 && !hasFullscreenWindow())
         {
             if (!m_popupWidget)
                 m_popupWidget = new PopupWidget();
-            m_popupWidget->showVolume(qMax(l,r));
+            m_popupWidget->showVolume(m_volume);
         }
-        m_l = l;
-        m_r = r;
+        m_volume = v;
     }
 }
 

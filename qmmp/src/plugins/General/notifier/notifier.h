@@ -46,7 +46,7 @@ public:
 
 private slots:
     void showMetaData();
-    void showVolume(int, int);
+    void showVolume(int v);
     void setState(Qmmp::State state);
 
 private:
@@ -59,7 +59,7 @@ private:
     QPointer<PopupWidget> m_popupWidget;
     bool m_desktop, m_showVolume;
     bool m_psi;
-    int m_l = -1, m_r = -1;
+    int m_volume = -1;
     bool m_isPaused = false;
     bool m_resumeNotification;
     bool m_disableForFullScreen;
