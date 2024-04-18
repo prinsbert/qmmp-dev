@@ -41,7 +41,7 @@ Player2Object::Player2Object(QObject *parent) : QDBusAbstractAdaptor(parent)
     connect(m_core, SIGNAL(trackInfoChanged()), SLOT(emitPropertiesChanged()));
     connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(checkState(Qmmp::State)));
     connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(emitPropertiesChanged()));
-    connect(m_core, SIGNAL(volumeChanged(int,int)), SLOT(emitPropertiesChanged()));
+    connect(m_core, SIGNAL(volumeChanged(int)), SLOT(emitPropertiesChanged()));
     connect(m_core, SIGNAL(elapsedChanged(qint64)), SLOT(checkSeeking(qint64)));
     connect(m_ui_settings, SIGNAL(repeatableListChanged(bool)), SLOT(emitPropertiesChanged()));
     connect(m_ui_settings, SIGNAL(repeatableTrackChanged(bool)), SLOT(emitPropertiesChanged()));
