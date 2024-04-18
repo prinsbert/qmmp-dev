@@ -33,10 +33,10 @@ VolumeHandler::VolumeHandler(QObject *parent) : QObject(parent)
         qFatal("VolumeHandler: only one instance is allowed!");
 
     QSettings settings;
-    m_settings.left = settings.value("Volume/left", 80).toInt();
-    m_settings.right = settings.value("Volume/right", 80).toInt();
+    m_settings.left = settings.value(u"Volume/left"_s, 80).toInt();
+    m_settings.right = settings.value(u"Volume/right"_s, 80).toInt();
     m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL(timeout()), SLOT(checkVolume()));
+    connect(m_timer, &QTimer::timeout, this, &VolumeHandler::checkVolume);
     reload();
     m_instance = this;
 }
@@ -47,15 +47,15 @@ VolumeHandler::~VolumeHandler()
     delete m_volume;
 
     QSettings settings;
-    settings.setValue("Volume/left", m_settings.left);
-    settings.setValue("Volume/right", m_settings.right);
+    settings.setValue(u"Volume/left"_s, m_settings.left);
+    settings.setValue(u"Volume/right"_s, m_settings.right);
 }
 
 void VolumeHandler::setVolume(int left, int right)
 {
     VolumeSettings v;
-    v.left = qBound(0,left,100);
-    v.right = qBound(0,right,100);
+    v.left = qBound(0, left, 100);
+    v.right = qBound(0, right, 100);
     if(m_volume)
     {
         m_volume->setVolume(v);
@@ -80,15 +80,15 @@ void VolumeHandler::changeVolume(int delta)
 void VolumeHandler::setVolume(int volume)
 {
     volume = qBound(0, volume, 100);
-    setVolume(volume-qMax(balance(),0)*volume/100,
-              volume+qMin(balance(),0)*volume/100);
+    setVolume(volume - qMax(balance(),0)*volume/100,
+              volume + qMin(balance(),0)*volume/100);
 }
 
 void VolumeHandler::setBalance(int balance)
 {
     balance = qBound(-100, balance, 100);
-    setVolume(volume()-qMax(balance,0)*volume()/100,
-              volume()+qMin(balance,0)*volume()/100);
+    setVolume(volume() - qMax(balance,0)*volume()/100,
+              volume() + qMin(balance,0)*volume()/100);
 }
 
 void VolumeHandler::setMuted(bool muted)
@@ -238,7 +238,7 @@ void VolumeHandler::reload()
         if(m_volume->flags() & Volume::HasNotifySignal)
         {
             checkVolume();
-            connect(m_volume, SIGNAL(changed()), SLOT(checkVolume()));
+            connect(m_volume, &Volume::changed, this, &VolumeHandler::checkVolume);
         }
         else
         {
@@ -255,6 +255,6 @@ void VolumeHandler::reload()
         blockSignals(true);
         checkVolume();
         blockSignals(false);
-        QTimer::singleShot(125, this, SLOT(checkVolume()));
+        QTimer::singleShot(125, this, &VolumeHandler::checkVolume);
     }
 }

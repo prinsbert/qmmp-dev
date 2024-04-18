@@ -18,7 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QMap>
+#include <QHash>
 #include "audioparameters.h"
 
 AudioParameters::AudioParameters()
@@ -113,45 +113,27 @@ AudioParameters::ByteOrder AudioParameters::byteOrder() const
     }
 }
 
-const QString AudioParameters::toString() const
+QString AudioParameters::toString() const
 {
-    static const struct
-    {
-        Qmmp::AudioFormat format;
-        QString name;
-
-    }
-    format_names [] =
-    {
-    { Qmmp::PCM_S8, "s8" },
-    { Qmmp::PCM_U8, "u8" },
-    { Qmmp::PCM_S16LE, "s16le" },
-    { Qmmp::PCM_S16BE, "s16be" },
-    { Qmmp::PCM_U16LE, "u16le" },
-    { Qmmp::PCM_U16BE, "u16be" },
-    { Qmmp::PCM_S24LE, "s24le" },
-    { Qmmp::PCM_S24BE, "s24be" },
-    { Qmmp::PCM_U24LE, "u24le" },
-    { Qmmp::PCM_U24BE, "u24be" },
-    { Qmmp::PCM_S32LE, "s32le" },
-    { Qmmp::PCM_S32BE, "s32be" },
-    { Qmmp::PCM_U32LE, "u32le" },
-    { Qmmp::PCM_U32BE, "u32be" },
-    { Qmmp::PCM_FLOAT, "float" },
-    { Qmmp::PCM_UNKNOWN, QString() }
+    static const QHash<Qmmp::AudioFormat, QString> names = {
+        { Qmmp::PCM_S8, u"s8"_s },
+        { Qmmp::PCM_U8, u"u8"_s },
+        { Qmmp::PCM_S16LE, u"s16le"_s },
+        { Qmmp::PCM_S16BE, u"s16be"_s },
+        { Qmmp::PCM_U16LE, u"u16le"_s },
+        { Qmmp::PCM_U16BE, u"u16be"_s },
+        { Qmmp::PCM_S24LE, u"s24le"_s },
+        { Qmmp::PCM_S24BE, u"s24be"_s },
+        { Qmmp::PCM_U24LE, u"u24le"_s },
+        { Qmmp::PCM_U24BE, u"u24be"_s },
+        { Qmmp::PCM_S32LE, u"s32le"_s },
+        { Qmmp::PCM_S32BE, u"s32be"_s },
+        { Qmmp::PCM_U32LE, u"u32le"_s },
+        { Qmmp::PCM_U32BE, u"u32be"_s },
+        { Qmmp::PCM_FLOAT, u"float"_s }
     };
 
-    QString name = "unknown";
-    for(int i = 0; format_names[i].format != Qmmp::PCM_UNKNOWN; ++i)
-    {
-        if(m_format == format_names[i].format)
-        {
-            name = format_names[i].name;
-            break;
-        }
-    }
-
-    return QString("%1 Hz, {%2}, %3").arg(m_srate).arg(m_chan_map.toString(), name);
+    return QStringLiteral("%1 Hz, {%2}, %3").arg(m_srate).arg(m_chan_map.toString(), names.value(m_format, u"unknown"_s));
 }
 
 int AudioParameters::sampleSize(Qmmp::AudioFormat format)

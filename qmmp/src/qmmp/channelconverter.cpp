@@ -52,7 +52,7 @@ void ChannelConverter::configure(quint32 srate, ChannelMap in_map)
     for(int i = 0; i < m_out_map.count(); ++i)
     {
         m_reorder_array[i] = m_out_map.indexOf(in_map.at(i % in_map.count()));
-        reorderStringList << QString("%1").arg(m_reorder_array[i]);
+        reorderStringList << QString::number(m_reorder_array[i]);
     }
 
     static const QList<Qmmp::ChannelPosition> leftChannels = { Qmmp::CHAN_FRONT_LEFT, Qmmp::CHAN_SIDE_LEFT, Qmmp::CHAN_REAR_LEFT };
@@ -61,7 +61,7 @@ void ChannelConverter::configure(quint32 srate, ChannelMap in_map)
     if(m_out_map.count() == 2 && m_reorder_array[0] == -1 && m_reorder_array[1] == -1)
     {
         //remapping is not necessary
-        if((m_disabled = (leftChannels.contains(in_map[0]) && leftChannels.contains(m_out_map[0]))))
+        if((m_disabled = (leftChannels.contains(in_map.constFirst()) && leftChannels.contains(m_out_map.constFirst()))))
             return;
 
         //swap channels
@@ -70,7 +70,7 @@ void ChannelConverter::configure(quint32 srate, ChannelMap in_map)
     }
 
     qDebug("ChannelConverter: {%s} ==> {%s}; {%s}", qPrintable(in_map.toString()),
-           qPrintable(m_out_map.toString()), qPrintable(reorderStringList.join(",")));
+           qPrintable(m_out_map.toString()), qPrintable(reorderStringList.join(QChar(','))));
 }
 
 void ChannelConverter::applyEffect(Buffer *b)

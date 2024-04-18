@@ -46,16 +46,16 @@ SoundCore::SoundCore(QObject *parent)
     m_instance = this;
     m_handler = new StateHandler(this);
     m_volumeControl = new VolumeHandler(this);
-    connect(m_handler, SIGNAL(elapsedChanged(qint64)), SIGNAL(elapsedChanged(qint64)));
-    connect(m_handler, SIGNAL(bitrateChanged(int)), SIGNAL(bitrateChanged(int)));
-    connect(m_handler, SIGNAL(audioParametersChanged(AudioParameters)), SIGNAL(audioParametersChanged(AudioParameters)));
-    connect(m_handler, SIGNAL(bufferingProgress(int)), SIGNAL(bufferingProgress(int)));
-    connect(QmmpSettings::instance(), SIGNAL(eqSettingsChanged()), SIGNAL(eqSettingsChanged()));
-    connect(QmmpSettings::instance(), SIGNAL(audioSettingsChanged()), m_volumeControl, SLOT(reload()));
+    connect(m_handler, &StateHandler::elapsedChanged, this, &SoundCore::elapsedChanged);
+    connect(m_handler, &StateHandler::bitrateChanged, this, &SoundCore::bitrateChanged);
+    connect(m_handler, &StateHandler::audioParametersChanged, this, &SoundCore::audioParametersChanged);
+    connect(m_handler, &StateHandler::bufferingProgress, this, &SoundCore::bufferingProgress);
+    connect(QmmpSettings::instance(), &QmmpSettings::eqSettingsChanged, this, &SoundCore::eqSettingsChanged);
+    connect(QmmpSettings::instance(), &QmmpSettings::audioSettingsChanged, m_volumeControl, &VolumeHandler::reload);
     connect(m_volumeControl, SIGNAL(volumeChanged(int,int)), SIGNAL(volumeChanged(int,int)));
     connect(m_volumeControl, SIGNAL(volumeChanged(int)), SIGNAL(volumeChanged(int)));
-    connect(m_volumeControl, SIGNAL(balanceChanged(int)), SIGNAL(balanceChanged(int)));
-    connect(m_volumeControl, SIGNAL(mutedChanged(bool)), SIGNAL(mutedChanged(bool)));
+    connect(m_volumeControl, &VolumeHandler::balanceChanged, this, &SoundCore::balanceChanged);
+    connect(m_volumeControl, &VolumeHandler::mutedChanged, this, &SoundCore::mutedChanged);
 }
 
 SoundCore::~SoundCore()

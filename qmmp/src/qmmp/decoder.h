@@ -120,7 +120,7 @@ public:
     /*!
      * Returns track properties
      */
-    const QMap<Qmmp::TrackProperty, QString> &properties() const;
+    QMap<Qmmp::TrackProperty, QString> properties() const;
     /*!
      * Returns DecoderFactory pointer which supports file \b path or nullptr if file \b path is unsupported
      * @param path Full local file path.

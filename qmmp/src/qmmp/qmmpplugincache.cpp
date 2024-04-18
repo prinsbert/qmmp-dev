@@ -37,7 +37,7 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
     QFileInfo info(file);
     m_path = info.QFileInfo::canonicalFilePath();
 
-    settings->beginGroup("PluginCache");
+    settings->beginGroup(u"PluginCache"_s);
     QString key = m_path;
 #ifndef Q_OS_WIN
     key.remove(0,1);
@@ -51,9 +51,9 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
         {
             m_shortName = values.at(0);
             m_priority = values.at(1).toInt();
-            m_protocols = values.at(2).split(";", Qt::SkipEmptyParts);
-            m_filters = values.at(3).split(";", Qt::SkipEmptyParts);
-            m_contentTypes = values.at(4).split(";", Qt::SkipEmptyParts);
+            m_protocols = values.at(2).split(QChar(';'), Qt::SkipEmptyParts);
+            m_filters = values.at(3).split(QChar(';'), Qt::SkipEmptyParts);
+            m_contentTypes = values.at(4).split(QChar(';'), Qt::SkipEmptyParts);
             update = (info.lastModified().toString(Qt::ISODate) != values.at(5));
         }
     }
@@ -101,14 +101,14 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
             m_error = true;
         }
 
-        if (!m_error)
+        if(!m_error)
         {
             QStringList values;
             values << m_shortName;
             values << QString::number(m_priority);
-            values << m_protocols.join(";");
-            values << m_filters.join(";");
-            values << m_contentTypes.join(";");
+            values << m_protocols.join(QChar(';'));
+            values << m_filters.join(QChar(';'));
+            values << m_contentTypes.join(QChar(';'));
             values << info.lastModified().toString(Qt::ISODate);
             settings->setValue(m_path, values);
             qDebug("QmmpPluginCache: added cache item \"%s=%s\"",
@@ -243,14 +243,14 @@ void QmmpPluginCache::loadTranslation(const QString &translation)
 
 void QmmpPluginCache::cleanup(QSettings *settings)
 {
-    settings->beginGroup("PluginCache");
+    settings->beginGroup(u"PluginCache"_s);
 
     for(const QString &key : settings->allKeys())
     {
 #ifdef Q_OS_WIN
         if(!QFile::exists(key))
 #else
-        if(!QFile::exists("/" + key))
+        if(!QFile::exists(u"/"_s + key))
 #endif
         {
             settings->remove(key);

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2021 by Ilya Kotov                                      *
+ *   Copyright (C) 2021-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,9 +23,11 @@
 #include <QtDebug>
 #include "qmmptextcodec.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 QmmpTextCodec::QmmpTextCodec(const QByteArray &charset) : m_name(charset.toUpper())
 {
-    if(m_name == "UTF-8" || m_name == "UTF-16")
+    if(m_name == "UTF-8"_ba || m_name == "UTF-16"_ba)
         return;
 
     if((m_to = iconv_open(m_name.constData(), "UTF-16")) == (iconv_t)(-1))
@@ -56,9 +58,9 @@ const QByteArray &QmmpTextCodec::name() const
 
 QString QmmpTextCodec::toUnicode(const QByteArray &a) const
 {
-    if(m_name == "UTF-16")
+    if(m_name == "UTF-16"_ba)
         return QString::fromUtf16(reinterpret_cast<const char16_t *>(a.data()), a.size() / 2);
-    if(!m_from || m_name == "UTF-8")
+    if(!m_from || m_name == "UTF-8"_ba)
         return QString::fromUtf8(a);
 
     size_t inBytesLeft = 0;
@@ -115,9 +117,9 @@ QString QmmpTextCodec::toUnicode(const char *chars) const
 
 QByteArray QmmpTextCodec::fromUnicode(const QString &str) const
 {
-    if(m_name == "UTF-16")
+    if(m_name == "UTF-16"_ba)
         return QByteArray(reinterpret_cast<const char*>(str.utf16()), str.size() * 2);
-    if(!m_from || m_name == "UTF-8")
+    if(!m_from || m_name == "UTF-8"_ba)
         return str.toUtf8();
 
     size_t inBytesLeft = 0;
@@ -173,48 +175,48 @@ QByteArray QmmpTextCodec::fromUnicode(const QString &str) const
 const QStringList &QmmpTextCodec::availableCharsets()
 {
     static const QStringList charsets = {
-        "BIG5",
-        "EUC-JP",
-        "EUC-KR",
-        "GB18030",
-        "GBK",
-        "IBM866",
-        "ISO-2022-JP",
-        "ISO-8859-10",
-        "ISO-8859-13",
-        "ISO-8859-14",
-        "ISO-8859-15",
-        "ISO-8859-16",
-        "ISO-8859-1",
-        "ISO-8859-2",
-        "ISO-8859-3",
-        "ISO-8859-4",
-        "ISO-8859-5",
-        "ISO-8859-6",
-        "ISO-8859-7",
-        "ISO-8859-8",
-        "ISO-8859-8-I",
-        "KOI8-R",
-        "KOI8-U",
-        "MACINTOSH",
-        "SHIFT_JIS",
-        "UTF-32",
-        "UTF-32LE",
-        "UTF-32BE",
-        "UTF-16",
-        "UTF-16LE",
-        "UTF-16BE",
-        "UTF-8",
-        "WINDOWS-1250",
-        "WINDOWS-1251",
-        "WINDOWS-1252",
-        "WINDOWS-1253",
-        "WINDOWS-1254",
-        "WINDOWS-1255",
-        "WINDOWS-1256",
-        "WINDOWS-1257",
-        "WINDOWS-1258",
-        "WINDOWS-874"
+        u"BIG5"_s,
+        u"EUC-JP"_s,
+        u"EUC-KR"_s,
+        u"GB18030"_s,
+        u"GBK"_s,
+        u"IBM866"_s,
+        u"ISO-2022-JP"_s,
+        u"ISO-8859-10"_s,
+        u"ISO-8859-13"_s,
+        u"ISO-8859-14"_s,
+        u"ISO-8859-15"_s,
+        u"ISO-8859-16"_s,
+        u"ISO-8859-1"_s,
+        u"ISO-8859-2"_s,
+        u"ISO-8859-3"_s,
+        u"ISO-8859-4"_s,
+        u"ISO-8859-5"_s,
+        u"ISO-8859-6"_s,
+        u"ISO-8859-7"_s,
+        u"ISO-8859-8"_s,
+        u"ISO-8859-8-I"_s,
+        u"KOI8-R"_s,
+        u"KOI8-U"_s,
+        u"MACINTOSH"_s,
+        u"SHIFT_JIS"_s,
+        u"UTF-32"_s,
+        u"UTF-32LE"_s,
+        u"UTF-32BE"_s,
+        u"UTF-16"_s,
+        u"UTF-16LE"_s,
+        u"UTF-16BE"_s,
+        u"UTF-8"_s,
+        u"WINDOWS-1250"_s,
+        u"WINDOWS-1251"_s,
+        u"WINDOWS-1252"_s,
+        u"WINDOWS-1253"_s,
+        u"WINDOWS-1254"_s,
+        u"WINDOWS-1255"_s,
+        u"WINDOWS-1256"_s,
+        u"WINDOWS-1257"_s,
+        u"WINDOWS-1258"_s,
+        u"WINDOWS-874"_s
     };
 
     return charsets;

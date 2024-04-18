@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Ilya Kotov                                      *
+ *   Copyright (C) 2014-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -64,25 +64,24 @@ const ChannelMap ChannelMap::remaped() const
 
 const QString ChannelMap::toString() const
 {
-    QStringList list;
-    QHash <Qmmp::ChannelPosition, QString> names = {
-        { Qmmp::CHAN_NULL, "NA" },
-        { Qmmp::CHAN_FRONT_LEFT, "FL" },
-        { Qmmp::CHAN_FRONT_RIGHT, "FR" },
-        { Qmmp::CHAN_REAR_LEFT, "RL" },
-        { Qmmp::CHAN_REAR_RIGHT, "RR" },
-        { Qmmp::CHAN_FRONT_CENTER, "FC" },
-        { Qmmp::CHAN_REAR_CENTER, "RC" },
-        { Qmmp::CHAN_LFE, "LFE" },
-        { Qmmp::CHAN_SIDE_LEFT, "SL" },
-        { Qmmp::CHAN_SIDE_RIGHT, "SR" }
+    static const QHash <Qmmp::ChannelPosition, QString> names = {
+        { Qmmp::CHAN_NULL, u"NA"_s },
+        { Qmmp::CHAN_FRONT_LEFT, u"FL"_s },
+        { Qmmp::CHAN_FRONT_RIGHT, u"FR"_s },
+        { Qmmp::CHAN_REAR_LEFT, u"RL"_s },
+        { Qmmp::CHAN_REAR_RIGHT, u"RR"_s },
+        { Qmmp::CHAN_FRONT_CENTER, u"FC"_s },
+        { Qmmp::CHAN_REAR_CENTER, u"RC"_s },
+        { Qmmp::CHAN_LFE, u"LFE"_s },
+        { Qmmp::CHAN_SIDE_LEFT, u"SL"_s },
+        { Qmmp::CHAN_SIDE_RIGHT, u"SR"_s }
     };
 
+    QStringList list;
     for(const Qmmp::ChannelPosition channel : qAsConst(*this))
-    {
        list << names.value(channel);
-    }
-    return list.join(",");
+
+    return list.join(QChar(','));
 }
 
 void ChannelMap::generateMap(int channels)

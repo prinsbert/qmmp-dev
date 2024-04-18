@@ -62,7 +62,7 @@ public:
     /*!
      * Returns all stream information.
      */
-    const QHash <QString, QString> &streamInfo() const;
+    QHash<QString, QString> streamInfo() const;
 
 private:
     QHash<QString, QString> m_streamInfo;
@@ -75,7 +75,7 @@ class TrackInfoEvent : public QEvent
 {
 public:
     TrackInfoEvent(const TrackInfo &info);
-    virtual ~TrackInfoEvent();
+    virtual ~TrackInfoEvent() = default;
 
     const TrackInfo &trackInfo() const;
 

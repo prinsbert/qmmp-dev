@@ -33,34 +33,34 @@ QmmpSettings::QmmpSettings(QObject *parent) : QObject(parent)
     m_instance = this;
     QSettings settings;
     //replaygain settings
-    settings.beginGroup("ReplayGain");
-    m_rg_mode = (ReplayGainMode) settings.value("mode", REPLAYGAIN_DISABLED).toInt();
-    m_rg_preamp = settings.value("preamp", 0.0).toDouble();
-    m_rg_defaut_gain = settings.value("default_gain", 0.0).toDouble();
-    m_rg_prevent_clipping = settings.value("prevent_clipping", true).toBool();
+    settings.beginGroup(u"ReplayGain"_s);
+    m_rg_mode = (ReplayGainMode) settings.value(u"mode"_s, REPLAYGAIN_DISABLED).toInt();
+    m_rg_preamp = settings.value(u"preamp"_s, 0.0).toDouble();
+    m_rg_defaut_gain = settings.value(u"default_gain"_s, 0.0).toDouble();
+    m_rg_prevent_clipping = settings.value(u"prevent_clipping"_s, true).toBool();
     settings.endGroup();
     //audio settings
-    m_aud_software_volume = settings.value("Output/software_volume", false).toBool();
-    m_aud_format = static_cast<Qmmp::AudioFormat>(settings.value("Output/format", Qmmp::PCM_S16LE).toInt());
-    m_aud_dithering = settings.value("Output/dithering", true).toBool();
-    m_volume_step = settings.value("Output/volume_step", 5).toInt();
-    m_average_bitrate = settings.value("Output/average_bitrate", false).toBool();
+    m_aud_software_volume = settings.value(u"Output/software_volume"_s, false).toBool();
+    m_aud_format = static_cast<Qmmp::AudioFormat>(settings.value(u"Output/format"_s, Qmmp::PCM_S16LE).toInt());
+    m_aud_dithering = settings.value(u"Output/dithering"_s, true).toBool();
+    m_volume_step = settings.value(u"Output/volume_step"_s, 5).toInt();
+    m_average_bitrate = settings.value(u"Output/average_bitrate"_s, false).toBool();
     //cover settings
-    settings.beginGroup("Cover");
-    m_cover_inc = settings.value("include", (QStringList() << "*.jpg" << "*.png" << "*.webp")).toStringList();
-    m_cover_exclude = settings.value("exclude", (QStringList() << "*back*")).toStringList();
-    m_cover_depth = settings.value("depth", 0).toInt();
-    m_cover_use_files = settings.value("use_files", true).toBool();
+    settings.beginGroup(u"Cover"_s);
+    m_cover_inc = settings.value(u"include"_s, QStringList{ u"*.jpg"_s , u"*.png"_s , u"*.webp"_s }).toStringList();
+    m_cover_exclude = settings.value(u"exclude"_s, QStringList{ u"*back*"_s }).toStringList();
+    m_cover_depth = settings.value(u"depth"_s, 0).toInt();
+    m_cover_use_files = settings.value(u"use_files"_s, true).toBool();
     settings.endGroup();
     //network settings
-    m_proxy_enabled = settings.value("Proxy/use_proxy", false).toBool();
-    m_proxy_auth = settings.value("Proxy/authentication", false).toBool();
-    m_proxy_type = static_cast<ProxyType>(settings.value("Proxy/proxy_type", HTTP_PROXY).toInt());
-    m_proxy_url = settings.value("Proxy/url").toUrl();
+    m_proxy_enabled = settings.value(u"Proxy/use_proxy"_s, false).toBool();
+    m_proxy_auth = settings.value(u"Proxy/authentication"_s, false).toBool();
+    m_proxy_type = static_cast<ProxyType>(settings.value(u"Proxy/proxy_type"_s, HTTP_PROXY).toInt());
+    m_proxy_url = settings.value(u"Proxy/url"_s).toUrl();
     //buffer
-    m_buffer_size = settings.value("Output/buffer_size", 500).toInt();
+    m_buffer_size = settings.value(u"Output/buffer_size"_s, 500).toInt();
     //file type determination
-    m_determine_by_content = settings.value("Misc/determine_file_by_content", false).toBool();
+    m_determine_by_content = settings.value(u"Misc/determine_file_by_content"_s, false).toBool();
 }
 
 QmmpSettings::~QmmpSettings()
@@ -195,13 +195,13 @@ void QmmpSettings::readEqSettings(EqSettings::Bands bands)
 {
     m_eq_settings = EqSettings(bands);
     QSettings settings;
-    settings.beginGroup(QString("Equalizer_%1").arg(bands));
+    settings.beginGroup(QStringLiteral("Equalizer_%1").arg(bands));
     for (int i = 0; i < bands; ++i)
-        m_eq_settings.setGain(i, settings.value("band_"+ QString("%1").arg(i), 0).toDouble());
-    m_eq_settings.setPreamp(settings.value("preamp", 0).toDouble());
-    m_eq_settings.setEnabled(settings.value("enabled", false).toBool());
+        m_eq_settings.setGain(i, settings.value(QStringLiteral("band_%1").arg(i), 0).toDouble());
+    m_eq_settings.setPreamp(settings.value(u"preamp"_s, 0).toDouble());
+    m_eq_settings.setEnabled(settings.value(u"enabled"_s, false).toBool());
     settings.endGroup();
-    m_eq_settings.setTwoPasses(settings.value("Equalizer/two_passes", true).toBool());
+    m_eq_settings.setTwoPasses(settings.value(u"Equalizer/two_passes"_s, true).toBool());
     emit eqSettingsChanged();
 }
 
@@ -244,42 +244,42 @@ void QmmpSettings::sync()
         qDebug("QmmpSettings: saving settings...");
         QSettings settings;
         //replaygain settings
-        settings.beginGroup("ReplayGain");
-        settings.setValue("mode", m_rg_mode);
-        settings.setValue("preamp", m_rg_preamp);
-        settings.setValue("default_gain", m_rg_defaut_gain);
-        settings.setValue("prevent_clipping", m_rg_prevent_clipping);
+        settings.beginGroup(u"ReplayGain"_s);
+        settings.setValue(u"mode"_s, m_rg_mode);
+        settings.setValue(u"preamp", m_rg_preamp);
+        settings.setValue(u"default_gain"_s, m_rg_defaut_gain);
+        settings.setValue(u"prevent_clipping"_s, m_rg_prevent_clipping);
         settings.endGroup();
         //audio settings
-        settings.setValue("Output/software_volume", m_aud_software_volume);
-        settings.setValue("Output/format", m_aud_format);
-        settings.setValue("Output/dithering", m_aud_dithering);
-        settings.setValue("Output/volume_step", m_volume_step);
-        settings.setValue("Output/average_bitrate", m_average_bitrate);
+        settings.setValue(u"Output/software_volume"_s, m_aud_software_volume);
+        settings.setValue(u"Output/format"_s, m_aud_format);
+        settings.setValue(u"Output/dithering"_s, m_aud_dithering);
+        settings.setValue(u"Output/volume_step"_s, m_volume_step);
+        settings.setValue(u"Output/average_bitrate"_s, m_average_bitrate);
         //cover settings
-        settings.beginGroup("Cover");
-        settings.setValue("include", m_cover_inc);
-        settings.setValue("exclude", m_cover_exclude);
-        settings.setValue("depth", m_cover_depth);
-        settings.setValue("use_files", m_cover_use_files);
+        settings.beginGroup(u"Cover"_s);
+        settings.setValue(u"include"_s, m_cover_inc);
+        settings.setValue(u"exclude"_s, m_cover_exclude);
+        settings.setValue(u"depth"_s, m_cover_depth);
+        settings.setValue(u"use_files"_s, m_cover_use_files);
         settings.endGroup();
         //network settings
-        settings.setValue("Proxy/use_proxy", m_proxy_enabled);
-        settings.setValue("Proxy/authentication", m_proxy_auth);
-        settings.setValue("Proxy/url", m_proxy_url);
-        settings.setValue("Proxy/proxy_type", m_proxy_type);
+        settings.setValue(u"Proxy/use_proxy"_s, m_proxy_enabled);
+        settings.setValue(u"Proxy/authentication"_s, m_proxy_auth);
+        settings.setValue(u"Proxy/url"_s, m_proxy_url);
+        settings.setValue(u"Proxy/proxy_type"_s, m_proxy_type);
         //equalizer settings
-        settings.beginGroup(QString("Equalizer_%1").arg(m_eq_settings.bands()));
+        settings.beginGroup(QStringLiteral("Equalizer_%1").arg(m_eq_settings.bands()));
         for (int i = 0; i < m_eq_settings.bands(); ++i)
-            settings.setValue("band_"+ QString("%1").arg(i), m_eq_settings.gain(i));
-        settings.setValue("preamp", m_eq_settings.preamp());
-        settings.setValue("enabled", m_eq_settings.isEnabled());
+            settings.setValue(QStringLiteral("band_%1").arg(i), m_eq_settings.gain(i));
+        settings.setValue(u"preamp"_s, m_eq_settings.preamp());
+        settings.setValue(u"enabled"_s, m_eq_settings.isEnabled());
         settings.endGroup();
-        settings.setValue("Equalizer/two_passes", m_eq_settings.twoPasses());
+        settings.setValue(u"Equalizer/two_passes"_s, m_eq_settings.twoPasses());
         //buffer size
-        settings.setValue("Output/buffer_size", m_buffer_size);
+        settings.setValue(u"Output/buffer_size"_s, m_buffer_size);
         //file type determination
-        settings.setValue("Misc/determine_file_by_content", m_determine_by_content);
+        settings.setValue(u"Misc/determine_file_by_content"_s, m_determine_by_content);
         m_saveSettings = false;  //protect from multiple calls
     }
 }

@@ -50,7 +50,7 @@ public:
     /*!
      * Destructor.
      */
-    virtual ~TagModel();
+    virtual ~TagModel() = default;
     /*!
      * Returns tag name.
      * Subclass should reimplement this fucntion.
