@@ -40,9 +40,10 @@ QString IncDecVolumeCommandLineOption::translation() const
     return QLatin1String(":/incdecvolume_plugin_");
 }
 
-QString IncDecVolumeCommandLineOption::executeCommand(int id, const QStringList &args)
+QString IncDecVolumeCommandLineOption::executeCommand(int id, const QStringList &args, const QString &cwd)
 {
     Q_UNUSED(args);
+    Q_UNUSED(cwd);
 
     switch (id)
     {
