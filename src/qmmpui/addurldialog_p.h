@@ -24,17 +24,20 @@
 #include <QDialog>
 #include <QPointer>
 #include <QUrl>
-#include "ui_addurldialog.h"
 
 class QNetworkAccessManager;
 class QNetworkReply;
 class PlayListModel;
 class PlayListDownloader;
 
+namespace Ui {
+class AddUrlDialog;
+}
+
 /*! @internal
    @author Vladimir Kuznetsov <vovanec@gmail.com>
  */
-class AddUrlDialog : public QDialog , private Ui::AddUrlDialog
+class AddUrlDialog : public QDialog
 {
     Q_OBJECT
 public:
@@ -50,6 +53,7 @@ private:
     void setModel(PlayListModel*);
     void addToHistory(const QString &path);
     static QPointer<AddUrlDialog> m_instance;
+    Ui::AddUrlDialog *m_ui;
     PlayListModel *m_model;
     PlayListDownloader *m_downloader;
     QStringList m_history;

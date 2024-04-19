@@ -30,18 +30,19 @@
 #include "playlistmodel.h"
 #include "playlistdownloader.h"
 #include "qmmpuisettings.h"
+#include "ui_addurldialog.h"
 #include "addurldialog_p.h"
 
 #define HISTORY_SIZE 10
 
-AddUrlDialog::AddUrlDialog(QWidget *parent) : QDialog(parent)
+AddUrlDialog::AddUrlDialog(QWidget *parent) : QDialog(parent), m_ui(new Ui::AddUrlDialog)
 {
-    setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     setAttribute(Qt::WA_QuitOnClose, false);
     QSettings settings;
-    m_history = settings.value("URLDialog/history").toStringList();
-    urlComboBox->addItems(m_history);
+    m_history = settings.value(u"URLDialog/history"_s).toStringList();
+    m_ui->urlComboBox->addItems(m_history);
     m_downloader = new PlayListDownloader(this);
     connect(m_downloader, SIGNAL(finished(bool,QString)), SLOT(onFinished(bool,QString)));
 
@@ -51,7 +52,7 @@ AddUrlDialog::AddUrlDialog(QWidget *parent) : QDialog(parent)
         if(url.isValid() && (MetaDataManager::instance()->protocols().contains(url.scheme()) ||
                              MetaDataManager::hasMatch(MetaDataManager::instance()->regExps(), url.toString())))
         {
-            urlComboBox->setEditText(QApplication::clipboard()->text().trimmed());
+            m_ui->urlComboBox->setEditText(QApplication::clipboard()->text().trimmed());
         }
     }
 }
@@ -61,7 +62,8 @@ AddUrlDialog::~AddUrlDialog()
     while (m_history.size() > HISTORY_SIZE)
         m_history.removeLast();
     QSettings settings;
-    settings.setValue("URLDialog/history", m_history);
+    settings.setValue(u"URLDialog/history"_s, m_history);
+    delete m_ui;
 }
 
 QPointer<AddUrlDialog> AddUrlDialog::m_instance = nullptr;
@@ -86,20 +88,20 @@ void AddUrlDialog::onFinished(bool ok, const QString &message)
     else
     {
         QMessageBox::warning(this, tr("Error"), message);
-        addButton->setEnabled(true);
+        m_ui->addButton->setEnabled(true);
     }
 }
 
 void AddUrlDialog::accept()
 {
-    addButton->setEnabled(false);
-    if(urlComboBox->currentText().isEmpty())
+    m_ui->addButton->setEnabled(false);
+    if(m_ui->urlComboBox->currentText().isEmpty())
     {
          QDialog::accept();
          return;
     }
 
-    QString path = urlComboBox->currentText().trimmed();
+    QString path = m_ui->urlComboBox->currentText().trimmed();
 
     if(QFile::exists(path)) //is local file
     {
@@ -109,8 +111,8 @@ void AddUrlDialog::accept()
         return;
     }
 
-    if(!path.startsWith("http://") && !path.contains("://"))
-        path.prepend("http://");
+    if(!path.startsWith(u"http://"_s) && !path.contains(u"://"_s))
+        path.prepend(u"http://"_s);
 
     if(MetaDataManager::hasMatch(MetaDataManager::instance()->regExps(), path))
     {
@@ -120,7 +122,7 @@ void AddUrlDialog::accept()
         return;
     }
 
-    if (path.startsWith("http://") || path.startsWith("https://")) //try to download playlist
+    if (path.startsWith(u"http://"_s) || path.startsWith(u"https://"_s)) //try to download playlist
     {
         m_downloader->start(QUrl(path), m_model);
         addToHistory(path);
