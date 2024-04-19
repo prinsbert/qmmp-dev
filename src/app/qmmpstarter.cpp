@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -148,7 +148,7 @@ QMMPStarter::QMMPStarter() : QObject()
                     tmp_stream.copyfmt(cout);
                     streambuf *old_stream = cout.rdbuf(tmp_stream.rdbuf());
 #endif
-                    cout << qPrintable(CommandLineManager::executeCommand(key, commands.value(key)).trimmed()) << endl;
+                    cout << qPrintable(out.trimmed()) << endl;
 #ifdef Q_OS_WIN
                     string text = tmp_stream.str();
                     QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
