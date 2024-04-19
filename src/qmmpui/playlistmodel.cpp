@@ -859,12 +859,10 @@ int PlayListModel::bottommostInSelection(int row)
     return trackCount() - 1;
 }
 
-const SimpleSelection& PlayListModel::getSelection(int row)
+SimpleSelection PlayListModel::getSelection(int row)
 {
-    m_selection.m_top = topmostInSelection(row);
-    m_selection.m_bottom = bottommostInSelection(row);
-    m_selection.m_selected_indexes = selectedIndexes();
-    return m_selection;
+    SimpleSelection sel = { .top = topmostInSelection(row), .bottom = bottommostInSelection(row) };
+    return sel;
 }
 
 QList<int> PlayListModel::selectedLines() const

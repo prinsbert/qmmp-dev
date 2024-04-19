@@ -50,29 +50,14 @@ class PlayListTask;
 struct SimpleSelection
 {
     /*!
-     * Returns \p true if this selection is valid; otherwise returns returns \p false.
-     */
-    inline bool isValid()const
-    {
-        return (m_bottom != -1) && (m_top != -1);
-    }
-    /*!
-     * Prints object state.
-     */
-    inline void dump()const
-    {
-        qDebug("top: %d\tbotom: %d", m_top, m_bottom);
-    }
-    /*!
      * Returns number of selected items.
      */
     inline int count()const
     {
-        return m_bottom - m_top + 1;
+        return bottom - top + 1;
     }
-    int m_bottom = -1;              /*!< Bottom of the selection */
-    int m_top = 1;                  /*!< Top of the selection   */
-    QList<int> m_selected_indexes;  /*!< Selected items numbers */
+    int top = 1;                  /*!< Top of the selection   */
+    int bottom = -1;              /*!< Bottom of the selection */
 };
 /*! @brief The PlayListModel class provides a data model for the playlist.
  *
@@ -260,7 +245,7 @@ public:
      * Returns current selection(playlist can contain a lot of selections,
      * this method returns selection which \b row belongs to)
      */
-    const SimpleSelection& getSelection(int row);
+    SimpleSelection getSelection(int row);
     QList<int> selectedLines() const;
     void setSelectedLine(int line, bool selected = true);
     /*!
@@ -601,7 +586,6 @@ private:
     PlayListTrack *m_current_track = nullptr;
     PlayListTrack *m_stop_track = nullptr;
     int m_current = -1;
-    SimpleSelection m_selection;  /*!< This flyweight object represents current selection. */
     PlayState* m_play_state; /*!< Current playing state (Normal or Shuffle) */
     qint64 m_total_duration = 0;
     FileLoader *m_loader;
