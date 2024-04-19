@@ -39,7 +39,7 @@ public:
     void registerOprions() override;
     QString shortName() const override;
     QString translation() const override;
-    QString executeCommand(int id, const QStringList &args) override;
+    QString executeCommand(int id, const QStringList &args, const QString &cwd) override;
 
 private:
     enum Command

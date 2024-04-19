@@ -41,8 +41,10 @@ QString SeekOption::translation() const
     return QLatin1String(":/seek_plugin_");
 }
 
-QString SeekOption::executeCommand(int id, const QStringList &args)
+QString SeekOption::executeCommand(int id, const QStringList &args, const QString &cwd)
 {
+    Q_UNUSED(cwd);
+
     SoundCore *core = SoundCore::instance();
     if(core->state() != Qmmp::Playing && core->duration())
         return QString();

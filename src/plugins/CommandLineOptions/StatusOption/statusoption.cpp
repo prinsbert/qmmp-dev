@@ -45,8 +45,9 @@ QString StatusOption::translation() const
     return QLatin1String(":/status_plugin_");
 }
 
-QString StatusOption::executeCommand(int id, const QStringList &args)
+QString StatusOption::executeCommand(int id, const QStringList &args, const QString &cwd)
 {
+    Q_UNUSED(cwd);
     SoundCore *core = SoundCore::instance();
     QString out;
     switch (id)

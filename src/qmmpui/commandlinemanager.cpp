@@ -73,7 +73,7 @@ void CommandLineManager::checkOptions()
     }
 }
 
-QString CommandLineManager::executeCommand(const QString &name, const QStringList &args)
+QString CommandLineManager::executeCommand(const QString &name, const QStringList &args, const QString &currentWorkingDir)
 {
     checkOptions();
     bool started = UiHelper::instance() && SoundCore::instance() && MediaPlayer::instance();
@@ -85,7 +85,7 @@ QString CommandLineManager::executeCommand(const QString &name, const QStringLis
             continue;
 
         if(started || (opt->flags(id) & CommandLineHandler::NoStart))
-            return opt->executeCommand(id, args);
+            return opt->executeCommand(id, args, currentWorkingDir);
 
         qWarning("CommandLineManager: player objects are not created");
         return QString();

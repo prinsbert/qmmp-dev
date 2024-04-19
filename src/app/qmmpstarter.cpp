@@ -92,7 +92,7 @@ QMMPStarter::QMMPStarter() : QObject()
     QStringList tmp = qApp->arguments().mid(1);
 
     argString = tmp.join("|||");
-    QHash <QString, QStringList> commands = m_option_manager->splitArgs(tmp);
+    QHash<QString, QStringList> commands = m_option_manager->splitArgs(tmp);
 
     if(commands.contains("--help") || commands.contains("-h"))
     {
@@ -134,28 +134,28 @@ QMMPStarter::QMMPStarter() : QObject()
             return;
         }
 
-        if(flags & CommandLineHandler::NoStart)
-        {
-            m_exit_code = EXIT_SUCCESS;
-            m_finished = true;
-            QString out = CommandLineManager::executeCommand(key, commands.value(key)).trimmed();
-            if(!out.isEmpty())
-            {
-                //show dialog with command line documentation under ms windows
-#ifdef Q_OS_WIN
-                stringstream tmp_stream;
-                tmp_stream.copyfmt(cout);
-                streambuf *old_stream = cout.rdbuf(tmp_stream.rdbuf());
-#endif
-                cout << qPrintable(CommandLineManager::executeCommand(key, commands.value(key)).trimmed()) << endl;
-#ifdef Q_OS_WIN
-                string text = tmp_stream.str();
-                QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
-                cout.rdbuf(old_stream); //restore old stream buffer
-#endif
-            }
-            return;
-        }
+//        if(flags & CommandLineHandler::NoStart)
+//        {
+//            m_exit_code = EXIT_SUCCESS;
+//            m_finished = true;
+//            QString out = CommandLineManager::executeCommand(key, commands.value(key)).trimmed();
+//            if(!out.isEmpty())
+//            {
+//                //show dialog with command line documentation under ms windows
+//#ifdef Q_OS_WIN
+//                stringstream tmp_stream;
+//                tmp_stream.copyfmt(cout);
+//                streambuf *old_stream = cout.rdbuf(tmp_stream.rdbuf());
+//#endif
+//                cout << qPrintable(CommandLineManager::executeCommand(key, commands.value(key)).trimmed()) << endl;
+//#ifdef Q_OS_WIN
+//                string text = tmp_stream.str();
+//                QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
+//                cout.rdbuf(old_stream); //restore old stream buffer
+//#endif
+//            }
+//            return;
+//        }
     }
 
     m_server = new QLocalServer(this);
@@ -414,7 +414,7 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
     }
     if(!paths.isEmpty())
     {
-        return m_option_manager->executeCommand(QString(), paths, cwd); //add paths only
+        //return m_option_manager->executeCommand(QString(), paths, cwd); //add paths only
     }
     QHash<QString, QStringList> commands = m_option_manager->splitArgs(slist);
     if(commands.isEmpty())
@@ -426,9 +426,11 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
         if(key == "--no-start" || key == "--ui")
             continue;
         if (CommandLineManager::hasOption(key))
-            return CommandLineManager::executeCommand(key, commands.value(key));
-        if (m_option_manager->identify(key))
-            out += m_option_manager->executeCommand(key, commands.value(key), cwd);
+            return CommandLineManager::executeCommand(key, commands.value(key), cwd);
+
+        int id = m_option_manager->identify(key);
+        if(id >= 0)
+            out += m_option_manager->executeCommand(id, commands.value(key), cwd);
         else
             return QString();
     }

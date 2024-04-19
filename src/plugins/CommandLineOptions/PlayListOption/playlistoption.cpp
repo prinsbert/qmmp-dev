@@ -63,8 +63,9 @@ QString PlayListOption::translation() const
     return QLatin1String(":/playlist_plugin_");
 }
 
-QString PlayListOption::executeCommand(int id, const QStringList &args)
+QString PlayListOption::executeCommand(int id, const QStringList &args, const QString &cwd)
 {
+    Q_UNUSED(cwd);
     QString out;
     PlayListManager *pl_manager = PlayListManager::instance();
     MediaPlayer *player = MediaPlayer::instance();

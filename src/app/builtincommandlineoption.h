@@ -24,6 +24,7 @@
 #include <QHash>
 #include <QStringList>
 #include <QTimer>
+#include <qmmpui/commandlinehandler.h>
 
 class PlayListModel;
 
@@ -34,26 +35,50 @@ class PlayListModel;
 /*!
  * Represens command line option handling for standard operations.
  */
-class BuiltinCommandLineOption : public QObject
+class BuiltinCommandLineOption : public QObject, public CommandLineHandler
 {
     Q_OBJECT
+    Q_INTERFACES(CommandLineHandler)
 public:
     BuiltinCommandLineOption(QObject *parent = nullptr);
 
-    ~BuiltinCommandLineOption();
-
-    bool identify(const QString& str) const;
-    const QStringList helpString() const;
-    QString executeCommand(const QString &option, const QStringList &args, const QString &cwd);
-    QHash <QString, QStringList> splitArgs(const QStringList &args) const;
+    void registerOprions() override;
+    QString shortName() const override;
+    QString translation() const override;
+    //bool identify(const QString& str) const;
+    //const QStringList helpString() const;
+    QString executeCommand(int id, const QStringList &args, const QString &cwd) override;
+    QHash<QString, QStringList> splitArgs(const QStringList &args) const;
 
 private slots:
     void disconnectPl();
     void addPendingPaths();
 
 private:
-    QStringList m_options;
-    PlayListModel *m_model;
+    enum Command
+    {
+        ENQUEUE = 0,
+        PLAY,
+        PAUSE,
+        PLAY_PAUSE,
+        STOP,
+        JUMP_TO_TRACK,
+        QUIT,
+        VOLUME,
+        VOLUME_STATUS,
+        TOGGLE_MUTE,
+        MUTE_STATUS,
+        NEXT,
+        PREVIOUS,
+        TOGGLE_VISIBILITY,
+        SHOW_MW,
+        ADD_FILE,
+        ADD_DIRECTORY
+    };
+
+
+    //QStringList m_options;
+    PlayListModel *m_model = nullptr;
     QStringList m_pending_path_list;
 #ifdef Q_OS_WIN
     QTimer *m_timer;

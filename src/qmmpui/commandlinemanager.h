@@ -36,9 +36,10 @@ public:
      * Executes command \b opt_str.
      * @param name Command line option name.
      * @param args Command arguments.
+     * @param currentWorkingDir Current working directory.
      * @return Command output result.
      */
-    static QString executeCommand(const QString &name, const QStringList &args = QStringList());
+    static QString executeCommand(const QString &name, const QStringList &args, const QString &currentWorkingDir);
     /*!
      * Return \b true if command \b opt_str is supported, otherwise returns \b false.
      */
