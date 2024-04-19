@@ -842,13 +842,13 @@ void ListWidget::mouseMoveEvent(QMouseEvent *e)
             SimpleSelection sel = m_model->getSelection(m_model->trackIndexAtLine(m_pressedLine));
             if(sel.count() > 1 && m_scroll_direction == TOP)
             {
-                if(sel.m_top == 0 || sel.m_top == m_model->trackIndexAtLine(m_firstLine))
+                if(sel.top == 0 || sel.top == m_model->trackIndexAtLine(m_firstLine))
                     return;
             }
             else if(sel.count() > 1 && m_scroll_direction == DOWN)
             {
-                if(sel.m_bottom == m_model->trackIndexAtLine(m_model->lineCount() - 1) ||
-                        sel.m_bottom == m_model->trackIndexAtLine(m_firstLine + m_row_count))
+                if(sel.bottom == m_model->trackIndexAtLine(m_model->lineCount() - 1) ||
+                        sel.bottom == m_model->trackIndexAtLine(m_firstLine + m_row_count))
                     return;
             }
             m_model->moveItems(m_model->trackIndexAtLine(m_pressedLine),
