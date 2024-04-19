@@ -89,6 +89,7 @@ QMMPStarter::QMMPStarter() : QObject()
         qApp->installTranslator(qt_translator);
 
     m_option_manager = new BuiltinCommandLineOption(this);
+    m_option_manager->registerOprions();
     QStringList tmp = qApp->arguments().mid(1);
 
     argString = tmp.join("|||");
