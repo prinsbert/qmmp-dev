@@ -62,7 +62,7 @@ void TagEditor::save()
          if(m_discs < 0)
              m_tagModel->setValue(Qmmp::DISCNUMBER,  m_ui->discSpinBox->value());
          else
-             m_tagModel->setValue(Qmmp::DISCNUMBER, QString("%1/%2").arg(m_ui->discSpinBox->value()).arg(m_discs));
+             m_tagModel->setValue(Qmmp::DISCNUMBER, QStringLiteral("%1/%2").arg(m_ui->discSpinBox->value()).arg(m_discs));
          m_tagModel->setValue(Qmmp::YEAR, m_ui->yearSpinBox->value());
          m_tagModel->setValue(Qmmp::TRACK, m_ui->trackSpinBox->value());
     }
@@ -84,11 +84,11 @@ void TagEditor::readTag()
     m_ui->composerLineEdit->setText(m_tagModel->value(Qmmp::COMPOSER));
     m_ui->genreLineEdit->setText(m_tagModel->value(Qmmp::GENRE));
     m_ui->commentBrowser->setText(m_tagModel->value(Qmmp::COMMENT));
-    if(m_tagModel->value(Qmmp::DISCNUMBER).contains("/"))
+    if(m_tagModel->value(Qmmp::DISCNUMBER).contains(QChar('/')))
     {
-        m_ui->discSpinBox->setValue(m_tagModel->value(Qmmp::DISCNUMBER).section("/",0,0).toInt());
-        m_discs = m_tagModel->value(Qmmp::DISCNUMBER).section("/",1,1).toInt();
-        m_ui->discSpinBox->setSuffix(QString("/%1").arg(m_discs));
+        m_ui->discSpinBox->setValue(m_tagModel->value(Qmmp::DISCNUMBER).section(QChar('/'), 0, 0).toInt());
+        m_discs = m_tagModel->value(Qmmp::DISCNUMBER).section(QChar('/'), 1, 1).toInt();
+        m_ui->discSpinBox->setSuffix(QStringLiteral("/%1").arg(m_discs));
     }
     else
         m_ui->discSpinBox->setValue(m_tagModel->value(Qmmp::DISCNUMBER).toInt());

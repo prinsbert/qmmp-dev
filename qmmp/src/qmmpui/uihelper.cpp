@@ -49,13 +49,13 @@ UiHelper::UiHelper(QObject *parent)
     m_instance = this;
     General::create(parent);
     QSettings settings;
-    m_lastDir = settings.value("General/last_dir", QDir::homePath()).toString(); //last directory
+    m_lastDir = settings.value(u"General/last_dir"_s, QDir::homePath()).toString(); //last directory
 }
 
 UiHelper::~UiHelper()
 {
     QSettings settings;
-    settings.setValue("General/last_dir",m_lastDir);
+    settings.setValue(u"General/last_dir"_s, m_lastDir);
 }
 
 bool UiHelper::visibilityControl()
@@ -133,8 +133,8 @@ void UiHelper::registerMenu(UiHelper::MenuType type, QMenu *menu, bool autoHide,
 void UiHelper::addFiles(QWidget *parent, PlayListModel *model)
 {
     QStringList filters;
-    filters << tr("All Supported Bitstreams")+" (" +
-            MetaDataManager::instance()->nameFilters().join (" ") +")";
+    filters << tr("All Supported Bitstreams") +
+               QStringLiteral(" (%1)").arg(MetaDataManager::instance()->nameFilters().join(QChar::Space));
     filters << MetaDataManager::instance()->filters();
     m_model = model;
     FileDialog::popup(parent, FileDialog::PlayDirsFiles, &m_lastDir,
@@ -145,13 +145,13 @@ void UiHelper::addFiles(QWidget *parent, PlayListModel *model)
 void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
 {
     QStringList filters;
-    filters << tr("All Supported Bitstreams")+" (" +
-            MetaDataManager::instance()->nameFilters().join (" ") +")";
+    filters << tr("All Supported Bitstreams") +
+               QStringLiteral(" (%1)").arg(MetaDataManager::instance()->nameFilters().join(QChar::Space));
     filters << MetaDataManager::instance()->filters();
     m_model = model;
     FileDialog::popup(parent, FileDialog::AddDirsFiles, &m_lastDir,
                       this, SLOT(playSelectedFiles(QStringList)),
-                      tr("Select one or more files to play"), filters.join(";;"));
+                      tr("Select one or more files to play"), filters.join(u";;"_s));
 
 }
 
@@ -175,7 +175,7 @@ void UiHelper::loadPlayList(QWidget *parent, PlayListModel *model)
         return;
     }
 
-    QString mask = tr("Playlist Files") + " (" + PlayListParser::nameFilters().join(" ") + ")";
+    QString mask = tr("Playlist Files") + QStringLiteral(" (%1)").arg(PlayListParser::nameFilters().join(QChar::Space));
     //TODO use nonmodal dialog and multiplier playlists
     QString f_path = FileDialog::getOpenFileName(parent, tr("Open Playlist"), m_lastDir, mask);
     if (!f_path.isEmpty())
@@ -192,38 +192,36 @@ void UiHelper::loadPlayList(QWidget *parent, PlayListModel *model)
 
 void UiHelper::savePlayList(QWidget *parent, PlayListModel *model)
 {
-    QStringList nameFilters = PlayListParser::nameFilters();
-
-    if(nameFilters.isEmpty())
+    if(PlayListParser::nameFilters().isEmpty())
     {
         qWarning("UiHelper: There is no registered playlist parsers");
         return;
     }
 
     QStringList filters;
-    filters << tr("Playlist Files") + " (" + nameFilters.join(" ") + ")";
+    filters << tr("Playlist Files") + QStringLiteral(" (%1)").arg(PlayListParser::nameFilters().join(QChar::Space));
     filters << PlayListParser::filters();
     QString selectedFilter = filters.at(1);
-    QString f_name = FileDialog::getSaveFileName(parent, tr("Save Playlist"), m_lastDir + "/" +
-                                                 model->name(), filters.join(";;"), &selectedFilter);
+    QString f_name = FileDialog::getSaveFileName(parent, tr("Save Playlist"), m_lastDir + QChar('/') +
+                                                 model->name(), filters.join(u";;"_s), &selectedFilter);
 
     if(f_name.isEmpty())
         return;
 
     if(!PlayListParser::isPlayList(f_name)) //append selected extension
     {
-        QStringList selectedFilters = selectedFilter.section("(", 1).remove(")").split(" ");
+        QStringList selectedFilters = selectedFilter.section(QChar('('), 1).remove(QChar(')')).split(QChar::Space);
         if(selectedFilters.isEmpty())
             return;
 
-        QString ext = selectedFilters.first().remove("*"); //use first extension
+        QString ext = selectedFilters.first().remove(QChar('*')); //use first extension
         f_name.append(ext);
 
         QFileInfo info(f_name);
 
         if(info.exists())
         {
-            if (QMessageBox::question(parent, tr("Save Playlist"),  tr("%1 already exists.\nDo you want to replace it?")
+            if (QMessageBox::question(parent, tr("Save Playlist"), tr("%1 already exists.\nDo you want to replace it?")
                                       .arg(info.fileName()), QMessageBox::Ok | QMessageBox::Cancel) != QMessageBox::Ok)
             {
                 return;
@@ -315,7 +313,7 @@ void UiHelper::playSelectedFiles(const QStringList &files)
     m_model->clear();
     PlayListManager::instance()->activatePlayList(m_model);
     connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
-    connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), SLOT(disconnectPl()));
+    connect(m_model, &PlayListModel::trackAdded, this, &UiHelper::disconnectPl);
     m_model->add(files);
 }
 
@@ -324,7 +322,7 @@ void UiHelper::disconnectPl()
     PlayListModel *model = qobject_cast<PlayListModel*>(sender());
     if(model)
     {
-        disconnect(model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
-        disconnect(model, SIGNAL(trackAdded(PlayListTrack*)), this, SLOT(disconnectPl()));
+        disconnect(m_model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
+        disconnect(m_model, &PlayListModel::trackAdded, this, &UiHelper::disconnectPl);
     }
 }

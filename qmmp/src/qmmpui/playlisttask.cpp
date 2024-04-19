@@ -197,7 +197,7 @@ void PlayListTask::sortByColumn(QList<PlayListTrack *> tracks, int column)
     m_task = SORT_BY_COLUMN;
     m_input_tracks = tracks;
     m_column = column;
-    if(MetaDataHelper::instance()->titleFormatter(column)->pattern() == "%n")
+    if(MetaDataHelper::instance()->titleFormatter(column)->pattern() == "%n"_L1)
         m_sort_mode = PlayListModel::TRACK;
     else
         m_sort_mode = PlayListModel::TITLE;
@@ -360,8 +360,8 @@ void PlayListTask::run()
         {
             TrackField *f = m_fields.at(i);
 
-            if(f->value.contains("://"))
-                ok = MetaDataManager::instance()->protocols().contains(f->value.section("://",0,0)); //url
+            if(f->value.contains(u"://"_s))
+                ok = MetaDataManager::instance()->protocols().contains(f->value.section(u"://"_s, 0, 0)); //url
             else
                 ok = MetaDataManager::instance()->supports(f->value); //local file
 
@@ -399,8 +399,8 @@ void PlayListTask::run()
         {
             TrackField *f = m_fields.at(i);
 
-            if(f->value.contains("://"))
-                ok = protocols.contains(f->value.section("://",0,0)) || MetaDataManager::hasMatch(regExps, f->value) ; //url
+            if(f->value.contains(u"://"_s))
+                ok = protocols.contains(f->value.section(u"://"_s, 0, 0)) || MetaDataManager::hasMatch(regExps, f->value) ; //url
             else
                 ok = mm->supports(f->value); //local file
 
@@ -413,7 +413,7 @@ void PlayListTask::run()
         {
             TrackField *f = m_fields.at(i);
 
-            if(f->value.contains("://")) //skip urls
+            if(f->value.contains(u"://"_s)) //skip urls
                 continue;
 
             path = QFileInfo(f->value).canonicalPath();
@@ -468,7 +468,7 @@ void PlayListTask::run()
         QList<PlayListTrack *>::iterator it = m_new_tracks.begin();
         while(it != m_new_tracks.end())
         {
-            if(((*it)->path().contains("://") && urls.contains((*it)->path())) ||
+            if(((*it)->path().contains(u"://"_s) && urls.contains((*it)->path())) ||
                     ignoredFiles.contains((*it)->path()))
             {
                 delete (*it);

@@ -51,7 +51,6 @@ public:
     PluginItem(QTreeWidgetItem *parent, OutputFactory *factory, const QString &path);
     PluginItem(QTreeWidgetItem *parent, FileDialogFactory *factory, const QString &path);
     PluginItem(QTreeWidgetItem *parent, UiFactory *factory, const QString &path);
-    ~PluginItem();
 
     enum PluginType
     {

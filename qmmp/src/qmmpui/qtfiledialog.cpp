@@ -22,6 +22,7 @@
 #include <QCoreApplication>
 #include "qtfiledialog_p.h"
 
+using namespace Qt::Literals::StringLiterals;
 
 FileDialog* QtFileDialogFactory::create()
 {
@@ -33,7 +34,7 @@ FileDialogProperties QtFileDialogFactory::properties() const
 {
     FileDialogProperties properties;
     properties.name = tr("Qt File Dialog");
-    properties.shortName = "qt_dialog";
+    properties.shortName = u"qt_dialog"_s;
     properties.hasAbout = false;
     properties.modal = true;
     return properties;
@@ -48,7 +49,7 @@ QString QtFileDialogFactory::translation() const
 
 QtFileDialog::~QtFileDialog()
 {
-    qDebug("QtFileDialog::~QtFileDialog()");
+    qDebug() << Q_FUNC_INFO;
 }
 
 QStringList QtFileDialog::exec(QWidget *parent, const QString &dir, FileDialog::Mode mode,

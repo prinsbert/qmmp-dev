@@ -53,16 +53,16 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
         m_play_state = new ShufflePlayState(this);
     else
         m_play_state = new NormalPlayState(this);
-    connect(m_ui_settings, SIGNAL(groupsChanged(bool)), SLOT(prepareGroups(bool)));
-    connect(m_ui_settings, SIGNAL(shuffleChanged(bool)), SLOT(prepareForShufflePlaying(bool)));
-    connect(m_loader, SIGNAL(newTracksToInsert(PlayListTrack*,QList<PlayListTrack*>)),
-            SLOT(insert(PlayListTrack*,QList<PlayListTrack*>)), Qt::QueuedConnection);
-    connect(m_loader, SIGNAL(finished()), SLOT(preparePlayState()));
-    connect(m_loader, SIGNAL(finished()), SIGNAL(loaderFinished()));
-    connect(m_loader, SIGNAL(finished()), this, SLOT(startCoverLoader()));
+    connect(m_ui_settings, &QmmpUiSettings::groupsChanged, this, &PlayListModel::prepareGroups);
+    connect(m_ui_settings, &QmmpUiSettings::shuffleChanged,this, &PlayListModel::prepareForShufflePlaying);
+    connect(m_loader, SIGNAL(newTracksToInsert(PlayListTrack *,QList<PlayListTrack *>)),
+            this, SLOT(insert(PlayListTrack *,QList<PlayListTrack *>)), Qt::QueuedConnection);
+    connect(m_loader, &FileLoader::finished, this, &PlayListModel::preparePlayState);
+    connect(m_loader, &FileLoader::finished, this, &PlayListModel::loaderFinished);
+    connect(m_loader, &FileLoader::finished, this, &PlayListModel::startCoverLoader);
     connect(m_coverLoder, &CoverLoader::ready, this, &PlayListModel::setCover);
-    connect(m_task, SIGNAL(finished()), SLOT(onTaskFinished()));
-    connect(m_task, SIGNAL(finished()), SLOT(startCoverLoader()));
+    connect(m_task, &PlayListTask::finished, this, &PlayListModel::onTaskFinished);
+    connect(m_task, &PlayListTask::finished, this, &PlayListModel::startCoverLoader);
 }
 
 PlayListModel::~PlayListModel()
@@ -291,7 +291,7 @@ void PlayListModel::insert(int index, const QList<QUrl> &urls)
     QStringList paths;
     for(const QUrl &url : qAsConst(urls))
     {
-        if(url.scheme() == "file")
+        if(url.scheme() == "file"_L1)
             paths.append(QFileInfo(url.toLocalFile()).canonicalFilePath());
         else
             paths.append(url.toString());
@@ -763,7 +763,7 @@ void PlayListModel::showDetails(QWidget *parent)
     {
         DetailsDialog *d = new DetailsDialog(selected_tracks, parent);
         d->setAttribute(Qt::WA_DeleteOnClose, true);
-        connect(d, SIGNAL(metaDataChanged(QStringList)), SLOT(updateMetaData(QStringList)));
+        connect(d, SIGNAL(metadaChanged(QStringList)), this, SLOT(updateMetaData(QStringList)));
         d->show();
     }
 }
@@ -774,7 +774,7 @@ void PlayListModel::showDetailsForCurrent(QWidget *parent)
     {
         QDialog *d = new DetailsDialog(QList<PlayListTrack *>() << m_current_track, parent);
         d->setAttribute(Qt::WA_DeleteOnClose, true);
-        connect(d, SIGNAL(metaDataChanged(QStringList)), SLOT(updateMetaData(QStringList)));
+        connect(d, SIGNAL(metadaChanged(QStringList)), this, SLOT(updateMetaData(QStringList)));
         d->show();
     }
 }
