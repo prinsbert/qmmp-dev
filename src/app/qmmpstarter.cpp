@@ -124,7 +124,7 @@ QMMPStarter::QMMPStarter() : QObject()
                     tmp_stream.copyfmt(cout);
                     streambuf *old_stream = cout.rdbuf(tmp_stream.rdbuf());
 #endif
-                    cout << qPrintable(CommandLineManager::executeCommand(key, commands.value(key)).trimmed()) << endl;
+                    cout << qPrintable(out.trimmed()) << endl;
 #ifdef Q_OS_WIN
                     string text = tmp_stream.str();
                     QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
