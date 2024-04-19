@@ -33,18 +33,18 @@ CoverViewer::CoverViewer(QWidget *parent)
         : QWidget(parent)
 {
     QAction *saveAsAction = new QAction(tr("&Save As..."), this);
-    connect(saveAsAction, SIGNAL(triggered()), SLOT(saveAs()));
+    connect(saveAsAction, &QAction::triggered, this, &CoverViewer::saveAs);
     addAction(saveAsAction);
     setContextMenuPolicy(Qt::ActionsContextMenu);
     QSettings settings;
     m_lastDir = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-    m_lastDir = settings.value("CoverEditor/last_dir", m_lastDir).toString();
+    m_lastDir = settings.value(u"CoverEditor/last_dir"_s, m_lastDir).toString();
 }
 
 CoverViewer::~CoverViewer()
 {
     QSettings settings;
-    settings.setValue("CoverEditor/last_dir", m_lastDir);
+    settings.setValue(u"CoverEditor/last_dir"_s, m_lastDir);
 }
 
 void CoverViewer::setImage(const QImage &img)
@@ -66,8 +66,8 @@ const QImage &CoverViewer::image() const
 void CoverViewer::saveAs()
 {
     QString path = FileDialog::getSaveFileName(this, tr("Save Cover As"),
-                                               m_lastDir + "/cover.jpg",
-                                               tr("Images") +" (*.png *.jpg)");
+                                               m_lastDir + u"/cover.jpg"_s,
+                                               tr("Images") + u" (*.png *.jpg)"_s);
 
     if (!path.isEmpty())
     {
@@ -80,7 +80,7 @@ void CoverViewer::load()
 {
     QString path = FileDialog::getOpenFileName(this, tr("Open Image"),
                                                m_lastDir,
-                                               tr("Images") +" (*.png *.jpg)");
+                                               tr("Images") + u" (*.png *.jpg)"_s);
     if(!path.isEmpty())
     {
         m_lastDir = QFileInfo(path).absoluteDir().path();

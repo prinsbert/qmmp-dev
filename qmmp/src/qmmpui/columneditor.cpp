@@ -23,6 +23,8 @@
 #include "metadataformattermenu.h"
 #include "ui_columneditor.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 ColumnEditor::ColumnEditor(const QString &name, const QString &patt, QWidget *parent) :
     QDialog(parent),
     m_ui(new Ui::ColumnEditor)
@@ -56,7 +58,7 @@ void ColumnEditor::insertExpression(const QString &str)
     if (m_ui->formatLineEdit->cursorPosition () < 1)
         m_ui->formatLineEdit->insert(str);
     else
-        m_ui->formatLineEdit->insert(" - "+str);
+        m_ui->formatLineEdit->insert(u" - "_s + str);
 }
 
 void ColumnEditor::on_comboBox_activated(int index)
@@ -69,7 +71,7 @@ void ColumnEditor::on_formatLineEdit_textChanged(const QString &text)
 {
     int index = m_ui->comboBox->findData(text);
     if(index < 0)
-        index = m_ui->comboBox->findData("custom");
+        index = m_ui->comboBox->findData(u"custom"_s);
     m_ui->comboBox->setCurrentIndex(index);
 }
 
@@ -77,29 +79,29 @@ void ColumnEditor::createMenu()
 {
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::COLUMN_MENU, this);
     m_ui->formatButton->setMenu(menu);
-    connect(menu, SIGNAL(patternSelected(QString)), SLOT(insertExpression(QString)));
+    connect(menu, &MetaDataFormatterMenu::patternSelected, this, &ColumnEditor::insertExpression);
 }
 
 void ColumnEditor::fillTypes()
 {
-    m_ui->comboBox->addItem(tr("Artist"),"%p");
-    m_ui->comboBox->addItem(tr("Album"),"%a");
-    m_ui->comboBox->addItem(tr("Artist - Album"),"%if(%p&%a,%p - %a,)");
-    m_ui->comboBox->addItem(tr("Artist - Title"),"%if(%p,%p - %t,%t)");
-    m_ui->comboBox->addItem(tr("Album Artist"),"%aa");
-    m_ui->comboBox->addItem(tr("Title"),"%t");
-    m_ui->comboBox->addItem(tr("Track Number"),"%n");
-    m_ui->comboBox->addItem(tr("Two-digit Track Number"),"%NN");
-    m_ui->comboBox->addItem(tr("Genre"),"%g");
-    m_ui->comboBox->addItem(tr("Comment"),"%c");
-    m_ui->comboBox->addItem(tr("Composer"),"%C");
-    m_ui->comboBox->addItem(tr("Duration"),"%l");
-    m_ui->comboBox->addItem(tr("Disc Number"),"%D");
-    m_ui->comboBox->addItem(tr("File Name"),"%f");
-    m_ui->comboBox->addItem(tr("File Path"),"%F");
-    m_ui->comboBox->addItem(tr("Track Index"), "%I");
-    m_ui->comboBox->addItem(tr("Year"),"%y");
-    m_ui->comboBox->addItem(tr("Parent Directory Name"),"%dir(0)");
-    m_ui->comboBox->addItem(tr("Parent Directory Path"),"%dir");
-    m_ui->comboBox->addItem(tr("Custom"),"custom");
+    m_ui->comboBox->addItem(tr("Artist"), u"%p"_s);
+    m_ui->comboBox->addItem(tr("Album"), u"%a"_s);
+    m_ui->comboBox->addItem(tr("Artist - Album"), u"%if(%p&%a,%p - %a,)"_s);
+    m_ui->comboBox->addItem(tr("Artist - Title"), u"%if(%p,%p - %t,%t)"_s);
+    m_ui->comboBox->addItem(tr("Album Artist"), u"%aa"_s);
+    m_ui->comboBox->addItem(tr("Title"), u"%t"_s);
+    m_ui->comboBox->addItem(tr("Track Number"), u"%n"_s);
+    m_ui->comboBox->addItem(tr("Two-digit Track Number"), u"%NN"_s);
+    m_ui->comboBox->addItem(tr("Genre"), u"%g"_s);
+    m_ui->comboBox->addItem(tr("Comment"), u"%c"_s);
+    m_ui->comboBox->addItem(tr("Composer"), u"%C"_s);
+    m_ui->comboBox->addItem(tr("Duration"), u"%l"_s);
+    m_ui->comboBox->addItem(tr("Disc Number"), u"%D"_s);
+    m_ui->comboBox->addItem(tr("File Name"), u"%f"_s);
+    m_ui->comboBox->addItem(tr("File Path"), u"%F"_s);
+    m_ui->comboBox->addItem(tr("Track Index"), u"%I"_s);
+    m_ui->comboBox->addItem(tr("Year"), u"%y"_s);
+    m_ui->comboBox->addItem(tr("Parent Directory Name"), u"%dir(0)"_s);
+    m_ui->comboBox->addItem(tr("Parent Directory Path"), u"%dir"_s);
+    m_ui->comboBox->addItem(tr("Custom"), u"custom"_s);
 }

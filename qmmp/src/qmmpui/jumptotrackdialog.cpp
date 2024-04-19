@@ -31,6 +31,7 @@
 #include <qmmp/soundcore.h>
 #include "playlistmanager.h"
 #include "mediaplayer.h"
+#include "ui_jumptotrackdialog.h"
 #include "jumptotrackdialog_p.h"
 
 class TrackItemDelegate : public QStyledItemDelegate
@@ -67,9 +68,10 @@ public:
 };
 
 JumpToTrackDialog::JumpToTrackDialog(PlayListModel *model, QWidget* parent)
-        : QDialog (parent)
+        : QDialog (parent),
+          m_ui(new Ui::JumpToTrackDialog)
 {
-    setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_QuitOnClose, false);
     setAttribute(Qt::WA_DeleteOnClose, true);
     m_model = model;
@@ -81,56 +83,57 @@ JumpToTrackDialog::JumpToTrackDialog(PlayListModel *model, QWidget* parent)
     m_proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     m_proxyModel->setSourceModel(m_listModel);
     m_proxyModel->setSortLocaleAware(true);
-    songsListView->setItemDelegate(new TrackItemDelegate(this));
-    songsListView->setModel(m_proxyModel);
+    m_ui->songsListView->setItemDelegate(new TrackItemDelegate(this));
+    m_ui->songsListView->setModel(m_proxyModel);
 
-    connect(songsListView,SIGNAL(doubleClicked(QModelIndex)), SLOT(jumpTo(QModelIndex)));
-    connect(songsListView,SIGNAL(doubleClicked(QModelIndex)), SLOT(accept()));
-    connect(songsListView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
-            SLOT(queueUnqueue(QModelIndex,QModelIndex)));
+    connect(m_ui->songsListView, &QListView::doubleClicked, this, &JumpToTrackDialog::jumpTo);
+    connect(m_ui->songsListView, &QListView::doubleClicked, this, &JumpToTrackDialog::accept);
+    connect(m_ui->songsListView->selectionModel(), &QItemSelectionModel::currentRowChanged,
+            this, &JumpToTrackDialog::queueUnqueue);
 
-    connect(m_model, SIGNAL(destroyed()), SLOT(close()));
+    connect(m_model, &PlayListModel::destroyed, this, &JumpToTrackDialog::close);
 
-    new QShortcut(tr("Q"), this, SLOT(on_queuePushButton_clicked()));
-    new QShortcut(tr("J"), this, SLOT(on_jumpToPushButton_clicked()));
+    new QShortcut(tr("Q"), this, this, &JumpToTrackDialog::on_queuePushButton_clicked);
+    new QShortcut(tr("J"), this, this, &JumpToTrackDialog::on_jumpToPushButton_clicked);
 
-    filterLineEdit->installEventFilter(this);
-    songsListView->installEventFilter(this);
-    connect(filterLineEdit, SIGNAL(textChanged(QString)), m_proxyModel, SLOT(setFilterFixedString(QString)));
+    m_ui->filterLineEdit->installEventFilter(this);
+    m_ui->songsListView->installEventFilter(this);
+    connect(m_ui->filterLineEdit, &QLineEdit::textChanged, m_proxyModel, &QSortFilterProxyModel::setFilterFixedString);
 }
 
 JumpToTrackDialog::~JumpToTrackDialog()
 {
+    delete m_ui;
 }
 
 void JumpToTrackDialog::on_queuePushButton_clicked()
 {
-    QModelIndexList selectedRows = songsListView->selectionModel()->selectedRows();
+    QModelIndexList selectedRows = m_ui->songsListView->selectionModel()->selectedRows();
     if (!selectedRows.isEmpty())
     {
-        int selected = (m_proxyModel->mapToSource(selectedRows.constFirst())).row();
+        int selected = m_proxyModel->mapToSource(selectedRows.constFirst()).row();
         PlayListTrack *track = m_model->findTrack(selected);
         m_model->setQueued(track);
 
         if(track->isQueued())
-            queuePushButton->setText(tr("Unqueue"));
+            m_ui->queuePushButton->setText(tr("Unqueue"));
         else
-            queuePushButton->setText(tr("Queue"));
+            m_ui->queuePushButton->setText(tr("Queue"));
     }
 }
 
 void JumpToTrackDialog::on_jumpToPushButton_clicked()
 {
-    QModelIndexList mi_list = songsListView->selectionModel()->selectedRows();
+    QModelIndexList mi_list = m_ui->songsListView->selectionModel()->selectedRows();
     if (!mi_list.isEmpty())
     {
-        jumpTo(mi_list.at(0));
+        jumpTo(mi_list.constFirst());
     }
 }
 
-void JumpToTrackDialog::jumpTo(const QModelIndex & index)
+void JumpToTrackDialog::jumpTo(const QModelIndex &index)
 {
-    int selected = (m_proxyModel->mapToSource(index)).row();
+    int selected = m_proxyModel->mapToSource(index).row();
     PlayListTrack *track = m_model->findTrack(selected);
     m_model->setCurrent(track);
     SoundCore::instance()->stop();
@@ -144,17 +147,17 @@ void JumpToTrackDialog::queueUnqueue(const QModelIndex& curr,const QModelIndex&)
         return;
     int row = m_proxyModel->mapToSource(curr).row();
     if (m_model->findTrack(row)->isQueued())
-        queuePushButton->setText(tr("Unqueue"));
+        m_ui->queuePushButton->setText(tr("Unqueue"));
     else
-        queuePushButton->setText(tr("Queue"));
+        m_ui->queuePushButton->setText(tr("Queue"));
 }
 
 bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
 {
-    if(o == filterLineEdit && e->type() == QEvent::KeyPress)
+    if(o == m_ui->filterLineEdit && e->type() == QEvent::KeyPress)
     {
         QKeyEvent *key_event = static_cast<QKeyEvent *>(e);
-        QModelIndex index = songsListView->currentIndex();
+        QModelIndex index = m_ui->songsListView->currentIndex();
         bool select_first = false;
         if(!index.isValid() && m_proxyModel->rowCount())
         {
@@ -167,7 +170,7 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
             if(!select_first)
                 index = m_proxyModel->index(index.row() - 1, index.column());
             if(index.isValid())
-                songsListView->setCurrentIndex(index);
+                m_ui->songsListView->setCurrentIndex(index);
             return true;
         }
         if(key_event->key() == Qt::Key_Down)
@@ -175,7 +178,7 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
             if(!select_first)
                 index = m_proxyModel->index(index.row() + 1, index.column());
             if(index.isValid())
-                songsListView->setCurrentIndex(index);
+                m_ui->songsListView->setCurrentIndex(index);
             return true;
         }
         if(key_event->key() == Qt::Key_Return)
@@ -188,10 +191,10 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
             return true;
         }
     }
-    else if(o == songsListView && e->type() == QEvent::KeyPress)
+    else if(o == m_ui->songsListView && e->type() == QEvent::KeyPress)
     {
         QKeyEvent *key_event = static_cast<QKeyEvent *>(e);
-        QModelIndex index = songsListView->currentIndex();
+        QModelIndex index = m_ui->songsListView->currentIndex();
 
         if(key_event->key() == Qt::Key_Return)
         {
@@ -210,7 +213,7 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
 TrackListModel::TrackListModel(PlayListModel *model, QObject *parent) : QAbstractListModel(parent), m_model(model)
 {
     m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
-    connect(m_model, SIGNAL(listChanged(int)), SLOT(onListChanged(int)));
+    connect(m_model, &PlayListModel::listChanged, this, &TrackListModel::onListChanged);
 }
 
 QVariant TrackListModel::data(const QModelIndex &index, int role) const
@@ -226,8 +229,8 @@ QVariant TrackListModel::data(const QModelIndex &index, int role) const
 
         if(title.isEmpty()) //using file name if title is empty
         {
-            title = track->path().section('/',-1);
-            title = title.left(title.lastIndexOf('.'));
+            title = track->path().section(QChar('/'),-1);
+            title = title.left(title.lastIndexOf(QChar('.')));
         }
         if(!artist.isEmpty())
             title.prepend(artist + QStringLiteral(" - "));

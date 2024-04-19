@@ -38,7 +38,7 @@ void General::loadPlugins()
 
     m_cache = new QList<QmmpUiPluginCache*>;
     QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins("General"))
+    for(const QString &filePath : Qmmp::findPlugins(u"General"_s))
     {
         QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
         if(item->hasError())
@@ -48,7 +48,7 @@ void General::loadPlugins()
         }
         m_cache->append(item);
     }
-    m_enabledNames = settings.value("General/enabled_plugins").toStringList();
+    m_enabledNames = settings.value(u"General/enabled_plugins"_s).toStringList();
     QmmpUiPluginCache::cleanup(&settings);
 }
 
@@ -56,7 +56,7 @@ void General::create(QObject *parent)
 {
     if(m_generals)
         return;
-    m_generals = new QHash <GeneralFactory*, QObject*>();
+    m_generals = new QHash<GeneralFactory*, QObject*>();
     m_parent = parent;
     loadPlugins();
     for(QmmpUiPluginCache* item : qAsConst(*m_cache))
@@ -105,7 +105,7 @@ QStringList General::enabledWidgets()
     for(const GeneralFactory *f : General::enabledFactories())
     {
         for(const WidgetDescription &desc : f->properties().widgets)
-            out << QString("%1_%2").arg(f->properties().shortName).arg(desc.id);
+            out << QStringLiteral("%1_%2").arg(f->properties().shortName).arg(desc.id);
     }
 
     return out;
@@ -117,7 +117,7 @@ WidgetDescription General::widgetDescription(const QString &id)
     {
         for(const WidgetDescription &desc : f->properties().widgets)
         {
-            if(id == QString("%1_%2").arg(f->properties().shortName).arg(desc.id))
+            if(id == QLatin1String("%1_%2").arg(f->properties().shortName).arg(desc.id))
               return desc;
         }
     }
@@ -131,7 +131,7 @@ QWidget *General::createWidget(const QString &id, QWidget *parent)
     {
         for(const WidgetDescription &desc : f->properties().widgets)
         {
-            if(id == QString("%1_%2").arg(f->properties().shortName).arg(desc.id))
+            if(id == QLatin1String("%1_%2").arg(f->properties().shortName).arg(desc.id))
               return f->createWidget(desc.id, parent);
         }
     }
@@ -163,7 +163,7 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
     else
         m_enabledNames.removeAll(factory->properties().shortName);
     m_enabledNames.removeDuplicates();
-    settings.setValue("General/enabled_plugins", m_enabledNames);
+    settings.setValue(u"General/enabled_plugins"_s, m_enabledNames);
 
     if(!m_generals)
         return;
@@ -178,12 +178,12 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
             m_generals->insert(factory, general);
 
         for(const WidgetDescription &d : factory->properties().widgets)
-            emit UiHelper::instance()->widgetAdded(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
+            emit UiHelper::instance()->widgetAdded(QStringLiteral("%1_%2").arg(factory->properties().shortName).arg(d.id));
     }
     else
     {
         for(const WidgetDescription &d : factory->properties().widgets)
-            emit UiHelper::instance()->widgetRemoved(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
+            emit UiHelper::instance()->widgetRemoved(QStringLiteral("%1_%2").arg(factory->properties().shortName).arg(d.id));
 
         if(m_generals->value(factory))
             delete m_generals->take(factory);
@@ -206,7 +206,7 @@ void General::showSettings(GeneralFactory *factory, QWidget *parentWidget)
             m_generals->insert(factory, general);
 
         for(const WidgetDescription &d : factory->properties().widgets)
-            emit UiHelper::instance()->widgetUpdated(QString("%1_%2").arg(factory->properties().shortName).arg(d.id));
+            emit UiHelper::instance()->widgetUpdated(QStringLiteral("%1_%2").arg(factory->properties().shortName).arg(d.id));
     }
     dialog->deleteLater();
 }

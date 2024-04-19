@@ -495,9 +495,9 @@ QString MetaDataFormatter::evalute(const QList<Node> *nodes, const TrackInfo *in
         else if(node.command == Node::DIR_FUNCTION)
         {
             if(node.params.isEmpty())
-                out.append(info->path().mid(0, info->path().lastIndexOf('/')));
+                out.append(info->path().mid(0, info->path().lastIndexOf(QChar('/'))));
             else
-                out.append(info->path().section('/', -node.params[0].number - 2, -node.params[0].number - 2));
+                out.append(info->path().section(QChar('/'), -node.params[0].number - 2, -node.params[0].number - 2));
         }
     }
     return out;
@@ -530,8 +530,8 @@ QString MetaDataFormatter::printField(int field, const TrackInfo *info, int trac
             QString title = info->value(Qmmp::TITLE);
             if(title.isEmpty()) //using file name if title is empty
             {
-                title = info->path().section('/',-1);
-                title = title.left(title.lastIndexOf('.'));
+                title = info->path().section(QChar('/'), -1);
+                title = title.left(title.lastIndexOf(QChar('.')));
             }
 
             if(title.isEmpty()) //using full path if file name is empty
@@ -547,7 +547,7 @@ QString MetaDataFormatter::printField(int field, const TrackInfo *info, int trac
     }
     if(field == Param::TWO_DIGIT_TRACK)
     {
-        return QString("%1").arg(info->value(Qmmp::TRACK),2,'0');
+        return QString("%1").arg(info->value(Qmmp::TRACK), 2, QChar('0'));
     }
     if(field == Param::DURATION)
     {
@@ -555,7 +555,7 @@ QString MetaDataFormatter::printField(int field, const TrackInfo *info, int trac
     }
     if(field == Param::FILE_NAME)
     {
-        return info->path().section('/',-1);
+        return info->path().section(QChar('/'), -1);
     }
     if(field == Param::TRACK_INDEX)
     {
@@ -574,26 +574,26 @@ QString MetaDataFormatter::dumpNode(MetaDataFormatter::Node node) const
     QString str;
     QStringList params;
     if(node.command == Node::PRINT_TEXT)
-        str += "PRINT_TEXT";
+        str += u"PRINT_TEXT"_s;
     else if(node.command == Node::IF_KEYWORD)
-        str += "IF_KEYWORD";
+        str += u"IF_KEYWORD"_s;
     else if(node.command == Node::AND_OPERATOR)
-        str += "AND_OPERATOR";
+        str += u"AND_OPERATOR"_s;
     else if(node.command == Node::OR_OPERATOR)
-        str += "OR_OPERATOR";
+        str += u"OR_OPERATOR"_s;
     else if(node.command == Node::DIR_FUNCTION)
-        str += "DIR_FUNCTION";
-    str += "(";
+        str += u"DIR_FUNCTION"_s;
+    str += QChar('(');
     for(const Param &p : qAsConst(node.params))
     {
         if(p.type == Param::FIELD)
-            params.append(QString("FIELD:%1").arg(p.field));
+            params.append(QStringLiteral("FIELD:%1").arg(p.field));
         else if(p.type == Param::PROPERTY)
-            params.append(QString("PROPERTY:%1").arg(p.field));
+            params.append(QStringLiteral("PROPERTY:%1").arg(p.field));
         else if(p.type == Param::TEXT)
-            params.append(QString("TEXT:%1").arg(p.text));
+            params.append(QStringLiteral("TEXT:%1").arg(p.text));
         else if(p.type == Param::NUMERIC)
-            params.append(QString("NUMBER:%1").arg(p.number));
+            params.append(QStringLiteral("NUMBER:%1").arg(p.number));
         else if(p.type == Param::NODES)
         {
             QStringList nodeStrList;
@@ -601,10 +601,10 @@ QString MetaDataFormatter::dumpNode(MetaDataFormatter::Node node) const
             {
                 nodeStrList.append(dumpNode(n));
             }
-            params.append(QString("NODES:%1").arg(nodeStrList.join(",")));
+            params.append(QStringLiteral("NODES:%1").arg(nodeStrList.join(QChar(','))));
         }
     }
-    str.append(params.join(","));
+    str.append(params.join(QChar(',')));
     str.append(")");
     return str;
 }
@@ -678,8 +678,7 @@ QList<MetaDataFormatter::Node> MetaDataFormatter::compile(const QString &expr)
     //wrap operators
     for(int j = 0; j < nodes.count(); ++j)
     {
-        if(nodes[j].command == Node::AND_OPERATOR ||
-                nodes[j].command == Node::OR_OPERATOR)
+        if(nodes[j].command == Node::AND_OPERATOR || nodes[j].command == Node::OR_OPERATOR)
         {
             if(j == 0 || j == nodes.count() - 1)
             {
@@ -689,12 +688,12 @@ QList<MetaDataFormatter::Node> MetaDataFormatter::compile(const QString &expr)
 
             Param p1;
             p1.type = Param::NODES;
-            p1.children << nodes.takeAt(j+1);
+            p1.children << nodes.takeAt(j + 1);
             Param p2;
             p2.type = Param::NODES;
-            p2.children << nodes.takeAt(j-1);
-            nodes[j-1].params.append(p1);
-            nodes[j-1].params.append(p2);
+            p2.children << nodes.takeAt(j - 1);
+            nodes[j - 1].params.append(p1);
+            nodes[j - 1].params.append(p2);
             j--;
         }
     }

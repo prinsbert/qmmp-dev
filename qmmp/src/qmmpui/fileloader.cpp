@@ -32,11 +32,8 @@ FileLoader::FileLoader(QObject *parent) : QThread(parent)
 {
     qRegisterMetaType<QList<PlayListTrack*> >("QList<PlayListTrack*>");
     m_settings = QmmpUiSettings::instance();
-    connect(qApp, SIGNAL(aboutToQuit()), SLOT(finish()));
+    connect(qApp, &QCoreApplication::aboutToQuit, this, &FileLoader::finish);
 }
-
-FileLoader::~FileLoader()
-{}
 
 QList<PlayListTrack *> FileLoader::processFile(const QString &path, QStringList *ignoredPaths)
 {
@@ -131,9 +128,9 @@ void FileLoader::insertPlayList(const QString &path, PlayListTrack *before)
         QList<PlayListTrack *>::iterator it = tracks.begin();
         while(it != tracks.end())
         {
-            if((*it)->path().contains("://"))
+            if((*it)->path().contains(u"://"_s))
             {
-                if(!protocols.contains((*it)->path().section("://", 0, 0)) &&
+                if(!protocols.contains((*it)->path().section(u"://"_s, 0, 0)) &&
                         !MetaDataManager::hasMatch(regExps, (*it)->path()))
                 {
                     delete (*it);
@@ -248,7 +245,7 @@ void FileLoader::run()
             {
                 insertPlayList(path, before);
             }
-            else if(info.isFile() || path.contains("://"))
+            else if(info.isFile() || path.contains(u"://"_s))
             {
                 QList<PlayListTrack *> tracks = processFile(path);
                 if(!tracks.isEmpty())
@@ -274,7 +271,7 @@ void FileLoader::run()
 
 void FileLoader::add(const QString &path)
 {
-    insert(nullptr, QStringList() << path);
+    insert(nullptr, { path });
 }
 
 void FileLoader::add(const QStringList &paths)

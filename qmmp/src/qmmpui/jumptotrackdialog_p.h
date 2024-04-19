@@ -24,8 +24,8 @@
 #include <QDialog>
 #include <QList>
 #include <QSet>
+#include <QAbstractListModel>
 #include "metadataformatter.h"
-#include "ui_jumptotrackdialog.h"
 
 class TrackListModel;
 class QSortFilterProxyModel;
@@ -33,11 +33,15 @@ class QEvent;
 class PlayListManager;
 class PlayListModel;
 
+namespace Ui {
+class JumpToTrackDialog;
+}
+
 /**
    @internal
    @author Vladimir Kuznetsov <vovanec@gmail.com>
  */
-class JumpToTrackDialog : public QDialog, private Ui::JumpToTrackDialog
+class JumpToTrackDialog : public QDialog
 {
     Q_OBJECT
 
@@ -55,7 +59,9 @@ private slots:
 
 private:
     bool eventFilter(QObject *o, QEvent *e) override;
-    TrackListModel* m_listModel;
+
+    Ui::JumpToTrackDialog *m_ui;
+    TrackListModel *m_listModel;
     QSortFilterProxyModel* m_proxyModel;
     PlayListManager *m_pl_manager;
     PlayListModel *m_model;

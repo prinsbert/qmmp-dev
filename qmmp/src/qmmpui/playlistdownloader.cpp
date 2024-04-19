@@ -27,10 +27,10 @@
 #include "playlistdownloader.h"
 
 PlayListDownloader::PlayListDownloader(QObject *parent) : QObject(parent),
-    m_ua(QString("qmmp/%1").arg(Qmmp::strVersion()).toLatin1())
+    m_ua(QStringLiteral("qmmp/%1").arg(Qmmp::strVersion()).toLatin1())
 {
     m_manager = new QNetworkAccessManager(this);
-    connect(m_manager, SIGNAL(finished(QNetworkReply*)), SLOT(readResponse(QNetworkReply*)));
+    connect(m_manager, &QNetworkAccessManager::finished, this, &PlayListDownloader::readResponse);
     //load global proxy settings
     QmmpSettings *gs = QmmpSettings::instance();
     if (gs->isProxyEnabled())
@@ -64,7 +64,7 @@ void PlayListDownloader::start(const QUrl &url, PlayListModel *model)
     else
     {
         m_checkReply = m_manager->get(r); //check playlist
-        connect(m_checkReply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+        connect(m_checkReply, &QNetworkReply::downloadProgress, this, &PlayListDownloader::onDownloadProgress);
     }
 }
 
@@ -93,7 +93,7 @@ void PlayListDownloader::readResponse(QNetworkReply *reply)
 
         if(reply->error() != QNetworkReply::NoError)
         {
-            emit finished(false, reply->errorString() + " (" + QString::number(reply->error()) + ")");
+            emit finished(false, QStringLiteral("%1 (%2)").arg(reply->errorString()).arg(reply->error()));
             reply->deleteLater();
             return;
         }

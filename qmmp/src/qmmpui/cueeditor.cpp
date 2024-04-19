@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2021 by Ilya Kotov                                      *
+ *   Copyright (C) 2021-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -42,7 +42,7 @@ private:
         QTextCharFormat textFormat;
         textFormat.setForeground(Qt::darkGreen);
 
-        static const QRegularExpression textExpr("\\\".*\\\"");
+        static const QRegularExpression textExpr(u"\\\".*\\\""_s);
         QRegularExpressionMatchIterator i = textExpr.globalMatch(text);
         while(i.hasNext())
         {
@@ -53,7 +53,7 @@ private:
         QTextCharFormat trackFormat;
         trackFormat.setFontWeight(QFont::Bold);
 
-        static const QRegularExpression trackExpr("TRACK\\s+\\d+\\s*\\D*");
+        static const QRegularExpression trackExpr(u"TRACK\\s+\\d+\\s*\\D*"_s);
         i = trackExpr.globalMatch(text);
         while(i.hasNext())
         {
@@ -73,11 +73,11 @@ CueEditor::CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *paren
     m_ui->plainTextEdit->setPlainText(model->cue());
     m_parser.loadData(model->cue().toUtf8());
     QSettings settings;
-    m_lastDir = settings.value("CueEditor/last_dir",  QDir::homePath()).toString();
-    if(!settings.value("CueEditor/use_system_font", true).toBool())
+    m_lastDir = settings.value(u"CueEditor/last_dir"_s,  QDir::homePath()).toString();
+    if(!settings.value(u"CueEditor/use_system_font"_s, true).toBool())
     {
         QFont font;
-        font.fromString(settings.value("CueEditor/font", qApp->font("QPlainTextEdit").toString()).toString());
+        font.fromString(settings.value(u"CueEditor/font"_s, qApp->font("QPlainTextEdit").toString()).toString());
         m_ui->plainTextEdit->setFont(font);
     }
 
@@ -95,7 +95,7 @@ CueEditor::CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *paren
 CueEditor::~CueEditor()
 {
     QSettings settings;
-    settings.setValue("CueEditor/last_dir", m_lastDir);
+    settings.setValue(u"CueEditor/last_dir"_s, m_lastDir);
 
     delete m_ui;
 }
@@ -128,9 +128,7 @@ int CueEditor::trackCount() const
 
 void CueEditor::on_loadButton_clicked()
 {
-    QString path = FileDialog::getOpenFileName(this, tr("Open CUE File"),
-                                               m_lastDir,
-                                               tr("CUE Files") +" (*.cue)");
+    QString path = FileDialog::getOpenFileName(this, tr("Open CUE File"), m_lastDir, tr("CUE Files") + u" (*.cue)"_s);
     if(!path.isEmpty())
     {
         m_lastDir = QFileInfo(path).absoluteDir().path();
@@ -148,8 +146,8 @@ void CueEditor::on_deleteButton_clicked()
 void CueEditor::on_saveAsButton_clicked()
 {
     QString path = FileDialog::getSaveFileName(this, tr("Save CUE File"),
-                                               m_lastDir + "/" + m_info.value(Qmmp::TITLE) + ".cue",
-                                               tr("CUE Files") +" (*.cue)");
+                                               m_lastDir + QChar('/') + m_info.value(Qmmp::TITLE) + u".cue"_s,
+                                               tr("CUE Files") + u" (*.cue)"_s);
 
 
     if(!path.isEmpty())

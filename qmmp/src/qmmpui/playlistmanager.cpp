@@ -29,30 +29,32 @@
 #include "qmmpuisettings.h"
 #include "playlistmanager.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 PlayListManager *PlayListManager::m_instance = nullptr;
 
 //key names
 const QHash<QString, Qmmp::MetaData> PlayListManager::m_metaKeys = {
-    { "title", Qmmp::TITLE },
-    { "artist", Qmmp::ARTIST },
-    { "albumartist", Qmmp::ALBUMARTIST },
-    { "album", Qmmp::ALBUM },
-    { "comment", Qmmp::COMMENT },
-    { "genre", Qmmp::GENRE },
-    { "composer", Qmmp::COMPOSER },
-    { "year", Qmmp::YEAR },
-    { "track", Qmmp::TRACK },
-    { "disk", Qmmp::DISCNUMBER }
+    { u"title"_s, Qmmp::TITLE },
+    { u"artist"_s, Qmmp::ARTIST },
+    { u"albumartist"_s, Qmmp::ALBUMARTIST },
+    { u"album"_s, Qmmp::ALBUM },
+    { u"comment"_s, Qmmp::COMMENT },
+    { u"genre"_s, Qmmp::GENRE },
+    { u"composer"_s, Qmmp::COMPOSER },
+    { u"year"_s, Qmmp::YEAR },
+    { u"track"_s, Qmmp::TRACK },
+    { u"disk"_s, Qmmp::DISCNUMBER }
 };
 
 const QHash<QString, Qmmp::TrackProperty> PlayListManager::m_propKeys = {
-    { "bitrate", Qmmp::BITRATE },
-    { "samplerate", Qmmp::SAMPLERATE },
-    { "channels", Qmmp::CHANNELS },
-    { "bits_per_sample", Qmmp::BITS_PER_SAMPLE },
-    { "format_name", Qmmp::FORMAT_NAME },
-    { "decoder", Qmmp::DECODER },
-    { "file_size", Qmmp::FILE_SIZE }
+    { u"bitrate"_s, Qmmp::BITRATE },
+    { u"samplerate"_s, Qmmp::SAMPLERATE },
+    { u"channels"_s, Qmmp::CHANNELS },
+    { u"bits_per_sample"_s, Qmmp::BITS_PER_SAMPLE },
+    { u"format_name"_s, Qmmp::FORMAT_NAME },
+    { u"decoder"_s, Qmmp::DECODER },
+    { u"file_size"_s, Qmmp::FILE_SIZE }
 };
 
 PlayListManager::PlayListManager(QObject *parent) : QObject(parent)
@@ -66,7 +68,7 @@ PlayListManager::PlayListManager(QObject *parent) : QObject(parent)
     m_timer = new QTimer(this);
     m_timer->setInterval(5000);
     m_timer->setSingleShot(true);
-    connect(m_timer, SIGNAL(timeout()), SLOT(writePlayLists()));
+    connect(m_timer, &QTimer::timeout, this, &PlayListManager::writePlayLists);
     readPlayLists(); //read playlists
 }
 
@@ -127,7 +129,7 @@ void PlayListManager::selectPlayList(PlayListModel *model)
 
 void PlayListManager::selectPlayList(int i)
 {
-    if(i > m_models.count() - 1)
+    if(i < 0 || i > m_models.count() - 1)
         return;
     selectPlayList(playListAt(i));
 }
@@ -141,18 +143,12 @@ void PlayListManager::selectPlayList(const QString &name)
 
 void PlayListManager::selectNextPlayList()
 {
-    int i = m_models.indexOf(m_selected);
-    i++;
-    if( i >= 0 && i < m_models.size())
-        selectPlayList(i);
+    selectPlayList(m_models.indexOf(m_selected) + 1);
 }
 
 void PlayListManager::selectPreviousPlayList()
 {
-    int i = m_models.indexOf(m_selected);
-    i--;
-    if( i >= 0 && i < m_models.size())
-        selectPlayList(i);
+    selectPlayList(m_models.indexOf(m_selected) - 1);
 }
 
 void PlayListManager::activatePlayList(PlayListModel *model)
@@ -178,7 +174,7 @@ void PlayListManager::activateSelectedPlayList()
 
 PlayListModel *PlayListManager::createPlayList(const QString &name)
 {
-    PlayListModel *model = new PlayListModel (name.isEmpty() ? tr("Playlist") : name, this);
+    PlayListModel *model = new PlayListModel(name.isEmpty() ? tr("Playlist") : name, this);
     QString pl_name = model->name();
     if(playListNames().contains(pl_name))
     {
@@ -186,18 +182,18 @@ PlayListModel *PlayListManager::createPlayList(const QString &name)
         forever
         {
             i++;
-            if(!playListNames().contains(pl_name + QString(" (%1)").arg(i)))
+            if(!playListNames().contains(pl_name + QStringLiteral(" (%1)").arg(i)))
             {
-                pl_name = pl_name + QString(" (%1)").arg(i);
+                pl_name = pl_name + QStringLiteral(" (%1)").arg(i);
                 break;
             }
         }
         model->setName(pl_name);
     }
     m_models.append(model);
-    connect(model, SIGNAL(nameChanged(QString)), SIGNAL(playListsChanged()));
-    connect(model, SIGNAL(listChanged(int)), SLOT(onListChanged(int)));
-    connect(model, SIGNAL(currentTrackRemoved()), SLOT(onCurrentTrackRemoved()));
+    connect(model, &PlayListModel::nameChanged, this, &PlayListManager::playListsChanged);
+    connect(model, &PlayListModel::listChanged, this, &PlayListManager::onListChanged);
+    connect(model, &PlayListModel::currentTrackRemoved, this, &PlayListManager::onCurrentTrackRemoved);
     emit playListAdded(m_models.indexOf(model));
     selectPlayList(model);
     return model;
@@ -273,7 +269,7 @@ void PlayListManager::readPlayLists()
     QString line, key, value;
     int current = 0, pl = 0;
     QList <PlayListTrack *> tracks;
-    QFile file(Qmmp::configDir() + "/playlist.txt");
+    QFile file(Qmmp::configDir() + u"/playlist.txt"_s);
     file.open(QIODevice::ReadOnly);
     QByteArray array = file.readAll();
     file.close();
@@ -290,33 +286,33 @@ void PlayListManager::readPlayLists()
         key = line.left(s);
         value = line.right(line.size() - s - 1);
 
-        if(key == "current_playlist")
+        if(key == "current_playlist"_L1)
             pl = value.toInt();
-        else if(key == "playlist")
+        else if(key == "playlist"_L1)
         {
             if(!m_models.isEmpty() && !tracks.isEmpty())
             {
                 m_models.last()->add(tracks);
-                m_models.last()->setCurrent(tracks.at(qBound(0, current, tracks.count()-1)));
+                m_models.last()->setCurrent(tracks.at(qBound(0, current, tracks.count() - 1)));
             }
             tracks.clear();
             current = 0;
             m_models << new PlayListModel(value, this);
         }
-        else if (key == "current")
+        else if (key == "current"_L1)
         {
             current = value.toInt();
         }
-        else if (key == "file")
+        else if (key == "file"_L1)
         {
             tracks << new PlayListTrack();
             tracks.last()->setPath(value);
         }
         else if (tracks.isEmpty())
             continue;
-        else if (key == "duration")
+        else if (key == "duration"_L1)
             tracks.last()->setDuration(value.toInt());
-        else if (key == "length")
+        else if (key == "length"_L1)
             tracks.last()->setDuration(value.toInt() * 1000);
         else if((metaKey = m_metaKeys.value(key, Qmmp::UNKNOWN)) != Qmmp::UNKNOWN)
             tracks.last()->setValue(metaKey, value);
@@ -326,7 +322,7 @@ void PlayListManager::readPlayLists()
     buffer.close();
     if(m_models.isEmpty())
     {
-        m_models << new PlayListModel(tr("Playlist"),this);
+        m_models << new PlayListModel(tr("Playlist"), this);
     }
     else if(!tracks.isEmpty())
     {
@@ -339,9 +335,9 @@ void PlayListManager::readPlayLists()
     m_current = m_models.at(pl);
     for(const PlayListModel *model : qAsConst(m_models))
     {
-        connect(model, SIGNAL(nameChanged(QString)), SIGNAL(playListsChanged()));
-        connect(model, SIGNAL(listChanged(int)), SLOT(onListChanged(int)));
-        connect(model, SIGNAL(currentTrackRemoved()), SLOT(onCurrentTrackRemoved()));
+        connect(model, &PlayListModel::nameChanged, this, &PlayListManager::playListsChanged);
+        connect(model, &PlayListModel::listChanged, this, &PlayListManager::onListChanged);
+        connect(model, &PlayListModel::currentTrackRemoved, this, &PlayListManager::onCurrentTrackRemoved);
     }
 }
 
@@ -349,39 +345,39 @@ void PlayListManager::writePlayLists()
 {
     qDebug("PlayListManager: saving playlists...");
     QString value;
-    QString plFilePath = Qmmp::configDir() + "/playlist.txt";
+    QString plFilePath = Qmmp::configDir() + u"/playlist.txt"_s;
     QSaveFile plFile(plFilePath);
     if(!plFile.open(QIODevice::WriteOnly))
     {
         qDebug("PlayListManager: error: %s", qPrintable(plFile.errorString()));
         return;
     }
-    plFile.write(QString("current_playlist=%1\n").arg(m_models.indexOf(m_current)).toUtf8());
+    plFile.write(QStringLiteral("current_playlist=%1\n").arg(m_models.indexOf(m_current)).toUtf8());
     for(const PlayListModel *model : qAsConst(m_models))
     {
-        plFile.write(QString("playlist=%1\n").arg(model->name()).toUtf8());
+        plFile.write(QStringLiteral("playlist=%1\n").arg(model->name()).toUtf8());
         if(model->isEmpty())
             continue;
         const QList<PlayListTrack *> tracks = model->tracks();
-        plFile.write(QString("current=%1\n").arg(model->currentIndex()).toLatin1());
+        plFile.write(QStringLiteral("current=%1\n").arg(model->currentIndex()).toLatin1());
         for(PlayListTrack *t : qAsConst(tracks))
         {
-            plFile.write(QString("file=%1\n").arg(t->path()).toUtf8());
+            plFile.write(QStringLiteral("file=%1\n").arg(t->path()).toUtf8());
 
             for(QHash<QString, Qmmp::MetaData>::const_iterator it = m_metaKeys.constBegin(); it != m_metaKeys.constEnd(); ++it)
             {
                 if(!(value = t->value(it.value())).isEmpty())
-                    plFile.write(QString("%1=%2\n").arg(it.key(), value).toUtf8());
+                    plFile.write(QStringLiteral("%1=%2\n").arg(it.key(), value).toUtf8());
             }
 
             for(QHash<QString, Qmmp::TrackProperty>::const_iterator it = m_propKeys.constBegin(); it != m_propKeys.constEnd(); ++it)
             {
                 if(!(value = t->value(it.value())).isEmpty())
-                    plFile.write(QString("%1=%2\n").arg(it.key(), value).toLatin1());
+                    plFile.write(QStringLiteral("%1=%2\n").arg(it.key(), value).toLatin1());
             }
 
             if(t->duration() > 0)
-                plFile.write(QString("duration=%1\n").arg(t->duration()).toLatin1());
+                plFile.write(QStringLiteral("duration=%1\n").arg(t->duration()).toLatin1());
         }
     }
     plFile.commit();

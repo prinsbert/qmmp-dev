@@ -160,7 +160,7 @@ protected:
     /*!
      * Object destructor
      */
-    virtual ~FileDialog();
+    virtual ~FileDialog() = default;
     /*!
      * Opens nonmodal file dialog. Selected file dialog should support nonmodal mode.
      * Otherwise this function does nothing.
