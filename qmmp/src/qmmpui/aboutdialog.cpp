@@ -36,152 +36,113 @@
 #include <qmmpui/uiloader.h>
 #include <qmmpui/uifactory.h>
 #include <qmmp/qmmp.h>
+#include "ui_aboutdialog.h"
 #include "general.h"
 #include "generalfactory.h"
 #include "aboutdialog_p.h"
 
 
 AboutDialog::AboutDialog(QWidget* parent)
-        : QDialog(parent)
+        : QDialog(parent), m_ui(new Ui::AboutDialog)
 {
-    setupUi(this);
-    setAttribute(Qt::WA_QuitOnClose, false);
-    licenseTextBrowser->setPlainText(getStringFromResource(":COPYING"));
-    aboutTextBrowser->setHtml(loadAbout());
-    authorsTextBrowser->setPlainText(getStringFromResource(":authors"));
-    thanksToTextBrowser->setPlainText(getStringFromResource(":thanks"));
-    translatorsTextBrowser->setPlainText(getStringFromResource(":translators"));
+
+    m_ui->setupUi(this);
+    m_ui->licenseTextBrowser->setPlainText(getStringFromResource(u":COPYING"_s));
+    m_ui->aboutTextBrowser->setHtml(loadAbout());
+    m_ui->authorsTextBrowser->setPlainText(getStringFromResource(u":authors"_s));
+    m_ui->thanksToTextBrowser->setPlainText(getStringFromResource(u":thanks"_s));
+    m_ui->translatorsTextBrowser->setPlainText(getStringFromResource(u":translators"_s));
 }
 
 AboutDialog::~AboutDialog()
-{}
+{
+    delete m_ui;
+}
 
 /*$SPECIALIZATION$*/
 QString AboutDialog::loadAbout()
 {
     QString text;
-    text.append("<head>");
-    text.append("<META content=\"text/html; charset=UTF-8\">");
-    text.append("</head>");
-    if(layoutDirection() == Qt::RightToLeft)
-        text.append("<div dir='rtl'>");
-    else
-        text.append("<div>");
-    text.append("<h3>"+tr("Qt-based Multimedia Player (Qmmp)")+"</h3>");
-
-    text.append("<p>"+getStringFromResource(":description")+"</p>");
+    text.append(u"<head><META content=\"text/html; charset=UTF-8\"></head>"_s);
+    text.append(layoutDirection() == Qt::RightToLeft ? u"<div dir='rtl'>"_s : u"<div>"_s);
+    text.append(u"<h3>"_s + tr("Qt-based Multimedia Player (Qmmp)") + u"</h3>"_s);
+    text.append(u"<p>"_s + getStringFromResource(u":description"_s) + u"</p>"_s);
 
     text.append("<p><b>"+tr("Version: %1").arg(Qmmp::strVersion()) + "</b><br>");
-    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(qVersion(), QT_VERSION_STR) + "</p>");
+    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(qVersion(), QT_VERSION_STR) + u"</p>"_s);
 
-    text.append("<p>");
+    text.append(u"<p>"_s);
     text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2024)+"<br>");
-    text.append("<a href=\"https://qmmp.ylsoftware.com/\">https://qmmp.ylsoftware.com/</a><br>");
-    text.append("<a href=\"https://sourceforge.net/projects/qmmp-dev/\">https://sourceforge.net/projects/qmmp-dev/</a>");
-    text.append("</p>");
+    text.append(u"<a href=\"https://qmmp.ylsoftware.com/\">https://qmmp.ylsoftware.com/</a><br>"_s);
+    text.append(u"<a href=\"https://sourceforge.net/projects/qmmp-dev/\">https://sourceforge.net/projects/qmmp-dev/</a>"_s);
+    text.append(u"</p>"_s);
 
-    text.append("<h5>"+tr("Transports:")+"</h5>");
-    text.append("<ul type=\"square\">");
+    text.append(u"<h5>"_s + tr("Transports:") + u"</h5>"_s);
+    text.append(u"<ul type=\"square\">"_s);
     for(const InputSourceFactory *fact : InputSource::factories())
-    {
-        text.append("<li>");
-        text.append(fact->properties().name);
-        text.append("</li>");
-    }
-    text.append("</ul>");
+        text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+    text.append(u"</ul>"_s);
 
-    text.append("<h5>"+tr("Decoders:")+"</h5>");
-    text.append("<ul type=\"square\">");
+    text.append(u"<h5>"_s + tr("Decoders:") + u"</h5>"_s);
+    text.append(u"<ul type=\"square\">"_s);
     for(const DecoderFactory *fact : Decoder::factories())
-    {
-        text.append("<li>");
-        text.append(fact->properties().name);
-        text.append("</li>");
-    }
-    text.append("</ul>");
+        text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+    text.append(u"</ul>"_s);
 
     if(!AbstractEngine::factories().isEmpty())
     {
-        text.append("<h5>"+tr("Engines:")+"</h5>");
-        text.append("<ul type=\"square\">");
+        text.append(u"<h5>"_s + tr("Engines:") + u"</h5>"_s);
+        text.append(u"<ul type=\"square\">"_s);
         for(const EngineFactory *fact : AbstractEngine::factories())
-        {
-            text.append("<li>");
-            text.append(fact->properties().name);
-            text.append("</li>");
-        }
-        text.append("</ul>");
+            text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+        text.append(u"</ul>"_s);
     }
 
-    text.append("<h5>"+tr("Effects:")+"</h5>");
-    text.append("<ul type=\"square\">");
+    text.append(u"<h5>"_s + tr("Effects:") + u"</h5>"_s);
+    text.append(u"<ul type=\"square\">"_s);
     for(const EffectFactory *fact : Effect::factories())
-    {
-        text.append("<li>");
-        text.append(fact->properties().name);
-        text.append("</li>");
-    }
-    text.append("</ul>");
+        text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+    text.append(u"</ul>"_s);
 
     if(!Visual::factories().isEmpty())
     {
-        text.append("<h5>"+tr("Visual plugins:")+"</h5>");
-        text.append("<ul type=\"square\">");
+        text.append(u"<h5>"_s + tr("Visual plugins:") + u"</h5>"_s);
+        text.append(u"<ul type=\"square\">"_s);
         for(const VisualFactory *fact : Visual::factories())
-        {
-            text.append("<li>");
-            text.append(fact->properties().name);
-            text.append("</li>");
-        }
-        text.append("</ul>");
+            text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+        text.append(u"</ul>"_s);
     }
 
-    text.append("<h5>"+tr("General plugins:")+"</h5>");
-    text.append("<ul type=\"square\">");
+    text.append(u"<h5>"_s + tr("General plugins:") + u"</h5>"_s);
+    text.append(u"<ul type=\"square\">"_s);
     for(const GeneralFactory *fact : General::factories())
-    {
-        text.append("<li>");
-        text.append(fact->properties().name);
-        text.append("</li>");
-    }
-    text.append("</ul>");
+        text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+    text.append(u"</ul>"_s);
 
-    text.append("<h5>"+tr("Output plugins:")+"</h5>");
-    text.append("<ul type=\"square\">");
+    text.append(u"<h5>"_s + tr("Output plugins:") + u"</h5>"_s);
+    text.append(u"<ul type=\"square\">"_s);
     for(const OutputFactory *fact : Output::factories())
-    {
-        text.append("<li>");
-        text.append(fact->properties().name);
-        text.append("</li>");
-    }
-    text.append("</ul>");
+        text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+    text.append(u"</ul>"_s);
 
     if(!FileDialog::factories().isEmpty())
     {
-        text.append("<h5>"+tr("File dialogs:")+"</h5>");
-        text.append("<ul type=\"square\">");
+        text.append(u"<h5>"_s + tr("File dialogs:") + u"</h5>"_s);
+        text.append(u"<ul type=\"square\">"_s);
         for(const FileDialogFactory *fact : FileDialog::factories())
-        {
-            text.append("<li>");
-            text.append(fact->properties().name);
-            text.append("</li>");
-        }
-        text.append("</ul>");
+            text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+        text.append(u"</ul>"_s);
     }
 
     if(!UiLoader::factories().isEmpty())
     {
-        text.append("<h5>"+tr("User interfaces:")+"</h5>");
-        text.append("<ul type=\"square\">");
+        text.append(u"<h5>"_s + tr("User interfaces:") + u"</h5>"_s);
+        text.append(u"<ul type=\"square\">"_s);
         for(const UiFactory *fact :UiLoader::factories())
-        {
-            text.append("<li>");
-            text.append(fact->properties().name);
-            text.append("</li>");
-        }
-        text.append("</ul>");
+            text.append(u"<li>"_s + fact->properties().name + u"</li>"_s);
+        text.append(u"</ul>"_s);
     }
-    text.append("<div>");
+    text.append(u"<div>"_s);
 
     return text;
 }
@@ -189,13 +150,12 @@ QString AboutDialog::loadAbout()
 QString AboutDialog::getStringFromResource(const QString &res_file)
 {
     QString ret_string;
-    QStringList paths;
-    paths << res_file + "_" + Qmmp::systemLanguageID() + ".txt";
-    if(Qmmp::systemLanguageID().contains("."))
-        paths << res_file + "_" + Qmmp::systemLanguageID().split(".").at(0) + ".txt";
-    if(Qmmp::systemLanguageID().contains("_"))
-        paths << res_file + "_" + Qmmp::systemLanguageID().split("_").at(0) + ".txt";
-    paths << res_file + ".txt";
+    QStringList paths = { QStringLiteral("%1_%2.txt").arg(res_file, Qmmp::systemLanguageID()) };
+    if(Qmmp::systemLanguageID().contains(QChar('.')))
+        paths << QStringLiteral("%1_%2.txt").arg(res_file, Qmmp::systemLanguageID().split(QChar('.')).at(0));
+    if(Qmmp::systemLanguageID().contains(QChar('_')))
+        paths << QStringLiteral("%1_%2.txt").arg(res_file, Qmmp::systemLanguageID().split(QChar('_')).at(0));
+    paths << res_file + u".txt"_s;
     paths << res_file;
 
     for(const QString &path : qAsConst(paths))

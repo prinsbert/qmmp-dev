@@ -1,5 +1,5 @@
 /***************************************************************************
-*   Copyright (C) 2006-2015 by Ilya Kotov                                 *
+*   Copyright (C) 2006-2024 by Ilya Kotov                                 *
 *   forkotov02@ya.ru                                                      *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -22,14 +22,17 @@
 #define ABOUTDIALOG_P_H
 
 #include <QDialog>
-#include "ui_aboutdialog.h"
+
+namespace Ui {
+class AboutDialog;
+}
 
 /**
     @internal
     @author Vladimir Kuznetsov <vovanec@gmail.com>
  */
 
-class AboutDialog : public QDialog, private Ui::AboutDialog
+class AboutDialog : public QDialog
 {
     Q_OBJECT
 public:
@@ -37,9 +40,9 @@ public:
     ~AboutDialog();
 
 private:
+    Ui::AboutDialog *m_ui;
     QString loadAbout();
     QString getStringFromResource(const QString& res_file);
-
 };
 
 #endif
