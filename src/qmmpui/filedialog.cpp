@@ -37,14 +37,14 @@ FileDialogFactory *FileDialog::m_currentFactory = nullptr;
 
 void FileDialog::loadPlugins()
 {
-    if (m_cache)
+    if(m_cache)
         return;
 
     m_cache = new QList<QmmpUiPluginCache*>;
     m_cache->append(new QmmpUiPluginCache(new QtFileDialogFactory));
 
     QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins("FileDialogs"))
+    for(const QString &filePath : Qmmp::findPlugins(u"FileDialogs"_s))
     {
         QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
         if(item->hasError())
@@ -79,7 +79,7 @@ bool FileDialog::isEnabled(const FileDialogFactory *factory)
 {
     loadPlugins();
     QSettings settings;
-    QString name = settings.value("FileDialog", "qt_dialog").toString();
+    QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
     return factory->properties().shortName == name;
 }
 
@@ -96,7 +96,7 @@ QString FileDialog::getExistingDirectory(QWidget *parent,
         const QString &dir)
 {
     QStringList l = instance()->exec(parent, dir, FileDialog::AddDir, caption);
-    return l.isEmpty() ? QString() : l.at(0);
+    return l.isEmpty() ? QString() : l.constFirst();
 }
 
 QString FileDialog::getOpenFileName(QWidget *parent,
@@ -106,7 +106,7 @@ QString FileDialog::getOpenFileName(QWidget *parent,
                                     QString *selectedFilter)
 {
    QStringList l = instance()->exec(parent, dir, FileDialog::AddFile, caption, filter, selectedFilter);
-   return l.isEmpty() ? QString() : l.at(0);
+   return l.isEmpty() ? QString() : l.constFirst();
 }
 
 QStringList FileDialog::getOpenFileNames(QWidget *parent, const QString &caption,
@@ -133,25 +133,25 @@ void FileDialog::popup(QWidget *parent,
                        const QString &filters)
 
 {
-    if (!dir)
+    if(!dir)
         qFatal("FileDialog: empty last dir pointer");
     FileDialog* inst = instance();
     inst->setParent(parent);
     inst->init(receiver, member, dir);
-    if (!m_currentFactory->properties().modal)
-        inst->raise(*dir, m, caption, filters.split(";;"));
+    if(!m_currentFactory->properties().modal)
+        inst->raise(*dir, m, caption, filters.split(u";;"_s));
     else
     {
         QStringList files;
-        if (m == AddFiles || m == AddFile || m == AddDirsFiles || m == PlayDirsFiles)
+        if(m == AddFiles || m == AddFile || m == AddDirsFiles || m == PlayDirsFiles)
         {
             QString selectedFilter;
             files = getOpenFileNames(parent, caption, *dir, filters, &selectedFilter);
         }
-        else if (m == AddDirs || m == AddDir)
+        else if(m == AddDirs || m == AddDir)
         {
             QString path = getExistingDirectory(parent, caption, *dir);
-            if (!path.isEmpty())
+            if(!path.isEmpty())
                 files << path;
         }
         QMetaObject::invokeMethod(inst, "filesSelected", Q_ARG(QStringList, files));
@@ -164,7 +164,7 @@ FileDialog* FileDialog::instance()
     FileDialogFactory *selected = nullptr;
 
     QSettings settings;
-    QString name = settings.value("FileDialog", "qt_dialog").toString();
+    QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
 
     auto it = std::find_if(m_cache->cbegin(), m_cache->cend(),
                            [name] (QmmpUiPluginCache *item){ return item->shortName() == name; } );
@@ -172,7 +172,7 @@ FileDialog* FileDialog::instance()
         selected = (*it)->fileDialogFactory();
 
     if(!selected)
-        selected = m_cache->at(0)->fileDialogFactory();
+        selected = m_cache->constFirst()->fileDialogFactory();
 
     if(selected == m_currentFactory && m_instance)
         return m_instance;
@@ -194,8 +194,6 @@ FileDialog::FileDialog() : QObject(), m_initialized(false)
     m_lastDir = nullptr;
 }
 
-FileDialog::~FileDialog() {}
-
 void FileDialog::raise(const QString &dir, Mode mode, const QString &caption, const QStringList &mask)
 {
     Q_UNUSED(dir);
@@ -207,23 +205,23 @@ void FileDialog::raise(const QString &dir, Mode mode, const QString &caption, co
 void FileDialog::init(QObject* receiver, const char* member, QString *dir)
 {
     m_lastDir = dir;
-    if (m_initialized)
+    if(m_initialized)
         disconnect();
-    if (receiver &&  member)
+    if(receiver &&  member)
     {
         connect(this, SIGNAL(filesSelected(QStringList,bool)), receiver, member);
-        connect(this, SIGNAL(filesSelected(QStringList)), SLOT(updateLastDir(QStringList)));
+        connect(this, &FileDialog::filesSelected, this, &FileDialog::updateLastDir);
         m_initialized = true;
     }
 }
 
-void FileDialog::updateLastDir(const QStringList& list)
+void FileDialog::updateLastDir(const QStringList &list)
 {
-    if (!list.isEmpty() && m_lastDir)
+    if(!list.isEmpty() && m_lastDir)
     {
-        QString path = list[0];
-        if (path.endsWith('/'))
-            path.remove(path.size()-1, 1);
-        *m_lastDir = path.left(path.lastIndexOf ('/'));
+        QString path = list.constFirst();
+        if(path.endsWith(QChar('/')))
+            path.remove(path.size() - 1, 1);
+        *m_lastDir = path.left(path.lastIndexOf(QChar('/')));
     }
 }

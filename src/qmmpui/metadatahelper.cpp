@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2015-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,7 +27,6 @@ MetaDataHelper::MetaDataHelper()
     m_instance = this;
     m_group_formatter = new MetaDataFormatter();
     m_group_formatter2 = new MetaDataFormatter();
-
     m_title_formatters << new MetaDataFormatter();
 }
 
@@ -35,6 +34,7 @@ MetaDataHelper::~MetaDataHelper()
 {
     m_instance = nullptr;
     delete m_group_formatter;
+    delete m_group_formatter2;
     qDeleteAll(m_title_formatters);
     m_title_formatters.clear();
 }

@@ -20,60 +20,62 @@
 
 #include "metadataformattermenu.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
     QMenu(parent)
 {
-    addAction(tr("Artist"))->setData("%p");
-    addAction(tr("Album"))->setData("%a");
-    addAction(tr("Album Artist"))->setData("%aa");
+    addAction(tr("Artist"))->setData(u"%p"_s);
+    addAction(tr("Album"))->setData(u"%a"_s);
+    addAction(tr("Album Artist"))->setData(u"%aa"_s);
     if(type == TITLE_MENU || type == COLUMN_MENU)
     {
-        addAction(tr("Title"))->setData("%t");
-        addAction(tr("Track Number"))->setData("%n");
-        addAction(tr("Two-digit Track Number"))->setData("%NN");
+        addAction(tr("Title"))->setData(u"%t"_s);
+        addAction(tr("Track Number"))->setData(u"%n"_s);
+        addAction(tr("Two-digit Track Number"))->setData(u"%NN"_s);
     }
     if(type == COLUMN_MENU)
     {
-        addAction(tr("Track Index"))->setData("%I");
+        addAction(tr("Track Index"))->setData(u"%I"_s);
     }
-    addAction(tr("Genre"))->setData("%g");
-    addAction(tr("Comment"))->setData("%c");
-    addAction(tr("Composer"))->setData("%C");
-    addAction(tr("Disc Number"))->setData("%D");
-    addAction(tr("Year"))->setData("%y");
+    addAction(tr("Genre"))->setData(u"%g"_s);
+    addAction(tr("Comment"))->setData(u"%c"_s);
+    addAction(tr("Composer"))->setData(u"%C"_s);
+    addAction(tr("Disc Number"))->setData(u"%D"_s);
+    addAction(tr("Year"))->setData(u"%y"_s);
     if(type == TITLE_MENU || type == COLUMN_MENU)
     {
-        addAction(tr("Duration"))->setData("%l");
-        addAction(tr("File Name"))->setData("%f");
-        addAction(tr("File Path"))->setData("%F");
-        addAction(tr("Artist - Title"))->setData("%if(%p,%p - %t,%t)");
-        addAction(tr("Condition"))->setData("%if(%p&%t,%p - %t,%f)");
+        addAction(tr("Duration"))->setData(u"%l"_s);
+        addAction(tr("File Name"))->setData(u"%f"_s);
+        addAction(tr("File Path"))->setData(u"%F"_s);
+        addAction(tr("Artist - Title"))->setData(u"%if(%p,%p - %t,%t)"_s);
+        addAction(tr("Condition"))->setData(u"%if(%p&%t,%p - %t,%f)"_s);
     }
     else if(type == GROUP_MENU)
     {
-        addAction(tr("Artist - Album"))->setData("%if(%p,%p - %a,%a)");
-        addAction(tr("Artist - [Year] Album"))->setData("%p%if(%p&%a, - %if(%y,[%y] ,),)%a");
+        addAction(tr("Artist - Album"))->setData(u"%if(%p,%p - %a,%a)"_s);
+        addAction(tr("Artist - [Year] Album"))->setData(u"%p%if(%p&%a, - %if(%y,[%y] ,),)%a"_s);
     }
     else if(type == GROUP_EXTRA_ROW_MENU)
     {
-        addAction(tr("Duration"))->setData("%l");
-        addAction(tr("Year | Duration | Bitrate"))->setData("%y | %l | %{bitrate} kbps");
+        addAction(tr("Duration"))->setData(u"%l"_s);
+        addAction(tr("Year | Duration | Bitrate"))->setData(u"%y | %l | %{bitrate} kbps"_s);
     }
-    addAction(tr("Parent Directory Name"))->setData("%dir(0)");
-    addAction(tr("Parent Directory Path"))->setData("%dir");
+    addAction(tr("Parent Directory Name"))->setData(u"%dir(0)"_s);
+    addAction(tr("Parent Directory Path"))->setData(u"%dir"_s);
     addSeparator();
-    addAction(tr("Bitrate"))->setData("%{bitrate}");
-    addAction(tr("Sample Rate"))->setData("%{samplerate}");
-    addAction(tr("Number of Channels"))->setData("%{channels}");
-    addAction(tr("Sample Size"))->setData("%{samplesize}");
-    addAction(tr("Format"))->setData("%{format}");
-    addAction(tr("Decoder"))->setData("%{decoder}");
+    addAction(tr("Bitrate"))->setData(u"%{bitrate}"_s);
+    addAction(tr("Sample Rate"))->setData(u"%{samplerate}"_s);
+    addAction(tr("Number of Channels"))->setData(u"%{channels}"_s);
+    addAction(tr("Sample Size"))->setData(u"%{samplesize}"_s);
+    addAction(tr("Format"))->setData(u"%{format}"_s);
+    addAction(tr("Decoder"))->setData(u"%{decoder}"_s);
     if(type == TITLE_MENU || type == COLUMN_MENU)
     {
-        addAction(tr("File Size"))->setData("%{filesize}");
+        addAction(tr("File Size"))->setData(u"%{filesize}"_s);
     }
 
-    connect(this, SIGNAL(triggered(QAction*)), SLOT(onActionTriggered(QAction*)));
+    connect(this, &QMenu::triggered, this, &MetaDataFormatterMenu::onActionTriggered);
 }
 
 void MetaDataFormatterMenu::onActionTriggered(QAction *action)

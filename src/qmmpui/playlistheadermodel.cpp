@@ -33,9 +33,9 @@ PlayListHeaderModel::PlayListHeaderModel(QObject *parent) :
 
     ColumnHeader col;
     col.name = tr("Artist - Title");
-    col.pattern = "%if(%p,%p - %t,%t)";
+    col.pattern = u"%if(%p,%p - %t,%t)"_s;
     m_columns.append(col);
-    m_helper->setTitleFormats(QStringList() << col.pattern);
+    m_helper->setTitleFormats({ col.pattern });
 }
 
 PlayListHeaderModel::~PlayListHeaderModel()
@@ -53,15 +53,15 @@ void PlayListHeaderModel::restoreSettings(const QString &groupName)
 
 void PlayListHeaderModel::restoreSettings(QSettings *settings)
 {
-    QStringList names = settings->value("pl_column_names").toStringList();
-    QStringList patterns = settings->value("pl_column_patterns").toStringList();
+    QStringList names = settings->value(u"pl_column_names"_s).toStringList();
+    QStringList patterns = settings->value(u"pl_column_patterns"_s).toStringList();
 
     if(!names.isEmpty() && (names.count() == patterns.count()))
     {
         m_columns.clear();
         for(int i = 0; i < names.count(); ++i)
         {
-            ColumnHeader h = {names.at(i), patterns.at(i), QHash<int, QVariant>()};
+            ColumnHeader h = { names.at(i), patterns.at(i), QHash<int, QVariant>() };
             m_columns.append(h);
         }
         m_helper->setTitleFormats(patterns);
@@ -86,8 +86,8 @@ void PlayListHeaderModel::saveSettings(QSettings *settings)
         patterns << m_columns[i].pattern;
     }
 
-    settings->setValue("pl_column_names", names);
-    settings->setValue("pl_column_patterns", patterns);
+    settings->setValue(u"pl_column_names"_s, names);
+    settings->setValue(u"pl_column_patterns"_s, patterns);
 }
 
 bool PlayListHeaderModel::isSettingsLoaded() const
@@ -182,7 +182,7 @@ void PlayListHeaderModel::execInsert(int index, QWidget *parent)
     if(!parent)
         parent = qApp->activeWindow();
 
-    ColumnEditor editor(tr("Title"),"%t",parent);
+    ColumnEditor editor(tr("Title"), u"%t"_s, parent);
     editor.setWindowTitle(tr("Add Column"));
     if(editor.exec() == QDialog::Accepted)
         insert(index, editor.name(), editor.pattern());

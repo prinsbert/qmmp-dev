@@ -58,7 +58,7 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     m_ui->informationButton->setEnabled(false);
     m_ui->treeWidget->setItemDelegate(new RadioItemDelegate(this));
     m_ui->treeWidget->header()->setSectionsMovable(false);
-    connect(this, SIGNAL(rejected()),SLOT(saveSettings()));
+    connect(this, &QDialog::rejected, this, &ConfigDialog::saveSettings);
     m_ui->linesPerGroupComboBox->addItem(tr("1 row"), 1);
     m_ui->linesPerGroupComboBox->addItem(tr("3 rows"), 3);
     m_ui->linesPerGroupComboBox->addItem(tr("4 rows"), 4);
@@ -66,11 +66,11 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
     m_ui->replayGainModeComboBox->addItem(tr("Track"), QmmpSettings::REPLAYGAIN_TRACK);
     m_ui->replayGainModeComboBox->addItem(tr("Album"), QmmpSettings::REPLAYGAIN_ALBUM);
     m_ui->replayGainModeComboBox->addItem(tr("Disabled"), QmmpSettings::REPLAYGAIN_DISABLED);
-    m_ui->bitDepthComboBox->addItem("16", Qmmp::PCM_S16LE);
-    m_ui->bitDepthComboBox->addItem("24", Qmmp::PCM_S24LE);
-    m_ui->bitDepthComboBox->addItem("32", Qmmp::PCM_S32LE);
+    m_ui->bitDepthComboBox->addItem(u"16"_s, Qmmp::PCM_S16LE);
+    m_ui->bitDepthComboBox->addItem(u"24"_s, Qmmp::PCM_S24LE);
+    m_ui->bitDepthComboBox->addItem(u"32"_s, Qmmp::PCM_S32LE);
 #ifndef Q_OS_WIN
-    m_ui->bitDepthComboBox->addItem("32 (float)", Qmmp::PCM_FLOAT);
+    m_ui->bitDepthComboBox->addItem(u"32 (float)"_s, Qmmp::PCM_FLOAT);
 #endif
     m_ui->proxyTypeComboBox->addItem(tr("HTTP"), QmmpSettings::HTTP_PROXY);
     m_ui->proxyTypeComboBox->addItem(tr("SOCKS5"), QmmpSettings::SOCKS5_PROXY);
@@ -120,8 +120,8 @@ void ConfigDialog::readSettings()
         //resume playback on startup
         m_ui->continuePlaybackCheckBox->setChecked(guis->resumeOnStartup());
         //directory filters
-        m_ui->dirRestrictLineEdit->setText(guis->restrictFilters().join(",").trimmed());
-        m_ui->dirExcludeLineEdit->setText(guis->excludeFilters().join(",").trimmed());
+        m_ui->dirRestrictLineEdit->setText(guis->restrictFilters().join(QChar(',')).trimmed());
+        m_ui->dirExcludeLineEdit->setText(guis->excludeFilters().join(QChar(',')).trimmed());
         //default playlist
         m_ui->defaultPlayListCheckBox->setChecked(guis->useDefaultPlayList());
         m_ui->defaultPlayListLineEdit->setText(guis->defaultPlayListName());
@@ -149,8 +149,8 @@ void ConfigDialog::readSettings()
     //file type determination
     m_ui->byContentCheckBox->setChecked(gs->determineFileTypeByContent());
     //cover options
-    m_ui->coverIncludeLineEdit->setText(gs->coverNameFilters(true).join(","));
-    m_ui->coverExcludeLineEdit->setText(gs->coverNameFilters(false).join(","));
+    m_ui->coverIncludeLineEdit->setText(gs->coverNameFilters(true).join(QChar(',')));
+    m_ui->coverExcludeLineEdit->setText(gs->coverNameFilters(false).join(QChar(',')));
     m_ui->coverDepthSpinBox->setValue(gs->coverSearchDepth());
     m_ui->useCoverFilesCheckBox->setChecked(gs->useCoverFiles());
     //replay gain
@@ -169,26 +169,24 @@ void ConfigDialog::readSettings()
     m_ui->twoPassEqCheckBox->setChecked(gs->eqSettings().twoPasses());
     //geometry
     QSettings settings;
-    resize(settings.value("ConfigDialog/window_size", QSize(700,470)).toSize());
-    QList<QVariant> var_sizes = settings.value("ConfigDialog/splitter_sizes").toList();
+    resize(settings.value(u"ConfigDialog/window_size"_s, QSize(700,470)).toSize());
+    QList<QVariant> var_sizes = settings.value(u"ConfigDialog/splitter_sizes"_s).toList();
     if(var_sizes.count() != 2)
     {
         var_sizes.clear();
         var_sizes << 180 << width()-180;
     }
-    QList<int> sizes;
-    sizes << var_sizes.constFirst().toInt() << var_sizes.last().toInt();
+    QList<int> sizes = { var_sizes.constFirst().toInt(), var_sizes.constLast().toInt() };
     m_ui->splitter->setSizes(sizes);
     //fonts
     QFont font;
-    font.fromString(settings.value("CueEditor/font", qApp->font("QPlainTextEdit").toString()).toString());
-    m_ui->cueFontLabel->setText(font.family() + " " + QString::number(font.pointSize()));
+    font.fromString(settings.value(u"CueEditor/font"_s, qApp->font("QPlainTextEdit").toString()).toString());
+    m_ui->cueFontLabel->setText(font.family() + QChar::Space + QString::number(font.pointSize()));
     m_ui->cueFontLabel->setFont(font);
-    m_ui->cueSystemFontCheckBox->setChecked(settings.value("CueEditor/use_system_font", true).toBool());
+    m_ui->cueSystemFontCheckBox->setChecked(settings.value(u"CueEditor/use_system_font"_s, true).toBool());
 }
 
-void ConfigDialog::on_contentsWidget_currentItemChanged(QListWidgetItem *current,
-                                                        QListWidgetItem *previous)
+void ConfigDialog::on_contentsWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
 {
     if (!current)
         current = previous;
@@ -201,33 +199,33 @@ void ConfigDialog::loadPluginsInfo()
     /*
         load transport plugin information
      */
-    QTreeWidgetItem *item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("Transports"));
+    QTreeWidgetItem *item = new QTreeWidgetItem(m_ui->treeWidget, { tr("Transports") });
     item->setFirstColumnSpanned(true);
     for(InputSourceFactory *factory : InputSource::factories())
     {
-        new PluginItem (item, factory,  InputSource::file(factory));
+        new PluginItem(item, factory,  InputSource::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
     /*
         load input plugins information
     */
-    item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("Decoders"));
+    item = new QTreeWidgetItem(m_ui->treeWidget, { tr("Decoders") });
     item->setFirstColumnSpanned(true);
     for(DecoderFactory *factory : Decoder::factories())
     {
-        new PluginItem (item, factory,  Decoder::file(factory));
+        new PluginItem(item, factory,  Decoder::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
     /*
         load audio engines information
     */
-    item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("Engines"));
+    item = new QTreeWidgetItem(m_ui->treeWidget, { tr("Engines") });
     item->setFirstColumnSpanned(true);
     for(EngineFactory *factory : AbstractEngine::factories())
     {
-        new PluginItem (item, factory,  AbstractEngine::file(factory));
+        new PluginItem(item, factory,  AbstractEngine::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
@@ -235,22 +233,22 @@ void ConfigDialog::loadPluginsInfo()
     /*
         load effect plugin information
     */
-    item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("Effects"));
+    item = new QTreeWidgetItem(m_ui->treeWidget, { tr("Effects") });
     item->setFirstColumnSpanned(true);
     for(EffectFactory *factory : Effect::factories())
     {
-        new PluginItem (item, factory, Effect::file(factory));
+        new PluginItem(item, factory, Effect::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
     /*
         load visual plugin information
     */
-    item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("Visualization"));
+    item = new QTreeWidgetItem(m_ui->treeWidget, { tr("Visualization") });
     item->setFirstColumnSpanned(true);
     for(VisualFactory *factory : Visual::factories())
     {
-        new PluginItem (item, factory, Visual::file(factory));
+        new PluginItem(item, factory, Visual::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
@@ -258,33 +256,33 @@ void ConfigDialog::loadPluginsInfo()
     /*
         load general plugin information
     */
-    item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("General"));
+    item = new QTreeWidgetItem(m_ui->treeWidget, { tr("General") });
     item->setFirstColumnSpanned(true);
     for(GeneralFactory *factory : General::factories())
     {
-        new PluginItem (item, factory, General::file(factory));
+        new PluginItem(item, factory, General::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
     /*
         load output plugins information
     */
-    item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("Output"));
+    item = new QTreeWidgetItem(m_ui->treeWidget, { tr("Output") });
     item->setFirstColumnSpanned(true);
     for(OutputFactory *factory : Output::factories())
     {
-        new PluginItem (item, factory, Output::file(factory));
+        new PluginItem(item, factory, Output::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
     /*
         load file dialogs information
     */
-    item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("File Dialogs"));
+    item = new QTreeWidgetItem(m_ui->treeWidget, { tr("File Dialogs") });
     item->setFirstColumnSpanned(true);
     for(FileDialogFactory *factory : FileDialog::factories())
     {
-        new PluginItem (item, factory, FileDialog::file(factory));
+        new PluginItem(item, factory, FileDialog::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
@@ -292,11 +290,11 @@ void ConfigDialog::loadPluginsInfo()
     /*
         load user interfaces information
     */
-    item = new QTreeWidgetItem (m_ui->treeWidget, QStringList() << tr("User Interfaces"));
+    item = new QTreeWidgetItem(m_ui->treeWidget, { tr("User Interfaces") });
     item->setFirstColumnSpanned(true);
     for(UiFactory *factory : UiLoader::factories())
     {
-        new PluginItem (item, factory, UiLoader::file(factory));
+        new PluginItem(item, factory, UiLoader::file(factory));
     }
     m_ui->treeWidget->addTopLevelItem(item);
     item->setExpanded(true);
@@ -327,78 +325,78 @@ void ConfigDialog::createMenus()
     m_ui->groupButton->setMenu(groupMenu);
     m_ui->groupButton->setPopupMode(QToolButton::InstantPopup);
     connect(groupMenu, &MetaDataFormatterMenu::patternSelected, this, [this] (const QString &str) {
-        m_ui->groupLineEdit->insert(m_ui->groupLineEdit->cursorPosition() < 1 ? str : (" - " + str));
+        m_ui->groupLineEdit->insert(m_ui->groupLineEdit->cursorPosition() < 1 ? str : (u" - "_s + str));
     });
 
     MetaDataFormatterMenu *extraRowFormatMenu = new MetaDataFormatterMenu(MetaDataFormatterMenu::GROUP_EXTRA_ROW_MENU, this);
     m_ui->extraRowFormatButton->setMenu(extraRowFormatMenu);
     m_ui->extraRowFormatButton->setPopupMode(QToolButton::InstantPopup);
     connect(extraRowFormatMenu, &MetaDataFormatterMenu::patternSelected, this, [this] (const QString &str) {
-        m_ui->extraRowFormatLineEdit->insert(m_ui->extraRowFormatLineEdit->cursorPosition() < 1 ? str : (" - " + str));
+        m_ui->extraRowFormatLineEdit->insert(m_ui->extraRowFormatLineEdit->cursorPosition() < 1 ? str : (u" - "_s + str));
     });
 
     m_ui->treeWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
-    m_preferencesAction = new QAction(QIcon::fromTheme("configure"),tr("Preferences"), m_ui->treeWidget);
+    m_preferencesAction = new QAction(QIcon::fromTheme(u"configure"_s), tr("Preferences"), m_ui->treeWidget);
     m_preferencesAction->setEnabled(false);
     m_ui->treeWidget->addAction(m_preferencesAction);
-    m_informationAction = new QAction(QIcon::fromTheme("dialog-information"),tr("Information"), m_ui->treeWidget);
+    m_informationAction = new QAction(QIcon::fromTheme(u"dialog-information"_s), tr("Information"), m_ui->treeWidget);
     m_informationAction->setEnabled(false);
     m_ui->treeWidget->addAction(m_informationAction);
-    connect(m_preferencesAction, SIGNAL(triggered()), SLOT(on_preferencesButton_clicked()));
-    connect(m_informationAction, SIGNAL(triggered()), SLOT(on_informationButton_clicked()));
+    connect(m_preferencesAction, &QAction::triggered, this, &ConfigDialog::on_preferencesButton_clicked);
+    connect(m_informationAction, &QAction::triggered, this, &ConfigDialog::on_informationButton_clicked);
 }
 
 void ConfigDialog::loadLanguages()
 {
-    QMap<QString, QString> l = {
-        { "auto", tr("<Autodetect>") },
-        { "pt_BR", tr("Brazilian Portuguese") },
-        { "zh_CN", tr("Chinese Simplified") },
-        { "zh_TW", tr("Chinese Traditional") },
-        { "cs", tr("Czech") },
-        { "nl", tr("Dutch") },
-        { "en_US", tr("English") },
-        { "fr", tr("French") },
-        { "gl_ES", tr("Galician") },
-        { "de", tr("German") },
-        { "el", tr("Greek") },
-        { "he", tr("Hebrew") },
-        { "hu", tr("Hungarian") },
-        { "id", tr("Indonesian") },
-        { "it", tr("Italian") },
-        { "ja", tr("Japanese") },
-        { "kk", tr("Kazakh") },
-        { "ko", tr("Korean") },
-        { "lt", tr("Lithuanian") },
-        { "pl_PL", tr("Polish") },
-        { "pt", tr("Portuguese") },
-        { "ru_RU", tr("Russian") },
-        { "sr_RS", tr("Serbian") },
-        { "sk", tr("Slovak") },
-        { "sv", tr("Swedish") },
-        { "es", tr("Spanish") },
-        { "tr", tr("Turkish") },
-        { "uk_UA", tr("Ukrainian") },
-        { "sr_BA", tr("Serbian (Ijekavian)") },
-        { "sr_RS", tr("Serbian (Ekavian)") },
+    const QMap<QString, QString> l = {
+        { u"auto"_s, tr("<Autodetect>") },
+        { u"pt_BR"_s, tr("Brazilian Portuguese") },
+        { u"zh_CN"_s, tr("Chinese Simplified") },
+        { u"zh_TW"_s, tr("Chinese Traditional") },
+        { u"cs"_s, tr("Czech") },
+        { u"nl"_s, tr("Dutch") },
+        { u"en_US"_s, tr("English") },
+        { u"fr"_s, tr("French") },
+        { u"gl_ES"_s, tr("Galician") },
+        { u"de"_s, tr("German") },
+        { u"el"_s, tr("Greek") },
+        { u"he"_s, tr("Hebrew") },
+        { u"hu"_s, tr("Hungarian") },
+        { u"id"_s, tr("Indonesian") },
+        { u"it"_s, tr("Italian") },
+        { u"ja"_s, tr("Japanese") },
+        { u"kk"_s, tr("Kazakh") },
+        { u"ko"_s, tr("Korean") },
+        { u"lt"_s, tr("Lithuanian") },
+        { u"pl_PL"_s, tr("Polish") },
+        { u"pt"_s, tr("Portuguese") },
+        { u"ru_RU"_s, tr("Russian") },
+        { u"sr_RS"_s, tr("Serbian") },
+        { u"sk"_s, tr("Slovak") },
+        { u"sv"_s, tr("Swedish") },
+        { u"es"_s, tr("Spanish") },
+        { u"tr"_s, tr("Turkish") },
+        { u"uk_UA"_s, tr("Ukrainian") },
+        { u"sr_BA"_s, tr("Serbian (Ijekavian)") },
+        { u"sr_RS"_s, tr("Serbian (Ekavian)") },
     };
 
-    for(const QString &code : l.keys())
+    for(auto it = l.cbegin(); it != l.cend(); ++it)
     {
-        QString title = code != "auto" ? l.value(code) + " (" + code + ")" : l.value(code);
-        m_ui->langComboBox->addItem(title, code);
+        QString title = it.key() != u"auto"_s ? QStringLiteral("%1 (%2)").arg(it.value(), it.key()) : it.key();
+        m_ui->langComboBox->addItem(title, it.key());
     }
 
     QString code = Qmmp::uiLanguageID();
     int index = m_ui->langComboBox->findData(code);
     if(index < 0)
-        index = m_ui->langComboBox->findData("auto");
+        index = m_ui->langComboBox->findData(u"auto"_s);
     m_ui->langComboBox->setCurrentIndex(index);
 }
 
 void ConfigDialog::saveSettings()
 {
-    if (QmmpUiSettings *guis = QmmpUiSettings::instance())
+    if(QmmpUiSettings *guis = QmmpUiSettings::instance())
     {
         guis->setGroupFormat(m_ui->groupLineEdit->text().trimmed());
         guis->setGroupExtraRowFormat(m_ui->extraRowFormatLineEdit->text().trimmed());
@@ -434,8 +432,8 @@ void ConfigDialog::saveSettings()
                            static_cast<QmmpSettings::ProxyType>(m_ui->proxyTypeComboBox->currentData().toInt()),
                            proxyUrl);
 
-    gs->setCoverSettings(m_ui->coverIncludeLineEdit->text().split(","),
-                         m_ui->coverExcludeLineEdit->text().split(","),
+    gs->setCoverSettings(m_ui->coverIncludeLineEdit->text().split(QChar(',')),
+                         m_ui->coverExcludeLineEdit->text().split(QChar(',')),
                          m_ui->coverDepthSpinBox->value(),
                          m_ui->useCoverFilesCheckBox->isChecked());
     int i = m_ui->replayGainModeComboBox->currentIndex();
@@ -455,18 +453,17 @@ void ConfigDialog::saveSettings()
     EqSettings eqs = gs->eqSettings();
     eqs.setTwoPasses(m_ui->twoPassEqCheckBox->isChecked());
     gs->setEqSettings(eqs);
-    QList<QVariant> var_sizes;
-    var_sizes << m_ui->splitter->sizes().constFirst() << m_ui->splitter->sizes().constLast();
+    QList<QVariant> var_sizes = { m_ui->splitter->sizes().constFirst(), m_ui->splitter->sizes().constLast() };
     QSettings settings;
-    settings.setValue("ConfigDialog/splitter_sizes", var_sizes);
-    settings.setValue("ConfigDialog/window_size", size());
+    settings.setValue(u"ConfigDialog/splitter_sizes"_s, var_sizes);
+    settings.setValue(u"ConfigDialog/window_size"_s, size());
     //User interface language
     int index = m_ui->langComboBox->currentIndex();
     if(index >= 0)
         Qmmp::setUiLanguageID(m_ui->langComboBox->itemData(index).toString());
     //fonts
-    settings.setValue("CueEditor/font", m_ui->cueFontLabel->font().toString());
-    settings.setValue("CueEditor/use_system_font", m_ui->cueSystemFontCheckBox->isChecked());
+    settings.setValue(u"CueEditor/font"_s, m_ui->cueFontLabel->font().toString());
+    settings.setValue(u"CueEditor/use_system_font"_s, m_ui->cueSystemFontCheckBox->isChecked());
 }
 
 void ConfigDialog::updateGroupSettings()
@@ -479,7 +476,7 @@ void ConfigDialog::updateGroupSettings()
     m_ui->extraRowFormatLabel->setEnabled(linesPerGroup > 1 && m_ui->showExtraRowCheckBox->isChecked());
 }
 
-void ConfigDialog::on_treeWidget_itemChanged (QTreeWidgetItem *item, int column)
+void ConfigDialog::on_treeWidget_itemChanged(QTreeWidgetItem *item, int column)
 {
     if(column == 0 && item->type() >= PluginItem::TRANSPORT)
         dynamic_cast<PluginItem *>(item)->setEnabled(item->checkState(0) == Qt::Checked);
@@ -508,7 +505,7 @@ void ConfigDialog::on_cueFontButton_clicked()
     font = QFontDialog::getFont (&ok, font, this);
     if(ok)
     {
-        m_ui->cueFontLabel->setText(font.family () + " " + QString::number(font.pointSize ()));
+        m_ui->cueFontLabel->setText(font.family () + QChar::Space + QString::number(font.pointSize ()));
         m_ui->cueFontLabel->setFont(font);
     }
 }

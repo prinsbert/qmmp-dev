@@ -51,10 +51,6 @@ public:
      */
     FileLoader(QObject *parent = nullptr);
     /*!
-     * Object destructor.
-     */
-    ~FileLoader();
-    /*!
      * Sets file/directory to load
      */
     void add(const QString &path);

@@ -44,7 +44,7 @@ AddUrlDialog::AddUrlDialog(QWidget *parent) : QDialog(parent), m_ui(new Ui::AddU
     m_history = settings.value(u"URLDialog/history"_s).toStringList();
     m_ui->urlComboBox->addItems(m_history);
     m_downloader = new PlayListDownloader(this);
-    connect(m_downloader, SIGNAL(finished(bool,QString)), SLOT(onFinished(bool,QString)));
+    connect(m_downloader, &PlayListDownloader::finished, this, &AddUrlDialog::onFinished);
 
     if(QmmpUiSettings::instance()->useClipboard())
     {

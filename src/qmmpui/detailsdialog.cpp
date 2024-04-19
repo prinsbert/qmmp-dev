@@ -85,14 +85,14 @@ QStringList DetailsDialog::modifiedPaths() const
 void DetailsDialog:: on_directoryButton_clicked()
 {
     QString dir_path;
-    if(!m_info.path().contains("://")) //local file
+    if(!m_info.path().contains(u"://"_s)) //local file
         dir_path = QFileInfo(m_info.path()).absolutePath();
-    else if (m_info.path().contains(":///")) //pseudo-protocol
+    else if (m_info.path().contains(u":///"_s)) //pseudo-protocol
     {
         dir_path = QUrl(m_info.path()).path();
-        dir_path.replace(QString(QUrl::toPercentEncoding("#")), "#");
-        dir_path.replace(QString(QUrl::toPercentEncoding("?")), "?");
-        dir_path.replace(QString(QUrl::toPercentEncoding("%")), "%");
+        dir_path.replace(QString(QUrl::toPercentEncoding(QChar('#'))), QChar('#'));
+        dir_path.replace(QString(QUrl::toPercentEncoding(QChar('?'))), QChar('?'));
+        dir_path.replace(QString(QUrl::toPercentEncoding(QChar('%'))), QChar('%'));
         dir_path = QFileInfo(dir_path).absolutePath();
     }
     else
@@ -123,11 +123,12 @@ void DetailsDialog::on_buttonBox_clicked(QAbstractButton *button)
         else if((cueEditor = qobject_cast<CueEditor *>(m_ui->tabWidget->currentWidget())))
         {
             //update all cue tracks
+            static const QRegularExpression trackNumber(u"#\\d+$"_s);
             int count = cueEditor->trackCount();
             QString path = m_info.path();
-            path.remove(QRegularExpression("#\\d+$"));
+            path.remove(trackNumber);
             for(int i = 0; i < count; ++i)
-                m_modifiedPaths.insert(QString("%1#%2").arg(path).arg(i + 1));
+                m_modifiedPaths.insert(QStringLiteral("%1#%2").arg(path).arg(i + 1));
             m_modifiedPaths.insert(m_info.path());
 
             cueEditor->save();
@@ -206,7 +207,7 @@ void DetailsDialog::updatePage()
     m_ui->pageLabel->setText(tr("%1/%2").arg(m_page + 1).arg(m_tracks.count()));
     m_info = *m_tracks.at(m_page);
 
-    setWindowTitle(m_info.path().section('/',-1));
+    setWindowTitle(m_info.path().section(QChar('/'),-1));
     m_ui->pathEdit->setText(m_info.path());
 
     //load metadata and create metadata model
@@ -228,7 +229,7 @@ void DetailsDialog::updatePage()
     QImage coverImage;
     bool readOnly = false;
 
-    if(m_info.path().contains("://") && m_info.path().contains("#")) //track of multi-track file
+    if(m_info.path().contains(u"://"_s) && m_info.path().contains(QChar('#'))) //track of multi-track file
     {
         QString filePath = m_info.path();
         filePath.remove(QRegularExpression("#\\d+$"));
@@ -236,7 +237,7 @@ void DetailsDialog::updatePage()
         if(QFileInfo(filePath).isFile())
             readOnly = !QFileInfo(filePath).isWritable() || !QFile::exists(filePath);
     }
-    else if(!m_info.path().contains("://")) //local file
+    else if(!m_info.path().contains(u"://"_s)) //local file
     {
         coverPath = MetaDataManager::instance()->findCoverFile(m_info.path());
         readOnly = !QFileInfo(m_info.path()).isWritable() || !QFile::exists(m_info.path());
@@ -287,7 +288,7 @@ void DetailsDialog::updatePage()
         if(m_metaDataModel->dialogHints() & MetaDataModel::IsCueEditable)
         {
             CueEditor *cueEditor = new CueEditor(m_metaDataModel, m_info, this);
-            m_ui->tabWidget->addTab(cueEditor, "CUE");
+            m_ui->tabWidget->addTab(cueEditor, u"CUE"_s);
         }
     }
 
@@ -349,15 +350,15 @@ void DetailsDialog::printInfo()
 
     //create table
     if(layoutDirection() == Qt::RightToLeft)
-        formattedText.append("<DIV align=\"right\" dir=\"rtl\">");
+        formattedText.append(u"<DIV align=\"right\" dir=\"rtl\">"_s);
     else
-        formattedText.append("<DIV>");
-    formattedText.append("<TABLE>");
+        formattedText.append(u"<DIV>"_s);
+    formattedText.append(u"<TABLE>"_s);
 
-    formattedText += tableParts.join("<tr><td colspan=2><hr></td></tr>");
+    formattedText += tableParts.join(u"<tr><td colspan=2><hr></td></tr>"_s);
 
-    formattedText.append("</TABLE>");
-    formattedText.append("</DIV>");
+    formattedText.append(u"</TABLE>"_s);
+    formattedText.append(u"</DIV>"_s);
     m_ui->textEdit->setHtml(formattedText);
 }
 
@@ -365,12 +366,12 @@ QString DetailsDialog::formatRow(const QString &key, const QString &value) const
 {
     if(value.isEmpty() || key.isEmpty())
         return QString();
-    QString str("<tr>");
+    QString str(u"<tr>"_s);
     if(layoutDirection() == Qt::RightToLeft)
-        str.append("<td>" + value + "</td> <td style=\"padding-left: 15px;\"><b>" + key + "</b></td>");
+        str.append(u"<td>"_s + value + u"</td> <td style=\"padding-left: 15px;\"><b>"_s + key + u"</b></td>"_s);
     else
-        str.append("<td><b>" + key + "</b></td> <td style=\"padding-left: 15px;\">" + value + "</td>");
-    str.append("</tr>");
+        str.append(u"<td><b>"_s + key + u"</b></td> <td style=\"padding-left: 15px;\">"_s + value + u"</td>"_s);
+    str.append(u"</tr>"_s);
     return str;
 }
 
@@ -383,15 +384,15 @@ QString DetailsDialog::formatRow(const MetaDataItem &item) const
     if(item.value().typeId() == QMetaType::Bool)
         value = item.value().toBool() ? tr("Yes") : tr("No");
     else if(item.value().typeId() == QMetaType::Bool)
-        value = QString("%1").arg(item.value().toDouble(), 0, 'f', 4);
+        value = QStringLiteral("%1").arg(item.value().toDouble(), 0, 'f', 4);
     else
         value = item.value().toString();
 
-    if(value.isEmpty() || value == "0" || value == "0.0000")
+    if(value.isEmpty() || value == "0"_L1 || value == "0.0000"_L1)
         return QString();
 
     if(!item.suffix().isEmpty())
-        value += QLatin1String(" ") + item.suffix();
+        value += QChar::Space + item.suffix();
 
     return formatRow(item.name(), value);
 }

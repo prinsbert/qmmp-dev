@@ -37,7 +37,7 @@ MediaPlayer::MediaPlayer(QObject *parent)
     m_instance = this;
 
     QTranslator *translator = new QTranslator(qApp);
-    if(translator->load(QString(":/libqmmpui_") + Qmmp::systemLanguageID()))
+    if(translator->load(QStringLiteral(":/libqmmpui_") + Qmmp::systemLanguageID()))
         qApp->installTranslator(translator);
     else
         delete translator;
@@ -48,12 +48,12 @@ MediaPlayer::MediaPlayer(QObject *parent)
     m_finishTimer = new QTimer(this);
     m_finishTimer->setSingleShot(true);
     m_finishTimer->setInterval(500);
-    connect(m_finishTimer, SIGNAL(timeout()), SIGNAL(playbackFinished()));
-    connect(m_core, SIGNAL(nextTrackRequest()), SLOT(updateNextUrl()));
-    connect(m_core, SIGNAL(finished()), SLOT(playNext()));
-    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(processState(Qmmp::State)));
-    connect(m_core, SIGNAL(trackInfoChanged()),SLOT(updateMetaData()));
-    connect(m_pl_manager, SIGNAL(currentTrackRemoved()), SLOT(onCurrentTrackRemoved()));
+    connect(m_finishTimer, &QTimer::timeout, this, &MediaPlayer::playbackFinished);
+    connect(m_core, &SoundCore::nextTrackRequest, this, &MediaPlayer::updateNextUrl);
+    connect(m_core, &SoundCore::finished, this, &MediaPlayer::playNext);
+    connect(m_core, &SoundCore::stateChanged, this, &MediaPlayer::processState);
+    connect(m_core, &SoundCore::trackInfoChanged, this, &MediaPlayer::updateMetaData);
+    connect(m_pl_manager, &PlayListManager::currentTrackRemoved, this, &MediaPlayer::onCurrentTrackRemoved);
 }
 
 MediaPlayer::~MediaPlayer()
