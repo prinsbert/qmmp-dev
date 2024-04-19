@@ -34,36 +34,36 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
     m_instance = this;
     m_helper = new MetaDataHelper;
     QSettings s;
-    s.beginGroup("PlayList");
-    m_group_format = s.value("group_format", "%p%if(%p&%a, - %if(%y,[%y] ,),)%a").toString();
-    m_group_extra_row_format = s.value("group_extra_row_format", "%y | %l | %{bitrate} kbps").toString();
-    m_lines_per_group = s.value("lines_per_group", 1).toInt();
-    m_group_extra_row_visible = s.value("group_extra_row_visible", true).toBool();
-    m_group_cover_visible = s.value("group_cover_visible", true).toBool();
-    m_group_dividing_line_visible = s.value("group_dividing_line_visible", true).toBool();
-    m_convert_underscore = s.value ("convert_underscore", true).toBool();
-    m_convert_twenty = s.value ("convert_twenty", true).toBool();
-    m_use_metadata = s.value ("load_metadata", true).toBool();
-    m_autosave_playlist = s.value("autosave", true).toBool();
-    m_repeate_list = s.value("repeate_list", false).toBool();
-    m_shuffle = s.value("shuffle", false).toBool();
-    m_groups_enabled = s.value("groups", false).toBool();
-    m_repeat_track = s.value("repeate_track", false).toBool();
-    m_no_pl_advance = s.value("no_advance", false).toBool();
-    m_clear_prev_playlist = s.value("clear_previous", false).toBool();
-    m_read_metadata_for_playlist = s.value("read_metadata_for_playlist", true).toBool();
-    m_transit_between_playlists = s.value("transit_between_playlists", false).toBool();
-    m_skip_existing_tracks = s.value("skip_existing_tracks", false).toBool();
-    m_stop_after_removing_of_current = s.value("stop_after_removing_of_current", false).toBool();
+    s.beginGroup(u"PlayList"_s);
+    m_group_format = s.value(u"group_format"_s, u"%p%if(%p&%a, - %if(%y,[%y] ,),)%a"_s).toString();
+    m_group_extra_row_format = s.value(u"group_extra_row_format"_s, u"%y | %l | %{bitrate} kbps"_s).toString();
+    m_lines_per_group = s.value(u"lines_per_group"_s, 1).toInt();
+    m_group_extra_row_visible = s.value(u"group_extra_row_visible"_s, true).toBool();
+    m_group_cover_visible = s.value(u"group_cover_visible"_s, true).toBool();
+    m_group_dividing_line_visible = s.value(u"group_dividing_line_visible"_s, true).toBool();
+    m_convert_underscore = s.value (u"convert_underscore"_s, true).toBool();
+    m_convert_twenty = s.value(u"convert_twenty"_s, true).toBool();
+    m_use_metadata = s.value(u"load_metadata"_s, true).toBool();
+    m_autosave_playlist = s.value(u"autosave"_s, true).toBool();
+    m_repeate_list = s.value(u"repeate_list"_s, false).toBool();
+    m_shuffle = s.value(u"shuffle"_s, false).toBool();
+    m_groups_enabled = s.value(u"groups"_s, false).toBool();
+    m_repeat_track = s.value(u"repeate_track"_s, false).toBool();
+    m_no_pl_advance = s.value(u"no_advance"_s, false).toBool();
+    m_clear_prev_playlist = s.value(u"clear_previous"_s, false).toBool();
+    m_read_metadata_for_playlist = s.value(u"read_metadata_for_playlist"_s, true).toBool();
+    m_transit_between_playlists = s.value(u"transit_between_playlists"_s, false).toBool();
+    m_skip_existing_tracks = s.value(u"skip_existing_tracks"_s, false).toBool();
+    m_stop_after_removing_of_current = s.value(u"stop_after_removing_of_current"_s, false).toBool();
     s.endGroup();
-    s.beginGroup("General");
-    m_resume_on_startup = s.value("resume_on_startup", false).toBool();
-    m_restrict_filters = s.value("restrict_filters").toStringList();
-    m_exclude_filters = s.value("exclude_filters").toStringList();
-    m_use_default_pl = s.value("use_default_pl", false).toBool();
-    m_default_pl_name = s.value("default_pl_name", tr("Playlist")).toString();
+    s.beginGroup(u"General"_s);
+    m_resume_on_startup = s.value(u"resume_on_startup"_s, false).toBool();
+    m_restrict_filters = s.value(u"restrict_filters"_s).toStringList();
+    m_exclude_filters = s.value(u"exclude_filters"_s).toStringList();
+    m_use_default_pl = s.value(u"use_default_pl"_s, false).toBool();
+    m_default_pl_name = s.value(u"default_pl_name"_s, tr("Playlist")).toString();
     s.endGroup();
-    m_use_clipboard = s.value("URLDialog/use_clipboard", false).toBool();
+    m_use_clipboard = s.value(u"URLDialog/use_clipboard"_s, false).toBool();
 
     m_helper->setGroupFormat(m_group_format);
     m_helper->setGroupFormat2(m_group_extra_row_format);
@@ -253,32 +253,32 @@ void QmmpUiSettings::sync()
     {
         qDebug("QmmpUiSettings: saving settings...");
         QSettings s;
-        s.setValue("PlayList/group_format", m_group_format);
-        s.setValue("PlayList/group_extra_row_format", m_group_extra_row_format);
-        s.setValue("PlayList/lines_per_group", m_lines_per_group);
-        s.setValue("PlayList/group_extra_row_visible", m_group_extra_row_visible);
-        s.setValue("PlayList/group_cover_visible", m_group_cover_visible);
-        s.setValue("PlayList/group_dividing_line_visible", m_group_dividing_line_visible);
-        s.setValue("PlayList/convert_underscore", m_convert_underscore);
-        s.setValue("PlayList/convert_twenty", m_convert_twenty);
-        s.setValue("PlayList/load_metadata", m_use_metadata);
-        s.setValue("PlayList/autosave", m_autosave_playlist);
-        s.setValue("PlayList/repeate_list", m_repeate_list);
-        s.setValue("PlayList/shuffle", m_shuffle);
-        s.setValue("PlayList/groups", m_groups_enabled);
-        s.setValue("PlayList/repeate_track", m_repeat_track);
-        s.setValue("PlayList/no_advance", m_no_pl_advance);
-        s.setValue("PlayList/clear_previous", m_clear_prev_playlist);
-        s.setValue("PlayList/read_metadata_for_playlist", m_read_metadata_for_playlist);
-        s.setValue("PlayList/transit_between_playlists", m_transit_between_playlists);
-        s.setValue("PlayList/skip_existing_tracks", m_skip_existing_tracks);
-        s.setValue("PlayList/stop_after_removing_of_current", m_stop_after_removing_of_current);
-        s.setValue("General/resume_on_startup", m_resume_on_startup);
-        s.setValue("General/restrict_filters", m_restrict_filters);
-        s.setValue("General/exclude_filters", m_exclude_filters);
-        s.setValue("General/use_default_pl", m_use_default_pl);
-        s.setValue("General/default_pl_name", m_default_pl_name);
-        s.setValue("URLDialog/use_clipboard", m_use_clipboard);
+        s.setValue(u"PlayList/group_format"_s, m_group_format);
+        s.setValue(u"PlayList/group_extra_row_format"_s, m_group_extra_row_format);
+        s.setValue(u"PlayList/lines_per_group"_s, m_lines_per_group);
+        s.setValue(u"PlayList/group_extra_row_visible"_s, m_group_extra_row_visible);
+        s.setValue(u"PlayList/group_cover_visible"_s, m_group_cover_visible);
+        s.setValue(u"PlayList/group_dividing_line_visible"_s, m_group_dividing_line_visible);
+        s.setValue(u"PlayList/convert_underscore"_s, m_convert_underscore);
+        s.setValue(u"PlayList/convert_twenty"_s, m_convert_twenty);
+        s.setValue(u"PlayList/load_metadata"_s, m_use_metadata);
+        s.setValue(u"PlayList/autosave"_s, m_autosave_playlist);
+        s.setValue(u"PlayList/repeate_list"_s, m_repeate_list);
+        s.setValue(u"PlayList/shuffle"_s, m_shuffle);
+        s.setValue(u"PlayList/groups"_s, m_groups_enabled);
+        s.setValue(u"PlayList/repeate_track"_s, m_repeat_track);
+        s.setValue(u"PlayList/no_advance"_s, m_no_pl_advance);
+        s.setValue(u"PlayList/clear_previous"_s, m_clear_prev_playlist);
+        s.setValue(u"PlayList/read_metadata_for_playlist"_s, m_read_metadata_for_playlist);
+        s.setValue(u"PlayList/transit_between_playlists"_s, m_transit_between_playlists);
+        s.setValue(u"PlayList/skip_existing_tracks"_s, m_skip_existing_tracks);
+        s.setValue(u"PlayList/stop_after_removing_of_current"_s, m_stop_after_removing_of_current);
+        s.setValue(u"General/resume_on_startup"_s, m_resume_on_startup);
+        s.setValue(u"General/restrict_filters"_s, m_restrict_filters);
+        s.setValue(u"General/exclude_filters"_s, m_exclude_filters);
+        s.setValue(u"General/use_default_pl"_s, m_use_default_pl);
+        s.setValue(u"General/default_pl_name"_s, m_default_pl_name);
+        s.setValue(u"URLDialog/use_clipboard"_s, m_use_clipboard);
         m_saveSettings = false; //protect from multiple calls
     }
 
@@ -367,7 +367,7 @@ const QStringList &QmmpUiSettings::restrictFilters() const
 
 void QmmpUiSettings::setRestrictFilters(const QString &filters)
 {
-    m_restrict_filters = filters.trimmed().split(",", Qt::SkipEmptyParts);
+    m_restrict_filters = filters.trimmed().split(QChar(','), Qt::SkipEmptyParts);
     saveSettings();
 }
 
@@ -378,7 +378,7 @@ const QStringList &QmmpUiSettings::excludeFilters() const
 
 void QmmpUiSettings::setExcludeFilters(const QString &filters)
 {
-    m_exclude_filters = filters.trimmed().split(",", Qt::SkipEmptyParts);
+    m_exclude_filters = filters.trimmed().split(QChar(','), Qt::SkipEmptyParts);
     saveSettings();
 }
 

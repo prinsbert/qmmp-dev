@@ -203,7 +203,7 @@ QStringList PlayListTrack::formattedTitles() const
     {
         if(m_formattedTitles[column].isEmpty() ||
                 m_titleFormats[column] != m_helper->titleFormatter(column)->pattern() ||
-                m_titleFormats[column].contains("%I"))
+                m_titleFormats[column].contains(u"%I"_s))
         {
             m_titleFormats[column] = m_helper->titleFormatter(column)->pattern();
             formatTitle(column);
@@ -228,19 +228,19 @@ void PlayListTrack::formatTitle(int column) const
     if(m_formattedTitles.count() == 1)
     {
         if (m_formattedTitles[column].isEmpty())
-            m_formattedTitles[column] = path().section('/',-1);
+            m_formattedTitles[column] = path().section(QChar('/'), -1);
         if (m_formattedTitles[column].isEmpty())
             m_formattedTitles[column] = path();
     }
     if (m_settings->convertUnderscore())
-        m_formattedTitles[column].replace("_", " ");
+        m_formattedTitles[column].replace(QChar('_'), QChar::Space);
     if (m_settings->convertTwenty())
-        m_formattedTitles[column].replace("%20", " ");
+        m_formattedTitles[column].replace(u"%20"_s, u" "_s);
 }
 
 void PlayListTrack::formatGroup() const
 {
-    if(path().contains("://") && !path().contains("#"))
+    if(path().contains(u"://"_s) && !path().contains(QChar('#')))
     {
         m_group = qApp->translate("PlayListTrack", "Streams");
         return;
@@ -249,7 +249,7 @@ void PlayListTrack::formatGroup() const
     if (m_group.isEmpty())
         m_group = qApp->translate("PlayListTrack", "Empty group");
     if (m_settings->convertUnderscore())
-        m_group.replace("_", " ");
+        m_group.replace(QChar('_'), QChar::Space);
     if (m_settings->convertTwenty())
-        m_group.replace("%20", " ");
+        m_group.replace(u"%20"_s, u" "_s);
 }

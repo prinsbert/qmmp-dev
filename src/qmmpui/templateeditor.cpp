@@ -55,8 +55,8 @@ void TemplateEditor::on_resetButton_clicked()
     m_ui->textEdit->setPlainText(m_defaultTemplate);
 }
 
-QString TemplateEditor::getTemplate (QWidget *parent, const QString &title, const QString &text,
-                                     const QString &default_template, bool *ok)
+QString TemplateEditor::getTemplate(QWidget *parent, const QString &title, const QString &text,
+                                    const QString &default_template, bool *ok)
 {
     TemplateEditor *editor = new TemplateEditor(parent);
     editor->setWindowTitle(title);

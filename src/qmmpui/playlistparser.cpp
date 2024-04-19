@@ -34,26 +34,26 @@ QList<PlayListFormat*> *PlayListParser::m_formats = nullptr;
 
 //key names
 const QHash<QString, Qmmp::MetaData>  PlayListParser::m_metaKeys = {
-    { "title", Qmmp::TITLE },
-    { "artist", Qmmp::ARTIST },
-    { "albumArtist", Qmmp::ALBUMARTIST },
-    { "album", Qmmp::ALBUM },
-    { "comment", Qmmp::COMMENT },
-    { "genre", Qmmp::GENRE },
-    { "composer", Qmmp::COMPOSER },
-    { "year", Qmmp::YEAR },
-    { "track", Qmmp::TRACK },
-    { "disk", Qmmp::DISCNUMBER }
+    { u"title"_s, Qmmp::TITLE },
+    { u"artist"_s, Qmmp::ARTIST },
+    { u"albumArtist"_s, Qmmp::ALBUMARTIST },
+    { u"album"_s, Qmmp::ALBUM },
+    { u"comment"_s, Qmmp::COMMENT },
+    { u"genre"_s, Qmmp::GENRE },
+    { u"composer"_s, Qmmp::COMPOSER },
+    { u"year"_s, Qmmp::YEAR },
+    { u"track"_s, Qmmp::TRACK },
+    { u"disk"_s, Qmmp::DISCNUMBER }
 };
 
 const QHash<QString, Qmmp::TrackProperty>  PlayListParser::m_propKeys = {
-    { "bitrate", Qmmp::BITRATE },
-    { "samplerate", Qmmp::SAMPLERATE },
-    { "channels", Qmmp::CHANNELS },
-    { "bitsPerSample", Qmmp::BITS_PER_SAMPLE },
-    { "formatName", Qmmp::FORMAT_NAME },
-    { "decoder", Qmmp::DECODER },
-    { "fileSize", Qmmp::FILE_SIZE }
+    { u"bitrate"_s, Qmmp::BITRATE },
+    { u"samplerate"_s, Qmmp::SAMPLERATE },
+    { u"channels"_s, Qmmp::CHANNELS },
+    { u"bitsPerSample"_s, Qmmp::BITS_PER_SAMPLE },
+    { u"formatName"_s, Qmmp::FORMAT_NAME },
+    { u"decoder"_s, Qmmp::DECODER },
+    { u"fileSize"_s, Qmmp::FILE_SIZE }
 };
 
 QList<PlayListFormat *> PlayListParser::formats()
@@ -80,7 +80,7 @@ QStringList PlayListParser::filters()
     for(const PlayListFormat *format : qAsConst(*m_formats))
     {
         if (!format->properties().filters.isEmpty())
-            filters << format->properties().shortName.toUpper() + " (" + format->properties().filters.join(" ") + ")";
+            filters << QStringLiteral("%1 (%2)").arg(format->properties().shortName.toUpper(),  format->properties().filters.join(QChar::Space));
     }
     return filters;
 }
@@ -160,14 +160,14 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
     {
         path = t->path();
 
-        if(path.contains("://"))
+        if(path.contains(u"://"_s))
             continue;
 
         if(QFileInfo(path).isRelative())
-            path.prepend(QFileInfo(f_name).canonicalPath () + "/");
+            path.prepend(QFileInfo(f_name).canonicalPath() + QChar('/'));
 
-        path.replace("\\","/");
-        path.replace("//","/");
+        path.replace(QChar('\\'), QChar('/'));
+        path.replace(u"//"_s, QChar('/'));
         t->setPath(path);
     }
     return tracks;
@@ -186,7 +186,7 @@ void PlayListParser::loadFormats()
         return;
 
     m_formats = new QList<PlayListFormat*>();
-    for(const QString &filePath : Qmmp::findPlugins("PlayListFormats"))
+    for(const QString &filePath : Qmmp::findPlugins(u"PlayListFormats"_s))
     {
         QPluginLoader loader(filePath);
         QObject *plugin = loader.instance();
@@ -223,8 +223,8 @@ QByteArray PlayListParser::serialize(const QList<PlayListTrack *> &tracks)
                 obj.insert(it.key(), value);
         }
 
-        obj.insert("path", t->path());
-        obj.insert("duration", t->duration());
+        obj.insert(u"path"_s, t->path());
+        obj.insert(u"duration"_s, t->duration());
         array.append(obj);
     }
 
@@ -250,12 +250,12 @@ QList<PlayListTrack *> PlayListParser::deserialize(const QByteArray &json)
 
         QJsonObject obj = (*it).toObject();
 
-        if(obj.value("path").isNull())
+        if(obj.value(u"path"_s).isNull())
             continue;
 
         PlayListTrack *t = new PlayListTrack();
-        t->setPath(obj.value("path").toString());
-        t->setDuration(obj.value("duration").toDouble());
+        t->setPath(obj.value(u"path"_s).toString());
+        t->setDuration(obj.value(u"duration"_s).toDouble());
 
         Qmmp::MetaData metaKey;
         Qmmp::TrackProperty propKey;

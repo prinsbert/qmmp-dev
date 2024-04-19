@@ -38,7 +38,7 @@ void UiLoader::loadPlugins()
 
     m_cache = new QList<QmmpUiPluginCache*>;
     QSettings settings;
-    for(const QString &filePath : Qmmp::findPlugins("Ui"))
+    for(const QString &filePath : Qmmp::findPlugins(u"Ui"_s))
     {
         QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
         if(item->hasError())
@@ -92,7 +92,7 @@ void UiLoader::select(const QString &name)
     if(std::any_of(m_cache->cbegin(), m_cache->cend(), [name](QmmpUiPluginCache *item) { return item->shortName() == name; } ))
     {
         QSettings settings;
-        settings.setValue ("Ui/current_plugin", name);
+        settings.setValue (u"Ui/current_plugin"_s, name);
     }
 }
 
@@ -103,10 +103,10 @@ UiFactory *UiLoader::selected()
 #ifdef Q_OS_UNIX
     QString defaultUi = QMMP_DEFAULT_UI;
     if(defaultUi == QLatin1String("skinned") && qApp->platformName() == QLatin1String("wayland"))
-        defaultUi = "qsui";
-    QString name = settings.value("Ui/current_plugin", defaultUi).toString();
+        defaultUi = u"qsui"_s;
+    QString name = settings.value(u"Ui/current_plugin"_s, defaultUi).toString();
 #else
-    QString name = settings.value("Ui/current_plugin", QMMP_DEFAULT_UI).toString();
+    QString name = settings.value(u"Ui/current_plugin"_s, QMMP_DEFAULT_UI).toString();
 #endif
     for(QmmpUiPluginCache *item : qAsConst(*m_cache))
     {
@@ -114,6 +114,6 @@ UiFactory *UiLoader::selected()
             return item->uiFactory();
     }
     if (!m_cache->isEmpty())
-        return m_cache->at(0)->uiFactory();
+        return m_cache->constFirst()->uiFactory();
     return nullptr;
 }
