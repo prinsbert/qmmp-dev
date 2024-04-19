@@ -62,7 +62,7 @@ void BuiltinCommandLineOption::registerOprions()
     registerOption(STOP, { "-s", "--stop" }, tr("Stop current song"));
     registerOption(JUMP_TO_TRACK, { "-j", "--jump-to-file" }, tr("Display Jump to File dialog"));
     registerOption(QUIT, { "-q", "--quit" }, tr("Quit application"));
-    registerOption(VOLUME, "--volume <0..100>", tr("Set playback volume (example: qmmp --volume 20)"));
+    registerOption(VOLUME, "--volume", tr("Set playback volume (example: qmmp --volume 20)"), { "0..100" });
     registerOption(VOLUME_STATUS, "--volume-status", tr("Print volume level"));
     registerOption(TOGGLE_MUTE, "--toggle-mute", tr("Mute/Restore volume"));
     registerOption(MUTE_STATUS, "--mute-status", tr("Print mute status"));
@@ -119,8 +119,8 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
     PlayListManager *pl_manager = PlayListManager::instance();
     QmmpUiSettings *settings = QmmpUiSettings::instance();
     QString out;
-//    if(!core || !player)
-//        return out;
+    if(!core || !player)
+        return out;
 //    if(option_string == "--enqueue" || option_string == "-e" || option_string.isEmpty())
 //    {
 //        if(args.isEmpty())
