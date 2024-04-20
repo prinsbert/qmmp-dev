@@ -26,9 +26,9 @@
 
 void SeekOption::registerOprions()
 {
-    registerOption(SEEK, "--seek", tr("Seek to position in the current track"), QStringList() << "time");
-    registerOption(SEEK_FWD, "--seek-fwd", tr("Seek forward"), QStringList() << "time");
-    registerOption(SEEK_BWD, "--seek-bwd", tr("Seek backwards"), QStringList() << "time");
+    registerOption(SEEK, u"--seek"_s, tr("Seek to position in the current track"), QStringList{ u"time"_s });
+    registerOption(SEEK_FWD, u"--seek-fwd"_s, tr("Seek forward"), QStringList{ u"time"_s });
+    registerOption(SEEK_BWD, u"--seek-bwd"_s, tr("Seek backwards"), QStringList{ u"time"_s });
 }
 
 QString SeekOption::shortName() const
@@ -54,14 +54,14 @@ QString SeekOption::executeCommand(int id, const QStringList &args, const QStrin
     int seek_pos = -1;
     int elapsed = core->elapsed() / 1000;
 
-    static const QRegularExpression seek_regexp1 ("^([0-9]{1,4})$");
-    static const QRegularExpression seek_regexp2 ("^([0-9]{1,2}):([0-9]{1,2})$");
+    static const QRegularExpression seek_regexp1(u"^([0-9]{1,4})$"_s);
+    static const QRegularExpression seek_regexp2(u"^([0-9]{1,2}):([0-9]{1,2})$"_s);
 
     QRegularExpressionMatch match;
     if((match = seek_regexp1.match(args.constFirst())).hasMatch())
         seek_pos = match.captured(1).toInt();
     else if((match = seek_regexp2.match(args.constFirst())).hasMatch())
-        seek_pos = match.captured(1).toInt()*60 + match.captured(2).toInt();
+        seek_pos = match.captured(1).toInt() * 60 + match.captured(2).toInt();
 
     switch (id) {
     case SEEK: //seek absolute

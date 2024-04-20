@@ -30,16 +30,16 @@
 
 void PlayListOption::registerOprions()
 {
-    registerOption(PL_HELP, "--pl-help", tr("Show playlist manipulation commands"));
-    registerOption(PL_LIST, "--pl-list", tr("List all available playlists"));
-    registerOption(PL_DUMP, "--pl-dump", tr("Show playlist content"), QStringList() << "id");
-    registerOption(PL_PLAY, "--pl-play", tr("Play track <track> in playlist <id>"), QStringList() << "id" << "track");
-    registerOption(PL_CLEAR, "--pl-clear", tr("Clear playlist"), QStringList() << "id");
-    registerOption(PL_NEXT, "--pl-next", tr("Activate next playlist"));
-    registerOption(PL_PREV, "--pl-prev", tr("Activate previous playlist"));
-    registerOption(PL_REPEATE_TOGGLE, "--pl-repeat-toggle", tr("Toggle playlist repeat"));
-    registerOption(PL_SHUFFLE_TOGGLE, "--pl-shuffle-toggle", tr("Toggle playlist shuffle"));
-    registerOption(PL_STATE, "--pl-state", tr("Show playlist options"));
+    registerOption(PL_HELP,  u"--pl-help"_s, tr("Show playlist manipulation commands"));
+    registerOption(PL_LIST,  u"--pl-list"_s, tr("List all available playlists"));
+    registerOption(PL_DUMP,  u"--pl-dump"_s, tr("Show playlist content"), QStringList{ u"id"_s });
+    registerOption(PL_PLAY,  u"--pl-play"_s, tr("Play track <track> in playlist <id>"), QStringList{ u"id"_s, u"track"_s});
+    registerOption(PL_CLEAR, u"--pl-clear"_s, tr("Clear playlist"), { u"id"_s });
+    registerOption(PL_NEXT,  u"--pl-next"_s, tr("Activate next playlist"));
+    registerOption(PL_PREV,  u"--pl-prev"_s, tr("Activate previous playlist"));
+    registerOption(PL_REPEATE_TOGGLE, u"--pl-repeat-toggle"_s, tr("Toggle playlist repeat"));
+    registerOption(PL_SHUFFLE_TOGGLE, u"--pl-shuffle-toggle"_s, tr("Toggle playlist shuffle"));
+    registerOption(PL_STATE, u"--pl-state"_s, tr("Show playlist options"));
 
     setOptionFlags(PL_HELP, NoStart);
     setOptionFlags(PL_LIST, HiddenFromHelp);
@@ -87,7 +87,7 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
                 << helpString(PL_STATE);
 
         for(const QString &line : qAsConst(list))
-            out += CommandLineManager::formatHelpString(line) + "\n";
+            out += CommandLineManager::formatHelpString(line) + QChar::LineFeed;
     }
         break;
     case PL_LIST:
@@ -96,36 +96,36 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         for(int i = 0; i <  names.count(); ++i)
         {
             if(i == pl_manager->currentPlayListIndex())
-                out += QString("%1. %2 [*]\n").arg(i+1).arg(names.at(i));
+                out += QStringLiteral("%1. %2 [*]\n").arg(i+1).arg(names.at(i));
             else
-                out += QString("%1. %2\n").arg(i+1).arg(names.at(i));
+                out += QStringLiteral("%1. %2\n").arg(i+1).arg(names.at(i));
         }
     }
         break;
     case PL_DUMP:
     {
-        MetaDataFormatter formatter("%p%if(%p&%t, - ,)%t%if(%p,,%if(%t,,%f))%if(%l, - %l,)");
-        int pl_id = args.isEmpty() ? pl_manager->currentPlayListIndex() : args.at(0).toInt() - 1;
+        MetaDataFormatter formatter(u"%p%if(%p&%t, - ,)%t%if(%p,,%if(%t,,%f))%if(%l, - %l,)"_s);
+        int pl_id = args.isEmpty() ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
-            return tr("Invalid playlist ID") + "\n";
+            return tr("Invalid playlist ID") + QChar::LineFeed;
         for(int i = 0; i < model->trackCount(); ++i)
         {
             PlayListTrack *track = model->track(i);
-            out += QString("%1. %2").arg(track->trackIndex() + 1).arg(formatter.format(track));
+            out += QStringLiteral("%1. %2").arg(track->trackIndex() + 1).arg(formatter.format(track));
             if(i == model->currentIndex())
-                out += " [*]";
-            out += "\n";
+                out += u" [*]"_s;
+            out += QChar::LineFeed;
         }
     }
         break;
     case PL_PLAY:
     {
         if(args.count() > 2 || args.isEmpty())
-            return tr("Invalid number of arguments") + "\n";
+            return tr("Invalid number of arguments") + QChar::LineFeed;
 
-        int pl_id = (args.count() == 1) ? pl_manager->currentPlayListIndex() : args.at(0).toInt() - 1;
-        int track_number = (args.count() == 1) ? args.at(0).toInt() - 1 : args.at(1).toInt() - 1;
+        int pl_id = (args.count() == 1) ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
+        int track_number = (args.count() == 1) ? args.constFirst().toInt() - 1 : args.at(1).toInt() - 1;
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
             return tr("Invalid playlist ID") + "\n";
@@ -164,10 +164,10 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         break;
     case PL_CLEAR:
     {
-        int pl_id= args.isEmpty() ? pl_manager->currentPlayListIndex() : args.at(0).toInt() - 1;
+        int pl_id= args.isEmpty() ? pl_manager->currentPlayListIndex() : args.constFirst().toInt() - 1;
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
-            return tr("Invalid playlist ID") + "\n";
+            return tr("Invalid playlist ID") + QChar::LineFeed;
         model->clear();
     }
         break;
@@ -178,10 +178,10 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         ui_settings->setShuffle(!ui_settings->isShuffle());
         break;
     case PL_STATE:
-        out += "SHUFFLE:             " + boolToText(ui_settings->isShuffle()) + "\n";
-        out += "REPEAT PLAYLIST:     " + boolToText(ui_settings->isRepeatableList()) + "\n";
-        out += "REPEAT TRACK:        " + boolToText(ui_settings->isRepeatableTrack()) + "\n";
-        out += "NO PLAYLIST ADVANCE: " + boolToText(ui_settings->isNoPlayListAdvance()) + "\n";
+        out += u"SHUFFLE:             "_s + boolToText(ui_settings->isShuffle()) + QChar::LineFeed;
+        out += u"REPEAT PLAYLIST:     "_s + boolToText(ui_settings->isRepeatableList()) + QChar::LineFeed;
+        out += u"REPEAT TRACK:        "_s + boolToText(ui_settings->isRepeatableTrack()) + QChar::LineFeed;
+        out += u"NO PLAYLIST ADVANCE: "_s + boolToText(ui_settings->isNoPlayListAdvance()) + QChar::LineFeed;
         break;
     default:
         ;
@@ -191,5 +191,5 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
 
 QString PlayListOption::boolToText(bool enabled)
 {
-    return QString(enabled ? "[+]" : "[-]");
+    return enabled ? u"[+]"_s : u"[-]"_s;
 }
