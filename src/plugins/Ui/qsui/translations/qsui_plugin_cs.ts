@@ -1736,14 +1736,6 @@
     </message>
 </context>
 <context>
-    <name>VisualMenu</name>
-    <message>
-        <location filename="../visualmenu.cpp" line="26"/>
-        <source>Visualization</source>
-        <translation>Vizualizace</translation>
-    </message>
-</context>
-<context>
     <name>VolumeSlider</name>
     <message>
         <location filename="../volumeslider.cpp" line="91"/>

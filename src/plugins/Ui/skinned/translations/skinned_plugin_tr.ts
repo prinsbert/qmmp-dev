@@ -1503,12 +1503,4 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
-<context>
-    <name>VisualMenu</name>
-    <message>
-        <location filename="../visualmenu.cpp" line="26"/>
-        <source>Visualization</source>
-        <translation>Görüntüleme</translation>
-    </message>
-</context>
 </TS>
