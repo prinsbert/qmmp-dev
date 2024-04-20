@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef LISTWIDGETDRAWER_H
-#define LISTWIDGETDRAWER_H
+#ifndef QSUILISTWIDGETDRAWER_H
+#define QSUILISTWIDGETDRAWER_H
 
 #include <QString>
 #include <QStringList>
@@ -32,7 +32,7 @@ class QPainter;
 class PlayListHeaderModel;
 class QmmpUiSettings;
 
-struct ListWidgetRow
+struct QSUiListWidgetRow
 {
     QStringList titles;
     QList<int> sizes;
@@ -70,11 +70,11 @@ struct ListWidgetRow
 /**
    @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ListWidgetDrawer
+class QSUiListWidgetDrawer
 {
 public:
-    ListWidgetDrawer();
-    ~ListWidgetDrawer();
+    QSUiListWidgetDrawer();
+    ~QSUiListWidgetDrawer();
 
     void readSettings();
     void loadSystemColors();
@@ -82,12 +82,12 @@ public:
     int numberWidth() const;
     void calculateNumberWidth(int count);
     void setSingleColumnMode(int enabled);
-    void prepareRow(ListWidgetRow *row);
+    void prepareRow(QSUiListWidgetRow *row);
     void fillBackground(QPainter *painter, int width, int height);
-    void drawBackground(QPainter *painter, ListWidgetRow *row);
-    void drawSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
-    void drawMultiLineSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
-    void drawTrack(QPainter *painter, ListWidgetRow *row, bool rtl);
+    void drawBackground(QPainter *painter, QSUiListWidgetRow *row);
+    void drawSeparator(QPainter *painter, QSUiListWidgetRow *row, bool rtl);
+    void drawMultiLineSeparator(QPainter *painter, QSUiListWidgetRow *row, bool rtl);
+    void drawTrack(QPainter *painter, QSUiListWidgetRow *row, bool rtl);
     void drawDropLine(QPainter *painter, int row_number, int width, int header_height);
 
 private:
@@ -119,4 +119,4 @@ private:
     int m_row_height = 0;
 };
 
-#endif // LISTWIDGETDRAWER_H
+#endif // QSUILISTWIDGETDRAWER_H

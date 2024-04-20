@@ -19,16 +19,17 @@
  ***************************************************************************/
 
 #include <QKeyEvent>
+#include "ui_shortcutdialog.h"
 #include "shortcutdialog.h"
 
 ShortcutDialog::ShortcutDialog(const QString &key, QWidget *parent)
-        : QDialog(parent)
+        : QDialog(parent), m_ui(new Ui::ShortcutDialog)
 {
-    m_ui.setupUi(this);
-    m_ui.keyLineEdit->setText(key);
+    m_ui->setupUi(this);
+    m_ui->keyLineEdit->setText(key);
 
     //buttons should not catch keys
-    for(QAbstractButton *button : m_ui.buttonBox->buttons())
+    for(QAbstractButton *button : m_ui->buttonBox->buttons())
         button->setFocusPolicy(Qt::NoFocus);
 }
 
@@ -36,7 +37,7 @@ ShortcutDialog::~ShortcutDialog()
 {
 }
 
-void ShortcutDialog::keyPressEvent (QKeyEvent *event)
+void ShortcutDialog::keyPressEvent(QKeyEvent *event)
 {
     int key = event->key();
     switch (key)
@@ -51,16 +52,16 @@ void ShortcutDialog::keyPressEvent (QKeyEvent *event)
     case Qt::Key_Menu:
     case 0:
     case Qt::Key_unknown:
-        m_ui.keyLineEdit->clear();
+        m_ui->keyLineEdit->clear();
         QWidget::keyPressEvent(event);
         return;
     }
     QKeySequence seq(event->keyCombination());
-    m_ui.keyLineEdit->setText(seq.toString());
+    m_ui->keyLineEdit->setText(seq.toString());
     QWidget::keyPressEvent(event);
 }
 
 const QString ShortcutDialog::key()
 {
-    return m_ui.keyLineEdit->text();
+    return m_ui->keyLineEdit->text();
 }

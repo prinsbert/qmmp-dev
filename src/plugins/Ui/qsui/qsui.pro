@@ -5,14 +5,17 @@ TARGET = $$PLUGINS_PREFIX/Ui/qsui
 SOURCES += \
     actionmanager.cpp \
     qsuicoverwidget.cpp \
+    qsuihotkeyeditor.cpp \
     qsuilistwidget.cpp \
+    qsuilistwidgetdrawer.cpp \
+    qsuilogo.cpp \
     qsuimainwindow.cpp \
+    qsuiplaylistheader.cpp \
     qsuipopupsettings.cpp \
     qsuipopupwidget.cpp \
     qsuipositionslider.cpp \
     shortcutitem.cpp \
     equalizer.cpp \
-    logo.cpp \
     keyboardmanager.cpp \
     aboutqsuidialog.cpp \
     qsuifactory.cpp \
@@ -25,9 +28,6 @@ SOURCES += \
     elidinglabel.cpp \
     playlistbrowser.cpp \
     toolbareditor.cpp \
-    listwidgetdrawer.cpp \
-    playlistheader.cpp \
-    hotkeyeditor.cpp \
     volumeslider.cpp \
     qsuiquicksearch.cpp \
     qsuivisualization.cpp \
@@ -37,14 +37,17 @@ SOURCES += \
 HEADERS += \
     actionmanager.h \
     qsuicoverwidget.h \
+    qsuihotkeyeditor.h \
     qsuilistwidget.h \
+    qsuilistwidgetdrawer.h \
+    qsuilogo.h \
     qsuimainwindow.h \
+    qsuiplaylistheader.h \
     qsuipopupsettings.h \
     qsuipopupwidget.h \
     qsuipositionslider.h \
     shortcutitem.h \
     equalizer.h \
-    logo.h \
     keyboardmanager.h \
     aboutqsuidialog.h \
     qsuifactory.h \
@@ -58,9 +61,6 @@ HEADERS += \
     elidinglabel.h \
     playlistbrowser.h \
     toolbareditor.h \
-    listwidgetdrawer.h \
-    playlistheader.h \
-    hotkeyeditor.h \
     volumeslider.h \
     qsuiquicksearch.h \
     qsuivisualization.h \
