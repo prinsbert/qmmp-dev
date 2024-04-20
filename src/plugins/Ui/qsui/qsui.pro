@@ -5,7 +5,6 @@ TARGET = $$PLUGINS_PREFIX/Ui/qsui
 SOURCES += \
     mainwindow.cpp \
     listwidget.cpp \
-    visualmenu.cpp \
     positionslider.cpp \
     actionmanager.cpp \
     shortcutdialog.cpp \
@@ -39,7 +38,6 @@ SOURCES += \
     dockwidgetlist.cpp
 HEADERS += mainwindow.h \
     listwidget.h \
-    visualmenu.h \
     positionslider.h \
     actionmanager.h \
     shortcutdialog.h \

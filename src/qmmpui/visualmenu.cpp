@@ -17,41 +17,28 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef VISUALMENU_H
-#define VISUALMENU_H
 
-#include <QMenu>
 #include <QAction>
+#include <qmmp/visual.h>
+#include <qmmp/visualfactory.h>
+#include "visualmenu.h"
 
-class VisualFactory;
-
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-class VisualMenu : public QMenu
+VisualMenu::VisualMenu(QWidget *parent) : QMenu(tr("Visualization"), parent)
 {
-    Q_OBJECT
-public:
-    explicit VisualMenu(QWidget *parent = nullptr);
+    for(VisualFactory *factory : Visual::factories())
+    {
+        QAction *act = new QAction(factory->properties().name, this);
+        act->setCheckable(true);
+        act->setChecked(Visual::isEnabled(factory));
+        connect(act, &QAction::triggered, this, [=] (bool checked) { Visual::setEnabled(factory, checked); });
+        addAction(act);
+    }
+}
 
-    ~VisualMenu();
-
-public slots:
-    void updateActions();
-};
-
-class VisualAction : public QAction
+void VisualMenu::updateActions()
 {
-    Q_OBJECT
-public:
-    explicit VisualAction(VisualFactory *factory, QWidget *parent = nullptr);
-
-private slots:
-    void select(bool);
-
-private:
-    VisualFactory *m_factory;
-
-};
-
-#endif
+    for(int i = 0; i < Visual::factories().size(); ++i)
+    {
+        actions().at(i)->setChecked(Visual::isEnabled(Visual::factories().at(i)));
+    }
+}

@@ -47,7 +47,6 @@ SET(skinned_SRCS
     titlebarcontrol.cpp
     titlebar.cpp
     togglebutton.cpp
-    visualmenu.cpp
     volumebar.cpp
     cursorimage.cpp
     playlistbrowser.cpp

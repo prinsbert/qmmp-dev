@@ -17,7 +17,6 @@ SET(libqsui_SRCS
     shortcutitem.cpp
     qsuifactory.cpp
     qsuisettings.cpp
-    visualmenu.cpp
     equalizer.cpp
     logo.cpp
     aboutqsuidialog.cpp

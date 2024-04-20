@@ -73,7 +73,8 @@ HEADERS += general.h \
     qmmpui_export.h \
     covereditor_p.h \
     commandlinehandler.h \
-    cueeditor_p.h
+    cueeditor_p.h \
+    visualmenu.h
 
 SOURCES += general.cpp \
     coverloader.cpp \
@@ -116,7 +117,8 @@ SOURCES += general.cpp \
     commandlinehandler.cpp \
     generalfactory.cpp \
     cueeditor.cpp \
-    tageditor.cpp
+    tageditor.cpp \
+    visualmenu.cpp
 
 FORMS += forms/detailsdialog.ui \
     forms/tageditor.ui \
@@ -177,6 +179,7 @@ unix {
     metadataformatter.h \
     playlistheadermodel.h \
     metadataformattermenu.h \
+    visualmenu.h \
     qmmpui_export.h
 
     isEmpty(APP_NAME_SUFFIX) {
