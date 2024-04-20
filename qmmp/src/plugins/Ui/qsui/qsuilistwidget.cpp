@@ -35,7 +35,7 @@
 #include <qmmpui/qmmpuisettings.h>
 #include <qmmpui/mediaplayer.h>
 #include "qsuilistwidget.h"
-#include "playlistheader.h"
+#include "qsuiplaylistheader.h"
 #include "actionmanager.h"
 #include "qsuipopupwidget.h"
 
@@ -46,7 +46,7 @@ QSUiListWidget::QSUiListWidget(PlayListModel *model, QWidget *parent) : QWidget(
     m_ui_settings = QmmpUiSettings::instance();
     m_timer = new QTimer(this);
     m_timer->setInterval(50);
-    m_header = new PlayListHeader(this);
+    m_header = new QSUiPlayListHeader(this);
     m_scrollBar = new QScrollBar(Qt::Vertical, this);
     m_hslider = new QScrollBar(Qt::Horizontal, this);
     m_hslider->setPageStep(50);
@@ -99,7 +99,7 @@ void QSUiListWidget::readSettings()
     }
 
     if(show_popup)
-        m_popupWidget = new PlayListPopup::PopupWidget(this);
+        m_popupWidget = new QSUiPopupWidget(this);
 }
 
 int QSUiListWidget::visibleRows() const
@@ -192,7 +192,7 @@ void QSUiListWidget::paintEvent(QPaintEvent *)
 
     for(int i = 0; i < m_rows.size(); ++i)
     {
-        if(m_rows[i]->flags & ListWidgetRow::GROUP)
+        if(m_rows[i]->flags & QSUiListWidgetRow::GROUP)
         {
             if(m_model->linesPerGroup() == 1)
             {
@@ -455,7 +455,7 @@ void QSUiListWidget::updateList(int flags)
         }
 
         while(m_rows.count() < qMin(m_row_count, items.count()))
-            m_rows << new ListWidgetRow;
+            m_rows << new QSUiListWidgetRow;
         while(m_rows.count() > qMin(m_row_count, items.count()))
             delete m_rows.takeFirst();
 
@@ -486,21 +486,21 @@ void QSUiListWidget::updateList(int flags)
 
     for(int i = 0; i < items.count(); ++i)
     {
-        ListWidgetRow *row = m_rows[i];
+        QSUiListWidgetRow *row = m_rows[i];
         row->autoResize = m_header->hasAutoResizeColumn();
         row->trackStateColumn = trackStateColumn;
         row->subIndex = m_model->subIndexOfLine(m_firstLine + i);
         row->alternateColor = m_model->alternateColor(m_firstLine + i);
 
         if(items[i]->isSelected())
-            row->flags |= ListWidgetRow::SELECTED;
+            row->flags |= QSUiListWidgetRow::SELECTED;
         else
-            row->flags &= ~ListWidgetRow::SELECTED;
+            row->flags &= ~QSUiListWidgetRow::SELECTED;
 
         if(i == (m_anchorLine - m_firstLine))
-            row->flags |= ListWidgetRow::ANCHOR;
+            row->flags |= QSUiListWidgetRow::ANCHOR;
         else
-            row->flags &= ~ListWidgetRow::ANCHOR;
+            row->flags &= ~QSUiListWidgetRow::ANCHOR;
 
         if(flags == PlayListModel::SELECTION)
             continue;
@@ -511,20 +511,20 @@ void QSUiListWidget::updateList(int flags)
         row->alignment = m_header->alignment();
 
         if(items[i] == m_model->currentTrack())
-            row->flags |= ListWidgetRow::CURRENT;
+            row->flags |= QSUiListWidgetRow::CURRENT;
         else
-            row->flags &= ~ListWidgetRow::CURRENT;
+            row->flags &= ~QSUiListWidgetRow::CURRENT;
 
         if(items[i]->isGroup())
         {
-            row->flags |= ListWidgetRow::GROUP;
+            row->flags |= QSUiListWidgetRow::GROUP;
             row->number = -1;
             row->cover = items.at(i)->cover();
             row->length.clear();
         }
         else
         {
-            row->flags &= ~ListWidgetRow::GROUP;
+            row->flags &= ~QSUiListWidgetRow::GROUP;
             row->number = items.at(i)->trackIndex() + 1;
             row->extraString = getExtraString(items.at(i));
         }
@@ -534,7 +534,7 @@ void QSUiListWidget::updateList(int flags)
         int rect_x = rtl ? (width() - rect_w - 5) : 5;
         int rect_y = (m_header->isVisibleTo(this) ? m_header->height() : 0) + i * m_drawer.rowHeight();
 
-        if((row->flags & ListWidgetRow::GROUP) && m_model->linesPerGroup() > 1)
+        if((row->flags & QSUiListWidgetRow::GROUP) && m_model->linesPerGroup() > 1)
         {
             rect_h += (m_model->linesPerGroup() - 1) * m_drawer.rowHeight();
             rect_y -= row->subIndex * m_drawer.rowHeight();

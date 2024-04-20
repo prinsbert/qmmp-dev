@@ -36,14 +36,14 @@
 #include <qmmp/qmmp.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/playlistheadermodel.h>
-#include "playlistheader.h"
-#include "listwidgetdrawer.h"
+#include "qsuiplaylistheader.h"
+#include "qsuilistwidgetdrawer.h"
 
 #define INITAL_SIZE 150
 #define MIN_SIZE 30
 #define MAX_COLUMNS 7
 
-PlayListHeader::PlayListHeader(QWidget *parent) :
+QSUiPlayListHeader::QSUiPlayListHeader(QWidget *parent) :
     QWidget(parent)
 {
     setMouseTracking(true);
@@ -59,9 +59,9 @@ PlayListHeader::PlayListHeader(QWidget *parent) :
     m_autoResizeAction->setCheckable(true);
 
     m_alignmentMenu = m_menu->addMenu(tr("Alignment"));
-    m_alignmentMenu->addAction(tr("Left", "alignment"))->setData(ListWidgetRow::ALIGN_LEFT);
-    m_alignmentMenu->addAction(tr("Right", "alignment"))->setData(ListWidgetRow::ALIGN_RIGHT);
-    m_alignmentMenu->addAction(tr("Center", "alignment"))->setData(ListWidgetRow::ALIGN_CENTER);
+    m_alignmentMenu->addAction(tr("Left", "alignment"))->setData(QSUiListWidgetRow::ALIGN_LEFT);
+    m_alignmentMenu->addAction(tr("Right", "alignment"))->setData(QSUiListWidgetRow::ALIGN_RIGHT);
+    m_alignmentMenu->addAction(tr("Center", "alignment"))->setData(QSUiListWidgetRow::ALIGN_CENTER);
     connect(m_alignmentMenu, SIGNAL(triggered(QAction*)), SLOT(setAlignment(QAction*)));
     QActionGroup *alignmentGroup = new QActionGroup(this);
     for(QAction *a : m_alignmentMenu->actions())
@@ -81,13 +81,13 @@ PlayListHeader::PlayListHeader(QWidget *parent) :
     connect(m_model, SIGNAL(columnChanged(int)), SLOT(updateColumns()));
 }
 
-PlayListHeader::~PlayListHeader()
+QSUiPlayListHeader::~QSUiPlayListHeader()
 {
     delete m_metrics;
     m_metrics = nullptr;
 }
 
-void PlayListHeader::readSettings()
+void QSUiPlayListHeader::readSettings()
 {
     if (m_metrics)
     {
@@ -125,7 +125,7 @@ void PlayListHeader::readSettings()
         {
             m_model->setData(i, SIZE, INITAL_SIZE);
             m_model->setData(i, ALIGNMENT, (layoutDirection() == Qt::RightToLeft) ?
-                                 ListWidgetRow::ALIGN_RIGHT : ListWidgetRow::ALIGN_LEFT);
+                                 QSUiListWidgetRow::ALIGN_RIGHT : QSUiListWidgetRow::ALIGN_LEFT);
 
             if(i < sizes.count())
                 m_model->setData(i, SIZE, sizes.at(i).toInt());
@@ -151,7 +151,7 @@ void PlayListHeader::readSettings()
     settings.endGroup();
 }
 
-void PlayListHeader::setNumberWidth(int width)
+void QSUiPlayListHeader::setNumberWidth(int width)
 {
     if(width != m_number_width)
     {
@@ -161,7 +161,7 @@ void PlayListHeader::setNumberWidth(int width)
     }
 }
 
-void PlayListHeader::setScrollBarWidth(int width)
+void QSUiPlayListHeader::setScrollBarWidth(int width)
 {
     if(!isVisible())
         return;
@@ -186,7 +186,7 @@ void PlayListHeader::setScrollBarWidth(int width)
     }
 }
 
-void PlayListHeader::updateColumns()
+void QSUiPlayListHeader::updateColumns()
 {
     if(!isVisible())
         return;
@@ -220,12 +220,12 @@ void PlayListHeader::updateColumns()
     update();
 }
 
-int PlayListHeader::requiredHeight() const
+int QSUiPlayListHeader::requiredHeight() const
 {
     return m_size_hint.height();
 }
 
-QList<int> PlayListHeader::sizes() const
+QList<int> QSUiPlayListHeader::sizes() const
 {
     QList<int> sizeList;
     for(int i = 0; i < m_model->count(); ++i)
@@ -233,7 +233,7 @@ QList<int> PlayListHeader::sizes() const
     return sizeList;
 }
 
-QList<int> PlayListHeader::alignment() const
+QList<int> QSUiPlayListHeader::alignment() const
 {
     QList<int> alignmentList;
     for(int i = 0; i < m_model->count(); ++i)
@@ -241,7 +241,7 @@ QList<int> PlayListHeader::alignment() const
     return alignmentList;
 }
 
-int PlayListHeader::trackStateColumn() const
+int QSUiPlayListHeader::trackStateColumn() const
 {
     for(int i = 0; i < m_model->count(); ++i)
     {
@@ -253,7 +253,7 @@ int PlayListHeader::trackStateColumn() const
     return -1;
 }
 
-int PlayListHeader::maxScrollValue() const
+int QSUiPlayListHeader::maxScrollValue() const
 {
     if(m_model->count() == 1)
         return 0;
@@ -263,23 +263,23 @@ int PlayListHeader::maxScrollValue() const
     return qMax(0, row_width - width() + m_scrollbar_width + 10);
 }
 
-int PlayListHeader::offset() const
+int QSUiPlayListHeader::offset() const
 {
     return m_offset;
 }
 
-bool PlayListHeader::hasAutoResizeColumn() const
+bool QSUiPlayListHeader::hasAutoResizeColumn() const
 {
     return m_auto_resize;
 }
 
-void PlayListHeader::scroll(int offset)
+void QSUiPlayListHeader::scroll(int offset)
 {
     m_offset = offset;
     update();
 }
 
-void PlayListHeader::showSortIndicator(int column, bool reverted)
+void QSUiPlayListHeader::showSortIndicator(int column, bool reverted)
 {
     if(m_sorting_column == column && m_reverted == reverted)
         return;
@@ -289,7 +289,7 @@ void PlayListHeader::showSortIndicator(int column, bool reverted)
     updateColumns();
 }
 
-void PlayListHeader::hideSortIndicator()
+void QSUiPlayListHeader::hideSortIndicator()
 {
     if(m_sorting_column != -1)
     {
@@ -298,7 +298,7 @@ void PlayListHeader::hideSortIndicator()
     }
 }
 
-void PlayListHeader::addColumn()
+void QSUiPlayListHeader::addColumn()
 {
     int column = findColumn(m_pressed_pos);
 
@@ -319,7 +319,7 @@ void PlayListHeader::addColumn()
     m_model->execInsert(column);
 }
 
-void PlayListHeader::editColumn()
+void QSUiPlayListHeader::editColumn()
 {
     if(m_pressed_column < 0)
          return;
@@ -327,7 +327,7 @@ void PlayListHeader::editColumn()
     m_model->execEdit(m_pressed_column);
 }
 
-void PlayListHeader::removeColumn()
+void QSUiPlayListHeader::removeColumn()
 {
     if(m_pressed_column < 0)
          return;
@@ -335,7 +335,7 @@ void PlayListHeader::removeColumn()
     m_model->remove(m_pressed_column);
 }
 
-void PlayListHeader::setAutoResize(bool on)
+void QSUiPlayListHeader::setAutoResize(bool on)
 {
     if(m_pressed_column < 0)
         return;
@@ -359,7 +359,7 @@ void PlayListHeader::setAutoResize(bool on)
     PlayListManager::instance()->selectedPlayList()->updateMetaData();
 }
 
-void PlayListHeader::showTrackState(bool yes)
+void QSUiPlayListHeader::showTrackState(bool yes)
 {
     if(m_pressed_column < 0)
         return;
@@ -374,7 +374,7 @@ void PlayListHeader::showTrackState(bool yes)
     PlayListManager::instance()->selectedPlayList()->updateMetaData();
 }
 
-void PlayListHeader::setAlignment(QAction *action)
+void QSUiPlayListHeader::setAlignment(QAction *action)
 {
     if(m_pressed_column < 0)
          return;
@@ -383,11 +383,11 @@ void PlayListHeader::setAlignment(QAction *action)
     PlayListManager::instance()->selectedPlayList()->updateMetaData();
 }
 
-void PlayListHeader::onColumnAdded(int index)
+void QSUiPlayListHeader::onColumnAdded(int index)
 {
     m_model->setData(index, SIZE, INITAL_SIZE);
     m_model->setData(index, ALIGNMENT, (layoutDirection() == Qt::RightToLeft) ?
-                         ListWidgetRow::ALIGN_RIGHT : ListWidgetRow::ALIGN_LEFT);
+                         QSUiListWidgetRow::ALIGN_RIGHT : QSUiListWidgetRow::ALIGN_LEFT);
 
     if(m_auto_resize && isVisible())
     {
@@ -396,7 +396,7 @@ void PlayListHeader::onColumnAdded(int index)
     updateColumns();
 }
 
-void PlayListHeader::onColumnRemoved()
+void QSUiPlayListHeader::onColumnRemoved()
 {
     m_auto_resize = autoResizeColumn() >= 0;
     if(m_auto_resize && isVisible())
@@ -406,7 +406,7 @@ void PlayListHeader::onColumnRemoved()
     updateColumns();
 }
 
-void PlayListHeader::mousePressEvent(QMouseEvent *e)
+void QSUiPlayListHeader::mousePressEvent(QMouseEvent *e)
 {
     bool rtl = layoutDirection() == Qt::RightToLeft;
 
@@ -455,7 +455,7 @@ void PlayListHeader::mousePressEvent(QMouseEvent *e)
     }
 }
 
-void PlayListHeader::mouseReleaseEvent(QMouseEvent *)
+void QSUiPlayListHeader::mouseReleaseEvent(QMouseEvent *)
 {
     if(m_task == SORT)
         PlayListManager::instance()->selectedPlayList()->sortByColumn(m_pressed_column);
@@ -464,7 +464,7 @@ void PlayListHeader::mouseReleaseEvent(QMouseEvent *)
     update();
 }
 
-void PlayListHeader::mouseMoveEvent(QMouseEvent *e)
+void QSUiPlayListHeader::mouseMoveEvent(QMouseEvent *e)
 {
     bool rtl = layoutDirection() == Qt::RightToLeft;
 
@@ -570,7 +570,7 @@ void PlayListHeader::mouseMoveEvent(QMouseEvent *e)
     }
 }
 
-void PlayListHeader::resizeEvent(QResizeEvent *e)
+void QSUiPlayListHeader::resizeEvent(QResizeEvent *e)
 {
     if(m_model->count() == 1)
     {
@@ -604,7 +604,7 @@ void PlayListHeader::resizeEvent(QResizeEvent *e)
     }
 }
 
-void PlayListHeader::contextMenuEvent(QContextMenuEvent *e)
+void QSUiPlayListHeader::contextMenuEvent(QContextMenuEvent *e)
 {
     m_pressed_pos = e->pos();
     m_pressed_column = findColumn(e->pos());
@@ -648,7 +648,7 @@ void PlayListHeader::contextMenuEvent(QContextMenuEvent *e)
     m_menu->exec(e->globalPos());
 }
 
-void PlayListHeader::paintEvent(QPaintEvent *)
+void QSUiPlayListHeader::paintEvent(QPaintEvent *)
 {
     bool rtl = (layoutDirection() == Qt::RightToLeft);
 
@@ -703,7 +703,7 @@ void PlayListHeader::paintEvent(QPaintEvent *)
     }
 }
 
-int PlayListHeader::findColumn(QPoint pos)
+int QSUiPlayListHeader::findColumn(QPoint pos)
 {
     for(int i = 0; i < m_model->count(); ++i)
     {
@@ -713,22 +713,22 @@ int PlayListHeader::findColumn(QPoint pos)
     return -1;
 }
 
-int PlayListHeader::size(int index) const
+int QSUiPlayListHeader::size(int index) const
 {
     return m_model->data(index, SIZE).toInt();
 }
 
-void PlayListHeader::setSize(int index, int size)
+void QSUiPlayListHeader::setSize(int index, int size)
 {
     m_model->setData(index, SIZE, size);
 }
 
-const QString PlayListHeader::name(int index) const
+const QString QSUiPlayListHeader::name(int index) const
 {
     return m_model->data(index, NAME).toString();
 }
 
-void PlayListHeader::adjustColumn(int index)
+void QSUiPlayListHeader::adjustColumn(int index)
 {
     int w = 0;
 
@@ -741,7 +741,7 @@ void PlayListHeader::adjustColumn(int index)
     setSize(index, qMax(width() - 10 - m_scrollbar_width - w, MIN_SIZE));
 }
 
-int PlayListHeader::autoResizeColumn() const
+int QSUiPlayListHeader::autoResizeColumn() const
 {
     int index = -1;
     for(int i = 0; i < m_model->count(); ++i)
@@ -755,7 +755,7 @@ int PlayListHeader::autoResizeColumn() const
     return index;
 }
 
-void PlayListHeader::writeSettings()
+void QSUiPlayListHeader::writeSettings()
 {
     QSettings settings;
     settings.beginGroup("Simple");
@@ -779,7 +779,7 @@ void PlayListHeader::writeSettings()
     settings.endGroup();
 }
 
-void PlayListHeader::showEvent(QShowEvent *)
+void QSUiPlayListHeader::showEvent(QShowEvent *)
 {
     if(m_auto_resize)
     {
@@ -792,12 +792,12 @@ void PlayListHeader::showEvent(QShowEvent *)
         updateColumns();
 }
 
-void PlayListHeader::hideEvent(QHideEvent *)
+void QSUiPlayListHeader::hideEvent(QHideEvent *)
 {
     writeSettings();
 }
 
-void PlayListHeader::initStyleOption(QStyleOptionHeader *opt)
+void QSUiPlayListHeader::initStyleOption(QStyleOptionHeader *opt)
 {
     opt->initFrom(this);
     opt->state = QStyle::State_None | QStyle::State_Raised | QStyle::State_Horizontal | QStyle::State_Enabled;

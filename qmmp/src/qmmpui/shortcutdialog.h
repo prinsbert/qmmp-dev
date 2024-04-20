@@ -21,10 +21,13 @@
 #define SHORTCUTDIALOG_H
 
 #include <QDialog>
-#include "ui_shortcutdialog.h"
 #include "qmmpui_export.h"
 
 class QKeyEvent;
+
+namespace Ui {
+class ShortcutDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -43,7 +46,7 @@ protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
 
 private:
-    Ui::ShortcutDialog m_ui;
+    Ui::ShortcutDialog *m_ui;
 
 };
 

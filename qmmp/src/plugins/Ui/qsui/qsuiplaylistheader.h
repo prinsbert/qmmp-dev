@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2015-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef PLAYLISTHEADER_H
-#define PLAYLISTHEADER_H
+#ifndef QSUIPLAYLISTHEADER_H
+#define QSUIPLAYLISTHEADER_H
 
 #include <QWidget>
 #include <QPixmap>
@@ -36,12 +36,12 @@ class PlayListHeaderModel;
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class PlayListHeader : public QWidget
+class QSUiPlayListHeader : public QWidget
 {
     Q_OBJECT
 public:
-    explicit PlayListHeader(QWidget *parent = nullptr);
-    ~PlayListHeader();
+    explicit QSUiPlayListHeader(QWidget *parent = nullptr);
+    ~QSUiPlayListHeader();
 
     void readSettings();
     void setNumberWidth(int width);
@@ -129,4 +129,4 @@ private:
 
 };
 
-#endif // PLAYLISTHEADER_H
+#endif // QSUIPLAYLISTHEADER_H

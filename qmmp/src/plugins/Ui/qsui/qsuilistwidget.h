@@ -24,7 +24,7 @@
 #include <QDir>
 #include <QContextMenuEvent>
 #include <QPen>
-#include "listwidgetdrawer.h"
+#include "qsuilistwidgetdrawer.h"
 
 class QFont;
 class QFontMetrics;
@@ -36,10 +36,9 @@ class PlayListModel;
 class PlayListItem;
 class PlayListTrack;
 class QmmpUiSettings;
-class PlayListHeader;
-namespace PlayListPopup{
-class PopupWidget;
-}
+class QSUiPlayListHeader;
+class QSUiPopupWidget;
+
 
 /**
    @author Ilya Kotov <forkotov02@ya.ru>
@@ -135,13 +134,13 @@ private:
     int m_prev_y = 0;
     bool m_select_on_release = false;
     bool m_show_protocol;
-    QList<ListWidgetRow *> m_rows;
+    QList<QSUiListWidgetRow *> m_rows;
     QmmpUiSettings *m_ui_settings;
-    PlayListPopup::PopupWidget *m_popupWidget = nullptr;
+    QSUiPopupWidget *m_popupWidget = nullptr;
     QTimer *m_timer;
     QScrollBar *m_scrollBar;
-    ListWidgetDrawer m_drawer;
-    PlayListHeader *m_header;
+    QSUiListWidgetDrawer m_drawer;
+    QSUiPlayListHeader *m_header;
     QScrollBar *m_hslider;
 
     QString m_filterString;

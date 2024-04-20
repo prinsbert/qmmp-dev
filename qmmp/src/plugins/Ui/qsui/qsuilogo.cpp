@@ -24,9 +24,9 @@
 #include <cmath>
 #include <qmmp/qmmp.h>
 #include "inlines.h"
-#include "logo.h"
+#include "qsuilogo.h"
 
-Logo::Logo(QWidget *parent) : Visual(parent)
+QSUiLogo::QSUiLogo(QWidget *parent) : Visual(parent)
 {
     QPixmap pixmap(":/qsui/terminus.png");
     m_letters = {
@@ -76,12 +76,12 @@ Logo::Logo(QWidget *parent) : Visual(parent)
     m_timer->start();
 }
 
-Logo::~Logo()
+QSUiLogo::~QSUiLogo()
 {
     Visual::remove(this);
 }
 
-void Logo::paintEvent(QPaintEvent *)
+void QSUiLogo::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.fillRect(rect(), "black");
@@ -96,13 +96,13 @@ void Logo::paintEvent(QPaintEvent *)
     }
 }
 
-void Logo::mousePressEvent(QMouseEvent *)
+void QSUiLogo::mousePressEvent(QMouseEvent *)
 {
     m_elapsed = 2000;
     m_value = 0;
 }
 
-void Logo::updateLetters()
+void QSUiLogo::updateLetters()
 {
     if(m_elapsed < 2000)
     {
@@ -131,7 +131,7 @@ void Logo::updateLetters()
     m_elapsed += 50;
 }
 
-void Logo::processPreset1()
+void QSUiLogo::processPreset1()
 {
     m_lines.clear();
     QString line;
@@ -154,7 +154,7 @@ void Logo::processPreset1()
     update();
 }
 
-void Logo::processPreset2()
+void QSUiLogo::processPreset2()
 {
     m_lines.clear();
     QString str = QString("..0000..");//.arg(Qmmp::strVersion().left(5));
@@ -173,7 +173,7 @@ void Logo::processPreset2()
     update();
 }
 
-void Logo::processPreset3()
+void QSUiLogo::processPreset3()
 {
     m_lines.clear();
     QString str = QString("...%1...").arg(Qmmp::strVersion().left(5));
@@ -192,7 +192,7 @@ void Logo::processPreset3()
     update();
 }
 
-void Logo::processPreset4()
+void QSUiLogo::processPreset4()
 {
     m_lines.clear();
 

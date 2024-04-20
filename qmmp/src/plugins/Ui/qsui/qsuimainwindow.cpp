@@ -48,7 +48,7 @@
 #include "qsuipositionslider.h"
 #include "qsuimainwindow.h"
 #include "qsuisettings.h"
-#include "hotkeyeditor.h"
+#include "qsuihotkeyeditor.h"
 #include "filesystembrowser.h"
 #include "aboutqsuidialog.h"
 #include "keyboardmanager.h"

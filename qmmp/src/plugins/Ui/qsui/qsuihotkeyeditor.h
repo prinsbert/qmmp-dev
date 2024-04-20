@@ -18,47 +18,33 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef LOGO_H
-#define LOGO_H
+#ifndef QSUIHOTKEYEDITOR_H
+#define QSUIHOTKEYEDITOR_H
 
 #include <QWidget>
-#include <QHash>
-#include <QChar>
-#include <QStringList>
-#include <QQueue>
-#include <QPixmap>
-#include <qmmp/visual.h>
 
-class QTimer;
+namespace Ui {
+    class QSUiHotkeyEditor;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class Logo : public Visual
+class QSUiHotkeyEditor : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit Logo(QWidget *parent = nullptr);
-    virtual ~Logo();
+    explicit QSUiHotkeyEditor(QWidget *parent = nullptr);
+    virtual ~QSUiHotkeyEditor();
 
 private slots:
-    void updateLetters();
+    void on_changeShortcutButton_clicked();
+    void on_resetShortcutsButton_clicked();
 
 private:
-    void paintEvent(QPaintEvent *) override;
-    void mousePressEvent(QMouseEvent *) override;
-    void processPreset1();
-    void processPreset2();
-    void processPreset3();
-    void processPreset4();
-    QHash <QChar, QPixmap> m_letters;
-    QStringList m_lines;
-    QStringList m_source_lines;
-    float m_buffer[QMMP_VISUAL_NODE_SIZE];
-    int m_value;
-    qint64 m_elapsed;
-    QTimer *m_timer;
-
+    void loadShortcuts();
+    Ui::QSUiHotkeyEditor *m_ui;
 };
 
-#endif // LOGO_H
+#endif // QSUIHOTKEYEDITOR_H
