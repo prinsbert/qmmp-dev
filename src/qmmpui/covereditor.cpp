@@ -19,34 +19,40 @@
  ***************************************************************************/
 
 #include <QVBoxLayout>
+#include "ui_covereditor.h"
 #include "coverviewer_p.h"
 #include "covereditor_p.h"
 
 CoverEditor::CoverEditor(MetaDataModel *model, const QString &coverPath, QWidget *parent) :
-    QWidget(parent)
+    QWidget(parent), m_ui(new Ui::CoverEditor)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     m_model = model;
     m_coverPath = coverPath;
     m_editable = m_model && (m_model->dialogHints() & MetaDataModel::IsCoverEditable) && !m_model->isReadOnly();
 
-    m_ui.sourceComboBox->addItem(tr("External file"));
-    m_ui.sourceComboBox->addItem(tr("Tag"));
+    m_ui->sourceComboBox->addItem(tr("External file"));
+    m_ui->sourceComboBox->addItem(tr("Tag"));
 
     m_viewer = new CoverViewer(this);
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(m_viewer);
-    m_ui.frame->setLayout(layout);
+    m_ui->frame->setLayout(layout);
 
     if((m_model && !m_model->cover().isNull()) || (m_editable && m_coverPath.isEmpty()))
-        m_ui.sourceComboBox->setCurrentIndex(1);
+        m_ui->sourceComboBox->setCurrentIndex(1);
     else
-        m_ui.sourceComboBox->setCurrentIndex(0);
+        m_ui->sourceComboBox->setCurrentIndex(0);
 
-    on_sourceComboBox_activated(m_ui.sourceComboBox->currentIndex());
+    on_sourceComboBox_activated(m_ui->sourceComboBox->currentIndex());
 
     if(!m_editable || m_coverPath.isEmpty())
-        m_ui.sourceComboBox->setEnabled(false);
+        m_ui->sourceComboBox->setEnabled(false);
+}
+
+CoverEditor::~CoverEditor()
+{
+    delete m_ui;
 }
 
 bool CoverEditor::isEditable() const
@@ -64,32 +70,32 @@ void CoverEditor::on_sourceComboBox_activated(int index)
     if(index == 0)
     {
         m_viewer->setImage(QImage(m_coverPath));
-        m_ui.loadButton->setEnabled(false);
-        m_ui.deleteButton->setEnabled(false);
-        m_ui.saveAsButton->setEnabled(m_viewer->hasImage());
+        m_ui->loadButton->setEnabled(false);
+        m_ui->deleteButton->setEnabled(false);
+        m_ui->saveAsButton->setEnabled(m_viewer->hasImage());
     }
     else if(index == 1)
     {
         if(m_model)
             m_viewer->setImage(m_model->cover());
-        m_ui.loadButton->setEnabled(m_editable);
-        m_ui.deleteButton->setEnabled(m_editable && m_viewer->hasImage());
-        m_ui.saveAsButton->setEnabled(m_viewer->hasImage());
+        m_ui->loadButton->setEnabled(m_editable);
+        m_ui->deleteButton->setEnabled(m_editable && m_viewer->hasImage());
+        m_ui->saveAsButton->setEnabled(m_viewer->hasImage());
     }
 }
 
 void CoverEditor::on_loadButton_clicked()
 {
     m_viewer->load();
-    m_ui.deleteButton->setEnabled(m_viewer->hasImage());
-    m_ui.saveAsButton->setEnabled(m_viewer->hasImage());
+    m_ui->deleteButton->setEnabled(m_viewer->hasImage());
+    m_ui->saveAsButton->setEnabled(m_viewer->hasImage());
 }
 
 void CoverEditor::on_deleteButton_clicked()
 {
     m_viewer->clear();
-    m_ui.deleteButton->setEnabled(m_viewer->hasImage());
-    m_ui.saveAsButton->setEnabled(m_viewer->hasImage());
+    m_ui->deleteButton->setEnabled(m_viewer->hasImage());
+    m_ui->saveAsButton->setEnabled(m_viewer->hasImage());
 }
 
 void CoverEditor::on_saveAsButton_clicked()
