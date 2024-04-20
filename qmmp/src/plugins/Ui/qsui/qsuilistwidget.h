@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef LISTWIDGET_H
-#define LISTWIDGET_H
+#ifndef QSUILISTWIDGET_H
+#define QSUILISTWIDGET_H
 
 #include <QWidget>
 #include <QDir>
@@ -44,13 +44,13 @@ class PopupWidget;
 /**
    @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ListWidget : public QWidget
+class QSUiListWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ListWidget(PlayListModel *model, QWidget *parent = nullptr);
+    explicit QSUiListWidget(PlayListModel *model, QWidget *parent = nullptr);
 
-    ~ListWidget();
+    ~QSUiListWidget();
 
     /*!
      * Returns count of currently visible rows.

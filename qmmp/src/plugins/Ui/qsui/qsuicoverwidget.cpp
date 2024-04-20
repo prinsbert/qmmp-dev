@@ -23,9 +23,9 @@
 #include <QAction>
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
-#include "coverwidget.h"
+#include "qsuicoverwidget.h"
 
-CoverWidget::CoverWidget(QWidget *parent)
+QSUiCoverWidget::QSUiCoverWidget(QWidget *parent)
         : QWidget(parent)
 {
     setContextMenuPolicy(Qt::ActionsContextMenu);
@@ -35,22 +35,22 @@ CoverWidget::CoverWidget(QWidget *parent)
     m_image = QImage(":/qsui/ui_no_cover.png");
 }
 
-CoverWidget::~CoverWidget()
+QSUiCoverWidget::~QSUiCoverWidget()
 {}
 
-void CoverWidget::setCover(const QImage &img)
+void QSUiCoverWidget::setCover(const QImage &img)
 {
     m_image = img.isNull() ? QImage(":/qsui/ui_no_cover.png") : img;
     update();
 }
 
-void CoverWidget::clearCover()
+void QSUiCoverWidget::clearCover()
 {
     setCover(QImage());
     update();
 }
 
-void CoverWidget::paintEvent(QPaintEvent *)
+void QSUiCoverWidget::paintEvent(QPaintEvent *)
 {
     if(!m_image.isNull())
     {
@@ -60,7 +60,7 @@ void CoverWidget::paintEvent(QPaintEvent *)
     }
 }
 
-void CoverWidget::saveAs()
+void QSUiCoverWidget::saveAs()
 {
     QString path = FileDialog::getSaveFileName(this, tr("Save Cover As"),
                                                  QDir::homePath() + "/cover.jpg",

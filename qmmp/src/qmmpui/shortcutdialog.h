@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,49 +17,34 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef SHORTCUTDIALOG_H
+#define SHORTCUTDIALOG_H
 
-#include <QKeyEvent>
-#include "shortcutdialog.h"
+#include <QDialog>
+#include "ui_shortcutdialog.h"
+#include "qmmpui_export.h"
 
-ShortcutDialog::ShortcutDialog(const QString &key, QWidget *parent)
-        : QDialog(parent)
+class QKeyEvent;
+
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class QMMPUI_EXPORT ShortcutDialog : public QDialog
 {
-    m_ui.setupUi(this);
-    m_ui.keyLineEdit->setText(key);
+    Q_OBJECT
+public:
+    explicit ShortcutDialog(const QString &key, QWidget *parent = nullptr);
 
-    //buttons should not catch keys
-    for(QAbstractButton *button : m_ui.buttonBox->buttons())
-        button->setFocusPolicy(Qt::NoFocus);
-}
+    ~ShortcutDialog();
 
-ShortcutDialog::~ShortcutDialog()
-{
-}
+    const QString key();
 
-void ShortcutDialog::keyPressEvent (QKeyEvent *event)
-{
-    switch(event->key())
-    {
-    case Qt::Key_Shift:
-    case Qt::Key_Control:
-    case Qt::Key_Meta:
-    case Qt::Key_Alt:
-    case Qt::Key_AltGr:
-    case Qt::Key_Super_L:
-    case Qt::Key_Super_R:
-    case Qt::Key_Menu:
-    case 0:
-    case Qt::Key_unknown:
-        m_ui.keyLineEdit->clear();
-        QWidget::keyPressEvent(event);
-        return;
-    }
-    QKeySequence seq(event->modifiers() | event->key());
-    m_ui.keyLineEdit->setText(seq.toString());
-    QWidget::keyPressEvent(event);
-}
+protected:
+    virtual void keyPressEvent(QKeyEvent *event) override;
 
-const QString ShortcutDialog::key()
-{
-    return m_ui.keyLineEdit->text();
-}
+private:
+    Ui::ShortcutDialog m_ui;
+
+};
+
+#endif

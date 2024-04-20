@@ -21,10 +21,10 @@
 #include <QSettings>
 #include <qmmp/qmmp.h>
 #include <qmmpui/metadataformattermenu.h>
-#include "popupwidget.h"
-#include "popupsettings.h"
+#include "qsuipopupwidget.h"
+#include "qsuipopupsettings.h"
 
-PopupSettings::PopupSettings(QWidget *parent)
+QSUiPopupSettings::QSUiPopupSettings(QWidget *parent)
         : QDialog(parent)
 {
     m_ui.setupUi(this);
@@ -42,10 +42,10 @@ PopupSettings::PopupSettings(QWidget *parent)
     createMenu();
 }
 
-PopupSettings::~PopupSettings()
+QSUiPopupSettings::~QSUiPopupSettings()
 {}
 
-void PopupSettings::accept()
+void QSUiPopupSettings::accept()
 {
     QSettings settings;
     settings.beginGroup("Simple");
@@ -58,14 +58,14 @@ void PopupSettings::accept()
     QDialog::accept();
 }
 
-void PopupSettings::createMenu()
+void QSUiPopupSettings::createMenu()
 {
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui.insertButton->setMenu(menu);
     connect(menu, SIGNAL(patternSelected(QString)), m_ui.textEdit, SLOT(insertPlainText(QString)));
 }
 
-void PopupSettings::on_resetButton_clicked()
+void QSUiPopupSettings::on_resetButton_clicked()
 {
     m_ui.textEdit->setPlainText(DEFAULT_TEMPLATE);
 }

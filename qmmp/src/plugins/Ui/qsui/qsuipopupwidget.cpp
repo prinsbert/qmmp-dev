@@ -27,12 +27,9 @@
 #include <qmmp/soundcore.h>
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/playlistitem.h>
+#include "qsuipopupwidget.h"
 
-#include "popupwidget.h"
-
-using namespace PlayListPopup;
-
-PopupWidget::PopupWidget(QWidget *parent)
+QSUiPopupWidget::QSUiPopupWidget(QWidget *parent)
         : QWidget(parent)
 {
     setWindowFlags(Qt::ToolTip | Qt::BypassGraphicsProxyWidget);
@@ -66,20 +63,20 @@ PopupWidget::PopupWidget(QWidget *parent)
     setMouseTracking(true);
 }
 
-PopupWidget::~PopupWidget()
+QSUiPopupWidget::~QSUiPopupWidget()
 {}
 
-void PopupWidget::mousePressEvent (QMouseEvent *)
+void QSUiPopupWidget::mousePressEvent (QMouseEvent *)
 {
     hide();
 }
 
-void PopupWidget::mouseMoveEvent (QMouseEvent *)
+void QSUiPopupWidget::mouseMoveEvent (QMouseEvent *)
 {
     hide();
 }
 
-void PopupWidget::prepare(PlayListTrack *track, QPoint pos)
+void QSUiPopupWidget::prepare(PlayListTrack *track, QPoint pos)
 {
     pos += QPoint(15,10);
     hide();
@@ -103,19 +100,19 @@ void PopupWidget::prepare(PlayListTrack *track, QPoint pos)
     move(pos);
 }
 
-void PopupWidget::deactivate()
+void QSUiPopupWidget::deactivate()
 {
     m_timer->stop();
     m_url.clear();
     hide();
 }
 
-const QString PopupWidget::url() const
+const QString QSUiPopupWidget::url() const
 {
     return m_url;
 }
 
-void PopupWidget::loadCover()
+void QSUiPopupWidget::loadCover()
 {
     if(m_url.isEmpty())
         return;

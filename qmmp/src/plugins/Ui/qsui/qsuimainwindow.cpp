@@ -44,15 +44,15 @@
 #include "toolbareditor.h"
 #include "actionmanager.h"
 #include "qsuivisualization.h"
-#include "listwidget.h"
-#include "positionslider.h"
-#include "mainwindow.h"
+#include "qsuilistwidget.h"
+#include "qsuipositionslider.h"
+#include "qsuimainwindow.h"
 #include "qsuisettings.h"
 #include "hotkeyeditor.h"
 #include "filesystembrowser.h"
 #include "aboutqsuidialog.h"
 #include "keyboardmanager.h"
-#include "coverwidget.h"
+#include "qsuicoverwidget.h"
 #include "playlistbrowser.h"
 #include "volumeslider.h"
 #include "qsuitabwidget.h"
@@ -64,7 +64,7 @@
 
 #define KEY_OFFSET 10000
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
+QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
 {
     m_ui.setupUi(this);
     m_titleFormatter.setPattern("%if(%p,%p - %t,%t)");
@@ -101,7 +101,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     m_tabWidget->setCurrentIndex(m_pl_manager->selectedPlayListIndex());
     m_key_manager->setListWidget(m_listWidget);
 
-    m_positionSlider = new PositionSlider(this);
+    m_positionSlider = new QSUiPositionSlider(this);
     m_positionSlider->setFocusPolicy(Qt::NoFocus);
     m_positionSlider->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     //prepare visualization
@@ -155,7 +155,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     //filesystem browser
     m_ui.fileSystemDockWidget->setWidget(new FileSystemBrowser(this));
     //cover
-    m_ui.coverDockWidget->setWidget(new CoverWidget(this));
+    m_ui.coverDockWidget->setWidget(new QSUiCoverWidget(this));
     //playlists
     m_ui.playlistsDockWidget->setWidget(new PlayListBrowser(m_pl_manager, this));
     //dock widgets (plugins)
@@ -166,50 +166,50 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     restoreWindowTitle();
 }
 
-MainWindow::~MainWindow()
+QSUiMainWindow::~QSUiMainWindow()
 {
 }
 
-void MainWindow::addDir()
+void QSUiMainWindow::addDir()
 {
     m_uiHelper->addDirectory(this);
 }
 
-void MainWindow::addFiles()
+void QSUiMainWindow::addFiles()
 {
     m_uiHelper->addFiles(this);
 }
 
-void MainWindow::playFiles()
+void QSUiMainWindow::playFiles()
 {
     m_uiHelper->playFiles(this);
 }
 
-void MainWindow::record(bool enabled)
+void QSUiMainWindow::record(bool enabled)
 {
     EffectFactory *fileWriterFactory = Effect::findFactory("filewriter");
     if(fileWriterFactory)
         Effect::setEnabled(fileWriterFactory, enabled);
 }
 
-void MainWindow::addUrl()
+void QSUiMainWindow::addUrl()
 {
     m_uiHelper->addUrl(this);
 }
 
-void MainWindow::updatePosition(qint64 pos)
+void QSUiMainWindow::updatePosition(qint64 pos)
 {
     m_positionSlider->setMaximum(m_core->duration()/1000);
     if(!m_positionSlider->isSliderDown())
         m_positionSlider->setValue(pos/1000);
 }
 
-void MainWindow::seek()
+void QSUiMainWindow::seek()
 {
     m_core->seek(m_positionSlider->value()*1000);
 }
 
-void MainWindow::showState(Qmmp::State state)
+void QSUiMainWindow::showState(Qmmp::State state)
 {
     if(state != Qmmp::Playing)
     {
@@ -221,7 +221,7 @@ void MainWindow::showState(Qmmp::State state)
     case Qmmp::Playing:
     {
         m_analyzer->setCover(MetaDataManager::instance()->getCover(m_core->path()));
-        CoverWidget *cw = qobject_cast<CoverWidget *>(m_ui.coverDockWidget->widget());
+        QSUiCoverWidget *cw = qobject_cast<QSUiCoverWidget *>(m_ui.coverDockWidget->widget());
         cw->setCover(MetaDataManager::instance()->getCover(m_core->path()));
         ACTION(ActionManager::PLAY_PAUSE)->setIcon(QIcon::fromTheme("media-playback-pause"));
         break;
@@ -231,14 +231,14 @@ void MainWindow::showState(Qmmp::State state)
     case Qmmp::Stopped:
         m_positionSlider->setValue(0);
         m_analyzer->clearCover();
-        qobject_cast<CoverWidget *>(m_ui.coverDockWidget->widget())->clearCover();
+        qobject_cast<QSUiCoverWidget *>(m_ui.coverDockWidget->widget())->clearCover();
         break;
     default:
         ;
     }
 }
 
-void MainWindow::updateTabs()
+void QSUiMainWindow::updateTabs()
 {
     for(int i = 0; i < m_pl_manager->count(); ++i)
     {
@@ -251,30 +251,30 @@ void MainWindow::updateTabs()
     m_tabWidget->setCurrentIndex(m_pl_manager->selectedPlayListIndex());
 }
 
-void MainWindow::removePlaylist()
+void QSUiMainWindow::removePlaylist()
 {
     m_pl_manager->removePlayList(m_pl_manager->selectedPlayList());
 }
 
-void MainWindow::removePlaylistWithIndex(int index)
+void QSUiMainWindow::removePlaylistWithIndex(int index)
 {
     m_pl_manager->removePlayList(m_pl_manager->playListAt(index));
 }
 
-void MainWindow::addTab(int index)
+void QSUiMainWindow::addTab(int index)
 {
     m_tabWidget->insertTab(index, m_pl_manager->playListAt(index)->name());
     connect(m_pl_manager->playListAt(index), SIGNAL(nameChanged(QString)), SLOT(updateTabs()));
     updateTabs();
 }
 
-void MainWindow::removeTab(int index)
+void QSUiMainWindow::removeTab(int index)
 {
     m_tabWidget->removeTab(index);
     updateTabs();
 }
 
-void MainWindow::renameTab()
+void QSUiMainWindow::renameTab()
 {
     bool ok = false;
     QString name = QInputDialog::getText (this,
@@ -285,18 +285,18 @@ void MainWindow::renameTab()
         m_pl_manager->selectedPlayList()->setName(name);
 }
 
-void MainWindow::aboutUi()
+void QSUiMainWindow::aboutUi()
 {
     AboutQSUIDialog dialog(this);
     dialog.exec();
 }
 
-void MainWindow::about()
+void QSUiMainWindow::about()
 {
     m_uiHelper->about(this);
 }
 
-void MainWindow::toggleVisibility()
+void QSUiMainWindow::toggleVisibility()
 {
     if(isHidden() || isMinimized())
         showAndRaise();
@@ -304,7 +304,7 @@ void MainWindow::toggleVisibility()
         hide();
 }
 
-void MainWindow::showAndRaise()
+void QSUiMainWindow::showAndRaise()
 {
     show();
     if(m_wasMaximized)
@@ -315,12 +315,12 @@ void MainWindow::showAndRaise()
     activateWindow();
 }
 
-void MainWindow::showSettings()
+void QSUiMainWindow::showSettings()
 {
     ConfigDialog *confDialog = new ConfigDialog(this);
     QSUiSettings *simpleSettings = new QSUiSettings(this);
     confDialog->addPage(tr("Appearance"), simpleSettings, QIcon(":/qsui/qsui_settings.png"));
-    confDialog->addPage(tr("Shortcuts"), new HotkeyEditor(this), QIcon(":/qsui/qsui_shortcuts.png"));
+    confDialog->addPage(tr("Shortcuts"), new QSUiHotkeyEditor(this), QIcon(":/qsui/qsui_shortcuts.png"));
     confDialog->exec();
     simpleSettings->writeSettings();
     confDialog->deleteLater();
@@ -330,7 +330,7 @@ void MainWindow::showSettings()
     m_seekBar->readSettings();
 }
 
-void MainWindow::showAppMenu()
+void QSUiMainWindow::showAppMenu()
 {
     QAction *action = qobject_cast<QAction *>(sender());
     if(!action)
@@ -354,7 +354,7 @@ void MainWindow::showAppMenu()
     appMenu->popup(menuPos);
 }
 
-void MainWindow::updateVolumeIcon()
+void QSUiMainWindow::updateVolumeIcon()
 {
     int maxVol = m_core->volume();
 
@@ -369,12 +369,12 @@ void MainWindow::updateVolumeIcon()
     ACTION(ActionManager::VOL_MUTE)->setIcon(QIcon::fromTheme(iconName, QIcon(QString(":/qsui/") + iconName + ".png")));
 }
 
-void MainWindow::jumpTo()
+void QSUiMainWindow::jumpTo()
 {
     m_uiHelper->jumpToTrack(this);
 }
 
-void MainWindow::playPause()
+void QSUiMainWindow::playPause()
 {
     if (m_core->state() == Qmmp::Playing)
         m_core->pause();
@@ -382,20 +382,20 @@ void MainWindow::playPause()
         m_player->play();
 }
 
-void MainWindow::closeEvent(QCloseEvent *)
+void QSUiMainWindow::closeEvent(QCloseEvent *)
 {
     if(!m_hideOnClose || !m_uiHelper->visibilityControl())
         m_uiHelper->exit();
 
 }
 
-void MainWindow::hideEvent(QHideEvent *)
+void QSUiMainWindow::hideEvent(QHideEvent *)
 {
     writeSettings();
     m_wasMaximized = isMaximized();
 }
 
-QMenu *MainWindow::createPopupMenu()
+QMenu *QSUiMainWindow::createPopupMenu()
 {
     QMenu *menu = QMainWindow::createPopupMenu();
     menu->addSeparator();
@@ -406,7 +406,7 @@ QMenu *MainWindow::createPopupMenu()
     return menu;
 }
 
-void MainWindow::createWidgets()
+void QSUiMainWindow::createWidgets()
 {
     m_tabWidget = new QSUiTabWidget(this);
     m_listWidget = m_tabWidget->listWidget();
@@ -431,7 +431,7 @@ void MainWindow::createWidgets()
     m_tabListMenuButton->setMenu(m_tabWidget->menu());
 }
 
-void MainWindow::createActions()
+void QSUiMainWindow::createActions()
 {
     //prepare checkable actions
     ACTION(ActionManager::REPEAT_ALL)->setChecked(m_ui_settings->isRepeatableList());
@@ -642,7 +642,7 @@ void MainWindow::createActions()
     addActions(m_key_manager->actions());
 }
 
-void MainWindow::readSettings()
+void QSUiMainWindow::readSettings()
 {
     QSettings settings;
     settings.beginGroup("Simple");
@@ -783,7 +783,7 @@ void MainWindow::readSettings()
     }
 }
 
-void MainWindow::showTabMenu(const QPoint &pos)
+void QSUiMainWindow::showTabMenu(const QPoint &pos)
 {
     int index = m_tabWidget->tabBar()->tabAt(m_tabWidget->tabBar()->mapFromParent(pos));
     if(index == -1)
@@ -799,7 +799,7 @@ void MainWindow::showTabMenu(const QPoint &pos)
     }
 }
 
-void MainWindow::writeSettings()
+void QSUiMainWindow::writeSettings()
 {
     QSettings settings;
     settings.setValue("Simple/mw_geometry", saveGeometry());
@@ -812,33 +812,33 @@ void MainWindow::writeSettings()
     settings.setValue("Simple/show_menubar", menuBar()->isVisible());
 }
 
-void MainWindow::savePlayList()
+void QSUiMainWindow::savePlayList()
 {
     m_uiHelper->savePlayList(this);
 }
 
-void MainWindow::loadPlayList()
+void QSUiMainWindow::loadPlayList()
 {
     m_uiHelper->loadPlayList(this);
 }
 
-void MainWindow::showEqualizer()
+void QSUiMainWindow::showEqualizer()
 {
     Equalizer equalizer(this);
     equalizer.exec();
 }
 
-void MainWindow::forward()
+void QSUiMainWindow::forward()
 {
     m_core->seek(m_core->elapsed() + KEY_OFFSET);
 }
 
-void MainWindow::backward()
+void QSUiMainWindow::backward()
 {
     m_core->seek(qMax(qint64(0), m_core->elapsed() - KEY_OFFSET));
 }
 
-void MainWindow::showMetaData()
+void QSUiMainWindow::showMetaData()
 {
     PlayListModel *model = m_pl_manager->currentPlayList();
     PlayListTrack *track = model->currentTrack();
@@ -848,7 +848,7 @@ void MainWindow::showMetaData()
     }
 }
 
-void MainWindow::setTitleBarsVisible(bool visible)
+void QSUiMainWindow::setTitleBarsVisible(bool visible)
 {
     m_dockWidgetList->setTitleBarsVisible(visible);
 
@@ -888,7 +888,7 @@ void MainWindow::setTitleBarsVisible(bool visible)
     }
 }
 
-void MainWindow::setToolBarsBlocked(bool blocked)
+void QSUiMainWindow::setToolBarsBlocked(bool blocked)
 {
     for(QToolBar *t : findChildren<QToolBar *>())
     {
@@ -896,7 +896,7 @@ void MainWindow::setToolBarsBlocked(bool blocked)
     }
 }
 
-void MainWindow::editToolBar()
+void QSUiMainWindow::editToolBar()
 {
     ToolBarEditor *e = new ToolBarEditor(this);
     if(e->exec() == QDialog::Accepted)
@@ -906,18 +906,18 @@ void MainWindow::editToolBar()
     e->deleteLater();
 }
 
-void MainWindow::restoreWindowTitle()
+void QSUiMainWindow::restoreWindowTitle()
 {
     setWindowTitle(tr("Qmmp"));
 }
 
-void MainWindow::onListChanged(int flags)
+void QSUiMainWindow::onListChanged(int flags)
 {
     if(flags & PlayListModel::STRUCTURE)
         m_statusBar->updatePlayListStatus();
 }
 
-void MainWindow::onCurrentPlayListChanged(PlayListModel *current, PlayListModel *previous)
+void QSUiMainWindow::onCurrentPlayListChanged(PlayListModel *current, PlayListModel *previous)
 {
     updateTabs();
     m_statusBar->updatePlayListStatus();

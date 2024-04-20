@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PopupSettings</class>
- <widget class="QDialog" name="PopupSettings">
+ <class>QSUiPopupSettings</class>
+ <widget class="QDialog" name="QSUiPopupSettings">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>308</width>
+    <width>310</width>
     <height>335</height>
    </rect>
   </property>
@@ -182,7 +182,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>PopupSettings</receiver>
+   <receiver>QSUiPopupSettings</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -198,7 +198,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>PopupSettings</receiver>
+   <receiver>QSUiPopupSettings</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

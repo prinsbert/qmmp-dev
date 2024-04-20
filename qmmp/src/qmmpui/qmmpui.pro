@@ -44,6 +44,7 @@ HEADERS += general.h \
     fileloader_p.h \
     mediaplayer.h \
     detailsdialog.h \
+    shortcutdialog.h \
     tageditor_p.h \
     playlistmanager.h \
     templateeditor.h \
@@ -91,6 +92,7 @@ SOURCES += general.cpp \
     mediaplayer.cpp \
     detailsdialog.cpp \
     playlistmanager.cpp \
+    shortcutdialog.cpp \
     templateeditor.cpp \
     uiloader.cpp \
     uihelper.cpp \
@@ -123,6 +125,7 @@ SOURCES += general.cpp \
     visualmenu.cpp
 
 FORMS += forms/detailsdialog.ui \
+    forms/shortcutdialog.ui \
     forms/tageditor.ui \
     forms/templateeditor.ui \
     forms/jumptotrackdialog.ui \
@@ -182,6 +185,7 @@ unix {
     playlistheadermodel.h \
     metadataformattermenu.h \
     visualmenu.h \
+    shortcutdialog.h \
     qmmpui_export.h
 
     isEmpty(APP_NAME_SUFFIX) {

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,52 +17,34 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef POPUPWIDGET_H
-#define POPUPWIDGET_H
+#ifndef QSUIPOPSETTINGS_H
+#define QSUIPOPSETTINGS_H
 
-#include <QWidget>
-#include <qmmpui/metadataformatter.h>
+#include <QDialog>
+#include <QObject>
+#include "ui_qsuipopupsettings.h"
 
-#define DEFAULT_TEMPLATE "<b>%if(%t,%t,%f)</b>\n%if(%p,<br>%p,)\n%if(%a,<br>%a,)"
-
-class QTimer;
-class QLabel;
-class PlayListTrack;
-
-namespace PlayListPopup {
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class PopupWidget : public QWidget
+class QSUiPopupSettings : public QDialog
 {
-    Q_OBJECT
+Q_OBJECT
 public:
-    PopupWidget(QWidget *parent = nullptr);
+    QSUiPopupSettings(QWidget *parent = nullptr);
+    ~QSUiPopupSettings();
 
-    ~PopupWidget();
 
-    void prepare(PlayListTrack *track, QPoint pos);
-    void deactivate();
-    const QString url() const;
-
-protected:
-    virtual void mousePressEvent (QMouseEvent *) override;
-    virtual void mouseMoveEvent (QMouseEvent *) override;
+public slots:
+    virtual void accept() override;
 
 private slots:
-    void loadCover();
+    void on_resetButton_clicked();
 
 private:
-    QTimer *m_timer;
-    QLabel *m_label1;
-    QLabel *m_pixlabel;
-    QString m_template;
-    uint m_pos;
-    int m_coverSize;
-    QString m_url;
-    MetaDataFormatter m_formatter;
-
+    void createMenu();
+    Ui::QSUiPopupSettings m_ui;
+    QMap<uint, QPushButton*> m_buttons;
 };
-}
 
 #endif

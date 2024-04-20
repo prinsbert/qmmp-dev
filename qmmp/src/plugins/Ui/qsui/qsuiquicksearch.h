@@ -26,7 +26,7 @@
 
 class QLineEdit;
 class PlayListManager;
-class ListWidget;
+class QSUiListWidget;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -35,12 +35,12 @@ class QSUiQuickSearch : public QWidget
 {
     Q_OBJECT
 public:
-    explicit QSUiQuickSearch(ListWidget *listWidget, QWidget *parent = nullptr);
+    explicit QSUiQuickSearch(QSUiListWidget *listWidget, QWidget *parent = nullptr);
 
 private:
     QLineEdit *m_lineEdit;
     PlayListManager *m_manager;
-    ListWidget *m_listWidget;
+    QSUiListWidget *m_listWidget;
 
 };
 

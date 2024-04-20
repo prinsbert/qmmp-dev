@@ -25,7 +25,7 @@
 #include <QList>
 
 class QAction;
-class ListWidget;
+class QSUiListWidget;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -37,7 +37,7 @@ public:
     explicit KeyboardManager(QObject *parent = nullptr);
 
     QList<QAction*> actions();
-    void setListWidget(ListWidget *listWidget);
+    void setListWidget(QSUiListWidget *listWidget);
 
 private slots:
     void processUp();
@@ -50,7 +50,7 @@ private slots:
 
 private:
     QList<QAction*> m_actions;
-    ListWidget *m_listWidget = nullptr;
+    QSUiListWidget *m_listWidget = nullptr;
     void addAction(QKeyCombination keys, const char * method);
 
     enum SelectMode

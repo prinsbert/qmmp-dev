@@ -17,13 +17,13 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef QSUIMAINWINDOW_H
+#define QSUIMAINWINDOW_H
 
 #include <QMainWindow>
 #include <qmmp/qmmp.h>
 #include <qmmpui/mediaplayer.h>
-#include "ui_mainwindow.h"
+#include "ui_qsuimainwindow.h"
 
 class QSlider;
 class QMenu;
@@ -36,10 +36,10 @@ class QmmpUiSettings;
 class PlayListManager;
 class GeneralHandler;
 class VisualMenu;
-class PositionSlider;
+class QSUiPositionSlider;
 class KeyboardManager;
 class QSUIVisualization;
-class ListWidget;
+class QSUiListWidget;
 class QSUiTabWidget;
 class QSUiQuickSearch;
 class QSUiWaveformSeekBar;
@@ -50,12 +50,12 @@ class DockWidgetList;
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class MainWindow : public QMainWindow
+class QSUiMainWindow : public QMainWindow
 {
 Q_OBJECT
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    QSUiMainWindow(QWidget *parent = nullptr);
+    ~QSUiMainWindow();
 
 private slots:
     void addDir();
@@ -105,10 +105,10 @@ private:
     void writeSettings();
     bool m_wasMaximized = false;
     PlayListManager *m_pl_manager;
-    Ui::MainWindow m_ui;
+    Ui::QSUiMainWindow m_ui;
     MediaPlayer *m_player;
     QmmpUiSettings *m_ui_settings;
-    PositionSlider *m_positionSlider;
+    QSUiPositionSlider *m_positionSlider;
     QSUiStatusBar *m_statusBar;
     SoundCore *m_core;
     VisualMenu *m_visMenu;
@@ -121,7 +121,7 @@ private:
     QSUIVisualization *m_analyzer;
     QSUiWaveformSeekBar *m_seekBar;
     QToolButton *m_addListButton, *m_tabListMenuButton;
-    ListWidget *m_listWidget;
+    QSUiListWidget *m_listWidget;
     MetaDataFormatter m_titleFormatter;
     bool m_update = false;
     bool m_hideOnClose;

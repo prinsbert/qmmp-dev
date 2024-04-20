@@ -21,7 +21,7 @@
 #include <QtPlugin>
 #include <QMessageBox>
 #include <qmmp/qmmpsettings.h>
-#include "mainwindow.h"
+#include "qsuimainwindow.h"
 #include "aboutqsuidialog.h"
 #include "qsuifactory.h"
 
@@ -37,7 +37,7 @@ UiProperties QSUiFactory::properties() const
 QObject *QSUiFactory::QSUiFactory::create()
 {
     QmmpSettings::instance()->readEqSettings(EqSettings::EQ_BANDS_15);
-    return new MainWindow();
+    return new QSUiMainWindow();
 }
 
 void QSUiFactory::showAbout(QWidget *parent)

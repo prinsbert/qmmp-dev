@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,32 +17,50 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SHORTCUTDIALOG_H
-#define SHORTCUTDIALOG_H
+#ifndef QSUIPOPUPWIDGET_H
+#define QSUIPOPUPWIDGET_H
 
-#include <QDialog>
-#include "ui_shortcutdialog.h"
+#include <QWidget>
+#include <qmmpui/metadataformatter.h>
 
-class QKeyEvent;
+#define DEFAULT_TEMPLATE "<b>%if(%t,%t,%f)</b>\n%if(%p,<br>%p,)\n%if(%a,<br>%a,)"
+
+class QTimer;
+class QLabel;
+class PlayListTrack;
+
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ShortcutDialog : public QDialog
+class QSUiPopupWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ShortcutDialog(const QString &key, QWidget *parent = nullptr);
+    QSUiPopupWidget(QWidget *parent = nullptr);
 
-    ~ShortcutDialog();
+    ~QSUiPopupWidget();
 
-    const QString key();
+    void prepare(PlayListTrack *track, QPoint pos);
+    void deactivate();
+    const QString url() const;
 
 protected:
-    virtual void keyPressEvent (QKeyEvent *event) override;
+    virtual void mousePressEvent (QMouseEvent *) override;
+    virtual void mouseMoveEvent (QMouseEvent *) override;
+
+private slots:
+    void loadCover();
 
 private:
-    Ui::ShortcutDialog m_ui;
+    QTimer *m_timer;
+    QLabel *m_label1;
+    QLabel *m_pixlabel;
+    QString m_template;
+    uint m_pos;
+    int m_coverSize;
+    QString m_url;
+    MetaDataFormatter m_formatter;
 
 };
 
