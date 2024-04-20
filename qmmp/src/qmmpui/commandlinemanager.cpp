@@ -37,12 +37,12 @@ QHash<CommandLineHandler*, QString> *CommandLineManager::m_files = nullptr;
 
 void CommandLineManager::checkOptions()
 {
-    if (!m_options)
+    if(!m_options)
     {
         m_options = new QList<CommandLineHandler *>;
         m_files = new QHash<CommandLineHandler*, QString>;
 
-        for(const QString &filePath : Qmmp::findPlugins("CommandLineOptions"))
+        for(const QString &filePath : Qmmp::findPlugins(u"CommandLineOptions"_s))
         {
             QPluginLoader loader(filePath);
             QObject *plugin = loader.instance();
@@ -52,10 +52,10 @@ void CommandLineManager::checkOptions()
                 qWarning("CommandLineManager: %s", qPrintable(loader.errorString ()));
 
             CommandLineHandler *option = nullptr;
-            if (plugin)
+            if(plugin)
                 option = qobject_cast<CommandLineHandler *>(plugin);
 
-            if (option)
+            if(option)
             {
                 m_options->append(option);
                 m_files->insert(option, filePath);
@@ -127,10 +127,10 @@ void CommandLineManager::printUsage()
 
 QString CommandLineManager::formatHelpString(const QString &line)
 {
-    QStringList list = line.split("||", Qt::SkipEmptyParts);
+    QStringList list = line.split(u"||"_s, Qt::SkipEmptyParts);
     if(list.count() == 1)
-        return list.at(0);
+        return list.constFirst();
     if(list.count() >= 2)
-        return list.at(0).leftJustified(25) + list.at(1);
+        return list.constFirst().leftJustified(25) + list.at(1);
     return QString();
 }

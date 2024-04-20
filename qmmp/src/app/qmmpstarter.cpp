@@ -81,53 +81,51 @@ QMMPStarter::QMMPStarter() : QObject()
 
     QTranslator *translator = new QTranslator(qApp);
     QString locale = Qmmp::systemLanguageID();
-    if(translator->load(QString(":/qmmp_") + locale))
+    if(translator->load((u":/qmmp_"_s) + locale))
         qApp->installTranslator(translator);
 
     QTranslator *qt_translator = new QTranslator(qApp);
-    if(qt_translator->load(QLibraryInfo::path(QLibraryInfo::TranslationsPath) + "/qtbase_" + locale))
+    if(qt_translator->load(QLibraryInfo::path(QLibraryInfo::TranslationsPath) + u"/qtbase_"_s + locale))
         qApp->installTranslator(qt_translator);
 
     m_option_manager = new BuiltinCommandLineOption(this);
     m_option_manager->registerOprions();
     QStringList tmp = qApp->arguments().mid(1);
 
-    argString = tmp.join("|||");
+    argString = tmp.join(u"|||"_s);
     QHash<QString, QStringList> commands = m_option_manager->splitArgs(tmp);
 
-    if(commands.contains("--help") || commands.contains("-h"))
+    if(commands.contains(u"--help"_s) || commands.contains(u"-h"_s))
     {
         printUsage();
         m_finished = true;
         return;
     }
-    if(commands.contains("--version") || commands.contains("-v"))
+    if(commands.contains(u"--version"_s) || commands.contains(u"-v"_s))
     {
         printVersion();
         m_finished = true;
         return;
     }
-    if(commands.contains("--ui-list"))
+    if(commands.contains(u"--ui-list"_s))
     {
         printUserInterfaces();
         m_finished = true;
         return;
     }
-    if(commands.contains("--ui"))
+    if(commands.contains(u"--ui"_s))
     {
-        QStringList args = commands.value("--ui");
+        QStringList args = commands.value(u"--ui"_s);
         if(args.size() == 1)
             UiLoader::select(args.constFirst());
     }
 
 
-    for(const QString &key : commands.keys())
+    for(auto it = commands.cbegin(); it != commands.cend(); ++it)
     {
         CommandLineHandler::OptionFlags flags;
-        if(!m_option_manager->identify(key) &&
-                !CommandLineManager::hasOption(key, &flags) &&
-                key != "--no-start" &&
-                key != "--ui")
+        if(!m_option_manager->identify(it.key()) && !CommandLineManager::hasOption(it.key(), &flags) &&
+                it.key() != u"--no-start"_s && it.key() != u"--ui"_s)
         {
             cout << qPrintable(tr("Unknown command")) << endl;
             m_exit_code = EXIT_FAILURE;
@@ -139,7 +137,7 @@ QMMPStarter::QMMPStarter() : QObject()
         {
             m_exit_code = EXIT_SUCCESS;
             m_finished = true;
-            QString out = CommandLineManager::executeCommand(key, commands.value(key), QDir::currentPath()).trimmed();
+            QString out = CommandLineManager::executeCommand(it.key(), it.value(), QDir::currentPath()).trimmed();
             if(!out.isEmpty())
             {
                 //show dialog with command line documentation under ms windows
@@ -161,7 +159,7 @@ QMMPStarter::QMMPStarter() : QObject()
 
     m_server = new QLocalServer(this);
     m_socket = new QLocalSocket(this);
-    bool noStart = commands.contains("--no-start") || commands.contains("--quit");
+    bool noStart = commands.contains(u"--no-start"_s) || commands.contains(u"--quit"_s);
 
 #ifdef Q_OS_WIN
     //Windows IPC implementation (named mutex and named pipe)
@@ -185,7 +183,7 @@ QMMPStarter::QMMPStarter() : QObject()
         writeCommand();
     }
 #else
-    if(!noStart && m_server->listen (UDS_PATH)) //trying to create server
+    if(!noStart && m_server->listen(UDS_PATH)) //trying to create server
     {
 #ifndef Q_OS_WIN
         chmod(UDS_PATH, S_IRUSR | S_IWUSR);
@@ -213,7 +211,7 @@ QMMPStarter::QMMPStarter() : QObject()
                 return;
             }
 
-            if(m_server->listen (UDS_PATH))
+            if(m_server->listen(UDS_PATH))
             {
 #ifndef Q_OS_WIN
                 chmod(UDS_PATH, S_IRUSR | S_IWUSR);
@@ -257,42 +255,42 @@ int QMMPStarter::exitCode() const
 
 void QMMPStarter::startPlayer()
 {
-    connect(m_server, SIGNAL(newConnection()), SLOT(readCommand()));
-    QStringList args = argString.split("|||", Qt::SkipEmptyParts);
+    connect(m_server, &QLocalServer::newConnection, this, &QMMPStarter::readCommand);
+    QStringList args = argString.split(u"|||"_s, Qt::SkipEmptyParts);
 
 #ifdef Q_OS_WIN
-    QIcon::setThemeSearchPaths(QStringList() << qApp->applicationDirPath() + QLatin1String("/themes/"));
-    QIcon::setThemeName("oxygen");
+    QIcon::setThemeSearchPaths(QStringList{ qApp->applicationDirPath() + u"/themes/"_s });
+    QIcon::setThemeName(u"oxygen"_s);
 #else
     //add extra theme path;
     QStringList theme_paths = QIcon::themeSearchPaths();
     QString share_path = qgetenv("XDG_DATA_HOME");
     if(share_path.isEmpty())
-        share_path = QDir::homePath() + QLatin1String("/.local/share");
-    theme_paths << share_path + QLatin1String("/icons");
+        share_path = QDir::homePath() + u"/.local/share"_s;
+    theme_paths << share_path + u"/icons"_s;
     theme_paths.removeDuplicates();
     QIcon::setThemeSearchPaths(theme_paths);
 
     //copy config from previous version
-    QString configFile = Qmmp::configDir() + QStringLiteral("/qmmp.conf");
+    QString configFile = Qmmp::configDir() + u"/qmmp.conf"_s;
     if(!QFile::exists(configFile))
     {
-        QString oldConfigFile = QDir::homePath() + QStringLiteral("/.qmmp/qmmp2rc");
+        QString oldConfigFile = QDir::homePath() + u"/.qmmp/qmmp2rc"_s;
         if(!QFile::exists(oldConfigFile))
-            oldConfigFile = QDir::homePath() + QStringLiteral("/.qmmp/qmmprc");
+            oldConfigFile = QDir::homePath() + u"/.qmmp/qmmprc"_s;
 
         if(QFile::exists(oldConfigFile))
         {
             QFile::copy(oldConfigFile, configFile);
             static const QStringList filesToCopy = {
-                "converterrc",  "eq.auto_preset", "history.sqlite", "library.sqlite", "playlist.txt", "Songlengths.txt", "winamp_presets"
+                u"converterrc"_s,  u"eq.auto_preset"_s, u"history.sqlite"_s, u"library.sqlite"_s,
+                u"playlist.txt"_s, u"Songlengths.txt"_s, u"winamp_presets"_s
             };
 
             for(const QString &name : qAsConst(filesToCopy))
-                QFile::copy(QDir::homePath() + QStringLiteral("/.qmmp/") + name, Qmmp::configDir() + "/" + name);
+                QFile::copy(QDir::homePath() + u"/.qmmp/"_s + name, Qmmp::configDir() + QChar('/') + name);
 
-            QProcess::execute(QStringLiteral("cp"), { QStringLiteral("-r"), QDir::homePath() + QStringLiteral("/.qmmp/skins"),
-                                                      Qmmp::configDir() });
+            QProcess::execute(QStringLiteral("cp"), { u"-r"_s, QDir::homePath() + u"/.qmmp/skins"_s, Qmmp::configDir() });
         }
     }
 #endif
@@ -320,10 +318,10 @@ void QMMPStarter::startPlayer()
     if(args.isEmpty())
     {
         QSettings settings;
-        settings.beginGroup("General");
-        if(settings.value("resume_playback", false).toBool())
+        settings.beginGroup(u"General"_s);
+        if(settings.value(u"resume_playback"_s, false).toBool())
         {
-            qint64 pos =  settings.value("resume_playback_time").toLongLong();
+            qint64 pos =  settings.value(u"resume_playback_time"_s).toLongLong();
             m_player->play(pos);
         }
     }
@@ -338,10 +336,10 @@ void QMMPStarter::createPaths()
 void QMMPStarter::savePosition()
 {
     QSettings settings;
-    settings.beginGroup("General");
-    settings.setValue("resume_playback",m_core->state() == Qmmp::Playing &&
+    settings.beginGroup(u"General"_s);
+    settings.setValue(u"resume_playback"_s, m_core->state() == Qmmp::Playing &&
                       QmmpUiSettings::instance()->resumeOnStartup());
-    settings.setValue("resume_playback_time", m_core->duration() > 0 ? m_core->elapsed() : 0);
+    settings.setValue(u"resume_playback_time"_s, m_core->duration() > 0 ? m_core->elapsed() : 0);
     settings.endGroup();
     m_core->stop();
 }
@@ -357,10 +355,10 @@ void QMMPStarter::commitData(QSessionManager &manager)
 
 void QMMPStarter::writeCommand()
 {
-    QString workingDir = QDir::currentPath() + "|||";
+    QString workingDir = QDir::currentPath() + u"|||"_s;
     QByteArray barray;
     barray.append(workingDir.toUtf8 ());
-    barray.append(argString.isEmpty() ? "--show-mw" : argString.toUtf8 ());
+    barray.append(argString.isEmpty() ? "--show-mw" : argString.toUtf8());
     while(!barray.isEmpty())
     {
         qint64 size = m_socket->write(barray);
@@ -409,7 +407,7 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
     QStringList paths;
     for(const QString &arg : qAsConst(slist)) //detect file/directory paths
     {
-        if(arg.startsWith("-"))
+        if(arg.startsWith(QChar('-')))
             break;
         paths.append(arg);
     }
@@ -424,7 +422,7 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
     QString out;
     for(const QString &key : commands.keys())
     {
-        if(key == "--no-start" || key == "--ui")
+        if(key == "--no-start"_L1 || key == "--ui"_L1)
             continue;
         if (CommandLineManager::hasOption(key))
             return CommandLineManager::executeCommand(key, commands.value(key), cwd);
@@ -453,15 +451,15 @@ void QMMPStarter::printUsage()
         cout << qPrintable(CommandLineManager::formatHelpString(line) ) << endl;
     CommandLineManager::printUsage();
     QStringList extraHelp;
-    extraHelp << QString("--ui <name>") + "||" + tr("Start qmmp with the specified user interface");
-    extraHelp << QString("--ui-list") + "||" + tr("List all available user interfaces");
-    extraHelp << QString("--no-start") + "||" + tr("Don't start the application");
-    extraHelp << QString("-h, --help") + "||" + tr("Display this text and exit");
-    extraHelp << QString("-v, --version") + "||" + tr("Print version number and exit");
-    extraHelp << "";
-    extraHelp << tr("Home page: %1").arg("https://qmmp.ylsoftware.com");
-    extraHelp << tr("Development page: %1").arg("https://sourceforge.net/p/qmmp-dev");
-    extraHelp << tr("Bug tracker: %1").arg("https://sourceforge.net/p/qmmp-dev/tickets");
+    extraHelp << QStringLiteral("--ui <name>||") + tr("Start qmmp with the specified user interface");
+    extraHelp << QStringLiteral("--ui-list||") + tr("List all available user interfaces");
+    extraHelp << QStringLiteral("--no-start||") + tr("Don't start the application");
+    extraHelp << QStringLiteral("-h, --help||") + tr("Display this text and exit");
+    extraHelp << QStringLiteral("-v, --version||") + tr("Print version number and exit");
+    extraHelp << QString();
+    extraHelp << tr("Home page: %1").arg(u"https://qmmp.ylsoftware.com"_s);
+    extraHelp << tr("Development page: %1").arg(u"https://sourceforge.net/p/qmmp-dev"_s);
+    extraHelp << tr("Bug tracker: %1").arg(u"https://sourceforge.net/p/qmmp-dev/tickets"_s);
     for(const QString &line : qAsConst(extraHelp))
         cout << qPrintable(CommandLineManager::formatHelpString(line)) << endl;
 #ifdef Q_OS_WIN

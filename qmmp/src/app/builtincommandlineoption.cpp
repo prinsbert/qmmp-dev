@@ -37,29 +37,29 @@ BuiltinCommandLineOption::BuiltinCommandLineOption(QObject *parent) : QObject(pa
     m_timer = new QTimer(this);
     m_timer->setSingleShot(true);
     m_timer->setInterval(500);
-    connect(m_timer, SIGNAL(timeout()), SLOT(addPendingPaths()));
+    connect(m_timer, &QTimer::timeout, this,  &BuiltinCommandLineOption::addPendingPaths);
 #endif
 }
 
 void BuiltinCommandLineOption::registerOprions()
 {
-    registerOption(ENQUEUE, { "-e", "--enqueue" }, tr("Don't clear the playlist"));
-    registerOption(PLAY, { "-p", "--play" }, tr("Start playing current song"));
-    registerOption(PAUSE, { "-u", "--pause"}, tr("Pause current song"));
-    registerOption(PLAY_PAUSE, { "-t", "--play-pause" }, tr("Pause if playing, play otherwise"));
-    registerOption(STOP, { "-s", "--stop" }, tr("Stop current song"));
-    registerOption(JUMP_TO_TRACK, { "-j", "--jump-to-track" }, tr("Display Jump to Track dialog"));
-    registerOption(QUIT, { "-q", "--quit" }, tr("Quit application"));
-    registerOption(VOLUME, "--volume", tr("Set playback volume (example: qmmp --volume 20)"), { "0..100" });
-    registerOption(VOLUME_STATUS, "--volume-status", tr("Print volume level"));
-    registerOption(TOGGLE_MUTE, "--toggle-mute", tr("Mute/Restore volume"));
-    registerOption(MUTE_STATUS, "--mute-status", tr("Print mute status"));
-    registerOption(NEXT, "--next", tr("Skip forward in playlist"));
-    registerOption(PREVIOUS, "--previous", tr("Skip backwards in playlist"));
-    registerOption(TOGGLE_VISIBILITY, "--toggle-visibility", tr("Show/hide application"));
-    registerOption(SHOW_MW, "--show-mw", tr("Show main window"));
-    registerOption(ADD_FILE, "--add-file", tr("Display Add File dialog"));
-    registerOption(ADD_DIRECTORY, "--add-dir", tr("Display Add Directory dialog"));
+    registerOption(ENQUEUE, { u"-e"_s, u"--enqueue"_s }, tr("Don't clear the playlist"));
+    registerOption(PLAY, { u"-p"_s, u"--play"_s }, tr("Start playing current song"));
+    registerOption(PAUSE, { u"-u"_s, u"--pause"_s }, tr("Pause current song"));
+    registerOption(PLAY_PAUSE, { u"-t"_s, u"--play-pause"_s }, tr("Pause if playing, play otherwise"));
+    registerOption(STOP, { u"-s"_s, u"--stop"_s }, tr("Stop current song"));
+    registerOption(JUMP_TO_TRACK, { u"-j"_s, u"--jump-to-track"_s }, tr("Display Jump to Track dialog"));
+    registerOption(QUIT, { u"-q"_s, u"--quit"_s }, tr("Quit application"));
+    registerOption(VOLUME, u"--volume"_s, tr("Set playback volume (example: qmmp --volume 20)"), { u"0..100"_s });
+    registerOption(VOLUME_STATUS, u"--volume-status"_s, tr("Print volume level"));
+    registerOption(TOGGLE_MUTE, u"--toggle-mute"_s, tr("Mute/Restore volume"));
+    registerOption(MUTE_STATUS, u"--mute-status"_s, tr("Print mute status"));
+    registerOption(NEXT, u"--next"_s, tr("Skip forward in playlist"));
+    registerOption(PREVIOUS, u"--previous"_s, tr("Skip backwards in playlist"));
+    registerOption(TOGGLE_VISIBILITY, u"--toggle-visibility"_s, tr("Show/hide application"));
+    registerOption(SHOW_MW, u"--show-mw"_s, tr("Show main window"));
+    registerOption(ADD_FILE, u"--add-file"_s, tr("Display Add File dialog"));
+    registerOption(ADD_DIRECTORY, u"--add-dir"_s, tr("Display Add Directory dialog"));
 }
 
 QString BuiltinCommandLineOption::shortName() const
@@ -89,22 +89,23 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
         if(args.isEmpty())
             return out;
         QStringList full_path_list, remote_pls_list;
-        for(QString s : qAsConst(args))
+        for(const QString &s : qAsConst(args))
         {
+            QString path = s;
 #ifdef Q_OS_WIN
-            s.replace("\\","/");
+            path.replace(QChar('\\'), QChar('/'));
 #endif
             if(QFileInfo(s).isAbsolute()) //absolute path
-                full_path_list << s;
-            else if(s.contains("://")) //url
+                full_path_list << path;
+            else if(path.contains(u"://"_s)) //url
             {
-                if(PlayListParser::findByUrl(s)) //remote playlist
-                    remote_pls_list << s;
+                if(PlayListParser::findByUrl(path)) //remote playlist
+                    remote_pls_list << path;
                 else
-                    full_path_list << s; //url
+                    full_path_list << path; //url
             }
             else //relative path
-                full_path_list << cwd + "/" + s;
+                full_path_list << cwd + QChar('/') + path;
         }
         //default playlist
         if(settings->useDefaultPlayList())
@@ -133,8 +134,8 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
         if(!remote_pls_list.isEmpty())
         {
             PlayListDownloader *downloader = new PlayListDownloader(this);
-            connect(downloader, SIGNAL(finished(bool,QString)), downloader, SLOT(deleteLater()));
-            downloader->start(remote_pls_list.at(0), m_model);
+            connect(downloader, &PlayListDownloader::finished, downloader, &PlayListDownloader::deleteLater);
+            downloader->start(remote_pls_list.constFirst(), m_model);
         }
         break;
     }
@@ -212,7 +213,7 @@ QHash<QString, QStringList> BuiltinCommandLineOption::splitArgs(const QStringLis
     for(const QString &arg : qAsConst(args))
     {
         QString cmd = arg.trimmed();
-        if(cmd.startsWith("-") || cmd.startsWith("--"))
+        if(cmd.startsWith(QChar('-')) || cmd.startsWith(u"--"_s))
         {
             commands.insert(cmd, QStringList());
             lastCmd = cmd;
@@ -228,8 +229,8 @@ void BuiltinCommandLineOption::disconnectPl()
     if(m_model)
     {
         disconnect(m_model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
-        disconnect(m_model, SIGNAL(trackAdded(PlayListTrack*)), this, SLOT(disconnectPl()));
-        disconnect(m_model, SIGNAL(loaderFinished()), this, SLOT(disconnectPl()));
+        disconnect(m_model, &PlayListModel::trackAdded, this, &BuiltinCommandLineOption::disconnectPl);
+        disconnect(m_model, &PlayListModel::loaderFinished, this, &BuiltinCommandLineOption::disconnectPl);
         m_model = nullptr;
     }
 }
@@ -252,8 +253,8 @@ void BuiltinCommandLineOption::addPendingPaths()
     m_model->clear();
 
     connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), player, SLOT(play()));
-    connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), SLOT(disconnectPl()));
-    connect(m_model, SIGNAL(loaderFinished()), SLOT(disconnectPl()));
+    connect(m_model, &PlayListModel::trackAdded, this, &BuiltinCommandLineOption::disconnectPl);
+    connect(m_model, &PlayListModel::loaderFinished, this, &BuiltinCommandLineOption::disconnectPl);
 
     m_model->add(m_pending_path_list);
     m_pending_path_list.clear();

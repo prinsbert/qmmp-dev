@@ -20,6 +20,8 @@
 
 #include "commandlinehandler.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 QStringList CommandLineHandler::helpString() const
 {
     QStringList out;
@@ -29,9 +31,9 @@ QStringList CommandLineHandler::helpString() const
             continue;
 
         if(opt.values.isEmpty())
-            out << opt.names.join(", ") + "||" + opt.helpString;
+            out << QStringLiteral("%1||%2").arg(opt.names.join(u", "_s), opt.helpString);
         else
-            out << opt.names.join(", ") + " <" + opt.values.join("> <") + ">||" + opt.helpString;
+            out << QStringLiteral("%1 <%2>||%3").arg(opt.names.join(u", "_s), opt.values.join(u"> <"_s), opt.helpString);
     }
     return out;
 }
@@ -39,9 +41,9 @@ QStringList CommandLineHandler::helpString() const
 QString CommandLineHandler::helpString(int id) const
 {
     if(m_options[id].values.isEmpty())
-        return m_options[id].names.join(", ") + "||" + m_options[id].helpString;
+        return  QStringLiteral("%1||%2").arg(m_options[id].names.join(u", "_s), m_options[id].helpString);
 
-    return m_options[id].names.join(", ") + " <" + m_options[id].values.join("> <") + ">||" + m_options[id].helpString;
+    return QStringLiteral("%1 <%2>||%3").arg(m_options[id].names.join(u", "_s), m_options[id].values.join(u"> <"_s), m_options[id].helpString);
 }
 
 int CommandLineHandler::identify(const QString &name) const
@@ -61,7 +63,7 @@ CommandLineHandler::OptionFlags CommandLineHandler::flags(int id) const
 
 void CommandLineHandler::registerOption(int id, const QString &name, const QString &helpString, const QStringList &values)
 {
-    registerOption(id, QStringList() << name, helpString, values);
+    registerOption(id, QStringList{ name }, helpString, values);
 }
 
 void CommandLineHandler::registerOption(int id, const QStringList &names, const QString &helpString, const QStringList &values)
