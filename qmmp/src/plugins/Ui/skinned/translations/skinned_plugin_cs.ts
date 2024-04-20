@@ -460,14 +460,6 @@
     </message>
 </context>
 <context>
-    <name>ColorWidget</name>
-    <message>
-        <location filename="../colorwidget.cpp" line="47"/>
-        <source>Select Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>EqWidget</name>
     <message>
         <location filename="../eqwidget.cpp" line="47"/>
@@ -1127,24 +1119,6 @@
         <location filename="../forms/preseteditor.ui" line="84"/>
         <source>Delete</source>
         <translation>Odstranit</translation>
-    </message>
-</context>
-<context>
-    <name>ShortcutDialog</name>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="14"/>
-        <source>Change Shortcut</source>
-        <translation>Změnit klávesovou zkratku</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Stlačte kombinaci kláves, kterou chcete přiřadit</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
-        <source>Clear</source>
-        <translation>Vymazat</translation>
     </message>
 </context>
 <context>

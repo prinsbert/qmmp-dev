@@ -123,6 +123,14 @@
     </message>
 </context>
 <context>
+    <name>ColorWidget</name>
+    <message>
+        <location filename="../colorwidget.cpp" line="46"/>
+        <source>Select Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColumnEditor</name>
     <message>
         <location filename="../forms/columneditor.ui" line="14"/>
@@ -1341,6 +1349,24 @@
         <location filename="../qtfiledialog.cpp" line="36"/>
         <source>Qt File Dialog</source>
         <translation>Okno dialogowe Qt</translation>
+    </message>
+</context>
+<context>
+    <name>ShortcutDialog</name>
+    <message>
+        <location filename="../forms/shortcutdialog.ui" line="14"/>
+        <source>Change Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/shortcutdialog.ui" line="29"/>
+        <source>Press the key combination you want to assign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/shortcutdialog.ui" line="52"/>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
