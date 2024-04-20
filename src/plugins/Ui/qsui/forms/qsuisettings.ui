@@ -1435,7 +1435,7 @@
   <customwidget>
    <class>ColorWidget</class>
    <extends>QFrame</extends>
-   <header>colorwidget.h</header>
+   <header location="global">qmmpui/colorwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

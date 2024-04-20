@@ -61,6 +61,7 @@ SET(libqmmpui_SRCS
     generalfactory.cpp
     cueeditor.cpp
     visualmenu.cpp
+    colorwidget.cpp
     forms/detailsdialog.ui
     forms/tageditor.ui
     forms/templateeditor.ui
@@ -103,6 +104,7 @@ SET(libqmmpui_DEVEL_HDRS
     uiloader.h
     playlistheadermodel.h
     visualmenu.h
+    colorwidget.h
     qmmpui_export.h
 )
 

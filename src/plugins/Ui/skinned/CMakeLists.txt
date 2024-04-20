@@ -61,7 +61,6 @@ SET(skinned_SRCS
     hotkeyeditor.cpp
     playlistheader.cpp
     horizontalslider.cpp
-    colorwidget.cpp
     forms/skinnedsettings.ui
     forms/preseteditor.ui
     forms/playlistbrowser.ui

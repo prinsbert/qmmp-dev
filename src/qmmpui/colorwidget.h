@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2005-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,47 +17,38 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef COLORWIDGET_H
+#define COLORWIDGET_H
 
-#include <QPalette>
-#include <QDebug>
-#include "colorwidget.h"
+#include <QFrame>
+#include <QPaintEvent>
+#include <QColorDialog>
+#include "qmmpui_export.h"
 
-ColorWidget::ColorWidget(QWidget *parent) : QFrame(parent)
+/**
+@author Ilya Kotov
+*/
+class QMMPUI_EXPORT ColorWidget : public QFrame
 {
-    setFrameShape(QFrame::Box);
-    setAutoFillBackground(true);
-}
+    Q_OBJECT
+    Q_PROPERTY(QColorDialog::ColorDialogOptions options READ options WRITE setOptions)
+public:
+    ColorWidget(QWidget *parent = nullptr);
+    ~ColorWidget();
 
-ColorWidget::~ColorWidget()
-{}
+    QColorDialog::ColorDialogOptions options() const;
+    void setOptions(QColorDialog::ColorDialogOptions options);
 
-QColorDialog::ColorDialogOptions ColorWidget::options() const
-{
-    return m_options;
-}
+    QString colorName() const;
 
-void ColorWidget::setOptions(QColorDialog::ColorDialogOptions options)
-{
-    m_options = options;
-}
+public slots:
+    void setColor(const QString &name);
 
-void ColorWidget::mousePressEvent(QMouseEvent *)
-{
-    QColor color = QColorDialog::getColor(QColor(m_colorName), parentWidget(),
-                                          tr("Select Color"), m_options);
-    if (color.isValid())
-    {
-        setColor(color.name((m_options & QColorDialog::ShowAlphaChannel) ? QColor::HexArgb : QColor::HexRgb));
-    }
-}
+private:
+    void mousePressEvent(QMouseEvent *) override final;
 
-void ColorWidget::setColor(QString c)
-{
-    m_colorName = c;
-    setStyleSheet(QString("QFrame { background: %1 }").arg(m_colorName));
-}
+    QString m_colorName;
+    QColorDialog::ColorDialogOptions m_options;
+};
 
-const QString ColorWidget::colorName() const
-{
-    return m_colorName;
-}
+#endif

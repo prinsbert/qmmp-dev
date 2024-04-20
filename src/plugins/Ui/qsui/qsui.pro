@@ -18,7 +18,6 @@ SOURCES += \
     qsuifactory.cpp \
     qsuisettings.cpp \
     fft.c \
-    colorwidget.cpp \
     qsuitabwidget.cpp \
     qsuitabbar.cpp \
     eqpreset.cpp \
@@ -52,7 +51,6 @@ HEADERS += mainwindow.h \
     qsuisettings.h \
     fft.h \
     inlines.h \
-    colorwidget.h \
     qsuitabwidget.h \
     qsuitabbar.h \
     eqpreset.h \
