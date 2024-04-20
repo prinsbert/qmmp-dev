@@ -3,9 +3,10 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Ui/qsui
 
 SOURCES += \
-    actionmanager.cpp \
+    qsuiactionmanager.cpp \
     qsuicoverwidget.cpp \
     qsuihotkeyeditor.cpp \
+    qsuikeyboardmanager.cpp \
     qsuilistwidget.cpp \
     qsuilistwidgetdrawer.cpp \
     qsuilogo.cpp \
@@ -16,7 +17,6 @@ SOURCES += \
     qsuipositionslider.cpp \
     shortcutitem.cpp \
     equalizer.cpp \
-    keyboardmanager.cpp \
     aboutqsuidialog.cpp \
     qsuifactory.cpp \
     qsuisettings.cpp \
@@ -35,9 +35,10 @@ SOURCES += \
     qsuistatusbar.cpp \
     dockwidgetlist.cpp
 HEADERS += \
-    actionmanager.h \
+    qsuiactionmanager.h \
     qsuicoverwidget.h \
     qsuihotkeyeditor.h \
+    qsuikeyboardmanager.h \
     qsuilistwidget.h \
     qsuilistwidgetdrawer.h \
     qsuilogo.h \
@@ -48,7 +49,6 @@ HEADERS += \
     qsuipositionslider.h \
     shortcutitem.h \
     equalizer.h \
-    keyboardmanager.h \
     aboutqsuidialog.h \
     qsuifactory.h \
     qsuisettings.h \

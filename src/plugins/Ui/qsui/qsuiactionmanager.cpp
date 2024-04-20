@@ -27,11 +27,11 @@
 #include <QWidgetAction>
 #include <QDockWidget>
 #include <qmmp/qmmp.h>
-#include "actionmanager.h"
+#include "qsuiactionmanager.h"
 
-ActionManager *ActionManager::m_instance = nullptr;
+QSUiActionManager *QSUiActionManager::m_instance = nullptr;
 
-ActionManager::ActionManager(QObject *parent) :
+QSUiActionManager::QSUiActionManager(QObject *parent) :
     QObject(parent)
 {
     m_instance = this;
@@ -111,45 +111,45 @@ ActionManager::ActionManager(QObject *parent) :
     m_actions[ABOUT]->setIcon(qApp->windowIcon());
 }
 
-ActionManager::~ActionManager()
+QSUiActionManager::~QSUiActionManager()
 {
     saveStates();
     m_instance = nullptr;
 }
 
-QAction *ActionManager::action(int type)
+QAction *QSUiActionManager::action(int type)
 {
     return m_actions[type];
 }
 
-QAction *ActionManager::use(int type, const QObject *receiver, const char *member)
+QAction *QSUiActionManager::use(int type, const QObject *receiver, const char *member)
 {
     QAction *act = m_actions[type];
     connect(act,SIGNAL(triggered(bool)), receiver, member);
     return act;
 }
 
-QList<QAction *> ActionManager::actions() const
+QList<QAction *> QSUiActionManager::actions() const
 {
     return m_actions.values();
 }
 
-QList<QDockWidget *> ActionManager::dockWidgtes() const
+QList<QDockWidget *> QSUiActionManager::dockWidgtes() const
 {
     return m_dockWidgets.keys();
 }
 
-bool ActionManager::hasDockWidgets() const
+bool QSUiActionManager::hasDockWidgets() const
 {
     return !m_dockWidgets.isEmpty();
 }
 
-ActionManager* ActionManager::instance()
+QSUiActionManager* QSUiActionManager::instance()
 {
     return m_instance;
 }
 
-QAction *ActionManager::createAction(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
+QAction *QSUiActionManager::createAction(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
 {
     QAction *action = new QAction(name, this);
     action->setShortcutVisibleInContextMenu(true);
@@ -167,7 +167,7 @@ QAction *ActionManager::createAction(const QString &name, const QString &confKey
     return action;
 }
 
-QAction *ActionManager::createAction2(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
+QAction *QSUiActionManager::createAction2(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
 {
     QAction *action = createAction(name, confKey, key);
     action->setCheckable(true);
@@ -183,14 +183,14 @@ QAction *ActionManager::createAction2(const QString &name, const QString &confKe
     return action;
 }
 
-void ActionManager::readStates()
+void QSUiActionManager::readStates()
 {
     m_settings->beginGroup("Simple");
     m_actions[PL_SHOW_HEADER]->setChecked(m_settings->value("pl_show_header", true).toBool());
     m_settings->endGroup();
 }
 
-void ActionManager::saveStates()
+void QSUiActionManager::saveStates()
 {
     QSettings settings;
     settings.beginGroup("Simple");
@@ -198,7 +198,7 @@ void ActionManager::saveStates()
     settings.endGroup();
 }
 
-void ActionManager::saveActions()
+void QSUiActionManager::saveActions()
 {
     QSettings settings;
     settings.beginGroup("SimpleUiShortcuts");
@@ -218,7 +218,7 @@ void ActionManager::saveActions()
     settings.endGroup();
 }
 
-void ActionManager::resetShortcuts()
+void QSUiActionManager::resetShortcuts()
 {
     for(QAction *action : m_actions.values())
     {
@@ -233,7 +233,7 @@ void ActionManager::resetShortcuts()
     }
 }
 
-void ActionManager::registerAction(int id, QAction *action, const QString &confKey, const QString &key)
+void QSUiActionManager::registerAction(int id, QAction *action, const QString &confKey, const QString &key)
 {
     if(m_actions.value(id))
         qFatal("ActionManager: invalid action id");
@@ -248,7 +248,7 @@ void ActionManager::registerAction(int id, QAction *action, const QString &confK
     settings.endGroup();
 }
 
-void ActionManager::registerWidget(int id, QWidget *w, const QString &text, const QString &name)
+void QSUiActionManager::registerWidget(int id, QWidget *w, const QString &text, const QString &name)
 {
     if(m_actions.value(id))
         qFatal("ActionManager: invalid action id");
@@ -259,7 +259,7 @@ void ActionManager::registerWidget(int id, QWidget *w, const QString &text, cons
     m_actions[id] = action;
 }
 
-void ActionManager::registerDockWidget(QDockWidget *w, const QString &confKey, const QString &key)
+void QSUiActionManager::registerDockWidget(QDockWidget *w, const QString &confKey, const QString &key)
 {
     QSettings settings;
     settings.beginGroup("SimpleUiShortcuts");
@@ -268,12 +268,12 @@ void ActionManager::registerDockWidget(QDockWidget *w, const QString &confKey, c
     m_dockWidgets.insert(w, std::make_pair(confKey, key));
 }
 
-void ActionManager::removeDockWidget(QDockWidget *w)
+void QSUiActionManager::removeDockWidget(QDockWidget *w)
 {
     m_dockWidgets.remove(w);
 }
 
-QToolBar *ActionManager::createToolBar(const ToolBarInfo &info, QWidget *parent)
+QToolBar *QSUiActionManager::createToolBar(const ToolBarInfo &info, QWidget *parent)
 {
     QToolBar *toolBar = new QToolBar(info.title, parent);
     updateToolBar(toolBar, info);
@@ -283,7 +283,7 @@ QToolBar *ActionManager::createToolBar(const ToolBarInfo &info, QWidget *parent)
     return toolBar;
 }
 
-void ActionManager::updateToolBar(QToolBar *toolBar, const ToolBarInfo &info)
+void QSUiActionManager::updateToolBar(QToolBar *toolBar, const ToolBarInfo &info)
 {
     toolBar->clear();
     toolBar->setIconSize(info.iconSize);
@@ -304,7 +304,7 @@ void ActionManager::updateToolBar(QToolBar *toolBar, const ToolBarInfo &info)
     }
 }
 
-ActionManager::ToolBarInfo ActionManager::defaultToolBar() const
+QSUiActionManager::ToolBarInfo QSUiActionManager::defaultToolBar() const
 {
     const QList<Type> idList = {
         PL_ADD_FILE, PL_ADD_DIRECTORY, PREVIOUS, PLAY, PAUSE, STOP, NEXT, EJECT,
@@ -320,14 +320,14 @@ ActionManager::ToolBarInfo ActionManager::defaultToolBar() const
         }
         names << m_actions.value(id)->objectName();
     }
-    ActionManager::ToolBarInfo info;
+    QSUiActionManager::ToolBarInfo info;
     info.title = tr("Toolbar");
     info.actionNames = names;
     info.uid = "{68363a0b-f2cd-462a-87ca-e3089db21561}";
     return info;
 }
 
-QList<ActionManager::ToolBarInfo> ActionManager::readToolBarSettings() const
+QList<QSUiActionManager::ToolBarInfo> QSUiActionManager::readToolBarSettings() const
 {
     QList<ToolBarInfo> list;
     QSettings settings;
@@ -354,7 +354,7 @@ QList<ActionManager::ToolBarInfo> ActionManager::readToolBarSettings() const
     return list;
 }
 
-void ActionManager::writeToolBarSettings(const QList<ToolBarInfo> &l)
+void QSUiActionManager::writeToolBarSettings(const QList<ToolBarInfo> &l)
 {
     QSettings settings;
     settings.beginWriteArray("SimpleUiToolbars");

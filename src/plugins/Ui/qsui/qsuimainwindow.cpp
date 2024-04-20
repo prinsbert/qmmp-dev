@@ -42,7 +42,7 @@
 #include <qmmpui/visualmenu.h>
 #include "qsuitabbar.h"
 #include "toolbareditor.h"
-#include "actionmanager.h"
+#include "qsuiactionmanager.h"
 #include "qsuivisualization.h"
 #include "qsuilistwidget.h"
 #include "qsuipositionslider.h"
@@ -51,7 +51,7 @@
 #include "qsuihotkeyeditor.h"
 #include "filesystembrowser.h"
 #include "aboutqsuidialog.h"
-#include "keyboardmanager.h"
+#include "qsuikeyboardmanager.h"
 #include "qsuicoverwidget.h"
 #include "playlistbrowser.h"
 #include "volumeslider.h"
@@ -81,14 +81,14 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     m_ui.menuTools->addMenu(m_visMenu);
     m_ui.menuTools->addSeparator();
     m_pl_menu = new QMenu(this); //playlist menu
-    new ActionManager(this); //action manager
+    new QSUiActionManager(this); //action manager
     createWidgets(); //widgets
     //status
     connect(m_core, SIGNAL(elapsedChanged(qint64)), SLOT(updatePosition(qint64)));
     connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(showState(Qmmp::State)));
     connect(m_core, SIGNAL(trackInfoChanged()), SLOT(showMetaData()));
     //keyboard manager
-    m_key_manager = new KeyboardManager(this);
+    m_key_manager = new QSUiKeyboardManager(this);
     //create tabs
     for(PlayListModel *model : m_pl_manager->playLists())
     {
@@ -134,12 +134,12 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     m_volumeSlider->setFocusPolicy(Qt::NoFocus);
     m_volumeSlider->setFixedWidth(100);
     m_volumeSlider->setRange(0,100);
-    SET_ACTION(ActionManager::VOL_MUTE, m_core, SLOT(setMuted(bool)));
+    SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, SLOT(setMuted(bool)));
     connect(m_volumeSlider, SIGNAL(sliderMoved(int)), m_core, SLOT(setVolume(int)));
     connect(m_core, SIGNAL(volumeChanged(int)), m_volumeSlider, SLOT(setValue(int)));
     connect(m_core, SIGNAL(volumeChanged(int)), SLOT(updateVolumeIcon()));
     connect(m_core, SIGNAL(mutedChanged(bool)), SLOT(updateVolumeIcon()));
-    connect(m_core, SIGNAL(mutedChanged(bool)), ACTION(ActionManager::VOL_MUTE), SLOT(setChecked(bool)));
+    connect(m_core, SIGNAL(mutedChanged(bool)), ACTION(QSUiActionManager::VOL_MUTE), SLOT(setChecked(bool)));
     m_volumeSlider->setValue(m_core->volume());
     updateVolumeIcon();
     //quick search
@@ -213,7 +213,7 @@ void QSUiMainWindow::showState(Qmmp::State state)
 {
     if(state != Qmmp::Playing)
     {
-        ACTION(ActionManager::PLAY_PAUSE)->setIcon(QIcon::fromTheme("media-playback-start"));
+        ACTION(QSUiActionManager::PLAY_PAUSE)->setIcon(QIcon::fromTheme("media-playback-start"));
     }
 
     switch((int) state)
@@ -223,7 +223,7 @@ void QSUiMainWindow::showState(Qmmp::State state)
         m_analyzer->setCover(MetaDataManager::instance()->getCover(m_core->path()));
         QSUiCoverWidget *cw = qobject_cast<QSUiCoverWidget *>(m_ui.coverDockWidget->widget());
         cw->setCover(MetaDataManager::instance()->getCover(m_core->path()));
-        ACTION(ActionManager::PLAY_PAUSE)->setIcon(QIcon::fromTheme("media-playback-pause"));
+        ACTION(QSUiActionManager::PLAY_PAUSE)->setIcon(QIcon::fromTheme("media-playback-pause"));
         break;
     }
     case Qmmp::Paused:
@@ -325,7 +325,7 @@ void QSUiMainWindow::showSettings()
     simpleSettings->writeSettings();
     confDialog->deleteLater();
     readSettings();
-    ActionManager::instance()->saveActions();
+    QSUiActionManager::instance()->saveActions();
     m_analyzer->readSettings();
     m_seekBar->readSettings();
 }
@@ -366,7 +366,7 @@ void QSUiMainWindow::updateVolumeIcon()
     else if(maxVol < 60)
         iconName = "audio-volume-medium";
 
-    ACTION(ActionManager::VOL_MUTE)->setIcon(QIcon::fromTheme(iconName, QIcon(QString(":/qsui/") + iconName + ".png")));
+    ACTION(QSUiActionManager::VOL_MUTE)->setIcon(QIcon::fromTheme(iconName, QIcon(QString(":/qsui/") + iconName + ".png")));
 }
 
 void QSUiMainWindow::jumpTo()
@@ -434,88 +434,88 @@ void QSUiMainWindow::createWidgets()
 void QSUiMainWindow::createActions()
 {
     //prepare checkable actions
-    ACTION(ActionManager::REPEAT_ALL)->setChecked(m_ui_settings->isRepeatableList());
-    ACTION(ActionManager::REPEAT_TRACK)->setChecked(m_ui_settings->isRepeatableTrack());
-    ACTION(ActionManager::SHUFFLE)->setChecked(m_ui_settings->isShuffle());
-    ACTION(ActionManager::NO_PL_ADVANCE)->setChecked(m_ui_settings->isNoPlayListAdvance());
-    ACTION(ActionManager::TRANSIT_BETWEEN_PLAYLISTS)->setChecked(m_ui_settings->isPlayListTransitionEnabled());
+    ACTION(QSUiActionManager::REPEAT_ALL)->setChecked(m_ui_settings->isRepeatableList());
+    ACTION(QSUiActionManager::REPEAT_TRACK)->setChecked(m_ui_settings->isRepeatableTrack());
+    ACTION(QSUiActionManager::SHUFFLE)->setChecked(m_ui_settings->isShuffle());
+    ACTION(QSUiActionManager::NO_PL_ADVANCE)->setChecked(m_ui_settings->isNoPlayListAdvance());
+    ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS)->setChecked(m_ui_settings->isPlayListTransitionEnabled());
 
     connect(m_ui_settings, SIGNAL(repeatableListChanged(bool)),
-            ACTION(ActionManager::REPEAT_ALL), SLOT(setChecked(bool)));
+            ACTION(QSUiActionManager::REPEAT_ALL), SLOT(setChecked(bool)));
     connect(m_ui_settings, SIGNAL (repeatableTrackChanged(bool)),
-            ACTION(ActionManager::REPEAT_TRACK), SLOT(setChecked(bool)));
+            ACTION(QSUiActionManager::REPEAT_TRACK), SLOT(setChecked(bool)));
     connect(m_ui_settings, SIGNAL (noPlayListAdvanceChanged(bool)),
-            ACTION(ActionManager::NO_PL_ADVANCE), SLOT(setChecked(bool)));
+            ACTION(QSUiActionManager::NO_PL_ADVANCE), SLOT(setChecked(bool)));
     connect(m_ui_settings, SIGNAL(shuffleChanged(bool)),
-            ACTION(ActionManager::SHUFFLE), SLOT(setChecked(bool)));
+            ACTION(QSUiActionManager::SHUFFLE), SLOT(setChecked(bool)));
     connect(m_ui_settings, SIGNAL(playListTransitionChanged(bool)),
-            ACTION(ActionManager::TRANSIT_BETWEEN_PLAYLISTS), SLOT(setChecked(bool)));
+            ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS), SLOT(setChecked(bool)));
     //register external actions
-    ActionManager::instance()->registerAction(ActionManager::UI_ANALYZER,
+    QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_ANALYZER,
                                               m_ui.analyzerDockWidget->toggleViewAction(),
                                               "analyzer", "");
-    ActionManager::instance()->registerAction(ActionManager::UI_FILEBROWSER,
+    QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_FILEBROWSER,
                                               m_ui.fileSystemDockWidget->toggleViewAction(),
                                               "file_browser", tr("Ctrl+0"));
-    ActionManager::instance()->registerAction(ActionManager::UI_COVER,
+    QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_COVER,
                                               m_ui.coverDockWidget->toggleViewAction(),
                                               "cover", "");
-    ActionManager::instance()->registerAction(ActionManager::UI_PLAYLIST_BROWSER,
+    QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_PLAYLIST_BROWSER,
                                               m_ui.playlistsDockWidget->toggleViewAction(),
                                               "playlist_browser", tr("P"));
-    ActionManager::instance()->registerAction(ActionManager::UI_WAVEFORM_SEEKBAR,
+    QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_WAVEFORM_SEEKBAR,
                                               m_ui.waveformSeekBarDockWidget->toggleViewAction(),
                                               "waveform_seekbar", "");
-    ActionManager::instance()->registerWidget(ActionManager::UI_POS_SLIDER, m_positionSlider,
+    QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_POS_SLIDER, m_positionSlider,
                                               tr("Position"), "position_slider");
-    ActionManager::instance()->registerWidget(ActionManager::UI_VOL_SLIDER, m_volumeSlider,
+    QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_VOL_SLIDER, m_volumeSlider,
                                               tr("Volume"), "volume_slider");
-    ActionManager::instance()->registerWidget(ActionManager::UI_QUICK_SEARCH, m_quickSearch,
+    QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_QUICK_SEARCH, m_quickSearch,
                                               tr("Quick Search"), "quick_search");
     //playback
-    SET_ACTION(ActionManager::PREVIOUS, m_player, SLOT(previous()));
-    SET_ACTION(ActionManager::PLAY, m_player, SLOT(play()));
-    SET_ACTION(ActionManager::PAUSE, m_core, SLOT(pause()));
-    SET_ACTION(ActionManager::STOP, m_player, SLOT(stop()));
-    SET_ACTION(ActionManager::NEXT, m_player, SLOT(next()));
-    SET_ACTION(ActionManager::EJECT, this, SLOT(playFiles()));
-    SET_ACTION(ActionManager::RECORD, this, SLOT(record(bool)));
+    SET_ACTION(QSUiActionManager::PREVIOUS, m_player, SLOT(previous()));
+    SET_ACTION(QSUiActionManager::PLAY, m_player, SLOT(play()));
+    SET_ACTION(QSUiActionManager::PAUSE, m_core, SLOT(pause()));
+    SET_ACTION(QSUiActionManager::STOP, m_player, SLOT(stop()));
+    SET_ACTION(QSUiActionManager::NEXT, m_player, SLOT(next()));
+    SET_ACTION(QSUiActionManager::EJECT, this, SLOT(playFiles()));
+    SET_ACTION(QSUiActionManager::RECORD, this, SLOT(record(bool)));
 
     //file menu
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_ADD_FILE, this, SLOT(addFiles())));
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_ADD_DIRECTORY, this, SLOT(addDir())));
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_ADD_URL, this, SLOT(addUrl())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_FILE, this, SLOT(addFiles())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_DIRECTORY, this, SLOT(addDir())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_URL, this, SLOT(addUrl())));
     QAction *sep = m_ui.menuFile->addSeparator();
     UiHelper::instance()->registerMenu(UiHelper::ADD_MENU, m_ui.menuFile, false, sep);
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_NEW, m_pl_manager, SLOT(createPlayList())));
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_CLOSE, this, SLOT(removePlaylist())));
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_RENAME, this, SLOT(renameTab())));
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_SELECT_NEXT, m_pl_manager,
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_NEW, m_pl_manager, SLOT(createPlayList())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_CLOSE, this, SLOT(removePlaylist())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_RENAME, this, SLOT(renameTab())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_NEXT, m_pl_manager,
                                         SLOT(selectNextPlayList())));
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_SELECT_PREVIOUS, m_pl_manager,
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_PREVIOUS, m_pl_manager,
                                         SLOT(selectPreviousPlayList())));
     m_ui.menuFile->addSeparator();
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_LOAD, this, SLOT(loadPlayList())));
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::PL_SAVE, this, SLOT(savePlayList())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_LOAD, this, SLOT(loadPlayList())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SAVE, this, SLOT(savePlayList())));
     m_ui.menuFile->addSeparator();
-    m_ui.menuFile->addAction(SET_ACTION(ActionManager::QUIT, m_uiHelper, SLOT(exit())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::QUIT, m_uiHelper, SLOT(exit())));
     //edit menu
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::PL_SELECT_ALL, m_pl_manager, SLOT(selectAll())));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_ALL, m_pl_manager, SLOT(selectAll())));
     m_ui.menuEdit->addSeparator();
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::PL_REMOVE_SELECTED, m_listWidget,
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_SELECTED, m_listWidget,
                                         SLOT(removeSelected())));
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::PL_REMOVE_UNSELECTED, m_listWidget,
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_UNSELECTED, m_listWidget,
                                         SLOT(removeUnselected())));
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::PL_REMOVE_ALL, m_listWidget, SLOT(clear())));
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::PL_REMOVE_INVALID, m_pl_manager,
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_ALL, m_listWidget, SLOT(clear())));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_INVALID, m_pl_manager,
                                         SLOT(removeInvalidTracks())));
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::PL_REMOVE_DUPLICATES, m_pl_manager,
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_DUPLICATES, m_pl_manager,
                                         SLOT(removeDuplicates())));
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::PL_REFRESH, m_pl_manager,
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REFRESH, m_pl_manager,
                                         SLOT(refresh())));
     m_ui.menuEdit->addSeparator();
     //view menu
-    m_ui.menuView->addAction(SET_ACTION(ActionManager::WM_ALLWAYS_ON_TOP, this, SLOT(readSettings())));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP, this, SLOT(readSettings())));
     m_ui.menuView->addSeparator();
     m_ui.menuView->addAction(m_ui.analyzerDockWidget->toggleViewAction());
     m_ui.menuView->addAction(m_ui.waveformSeekBarDockWidget->toggleViewAction());
@@ -524,13 +524,13 @@ void QSUiMainWindow::createActions()
     m_ui.menuView->addAction(m_ui.playlistsDockWidget->toggleViewAction());
     QAction *separator = m_ui.menuView->addSeparator();
     m_dockWidgetList->registerMenu(m_ui.menuView, separator);
-    m_ui.menuView->addAction(SET_ACTION(ActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), SLOT(setVisible(bool))));
-    m_ui.menuView->addAction(SET_ACTION(ActionManager::UI_SHOW_TITLEBARS, this, SLOT(setTitleBarsVisible(bool))));
-    m_ui.menuView->addAction(ACTION(ActionManager::PL_SHOW_HEADER));
-    m_ui.menuView->addAction(SET_ACTION(ActionManager::PL_GROUP_TRACKS, m_ui_settings, SLOT(setGroupsEnabled(bool))));
-    ACTION(ActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), SLOT(setVisible(bool))));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TITLEBARS, this, SLOT(setTitleBarsVisible(bool))));
+    m_ui.menuView->addAction(ACTION(QSUiActionManager::PL_SHOW_HEADER));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::PL_GROUP_TRACKS, m_ui_settings, SLOT(setGroupsEnabled(bool))));
+    ACTION(QSUiActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
     m_ui.menuView->addSeparator();
-    m_ui.menuView->addAction(SET_ACTION(ActionManager::UI_BLOCK_TOOLBARS, this, SLOT(setToolBarsBlocked(bool))));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, SLOT(setToolBarsBlocked(bool))));
     m_ui.menuView->addAction(tr("Edit Toolbars"), this, SLOT(editToolBar()));
 
     QMenu *sortMenu = new QMenu(tr("Sort List"), this);
@@ -570,63 +570,63 @@ void QSUiMainWindow::createActions()
     m_ui.menuEdit->addAction(QIcon::fromTheme("view-sort-descending"), tr("Reverse List"),
                               m_pl_manager, SLOT(reverseList()));
     m_ui.menuEdit->addSeparator();
-    m_ui.menuEdit->addAction(SET_ACTION(ActionManager::SETTINGS, this, SLOT(showSettings())));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::SETTINGS, this, SLOT(showSettings())));
 
     //playback menu
-    m_ui.menuPlayback->addAction(ACTION(ActionManager::PLAY));
-    m_ui.menuPlayback->addAction(ACTION(ActionManager::STOP));
-    m_ui.menuPlayback->addAction(ACTION(ActionManager::PAUSE));
-    m_ui.menuPlayback->addAction(ACTION(ActionManager::NEXT));
-    m_ui.menuPlayback->addAction(ACTION(ActionManager::PREVIOUS));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::PLAY_PAUSE,this,SLOT(playPause())));
+    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PLAY));
+    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::STOP));
+    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PAUSE));
+    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::NEXT));
+    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PREVIOUS));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::PLAY_PAUSE,this,SLOT(playPause())));
     m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::JUMP, this, SLOT(jumpTo())));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::JUMP, this, SLOT(jumpTo())));
     m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(ACTION(ActionManager::PL_ENQUEUE));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::CLEAR_QUEUE, m_pl_manager, SLOT(clearQueue())));
+    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PL_ENQUEUE));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::CLEAR_QUEUE, m_pl_manager, SLOT(clearQueue())));
     m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::REPEAT_ALL, m_ui_settings,
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_ALL, m_ui_settings,
                                             SLOT(setRepeatableList(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::REPEAT_TRACK, m_ui_settings,
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_TRACK, m_ui_settings,
                                             SLOT(setRepeatableTrack(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::SHUFFLE, m_ui_settings,
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::SHUFFLE, m_ui_settings,
                                             SLOT(setShuffle(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::NO_PL_ADVANCE, m_ui_settings,
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::NO_PL_ADVANCE, m_ui_settings,
                                             SLOT(setNoPlayListAdvance(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::TRANSIT_BETWEEN_PLAYLISTS, m_ui_settings,
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS, m_ui_settings,
                                             SLOT(setPlayListTransitionEnabled(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::STOP_AFTER_SELECTED, m_pl_manager,
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::STOP_AFTER_SELECTED, m_pl_manager,
                                             SLOT(stopAfterSelected())));
 
     m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::VOL_ENC, m_core, SLOT(volumeUp())));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::VOL_DEC, m_core, SLOT(volumeDown())));
-    m_ui.menuPlayback->addAction(SET_ACTION(ActionManager::VOL_MUTE, m_core, SLOT(setMuted(bool))));
-    connect(m_core, SIGNAL(mutedChanged(bool)), ACTION(ActionManager::VOL_MUTE), SLOT(setChecked(bool)));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_ENC, m_core, SLOT(volumeUp())));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_DEC, m_core, SLOT(volumeDown())));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, SLOT(setMuted(bool))));
+    connect(m_core, SIGNAL(mutedChanged(bool)), ACTION(QSUiActionManager::VOL_MUTE), SLOT(setChecked(bool)));
 
     //help menu
-    m_ui.menuHelp->addAction(SET_ACTION(ActionManager::ABOUT_UI, this, SLOT(aboutUi())));
-    m_ui.menuHelp->addAction(SET_ACTION(ActionManager::ABOUT, this, SLOT(about())));
-    m_ui.menuHelp->addAction(SET_ACTION(ActionManager::ABOUT_QT, qApp, SLOT(aboutQt())));
+    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_UI, this, SLOT(aboutUi())));
+    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT, this, SLOT(about())));
+    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_QT, qApp, SLOT(aboutQt())));
     //playlist menu
-    m_pl_menu->addAction(SET_ACTION(ActionManager::PL_SHOW_INFO, m_pl_manager, SLOT(showDetails())));
+    m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_SHOW_INFO, m_pl_manager, SLOT(showDetails())));
     m_pl_menu->addSeparator();
-    m_pl_menu->addAction(ACTION(ActionManager::PL_REMOVE_SELECTED));
-    m_pl_menu->addAction(ACTION(ActionManager::PL_REMOVE_ALL));
-    m_pl_menu->addAction(ACTION(ActionManager::PL_REMOVE_UNSELECTED));
+    m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_SELECTED));
+    m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_ALL));
+    m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_UNSELECTED));
     m_pl_menu->addMenu(UiHelper::instance()->createMenu(UiHelper::PLAYLIST_MENU,
                                                         tr("Actions"), true, this));
     m_pl_menu->addSeparator();
-    m_pl_menu->addAction(SET_ACTION(ActionManager::PL_ENQUEUE, m_pl_manager, SLOT(addToQueue())));
+    m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_ENQUEUE, m_pl_manager, SLOT(addToQueue())));
     //tools menu
-    m_ui.menuTools->addAction(SET_ACTION(ActionManager::EQUALIZER, this, SLOT(showEqualizer())));
-    m_uiHelper->registerMenu(UiHelper::TOOLS_MENU, m_ui.menuTools, false, ACTION(ActionManager::EQUALIZER));
+    m_ui.menuTools->addAction(SET_ACTION(QSUiActionManager::EQUALIZER, this, SLOT(showEqualizer())));
+    m_uiHelper->registerMenu(UiHelper::TOOLS_MENU, m_ui.menuTools, false, ACTION(QSUiActionManager::EQUALIZER));
     //tab menu
-    m_tab_menu->addAction(ACTION(ActionManager::PL_LOAD));
-    m_tab_menu->addAction(ACTION(ActionManager::PL_SAVE));
+    m_tab_menu->addAction(ACTION(QSUiActionManager::PL_LOAD));
+    m_tab_menu->addAction(ACTION(QSUiActionManager::PL_SAVE));
     m_tab_menu->addSeparator();
-    m_tab_menu->addAction(ACTION(ActionManager::PL_RENAME));
-    m_tab_menu->addAction(ACTION(ActionManager::PL_CLOSE));
+    m_tab_menu->addAction(ACTION(QSUiActionManager::PL_RENAME));
+    m_tab_menu->addAction(ACTION(QSUiActionManager::PL_CLOSE));
     //seeking
     QAction* forward = new QAction(this);
     forward->setShortcut(QKeySequence(Qt::Key_Right));
@@ -635,10 +635,10 @@ void QSUiMainWindow::createActions()
     backward->setShortcut(QKeySequence(Qt::Key_Left));
     connect(backward,SIGNAL(triggered(bool)),this,SLOT(backward()));
     //application menu
-    SET_ACTION(ActionManager::APPLICATION_MENU, this, SLOT(showAppMenu()));
+    SET_ACTION(QSUiActionManager::APPLICATION_MENU, this, SLOT(showAppMenu()));
 
     addActions(QList<QAction*>() << forward << backward);
-    addActions(ActionManager::instance()->actions());
+    addActions(QSUiActionManager::instance()->actions());
     addActions(m_key_manager->actions());
 }
 
@@ -649,14 +649,14 @@ void QSUiMainWindow::readSettings()
     m_titleFormatter.setPattern(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
 
     //update toolbars
-    const QList<ActionManager::ToolBarInfo> toolBarInfoList = ActionManager::instance()->readToolBarSettings();
+    const QList<QSUiActionManager::ToolBarInfo> toolBarInfoList = QSUiActionManager::instance()->readToolBarSettings();
     QList<QToolBar *> toolBars = findChildren<QToolBar*>();
 
     //clear toolbars to avoid conflicts
     for(QToolBar *toolBar : qAsConst(toolBars))
         toolBar->clear();
 
-    for(const ActionManager::ToolBarInfo &info : qAsConst(toolBarInfoList))
+    for(const QSUiActionManager::ToolBarInfo &info : qAsConst(toolBarInfoList))
     {
         bool found = false;
         QList<QToolBar *>::iterator it = toolBars.begin();
@@ -665,7 +665,7 @@ void QSUiMainWindow::readSettings()
             if((*it)->property("uid").toString() == info.uid)
             {
                 found = true;
-                ActionManager::instance()->updateToolBar(*it, info);
+                QSUiActionManager::instance()->updateToolBar(*it, info);
                 toolBars.erase(it);
                 break;
             }
@@ -674,21 +674,21 @@ void QSUiMainWindow::readSettings()
 
         if(!found)
         {
-            addToolBar(ActionManager::instance()->createToolBar(info, this));
+            addToolBar(QSUiActionManager::instance()->createToolBar(info, this));
         }
     }
 
     for(QToolBar *toolBar : qAsConst(toolBars))
         toolBar->deleteLater();
     toolBars.clear();
-    setToolBarsBlocked(ACTION(ActionManager::UI_BLOCK_TOOLBARS)->isChecked());
+    setToolBarsBlocked(ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->isChecked());
 
     if(m_update)
     {
         m_listWidget->readSettings();
         qobject_cast<FileSystemBrowser *> (m_ui.fileSystemDockWidget->widget())->readSettings();
 
-        if(ACTION(ActionManager::WM_ALLWAYS_ON_TOP)->isChecked())
+        if(ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP)->isChecked())
             setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
         else
             setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint);
@@ -717,7 +717,7 @@ void QSUiMainWindow::readSettings()
             restoreState(settings.value("mw_state").toByteArray());
         if(settings.value("always_on_top", false).toBool())
         {
-            ACTION(ActionManager::WM_ALLWAYS_ON_TOP)->setChecked(true);
+            ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP)->setChecked(true);
             setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
         }
         show();
@@ -726,15 +726,15 @@ void QSUiMainWindow::readSettings()
             hide();
 
         bool state = settings.value("show_titlebars", true).toBool();
-        ACTION(ActionManager::UI_SHOW_TITLEBARS)->setChecked(state);
+        ACTION(QSUiActionManager::UI_SHOW_TITLEBARS)->setChecked(state);
         setTitleBarsVisible(state);
 
         state = settings.value("show_tabs", true).toBool();
-        ACTION(ActionManager::UI_SHOW_TABS)->setChecked(state);
+        ACTION(QSUiActionManager::UI_SHOW_TABS)->setChecked(state);
         m_tabWidget->setTabsVisible(state);
 
         state = settings.value("block_toolbars", false).toBool();
-        ACTION(ActionManager::UI_BLOCK_TOOLBARS)->setChecked(state);
+        ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->setChecked(state);
         setToolBarsBlocked(state);
 
         m_update = true;
@@ -773,13 +773,13 @@ void QSUiMainWindow::readSettings()
     EffectFactory *fileWriterFactory = Effect::findFactory("filewriter");
     if(fileWriterFactory)
     {
-        ACTION(ActionManager::RECORD)->setEnabled(true);
-        ACTION(ActionManager::RECORD)->setChecked(Effect::isEnabled(fileWriterFactory));
+        ACTION(QSUiActionManager::RECORD)->setEnabled(true);
+        ACTION(QSUiActionManager::RECORD)->setChecked(Effect::isEnabled(fileWriterFactory));
     }
     else
     {
-        ACTION(ActionManager::RECORD)->setEnabled(false);
-        ACTION(ActionManager::RECORD)->setChecked(false);
+        ACTION(QSUiActionManager::RECORD)->setEnabled(false);
+        ACTION(QSUiActionManager::RECORD)->setChecked(false);
     }
 }
 
@@ -804,11 +804,11 @@ void QSUiMainWindow::writeSettings()
     QSettings settings;
     settings.setValue("Simple/mw_geometry", saveGeometry());
     settings.setValue("Simple/mw_state", saveState());
-    settings.setValue("Simple/always_on_top", ACTION(ActionManager::WM_ALLWAYS_ON_TOP)->isChecked());
-    settings.setValue("Simple/show_analyzer", ACTION(ActionManager::UI_ANALYZER)->isChecked());
-    settings.setValue("Simple/show_tabs", ACTION(ActionManager::UI_SHOW_TABS)->isChecked());
-    settings.setValue("Simple/show_titlebars", ACTION(ActionManager::UI_SHOW_TITLEBARS)->isChecked());
-    settings.setValue("Simple/block_toolbars", ACTION(ActionManager::UI_BLOCK_TOOLBARS)->isChecked());
+    settings.setValue("Simple/always_on_top", ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP)->isChecked());
+    settings.setValue("Simple/show_analyzer", ACTION(QSUiActionManager::UI_ANALYZER)->isChecked());
+    settings.setValue("Simple/show_tabs", ACTION(QSUiActionManager::UI_SHOW_TABS)->isChecked());
+    settings.setValue("Simple/show_titlebars", ACTION(QSUiActionManager::UI_SHOW_TITLEBARS)->isChecked());
+    settings.setValue("Simple/block_toolbars", ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->isChecked());
     settings.setValue("Simple/show_menubar", menuBar()->isVisible());
 }
 

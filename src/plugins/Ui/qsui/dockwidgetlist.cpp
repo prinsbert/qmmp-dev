@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <qmmpui/general.h>
 #include <qmmpui/uihelper.h>
-#include "actionmanager.h"
+#include "qsuiactionmanager.h"
 #include "dockwidgetlist.h"
 
 DockWidgetList::DockWidgetList(QMainWindow *parent) : QObject(parent), m_mw(parent)
@@ -26,7 +26,7 @@ DockWidgetList::DockWidgetList(QMainWindow *parent) : QObject(parent), m_mw(pare
         connect(dockWidget->toggleViewAction(), SIGNAL(triggered(bool)), SLOT(onViewActionTriggered(bool)));
         connect(dockWidget, SIGNAL(visibilityChanged(bool)), SLOT(onVisibilityChanged(bool)));
         m_dockWidgetList << dockWidget;
-        ActionManager::instance()->registerDockWidget(dockWidget, id, desc.shortcut);
+        QSUiActionManager::instance()->registerDockWidget(dockWidget, id, desc.shortcut);
     }
 }
 
@@ -131,7 +131,7 @@ void DockWidgetList::onWidgetAdded(const QString &id)
     m_mw->addDockWidget(desc.area, dockWidget);
     connect(dockWidget->toggleViewAction(), SIGNAL(toggled(bool)), SLOT(onViewActionTriggered(bool)));
     m_dockWidgetList << dockWidget;
-    ActionManager::instance()->registerDockWidget(dockWidget, id, desc.shortcut);
+    QSUiActionManager::instance()->registerDockWidget(dockWidget, id, desc.shortcut);
     setTitleBarsVisible(m_titleBarsVisible);
 
     QWidget *w = General::createWidget(id, m_mw);
@@ -146,7 +146,7 @@ void DockWidgetList::onWidgetRemoved(const QString &id)
         if(dockWidget->objectName() == id)
         {
             m_dockWidgetList.removeAll(dockWidget);
-            ActionManager::instance()->removeDockWidget(dockWidget);
+            QSUiActionManager::instance()->removeDockWidget(dockWidget);
             if(dockWidget->widget())
                 dockWidget->widget()->deleteLater();
             dockWidget->deleteLater();
