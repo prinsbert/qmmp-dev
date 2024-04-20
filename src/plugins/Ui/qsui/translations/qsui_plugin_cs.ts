@@ -498,32 +498,6 @@
     </message>
 </context>
 <context>
-    <name>ColorWidget</name>
-    <message>
-        <location filename="../colorwidget.cpp" line="47"/>
-        <source>Select Color</source>
-        <translation>Vyberte barvu</translation>
-    </message>
-</context>
-<context>
-    <name>CoverWidget</name>
-    <message>
-        <location filename="../coverwidget.cpp" line="32"/>
-        <source>&amp;Save As...</source>
-        <translation>Uložit j&amp;ako...</translation>
-    </message>
-    <message>
-        <location filename="../coverwidget.cpp" line="65"/>
-        <source>Save Cover As</source>
-        <translation>Uložit obal jako</translation>
-    </message>
-    <message>
-        <location filename="../coverwidget.cpp" line="67"/>
-        <source>Images</source>
-        <translation>Obrázky</translation>
-    </message>
-</context>
-<context>
     <name>Equalizer</name>
     <message>
         <location filename="../equalizer.cpp" line="39"/>
@@ -617,485 +591,11 @@
     </message>
 </context>
 <context>
-    <name>HotkeyEditor</name>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="40"/>
-        <source>Reset</source>
-        <translation>Obnovit</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="54"/>
-        <source>Action</source>
-        <translation>Akce</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="59"/>
-        <source>Shortcut</source>
-        <translation>Zkratka</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="33"/>
-        <source>Change shortcut...</source>
-        <translation>Změnit zkratku...</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="55"/>
-        <source>Reset Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="56"/>
-        <source>Do you want to restore default shortcuts?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="68"/>
-        <source>Playback</source>
-        <translation>Přehrávání</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="74"/>
-        <source>View</source>
-        <translation>Zobrazení</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="80"/>
-        <source>Volume</source>
-        <translation>Hlasitost</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="86"/>
-        <source>Playlist</source>
-        <translation>Seznam skladeb</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="92"/>
-        <source>Misc</source>
-        <translation>Různé</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="100"/>
-        <source>Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.cpp" line="911"/>
-        <source>Qmmp</source>
-        <translation>Qmmp</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="35"/>
-        <source>&amp;File</source>
-        <translation>&amp;Soubor</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="40"/>
-        <source>&amp;Tools</source>
-        <translation>Nás&amp;troje</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="45"/>
-        <source>&amp;Help</source>
-        <translation>&amp;Nápověda</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="50"/>
-        <source>&amp;Edit</source>
-        <translation>Ú&amp;pravy</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="55"/>
-        <source>&amp;Playback</source>
-        <translation>&amp;Přehrávání</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="60"/>
-        <source>&amp;View</source>
-        <translation>Po&amp;hled</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="99"/>
-        <source>Files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="114"/>
-        <source>Cover</source>
-        <translation>Obal</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="123"/>
-        <source>Playlists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="135"/>
-        <source>Waveform Seek Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="149"/>
-        <source>Previous</source>
-        <translation>Předchozí</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="159"/>
-        <source>Play</source>
-        <translation>Přehrát</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="169"/>
-        <source>Pause</source>
-        <translation>Pozastavit</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="179"/>
-        <source>Next</source>
-        <translation>Další</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="189"/>
-        <source>Stop</source>
-        <translation>Zastavit</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="194"/>
-        <source>&amp;Add File</source>
-        <translation>Přidat &amp;soubor</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="199"/>
-        <source>&amp;Remove All</source>
-        <translation>Odstranit &amp;vše</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="204"/>
-        <source>New Playlist</source>
-        <translation>Nový seznam skladeb</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="209"/>
-        <source>Remove Playlist</source>
-        <translation>Odstranit seznam skladeb</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="214"/>
-        <source>&amp;Add Directory</source>
-        <translation>Přidat &amp;adresář</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="219"/>
-        <source>&amp;Exit</source>
-        <translation>U&amp;končit</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="224"/>
-        <source>About</source>
-        <translation>O programu</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="229"/>
-        <source>About Qt</source>
-        <translation>O Qt</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="234"/>
-        <source>&amp;Select All</source>
-        <translation>&amp;Vybrat vše</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="239"/>
-        <source>&amp;Remove Selected</source>
-        <translation>&amp;Odstranit vybrané</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="244"/>
-        <source>&amp;Remove Unselected</source>
-        <translation>Odstranit &amp;nevybrané</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="84"/>
-        <location filename="../forms/mainwindow.ui" line="249"/>
-        <source>Visualization</source>
-        <translation>Vizualizace</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="254"/>
-        <source>Settings</source>
-        <translation>Nastavení</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="259"/>
-        <location filename="../mainwindow.cpp" line="281"/>
-        <source>Rename Playlist</source>
-        <translation>Přejmenovat seznam skladeb</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="472"/>
-        <source>Volume</source>
-        <translation>Hlasitost</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="281"/>
-        <source>Playlist name:</source>
-        <translation>Název seznamu skladeb:</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="322"/>
-        <source>Appearance</source>
-        <translation>Vzhled</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="323"/>
-        <source>Shortcuts</source>
-        <translation>Zkratky</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="402"/>
-        <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="459"/>
-        <source>Ctrl+0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="465"/>
-        <source>P</source>
-        <translation>P</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="470"/>
-        <source>Position</source>
-        <translation>Umístění</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="474"/>
-        <source>Quick Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="534"/>
-        <source>Edit Toolbars</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="536"/>
-        <source>Sort List</source>
-        <translation>Seřadit seznam</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="538"/>
-        <location filename="../mainwindow.cpp" line="554"/>
-        <source>By Title</source>
-        <translation>Podle názvu skladby</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="539"/>
-        <location filename="../mainwindow.cpp" line="555"/>
-        <source>By Album</source>
-        <translation>Podle alba</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="540"/>
-        <location filename="../mainwindow.cpp" line="556"/>
-        <source>By Artist</source>
-        <translation>Podle umělce</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="541"/>
-        <location filename="../mainwindow.cpp" line="557"/>
-        <source>By Album Artist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="542"/>
-        <location filename="../mainwindow.cpp" line="558"/>
-        <source>By Filename</source>
-        <translation>Podle názvu souboru</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="543"/>
-        <location filename="../mainwindow.cpp" line="559"/>
-        <source>By Path + Filename</source>
-        <translation>Podle cesty a názvu souboru</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="544"/>
-        <location filename="../mainwindow.cpp" line="560"/>
-        <source>By Date</source>
-        <translation>Podle data</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="545"/>
-        <location filename="../mainwindow.cpp" line="561"/>
-        <source>By Track Number</source>
-        <translation>Podle čísla skladby</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="546"/>
-        <location filename="../mainwindow.cpp" line="562"/>
-        <source>By Disc Number</source>
-        <translation>Podle čísla disku</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="547"/>
-        <location filename="../mainwindow.cpp" line="563"/>
-        <source>By File Creation Date</source>
-        <translation>Podle data vytvoření souboru</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="548"/>
-        <location filename="../mainwindow.cpp" line="564"/>
-        <source>By File Modification Date</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="549"/>
-        <source>By Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="552"/>
-        <source>Sort Selection</source>
-        <translation>Seřadit výběr</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="568"/>
-        <source>Randomize List</source>
-        <translation>Zamíchat seznam</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="570"/>
-        <source>Reverse List</source>
-        <translation>Obrátit pořadí seznamu</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="618"/>
-        <source>Actions</source>
-        <translation>Činnosti</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="421"/>
-        <source>Add new playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="427"/>
-        <source>Show all tabs</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>PlayListBrowser</name>
     <message>
         <location filename="../playlistbrowser.cpp" line="62"/>
         <source>Quick Search</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlayListHeader</name>
-    <message>
-        <location filename="../playlistheader.cpp" line="54"/>
-        <source>Add Column</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="55"/>
-        <source>Edit Column</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="56"/>
-        <source>Show Queue/Protocol</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="58"/>
-        <source>Auto-resize</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="61"/>
-        <source>Alignment</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="62"/>
-        <source>Left</source>
-        <comment>alignment</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="63"/>
-        <source>Right</source>
-        <comment>alignment</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="64"/>
-        <source>Center</source>
-        <comment>alignment</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="74"/>
-        <source>Remove Column</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PopupSettings</name>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="14"/>
-        <source>Popup Information Settings</source>
-        <translation>Nastavení vyskakovacích informací</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="29"/>
-        <source>Template</source>
-        <translation>Šablona</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="58"/>
-        <source>Reset</source>
-        <translation>Obnovit</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="65"/>
-        <source>Insert</source>
-        <translation>Vložit</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="75"/>
-        <source>Show cover</source>
-        <translation>Zobrazit obal</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="89"/>
-        <source>Cover size:</source>
-        <translation>Velikost obalu:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="115"/>
-        <source>Transparency:</source>
-        <translation>Průhlednost:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="145"/>
-        <source>Delay:</source>
-        <translation>Prodleva:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="165"/>
-        <source>ms</source>
-        <translation>ms</translation>
     </message>
 </context>
 <context>
@@ -1507,11 +1007,503 @@
     </message>
 </context>
 <context>
+    <name>QSUiCoverWidget</name>
+    <message>
+        <location filename="../qsuicoverwidget.cpp" line="32"/>
+        <source>&amp;Save As...</source>
+        <translation type="unfinished">Uložit j&amp;ako...</translation>
+    </message>
+    <message>
+        <location filename="../qsuicoverwidget.cpp" line="65"/>
+        <source>Save Cover As</source>
+        <translation type="unfinished">Uložit obal jako</translation>
+    </message>
+    <message>
+        <location filename="../qsuicoverwidget.cpp" line="67"/>
+        <source>Images</source>
+        <translation type="unfinished">Obrázky</translation>
+    </message>
+</context>
+<context>
     <name>QSUiFactory</name>
     <message>
         <location filename="../qsuifactory.cpp" line="32"/>
         <source>Simple User Interface</source>
         <translation type="unfinished">Jednoduché uživatelské rozhraní</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiHotkeyEditor</name>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="33"/>
+        <source>Change shortcut...</source>
+        <translation type="unfinished">Změnit zkratku...</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="40"/>
+        <source>Reset</source>
+        <translation type="unfinished">Obnovit</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="54"/>
+        <source>Action</source>
+        <translation type="unfinished">Akce</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="59"/>
+        <source>Shortcut</source>
+        <translation type="unfinished">Zkratka</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="55"/>
+        <source>Reset Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
+        <source>Do you want to restore default shortcuts?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="68"/>
+        <source>Playback</source>
+        <translation type="unfinished">Přehrávání</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="74"/>
+        <source>View</source>
+        <translation type="unfinished">Zobrazení</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="80"/>
+        <source>Volume</source>
+        <translation type="unfinished">Hlasitost</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="86"/>
+        <source>Playlist</source>
+        <translation type="unfinished">Seznam skladeb</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="92"/>
+        <source>Misc</source>
+        <translation type="unfinished">Různé</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="100"/>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QSUiMainWindow</name>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="14"/>
+        <location filename="../qsuimainwindow.cpp" line="911"/>
+        <source>Qmmp</source>
+        <translation type="unfinished">Qmmp</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="35"/>
+        <source>&amp;File</source>
+        <translation type="unfinished">&amp;Soubor</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="40"/>
+        <source>&amp;Tools</source>
+        <translation type="unfinished">Nás&amp;troje</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="45"/>
+        <source>&amp;Help</source>
+        <translation type="unfinished">&amp;Nápověda</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="50"/>
+        <source>&amp;Edit</source>
+        <translation type="unfinished">Ú&amp;pravy</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="55"/>
+        <source>&amp;Playback</source>
+        <translation type="unfinished">&amp;Přehrávání</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="60"/>
+        <source>&amp;View</source>
+        <translation type="unfinished">Po&amp;hled</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="84"/>
+        <location filename="../forms/qsuimainwindow.ui" line="249"/>
+        <source>Visualization</source>
+        <translation type="unfinished">Vizualizace</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="99"/>
+        <source>Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="114"/>
+        <source>Cover</source>
+        <translation type="unfinished">Obal</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="123"/>
+        <source>Playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="135"/>
+        <source>Waveform Seek Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="149"/>
+        <source>Previous</source>
+        <translation type="unfinished">Předchozí</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="159"/>
+        <source>Play</source>
+        <translation type="unfinished">Přehrát</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="169"/>
+        <source>Pause</source>
+        <translation type="unfinished">Pozastavit</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="179"/>
+        <source>Next</source>
+        <translation type="unfinished">Další</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="189"/>
+        <source>Stop</source>
+        <translation type="unfinished">Zastavit</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="194"/>
+        <source>&amp;Add File</source>
+        <translation type="unfinished">Přidat &amp;soubor</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="199"/>
+        <source>&amp;Remove All</source>
+        <translation type="unfinished">Odstranit &amp;vše</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="204"/>
+        <source>New Playlist</source>
+        <translation type="unfinished">Nový seznam skladeb</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="209"/>
+        <source>Remove Playlist</source>
+        <translation type="unfinished">Odstranit seznam skladeb</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="214"/>
+        <source>&amp;Add Directory</source>
+        <translation type="unfinished">Přidat &amp;adresář</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="219"/>
+        <source>&amp;Exit</source>
+        <translation type="unfinished">U&amp;končit</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="224"/>
+        <source>About</source>
+        <translation type="unfinished">O programu</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="229"/>
+        <source>About Qt</source>
+        <translation type="unfinished">O Qt</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="234"/>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">&amp;Vybrat vše</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="239"/>
+        <source>&amp;Remove Selected</source>
+        <translation type="unfinished">&amp;Odstranit vybrané</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="244"/>
+        <source>&amp;Remove Unselected</source>
+        <translation type="unfinished">Odstranit &amp;nevybrané</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="254"/>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavení</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="259"/>
+        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <source>Rename Playlist</source>
+        <translation type="unfinished">Přejmenovat seznam skladeb</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <source>Playlist name:</source>
+        <translation type="unfinished">Název seznamu skladeb:</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="322"/>
+        <source>Appearance</source>
+        <translation type="unfinished">Vzhled</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="323"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished">Zkratky</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="402"/>
+        <source>Menu Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="421"/>
+        <source>Add new playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="427"/>
+        <source>Show all tabs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="459"/>
+        <source>Ctrl+0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="465"/>
+        <source>P</source>
+        <translation type="unfinished">P</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="470"/>
+        <source>Position</source>
+        <translation type="unfinished">Umístění</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="472"/>
+        <source>Volume</source>
+        <translation type="unfinished">Hlasitost</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="474"/>
+        <source>Quick Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="534"/>
+        <source>Edit Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="536"/>
+        <source>Sort List</source>
+        <translation type="unfinished">Seřadit seznam</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="538"/>
+        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <source>By Title</source>
+        <translation type="unfinished">Podle názvu skladby</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="539"/>
+        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <source>By Album</source>
+        <translation type="unfinished">Podle alba</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="540"/>
+        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <source>By Artist</source>
+        <translation type="unfinished">Podle umělce</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="541"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <source>By Album Artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="542"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <source>By Filename</source>
+        <translation type="unfinished">Podle názvu souboru</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="543"/>
+        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <source>By Path + Filename</source>
+        <translation type="unfinished">Podle cesty a názvu souboru</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="544"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <source>By Date</source>
+        <translation type="unfinished">Podle data</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="545"/>
+        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <source>By Track Number</source>
+        <translation type="unfinished">Podle čísla skladby</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="546"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <source>By Disc Number</source>
+        <translation type="unfinished">Podle čísla disku</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <source>By File Creation Date</source>
+        <translation type="unfinished">Podle data vytvoření souboru</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="548"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <source>By File Modification Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <source>By Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <source>Sort Selection</source>
+        <translation type="unfinished">Seřadit výběr</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <source>Randomize List</source>
+        <translation type="unfinished">Zamíchat seznam</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <source>Reverse List</source>
+        <translation type="unfinished">Obrátit pořadí seznamu</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="618"/>
+        <source>Actions</source>
+        <translation type="unfinished">Činnosti</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiPlayListHeader</name>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="54"/>
+        <source>Add Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="55"/>
+        <source>Edit Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="56"/>
+        <source>Show Queue/Protocol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="58"/>
+        <source>Auto-resize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="61"/>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="62"/>
+        <source>Left</source>
+        <comment>alignment</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="63"/>
+        <source>Right</source>
+        <comment>alignment</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="64"/>
+        <source>Center</source>
+        <comment>alignment</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="74"/>
+        <source>Remove Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QSUiPopupSettings</name>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="14"/>
+        <source>Popup Information Settings</source>
+        <translation type="unfinished">Nastavení vyskakovacích informací</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="29"/>
+        <source>Template</source>
+        <translation type="unfinished">Šablona</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="58"/>
+        <source>Reset</source>
+        <translation type="unfinished">Obnovit</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="65"/>
+        <source>Insert</source>
+        <translation type="unfinished">Vložit</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="75"/>
+        <source>Show cover</source>
+        <translation type="unfinished">Zobrazit obal</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="89"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">Velikost obalu:</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="115"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">Průhlednost:</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="145"/>
+        <source>Delay:</source>
+        <translation type="unfinished">Prodleva:</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="165"/>
+        <source>ms</source>
+        <translation type="unfinished">ms</translation>
     </message>
 </context>
 <context>
@@ -1656,24 +1648,6 @@
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ShortcutDialog</name>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="14"/>
-        <source>Change Shortcut</source>
-        <translation>Změnit zkratku</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Stlačte kombinaci kláves, kterou chcete přiřadit</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
-        <source>Clear</source>
-        <translation>Vymazat</translation>
     </message>
 </context>
 <context>

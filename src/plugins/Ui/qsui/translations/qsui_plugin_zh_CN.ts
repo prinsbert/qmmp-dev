@@ -498,32 +498,6 @@
     </message>
 </context>
 <context>
-    <name>ColorWidget</name>
-    <message>
-        <location filename="../colorwidget.cpp" line="47"/>
-        <source>Select Color</source>
-        <translation>选择颜色</translation>
-    </message>
-</context>
-<context>
-    <name>CoverWidget</name>
-    <message>
-        <location filename="../coverwidget.cpp" line="32"/>
-        <source>&amp;Save As...</source>
-        <translation>&amp;另存为</translation>
-    </message>
-    <message>
-        <location filename="../coverwidget.cpp" line="65"/>
-        <source>Save Cover As</source>
-        <translation>将封面另存为</translation>
-    </message>
-    <message>
-        <location filename="../coverwidget.cpp" line="67"/>
-        <source>Images</source>
-        <translation>图片</translation>
-    </message>
-</context>
-<context>
     <name>Equalizer</name>
     <message>
         <location filename="../equalizer.cpp" line="39"/>
@@ -617,485 +591,11 @@
     </message>
 </context>
 <context>
-    <name>HotkeyEditor</name>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="40"/>
-        <source>Reset</source>
-        <translation>重置</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="54"/>
-        <source>Action</source>
-        <translation>行动</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="59"/>
-        <source>Shortcut</source>
-        <translation>快捷键</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="33"/>
-        <source>Change shortcut...</source>
-        <translation>更改快捷键</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="55"/>
-        <source>Reset Shortcuts</source>
-        <translation>重置快捷键</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="56"/>
-        <source>Do you want to restore default shortcuts?</source>
-        <translation>您希望将快捷键恢复到默认值吗？</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="68"/>
-        <source>Playback</source>
-        <translation>回放</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="74"/>
-        <source>View</source>
-        <translation>视图</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="80"/>
-        <source>Volume</source>
-        <translation>音量</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="86"/>
-        <source>Playlist</source>
-        <translation>播放列表</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="92"/>
-        <source>Misc</source>
-        <translation>其他杂项</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="100"/>
-        <source>Tools</source>
-        <translation>工具</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.cpp" line="911"/>
-        <source>Qmmp</source>
-        <translation>Qmmp</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="35"/>
-        <source>&amp;File</source>
-        <translation>&amp;文件</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="40"/>
-        <source>&amp;Tools</source>
-        <translation>&amp;工具</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="45"/>
-        <source>&amp;Help</source>
-        <translation>&amp;帮助</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="50"/>
-        <source>&amp;Edit</source>
-        <translation>&amp;编辑</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="55"/>
-        <source>&amp;Playback</source>
-        <translation>&amp;回放</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="60"/>
-        <source>&amp;View</source>
-        <translation>&amp;视图</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="99"/>
-        <source>Files</source>
-        <translation>文件</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="114"/>
-        <source>Cover</source>
-        <translation>封面</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="123"/>
-        <source>Playlists</source>
-        <translation>播放列表</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="135"/>
-        <source>Waveform Seek Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="149"/>
-        <source>Previous</source>
-        <translation>上一个</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="159"/>
-        <source>Play</source>
-        <translation>播放</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="169"/>
-        <source>Pause</source>
-        <translation>暂停</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="179"/>
-        <source>Next</source>
-        <translation>下一首</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="189"/>
-        <source>Stop</source>
-        <translation>停止</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="194"/>
-        <source>&amp;Add File</source>
-        <translation>&amp;添加文件</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="199"/>
-        <source>&amp;Remove All</source>
-        <translation>&amp;移除所有文件</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="204"/>
-        <source>New Playlist</source>
-        <translation>新的播放列表</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="209"/>
-        <source>Remove Playlist</source>
-        <translation>移除播放列表</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="214"/>
-        <source>&amp;Add Directory</source>
-        <translation>&amp;添加文件夹</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="219"/>
-        <source>&amp;Exit</source>
-        <translation>&amp;退出</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="224"/>
-        <source>About</source>
-        <translation>关于</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="229"/>
-        <source>About Qt</source>
-        <translation>关于Qt</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="234"/>
-        <source>&amp;Select All</source>
-        <translation>&amp;选择所有文件</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="239"/>
-        <source>&amp;Remove Selected</source>
-        <translation>&amp;移除所选项</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="244"/>
-        <source>&amp;Remove Unselected</source>
-        <translation>&amp;移除未被选中项</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="84"/>
-        <location filename="../forms/mainwindow.ui" line="249"/>
-        <source>Visualization</source>
-        <translation>音频视觉化</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="254"/>
-        <source>Settings</source>
-        <translation>设置</translation>
-    </message>
-    <message>
-        <location filename="../forms/mainwindow.ui" line="259"/>
-        <location filename="../mainwindow.cpp" line="281"/>
-        <source>Rename Playlist</source>
-        <translation>重命名播放列表</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="472"/>
-        <source>Volume</source>
-        <translation>音量</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="281"/>
-        <source>Playlist name:</source>
-        <translation>播放列表名称：</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="322"/>
-        <source>Appearance</source>
-        <translation>外观</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="323"/>
-        <source>Shortcuts</source>
-        <translation>热键</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="402"/>
-        <source>Menu Bar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="459"/>
-        <source>Ctrl+0</source>
-        <translation>Ctrl+0</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="465"/>
-        <source>P</source>
-        <translation>P</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="470"/>
-        <source>Position</source>
-        <translation>位置</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="474"/>
-        <source>Quick Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="534"/>
-        <source>Edit Toolbars</source>
-        <translation>编辑工具栏</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="536"/>
-        <source>Sort List</source>
-        <translation>清单排序</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="538"/>
-        <location filename="../mainwindow.cpp" line="554"/>
-        <source>By Title</source>
-        <translation>按标题</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="539"/>
-        <location filename="../mainwindow.cpp" line="555"/>
-        <source>By Album</source>
-        <translation>按专辑</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="540"/>
-        <location filename="../mainwindow.cpp" line="556"/>
-        <source>By Artist</source>
-        <translation>按艺术家</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="541"/>
-        <location filename="../mainwindow.cpp" line="557"/>
-        <source>By Album Artist</source>
-        <translation>按专辑 艺术家</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="542"/>
-        <location filename="../mainwindow.cpp" line="558"/>
-        <source>By Filename</source>
-        <translation>按文件名称</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="543"/>
-        <location filename="../mainwindow.cpp" line="559"/>
-        <source>By Path + Filename</source>
-        <translation>按路径+文件名称</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="544"/>
-        <location filename="../mainwindow.cpp" line="560"/>
-        <source>By Date</source>
-        <translation>按日期</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="545"/>
-        <location filename="../mainwindow.cpp" line="561"/>
-        <source>By Track Number</source>
-        <translation>按单曲号</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="546"/>
-        <location filename="../mainwindow.cpp" line="562"/>
-        <source>By Disc Number</source>
-        <translation>按光盘号</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="547"/>
-        <location filename="../mainwindow.cpp" line="563"/>
-        <source>By File Creation Date</source>
-        <translation>按文件的创建日期</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="548"/>
-        <location filename="../mainwindow.cpp" line="564"/>
-        <source>By File Modification Date</source>
-        <translation>按文件的修改日期</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="549"/>
-        <source>By Group</source>
-        <translation>按组</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="552"/>
-        <source>Sort Selection</source>
-        <translation>排序选择</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="568"/>
-        <source>Randomize List</source>
-        <translation>随机列表</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="570"/>
-        <source>Reverse List</source>
-        <translation>反序列表</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="618"/>
-        <source>Actions</source>
-        <translation>行动</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="421"/>
-        <source>Add new playlist</source>
-        <translation>添加新播放列表</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="427"/>
-        <source>Show all tabs</source>
-        <translation>显示所有的分页标签</translation>
-    </message>
-</context>
-<context>
     <name>PlayListBrowser</name>
     <message>
         <location filename="../playlistbrowser.cpp" line="62"/>
         <source>Quick Search</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlayListHeader</name>
-    <message>
-        <location filename="../playlistheader.cpp" line="54"/>
-        <source>Add Column</source>
-        <translation>增加n列</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="55"/>
-        <source>Edit Column</source>
-        <translation>编辑n列</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="56"/>
-        <source>Show Queue/Protocol</source>
-        <translation>显示排队/协议</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="58"/>
-        <source>Auto-resize</source>
-        <translation>自动调整大小</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="61"/>
-        <source>Alignment</source>
-        <translation>对齐</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="62"/>
-        <source>Left</source>
-        <comment>alignment</comment>
-        <translation>左对齐</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="63"/>
-        <source>Right</source>
-        <comment>alignment</comment>
-        <translation>右对齐</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="64"/>
-        <source>Center</source>
-        <comment>alignment</comment>
-        <translation>居中</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="74"/>
-        <source>Remove Column</source>
-        <translation>移除n列</translation>
-    </message>
-</context>
-<context>
-    <name>PopupSettings</name>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="14"/>
-        <source>Popup Information Settings</source>
-        <translation>弹出信息设置</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="29"/>
-        <source>Template</source>
-        <translation>模板</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="58"/>
-        <source>Reset</source>
-        <translation>重置</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="65"/>
-        <source>Insert</source>
-        <translation>插入</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="75"/>
-        <source>Show cover</source>
-        <translation>显示封面</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="89"/>
-        <source>Cover size:</source>
-        <translation>封面尺寸：</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="115"/>
-        <source>Transparency:</source>
-        <translation>透明：</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="145"/>
-        <source>Delay:</source>
-        <translation>延迟：</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="165"/>
-        <source>ms</source>
-        <translation>毫秒</translation>
     </message>
 </context>
 <context>
@@ -1507,11 +1007,503 @@
     </message>
 </context>
 <context>
+    <name>QSUiCoverWidget</name>
+    <message>
+        <location filename="../qsuicoverwidget.cpp" line="32"/>
+        <source>&amp;Save As...</source>
+        <translation type="unfinished">&amp;另存为</translation>
+    </message>
+    <message>
+        <location filename="../qsuicoverwidget.cpp" line="65"/>
+        <source>Save Cover As</source>
+        <translation type="unfinished">将封面另存为</translation>
+    </message>
+    <message>
+        <location filename="../qsuicoverwidget.cpp" line="67"/>
+        <source>Images</source>
+        <translation type="unfinished">图片</translation>
+    </message>
+</context>
+<context>
     <name>QSUiFactory</name>
     <message>
         <location filename="../qsuifactory.cpp" line="32"/>
         <source>Simple User Interface</source>
         <translation>简单用户界面</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiHotkeyEditor</name>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="33"/>
+        <source>Change shortcut...</source>
+        <translation type="unfinished">更改快捷键</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="40"/>
+        <source>Reset</source>
+        <translation type="unfinished">重置</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="54"/>
+        <source>Action</source>
+        <translation type="unfinished">行动</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuihotkeyeditor.ui" line="59"/>
+        <source>Shortcut</source>
+        <translation type="unfinished">快捷键</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="55"/>
+        <source>Reset Shortcuts</source>
+        <translation type="unfinished">重置快捷键</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
+        <source>Do you want to restore default shortcuts?</source>
+        <translation type="unfinished">您希望将快捷键恢复到默认值吗？</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="68"/>
+        <source>Playback</source>
+        <translation type="unfinished">回放</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="74"/>
+        <source>View</source>
+        <translation type="unfinished">视图</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="80"/>
+        <source>Volume</source>
+        <translation type="unfinished">音量</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="86"/>
+        <source>Playlist</source>
+        <translation type="unfinished">播放列表</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="92"/>
+        <source>Misc</source>
+        <translation type="unfinished">其他杂项</translation>
+    </message>
+    <message>
+        <location filename="../qsuihotkeyeditor.cpp" line="100"/>
+        <source>Tools</source>
+        <translation type="unfinished">工具</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiMainWindow</name>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="14"/>
+        <location filename="../qsuimainwindow.cpp" line="911"/>
+        <source>Qmmp</source>
+        <translation type="unfinished">Qmmp</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="35"/>
+        <source>&amp;File</source>
+        <translation type="unfinished">&amp;文件</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="40"/>
+        <source>&amp;Tools</source>
+        <translation type="unfinished">&amp;工具</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="45"/>
+        <source>&amp;Help</source>
+        <translation type="unfinished">&amp;帮助</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="50"/>
+        <source>&amp;Edit</source>
+        <translation type="unfinished">&amp;编辑</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="55"/>
+        <source>&amp;Playback</source>
+        <translation type="unfinished">&amp;回放</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="60"/>
+        <source>&amp;View</source>
+        <translation type="unfinished">&amp;视图</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="84"/>
+        <location filename="../forms/qsuimainwindow.ui" line="249"/>
+        <source>Visualization</source>
+        <translation type="unfinished">音频视觉化</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="99"/>
+        <source>Files</source>
+        <translation type="unfinished">文件</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="114"/>
+        <source>Cover</source>
+        <translation type="unfinished">封面</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="123"/>
+        <source>Playlists</source>
+        <translation type="unfinished">播放列表</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="135"/>
+        <source>Waveform Seek Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="149"/>
+        <source>Previous</source>
+        <translation type="unfinished">上一个</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="159"/>
+        <source>Play</source>
+        <translation type="unfinished">播放</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="169"/>
+        <source>Pause</source>
+        <translation type="unfinished">暂停</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="179"/>
+        <source>Next</source>
+        <translation type="unfinished">下一首</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="189"/>
+        <source>Stop</source>
+        <translation type="unfinished">停止</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="194"/>
+        <source>&amp;Add File</source>
+        <translation type="unfinished">&amp;添加文件</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="199"/>
+        <source>&amp;Remove All</source>
+        <translation type="unfinished">&amp;移除所有文件</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="204"/>
+        <source>New Playlist</source>
+        <translation type="unfinished">新的播放列表</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="209"/>
+        <source>Remove Playlist</source>
+        <translation type="unfinished">移除播放列表</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="214"/>
+        <source>&amp;Add Directory</source>
+        <translation type="unfinished">&amp;添加文件夹</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="219"/>
+        <source>&amp;Exit</source>
+        <translation type="unfinished">&amp;退出</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="224"/>
+        <source>About</source>
+        <translation type="unfinished">关于</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="229"/>
+        <source>About Qt</source>
+        <translation type="unfinished">关于Qt</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="234"/>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">&amp;选择所有文件</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="239"/>
+        <source>&amp;Remove Selected</source>
+        <translation type="unfinished">&amp;移除所选项</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="244"/>
+        <source>&amp;Remove Unselected</source>
+        <translation type="unfinished">&amp;移除未被选中项</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="254"/>
+        <source>Settings</source>
+        <translation type="unfinished">设置</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuimainwindow.ui" line="259"/>
+        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <source>Rename Playlist</source>
+        <translation type="unfinished">重命名播放列表</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <source>Playlist name:</source>
+        <translation type="unfinished">播放列表名称：</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="322"/>
+        <source>Appearance</source>
+        <translation type="unfinished">外观</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="323"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished">热键</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="402"/>
+        <source>Menu Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="421"/>
+        <source>Add new playlist</source>
+        <translation type="unfinished">添加新播放列表</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="427"/>
+        <source>Show all tabs</source>
+        <translation type="unfinished">显示所有的分页标签</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="459"/>
+        <source>Ctrl+0</source>
+        <translation type="unfinished">Ctrl+0</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="465"/>
+        <source>P</source>
+        <translation type="unfinished">P</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="470"/>
+        <source>Position</source>
+        <translation type="unfinished">位置</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="472"/>
+        <source>Volume</source>
+        <translation type="unfinished">音量</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="474"/>
+        <source>Quick Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="534"/>
+        <source>Edit Toolbars</source>
+        <translation type="unfinished">编辑工具栏</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="536"/>
+        <source>Sort List</source>
+        <translation type="unfinished">清单排序</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="538"/>
+        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <source>By Title</source>
+        <translation type="unfinished">按标题</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="539"/>
+        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <source>By Album</source>
+        <translation type="unfinished">按专辑</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="540"/>
+        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <source>By Artist</source>
+        <translation type="unfinished">按艺术家</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="541"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <source>By Album Artist</source>
+        <translation type="unfinished">按专辑 艺术家</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="542"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <source>By Filename</source>
+        <translation type="unfinished">按文件名称</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="543"/>
+        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <source>By Path + Filename</source>
+        <translation type="unfinished">按路径+文件名称</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="544"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <source>By Date</source>
+        <translation type="unfinished">按日期</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="545"/>
+        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <source>By Track Number</source>
+        <translation type="unfinished">按单曲号</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="546"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <source>By Disc Number</source>
+        <translation type="unfinished">按光盘号</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <source>By File Creation Date</source>
+        <translation type="unfinished">按文件的创建日期</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="548"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <source>By File Modification Date</source>
+        <translation type="unfinished">按文件的修改日期</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <source>By Group</source>
+        <translation type="unfinished">按组</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <source>Sort Selection</source>
+        <translation type="unfinished">排序选择</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <source>Randomize List</source>
+        <translation type="unfinished">随机列表</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <source>Reverse List</source>
+        <translation type="unfinished">反序列表</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="618"/>
+        <source>Actions</source>
+        <translation type="unfinished">行动</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiPlayListHeader</name>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="54"/>
+        <source>Add Column</source>
+        <translation type="unfinished">增加n列</translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="55"/>
+        <source>Edit Column</source>
+        <translation type="unfinished">编辑n列</translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="56"/>
+        <source>Show Queue/Protocol</source>
+        <translation type="unfinished">显示排队/协议</translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="58"/>
+        <source>Auto-resize</source>
+        <translation type="unfinished">自动调整大小</translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="61"/>
+        <source>Alignment</source>
+        <translation type="unfinished">对齐</translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="62"/>
+        <source>Left</source>
+        <comment>alignment</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="63"/>
+        <source>Right</source>
+        <comment>alignment</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="64"/>
+        <source>Center</source>
+        <comment>alignment</comment>
+        <translation type="unfinished">居中</translation>
+    </message>
+    <message>
+        <location filename="../qsuiplaylistheader.cpp" line="74"/>
+        <source>Remove Column</source>
+        <translation type="unfinished">移除n列</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiPopupSettings</name>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="14"/>
+        <source>Popup Information Settings</source>
+        <translation type="unfinished">弹出信息设置</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="29"/>
+        <source>Template</source>
+        <translation type="unfinished">模板</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="58"/>
+        <source>Reset</source>
+        <translation type="unfinished">重置</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="65"/>
+        <source>Insert</source>
+        <translation type="unfinished">插入</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="75"/>
+        <source>Show cover</source>
+        <translation type="unfinished">显示封面</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="89"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">封面尺寸：</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="115"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">透明：</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="145"/>
+        <source>Delay:</source>
+        <translation type="unfinished">延迟：</translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuipopupsettings.ui" line="165"/>
+        <source>ms</source>
+        <translation type="unfinished">毫秒</translation>
     </message>
 </context>
 <context>
@@ -1654,24 +1646,6 @@
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ShortcutDialog</name>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="14"/>
-        <source>Change Shortcut</source>
-        <translation>更改热键</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>按下您希望分配的按键组合</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
-        <source>Clear</source>
-        <translation>清除</translation>
     </message>
 </context>
 <context>

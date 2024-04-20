@@ -460,14 +460,6 @@
     </message>
 </context>
 <context>
-    <name>ColorWidget</name>
-    <message>
-        <location filename="../colorwidget.cpp" line="47"/>
-        <source>Select Color</source>
-        <translation>Selector de color</translation>
-    </message>
-</context>
-<context>
     <name>EqWidget</name>
     <message>
         <location filename="../eqwidget.cpp" line="47"/>
@@ -1126,24 +1118,6 @@
     <message>
         <location filename="../forms/preseteditor.ui" line="84"/>
         <source>Delete</source>
-        <translation>Borrar</translation>
-    </message>
-</context>
-<context>
-    <name>ShortcutDialog</name>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="14"/>
-        <source>Change Shortcut</source>
-        <translation>Cambiar atajo</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Pulse la combinación de teclas que quiere asignar</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
-        <source>Clear</source>
         <translation>Borrar</translation>
     </message>
 </context>

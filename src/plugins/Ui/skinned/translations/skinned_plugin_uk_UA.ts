@@ -460,14 +460,6 @@
     </message>
 </context>
 <context>
-    <name>ColorWidget</name>
-    <message>
-        <location filename="../colorwidget.cpp" line="47"/>
-        <source>Select Color</source>
-        <translation>Оберіть колір</translation>
-    </message>
-</context>
-<context>
     <name>EqWidget</name>
     <message>
         <location filename="../eqwidget.cpp" line="171"/>
@@ -1127,24 +1119,6 @@
         <location filename="../forms/preseteditor.ui" line="52"/>
         <source>Auto-preset</source>
         <translation>Авто-предвстановлення</translation>
-    </message>
-</context>
-<context>
-    <name>ShortcutDialog</name>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="14"/>
-        <source>Change Shortcut</source>
-        <translation>Змінити комбінацію клавіш</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Натисніть клавіші, комбінації яких ви бажаєте використовувати</translation>
-    </message>
-    <message>
-        <location filename="../forms/shortcutdialog.ui" line="52"/>
-        <source>Clear</source>
-        <translation>Очистити</translation>
     </message>
 </context>
 <context>
