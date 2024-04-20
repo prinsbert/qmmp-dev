@@ -54,17 +54,17 @@ int main(int argc, char *argv[])
 #endif
 
     QApplication a(argc, argv);
-    a.setApplicationName("qmmp");
-    a.setOrganizationName("qmmp");
+    a.setApplicationName(u"qmmp"_s);
+    a.setOrganizationName(u"qmmp"_s);
     QIcon icon;
-    icon.addFile(":/16x16/qmmp.png");
-    icon.addFile(":/32x32/qmmp.png");
-    icon.addFile(":/48x48/qmmp.png");
-    icon.addFile(":/56x56/qmmp.png");
-    icon.addFile(":/64x64/qmmp.png");
-    icon.addFile(":/128x128/qmmp.png");
-    icon.addFile(":/256x256/qmmp.png");
-    icon.addFile(":/scalable/qmmp.svgz");
+    icon.addFile(u":/16x16/qmmp.png"_s);
+    icon.addFile(u":/32x32/qmmp.png"_s);
+    icon.addFile(u":/48x48/qmmp.png"_s);
+    icon.addFile(u":/56x56/qmmp.png"_s);
+    icon.addFile(u":/64x64/qmmp.png"_s);
+    icon.addFile(u":/128x128/qmmp.png"_s);
+    icon.addFile(u":/256x256/qmmp.png"_s);
+    icon.addFile(u":/scalable/qmmp.svgz"_s);
     a.setWindowIcon(icon);
 
     QMMPStarter starter;
