@@ -135,28 +135,28 @@ QMMPStarter::QMMPStarter() : QObject()
             return;
         }
 
-//        if(flags & CommandLineHandler::NoStart)
-//        {
-//            m_exit_code = EXIT_SUCCESS;
-//            m_finished = true;
-//            QString out = CommandLineManager::executeCommand(key, commands.value(key)).trimmed();
-//            if(!out.isEmpty())
-//            {
-//                //show dialog with command line documentation under ms windows
-//#ifdef Q_OS_WIN
-//                stringstream tmp_stream;
-//                tmp_stream.copyfmt(cout);
-//                streambuf *old_stream = cout.rdbuf(tmp_stream.rdbuf());
-//#endif
-//                cout << qPrintable(CommandLineManager::executeCommand(key, commands.value(key)).trimmed()) << endl;
-//#ifdef Q_OS_WIN
-//                string text = tmp_stream.str();
-//                QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
-//                cout.rdbuf(old_stream); //restore old stream buffer
-//#endif
-//            }
-//            return;
-//        }
+        if(flags & CommandLineHandler::NoStart)
+        {
+            m_exit_code = EXIT_SUCCESS;
+            m_finished = true;
+            QString out = CommandLineManager::executeCommand(key, commands.value(key), QDir::currentPath()).trimmed();
+            if(!out.isEmpty())
+            {
+                //show dialog with command line documentation under ms windows
+#ifdef Q_OS_WIN
+                stringstream tmp_stream;
+                tmp_stream.copyfmt(cout);
+                streambuf *old_stream = cout.rdbuf(tmp_stream.rdbuf());
+#endif
+                cout << qPrintable(out.trimmed()) << endl;
+#ifdef Q_OS_WIN
+                string text = tmp_stream.str();
+                QMessageBox::information(nullptr, tr("Command Line Help"), QString::fromLocal8Bit(text.c_str()));
+                cout.rdbuf(old_stream); //restore old stream buffer
+#endif
+            }
+            return;
+        }
     }
 
     m_server = new QLocalServer(this);
@@ -415,7 +415,7 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
     }
     if(!paths.isEmpty())
     {
-        //return m_option_manager->executeCommand(QString(), paths, cwd); //add paths only
+        return m_option_manager->executeCommand(BuiltinCommandLineOption::OPEN, paths, cwd); //add paths only
     }
     QHash<QString, QStringList> commands = m_option_manager->splitArgs(slist);
     if(commands.isEmpty())
