@@ -4,87 +4,87 @@
 <context>
     <name>BuiltinCommandLineOption</name>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="70"/>
+        <location filename="../builtincommandlineoption.cpp" line="46"/>
         <source>Don&apos;t clear the playlist</source>
         <translation>Non ripulire la scaletta</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="71"/>
+        <location filename="../builtincommandlineoption.cpp" line="47"/>
         <source>Start playing current song</source>
         <translation>Inizia il brano scelto</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="72"/>
+        <location filename="../builtincommandlineoption.cpp" line="48"/>
         <source>Pause current song</source>
         <translation>Sospendi il brano in riproduzione</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="73"/>
+        <location filename="../builtincommandlineoption.cpp" line="49"/>
         <source>Pause if playing, play otherwise</source>
         <translation>Sospendi il brano se in riproduzione; lo riprende se in pausa</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="74"/>
+        <location filename="../builtincommandlineoption.cpp" line="50"/>
         <source>Stop current song</source>
         <translation>Arresta il brano in esecuzione</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="75"/>
-        <source>Display Jump to File dialog</source>
-        <translation>Mostra il menu «Vai al file»</translation>
+        <location filename="../builtincommandlineoption.cpp" line="51"/>
+        <source>Display Jump to Track dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="76"/>
+        <location filename="../builtincommandlineoption.cpp" line="52"/>
         <source>Quit application</source>
         <translation>Chiudi l&apos;applicazione</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="77"/>
+        <location filename="../builtincommandlineoption.cpp" line="53"/>
         <source>Set playback volume (example: qmmp --volume 20)</source>
         <translation>Imposta il volume di riproduzione (esempio: qmmp --volume 20)</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="78"/>
+        <location filename="../builtincommandlineoption.cpp" line="54"/>
         <source>Print volume level</source>
         <translation>Stampa il livello del volume</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="79"/>
+        <location filename="../builtincommandlineoption.cpp" line="55"/>
         <source>Mute/Restore volume</source>
         <translation>Silenzia/ripristina volume</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="80"/>
+        <location filename="../builtincommandlineoption.cpp" line="56"/>
         <source>Print mute status</source>
         <translation>Stampa lo stato del silenzio</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="81"/>
+        <location filename="../builtincommandlineoption.cpp" line="57"/>
         <source>Skip forward in playlist</source>
         <translation>Scorri in avanti nella scaletta</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="82"/>
+        <location filename="../builtincommandlineoption.cpp" line="58"/>
         <source>Skip backwards in playlist</source>
         <translation>Scorri indietro nella scaletta</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="83"/>
+        <location filename="../builtincommandlineoption.cpp" line="59"/>
         <source>Show/hide application</source>
         <translation>Mostra/nascondi il programma</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="84"/>
+        <location filename="../builtincommandlineoption.cpp" line="60"/>
         <source>Show main window</source>
         <translation>Mostra la finestra principale</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="85"/>
+        <location filename="../builtincommandlineoption.cpp" line="61"/>
         <source>Display Add File dialog</source>
         <translation>Mostra il menu «Aggiungi file»</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="86"/>
+        <location filename="../builtincommandlineoption.cpp" line="62"/>
         <source>Display Add Directory dialog</source>
         <translation>Mostra il menu «Aggiungi cartella»</translation>
     </message>
@@ -92,88 +92,88 @@
 <context>
     <name>QMMPStarter</name>
     <message>
-        <location filename="../qmmpstarter.cpp" line="131"/>
+        <location filename="../qmmpstarter.cpp" line="130"/>
         <source>Unknown command</source>
         <translation>Comando sconosciuto</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="446"/>
+        <location filename="../qmmpstarter.cpp" line="447"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Uso: qmmp [opzioni] [file]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="447"/>
+        <location filename="../qmmpstarter.cpp" line="448"/>
         <source>Options:</source>
         <translation>Opzioni: </translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="453"/>
+        <location filename="../qmmpstarter.cpp" line="454"/>
         <source>Start qmmp with the specified user interface</source>
         <translation>Avvia qmmp con l&apos;interfaccia utente specificata</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="454"/>
+        <location filename="../qmmpstarter.cpp" line="455"/>
         <source>List all available user interfaces</source>
         <translation>Elenca tutte le interfacce utente disponibili</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="455"/>
+        <location filename="../qmmpstarter.cpp" line="456"/>
         <source>Don&apos;t start the application</source>
         <translation>Non avviare l&apos;applicazione</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="456"/>
+        <location filename="../qmmpstarter.cpp" line="457"/>
         <source>Display this text and exit</source>
         <translation>Mostra questo testo ed esci</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="457"/>
+        <location filename="../qmmpstarter.cpp" line="458"/>
         <source>Print version number and exit</source>
         <translation>Stampa il numero di versione ed esci</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="459"/>
+        <location filename="../qmmpstarter.cpp" line="460"/>
         <source>Home page: %1</source>
         <translation>Pagina principale: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="460"/>
+        <location filename="../qmmpstarter.cpp" line="461"/>
         <source>Development page: %1</source>
         <translation>Pagina di sviluppo: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="461"/>
+        <location filename="../qmmpstarter.cpp" line="462"/>
         <source>Bug tracker: %1</source>
         <translation>Segnalazioni di bug: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="153"/>
-        <location filename="../qmmpstarter.cpp" line="466"/>
+        <location filename="../qmmpstarter.cpp" line="152"/>
+        <location filename="../qmmpstarter.cpp" line="467"/>
         <source>Command Line Help</source>
         <translation>Aiuto a riga di comando</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="479"/>
+        <location filename="../qmmpstarter.cpp" line="480"/>
         <source>QMMP version: %1</source>
         <translation>QMMP versione: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="480"/>
+        <location filename="../qmmpstarter.cpp" line="481"/>
         <source>Compiled with Qt version: %1</source>
         <translation>Compilato con Qt versione: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="481"/>
+        <location filename="../qmmpstarter.cpp" line="482"/>
         <source>Using Qt version: %1</source>
         <translation>Utilizza Qt versione: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="484"/>
+        <location filename="../qmmpstarter.cpp" line="485"/>
         <source>Qmmp Version</source>
         <translation>Versione di Qmmp</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="501"/>
+        <location filename="../qmmpstarter.cpp" line="502"/>
         <source>User Interfaces</source>
         <translation>Interfacce utente</translation>
     </message>

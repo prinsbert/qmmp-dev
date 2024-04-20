@@ -54,19 +54,19 @@
         <translation>Показать настройки списка воспроизведения</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="110"/>
-        <location filename="../playlistoption.cpp" line="130"/>
-        <location filename="../playlistoption.cpp" line="169"/>
+        <location filename="../playlistoption.cpp" line="111"/>
+        <location filename="../playlistoption.cpp" line="131"/>
+        <location filename="../playlistoption.cpp" line="170"/>
         <source>Invalid playlist ID</source>
         <translation>Неправильный номер списка воспроизведения</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="124"/>
+        <location filename="../playlistoption.cpp" line="125"/>
         <source>Invalid number of arguments</source>
         <translation>Неправильное число аргументов</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="134"/>
+        <location filename="../playlistoption.cpp" line="135"/>
         <source>Invalid track ID</source>
         <translation>Неправильный номер трека</translation>
     </message>

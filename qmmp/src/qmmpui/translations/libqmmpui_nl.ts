@@ -34,67 +34,67 @@
         <translation>Licentie-overeenkomst</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="70"/>
+        <location filename="../aboutdialog.cpp" line="68"/>
         <source>Qt-based Multimedia Player (Qmmp)</source>
         <translation>Op Qt gebaseerde multimediaspeler (Qmmp)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="74"/>
+        <location filename="../aboutdialog.cpp" line="71"/>
         <source>Version: %1</source>
         <translation>Versie: %1</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="75"/>
+        <location filename="../aboutdialog.cpp" line="72"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Gebruikt Qt %1 (gebouwd met Qt %2)</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="78"/>
+        <location filename="../aboutdialog.cpp" line="75"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
         <translation>(c) %1-%2 Qmmp-ontwikkelaarsteam</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="83"/>
+        <location filename="../aboutdialog.cpp" line="80"/>
         <source>Transports:</source>
         <translation>Protocollen:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="93"/>
+        <location filename="../aboutdialog.cpp" line="86"/>
         <source>Decoders:</source>
         <translation>Decoders:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="105"/>
+        <location filename="../aboutdialog.cpp" line="94"/>
         <source>Engines:</source>
         <translation>Aandrijvingen:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="116"/>
+        <location filename="../aboutdialog.cpp" line="101"/>
         <source>Effects:</source>
         <translation>Effecten:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="161"/>
+        <location filename="../aboutdialog.cpp" line="130"/>
         <source>File dialogs:</source>
         <translation>Bestandsvensters:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="174"/>
+        <location filename="../aboutdialog.cpp" line="139"/>
         <source>User interfaces:</source>
         <translation>Vormgevingen:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="149"/>
+        <location filename="../aboutdialog.cpp" line="122"/>
         <source>Output plugins:</source>
         <translation>Uitvoerplug-ins:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="128"/>
+        <location filename="../aboutdialog.cpp" line="109"/>
         <source>Visual plugins:</source>
         <translation>Visuele plug-ins:</translation>
     </message>
     <message>
-        <location filename="../aboutdialog.cpp" line="139"/>
+        <location filename="../aboutdialog.cpp" line="116"/>
         <source>General plugins:</source>
         <translation>Algemene plug-ins:</translation>
     </message>
@@ -117,7 +117,7 @@
         <translation>&amp;Annuleren</translation>
     </message>
     <message>
-        <location filename="../addurldialog.cpp" line="88"/>
+        <location filename="../addurldialog.cpp" line="90"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
@@ -150,102 +150,102 @@
         <translation>Type:</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="85"/>
+        <location filename="../columneditor.cpp" line="87"/>
         <source>Artist</source>
         <translation>Artiest</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="86"/>
+        <location filename="../columneditor.cpp" line="88"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="90"/>
+        <location filename="../columneditor.cpp" line="92"/>
         <source>Title</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="93"/>
+        <location filename="../columneditor.cpp" line="95"/>
         <source>Genre</source>
         <translation>Genre</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="94"/>
+        <location filename="../columneditor.cpp" line="96"/>
         <source>Comment</source>
         <translation>Opmerking</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="95"/>
+        <location filename="../columneditor.cpp" line="97"/>
         <source>Composer</source>
         <translation>Componist</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="96"/>
+        <location filename="../columneditor.cpp" line="98"/>
         <source>Duration</source>
         <translation>Duur</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="101"/>
+        <location filename="../columneditor.cpp" line="103"/>
         <source>Year</source>
         <translation>Jaar</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="100"/>
+        <location filename="../columneditor.cpp" line="102"/>
         <source>Track Index</source>
         <translation>Nummerindex</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="87"/>
+        <location filename="../columneditor.cpp" line="89"/>
         <source>Artist - Album</source>
         <translation>Artiest - Album</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="88"/>
+        <location filename="../columneditor.cpp" line="90"/>
         <source>Artist - Title</source>
         <translation>Artiest - Titel</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="89"/>
+        <location filename="../columneditor.cpp" line="91"/>
         <source>Album Artist</source>
         <translation>Albumartiest</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="91"/>
+        <location filename="../columneditor.cpp" line="93"/>
         <source>Track Number</source>
         <translation>Volgnummer</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="92"/>
+        <location filename="../columneditor.cpp" line="94"/>
         <source>Two-digit Track Number</source>
         <translation>Tweecijferig volgnummer</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="97"/>
+        <location filename="../columneditor.cpp" line="99"/>
         <source>Disc Number</source>
         <translation>Schijfnummer</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="98"/>
+        <location filename="../columneditor.cpp" line="100"/>
         <source>File Name</source>
         <translation>Bestandsnaam</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="99"/>
+        <location filename="../columneditor.cpp" line="101"/>
         <source>File Path</source>
         <translation>Bestandspad</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="102"/>
+        <location filename="../columneditor.cpp" line="104"/>
         <source>Parent Directory Name</source>
         <translation>Naam van bovenliggende map</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="103"/>
+        <location filename="../columneditor.cpp" line="105"/>
         <source>Parent Directory Path</source>
         <translation>Pad naar bovenliggende map</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="104"/>
+        <location filename="../columneditor.cpp" line="106"/>
         <source>Custom</source>
         <translation>Aangepast</translation>
     </message>
@@ -383,13 +383,13 @@
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="380"/>
-        <location filename="../configdialog.cpp" line="341"/>
+        <location filename="../configdialog.cpp" line="339"/>
         <source>Preferences</source>
         <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="396"/>
-        <location filename="../configdialog.cpp" line="344"/>
+        <location filename="../configdialog.cpp" line="342"/>
         <source>Information</source>
         <translation>Informatie</translation>
     </message>
@@ -650,197 +650,197 @@
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="204"/>
+        <location filename="../configdialog.cpp" line="202"/>
         <source>Transports</source>
         <translation>Protocollen</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="215"/>
+        <location filename="../configdialog.cpp" line="213"/>
         <source>Decoders</source>
         <translation>Decoders</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="226"/>
+        <location filename="../configdialog.cpp" line="224"/>
         <source>Engines</source>
         <translation>Aandrijvingen</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="238"/>
+        <location filename="../configdialog.cpp" line="236"/>
         <source>Effects</source>
         <translation>Effecten</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="249"/>
+        <location filename="../configdialog.cpp" line="247"/>
         <source>Visualization</source>
         <translation>Visualisatie</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="261"/>
+        <location filename="../configdialog.cpp" line="259"/>
         <source>General</source>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="272"/>
+        <location filename="../configdialog.cpp" line="270"/>
         <source>Output</source>
         <translation>Uitvoer</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="283"/>
+        <location filename="../configdialog.cpp" line="281"/>
         <source>File Dialogs</source>
         <translation>Bestandsvensters</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="295"/>
+        <location filename="../configdialog.cpp" line="293"/>
         <source>User Interfaces</source>
         <translation>Vormgevingen</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="354"/>
+        <location filename="../configdialog.cpp" line="352"/>
         <source>&lt;Autodetect&gt;</source>
         <translation>&lt;Autodetect&gt;</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="355"/>
+        <location filename="../configdialog.cpp" line="353"/>
         <source>Brazilian Portuguese</source>
         <translation>Portugees (Brazilië)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="356"/>
+        <location filename="../configdialog.cpp" line="354"/>
         <source>Chinese Simplified</source>
         <translation>Chinees (Vereenvoudigd)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="357"/>
+        <location filename="../configdialog.cpp" line="355"/>
         <source>Chinese Traditional</source>
         <translation>Chinees (Traditioneel)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="358"/>
+        <location filename="../configdialog.cpp" line="356"/>
         <source>Czech</source>
         <translation>Tsjechisch</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="359"/>
+        <location filename="../configdialog.cpp" line="357"/>
         <source>Dutch</source>
         <translation>Nederlands</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="360"/>
+        <location filename="../configdialog.cpp" line="358"/>
         <source>English</source>
         <translation>Engels</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="361"/>
+        <location filename="../configdialog.cpp" line="359"/>
         <source>French</source>
         <translation>Frans</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="362"/>
+        <location filename="../configdialog.cpp" line="360"/>
         <source>Galician</source>
         <translation>Galicisch</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="363"/>
+        <location filename="../configdialog.cpp" line="361"/>
         <source>German</source>
         <translation>Duits</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="364"/>
+        <location filename="../configdialog.cpp" line="362"/>
         <source>Greek</source>
         <translation>Grieks</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="365"/>
+        <location filename="../configdialog.cpp" line="363"/>
         <source>Hebrew</source>
         <translation>Hebreeuws</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="366"/>
+        <location filename="../configdialog.cpp" line="364"/>
         <source>Hungarian</source>
         <translation>Hongaars</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="367"/>
+        <location filename="../configdialog.cpp" line="365"/>
         <source>Indonesian</source>
         <translation>Indonesisch</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="368"/>
+        <location filename="../configdialog.cpp" line="366"/>
         <source>Italian</source>
         <translation>Italiaans</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="369"/>
+        <location filename="../configdialog.cpp" line="367"/>
         <source>Japanese</source>
         <translation>Japans</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="370"/>
+        <location filename="../configdialog.cpp" line="368"/>
         <source>Kazakh</source>
         <translation>Kazachs</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="371"/>
+        <location filename="../configdialog.cpp" line="369"/>
         <source>Korean</source>
         <translation>Koreaans</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="372"/>
+        <location filename="../configdialog.cpp" line="370"/>
         <source>Lithuanian</source>
         <translation>Litouws</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="373"/>
+        <location filename="../configdialog.cpp" line="371"/>
         <source>Polish</source>
         <translation>Pools</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="374"/>
+        <location filename="../configdialog.cpp" line="372"/>
         <source>Portuguese</source>
         <translation>Portugees</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="375"/>
+        <location filename="../configdialog.cpp" line="373"/>
         <source>Russian</source>
         <translation>Russisch</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="376"/>
+        <location filename="../configdialog.cpp" line="374"/>
         <source>Serbian</source>
         <translation>Servisch</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="377"/>
+        <location filename="../configdialog.cpp" line="375"/>
         <source>Slovak</source>
         <translation>Slowaaks</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="378"/>
+        <location filename="../configdialog.cpp" line="376"/>
         <source>Swedish</source>
         <translation>Zweeds</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="379"/>
+        <location filename="../configdialog.cpp" line="377"/>
         <source>Spanish</source>
         <translation>Spaans</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="380"/>
+        <location filename="../configdialog.cpp" line="378"/>
         <source>Turkish</source>
         <translation>Turks</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="381"/>
+        <location filename="../configdialog.cpp" line="379"/>
         <source>Ukrainian</source>
         <translation>Oekraïens</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="382"/>
+        <location filename="../configdialog.cpp" line="380"/>
         <source>Serbian (Ijekavian)</source>
         <translation>Servisch (Ijekavisch)</translation>
     </message>
     <message>
-        <location filename="../configdialog.cpp" line="383"/>
+        <location filename="../configdialog.cpp" line="381"/>
         <source>Serbian (Ekavian)</source>
         <translation>Servisch (Ekavisch)</translation>
     </message>
@@ -925,13 +925,13 @@
         <translation>CUE-bestand openen</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="133"/>
-        <location filename="../cueeditor.cpp" line="152"/>
+        <location filename="../cueeditor.cpp" line="131"/>
+        <location filename="../cueeditor.cpp" line="150"/>
         <source>CUE Files</source>
         <translation>CUE-bestanden</translation>
     </message>
     <message>
-        <location filename="../cueeditor.cpp" line="150"/>
+        <location filename="../cueeditor.cpp" line="148"/>
         <source>Save CUE File</source>
         <translation>CUE-bestand opslaan</translation>
     </message>
@@ -959,132 +959,132 @@
         <translation>Samenvatting</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="206"/>
+        <location filename="../detailsdialog.cpp" line="207"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="258"/>
+        <location filename="../detailsdialog.cpp" line="259"/>
         <source>Cover</source>
         <translation>Hoes</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="284"/>
+        <location filename="../detailsdialog.cpp" line="285"/>
         <source>Lyrics</source>
         <translation>Songteksten</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="304"/>
+        <location filename="../detailsdialog.cpp" line="305"/>
         <source>Title</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="305"/>
+        <location filename="../detailsdialog.cpp" line="306"/>
         <source>Artist</source>
         <translation>Artiest</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="306"/>
+        <location filename="../detailsdialog.cpp" line="307"/>
         <source>Album artist</source>
         <translation>Albumartiest</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="307"/>
+        <location filename="../detailsdialog.cpp" line="308"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="308"/>
+        <location filename="../detailsdialog.cpp" line="309"/>
         <source>Comment</source>
         <translation>Opmerking</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="309"/>
+        <location filename="../detailsdialog.cpp" line="310"/>
         <source>Genre</source>
         <translation>Genre</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="310"/>
+        <location filename="../detailsdialog.cpp" line="311"/>
         <source>Composer</source>
         <translation>Componist</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="311"/>
+        <location filename="../detailsdialog.cpp" line="312"/>
         <source>Year</source>
         <translation>Jaar</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="312"/>
+        <location filename="../detailsdialog.cpp" line="313"/>
         <source>Track</source>
         <translation>Nummer</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="313"/>
+        <location filename="../detailsdialog.cpp" line="314"/>
         <source>Disc number</source>
         <translation>Schijfnummer</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="332"/>
+        <location filename="../detailsdialog.cpp" line="333"/>
         <source>Duration</source>
         <translation>Duur</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Bitrate</source>
         <translation>Bitsnelheid</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="335"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="336"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Sample rate</source>
         <translation>Samplesnelheid</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="336"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Channels</source>
         <translation>Kanalen</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="338"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>Sample size</source>
         <translation>Samplegrootte</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="338"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>bits</source>
         <translation>bits</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="340"/>
         <source>Format name</source>
         <translation>Opmaak</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="340"/>
+        <location filename="../detailsdialog.cpp" line="341"/>
         <source>File size</source>
         <translation>Bestandsgrootte</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="340"/>
+        <location filename="../detailsdialog.cpp" line="341"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="384"/>
+        <location filename="../detailsdialog.cpp" line="385"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="384"/>
+        <location filename="../detailsdialog.cpp" line="385"/>
         <source>No</source>
         <translation>Nee</translation>
     </message>
@@ -1103,8 +1103,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="118"/>
-        <location filename="../jumptotrackdialog.cpp" line="149"/>
+        <location filename="../jumptotrackdialog.cpp" line="121"/>
+        <location filename="../jumptotrackdialog.cpp" line="152"/>
         <source>Queue</source>
         <translation>Wachtrij</translation>
     </message>
@@ -1114,18 +1114,18 @@
         <translation>Ga naar</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="94"/>
+        <location filename="../jumptotrackdialog.cpp" line="96"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="95"/>
+        <location filename="../jumptotrackdialog.cpp" line="97"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="116"/>
-        <location filename="../jumptotrackdialog.cpp" line="147"/>
+        <location filename="../jumptotrackdialog.cpp" line="119"/>
+        <location filename="../jumptotrackdialog.cpp" line="150"/>
         <source>Unqueue</source>
         <translation>Verwijderen uit wachtrij</translation>
     </message>
@@ -1133,148 +1133,148 @@
 <context>
     <name>MetaDataFormatterMenu</name>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="26"/>
+        <location filename="../metadataformattermenu.cpp" line="28"/>
         <source>Artist</source>
         <translation>Artiest</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="27"/>
+        <location filename="../metadataformattermenu.cpp" line="29"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="28"/>
+        <location filename="../metadataformattermenu.cpp" line="30"/>
         <source>Album Artist</source>
         <translation>Albumartiest</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="31"/>
+        <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Title</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="32"/>
+        <location filename="../metadataformattermenu.cpp" line="34"/>
         <source>Track Number</source>
         <translation>Volgnummer</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="33"/>
+        <location filename="../metadataformattermenu.cpp" line="35"/>
         <source>Two-digit Track Number</source>
         <translation>Tweecijferig volgnummer</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="37"/>
+        <location filename="../metadataformattermenu.cpp" line="39"/>
         <source>Track Index</source>
         <translation>Nummerindex</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="39"/>
+        <location filename="../metadataformattermenu.cpp" line="41"/>
         <source>Genre</source>
         <translation>Genre</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="40"/>
+        <location filename="../metadataformattermenu.cpp" line="42"/>
         <source>Comment</source>
         <translation>Opmerking</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="41"/>
+        <location filename="../metadataformattermenu.cpp" line="43"/>
         <source>Composer</source>
         <translation>Componist</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="46"/>
-        <location filename="../metadataformattermenu.cpp" line="59"/>
+        <location filename="../metadataformattermenu.cpp" line="48"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration</source>
         <translation>Duur</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="54"/>
+        <location filename="../metadataformattermenu.cpp" line="56"/>
         <source>Artist - Album</source>
         <translation type="unfinished">Artiest - Album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="60"/>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Year | Duration | Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Parent Directory Path</source>
         <translation>Pad naar bovenliggende map</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <location filename="../metadataformattermenu.cpp" line="67"/>
         <source>Bitrate</source>
         <translation>Bitsnelheid</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="66"/>
+        <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Sample Rate</source>
         <translation>Samplesnelheid</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="67"/>
+        <location filename="../metadataformattermenu.cpp" line="69"/>
         <source>Number of Channels</source>
         <translation>Aantal kanalen</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="68"/>
+        <location filename="../metadataformattermenu.cpp" line="70"/>
         <source>Sample Size</source>
         <translation>Samplegrootte</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="69"/>
+        <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Format</source>
         <translation>Formaat</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="70"/>
+        <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Decoder</source>
         <translation>Decoder</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="73"/>
+        <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>File Size</source>
         <translation>Bestandsgrootte</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="42"/>
+        <location filename="../metadataformattermenu.cpp" line="44"/>
         <source>Disc Number</source>
         <translation>Schijfnummer</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="47"/>
+        <location filename="../metadataformattermenu.cpp" line="49"/>
         <source>File Name</source>
         <translation>Bestandsnaam</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="48"/>
+        <location filename="../metadataformattermenu.cpp" line="50"/>
         <source>File Path</source>
         <translation>Bestandspad</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="43"/>
+        <location filename="../metadataformattermenu.cpp" line="45"/>
         <source>Year</source>
         <translation>Jaar</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="50"/>
+        <location filename="../metadataformattermenu.cpp" line="52"/>
         <source>Condition</source>
         <translation>Staat</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="49"/>
+        <location filename="../metadataformattermenu.cpp" line="51"/>
         <source>Artist - Title</source>
         <translation>Artiest - Naam</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="55"/>
+        <location filename="../metadataformattermenu.cpp" line="57"/>
         <source>Artist - [Year] Album</source>
         <translation>Artiest - [Jaar] Album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Parent Directory Name</source>
         <translation>Naam van bovenliggende map</translation>
     </message>
@@ -1308,8 +1308,8 @@
 <context>
     <name>PlayListManager</name>
     <message>
-        <location filename="../playlistmanager.cpp" line="181"/>
-        <location filename="../playlistmanager.cpp" line="329"/>
+        <location filename="../playlistmanager.cpp" line="177"/>
+        <location filename="../playlistmanager.cpp" line="325"/>
         <source>Playlist</source>
         <translation>Afspeellijst</translation>
     </message>
@@ -1338,7 +1338,7 @@
 <context>
     <name>QtFileDialogFactory</name>
     <message>
-        <location filename="../qtfiledialog.cpp" line="35"/>
+        <location filename="../qtfiledialog.cpp" line="36"/>
         <source>Qt File Dialog</source>
         <translation>Qt-bestandsvenster</translation>
     </message>
@@ -1456,7 +1456,7 @@
     </message>
     <message>
         <location filename="../uihelper.cpp" line="178"/>
-        <location filename="../uihelper.cpp" line="204"/>
+        <location filename="../uihelper.cpp" line="202"/>
         <source>Playlist Files</source>
         <translation>Afspeellijstbestanden</translation>
     </message>
@@ -1466,13 +1466,13 @@
         <translation>Afspeellijst openen</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="207"/>
-        <location filename="../uihelper.cpp" line="226"/>
+        <location filename="../uihelper.cpp" line="205"/>
+        <location filename="../uihelper.cpp" line="224"/>
         <source>Save Playlist</source>
         <translation>Afspeellijst opslaan</translation>
     </message>
     <message>
-        <location filename="../uihelper.cpp" line="226"/>
+        <location filename="../uihelper.cpp" line="224"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 bestaat al.

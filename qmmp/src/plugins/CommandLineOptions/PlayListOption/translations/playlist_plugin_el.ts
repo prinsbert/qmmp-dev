@@ -54,19 +54,19 @@
         <translation>Εμφάνιση των επιλογών της λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="110"/>
-        <location filename="../playlistoption.cpp" line="130"/>
-        <location filename="../playlistoption.cpp" line="169"/>
+        <location filename="../playlistoption.cpp" line="111"/>
+        <location filename="../playlistoption.cpp" line="131"/>
+        <location filename="../playlistoption.cpp" line="170"/>
         <source>Invalid playlist ID</source>
         <translation>Μη έγκυρο αναγνωριστικό της λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="124"/>
+        <location filename="../playlistoption.cpp" line="125"/>
         <source>Invalid number of arguments</source>
         <translation>Μη έγκυρος αριθμός ορισμάτων</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="134"/>
+        <location filename="../playlistoption.cpp" line="135"/>
         <source>Invalid track ID</source>
         <translation>Μη έγκυρο αναγνωριστικό κομματιού</translation>
     </message>
