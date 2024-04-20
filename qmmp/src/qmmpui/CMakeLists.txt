@@ -60,6 +60,7 @@ SET(libqmmpui_SRCS
     coverloader.cpp
     generalfactory.cpp
     cueeditor.cpp
+    visualmenu.cpp
     forms/detailsdialog.ui
     forms/tageditor.ui
     forms/templateeditor.ui
@@ -101,6 +102,7 @@ SET(libqmmpui_DEVEL_HDRS
     uihelper.h
     uiloader.h
     playlistheadermodel.h
+    visualmenu.h
     qmmpui_export.h
 )
 

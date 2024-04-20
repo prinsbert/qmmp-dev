@@ -39,11 +39,11 @@
 #include <qmmpui/uihelper.h>
 #include <qmmpui/configdialog.h>
 #include <qmmpui/qmmpuisettings.h>
+#include <qmmpui/visualmenu.h>
 #include "qsuitabbar.h"
 #include "toolbareditor.h"
 #include "actionmanager.h"
 #include "qsuivisualization.h"
-#include "visualmenu.h"
 #include "listwidget.h"
 #include "positionslider.h"
 #include "mainwindow.h"

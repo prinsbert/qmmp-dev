@@ -17,42 +17,24 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef VISUALMENU_H
+#define VISUALMENU_H
 
+#include <QMenu>
 #include <QAction>
-#include <qmmp/visual.h>
-#include <qmmp/visualfactory.h>
-#include "visualmenu.h"
+#include "qmmpui_export.h"
 
-VisualMenu::VisualMenu(QWidget *parent) : QMenu(tr("Visualization"), parent)
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class QMMPUI_EXPORT VisualMenu : public QMenu
 {
-    for(VisualFactory *factory : Visual::factories())
-    {
-        VisualAction *act = new VisualAction(factory, this);
-        addAction(act);
-    }
-}
+    Q_OBJECT
+public:
+    explicit VisualMenu(QWidget *parent = nullptr);
 
-VisualMenu::~VisualMenu()
-{
-}
+public slots:
+    void updateActions();
+};
 
-void VisualMenu::updateActions()
-{
-    for(int i = 0; i < Visual::factories().size(); ++i)
-    {
-        actions().at(i)->setChecked(Visual::isEnabled(Visual::factories().at(i)));
-    }
-}
-
-VisualAction::VisualAction(VisualFactory *factory, QWidget *parent) : QAction(factory->properties().name, parent),
-    m_factory(factory)
-{
-    setCheckable (true);
-    setChecked (Visual::isEnabled(factory));
-    connect(this, SIGNAL(triggered(bool)), SLOT(select(bool)));
-}
-
-void VisualAction::select(bool select)
-{
-    Visual::setEnabled(m_factory, select);
-}
+#endif
