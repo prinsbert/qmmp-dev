@@ -23,7 +23,6 @@ SET(libqsui_SRCS
     keyboardmanager.cpp
     qsuivisualization.cpp
     fft.c
-    colorwidget.cpp
     qsuitabwidget.cpp
     qsuitabbar.cpp
     eqpreset.cpp
