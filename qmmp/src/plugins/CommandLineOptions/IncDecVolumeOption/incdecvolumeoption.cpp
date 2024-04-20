@@ -26,18 +26,18 @@
 
 void IncDecVolumeCommandLineOption::registerOprions()
 {
-    registerOption(VOLUME_UP, "--volume-inc", tr("Increase volume by 5 steps"));
-    registerOption(VOLUME_DOWN, "--volume-dec", tr("Decrease volume by 5 steps"));
+    registerOption(VOLUME_UP, u"--volume-inc"_s, tr("Increase volume by 5 steps"));
+    registerOption(VOLUME_DOWN, u"--volume-dec"_s, tr("Decrease volume by 5 steps"));
 }
 
 QString IncDecVolumeCommandLineOption::shortName() const
 {
-    return "IncDecVolumeCommandLineOption";
+    return "IncDecVolumeCommandLineOption"_L1;
 }
 
 QString IncDecVolumeCommandLineOption::translation() const
 {
-    return QLatin1String(":/incdecvolume_plugin_");
+    return ":/incdecvolume_plugin_"_L1;
 }
 
 QString IncDecVolumeCommandLineOption::executeCommand(int id, const QStringList &args, const QString &cwd)

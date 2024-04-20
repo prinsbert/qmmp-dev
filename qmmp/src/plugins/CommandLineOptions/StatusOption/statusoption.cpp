@@ -27,10 +27,9 @@
 
 void StatusOption::registerOprions()
 {
-    registerOption(STATUS, "--status", tr("Print playback status"));
-    registerOption(NOW_PLAYING, "--nowplaying", tr("Print formatted track name (example: qmmp --nowplaying \"%t - %a\")"),
-                   QStringList() << "fmt");
-    registerOption(NOW_PLAYING_SYNTAX, "--nowplaying-syntax", tr("Print --nowplaying syntax"));
+    registerOption(STATUS, u"--status"_s, tr("Print playback status"));
+    registerOption(NOW_PLAYING, u"--nowplaying"_s, tr("Print formatted track name (example: qmmp --nowplaying \"%t - %a\")"), { u"fmt"_s });
+    registerOption(NOW_PLAYING_SYNTAX, u"--nowplaying-syntax"_s, tr("Print --nowplaying syntax"));
 
     setOptionFlags(NOW_PLAYING_SYNTAX, NoStart);
 }
@@ -55,66 +54,66 @@ QString StatusOption::executeCommand(int id, const QStringList &args, const QStr
     case STATUS:
     {
         QMap<int, QString> state_names;
-        state_names.insert(Qmmp::Playing, "[playing]");
-        state_names.insert(Qmmp::Paused, "[paused]");
-        state_names.insert(Qmmp::Stopped, "[stopped]");
-        state_names.insert(Qmmp::Buffering, "[buffering]");
-        state_names.insert(Qmmp::NormalError, "[error]");
-        state_names.insert(Qmmp::FatalError, "[error]");
+        state_names.insert(Qmmp::Playing, u"[playing]"_s);
+        state_names.insert(Qmmp::Paused, u"[paused]"_s);
+        state_names.insert(Qmmp::Stopped, u"[stopped]"_s);
+        state_names.insert(Qmmp::Buffering, u"[buffering]"_s);
+        state_names.insert(Qmmp::NormalError, u"[error]"_s);
+        state_names.insert(Qmmp::FatalError, u"[error]"_s);
         out += state_names[core->state()];
 
         if(core->state() == Qmmp::Playing || core->state() == Qmmp::Paused)
         {
-            out += " ";
-            out += genProgressBar() + "\n";
-            out += "ARTIST = %p\n";
-            out += "ALBUMARTIST = %aa\n";
-            out += "TITLE = %t\n";
-            out += "ALBUM = %a\n";
-            out += "COMMENT = %c\n";
-            out += "GENRE = %g\n";
-            out += "YEAR = %y\n";
-            out += "TRACK = %n\n";
-            out += "FILE = %f";
+            out += QChar::Space;
+            out += genProgressBar() + QChar::LineFeed;
+            out += u"ARTIST = %p\n"_s;
+            out += u"ALBUMARTIST = %aa\n"_s;
+            out += u"TITLE = %t\n"_s;
+            out += u"ALBUM = %a\n"_s;
+            out += u"COMMENT = %c\n"_s;
+            out += u"GENRE = %g\n"_s;
+            out += u"YEAR = %y\n"_s;
+            out += u"TRACK = %n\n"_s;
+            out += u"FILE = %f"_s;
             MetaDataFormatter formatter(out);
             out = formatter.format(core->trackInfo());
         }
-        out += "\n";
+        out += QChar::LineFeed;
     }
         break;
     case NOW_PLAYING:
     {
-        QString t = args.join(" ");
+        QString t = args.join(QChar::Space);
         MetaDataFormatter formatter(t);
         out = formatter.format(core->trackInfo());
-        out += "\n";
+        out += QChar::LineFeed;
     }
         break;
     case NOW_PLAYING_SYNTAX:
     {
-        out += tr("Syntax:") + "\n";
-        out += tr("%p - artist") + "\n";
-        out += tr("%a - album") + "\n";
-        out += tr("%aa - album artist") + "\n";
-        out += tr("%t - title") + "\n";
-        out += tr("%n - track") + "\n";
-        out += tr("%NN - 2-digit track") + "\n";
-        out += tr("%g - genre") + "\n";
-        out += tr("%c - comment") + "\n";
-        out += tr("%C - composer") + "\n";
-        out += tr("%D - disc number") + "\n";
-        out += tr("%f - file name") + "\n";
-        out += tr("%F - full path") + "\n";
-        out += tr("%y - year") + "\n";
-        out += tr("%l - duration") + "\n";
-        out += tr("%{bitrate} - bitrate") + "\n";
-        out += tr("%{samplerate} - sample rate") + "\n";
-        out += tr("%{channels} - number of channels") + "\n";
-        out += tr("%{samplesize} - bits per sample") + "\n";
-        out += tr("%{format} - format name") + "\n";
-        out += tr("%{decoder} - decoder name") + "\n";
-        out += tr("%{filesize} - file size") + "\n";
-        out += tr("%if(A&B&C,D,E) - condition") + "\n";
+        out += tr("Syntax:") + QChar::LineFeed;
+        out += tr("%p - artist") + QChar::LineFeed;
+        out += tr("%a - album") + QChar::LineFeed;
+        out += tr("%aa - album artist") + QChar::LineFeed;
+        out += tr("%t - title") + QChar::LineFeed;
+        out += tr("%n - track") + QChar::LineFeed;
+        out += tr("%NN - 2-digit track") + QChar::LineFeed;
+        out += tr("%g - genre") + QChar::LineFeed;
+        out += tr("%c - comment") + QChar::LineFeed;
+        out += tr("%C - composer") + QChar::LineFeed;
+        out += tr("%D - disc number") + QChar::LineFeed;
+        out += tr("%f - file name") + QChar::LineFeed;
+        out += tr("%F - full path") + QChar::LineFeed;
+        out += tr("%y - year") + QChar::LineFeed;
+        out += tr("%l - duration") + QChar::LineFeed;
+        out += tr("%{bitrate} - bitrate") + QChar::LineFeed;
+        out += tr("%{samplerate} - sample rate") + QChar::LineFeed;
+        out += tr("%{channels} - number of channels") + QChar::LineFeed;
+        out += tr("%{samplesize} - bits per sample") + QChar::LineFeed;
+        out += tr("%{format} - format name") + QChar::LineFeed;
+        out += tr("%{decoder} - decoder name") + QChar::LineFeed;
+        out += tr("%{filesize} - file size") + QChar::LineFeed;
+        out += tr("%if(A&B&C,D,E) - condition") + QChar::LineFeed;
         out += tr("%dir(n) - directory name located on n levels above");
     }
         break;
@@ -128,21 +127,21 @@ QString StatusOption::executeCommand(int id, const QStringList &args, const QStr
 QString StatusOption::genProgressBar()
 {
     SoundCore *core = SoundCore::instance();
-    QString totalTime = QString("%1:%2").arg(core->duration()/60000)
-            .arg(core->duration()%60000/1000, 2, 10, QChar('0'));
-    QString currentTime = QString("%1:%2").arg(core->elapsed()/60000)
-            .arg(core->elapsed()%60000/1000, 2, 10, QChar('0'));
+    QString totalTime = QStringLiteral("%1:%2").arg(core->duration() / 60000)
+            .arg(core->duration() % 60000 / 1000, 2, 10, QChar('0'));
+    QString currentTime = QStringLiteral("%1:%2").arg(core->elapsed() / 60000)
+            .arg(core->elapsed() % 60000 / 1000, 2, 10, QChar('0'));
     QString out = currentTime;
     if(core->duration())
     {
         out.clear();
-        int played_count = 22 * (double)core->elapsed()/core->duration();
+        int played_count = 22 * (double)core->elapsed() / core->duration();
         for(int i = 0; i < played_count; ++i)
-            out += "=";
-        out += "#";
+            out += QChar('=');
+        out += QChar('#');
         for(int i = played_count; i < 22; ++i)
-            out += "-";
-        out += " " + currentTime + "/" +totalTime;
+            out += QChar('-');
+        out += QChar::Space + currentTime + QChar('/') + totalTime;
     }
     return out;
 }
