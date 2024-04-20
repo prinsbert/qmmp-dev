@@ -24,20 +24,23 @@
 #include <QWidget>
 #include <QString>
 #include <qmmp/metadatamodel.h>
-#include "ui_covereditor.h"
 
 class CoverViewer;
+
+namespace Ui {
+class CoverEditor;
+}
 
 /**
    @internal
    @author Ilya Kotov <forkotov02@ya.ru>
 */
-
 class CoverEditor : public QWidget
 {
     Q_OBJECT
 public:
     explicit CoverEditor(MetaDataModel *model, const QString &coverPath, QWidget *parent = nullptr);
+    ~CoverEditor();
 
     bool isEditable() const;
     void save();
@@ -49,7 +52,7 @@ private slots:
     void on_saveAsButton_clicked();
 
 private:
-    Ui::CoverEditor m_ui;
+    Ui::CoverEditor *m_ui;
     MetaDataModel *m_model;
     CoverViewer *m_viewer;
     QString m_coverPath;

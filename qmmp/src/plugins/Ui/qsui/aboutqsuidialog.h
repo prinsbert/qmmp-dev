@@ -22,7 +22,10 @@
 #define ABOUTQSUIDIALOG_H
 
 #include <QDialog>
-#include "ui_aboutqsuidialog.h"
+
+namespace Ui {
+class AboutQSUIDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -35,9 +38,9 @@ public:
     virtual ~AboutQSUIDialog();
 
 private:
-    Ui::AboutQSUIDialog m_ui;
+    Ui::AboutQSUIDialog *m_ui;
     QString loadAbout();
-    QString getStringFromResource(const QString& res_file);
+    QString getStringFromResource(const QString &res_file);
 };
 
 #endif // ABOUTQSUIDIALOG_H
