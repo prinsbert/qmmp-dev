@@ -24,7 +24,7 @@
 #include <QDialog>
 #include <QModelIndex>
 #include <QIcon>
-#include "actionmanager.h"
+#include "qsuiactionmanager.h"
 
 namespace Ui {
 class ToolBarEditor;
@@ -62,7 +62,7 @@ private:
     void populateActionList(bool reset = false);
     QListWidgetItem *createExtraItem(const QString &name, const QString &shortName, const QIcon &icon = QIcon());
     Ui::ToolBarEditor *m_ui;
-    QList<ActionManager::ToolBarInfo> m_toolBarInfoList;
+    QList<QSUiActionManager::ToolBarInfo> m_toolBarInfoList;
     int m_previousIndex;
 };
 

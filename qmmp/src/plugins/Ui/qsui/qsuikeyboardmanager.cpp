@@ -25,9 +25,9 @@
 #include <qmmpui/mediaplayer.h>
 #include <qmmp/soundcore.h>
 #include "qsuilistwidget.h"
-#include "keyboardmanager.h"
+#include "qsuikeyboardmanager.h"
 
-KeyboardManager::KeyboardManager(QObject *parent) :
+QSUiKeyboardManager::QSUiKeyboardManager(QObject *parent) :
     QObject(parent)
 {
     addAction(Qt::Key_Up, SLOT(processUp()));
@@ -51,12 +51,12 @@ KeyboardManager::KeyboardManager(QObject *parent) :
     addAction(Qt::Key_End | Qt::ShiftModifier, SLOT(processEnd()));
 }
 
-QList<QAction *> KeyboardManager::actions()
+QList<QAction *> QSUiKeyboardManager::actions()
 {
     return m_actions;
 }
 
-void KeyboardManager::processUp()
+void QSUiKeyboardManager::processUp()
 {
     if(!m_listWidget || m_listWidget->filterMode())
         return;
@@ -141,7 +141,7 @@ void KeyboardManager::processUp()
     }
 }
 
-void KeyboardManager::processDown()
+void QSUiKeyboardManager::processDown()
 {
     if(!m_listWidget || m_listWidget->filterMode())
         return;
@@ -227,12 +227,12 @@ void KeyboardManager::processDown()
     }
 }
 
-void KeyboardManager::setListWidget(QSUiListWidget *listWidget)
+void QSUiKeyboardManager::setListWidget(QSUiListWidget *listWidget)
 {
     m_listWidget = listWidget;
 }
 
-void KeyboardManager::processEnter()
+void QSUiKeyboardManager::processEnter()
 {
     if(!m_listWidget || m_listWidget->filterMode())
         return;
@@ -245,7 +245,7 @@ void KeyboardManager::processEnter()
     MediaPlayer::instance()->play();
 }
 
-void KeyboardManager::processPgUp()
+void QSUiKeyboardManager::processPgUp()
 {
     if(!m_listWidget || m_listWidget->filterMode())
         return;
@@ -262,7 +262,7 @@ void KeyboardManager::processPgUp()
     m_listWidget->model()->setSelectedLine(m_listWidget->anchorIndex(), true);
 }
 
-void KeyboardManager::processPgDown()
+void QSUiKeyboardManager::processPgDown()
 {
     if(!m_listWidget || m_listWidget->filterMode())
         return;
@@ -279,7 +279,7 @@ void KeyboardManager::processPgDown()
     m_listWidget->model()->setSelectedLine(m_listWidget->anchorIndex(), true);
 }
 
-void KeyboardManager::processHome()
+void QSUiKeyboardManager::processHome()
 {
     if(!m_listWidget || m_listWidget->filterMode())
         return;
@@ -297,7 +297,7 @@ void KeyboardManager::processHome()
     }
 }
 
-void KeyboardManager::processEnd()
+void QSUiKeyboardManager::processEnd()
 {
     if(!m_listWidget || m_listWidget->filterMode())
         return;
@@ -319,7 +319,7 @@ void KeyboardManager::processEnd()
     }
 }
 
-void KeyboardManager::addAction(QKeyCombination keys, const char *method)
+void QSUiKeyboardManager::addAction(QKeyCombination keys, const char *method)
 {
     QAction *action = new QAction(this);
     action->setShortcut(QKeySequence(keys));

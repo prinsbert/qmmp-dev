@@ -37,7 +37,7 @@ class PlayListManager;
 class GeneralHandler;
 class VisualMenu;
 class QSUiPositionSlider;
-class KeyboardManager;
+class QSUiKeyboardManager;
 class QSUIVisualization;
 class QSUiListWidget;
 class QSUiTabWidget;
@@ -117,7 +117,7 @@ private:
     QMenu *m_tab_menu;
     QSlider *m_volumeSlider;
     QSUiQuickSearch *m_quickSearch;
-    KeyboardManager *m_key_manager;
+    QSUiKeyboardManager *m_key_manager;
     QSUIVisualization *m_analyzer;
     QSUiWaveformSeekBar *m_seekBar;
     QToolButton *m_addListButton, *m_tabListMenuButton;

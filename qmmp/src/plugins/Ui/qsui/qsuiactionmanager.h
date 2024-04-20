@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef ACTIONMANAGER_H
-#define ACTIONMANAGER_H
+#ifndef QSUIACTIONMANAGER_H
+#define QSUIACTIONMANAGER_H
 
 #include <QObject>
 #include <QString>
@@ -32,18 +32,18 @@ class QAction;
 class QSettings;
 class QDockWidget;
 
-#define SET_ACTION(type, receiver, member) ActionManager::instance()->use(type, receiver, member)
-#define ACTION(type) ActionManager::instance()->action(type)
+#define SET_ACTION(type, receiver, member) QSUiActionManager::instance()->use(type, receiver, member)
+#define ACTION(type) QSUiActionManager::instance()->action(type)
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ActionManager : public QObject
+class QSUiActionManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit ActionManager(QObject *parent = nullptr);
-    ~ActionManager();
+    explicit QSUiActionManager(QObject *parent = nullptr);
+    ~QSUiActionManager();
 
     enum Type
     {
@@ -140,11 +140,11 @@ public:
     void removeDockWidget(QDockWidget *w);
     QToolBar *createToolBar(const ToolBarInfo &info, QWidget *parent);
     void updateToolBar(QToolBar *toolBar, const ToolBarInfo &info);
-    ActionManager::ToolBarInfo defaultToolBar() const;
+    QSUiActionManager::ToolBarInfo defaultToolBar() const;
     QList<ToolBarInfo> readToolBarSettings() const;
     void writeToolBarSettings(const QList<ToolBarInfo> &l);
 
-    static ActionManager* instance();
+    static QSUiActionManager* instance();
 
 private:
     QAction *createAction(const QString &name, const QString &confKey, const QString &key = QString(),
@@ -157,8 +157,8 @@ private:
     QSettings *m_settings;
     QHash<int, QAction *> m_actions;
     QHash<QDockWidget *, std::pair<QString, QString>> m_dockWidgets; //widget, key, default shortcut
-    static ActionManager *m_instance;
+    static QSUiActionManager *m_instance;
 
 };
 
-#endif // ACTIONMANAGER_H
+#endif // QSUIACTIONMANAGER_H

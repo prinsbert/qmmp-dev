@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef KEYBOARDMANAGER_H
-#define KEYBOARDMANAGER_H
+#ifndef QSUIKEYBOARDMANAGER_H
+#define QSUIKEYBOARDMANAGER_H
 
 #include <QObject>
 #include <QList>
@@ -30,11 +30,11 @@ class QSUiListWidget;
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class KeyboardManager : public QObject
+class QSUiKeyboardManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit KeyboardManager(QObject *parent = nullptr);
+    explicit QSUiKeyboardManager(QObject *parent = nullptr);
 
     QList<QAction*> actions();
     void setListWidget(QSUiListWidget *listWidget);
@@ -62,4 +62,4 @@ private:
 
 };
 
-#endif // KEYBOARDMANAGER_H
+#endif // QSUIKEYBOARDMANAGER_H

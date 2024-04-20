@@ -20,14 +20,14 @@
 
 #include <QAction>
 #include <QDockWidget>
-#include "actionmanager.h"
+#include "qsuiactionmanager.h"
 #include "shortcutitem.h"
 
 ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, int type) : QTreeWidgetItem(parent, QStringList()
-        << ActionManager::instance()->action(type)->text().remove("&")
-        << ActionManager::instance()->action(type)->shortcut().toString())
+        << QSUiActionManager::instance()->action(type)->text().remove("&")
+        << QSUiActionManager::instance()->action(type)->shortcut().toString())
 {
-    m_action = ActionManager::instance()->action(type);
+    m_action = QSUiActionManager::instance()->action(type);
     setIcon(0, m_action->icon());
 }
 

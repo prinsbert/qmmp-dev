@@ -36,7 +36,7 @@
 #include <qmmpui/mediaplayer.h>
 #include "qsuilistwidget.h"
 #include "qsuiplaylistheader.h"
-#include "actionmanager.h"
+#include "qsuiactionmanager.h"
 #include "qsuipopupwidget.h"
 
 QSUiListWidget::QSUiListWidget(PlayListModel *model, QWidget *parent) : QWidget(parent),
@@ -63,7 +63,7 @@ QSUiListWidget::QSUiListWidget(PlayListModel *model, QWidget *parent) : QWidget(
     connect(m_model, SIGNAL(scrollToRequest(int)), SLOT(scrollTo(int)));
     connect(m_model, SIGNAL(listChanged(int)), SLOT(updateList(int)));
     connect(m_model, SIGNAL(sortingByColumnFinished(int,bool)), m_header, SLOT(showSortIndicator(int,bool)));
-    SET_ACTION(ActionManager::PL_SHOW_HEADER, this, SLOT(readSettings()));
+    SET_ACTION(QSUiActionManager::PL_SHOW_HEADER, this, SLOT(readSettings()));
 }
 
 QSUiListWidget::~QSUiListWidget()
@@ -80,7 +80,7 @@ void QSUiListWidget::readSettings()
     bool show_popup = settings.value("pl_show_popup", false).toBool();
 
     m_header->readSettings();
-    m_header->setVisible(ACTION(ActionManager::PL_SHOW_HEADER)->isChecked());
+    m_header->setVisible(ACTION(QSUiActionManager::PL_SHOW_HEADER)->isChecked());
     m_header->setGeometry(0,0,width(), m_header->requiredHeight());
 
     if (m_update)

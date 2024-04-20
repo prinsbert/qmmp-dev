@@ -27,7 +27,7 @@
 #include <qmmpui/uihelper.h>
 #include <qmmpui/metadataformattermenu.h>
 #include <qmmpui/shortcutdialog.h>
-#include "actionmanager.h"
+#include "qsuiactionmanager.h"
 #include "shortcutitem.h"
 #include "qsuipopupsettings.h"
 #include "toolbareditor.h"

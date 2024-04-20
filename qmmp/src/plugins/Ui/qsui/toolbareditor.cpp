@@ -44,7 +44,7 @@ ToolBarEditor::ToolBarEditor(QWidget *parent) :
     connect(m_ui->activeActionsListWidget->model(), SIGNAL(rowsAboutToBeRemoved(QModelIndex,int,int)),
             SLOT(onRowsAboutToBeRemoved(QModelIndex,int,int)));
 
-    m_toolBarInfoList = ActionManager::instance()->readToolBarSettings();
+    m_toolBarInfoList = QSUiActionManager::instance()->readToolBarSettings();
 
     m_previousIndex = -1;
     populateActionList();
@@ -58,7 +58,7 @@ ToolBarEditor::~ToolBarEditor()
 void ToolBarEditor::accept()
 {
     on_toolbarNameComboBox_activated(m_ui->toolbarNameComboBox->currentIndex());
-    ActionManager::instance()->writeToolBarSettings(m_toolBarInfoList);
+    QSUiActionManager::instance()->writeToolBarSettings(m_toolBarInfoList);
     QDialog::accept();
 }
 
@@ -71,18 +71,18 @@ void ToolBarEditor::populateActionList(bool reset)
     if(reset)
     {
         m_toolBarInfoList.clear();
-        m_toolBarInfoList.append(ActionManager::instance()->defaultToolBar());
+        m_toolBarInfoList.append(QSUiActionManager::instance()->defaultToolBar());
         m_previousIndex = -1;
     }
 
     QStringList actionNames;
-    for(const ActionManager::ToolBarInfo &info : qAsConst(m_toolBarInfoList))
+    for(const QSUiActionManager::ToolBarInfo &info : qAsConst(m_toolBarInfoList))
     {
         actionNames << info.actionNames;
         m_ui->toolbarNameComboBox->addItem(info.title);
     }
 
-    for(int id = ActionManager::PLAY; id <= ActionManager::UI_QUICK_SEARCH; ++id)
+    for(int id = QSUiActionManager::PLAY; id <= QSUiActionManager::UI_QUICK_SEARCH; ++id)
     {
         QAction *action = ACTION(id);
         if(!action || actionNames.contains(action->objectName()))
@@ -189,7 +189,7 @@ void ToolBarEditor::on_toolbarNameComboBox_activated(int index)
 
     if(index < 0)
         return;
-    ActionManager::ToolBarInfo info = m_toolBarInfoList.at(index);
+    QSUiActionManager::ToolBarInfo info = m_toolBarInfoList.at(index);
 
     for(const QString &name : qAsConst(info.actionNames))
     {
@@ -199,7 +199,7 @@ void ToolBarEditor::on_toolbarNameComboBox_activated(int index)
             continue;
         }
 
-        QAction *action = ActionManager::instance()->findChild<QAction *>(name);
+        QAction *action = QSUiActionManager::instance()->findChild<QAction *>(name);
         if(action)
         {
             QListWidgetItem *item = new QListWidgetItem();
@@ -242,7 +242,7 @@ void ToolBarEditor::onRowsAboutToBeRemoved(const QModelIndex &, int start, int)
 
 void ToolBarEditor::on_createButton_clicked()
 {
-    ActionManager::ToolBarInfo info;
+    QSUiActionManager::ToolBarInfo info;
     int i = 0;
     //generate unique toolbar name
     QString title = tr("Toolbar");

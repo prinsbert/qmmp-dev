@@ -8,13 +8,13 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libqsui_SRCS
     aboutqsuidialog.cpp
-    actionmanager.cpp
+    qsuiactionmanager.cpp
     dockwidgetlist.cpp
     elidinglabel.cpp
     eqpreset.cpp
     equalizer.cpp
     filesystembrowser.cpp
-    keyboardmanager.cpp
+    qsuikeyboardmanager.cpp
     playlistbrowser.cpp
     qsuicoverwidget.cpp
     qsuifactory.cpp

@@ -28,7 +28,7 @@
 #include <QLineEdit>
 #include <QVBoxLayout>
 #include <qmmpui/playlistmanager.h>
-#include "actionmanager.h"
+#include "qsuiactionmanager.h"
 #include "playlistbrowser.h"
 
 PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QWidget(parent),
@@ -54,8 +54,8 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QW
     connect(m_pl_manager, SIGNAL(playListsChanged()), SLOT(updateList()));
     //actions
     m_listView->setContextMenuPolicy(Qt::ActionsContextMenu);
-    m_listView->addAction(ACTION(ActionManager::PL_RENAME));
-    m_listView->addAction(ACTION(ActionManager::PL_CLOSE));
+    m_listView->addAction(ACTION(QSUiActionManager::PL_RENAME));
+    m_listView->addAction(ACTION(QSUiActionManager::PL_CLOSE));
     QAction *separatorAction = new QAction(this);
     separatorAction->setSeparator(true);
     m_listView->addAction(separatorAction);
