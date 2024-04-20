@@ -45,19 +45,13 @@ public:
     void registerOprions() override;
     QString shortName() const override;
     QString translation() const override;
-    //bool identify(const QString& str) const;
-    //const QStringList helpString() const;
     QString executeCommand(int id, const QStringList &args, const QString &cwd) override;
     QHash<QString, QStringList> splitArgs(const QStringList &args) const;
 
-private slots:
-    void disconnectPl();
-    void addPendingPaths();
-
-private:
     enum Command
     {
-        ENQUEUE = 0,
+        OPEN = 0,
+        ENQUEUE,
         PLAY,
         PAUSE,
         PLAY_PAUSE,
@@ -76,8 +70,11 @@ private:
         ADD_DIRECTORY
     };
 
+private slots:
+    void disconnectPl();
+    void addPendingPaths();
 
-    //QStringList m_options;
+private:
     PlayListModel *m_model = nullptr;
     QStringList m_pending_path_list;
 #ifdef Q_OS_WIN

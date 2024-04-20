@@ -30,21 +30,9 @@
 #include <qmmp/metadatamanager.h>
 #include "builtincommandlineoption.h"
 
+// BuiltinCommandLineOption methods implementation
 BuiltinCommandLineOption::BuiltinCommandLineOption(QObject *parent) : QObject(parent)
 {
-//    m_options << "--enqueue" << "-e"
-//              << "--play" << "-p"
-//              << "--pause" << "-u"
-//              << "--play-pause" << "-t"
-//              << "--stop" << "-s"
-//              << "--jump-to-file" << "-j"
-//              << "--quit" << "-q"
-//              << "--volume" << "--volume-status"
-//              << "--toggle-mute" << "--mute-status"
-//              << "--next" << "--previous"
-//              << "--toggle-visibility"
-//              << "--show-mw"
-//              << "--add-file" << "--add-dir";
 #ifdef Q_OS_WIN
     m_timer = new QTimer(this);
     m_timer->setSingleShot(true);
@@ -60,7 +48,7 @@ void BuiltinCommandLineOption::registerOprions()
     registerOption(PAUSE, { "-u", "--pause"}, tr("Pause current song"));
     registerOption(PLAY_PAUSE, { "-t", "--play-pause" }, tr("Pause if playing, play otherwise"));
     registerOption(STOP, { "-s", "--stop" }, tr("Stop current song"));
-    registerOption(JUMP_TO_TRACK, { "-j", "--jump-to-file" }, tr("Display Jump to File dialog"));
+    registerOption(JUMP_TO_TRACK, { "-j", "--jump-to-track" }, tr("Display Jump to Track dialog"));
     registerOption(QUIT, { "-q", "--quit" }, tr("Quit application"));
     registerOption(VOLUME, "--volume", tr("Set playback volume (example: qmmp --volume 20)"), { "0..100" });
     registerOption(VOLUME_STATUS, "--volume-status", tr("Print volume level"));
@@ -84,34 +72,6 @@ QString BuiltinCommandLineOption::translation() const
     return QString();
 }
 
-// BuiltinCommandLineOption methods implementation
-//bool BuiltinCommandLineOption::identify(const QString &str) const
-//{
-//    return m_options.contains(str);
-//}
-
-//const QStringList BuiltinCommandLineOption::helpString() const
-//{
-//    return QStringList()
-//            << QString("-e, --enqueue") + "||" + tr("Don't clear the playlist")
-//            << QString("-p, --play") + "||" + tr("Start playing current song")
-//            << QString("-u, --pause") + "||" + tr("Pause current song")
-//            << QString("-t, --play-pause") + "||" + tr("Pause if playing, play otherwise")
-//            << QString("-s, --stop") + "||" + tr("Stop current song")
-//            << QString("-j, --jump-to-file") + "||" + tr("Display Jump to File dialog")
-//            << QString("-q, --quit") + "||" + tr("Quit application")
-//            << QString("--volume <0..100>") + "||" + tr("Set playback volume (example: qmmp --volume 20)")
-//            << QString("--volume-status") + "||" + tr("Print volume level")
-//            << QString("--toggle-mute") + "||" + tr("Mute/Restore volume")
-//            << QString("--mute-status") + "||" + tr("Print mute status")
-//            << QString("--next") + "||" + tr("Skip forward in playlist")
-//            << QString("--previous") + "||" + tr("Skip backwards in playlist")
-//            << QString("--toggle-visibility") + "||" + tr("Show/hide application")
-//            << QString("--show-mw") + "||" + tr("Show main window")
-//            << QString("--add-file") + "||" + tr("Display Add File dialog")
-//            << QString("--add-dir") + "||" + tr("Display Add Directory dialog");
-//}
-
 QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args, const QString &cwd)
 {
     SoundCore *core = SoundCore::instance();
@@ -121,139 +81,131 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
     QString out;
     if(!core || !player)
         return out;
-//    if(option_string == "--enqueue" || option_string == "-e" || option_string.isEmpty())
-//    {
-//        if(args.isEmpty())
-//            return out;
-//        QStringList full_path_list, remote_pls_list;
-//        for(QString s : qAsConst(args))
-//        {
-//#ifdef Q_OS_WIN
-//            s.replace("\\","/");
-//#endif
-//            if (QFileInfo(s).isAbsolute()) //absolute path
-//                    full_path_list << s;
-//            else if(s.contains("://")) //url
-//            {
-//                if(PlayListParser::findByUrl(s)) //remote playlist
-//                    remote_pls_list << s;
-//                else
-//                    full_path_list << s; //url
-//            }
-//            else //relative path
-//                full_path_list << cwd + "/" + s;
-//        }
-//        //default playlist
-//        if(settings->useDefaultPlayList())
-//        {
-//            if(!pl_manager->playListNames().contains(settings->defaultPlayListName()))
-//                pl_manager->createPlayList(settings->defaultPlayListName());
-//            pl_manager->selectPlayList(settings->defaultPlayListName());
-//        }
-//        pl_manager->activatePlayList(pl_manager->selectedPlayList());
-//        m_model = pl_manager->selectedPlayList();
 
-//        if(option_string.isEmpty())
-//        {
-//            m_model->clear(); //clear playlist if option is empty
-//            m_pending_path_list << full_path_list;
-//#ifdef Q_OS_WIN
-//            //windows starts instance for each selected file,
-//            //so we should wait paths from all started qmmp instances
-//            m_timer->start();
-//#else
-//            addPendingPaths();
-//#endif
-//        }
-//        else
-//            m_model->add(full_path_list);
-//        if(!remote_pls_list.isEmpty())
-//        {
-//            PlayListDownloader *downloader = new PlayListDownloader(this);
-//            connect(downloader, SIGNAL(finished(bool,QString)), downloader, SLOT(deleteLater()));
-//            downloader->start(remote_pls_list.at(0), m_model);
-//        }
-//    }
-//    else if (option_string == "--play" || option_string == "-p")
-//    {
-//        player->play();
-//    }
-//    else if (option_string == "--stop" || option_string == "-s")
-//    {
-//        core->stop();
-//    }
-//    else if (option_string == "--pause" || option_string == "-u")
-//    {
-//        if(core->state() == Qmmp::Playing)
-//            core->pause();
-//    }
-//    else if (option_string == "--next")
-//    {
-//        player->next();
-//        if (core->state() == Qmmp::Stopped)
-//            player->play();
-//    }
-//    else if (option_string == "--previous")
-//    {
-//        player->previous();
-//        if (core->state() == Qmmp::Stopped)
-//            player->play();
-//    }
-//    else if (option_string == "--play-pause"  || option_string == "-t")
-//    {
-//        if (core->state() == Qmmp::Playing)
-//            core->pause();
-//        else
-//            player->play();
-//    }
-//    else if (option_string == "--jump-to-file" || option_string == "-j")
-//    {
-//        UiHelper::instance()->jumpToTrack();
-//    }
-//    else if (option_string == "--quit" || option_string == "-q")
-//    {
-//        qApp->closeAllWindows();
-//        qApp->quit();
-//    }
-//    else if (option_string == "--toggle-visibility")
-//    {
-//        UiHelper::instance()->toggleVisibility();
-//    }
-//    else if (option_string == "--show-mw")
-//    {
-//        UiHelper::instance()->showMainWindow();
-//    }
-//    else if (option_string == "--add-file")
-//    {
-//        UiHelper::instance()->addFiles();
-//    }
-//    else if (option_string == "--add-dir")
-//    {
-//        UiHelper::instance()->addDirectory();
-//    }
-//    else if (option_string == "--volume" && !args.isEmpty())
-//    {
-//        bool ok = false;
-//        int volume = args.at(0).toInt(&ok);
-//        if (ok)
-//            core->setVolume(volume,volume);
-//    }
-//    else if (option_string == "--volume-status")
-//    {
-//        out += QString("%1\n").arg(core->volume());
-//    }
-//    else if (option_string == "--toggle-mute")
-//    {
-//        core->setMuted(!core->isMuted());
-//    }
-//    else if (option_string == "--mute-status")
-//    {
-//        out += QString("%1\n").arg(core->isMuted());
-//    }
+    switch(id) {
+    case OPEN:
+    case ENQUEUE:
+    {
+        if(args.isEmpty())
+            return out;
+        QStringList full_path_list, remote_pls_list;
+        for(QString s : qAsConst(args))
+        {
+#ifdef Q_OS_WIN
+            s.replace("\\","/");
+#endif
+            if(QFileInfo(s).isAbsolute()) //absolute path
+                full_path_list << s;
+            else if(s.contains("://")) //url
+            {
+                if(PlayListParser::findByUrl(s)) //remote playlist
+                    remote_pls_list << s;
+                else
+                    full_path_list << s; //url
+            }
+            else //relative path
+                full_path_list << cwd + "/" + s;
+        }
+        //default playlist
+        if(settings->useDefaultPlayList())
+        {
+            if(!pl_manager->playListNames().contains(settings->defaultPlayListName()))
+                pl_manager->createPlayList(settings->defaultPlayListName());
+            pl_manager->selectPlayList(settings->defaultPlayListName());
+        }
+        pl_manager->activatePlayList(pl_manager->selectedPlayList());
+        m_model = pl_manager->selectedPlayList();
+
+        if(id == OPEN)
+        {
+            m_model->clear(); //clear playlist if option is empty
+            m_pending_path_list << full_path_list;
+#ifdef Q_OS_WIN
+            //windows starts instance for each selected file,
+            //so we should wait paths from all started qmmp instances
+            m_timer->start();
+#else
+            addPendingPaths();
+#endif
+        }
+        else
+            m_model->add(full_path_list);
+        if(!remote_pls_list.isEmpty())
+        {
+            PlayListDownloader *downloader = new PlayListDownloader(this);
+            connect(downloader, SIGNAL(finished(bool,QString)), downloader, SLOT(deleteLater()));
+            downloader->start(remote_pls_list.at(0), m_model);
+        }
+        break;
+    }
+    case PLAY:
+        player->play();
+        break;
+    case STOP:
+        core->stop();
+        break;
+    case PAUSE:
+        if(core->state() == Qmmp::Playing)
+            core->pause();
+        break;
+    case NEXT:
+        player->next();
+        if (core->state() == Qmmp::Stopped)
+            player->play();
+        break;
+    case PREVIOUS:
+        player->previous();
+        if (core->state() == Qmmp::Stopped)
+            player->play();
+        break;
+    case PLAY_PAUSE:
+        if (core->state() == Qmmp::Playing)
+            core->pause();
+        else
+            player->play();
+        break;
+    case JUMP_TO_TRACK:
+        UiHelper::instance()->jumpToTrack();
+        break;
+    case QUIT:
+        qApp->closeAllWindows();
+        qApp->quit();
+        break;
+    case TOGGLE_VISIBILITY:
+        UiHelper::instance()->toggleVisibility();
+        break;
+    case SHOW_MW:
+        UiHelper::instance()->showMainWindow();
+        break;
+    case ADD_FILE:
+        UiHelper::instance()->addFiles();
+        break;
+    case ADD_DIRECTORY:
+        UiHelper::instance()->addDirectory();
+        break;
+    case VOLUME:
+        if(!args.isEmpty())
+        {
+            bool ok = false;
+            int volume = args.at(0).toInt(&ok);
+            if (ok)
+                core->setVolume(volume);
+        }
+        break;
+    case VOLUME_STATUS:
+        out += QStringLiteral("%1\n").arg(core->volume());
+        break;
+    case TOGGLE_MUTE:
+        core->setMuted(!core->isMuted());
+        break;
+    case MUTE_STATUS:
+        out += QStringLiteral("%1\n").arg(core->isMuted());
+        break;
+    }
     return out;
 }
 
-QHash <QString, QStringList> BuiltinCommandLineOption::splitArgs(const QStringList &args) const
+QHash<QString, QStringList> BuiltinCommandLineOption::splitArgs(const QStringList &args) const
 {
     QHash <QString, QStringList> commands;
     QString lastCmd;
@@ -291,7 +243,7 @@ void BuiltinCommandLineOption::addPendingPaths()
     MediaPlayer *player = MediaPlayer::instance();
     PlayListManager *pl_manager = PlayListManager::instance();
 
-    if (core->state() != Qmmp::Stopped)
+    if(core->state() != Qmmp::Stopped)
     {
         core->stop();
         qApp->processEvents(); //receive stop signal
