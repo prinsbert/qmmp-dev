@@ -54,19 +54,19 @@
         <translation>プレイリストのオプションを表示</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="110"/>
-        <location filename="../playlistoption.cpp" line="130"/>
-        <location filename="../playlistoption.cpp" line="169"/>
+        <location filename="../playlistoption.cpp" line="111"/>
+        <location filename="../playlistoption.cpp" line="131"/>
+        <location filename="../playlistoption.cpp" line="170"/>
         <source>Invalid playlist ID</source>
         <translation>プレイリストの ID が不正</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="124"/>
+        <location filename="../playlistoption.cpp" line="125"/>
         <source>Invalid number of arguments</source>
         <translation>引数の項目数が不正</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="134"/>
+        <location filename="../playlistoption.cpp" line="135"/>
         <source>Invalid track ID</source>
         <translation>トラックの ID が不正</translation>
     </message>

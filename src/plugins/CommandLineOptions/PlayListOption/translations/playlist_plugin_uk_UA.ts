@@ -54,19 +54,19 @@
         <translation>Показати налаштування списка відткорення</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="110"/>
-        <location filename="../playlistoption.cpp" line="130"/>
-        <location filename="../playlistoption.cpp" line="169"/>
+        <location filename="../playlistoption.cpp" line="111"/>
+        <location filename="../playlistoption.cpp" line="131"/>
+        <location filename="../playlistoption.cpp" line="170"/>
         <source>Invalid playlist ID</source>
         <translation>Невірний номер списка відтворення</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="124"/>
+        <location filename="../playlistoption.cpp" line="125"/>
         <source>Invalid number of arguments</source>
         <translation>Невірне число аргументів</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="134"/>
+        <location filename="../playlistoption.cpp" line="135"/>
         <source>Invalid track ID</source>
         <translation>Невірний номер трека</translation>
     </message>
