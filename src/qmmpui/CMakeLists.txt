@@ -62,6 +62,7 @@ SET(libqmmpui_SRCS
     cueeditor.cpp
     visualmenu.cpp
     colorwidget.cpp
+    shortcutdialog.cpp
     forms/detailsdialog.ui
     forms/tageditor.ui
     forms/templateeditor.ui
@@ -72,6 +73,7 @@ SET(libqmmpui_SRCS
     forms/columneditor.ui
     forms/covereditor.ui
     forms/cueeditor.ui
+    forms/shortcutdialog.ui
     translations/libqmmpui_locales.qrc
     txt/txt.qrc
     images/qmmpui_images.qrc
@@ -105,6 +107,7 @@ SET(libqmmpui_DEVEL_HDRS
     playlistheadermodel.h
     visualmenu.h
     colorwidget.h
+    shortcutdialog.h
     qmmpui_export.h
 )
 
