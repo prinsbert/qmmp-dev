@@ -165,7 +165,7 @@ unix {
     CONFIG += create_pc create_prl no_install_prl
     QMAKE_PKGCONFIG_NAME = qmmp$${APP_NAME_SUFFIX}
     QMAKE_PKGCONFIG_DESCRIPTION = qmmp core library
-    QMAKE_PKGCONFIG_REQUIRES = Qt5Core Qt5Gui Qt5Widgets
+    QMAKE_PKGCONFIG_REQUIRES = Qt6Core Qt6Gui Qt6Widgets
     QMAKE_PKGCONFIG_DESTDIR = pkgconfig
     QMAKE_PKGCONFIG_PREFIX = $$PREFIX
     QMAKE_PKGCONFIG_LIBDIR = $$target.path
