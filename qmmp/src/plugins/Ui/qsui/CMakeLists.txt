@@ -7,45 +7,43 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 
 SET(libqsui_SRCS
-    actionmanager.cpp
-    listwidget.cpp
-    mainwindow.cpp
-    popupsettings.cpp
-    popupwidget.cpp
-    positionslider.cpp
-    shortcutdialog.cpp
-    shortcutitem.cpp
-    qsuifactory.cpp
-    qsuisettings.cpp
-    equalizer.cpp
-    logo.cpp
     aboutqsuidialog.cpp
-    keyboardmanager.cpp
-    qsuivisualization.cpp
-    fft.c
-    qsuitabwidget.cpp
-    qsuitabbar.cpp
-    eqpreset.cpp
-    filesystembrowser.cpp
-    elidinglabel.cpp
-    coverwidget.cpp
-    playlistbrowser.cpp
-    toolbareditor.cpp
-    listwidgetdrawer.cpp
-    playlistheader.cpp
-    hotkeyeditor.cpp
-    volumeslider.cpp
-    qsuiquicksearch.cpp
-    qsuiwaveformseekbar.cpp
-    qsuistatusbar.cpp
+    actionmanager.cpp
     dockwidgetlist.cpp
-    forms/mainwindow.ui
-    forms/popupsettings.ui
-    forms/shortcutdialog.ui
+    elidinglabel.cpp
+    eqpreset.cpp
+    equalizer.cpp
+    filesystembrowser.cpp
+    keyboardmanager.cpp
+    playlistbrowser.cpp
+    qsuicoverwidget.cpp
+    qsuifactory.cpp
+    qsuihotkeyeditor.cpp
+    qsuilistwidget.cpp
+    qsuilistwidgetdrawer.cpp
+    qsuilogo.cpp
+    qsuimainwindow.cpp
+    qsuiplaylistheader.cpp
+    qsuipopupsettings.cpp
+    qsuipopupwidget.cpp
+    qsuipositionslider.cpp
+    qsuiquicksearch.cpp
+    qsuisettings.cpp
+    qsuistatusbar.cpp
+    qsuitabbar.cpp
+    qsuitabwidget.cpp
+    qsuivisualization.cpp
+    qsuiwaveformseekbar.cpp
+    shortcutitem.cpp
+    toolbareditor.cpp
+    volumeslider.cpp
+    fft.c
+    forms/qsuimainwindow.ui
+    forms/qsuipopupsettings.ui
     forms/qsuisettings.ui
     forms/aboutqsuidialog.ui
     forms/toolbareditor.ui
-    forms/hotkeyeditor.ui
+    forms/qsuihotkeyeditor.ui
     translations/translations.qrc
     txt/qsui_txt.qrc
     resources/qsui_resources.qrc
