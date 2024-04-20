@@ -24,7 +24,7 @@
     <number>6</number>
    </property>
    <item row="0" column="0">
-    <widget class="Logo" name="widget" native="true">
+    <widget class="QSUiLogo" name="widget" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>93</horstretch>
@@ -60,9 +60,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>Logo</class>
+   <class>QSUiLogo</class>
    <extends>QWidget</extends>
-   <header>logo.h</header>
+   <header>qsuilogo.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
