@@ -1504,12 +1504,4 @@
         <translation>バッファーへ先読み: %1%</translation>
     </message>
 </context>
-<context>
-    <name>VisualMenu</name>
-    <message>
-        <location filename="../visualmenu.cpp" line="26"/>
-        <source>Visualization</source>
-        <translation>視覚効果</translation>
-    </message>
-</context>
 </TS>

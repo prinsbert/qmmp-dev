@@ -1503,12 +1503,4 @@
         <translation>Pufferung: %1 %</translation>
     </message>
 </context>
-<context>
-    <name>VisualMenu</name>
-    <message>
-        <location filename="../visualmenu.cpp" line="26"/>
-        <source>Visualization</source>
-        <translation>Visualisierung</translation>
-    </message>
-</context>
 </TS>

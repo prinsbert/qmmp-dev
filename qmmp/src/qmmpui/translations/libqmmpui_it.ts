@@ -1480,6 +1480,14 @@ Vuoi sostituirlo?</translation>
     </message>
 </context>
 <context>
+    <name>VisualMenu</name>
+    <message>
+        <location filename="../visualmenu.cpp" line="26"/>
+        <source>Visualization</source>
+        <translation type="unfinished">Visualizzazione</translation>
+    </message>
+</context>
+<context>
     <name>WinFileAssocPage</name>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="43"/>
