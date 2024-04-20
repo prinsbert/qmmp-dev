@@ -26,10 +26,10 @@
 #include <QDebug>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/playlistmodel.h>
-#include "listwidget.h"
+#include "qsuilistwidget.h"
 #include "qsuiquicksearch.h"
 
-QSUiQuickSearch::QSUiQuickSearch(ListWidget *listWidget, QWidget *parent) :
+QSUiQuickSearch::QSUiQuickSearch(QSUiListWidget *listWidget, QWidget *parent) :
     QWidget(parent)
 {
     m_listWidget = listWidget;

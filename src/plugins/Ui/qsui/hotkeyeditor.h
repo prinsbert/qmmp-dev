@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,19 +24,19 @@
 #include <QWidget>
 
 namespace Ui {
-    class HotkeyEditor;
+    class QSUiHotkeyEditor;
 }
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class HotkeyEditor : public QWidget
+class QSUiHotkeyEditor : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit HotkeyEditor(QWidget *parent = nullptr);
-    virtual ~HotkeyEditor();
+    explicit QSUiHotkeyEditor(QWidget *parent = nullptr);
+    virtual ~QSUiHotkeyEditor();
 
 private slots:
     void on_changeShortcutButton_clicked();
@@ -44,7 +44,7 @@ private slots:
 
 private:
     void loadShortcuts();
-    Ui::HotkeyEditor *m_ui;
+    Ui::QSUiHotkeyEditor *m_ui;
 };
 
 #endif // HOTKEYEDITOR_H

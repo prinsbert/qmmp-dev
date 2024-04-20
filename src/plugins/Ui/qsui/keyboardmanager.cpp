@@ -24,7 +24,7 @@
 #include <qmmpui/playlistmodel.h>
 #include <qmmpui/mediaplayer.h>
 #include <qmmp/soundcore.h>
-#include "listwidget.h"
+#include "qsuilistwidget.h"
 #include "keyboardmanager.h"
 
 KeyboardManager::KeyboardManager(QObject *parent) :
@@ -227,7 +227,7 @@ void KeyboardManager::processDown()
     }
 }
 
-void KeyboardManager::setListWidget(ListWidget *listWidget)
+void KeyboardManager::setListWidget(QSUiListWidget *listWidget)
 {
     m_listWidget = listWidget;
 }

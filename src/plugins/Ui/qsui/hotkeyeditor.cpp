@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,21 +23,21 @@
 #include "hotkeyeditor.h"
 #include "shortcutdialog.h"
 #include "shortcutitem.h"
-#include "ui_hotkeyeditor.h"
+#include "ui_qsuihotkeyeditor.h"
 
-HotkeyEditor::HotkeyEditor(QWidget *parent) : QWidget(parent), m_ui(new Ui::HotkeyEditor)
+QSUiHotkeyEditor::QSUiHotkeyEditor(QWidget *parent) : QWidget(parent), m_ui(new Ui::QSUiHotkeyEditor)
 {
     m_ui->setupUi(this);
     loadShortcuts();
     m_ui->changeShortcutButton->setIcon(QIcon::fromTheme("configure"));
 }
 
-HotkeyEditor::~HotkeyEditor()
+QSUiHotkeyEditor::~QSUiHotkeyEditor()
 {
     delete m_ui;
 }
 
-void HotkeyEditor::on_changeShortcutButton_clicked()
+void QSUiHotkeyEditor::on_changeShortcutButton_clicked()
 {
     ShortcutItem *item = dynamic_cast<ShortcutItem *> (m_ui->shortcutTreeWidget->currentItem());
     if(!item)
@@ -50,7 +50,7 @@ void HotkeyEditor::on_changeShortcutButton_clicked()
     }
 }
 
-void HotkeyEditor::on_resetShortcutsButton_clicked()
+void QSUiHotkeyEditor::on_resetShortcutsButton_clicked()
 {
     if(QMessageBox::question(this, tr("Reset Shortcuts"),
                              tr("Do you want to restore default shortcuts?"),
@@ -61,7 +61,7 @@ void HotkeyEditor::on_resetShortcutsButton_clicked()
     }
 }
 
-void HotkeyEditor::loadShortcuts()
+void QSUiHotkeyEditor::loadShortcuts()
 {
     m_ui->shortcutTreeWidget->clear();
     //playback

@@ -29,7 +29,7 @@
 #include "actionmanager.h"
 #include "shortcutitem.h"
 #include "shortcutdialog.h"
-#include "popupsettings.h"
+#include "qsuipopupsettings.h"
 #include "toolbareditor.h"
 #include "qsuisettings.h"
 
@@ -116,7 +116,7 @@ void QSUiSettings::createActions()
 
 void QSUiSettings::on_popupTemplateButton_clicked()
 {
-    PopupSettings *p = new PopupSettings(this);
+    QSUiPopupSettings *p = new QSUiPopupSettings(this);
     p->exec();
     p->deleteLater();
 }

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,33 +17,34 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef QSUICOVERWIDGET_H
+#define QSUICOVERWIDGET_H
 
-#ifndef POSITIONSLIDER_H
-#define POSITIONSLIDER_H
+#include <QWidget>
+#include <QPixmap>
 
-#include <QSlider>
-
-class QWheelEvent;
-class QMouseEvent;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class PositionSlider : public QSlider
-{
-    Q_OBJECT
-public:
-    explicit PositionSlider(QWidget *parent = nullptr);
-    virtual ~PositionSlider(){}
 
-protected:
-    virtual void mousePressEvent (QMouseEvent *event) override;
-    virtual void mouseReleaseEvent (QMouseEvent *event) override;
-    virtual void wheelEvent(QWheelEvent *event) override;
+class QSUiCoverWidget : public QWidget
+{
+Q_OBJECT
+public:
+    QSUiCoverWidget(QWidget *parent = nullptr);
+
+    ~QSUiCoverWidget();
+
+    void setCover(const QImage &img);
+    void clearCover();
 
 private slots:
-    void onSliderMoved(int pos);
+    void saveAs();
 
+private:
+    void paintEvent (QPaintEvent *) override;
+    QImage m_image;
 };
 
-#endif // POSITIONSLIDER_H
+#endif

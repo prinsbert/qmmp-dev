@@ -3,14 +3,14 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Ui/qsui
 
 SOURCES += \
-    mainwindow.cpp \
-    listwidget.cpp \
-    positionslider.cpp \
     actionmanager.cpp \
-    shortcutdialog.cpp \
+    qsuicoverwidget.cpp \
+    qsuilistwidget.cpp \
+    qsuimainwindow.cpp \
+    qsuipopupsettings.cpp \
+    qsuipopupwidget.cpp \
+    qsuipositionslider.cpp \
     shortcutitem.cpp \
-    popupsettings.cpp \
-    popupwidget.cpp \
     equalizer.cpp \
     logo.cpp \
     keyboardmanager.cpp \
@@ -23,7 +23,6 @@ SOURCES += \
     eqpreset.cpp \
     filesystembrowser.cpp \
     elidinglabel.cpp \
-    coverwidget.cpp \
     playlistbrowser.cpp \
     toolbareditor.cpp \
     listwidgetdrawer.cpp \
@@ -35,14 +34,15 @@ SOURCES += \
     qsuiwaveformseekbar.cpp \
     qsuistatusbar.cpp \
     dockwidgetlist.cpp
-HEADERS += mainwindow.h \
-    listwidget.h \
-    positionslider.h \
+HEADERS += \
     actionmanager.h \
-    shortcutdialog.h \
+    qsuicoverwidget.h \
+    qsuilistwidget.h \
+    qsuimainwindow.h \
+    qsuipopupsettings.h \
+    qsuipopupwidget.h \
+    qsuipositionslider.h \
     shortcutitem.h \
-    popupsettings.h \
-    popupwidget.h \
     equalizer.h \
     logo.h \
     keyboardmanager.h \
@@ -56,7 +56,6 @@ HEADERS += mainwindow.h \
     eqpreset.h \
     filesystembrowser.h \
     elidinglabel.h \
-    coverwidget.h \
     playlistbrowser.h \
     toolbareditor.h \
     listwidgetdrawer.h \
@@ -69,13 +68,13 @@ HEADERS += mainwindow.h \
     qsuistatusbar.h \
     dockwidgetlist.h
 
-FORMS += forms/mainwindow.ui \
-    forms/shortcutdialog.ui \
-    forms/popupsettings.ui \
+FORMS += \
+    forms/qsuihotkeyeditor.ui \
+    forms/qsuimainwindow.ui \
+    forms/qsuipopupsettings.ui \
     forms/aboutqsuidialog.ui \
     forms/qsuisettings.ui \
-    forms/toolbareditor.ui \
-    forms/hotkeyeditor.ui
+    forms/toolbareditor.ui
 
 RESOURCES += translations/translations.qrc resources/qsui_resources.qrc txt/qsui_txt.qrc
 

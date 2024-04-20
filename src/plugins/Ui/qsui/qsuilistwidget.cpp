@@ -34,12 +34,12 @@
 #include <qmmpui/playlistmodel.h>
 #include <qmmpui/qmmpuisettings.h>
 #include <qmmpui/mediaplayer.h>
-#include "listwidget.h"
+#include "qsuilistwidget.h"
 #include "playlistheader.h"
 #include "actionmanager.h"
-#include "popupwidget.h"
+#include "qsuipopupwidget.h"
 
-ListWidget::ListWidget(PlayListModel *model, QWidget *parent) : QWidget(parent),
+QSUiListWidget::QSUiListWidget(PlayListModel *model, QWidget *parent) : QWidget(parent),
     m_model(model)
 {
     setFocusPolicy(Qt::StrongFocus);
@@ -66,13 +66,13 @@ ListWidget::ListWidget(PlayListModel *model, QWidget *parent) : QWidget(parent),
     SET_ACTION(ActionManager::PL_SHOW_HEADER, this, SLOT(readSettings()));
 }
 
-ListWidget::~ListWidget()
+QSUiListWidget::~QSUiListWidget()
 {
     qDeleteAll(m_rows);
     m_rows.clear();
 }
 
-void ListWidget::readSettings()
+void QSUiListWidget::readSettings()
 {
     QSettings settings;
     settings.beginGroup("Simple");
@@ -102,49 +102,49 @@ void ListWidget::readSettings()
         m_popupWidget = new PlayListPopup::PopupWidget(this);
 }
 
-int ListWidget::visibleRows() const
+int QSUiListWidget::visibleRows() const
 {
     return m_row_count;
 }
 
-int ListWidget::firstVisibleIndex() const
+int QSUiListWidget::firstVisibleIndex() const
 {
     return m_firstLine;
 }
 
-int ListWidget::anchorIndex() const
+int QSUiListWidget::anchorIndex() const
 {
     return m_anchorLine;
 }
 
-void ListWidget::setAnchorIndex(int index)
+void QSUiListWidget::setAnchorIndex(int index)
 {
     m_anchorLine = index;
     updateList(PlayListModel::SELECTION);
 }
 
-QMenu *ListWidget::menu()
+QMenu *QSUiListWidget::menu()
 {
     return m_menu;
 }
 
-void ListWidget::setMenu(QMenu *menu)
+void QSUiListWidget::setMenu(QMenu *menu)
 {
     m_menu = menu;
 }
 
-PlayListModel *ListWidget::model()
+PlayListModel *QSUiListWidget::model()
 {
     Q_ASSERT(m_model);
     return m_model;
 }
 
-bool ListWidget::filterMode() const
+bool QSUiListWidget::filterMode() const
 {
     return m_filterMode;
 }
 
-void ListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
+void QSUiListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
 {
     if(m_filterMode)
     {
@@ -179,7 +179,7 @@ void ListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
     connect(m_model, SIGNAL(sortingByColumnFinished(int,bool)), m_header, SLOT(showSortIndicator(int,bool)));
 }
 
-void ListWidget::paintEvent(QPaintEvent *)
+void QSUiListWidget::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     m_drawer.fillBackground(&painter, width(), height());
@@ -219,7 +219,7 @@ void ListWidget::paintEvent(QPaintEvent *)
     }
 }
 
-void ListWidget::mouseDoubleClickEvent(QMouseEvent *e)
+void QSUiListWidget::mouseDoubleClickEvent(QMouseEvent *e)
 {
     int y = e->position().y();
     int lineIndex = lineAt(y);
@@ -258,7 +258,7 @@ void ListWidget::mouseDoubleClickEvent(QMouseEvent *e)
     }
 }
 
-void ListWidget::mousePressEvent(QMouseEvent *e)
+void QSUiListWidget::mousePressEvent(QMouseEvent *e)
 {
     if(m_popupWidget)
         m_popupWidget->hide();
@@ -320,7 +320,7 @@ void ListWidget::mousePressEvent(QMouseEvent *e)
     QWidget::mousePressEvent(e);
 }
 
-void ListWidget::resizeEvent(QResizeEvent *e)
+void QSUiListWidget::resizeEvent(QResizeEvent *e)
 {
     m_header->setGeometry(0,0,width(), m_header->requiredHeight());
     if(e->oldSize().height() < 10)
@@ -330,7 +330,7 @@ void ListWidget::resizeEvent(QResizeEvent *e)
     QWidget::resizeEvent(e);
 }
 
-void ListWidget::wheelEvent(QWheelEvent *e)
+void QSUiListWidget::wheelEvent(QWheelEvent *e)
 {
     if(m_hslider->underMouse())
         return;
@@ -350,13 +350,13 @@ void ListWidget::wheelEvent(QWheelEvent *e)
     updateList(PlayListModel::STRUCTURE);
 }
 
-void ListWidget::showEvent(QShowEvent *)
+void QSUiListWidget::showEvent(QShowEvent *)
 {
     if(!m_rows.isEmpty())
         updateList(PlayListModel::METADATA);
 }
 
-bool ListWidget::event(QEvent *e)
+bool QSUiListWidget::event(QEvent *e)
 {
     if(m_popupWidget)
     {
@@ -383,7 +383,7 @@ bool ListWidget::event(QEvent *e)
     return QWidget::event(e);
 }
 
-void ListWidget::updateList(int flags)
+void QSUiListWidget::updateList(int flags)
 {
     m_hslider->setRange(0, m_header->maxScrollValue());
     m_hslider->setValue(m_header->offset());
@@ -546,7 +546,7 @@ void ListWidget::updateList(int flags)
     update();
 }
 
-void ListWidget::autoscroll()
+void QSUiListWidget::autoscroll()
 {
     if(m_filterMode)
         return;
@@ -573,12 +573,12 @@ void ListWidget::autoscroll()
     */
 }
 
-void ListWidget::updateRepeatIndicator()
+void QSUiListWidget::updateRepeatIndicator()
 {
     updateList(PlayListModel::CURRENT | PlayListModel::STRUCTURE);
 }
 
-void ListWidget::scrollTo(int index)
+void QSUiListWidget::scrollTo(int index)
 {
     if (m_row_count && !m_filterMode)
     {
@@ -587,7 +587,7 @@ void ListWidget::scrollTo(int index)
     }
 }
 
-void ListWidget::setViewPosition(int sc)
+void QSUiListWidget::setViewPosition(int sc)
 {
     if (m_model->lineCount() <= m_row_count)
         return;
@@ -595,7 +595,7 @@ void ListWidget::setViewPosition(int sc)
     updateList(PlayListModel::STRUCTURE);
 }
 
-void ListWidget::setFilterString(const QString &str)
+void QSUiListWidget::setFilterString(const QString &str)
 {
     m_filterString = str;
     if(str.isEmpty())
@@ -612,7 +612,7 @@ void ListWidget::setFilterString(const QString &str)
     updateList(PlayListModel::STRUCTURE);
 }
 
-void ListWidget::clear()
+void QSUiListWidget::clear()
 {
     if(m_filterMode)
     {
@@ -625,7 +625,7 @@ void ListWidget::clear()
     }
 }
 
-void ListWidget::removeSelected()
+void QSUiListWidget::removeSelected()
 {
     if(m_filterMode)
     {
@@ -643,7 +643,7 @@ void ListWidget::removeSelected()
     }
 }
 
-void ListWidget::removeUnselected()
+void QSUiListWidget::removeUnselected()
 {
     if(m_filterMode)
     {
@@ -661,19 +661,19 @@ void ListWidget::removeUnselected()
     }
 }
 
-void ListWidget::updateSkin()
+void QSUiListWidget::updateSkin()
 {
     m_drawer.loadSystemColors();
     update();
 }
 
-void ListWidget::dragEnterEvent(QDragEnterEvent *event)
+void QSUiListWidget::dragEnterEvent(QDragEnterEvent *event)
 {
     if(event->mimeData()->hasFormat("text/uri-list") || event->mimeData()->hasFormat("application/json"))
         event->acceptProposedAction();
 }
 
-void ListWidget::dropEvent(QDropEvent *event)
+void QSUiListWidget::dropEvent(QDropEvent *event)
 {
     if(!m_filterMode && (event->mimeData()->hasUrls() || event->mimeData()->hasFormat("application/json")))
     {
@@ -698,13 +698,13 @@ void ListWidget::dropEvent(QDropEvent *event)
     m_drop_index = -1;
 }
 
-void ListWidget::dragLeaveEvent(QDragLeaveEvent *)
+void QSUiListWidget::dragLeaveEvent(QDragLeaveEvent *)
 {
     m_drop_index = -1;
     update();
 }
 
-void ListWidget::dragMoveEvent(QDragMoveEvent *event)
+void QSUiListWidget::dragMoveEvent(QDragMoveEvent *event)
 {
     int index = lineAt(event->position().y());
     if(index < 0)
@@ -718,7 +718,7 @@ void ListWidget::dragMoveEvent(QDragMoveEvent *event)
         event->acceptProposedAction();
 }
 
-const QString ListWidget::getExtraString(PlayListItem *item)
+const QString QSUiListWidget::getExtraString(PlayListItem *item)
 {
     if(item->isGroup())
         return QString();
@@ -740,7 +740,7 @@ const QString ListWidget::getExtraString(PlayListItem *item)
     return extra_string.trimmed(); //remove white space
 }
 
-bool ListWidget::updateRowCount()
+bool QSUiListWidget::updateRowCount()
 {
     int h = height();
     if(m_header->isVisibleTo(this))
@@ -756,7 +756,7 @@ bool ListWidget::updateRowCount()
     return false;
 }
 
-void ListWidget::restoreFirstVisible()
+void QSUiListWidget::restoreFirstVisible()
 {
     if(m_firstLine < m_model->lineCount() && m_firstItem == m_model->itemAtLine(m_firstLine))
         return;
@@ -790,7 +790,7 @@ void ListWidget::restoreFirstVisible()
     }
 }
 
-void ListWidget::updateScrollBars()
+void QSUiListWidget::updateScrollBars()
 {
     bool rtl = layoutDirection() == Qt::RightToLeft;
 
@@ -812,7 +812,7 @@ void ListWidget::updateScrollBars()
     }
 }
 
-void ListWidget::mouseMoveEvent(QMouseEvent *e)
+void QSUiListWidget::mouseMoveEvent(QMouseEvent *e)
 {
     if(m_filterMode)
         return;
@@ -866,7 +866,7 @@ void ListWidget::mouseMoveEvent(QMouseEvent *e)
     }
 }
 
-void ListWidget::mouseReleaseEvent(QMouseEvent *e)
+void QSUiListWidget::mouseReleaseEvent(QMouseEvent *e)
 {
     if(m_select_on_release && m_pressedLine >= 0)
     {
@@ -882,7 +882,7 @@ void ListWidget::mouseReleaseEvent(QMouseEvent *e)
     QWidget::mouseReleaseEvent(e);
 }
 
-int ListWidget::lineAt(int y) const
+int QSUiListWidget::lineAt(int y) const
 {
     y -= m_header->isVisible() ? m_header->height() : 0;
 
@@ -905,19 +905,19 @@ int ListWidget::lineAt(int y) const
     return -1;
 }
 
-PlayListTrack *ListWidget::trackAt(int y) const
+PlayListTrack *QSUiListWidget::trackAt(int y) const
 {
     int line = lineAt(y);
     return line >= 0 ? m_model->trackAtLine(line) : nullptr;
 }
 
-void ListWidget::contextMenuEvent(QContextMenuEvent * event)
+void QSUiListWidget::contextMenuEvent(QContextMenuEvent * event)
 {
     if (menu())
         menu()->exec(event->globalPos());
 }
 
-void ListWidget::recenterTo(int index)
+void QSUiListWidget::recenterTo(int index)
 {
     if (m_row_count && index >= 0 && !m_filterMode)
     {

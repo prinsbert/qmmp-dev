@@ -24,14 +24,14 @@
 #include <QStyle>
 #include <QToolTip>
 #include <qmmpui/metadataformatter.h>
-#include "positionslider.h"
+#include "qsuipositionslider.h"
 
-PositionSlider::PositionSlider(QWidget *parent) : QSlider(Qt::Horizontal, parent)
+QSUiPositionSlider::QSUiPositionSlider(QWidget *parent) : QSlider(Qt::Horizontal, parent)
 {
     connect(this, SIGNAL(sliderMoved(int)), SLOT(onSliderMoved(int)));
 }
 
-void PositionSlider::mousePressEvent (QMouseEvent *event)
+void QSUiPositionSlider::mousePressEvent (QMouseEvent *event)
 {
     QStyleOptionSlider opt;
     initStyleOption(&opt);
@@ -65,19 +65,19 @@ void PositionSlider::mousePressEvent (QMouseEvent *event)
     QSlider::mousePressEvent(event);
 }
 
-void PositionSlider::mouseReleaseEvent (QMouseEvent *event)
+void QSUiPositionSlider::mouseReleaseEvent (QMouseEvent *event)
 {
     setSliderDown (false);
     QSlider::mouseReleaseEvent(event);
 }
 
-void PositionSlider::wheelEvent(QWheelEvent *event)
+void QSUiPositionSlider::wheelEvent(QWheelEvent *event)
 {
     setValue(value() + event->angleDelta().y() / 20);
     emit sliderReleased();
 }
 
-void PositionSlider::onSliderMoved(int pos)
+void QSUiPositionSlider::onSliderMoved(int pos)
 {
     QStyleOptionSlider opt;
     initStyleOption(&opt);

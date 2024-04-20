@@ -25,7 +25,7 @@
 #include <QMenu>
 #include <QActionGroup>
 #include "qsuitabbar.h"
-#include "listwidget.h"
+#include "qsuilistwidget.h"
 
 class QStyleOptionTabWidgetFrame;
 /**
@@ -38,7 +38,7 @@ public:
     QSUiTabWidget(QWidget *parent = nullptr);
 
     QSUiTabBar *tabBar() const;
-    ListWidget *listWidget() const;
+    QSUiListWidget *listWidget() const;
     void setCornerWidget(QWidget *widget, Qt::Corner corner = Qt::TopRightCorner);
     void readSettings();
 
@@ -83,7 +83,7 @@ private:
     void tabRemoved(int index);
 
     QSUiTabBar *m_tabBar;
-    ListWidget *m_listWidget;
+    QSUiListWidget *m_listWidget;
     QWidget *m_rightCornerWidget = nullptr;
     QWidget *m_leftCornerWidget = nullptr;
     QRect m_panelRect;

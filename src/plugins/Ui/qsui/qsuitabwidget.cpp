@@ -33,7 +33,7 @@ QSUiTabWidget::QSUiTabWidget(QWidget *parent) : QWidget(parent)
     m_tabBar = new QSUiTabBar(this);
     m_tabBar->setMovable(true);
     m_tabBar->setExpanding(false);
-    m_listWidget = new ListWidget(PlayListManager::instance()->selectedPlayList(), this);
+    m_listWidget = new QSUiListWidget(PlayListManager::instance()->selectedPlayList(), this);
     m_listWidget->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred,
                                             QSizePolicy::TabWidget));
     setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding,
@@ -59,7 +59,7 @@ QSUiTabBar *QSUiTabWidget::tabBar() const
     return m_tabBar;
 }
 
-ListWidget *QSUiTabWidget::listWidget() const
+QSUiListWidget *QSUiTabWidget::listWidget() const
 {
     return m_listWidget;
 }

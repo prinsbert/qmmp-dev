@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>HotkeyEditor</class>
- <widget class="QWidget" name="HotkeyEditor">
+ <class>QSUiHotkeyEditor</class>
+ <widget class="QWidget" name="QSUiHotkeyEditor">
   <property name="geometry">
    <rect>
     <x>0</x>
