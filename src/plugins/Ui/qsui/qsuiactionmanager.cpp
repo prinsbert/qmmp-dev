@@ -36,73 +36,73 @@ QSUiActionManager::QSUiActionManager(QObject *parent) :
 {
     m_instance = this;
     m_settings = new QSettings;
-    m_settings->beginGroup("SimpleUiShortcuts");
+    m_settings->beginGroup(u"SimpleUiShortcuts"_s);
 
     m_actions = {
         //playback
-        { PLAY, createAction(tr("&Play"), "play", tr("X"), "media-playback-start") },
-        { PAUSE, createAction(tr("&Pause"), "pause", tr("C"), "media-playback-pause") },
-        { STOP, createAction(tr("&Stop"), "stop", tr("V"), "media-playback-stop") },
-        { PREVIOUS, createAction(tr("&Previous"), "previous", tr("Z"), "media-skip-backward") },
-        { NEXT, createAction(tr("&Next"), "next", tr("B"), "media-skip-forward") },
-        { PLAY_PAUSE, createAction(tr("&Play/Pause"), "play_pause", tr("Space"), "media-playback-start") },
-        { JUMP, createAction(tr("&Jump to Track"), "jump", tr("J"), "go-up") },
-        { EJECT, createAction(tr("&Play Files"), "eject", tr("E"), "media-eject") },
-        { RECORD, createAction2(tr("&Record"), "record", "", "media-record") },
-        { REPEAT_ALL, createAction2(tr("&Repeat Playlist"), "repeate_playlist", tr("R"), "media-playlist-repeat") },
-        { REPEAT_TRACK, createAction2(tr("&Repeat Track"), "repeate_track", tr("Ctrl+R")) },
-        { SHUFFLE, createAction2(tr("&Shuffle"), "shuffle", tr("S"), "media-playlist-shuffle") },
-        { NO_PL_ADVANCE, createAction2(tr("&No Playlist Advance"), "no_playlist_advance", tr("Ctrl+N")) },
-        { TRANSIT_BETWEEN_PLAYLISTS, createAction2(tr("&Transit between playlists"), "transit_between_playlists") },
-        { STOP_AFTER_SELECTED, createAction(tr("&Stop After Selected"), "stop_after_selected", tr("Ctrl+S")) },
-        { CLEAR_QUEUE, createAction(tr("&Clear Queue"), "clear_queue", tr("Alt+Q")) },
+        { PLAY, createAction(tr("&Play"), u"play"_s, tr("X"), u"media-playback-start"_s) },
+        { PAUSE, createAction(tr("&Pause"), u"pause"_s, tr("C"), u"media-playback-pause"_s) },
+        { STOP, createAction(tr("&Stop"), u"stop"_s, tr("V"), u"media-playback-stop"_s) },
+        { PREVIOUS, createAction(tr("&Previous"), u"previous"_s, tr("Z"), u"media-skip-backward"_s) },
+        { NEXT, createAction(tr("&Next"), u"next"_s, tr("B"), u"media-skip-forward"_s) },
+        { PLAY_PAUSE, createAction(tr("&Play/Pause"), u"play_pause"_s, tr("Space"), u"media-playback-start"_s) },
+        { JUMP, createAction(tr("&Jump to Track"), u"jump"_s, tr("J"), u"go-up"_s) },
+        { EJECT, createAction(tr("&Play Files"), u"eject"_s, tr("E"), u"media-eject"_s) },
+        { RECORD, createAction2(tr("&Record"), u"record"_s, QString(), u"media-record"_s) },
+        { REPEAT_ALL, createAction2(tr("&Repeat Playlist"), u"repeate_playlist"_s, tr("R"), u"media-playlist-repeat"_s) },
+        { REPEAT_TRACK, createAction2(tr("&Repeat Track"), u"repeate_track"_s, tr("Ctrl+R")) },
+        { SHUFFLE, createAction2(tr("&Shuffle"), u"shuffle"_s, tr("S"), u"media-playlist-shuffle"_s) },
+        { NO_PL_ADVANCE, createAction2(tr("&No Playlist Advance"), u"no_playlist_advance"_s, tr("Ctrl+N")) },
+        { TRANSIT_BETWEEN_PLAYLISTS, createAction2(tr("&Transit between playlists"), u"transit_between_playlists"_s) },
+        { STOP_AFTER_SELECTED, createAction(tr("&Stop After Selected"), u"stop_after_selected"_s, tr("Ctrl+S")) },
+        { CLEAR_QUEUE, createAction(tr("&Clear Queue"), u"clear_queue"_s, tr("Alt+Q")) },
         //view
-        { WM_ALLWAYS_ON_TOP, createAction2(tr("Always on Top"), "always_on_top") },
-        { WM_STICKY, createAction2(tr("Put on All Workspaces"), "sticky") },
+        { WM_ALLWAYS_ON_TOP, createAction2(tr("Always on Top"), u"always_on_top"_s) },
+        { WM_STICKY, createAction2(tr("Put on All Workspaces"), u"sticky"_s) },
         { UI_ANALYZER, nullptr }, //external action
         { UI_FILEBROWSER, nullptr }, //external action
         { UI_COVER, nullptr }, //external action
         { UI_PLAYLIST_BROWSER, nullptr }, //external action
         { UI_WAVEFORM_SEEKBAR, nullptr }, //external action
-        { UI_SHOW_TABS, createAction2(tr("Show Tabs"), "show_tabs") },
-        { UI_SHOW_TITLEBARS, createAction2(tr("Show Title Bars"), "show_titlebars") },
-        { UI_BLOCK_TOOLBARS, createAction2(tr("Block Toolbars"), "block_toolbars") },
+        { UI_SHOW_TABS, createAction2(tr("Show Tabs"), u"show_tabs"_s) },
+        { UI_SHOW_TITLEBARS, createAction2(tr("Show Title Bars"), u"show_titlebars"_s) },
+        { UI_BLOCK_TOOLBARS, createAction2(tr("Block Toolbars"), u"block_toolbars"_s) },
         //volume
-        { VOL_ENC, createAction(tr("Volume &+"), "vol_enc", tr("0")) },
-        { VOL_DEC, createAction(tr("Volume &-"), "vol_dec", tr("9")) },
-        { VOL_MUTE, createAction2(tr("&Mute"), "vol_mute", tr("M")) },
+        { VOL_ENC, createAction(tr("Volume &+"), u"vol_enc"_s, tr("0")) },
+        { VOL_DEC, createAction(tr("Volume &-"), u"vol_dec"_s, tr("9")) },
+        { VOL_MUTE, createAction2(tr("&Mute"), u"vol_mute"_s, tr("M")) },
         //playlist
-        { PL_ADD_FILE, createAction(tr("&Add File"), "add_file", tr("F"), "audio-x-generic") },
-        { PL_ADD_DIRECTORY, createAction(tr("&Add Directory"), "add_dir", tr("D"), "folder") },
-        { PL_ADD_URL, createAction(tr("&Add Url"), "add_url", tr("U"), "network-server") },
-        { PL_REMOVE_SELECTED, createAction(tr("&Remove Selected"), "remove_selected", tr("Del"), "edit-delete") },
-        { PL_REMOVE_ALL, createAction(tr("&Remove All"), "remove_all", "", "edit-clear") },
-        { PL_REMOVE_UNSELECTED, createAction(tr("&Remove Unselected"), "remove_unselected", "", "edit-delete") },
-        { PL_REMOVE_INVALID, createAction(tr("Remove unavailable files"), "remove_invalid", "", "dialog-error") },
-        { PL_REMOVE_DUPLICATES, createAction(tr("Remove duplicates"), "remove_duplicates") },
-        { PL_REFRESH, createAction(tr("Refresh"), "refresh", "F5", "view-refresh") },
-        { PL_ENQUEUE, createAction(tr("&Queue Toggle"), "enqueue", tr("Q")) },
-        { PL_INVERT_SELECTION, createAction(tr("Invert Selection"), "invert_selection") },
-        { PL_CLEAR_SELECTION, createAction(tr("&Select None"), "clear_selection") },
-        { PL_SELECT_ALL, createAction(tr("&Select All"), "select_all", tr("Ctrl+A"), "edit-select-all") },
-        { PL_SHOW_INFO, createAction(tr("&View Track Details"), "show_info", tr("Alt+I"), "dialog-information") },
-        { PL_NEW, createAction(tr("&New List"), "new_pl", tr("Ctrl+T"), "document-new") },
-        { PL_CLOSE, createAction(tr("&Delete List"), "close_pl", tr("Ctrl+W"), "window-close") },
-        { PL_LOAD, createAction(tr("&Load List"), "load_pl", tr("O"), "document-open") },
-        { PL_SAVE, createAction(tr("&Save List"), "save_pl", tr("Shift+S"), "document-save-as") },
-        { PL_RENAME, createAction(tr("&Rename List"), "pl_rename", tr("F2")) },
-        { PL_SELECT_NEXT, createAction(tr("&Select Next Playlist"), "next_pl", tr("Ctrl+PgDown"), "go-next") },
-        { PL_SELECT_PREVIOUS, createAction(tr("&Select Previous Playlist"), "prev_pl", tr("Ctrl+PgUp"), "go-previous") },
-        { PL_GROUP_TRACKS, createAction2(tr("&Group Tracks"), "group_tracks", tr("Ctrl+G")) },
-        { PL_SHOW_HEADER, createAction2(tr("&Show Column Headers"), "show_header", tr("Ctrl+H")) },
+        { PL_ADD_FILE, createAction(tr("&Add File"), u"add_file"_s, tr("F"), u"audio-x-generic"_s) },
+        { PL_ADD_DIRECTORY, createAction(tr("&Add Directory"), u"add_dir"_s, tr("D"), u"folder"_s) },
+        { PL_ADD_URL, createAction(tr("&Add Url"), u"add_url"_s, tr("U"), u"network-server"_s) },
+        { PL_REMOVE_SELECTED, createAction(tr("&Remove Selected"), u"remove_selected"_s, tr("Del"), u"edit-delete"_s) },
+        { PL_REMOVE_ALL, createAction(tr("&Remove All"), u"remove_all"_s, QString(), u"edit-clear"_s) },
+        { PL_REMOVE_UNSELECTED, createAction(tr("&Remove Unselected"), u"remove_unselected"_s, QString(), u"edit-delete"_s) },
+        { PL_REMOVE_INVALID, createAction(tr("Remove unavailable files"), u"remove_invalid"_s, QString(), u"dialog-error"_s) },
+        { PL_REMOVE_DUPLICATES, createAction(tr("Remove duplicates"), u"remove_duplicates"_s) },
+        { PL_REFRESH, createAction(tr("Refresh"), u"refresh"_s, "F5", u"view-refresh"_s) },
+        { PL_ENQUEUE, createAction(tr("&Queue Toggle"), u"enqueue"_s, tr("Q")) },
+        { PL_INVERT_SELECTION, createAction(tr("Invert Selection"), u"invert_selection"_s) },
+        { PL_CLEAR_SELECTION, createAction(tr("&Select None"), u"clear_selection"_s) },
+        { PL_SELECT_ALL, createAction(tr("&Select All"), u"select_all"_s, tr("Ctrl+A"), u"edit-select-all"_s) },
+        { PL_SHOW_INFO, createAction(tr("&View Track Details"), u"show_info"_s, tr("Alt+I"), u"dialog-information"_s) },
+        { PL_NEW, createAction(tr("&New List"), u"new_pl"_s, tr("Ctrl+T"), u"document-new"_s) },
+        { PL_CLOSE, createAction(tr("&Delete List"), u"close_pl"_s, tr("Ctrl+W"), u"window-close"_s) },
+        { PL_LOAD, createAction(tr("&Load List"), u"load_pl"_s, tr("O"), u"document-open"_s) },
+        { PL_SAVE, createAction(tr("&Save List"), u"save_pl"_s, tr("Shift+S"), u"document-save-as"_s) },
+        { PL_RENAME, createAction(tr("&Rename List"), u"pl_rename"_s, tr("F2")) },
+        { PL_SELECT_NEXT, createAction(tr("&Select Next Playlist"), u"next_pl"_s, tr("Ctrl+PgDown"), u"go-next"_s) },
+        { PL_SELECT_PREVIOUS, createAction(tr("&Select Previous Playlist"), u"prev_pl"_s, tr("Ctrl+PgUp"), u"go-previous"_s) },
+        { PL_GROUP_TRACKS, createAction2(tr("&Group Tracks"), u"group_tracks"_s, tr("Ctrl+G")) },
+        { PL_SHOW_HEADER, createAction2(tr("&Show Column Headers"), u"show_header"_s, tr("Ctrl+H")) },
         //other
-        { EQUALIZER, createAction(tr("&Equalizer"), "equalizer", tr("Ctrl+E")) },
-        { SETTINGS, createAction(tr("&Settings"), "show_settings", tr("Ctrl+P"), "configure") },
-        { APPLICATION_MENU, createAction(tr("Application Menu"), "app_menu", "", "format-justify-fill") },
-        { ABOUT_UI, createAction(tr("&About Ui"), "about_ui") },
-        { ABOUT, createAction(tr("&About"), "about") },
-        { ABOUT_QT, createAction(tr("&About Qt"), "about_qt") },
-        { QUIT, createAction(tr("&Exit"), "exit", tr("Ctrl+Q"), "application-exit") }
+        { EQUALIZER, createAction(tr("&Equalizer"), u"equalizer"_s, tr("Ctrl+E")) },
+        { SETTINGS, createAction(tr("&Settings"), u"show_settings"_s, tr("Ctrl+P"), u"configure"_s) },
+        { APPLICATION_MENU, createAction(tr("Application Menu"), u"app_menu"_s, QString(), u"format-justify-fill"_s) },
+        { ABOUT_UI, createAction(tr("&About Ui"), u"about_ui"_s) },
+        { ABOUT, createAction(tr("&About"), u"about"_s) },
+        { ABOUT_QT, createAction(tr("&About Qt"), u"about_qt"_s) },
+        { QUIT, createAction(tr("&Exit"), u"exit"_s, tr("Ctrl+Q"), u"application-exit"_s) }
     };
     m_settings->endGroup();
     readStates();
@@ -120,13 +120,6 @@ QSUiActionManager::~QSUiActionManager()
 QAction *QSUiActionManager::action(int type)
 {
     return m_actions[type];
-}
-
-QAction *QSUiActionManager::use(int type, const QObject *receiver, const char *member)
-{
-    QAction *act = m_actions[type];
-    connect(act,SIGNAL(triggered(bool)), receiver, member);
-    return act;
 }
 
 QList<QAction *> QSUiActionManager::actions() const
@@ -162,46 +155,38 @@ QAction *QSUiActionManager::createAction(const QString &name, const QString &con
         action->setIcon(QIcon(iconName));
     else if(QIcon::hasThemeIcon(iconName))
         action->setIcon(QIcon::fromTheme(iconName));
-    else if(QFile::exists(QString(":/qsui/")+iconName+".png"))
-        action->setIcon(QIcon(QString(":/qsui/")+iconName+".png"));
+    else if(QFile::exists(QStringLiteral(":/qsui/%1.png").arg(iconName)))
+        action->setIcon(QIcon(QStringLiteral(":/qsui/%1.png").arg(iconName)));
     return action;
 }
 
 QAction *QSUiActionManager::createAction2(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
 {
-    QAction *action = createAction(name, confKey, key);
+    QAction *action = createAction(name, confKey, key, iconName);
     action->setCheckable(true);
     action->setIconVisibleInMenu(false);
-    if(iconName.isEmpty())
-        return action;
-    if(QFile::exists(iconName))
-        action->setIcon(QIcon(iconName));
-    else if(QIcon::hasThemeIcon(iconName))
-        action->setIcon(QIcon::fromTheme(iconName));
-    else if(QFile::exists(QString(":/qsui/")+iconName+".png"))
-        action->setIcon(QIcon(QString(":/qsui/")+iconName+".png"));
     return action;
 }
 
 void QSUiActionManager::readStates()
 {
-    m_settings->beginGroup("Simple");
-    m_actions[PL_SHOW_HEADER]->setChecked(m_settings->value("pl_show_header", true).toBool());
+    m_settings->beginGroup(u"Simple"_s);
+    m_actions[PL_SHOW_HEADER]->setChecked(m_settings->value(u"pl_show_header"_s, true).toBool());
     m_settings->endGroup();
 }
 
 void QSUiActionManager::saveStates()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    settings.setValue("pl_show_header", m_actions[PL_SHOW_HEADER]->isChecked());
+    settings.beginGroup(u"Simple"_s);
+    settings.setValue(u"pl_show_header"_s, m_actions[PL_SHOW_HEADER]->isChecked());
     settings.endGroup();
 }
 
 void QSUiActionManager::saveActions()
 {
     QSettings settings;
-    settings.beginGroup("SimpleUiShortcuts");
+    settings.beginGroup(u"SimpleUiShortcuts"_s);
 
     for(const QAction *action : m_actions.values())
     {
@@ -239,7 +224,7 @@ void QSUiActionManager::registerAction(int id, QAction *action, const QString &c
         qFatal("ActionManager: invalid action id");
 
     QSettings settings;
-    settings.beginGroup("SimpleUiShortcuts");
+    settings.beginGroup(u"SimpleUiShortcuts"_s);
     action->setShortcut(settings.value(confKey, key).toString());
     action->setProperty("defaultShortcut", key);
     action->setObjectName(confKey);
@@ -262,7 +247,7 @@ void QSUiActionManager::registerWidget(int id, QWidget *w, const QString &text, 
 void QSUiActionManager::registerDockWidget(QDockWidget *w, const QString &confKey, const QString &key)
 {
     QSettings settings;
-    settings.beginGroup("SimpleUiShortcuts");
+    settings.beginGroup(u"SimpleUiShortcuts"_s);
     w->toggleViewAction()->setShortcut(settings.value(confKey, key).toString());
     settings.endGroup();
     m_dockWidgets.insert(w, std::make_pair(confKey, key));
@@ -279,7 +264,7 @@ QToolBar *QSUiActionManager::createToolBar(const ToolBarInfo &info, QWidget *par
     updateToolBar(toolBar, info);
     toolBar->setProperty("uid", info.uid);
     toolBar->setIconSize(info.iconSize);
-    toolBar->setObjectName("Toolbar" + info.uid);
+    toolBar->setObjectName(u"Toolbar"_s + info.uid);
     return toolBar;
 }
 
@@ -290,7 +275,7 @@ void QSUiActionManager::updateToolBar(QToolBar *toolBar, const ToolBarInfo &info
     toolBar->setWindowTitle(info.title);
     for(const QString &name : qAsConst(info.actionNames))
     {
-        if(name == "separator")
+        if(name == QLatin1String("separator"))
         {
             toolBar->addSeparator()->setObjectName("separator");
             continue;
@@ -306,7 +291,7 @@ void QSUiActionManager::updateToolBar(QToolBar *toolBar, const ToolBarInfo &info
 
 QSUiActionManager::ToolBarInfo QSUiActionManager::defaultToolBar() const
 {
-    const QList<Type> idList = {
+    static const QList<Type> idList = {
         PL_ADD_FILE, PL_ADD_DIRECTORY, PREVIOUS, PLAY, PAUSE, STOP, NEXT, EJECT,
         UI_SEPARATOR, UI_POS_SLIDER, UI_SEPARATOR, UI_VOL_SLIDER, VOL_MUTE
     };
@@ -315,7 +300,7 @@ QSUiActionManager::ToolBarInfo QSUiActionManager::defaultToolBar() const
     {
         if(id == UI_SEPARATOR)
         {
-            names << "separator";
+            names << u"separator"_s;
             continue;
         }
         names << m_actions.value(id)->objectName();
@@ -323,7 +308,7 @@ QSUiActionManager::ToolBarInfo QSUiActionManager::defaultToolBar() const
     QSUiActionManager::ToolBarInfo info;
     info.title = tr("Toolbar");
     info.actionNames = names;
-    info.uid = "{68363a0b-f2cd-462a-87ca-e3089db21561}";
+    info.uid = u"{68363a0b-f2cd-462a-87ca-e3089db21561}"_s;
     return info;
 }
 
@@ -331,17 +316,17 @@ QList<QSUiActionManager::ToolBarInfo> QSUiActionManager::readToolBarSettings() c
 {
     QList<ToolBarInfo> list;
     QSettings settings;
-    int iconSize = settings.value("Simple/toolbar_icon_size", -1).toInt();
+    int iconSize = settings.value(u"Simple/toolbar_icon_size"_s, -1).toInt();
     if(iconSize <= 0)
         iconSize = qApp->style()->pixelMetric(QStyle::PM_ToolBarIconSize);
-    int size = settings.beginReadArray("SimpleUiToolbars");
+    int size = settings.beginReadArray(u"SimpleUiToolbars"_s);
     for(int i = 0; i < size; ++i)
     {
         ToolBarInfo info;
         settings.setArrayIndex(i);
-        info.title = settings.value("title").toString();
-        info.actionNames = settings.value("actions").toStringList();
-        info.uid = settings.value("uid").toString();
+        info.title = settings.value(u"title"_s).toString();
+        info.actionNames = settings.value(u"actions"_s).toStringList();
+        info.uid = settings.value(u"uid"_s).toString();
         info.iconSize = QSize(iconSize, iconSize);
         list.append(info);
     }
@@ -357,13 +342,13 @@ QList<QSUiActionManager::ToolBarInfo> QSUiActionManager::readToolBarSettings() c
 void QSUiActionManager::writeToolBarSettings(const QList<ToolBarInfo> &l)
 {
     QSettings settings;
-    settings.beginWriteArray("SimpleUiToolbars");
+    settings.beginWriteArray(u"SimpleUiToolbars"_s);
     for(int i = 0; i < l.size(); ++i)
     {
         settings.setArrayIndex(i);
-        settings.setValue("title", l[i].title);
-        settings.setValue("actions", l[i].actionNames);
-        settings.setValue("uid", l[i].uid);
+        settings.setValue(u"title"_s, l[i].title);
+        settings.setValue(u"actions"_s, l[i].actionNames);
+        settings.setValue(u"uid"_s, l[i].uid);
     }
     settings.endArray();
 }

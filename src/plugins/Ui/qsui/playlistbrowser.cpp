@@ -51,7 +51,7 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QW
     layout->addWidget(m_listView);
     setLayout(layout);
 
-    connect(m_pl_manager, SIGNAL(playListsChanged()), SLOT(updateList()));
+    connect(m_pl_manager, &PlayListManager::playListsChanged, this, &PlayListBrowser::updateList);
     //actions
     m_listView->setContextMenuPolicy(Qt::ActionsContextMenu);
     m_listView->addAction(ACTION(QSUiActionManager::PL_RENAME));
@@ -68,12 +68,12 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QW
     m_proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     m_proxyModel->setSourceModel(m_listModel);
     m_listView->setModel(m_proxyModel);
-    connect(m_lineEdit, SIGNAL(textChanged(QString)), SLOT(onLineEditTextChanged(QString)));
-    connect(m_listView, SIGNAL(activated(QModelIndex)), SLOT(onListViewActivated(QModelIndex)));
-    connect(m_listView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
-            SLOT(updateCurrentRow(QModelIndex,QModelIndex)));
-    connect(m_showFilterAction, SIGNAL(toggled(bool)), m_lineEdit, SLOT(setVisible(bool)));
-    connect(m_showFilterAction, SIGNAL(triggered()), m_lineEdit, SLOT(clear()));
+    connect(m_lineEdit, &QLineEdit::textChanged, this, &PlayListBrowser::onLineEditTextChanged);
+    connect(m_listView, &QListView::activated, this, &PlayListBrowser::onListViewActivated);
+    connect(m_listView->selectionModel(), &QItemSelectionModel::currentRowChanged,
+            this, &PlayListBrowser::updateCurrentRow);
+    connect(m_showFilterAction, &QAction::toggled, m_lineEdit, &QLineEdit::setVisible);
+    connect(m_showFilterAction, &QAction::triggered, m_lineEdit, &QLineEdit::clear);
     updateList();
     readSettings();
 }
@@ -81,8 +81,8 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QW
 PlayListBrowser::~PlayListBrowser()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    settings.setValue("pl_browser_quick_search", m_showFilterAction->isChecked());
+    settings.beginGroup(u"Simple"_s);
+    settings.setValue(u"pl_browser_quick_search"_s, m_showFilterAction->isChecked());
     settings.endGroup();
 }
 
@@ -175,7 +175,7 @@ bool PlayListBrowser::eventFilter(QObject *o, QEvent *e)
 void PlayListBrowser::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_showFilterAction->setChecked(settings.value("pl_browser_quick_search", true).toBool());
+    settings.beginGroup(u"Simple"_s);
+    m_showFilterAction->setChecked(settings.value(u"pl_browser_quick_search"_s, true).toBool());
     settings.endGroup();
 }

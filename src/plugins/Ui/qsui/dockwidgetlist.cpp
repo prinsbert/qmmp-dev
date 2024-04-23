@@ -9,9 +9,9 @@
 
 DockWidgetList::DockWidgetList(QMainWindow *parent) : QObject(parent), m_mw(parent)
 {
-    connect(UiHelper::instance(), SIGNAL(widgetAdded(QString)), SLOT(onWidgetAdded(QString)));
-    connect(UiHelper::instance(), SIGNAL(widgetRemoved(QString)), SLOT(onWidgetRemoved(QString)));
-    connect(UiHelper::instance(), SIGNAL(widgetUpdated(QString)), SLOT(onWidgetUpdated(QString)));
+    connect(UiHelper::instance(), &UiHelper::widgetAdded, this, &DockWidgetList::onWidgetAdded);
+    connect(UiHelper::instance(), &UiHelper::widgetRemoved, this, &DockWidgetList::onWidgetRemoved);
+    connect(UiHelper::instance(), &UiHelper::widgetUpdated, this, &DockWidgetList::onWidgetUpdated);
 
     for(const QString &id : General::enabledWidgets())
     {
@@ -23,8 +23,8 @@ DockWidgetList::DockWidgetList(QMainWindow *parent) : QObject(parent), m_mw(pare
         if(qApp->platformName() == QLatin1String("wayland"))
             dockWidget->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
         m_mw->addDockWidget(desc.area, dockWidget);
-        connect(dockWidget->toggleViewAction(), SIGNAL(triggered(bool)), SLOT(onViewActionTriggered(bool)));
-        connect(dockWidget, SIGNAL(visibilityChanged(bool)), SLOT(onVisibilityChanged(bool)));
+        connect(dockWidget->toggleViewAction(), &QAction::triggered, this, &DockWidgetList::onViewActionTriggered);
+        connect(dockWidget, &QDockWidget::visibilityChanged, this, &DockWidgetList::onVisibilityChanged);
         m_dockWidgetList << dockWidget;
         QSUiActionManager::instance()->registerDockWidget(dockWidget, id, desc.shortcut);
     }
@@ -129,7 +129,7 @@ void DockWidgetList::onWidgetAdded(const QString &id)
     if(m_menu && m_beforeAction)
         m_menu->insertAction(m_beforeAction, dockWidget->toggleViewAction());
     m_mw->addDockWidget(desc.area, dockWidget);
-    connect(dockWidget->toggleViewAction(), SIGNAL(toggled(bool)), SLOT(onViewActionTriggered(bool)));
+    connect(dockWidget->toggleViewAction(), &QAction::triggered, this, &DockWidgetList::onViewActionTriggered);
     m_dockWidgetList << dockWidget;
     QSUiActionManager::instance()->registerDockWidget(dockWidget, id, desc.shortcut);
     setTitleBarsVisible(m_titleBarsVisible);

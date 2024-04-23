@@ -55,15 +55,15 @@ QSUiListWidget::QSUiListWidget(PlayListModel *model, QWidget *parent) : QWidget(
     setMouseTracking(true);
 
     readSettings();
-    connect(m_ui_settings, SIGNAL(repeatableTrackChanged(bool)), SLOT(updateRepeatIndicator()));
-    connect(m_timer, SIGNAL(timeout()), SLOT(autoscroll()));
-    connect(m_scrollBar, SIGNAL(valueChanged(int)), SLOT(setViewPosition(int)));
-    connect(m_hslider, SIGNAL(valueChanged(int)), m_header, SLOT(scroll(int)));
-    connect(m_hslider, SIGNAL(valueChanged(int)), this, SLOT(update()));
-    connect(m_model, SIGNAL(scrollToRequest(int)), SLOT(scrollTo(int)));
-    connect(m_model, SIGNAL(listChanged(int)), SLOT(updateList(int)));
-    connect(m_model, SIGNAL(sortingByColumnFinished(int,bool)), m_header, SLOT(showSortIndicator(int,bool)));
-    SET_ACTION(QSUiActionManager::PL_SHOW_HEADER, this, SLOT(readSettings()));
+    connect(m_ui_settings, &QmmpUiSettings::repeatableTrackChanged, this, &QSUiListWidget::updateRepeatIndicator);
+    connect(m_timer, &QTimer::timeout, this, &QSUiListWidget::autoscroll);
+    connect(m_scrollBar, &QScrollBar::valueChanged, this, &QSUiListWidget::setViewPosition);
+    connect(m_hslider, &QScrollBar::valueChanged, m_header, &QSUiPlayListHeader::scroll);
+    connect(m_hslider, &QScrollBar::valueChanged, this, qOverload<>(&QSUiListWidget::update));
+    connect(m_model, &PlayListModel::scrollToRequest, this, &QSUiListWidget::scrollTo);
+    connect(m_model, &PlayListModel::listChanged, this, &QSUiListWidget::updateList);
+    connect(m_model, &PlayListModel::sortingByColumnFinished, m_header, &QSUiPlayListHeader::showSortIndicator);
+    SET_ACTION(QSUiActionManager::PL_SHOW_HEADER, this, &QSUiListWidget::readSettings);
 }
 
 QSUiListWidget::~QSUiListWidget()
@@ -75,13 +75,13 @@ QSUiListWidget::~QSUiListWidget()
 void QSUiListWidget::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_show_protocol = settings.value ("pl_show_protocol", false).toBool();
-    bool show_popup = settings.value("pl_show_popup", false).toBool();
+    settings.beginGroup(u"Simple"_s);
+    m_show_protocol = settings.value(u"pl_show_protocol"_s, false).toBool();
+    bool show_popup = settings.value(u"pl_show_popup"_s, false).toBool();
 
     m_header->readSettings();
     m_header->setVisible(ACTION(QSUiActionManager::PL_SHOW_HEADER)->isChecked());
-    m_header->setGeometry(0,0,width(), m_header->requiredHeight());
+    m_header->setGeometry(0, 0, width(), m_header->requiredHeight());
 
     if (m_update)
     {

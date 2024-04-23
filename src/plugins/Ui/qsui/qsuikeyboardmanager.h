@@ -51,7 +51,9 @@ private slots:
 private:
     QList<QAction*> m_actions;
     QSUiListWidget *m_listWidget = nullptr;
-    void addAction(QKeyCombination keys, const char * method);
+
+    template <typename Func1>
+    void addAction(QKeyCombination keys, Func1 slot);
 
     enum SelectMode
     {

@@ -56,7 +56,7 @@ private:
     void loadPresets();
 
     QVBoxLayout *m_layout;
-    QCheckBox *m_enabled;
+    QCheckBox *m_enableCheckBox;
     QComboBox *m_presetComboBox;
     QList<QSlider *> m_sliders;
     QList<QLabel *> m_labels;

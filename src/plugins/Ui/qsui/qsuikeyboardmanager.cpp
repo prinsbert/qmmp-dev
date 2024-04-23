@@ -18,8 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QAction>
 #include <QKeySequence>
+#include <QAction>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/playlistmodel.h>
 #include <qmmpui/mediaplayer.h>
@@ -30,25 +30,25 @@
 QSUiKeyboardManager::QSUiKeyboardManager(QObject *parent) :
     QObject(parent)
 {
-    addAction(Qt::Key_Up, SLOT(processUp()));
-    addAction(Qt::Key_Up | Qt::ShiftModifier, SLOT(processUp()));
-    addAction(Qt::Key_Up | Qt::AltModifier, SLOT(processUp()));
-    addAction(Qt::Key_Up | Qt::ControlModifier, SLOT(processUp()));
+    addAction(Qt::Key_Up, &QSUiKeyboardManager::processUp);
+    addAction(Qt::Key_Up | Qt::ShiftModifier, &QSUiKeyboardManager::processUp);
+    addAction(Qt::Key_Up | Qt::AltModifier, &QSUiKeyboardManager::processUp);
+    addAction(Qt::Key_Up | Qt::ControlModifier, &QSUiKeyboardManager::processUp);
 
-    addAction(Qt::Key_Down, SLOT(processDown()));
-    addAction(Qt::Key_Down | Qt::ShiftModifier, SLOT(processDown()));
-    addAction(Qt::Key_Down | Qt::AltModifier, SLOT(processDown()));
-    addAction(Qt::Key_Down | Qt::ControlModifier, SLOT(processDown()));
+    addAction(Qt::Key_Down, &QSUiKeyboardManager::processDown);
+    addAction(Qt::Key_Down | Qt::ShiftModifier, &QSUiKeyboardManager::processDown);
+    addAction(Qt::Key_Down | Qt::AltModifier, &QSUiKeyboardManager::processDown);
+    addAction(Qt::Key_Down | Qt::ControlModifier, &QSUiKeyboardManager::processDown);
 
-    addAction(Qt::Key_Return, SLOT(processEnter()));
-    addAction(Qt::Key_PageUp, SLOT(processPgUp()));
-    addAction(Qt::Key_PageUp | Qt::ShiftModifier, SLOT(processPgUp()));
-    addAction(Qt::Key_PageDown, SLOT(processPgDown()));
-    addAction(Qt::Key_PageDown | Qt::ShiftModifier, SLOT(processPgDown()));
-    addAction(Qt::Key_Home, SLOT(processHome()));
-    addAction(Qt::Key_Home | Qt::ShiftModifier, SLOT(processHome()));
-    addAction(Qt::Key_End, SLOT(processEnd()));
-    addAction(Qt::Key_End | Qt::ShiftModifier, SLOT(processEnd()));
+    addAction(Qt::Key_Return, &QSUiKeyboardManager::processEnter);
+    addAction(Qt::Key_PageUp, &QSUiKeyboardManager::processPgUp);
+    addAction(Qt::Key_PageUp | Qt::ShiftModifier, &QSUiKeyboardManager::processPgUp);
+    addAction(Qt::Key_PageDown, &QSUiKeyboardManager::processPgDown);
+    addAction(Qt::Key_PageDown | Qt::ShiftModifier, &QSUiKeyboardManager::processPgDown);
+    addAction(Qt::Key_Home, &QSUiKeyboardManager::processHome);
+    addAction(Qt::Key_Home | Qt::ShiftModifier, &QSUiKeyboardManager::processHome);
+    addAction(Qt::Key_End, &QSUiKeyboardManager::processEnd);
+    addAction(Qt::Key_End | Qt::ShiftModifier, &QSUiKeyboardManager::processEnd);
 }
 
 QList<QAction *> QSUiKeyboardManager::actions()
@@ -82,7 +82,7 @@ void QSUiKeyboardManager::processUp()
     int first_visible = m_listWidget->firstVisibleIndex();
     int last_visible = m_listWidget->visibleRows() + first_visible - 1;
 
-    int s = SELECT_NEXT;
+    SelectMode s = SELECT_NEXT;
 
     if(lines.constLast() < first_visible)
         s = SELECT_TOP;
@@ -167,7 +167,7 @@ void QSUiKeyboardManager::processDown()
     int first_visible = m_listWidget->firstVisibleIndex();
     int last_visible = m_listWidget->visibleRows() + first_visible - 1;
 
-    int s = SELECT_NEXT;
+    SelectMode s = SELECT_NEXT;
 
     if(lines.constLast() < first_visible)
         s = SELECT_TOP;
@@ -319,10 +319,11 @@ void QSUiKeyboardManager::processEnd()
     }
 }
 
-void QSUiKeyboardManager::addAction(QKeyCombination keys, const char *method)
+template <typename Func1>
+inline void QSUiKeyboardManager::addAction(QKeyCombination keys, Func1 slot)
 {
     QAction *action = new QAction(this);
     action->setShortcut(QKeySequence(keys));
-    connect(action, SIGNAL(triggered()), method);
+    connect(action, &QAction::triggered, this, slot);
     m_actions << action;
 }

@@ -58,19 +58,19 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     m_treeView->setFrameStyle(QFrame::NoFrame);
     m_treeView->setDragEnabled(true);
     m_treeView->setSelectionMode(QAbstractItemView::ExtendedSelection);
-    connect(m_treeView, SIGNAL(activated(QModelIndex)), SLOT(onListViewActivated(QModelIndex)));
+    connect(m_treeView, &QTreeView::activated, this, &FileSystemBrowser::onListViewActivated);
 
     m_label = new Utils::ElidingLabel(this);
-    m_label->setContentsMargins(5,5,5,0);
+    m_label->setContentsMargins(5, 5, 5, 0);
     m_label->setMargin(0);
 
     m_filterLineEdit = new QLineEdit(this);
-    m_filterLineEdit->setContentsMargins(5,5,5,0);
+    m_filterLineEdit->setContentsMargins(5, 5, 5, 0);
     m_filterLineEdit->setClearButtonEnabled(true);
     m_filterLineEdit->setVisible(false);
 
     QVBoxLayout *layout = new QVBoxLayout();
-    layout->setContentsMargins(0,0,0,0);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->addWidget(m_label);
     layout->addWidget(m_filterLineEdit);
     layout->addWidget(m_treeView);
@@ -106,12 +106,12 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     addAction(m_showFilterAction = new QAction(tr("Quick Search"), this));
     m_showFilterAction->setCheckable(true);
 
-    connect(selectDirAction, SIGNAL(triggered()), SLOT(selectDirectory()));
-    connect(addToPlaylistAction, SIGNAL(triggered()), SLOT(addToPlayList()));
-    connect(m_treeModeAction, SIGNAL(triggered(bool)), SLOT(setTreeViewMode(bool)));
-    connect(m_showFilterAction, SIGNAL(toggled(bool)), m_filterLineEdit, SLOT(setVisible(bool)));
-    connect(m_showFilterAction, SIGNAL(triggered()), m_filterLineEdit, SLOT(clear()));
-    connect(m_filterLineEdit, SIGNAL(textChanged(QString)), SLOT(onFilterLineEditTextChanged(QString)));
+    connect(selectDirAction, &QAction::triggered, this, &FileSystemBrowser::selectDirectory);
+    connect(addToPlaylistAction, &QAction::triggered, this, &FileSystemBrowser::addToPlayList);
+    connect(m_treeModeAction, &QAction::triggered, this, &FileSystemBrowser::setTreeViewMode);
+    connect(m_showFilterAction, &QAction::toggled, m_filterLineEdit, &QLineEdit::setVisible);
+    connect(m_showFilterAction, &QAction::triggered, m_filterLineEdit, &QLineEdit::clear);
+    connect(m_filterLineEdit, &QLineEdit::textChanged, this, &FileSystemBrowser::onFilterLineEditTextChanged);
 
     readSettings();
 }
@@ -119,23 +119,23 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
 FileSystemBrowser::~FileSystemBrowser()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    settings.setValue("fsbrowser_current_dir", m_fileSystemModel->rootDirectory().canonicalPath());
-    settings.setValue("fsbrowser_quick_search", m_showFilterAction->isChecked());
-    settings.setValue("fsbrowser_tree_mode", m_treeModeAction->isChecked());
+    settings.beginGroup(u"Simple"_s);
+    settings.setValue(u"fsbrowser_current_dir"_s, m_fileSystemModel->rootDirectory().canonicalPath());
+    settings.setValue(u"fsbrowser_quick_search"_s, m_showFilterAction->isChecked());
+    settings.setValue(u"fsbrowser_tree_mode"_s, m_treeModeAction->isChecked());
     settings.endGroup();
 }
 
 void FileSystemBrowser::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
+    settings.beginGroup(u"Simple"_s);
     if(!m_update)
     {
         m_update = true;
-        setCurrentDirectory(settings.value("fsbrowser_current_dir", QDir::homePath()).toString());
-        m_showFilterAction->setChecked(settings.value("fsbrowser_quick_search", false).toBool());
-        setTreeViewMode(settings.value("fsbrowser_tree_mode", false).toBool());
+        setCurrentDirectory(settings.value(u"fsbrowser_current_dir"_s, QDir::homePath()).toString());
+        m_showFilterAction->setChecked(settings.value(u"fsbrowser_quick_search"_s, false).toBool());
+        setTreeViewMode(settings.value(u"fsbrowser_tree_mode"_s, false).toBool());
         m_treeModeAction->setChecked(m_treeView->rootIsDecorated());
     }
     settings.endGroup();
@@ -172,7 +172,7 @@ void FileSystemBrowser::addToPlayList()
 
         QModelIndex sourceIndex = m_proxyModel->mapToSource(index);
         QString name = m_fileSystemModel->fileName(sourceIndex);
-        if(name == "..")
+        if(name == QLatin1String(".."))
             continue;
         PlayListManager::instance()->selectedPlayList()->add(m_fileSystemModel->filePath(sourceIndex));
     }

@@ -30,9 +30,9 @@ QSUiCoverWidget::QSUiCoverWidget(QWidget *parent)
 {
     setContextMenuPolicy(Qt::ActionsContextMenu);
     QAction *saveAsAction = new QAction(tr("&Save As..."), this);
-    connect(saveAsAction, SIGNAL(triggered()), SLOT(saveAs()));
+    connect(saveAsAction, &QAction::triggered, this, &QSUiCoverWidget::saveAs);
     addAction(saveAsAction);
-    m_image = QImage(":/qsui/ui_no_cover.png");
+    m_image = QImage(u":/qsui/ui_no_cover.png"_s);
 }
 
 QSUiCoverWidget::~QSUiCoverWidget()
@@ -40,7 +40,7 @@ QSUiCoverWidget::~QSUiCoverWidget()
 
 void QSUiCoverWidget::setCover(const QImage &img)
 {
-    m_image = img.isNull() ? QImage(":/qsui/ui_no_cover.png") : img;
+    m_image = img.isNull() ? QImage(u":/qsui/ui_no_cover.png"_s) : img;
     update();
 }
 
@@ -63,8 +63,8 @@ void QSUiCoverWidget::paintEvent(QPaintEvent *)
 void QSUiCoverWidget::saveAs()
 {
     QString path = FileDialog::getSaveFileName(this, tr("Save Cover As"),
-                                                 QDir::homePath() + "/cover.jpg",
-                                                 tr("Images") +" (*.png *.jpg)");
+                                                 QDir::homePath() + u"/cover.jpg"_s,
+                                                 tr("Images") + u" (*.png *.jpg)"_s);
 
     if (!path.isEmpty())
         m_image.save(path);

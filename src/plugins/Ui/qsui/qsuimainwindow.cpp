@@ -134,7 +134,7 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     m_volumeSlider->setFocusPolicy(Qt::NoFocus);
     m_volumeSlider->setFixedWidth(100);
     m_volumeSlider->setRange(0,100);
-    SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, SLOT(setMuted(bool)));
+    SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, &SoundCore::setMuted);
     connect(m_volumeSlider, SIGNAL(sliderMoved(int)), m_core, SLOT(setVolume(int)));
     connect(m_core, SIGNAL(volumeChanged(int)), m_volumeSlider, SLOT(setValue(int)));
     connect(m_core, SIGNAL(volumeChanged(int)), SLOT(updateVolumeIcon()));
@@ -473,49 +473,42 @@ void QSUiMainWindow::createActions()
     QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_QUICK_SEARCH, m_quickSearch,
                                               tr("Quick Search"), "quick_search");
     //playback
-    SET_ACTION(QSUiActionManager::PREVIOUS, m_player, SLOT(previous()));
-    SET_ACTION(QSUiActionManager::PLAY, m_player, SLOT(play()));
-    SET_ACTION(QSUiActionManager::PAUSE, m_core, SLOT(pause()));
-    SET_ACTION(QSUiActionManager::STOP, m_player, SLOT(stop()));
-    SET_ACTION(QSUiActionManager::NEXT, m_player, SLOT(next()));
-    SET_ACTION(QSUiActionManager::EJECT, this, SLOT(playFiles()));
-    SET_ACTION(QSUiActionManager::RECORD, this, SLOT(record(bool)));
+    SET_ACTION(QSUiActionManager::PREVIOUS, m_player, &MediaPlayer::previous);
+    SET_ACTION(QSUiActionManager::PLAY, m_player, &MediaPlayer::play);
+    SET_ACTION(QSUiActionManager::PAUSE, m_core, &SoundCore::pause);
+    SET_ACTION(QSUiActionManager::STOP, m_player, &MediaPlayer::stop);
+    SET_ACTION(QSUiActionManager::NEXT, m_player, &MediaPlayer::next);
+    SET_ACTION(QSUiActionManager::EJECT, this, &QSUiMainWindow::playFiles);
+    SET_ACTION(QSUiActionManager::RECORD, this, &QSUiMainWindow::record);
 
     //file menu
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_FILE, this, SLOT(addFiles())));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_DIRECTORY, this, SLOT(addDir())));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_URL, this, SLOT(addUrl())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_FILE, this, &QSUiMainWindow::addFiles));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_DIRECTORY, this, &QSUiMainWindow::addDir));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_URL, this, &QSUiMainWindow::addUrl));
     QAction *sep = m_ui.menuFile->addSeparator();
     UiHelper::instance()->registerMenu(UiHelper::ADD_MENU, m_ui.menuFile, false, sep);
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_NEW, m_pl_manager, SLOT(createPlayList())));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_CLOSE, this, SLOT(removePlaylist())));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_RENAME, this, SLOT(renameTab())));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_NEXT, m_pl_manager,
-                                        SLOT(selectNextPlayList())));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_PREVIOUS, m_pl_manager,
-                                        SLOT(selectPreviousPlayList())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_NEW, m_pl_manager, [this] { m_pl_manager->createPlayList(); }));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_CLOSE, this, &QSUiMainWindow::removePlaylist));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_RENAME, this, &QSUiMainWindow::renameTab));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_NEXT, m_pl_manager, &PlayListManager::selectNextPlayList));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_PREVIOUS, m_pl_manager, &PlayListManager::selectPreviousPlayList));
     m_ui.menuFile->addSeparator();
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_LOAD, this, SLOT(loadPlayList())));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SAVE, this, SLOT(savePlayList())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_LOAD, this, &QSUiMainWindow::loadPlayList));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SAVE, this, &QSUiMainWindow::savePlayList));
     m_ui.menuFile->addSeparator();
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::QUIT, m_uiHelper, SLOT(exit())));
+    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::QUIT, m_uiHelper, &UiHelper::exit));
     //edit menu
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_ALL, m_pl_manager, SLOT(selectAll())));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_ALL, m_pl_manager, &PlayListManager::selectAll));
     m_ui.menuEdit->addSeparator();
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_SELECTED, m_listWidget,
-                                        SLOT(removeSelected())));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_UNSELECTED, m_listWidget,
-                                        SLOT(removeUnselected())));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_ALL, m_listWidget, SLOT(clear())));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_INVALID, m_pl_manager,
-                                        SLOT(removeInvalidTracks())));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_DUPLICATES, m_pl_manager,
-                                        SLOT(removeDuplicates())));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REFRESH, m_pl_manager,
-                                        SLOT(refresh())));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_SELECTED, m_listWidget, &QSUiListWidget::removeSelected));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_UNSELECTED, m_listWidget, &QSUiListWidget::removeUnselected));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_ALL, m_listWidget, &QSUiListWidget::clear));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_INVALID, m_pl_manager, &PlayListManager::removeInvalidTracks));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_DUPLICATES, m_pl_manager, &PlayListManager::removeDuplicates));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REFRESH, m_pl_manager, &PlayListManager::refresh));
     m_ui.menuEdit->addSeparator();
     //view menu
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP, this, SLOT(readSettings())));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP, this, &QSUiMainWindow::readSettings));
     m_ui.menuView->addSeparator();
     m_ui.menuView->addAction(m_ui.analyzerDockWidget->toggleViewAction());
     m_ui.menuView->addAction(m_ui.waveformSeekBarDockWidget->toggleViewAction());
@@ -524,13 +517,13 @@ void QSUiMainWindow::createActions()
     m_ui.menuView->addAction(m_ui.playlistsDockWidget->toggleViewAction());
     QAction *separator = m_ui.menuView->addSeparator();
     m_dockWidgetList->registerMenu(m_ui.menuView, separator);
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), SLOT(setVisible(bool))));
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TITLEBARS, this, SLOT(setTitleBarsVisible(bool))));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), &QSUiTabBar::setVisible));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TITLEBARS, this, &QSUiMainWindow::setTitleBarsVisible));
     m_ui.menuView->addAction(ACTION(QSUiActionManager::PL_SHOW_HEADER));
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::PL_GROUP_TRACKS, m_ui_settings, SLOT(setGroupsEnabled(bool))));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::PL_GROUP_TRACKS, m_ui_settings, &QmmpUiSettings::setGroupsEnabled));
     ACTION(QSUiActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
     m_ui.menuView->addSeparator();
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, SLOT(setToolBarsBlocked(bool))));
+    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, &QSUiMainWindow::setToolBarsBlocked));
     m_ui.menuView->addAction(tr("Edit Toolbars"), this, SLOT(editToolBar()));
 
     QMenu *sortMenu = new QMenu(tr("Sort List"), this);
@@ -570,7 +563,7 @@ void QSUiMainWindow::createActions()
     m_ui.menuEdit->addAction(QIcon::fromTheme("view-sort-descending"), tr("Reverse List"),
                               m_pl_manager, SLOT(reverseList()));
     m_ui.menuEdit->addSeparator();
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::SETTINGS, this, SLOT(showSettings())));
+    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::SETTINGS, this, &QSUiMainWindow::showSettings));
 
     //playback menu
     m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PLAY));
@@ -578,48 +571,40 @@ void QSUiMainWindow::createActions()
     m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PAUSE));
     m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::NEXT));
     m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PREVIOUS));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::PLAY_PAUSE,this,SLOT(playPause())));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::PLAY_PAUSE, this, &QSUiMainWindow::playPause));
     m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::JUMP, this, SLOT(jumpTo())));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::JUMP, this, &QSUiMainWindow::jumpTo));
     m_ui.menuPlayback->addSeparator();
     m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PL_ENQUEUE));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::CLEAR_QUEUE, m_pl_manager, SLOT(clearQueue())));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::CLEAR_QUEUE, m_pl_manager, &PlayListManager::clearQueue));
     m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_ALL, m_ui_settings,
-                                            SLOT(setRepeatableList(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_TRACK, m_ui_settings,
-                                            SLOT(setRepeatableTrack(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::SHUFFLE, m_ui_settings,
-                                            SLOT(setShuffle(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::NO_PL_ADVANCE, m_ui_settings,
-                                            SLOT(setNoPlayListAdvance(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS, m_ui_settings,
-                                            SLOT(setPlayListTransitionEnabled(bool))));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::STOP_AFTER_SELECTED, m_pl_manager,
-                                            SLOT(stopAfterSelected())));
-
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_ALL, m_ui_settings, &QmmpUiSettings::setRepeatableList));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_TRACK, m_ui_settings, &QmmpUiSettings::setRepeatableTrack));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::SHUFFLE, m_ui_settings, &QmmpUiSettings::setShuffle));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::NO_PL_ADVANCE, m_ui_settings, &QmmpUiSettings::setNoPlayListAdvance));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS, m_ui_settings, &QmmpUiSettings::setPlayListTransitionEnabled));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::STOP_AFTER_SELECTED, m_pl_manager, &PlayListManager::stopAfterSelected));
     m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_ENC, m_core, SLOT(volumeUp())));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_DEC, m_core, SLOT(volumeDown())));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, SLOT(setMuted(bool))));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_ENC, m_core, &SoundCore::volumeUp));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_DEC, m_core, &SoundCore::volumeDown));
+    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, &SoundCore::setMuted));
     connect(m_core, SIGNAL(mutedChanged(bool)), ACTION(QSUiActionManager::VOL_MUTE), SLOT(setChecked(bool)));
 
     //help menu
-    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_UI, this, SLOT(aboutUi())));
-    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT, this, SLOT(about())));
-    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_QT, qApp, SLOT(aboutQt())));
+    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_UI, this, &QSUiMainWindow::aboutUi));
+    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT, this, &QSUiMainWindow::about));
+    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_QT, qApp, &QApplication::aboutQt));
     //playlist menu
-    m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_SHOW_INFO, m_pl_manager, SLOT(showDetails())));
+    m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_SHOW_INFO, m_pl_manager, &PlayListManager::showDetails));
     m_pl_menu->addSeparator();
     m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_SELECTED));
     m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_ALL));
     m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_UNSELECTED));
-    m_pl_menu->addMenu(UiHelper::instance()->createMenu(UiHelper::PLAYLIST_MENU,
-                                                        tr("Actions"), true, this));
+    m_pl_menu->addMenu(UiHelper::instance()->createMenu(UiHelper::PLAYLIST_MENU, tr("Actions"), true, this));
     m_pl_menu->addSeparator();
-    m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_ENQUEUE, m_pl_manager, SLOT(addToQueue())));
+    m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_ENQUEUE, m_pl_manager, &PlayListManager::addToQueue));
     //tools menu
-    m_ui.menuTools->addAction(SET_ACTION(QSUiActionManager::EQUALIZER, this, SLOT(showEqualizer())));
+    m_ui.menuTools->addAction(SET_ACTION(QSUiActionManager::EQUALIZER, this, &QSUiMainWindow::showEqualizer));
     m_uiHelper->registerMenu(UiHelper::TOOLS_MENU, m_ui.menuTools, false, ACTION(QSUiActionManager::EQUALIZER));
     //tab menu
     m_tab_menu->addAction(ACTION(QSUiActionManager::PL_LOAD));
@@ -630,14 +615,14 @@ void QSUiMainWindow::createActions()
     //seeking
     QAction* forward = new QAction(this);
     forward->setShortcut(QKeySequence(Qt::Key_Right));
-    connect(forward,SIGNAL(triggered(bool)),this,SLOT(forward()));
+    connect(forward,SIGNAL(triggered(bool)),this, SLOT(forward()));
     QAction* backward = new QAction(this);
     backward->setShortcut(QKeySequence(Qt::Key_Left));
-    connect(backward,SIGNAL(triggered(bool)),this,SLOT(backward()));
+    connect(backward,SIGNAL(triggered(bool)),this, SLOT(backward()));
     //application menu
-    SET_ACTION(QSUiActionManager::APPLICATION_MENU, this, SLOT(showAppMenu()));
+    SET_ACTION(QSUiActionManager::APPLICATION_MENU, this, &QSUiMainWindow::showAppMenu);
 
-    addActions(QList<QAction*>() << forward << backward);
+    addActions({ forward, backward });
     addActions(QSUiActionManager::instance()->actions());
     addActions(m_key_manager->actions());
 }
