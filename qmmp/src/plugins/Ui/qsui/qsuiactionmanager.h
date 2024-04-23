@@ -32,9 +32,6 @@ class QAction;
 class QSettings;
 class QDockWidget;
 
-#define SET_ACTION(type, receiver, member) QSUiActionManager::instance()->use(type, receiver, member)
-#define ACTION(type) QSUiActionManager::instance()->action(type)
-
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
@@ -128,7 +125,6 @@ public:
     };
 
     QAction *action(int type);
-    QAction *use(int type, const QObject *receiver, const char *member);
     QList<QAction *> actions() const;
     QList<QDockWidget *> dockWidgtes() const;
     bool hasDockWidgets() const;
@@ -160,5 +156,19 @@ private:
     static QSUiActionManager *m_instance;
 
 };
+
+template <class Obj, typename Func1>
+inline QAction *SET_ACTION(int type, const Obj *object, Func1 slot)
+{
+    QAction *act = QSUiActionManager::instance()->action(type);
+    QObject::connect(act, &QAction::triggered, object, slot);
+    return act;
+}
+
+inline QAction *ACTION(int type)
+{
+    return QSUiActionManager::instance()->action(type);
+}
+
 
 #endif // QSUIACTIONMANAGER_H

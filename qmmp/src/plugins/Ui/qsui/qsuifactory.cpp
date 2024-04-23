@@ -30,7 +30,7 @@ UiProperties QSUiFactory::properties() const
     UiProperties props;
     props.hasAbout = true;
     props.name = tr("Simple User Interface");
-    props.shortName = "qsui";
+    props.shortName = "qsui"_L1;
     return props;
 }
 

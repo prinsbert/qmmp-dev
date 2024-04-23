@@ -45,8 +45,8 @@ Equalizer::Equalizer(QWidget *parent) : QDialog(parent)
 
     QHBoxLayout *buttonsLayout = new QHBoxLayout;
     buttonsLayout->setSpacing(5);
-    m_enabled = new QCheckBox(tr("Enable equalizer"), this);
-    buttonsLayout->addWidget(m_enabled);
+    m_enableCheckBox = new QCheckBox(tr("Enable equalizer"), this);
+    buttonsLayout->addWidget(m_enableCheckBox);
 
     buttonsLayout->addSpacerItem(new QSpacerItem(30, 0, QSizePolicy::Fixed, QSizePolicy::Fixed));
 
@@ -56,33 +56,33 @@ Equalizer::Equalizer(QWidget *parent) : QDialog(parent)
 
     m_presetComboBox = new QComboBox(this);
     m_presetComboBox->setEditable(true);
-    connect(m_presetComboBox, SIGNAL(activated(int)), SLOT(loadPreset(int)));
+    connect(m_presetComboBox, &QComboBox::activated, this, &Equalizer::loadPreset);
     buttonsLayout->addWidget(m_presetComboBox);
 
     QPushButton *saveButton = new QPushButton(tr("Save"), this);
-    connect(saveButton, SIGNAL(pressed()), SLOT(savePreset()));
+    connect(saveButton, &QPushButton::pressed, this, &Equalizer::savePreset);
     buttonsLayout->addWidget(saveButton);
 
     QPushButton *deleteButton = new QPushButton(tr("Delete"), this);
-    connect(deleteButton, SIGNAL(pressed()), SLOT(deletePreset()));
+    connect(deleteButton, &QPushButton::pressed, this, &Equalizer::deletePreset);
     buttonsLayout->addWidget(deleteButton);
 
     QPushButton *reset = new QPushButton(tr("Reset"), this);
-    connect(reset, SIGNAL(clicked()), SLOT(resetSettings()));
+    connect(reset, &QPushButton::pressed, this, &Equalizer::resetSettings);
     buttonsLayout->addWidget(reset);
 
     QDialogButtonBox *dialogButtons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
     dialogButtons->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    connect(dialogButtons, SIGNAL(rejected()), SLOT(reject()));
+    connect(dialogButtons, &QDialogButtonBox::rejected, this, &Equalizer::reject);
     buttonsLayout->addWidget(dialogButtons);
 
     QGridLayout *slidersLayout = new QGridLayout;
     slidersLayout->setSpacing(5);
 
-    QStringList names;
-    names << tr("Preamp") << "25" << "40" << "63" << "100" << "160" << "250"
-           << "400" << "630" << "1k" << "1,6k" << "2,5k"
-           << "4k" << "6,3k" << "10k" << "16k";
+    const QStringList names = {
+        tr("Preamp"), u"25"_s, u"40"_s, u"63"_s, u"100"_s, u"160"_s, u"250"_s, u"400"_s,
+        u"630"_s, u"1k"_s, u"1,6k"_s, u"2,5k"_s, u"4k"_s, u"6,3k"_s, u"10k"_s, u"16k"_s
+    };
 
     for(int i = 0; i < 16; ++i)
     {
@@ -102,7 +102,7 @@ Equalizer::Equalizer(QWidget *parent) : QDialog(parent)
         label2->setMinimumWidth(fontMetrics().horizontalAdvance(tr("+%1dB").arg(20)) + 5);
         label2->setAlignment(Qt::AlignCenter);
         slidersLayout->addWidget(label2, 0, i, Qt::AlignHCenter);
-        connect(slider, SIGNAL(valueChanged(int)), SLOT(updateLabel()));
+        connect(slider, &QSlider::valueChanged, this, &Equalizer::updateLabel);
         m_sliders << slider;
         m_labels << label2;
     }
@@ -111,9 +111,9 @@ Equalizer::Equalizer(QWidget *parent) : QDialog(parent)
     setMinimumHeight(300);
     for(const QSlider *slider : qAsConst(m_sliders))
     {
-        connect(slider, SIGNAL(valueChanged(int)), SLOT(applySettings()));
+        connect(slider, &QSlider::valueChanged, this, &Equalizer::applySettings);
     }
-    connect(m_enabled, SIGNAL(clicked()), SLOT(applySettings()));
+    connect(m_enableCheckBox, &QCheckBox::clicked, this, &Equalizer::applySettings);
     readSettigs();
     loadPresets();
 }
@@ -128,11 +128,11 @@ Equalizer::~Equalizer()
 void Equalizer::readSettigs()
 {
     EqSettings settings = QmmpSettings::instance()->eqSettings();
-    m_enabled->setChecked(settings.isEnabled());
+    m_enableCheckBox->setChecked(settings.isEnabled());
     m_sliders.at(0)->setValue(settings.preamp());
     for(int i = 0; i < EqSettings::EQ_BANDS_15; ++i)
     {
-        m_sliders.at(i+1)->setValue(settings.gain(i));
+        m_sliders.at(i + 1)->setValue(settings.gain(i));
     }
 }
 
@@ -140,22 +140,22 @@ void Equalizer::loadPresets()
 {
     m_presetComboBox->clear();
     //equalizer presets
-    QString preset_path = Qmmp::configDir() + "/eq15.preset";
+    QString preset_path = Qmmp::configDir() + u"/eq15.preset"_s;
     if(!QFile::exists(preset_path))
-        preset_path = ":/qsui/eq15.preset";
+        preset_path = u":/qsui/eq15.preset"_s;
     QSettings eq_preset (preset_path, QSettings::IniFormat);
     int i = 0;
-    while(eq_preset.contains("Presets/Preset"+QString("%1").arg(++i)))
+    while(eq_preset.contains(u"Presets/Preset"_s + QString::number(++i)))
     {
-        QString name = eq_preset.value(QString("Presets/Preset%1").arg(i), tr("preset")).toString();
+        QString name = eq_preset.value(QStringLiteral("Presets/Preset%1").arg(i), tr("preset")).toString();
         EQPreset *preset = new EQPreset();
         //preset->setText(name);
         eq_preset.beginGroup(name);
         for (int j = 0; j < EqSettings::EQ_BANDS_15; ++j)
         {
-            preset->setGain(j,eq_preset.value(QString("Band%1").arg(j), 0).toDouble());
+            preset->setGain(j,eq_preset.value(QStringLiteral("Band%1").arg(j), 0).toDouble());
         }
-        preset->setPreamp(eq_preset.value("Preamp",0).toDouble());
+        preset->setPreamp(eq_preset.value(u"Preamp"_s, 0).toDouble());
         m_presets.append(preset);
         m_presetComboBox->addItem(name);
         eq_preset.endGroup();
@@ -167,10 +167,10 @@ void Equalizer::applySettings()
 {
     EqSettings settings = QmmpSettings::instance()->eqSettings();
     settings.setPreamp(m_sliders.at(0)->value());
-    settings.setEnabled(m_enabled->isChecked());
+    settings.setEnabled(m_enableCheckBox->isChecked());
     for(int i = 0; i < EqSettings::EQ_BANDS_15; ++i)
     {
-        settings.setGain(i, m_sliders.at(i+1)->value());
+        settings.setGain(i, m_sliders.at(i + 1)->value());
     }
     QmmpSettings::instance()->setEqSettings(settings);
 }
@@ -234,7 +234,7 @@ void Equalizer::savePreset()
         preset->setPreamp(m_sliders.at(0)->value());
         for(int i = 0; i < EqSettings::EQ_BANDS_15; ++i)
         {
-            preset->setGain(i, m_sliders.at(i+1)->value());
+            preset->setGain(i, m_sliders.at(i + 1)->value());
         }
         m_presets.append(preset);
     }
@@ -243,17 +243,17 @@ void Equalizer::savePreset()
 
 void Equalizer::savePresets()
 {
-    QSettings eq_preset (Qmmp::configDir() + "/eq15.preset", QSettings::IniFormat);
+    QSettings eq_preset(Qmmp::configDir() + u"/eq15.preset"_s, QSettings::IniFormat);
     eq_preset.clear ();
     for (int i = 0; i < m_presets.size(); ++i)
     {
-        eq_preset.setValue(QString("Presets/Preset%1").arg(i+1), m_presetComboBox->itemText(i));
+        eq_preset.setValue(QStringLiteral("Presets/Preset%1").arg(i + 1), m_presetComboBox->itemText(i));
         eq_preset.beginGroup(m_presetComboBox->itemText(i));
         for (int j = 0; j < EqSettings::EQ_BANDS_15; ++j)
         {
-            eq_preset.setValue(QString("Band%1").arg(j),m_presets.at(i)->gain(j));
+            eq_preset.setValue(QStringLiteral("Band%1").arg(j),m_presets.at(i)->gain(j));
         }
-        eq_preset.setValue("Preamp",m_presets.at(i)->preamp());
+        eq_preset.setValue(u"Preamp"_s, m_presets.at(i)->preamp());
         eq_preset.endGroup();
     }
 }
