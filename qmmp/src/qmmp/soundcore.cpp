@@ -74,8 +74,8 @@ bool SoundCore::play(const QString &source, bool queue, qint64 offset)
     s->setOffset(offset);
     m_sources.enqueue(s);
 
-    connect(s, SIGNAL(ready()), SLOT(startNextSource()));
-    connect(s, SIGNAL(error()), SLOT(startNextSource()));
+    connect(s, &InputSource::ready, this, &SoundCore::startNextSource);
+    connect(s, &InputSource::error, this, &SoundCore::startNextSource);
 
     if(!s->initialize())
     {
@@ -371,5 +371,5 @@ bool SoundCore::event(QEvent *e)
     else if(e->type() == EVENT_FINISHED)
         emit finished();
 
-    return QObject::event(e);;
+    return QObject::event(e);
 }
