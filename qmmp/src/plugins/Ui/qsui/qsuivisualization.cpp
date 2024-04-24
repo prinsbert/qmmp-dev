@@ -88,7 +88,7 @@ void QSUIVisualization::paintEvent (QPaintEvent * e)
 {
     if(m_drawer)
     {
-        QPainter painter (this);
+        QPainter painter(this);
         painter.fillRect(e->rect(),m_bgColor);
         m_drawer->draw(&painter, m_offset);
     }
@@ -118,9 +118,9 @@ void QSUIVisualization::process()
 
 void QSUIVisualization::createMenu()
 {
-    m_menu = new QMenu (this);
-    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(writeSettings()));
-    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(readSettings()));
+    m_menu = new QMenu(this);
+    connect(m_menu, &QMenu::triggered, this, &QSUIVisualization::writeSettings);
+    connect(m_menu, &QMenu::triggered, this, &QSUIVisualization::readSettings);
 
     m_coverAction = m_menu->addAction(tr("Cover"));
     m_coverAction->setCheckable(true);
@@ -128,8 +128,8 @@ void QSUIVisualization::createMenu()
     QMenu *visMode = m_menu->addMenu(tr("Visualization Mode"));
     m_visModeGroup = new QActionGroup(this);
     m_visModeGroup->setExclusive(true);
-    m_visModeGroup->addAction(tr("Analyzer"))->setData("analyzer");
-    m_visModeGroup->addAction(tr("Scope"))->setData("scope");
+    m_visModeGroup->addAction(tr("Analyzer"))->setData(u"analyzer"_s);
+    m_visModeGroup->addAction(tr("Scope"))->setData(u"scope"_s);
     for(QAction *act : m_visModeGroup->actions())
     {
         act->setCheckable(true);
@@ -138,8 +138,8 @@ void QSUIVisualization::createMenu()
 
     QMenu *analyzerMode = m_menu->addMenu(tr("Analyzer Mode"));
     m_analyzerTypeGroup = new QActionGroup(this);
-    m_analyzerTypeGroup->addAction(tr("Cells"))->setData("cells");
-    m_analyzerTypeGroup->addAction(tr("Lines"))->setData("lines");
+    m_analyzerTypeGroup->addAction(tr("Cells"))->setData(u"cells"_s);
+    m_analyzerTypeGroup->addAction(tr("Lines"))->setData(u"lines"_s);
 
     for(QAction *act : m_analyzerTypeGroup->actions())
     {
@@ -218,17 +218,17 @@ void QSUIVisualization::mousePressEvent (QMouseEvent *e)
 void QSUIVisualization::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
+    settings.beginGroup(u"Simple"_s);
     //general settings
-    m_show_cover = settings.value("vis_show_cover", true).toBool();
-    m_timer->setInterval(1000 / settings.value("vis_refresh_rate", 25).toInt());
-    QString visName = settings.value("vis_type","analyzer").toString();
-    m_bgColor.setNamedColor(settings.value("vis_bg_color", "Black").toString());
+    m_show_cover = settings.value(u"vis_show_cover"_s, true).toBool();
+    m_timer->setInterval(1000 / settings.value(u"vis_refresh_rate"_s, 25).toInt());
+    QString visName = settings.value(u"vis_type"_s, u"analyzer"_s).toString();
+    m_bgColor.setNamedColor(settings.value(u"vis_bg_color"_s, u"Black"_s).toString());
     //analyzer settings
-    double peaks_falloff = settings.value("vis_peaks_falloff", 0.2).toDouble();
-    double analyzer_falloff = settings.value("vis_analyzer_falloff", 2.2).toDouble();
-    bool show_peaks = settings.value("vis_show_peaks", true).toBool();
-    QString analyzer_type = settings.value("vis_analyzer_type", "cells").toString();
+    double peaks_falloff = settings.value(u"vis_peaks_falloff"_s, 0.2).toDouble();
+    double analyzer_falloff = settings.value(u"vis_analyzer_falloff"_s, 2.2).toDouble();
+    bool show_peaks = settings.value(u"vis_show_peaks"_s, true).toBool();
+    QString analyzer_type = settings.value(u"vis_analyzer_type"_s, u"cells"_s).toString();
 
     if(!m_update)
     {
@@ -271,7 +271,7 @@ void QSUIVisualization::readSettings()
     {
         delete m_drawer;
 
-        if(visName == "scope")
+        if(visName == "scope"_L1)
             m_drawer = new QSUiScope;
         else
             m_drawer = new QSUiAnalyzer;
@@ -283,20 +283,20 @@ void QSUIVisualization::readSettings()
 void QSUIVisualization::writeSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
+    settings.beginGroup(u"Simple"_s);
 
     QAction *act = m_fpsGroup->checkedAction ();
-    settings.setValue("vis_refresh_rate", act ? act->data().toInt() : 25);
+    settings.setValue(u"vis_refresh_rate"_s, act ? act->data().toInt() : 25);
     act = m_peaksFalloffGroup->checkedAction ();
-    settings.setValue("vis_peaks_falloff", act ? act->data().toDouble() : 0.2);
+    settings.setValue(u"vis_peaks_falloff"_s, act ? act->data().toDouble() : 0.2);
     act = m_analyzerFalloffGroup->checkedAction ();
-    settings.setValue("vis_analyzer_falloff", act ? act->data().toDouble() : 2.2);
-    settings.setValue("vis_show_peaks", m_peaksAction->isChecked());
-    settings.setValue("vis_show_cover", m_coverAction->isChecked());
+    settings.setValue(u"vis_analyzer_falloff"_s, act ? act->data().toDouble() : 2.2);
+    settings.setValue(u"vis_show_peaks"_s, m_peaksAction->isChecked());
+    settings.setValue(u"vis_show_cover"_s, m_coverAction->isChecked());
     act = m_visModeGroup->checkedAction();
-    settings.setValue("vis_type", act ? act->data().toString() : "none");
+    settings.setValue(u"vis_type"_s, act ? act->data().toString() : u"none"_s);
     act = m_analyzerTypeGroup->checkedAction();
-    settings.setValue("vis_analyzer_type", act ? act->data().toString() : "none");
+    settings.setValue(u"vis_analyzer_type"_s, act ? act->data().toString() : u"none"_s);
     settings.endGroup();
 }
 
@@ -321,7 +321,7 @@ QSUiScope::~QSUiScope()
 
 QString QSUiScope::name() const
 {
-    return "scope";
+    return u"scope"_s;
 }
 
 void QSUiScope::process(float *buffer, int width, int height)
@@ -382,10 +382,10 @@ void QSUiScope::clear()
 void QSUiScope::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_color1.setNamedColor(settings.value("vis_color1", "#BECBFF").toString());
-    m_color2.setNamedColor(settings.value("vis_color2", "#BECBFF").toString());
-    m_color3.setNamedColor(settings.value("vis_color3", "#BECBFF").toString());
+    settings.beginGroup(u"Simple"_s);
+    m_color1.setNamedColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
+    m_color2.setNamedColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
+    m_color3.setNamedColor(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
     settings.endGroup();
 }
 
@@ -507,17 +507,17 @@ void QSUiAnalyzer::clear()
 void QSUiAnalyzer::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_color1.setNamedColor(settings.value("vis_color1", "#BECBFF").toString());
-    m_color2.setNamedColor(settings.value("vis_color2", "#BECBFF").toString());
-    m_color3.setNamedColor(settings.value("vis_color3", "#BECBFF").toString());
-    m_peakColor.setNamedColor(settings.value("vis_peak_color", "#DDDDDD").toString());
+    settings.beginGroup(u"Simple"_s);
+    m_color1.setNamedColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
+    m_color2.setNamedColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
+    m_color3.setNamedColor(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
+    m_peakColor.setNamedColor(settings.value(u"vis_peak_color"_s, u"#DDDDDD"_s).toString());
     m_cell_size =  QSize(14, 8);
-    m_peaks_falloff = settings.value("vis_peaks_falloff", 0.2).toDouble();
-    m_analyzer_falloff = settings.value("vis_analyzer_falloff", 2.2).toDouble();
-    m_show_peaks = settings.value("vis_show_peaks", true).toBool();
-    QString analyzer_type = settings.value("vis_analyzer_type", "cells").toString();
-    if(analyzer_type == "lines")
+    m_peaks_falloff = settings.value(u"vis_peaks_falloff"_s, 0.2).toDouble();
+    m_analyzer_falloff = settings.value(u"vis_analyzer_falloff"_s, 2.2).toDouble();
+    m_show_peaks = settings.value(u"vis_show_peaks"_s, true).toBool();
+    QString analyzer_type = settings.value(u"vis_analyzer_type"_s, u"cells"_s).toString();
+    if(analyzer_type == "lines"_L1)
         m_analyzerType = Lines;
     else
         m_analyzerType = Cells;

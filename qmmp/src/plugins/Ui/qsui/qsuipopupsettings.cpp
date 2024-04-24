@@ -32,12 +32,12 @@ QSUiPopupSettings::QSUiPopupSettings(QWidget *parent)
     connect(m_ui.coverSizeSlider, &QSlider::valueChanged, m_ui.coverSizeLabel, qOverload<int>(&QLabel::setNum));
 
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_ui.transparencySlider->setValue(100 - settings.value("popup_opacity", 1.0).toDouble()*100);
-    m_ui.coverSizeSlider->setValue(settings.value ("popup_cover_size", 48).toInt());
-    m_ui.textEdit->setPlainText(settings.value ("popup_template", DEFAULT_TEMPLATE).toString());
-    m_ui.delaySpinBox->setValue(settings.value("popup_delay", 2500).toInt());
-    m_ui.coverCheckBox->setChecked(settings.value("popup_show_cover",true).toBool());
+    settings.beginGroup(u"Simple"_s);
+    m_ui.transparencySlider->setValue(100 - settings.value(u"popup_opacity"_s, 1.0).toDouble()*100);
+    m_ui.coverSizeSlider->setValue(settings.value(u"popup_cover_size"_s, 48).toInt());
+    m_ui.textEdit->setPlainText(settings.value(u"popup_template"_s, DEFAULT_TEMPLATE).toString());
+    m_ui.delaySpinBox->setValue(settings.value(u"popup_delay"_s, 2500).toInt());
+    m_ui.coverCheckBox->setChecked(settings.value(u"popup_show_cover"_s,true).toBool());
     settings.endGroup();
     createMenu();
 }
@@ -48,12 +48,12 @@ QSUiPopupSettings::~QSUiPopupSettings()
 void QSUiPopupSettings::accept()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    settings.setValue("popup_opacity", 1.0 -  (double)m_ui.transparencySlider->value()/100);
-    settings.setValue("popup_cover_size", m_ui.coverSizeSlider->value());
-    settings.setValue("popup_template", m_ui.textEdit->toPlainText());
-    settings.setValue("popup_delay",  m_ui.delaySpinBox->value());
-    settings.setValue("popup_show_cover", m_ui.coverCheckBox->isChecked());
+    settings.beginGroup(u"Simple"_s);
+    settings.setValue(u"popup_opacity"_s, 1.0 -  (double)m_ui.transparencySlider->value()/100);
+    settings.setValue(u"popup_cover_size"_s, m_ui.coverSizeSlider->value());
+    settings.setValue(u"popup_template"_s, m_ui.textEdit->toPlainText());
+    settings.setValue(u"popup_delay"_s,  m_ui.delaySpinBox->value());
+    settings.setValue(u"popup_show_cover"_s, m_ui.coverCheckBox->isChecked());
     settings.endGroup();
     QDialog::accept();
 }
@@ -62,7 +62,7 @@ void QSUiPopupSettings::createMenu()
 {
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui.insertButton->setMenu(menu);
-    connect(menu, SIGNAL(patternSelected(QString)), m_ui.textEdit, SLOT(insertPlainText(QString)));
+    connect(menu, &MetaDataFormatterMenu::patternSelected, m_ui.textEdit, &QPlainTextEdit::insertPlainText);
 }
 
 void QSUiPopupSettings::on_resetButton_clicked()

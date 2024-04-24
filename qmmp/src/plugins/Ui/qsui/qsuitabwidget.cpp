@@ -46,11 +46,11 @@ QSUiTabWidget::QSUiTabWidget(QWidget *parent) : QWidget(parent)
     m_menu = new QMenu(this);
     m_group = new QActionGroup(this);
     m_group->setExclusive(true);
-    connect(m_tabBar, SIGNAL(tabMoved(int,int)), SIGNAL(tabMoved(int,int)));
-    connect(m_tabBar, SIGNAL(tabMoved(int,int)), SLOT(updateActions()));
-    connect(m_tabBar, SIGNAL(tabCloseRequested(int)), SIGNAL(tabCloseRequested(int)));
-    connect(m_tabBar, SIGNAL(currentChanged(int)), SLOT(onCurrentChanged(int)));
-    connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(onActionTriggered(QAction*)));
+    connect(m_tabBar, &QSUiTabBar::tabMoved, this, &QSUiTabWidget::tabMoved);
+    connect(m_tabBar, &QSUiTabBar::tabMoved, this, &QSUiTabWidget::updateActions);
+    connect(m_tabBar, &QSUiTabBar::tabCloseRequested, this, &QSUiTabWidget::tabCloseRequested);
+    connect(m_tabBar, &QSUiTabBar::currentChanged, this, &QSUiTabWidget::onCurrentChanged);
+    connect(m_menu, &QMenu::triggered, this, &QSUiTabWidget::onActionTriggered);
     readSettings();
 }
 
@@ -66,18 +66,18 @@ QSUiListWidget *QSUiTabWidget::listWidget() const
 
 void QSUiTabWidget::setCornerWidget(QWidget *widget, Qt::Corner corner)
 {
-    if (widget && widget->parentWidget() != this)
+    if(widget && widget->parentWidget() != this)
             widget->setParent(this);
 
-    if (corner & Qt::TopRightCorner)
+    if(corner & Qt::TopRightCorner)
     {
-        if (m_rightCornerWidget)
+        if(m_rightCornerWidget)
             m_rightCornerWidget->hide();
         m_rightCornerWidget = widget;
     }
     else
     {
-        if (m_leftCornerWidget)
+        if(m_leftCornerWidget)
             m_leftCornerWidget->hide();
         m_leftCornerWidget = widget;
     }
@@ -87,15 +87,15 @@ void QSUiTabWidget::setCornerWidget(QWidget *widget, Qt::Corner corner)
 void QSUiTabWidget::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_tabBar->setTabsClosable(settings.value("pl_tabs_closable", false).toBool());
+    settings.beginGroup(u"Simple"_s);
+    m_tabBar->setTabsClosable(settings.value(u"pl_tabs_closable"_s, false).toBool());
     QFont tab_font = qApp->font(m_tabBar);
-    if(!settings.value("use_system_fonts", true).toBool())
+    if(!settings.value(u"use_system_fonts"_s, true).toBool())
     {
-        tab_font.fromString(settings.value("pl_tabs_font", tab_font.toString()).toString());
+        tab_font.fromString(settings.value(u"pl_tabs_font"_s, tab_font.toString()).toString());
     }
     m_tabBar->setFont(tab_font);
-    m_tabBar->setShape(static_cast<QTabBar::Shape>(settings.value("pl_tab_position", QTabBar::RoundedNorth).toInt()));
+    m_tabBar->setShape(static_cast<QTabBar::Shape>(settings.value(u"pl_tab_position"_s, QTabBar::RoundedNorth).toInt()));
     settings.endGroup();
     m_tabBar->updateGeometry();
     setUpLayout();
@@ -109,7 +109,7 @@ QMenu *QSUiTabWidget::menu() const
 void QSUiTabWidget::setTabText(int index, const QString &text)
 {
     QString tabText = text;
-    tabText.replace("&","&&");
+    tabText.replace(u"&"_s, u"&&"_s);
     m_tabBar->setTabText(index, tabText);
     m_menu->actions().at(index)->setText(tabText);
 }
@@ -179,7 +179,7 @@ void QSUiTabWidget::updateActions()
 
 void QSUiTabWidget::initStyleOption(QStyleOptionTabWidgetFrame *option) const
 {
-    if (!option)
+    if(!option)
         return;
 
     option->initFrom(this);
@@ -188,10 +188,10 @@ void QSUiTabWidget::initStyleOption(QStyleOptionTabWidgetFrame *option) const
 
     int exth = style()->pixelMetric(QStyle::PM_TabBarBaseHeight, nullptr, this);
     QSize t(0, 0);
-    if (m_tabBar->isVisibleTo(const_cast<QSUiTabWidget *>(this)))
+    if(m_tabBar->isVisibleTo(const_cast<QSUiTabWidget *>(this)))
         t = m_tabBar->sizeHint();
 
-    if (m_rightCornerWidget)
+    if(m_rightCornerWidget)
     {
         const QSize rightCornerSizeHint = m_rightCornerWidget->sizeHint();
         const QSize bounds(rightCornerSizeHint.width(), t.height() - exth);
@@ -202,7 +202,7 @@ void QSUiTabWidget::initStyleOption(QStyleOptionTabWidgetFrame *option) const
         option->rightCornerWidgetSize = QSize(0, 0);
     }
 
-    if (m_leftCornerWidget)
+    if(m_leftCornerWidget)
     {
         const QSize leftCornerSizeHint = m_leftCornerWidget->sizeHint();
         const QSize bounds(leftCornerSizeHint.width(), t.height() - exth);
@@ -235,9 +235,9 @@ void QSUiTabWidget::setUpLayout()
 
     m_tabBar->setGeometry(tabRect);
     m_listWidget->setGeometry(contentsRect);
-    if (m_leftCornerWidget)
+    if(m_leftCornerWidget)
         m_leftCornerWidget->setGeometry(leftCornerRect);
-    if (m_rightCornerWidget)
+    if(m_rightCornerWidget)
         m_rightCornerWidget->setGeometry(rightCornerRect);
 
     updateGeometry();
@@ -269,7 +269,7 @@ void QSUiTabWidget::paintEvent(QPaintEvent *)
 
 void QSUiTabWidget::changeEvent(QEvent *ev)
 {
-    if (ev->type() == QEvent::StyleChange
+    if(ev->type() == QEvent::StyleChange
 #ifdef Q_OS_MAC
             || ev->type() == QEvent::MacSizeChange
 #endif
@@ -280,7 +280,7 @@ void QSUiTabWidget::changeEvent(QEvent *ev)
 
 bool QSUiTabWidget::event(QEvent *ev)
 {
-    if (ev->type() == QEvent::LayoutRequest)
+    if(ev->type() == QEvent::LayoutRequest)
         setUpLayout();
     return QWidget::event(ev);
 }
@@ -314,8 +314,7 @@ void QSUiTabWidget::tabRemoved(int index)
 
 void QSUiTabWidget::mousePressEvent(QMouseEvent *e)
 {
-    if((e->button() == Qt::MiddleButton) &&
-            (childAt(e->pos()) == nullptr))
+    if((e->button() == Qt::MiddleButton) && (childAt(e->pos()) == nullptr))
     {
         e->accept();
         emit createPlayListRequested();

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,12 +37,12 @@ QSUiQuickSearch::QSUiQuickSearch(QSUiListWidget *listWidget, QWidget *parent) :
     m_lineEdit = new QLineEdit(this);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setSpacing(0);
-    layout->setContentsMargins(0,0,0,0);
+    layout->setContentsMargins(0, 0, 0, 0);
     setLayout(layout);
     layout->addWidget(m_lineEdit);
     m_lineEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     m_lineEdit->setClearButtonEnabled(true);
-    connect(m_lineEdit, SIGNAL(textEdited(QString)), m_listWidget, SLOT(setFilterString(QString)));
-    connect(m_manager, SIGNAL(selectedPlayListChanged(PlayListModel*,PlayListModel*)), m_lineEdit, SLOT(clear()));
-    connect(m_listWidget, SIGNAL(doubleClicked()), m_lineEdit, SLOT(clear()));
+    connect(m_lineEdit, &QLineEdit::textEdited, m_listWidget, &QSUiListWidget::setFilterString);
+    connect(m_manager, &PlayListManager::selectedPlayListChanged, m_lineEdit, &QLineEdit::clear);
+    connect(m_listWidget, &QSUiListWidget::doubleClicked, m_lineEdit, &QLineEdit::clear);
 }

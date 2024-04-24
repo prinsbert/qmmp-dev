@@ -51,11 +51,11 @@ QSUiPlayListHeader::QSUiPlayListHeader(QWidget *parent) :
 
     //menus
     m_menu = new QMenu(this);
-    m_menu->addAction(QIcon::fromTheme("list-add"), tr("Add Column"), this, SLOT(addColumn()));
-    m_menu->addAction(QIcon::fromTheme("configure"), tr("Edit Column"), this, SLOT(editColumn()));
-    m_trackStateAction = m_menu->addAction(tr("Show Queue/Protocol"), this, SLOT(showTrackState(bool)));
+    m_menu->addAction(QIcon::fromTheme(u"list-add"_s), tr("Add Column"), this, &QSUiPlayListHeader::addColumn);
+    m_menu->addAction(QIcon::fromTheme(u"configure"_s), tr("Edit Column"), this, &QSUiPlayListHeader::editColumn);
+    m_trackStateAction = m_menu->addAction(tr("Show Queue/Protocol"), this, &QSUiPlayListHeader::showTrackState);
     m_trackStateAction->setCheckable(true);
-    m_autoResizeAction = m_menu->addAction(tr("Auto-resize"), this, SLOT(setAutoResize(bool)));
+    m_autoResizeAction = m_menu->addAction(tr("Auto-resize"), this, &QSUiPlayListHeader::setAutoResize);
     m_autoResizeAction->setCheckable(true);
 
     m_alignmentMenu = m_menu->addMenu(tr("Alignment"));
@@ -71,14 +71,14 @@ QSUiPlayListHeader::QSUiPlayListHeader(QWidget *parent) :
     }
 
     m_menu->addSeparator();
-    m_menu->addAction(QIcon::fromTheme("list-remove"), tr("Remove Column"), this, SLOT(removeColumn()));
+    m_menu->addAction(QIcon::fromTheme(u"list-remove"_s), tr("Remove Column"), this, &QSUiPlayListHeader::removeColumn);
 
     readSettings();
 
-    connect(m_model, SIGNAL(columnAdded(int)), SLOT(onColumnAdded(int)));
-    connect(m_model, SIGNAL(columnRemoved(int)), SLOT(onColumnRemoved()));
-    connect(m_model, SIGNAL(columnMoved(int,int)), SLOT(updateColumns()));
-    connect(m_model, SIGNAL(columnChanged(int)), SLOT(updateColumns()));
+    connect(m_model, &PlayListHeaderModel::columnAdded, this, &QSUiPlayListHeader::onColumnAdded);
+    connect(m_model, &PlayListHeaderModel::columnRemoved, this, &QSUiPlayListHeader::onColumnRemoved);
+    connect(m_model, &PlayListHeaderModel::columnMoved, this, &QSUiPlayListHeader::updateColumns);
+    connect(m_model, &PlayListHeaderModel::columnChanged, this, &QSUiPlayListHeader::updateColumns);
 }
 
 QSUiPlayListHeader::~QSUiPlayListHeader()
@@ -96,12 +96,12 @@ void QSUiPlayListHeader::readSettings()
     }
 
     QSettings settings;
-    settings.beginGroup("Simple");
+    settings.beginGroup(u"Simple"_s);
 
     QFont header_font = qApp->font("QAbstractItemView");
-    if(!settings.value("use_system_fonts", true).toBool())
+    if(!settings.value(u"use_system_fonts"_s, true).toBool())
     {
-        header_font.fromString(settings.value("pl_header_font", header_font.toString()).toString());
+        header_font.fromString(settings.value(u"pl_header_font"_s, header_font.toString()).toString());
     }
     m_metrics = new QFontMetrics(header_font);
     setFont(header_font);
@@ -111,16 +111,16 @@ void QSUiPlayListHeader::readSettings()
     m_size_hint = style()->sizeFromContents(QStyle::CT_HeaderSection, &opt, QSize(), this);
 
     QFont pl_font;
-    pl_font.fromString(settings.value("pl_font", qApp->font().toString()).toString());
-    m_pl_padding = QFontMetrics(pl_font).horizontalAdvance("9")/2;
+    pl_font.fromString(settings.value(u"pl_font"_s, qApp->font().toString()).toString());
+    m_pl_padding = QFontMetrics(pl_font).horizontalAdvance(u"9"_s) / 2;
 
     if(!m_model->isSettingsLoaded()) //do not load settings several times
     {
         m_model->restoreSettings(&settings);
-        QList<QVariant> sizes = settings.value("pl_column_sizes").toList();
-        QList<QVariant> alignment = settings.value("pl_column_alignment").toList();
-        int autoResizeColumn = settings.value("pl_autoresize_column", -1).toInt();
-        int trackStateColumn = settings.value("pl_track_state_column", -1).toInt();
+        QList<QVariant> sizes = settings.value(u"pl_column_sizes"_s).toList();
+        QList<QVariant> alignment = settings.value(u"pl_column_alignment"_s).toList();
+        int autoResizeColumn = settings.value(u"pl_autoresize_column"_s, -1).toInt();
+        int trackStateColumn = settings.value(u"pl_track_state_column"_s, -1).toInt();
         for(int i = 0; i < m_model->count(); ++i)
         {
             m_model->setData(i, SIZE, INITAL_SIZE);
@@ -758,7 +758,7 @@ int QSUiPlayListHeader::autoResizeColumn() const
 void QSUiPlayListHeader::writeSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
+    settings.beginGroup(u"Simple"_s);
     m_model->saveSettings(&settings);
     QList<QVariant> sizes, alignment;
     int autoResizeColumn = -1;
@@ -772,10 +772,10 @@ void QSUiPlayListHeader::writeSettings()
         if(m_model->data(i, TRACK_STATE).toBool())
             trackStateColumn = i;
     }
-    settings.setValue("pl_column_sizes", sizes);
-    settings.setValue("pl_column_alignment", alignment);
-    settings.setValue("pl_autoresize_column", autoResizeColumn);
-    settings.setValue("pl_track_state_column", trackStateColumn);
+    settings.setValue(u"pl_column_sizes"_s, sizes);
+    settings.setValue(u"pl_column_alignment"_s, alignment);
+    settings.setValue(u"pl_autoresize_column"_s, autoResizeColumn);
+    settings.setValue(u"pl_track_state_column"_s, trackStateColumn);
     settings.endGroup();
 }
 

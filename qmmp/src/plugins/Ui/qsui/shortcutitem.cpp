@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,17 +23,16 @@
 #include "qsuiactionmanager.h"
 #include "shortcutitem.h"
 
-ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, int type) : QTreeWidgetItem(parent, QStringList()
-        << QSUiActionManager::instance()->action(type)->text().remove("&")
-        << QSUiActionManager::instance()->action(type)->shortcut().toString())
+ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, int type) :
+    QTreeWidgetItem(parent, { QSUiActionManager::instance()->action(type)->text().remove(QChar('&')),
+                    QSUiActionManager::instance()->action(type)->shortcut().toString() })
 {
     m_action = QSUiActionManager::instance()->action(type);
     setIcon(0, m_action->icon());
 }
 
-ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, QDockWidget *w) : QTreeWidgetItem(parent, QStringList()
-        << w->toggleViewAction()->text().remove("&")
-        << w->toggleViewAction()->shortcut().toString())
+ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, QDockWidget *w) :
+    QTreeWidgetItem(parent, { w->toggleViewAction()->text().remove(QChar('&')), w->toggleViewAction()->shortcut().toString() })
 {
     m_action = w->toggleViewAction();
 }
