@@ -29,7 +29,7 @@
 // |= number=|=row1=|=row2=|=extra= duration=|
 
 QSUiListWidgetDrawer::QSUiListWidgetDrawer() :
-    m_emptyCover(":/qsui/ui_no_cover.png")
+    m_emptyCover(u":/qsui/ui_no_cover.png"_s)
 {
     m_header_model = PlayListManager::instance()->headerModel();
     m_ui_settings = QmmpUiSettings::instance();
@@ -45,12 +45,12 @@ QSUiListWidgetDrawer::~QSUiListWidgetDrawer()
 void QSUiListWidgetDrawer::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_show_anchor = settings.value("pl_show_anchor", false).toBool();
-    m_show_number = settings.value("pl_show_numbers", true).toBool();
-    m_show_lengths = settings.value("pl_show_lengths", true).toBool();
-    m_align_numbres = settings.value("pl_align_numbers", false).toBool();
-    m_show_splitters = settings.value("pl_show_splitters", true).toBool();
+    settings.beginGroup(u"Simple"_s);
+    m_show_anchor = settings.value(u"pl_show_anchor"_s, false).toBool();
+    m_show_number = settings.value(u"pl_show_numbers"_s, true).toBool();
+    m_show_lengths = settings.value(u"pl_show_lengths"_s, true).toBool();
+    m_align_numbres = settings.value(u"pl_align_numbers"_s, false).toBool();
+    m_show_splitters = settings.value(u"pl_show_splitters"_s, true).toBool();
 
     QFont defaultFont = qApp->font("QAbstractItemView");
     m_fonts[MAIN_FONT_NORMAL] = defaultFont;
@@ -59,11 +59,11 @@ void QSUiListWidgetDrawer::readSettings()
     m_fonts[PL_GROUP_FONT_EXTRA].setPointSize(defaultFont.pointSize() - 1);
     m_fonts[PL_GROUP_FONT_EXTRA].setStyle(QFont::StyleItalic);
 
-    if(!settings.value("use_system_fonts", true).toBool())
+    if(!settings.value(u"use_system_fonts"_s, true).toBool())
     {
-        m_fonts[MAIN_FONT_NORMAL].fromString(settings.value("pl_font", defaultFont.toString()).toString());
-        m_fonts[PL_GROUP_FONT].fromString(settings.value("pl_group_font", defaultFont.toString()).toString());
-        m_fonts[PL_GROUP_FONT_EXTRA].fromString(settings.value("pl_extra_row_font", m_fonts[PL_GROUP_FONT_EXTRA].toString()).toString());
+        m_fonts[MAIN_FONT_NORMAL].fromString(settings.value(u"pl_font"_s, defaultFont.toString()).toString());
+        m_fonts[PL_GROUP_FONT].fromString(settings.value(u"pl_group_font"_s, defaultFont.toString()).toString());
+        m_fonts[PL_GROUP_FONT_EXTRA].fromString(settings.value(u"pl_extra_row_font"_s, m_fonts[PL_GROUP_FONT_EXTRA].toString()).toString());
     }
 
     m_fonts[MAIN_FONT_BOLD] = m_fonts[MAIN_FONT_NORMAL];
@@ -71,22 +71,22 @@ void QSUiListWidgetDrawer::readSettings()
     m_fonts[MAIN_FONT_EXTRA] = m_fonts[MAIN_FONT_NORMAL];
     m_fonts[MAIN_FONT_EXTRA].setPointSize(m_fonts[MAIN_FONT_NORMAL].pointSize() - 1);
 
-    m_use_system_colors = settings.value("pl_system_colors", true).toBool();
+    m_use_system_colors = settings.value(u"pl_system_colors"_s, true).toBool();
     loadSystemColors();
 
     if(!m_use_system_colors)
     {
-        m_normal_bg.setNamedColor(settings.value("pl_bg1_color", m_normal_bg.name()).toString());
-        m_alternate.setNamedColor(settings.value("pl_bg2_color", m_alternate.name()).toString());
-        m_selected_bg.setNamedColor(settings.value("pl_highlight_color", m_selected_bg.name()).toString());
-        m_normal.setNamedColor(settings.value("pl_normal_text_color", m_normal.name()).toString());
-        m_current.setNamedColor(settings.value("pl_current_text_color",m_current.name()).toString());
-        m_highlighted.setNamedColor(settings.value("pl_hl_text_color",m_highlighted.name()).toString());
-        m_splitter.setNamedColor(settings.value("pl_splitter_color", m_splitter).toString());
-        m_group_text.setNamedColor(settings.value("pl_group_text", m_group_text.name()).toString());
-        if(settings.value("pl_override_group_bg", false).toBool())
+        m_normal_bg.setNamedColor(settings.value(u"pl_bg1_color"_s, m_normal_bg.name()).toString());
+        m_alternate.setNamedColor(settings.value(u"pl_bg2_color"_s, m_alternate.name()).toString());
+        m_selected_bg.setNamedColor(settings.value(u"pl_highlight_color"_s, m_selected_bg.name()).toString());
+        m_normal.setNamedColor(settings.value(u"pl_normal_text_color"_s, m_normal.name()).toString());
+        m_current.setNamedColor(settings.value(u"pl_current_text_color"_s, m_current.name()).toString());
+        m_highlighted.setNamedColor(settings.value(u"pl_hl_text_color"_s ,m_highlighted.name()).toString());
+        m_splitter.setNamedColor(settings.value(u"pl_splitter_color"_s, m_splitter).toString());
+        m_group_text.setNamedColor(settings.value(u"pl_group_text"_s, m_group_text.name()).toString());
+        if(settings.value(u"pl_override_group_bg"_s, false).toBool())
         {
-            m_group_bg.setNamedColor(settings.value("pl_group_bg", m_normal_bg.name()).toString());
+            m_group_bg.setNamedColor(settings.value(u"pl_group_bg"_s, m_normal_bg.name()).toString());
             m_group_alt_bg = m_group_bg;
         }
         else
@@ -94,9 +94,9 @@ void QSUiListWidgetDrawer::readSettings()
             m_group_bg = m_normal_bg;
             m_group_alt_bg = m_alternate;
         }
-        if(settings.value("pl_override_current_bg", false).toBool())
+        if(settings.value(u"pl_override_current_bg"_s, false).toBool())
         {
-            m_current_bg.setNamedColor(settings.value("pl_current_bg_color", m_normal_bg.name()).toString());
+            m_current_bg.setNamedColor(settings.value(u"pl_current_bg_color"_s, m_normal_bg.name()).toString());
             m_current_alt_bg = m_current_bg;
         }
         else
@@ -112,7 +112,7 @@ void QSUiListWidgetDrawer::readSettings()
         m_metrics[i] = new QFontMetrics(m_fonts[i]);
     }
 
-    m_padding = m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance("9") / 2;
+    m_padding = m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(u"9"_s) / 2;
     m_row_height = m_metrics[MAIN_FONT_NORMAL]->lineSpacing() + 1;
 }
 
@@ -146,7 +146,7 @@ void QSUiListWidgetDrawer::calculateNumberWidth(int count)
 {
     //song numbers width
     if(m_show_number && m_align_numbres && count)
-        m_number_width = m_metrics[MAIN_FONT_BOLD]->horizontalAdvance("9") * QString::number(count).size();
+        m_number_width = m_metrics[MAIN_FONT_BOLD]->horizontalAdvance(u"9"_s) * QString::number(count).size();
     else
         m_number_width = 0;
 }
@@ -175,7 +175,7 @@ void QSUiListWidgetDrawer::prepareRow(QSUiListWidgetRow *row)
     if(row->titles.count() == 1)
     {
         if(m_show_number && !m_align_numbres)
-            row->titles[0].prepend(QString("%1").arg(row->number)+". ");
+            row->titles[0].prepend(QStringLiteral("%1. ").arg(row->number));
 
         if((m_show_lengths && !row->length.isEmpty()) || !row->extraString.isEmpty())
             row->lengthColumnWidth = m_padding;
@@ -225,7 +225,7 @@ void QSUiListWidgetDrawer::fillBackground(QPainter *painter, int width, int heig
 {
     painter->setBrush(m_normal_bg);
     painter->setPen(m_normal_bg);
-    painter->drawRect(0,0,width,height);
+    painter->drawRect(0, 0, width,height);
 }
 
 void QSUiListWidgetDrawer::drawBackground(QPainter *painter, QSUiListWidgetRow *row)

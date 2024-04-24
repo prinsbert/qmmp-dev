@@ -28,7 +28,7 @@
 
 QSUiPositionSlider::QSUiPositionSlider(QWidget *parent) : QSlider(Qt::Horizontal, parent)
 {
-    connect(this, SIGNAL(sliderMoved(int)), SLOT(onSliderMoved(int)));
+    connect(this, &QSUiPositionSlider::sliderMoved, this, &QSUiPositionSlider::onSliderMoved);
 }
 
 void QSUiPositionSlider::mousePressEvent (QMouseEvent *event)
@@ -37,18 +37,17 @@ void QSUiPositionSlider::mousePressEvent (QMouseEvent *event)
     initStyleOption(&opt);
     QRect sr = style()->subControlRect(QStyle::CC_Slider, &opt, QStyle::SC_SliderHandle, this);
 
-    if (event->button() == Qt::LeftButton &&
-            sr.contains(event->pos()) == false)
+    if(event->button() == Qt::LeftButton && !sr.contains(event->pos()))
     {
         int val;
-        if (orientation() == Qt::Vertical)
+        if(orientation() == Qt::Vertical)
             val = minimum() + ((maximum() - minimum()) * (height() - event->position().y())) / height();
         else if(layoutDirection() == Qt::RightToLeft)
             val = maximum() - ((maximum() - minimum()) * event->position().x()) / width();
         else
             val = minimum() + ((maximum() - minimum()) * event->position().x()) / width();
 
-        if (invertedAppearance() == true)
+        if(invertedAppearance())
         {
             setValue(maximum() - val);
             onSliderMoved(maximum() - val);

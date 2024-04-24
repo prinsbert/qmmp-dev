@@ -131,11 +131,11 @@ public slots:
     /*!
      * Selects playlist with index \b index.
      */
-    void selectPlayList(int index);
+    void selectPlayListIndex(int index);
     /*!
      * Selects playlist with name \b name.
      */
-    void selectPlayList(const QString &name);
+    void selectPlayListName(const QString &name);
     /*!
      * Selects next playlist if possible.
      */
@@ -151,7 +151,7 @@ public slots:
     /*!
      * Sets current playlist with index \b index.
      */
-    void activatePlayList(int index);
+    void activatePlayListIndex(int index);
     /*!
      * Sets selected playlist as current.
      */
@@ -167,7 +167,7 @@ public slots:
     /*!
      * Removes playlist with index \b index.
      */
-    void removePlayList(int index);
+    void removePlayListIndex(int index);
     /*!
      * Moves playlist with index \b i to index \b j.
      */

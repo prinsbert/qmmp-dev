@@ -130,7 +130,7 @@ public:
     bool hasDockWidgets() const;
     void saveActions();
     void resetShortcuts();
-    void registerAction(int id, QAction *action, const QString &confKey, const QString &key);
+    void registerAction(int id, QAction *action, const QString &confKey, const QString &key = QString());
     void registerWidget(int id, QWidget *w, const QString &text, const QString &name);
     void registerDockWidget(QDockWidget *w, const QString &confKey, const QString &key);
     void removeDockWidget(QDockWidget *w);

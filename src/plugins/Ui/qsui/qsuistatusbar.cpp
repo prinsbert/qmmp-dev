@@ -30,7 +30,7 @@
 QSUiStatusBar::QSUiStatusBar(QWidget *parent) : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout;
-    layout->setContentsMargins(0,0,0,0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     for(int i = StatusLabel; i <= TimeLabel; ++i)
     {
@@ -53,11 +53,11 @@ QSUiStatusBar::QSUiStatusBar(QWidget *parent) : QWidget(parent)
 
     m_core = SoundCore::instance();
     m_pl_manager = PlayListManager::instance();
-    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(onStateChanged(Qmmp::State)));
-    connect(m_core, SIGNAL(bufferingProgress(int)), SLOT(onBufferingProgress(int)));
-    connect(m_core, SIGNAL(audioParametersChanged(AudioParameters)), SLOT(onAudioParametersChanged(AudioParameters)));
-    connect(m_core, SIGNAL(bitrateChanged(int)), SLOT(onBitrateChanged(int)));
-    connect(m_core, SIGNAL(elapsedChanged(qint64)), SLOT(onElapsedChanged(qint64)));
+    connect(m_core, &SoundCore::stateChanged, this, &QSUiStatusBar::onStateChanged);
+    connect(m_core, &SoundCore::bufferingProgress, this, &QSUiStatusBar::onBufferingProgress);
+    connect(m_core, &SoundCore::audioParametersChanged, this, &QSUiStatusBar::onAudioParametersChanged);
+    connect(m_core, &SoundCore::bitrateChanged, this, &QSUiStatusBar::onBitrateChanged);
+    connect(m_core, &SoundCore::elapsedChanged, this, &QSUiStatusBar::onElapsedChanged);
     onStateChanged(m_core->state());
 }
 
@@ -124,7 +124,7 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
             }
         }
 
-        m_labels[StatusLabel]->setText(QString("<b>%1</b>").arg(tr("Stopped")));
+        m_labels[StatusLabel]->setText(QStringLiteral("<b>%1</b>").arg(tr("Stopped")));
         updatePlayListStatus();
     }
     else
@@ -136,7 +136,7 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
             sep->hide();
 
         m_labels[StatusLabel]->show();
-        m_labels[StatusLabel]->setText(QString("<b>%1</b>").arg(tr("Error")));
+        m_labels[StatusLabel]->setText(QStringLiteral("<b>%1</b>").arg(tr("Error")));
         updatePlayListStatus();
     }
 }
@@ -163,10 +163,11 @@ void QSUiStatusBar::onBitrateChanged(int bitrate)
 {
     QString text = tr("%1 kbps").arg(bitrate);
     QLabel *label = m_labels[BitrateLabel];
+    static const QRegularExpression numberRegExp(u"\\d"_s);
     if(text.size() > label->text().size()) //label width tuning to avoid text jumping
     {
         QString tmp = text;
-        tmp.replace(QRegularExpression("\\d"), "4");
+        tmp.replace(numberRegExp, QChar('4'));
         int width = label->fontMetrics().horizontalAdvance(tmp);
         label->setMinimumWidth(width);
     }
@@ -178,15 +179,16 @@ void QSUiStatusBar::onElapsedChanged(qint64 elapsed)
     QString elapsedText = MetaDataFormatter::formatDuration(elapsed, false);
     QString plDurationText;
     QLabel *label = m_labels[TimeLabel];
+    static const QRegularExpression numberRegExp(u"\\d"_s);
     if(m_core->duration() > 1000)
     {
-        plDurationText.append("/");
+        plDurationText.append(QChar('/'));
         plDurationText.append(MetaDataFormatter::formatDuration(m_core->duration()));
     }
     if((elapsedText.size() + plDurationText.size()) != label->text().size()) //label width tuning to avoid text jumping
     {
         QString tmp = elapsedText;
-        tmp.replace(QRegularExpression("\\d"), "4");
+        tmp.replace(numberRegExp, QChar('4'));
         int width = label->fontMetrics().horizontalAdvance(tmp + plDurationText);
         label->setMinimumWidth(width);
     }

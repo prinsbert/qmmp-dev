@@ -43,8 +43,8 @@
 QSUiWaveformSeekBar::QSUiWaveformSeekBar(QWidget *parent) : QWidget(parent)
 {
     m_core = SoundCore::instance();
-    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(onStateChanged(Qmmp::State)));
-    connect(m_core, SIGNAL(elapsedChanged(qint64)), SLOT(onElapsedChanged(qint64)));
+    connect(m_core, &SoundCore::stateChanged, this, &QSUiWaveformSeekBar::onStateChanged);
+    connect(m_core, &SoundCore::elapsedChanged, this, &QSUiWaveformSeekBar::onElapsedChanged);
     createMenu();
     readSettings();
 }
@@ -57,16 +57,16 @@ QSize QSUiWaveformSeekBar::sizeHint() const
 void QSUiWaveformSeekBar::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_bgColor.setNamedColor(settings.value("wfsb_bg_color", "Black").toString());
-    m_rmsColor.setNamedColor(settings.value("wfsb_rms_color", "#DDDDDD").toString());
-    m_waveFormColor.setNamedColor(settings.value("wfsb_waveform_color", "#BECBFF").toString());
-    m_progressBar.setNamedColor(settings.value("wfsb_progressbar_color", "#9633CA10").toString());
+    settings.beginGroup(u"Simple"_s);
+    m_bgColor.setNamedColor(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
+    m_rmsColor.setNamedColor(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
+    m_waveFormColor.setNamedColor(settings.value(u"wfsb_waveform_color"_s, u"#BECBFF"_s).toString());
+    m_progressBar.setNamedColor(settings.value(u"wfsb_progressbar_color"_s, u"#9633CA10"_s).toString());
     if(!m_update)
     {
         m_update = true;
-        m_showTwoChannelsAction->setChecked(settings.value("wfsb_show_two_channels", true).toBool());
-        m_showRmsAction->setChecked(settings.value("wfsb_show_rms", true).toBool());
+        m_showTwoChannelsAction->setChecked(settings.value(u"wfsb_show_two_channels"_s, true).toBool());
+        m_showRmsAction->setChecked(settings.value(u"wfsb_show_rms"_s, true).toBool());
     }
     settings.endGroup();
     drawWaveform();
@@ -82,8 +82,8 @@ void QSUiWaveformSeekBar::onStateChanged(Qmmp::State state)
         if(!m_scanner && isVisible() && m_data.isEmpty())
         {
             m_scanner = new QSUiWaveformScanner(this);
-            connect(m_scanner, SIGNAL(finished()), SLOT(onScanFinished()));
-            connect(m_scanner, SIGNAL(dataChanged()), SLOT(onDataChanged()));
+            connect(m_scanner, &QSUiWaveformScanner::finished, this, &QSUiWaveformSeekBar::onScanFinished);
+            connect(m_scanner, &QSUiWaveformScanner::dataChanged, this, &QSUiWaveformSeekBar::onDataChanged);
         }
         if(m_scanner)
             m_scanner->scan(m_core->path());
@@ -143,16 +143,16 @@ void QSUiWaveformSeekBar::onElapsedChanged(qint64 elapsed)
 void QSUiWaveformSeekBar::writeSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    settings.setValue("wfsb_show_two_channels", m_showTwoChannelsAction->isChecked());
-    settings.setValue("wfsb_show_rms", m_showRmsAction->isChecked());
+    settings.beginGroup(u"Simple"_s);
+    settings.setValue(u"wfsb_show_two_channels"_s, m_showTwoChannelsAction->isChecked());
+    settings.setValue(u"wfsb_show_rms"_s, m_showRmsAction->isChecked());
     settings.endGroup();
     drawWaveform();
 }
 
 void QSUiWaveformSeekBar::paintEvent(QPaintEvent *e)
 {
-    QPainter painter (this);
+    QPainter painter(this);
     painter.fillRect(e->rect(), m_bgColor);
 
     if(!m_pixmap.isNull())
@@ -207,8 +207,7 @@ void QSUiWaveformSeekBar::mouseMoveEvent(QMouseEvent *e)
     if(m_pressedPos >= 0)
     {
         m_pressedPos = qBound(0, e->pos().x(), width());
-        QToolTip::showText(mapToGlobal(e->pos()),
-                           MetaDataFormatter::formatDuration(m_pressedPos * m_duration / width()),
+        QToolTip::showText(mapToGlobal(e->pos()), MetaDataFormatter::formatDuration(m_pressedPos * m_duration / width()),
                            this, QRect());
         update();
     }
@@ -326,10 +325,10 @@ void QSUiWaveformSeekBar::drawWaveform()
 void QSUiWaveformSeekBar::createMenu()
 {
     m_menu = new QMenu(this);
-    m_showTwoChannelsAction = m_menu->addAction(tr("2 Channels"), this, SLOT(writeSettings()));
+    m_showTwoChannelsAction = m_menu->addAction(tr("2 Channels"), this, &QSUiWaveformSeekBar::writeSettings);
     m_showTwoChannelsAction->setCheckable(true);
     //: Root mean square
-    m_showRmsAction = m_menu->addAction(tr("RMS"), this, SLOT(writeSettings()));
+    m_showRmsAction = m_menu->addAction(tr("RMS"), this, &QSUiWaveformSeekBar::writeSettings);
     m_showRmsAction->setCheckable(true);
 }
 
@@ -344,7 +343,7 @@ QSUiWaveformScanner::~QSUiWaveformScanner()
 bool QSUiWaveformScanner::scan(const QString &path)
 {
     //skip streams
-    if(path.contains("://") && InputSource::findByUrl(path))
+    if(path.contains(u"://"_s) && InputSource::findByUrl(path))
         return false;
 
     InputSource *source = InputSource::create(path, this);
@@ -366,14 +365,14 @@ bool QSUiWaveformScanner::scan(const QString &path)
 
     DecoderFactory *factory = nullptr;
 
-    if(!source->path().contains("://"))
+    if(!source->path().contains(u"://"_s))
         factory = Decoder::findByFilePath(source->path(), QmmpSettings::instance()->determineFileTypeByContent());
     if(!factory)
         factory = Decoder::findByMime(source->contentType());
-    if(!factory && source->ioDevice() && source->path().contains("://")) //ignore content of local files
+    if(!factory && source->ioDevice() && source->path().contains(u"://"_s)) //ignore content of local files
         factory = Decoder::findByContent(source->ioDevice());
-    if(!factory && source->path().contains("://"))
-        factory = Decoder::findByProtocol(source->path().section("://",0,0));
+    if(!factory && source->path().contains(u"://"_s))
+        factory = Decoder::findByProtocol(source->path().section(u"://"_s, 0, 0));
     if(!factory)
     {
         qWarning("QSUIWaveformScanner: unsupported file format");

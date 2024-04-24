@@ -138,7 +138,7 @@ public slots:
      * @param left - volume of the left channel \b [0..100].
      * @param right - volume of the right channel \b [0..100].
      */
-    void setVolume(int left, int right);
+    void setVolumePerChannel(int left, int right);
     /*!
      * Mutes/Restores volume
      * @param mute - state of volume (\b true - mute, \b false - restore)

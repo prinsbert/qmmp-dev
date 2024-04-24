@@ -23,7 +23,7 @@
 #include <QWidget>
 #include <qmmpui/metadataformatter.h>
 
-#define DEFAULT_TEMPLATE "<b>%if(%t,%t,%f)</b>\n%if(%p,<br>%p,)\n%if(%a,<br>%a,)"
+#define DEFAULT_TEMPLATE u"<b>%if(%t,%t,%f)</b>\n%if(%p,<br>%p,)\n%if(%a,<br>%a,)"_s
 
 class QTimer;
 class QLabel;
@@ -39,20 +39,17 @@ class QSUiPopupWidget : public QWidget
 public:
     QSUiPopupWidget(QWidget *parent = nullptr);
 
-    ~QSUiPopupWidget();
-
     void prepare(PlayListTrack *track, QPoint pos);
     void deactivate();
     const QString url() const;
-
-protected:
-    virtual void mousePressEvent (QMouseEvent *) override;
-    virtual void mouseMoveEvent (QMouseEvent *) override;
 
 private slots:
     void loadCover();
 
 private:
+    void mousePressEvent(QMouseEvent *) override;
+    void mouseMoveEvent(QMouseEvent *) override;
+
     QTimer *m_timer;
     QLabel *m_label1;
     QLabel *m_pixlabel;
@@ -61,7 +58,6 @@ private:
     int m_coverSize;
     QString m_url;
     MetaDataFormatter m_formatter;
-
 };
 
 #endif

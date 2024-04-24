@@ -44,34 +44,46 @@ QSUiPopupWidget::QSUiPopupWidget(QWidget *parent)
 
     //settings
     QSettings settings;
-    settings.beginGroup("Simple");
-    setWindowOpacity(settings.value("popup_opacity", 1.0).toDouble());
-    m_coverSize = settings.value("popup_cover_size", 48).toInt();
-    m_formatter.setPattern(settings.value("popup_template",DEFAULT_TEMPLATE).toString());
-    int delay = settings.value("popup_delay", 2500).toInt();
-    bool show_cover = settings.value("popup_show_cover",true).toBool();
+    settings.beginGroup(u"Simple"_s);
+    setWindowOpacity(settings.value(u"popup_opacity"_s, 1.0).toDouble());
+    m_coverSize = settings.value(u"popup_cover_size"_s, 48).toInt();
+    m_formatter.setPattern(settings.value(u"popup_template"_s, DEFAULT_TEMPLATE).toString());
+    int delay = settings.value(u"popup_delay"_s, 2500).toInt();
+    bool show_cover = settings.value(u"popup_show_cover"_s, true).toBool();
     settings.endGroup();
     //timer
     m_timer = new QTimer(this);
     m_timer->setInterval(delay);
     m_timer->setSingleShot (true);
-    connect(m_timer, SIGNAL(timeout()), SLOT(show()));
+    connect(m_timer, &QTimer::timeout, this, &QSUiPopupWidget::show);
     if(show_cover)
-        connect(m_timer, SIGNAL(timeout()), SLOT(loadCover()));
+        connect(m_timer, &QTimer::timeout, this, &QSUiPopupWidget::loadCover);
     else
         m_pixlabel->hide();
     setMouseTracking(true);
 }
 
-QSUiPopupWidget::~QSUiPopupWidget()
-{}
+void QSUiPopupWidget::loadCover()
+{
+    if(m_url.isEmpty())
+        return;
+    QImage img = MetaDataManager::instance()->getCover(m_url);
+    if(img.isNull())
+        img = QImage(u":/qsui/ui_no_cover.png"_s);
+    m_pixlabel->setFixedSize(m_coverSize,m_coverSize);
+    m_pixlabel->setPixmap(QPixmap::fromImage(img.scaled(m_coverSize, m_coverSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation)));
+    qApp->processEvents();
+    updateGeometry ();
+    resize(sizeHint());
+    qApp->processEvents();
+}
 
-void QSUiPopupWidget::mousePressEvent (QMouseEvent *)
+void QSUiPopupWidget::mousePressEvent(QMouseEvent *)
 {
     hide();
 }
 
-void QSUiPopupWidget::mouseMoveEvent (QMouseEvent *)
+void QSUiPopupWidget::mouseMoveEvent(QMouseEvent *)
 {
     hide();
 }
@@ -110,19 +122,4 @@ void QSUiPopupWidget::deactivate()
 const QString QSUiPopupWidget::url() const
 {
     return m_url;
-}
-
-void QSUiPopupWidget::loadCover()
-{
-    if(m_url.isEmpty())
-        return;
-    QImage img = MetaDataManager::instance()->getCover(m_url);
-    if(img.isNull())
-        img = QImage(":/qsui/ui_no_cover.png");
-    m_pixlabel->setFixedSize(m_coverSize,m_coverSize);
-    m_pixlabel->setPixmap(QPixmap::fromImage(img.scaled(m_coverSize,m_coverSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation)));
-    qApp->processEvents();
-    updateGeometry ();
-    resize(sizeHint());
-    qApp->processEvents();
 }

@@ -174,9 +174,9 @@ void QSUiListWidget::setModel(PlayListModel *selected, PlayListModel *previous)
         m_firstLine = 0;
         updateList(PlayListModel::STRUCTURE | PlayListModel::CURRENT);
     }
-    connect(m_model, SIGNAL(scrollToRequest(int)), SLOT(scrollTo(int)));
-    connect(m_model, SIGNAL(listChanged(int)), SLOT(updateList(int)));
-    connect(m_model, SIGNAL(sortingByColumnFinished(int,bool)), m_header, SLOT(showSortIndicator(int,bool)));
+    connect(m_model, &PlayListModel::scrollToRequest, this, &QSUiListWidget::scrollTo);
+    connect(m_model, &PlayListModel::listChanged, this, &QSUiListWidget::updateList);
+    connect(m_model, &PlayListModel::sortingByColumnFinished, m_header, &QSUiPlayListHeader::showSortIndicator);
 }
 
 void QSUiListWidget::paintEvent(QPaintEvent *)
@@ -184,8 +184,9 @@ void QSUiListWidget::paintEvent(QPaintEvent *)
     QPainter painter(this);
     m_drawer.fillBackground(&painter, width(), height());
     painter.setLayoutDirection(Qt::LayoutDirectionAuto);
-    bool rtl = (layoutDirection() == Qt::RightToLeft);
-    int scroll_bar_width = m_scrollBar->isVisibleTo(this) ? m_scrollBar->sizeHint().width() : 0;
+    const bool rtl = (layoutDirection() == Qt::RightToLeft);
+    const int scroll_bar_width = m_scrollBar->isVisibleTo(this) ? m_scrollBar->sizeHint().width() : 0;
+    const int linesPerGroup = m_model->linesPerGroup();
 
     painter.setClipRect(5, 0, width() - scroll_bar_width - 9, height());
     painter.translate(rtl ? m_header->offset() : -m_header->offset(), 0);
@@ -194,7 +195,7 @@ void QSUiListWidget::paintEvent(QPaintEvent *)
     {
         if(m_rows[i]->flags & QSUiListWidgetRow::GROUP)
         {
-            if(m_model->linesPerGroup() == 1)
+            if(linesPerGroup == 1)
             {
                 m_drawer.drawBackground(&painter, m_rows[i]);
                 m_drawer.drawSeparator(&painter, m_rows[i], rtl);
@@ -263,7 +264,7 @@ void QSUiListWidget::mousePressEvent(QMouseEvent *e)
     if(m_popupWidget)
         m_popupWidget->hide();
 
-    int pressedLine = lineAt(e->position().y());
+    const int pressedLine = lineAt(e->position().y());
 
     if(pressedLine >= 0 && pressedLine < m_model->lineCount())
     {
@@ -411,7 +412,7 @@ void QSUiListWidget::updateList(int flags)
             m_firstLine = 0;
             m_scrollBar->setMaximum(0);
             m_scrollBar->setValue(0);
-            emit positionChanged(0,0);
+            emit positionChanged(0, 0);
         }
         else if(m_firstLine + m_row_count >= count)
         {
@@ -484,6 +485,8 @@ void QSUiListWidget::updateList(int flags)
 
     updateScrollBars();
 
+    const int linesPerGroup = m_model->linesPerGroup();
+
     for(int i = 0; i < items.count(); ++i)
     {
         QSUiListWidgetRow *row = m_rows[i];
@@ -534,9 +537,9 @@ void QSUiListWidget::updateList(int flags)
         int rect_x = rtl ? (width() - rect_w - 5) : 5;
         int rect_y = (m_header->isVisibleTo(this) ? m_header->height() : 0) + i * m_drawer.rowHeight();
 
-        if((row->flags & QSUiListWidgetRow::GROUP) && m_model->linesPerGroup() > 1)
+        if((row->flags & QSUiListWidgetRow::GROUP) && linesPerGroup > 1)
         {
-            rect_h += (m_model->linesPerGroup() - 1) * m_drawer.rowHeight();
+            rect_h += (linesPerGroup - 1) * m_drawer.rowHeight();
             rect_y -= row->subIndex * m_drawer.rowHeight();
         }
 
@@ -669,13 +672,13 @@ void QSUiListWidget::updateSkin()
 
 void QSUiListWidget::dragEnterEvent(QDragEnterEvent *event)
 {
-    if(event->mimeData()->hasFormat("text/uri-list") || event->mimeData()->hasFormat("application/json"))
+    if(event->mimeData()->hasFormat(u"text/uri-list"_s) || event->mimeData()->hasFormat(u"application/json"_s))
         event->acceptProposedAction();
 }
 
 void QSUiListWidget::dropEvent(QDropEvent *event)
 {
-    if(!m_filterMode && (event->mimeData()->hasUrls() || event->mimeData()->hasFormat("application/json")))
+    if(!m_filterMode && (event->mimeData()->hasUrls() || event->mimeData()->hasFormat(u"application/json"_s)))
     {
         event->acceptProposedAction();
         QApplication::restoreOverrideCursor();
@@ -689,9 +692,9 @@ void QSUiListWidget::dropEvent(QDropEvent *event)
             QList<QUrl> list_urls = event->mimeData()->urls();
             m_model->insert(index, list_urls);
         }
-        else if(event->mimeData()->hasFormat("application/json"))
+        else if(event->mimeData()->hasFormat(u"application/json"_s))
         {
-            QByteArray json = event->mimeData()->data("application/json");
+            QByteArray json = event->mimeData()->data(u"application/json"_s);
             m_model->insert(index, json);
         }
     }
@@ -714,7 +717,7 @@ void QSUiListWidget::dragMoveEvent(QDragMoveEvent *event)
         m_drop_index = index;
         update();
     }
-    if (event->mimeData()->hasFormat("text/uri-list"))
+    if (event->mimeData()->hasFormat(u"text/uri-list"_s))
         event->acceptProposedAction();
 }
 
@@ -726,16 +729,16 @@ const QString QSUiListWidget::getExtraString(PlayListItem *item)
     QString extra_string;
     PlayListTrack *track = static_cast<PlayListTrack *>(item);
 
-    if (m_show_protocol && track->path().contains("://"))
-        extra_string = "[" + track->path().split("://").at(0) + "]";
+    if (m_show_protocol && track->path().contains(u"://"_s))
+        extra_string = QChar('[') + track->path().split(u"://"_s).constFirst() + QChar(']');
 
     if (track->isQueued())
-        extra_string += "|"+QString::number(track->queuedIndex() + 1)+"|";
+        extra_string += QChar('|') + QString::number(track->queuedIndex() + 1) + QChar('|');
 
     if(m_model->currentTrack() == track && m_ui_settings->isRepeatableTrack())
-        extra_string += "|R|";
+        extra_string += u"|R|"_s;
     else if(m_model->isStopAfter(track))
-        extra_string += "|S|";
+        extra_string += u"|S|"_s;
 
     return extra_string.trimmed(); //remove white space
 }

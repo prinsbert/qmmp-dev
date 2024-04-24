@@ -28,7 +28,7 @@
 
 QSUiLogo::QSUiLogo(QWidget *parent) : Visual(parent)
 {
-    QPixmap pixmap(":/qsui/terminus.png");
+    QPixmap pixmap(u":/qsui/terminus.png"_s);
     m_letters = {
         { '0', pixmap.copy(0, 0, 8, 14) },
         { '1', pixmap.copy(8, 0, 8, 14) },
@@ -56,7 +56,7 @@ QSUiLogo::QSUiLogo(QWidget *parent) : Visual(parent)
         { ' ', pixmap.copy(184, 0, 8, 14) }
     };
 
-    QFile file(":/ascii_logo.txt");
+    QFile file(u":/ascii_logo.txt"_s);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
 
     while(!file.atEnd())
@@ -66,7 +66,7 @@ QSUiLogo::QSUiLogo(QWidget *parent) : Visual(parent)
     }
 
     m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL(timeout()), SLOT(updateLetters()));
+    connect(m_timer, &QTimer::timeout, this, &QSUiLogo::updateLetters);
     m_timer->setInterval(50);
 
     m_value = 0;
@@ -84,14 +84,14 @@ QSUiLogo::~QSUiLogo()
 void QSUiLogo::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
-    painter.fillRect(rect(), "black");
+    painter.fillRect(rect(), Qt::black);
 
     for(int row = 0; row < m_lines.count(); ++row)
     {
         QString text = m_lines.at(row);
         for(int i = 0; i < text.size(); ++i)
         {
-            painter.drawPixmap(width() / 2 - 155 + i*8,row*14, m_letters.value(text[i]));
+            painter.drawPixmap(width() / 2 - 155 + i * 8, row * 14, m_letters.value(text[i]));
         }
     }
 }
@@ -134,20 +134,19 @@ void QSUiLogo::updateLetters()
 void QSUiLogo::processPreset1()
 {
     m_lines.clear();
-    QString line;
     for(int i = 0; i < m_source_lines.count(); ++i)
     {
-        line = m_source_lines[i];
-        line = line.replace("X", ".");
+        QString line = m_source_lines[i];
+        line.replace(QChar('X'), QChar('.'));
         if(m_value == i)
         {
-            line.remove(0,2);
-            line.append("  ");
+            line.remove(0, 2);
+            line.append(QChar::Space);
         }
         else if(m_value == i - 1 || m_value == i + 1)
         {
-            line.remove(0,1);
-            line.append(" ");
+            line.remove(0, 1);
+            line.append(QChar::Space);
         }
         m_lines.append(line);
     }
@@ -157,15 +156,15 @@ void QSUiLogo::processPreset1()
 void QSUiLogo::processPreset2()
 {
     m_lines.clear();
-    QString str = QString("..0000..");//.arg(Qmmp::strVersion().left(5));
+    QString str = QStringLiteral("..0000..");//.arg(Qmmp::strVersion().left(5));
     int at = m_value % str.size();
 
     for(QString line : qAsConst(m_source_lines))
     {
-        while(line.contains("X"))
+        while(line.contains(QChar('X')))
         {
             at++;
-            line.replace(line.indexOf("X"), 1, QString("%1").arg(str.at(at % str.size())).toUpper());
+            line.replace(line.indexOf(QChar('X')), 1, str.at(at % str.size()).toUpper());
         }
 
         m_lines.append(line);
@@ -176,15 +175,15 @@ void QSUiLogo::processPreset2()
 void QSUiLogo::processPreset3()
 {
     m_lines.clear();
-    QString str = QString("...%1...").arg(Qmmp::strVersion().left(5));
+    QString str = QStringLiteral("...%1...").arg(Qmmp::strVersion().left(5));
     int at = m_value % str.size();
 
     for(QString line : qAsConst(m_source_lines))
     {
-        while(line.contains("X"))
+        while(line.contains(QChar('X')))
         {
             at++;
-            line.replace(line.indexOf("X"), 1, QString("%1").arg(str.at(at % str.size())).toUpper());
+            line.replace(line.indexOf(QChar('X')), 1, str.at(at % str.size()).toUpper());
         }
 
         m_lines.append(line);
@@ -200,7 +199,7 @@ void QSUiLogo::processPreset4()
 
     if(takeData(m_buffer))
     {
-        for(int j = 0; j < QMMP_VISUAL_NODE_SIZE; j+=8)
+        for(int j = 0; j < QMMP_VISUAL_NODE_SIZE; j += 8)
         {
             max = qMax(max, int(std::abs(m_buffer[j] * 65536.0)));
         }
@@ -213,13 +212,13 @@ void QSUiLogo::processPreset4()
 
     for(QString line : qAsConst(m_source_lines))
     {
-        int count = line.count("X");
+        int count = line.count(QChar('X'));
         int k = 0;
 
         while(k < m_value * count / 65536 / 2)
         {
             int value = std::abs(m_buffer[qMin(at++, QMMP_VISUAL_NODE_SIZE)] * 16);
-            line.replace(line.indexOf("X"), 1, QString("%1").arg(value, 0, 16).toUpper());
+            line.replace(line.indexOf(QChar('X')), 1, QStringLiteral("%1").arg(value, 0, 16).toUpper());
             k++;
         }
 
@@ -228,13 +227,13 @@ void QSUiLogo::processPreset4()
         while(k < m_value * count / 65536 / 2)
         {
             int value = std::abs(m_buffer[qMin(at++, QMMP_VISUAL_NODE_SIZE)] * 16);
-            line.replace(line.lastIndexOf("X"), 1, QString("%1").arg(value, 0, 16).toUpper());
+            line.replace(line.lastIndexOf(QChar('X')), 1, QStringLiteral("%1").arg(value, 0, 16).toUpper());
             k++;
         }
 
-        while(line.contains("X"))
+        while(line.contains(QChar('X')))
         {
-            line.replace(line.indexOf("X"), 1, ".");
+            line.replace(line.indexOf(QChar('X')), 1, QChar('.'));
         }
 
         m_lines.append(line);

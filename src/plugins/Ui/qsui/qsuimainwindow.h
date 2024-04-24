@@ -55,7 +55,7 @@ class QSUiMainWindow : public QMainWindow
 Q_OBJECT
 public:
     QSUiMainWindow(QWidget *parent = nullptr);
-    ~QSUiMainWindow();
+    ~QSUiMainWindow() = default;
 
 private slots:
     void addDir();

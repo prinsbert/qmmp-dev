@@ -76,7 +76,7 @@ void QSUiSettings::selectFont(QLabel *label)
     QFont font = QFontDialog::getFont(&ok, label->font(), this);
     if(ok)
     {
-        label->setText(font.family() + " " + QString::number(font.pointSize()));
+        label->setText(font.family() + QChar::Space + QString::number(font.pointSize()));
         label->setFont(font);
     }
 }
@@ -85,7 +85,7 @@ void QSUiSettings::setFont(QLabel *label, const QString &fontName)
 {
     QFont font;
     font.fromString(fontName);
-    label->setText(font.family() + " " + QString::number(font.pointSize()));
+    label->setText(font.family() + QChar::Space + QString::number(font.pointSize()));
     label->setFont(font);
 }
 
@@ -96,13 +96,13 @@ void QSUiSettings::loadFonts()
     extraRowDefaultFont.setStyle(QFont::StyleItalic);
 
     QSettings settings;
-    settings.beginGroup("Simple");
-    m_ui.systemFontsCheckBox->setChecked(settings.value("use_system_fonts", true).toBool());
-    setFont(m_ui.plFontLabel, settings.value("pl_font", qApp->font("QAbstractItemView").toString()).toString());
-    setFont(m_ui.groupFontLabel, settings.value("pl_group_font", qApp->font("QAbstractItemView").toString()).toString());
-    setFont(m_ui.extraRowFontLabel, settings.value("pl_extra_row_font", extraRowDefaultFont.toString()).toString());
-    setFont(m_ui.tabsFontLabel, settings.value("pl_tabs_font", qApp->font("QTabWidget").toString()).toString());
-    setFont(m_ui.columnFontLabel, settings.value("pl_header_font", qApp->font("QAbstractItemView").toString()).toString());
+    settings.beginGroup(u"Simple"_s);
+    m_ui.systemFontsCheckBox->setChecked(settings.value(u"use_system_fonts"_s, true).toBool());
+    setFont(m_ui.plFontLabel, settings.value(u"pl_font"_s, qApp->font("QAbstractItemView").toString()).toString());
+    setFont(m_ui.groupFontLabel, settings.value(u"pl_group_font"_s, qApp->font("QAbstractItemView").toString()).toString());
+    setFont(m_ui.extraRowFontLabel, settings.value(u"pl_extra_row_font"_s, extraRowDefaultFont.toString()).toString());
+    setFont(m_ui.tabsFontLabel, settings.value(u"pl_tabs_font"_s, qApp->font("QTabWidget").toString()).toString());
+    setFont(m_ui.columnFontLabel, settings.value(u"pl_header_font"_s, qApp->font("QAbstractItemView").toString()).toString());
     settings.endGroup();
 }
 
@@ -130,51 +130,51 @@ void QSUiSettings::on_customizeToolBarButton_clicked()
 void QSUiSettings::on_resetFontsButton_clicked()
 {
     QSettings settings;
-    settings.remove("Simple/pl_font");
-    settings.remove("Simple/pl_group_font");
-    settings.remove("Simple/pl_extra_row_font");
-    settings.remove("Simple/pl_tabs_font");
-    settings.remove("Simple/pl_header_font");
+    settings.remove(u"Simple/pl_font"_s);
+    settings.remove(u"Simple/pl_group_font"_s);
+    settings.remove(u"Simple/pl_extra_row_font"_s);
+    settings.remove(u"Simple/pl_tabs_font"_s);
+    settings.remove(u"Simple/pl_header_font"_s);
     loadFonts();
 }
 
 void QSUiSettings::on_resetColorsButton_clicked()
 {
-    m_ui.vColor1->setColor("#BECBFF");
-    m_ui.vColor2->setColor("#BECBFF");
-    m_ui.vColor3->setColor("#BECBFF");
-    m_ui.peaksColor->setColor("#DDDDDD");
-    m_ui.bgColor->setColor("Black");
+    m_ui.vColor1->setColor(u"#BECBFF"_s);
+    m_ui.vColor2->setColor(u"#BECBFF"_s);
+    m_ui.vColor3->setColor(u"#BECBFF"_s);
+    m_ui.peaksColor->setColor(u"#DDDDDD"_s);
+    m_ui.bgColor->setColor(u"Black"_s);
 }
 
 void QSUiSettings::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
+    settings.beginGroup(u"Simple"_s);
     //playlist
-    m_ui.protocolCheckBox->setChecked(settings.value("pl_show_protocol", false).toBool());
-    m_ui.numbersCheckBox->setChecked(settings.value("pl_show_numbers", true).toBool());
-    m_ui.lengthsCheckBox->setChecked(settings.value("pl_show_lengths", true).toBool());
-    m_ui.alignCheckBox->setChecked(settings.value("pl_align_numbers", false).toBool());
-    m_ui.anchorCheckBox->setChecked(settings.value("pl_show_anchor", false).toBool());
-    m_ui.showSplittersCheckBox->setChecked(settings.value("pl_show_splitters", true).toBool());
-    m_ui.popupCheckBox->setChecked(settings.value("pl_show_popup", false).toBool());
+    m_ui.protocolCheckBox->setChecked(settings.value(u"pl_show_protocol"_s, false).toBool());
+    m_ui.numbersCheckBox->setChecked(settings.value(u"pl_show_numbers"_s, true).toBool());
+    m_ui.lengthsCheckBox->setChecked(settings.value(u"pl_show_lengths"_s, true).toBool());
+    m_ui.alignCheckBox->setChecked(settings.value(u"pl_align_numbers"_s, false).toBool());
+    m_ui.anchorCheckBox->setChecked(settings.value(u"pl_show_anchor"_s, false).toBool());
+    m_ui.showSplittersCheckBox->setChecked(settings.value(u"pl_show_splitters"_s, true).toBool());
+    m_ui.popupCheckBox->setChecked(settings.value(u"pl_show_popup"_s, false).toBool());
     //tabs
-    m_ui.tabsClosableCheckBox->setChecked(settings.value("pl_tabs_closable", false).toBool());
-    m_ui.showNewPLCheckBox->setChecked(settings.value("pl_show_new_pl_button", false).toBool());
-    m_ui.showTabListMenuCheckBox->setChecked(settings.value("pl_show_tab_list_menu", false).toBool());
-    int index = m_ui.tabPositionComboBox->findData(settings.value("pl_tab_position", QTabBar::RoundedNorth).toInt());
+    m_ui.tabsClosableCheckBox->setChecked(settings.value(u"pl_tabs_closable"_s, false).toBool());
+    m_ui.showNewPLCheckBox->setChecked(settings.value(u"pl_show_new_pl_button"_s, false).toBool());
+    m_ui.showTabListMenuCheckBox->setChecked(settings.value(u"pl_show_tab_list_menu"_s, false).toBool());
+    int index = m_ui.tabPositionComboBox->findData(settings.value(u"pl_tab_position"_s, QTabBar::RoundedNorth).toInt());
     m_ui.tabPositionComboBox->setCurrentIndex(index);
     //view
-    m_ui.hiddenCheckBox->setChecked(settings.value("start_hidden", false).toBool());
-    m_ui.hideOnCloseCheckBox->setChecked(settings.value("hide_on_close", false).toBool());
-    m_ui.windowTitleLineEdit->setText(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
+    m_ui.hiddenCheckBox->setChecked(settings.value(u"start_hidden"_s, false).toBool());
+    m_ui.hideOnCloseCheckBox->setChecked(settings.value(u"hide_on_close"_s, false).toBool());
+    m_ui.windowTitleLineEdit->setText(settings.value(u"window_title_format"_s, u"%if(%p,%p - %t,%t)"_s).toString());
     //visualization colors
-    m_ui.vColor1->setColor(settings.value("vis_color1", "#BECBFF").toString());
-    m_ui.vColor2->setColor(settings.value("vis_color2", "#BECBFF").toString());
-    m_ui.vColor3->setColor(settings.value("vis_color3", "#BECBFF").toString());
-    m_ui.peaksColor->setColor(settings.value("vis_peak_color", "#DDDDDD").toString());
-    m_ui.bgColor->setColor(settings.value("vis_bg_color", "Black").toString());
+    m_ui.vColor1->setColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
+    m_ui.vColor2->setColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
+    m_ui.vColor3->setColor(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
+    m_ui.peaksColor->setColor(settings.value(u"vis_peak_color"_s, u"#DDDDDD"_s).toString());
+    m_ui.bgColor->setColor(settings.value(u"vis_bg_color"_s, u"Black"_s).toString());
     //playlist colors
     QString normal_bg = palette().color(QPalette::Base).name();
     QString alternate = palette().color(QPalette::AlternateBase).name();
@@ -183,26 +183,26 @@ void QSUiSettings::readSettings()
     QString current = palette().color(QPalette::Text).name();
     QString highlighted = palette().color(QPalette::HighlightedText).name();
     QString group_text = palette().color(QPalette::Text).name();
-    m_ui.plSystemColorsCheckBox->setChecked(settings.value("pl_system_colors", true).toBool());
-    m_ui.plBg1Color->setColor(settings.value("pl_bg1_color", normal_bg).toString());
-    m_ui.plBg2Color->setColor(settings.value("pl_bg2_color", alternate).toString());
-    m_ui.plHlColor->setColor(settings.value("pl_highlight_color", selected_bg).toString());
-    m_ui.plTextNormalColor->setColor(settings.value("pl_normal_text_color", normal).toString());
-    m_ui.plTextCurrentColor->setColor(settings.value("pl_current_text_color", current).toString());
-    m_ui.plTextHlCurrentColor->setColor(settings.value("pl_hl_text_color", highlighted).toString());
-    m_ui.plGrBgColor->setColor(settings.value("pl_group_bg", normal_bg).toString());
-    m_ui.plSplitterColor->setColor(settings.value("pl_splitter_color", normal).toString());
-    m_ui.plGrTextColor->setColor(settings.value("pl_group_text", group_text).toString());
-    m_ui.plCurrentTrackBgColor->setColor(settings.value("pl_current_bg_color", normal_bg).toString());
-    m_ui.plOverrideGroupBgCheckBox->setChecked(settings.value("pl_override_group_bg", false).toBool());
-    m_ui.plOverrideCurrentBgCheckBox->setChecked(settings.value("pl_override_current_bg", false).toBool());
+    m_ui.plSystemColorsCheckBox->setChecked(settings.value(u"pl_system_colors"_s, true).toBool());
+    m_ui.plBg1Color->setColor(settings.value(u"pl_bg1_color"_s, normal_bg).toString());
+    m_ui.plBg2Color->setColor(settings.value(u"pl_bg2_color"_s, alternate).toString());
+    m_ui.plHlColor->setColor(settings.value(u"pl_highlight_color"_s, selected_bg).toString());
+    m_ui.plTextNormalColor->setColor(settings.value(u"pl_normal_text_color"_s, normal).toString());
+    m_ui.plTextCurrentColor->setColor(settings.value(u"pl_current_text_color"_s, current).toString());
+    m_ui.plTextHlCurrentColor->setColor(settings.value(u"pl_hl_text_color"_s, highlighted).toString());
+    m_ui.plGrBgColor->setColor(settings.value(u"pl_group_bg"_s, normal_bg).toString());
+    m_ui.plSplitterColor->setColor(settings.value(u"pl_splitter_color"_s, normal).toString());
+    m_ui.plGrTextColor->setColor(settings.value(u"pl_group_text"_s, group_text).toString());
+    m_ui.plCurrentTrackBgColor->setColor(settings.value(u"pl_current_bg_color"_s, normal_bg).toString());
+    m_ui.plOverrideGroupBgCheckBox->setChecked(settings.value(u"pl_override_group_bg"_s, false).toBool());
+    m_ui.plOverrideCurrentBgCheckBox->setChecked(settings.value(u"pl_override_current_bg"_s, false).toBool());
     //waveform seekbar colors
-    m_ui.wfsbBgColor->setColor(settings.value("wfsb_bg_color", "Black").toString());
-    m_ui.wfsbRmsColor->setColor(settings.value("wfsb_rms_color", "#DDDDDD").toString());
-    m_ui.wfsbWaveFormColor->setColor(settings.value("wfsb_waveform_color", "#BECBFF").toString());
-    m_ui.wfsbProgressBarColor->setColor(settings.value("wfsb_progressbar_color", "#9633CA10").toString());
+    m_ui.wfsbBgColor->setColor(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
+    m_ui.wfsbRmsColor->setColor(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
+    m_ui.wfsbWaveFormColor->setColor(settings.value(u"wfsb_waveform_color"_s, u"#BECBFF"_s).toString());
+    m_ui.wfsbProgressBarColor->setColor(settings.value(u"wfsb_progressbar_color"_s, u"#9633CA10"_s).toString());
     //toolbar
-    index = m_ui.toolBarIconSizeComboBox->findData(settings.value("toolbar_icon_size", -1).toInt());
+    index = m_ui.toolBarIconSizeComboBox->findData(settings.value(u"toolbar_icon_size"_s, -1).toInt());
     m_ui.toolBarIconSizeComboBox->setCurrentIndex(index > 0 ? index : 0);
     settings.endGroup();
 }
@@ -210,51 +210,51 @@ void QSUiSettings::readSettings()
 void QSUiSettings::writeSettings()
 {
     QSettings settings;
-    settings.beginGroup("Simple");
-    settings.setValue("pl_show_protocol", m_ui.protocolCheckBox->isChecked());
-    settings.setValue("pl_show_numbers", m_ui.numbersCheckBox->isChecked());
-    settings.setValue("pl_show_lengths", m_ui.lengthsCheckBox->isChecked());
-    settings.setValue("pl_align_numbers", m_ui.alignCheckBox->isChecked());
-    settings.setValue("pl_show_anchor", m_ui.anchorCheckBox->isChecked());
-    settings.setValue("pl_show_splitters", m_ui.showSplittersCheckBox->isChecked());
-    settings.setValue("pl_show_popup", m_ui.popupCheckBox->isChecked());
-    settings.setValue("pl_tabs_closable", m_ui.tabsClosableCheckBox->isChecked());
-    settings.setValue("pl_show_new_pl_button", m_ui.showNewPLCheckBox->isChecked());
-    settings.setValue("pl_show_tab_list_menu", m_ui.showTabListMenuCheckBox->isChecked());
-    settings.setValue("pl_tab_position", m_ui.tabPositionComboBox->currentData().toInt());
-    settings.setValue("start_hidden", m_ui.hiddenCheckBox->isChecked());
-    settings.setValue("hide_on_close", m_ui.hideOnCloseCheckBox->isChecked());
-    settings.setValue("window_title_format", m_ui.windowTitleLineEdit->text());
-    settings.setValue("vis_color1", m_ui.vColor1->colorName());
-    settings.setValue("vis_color2", m_ui.vColor2->colorName());
-    settings.setValue("vis_color3", m_ui.vColor3->colorName());
-    settings.setValue("vis_peak_color", m_ui.peaksColor->colorName());
-    settings.setValue("vis_bg_color", m_ui.bgColor->colorName());
-    settings.setValue("pl_system_colors", m_ui.plSystemColorsCheckBox->isChecked());
-    settings.setValue("pl_bg1_color", m_ui.plBg1Color->colorName());
-    settings.setValue("pl_bg2_color", m_ui.plBg2Color->colorName());
-    settings.setValue("pl_highlight_color", m_ui.plHlColor->colorName());
-    settings.setValue("pl_normal_text_color", m_ui.plTextNormalColor->colorName());
-    settings.setValue("pl_current_text_color", m_ui.plTextCurrentColor->colorName());
-    settings.setValue("pl_hl_text_color", m_ui.plTextHlCurrentColor->colorName());
-    settings.setValue("pl_group_bg", m_ui.plGrBgColor->colorName());
-    settings.setValue("pl_splitter_color", m_ui.plSplitterColor->colorName());
-    settings.setValue("pl_group_text", m_ui.plGrTextColor->colorName());
-    settings.setValue("pl_current_bg_color", m_ui.plCurrentTrackBgColor->colorName());
-    settings.setValue("pl_override_group_bg", m_ui.plOverrideGroupBgCheckBox->isChecked());
-    settings.setValue("pl_override_current_bg", m_ui.plOverrideCurrentBgCheckBox->isChecked());
-    settings.setValue("pl_font", m_ui.plFontLabel->font().toString());
-    settings.setValue("pl_group_font", m_ui.groupFontLabel->font().toString());
-    settings.setValue("pl_extra_row_font", m_ui.extraRowFontLabel->font().toString());
-    settings.setValue("pl_tabs_font", m_ui.tabsFontLabel->font().toString());
-    settings.setValue("pl_header_font", m_ui.columnFontLabel->font().toString());
-    settings.setValue("use_system_fonts", m_ui.systemFontsCheckBox->isChecked());
+    settings.beginGroup(u"Simple"_s);
+    settings.setValue(u"pl_show_protocol"_s, m_ui.protocolCheckBox->isChecked());
+    settings.setValue(u"pl_show_numbers"_s, m_ui.numbersCheckBox->isChecked());
+    settings.setValue(u"pl_show_lengths"_s, m_ui.lengthsCheckBox->isChecked());
+    settings.setValue(u"pl_align_numbers"_s, m_ui.alignCheckBox->isChecked());
+    settings.setValue(u"pl_show_anchor"_s, m_ui.anchorCheckBox->isChecked());
+    settings.setValue(u"pl_show_splitters"_s, m_ui.showSplittersCheckBox->isChecked());
+    settings.setValue(u"pl_show_popup"_s, m_ui.popupCheckBox->isChecked());
+    settings.setValue(u"pl_tabs_closable"_s, m_ui.tabsClosableCheckBox->isChecked());
+    settings.setValue(u"pl_show_new_pl_button"_s, m_ui.showNewPLCheckBox->isChecked());
+    settings.setValue(u"pl_show_tab_list_menu"_s, m_ui.showTabListMenuCheckBox->isChecked());
+    settings.setValue(u"pl_tab_position"_s, m_ui.tabPositionComboBox->currentData().toInt());
+    settings.setValue(u"start_hidden"_s, m_ui.hiddenCheckBox->isChecked());
+    settings.setValue(u"hide_on_close"_s, m_ui.hideOnCloseCheckBox->isChecked());
+    settings.setValue(u"window_title_format"_s, m_ui.windowTitleLineEdit->text());
+    settings.setValue(u"vis_color1"_s, m_ui.vColor1->colorName());
+    settings.setValue(u"vis_color2"_s, m_ui.vColor2->colorName());
+    settings.setValue(u"vis_color3"_s, m_ui.vColor3->colorName());
+    settings.setValue(u"vis_peak_color"_s, m_ui.peaksColor->colorName());
+    settings.setValue(u"vis_bg_color"_s, m_ui.bgColor->colorName());
+    settings.setValue(u"pl_system_colors"_s, m_ui.plSystemColorsCheckBox->isChecked());
+    settings.setValue(u"pl_bg1_color"_s, m_ui.plBg1Color->colorName());
+    settings.setValue(u"pl_bg2_color"_s, m_ui.plBg2Color->colorName());
+    settings.setValue(u"pl_highlight_color"_s, m_ui.plHlColor->colorName());
+    settings.setValue(u"pl_normal_text_color"_s, m_ui.plTextNormalColor->colorName());
+    settings.setValue(u"pl_current_text_color"_s, m_ui.plTextCurrentColor->colorName());
+    settings.setValue(u"pl_hl_text_color"_s, m_ui.plTextHlCurrentColor->colorName());
+    settings.setValue(u"pl_group_bg"_s, m_ui.plGrBgColor->colorName());
+    settings.setValue(u"pl_splitter_color"_s, m_ui.plSplitterColor->colorName());
+    settings.setValue(u"pl_group_text"_s, m_ui.plGrTextColor->colorName());
+    settings.setValue(u"pl_current_bg_color"_s, m_ui.plCurrentTrackBgColor->colorName());
+    settings.setValue(u"pl_override_group_bg"_s, m_ui.plOverrideGroupBgCheckBox->isChecked());
+    settings.setValue(u"pl_override_current_bg"_s, m_ui.plOverrideCurrentBgCheckBox->isChecked());
+    settings.setValue(u"pl_font"_s, m_ui.plFontLabel->font().toString());
+    settings.setValue(u"pl_group_font"_s, m_ui.groupFontLabel->font().toString());
+    settings.setValue(u"pl_extra_row_font"_s, m_ui.extraRowFontLabel->font().toString());
+    settings.setValue(u"pl_tabs_font"_s, m_ui.tabsFontLabel->font().toString());
+    settings.setValue(u"pl_header_font"_s, m_ui.columnFontLabel->font().toString());
+    settings.setValue(u"use_system_fonts"_s, m_ui.systemFontsCheckBox->isChecked());
     int index = m_ui.toolBarIconSizeComboBox->currentIndex();
-    settings.setValue("toolbar_icon_size", m_ui.toolBarIconSizeComboBox->itemData(index));
-    settings.setValue("wfsb_bg_color", m_ui.wfsbBgColor->colorName());
-    settings.setValue("wfsb_rms_color", m_ui.wfsbRmsColor->colorName());
-    settings.setValue("wfsb_waveform_color", m_ui.wfsbWaveFormColor->colorName());
-    settings.setValue("wfsb_progressbar_color", m_ui.wfsbProgressBarColor->colorName());
+    settings.setValue(u"toolbar_icon_size"_s, m_ui.toolBarIconSizeComboBox->itemData(index));
+    settings.setValue(u"wfsb_bg_color"_s, m_ui.wfsbBgColor->colorName());
+    settings.setValue(u"wfsb_rms_color"_s, m_ui.wfsbRmsColor->colorName());
+    settings.setValue(u"wfsb_waveform_color"_s, m_ui.wfsbWaveFormColor->colorName());
+    settings.setValue(u"wfsb_progressbar_color"_s, m_ui.wfsbProgressBarColor->colorName());
     settings.endGroup();
 }
 
@@ -263,5 +263,5 @@ void QSUiSettings::addWindowTitleString(const QString &str)
     if (m_ui.windowTitleLineEdit->cursorPosition () < 1)
         m_ui.windowTitleLineEdit->insert(str);
     else
-        m_ui.windowTitleLineEdit->insert(" - " + str);
+        m_ui.windowTitleLineEdit->insert(u" - "_s + str);
 }

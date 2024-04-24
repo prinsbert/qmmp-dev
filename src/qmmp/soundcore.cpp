@@ -146,7 +146,7 @@ void SoundCore::setEqSettings(const EqSettings &settings)
     QmmpSettings::instance()->setEqSettings(settings);
 }
 
-void SoundCore::setVolume(int L, int R)
+void SoundCore::setVolumePerChannel(int L, int R)
 {
     setMuted(false);
     m_volumeControl->setVolume(L, R);

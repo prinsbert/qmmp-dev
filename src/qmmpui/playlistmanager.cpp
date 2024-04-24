@@ -127,14 +127,14 @@ void PlayListManager::selectPlayList(PlayListModel *model)
     }
 }
 
-void PlayListManager::selectPlayList(int i)
+void PlayListManager::selectPlayListIndex(int i)
 {
     if(i < 0 || i > m_models.count() - 1)
         return;
     selectPlayList(playListAt(i));
 }
 
-void PlayListManager::selectPlayList(const QString &name)
+void PlayListManager::selectPlayListName(const QString &name)
 {
     int index = playListNames().indexOf(name);
     if(index >= 0)
@@ -143,12 +143,12 @@ void PlayListManager::selectPlayList(const QString &name)
 
 void PlayListManager::selectNextPlayList()
 {
-    selectPlayList(m_models.indexOf(m_selected) + 1);
+    selectPlayListIndex(m_models.indexOf(m_selected) + 1);
 }
 
 void PlayListManager::selectPreviousPlayList()
 {
-    selectPlayList(m_models.indexOf(m_selected) - 1);
+    selectPlayListIndex(m_models.indexOf(m_selected) - 1);
 }
 
 void PlayListManager::activatePlayList(PlayListModel *model)
@@ -162,7 +162,7 @@ void PlayListManager::activatePlayList(PlayListModel *model)
     }
 }
 
-void PlayListManager::activatePlayList(int index)
+void PlayListManager::activatePlayListIndex(int index)
 {
     activatePlayList(playListAt(index));
 }
@@ -223,7 +223,7 @@ void PlayListManager::removePlayList(PlayListModel *model)
      emit playListsChanged();
 }
 
-void PlayListManager::removePlayList(int index)
+void PlayListManager::removePlayListIndex(int index)
 {
     removePlayList(playListAt(index));
 }

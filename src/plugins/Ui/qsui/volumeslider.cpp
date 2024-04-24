@@ -28,7 +28,7 @@
 
 VolumeSlider::VolumeSlider(QWidget *parent) : QSlider(Qt::Horizontal, parent)
 {
-    connect(this, SIGNAL(sliderMoved(int)), SLOT(onSliderMoved(int)));
+    connect(this, &VolumeSlider::sliderMoved, this, &VolumeSlider::onSliderMoved);
 }
 
 void VolumeSlider::mousePressEvent (QMouseEvent *event)
@@ -37,11 +37,10 @@ void VolumeSlider::mousePressEvent (QMouseEvent *event)
     initStyleOption(&opt);
     QRect sr = style()->subControlRect(QStyle::CC_Slider, &opt, QStyle::SC_SliderHandle, this);
 
-    if (event->button() == Qt::LeftButton &&
-            sr.contains(event->pos()) == false)
+    if(event->button() == Qt::LeftButton && !sr.contains(event->pos()))
     {
         int val;
-        if (orientation() == Qt::Vertical)
+        if(orientation() == Qt::Vertical)
             val = minimum() + ((maximum() - minimum()) * (height() - event->position().y())) / height();
         else if(layoutDirection() == Qt::RightToLeft)
             val = maximum() - ((maximum() - minimum()) * event->position().x()) / width();
@@ -50,7 +49,7 @@ void VolumeSlider::mousePressEvent (QMouseEvent *event)
 
         setSliderDown (true);
 
-        if (invertedAppearance() == true)
+        if(invertedAppearance() == true)
         {
             setValue(maximum() - val);
             onSliderMoved(maximum() - val);
@@ -65,7 +64,7 @@ void VolumeSlider::mousePressEvent (QMouseEvent *event)
     QSlider::mousePressEvent(event);
 }
 
-void VolumeSlider::mouseReleaseEvent (QMouseEvent *event)
+void VolumeSlider::mouseReleaseEvent(QMouseEvent *event)
 {
     setSliderDown (false);
     QSlider::mouseReleaseEvent(event);

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -39,10 +39,10 @@ ToolBarEditor::ToolBarEditor(QWidget *parent) :
     m_ui->addToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_ArrowRight));
     m_ui->removeToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_ArrowLeft));
 
-    connect(m_ui->actionsListWidget->model(), SIGNAL(rowsAboutToBeRemoved(QModelIndex,int,int)),
-            SLOT(onRowsAboutToBeRemoved(QModelIndex,int,int)));
-    connect(m_ui->activeActionsListWidget->model(), SIGNAL(rowsAboutToBeRemoved(QModelIndex,int,int)),
-            SLOT(onRowsAboutToBeRemoved(QModelIndex,int,int)));
+    connect(m_ui->actionsListWidget->model(), &QAbstractItemModel::rowsAboutToBeRemoved,
+            this, &ToolBarEditor::onRowsAboutToBeRemoved);
+    connect(m_ui->activeActionsListWidget->model(), &QAbstractItemModel::rowsAboutToBeRemoved,
+            this, &ToolBarEditor::onRowsAboutToBeRemoved);
 
     m_toolBarInfoList = QSUiActionManager::instance()->readToolBarSettings();
 
@@ -92,12 +92,12 @@ void ToolBarEditor::populateActionList(bool reset)
 
         QListWidgetItem *item = new QListWidgetItem();
         item->setIcon(action->icon());
-        item->setText(action->text().replace("&", ""));
+        item->setText(action->text().remove(QChar('&')));
         item->setData(Qt::UserRole, action->objectName());
         m_ui->actionsListWidget->addItem(item);
     }
 
-    m_ui->actionsListWidget->addItem(createExtraItem("-- " + tr("Separator") + " --", "separator"));
+    m_ui->actionsListWidget->addItem(createExtraItem(u"-- "_s + tr("Separator") + u" --"_s, u"separator"_s));
     on_toolbarNameComboBox_activated(m_ui->toolbarNameComboBox->currentIndex());
 }
 
@@ -193,9 +193,9 @@ void ToolBarEditor::on_toolbarNameComboBox_activated(int index)
 
     for(const QString &name : qAsConst(info.actionNames))
     {
-        if(name == "separator")
+        if(name == "separator"_L1)
         {
-            m_ui->activeActionsListWidget->addItem(createExtraItem("-- " + tr("Separator") + " --", name));
+            m_ui->activeActionsListWidget->addItem(createExtraItem(u"-- "_s + tr("Separator") + u" --"_s, name));
             continue;
         }
 
@@ -204,7 +204,7 @@ void ToolBarEditor::on_toolbarNameComboBox_activated(int index)
         {
             QListWidgetItem *item = new QListWidgetItem();
             item->setIcon(action->icon());
-            item->setText(action->text().replace("&", ""));
+            item->setText(action->text().remove(QChar('&')));
             item->setData(Qt::UserRole, action->objectName());
             m_ui->activeActionsListWidget->addItem(item);
         }
@@ -217,18 +217,18 @@ void ToolBarEditor::onRowsAboutToBeRemoved(const QModelIndex &, int start, int)
     {
         //recreate separator
         QListWidgetItem *item = m_ui->actionsListWidget->item(start);
-        if(item && item->data(Qt::UserRole).toString() == "separator")
+        if(item && item->data(Qt::UserRole).toString() == "separator"_L1)
             m_ui->actionsListWidget->addItem(item->clone());
     }
     else if(sender() == m_ui->activeActionsListWidget->model())
     {
         //remove separator
         QListWidgetItem *item = m_ui->activeActionsListWidget->item(start);
-        if(item && item->data(Qt::UserRole).toString() == "separator")
+        if(item && item->data(Qt::UserRole).toString() == "separator"_L1)
         {
             for(int i = 0; i < m_ui->actionsListWidget->count(); ++i)
             {
-                if(m_ui->actionsListWidget->item(i)->data(Qt::UserRole).toString() == "separator")
+                if(m_ui->actionsListWidget->item(i)->data(Qt::UserRole).toString() == "separator"_L1)
                 {
                     m_ui->actionsListWidget->model()->blockSignals(true);
                     delete m_ui->actionsListWidget->takeItem(i);

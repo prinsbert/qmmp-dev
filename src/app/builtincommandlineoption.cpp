@@ -112,7 +112,7 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
         {
             if(!pl_manager->playListNames().contains(settings->defaultPlayListName()))
                 pl_manager->createPlayList(settings->defaultPlayListName());
-            pl_manager->selectPlayList(settings->defaultPlayListName());
+            pl_manager->selectPlayListName(settings->defaultPlayListName());
         }
         pl_manager->activatePlayList(pl_manager->selectedPlayList());
         m_model = pl_manager->selectedPlayList();

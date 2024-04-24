@@ -210,9 +210,7 @@ double Player2Object::volume() const
 void Player2Object::Player2Object::setVolume(double value)
 {
     value = qBound(0.0, value ,1.0);
-    int balance = (volume() > 0) ? (m_core->rightVolume() - m_core->leftVolume())/volume() : 0;
-    m_core->setVolume(value*100 - qMax(balance,0)*value,
-                      value*100 + qMin(balance,0)*value);
+    m_core->setVolume(value * 100);
 }
 
 void Player2Object::Next()
