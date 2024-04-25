@@ -9,27 +9,27 @@
         <translation>אודות QSUI</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="41"/>
+        <location filename="../aboutqsuidialog.cpp" line="42"/>
         <source>Qmmp Simple User Interface (QSUI)</source>
         <translation>ממשק משתמש פשוט של Qmmp ‏(QSUI)</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="42"/>
+        <location filename="../aboutqsuidialog.cpp" line="43"/>
         <source>Qmmp version: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>גירסת Qmmp:‏ &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="46"/>
+        <location filename="../aboutqsuidialog.cpp" line="45"/>
         <source>Developers:</source>
         <translation>מפתחים:</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="47"/>
+        <location filename="../aboutqsuidialog.cpp" line="46"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="49"/>
+        <location filename="../aboutqsuidialog.cpp" line="48"/>
         <source>Translators:</source>
         <translation>מתרגמים:</translation>
     </message>
@@ -37,464 +37,6 @@
         <location filename="../aboutqsuidialog.cpp" line="44"/>
         <source>Simple user interface based on standard widgets set.</source>
         <translation>ממשק משתמש פשוט מבוסס על מערך וידג׳טים סטנדרטי.</translation>
-    </message>
-</context>
-<context>
-    <name>ActionManager</name>
-    <message>
-        <location filename="../actionmanager.cpp" line="43"/>
-        <source>&amp;Play</source>
-        <translation>&amp;נגן</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="43"/>
-        <source>X</source>
-        <translation>X</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="44"/>
-        <source>&amp;Pause</source>
-        <translation>ה&amp;שהה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="44"/>
-        <source>C</source>
-        <translation>C</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="45"/>
-        <source>&amp;Stop</source>
-        <translation>ה&amp;פסק</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="45"/>
-        <source>V</source>
-        <translation>V</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="46"/>
-        <source>&amp;Previous</source>
-        <translation>ה&amp;קודם</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="46"/>
-        <source>Z</source>
-        <translation>Z</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="47"/>
-        <source>&amp;Next</source>
-        <translation>ה&amp;בא</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="47"/>
-        <source>B</source>
-        <translation>B</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="48"/>
-        <source>&amp;Play/Pause</source>
-        <translation>נ&amp;גן/השהה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="48"/>
-        <source>Space</source>
-        <translation>רווח</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="49"/>
-        <source>&amp;Jump to Track</source>
-        <translation>קפוץ אל &amp;רצועה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="49"/>
-        <source>J</source>
-        <translation>J</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="50"/>
-        <source>&amp;Play Files</source>
-        <translation>&amp;נגן קבצים</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="50"/>
-        <source>E</source>
-        <translation>E</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="51"/>
-        <source>&amp;Record</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="52"/>
-        <source>&amp;Repeat Playlist</source>
-        <translation>חזור על ר&amp;שימת נגינה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="52"/>
-        <source>R</source>
-        <translation>R</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="53"/>
-        <source>&amp;Repeat Track</source>
-        <translation>חזור על ר&amp;צועה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="53"/>
-        <source>Ctrl+R</source>
-        <translation>Ctrl+R</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="54"/>
-        <source>&amp;Shuffle</source>
-        <translation>&amp;ערבב</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="54"/>
-        <source>S</source>
-        <translation>S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="55"/>
-        <source>&amp;No Playlist Advance</source>
-        <translation>&amp;אל תחיש רשימת נגינה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="55"/>
-        <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="56"/>
-        <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="57"/>
-        <source>&amp;Stop After Selected</source>
-        <translation>ה&amp;פסק עובר נבחרת</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="57"/>
-        <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="58"/>
-        <source>&amp;Clear Queue</source>
-        <translation>&amp;טהר תור</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="58"/>
-        <source>Alt+Q</source>
-        <translation>Alt+Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="60"/>
-        <source>Always on Top</source>
-        <translation>תמיד עליון</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="61"/>
-        <source>Put on All Workspaces</source>
-        <translation>השם בכל מרחב עבודה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="67"/>
-        <source>Show Tabs</source>
-        <translation>הצג כרטיסיות</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="68"/>
-        <source>Show Title Bars</source>
-        <translation>הצג שורות כותרת</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="69"/>
-        <source>Block Toolbars</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="71"/>
-        <source>Volume &amp;+</source>
-        <translation>עוצמת קול &amp;+</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="71"/>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="72"/>
-        <source>Volume &amp;-</source>
-        <translation>עוצמת קול &amp;-</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="72"/>
-        <source>9</source>
-        <translation>9</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="73"/>
-        <source>&amp;Mute</source>
-        <translation>ה&amp;שתק</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="73"/>
-        <source>M</source>
-        <translation>M</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="75"/>
-        <source>&amp;Add File</source>
-        <translation>הוס&amp;ף קובץ</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="75"/>
-        <source>F</source>
-        <translation>F</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="76"/>
-        <source>&amp;Add Directory</source>
-        <translation>הוסף &amp;מדור</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="76"/>
-        <source>D</source>
-        <translation>D</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="77"/>
-        <source>&amp;Add Url</source>
-        <translation>הוסף &amp;Url</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="77"/>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="78"/>
-        <source>&amp;Remove Selected</source>
-        <translation>הסר &amp;נבחרות</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="78"/>
-        <source>Del</source>
-        <translation>Del</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="79"/>
-        <source>&amp;Remove All</source>
-        <translation>הסר ה&amp;כל</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="80"/>
-        <source>&amp;Remove Unselected</source>
-        <translation>הסר את שלא נ&amp;בחרו</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="81"/>
-        <source>Remove unavailable files</source>
-        <translation>הסר קבצים לא זמינים</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="82"/>
-        <source>Remove duplicates</source>
-        <translation>הסר כפילויות</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="83"/>
-        <source>Refresh</source>
-        <translation>רענן</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="84"/>
-        <source>&amp;Queue Toggle</source>
-        <translation>&amp;תור</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="84"/>
-        <source>Q</source>
-        <translation>Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="85"/>
-        <source>Invert Selection</source>
-        <translation>הפוך בחירה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="86"/>
-        <source>&amp;Select None</source>
-        <translation>&amp;בחר כלום</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="87"/>
-        <source>&amp;Select All</source>
-        <translation>&amp;בחר הכל</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="87"/>
-        <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>&amp;View Track Details</source>
-        <translation>&amp;צפה בפרטי רצועה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>Alt+I</source>
-        <translation>Alt+I</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="89"/>
-        <source>&amp;New List</source>
-        <translation>רשימה &amp;חדשה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="89"/>
-        <source>Ctrl+T</source>
-        <translation>Ctrl+T</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="90"/>
-        <source>&amp;Delete List</source>
-        <translation>&amp;מחק רשימה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="90"/>
-        <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="91"/>
-        <source>&amp;Load List</source>
-        <translation>&amp;טען רשימה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="91"/>
-        <source>O</source>
-        <translation>O</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="92"/>
-        <source>&amp;Save List</source>
-        <translation>&amp;שמור רשימה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="92"/>
-        <source>Shift+S</source>
-        <translation>Shift+S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="93"/>
-        <source>&amp;Rename List</source>
-        <translation>&amp;שנה שם רשימה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="93"/>
-        <source>F2</source>
-        <translation>F2</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="94"/>
-        <source>&amp;Select Next Playlist</source>
-        <translation>בחר רשימת נגינה &amp;באה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="94"/>
-        <source>Ctrl+PgDown</source>
-        <translation>Ctrl+PgDown</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="95"/>
-        <source>&amp;Select Previous Playlist</source>
-        <translation>בחר רשימת נגינה &amp;קודמת</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="95"/>
-        <source>Ctrl+PgUp</source>
-        <translation>Ctrl+PgUp</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="96"/>
-        <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="96"/>
-        <source>&amp;Group Tracks</source>
-        <translation>רצועות &amp;קבוצה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="97"/>
-        <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="97"/>
-        <source>&amp;Show Column Headers</source>
-        <translation>&amp;הצג תקורות טור</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="99"/>
-        <source>&amp;Equalizer</source>
-        <translation>&amp;אקולייזר</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="99"/>
-        <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="100"/>
-        <source>&amp;Settings</source>
-        <translation>&amp;הגדרות</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="100"/>
-        <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="101"/>
-        <source>Application Menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="102"/>
-        <source>&amp;About Ui</source>
-        <translation>אודות &amp;Ui</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="103"/>
-        <source>&amp;About</source>
-        <translation>&amp;אודות</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="104"/>
-        <source>&amp;About Qt</source>
-        <translation>אודות &amp;Qt</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="105"/>
-        <source>&amp;Exit</source>
-        <translation>י&amp;ציאה</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="105"/>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="324"/>
-        <source>Toolbar</source>
-        <translation>סרגל כלים</translation>
     </message>
 </context>
 <context>
@@ -1007,6 +549,464 @@
     </message>
 </context>
 <context>
+    <name>QSUiActionManager</name>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="43"/>
+        <source>&amp;Play</source>
+        <translation type="unfinished">&amp;נגן</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="43"/>
+        <source>X</source>
+        <translation type="unfinished">X</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="44"/>
+        <source>&amp;Pause</source>
+        <translation type="unfinished">ה&amp;שהה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="44"/>
+        <source>C</source>
+        <translation type="unfinished">C</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="45"/>
+        <source>&amp;Stop</source>
+        <translation type="unfinished">ה&amp;פסק</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="45"/>
+        <source>V</source>
+        <translation type="unfinished">V</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="46"/>
+        <source>&amp;Previous</source>
+        <translation type="unfinished">ה&amp;קודם</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="46"/>
+        <source>Z</source>
+        <translation type="unfinished">Z</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="47"/>
+        <source>&amp;Next</source>
+        <translation type="unfinished">ה&amp;בא</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="47"/>
+        <source>B</source>
+        <translation type="unfinished">B</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="48"/>
+        <source>&amp;Play/Pause</source>
+        <translation type="unfinished">נ&amp;גן/השהה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="48"/>
+        <source>Space</source>
+        <translation type="unfinished">רווח</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <source>&amp;Jump to Track</source>
+        <translation type="unfinished">קפוץ אל &amp;רצועה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <source>J</source>
+        <translation type="unfinished">J</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <source>&amp;Play Files</source>
+        <translation type="unfinished">&amp;נגן קבצים</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <source>E</source>
+        <translation type="unfinished">E</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="51"/>
+        <source>&amp;Record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <source>&amp;Repeat Playlist</source>
+        <translation type="unfinished">חזור על ר&amp;שימת נגינה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <source>R</source>
+        <translation type="unfinished">R</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <source>&amp;Repeat Track</source>
+        <translation type="unfinished">חזור על ר&amp;צועה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <source>Ctrl+R</source>
+        <translation type="unfinished">Ctrl+R</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <source>&amp;Shuffle</source>
+        <translation type="unfinished">&amp;ערבב</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <source>S</source>
+        <translation type="unfinished">S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="55"/>
+        <source>&amp;No Playlist Advance</source>
+        <translation type="unfinished">&amp;אל תחיש רשימת נגינה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="55"/>
+        <source>Ctrl+N</source>
+        <translation type="unfinished">Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="56"/>
+        <source>&amp;Transit between playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="57"/>
+        <source>&amp;Stop After Selected</source>
+        <translation type="unfinished">ה&amp;פסק עובר נבחרת</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="57"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished">Ctrl+S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="58"/>
+        <source>&amp;Clear Queue</source>
+        <translation type="unfinished">&amp;טהר תור</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="58"/>
+        <source>Alt+Q</source>
+        <translation type="unfinished">Alt+Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="60"/>
+        <source>Always on Top</source>
+        <translation type="unfinished">תמיד עליון</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="61"/>
+        <source>Put on All Workspaces</source>
+        <translation type="unfinished">השם בכל מרחב עבודה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="67"/>
+        <source>Show Tabs</source>
+        <translation type="unfinished">הצג כרטיסיות</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="68"/>
+        <source>Show Title Bars</source>
+        <translation type="unfinished">הצג שורות כותרת</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="69"/>
+        <source>Block Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="71"/>
+        <source>Volume &amp;+</source>
+        <translation type="unfinished">עוצמת קול &amp;+</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="71"/>
+        <source>0</source>
+        <translation type="unfinished">0</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="72"/>
+        <source>Volume &amp;-</source>
+        <translation type="unfinished">עוצמת קול &amp;-</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="72"/>
+        <source>9</source>
+        <translation type="unfinished">9</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="73"/>
+        <source>&amp;Mute</source>
+        <translation type="unfinished">ה&amp;שתק</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="73"/>
+        <source>M</source>
+        <translation type="unfinished">M</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="75"/>
+        <source>&amp;Add File</source>
+        <translation type="unfinished">הוס&amp;ף קובץ</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="75"/>
+        <source>F</source>
+        <translation type="unfinished">F</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <source>&amp;Add Directory</source>
+        <translation type="unfinished">הוסף &amp;מדור</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <source>D</source>
+        <translation type="unfinished">D</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <source>&amp;Add Url</source>
+        <translation type="unfinished">הוסף &amp;Url</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <source>U</source>
+        <translation type="unfinished">U</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <source>&amp;Remove Selected</source>
+        <translation type="unfinished">הסר &amp;נבחרות</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <source>Del</source>
+        <translation type="unfinished">Del</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="79"/>
+        <source>&amp;Remove All</source>
+        <translation type="unfinished">הסר ה&amp;כל</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="80"/>
+        <source>&amp;Remove Unselected</source>
+        <translation type="unfinished">הסר את שלא נ&amp;בחרו</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
+        <source>Remove unavailable files</source>
+        <translation type="unfinished">הסר קבצים לא זמינים</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
+        <source>Remove duplicates</source>
+        <translation type="unfinished">הסר כפילויות</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="83"/>
+        <source>Refresh</source>
+        <translation type="unfinished">רענן</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <source>&amp;Queue Toggle</source>
+        <translation type="unfinished">&amp;תור</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <source>Q</source>
+        <translation type="unfinished">Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="85"/>
+        <source>Invert Selection</source>
+        <translation type="unfinished">הפוך בחירה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="86"/>
+        <source>&amp;Select None</source>
+        <translation type="unfinished">&amp;בחר כלום</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">&amp;בחר הכל</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <source>Ctrl+A</source>
+        <translation type="unfinished">Ctrl+A</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <source>&amp;View Track Details</source>
+        <translation type="unfinished">&amp;צפה בפרטי רצועה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <source>Alt+I</source>
+        <translation type="unfinished">Alt+I</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <source>&amp;New List</source>
+        <translation type="unfinished">רשימה &amp;חדשה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <source>Ctrl+T</source>
+        <translation type="unfinished">Ctrl+T</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <source>&amp;Delete List</source>
+        <translation type="unfinished">&amp;מחק רשימה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <source>Ctrl+W</source>
+        <translation type="unfinished">Ctrl+W</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <source>&amp;Load List</source>
+        <translation type="unfinished">&amp;טען רשימה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <source>O</source>
+        <translation type="unfinished">O</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <source>&amp;Save List</source>
+        <translation type="unfinished">&amp;שמור רשימה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <source>Shift+S</source>
+        <translation type="unfinished">Shift+S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <source>&amp;Rename List</source>
+        <translation type="unfinished">&amp;שנה שם רשימה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <source>F2</source>
+        <translation type="unfinished">F2</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <source>&amp;Select Next Playlist</source>
+        <translation type="unfinished">בחר רשימת נגינה &amp;באה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <source>Ctrl+PgDown</source>
+        <translation type="unfinished">Ctrl+PgDown</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <source>&amp;Select Previous Playlist</source>
+        <translation type="unfinished">בחר רשימת נגינה &amp;קודמת</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <source>Ctrl+PgUp</source>
+        <translation type="unfinished">Ctrl+PgUp</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <source>&amp;Group Tracks</source>
+        <translation type="unfinished">רצועות &amp;קבוצה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <source>Ctrl+G</source>
+        <translation type="unfinished">Ctrl+G</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <source>&amp;Show Column Headers</source>
+        <translation type="unfinished">&amp;הצג תקורות טור</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <source>Ctrl+H</source>
+        <translation type="unfinished">Ctrl+H</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <source>&amp;Equalizer</source>
+        <translation type="unfinished">&amp;אקולייזר</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <source>Ctrl+E</source>
+        <translation type="unfinished">Ctrl+E</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <source>&amp;Settings</source>
+        <translation type="unfinished">&amp;הגדרות</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <source>Ctrl+P</source>
+        <translation type="unfinished">Ctrl+P</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
+        <source>Application Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
+        <source>&amp;About Ui</source>
+        <translation type="unfinished">אודות &amp;Ui</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
+        <source>&amp;About</source>
+        <translation type="unfinished">&amp;אודות</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="104"/>
+        <source>&amp;About Qt</source>
+        <translation type="unfinished">אודות &amp;Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <source>&amp;Exit</source>
+        <translation type="unfinished">י&amp;ציאה</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished">Ctrl+Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="309"/>
+        <source>Toolbar</source>
+        <translation type="unfinished">סרגל כלים</translation>
+    </message>
+</context>
+<context>
     <name>QSUiCoverWidget</name>
     <message>
         <location filename="../qsuicoverwidget.cpp" line="32"/>
@@ -1055,42 +1055,42 @@
         <translation type="unfinished">קיצור דרך</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="55"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished">אפס קיצורי דרך</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="58"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished">האם ברצונך לאפס קיצורי דרך ברירת מחדל?</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="68"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="70"/>
         <source>Playback</source>
         <translation type="unfinished">פס קול</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="74"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="76"/>
         <source>View</source>
         <translation type="unfinished">תצוגה</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="80"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="82"/>
         <source>Volume</source>
         <translation type="unfinished">עוצמת קול</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="86"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="88"/>
         <source>Playlist</source>
         <translation type="unfinished">רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="92"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="94"/>
         <source>Misc</source>
         <translation type="unfinished">שונות</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="100"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="102"/>
         <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1099,7 +1099,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="911"/>
+        <location filename="../qsuimainwindow.cpp" line="882"/>
         <source>Qmmp</source>
         <translation type="unfinished">Qmmp</translation>
     </message>
@@ -1187,12 +1187,12 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="194"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הוס&amp;ף קובץ</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="199"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">הסר ה&amp;כל</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="204"/>
@@ -1246,163 +1246,163 @@
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
-        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <location filename="../qsuimainwindow.cpp" line="273"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">שנה שם רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <location filename="../qsuimainwindow.cpp" line="273"/>
         <source>Playlist name:</source>
         <translation type="unfinished">שם רשימת נגינה:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="322"/>
+        <location filename="../qsuimainwindow.cpp" line="313"/>
         <source>Appearance</source>
         <translation type="unfinished">הופעה</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="323"/>
+        <location filename="../qsuimainwindow.cpp" line="314"/>
         <source>Shortcuts</source>
         <translation type="unfinished">קיצורי דרך</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="402"/>
+        <location filename="../qsuimainwindow.cpp" line="393"/>
         <source>Menu Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="421"/>
+        <location filename="../qsuimainwindow.cpp" line="412"/>
         <source>Add new playlist</source>
         <translation type="unfinished">הוסף רשימת נגינה חדשה</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="427"/>
+        <location filename="../qsuimainwindow.cpp" line="418"/>
         <source>Show all tabs</source>
         <translation type="unfinished">הצג את כל הכרטיסיות</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="459"/>
+        <location filename="../qsuimainwindow.cpp" line="445"/>
         <source>Ctrl+0</source>
         <translation type="unfinished">Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="465"/>
+        <location filename="../qsuimainwindow.cpp" line="451"/>
         <source>P</source>
         <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="470"/>
+        <location filename="../qsuimainwindow.cpp" line="456"/>
         <source>Position</source>
         <translation type="unfinished">מיקום</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="472"/>
+        <location filename="../qsuimainwindow.cpp" line="458"/>
         <source>Volume</source>
         <translation type="unfinished">עוצמת קול</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="474"/>
+        <location filename="../qsuimainwindow.cpp" line="460"/>
         <source>Quick Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="534"/>
+        <location filename="../qsuimainwindow.cpp" line="513"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished">ערוך סרגלי כלים</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="536"/>
+        <location filename="../qsuimainwindow.cpp" line="515"/>
         <source>Sort List</source>
         <translation type="unfinished">מיין רשימה</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="538"/>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="517"/>
+        <location filename="../qsuimainwindow.cpp" line="533"/>
         <source>By Title</source>
         <translation type="unfinished">לפי כותרת</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="539"/>
-        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="518"/>
+        <location filename="../qsuimainwindow.cpp" line="534"/>
         <source>By Album</source>
         <translation type="unfinished">לפי אלבום</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="540"/>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="519"/>
+        <location filename="../qsuimainwindow.cpp" line="535"/>
         <source>By Artist</source>
         <translation type="unfinished">לפי אמן</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="541"/>
-        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <location filename="../qsuimainwindow.cpp" line="520"/>
+        <location filename="../qsuimainwindow.cpp" line="536"/>
         <source>By Album Artist</source>
         <translation type="unfinished">לפי אלבום אמן</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="542"/>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="521"/>
+        <location filename="../qsuimainwindow.cpp" line="537"/>
         <source>By Filename</source>
         <translation type="unfinished">לפי שם קובץ</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="543"/>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <location filename="../qsuimainwindow.cpp" line="522"/>
+        <location filename="../qsuimainwindow.cpp" line="538"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">לפי נתיב + שם קובץ</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="544"/>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <location filename="../qsuimainwindow.cpp" line="523"/>
+        <location filename="../qsuimainwindow.cpp" line="539"/>
         <source>By Date</source>
         <translation type="unfinished">לפי תאריך</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="545"/>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="524"/>
+        <location filename="../qsuimainwindow.cpp" line="540"/>
         <source>By Track Number</source>
         <translation type="unfinished">לפי מספר רצועה</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="546"/>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="525"/>
+        <location filename="../qsuimainwindow.cpp" line="541"/>
         <source>By Disc Number</source>
         <translation type="unfinished">לפי מספר תקליטור</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="547"/>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="526"/>
+        <location filename="../qsuimainwindow.cpp" line="542"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">לפי תאריך יצירת קובץ</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="548"/>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="527"/>
+        <location filename="../qsuimainwindow.cpp" line="543"/>
         <source>By File Modification Date</source>
         <translation type="unfinished">לפי תאריך שינוי קובץ</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="528"/>
         <source>By Group</source>
         <translation type="unfinished">לפי קבוצה</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <location filename="../qsuimainwindow.cpp" line="531"/>
         <source>Sort Selection</source>
         <translation type="unfinished">מיין נבחרות</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
         <source>Randomize List</source>
         <translation type="unfinished">הפוך רשימה לאקראית</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
         <source>Reverse List</source>
         <translation type="unfinished">הפוך רשימה</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="618"/>
+        <location filename="../qsuimainwindow.cpp" line="589"/>
         <source>Actions</source>
         <translation type="unfinished">פעולות</translation>
     </message>
@@ -1638,12 +1638,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="329"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
         <source>2 Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="332"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>
@@ -1711,7 +1711,7 @@
 <context>
     <name>VolumeSlider</name>
     <message>
-        <location filename="../volumeslider.cpp" line="91"/>
+        <location filename="../volumeslider.cpp" line="90"/>
         <source>%1%</source>
         <translation type="unfinished"></translation>
     </message>

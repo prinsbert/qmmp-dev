@@ -876,12 +876,12 @@
         <translation>Zapisz jako...</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="33"/>
+        <location filename="../covereditor.cpp" line="34"/>
         <source>External file</source>
         <translation>Plik zewnętrzny</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="34"/>
+        <location filename="../covereditor.cpp" line="35"/>
         <source>Tag</source>
         <translation>Tag</translation>
     </message>

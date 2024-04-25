@@ -54,19 +54,19 @@
         <translation>재생목록 옵션 표시</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="111"/>
-        <location filename="../playlistoption.cpp" line="131"/>
-        <location filename="../playlistoption.cpp" line="170"/>
+        <location filename="../playlistoption.cpp" line="112"/>
+        <location filename="../playlistoption.cpp" line="132"/>
+        <location filename="../playlistoption.cpp" line="171"/>
         <source>Invalid playlist ID</source>
         <translation>올바르지 않은 재생목록 ID</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="125"/>
+        <location filename="../playlistoption.cpp" line="126"/>
         <source>Invalid number of arguments</source>
         <translation>인수의 잘못된 번호</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="135"/>
+        <location filename="../playlistoption.cpp" line="136"/>
         <source>Invalid track ID</source>
         <translation>올바르지 않은 트랙 ID</translation>
     </message>

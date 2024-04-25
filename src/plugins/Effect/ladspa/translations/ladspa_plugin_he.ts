@@ -45,41 +45,41 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>LADSPASettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation>קטלוג תוסף LADSPA</translation>
+        <translation type="unfinished">קטלוג תוסף LADSPA</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation>&lt;</translation>
+        <translation type="unfinished">&lt;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="59"/>
+        <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation>&gt;</translation>
+        <translation type="unfinished">&gt;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation>תצורה</translation>
+        <translation type="unfinished">תצורה</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
+        <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>UID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
+        <location filename="../ladspasettingsdialog.cpp" line="48"/>
         <source>Name</source>
-        <translation>שם</translation>
+        <translation type="unfinished">שם</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="132"/>
+        <location filename="../ladspasettingsdialog.cpp" line="132"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation>לתוסף LADSPA זה אין בקרי משתמש</translation>
+        <translation type="unfinished">לתוסף LADSPA זה אין בקרי משתמש</translation>
     </message>
 </context>
 </TS>

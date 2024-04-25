@@ -30,26 +30,26 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>StereoSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../stereosettingsdialog.ui" line="14"/>
         <source>Extra Stereo Plugin Settings</source>
-        <translation>Налаштування модуля розширення стереобази</translation>
+        <translation type="unfinished">Налаштування модуля розширення стереобази</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="31"/>
+        <location filename="../stereosettingsdialog.ui" line="31"/>
         <source>Effect intensity:</source>
-        <translation>Глибина ефекту:</translation>
+        <translation type="unfinished">Глибина ефекту:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="54"/>
+        <location filename="../stereosettingsdialog.ui" line="54"/>
         <source>-</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="57"/>
+        <location filename="../stereosettingsdialog.cpp" line="59"/>
         <source>%1</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

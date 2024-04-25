@@ -45,41 +45,41 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>LADSPASettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation>Κατάλογος πρόσθετου LADSPA</translation>
+        <translation type="unfinished">Κατάλογος πρόσθετου LADSPA</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation>&gt;</translation>
+        <translation type="unfinished">&gt;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="59"/>
+        <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation>&lt;</translation>
+        <translation type="unfinished">&lt;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation>Διαμόρφωση</translation>
+        <translation type="unfinished">Διαμόρφωση</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
+        <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>UID</source>
-        <translation>UID</translation>
+        <translation type="unfinished">UID</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
+        <location filename="../ladspasettingsdialog.cpp" line="48"/>
         <source>Name</source>
-        <translation>Όνομα</translation>
+        <translation type="unfinished">Όνομα</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="132"/>
+        <location filename="../ladspasettingsdialog.cpp" line="132"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation>Αυτό το πρόσθετο LADSPA δεν έχει στοιχεία ελέγχου χρήστη</translation>
+        <translation type="unfinished">Αυτό το πρόσθετο LADSPA δεν έχει στοιχεία ελέγχου χρήστη</translation>
     </message>
 </context>
 </TS>

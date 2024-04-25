@@ -45,41 +45,41 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>LADSPASettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation>LADSPA-plug-incatalogus</translation>
+        <translation type="unfinished">LADSPA-plug-incatalogus</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation>&gt;</translation>
+        <translation type="unfinished">&gt;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="59"/>
+        <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation>&lt;</translation>
+        <translation type="unfinished">&lt;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation>Instellingen</translation>
+        <translation type="unfinished">Instellingen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
+        <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>UID</source>
-        <translation>UID</translation>
+        <translation type="unfinished">UID</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
+        <location filename="../ladspasettingsdialog.cpp" line="48"/>
         <source>Name</source>
-        <translation>Naam</translation>
+        <translation type="unfinished">Naam</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="132"/>
+        <location filename="../ladspasettingsdialog.cpp" line="132"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation>Deze LADSPA-plug-in heeft geen instellingen</translation>
+        <translation type="unfinished">Deze LADSPA-plug-in heeft geen instellingen</translation>
     </message>
 </context>
 </TS>

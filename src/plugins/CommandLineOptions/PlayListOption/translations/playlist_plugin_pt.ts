@@ -54,19 +54,19 @@
         <translation>Mostrar opções da lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="111"/>
-        <location filename="../playlistoption.cpp" line="131"/>
-        <location filename="../playlistoption.cpp" line="170"/>
+        <location filename="../playlistoption.cpp" line="112"/>
+        <location filename="../playlistoption.cpp" line="132"/>
+        <location filename="../playlistoption.cpp" line="171"/>
         <source>Invalid playlist ID</source>
         <translation>ID inválida de lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="125"/>
+        <location filename="../playlistoption.cpp" line="126"/>
         <source>Invalid number of arguments</source>
         <translation>Número inválido de argumentos</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="135"/>
+        <location filename="../playlistoption.cpp" line="136"/>
         <source>Invalid track ID</source>
         <translation>ID de faixa inválida</translation>
     </message>

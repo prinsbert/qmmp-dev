@@ -25,46 +25,46 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SoXRSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="20"/>
+        <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation>サンプルレート (Hz):</translation>
+        <translation type="unfinished">サンプルレート (Hz):</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="40"/>
+        <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation>音質:</translation>
+        <translation type="unfinished">音質:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="34"/>
+        <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Quick</source>
-        <translation>至急</translation>
+        <translation type="unfinished">至急</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="35"/>
+        <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Low</source>
-        <translation>低音質</translation>
+        <translation type="unfinished">低音質</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="36"/>
+        <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>Medium</source>
-        <translation>平凡な音質</translation>
+        <translation type="unfinished">平凡な音質</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="37"/>
+        <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>High</source>
-        <translation>高音質</translation>
+        <translation type="unfinished">高音質</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="38"/>
+        <location filename="../soxrsettingsdialog.cpp" line="39"/>
         <source>Very High</source>
-        <translation>最高音質</translation>
+        <translation type="unfinished">最高音質</translation>
     </message>
 </context>
 </TS>

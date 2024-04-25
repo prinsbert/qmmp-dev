@@ -876,12 +876,12 @@
         <translation>Speichern unter...</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="33"/>
+        <location filename="../covereditor.cpp" line="34"/>
         <source>External file</source>
         <translation>Externe Datei</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="34"/>
+        <location filename="../covereditor.cpp" line="35"/>
         <source>Tag</source>
         <translation>Schlagwort</translation>
     </message>

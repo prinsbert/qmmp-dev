@@ -25,36 +25,36 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>FileWriterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation>Impostazioni dell&apos;estensione scrittura file</translation>
+        <translation type="unfinished">Impostazioni dell&apos;estensione scrittura file</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation>Cartella di uscita:</translation>
+        <translation type="unfinished">Cartella di uscita:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>Output file name:</source>
-        <translation>Nome file d&apos;uscita:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="109"/>
-        <source>Write to single file if possible.</source>
-        <translation>Scrivi in un unico file se possibile.</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="36"/>
+        <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation>Qualità:</translation>
+        <translation type="unfinished">Qualità:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="71"/>
+        <location filename="../filewritersettingsdialog.ui" line="95"/>
+        <source>Output file name:</source>
+        <translation type="unfinished">Nome file d&apos;uscita:</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.ui" line="109"/>
+        <source>Write to single file if possible.</source>
+        <translation type="unfinished">Scrivi in un unico file se possibile.</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.cpp" line="73"/>
         <source>Choose a directory</source>
-        <translation>Scegli una cartella</translation>
+        <translation type="unfinished">Scegli una cartella</translation>
     </message>
 </context>
 </TS>

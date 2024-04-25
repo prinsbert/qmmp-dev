@@ -876,12 +876,12 @@
         <translation>다른 이름으로 저장...</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="33"/>
+        <location filename="../covereditor.cpp" line="34"/>
         <source>External file</source>
         <translation>외부 파일</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="34"/>
+        <location filename="../covereditor.cpp" line="35"/>
         <source>Tag</source>
         <translation>태그</translation>
     </message>

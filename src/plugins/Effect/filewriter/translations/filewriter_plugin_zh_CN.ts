@@ -25,36 +25,36 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>FileWriterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation>文件写入插件设置</translation>
+        <translation type="unfinished">文件写入插件设置</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation>输出文件夹：</translation>
+        <translation type="unfinished">输出文件夹：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
+        <location filename="../filewritersettingsdialog.ui" line="36"/>
+        <source>Quality:</source>
+        <translation type="unfinished">质量：</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation>输入文档名称：</translation>
+        <translation type="unfinished">输入文档名称：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="109"/>
+        <location filename="../filewritersettingsdialog.ui" line="109"/>
         <source>Write to single file if possible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="36"/>
-        <source>Quality:</source>
-        <translation>质量：</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="71"/>
+        <location filename="../filewritersettingsdialog.cpp" line="73"/>
         <source>Choose a directory</source>
-        <translation>选择文件夹</translation>
+        <translation type="unfinished">选择文件夹</translation>
     </message>
 </context>
 </TS>

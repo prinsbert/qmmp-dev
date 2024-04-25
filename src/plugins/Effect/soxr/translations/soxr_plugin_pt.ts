@@ -25,46 +25,46 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SoXRSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Definições</translation>
+        <translation type="unfinished">Definições</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="20"/>
+        <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation>Frequência (Hz):</translation>
+        <translation type="unfinished">Frequência (Hz):</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="40"/>
+        <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation>Qualidade:</translation>
+        <translation type="unfinished">Qualidade:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="34"/>
+        <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Quick</source>
-        <translation>Muito baixa</translation>
+        <translation type="unfinished">Muito baixa</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="35"/>
+        <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Low</source>
-        <translation>Baixa</translation>
+        <translation type="unfinished">Baixa</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="36"/>
+        <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>Medium</source>
-        <translation>Média</translation>
+        <translation type="unfinished">Média</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="37"/>
+        <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>High</source>
-        <translation>Alta</translation>
+        <translation type="unfinished">Alta</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="38"/>
+        <location filename="../soxrsettingsdialog.cpp" line="39"/>
         <source>Very High</source>
-        <translation>Muito alta</translation>
+        <translation type="unfinished">Muito alta</translation>
     </message>
 </context>
 </TS>

@@ -45,41 +45,41 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>LADSPASettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation>LADSPA 插件目錄</translation>
+        <translation type="unfinished">LADSPA 插件目錄</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="59"/>
+        <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation>配置</translation>
+        <translation type="unfinished">配置</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
+        <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>UID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
+        <location filename="../ladspasettingsdialog.cpp" line="48"/>
         <source>Name</source>
-        <translation>名稱</translation>
+        <translation type="unfinished">名稱</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="132"/>
+        <location filename="../ladspasettingsdialog.cpp" line="132"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation>LADSPA 插件用戶設定</translation>
+        <translation type="unfinished">LADSPA 插件用戶設定</translation>
     </message>
 </context>
 </TS>
