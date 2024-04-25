@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
+    <name>CrossfadeSettingsDialog</name>
+    <message>
+        <location filename="../crossfadesettingsdialog.ui" line="14"/>
+        <source>Crossfade Plugin Settings</source>
+        <translation type="unfinished">Crossfade プラグイン設定</translation>
+    </message>
+    <message>
+        <location filename="../crossfadesettingsdialog.ui" line="29"/>
+        <source>Overlap:</source>
+        <translation type="unfinished">オーバーラップ:</translation>
+    </message>
+    <message>
+        <location filename="../crossfadesettingsdialog.ui" line="42"/>
+        <source>ms</source>
+        <translation type="unfinished">ミリ秒</translation>
+    </message>
+</context>
+<context>
     <name>EffectCrossfadeFactory</name>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="30"/>
@@ -22,24 +40,6 @@
         <location filename="../effectcrossfadefactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Crossfade Plugin Settings</source>
-        <translation>Crossfade プラグイン設定</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Overlap:</source>
-        <translation>オーバーラップ:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="42"/>
-        <source>ms</source>
-        <translation>ミリ秒</translation>
     </message>
 </context>
 </TS>

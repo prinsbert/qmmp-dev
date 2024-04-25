@@ -9,27 +9,27 @@
         <translation>Informazioni su QSUI</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="41"/>
+        <location filename="../aboutqsuidialog.cpp" line="42"/>
         <source>Qmmp Simple User Interface (QSUI)</source>
         <translation>Interfaccia utente semplice per Qmmp (Qmmp Simple User Interface, QSUI)</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="42"/>
+        <location filename="../aboutqsuidialog.cpp" line="43"/>
         <source>Qmmp version: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Versione Qmmp: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="46"/>
+        <location filename="../aboutqsuidialog.cpp" line="45"/>
         <source>Developers:</source>
         <translation>Sviluppatori:</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="47"/>
+        <location filename="../aboutqsuidialog.cpp" line="46"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="49"/>
+        <location filename="../aboutqsuidialog.cpp" line="48"/>
         <source>Translators:</source>
         <translation>Traduttori</translation>
     </message>
@@ -37,464 +37,6 @@
         <location filename="../aboutqsuidialog.cpp" line="44"/>
         <source>Simple user interface based on standard widgets set.</source>
         <translation>Interfaccia utente semplice basata sull&apos;insieme di oggetti standard.</translation>
-    </message>
-</context>
-<context>
-    <name>ActionManager</name>
-    <message>
-        <location filename="../actionmanager.cpp" line="43"/>
-        <source>&amp;Play</source>
-        <translation>Ri&amp;produci</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="43"/>
-        <source>X</source>
-        <translation>X</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="44"/>
-        <source>&amp;Pause</source>
-        <translation>&amp;Pausa</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="44"/>
-        <source>C</source>
-        <translation>C</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="45"/>
-        <source>&amp;Stop</source>
-        <translation>&amp;Ferma</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="45"/>
-        <source>V</source>
-        <translation>V</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="46"/>
-        <source>&amp;Previous</source>
-        <translation>&amp;Precedente</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="46"/>
-        <source>Z</source>
-        <translation>Z</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="47"/>
-        <source>&amp;Next</source>
-        <translation>&amp;Successivo</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="47"/>
-        <source>B</source>
-        <translation>B</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="48"/>
-        <source>&amp;Play/Pause</source>
-        <translation>&amp;Riproduci/pausa</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="48"/>
-        <source>Space</source>
-        <translation>Spazio</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="49"/>
-        <source>&amp;Jump to Track</source>
-        <translation>&amp;Passa alla traccia</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="49"/>
-        <source>J</source>
-        <translation>J</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="50"/>
-        <source>&amp;Play Files</source>
-        <translation>Ri&amp;produci file</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="50"/>
-        <source>E</source>
-        <translation>E</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="51"/>
-        <source>&amp;Record</source>
-        <translation>&amp;Registra</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="52"/>
-        <source>&amp;Repeat Playlist</source>
-        <translation>&amp;Ripeti la scaletta</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="52"/>
-        <source>R</source>
-        <translation>R</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="53"/>
-        <source>&amp;Repeat Track</source>
-        <translation>&amp;Ripeti la traccia</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="53"/>
-        <source>Ctrl+R</source>
-        <translation>Ctrl+R</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="54"/>
-        <source>&amp;Shuffle</source>
-        <translation>Ordine ca&amp;suale</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="54"/>
-        <source>S</source>
-        <translation>S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="55"/>
-        <source>&amp;No Playlist Advance</source>
-        <translation>&amp;Non avanzare nella scaletta</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="55"/>
-        <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="56"/>
-        <source>&amp;Transit between playlists</source>
-        <translation>Passaggio &amp;tra scalette</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="57"/>
-        <source>&amp;Stop After Selected</source>
-        <translation>&amp;Ferma dopo l&apos;elemento selezionato</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="57"/>
-        <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="58"/>
-        <source>&amp;Clear Queue</source>
-        <translation>Pulis&amp;ci la coda</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="58"/>
-        <source>Alt+Q</source>
-        <translation>Alt+Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="60"/>
-        <source>Always on Top</source>
-        <translation>Sempre in primo piano</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="61"/>
-        <source>Put on All Workspaces</source>
-        <translation>Su tutti gli spazi di lavoro</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="67"/>
-        <source>Show Tabs</source>
-        <translation>Mostra le schede</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="68"/>
-        <source>Show Title Bars</source>
-        <translation>Mostra le barre del titolo</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="69"/>
-        <source>Block Toolbars</source>
-        <translation>Blocca le barre degli strumenti</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="71"/>
-        <source>Volume &amp;+</source>
-        <translation>Volume &amp;+</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="71"/>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="72"/>
-        <source>Volume &amp;-</source>
-        <translation>Volume &amp;-</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="72"/>
-        <source>9</source>
-        <translation>9</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="73"/>
-        <source>&amp;Mute</source>
-        <translation>&amp;Silenzia</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="73"/>
-        <source>M</source>
-        <translation>M</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="75"/>
-        <source>&amp;Add File</source>
-        <translation>&amp;Aggiungi file</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="75"/>
-        <source>F</source>
-        <translation>F</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="76"/>
-        <source>&amp;Add Directory</source>
-        <translation>&amp;Aggiungi cartella</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="76"/>
-        <source>D</source>
-        <translation>D</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="77"/>
-        <source>&amp;Add Url</source>
-        <translation>&amp;Aggiungi URL</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="77"/>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="78"/>
-        <source>&amp;Remove Selected</source>
-        <translation>&amp;Rimuovi selezionati</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="78"/>
-        <source>Del</source>
-        <translation>Canc</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="79"/>
-        <source>&amp;Remove All</source>
-        <translation>&amp;Rimuovi tutti</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="80"/>
-        <source>&amp;Remove Unselected</source>
-        <translation>&amp;Rimuovi non selezionati</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="81"/>
-        <source>Remove unavailable files</source>
-        <translation>Rimuovi file non disponibili</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="82"/>
-        <source>Remove duplicates</source>
-        <translation>Rimuovi duplicati</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="83"/>
-        <source>Refresh</source>
-        <translation>Aggiorna</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="84"/>
-        <source>&amp;Queue Toggle</source>
-        <translation>Attiva/disattiva co&amp;da</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="84"/>
-        <source>Q</source>
-        <translation>Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="85"/>
-        <source>Invert Selection</source>
-        <translation>Inverti la selezione</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="86"/>
-        <source>&amp;Select None</source>
-        <translation>De&amp;seleziona tutti</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="87"/>
-        <source>&amp;Select All</source>
-        <translation>&amp;Seleziona tutti</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="87"/>
-        <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>&amp;View Track Details</source>
-        <translation>&amp;Vedi i dettagli della traccia</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>Alt+I</source>
-        <translation>Alt+I</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="89"/>
-        <source>&amp;New List</source>
-        <translation>&amp;Nuova lista</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="89"/>
-        <source>Ctrl+T</source>
-        <translation>Ctrl+T</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="90"/>
-        <source>&amp;Delete List</source>
-        <translation>&amp;Elimina lista</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="90"/>
-        <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="91"/>
-        <source>&amp;Load List</source>
-        <translation>Carica &amp;lista</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="91"/>
-        <source>O</source>
-        <translation>O</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="92"/>
-        <source>&amp;Save List</source>
-        <translation>&amp;Salva lista</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="92"/>
-        <source>Shift+S</source>
-        <translation>Shift+S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="93"/>
-        <source>&amp;Rename List</source>
-        <translation>&amp;Rinomina lista</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="93"/>
-        <source>F2</source>
-        <translation>F2</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="94"/>
-        <source>&amp;Select Next Playlist</source>
-        <translation>&amp;Seleziona la scaletta successiva</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="94"/>
-        <source>Ctrl+PgDown</source>
-        <translation>Ctrl+Pag↓</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="95"/>
-        <source>&amp;Select Previous Playlist</source>
-        <translation>&amp;Seleziona la scaletta precedente</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="95"/>
-        <source>Ctrl+PgUp</source>
-        <translation>Ctrl+Pag↑</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="96"/>
-        <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="96"/>
-        <source>&amp;Group Tracks</source>
-        <translation>Ra&amp;ggruppa tracce</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="97"/>
-        <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="97"/>
-        <source>&amp;Show Column Headers</source>
-        <translation>Mo&amp;stra intestazioni di colonne</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="99"/>
-        <source>&amp;Equalizer</source>
-        <translation>&amp;Equalizzatore</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="99"/>
-        <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="100"/>
-        <source>&amp;Settings</source>
-        <translation>Impo&amp;stazioni</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="100"/>
-        <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="101"/>
-        <source>Application Menu</source>
-        <translation>Menu applicazione</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="102"/>
-        <source>&amp;About Ui</source>
-        <translation>&amp;Informazioni sull&apos;interfaccia</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="103"/>
-        <source>&amp;About</source>
-        <translation>&amp;Informazioni</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="104"/>
-        <source>&amp;About Qt</source>
-        <translation>&amp;Informazioni su Qt</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="105"/>
-        <source>&amp;Exit</source>
-        <translation>&amp;Esci</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="105"/>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="324"/>
-        <source>Toolbar</source>
-        <translation>Barra degli strumenti</translation>
     </message>
 </context>
 <context>
@@ -1007,6 +549,464 @@
     </message>
 </context>
 <context>
+    <name>QSUiActionManager</name>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="43"/>
+        <source>&amp;Play</source>
+        <translation type="unfinished">Ri&amp;produci</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="43"/>
+        <source>X</source>
+        <translation type="unfinished">X</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="44"/>
+        <source>&amp;Pause</source>
+        <translation type="unfinished">&amp;Pausa</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="44"/>
+        <source>C</source>
+        <translation type="unfinished">C</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="45"/>
+        <source>&amp;Stop</source>
+        <translation type="unfinished">&amp;Ferma</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="45"/>
+        <source>V</source>
+        <translation type="unfinished">V</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="46"/>
+        <source>&amp;Previous</source>
+        <translation type="unfinished">&amp;Precedente</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="46"/>
+        <source>Z</source>
+        <translation type="unfinished">Z</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="47"/>
+        <source>&amp;Next</source>
+        <translation type="unfinished">&amp;Successivo</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="47"/>
+        <source>B</source>
+        <translation type="unfinished">B</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="48"/>
+        <source>&amp;Play/Pause</source>
+        <translation type="unfinished">&amp;Riproduci/pausa</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="48"/>
+        <source>Space</source>
+        <translation type="unfinished">Spazio</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <source>&amp;Jump to Track</source>
+        <translation type="unfinished">&amp;Passa alla traccia</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <source>J</source>
+        <translation type="unfinished">J</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <source>&amp;Play Files</source>
+        <translation type="unfinished">Ri&amp;produci file</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <source>E</source>
+        <translation type="unfinished">E</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="51"/>
+        <source>&amp;Record</source>
+        <translation type="unfinished">&amp;Registra</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <source>&amp;Repeat Playlist</source>
+        <translation type="unfinished">&amp;Ripeti la scaletta</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <source>R</source>
+        <translation type="unfinished">R</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <source>&amp;Repeat Track</source>
+        <translation type="unfinished">&amp;Ripeti la traccia</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <source>Ctrl+R</source>
+        <translation type="unfinished">Ctrl+R</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <source>&amp;Shuffle</source>
+        <translation type="unfinished">Ordine ca&amp;suale</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <source>S</source>
+        <translation type="unfinished">S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="55"/>
+        <source>&amp;No Playlist Advance</source>
+        <translation type="unfinished">&amp;Non avanzare nella scaletta</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="55"/>
+        <source>Ctrl+N</source>
+        <translation type="unfinished">Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="56"/>
+        <source>&amp;Transit between playlists</source>
+        <translation type="unfinished">Passaggio &amp;tra scalette</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="57"/>
+        <source>&amp;Stop After Selected</source>
+        <translation type="unfinished">&amp;Ferma dopo l&apos;elemento selezionato</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="57"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished">Ctrl+S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="58"/>
+        <source>&amp;Clear Queue</source>
+        <translation type="unfinished">Pulis&amp;ci la coda</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="58"/>
+        <source>Alt+Q</source>
+        <translation type="unfinished">Alt+Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="60"/>
+        <source>Always on Top</source>
+        <translation type="unfinished">Sempre in primo piano</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="61"/>
+        <source>Put on All Workspaces</source>
+        <translation type="unfinished">Su tutti gli spazi di lavoro</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="67"/>
+        <source>Show Tabs</source>
+        <translation type="unfinished">Mostra le schede</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="68"/>
+        <source>Show Title Bars</source>
+        <translation type="unfinished">Mostra le barre del titolo</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="69"/>
+        <source>Block Toolbars</source>
+        <translation type="unfinished">Blocca le barre degli strumenti</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="71"/>
+        <source>Volume &amp;+</source>
+        <translation type="unfinished">Volume &amp;+</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="71"/>
+        <source>0</source>
+        <translation type="unfinished">0</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="72"/>
+        <source>Volume &amp;-</source>
+        <translation type="unfinished">Volume &amp;-</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="72"/>
+        <source>9</source>
+        <translation type="unfinished">9</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="73"/>
+        <source>&amp;Mute</source>
+        <translation type="unfinished">&amp;Silenzia</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="73"/>
+        <source>M</source>
+        <translation type="unfinished">M</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="75"/>
+        <source>&amp;Add File</source>
+        <translation type="unfinished">&amp;Aggiungi file</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="75"/>
+        <source>F</source>
+        <translation type="unfinished">F</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <source>&amp;Add Directory</source>
+        <translation type="unfinished">&amp;Aggiungi cartella</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <source>D</source>
+        <translation type="unfinished">D</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <source>&amp;Add Url</source>
+        <translation type="unfinished">&amp;Aggiungi URL</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <source>U</source>
+        <translation type="unfinished">U</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <source>&amp;Remove Selected</source>
+        <translation type="unfinished">&amp;Rimuovi selezionati</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <source>Del</source>
+        <translation type="unfinished">Canc</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="79"/>
+        <source>&amp;Remove All</source>
+        <translation type="unfinished">&amp;Rimuovi tutti</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="80"/>
+        <source>&amp;Remove Unselected</source>
+        <translation type="unfinished">&amp;Rimuovi non selezionati</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
+        <source>Remove unavailable files</source>
+        <translation type="unfinished">Rimuovi file non disponibili</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
+        <source>Remove duplicates</source>
+        <translation type="unfinished">Rimuovi duplicati</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="83"/>
+        <source>Refresh</source>
+        <translation type="unfinished">Aggiorna</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <source>&amp;Queue Toggle</source>
+        <translation type="unfinished">Attiva/disattiva co&amp;da</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <source>Q</source>
+        <translation type="unfinished">Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="85"/>
+        <source>Invert Selection</source>
+        <translation type="unfinished">Inverti la selezione</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="86"/>
+        <source>&amp;Select None</source>
+        <translation type="unfinished">De&amp;seleziona tutti</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">&amp;Seleziona tutti</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <source>Ctrl+A</source>
+        <translation type="unfinished">Ctrl+A</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <source>&amp;View Track Details</source>
+        <translation type="unfinished">&amp;Vedi i dettagli della traccia</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <source>Alt+I</source>
+        <translation type="unfinished">Alt+I</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <source>&amp;New List</source>
+        <translation type="unfinished">&amp;Nuova lista</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <source>Ctrl+T</source>
+        <translation type="unfinished">Ctrl+T</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <source>&amp;Delete List</source>
+        <translation type="unfinished">&amp;Elimina lista</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <source>Ctrl+W</source>
+        <translation type="unfinished">Ctrl+W</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <source>&amp;Load List</source>
+        <translation type="unfinished">Carica &amp;lista</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <source>O</source>
+        <translation type="unfinished">O</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <source>&amp;Save List</source>
+        <translation type="unfinished">&amp;Salva lista</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <source>Shift+S</source>
+        <translation type="unfinished">Shift+S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <source>&amp;Rename List</source>
+        <translation type="unfinished">&amp;Rinomina lista</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <source>F2</source>
+        <translation type="unfinished">F2</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <source>&amp;Select Next Playlist</source>
+        <translation type="unfinished">&amp;Seleziona la scaletta successiva</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <source>Ctrl+PgDown</source>
+        <translation type="unfinished">Ctrl+Pag↓</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <source>&amp;Select Previous Playlist</source>
+        <translation type="unfinished">&amp;Seleziona la scaletta precedente</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <source>Ctrl+PgUp</source>
+        <translation type="unfinished">Ctrl+Pag↑</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <source>&amp;Group Tracks</source>
+        <translation type="unfinished">Ra&amp;ggruppa tracce</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <source>Ctrl+G</source>
+        <translation type="unfinished">Ctrl+G</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <source>&amp;Show Column Headers</source>
+        <translation type="unfinished">Mo&amp;stra intestazioni di colonne</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <source>Ctrl+H</source>
+        <translation type="unfinished">Ctrl+H</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <source>&amp;Equalizer</source>
+        <translation type="unfinished">&amp;Equalizzatore</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <source>Ctrl+E</source>
+        <translation type="unfinished">Ctrl+E</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <source>&amp;Settings</source>
+        <translation type="unfinished">Impo&amp;stazioni</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <source>Ctrl+P</source>
+        <translation type="unfinished">Ctrl+P</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
+        <source>Application Menu</source>
+        <translation type="unfinished">Menu applicazione</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
+        <source>&amp;About Ui</source>
+        <translation type="unfinished">&amp;Informazioni sull&apos;interfaccia</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
+        <source>&amp;About</source>
+        <translation type="unfinished">&amp;Informazioni</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="104"/>
+        <source>&amp;About Qt</source>
+        <translation type="unfinished">&amp;Informazioni su Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <source>&amp;Exit</source>
+        <translation type="unfinished">&amp;Esci</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished">Ctrl+Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="309"/>
+        <source>Toolbar</source>
+        <translation type="unfinished">Barra degli strumenti</translation>
+    </message>
+</context>
+<context>
     <name>QSUiCoverWidget</name>
     <message>
         <location filename="../qsuicoverwidget.cpp" line="32"/>
@@ -1042,7 +1042,7 @@
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="40"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azzera</translation>
     </message>
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="54"/>
@@ -1055,42 +1055,42 @@
         <translation type="unfinished">Scorciatoia</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="55"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished">Azzera scorciatoie</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="58"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished">Vuoi ripristinare le scorciatoie predefinite?</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="68"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="70"/>
         <source>Playback</source>
         <translation type="unfinished">Riproduzione</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="74"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="76"/>
         <source>View</source>
         <translation type="unfinished">Visualizza</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="80"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="82"/>
         <source>Volume</source>
         <translation type="unfinished">Volume</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="86"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="88"/>
         <source>Playlist</source>
         <translation type="unfinished">Scaletta</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="92"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="94"/>
         <source>Misc</source>
         <translation type="unfinished">Varie</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="100"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="102"/>
         <source>Tools</source>
         <translation type="unfinished">Strumenti</translation>
     </message>
@@ -1099,7 +1099,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="911"/>
+        <location filename="../qsuimainwindow.cpp" line="882"/>
         <source>Qmmp</source>
         <translation type="unfinished">Qmmp</translation>
     </message>
@@ -1246,163 +1246,163 @@
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
-        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <location filename="../qsuimainwindow.cpp" line="273"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Rinomina scaletta</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <location filename="../qsuimainwindow.cpp" line="273"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Nome della scaletta:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="322"/>
+        <location filename="../qsuimainwindow.cpp" line="313"/>
         <source>Appearance</source>
         <translation type="unfinished">Aspetto</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="323"/>
+        <location filename="../qsuimainwindow.cpp" line="314"/>
         <source>Shortcuts</source>
         <translation type="unfinished">Scorciatoie</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="402"/>
+        <location filename="../qsuimainwindow.cpp" line="393"/>
         <source>Menu Bar</source>
         <translation type="unfinished">Barra del menu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="421"/>
+        <location filename="../qsuimainwindow.cpp" line="412"/>
         <source>Add new playlist</source>
         <translation type="unfinished">Aggiungi nuova scaletta</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="427"/>
+        <location filename="../qsuimainwindow.cpp" line="418"/>
         <source>Show all tabs</source>
         <translation type="unfinished">Mostra tutte le schede</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="459"/>
+        <location filename="../qsuimainwindow.cpp" line="445"/>
         <source>Ctrl+0</source>
         <translation type="unfinished">Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="465"/>
+        <location filename="../qsuimainwindow.cpp" line="451"/>
         <source>P</source>
         <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="470"/>
+        <location filename="../qsuimainwindow.cpp" line="456"/>
         <source>Position</source>
         <translation type="unfinished">Posizione</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="472"/>
+        <location filename="../qsuimainwindow.cpp" line="458"/>
         <source>Volume</source>
         <translation type="unfinished">Volume</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="474"/>
+        <location filename="../qsuimainwindow.cpp" line="460"/>
         <source>Quick Search</source>
         <translation type="unfinished">Ricerca rapida</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="534"/>
+        <location filename="../qsuimainwindow.cpp" line="513"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished">Modifica barre degli strumenti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="536"/>
+        <location filename="../qsuimainwindow.cpp" line="515"/>
         <source>Sort List</source>
         <translation type="unfinished">Riordina la lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="538"/>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="517"/>
+        <location filename="../qsuimainwindow.cpp" line="533"/>
         <source>By Title</source>
         <translation type="unfinished">Per titolo</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="539"/>
-        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="518"/>
+        <location filename="../qsuimainwindow.cpp" line="534"/>
         <source>By Album</source>
         <translation type="unfinished">Per album</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="540"/>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="519"/>
+        <location filename="../qsuimainwindow.cpp" line="535"/>
         <source>By Artist</source>
         <translation type="unfinished">Per artista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="541"/>
-        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <location filename="../qsuimainwindow.cpp" line="520"/>
+        <location filename="../qsuimainwindow.cpp" line="536"/>
         <source>By Album Artist</source>
         <translation type="unfinished">Per artista dell&apos;album</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="542"/>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="521"/>
+        <location filename="../qsuimainwindow.cpp" line="537"/>
         <source>By Filename</source>
         <translation type="unfinished">Per titolo del brano</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="543"/>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <location filename="../qsuimainwindow.cpp" line="522"/>
+        <location filename="../qsuimainwindow.cpp" line="538"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">Per percorso più nome del file</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="544"/>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <location filename="../qsuimainwindow.cpp" line="523"/>
+        <location filename="../qsuimainwindow.cpp" line="539"/>
         <source>By Date</source>
         <translation type="unfinished">Per data</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="545"/>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="524"/>
+        <location filename="../qsuimainwindow.cpp" line="540"/>
         <source>By Track Number</source>
         <translation type="unfinished">Per numero di traccia</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="546"/>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="525"/>
+        <location filename="../qsuimainwindow.cpp" line="541"/>
         <source>By Disc Number</source>
         <translation type="unfinished">Per numero di disco</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="547"/>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="526"/>
+        <location filename="../qsuimainwindow.cpp" line="542"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">Per data di creazione dei file</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="548"/>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="527"/>
+        <location filename="../qsuimainwindow.cpp" line="543"/>
         <source>By File Modification Date</source>
         <translation type="unfinished">Per data di modifica dei file</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="528"/>
         <source>By Group</source>
         <translation type="unfinished">Per gruppo</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <location filename="../qsuimainwindow.cpp" line="531"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Riordina la selezione</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
         <source>Randomize List</source>
         <translation type="unfinished">Mescola la lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
         <source>Reverse List</source>
         <translation type="unfinished">Inverti la lista</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="618"/>
+        <location filename="../qsuimainwindow.cpp" line="589"/>
         <source>Actions</source>
         <translation type="unfinished">Azioni</translation>
     </message>
@@ -1473,7 +1473,7 @@
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Azzera</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="65"/>
@@ -1638,12 +1638,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="329"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
         <source>2 Channels</source>
         <translation>2 canali</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="332"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>
@@ -1711,7 +1711,7 @@
 <context>
     <name>VolumeSlider</name>
     <message>
-        <location filename="../volumeslider.cpp" line="91"/>
+        <location filename="../volumeslider.cpp" line="90"/>
         <source>%1%</source>
         <translation>%1%</translation>
     </message>

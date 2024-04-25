@@ -9,27 +9,27 @@
         <translation>Σχετικά με το QSUI</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="41"/>
+        <location filename="../aboutqsuidialog.cpp" line="42"/>
         <source>Qmmp Simple User Interface (QSUI)</source>
         <translation>Qmmp Simple User Interface (QSUI)</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="42"/>
+        <location filename="../aboutqsuidialog.cpp" line="43"/>
         <source>Qmmp version: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>Έκδοση του Qmmp: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="46"/>
+        <location filename="../aboutqsuidialog.cpp" line="45"/>
         <source>Developers:</source>
         <translation>Προγραμματιστές:</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="47"/>
+        <location filename="../aboutqsuidialog.cpp" line="46"/>
         <source>Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../aboutqsuidialog.cpp" line="49"/>
+        <location filename="../aboutqsuidialog.cpp" line="48"/>
         <source>Translators:</source>
         <translation>Μεταφραστές:</translation>
     </message>
@@ -37,464 +37,6 @@
         <location filename="../aboutqsuidialog.cpp" line="44"/>
         <source>Simple user interface based on standard widgets set.</source>
         <translation>Απλό περιβάλλον χρήστη βασισμένο σε ένα τυπικό σύνολο γραφικών συστατικών.</translation>
-    </message>
-</context>
-<context>
-    <name>ActionManager</name>
-    <message>
-        <location filename="../actionmanager.cpp" line="43"/>
-        <source>&amp;Play</source>
-        <translation>&amp;Αναπαραγωγή</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="43"/>
-        <source>X</source>
-        <translation>X</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="44"/>
-        <source>&amp;Pause</source>
-        <translation>&amp;Παύση</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="44"/>
-        <source>C</source>
-        <translation>C</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="45"/>
-        <source>&amp;Stop</source>
-        <translation>&amp;Διακοπή</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="45"/>
-        <source>V</source>
-        <translation>V</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="46"/>
-        <source>&amp;Previous</source>
-        <translation>&amp;Προηγούμενο</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="46"/>
-        <source>Z</source>
-        <translation>Z</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="47"/>
-        <source>&amp;Next</source>
-        <translation>&amp;Επόμενο</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="47"/>
-        <source>B</source>
-        <translation>B</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="48"/>
-        <source>&amp;Play/Pause</source>
-        <translation>&amp;Αναπαραγωγή/Παύση</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="48"/>
-        <source>Space</source>
-        <translation>Διάστημα</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="49"/>
-        <source>&amp;Jump to Track</source>
-        <translation>&amp;Μεταπήδηση σε κομμάτι</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="49"/>
-        <source>J</source>
-        <translation>J</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="50"/>
-        <source>&amp;Play Files</source>
-        <translation>&amp;Αναπαραγωγή αρχείων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="50"/>
-        <source>E</source>
-        <translation>E</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="51"/>
-        <source>&amp;Record</source>
-        <translation>&amp;Ηχογράφηση</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="52"/>
-        <source>&amp;Repeat Playlist</source>
-        <translation>&amp;Επανάληψη λίστας αναπαραγωγής</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="52"/>
-        <source>R</source>
-        <translation>R</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="53"/>
-        <source>&amp;Repeat Track</source>
-        <translation>&amp;Επανάληψη κομματιού</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="53"/>
-        <source>Ctrl+R</source>
-        <translation>Ctrl+R</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="54"/>
-        <source>&amp;Shuffle</source>
-        <translation>&amp;Ανακάτεμα</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="54"/>
-        <source>S</source>
-        <translation>S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="55"/>
-        <source>&amp;No Playlist Advance</source>
-        <translation>&amp;Χωρίς προχώρηση της λίστας αναπαραγωγής </translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="55"/>
-        <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="56"/>
-        <source>&amp;Transit between playlists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="57"/>
-        <source>&amp;Stop After Selected</source>
-        <translation>&amp;Διακοπή μετά το επιλεγμένο</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="57"/>
-        <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="58"/>
-        <source>&amp;Clear Queue</source>
-        <translation>&amp;Καθαρισμός ουράς αναμονής</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="58"/>
-        <source>Alt+Q</source>
-        <translation>Alt+Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="60"/>
-        <source>Always on Top</source>
-        <translation>Πάντα στο προσκήνιο</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="61"/>
-        <source>Put on All Workspaces</source>
-        <translation>Τοποθέτηση σε όλες τις επιφάνειες εργασίας</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="67"/>
-        <source>Show Tabs</source>
-        <translation>Εμφάνιση καρτελών</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="68"/>
-        <source>Show Title Bars</source>
-        <translation>Εμφάνιση γραμμών τίτλων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="69"/>
-        <source>Block Toolbars</source>
-        <translation>Κλείδωμα γραμμών εργαλείων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="71"/>
-        <source>Volume &amp;+</source>
-        <translation>Ένταση &amp;+</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="71"/>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="72"/>
-        <source>Volume &amp;-</source>
-        <translation>Ένταση &amp;-</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="72"/>
-        <source>9</source>
-        <translation>9</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="73"/>
-        <source>&amp;Mute</source>
-        <translation>&amp;Σίγαση</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="73"/>
-        <source>M</source>
-        <translation>M</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="75"/>
-        <source>&amp;Add File</source>
-        <translation>&amp;Προσθήκη αρχείου</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="75"/>
-        <source>F</source>
-        <translation>F</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="76"/>
-        <source>&amp;Add Directory</source>
-        <translation>&amp;Προσθήκη καταλόγου</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="76"/>
-        <source>D</source>
-        <translation>D</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="77"/>
-        <source>&amp;Add Url</source>
-        <translation>&amp;Προσθήκη Url</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="77"/>
-        <source>U</source>
-        <translation>U</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="78"/>
-        <source>&amp;Remove Selected</source>
-        <translation>&amp;Αφαίρεση επιλεγμένων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="78"/>
-        <source>Del</source>
-        <translation>Del</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="79"/>
-        <source>&amp;Remove All</source>
-        <translation>&amp;Αφαίρεση όλων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="80"/>
-        <source>&amp;Remove Unselected</source>
-        <translation>&amp;Αφαίρεση των μη επιλεγμένων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="81"/>
-        <source>Remove unavailable files</source>
-        <translation>Αφαίρεση των μη διαθέσιμων αρχείων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="82"/>
-        <source>Remove duplicates</source>
-        <translation>Αφαίρεση διπλότυπων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="83"/>
-        <source>Refresh</source>
-        <translation>Ανανέωση</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="84"/>
-        <source>&amp;Queue Toggle</source>
-        <translation>&amp;Εναλλαγή ουράς αναμονής</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="84"/>
-        <source>Q</source>
-        <translation>Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="85"/>
-        <source>Invert Selection</source>
-        <translation>Αντιστροφή επιλογής</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="86"/>
-        <source>&amp;Select None</source>
-        <translation>&amp;Επιλογή κανενός</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="87"/>
-        <source>&amp;Select All</source>
-        <translation>&amp;Επιλογή όλων</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="87"/>
-        <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>&amp;View Track Details</source>
-        <translation>&amp;Προβολή λεπτομερειών κομματιού</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>Alt+I</source>
-        <translation>Alt+I</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="89"/>
-        <source>&amp;New List</source>
-        <translation>&amp;Νέα λίστα</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="89"/>
-        <source>Ctrl+T</source>
-        <translation>Ctrl+T</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="90"/>
-        <source>&amp;Delete List</source>
-        <translation>&amp;Διαγραφή λίστας</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="90"/>
-        <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="91"/>
-        <source>&amp;Load List</source>
-        <translation>&amp;Φόρτωση λίστας</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="91"/>
-        <source>O</source>
-        <translation>O</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="92"/>
-        <source>&amp;Save List</source>
-        <translation>&amp;Αποθήκευση λίστας</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="92"/>
-        <source>Shift+S</source>
-        <translation>Shift+S</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="93"/>
-        <source>&amp;Rename List</source>
-        <translation>&amp;Μετονομασία λίστας</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="93"/>
-        <source>F2</source>
-        <translation>F2</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="94"/>
-        <source>&amp;Select Next Playlist</source>
-        <translation>&amp;Επιλογή επόμενης λίστας αναπαραγωγής</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="94"/>
-        <source>Ctrl+PgDown</source>
-        <translation>Ctrl+PgDown</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="95"/>
-        <source>&amp;Select Previous Playlist</source>
-        <translation>&amp;Επιλογή προηγούμενης λίστας αναπαραγωγής</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="95"/>
-        <source>Ctrl+PgUp</source>
-        <translation>Ctrl+PgUp</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="96"/>
-        <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="96"/>
-        <source>&amp;Group Tracks</source>
-        <translation>&amp;Ομαδοποίηση κομματιών</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="97"/>
-        <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="97"/>
-        <source>&amp;Show Column Headers</source>
-        <translation>&amp;Εμφάνιση επικεφαλίδων στηλών</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="99"/>
-        <source>&amp;Equalizer</source>
-        <translation>&amp;Ισοσταθμιστής</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="99"/>
-        <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="100"/>
-        <source>&amp;Settings</source>
-        <translation>&amp;Ρυθμίσεις</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="100"/>
-        <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="101"/>
-        <source>Application Menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="102"/>
-        <source>&amp;About Ui</source>
-        <translation>&amp;Σχετικά με το περιβάλλον</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="103"/>
-        <source>&amp;About</source>
-        <translation>&amp;Σχετικά</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="104"/>
-        <source>&amp;About Qt</source>
-        <translation>&amp;Σχετικά με την Qt</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="105"/>
-        <source>&amp;Exit</source>
-        <translation>&amp;Έξοδος</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="105"/>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="324"/>
-        <source>Toolbar</source>
-        <translation>Γραμμή εργαλείων</translation>
     </message>
 </context>
 <context>
@@ -1007,6 +549,464 @@
     </message>
 </context>
 <context>
+    <name>QSUiActionManager</name>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="43"/>
+        <source>&amp;Play</source>
+        <translation type="unfinished">&amp;Αναπαραγωγή</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="43"/>
+        <source>X</source>
+        <translation type="unfinished">X</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="44"/>
+        <source>&amp;Pause</source>
+        <translation type="unfinished">&amp;Παύση</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="44"/>
+        <source>C</source>
+        <translation type="unfinished">C</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="45"/>
+        <source>&amp;Stop</source>
+        <translation type="unfinished">&amp;Διακοπή</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="45"/>
+        <source>V</source>
+        <translation type="unfinished">V</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="46"/>
+        <source>&amp;Previous</source>
+        <translation type="unfinished">&amp;Προηγούμενο</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="46"/>
+        <source>Z</source>
+        <translation type="unfinished">Z</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="47"/>
+        <source>&amp;Next</source>
+        <translation type="unfinished">&amp;Επόμενο</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="47"/>
+        <source>B</source>
+        <translation type="unfinished">B</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="48"/>
+        <source>&amp;Play/Pause</source>
+        <translation type="unfinished">&amp;Αναπαραγωγή/Παύση</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="48"/>
+        <source>Space</source>
+        <translation type="unfinished">Διάστημα</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <source>&amp;Jump to Track</source>
+        <translation type="unfinished">&amp;Μεταπήδηση σε κομμάτι</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="49"/>
+        <source>J</source>
+        <translation type="unfinished">J</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <source>&amp;Play Files</source>
+        <translation type="unfinished">&amp;Αναπαραγωγή αρχείων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="50"/>
+        <source>E</source>
+        <translation type="unfinished">E</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="51"/>
+        <source>&amp;Record</source>
+        <translation type="unfinished">&amp;Ηχογράφηση</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <source>&amp;Repeat Playlist</source>
+        <translation type="unfinished">&amp;Επανάληψη λίστας αναπαραγωγής</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="52"/>
+        <source>R</source>
+        <translation type="unfinished">R</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <source>&amp;Repeat Track</source>
+        <translation type="unfinished">&amp;Επανάληψη κομματιού</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="53"/>
+        <source>Ctrl+R</source>
+        <translation type="unfinished">Ctrl+R</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <source>&amp;Shuffle</source>
+        <translation type="unfinished">&amp;Ανακάτεμα</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="54"/>
+        <source>S</source>
+        <translation type="unfinished">S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="55"/>
+        <source>&amp;No Playlist Advance</source>
+        <translation type="unfinished">&amp;Χωρίς προχώρηση της λίστας αναπαραγωγής </translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="55"/>
+        <source>Ctrl+N</source>
+        <translation type="unfinished">Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="56"/>
+        <source>&amp;Transit between playlists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="57"/>
+        <source>&amp;Stop After Selected</source>
+        <translation type="unfinished">&amp;Διακοπή μετά το επιλεγμένο</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="57"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished">Ctrl+S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="58"/>
+        <source>&amp;Clear Queue</source>
+        <translation type="unfinished">&amp;Καθαρισμός ουράς αναμονής</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="58"/>
+        <source>Alt+Q</source>
+        <translation type="unfinished">Alt+Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="60"/>
+        <source>Always on Top</source>
+        <translation type="unfinished">Πάντα στο προσκήνιο</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="61"/>
+        <source>Put on All Workspaces</source>
+        <translation type="unfinished">Τοποθέτηση σε όλες τις επιφάνειες εργασίας</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="67"/>
+        <source>Show Tabs</source>
+        <translation type="unfinished">Εμφάνιση καρτελών</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="68"/>
+        <source>Show Title Bars</source>
+        <translation type="unfinished">Εμφάνιση γραμμών τίτλων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="69"/>
+        <source>Block Toolbars</source>
+        <translation type="unfinished">Κλείδωμα γραμμών εργαλείων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="71"/>
+        <source>Volume &amp;+</source>
+        <translation type="unfinished">Ένταση &amp;+</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="71"/>
+        <source>0</source>
+        <translation type="unfinished">0</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="72"/>
+        <source>Volume &amp;-</source>
+        <translation type="unfinished">Ένταση &amp;-</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="72"/>
+        <source>9</source>
+        <translation type="unfinished">9</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="73"/>
+        <source>&amp;Mute</source>
+        <translation type="unfinished">&amp;Σίγαση</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="73"/>
+        <source>M</source>
+        <translation type="unfinished">M</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="75"/>
+        <source>&amp;Add File</source>
+        <translation type="unfinished">&amp;Προσθήκη αρχείου</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="75"/>
+        <source>F</source>
+        <translation type="unfinished">F</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <source>&amp;Add Directory</source>
+        <translation type="unfinished">&amp;Προσθήκη καταλόγου</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="76"/>
+        <source>D</source>
+        <translation type="unfinished">D</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <source>&amp;Add Url</source>
+        <translation type="unfinished">&amp;Προσθήκη Url</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="77"/>
+        <source>U</source>
+        <translation type="unfinished">U</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <source>&amp;Remove Selected</source>
+        <translation type="unfinished">&amp;Αφαίρεση επιλεγμένων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="78"/>
+        <source>Del</source>
+        <translation type="unfinished">Del</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="79"/>
+        <source>&amp;Remove All</source>
+        <translation type="unfinished">&amp;Αφαίρεση όλων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="80"/>
+        <source>&amp;Remove Unselected</source>
+        <translation type="unfinished">&amp;Αφαίρεση των μη επιλεγμένων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="81"/>
+        <source>Remove unavailable files</source>
+        <translation type="unfinished">Αφαίρεση των μη διαθέσιμων αρχείων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="82"/>
+        <source>Remove duplicates</source>
+        <translation type="unfinished">Αφαίρεση διπλότυπων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="83"/>
+        <source>Refresh</source>
+        <translation type="unfinished">Ανανέωση</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <source>&amp;Queue Toggle</source>
+        <translation type="unfinished">&amp;Εναλλαγή ουράς αναμονής</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="84"/>
+        <source>Q</source>
+        <translation type="unfinished">Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="85"/>
+        <source>Invert Selection</source>
+        <translation type="unfinished">Αντιστροφή επιλογής</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="86"/>
+        <source>&amp;Select None</source>
+        <translation type="unfinished">&amp;Επιλογή κανενός</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <source>&amp;Select All</source>
+        <translation type="unfinished">&amp;Επιλογή όλων</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="87"/>
+        <source>Ctrl+A</source>
+        <translation type="unfinished">Ctrl+A</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <source>&amp;View Track Details</source>
+        <translation type="unfinished">&amp;Προβολή λεπτομερειών κομματιού</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="88"/>
+        <source>Alt+I</source>
+        <translation type="unfinished">Alt+I</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <source>&amp;New List</source>
+        <translation type="unfinished">&amp;Νέα λίστα</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="89"/>
+        <source>Ctrl+T</source>
+        <translation type="unfinished">Ctrl+T</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <source>&amp;Delete List</source>
+        <translation type="unfinished">&amp;Διαγραφή λίστας</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="90"/>
+        <source>Ctrl+W</source>
+        <translation type="unfinished">Ctrl+W</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <source>&amp;Load List</source>
+        <translation type="unfinished">&amp;Φόρτωση λίστας</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="91"/>
+        <source>O</source>
+        <translation type="unfinished">O</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <source>&amp;Save List</source>
+        <translation type="unfinished">&amp;Αποθήκευση λίστας</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="92"/>
+        <source>Shift+S</source>
+        <translation type="unfinished">Shift+S</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <source>&amp;Rename List</source>
+        <translation type="unfinished">&amp;Μετονομασία λίστας</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="93"/>
+        <source>F2</source>
+        <translation type="unfinished">F2</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <source>&amp;Select Next Playlist</source>
+        <translation type="unfinished">&amp;Επιλογή επόμενης λίστας αναπαραγωγής</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="94"/>
+        <source>Ctrl+PgDown</source>
+        <translation type="unfinished">Ctrl+PgDown</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <source>&amp;Select Previous Playlist</source>
+        <translation type="unfinished">&amp;Επιλογή προηγούμενης λίστας αναπαραγωγής</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="95"/>
+        <source>Ctrl+PgUp</source>
+        <translation type="unfinished">Ctrl+PgUp</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <source>&amp;Group Tracks</source>
+        <translation type="unfinished">&amp;Ομαδοποίηση κομματιών</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="96"/>
+        <source>Ctrl+G</source>
+        <translation type="unfinished">Ctrl+G</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <source>&amp;Show Column Headers</source>
+        <translation type="unfinished">&amp;Εμφάνιση επικεφαλίδων στηλών</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="97"/>
+        <source>Ctrl+H</source>
+        <translation type="unfinished">Ctrl+H</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <source>&amp;Equalizer</source>
+        <translation type="unfinished">&amp;Ισοσταθμιστής</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="99"/>
+        <source>Ctrl+E</source>
+        <translation type="unfinished">Ctrl+E</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <source>&amp;Settings</source>
+        <translation type="unfinished">&amp;Ρυθμίσεις</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="100"/>
+        <source>Ctrl+P</source>
+        <translation type="unfinished">Ctrl+P</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="101"/>
+        <source>Application Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="102"/>
+        <source>&amp;About Ui</source>
+        <translation type="unfinished">&amp;Σχετικά με το περιβάλλον</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="103"/>
+        <source>&amp;About</source>
+        <translation type="unfinished">&amp;Σχετικά</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="104"/>
+        <source>&amp;About Qt</source>
+        <translation type="unfinished">&amp;Σχετικά με την Qt</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <source>&amp;Exit</source>
+        <translation type="unfinished">&amp;Έξοδος</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="105"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished">Ctrl+Q</translation>
+    </message>
+    <message>
+        <location filename="../qsuiactionmanager.cpp" line="309"/>
+        <source>Toolbar</source>
+        <translation type="unfinished">Γραμμή εργαλείων</translation>
+    </message>
+</context>
+<context>
     <name>QSUiCoverWidget</name>
     <message>
         <location filename="../qsuicoverwidget.cpp" line="32"/>
@@ -1055,42 +1055,42 @@
         <translation type="unfinished">Συντόμευση</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="55"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished">Επαναφορά συντομεύσεων</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="58"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished">Επιθυμείτε την επαναφορά των εξ ορισμού συντομεύσεων</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="68"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="70"/>
         <source>Playback</source>
         <translation type="unfinished">Αναπαραγωγή</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="74"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="76"/>
         <source>View</source>
         <translation type="unfinished">Προβολή</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="80"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="82"/>
         <source>Volume</source>
         <translation type="unfinished">Ένταση</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="86"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="88"/>
         <source>Playlist</source>
         <translation type="unfinished">Λίστα αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="92"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="94"/>
         <source>Misc</source>
         <translation type="unfinished">Διάφορα</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="100"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="102"/>
         <source>Tools</source>
         <translation type="unfinished">Εργαλεία</translation>
     </message>
@@ -1099,7 +1099,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="911"/>
+        <location filename="../qsuimainwindow.cpp" line="882"/>
         <source>Qmmp</source>
         <translation type="unfinished">Qmmp</translation>
     </message>
@@ -1246,163 +1246,163 @@
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
-        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <location filename="../qsuimainwindow.cpp" line="273"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Μετονομασία της λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="281"/>
+        <location filename="../qsuimainwindow.cpp" line="273"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Όνομα λίστας αναπαραγωγής:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="322"/>
+        <location filename="../qsuimainwindow.cpp" line="313"/>
         <source>Appearance</source>
         <translation type="unfinished">Εμφάνιση</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="323"/>
+        <location filename="../qsuimainwindow.cpp" line="314"/>
         <source>Shortcuts</source>
         <translation type="unfinished">Συντομεύσεις</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="402"/>
+        <location filename="../qsuimainwindow.cpp" line="393"/>
         <source>Menu Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="421"/>
+        <location filename="../qsuimainwindow.cpp" line="412"/>
         <source>Add new playlist</source>
         <translation type="unfinished">Προσθήκη νέας λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="427"/>
+        <location filename="../qsuimainwindow.cpp" line="418"/>
         <source>Show all tabs</source>
         <translation type="unfinished">Εμφάνιση όλων των καρτελών</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="459"/>
+        <location filename="../qsuimainwindow.cpp" line="445"/>
         <source>Ctrl+0</source>
         <translation type="unfinished">Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="465"/>
+        <location filename="../qsuimainwindow.cpp" line="451"/>
         <source>P</source>
         <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="470"/>
+        <location filename="../qsuimainwindow.cpp" line="456"/>
         <source>Position</source>
         <translation type="unfinished">Θέση</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="472"/>
+        <location filename="../qsuimainwindow.cpp" line="458"/>
         <source>Volume</source>
         <translation type="unfinished">Ένταση</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="474"/>
+        <location filename="../qsuimainwindow.cpp" line="460"/>
         <source>Quick Search</source>
         <translation type="unfinished">Γρήγορη αναζήτηση</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="534"/>
+        <location filename="../qsuimainwindow.cpp" line="513"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished">Επεξεργασία γραμμών εργαλείων</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="536"/>
+        <location filename="../qsuimainwindow.cpp" line="515"/>
         <source>Sort List</source>
         <translation type="unfinished">Ταξινόμηση λίστας</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="538"/>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="517"/>
+        <location filename="../qsuimainwindow.cpp" line="533"/>
         <source>By Title</source>
         <translation type="unfinished">Ανά τίτλο</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="539"/>
-        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="518"/>
+        <location filename="../qsuimainwindow.cpp" line="534"/>
         <source>By Album</source>
         <translation type="unfinished">Ανά άλμπουμ</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="540"/>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="519"/>
+        <location filename="../qsuimainwindow.cpp" line="535"/>
         <source>By Artist</source>
         <translation type="unfinished">Ανά καλλιτέχνη</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="541"/>
-        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <location filename="../qsuimainwindow.cpp" line="520"/>
+        <location filename="../qsuimainwindow.cpp" line="536"/>
         <source>By Album Artist</source>
         <translation type="unfinished">Ανά καλλιτέχνη άλμπουμ</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="542"/>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="521"/>
+        <location filename="../qsuimainwindow.cpp" line="537"/>
         <source>By Filename</source>
         <translation type="unfinished">Ανά όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="543"/>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <location filename="../qsuimainwindow.cpp" line="522"/>
+        <location filename="../qsuimainwindow.cpp" line="538"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">Ανά διαδρομή + όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="544"/>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <location filename="../qsuimainwindow.cpp" line="523"/>
+        <location filename="../qsuimainwindow.cpp" line="539"/>
         <source>By Date</source>
         <translation type="unfinished">Ανά ημερομηνία</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="545"/>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="524"/>
+        <location filename="../qsuimainwindow.cpp" line="540"/>
         <source>By Track Number</source>
         <translation type="unfinished">Ανά αριθμό κομματιού</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="546"/>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="525"/>
+        <location filename="../qsuimainwindow.cpp" line="541"/>
         <source>By Disc Number</source>
         <translation type="unfinished">Ανά αριθμό δίσκου</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="547"/>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="526"/>
+        <location filename="../qsuimainwindow.cpp" line="542"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">Ανά ημερομηνία δημιουργίας του αρχείου </translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="548"/>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="527"/>
+        <location filename="../qsuimainwindow.cpp" line="543"/>
         <source>By File Modification Date</source>
         <translation type="unfinished">Ανά ημερομηνία τροποποίησης του αρχείου </translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="528"/>
         <source>By Group</source>
         <translation type="unfinished">Ανά ομάδα</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <location filename="../qsuimainwindow.cpp" line="531"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Ταξινόμηση επιλογής</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
         <source>Randomize List</source>
         <translation type="unfinished">Τυχαία ταξινόμηση της λίστας</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
         <source>Reverse List</source>
         <translation type="unfinished">Αντιστροφή ταξινόμησης της λίστας</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="618"/>
+        <location filename="../qsuimainwindow.cpp" line="589"/>
         <source>Actions</source>
         <translation type="unfinished">Ενέργειες</translation>
     </message>
@@ -1638,12 +1638,12 @@
 <context>
     <name>QSUiWaveformSeekBar</name>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="329"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="328"/>
         <source>2 Channels</source>
         <translation>2 Κανάλια</translation>
     </message>
     <message>
-        <location filename="../qsuiwaveformseekbar.cpp" line="332"/>
+        <location filename="../qsuiwaveformseekbar.cpp" line="331"/>
         <source>RMS</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>
@@ -1711,7 +1711,7 @@
 <context>
     <name>VolumeSlider</name>
     <message>
-        <location filename="../volumeslider.cpp" line="91"/>
+        <location filename="../volumeslider.cpp" line="90"/>
         <source>%1%</source>
         <translation>%1%</translation>
     </message>

@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ru">
 <context>
+    <name>CrossfadeSettingsDialog</name>
+    <message>
+        <location filename="../crossfadesettingsdialog.ui" line="14"/>
+        <source>Crossfade Plugin Settings</source>
+        <translation type="unfinished">Настройки модуля crossfade</translation>
+    </message>
+    <message>
+        <location filename="../crossfadesettingsdialog.ui" line="29"/>
+        <source>Overlap:</source>
+        <translation type="unfinished">Перекрытие:</translation>
+    </message>
+    <message>
+        <location filename="../crossfadesettingsdialog.ui" line="42"/>
+        <source>ms</source>
+        <translation type="unfinished">мс</translation>
+    </message>
+</context>
+<context>
     <name>EffectCrossfadeFactory</name>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="30"/>
@@ -22,24 +40,6 @@
         <location filename="../effectcrossfadefactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Crossfade Plugin Settings</source>
-        <translation>Настройки модуля crossfade</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Overlap:</source>
-        <translation>Перекрытие:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="42"/>
-        <source>ms</source>
-        <translation>мс</translation>
     </message>
 </context>
 </TS>

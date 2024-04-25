@@ -54,19 +54,19 @@
         <translation>Montrer les options de liste</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="111"/>
-        <location filename="../playlistoption.cpp" line="131"/>
-        <location filename="../playlistoption.cpp" line="170"/>
+        <location filename="../playlistoption.cpp" line="112"/>
+        <location filename="../playlistoption.cpp" line="132"/>
+        <location filename="../playlistoption.cpp" line="171"/>
         <source>Invalid playlist ID</source>
         <translation>Identifiant de liste invalide</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="125"/>
+        <location filename="../playlistoption.cpp" line="126"/>
         <source>Invalid number of arguments</source>
         <translation>Nombre d&apos;arguments invalide</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="135"/>
+        <location filename="../playlistoption.cpp" line="136"/>
         <source>Invalid track ID</source>
         <translation>Identifiant de morceau invalide</translation>
     </message>

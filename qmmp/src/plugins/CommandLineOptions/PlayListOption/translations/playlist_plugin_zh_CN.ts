@@ -54,19 +54,19 @@
         <translation>显示播放列表选项</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="111"/>
-        <location filename="../playlistoption.cpp" line="131"/>
-        <location filename="../playlistoption.cpp" line="170"/>
+        <location filename="../playlistoption.cpp" line="112"/>
+        <location filename="../playlistoption.cpp" line="132"/>
+        <location filename="../playlistoption.cpp" line="171"/>
         <source>Invalid playlist ID</source>
         <translation>无效的播放列表ID</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="125"/>
+        <location filename="../playlistoption.cpp" line="126"/>
         <source>Invalid number of arguments</source>
         <translation>无效的参数值</translation>
     </message>
     <message>
-        <location filename="../playlistoption.cpp" line="135"/>
+        <location filename="../playlistoption.cpp" line="136"/>
         <source>Invalid track ID</source>
         <translation>无效的曲目ID</translation>
     </message>

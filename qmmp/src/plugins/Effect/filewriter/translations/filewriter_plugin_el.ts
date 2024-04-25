@@ -25,36 +25,36 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>FileWriterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation>Ρυθμίσεις του πρόσθετου εγγραφής αρχείων</translation>
+        <translation type="unfinished">Ρυθμίσεις του πρόσθετου εγγραφής αρχείων</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation>Κατάλογος εξόδου:</translation>
+        <translation type="unfinished">Κατάλογος εξόδου:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>Output file name:</source>
-        <translation>Όνομα αρχείου εξόδου</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="109"/>
-        <source>Write to single file if possible.</source>
-        <translation>Εγγραφή σε ένα αρχείο αν είναι εφικτό</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="36"/>
+        <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation>Ποιότητα:</translation>
+        <translation type="unfinished">Ποιότητα:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="71"/>
+        <location filename="../filewritersettingsdialog.ui" line="95"/>
+        <source>Output file name:</source>
+        <translation type="unfinished">Όνομα αρχείου εξόδου</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.ui" line="109"/>
+        <source>Write to single file if possible.</source>
+        <translation type="unfinished">Εγγραφή σε ένα αρχείο αν είναι εφικτό</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.cpp" line="73"/>
         <source>Choose a directory</source>
-        <translation>Επιλογή ενός καταλόγου</translation>
+        <translation type="unfinished">Επιλογή ενός καταλόγου</translation>
     </message>
 </context>
 </TS>

@@ -25,36 +25,36 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>FileWriterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation>Настройки модуля записи файлов</translation>
+        <translation type="unfinished">Настройки модуля записи файлов</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation>Выходной каталог:</translation>
+        <translation type="unfinished">Выходной каталог:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>Output file name:</source>
-        <translation>Имя выходного файла:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="109"/>
-        <source>Write to single file if possible.</source>
-        <translation>Записывать по возможности в один файл.</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="36"/>
+        <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation>Качество:</translation>
+        <translation type="unfinished">Качество:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="71"/>
+        <location filename="../filewritersettingsdialog.ui" line="95"/>
+        <source>Output file name:</source>
+        <translation type="unfinished">Имя выходного файла:</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.ui" line="109"/>
+        <source>Write to single file if possible.</source>
+        <translation type="unfinished">Записывать по возможности в один файл.</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.cpp" line="73"/>
         <source>Choose a directory</source>
-        <translation>Выберите каталог</translation>
+        <translation type="unfinished">Выберите каталог</translation>
     </message>
 </context>
 </TS>

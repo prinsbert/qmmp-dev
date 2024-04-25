@@ -25,36 +25,36 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>FileWriterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation>פלט מדור:</translation>
+        <translation type="unfinished">פלט מדור:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
+        <location filename="../filewritersettingsdialog.ui" line="36"/>
+        <source>Quality:</source>
+        <translation type="unfinished">איכות:</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation>פלט שם קובץ:</translation>
+        <translation type="unfinished">פלט שם קובץ:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="109"/>
+        <location filename="../filewritersettingsdialog.ui" line="109"/>
         <source>Write to single file if possible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="36"/>
-        <source>Quality:</source>
-        <translation>איכות:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="71"/>
+        <location filename="../filewritersettingsdialog.cpp" line="73"/>
         <source>Choose a directory</source>
-        <translation>בחר מדור</translation>
+        <translation type="unfinished">בחר מדור</translation>
     </message>
 </context>
 </TS>

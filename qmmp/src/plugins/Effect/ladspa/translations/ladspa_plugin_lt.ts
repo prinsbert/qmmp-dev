@@ -45,41 +45,41 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>LADSPASettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
-        <source>UID</source>
-        <translation>UID</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
-        <source>Name</source>
-        <translation>Pavadinimas</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="132"/>
-        <source>This LADSPA plugin has no user controls</source>
-        <translation>Šis LADSPA įskiepis neturi nustatymų</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation>LADSPA įskiepio katalogas</translation>
+        <translation type="unfinished">LADSPA įskiepio katalogas</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation>&gt;</translation>
+        <translation type="unfinished">&gt;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="59"/>
+        <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation>&lt;</translation>
+        <translation type="unfinished">&lt;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation>Nustatyti</translation>
+        <translation type="unfinished">Nustatyti</translation>
+    </message>
+    <message>
+        <location filename="../ladspasettingsdialog.cpp" line="47"/>
+        <source>UID</source>
+        <translation type="unfinished">UID</translation>
+    </message>
+    <message>
+        <location filename="../ladspasettingsdialog.cpp" line="48"/>
+        <source>Name</source>
+        <translation type="unfinished">Pavadinimas</translation>
+    </message>
+    <message>
+        <location filename="../ladspasettingsdialog.cpp" line="132"/>
+        <source>This LADSPA plugin has no user controls</source>
+        <translation type="unfinished">Šis LADSPA įskiepis neturi nustatymų</translation>
     </message>
 </context>
 </TS>

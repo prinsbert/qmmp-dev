@@ -25,46 +25,46 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SoXRSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Ρυθμίσεις πρόσθετου μετατροπής ρυθμού δειγματοληψίας</translation>
+        <translation type="unfinished">Ρυθμίσεις πρόσθετου μετατροπής ρυθμού δειγματοληψίας</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="20"/>
+        <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation>Ρυθμός δειγματοληψίας (Hz):</translation>
+        <translation type="unfinished">Ρυθμός δειγματοληψίας (Hz):</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="40"/>
+        <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation>Ποιότητα:</translation>
+        <translation type="unfinished">Ποιότητα:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="34"/>
+        <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Quick</source>
-        <translation>Γρήγορο</translation>
+        <translation type="unfinished">Γρήγορο</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="35"/>
+        <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Low</source>
-        <translation>Χαμηλό</translation>
+        <translation type="unfinished">Χαμηλό</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="36"/>
+        <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>Medium</source>
-        <translation>Μέσο</translation>
+        <translation type="unfinished">Μέσο</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="37"/>
+        <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>High</source>
-        <translation>Υψηλό</translation>
+        <translation type="unfinished">Υψηλό</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="38"/>
+        <location filename="../soxrsettingsdialog.cpp" line="39"/>
         <source>Very High</source>
-        <translation>Πολύ υψηλός</translation>
+        <translation type="unfinished">Πολύ υψηλός</translation>
     </message>
 </context>
 </TS>

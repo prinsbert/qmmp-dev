@@ -876,12 +876,12 @@
         <translation>Tallenna nimellä...</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="33"/>
+        <location filename="../covereditor.cpp" line="34"/>
         <source>External file</source>
         <translation>Ulkoinen tiedosto</translation>
     </message>
     <message>
-        <location filename="../covereditor.cpp" line="34"/>
+        <location filename="../covereditor.cpp" line="35"/>
         <source>Tag</source>
         <translation>Tunniste</translation>
     </message>

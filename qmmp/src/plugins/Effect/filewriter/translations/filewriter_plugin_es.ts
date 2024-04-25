@@ -25,36 +25,36 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>FileWriterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation>Configuración de Módulo Escritor de Archivos</translation>
+        <translation type="unfinished">Configuración de Módulo Escritor de Archivos</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation>Directorio de salida:</translation>
+        <translation type="unfinished">Directorio de salida:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>Output file name:</source>
-        <translation>Nombre de archivo de salida:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="109"/>
-        <source>Write to single file if possible.</source>
-        <translation>Escriba en un solo archivo si es posible.</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="36"/>
+        <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation>Calidad:</translation>
+        <translation type="unfinished">Calidad:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="71"/>
+        <location filename="../filewritersettingsdialog.ui" line="95"/>
+        <source>Output file name:</source>
+        <translation type="unfinished">Nombre de archivo de salida:</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.ui" line="109"/>
+        <source>Write to single file if possible.</source>
+        <translation type="unfinished">Escriba en un solo archivo si es posible.</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.cpp" line="73"/>
         <source>Choose a directory</source>
-        <translation>Elija un directorio</translation>
+        <translation type="unfinished">Elija un directorio</translation>
     </message>
 </context>
 </TS>

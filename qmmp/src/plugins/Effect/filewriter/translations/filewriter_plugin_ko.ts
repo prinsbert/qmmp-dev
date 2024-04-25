@@ -25,36 +25,36 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>FileWriterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation>파일 쓰기도구 플러그인 설정</translation>
+        <translation type="unfinished">파일 쓰기도구 플러그인 설정</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation>출력 디렉터리:</translation>
+        <translation type="unfinished">출력 디렉터리:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>Output file name:</source>
-        <translation>출력 파일 이름:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="109"/>
-        <source>Write to single file if possible.</source>
-        <translation>가능하면 단일 파일에 씁니다.</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="36"/>
+        <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation>품질:</translation>
+        <translation type="unfinished">품질:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="71"/>
+        <location filename="../filewritersettingsdialog.ui" line="95"/>
+        <source>Output file name:</source>
+        <translation type="unfinished">출력 파일 이름:</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.ui" line="109"/>
+        <source>Write to single file if possible.</source>
+        <translation type="unfinished">가능하면 단일 파일에 씁니다.</translation>
+    </message>
+    <message>
+        <location filename="../filewritersettingsdialog.cpp" line="73"/>
         <source>Choose a directory</source>
-        <translation>디렉토리 선택하기</translation>
+        <translation type="unfinished">디렉토리 선택하기</translation>
     </message>
 </context>
 </TS>

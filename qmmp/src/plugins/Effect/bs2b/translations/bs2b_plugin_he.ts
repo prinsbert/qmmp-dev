@@ -2,6 +2,50 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="he">
 <context>
+    <name>Bs2bSettingsDialog</name>
+    <message>
+        <location filename="../bs2bsettingsdialog.ui" line="14"/>
+        <source>BS2B Plugin Settings</source>
+        <translation type="unfinished">הגדרות תוסף BS2B</translation>
+    </message>
+    <message>
+        <location filename="../bs2bsettingsdialog.ui" line="32"/>
+        <source>Crossfeed level</source>
+        <translation type="unfinished">רמת Crossfeed</translation>
+    </message>
+    <message>
+        <location filename="../bs2bsettingsdialog.ui" line="45"/>
+        <location filename="../bs2bsettingsdialog.ui" line="59"/>
+        <source>-</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <location filename="../bs2bsettingsdialog.ui" line="71"/>
+        <source>Default</source>
+        <translation type="unfinished">ברירת מחדל</translation>
+    </message>
+    <message>
+        <location filename="../bs2bsettingsdialog.ui" line="78"/>
+        <source>C.Moy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../bs2bsettingsdialog.ui" line="85"/>
+        <source>J. Meier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../bs2bsettingsdialog.cpp" line="62"/>
+        <source>%1 Hz, %2 us</source>
+        <translation type="unfinished">%1 הרץ, %2 us</translation>
+    </message>
+    <message>
+        <location filename="../bs2bsettingsdialog.cpp" line="69"/>
+        <source>%1 dB</source>
+        <translation type="unfinished">%1 דציבל</translation>
+    </message>
+</context>
+<context>
     <name>EffectBs2bFactory</name>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="31"/>
@@ -14,78 +58,34 @@
         <translation>אודות תוסף אפקט BS2B</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="52"/>
+        <location filename="../effectbs2bfactory.cpp" line="53"/>
         <source>This is the Qmmp plugin version of Boris Mikhaylov&apos;s headphone DSP effect &quot;Bauer stereophonic-to-binaural&quot;, abbreviated bs2b.</source>
         <translation>זוהי גירסת תוסף Qmmp של אפקט אוזניות DSP של Boris Mikhaylov ‏&quot;Bauer stereophonic-to-binaural&quot;, ובקיצור bs2b.</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="54"/>
+        <location filename="../effectbs2bfactory.cpp" line="56"/>
         <source>Visit %1 for more details</source>
         <translation>בקרו אצל %1 למידע נוסף</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="56"/>
+        <location filename="../effectbs2bfactory.cpp" line="58"/>
         <source>Compiled against libbs2b-%1</source>
         <translation>הודר כנגד libbs2b-%1</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="57"/>
+        <location filename="../effectbs2bfactory.cpp" line="60"/>
         <source>Developers:</source>
         <translation>מפתחים:</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="58"/>
+        <location filename="../effectbs2bfactory.cpp" line="61"/>
         <source>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="59"/>
+        <location filename="../effectbs2bfactory.cpp" line="62"/>
         <source>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>BS2B Plugin Settings</source>
-        <translation>הגדרות תוסף BS2B</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="32"/>
-        <source>Crossfeed level</source>
-        <translation>רמת Crossfeed</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <location filename="../settingsdialog.ui" line="59"/>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>Default</source>
-        <translation>ברירת מחדל</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="78"/>
-        <source>C.Moy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="85"/>
-        <source>J. Meier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="60"/>
-        <source>%1 Hz, %2 us</source>
-        <translation>%1 הרץ, %2 us</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="67"/>
-        <source>%1 dB</source>
-        <translation>%1 דציבל</translation>
     </message>
 </context>
 </TS>
