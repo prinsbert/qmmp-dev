@@ -8,9 +8,9 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libbs2b_SRCS
     bs2bplugin.cpp
-    settingsdialog.cpp
+    bs2bsettingsdialog.cpp
     effectbs2bfactory.cpp
-    settingsdialog.ui
+    bs2bsettingsdialog.ui
     translations/translations.qrc
 )
 

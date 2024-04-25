@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,14 +21,14 @@
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "filewriterplugin.h"
-#include "settingsdialog.h"
+#include "filewritersettingsdialog.h"
 #include "effectfilewriterfactory.h"
 
-const EffectProperties EffectFileWriterFactory::properties() const
+EffectProperties EffectFileWriterFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("File Writer Plugin");
-    properties.shortName = "filewriter";
+    properties.shortName = "filewriter"_L1;
     properties.hasSettings = true;
     properties.hasAbout = true;
     properties.priority = EffectProperties::EFFECT_PRIORITY_LOW;
@@ -42,15 +42,15 @@ Effect *EffectFileWriterFactory::create()
 
 void EffectFileWriterFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *dialog = new SettingsDialog(parent);
+    FileWriterSettingsDialog *dialog = new FileWriterSettingsDialog(parent);
     dialog->show();
 }
 
 void EffectFileWriterFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About File Writer Plugin"),
+    QMessageBox::about(parent, tr("About File Writer Plugin"),
                        tr("Qmmp File Writer Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString EffectFileWriterFactory::translation() const

@@ -24,7 +24,7 @@ LADSPAButton::LADSPAButton(LADSPA_Data *value, QWidget *parent) : QCheckBox(pare
 {
     m_value = value;
     setChecked(*value == 1.0);
-    connect(this, SIGNAL(clicked(bool)), SLOT(enable(bool)));
+    connect(this, &LADSPAButton::clicked, this, &LADSPAButton::enable);
 }
 
 void LADSPAButton::enable(bool yes)

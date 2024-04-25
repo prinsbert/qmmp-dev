@@ -8,9 +8,9 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libcrossfade_SRCS
     crossfadeplugin.cpp
-    settingsdialog.cpp
+    crossfadesettingsdialog.cpp
     effectcrossfadefactory.cpp
-    settingsdialog.ui
+    crossfadesettingsdialog.ui
     translations/translations.qrc
 )
 

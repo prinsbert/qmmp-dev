@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Ilya Kotov                                      *
+ *   Copyright (C) 2016 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,34 +17,41 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
 
-#include <QDialog>
-#include "ui_settingsdialog.h"
+#include <QSettings>
+#include <soxr.h>
+#include <qmmp/qmmp.h>
+#include "ui_soxrsettingsdialog.h"
+#include "soxrsettingsdialog.h"
 
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-class SettingsDialog : public QDialog
+SoXRSettingsDialog::SoXRSettingsDialog(QWidget *parent)
+ : QDialog(parent), m_ui(new Ui::SoXRSettingsDialog)
 {
-Q_OBJECT
-public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    m_ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose, true);
+    QSettings settings;
+    m_ui->srSpinBox->setValue(settings.value(u"SOXR/sample_rate"_s, 48000).toInt());
 
-    ~SettingsDialog();
+    m_ui->qualityComboBox->addItem(tr("Quick"), SOXR_QQ);
+    m_ui->qualityComboBox->addItem(tr("Low"), SOXR_LQ);
+    m_ui->qualityComboBox->addItem(tr("Medium"), SOXR_MQ);
+    m_ui->qualityComboBox->addItem(tr("High"), SOXR_HQ);
+    m_ui->qualityComboBox->addItem(tr("Very High"), SOXR_VHQ);
+    int index = m_ui->qualityComboBox->findData(settings.value(u"SOXR/quality"_s, SOXR_HQ).toInt());
+    if(index >= 0 && index < m_ui->qualityComboBox->count())
+        m_ui->qualityComboBox->setCurrentIndex(index);
+}
 
-public slots:
-    virtual void accept() override;
-    virtual void reject() override;
 
-private slots:
-    void on_intensitySlider_valueChanged (int value);
+SoXRSettingsDialog::~SoXRSettingsDialog()
+{
+    delete m_ui;
+}
 
-private:
-    Ui::SettingsDialog ui;
-    double m_level;
-
-};
-
-#endif
+void SoXRSettingsDialog::accept()
+{
+    QSettings settings;
+    settings.setValue(u"SOXR/sample_rate"_s, m_ui->srSpinBox->value());
+    settings.setValue(u"SOXR/quality"_s, m_ui->qualityComboBox->itemData(m_ui->qualityComboBox->currentIndex()).toInt());
+    QDialog::accept();
+}

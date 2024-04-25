@@ -112,26 +112,26 @@ void FileWriterPlugin::init(const TrackInfo &info)
     deinit();
 
     QSettings settings;
-    float quality = settings.value("FileWriter/vorbis_quality", 0.8).toFloat();
+    float quality = settings.value(u"FileWriter/vorbis_quality"_s, 0.8).toFloat();
     QString outDir = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
-    outDir = settings.value("FileWriter/out_dir", outDir).toString();
-    QString fileName = settings.value("FileWriter/file_name", "%p%if(%p&%t, - ,)%t").toString();
+    outDir = settings.value(u"FileWriter/out_dir"_s, outDir).toString();
+    QString fileName = settings.value(u"FileWriter/file_name"_s, u"%p%if(%p&%t, - ,)%t"_s).toString();
     if(fileName.isEmpty())
-        fileName = info.path().section("/", 1);
-    m_singleFile = settings.value("FileWriter/single_file", false).toBool();
+        fileName = info.path().section(QChar('/'), 1);
+    m_singleFile = settings.value(u"FileWriter/single_file"_s, false).toBool();
 
     MetaDataFormatter formatter(fileName);
     fileName = formatter.format(info);
-    if(!fileName.endsWith(".ogg", Qt::CaseInsensitive))
-        fileName.append(".ogg");
+    if(!fileName.endsWith(u".ogg"_s, Qt::CaseInsensitive))
+        fileName.append(u".ogg"_s);
 
-    m_file.setFileName(outDir + "/" + fileName);
+    m_file.setFileName(outDir + QChar('/') + fileName);
 
     int j = 1;
     while(m_file.exists())
     {
-        m_file.setFileName(outDir + "/" + fileName.left(fileName.count() - 4) +
-                           QString("-%1.ogg").arg(j++));
+        m_file.setFileName(outDir + QChar('/') + fileName.left(fileName.count() - 4) +
+                           QStringLiteral("-%1.ogg").arg(j++));
     }
 
     qDebug("FileWriterPlugin: writing file '%s'", qPrintable(m_file.fileName()));

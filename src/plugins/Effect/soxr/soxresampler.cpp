@@ -27,8 +27,8 @@
 SoXResampler::SoXResampler() : Effect()
 {
     QSettings settings;
-    m_overSamplingFs = settings.value("SOXR/sample_rate", 48000).toInt();
-    m_quality = soxr_quality_spec(settings.value("SOXR/quality", SOXR_HQ).toInt(), 0);
+    m_overSamplingFs = settings.value(u"SOXR/sample_rate"_s, 48000).toInt();
+    m_quality = soxr_quality_spec(settings.value(u"SOXR/quality"_s, SOXR_HQ).toInt(), 0);
 }
 
 SoXResampler::~SoXResampler()

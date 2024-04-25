@@ -4,13 +4,14 @@ TARGET = $$PLUGINS_PREFIX/Effect/soxr
 
 HEADERS += soxresampler.h \
  effectsoxrfactory.h \
- settingsdialog.h
+ soxrsettingsdialog.h
 
 SOURCES += soxresampler.cpp \
  effectsoxrfactory.cpp \
- settingsdialog.cpp
+ soxrsettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    soxrsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

@@ -23,11 +23,11 @@
 #include "effectmonotostereofactory.h"
 #include "monotostereoplugin.h"
 
-const EffectProperties EffectMonoToStereoFactory::properties() const
+EffectProperties EffectMonoToStereoFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("Mono to Stereo Converter Plugin");
-    properties.shortName = "monotostereo";
+    properties.shortName = "monotostereo"_L1;
     properties.hasSettings = false;
     properties.hasAbout = true;
     return properties;

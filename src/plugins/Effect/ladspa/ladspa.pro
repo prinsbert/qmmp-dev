@@ -4,7 +4,7 @@ TARGET = $$PLUGINS_PREFIX/Effect/ladspa
 
 HEADERS += ladspahost.h \
     effectladspafactory.h \
-    settingsdialog.h \
+    ladspasettingsdialog.h \
     ladspaslider.h \
     ladspa.h \
     ladspahelper.h \
@@ -12,12 +12,13 @@ HEADERS += ladspahost.h \
 
 SOURCES += ladspahost.cpp \
     effectladspafactory.cpp \
-    settingsdialog.cpp \
+    ladspasettingsdialog.cpp \
     ladspaslider.cpp \
     ladspahelper.cpp \
     ladspabutton.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    ladspasettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

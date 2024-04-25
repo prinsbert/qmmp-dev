@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -43,27 +43,27 @@ LADSPASlider::LADSPASlider(double min, double max, double step,
     m_spinBox->setSingleStep(step);
     m_spinBox->setValue(*value);
 
-    m_slider->setRange(0, (max-min)/step);
+    m_slider->setRange(0, (max-min) / step);
     m_slider->setSingleStep(1);
     m_slider->setPageStep(10);
-    m_slider->setValue((*value-min)/step);
+    m_slider->setValue((*value - min) / step);
 
-    connect(m_spinBox, SIGNAL(valueChanged(double)), SLOT(setValue(double)));
-    connect(m_slider, SIGNAL(valueChanged(int)),SLOT(setValue(int)));
+    connect(m_spinBox, &QDoubleSpinBox::valueChanged, this, &LADSPASlider::setDoubleValue);
+    connect(m_slider, &QSlider::valueChanged, this, &LADSPASlider::setIntValue);
 }
 
-void LADSPASlider::setValue(double v)
+void LADSPASlider::setDoubleValue(double v)
 {
     *m_value = v;
     m_slider->blockSignals(true);
-    m_slider->setValue((v-m_min)/m_step);
+    m_slider->setValue((v - m_min) / m_step);
     m_slider->blockSignals(false);
 }
 
-void LADSPASlider::setValue(int v)
+void LADSPASlider::setIntValue(int v)
 {
     m_spinBox->blockSignals(true);
-    m_spinBox->setValue(v*m_step + m_min);
-    *m_value = v*m_step + m_min;
+    m_spinBox->setValue(v * m_step + m_min);
+    *m_value = v * m_step + m_min;
     m_spinBox->blockSignals(false);
 }

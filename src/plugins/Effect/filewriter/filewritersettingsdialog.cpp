@@ -23,53 +23,54 @@
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
 #include <qmmpui/metadataformattermenu.h>
-#include "settingsdialog.h"
+#include "ui_filewritersettingsdialog.h"
+#include "filewritersettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent)
- : QDialog(parent)
+FileWriterSettingsDialog::FileWriterSettingsDialog(QWidget *parent)
+ : QDialog(parent), m_ui(new Ui::FileWriterSettingsDialog)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose, true);
 
     MetaDataFormatterMenu *fileNameMenu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
-    m_ui.fileNameButton->setMenu(fileNameMenu);
-    m_ui.fileNameButton->setPopupMode(QToolButton::InstantPopup);
-    connect(fileNameMenu, SIGNAL(patternSelected(QString)), SLOT(addTitleString(QString)));
+    m_ui->fileNameButton->setMenu(fileNameMenu);
+    m_ui->fileNameButton->setPopupMode(QToolButton::InstantPopup);
+    connect(fileNameMenu, &MetaDataFormatterMenu::patternSelected, this, &FileWriterSettingsDialog::addTitleString);
 
     QSettings settings;
     QString outDir = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
-    m_ui.outDirEdit->setText(settings.value("FileWriter/out_dir", outDir).toString());
-    m_ui.outFileEdit->setText(settings.value("FileWriter/file_name", "%p%if(%p&%t, - ,)%t").toString());
-    m_ui.qualitySpinBox->setValue(settings.value("FileWriter/vorbis_quality", 0.8).toFloat());
-    m_ui.singleFileCheckBox->setChecked(settings.value("FileWriter/single_file", false).toBool());
+    m_ui->outDirEdit->setText(settings.value(u"FileWriter/out_dir"_s, outDir).toString());
+    m_ui->outFileEdit->setText(settings.value(u"FileWriter/file_name"_s, u"%p%if(%p&%t, - ,)%t"_s).toString());
+    m_ui->qualitySpinBox->setValue(settings.value(u"FileWriter/vorbis_quality"_s, 0.8).toFloat());
+    m_ui->singleFileCheckBox->setChecked(settings.value(u"FileWriter/single_file"_s, false).toBool());
 }
 
-SettingsDialog::~SettingsDialog()
+FileWriterSettingsDialog::~FileWriterSettingsDialog()
 {
+    delete m_ui;
 }
 
-void SettingsDialog::accept()
+void FileWriterSettingsDialog::accept()
 {
     QSettings settings;
-    settings.setValue("FileWriter/out_dir", m_ui.outDirEdit->text());
-    settings.setValue("FileWriter/file_name", m_ui.outFileEdit->text());
-    settings.setValue("FileWriter/vorbis_quality", m_ui.qualitySpinBox->value());
-    settings.setValue("FileWriter/single_file", m_ui.singleFileCheckBox->isChecked());
+    settings.setValue(u"FileWriter/out_dir"_s, m_ui->outDirEdit->text());
+    settings.setValue(u"FileWriter/file_name"_s, m_ui->outFileEdit->text());
+    settings.setValue(u"FileWriter/vorbis_quality"_s, m_ui->qualitySpinBox->value());
+    settings.setValue(u"FileWriter/single_file"_s, m_ui->singleFileCheckBox->isChecked());
     QDialog::accept();
 }
 
-void SettingsDialog::addTitleString(const QString &str)
+void FileWriterSettingsDialog::addTitleString(const QString &str)
 {
-    if (m_ui.outFileEdit->cursorPosition () < 1)
-        m_ui.outFileEdit->insert(str);
+    if (m_ui->outFileEdit->cursorPosition () < 1)
+        m_ui->outFileEdit->insert(str);
     else
-        m_ui.outFileEdit->insert(" - "+str);
+        m_ui->outFileEdit->insert(u" - "_s + str);
 }
 
-void SettingsDialog::on_dirButton_clicked()
+void FileWriterSettingsDialog::on_dirButton_clicked()
 {
-    QString dir = FileDialog::getExistingDirectory(this, tr("Choose a directory"),
-                                        m_ui.outDirEdit->text());
+    QString dir = FileDialog::getExistingDirectory(this, tr("Choose a directory"), m_ui->outDirEdit->text());
     if(!dir.isEmpty())
-        m_ui.outDirEdit->setText(dir);
+        m_ui->outDirEdit->setText(dir);
 }

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Ilya Kotov                                      *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,39 +17,46 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
 
-#include <QDialog>
-#include <bs2b/bs2b.h>
-#include "ui_settingsdialog.h"
+#include <QSettings>
+#include <qmmp/qmmp.h>
+#include "stereoplugin.h"
+#include "ui_stereosettingsdialog.h"
+#include "stereosettingsdialog.h"
 
-/**
-	@author Ilya Kotov <forkotov02@ya.ru>
-*/
-class SettingsDialog : public QDialog
+StereoSettingsDialog::StereoSettingsDialog(QWidget *parent)
+        : QDialog(parent), m_ui(new Ui::StereoSettingsDialog)
 {
-Q_OBJECT
-public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    m_ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose, true);
+    QSettings settings;
+    m_level = settings.value(u"extra_stereo/intensity"_s, 1.0).toDouble();
+    m_ui->intensitySlider->setValue(m_level * 100 / 10.0);
+}
 
-    ~SettingsDialog();
+StereoSettingsDialog::~StereoSettingsDialog()
+{
+    delete m_ui;
+}
 
-public slots:
-    virtual void accept() override;
-    virtual void reject() override;
+void StereoSettingsDialog::accept()
+{
+    QSettings settings;
+    settings.setValue(u"extra_stereo/intensity"_s, m_ui->intensitySlider->value() * 10.0 / 100);
+    QDialog::accept();
+}
 
-private slots:
-    void on_freqSlider_valueChanged (int value);
-    void on_feedSlider_valueChanged (int value);
-    void on_defaultButton_pressed();
-    void on_cmButton_pressed ();
-    void on_jmButton_pressed ();
+void StereoSettingsDialog::StereoSettingsDialog::reject()
+{
+    if (StereoPlugin::instance()) //restore settings
+        StereoPlugin::instance()->setIntensity(m_level);
+    QDialog::reject();
+}
 
-private:
-    Ui::SettingsDialog ui;
-    uint32_t m_level;
-
-};
-
-#endif
+void StereoSettingsDialog::on_intensitySlider_valueChanged (int value)
+{
+    double level = value * 10.0 / 100;
+    m_ui->intensityLabel->setText(tr("%1").arg(level));
+    if (StereoPlugin::instance())
+        StereoPlugin::instance()->setIntensity(level);
+}

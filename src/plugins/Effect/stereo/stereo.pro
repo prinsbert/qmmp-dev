@@ -4,13 +4,14 @@ TARGET = $$PLUGINS_PREFIX/Effect/stereo
 
 HEADERS += stereoplugin.h \
            effectstereofactory.h \
-           settingsdialog.h
+           stereosettingsdialog.h
 
 SOURCES += stereoplugin.cpp \
            effectstereofactory.cpp \
-           settingsdialog.cpp
+           stereosettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    stereosettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

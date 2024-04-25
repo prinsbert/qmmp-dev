@@ -19,9 +19,9 @@ ADD_DEFINITIONS(${SOXR_CFLAGS})
 
 SET(libsoxr_SRCS
     soxresampler.cpp
-    settingsdialog.cpp
+    soxrsettingsdialog.cpp
     effectsoxrfactory.cpp
-    settingsdialog.ui
+    soxrsettingsdialog.ui
     translations/translations.qrc
 )
 

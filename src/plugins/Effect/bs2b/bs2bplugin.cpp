@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2015 by Ilya Kotov <forkotov02@ya.ru>         *
+ *   Copyright (C) 2009-2024 by Ilya Kotov <forkotov02@ya.ru>              *
  *   Copyright (C) 2009 by Sebastian Pipping <sebastian@pipping.org>       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,7 +31,7 @@ Bs2bPlugin::Bs2bPlugin() : Effect(),
 {
     m_instance = this;
     QSettings settings;
-    bs2b_set_level(m_bs2b_handler, settings.value("bs2b/level", BS2B_DEFAULT_CLEVEL).toUInt());
+    bs2b_set_level(m_bs2b_handler, settings.value(u"bs2b/level"_s, BS2B_DEFAULT_CLEVEL).toUInt());
 }
 
 Bs2bPlugin::~Bs2bPlugin()
@@ -46,7 +46,7 @@ void Bs2bPlugin::applyEffect(Buffer *b)
         return;
 
     m_mutex.lock();
-    bs2b_cross_feed_f(m_bs2b_handler, b->data, b->samples/2);
+    bs2b_cross_feed_f(m_bs2b_handler, b->data, b->samples / 2);
     m_mutex.unlock();
 }
 

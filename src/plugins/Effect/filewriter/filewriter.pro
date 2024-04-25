@@ -4,13 +4,14 @@ TARGET = $$PLUGINS_PREFIX/Effect/filewriter
 
 HEADERS += effectfilewriterfactory.h \
            filewriterplugin.h \
-           settingsdialog.h
+           filewritersettingsdialog.h
 
 SOURCES += effectfilewriterfactory.cpp \
            filewriterplugin.cpp \
-           settingsdialog.cpp
+           filewritersettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    filewritersettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

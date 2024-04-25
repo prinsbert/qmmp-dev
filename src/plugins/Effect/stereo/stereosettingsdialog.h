@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,28 +17,37 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef STEREOSETTINGSDIALOG_H
+#define STEREOSETTINGSDIALOG_H
 
-#include <QSettings>
-#include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include <QDialog>
 
-SettingsDialog::SettingsDialog(QWidget *parent)
- : QDialog(parent)
-{
-    ui.setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
-    QSettings settings;
-    ui.overlapSpinBox->setValue(settings.value("Crossfade/overlap",6000).toInt());
+namespace Ui {
+class StereoSettingsDialog;
 }
 
-
-SettingsDialog::~SettingsDialog()
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class StereoSettingsDialog : public QDialog
 {
-}
+Q_OBJECT
+public:
+    explicit StereoSettingsDialog(QWidget *parent = nullptr);
 
-void SettingsDialog::accept()
-{
-    QSettings settings;
-    settings.setValue("Crossfade/overlap", ui.overlapSpinBox->value());
-    QDialog::accept();
-}
+    ~StereoSettingsDialog();
+
+public slots:
+    void accept() override;
+    void reject() override;
+
+private slots:
+    void on_intensitySlider_valueChanged(int value);
+
+private:
+    Ui::StereoSettingsDialog *m_ui;
+    double m_level;
+
+};
+
+#endif

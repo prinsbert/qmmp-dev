@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,40 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef LADSPASETTINGSDIALOG_H
+#define LADSPASETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+
+class QStandardItemModel;
+
+namespace Ui {
+class LADSPASettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class LADSPASettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit LADSPASettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    ~LADSPASettingsDialog();
 
 public slots:
     virtual void accept() override;
 
-private:
-    Ui::SettingsDialog m_ui;
+private slots:
+    void on_loadButton_clicked();
+    void on_unloadButton_clicked();
+    void on_configureButton_clicked();
 
+private:
+    void updateRunningPlugins();
+    Ui::LADSPASettingsDialog *m_ui;
+    QStandardItemModel *m_model;
 };
 
 #endif

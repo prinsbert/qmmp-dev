@@ -21,14 +21,14 @@
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "effectstereofactory.h"
-#include "settingsdialog.h"
+#include "stereosettingsdialog.h"
 #include "stereoplugin.h"
 
-const EffectProperties EffectStereoFactory::properties() const
+EffectProperties EffectStereoFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("Extra Stereo Plugin");
-    properties.shortName = "stereo";
+    properties.shortName = "stereo"_L1;
     properties.hasSettings = true;
     properties.hasAbout = true;
     return properties;
@@ -41,16 +41,16 @@ Effect *EffectStereoFactory::create()
 
 void EffectStereoFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
-    s ->show();
+    StereoSettingsDialog *s = new StereoSettingsDialog(parent);
+    s->show();
 }
 
 void EffectStereoFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Extra Stereo Plugin"),
-                        tr("Qmmp Extra Stereo Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Based on the Extra Stereo Plugin for Xmms by Johan Levin"));
+    QMessageBox::about(parent, tr("About Extra Stereo Plugin"),
+                       tr("Qmmp Extra Stereo Plugin")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                       tr("Based on the Extra Stereo Plugin for Xmms by Johan Levin"));
 }
 
 QString EffectStereoFactory::translation() const

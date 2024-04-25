@@ -26,14 +26,10 @@
 
 CrossfadePlugin::CrossfadePlugin() : Effect()
 {
-    m_buffer = nullptr;
-    m_buffer_at = 0;
-    m_buffer_size = 0;
     m_core = SoundCore::instance() ;
     m_handler = StateHandler::instance();
-    m_state = WAITING;
     QSettings settings;
-    m_overlap = settings.value("Crossfade/overlap", 6000).toLongLong();
+    m_overlap = settings.value(u"Crossfade/overlap"_s, 6000).toLongLong();
 }
 
 CrossfadePlugin::~CrossfadePlugin()
@@ -113,7 +109,7 @@ void CrossfadePlugin::mix(float *cur_buf, float *prev_buf, uint samples, double 
 {
     for (uint i = 0; i < samples; i++)
     {
-        cur_buf[i] = cur_buf[i]*(1.0 - volume) + prev_buf[i]*volume;
+        cur_buf[i] = cur_buf[i] * (1.0 - volume) + prev_buf[i]*volume;
         cur_buf[i] = qBound(-1.0f, cur_buf[i], 1.0f);
     }
 }

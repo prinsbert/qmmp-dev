@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,14 +21,14 @@
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "effectcrossfadefactory.h"
-#include "settingsdialog.h"
+#include "crossfadesettingsdialog.h"
 #include "crossfadeplugin.h"
 
-const EffectProperties EffectCrossfadeFactory::properties() const
+EffectProperties EffectCrossfadeFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("Crossfade Plugin");
-    properties.shortName = "crossfade";
+    properties.shortName = "crossfade"_L1;
     properties.hasSettings = true;
     properties.hasAbout = true;
     properties.priority = EffectProperties::EFFECT_PRIORITY_LOW;
@@ -42,15 +42,15 @@ Effect *EffectCrossfadeFactory::create()
 
 void EffectCrossfadeFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *dialog = new SettingsDialog(parent);
+    CrossfadeSettingsDialog *dialog = new CrossfadeSettingsDialog(parent);
     dialog->show();
 }
 
 void EffectCrossfadeFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Crossfade Plugin"),
-                       tr("Qmmp Crossfade Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Crossfade Plugin"),
+                       tr("Qmmp Crossfade Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString EffectCrossfadeFactory::translation() const
