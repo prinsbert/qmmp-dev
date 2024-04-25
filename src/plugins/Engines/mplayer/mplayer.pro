@@ -4,15 +4,16 @@ TARGET = $$PLUGINS_PREFIX/Engines/mplayer
 
 HEADERS += mplayerenginefactory.h \
     mplayerengine.h \
-    settingsdialog.h \
-    mplayermetadatamodel.h
+    mplayermetadatamodel.h \
+    mplayersettingsdialog.h
 
 SOURCES += mplayerengine.cpp \
     mplayerenginefactory.cpp \
-    settingsdialog.cpp \
-    mplayermetadatamodel.cpp
+    mplayermetadatamodel.cpp \
+    mplayersettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    mplayersettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

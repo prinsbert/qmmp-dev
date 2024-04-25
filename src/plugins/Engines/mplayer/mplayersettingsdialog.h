@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2014 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,32 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef MPLAYERSETTINGSDIALOG_H
+#define MPLAYERSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+
+namespace Ui {
+class MplayerSettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class MplayerSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit MplayerSettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    ~MplayerSettingsDialog();
 
 
 public slots:
     virtual void accept() override;
 
 private:
-    Ui::SettingsDialog m_ui;
+    Ui::MplayerSettingsDialog *m_ui;
 };
 
 #endif

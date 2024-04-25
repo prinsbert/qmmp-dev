@@ -20,7 +20,7 @@
 
 #include <QMessageBox>
 #include "mplayermetadatamodel.h"
-#include "settingsdialog.h"
+#include "mplayersettingsdialog.h"
 #include "mplayerengine.h"
 #include "mplayerenginefactory.h"
 
@@ -31,11 +31,11 @@ EngineProperties MplayerEngineFactory::properties() const
 {
     EngineProperties properties;
     properties.name = tr("Mplayer Plugin");
-    properties.shortName = "mplayer";
+    properties.shortName = "mplayer"_L1;
     properties.filters = MplayerInfo::filters();
     properties.description = tr("Video Files");
     //properties.contentType = "application/ogg;audio/x-vorbis+ogg";
-    properties.protocols = QStringList { "file" };
+    properties.protocols = QStringList { u"file"_s };
     properties.hasAbout = true;
     properties.hasSettings = true;
     return properties;
@@ -65,16 +65,16 @@ MetaDataModel* MplayerEngineFactory::createMetaDataModel(const QString &path, bo
 
 void MplayerEngineFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
+    MplayerSettingsDialog *s = new MplayerSettingsDialog(parent);
     s->show();
 }
 
 void MplayerEngineFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About MPlayer Plugin"),
-                        tr("Qmmp MPlayer Plugin")+"\n"+
-                        tr("This plugin uses MPlayer as backend")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About MPlayer Plugin"),
+                       tr("Qmmp MPlayer Plugin")+"\n"+
+                       tr("This plugin uses MPlayer as backend")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString MplayerEngineFactory::translation() const
