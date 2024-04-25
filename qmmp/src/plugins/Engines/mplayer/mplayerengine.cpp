@@ -38,19 +38,19 @@
 
 TrackInfo *MplayerInfo::createTrackInfo(const QString &path)
 {
-    static const QRegularExpression rx_id_length("^ID_LENGTH=([0-9,.]+)*");
-    static const QRegularExpression rx_id_audio_bitrate("^ID_AUDIO_BITRATE=([0-9,.]+)*");
-    static const QRegularExpression rx_id_audio_rate("^ID_AUDIO_RATE=([0-9,.]+)*");
-    static const QRegularExpression rx_id_audio_nch("^ID_AUDIO_NCH=([0-9,.]+)*");
-    static const QRegularExpression rx_id_audio_codec("^ID_AUDIO_CODEC=(.*)");
-    const QStringList args = { "-slave", "-identify", "-frames", "0", "-vo", "null", "-ao", "null", path };
+    static const QRegularExpression rx_id_length(u"^ID_LENGTH=([0-9,.]+)*"_s);
+    static const QRegularExpression rx_id_audio_bitrate(u"^ID_AUDIO_BITRATE=([0-9,.]+)*"_s);
+    static const QRegularExpression rx_id_audio_rate(u"^ID_AUDIO_RATE=([0-9,.]+)*"_s);
+    static const QRegularExpression rx_id_audio_nch(u"^ID_AUDIO_NCH=([0-9,.]+)*"_s);
+    static const QRegularExpression rx_id_audio_codec(u"^ID_AUDIO_CODEC=(.*)"_s);
+    const QStringList args = { u"-slave"_s, u"-identify"_s, u"-frames"_s, u"0"_s, u"-vo"_s, u"null"_s, u"-ao"_s, u"null"_s, path };
     QProcess mplayer_process;
-    mplayer_process.start("mplayer", args);
+    mplayer_process.start(u"mplayer"_s, args);
     mplayer_process.waitForFinished(1500);
     mplayer_process.kill();
     QString str = QString::fromLocal8Bit(mplayer_process.readAll()).trimmed();
     TrackInfo *info = new TrackInfo(path);
-    const QStringList lines = str.split("\n");
+    const QStringList lines = str.split(QChar::LineFeed);
     for(const QString &line : qAsConst(lines))
     {
         QRegularExpressionMatch match;
@@ -67,7 +67,7 @@ TrackInfo *MplayerInfo::createTrackInfo(const QString &path)
             info->setValue(Qmmp::FORMAT_NAME, match.captured(1));
     }
     info->setValue(Qmmp::BITS_PER_SAMPLE, 32);
-    info->setValue(Qmmp::DECODER, "mplayer");
+    info->setValue(Qmmp::DECODER, u"mplayer"_s);
     info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
 #ifdef MPLAYER_DEBUG
     qDebug("%s",qPrintable(str));
@@ -77,20 +77,21 @@ TrackInfo *MplayerInfo::createTrackInfo(const QString &path)
 
 const QStringList &MplayerInfo::filters()
 {
-    static const QStringList filters = { "*.avi", "*.mpg", "*.mpeg", "*.divx", "*.qt", "*.mov", "*.wmv", "*.asf",
-                                         "*.flv", "*.3gp", "*.mkv", "*.mp4", "*.webm" };
+    static const QStringList filters = { u"*.avi"_s, u"*.mpg"_s, u"*.mpeg"_s, u"*.divx"_s, u"*.qt"_s,
+                                         u"*.mov"_s, u"*.wmv"_s, u"*.asf"_s, u"*.flv"_s, u"*.3gp"_s,
+                                         u"*.mkv"_s, u"*.mp4"_s, u"*.webm"_s };
     return filters;
 }
 
 bool MplayerInfo::supports(const QString &path)
 {
-    return QDir::match(filters(), path.section("/", -1));
+    return QDir::match(filters(), path.section(QChar('/'), -1));
 }
 
 MplayerEngine::MplayerEngine(QObject *parent)
         : AbstractEngine(parent)
 {
-    connect(VolumeHandler::instance(), SIGNAL(mutedChanged(bool)), SLOT(setMuted(bool)));
+    connect(VolumeHandler::instance(), &VolumeHandler::mutedChanged, this, &MplayerEngine::setMuted);
 }
 
 MplayerEngine::~MplayerEngine()
@@ -129,22 +130,22 @@ bool MplayerEngine::initialize()
     m_length = info->duration();
     delete info;
     m_args.clear();
-    m_args << "-slave";
+    m_args << u"-slave"_s;
     QSettings settings;
-    QString ao_str = settings.value("mplayer/ao","default").toString();
-    QString vo_str = settings.value("mplayer/vo","default").toString();
-    if (ao_str != "default")
-        m_args << "-ao" << ao_str;
-    if (vo_str != "default")
-        m_args << "-vo" << vo_str;
+    QString ao_str = settings.value(u"mplayer/ao"_s, u"default"_s).toString();
+    QString vo_str = settings.value(u"mplayer/vo"_s, u"default"_s).toString();
+    if (ao_str != "default"_L1)
+        m_args << u"-ao"_s << ao_str;
+    if (vo_str != "default"_L1)
+        m_args << u"-vo"_s << vo_str;
 
-    if (settings.value("autosync", false).toBool())
-        m_args << "-autosync" << QString("%1").arg(settings.value("autosync_factor", 100).toInt());
+    if (settings.value(u"autosync"_s, false).toBool())
+        m_args << u"-autosync"_s << QString::number(settings.value(u"autosync_factor"_s, 100).toInt());
 
-    m_args << settings.value("cmd_options").toString().split(" ", Qt::SkipEmptyParts);
+    m_args << settings.value(u"cmd_options"_s).toString().split(QChar::Space, Qt::SkipEmptyParts);
 
     if(m_source->offset() > 0)
-        m_args << "-ss" << QString("%1").arg(m_source->offset()/1000);
+        m_args << u"-ss"_s << QString::number(m_source->offset() / 1000);
     m_args << m_source->path();
     return true;
 }
@@ -152,7 +153,7 @@ bool MplayerEngine::initialize()
 void MplayerEngine::seek(qint64 pos)
 {
     if (m_process && m_process->state() == QProcess::Running)
-        m_process->write(QString("seek %1\n").arg(pos/1000 - m_currentTime).toLocal8Bit ());
+        m_process->write(QStringLiteral("seek %1\n").arg(pos/1000 - m_currentTime).toLocal8Bit());
 }
 
 void MplayerEngine::stop()
@@ -185,14 +186,14 @@ void MplayerEngine::setMuted(bool muted)
 
 void MplayerEngine::readStdOut()
 {
-    static const QRegularExpression rx_av("^[AV]: *([0-9,:.-]+)");
-    static const QRegularExpression rx_pause("^(.*)=(.*)PAUSE(.*)");
-    static const QRegularExpression rx_end("^(.*)End of file(.*)");
-    static const QRegularExpression rx_quit("^(.*)Quit(.*)");
-    static const QRegularExpression rx_audio("^AUDIO: *([0-9,.]+) *Hz.*([0-9,.]+) *ch.*([0-9]+).* ([0-9,.]+) *kbit.*");
-    static const QRegularExpression rx_audio2("^AUDIO: *([0-9,.]+) *Hz.*([0-9,.]+) *ch.*([a-z]+).* ([0-9,.]+) *kbit.*");
+    static const QRegularExpression rx_av(u"^[AV]: *([0-9,:.-]+)"_s);
+    static const QRegularExpression rx_pause(u"^(.*)=(.*)PAUSE(.*)"_s);
+    static const QRegularExpression rx_end(u"^(.*)End of file(.*)"_s);
+    static const QRegularExpression rx_quit(u"^(.*)Quit(.*)"_s);
+    static const QRegularExpression rx_audio(u"^AUDIO: *([0-9,.]+) *Hz.*([0-9,.]+) *ch.*([0-9]+).* ([0-9,.]+) *kbit.*"_s);
+    static const QRegularExpression rx_audio2(u"^AUDIO: *([0-9,.]+) *Hz.*([0-9,.]+) *ch.*([a-z]+).* ([0-9,.]+) *kbit.*"_s);
 
-    const QStringList lines = QString::fromLocal8Bit(m_process->readAll()).trimmed().split("\n");
+    const QStringList lines = QString::fromLocal8Bit(m_process->readAll()).trimmed().split(QChar::LineFeed);
     for(const QString &line : qAsConst(lines))
     {
         QRegularExpressionMatch match;
@@ -276,10 +277,10 @@ void MplayerEngine::startMplayerProcess()
     initialize();
     delete m_process;
     m_process = new QProcess(this);
-    connect(m_process, SIGNAL(readyReadStandardOutput()), SLOT(readStdOut()));
-    connect(m_process, SIGNAL(error(QProcess::ProcessError)), SLOT(onError(QProcess::ProcessError)));
-    connect(m_process, SIGNAL(stateChanged(QProcess::ProcessState)), SLOT(onStateChanged(QProcess::ProcessState)));
-    m_process->start ("mplayer", m_args);
+    connect(m_process, &QProcess::readyReadStandardOutput, this, &MplayerEngine::readStdOut);
+    connect(m_process, &QProcess::errorOccurred, this, &MplayerEngine::onError);
+    connect(m_process, &QProcess::stateChanged, this, &MplayerEngine::onStateChanged);
+    m_process->start(u"mplayer"_s, m_args);
     StateHandler::instance()->dispatch(Qmmp::Playing);
     StateHandler::instance()->dispatch(m_length);
     TrackInfo *info = MplayerInfo::createTrackInfo(m_source->path());

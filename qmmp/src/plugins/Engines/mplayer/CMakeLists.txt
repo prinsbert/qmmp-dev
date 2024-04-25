@@ -11,8 +11,8 @@ SET(libmplayer_SRCS
     mplayerenginefactory.cpp
     mplayerengine.cpp
     mplayermetadatamodel.cpp
-    settingsdialog.cpp
-    settingsdialog.ui
+    mplayersettingsdialog.cpp
+    mplayersettingsdialog.ui
     translations/translations.qrc
 )
 
