@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,44 +17,42 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef BS2BSETTINGSDIALOG_H
+#define BS2BSETTINGSDIALOG_H
 
-#include <QSettings>
-#include <qmmp/qmmp.h>
-#include "stereoplugin.h"
-#include "settingsdialog.h"
+#include <QDialog>
+#include <bs2b/bs2b.h>
 
-SettingsDialog::SettingsDialog(QWidget *parent)
-        : QDialog(parent)
-{
-    ui.setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
-    QSettings settings;
-    m_level = settings.value("extra_stereo/intensity", 1.0).toDouble();
-    ui.intensitySlider->setValue(m_level * 100 / 10.0);
+namespace Ui {
+class Bs2bSettingsDialog;
 }
 
-SettingsDialog::~SettingsDialog()
+/**
+	@author Ilya Kotov <forkotov02@ya.ru>
+*/
+class Bs2bSettingsDialog : public QDialog
 {
-}
+Q_OBJECT
+public:
+    explicit Bs2bSettingsDialog(QWidget *parent = nullptr);
 
-void SettingsDialog::accept()
-{
-    QSettings settings;
-    settings.setValue("extra_stereo/intensity", ui.intensitySlider->value() * 10.0 / 100);
-    QDialog::accept();
-}
+    ~Bs2bSettingsDialog();
 
-void SettingsDialog::SettingsDialog::reject()
-{
-    if (StereoPlugin::instance()) //restore settings
-        StereoPlugin::instance()->setIntensity(m_level);
-    QDialog::reject();
-}
+public slots:
+    void accept() override;
+    void reject() override;
 
-void SettingsDialog::on_intensitySlider_valueChanged (int value)
-{
-    double level = value * 10.0 / 100;
-    ui.intensityLabel->setText(QString(tr("%1")).arg(level));
-    if (StereoPlugin::instance())
-        StereoPlugin::instance()->setIntensity(level);
-}
+private slots:
+    void on_freqSlider_valueChanged(int value);
+    void on_feedSlider_valueChanged(int value);
+    void on_defaultButton_pressed();
+    void on_cmButton_pressed();
+    void on_jmButton_pressed();
+
+private:
+    Ui::Bs2bSettingsDialog *m_ui;
+    uint32_t m_level;
+
+};
+
+#endif

@@ -27,21 +27,21 @@
 #include <QLabel>
 #include <QIcon>
 #include <qmmp/qmmp.h>
-#include "ui_settingsdialog.h"
+#include "ui_ladspasettingsdialog.h"
 #include "ladspaslider.h"
 #include "ladspabutton.h"
 #include "ladspahost.h"
-#include "settingsdialog.h"
+#include "ladspasettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent)
+LADSPASettingsDialog::LADSPASettingsDialog(QWidget *parent)
         : QDialog(parent)
 {
-    m_ui = new Ui::SettingsDialog;
+    m_ui = new Ui::LADSPASettingsDialog;
     m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose, true);
     m_ui->loadButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowRight));
     m_ui->unloadButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowLeft));
-    m_ui->configureButton->setIcon(QIcon::fromTheme("configure"));
+    m_ui->configureButton->setIcon(QIcon::fromTheme(u"configure"_s));
 
     m_model = new QStandardItemModel(0, 2, this);
     m_model->setHeaderData(0, Qt::Horizontal, tr("UID"));
@@ -56,7 +56,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     for(int i = 0; i < plugin_list.size(); ++i)
     {
         m_model->insertRow(i);
-        m_model->setData(m_model->index(i, 0), (uint) plugin_list[i]->unique_id);
+        m_model->setData(m_model->index(i, 0), (uint)plugin_list[i]->unique_id);
         m_model->setData(m_model->index(i, 1), plugin_list[i]->name);
     }
     m_ui->pluginsTreeView->resizeColumnToContents (0);
@@ -64,12 +64,12 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     updateRunningPlugins();
 }
 
-SettingsDialog::~SettingsDialog()
+LADSPASettingsDialog::~LADSPASettingsDialog()
 {
     delete m_ui;
 }
 
-void SettingsDialog::on_loadButton_clicked()
+void LADSPASettingsDialog::on_loadButton_clicked()
 {
     LADSPAHost *l = LADSPAHost::instance();
     QModelIndex index = m_ui->pluginsTreeView->currentIndex ();
@@ -80,7 +80,7 @@ void SettingsDialog::on_loadButton_clicked()
     }
 }
 
-void SettingsDialog::on_unloadButton_clicked()
+void LADSPASettingsDialog::on_unloadButton_clicked()
 {
     LADSPAHost *l = LADSPAHost::instance();
     QModelIndex index = m_ui->runningListWidget->currentIndex ();
@@ -91,7 +91,7 @@ void SettingsDialog::on_unloadButton_clicked()
     }
 }
 
-void SettingsDialog::on_configureButton_clicked()
+void LADSPASettingsDialog::on_configureButton_clicked()
 {
     LADSPAHost *l = LADSPAHost::instance();
     QModelIndex index = m_ui->runningListWidget->currentIndex ();
@@ -121,7 +121,7 @@ void SettingsDialog::on_configureButton_clicked()
             break;
         case LADSPAControl::LABEL:
             label = new QLabel(this);
-            label->setText(QString("%1").arg(c->value));
+            label->setText(QStringLiteral("%1").arg(c->value));
             label->setFrameStyle(QFrame::StyledPanel);
             label->setFrameShadow(QFrame::Sunken);
             formLayout->addRow(c->name, label);
@@ -138,12 +138,12 @@ void SettingsDialog::on_configureButton_clicked()
     dialog->deleteLater();
 }
 
-void SettingsDialog::accept()
+void LADSPASettingsDialog::accept()
 {
     QDialog::accept();
 }
 
-void SettingsDialog::updateRunningPlugins()
+void LADSPASettingsDialog::updateRunningPlugins()
 {
     m_ui->runningListWidget->clear();
     for(LADSPAEffect *e : LADSPAHost::instance()->effects())

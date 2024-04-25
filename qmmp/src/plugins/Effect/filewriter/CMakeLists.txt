@@ -16,9 +16,9 @@ ADD_DEFINITIONS(${VORBISENC_CFLAGS})
 
 SET(libfilewriter_SRCS
     filewriterplugin.cpp
-    settingsdialog.cpp
+    filewritersettingsdialog.cpp
     effectfilewriterfactory.cpp
-    settingsdialog.ui
+    filewritersettingsdialog.ui
     translations/translations.qrc
 )
 

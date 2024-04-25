@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,14 +22,14 @@
 #include <bs2b/bs2bversion.h>
 #include <qmmp/qmmp.h>
 #include "effectbs2bfactory.h"
-#include "settingsdialog.h"
+#include "bs2bsettingsdialog.h"
 #include "bs2bplugin.h"
 
-const EffectProperties EffectBs2bFactory::properties() const
+EffectProperties EffectBs2bFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("BS2B Plugin");
-    properties.shortName = "bs2b";
+    properties.shortName = "bs2b"_L1;
     properties.hasSettings = true;
     properties.hasAbout = true;
     return properties;
@@ -42,21 +42,24 @@ Effect *EffectBs2bFactory::create()
 
 void EffectBs2bFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
-    s ->show();
+    Bs2bSettingsDialog *s = new Bs2bSettingsDialog(parent);
+    s->show();
 }
 
 void EffectBs2bFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About BS2B Effect Plugin"),
-                        "<p>"+tr("This is the Qmmp plugin version of Boris Mikhaylov's headphone DSP "
-                                 "effect \"Bauer stereophonic-to-binaural\", abbreviated bs2b.")+"</p>"+
-                        QString("<p>" + tr("Visit %1 for more details")+"</p>")
-                        .arg("<a href=\"http://bs2b.sourceforge.net/\">http://bs2b.sourceforge.net/</a>")+
-                        QString("<p>" + tr("Compiled against libbs2b-%1") + "</p>").arg(BS2B_VERSION_STR)+
-                        "<p>"+tr("Developers:")+"<br>"+
-                        tr("Ilya Kotov &lt;forkotov02@ya.ru&gt;")+"<br>"+
-                        tr("Sebastian Pipping &lt;sebastian@pipping.org&gt;")+"</p>");
+    QMessageBox::about(parent, tr("About BS2B Effect Plugin"),
+                       u"<p>"_s +
+                       tr("This is the Qmmp plugin version of Boris Mikhaylov's headphone DSP "
+                          "effect \"Bauer stereophonic-to-binaural\", abbreviated bs2b.") +
+                       u"</p><p>"_s +
+                       tr("Visit %1 for more details").arg(u"<a href=\"https://bs2b.sourceforge.net/\">https://bs2b.sourceforge.net/</a>"_s) +
+                       u"</p><p>"_s +
+                       tr("Compiled against libbs2b-%1").arg(BS2B_VERSION_STR) +
+                       u"</p><p>"_s +
+                       tr("Developers:") + u"<br>"_s+
+                       tr("Ilya Kotov &lt;forkotov02@ya.ru&gt;") + u"<br>"_s +
+                       tr("Sebastian Pipping &lt;sebastian@pipping.org&gt;") + u"<p>"_s);
 }
 
 QString EffectBs2bFactory::translation() const

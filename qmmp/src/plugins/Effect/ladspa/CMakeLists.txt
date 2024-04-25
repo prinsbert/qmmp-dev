@@ -11,9 +11,9 @@ SET(libladspa_SRCS
     ladspahelper.cpp
     ladspaslider.cpp
     ladspabutton.cpp
-    settingsdialog.cpp
+    ladspasettingsdialog.cpp
     effectladspafactory.cpp
-    settingsdialog.ui
+    ladspasettingsdialog.ui
     translations/translations.qrc
 )
 

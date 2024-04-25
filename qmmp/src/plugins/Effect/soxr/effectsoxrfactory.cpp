@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,15 +20,15 @@
 
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "soxrsettingsdialog.h"
 #include "soxresampler.h"
 #include "effectsoxrfactory.h"
 
-const EffectProperties EffectSoXRFactory::properties() const
+EffectProperties EffectSoXRFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("SoX Resampler Plugin");
-    properties.shortName = "soxr";
+    properties.shortName = "soxr"_L1;
     properties.hasSettings = true;
     properties.hasAbout = true;
     properties.priority = EffectProperties::EFFECT_PRIORITY_HIGH;
@@ -42,15 +42,15 @@ Effect *EffectSoXRFactory::create()
 
 void EffectSoXRFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
+    SoXRSettingsDialog *s = new SoXRSettingsDialog(parent);
     s ->show();
 }
 
 void EffectSoXRFactory::showAbout(QWidget *parent)
 {
-     QMessageBox::about (parent, tr("About SoX Resampler Plugin"),
+     QMessageBox::about(parent, tr("About SoX Resampler Plugin"),
                         tr("Qmmp SoX Resampler Plugin")+"\n"+
-                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString EffectSoXRFactory::translation() const

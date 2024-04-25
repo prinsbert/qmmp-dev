@@ -39,9 +39,9 @@ public:
     static StereoPlugin* instance();
 
 private:
-    int m_chan;
+    int m_chan = 2;
     QMutex m_mutex;
-    double m_avg, m_ldiff, m_rdiff, m_tmp, m_mul;
+    double m_avg = 0, m_ldiff = 0, m_rdiff = 0, m_tmp = 0, m_mul = 2.0;
     static StereoPlugin *m_instance;
 };
 

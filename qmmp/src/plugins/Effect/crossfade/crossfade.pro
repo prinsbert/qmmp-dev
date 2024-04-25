@@ -3,14 +3,15 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Effect/crossfade
 
 HEADERS += crossfadeplugin.h \
-           effectcrossfadefactory.h \
-           settingsdialog.h
+           crossfadesettingsdialog.h \
+           effectcrossfadefactory.h
 
 SOURCES += crossfadeplugin.cpp \
-           effectcrossfadefactory.cpp \
-           settingsdialog.cpp
+           crossfadesettingsdialog.cpp \
+           effectcrossfadefactory.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    crossfadesettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

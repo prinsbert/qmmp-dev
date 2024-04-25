@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SettingsDialog</class>
- <widget class="QDialog" name="SettingsDialog">
+ <class>Bs2bSettingsDialog</class>
+ <widget class="QDialog" name="Bs2bSettingsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>383</width>
-    <height>123</height>
+    <width>487</width>
+    <height>135</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -121,7 +121,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>Bs2bSettingsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -137,7 +137,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>Bs2bSettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

@@ -75,16 +75,17 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
     {
     case PL_HELP:
     {
-        QStringList list = QStringList()
-                << helpString(PL_LIST)
-                << helpString(PL_DUMP)
-                << helpString(PL_PLAY)
-                << helpString(PL_CLEAR)
-                << helpString(PL_NEXT)
-                << helpString(PL_PREV)
-                << helpString(PL_REPEATE_TOGGLE)
-                << helpString(PL_SHUFFLE_TOGGLE)
-                << helpString(PL_STATE);
+        const QStringList list = {
+            helpString(PL_LIST),
+            helpString(PL_DUMP),
+            helpString(PL_PLAY),
+            helpString(PL_CLEAR),
+            helpString(PL_NEXT),
+            helpString(PL_PREV),
+            helpString(PL_REPEATE_TOGGLE),
+            helpString(PL_SHUFFLE_TOGGLE),
+            helpString(PL_STATE)
+        };
 
         for(const QString &line : qAsConst(list))
             out += CommandLineManager::formatHelpString(line) + QChar::LineFeed;

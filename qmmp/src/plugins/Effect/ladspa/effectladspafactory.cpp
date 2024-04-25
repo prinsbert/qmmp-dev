@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,15 +20,15 @@
 
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "ladspasettingsdialog.h"
 #include "ladspahelper.h"
 #include "effectladspafactory.h"
 
-const EffectProperties EffectLADSPAFactory::properties() const
+EffectProperties EffectLADSPAFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("LADSPA Plugin");
-    properties.shortName = "ladspa";
+    properties.shortName = "ladspa"_L1;
     properties.hasSettings = true;
     properties.hasAbout = true;
     return properties;
@@ -41,19 +41,19 @@ Effect *EffectLADSPAFactory::create()
 
 void EffectLADSPAFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
+    LADSPASettingsDialog *s = new LADSPASettingsDialog(parent);
     s->show();
 }
 
 void EffectLADSPAFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About LADSPA Host for Qmmp"),
-                        tr("LADSPA Host for Qmmp")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Based on the LADSPA Host for BMP")+"\n"+
-                        tr("BMP-ladspa developers:")+"\n"+
-                        tr("Nick Lamb <njl195@zepler.org.uk>")+"\n"+
-                        tr("Giacomo Lozito <city_hunter@users.sf.net>"));
+    QMessageBox::about(parent, tr("About LADSPA Host for Qmmp"),
+                       tr("LADSPA Host for Qmmp")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                       tr("Based on the LADSPA Host for BMP")+"\n"+
+                       tr("BMP-ladspa developers:")+"\n"+
+                       tr("Nick Lamb <njl195@zepler.org.uk>")+"\n"+
+                       tr("Giacomo Lozito <city_hunter@users.sf.net>"));
 }
 
 QString EffectLADSPAFactory::translation() const

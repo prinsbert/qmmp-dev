@@ -45,10 +45,10 @@ LADSPAHost::LADSPAHost(QObject *parent) : QObject(parent)
     loadModules();
 
     QSettings settings;
-    int pluginNumber = settings.value("LADSPA/plugin_number", 0).toInt();
+    int pluginNumber = settings.value(u"LADSPA/plugin_number"_s, 0).toInt();
     for(int i = 0; i < pluginNumber; ++i)
     {
-        QString section = QString("LADSPA_%1/").arg(i);
+        QString section = QStringLiteral("LADSPA_%1/").arg(i);
         settings.beginGroup(section);
 
         int id = settings.value("id").toInt();
@@ -59,7 +59,7 @@ LADSPAHost::LADSPAHost(QObject *parent) : QObject(parent)
         LADSPAPlugin *plugin = *it;
         LADSPAEffect *effect = createEffect(plugin);
         for(LADSPAControl *c : qAsConst(effect->controls))
-            c->value = settings.value(QString("port%1").arg(c->port), c->value).toFloat();
+            c->value = settings.value(QStringLiteral("port%1").arg(c->port), c->value).toFloat();
 
         m_effects.append(effect);
         settings.endGroup();
@@ -70,20 +70,20 @@ LADSPAHost::~LADSPAHost()
 {
     m_instance = nullptr;
     QSettings settings;
-    for(int i = 0; i < settings.value("LADSPA/plugin_number", 0).toInt(); ++i)
+    for(int i = 0; i < settings.value(u"LADSPA/plugin_number"_s, 0).toInt(); ++i)
     {
-        settings.remove(QString("LADSPA_%1/").arg(i));
+        settings.remove(QStringLiteral("LADSPA_%1/").arg(i));
     }
     settings.setValue("LADSPA/plugin_number", m_effects.count());
     for(int i = 0; i < m_effects.count(); ++i)
     {
-        QString section = QString("LADSPA_%1/").arg(i);
+        QString section = QStringLiteral("LADSPA_%1/").arg(i);
         settings.beginGroup(section);
 
-        settings.setValue("id", (quint64)m_effects[i]->plugin->desc->UniqueID);
+        settings.setValue(u"id"_s, (quint64)m_effects[i]->plugin->desc->UniqueID);
 
         for(const LADSPAControl *c : qAsConst(m_effects[i]->controls))
-            settings.setValue(QString("port%1").arg(c->port), c->value);
+            settings.setValue(QStringLiteral("port%1").arg(c->port), c->value);
 
         settings.endGroup();
     }
@@ -132,10 +132,10 @@ void LADSPAHost::loadModules()
     if (ladspa_path.isEmpty())
     {
         /* Fallback, look in obvious places */
-        directories << "/usr/lib/ladspa";
-        directories << "/usr/local/lib/ladspa";
-        directories << "/usr/lib64/ladspa";
-        directories << "/usr/local/lib64/ladspa";
+        directories << u"/usr/lib/ladspa"_s;
+        directories << u"/usr/local/lib/ladspa"_s;
+        directories << u"/usr/lib64/ladspa"_s;
+        directories << u"/usr/local/lib64/ladspa"_s;
     }
     else
         directories = ladspa_path.split(':');
@@ -148,7 +148,7 @@ void LADSPAHost::findModules(const QString &path)
     QDir dir (path);
     dir.setFilter(QDir::Files | QDir::Hidden);
     dir.setSorting(QDir::Name);
-    const QFileInfoList files = dir.entryInfoList((QStringList() << "*.so"));
+    const QFileInfoList files = dir.entryInfoList({ u"*.so"_s });
 
     for(const QFileInfo &file : qAsConst(files))
     {

@@ -1,7 +1,7 @@
 /***************************************************************************
  *   Copyright (C) 1999 by Johan Levin                                     *
  *                                                                         *
- *   Copyright (C) 2011-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,14 +31,8 @@ StereoPlugin *StereoPlugin::m_instance = nullptr;
 StereoPlugin::StereoPlugin() : Effect()
 {
     m_instance = this;
-    m_avg = 0;
-    m_ldiff = 0;
-    m_rdiff = 0;
-    m_tmp = 0;
-    m_mul = 2.0;
-    m_chan = 0;
     QSettings settings;
-    m_mul = settings.value("extra_stereo/intensity", 1.0).toDouble();
+    m_mul = settings.value(u"extra_stereo/intensity"_s, 1.0).toDouble();
 }
 
 StereoPlugin::~StereoPlugin()
@@ -54,7 +48,7 @@ void StereoPlugin::applyEffect(Buffer *b)
     m_mutex.lock();
     float *data = b->data;
 
-    for (uint i = 0; i < b->samples; i += 2)
+    for(uint i = 0; i < b->samples; i += 2)
     {
         m_avg = (data[i] + data[i + 1]) / 2;
         m_ldiff = data[i] - m_avg;

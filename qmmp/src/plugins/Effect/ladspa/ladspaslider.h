@@ -40,8 +40,8 @@ public:
                  QWidget *parent = nullptr);
 
 private slots:
-    void setValue(double);
-    void setValue(int);
+    void setDoubleValue(double);
+    void setIntValue(int);
 
 private:
    QDoubleSpinBox *m_spinBox;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2016-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,40 +17,32 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef SOXRSETTINGSDIALOG_H
+#define SOXRSETTINGSDIALOG_H
 
 #include <QDialog>
 
-class QStandardItemModel;
-
 namespace Ui {
-class SettingsDialog;
+class SoXRSettingsDialog;
 }
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class SoXRSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit SoXRSettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    ~SoXRSettingsDialog();
 
 public slots:
     virtual void accept() override;
 
-private slots:
-    void on_loadButton_clicked();
-    void on_unloadButton_clicked();
-    void on_configureButton_clicked();
-
 private:
-    void updateRunningPlugins();
-    Ui::SettingsDialog *m_ui;
-    QStandardItemModel *m_model;
+    Ui::SoXRSettingsDialog *m_ui;
+
 };
 
 #endif

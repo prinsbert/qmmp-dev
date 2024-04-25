@@ -3,14 +3,15 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Effect/bs2b
 
 HEADERS += bs2bplugin.h \
-           effectbs2bfactory.h \
-           settingsdialog.h
+           bs2bsettingsdialog.h \
+           effectbs2bfactory.h
 
 SOURCES += bs2bplugin.cpp \
-           effectbs2bfactory.cpp \
-           settingsdialog.cpp
+           bs2bsettingsdialog.cpp \
+           effectbs2bfactory.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    bs2bsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

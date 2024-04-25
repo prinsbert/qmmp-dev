@@ -8,9 +8,9 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libstereo_SRCS
     stereoplugin.cpp
-    settingsdialog.cpp
+    stereosettingsdialog.cpp
     effectstereofactory.cpp
-    settingsdialog.ui
+    stereosettingsdialog.ui
     translations/translations.qrc
 )
 

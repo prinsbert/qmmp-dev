@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2010 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,37 +19,28 @@
  ***************************************************************************/
 
 #include <QSettings>
-#include <soxr.h>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "ui_crossfadesettingsdialog.h"
+#include "crossfadesettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent)
- : QDialog(parent)
+CrossfadeSettingsDialog::CrossfadeSettingsDialog(QWidget *parent)
+ : QDialog(parent), m_ui(new Ui::CrossfadeSettingsDialog)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose, true);
     QSettings settings;
-    m_ui.srSpinBox->setValue(settings.value("SOXR/sample_rate",48000).toInt());
-
-    m_ui.qualityComboBox->addItem(tr("Quick"), SOXR_QQ);
-    m_ui.qualityComboBox->addItem(tr("Low"), SOXR_LQ);
-    m_ui.qualityComboBox->addItem(tr("Medium"), SOXR_MQ);
-    m_ui.qualityComboBox->addItem(tr("High"), SOXR_HQ);
-    m_ui.qualityComboBox->addItem(tr("Very High"), SOXR_VHQ);
-    int index = m_ui.qualityComboBox->findData(settings.value("SOXR/quality", SOXR_HQ).toInt());
-    if(index >= 0 && index < m_ui.qualityComboBox->count())
-        m_ui.qualityComboBox->setCurrentIndex(index);
+    m_ui->overlapSpinBox->setValue(settings.value(u"Crossfade/overlap"_s, 6000).toInt());
 }
 
 
-SettingsDialog::~SettingsDialog()
+CrossfadeSettingsDialog::~CrossfadeSettingsDialog()
 {
+    delete m_ui;
 }
 
-void SettingsDialog::accept()
+void CrossfadeSettingsDialog::accept()
 {
     QSettings settings;
-    settings.setValue("SOXR/sample_rate",m_ui.srSpinBox->value());
-    settings.setValue("SOXR/quality", m_ui.qualityComboBox->itemData(m_ui.qualityComboBox->currentIndex()).toInt());
+    settings.setValue(u"Crossfade/overlap"_s, m_ui->overlapSpinBox->value());
     QDialog::accept();
 }
