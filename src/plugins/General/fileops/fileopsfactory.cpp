@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,17 +18,16 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-
 #include <QMessageBox>
 #include "fileops.h"
-#include "settingsdialog.h"
+#include "fileopssettingsdialog.h"
 #include "fileopsfactory.h"
 
 GeneralProperties FileOpsFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("File Operations Plugin");
-    properties.shortName = "fileops";
+    properties.shortName = "fileops"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -42,14 +41,14 @@ QObject *FileOpsFactory::create(QObject *parent)
 
 QDialog *FileOpsFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new FileOpsSettingsDialog(parent);
 }
 
 void FileOpsFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About File Operations Plugin"),
-                        tr("Qmmp File Operations Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About File Operations Plugin"),
+                       tr("Qmmp File Operations Plugin")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString FileOpsFactory::translation() const

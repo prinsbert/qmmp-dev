@@ -32,19 +32,19 @@
 History::History(QObject *parent) : QObject(parent)
 {
     m_core = SoundCore::instance();
-    connect(m_core, SIGNAL(trackInfoChanged()), SLOT(onTrackInfoChanged()));
-    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(onStateChanged(Qmmp::State)));
+    connect(m_core, &SoundCore::trackInfoChanged, this, &History::onTrackInfoChanged);
+    connect(m_core, &SoundCore::stateChanged, this, &History::onStateChanged);
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
+    QSqlDatabase db = QSqlDatabase::addDatabase(u"QSQLITE"_s, CONNECTION_NAME);
     if(db.isValid() && !db.isOpen())
     {
-        db.setDatabaseName(Qmmp::configDir() + "/" + "history.sqlite");
+        db.setDatabaseName(Qmmp::configDir() + u"/history.sqlite"_s);
         db.open();
         if(createTables())
         {
             QSqlQuery query(db);
-            query.exec("PRAGMA journal_mode = WAL");
-            query.exec("PRAGMA synchronous = NORMAL");
+            query.exec(u"PRAGMA journal_mode = WAL"_s);
+            query.exec(u"PRAGMA synchronous = NORMAL"_s);
             qDebug("History: database initialization finished");
         }
         else
@@ -56,7 +56,7 @@ History::History(QObject *parent) : QObject(parent)
 
     QAction *action = new QAction(tr("History"), this);
     action->setShortcut(tr("Alt+H"));
-    action->setIcon(QIcon::fromTheme("text-x-generic"));
+    action->setIcon(QIcon::fromTheme(u"text-x-generic"_s));
     UiHelper::instance()->addAction(action, UiHelper::TOOLS_MENU);
     connect(action, SIGNAL(triggered()), SLOT(showHistoryWindow()));
 }
@@ -118,10 +118,10 @@ bool History::createTables()
         return false;
 
     QSqlQuery query(db);
-    bool ok = query.exec("CREATE TABLE IF NOT EXISTS track_history(ID INTEGER PRIMARY KEY AUTOINCREMENT,"
+    bool ok = query.exec(u"CREATE TABLE IF NOT EXISTS track_history(ID INTEGER PRIMARY KEY AUTOINCREMENT,"
                          "Timestamp TIMESTAMP NOT NULL,"
                          "Title TEXT, Artist TEXT, AlbumArtist TEXT, Album TEXT, Comment TEXT, Genre TEXT, Composer TEXT,"
-                         "Year INTEGER, Track INTEGER, DiscNumber TEXT, Duration INTEGER, URL BLOB)");
+                         "Year INTEGER, Track INTEGER, DiscNumber TEXT, Duration INTEGER, URL BLOB)"_s);
 
     if(!ok)
         qWarning("History: unable to create table, error: %s", qPrintable(query.lastError().text()));
@@ -136,20 +136,20 @@ void History::saveTrack()
         return;
 
     QSqlQuery query(db);
-    query.prepare("INSERT INTO track_history VALUES(NULL, CURRENT_TIMESTAMP, :title, :artist, :albumartist, :album, :comment,"
-                  ":genre, :composer, :year, :track, :discnumber, :duration, :url);");
-    query.bindValue(":title", m_trackInfo.value(Qmmp::TITLE));
-    query.bindValue(":artist", m_trackInfo.value(Qmmp::ARTIST));
-    query.bindValue(":albumartist", m_trackInfo.value(Qmmp::ALBUMARTIST));
-    query.bindValue(":album", m_trackInfo.value(Qmmp::ALBUM));
-    query.bindValue(":comment", m_trackInfo.value(Qmmp::COMMENT));
-    query.bindValue(":genre", m_trackInfo.value(Qmmp::GENRE));
-    query.bindValue(":composer", m_trackInfo.value(Qmmp::COMPOSER));
-    query.bindValue(":year", m_trackInfo.value(Qmmp::YEAR));
-    query.bindValue(":track", m_trackInfo.value(Qmmp::TRACK));
-    query.bindValue(":discnumber", m_trackInfo.value(Qmmp::DISCNUMBER));
-    query.bindValue(":duration", m_trackInfo.duration());
-    query.bindValue(":url", m_trackInfo.path());
+    query.prepare(u"INSERT INTO track_history VALUES(NULL, CURRENT_TIMESTAMP, :title, :artist, :albumartist, :album, :comment,"
+                  ":genre, :composer, :year, :track, :discnumber, :duration, :url);"_s);
+    query.bindValue(u":title"_s, m_trackInfo.value(Qmmp::TITLE));
+    query.bindValue(u":artist"_s, m_trackInfo.value(Qmmp::ARTIST));
+    query.bindValue(u":albumartist"_s, m_trackInfo.value(Qmmp::ALBUMARTIST));
+    query.bindValue(u":album"_s, m_trackInfo.value(Qmmp::ALBUM));
+    query.bindValue(u":comment"_s, m_trackInfo.value(Qmmp::COMMENT));
+    query.bindValue(u":genre"_s, m_trackInfo.value(Qmmp::GENRE));
+    query.bindValue(u":composer"_s, m_trackInfo.value(Qmmp::COMPOSER));
+    query.bindValue(u":year"_s, m_trackInfo.value(Qmmp::YEAR));
+    query.bindValue(u":track"_s, m_trackInfo.value(Qmmp::TRACK));
+    query.bindValue(u":discnumber"_s, m_trackInfo.value(Qmmp::DISCNUMBER));
+    query.bindValue(u":duration"_s, m_trackInfo.duration());
+    query.bindValue(u":url"_s, m_trackInfo.path());
     bool ok = query.exec();
 
     if(!ok)

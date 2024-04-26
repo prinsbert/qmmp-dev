@@ -22,7 +22,7 @@
 #define PRESETEDITOR_H
 
 #include <QDialog>
-#include <QVariantMap>
+#include <QVariantHash>
 
 namespace Ui {
     class PresetEditor;
@@ -36,10 +36,10 @@ class PresetEditor : public QDialog
     Q_OBJECT
 
 public:
-    explicit PresetEditor(const QVariantMap &data, QWidget *parent = nullptr);
+    explicit PresetEditor(const QVariantHash &data, QWidget *parent = nullptr);
     virtual ~PresetEditor();
 
-    const QVariantMap data() const;
+    const QVariantHash data() const;
 
 private slots:
     void addCommandString(QAction *);

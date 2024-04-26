@@ -37,10 +37,9 @@ class QMMPUI_EXPORT ShortcutDialog : public QDialog
     Q_OBJECT
 public:
     explicit ShortcutDialog(const QString &key, QWidget *parent = nullptr);
+    virtual ~ShortcutDialog();
 
-    ~ShortcutDialog();
-
-    const QString key();
+    QString key() const;
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event) override;

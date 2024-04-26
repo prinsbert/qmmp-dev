@@ -17,24 +17,28 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef FILEOPSSETTINGSDIALOG_H
+#define FILEOPSSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+
+class QComboBox;
+class QTableWidgetItem;
+
+namespace Ui {
+class FileOpsSettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class QComboBox;
-
-class SettingsDialog : public QDialog
+class FileOpsSettingsDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit FileOpsSettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    ~FileOpsSettingsDialog();
 
 
 public slots:
@@ -48,13 +52,13 @@ private slots:
     void on_patternEdit_textChanged(QString pattern);
     void addTitleString(const QString &str);
     void on_destButton_clicked();
-    void on_tableWidget_itemDoubleClicked (QTableWidgetItem *item);
+    void on_tableWidget_itemDoubleClicked(QTableWidgetItem *item);
 
 private:
     void createMenus();
     QComboBox *createComboBox();
 
-    Ui::SettingsDialog m_ui;
+    Ui::FileOpsSettingsDialog *m_ui;
 
     enum DataTypeRole
     {

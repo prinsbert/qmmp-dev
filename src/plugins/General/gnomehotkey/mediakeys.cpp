@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2014-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -29,27 +29,22 @@
 #include <qmmp/soundcore.h>
 #include "mediakeys.h"
 
-MediaKeys::MediaKeys(QObject *parent) :
-    QObject(parent)
+MediaKeys::MediaKeys(QObject *parent) : QObject(parent)
 {
-    m_isRegistered = false;
-    m_interface = nullptr;
-    if(!QDBusConnection::sessionBus().interface()->isServiceRegistered("org.gnome.SettingsDaemon"))
+    if(!QDBusConnection::sessionBus().interface()->isServiceRegistered(u"org.gnome.SettingsDaemon"_s))
     {
         qWarning("MediaKeys: gnome settings daemon is not running");
         return;
     }
 
-    m_interface = new QDBusInterface("org.gnome.SettingsDaemon",
-                                     "/org/gnome/SettingsDaemon/MediaKeys",
-                                     "org.gnome.SettingsDaemon.MediaKeys",
+    m_interface = new QDBusInterface(u"org.gnome.SettingsDaemon"_s,
+                                     u"/org/gnome/SettingsDaemon/MediaKeys"_s,
+                                     u"org.gnome.SettingsDaemon.MediaKeys"_s,
                                      QDBusConnection::sessionBus(), this);
 
-    QDBusPendingReply<> reply = grabMediaPlayerKeys(QCoreApplication::applicationName(),
-                                                    QDateTime::currentDateTime().toSecsSinceEpoch());
-
-    QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(reply, this);
-    connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), SLOT(onRegisterFinished(QDBusPendingCallWatcher*)));
+    QDBusPendingReply<> reply = grabMediaPlayerKeys(QCoreApplication::applicationName(), QDateTime::currentDateTime().toSecsSinceEpoch());
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &MediaKeys::onRegisterFinished);
 }
 
 MediaKeys::~MediaKeys()
@@ -64,16 +59,14 @@ MediaKeys::~MediaKeys()
 
 QDBusPendingReply<> MediaKeys::grabMediaPlayerKeys(const QString &application, uint time)
 {
-    QVariantList argumentList;
-    argumentList << QVariant::fromValue(application) << QVariant::fromValue(time);
-    return m_interface->asyncCallWithArgumentList(QLatin1String("GrabMediaPlayerKeys"), argumentList);
+    QVariantList argumentList = { QVariant::fromValue(application), QVariant::fromValue(time) };
+    return m_interface->asyncCallWithArgumentList(u"GrabMediaPlayerKeys"_s, argumentList);
 }
 
 QDBusPendingReply<> MediaKeys::releaseMediaPlayerKeys(const QString &application)
 {
-    QVariantList argumentList;
-    argumentList << QVariant::fromValue(application);
-    return m_interface->asyncCallWithArgumentList(QLatin1String("ReleaseMediaPlayerKeys"), argumentList);
+    QVariantList argumentList = { QVariant::fromValue(application) };
+    return m_interface->asyncCallWithArgumentList(u"ReleaseMediaPlayerKeys"_s, argumentList);
 }
 
 void MediaKeys::onRegisterFinished(QDBusPendingCallWatcher *watcher)
@@ -81,16 +74,16 @@ void MediaKeys::onRegisterFinished(QDBusPendingCallWatcher *watcher)
     QDBusMessage reply = watcher->reply();
     watcher->deleteLater();
 
-    if (reply.type() == QDBusMessage::ErrorMessage)
+    if(reply.type() == QDBusMessage::ErrorMessage)
     {
         qWarning("MediaKeys: unable to grab media keys: [%s] - %s",
                  qPrintable(reply.errorName()), qPrintable(reply.errorMessage()));
         return;
     }
-    m_interface->connection().connect("org.gnome.SettingsDaemon",
-                                      "/org/gnome/SettingsDaemon/MediaKeys",
-                                      "org.gnome.SettingsDaemon.MediaKeys",
-                                      "MediaPlayerKeyPressed", this,
+    m_interface->connection().connect(u"org.gnome.SettingsDaemon"_s,
+                                      u"/org/gnome/SettingsDaemon/MediaKeys"_s,
+                                      u"org.gnome.SettingsDaemon.MediaKeys"_s,
+                                      u"MediaPlayerKeyPressed"_s, this,
                                       SLOT(onKeyPressed(QString,QString)));
     m_isRegistered = true;
     qDebug("MediaKeys: registered");
@@ -104,20 +97,20 @@ void MediaKeys::onKeyPressed(const QString &in0, const QString &in1)
     MediaPlayer *player = MediaPlayer::instance();
     SoundCore *core = SoundCore::instance();
     qDebug("MediaKeys: [%s] pressed", qPrintable(in1));
-    if(in1 == "Play")
+    if(in1 == "Play"_L1)
     {
         if (core->state() == Qmmp::Stopped)
             player->play();
         else if (core->state() != Qmmp::FatalError)
             core->pause();
     }
-    else if(in1 == "Pause")
+    else if(in1 == "Pause"_L1)
         core->pause();
-    else if(in1 == "Stop")
+    else if(in1 == "Stop"_L1)
         player->stop();
-    else if(in1 == "Previous")
+    else if(in1 == "Previous"_L1)
         player->previous();
-    else if(in1 == "Next")
+    else if(in1 == "Next"_L1)
         player->next();
     else
         qWarning("MediaKeys: unknown media key pressed");

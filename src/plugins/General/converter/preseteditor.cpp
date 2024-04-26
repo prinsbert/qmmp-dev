@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Ilya Kotov                                      *
+ *   Copyright (C) 2011-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,17 +22,19 @@
 #include "preseteditor.h"
 #include "ui_preseteditor.h"
 
-PresetEditor::PresetEditor(const QVariantMap &data, QWidget *parent) :
+using namespace Qt::Literals::StringLiterals;
+
+PresetEditor::PresetEditor(const QVariantHash &data, QWidget *parent) :
     QDialog(parent), m_ui(new Ui::PresetEditor)
 {
     m_ui->setupUi(this);
-    m_ui->nameLineEdit->setText(data.value("name").toString());
-    m_ui->extensionLineEdit->setText(data.value("ext").toString());
-    m_ui->commandLineEdit->setText(data.value("command").toString());
-    m_ui->us16bitCheckBox->setChecked(data.value("use_16bit").toBool());
-    m_ui->tagsCheckBox->setChecked(data.value("tags").toBool());
+    m_ui->nameLineEdit->setText(data.value(u"name"_s).toString());
+    m_ui->extensionLineEdit->setText(data.value(u"ext"_s).toString());
+    m_ui->commandLineEdit->setText(data.value(u"command"_s).toString());
+    m_ui->us16bitCheckBox->setChecked(data.value(u"use_16bit"_s).toBool());
+    m_ui->tagsCheckBox->setChecked(data.value(u"tags"_s).toBool());
 
-    if(data["read_only"].toBool())
+    if(data[u"read_only"_s].toBool())
     {
         setWindowTitle(tr("%1 (Read Only)").arg(windowTitle()));
         m_ui->buttonBox->setStandardButtons(QDialogButtonBox::Close);
@@ -52,27 +54,27 @@ PresetEditor::~PresetEditor()
     delete m_ui;
 }
 
-const QVariantMap PresetEditor::data() const
+const QVariantHash PresetEditor::data() const
 {
-    QVariantMap data;
-    data.insert("name", m_ui->nameLineEdit->text());
-    data.insert("ext", m_ui->extensionLineEdit->text());
-    data.insert("command", m_ui->commandLineEdit->text());
-    data.insert("use_16bit",  m_ui->us16bitCheckBox->isChecked());
-    data.insert("tags", m_ui->tagsCheckBox->isChecked());
-    data.insert("read_only", false);
+    QVariantHash data;
+    data.insert(u"name"_s, m_ui->nameLineEdit->text());
+    data.insert(u"ext"_s, m_ui->extensionLineEdit->text());
+    data.insert(u"command"_s, m_ui->commandLineEdit->text());
+    data.insert(u"use_16bit"_s,  m_ui->us16bitCheckBox->isChecked());
+    data.insert(u"tags"_s, m_ui->tagsCheckBox->isChecked());
+    data.insert(u"read_only"_s, false);
     return data;
 }
 
 void PresetEditor::createMenus()
 {
     QMenu *commandMenu = new QMenu(this);
-    commandMenu->addAction(tr("Output file"))->setData("%o");
-    commandMenu->addAction(tr("Input file"))->setData("%i");
+    commandMenu->addAction(tr("Output file"))->setData(u"%o"_s);
+    commandMenu->addAction(tr("Input file"))->setData(u"%i"_s);
 
     m_ui->commandToolButton->setMenu(commandMenu);
     m_ui->commandToolButton->setPopupMode(QToolButton::InstantPopup);
-    connect(commandMenu, SIGNAL(triggered(QAction*)), SLOT(addCommandString(QAction*)));
+    connect(commandMenu, &QMenu::triggered, this, &PresetEditor::addCommandString);
 }
 
 void PresetEditor::addCommandString(QAction *a)

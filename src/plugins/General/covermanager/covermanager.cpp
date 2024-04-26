@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -35,21 +35,21 @@ CoverManager::CoverManager(QObject *parent) : QObject(parent)
     m_action = new QAction(tr("Show Cover"), this);
     m_action->setShortcut(tr("Ctrl+M"));
     UiHelper::instance()->addAction(m_action, UiHelper::PLAYLIST_MENU);
-    connect (m_action, SIGNAL(triggered()), SLOT(showWindow()));
+    connect(m_action, &QAction::triggered, this, &CoverManager::showWindow);
 }
 
 void CoverManager::showWindow()
 {
-    QList <PlayListTrack *> tracks = MediaPlayer::instance()->playListManager()->selectedPlayList()->selectedTracks();
-    if (!tracks.isEmpty())
+    QList<PlayListTrack *> tracks = MediaPlayer::instance()->playListManager()->selectedPlayList()->selectedTracks();
+    if(!tracks.isEmpty())
     {
         CoverWidget *w = new CoverWidget(qApp->activeWindow ());
         QImage img = MetaDataManager::instance()->getCover(tracks.constFirst()->path());
         if(img.isNull())
-            img = QImage(":/cm_no_cover.png");
+            img = QImage(u":/cm_no_cover.png"_s);
         w->setImage(img);
-        MetaDataFormatter formatter("%p%if(%p&%t, - ,)%if(%t,%t,%f)");
-        w->setWindowTitle(formatter.format(tracks.at(0)));
+        MetaDataFormatter formatter(u"%p%if(%p&%t, - ,)%if(%t,%t,%f)"_s);
+        w->setWindowTitle(formatter.format(tracks.constFirst()));
         w->show();
     }
 }

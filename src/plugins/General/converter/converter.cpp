@@ -51,7 +51,7 @@ Converter::~Converter()
     }
 }
 
-bool Converter::prepare(const QString &url, int row, const QVariantMap &preset)
+bool Converter::prepare(const QString &url, int row, const QVariantHash &preset)
 {
     m_row = row;
     InputSource *source = InputSource::create(url, this);
@@ -75,21 +75,21 @@ bool Converter::prepare(const QString &url, int row, const QVariantMap &preset)
 
     DecoderFactory *factory = nullptr;
 
-    if(!source->path().contains("://"))
+    if(!source->path().contains(u"://"_s))
         factory = Decoder::findByFilePath(source->path());
     if(!factory)
         factory = Decoder::findByMime(source->contentType());
-    if(!factory && source->ioDevice() && source->path().contains("://")) //ignore content of local files
+    if(!factory && source->ioDevice() && source->path().contains(u"://"_s)) //ignore content of local files
         factory = Decoder::findByContent(source->ioDevice());
-    if(!factory && source->path().contains("://"))
-        factory = Decoder::findByProtocol(source->path().section("://",0,0));
+    if(!factory && source->path().contains(u"://"_s))
+        factory = Decoder::findByProtocol(source->path().section(u"://"_s, 0, 0));
     if(!factory)
     {
         qWarning("Converter: unsupported file format");
         source->deleteLater();
         return false;
     }
-    qDebug("Converter: selected decoder: %s",qPrintable(factory->properties().shortName));
+    qDebug("Converter: selected decoder: %s", qPrintable(factory->properties().shortName));
     if(factory->properties().noInput && source->ioDevice())
         source->ioDevice()->close();
     Decoder *decoder = factory->create(source->path(), source->ioDevice());
@@ -128,8 +128,8 @@ void Converter::run()
 
     AudioParameters ap = m_decoder->audioParameters();
     QString path = m_input->path();
-    QString out_path = m_preset["out_dir"].toString();
-    QString pattern = m_preset["file_name"].toString();
+    QString out_path = m_preset[u"out_dir"_s].toString();
+    QString pattern = m_preset[u"file_name"_s].toString();
 
     QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path);
 
@@ -147,14 +147,14 @@ void Converter::run()
 
 
     QString name = formatter.format(info);
-    name.remove("'");
-    name.remove("\"");
-    name.remove(":");
-    QString full_path = out_path + "/" + name + "." + m_preset["ext"].toString();
+    name.remove(QChar('\''));
+    name.remove(QChar('"'));
+    name.remove(QChar('/'));
+    QString full_path = out_path + QChar('/') + name + QChar('.') + m_preset[u"ext"_s].toString();
 
     if(QFile::exists(full_path))
     {
-        if(m_preset["overwrite"].toBool()) //remove previous file
+        if(m_preset[u"overwrite"_s].toBool()) //remove previous file
             QFile::remove(full_path);
         else
         {
@@ -162,18 +162,18 @@ void Converter::run()
             while(QFile::exists(full_path)) //create file with another name
             {
                 ++i;
-                full_path = out_path + "/" + name + QString("_%1.").arg(i) + m_preset["ext"].toString();
+                full_path = out_path + QChar('/') + name + QStringLiteral("_%1.").arg(i) + m_preset[u"ext"_s].toString();
             }
         }
     }
 
-    QString command = m_preset["command"].toString();
-    command.replace("%o", "\"" + full_path + "\"");
-    QString tmp_path = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/tmp.wav";
+    QString command = m_preset[u"command"_s].toString();
+    command.replace(u"%o"_s, QChar('"') + full_path + QChar('"'));
+    QString tmp_path = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + u"/tmp.wav"_s;
     bool use_file = command.contains("%i");
-    command.replace("%i", "\"" + tmp_path + "\"");
+    command.replace(u"%i"_s, QChar('"') + tmp_path + QChar('"'));
 
-    qDebug("Converter: starting task '%s'", qPrintable(m_preset["name"].toString()));
+    qDebug("Converter: starting task '%s'", qPrintable(m_preset[u"name"_s].toString()));
     emit message(m_row, tr("Converting"));
 
     char wave_header[] = { 0x52, 0x49, 0x46, 0x46, //"RIFF"
@@ -188,7 +188,7 @@ void Converter::run()
                            0x64, 0x61, 0x74, 0x61, //"data"
                            0x00, 0x00, 0x00, 0x00 }; //chunk size*/
 
-    quint16 sample_size = m_preset["use_16bit"].toBool() ? 2 : ap.sampleSize();
+    quint16 sample_size = m_preset[u"use_16bit"_s].toBool() ? 2 : ap.sampleSize();
     quint32 sample_rate = qToLittleEndian(ap.sampleRate());
     quint16 channels = qToLittleEndian((quint16)ap.channels());
     quint16 block_align = qToLittleEndian((quint16)sample_size * ap.channels());
@@ -223,13 +223,13 @@ void Converter::run()
     m_mutex.lock();
     if(m_user_stop)
     {
-        qDebug("Converter: task '%s' aborted", qPrintable(m_preset["name"].toString()));
+        qDebug("Converter: task '%s' aborted", qPrintable(m_preset[u"name"_s].toString()));
         emit message(m_row, tr("Cancelled"));
         m_mutex.unlock();
         return;
     }
 
-    qDebug("Converter: task '%s' finished with success", qPrintable(m_preset["name"].toString()));
+    qDebug("Converter: task '%s' finished with success", qPrintable(m_preset[u"name"_s].toString()));
     m_mutex.unlock();
 
     if(use_file)
@@ -262,7 +262,7 @@ void Converter::run()
             file.tag()->setYear(info.value(Qmmp::YEAR).toUInt());
             file.tag()->setTrack(info.value(Qmmp::TRACK).toUInt());
 
-            if(full_path.endsWith(".mp3", Qt::CaseInsensitive))
+            if(full_path.endsWith(u".mp3"_s, Qt::CaseInsensitive))
             {
                 TagLib::MPEG::File *mpeg_file = dynamic_cast <TagLib::MPEG::File *> (file.file());
                 mpeg_file->save(TagLib::MPEG::File::ID3v2, TagLib::File::StripOthers);

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,7 +18,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "covermanager.h"
@@ -28,7 +27,7 @@ GeneralProperties CoverManagerFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Cover Manager Plugin");
-    properties.shortName = "cover_manager";
+    properties.shortName = "cover_manager"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.visibilityControl = false;
@@ -47,9 +46,9 @@ QDialog *CoverManagerFactory::createConfigDialog(QWidget *)
 
 void CoverManagerFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Cover Manager Plugin"),
-                        tr("Qmmp Cover Manager Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Cover Manager Plugin"),
+                       tr("Qmmp Cover Manager Plugin")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString CoverManagerFactory::translation() const

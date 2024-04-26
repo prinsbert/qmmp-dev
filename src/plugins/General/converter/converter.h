@@ -25,7 +25,7 @@
 #include <QObject>
 #include <QQueue>
 #include <QHash>
-#include <QVariantMap>
+#include <QVariantHash>
 #include <QMutex>
 #include <stdio.h>
 #include <qmmp/decoder.h>
@@ -41,7 +41,7 @@ public:
     explicit Converter(QObject *parent = nullptr);
     virtual ~Converter();
 
-    bool prepare(const QString &url, int row, const QVariantMap &preset);
+    bool prepare(const QString &url, int row, const QVariantHash &preset);
 
 public slots:
     void stop();
@@ -56,7 +56,7 @@ private:
     bool convert(Decoder *decoder, FILE *file, bool use16bit);
     Decoder *m_decoder = nullptr;
     InputSource *m_input = nullptr;
-    QVariantMap m_preset;
+    QVariantHash m_preset;
     QMutex m_mutex;
     bool m_user_stop = false;
     int m_row = - 1;

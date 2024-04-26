@@ -31,7 +31,7 @@ void ProgressBarItemDelegate::paint(QPainter *painter,
                               const QStyleOptionViewItem &option,
                               const QModelIndex &index) const
 {
-    if (hasProgressBar(index))
+    if(hasProgressBar(index))
     {
         QStyleOptionViewItem opt = option;
 
@@ -60,7 +60,7 @@ void ProgressBarItemDelegate::paint(QPainter *painter,
 QSize ProgressBarItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QSize size = QStyledItemDelegate::sizeHint(option, index);
-    if (hasProgressBar(index))
+    if(hasProgressBar(index))
     {
         int buttonHeight = qApp->style()->pixelMetric(QStyle::PM_ExclusiveIndicatorHeight, &option);
         size.setHeight(qMax(size.height(), buttonHeight));

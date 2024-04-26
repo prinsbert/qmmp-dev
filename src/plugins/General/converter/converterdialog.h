@@ -24,11 +24,14 @@
 #include <QDialog>
 #include <QStringList>
 #include <QCloseEvent>
-#include "ui_converterdialog.h"
 
 class PlayListTrack;
 class ConverterPreset;
 class Converter;
+
+namespace Ui {
+class ConverterDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -47,7 +50,7 @@ private slots:
     void on_dirButton_clicked();
     void on_convertButton_clicked();
     void on_stopButton_clicked();
-    void onStateChanged(int row, QString message);
+    void onStateChanged(int row, const QString &message);
     void onConvertFinished(Converter *c);
     void addTitleString(const QString &str);
     void createPreset();
@@ -59,12 +62,12 @@ private:
     void createMenus();
     void readPresets(const QString &path);
     void savePresets();
-    QVariantMap preset() const;
+    QVariantHash preset() const;
     QString uniqueName(const QString &name);
-    bool checkPreset(const QVariantMap &preset);
+    bool checkPreset(const QVariantHash &preset);
 
-    Ui::ConverterDialog m_ui;
-    QList <Converter *> m_converters;
+    Ui::ConverterDialog *m_ui;
+    QList<Converter *> m_converters;
 
 };
 

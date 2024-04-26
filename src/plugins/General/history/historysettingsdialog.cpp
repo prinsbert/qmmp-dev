@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,12 +30,12 @@ HistorySettingsDialog::HistorySettingsDialog(QWidget *parent) :
 {
     m_ui->setupUi(this);
     QSettings settings;
-    m_ui->titleLineEdit->setText(settings.value("History/title_format", "%if(%p,%p - %t,%t)").toString());
+    m_ui->titleLineEdit->setText(settings.value(u"History/title_format"_s, u"%if(%p,%p - %t,%t)"_s).toString());
 
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui->titleButton->setMenu(menu);
     m_ui->titleButton->setPopupMode(QToolButton::InstantPopup);
-    connect(menu, SIGNAL(patternSelected(QString)), SLOT(addTitleString(QString)));
+    connect(menu, &MetaDataFormatterMenu::patternSelected, this, &HistorySettingsDialog::addTitleString);
 }
 
 HistorySettingsDialog::~HistorySettingsDialog()
@@ -46,7 +46,7 @@ HistorySettingsDialog::~HistorySettingsDialog()
 void HistorySettingsDialog::accept()
 {
     QSettings settings;
-    settings.setValue("History/title_format", m_ui->titleLineEdit->text());
+    settings.setValue(u"History/title_format"_s, m_ui->titleLineEdit->text());
     QDialog::accept();
 }
 
