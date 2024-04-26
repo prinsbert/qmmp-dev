@@ -24,7 +24,7 @@
 #include "srconverter.h"
 #include "effectsrconverterfactory.h"
 
-const EffectProperties EffectSRConverterFactory::properties() const
+EffectProperties EffectSRConverterFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("SRC Plugin");
