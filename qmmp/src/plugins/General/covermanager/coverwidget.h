@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -35,8 +35,7 @@ class CoverWidget : public QWidget
 Q_OBJECT
 public:
     CoverWidget(QWidget *parent = nullptr);
-
-    ~CoverWidget();
+    ~CoverWidget() = default;
 
     virtual void setImage(const QImage &img);
 

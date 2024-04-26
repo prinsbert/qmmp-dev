@@ -45,9 +45,9 @@ CopyPaste::CopyPaste(QObject *parent) : QObject(parent)
     QAction *pasteAction = new QAction(tr("&Paste"), this);
     pasteAction->setShortcut(tr("Ctrl+V"));
     //register all actions
-    connect(cutAction, SIGNAL(triggered()), SLOT(cut()));
-    connect(copyAction, SIGNAL(triggered()), SLOT(copy()));
-    connect(pasteAction, SIGNAL(triggered()), SLOT(paste()));
+    connect(cutAction, &QAction::triggered, this, &CopyPaste::cut);
+    connect(copyAction, &QAction::triggered, this, &CopyPaste::copy);
+    connect(pasteAction, &QAction::triggered, this, &CopyPaste::paste);
     UiHelper::instance()->addAction(cutAction, UiHelper::PLAYLIST_MENU);
     UiHelper::instance()->addAction(copyAction, UiHelper::PLAYLIST_MENU);
     UiHelper::instance()->addAction(pasteAction, UiHelper::PLAYLIST_MENU);

@@ -27,7 +27,7 @@
 #include <qmmp/trackinfo.h>
 #include <qmmp/qmmp.h>
 
-#define CONNECTION_NAME "qmmp_history"
+#define CONNECTION_NAME u"qmmp_history"_s
 
 class SoundCore;
 class HistoryWindow;

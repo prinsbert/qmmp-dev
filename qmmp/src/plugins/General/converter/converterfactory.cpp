@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011 by Ilya Kotov                                      *
+ *   Copyright (C) 2011-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,7 +26,7 @@ GeneralProperties ConverterFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Converter Plugin");
-    properties.shortName = "converter";
+    properties.shortName = "converter"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.visibilityControl = false;
@@ -46,11 +46,11 @@ QDialog *ConverterFactory::createConfigDialog(QWidget *parent)
 
 void ConverterFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Converter Plugin"),
-                        tr("Qmmp Converter Plugin")+"\n"+
-                        tr("This plugin converts supported audio files to other file formats "
-                           "using external command-line encoders") +"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Converter Plugin"),
+                       tr("Qmmp Converter Plugin")+"\n"+
+                       tr("This plugin converts supported audio files to other file formats "
+                          "using external command-line encoders") +"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString ConverterFactory::translation() const

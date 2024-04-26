@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2014 by Ilya Kotov                                      *
+ *   Copyright (C) 2014-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,7 +27,7 @@ GeneralProperties GnomeHotkeyFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Gnome Hotkey Plugin");
-    properties.shortName = "gnomehotkey";
+    properties.shortName = "gnomehotkey"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.visibilityControl = false;
@@ -47,10 +47,10 @@ QDialog *GnomeHotkeyFactory::createConfigDialog(QWidget *parent)
 
 void GnomeHotkeyFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Gnome Hotkey Plugin"),
-                        tr("Qmmp Gnome Hotkey Plugin") + "\n" +
-                        tr("This plugin adds support of the GNOME/Cinnamon hotkeys") + "\n" +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Gnome Hotkey Plugin"),
+                       tr("Qmmp Gnome Hotkey Plugin") + "\n" +
+                       tr("This plugin adds support of the GNOME/Cinnamon hotkeys") + "\n" +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString GnomeHotkeyFactory::translation() const

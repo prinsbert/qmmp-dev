@@ -35,6 +35,7 @@ ShortcutDialog::ShortcutDialog(const QString &key, QWidget *parent)
 
 ShortcutDialog::~ShortcutDialog()
 {
+    delete m_ui;
 }
 
 void ShortcutDialog::keyPressEvent(QKeyEvent *event)
@@ -61,7 +62,7 @@ void ShortcutDialog::keyPressEvent(QKeyEvent *event)
     QWidget::keyPressEvent(event);
 }
 
-const QString ShortcutDialog::key()
+QString ShortcutDialog::key() const
 {
     return m_ui->keyLineEdit->text();
 }

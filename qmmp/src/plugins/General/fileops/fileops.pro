@@ -4,16 +4,14 @@ TARGET = $$PLUGINS_PREFIX/General/fileops
 
 HEADERS += fileopsfactory.h \
            fileops.h \
-           settingsdialog.h \
-           hotkeydialog.h
+           fileopssettingsdialog.h
 
 SOURCES += fileopsfactory.cpp \
            fileops.cpp \
-           settingsdialog.cpp \
-           hotkeydialog.cpp
+           fileopssettingsdialog.cpp
 
-FORMS += settingsdialog.ui \
-         hotkeydialog.ui
+FORMS += \
+         fileopssettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

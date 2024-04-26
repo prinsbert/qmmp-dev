@@ -33,7 +33,7 @@ ConverterHelper::ConverterHelper(QObject *parent) : QObject(parent)
     m_action = new QAction(tr("Convert"), this);
     m_action->setShortcut(tr("Meta+C"));
     UiHelper::instance()->addAction(m_action, UiHelper::PLAYLIST_MENU);
-    connect (m_action, SIGNAL(triggered()), SLOT(openConverter()));
+    connect(m_action, &QAction::triggered, this, &ConverterHelper::openConverter);
 
 }
 
@@ -44,9 +44,9 @@ void ConverterHelper::openConverter()
 {
     PlayListManager *pl_manager = MediaPlayer::instance()->playListManager();
     QList <PlayListTrack *> tracks = pl_manager->selectedPlayList()->selectedTracks();
-    if (tracks.isEmpty())
+    if(tracks.isEmpty())
         return;
 
-    ConverterDialog d(tracks, qApp->activeWindow ());
+    ConverterDialog d(tracks, qApp->activeWindow());
     d.exec();
 }

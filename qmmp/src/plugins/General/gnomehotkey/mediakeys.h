@@ -43,8 +43,8 @@ private slots:
     void onKeyPressed(const QString &in0, const QString &in1);
 
 private:
-    QDBusInterface *m_interface;
-    bool m_isRegistered;
+    QDBusInterface *m_interface = nullptr;
+    bool m_isRegistered = false;
 
 
 };
