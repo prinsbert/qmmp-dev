@@ -48,9 +48,9 @@ QStringList TwoPanelFileDialog::exec(QWidget *parent, const QString &dir, FileDi
 {
     TwoPanelFileDialogImpl *dialog = new TwoPanelFileDialogImpl(parent);
     dialog->setWindowTitle(caption);
-    dialog->setModeAndMask(dir, mode, filter.split(";;", Qt::SkipEmptyParts));
+    dialog->setModeAndMask(dir, mode, filter.split(u";;"_s, Qt::SkipEmptyParts));
     QStringList l;
-    if (dialog->exec() == QDialog::Accepted)
+    if(dialog->exec() == QDialog::Accepted)
         l = dialog->selectedFiles();
     dialog->deleteLater();
     return l;
@@ -65,7 +65,7 @@ FileDialogProperties TwoPanelFileDialogFactory::properties() const
 {
     FileDialogProperties properties;
     properties.name = tr("Two-panel File Dialog");
-    properties.shortName = "twopanel_dialog";
+    properties.shortName = "twopanel_dialog"_L1;
     properties.hasAbout = true;
     properties.modal = false;
     return properties;
@@ -73,10 +73,10 @@ FileDialogProperties TwoPanelFileDialogFactory::properties() const
 
 void TwoPanelFileDialogFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Two-panel File Dialog"),
-                        tr("Two-panel File Dialog") + "\n" +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + "\n" +
-                        tr("Based on code from the Qt library"));
+    QMessageBox::about(parent, tr("About Two-panel File Dialog"),
+                       tr("Two-panel File Dialog") + "\n" +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + "\n" +
+                       tr("Based on code from the Qt library"));
 }
 
 QString TwoPanelFileDialogFactory::translation() const

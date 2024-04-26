@@ -21,12 +21,17 @@
 #ifndef TWOPANELFILEDIALOGIMPL_H
 #define TWOPANELFILEDIALOGIMPL_H
 
-#include "ui_twopanelfiledialog.h"
 #include <QDialog>
 #include <QCompleter>
 #include <QAbstractItemView>
 #include <qmmpui/filedialog.h>
 #include <QFileSystemModel>
+
+class QListWidgetItem;
+
+namespace Ui {
+class TwoPanelFileDialog;
+}
 
 /*!
  *  @author Ilya Kotov <forkotov02@ya.ru>
@@ -39,32 +44,32 @@ public:
 
     ~TwoPanelFileDialogImpl();
 
-    void setModeAndMask(const QString &path, FileDialog::Mode m, const QStringList& mask);
+    void setModeAndMask(const QString &path, FileDialog::Mode m, const QStringList &mask);
     QStringList selectedFiles() const;
 
 signals:
     void filesSelected(const QStringList &selected, bool play);
 
 private slots:
-    void updateDirSelection(const QItemSelection&s, const QItemSelection&);
+    void updateDirSelection(const QItemSelection &sel, const QItemSelection &);
     void updateFileSelection();
-    void on_dirListView_doubleClicked(const QModelIndex&ind);
-    void on_lookInComboBox_activated(const QString&);
+    void on_dirListView_doubleClicked(const QModelIndex &index);
+    void on_lookInComboBox_activated(const QString &);
     void on_fileListWidget_itemDoubleClicked(QListWidgetItem *item);
-    void on_fileNameLineEdit_textChanged (const QString &text);
+    void on_fileNameLineEdit_textChanged(const QString &text);
     void on_addButton_clicked();
     void on_playButton_clicked();
     void on_fileTypeComboBox_activated(int);
 
 private:
     void updateFileList(const QString &path);
-    void hideEvent (QHideEvent *event) override;
+    void hideEvent(QHideEvent *event) override;
     void addToHistory(const QString &path);
     void addFiles(const QStringList &list, bool play);
 
-    int m_mode;
-    QFileSystemModel* m_dirModel;
-    Ui::TwoPanelFileDialog m_ui;
+    FileDialog::Mode m_mode = FileDialog::SaveFile;
+    QFileSystemModel *m_dirModel;
+    Ui::TwoPanelFileDialog *m_ui;
     QStringList m_history;
     QStringList m_filters;
 };
@@ -78,7 +83,7 @@ public:
         m_itemView = itemView;
     }
 
-    QString pathFromIndex(const QModelIndex &index) const override
+    inline QString pathFromIndex(const QModelIndex &index) const override
     {
         const QFileSystemModel *fileModel = static_cast<const QFileSystemModel *>(model());
         QString currentLocation = fileModel->filePath(m_itemView->rootIndex());
@@ -91,7 +96,7 @@ public:
     }
 
 
-    QStringList splitPath(const QString &path) const override
+    inline QStringList splitPath(const QString &path) const override
     {
         if (path.isEmpty())
             return QStringList(completionPrefix());

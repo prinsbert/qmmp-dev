@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2008-2016 by Ilya Kotov                                 *
+*   Copyright (C) 2008-2024 by Ilya Kotov                                 *
 *   forkotov02@ya.ru                                                      *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -50,14 +50,11 @@ Q_OBJECT
 Q_PLUGIN_METADATA(IID "org.qmmp.qmmpui.FileDialogFactoryInterface.1.0")
 Q_INTERFACES(FileDialogFactory)
 public:
-    virtual FileDialog* create() override;
-    virtual FileDialogProperties properties() const override;
-    virtual void showAbout(QWidget*) override;
-    virtual QString translation() const override;
-    virtual ~QmmpFileDialogFactory()
-    {
-        ;
-    }
+    FileDialog *create() override;
+    FileDialogProperties properties() const override;
+    void showAbout(QWidget *parent) override;
+    QString translation() const override;
+    ~QmmpFileDialogFactory() = default;
 };
 
 
