@@ -306,7 +306,7 @@ void QmmpFileDialogImpl::loadMountedVolumes()
     m_ui->mountPointsListWidget->clear();
     for(const QStorageInfo &i : QStorageInfo::mountedVolumes())
     {
-        if(i.fileSystemType() == "tmpfs"_L1)
+        if(i.fileSystemType() == "tmpfs"_ba)
             continue;
         QString name = i.displayName();
         name.replace(u"\\x20"_s, u" "_s);
