@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2016 by Ilya Kotov                                      *
+*   Copyright (C) 2016-2024 by Ilya Kotov                                 *
 *   forkotov02@ya.ru                                                      *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -48,18 +48,15 @@ private:
     TwoPanelFileDialogImpl *m_dialog;
 };
 
-
-
-
 class TwoPanelFileDialogFactory : public QObject, public FileDialogFactory
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qmmp.qmmpui.FileDialogFactoryInterface.1.0")
     Q_INTERFACES(FileDialogFactory)
 public:
-    FileDialog* create() override;
+    FileDialog *create() override;
     FileDialogProperties properties() const override;
-    void showAbout(QWidget*) override;
+    void showAbout(QWidget *parent) override;
     QString translation() const override;
 };
 

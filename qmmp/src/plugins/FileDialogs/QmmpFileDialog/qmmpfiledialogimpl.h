@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2008-2012 by Ilya Kotov                                 *
+*   Copyright (C) 2008-2024 by Ilya Kotov                                 *
 *   forkotov02@ya.ru                                                      *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -21,15 +21,19 @@
 #ifndef QMMPFILEDIALOGIMPL_H
 #define QMMPFILEDIALOGIMPL_H
 
-#include "ui_qmmpfiledialog.h"
 #include <QDialog>
 #include <QCompleter>
 #include <QAbstractItemView>
 #include <qmmpui/filedialog.h>
 #include <QFileSystemModel>
 
+class QListWidgetItem;
 
-class QmmpFileDialogImpl : public QDialog , private Ui::QmmpFileDialog
+namespace Ui {
+class QmmpFileDialog;
+}
+
+class QmmpFileDialogImpl : public QDialog
 {
     Q_OBJECT
 public:
@@ -37,39 +41,36 @@ public:
 
     ~QmmpFileDialogImpl();
 
-    void setModeAndMask(const QString&,FileDialog::Mode m, const QStringList& mask = QStringList());
+    void setModeAndMask(const QString &d, FileDialog::Mode m, const QStringList &mask = QStringList());
     void loadMountedVolumes();
-    QStringList selectedFiles ();
-
-protected slots:
-    void on_mountPointsListWidget_itemClicked(QListWidgetItem *item);
-    void on_lookInComboBox_textActivated(const QString&);
-    void on_upToolButton_clicked();
-    void on_fileListView_doubleClicked(const QModelIndex&);
-    void on_treeView_doubleClicked(const QModelIndex&);
-    void on_fileNameLineEdit_returnPressed();
-    void on_fileNameLineEdit_textChanged (const QString &text);
-    void on_addPushButton_clicked();
-    void on_listToolButton_toggled(bool);
-    void on_detailsToolButton_toggled(bool);
-    void on_fileTypeComboBox_activated(int);
+    QStringList selectedFiles() const;
 
 signals:
     void filesSelected(const QStringList&, bool play = false);
 
-protected:
-    virtual void hideEvent (QHideEvent *event) override;
-
 private slots:
-    void updateSelection ();
+    void on_mountPointsListWidget_itemClicked(QListWidgetItem *item);
+    void on_lookInComboBox_textActivated(const QString &path);
+    void on_upToolButton_clicked();
+    void on_fileListView_doubleClicked(const QModelIndex &index);
+    void on_treeView_doubleClicked(const QModelIndex &index);
+    void on_fileNameLineEdit_returnPressed();
+    void on_fileNameLineEdit_textChanged(const QString &text);
+    void on_addPushButton_clicked();
+    void on_listToolButton_toggled(bool);
+    void on_detailsToolButton_toggled(bool);
+    void on_fileTypeComboBox_activated(int);
+    void updateSelection();
 
 private:
-    int m_mode;
-    QFileSystemModel* m_model;
+    void hideEvent(QHideEvent *event) override;
     void addToHistory(const QString &path);
     void addFiles(const QStringList &list);
-    QStringList m_history;
 
+    Ui::QmmpFileDialog *m_ui;
+    FileDialog::Mode m_mode = FileDialog::AddFiles;
+    QFileSystemModel *m_model;
+    QStringList m_history;
 };
 
 class PathCompleter : public QCompleter
@@ -82,7 +83,7 @@ public:
     }
 
 
-    QString pathFromIndex(const QModelIndex &index) const override
+    inline QString pathFromIndex(const QModelIndex &index) const override
     {
         const QFileSystemModel *dirModel = static_cast<const QFileSystemModel *>(model());
         QString currentLocation = dirModel->filePath(m_itemView->rootIndex());
@@ -95,7 +96,7 @@ public:
     }
 
 
-    QStringList splitPath(const QString &path) const override
+    inline QStringList splitPath(const QString &path) const override
     {
         if (path.isEmpty())
             return QStringList(completionPrefix());

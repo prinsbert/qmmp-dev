@@ -27,7 +27,7 @@
 QmmpFileDialog::QmmpFileDialog()
 {
     m_dialog = new QmmpFileDialogImpl();
-    connect(m_dialog,SIGNAL(filesSelected(QStringList,bool)),SIGNAL(filesSelected(QStringList,bool)));
+    connect(m_dialog, &QmmpFileDialogImpl::filesSelected, this, &QmmpFileDialog::filesSelected);
 }
 
 QmmpFileDialog::~QmmpFileDialog()
@@ -50,7 +50,7 @@ QStringList QmmpFileDialog::exec(QWidget *parent, const QString &dir, FileDialog
 {
     QmmpFileDialogImpl *dialog = new QmmpFileDialogImpl(parent);
     dialog->setWindowTitle(caption);
-    dialog->setModeAndMask(dir, mode, filter.split(";;", Qt::SkipEmptyParts));
+    dialog->setModeAndMask(dir, mode, filter.split(u";;"_s, Qt::SkipEmptyParts));
     QStringList l;
     if (dialog->exec() == QDialog::Accepted)
         l = dialog->selectedFiles();
@@ -67,7 +67,7 @@ FileDialogProperties QmmpFileDialogFactory::properties() const
 {
     FileDialogProperties properties;
     properties.name = tr("Qmmp File Dialog");
-    properties.shortName = "qmmp_dialog";
+    properties.shortName = "qmmp_dialog"_L1;
     properties.hasAbout = true;
     properties.modal = false;
     return properties;
@@ -75,12 +75,12 @@ FileDialogProperties QmmpFileDialogFactory::properties() const
 
 void QmmpFileDialogFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Qmmp File Dialog"),
-                        tr("Qmmp File Dialog")+"\n"+
-                        tr("Written by:\n"
-                           "Vladimir Kuznetsov <vovanec@gmail.com>\n"
-                           "Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Some code is copied from the Qt library"));
+    QMessageBox::about(parent, tr("About Qmmp File Dialog"),
+                       tr("Qmmp File Dialog") + QChar::LineFeed +
+                       tr("Written by:\n"
+                          "Vladimir Kuznetsov <vovanec@gmail.com>\n"
+                          "Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                       tr("Some code is copied from the Qt library"));
 
 }
 

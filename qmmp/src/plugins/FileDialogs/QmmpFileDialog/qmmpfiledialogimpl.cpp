@@ -18,7 +18,6 @@
 *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
 ***************************************************************************/
 
-#include "qmmpfiledialogimpl.h"
 #include <QApplication>
 #include <QFileInfo>
 #include <QStyle>
@@ -28,94 +27,86 @@
 #include <QStorageInfo>
 #include <QRegularExpression>
 #include <qmmp/qmmp.h>
+#include "ui_qmmpfiledialog.h"
+#include "qmmpfiledialogimpl.h"
 
 #define HISTORY_SIZE 8
-
-
-/**
- *   This variable has been copied from Qt library
- */
-
-const char *qt_file_dialog_filter_reg_exp =
-    "([a-zA-Z0-9 -]*)\\(([a-zA-Z0-9_.*? +;#\\-\\[\\]@\\{\\}/!<>\\$%&=^~:\\|]*)\\)$";
-
-/**
- *   This function has been copied from Qt library
- */
 
 // Makes a list of filters from a normal filter string "Image Files (*.png *.jpg)"
 static QStringList qt_clean_filter_list(const QString &filter)
 {
-    QRegularExpression regexp(QString::fromLatin1(qt_file_dialog_filter_reg_exp));
+    //This regular expression has been copied from Qt library
+    static const QRegularExpression regexp(u"([a-zA-Z0-9 -]*)\\(([a-zA-Z0-9_.*? +;#\\-\\[\\]@\\{\\}/!<>\\$%&=^~:\\|]*)\\)$"_s);
     QString f = filter;
     QRegularExpressionMatch match = regexp.match(f);
-    if (match.hasMatch())
+    if(match.hasMatch())
         f = match.captured(2);
-    return f.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+    return f.split(QChar::Space, Qt::SkipEmptyParts);
 }
 
-QmmpFileDialogImpl::QmmpFileDialogImpl(QWidget * parent, Qt::WindowFlags f) : QDialog(parent,f)
+QmmpFileDialogImpl::QmmpFileDialogImpl(QWidget *parent, Qt::WindowFlags f) : QDialog(parent, f),
+    m_ui(new Ui::QmmpFileDialog)
 {
-    setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_QuitOnClose, false);
     m_model = new QFileSystemModel(this);
-    m_model->setNameFilterDisables (false);
+    m_model->setNameFilterDisables(false);
     m_model->setReadOnly(true);
 
-    fileListView->setModel(m_model);
-    treeView->setModel(m_model);
-    treeView->setSortingEnabled(true);
-    treeView->setItemsExpandable(false);
-    treeView->header()->setSortIndicator(0, Qt::AscendingOrder);
-    treeView->header()->setStretchLastSection (false);
-    listToolButton->setChecked(true);
-    upToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_ArrowUp));
-    listToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_FileDialogListView));
-    closeOnAddToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogOkButton));
-    detailsToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_FileDialogDetailedView));
-    connect(fileListView->selectionModel(),
-            SIGNAL(selectionChanged(QItemSelection,QItemSelection)), SLOT(updateSelection()));
-    connect(treeView->selectionModel(),
-            SIGNAL(selectionChanged(QItemSelection,QItemSelection)), SLOT(updateSelection()));
-    PathCompleter* completer = new PathCompleter(m_model, fileListView, this);
-    fileNameLineEdit->setCompleter (completer);
+    m_ui->fileListView->setModel(m_model);
+    m_ui->treeView->setModel(m_model);
+    m_ui->treeView->setSortingEnabled(true);
+    m_ui->treeView->setItemsExpandable(false);
+    m_ui->treeView->header()->setSortIndicator(0, Qt::AscendingOrder);
+    m_ui->treeView->header()->setStretchLastSection (false);
+    m_ui->listToolButton->setChecked(true);
+    m_ui->upToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_ArrowUp));
+    m_ui->listToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_FileDialogListView));
+    m_ui->closeOnAddToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogOkButton));
+    m_ui->detailsToolButton->setIcon(qApp->style()->standardIcon(QStyle::SP_FileDialogDetailedView));
+    connect(m_ui->fileListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &QmmpFileDialogImpl::updateSelection);
+    connect(m_ui->treeView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &QmmpFileDialogImpl::updateSelection);
+    PathCompleter* completer = new PathCompleter(m_model, m_ui->fileListView, this);
+    m_ui->fileNameLineEdit->setCompleter(completer);
+
     QSettings settings;
-    closeOnAddToolButton->setChecked(settings.value("QMMPFileDialog/close_on_add", false).toBool());
-    restoreGeometry(settings.value("QMMPFileDialog/geometry").toByteArray());
-    m_history = settings.value("QMMPFileDialog/history").toStringList();
-    lookInComboBox->addItems(m_history);
-    lookInComboBox->setMaxCount(HISTORY_SIZE);
+    m_ui->closeOnAddToolButton->setChecked(settings.value(u"QMMPFileDialog/close_on_add"_s, false).toBool());
+    restoreGeometry(settings.value(u"QMMPFileDialog/geometry"_s).toByteArray());
+    m_history = settings.value(u"QMMPFileDialog/history"_s).toStringList();
+    m_ui->lookInComboBox->addItems(m_history);
+    m_ui->lookInComboBox->setMaxCount(HISTORY_SIZE);
     QCompleter* dir_completer = new QCompleter (m_model, this);
-    lookInComboBox->setCompleter (dir_completer);
+    m_ui->lookInComboBox->setCompleter(dir_completer);
 
     if(qApp->style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons, nullptr, this))
     {
-        addPushButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogOpenButton));
-        closePushButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogCloseButton));
+        m_ui->addPushButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogOpenButton));
+        m_ui->closePushButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogCloseButton));
     }
 
-    splitter->setStretchFactor(0, 0);
-    splitter->setStretchFactor(1, 10);
-    splitter->setSizes(QList<int>() << 150 << width() - 150);
-    splitter->restoreState(settings.value("QMMPFileDialog/splitter_state").toByteArray());
+    m_ui->splitter->setStretchFactor(0, 0);
+    m_ui->splitter->setStretchFactor(1, 10);
+    m_ui->splitter->setSizes(QList<int>{ 150, width() - 150 });
+    m_ui->splitter->restoreState(settings.value(u"QMMPFileDialog/splitter_state"_s).toByteArray());
 }
 
 QmmpFileDialogImpl::~QmmpFileDialogImpl()
 {
+    delete m_ui;
 }
 
-QStringList QmmpFileDialogImpl::selectedFiles ()
+QStringList QmmpFileDialogImpl::selectedFiles() const
 {
     QStringList l;
-    if (m_mode == FileDialog::SaveFile)
+    if(m_mode == FileDialog::SaveFile)
     {
-        l << m_model->filePath(fileListView->rootIndex()) + "/" + fileNameLineEdit->text();
+        l << m_model->filePath(m_ui->fileListView->rootIndex()) + QChar('/') + m_ui->fileNameLineEdit->text();
         qDebug("%s",qPrintable(l[0]));
     }
     else
     {
-        const QModelIndexList ml = fileListView->selectionModel()->selectedIndexes();
-        for(const QModelIndex &i : ml)
+        const QModelIndexList ml = m_ui->fileListView->selectionModel()->selectedIndexes();
+        for(const QModelIndex &i : qAsConst(ml))
             l << m_model->filePath(i);
     }
     return l;
@@ -123,16 +114,16 @@ QStringList QmmpFileDialogImpl::selectedFiles ()
 
 void QmmpFileDialogImpl::on_mountPointsListWidget_itemClicked(QListWidgetItem *item)
 {
-    lookInComboBox->setEditText(item->data(Qt::UserRole).toString());
+    m_ui->lookInComboBox->setEditText(item->data(Qt::UserRole).toString());
     on_lookInComboBox_textActivated(item->data(Qt::UserRole).toString());
 }
 
 void QmmpFileDialogImpl::on_lookInComboBox_textActivated(const QString &path)
 {
-    if (QDir(path).exists ())
+    if(QFileInfo::exists(path))
     {
-        fileListView->setRootIndex(m_model->index(path));
-        treeView->setRootIndex(m_model->index(path));
+        m_ui->fileListView->setRootIndex(m_model->index(path));
+        m_ui->treeView->setRootIndex(m_model->index(path));
         m_model->setRootPath(path);
     }
 }
@@ -140,60 +131,58 @@ void QmmpFileDialogImpl::on_lookInComboBox_textActivated(const QString &path)
 void QmmpFileDialogImpl::on_upToolButton_clicked()
 {
 #ifndef Q_OS_WIN
-    if (!m_model->parent(fileListView->rootIndex()).isValid())
+    if(!m_model->parent(m_ui->fileListView->rootIndex()).isValid())
         return;
 #endif
-    fileListView->setRootIndex(m_model->parent(fileListView->rootIndex()));
-    treeView->setRootIndex(fileListView->rootIndex());
-    lookInComboBox->setEditText(m_model->filePath(fileListView->rootIndex()));
-    fileListView->selectionModel()->clear ();
-    m_model->setRootPath(m_model->filePath(treeView->rootIndex()));
+    m_ui->fileListView->setRootIndex(m_model->parent(m_ui->fileListView->rootIndex()));
+    m_ui->treeView->setRootIndex(m_ui->fileListView->rootIndex());
+    m_ui->lookInComboBox->setEditText(m_model->filePath(m_ui->fileListView->rootIndex()));
+    m_ui->fileListView->selectionModel()->clear ();
+    m_model->setRootPath(m_model->filePath(m_ui->treeView->rootIndex()));
 }
 
-void QmmpFileDialogImpl::on_treeView_doubleClicked(const QModelIndex& ind)
+void QmmpFileDialogImpl::on_treeView_doubleClicked(const QModelIndex &index)
 {
-    if (ind.isValid())
+    if(index.isValid())
     {
-        QFileInfo info = m_model->fileInfo(ind);
-        if (info.isDir())
+        QFileInfo info = m_model->fileInfo(index);
+        if(info.isDir())
         {
-            treeView->setRootIndex(ind);
-            lookInComboBox->setEditText(m_model->filePath(ind));
-            treeView->selectionModel()->clear ();
-            fileListView->setRootIndex(ind);
-            fileListView->selectionModel()->clear ();
-            m_model->setRootPath(m_model->filePath(ind));
+            m_ui->treeView->setRootIndex(index);
+            m_ui->lookInComboBox->setEditText(m_model->filePath(index));
+            m_ui->treeView->selectionModel()->clear();
+            m_ui->fileListView->setRootIndex(index);
+            m_ui->fileListView->selectionModel()->clear();
+            m_model->setRootPath(m_model->filePath(index));
         }
         else
         {
-            QStringList l;
-            l << m_model->filePath(ind);
-            addToHistory(l[0]);
-            addFiles(l);
+            const QString path = m_model->filePath(index);
+            addToHistory(path);
+            addFiles({ path });
         }
     }
 }
 
-void QmmpFileDialogImpl::on_fileListView_doubleClicked(const QModelIndex& ind)
+void QmmpFileDialogImpl::on_fileListView_doubleClicked(const QModelIndex& index)
 {
-    if (ind.isValid())
+    if(index.isValid())
     {
-        QFileInfo info = m_model->fileInfo(ind);
-        if (info.isDir())
+        QFileInfo info = m_model->fileInfo(index);
+        if(info.isDir())
         {
-            fileListView->setRootIndex(ind);
-            lookInComboBox->setEditText(m_model->filePath(ind));
-            fileListView->selectionModel()->clear ();
-            treeView->setRootIndex(ind);
-            treeView->selectionModel()->clear ();
-            m_model->setRootPath(m_model->filePath(ind));
+            m_ui->fileListView->setRootIndex(index);
+            m_ui->lookInComboBox->setEditText(m_model->filePath(index));
+            m_ui->fileListView->selectionModel()->clear();
+            m_ui->treeView->setRootIndex(index);
+            m_ui->treeView->selectionModel()->clear();
+            m_model->setRootPath(m_model->filePath(index));
         }
         else
         {
-            QStringList l;
-            l << m_model->filePath(ind);
-            addToHistory(l[0]);
-            addFiles(l);
+            const QString path = m_model->filePath(index);
+            addToHistory(path);
+            addFiles({ path });
         }
     }
 }
@@ -205,274 +194,277 @@ void QmmpFileDialogImpl::on_fileNameLineEdit_returnPressed()
 
 void QmmpFileDialogImpl::on_fileNameLineEdit_textChanged (const QString &text)
 {
-    if (m_mode == FileDialog::SaveFile)
+    if(m_mode == FileDialog::SaveFile)
     {
-        addPushButton->setEnabled(!text.isEmpty());
+        m_ui->addPushButton->setEnabled(!text.isEmpty());
         return;
     }
     QModelIndex index;
-    if (text.startsWith("/"))
+
+    if(text.startsWith(QChar('/')))
         index = m_model->index(text);
     else
-        index = m_model->index(m_model->filePath(fileListView->rootIndex()) + "/" + text);
-    if (!index.isValid() || !fileNameLineEdit->hasFocus())
+        index = m_model->index(m_model->filePath(m_ui->fileListView->rootIndex()) + QChar('/') + text);
+    if(!index.isValid() || !m_ui->fileNameLineEdit->hasFocus())
         return;
-    fileListView->selectionModel()->clear();
-    fileListView->selectionModel()->select(index, QItemSelectionModel::Select);
+
+    m_ui->fileListView->selectionModel()->clear();
+    m_ui->fileListView->selectionModel()->select(index, QItemSelectionModel::Select);
 }
 
 void QmmpFileDialogImpl::on_addPushButton_clicked()
 {
     QStringList l;
-    if (m_mode != FileDialog::SaveFile)
+    if(m_mode != FileDialog::SaveFile)
     {
         QModelIndexList ml;
-        if (stackedWidget->currentIndex() == 0)
-            ml = fileListView->selectionModel()->selectedIndexes();
+        if(m_ui->stackedWidget->currentIndex() == 0)
+            ml = m_ui->fileListView->selectionModel()->selectedIndexes();
         else
-            ml = treeView->selectionModel()->selectedIndexes();
+            ml = m_ui->treeView->selectionModel()->selectedIndexes();
        for(const QModelIndex &i : qAsConst(ml))
         {
-            if (!l.contains(m_model->filePath(i)))
+            if(!l.contains(m_model->filePath(i)))
                 l << m_model->filePath(i);
         }
-        if (!l.isEmpty())
+        if(!l.isEmpty())
         {
-            addToHistory(l[0]);
+            addToHistory(l.constFirst());
             addFiles(l);
             return;
         }
     }
     else
     {
-        l << m_model->filePath(fileListView->rootIndex()) + "/" + fileNameLineEdit->text();
+        l << m_model->filePath(m_ui->fileListView->rootIndex()) +  QChar('/') + m_ui->fileNameLineEdit->text();
         addFiles(l);
     }
 }
 
-void QmmpFileDialogImpl::setModeAndMask(const QString& d,FileDialog::Mode m, const QStringList& mask)
+void QmmpFileDialogImpl::setModeAndMask(const QString &d, FileDialog::Mode m, const QStringList &mask)
 {
     m_mode = m;
-    fileListView->clearSelection ();
-    treeView->clearSelection ();
-    fileTypeComboBox->clear();
-    addPushButton->setEnabled(false);
-    addPushButton->setText(tr("Add"));
+    m_ui->fileListView->clearSelection();
+    m_ui->treeView->clearSelection();
+    m_ui->fileTypeComboBox->clear();
+    m_ui->addPushButton->setEnabled(false);
+    m_ui->addPushButton->setText(tr("Add"));
 
     QString fileName;
     QString path = d;
 
-    if (m == FileDialog::SaveFile)
+    if(m == FileDialog::SaveFile)
     {
-        if (path.endsWith('/'))
-            path.remove(path.size()-1, 1);
-        path = path.left(path.lastIndexOf ('/'));
-        fileName = d.section('/', -1);
-        fileNameLineEdit->setText(fileName);
-        addPushButton->setEnabled(!fileName.isEmpty());
-        addPushButton->setText(tr("Save"));
+        if(path.endsWith(QChar('/')))
+            path.remove(path.size() - 1, 1);
+        path = path.left(path.lastIndexOf(QChar('/')));
+        fileName = d.section(QChar('/'), -1);
+        m_ui->fileNameLineEdit->setText(fileName);
+        m_ui->addPushButton->setEnabled(!fileName.isEmpty());
+        m_ui->addPushButton->setText(tr("Save"));
     }
-    if (!QFile::exists(path))
+    if(!QFile::exists(path))
         path = QDir::home ().path ();
-    if (m_model->filePath(fileListView->rootIndex()) != path)
+    if(m_model->filePath(m_ui->fileListView->rootIndex()) != path)
     {
-        fileListView->setRootIndex(m_model->index(path));
-        treeView->setRootIndex(m_model->index(path));
+        m_ui->fileListView->setRootIndex(m_model->index(path));
+        m_ui->treeView->setRootIndex(m_model->index(path));
         m_model->setRootPath(path);
     }
 
-    if (m == FileDialog::AddDirs || m == FileDialog::AddDir)
+    if(m == FileDialog::AddDirs || m == FileDialog::AddDir)
     {
         m_model->setFilter(QDir::AllDirs | QDir::NoDotAndDotDot); //dirs only
-        fileTypeComboBox->addItem(tr("Directories"));
-        fileTypeComboBox->setEnabled(false);
+        m_ui->fileTypeComboBox->addItem(tr("Directories"));
+        m_ui->fileTypeComboBox->setEnabled(false);
     }
     else
     {
         m_model->setFilter(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot);
-        fileTypeComboBox->setEnabled(true);
-        fileTypeComboBox->addItems(mask);
+        m_ui->fileTypeComboBox->setEnabled(true);
+        m_ui->fileTypeComboBox->addItems(mask);
         on_fileTypeComboBox_activated(0);
     }
 
     //set selection mode
-    if (m == FileDialog::AddDir ||  m == FileDialog::AddFile || m == FileDialog::SaveFile)
+    if(m == FileDialog::AddDir ||  m == FileDialog::AddFile || m == FileDialog::SaveFile)
     {
-        fileListView->setSelectionMode (QAbstractItemView::SingleSelection);
-        treeView->setSelectionMode (QAbstractItemView::SingleSelection);
+        m_ui->fileListView->setSelectionMode(QAbstractItemView::SingleSelection);
+        m_ui->treeView->setSelectionMode(QAbstractItemView::SingleSelection);
     }
     else
     {
-        fileListView->setSelectionMode (QAbstractItemView::ExtendedSelection);
-        treeView->setSelectionMode (QAbstractItemView::ExtendedSelection);
+        m_ui->fileListView->setSelectionMode (QAbstractItemView::ExtendedSelection);
+        m_ui->treeView->setSelectionMode (QAbstractItemView::ExtendedSelection);
     }
 
-    lookInComboBox->setEditText(QDir::cleanPath(path));
+    m_ui->lookInComboBox->setEditText(QDir::cleanPath(path));
 }
 
 void QmmpFileDialogImpl::loadMountedVolumes()
 {
-    mountPointsListWidget->clear();
+    m_ui->mountPointsListWidget->clear();
     for(const QStorageInfo &i : QStorageInfo::mountedVolumes())
     {
-        if(i.fileSystemType() == "tmpfs")
+        if(i.fileSystemType() == "tmpfs"_L1)
             continue;
         QString name = i.displayName();
-        name.replace("\\x20", " ");
+        name.replace(u"\\x20"_s, u" "_s);
         QListWidgetItem *item = new QListWidgetItem(name);
         item->setData(Qt::UserRole, i.rootPath());
         item->setToolTip(i.rootPath());
         item->setIcon(style()->standardIcon(QStyle::SP_DirIcon));
-        mountPointsListWidget->addItem(item);
+        m_ui->mountPointsListWidget->addItem(item);
     }
 }
 
 void QmmpFileDialogImpl::on_listToolButton_toggled(bool yes)
 {
-    if (yes)
+    if(yes)
     {
-        stackedWidget->setCurrentIndex(0);
+        m_ui->stackedWidget->setCurrentIndex(0);
     }
 }
 
 void QmmpFileDialogImpl::on_detailsToolButton_toggled(bool yes)
 {
-    if (yes)
+    if(yes)
     {
-        stackedWidget->setCurrentIndex(1);
+        m_ui->stackedWidget->setCurrentIndex(1);
     }
 }
 
 void QmmpFileDialogImpl::on_fileTypeComboBox_activated(int index)
 {
-    m_model->setNameFilters(qt_clean_filter_list(fileTypeComboBox->itemText(index)));
+    m_model->setNameFilters(qt_clean_filter_list(m_ui->fileTypeComboBox->itemText(index)));
 }
 
 void QmmpFileDialogImpl::hideEvent (QHideEvent *event)
 {
     QSettings settings;
-    settings.setValue("QMMPFileDialog/close_on_add", closeOnAddToolButton->isChecked());
-    settings.setValue("QMMPFileDialog/geometry", saveGeometry());
-    settings.setValue("QMMPFileDialog/history", m_history);
-    settings.setValue("QMMPFileDialog/splitter_state", splitter->saveState());
+    settings.setValue(u"QMMPFileDialog/close_on_add"_s, m_ui->closeOnAddToolButton->isChecked());
+    settings.setValue(u"QMMPFileDialog/geometry"_s, saveGeometry());
+    settings.setValue(u"QMMPFileDialog/history"_s, m_history);
+    settings.setValue(u"QMMPFileDialog/splitter_state"_s, m_ui->splitter->saveState());
     QWidget::hideEvent(event);
 }
 
 void QmmpFileDialogImpl::updateSelection ()
 {
     QModelIndexList ml;
-    if (stackedWidget->currentIndex() == 0)
-        ml = fileListView->selectionModel()->selectedIndexes();
+    if(m_ui->stackedWidget->currentIndex() == 0)
+        ml = m_ui->fileListView->selectionModel()->selectedIndexes();
     else
-        ml = treeView->selectionModel()->selectedIndexes();
+        ml = m_ui->treeView->selectionModel()->selectedIndexes();
     QStringList l;
     QStringList files;
     for(const QModelIndex &i : qAsConst(ml))
     {
-        if (!l.contains(m_model->filePath(i).section("/", -1)))
+        if(!l.contains(m_model->filePath(i).section(QChar('/'), -1)))
         {
             files << m_model->filePath(i);
-            l << m_model->filePath(i).section("/", -1);
+            l << m_model->filePath(i).section(QChar('/'), -1);
         }
     }
 
-    if (!l.isEmpty())
+    if(!l.isEmpty())
     {
         QString str;
-        if (l.size() == 1)
-            str = l.at(0);
+        if(l.size() == 1)
+            str = l.constFirst();
         else
         {
-            str = l.join ("\" \"");
-            str.append("\"");
-            str.prepend("\"");
+            str = l.join (u"\" \""_s);
+            str.append(QChar('"'));
+            str.prepend(QChar('"'));
         }
-        if (!fileNameLineEdit->hasFocus())
-            fileNameLineEdit->setText(str);
-        if (m_mode == FileDialog::AddFiles || m_mode == FileDialog::AddFile/* || FileDialog::SaveFile*/)
+        if(!m_ui->fileNameLineEdit->hasFocus())
+            m_ui->fileNameLineEdit->setText(str);
+        if(m_mode == FileDialog::AddFiles || m_mode == FileDialog::AddFile/* || FileDialog::SaveFile*/)
         {
-            addPushButton->setEnabled(true);
+            m_ui->addPushButton->setEnabled(true);
             for(const QString &file : qAsConst(files))
             {
-                if (QFileInfo(file).isDir())
+                if(QFileInfo(file).isDir())
                 {
-                    addPushButton->setEnabled(false);
+                    m_ui->addPushButton->setEnabled(false);
                     break;
                 }
             }
         }
         else
-            addPushButton->setEnabled(true);
+        {
+            m_ui->addPushButton->setEnabled(true);
+        }
     }
     else
     {
-        fileNameLineEdit->clear();
-        addPushButton->setEnabled(false);
+        m_ui->fileNameLineEdit->clear();
+        m_ui->addPushButton->setEnabled(false);
     }
 }
 
 void QmmpFileDialogImpl::addToHistory(const QString &path)
 {
     QString path_copy = path;
-    if (path_copy.endsWith('/'))
+    if(path_copy.endsWith('/'))
         path_copy.remove(path.size()-1, 1);
-    QString dir_path = path.left(path_copy.lastIndexOf ('/'));
+    QString dir_path = path.left(path_copy.lastIndexOf(QChar('/')));
 
     m_history.removeAll(dir_path);
     m_history.prepend(dir_path);
 
-    while ( m_history.size() > HISTORY_SIZE)
+    while(m_history.size() > HISTORY_SIZE)
         m_history.removeLast();
 
-    lookInComboBox->clear();
-    lookInComboBox->addItems(m_history);
+    m_ui->lookInComboBox->clear();
+    m_ui->lookInComboBox->addItems(m_history);
 }
 
 void QmmpFileDialogImpl::addFiles(const QStringList &list)
 {
-    if (list.isEmpty())
+    if(list.isEmpty())
         return;
-    if (!isModal())
+    if(!isModal())
     {
         emit filesSelected(list);
-        if (closeOnAddToolButton->isChecked())
+        if(m_ui->closeOnAddToolButton->isChecked())
             reject();
     }
-    else if (m_mode == FileDialog::SaveFile)
+    else if(m_mode == FileDialog::SaveFile)
     {
         //check file extension
-        QString f_name = fileNameLineEdit->text();
+        QString f_name = m_ui->fileNameLineEdit->text();
         bool contains = false;
-        for(const QString &str : qt_clean_filter_list(fileTypeComboBox->currentText()))
+        for(const QString &str : qt_clean_filter_list(m_ui->fileTypeComboBox->currentText()))
         {
             QRegularExpression regExp(QRegularExpression::wildcardToRegularExpression(str));
-            if (f_name.contains(regExp))
+            if(f_name.contains(regExp))
             {
                 contains = true;
                 break;
             }
         }
         //add extensio to file name
-        if (!contains)
+        if(!contains)
         {
-            QString ext = qt_clean_filter_list(fileTypeComboBox->currentText()).constFirst();
-            ext.remove("*");
-            if (!ext.isEmpty() && ext != ".")
+            QString ext = qt_clean_filter_list(m_ui->fileTypeComboBox->currentText()).constFirst();
+            ext.remove(QChar('*'));
+            if(!ext.isEmpty() && ext != "."_L1)
             {
                 f_name.append(ext);
                 qDebug("QmmpFileDialogImpl: added file extension");
-                fileNameLineEdit->setText(f_name);
+                m_ui->fileNameLineEdit->setText(f_name);
                 return;
             }
         }
         QFileInfo info(list[0]);
 
-        if (info.exists())
+        if(info.exists())
         {
-            if (QMessageBox::question (this, windowTitle (),
-                                       tr("%1 already exists.\nDo you want to replace it?")
-                                       .arg(fileNameLineEdit->text()),
-                                       QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
+            if(QMessageBox::question (this, windowTitle(), tr("%1 already exists.\nDo you want to replace it?")
+                                      .arg(m_ui->fileNameLineEdit->text()),
+                                      QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
                 accept();
             else
                 return;

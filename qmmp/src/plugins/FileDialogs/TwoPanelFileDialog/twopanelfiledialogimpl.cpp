@@ -27,88 +27,75 @@
 #include <QRegularExpression>
 #include <QAbstractFileIconProvider>
 #include <qmmp/qmmp.h>
+#include "ui_twopanelfiledialog.h"
 #include "twopanelfiledialogimpl.h"
 
 #define HISTORY_SIZE 8
 
-
-/**
- *   This variable has been copied from Qt library
- */
-
-const char *qt_file_dialog_filter_reg_exp =
-    "([a-zA-Z0-9 -]*)\\(([a-zA-Z0-9_.*? +;#\\-\\[\\]@\\{\\}/!<>\\$%&=^~:\\|]*)\\)$";
-
-/**
- *   This function has been copied from Qt library
- */
-
 // Makes a list of filters from a normal filter string "Image Files (*.png *.jpg)"
 static QStringList qt_clean_filter_list(const QString &filter)
 {
-    QRegularExpression regexp(QString::fromLatin1(qt_file_dialog_filter_reg_exp));
+    //This regular expression has been copied from Qt library
+    static const QRegularExpression regexp(u"([a-zA-Z0-9 -]*)\\(([a-zA-Z0-9_.*? +;#\\-\\[\\]@\\{\\}/!<>\\$%&=^~:\\|]*)\\)$"_s);
     QString f = filter;
     QRegularExpressionMatch match = regexp.match(f);
-    if (match.hasMatch())
+    if(match.hasMatch())
         f = match.captured(2);
-    return f.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+    return f.split(QChar::Space, Qt::SkipEmptyParts);
 }
 
-TwoPanelFileDialogImpl::TwoPanelFileDialogImpl(QWidget * parent) : QDialog(parent)
+TwoPanelFileDialogImpl::TwoPanelFileDialogImpl(QWidget *parent) : QDialog(parent)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_QuitOnClose, false);
-    m_mode = 0;
 
     m_dirModel = new QFileSystemModel(this);
     m_dirModel->setReadOnly(true);
-    m_ui.dirListView->setModel(m_dirModel);
-    m_dirModel->setRootPath("");
+    m_ui->dirListView->setModel(m_dirModel);
+    m_dirModel->setRootPath(QString());
     m_dirModel->setFilter(QDir::AllDirs | QDir::NoDot);
     m_dirModel->setNameFilterDisables (false);
 
-    connect(m_ui.dirListView->selectionModel(),
-            SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-            SLOT(updateDirSelection(QItemSelection,QItemSelection)));
-
-    connect(m_ui.fileListWidget, SIGNAL(itemSelectionChanged()), SLOT(updateFileSelection()));
+    connect(m_ui->dirListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &TwoPanelFileDialogImpl::updateDirSelection);
+    connect(m_ui->fileListWidget, &QListWidget::itemSelectionChanged, this, &TwoPanelFileDialogImpl::updateFileSelection);
 
     QSettings settings;
-    restoreGeometry(settings.value("TwoPanelFileDialog/geometry").toByteArray());
-    m_history = settings.value("TwoPanelFileDialog/history").toStringList();
-    m_ui.lookInComboBox->addItems(m_history);
-    m_ui.lookInComboBox->setMaxCount(HISTORY_SIZE);
-    QCompleter* dirCompleter = new QCompleter (m_dirModel, this);
-    m_ui.lookInComboBox->setCompleter (dirCompleter);
+    restoreGeometry(settings.value(u"TwoPanelFileDialog/geometry"_s).toByteArray());
+    m_history = settings.value(u"TwoPanelFileDialog/history"_s).toStringList();
+    m_ui->lookInComboBox->addItems(m_history);
+    m_ui->lookInComboBox->setMaxCount(HISTORY_SIZE);
+    QCompleter *dirCompleter = new QCompleter(m_dirModel, this);
+    m_ui->lookInComboBox->setCompleter(dirCompleter);
 
     if(qApp->style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons, nullptr, this))
     {
-        m_ui.playButton->setIcon(qApp->style()->standardIcon(QStyle::SP_MediaPlay));
-        m_ui.addButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogOpenButton));
-        m_ui.closeButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogCloseButton));
+        m_ui->playButton->setIcon(qApp->style()->standardIcon(QStyle::SP_MediaPlay));
+        m_ui->addButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogOpenButton));
+        m_ui->closeButton->setIcon(qApp->style()->standardIcon(QStyle::SP_DialogCloseButton));
     }
 }
 
 TwoPanelFileDialogImpl::~TwoPanelFileDialogImpl()
 {
+    delete m_ui;
 }
 
 QStringList TwoPanelFileDialogImpl::selectedFiles() const
 {
     QStringList l;
-    if (m_mode == FileDialog::SaveFile)
+    if(m_mode == FileDialog::SaveFile)
     {
-        QModelIndexList indexes = m_ui.dirListView->selectionModel()->selectedRows(0);
+        QModelIndexList indexes = m_ui->dirListView->selectionModel()->selectedRows(0);
         if(!indexes.isEmpty() && indexes.constFirst().isValid())
         {
-            l << m_dirModel->filePath(indexes.constFirst()) + "/" + m_ui.fileNameLineEdit->text();
+            l << m_dirModel->filePath(indexes.constFirst()) + QChar('/') + m_ui->fileNameLineEdit->text();
         }
     }
     else if(m_mode == FileDialog::AddDir || m_mode == FileDialog::AddDirs)
     {
-        for(const QModelIndex &index : m_ui.dirListView->selectionModel()->selectedRows(0))
+        for(const QModelIndex &index : m_ui->dirListView->selectionModel()->selectedRows(0))
         {
-            if(index.isValid() && (m_dirModel->fileName(index) != ".."))
+            if(index.isValid() && (m_dirModel->fileName(index) != u".."_s))
             {
                 l << m_dirModel->filePath(index);
             }
@@ -116,7 +103,7 @@ QStringList TwoPanelFileDialogImpl::selectedFiles() const
     }
     else
     {
-        for(const QListWidgetItem *item : m_ui.fileListWidget->selectedItems())
+        for(const QListWidgetItem *item : m_ui->fileListWidget->selectedItems())
         {
             l << item->data(Qt::UserRole).toString();
         }
@@ -124,20 +111,20 @@ QStringList TwoPanelFileDialogImpl::selectedFiles() const
     return l;
 }
 
-void TwoPanelFileDialogImpl::updateDirSelection(const QItemSelection &s, const QItemSelection &)
+void TwoPanelFileDialogImpl::updateDirSelection(const QItemSelection &sel, const QItemSelection &)
 {
-    m_ui.fileListWidget->clear();
+    m_ui->fileListWidget->clear();
 
     if(m_mode == FileDialog::AddDir || m_mode == FileDialog::AddDirs)
     {
-        m_ui.addButton->setEnabled(!selectedFiles().isEmpty());
+        m_ui->addButton->setEnabled(!selectedFiles().isEmpty());
         return;
     }
 
-    if(s.indexes().isEmpty())
+    if(sel.indexes().isEmpty())
         return;
 
-    QModelIndex index = s.indexes().constFirst();
+    QModelIndex index = sel.indexes().constFirst();
 
     if(index.isValid())
         updateFileList(m_dirModel->filePath(index));
@@ -149,9 +136,9 @@ void TwoPanelFileDialogImpl::updateFileSelection ()
 
     if(paths.isEmpty())
     {
-        m_ui.fileNameLineEdit->clear();
-        m_ui.addButton->setEnabled(false);
-        m_ui.playButton->setEnabled(false);
+        m_ui->fileNameLineEdit->clear();
+        m_ui->addButton->setEnabled(false);
+        m_ui->playButton->setEnabled(false);
         return;
     }
 
@@ -160,25 +147,25 @@ void TwoPanelFileDialogImpl::updateFileSelection ()
     for(const QString &path : qAsConst(paths))
     {
         QString name = QFileInfo(path).fileName();
-        if (!names.contains(name))
+        if(!names.contains(name))
             names << name;
     }
 
     QString str;
-    if (names.size() == 1)
+    if(names.size() == 1)
         str = names.at(0);
     else
     {
-        str = names.join ("\" \"");
-        str.append("\"");
-        str.prepend("\"");
+        str = names.join(u"\" \""_s);
+        str.append(QChar('"'));
+        str.prepend(QChar('"'));
     }
-    if (!m_ui.fileNameLineEdit->hasFocus())
-        m_ui.fileNameLineEdit->setText(str);
+    if(!m_ui->fileNameLineEdit->hasFocus())
+        m_ui->fileNameLineEdit->setText(str);
 
 
-    m_ui.addButton->setEnabled(true);
-    m_ui.playButton->setEnabled(false);
+    m_ui->addButton->setEnabled(true);
+    m_ui->playButton->setEnabled(false);
 
     if(m_mode == FileDialog::AddFiles || m_mode == FileDialog::AddDirsFiles || m_mode == FileDialog::AddFile
             || m_mode == FileDialog::PlayDirsFiles)
@@ -187,69 +174,68 @@ void TwoPanelFileDialogImpl::updateFileSelection ()
         {
             if(QFileInfo(path).isFile())
             {
-                m_ui.playButton->setEnabled(true);
+                m_ui->playButton->setEnabled(true);
                 break;
             }
         }
     }
 }
 
-void TwoPanelFileDialogImpl::on_dirListView_doubleClicked(const QModelIndex &ind)
+void TwoPanelFileDialogImpl::on_dirListView_doubleClicked(const QModelIndex &index)
 {
-    if (!ind.isValid())
+    if(!index.isValid())
         return;
 
-    QFileInfo info = m_dirModel->fileInfo(ind);
+    QFileInfo info = m_dirModel->fileInfo(index);
     QModelIndex rootIndex = m_dirModel->setRootPath(info.canonicalFilePath());
 
     if(rootIndex.isValid())
     {
-        m_ui.dirListView->setRootIndex(rootIndex);
-        m_ui.lookInComboBox->setEditText(m_dirModel->filePath(rootIndex));
-        m_ui.fileListWidget->clear();
+        m_ui->dirListView->setRootIndex(rootIndex);
+        m_ui->lookInComboBox->setEditText(m_dirModel->filePath(rootIndex));
+        m_ui->fileListWidget->clear();
     }
 }
 
 void TwoPanelFileDialogImpl::on_lookInComboBox_activated(const QString &path)
 {
-    if (QDir(path).exists ())
+    if(QFileInfo::exists(path))
     {
-        m_ui.dirListView->setRootIndex(m_dirModel->index(path));
+        m_ui->dirListView->setRootIndex(m_dirModel->index(path));
         m_dirModel->setRootPath(path);
-        m_ui.fileListWidget->clear();
+        m_ui->fileListWidget->clear();
     }
 }
 
 void TwoPanelFileDialogImpl::on_fileListWidget_itemDoubleClicked(QListWidgetItem *item)
 {
-    QStringList l;
-    l << item->data(Qt::UserRole).toString();
-    addToHistory(l[0]);
-    addFiles(l, false);
+    QString path = item->data(Qt::UserRole).toString();
+    addToHistory(path);
+    addFiles({ path }, false);
 }
 
 void TwoPanelFileDialogImpl::on_fileNameLineEdit_textChanged(const QString &text)
 {
-    if (m_mode == FileDialog::SaveFile)
+    if(m_mode == FileDialog::SaveFile)
     {
-        m_ui.addButton->setEnabled(!text.isEmpty());
-        m_ui.playButton->setEnabled(!text.isEmpty());
+        m_ui->addButton->setEnabled(!text.isEmpty());
+        m_ui->playButton->setEnabled(!text.isEmpty());
         return;
     }
     QString path;
-    if (text.startsWith("/"))
+    if(text.startsWith(QChar('/')))
         path = text;
     else
-        path = m_dirModel->filePath(m_ui.dirListView->currentIndex()) + "/" + text;
+        path = m_dirModel->filePath(m_ui->dirListView->currentIndex()) + QChar('/') + text;
 
-    if (!QFileInfo::exists(path))
+    if(!QFileInfo::exists(path))
         return;
 
-    for(int i = 0; i < m_ui.fileListWidget->count(); ++i)
+    for(int i = 0; i < m_ui->fileListWidget->count(); ++i)
     {
-        if(path == m_ui.fileListWidget->item(i)->data(Qt::UserRole).toString())
+        if(path == m_ui->fileListWidget->item(i)->data(Qt::UserRole).toString())
         {
-            m_ui.fileListWidget->setCurrentRow(i, QItemSelectionModel::Select);
+            m_ui->fileListWidget->setCurrentRow(i, QItemSelectionModel::Select);
             break;
         }
     }
@@ -279,11 +265,11 @@ void TwoPanelFileDialogImpl::on_playButton_clicked()
 
 #include <QtDebug>
 
-void TwoPanelFileDialogImpl::setModeAndMask(const QString& path, FileDialog::Mode m, const QStringList& mask)
+void TwoPanelFileDialogImpl::setModeAndMask(const QString &path, FileDialog::Mode m, const QStringList &mask)
 {
     m_mode = m;
-    m_ui.dirListView->clearSelection();
-    m_ui.fileTypeComboBox->clear();
+    m_ui->dirListView->clearSelection();
+    m_ui->fileTypeComboBox->clear();
 
     QFileInfo info(path);
     qDebug() << path;
@@ -303,28 +289,28 @@ void TwoPanelFileDialogImpl::setModeAndMask(const QString& path, FileDialog::Mod
 
     if(m == FileDialog::AddDir || m == FileDialog::AddDirs)
     {
-        if (m_dirModel->filePath(m_ui.dirListView->rootIndex()) != info.absoluteFilePath())
+        if(m_dirModel->filePath(m_ui->dirListView->rootIndex()) != info.absoluteFilePath())
         {
             m_dirModel->setRootPath(info.absoluteFilePath());
-            m_ui.dirListView->setRootIndex(m_dirModel->index(info.absoluteFilePath()));
+            m_ui->dirListView->setRootIndex(m_dirModel->index(info.absoluteFilePath()));
         }
-        m_ui.lookInComboBox->setEditText(info.absoluteFilePath());
+        m_ui->lookInComboBox->setEditText(info.absoluteFilePath());
     }
     else
     {
-        if (m_dirModel->filePath(m_ui.dirListView->rootIndex()) != info.absolutePath())
+        if(m_dirModel->filePath(m_ui->dirListView->rootIndex()) != info.absolutePath())
         {
             m_dirModel->setRootPath(info.path());
-            m_ui.dirListView->setRootIndex(m_dirModel->index(info.absolutePath()));
+            m_ui->dirListView->setRootIndex(m_dirModel->index(info.absolutePath()));
         }
-        m_ui.dirListView->setCurrentIndex(m_dirModel->index(info.absoluteFilePath()));
-        m_ui.lookInComboBox->setEditText(info.absolutePath());
+        m_ui->dirListView->setCurrentIndex(m_dirModel->index(info.absoluteFilePath()));
+        m_ui->lookInComboBox->setEditText(info.absolutePath());
     }
 
-    m_ui.fileNameLineEdit->setText(fileName);
-    m_ui.addButton->setEnabled(!fileName.isEmpty());
-    m_ui.playButton->setEnabled(false);
-    m_ui.playButton->setVisible(m == FileDialog::PlayDirsFiles);
+    m_ui->fileNameLineEdit->setText(fileName);
+    m_ui->addButton->setEnabled(!fileName.isEmpty());
+    m_ui->playButton->setEnabled(false);
+    m_ui->playButton->setVisible(m == FileDialog::PlayDirsFiles);
 
 
     switch (m)
@@ -334,44 +320,44 @@ void TwoPanelFileDialogImpl::setModeAndMask(const QString& path, FileDialog::Mod
     case FileDialog::AddDirsFiles:
     case FileDialog::PlayDirsFiles:
     {
-        m_ui.fileListWidget->setVisible(true);
-        m_ui.addButton->setText(tr("Add"));
-        m_ui.fileTypeComboBox->clear();
-        m_ui.fileTypeComboBox->addItems(mask);
-        m_ui.fileTypeComboBox->setEnabled(true);
+        m_ui->fileListWidget->setVisible(true);
+        m_ui->addButton->setText(tr("Add"));
+        m_ui->fileTypeComboBox->clear();
+        m_ui->fileTypeComboBox->addItems(mask);
+        m_ui->fileTypeComboBox->setEnabled(true);
         on_fileTypeComboBox_activated(0);
-        m_ui.dirListView->setSelectionMode(QAbstractItemView::SingleSelection);
+        m_ui->dirListView->setSelectionMode(QAbstractItemView::SingleSelection);
         if(m == FileDialog::AddFile)
-            m_ui.fileListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+            m_ui->fileListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         else
-            m_ui.fileListWidget->setSelectionMode (QAbstractItemView::ExtendedSelection);
+            m_ui->fileListWidget->setSelectionMode (QAbstractItemView::ExtendedSelection);
         break;
     }
     case FileDialog::AddDir:
     case FileDialog::AddDirs:
     {
-        m_ui.fileListWidget->setVisible(false);
-        m_ui.addButton->setText(tr("Add"));
-        m_ui.fileTypeComboBox->clear();
-        m_ui.fileTypeComboBox->addItem(tr("Directories"));
-        m_ui.fileTypeComboBox->setEnabled(false);
+        m_ui->fileListWidget->setVisible(false);
+        m_ui->addButton->setText(tr("Add"));
+        m_ui->fileTypeComboBox->clear();
+        m_ui->fileTypeComboBox->addItem(tr("Directories"));
+        m_ui->fileTypeComboBox->setEnabled(false);
         if(m == FileDialog::AddDir)
-            m_ui.dirListView->setSelectionMode(QAbstractItemView::SingleSelection);
+            m_ui->dirListView->setSelectionMode(QAbstractItemView::SingleSelection);
         else
-            m_ui.dirListView->setSelectionMode (QAbstractItemView::ExtendedSelection);
-        m_ui.addButton->setEnabled(!m_ui.dirListView->selectionModel()->selectedRows().isEmpty());
+            m_ui->dirListView->setSelectionMode (QAbstractItemView::ExtendedSelection);
+        m_ui->addButton->setEnabled(!m_ui->dirListView->selectionModel()->selectedRows().isEmpty());
         break;
     }
     case FileDialog::SaveFile:
     {
-        m_ui.fileListWidget->setVisible(false);
-        m_ui.addButton->setText(tr("Save"));
-        m_ui.fileTypeComboBox->clear();
-        m_ui.fileTypeComboBox->addItems(mask);
-        m_ui.fileTypeComboBox->setEnabled(true);
+        m_ui->fileListWidget->setVisible(false);
+        m_ui->addButton->setText(tr("Save"));
+        m_ui->fileTypeComboBox->clear();
+        m_ui->fileTypeComboBox->addItems(mask);
+        m_ui->fileTypeComboBox->setEnabled(true);
         on_fileTypeComboBox_activated(0);
-        m_ui.dirListView->setSelectionMode(QAbstractItemView::SingleSelection);
-        m_ui.fileListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+        m_ui->dirListView->setSelectionMode(QAbstractItemView::SingleSelection);
+        m_ui->fileListWidget->setSelectionMode(QAbstractItemView::SingleSelection);
         break;
     }
     default:
@@ -381,11 +367,11 @@ void TwoPanelFileDialogImpl::setModeAndMask(const QString& path, FileDialog::Mod
 
 void TwoPanelFileDialogImpl::on_fileTypeComboBox_activated(int index)
 {
-    m_filters = qt_clean_filter_list(m_ui.fileTypeComboBox->itemText(index));
+    m_filters = qt_clean_filter_list(m_ui->fileTypeComboBox->itemText(index));
 
-    m_ui.fileListWidget->clear();
+    m_ui->fileListWidget->clear();
 
-    QModelIndexList indexes = m_ui.dirListView->selectionModel()->selectedRows(0);
+    QModelIndexList indexes = m_ui->dirListView->selectionModel()->selectedRows(0);
 
     if(!indexes.isEmpty() && indexes.constFirst().isValid())
         updateFileList(m_dirModel->filePath(indexes.constFirst()));
@@ -393,7 +379,7 @@ void TwoPanelFileDialogImpl::on_fileTypeComboBox_activated(int index)
 
 void TwoPanelFileDialogImpl::updateFileList(const QString &path)
 {
-    m_ui.fileListWidget->clear();
+    m_ui->fileListWidget->clear();
     QDir dir(path);
     dir.setFilter(QDir::Files | QDir::Hidden);
     dir.setSorting(QDir::Name);
@@ -403,24 +389,24 @@ void TwoPanelFileDialogImpl::updateFileList(const QString &path)
         QListWidgetItem *item = new QListWidgetItem(info.fileName());
         item->setIcon(m_dirModel->iconProvider()->icon(info));
         item->setData(Qt::UserRole, info.absoluteFilePath());
-        m_ui.fileListWidget->addItem(item);
+        m_ui->fileListWidget->addItem(item);
     }
 }
 
 void TwoPanelFileDialogImpl::hideEvent (QHideEvent *event)
 {
     QSettings settings;
-    settings.setValue("TwoPanelFileDialog/geometry", saveGeometry());
-    settings.setValue("TwoPanelFileDialog/history", m_history);
+    settings.setValue(u"TwoPanelFileDialog/geometry"_s, saveGeometry());
+    settings.setValue(u"TwoPanelFileDialog/history"_s, m_history);
     QWidget::hideEvent(event);
 }
 
 void TwoPanelFileDialogImpl::addToHistory(const QString &path)
 {
     QString path_copy = path;
-    if (path_copy.endsWith('/'))
-        path_copy.remove(path.size()-1, 1);
-    QString dir_path = path.left(path_copy.lastIndexOf ('/'));
+    if(path_copy.endsWith(QChar('/')))
+        path_copy.remove(path.size() - 1, 1);
+    QString dir_path = path.left(path_copy.lastIndexOf(QChar('/')));
 
     m_history.removeAll(dir_path);
     m_history.prepend(dir_path);
@@ -428,52 +414,51 @@ void TwoPanelFileDialogImpl::addToHistory(const QString &path)
     while ( m_history.size() > HISTORY_SIZE)
         m_history.removeLast();
 
-    m_ui.lookInComboBox->clear();
-    m_ui.lookInComboBox->addItems(m_history);
+    m_ui->lookInComboBox->clear();
+    m_ui->lookInComboBox->addItems(m_history);
 }
 
 void TwoPanelFileDialogImpl::addFiles(const QStringList &list, bool play)
 {
-    if (!isModal())
+    if(!isModal())
     {
         emit filesSelected(list, play);
         accept();
     }
-    else if (m_mode == FileDialog::SaveFile)
+    else if(m_mode == FileDialog::SaveFile)
     {
         //check file extension
-        QString f_name = m_ui.fileNameLineEdit->text();
+        QString f_name = m_ui->fileNameLineEdit->text();
         bool contains = false;
-        for(const QString &str : qt_clean_filter_list(m_ui.fileTypeComboBox->currentText()))
+        for(const QString &str : qt_clean_filter_list(m_ui->fileTypeComboBox->currentText()))
         {
             QRegularExpression regExp(QRegularExpression::wildcardToRegularExpression(str));
 
-            if (f_name.contains(regExp))
+            if(f_name.contains(regExp))
             {
                 contains = true;
                 break;
             }
         }
         //add extensio to file name
-        if (!contains)
+        if(!contains)
         {
-            QString ext = qt_clean_filter_list(m_ui.fileTypeComboBox->currentText()).constFirst();
-            ext.remove("*");
-            if (!ext.isEmpty() && ext != ".")
+            QString ext = qt_clean_filter_list(m_ui->fileTypeComboBox->currentText()).constFirst();
+            ext.remove(QChar('*'));
+            if(!ext.isEmpty() && ext != u"."_s)
             {
                 f_name.append(ext);
                 qDebug("TwoPanelFileDialogImpl: added file extension");
-                m_ui.fileNameLineEdit->setText(f_name);
+                m_ui->fileNameLineEdit->setText(f_name);
                 return;
             }
         }
         QFileInfo info(list[0]);
 
-        if (info.exists())
+        if(info.exists())
         {
-            if (QMessageBox::question (this, windowTitle (),
-                                       tr("%1 already exists.\nDo you want to replace it?")
-                                       .arg(m_ui.fileNameLineEdit->text()),
+            if(QMessageBox::question (this, windowTitle(), tr("%1 already exists.\nDo you want to replace it?")
+                                       .arg(m_ui->fileNameLineEdit->text()),
                                        QMessageBox::Ok | QMessageBox::Cancel) == QMessageBox::Ok)
                 accept();
             else
