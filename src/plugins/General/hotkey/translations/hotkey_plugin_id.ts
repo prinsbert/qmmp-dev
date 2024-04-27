@@ -48,101 +48,101 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HotkeySettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../hotkeysettingsdialog.ui" line="14"/>
         <source>Global Hotkey Plugin Settings</source>
-        <translation>Setelan Plugin Hotkey Global</translation>
+        <translation type="unfinished">Setelan Plugin Hotkey Global</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="42"/>
         <source>Action</source>
-        <translation>Tindakan</translation>
+        <translation type="unfinished">Tindakan</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="47"/>
         <source>Shortcut</source>
-        <translation>Pintasan</translation>
+        <translation type="unfinished">Pintasan</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../hotkeysettingsdialog.ui" line="55"/>
         <source>Reset</source>
-        <translation>Setel ulang</translation>
+        <translation type="unfinished">Setel ulang</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="38"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="39"/>
         <source>Play</source>
-        <translation>Main</translation>
+        <translation type="unfinished">Main</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="39"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
         <source>Stop</source>
-        <translation>Henti</translation>
+        <translation type="unfinished">Henti</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="40"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
         <source>Pause</source>
-        <translation>Jeda</translation>
+        <translation type="unfinished">Jeda</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
         <source>Play/Pause</source>
-        <translation>Main/Jeda</translation>
+        <translation type="unfinished">Main/Jeda</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
         <source>Next</source>
-        <translation>Selanjutnya</translation>
+        <translation type="unfinished">Selanjutnya</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="43"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Previous</source>
-        <translation>Sebelumnya</translation>
+        <translation type="unfinished">Sebelumnya</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="44"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
         <source>Show/Hide</source>
-        <translation>Tampak/Sembunyi</translation>
+        <translation type="unfinished">Tampak/Sembunyi</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="45"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Volume +</source>
-        <translation>Volume +</translation>
+        <translation type="unfinished">Volume +</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="46"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume -</source>
-        <translation>Volume -</translation>
+        <translation type="unfinished">Volume -</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Forward 5 seconds</source>
-        <translation>Maju 5 detik</translation>
+        <translation type="unfinished">Maju 5 detik</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Rewind 5 seconds</source>
-        <translation>Mundur 5 detik</translation>
+        <translation type="unfinished">Mundur 5 detik</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="49"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Jump to track</source>
-        <translation>Lompat ke track</translation>
+        <translation type="unfinished">Lompat ke track</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="50"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Mute</source>
-        <translation>Bungkam</translation>
+        <translation type="unfinished">Bungkam</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="unfinished">Peringatan</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
-        <translation>Rangkaian tombol &apos;%1&apos; sudah digunakan</translation>
+        <translation type="unfinished">Rangkaian tombol &apos;%1&apos; sudah digunakan</translation>
     </message>
 </context>
 </TS>

@@ -59,6 +59,19 @@
     </message>
 </context>
 <context>
+    <name>LyricsSettingsDialog</name>
+    <message>
+        <location filename="../lyricssettingsdialog.ui" line="14"/>
+        <source>Lyrics Plugin Settings</source>
+        <translation type="unfinished">Configuration du greffon Paroles</translation>
+    </message>
+    <message>
+        <location filename="../lyricssettingsdialog.ui" line="29"/>
+        <source>Lyrics providers:</source>
+        <translation type="unfinished">Fournisseurs de Paroles:</translation>
+    </message>
+</context>
+<context>
     <name>LyricsWidget</name>
     <message>
         <location filename="../lyricswidget.ui" line="14"/>
@@ -96,54 +109,41 @@
         <translation>Année:</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="146"/>
-        <location filename="../lyricswidget.cpp" line="232"/>
+        <location filename="../lyricswidget.cpp" line="149"/>
+        <location filename="../lyricswidget.cpp" line="235"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="157"/>
+        <location filename="../lyricswidget.cpp" line="160"/>
         <source>Not found</source>
         <translation>Non trouvé</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="167"/>
+        <location filename="../lyricswidget.cpp" line="170"/>
         <source>Error: %1 - %2</source>
         <translation>Erreur: %1 - %2</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="180"/>
+        <location filename="../lyricswidget.cpp" line="183"/>
         <source>Receiving</source>
         <translation>Réception</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="234"/>
+        <location filename="../lyricswidget.cpp" line="237"/>
         <source>Tag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="255"/>
+        <location filename="../lyricswidget.cpp" line="258"/>
         <source>Cache</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Lyrics Plugin Settings</source>
-        <translation>Configuration du greffon Paroles</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Lyrics providers:</source>
-        <translation>Fournisseurs de Paroles:</translation>
-    </message>
-</context>
-<context>
     <name>UltimateLyricsParser</name>
     <message>
-        <location filename="../ultimatelyricsparser.cpp" line="116"/>
+        <location filename="../ultimatelyricsparser.cpp" line="118"/>
         <source>%1 (line: %2)</source>
         <translation>%1 (ligne: %2)</translation>
     </message>

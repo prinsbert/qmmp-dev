@@ -17,22 +17,22 @@
 <context>
     <name>CoverManagerFactory</name>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="30"/>
+        <location filename="../covermanagerfactory.cpp" line="29"/>
         <source>Cover Manager Plugin</source>
         <translation>Модуль керування обкладинками</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="50"/>
+        <location filename="../covermanagerfactory.cpp" line="49"/>
         <source>About Cover Manager Plugin</source>
         <translation>Про модуль керування обкладинками</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="51"/>
+        <location filename="../covermanagerfactory.cpp" line="50"/>
         <source>Qmmp Cover Manager Plugin</source>
         <translation>Модуль керування обкладинками для Qmmp</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="52"/>
+        <location filename="../covermanagerfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -90,12 +90,12 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="91"/>
+        <location filename="../coverwidget.cpp" line="88"/>
         <source>Save Cover As</source>
         <translation>Зберегти обкладинку як</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="93"/>
+        <location filename="../coverwidget.cpp" line="89"/>
         <source>Images</source>
         <translation>Зображення</translation>
     </message>

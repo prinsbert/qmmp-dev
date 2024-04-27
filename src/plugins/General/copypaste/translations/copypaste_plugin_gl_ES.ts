@@ -37,27 +37,27 @@
 <context>
     <name>CopyPasteFactory</name>
     <message>
-        <location filename="../copypastefactory.cpp" line="29"/>
+        <location filename="../copypastefactory.cpp" line="28"/>
         <source>Copy/Paste Plugin</source>
         <translation>Engadido Copiar/Pegar</translation>
     </message>
     <message>
-        <location filename="../copypastefactory.cpp" line="49"/>
+        <location filename="../copypastefactory.cpp" line="48"/>
         <source>About Copy/Paste Plugin</source>
         <translation>Sobre o engadido Copiar/Pegar</translation>
     </message>
     <message>
-        <location filename="../copypastefactory.cpp" line="50"/>
+        <location filename="../copypastefactory.cpp" line="49"/>
         <source>Qmmp Copy/Paste Plugin</source>
         <translation>Engadido Qmmp Copiar/Pegar</translation>
     </message>
     <message>
-        <location filename="../copypastefactory.cpp" line="51"/>
+        <location filename="../copypastefactory.cpp" line="50"/>
         <source>This plugin allows one to copy selected tracks from one playlist to another</source>
         <translation>Este engadido permite copiar pistas seleccionadas dunha lista de reprodución a outra</translation>
     </message>
     <message>
-        <location filename="../copypastefactory.cpp" line="52"/>
+        <location filename="../copypastefactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: LLya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

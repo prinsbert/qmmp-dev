@@ -37,128 +37,128 @@
 <context>
     <name>MplayerMetaDataModel</name>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="38"/>
+        <location filename="../mplayermetadatamodel.cpp" line="57"/>
         <source>Size</source>
         <translation>Μέγεθος</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="38"/>
+        <location filename="../mplayermetadatamodel.cpp" line="57"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="56"/>
+        <location filename="../mplayermetadatamodel.cpp" line="58"/>
         <source>Demuxer</source>
         <translation>Αποπλέκτης</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="58"/>
+        <location filename="../mplayermetadatamodel.cpp" line="60"/>
         <source>Video format</source>
         <translation>Μορφή βίντεο</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="59"/>
+        <location filename="../mplayermetadatamodel.cpp" line="61"/>
         <source>FPS</source>
         <translation>FPS</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="60"/>
+        <location filename="../mplayermetadatamodel.cpp" line="62"/>
         <source>Video codec</source>
         <translation>Κωδικοποιητής βίντεο</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="61"/>
+        <location filename="../mplayermetadatamodel.cpp" line="63"/>
         <source>Aspect ratio</source>
         <translation>Αναλογία διαστάσεων</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="62"/>
+        <location filename="../mplayermetadatamodel.cpp" line="64"/>
         <source>Video bitrate</source>
         <translation>Ρυθμός bit βίντεο</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="62"/>
-        <location filename="../mplayermetadatamodel.cpp" line="66"/>
+        <location filename="../mplayermetadatamodel.cpp" line="64"/>
+        <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="64"/>
+        <location filename="../mplayermetadatamodel.cpp" line="66"/>
         <source>Audio codec</source>
         <translation>Κωδικοποιητής ήχου</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="65"/>
+        <location filename="../mplayermetadatamodel.cpp" line="67"/>
         <source>Sample rate</source>
         <translation>Ρυθμός δειγματοληψίας</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="65"/>
+        <location filename="../mplayermetadatamodel.cpp" line="67"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="66"/>
+        <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>Audio bitrate</source>
         <translation>Ρυθμός bit ήχου</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="67"/>
+        <location filename="../mplayermetadatamodel.cpp" line="69"/>
         <source>Channels</source>
         <translation>Κανάλια</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="63"/>
+        <location filename="../mplayermetadatamodel.cpp" line="65"/>
         <source>Resolution</source>
         <translation>Ανάλυση</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>MplayerSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation>Ρυθμίσεις του MPlayer</translation>
+        <translation type="unfinished">Ρυθμίσεις του MPlayer</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="34"/>
+        <location filename="../mplayersettingsdialog.ui" line="34"/>
         <source>Video:</source>
-        <translation>Βίντεο:</translation>
+        <translation type="unfinished">Βίντεο:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="48"/>
+        <location filename="../mplayersettingsdialog.ui" line="48"/>
         <source>Audio:</source>
-        <translation>Ήχος:</translation>
+        <translation type="unfinished">Ήχος:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../mplayersettingsdialog.ui" line="62"/>
         <source>Audio/video auto synchronization</source>
-        <translation>Αυτόματος συγχρονισμός ήχου/βίντεο </translation>
+        <translation type="unfinished">Αυτόματος συγχρονισμός ήχου/βίντεο </translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="72"/>
+        <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation>Συντελεστής συγχρονισμού:</translation>
+        <translation type="unfinished">Συντελεστής συγχρονισμού:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="89"/>
+        <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation>Επιπλέον επιλογές:</translation>
+        <translation type="unfinished">Επιπλέον επιλογές:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="96"/>
+        <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation>Επιπλέον επιλογές γραμμής εντολών</translation>
+        <translation type="unfinished">Επιπλέον επιλογές γραμμής εντολών</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="29"/>
-        <location filename="../settingsdialog.cpp" line="37"/>
-        <location filename="../settingsdialog.cpp" line="46"/>
-        <location filename="../settingsdialog.cpp" line="47"/>
-        <location filename="../settingsdialog.cpp" line="61"/>
-        <location filename="../settingsdialog.cpp" line="62"/>
+        <location filename="../mplayersettingsdialog.cpp" line="30"/>
+        <location filename="../mplayersettingsdialog.cpp" line="34"/>
+        <location filename="../mplayersettingsdialog.cpp" line="38"/>
+        <location filename="../mplayersettingsdialog.cpp" line="39"/>
+        <location filename="../mplayersettingsdialog.cpp" line="55"/>
+        <location filename="../mplayersettingsdialog.cpp" line="56"/>
         <source>default</source>
-        <translation>εξ ορισμού</translation>
+        <translation type="unfinished">εξ ορισμού</translation>
     </message>
 </context>
 </TS>

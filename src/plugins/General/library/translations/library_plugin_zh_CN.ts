@@ -153,6 +153,44 @@
     </message>
 </context>
 <context>
+    <name>LibrarySettingsDialog</name>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="14"/>
+        <source>Media Library Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="39"/>
+        <source>Recreate database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="46"/>
+        <source>Show album year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished">添加</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="66"/>
+        <source>Remove</source>
+        <translation type="unfinished">删除</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="95"/>
+        <source>List of directories for scanning:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.cpp" line="65"/>
+        <source>Select Directories for Scanning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LibraryWidget</name>
     <message>
         <location filename="../librarywidget.cpp" line="51"/>
@@ -182,44 +220,6 @@
     <message>
         <location filename="../librarywidget.ui" line="14"/>
         <source>Media Library</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Media Library Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="39"/>
-        <source>Recreate database</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="46"/>
-        <source>Show album year</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>List of directories for scanning:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Add</source>
-        <translation>添加</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="66"/>
-        <source>Remove</source>
-        <translation>删除</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="65"/>
-        <source>Select Directories for Scanning</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

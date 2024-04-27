@@ -79,7 +79,7 @@
         <translation>Deter</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="113"/>
+        <location filename="../converterdialog.cpp" line="116"/>
         <source>Choose a directory</source>
         <translation>Escoller un directorio</translation>
     </message>
@@ -89,44 +89,44 @@
         <translation>Título</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="203"/>
+        <location filename="../converterdialog.cpp" line="205"/>
         <source>Create a Copy</source>
         <translation>Crear unha copia</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="134"/>
-        <location filename="../converterdialog.cpp" line="356"/>
-        <location filename="../converterdialog.cpp" line="363"/>
+        <location filename="../converterdialog.cpp" line="136"/>
+        <location filename="../converterdialog.cpp" line="361"/>
+        <location filename="../converterdialog.cpp" line="368"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="139"/>
+        <location filename="../converterdialog.cpp" line="141"/>
         <source>Waiting</source>
         <translation>Esperando</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="201"/>
+        <location filename="../converterdialog.cpp" line="203"/>
         <source>Create</source>
         <translation>Crear</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="202"/>
+        <location filename="../converterdialog.cpp" line="204"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="204"/>
+        <location filename="../converterdialog.cpp" line="206"/>
         <source>Delete</source>
         <translation>Borrar</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="356"/>
+        <location filename="../converterdialog.cpp" line="361"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>Non se pode executar &quot;%1&quot;. Non se atopou o programa.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="363"/>
+        <location filename="../converterdialog.cpp" line="368"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>Proceso &quot;%1&quot; rematou con erros.</translation>
     </message>
@@ -215,17 +215,17 @@
         <translation>Converter a 16 bit</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="37"/>
+        <location filename="../preseteditor.cpp" line="39"/>
         <source>%1 (Read Only)</source>
         <translation>%1 (Só lectura)</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="70"/>
+        <location filename="../preseteditor.cpp" line="72"/>
         <source>Output file</source>
         <translation>Ficheiro de saída</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="71"/>
+        <location filename="../preseteditor.cpp" line="73"/>
         <source>Input file</source>
         <translation>Ficheiro de entrada</translation>
     </message>

@@ -79,7 +79,7 @@
         <translation>중지</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="113"/>
+        <location filename="../converterdialog.cpp" line="116"/>
         <source>Choose a directory</source>
         <translation>디렉토리 선택하기</translation>
     </message>
@@ -89,44 +89,44 @@
         <translation>제목</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="203"/>
+        <location filename="../converterdialog.cpp" line="205"/>
         <source>Create a Copy</source>
         <translation>사본 만들기</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="134"/>
-        <location filename="../converterdialog.cpp" line="356"/>
-        <location filename="../converterdialog.cpp" line="363"/>
+        <location filename="../converterdialog.cpp" line="136"/>
+        <location filename="../converterdialog.cpp" line="361"/>
+        <location filename="../converterdialog.cpp" line="368"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="139"/>
+        <location filename="../converterdialog.cpp" line="141"/>
         <source>Waiting</source>
         <translation>대기 중</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="201"/>
+        <location filename="../converterdialog.cpp" line="203"/>
         <source>Create</source>
         <translation>만들기</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="202"/>
+        <location filename="../converterdialog.cpp" line="204"/>
         <source>Edit</source>
         <translation>편집</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="204"/>
+        <location filename="../converterdialog.cpp" line="206"/>
         <source>Delete</source>
         <translation>삭제</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="356"/>
+        <location filename="../converterdialog.cpp" line="361"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>%1을(를) 실행할 수 없습니다. 프로그램을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="363"/>
+        <location filename="../converterdialog.cpp" line="368"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>&quot;%1&quot; 프로세스가 오류와 함께 완료되었습니다.</translation>
     </message>
@@ -215,17 +215,17 @@
         <translation>16비트로 변환</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="37"/>
+        <location filename="../preseteditor.cpp" line="39"/>
         <source>%1 (Read Only)</source>
         <translation>%1 (읽기 전용)</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="70"/>
+        <location filename="../preseteditor.cpp" line="72"/>
         <source>Output file</source>
         <translation>출력 파일</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="71"/>
+        <location filename="../preseteditor.cpp" line="73"/>
         <source>Input file</source>
         <translation>입력 파일</translation>
     </message>

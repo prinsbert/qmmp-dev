@@ -161,6 +161,44 @@
     </message>
 </context>
 <context>
+    <name>LibrarySettingsDialog</name>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="14"/>
+        <source>Media Library Settings</source>
+        <translation type="unfinished">Налаштування музичної бібліотеки</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="39"/>
+        <source>Recreate database</source>
+        <translation type="unfinished">Перестворити базу даних</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="46"/>
+        <source>Show album year</source>
+        <translation type="unfinished">Показувати рік альбому</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished">Додати</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="66"/>
+        <source>Remove</source>
+        <translation type="unfinished">Вилучити</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="95"/>
+        <source>List of directories for scanning:</source>
+        <translation type="unfinished">Перелік тек для сканування:</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.cpp" line="65"/>
+        <source>Select Directories for Scanning</source>
+        <translation type="unfinished">Оберіть теки для сканування</translation>
+    </message>
+</context>
+<context>
     <name>LibraryWidget</name>
     <message>
         <location filename="../librarywidget.cpp" line="51"/>
@@ -191,44 +229,6 @@
         <location filename="../librarywidget.ui" line="14"/>
         <source>Media Library</source>
         <translation>Музична бібліотека</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Media Library Settings</source>
-        <translation>Налаштування музичної бібліотеки</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="39"/>
-        <source>Recreate database</source>
-        <translation>Перестворити базу даних</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="46"/>
-        <source>Show album year</source>
-        <translation>Показувати рік альбому</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>List of directories for scanning:</source>
-        <translation>Перелік тек для сканування:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Add</source>
-        <translation>Додати</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="66"/>
-        <source>Remove</source>
-        <translation>Вилучити</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="65"/>
-        <source>Select Directories for Scanning</source>
-        <translation>Оберіть теки для сканування</translation>
     </message>
 </context>
 </TS>

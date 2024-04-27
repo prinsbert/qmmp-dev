@@ -37,27 +37,27 @@
 <context>
     <name>CopyPasteFactory</name>
     <message>
-        <location filename="../copypastefactory.cpp" line="29"/>
+        <location filename="../copypastefactory.cpp" line="28"/>
         <source>Copy/Paste Plugin</source>
         <translation>복사하기/붙여넣기 플러그인</translation>
     </message>
     <message>
-        <location filename="../copypastefactory.cpp" line="49"/>
+        <location filename="../copypastefactory.cpp" line="48"/>
         <source>About Copy/Paste Plugin</source>
         <translation>복사하기/붙여넣기 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../copypastefactory.cpp" line="50"/>
+        <location filename="../copypastefactory.cpp" line="49"/>
         <source>Qmmp Copy/Paste Plugin</source>
         <translation>Qmmp 복사하기/붙여넣기 플러그인</translation>
     </message>
     <message>
-        <location filename="../copypastefactory.cpp" line="51"/>
+        <location filename="../copypastefactory.cpp" line="50"/>
         <source>This plugin allows one to copy selected tracks from one playlist to another</source>
         <translation>이 플러그인을 사용하면 선택한 트랙을 한 재생 목록에서 다른 재생 목록으로 복사할 수 있습니다</translation>
     </message>
     <message>
-        <location filename="../copypastefactory.cpp" line="52"/>
+        <location filename="../copypastefactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
