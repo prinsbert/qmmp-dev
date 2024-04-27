@@ -7,19 +7,19 @@ QT += network
 HEADERS += lyricsfactory.h \
            lyrics.h \
     lyricsprovider.h \
+    lyricssettingsdialog.h \
     ultimatelyricsparser.h \
-    settingsdialog.h \
     lyricswidget.h
 
 SOURCES += lyricsfactory.cpp \
            lyrics.cpp \
     lyricsprovider.cpp \
+    lyricssettingsdialog.cpp \
     ultimatelyricsparser.cpp \
-    settingsdialog.cpp \
     lyricswidget.cpp
 
 FORMS += \
-    settingsdialog.ui \
+    lyricssettingsdialog.ui \
     lyricswidget.ui
 
 RESOURCES = translations/translations.qrc \

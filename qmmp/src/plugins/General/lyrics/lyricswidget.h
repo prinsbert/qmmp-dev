@@ -24,11 +24,14 @@
 #include <QHash>
 #include <qmmp/trackinfo.h>
 #include "ultimatelyricsparser.h"
-#include "ui_lyricswidget.h"
 
 class QNetworkAccessManager;
 class QNetworkReply;
 class TrackInfo;
+
+namespace Ui {
+class LyricsWidget;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -55,7 +58,7 @@ private slots:
 
 private:
     void closeEvent(QCloseEvent *) override;
-    Ui::LyricsWidget m_ui;
+    Ui::LyricsWidget *m_ui;
     QNetworkAccessManager *m_http;
     QString m_cachePath;
     UltimateLyricsParser m_parser;

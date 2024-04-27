@@ -34,8 +34,8 @@ Lyrics::Lyrics(QPointer<LyricsWidget> *lyricsWidget, QObject *parent) : QObject(
     m_action = new QAction(tr("View Lyrics"), this);
     m_action->setShortcut(tr("Ctrl+L"));
     UiHelper::instance()->addAction(m_action, UiHelper::PLAYLIST_MENU);
-    connect(m_action, SIGNAL(triggered()), SLOT(showLyrics()));
-    connect(SoundCore::instance(), SIGNAL(trackInfoChanged()), SLOT(onTrackInfoChanged()));
+    connect(m_action, &QAction::triggered, this, &Lyrics::showLyrics);
+    connect(SoundCore::instance(), &SoundCore::trackInfoChanged, this, &Lyrics::onTrackInfoChanged);
 }
 
 Lyrics::~Lyrics()
@@ -44,10 +44,10 @@ Lyrics::~Lyrics()
 void Lyrics::showLyrics()
 {
     PlayListManager *pl_manager = MediaPlayer::instance()->playListManager();
-    QList <PlayListTrack *> tracks = pl_manager->selectedPlayList()->selectedTracks();
+    QList<PlayListTrack *> tracks = pl_manager->selectedPlayList()->selectedTracks();
     if (!tracks.isEmpty())
     {
-        if (tracks.at(0)->value(Qmmp::ARTIST).isEmpty() || tracks.at(0)->value(Qmmp::TITLE).isEmpty())
+        if (tracks.constFirst()->value(Qmmp::ARTIST).isEmpty() || tracks.constFirst()->value(Qmmp::TITLE).isEmpty())
             return;
 
         if(!m_lyricsWidget->isNull() && m_lyricsWidget->data()->isVisible())

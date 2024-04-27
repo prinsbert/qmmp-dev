@@ -20,25 +20,25 @@
 
 #include <QSettings>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
-#include "ui_settingsdialog.h"
+#include "listenbrainzsettingsdialog.h"
+#include "ui_listenbrainzsettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent) :
-    QDialog(parent), m_ui(new Ui::SettingsDialog)
+ListenBrainzSettingsDialog::ListenBrainzSettingsDialog(QWidget *parent) :
+    QDialog(parent), m_ui(new Ui::ListenBrainzSettingsDialog)
 {
     m_ui->setupUi(this);
     QSettings settings;
-    m_ui->userTokenLineEdit->setText(settings.value("ListenBrainz/user_token").toString());
+    m_ui->userTokenLineEdit->setText(settings.value(u"ListenBrainz/user_token"_s).toString());
 }
 
-SettingsDialog::~SettingsDialog()
+ListenBrainzSettingsDialog::~ListenBrainzSettingsDialog()
 {
     delete m_ui;
 }
 
-void SettingsDialog::accept()
+void ListenBrainzSettingsDialog::accept()
 {
     QSettings settings;
-    settings.setValue("ListenBrainz/user_token", m_ui->userTokenLineEdit->text());
+    settings.setValue(u"ListenBrainz/user_token"_s, m_ui->userTokenLineEdit->text());
     QDialog::accept();
 }

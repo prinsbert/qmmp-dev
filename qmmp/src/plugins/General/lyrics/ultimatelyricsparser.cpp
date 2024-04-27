@@ -27,6 +27,8 @@
 #include <algorithm>
 #include "ultimatelyricsparser.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 UltimateLyricsParser::UltimateLyricsParser()
 {}
 
@@ -139,9 +141,9 @@ LyricsProvider *UltimateLyricsParser::provider(const QString &name) const
 const QStringList &UltimateLyricsParser::defaultProviders()
 {
     static const QStringList out = {
-        "Encyclopaedia Metallum",
-        "letras.mus.br",
-        "darklyrics.com"
+        u"Encyclopaedia Metallum"_s,
+        u"letras.mus.br"_s,
+        u"darklyrics.com"_s
     };
 
     return out;

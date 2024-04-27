@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019 by Ilya Kotov                                      *
+ *   Copyright (C) 2019-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -38,23 +38,23 @@
 #include <qmmp/qmmp.h>
 #include "listenbrainz.h"
 
-#define API_ROOT "https://api.listenbrainz.org"
+#define API_ROOT u"https://api.listenbrainz.org"_s
 
 ListenBrainz::ListenBrainz(QObject *parent)
     : QObject(parent)
 {
     m_time = new QElapsedTimer();
-    m_cache = new PayloadCache(Qmmp::configDir() +"/listenbrainz.cache");
-    m_ua = QString("qmmp-plugins/%1").arg(Qmmp::strVersion().toLower()).toLatin1();
+    m_cache = new PayloadCache(Qmmp::configDir() + u"/listenbrainz.cache"_s);
+    m_ua = QStringLiteral("qmmp-plugins/%1").arg(Qmmp::strVersion().toLower()).toLatin1();
     m_http = new QNetworkAccessManager(this);
     m_core = SoundCore::instance();
     QSettings settings;
-    m_token = settings.value("ListenBrainz/user_token").toString().trimmed();
+    m_token = settings.value(u"ListenBrainz/user_token"_s).toString().trimmed();
 
-    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(processResponse(QNetworkReply*)));
-    connect(QmmpSettings::instance(), SIGNAL(networkSettingsChanged()), SLOT(setupProxy()));
-    connect(m_core, SIGNAL(trackInfoChanged()), SLOT(updateMetaData()));
-    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(setState(Qmmp::State)));
+    connect(m_http, &QNetworkAccessManager::finished, this, &ListenBrainz::processResponse);
+    connect(QmmpSettings::instance(), &QmmpSettings::networkSettingsChanged, this, &ListenBrainz::setupProxy);
+    connect(m_core, &SoundCore::trackInfoChanged, this,  &ListenBrainz::updateMetaData);
+    connect(m_core, &SoundCore::stateChanged, this, &ListenBrainz::setState);
 
     setupProxy();
     m_cachedSongs = m_cache->load();
@@ -147,9 +147,9 @@ void ListenBrainz::processResponse(QNetworkReply *reply)
 
     QByteArray data = reply->readAll();
     QJsonDocument document = QJsonDocument::fromJson(data);
-    QString status = document.object().value("status").toString();
+    QString status = document.object().value(u"status"_s).toString();
 
-    if(status != "ok" || reply->error() != QNetworkReply::NoError)
+    if(status != "ok"_L1 || reply->error() != QNetworkReply::NoError)
     {
         status.clear();
         qWarning("ListenBrainz: server reply: %s", data.constData());
@@ -164,13 +164,13 @@ void ListenBrainz::processResponse(QNetworkReply *reply)
     if(reply == m_submitReply)
     {
         m_submitReply = nullptr;
-        if(status == "ok")
+        if(status == "ok"_L1)
         {
             qDebug("ListenBrainz: submited %d song(s)", m_submitedSongs);
             while (m_submitedSongs)
             {
                 m_submitedSongs--;
-                m_cachedSongs.removeFirst ();
+                m_cachedSongs.removeFirst();
             }
             if (!m_cachedSongs.isEmpty()) //submit remaining songs
             {
@@ -184,13 +184,13 @@ void ListenBrainz::processResponse(QNetworkReply *reply)
         }
         else
         {
-            QTimer::singleShot(120000, this, SLOT(submit()));
+            QTimer::singleShot(120000, this, &ListenBrainz::submit);
         }
     }
     else if(reply == m_notificationReply)
     {
         m_notificationReply = nullptr;
-        if(status == "ok")
+        if(status == "ok"_L1)
             qDebug("ListenBrainz: Now-Playing notification done");
     }
     reply->deleteLater();
@@ -230,35 +230,35 @@ void ListenBrainz::submit()
 
         QJsonObject track_metadata
         {
-            { "artist_name", metaData.value(Qmmp::ARTIST) },
-            { "track_name", metaData.value(Qmmp::TITLE) }
+            { u"artist_name"_s, metaData.value(Qmmp::ARTIST) },
+            { u"track_name"_s, metaData.value(Qmmp::TITLE) }
         };
 
         if(metaData.value(Qmmp::TRACK).toInt() > 0)
         {
             QJsonObject additional_info
             {
-                { "tracknumber", metaData.value(Qmmp::TRACK).toInt() }
+                { u"tracknumber"_s, metaData.value(Qmmp::TRACK).toInt() }
             };
 
-            track_metadata["additional_info"] = additional_info;
+            track_metadata[u"additional_info"_s] = additional_info;
         };
 
         QJsonObject payloadItem
         {
-            { "listened_at", qint64(metaData.timeStamp()) },
-            { "track_metadata", track_metadata }
+            { u"listened_at"_s, qint64(metaData.timeStamp()) },
+            { u"track_metadata"_s, track_metadata }
         };
 
         payload.append(payloadItem);
     }
 
-    QJsonObject json { { "listen_type", "import" }, { "payload", payload } };
+    QJsonObject json { { u"listen_type"_s, u"import"_s }, { u"payload"_s, payload } };
 
     QJsonDocument document(json);
     QByteArray body = document.toJson(QJsonDocument::Compact);
 
-    QUrl url(QString("%1/1/submit-listens").arg(API_ROOT));
+    QUrl url(QStringLiteral("%1/1/submit-listens").arg(API_ROOT));
     url.setPort(443);
 
     QNetworkRequest request(url);
@@ -266,7 +266,7 @@ void ListenBrainz::submit()
     request.setRawHeader("Host", url.host().toLatin1());
     request.setRawHeader("Accept", "*/*");
     request.setRawHeader("Content-Type", "application/json");
-    request.setRawHeader("Authorization", QString("Token %1").arg(m_token).toLatin1());
+    request.setRawHeader("Authorization", QStringLiteral("Token %1").arg(m_token).toLatin1());
     request.setHeader(QNetworkRequest::ContentLengthHeader,  body.size());
     m_submitReply = m_http->post(request, body);
 }
@@ -280,29 +280,29 @@ void ListenBrainz::sendNotification(const TrackMetaData &metaData)
 
     QJsonObject track_metadata
     {
-        { "artist_name", metaData.value(Qmmp::ARTIST) },
-        { "track_name", metaData.value(Qmmp::TITLE) }
+        { u"artist_name"_s, metaData.value(Qmmp::ARTIST) },
+        { u"track_name"_s, metaData.value(Qmmp::TITLE) }
     };
 
     if(metaData.value(Qmmp::TRACK).toInt() > 0)
     {
         QJsonObject additional_info
         {
-            { "tracknumber", metaData.value(Qmmp::TRACK).toInt() }
+            { u"tracknumber"_s, metaData.value(Qmmp::TRACK).toInt() }
         };
 
-        track_metadata["additional_info"] = additional_info;
+        track_metadata[u"additional_info"_s] = additional_info;
     };
 
-    QJsonObject payloadItem { { "track_metadata", track_metadata } };
+    QJsonObject payloadItem { { u"track_metadata"_s, track_metadata } };
 
     QJsonArray payload = { payloadItem };
-    QJsonObject json { { "listen_type", "playing_now" }, { "payload", payload } };
+    QJsonObject json { { u"listen_type"_s, u"playing_now"_s }, { u"payload"_s, payload } };
 
     QJsonDocument document(json);
     QByteArray body = document.toJson(QJsonDocument::Compact);
 
-    QUrl url(QString("%1/1/submit-listens").arg(API_ROOT));
+    QUrl url(QStringLiteral("%1/1/submit-listens").arg(API_ROOT));
     url.setPort(443);
 
     QNetworkRequest request(url);
@@ -310,7 +310,7 @@ void ListenBrainz::sendNotification(const TrackMetaData &metaData)
     request.setRawHeader("Host", url.host().toLatin1());
     request.setRawHeader("Accept", "*/*");
     request.setRawHeader("Content-Type", "application/json");
-    request.setRawHeader("Authorization", QString("Token %1").arg(m_token).toLatin1());
+    request.setRawHeader("Authorization", QStringLiteral("Token %1").arg(m_token).toLatin1());
     request.setHeader(QNetworkRequest::ContentLengthHeader,  body.size());
     m_notificationReply = m_http->post(request, body);
 }

@@ -26,7 +26,7 @@
 
 #include <QString>
 #include <QList>
-#include <QMap>
+#include <QHash>
 
 class PlayListTrack;
 class TrackInfo;
@@ -62,7 +62,7 @@ private:
     typedef QList<Item> Rule;
 
     QString fixCase(const QString &title) const;
-    QMap<QString, QString> generateReplaceMap(const TrackInfo &track) const;
+    QHash<QString, QString> generateReplaceHash(const TrackInfo &track) const;
     QString extract(const QString &content, const Rule &rule) const;
     QString exclude(const QString &content, const Rule &rule) const;
 

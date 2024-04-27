@@ -18,27 +18,28 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef LYRICSSETTINGSDIALOG_H
+#define LYRICSSETTINGSDIALOG_H
 
 #include <QDialog>
 
 namespace Ui {
-class SettingsDialog;
+class LyricsSettingsDialog;
 }
 
-class SettingsDialog : public QDialog
+class LyricsSettingsDialog : public QDialog
 {
     Q_OBJECT
+
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
-    ~SettingsDialog();
+    explicit LyricsSettingsDialog(QWidget *parent = nullptr);
+    ~LyricsSettingsDialog();
 
 public slots:
     void accept() override;
 
 private:
-    Ui::SettingsDialog *m_ui;
+    Ui::LyricsSettingsDialog *m_ui;
 };
 
-#endif // SETTINGSDIALOG_H
+#endif // LYRICSSETTINGSDIALOG_H

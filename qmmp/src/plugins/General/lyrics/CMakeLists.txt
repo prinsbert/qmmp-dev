@@ -12,10 +12,10 @@ SET(liblyrics_SRCS
     lyricsfactory.cpp
     lyricsprovider.cpp
     lyricswidget.cpp
-    settingsdialog.cpp
+    lyricssettingsdialog.cpp
     ultimatelyricsparser.cpp
     lyricswidget.ui
-    settingsdialog.ui
+    lyricssettingsdialog.ui
     translations/translations.qrc
     providers/providers.qrc
 )
