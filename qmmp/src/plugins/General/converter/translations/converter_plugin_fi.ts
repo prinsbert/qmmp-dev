@@ -79,7 +79,7 @@
         <translation>Lopeta</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="113"/>
+        <location filename="../converterdialog.cpp" line="116"/>
         <source>Choose a directory</source>
         <translation>Valitse kansio</translation>
     </message>
@@ -89,44 +89,44 @@
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="203"/>
+        <location filename="../converterdialog.cpp" line="205"/>
         <source>Create a Copy</source>
         <translation>Luo kopio</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="134"/>
-        <location filename="../converterdialog.cpp" line="356"/>
-        <location filename="../converterdialog.cpp" line="363"/>
+        <location filename="../converterdialog.cpp" line="136"/>
+        <location filename="../converterdialog.cpp" line="361"/>
+        <location filename="../converterdialog.cpp" line="368"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="139"/>
+        <location filename="../converterdialog.cpp" line="141"/>
         <source>Waiting</source>
         <translation>Odottaa</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="201"/>
+        <location filename="../converterdialog.cpp" line="203"/>
         <source>Create</source>
         <translation>Luo</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="202"/>
+        <location filename="../converterdialog.cpp" line="204"/>
         <source>Edit</source>
         <translation>Muokkaa</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="204"/>
+        <location filename="../converterdialog.cpp" line="206"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="356"/>
+        <location filename="../converterdialog.cpp" line="361"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>&quot;%1&quot; ei voida suorittaa. Ohjelmaa ei löydy.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="363"/>
+        <location filename="../converterdialog.cpp" line="368"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>Prosessi &quot;%1&quot; valmistui virheellisesti.</translation>
     </message>
@@ -215,17 +215,17 @@
         <translation>Muunna 16-bittiseksi</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="37"/>
+        <location filename="../preseteditor.cpp" line="39"/>
         <source>%1 (Read Only)</source>
         <translation>%1 (vain luku)</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="70"/>
+        <location filename="../preseteditor.cpp" line="72"/>
         <source>Output file</source>
         <translation>Tallennus tiedosto</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="71"/>
+        <location filename="../preseteditor.cpp" line="73"/>
         <source>Input file</source>
         <translation>Tuo tiedosto</translation>
     </message>

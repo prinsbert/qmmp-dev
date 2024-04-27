@@ -69,133 +69,115 @@
 <context>
     <name>FileOpsFactory</name>
     <message>
-        <location filename="../fileopsfactory.cpp" line="30"/>
+        <location filename="../fileopsfactory.cpp" line="29"/>
         <source>File Operations Plugin</source>
         <translation>ファイル操作プラグイン</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="50"/>
+        <location filename="../fileopsfactory.cpp" line="49"/>
         <source>About File Operations Plugin</source>
         <translation>ファイル操作プラグインについて</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="51"/>
+        <location filename="../fileopsfactory.cpp" line="50"/>
         <source>Qmmp File Operations Plugin</source>
         <translation>QMMP ファイル操作プラグイン</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="52"/>
+        <location filename="../fileopsfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>HotkeyDialog</name>
+    <name>FileOpsSettingsDialog</name>
     <message>
-        <location filename="../hotkeydialog.ui" line="14"/>
-        <source>Modify Shortcut</source>
-        <translation>ショートカットの変更</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>割り当てたいキーの組み合わせを押します</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="43"/>
-        <source>Clear</source>
-        <translation>消去</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../fileopssettingsdialog.ui" line="14"/>
         <source>File Operations Settings</source>
-        <translation>ファイル操作設定</translation>
+        <translation type="unfinished">ファイル操作設定</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="51"/>
+        <location filename="../fileopssettingsdialog.ui" line="51"/>
         <source>Enabled</source>
-        <translation>発効</translation>
+        <translation type="unfinished">発効</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="56"/>
+        <location filename="../fileopssettingsdialog.ui" line="56"/>
         <source>Operation</source>
-        <translation>操作</translation>
+        <translation type="unfinished">操作</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../fileopssettingsdialog.ui" line="61"/>
         <source>Menu text</source>
-        <translation>メニューの項目名</translation>
+        <translation type="unfinished">メニューの項目名</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../fileopssettingsdialog.ui" line="66"/>
         <source>Shortcut</source>
-        <translation>ショートカット</translation>
+        <translation type="unfinished">ショートカット</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="82"/>
+        <location filename="../fileopssettingsdialog.ui" line="82"/>
         <source>Add</source>
-        <translation>追加</translation>
+        <translation type="unfinished">追加</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="99"/>
-        <location filename="../settingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.ui" line="99"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Remove</source>
-        <translation>削除</translation>
+        <translation type="unfinished">削除</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="127"/>
+        <location filename="../fileopssettingsdialog.ui" line="127"/>
         <source>Destination:</source>
-        <translation>ファイル収容先:</translation>
+        <translation type="unfinished">ファイル収容先:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
-        <location filename="../settingsdialog.ui" line="154"/>
+        <location filename="../fileopssettingsdialog.ui" line="137"/>
+        <location filename="../fileopssettingsdialog.ui" line="154"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="144"/>
-        <location filename="../settingsdialog.cpp" line="152"/>
+        <location filename="../fileopssettingsdialog.ui" line="144"/>
+        <location filename="../fileopssettingsdialog.cpp" line="155"/>
         <source>File name pattern:</source>
-        <translation>ファイル名の様式:</translation>
+        <translation type="unfinished">ファイル名の様式:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="216"/>
-        <source>Copy</source>
-        <translation>複製</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="217"/>
-        <source>Rename</source>
-        <translation>名称変更</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="218"/>
-        <source>Move</source>
-        <translation>移動</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="124"/>
+        <location filename="../fileopssettingsdialog.cpp" line="127"/>
         <source>New action</source>
-        <translation>新しい動作</translation>
+        <translation type="unfinished">新しい動作</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="181"/>
+        <location filename="../fileopssettingsdialog.cpp" line="184"/>
         <source>Command:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="220"/>
+        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <source>Copy</source>
+        <translation type="unfinished">複製</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <source>Rename</source>
+        <translation type="unfinished">名称変更</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <source>Move</source>
+        <translation type="unfinished">移動</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Execute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="232"/>
+        <location filename="../fileopssettingsdialog.cpp" line="235"/>
         <source>Choose a directory</source>
-        <translation>ディレクトリを選択</translation>
+        <translation type="unfinished">ディレクトリを選択</translation>
     </message>
 </context>
 </TS>

@@ -30,16 +30,16 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>ListenBrainzSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../listenbrainzsettingsdialog.ui" line="14"/>
         <source>ListenBrainz Plugin Settings</source>
-        <translation>Ustawienia wtyczki ListenBrainz</translation>
+        <translation type="unfinished">Ustawienia wtyczki ListenBrainz</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../listenbrainzsettingsdialog.ui" line="29"/>
         <source>ListenBrainz user token:</source>
-        <translation>Token użytkownika ListenBrainz:</translation>
+        <translation type="unfinished">Token użytkownika ListenBrainz:</translation>
     </message>
 </context>
 </TS>

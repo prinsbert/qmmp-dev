@@ -4,7 +4,7 @@
 <context>
     <name>KdeNotify</name>
     <message>
-        <location filename="../kdenotify.cpp" line="120"/>
+        <location filename="../kdenotify.cpp" line="121"/>
         <source>Qmmp now playing:</source>
         <translation>Qmmp toistaa:</translation>
     </message>
@@ -28,56 +28,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>KdeNotifySettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="14"/>
         <source>KDE 4 Notification Plugin Settings</source>
-        <translation>Asetukset KDE 4 Notification Plugin</translation>
+        <translation type="unfinished">Asetukset KDE 4 Notification Plugin</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="39"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="39"/>
         <source>Options</source>
-        <translation>Valinnat</translation>
+        <translation type="unfinished">Valinnat</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="45"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation>Ilmoituksen viive:</translation>
+        <translation type="unfinished">Ilmoituksen viive:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="72"/>
-        <source>s</source>
-        <translation>s</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="52"/>
         <source>Update visible notification instead create new</source>
-        <translation>Päivitä ilmoitus ja luo uusi</translation>
+        <translation type="unfinished">Päivitä ilmoitus ja luo uusi</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="85"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="72"/>
+        <source>s</source>
+        <translation type="unfinished">s</translation>
+    </message>
+    <message>
+        <location filename="../kdenotifysettingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation>Ilmoitus voimakkuuden muutoksesta</translation>
+        <translation type="unfinished">Ilmoitus voimakkuuden muutoksesta</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="95"/>
         <source>Appearance</source>
-        <translation>Ulkoasu</translation>
+        <translation type="unfinished">Ulkoasu</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="101"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="101"/>
         <source>Show covers</source>
-        <translation>Näytä kannet</translation>
+        <translation type="unfinished">Näytä kannet</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="110"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="110"/>
         <source>Edit template</source>
-        <translation>Muokkaa mallia</translation>
+        <translation type="unfinished">Muokkaa mallia</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="77"/>
+        <location filename="../kdenotifysettingsdialog.cpp" line="76"/>
         <source>Notification Template</source>
-        <translation>Ilmoituksen malli</translation>
+        <translation type="unfinished">Ilmoituksen malli</translation>
     </message>
 </context>
 </TS>

@@ -48,99 +48,99 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HotkeySettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../hotkeysettingsdialog.ui" line="14"/>
         <source>Global Hotkey Plugin Settings</source>
-        <translation>全局熱鍵插件設置</translation>
+        <translation type="unfinished">全局熱鍵插件設置</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="42"/>
         <source>Action</source>
-        <translation>動作</translation>
+        <translation type="unfinished">動作</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="47"/>
         <source>Shortcut</source>
-        <translation>熱鍵</translation>
+        <translation type="unfinished">熱鍵</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../hotkeysettingsdialog.ui" line="55"/>
         <source>Reset</source>
-        <translation>重置</translation>
+        <translation type="unfinished">重置</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="38"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="39"/>
         <source>Play</source>
-        <translation>播放</translation>
+        <translation type="unfinished">播放</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="39"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
         <source>Stop</source>
-        <translation>停止</translation>
+        <translation type="unfinished">停止</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="40"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
         <source>Pause</source>
-        <translation>暫停</translation>
+        <translation type="unfinished">暫停</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
         <source>Play/Pause</source>
-        <translation>播放/暫停</translation>
+        <translation type="unfinished">播放/暫停</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
         <source>Next</source>
-        <translation>下一曲</translation>
+        <translation type="unfinished">下一曲</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="43"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Previous</source>
-        <translation>上一曲</translation>
+        <translation type="unfinished">上一曲</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="44"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
         <source>Show/Hide</source>
-        <translation>察看/隱藏</translation>
+        <translation type="unfinished">察看/隱藏</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="45"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Volume +</source>
-        <translation>音量 +</translation>
+        <translation type="unfinished">音量 +</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="46"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume -</source>
-        <translation>音量 -</translation>
+        <translation type="unfinished">音量 -</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Forward 5 seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Rewind 5 seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="49"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Jump to track</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="50"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Warning</source>
-        <translation>注意</translation>
+        <translation type="unfinished">注意</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation type="unfinished"></translation>
     </message>

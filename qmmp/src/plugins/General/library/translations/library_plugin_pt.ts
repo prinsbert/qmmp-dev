@@ -157,6 +157,44 @@
     </message>
 </context>
 <context>
+    <name>LibrarySettingsDialog</name>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="14"/>
+        <source>Media Library Settings</source>
+        <translation type="unfinished">Definições</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="39"/>
+        <source>Recreate database</source>
+        <translation type="unfinished">Recriar base de dados</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="46"/>
+        <source>Show album year</source>
+        <translation type="unfinished">Mostrar ano do álbum</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="55"/>
+        <source>Add</source>
+        <translation type="unfinished">Adicionar</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="66"/>
+        <source>Remove</source>
+        <translation type="unfinished">Remover</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.ui" line="95"/>
+        <source>List of directories for scanning:</source>
+        <translation type="unfinished">Lista de diretórios a analisar:</translation>
+    </message>
+    <message>
+        <location filename="../librarysettingsdialog.cpp" line="65"/>
+        <source>Select Directories for Scanning</source>
+        <translation type="unfinished">Selecione os diretórios a analisar</translation>
+    </message>
+</context>
+<context>
     <name>LibraryWidget</name>
     <message>
         <location filename="../librarywidget.cpp" line="51"/>
@@ -187,44 +225,6 @@
         <location filename="../librarywidget.ui" line="14"/>
         <source>Media Library</source>
         <translation>Coleção multimédia</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Media Library Settings</source>
-        <translation>Definições</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="39"/>
-        <source>Recreate database</source>
-        <translation>Recriar base de dados</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="46"/>
-        <source>Show album year</source>
-        <translation>Mostrar ano do álbum</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>List of directories for scanning:</source>
-        <translation>Lista de diretórios a analisar:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Add</source>
-        <translation>Adicionar</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="66"/>
-        <source>Remove</source>
-        <translation>Remover</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="65"/>
-        <source>Select Directories for Scanning</source>
-        <translation>Selecione os diretórios a analisar</translation>
     </message>
 </context>
 </TS>

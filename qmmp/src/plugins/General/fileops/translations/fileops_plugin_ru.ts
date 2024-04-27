@@ -73,133 +73,115 @@
 <context>
     <name>FileOpsFactory</name>
     <message>
-        <location filename="../fileopsfactory.cpp" line="30"/>
+        <location filename="../fileopsfactory.cpp" line="29"/>
         <source>File Operations Plugin</source>
         <translation>Модуль файловых операций</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="50"/>
+        <location filename="../fileopsfactory.cpp" line="49"/>
         <source>About File Operations Plugin</source>
         <translation>О модуле файловых операций</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="51"/>
+        <location filename="../fileopsfactory.cpp" line="50"/>
         <source>Qmmp File Operations Plugin</source>
         <translation>Модуль работы с файлами для Qmmp</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="52"/>
+        <location filename="../fileopsfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>HotkeyDialog</name>
+    <name>FileOpsSettingsDialog</name>
     <message>
-        <location filename="../hotkeydialog.ui" line="14"/>
-        <source>Modify Shortcut</source>
-        <translation>Изменить сочетание клавиш</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Нажмите клавиши, сочетание которых вы хотите использовать</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="43"/>
-        <source>Clear</source>
-        <translation>Очистить</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../fileopssettingsdialog.ui" line="14"/>
         <source>File Operations Settings</source>
-        <translation>Настройки файловых операций</translation>
+        <translation type="unfinished">Настройки файловых операций</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="51"/>
+        <location filename="../fileopssettingsdialog.ui" line="51"/>
         <source>Enabled</source>
-        <translation>Включён</translation>
+        <translation type="unfinished">Включён</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="56"/>
+        <location filename="../fileopssettingsdialog.ui" line="56"/>
         <source>Operation</source>
-        <translation>Операция</translation>
+        <translation type="unfinished">Операция</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../fileopssettingsdialog.ui" line="61"/>
         <source>Menu text</source>
-        <translation>Текст меню</translation>
+        <translation type="unfinished">Текст меню</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../fileopssettingsdialog.ui" line="66"/>
         <source>Shortcut</source>
-        <translation>Сочетание клавиш</translation>
+        <translation type="unfinished">Сочетание клавиш</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="82"/>
+        <location filename="../fileopssettingsdialog.ui" line="82"/>
         <source>Add</source>
-        <translation>Добавить</translation>
+        <translation type="unfinished">Добавить</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="99"/>
-        <location filename="../settingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.ui" line="99"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Remove</source>
-        <translation>Удалить</translation>
+        <translation type="unfinished">Удалить</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="127"/>
+        <location filename="../fileopssettingsdialog.ui" line="127"/>
         <source>Destination:</source>
-        <translation>Назначение:</translation>
+        <translation type="unfinished">Назначение:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
-        <location filename="../settingsdialog.ui" line="154"/>
+        <location filename="../fileopssettingsdialog.ui" line="137"/>
+        <location filename="../fileopssettingsdialog.ui" line="154"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="144"/>
-        <location filename="../settingsdialog.cpp" line="152"/>
+        <location filename="../fileopssettingsdialog.ui" line="144"/>
+        <location filename="../fileopssettingsdialog.cpp" line="155"/>
         <source>File name pattern:</source>
-        <translation>Формат имени файла:</translation>
+        <translation type="unfinished">Формат имени файла:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="216"/>
-        <source>Copy</source>
-        <translation>Копировать</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="217"/>
-        <source>Rename</source>
-        <translation>Переименовать</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="218"/>
-        <source>Move</source>
-        <translation>Переместить</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="124"/>
+        <location filename="../fileopssettingsdialog.cpp" line="127"/>
         <source>New action</source>
-        <translation>Новое действие</translation>
+        <translation type="unfinished">Новое действие</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="181"/>
+        <location filename="../fileopssettingsdialog.cpp" line="184"/>
         <source>Command:</source>
-        <translation>Команда:</translation>
+        <translation type="unfinished">Команда:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="220"/>
+        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <source>Copy</source>
+        <translation type="unfinished">Копировать</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <source>Rename</source>
+        <translation type="unfinished">Переименовать</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <source>Move</source>
+        <translation type="unfinished">Переместить</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Execute</source>
-        <translation>Выполнить</translation>
+        <translation type="unfinished">Выполнить</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="232"/>
+        <location filename="../fileopssettingsdialog.cpp" line="235"/>
         <source>Choose a directory</source>
-        <translation>Выберите каталог</translation>
+        <translation type="unfinished">Выберите каталог</translation>
     </message>
 </context>
 </TS>

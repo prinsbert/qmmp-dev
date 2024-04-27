@@ -48,101 +48,101 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HotkeySettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.cpp" line="38"/>
-        <source>Play</source>
-        <translation>Groti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="39"/>
-        <source>Stop</source>
-        <translation>Stabdyti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="40"/>
-        <source>Pause</source>
-        <translation>Pauzė</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
-        <source>Play/Pause</source>
-        <translation>Groti/Pauzė</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
-        <source>Next</source>
-        <translation>Sekantis takelis</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="43"/>
-        <source>Previous</source>
-        <translation>Ankstesnis takelis</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="44"/>
-        <source>Show/Hide</source>
-        <translation>Rodyti/Slėpti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="45"/>
-        <source>Volume +</source>
-        <translation>Garsas +</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="46"/>
-        <source>Volume -</source>
-        <translation>Garsas -</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
-        <source>Forward 5 seconds</source>
-        <translation>Į priekį 5 sekundėmis </translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
-        <source>Rewind 5 seconds</source>
-        <translation>Persukti 5 sekundes</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="49"/>
-        <source>Jump to track</source>
-        <translation>Pereiti prie takelio</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="50"/>
-        <source>Mute</source>
-        <translation>Nutildyti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
-        <source>Warning</source>
-        <translation>Įspėjimas</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
-        <source>Key sequence &apos;%1&apos; is already used</source>
-        <translation>Klavišo kombinacija &apos;%1&apos; jau naudojama</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../hotkeysettingsdialog.ui" line="14"/>
         <source>Global Hotkey Plugin Settings</source>
-        <translation>Global Hotkey nustatymai</translation>
+        <translation type="unfinished">Global Hotkey nustatymai</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="42"/>
         <source>Action</source>
-        <translation>Veiksmas</translation>
+        <translation type="unfinished">Veiksmas</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="47"/>
         <source>Shortcut</source>
-        <translation>Nuoroda</translation>
+        <translation type="unfinished">Nuoroda</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../hotkeysettingsdialog.ui" line="55"/>
         <source>Reset</source>
-        <translation>Ištrinti</translation>
+        <translation type="unfinished">Ištrinti</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="39"/>
+        <source>Play</source>
+        <translation type="unfinished">Groti</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
+        <source>Stop</source>
+        <translation type="unfinished">Stabdyti</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
+        <source>Pause</source>
+        <translation type="unfinished">Pauzė</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
+        <source>Play/Pause</source>
+        <translation type="unfinished">Groti/Pauzė</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
+        <source>Next</source>
+        <translation type="unfinished">Sekantis takelis</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
+        <source>Previous</source>
+        <translation type="unfinished">Ankstesnis takelis</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
+        <source>Show/Hide</source>
+        <translation type="unfinished">Rodyti/Slėpti</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
+        <source>Volume +</source>
+        <translation type="unfinished">Garsas +</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
+        <source>Volume -</source>
+        <translation type="unfinished">Garsas -</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
+        <source>Forward 5 seconds</source>
+        <translation type="unfinished">Į priekį 5 sekundėmis </translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
+        <source>Rewind 5 seconds</source>
+        <translation type="unfinished">Persukti 5 sekundes</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
+        <source>Jump to track</source>
+        <translation type="unfinished">Pereiti prie takelio</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
+        <source>Mute</source>
+        <translation type="unfinished">Nutildyti</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <source>Warning</source>
+        <translation type="unfinished">Įspėjimas</translation>
+    </message>
+    <message>
+        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
+        <source>Key sequence &apos;%1&apos; is already used</source>
+        <translation type="unfinished">Klavišo kombinacija &apos;%1&apos; jau naudojama</translation>
     </message>
 </context>
 </TS>

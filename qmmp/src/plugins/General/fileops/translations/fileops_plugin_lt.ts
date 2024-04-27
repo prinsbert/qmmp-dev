@@ -73,133 +73,115 @@
 <context>
     <name>FileOpsFactory</name>
     <message>
-        <location filename="../fileopsfactory.cpp" line="30"/>
+        <location filename="../fileopsfactory.cpp" line="29"/>
         <source>File Operations Plugin</source>
         <translation>Bylų įskiepis</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="50"/>
+        <location filename="../fileopsfactory.cpp" line="49"/>
         <source>About File Operations Plugin</source>
         <translation>Apie bylų įskiepį</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="51"/>
+        <location filename="../fileopsfactory.cpp" line="50"/>
         <source>Qmmp File Operations Plugin</source>
         <translation>Qmmp bylų įskiepis</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="52"/>
+        <location filename="../fileopsfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>HotkeyDialog</name>
+    <name>FileOpsSettingsDialog</name>
     <message>
-        <location filename="../hotkeydialog.ui" line="14"/>
-        <source>Modify Shortcut</source>
-        <translation>Pakeisti klavišo funkciją</translation>
+        <location filename="../fileopssettingsdialog.ui" line="14"/>
+        <source>File Operations Settings</source>
+        <translation type="unfinished">Bylų operacijų nustatymai</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Paspauskiteklavišų kombinaciją, į kurią norite pakeisti</translation>
+        <location filename="../fileopssettingsdialog.ui" line="51"/>
+        <source>Enabled</source>
+        <translation type="unfinished">Įjungta</translation>
     </message>
     <message>
-        <location filename="../hotkeydialog.ui" line="43"/>
-        <source>Clear</source>
-        <translation>Išvalyti</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.cpp" line="216"/>
-        <source>Copy</source>
-        <translation>Kopijuoti</translation>
+        <location filename="../fileopssettingsdialog.ui" line="56"/>
+        <source>Operation</source>
+        <translation type="unfinished">Operacija</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="217"/>
-        <source>Rename</source>
-        <translation>Pervadinti</translation>
+        <location filename="../fileopssettingsdialog.ui" line="61"/>
+        <source>Menu text</source>
+        <translation type="unfinished">Meniu tekstas</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="99"/>
-        <location filename="../settingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.ui" line="66"/>
+        <source>Shortcut</source>
+        <translation type="unfinished">Mygtuko nuoroda</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.ui" line="82"/>
+        <source>Add</source>
+        <translation type="unfinished">Pridėti</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.ui" line="99"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Remove</source>
-        <translation>Ištrinti</translation>
+        <translation type="unfinished">Ištrinti</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="124"/>
+        <location filename="../fileopssettingsdialog.ui" line="127"/>
+        <source>Destination:</source>
+        <translation type="unfinished">Paskirtis:</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.ui" line="137"/>
+        <location filename="../fileopssettingsdialog.ui" line="154"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.ui" line="144"/>
+        <location filename="../fileopssettingsdialog.cpp" line="155"/>
+        <source>File name pattern:</source>
+        <translation type="unfinished">Bylos plėtinys:</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="127"/>
         <source>New action</source>
-        <translation>Naujas veiksmas</translation>
+        <translation type="unfinished">Naujas veiksmas</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="181"/>
+        <location filename="../fileopssettingsdialog.cpp" line="184"/>
         <source>Command:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="218"/>
+        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <source>Copy</source>
+        <translation type="unfinished">Kopijuoti</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <source>Rename</source>
+        <translation type="unfinished">Pervadinti</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="221"/>
         <source>Move</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="220"/>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Execute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="232"/>
+        <location filename="../fileopssettingsdialog.cpp" line="235"/>
         <source>Choose a directory</source>
-        <translation>Pasirinkite aplanką</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>File Operations Settings</source>
-        <translation>Bylų operacijų nustatymai</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="51"/>
-        <source>Enabled</source>
-        <translation>Įjungta</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="56"/>
-        <source>Operation</source>
-        <translation>Operacija</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Menu text</source>
-        <translation>Meniu tekstas</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="66"/>
-        <source>Shortcut</source>
-        <translation>Mygtuko nuoroda</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="137"/>
-        <location filename="../settingsdialog.ui" line="154"/>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="127"/>
-        <source>Destination:</source>
-        <translation>Paskirtis:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="82"/>
-        <source>Add</source>
-        <translation>Pridėti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="144"/>
-        <location filename="../settingsdialog.cpp" line="152"/>
-        <source>File name pattern:</source>
-        <translation>Bylos plėtinys:</translation>
+        <translation type="unfinished">Pasirinkite aplanką</translation>
     </message>
 </context>
 </TS>

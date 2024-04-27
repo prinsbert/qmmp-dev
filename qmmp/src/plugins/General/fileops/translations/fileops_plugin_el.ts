@@ -71,133 +71,115 @@
 <context>
     <name>FileOpsFactory</name>
     <message>
-        <location filename="../fileopsfactory.cpp" line="30"/>
+        <location filename="../fileopsfactory.cpp" line="29"/>
         <source>File Operations Plugin</source>
         <translation>Πρόσθετο λειτουργιών αρχείων</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="50"/>
+        <location filename="../fileopsfactory.cpp" line="49"/>
         <source>About File Operations Plugin</source>
         <translation>Σχετικά με το πρόσθετο λειτουργιών αρχείων</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="51"/>
+        <location filename="../fileopsfactory.cpp" line="50"/>
         <source>Qmmp File Operations Plugin</source>
         <translation>Qmmp πρόσθετο λειτουργιών αρχείων</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="52"/>
+        <location filename="../fileopsfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>HotkeyDialog</name>
+    <name>FileOpsSettingsDialog</name>
     <message>
-        <location filename="../hotkeydialog.ui" line="14"/>
-        <source>Modify Shortcut</source>
-        <translation>Επεξεργασία συντόμευσης</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Πιέστε το συνδυασμό πλήκτρων που θέλετε να αναθέσετε</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="43"/>
-        <source>Clear</source>
-        <translation>Διαγραφή</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../fileopssettingsdialog.ui" line="14"/>
         <source>File Operations Settings</source>
-        <translation>Ρυθμίσεις του πρόσθετου λειτουργιών αρχείων</translation>
+        <translation type="unfinished">Ρυθμίσεις του πρόσθετου λειτουργιών αρχείων</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="51"/>
+        <location filename="../fileopssettingsdialog.ui" line="51"/>
         <source>Enabled</source>
-        <translation>Ενεργοποιημένο</translation>
+        <translation type="unfinished">Ενεργοποιημένο</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="56"/>
+        <location filename="../fileopssettingsdialog.ui" line="56"/>
         <source>Operation</source>
-        <translation>Λειτουργία</translation>
+        <translation type="unfinished">Λειτουργία</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../fileopssettingsdialog.ui" line="61"/>
         <source>Menu text</source>
-        <translation>Κείμενο μενού</translation>
+        <translation type="unfinished">Κείμενο μενού</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../fileopssettingsdialog.ui" line="66"/>
         <source>Shortcut</source>
-        <translation>Συντόμευση</translation>
+        <translation type="unfinished">Συντόμευση</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="82"/>
+        <location filename="../fileopssettingsdialog.ui" line="82"/>
         <source>Add</source>
-        <translation>Προσθήκη</translation>
+        <translation type="unfinished">Προσθήκη</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="99"/>
-        <location filename="../settingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.ui" line="99"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Remove</source>
-        <translation>Αφαίρεση</translation>
+        <translation type="unfinished">Αφαίρεση</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="127"/>
+        <location filename="../fileopssettingsdialog.ui" line="127"/>
         <source>Destination:</source>
-        <translation>Προορισμός:</translation>
+        <translation type="unfinished">Προορισμός:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
-        <location filename="../settingsdialog.ui" line="154"/>
+        <location filename="../fileopssettingsdialog.ui" line="137"/>
+        <location filename="../fileopssettingsdialog.ui" line="154"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="144"/>
-        <location filename="../settingsdialog.cpp" line="152"/>
+        <location filename="../fileopssettingsdialog.ui" line="144"/>
+        <location filename="../fileopssettingsdialog.cpp" line="155"/>
         <source>File name pattern:</source>
-        <translation>Σχηματομορφή ονόματος αρχείου:</translation>
+        <translation type="unfinished">Σχηματομορφή ονόματος αρχείου:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="216"/>
-        <source>Copy</source>
-        <translation>Αντιγραφή</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="217"/>
-        <source>Rename</source>
-        <translation>Μετονομασία</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="218"/>
-        <source>Move</source>
-        <translation>Μετακίνηση</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="124"/>
+        <location filename="../fileopssettingsdialog.cpp" line="127"/>
         <source>New action</source>
-        <translation>Νέα ενέργεια</translation>
+        <translation type="unfinished">Νέα ενέργεια</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="181"/>
+        <location filename="../fileopssettingsdialog.cpp" line="184"/>
         <source>Command:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="220"/>
-        <source>Execute</source>
-        <translation>Εκτέλεση</translation>
+        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <source>Copy</source>
+        <translation type="unfinished">Αντιγραφή</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="232"/>
+        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <source>Rename</source>
+        <translation type="unfinished">Μετονομασία</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <source>Move</source>
+        <translation type="unfinished">Μετακίνηση</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
+        <source>Execute</source>
+        <translation type="unfinished">Εκτέλεση</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="235"/>
         <source>Choose a directory</source>
-        <translation>Επιλογή ενός καταλόγου</translation>
+        <translation type="unfinished">Επιλογή ενός καταλόγου</translation>
     </message>
 </context>
 </TS>

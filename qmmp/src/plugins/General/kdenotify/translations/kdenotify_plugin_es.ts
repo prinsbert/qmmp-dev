@@ -4,7 +4,7 @@
 <context>
     <name>KdeNotify</name>
     <message>
-        <location filename="../kdenotify.cpp" line="120"/>
+        <location filename="../kdenotify.cpp" line="121"/>
         <source>Qmmp now playing:</source>
         <translation>Qmmp está reproduciendo:</translation>
     </message>
@@ -28,56 +28,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>KdeNotifySettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="14"/>
         <source>KDE 4 Notification Plugin Settings</source>
-        <translation>Configuración del módulo de notificación KDE 4</translation>
+        <translation type="unfinished">Configuración del módulo de notificación KDE 4</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="39"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="39"/>
         <source>Options</source>
-        <translation>Opciones</translation>
+        <translation type="unfinished">Opciones</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="45"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation>Demora de notificación</translation>
+        <translation type="unfinished">Demora de notificación</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="72"/>
-        <source>s</source>
-        <translation>s</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="52"/>
         <source>Update visible notification instead create new</source>
-        <translation>Actualizar la notificación visible en lugar de crear otra</translation>
+        <translation type="unfinished">Actualizar la notificación visible en lugar de crear otra</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="85"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="72"/>
+        <source>s</source>
+        <translation type="unfinished">s</translation>
+    </message>
+    <message>
+        <location filename="../kdenotifysettingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation>Aviso de cambio de volumen</translation>
+        <translation type="unfinished">Aviso de cambio de volumen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="95"/>
         <source>Appearance</source>
-        <translation>Apariencia</translation>
+        <translation type="unfinished">Apariencia</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="101"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="101"/>
         <source>Show covers</source>
-        <translation>Mostrar carátulas</translation>
+        <translation type="unfinished">Mostrar carátulas</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="110"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="110"/>
         <source>Edit template</source>
-        <translation>Editar la plantilla</translation>
+        <translation type="unfinished">Editar la plantilla</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="77"/>
+        <location filename="../kdenotifysettingsdialog.cpp" line="76"/>
         <source>Notification Template</source>
-        <translation>Plantilla de notificación</translation>
+        <translation type="unfinished">Plantilla de notificación</translation>
     </message>
 </context>
 </TS>

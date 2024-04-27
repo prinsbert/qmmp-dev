@@ -71,133 +71,115 @@
 <context>
     <name>FileOpsFactory</name>
     <message>
-        <location filename="../fileopsfactory.cpp" line="30"/>
+        <location filename="../fileopsfactory.cpp" line="29"/>
         <source>File Operations Plugin</source>
         <translation>Bestandsbeheer-plug-in</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="50"/>
+        <location filename="../fileopsfactory.cpp" line="49"/>
         <source>About File Operations Plugin</source>
         <translation>Over de Bestandsbeheer-plug-in</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="51"/>
+        <location filename="../fileopsfactory.cpp" line="50"/>
         <source>Qmmp File Operations Plugin</source>
         <translation>Bestandsbeheer-plug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="52"/>
+        <location filename="../fileopsfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>HotkeyDialog</name>
+    <name>FileOpsSettingsDialog</name>
     <message>
-        <location filename="../hotkeydialog.ui" line="14"/>
-        <source>Modify Shortcut</source>
-        <translation>Sneltoets aanpassen</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Druk op de toetscombinatie die je wilt toewijzen</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="43"/>
-        <source>Clear</source>
-        <translation>Wissen</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../fileopssettingsdialog.ui" line="14"/>
         <source>File Operations Settings</source>
-        <translation>Instellingen</translation>
+        <translation type="unfinished">Instellingen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="51"/>
+        <location filename="../fileopssettingsdialog.ui" line="51"/>
         <source>Enabled</source>
-        <translation>Ingeschakeld</translation>
+        <translation type="unfinished">Ingeschakeld</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="56"/>
+        <location filename="../fileopssettingsdialog.ui" line="56"/>
         <source>Operation</source>
-        <translation>Actie</translation>
+        <translation type="unfinished">Actie</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../fileopssettingsdialog.ui" line="61"/>
         <source>Menu text</source>
-        <translation>Menutekst</translation>
+        <translation type="unfinished">Menutekst</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../fileopssettingsdialog.ui" line="66"/>
         <source>Shortcut</source>
-        <translation>Sneltoets</translation>
+        <translation type="unfinished">Sneltoets</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="82"/>
+        <location filename="../fileopssettingsdialog.ui" line="82"/>
         <source>Add</source>
-        <translation>Toevoegen</translation>
+        <translation type="unfinished">Toevoegen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="99"/>
-        <location filename="../settingsdialog.cpp" line="219"/>
+        <location filename="../fileopssettingsdialog.ui" line="99"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Remove</source>
-        <translation>Verwijderen</translation>
+        <translation type="unfinished">Verwijderen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="127"/>
+        <location filename="../fileopssettingsdialog.ui" line="127"/>
         <source>Destination:</source>
-        <translation>Doel:</translation>
+        <translation type="unfinished">Doel:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
-        <location filename="../settingsdialog.ui" line="154"/>
+        <location filename="../fileopssettingsdialog.ui" line="137"/>
+        <location filename="../fileopssettingsdialog.ui" line="154"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="144"/>
-        <location filename="../settingsdialog.cpp" line="152"/>
+        <location filename="../fileopssettingsdialog.ui" line="144"/>
+        <location filename="../fileopssettingsdialog.cpp" line="155"/>
         <source>File name pattern:</source>
-        <translation>Bestandsnaampatroon:</translation>
+        <translation type="unfinished">Bestandsnaampatroon:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="216"/>
-        <source>Copy</source>
-        <translation>Kopiëren</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="217"/>
-        <source>Rename</source>
-        <translation>Naam wijzigen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="218"/>
-        <source>Move</source>
-        <translation>Verplaatsen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="124"/>
+        <location filename="../fileopssettingsdialog.cpp" line="127"/>
         <source>New action</source>
-        <translation>Nieuwe actie</translation>
+        <translation type="unfinished">Nieuwe actie</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="181"/>
+        <location filename="../fileopssettingsdialog.cpp" line="184"/>
         <source>Command:</source>
-        <translation>Opdracht:</translation>
+        <translation type="unfinished">Opdracht:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="220"/>
+        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <source>Copy</source>
+        <translation type="unfinished">Kopiëren</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <source>Rename</source>
+        <translation type="unfinished">Naam wijzigen</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <source>Move</source>
+        <translation type="unfinished">Verplaatsen</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Execute</source>
-        <translation>Uitvoeren</translation>
+        <translation type="unfinished">Uitvoeren</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="232"/>
+        <location filename="../fileopssettingsdialog.cpp" line="235"/>
         <source>Choose a directory</source>
-        <translation>Kies een map</translation>
+        <translation type="unfinished">Kies een map</translation>
     </message>
 </context>
 </TS>

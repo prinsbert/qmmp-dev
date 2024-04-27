@@ -4,7 +4,7 @@
 <context>
     <name>KdeNotify</name>
     <message>
-        <location filename="../kdenotify.cpp" line="120"/>
+        <location filename="../kdenotify.cpp" line="121"/>
         <source>Qmmp now playing:</source>
         <translation>Відтворюється:</translation>
     </message>
@@ -28,56 +28,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>KdeNotifySettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="14"/>
         <source>KDE 4 Notification Plugin Settings</source>
-        <translation>Налаштування модуля повідомлень KDE4</translation>
+        <translation type="unfinished">Налаштування модуля повідомлень KDE4</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="39"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="39"/>
         <source>Options</source>
-        <translation>Опції</translation>
+        <translation type="unfinished">Опції</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="45"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation>Затримка сповіщення:</translation>
+        <translation type="unfinished">Затримка сповіщення:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="72"/>
-        <source>s</source>
-        <translation>с</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="52"/>
         <source>Update visible notification instead create new</source>
-        <translation>Оновлювати видиме повідомлення не створюючи нове</translation>
+        <translation type="unfinished">Оновлювати видиме повідомлення не створюючи нове</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="85"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="72"/>
+        <source>s</source>
+        <translation type="unfinished">с</translation>
+    </message>
+    <message>
+        <location filename="../kdenotifysettingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation>Сповіщення зміни гучности</translation>
+        <translation type="unfinished">Сповіщення зміни гучности</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="95"/>
         <source>Appearance</source>
-        <translation>Вигляд</translation>
+        <translation type="unfinished">Вигляд</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="101"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="101"/>
         <source>Show covers</source>
-        <translation>Показати обкладинки</translation>
+        <translation type="unfinished">Показати обкладинки</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="110"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="110"/>
         <source>Edit template</source>
-        <translation>Редагувати шаблон</translation>
+        <translation type="unfinished">Редагувати шаблон</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="77"/>
+        <location filename="../kdenotifysettingsdialog.cpp" line="76"/>
         <source>Notification Template</source>
-        <translation>Шаблон повідомлення</translation>
+        <translation type="unfinished">Шаблон повідомлення</translation>
     </message>
 </context>
 </TS>

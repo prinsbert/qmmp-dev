@@ -17,22 +17,22 @@
 <context>
     <name>CoverManagerFactory</name>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="30"/>
+        <location filename="../covermanagerfactory.cpp" line="29"/>
         <source>Cover Manager Plugin</source>
         <translation>Estensione gestore copertine</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="50"/>
+        <location filename="../covermanagerfactory.cpp" line="49"/>
         <source>About Cover Manager Plugin</source>
         <translation>Informazioni sull&apos;estensione gestore copertine</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="51"/>
+        <location filename="../covermanagerfactory.cpp" line="50"/>
         <source>Qmmp Cover Manager Plugin</source>
         <translation>Estensione gestore copertine</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="52"/>
+        <location filename="../covermanagerfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -90,12 +90,12 @@
         <translation>Alt+F4</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="91"/>
+        <location filename="../coverwidget.cpp" line="88"/>
         <source>Save Cover As</source>
         <translation>Salva copertina come</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="93"/>
+        <location filename="../coverwidget.cpp" line="89"/>
         <source>Images</source>
         <translation>Immagini</translation>
     </message>

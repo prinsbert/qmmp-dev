@@ -10,10 +10,8 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 SET(libfileops_SRCS
     fileops.cpp
     fileopsfactory.cpp
-    settingsdialog.cpp
-    hotkeydialog.cpp
-    settingsdialog.ui
-    hotkeydialog.ui
+    fileopssettingsdialog.cpp
+    fileopssettingsdialog.ui
     translations/translations.qrc
 )
 

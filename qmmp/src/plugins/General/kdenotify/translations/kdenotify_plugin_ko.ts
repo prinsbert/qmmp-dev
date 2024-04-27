@@ -4,7 +4,7 @@
 <context>
     <name>KdeNotify</name>
     <message>
-        <location filename="../kdenotify.cpp" line="120"/>
+        <location filename="../kdenotify.cpp" line="121"/>
         <source>Qmmp now playing:</source>
         <translation>Qmmp 현재 재생중:</translation>
     </message>
@@ -28,56 +28,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>KdeNotifySettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="14"/>
         <source>KDE 4 Notification Plugin Settings</source>
-        <translation>KDE 4 알림 플러그인 설정</translation>
+        <translation type="unfinished">KDE 4 알림 플러그인 설정</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="39"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="39"/>
         <source>Options</source>
-        <translation>옵션</translation>
+        <translation type="unfinished">옵션</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="45"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation>알림 지연:</translation>
+        <translation type="unfinished">알림 지연:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="72"/>
-        <source>s</source>
-        <translation>초</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="52"/>
         <source>Update visible notification instead create new</source>
-        <translation>표시되는 알림 업데이트 대신 새 알림 만들기</translation>
+        <translation type="unfinished">표시되는 알림 업데이트 대신 새 알림 만들기</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="85"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="72"/>
+        <source>s</source>
+        <translation type="unfinished">초</translation>
+    </message>
+    <message>
+        <location filename="../kdenotifysettingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation>볼륨 변경 알림</translation>
+        <translation type="unfinished">볼륨 변경 알림</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="95"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="95"/>
         <source>Appearance</source>
-        <translation>모양새</translation>
+        <translation type="unfinished">모양새</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="101"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="101"/>
         <source>Show covers</source>
-        <translation>표지 표시</translation>
+        <translation type="unfinished">표지 표시</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="110"/>
+        <location filename="../kdenotifysettingsdialog.ui" line="110"/>
         <source>Edit template</source>
-        <translation>템플릿 편집</translation>
+        <translation type="unfinished">템플릿 편집</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="77"/>
+        <location filename="../kdenotifysettingsdialog.cpp" line="76"/>
         <source>Notification Template</source>
-        <translation>알림 템플릿</translation>
+        <translation type="unfinished">알림 템플릿</translation>
     </message>
 </context>
 </TS>

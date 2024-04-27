@@ -73,133 +73,115 @@
 <context>
     <name>FileOpsFactory</name>
     <message>
-        <location filename="../fileopsfactory.cpp" line="30"/>
+        <location filename="../fileopsfactory.cpp" line="29"/>
         <source>File Operations Plugin</source>
         <translation>Модуль файлових операцій</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="50"/>
+        <location filename="../fileopsfactory.cpp" line="49"/>
         <source>About File Operations Plugin</source>
         <translation>Про модуль файлових операцій</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="51"/>
+        <location filename="../fileopsfactory.cpp" line="50"/>
         <source>Qmmp File Operations Plugin</source>
         <translation>Модуль роботи з файлами для Qmmp</translation>
     </message>
     <message>
-        <location filename="../fileopsfactory.cpp" line="52"/>
+        <location filename="../fileopsfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>HotkeyDialog</name>
+    <name>FileOpsSettingsDialog</name>
     <message>
-        <location filename="../hotkeydialog.ui" line="14"/>
-        <source>Modify Shortcut</source>
-        <translation>Поміняти комбінацію клавіш</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="29"/>
-        <source>Press the key combination you want to assign</source>
-        <translation>Натисніть клавіші, комбінацію яких ви бажаєте використовувати</translation>
-    </message>
-    <message>
-        <location filename="../hotkeydialog.ui" line="43"/>
-        <source>Clear</source>
-        <translation>Очистити</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.cpp" line="216"/>
-        <source>Copy</source>
-        <translation>Копіювати</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="217"/>
-        <source>Rename</source>
-        <translation>Переіменувати</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="99"/>
-        <location filename="../settingsdialog.cpp" line="219"/>
-        <source>Remove</source>
-        <translation>Видалити</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="124"/>
-        <source>New action</source>
-        <translation>Нова дія</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="181"/>
-        <source>Command:</source>
-        <translation>Команда:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="218"/>
-        <source>Move</source>
-        <translation>Перемістити</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="220"/>
-        <source>Execute</source>
-        <translation>Виконати</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="232"/>
-        <source>Choose a directory</source>
-        <translation>Виберіть теку</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../fileopssettingsdialog.ui" line="14"/>
         <source>File Operations Settings</source>
-        <translation>Налаштування файлових операцій</translation>
+        <translation type="unfinished">Налаштування файлових операцій</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="51"/>
+        <location filename="../fileopssettingsdialog.ui" line="51"/>
         <source>Enabled</source>
-        <translation>Увімкнено</translation>
+        <translation type="unfinished">Увімкнено</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="56"/>
+        <location filename="../fileopssettingsdialog.ui" line="56"/>
         <source>Operation</source>
-        <translation>Операція</translation>
+        <translation type="unfinished">Операція</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../fileopssettingsdialog.ui" line="61"/>
         <source>Menu text</source>
-        <translation>Текст меню</translation>
+        <translation type="unfinished">Текст меню</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../fileopssettingsdialog.ui" line="66"/>
         <source>Shortcut</source>
-        <translation>Комбінація клавіш</translation>
+        <translation type="unfinished">Комбінація клавіш</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
-        <location filename="../settingsdialog.ui" line="154"/>
-        <source>...</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="127"/>
-        <source>Destination:</source>
-        <translation>Призначення:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="82"/>
+        <location filename="../fileopssettingsdialog.ui" line="82"/>
         <source>Add</source>
-        <translation>Додати</translation>
+        <translation type="unfinished">Додати</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="144"/>
-        <location filename="../settingsdialog.cpp" line="152"/>
+        <location filename="../fileopssettingsdialog.ui" line="99"/>
+        <location filename="../fileopssettingsdialog.cpp" line="222"/>
+        <source>Remove</source>
+        <translation type="unfinished">Видалити</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.ui" line="127"/>
+        <source>Destination:</source>
+        <translation type="unfinished">Призначення:</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.ui" line="137"/>
+        <location filename="../fileopssettingsdialog.ui" line="154"/>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.ui" line="144"/>
+        <location filename="../fileopssettingsdialog.cpp" line="155"/>
         <source>File name pattern:</source>
-        <translation>Формат імені файла:</translation>
+        <translation type="unfinished">Формат імені файла:</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="127"/>
+        <source>New action</source>
+        <translation type="unfinished">Нова дія</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="184"/>
+        <source>Command:</source>
+        <translation type="unfinished">Команда:</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="219"/>
+        <source>Copy</source>
+        <translation type="unfinished">Копіювати</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="220"/>
+        <source>Rename</source>
+        <translation type="unfinished">Переіменувати</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="221"/>
+        <source>Move</source>
+        <translation type="unfinished">Перемістити</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="223"/>
+        <source>Execute</source>
+        <translation type="unfinished">Виконати</translation>
+    </message>
+    <message>
+        <location filename="../fileopssettingsdialog.cpp" line="235"/>
+        <source>Choose a directory</source>
+        <translation type="unfinished">Виберіть теку</translation>
     </message>
 </context>
 </TS>

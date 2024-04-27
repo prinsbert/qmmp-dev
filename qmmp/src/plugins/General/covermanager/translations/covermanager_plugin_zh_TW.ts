@@ -17,22 +17,22 @@
 <context>
     <name>CoverManagerFactory</name>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="30"/>
+        <location filename="../covermanagerfactory.cpp" line="29"/>
         <source>Cover Manager Plugin</source>
         <translation>封面管理插件</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="50"/>
+        <location filename="../covermanagerfactory.cpp" line="49"/>
         <source>About Cover Manager Plugin</source>
         <translation>關於封面管理插件</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="51"/>
+        <location filename="../covermanagerfactory.cpp" line="50"/>
         <source>Qmmp Cover Manager Plugin</source>
         <translation>Qmmp 封面管理插件</translation>
     </message>
     <message>
-        <location filename="../covermanagerfactory.cpp" line="52"/>
+        <location filename="../covermanagerfactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -90,12 +90,12 @@
         <translation>Alt+F4</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="91"/>
+        <location filename="../coverwidget.cpp" line="88"/>
         <source>Save Cover As</source>
         <translation>封面另存為</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="93"/>
+        <location filename="../coverwidget.cpp" line="89"/>
         <source>Images</source>
         <translation>图象</translation>
     </message>

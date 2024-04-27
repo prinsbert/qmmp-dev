@@ -37,128 +37,128 @@
 <context>
     <name>MplayerMetaDataModel</name>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="38"/>
+        <location filename="../mplayermetadatamodel.cpp" line="57"/>
         <source>Size</source>
         <translation>Grootte</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="38"/>
+        <location filename="../mplayermetadatamodel.cpp" line="57"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="56"/>
+        <location filename="../mplayermetadatamodel.cpp" line="58"/>
         <source>Demuxer</source>
         <translation>Demultiplexer</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="58"/>
+        <location filename="../mplayermetadatamodel.cpp" line="60"/>
         <source>Video format</source>
         <translation>Videoformaat</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="59"/>
+        <location filename="../mplayermetadatamodel.cpp" line="61"/>
         <source>FPS</source>
         <translation>FPS</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="60"/>
+        <location filename="../mplayermetadatamodel.cpp" line="62"/>
         <source>Video codec</source>
         <translation>Videocodec</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="61"/>
+        <location filename="../mplayermetadatamodel.cpp" line="63"/>
         <source>Aspect ratio</source>
         <translation>Beeldverhouding</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="62"/>
+        <location filename="../mplayermetadatamodel.cpp" line="64"/>
         <source>Video bitrate</source>
         <translation>Bitsnelheid van video</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="62"/>
-        <location filename="../mplayermetadatamodel.cpp" line="66"/>
+        <location filename="../mplayermetadatamodel.cpp" line="64"/>
+        <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="64"/>
+        <location filename="../mplayermetadatamodel.cpp" line="66"/>
         <source>Audio codec</source>
         <translation>Audiocodec</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="65"/>
+        <location filename="../mplayermetadatamodel.cpp" line="67"/>
         <source>Sample rate</source>
         <translation>Samplesnelheid</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="65"/>
+        <location filename="../mplayermetadatamodel.cpp" line="67"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="66"/>
+        <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>Audio bitrate</source>
         <translation>Bitsnelheid van audio</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="67"/>
+        <location filename="../mplayermetadatamodel.cpp" line="69"/>
         <source>Channels</source>
         <translation>Kanalen</translation>
     </message>
     <message>
-        <location filename="../mplayermetadatamodel.cpp" line="63"/>
+        <location filename="../mplayermetadatamodel.cpp" line="65"/>
         <source>Resolution</source>
         <translation>Resolutie</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>MplayerSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation>MPlayer-instellingen</translation>
+        <translation type="unfinished">MPlayer-instellingen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="34"/>
+        <location filename="../mplayersettingsdialog.ui" line="34"/>
         <source>Video:</source>
-        <translation>Video:</translation>
+        <translation type="unfinished">Video:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="48"/>
+        <location filename="../mplayersettingsdialog.ui" line="48"/>
         <source>Audio:</source>
-        <translation>Audio:</translation>
+        <translation type="unfinished">Audio:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../mplayersettingsdialog.ui" line="62"/>
         <source>Audio/video auto synchronization</source>
-        <translation>Automatische audio-/videosynchronisatie</translation>
+        <translation type="unfinished">Automatische audio-/videosynchronisatie</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="72"/>
+        <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation>Synchronisatiefactor:</translation>
+        <translation type="unfinished">Synchronisatiefactor:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="89"/>
+        <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation>Extra opties:</translation>
+        <translation type="unfinished">Extra opties:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="96"/>
+        <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation>Extra opdrachtregelopties</translation>
+        <translation type="unfinished">Extra opdrachtregelopties</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="29"/>
-        <location filename="../settingsdialog.cpp" line="37"/>
-        <location filename="../settingsdialog.cpp" line="46"/>
-        <location filename="../settingsdialog.cpp" line="47"/>
-        <location filename="../settingsdialog.cpp" line="61"/>
-        <location filename="../settingsdialog.cpp" line="62"/>
+        <location filename="../mplayersettingsdialog.cpp" line="30"/>
+        <location filename="../mplayersettingsdialog.cpp" line="34"/>
+        <location filename="../mplayersettingsdialog.cpp" line="38"/>
+        <location filename="../mplayersettingsdialog.cpp" line="39"/>
+        <location filename="../mplayersettingsdialog.cpp" line="55"/>
+        <location filename="../mplayersettingsdialog.cpp" line="56"/>
         <source>default</source>
-        <translation>standaard</translation>
+        <translation type="unfinished">standaard</translation>
     </message>
 </context>
 </TS>

@@ -48,99 +48,99 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HotkeySettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../hotkeysettingsdialog.ui" line="14"/>
         <source>Global Hotkey Plugin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="42"/>
+        <location filename="../hotkeysettingsdialog.ui" line="42"/>
         <source>Action</source>
-        <translation>Akcia</translation>
+        <translation type="unfinished">Akcia</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="47"/>
+        <location filename="../hotkeysettingsdialog.ui" line="47"/>
         <source>Shortcut</source>
-        <translation>Skratka</translation>
+        <translation type="unfinished">Skratka</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../hotkeysettingsdialog.ui" line="55"/>
         <source>Reset</source>
-        <translation>Zresetovať</translation>
+        <translation type="unfinished">Zresetovať</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="38"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="39"/>
         <source>Play</source>
-        <translation>Hrať</translation>
+        <translation type="unfinished">Hrať</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="39"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="40"/>
         <source>Stop</source>
-        <translation>Zastaviť</translation>
+        <translation type="unfinished">Zastaviť</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="40"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="41"/>
         <source>Pause</source>
-        <translation>Pozastaviť</translation>
+        <translation type="unfinished">Pozastaviť</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="42"/>
         <source>Play/Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="43"/>
         <source>Next</source>
-        <translation>Nasledujúca</translation>
+        <translation type="unfinished">Nasledujúca</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="43"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Previous</source>
-        <translation>Predchádzajúca</translation>
+        <translation type="unfinished">Predchádzajúca</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="44"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="45"/>
         <source>Show/Hide</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="45"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Volume +</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="46"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="47"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Forward 5 seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="48"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Rewind 5 seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="49"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Jump to track</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="50"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
         <translation type="unfinished"></translation>
     </message>
