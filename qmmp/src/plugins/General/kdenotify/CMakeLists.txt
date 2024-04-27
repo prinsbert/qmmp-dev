@@ -10,8 +10,8 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 SET(libkdenotify_SRCS
     kdenotify.cpp
     kdenotifyfactory.cpp
-    settingsdialog.cpp
-    settingsdialog.ui
+    kdenotifysettingsdialog.cpp
+    kdenotifysettingsdialog.ui
     translations/translations.qrc
 )
 

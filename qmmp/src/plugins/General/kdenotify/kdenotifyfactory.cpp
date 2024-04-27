@@ -21,13 +21,13 @@
 #include <QMessageBox>
 #include "kdenotifyfactory.h"
 #include "kdenotify.h"
-#include "settingsdialog.h"
+#include "kdenotifysettingsdialog.h"
 
 GeneralProperties KdeNotifyFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("KDE notification plugin");
-    properties.shortName = "kdenotify_icon";
+    properties.shortName = "kdenotify_icon"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -41,14 +41,13 @@ QObject *KdeNotifyFactory::create(QObject *parent)
 
 QDialog *KdeNotifyFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new KdeNotifySettingsDialog(parent);
 }
 
 void KdeNotifyFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About KDE Notification Plugin"),
-                        tr("KDE notification plugin for Qmmp") + "<br>"
-                                                                 "Artur Guzik &lt;a.guzik88@gmail.com&gt;");
+    QMessageBox::about(parent, tr("About KDE Notification Plugin"),
+                       tr("KDE notification plugin for Qmmp") + u"<br>Artur Guzik &lt;a.guzik88@gmail.com&gt;"_s);
 }
 
 QString KdeNotifyFactory::translation() const

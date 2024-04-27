@@ -35,7 +35,7 @@
 #include <qmmpui/detailsdialog.h>
 #include "librarymodel.h"
 
-#define CONNECTION_NAME "qmmp_library_view"
+#define CONNECTION_NAME u"qmmp_library_view"_s
 
 class LibraryTreeItem
 {
@@ -66,7 +66,7 @@ LibraryModel::LibraryModel(QObject *parent) : QAbstractItemModel(parent)
 {
     m_rootItem = new LibraryTreeItem;
     QSettings settings;
-    m_showYear = settings.value("Library/show_year", false).toBool();
+    m_showYear = settings.value(u"Library/show_year"_s, false).toBool();
     refresh();
 }
 
@@ -91,7 +91,7 @@ Qt::ItemFlags LibraryModel::flags(const QModelIndex &index) const
 
 QStringList LibraryModel::mimeTypes() const
 {
-    return QStringList("application/json");
+    return { u"application/json"_s };
 }
 
 QMimeData *LibraryModel::mimeData(const QModelIndexList &indexes) const
@@ -101,7 +101,7 @@ QMimeData *LibraryModel::mimeData(const QModelIndexList &indexes) const
     if(!tracks.isEmpty())
     {
         QMimeData *mimeData = new QMimeData;
-        mimeData->setData("application/json", PlayListParser::serialize(tracks));
+        mimeData->setData(u"application/json"_s, PlayListParser::serialize(tracks));
         qDeleteAll(tracks);
         return mimeData;
     }
@@ -137,14 +137,14 @@ void LibraryModel::fetchMore(const QModelIndex &parent)
         QSqlQuery query(db);
         if(m_filter.isEmpty())
         {
-            query.prepare("SELECT DISTINCT Album, Year from track_library WHERE Artist = :artist");
+            query.prepare(u"SELECT DISTINCT Album, Year from track_library WHERE Artist = :artist"_s);
         }
         else
         {
-            query.prepare("SELECT DISTINCT Album, Year from track_library WHERE Artist = :artist AND SearchString LIKE :filter");
-            query.bindValue(":filter", QString("%%1%").arg(m_filter.toLower()));
+            query.prepare(u"SELECT DISTINCT Album, Year from track_library WHERE Artist = :artist AND SearchString LIKE :filter"_s);
+            query.bindValue(u":filter"_s, QStringLiteral("%%1%").arg(m_filter.toLower()));
         }
-        query.bindValue(":artist", parentItem->name);
+        query.bindValue(u":artist"_s, parentItem->name);
 
         if(!query.exec())
         {
@@ -155,8 +155,8 @@ void LibraryModel::fetchMore(const QModelIndex &parent)
         while(query.next())
         {
             LibraryTreeItem *item = new LibraryTreeItem;
-            item->name = query.value("Album").toString();
-            item->year = query.value("Year").toInt();
+            item->name = query.value(u"Album"_s).toString();
+            item->year = query.value(u"Year"_s).toInt();
             item->type = Qmmp::ALBUM;
             item->parent = parentItem;
             parentItem->children << item;
@@ -167,16 +167,16 @@ void LibraryModel::fetchMore(const QModelIndex &parent)
         QSqlQuery query(db);
         if(m_filter.isEmpty())
         {
-            query.prepare("SELECT Title from track_library WHERE Artist = :artist AND Album = :album");
+            query.prepare(u"SELECT Title from track_library WHERE Artist = :artist AND Album = :album"_s);
         }
         else
         {
-            query.prepare("SELECT Title from track_library WHERE Artist = :artist AND Album = :album "
-                          "AND SearchString LIKE :filter");
-            query.bindValue(":filter", QString("%%1%").arg(m_filter.toLower()));
+            query.prepare(u"SELECT Title from track_library WHERE Artist = :artist AND Album = :album "
+                          "AND SearchString LIKE :filter"_s);
+            query.bindValue(u":filter"_s, QStringLiteral("%%1%").arg(m_filter.toLower()));
         }
-        query.bindValue(":artist", parentItem->parent->name);
-        query.bindValue(":album", parentItem->name);
+        query.bindValue(u":artist"_s, parentItem->parent->name);
+        query.bindValue(u":album"_s, parentItem->name);
 
         if(!query.exec())
         {
@@ -187,7 +187,7 @@ void LibraryModel::fetchMore(const QModelIndex &parent)
         while(query.next())
         {
             LibraryTreeItem *item = new LibraryTreeItem;
-            item->name = query.value("Title").toString();
+            item->name = query.value(u"Title"_s).toString();
             item->type = Qmmp::TITLE;
             item->parent = parentItem;
             parentItem->children << item;
@@ -271,8 +271,8 @@ void LibraryModel::refresh()
     }
     else
     {
-        db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
-        db.setDatabaseName(Qmmp::configDir() + "/" + "library.sqlite");
+        db = QSqlDatabase::addDatabase(u"QSQLITE"_s, CONNECTION_NAME);
+        db.setDatabaseName(Qmmp::configDir() + u"/library.sqlite"_s);
         db.open();
     }
 
@@ -285,12 +285,12 @@ void LibraryModel::refresh()
     QSqlQuery query(db);
     if(m_filter.isEmpty())
     {
-        query.prepare("SELECT DISTINCT Artist from track_library ORDER BY Artist");
+        query.prepare(u"SELECT DISTINCT Artist from track_library ORDER BY Artist"_s);
     }
     else
     {
-        query.prepare("SELECT DISTINCT Artist from track_library WHERE SearchString LIKE :filter ORDER BY Artist");
-        query.bindValue(":filter", QString("%%1%").arg(m_filter.toLower()));
+        query.prepare(u"SELECT DISTINCT Artist from track_library WHERE SearchString LIKE :filter ORDER BY Artist"_s);
+        query.bindValue(u":filter"_s, QStringLiteral("%%1%").arg(m_filter.toLower()));
     }
 
     if(!query.exec())
@@ -299,7 +299,7 @@ void LibraryModel::refresh()
     while(query.next())
     {
         LibraryTreeItem *item = new LibraryTreeItem;
-        item->name = query.value("Artist").toString();
+        item->name = query.value(u"Artist"_s).toString();
         item->type = Qmmp::ARTIST;
         item->parent = m_rootItem;
         m_rootItem->children << item;
@@ -332,7 +332,7 @@ void LibraryModel::showLibraryInformation(QWidget *parent)
     }
 
     QSqlQuery query(db);
-    query.prepare("select COUNT(id),COUNT(DISTINCT Album||Artist),COUNT(DISTINCT Artist),SUM(Duration) from track_library");
+    query.prepare(u"select COUNT(id),COUNT(DISTINCT Album||Artist),COUNT(DISTINCT Artist),SUM(Duration) from track_library"_s);
 
     if(!query.exec())
     {
@@ -368,7 +368,7 @@ void LibraryModel::showLibraryInformation(QWidget *parent)
         tr("Total duration: <b>%1</b>").arg(durationText),
     };
 
-    QMessageBox::information(parent, tr("Library Information"), lines.join("<br>"));
+    QMessageBox::information(parent, tr("Library Information"), lines.join(u"<br>"_s));
 }
 
 QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndexList &indexes) const
@@ -398,10 +398,10 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
     if(item->type == Qmmp::TITLE)
     {
         QSqlQuery query(db);
-        query.prepare("SELECT * from track_library WHERE Artist = :artist AND Album = :album AND Title = :title");
-        query.bindValue(":artist", item->parent->parent->name);
-        query.bindValue(":album", item->parent->name);
-        query.bindValue(":title", item->name);
+        query.prepare(u"SELECT * from track_library WHERE Artist = :artist AND Album = :album AND Title = :title"_s);
+        query.bindValue(u":artist"_s, item->parent->parent->name);
+        query.bindValue(u":album"_s, item->parent->name);
+        query.bindValue(u":title"_s, item->name);
 
         if(!query.exec())
         {
@@ -417,9 +417,9 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
     else if(item->type == Qmmp::ALBUM)
     {
         QSqlQuery query(db);
-        query.prepare("SELECT * from track_library WHERE Artist = :artist AND Album = :album");
-        query.bindValue(":artist", item->parent->name);
-        query.bindValue(":album", item->name);
+        query.prepare(u"SELECT * from track_library WHERE Artist = :artist AND Album = :album"_s);
+        query.bindValue(u":artist"_s, item->parent->name);
+        query.bindValue(u":album"_s, item->name);
 
         if(!query.exec())
         {
@@ -435,8 +435,8 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
     else if(item->type == Qmmp::ARTIST)
     {
         QSqlQuery query(db);
-        query.prepare("SELECT * from track_library WHERE Artist = :artist");
-        query.bindValue(":artist", item->name);
+        query.prepare(u"SELECT * from track_library WHERE Artist = :artist"_s);
+        query.bindValue(u":artist"_s, item->name);
 
         if(!query.exec())
         {
@@ -455,37 +455,37 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
 
 PlayListTrack *LibraryModel::createTrack(const QSqlQuery &query) const
 {
-    static const QHash<int, QString> metaColumns = {
-        { Qmmp::TITLE, "Title" },
-        { Qmmp::ARTIST, "Artist" },
-        { Qmmp::ALBUMARTIST, "AlbumArtist" },
-        { Qmmp::ALBUM, "Album" },
-        { Qmmp::COMMENT, "Comment" },
-        { Qmmp::GENRE, "Genre" },
-        { Qmmp::COMPOSER, "Composer" },
-        { Qmmp::YEAR, "Year" },
-        { Qmmp::TRACK, "Track" },
-        { Qmmp::DISCNUMBER, "DiscNumber" }
+    static const QHash<Qmmp::MetaData , QString> metaColumns = {
+        { Qmmp::TITLE, u"Title"_s },
+        { Qmmp::ARTIST, u"Artist"_s },
+        { Qmmp::ALBUMARTIST, u"AlbumArtist"_s },
+        { Qmmp::ALBUM, u"Album"_s },
+        { Qmmp::COMMENT, u"Comment"_s },
+        { Qmmp::GENRE, u"Genre"_s },
+        { Qmmp::COMPOSER, u"Composer"_s },
+        { Qmmp::YEAR, u"Year"_s },
+        { Qmmp::TRACK, u"Track"_s },
+        { Qmmp::DISCNUMBER, u"DiscNumber"_s }
     };
 
     PlayListTrack *track = new PlayListTrack;
-    track->setPath(query.value("URL").toString());
-    track->setDuration(query.value("Duration").toLongLong());
+    track->setPath(query.value(u"URL"_s).toString());
+    track->setDuration(query.value(u"Duration"_s).toLongLong());
 
-    for(int key = Qmmp::TITLE; key <= Qmmp::DISCNUMBER; ++key)
+    for(auto it = metaColumns.cbegin(); it != metaColumns.cend(); ++it)
     {
-       QString value = query.value(metaColumns.value(key)).toString();
-       track->setValue(static_cast<Qmmp::MetaData>(key), value);
+       QString value = query.value(it.value()).toString();
+       track->setValue(it.key(), value);
     }
 
-    QJsonDocument document = QJsonDocument::fromJson(query.value("AudioInfo").toByteArray());
+    QJsonDocument document = QJsonDocument::fromJson(query.value(u"AudioInfo"_s).toByteArray());
     QJsonObject obj = document.object();
-    track->setValue(Qmmp::BITRATE, obj.value("bitrate").toInt());
-    track->setValue(Qmmp::SAMPLERATE, obj.value("samplerate").toInt());
-    track->setValue(Qmmp::CHANNELS, obj.value("channels").toInt());
-    track->setValue(Qmmp::BITS_PER_SAMPLE, obj.value("bitsPerSample").toInt());
-    track->setValue(Qmmp::FORMAT_NAME, obj.value("formatName").toString());
-    track->setValue(Qmmp::DECODER, obj.value("decoder").toString());
-    track->setValue(Qmmp::FILE_SIZE, qint64(obj.value("fileSize").toDouble()));
+    track->setValue(Qmmp::BITRATE, obj.value(u"bitrate"_s).toInt());
+    track->setValue(Qmmp::SAMPLERATE, obj.value(u"samplerate"_s).toInt());
+    track->setValue(Qmmp::CHANNELS, obj.value(u"channels"_s).toInt());
+    track->setValue(Qmmp::BITS_PER_SAMPLE, obj.value(u"bitsPerSample"_s).toInt());
+    track->setValue(Qmmp::FORMAT_NAME, obj.value(u"formatName"_s).toString());
+    track->setValue(Qmmp::DECODER, obj.value(u"decoder"_s).toString());
+    track->setValue(Qmmp::FILE_SIZE, qint64(obj.value(u"fileSize"_s).toDouble()));
     return track;
 }

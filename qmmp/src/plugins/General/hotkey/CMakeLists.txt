@@ -16,12 +16,12 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 CHECK_INCLUDE_FILE(xcb/xcb.h XCB_H_FOUND)
 
 SET(libhotkey_SRCS
-    settingsdialog.cpp
+    hotkeysettingsdialog.cpp
     hotkeyfactory.cpp
     hotkeymanager_x11.cpp
     hotkeymanager_win.cpp
     hotkeydialog.cpp
-    settingsdialog.ui
+    hotkeysettingsdialog.ui
     hotkeydialog.ui
     translations/translations.qrc
 )

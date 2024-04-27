@@ -21,7 +21,7 @@
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include <qmmpui/general.h>
-#include "settingsdialog.h"
+#include "hotkeysettingsdialog.h"
 #include "hotkeymanager.h"
 #include "hotkeyfactory.h"
 
@@ -29,7 +29,7 @@ GeneralProperties HotkeyFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Global Hotkey Plugin");
-    properties.shortName = "hotkey";
+    properties.shortName = "hotkey"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -43,7 +43,7 @@ QObject *HotkeyFactory::create(QObject *parent)
 
 QDialog *HotkeyFactory::createConfigDialog(QWidget *parent)
 {
-    SettingsDialog *dialog = new SettingsDialog(parent);
+    HotkeySettingsDialog *dialog = new HotkeySettingsDialog(parent);
     if(General::isEnabled(this))
     {
         General::setEnabled(this, false);
@@ -54,10 +54,10 @@ QDialog *HotkeyFactory::createConfigDialog(QWidget *parent)
 
 void HotkeyFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Global Hotkey Plugin"),
-                        tr("Qmmp Global Hotkey Plugin")+"\n"+
-                        tr("This plugin adds support for multimedia keys or global key combinations")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Global Hotkey Plugin"),
+                       tr("Qmmp Global Hotkey Plugin")+"\n"+
+                       tr("This plugin adds support for multimedia keys or global key combinations")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString HotkeyFactory::translation() const

@@ -39,9 +39,10 @@
 KdeNotify::KdeNotify(QObject *parent) : QObject(parent)
 {
 
-    m_notifier = new QDBusInterface("org.freedesktop.Notifications",
-                                  "/org/freedesktop/Notifications","org.freedesktop.Notifications",
-                                  QDBusConnection::sessionBus(), this);
+    m_notifier = new QDBusInterface(u"org.freedesktop.Notifications"_s,
+                                    u"/org/freedesktop/Notifications"_s,
+                                    u"org.freedesktop.Notifications"_s,
+                                    QDBusConnection::sessionBus(), this);
     if(m_notifier->lastError().type() != QDBusError::NoError)
     {
         qWarning() << "KdeNotify: Unable to create interface:" << m_notifier->lastError().message();
@@ -50,39 +51,39 @@ KdeNotify::KdeNotify(QObject *parent) : QObject(parent)
 
     qWarning() << "KdeNotify: DBus interfece created successfully.";
     QDir dir(Qmmp::cacheDir());
-    if(!dir.exists("kdenotifycache"))
-        dir.mkdir("kdenotifycache");
-    dir.cd("kdenotifycache");
-    m_coverPath = dir.absolutePath() + "/cover.jpg";
-    m_imagesDir = Qmmp::dataPath() + "/images";
+    if(!dir.exists(u"kdenotifycache"_s))
+        dir.mkdir(u"kdenotifycache"_s);
+    dir.cd(u"kdenotifycache"_s);
+    m_coverPath = dir.absolutePath() + u"/cover.jpg"_s;
+    m_imagesDir = Qmmp::dataPath() + u"/images"_s;
 
     QSettings settings;
-    settings.beginGroup("Kde_Notifier");
-    m_notifyDuration = settings.value("notify_duration",5000).toInt();
-    m_showCovers = settings.value("show_covers",true).toBool();
-    m_template = settings.value("template", DEFAULT_TEMPLATE).toString();
-    m_template.remove("\n");
-    m_updateNotify = settings.value("update_notify",true).toBool();
+    settings.beginGroup(u"Kde_Notifier"_s);
+    m_notifyDuration = settings.value(u"notify_duration"_s, 5000).toInt();
+    m_showCovers = settings.value(u"show_covers"_s, true).toBool();
+    m_template = settings.value(u"template"_s, DEFAULT_TEMPLATE).toString();
+    m_template.remove(QChar::LineFeed);
+    m_updateNotify = settings.value(u"update_notify"_s, true).toBool();
     m_currentNotifyId = 0;
 
     if(m_updateNotify)
     {
-        connect(SoundCore::instance(),SIGNAL(trackInfoChanged()),SLOT(showMetaData()));
-        connect(m_notifier,SIGNAL(NotificationClosed(uint,uint)),this,SLOT(notificationClosed(uint,uint)));
+        connect(SoundCore::instance(), &SoundCore::trackInfoChanged, this, &KdeNotify::showMetaData);
+        connect(m_notifier, SIGNAL(NotificationClosed(uint,uint)), this, SLOT(notificationClosed(uint,uint)));
     }
     else
     {
         QTimer *timer = new QTimer(this);
         timer->setSingleShot(true);
         timer->setInterval(NOTIFY_DELAY); //after that notification will be showed.
-        connect(timer,SIGNAL(timeout()),SLOT(showMetaData()));
-        connect(SoundCore::instance(),SIGNAL(trackInfoChanged()),timer, SLOT(start()));
+        connect(timer, &QTimer::timeout, this, &KdeNotify::showMetaData);
+        connect(SoundCore::instance(), &SoundCore::trackInfoChanged, this, [=] { timer->start(); } );
     }
 
-    if(settings.value("volume_notification", false).toBool())
+    if(settings.value(u"volume_notification"_s, false).toBool())
     {
-        connect(SoundCore::instance(), SIGNAL(volumeChanged(int)), SLOT(onVolumeChanged(int)));
-        connect(SoundCore::instance(), SIGNAL(mutedChanged(bool)), SLOT(onMutedChanged(bool)));
+        connect(SoundCore::instance(), &SoundCore::volumeChanged, this, &KdeNotify::onVolumeChanged);
+        connect(SoundCore::instance(), &SoundCore::mutedChanged, this, &KdeNotify::onMutedChanged);
     }
     settings.endGroup();
 }
@@ -95,14 +96,14 @@ KdeNotify::~KdeNotify()
 
 QString KdeNotify::totalTimeString()
 {
-    int time = SoundCore::instance()->duration()/1000;
+    int time = SoundCore::instance()->duration() / 1000;
 
     if(time >= 3600)
     {
-        return QString("%1:%2:%3").arg(time/3600,2,10,QChar('0')).arg(time%3600/60,2,10,QChar('0'))
+        return QStringLiteral("%1:%2:%3").arg(time / 3600, 2, 10, QChar('0')).arg(time % 3600/60, 2, 10, QChar('0'))
                 .arg(time%60,2,10,QChar('0'));
     }
-    return QString("%1:%2").arg(time/60,2,10,QChar('0')).arg(time%60,2,10,QChar('0'));
+    return QStringLiteral("%1:%2").arg(time / 60, 2, 10, QChar('0')).arg(time%60, 2, 10, QChar('0'));
 }
 
 QList<QVariant> KdeNotify::prepareNotification()
@@ -114,14 +115,14 @@ QList<QVariant> KdeNotify::prepareNotification()
         return QList<QVariant>();
     }
     QList<QVariant> args;
-    args.append("Qmmp"); //app-name
+    args.append(u"Qmmp"_s); //app-name
     args.append(m_currentNotifyId); //replaces-id;
-    args.append(m_imagesDir + "/app-icon.png");  //app-icon(path to icon on disk)
+    args.append(m_imagesDir + u"/app-icon.png"_s);  //app-icon(path to icon on disk)
     args.append(tr("Qmmp now playing:")); //summary (notification title)
 
     MetaDataFormatter f(m_template);
     QString body = f.format(info);
-    body.replace("<br>", "\n");
+    body.replace(u"<br>"_s, u"\n"_s);
 
     QString coverPath;
     if(m_showCovers)
@@ -130,16 +131,16 @@ QList<QVariant> KdeNotify::prepareNotification()
         if(!cover.isNull())
         {
             coverPath = m_coverPath;
-            cover.scaled(90,90,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).save(coverPath);
+            cover.scaled(90, 90, Qt::IgnoreAspectRatio, Qt::SmoothTransformation).save(coverPath);
         }
     }
     if(coverPath.isEmpty())
-        coverPath = m_imagesDir + "/empty_cover.png";
+        coverPath = m_imagesDir + u"/empty_cover.png"_s;
 
     args.append(body); //body
     args.append(QStringList()); //actions
     QVariantMap hints;
-    hints.insert("image-path",coverPath);
+    hints.insert(u"image-path"_s, coverPath);
     args.append(hints); //hints
 
     args.append(m_notifyDuration); //timeout
@@ -152,7 +153,7 @@ void KdeNotify::showMetaData()
     QList<QVariant> n = prepareNotification();
     if(!n.isEmpty())
     {
-        QDBusReply<uint> reply = m_notifier->callWithArgumentList(QDBus::Block,"Notify",n);
+        QDBusReply<uint> reply = m_notifier->callWithArgumentList(QDBus::Block, u"Notify"_s, n);
         if(reply.isValid() && m_updateNotify)
         {
             m_currentNotifyId = reply.value();
@@ -169,9 +170,11 @@ void KdeNotify::notificationClosed(uint id, uint reason)
 
 void KdeNotify::onVolumeChanged(int percent)
 {
-    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.plasmashell"), QStringLiteral("/org/kde/osdService"),
-                                                      QStringLiteral("org.kde.osdService"), QStringLiteral("mediaPlayerVolumeChanged"));
-    msg.setArguments({ percent, "Qmmp", "qmmp-simple" });
+    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.plasmashell"),
+                                                      QStringLiteral("/org/kde/osdService"),
+                                                      QStringLiteral("org.kde.osdService"),
+                                                      QStringLiteral("mediaPlayerVolumeChanged"));
+    msg.setArguments({ percent, u"Qmmp"_s, u"qmmp-simple"_s });
     QDBusConnection::sessionBus().asyncCall(msg);
 }
 

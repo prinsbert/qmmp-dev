@@ -18,22 +18,22 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef LIBRARYSETTINGSDIALOG_H
+#define LIBRARYSETTINGSDIALOG_H
 
 #include <QDialog>
 
 namespace Ui {
-class SettingsDialog;
+class LibrarySettingsDialog;
 }
 
-class SettingsDialog : public QDialog
+class LibrarySettingsDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
-    ~SettingsDialog();
+    explicit LibrarySettingsDialog(QWidget *parent = nullptr);
+    ~LibrarySettingsDialog();
 
 public slots:
     void accept() override;
@@ -43,8 +43,8 @@ private slots:
     void on_removeDirButton_clicked();
 
 private:
-    Ui::SettingsDialog *m_ui;
+    Ui::LibrarySettingsDialog *m_ui;
     QString m_lastPath;
 };
 
-#endif // SETTINGSDIALOG_H
+#endif // LIBRARYSETTINGSDIALOG_H

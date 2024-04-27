@@ -24,67 +24,69 @@
 #include <qmmp/qmmp.h>
 #include <algorithm>
 #include "hotkeydialog.h"
-#include "settingsdialog.h"
+#include "ui_hotkeysettingsdialog.h"
+#include "hotkeysettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent)
-        : QDialog(parent)
+HotkeySettingsDialog::HotkeySettingsDialog(QWidget *parent)
+        : QDialog(parent), m_ui(new Ui::HotkeySettingsDialog)
 {
-    m_ui.setupUi(this);
-    m_ui.tableWidget->verticalHeader()->setDefaultSectionSize(fontMetrics().height());
-    m_ui.tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
-    m_ui.tableWidget->verticalHeader()->hide();
-    m_ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    m_ui.tableWidget->setRowCount (13);
-    m_ui.tableWidget->setItem(0,0, new QTableWidgetItem(tr("Play")));
-    m_ui.tableWidget->setItem(1,0, new QTableWidgetItem(tr("Stop")));
-    m_ui.tableWidget->setItem(2,0, new QTableWidgetItem(tr("Pause")));
-    m_ui.tableWidget->setItem(3,0, new QTableWidgetItem(tr("Play/Pause")));
-    m_ui.tableWidget->setItem(4,0, new QTableWidgetItem(tr("Next")));
-    m_ui.tableWidget->setItem(5,0, new QTableWidgetItem(tr("Previous")));
-    m_ui.tableWidget->setItem(6,0, new QTableWidgetItem(tr("Show/Hide")));
-    m_ui.tableWidget->setItem(7,0, new QTableWidgetItem(tr("Volume +")));
-    m_ui.tableWidget->setItem(8,0, new QTableWidgetItem(tr("Volume -")));
-    m_ui.tableWidget->setItem(9,0, new QTableWidgetItem(tr("Forward 5 seconds")));
-    m_ui.tableWidget->setItem(10,0, new QTableWidgetItem(tr("Rewind 5 seconds")));
-    m_ui.tableWidget->setItem(11,0, new QTableWidgetItem(tr("Jump to track")));
-    m_ui.tableWidget->setItem(12,0, new QTableWidgetItem(tr("Mute")));
+    m_ui->setupUi(this);
+    m_ui->tableWidget->verticalHeader()->setDefaultSectionSize(fontMetrics().height());
+    m_ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    m_ui->tableWidget->verticalHeader()->hide();
+    m_ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    m_ui->tableWidget->setRowCount(13);
+    m_ui->tableWidget->setItem(0,0, new QTableWidgetItem(tr("Play")));
+    m_ui->tableWidget->setItem(1,0, new QTableWidgetItem(tr("Stop")));
+    m_ui->tableWidget->setItem(2,0, new QTableWidgetItem(tr("Pause")));
+    m_ui->tableWidget->setItem(3,0, new QTableWidgetItem(tr("Play/Pause")));
+    m_ui->tableWidget->setItem(4,0, new QTableWidgetItem(tr("Next")));
+    m_ui->tableWidget->setItem(5,0, new QTableWidgetItem(tr("Previous")));
+    m_ui->tableWidget->setItem(6,0, new QTableWidgetItem(tr("Show/Hide")));
+    m_ui->tableWidget->setItem(7,0, new QTableWidgetItem(tr("Volume +")));
+    m_ui->tableWidget->setItem(8,0, new QTableWidgetItem(tr("Volume -")));
+    m_ui->tableWidget->setItem(9,0, new QTableWidgetItem(tr("Forward 5 seconds")));
+    m_ui->tableWidget->setItem(10,0, new QTableWidgetItem(tr("Rewind 5 seconds")));
+    m_ui->tableWidget->setItem(11,0, new QTableWidgetItem(tr("Jump to track")));
+    m_ui->tableWidget->setItem(12,0, new QTableWidgetItem(tr("Mute")));
 
     QSettings settings;
-    settings.beginGroup("Hotkey");
+    settings.beginGroup(u"Hotkey"_s);
     for (int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
     {
         Hotkey *hotkey = new Hotkey;
         hotkey->action = i;
-        hotkey->key = settings.value(QString("key_%1").arg(i), hotkey->defaultKey()).toUInt();
-        hotkey->mod = settings.value(QString("modifiers_%1").arg(i), 0).toUInt();
-        m_ui.tableWidget->setItem(j,1, new QTableWidgetItem(HotkeyManager::getKeyString(hotkey->key,
-                                                                                      hotkey->mod), i));
+        hotkey->key = settings.value(QStringLiteral("key_%1").arg(i), hotkey->defaultKey()).toUInt();
+        hotkey->mod = settings.value(QStringLiteral("modifiers_%1").arg(i), 0).toUInt();
+        m_ui->tableWidget->setItem(j, 1, new QTableWidgetItem(HotkeyManager::getKeyString(hotkey->key, hotkey->mod), i));
         m_hotkeys << hotkey;
     }
     settings.endGroup();
 }
 
-SettingsDialog::~SettingsDialog()
+HotkeySettingsDialog::~HotkeySettingsDialog()
 {
     while (!m_hotkeys.isEmpty())
-        delete m_hotkeys.takeFirst ();
+        delete m_hotkeys.takeFirst();
+
+    delete m_ui;
 
 }
 
-void SettingsDialog::accept()
+void HotkeySettingsDialog::accept()
 {
     QSettings settings;
-    settings.beginGroup("Hotkey");
+    settings.beginGroup(u"Hotkey"_s);
     for(const Hotkey *k : qAsConst(m_hotkeys))
     {
-        settings.setValue(QString("key_%1").arg(k->action), k->key);
-        settings.setValue(QString("modifiers_%1").arg(k->action), k->mod);
+        settings.setValue(QStringLiteral("key_%1").arg(k->action), k->key);
+        settings.setValue(QStringLiteral("modifiers_%1").arg(k->action), k->mod);
     }
     settings.endGroup();
     QDialog::accept();
 }
 
-void SettingsDialog::on_tableWidget_itemDoubleClicked (QTableWidgetItem *item)
+void HotkeySettingsDialog::on_tableWidget_itemDoubleClicked (QTableWidgetItem *item)
 {
     auto it = std::find_if(m_hotkeys.cbegin(), m_hotkeys.cend(), [item](Hotkey *k) { return k->action == item->type(); });
     if(it == m_hotkeys.cend())
@@ -92,11 +94,10 @@ void SettingsDialog::on_tableWidget_itemDoubleClicked (QTableWidgetItem *item)
 
     Hotkey *key = *it;
     HotkeyDialog *dialog = new HotkeyDialog(key->key, key->mod, this);
-    if (item->type() >= QTableWidgetItem::UserType &&
-            dialog->exec() == QDialog::Accepted)
+    if(item->type() >= QTableWidgetItem::UserType && dialog->exec() == QDialog::Accepted)
     {
         QString keyString = HotkeyManager::getKeyString(dialog->keySym (), dialog->nativeModifiers ());
-        QList<QTableWidgetItem*> items =  m_ui.tableWidget->findItems(keyString, Qt::MatchFixedString);
+        QList<QTableWidgetItem*> items =  m_ui->tableWidget->findItems(keyString, Qt::MatchFixedString);
         if(keyString.isEmpty() || items.isEmpty() || items.constFirst() == item)
         {
             item->setText(keyString);
@@ -109,12 +110,12 @@ void SettingsDialog::on_tableWidget_itemDoubleClicked (QTableWidgetItem *item)
     delete dialog;
 }
 
-void SettingsDialog::on_resetButton_clicked ()
+void HotkeySettingsDialog::on_resetButton_clicked ()
 {
     for (int i = 0; i < m_hotkeys.size(); ++i)
     {
         m_hotkeys[i]->key = m_hotkeys[i]->defaultKey();
         m_hotkeys[i]->mod = 0;
-        m_ui.tableWidget->item(i, 1)->setText(HotkeyManager::getKeyString(m_hotkeys[i]->key, m_hotkeys[i]->mod));
+        m_ui->tableWidget->item(i, 1)->setText(HotkeyManager::getKeyString(m_hotkeys[i]->key, m_hotkeys[i]->mod));
     }
 }

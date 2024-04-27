@@ -23,7 +23,7 @@
 #include <QtPlugin>
 #include <qmmp/qmmp.h>
 #include "library.h"
-#include "settingsdialog.h"
+#include "librarysettingsdialog.h"
 #include "librarywidget.h"
 #include "libraryfactory.h"
 
@@ -31,7 +31,7 @@ GeneralProperties LibraryFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Media Library Plugin");
-    properties.shortName = "library";
+    properties.shortName = "library"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -76,15 +76,15 @@ QWidget *LibraryFactory::createWidget(int id, QWidget *parent)
 
 QDialog *LibraryFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new LibrarySettingsDialog(parent);
 }
 
 void LibraryFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Media Library Plugin"),
-                        tr("Qmmp Media Library Plugin")+"\n"+
-                        tr("This plugin represents a database to store music files tags for a fast access")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Media Library Plugin"),
+                       tr("Qmmp Media Library Plugin")+"\n"+
+                       tr("This plugin represents a database to store music files tags for a fast access")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString LibraryFactory::translation() const

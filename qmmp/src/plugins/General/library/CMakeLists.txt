@@ -12,9 +12,9 @@ SET(liblibrary_SRCS
     libraryfactory.cpp
     librarymodel.cpp
     librarywidget.cpp
-    settingsdialog.cpp
+    librarysettingsdialog.cpp
     librarywidget.ui
-    settingsdialog.ui
+    librarysettingsdialog.ui
     translations/translations.qrc
 )
 

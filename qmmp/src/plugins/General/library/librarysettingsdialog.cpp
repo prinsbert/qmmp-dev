@@ -24,43 +24,43 @@
 #include <QSqlQuery>
 #include <qmmp/qmmp.h>
 #include <qmmpui/filedialog.h>
-#include "settingsdialog.h"
-#include "ui_settingsdialog.h"
+#include "librarysettingsdialog.h"
+#include "ui_librarysettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent) :
+LibrarySettingsDialog::LibrarySettingsDialog(QWidget *parent) :
     QDialog(parent),
-    m_ui(new Ui::SettingsDialog)
+    m_ui(new Ui::LibrarySettingsDialog)
 {
     m_ui->setupUi(this);
     QSettings settings;
-    m_lastPath = settings.value("Library/last_path", QDir::homePath()).toString();
-    QStringList dirs = settings.value("Library/dirs").toStringList();
+    m_lastPath = settings.value(u"Library/last_path"_s, QDir::homePath()).toString();
+    QStringList dirs = settings.value(u"Library/dirs"_s).toStringList();
     m_ui->dirsListWidget->addItems(dirs);
-    m_ui->showYearCheckBox->setChecked(settings.value("Library/show_year", false).toBool());
-    m_ui->recreateDatabaseCheckBox->setChecked(settings.value("Library/recreate_db", false).toBool());
+    m_ui->showYearCheckBox->setChecked(settings.value(u"Library/show_year"_s, false).toBool());
+    m_ui->recreateDatabaseCheckBox->setChecked(settings.value(u"Library/recreate_db"_s, false).toBool());
 }
 
-SettingsDialog::~SettingsDialog()
+LibrarySettingsDialog::~LibrarySettingsDialog()
 {
     delete m_ui;
 }
 
-void SettingsDialog::accept()
+void LibrarySettingsDialog::accept()
 {
     QSettings settings;
-    settings.setValue("Library/last_path", m_lastPath);
+    settings.setValue(u"Library/last_path"_s, m_lastPath);
 
     QStringList dirs;
     for(int i = 0; i < m_ui->dirsListWidget->count(); ++i)
         dirs << m_ui->dirsListWidget->item(i)->text();
 
-    settings.setValue("Library/dirs", dirs);
-    settings.setValue("Library/show_year", m_ui->showYearCheckBox->isChecked());
-    settings.setValue("Library/recreate_db", m_ui->recreateDatabaseCheckBox->isChecked());
+    settings.setValue(u"Library/dirs"_s, dirs);
+    settings.setValue(u"Library/show_year"_s, m_ui->showYearCheckBox->isChecked());
+    settings.setValue(u"Library/recreate_db"_s, m_ui->recreateDatabaseCheckBox->isChecked());
     QDialog::accept();
 }
 
-void SettingsDialog::on_addDirButton_clicked()
+void LibrarySettingsDialog::on_addDirButton_clicked()
 {
     QString path = FileDialog::getExistingDirectory(this, tr("Select Directories for Scanning"), m_lastPath);
     if(!path.isEmpty())
@@ -70,7 +70,7 @@ void SettingsDialog::on_addDirButton_clicked()
     }
 }
 
-void SettingsDialog::on_removeDirButton_clicked()
+void LibrarySettingsDialog::on_removeDirButton_clicked()
 {
     QList<QListWidgetItem *> items = m_ui->dirsListWidget->selectedItems();
     qDeleteAll(items);

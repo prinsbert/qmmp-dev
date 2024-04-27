@@ -6,13 +6,13 @@ QT += sql
 
 HEADERS += libraryfactory.h \
     library.h \
-    settingsdialog.h \
+    librarysettingsdialog.h \
     librarywidget.h \
     librarymodel.h
 
 SOURCES += libraryfactory.cpp \
     library.cpp \
-    settingsdialog.cpp \
+    librarysettingsdialog.cpp \
     librarywidget.cpp \
     librarymodel.cpp
 
@@ -27,5 +27,5 @@ unix {
 }
 
 FORMS += \
-    settingsdialog.ui \
+    librarysettingsdialog.ui \
     librarywidget.ui
