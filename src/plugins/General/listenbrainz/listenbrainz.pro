@@ -5,16 +5,17 @@ TARGET = $$PLUGINS_PREFIX/General/listenbrainz
 QT += network
 
 HEADERS += listenbrainzfactory.h \
-           settingsdialog.h \
            listenbrainz.h \
+           listenbrainzsettingsdialog.h \
            payloadcache.h
 
 SOURCES += listenbrainzfactory.cpp \
-           settingsdialog.cpp \
            listenbrainz.cpp \
+           listenbrainzsettingsdialog.cpp \
            payloadcache.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    listenbrainzsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

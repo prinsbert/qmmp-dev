@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,7 +28,7 @@ GeneralProperties MPRISFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("MPRIS Plugin");
-    properties.shortName = "mpris";
+    properties.shortName = "mpris"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.visibilityControl = false;
@@ -47,9 +47,9 @@ QDialog *MPRISFactory::createConfigDialog(QWidget *)
 
 void MPRISFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About MPRIS Plugin"),
-                        tr("Qmmp MPRIS Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About MPRIS Plugin"),
+                       tr("Qmmp MPRIS Plugin")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString MPRISFactory::translation() const

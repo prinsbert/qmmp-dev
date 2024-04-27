@@ -20,19 +20,19 @@
 
 #include <QSettings>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "lyricssettingsdialog.h"
 #include "ultimatelyricsparser.h"
-#include "ui_settingsdialog.h"
+#include "ui_lyricssettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent) :
+LyricsSettingsDialog::LyricsSettingsDialog(QWidget *parent) :
     QDialog(parent),
-    m_ui(new Ui::SettingsDialog)
+    m_ui(new Ui::LyricsSettingsDialog)
 {
     m_ui->setupUi(this);
     QSettings settings;  
     UltimateLyricsParser parser;
-    parser.load(":/ultimate_providers.xml");
-    QStringList enabledProviders = settings.value("Lyrics/enabled_providers", parser.defaultProviders()).toStringList();
+    parser.load(u":/ultimate_providers.xml"_s);
+    QStringList enabledProviders = settings.value(u"Lyrics/enabled_providers"_s, parser.defaultProviders()).toStringList();
 
     for(const LyricsProvider *provider : parser.providers())
     {
@@ -42,12 +42,12 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     }
 }
 
-SettingsDialog::~SettingsDialog()
+LyricsSettingsDialog::~LyricsSettingsDialog()
 {
     delete m_ui;
 }
 
-void SettingsDialog::accept()
+void LyricsSettingsDialog::accept()
 {
     QSettings settings;
     QStringList enabledProviders;
@@ -56,6 +56,6 @@ void SettingsDialog::accept()
         if(m_ui->providersListWidget->item(i)->checkState() == Qt::Checked)
             enabledProviders << m_ui->providersListWidget->item(i)->text();
     }
-    settings.setValue("Lyrics/enabled_providers", enabledProviders);
+    settings.setValue(u"Lyrics/enabled_providers"_s, enabledProviders);
     QDialog::accept();
 }

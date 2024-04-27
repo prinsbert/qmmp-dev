@@ -20,7 +20,7 @@
 
 #include <QMessageBox>
 #include <qmmp/soundcore.h>
-#include "settingsdialog.h"
+#include "lyricssettingsdialog.h"
 #include "lyrics.h"
 #include "lyricswidget.h"
 #include "lyricsfactory.h"
@@ -29,7 +29,7 @@ GeneralProperties LyricsFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Lyrics Plugin");
-    properties.shortName = "lyrics";
+    properties.shortName = "lyrics"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -60,17 +60,17 @@ QWidget *LyricsFactory::createWidget(int id, QWidget *parent)
 
 QDialog *LyricsFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new LyricsSettingsDialog(parent);
 }
 
 void LyricsFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Lyrics Plugin"),
-                        tr("Qmmp Lyrics Plugin")+"\n"+
-                        tr("This plugin retrieves lyrics from LyricWiki")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Based on Ultimate Lyrics script by Vladimir Brkic <vladimir_brkic@yahoo.com>")
-                        );
+    QMessageBox::about(parent, tr("About Lyrics Plugin"),
+                       tr("Qmmp Lyrics Plugin")+"\n"+
+                       tr("This plugin retrieves lyrics from LyricWiki")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                       tr("Based on Ultimate Lyrics script by Vladimir Brkic <vladimir_brkic@yahoo.com>")
+                       );
 }
 
 QString LyricsFactory::translation() const

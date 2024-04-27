@@ -60,7 +60,7 @@ void LyricsProvider::addRule(const QList<QPair<QString, QString> > &args, bool e
             item.begin = i.first;
             item.end = i.second;
         }
-        else if(i.first.contains("://")) //url
+        else if(i.first.contains(u"://"_s)) //url
         {
             item.url = i.first;
         }
@@ -84,14 +84,14 @@ void LyricsProvider::addInvalidIndicator(const QString &indicator)
 QString LyricsProvider::getUrl(const TrackInfo &track) const
 {
     QString url = m_url;
-    const QMap<QString, QString> replaceMap = generateReplaceMap(track);
-    QMap<QString, QString>::const_iterator it = replaceMap.constBegin();
-    while(it != replaceMap.constEnd())
+    const QHash<QString, QString> replaceHash = generateReplaceHash(track);
+    QHash<QString, QString>::const_iterator it = replaceHash.constBegin();
+    while(it != replaceHash.constEnd())
     {
         QString value = it.value();
 
         for(const UrlFormat &format: m_urlFormats)
-            value.replace(QRegularExpression(QString("[%1]").arg(QRegularExpression::escape(format.replace))), format.with);
+            value.replace(QRegularExpression(QStringLiteral("[%1]").arg(QRegularExpression::escape(format.replace))), format.with);
 
         url.replace(it.key(), value);
 
@@ -115,7 +115,7 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
     if(m_skipRules)
         return content;
 
-    const QMap<QString, QString> replaceMap = generateReplaceMap(track);
+    const QHash<QString, QString> replaceHash = generateReplaceHash(track);
 
     for(const Rule &rule : qAsConst(m_extractRules))
     {
@@ -124,8 +124,8 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
 
         for(Item &item : tmpRule)
         {
-            QMap<QString, QString>::const_iterator it = replaceMap.constBegin();
-            while(it != replaceMap.constEnd())
+            QHash<QString, QString>::const_iterator it = replaceHash.constBegin();
+            while(it != replaceHash.constEnd())
             {
                 item.begin.replace(it.key(), it.value());
                 item.url.replace(it.key(), it.value());
@@ -151,13 +151,13 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
         }
     }
 
-    while (out.endsWith("<br />"))
+    while (out.endsWith(u"<br />"_s))
     {
         out.chop(6);
         out = out.trimmed();
     }
 
-    while (out.endsWith("<br>"))
+    while (out.endsWith(u"<br>"_s))
     {
         out.chop(4);
         out = out.trimmed();
@@ -197,22 +197,22 @@ QString LyricsProvider::fixCase(const QString &title) const
     return out;
 }
 
-QMap<QString, QString> LyricsProvider::generateReplaceMap(const TrackInfo &track) const
+QHash<QString, QString> LyricsProvider::generateReplaceHash(const TrackInfo &track) const
 {
-    QMap<QString, QString> replaceMap = {
-        { "{artist}", track.value(Qmmp::ARTIST).toLower() },
-        { "{artist2}", track.value(Qmmp::ARTIST).toLower().remove(' ') },
-        { "{Artist}", track.value(Qmmp::ARTIST) },
-        { "{ARTIST}", track.value(Qmmp::ARTIST).toUpper() },
-        { "{a}", track.value(Qmmp::ARTIST).left(1).toLower() },
-        { "{album}", track.value(Qmmp::ALBUM).toLower() },
-        { "{album2}", track.value(Qmmp::ALBUM).toLower().remove(' ') },
-        { "{Album}", track.value(Qmmp::ALBUM) },
-        { "{title}",  track.value(Qmmp::TITLE).toLower() },
-        { "{Title}", track.value(Qmmp::TITLE) },
-        { "{Title2}", fixCase(track.value(Qmmp::TITLE)) },
-        { "{track}", track.value(Qmmp::TRACK) },
-        { "{year}",  track.value(Qmmp::YEAR) }
+    const QHash<QString, QString> replaceMap = {
+        { u"{artist}"_s, track.value(Qmmp::ARTIST).toLower() },
+        { u"{artist2}"_s, track.value(Qmmp::ARTIST).toLower().remove(QChar::Space) },
+        { u"{Artist}"_s, track.value(Qmmp::ARTIST) },
+        { u"{ARTIST}"_s, track.value(Qmmp::ARTIST).toUpper() },
+        { u"{a}"_s, track.value(Qmmp::ARTIST).left(1).toLower() },
+        { u"{album}"_s, track.value(Qmmp::ALBUM).toLower() },
+        { u"{album2}"_s, track.value(Qmmp::ALBUM).toLower().remove(QChar::Space) },
+        { u"{Album}"_s, track.value(Qmmp::ALBUM) },
+        { u"{title}"_s,  track.value(Qmmp::TITLE).toLower() },
+        { u"{Title}"_s, track.value(Qmmp::TITLE) },
+        { u"{Title2}"_s, fixCase(track.value(Qmmp::TITLE)) },
+        { u"{track}"_s, track.value(Qmmp::TRACK) },
+        { u"{year}"_s,  track.value(Qmmp::YEAR) }
     };
 
     return replaceMap;
@@ -228,15 +228,15 @@ QString LyricsProvider::extract(const QString &content, const Rule &rule) const
         {
             QString url = item.url;
             QString id = rule.count() >= 2 ? out.section(rule[1].begin, 1).section(rule[1].end, 0, 0) : QString();
-            url.replace("{id}", id);
+            url.replace(u"{id}"_s, id);
             return url;
         }
 
         if(!item.tag.isEmpty())
         {
-            static const QRegularExpression re("<(\\w+).*>");
+            static const QRegularExpression re(u"<(\\w+).*>"_s);
             QRegularExpressionMatch m = re.match(item.tag);
-            out = out.section(item.tag, 1).section(QString("</%1>").arg(m.captured(1)), 0, 0);
+            out = out.section(item.tag, 1).section(QStringLiteral("</%1>").arg(m.captured(1)), 0, 0);
         }
         else
         {
@@ -254,9 +254,9 @@ QString LyricsProvider::exclude(const QString &content, const LyricsProvider::Ru
     {
         if(!item.tag.isEmpty())
         {
-            static const QRegularExpression re("<(\\w+).*>");
+            static const QRegularExpression re(u"<(\\w+).*>"_s);
             QRegularExpressionMatch m = re.match(item.tag);
-            out = out.section(item.tag, 0, 0) + out.section(item.tag, 1).section(QString("</%1>").arg(m.captured(1)), 1);
+            out = out.section(item.tag, 0, 0) + out.section(item.tag, 1).section(QStringLiteral("</%1>").arg(m.captured(1)), 1);
         }
         else
         {

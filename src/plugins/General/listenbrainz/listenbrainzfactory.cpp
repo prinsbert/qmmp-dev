@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019 by Ilya Kotov                                      *
+ *   Copyright (C) 2019-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,14 +21,14 @@
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "listenbrainz.h"
-#include "settingsdialog.h"
+#include "listenbrainzsettingsdialog.h"
 #include "listenbrainzfactory.h"
 
 GeneralProperties ListenBrainzFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("ListenBrainz Plugin");
-    properties.shortName = "listenbrainz";
+    properties.shortName = "listenbrainz"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -42,15 +42,15 @@ QObject *ListenBrainzFactory::create(QObject *parent)
 
 QDialog *ListenBrainzFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new ListenBrainzSettingsDialog(parent);
 }
 
 void ListenBrainzFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About ListenBrainz Plugin"),
-                        tr("Qmmp ListenBrainz Plugin")+"\n"+
-                        tr("This plugin submits listen history to ListenBrainz server")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About ListenBrainz Plugin"),
+                       tr("Qmmp ListenBrainz Plugin")+"\n"+
+                       tr("This plugin submits listen history to ListenBrainz server")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString ListenBrainzFactory::translation() const

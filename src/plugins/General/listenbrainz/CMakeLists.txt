@@ -9,11 +9,11 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(liblistenbrainz_SRCS
-    settingsdialog.cpp
+    listenbrainzsettingsdialog.cpp
     listenbrainzfactory.cpp
     payloadcache.cpp
     listenbrainz.cpp
-    settingsdialog.ui
+    listenbrainzsettingsdialog.ui
     translations/translations.qrc
 )
 

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SettingsDialog</class>
- <widget class="QDialog" name="SettingsDialog">
+ <class>LyricsSettingsDialog</class>
+ <widget class="QDialog" name="LyricsSettingsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>107</height>
+    <width>431</width>
+    <height>371</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ListenBrainz Plugin Settings</string>
+   <string>Lyrics Plugin Settings</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -26,25 +26,12 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>ListenBrainz user token:</string>
+      <string>Lyrics providers:</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="userTokenLineEdit"/>
-   </item>
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>0</height>
-      </size>
-     </property>
-    </spacer>
+    <widget class="QListWidget" name="providersListWidget"/>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -63,7 +50,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>LyricsSettingsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -79,7 +66,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>LyricsSettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

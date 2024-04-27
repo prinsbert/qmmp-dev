@@ -48,7 +48,7 @@ bool Root2Object::canRaise() const
 
 QString Root2Object::desktopEntry() const
 {
-    return "qmmp";
+    return u"qmmp"_s;
 }
 
 bool Root2Object::hasTrackList() const
@@ -57,7 +57,7 @@ bool Root2Object::hasTrackList() const
 }
 QString Root2Object::identity() const
 {
-    return "Qmmp";
+    return u"Qmmp"_s;
 }
 
 QStringList Root2Object::supportedMimeTypes() const
@@ -72,8 +72,8 @@ QStringList Root2Object::supportedMimeTypes() const
 QStringList Root2Object::supportedUriSchemes() const
 {
     QStringList protocols = MetaDataManager::instance()->protocols();
-    if(!protocols.contains("file")) //append file if needed
-        protocols.append("file");
+    if(!protocols.contains(u"file"_s)) //append file if needed
+        protocols.append(u"file"_s);
     return protocols;
 }
 

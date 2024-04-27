@@ -18,28 +18,27 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef LISTENBRAINZSETTINGSDIALOG_H
+#define LISTENBRAINZSETTINGSDIALOG_H
 
 #include <QDialog>
 
 namespace Ui {
-class SettingsDialog;
+class ListenBrainzSettingsDialog;
 }
 
-class SettingsDialog : public QDialog
+class ListenBrainzSettingsDialog : public QDialog
 {
     Q_OBJECT
-
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
-    ~SettingsDialog();
+    explicit ListenBrainzSettingsDialog(QWidget *parent = nullptr);
+    ~ListenBrainzSettingsDialog();
 
 public slots:
     void accept() override;
 
 private:
-    Ui::SettingsDialog *m_ui;
+    Ui::ListenBrainzSettingsDialog *m_ui;
 };
 
-#endif // SETTINGSDIALOG_H
+#endif // LISTENBRAINZSETTINGSDIALOG_H
