@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2009-2012 by Artur Guzik                                *
- *   a.guzik88@gmail.com                                                   *
+ *   Copyright (C) 2009-2014 by Ilya Kotov                                 *
+ *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,36 +17,39 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef HOTKEYSETTINGSDIALOG_H
+#define HOTKEYSETTINGSDIALOG_H
 
 #include <QDialog>
+#include "hotkeymanager.h"
+
 
 namespace Ui {
-    class SettingsDialog;
+class HotkeySettingsDialog;
 }
 
-class SettingsDialog : public QDialog
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class HotkeySettingsDialog : public QDialog
 {
 Q_OBJECT
-
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
-    ~SettingsDialog();
+    explicit HotkeySettingsDialog(QWidget *parent = nullptr);
+
+    ~HotkeySettingsDialog();
+
 
 public slots:
     virtual void accept() override;
 
 private slots:
-    virtual void on_templateButton_clicked();
-
-protected:
-    void changeEvent(QEvent *e) override;
+    void on_tableWidget_itemDoubleClicked (QTableWidgetItem * item);
+    void on_resetButton_clicked();
 
 private:
-    Ui::SettingsDialog *m_ui;
-    QString m_template;
+    Ui::HotkeySettingsDialog *m_ui;
+    QList<Hotkey*> m_hotkeys;
 };
 
-#endif // SETTINGSDIALOG_H
+#endif

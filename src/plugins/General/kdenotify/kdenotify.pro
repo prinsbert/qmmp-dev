@@ -9,13 +9,14 @@ QT += dbus
 
 SOURCES += kdenotifyfactory.cpp \
     kdenotify.cpp \
-    settingsdialog.cpp
+    kdenotifysettingsdialog.cpp
 
 HEADERS += kdenotifyfactory.h \
     kdenotify.h \
-    settingsdialog.h
+    kdenotifysettingsdialog.h
 
-FORMS += settingsdialog.ui
+FORMS += \
+    kdenotifysettingsdialog.ui
 
 RESOURCES += translations/translations.qrc
 

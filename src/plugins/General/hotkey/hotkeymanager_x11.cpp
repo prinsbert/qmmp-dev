@@ -29,6 +29,7 @@
 #include <QCoreApplication>
 #include <QApplication>
 #include <QAbstractEventDispatcher>
+#include <QHash>
 #define Visual XVisual
 extern "C" {
 #include <X11/X.h>
@@ -58,21 +59,22 @@ quint32 Hotkey::defaultKey()
 quint32 Hotkey::defaultKey(int act)
 {
     //default key bindings
-    QMap<int, quint32> keyMap;
-    keyMap[PLAY] = 0;
-    keyMap[STOP] = XF86XK_AudioStop;
-    keyMap[PAUSE] = XF86XK_AudioPause;
-    keyMap[PLAY_PAUSE] = XF86XK_AudioPlay;
-    keyMap[NEXT] = XF86XK_AudioNext;
-    keyMap[PREVIOUS] = XF86XK_AudioPrev;
-    keyMap[SHOW_HIDE] = 0;
-    keyMap[VOLUME_UP] = XF86XK_AudioRaiseVolume;
-    keyMap[VOLUME_DOWN] = XF86XK_AudioLowerVolume;
-    keyMap[FORWARD] = 0;
-    keyMap[REWIND] = 0;
-    keyMap[JUMP_TO_TRACK] = 0;
-    keyMap[VOLUME_MUTE] = XF86XK_AudioMute;
-    return keyMap[act];
+    static const QHash<int, quint32> keyMap = {
+        { PLAY, 0 },
+        { STOP, XF86XK_AudioStop },
+        { PAUSE, XF86XK_AudioPause },
+        { PLAY_PAUSE, XF86XK_AudioPlay },
+        { NEXT, XF86XK_AudioNext },
+        { PREVIOUS, XF86XK_AudioPrev },
+        { SHOW_HIDE, 0 },
+        { VOLUME_UP, XF86XK_AudioRaiseVolume },
+        { VOLUME_DOWN, XF86XK_AudioLowerVolume },
+        { FORWARD, 0 },
+        { REWIND, 0 },
+        { JUMP_TO_TRACK, 0},
+        { VOLUME_MUTE, XF86XK_AudioMute }
+    };
+    return keyMap.value(act);
 }
 
 HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
@@ -86,11 +88,11 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
     QCoreApplication::instance()->installEventFilter(this);
     WId rootWindow = DefaultRootWindow(HotkeyManager::display());
     QSettings settings; //load settings
-    settings.beginGroup("Hotkey");
+    settings.beginGroup(u"Hotkey"_s);
     for (int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
     {
-        quint32 key = settings.value(QString("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
-        quint32 mod = settings.value(QString("modifiers_%1").arg(i), 0).toUInt();
+        quint32 key = settings.value(QStringLiteral("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
+        quint32 mod = settings.value(QStringLiteral("modifiers_%1").arg(i), 0).toUInt();
 
         if (key)
         {
@@ -123,7 +125,7 @@ HotkeyManager::~HotkeyManager()
     qApp->removeNativeEventFilter(this);
     while(!m_grabbedKeys.isEmpty())
     {
-        Hotkey *key = m_grabbedKeys.takeFirst ();
+        Hotkey *key = m_grabbedKeys.takeFirst();
         if(key->code)
             XUngrabKey(HotkeyManager::display(), key->code, key->mod, HotkeyManager::appRootWindow());
         delete key;
@@ -132,13 +134,21 @@ HotkeyManager::~HotkeyManager()
 
 const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
 {
-    QString strModList[] = { "Control", "Shift", "Alt", "Mod2", "Mod3", "Super", "Mod5" };
-    quint32 modList[] = { ControlMask, ShiftMask, Mod1Mask, Mod2Mask, Mod3Mask, Mod4Mask, Mod5Mask };
+    static const QHash<quint32, QString> modList = {
+        { ControlMask, u"Control"_s },
+        { ShiftMask, u"Shift"_s },
+        { Mod1Mask, u"Alt"_s },
+        { Mod2Mask, u"Mod2"_s },
+        { Mod3Mask, u"Mod3"_s },
+        { Mod4Mask, u"Super"_s },
+        { Mod5Mask, u"Mod5"_s }
+    };
+
     QString keyStr;
-    for (int j = 0; j < 7; j++)
+    for(auto it = modList.cbegin(); it != modList.cend(); ++it)
     {
-        if (modifiers & modList[j])
-            keyStr.append(strModList[j] + "+");
+        if(modifiers & it.key())
+            keyStr.append(it.value() + QChar('+'));
     }
     keyStr.append(XKeysymToString(key));
     return keyStr;
@@ -215,7 +225,7 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
 
 QList<long> HotkeyManager::ignModifiersList()
 {
-    QList<long> ret = { 0, Mod2Mask, LockMask, (Mod2Mask | LockMask) };
+    static const QList<long> ret = { 0, Mod2Mask, LockMask, (Mod2Mask | LockMask) };
     return ret;
 }
 

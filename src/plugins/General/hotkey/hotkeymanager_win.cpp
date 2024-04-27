@@ -58,13 +58,13 @@ static struct
     { VK_NUMPAD7, 0x47,  "" },
     { VK_NUMPAD8, 0x48,  "" },
     { VK_NUMPAD9, 0x49,  "" },
-    { VK_VOLUME_MUTE, 0x120,  "Volume Mute"},
-    { VK_VOLUME_DOWN, 0x12e,  "Volume Down"},
-    { VK_VOLUME_UP, 0x130,  "Volume Up"},
-    { VK_MEDIA_NEXT_TRACK, 0x119,  "Media Next Track"},
-    { VK_MEDIA_PREV_TRACK, 0x110,  "Media Previous Track"},
-    { VK_MEDIA_STOP, 0x124,  "Media Stop"},
-    { VK_MEDIA_PLAY_PAUSE, 0x122,  "Media Play/Pause"},
+    { VK_VOLUME_MUTE, 0x120, u"Volume Mute"},
+    { VK_VOLUME_DOWN, 0x12e, u"Volume Down"},
+    { VK_VOLUME_UP, 0x130,  u"Volume Up"},
+    { VK_MEDIA_NEXT_TRACK, 0x119, u"Media Next Track"},
+    { VK_MEDIA_PREV_TRACK, 0x110, u"Media Previous Track"},
+    { VK_MEDIA_STOP, 0x124, u"Media Stop"},
+    { VK_MEDIA_PLAY_PAUSE, 0x122, u"Media Play/Pause"},
 { 0, 0, nullptr }
 };
 
@@ -76,7 +76,7 @@ quint32 Hotkey::defaultKey()
 quint32 Hotkey::defaultKey(int act)
 {
     //default key bindings
-    static const QMap<int, quint32> defaultKeys = {
+    static const QHash<int, quint32> defaultKeys = {
         { PLAY, 0 },
         { STOP, VK_MEDIA_STOP },
         { PAUSE, 0 },
@@ -91,18 +91,18 @@ quint32 Hotkey::defaultKey(int act)
         { JUMP_TO_TRACK, 0 },
         { VOLUME_MUTE, VK_VOLUME_MUTE },
     };
-    return defaultKeys[act];
+    return defaultKeys.value(act);
 }
 
 HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 {
     qApp->installNativeEventFilter(this);
     QSettings settings; //load settings
-    settings.beginGroup("Hotkey");
+    settings.beginGroup(u"Hotkey"_s);
     for (int i = Hotkey::PLAY; i <= Hotkey::JUMP_TO_TRACK; ++i)
     {
-        quint32 key = settings.value(QString("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
-        quint32 mod = settings.value(QString("modifiers_%1").arg(i), 0).toUInt();
+        quint32 key = settings.value(QStringLiteral("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
+        quint32 mod = settings.value(QStringLiteral("modifiers_%1").arg(i), 0).toUInt();
 
         if (key)
         {
@@ -153,14 +153,18 @@ HotkeyManager::~HotkeyManager()
 
 const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
 {
-    QString strModList[] = { "Ctrl", "Shift", "Alt", "Win"};
-    quint32 modList[] = { HOTKEYF_CONTROL, HOTKEYF_SHIFT, HOTKEYF_ALT, HOTKEYF_EXT};
+    QHash<quint32, QString> modList = {
+        { HOTKEYF_CONTROL, u"Ctrl"_s },
+        { HOTKEYF_SHIFT, u"Shift"_s },
+        { HOTKEYF_ALT, u"Alt"_s },
+        { HOTKEYF_EXT, u"Win"_s }
+    };
 
     QString keyStr;
-    for (int j = 0; j < 4; j++)
+    for(auto it = modList.cbegin(); it != modList.cend(); ++it)
     {
-        if (modifiers & modList[j])
-            keyStr.append(strModList[j] + "+");
+        if (modifiers & it.key())
+            keyStr.append(it.value() + QChar('+'));
     }
 
     if(key == VK_SHIFT || key == VK_CONTROL || key == VK_LWIN || key == VK_RWIN || key == VK_MENU)

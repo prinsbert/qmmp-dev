@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2009-2014 by Ilya Kotov                                 *
- *   forkotov02@ya.ru                                                      *
+ *   Copyright (C) 2009-2012 by Artur Guzik                                *
+ *   a.guzik88@gmail.com                                                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,36 +17,36 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+
+#ifndef KDENOTIFYSETTINGSDIALOG_H
+#define KDENOTIFYSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "hotkeymanager.h"
 
-#include "ui_settingsdialog.h"
+namespace Ui {
+    class KdeNotifySettingsDialog;
+}
 
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-class SettingsDialog : public QDialog
+class KdeNotifySettingsDialog : public QDialog
 {
 Q_OBJECT
+
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
-
-    ~SettingsDialog();
-
+    explicit KdeNotifySettingsDialog(QWidget *parent = nullptr);
+    ~KdeNotifySettingsDialog();
 
 public slots:
     virtual void accept() override;
 
 private slots:
-    void on_tableWidget_itemDoubleClicked (QTableWidgetItem * item);
-    void on_resetButton_clicked();
+    virtual void on_templateButton_clicked();
+
+protected:
+    void changeEvent(QEvent *e) override;
 
 private:
-    Ui::SettingsDialog m_ui;
-    QList <Hotkey*> m_hotkeys;
+    Ui::KdeNotifySettingsDialog *m_ui;
+    QString m_template;
 };
 
-#endif
+#endif // KDENOTIFYSETTINGSDIALOG_H

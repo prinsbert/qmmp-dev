@@ -39,17 +39,17 @@
 #include "librarywidget.h"
 #include "library.h"
 
-#define CONNECTION_NAME "qmmp_library"
+#define CONNECTION_NAME u"qmmp_library"_s
 
 Library::Library(QPointer<LibraryWidget> *libraryWidget, QObject *parent) :
     QThread(parent),
     m_libraryWidget(libraryWidget)
 {
     {
-        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
+        QSqlDatabase db = QSqlDatabase::addDatabase(u"QSQLITE"_s, CONNECTION_NAME);
         if(db.isValid() && !db.isOpen())
         {
-            db.setDatabaseName(Qmmp::configDir() + "/" + "library.sqlite");
+            db.setDatabaseName(Qmmp::configDir() + u"/library.sqlite"_s);
             db.open();
             if(createTables())
                 qDebug("Library: database initialization finished");
@@ -60,18 +60,18 @@ Library::Library(QPointer<LibraryWidget> *libraryWidget, QObject *parent) :
     QSqlDatabase::removeDatabase(CONNECTION_NAME);
 
     QSettings settings;
-    m_dirs = settings.value("Library/dirs").toStringList();
+    m_dirs = settings.value(u"Library/dirs"_s).toStringList();
 
-    m_showAction = new QAction(QIcon::fromTheme("text-x-generic"), tr("Library"), this);
+    m_showAction = new QAction(QIcon::fromTheme(u"text-x-generic"_s), tr("Library"), this);
     m_showAction->setShortcut(tr("Alt+L"));
     UiHelper::instance()->addAction(m_showAction, UiHelper::TOOLS_MENU);
-    connect(m_showAction, SIGNAL(triggered()), SLOT(showLibraryWindow()));
+    connect(m_showAction, &QAction::triggered, this, &Library::showLibraryWindow);
     if(!m_libraryWidget->isNull() && !m_libraryWidget->data()->isWindow())
         m_showAction->setVisible(false);
 
-    QAction *refreshAction = new QAction(QIcon::fromTheme("view-refresh"), tr("Update library"), this);
+    QAction *refreshAction = new QAction(QIcon::fromTheme(u"view-refresh"_s), tr("Update library"), this);
     UiHelper::instance()->addAction(refreshAction, UiHelper::TOOLS_MENU);
-    connect(refreshAction, SIGNAL(triggered()), SLOT(startDirectoryScanning()));
+    connect(refreshAction, &QAction::triggered, this, &Library::startDirectoryScanning);
 
     connect(this, &QThread::finished, this, [=] {
         if(!m_libraryWidget->isNull())
@@ -81,16 +81,16 @@ Library::Library(QPointer<LibraryWidget> *libraryWidget, QObject *parent) :
         }
     }, Qt::QueuedConnection);
 
-    if(settings.value("Library/recreate_db", false).toBool())
+    if(settings.value(u"Library/recreate_db"_s, false).toBool())
     {
-        settings.setValue("Library/recreate_db", false);
+        settings.setValue(u"Library/recreate_db"_s, false);
         {
-            QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
-            db.setDatabaseName(Qmmp::configDir() + "/" + "library.sqlite");
+            QSqlDatabase db = QSqlDatabase::addDatabase(u"QSQLITE"_s, CONNECTION_NAME);
+            db.setDatabaseName(Qmmp::configDir() + u"/library.sqlite"_s);
             db.open();
-            db.exec("DELETE FROM track_library");
-            db.exec("REINDEX track_library");
-            db.exec("VACUUM");
+            db.exec(u"DELETE FROM track_library"_s);
+            db.exec(u"REINDEX track_library"_s);
+            db.exec(u"VACUUM"_s);
             db.close();
         }
         QSqlDatabase::removeDatabase(CONNECTION_NAME);
@@ -154,12 +154,12 @@ bool Library::createTables()
         return false;
 
     QSqlQuery query(db);
-    bool ok = query.exec("CREATE TABLE IF NOT EXISTS track_library("
+    bool ok = query.exec(u"CREATE TABLE IF NOT EXISTS track_library("
                          "ID INTEGER PRIMARY KEY AUTOINCREMENT,"
                          "Timestamp TIMESTAMP NOT NULL,"
                          "Title TEXT, Artist TEXT, AlbumArtist TEXT, Album TEXT, Comment TEXT, Genre TEXT, Composer TEXT,"
                          "Year INTEGER, Track INTEGER, DiscNumber TEXT, Duration INTEGER, "
-                         "AudioInfo BLOB, URL TEXT, FilePath TEXT, SearchString TEXT)");
+                         "AudioInfo BLOB, URL TEXT, FilePath TEXT, SearchString TEXT)"_s);
 
     if(!ok)
     {
@@ -167,7 +167,7 @@ bool Library::createTables()
         return false;
     }
 
-    ok = query.exec("CREATE TABLE IF NOT EXISTS ignored_files(ID INTEGER PRIMARY KEY AUTOINCREMENT, FilePath TEXT UNIQUE)");
+    ok = query.exec(u"CREATE TABLE IF NOT EXISTS ignored_files(ID INTEGER PRIMARY KEY AUTOINCREMENT, FilePath TEXT UNIQUE)"_s);
 
     if(!ok)
         qWarning("Library: unable to create ignored file list, error: %s", qPrintable(query.lastError().text()));
@@ -182,33 +182,33 @@ void Library::addTrack(TrackInfo *track, const QString &filePath)
         return;
 
     QSqlQuery query(db);
-    query.prepare("INSERT OR REPLACE INTO track_library VALUES("
+    query.prepare(u"INSERT OR REPLACE INTO track_library VALUES("
                   "(SELECT ID FROM track_library WHERE URL = :url), "
                   ":timestamp, "
                   ":title, :artist, :albumartist, :album, :comment, :genre, :composer, "
                   ":year, :track, :discnumber, :duration, "
-                  ":audioinfo, :url, :filepath, :searchstring)");
+                  ":audioinfo, :url, :filepath, :searchstring)"_s);
 
-    QString title = track->value(Qmmp::TITLE).isEmpty() ? track->path().section("/", -1) : track->value(Qmmp::TITLE);
+    QString title = track->value(Qmmp::TITLE).isEmpty() ? track->path().section(QChar('/'), -1) : track->value(Qmmp::TITLE);
     QString album = track->value(Qmmp::ALBUM).isEmpty() ? tr("Unknown") : track->value(Qmmp::ALBUM);
     QString artist = track->value(Qmmp::ARTIST).isEmpty() ? tr("Unknown") : track->value(Qmmp::ARTIST);
 
-    query.bindValue(":timestamp", QFileInfo(filePath).lastModified());
-    query.bindValue(":title", title);
-    query.bindValue(":artist", artist);
-    query.bindValue(":albumartist", track->value(Qmmp::ALBUMARTIST));
-    query.bindValue(":album", album);
-    query.bindValue(":comment", track->value(Qmmp::COMMENT));
-    query.bindValue(":genre", track->value(Qmmp::GENRE));
-    query.bindValue(":composer", track->value(Qmmp::COMPOSER));
-    query.bindValue(":year", track->value(Qmmp::YEAR));
-    query.bindValue(":track", track->value(Qmmp::TRACK));
-    query.bindValue(":discnumber", track->value(Qmmp::DISCNUMBER));
-    query.bindValue(":duration", track->duration());
-    query.bindValue(":audioinfo", serializeAudioInfo(track->properties()));
-    query.bindValue(":url", track->path());
-    query.bindValue(":filepath", filePath);
-    query.bindValue(":searchstring", QString("%1|||%2|||%3").arg(artist, album, title).toLower());
+    query.bindValue(u":timestamp"_s, QFileInfo(filePath).lastModified());
+    query.bindValue(u":title"_s, title);
+    query.bindValue(u":artist"_s, artist);
+    query.bindValue(u":albumartist"_s, track->value(Qmmp::ALBUMARTIST));
+    query.bindValue(u":album"_s, album);
+    query.bindValue(u":comment"_s, track->value(Qmmp::COMMENT));
+    query.bindValue(u":genre"_s, track->value(Qmmp::GENRE));
+    query.bindValue(u":composer"_s, track->value(Qmmp::COMPOSER));
+    query.bindValue(u":year"_s, track->value(Qmmp::YEAR));
+    query.bindValue(u":track"_s, track->value(Qmmp::TRACK));
+    query.bindValue(u":discnumber"_s, track->value(Qmmp::DISCNUMBER));
+    query.bindValue(u":duration"_s, track->duration());
+    query.bindValue(u":audioinfo"_s, serializeAudioInfo(track->properties()));
+    query.bindValue(u":url"_s, track->path());
+    query.bindValue(u":filepath"_s, filePath);
+    query.bindValue(u":searchstring"_s, QStringLiteral("%1|||%2|||%3").arg(artist, album, title).toLower());
     if(!query.exec())
         qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
 }
@@ -224,25 +224,25 @@ QByteArray Library::serializeAudioInfo(const QMap<Qmmp::TrackProperty, QString> 
         switch(it.key())
         {
         case Qmmp::BITRATE:
-            obj.insert("bitrate", value.toInt());
+            obj.insert(u"bitrate"_s, value.toInt());
             break;
         case Qmmp::SAMPLERATE:
-            obj.insert("samplerate", value.toInt());
+            obj.insert(u"samplerate"_s, value.toInt());
             break;
         case Qmmp::CHANNELS:
-            obj.insert("channels", value.toInt());
+            obj.insert(u"channels"_s, value.toInt());
             break;
         case Qmmp::BITS_PER_SAMPLE:
-            obj.insert("bitsPerSample", value.toInt());
+            obj.insert(u"bitsPerSample"_s, value.toInt());
             break;
         case Qmmp::FORMAT_NAME:
-            obj.insert("formatName", value);
+            obj.insert(u"formatName"_s, value);
             break;
         case Qmmp::DECODER:
-            obj.insert("decoder", value);
+            obj.insert(u"decoder"_s, value);
             break;
         case Qmmp::FILE_SIZE:
-            obj.insert("fileSize", value.toLongLong());
+            obj.insert(u"fileSize"_s, value.toLongLong());
             break;
         default:
             ;
@@ -259,15 +259,15 @@ bool Library::scanDirectories(const QStringList &paths)
     m_stopped = false;
 
     {
-        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
-        db.setDatabaseName(Qmmp::configDir() + "/" + "library.sqlite");
+        QSqlDatabase db = QSqlDatabase::addDatabase(u"QSQLITE"_s, CONNECTION_NAME);
+        db.setDatabaseName(Qmmp::configDir() + u"/library.sqlite"_s);
         db.open();
 
         readIgnoredFiles();
 
         QSqlQuery query(db);
-        query.exec("PRAGMA journal_mode = WAL");
-        query.exec("PRAGMA synchronous = NORMAL");
+        query.exec(u"PRAGMA journal_mode = WAL"_s);
+        query.exec(u"PRAGMA synchronous = NORMAL"_s);
 
         for(const QString &path : qAsConst(paths))
         {
@@ -353,7 +353,7 @@ void Library::removeMissingFiles(const QStringList &paths)
         return;
 
     QSqlQuery query(db);
-    if(!query.exec("SELECT FilePath,URL FROM track_library"))
+    if(!query.exec(u"SELECT FilePath,URL FROM track_library"_s))
     {
         qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
         return;
@@ -372,12 +372,12 @@ void Library::removeMissingFiles(const QStringList &paths)
 
         if(!QFile::exists(path) || //remove missing or disabled file paths
                 !std::any_of(paths.cbegin(), paths.cend(), [path](const QString &p){ return path.startsWith(p); } ) ||
-                (!url.contains("://") && m_ignoredFiles.contains(url))) //remove ignored files
+                (!url.contains(u"://"_s) && m_ignoredFiles.contains(url))) //remove ignored files
         {
             qDebug("Library: removing '%s' from library", qPrintable(path));
             QSqlQuery rmQuery(db);
-            rmQuery.prepare("DELETE FROM track_library WHERE FilePath = :filepath");
-            rmQuery.bindValue(":filepath", path);
+            rmQuery.prepare(u"DELETE FROM track_library WHERE FilePath = :filepath"_s);
+            rmQuery.bindValue(u":filepath"_s, path);
             if(!rmQuery.exec())
             {
                 qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
@@ -386,7 +386,7 @@ void Library::removeMissingFiles(const QStringList &paths)
         }
     }
 
-    if(!query.exec("SELECT FilePath FROM ignored_files"))
+    if(!query.exec(u"SELECT FilePath FROM ignored_files"_s))
     {
         qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
         return;
@@ -401,8 +401,8 @@ void Library::removeMissingFiles(const QStringList &paths)
         {
             qDebug("Library: removing '%s' from ignored files", qPrintable(path));
             QSqlQuery rmQuery(db);
-            rmQuery.prepare("DELETE FROM ignored_files WHERE FilePath = :filepath");
-            rmQuery.bindValue(":filepath", path);
+            rmQuery.prepare(u"DELETE FROM ignored_files WHERE FilePath = :filepath"_s);
+            rmQuery.bindValue(u":filepath"_s, path);
             if(!rmQuery.exec())
             {
                 qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
@@ -419,7 +419,7 @@ bool Library::checkFile(const QFileInfo &info)
         return false;
 
     QSqlQuery query(db);
-    query.prepare("SELECT Timestamp FROM track_library WHERE FilePath = :filepath");
+    query.prepare(u"SELECT Timestamp FROM track_library WHERE FilePath = :filepath"_s);
     query.bindValue(":filepath", info.absoluteFilePath());
     if(!query.exec())
     {
@@ -429,7 +429,7 @@ bool Library::checkFile(const QFileInfo &info)
     if(!query.next())
         return false;
 
-    return info.lastModified() == query.value("Timestamp").toDateTime();
+    return info.lastModified() == query.value(u"Timestamp"_s).toDateTime();
 }
 
 void Library::removeIgnoredTracks(QList<TrackInfo *> *tracks, const QStringList &ignoredPaths)
@@ -461,7 +461,7 @@ void Library::updateIgnoredFiles(const QStringList &paths)
     for(const QString &path : qAsConst(paths))
     {
         QSqlQuery query(db);
-        query.prepare("INSERT OR REPLACE INTO ignored_files VALUES((SELECT ID FROM track_library WHERE FilePath = :filepath), :filepath)");
+        query.prepare(u"INSERT OR REPLACE INTO ignored_files VALUES((SELECT ID FROM track_library WHERE FilePath = :filepath), :filepath)"_s);
         query.bindValue(":filepath", path);
         if(!query.exec())
         {
@@ -480,7 +480,7 @@ void Library::readIgnoredFiles()
         return;
 
     QSqlQuery query(db);
-    if(!query.exec("SELECT FilePath FROM ignored_files"))
+    if(!query.exec(u"SELECT FilePath FROM ignored_files"_s))
     {
         qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
         return;

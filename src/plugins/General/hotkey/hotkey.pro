@@ -4,17 +4,18 @@ TARGET = $$PLUGINS_PREFIX/General/hotkey
 
 HEADERS += hotkeyfactory.h \
            hotkeymanager.h \
-           settingsdialog.h \
-           hotkeydialog.h
+           hotkeydialog.h \
+           hotkeysettingsdialog.h
 
 SOURCES += hotkeyfactory.cpp \
-           settingsdialog.cpp \
            hotkeydialog.cpp \
            hotkeymanager_x11.cpp \
-           hotkeymanager_win.cpp
+           hotkeymanager_win.cpp \
+           hotkeysettingsdialog.cpp
 
-FORMS += settingsdialog.ui \
-         hotkeydialog.ui
+FORMS += \
+         hotkeydialog.ui \
+         hotkeysettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

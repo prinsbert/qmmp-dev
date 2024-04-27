@@ -48,24 +48,24 @@ LibraryWidget::LibraryWidget(bool dialog, QWidget *parent) :
     }
 
     m_menu = new QMenu(this);
-    m_menu->addAction(QIcon::fromTheme("list-add"), tr("&Add to Playlist"), this, SLOT(addSelected()));
-    m_menu->addAction(QIcon::fromTheme("dialog-information"), tr("&View Track Details"), this, SLOT(showTrackInformation()));
+    m_menu->addAction(QIcon::fromTheme(u"list-add"_s), tr("&Add to Playlist"), this, SLOT(addSelected()));
+    m_menu->addAction(QIcon::fromTheme(u"dialog-information"_s), tr("&View Track Details"), this, SLOT(showTrackInformation()));
     m_menu->addSeparator();
-    m_filterAction = m_menu->addAction(tr("Quick Search"), m_ui->filterLineEdit, SLOT(setVisible(bool)));
-    m_menu->addAction(tr("&Library Information"), this, SLOT(showLibraryInformation()));
+    m_filterAction = m_menu->addAction(tr("Quick Search"), m_ui->filterLineEdit, &QLineEdit::setVisible);
+    m_menu->addAction(tr("&Library Information"), this, &LibraryWidget::showLibraryInformation);
     m_filterAction->setCheckable(true);
 
     QSettings settings;
-    m_filterAction->setChecked(settings.value("Library/quick_search_visible", true).toBool());
+    m_filterAction->setChecked(settings.value(u"Library/quick_search_visible"_s, true).toBool());
     m_ui->filterLineEdit->setVisible(m_filterAction->isChecked());
     if(dialog)
-        restoreGeometry(settings.value("Library/geometry").toByteArray());
+        restoreGeometry(settings.value(u"Library/geometry"_s).toByteArray());
 }
 
 LibraryWidget::~LibraryWidget()
 {
     QSettings settings;
-    settings.setValue("Library/quick_search_visible", m_filterAction->isChecked());
+    settings.setValue(u"Library/quick_search_visible"_s, m_filterAction->isChecked());
 
     delete m_ui;
 }
@@ -108,7 +108,7 @@ void LibraryWidget::closeEvent(QCloseEvent *)
     if(isWindow())
     {
         QSettings settings;
-        settings.setValue("Library/geometry", saveGeometry());
+        settings.setValue(u"Library/geometry"_s, saveGeometry());
     }
 }
 
