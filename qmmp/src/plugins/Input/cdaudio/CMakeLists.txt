@@ -16,8 +16,8 @@ ADD_DEFINITIONS(${CDIO_CFLAGS})
 SET(libcdaudio_SRCS
   decoder_cdaudio.cpp
   decodercdaudiofactory.cpp
-  settingsdialog.cpp
-  settingsdialog.ui
+  cdaudiosettingsdialog.cpp
+  cdaudiosettingsdialog.ui
   translations/translations.qrc
 )
 

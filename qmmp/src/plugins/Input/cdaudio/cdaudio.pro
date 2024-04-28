@@ -3,14 +3,15 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Input/cdaudio
 
 HEADERS += decodercdaudiofactory.h \
-           decoder_cdaudio.h \
-           settingsdialog.h
+           cdaudiosettingsdialog.h \
+           decoder_cdaudio.h
 
 SOURCES += decoder_cdaudio.cpp \
-           decodercdaudiofactory.cpp \
-           settingsdialog.cpp
+           cdaudiosettingsdialog.cpp \
+           decodercdaudiofactory.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    cdaudiosettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

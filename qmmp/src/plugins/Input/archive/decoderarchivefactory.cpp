@@ -37,14 +37,14 @@ DecoderProperties DecoderArchiveFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Archive Plugin");
-    properties.filters = QStringList { "*.rar", "*.zip" };
+    properties.filters = QStringList { u"*.rar"_s, u"*.zip"_s };
     properties.description = tr("Archives");
-    properties.contentTypes = QStringList { "application/zip", "application/x-rar-compressed" };
-    properties.shortName = "archive";
+    properties.contentTypes = QStringList { u"application/zip"_s, u"application/x-rar-compressed"_s };
+    properties.shortName = "archive"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.noInput = true;
-    properties.protocols = QStringList { "rar", "zip" };
+    properties.protocols = QStringList { u"rar"_s, u"zip"_s };
     return properties;
 }
 
@@ -63,7 +63,7 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
     archive_read_support_format_all(a);
 
     QString archivePath, requiredFilePath;
-    if(path.contains("://"))
+    if(path.contains(u"://"_s))
     {
         requiredFilePath = path.section("#", -1);
         archivePath = path;
@@ -94,8 +94,8 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
         if(archive_entry_filetype(entry) == AE_IFREG)
         {
             QString filePath = QString::fromLocal8Bit(archive_entry_pathname(entry));
-            if(!filePath.startsWith("/"))
-                filePath.prepend("/");
+            if(!filePath.startsWith(QChar('/')))
+                filePath.prepend(QChar('/'));
 
             if(!requiredFilePath.isEmpty() && filePath != requiredFilePath)
             {
@@ -113,7 +113,7 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
 
             if(!filtered.isEmpty())
             {
-                list << new TrackInfo(QString("%1://%2#%3").arg(archivePath.section(".", -1).toLower(), archivePath, filePath));
+                list << new TrackInfo(QStringLiteral("%1://%2#%3").arg(archivePath.section(QChar('.'), -1).toLower(), archivePath, filePath));
 
                 ArchiveInputDevice dev(a, entry, nullptr);
                 ArchiveTagReader reader(&dev, list.last()->path());
@@ -162,10 +162,10 @@ void DecoderArchiveFactory::showSettings(QWidget *)
 
 void DecoderArchiveFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Archive Reader Plugin"),
-                        tr("Qmmp Archive Reader Plugin")+"\n"+
-                        tr("Compiled against %1").arg(ARCHIVE_VERSION_STRING)+"\n" +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Archive Reader Plugin"),
+                       tr("Qmmp Archive Reader Plugin") + QChar::LineFeed +
+                       tr("Compiled against %1").arg(ARCHIVE_VERSION_STRING) + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderArchiveFactory::translation() const

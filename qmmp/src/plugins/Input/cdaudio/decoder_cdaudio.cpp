@@ -95,15 +95,15 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 {
     //read settings
     QSettings settings;
-    int cd_speed = settings.value("cdaudio/speed", 0).toInt();
-    bool use_cd_text = settings.value("cdaudio/cdtext", true).toBool();
+    int cd_speed = settings.value(u"cdaudio/speed"_s, 0).toInt();
+    bool use_cd_text = settings.value(u"cdaudio/cdtext"_s, true).toBool();
     QList <CDATrack> tracks;
     cdio_log_set_handler(log_handler); //setup cdio log handler
     CdIo_t *cdio = nullptr;
     QString device_path = device;
-    if (device_path.isEmpty() || device_path == "/")
-        device_path = settings.value("cdaudio/device").toString();
-    if (device_path.isEmpty() || device_path == "/")
+    if (device_path.isEmpty() || device_path == "/"_L1)
+        device_path = settings.value(u"cdaudio/device"_s).toString();
+    if (device_path.isEmpty() || device_path == "/"_L1)
     {
         char **cd_drives = cdio_get_devices_with_cap(nullptr, CDIO_FS_AUDIO, true); //get drive list with CDA disks
         // open first audio capable cd drive
@@ -173,7 +173,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
         t.last_sector = cdio_get_track_last_lsn(pcdrom_drive->p_cdio, i);
         t.info.setDuration((t.last_sector - t.first_sector +1) * 1000 / 75);
         t.info.setValue(Qmmp::TRACK, i);
-        t.info.setPath(QString("cdda://%1#%2").arg(device_path).arg(i));
+        t.info.setPath(QStringLiteral("cdda://%1#%2").arg(device_path).arg(i));
 
         if(parts & TrackInfo::Properties)
         {
@@ -209,7 +209,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
     }
     qDebug("DecoderCDAudio: found %lld audio tracks", tracks.size());
 
-    use_cddb = use_cddb && settings.value("cdaudio/use_cddb", false).toBool();
+    use_cddb = use_cddb && settings.value(u"cdaudio/use_cddb"_s, false).toBool();
     if(use_cddb)
     {
         qDebug("DecoderCDAudio: reading CDDB...");
@@ -221,25 +221,25 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
             qWarning ("DecoderCDAudio: unable to create cddb connection");
         else
         {
-            cddb_cache_disable (cddb_conn); //disable libcddb cache, use own cache implementation instead
-            settings.beginGroup("cdaudio");
-            cddb_set_server_name (cddb_conn, settings.value("cddb_server", "gnudb.org").toByteArray().constData());
-            cddb_set_server_port (cddb_conn, settings.value("cddb_port", 8880).toInt());
+            cddb_cache_disable(cddb_conn); //disable libcddb cache, use own cache implementation instead
+            settings.beginGroup(u"cdaudio"_s);
+            cddb_set_server_name(cddb_conn, settings.value(u"cddb_server"_s, u"gnudb.org"_s).toByteArray().constData());
+            cddb_set_server_port(cddb_conn, settings.value(u"cddb_port"_s, 8880).toInt());
 
-            if (settings.value("cddb_http", false).toBool())
+            if (settings.value(u"cddb_http"_s, false).toBool())
             {
                 cddb_http_enable (cddb_conn);
-                cddb_set_http_path_query (cddb_conn, settings.value("cddb_path").toByteArray().constData());
+                cddb_set_http_path_query (cddb_conn, settings.value(u"cddb_path"_s).toByteArray().constData());
                 if (QmmpSettings::instance()->isProxyEnabled() && QmmpSettings::instance()->proxyType() == QmmpSettings::HTTP_PROXY)
                 {
                     QUrl proxy = QmmpSettings::instance()->proxy();
-                    cddb_http_proxy_enable (cddb_conn);
-                    cddb_set_http_proxy_server_name (cddb_conn, proxy.host().toLatin1().constData());
-                    cddb_set_http_proxy_server_port (cddb_conn, proxy.port());
+                    cddb_http_proxy_enable(cddb_conn);
+                    cddb_set_http_proxy_server_name(cddb_conn, proxy.host().toLatin1().constData());
+                    cddb_set_http_proxy_server_port(cddb_conn, proxy.port());
                     if(QmmpSettings::instance()->useProxyAuth())
                     {
-                        cddb_set_http_proxy_username (cddb_conn, proxy.userName().toLatin1().constData());
-                        cddb_set_http_proxy_password (cddb_conn, proxy.password().toLatin1().constData());
+                        cddb_set_http_proxy_username(cddb_conn, proxy.userName().toLatin1().constData());
+                        cddb_set_http_proxy_password(cddb_conn, proxy.password().toLatin1().constData());
                     }
                 }
             }
@@ -268,8 +268,8 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
                 int matches = cddb_query (cddb_conn, cddb_disc);
                 if(matches == -1)
                 {
-                    qWarning ("DecoderCDAudio: unable to query the CDDB server, error: %s",
-                              cddb_error_str (cddb_errno(cddb_conn)));
+                    qWarning("DecoderCDAudio: unable to query the CDDB server, error: %s",
+                             cddb_error_str (cddb_errno(cddb_conn)));
                 }
                 else if(matches == 0)
                 {
@@ -312,42 +312,42 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 void DecoderCDAudio::saveToCache(QList <CDATrack> tracks,  uint disc_id)
 {
     QDir dir(Qmmp::cacheDir());
-    if(!dir.exists("cddbcache"))
-        dir.mkdir("cddbcache");
-    dir.cd("cddbcache");
-    QString path = dir.absolutePath() + QString("/%1").arg(disc_id, 0, 16);
+    if(!dir.exists(u"cddbcache"_s))
+        dir.mkdir(u"cddbcache"_s);
+    dir.cd(u"cddbcache"_s);
+    QString path = QStringLiteral("%1/%2").arg( dir.absolutePath()).arg(disc_id, 0, 16);
     QSettings settings(path, QSettings::IniFormat);
     settings.clear();
-    settings.setValue("count", tracks.size());
+    settings.setValue(u"count"_s, tracks.size());
     for(int i = 0; i < tracks.size(); ++i)
     {
         CDATrack track = tracks[i];
         QMap<Qmmp::MetaData, QString> meta = track.info.metaData();
-        settings.setValue(QString("artist%1").arg(i), meta[Qmmp::ARTIST]);
-        settings.setValue(QString("title%1").arg(i), meta[Qmmp::TITLE]);
-        settings.setValue(QString("genre%1").arg(i), meta[Qmmp::GENRE]);
-        settings.setValue(QString("album%1").arg(i), meta[Qmmp::ALBUM]);
-        settings.setValue(QString("year%1").arg(i), meta[Qmmp::YEAR]);
+        settings.setValue(QStringLiteral("artist%1").arg(i), meta[Qmmp::ARTIST]);
+        settings.setValue(QStringLiteral("title%1").arg(i), meta[Qmmp::TITLE]);
+        settings.setValue(QStringLiteral("genre%1").arg(i), meta[Qmmp::GENRE]);
+        settings.setValue(QStringLiteral("album%1").arg(i), meta[Qmmp::ALBUM]);
+        settings.setValue(QStringLiteral("year%1").arg(i), meta[Qmmp::YEAR]);
     }
 }
 
 bool DecoderCDAudio::readFromCache(QList <CDATrack> *tracks, uint disc_id)
 {
     QString path = Qmmp::configDir();
-    path += QString("/cddbcache/%1").arg(disc_id, 0, 16);
+    path += QStringLiteral("/cddbcache/%1").arg(disc_id, 0, 16);
     if(!QFile::exists(path))
         return false;
     QSettings settings(path, QSettings::IniFormat);
-    int count = settings.value("count").toInt();
+    int count = settings.value(u"count"_s).toInt();
     if(count != tracks->count())
         return false;
     for(int i = 0; i < count; ++i)
     {
-        (*tracks)[i].info.setValue(Qmmp::ARTIST, settings.value(QString("artist%1").arg(i)).toString());
-        (*tracks)[i].info.setValue(Qmmp::TITLE, settings.value(QString("title%1").arg(i)).toString());
-        (*tracks)[i].info.setValue(Qmmp::GENRE, settings.value(QString("genre%1").arg(i)).toString());
-        (*tracks)[i].info.setValue(Qmmp::ALBUM, settings.value(QString("album%1").arg(i)).toString());
-        (*tracks)[i].info.setValue(Qmmp::YEAR, settings.value(QString("year%1").arg(i)).toString());
+        (*tracks)[i].info.setValue(Qmmp::ARTIST, settings.value(QStringLiteral("artist%1").arg(i)).toString());
+        (*tracks)[i].info.setValue(Qmmp::TITLE, settings.value(QStringLiteral("title%1").arg(i)).toString());
+        (*tracks)[i].info.setValue(Qmmp::GENRE, settings.value(QStringLiteral("genre%1").arg(i)).toString());
+        (*tracks)[i].info.setValue(Qmmp::ALBUM, settings.value(QStringLiteral("album%1").arg(i)).toString());
+        (*tracks)[i].info.setValue(Qmmp::YEAR, settings.value(QStringLiteral("year%1").arg(i)).toString());
     }
     return true;
 }
@@ -393,14 +393,14 @@ bool DecoderCDAudio::initialize()
         return false;
     }
 
-    if (device_path.isEmpty() || device_path == "/") //try default path from config
+    if (device_path.isEmpty() || device_path == "/"_L1) //try default path from config
     {
         QSettings settings;
         device_path = settings.value("cdaudio/device").toString();
-        m_url = QString("cdda://%1#%2").arg(device_path).arg(track_number);
+        m_url = QStringLiteral("cdda://%1#%2").arg(device_path).arg(track_number);
     }
 
-    if (device_path.isEmpty() || device_path == "/")
+    if (device_path.isEmpty() || device_path == "/"_L1)
     {
         char **cd_drives = cdio_get_devices_with_cap(nullptr, CDIO_FS_AUDIO, true); //get drive list with CDA disks
         // open first audio capable cd drive
@@ -439,7 +439,7 @@ bool DecoderCDAudio::initialize()
     m_current_sector = tracks[track_at].first_sector;
     m_last_sector = tracks[track_at].last_sector;
     addMetaData(tracks[track_at].info.metaData()); //send metadata
-    setProperty(Qmmp::FORMAT_NAME, "CDDA");
+    setProperty(Qmmp::FORMAT_NAME, u"CDDA"_s);
     setProperty(Qmmp::BITRATE, m_bitrate);
     qDebug("DecoderCDAudio: initialize succes");
     return true;

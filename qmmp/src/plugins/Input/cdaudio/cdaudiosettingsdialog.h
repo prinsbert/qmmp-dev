@@ -17,22 +17,25 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef CDAUDIOSETTINGSDIALOG_H
+#define CDAUDIOSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+
+namespace Ui {
+class CDAudioSettingsDialog;
+}
 
 /**
 	@author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class CDAudioSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit CDAudioSettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    ~CDAudioSettingsDialog();
 
 
 public slots:
@@ -40,7 +43,7 @@ public slots:
     void on_clearCacheButton_clicked();
 
 private:
-    Ui::SettingsDialog m_ui;
+    Ui::CDAudioSettingsDialog *m_ui;
 
 };
 

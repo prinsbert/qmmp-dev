@@ -37,10 +37,10 @@ DecoderProperties DecoderAACFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("AAC Plugin");
-    properties.filters = QStringList { "*.aac" };
+    properties.filters = QStringList { u"*.aac"_s };
     properties.description = tr("AAC Files");
-    properties.contentTypes = QStringList { "audio/aacp", "audio/aac" };
-    properties.shortName = "aac";
+    properties.contentTypes = QStringList { u"audio/aacp"_s, u"audio/aac"_s };
+    properties.shortName = "aac"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     return properties;
@@ -81,7 +81,7 @@ QList<TrackInfo *> DecoderAACFactory::createPlayList(const QString &path, TrackI
         info->setValue(Qmmp::BITRATE, aac_file.bitrate());
         info->setValue(Qmmp::SAMPLERATE, aac_file.samplerate());
         //info->setValue(Qmmp::CHANNELS, aac_file.
-        info->setValue(Qmmp::FORMAT_NAME, "AAC");
+        info->setValue(Qmmp::FORMAT_NAME, u"AAC"_s);
         info->setDuration(aac_file.duration());
     }
 
@@ -100,9 +100,9 @@ void DecoderAACFactory::showSettings(QWidget *)
 
 void DecoderAACFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About AAC Audio Plugin"),
-                        tr("Qmmp AAC Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About AAC Audio Plugin"),
+                       tr("Qmmp AAC Audio Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderAACFactory::translation() const
