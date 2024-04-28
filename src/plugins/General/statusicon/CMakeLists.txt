@@ -14,7 +14,7 @@ SET(libstatusicon_SRCS
     qmmptrayicon.cpp
     statusiconpopupwidget.cpp
     statusiconcoverwidget.cpp
-    settingsdialog.ui
+    statusiconsettingsdialog.ui
     translations/translations.qrc
     images/tray_images.qrc
 )
