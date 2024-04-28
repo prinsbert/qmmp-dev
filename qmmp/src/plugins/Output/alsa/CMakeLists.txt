@@ -15,8 +15,8 @@ ADD_DEFINITIONS(${ALSA_CFLAGS})
 SET(libalsa_SRCS
   outputalsa.cpp
   outputalsafactory.cpp
-  settingsdialog.cpp
-  settingsdialog.ui
+  alsasettingsdialog.cpp
+  alsasettingsdialog.ui
   translations/translations.qrc
 )
 
