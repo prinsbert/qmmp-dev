@@ -27,10 +27,10 @@ WavPackMetaDataModel::WavPackMetaDataModel(const QString &path, bool readOnly) :
     MetaDataModel(readOnly, MetaDataModel::IsCueEditable),
     m_path(path)
 {
-    if(m_path.contains("://"))
+    if(m_path.contains(u"://"_s))
     {
-        m_path.remove("wvpack://");
-        m_path.remove(QRegularExpression("#\\d+$"));
+        m_path.remove(u"wvpack://"_s);
+        m_path.remove(QRegularExpression(u"#\\d+$"_s));
         readOnly = readOnly || !QFileInfo(m_path).isWritable();
     }
 
@@ -49,7 +49,7 @@ WavPackMetaDataModel::WavPackMetaDataModel(const QString &path, bool readOnly) :
         setReadOnly(true);
         return;
     }
-    if(!path.contains("://"))
+    if(!path.contains(u"://"_s))
         m_tags << new WavPackFileTagModel(m_ctx);
 }
 
@@ -120,7 +120,7 @@ WavPackFileTagModel::~WavPackFileTagModel()
 
 QString WavPackFileTagModel::name() const
 {
-    return "ID3v1/APEv2";
+    return u"ID3v1/APEv2"_s;
 }
 
 QString WavPackFileTagModel::value(Qmmp::MetaData key) const

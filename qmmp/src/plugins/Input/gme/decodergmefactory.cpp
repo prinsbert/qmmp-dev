@@ -63,9 +63,9 @@ QList<TrackInfo *> DecoderGmeFactory::createPlayList(const QString &path, TrackI
     if(path.contains(u"://"_s))
     {
         QString filePath = path;
-        filePath.remove("gme://");
-        filePath.remove(QRegularExpression("#\\d+$"));
-        int track = path.section(QChar('#'), -1).toInt();
+        filePath.remove(u"gme://"_s);
+        filePath.remove(QRegularExpression(u"#\\d+$"_s));
+        int track = path.section(QLatin1Char('#'), -1).toInt();
         QList<TrackInfo *> list = createPlayList(filePath, parts, ignoredFiles);
         if (list.isEmpty() || track <= 0 || track > list.count())
         {
@@ -103,7 +103,7 @@ void DecoderGmeFactory::showSettings(QWidget *parent)
 void DecoderGmeFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About GME Audio Plugin"),
-                       tr("Qmmp GME Audio Plugin")+"\n"+
+                       tr("Qmmp GME Audio Plugin") + QChar::LineFeed +
                        tr("This plugin uses Game_Music_Emu library to play game music files") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }

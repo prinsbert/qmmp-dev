@@ -46,7 +46,7 @@ void EffectMonoToStereoFactory::showSettings(QWidget *parent)
 void EffectMonoToStereoFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About Mono to Stereo Converter Plugin"),
-                       tr("Qmmp Mono to Stereo Converter Plugin")+"\n"+
+                       tr("Qmmp Mono to Stereo Converter Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

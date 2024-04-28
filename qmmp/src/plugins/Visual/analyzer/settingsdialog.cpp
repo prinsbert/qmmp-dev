@@ -28,11 +28,11 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     m_ui.setupUi(this);
     QSettings settings;
     settings.beginGroup("Analyzer");
-    m_ui.colorWidget1->setColor(settings.value("color1", "Green").toString());
-    m_ui.colorWidget2->setColor(settings.value("color2", "Yellow").toString());
-    m_ui.colorWidget3->setColor(settings.value("color3", "Red").toString());
-    m_ui.bgColorWidget->setColor(settings.value("bg_color", "Black").toString());
-    m_ui.peakColorWidget->setColor(settings.value("peak_color", "Cyan").toString());
+    m_ui.colorWidget1->setColor(settings.value("color1", u"Green"_s).toString());
+    m_ui.colorWidget2->setColor(settings.value("color2", u"Yellow"_s).toString());
+    m_ui.colorWidget3->setColor(settings.value("color3", u"Red"_s).toString());
+    m_ui.bgColorWidget->setColor(settings.value("bg_color", u"Black"_s).toString());
+    m_ui.peakColorWidget->setColor(settings.value("peak_color", u"Cyan"_s).toString());
     QSize cells_size = settings.value("cells_size", QSize(15, 6)).toSize();
     m_ui.cellWidthSpinBox->setValue(cells_size.width());
     m_ui.cellHeightSpinBox->setValue(cells_size.height());

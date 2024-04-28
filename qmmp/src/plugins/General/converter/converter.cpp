@@ -147,10 +147,10 @@ void Converter::run()
 
 
     QString name = formatter.format(info);
-    name.remove(QChar('\''));
-    name.remove(QChar('"'));
-    name.remove(QChar('/'));
-    QString full_path = out_path + QChar('/') + name + QChar('.') + m_preset[u"ext"_s].toString();
+    name.remove(QLatin1Char('\''));
+    name.remove(QLatin1Char('"'));
+    name.remove(QLatin1Char('/'));
+    QString full_path = out_path + QLatin1Char('/') + name + QLatin1Char('.') + m_preset[u"ext"_s].toString();
 
     if(QFile::exists(full_path))
     {
@@ -162,16 +162,16 @@ void Converter::run()
             while(QFile::exists(full_path)) //create file with another name
             {
                 ++i;
-                full_path = out_path + QChar('/') + name + QStringLiteral("_%1.").arg(i) + m_preset[u"ext"_s].toString();
+                full_path = out_path + QLatin1Char('/') + name + QStringLiteral("_%1.").arg(i) + m_preset[u"ext"_s].toString();
             }
         }
     }
 
     QString command = m_preset[u"command"_s].toString();
-    command.replace(u"%o"_s, QChar('"') + full_path + QChar('"'));
+    command.replace(u"%o"_s, QLatin1Char('"') + full_path + QLatin1Char('"'));
     QString tmp_path = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + u"/tmp.wav"_s;
-    bool use_file = command.contains("%i");
-    command.replace(u"%i"_s, QChar('"') + tmp_path + QChar('"'));
+    bool use_file = command.contains(u"%i"_s);
+    command.replace(u"%i"_s, QLatin1Char('"') + tmp_path + QLatin1Char('"'));
 
     qDebug("Converter: starting task '%s'", qPrintable(m_preset[u"name"_s].toString()));
     emit message(m_row, tr("Converting"));
@@ -218,7 +218,7 @@ void Converter::run()
         return;
     }
 
-    convert(m_decoder, enc_pipe, m_preset["use_16bit"].toBool());
+    convert(m_decoder, enc_pipe, m_preset[u"use_16bit"_s].toBool());
     use_file ? fclose(enc_pipe) : pclose(enc_pipe);
     m_mutex.lock();
     if(m_user_stop)
@@ -248,7 +248,7 @@ void Converter::run()
         QFile::remove(tmp_path);
     }
 
-    if(m_preset["tags"].toBool())
+    if(m_preset[u"tags"_s].toBool())
     {
         qDebug("Converter: writing tags");
         TagLib::FileRef file(qPrintable(full_path));

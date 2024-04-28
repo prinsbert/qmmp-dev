@@ -28,7 +28,7 @@ VisualProperties VisualProjectMFactory::properties() const
 {
     VisualProperties properties;
     properties.name = tr("ProjectM");
-    properties.shortName = "projectm";
+    properties.shortName = "projectm"_L1;
     properties.hasSettings = false;
     properties.hasAbout = true;
     return properties;
@@ -48,9 +48,9 @@ QDialog *VisualProjectMFactory::createConfigDialog(QWidget *parent)
 void VisualProjectMFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About ProjectM Visual Plugin"),
-                        tr("Qmmp ProjectM Visual Plugin")+"\n"+
-                        tr("This plugin adds projectM visualization")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                        tr("Qmmp ProjectM Visual Plugin") + QChar::LineFeed +
+                        tr("This plugin adds projectM visualization") + QChar::LineFeed +
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
                         tr("Based on libprojectM-qt library"));
 }
 

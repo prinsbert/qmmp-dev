@@ -21,12 +21,14 @@
 #include <QRegularExpression>
 #include "archiveinputdevice.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 ArchiveInputDevice::ArchiveInputDevice(const QString &url, QObject *parent)  : QIODevice(parent)
 {
-    QString filePath = url.section("#", -1);
+    QString filePath = url.section(QLatin1Char('#'), -1);
     QString archivePath = url;
-    archivePath.remove(QRegularExpression("^.+://"));
-    archivePath.remove(QRegularExpression("#.+$"));
+    archivePath.remove(QRegularExpression(u"^.+://"_s));
+    archivePath.remove(QRegularExpression(u"#.+$"_s));
 
     m_archive = archive_read_new();
     archive_read_support_filter_all(m_archive);
@@ -43,8 +45,8 @@ ArchiveInputDevice::ArchiveInputDevice(const QString &url, QObject *parent)  : Q
     while (archive_read_next_header(m_archive, &m_entry) == ARCHIVE_OK)
     {
         QString pathName = QString::fromLocal8Bit(archive_entry_pathname(m_entry));
-        if(!pathName.startsWith("/"))
-            pathName.prepend("/");
+        if(!pathName.startsWith(QLatin1Char('/')))
+            pathName.prepend(QLatin1Char('/'));
 
         if(archive_entry_filetype(m_entry) == AE_IFREG && filePath == pathName)
         {

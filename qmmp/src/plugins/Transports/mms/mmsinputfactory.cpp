@@ -28,9 +28,9 @@
 InputSourceProperties MMSInputFactory::properties() const
 {
     InputSourceProperties properties;
-    properties.protocols = QStringList { "mms", "mmsh", "mmst", "mmsu" };
+    properties.protocols = QStringList { u"mms"_s, u"mmsh"_s, u"mmst"_s, u"mmsu"_s };
     properties.name = tr("MMS Plugin");
-    properties.shortName = "mms";
+    properties.shortName = "mms"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     return properties;
@@ -50,7 +50,7 @@ void MMSInputFactory::showSettings(QWidget *parent)
 void MMSInputFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About MMS Transport Plugin"),
-                        tr("Qmmp MMS Transport Plugin")+"\n"+
+                        tr("Qmmp MMS Transport Plugin") + QChar::LineFeed +
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

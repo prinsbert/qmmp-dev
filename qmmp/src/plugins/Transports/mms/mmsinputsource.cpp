@@ -51,5 +51,5 @@ bool MMSInputSource::isWaiting() const
 
 QString  MMSInputSource::contentType() const
 {
-    return "audio/x-ms-wma";
+    return "audio/x-ms-wma"_L1;
 }

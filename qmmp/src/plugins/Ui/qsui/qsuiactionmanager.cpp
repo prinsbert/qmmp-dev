@@ -80,7 +80,7 @@ QSUiActionManager::QSUiActionManager(QObject *parent) :
         { PL_REMOVE_UNSELECTED, createAction(tr("&Remove Unselected"), u"remove_unselected"_s, QString(), u"edit-delete"_s) },
         { PL_REMOVE_INVALID, createAction(tr("Remove unavailable files"), u"remove_invalid"_s, QString(), u"dialog-error"_s) },
         { PL_REMOVE_DUPLICATES, createAction(tr("Remove duplicates"), u"remove_duplicates"_s) },
-        { PL_REFRESH, createAction(tr("Refresh"), u"refresh"_s, "F5", u"view-refresh"_s) },
+        { PL_REFRESH, createAction(tr("Refresh"), u"refresh"_s, u"F5"_s, u"view-refresh"_s) },
         { PL_ENQUEUE, createAction(tr("&Queue Toggle"), u"enqueue"_s, tr("Q")) },
         { PL_INVERT_SELECTION, createAction(tr("Invert Selection"), u"invert_selection"_s) },
         { PL_CLEAR_SELECTION, createAction(tr("&Select None"), u"clear_selection"_s) },

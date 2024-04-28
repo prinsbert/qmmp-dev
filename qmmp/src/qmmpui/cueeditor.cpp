@@ -146,7 +146,7 @@ void CueEditor::on_deleteButton_clicked()
 void CueEditor::on_saveAsButton_clicked()
 {
     QString path = FileDialog::getSaveFileName(this, tr("Save CUE File"),
-                                               m_lastDir + QChar('/') + m_info.value(Qmmp::TITLE) + u".cue"_s,
+                                               m_lastDir + QLatin1Char('/') + m_info.value(Qmmp::TITLE) + u".cue"_s,
                                                tr("CUE Files") + u" (*.cue)"_s);
 
 

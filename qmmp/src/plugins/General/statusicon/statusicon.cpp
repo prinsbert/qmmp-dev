@@ -128,17 +128,17 @@ void StatusIcon::showMetaData()
     if(m_splitFileName && info.value(Qmmp::TITLE).isEmpty() && !info.path().contains(u"://"_s))
     {
         QString name = QFileInfo(info.path()).completeBaseName();
-        if(name.contains(QChar('-')))
+        if(name.contains(QLatin1Char('-')))
         {
-            info.setValue(Qmmp::TITLE, name.section(QChar('-'), 1, 1).trimmed());
+            info.setValue(Qmmp::TITLE, name.section(QLatin1Char('-'), 1, 1).trimmed());
             if(info.value(Qmmp::ARTIST).isEmpty())
-                info.setValue(Qmmp::ARTIST, name.section(QChar('-'), 0, 0).trimmed());
+                info.setValue(Qmmp::ARTIST, name.section(QLatin1Char('-'), 0, 0).trimmed());
         }
     }
 
     QString message = m_messageFormatter.format(info);
     if (message.isEmpty())
-        message = info.path().section(QChar('-'), -1);
+        message = info.path().section(QLatin1Char('-'), -1);
 
     if (m_showMessage)
         m_tray->showMessage (tr("Now Playing"), message,
@@ -148,7 +148,7 @@ void StatusIcon::showMetaData()
     {
         message = m_toolTipFormatter.format(info);
         if(message.isEmpty())
-            message = info.path().section(QChar('-'), -1);
+            message = info.path().section(QLatin1Char('-'), -1);
         m_tray->setToolTip(message);
     }
 }

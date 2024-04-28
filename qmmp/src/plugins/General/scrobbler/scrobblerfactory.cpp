@@ -49,7 +49,7 @@ QDialog *ScrobblerFactory::createConfigDialog(QWidget *parent)
 void ScrobblerFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About Scrobbler Plugin"),
-                       tr("Qmmp AudioScrobbler Plugin")+"\n"+
+                       tr("Qmmp AudioScrobbler Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

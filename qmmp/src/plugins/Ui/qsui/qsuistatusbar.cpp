@@ -84,7 +84,7 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
         m_labels[TimeLabel]->setMinimumWidth(0);
         m_labels[TimeLabel]->clear();
 
-        m_labels[StatusLabel]->setText(QString("<b>%1</b>").arg(state == Qmmp::Playing ? tr("Playing") : tr("Paused")));
+        m_labels[StatusLabel]->setText(QStringLiteral("<b>%1</b>").arg(state == Qmmp::Playing ? tr("Playing") : tr("Paused")));
         onAudioParametersChanged(m_core->audioParameters());
         onElapsedChanged(m_core->elapsed());
         onBitrateChanged(m_core->bitrate());
@@ -167,7 +167,7 @@ void QSUiStatusBar::onBitrateChanged(int bitrate)
     if(text.size() > label->text().size()) //label width tuning to avoid text jumping
     {
         QString tmp = text;
-        tmp.replace(numberRegExp, QChar('4'));
+        tmp.replace(numberRegExp, u"4"_s);
         int width = label->fontMetrics().horizontalAdvance(tmp);
         label->setMinimumWidth(width);
     }
@@ -182,13 +182,13 @@ void QSUiStatusBar::onElapsedChanged(qint64 elapsed)
     static const QRegularExpression numberRegExp(u"\\d"_s);
     if(m_core->duration() > 1000)
     {
-        plDurationText.append(QChar('/'));
+        plDurationText.append(QLatin1Char('/'));
         plDurationText.append(MetaDataFormatter::formatDuration(m_core->duration()));
     }
     if((elapsedText.size() + plDurationText.size()) != label->text().size()) //label width tuning to avoid text jumping
     {
         QString tmp = elapsedText;
-        tmp.replace(numberRegExp, QChar('4'));
+        tmp.replace(numberRegExp, u"4"_s);
         int width = label->fontMetrics().horizontalAdvance(tmp + plDurationText);
         label->setMinimumWidth(width);
     }

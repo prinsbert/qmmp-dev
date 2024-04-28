@@ -85,7 +85,7 @@ QStringList UDisksDevice::mountPoints() const
                                                           u"org.freedesktop.DBus.Properties"_s, u"Get"_s);
 
     QList<QVariant> arguments;
-    arguments << "org.freedesktop.UDisks2.Filesystem" << "MountPoints";
+    arguments << u"org.freedesktop.UDisks2.Filesystem"_s << u"MountPoints"_s;
     message.setArguments(arguments);
 
     QDBusMessage reply = QDBusConnection::systemBus().call(message);
@@ -101,7 +101,7 @@ QStringList UDisksDevice::mountPoints() const
         a >> list;
 
         for(const QByteArray &p : qAsConst(list))
-            points.append(p);
+            points.append(QString::fromLocal8Bit(p));
     }
     return points;
 }

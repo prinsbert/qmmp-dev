@@ -36,7 +36,7 @@ CUEMetaDataModel::CUEMetaDataModel(bool readOnly, const QString &url) : MetaData
         qWarning("CUEMetaDataModel: invalid cue file");
         return;
     }
-    int track = url.section(QChar('#'), -1).toInt();
+    int track = url.section(QLatin1Char('#'), -1).toInt();
     m_dataFilePath = file.dataFilePath(track);
     m_cueFilePath = file.cueFilePath();
 }

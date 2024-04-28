@@ -44,10 +44,10 @@ DecoderArchive::~DecoderArchive()
 
 bool DecoderArchive::initialize()
 {
-    QString filePath = m_url.section("#", -1);
+    QString filePath = m_url.section(QLatin1Char('#'), -1);
     QString archivePath = m_url;
-    archivePath.remove(QRegularExpression("^.+://"));
-    archivePath.remove(QRegularExpression("#.+$"));
+    archivePath.remove(QRegularExpression(u"^.+://"_s));
+    archivePath.remove(QRegularExpression(u"#.+$"_s));
 
     if(!QFile::exists(archivePath))
     {

@@ -52,7 +52,7 @@ void OutputWASAPIFactory::showSettings(QWidget* parent)
 void OutputWASAPIFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About WASAPI Output Plugin"),
-                        tr("Qmmp WASAPI Output Plugin")+"\n"+
+                        tr("Qmmp WASAPI Output Plugin")+QChar::LineFeed+
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

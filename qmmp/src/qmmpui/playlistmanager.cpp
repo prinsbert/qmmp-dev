@@ -279,7 +279,7 @@ void PlayListManager::readPlayLists()
     while (!buffer.atEnd())
     {
         line = QString::fromUtf8(buffer.readLine().constData()).trimmed();
-        int s = line.indexOf("=");
+        int s = line.indexOf(QLatin1Char('='));
         if (s < 0)
             continue;
 

@@ -280,7 +280,7 @@ void ConverterDialog::readPresets(const QString &path)
     while(!file.atEnd())
     {
         QString line = QString::fromUtf8(file.readLine().trimmed());
-        QStringList list = line.split(QChar('='));
+        QStringList list = line.split(QLatin1Char('='));
 
         if(list.size() < 2)
             continue;
@@ -322,7 +322,7 @@ void ConverterDialog::savePresets()
     for(int i = 0; i < m_ui->presetComboBox->count(); ++i)
     {
         QVariantHash data = m_ui->presetComboBox->itemData(i).toHash();
-        if(data["read_only"].toBool())
+        if(data[u"read_only"_s].toBool())
             continue;
         file.write(QStringLiteral("%1=%2\n").arg(u"name"_s, data[u"name"_s].toString()).toUtf8());
         file.write(QStringLiteral("%1=%2\n").arg(u"ext"_s, data[u"ext"_s].toString()).toUtf8());

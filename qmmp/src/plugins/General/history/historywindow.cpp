@@ -231,8 +231,8 @@ void HistoryWindow::loadTopSongs()
     query.prepare(u"SELECT count(*) as c,Timestamp,Title,Artist,AlbumArtist,Album,Comment,Genre,Composer,Track,Year,Duration,URL "
                   "FROM track_history WHERE Timestamp BETWEEN :from and :to "
                   "GROUP BY Artist,Title ORDER BY c DESC LIMIT 100"_s);
-    query.bindValue(":from", m_ui->fromDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
-    query.bindValue(":to", m_ui->toDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
+    query.bindValue(u":from"_s, m_ui->fromDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
+    query.bindValue(u":to"_s, m_ui->toDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
 
     if(!query.exec())
     {
@@ -284,8 +284,8 @@ void HistoryWindow::loadTopArtists()
     query.prepare(u"SELECT count(*) as c,Artist "
                   "FROM track_history WHERE (Timestamp BETWEEN :from and :to) AND Artist NOT NULL "
                   "GROUP BY Artist ORDER BY c DESC LIMIT 100"_s);
-    query.bindValue(":from", m_ui->fromDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
-    query.bindValue(":to", m_ui->toDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
+    query.bindValue(u":from"_s, m_ui->fromDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
+    query.bindValue(u":to"_s, m_ui->toDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
 
     if(!query.exec())
     {
@@ -374,7 +374,7 @@ void HistoryWindow::removeTrack(QTreeWidgetItem *item)
     QSqlQuery query(m_db);
 
     query.prepare(u"DELETE FROM track_history WHERE ID=:id"_s);
-    query.bindValue(":id", id);
+    query.bindValue(u":id"_s, id);
     if(query.exec())
         delete item;
     else

@@ -76,9 +76,9 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
 
     if(path.contains(u"://"_s)) //is it cue track?
     {
-        filePath.remove("flac://");
-        filePath.remove(QRegularExpression("#\\d+$"));
-        track = path.section(QChar('#'), -1).toInt();
+        filePath.remove(u"flac://"_s);
+        filePath.remove(QRegularExpression(u"#\\d+$"_s));
+        track = path.section(QLatin1Char('#'), -1).toInt();
         parts = TrackInfo::AllParts; //extract all metadata for single cue track
     }
 
@@ -163,7 +163,7 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
             }
             parser.setDuration(ap->lengthInMilliseconds());
             parser.setProperties(info->properties());
-            parser.setUrl("flac", filePath);
+            parser.setUrl(u"flac"_s, filePath);
 
             delete flacFile;
             delete oggFlacFile;
@@ -215,9 +215,9 @@ void DecoderFLACFactory::showSettings(QWidget *)
 
 void DecoderFLACFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About FLAC Audio Plugin"),
-                        tr("Qmmp FLAC Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About FLAC Audio Plugin"),
+                       tr("Qmmp FLAC Audio Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderFLACFactory::translation() const

@@ -68,11 +68,11 @@ QString AboutDialog::loadAbout()
     text.append(u"<h3>"_s + tr("Qt-based Multimedia Player (Qmmp)") + u"</h3>"_s);
     text.append(u"<p>"_s + getStringFromResource(u":description"_s) + u"</p>"_s);
 
-    text.append("<p><b>"+tr("Version: %1").arg(Qmmp::strVersion()) + "</b><br>");
-    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(qVersion(), QT_VERSION_STR) + u"</p>"_s);
+    text.append(u"<p><b>"_s + tr("Version: %1").arg(Qmmp::strVersion()) + u"</b><br>"_s);
+    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(QString::fromLatin1(qVersion()), QStringLiteral(QT_VERSION_STR)) + u"</p>"_s);
 
     text.append(u"<p>"_s);
-    text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2024)+"<br>");
+    text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2024) + u"<br>"_s);
     text.append(u"<a href=\"https://qmmp.ylsoftware.com/\">https://qmmp.ylsoftware.com/</a><br>"_s);
     text.append(u"<a href=\"https://sourceforge.net/projects/qmmp-dev/\">https://sourceforge.net/projects/qmmp-dev/</a>"_s);
     text.append(u"</p>"_s);
@@ -151,10 +151,10 @@ QString AboutDialog::getStringFromResource(const QString &res_file)
 {
     QString ret_string;
     QStringList paths = { QStringLiteral("%1_%2.txt").arg(res_file, Qmmp::systemLanguageID()) };
-    if(Qmmp::systemLanguageID().contains(QChar('.')))
-        paths << QStringLiteral("%1_%2.txt").arg(res_file, Qmmp::systemLanguageID().split(QChar('.')).at(0));
-    if(Qmmp::systemLanguageID().contains(QChar('_')))
-        paths << QStringLiteral("%1_%2.txt").arg(res_file, Qmmp::systemLanguageID().split(QChar('_')).at(0));
+    if(Qmmp::systemLanguageID().contains(QLatin1Char('.')))
+        paths << QStringLiteral("%1_%2.txt").arg(res_file, Qmmp::systemLanguageID().split(QLatin1Char('.')).at(0));
+    if(Qmmp::systemLanguageID().contains(QLatin1Char('_')))
+        paths << QStringLiteral("%1_%2.txt").arg(res_file, Qmmp::systemLanguageID().split(QLatin1Char('_')).at(0));
     paths << res_file + u".txt"_s;
     paths << res_file;
 

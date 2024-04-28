@@ -120,8 +120,8 @@ void ConfigDialog::readSettings()
         //resume playback on startup
         m_ui->continuePlaybackCheckBox->setChecked(guis->resumeOnStartup());
         //directory filters
-        m_ui->dirRestrictLineEdit->setText(guis->restrictFilters().join(QChar(',')).trimmed());
-        m_ui->dirExcludeLineEdit->setText(guis->excludeFilters().join(QChar(',')).trimmed());
+        m_ui->dirRestrictLineEdit->setText(guis->restrictFilters().join(QLatin1Char(',')).trimmed());
+        m_ui->dirExcludeLineEdit->setText(guis->excludeFilters().join(QLatin1Char(',')).trimmed());
         //default playlist
         m_ui->defaultPlayListCheckBox->setChecked(guis->useDefaultPlayList());
         m_ui->defaultPlayListLineEdit->setText(guis->defaultPlayListName());
@@ -149,8 +149,8 @@ void ConfigDialog::readSettings()
     //file type determination
     m_ui->byContentCheckBox->setChecked(gs->determineFileTypeByContent());
     //cover options
-    m_ui->coverIncludeLineEdit->setText(gs->coverNameFilters(true).join(QChar(',')));
-    m_ui->coverExcludeLineEdit->setText(gs->coverNameFilters(false).join(QChar(',')));
+    m_ui->coverIncludeLineEdit->setText(gs->coverNameFilters(true).join(QLatin1Char(',')));
+    m_ui->coverExcludeLineEdit->setText(gs->coverNameFilters(false).join(QLatin1Char(',')));
     m_ui->coverDepthSpinBox->setValue(gs->coverSearchDepth());
     m_ui->useCoverFilesCheckBox->setChecked(gs->useCoverFiles());
     //replay gain
@@ -432,8 +432,8 @@ void ConfigDialog::saveSettings()
                            static_cast<QmmpSettings::ProxyType>(m_ui->proxyTypeComboBox->currentData().toInt()),
                            proxyUrl);
 
-    gs->setCoverSettings(m_ui->coverIncludeLineEdit->text().split(QChar(',')),
-                         m_ui->coverExcludeLineEdit->text().split(QChar(',')),
+    gs->setCoverSettings(m_ui->coverIncludeLineEdit->text().split(QLatin1Char(',')),
+                         m_ui->coverExcludeLineEdit->text().split(QLatin1Char(',')),
                          m_ui->coverDepthSpinBox->value(),
                          m_ui->useCoverFilesCheckBox->isChecked());
     int i = m_ui->replayGainModeComboBox->currentIndex();

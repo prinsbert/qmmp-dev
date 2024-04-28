@@ -422,7 +422,7 @@ void QSUiPlayListHeader::mousePressEvent(QMouseEvent *e)
 
             if(rtl)
             {
-                if(e->pos().x() < m_model->data(m_pressed_column, RECT).toRect().x() + m_metrics->horizontalAdvance("9"))
+                if(e->pos().x() < m_model->data(m_pressed_column, RECT).toRect().x() + m_metrics->horizontalAdvance(u"9"_s))
                 {
                     m_old_size = size(m_pressed_column);
                     m_task = RESIZE;
@@ -435,7 +435,7 @@ void QSUiPlayListHeader::mousePressEvent(QMouseEvent *e)
             }
             else
             {
-                if(e->pos().x() > m_model->data(m_pressed_column, RECT).toRect().right() - m_metrics->horizontalAdvance("9"))
+                if(e->pos().x() > m_model->data(m_pressed_column, RECT).toRect().right() - m_metrics->horizontalAdvance(u"9"_s))
                 {
                     m_old_size = size(m_pressed_column);
                     m_task = RESIZE;
@@ -550,14 +550,14 @@ void QSUiPlayListHeader::mouseMoveEvent(QMouseEvent *e)
         {
             if(rtl)
             {
-                if(column >= 0 && x < m_model->data(column, RECT).toRect().x() + m_metrics->horizontalAdvance("9"))
+                if(column >= 0 && x < m_model->data(column, RECT).toRect().x() + m_metrics->horizontalAdvance(u"9"_s))
                     setCursor(Qt::SplitHCursor);
                 else
                     setCursor(Qt::ArrowCursor);
             }
             else
             {
-                if(column >= 0 && x > m_model->data(column, RECT).toRect().right() - m_metrics->horizontalAdvance("9"))
+                if(column >= 0 && x > m_model->data(column, RECT).toRect().right() - m_metrics->horizontalAdvance(u"9"_s))
                     setCursor(Qt::SplitHCursor);
                 else
                     setCursor(Qt::ArrowCursor);

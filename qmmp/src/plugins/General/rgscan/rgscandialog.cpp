@@ -72,7 +72,7 @@ RGScanDialog::RGScanDialog(QList <PlayListTrack *> tracks,  QWidget *parent) : Q
         if(!MetaDataManager::instance()->supports(track->path()))
             continue;
 
-        QString ext = track->path().section(QChar('.'), -1).toLower();
+        QString ext = track->path().section(QLatin1Char('.'), -1).toLower();
 
         if((ext == "mp3"_L1) || //mpeg 1 layer 3
                 ext == "flac"_L1 || //native flac
@@ -391,7 +391,7 @@ void RGScanDialog::on_writeButton_clicked()
 
     for(ReplayGainInfoItem *item : qAsConst(m_replayGainItemList))
     {
-        QString ext = item->url.section(".", -1).toLower();
+        QString ext = item->url.section(QLatin1Char('.'), -1).toLower();
 
         if(ext == "mp3"_L1) //mpeg 1 layer 3
         {

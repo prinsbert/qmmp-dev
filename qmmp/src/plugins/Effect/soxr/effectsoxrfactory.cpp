@@ -49,7 +49,7 @@ void EffectSoXRFactory::showSettings(QWidget *parent)
 void EffectSoXRFactory::showAbout(QWidget *parent)
 {
      QMessageBox::about(parent, tr("About SoX Resampler Plugin"),
-                        tr("Qmmp SoX Resampler Plugin")+"\n"+
+                        tr("Qmmp SoX Resampler Plugin") + QChar::LineFeed +
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

@@ -30,30 +30,30 @@ QSUiLogo::QSUiLogo(QWidget *parent) : Visual(parent)
 {
     QPixmap pixmap(u":/qsui/terminus.png"_s);
     m_letters = {
-        { '0', pixmap.copy(0, 0, 8, 14) },
-        { '1', pixmap.copy(8, 0, 8, 14) },
-        { '2', pixmap.copy(16, 0, 8, 14) },
-        { '3', pixmap.copy(24, 0, 8, 14) },
-        { '4', pixmap.copy(32, 0, 8, 14) },
-        { '5', pixmap.copy(40, 0, 8, 14) },
-        { '6', pixmap.copy(48, 0, 8, 14) },
-        { '7', pixmap.copy(56, 0, 8, 14) },
-        { '8', pixmap.copy(64, 0, 8, 14) },
-        { '9', pixmap.copy(72, 0, 8, 14) },
-        { 'A', pixmap.copy(80, 0, 8, 14) },
-        { 'B', pixmap.copy(88, 0, 8, 14) },
-        { 'C', pixmap.copy(96, 0, 8, 14) },
-        { 'D', pixmap.copy(104, 0, 8, 14) },
-        { 'E', pixmap.copy(112, 0, 8, 14) },
-        { 'F', pixmap.copy(120, 0, 8, 14) },
-        { '/', pixmap.copy(128, 0, 8, 14) },
-        { '|', pixmap.copy(136, 0, 8, 14) },
-        { '\\', pixmap.copy(144, 0, 8, 14) },
-        { '_', pixmap.copy(152, 0, 8, 14) },
-        { '-', pixmap.copy(160, 0, 8, 14) },
-        { 'X', pixmap.copy(168, 0, 8, 14) },
-        { '.', pixmap.copy(176, 0, 8, 14) },
-        { ' ', pixmap.copy(184, 0, 8, 14) }
+        { QLatin1Char('0'), pixmap.copy(0, 0, 8, 14) },
+        { QLatin1Char('1'), pixmap.copy(8, 0, 8, 14) },
+        { QLatin1Char('2'), pixmap.copy(16, 0, 8, 14) },
+        { QLatin1Char('3'), pixmap.copy(24, 0, 8, 14) },
+        { QLatin1Char('4'), pixmap.copy(32, 0, 8, 14) },
+        { QLatin1Char('5'), pixmap.copy(40, 0, 8, 14) },
+        { QLatin1Char('6'), pixmap.copy(48, 0, 8, 14) },
+        { QLatin1Char('7'), pixmap.copy(56, 0, 8, 14) },
+        { QLatin1Char('8'), pixmap.copy(64, 0, 8, 14) },
+        { QLatin1Char('9'), pixmap.copy(72, 0, 8, 14) },
+        { QLatin1Char('A'), pixmap.copy(80, 0, 8, 14) },
+        { QLatin1Char('B'), pixmap.copy(88, 0, 8, 14) },
+        { QLatin1Char('C'), pixmap.copy(96, 0, 8, 14) },
+        { QLatin1Char('D'), pixmap.copy(104, 0, 8, 14) },
+        { QLatin1Char('E'), pixmap.copy(112, 0, 8, 14) },
+        { QLatin1Char('F'), pixmap.copy(120, 0, 8, 14) },
+        { QLatin1Char('/'), pixmap.copy(128, 0, 8, 14) },
+        { QLatin1Char('|'), pixmap.copy(136, 0, 8, 14) },
+        { QLatin1Char('\\'), pixmap.copy(144, 0, 8, 14) },
+        { QLatin1Char('_'), pixmap.copy(152, 0, 8, 14) },
+        { QLatin1Char('-'), pixmap.copy(160, 0, 8, 14) },
+        { QLatin1Char('X'), pixmap.copy(168, 0, 8, 14) },
+        { QLatin1Char('.'), pixmap.copy(176, 0, 8, 14) },
+        { QLatin1Char(' '), pixmap.copy(184, 0, 8, 14) }
     };
 
     QFile file(u":/ascii_logo.txt"_s);
@@ -61,7 +61,7 @@ QSUiLogo::QSUiLogo(QWidget *parent) : Visual(parent)
 
     while(!file.atEnd())
     {
-        QString line = file.readLine();
+        QString line = QString::fromLatin1(file.readLine());
         m_source_lines.append(line);
     }
 
@@ -137,7 +137,7 @@ void QSUiLogo::processPreset1()
     for(int i = 0; i < m_source_lines.count(); ++i)
     {
         QString line = m_source_lines[i];
-        line.replace(QChar('X'), QChar('.'));
+        line.replace(QLatin1Char('X'), QLatin1Char('.'));
         if(m_value == i)
         {
             line.remove(0, 2);
@@ -161,10 +161,10 @@ void QSUiLogo::processPreset2()
 
     for(QString line : qAsConst(m_source_lines))
     {
-        while(line.contains(QChar('X')))
+        while(line.contains(QLatin1Char('X')))
         {
             at++;
-            line.replace(line.indexOf(QChar('X')), 1, str.at(at % str.size()).toUpper());
+            line.replace(line.indexOf(QLatin1Char('X')), 1, str.at(at % str.size()).toUpper());
         }
 
         m_lines.append(line);
@@ -180,10 +180,10 @@ void QSUiLogo::processPreset3()
 
     for(QString line : qAsConst(m_source_lines))
     {
-        while(line.contains(QChar('X')))
+        while(line.contains(QLatin1Char('X')))
         {
             at++;
-            line.replace(line.indexOf(QChar('X')), 1, str.at(at % str.size()).toUpper());
+            line.replace(line.indexOf(QLatin1Char('X')), 1, str.at(at % str.size()).toUpper());
         }
 
         m_lines.append(line);
@@ -212,13 +212,13 @@ void QSUiLogo::processPreset4()
 
     for(QString line : qAsConst(m_source_lines))
     {
-        int count = line.count(QChar('X'));
+        int count = line.count(QLatin1Char('X'));
         int k = 0;
 
         while(k < m_value * count / 65536 / 2)
         {
             int value = std::abs(m_buffer[qMin(at++, QMMP_VISUAL_NODE_SIZE)] * 16);
-            line.replace(line.indexOf(QChar('X')), 1, QStringLiteral("%1").arg(value, 0, 16).toUpper());
+            line.replace(line.indexOf(QLatin1Char('X')), 1, QStringLiteral("%1").arg(value, 0, 16).toUpper());
             k++;
         }
 
@@ -227,13 +227,13 @@ void QSUiLogo::processPreset4()
         while(k < m_value * count / 65536 / 2)
         {
             int value = std::abs(m_buffer[qMin(at++, QMMP_VISUAL_NODE_SIZE)] * 16);
-            line.replace(line.lastIndexOf(QChar('X')), 1, QStringLiteral("%1").arg(value, 0, 16).toUpper());
+            line.replace(line.lastIndexOf(QLatin1Char('X')), 1, QStringLiteral("%1").arg(value, 0, 16).toUpper());
             k++;
         }
 
-        while(line.contains(QChar('X')))
+        while(line.contains(QLatin1Char('X')))
         {
-            line.replace(line.indexOf(QChar('X')), 1, QChar('.'));
+            line.replace(line.indexOf(QLatin1Char('X')), 1, QLatin1Char('.'));
         }
 
         m_lines.append(line);

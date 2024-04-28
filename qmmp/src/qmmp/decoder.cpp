@@ -190,7 +190,7 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
             if(!(fact = item->decoderFactory()))
                 continue;
 
-            if(fact->properties().noInput && !fact->properties().protocols.contains("file"))
+            if(fact->properties().noInput && !fact->properties().protocols.contains(u"file"_s))
                 continue;
 
             if (fact->canDecode(&file))
@@ -284,7 +284,7 @@ QList<DecoderFactory *> Decoder::findByFileExtension(const QString &path)
         if(!(fact = item->decoderFactory()))
             continue;
 
-        if(QDir::match(fact->properties().filters, path.section(QChar('/'), -1)))
+        if(QDir::match(fact->properties().filters, path.section(QLatin1Char('/'), -1)))
             filtered.append(fact);
     }
 

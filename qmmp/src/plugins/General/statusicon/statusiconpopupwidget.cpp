@@ -172,7 +172,7 @@ TimeBar::TimeBar(QWidget *parent) : QProgressBar(parent)
 
 QString TimeBar::text() const
 {
-    return QStringLiteral("%1:%2").arg(value() / 60, 2, 10, QChar('0')).arg(value() % 60, 2, 10, QChar('0'));
+    return QStringLiteral("%1:%2").arg(value() / 60, 2, 10, QLatin1Char('0')).arg(value() % 60, 2, 10, QLatin1Char('0'));
 }
 
 #endif

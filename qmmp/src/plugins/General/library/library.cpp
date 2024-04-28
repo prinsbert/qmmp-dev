@@ -189,7 +189,7 @@ void Library::addTrack(TrackInfo *track, const QString &filePath)
                   ":year, :track, :discnumber, :duration, "
                   ":audioinfo, :url, :filepath, :searchstring)"_s);
 
-    QString title = track->value(Qmmp::TITLE).isEmpty() ? track->path().section(QChar('/'), -1) : track->value(Qmmp::TITLE);
+    QString title = track->value(Qmmp::TITLE).isEmpty() ? track->path().section(QLatin1Char('/'), -1) : track->value(Qmmp::TITLE);
     QString album = track->value(Qmmp::ALBUM).isEmpty() ? tr("Unknown") : track->value(Qmmp::ALBUM);
     QString artist = track->value(Qmmp::ARTIST).isEmpty() ? tr("Unknown") : track->value(Qmmp::ARTIST);
 
@@ -420,7 +420,7 @@ bool Library::checkFile(const QFileInfo &info)
 
     QSqlQuery query(db);
     query.prepare(u"SELECT Timestamp FROM track_library WHERE FilePath = :filepath"_s);
-    query.bindValue(":filepath", info.absoluteFilePath());
+    query.bindValue(u":filepath"_s, info.absoluteFilePath());
     if(!query.exec())
     {
         qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
@@ -462,7 +462,7 @@ void Library::updateIgnoredFiles(const QStringList &paths)
     {
         QSqlQuery query(db);
         query.prepare(u"INSERT OR REPLACE INTO ignored_files VALUES((SELECT ID FROM track_library WHERE FilePath = :filepath), :filepath)"_s);
-        query.bindValue(":filepath", path);
+        query.bindValue(u":filepath"_s, path);
         if(!query.exec())
         {
             qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));

@@ -48,8 +48,8 @@ QDialog *StreamBrowserFactory::createConfigDialog(QWidget *parent)
 void StreamBrowserFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About Stream Browser Plugin"),
-                       tr("Qmmp Stream Browser Plugin")+"\n"+
-                       tr("This plugin allows one to add stream from IceCast stream directory")+"\n"+
+                       tr("Qmmp Stream Browser Plugin") + QChar::LineFeed +
+                       tr("This plugin allows one to add stream from IceCast stream directory") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

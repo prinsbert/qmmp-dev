@@ -68,7 +68,7 @@ void AlsaSettingsDialog::getCards()
 
     m_devices.clear();
     m_devices << u"default"_s;
-    m_ui->deviceComboBox->addItem("Default PCM device (default)");
+    m_ui->deviceComboBox->addItem(u"Default PCM device (default)"_s);
 
     if((err = snd_card_next(&card)) !=0)
         qWarning("AlsaSettingsDialog (ALSA): snd_next_card() failed: %s",
@@ -103,8 +103,8 @@ void AlsaSettingsDialog::getSoftDevices()
             char *device_name = snd_device_name_get_hint (hints[i], "NAME");
             char *device_desc = snd_device_name_get_hint (hints[i], "DESC");
 
-            m_devices << QString(device_name);
-            QString str = QString("%1 (%2)").arg(device_desc, device_name);
+            m_devices << QString::fromLatin1(device_name);
+            QString str = QStringLiteral("%1 (%2)").arg(QString::fromLatin1(device_desc), QString::fromLatin1(device_name));
             qDebug("%s", qPrintable(str));
             m_ui->deviceComboBox->addItem(str);
             free (device_name);
@@ -141,7 +141,7 @@ void AlsaSettingsDialog::getCardDevices(int card)
                  snd_strerror(-err));
         card_name = strdup("Unknown soundcard");
     }
-    m_ui->mixerCardComboBox->addItem(QString(card_name));
+    m_ui->mixerCardComboBox->addItem(QString::fromLatin1(card_name));
 
     snd_pcm_info_alloca(&pcm_info);
 
@@ -173,9 +173,7 @@ void AlsaSettingsDialog::getCardDevices(int card)
         }
         device = QStringLiteral("hw:%1,%2").arg(card).arg(pcm_device);
         m_devices << device;
-        QString str;
-        str =  QString(card_name) + ": "+
-               snd_pcm_info_get_name(pcm_info)+" ("+device+")";
+        QString str = QStringLiteral("%1: %2 (%3)").arg(QString::fromLatin1(card_name), QString::fromLatin1(snd_pcm_info_get_name(pcm_info)), device);
         qDebug("%s",qPrintable(str));
         m_ui->deviceComboBox->addItem(str);
     }
@@ -200,7 +198,7 @@ void AlsaSettingsDialog::getMixerDevices(QString card)
         const char *sname = snd_mixer_selem_get_name(current);
         if (snd_mixer_selem_is_active(current) &&
                 snd_mixer_selem_has_playback_volume(current))
-            m_ui->mixerDeviceComboBox->addItem(QString(sname));
+            m_ui->mixerDeviceComboBox->addItem(QString::fromLatin1(sname));
         current = snd_mixer_elem_next(current);
     }
 }
@@ -214,7 +212,7 @@ void AlsaSettingsDialog::accept()
 {
     qDebug("AlsaSettingsDialog (ALSA):: writeSettings()");
     QSettings settings;
-    settings.beginGroup(u"ALSA");
+    settings.beginGroup(u"ALSA"_s);
     settings.setValue(u"device"_s, m_ui->deviceComboBox->currentText ());
     settings.setValue(u"buffer_time"_s, m_ui->bufferSpinBox->value());
     settings.setValue(u"period_time"_s, m_ui->periodSpinBox->value());

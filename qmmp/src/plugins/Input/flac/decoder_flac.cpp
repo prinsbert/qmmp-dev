@@ -292,8 +292,8 @@ bool DecoderFLAC::initialize()
         if (m_path.startsWith(u"flac://"_s)) //embeded cue track
         {
             QString p = m_path;
-            p.remove("flac://");
-            p.remove(QRegularExpression("#\\d+$"));
+            p.remove(u"flac://"_s);
+            p.remove(QRegularExpression(u"#\\d+$"_s));
             TagLib::FileStream stream(QStringToFileName(p), true);
 #if TAGLIB_MAJOR_VERSION >= 2
             TagLib::FLAC::File fileRef(&stream);
@@ -310,7 +310,7 @@ bool DecoderFLAC::initialize()
                 m_parser = new CueParser(tag->fieldListMap()["CUESHEET"].toString() .toCString(true));
                 m_parser->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
                 m_parser->setUrl(u"flac"_s, p);
-                m_track = m_path.section(QChar('#'), -1).toInt();
+                m_track = m_path.section(QLatin1Char('#'), -1).toInt();
                 if(m_track < 1 || m_track > m_parser->count())
                 {
                     qWarning("DecoderFLAC: invalid cuesheet xiph comment");
@@ -394,7 +394,7 @@ bool DecoderFLAC::initialize()
             return false;
         }
         qDebug("DecoderFLAC: Ogg FLAC stream found");
-        setProperty(Qmmp::FORMAT_NAME, "Ogg FLAC");
+        setProperty(Qmmp::FORMAT_NAME, u"Ogg FLAC"_s);
     }
     else if (!memcmp(buf, "fLaC", 4))
     {
@@ -413,7 +413,7 @@ bool DecoderFLAC::initialize()
             return false;
         }
         qDebug("DecoderFLAC: native FLAC stream found");
-        setProperty(Qmmp::FORMAT_NAME, "FLAC");
+        setProperty(Qmmp::FORMAT_NAME, u"FLAC"_s);
     }
     else
     {

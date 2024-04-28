@@ -126,7 +126,7 @@ void LADSPAHost::loadModules()
     if(!m_modules.isEmpty())
         return;
 
-    QString ladspa_path = qgetenv("LADSPA_PATH");
+    QString ladspa_path = QString::fromLocal8Bit(qgetenv("LADSPA_PATH"));
     QStringList directories;
 
     if (ladspa_path.isEmpty())
@@ -138,7 +138,7 @@ void LADSPAHost::loadModules()
         directories << u"/usr/local/lib64/ladspa"_s;
     }
     else
-        directories = ladspa_path.split(':');
+        directories = ladspa_path.split(QLatin1Char(':'));
     for(const QString &dir : qAsConst(directories))
         findModules(dir);
 }
@@ -176,7 +176,7 @@ void LADSPAHost::findModules(const QString &path)
                 continue;
             }
             LADSPAPlugin *plugin = new LADSPAPlugin;
-            plugin->name = descriptor->Name;
+            plugin->name = QString::fromLocal8Bit(descriptor->Name);
             plugin->id = k;
             plugin->unique_id = descriptor->UniqueID;
             plugin->desc = descriptor;
@@ -229,7 +229,7 @@ LADSPAControl *LADSPAHost::createControl(const LADSPA_Descriptor *desc, unsigned
     LADSPA_Data fact, min, max, step, start;
 
     LADSPAControl *c = new LADSPAControl;
-    c->name = QString(desc->PortNames[port]);
+    c->name = QString::fromLocal8Bit(desc->PortNames[port]);
     c->port = port;
 
     if (LADSPA_IS_HINT_TOGGLED(hint.HintDescriptor))

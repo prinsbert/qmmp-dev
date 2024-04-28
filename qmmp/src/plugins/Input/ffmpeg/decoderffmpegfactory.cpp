@@ -66,7 +66,7 @@ bool DecoderFFmpegFactory::canDecode(QIODevice *i) const
     if(!fmt)
         return false;
 
-    QStringList formats = QString::fromLatin1(fmt->name).split(QChar(','));
+    QStringList formats = QString::fromLatin1(fmt->name).split(QLatin1Char(','));
 
     if(filters.contains(u"*.wma"_s) && formats.contains(u"asf"_s))
         return true;
@@ -177,10 +177,10 @@ DecoderProperties DecoderFFmpegFactory::properties() const
 
 Decoder *DecoderFFmpegFactory::create(const QString &path, QIODevice *input)
 {
-    if(path.startsWith("ffmpeg://"))
+    if(path.startsWith(u"ffmpeg://"_s))
         return new DecoderFFmpegCue(path);
 
-    if(path.startsWith("m4b://"))
+    if(path.startsWith(u"m4b://"_s))
         return new DecoderFFmpegM4b(this, path);
 
     return new DecoderFFmpeg(path, input);
@@ -193,10 +193,10 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
 
     if(path.contains(u"://"_s)) //is it cue track?
     {
-        filePath.remove("ffmpeg://");
-        filePath.remove("m4b://");
-        filePath.remove(QRegularExpression("#\\d+$"));
-        trackNumber = path.section(QChar('#'), -1).toInt();
+        filePath.remove(u"ffmpeg://"_s);
+        filePath.remove(u"m4b://"_s);
+        filePath.remove(QRegularExpression(u"#\\d+$"_s));
+        trackNumber = path.section(QLatin1Char('#'), -1).toInt();
         parts = TrackInfo::AllParts; //extract all metadata for single cue/m4b track
     }
 
@@ -310,7 +310,7 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
         if(track)
             info->setValue(Qmmp::TRACK, track->value);
 
-        if(in->nb_chapters > 1 && filePath.endsWith(".m4b", Qt::CaseInsensitive))
+        if(in->nb_chapters > 1 && filePath.endsWith(u".m4b"_s, Qt::CaseInsensitive))
         {
             QList<TrackInfo *> tracks = createPlayListFromChapters(in, info, trackNumber);
             avformat_close_input(&in);
@@ -318,7 +318,7 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
             return tracks;
         }
 
-        if(trackNumber > 0 && path.startsWith("m4b://")) //invalid chapter
+        if(trackNumber > 0 && path.startsWith(u"m4b://"_s)) //invalid chapter
         {
             avformat_close_input(&in);
             delete info;

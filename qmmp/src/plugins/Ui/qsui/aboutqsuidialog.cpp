@@ -55,11 +55,11 @@ QString AboutQSUIDialog::getStringFromResource(const QString& res_file)
 {
     QString ret_string;
     QStringList paths;
-    paths << res_file + QChar('_') + Qmmp::systemLanguageID() + u".txt"_s;
-    if(Qmmp::systemLanguageID().contains(QChar('.')))
-        paths << res_file + QChar('_') + Qmmp::systemLanguageID().split(QChar('.')).at(0) + u".txt"_s;
-    if(Qmmp::systemLanguageID().contains(QChar('_')))
-        paths << res_file + QChar('_') + Qmmp::systemLanguageID().split(QChar('_')).at(0) + u".txt"_s;
+    paths << res_file + QLatin1Char('_') + Qmmp::systemLanguageID() + u".txt"_s;
+    if(Qmmp::systemLanguageID().contains(QLatin1Char('.')))
+        paths << res_file + QLatin1Char('_') + Qmmp::systemLanguageID().split(QLatin1Char('.')).at(0) + u".txt"_s;
+    if(Qmmp::systemLanguageID().contains(QLatin1Char('_')))
+        paths << res_file + QLatin1Char('_') + Qmmp::systemLanguageID().split(QLatin1Char('_')).at(0) + u".txt"_s;
     paths << res_file + u".txt"_s << res_file;
 
     for(const QString &path : qAsConst(paths))

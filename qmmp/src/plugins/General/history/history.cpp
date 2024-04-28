@@ -156,7 +156,7 @@ void History::saveTrack()
         qWarning("History: unable to save track, error: %s", qPrintable(query.lastError().text()));
     else
         qDebug("History: track '%s' has been added to history",
-               qPrintable(m_trackInfo.value(Qmmp::ARTIST) + " - " + m_trackInfo.value(Qmmp::TITLE)));
+               qPrintable(m_trackInfo.value(Qmmp::ARTIST) + u" - "_s + m_trackInfo.value(Qmmp::TITLE)));
 
     m_trackInfo.clear();
 }

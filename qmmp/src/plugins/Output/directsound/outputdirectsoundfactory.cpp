@@ -50,7 +50,7 @@ void OutputDirectSoundFactory::showSettings(QWidget* parent)
 void OutputDirectSoundFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About DirectSound Output Plugin"),
-                        tr("Qmmp DirectSound Output Plugin")+"\n"+
+                        tr("Qmmp DirectSound Output Plugin")+QChar::LineFeed+
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

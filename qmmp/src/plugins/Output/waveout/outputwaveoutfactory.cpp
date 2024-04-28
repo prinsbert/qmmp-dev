@@ -58,8 +58,8 @@ void OutputWaveOutFactory::showSettings(QWidget* parent)
 void OutputWaveOutFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About WaveOut Output Plugin"),
-                        tr("Qmmp WaveOut Output Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + "\n" +
+                        tr("Qmmp WaveOut Output Plugin")+QChar::LineFeed+
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
                         tr("Based on aacDECdrop player"));
 }
 

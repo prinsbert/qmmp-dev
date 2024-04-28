@@ -100,10 +100,10 @@ QString KdeNotify::totalTimeString()
 
     if(time >= 3600)
     {
-        return QStringLiteral("%1:%2:%3").arg(time / 3600, 2, 10, QChar('0')).arg(time % 3600/60, 2, 10, QChar('0'))
-                .arg(time%60,2,10,QChar('0'));
+        return QStringLiteral("%1:%2:%3").arg(time / 3600, 2, 10, QLatin1Char('0')).arg(time % 3600/60, 2, 10, QLatin1Char('0'))
+                .arg(time%60,2,10,QLatin1Char('0'));
     }
-    return QStringLiteral("%1:%2").arg(time / 60, 2, 10, QChar('0')).arg(time%60, 2, 10, QChar('0'));
+    return QStringLiteral("%1:%2").arg(time / 60, 2, 10, QLatin1Char('0')).arg(time%60, 2, 10, QLatin1Char('0'));
 }
 
 QList<QVariant> KdeNotify::prepareNotification()

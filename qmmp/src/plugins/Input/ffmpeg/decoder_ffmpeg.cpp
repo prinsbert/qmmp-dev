@@ -216,9 +216,9 @@ bool DecoderFFmpeg::initialize()
         if(title)
             metaData.insert(Qmmp::TITLE, QString::fromUtf8(title->value).trimmed());
         if(year)
-            metaData.insert(Qmmp::YEAR, year->value);
+            metaData.insert(Qmmp::YEAR, QString::fromLatin1(year->value).trimmed());
         if(track)
-            metaData.insert(Qmmp::TRACK, track->value);
+            metaData.insert(Qmmp::TRACK, QString::fromLatin1(track->value).trimmed());
         addMetaData(metaData);
     }
 

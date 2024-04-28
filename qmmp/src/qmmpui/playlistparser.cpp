@@ -87,7 +87,7 @@ QStringList PlayListParser::filters()
 
 bool PlayListParser::isPlayList(const QString &url)
 {
-    return QDir::match(nameFilters(), url.section(QChar('/'), -1));
+    return QDir::match(nameFilters(), url.section(QLatin1Char('/'), -1));
 }
 
 PlayListFormat *PlayListParser::findByMime(const QString &mime)
@@ -103,7 +103,7 @@ PlayListFormat *PlayListParser::findByPath(const QString &filePath)
     loadFormats();
     for(PlayListFormat *format : qAsConst(*m_formats))
     {
-        if(QDir::match(format->properties().filters, filePath.section(QChar('/'), -1)))
+        if(QDir::match(format->properties().filters, filePath.section(QLatin1Char('/'), -1)))
             return format;
     }
     return nullptr;
@@ -164,10 +164,10 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
             continue;
 
         if(QFileInfo(path).isRelative())
-            path.prepend(QFileInfo(f_name).canonicalPath() + QChar('/'));
+            path.prepend(QFileInfo(f_name).canonicalPath() + QLatin1Char('/'));
 
-        path.replace(QChar('\\'), QChar('/'));
-        path.replace(u"//"_s, QChar('/'));
+        path.replace(QLatin1Char('\\'), QLatin1Char('/'));
+        path.replace(u"//"_s, u"/"_s);
         t->setPath(path);
     }
     return tracks;

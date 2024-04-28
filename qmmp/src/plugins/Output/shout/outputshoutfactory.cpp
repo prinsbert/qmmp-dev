@@ -61,10 +61,10 @@ void OutputShoutFactory::showSettings(QWidget* parent)
 
 void OutputShoutFactory::showAbout(QWidget *parent)
 {
-   QMessageBox::about (parent, tr("About Icecast Output Plugin"),
+    QMessageBox::about(parent, tr("About Icecast Output Plugin"),
                        tr("Qmmp Icecast Output Plugin") + QChar::LineFeed +
-                       tr("Compiled against libshout-%1").arg(shout_version(nullptr,nullptr,nullptr)) + QChar::LineFeed +
-                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+                       tr("Compiled against libshout-%1").arg(QString::fromLatin1(shout_version(nullptr,nullptr,nullptr))) +
+                       QChar::LineFeed + tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString OutputShoutFactory::translation() const

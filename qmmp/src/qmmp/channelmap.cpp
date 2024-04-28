@@ -81,7 +81,7 @@ const QString ChannelMap::toString() const
     for(const Qmmp::ChannelPosition channel : qAsConst(*this))
        list << names.value(channel);
 
-    return list.join(QChar(','));
+    return list.join(QLatin1Char(','));
 }
 
 void ChannelMap::generateMap(int channels)

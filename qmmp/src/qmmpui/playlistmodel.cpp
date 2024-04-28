@@ -1128,11 +1128,11 @@ void PlayListModel::updateMetaData(const QStringList &paths)
         if(!cache.contains(path))
         {
             //is it track of local file?
-            if(path.contains("://") && path.contains("#") && !cache.contains(path))
+            if(path.contains(u"://"_s) && path.contains(QLatin1Char('#')) && !cache.contains(path))
             {
                 QString filePath = path;
-                filePath.remove(QRegularExpression("#\\d+$"));
-                filePath.remove(QRegularExpression("^\\D+://"));
+                filePath.remove(QRegularExpression(u"#\\d+$"_s));
+                filePath.remove(QRegularExpression(u"^\\D+://"_s));
                 if(multiTrackFiles.contains(filePath)) //looks like local file has been already scanned, but has not this track
                 {
                     missing = true;

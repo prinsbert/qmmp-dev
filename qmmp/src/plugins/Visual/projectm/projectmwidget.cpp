@@ -159,7 +159,7 @@ void ProjectMWidget::findPresets(const QString &path)
 {
     QDir presetDir(path);
     presetDir.setFilter(QDir::Files);
-    const QFileInfoList files = presetDir.entryInfoList({ "*.prjm", "*.milk" }, QDir::Files);
+    const QFileInfoList files = presetDir.entryInfoList({ u"*.prjm"_s, u"*.milk"_s }, QDir::Files);
 
     const RatingList list = { 3, 3 };
     for(const QFileInfo &info : qAsConst(files))

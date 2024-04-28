@@ -79,7 +79,7 @@ void QmmpFileDialogFactory::showAbout(QWidget *parent)
                        tr("Qmmp File Dialog") + QChar::LineFeed +
                        tr("Written by:\n"
                           "Vladimir Kuznetsov <vovanec@gmail.com>\n"
-                          "Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                          "Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
                        tr("Some code is copied from the Qt library"));
 
 }

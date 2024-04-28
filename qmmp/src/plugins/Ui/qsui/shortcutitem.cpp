@@ -24,7 +24,7 @@
 #include "shortcutitem.h"
 
 ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, int type) :
-    QTreeWidgetItem(parent, { QSUiActionManager::instance()->action(type)->text().remove(QChar('&')),
+    QTreeWidgetItem(parent, { QSUiActionManager::instance()->action(type)->text().remove(QLatin1Char('&')),
                     QSUiActionManager::instance()->action(type)->shortcut().toString() })
 {
     m_action = QSUiActionManager::instance()->action(type);
@@ -32,7 +32,7 @@ ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, int type) :
 }
 
 ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, QDockWidget *w) :
-    QTreeWidgetItem(parent, { w->toggleViewAction()->text().remove(QChar('&')), w->toggleViewAction()->shortcut().toString() })
+    QTreeWidgetItem(parent, { w->toggleViewAction()->text().remove(QLatin1Char('&')), w->toggleViewAction()->shortcut().toString() })
 {
     m_action = w->toggleViewAction();
 }

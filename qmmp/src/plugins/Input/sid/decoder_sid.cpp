@@ -51,8 +51,8 @@ bool DecoderSID::initialize()
     m_read_bytes = 0;
     QString path = m_url;
     path.remove(u"sid://"_s);
-    path.remove(QRegularExpression("#\\d+$"));
-    int track = m_url.section(QChar('#'), -1).toInt();
+    path.remove(QRegularExpression(u"#\\d+$"_s));
+    int track = m_url.section(QLatin1Char('#'), -1).toInt();
 
     m_tune.load(qPrintable(path));
     if(!m_tune.getInfo())
@@ -79,9 +79,9 @@ bool DecoderSID::initialize()
     //send metadata for pseudo-protocol
     const SidTuneInfo *tune_info = m_tune.getInfo();
     QMap<Qmmp::MetaData, QString> metadata;
-    metadata.insert(Qmmp::TITLE,  tune_info->infoString(0));
-    metadata.insert(Qmmp::ARTIST, tune_info->infoString(1));
-    metadata.insert(Qmmp::COMMENT, tune_info->commentString(0));
+    metadata.insert(Qmmp::TITLE, QString::fromUtf8(tune_info->infoString(0)));
+    metadata.insert(Qmmp::ARTIST, QString::fromUtf8(tune_info->infoString(1)));
+    metadata.insert(Qmmp::COMMENT, QString::fromUtf8(tune_info->commentString(0)));
     metadata.insert(Qmmp::TRACK, QString::number(track));
     addMetaData(metadata);
 

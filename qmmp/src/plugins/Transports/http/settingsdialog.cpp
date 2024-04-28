@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -35,18 +35,18 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
     size_t n = 0;
     const char **langs = enca_get_languages(&n);
     for (size_t i = 0; i < n; ++i)
-        m_ui.encaAnalyserComboBox->addItem(langs[i]);
+        m_ui.encaAnalyserComboBox->addItem(QString::fromLatin1(langs[i]));
 #endif
     QSettings settings;
     settings.beginGroup("HTTP");
-    int pos = m_ui.icyEncodingComboBox->findText(settings.value("icy_encoding","UTF-8").toString());
+    int pos = m_ui.icyEncodingComboBox->findText(settings.value("icy_encoding", u"UTF-8"_s).toString());
     m_ui.icyEncodingComboBox->setCurrentIndex(pos);
     m_ui.bufferSizeSpinBox->setValue(settings.value("buffer_size",384).toInt());
     m_ui.userAgentCheckBox->setChecked(settings.value("override_user_agent",false).toBool());
     m_ui.userAgentLineEdit->setText(settings.value("user_agent").toString());
 #ifdef WITH_ENCA
     m_ui.autoCharsetCheckBox->setChecked(settings.value("use_enca", false).toBool());
-    pos = m_ui.encaAnalyserComboBox->findText(settings.value("enca_lang", langs[n-1]).toString());
+    pos = m_ui.encaAnalyserComboBox->findText(settings.value("enca_lang", QString::fromLatin1(langs[n - 1])).toString());
     m_ui.encaAnalyserComboBox->setCurrentIndex(pos);
 #else
     m_ui.autoCharsetCheckBox->setEnabled(false);

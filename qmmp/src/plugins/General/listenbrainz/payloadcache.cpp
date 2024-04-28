@@ -76,7 +76,7 @@ QList<TrackMetaData> PayloadCache::load()
     {
         int s = 0;
         QString line = QString::fromUtf8(file.readLine()).trimmed();
-        if ((s = line.indexOf(QChar('='))) < 0)
+        if ((s = line.indexOf(QLatin1Char('='))) < 0)
             continue;
 
         QString param = line.left(s);

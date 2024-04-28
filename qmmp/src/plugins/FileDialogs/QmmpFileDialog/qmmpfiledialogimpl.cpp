@@ -100,7 +100,7 @@ QStringList QmmpFileDialogImpl::selectedFiles() const
     QStringList l;
     if(m_mode == FileDialog::SaveFile)
     {
-        l << m_model->filePath(m_ui->fileListView->rootIndex()) + QChar('/') + m_ui->fileNameLineEdit->text();
+        l << m_model->filePath(m_ui->fileListView->rootIndex()) + QLatin1Char('/') + m_ui->fileNameLineEdit->text();
         qDebug("%s",qPrintable(l[0]));
     }
     else
@@ -201,10 +201,10 @@ void QmmpFileDialogImpl::on_fileNameLineEdit_textChanged (const QString &text)
     }
     QModelIndex index;
 
-    if(text.startsWith(QChar('/')))
+    if(text.startsWith(QLatin1Char('/')))
         index = m_model->index(text);
     else
-        index = m_model->index(m_model->filePath(m_ui->fileListView->rootIndex()) + QChar('/') + text);
+        index = m_model->index(m_model->filePath(m_ui->fileListView->rootIndex()) + QLatin1Char('/') + text);
     if(!index.isValid() || !m_ui->fileNameLineEdit->hasFocus())
         return;
 
@@ -236,7 +236,7 @@ void QmmpFileDialogImpl::on_addPushButton_clicked()
     }
     else
     {
-        l << m_model->filePath(m_ui->fileListView->rootIndex()) +  QChar('/') + m_ui->fileNameLineEdit->text();
+        l << m_model->filePath(m_ui->fileListView->rootIndex()) +  QLatin1Char('/') + m_ui->fileNameLineEdit->text();
         addFiles(l);
     }
 }
@@ -255,10 +255,10 @@ void QmmpFileDialogImpl::setModeAndMask(const QString &d, FileDialog::Mode m, co
 
     if(m == FileDialog::SaveFile)
     {
-        if(path.endsWith(QChar('/')))
+        if(path.endsWith(QLatin1Char('/')))
             path.remove(path.size() - 1, 1);
-        path = path.left(path.lastIndexOf(QChar('/')));
-        fileName = d.section(QChar('/'), -1);
+        path = path.left(path.lastIndexOf(QLatin1Char('/')));
+        fileName = d.section(QLatin1Char('/'), -1);
         m_ui->fileNameLineEdit->setText(fileName);
         m_ui->addPushButton->setEnabled(!fileName.isEmpty());
         m_ui->addPushButton->setText(tr("Save"));
@@ -360,10 +360,10 @@ void QmmpFileDialogImpl::updateSelection ()
     QStringList files;
     for(const QModelIndex &i : qAsConst(ml))
     {
-        if(!l.contains(m_model->filePath(i).section(QChar('/'), -1)))
+        if(!l.contains(m_model->filePath(i).section(QLatin1Char('/'), -1)))
         {
             files << m_model->filePath(i);
-            l << m_model->filePath(i).section(QChar('/'), -1);
+            l << m_model->filePath(i).section(QLatin1Char('/'), -1);
         }
     }
 
@@ -375,8 +375,8 @@ void QmmpFileDialogImpl::updateSelection ()
         else
         {
             str = l.join (u"\" \""_s);
-            str.append(QChar('"'));
-            str.prepend(QChar('"'));
+            str.append(QLatin1Char('"'));
+            str.prepend(QLatin1Char('"'));
         }
         if(!m_ui->fileNameLineEdit->hasFocus())
             m_ui->fileNameLineEdit->setText(str);
@@ -407,9 +407,9 @@ void QmmpFileDialogImpl::updateSelection ()
 void QmmpFileDialogImpl::addToHistory(const QString &path)
 {
     QString path_copy = path;
-    if(path_copy.endsWith('/'))
-        path_copy.remove(path.size()-1, 1);
-    QString dir_path = path.left(path_copy.lastIndexOf(QChar('/')));
+    if(path_copy.endsWith(QLatin1Char('/')))
+        path_copy.remove(path.size() - 1, 1);
+    QString dir_path = path.left(path_copy.lastIndexOf(QLatin1Char('/')));
 
     m_history.removeAll(dir_path);
     m_history.prepend(dir_path);
@@ -449,7 +449,7 @@ void QmmpFileDialogImpl::addFiles(const QStringList &list)
         if(!contains)
         {
             QString ext = qt_clean_filter_list(m_ui->fileTypeComboBox->currentText()).constFirst();
-            ext.remove(QChar('*'));
+            ext.remove(QLatin1Char('*'));
             if(!ext.isEmpty() && ext != "."_L1)
             {
                 f_name.append(ext);

@@ -46,7 +46,7 @@ bool RGScanner::prepare(const QString &url)
     m_is_pending = false;
     deinit();
     m_url = url;
-    QString name = m_url.section(QChar('/'), -1);
+    QString name = m_url.section(QLatin1Char('/'), -1);
     InputSource *source = InputSource::create(url, nullptr);
     if(!source->initialize())
     {
@@ -160,7 +160,7 @@ void RGScanner::run()
         m_is_pending = false;
         return;
     }
-    QString name = m_url.section(QChar('/'), -1);
+    QString name = m_url.section(QLatin1Char('/'), -1);
     qDebug("RGScanner: [%s] staring thread", qPrintable(name));
     m_is_running = true;
     m_is_pending = false;

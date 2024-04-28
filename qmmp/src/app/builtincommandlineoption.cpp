@@ -93,7 +93,7 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
         {
             QString path = s;
 #ifdef Q_OS_WIN
-            path.replace(QChar('\\'), QChar('/'));
+            path.replace(QLatin1Char('\\'), QLatin1Char('/'));
 #endif
             if(QFileInfo(s).isAbsolute()) //absolute path
                 full_path_list << path;
@@ -105,7 +105,7 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
                     full_path_list << path; //url
             }
             else //relative path
-                full_path_list << cwd + QChar('/') + path;
+                full_path_list << cwd + QLatin1Char('/') + path;
         }
         //default playlist
         if(settings->useDefaultPlayList())
@@ -213,7 +213,7 @@ QHash<QString, QStringList> BuiltinCommandLineOption::splitArgs(const QStringLis
     for(const QString &arg : qAsConst(args))
     {
         QString cmd = arg.trimmed();
-        if(cmd.startsWith(QChar('-')) || cmd.startsWith(u"--"_s))
+        if(cmd.startsWith(QLatin1Char('-')) || cmd.startsWith(u"--"_s))
         {
             commands.insert(cmd, QStringList());
             lastCmd = cmd;

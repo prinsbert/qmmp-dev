@@ -92,7 +92,7 @@ void ToolBarEditor::populateActionList(bool reset)
 
         QListWidgetItem *item = new QListWidgetItem();
         item->setIcon(action->icon());
-        item->setText(action->text().remove(QChar('&')));
+        item->setText(action->text().remove(QLatin1Char('&')));
         item->setData(Qt::UserRole, action->objectName());
         m_ui->actionsListWidget->addItem(item);
     }
@@ -204,7 +204,7 @@ void ToolBarEditor::on_toolbarNameComboBox_activated(int index)
         {
             QListWidgetItem *item = new QListWidgetItem();
             item->setIcon(action->icon());
-            item->setText(action->text().remove(QChar('&')));
+            item->setText(action->text().remove(QLatin1Char('&')));
             item->setData(Qt::UserRole, action->objectName());
             m_ui->activeActionsListWidget->addItem(item);
         }

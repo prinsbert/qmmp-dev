@@ -180,7 +180,7 @@ DecoderProperties DecoderMpegFactory::properties() const
     properties.shortName = "mpeg"_L1;
     properties.filters = QStringList { u"*.mp1"_s, u"*.mp2"_s, u"*.mp3"_s, u"*.wav"_s };
     properties.description = tr("MPEG Files");
-    properties.contentTypes = QStringList { "audio/mp3", "audio/mpeg" };
+    properties.contentTypes = QStringList { u"audio/mp3"_s, u"audio/mpeg"_s };
     properties.hasAbout = true;
     properties.hasSettings = true;
     return properties;
@@ -246,11 +246,11 @@ QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, Track
             switch ((uint) tag_array[i])
             {
             case MpegSettingsDialog::ID3v1:
-                codecName = settings.value(u"ID3v1_encoding"_s, "ISO-8859-1").toByteArray();
+                codecName = settings.value(u"ID3v1_encoding"_s, u"ISO-8859-1"_s).toByteArray();
                 tag = fileRef.ID3v1Tag();
                 break;
             case MpegSettingsDialog::ID3v2:
-                codecName = settings.value(u"ID3v2_encoding"_s, "UTF-8").toByteArray();
+                codecName = settings.value(u"ID3v2_encoding"_s, u"UTF-8"_s).toByteArray();
                 tag = fileRef.ID3v2Tag();
                 break;
             case MpegSettingsDialog::APE:
@@ -424,14 +424,14 @@ void DecoderMpegFactory::showAbout(QWidget *parent)
                         .arg(MAD_VERSION_MAJOR)
                         .arg(MAD_VERSION_MINOR)
                         .arg(MAD_VERSION_PATCH)
-                        .arg(MAD_VERSION_EXTRA) + QChar::LineFeed +
+                        .arg(QStringLiteral(MAD_VERSION_EXTRA)) + QChar::LineFeed +
 #endif
 #ifdef WITH_MPG123
                         tr("mpg123, API version: %1")
                         .arg(MPG123_API_VERSION) + QChar::LineFeed +
 #endif
 
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
                         tr("Source code based on mq3 and madplay projects")
                         );
 }

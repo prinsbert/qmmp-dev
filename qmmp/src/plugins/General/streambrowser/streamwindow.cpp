@@ -248,7 +248,7 @@ void StreamWindow::createStream()
         QHash<EditStreamDialog::Key, QString> values = dialog.values();
 
         if(values[EditStreamDialog::NAME].isEmpty())
-            values[EditStreamDialog::NAME] = values[EditStreamDialog::URL].section(QChar('/'), -1);
+            values[EditStreamDialog::NAME] = values[EditStreamDialog::URL].section(QLatin1Char('/'), -1);
 
         m_favoritesModel->appendRow(QList<QStandardItem *> {
                                         new QStandardItem(values[EditStreamDialog::NAME]),
@@ -286,7 +286,7 @@ void StreamWindow::editStream()
         QHash<EditStreamDialog::Key, QString> values = dialog.values();
 
         if(values[EditStreamDialog::NAME].isEmpty())
-            values[EditStreamDialog::NAME] = values[EditStreamDialog::URL].section(QChar('/'), -1);
+            values[EditStreamDialog::NAME] = values[EditStreamDialog::URL].section(QLatin1Char('/'), -1);
 
         m_favoritesModel->item(row, 0)->setData(values[EditStreamDialog::URL]);
         m_favoritesModel->item(row, 0)->setText(values[EditStreamDialog::NAME]);
@@ -389,7 +389,7 @@ void StreamWindow::readXml(QIODevice *input, QStandardItemModel *model)
             if (xml.name() == QLatin1String("entry"))
             {
                 if(server_name == "Unspecified name"_L1 || server_name.isEmpty())
-                    server_name = listen_url.section(QChar('/'), -1);
+                    server_name = listen_url.section(QLatin1Char('/'), -1);
 
                 model->appendRow(QList<QStandardItem *> {
                                      new QStandardItem(server_name),

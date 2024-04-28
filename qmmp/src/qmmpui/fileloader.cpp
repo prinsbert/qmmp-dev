@@ -138,7 +138,7 @@ void FileLoader::insertPlayList(const QString &path, PlayListTrack *before)
                     continue;
                 }
             }
-            else if(!QFile::exists((*it)->path()) || !MetaDataManager::hasMatch(filters, (*it)->path().section(QChar('/'), -1)))
+            else if(!QFile::exists((*it)->path()) || !MetaDataManager::hasMatch(filters, (*it)->path().section(QLatin1Char('/'), -1)))
             {
                 delete (*it);
                 it = tracks.erase(it);

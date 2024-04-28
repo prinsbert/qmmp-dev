@@ -76,15 +76,15 @@ QString Qmmp::cacheDir()
 
 QString Qmmp::strVersion()
 {
-    QString ver = QString("%1.%2.%3")
+    QString ver = QStringLiteral("%1.%2.%3")
             .arg(QMMP_VERSION_MAJOR)
             .arg(QMMP_VERSION_MINOR)
             .arg(QMMP_VERSION_PATCH);
 #if !QMMP_VERSION_STABLE
 #ifdef SVN_REVISION
-    ver += "-svn-" SVN_REVISION;
+    ver += QStringLiteral("-svn-" SVN_REVISION);
 #else
-    ver += "-" DEV_SUFFIX;
+    ver += QStringLiteral("-" DEV_SUFFIX);
 #endif
 #endif
     return ver;
@@ -94,10 +94,10 @@ QString Qmmp::pluginPath()
 {
     QByteArray path = qgetenv("QMMP_PLUGINS");
     if(!path.isEmpty())
-        return path;
+        return QString::fromLocal8Bit(path);
     QString fallbackPath = QStringLiteral("%1/../lib/qmmp-" STR(QMMP_VERSION_MAJOR) "." STR(QMMP_VERSION_MINOR)).arg(qApp->applicationDirPath());
 #ifdef QMMP_PLUGIN_DIR
-    QDir dir(QMMP_PLUGIN_DIR);
+    QDir dir(QStringLiteral(QMMP_PLUGIN_DIR));
 #elif defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
     QDir dir(qApp->applicationDirPath() + "/plugins");
 #else
@@ -135,7 +135,7 @@ QString Qmmp::systemLanguageID()
     if (v.isEmpty())
         v = qgetenv ("LANG");
     if (!v.isEmpty())
-        return QLocale (v).name();
+        return QLocale(QString::fromLatin1(v)).name();
 #endif
     return  QLocale::system().name();
 }

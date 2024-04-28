@@ -37,12 +37,12 @@ FFmpegMetaDataModel::FFmpegMetaDataModel(const QString &path, bool readOnly) : M
     if(path.startsWith(u"ffmpeg://"_s))
     {
         m_path.remove(u"ffmpeg://"_s);
-        m_path.remove(QRegularExpression("#\\d+$"));
+        m_path.remove(QRegularExpression(u"#\\d+$"_s));
     }
     else if(path.startsWith(u"m4b://"_s))
     {
-        m_path.remove("m4b://");
-        m_path.remove(QRegularExpression("#\\d+$"));
+        m_path.remove(u"m4b://"_s);
+        m_path.remove(QRegularExpression(u"#\\d+$"_s));
     }
 
 #ifdef Q_OS_WIN

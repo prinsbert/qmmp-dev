@@ -106,12 +106,12 @@ static size_t curl_header(void *data, size_t size, size_t nmemb,
         dl->stream()->header.insert(key, value);
         qDebug("HttpStreamReader: key=%s, value=%s",qPrintable(key), value.constData());
 
-        if (key == "icy-metaint")
+        if (key == "icy-metaint"_L1)
         {
             dl->stream()->icy_metaint = value.toInt();
             dl->stream()->icy_meta_data = true;
         }
-        else if(key == "icy-name")
+        else if(key == "icy-name"_L1)
         {
             dl->stream()->icy_meta_data = true;
         }
@@ -143,12 +143,12 @@ HttpStreamReader::HttpStreamReader(const QString &url, HTTPInputSource *parent) 
     m_thread = new DownloadThread(this);
     QSettings settings;
     settings.beginGroup("HTTP");
-    m_codec = new QmmpTextCodec(settings.value("icy_encoding","UTF-8").toByteArray ());
+    m_codec = new QmmpTextCodec(settings.value("icy_encoding", u"UTF-8"_s).toByteArray ());
     m_prebuffer_size = settings.value("buffer_size",384).toInt() * 1000;
-    if(settings.value("override_user_agent",false).toBool())
+    if(settings.value(u"override_user_agent"_s, false).toBool())
         m_userAgent = settings.value("user_agent").toString();
     if(m_userAgent.isEmpty())
-        m_userAgent = QString("qmmp/%1").arg(Qmmp::strVersion());;
+        m_userAgent = QStringLiteral("qmmp/%1").arg(Qmmp::strVersion());;
 #ifdef WITH_ENCA
     if(settings.value("use_enca", false).toBool())
         m_analyser = enca_analyser_alloc(settings.value("enca_lang").toByteArray ().constData());
@@ -273,8 +273,8 @@ QMutex *HttpStreamReader::mutex()
 
 QString HttpStreamReader::contentType()
 {
-    if (m_stream.header.contains("content-type"))
-        return m_stream.header.value("content-type").toLower();
+    if (m_stream.header.contains(u"content-type"_s))
+        return QString::fromLatin1(m_stream.header.value(u"content-type"_s)).toLower();
     return QString();
 }
 
@@ -314,9 +314,9 @@ void HttpStreamReader::run()
     if (QmmpSettings::instance()->isProxyEnabled())
     {
         curl_easy_setopt(m_handle, CURLOPT_PROXY,
-                         strdup((QmmpSettings::instance()->proxy().host() + ":" +
-                                 QString("%1").arg(QmmpSettings::instance()->proxy().port())).
-                                toLatin1 ().constData ()));
+                         strdup((QmmpSettings::instance()->proxy().host() + QLatin1Char(':') +
+                                 QString::number(QmmpSettings::instance()->proxy().port())).
+                                toLatin1().constData ()));
 
         if(QmmpSettings::instance()->proxyType() == QmmpSettings::SOCKS5_PROXY)
             curl_easy_setopt(m_handle, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);
@@ -328,7 +328,7 @@ void HttpStreamReader::run()
 
     if (QmmpSettings::instance()->useProxyAuth())
         curl_easy_setopt(m_handle, CURLOPT_PROXYUSERPWD,
-                         strdup((QmmpSettings::instance()->proxy().userName() + ":" +
+                         strdup((QmmpSettings::instance()->proxy().userName() + QLatin1Char(':') +
                                  QmmpSettings::instance()->proxy().password()).
                                 toLatin1 ().constData ()));
 
@@ -422,10 +422,10 @@ void HttpStreamReader::checkBuffer()
             QMap<Qmmp::MetaData, QString> metaData;
             if(stream()->icy_meta_data)
             {
-                metaData.insert(Qmmp::TITLE, m_stream.header.value("icy-name"));
-                metaData.insert(Qmmp::GENRE, m_stream.header.value("icy-genre"));
+                metaData.insert(Qmmp::TITLE, QString::fromUtf8(m_stream.header.value(u"icy-name"_s)));
+                metaData.insert(Qmmp::GENRE, QString::fromUtf8(m_stream.header.value(u"icy-genre"_s)));
                 m_parent->addMetaData(metaData);
-                m_parent->setProperty(Qmmp::BITRATE, m_stream.header.value("icy-br"));
+                m_parent->setProperty(Qmmp::BITRATE, m_stream.header.value(u"icy-br"_s));
             }
             sendStreamInfo(m_codec);
         }
@@ -486,17 +486,17 @@ void HttpStreamReader::parseICYMetaData(char *data, qint64 size)
     }
 #endif
     QString str = m_codec->toUnicode(data).trimmed();
-    const QStringList list(str.split(";", Qt::SkipEmptyParts));
+    const QStringList list(str.split(QLatin1Char(';'), Qt::SkipEmptyParts));
     for(QString line : qAsConst(list))
     {
-        if (line.contains("StreamTitle="))
+        if (line.contains(u"StreamTitle="_s))
         {
-            line = line.right(line.size() - line.indexOf("=") - 1).trimmed();
-            m_title = line.remove("'");
+            line = line.right(line.size() - line.indexOf(QLatin1Char('=')) - 1).trimmed();
+            m_title = line.remove(QLatin1Char('\''));
             QMap<Qmmp::MetaData, QString> metaData;
             if (!m_title.isEmpty())
             {
-                QStringList l = m_title.split(" - ");
+                QStringList l = m_title.split(u" - "_s);
                 if(l.count() > 1)
                 {
                     metaData.insert(Qmmp::ARTIST, l.at(0));
@@ -506,8 +506,8 @@ void HttpStreamReader::parseICYMetaData(char *data, qint64 size)
                     metaData.insert(Qmmp::TITLE, m_title);
             }
             else
-                metaData.insert(Qmmp::TITLE, m_codec->toUnicode(m_stream.header.value("icy-name")));
-            metaData.insert(Qmmp::GENRE, m_codec->toUnicode(m_stream.header.value("icy-genre")));
+                metaData.insert(Qmmp::TITLE, m_codec->toUnicode(m_stream.header.value(u"icy-name"_s)));
+            metaData.insert(Qmmp::GENRE, m_codec->toUnicode(m_stream.header.value(u"icy-genre"_s)));
             m_parent->addMetaData(metaData);
             sendStreamInfo(m_codec);
             m_meta_sent = true;

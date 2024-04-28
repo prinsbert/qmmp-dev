@@ -140,7 +140,7 @@ void MMSStreamReader::run()
     if(!m_handle)
     {
         qWarning("MMSStreamReader: connection failed");
-        setErrorString("connection failed");
+        setErrorString(u"connection failed"_s);
         emit error();
         QIODevice::close();
         return;
@@ -169,7 +169,7 @@ void MMSStreamReader::run()
                 if(tmp)
                     free(tmp);
                 m_mutex.unlock();
-                setErrorString(QString("unable to allocate %1 bytes").arg(m_buffer_size));
+                setErrorString(QStringLiteral("unable to allocate %1 bytes").arg(m_buffer_size));
                 emit error();
                 m_buffer_size = 0;
                 m_buffer_at = 0;
@@ -185,7 +185,7 @@ void MMSStreamReader::run()
             qWarning("MMSStreamReader: mms thread funished with code %lld (%s)", len, strerror(len));
             if(!m_aborted && !m_ready)
             {
-                setErrorString(strerror(len));
+                setErrorString(QString::fromLocal8Bit(strerror(len)));
                 emit error();
             }
             break;

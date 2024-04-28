@@ -426,7 +426,7 @@ void QSUiListWidgetDrawer::drawTrack(QPainter *painter, QSUiListWidgetRow *row, 
             if(row->numberColumnWidth)
             {
                 sx -= row->numberColumnWidth;
-                QString number = QString("%1").arg(row->number);
+                QString number = QString::number(row->number);
                 painter->drawText(sx + m_padding, sy, number);
                 if(m_show_splitters)
                 {
@@ -505,7 +505,7 @@ void QSUiListWidgetDrawer::drawTrack(QPainter *painter, QSUiListWidgetRow *row, 
             if(row->numberColumnWidth)
             {
                 sx += row->numberColumnWidth;
-                QString number = QString("%1").arg(row->number);
+                QString number = QString::number(row->number);
                 painter->drawText(sx - m_padding - metrics->horizontalAdvance(number), sy, number);
                 if(m_show_splitters)
                 {

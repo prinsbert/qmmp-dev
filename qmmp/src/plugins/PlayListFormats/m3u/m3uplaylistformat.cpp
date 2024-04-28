@@ -68,7 +68,7 @@ QList<PlayListTrack *> M3UPlaylistFormat::decode(const QByteArray &contents)
             hasExtInf = true;
         }
 
-        if(str.startsWith(QChar('#')))
+        if(str.startsWith(QLatin1Char('#')))
             continue;
 
         out << new PlayListTrack();
@@ -93,14 +93,14 @@ QByteArray M3UPlaylistFormat::encode(const QList<PlayListTrack*> &contents, cons
 
     for(const PlayListTrack *f : qAsConst(contents))
     {
-        QString info = u"#EXTINF:"_s + QString::number(f->duration() / 1000) + QChar(',') + formatter.format(f);
+        QString info = u"#EXTINF:"_s + QString::number(f->duration() / 1000) + QLatin1Char(',') + formatter.format(f);
         out.append(info);
 
         if(!f->path().contains(u"://"_s) && f->path().startsWith(m3uDir))
         {
             QString p = f->path();
             p.remove(0, m3uDir.size());
-            if(p.startsWith(QChar('/')))
+            if(p.startsWith(QLatin1Char('/')))
                 p.remove(0, 1);
             out.append(p);
         }

@@ -49,7 +49,7 @@ void EffectFileWriterFactory::showSettings(QWidget *parent)
 void EffectFileWriterFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About File Writer Plugin"),
-                       tr("Qmmp File Writer Plugin")+"\n"+
+                       tr("Qmmp File Writer Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

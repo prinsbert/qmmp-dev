@@ -229,8 +229,8 @@ QVariant TrackListModel::data(const QModelIndex &index, int role) const
 
         if(title.isEmpty()) //using file name if title is empty
         {
-            title = track->path().section(QChar('/'),-1);
-            title = title.left(title.lastIndexOf(QChar('.')));
+            title = track->path().section(QLatin1Char('/'),-1);
+            title = title.left(title.lastIndexOf(QLatin1Char('.')));
         }
         if(!artist.isEmpty())
             title.prepend(artist + QStringLiteral(" - "));

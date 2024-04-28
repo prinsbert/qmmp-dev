@@ -89,7 +89,7 @@ QmmpUiPluginCache::QmmpUiPluginCache(const QString &file, QSettings *settings)
             values << info.lastModified().toString(Qt::ISODate);
             settings->setValue(m_path, values);
             qDebug("QmmpUiPluginCache: added cache item \"%s=%s\"",
-                   qPrintable(info.fileName()), qPrintable(values.join(QChar(','))));
+                   qPrintable(info.fileName()), qPrintable(values.join(QLatin1Char(','))));
         }
     }
     settings->endGroup();
@@ -215,7 +215,7 @@ void QmmpUiPluginCache::cleanup(QSettings *settings)
 #ifdef Q_OS_WIN
         if(!QFile::exists(key))
 #else
-        if(!QFile::exists(QChar('/') + key))
+        if(!QFile::exists(QLatin1Char('/') + key))
 #endif
         {
             settings->remove(key);

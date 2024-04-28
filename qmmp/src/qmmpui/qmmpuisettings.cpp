@@ -367,7 +367,7 @@ const QStringList &QmmpUiSettings::restrictFilters() const
 
 void QmmpUiSettings::setRestrictFilters(const QString &filters)
 {
-    m_restrict_filters = filters.trimmed().split(QChar(','), Qt::SkipEmptyParts);
+    m_restrict_filters = filters.trimmed().split(QLatin1Char(','), Qt::SkipEmptyParts);
     saveSettings();
 }
 
@@ -378,7 +378,7 @@ const QStringList &QmmpUiSettings::excludeFilters() const
 
 void QmmpUiSettings::setExcludeFilters(const QString &filters)
 {
-    m_exclude_filters = filters.trimmed().split(QChar(','), Qt::SkipEmptyParts);
+    m_exclude_filters = filters.trimmed().split(QLatin1Char(','), Qt::SkipEmptyParts);
     saveSettings();
 }
 
