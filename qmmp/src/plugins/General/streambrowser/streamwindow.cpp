@@ -48,14 +48,11 @@ StreamWindow::StreamWindow(QWidget *parent)
     setAttribute(Qt::WA_QuitOnClose, false);
     m_requestReply = nullptr;
     //buttons
-    m_ui->addPushButton->setIcon(QIcon::fromTheme("list-add"));
-    m_ui->updatePushButton->setIcon(QIcon::fromTheme("view-refresh"));
+    m_ui->addPushButton->setIcon(QIcon::fromTheme(u"list-add"_s));
+    m_ui->updatePushButton->setIcon(QIcon::fromTheme(u"view-refresh"_s));
     //icecast model
     m_iceCastModel = new QStandardItemModel(this);
-    m_iceCastModel->setHorizontalHeaderLabels(QStringList() << tr("Name")
-                                       << tr("Genre")
-                                       << tr("Bitrate")
-                                       << tr("Format"));
+    m_iceCastModel->setHorizontalHeaderLabels({ tr("Name"), tr("Genre"), tr("Bitrate"), tr("Format") });
     m_iceCastFilterModel = new StreamsProxyModel(this);
     m_iceCastFilterModel->setSourceModel(m_iceCastModel);
     m_iceCastFilterModel->setDynamicSortFilter(true);
@@ -66,14 +63,10 @@ StreamWindow::StreamWindow(QWidget *parent)
     m_ui->icecastTableView->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     m_ui->icecastTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_ui->icecastTableView->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(m_ui->icecastTableView, SIGNAL(customContextMenuRequested(QPoint)),
-            SLOT(execIceCastMenu(QPoint)));
+    connect(m_ui->icecastTableView, &QTableView::customContextMenuRequested, this, &StreamWindow::execIceCastMenu);
     //favorites model
     m_favoritesModel = new QStandardItemModel(this);
-    m_favoritesModel->setHorizontalHeaderLabels(QStringList() << tr("Name")
-                                                     << tr("Genre")
-                                                     << tr("Bitrate")
-                                                     << tr("Format"));
+    m_favoritesModel->setHorizontalHeaderLabels({ tr("Name"), tr("Genre"), tr("Bitrate"), tr("Format") });
     m_favoritesFilterModel = new StreamsProxyModel(this);
     m_favoritesFilterModel->setSourceModel(m_favoritesModel);
     m_favoritesFilterModel->setDynamicSortFilter(true);
@@ -84,8 +77,7 @@ StreamWindow::StreamWindow(QWidget *parent)
     m_ui->favoritesTableView->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     m_ui->favoritesTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     m_ui->favoritesTableView->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(m_ui->favoritesTableView, SIGNAL(customContextMenuRequested(QPoint)),
-            SLOT(execFavoritesMenu(QPoint)));
+    connect(m_ui->favoritesTableView, &QTableView::customContextMenuRequested, this, &StreamWindow::execFavoritesMenu);
 
     m_ui->statusLabel->hide();
 
@@ -104,50 +96,52 @@ StreamWindow::StreamWindow(QWidget *parent)
         }
         m_http->setProxy(proxy);
     }
-    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(showText(QNetworkReply*)));
+    connect(m_http, &QNetworkAccessManager::finished, this, &StreamWindow::showText);
     //read settings
     QSettings settings;
-    settings.beginGroup("StreamBrowser");
-    restoreGeometry(settings.value("geometry").toByteArray());
-    m_ui->icecastTableView->horizontalHeader()->restoreState(settings.value("icecast_headers").toByteArray());
-    m_ui->favoritesTableView->horizontalHeader()->restoreState(settings.value("favorites_headers").toByteArray());
-    m_ui->tabWidget->setCurrentIndex(settings.value("current_tab", 1).toInt());
+    settings.beginGroup(u"StreamBrowser"_s);
+    restoreGeometry(settings.value(u"geometry"_s).toByteArray());
+    m_ui->icecastTableView->horizontalHeader()->restoreState(settings.value(u"icecast_headers"_s).toByteArray());
+    m_ui->favoritesTableView->horizontalHeader()->restoreState(settings.value(u"favorites_headers"_s).toByteArray());
+    m_ui->tabWidget->setCurrentIndex(settings.value(u"current_tab"_s, 1).toInt());
     settings.endGroup();
     //create cache dir
     QDir dir(Qmmp::configDir());
-    if(!dir.exists("streambrowser"))
-        dir.mkdir("streambrowser");
+    if(!dir.exists(u"streambrowser"_s))
+        dir.mkdir(u"streambrowser"_s);
     //create initial config
     createInitialConfig();
     //read cache
-    QFile file(Qmmp::configDir() + "/streambrowser/icecast.xml");
+    QFile file(Qmmp::configDir() + u"/streambrowser/icecast.xml"_s);
     if(file.open(QIODevice::ReadOnly))
         readXml(&file, m_iceCastModel);
     else
         on_updatePushButton_clicked();
-    QFile file2(Qmmp::configDir() + "/streambrowser/favorites.xml");
+    QFile file2(Qmmp::configDir() + u"/streambrowser/favorites.xml"_s);
     if(file2.open(QIODevice::ReadOnly))
         readXml(&file2, m_favoritesModel);
     //create menus
     m_iceCastMenu = new QMenu(this);
-    m_addToFavoritesAction = m_iceCastMenu->addAction(QIcon::fromTheme("user-bookmarks"), tr("&Add to favorites"),
-                                                      this, SLOT(addToFavorites()));
-    m_addAction = m_iceCastMenu->addAction(QIcon::fromTheme("list-add"),
-                                           tr("&Add to playlist"), this, SLOT(on_addPushButton_clicked()));
+    m_addToFavoritesAction = m_iceCastMenu->addAction(QIcon::fromTheme(u"user-bookmarks"_s), tr("&Add to favorites"),
+                                                      this, &StreamWindow::addToFavorites);
+    m_addAction = m_iceCastMenu->addAction(QIcon::fromTheme(u"list-add"_s),
+                                           tr("&Add to playlist"), this, &StreamWindow::on_addPushButton_clicked);
     m_favoritesMenu = new QMenu(this);
     m_favoritesMenu->addAction(m_addAction);
-    m_favoritesMenu->addAction(QIcon::fromTheme("document-new"), tr("&Create"),
+    m_favoritesMenu->addAction(QIcon::fromTheme(u"document-new"_s), tr("&Create"),
                                this, SLOT(createStream()));
-    m_editAction = m_favoritesMenu->addAction(QIcon::fromTheme("document-properties"), tr("&Edit"),
-                                              this, SLOT(editStream()));
+    m_editAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"document-properties"_s), tr("&Edit"),
+                                              this, &StreamWindow::editStream);
     m_favoritesMenu->addSeparator();
-    m_removeAction = m_favoritesMenu->addAction(QIcon::fromTheme("edit-delete"), tr("&Remove"),
-                                                this, SLOT(removeFromFavorites()), QKeySequence::Delete);
+    m_removeAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"edit-delete"_s), tr("&Remove"),
+                                                this, &StreamWindow::removeFromFavorites, QKeySequence::Delete);
     addActions(m_favoritesMenu->actions());
 }
 
 StreamWindow::~StreamWindow()
-{}
+{
+    delete m_ui;
+}
 
 void StreamWindow::showText(QNetworkReply *reply)
 {
@@ -171,8 +165,8 @@ void StreamWindow::showText(QNetworkReply *reply)
 void StreamWindow::on_updatePushButton_clicked()
 {
     QNetworkRequest request;
-    request.setUrl(QUrl("http://dir.xiph.org/yp.xml"));
-    request.setRawHeader("User-Agent", QString("qmmp/%1").arg(Qmmp::strVersion()).toLatin1());
+    request.setUrl(QUrl(u"http://dir.xiph.org/yp.xml"_s));
+    request.setRawHeader("User-Agent", QStringLiteral("qmmp/%1").arg(Qmmp::strVersion()).toLatin1());
     m_requestReply = m_http->get(request);
     m_ui->statusLabel->setText(tr("Receiving"));
     m_ui->statusLabel->show();
@@ -238,11 +232,11 @@ void StreamWindow::addToFavorites()
     {
         QModelIndex source_index = m_iceCastFilterModel->mapToSource(index);
         int row = source_index.row();
-        m_favoritesModel->appendRow(QList<QStandardItem *> ()
-                                    << m_iceCastModel->item(row, 0)->clone()
-                                    << m_iceCastModel->item(row, 1)->clone()
-                                    << m_iceCastModel->item(row, 2)->clone()
-                                    << m_iceCastModel->item(row, 3)->clone());
+        m_favoritesModel->appendRow(QList<QStandardItem *> {
+                                        m_iceCastModel->item(row, 0)->clone(),
+                                        m_iceCastModel->item(row, 1)->clone(),
+                                        m_iceCastModel->item(row, 2)->clone(),
+                                        m_iceCastModel->item(row, 3)->clone() });
     }
 }
 
@@ -251,19 +245,19 @@ void StreamWindow::createStream()
     EditStreamDialog dialog(this);
     if(dialog.exec() == QDialog::Accepted)
     {
-         QMap<EditStreamDialog::Key, QString> values = dialog.values();
+        QHash<EditStreamDialog::Key, QString> values = dialog.values();
 
         if(values[EditStreamDialog::NAME].isEmpty())
-            values[EditStreamDialog::NAME] = values[EditStreamDialog::URL].section("/", -1);
+            values[EditStreamDialog::NAME] = values[EditStreamDialog::URL].section(QChar('/'), -1);
 
-        m_favoritesModel->appendRow(QList<QStandardItem *> ()
-                                  << new QStandardItem(values[EditStreamDialog::NAME])
-                                  << new QStandardItem(values[EditStreamDialog::GENRE])
-                                  << new QStandardItem(values[EditStreamDialog::BITRATE])
-                                  << new QStandardItem(values[EditStreamDialog::TYPE]));
+        m_favoritesModel->appendRow(QList<QStandardItem *> {
+                                        new QStandardItem(values[EditStreamDialog::NAME]),
+                                        new QStandardItem(values[EditStreamDialog::GENRE]),
+                                        new QStandardItem(values[EditStreamDialog::BITRATE]),
+                                        new QStandardItem(values[EditStreamDialog::TYPE]) });
 
         QStandardItem *item = m_favoritesModel->item(m_favoritesModel->rowCount()-1, 0);
-        item->setToolTip(values[EditStreamDialog::NAME] + "\n" + values[EditStreamDialog::URL]);
+        item->setToolTip(values[EditStreamDialog::NAME] + QChar::LineFeed + values[EditStreamDialog::URL]);
         item->setData(values[EditStreamDialog::URL]);
     }
 }
@@ -278,7 +272,7 @@ void StreamWindow::editStream()
 
     EditStreamDialog dialog(this);
     dialog.setWindowTitle(tr("Edit Stream"));
-    QMap<EditStreamDialog::Key, QString> initialValues = {
+    QHash<EditStreamDialog::Key, QString> initialValues = {
         { EditStreamDialog::URL, m_favoritesModel->item(row, 0)->data().toString() },
         { EditStreamDialog::NAME, m_favoritesModel->item(row, 0)->text() },
         { EditStreamDialog::GENRE, m_favoritesModel->item(row, 1)->text() },
@@ -289,17 +283,17 @@ void StreamWindow::editStream()
 
     if(dialog.exec() == QDialog::Accepted)
     {
-        QMap<EditStreamDialog::Key, QString> values = dialog.values();
+        QHash<EditStreamDialog::Key, QString> values = dialog.values();
 
         if(values[EditStreamDialog::NAME].isEmpty())
-            values[EditStreamDialog::NAME] = values[EditStreamDialog::URL].section("/", -1);
+            values[EditStreamDialog::NAME] = values[EditStreamDialog::URL].section(QChar('/'), -1);
 
         m_favoritesModel->item(row, 0)->setData(values[EditStreamDialog::URL]);
         m_favoritesModel->item(row, 0)->setText(values[EditStreamDialog::NAME]);
         m_favoritesModel->item(row, 1)->setText(values[EditStreamDialog::GENRE]);
         m_favoritesModel->item(row, 2)->setText(values[EditStreamDialog::BITRATE]);
         m_favoritesModel->item(row, 3)->setText(values[EditStreamDialog::TYPE]);
-        m_favoritesModel->item(row, 0)->setToolTip(values[EditStreamDialog::NAME] + "\n" + values[EditStreamDialog::URL]);
+        m_favoritesModel->item(row, 0)->setToolTip(values[EditStreamDialog::NAME] + QChar::LineFeed + values[EditStreamDialog::URL]);
     }
 }
 
@@ -329,20 +323,20 @@ void StreamWindow::removeFromFavorites()
 void StreamWindow::closeEvent(QCloseEvent *)
 {
     QSettings settings;
-    settings.beginGroup("StreamBrowser");
-    settings.setValue("geometry", saveGeometry());
-    settings.setValue("icecast_headers", m_ui->icecastTableView->horizontalHeader()->saveState());
-    settings.setValue("favorites_headers", m_ui->favoritesTableView->horizontalHeader()->saveState());
-    settings.setValue("current_tab", m_ui->tabWidget->currentIndex());
+    settings.beginGroup(u"StreamBrowser"_s);
+    settings.setValue(u"geometry"_s, saveGeometry());
+    settings.setValue(u"icecast_headers"_s, m_ui->icecastTableView->horizontalHeader()->saveState());
+    settings.setValue(u"favorites_headers"_s, m_ui->favoritesTableView->horizontalHeader()->saveState());
+    settings.setValue(u"current_tab"_s, m_ui->tabWidget->currentIndex());
     settings.endGroup();
 
      //save icecast directory
-    QFile file(Qmmp::configDir() + "/streambrowser/icecast.xml");
+    QFile file(Qmmp::configDir() + u"/streambrowser/icecast.xml"_s);
     file.open(QIODevice::WriteOnly);
     QXmlStreamWriter writer(&file);
     writer.setAutoFormatting(true);
     writer.writeStartDocument();
-    writer.writeStartElement("directory");
+    writer.writeStartElement(u"directory"_s);
     for(int i = 0; i < m_iceCastModel->rowCount(); ++i)
     {
         writer.writeStartElement("entry");
@@ -357,7 +351,7 @@ void StreamWindow::closeEvent(QCloseEvent *)
     writer.writeEndDocument();
     file.close();
     //save favorites
-    QFile file2(Qmmp::configDir() + "/streambrowser/favorites.xml");
+    QFile file2(Qmmp::configDir() + u"/streambrowser/favorites.xml"_s);
     file2.open(QIODevice::WriteOnly);
     QXmlStreamWriter writer2(&file2);
     writer2.setAutoFormatting(true);
@@ -366,11 +360,11 @@ void StreamWindow::closeEvent(QCloseEvent *)
     for(int i = 0; i < m_favoritesModel->rowCount(); ++i)
     {
         writer2.writeStartElement("entry");
-        writer2.writeTextElement("server_name", m_favoritesModel->item(i,0)->text());
-        writer2.writeTextElement("listen_url", m_favoritesModel->item(i,0)->data().toString());
-        writer2.writeTextElement("genre", m_favoritesModel->item(i,1)->text());
-        writer2.writeTextElement("bitrate", m_favoritesModel->item(i,2)->text());
-        writer2.writeTextElement("server_type", m_favoritesModel->item(i,3)->text());
+        writer2.writeTextElement("server_name", m_favoritesModel->item(i, 0)->text());
+        writer2.writeTextElement("listen_url", m_favoritesModel->item(i, 0)->data().toString());
+        writer2.writeTextElement("genre", m_favoritesModel->item(i, 1)->text());
+        writer2.writeTextElement("bitrate", m_favoritesModel->item(i, 2)->text());
+        writer2.writeTextElement("server_type", m_favoritesModel->item(i, 3)->text());
         writer2.writeEndElement();
     }
     writer2.writeEndElement();
@@ -394,17 +388,17 @@ void StreamWindow::readXml(QIODevice *input, QStandardItemModel *model)
         {
             if (xml.name() == QLatin1String("entry"))
             {
-                if(server_name == "Unspecified name" || server_name.isEmpty())
-                    server_name = listen_url.section("/", -1);
+                if(server_name == "Unspecified name"_L1 || server_name.isEmpty())
+                    server_name = listen_url.section(QChar('/'), -1);
 
-                model->appendRow(QList<QStandardItem *> ()
-                                          << new QStandardItem(server_name)
-                                          << new QStandardItem(genre)
-                                          << new QStandardItem(bitrate)
-                                          << new QStandardItem(server_type));
+                model->appendRow(QList<QStandardItem *> {
+                                     new QStandardItem(server_name),
+                                     new QStandardItem(genre),
+                                     new QStandardItem(bitrate),
+                                     new QStandardItem(server_type) });
 
                 QStandardItem *item = model->item(model->rowCount()-1, 0);
-                item->setToolTip(server_name + "\n" + listen_url);
+                item->setToolTip(server_name + QChar::LineFeed + listen_url);
                 item->setData(listen_url);
 
                 server_name.clear();
@@ -416,15 +410,15 @@ void StreamWindow::readXml(QIODevice *input, QStandardItemModel *model)
         }
         else if (xml.isCharacters() && !xml.isWhitespace())
         {
-            if (currentTag == "server_name")
+            if (currentTag == "server_name"_L1)
                 server_name += xml.text().toString();
-            else if (currentTag == "listen_url")
+            else if (currentTag == "listen_url"_L1)
                 listen_url += xml.text().toString();
-            else if (currentTag == "genre")
+            else if (currentTag == "genre"_L1)
                 genre += xml.text().toString();
-            else if (currentTag == "bitrate")
+            else if (currentTag == "bitrate"_L1)
                 bitrate += xml.text().toString();
-            else if(currentTag == "server_type")
+            else if(currentTag == "server_type"_L1)
                 server_type += xml.text().toString();
         }
     }
@@ -441,8 +435,8 @@ void StreamWindow::readXml(QIODevice *input, QStandardItemModel *model)
 
 void StreamWindow::createInitialConfig()
 {
-    QString config = Qmmp::configDir() + "/streambrowser/favorites.xml";
-    QString defaultConfig = Qmmp::dataPath() + "/favorites.xml.default";
+    QString config = Qmmp::configDir() + u"/streambrowser/favorites.xml"_s;
+    QString defaultConfig = Qmmp::dataPath() + u"/favorites.xml.default"_s;
 
     if(!QFile::exists(config) && QFile::exists(defaultConfig))
     {

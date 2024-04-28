@@ -34,20 +34,20 @@ TrackChange::TrackChange(QObject *parent) : QObject(parent)
 {
     m_core = SoundCore::instance();
     m_plManager = PlayListManager::instance();
-    connect(m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(onStateChanged(Qmmp::State)));
-    connect(m_core, SIGNAL(trackInfoChanged()), SLOT(onTrackInfoChanged()));
-    connect(m_core, SIGNAL(finished()), SLOT(onFinised()));
+    connect(m_core, &SoundCore::stateChanged, this, &TrackChange::onStateChanged);
+    connect(m_core, &SoundCore::trackInfoChanged, this, &TrackChange::onTrackInfoChanged);
+    connect(m_core, &SoundCore::finished, this, &TrackChange::onFinised);
     QSettings settings;
-    settings.beginGroup("TrackChange");
-    m_newTrackCommand = settings.value("new_track_command").toString();
-    m_endOfTrackCommand = settings.value("end_of_track_command").toString();
-    m_endOfPlCommand = settings.value("end_of_pl_command").toString();
-    m_titleChangeCommand = settings.value("title_change_command").toString();
-    m_appStartupCommand = settings.value("application_startup_command").toString();
-    m_appExitCommand = settings.value("application_exit_command").toString();
+    settings.beginGroup(u"TrackChange"_s);
+    m_newTrackCommand = settings.value(u"new_track_command"_s).toString();
+    m_endOfTrackCommand = settings.value(u"end_of_track_command"_s).toString();
+    m_endOfPlCommand = settings.value(u"end_of_pl_command"_s).toString();
+    m_titleChangeCommand = settings.value(u"title_change_command"_s).toString();
+    m_appStartupCommand = settings.value(u"application_startup_command"_s).toString();
+    m_appExitCommand = settings.value(u"application_exit_command"_s).toString();
     settings.endGroup();
 
-    connect(qApp, SIGNAL(aboutToQuit()), SLOT(onAppExit()));
+    connect(qApp, &QCoreApplication::aboutToQuit, this, &TrackChange::onAppExit);
     onAppStartup();
 }
 
@@ -109,10 +109,10 @@ void TrackChange::onAppStartup()
     if(QApplication::allWindows().count() == 1 && !m_appStartupCommand.isEmpty()) //detect startup
     {
 #ifdef Q_OS_WIN
-        QProcess::startDetached(QString("cmd.exe /C %1").arg(m_appStartupCommand));
+        QProcess::startDetached(QStringLiteral("cmd.exe /C %1").arg(m_appStartupCommand));
 #else
-        QStringList args = { "-c", m_appStartupCommand };
-        QProcess::startDetached("sh", args);
+        QStringList args = { u"-c"_s, m_appStartupCommand };
+        QProcess::startDetached(u"sh"_s, args);
 #endif
     }
 }
@@ -124,8 +124,8 @@ void TrackChange::onAppExit()
 #ifdef Q_OS_WIN
         QProcess::startDetached(QString("cmd.exe /C %1").arg(m_appExitCommand));
 #else
-        QStringList args = { "-c", m_appExitCommand };
-        QProcess::startDetached("sh", args);
+        QStringList args = { u"-c"_s, m_appExitCommand };
+        QProcess::startDetached(u"sh"_s, args);
 #endif
     }
 }
@@ -138,9 +138,9 @@ bool TrackChange::executeCommand(const TrackInfo &info, const QString &format)
     while(it != metaData.end())
     {
 #ifdef Q_OS_WIN
-        it.value() = it.value().replace("'", "^'");
+        it.value() = it.value().replace(u"'"_s, u"^'"_s);
 #else
-        it.value() = it.value().replace("'", "'\\''");
+        it.value() = it.value().replace(u"'"_s, u"'\\''"_s);
 #endif
         ++it;
     }
@@ -148,10 +148,10 @@ bool TrackChange::executeCommand(const TrackInfo &info, const QString &format)
     MetaDataFormatter formatter(format);
     QString command = formatter.format(tmp);
 #ifdef Q_OS_WIN
-    bool ok = QProcess::startDetached(QString("cmd.exe /C %1").arg(command));
+    bool ok = QProcess::startDetached(QStringLiteral("cmd.exe /C %1").arg(command));
 #else
-    QStringList args = { "-c", command };
-    bool ok = QProcess::startDetached("sh", args);
+    QStringList args = { u"-c"_s, command };
+    bool ok = QProcess::startDetached(u"sh"_s, args);
 #endif
     if(!ok)
         qWarning("TrackChange: unable to start command '%s'", qPrintable(command));

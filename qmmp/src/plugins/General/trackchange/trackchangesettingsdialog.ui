@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SettingsDialog</class>
- <widget class="QDialog" name="SettingsDialog">
+ <class>TrackChangeSettingsDialog</class>
+ <widget class="QDialog" name="TrackChangeSettingsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>484</width>
-    <height>382</height>
+    <height>395</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -125,7 +125,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>TrackChangeSettingsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -141,7 +141,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>TrackChangeSettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

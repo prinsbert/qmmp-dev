@@ -12,8 +12,8 @@ SET(libudisks_SRCS
     udisksmanager.cpp
     udisksplugin.cpp
     udisksdevice.cpp
-    settingsdialog.cpp
-    settingsdialog.ui
+    udiskssettingsdialog.cpp
+    udiskssettingsdialog.ui
     translations/translations.qrc
 )
 

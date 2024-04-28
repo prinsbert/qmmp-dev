@@ -21,10 +21,10 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
-#define SCROBBLER_LASTFM_URL "http://ws.audioscrobbler.com/2.0/"
-#define SCROBBLER_LIBREFM_URL "https://libre.fm/2.0/"
+#define SCROBBLER_LASTFM_URL u"http://ws.audioscrobbler.com/2.0/"_s
+#define SCROBBLER_LIBREFM_URL u"https://libre.fm/2.0/"_s
 
-#define LASTFM_AUTH_URL "http://www.last.fm/api/auth/"
-#define LIBREFM_AUTH_URL "https://libre.fm/api/auth/"
+#define LASTFM_AUTH_URL u"http://www.last.fm/api/auth/"_s
+#define LIBREFM_AUTH_URL u"https://libre.fm/api/auth/"_s
 
 #endif // DEFINES_H

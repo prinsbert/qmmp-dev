@@ -36,8 +36,7 @@ class StreamBrowser : public QObject
 Q_OBJECT
 public:
     StreamBrowser(QObject *parent = nullptr);
-
-    ~StreamBrowser();
+    ~StreamBrowser() = default;
 
 private slots:
     void showStreamWindow();

@@ -22,14 +22,14 @@
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
 #include "scrobblerhandler.h"
-#include "settingsdialog.h"
+#include "scrobblersettingsdialog.h"
 #include "scrobblerfactory.h"
 
 GeneralProperties ScrobblerFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Scrobbler Plugin");
-    properties.shortName = "scrobbler";
+    properties.shortName = "scrobbler"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -43,14 +43,14 @@ QObject *ScrobblerFactory::create(QObject *parent)
 
 QDialog *ScrobblerFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new ScrobblerSettingsDialog(parent);
 }
 
 void ScrobblerFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Scrobbler Plugin"),
-                        tr("Qmmp AudioScrobbler Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Scrobbler Plugin"),
+                       tr("Qmmp AudioScrobbler Plugin")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString ScrobblerFactory::translation() const

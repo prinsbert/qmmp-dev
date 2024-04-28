@@ -26,7 +26,6 @@
 #include <qmmp/qmmp.h>
 #include <taglib/tstring.h>
 #include <taglib/tstringlist.h>
-#include "ui_rgscandialog.h"
 
 class QAction;
 class PlayListTrack;
@@ -52,6 +51,10 @@ namespace TagLib
     {
         class Tag;
     }
+}
+
+namespace Ui {
+class RGScanDialog;
 }
 
 /**
@@ -82,7 +85,7 @@ private:
     void writeID3v2Tag(TagLib::ID3v2::Tag *tag, ReplayGainInfoItem *item);
     void writeVorbisComment(TagLib::Ogg::XiphComment *tag, ReplayGainInfoItem *item);
     void writeMP4Tag(TagLib::MP4::Tag *tag, ReplayGainInfoItem *item);
-    Ui::RGScanDialog m_ui;
+    Ui::RGScanDialog *m_ui;
     QList<RGScanner *> m_scanners;
     QList<ReplayGainInfoItem*> m_replayGainItemList;
 };

@@ -24,20 +24,22 @@
 #include <QDBusMetaType>
 #include "udisksdevice.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 UDisksDevice::UDisksDevice(QDBusObjectPath o, QObject *parent) : QObject(parent)
 {
-    m_block_interface = new QDBusInterface("org.freedesktop.UDisks2", o.path(),
-                                           "org.freedesktop.UDisks2.Block", QDBusConnection::systemBus(),
+    m_block_interface = new QDBusInterface(u"org.freedesktop.UDisks2"_s, o.path(),
+                                           u"org.freedesktop.UDisks2.Block"_s, QDBusConnection::systemBus(),
                                            this);
 
-    QDBusObjectPath drive_object = property("Drive").value<QDBusObjectPath>();
+    QDBusObjectPath drive_object = property(u"Drive"_s).value<QDBusObjectPath>();
 
-    QDBusConnection::systemBus().connect("org.freedesktop.UDisks2", o.path(),
-                                         "org.freedesktop.DBus.Properties","PropertiesChanged",
+    QDBusConnection::systemBus().connect(u"org.freedesktop.UDisks2"_s, o.path(),
+                                         u"org.freedesktop.DBus.Properties"_s, u"PropertiesChanged"_s,
                                          this, SIGNAL(changed()));
 
-    m_drive_interface = new QDBusInterface("org.freedesktop.UDisks2", drive_object.path(),
-                                           "org.freedesktop.UDisks2.Drive", QDBusConnection::systemBus(),
+    m_drive_interface = new QDBusInterface(u"org.freedesktop.UDisks2"_s, drive_object.path(),
+                                           u"org.freedesktop.UDisks2.Drive"_s, QDBusConnection::systemBus(),
                                            this);
     m_path = o;
 }
@@ -79,8 +81,8 @@ bool UDisksDevice::isOptical() const
 QStringList UDisksDevice::mountPoints() const
 {
     QStringList points;
-    QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.UDisks2", m_path.path(),
-                                                          "org.freedesktop.DBus.Properties", "Get");
+    QDBusMessage message = QDBusMessage::createMethodCall(u"org.freedesktop.UDisks2"_s, m_path.path(),
+                                                          u"org.freedesktop.DBus.Properties"_s, u"Get"_s);
 
     QList<QVariant> arguments;
     arguments << "org.freedesktop.UDisks2.Filesystem" << "MountPoints";

@@ -37,14 +37,14 @@ UDisksPlugin::UDisksPlugin(QObject *parent) : QObject(parent)
 
     m_manager = new UDisksManager(this);
     m_actions = new QActionGroup(this);
-    connect(m_manager,SIGNAL(deviceAdded(QDBusObjectPath)), SLOT(addDevice(QDBusObjectPath)));
-    connect(m_manager,SIGNAL(deviceRemoved(QDBusObjectPath)), SLOT(removeDevice(QDBusObjectPath)));
-    connect(m_actions,SIGNAL(triggered (QAction *)), SLOT(processAction(QAction *)));
+    connect(m_manager, &UDisksManager::deviceAdded, this, &UDisksPlugin::addDevice);
+    connect(m_manager, &UDisksManager::deviceRemoved, this, &UDisksPlugin::removeDevice);
+    connect(m_actions, &QActionGroup::triggered, this, &UDisksPlugin::processAction);
     //load settings
     QSettings settings;
-    settings.beginGroup("UDisks");
-    m_detectCDA = settings.value("cda", true).toBool();
-    m_detectRemovable = settings.value("removable", true).toBool();
+    settings.beginGroup(u"UDisks"_s);
+    m_detectCDA = settings.value(u"cda", true).toBool();
+    m_detectRemovable = settings.value(u"removable"_s, true).toBool();
     m_addTracks = false; //do not load tracks on startup
     m_addFiles = false;
     //find existing devices
@@ -52,10 +52,10 @@ UDisksPlugin::UDisksPlugin(QObject *parent) : QObject(parent)
     for(const QDBusObjectPath &o : qAsConst(devs))
         addDevice(o);
     //load remaining settings
-    m_addTracks = settings.value("add_tracks", false).toBool();
-    m_removeTracks = settings.value("remove_tracks", false).toBool();
-    m_addFiles = settings.value("add_files", false).toBool();
-    m_removeFiles = settings.value("remove_files", false).toBool();
+    m_addTracks = settings.value(u"add_tracks"_s, false).toBool();
+    m_removeTracks = settings.value(u"remove_tracks"_s, false).toBool();
+    m_addFiles = settings.value(u"add_files"_s, false).toBool();
+    m_removeFiles = settings.value(u"remove_files"_s, false).toBool();
     settings.endGroup();
 }
 
@@ -109,14 +109,14 @@ void UDisksPlugin::updateActions()
         QString dev_path;
         if (m_detectCDA && device->isAudio()) //cd audio
         {
-            dev_path = "cdda://" + device->deviceFile();
+            dev_path = u"cdda://"_s + device->deviceFile();
         }
         else if (m_detectRemovable && device->isMounted() &&
-                 device->property("Size").toLongLong() < 40000000000LL &&
-                 (device->property("IdType").toString() == "vfat" ||
-                  device->property("IdType").toString() == "iso9660" ||
-                  device->property("IdType").toString() == "udf" ||
-                  device->property("IdType").toString() == "ext2")) //mounted volume
+                 device->property(u"Size"_s).toLongLong() < 40000000000LL &&
+                 (device->property(u"IdType"_s).toString() == "vfat"_L1 ||
+                  device->property(u"IdType"_s).toString() == "iso9660"_L1 ||
+                  device->property(u"IdType"_s).toString() == "udf"_L1 ||
+                  device->property(u"IdType"_s).toString() == "ext2"_L1)) //mounted volume
         {
             dev_path = device->mountPoints().constFirst();
         }
@@ -133,7 +133,7 @@ void UDisksPlugin::updateActions()
             }
             else
             {
-                QString name = device->property("IdLabel").toString();
+                QString name = device->property(u"IdLabel"_s).toString();
                 if (name.isEmpty())
                     name = dev_path;
 
@@ -142,7 +142,7 @@ void UDisksPlugin::updateActions()
 
             if (device->isOptical())
             {
-                if(device->property("IdType").toString() == "iso9660")
+                if(device->property(u"IdType"_s).toString() == "iso9660"_L1)
                     action->setIcon(qApp->style()->standardIcon(QStyle::SP_DriveDVDIcon));
                 else
                     action->setIcon(qApp->style()->standardIcon(QStyle::SP_DriveCDIcon));
@@ -218,20 +218,20 @@ void UDisksPlugin::addPath(const QString &path)
     if (model->contains(path))
         return;
 
-    if (path.startsWith("cdda://") && m_addTracks)
+    if (path.startsWith(u"cdda://"_s) && m_addTracks)
     {
         PlayListManager::instance()->selectedPlayList()->add(path);
         return;
     }
 
-    if (!path.startsWith("cdda://") && m_addFiles)
+    if (!path.startsWith(u"cdda://"_s) && m_addFiles)
         PlayListManager::instance()->selectedPlayList()->add(path);
 }
 
 void UDisksPlugin::removePath(const QString &path)
 {
-    if ((path.startsWith("cdda://") && !m_removeTracks) ||
-            (!path.startsWith("cdda://") && !m_removeFiles)) //process settings
+    if ((path.startsWith(u"cdda://"_s) && !m_removeTracks) ||
+            (!path.startsWith(u"cdda://"_s) && !m_removeFiles)) //process settings
         return;
 
     PlayListModel *model = PlayListManager::instance()->selectedPlayList();

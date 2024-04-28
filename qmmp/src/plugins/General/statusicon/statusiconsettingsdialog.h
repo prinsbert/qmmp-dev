@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,33 +17,35 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef PIXMAPWIDGET_H
-#define PIXMAPWIDGET_H
+#ifndef STATUSICONSETTINGSDIALOG_H
+#define STATUSICONSETTINGSDIALOG_H
 
-#include <QWidget>
-#include <QImage>
+#include <QDialog>
+
+namespace Ui {
+class StatusIconSettingsDialog;
+}
 
 /**
-	@author Ilya Kotov <forkotov02@ya.ru>
+    @author Ilya Kotov <forkotov02@ya.ru>
 */
-
-class CoverWidget : public QWidget
+class StatusIconSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    CoverWidget(QWidget *parent = nullptr);
+    explicit StatusIconSettingsDialog(QWidget *parent = nullptr);
 
-    ~CoverWidget();
+    ~StatusIconSettingsDialog();
 
-    virtual void setImage(const QImage &img);
+public slots:
+    virtual void accept() override;
 
-protected:
-    void paintEvent (QPaintEvent *event) override;
+private slots:
+    void on_templateButton_clicked();
 
-private: 
-      QImage m_image;
-
-
+private:
+    Ui::StatusIconSettingsDialog *m_ui;
+    QString m_template;
 
 };
 

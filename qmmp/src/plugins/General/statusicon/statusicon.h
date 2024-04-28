@@ -25,7 +25,7 @@
 #include <qmmpui/metadataformatter.h>
 #include "qmmptrayicon.h"
 
-#define DEFAULT_TEMPLATE "<b>%if(%t,%t,%f)</b>\n%if(%p,<br>%p,)\n%if(%a,<br>%a,)\n%if(%l,<br><b>%l</b>,)"
+#define DEFAULT_TEMPLATE u"<b>%if(%t,%t,%f)</b>\n%if(%p,<br>%p,)\n%if(%a,<br>%a,)\n%if(%l,<br><b>%l</b>,)"_s
 
 class SoundCore;
 class MediaPlayer;

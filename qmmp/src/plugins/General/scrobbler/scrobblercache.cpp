@@ -72,40 +72,40 @@ QList<SongInfo> ListenCache::load()
     if(!file.open(QIODevice::ReadOnly))
         return QList<SongInfo>();
 
-    while (!file.atEnd())
+    while(!file.atEnd())
     {
         int s;
         QString line = QString::fromUtf8(file.readLine()).trimmed();
-        if ((s = line.indexOf("=")) < 0)
+        if((s = line.indexOf(QChar('='))) < 0)
             continue;
 
         QString param = line.left(s);
         QString value = line.right(line.size() - s - 1);
 
-        if (param == "title")
+        if(param == "title"_L1)
         {
             songs << SongInfo();
             songs.last().setValue(Qmmp::TITLE, value);
         }
         else if (songs.isEmpty())
             continue;
-        else if (param == "artist")
+        else if (param == "artist"_L1)
             songs.last().setValue(Qmmp::ARTIST, value);
-        else if (param == "album")
+        else if (param == "album"_L1)
             songs.last().setValue(Qmmp::ALBUM, value);
-        else if (param == "comment")
+        else if (param == "comment"_L1)
             songs.last().setValue(Qmmp::COMMENT, value);
-        else if (param == "genre")
+        else if (param == "genre"_L1)
             songs.last().setValue(Qmmp::GENRE, value);
-        else if (param == "year")
+        else if (param == "year"_L1)
             songs.last().setValue(Qmmp::YEAR, value);
-        else if (param == "track")
+        else if (param == "track"_L1)
             songs.last().setValue(Qmmp::TRACK, value);
-        else if (param == "length") //1.3.x config support
+        else if (param == "length"_L1) //1.3.x config support
             songs.last().setDuration(value.toInt() * 1000);
-        else if (param == "duration")
+        else if (param == "duration"_L1)
             songs.last().setDuration(value.toLongLong());
-        else if (param == "time")
+        else if (param == "time"_L1)
             songs.last().setTimeStamp(value.toUInt());
     }
     file.close();
@@ -128,15 +128,15 @@ void ListenCache::save(const QList<SongInfo> &songs)
     }
     for(const SongInfo &m : qAsConst(songs))
     {
-        file.write(QString("title=%1").arg(m.value(Qmmp::TITLE)).toUtf8() +"\n");
-        file.write(QString("artist=%1").arg(m.value(Qmmp::ARTIST)).toUtf8() +"\n");
-        file.write(QString("album=%1").arg(m.value(Qmmp::ALBUM)).toUtf8() +"\n");
-        file.write(QString("comment=%1").arg(m.value(Qmmp::COMMENT)).toUtf8() +"\n");
-        file.write(QString("genre=%1").arg(m.value(Qmmp::GENRE)).toUtf8() +"\n");
-        file.write(QString("year=%1").arg(m.value(Qmmp::YEAR)).toUtf8() +"\n");
-        file.write(QString("track=%1").arg(m.value(Qmmp::TRACK)).toUtf8() +"\n");
-        file.write(QString("duration=%1").arg(m.duration()).toLatin1() +"\n");
-        file.write(QString("time=%1").arg(m.timeStamp()).toLatin1() +"\n");
+        file.write(QStringLiteral("title=%1\n").arg(m.value(Qmmp::TITLE)).toUtf8());
+        file.write(QStringLiteral("artist=%1\n").arg(m.value(Qmmp::ARTIST)).toUtf8());
+        file.write(QStringLiteral("album=%1\n").arg(m.value(Qmmp::ALBUM)).toUtf8());
+        file.write(QStringLiteral("comment=%1\n").arg(m.value(Qmmp::COMMENT)).toUtf8());
+        file.write(QStringLiteral("genre=%1\n").arg(m.value(Qmmp::GENRE)).toUtf8());
+        file.write(QStringLiteral("year=%1\n").arg(m.value(Qmmp::YEAR)).toUtf8());
+        file.write(QStringLiteral("track=%1\n").arg(m.value(Qmmp::TRACK)).toUtf8());
+        file.write(QStringLiteral("duration=%1\n").arg(m.duration()).toLatin1());
+        file.write(QStringLiteral("time=%1\n").arg(m.timeStamp()).toLatin1());
     }
     file.close();
 }

@@ -26,11 +26,10 @@
 
 SleepInhibitor::SleepInhibitor(QObject *parent) : QObject(parent)
 {
-    m_interface = new QDBusInterface(QLatin1String("org.freedesktop.login1"),
-                                     QLatin1String("/org/freedesktop/login1"),
-                                     QLatin1String("org.freedesktop.login1.Manager"),
+    m_interface = new QDBusInterface(u"org.freedesktop.login1"_s, u"/org/freedesktop/login1"_s,
+                                     u"org.freedesktop.login1.Manager"_s,
                                      QDBusConnection::systemBus(), this);
-    connect(SoundCore::instance(), SIGNAL(stateChanged(Qmmp::State)), SLOT(onStateChanged(Qmmp::State)));
+    connect(SoundCore::instance(), &SoundCore::stateChanged, this, &SleepInhibitor::onStateChanged);
 }
 
 SleepInhibitor::~SleepInhibitor()

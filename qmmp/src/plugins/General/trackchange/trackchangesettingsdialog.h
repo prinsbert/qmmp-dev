@@ -17,39 +17,39 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#include <QSettings>
-#include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#ifndef TRACKCHANGESETTINGSDIALOG_H
+#define TRACKCHANGESETTINGSDIALOG_H
 
-SettingsDialog::SettingsDialog(QWidget *parent)
-        : QDialog(parent)
-{
-    m_ui.setupUi(this);
-    QSettings settings;
-    settings.beginGroup("UDisks");
-    m_ui.cdGroupBox->setChecked(settings.value("cda", true).toBool());
-    m_ui.addTracksCheckBox->setChecked(settings.value("add_tracks", false).toBool());
-    m_ui.removeTracksCheckBox->setChecked(settings.value("remove_tracks", false).toBool());
-    m_ui.removableGroupBox->setChecked(settings.value("removable", true).toBool());
-    m_ui.addFilesCheckBox->setChecked(settings.value("add_files", false).toBool());
-    m_ui.removeFilesCheckBox->setChecked(settings.value("remove_files", false).toBool());
-    settings.endGroup();
+#include <QDialog>
+
+class QAction;
+class QToolButton;
+
+namespace Ui {
+class TrackChangeSettingsDialog;
 }
 
-
-SettingsDialog::~SettingsDialog()
-{}
-
-void SettingsDialog::accept()
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class TrackChangeSettingsDialog : public QDialog
 {
-    QSettings settings;
-    settings.beginGroup("UDisks");
-    settings.setValue("cda", m_ui.cdGroupBox->isChecked());
-    settings.setValue("add_tracks", m_ui.addTracksCheckBox->isChecked());
-    settings.setValue("remove_tracks", m_ui.removeTracksCheckBox->isChecked());
-    settings.setValue("removable", m_ui.removableGroupBox->isChecked());
-    settings.setValue("add_files", m_ui.addFilesCheckBox->isChecked());
-    settings.setValue("remove_files", m_ui.removeFilesCheckBox->isChecked());
-    settings.endGroup();
-    QDialog::accept();
-}
+    Q_OBJECT
+public:
+    explicit TrackChangeSettingsDialog(QWidget *parent = nullptr);
+
+    ~TrackChangeSettingsDialog();
+
+public slots:
+    void accept() override;
+
+private slots:
+     void addTemplateString(const QString &str);
+
+private:
+    void addMenu(QToolButton *button);
+
+    Ui::TrackChangeSettingsDialog *m_ui;
+};
+
+#endif

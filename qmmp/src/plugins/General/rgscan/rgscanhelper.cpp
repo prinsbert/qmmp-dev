@@ -32,7 +32,7 @@ RGScanHelper::RGScanHelper(QObject *parent) : QObject(parent)
     QAction *action = new QAction(tr("ReplayGain Scanner"), this);
     action->setShortcut(tr("Meta+R"));
     UiHelper::instance()->addAction(action, UiHelper::PLAYLIST_MENU);
-    connect(action, SIGNAL(triggered()), SLOT(openRGScaner()));
+    connect(action, &QAction::triggered, this, &RGScanHelper::openRGScaner);
 }
 
 RGScanHelper::~RGScanHelper()
@@ -45,7 +45,7 @@ void RGScanHelper::openRGScaner()
     if (tracks.isEmpty())
         return;
 
-    RGScanDialog *d = new RGScanDialog(tracks, qApp->activeWindow ());
+    RGScanDialog *d = new RGScanDialog(tracks, qApp->activeWindow());
     d->exec();
     d->deleteLater();
 }

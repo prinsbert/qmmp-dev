@@ -23,19 +23,17 @@
 #include "editstreamdialog.h"
 #include "ui_editstreamdialog.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 EditStreamDialog::EditStreamDialog(QWidget *parent) :
     QDialog(parent),
     m_ui(new Ui::EditStreamDialog)
 {
     m_ui->setupUi(this);
-    connect(m_ui->nameLineEdit, SIGNAL(textChanged(QString)), SLOT(validate()));
-    connect(m_ui->urlLineEdit, SIGNAL(textChanged(QString)), SLOT(validate()));
+    connect(m_ui->nameLineEdit, &QLineEdit::textChanged, this, &EditStreamDialog::validate);
+    connect(m_ui->urlLineEdit, &QLineEdit::textChanged, this, &EditStreamDialog::validate);
     m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
-    m_ui->typeComboBox->addItems(QStringList()
-                                 << "application/ogg"
-                                 << "audio/aac"
-                                 << "audio/aacp"
-                                 << "audio/mpeg");
+    m_ui->typeComboBox->addItems({ u"application/ogg"_s, u"audio/aac"_s, u"audio/aacp"_s, u"audio/mpeg"_s });
 }
 
 EditStreamDialog::~EditStreamDialog()
@@ -43,7 +41,7 @@ EditStreamDialog::~EditStreamDialog()
     delete m_ui;
 }
 
-void EditStreamDialog::setValues(const QMap<EditStreamDialog::Key, QString> &values)
+void EditStreamDialog::setValues(const QHash<EditStreamDialog::Key, QString> &values)
 {
     m_values = values;
     m_ui->urlLineEdit->setText(values.value(URL));
@@ -53,7 +51,7 @@ void EditStreamDialog::setValues(const QMap<EditStreamDialog::Key, QString> &val
     m_ui->typeComboBox->setEditText(values.value(TYPE));
 }
 
-const QMap<EditStreamDialog::Key, QString> &EditStreamDialog::values() const
+QHash<EditStreamDialog::Key, QString> EditStreamDialog::values() const
 {
     return m_values;
 }

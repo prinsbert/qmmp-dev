@@ -28,17 +28,7 @@
 #define BUFFER_FRAMES 4096
 
 RGScanner::RGScanner()
-{
-    m_gain = 0.;
-    m_peak = 0.;
-    m_user_stop = false;
-    m_is_running = false;
-    m_is_pending = false;
-    m_has_values = false;
-    m_handle = nullptr;
-    m_decoder = nullptr;
-    m_source = nullptr;
-}
+{}
 
 RGScanner::~RGScanner()
 {
@@ -56,7 +46,7 @@ bool RGScanner::prepare(const QString &url)
     m_is_pending = false;
     deinit();
     m_url = url;
-    QString name = m_url.section("/", -1);
+    QString name = m_url.section(QChar('/'), -1);
     InputSource *source = InputSource::create(url, nullptr);
     if(!source->initialize())
     {
@@ -170,7 +160,7 @@ void RGScanner::run()
         m_is_pending = false;
         return;
     }
-    QString name = m_url.section("/", -1);
+    QString name = m_url.section(QChar('/'), -1);
     qDebug("RGScanner: [%s] staring thread", qPrintable(name));
     m_is_running = true;
     m_is_pending = false;
@@ -258,7 +248,7 @@ void RGScanner::run()
     else
     {
         m_gain = GetTitleGain(m_handle);
-        m_peak = max/32768.0;
+        m_peak = max / 32768.0;
         emit progress(100);
         qDebug("RGScanner: [%s] peak=%f, gain=%f", qPrintable(name), m_peak, m_gain);
         qDebug("RGScanner: [%s] finished with success ", qPrintable(name));

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013 by Ilya Kotov                                      *
+ *   Copyright (C) 2013-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,17 +18,16 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-
 #include <QMessageBox>
 #include "trackchange.h"
-#include "settingsdialog.h"
+#include "trackchangesettingsdialog.h"
 #include "trackchangefactory.h"
 
 GeneralProperties TrackChangeFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Track Change Plugin");
-    properties.shortName = "trackchange";
+    properties.shortName = "trackchange"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -42,15 +41,15 @@ QObject *TrackChangeFactory::create(QObject *parent)
 
 QDialog *TrackChangeFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new TrackChangeSettingsDialog(parent);
 }
 
 void TrackChangeFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Track Change Plugin"),
-                        tr("Qmmp Track Change Plugin")+"\n"+
-                        tr("This plugin executes external command when current track is changed") + "\n" +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Track Change Plugin"),
+                       tr("Qmmp Track Change Plugin")+"\n"+
+                       tr("This plugin executes external command when current track is changed") + "\n" +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString TrackChangeFactory::translation() const

@@ -4,22 +4,23 @@ TARGET = $$PLUGINS_PREFIX/General/statusicon
 
 HEADERS += statusiconfactory.h \
     statusicon.h \
-    settingsdialog.h \
     qmmptrayicon.h \
-    coverwidget.h
+    statusiconcoverwidget.h \
+    statusiconsettingsdialog.h
 
 SOURCES += statusiconfactory.cpp \
     statusicon.cpp \
-    settingsdialog.cpp \
     qmmptrayicon.cpp \
-    coverwidget.cpp
+    statusiconcoverwidget.cpp \
+    statusiconsettingsdialog.cpp
 
 contains(DEFINES, QMMP_WS_X11) {
     HEADERS += statusiconpopupwidget.h
     SOURCES += statusiconpopupwidget.cpp
 }
 
-FORMS += settingsdialog.ui
+FORMS += \
+    statusiconsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc \
             images/tray_images.qrc

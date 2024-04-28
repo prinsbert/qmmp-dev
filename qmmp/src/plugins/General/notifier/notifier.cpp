@@ -42,37 +42,37 @@
 Notifier::Notifier(QObject *parent) : QObject(parent)
 {
     QSettings settings;
-    settings.beginGroup("Notifier");
-    m_desktop = settings.value("song_notification", true).toBool();
-    m_resumeNotification = settings.value("resume_notification", false).toBool();
-    m_showVolume = settings.value("volume_notification", true).toBool();
-    m_psi = settings.value("psi_notification", false).toBool();
-    m_disableForFullScreen = settings.value("disable_fullscreen", false).toBool();
+    settings.beginGroup(u"Notifier"_s);
+    m_desktop = settings.value(u"song_notification"_s, true).toBool();
+    m_resumeNotification = settings.value(u"resume_notification"_s, false).toBool();
+    m_showVolume = settings.value(u"volume_notification"_s, true).toBool();
+    m_psi = settings.value(u"psi_notification"_s, false).toBool();
+    m_disableForFullScreen = settings.value(u"disable_fullscreen"_s, false).toBool();
     settings.endGroup();
     m_core = SoundCore::instance();
-    connect (m_core, SIGNAL(trackInfoChanged()), SLOT(showMetaData()));
-    connect (m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(setState(Qmmp::State)));
-    connect (m_core, SIGNAL(volumeChanged(int)), SLOT(showVolume(int)));
+    connect(m_core, &SoundCore::trackInfoChanged, this, &Notifier::showMetaData);
+    connect(m_core, &SoundCore::stateChanged, this, &Notifier::setState);
+    connect(m_core, &SoundCore::volumeChanged, this, &Notifier::showVolume);
 
     //psi tune files (thousands of them!)
     QString psi_data_dir = qgetenv("PSIDATADIR");
     QString xdg_cache_home = qgetenv("XDG_CACHE_HOME");
     if(!psi_data_dir.isEmpty())
-        m_psiTuneFiles << psi_data_dir+"/tune";
+        m_psiTuneFiles << psi_data_dir + u"/tune"_s;
     else if(!xdg_cache_home.isEmpty())
     {
-        m_psiTuneFiles << xdg_cache_home+"/psi/tune";
-        m_psiTuneFiles << xdg_cache_home+"/psi+/tune";
+        m_psiTuneFiles << xdg_cache_home + u"/psi/tune"_s;
+        m_psiTuneFiles << xdg_cache_home + u"/psi+/tune"_s;
     }
     else
     {
-        m_psiTuneFiles << QDir::homePath()+"/.cache/psi/tune";
-        m_psiTuneFiles << QDir::homePath()+"/.cache/psi+/tune";
+        m_psiTuneFiles << QDir::homePath() + u"/.cache/psi/tune"_s;
+        m_psiTuneFiles << QDir::homePath() + u"/.cache/psi+/tune"_s;
     }
     //legacy psi support
-    m_psiTuneFiles << QDir::homePath()+"/.psi/tune";
-    m_psiTuneFiles << QDir::homePath()+"/.psi-plus/tune";
-    m_psiTuneFiles << QDir::homePath()+"/.cache/Psi+/tune";
+    m_psiTuneFiles << QDir::homePath() + u"/.psi/tune"_s;
+    m_psiTuneFiles << QDir::homePath() + u"/.psi-plus/tune"_s;
+    m_psiTuneFiles << QDir::homePath() + u"/.cache/Psi+/tune"_s;
 
     if (m_core->state() == Qmmp::Playing) //test message
         showMetaData();
@@ -127,11 +127,11 @@ void Notifier::showMetaData()
         return;
 
     QByteArray data;
-    data.append(m_core->metaData(Qmmp::TITLE).toUtf8()+"\n");
-    data.append(m_core->metaData(Qmmp::ARTIST).toUtf8()+"\n");
-    data.append(m_core->metaData(Qmmp::ALBUM).toUtf8()+"\n");
-    data.append(m_core->metaData(Qmmp::TRACK).toUtf8()+"\n");
-    data.append(QString("%1").arg(m_core->duration()/1000).toUtf8()+"\n");
+    data.append(m_core->metaData(Qmmp::TITLE).toUtf8() + "\n");
+    data.append(m_core->metaData(Qmmp::ARTIST).toUtf8() + "\n");
+    data.append(m_core->metaData(Qmmp::ALBUM).toUtf8() + "\n");
+    data.append(m_core->metaData(Qmmp::TRACK).toUtf8() + "\n");
+    data.append(QString::number(m_core->duration() / 1000).toUtf8() + "\n");
 
     for(const QString &path : qAsConst(m_psiTuneFiles))
     {
