@@ -35,56 +35,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SidSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation>Asetukset SID Plugin</translation>
+        <translation type="unfinished">Asetukset SID Plugin</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation>Nopea sampleri</translation>
+        <translation type="unfinished">Nopea sampleri</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation>Taajuus:</translation>
+        <translation type="unfinished">Taajuus:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="69"/>
+        <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation>Tietokanta HVSC-tiedosto:</translation>
+        <translation type="unfinished">Tietokanta HVSC-tiedosto:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="76"/>
+        <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation>Samplerin menetelmä:</translation>
+        <translation type="unfinished">Samplerin menetelmä:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="93"/>
+        <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation>Kappaleen oletuspituus, sekuntia:</translation>
+        <translation type="unfinished">Kappaleen oletuspituus, sekuntia:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="100"/>
+        <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation>Käytä kappaleen HVSC pituustietokantaa</translation>
+        <translation type="unfinished">Käytä kappaleen HVSC pituustietokantaa</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="107"/>
+        <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation>Emulointi:</translation>
+        <translation type="unfinished">Emulointi:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>44100 Hz</source>
-        <translation>44100 Hz</translation>
+        <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="43"/>
         <source>48000 Hz</source>
-        <translation>48000 Hz</translation>
+        <translation type="unfinished">48000 Hz</translation>
     </message>
 </context>
 </TS>

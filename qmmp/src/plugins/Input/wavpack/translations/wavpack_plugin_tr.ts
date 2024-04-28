@@ -25,11 +25,11 @@
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="184"/>
-        <source>WavPack library version:</source>
-        <translation>WavPack kitaplık sürümü:</translation>
+        <source>WavPack library version: %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="186"/>
+        <location filename="../decoderwavpackfactory.cpp" line="185"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

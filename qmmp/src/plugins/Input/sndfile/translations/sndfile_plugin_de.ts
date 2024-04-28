@@ -9,27 +9,27 @@
         <translation>Sndfile-Modul</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="121"/>
+        <location filename="../decodersndfilefactory.cpp" line="123"/>
         <source>PCM Files</source>
         <translation>PCM-Dateien</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="224"/>
+        <location filename="../decodersndfilefactory.cpp" line="226"/>
         <source>About Sndfile Audio Plugin</source>
         <translation>Über Sndfile-Audiomodul</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="225"/>
+        <location filename="../decodersndfilefactory.cpp" line="227"/>
         <source>Qmmp Sndfile Audio Plugin</source>
         <translation>Qmmp Sndfile-Audiomodul</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="226"/>
-        <source>Compiled against</source>
-        <translation>Kompiliert gegen</translation>
+        <location filename="../decodersndfilefactory.cpp" line="228"/>
+        <source>Compiled against %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="227"/>
+        <location filename="../decodersndfilefactory.cpp" line="229"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

@@ -2,6 +2,59 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="pl">
 <context>
+    <name>CDAudioSettingsDialog</name>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="14"/>
+        <source>CD Audio Plugin Settings</source>
+        <translation type="unfinished">Налаштування модуля AudioCD</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="29"/>
+        <source>Override device:</source>
+        <translation type="unfinished">Перевизначити пристрій:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="42"/>
+        <source>Limit cd speed:</source>
+        <translation type="unfinished">Обмежити швидкість CD:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="62"/>
+        <source>Use cd-text</source>
+        <translation type="unfinished">Використовувати cd-text</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="69"/>
+        <source>CDDB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="78"/>
+        <source>Use HTTP instead of CDDBP</source>
+        <translation type="unfinished">Використовувати HTTP замість CDDBP</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="88"/>
+        <source>Server:</source>
+        <translation type="unfinished">Сервер:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="95"/>
+        <source>Path:</source>
+        <translation type="unfinished">Шлях:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="105"/>
+        <source>Port:</source>
+        <translation type="unfinished">Порт:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="117"/>
+        <source>Clear CDDB cache</source>
+        <translation type="unfinished">Очистити кеш CDDB</translation>
+    </message>
+</context>
+<context>
     <name>DecoderCDAudioFactory</name>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="50"/>
@@ -32,59 +85,6 @@
         <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>Використання: відкрийте cdda:/// використовуючи діалог &quot;Додати адресу&quot; чи командний рядок</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>CD Audio Plugin Settings</source>
-        <translation>Налаштування модуля AudioCD</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Override device:</source>
-        <translation>Перевизначити пристрій:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="42"/>
-        <source>Limit cd speed:</source>
-        <translation>Обмежити швидкість CD:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="62"/>
-        <source>Use cd-text</source>
-        <translation>Використовувати cd-text</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="69"/>
-        <source>CDDB</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="78"/>
-        <source>Use HTTP instead of CDDBP</source>
-        <translation>Використовувати HTTP замість CDDBP</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="88"/>
-        <source>Server:</source>
-        <translation>Сервер:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>Path:</source>
-        <translation>Шлях:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="105"/>
-        <source>Port:</source>
-        <translation>Порт:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="117"/>
-        <source>Clear CDDB cache</source>
-        <translation>Очистити кеш CDDB</translation>
     </message>
 </context>
 </TS>

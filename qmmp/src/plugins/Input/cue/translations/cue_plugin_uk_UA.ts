@@ -2,6 +2,44 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="uk">
 <context>
+    <name>CueSettingsDialog</name>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="14"/>
+        <source>CUE Plugin Settings</source>
+        <translation type="unfinished">Налаштування модуля CUE</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="29"/>
+        <source>Common settings</source>
+        <translation type="unfinished">Базові налаштування</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="35"/>
+        <source>Load incorrect cue sheets if possible</source>
+        <translation type="unfinished">Завантажувати cue з помилками, якщо можливо</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="45"/>
+        <source>CUE encoding</source>
+        <translation type="unfinished">Кодування CUE</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="51"/>
+        <source>Automatic charset detection</source>
+        <translation type="unfinished">Визначати кодування атвоматично</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="61"/>
+        <source>Language:</source>
+        <translation type="unfinished">Мова:</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="81"/>
+        <source>Default encoding:</source>
+        <translation type="unfinished">Кодування за умовчанням:</translation>
+    </message>
+</context>
+<context>
     <name>DecoderCUEFactory</name>
     <message>
         <location filename="../decodercuefactory.cpp" line="38"/>
@@ -27,44 +65,6 @@
         <location filename="../decodercuefactory.cpp" line="84"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>CUE Plugin Settings</source>
-        <translation>Налаштування модуля CUE</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Common settings</source>
-        <translation>Базові налаштування</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>Load incorrect cue sheets if possible</source>
-        <translation>Завантажувати cue з помилками, якщо можливо</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>CUE encoding</source>
-        <translation>Кодування CUE</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="51"/>
-        <source>Automatic charset detection</source>
-        <translation>Визначати кодування атвоматично</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Language:</source>
-        <translation>Мова:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="81"/>
-        <source>Default encoding:</source>
-        <translation>Кодування за умовчанням:</translation>
     </message>
 </context>
 </TS>

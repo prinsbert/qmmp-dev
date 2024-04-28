@@ -35,56 +35,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SidSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation>Instellingen</translation>
+        <translation type="unfinished">Instellingen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation>Snelle resampling</translation>
+        <translation type="unfinished">Snelle resampling</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation>Samplesnelheid:</translation>
+        <translation type="unfinished">Samplesnelheid:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="69"/>
+        <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation>HVSC-databankbestand:</translation>
+        <translation type="unfinished">HVSC-databankbestand:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="76"/>
+        <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation>Resampling-methode:</translation>
+        <translation type="unfinished">Resampling-methode:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="93"/>
+        <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation>Standaardduur van nummer, in sec.:</translation>
+        <translation type="unfinished">Standaardduur van nummer, in sec.:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="100"/>
+        <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation>HVSC-databank voor duur van nummers inschakelen</translation>
+        <translation type="unfinished">HVSC-databank voor duur van nummers inschakelen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="107"/>
+        <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation>Emulatie:</translation>
+        <translation type="unfinished">Emulatie:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>44100 Hz</source>
-        <translation>44100 Hz</translation>
+        <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="43"/>
         <source>48000 Hz</source>
-        <translation>48000 Hz</translation>
+        <translation type="unfinished">48000 Hz</translation>
     </message>
 </context>
 </TS>

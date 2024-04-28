@@ -25,11 +25,11 @@
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="184"/>
-        <source>WavPack library version:</source>
-        <translation>Version de la bibliothèque WavPack&#xa0;:</translation>
+        <source>WavPack library version: %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="186"/>
+        <location filename="../decoderwavpackfactory.cpp" line="185"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

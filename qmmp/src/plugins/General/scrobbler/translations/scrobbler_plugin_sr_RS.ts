@@ -25,99 +25,99 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>ScrobblerSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../scrobblersettingsdialog.ui" line="14"/>
         <source>Scrobbler Plugin Settings</source>
-        <translation>Поставке скроблера</translation>
+        <translation type="unfinished">Поставке скроблера</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="20"/>
+        <location filename="../scrobblersettingsdialog.ui" line="20"/>
         <source>Last.fm</source>
-        <translation>Ласт.фм</translation>
+        <translation type="unfinished">Ласт.фм</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="31"/>
-        <location filename="../settingsdialog.ui" line="104"/>
+        <location filename="../scrobblersettingsdialog.ui" line="31"/>
+        <location filename="../scrobblersettingsdialog.ui" line="104"/>
         <source>Session:</source>
-        <translation>Сесија:</translation>
+        <translation type="unfinished">Сесија:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="41"/>
-        <location filename="../settingsdialog.ui" line="117"/>
+        <location filename="../scrobblersettingsdialog.ui" line="41"/>
+        <location filename="../scrobblersettingsdialog.ui" line="117"/>
         <source>Check</source>
-        <translation>Провери</translation>
+        <translation type="unfinished">Провери</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="63"/>
-        <location filename="../settingsdialog.ui" line="95"/>
+        <location filename="../scrobblersettingsdialog.ui" line="63"/>
+        <location filename="../scrobblersettingsdialog.ui" line="95"/>
         <source>Register new session</source>
-        <translation>Региструј нову сесију</translation>
+        <translation type="unfinished">Региструј нову сесију</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="73"/>
+        <location filename="../scrobblersettingsdialog.ui" line="73"/>
         <source>Libre.fm</source>
-        <translation>Либре.фм</translation>
+        <translation type="unfinished">Либре.фм</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="106"/>
-        <location filename="../settingsdialog.cpp" line="132"/>
-        <location filename="../settingsdialog.cpp" line="183"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="110"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="136"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="187"/>
         <source>Message</source>
-        <translation>Порука</translation>
+        <translation type="unfinished">Порука</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="111"/>
         <source>1. Wait for browser startup</source>
-        <translation>1. Сачекајте да се прегледач покрене</translation>
+        <translation type="unfinished">1. Сачекајте да се прегледач покрене</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="108"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="112"/>
         <source>2. Allow Qmmp to scrobble tracks to your %1 account</source>
-        <translation>2. Дозволите Кумпу да скроблује нумере на ваш %1 налог</translation>
+        <translation type="unfinished">2. Дозволите Кумпу да скроблује нумере на ваш %1 налог</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="109"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="113"/>
         <source>3. Press &quot;OK&quot;</source>
-        <translation>3. Притисните „У реду“</translation>
+        <translation type="unfinished">3. Притисните „У реду“</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="114"/>
-        <location filename="../settingsdialog.cpp" line="118"/>
-        <location filename="../settingsdialog.cpp" line="147"/>
-        <location filename="../settingsdialog.cpp" line="151"/>
-        <location filename="../settingsdialog.cpp" line="191"/>
-        <location filename="../settingsdialog.cpp" line="195"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="118"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="122"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="151"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="155"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="195"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="unfinished">Грешка</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="114"/>
-        <location filename="../settingsdialog.cpp" line="147"/>
-        <location filename="../settingsdialog.cpp" line="191"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="118"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="151"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="195"/>
         <source>Network error</source>
-        <translation>Грешка мреже</translation>
+        <translation type="unfinished">Грешка мреже</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="118"/>
-        <location filename="../settingsdialog.cpp" line="151"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="122"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="155"/>
         <source>Unable to register new session</source>
-        <translation>Не могу да региструјем нову сесију</translation>
+        <translation type="unfinished">Не могу да региструјем нову сесију</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="132"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="136"/>
         <source>New session has been received successfully</source>
-        <translation>Нова сесија је успешно регистрована</translation>
+        <translation type="unfinished">Нова сесија је успешно регистрована</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="183"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="187"/>
         <source>Permission granted</source>
-        <translation>Дозвола одобрена</translation>
+        <translation type="unfinished">Дозвола одобрена</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="195"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Permission denied</source>
-        <translation>Дозвола одбијена</translation>
+        <translation type="unfinished">Дозвола одбијена</translation>
     </message>
 </context>
 </TS>

@@ -2,46 +2,46 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="it">
 <context>
-    <name>DecoderMPEGFactory</name>
+    <name>DecoderMpegFactory</name>
     <message>
         <location filename="../decodermpegfactory.cpp" line="179"/>
         <source>MPEG Plugin</source>
-        <translation>Estensione MPEG</translation>
+        <translation type="unfinished">Estensione MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="182"/>
         <source>MPEG Files</source>
-        <translation>File MPEG</translation>
+        <translation type="unfinished">File MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>About MPEG Audio Plugin</source>
-        <translation>Informazioni sull&apos;estensione audio MPEG</translation>
+        <translation type="unfinished">Informazioni sull&apos;estensione audio MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="420"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
-        <translation>Decodificatore per audio MPEG 1.0/2.0/2.5 layer 1/2/3</translation>
+        <translation type="unfinished">Decodificatore per audio MPEG 1.0/2.0/2.5 layer 1/2/3</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="421"/>
         <source>Compiled against:</source>
-        <translation>Compilato con:</translation>
+        <translation type="unfinished">Compilato con:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="430"/>
         <source>mpg123, API version: %1</source>
-        <translation>mpg123, versione API: %1</translation>
+        <translation type="unfinished">mpg123, versione API: %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="434"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation type="unfinished">Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="435"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation>Codice sorgente basato sui progetti mq3 e madplay</translation>
+        <translation type="unfinished">Codice sorgente basato sui progetti mq3 e madplay</translation>
     </message>
 </context>
 <context>
@@ -71,104 +71,104 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>MpegSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../mpegsettingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation>Impostazioni estensione MPEG</translation>
+        <translation type="unfinished">Impostazioni estensione MPEG</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="35"/>
+        <location filename="../mpegsettingsdialog.ui" line="35"/>
         <source>Decoder</source>
-        <translation>Decodificatore</translation>
+        <translation type="unfinished">Decodificatore</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="41"/>
+        <location filename="../mpegsettingsdialog.ui" line="41"/>
         <source>MAD</source>
-        <translation>MAD</translation>
+        <translation type="unfinished">MAD</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="48"/>
+        <location filename="../mpegsettingsdialog.ui" line="48"/>
         <source>MPG123</source>
-        <translation>MPG123</translation>
+        <translation type="unfinished">MPG123</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="71"/>
+        <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
-        <translation>Abilita la verifica del CRC</translation>
+        <translation type="unfinished">Abilita la verifica del CRC</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="87"/>
+        <location filename="../mpegsettingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation>Priorità etichettatura</translation>
+        <translation type="unfinished">Priorità etichettatura</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="99"/>
+        <location filename="../mpegsettingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation>Prima:</translation>
+        <translation type="unfinished">Prima:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="119"/>
-        <location filename="../settingsdialog.ui" line="168"/>
-        <location filename="../settingsdialog.ui" line="217"/>
+        <location filename="../mpegsettingsdialog.ui" line="119"/>
+        <location filename="../mpegsettingsdialog.ui" line="168"/>
+        <location filename="../mpegsettingsdialog.ui" line="217"/>
         <source>ID3v1</source>
-        <translation>ID3v1</translation>
+        <translation type="unfinished">ID3v1</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="124"/>
-        <location filename="../settingsdialog.ui" line="173"/>
-        <location filename="../settingsdialog.ui" line="222"/>
+        <location filename="../mpegsettingsdialog.ui" line="124"/>
+        <location filename="../mpegsettingsdialog.ui" line="173"/>
+        <location filename="../mpegsettingsdialog.ui" line="222"/>
         <source>ID3v2</source>
-        <translation>ID3v2</translation>
+        <translation type="unfinished">ID3v2</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="129"/>
-        <location filename="../settingsdialog.ui" line="178"/>
-        <location filename="../settingsdialog.ui" line="227"/>
+        <location filename="../mpegsettingsdialog.ui" line="129"/>
+        <location filename="../mpegsettingsdialog.ui" line="178"/>
+        <location filename="../mpegsettingsdialog.ui" line="227"/>
         <source>APE</source>
-        <translation>APE</translation>
+        <translation type="unfinished">APE</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="134"/>
-        <location filename="../settingsdialog.ui" line="183"/>
-        <location filename="../settingsdialog.ui" line="232"/>
+        <location filename="../mpegsettingsdialog.ui" line="134"/>
+        <location filename="../mpegsettingsdialog.ui" line="183"/>
+        <location filename="../mpegsettingsdialog.ui" line="232"/>
         <source>Disabled</source>
-        <translation>Disabilitata</translation>
+        <translation type="unfinished">Disabilitata</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="148"/>
+        <location filename="../mpegsettingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation>Seconda:</translation>
+        <translation type="unfinished">Seconda:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="197"/>
+        <location filename="../mpegsettingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation>Terza:</translation>
+        <translation type="unfinished">Terza:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="253"/>
+        <location filename="../mpegsettingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
-        <translation>Unisci i tipi di etichette selezionati</translation>
+        <translation type="unfinished">Unisci i tipi di etichette selezionati</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="272"/>
+        <location filename="../mpegsettingsdialog.ui" line="272"/>
         <source>Encodings</source>
-        <translation>Codifiche</translation>
+        <translation type="unfinished">Codifiche</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="333"/>
-        <source>ID3v1 encoding:</source>
-        <translation>Codifica ID3v1:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="343"/>
-        <source>Try to detect encoding</source>
-        <translation>Prova a identificare la codifica</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="294"/>
+        <location filename="../mpegsettingsdialog.ui" line="294"/>
         <source>ID3v2 encoding:</source>
-        <translation>Codifica ID3v2:</translation>
+        <translation type="unfinished">Codifica ID3v2:</translation>
+    </message>
+    <message>
+        <location filename="../mpegsettingsdialog.ui" line="333"/>
+        <source>ID3v1 encoding:</source>
+        <translation type="unfinished">Codifica ID3v1:</translation>
+    </message>
+    <message>
+        <location filename="../mpegsettingsdialog.ui" line="343"/>
+        <source>Try to detect encoding</source>
+        <translation type="unfinished">Prova a identificare la codifica</translation>
     </message>
 </context>
 </TS>

@@ -25,104 +25,104 @@
     </message>
 </context>
 <context>
-    <name>PopupWidget</name>
+    <name>NotifierSettingsDialog</name>
     <message>
-        <location filename="../popupwidget.cpp" line="115"/>
-        <source>Volume:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../notifiersettingsdialog.ui" line="14"/>
         <source>Notifier Plugin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="35"/>
+        <location filename="../notifiersettingsdialog.ui" line="35"/>
         <source>Desktop Notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="51"/>
+        <location filename="../notifiersettingsdialog.ui" line="51"/>
         <source>Font:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="71"/>
+        <location filename="../notifiersettingsdialog.ui" line="71"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="78"/>
-        <location filename="../settingsdialog.ui" line="279"/>
+        <location filename="../notifiersettingsdialog.ui" line="78"/>
+        <location filename="../notifiersettingsdialog.ui" line="279"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="85"/>
+        <location filename="../notifiersettingsdialog.ui" line="85"/>
         <source>Transparency:</source>
-        <translation>Átlátszóság:</translation>
+        <translation type="unfinished">Átlátszóság:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="229"/>
+        <location filename="../notifiersettingsdialog.ui" line="229"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="251"/>
+        <location filename="../notifiersettingsdialog.ui" line="251"/>
         <source>Edit template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="299"/>
+        <location filename="../notifiersettingsdialog.ui" line="299"/>
         <source>Cover size:</source>
-        <translation>Borító mérete:</translation>
+        <translation type="unfinished">Borító mérete:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="325"/>
+        <location filename="../notifiersettingsdialog.ui" line="325"/>
         <source>Volume change notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="332"/>
+        <location filename="../notifiersettingsdialog.ui" line="332"/>
         <source>Delay (ms):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="361"/>
+        <location filename="../notifiersettingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="368"/>
+        <location filename="../notifiersettingsdialog.ui" line="368"/>
         <source>Song change notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="375"/>
+        <location filename="../notifiersettingsdialog.ui" line="375"/>
         <source>Disable notifications when another application is in the Full Screen Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="378"/>
+        <location filename="../notifiersettingsdialog.ui" line="378"/>
         <source>Disable for full screen windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="388"/>
+        <location filename="../notifiersettingsdialog.ui" line="388"/>
         <source>Psi Notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="400"/>
+        <location filename="../notifiersettingsdialog.ui" line="400"/>
         <source>Enable Psi notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="112"/>
+        <location filename="../notifiersettingsdialog.cpp" line="115"/>
         <source>Notification Template</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PopupWidget</name>
+    <message>
+        <location filename="../popupwidget.cpp" line="115"/>
+        <source>Volume:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

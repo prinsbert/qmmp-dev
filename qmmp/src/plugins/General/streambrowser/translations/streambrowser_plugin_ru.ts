@@ -109,71 +109,71 @@
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="55"/>
-        <location filename="../streamwindow.cpp" line="73"/>
+        <location filename="../streamwindow.cpp" line="69"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="56"/>
-        <location filename="../streamwindow.cpp" line="74"/>
+        <location filename="../streamwindow.cpp" line="55"/>
+        <location filename="../streamwindow.cpp" line="69"/>
         <source>Genre</source>
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="57"/>
-        <location filename="../streamwindow.cpp" line="75"/>
+        <location filename="../streamwindow.cpp" line="55"/>
+        <location filename="../streamwindow.cpp" line="69"/>
         <source>Bitrate</source>
         <translation>Битовая частота</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="58"/>
-        <location filename="../streamwindow.cpp" line="76"/>
+        <location filename="../streamwindow.cpp" line="55"/>
+        <location filename="../streamwindow.cpp" line="69"/>
         <source>Format</source>
         <translation>Формат</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="133"/>
+        <location filename="../streamwindow.cpp" line="125"/>
         <source>&amp;Add to favorites</source>
         <translation>&amp;Добавить в избранное</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="136"/>
+        <location filename="../streamwindow.cpp" line="128"/>
         <source>&amp;Add to playlist</source>
         <translation>&amp;Добавить в список воспроизведения</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="139"/>
+        <location filename="../streamwindow.cpp" line="131"/>
         <source>&amp;Create</source>
         <translation>&amp;Создать</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="141"/>
+        <location filename="../streamwindow.cpp" line="133"/>
         <source>&amp;Edit</source>
         <translation>&amp;Правка</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="144"/>
+        <location filename="../streamwindow.cpp" line="136"/>
         <source>&amp;Remove</source>
         <translation>&amp;Удалить</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="154"/>
+        <location filename="../streamwindow.cpp" line="148"/>
         <source>Done</source>
         <translation>Готово</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="157"/>
-        <location filename="../streamwindow.cpp" line="158"/>
+        <location filename="../streamwindow.cpp" line="151"/>
+        <location filename="../streamwindow.cpp" line="152"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="177"/>
+        <location filename="../streamwindow.cpp" line="171"/>
         <source>Receiving</source>
         <translation>Получение</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="280"/>
+        <location filename="../streamwindow.cpp" line="274"/>
         <source>Edit Stream</source>
         <translation>Редактировать потоковое радио</translation>
     </message>

@@ -64,16 +64,16 @@
         <translation>Kirjoita albumin vahvistus/huippu</translation>
     </message>
     <message>
-        <location filename="../rgscandialog.cpp" line="124"/>
-        <location filename="../rgscandialog.cpp" line="229"/>
+        <location filename="../rgscandialog.cpp" line="127"/>
+        <location filename="../rgscandialog.cpp" line="233"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../rgscandialog.cpp" line="134"/>
-        <location filename="../rgscandialog.cpp" line="135"/>
-        <location filename="../rgscandialog.cpp" line="159"/>
-        <location filename="../rgscandialog.cpp" line="224"/>
+        <location filename="../rgscandialog.cpp" line="137"/>
+        <location filename="../rgscandialog.cpp" line="138"/>
+        <location filename="../rgscandialog.cpp" line="163"/>
+        <location filename="../rgscandialog.cpp" line="228"/>
         <source>%1 dB</source>
         <translation>%1 dB</translation>
     </message>

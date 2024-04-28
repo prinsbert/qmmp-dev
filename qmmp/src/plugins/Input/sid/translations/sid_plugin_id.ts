@@ -35,56 +35,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SidSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation>Setelan Plugin SID</translation>
+        <translation type="unfinished">Setelan Plugin SID</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation>Resampling cepat</translation>
+        <translation type="unfinished">Resampling cepat</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation>Sample rate:</translation>
+        <translation type="unfinished">Sample rate:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="69"/>
+        <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation>File database HVSC:</translation>
+        <translation type="unfinished">File database HVSC:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="76"/>
+        <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation>Metode resampling:</translation>
+        <translation type="unfinished">Metode resampling:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="93"/>
+        <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation>Panjang lagu baku, det:</translation>
+        <translation type="unfinished">Panjang lagu baku, det:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="100"/>
+        <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation>Aktifkan database panjang lagu HVSC</translation>
+        <translation type="unfinished">Aktifkan database panjang lagu HVSC</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="107"/>
+        <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation>Emulasi:</translation>
+        <translation type="unfinished">Emulasi:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>44100 Hz</source>
-        <translation>44100 Hz</translation>
+        <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="43"/>
         <source>48000 Hz</source>
-        <translation>48000 Hz</translation>
+        <translation type="unfinished">48000 Hz</translation>
     </message>
 </context>
 </TS>

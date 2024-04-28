@@ -109,71 +109,71 @@
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="55"/>
-        <location filename="../streamwindow.cpp" line="73"/>
+        <location filename="../streamwindow.cpp" line="69"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="56"/>
-        <location filename="../streamwindow.cpp" line="74"/>
+        <location filename="../streamwindow.cpp" line="55"/>
+        <location filename="../streamwindow.cpp" line="69"/>
         <source>Genre</source>
         <translation>장르</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="57"/>
-        <location filename="../streamwindow.cpp" line="75"/>
+        <location filename="../streamwindow.cpp" line="55"/>
+        <location filename="../streamwindow.cpp" line="69"/>
         <source>Bitrate</source>
         <translation>비트레이트</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="58"/>
-        <location filename="../streamwindow.cpp" line="76"/>
+        <location filename="../streamwindow.cpp" line="55"/>
+        <location filename="../streamwindow.cpp" line="69"/>
         <source>Format</source>
         <translation>형식</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="133"/>
+        <location filename="../streamwindow.cpp" line="125"/>
         <source>&amp;Add to favorites</source>
         <translation>즐겨찾기에 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="136"/>
+        <location filename="../streamwindow.cpp" line="128"/>
         <source>&amp;Add to playlist</source>
         <translation>재생목록에 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="139"/>
+        <location filename="../streamwindow.cpp" line="131"/>
         <source>&amp;Create</source>
         <translation>만들기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="141"/>
+        <location filename="../streamwindow.cpp" line="133"/>
         <source>&amp;Edit</source>
         <translation>편집(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="144"/>
+        <location filename="../streamwindow.cpp" line="136"/>
         <source>&amp;Remove</source>
         <translation>제거(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="154"/>
+        <location filename="../streamwindow.cpp" line="148"/>
         <source>Done</source>
         <translation>완료</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="157"/>
-        <location filename="../streamwindow.cpp" line="158"/>
+        <location filename="../streamwindow.cpp" line="151"/>
+        <location filename="../streamwindow.cpp" line="152"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="177"/>
+        <location filename="../streamwindow.cpp" line="171"/>
         <source>Receiving</source>
         <translation>받는 중</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="280"/>
+        <location filename="../streamwindow.cpp" line="274"/>
         <source>Edit Stream</source>
         <translation>스트림 편집</translation>
     </message>

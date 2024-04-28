@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="lt">
 <context>
-    <name>DecoderMPEGFactory</name>
+    <name>DecoderMpegFactory</name>
     <message>
         <location filename="../decodermpegfactory.cpp" line="179"/>
         <source>MPEG Plugin</source>
@@ -71,102 +71,102 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>MpegSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="119"/>
-        <location filename="../settingsdialog.ui" line="168"/>
-        <location filename="../settingsdialog.ui" line="217"/>
-        <source>ID3v1</source>
-        <translation>ID3v1</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="124"/>
-        <location filename="../settingsdialog.ui" line="173"/>
-        <location filename="../settingsdialog.ui" line="222"/>
-        <source>ID3v2</source>
-        <translation>ID3v2</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="333"/>
-        <source>ID3v1 encoding:</source>
-        <translation>ID3v1 koduotė:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="294"/>
-        <source>ID3v2 encoding:</source>
-        <translation>ID3v2 koduotė:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../mpegsettingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation>MPEG įskiepio nustatymai</translation>
+        <translation type="unfinished">MPEG įskiepio nustatymai</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="35"/>
+        <location filename="../mpegsettingsdialog.ui" line="35"/>
         <source>Decoder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="41"/>
+        <location filename="../mpegsettingsdialog.ui" line="41"/>
         <source>MAD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="48"/>
+        <location filename="../mpegsettingsdialog.ui" line="48"/>
         <source>MPG123</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="71"/>
+        <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="87"/>
+        <location filename="../mpegsettingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation>Tag pirmenybė</translation>
+        <translation type="unfinished">Tag pirmenybė</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="99"/>
+        <location filename="../mpegsettingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation>Pirmas:</translation>
+        <translation type="unfinished">Pirmas:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="129"/>
-        <location filename="../settingsdialog.ui" line="178"/>
-        <location filename="../settingsdialog.ui" line="227"/>
+        <location filename="../mpegsettingsdialog.ui" line="119"/>
+        <location filename="../mpegsettingsdialog.ui" line="168"/>
+        <location filename="../mpegsettingsdialog.ui" line="217"/>
+        <source>ID3v1</source>
+        <translation type="unfinished">ID3v1</translation>
+    </message>
+    <message>
+        <location filename="../mpegsettingsdialog.ui" line="124"/>
+        <location filename="../mpegsettingsdialog.ui" line="173"/>
+        <location filename="../mpegsettingsdialog.ui" line="222"/>
+        <source>ID3v2</source>
+        <translation type="unfinished">ID3v2</translation>
+    </message>
+    <message>
+        <location filename="../mpegsettingsdialog.ui" line="129"/>
+        <location filename="../mpegsettingsdialog.ui" line="178"/>
+        <location filename="../mpegsettingsdialog.ui" line="227"/>
         <source>APE</source>
-        <translation>APE</translation>
+        <translation type="unfinished">APE</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="134"/>
-        <location filename="../settingsdialog.ui" line="183"/>
-        <location filename="../settingsdialog.ui" line="232"/>
+        <location filename="../mpegsettingsdialog.ui" line="134"/>
+        <location filename="../mpegsettingsdialog.ui" line="183"/>
+        <location filename="../mpegsettingsdialog.ui" line="232"/>
         <source>Disabled</source>
-        <translation>Išjungta</translation>
+        <translation type="unfinished">Išjungta</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="148"/>
+        <location filename="../mpegsettingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation>Antras:</translation>
+        <translation type="unfinished">Antras:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="197"/>
+        <location filename="../mpegsettingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation>Trečias:</translation>
+        <translation type="unfinished">Trečias:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="253"/>
+        <location filename="../mpegsettingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="272"/>
+        <location filename="../mpegsettingsdialog.ui" line="272"/>
         <source>Encodings</source>
-        <translation>Koduotės</translation>
+        <translation type="unfinished">Koduotės</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="343"/>
+        <location filename="../mpegsettingsdialog.ui" line="294"/>
+        <source>ID3v2 encoding:</source>
+        <translation type="unfinished">ID3v2 koduotė:</translation>
+    </message>
+    <message>
+        <location filename="../mpegsettingsdialog.ui" line="333"/>
+        <source>ID3v1 encoding:</source>
+        <translation type="unfinished">ID3v1 koduotė:</translation>
+    </message>
+    <message>
+        <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
         <translation type="unfinished"></translation>
     </message>

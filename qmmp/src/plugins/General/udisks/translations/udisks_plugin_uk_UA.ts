@@ -2,44 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="uk">
 <context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>UDisks Plugin Settings</source>
-        <translation>Налаштування модуля UDisks</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>CD Audio Detection</source>
-        <translation>Автовизначення аудіо-CD</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="38"/>
-        <source>Add tracks to playlist automatically</source>
-        <translation>Автоматично додавати треки до списку</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Remove tracks from playlist automatically</source>
-        <translation>Автоматично видаляти треки зі списку</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Removable Device Detection</source>
-        <translation>Виявлення змінних пристроїв</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="64"/>
-        <source>Add files to playlist automatically</source>
-        <translation>Автоматично додавати файли до списку</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>Remove files from playlist automatically</source>
-        <translation>Автоматично видаляти файли зі списку</translation>
-    </message>
-</context>
-<context>
     <name>UDisksFactory</name>
     <message>
         <location filename="../udisksfactory.cpp" line="30"/>
@@ -78,6 +40,44 @@
         <location filename="../udisksplugin.cpp" line="140"/>
         <source>Add Volume &quot;%1&quot;</source>
         <translation>Додати том &quot;%1&quot;</translation>
+    </message>
+</context>
+<context>
+    <name>UDisksSettingsDialog</name>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="14"/>
+        <source>UDisks Plugin Settings</source>
+        <translation type="unfinished">Налаштування модуля UDisks</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="29"/>
+        <source>CD Audio Detection</source>
+        <translation type="unfinished">Автовизначення аудіо-CD</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="38"/>
+        <source>Add tracks to playlist automatically</source>
+        <translation type="unfinished">Автоматично додавати треки до списку</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="45"/>
+        <source>Remove tracks from playlist automatically</source>
+        <translation type="unfinished">Автоматично видаляти треки зі списку</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="55"/>
+        <source>Removable Device Detection</source>
+        <translation type="unfinished">Виявлення змінних пристроїв</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="64"/>
+        <source>Add files to playlist automatically</source>
+        <translation type="unfinished">Автоматично додавати файли до списку</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="71"/>
+        <source>Remove files from playlist automatically</source>
+        <translation type="unfinished">Автоматично видаляти файли зі списку</translation>
     </message>
 </context>
 </TS>

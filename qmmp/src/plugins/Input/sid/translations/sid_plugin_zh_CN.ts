@@ -35,56 +35,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SidSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation>SID插件设置</translation>
+        <translation type="unfinished">SID插件设置</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation>快速重新取样</translation>
+        <translation type="unfinished">快速重新取样</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation>取样率：</translation>
+        <translation type="unfinished">取样率：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="69"/>
+        <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation>HVSC数据库文件：</translation>
+        <translation type="unfinished">HVSC数据库文件：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="76"/>
+        <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation>重取样方式：</translation>
+        <translation type="unfinished">重取样方式：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="93"/>
+        <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation>默认歌曲长度，秒：</translation>
+        <translation type="unfinished">默认歌曲长度，秒：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="100"/>
+        <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation>开启HVSC歌曲长度数据库</translation>
+        <translation type="unfinished">开启HVSC歌曲长度数据库</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="107"/>
+        <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation>模拟：</translation>
+        <translation type="unfinished">模拟：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>44100 Hz</source>
-        <translation>44100赫兹</translation>
+        <translation type="unfinished">44100赫兹</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="43"/>
         <source>48000 Hz</source>
-        <translation>48000赫兹</translation>
+        <translation type="unfinished">48000赫兹</translation>
     </message>
 </context>
 </TS>

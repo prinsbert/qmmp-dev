@@ -2,6 +2,44 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
+    <name>CueSettingsDialog</name>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="14"/>
+        <source>CUE Plugin Settings</source>
+        <translation type="unfinished">CUE 插件设置</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="29"/>
+        <source>Common settings</source>
+        <translation type="unfinished">基本设置</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="35"/>
+        <source>Load incorrect cue sheets if possible</source>
+        <translation type="unfinished">如可能，载入不正确的cue单</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="45"/>
+        <source>CUE encoding</source>
+        <translation type="unfinished">CUE 编码</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="51"/>
+        <source>Automatic charset detection</source>
+        <translation type="unfinished">自动检测字符集</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="61"/>
+        <source>Language:</source>
+        <translation type="unfinished">语言：</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="81"/>
+        <source>Default encoding:</source>
+        <translation type="unfinished">默认编码：</translation>
+    </message>
+</context>
+<context>
     <name>DecoderCUEFactory</name>
     <message>
         <location filename="../decodercuefactory.cpp" line="38"/>
@@ -27,44 +65,6 @@
         <location filename="../decodercuefactory.cpp" line="84"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>CUE Plugin Settings</source>
-        <translation>CUE 插件设置</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Common settings</source>
-        <translation>基本设置</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>Load incorrect cue sheets if possible</source>
-        <translation>如可能，载入不正确的cue单</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>CUE encoding</source>
-        <translation>CUE 编码</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="51"/>
-        <source>Automatic charset detection</source>
-        <translation>自动检测字符集</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Language:</source>
-        <translation>语言：</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="81"/>
-        <source>Default encoding:</source>
-        <translation>默认编码：</translation>
     </message>
 </context>
 </TS>
