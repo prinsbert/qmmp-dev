@@ -21,7 +21,8 @@
 #define XMPSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+
+class QAbstractButton;
 
 namespace Ui {
 class XmpSettingsDialog;
