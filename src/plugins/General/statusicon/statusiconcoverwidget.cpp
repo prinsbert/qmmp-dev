@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,24 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#include <QPixmap>
+#include <QPainter>
+#include <QPaintEvent>
+#include "statusiconcoverwidget.h"
 
-#include <QDialog>
-#include "ui_settingsdialog.h"
+StatusIconCoverWidget::StatusIconCoverWidget(QWidget *parent)
+        : QWidget(parent)
+{}
 
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-class SettingsDialog : public QDialog
+void StatusIconCoverWidget::setImage(const QImage &img)
 {
-Q_OBJECT
-public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    m_image = img;
+    update();
+}
 
-    ~SettingsDialog();
-
-
-public slots:
-    virtual void accept() override;
-
-private:
-    Ui::SettingsDialog m_ui;
-};
-
-#endif
+void StatusIconCoverWidget::paintEvent(QPaintEvent *p)
+{
+    QPainter paint(this);
+    if(!m_image.isNull())
+        paint.drawImage(0,0, m_image.scaled(p->rect().size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+}

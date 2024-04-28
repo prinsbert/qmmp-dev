@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,33 +17,29 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef PIXMAPWIDGET_H
+#define PIXMAPWIDGET_H
 
-#include <QDialog>
-#include "ui_settingsdialog.h"
+#include <QWidget>
+#include <QImage>
 
 /**
-    @author Ilya Kotov <forkotov02@ya.ru>
+	@author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+
+class StatusIconCoverWidget : public QWidget
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    StatusIconCoverWidget(QWidget *parent = nullptr);
+    ~StatusIconCoverWidget() = default;
 
-    ~SettingsDialog();
-
-public slots:
-    virtual void accept() override;
-
-private slots:
-    void on_templateButton_clicked();
+    void setImage(const QImage &img);
 
 private:
-    Ui::SettingsDialog m_ui;
-    QString m_template;
+    void paintEvent (QPaintEvent *event) override;
 
+    QImage m_image;
 };
 
 #endif

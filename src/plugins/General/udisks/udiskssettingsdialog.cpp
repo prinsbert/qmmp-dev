@@ -17,43 +17,42 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-
-#include <QMessageBox>
+#include <QSettings>
 #include <qmmp/qmmp.h>
+#include "ui_udiskssettingsdialog.h"
 #include "udiskssettingsdialog.h"
-#include "udisksplugin.h"
-#include "udisksfactory.h"
 
-GeneralProperties UDisksFactory::properties() const
+UDisksSettingsDialog::UDisksSettingsDialog(QWidget *parent)
+        : QDialog(parent), m_ui(new Ui::UDisksSettingsDialog)
 {
-    GeneralProperties properties;
-    properties.name = tr("UDisks Plugin");
-    properties.shortName = "udisks"_L1;
-    properties.hasAbout = true;
-    properties.hasSettings = true;
-    properties.visibilityControl = false;
-    return properties;
+    m_ui->setupUi(this);
+    QSettings settings;
+    settings.beginGroup(u"UDisks"_s);
+    m_ui->cdGroupBox->setChecked(settings.value(u"cda"_s, true).toBool());
+    m_ui->addTracksCheckBox->setChecked(settings.value(u"add_tracks"_s, false).toBool());
+    m_ui->removeTracksCheckBox->setChecked(settings.value(u"remove_tracks"_s, false).toBool());
+    m_ui->removableGroupBox->setChecked(settings.value(u"removable"_s, true).toBool());
+    m_ui->addFilesCheckBox->setChecked(settings.value(u"add_files"_s, false).toBool());
+    m_ui->removeFilesCheckBox->setChecked(settings.value(u"remove_files"_s, false).toBool());
+    settings.endGroup();
 }
 
-QObject *UDisksFactory::create(QObject *parent)
+
+UDisksSettingsDialog::~UDisksSettingsDialog()
 {
-    return new UDisksPlugin(parent);
+    delete m_ui;
 }
 
-QDialog *UDisksFactory::createConfigDialog(QWidget *parent)
+void UDisksSettingsDialog::accept()
 {
-    return new UDisksSettingsDialog(parent);
-}
-
-void UDisksFactory::showAbout(QWidget *parent)
-{
-    QMessageBox::about(parent, tr("About UDisks Plugin"),
-                       tr("Qmmp UDisks Plugin") + QChar::LineFeed +
-                       tr("This plugin provides removable devices detection using UDisks") + QChar::LineFeed +
-                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
-}
-
-QString UDisksFactory::translation() const
-{
-    return QLatin1String(":/udisks_plugin_");
+    QSettings settings;
+    settings.beginGroup(u"UDisks"_s);
+    settings.setValue(u"cda"_s, m_ui->cdGroupBox->isChecked());
+    settings.setValue(u"add_tracks"_s, m_ui->addTracksCheckBox->isChecked());
+    settings.setValue(u"remove_tracks"_s, m_ui->removeTracksCheckBox->isChecked());
+    settings.setValue(u"removable"_s, m_ui->removableGroupBox->isChecked());
+    settings.setValue(u"add_files"_s, m_ui->addFilesCheckBox->isChecked());
+    settings.setValue(u"remove_files"_s, m_ui->removeFilesCheckBox->isChecked());
+    settings.endGroup();
+    QDialog::accept();
 }

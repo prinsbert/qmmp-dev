@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,7 +24,7 @@
 #include <QFrame>
 #include <qmmpui/metadataformatter.h>
 
-#define DEFAULT_TEMPLATE "<b>%if(%t,%t,%f)</b> %if(%l,\\(%l\\),) \n%if(%p,<br>%p,)\n%if(%a,<br>%a,)"
+#define DEFAULT_TEMPLATE u"<b>%if(%t,%t,%f)</b> %if(%l,\\(%l\\),) \n%if(%p,<br>%p,)\n%if(%a,<br>%a,)"_s
 
 class QTimer;
 class QLabel;

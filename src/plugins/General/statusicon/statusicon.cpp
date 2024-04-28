@@ -36,28 +36,28 @@
 StatusIcon::StatusIcon(QObject *parent) : QObject(parent)
 {
     m_tray = new QmmpTrayIcon(this);
-    connect(m_tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), SLOT(trayActivated(QSystemTrayIcon::ActivationReason)));
+    connect(m_tray, &QmmpTrayIcon::activated, this, &StatusIcon::trayActivated);
     //m_tray->show();
     m_core = SoundCore::instance();
     m_player = MediaPlayer::instance();
     QSettings settings;
-    settings.beginGroup("Tray");
-    m_showMessage = settings.value("show_message",false).toBool();
-    m_messageDelay = settings.value("message_delay", 2000).toInt();
-    m_useStandardIcons = settings.value("use_standard_icons",false).toBool();
-    m_showToolTip = settings.value("show_tooltip",true).toBool();
-    m_splitFileName = settings.value("split_file_name",true).toBool();
+    settings.beginGroup(u"Tray"_s);
+    m_showMessage = settings.value(u"show_message"_s, false).toBool();
+    m_messageDelay = settings.value(u"message_delay"_s, 2000).toInt();
+    m_useStandardIcons = settings.value(u"use_standard_icons"_s, false).toBool();
+    m_showToolTip = settings.value(u"show_tooltip"_s, true).toBool();
+    m_splitFileName = settings.value(u"split_file_name"_s, true).toBool();
 #ifdef QMMP_WS_X11
-    m_toolTipTemplate = settings.value("tooltip_template", DEFAULT_TEMPLATE).toString();
+    m_toolTipTemplate = settings.value(u"tooltip_template"_s, DEFAULT_TEMPLATE).toString();
 #else
-    m_toolTipTemplate = "%p%if(%p&%t, - ,)%t";
+    m_toolTipTemplate = u"%p%if(%p&%t, - ,)%t"_s;
 #endif
     m_toolTipFormatter.setPattern(m_toolTipTemplate);
-    m_messageFormatter.setPattern("%p%if(%p&%t, - ,)%t");
+    m_messageFormatter.setPattern(u"%p%if(%p&%t, - ,)%t"_s);
     if(m_useStandardIcons)
         m_tray->setIcon(QApplication::style ()->standardIcon(QStyle::SP_MediaStop));
     else
-        m_tray->setIcon(QIcon(":/tray_stop.png"));
+        m_tray->setIcon(QIcon(u":/tray_stop.png"_s));
     settings.endGroup();
     //actions
     m_menu = new QMenu();
@@ -66,22 +66,22 @@ StatusIcon::StatusIcon(QObject *parent) : QObject(parent)
     QIcon stopIcon = QApplication::style()->standardIcon(QStyle::SP_MediaStop);
     QIcon nextIcon = QApplication::style()->standardIcon(QStyle::SP_MediaSkipForward);
     QIcon previousIcon = QApplication::style()->standardIcon(QStyle::SP_MediaSkipBackward);
-    QIcon exitIcon = QIcon::fromTheme("application-exit");
-    m_menu->addAction(playIcon,tr("Play"), m_player, SLOT(play()));
-    m_menu->addAction(pauseIcon,tr("Pause"), m_core, SLOT(pause()));
-    m_menu->addAction(stopIcon,tr("Stop"), m_core, SLOT(stop()));
+    QIcon exitIcon = QIcon::fromTheme(u"application-exit"_s);
+    m_menu->addAction(playIcon, tr("Play"), m_player, &MediaPlayer::play);
+    m_menu->addAction(pauseIcon, tr("Pause"), m_core, &SoundCore::pause);
+    m_menu->addAction(stopIcon, tr("Stop"), m_core, &SoundCore::stop);
     m_menu->addSeparator();
-    m_menu->addAction(nextIcon, tr("Next"), m_player, SLOT(next()));
-    m_menu->addAction(previousIcon, tr("Previous"), m_player, SLOT(previous()));
+    m_menu->addAction(nextIcon, tr("Next"), m_player, &MediaPlayer::next);
+    m_menu->addAction(previousIcon, tr("Previous"), m_player, &MediaPlayer::previous);
     m_menu->addSeparator();
-    m_menu->addAction(exitIcon, tr("Exit"), UiHelper::instance(), SLOT(exit()));
+    m_menu->addAction(exitIcon, tr("Exit"), UiHelper::instance(), &UiHelper::exit);
     m_tray->setContextMenu(m_menu);
     m_tray->show();
-    connect (m_core, SIGNAL(trackInfoChanged()), SLOT(showMetaData()));
-    connect (m_core, SIGNAL(stateChanged(Qmmp::State)), SLOT(setState(Qmmp::State)));
+    connect (m_core, &SoundCore::trackInfoChanged, this, &StatusIcon::showMetaData);
+    connect (m_core, &SoundCore::stateChanged, this, &StatusIcon::setState);
     setState(m_core->state()); //update state
     if (m_core->state() == Qmmp::Playing) //show test message
-        QTimer::singleShot(1500, this, SLOT(showMetaData()));
+        QTimer::singleShot(1500, this, &StatusIcon::showMetaData);
 }
 
 StatusIcon::~StatusIcon()
@@ -98,7 +98,7 @@ void StatusIcon::setState(Qmmp::State state)
          if(m_useStandardIcons)
             m_tray->setIcon(QApplication::style ()->standardIcon(QStyle::SP_MediaPlay));
         else
-            m_tray->setIcon (QIcon(":/tray_play.png"));
+            m_tray->setIcon (QIcon(u":/tray_play.png"_s));
         break;
     }
     case Qmmp::Paused:
@@ -106,7 +106,7 @@ void StatusIcon::setState(Qmmp::State state)
          if(m_useStandardIcons)
             m_tray->setIcon(QApplication::style ()->standardIcon(QStyle::SP_MediaPause));
         else
-            m_tray->setIcon (QIcon(":/tray_pause.png"));
+            m_tray->setIcon (QIcon(u":/tray_pause.png"_s));
         break;
     }
     case Qmmp::Stopped:
@@ -114,7 +114,7 @@ void StatusIcon::setState(Qmmp::State state)
         if(m_useStandardIcons)
             m_tray->setIcon(QApplication::style ()->standardIcon(QStyle::SP_MediaStop));
         else
-            m_tray->setIcon (QIcon(":/tray_stop.png"));
+            m_tray->setIcon (QIcon(u":/tray_stop.png"_s));
         if(m_showToolTip)
             m_tray->setToolTip(tr("Stopped"));
         break;
@@ -125,20 +125,20 @@ void StatusIcon::setState(Qmmp::State state)
 void StatusIcon::showMetaData()
 {
     TrackInfo info = m_core->trackInfo();
-    if(m_splitFileName && info.value(Qmmp::TITLE).isEmpty() && !info.path().contains("://"))
+    if(m_splitFileName && info.value(Qmmp::TITLE).isEmpty() && !info.path().contains(u"://"_s))
     {
         QString name = QFileInfo(info.path()).completeBaseName();
-        if(name.contains("-"))
+        if(name.contains(QChar('-')))
         {
-            info.setValue(Qmmp::TITLE, name.section('-',1,1).trimmed());
+            info.setValue(Qmmp::TITLE, name.section(QChar('-'), 1, 1).trimmed());
             if(info.value(Qmmp::ARTIST).isEmpty())
-                info.setValue(Qmmp::ARTIST, name.section('-',0,0).trimmed());
+                info.setValue(Qmmp::ARTIST, name.section(QChar('-'), 0, 0).trimmed());
         }
     }
 
     QString message = m_messageFormatter.format(info);
     if (message.isEmpty())
-        message = info.path().section('/',-1);
+        message = info.path().section(QChar('-'), -1);
 
     if (m_showMessage)
         m_tray->showMessage (tr("Now Playing"), message,
@@ -148,7 +148,7 @@ void StatusIcon::showMetaData()
     {
         message = m_toolTipFormatter.format(info);
         if(message.isEmpty())
-            message = info.path().section('/',-1);
+            message = info.path().section(QChar('-'), -1);
         m_tray->setToolTip(message);
     }
 }

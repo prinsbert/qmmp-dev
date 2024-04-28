@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2014 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,28 +17,44 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#include <QPixmap>
-#include <QPainter>
-#include <QPaintEvent>
+#ifndef SCROBBLERSETTINGSDIALOG_H
+#define SCROBBLERSETTINGSDIALOG_H
 
-#include "coverwidget.h"
+#include <QDialog>
 
-CoverWidget::CoverWidget(QWidget *parent)
-        : QWidget(parent)
-{}
+class ScrobblerAuth;
 
-CoverWidget::~CoverWidget()
-{}
-
-void CoverWidget::setImage(const QImage &img)
-{
-    m_image = img;
-    update();
+namespace Ui {
+class ScrobblerSettingsDialog;
 }
 
-void CoverWidget::paintEvent (QPaintEvent *p)
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class ScrobblerSettingsDialog : public QDialog
 {
-    QPainter paint(this);
-    if(!m_image.isNull())
-        paint.drawImage(0,0, m_image.scaled(p->rect().size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-}
+Q_OBJECT
+public:
+    explicit ScrobblerSettingsDialog(QWidget *parent = nullptr);
+
+    ~ScrobblerSettingsDialog();
+
+public slots:
+    virtual void accept() override;
+
+private slots:
+    void on_newSessionButton_lastfm_clicked();
+    void on_newSessionButton_librefm_clicked();
+    void processTokenResponse(int error);
+    void processSessionResponse(int error);
+    void on_checkButton_lastfm_clicked();
+    void on_checkButton_librefm_clicked();
+    void processCheckResponse(int error);
+
+private:
+    Ui::ScrobblerSettingsDialog *m_ui;
+    ScrobblerAuth *m_lastfmAuth;
+    ScrobblerAuth *m_librefmAuth;
+};
+
+#endif

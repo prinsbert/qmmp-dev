@@ -22,7 +22,7 @@
 #define EDITSTREAMDIALOG_H
 
 #include <QDialog>
-#include <QMap>
+#include <QHash>
 
 namespace Ui {
 class EditStreamDialog;
@@ -45,8 +45,8 @@ public:
         TYPE
     };
 
-    void setValues(const QMap<Key, QString> &values);
-    const QMap<Key, QString> &values() const;
+    void setValues(const QHash<Key, QString> &values);
+    QHash<Key, QString> values() const;
 
 public slots:
     void accept() override;
@@ -56,7 +56,7 @@ private slots:
 
 private:
     Ui::EditStreamDialog *m_ui;
-    QMap<Key, QString> m_values;
+    QHash<Key, QString> m_values;
 };
 
 #endif // EDITSTREAMDIALOG_H

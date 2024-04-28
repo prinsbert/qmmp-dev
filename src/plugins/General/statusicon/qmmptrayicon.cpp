@@ -36,11 +36,6 @@ QmmpTrayIcon::QmmpTrayIcon(QObject *parent)
         : QSystemTrayIcon(parent)
 {}
 
-
-QmmpTrayIcon::~QmmpTrayIcon()
-{
-}
-
 void QmmpTrayIcon::setToolTip(const QString &tip)
 {
 #ifdef QMMP_WS_X11
@@ -83,7 +78,7 @@ bool QmmpTrayIcon::hasToolTipEvent()
     //checking for XEmbed system tray implementation
     //only this implementation is able to send QHelpEvent
     const QWindowList windowList = qApp->allWindows();
-    return std::any_of(windowList.cbegin(), windowList.cend(), [](QWindow *w){ return w->objectName() == "QSystemTrayIconSysWindow"; });
+    return std::any_of(windowList.cbegin(), windowList.cend(), [](QWindow *w){ return w->objectName() == u"QSystemTrayIconSysWindow"_s; });
 }
 
 void QmmpTrayIcon::wheelEvent(QWheelEvent *e)

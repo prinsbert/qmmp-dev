@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2019 by Ilya Kotov                                      *
+ *   Copyright (C) 2019-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,7 +26,7 @@ GeneralProperties SleepInhibitFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Sleep Mode Inhibition Plugin");
-    properties.shortName = "sleepinhibitor";
+    properties.shortName = "sleepinhibitor"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.visibilityControl = false;

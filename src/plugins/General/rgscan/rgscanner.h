@@ -59,14 +59,14 @@ signals:
 private:
     void run() override;
     void deinit();
-    InputSource *m_source;
-    Decoder *m_decoder;
+    InputSource *m_source = nullptr;
+    Decoder *m_decoder = nullptr;
     QMutex m_mutex;
-    bool m_user_stop, m_is_running, m_is_pending, m_has_values;
+    bool m_user_stop = false, m_is_running = false, m_is_pending = false, m_has_values = false;
     QString m_url;
-    double m_gain;
-    double m_peak;
-    GainHandle_t *m_handle;
+    double m_gain = 0.;
+    double m_peak = 0.;
+    GainHandle_t *m_handle = nullptr;
 
 };
 

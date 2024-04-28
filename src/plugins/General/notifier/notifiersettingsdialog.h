@@ -17,41 +17,41 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef NOTIFIERSETTINGSDIALOG_H
+#define NOTIFIERSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
 
-class ScrobblerAuth;
+class Action;
+
+namespace Ui {
+class NotifierSettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class NotifierSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit NotifierSettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    virtual ~NotifierSettingsDialog();
+
 
 public slots:
     virtual void accept() override;
 
 private slots:
-    void on_newSessionButton_lastfm_clicked();
-    void on_newSessionButton_librefm_clicked();
-    void processTokenResponse(int error);
-    void processSessionResponse(int error);
-    void on_checkButton_lastfm_clicked();
-    void on_checkButton_librefm_clicked();
-    void processCheckResponse(int error);
+    void on_fontButton_pressed();
+    void on_templateButton_pressed();
 
 private:
-    Ui::SettingsDialog m_ui;
-    ScrobblerAuth *m_lastfmAuth;
-    ScrobblerAuth *m_librefmAuth;
+    Ui::NotifierSettingsDialog *m_ui;
+    QString m_template;
+    QMap<uint, QPushButton*> m_buttons;
+
 };
 
 #endif

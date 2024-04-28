@@ -26,11 +26,11 @@
 ScrobblerHandler::ScrobblerHandler(QObject *parent) : QObject(parent)
 {
     QSettings settings;
-    settings.beginGroup("Scrobbler");
-    if(settings.value("use_lastfm", false).toBool())
-        new Scrobbler(SCROBBLER_LASTFM_URL, "lastfm", this);
-    if(settings.value("use_librefm", false).toBool())
-        new Scrobbler(SCROBBLER_LIBREFM_URL, "librefm", this);
+    settings.beginGroup(u"Scrobbler"_s);
+    if(settings.value(u"use_lastfm"_s, false).toBool())
+        new Scrobbler(SCROBBLER_LASTFM_URL, u"lastfm"_s, this);
+    if(settings.value(u"use_librefm"_s, false).toBool())
+        new Scrobbler(SCROBBLER_LIBREFM_URL, u"librefm"_s, this);
     settings.endGroup();
 }
 

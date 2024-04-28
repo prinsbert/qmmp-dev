@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,14 +20,14 @@
 
 #include <QMessageBox>
 #include "statusicon.h"
-#include "settingsdialog.h"
+#include "statusiconsettingsdialog.h"
 #include "statusiconfactory.h"
 
 GeneralProperties StatusIconFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Status Icon Plugin");
-    properties.shortName = "status_icon";
+    properties.shortName = "status_icon"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = true;
@@ -41,16 +41,16 @@ QObject *StatusIconFactory::create(QObject *parent)
 
 QDialog *StatusIconFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new StatusIconSettingsDialog(parent);
 }
 
 void StatusIconFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Status Icon Plugin"),
-                        tr("Qmmp Status Icon Plugin")+"\n"+
-                        tr("Written by:") + "\n"+
-                        tr("Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Artur Guzik <a.guzik88@gmail.com>"));
+    QMessageBox::about(parent, tr("About Status Icon Plugin"),
+                       tr("Qmmp Status Icon Plugin")+"\n"+
+                       tr("Written by:") + "\n"+
+                       tr("Ilya Kotov <forkotov02@ya.ru>")+"\n"+
+                       tr("Artur Guzik <a.guzik88@gmail.com>"));
 }
 
 QString StatusIconFactory::translation() const

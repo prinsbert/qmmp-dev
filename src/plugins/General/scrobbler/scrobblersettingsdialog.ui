@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SettingsDialog</class>
- <widget class="QDialog" name="SettingsDialog">
+ <class>ScrobblerSettingsDialog</class>
+ <widget class="QDialog" name="ScrobblerSettingsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>376</width>
-    <height>253</height>
+    <height>264</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -150,7 +150,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>ScrobblerSettingsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -166,7 +166,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>ScrobblerSettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

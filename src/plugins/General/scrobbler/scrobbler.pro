@@ -5,19 +5,20 @@ TARGET = $$PLUGINS_PREFIX/General/scrobbler
 QT += network
 
 HEADERS += scrobblerfactory.h \
-    settingsdialog.h \
     scrobblerhandler.h \
     scrobblercache.h \
     scrobbler.h \
-    defines.h
+    defines.h \
+    scrobblersettingsdialog.h
 
 SOURCES += scrobblerfactory.cpp \
-    settingsdialog.cpp \
     scrobblerhandler.cpp \
     scrobblercache.cpp \
-    scrobbler.cpp
+    scrobbler.cpp \
+    scrobblersettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    scrobblersettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

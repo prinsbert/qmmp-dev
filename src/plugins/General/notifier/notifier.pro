@@ -4,15 +4,16 @@ TARGET = $$PLUGINS_PREFIX/General/notifier
 
 HEADERS += notifierfactory.h \
            notifier.h \
-           popupwidget.h \
-           settingsdialog.h
+           notifiersettingsdialog.h \
+           popupwidget.h
 
 SOURCES += notifierfactory.cpp \
            notifier.cpp \
-           popupwidget.cpp \
-           settingsdialog.cpp
+           notifiersettingsdialog.cpp \
+           popupwidget.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    notifiersettingsdialog.ui
 
 RESOURCES = notifier_images.qrc \
             translations/translations.qrc

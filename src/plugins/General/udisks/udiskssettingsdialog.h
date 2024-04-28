@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,38 +17,32 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef UDISKSSETTINGSDIALOG_H
+#define UDISKSSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
 
-class Action;
+namespace Ui {
+class UDisksSettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class UDisksSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit UDisksSettingsDialog(QWidget *parent = nullptr);
 
-    virtual ~SettingsDialog();
+    ~UDisksSettingsDialog();
 
 
 public slots:
     virtual void accept() override;
 
-private slots:
-    void on_fontButton_pressed();
-    void on_templateButton_pressed();
-
 private:
-    Ui::SettingsDialog m_ui;
-    QString m_template;
-    QMap<uint, QPushButton*> m_buttons;
-
+    Ui::UDisksSettingsDialog *m_ui;
 };
 
 #endif

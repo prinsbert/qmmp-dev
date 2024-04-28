@@ -26,7 +26,7 @@ GeneralProperties TaskbarFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Taskbar Plugin");
-    properties.shortName = "taskbar";
+    properties.shortName = "taskbar"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.visibilityControl = false;
@@ -46,14 +46,14 @@ QDialog *TaskbarFactory::createConfigDialog(QWidget *parent)
 
 void TaskbarFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Taskbar Plugin"),
-                        tr("Qmmp Taskbar Plugin")+"\n"+
-                        tr("This plugin adds support for progress indicator in the Windows taskbar")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + "\n" +
-                        tr("Based on QtWinExtras module of the Qt Toolkit") + "\n" +
-                        tr("QtWinExtras developers:") + "\n" +
-                        tr("Ivan Vizir <define-true-false@yandex.com>") + "\n" +
-                        tr("The Qt Company Ltd."));
+    QMessageBox::about(parent, tr("About Taskbar Plugin"),
+                       tr("Qmmp Taskbar Plugin")+"\n"+
+                       tr("This plugin adds support for progress indicator in the Windows taskbar")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + "\n" +
+                       tr("Based on QtWinExtras module of the Qt Toolkit") + "\n" +
+                       tr("QtWinExtras developers:") + "\n" +
+                       tr("Ivan Vizir <define-true-false@yandex.com>") + "\n" +
+                       tr("The Qt Company Ltd."));
 }
 
 QString TaskbarFactory::translation() const

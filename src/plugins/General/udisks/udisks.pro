@@ -8,15 +8,16 @@ HEADERS += udisksfactory.h \
            udisksplugin.h \
            udisksmanager.h \
            udisksdevice.h \
-           settingsdialog.h
+           udiskssettingsdialog.h
 
 SOURCES += udisksfactory.cpp \
            udisksplugin.cpp \
            udisksmanager.cpp \
            udisksdevice.cpp \
-           settingsdialog.cpp
+           udiskssettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    udiskssettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

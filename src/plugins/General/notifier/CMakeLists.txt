@@ -8,11 +8,11 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libnotifier_SRCS
-    settingsdialog.cpp
+    notifiersettingsdialog.cpp
     notifier.cpp
     notifierfactory.cpp
     popupwidget.cpp
-    settingsdialog.ui
+    notifiersettingsdialog.ui
     translations/translations.qrc
     notifier_images.qrc
 )

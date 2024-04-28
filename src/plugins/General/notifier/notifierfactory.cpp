@@ -20,14 +20,14 @@
 
 #include <QMessageBox>
 #include "notifier.h"
-#include "settingsdialog.h"
+#include "notifiersettingsdialog.h"
 #include "notifierfactory.h"
 
 GeneralProperties NotifierFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Notifier Plugin");
-    properties.shortName = "notifier";
+    properties.shortName = "notifier"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;
@@ -41,14 +41,14 @@ QObject *NotifierFactory::create(QObject *parent)
 
 QDialog *NotifierFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new NotifierSettingsDialog(parent);
 }
 
 void NotifierFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Notifier Plugin"),
-                        tr("Qmmp Notifier Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Notifier Plugin"),
+                       tr("Qmmp Notifier Plugin")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString NotifierFactory::translation() const

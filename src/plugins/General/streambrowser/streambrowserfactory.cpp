@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2012 by Ilya Kotov                                      *
+ *   Copyright (C) 2012-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,7 +27,7 @@ GeneralProperties StreamBrowserFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Stream Browser Plugin");
-    properties.shortName = "streambrowser";
+    properties.shortName = "streambrowser"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.visibilityControl = false;
@@ -47,10 +47,10 @@ QDialog *StreamBrowserFactory::createConfigDialog(QWidget *parent)
 
 void StreamBrowserFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Stream Browser Plugin"),
-                        tr("Qmmp Stream Browser Plugin")+"\n"+
-                        tr("This plugin allows one to add stream from IceCast stream directory")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Stream Browser Plugin"),
+                       tr("Qmmp Stream Browser Plugin")+"\n"+
+                       tr("This plugin allows one to add stream from IceCast stream directory")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString StreamBrowserFactory::translation() const

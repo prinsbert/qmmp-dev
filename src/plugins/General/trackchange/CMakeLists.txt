@@ -10,8 +10,8 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 SET(libtrackchange_SRCS
     trackchange.cpp
     trackchangefactory.cpp
-    settingsdialog.cpp
-    settingsdialog.ui
+    trackchangesettingsdialog.cpp
+    trackchangesettingsdialog.ui
     translations/translations.qrc
 )
 

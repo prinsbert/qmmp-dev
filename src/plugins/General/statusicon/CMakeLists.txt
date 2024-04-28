@@ -8,12 +8,12 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libstatusicon_SRCS
-    settingsdialog.cpp
+    statusiconsettingsdialog.cpp
     statusicon.cpp
     statusiconfactory.cpp
     qmmptrayicon.cpp
     statusiconpopupwidget.cpp
-    coverwidget.cpp
+    statusiconcoverwidget.cpp
     settingsdialog.ui
     translations/translations.qrc
     images/tray_images.qrc

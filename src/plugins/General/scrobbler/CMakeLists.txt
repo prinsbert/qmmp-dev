@@ -9,12 +9,12 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libscrobbler_SRCS
-    settingsdialog.cpp
+    scrobblersettingsdialog.cpp
     scrobblerhandler.cpp
     scrobblerfactory.cpp
     scrobblercache.cpp
     scrobbler.cpp
-    settingsdialog.ui
+    scrobblersettingsdialog.ui
     translations/translations.qrc
 )
 

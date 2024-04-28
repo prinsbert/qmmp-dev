@@ -26,19 +26,21 @@
 #include <QXmlStreamReader>
 #include "udisksmanager.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 UDisksManager::UDisksManager(QObject *parent)
         : QObject(parent)
 {
-    m_interface = new QDBusInterface("org.freedesktop.UDisks2", "/org/freedesktop/UDisks2",
-                                     "org.freedesktop.DBus.ObjectManager",
+    m_interface = new QDBusInterface(u"org.freedesktop.UDisks2"_s, u"/org/freedesktop/UDisks2"_s,
+                                     u"org.freedesktop.DBus.ObjectManager"_s,
                                      QDBusConnection::systemBus(), this);
 
-    m_interface->connection().connect("org.freedesktop.UDisks2", "/org/freedesktop/UDisks2",
-                                      "org.freedesktop.DBus.ObjectManager", "InterfacesAdded",
+    m_interface->connection().connect(u"org.freedesktop.UDisks2"_s, u"/org/freedesktop/UDisks2"_s,
+                                      u"org.freedesktop.DBus.ObjectManager"_s, u"InterfacesAdded"_s,
                                       this, SLOT(onInterfacesAdded(QDBusObjectPath,QVariantMapMap)));
 
-    m_interface->connection().connect("org.freedesktop.UDisks2", "/org/freedesktop/UDisks2",
-                                      "org.freedesktop.DBus.ObjectManager", "InterfacesRemoved",
+    m_interface->connection().connect(u"org.freedesktop.UDisks2"_s, u"/org/freedesktop/UDisks2"_s,
+                                      u"org.freedesktop.DBus.ObjectManager"_s, u"InterfacesRemoved"_s,
                                       this, SIGNAL(onInterfacesRemoved(QDBusObjectPath,QStringList)));
 }
 
@@ -50,10 +52,10 @@ UDisksManager::~UDisksManager()
 QList<QDBusObjectPath> UDisksManager::findAllDevices()
 {
     QList<QDBusObjectPath> paths;
-    QDBusMessage call = QDBusMessage::createMethodCall("org.freedesktop.UDisks2",
-                                                       "/org/freedesktop/UDisks2/block_devices",
-                                                       "org.freedesktop.DBus.Introspectable",
-                                                       "Introspect");
+    QDBusMessage call = QDBusMessage::createMethodCall(u"org.freedesktop.UDisks2"_s,
+                                                       u"/org/freedesktop/UDisks2/block_devices"_s,
+                                                       u"org.freedesktop.DBus.Introspectable"_s,
+                                                       u"Introspect"_s);
     QDBusPendingReply<QString> reply = QDBusConnection::systemBus().call(call);
 
 
@@ -66,11 +68,11 @@ QList<QDBusObjectPath> UDisksManager::findAllDevices()
     while (!xml.atEnd())
     {
         xml.readNext();
-        if (xml.tokenType() == QXmlStreamReader::StartElement && xml.name().toString() == "node" )
+        if (xml.tokenType() == QXmlStreamReader::StartElement && xml.name().toString() == "node"_L1 )
         {
             QString name = xml.attributes().value("name").toString();
             if(!name.isEmpty())
-                paths << QDBusObjectPath("/org/freedesktop/UDisks2/block_devices/" + name);
+                paths << QDBusObjectPath(u"/org/freedesktop/UDisks2/block_devices/"_s + name);
         }
     }
     return paths;
@@ -78,14 +80,14 @@ QList<QDBusObjectPath> UDisksManager::findAllDevices()
 
 void UDisksManager::onInterfacesAdded(const QDBusObjectPath &object_path, const QVariantMapMap &)
 {
-    if(object_path.path().startsWith("/org/freedesktop/UDisks2/jobs"))
+    if(object_path.path().startsWith(u"/org/freedesktop/UDisks2/jobs"_s))
         return;
     emit deviceAdded(object_path);
 }
 
 void UDisksManager::onInterfacesRemoved(const QDBusObjectPath &object_path, const QStringList &)
 {
-    if(object_path.path().startsWith("/org/freedesktop/UDisks2/jobs"))
+    if(object_path.path().startsWith(u"/org/freedesktop/UDisks2/jobs"_s))
         return;
     emit deviceRemoved(object_path);
 }

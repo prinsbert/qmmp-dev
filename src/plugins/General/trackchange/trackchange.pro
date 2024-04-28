@@ -17,11 +17,12 @@ unix {
 }
 HEADERS += trackchangefactory.h \
            trackchange.h \
-           settingsdialog.h
+           trackchangesettingsdialog.h
 
 win32 : HEADERS += ../../../../src/qmmpui/general.h
 SOURCES += trackchangefactory.cpp \
            trackchange.cpp \
-           settingsdialog.cpp
+           trackchangesettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    trackchangesettingsdialog.ui

@@ -37,7 +37,7 @@
 #include <qmmp/soundcore.h>
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/metadataformatter.h>
-#include "coverwidget.h"
+#include "statusiconcoverwidget.h"
 #include "statusiconpopupwidget.h"
 
 StatusIconPopupWidget::StatusIconPopupWidget(QWidget * parent)
@@ -51,13 +51,13 @@ StatusIconPopupWidget::StatusIconPopupWidget(QWidget * parent)
     m_hLayout = new QHBoxLayout();
     m_vLayout = new QVBoxLayout();
 
-    m_cover = new CoverWidget(this);
+    m_cover = new StatusIconCoverWidget(this);
     m_hLayout->addWidget(m_cover);
 
     m_textLabel = new QLabel(this);
     m_vLayout->addWidget(m_textLabel);
 
-    m_spacer = new QSpacerItem(20,0,QSizePolicy::Expanding,QSizePolicy::Expanding);
+    m_spacer = new QSpacerItem(20, 0, QSizePolicy::Expanding,QSizePolicy::Expanding);
     m_vLayout->addItem(m_spacer);
 
     m_bar = new TimeBar(this);
@@ -71,16 +71,16 @@ StatusIconPopupWidget::StatusIconPopupWidget(QWidget * parent)
 
     m_bar->setMinimumWidth(110);
 
-    connect(m_timer,SIGNAL(timeout()),SLOT(deleteLater()));
-    connect(SoundCore::instance(),SIGNAL(elapsedChanged(qint64)),this,SLOT(updateTime(qint64)));
+    connect(m_timer, &QTimer::timeout, this, &StatusIconPopupWidget::deleteLater);
+    connect(SoundCore::instance(), &SoundCore::elapsedChanged, this, &StatusIconPopupWidget::updateTime);
 
     QSettings settings;
-    settings.beginGroup("Tray");
-    m_timer->setInterval(settings.value("tooltip_delay",2000).toInt());
-    setWindowOpacity(1.0 - settings.value("tooltip_transparency",0).toInt()/100.0);
-    int size = settings.value("tooltip_cover_size",100).toInt();
-    m_cover->setFixedSize(size,size);
-    m_showProgress = settings.value("tooltip_progress",true).toBool();
+    settings.beginGroup(u"Tray"_s);
+    m_timer->setInterval(settings.value(u"tooltip_delay"_s, 2000).toInt());
+    setWindowOpacity(1.0 - settings.value(u"tooltip_transparency"_s, 0).toInt() / 100.0);
+    int size = settings.value(u"tooltip_cover_size"_s, 100).toInt();
+    m_cover->setFixedSize(size, size);
+    m_showProgress = settings.value(u"tooltip_progress"_s, true).toBool();
     settings.endGroup();
 }
 
@@ -104,7 +104,7 @@ void StatusIconPopupWidget::updateMetaData(const QString &message)
         m_cover->show();
         m_bar->show();
         if(cover.isNull())
-            m_cover->setImage(QImage(":/empty_cover.png"));
+            m_cover->setImage(QImage(u":/empty_cover.png"_s));
         else
             m_cover->setImage(cover);
         updateTime(core->elapsed());
@@ -120,14 +120,14 @@ void StatusIconPopupWidget::updateMetaData(const QString &message)
     resize(sizeHint());
     qApp->processEvents();
     if(isVisible())
-        updatePosition(m_lastTrayX,m_lastTrayY);
+        updatePosition(m_lastTrayX, m_lastTrayY);
     m_timer->start();
 }
 
 void StatusIconPopupWidget::updateTime(qint64 elapsed)
 {
-    m_bar->setMaximum(SoundCore::instance()->duration()/1000);
-    m_bar->setValue(elapsed/1000);
+    m_bar->setMaximum(SoundCore::instance()->duration() / 1000);
+    m_bar->setValue(elapsed / 1000);
     m_bar->update();
 }
 
@@ -137,9 +137,9 @@ void StatusIconPopupWidget::updatePosition(int trayx, int trayy)
     int xpos = 0;
     int ypos = 0;
 
-    xpos = screenGeometry.x() + trayx -5;
+    xpos = screenGeometry.x() + trayx - 5;
     if(xpos + width() > screenGeometry.width())
-        xpos = screenGeometry.width() - width() -5;
+        xpos = screenGeometry.width() - width() - 5;
 
     if(trayy < screenGeometry.y()) //tray on top of screen
     {
@@ -172,7 +172,7 @@ TimeBar::TimeBar(QWidget *parent) : QProgressBar(parent)
 
 QString TimeBar::text() const
 {
-    return QString("%1:%2").arg(value()/60,2,10,QChar('0')).arg(value()%60,2,10,QChar('0'));
+    return QStringLiteral("%1:%2").arg(value() / 60, 2, 10, QChar('0')).arg(value() % 60, 2, 10, QChar('0'));
 }
 
 #endif

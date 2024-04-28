@@ -36,7 +36,7 @@ class QHBoxLayout;
 class QVBoxLayout;
 class QSpacerItem;
 class TimeBar;
-class CoverWidget;
+class StatusIconCoverWidget;
 
 class StatusIconPopupWidget : public QFrame
 {
@@ -61,7 +61,7 @@ private:
     QHBoxLayout *m_hLayout;
     QVBoxLayout *m_vLayout;
     QTimer *m_timer;
-    CoverWidget *m_cover;
+    StatusIconCoverWidget *m_cover;
     QString m_totalTime;
     QSpacerItem *m_spacer;
     QProgressBar *m_bar;

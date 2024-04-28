@@ -39,6 +39,7 @@
 #include <taglib/opusfile.h>
 #include "rgscanner.h"
 #include "gain_analysis.h"
+#include "ui_rgscandialog.h"
 #include "rgscandialog.h"
 
 #define FILE_SKIPPED (Qt::UserRole + 1)
@@ -50,18 +51,19 @@ struct ReplayGainInfoItem
     GainHandle_t *handle;
 };
 
-RGScanDialog::RGScanDialog(QList <PlayListTrack *> tracks,  QWidget *parent) : QDialog(parent)
+RGScanDialog::RGScanDialog(QList <PlayListTrack *> tracks,  QWidget *parent) : QDialog(parent),
+    m_ui(new Ui::RGScanDialog)
 {
-    m_ui.setupUi(this);
-    m_ui.tableWidget->verticalHeader()->setDefaultSectionSize(fontMetrics().height() + 3);
-    m_ui.tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    m_ui->setupUi(this);
+    m_ui->tableWidget->verticalHeader()->setDefaultSectionSize(fontMetrics().height() + 3);
+    m_ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
     QStringList paths;
-    MetaDataFormatter formatter("%if(%p&%t,%p - %t,%f) - %l");
+    MetaDataFormatter formatter(u"%if(%p&%t,%p - %t,%f) - %l"_s);
     for(const PlayListTrack *track : qAsConst(tracks))
     {
         //skip streams
-        if(track->duration() == 0 || track->path().contains("://"))
+        if(track->duration() == 0 || track->path().contains(u"://"_s))
             continue;
         //skip duplicates
         if(paths.contains(track->path()))
@@ -70,37 +72,37 @@ RGScanDialog::RGScanDialog(QList <PlayListTrack *> tracks,  QWidget *parent) : Q
         if(!MetaDataManager::instance()->supports(track->path()))
             continue;
 
-        QString ext = track->path().section(".", -1).toLower();
+        QString ext = track->path().section(QChar('.'), -1).toLower();
 
-        if((ext == "mp3") || //mpeg 1 layer 3
-                ext == "flac" || //native flac
-                ext == "oga" || //ogg flac
-                ext == "ogg" ||  //ogg vorbis
-                ext == "wv" || //wavpack
-                ext == "m4a" || //aac (mp4 container)
-                ext == "opus")
+        if((ext == "mp3"_L1) || //mpeg 1 layer 3
+                ext == "flac"_L1 || //native flac
+                ext == "oga"_L1 || //ogg flac
+                ext == "ogg"_L1 ||  //ogg vorbis
+                ext == "wv"_L1 || //wavpack
+                ext == "m4a"_L1 || //aac (mp4 container)
+                ext == "opus"_L1)
         {
             paths.append(track->path());
             QString name = formatter.format(track);
             QTableWidgetItem *item = new QTableWidgetItem(name);
             item->setData(Qt::UserRole, track->path());
             item->setData(Qt::ToolTipRole, track->path());
-            m_ui.tableWidget->insertRow(m_ui.tableWidget->rowCount());
-            m_ui.tableWidget->setItem(m_ui.tableWidget->rowCount() - 1, 0, item);
+            m_ui->tableWidget->insertRow(m_ui->tableWidget->rowCount());
+            m_ui->tableWidget->setItem(m_ui->tableWidget->rowCount() - 1, 0, item);
             QProgressBar *progressBar = new QProgressBar(this);
             progressBar->setRange(0, 100);
-            m_ui.tableWidget->setCellWidget(m_ui.tableWidget->rowCount() - 1, 1, progressBar);
+            m_ui->tableWidget->setCellWidget(m_ui->tableWidget->rowCount() - 1, 1, progressBar);
         }
     }
 
-    m_ui.tableWidget->resizeColumnsToContents();
-    m_ui.writeButton->setEnabled(false);
+    m_ui->tableWidget->resizeColumnsToContents();
+    m_ui->writeButton->setEnabled(false);
     //read settings
     QSettings settings;
-    restoreGeometry(settings.value("RGScanner/geometry").toByteArray());
-    m_ui.trackCheckBox->setChecked(settings.value("RGScanner/write_track",true).toBool());
-    m_ui.albumCheckBox->setChecked(settings.value("RGScanner/write_album",true).toBool());
-    m_ui.skipScannedCheckBox->setChecked(settings.value("RGScanner/skip_scanned",true).toBool());
+    restoreGeometry(settings.value(u"RGScanner/geometry"_s).toByteArray());
+    m_ui->trackCheckBox->setChecked(settings.value(u"RGScanner/write_track"_s, true).toBool());
+    m_ui->albumCheckBox->setChecked(settings.value(u"RGScanner/write_album"_s, true).toBool());
+    m_ui->skipScannedCheckBox->setChecked(settings.value(u"RGScanner/skip_scanned"_s, true).toBool());
 }
 
 RGScanDialog::~RGScanDialog()
@@ -108,56 +110,58 @@ RGScanDialog::~RGScanDialog()
     stop();
     qDeleteAll(m_replayGainItemList);
     m_replayGainItemList.clear();
+    delete m_ui;
 }
 
 void RGScanDialog::on_calculateButton_clicked()
 {
-    m_ui.writeButton->setEnabled(false);
-    for(int i = 0; i < m_ui.tableWidget->rowCount(); ++i)
+    m_ui->writeButton->setEnabled(false);
+    for(int i = 0; i < m_ui->tableWidget->rowCount(); ++i)
     {
-        QString url = m_ui.tableWidget->item(i, 0)->data(Qt::UserRole).toString();
+        QString url = m_ui->tableWidget->item(i, 0)->data(Qt::UserRole).toString();
         RGScanner *scanner = new RGScanner();
-        m_ui.tableWidget->item(i, 0)->setData(FILE_SKIPPED, false);
+        m_ui->tableWidget->item(i, 0)->setData(FILE_SKIPPED, false);
 
         if(!scanner->prepare(url))
         {
-            m_ui.tableWidget->setItem(i, 2, new QTableWidgetItem(tr("Error")));
+            m_ui->tableWidget->setItem(i, 2, new QTableWidgetItem(tr("Error")));
             delete scanner;
             continue;
         }
 
-        if(m_ui.skipScannedCheckBox->isChecked() && !scanner->oldReplayGainInfo().isEmpty())
+        if(m_ui->skipScannedCheckBox->isChecked() && !scanner->oldReplayGainInfo().isEmpty())
         {
             qDebug("RGScanDialog: skipping scanned file..");
-            m_ui.tableWidget->item(i, 0)->setData(FILE_SKIPPED, true);
+            m_ui->tableWidget->item(i, 0)->setData(FILE_SKIPPED, true);
             QMap<Qmmp::ReplayGainKey, double> rg = scanner->oldReplayGainInfo();
-            m_ui.tableWidget->setItem(i, 2, new QTableWidgetItem(tr("%1 dB").arg(rg.value(Qmmp::REPLAYGAIN_TRACK_GAIN))));
-            m_ui.tableWidget->setItem(i, 3, new QTableWidgetItem(tr("%1 dB").arg(rg.value(Qmmp::REPLAYGAIN_ALBUM_GAIN))));
-            m_ui.tableWidget->setItem(i, 4, new QTableWidgetItem(QString::number(rg.value(Qmmp::REPLAYGAIN_TRACK_PEAK))));
-            m_ui.tableWidget->setItem(i, 5, new QTableWidgetItem(QString::number(rg.value(Qmmp::REPLAYGAIN_ALBUM_PEAK))));
+            m_ui->tableWidget->setItem(i, 2, new QTableWidgetItem(tr("%1 dB").arg(rg.value(Qmmp::REPLAYGAIN_TRACK_GAIN))));
+            m_ui->tableWidget->setItem(i, 3, new QTableWidgetItem(tr("%1 dB").arg(rg.value(Qmmp::REPLAYGAIN_ALBUM_GAIN))));
+            m_ui->tableWidget->setItem(i, 4, new QTableWidgetItem(QString::number(rg.value(Qmmp::REPLAYGAIN_TRACK_PEAK))));
+            m_ui->tableWidget->setItem(i, 5, new QTableWidgetItem(QString::number(rg.value(Qmmp::REPLAYGAIN_ALBUM_PEAK))));
             delete scanner;
             continue;
         }
 
         scanner->setAutoDelete(false);
         m_scanners.append(scanner);
-        connect(scanner, SIGNAL(progress(int)), m_ui.tableWidget->cellWidget(i, 1), SLOT(setValue(int)));
-        connect(scanner, SIGNAL(finished(QString)), SLOT(onScanFinished(QString)));
+        connect(scanner, &RGScanner::progress, qobject_cast<QProgressBar *>(m_ui->tableWidget->cellWidget(i, 1)),
+                &QProgressBar::setValue);
+        connect(scanner, &RGScanner::finished, this, &RGScanDialog::onScanFinished);
         QThreadPool::globalInstance()->start(scanner);
     }
 }
 
 void RGScanDialog::onScanFinished(const QString &url)
 {
-    for(int i = 0; i < m_ui.tableWidget->rowCount(); ++i)
+    for(int i = 0; i < m_ui->tableWidget->rowCount(); ++i)
     {
-        if(url != m_ui.tableWidget->item(i, 0)->data(Qt::UserRole).toString())
+        if(url != m_ui->tableWidget->item(i, 0)->data(Qt::UserRole).toString())
             continue;
         RGScanner *scanner = findScannerByUrl(url);
         if(!scanner)
             qFatal("RGScanDialog: unable to find scanner by URL!");
-        m_ui.tableWidget->setItem(i, 2, new QTableWidgetItem(tr("%1 dB").arg(scanner->gain())));
-        m_ui.tableWidget->setItem(i, 4, new QTableWidgetItem(QString::number(scanner->peak())));
+        m_ui->tableWidget->setItem(i, 2, new QTableWidgetItem(tr("%1 dB").arg(scanner->gain())));
+        m_ui->tableWidget->setItem(i, 4, new QTableWidgetItem(QString::number(scanner->peak())));
         break;
     }
 
@@ -210,9 +214,9 @@ void RGScanDialog::onScanFinished(const QString &url)
         m_replayGainItemList.clear();
         //update table
         m_replayGainItemList = itemGroupMap.values();
-        for(int i = 0; i < m_ui.tableWidget->rowCount(); ++i)
+        for(int i = 0; i < m_ui->tableWidget->rowCount(); ++i)
         {
-            QString itemUrl = m_ui.tableWidget->item(i, 0)->data(Qt::UserRole).toString();
+            QString itemUrl = m_ui->tableWidget->item(i, 0)->data(Qt::UserRole).toString();
             bool found = false;
             for(const ReplayGainInfoItem *item : qAsConst(m_replayGainItemList))
             {
@@ -221,28 +225,28 @@ void RGScanDialog::onScanFinished(const QString &url)
                     found = true;
                     double album_gain = item->info[Qmmp::REPLAYGAIN_ALBUM_GAIN];
                     double album_peak = item->info[Qmmp::REPLAYGAIN_ALBUM_PEAK];
-                    m_ui.tableWidget->setItem(i, 3, new QTableWidgetItem(tr("%1 dB").arg(album_gain)));
-                    m_ui.tableWidget->setItem(i, 5, new QTableWidgetItem(QString::number(album_peak)));
+                    m_ui->tableWidget->setItem(i, 3, new QTableWidgetItem(tr("%1 dB").arg(album_gain)));
+                    m_ui->tableWidget->setItem(i, 5, new QTableWidgetItem(QString::number(album_peak)));
                 }
             }
-            if(!found && !m_ui.tableWidget->item(i, 0)->data(FILE_SKIPPED).toBool())
-                m_ui.tableWidget->setItem(i, 3, new QTableWidgetItem(tr("Error")));
+            if(!found && !m_ui->tableWidget->item(i, 0)->data(FILE_SKIPPED).toBool())
+                m_ui->tableWidget->setItem(i, 3, new QTableWidgetItem(tr("Error")));
         }
 
         //clear items
         itemGroupMap.clear();
 
-        m_ui.writeButton->setEnabled(true);
+        m_ui->writeButton->setEnabled(true);
     }
 }
 
 void RGScanDialog::reject()
 {
     QSettings settings;
-    settings.setValue("RGScanner/geometry", saveGeometry());
-    settings.setValue("RGScanner/write_track", m_ui.trackCheckBox->isChecked());
-    settings.setValue("RGScanner/write_album", m_ui.albumCheckBox->isChecked());
-    settings.setValue("RGScanner/skip_scanned", m_ui.skipScannedCheckBox->isChecked());
+    settings.setValue(u"RGScanner/geometry"_s, saveGeometry());
+    settings.setValue(u"RGScanner/write_track"_s, m_ui->trackCheckBox->isChecked());
+    settings.setValue(u"RGScanner/write_album"_s, m_ui->albumCheckBox->isChecked());
+    settings.setValue(u"RGScanner/skip_scanned"_s, m_ui->skipScannedCheckBox->isChecked());
     QDialog::reject();
 }
 
@@ -277,32 +281,32 @@ QString RGScanDialog::getAlbumName(const QString &url)
 
 TagLib::String RGScanDialog::gainToString(double value)
 {
-    return QStringToTString(QString("%1 dB").arg(value, 0, 'f', 2));
+    return QStringToTString(QStringLiteral("%1 dB").arg(value, 0, 'f', 2));
 }
 
 TagLib::String RGScanDialog::peakToString(double value)
 {
-    return QStringToTString(QString("%1").arg(value, 0, 'f', 6));
+    return QStringToTString(QStringLiteral("%1").arg(value, 0, 'f', 6));
 }
 
 TagLib::StringList RGScanDialog::gainToStringList(double value)
 {
-   return TagLib::StringList (gainToString(value));
+   return TagLib::StringList(gainToString(value));
 }
 
 TagLib::StringList RGScanDialog::peakToStringList(double value)
 {
-    return TagLib::StringList (peakToString(value));
+    return TagLib::StringList(peakToString(value));
 }
 
 void RGScanDialog::writeAPETag(TagLib::APE::Tag *tag, ReplayGainInfoItem *item)
 {
-    if(m_ui.trackCheckBox->isChecked())
+    if(m_ui->trackCheckBox->isChecked())
     {
         tag->addValue("REPLAYGAIN_TRACK_GAIN", gainToString(item->info[Qmmp::REPLAYGAIN_TRACK_GAIN]));
         tag->addValue("REPLAYGAIN_TRACK_PEAK", peakToString(item->info[Qmmp::REPLAYGAIN_TRACK_PEAK]));
     }
-    if(m_ui.albumCheckBox->isChecked())
+    if(m_ui->albumCheckBox->isChecked())
     {
         tag->addValue("REPLAYGAIN_ALBUM_GAIN", gainToString(item->info[Qmmp::REPLAYGAIN_ALBUM_GAIN]));
         tag->addValue("REPLAYGAIN_ALBUM_PEAK", peakToString(item->info[Qmmp::REPLAYGAIN_ALBUM_PEAK]));
@@ -312,7 +316,7 @@ void RGScanDialog::writeAPETag(TagLib::APE::Tag *tag, ReplayGainInfoItem *item)
 void RGScanDialog::writeID3v2Tag(TagLib::ID3v2::Tag *tag, ReplayGainInfoItem *item)
 {
     tag->removeFrames("TXXX");
-    if(m_ui.trackCheckBox->isChecked())
+    if(m_ui->trackCheckBox->isChecked())
     {
         TagLib::ID3v2::UserTextIdentificationFrame *frame = new TagLib::ID3v2::UserTextIdentificationFrame();
         TagLib::StringList fields;
@@ -328,7 +332,7 @@ void RGScanDialog::writeID3v2Tag(TagLib::ID3v2::Tag *tag, ReplayGainInfoItem *it
         frame->setText(fields);
         tag->addFrame(frame);
     }
-    if(m_ui.albumCheckBox->isChecked())
+    if(m_ui->albumCheckBox->isChecked())
     {
         TagLib::ID3v2::UserTextIdentificationFrame *frame = new TagLib::ID3v2::UserTextIdentificationFrame();
         TagLib::StringList fields;
@@ -348,12 +352,12 @@ void RGScanDialog::writeID3v2Tag(TagLib::ID3v2::Tag *tag, ReplayGainInfoItem *it
 
 void RGScanDialog::writeVorbisComment(TagLib::Ogg::XiphComment *tag, ReplayGainInfoItem *item)
 {
-    if(m_ui.trackCheckBox->isChecked())
+    if(m_ui->trackCheckBox->isChecked())
     {
         tag->addField("REPLAYGAIN_TRACK_GAIN", gainToString(item->info[Qmmp::REPLAYGAIN_TRACK_GAIN]));
         tag->addField("REPLAYGAIN_TRACK_PEAK", peakToString(item->info[Qmmp::REPLAYGAIN_TRACK_PEAK]));
     }
-    if(m_ui.albumCheckBox->isChecked())
+    if(m_ui->albumCheckBox->isChecked())
     {
         tag->addField("REPLAYGAIN_ALBUM_GAIN", gainToString(item->info[Qmmp::REPLAYGAIN_ALBUM_GAIN]));
         tag->addField("REPLAYGAIN_ALBUM_PEAK", peakToString(item->info[Qmmp::REPLAYGAIN_ALBUM_PEAK]));
@@ -362,14 +366,14 @@ void RGScanDialog::writeVorbisComment(TagLib::Ogg::XiphComment *tag, ReplayGainI
 
 void RGScanDialog::writeMP4Tag(TagLib::MP4::Tag *tag, ReplayGainInfoItem *item)
 {
-    if(m_ui.trackCheckBox->isChecked())
+    if(m_ui->trackCheckBox->isChecked())
     {
         tag->setItem("----:com.apple.iTunes:replaygain_track_gain",
                      gainToStringList(item->info[Qmmp::REPLAYGAIN_TRACK_GAIN]));
         tag->setItem("----:com.apple.iTunes:replaygain_track_peak",
                      gainToStringList(item->info[Qmmp::REPLAYGAIN_TRACK_PEAK]));
     }
-    if(m_ui.albumCheckBox->isChecked())
+    if(m_ui->albumCheckBox->isChecked())
     {
         tag->setItem("----:com.apple.iTunes:replaygain_album_gain",
                      gainToStringList(item->info[Qmmp::REPLAYGAIN_ALBUM_GAIN]));
@@ -389,44 +393,44 @@ void RGScanDialog::on_writeButton_clicked()
     {
         QString ext = item->url.section(".", -1).toLower();
 
-        if(ext == "mp3") //mpeg 1 layer 3
+        if(ext == "mp3"_L1) //mpeg 1 layer 3
         {
             TagLib::MPEG::File file(qPrintable(item->url));
             writeAPETag(file.APETag(true), item);
             writeID3v2Tag(file.ID3v2Tag(true), item);
             file.save(TagLib::MPEG::File::APE | TagLib::MPEG::File::ID3v2, TagLib::File::StripNone);
         }
-        else if(ext == "flac") //flac
+        else if(ext == "flac"_L1) //flac
         {
             TagLib::FLAC::File file(qPrintable(item->url));
             writeVorbisComment(file.xiphComment(true), item);
             file.save();
         }
-        else if(ext == "oga") //ogg flac
+        else if(ext == "oga"_L1) //ogg flac
         {
             TagLib::Ogg::FLAC::File file(qPrintable(item->url));
             writeVorbisComment(file.tag(), item);
             file.save();
         }
-        else if(ext == "ogg") //ogg vorbis
+        else if(ext == "ogg"_L1) //ogg vorbis
         {
             TagLib::Ogg::Vorbis::File file(qPrintable(item->url));
             writeVorbisComment(file.tag(), item);
             file.save();
         }
-        else if(ext == "wv") //wavpack
+        else if(ext == "wv"_L1) //wavpack
         {
             TagLib::WavPack::File file(qPrintable(item->url));
             writeAPETag(file.APETag(true), item);
             file.save();
         }
-        else if(ext == "m4a") //MPEG-4 Part 14
+        else if(ext == "m4a"_L1) //MPEG-4 Part 14
         {
             TagLib::MP4::File file(qPrintable(item->url));
             writeMP4Tag(file.tag(), item);
             file.save();
         }
-        else if(ext == "opus")
+        else if(ext == "opus"_L1)
         {
             TagLib::Ogg::Opus::File file(qPrintable(item->url));
             writeVorbisComment(file.tag(), item);

@@ -50,13 +50,13 @@ PopupWidget::PopupWidget(QWidget *parent)
 
     //settings
     QSettings settings;
-    settings.beginGroup("Notifier");
-    int delay = settings.value("message_delay", 2000).toInt();
-    m_pos = settings.value("message_pos", PopupWidget::BOTTOMLEFT).toUInt();
-    setWindowOpacity(settings.value("opacity", 1.0).toDouble());
-    QString fontname = settings.value("font").toString();
-    m_coverSize = settings.value("cover_size", 64).toInt();
-    m_formatter.setPattern(settings.value("template",DEFAULT_TEMPLATE).toString());
+    settings.beginGroup(u"Notifier"_s);
+    int delay = settings.value(u"message_delay"_s, 2000).toInt();
+    m_pos = settings.value(u"message_pos"_s, PopupWidget::BOTTOMLEFT).toUInt();
+    setWindowOpacity(settings.value(u"opacity"_s, 1.0).toDouble());
+    QString fontname = settings.value(u"font"_s).toString();
+    m_coverSize = settings.value(u"cover_size"_s, 64).toInt();
+    m_formatter.setPattern(settings.value(u"template"_s, DEFAULT_TEMPLATE).toString());
     settings.endGroup();
     //font
     QFont font;
@@ -66,8 +66,8 @@ PopupWidget::PopupWidget(QWidget *parent)
     //timer
     m_timer = new QTimer(this);
     m_timer->setInterval(delay);
-    m_timer->setSingleShot (true);
-    connect(m_timer, SIGNAL(timeout()), SLOT(hide()));
+    m_timer->setSingleShot(true);
+    connect(m_timer, &QTimer::timeout, this, &PopupWidget::hide);
 }
 
 PopupWidget::~PopupWidget()
@@ -95,7 +95,7 @@ void PopupWidget::showMetaData()
     }
     else
     {
-        m_pixlabel->setPixmap(QPixmap(":/notifier_icon.png"));
+        m_pixlabel->setPixmap(QPixmap(u":/notifier_icon.png"_s));
         m_pixlabel->setFixedSize(32,32);
     }
     updateGeometry();
@@ -108,11 +108,11 @@ void PopupWidget::showMetaData()
 
 void PopupWidget::showVolume(int v)
 {
-    m_pixlabel->setPixmap(QPixmap(":/notifier_icon.png"));
+    m_pixlabel->setPixmap(QPixmap(u":/notifier_icon.png"_s));
     m_pixlabel->setFixedSize(32,32);
     m_timer->stop();
     m_label1->setAlignment(Qt::AlignVCenter);
-    m_label1->setText("<b>" + tr("Volume:") + QString (" %1\%").arg(v)+ + "</b>");
+    m_label1->setText(u"<b>"_s + tr("Volume:") + QStringLiteral(" %1\%</b>").arg(v));
 
     updateGeometry();
     setFixedSize(sizeHint());
