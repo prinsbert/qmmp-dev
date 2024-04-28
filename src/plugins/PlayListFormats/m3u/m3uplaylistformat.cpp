@@ -27,29 +27,29 @@
 PlayListFormatProperties M3UPlaylistFormat::properties() const
 {
     PlayListFormatProperties p;
-    p.filters = QStringList { "*.m3u", "*.m3u8" };
-    p.shortName = "m3u";
-    p.contentTypes = QStringList { "audio/x-mpegurl" };
+    p.filters = QStringList { u"*.m3u"_s, u"*.m3u8"_s };
+    p.shortName = "m3u"_L1;
+    p.contentTypes = QStringList { u"audio/x-mpegurl"_s };
     return p;
 }
 
 QList<PlayListTrack *> M3UPlaylistFormat::decode(const QByteArray &contents)
 {
     QList<PlayListTrack*> out;
-    const QStringList splitted = QString::fromUtf8(contents).split("\n");
+    const QStringList splitted = QString::fromUtf8(contents).split(QChar::LineFeed);
     if(splitted.isEmpty())
         return out;
 
-    QRegularExpression extInfRegExp("#EXTINF:(-{0,1}\\d+),(.*) - (.*)");
-    QRegularExpression extInfRegExp2("#EXTINF:(-{0,1}\\d+),(.*)");
+    static const QRegularExpression extInfRegExp(u"#EXTINF:(-{0,1}\\d+),(.*) - (.*)"_s);
+    static const QRegularExpression extInfRegExp2(u"#EXTINF:(-{0,1}\\d+),(.*)"_s);
     int length = 0;
     QString artist, title;
     bool hasExtInf = false;
 
-    for(QString str : qAsConst(splitted))
+    for(const QString &line : qAsConst(splitted))
     {
-        str = str.trimmed();
-        if(str.startsWith("#EXTM3U") || str.isEmpty())
+        QString str = line.trimmed();
+        if(str.startsWith(u"#EXTM3U"_s) || str.isEmpty())
             continue;
 
         QRegularExpressionMatch match;
@@ -68,7 +68,7 @@ QList<PlayListTrack *> M3UPlaylistFormat::decode(const QByteArray &contents)
             hasExtInf = true;
         }
 
-        if(str.startsWith("#"))
+        if(str.startsWith(QChar('#')))
             continue;
 
         out << new PlayListTrack();
@@ -87,26 +87,25 @@ QList<PlayListTrack *> M3UPlaylistFormat::decode(const QByteArray &contents)
 
 QByteArray M3UPlaylistFormat::encode(const QList<PlayListTrack*> &contents, const QString &path)
 {
-    QStringList out;
-    out << QString("#EXTM3U");
-    MetaDataFormatter formatter("%if(%p,%p - %t,%t)%if(%p|%t,,%f)");
+    QStringList out = { u"#EXTM3U"_s };
+    MetaDataFormatter formatter(u"%if(%p,%p - %t,%t)%if(%p|%t,,%f)"_s);
     QString m3uDir = QFileInfo(path).canonicalPath();
 
     for(const PlayListTrack *f : qAsConst(contents))
     {
-        QString info = "#EXTINF:" + QString::number(f->duration() / 1000) + "," + formatter.format(f);
+        QString info = u"#EXTINF:"_s + QString::number(f->duration() / 1000) + QChar(',') + formatter.format(f);
         out.append(info);
 
-        if(!f->path().contains("://") && f->path().startsWith(m3uDir))
+        if(!f->path().contains(u"://"_s) && f->path().startsWith(m3uDir))
         {
             QString p = f->path();
             p.remove(0, m3uDir.size());
-            if(p.startsWith("/"))
+            if(p.startsWith(QChar('/')))
                 p.remove(0, 1);
             out.append(p);
         }
         else
             out.append(f->path());
     }
-    return out.join("\n").toUtf8();
+    return out.join(QChar::LineFeed).toUtf8();
 }

@@ -20,38 +20,37 @@
 #include <QSettings>
 #include <QDir>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "ui_osssettingsdialog.h"
+#include "osssettingsdialog.h"
 
-SettingsDialog::SettingsDialog ( QWidget *parent )
-        : QDialog ( parent )
+OssSettingsDialog::OssSettingsDialog(QWidget *parent)
+        : QDialog(parent), m_ui(new Ui::OssSettingsDialog)
 {
-    m_ui.setupUi ( this );
-    setAttribute ( Qt::WA_DeleteOnClose );
+    m_ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose);
     QSettings settings;
-    settings.beginGroup("OSS");
-    m_ui.lineEdit->insert(settings.value("device","/dev/dsp").toString());
-    m_ui.lineEdit_2->insert(settings.value("mixer_device","/dev/mixer").toString());
-    m_ui.bufferSpinBox->setValue(settings.value("buffer_time",500).toInt());
-    m_ui.periodSpinBox->setValue(settings.value("period_time",100).toInt());
-
+    settings.beginGroup(u"OSS"_s);
+    m_ui->lineEdit->insert(settings.value(u"device"_s, u"/dev/dsp"_s).toString());
+    m_ui->lineEdit_2->insert(settings.value(u"mixer_device"_s, u"/dev/mixer"_s).toString());
+    m_ui->bufferSpinBox->setValue(settings.value(u"buffer_time"_s, 500).toInt());
+    m_ui->periodSpinBox->setValue(settings.value(u"period_time"_s, 100).toInt());
     settings.endGroup();
 }
 
-
-SettingsDialog::~SettingsDialog()
-{}
-
-
-
-void SettingsDialog::accept()
+OssSettingsDialog::~OssSettingsDialog()
 {
-    qDebug("SettingsDialog (OSS):: writeSettings()");
+    delete m_ui;
+}
+
+void OssSettingsDialog::accept()
+{
+    qDebug("OssSettingsDialog (OSS):: writeSettings()");
     QSettings settings;
-    settings.beginGroup("OSS");
-    settings.setValue("device", m_ui.lineEdit->text());
-    settings.setValue("buffer_time",m_ui.bufferSpinBox->value());
-    settings.setValue("period_time",m_ui.periodSpinBox->value());
-    settings.setValue("mixer_device", m_ui.lineEdit_2->text());
+    settings.beginGroup(u"OSS"_s);
+    settings.setValue(u"device"_s, m_ui->lineEdit->text());
+    settings.setValue(u"buffer_time"_s, m_ui->bufferSpinBox->value());
+    settings.setValue(u"period_time"_s, m_ui->periodSpinBox->value());
+    settings.setValue(u"mixer_device"_s, m_ui->lineEdit_2->text());
     settings.endGroup();
     QDialog::accept();
 }

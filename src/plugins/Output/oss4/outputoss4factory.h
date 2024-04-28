@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,9 +37,9 @@ Q_INTERFACES(OutputFactory)
 
 public:
     OutputProperties properties() const override;
-    Output* create() override;
+    Output *create() override;
     Volume *createVolume() override;
-    void showSettings(QWidget* parent) override;
+    void showSettings(QWidget *parent) override;
     void showAbout(QWidget *parent) override;
     QString translation() const override;
 };

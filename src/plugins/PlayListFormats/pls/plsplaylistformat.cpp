@@ -26,16 +26,16 @@
 PlayListFormatProperties PLSPlaylistFormat::properties() const
 {
     PlayListFormatProperties p;
-    p.filters = QStringList { "*.pls" };
-    p.contentTypes = QStringList { "audio/x-scpls" };
-    p.shortName = "pls";
+    p.filters = QStringList { u"*.pls"_s };
+    p.contentTypes = QStringList { u"audio/x-scpls"_s };
+    p.shortName = "pls"_L1;
     return p;
 }
 
 QList<PlayListTrack *> PLSPlaylistFormat::decode(const QByteArray &contents)
 {
     QList<PlayListTrack *> out;
-    QStringList splitted = QString::fromUtf8(contents).split("\n");
+    QStringList splitted = QString::fromUtf8(contents).split(QChar::LineFeed);
 
     if(splitted.isEmpty())
     {
@@ -43,16 +43,16 @@ QList<PlayListTrack *> PLSPlaylistFormat::decode(const QByteArray &contents)
         return out;
     }
 
-    if(!splitted.takeFirst().toLower().startsWith("[playlist]"))
+    if(!splitted.takeFirst().toLower().startsWith(u"[playlist]"_s))
     {
         qWarning("PLSPlaylistFormat: unknown playlist format");
         return out;
     }
 
-    const QRegularExpression fileRegExp("^File(\\d+)=(.+)");
-    const QRegularExpression fullTitleRegExp("^Title(\\d+)=(.+) - (.+)");
-    const QRegularExpression titleRegExp("^Title(\\d+)=(.+)");
-    const QRegularExpression lengthRegExp("^Length(\\d+)=(-{0,1}\\d+)");
+    static const QRegularExpression fileRegExp(u"^File(\\d+)=(.+)"_s);
+    static const QRegularExpression fullTitleRegExp(u"^Title(\\d+)=(.+) - (.+)"_s);
+    static const QRegularExpression titleRegExp(u"^Title(\\d+)=(.+)"_s);
+    static const QRegularExpression lengthRegExp(u"^Length(\\d+)=(-{0,1}\\d+)"_s);
 
     int number = 0;
     bool error = false;
@@ -122,18 +122,17 @@ QList<PlayListTrack *> PLSPlaylistFormat::decode(const QByteArray &contents)
 QByteArray PLSPlaylistFormat::encode(const QList<PlayListTrack *> &contents, const QString &path)
 {
     Q_UNUSED(path);
-    MetaDataFormatter formatter("%if(%p,%p - %t,%t)%if(%p|%t,,%f)");
-    QStringList out;
-    out << QString("[playlist]");
+    MetaDataFormatter formatter(u"%if(%p,%p - %t,%t)%if(%p|%t,,%f)"_s);
+    QStringList out = { QStringLiteral("[playlist]") };
     int counter = 1;
     for(const PlayListTrack *f : qAsConst(contents))
     {
-        out.append(QString("File%1=%2").arg(counter).arg(f->path()));
-        out.append(QString("Title%1=%2").arg(counter).arg(formatter.format(f)));
-        out.append(QString("Length%1=%2").arg(counter).arg(f->duration() / 1000));
+        out.append(QStringLiteral("File%1=%2").arg(counter).arg(f->path()));
+        out.append(QStringLiteral("Title%1=%2").arg(counter).arg(formatter.format(f)));
+        out.append(QStringLiteral("Length%1=%2").arg(counter).arg(f->duration() / 1000));
         counter++;
     }
-    out << QString("NumberOfEntries=%1").arg(contents.count());
-    out << "Version=2";
-    return out.join("\n").toUtf8();
+    out << QStringLiteral("NumberOfEntries=%1").arg(contents.count());
+    out << u"Version=2"_s;
+    return out.join(QChar::LineFeed).toUtf8();
 }

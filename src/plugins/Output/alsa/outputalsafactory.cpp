@@ -20,7 +20,7 @@
 
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "alsasettingsdialog.h"
 #include "outputalsa.h"
 #include "outputalsafactory.h"
 
@@ -29,7 +29,7 @@ OutputProperties OutputALSAFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("ALSA Plugin");
-    properties.shortName = "alsa";
+    properties.shortName = "alsa"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     return properties;
@@ -47,14 +47,14 @@ Volume *OutputALSAFactory::createVolume()
 
 void OutputALSAFactory::showSettings(QWidget* parent)
 {
-   SettingsDialog *s = new SettingsDialog(parent);
+   AlsaSettingsDialog *s = new AlsaSettingsDialog(parent);
    s -> show();
 }
 
 void OutputALSAFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About ALSA Output Plugin"),
-                        tr("Qmmp ALSA Output Plugin")+"\n"+
+                        tr("Qmmp ALSA Output Plugin") + QChar::LineFeed +
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

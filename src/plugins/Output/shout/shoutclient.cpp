@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -31,7 +31,7 @@ ShoutClient::ShoutClient(QObject *parent) :
     m_timer = new QTimer(this);
     m_timer->setSingleShot(true);
     m_timer->setInterval(4000);
-    QObject::connect(m_timer, SIGNAL(timeout()), SLOT(close()));
+    connect(m_timer, &QTimer::timeout, this, &ShoutClient::close);
     readSettings();
 }
 
@@ -46,22 +46,22 @@ void ShoutClient::readSettings()
 {
     QSettings settings;
     settings.beginGroup("Shout");
-    shout_set_host(m_shout_conn, settings.value("host", "127.0.0.1").toString().toLatin1().constData());
-    shout_set_port(m_shout_conn, settings.value("port", 8000).toInt());
-    shout_set_password(m_shout_conn, settings.value("passw", "hackme").toString().toLatin1().constData());
-    shout_set_mount(m_shout_conn, QString("/%1").arg(settings.value("mount", "qmmp.out").toString()).
+    shout_set_host(m_shout_conn, settings.value(u"host"_s, u"127.0.0.1"_s).toString().toLatin1().constData());
+    shout_set_port(m_shout_conn, settings.value(u"port"_s, 8000).toInt());
+    shout_set_password(m_shout_conn, settings.value(u"passw"_s, u"hackme"_s).toString().toLatin1().constData());
+    shout_set_mount(m_shout_conn, QStringLiteral("/%1").arg(settings.value(u"mount"_s, u"qmmp.out"_s).toString()).
                     toLatin1().constData());
     shout_set_meta(m_shout_conn, SHOUT_META_NAME, "qmmp");
-    shout_set_user(m_shout_conn, settings.value("user", "source").toString().toLatin1().constData());
+    shout_set_user(m_shout_conn, settings.value(u"user"_s, u"source"_s).toString().toLatin1().constData());
     shout_set_public(m_shout_conn, settings.value("public", false).toBool() ? 1 : 0);
     shout_set_content_format(m_shout_conn, SHOUT_FORMAT_OGG, SHOUT_USAGE_AUDIO, nullptr);
     shout_set_protocol(m_shout_conn, SHOUT_PROTOCOL_HTTP);
     shout_set_agent(m_shout_conn, "qmmp");
     shout_set_audio_info(m_shout_conn, SHOUT_AI_CHANNELS, "2");
     shout_set_audio_info(m_shout_conn, SHOUT_AI_QUALITY,
-                         QString::number(settings.value("vorbis_quality", 0.8).toDouble(), 'f').toLatin1().constData());
+                         QString::number(settings.value(u"vorbis_quality"_s, 0.8).toDouble(), 'f').toLatin1().constData());
     shout_set_audio_info(m_shout_conn, SHOUT_AI_SAMPLERATE,
-                         QString::number(settings.value("sample_rate", 44100).toInt()).toLatin1().constData());
+                         QString::number(settings.value(u"sample_rate"_s, 44100).toInt()).toLatin1().constData());
     settings.endGroup();
 }
 

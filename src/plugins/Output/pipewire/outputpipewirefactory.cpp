@@ -30,7 +30,7 @@ OutputProperties OutputPipeWireFactory::properties() const
     properties.name = tr("PipeWire Plugin");
     properties.hasAbout = true;
     properties.hasSettings = false;
-    properties.shortName = "pipewire";
+    properties.shortName = "pipewire"_L1;
     return properties;
 }
 
@@ -52,7 +52,7 @@ void OutputPipeWireFactory::showSettings(QWidget *parent)
 void OutputPipeWireFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About PipeWire Output Plugin"),
-                       tr("Qmmp PipeWire Output Plugin")+"\n"+
+                       tr("Qmmp PipeWire Output Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

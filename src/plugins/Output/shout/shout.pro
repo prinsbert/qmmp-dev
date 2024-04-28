@@ -5,14 +5,15 @@ TARGET = $$PLUGINS_PREFIX/Output/shout
 HEADERS += outputshoutfactory.h \
     shoutoutput.h \
     shoutclient.h \
-    settingsdialog.h
+    shoutsettingsdialog.h
 
 SOURCES += outputshoutfactory.cpp \
     shoutoutput.cpp \
     shoutclient.cpp \
-    settingsdialog.cpp
+    shoutsettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    shoutsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

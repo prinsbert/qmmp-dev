@@ -30,7 +30,7 @@ OutputProperties OutputJACKFactory::properties() const
     properties.name = tr("JACK Plugin");
     properties.hasAbout = true;
     properties.hasSettings = false;
-    properties.shortName = "jack";
+    properties.shortName = "jack"_L1;
     return properties;
 }
 
@@ -50,9 +50,9 @@ void OutputJACKFactory::showSettings(QWidget*)
 
 void OutputJACKFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Jack Output Plugin"),
-                        tr("Qmmp Jack Output Plugin")+"\n"+
-                        tr("Written by: Yuriy Zhuravlev <slalkerg@gmail.com>"));
+    QMessageBox::about(parent, tr("About Jack Output Plugin"),
+                       tr("Qmmp Jack Output Plugin") + QChar::LineFeed +
+                       tr("Written by: Yuriy Zhuravlev <slalkerg@gmail.com>"));
 }
 
 QString OutputJACKFactory::translation() const

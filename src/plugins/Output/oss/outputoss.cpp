@@ -47,7 +47,7 @@ extern "C"
 OutputOSS::OutputOSS() : Output()
 {
     QSettings settings;
-    m_audio_device = settings.value("OSS/device","/dev/dsp").toString();
+    m_audio_device = settings.value(u"OSS/device"_s, u"/dev/dsp"_s).toString();
 }
 
 OutputOSS::~OutputOSS()
@@ -152,7 +152,7 @@ void OutputOSS::reset()
 VolumeOSS::VolumeOSS()
 {
     QSettings settings;
-    m_mixer_device = settings.value("OSS/mixer_device","/dev/mixer").toString();
+    m_mixer_device = settings.value(u"OSS/mixer_device"_s, u"/dev/mixer"_s).toString();
     openMixer();
 
 }

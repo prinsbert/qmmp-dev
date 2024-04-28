@@ -31,9 +31,9 @@
 PlayListFormatProperties XSPFPlaylistFormat::XSPFPlaylistFormat::properties() const
 {
     PlayListFormatProperties p;
-    p.filters = QStringList { "*.xspf" };
-    p.shortName = "xspf";
-    p.contentTypes = QStringList { "application/xspf+xml" };
+    p.filters = QStringList { u"*.xspf"_s };
+    p.shortName = "xspf"_L1;
+    p.contentTypes = QStringList { u"application/xspf+xml"_s };
     return p;
 }
 
@@ -48,7 +48,7 @@ QList<PlayListTrack*> XSPFPlaylistFormat::decode(const QByteArray &contents)
     {
         if(contents_copy[i] <= QChar(0x1F))
         {
-            contents_copy.replace(i, 1, "");
+            contents_copy.replace(i, 1, QString());
             i--;
         }
     }
@@ -60,7 +60,7 @@ QList<PlayListTrack*> XSPFPlaylistFormat::decode(const QByteArray &contents)
         if (xml.isStartElement())
         {
             currentTag = xml.name().toString();
-            if(currentTag == "track")
+            if(currentTag == "track"_L1)
                 out << new PlayListTrack();
         }
         else if (xml.isCharacters() && !xml.isWhitespace())
@@ -68,31 +68,31 @@ QList<PlayListTrack*> XSPFPlaylistFormat::decode(const QByteArray &contents)
             if(out.isEmpty())
                 continue;
 
-            if(currentTag == "location")
+            if(currentTag == "location"_L1)
             {
                 QUrl url(xml.text().toString());
-                if (url.scheme() == "file")  //remove scheme for local files only
-                    out.last()->setPath(QUrl::fromPercentEncoding(url.toString().toLatin1()).remove("file://"));
+                if (url.scheme() == "file"_L1)  //remove scheme for local files only
+                    out.last()->setPath(QUrl::fromPercentEncoding(url.toString().toLatin1()).remove(u"file://"_s));
                 else
                     out.last()->setPath(QUrl::fromPercentEncoding(url.toString().toLatin1()));
             }
-            else if(currentTag == "title")
+            else if(currentTag == "title"_L1)
             {
                 out.last()->setValue(Qmmp::TITLE, xml.text().toString());
             }
-            else if(currentTag == "creator")
+            else if(currentTag == "creator"_L1)
             {
                 out.last()->setValue(Qmmp::ARTIST, xml.text().toString());
             }
-            else if(currentTag == "annotation")
+            else if(currentTag == "annotation"_L1)
             {
                 out.last()->setValue(Qmmp::COMMENT, xml.text().toString());
             }
-            else if(currentTag == "album")
+            else if(currentTag == "album"_L1)
             {
                 out.last()->setValue(Qmmp::ALBUM, xml.text().toString());
             }
-            else if(currentTag == "meta" && xml.attributes().value("rel") == QLatin1String("year"))
+            else if(currentTag == "meta"_L1 && xml.attributes().value("rel") == QLatin1String("year"))
             {
                 out.last()->setValue(Qmmp::YEAR, xml.text().toString());
             }
@@ -130,7 +130,7 @@ QByteArray XSPFPlaylistFormat::encode(const QList<PlayListTrack*> &files, const 
         xml.writeStartElement("track");
 
         QString url;
-        if (f->path().contains("://"))
+        if (f->path().contains(u"://"_s))
         {
             url = QUrl::toPercentEncoding(f->path(), ":/");
         }
@@ -144,7 +144,7 @@ QByteArray XSPFPlaylistFormat::encode(const QList<PlayListTrack*> &files, const 
         }
         else  //absolute path
         {
-            url = QUrl::toPercentEncoding(QLatin1String("file://") + f->path(), ":/");
+            url = QUrl::toPercentEncoding(u"file://"_s + f->path(), ":/");
         }
 
         xml.writeTextElement("location", url);
