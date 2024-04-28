@@ -40,11 +40,11 @@ SidTune *SIDHelper::load(const QString &url)
     }
     QString path = url;
     int track = 1;
-    if(url.contains("://"))
+    if(url.contains(u"://"_s))
     {
         path.remove("sid://");
         path.remove(QRegularExpression("#\\d+$"));
-        track = url.section("#", -1).toInt();
+        track = url.section(QChar('#'), -1).toInt();
     }
     m_tune = new SidTune(qPrintable(path));
     m_tune->selectSong(track - 1);
@@ -79,7 +79,7 @@ QList<TrackInfo *> SIDHelper::createPlayList(TrackInfo::Parts parts)
         if(length > -1)
             info->setDuration(length * 1000);
 
-        info->setPath("sid://" + m_path + QString("#%1").arg(i));
+        info->setPath(QStringLiteral("sid://%1#%2").arg(m_path).arg(i));
         list << info;
     }
     return list;

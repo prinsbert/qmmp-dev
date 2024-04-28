@@ -36,7 +36,7 @@ CUEMetaDataModel::CUEMetaDataModel(bool readOnly, const QString &url) : MetaData
         qWarning("CUEMetaDataModel: invalid cue file");
         return;
     }
-    int track = url.section("#", -1).toInt();
+    int track = url.section(QChar('#'), -1).toInt();
     m_dataFilePath = file.dataFilePath(track);
     m_cueFilePath = file.cueFilePath();
 }
@@ -80,12 +80,12 @@ QString CUEMetaDataModel::cue() const
     QByteArray data = file.readAll();
 
     QSettings settings;
-    settings.beginGroup("CUE");
+    settings.beginGroup(u"CUE"_s);
 #ifdef WITH_ENCA
     EncaAnalyser analyser = nullptr;
-    if(settings.value("use_enca", false).toBool())
+    if(settings.value(u"use_enca"_s, false).toBool())
     {
-        analyser = enca_analyser_alloc(settings.value("enca_lang").toByteArray ().constData());
+        analyser = enca_analyser_alloc(settings.value(u"enca_lang"_s).toByteArray ().constData());
 
         if(analyser)
         {
@@ -100,7 +100,7 @@ QString CUEMetaDataModel::cue() const
     }
 #endif
     if(!m_codec)
-        m_codec = new QmmpTextCodec(settings.value("encoding", "UTF-8").toByteArray());
+        m_codec = new QmmpTextCodec(settings.value(u"encoding"_s, u"UTF-8"_s).toByteArray());
     settings.endGroup();
 
     return m_codec->toUnicode(data);
@@ -111,7 +111,7 @@ void CUEMetaDataModel::setCue(const QString &content)
     if(!m_codec)
     {
         QSettings settings;
-        m_codec = new QmmpTextCodec(settings.value("CUE/encoding", "UTF-8").toByteArray());
+        m_codec = new QmmpTextCodec(settings.value(u"CUE/encoding"_s, u"UTF-8"_s).toByteArray());
     }
 
     QFile file(m_cueFilePath);

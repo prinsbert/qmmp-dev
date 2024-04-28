@@ -54,7 +54,7 @@ bool DecoderCUE::initialize()
         qWarning("DecoderCUE: invalid cue file");
         return false;
     }
-    m_track = m_path.section("#", -1).toInt();
+    m_track = m_path.section(QChar('#'), -1).toInt();
     m_path = m_cueFile->dataFilePath(m_track);
     if (!QFile::exists(m_path))
     {

@@ -5,14 +5,15 @@ TARGET = $$PLUGINS_PREFIX/Input/wildmidi
 HEADERS += decoderwildmidifactory.h \
     decoder_wildmidi.h \
     wildmidihelper.h \
-    settingsdialog.h
+    wildmidisettingsdialog.h
 
 SOURCES += decoder_wildmidi.cpp \
     decoderwildmidifactory.cpp \
     wildmidihelper.cpp \
-    settingsdialog.cpp
+    wildmidisettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    wildmidisettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

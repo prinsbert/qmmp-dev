@@ -48,7 +48,7 @@ bool DecoderWavPack::initialize()
     m_totalTime = 0;
 
     char err[80] = { 0 };
-    if (m_path.startsWith("wvpack://")) //embeded cue track
+    if (m_path.startsWith(u"wvpack://"_s)) //embeded cue track
     {
         QString p = m_path;
         p.remove("wvpack://");

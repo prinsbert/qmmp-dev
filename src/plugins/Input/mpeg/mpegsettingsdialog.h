@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,33 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef MPEGSETTINGSDIALOG_H
+#define MPEGSETTINGSDIALOG_H
 
 #include <QDialog>
 
 namespace Ui {
-class SettingsDialog;
+class MpegSettingsDialog;
 }
 
-class SettingsDialog : public QDialog
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class MpegSettingsDialog : public QDialog
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
-    ~SettingsDialog();
+    explicit MpegSettingsDialog(bool using_rusxmms, QWidget *parent = nullptr);
+
+    ~MpegSettingsDialog();
+
+    enum TagType {ID3v1 = 0, ID3v2, APE, Disabled};
 
 public slots:
     void accept() override;
 
 private:
-    Ui::SettingsDialog *m_ui;
+    Ui::MpegSettingsDialog *m_ui;
 };
 
-#endif // SETTINGSDIALOG_H
+#endif

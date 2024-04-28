@@ -52,11 +52,11 @@ DecoderProperties DecoderFLACFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("FLAC Plugin");
-    properties.filters = QStringList { "*.flac", "*.oga" };
+    properties.filters = QStringList { u"*.flac"_s, u"*.oga"_s };
     properties.description = tr("FLAC Files");
-    properties.contentTypes = QStringList { "audio/x-flac", "audio/flac" };
-    properties.shortName = "flac";
-    properties.protocols = QStringList { "flac" };
+    properties.contentTypes = QStringList { u"audio/x-flac"_s, u"audio/flac"_s };
+    properties.shortName = "flac"_L1;
+    properties.protocols = QStringList { u"flac"_s };
     properties.hasAbout = true;
     properties.hasSettings = false;
     return properties;
@@ -74,11 +74,11 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
     int track = -1; //cue track
     QString filePath = path;
 
-    if(path.contains("://")) //is it cue track?
+    if(path.contains(u"://"_s)) //is it cue track?
     {
         filePath.remove("flac://");
         filePath.remove(QRegularExpression("#\\d+$"));
-        track = path.section("#", -1).toInt();
+        track = path.section(QChar('#'), -1).toInt();
         parts = TrackInfo::AllParts; //extract all metadata for single cue track
     }
 
@@ -95,7 +95,7 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
 
     TagLib::FileStream stream(QStringToFileName(filePath), true);
 
-    if(filePath.endsWith(".flac", Qt::CaseInsensitive))
+    if(filePath.endsWith(u".flac"_s, Qt::CaseInsensitive))
     {
 #if TAGLIB_MAJOR_VERSION >= 2
         flacFile = new TagLib::FLAC::File(&stream);
@@ -105,7 +105,7 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
         tag = flacFile->xiphComment();
         ap = flacFile->audioProperties();
     }
-    else if(filePath.endsWith(".oga", Qt::CaseInsensitive))
+    else if(filePath.endsWith(u".oga"_s, Qt::CaseInsensitive))
     {
         oggFlacFile = new TagLib::Ogg::FLAC::File(&stream);
         tag = oggFlacFile->tag();
@@ -123,7 +123,7 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
         info->setValue(Qmmp::SAMPLERATE, ap->sampleRate());
         info->setValue(Qmmp::CHANNELS, ap->channels());
         info->setValue(Qmmp::BITS_PER_SAMPLE, ap->bitsPerSample());
-        info->setValue(Qmmp::FORMAT_NAME, flacFile ? "FLAC" : "Ogg FLAC");
+        info->setValue(Qmmp::FORMAT_NAME, flacFile ? u"FLAC"_s : u"Ogg FLAC"_s);
         info->setValue(Qmmp::FILE_SIZE, QFileInfo(filePath).size()); //adds file size for cue tracks
         info->setDuration(ap->lengthInMilliseconds());
     }
@@ -204,7 +204,7 @@ QList<TrackInfo*> DecoderFLACFactory::createPlayList(const QString &path, TrackI
 
 MetaDataModel* DecoderFLACFactory::createMetaDataModel(const QString &path, bool readOnly)
 {
-    if (!path.contains("://") || path.startsWith("flac://"))
+    if (!path.contains(u"://"_s) || path.startsWith(u"flac://"_s))
         return new FLACMetaDataModel(path, readOnly);
 
     return nullptr;

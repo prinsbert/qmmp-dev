@@ -32,13 +32,13 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
     MetaDataModel(readOnly, MetaDataModel::IsCoverEditable),
     m_path(path)
 {
-    if(path.startsWith("flac://"))
+    if(path.startsWith(u"flac://"_s))
     {
         m_path.remove("flac://");
         m_path.remove(QRegularExpression("#\\d+$"));
     }
 
-    if(m_path.endsWith(".flac", Qt::CaseInsensitive))
+    if(m_path.endsWith(u".flac"_s, Qt::CaseInsensitive))
     {
         m_stream = new TagLib::FileStream(QStringToFileName(m_path), readOnly);
 #if TAGLIB_MAJOR_VERSION >= 2
@@ -50,7 +50,7 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
         m_file = f;
         setDialogHints(dialogHints() | MetaDataModel::IsCueEditable);
     }
-    else if(m_path.endsWith(".oga", Qt::CaseInsensitive))
+    else if(m_path.endsWith(u".oga"_s, Qt::CaseInsensitive))
     {
         m_stream = new TagLib::FileStream(QStringToFileName(m_path), readOnly);
         TagLib::Ogg::FLAC::File *f = new TagLib::Ogg::FLAC::File(m_stream);
@@ -61,7 +61,7 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
     if(m_file)
         setReadOnly(m_file->readOnly());
 
-    if(m_file && m_file->isValid() && !path.startsWith("flac://"))
+    if(m_file && m_file->isValid() && !path.startsWith(u"flac://"_s))
     {
         m_tags << new VorbisCommentModel(m_tag, m_file);
     }

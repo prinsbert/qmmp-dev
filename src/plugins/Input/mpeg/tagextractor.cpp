@@ -52,8 +52,8 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
         return QMap<Qmmp::MetaData, QString>();
 
     QSettings settings;
-    settings.beginGroup("MPEG");
-    QByteArray codecName = settings.value("ID3v2_encoding","UTF-8").toByteArray();
+    settings.beginGroup(u"MPEG"_s);
+    QByteArray codecName = settings.value(u"ID3v2_encoding"_s, u"UTF-8"_s).toByteArray();
 
     if(m_using_rusxmms || codecName.contains("UTF") || codecName.isEmpty())
         codecName = "UTF-8";
@@ -114,15 +114,15 @@ QByteArray TagExtractor::detectCharset(const TagLib::Tag *tag)
         charsets << rcdGetRussianCharset(tag->comment().toCString(), 0);
 
         if(charsets.contains(RUSSIAN_CHARSET_WIN))
-            return "WINDOWS-1251";
+            return "WINDOWS-1251"_ba;
         if(charsets.contains(RUSSIAN_CHARSET_ALT))
-            return "IBM866";
+            return "IBM866"_ba;
         if(charsets.contains(RUSSIAN_CHARSET_KOI))
-            return "KOI8-R";
+            return "KOI8-R"_ba;
         if(charsets.contains(RUSSIAN_CHARSET_UTF8))
-            return "UTF-8";
+            return "UTF-8"_ba;
         if(charsets.contains(RUSSIAN_CHARSET_LATIN))
-            return "ISO-8859-1";
+            return "ISO-8859-1"_ba;
 #else
         return QByteArray();
 #endif

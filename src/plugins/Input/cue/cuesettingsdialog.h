@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,30 +17,32 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef CUESETTINGSDIALOG_H
+#define CUESETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+
+namespace Ui {
+class CueSettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class CueSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(bool using_rusxmms, QWidget *parent = nullptr);
+    explicit CueSettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
-
-    enum TagType {ID3v1 = 0, ID3v2, APE, Disabled};
+    ~CueSettingsDialog();
 
 public slots:
-    void accept() override;
+    virtual void accept() override;
 
 private:
-    Ui::SettingsDialog m_ui;
+    void findCodecs();
+    Ui::CueSettingsDialog *m_ui;
 };
 
 #endif

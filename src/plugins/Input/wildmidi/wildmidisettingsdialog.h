@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2013-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,30 +17,31 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef WILDMIDISETTINGSDIALOG_H
+#define WILDMIDISETTINGSDIALOG_H
 
 #include <QDialog>
-#include <sidplayfp/SidDatabase.h>
-#include "ui_settingsdialog.h"
+
+namespace Ui {
+class WildMidiSettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class WildMidiSettingsDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SettingsDialog(SidDatabase *db, QWidget *parent = nullptr);
+    explicit WildMidiSettingsDialog(QWidget *parent = nullptr);
 
-    virtual ~SettingsDialog();
+    ~WildMidiSettingsDialog();
 
 public slots:
     virtual void accept() override;
 
 private:
-    Ui::SettingsDialog m_ui;
-    SidDatabase *m_db;
+    Ui::WildMidiSettingsDialog *m_ui;
 
 };
 

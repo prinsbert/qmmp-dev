@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2013-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,34 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef SIDSETTINGSDIALOG_H
+#define SIDSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+#include <sidplayfp/SidDatabase.h>
+
+namespace Ui {
+class SidSettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class SidSettingsDialog : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit SidSettingsDialog(SidDatabase *db, QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    virtual ~SidSettingsDialog();
 
 public slots:
     virtual void accept() override;
 
 private:
-    void findCodecs();
-    Ui::SettingsDialog ui;
+    Ui::SidSettingsDialog *m_ui;
+    SidDatabase *m_db;
+
 };
 
 #endif

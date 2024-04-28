@@ -5,15 +5,15 @@ TARGET = $$PLUGINS_PREFIX/Input/xmp
 HEADERS += decoderxmpfactory.h \
     decoder_xmp.h \
     xmpmetadatamodel.h \
-    settingsdialog.h
+    xmpsettingsdialog.h
 
 SOURCES += decoder_xmp.cpp \
     decoderxmpfactory.cpp \
     xmpmetadatamodel.cpp \
-    settingsdialog.cpp
+    xmpsettingsdialog.cpp
 
 FORMS += \
-    settingsdialog.ui
+    xmpsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

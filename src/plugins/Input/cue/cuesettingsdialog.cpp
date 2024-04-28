@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -26,49 +26,52 @@
 #include <enca.h>
 #endif
 
-#include "settingsdialog.h"
+#include "ui_cuesettingsdialog.h"
+#include "cuesettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent)
-        : QDialog(parent)
+CueSettingsDialog::CueSettingsDialog(QWidget *parent)
+        : QDialog(parent), m_ui(new Ui::CueSettingsDialog)
 {
-    ui.setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
-    ui.cueEncComboBox->addItems(QmmpTextCodec::availableCharsets());
+    m_ui->cueEncComboBox->addItems(QmmpTextCodec::availableCharsets());
 
 #ifdef WITH_ENCA
     size_t n = 0;
     const char **langs = enca_get_languages(&n);
     for (size_t i = 0; i < n; ++i)
-        ui.encaAnalyserComboBox->addItem(langs[i]);
+        m_ui->encaAnalyserComboBox->addItem(langs[i]);
 #endif
     QSettings settings;
-    settings.beginGroup("CUE");
-    int pos = ui.cueEncComboBox->findText(settings.value("encoding","UTF-8").toString());
-    ui.cueEncComboBox->setCurrentIndex(pos);
+    settings.beginGroup(u"CUE"_s);
+    int pos = m_ui->cueEncComboBox->findText(settings.value(u"encoding"_s, u"UTF-8"_s).toString());
+    m_ui->cueEncComboBox->setCurrentIndex(pos);
 #ifdef WITH_ENCA
-    ui.autoCharsetCheckBox->setChecked(settings.value("use_enca", false).toBool());
-    pos = ui.encaAnalyserComboBox->findText(settings.value("enca_lang", langs[n-1]).toString());
-    ui.encaAnalyserComboBox->setCurrentIndex(pos);
+    m_ui->autoCharsetCheckBox->setChecked(settings.value(u"use_enca"_s, false).toBool());
+    pos = m_ui->encaAnalyserComboBox->findText(settings.value(u"enca_lang"_s, langs[n - 1]).toString());
+    m_ui->encaAnalyserComboBox->setCurrentIndex(pos);
 #else
-    ui.autoCharsetCheckBox->setEnabled(false);
+    m_ui->autoCharsetCheckBox->setEnabled(false);
 #endif
-    ui.dirtyCueCheckBox->setChecked(settings.value("dirty_cue", false).toBool());
+    m_ui->dirtyCueCheckBox->setChecked(settings.value(u"dirty_cue"_s, false).toBool());
     settings.endGroup();
 }
 
-SettingsDialog::~SettingsDialog()
-{}
+CueSettingsDialog::~CueSettingsDialog()
+{
+    delete m_ui;
+}
 
-void SettingsDialog::accept()
+void CueSettingsDialog::accept()
 {
     QSettings settings;
-    settings.beginGroup("CUE");
-    settings.setValue("encoding", ui.cueEncComboBox->currentText());
+    settings.beginGroup(u"CUE"_s);
+    settings.setValue(u"encoding"_s, m_ui->cueEncComboBox->currentText());
 #ifdef WITH_ENCA
-    settings.setValue("use_enca", ui.autoCharsetCheckBox->isChecked());
-    settings.setValue("enca_lang", ui.encaAnalyserComboBox->currentText());
+    settings.setValue(u"use_enca"_s, m_ui->autoCharsetCheckBox->isChecked());
+    settings.setValue(u"enca_lang"_s, m_ui->encaAnalyserComboBox->currentText());
 #endif
-    settings.setValue("dirty_cue", ui.dirtyCueCheckBox->isChecked());
+    settings.setValue(u"dirty_cue"_s, m_ui->dirtyCueCheckBox->isChecked());
     settings.endGroup();
     QDialog::accept();
 }

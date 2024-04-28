@@ -40,10 +40,10 @@ DecoderProperties DecoderOpusFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Opus Plugin");
-    properties.shortName = "opus";
-    properties.filters = QStringList { "*.opus" };
+    properties.shortName = "opus"_L1;
+    properties.filters = QStringList { u"*.opus"_s };
     properties.description = tr("Ogg Opus Files");
-    properties.contentTypes = QStringList { "audio/opus" };
+    properties.contentTypes = QStringList { u"audio/opus"_s };
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.noInput = false;
@@ -94,7 +94,7 @@ QList<TrackInfo *> DecoderOpusFactory::createPlayList(const QString &path, Track
         info->setValue(Qmmp::SAMPLERATE, fileRef.audioProperties()->sampleRate());
         info->setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
         info->setValue(Qmmp::BITS_PER_SAMPLE, 32); //float
-        info->setValue(Qmmp::FORMAT_NAME, "Ogg Opus");
+        info->setValue(Qmmp::FORMAT_NAME, u"Ogg Opus"_s);
         info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
     }
 
@@ -120,9 +120,9 @@ void DecoderOpusFactory::showSettings(QWidget *)
 
 void DecoderOpusFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Opus Audio Plugin"),
-                        tr("Qmmp Opus Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Opus Audio Plugin"),
+                       tr("Qmmp Opus Audio Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderOpusFactory::translation() const

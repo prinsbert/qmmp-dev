@@ -15,9 +15,9 @@ SET(libxmp_SRCS
   decoder_xmp.cpp
   decoderxmpfactory.cpp
   xmpmetadatamodel.cpp
-  settingsdialog.cpp
+  xmpsettingsdialog.cpp
   xmpmetadatamodel.cpp
-  settingsdialog.ui
+  xmpsettingsdialog.ui
   translations/translations.qrc
 )
 

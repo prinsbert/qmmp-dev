@@ -28,8 +28,8 @@ GmeHelper::GmeHelper()
      m_emu = nullptr;
 
      QSettings settings;
-     m_fade_length = settings.value("GME/fadeout_length", 7000).toInt();
-     if(settings.value("GME/fadeout", false).toBool())
+     m_fade_length = settings.value(u"GME/fadeout_length"_s, 7000).toInt();
+     if(settings.value(u"GME/fadeout"_s, false).toBool())
          m_fade_length = 0;
 }
 
@@ -46,7 +46,7 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
         gme_delete(m_emu);
     m_emu = nullptr;
     QString path = url;
-    if(url.contains("://"))
+    if(url.contains(u"://"_s))
     {
         path.remove("gme://");
         path.remove(QRegularExpression("#\\d+$"));
@@ -74,7 +74,7 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
         return nullptr;
     }
     QString m3u_path = path.left(path.lastIndexOf("."));
-    m3u_path.append(".m3u");
+    m3u_path.append(u".m3u"_s);
     gme_load_m3u(m_emu, qPrintable(m3u_path));
     m_path = path;
     return m_emu;
@@ -116,7 +116,7 @@ QList<TrackInfo *> GmeHelper::createPlayList(TrackInfo::Parts parts)
             info->setValue(Qmmp::FORMAT_NAME, track_info->system);
         }
 
-        info->setPath("gme://" + m_path + QString("#%1").arg(i+1));
+        info->setPath(u"gme://"_s + m_path + QStringLiteral("#%1").arg(i+1));
         info->setDuration(track_info->length);
         gme_free_info(track_info);
         list << info;

@@ -3,18 +3,19 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Input/cue
 
 HEADERS += decodercuefactory.h \
+    cuesettingsdialog.h \
     decoder_cue.h \
-    settingsdialog.h \
     cuemetadatamodel.h \
     cuefile.h
 
 SOURCES += decoder_cue.cpp \
+    cuesettingsdialog.cpp \
     decodercuefactory.cpp \
-    settingsdialog.cpp \
     cuemetadatamodel.cpp \
     cuefile.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    cuesettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

@@ -37,10 +37,10 @@ ENDIF(LIBRCD_HEADER_FOUND)
 
 SET(libmpeg_SRCS
   decodermpegfactory.cpp
-  settingsdialog.cpp
+  mpegsettingsdialog.cpp
   tagextractor.cpp
   mpegmetadatamodel.cpp
-  settingsdialog.ui
+  mpegsettingsdialog.ui
   translations/translations.qrc
 )
 

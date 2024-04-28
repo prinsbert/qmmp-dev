@@ -12,9 +12,9 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 SET(libwildmidi_SRCS
   decoder_wildmidi.cpp
   decoderwildmidifactory.cpp
-  settingsdialog.cpp
+  wildmidisettingsdialog.cpp
   wildmidihelper.cpp
-  settingsdialog.ui
+  wildmidisettingsdialog.ui
   translations/translations.qrc
 )
 

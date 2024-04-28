@@ -122,7 +122,7 @@ bool DecoderOpus::initialize()
         qWarning("DecoderOpus: unsupported number of channels: %d", m_chan);
         return false;
     }
-    setProperty(Qmmp::FORMAT_NAME, "Ogg Opus");
+    setProperty(Qmmp::FORMAT_NAME, u"Ogg Opus"_s);
     configure(48000, chmap, Qmmp::PCM_FLOAT); //opus codec supports 48 kHz only
     return true;
 }
@@ -141,7 +141,7 @@ int DecoderOpus::bitrate() const
 
 void DecoderOpus::seek(qint64 time)
 {
-    op_pcm_seek(m_opusfile, time*48);
+    op_pcm_seek(m_opusfile, time * 48);
 }
 
 qint64 DecoderOpus::read(unsigned char *data, qint64 maxSize)
