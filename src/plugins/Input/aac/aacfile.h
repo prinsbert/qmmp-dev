@@ -44,7 +44,7 @@ class AACFile
 public:
     explicit AACFile(QIODevice *input, bool metaData = true, bool adts = true);
 
-    ~AACFile();
+    ~AACFile() = default;
 
     qint64 duration() const;
     quint32 bitrate() const;

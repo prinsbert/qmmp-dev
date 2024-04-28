@@ -22,7 +22,7 @@
 #include <QSettings>
 #include <cdio/version.h>
 #include <cddb/version.h>
-#include "settingsdialog.h"
+#include "cdaudiosettingsdialog.h"
 #include "decoder_cdaudio.h"
 #include "decodercdaudiofactory.h"
 
@@ -35,7 +35,7 @@ DecoderCDAudioFactory::DecoderCDAudioFactory()
     if(settings.value("cdaudio/cddb_server").toByteArray() == "freedb.org")
     {
         qDebug("DecoderCDAudioFactory: switching to gnudb.org");
-        settings.setValue("cdaudio/cddb_server", "gnudb.org");
+        settings.setValue(u"cdaudio/cddb_server"_s, u"gnudb.org"_s);
     }
 }
 
@@ -48,8 +48,8 @@ DecoderProperties DecoderCDAudioFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("CD Audio Plugin");
-    properties.shortName = "cdaudio";
-    properties.protocols = QStringList { "cdda" };
+    properties.shortName = "cdaudio"_L1;
+    properties.protocols = QStringList { u"cdda"_s };
     properties.hasAbout = true;
     properties.noInput = true;
     properties.hasSettings = true;
@@ -66,11 +66,11 @@ QList<TrackInfo *> DecoderCDAudioFactory::createPlayList(const QString &path, Tr
 {
     QList<TrackInfo*> list;
 
-    if(path.contains("#"))
+    if(path.contains(QChar('#')))
         return list;
 
     QString device_path = path;
-    device_path.remove("cdda://");
+    device_path.remove(u"cdda://"_s);
     QList <CDATrack> tracks = DecoderCDAudio::generateTrackList(device_path, parts);
     for(const CDATrack &t : qAsConst(tracks))
     {
@@ -88,17 +88,17 @@ MetaDataModel* DecoderCDAudioFactory::createMetaDataModel(const QString &path, b
 
 void DecoderCDAudioFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *d = new SettingsDialog(parent);
+    CDAudioSettingsDialog *d = new CDAudioSettingsDialog(parent);
     d->show();
 }
 
 void DecoderCDAudioFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About CD Audio Plugin"),
-                        tr("Qmmp CD Audio Plugin")+"\n"+
-                        QString(tr("Compiled against libcdio-%1 and libcddb-%2")).arg(CDIO_VERSION, CDDB_VERSION) + "\n" +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Usage: open cdda:/// using Add URL dialog or command line"));
+    QMessageBox::about(parent, tr("About CD Audio Plugin"),
+                       tr("Qmmp CD Audio Plugin") + QChar::LineFeed +
+                       tr("Compiled against libcdio-%1 and libcddb-%2").arg(CDIO_VERSION, CDDB_VERSION) + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
+                       tr("Usage: open cdda:/// using Add URL dialog or command line"));
 }
 
 QString DecoderCDAudioFactory::translation() const

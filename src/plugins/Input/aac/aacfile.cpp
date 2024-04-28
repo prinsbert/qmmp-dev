@@ -138,9 +138,6 @@ AACFile::AACFile(QIODevice *input, bool metaData, bool adts) : m_input(input)
     }
 }
 
-AACFile::~AACFile()
-{}
-
 qint64 AACFile::duration() const
 {
     return m_duration;
