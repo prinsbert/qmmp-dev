@@ -41,6 +41,10 @@ public:
      */
     explicit TemplateEditor(QWidget *parent = nullptr);
     /*!
+     * Object destructor.
+     */
+    ~TemplateEditor();
+    /*!
      * Returns current template from editor.
      */
     QString currentTemplate() const;
