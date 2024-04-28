@@ -20,7 +20,7 @@
 
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "osssettingsdialog.h"
 #include "outputoss.h"
 #include "outputossfactory.h"
 
@@ -34,7 +34,7 @@ OutputProperties OutputOSSFactory::properties() const
 {
     OutputProperties properties;
     properties.name = tr("OSS Plugin");
-    properties.shortName = "oss";
+    properties.shortName = "oss"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     return properties;
@@ -47,16 +47,16 @@ Volume *OutputOSSFactory::createVolume()
 
 void OutputOSSFactory::showSettings(QWidget* parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
+    OssSettingsDialog *s = new OssSettingsDialog(parent);
     s->show();
 }
 
 void OutputOSSFactory::showAbout(QWidget *parent)
 {
-QMessageBox::about (parent, tr("About OSS Output Plugin"),
-                        tr("Qmmp OSS Output Plugin")+"\n"+
-                        tr("Written by: Yuriy Zhuravlev <slalkerg@gmail.com>")+"\n"+
-                    tr("Based on code by: Brad Hughes <bhughes@trolltech.com>"));
+    QMessageBox::about(parent, tr("About OSS Output Plugin"),
+                       tr("Qmmp OSS Output Plugin") + QChar::LineFeed +
+                       tr("Written by: Yuriy Zhuravlev <slalkerg@gmail.com>") + QChar::LineFeed +
+                       tr("Based on code by: Brad Hughes <bhughes@trolltech.com>"));
 }
 
 QString OutputOSSFactory::translation() const

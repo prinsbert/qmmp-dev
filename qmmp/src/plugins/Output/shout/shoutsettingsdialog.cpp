@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,45 +20,45 @@
 
 #include <QSettings>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
-#include "ui_settingsdialog.h"
+#include "shoutsettingsdialog.h"
+#include "ui_shoutsettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent) :
+ShoutSettingsDialog::ShoutSettingsDialog(QWidget *parent) :
     QDialog(parent),
-    m_ui(new Ui::SettingsDialog)
+    m_ui(new Ui::ShoutSettingsDialog)
 {
     m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose, true);
     QSettings settings;
-    settings.beginGroup("Shout");
-    m_ui->hostLineEdit->setText(settings.value("host", "127.0.0.1").toString());
-    m_ui->portSpinBox->setValue(settings.value("port", 8000).toInt());
-    m_ui->mountPointLineEdit->setText(settings.value("mount", "qmmp.out").toString());
-    m_ui->userLineEdit->setText(settings.value("user", "source").toString());
-    m_ui->passwLineEdit->setText(settings.value("passw", "hackme").toString());
-    m_ui->publicCheckBox->setChecked(settings.value("public", false).toBool());
-    m_ui->qualitySpinBox->setValue(settings.value("vorbis_quality", 0.8).toDouble());
-    m_ui->srateSpinBox->setValue(settings.value("sample_rate", 44100).toInt());
+    settings.beginGroup(u"Shout"_s);
+    m_ui->hostLineEdit->setText(settings.value(u"host"_s, u"127.0.0.1"_s).toString());
+    m_ui->portSpinBox->setValue(settings.value(u"port"_s, 8000).toInt());
+    m_ui->mountPointLineEdit->setText(settings.value(u"mount"_s, u"qmmp.out"_s).toString());
+    m_ui->userLineEdit->setText(settings.value(u"user"_s, u"source"_s).toString());
+    m_ui->passwLineEdit->setText(settings.value(u"passw"_s, u"hackme"_s).toString());
+    m_ui->publicCheckBox->setChecked(settings.value(u"public"_s, false).toBool());
+    m_ui->qualitySpinBox->setValue(settings.value(u"vorbis_quality"_s, 0.8).toDouble());
+    m_ui->srateSpinBox->setValue(settings.value(u"sample_rate"_s, 44100).toInt());
     settings.endGroup();
 }
 
-SettingsDialog::~SettingsDialog()
+ShoutSettingsDialog::~ShoutSettingsDialog()
 {
     delete m_ui;
 }
 
-void SettingsDialog::accept()
+void ShoutSettingsDialog::accept()
 {
     QSettings settings;
-    settings.beginGroup("Shout");
-    settings.setValue("host",  m_ui->hostLineEdit->text());
-    settings.setValue("port", m_ui->portSpinBox->value());
-    settings.setValue("mount", m_ui->mountPointLineEdit->text());
-    settings.setValue("user", m_ui->userLineEdit->text());
-    settings.setValue("passw", m_ui->passwLineEdit->text());
-    settings.setValue("public", m_ui->publicCheckBox->isChecked());
-    settings.setValue("vorbis_quality", m_ui->qualitySpinBox->value());
-    settings.setValue("sample_rate", m_ui->srateSpinBox->value());
+    settings.beginGroup(u"Shout"_s);
+    settings.setValue(u"host"_s,  m_ui->hostLineEdit->text());
+    settings.setValue(u"port"_s, m_ui->portSpinBox->value());
+    settings.setValue(u"mount"_s, m_ui->mountPointLineEdit->text());
+    settings.setValue(u"user"_s, m_ui->userLineEdit->text());
+    settings.setValue(u"passw"_s, m_ui->passwLineEdit->text());
+    settings.setValue(u"public"_s, m_ui->publicCheckBox->isChecked());
+    settings.setValue(u"vorbis_quality"_s, m_ui->qualitySpinBox->value());
+    settings.setValue(u"sample_rate"_s, m_ui->srateSpinBox->value());
     settings.endGroup();
     QDialog::accept();
 }

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,45 +17,29 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+
+#ifndef SHOUTSETTINGSDIALOG_H
+#define SHOUTSETTINGSDIALOG_H
 
 #include <QDialog>
 
-extern "C"{
-#include <alsa/asoundlib.h> 
+namespace Ui {
+class ShoutSettingsDialog;
 }
 
-#include "ui_settingsdialog.h"
-
-/**
-	@author Ilya Kotov <forkotov02@ya.ru>
-*/
-class SettingsDialog : public QDialog
+class ShoutSettingsDialog : public QDialog
 {
-Q_OBJECT
-public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    Q_OBJECT
 
-    ~SettingsDialog();
+public:
+    explicit ShoutSettingsDialog(QWidget *parent = nullptr);
+    ~ShoutSettingsDialog();
 
 public slots:
-    virtual void accept() override;
-
-private slots:
-    void setText(int);
-    void showMixerDevices(int);
+    void accept() override;
 
 private:
-    Ui::SettingsDialog ui;
-    void getCards();
-    void getSoftDevices();
-    void getCardDevices(int card);
-    void getMixerDevices(QString card);
-    int getMixer(snd_mixer_t **mixer, QString card);
-    QStringList m_devices;
-    QList <QString> m_cards;
-
+    Ui::ShoutSettingsDialog *m_ui;
 };
 
-#endif
+#endif // SHOUTSETTINGSDIALOG_H

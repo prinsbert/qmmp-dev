@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,7 +30,7 @@ OutputProperties OutputNullFactory::properties() const
     properties.name = tr("Null Plugin");
     properties.hasAbout = true;
     properties.hasSettings = false;
-    properties.shortName = "null";
+    properties.shortName = "null"_L1;
     return properties;
 }
 
@@ -52,7 +52,7 @@ void OutputNullFactory::showSettings(QWidget* parent)
 void OutputNullFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About Null Output Plugin"),
-                        tr("Qmmp Null Output Plugin")+"\n"+
+                       tr("Qmmp Null Output Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

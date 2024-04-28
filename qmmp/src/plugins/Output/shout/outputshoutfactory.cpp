@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -25,7 +25,7 @@
 #include <shout/shout.h>
 #include "shoutclient.h"
 #include "shoutoutput.h"
-#include "settingsdialog.h"
+#include "shoutsettingsdialog.h"
 #include "outputshoutfactory.h"
 
 OutputShoutFactory::OutputShoutFactory()
@@ -39,7 +39,7 @@ OutputProperties OutputShoutFactory::properties() const
     properties.name = tr("Icecast Plugin");
     properties.hasAbout = true;
     properties.hasSettings = true;
-    properties.shortName = "shout";
+    properties.shortName = "shout"_L1;
     return properties;
 }
 
@@ -55,15 +55,15 @@ Volume *OutputShoutFactory::createVolume()
 
 void OutputShoutFactory::showSettings(QWidget* parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
+    ShoutSettingsDialog *s = new ShoutSettingsDialog(parent);
     s->show();
 }
 
 void OutputShoutFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About Icecast Output Plugin"),
-                       tr("Qmmp Icecast Output Plugin")+"\n"+
-                       tr("Compiled against libshout-%1").arg(shout_version(nullptr,nullptr,nullptr))+"\n"+
+                       tr("Qmmp Icecast Output Plugin") + QChar::LineFeed +
+                       tr("Compiled against libshout-%1").arg(shout_version(nullptr,nullptr,nullptr)) + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

@@ -2,15 +2,16 @@ include(../../plugins.pri)
 
 TARGET = $$PLUGINS_PREFIX/Output/oss
 
-FORMS += settingsdialog.ui
+FORMS += \
+    osssettingsdialog.ui
 
 HEADERS += outputossfactory.h \
-           outputoss.h \
-           settingsdialog.h
+           osssettingsdialog.h \
+           outputoss.h
 
 SOURCES += outputossfactory.cpp \
-           outputoss.cpp \
-           settingsdialog.cpp
+           osssettingsdialog.cpp \
+           outputoss.cpp
 
 RESOURCES = translations/translations.qrc
 

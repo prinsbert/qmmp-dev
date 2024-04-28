@@ -35,8 +35,8 @@
 OutputALSA::OutputALSA()
 {
     QSettings settings;
-    QString dev_name = settings.value("ALSA/device","default").toString();
-    m_use_mmap = settings.value("ALSA/use_mmap", false).toBool();
+    QString dev_name = settings.value(u"ALSA/device"_s, u"default"_s).toString();
+    m_use_mmap = settings.value(u"ALSA/use_mmap"_s, false).toBool();
     pcm_name = strdup(dev_name.toLatin1().data());
     m_alsa_channels = {
         { SND_CHMAP_NA, Qmmp::CHAN_NULL },
@@ -56,7 +56,7 @@ OutputALSA::OutputALSA()
 OutputALSA::~OutputALSA()
 {
     uninitialize();
-    free (pcm_name);
+    free(pcm_name);
 }
 
 bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat format)
@@ -80,9 +80,9 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
     /* load settings from config */
     QSettings settings;
     settings.beginGroup("ALSA");
-    uint buffer_time = settings.value("buffer_time",500).toUInt()*1000;
-    uint period_time = settings.value("period_time",100).toUInt()*1000;
-    bool use_pause =  settings.value("use_snd_pcm_pause", false).toBool();
+    uint buffer_time = settings.value(u"buffer_time"_s, 500).toUInt()*1000;
+    uint period_time = settings.value(u"period_time"_s, 100).toUInt()*1000;
+    bool use_pause =  settings.value(u"use_snd_pcm_pause"_s, false).toBool();
     settings.endGroup();
 
     snd_pcm_hw_params_t *hwparams = nullptr;
@@ -342,11 +342,10 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
     }
     if (m == -EPIPE)
     {
-        qDebug ("OutputALSA: buffer underrun!");
+        qDebug("OutputALSA: buffer underrun!");
         if ((m = snd_pcm_prepare(pcm_handle)) < 0)
         {
-            qDebug ("OutputALSA: Can't recover after underrun: %s",
-                    snd_strerror(m));
+            qDebug("OutputALSA: Can't recover after underrun: %s", snd_strerror(m));
             /* TODO: reopen the device */
             return -1;
         }
@@ -356,15 +355,14 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
     if (m == -ESTRPIPE)
     {
         qDebug ("OutputALSA: Suspend, trying to resume");
-        while ((m = snd_pcm_resume(pcm_handle))
-                == -EAGAIN)
-            sleep (1);
-        if (m < 0)
+        while((m = snd_pcm_resume(pcm_handle)) == -EAGAIN)
+            sleep(1);
+        if(m < 0)
         {
             qDebug ("OutputALSA: Failed, restarting");
-            if ((m = snd_pcm_prepare(pcm_handle)) < 0)
+            if((m = snd_pcm_prepare(pcm_handle)) < 0)
             {
-                qDebug ("OutputALSA: Failed to restart device: %s.",
+                qDebug("OutputALSA: Failed to restart device: %s.",
                         snd_strerror(m));
                 return -1;
             }
@@ -372,13 +370,13 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
         return 0;
     }
 #endif
-    qDebug ("OutputALSA: error: %s", snd_strerror(m));
+    qDebug("OutputALSA: error: %s", snd_strerror(m));
     return snd_pcm_prepare (pcm_handle);
 }
 
 void OutputALSA::uninitialize()
 {
-    if (!m_inited)
+    if(!m_inited)
         return;
     m_inited = false;
     if (pcm_handle)
@@ -399,8 +397,8 @@ VolumeALSA::VolumeALSA()
     //alsa mixer
     m_mixer = nullptr;
     QSettings settings;
-    QString card = settings.value("ALSA/mixer_card","hw:0").toString();
-    QString dev = settings.value("ALSA/mixer_device", "PCM").toString();
+    QString card = settings.value(u"ALSA/mixer_card"_s, u"hw:0"_s).toString();
+    QString dev = settings.value(u"ALSA/mixer_device"_s, u"PCM"_s).toString();
     setupMixer(card, dev);
 }
 
@@ -482,7 +480,7 @@ int VolumeALSA::setupMixer(QString card, QString device)
         {
             int sock = fds[i].fd;
             QSocketNotifier* sn = new QSocketNotifier(sock, QSocketNotifier::Read, this);
-            connect(sn, SIGNAL(activated(int)), SIGNAL(changed()));
+            connect(sn, &QSocketNotifier::activated, this, &VolumeALSA::changed);
         }
         delete []fds;
     }

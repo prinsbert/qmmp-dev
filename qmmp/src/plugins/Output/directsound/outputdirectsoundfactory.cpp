@@ -28,7 +28,7 @@ OutputProperties OutputDirectSoundFactory::properties() const
     properties.name = tr("DirectSound Plugin");
     properties.hasAbout = true;
     properties.hasSettings = false;
-    properties.shortName = "directsound";
+    properties.shortName = "directsound"_L1;
     return properties;
 }
 

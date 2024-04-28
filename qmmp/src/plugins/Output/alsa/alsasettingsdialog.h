@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2006 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,45 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef ALSASETTINGSDIALOG_H
+#define ALSASETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+extern "C"{
+#include <alsa/asoundlib.h> 
+}
+
+namespace Ui {
+class AlsaSettingsDialog;
+}
 
 /**
-    @author Ilya Kotov <forkotov02@ya.ru>
+	@author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class AlsaSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent);
-    ~SettingsDialog();
+    explicit AlsaSettingsDialog(QWidget *parent = nullptr);
+
+    ~AlsaSettingsDialog();
+
+public slots:
+    void accept() override;
 
 private slots:
-    void setText(int n);
+    void setText(int);
+    void showMixerDevices(int);
 
 private:
-    virtual void accept() override;
-    Ui::SettingsDialog ui;
+    Ui::AlsaSettingsDialog *m_ui;
+    void getCards();
+    void getSoftDevices();
+    void getCardDevices(int card);
+    void getMixerDevices(QString card);
+    int getMixer(snd_mixer_t **mixer, QString card);
     QStringList m_devices;
+    QStringList m_cards;
 
 };
 

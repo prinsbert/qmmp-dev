@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017 by Ilya Kotov                                      *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,33 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef OSS4SETTINGSDIALOG_H
+#define OSS4SETTINGSDIALOG_H
 
 #include <QDialog>
 
 namespace Ui {
-class SettingsDialog;
+class Oss4SettingsDialog;
 }
 
-class SettingsDialog : public QDialog
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class Oss4SettingsDialog : public QDialog
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
-    ~SettingsDialog();
+    explicit Oss4SettingsDialog(QWidget *parent);
+    ~Oss4SettingsDialog();
 
-public slots:
-    void accept() override;
+private slots:
+    void setText(int n);
 
 private:
-    Ui::SettingsDialog *m_ui;
+    virtual void accept() override;
+    Ui::Oss4SettingsDialog *m_ui;
+    QStringList m_devices;
+
 };
 
-#endif // SETTINGSDIALOG_H
+#endif

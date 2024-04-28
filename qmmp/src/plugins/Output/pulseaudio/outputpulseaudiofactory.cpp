@@ -30,7 +30,7 @@ OutputProperties OutputPulseAudioFactory::properties() const
     properties.name = tr("PulseAudio Plugin");
     properties.hasAbout = true;
     properties.hasSettings = false;
-    properties.shortName = "pulse";
+    properties.shortName = "pulse"_L1;
     return properties;
 }
 
@@ -51,8 +51,8 @@ void OutputPulseAudioFactory::showSettings(QWidget* parent)
 
 void OutputPulseAudioFactory::showAbout(QWidget *parent)
 {
-   QMessageBox::about (parent, tr("About PulseAudio Output Plugin"),
-                        tr("Qmmp PulseAudio Output Plugin")+"\n"+
+    QMessageBox::about(parent, tr("About PulseAudio Output Plugin"),
+                       tr("Qmmp PulseAudio Output Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

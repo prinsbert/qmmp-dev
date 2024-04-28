@@ -3,14 +3,15 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Output/oss4
 
 HEADERS += outputoss4factory.h \
-           outputoss4.h \
-           settingsdialog.h
+           oss4settingsdialog.h \
+           outputoss4.h
 
 SOURCES += outputoss4factory.cpp \
-           outputoss4.cpp \
-           settingsdialog.cpp
+           oss4settingsdialog.cpp \
+           outputoss4.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    oss4settingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 
