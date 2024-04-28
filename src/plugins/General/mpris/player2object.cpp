@@ -153,7 +153,7 @@ QVariantMap Player2Object::metadata() const
     if(!info.value(Qmmp::YEAR).isEmpty())
         map[u"xesam:contentCreated"_s] = info.value(Qmmp::YEAR);
     map[u"mpris:trackid"_s] = QVariant::fromValue<QDBusObjectPath>(m_trackID);
-    if(info.path().startsWith(QChar('/')))
+    if(info.path().startsWith(QLatin1Char('/')))
         map[u"xesam:url"_s] =  QUrl::fromLocalFile(info.path()).toString();
     else
         map[u"xesam:url"_s] = info.path();

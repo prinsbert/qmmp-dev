@@ -51,8 +51,8 @@ bool DecoderWavPack::initialize()
     if (m_path.startsWith(u"wvpack://"_s)) //embeded cue track
     {
         QString p = m_path;
-        p.remove("wvpack://");
-        p.remove(QRegularExpression("#\\d+$"));
+        p.remove(u"wvpack://"_s);
+        p.remove(QRegularExpression(u"#\\d+$"_s));
 #if defined(Q_OS_WIN) && defined(OPEN_FILE_UTF8)
         m_context = WavpackOpenFileInput (p.toUtf8().constData(),
                                           err, OPEN_WVC | OPEN_TAGS | OPEN_FILE_UTF8, 0);
@@ -72,8 +72,8 @@ bool DecoderWavPack::initialize()
             m_parser = new CueParser(value);
             free(value);
             m_parser->setDuration((qint64)WavpackGetNumSamples(m_context) * 1000 / WavpackGetSampleRate(m_context));
-            m_parser->setUrl("wvpack", p);
-            m_track = m_path.section("#", -1).toInt();
+            m_parser->setUrl(u"wvpack"_s, p);
+            m_track = m_path.section(QLatin1Char('#'), -1).toInt();
             if(m_track < 1 || m_track > m_parser->count())
             {
                 qWarning("DecoderWavPack: invalid cuesheet comment");

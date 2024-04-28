@@ -40,7 +40,7 @@ PopupWidget::PopupWidget(QWidget *parent)
     setAttribute(Qt::WA_QuitOnClose, false);
     QHBoxLayout *hlayout = new QHBoxLayout(this); //layout
     m_pixlabel = new QLabel(this);
-    m_pixlabel->setPixmap(QPixmap(":/notifier_icon.png"));
+    m_pixlabel->setPixmap(QPixmap(u":/notifier_icon.png"_s));
     m_pixlabel->setFixedSize(32,32);
     hlayout->addWidget(m_pixlabel);
 

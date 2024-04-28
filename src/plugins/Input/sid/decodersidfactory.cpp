@@ -79,9 +79,9 @@ QList<TrackInfo *> DecoderSIDFactory::createPlayList(const QString &path, TrackI
     QList<TrackInfo*> list = helper.createPlayList(parts);
     if(list.isEmpty())
         return list;
-    if(path.contains("://")) //is it url?
+    if(path.contains(u"://"_s)) //is it url?
     {
-        int track = path.section(QChar('#'), -1).toInt();
+        int track = path.section(QLatin1Char('#'), -1).toInt();
         if(track > list.count() || track < 1)
         {
             qDeleteAll(list);
@@ -111,7 +111,7 @@ void DecoderSIDFactory::showSettings(QWidget *parent)
 void DecoderSIDFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About SID Audio Plugin"),
-                       tr("Qmmp SID Audio Plugin")+"\n"+
+                       tr("Qmmp SID Audio Plugin") + QChar::LineFeed +
                        tr("This plugin plays Commodore 64 music files using libsidplayfp library") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }

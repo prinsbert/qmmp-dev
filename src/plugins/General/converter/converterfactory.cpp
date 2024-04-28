@@ -47,9 +47,9 @@ QDialog *ConverterFactory::createConfigDialog(QWidget *parent)
 void ConverterFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About Converter Plugin"),
-                       tr("Qmmp Converter Plugin")+"\n"+
+                       tr("Qmmp Converter Plugin")+QChar::LineFeed +
                        tr("This plugin converts supported audio files to other file formats "
-                          "using external command-line encoders") +"\n"+
+                          "using external command-line encoders") +QChar::LineFeed+
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

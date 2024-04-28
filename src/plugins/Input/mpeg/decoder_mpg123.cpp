@@ -141,11 +141,11 @@ bool DecoderMPG123::initialize()
             qWarning("DecoderMPG123: mpg123 error: %s", mpg123_plain_strerror(err));
 
         if(m_frame_info.version == MPG123_1_0)
-            setProperty(Qmmp::FORMAT_NAME, QString("MPEG-1 layer %1").arg(m_frame_info.layer));
+            setProperty(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-1 layer %1").arg(m_frame_info.layer));
         else if(m_frame_info.version == MPG123_2_0)
-            setProperty(Qmmp::FORMAT_NAME, QString("MPEG-2 layer %1").arg(m_frame_info.layer));
+            setProperty(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-2 layer %1").arg(m_frame_info.layer));
         else if(m_frame_info.version == MPG123_2_5)
-            setProperty(Qmmp::FORMAT_NAME, QString("MPEG-2.5 layer %1").arg(m_frame_info.layer));
+            setProperty(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-2.5 layer %1").arg(m_frame_info.layer));
 
         m_totalTime = 0;
     }

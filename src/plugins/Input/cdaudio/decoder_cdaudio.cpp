@@ -117,7 +117,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
                 return tracks;
             }
             qDebug("DecoderCDAudio: found cd audio capable drive \"%s\"", *cd_drives);
-            device_path = QString(*cd_drives);
+            device_path = QString::fromLatin1(*cd_drives);
             cdio_free_device_list(cd_drives); //free device list
         }
         else
@@ -204,7 +204,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
             use_cddb = false;
         }
         else
-            t.info.setValue(Qmmp::TITLE, QString("CDA Track %1").arg(i, 2, 10, QChar('0')));
+            t.info.setValue(Qmmp::TITLE, QStringLiteral("CDA Track %1").arg(i, 2, 10, QLatin1Char('0')));
         tracks  << t;
     }
     qDebug("DecoderCDAudio: found %lld audio tracks", tracks.size());
@@ -367,10 +367,10 @@ bool DecoderCDAudio::initialize()
     m_bitrate = 0;
     m_totalTime = 0;
     //extract track from url
-    int track_number = m_url.section("#", -1).toInt();
+    int track_number = m_url.section(QLatin1Char('#'), -1).toInt();
     QString device_path = m_url;
-    device_path.remove("cdda://");
-    device_path.remove(QRegularExpression("#\\d+$"));
+    device_path.remove(u"cdda://"_s);
+    device_path.remove(QRegularExpression(u"#\\d+$"_s));
 
     track_number = qMax(track_number, 1);
     QList <CDATrack> tracks = DecoderCDAudio::generateTrackList(device_path); //generate track list

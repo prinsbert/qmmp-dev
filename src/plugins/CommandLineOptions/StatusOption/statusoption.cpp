@@ -128,20 +128,20 @@ QString StatusOption::genProgressBar()
 {
     SoundCore *core = SoundCore::instance();
     QString totalTime = QStringLiteral("%1:%2").arg(core->duration() / 60000)
-            .arg(core->duration() % 60000 / 1000, 2, 10, QChar('0'));
+            .arg(core->duration() % 60000 / 1000, 2, 10, QLatin1Char('0'));
     QString currentTime = QStringLiteral("%1:%2").arg(core->elapsed() / 60000)
-            .arg(core->elapsed() % 60000 / 1000, 2, 10, QChar('0'));
+            .arg(core->elapsed() % 60000 / 1000, 2, 10, QLatin1Char('0'));
     QString out = currentTime;
     if(core->duration())
     {
         out.clear();
         int played_count = 22 * (double)core->elapsed() / core->duration();
         for(int i = 0; i < played_count; ++i)
-            out += QChar('=');
-        out += QChar('#');
+            out += QLatin1Char('=');
+        out += QLatin1Char('#');
         for(int i = played_count; i < 22; ++i)
-            out += QChar('-');
-        out += QChar::Space + currentTime + QChar('/') + totalTime;
+            out += QLatin1Char('-');
+        out += QChar::Space + currentTime + QLatin1Char('/') + totalTime;
     }
     return out;
 }

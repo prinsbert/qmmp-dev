@@ -26,9 +26,9 @@ class IODeviceStream : public TagLib::IOStream
 public:
     IODeviceStream(QIODevice *input, const QString &url) : m_input(input),
 #ifdef Q_OS_WIN
-          m_fileName(url.section(QChar('/'), -1))
+          m_fileName(url.section(QLatin1Char('/'), -1))
 #else
-          m_fileName(url.section(QChar('/'), -1).toLocal8Bit())
+          m_fileName(url.section(QLatin1Char('/'), -1).toLocal8Bit())
 #endif
     {}
 

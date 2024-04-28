@@ -223,10 +223,10 @@ void DecoderSndFileFactory::showAbout(QWidget *parent)
 {
     char version [128] = { 0 };
     sf_command (nullptr, SFC_GET_LIB_VERSION, version, sizeof (version)) ;
-    QMessageBox::about (parent, tr("About Sndfile Audio Plugin"),
-                        tr("Qmmp Sndfile Audio Plugin")+"\n"+
-                        tr("Compiled against %1").arg(QString::fromLatin1(version)) + QChar::LineFeed +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Sndfile Audio Plugin"),
+                       tr("Qmmp Sndfile Audio Plugin") + QChar::LineFeed +
+                       tr("Compiled against %1").arg(QString::fromLatin1(version)) + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderSndFileFactory::translation() const

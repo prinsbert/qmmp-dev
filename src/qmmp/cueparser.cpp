@@ -189,7 +189,7 @@ QString CueParser::file(int track) const
     if(track < 1 || track > m_tracks.count())
     {
         qWarning("CueParser: invalid track number: %d", track);
-        return nullptr;
+        return QString();
     }
     return m_tracks.at(track - 1)->file;
 }
@@ -304,9 +304,9 @@ QStringList CueParser::splitLine(const QString &line)
     while (!buf.isEmpty())
     {
         //qDebug(qPrintable(buf));
-        if(buf.startsWith(QChar('"')))
+        if(buf.startsWith(QLatin1Char('"')))
         {
-            int end = buf.indexOf(QChar('"'), 1);
+            int end = buf.indexOf(QLatin1Char('"'), 1);
             if(end == -1) //ignore invalid line
             {
                 list.clear();
@@ -331,7 +331,7 @@ QStringList CueParser::splitLine(const QString &line)
 
 qint64 CueParser::getLength(const QString &str)
 {
-    QStringList list = str.split(QChar(':'));
+    QStringList list = str.split(QLatin1Char(':'));
     if(list.size() == 2)
         return (qint64)list.at(0).toInt() * 60000 + list.at(1).toInt() * 1000;
     if(list.size() == 3)

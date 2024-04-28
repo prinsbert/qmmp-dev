@@ -38,7 +38,7 @@ QList<MetaDataItem> MplayerMetaDataModel::extraProperties() const
     //prepare and start mplayer process
     QStringList args = { u"-slave"_s, u"-identify"_s, u"-frames"_s, u"0"_s, u"-vo"_s, u"null"_s, u"-ao"_s, u"null"_s, m_path };
     QProcess mplayer_process;
-    mplayer_process.start("mplayer", args);
+    mplayer_process.start(u"mplayer"_s, args);
     mplayer_process.waitForFinished();
     QString str = QString::fromLocal8Bit(mplayer_process.readAll()).trimmed();
     const QStringList lines = str.split(QChar::LineFeed);

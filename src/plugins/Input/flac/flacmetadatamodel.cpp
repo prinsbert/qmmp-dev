@@ -34,8 +34,8 @@ FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
 {
     if(path.startsWith(u"flac://"_s))
     {
-        m_path.remove("flac://");
-        m_path.remove(QRegularExpression("#\\d+$"));
+        m_path.remove(u"flac://"_s);
+        m_path.remove(QRegularExpression(u"#\\d+$"_s));
     }
 
     if(m_path.endsWith(u".flac"_s, Qt::CaseInsensitive))
@@ -224,7 +224,7 @@ VorbisCommentModel::~VorbisCommentModel()
 
 QString VorbisCommentModel::name() const
 {
-    return "Vorbis Comment";
+    return u"Vorbis Comment"_s;
 }
 
 QString VorbisCommentModel::value(Qmmp::MetaData key) const
@@ -303,7 +303,7 @@ void VorbisCommentModel::setValue(Qmmp::MetaData key, const QString &value)
         m_tag->setYear(value.toInt());
         return;
     case Qmmp::DISCNUMBER:
-        value == "0" ?
+        value == "0"_L1 ?
         m_tag->removeFields("DISCNUMBER"):
         m_tag->addField("DISCNUMBER", str, true);
     }

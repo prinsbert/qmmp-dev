@@ -197,7 +197,7 @@ UDisksDevice *UDisksPlugin::findDevice(QAction *action)
         QString dev_path;
         if (device->isAudio())
         {
-            dev_path = "cdda://" + device->deviceFile();
+            dev_path = u"cdda://"_s + device->deviceFile();
             if (dev_path == action->data().toString())
                 return device;
         }

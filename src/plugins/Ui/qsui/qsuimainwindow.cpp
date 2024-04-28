@@ -95,7 +95,7 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
         if(m_pl_manager->currentPlayList() != model)
             m_tabWidget->addTab(model->name());
         else
-            m_tabWidget->addTab(QChar('[') + model->name() + QChar(']'));
+            m_tabWidget->addTab(QLatin1Char('[') + model->name() + QLatin1Char(']'));
         connect(model, &PlayListModel::nameChanged, this, &QSUiMainWindow::updateTabs);
     }
     m_tabWidget->setCurrentIndex(m_pl_manager->selectedPlayListIndex());
@@ -237,7 +237,7 @@ void QSUiMainWindow::updateTabs()
     {
         PlayListModel *model = m_pl_manager->playListAt(i);
         if(model == m_pl_manager->currentPlayList())
-            m_tabWidget->setTabText(i, QChar('[') + model->name() + QChar(']'));
+            m_tabWidget->setTabText(i, QLatin1Char('[') + model->name() + QLatin1Char(']'));
         else
             m_tabWidget->setTabText(i, model->name());
     }
@@ -405,7 +405,7 @@ void QSUiMainWindow::createWidgets()
     setCentralWidget(m_tabWidget);
     //'new playlist' button
     m_addListButton = new QToolButton(m_tabWidget);
-    m_addListButton->setText("+");
+    m_addListButton->setText(u"+"_s);
     m_addListButton->setToolButtonStyle(Qt::ToolButtonIconOnly);
     m_addListButton->setAutoRaise(true);
     m_addListButton->setIcon(QIcon::fromTheme(u"list-add"_s));

@@ -65,10 +65,10 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
     QString archivePath, requiredFilePath;
     if(path.contains(u"://"_s))
     {
-        requiredFilePath = path.section("#", -1);
+        requiredFilePath = path.section(QLatin1Char('#'), -1);
         archivePath = path;
-        archivePath.remove(QRegularExpression("^.+://"));
-        archivePath.remove(QRegularExpression("#.+$"));
+        archivePath.remove(QRegularExpression(u"^.+://"_s));
+        archivePath.remove(QRegularExpression(u"#.+$"_s));
     }
     else
     {
@@ -94,8 +94,8 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
         if(archive_entry_filetype(entry) == AE_IFREG)
         {
             QString filePath = QString::fromLocal8Bit(archive_entry_pathname(entry));
-            if(!filePath.startsWith(QChar('/')))
-                filePath.prepend(QChar('/'));
+            if(!filePath.startsWith(QLatin1Char('/')))
+                filePath.prepend(QLatin1Char('/'));
 
             if(!requiredFilePath.isEmpty() && filePath != requiredFilePath)
             {
@@ -113,7 +113,7 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
 
             if(!filtered.isEmpty())
             {
-                list << new TrackInfo(QStringLiteral("%1://%2#%3").arg(archivePath.section(QChar('.'), -1).toLower(), archivePath, filePath));
+                list << new TrackInfo(QStringLiteral("%1://%2#%3").arg(archivePath.section(QLatin1Char('.'), -1).toLower(), archivePath, filePath));
 
                 ArchiveInputDevice dev(a, entry, nullptr);
                 ArchiveTagReader reader(&dev, list.last()->path());
@@ -164,7 +164,7 @@ void DecoderArchiveFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About Archive Reader Plugin"),
                        tr("Qmmp Archive Reader Plugin") + QChar::LineFeed +
-                       tr("Compiled against %1").arg(ARCHIVE_VERSION_STRING) + QChar::LineFeed +
+                       tr("Compiled against %1").arg(QString::fromLatin1(ARCHIVE_VERSION_STRING)) + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

@@ -48,8 +48,8 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
     QString path = url;
     if(url.contains(u"://"_s))
     {
-        path.remove("gme://");
-        path.remove(QRegularExpression("#\\d+$"));
+        path.remove(u"gme://"_s);
+        path.remove(QRegularExpression(u"#\\d+$"_s));
     }
     const char *err = nullptr;
     gme_type_t file_type;
@@ -73,7 +73,7 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
         qWarning("GmeHelper: %s", err);
         return nullptr;
     }
-    QString m3u_path = path.left(path.lastIndexOf("."));
+    QString m3u_path = path.left(path.lastIndexOf(QLatin1Char('.')));
     m3u_path.append(u".m3u"_s);
     gme_load_m3u(m_emu, qPrintable(m3u_path));
     m_path = path;

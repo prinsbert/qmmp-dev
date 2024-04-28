@@ -93,11 +93,11 @@ void Analyzer::readSettings()
     m_analyzer_falloff = settings.value("analyzer_falloff", 2.2).toDouble();
     m_show_peaks = settings.value("show_peaks", true).toBool();
     m_timer->setInterval(1000 / settings.value("refresh_rate", 25).toInt());
-    m_color1.setNamedColor(settings.value("color1", "Green").toString());
-    m_color2.setNamedColor(settings.value("color2", "Yellow").toString());
-    m_color3.setNamedColor(settings.value("color3", "Red").toString());
-    m_bgColor.setNamedColor(settings.value("bg_color", "Black").toString());
-    m_peakColor.setNamedColor(settings.value("peak_color", "Cyan").toString());
+    m_color1.setNamedColor(settings.value("color1", u"Green"_s).toString());
+    m_color2.setNamedColor(settings.value("color2", u"Yellow"_s).toString());
+    m_color3.setNamedColor(settings.value("color3", u"Red"_s).toString());
+    m_bgColor.setNamedColor(settings.value("bg_color", u"Black"_s).toString());
+    m_peakColor.setNamedColor(settings.value("peak_color", u"Cyan"_s).toString());
     m_cell_size = settings.value("cells_size", QSize(15, 6)).toSize();
 
 

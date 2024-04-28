@@ -143,12 +143,12 @@ QString MetaDataFormatter::formatDuration(qint64 duration, bool hideZero, bool s
     QString out;
     qint64 durationInSeconds = duration / 1000;
     if(durationInSeconds >= 3600)
-        out = QStringLiteral("%1:%2").arg(durationInSeconds / 3600).arg(durationInSeconds % 3600 / 60, 2, 10, QChar('0'));
+        out = QStringLiteral("%1:%2").arg(durationInSeconds / 3600).arg(durationInSeconds % 3600 / 60, 2, 10, QLatin1Char('0'));
     else
         out = QStringLiteral("%1").arg(durationInSeconds % 3600 / 60);
-    out += QStringLiteral(":%1").arg(durationInSeconds % 60, 2, 10, QChar('0'));
+    out += QStringLiteral(":%1").arg(durationInSeconds % 60, 2, 10, QLatin1Char('0'));
     if(showMs)
-        out += QStringLiteral(".%1").arg(duration % 1000, 3, 10, QChar('0'));
+        out += QStringLiteral(".%1").arg(duration % 1000, 3, 10, QLatin1Char('0'));
     return out;
 }
 
@@ -192,14 +192,14 @@ bool MetaDataFormatter::parseProperty(QList<Node> *nodes, QString::const_iterato
     if((*i) + 1 == end || (*i) + 2 == end)
         return false;
 
-    if((**i) != QChar('{'))
+    if((**i) != QLatin1Char('{'))
         return false;
 
     (*i)++; //skip '{'
 
     QString propertyName;
 
-    while((*i) != end && (**i) != QChar('}'))
+    while((*i) != end && (**i) != QLatin1Char('}'))
     {
         propertyName.append((**i));
         (*i)++;
@@ -225,7 +225,7 @@ bool MetaDataFormatter::parseIf(QList<MetaDataFormatter::Node> *nodes, QString::
     if((*i) + 1 == end || (*i) + 2 == end)
         return false;
 
-    if((**i) != QChar('i') || *((*i)+1) != QChar('f'))
+    if((**i) != QLatin1Char('i') || *((*i)+1) != QLatin1Char('f'))
         return false;
 
     (*i)+=2;
@@ -249,7 +249,7 @@ bool MetaDataFormatter::parseIf(QList<MetaDataFormatter::Node> *nodes, QString::
 
     while((*i) != end)
     {
-        if((**i) == QChar('\\'))
+        if((**i) == QLatin1Char('\\'))
         {
             (*i)++;
             escaped = true;
@@ -262,7 +262,7 @@ bool MetaDataFormatter::parseIf(QList<MetaDataFormatter::Node> *nodes, QString::
         }
         else
         {
-            if((**i) == QChar('('))
+            if((**i) == QLatin1Char('('))
             {
                 brackets_tracker++;
                 if(state == STARTING)
@@ -272,7 +272,7 @@ bool MetaDataFormatter::parseIf(QList<MetaDataFormatter::Node> *nodes, QString::
                     continue;
                 }
             }
-            else if((**i) == QChar(')'))
+            else if((**i) == QLatin1Char(')'))
                 brackets_tracker--;
         }
 
@@ -284,7 +284,7 @@ bool MetaDataFormatter::parseIf(QList<MetaDataFormatter::Node> *nodes, QString::
         }
         case READING_VAR1:
         {
-            if((**i) == QChar(',') && brackets_tracker == 1)
+            if((**i) == QLatin1Char(',') && brackets_tracker == 1)
             {
                 state = READING_VAR2;
                 break;
@@ -294,7 +294,7 @@ bool MetaDataFormatter::parseIf(QList<MetaDataFormatter::Node> *nodes, QString::
         }
         case READING_VAR2:
         {
-            if((**i) == QChar(',') && brackets_tracker == 1)
+            if((**i) == QLatin1Char(',') && brackets_tracker == 1)
             {
                 state = READING_VAR3;
                 break;
@@ -304,7 +304,7 @@ bool MetaDataFormatter::parseIf(QList<MetaDataFormatter::Node> *nodes, QString::
         }
         case READING_VAR3:
         {
-            if((**i) == QChar(')') && brackets_tracker == 0)
+            if((**i) == QLatin1Char(')') && brackets_tracker == 0)
             {
                 state = FINISHED;
                 break;
@@ -343,7 +343,7 @@ bool MetaDataFormatter::parseDir(QList<MetaDataFormatter::Node> *nodes, QString:
     if((*i) + 1 == end || (*i) + 2 == end)
         return false;
 
-    if((**i) != QChar('d') || *((*i)+1) != QChar('i') || *((*i)+2) != QChar('r'))
+    if((**i) != QLatin1Char('d') || *((*i)+1) != QLatin1Char('i') || *((*i)+2) != QLatin1Char('r'))
         return false;
 
     (*i)+=3;
@@ -351,7 +351,7 @@ bool MetaDataFormatter::parseDir(QList<MetaDataFormatter::Node> *nodes, QString:
     Node node;
     node.command = Node::DIR_FUNCTION;
 
-    if((*i) == end || (**i) != QChar('(')) // %dir without params
+    if((*i) == end || (**i) != QLatin1Char('(')) // %dir without params
     {
         (*i)--;
         nodes->append(node);
@@ -369,7 +369,7 @@ bool MetaDataFormatter::parseDir(QList<MetaDataFormatter::Node> *nodes, QString:
 
     while((*i) != end)
     {
-        if((**i) == QChar('(') && state == STARTING)
+        if((**i) == QLatin1Char('(') && state == STARTING)
         {
             state = READING_VAR;
             (*i)++;
@@ -384,7 +384,7 @@ bool MetaDataFormatter::parseDir(QList<MetaDataFormatter::Node> *nodes, QString:
         }
         case READING_VAR:
         {
-            if((**i) == QChar(')'))
+            if((**i) == QLatin1Char(')'))
             {
                 state = FINISHED;
                 break;
@@ -427,7 +427,7 @@ void MetaDataFormatter::parseText(QList<MetaDataFormatter::Node> *nodes, QString
 
     forever
     {
-        if((*i) == end || (**i) == QChar('%'))
+        if((*i) == end || (**i) == QLatin1Char('%'))
         {
             (*i)--;
             break;
@@ -478,26 +478,26 @@ QString MetaDataFormatter::evalute(const QList<Node> *nodes, const TrackInfo *in
             QString var1 = printParam(&node.params[0], info, trackIndex);
             QString var2 = printParam(&node.params[1], info, trackIndex);
             if(!var1.isEmpty() && !var2.isEmpty())
-                out.append(QChar('1'));
+                out.append(QLatin1Char('1'));
         }
         else if(node.command == Node::OR_OPERATOR)
         {
             QString var1 = printParam(&node.params[0], info, trackIndex);
             if(!var1.isEmpty())
-                out.append(QChar('1'));
+                out.append(QLatin1Char('1'));
             else
             {
                 QString var2 = printParam(&node.params[1], info, trackIndex);
                 if(!var2.isEmpty())
-                    out.append(QChar('1'));
+                    out.append(QLatin1Char('1'));
             }
         }
         else if(node.command == Node::DIR_FUNCTION)
         {
             if(node.params.isEmpty())
-                out.append(info->path().mid(0, info->path().lastIndexOf(QChar('/'))));
+                out.append(info->path().mid(0, info->path().lastIndexOf(QLatin1Char('/'))));
             else
-                out.append(info->path().section(QChar('/'), -node.params[0].number - 2, -node.params[0].number - 2));
+                out.append(info->path().section(QLatin1Char('/'), -node.params[0].number - 2, -node.params[0].number - 2));
         }
     }
     return out;
@@ -530,8 +530,8 @@ QString MetaDataFormatter::printField(int field, const TrackInfo *info, int trac
             QString title = info->value(Qmmp::TITLE);
             if(title.isEmpty()) //using file name if title is empty
             {
-                title = info->path().section(QChar('/'), -1);
-                title = title.left(title.lastIndexOf(QChar('.')));
+                title = info->path().section(QLatin1Char('/'), -1);
+                title = title.left(title.lastIndexOf(QLatin1Char('.')));
             }
 
             if(title.isEmpty()) //using full path if file name is empty
@@ -547,7 +547,7 @@ QString MetaDataFormatter::printField(int field, const TrackInfo *info, int trac
     }
     if(field == Param::TWO_DIGIT_TRACK)
     {
-        return QString("%1").arg(info->value(Qmmp::TRACK), 2, QChar('0'));
+        return QStringLiteral("%1").arg(info->value(Qmmp::TRACK), 2, QLatin1Char('0'));
     }
     if(field == Param::DURATION)
     {
@@ -555,7 +555,7 @@ QString MetaDataFormatter::printField(int field, const TrackInfo *info, int trac
     }
     if(field == Param::FILE_NAME)
     {
-        return info->path().section(QChar('/'), -1);
+        return info->path().section(QLatin1Char('/'), -1);
     }
     if(field == Param::TRACK_INDEX)
     {
@@ -583,7 +583,7 @@ QString MetaDataFormatter::dumpNode(MetaDataFormatter::Node node) const
         str += u"OR_OPERATOR"_s;
     else if(node.command == Node::DIR_FUNCTION)
         str += u"DIR_FUNCTION"_s;
-    str += QChar('(');
+    str += QLatin1Char('(');
     for(const Param &p : qAsConst(node.params))
     {
         if(p.type == Param::FIELD)
@@ -601,11 +601,11 @@ QString MetaDataFormatter::dumpNode(MetaDataFormatter::Node node) const
             {
                 nodeStrList.append(dumpNode(n));
             }
-            params.append(QStringLiteral("NODES:%1").arg(nodeStrList.join(QChar(','))));
+            params.append(QStringLiteral("NODES:%1").arg(nodeStrList.join(QLatin1Char(','))));
         }
     }
-    str.append(params.join(QChar(',')));
-    str.append(")");
+    str.append(params.join(QLatin1Char(',')));
+    str.append(QLatin1Char(')'));
     return str;
 }
 
@@ -616,7 +616,7 @@ QList<MetaDataFormatter::Node> MetaDataFormatter::compile(const QString &expr)
 
     while (i != expr.constEnd())
     {
-        if((*i) == QChar('%'))
+        if((*i) == QLatin1Char('%'))
         {
             ++i;
             if(i == expr.constEnd())
@@ -648,21 +648,21 @@ QList<MetaDataFormatter::Node> MetaDataFormatter::compile(const QString &expr)
             continue;
         }
 
-        if((*i) == QChar('&'))
+        if((*i) == QLatin1Char('&'))
         {
             ++i;
             Node node;
             node.command = Node::AND_OPERATOR;
             nodes.append(node);
         }
-        else if((*i) == QChar('|'))
+        else if((*i) == QLatin1Char('|'))
         {
             ++i;
             Node node;
             node.command = Node::OR_OPERATOR;
             nodes.append(node);
         }
-        else if((*i) == QChar('\\'))
+        else if((*i) == QLatin1Char('\\'))
         {
             ++i;
             parseEscape(&nodes, &i, expr.constEnd());

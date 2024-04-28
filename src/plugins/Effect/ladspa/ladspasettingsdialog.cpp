@@ -100,7 +100,7 @@ void LADSPASettingsDialog::on_configureButton_clicked()
 
     LADSPAEffect *effect = l->effects().at(index.row());
     QDialog *dialog = new QDialog(this);
-    dialog->setWindowTitle(effect->plugin->desc->Name);
+    dialog->setWindowTitle(QString::fromLocal8Bit(effect->plugin->desc->Name));
     QFormLayout *formLayout = new QFormLayout(dialog);
     LADSPAButton *button = nullptr;
     LADSPASlider *slider = nullptr;
@@ -147,5 +147,5 @@ void LADSPASettingsDialog::updateRunningPlugins()
 {
     m_ui->runningListWidget->clear();
     for(LADSPAEffect *e : LADSPAHost::instance()->effects())
-        m_ui->runningListWidget->addItem(e->plugin->desc->Name);
+        m_ui->runningListWidget->addItem(QString::fromLocal8Bit(e->plugin->desc->Name));
 }

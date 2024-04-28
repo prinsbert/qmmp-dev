@@ -28,7 +28,7 @@ VisualProperties VisualAnalyzerFactory::properties() const
 {
     VisualProperties properties;
     properties.name = tr("Analyzer Plugin");
-    properties.shortName = "analyzer";
+    properties.shortName = "analyzer"_L1;
     properties.hasSettings = true;
     properties.hasAbout = true;
     return properties;
@@ -47,7 +47,7 @@ QDialog *VisualAnalyzerFactory::createConfigDialog(QWidget *parent)
 void VisualAnalyzerFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About Analyzer Visual Plugin"),
-                        tr("Qmmp Analyzer Visual Plugin")+"\n"+
+                        tr("Qmmp Analyzer Visual Plugin") + QChar::LineFeed +
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

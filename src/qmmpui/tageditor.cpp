@@ -84,10 +84,10 @@ void TagEditor::readTag()
     m_ui->composerLineEdit->setText(m_tagModel->value(Qmmp::COMPOSER));
     m_ui->genreLineEdit->setText(m_tagModel->value(Qmmp::GENRE));
     m_ui->commentBrowser->setText(m_tagModel->value(Qmmp::COMMENT));
-    if(m_tagModel->value(Qmmp::DISCNUMBER).contains(QChar('/')))
+    if(m_tagModel->value(Qmmp::DISCNUMBER).contains(QLatin1Char('/')))
     {
-        m_ui->discSpinBox->setValue(m_tagModel->value(Qmmp::DISCNUMBER).section(QChar('/'), 0, 0).toInt());
-        m_discs = m_tagModel->value(Qmmp::DISCNUMBER).section(QChar('/'), 1, 1).toInt();
+        m_ui->discSpinBox->setValue(m_tagModel->value(Qmmp::DISCNUMBER).section(QLatin1Char('/'), 0, 0).toInt());
+        m_discs = m_tagModel->value(Qmmp::DISCNUMBER).section(QLatin1Char('/'), 1, 1).toInt();
         m_ui->discSpinBox->setSuffix(QStringLiteral("/%1").arg(m_discs));
     }
     else

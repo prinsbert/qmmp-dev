@@ -29,9 +29,9 @@
 InputSourceProperties HTTPInputFactory::properties() const
 {
     InputSourceProperties properties;
-    properties.protocols = QStringList { "http", "https" };
+    properties.protocols = QStringList { u"http"_s, u"https"_s };
     properties.name = tr("HTTP Plugin");
-    properties.shortName = "http";
+    properties.shortName = "http"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     return properties;
@@ -51,8 +51,8 @@ void HTTPInputFactory::showSettings(QWidget *parent)
 void HTTPInputFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About HTTP Transport Plugin"),
-                        tr("Qmmp HTTP Transport Plugin")+"\n"+
-                        tr("Compiled against libcurl-%1").arg(LIBCURL_VERSION) + "\n" +
+                        tr("Qmmp HTTP Transport Plugin") + QChar::LineFeed +
+                        tr("Compiled against libcurl-%1").arg(QString::fromLatin1(LIBCURL_VERSION)) + QChar::LineFeed +
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

@@ -47,7 +47,7 @@ QDialog *FileOpsFactory::createConfigDialog(QWidget *parent)
 void FileOpsFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About File Operations Plugin"),
-                       tr("Qmmp File Operations Plugin")+"\n"+
+                       tr("Qmmp File Operations Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

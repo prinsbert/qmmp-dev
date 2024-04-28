@@ -55,9 +55,9 @@ bool DecoderFFmpegM4b::initialize()
         qWarning("DecoderFFmpegM4b: invalid url.");
         return false;
     }
-    filePath.remove("m4b://");
-    filePath.remove(QRegularExpression("#\\d+$"));
-    m_track = m_url.section(QChar('#'), -1).toInt();
+    filePath.remove(u"m4b://"_s);
+    filePath.remove(QRegularExpression(u"#\\d+$"_s));
+    m_track = m_url.section(QLatin1Char('#'), -1).toInt();
 
     AVFormatContext *in = nullptr;
 #ifdef Q_OS_WIN

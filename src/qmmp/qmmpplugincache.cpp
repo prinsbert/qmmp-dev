@@ -51,9 +51,9 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
         {
             m_shortName = values.at(0);
             m_priority = values.at(1).toInt();
-            m_protocols = values.at(2).split(QChar(';'), Qt::SkipEmptyParts);
-            m_filters = values.at(3).split(QChar(';'), Qt::SkipEmptyParts);
-            m_contentTypes = values.at(4).split(QChar(';'), Qt::SkipEmptyParts);
+            m_protocols = values.at(2).split(QLatin1Char(';'), Qt::SkipEmptyParts);
+            m_filters = values.at(3).split(QLatin1Char(';'), Qt::SkipEmptyParts);
+            m_contentTypes = values.at(4).split(QLatin1Char(';'), Qt::SkipEmptyParts);
             update = (info.lastModified().toString(Qt::ISODate) != values.at(5));
         }
     }
@@ -106,13 +106,13 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
             QStringList values;
             values << m_shortName;
             values << QString::number(m_priority);
-            values << m_protocols.join(QChar(';'));
-            values << m_filters.join(QChar(';'));
-            values << m_contentTypes.join(QChar(';'));
+            values << m_protocols.join(QLatin1Char(';'));
+            values << m_filters.join(QLatin1Char(';'));
+            values << m_contentTypes.join(QLatin1Char(';'));
             values << info.lastModified().toString(Qt::ISODate);
             settings->setValue(m_path, values);
             qDebug("QmmpPluginCache: added cache item \"%s=%s\"",
-                   qPrintable(info.fileName()), qPrintable(values.join(",")));
+                   qPrintable(info.fileName()), qPrintable(values.join(QLatin1Char(','))));
         }
     }
     settings->endGroup();

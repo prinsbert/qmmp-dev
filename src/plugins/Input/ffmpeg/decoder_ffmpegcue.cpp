@@ -51,8 +51,8 @@ bool DecoderFFmpegCue::initialize()
         return false;
     }
     filePath.remove(u"ffmpeg://"_s);
-    filePath.remove(QRegularExpression("#\\d+$"));
-    m_track = m_url.section(QChar('#'), -1).toInt();
+    filePath.remove(QRegularExpression(u"#\\d+$"_s));
+    m_track = m_url.section(QLatin1Char('#'), -1).toInt();
 
     AVFormatContext *in = nullptr;
 #ifdef Q_OS_WIN

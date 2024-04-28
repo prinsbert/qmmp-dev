@@ -38,8 +38,8 @@ CueFile::CueFile(const QString &path) : CueParser()
 
     if(path.contains(u"://"_s))
     {
-        m_filePath.remove("cue://");
-        m_filePath.remove(QRegularExpression("#\\d+$"));
+        m_filePath.remove(u"cue://"_s);
+        m_filePath.remove(QRegularExpression(u"#\\d+$"_s));
     }
 
     QFile file(m_filePath);
@@ -135,9 +135,9 @@ QStringList CueFile::splitLine(const QString &line)
     while (!buf.isEmpty())
     {
         //qDebug(qPrintable(buf));
-        if (buf.startsWith(QChar('"')))
+        if (buf.startsWith(QLatin1Char('"')))
         {
-            int end = buf.indexOf(QChar('"'), 1);
+            int end = buf.indexOf(QLatin1Char('"'), 1);
             if(end == -1) //ignore invalid line
             {
                 list.clear();
@@ -186,7 +186,7 @@ QString CueFile::getDirtyPath(const QString &cue_path, const QString &path)
     if (candidates.count() == 1)
         return candidates.constFirst();
 
-    int dot = cue_path.lastIndexOf('.');
+    int dot = cue_path.lastIndexOf(QLatin1Char('.'));
     if (dot != -1)
     {
         QRegularExpression r(QRegularExpression::escape(cue_path.left(dot)) + u"\\.[^\\.]+$"_s);
@@ -197,7 +197,7 @@ QString CueFile::getDirtyPath(const QString &cue_path, const QString &path)
         if ((index != -1) && (index == rindex))
             return candidates[index];
     }
-    dot = path.lastIndexOf('.');
+    dot = path.lastIndexOf(QLatin1Char('.'));
     if (dot != -1)
     {
         QRegularExpression r(QRegularExpression::escape(path.left(dot)) + u"\\.[^\\.]+$"_s);

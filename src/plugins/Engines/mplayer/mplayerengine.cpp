@@ -85,7 +85,7 @@ const QStringList &MplayerInfo::filters()
 
 bool MplayerInfo::supports(const QString &path)
 {
-    return QDir::match(filters(), path.section(QChar('/'), -1));
+    return QDir::match(filters(), path.section(QLatin1Char('/'), -1));
 }
 
 MplayerEngine::MplayerEngine(QObject *parent)

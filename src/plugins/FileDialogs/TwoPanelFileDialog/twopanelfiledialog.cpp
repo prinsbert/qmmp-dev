@@ -74,8 +74,8 @@ FileDialogProperties TwoPanelFileDialogFactory::properties() const
 void TwoPanelFileDialogFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About Two-panel File Dialog"),
-                       tr("Two-panel File Dialog") + "\n" +
-                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + "\n" +
+                       tr("Two-panel File Dialog") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
                        tr("Based on code from the Qt library"));
 }
 

@@ -53,7 +53,7 @@ void ColorWidget::mousePressEvent(QMouseEvent *)
 void ColorWidget::setColor(const QString &name)
 {
     m_colorName = name;
-    setStyleSheet(QString("QFrame { background: %1 }").arg(m_colorName));
+    setStyleSheet(QStringLiteral("QFrame { background: %1 }").arg(m_colorName));
 }
 
 QString ColorWidget::colorName() const

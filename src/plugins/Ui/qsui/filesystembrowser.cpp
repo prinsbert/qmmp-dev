@@ -94,9 +94,9 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     m_treeView->setRootIsDecorated(false);
 
     setContextMenuPolicy(Qt::ActionsContextMenu);
-    QAction *addToPlaylistAction = new QAction(QIcon::fromTheme("list-add"), tr("Add to Playlist"), this);
+    QAction *addToPlaylistAction = new QAction(QIcon::fromTheme(u"list-add"_s), tr("Add to Playlist"), this);
     addAction(addToPlaylistAction);
-    QAction *selectDirAction = new QAction(QIcon::fromTheme("folder"), tr("Change Directory"), this);
+    QAction *selectDirAction = new QAction(QIcon::fromTheme(u"folder"_s), tr("Change Directory"), this);
     addAction(selectDirAction);
     QAction *separatorAction = new QAction(this);
     separatorAction->setSeparator(true);

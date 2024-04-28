@@ -55,8 +55,8 @@ Notifier::Notifier(QObject *parent) : QObject(parent)
     connect(m_core, &SoundCore::volumeChanged, this, &Notifier::showVolume);
 
     //psi tune files (thousands of them!)
-    QString psi_data_dir = qgetenv("PSIDATADIR");
-    QString xdg_cache_home = qgetenv("XDG_CACHE_HOME");
+    QString psi_data_dir = QString::fromLocal8Bit(qgetenv("PSIDATADIR"));
+    QString xdg_cache_home = QString::fromLocal8Bit(qgetenv("XDG_CACHE_HOME"));
     if(!psi_data_dir.isEmpty())
         m_psiTuneFiles << psi_data_dir + u"/tune"_s;
     else if(!xdg_cache_home.isEmpty())

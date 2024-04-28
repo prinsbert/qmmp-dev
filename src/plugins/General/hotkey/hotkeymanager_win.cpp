@@ -164,7 +164,7 @@ const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
     for(auto it = modList.cbegin(); it != modList.cend(); ++it)
     {
         if (modifiers & it.key())
-            keyStr.append(it.value() + QChar('+'));
+            keyStr.append(it.value() + QLatin1Char('+'));
     }
 
     if(key == VK_SHIFT || key == VK_CONTROL || key == VK_LWIN || key == VK_RWIN || key == VK_MENU)

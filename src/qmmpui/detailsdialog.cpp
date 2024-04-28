@@ -90,9 +90,9 @@ void DetailsDialog:: on_directoryButton_clicked()
     else if (m_info.path().contains(u":///"_s)) //pseudo-protocol
     {
         dir_path = QUrl(m_info.path()).path();
-        dir_path.replace(QString(QUrl::toPercentEncoding(QChar('#'))), QChar('#'));
-        dir_path.replace(QString(QUrl::toPercentEncoding(QChar('?'))), QChar('?'));
-        dir_path.replace(QString(QUrl::toPercentEncoding(QChar('%'))), QChar('%'));
+        dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"#"_s)), u"#"_s);
+        dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"?"_s)), u"?"_s);
+        dir_path.replace(QString::fromLatin1(QUrl::toPercentEncoding(u"%"_s)), u"%"_s);
         dir_path = QFileInfo(dir_path).absolutePath();
     }
     else
@@ -207,7 +207,7 @@ void DetailsDialog::updatePage()
     m_ui->pageLabel->setText(tr("%1/%2").arg(m_page + 1).arg(m_tracks.count()));
     m_info = *m_tracks.at(m_page);
 
-    setWindowTitle(m_info.path().section(QChar('/'),-1));
+    setWindowTitle(m_info.path().section(QLatin1Char('/'),-1));
     m_ui->pathEdit->setText(m_info.path());
 
     //load metadata and create metadata model
@@ -229,11 +229,11 @@ void DetailsDialog::updatePage()
     QImage coverImage;
     bool readOnly = false;
 
-    if(m_info.path().contains(u"://"_s) && m_info.path().contains(QChar('#'))) //track of multi-track file
+    if(m_info.path().contains(u"://"_s) && m_info.path().contains(QLatin1Char('#'))) //track of multi-track file
     {
         QString filePath = m_info.path();
-        filePath.remove(QRegularExpression("#\\d+$"));
-        filePath.remove(QRegularExpression("^\\D+://"));
+        filePath.remove(QRegularExpression(u"#\\d+$"_s));
+        filePath.remove(QRegularExpression(u"^\\D+://"_s));
         if(QFileInfo(filePath).isFile())
             readOnly = !QFileInfo(filePath).isWritable() || !QFile::exists(filePath);
     }

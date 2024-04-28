@@ -117,7 +117,7 @@ void FileWriterPlugin::init(const TrackInfo &info)
     outDir = settings.value(u"FileWriter/out_dir"_s, outDir).toString();
     QString fileName = settings.value(u"FileWriter/file_name"_s, u"%p%if(%p&%t, - ,)%t"_s).toString();
     if(fileName.isEmpty())
-        fileName = info.path().section(QChar('/'), 1);
+        fileName = info.path().section(QLatin1Char('/'), 1);
     m_singleFile = settings.value(u"FileWriter/single_file"_s, false).toBool();
 
     MetaDataFormatter formatter(fileName);
@@ -125,12 +125,12 @@ void FileWriterPlugin::init(const TrackInfo &info)
     if(!fileName.endsWith(u".ogg"_s, Qt::CaseInsensitive))
         fileName.append(u".ogg"_s);
 
-    m_file.setFileName(outDir + QChar('/') + fileName);
+    m_file.setFileName(outDir + QLatin1Char('/') + fileName);
 
     int j = 1;
     while(m_file.exists())
     {
-        m_file.setFileName(outDir + QChar('/') + fileName.left(fileName.count() - 4) +
+        m_file.setFileName(outDir + QLatin1Char('/') + fileName.left(fileName.count() - 4) +
                            QStringLiteral("-%1.ogg").arg(j++));
     }
 

@@ -129,11 +129,11 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
         int track_number = (args.count() == 1) ? args.constFirst().toInt() - 1 : args.at(1).toInt() - 1;
         PlayListModel *model = pl_manager->playListAt(pl_id);
         if(!model)
-            return tr("Invalid playlist ID") + "\n";
+            return tr("Invalid playlist ID") + QChar::LineFeed;
 
         PlayListTrack *track = model->findTrack(track_number);
         if(!track)
-            return tr("Invalid track ID") + "\n";
+            return tr("Invalid track ID") + QChar::LineFeed;
         player->stop();
         pl_manager->activatePlayList(model);
         pl_manager->selectPlayList(model);

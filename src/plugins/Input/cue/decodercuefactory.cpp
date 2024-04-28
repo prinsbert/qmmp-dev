@@ -58,7 +58,7 @@ QList<TrackInfo *> DecoderCUEFactory::createPlayList(const QString &path, TrackI
     CueFile cueFile(path);
     if(path.contains(u"://"_s))
     {
-        int track = path.section(QChar('#'), -1).toInt();
+        int track = path.section(QLatin1Char('#'), -1).toInt();
         return cueFile.createPlayList(track);
     }
 

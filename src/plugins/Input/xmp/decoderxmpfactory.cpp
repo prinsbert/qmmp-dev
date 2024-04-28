@@ -110,7 +110,7 @@ void DecoderXmpFactory::showAbout(QWidget *parent)
     QMessageBox::about(parent, tr("About XMP Audio Plugin"),
                        tr("Qmmp XMP Audio Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
-                       tr("Compiled against libxmp-%1").arg(XMP_VERSION));
+                       tr("Compiled against libxmp-%1").arg(QString::fromLatin1(XMP_VERSION)));
 }
 
 QString DecoderXmpFactory::translation() const

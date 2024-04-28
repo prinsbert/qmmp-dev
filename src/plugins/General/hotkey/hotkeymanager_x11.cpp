@@ -148,9 +148,9 @@ const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
     for(auto it = modList.cbegin(); it != modList.cend(); ++it)
     {
         if(modifiers & it.key())
-            keyStr.append(it.value() + QChar('+'));
+            keyStr.append(it.value() + QLatin1Char('+'));
     }
-    keyStr.append(XKeysymToString(key));
+    keyStr.append(QString::fromLatin1(XKeysymToString(key)));
     return keyStr;
 }
 

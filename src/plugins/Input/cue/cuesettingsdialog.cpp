@@ -40,7 +40,7 @@ CueSettingsDialog::CueSettingsDialog(QWidget *parent)
     size_t n = 0;
     const char **langs = enca_get_languages(&n);
     for (size_t i = 0; i < n; ++i)
-        m_ui->encaAnalyserComboBox->addItem(langs[i]);
+        m_ui->encaAnalyserComboBox->addItem(QString::fromLatin1(langs[i]));
 #endif
     QSettings settings;
     settings.beginGroup(u"CUE"_s);
@@ -48,7 +48,7 @@ CueSettingsDialog::CueSettingsDialog(QWidget *parent)
     m_ui->cueEncComboBox->setCurrentIndex(pos);
 #ifdef WITH_ENCA
     m_ui->autoCharsetCheckBox->setChecked(settings.value(u"use_enca"_s, false).toBool());
-    pos = m_ui->encaAnalyserComboBox->findText(settings.value(u"enca_lang"_s, langs[n - 1]).toString());
+    pos = m_ui->encaAnalyserComboBox->findText(settings.value(u"enca_lang"_s, QString::fromLatin1(langs[n - 1])).toString());
     m_ui->encaAnalyserComboBox->setCurrentIndex(pos);
 #else
     m_ui->autoCharsetCheckBox->setEnabled(false);

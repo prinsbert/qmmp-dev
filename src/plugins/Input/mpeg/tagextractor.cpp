@@ -88,7 +88,7 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
     if(!tag.frameListMap()["TPOS"].isEmpty())
     {
         TagLib::String disc = tag.frameListMap()["TPOS"].front()->toString();
-        tags.insert(Qmmp::DISCNUMBER, QString(disc.toCString()).trimmed());
+        tags.insert(Qmmp::DISCNUMBER, QString::fromLatin1(disc.toCString()).trimmed());
     }
 
     delete codec;

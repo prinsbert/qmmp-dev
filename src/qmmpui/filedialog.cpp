@@ -220,8 +220,8 @@ void FileDialog::updateLastDir(const QStringList &list)
     if(!list.isEmpty() && m_lastDir)
     {
         QString path = list.constFirst();
-        if(path.endsWith(QChar('/')))
+        if(path.endsWith(QLatin1Char('/')))
             path.remove(path.size() - 1, 1);
-        *m_lastDir = path.left(path.lastIndexOf(QChar('/')));
+        *m_lastDir = path.left(path.lastIndexOf(QLatin1Char('/')));
     }
 }

@@ -101,7 +101,7 @@ UiFactory *UiLoader::selected()
     loadPlugins();
     QSettings settings;
 #ifdef Q_OS_UNIX
-    QString defaultUi = QMMP_DEFAULT_UI;
+    QString defaultUi = QStringLiteral(QMMP_DEFAULT_UI);
     if(defaultUi == QLatin1String("skinned") && qApp->platformName() == QLatin1String("wayland"))
         defaultUi = u"qsui"_s;
     QString name = settings.value(u"Ui/current_plugin"_s, defaultUi).toString();

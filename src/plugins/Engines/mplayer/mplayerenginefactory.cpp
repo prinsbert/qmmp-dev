@@ -72,8 +72,8 @@ void MplayerEngineFactory::showSettings(QWidget *parent)
 void MplayerEngineFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About MPlayer Plugin"),
-                       tr("Qmmp MPlayer Plugin")+"\n"+
-                       tr("This plugin uses MPlayer as backend")+"\n"+
+                       tr("Qmmp MPlayer Plugin") + QChar::LineFeed +
+                       tr("This plugin uses MPlayer as backend") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

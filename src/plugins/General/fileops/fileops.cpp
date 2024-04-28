@@ -53,22 +53,22 @@ FileOps::FileOps(QObject *parent) : QObject(parent)
         return;
 
     int i = 0;
-    while(!settings.value(QString("name_%1").arg(i)).isNull())
+    while(!settings.value(QStringLiteral("name_%1").arg(i)).isNull())
     {
-        QString name = settings.value(QString("name_%1").arg(i)).toString();
+        QString name = settings.value(QStringLiteral("name_%1").arg(i)).toString();
         QVariantMap data = {
-            { "action",  settings.value(QString("action_%1").arg(i), FileOps::COPY).toInt() },
-            { "pattern", settings.value(QString("pattern_%1").arg(i)).toString() },
-            { "destination", settings.value(QString("destination_%1").arg(i)).toString() },
-            { "command", settings.value(QString("command_%1").arg(i)).toString() },
+            { u"action"_s,  settings.value(QStringLiteral("action_%1").arg(i), FileOps::COPY).toInt() },
+            { u"pattern"_s, settings.value(QStringLiteral("pattern_%1").arg(i)).toString() },
+            { u"destination"_s, settings.value(QStringLiteral("destination_%1").arg(i)).toString() },
+            { u"command"_s, settings.value(QStringLiteral("command_%1").arg(i)).toString() },
 
         };
 
-        if(settings.value(QString("enabled_%1").arg(i), true).toBool())
+        if(settings.value(QStringLiteral("enabled_%1").arg(i), true).toBool())
         {
             QAction *action = new QAction(name, this);
             action->setData(data);
-            action->setShortcut(settings.value(QString("hotkey_%1").arg(i)).toString());
+            action->setShortcut(settings.value(QStringLiteral("hotkey_%1").arg(i)).toString());
             connect(action, &QAction::triggered, this, &FileOps::execAction);
             UiHelper::instance()->addAction(action, UiHelper::PLAYLIST_MENU);
         }
@@ -87,10 +87,10 @@ void FileOps::execAction()
     QAction *action = qobject_cast<QAction *>(sender());
     QVariantMap data = action->data().toMap();
 
-    int type = data["action"].toInt();
-    QString pattern = data["pattern"].toString();
-    QString destination = data["destination"].toString();
-    QString command = data["command"].toString();
+    int type = data[u"action"_s].toInt();
+    QString pattern = data[u"pattern"_s].toString();
+    QString destination = data[u"destination"_s].toString();
+    QString command = data[u"command"_s].toString();
 
     MetaDataFormatter formatter(type == EXECUTE ? command : pattern);
 
@@ -186,12 +186,12 @@ void FileOps::copy(const QList<PlayListTrack *> &tracks, const QString &dest, co
 
         QString fileName = formatter->format(track); //generate file name
 
-        QString ext = QString(".") + track->path().section(".", -1).toLower();
+        QString ext = QStringLiteral(".") + track->path().section(QLatin1Char('.'), -1).toLower();
         if(!ext.isEmpty() && !fileName.endsWith(ext, Qt::CaseInsensitive))
             fileName += ext; //append extension
 
         //create destination path
-        QString path = dest + "/" + fileName;
+        QString path = dest + QLatin1Char('/') + fileName;
         QDir dir = QFileInfo(path).dir();
         if(!dir.exists())
         {
@@ -250,15 +250,15 @@ void FileOps::rename(const QList<PlayListTrack *> &tracks, const MetaDataFormatt
 
         QString fileName = formatter->format(track); //generate file name
 
-        QString ext = QString(".") + track->path().section(".", -1).toLower();
+        QString ext = QStringLiteral(".") + track->path().section(QLatin1Char('.'), -1).toLower();
         if(!ext.isEmpty() && !fileName.endsWith(ext, Qt::CaseInsensitive))
             fileName += ext; //append extension
         //rename file
         QFile file(track->path());
         QString dest = QFileInfo(track->path()).absolutePath ();
-        if(isValid(track) && file.rename(dest + "/" + fileName) && isValid(track))
+        if(isValid(track) && file.rename(dest + QLatin1Char('/') + fileName) && isValid(track))
         {
-            track->setPath(dest + "/" + fileName);
+            track->setPath(dest + QLatin1Char('/') + fileName);
             track->updateMetaData();
             model->doCurrentVisibleRequest();
         }
@@ -289,11 +289,11 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
 
         QString fileName = formatter->format(track); //generate file name
 
-        QString ext = QString(".") + track->path().section(".", -1).toLower();
+        QString ext = QStringLiteral(".") + track->path().section(QLatin1Char('.'), -1).toLower();
         if(!ext.isEmpty() && !fileName.endsWith(ext, Qt::CaseInsensitive))
             fileName += ext;  //append extension
         //create destination path
-        QString path = dest + "/" + fileName;
+        QString path = dest + QLatin1Char('/') + fileName;
         //skip moved files
         if(path == track->path())
             continue;
@@ -386,8 +386,8 @@ void FileOps::execute(const QList<PlayListTrack *> &tracks, const MetaDataFormat
         QStringList args = { "/C", command };
         QProcess::startDetached("cmd.exe", args);
 #else
-        QStringList args = { "-c", command };
-        QProcess::startDetached("sh", args);
+        QStringList args = { u"-c"_s, command };
+        QProcess::startDetached(u"sh"_s, args);
 #endif
     }
 }

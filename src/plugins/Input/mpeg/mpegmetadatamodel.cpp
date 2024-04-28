@@ -175,13 +175,13 @@ MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file,
     if(m_type == TagLib::MPEG::File::ID3v1)
     {
         m_tag = m_file->ID3v1Tag();
-        if((codecName = settings.value(u"ID3v1_encoding"_s, "ISO-8859-1").toByteArray()).isEmpty())
+        if((codecName = settings.value(u"ID3v1_encoding"_s, u"ISO-8859-1"_s).toByteArray()).isEmpty())
             codecName = "ISO-8859-1";
     }
     else if(m_type == TagLib::MPEG::File::ID3v2)
     {
         m_tag = m_file->ID3v2Tag();
-        if((codecName = settings.value(u"ID3v2_encoding"_s, "UTF-8").toByteArray()).isEmpty())
+        if((codecName = settings.value(u"ID3v2_encoding"_s, u"UTF-8"_s).toByteArray()).isEmpty())
             codecName = "UTF-8";
     }
     else

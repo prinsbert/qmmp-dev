@@ -121,7 +121,7 @@ QByteArray XSPFPlaylistFormat::encode(const QList<PlayListTrack*> &files, const 
     xml.writeStartElement("playlist");
     xml.writeAttribute("version", "1");
     xml.writeAttribute("xmlns", "http://xspf.org/ns/0/");
-    xml.writeTextElement("creator", "qmmp-" + Qmmp::strVersion());
+    xml.writeTextElement("creator", u"qmmp-"_s + Qmmp::strVersion());
     xml.writeStartElement("trackList");
 
     int counter = 1;
@@ -132,19 +132,19 @@ QByteArray XSPFPlaylistFormat::encode(const QList<PlayListTrack*> &files, const 
         QString url;
         if (f->path().contains(u"://"_s))
         {
-            url = QUrl::toPercentEncoding(f->path(), ":/");
+            url = QString::fromLatin1(QUrl::toPercentEncoding(f->path(), ":/"));
         }
         else if(f->path().startsWith(xspfDir)) //relative path
         {
             QString p = f->path();
             p.remove(0, xspfDir.size());
-            if(p.startsWith("/"))
+            if(p.startsWith(QLatin1Char('/')))
                 p.remove(0, 1);
-            url = QUrl::toPercentEncoding(p, ":/");
+            url = QString::fromLatin1(QUrl::toPercentEncoding(p, ":/"));
         }
         else  //absolute path
         {
-            url = QUrl::toPercentEncoding(u"file://"_s + f->path(), ":/");
+            url = QString::fromLatin1(QUrl::toPercentEncoding(u"file://"_s + f->path(), ":/"));
         }
 
         xml.writeTextElement("location", url);

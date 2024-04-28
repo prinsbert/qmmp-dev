@@ -132,7 +132,7 @@ int QSUiTabWidget::insertTab(int index, const QString &label)
 int QSUiTabWidget::insertTab(int index, const QIcon &icon, const QString &label)
 {
     QString tabText = label;
-    index = m_tabBar->insertTab(index, icon, tabText.replace("&", "&&"));
+    index = m_tabBar->insertTab(index, icon, tabText.replace(u"&"_s, u"&&"_s));
     setUpLayout();
     tabInserted(index);
     return index;

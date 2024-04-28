@@ -139,7 +139,7 @@ void UiHelper::addFiles(QWidget *parent, PlayListModel *model)
     m_model = model;
     FileDialog::popup(parent, FileDialog::PlayDirsFiles, &m_lastDir,
                       this, SLOT(addSelectedFiles(QStringList,bool)),
-                      tr("Select one or more files to open"), filters.join(";;"));
+                      tr("Select one or more files to open"), filters.join(u";;"_s));
 }
 
 void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
@@ -202,7 +202,7 @@ void UiHelper::savePlayList(QWidget *parent, PlayListModel *model)
     filters << tr("Playlist Files") + QStringLiteral(" (%1)").arg(PlayListParser::nameFilters().join(QChar::Space));
     filters << PlayListParser::filters();
     QString selectedFilter = filters.at(1);
-    QString f_name = FileDialog::getSaveFileName(parent, tr("Save Playlist"), m_lastDir + QChar('/') +
+    QString f_name = FileDialog::getSaveFileName(parent, tr("Save Playlist"), m_lastDir + QLatin1Char('/') +
                                                  model->name(), filters.join(u";;"_s), &selectedFilter);
 
     if(f_name.isEmpty())
@@ -210,11 +210,11 @@ void UiHelper::savePlayList(QWidget *parent, PlayListModel *model)
 
     if(!PlayListParser::isPlayList(f_name)) //append selected extension
     {
-        QStringList selectedFilters = selectedFilter.section(QChar('('), 1).remove(QChar(')')).split(QChar::Space);
+        QStringList selectedFilters = selectedFilter.section(QLatin1Char('('), 1).remove(QLatin1Char(')')).split(QChar::Space);
         if(selectedFilters.isEmpty())
             return;
 
-        QString ext = selectedFilters.first().remove(QChar('*')); //use first extension
+        QString ext = selectedFilters.first().remove(QLatin1Char('*')); //use first extension
         f_name.append(ext);
 
         QFileInfo info(f_name);

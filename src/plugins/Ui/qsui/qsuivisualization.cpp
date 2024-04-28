@@ -401,7 +401,7 @@ QSUiAnalyzer::~QSUiAnalyzer()
 
 QString QSUiAnalyzer::name() const
 {
-    return "analyzer";
+    return u"analyzer"_s;
 }
 
 void QSUiAnalyzer::process(float *buffer, int width, int height)

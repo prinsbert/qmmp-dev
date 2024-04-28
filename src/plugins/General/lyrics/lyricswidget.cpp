@@ -112,7 +112,7 @@ void LyricsWidget::fetch(const TrackInfo *info)
 
 QString LyricsWidget::cacheFilePath() const
 {
-    QString name = m_ui->artistLineEdit->text() + QChar('_') + m_ui->titleLineEdit->text();
+    QString name = m_ui->artistLineEdit->text() + QLatin1Char('_') + m_ui->titleLineEdit->text();
     QByteArray hash = QCryptographicHash::hash(name.toUtf8(), QCryptographicHash::Md5);
     return m_cachePath + QString::fromLatin1(hash.toHex()) + u".html"_s;
 }
@@ -180,7 +180,7 @@ void LyricsWidget::onRequestFinished(QNetworkReply *reply)
 
 void LyricsWidget::on_refreshButton_clicked()
 {
-    m_ui->textBrowser->setHtml(QString("<b>%1</b>").arg(tr("Receiving")));
+    m_ui->textBrowser->setHtml(QStringLiteral("<b>%1</b>").arg(tr("Receiving")));
     m_ui->providerComboBox->clear();
 
     m_info.clear();

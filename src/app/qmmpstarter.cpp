@@ -51,9 +51,9 @@
 #endif
 
 #ifdef Q_OS_WIN
-#define UDS_PATH QString("qmmp")
+#define UDS_PATH QStringLiteral("qmmp")
 #else
-#define UDS_PATH QString("/tmp/qmmp.sock.%1").arg(getuid()).toLatin1().constData()
+#define UDS_PATH QStringLiteral("/tmp/qmmp.sock.%1").arg(getuid())
 #endif
 
 using namespace std;
@@ -186,7 +186,7 @@ QMMPStarter::QMMPStarter() : QObject()
     if(!noStart && m_server->listen(UDS_PATH)) //trying to create server
     {
 #ifndef Q_OS_WIN
-        chmod(UDS_PATH, S_IRUSR | S_IWUSR);
+        chmod(UDS_PATH.toLocal8Bit().constData(), S_IRUSR | S_IWUSR);
 #endif
         startPlayer();
     }
@@ -214,7 +214,7 @@ QMMPStarter::QMMPStarter() : QObject()
             if(m_server->listen(UDS_PATH))
             {
 #ifndef Q_OS_WIN
-                chmod(UDS_PATH, S_IRUSR | S_IWUSR);
+                chmod(UDS_PATH.toLocal8Bit().constData(), S_IRUSR | S_IWUSR);
 #endif
                 startPlayer();
             }
@@ -264,7 +264,7 @@ void QMMPStarter::startPlayer()
 #else
     //add extra theme path;
     QStringList theme_paths = QIcon::themeSearchPaths();
-    QString share_path = qgetenv("XDG_DATA_HOME");
+    QString share_path = QString::fromLatin1(qgetenv("XDG_DATA_HOME"));
     if(share_path.isEmpty())
         share_path = QDir::homePath() + u"/.local/share"_s;
     theme_paths << share_path + u"/icons"_s;
@@ -288,7 +288,7 @@ void QMMPStarter::startPlayer()
             };
 
             for(const QString &name : qAsConst(filesToCopy))
-                QFile::copy(QDir::homePath() + u"/.qmmp/"_s + name, Qmmp::configDir() + QChar('/') + name);
+                QFile::copy(QDir::homePath() + u"/.qmmp/"_s + name, Qmmp::configDir() + QLatin1Char('/') + name);
 
             QProcess::execute(QStringLiteral("cp"), { u"-r"_s, QDir::homePath() + u"/.qmmp/skins"_s, Qmmp::configDir() });
         }
@@ -329,8 +329,8 @@ void QMMPStarter::startPlayer()
 
 void QMMPStarter::createPaths()
 {
-    QDir("/").mkpath(Qmmp::configDir());
-    QDir("/").mkpath(Qmmp::cacheDir());
+    QDir(u"/"_s).mkpath(Qmmp::configDir());
+    QDir(u"/"_s).mkpath(Qmmp::cacheDir());
 }
 
 void QMMPStarter::savePosition()
@@ -387,7 +387,7 @@ void QMMPStarter::readCommand()
         socket->deleteLater();
         return;
     }
-    QStringList slist = QString::fromUtf8(inputArray.data()).split("|||",Qt::SkipEmptyParts);
+    QStringList slist = QString::fromUtf8(inputArray.data()).split(u"|||"_s, Qt::SkipEmptyParts);
     QString cwd = slist.takeAt(0);
     QString out = processCommandArgs(slist, cwd);
     if(!out.isEmpty())
@@ -407,7 +407,7 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
     QStringList paths;
     for(const QString &arg : qAsConst(slist)) //detect file/directory paths
     {
-        if(arg.startsWith(QChar('-')))
+        if(arg.startsWith(QLatin1Char('-')))
             break;
         paths.append(arg);
     }
@@ -478,8 +478,8 @@ void QMMPStarter::printVersion()
     streambuf* old_stream = cout.rdbuf(tmp_stream.rdbuf());
 #endif
     cout << qPrintable(tr("QMMP version: %1").arg(Qmmp::strVersion())) << endl;
-    cout << qPrintable(tr("Compiled with Qt version: %1").arg(QT_VERSION_STR)) << endl;
-    cout << qPrintable(tr("Using Qt version: %1").arg(qVersion())) << endl;
+    cout << qPrintable(tr("Compiled with Qt version: %1").arg(QStringLiteral(QT_VERSION_STR))) << endl;
+    cout << qPrintable(tr("Using Qt version: %1").arg(QString::fromLatin1(qVersion()))) << endl;
 #ifdef Q_OS_WIN
     string text = tmp_stream.str();
     QMessageBox::information(nullptr, tr("Qmmp Version"), QString::fromLocal8Bit(text.c_str()));

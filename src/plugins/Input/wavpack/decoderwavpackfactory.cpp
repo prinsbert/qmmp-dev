@@ -62,9 +62,9 @@ QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, Tr
 
     if(path.contains(u"://"_s)) //is it cue track?
     {
-        filePath.remove("wvpack://");
-        filePath.remove(QRegularExpression("#\\d+$"));
-        track = path.section(QChar('#'), -1).toInt();
+        filePath.remove(u"wvpack://"_s);
+        filePath.remove(QRegularExpression(u"#\\d+$"_s));
+        track = path.section(QLatin1Char('#'), -1).toInt();
         parts = TrackInfo::AllParts; //extract all metadata for single cue track
     }
 
@@ -104,13 +104,13 @@ QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, Tr
     {
         char value[200] = { 0 };
         WavpackGetTagItem(ctx, "REPLAYGAIN_TRACK_GAIN", value, sizeof(value));
-        info->setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, value);
+        info->setValue(Qmmp::REPLAYGAIN_TRACK_GAIN, QString::fromLatin1(value));
         WavpackGetTagItem(ctx, "REPLAYGAIN_TRACK_PEAK", value, sizeof(value));
-        info->setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, value);
+        info->setValue(Qmmp::REPLAYGAIN_TRACK_PEAK, QString::fromLatin1(value));
         WavpackGetTagItem(ctx, "REPLAYGAIN_ALBUM_GAIN", value, sizeof(value));
-        info->setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN, value);
+        info->setValue(Qmmp::REPLAYGAIN_ALBUM_GAIN, QString::fromLatin1(value));
         WavpackGetTagItem(ctx, "REPLAYGAIN_ALBUM_PEAK", value, sizeof(value));
-        info->setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK, value);
+        info->setValue(Qmmp::REPLAYGAIN_ALBUM_PEAK, QString::fromLatin1(value));
     }
 
     if(parts & TrackInfo::MetaData)
@@ -181,7 +181,8 @@ void DecoderWavPackFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About WavPack Audio Plugin"),
                        tr("Qmmp WavPack Audio Plugin") + QChar::LineFeed +
-                       tr("WavPack library version: %1").arg(WavpackGetLibraryVersionString()) + QChar::LineFeed +
+                       tr("WavPack library version: %1").arg(QString::fromLatin1(WavpackGetLibraryVersionString())) +
+                       QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

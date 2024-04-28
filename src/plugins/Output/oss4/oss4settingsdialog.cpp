@@ -82,8 +82,9 @@ Oss4SettingsDialog::Oss4SettingsDialog (QWidget *parent) : QDialog (parent), m_u
 
         if (audio_info.caps & PCM_CAP_OUTPUT)
         {
-            m_devices << audio_info.devnode;
-            m_ui->deviceComboBox->addItem(QStringLiteral("%1 (%2)").arg(audio_info.name, audio_info.devnode));
+            m_devices << QString::fromLatin1(audio_info.devnode);
+            m_ui->deviceComboBox->addItem(QStringLiteral("%1 (%2)").arg(QString::fromLatin1(audio_info.name),
+                                                                        QString::fromLatin1(audio_info.devnode)));
         }
     }
     QSettings settings;

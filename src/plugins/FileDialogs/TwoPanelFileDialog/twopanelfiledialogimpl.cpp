@@ -88,7 +88,7 @@ QStringList TwoPanelFileDialogImpl::selectedFiles() const
         QModelIndexList indexes = m_ui->dirListView->selectionModel()->selectedRows(0);
         if(!indexes.isEmpty() && indexes.constFirst().isValid())
         {
-            l << m_dirModel->filePath(indexes.constFirst()) + QChar('/') + m_ui->fileNameLineEdit->text();
+            l << m_dirModel->filePath(indexes.constFirst()) + QLatin1Char('/') + m_ui->fileNameLineEdit->text();
         }
     }
     else if(m_mode == FileDialog::AddDir || m_mode == FileDialog::AddDirs)
@@ -157,8 +157,8 @@ void TwoPanelFileDialogImpl::updateFileSelection ()
     else
     {
         str = names.join(u"\" \""_s);
-        str.append(QChar('"'));
-        str.prepend(QChar('"'));
+        str.append(QLatin1Char('"'));
+        str.prepend(QLatin1Char('"'));
     }
     if(!m_ui->fileNameLineEdit->hasFocus())
         m_ui->fileNameLineEdit->setText(str);
@@ -223,10 +223,10 @@ void TwoPanelFileDialogImpl::on_fileNameLineEdit_textChanged(const QString &text
         return;
     }
     QString path;
-    if(text.startsWith(QChar('/')))
+    if(text.startsWith(QLatin1Char('/')))
         path = text;
     else
-        path = m_dirModel->filePath(m_ui->dirListView->currentIndex()) + QChar('/') + text;
+        path = m_dirModel->filePath(m_ui->dirListView->currentIndex()) + QLatin1Char('/') + text;
 
     if(!QFileInfo::exists(path))
         return;
@@ -404,9 +404,9 @@ void TwoPanelFileDialogImpl::hideEvent (QHideEvent *event)
 void TwoPanelFileDialogImpl::addToHistory(const QString &path)
 {
     QString path_copy = path;
-    if(path_copy.endsWith(QChar('/')))
+    if(path_copy.endsWith(QLatin1Char('/')))
         path_copy.remove(path.size() - 1, 1);
-    QString dir_path = path.left(path_copy.lastIndexOf(QChar('/')));
+    QString dir_path = path.left(path_copy.lastIndexOf(QLatin1Char('/')));
 
     m_history.removeAll(dir_path);
     m_history.prepend(dir_path);
@@ -444,7 +444,7 @@ void TwoPanelFileDialogImpl::addFiles(const QStringList &list, bool play)
         if(!contains)
         {
             QString ext = qt_clean_filter_list(m_ui->fileTypeComboBox->currentText()).constFirst();
-            ext.remove(QChar('*'));
+            ext.remove(QLatin1Char('*'));
             if(!ext.isEmpty() && ext != u"."_s)
             {
                 f_name.append(ext);

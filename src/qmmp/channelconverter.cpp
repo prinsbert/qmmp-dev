@@ -70,7 +70,7 @@ void ChannelConverter::configure(quint32 srate, ChannelMap in_map)
     }
 
     qDebug("ChannelConverter: {%s} ==> {%s}; {%s}", qPrintable(in_map.toString()),
-           qPrintable(m_out_map.toString()), qPrintable(reorderStringList.join(QChar(','))));
+           qPrintable(m_out_map.toString()), qPrintable(reorderStringList.join(QLatin1Char(','))));
 }
 
 void ChannelConverter::applyEffect(Buffer *b)

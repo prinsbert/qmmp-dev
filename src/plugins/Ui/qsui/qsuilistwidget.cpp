@@ -730,10 +730,10 @@ const QString QSUiListWidget::getExtraString(PlayListItem *item)
     PlayListTrack *track = static_cast<PlayListTrack *>(item);
 
     if (m_show_protocol && track->path().contains(u"://"_s))
-        extra_string = QChar('[') + track->path().split(u"://"_s).constFirst() + QChar(']');
+        extra_string = QLatin1Char('[') + track->path().split(u"://"_s).constFirst() + QLatin1Char(']');
 
     if (track->isQueued())
-        extra_string += QChar('|') + QString::number(track->queuedIndex() + 1) + QChar('|');
+        extra_string += QLatin1Char('|') + QString::number(track->queuedIndex() + 1) + QLatin1Char('|');
 
     if(m_model->currentTrack() == track && m_ui_settings->isRepeatableTrack())
         extra_string += u"|R|"_s;
