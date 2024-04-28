@@ -67,16 +67,16 @@ QList<MetaDataItem> MPEGMetaDataModel::extraProperties() const
     switch(ap->channelMode())
     {
     case TagLib::MPEG::Header::Stereo:
-        ep << MetaDataItem(tr("Mode"), "Stereo");
+        ep << MetaDataItem(tr("Mode"), u"Stereo"_s);
         break;
     case TagLib::MPEG::Header::JointStereo:
-        ep << MetaDataItem(tr("Mode"), "Joint stereo");
+        ep << MetaDataItem(tr("Mode"), u"Joint stereo"_s);
         break;
     case TagLib::MPEG::Header::DualChannel:
-        ep << MetaDataItem(tr("Mode"), "Dual channel");
+        ep << MetaDataItem(tr("Mode"), u"Dual channel"_s);
         break;
     case TagLib::MPEG::Header::SingleChannel:
-        ep << MetaDataItem(tr("Mode"), "Single channel");
+        ep << MetaDataItem(tr("Mode"), u"Single channel"_s);
         break;
     }
     ep << MetaDataItem(tr("Protection"), ap->protectionEnabled());
@@ -171,17 +171,17 @@ MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file,
 {
     QByteArray codecName;
     QSettings settings;
-    settings.beginGroup("MPEG");
+    settings.beginGroup(u"MPEG"_s);
     if(m_type == TagLib::MPEG::File::ID3v1)
     {
         m_tag = m_file->ID3v1Tag();
-        if((codecName = settings.value("ID3v1_encoding", "ISO-8859-1").toByteArray()).isEmpty())
+        if((codecName = settings.value(u"ID3v1_encoding"_s, "ISO-8859-1").toByteArray()).isEmpty())
             codecName = "ISO-8859-1";
     }
     else if(m_type == TagLib::MPEG::File::ID3v2)
     {
         m_tag = m_file->ID3v2Tag();
-        if((codecName = settings.value("ID3v2_encoding", "UTF-8").toByteArray()).isEmpty())
+        if((codecName = settings.value(u"ID3v2_encoding"_s, "UTF-8").toByteArray()).isEmpty())
             codecName = "UTF-8";
     }
     else
@@ -194,7 +194,7 @@ MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file,
         codecName = "UTF-8";
 
     if(m_tag && !m_using_rusxmms && (m_type == TagLib::MPEG::File::ID3v1 || m_type == TagLib::MPEG::File::ID3v2) &&
-            settings.value("detect_encoding", false).toBool())
+            settings.value(u"detect_encoding"_s, false).toBool())
     {
         QByteArray detectedCharset = TagExtractor::detectCharset(m_tag);
         if(!detectedCharset.isEmpty())
@@ -214,12 +214,12 @@ MpegFileTagModel::~MpegFileTagModel()
 QString MpegFileTagModel::name() const
 {
     if(m_type == TagLib::MPEG::File::ID3v1)
-        return "ID3v1";
+        return u"ID3v1"_s;
 
     if(m_type == TagLib::MPEG::File::ID3v2)
-        return "ID3v2";
+        return u"ID3v2"_s;
 
-    return "APE";
+    return u"APE"_s;
 }
 
 QList<Qmmp::MetaData> MpegFileTagModel::keys() const

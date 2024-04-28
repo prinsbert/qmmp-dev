@@ -24,8 +24,8 @@ SET(libgme_SRCS
   decoder_gme.cpp
   decodergmefactory.cpp
   gmehelper.cpp
-  settingsdialog.cpp
-  settingsdialog.ui
+  gmesettingsdialog.cpp
+  gmesettingsdialog.ui
   translations/translations.qrc
 )
 

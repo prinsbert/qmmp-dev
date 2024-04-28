@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,32 +17,32 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef FFMPEGSETTINGSDIALOG_H
+#define FFMPEGSETTINGSDIALOG_H
 
-#include <QSettings>
-#include <qmmp/qmmp.h>
-#include "settingsdialog.h"
-#include "ui_settingsdialog.h"
+#include <QDialog>
 
-SettingsDialog::SettingsDialog(QWidget *parent) :
-    QDialog(parent),
-    m_ui(new Ui::SettingsDialog)
-{
-    m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
-    QSettings settings;
-    m_ui->fadeoutCheckBox->setChecked(settings.value("GME/fadeout", false).toBool());
-    m_ui->fadeoutSpinBox->setValue(settings.value("GME/fadeout_length", 7000).toInt());
+namespace Ui {
+class FFmpegSettingsDialog;
 }
 
-SettingsDialog::~SettingsDialog()
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class FFmpegSettingsDialog : public QDialog
 {
-    delete m_ui;
-}
+    Q_OBJECT
+public:
+    explicit FFmpegSettingsDialog(QWidget *parent = nullptr);
 
-void SettingsDialog::accept()
-{
-    QSettings settings;
-    settings.setValue("GME/fadeout", m_ui->fadeoutCheckBox->isChecked());
-    settings.setValue("GME/fadeout_length", m_ui->fadeoutSpinBox->value());
-    QDialog::accept();
-}
+    ~FFmpegSettingsDialog();
+
+public slots:
+    virtual void accept() override;
+
+private:
+    Ui::FFmpegSettingsDialog *m_ui;
+
+};
+
+#endif

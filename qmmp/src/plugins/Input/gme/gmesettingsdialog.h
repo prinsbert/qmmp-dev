@@ -17,30 +17,29 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+
+#ifndef GMESETTINGSDIALOG_H
+#define GMESETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
 
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-class SettingsDialog : public QDialog
+namespace Ui {
+class GmeSettingsDialog;
+}
+
+class GmeSettingsDialog : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
+
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit GmeSettingsDialog(QWidget *parent = nullptr);
+    ~GmeSettingsDialog();
 
-    ~SettingsDialog();
-
-private slots:
-    void writeSettings();
-    void on_buttonBox_clicked(QAbstractButton *);
+public slots:
+    void accept() override;
 
 private:
-     Ui::SettingsDialog m_ui;
-
+    Ui::GmeSettingsDialog *m_ui;
 };
 
-#endif
+#endif // GMESETTINGSDIALOG_H

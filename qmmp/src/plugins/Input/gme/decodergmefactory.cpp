@@ -20,7 +20,7 @@
 
 #include <QMessageBox>
 #include <QRegularExpression>
-#include "settingsdialog.h"
+#include "gmesettingsdialog.h"
 #include "gmehelper.h"
 #include "decoder_gme.h"
 #include "decodergmefactory.h"
@@ -36,15 +36,17 @@ DecoderProperties DecoderGmeFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("GME Plugin");
-    properties.filters = QStringList { "*.ay", "*.gbs", "*.gym", "*.hes", "*.kss", "*.nsf", "*.nsfe",
-            "*.sap", "*.spc", "*.vgm", "*.vgz" };
+    properties.filters = QStringList {
+            u"*.ay"_s, u"*.gbs"_s, u"*.gym"_s, u"*.hes"_s, u"*.kss"_s,
+            u"*.nsf"_s, u"*.nsfe"_s, u"*.sap"_s, u"*.spc"_s, u"*.vgm"_s, u"*.vgz"_s
+};
     properties.description = tr("Game Music Files");
     //properties.contentType = ;
-    properties.shortName = "gme";
+    properties.shortName = "gme"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
-    properties.protocols = QStringList { "gme" };
+    properties.protocols = QStringList { u"gme"_s };
     return properties;
 }
 
@@ -58,12 +60,12 @@ QList<TrackInfo *> DecoderGmeFactory::createPlayList(const QString &path, TrackI
 {
     GmeHelper helper;
     //is it one track?
-    if(path.contains("://"))
+    if(path.contains(u"://"_s))
     {
         QString filePath = path;
         filePath.remove("gme://");
         filePath.remove(QRegularExpression("#\\d+$"));
-        int track = path.section("#", -1).toInt();
+        int track = path.section(QChar('#'), -1).toInt();
         QList<TrackInfo *> list = createPlayList(filePath, parts, ignoredFiles);
         if (list.isEmpty() || track <= 0 || track > list.count())
         {
@@ -94,16 +96,16 @@ MetaDataModel* DecoderGmeFactory::createMetaDataModel(const QString &path, bool 
 
 void DecoderGmeFactory::showSettings(QWidget *parent)
 {
-   SettingsDialog *d = new SettingsDialog(parent);
+   GmeSettingsDialog *d = new GmeSettingsDialog(parent);
    d->show();
 }
 
 void DecoderGmeFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About GME Audio Plugin"),
-                        tr("Qmmp GME Audio Plugin")+"\n"+
-                        tr("This plugin uses Game_Music_Emu library to play game music files")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About GME Audio Plugin"),
+                       tr("Qmmp GME Audio Plugin")+"\n"+
+                       tr("This plugin uses Game_Music_Emu library to play game music files") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderGmeFactory::translation() const

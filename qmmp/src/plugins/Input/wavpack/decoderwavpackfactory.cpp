@@ -37,14 +37,14 @@ DecoderProperties DecoderWavPackFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("WavPack Plugin");
-    properties.filters = QStringList { "*.wv" };
+    properties.filters = QStringList { u"*.wv"_s };
     properties.description = tr("WavPack Files");
-    properties.contentTypes = QStringList { "audio/x-wavpack" };
-    properties.shortName = "wavpack";
+    properties.contentTypes = QStringList { u"audio/x-wavpack"_s };
+    properties.shortName = u"wavpack"_s;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.noInput = true;
-    properties.protocols = QStringList { "file", "wvpack" };
+    properties.protocols = QStringList { u"file"_s, u"wvpack"_s };
     return properties;
 }
 
@@ -60,11 +60,11 @@ QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, Tr
     int track = -1; //cue track
     QString filePath = path;
 
-    if(path.contains("://")) //is it cue track?
+    if(path.contains(u"://"_s)) //is it cue track?
     {
         filePath.remove("wvpack://");
         filePath.remove(QRegularExpression("#\\d+$"));
-        track = path.section("#", -1).toInt();
+        track = path.section(QChar('#'), -1).toInt();
         parts = TrackInfo::AllParts; //extract all metadata for single cue track
     }
 
@@ -95,7 +95,7 @@ QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, Tr
         info->setValue(Qmmp::SAMPLERATE, WavpackGetSampleRate(ctx));
         info->setValue(Qmmp::CHANNELS, WavpackGetNumChannels(ctx));
         info->setValue(Qmmp::BITS_PER_SAMPLE, WavpackGetBitsPerSample(ctx));
-        info->setValue(Qmmp::FORMAT_NAME, "WavPack");
+        info->setValue(Qmmp::FORMAT_NAME, u"WavPack"_s);
         info->setValue(Qmmp::FILE_SIZE, QFileInfo(filePath).size()); //adds file size for cue tracks
         info->setDuration((qint64)WavpackGetNumSamples(ctx) * 1000 / WavpackGetSampleRate(ctx));
     }
@@ -125,7 +125,7 @@ QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, Tr
             CueParser parser(value);
             parser.setDuration(info->duration());
             parser.setProperties(info->properties());
-            parser.setUrl("wvpack", filePath);
+            parser.setUrl(u"wvpack"_s, filePath);
 
             WavpackCloseFile(ctx);
             delete info;
@@ -168,7 +168,7 @@ QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, Tr
 
 MetaDataModel* DecoderWavPackFactory::createMetaDataModel(const QString &path, bool readOnly)
 {
-    if (!path.contains("://") || path.startsWith("wvpack://"))
+    if(!path.contains(u"://"_s) || path.startsWith(u"wvpack://"_s))
         return new WavPackMetaDataModel(path, readOnly);
 
     return nullptr;
@@ -179,11 +179,10 @@ void DecoderWavPackFactory::showSettings(QWidget *)
 
 void DecoderWavPackFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About WavPack Audio Plugin"),
-                        tr("Qmmp WavPack Audio Plugin")+"\n"+
-                        tr("WavPack library version:") +
-                        QString(" %1").arg(WavpackGetLibraryVersionString ())+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About WavPack Audio Plugin"),
+                       tr("Qmmp WavPack Audio Plugin") + QChar::LineFeed +
+                       tr("WavPack library version: %1").arg(WavpackGetLibraryVersionString()) + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderWavPackFactory::translation() const

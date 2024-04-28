@@ -5,14 +5,15 @@ TARGET = $$PLUGINS_PREFIX/Input/gme
 HEADERS += decodergmefactory.h \
     decoder_gme.h \
     gmehelper.h \
-    settingsdialog.h
+    gmesettingsdialog.h
 
 SOURCES += decoder_gme.cpp \
     decodergmefactory.cpp \
     gmehelper.cpp \
-    settingsdialog.cpp
+    gmesettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    gmesettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

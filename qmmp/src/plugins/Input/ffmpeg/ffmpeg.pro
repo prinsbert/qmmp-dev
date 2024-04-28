@@ -4,21 +4,22 @@ TARGET = $$PLUGINS_PREFIX/Input/ffmpeg
 
 HEADERS += decoderffmpegfactory.h \
     decoder_ffmpeg.h \
-    settingsdialog.h \
     ffmpegmetadatamodel.h \
+    ffmpegsettingsdialog.h \
     replaygainreader.h \
     decoder_ffmpegcue.h \
     decoder_ffmpegm4b.h
 
 SOURCES += decoder_ffmpeg.cpp \
     decoderffmpegfactory.cpp \
-    settingsdialog.cpp \
     ffmpegmetadatamodel.cpp \
+    ffmpegsettingsdialog.cpp \
     replaygainreader.cpp \
     decoder_ffmpegcue.cpp \
     decoder_ffmpegm4b.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    ffmpegsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

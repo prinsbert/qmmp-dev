@@ -27,9 +27,9 @@ SET(libffmpeg_SRCS
   decoder_ffmpegm4b.cpp
   decoderffmpegfactory.cpp
   ffmpegmetadatamodel.cpp
-  settingsdialog.cpp
+  ffmpegsettingsdialog.cpp
   replaygainreader.cpp
-  settingsdialog.ui
+  ffmpegsettingsdialog.ui
   translations/translations.qrc
 )
 

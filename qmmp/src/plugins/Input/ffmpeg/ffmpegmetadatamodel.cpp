@@ -34,12 +34,12 @@ FFmpegMetaDataModel::FFmpegMetaDataModel(const QString &path, bool readOnly) : M
     AVFormatContext *in = nullptr;
     m_path = path;
 
-    if(path.startsWith("ffmpeg://"))
+    if(path.startsWith(u"ffmpeg://"_s))
     {
-        m_path.remove("ffmpeg://");
+        m_path.remove(u"ffmpeg://"_s);
         m_path.remove(QRegularExpression("#\\d+$"));
     }
-    else if(path.startsWith("m4b://"))
+    else if(path.startsWith(u"m4b://"_s))
     {
         m_path.remove("m4b://");
         m_path.remove(QRegularExpression("#\\d+$"));
@@ -76,7 +76,7 @@ FFmpegMetaDataModel::FFmpegMetaDataModel(const QString &path, bool readOnly) : M
         avformat_close_input(&in);
     }
 
-    if(!readOnly && m_path.endsWith(".ape", Qt::CaseInsensitive))
+    if(!readOnly && m_path.endsWith(u".ape"_s, Qt::CaseInsensitive))
     {
         m_stream = new TagLib::FileStream(QStringToFileName(m_path), readOnly);
         m_file = new TagLib::APE::File(m_stream);

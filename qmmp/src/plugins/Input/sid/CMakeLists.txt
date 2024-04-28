@@ -18,9 +18,9 @@ ADD_DEFINITIONS(${SIDPLAYFP_CFLAGS})
 SET(libsid_SRCS
   decoder_sid.cpp
   decodersidfactory.cpp
-  settingsdialog.cpp
+  sidsettingsdialog.cpp
   sidhelper.cpp
-  settingsdialog.ui
+  sidsettingsdialog.ui
   translations/translations.qrc
 )
 

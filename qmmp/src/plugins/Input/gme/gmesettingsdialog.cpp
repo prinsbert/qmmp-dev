@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2015-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,30 +17,32 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
 
-#include <QDialog>
+#include <QSettings>
+#include <qmmp/qmmp.h>
+#include "gmesettingsdialog.h"
+#include "ui_gmesettingsdialog.h"
 
-#include "ui_settingsdialog.h"
-
-/**
-    @author Ilya Kotov <forkotov02@ya.ru>
-*/
-class SettingsDialog : public QDialog
+GmeSettingsDialog::GmeSettingsDialog(QWidget *parent) :
+    QDialog(parent),
+    m_ui(new Ui::GmeSettingsDialog)
 {
-    Q_OBJECT
-public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    m_ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose);
+    QSettings settings;
+    m_ui->fadeoutCheckBox->setChecked(settings.value(u"GME/fadeout"_s, false).toBool());
+    m_ui->fadeoutSpinBox->setValue(settings.value(u"GME/fadeout_length"_s, 7000).toInt());
+}
 
-    ~SettingsDialog();
+GmeSettingsDialog::~GmeSettingsDialog()
+{
+    delete m_ui;
+}
 
-public slots:
-    virtual void accept() override;
-
-private:
-    Ui::SettingsDialog m_ui;
-
-};
-
-#endif
+void GmeSettingsDialog::accept()
+{
+    QSettings settings;
+    settings.setValue(u"GME/fadeout"_s, m_ui->fadeoutCheckBox->isChecked());
+    settings.setValue(u"GME/fadeout_length"_s, m_ui->fadeoutSpinBox->value());
+    QDialog::accept();
+}

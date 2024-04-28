@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2015-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2015-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,7 +21,7 @@
 #include <QStringList>
 #include <QMessageBox>
 #include <xmp.h>
-#include "settingsdialog.h"
+#include "xmpsettingsdialog.h"
 #include "decoder_xmp.h"
 #include "xmpmetadatamodel.h"
 #include "decoderxmpfactory.h"
@@ -37,25 +37,27 @@ DecoderProperties DecoderXmpFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("XMP Plugin");
-    properties.filters = QStringList { "*.mod", "*.m15", "*.nt", "*.flx", "*.wow",
-            "*.dbm", "*.digi", "*.emod", "*.med", "*.mtn", "*.okt", "*.sfx",
-            "*.dtm", "*.gtk", "*.mgt",
-            "*.669", "*.far", "*.fnk", "*.imf", "*.it", "*.liq", "*.mdl",
-            "*.mtm", "*.rtm", "*.s3m", "*.stm", "*.ult", "*.xm",
-            "*.amf", "*.gdm", "*.stx",
-            "*.abk", "*.amf", "*.psm", "*.j2b", "*.mfp", "*.smp", "*.stim", "*.umx",
-            "*.amd", "*.rad", "*.hsc", "*.s3m",
-            "*.xm", "*.s3z", "*.s3r", "*.s3gz",
-            "*.mdz", "*.mdr", "*.mdbz", "*.mdgz",
-            "*.itz", "*.itr", "*.itgz",
-            "*.xmr", "*.xmgz", "*.xmz" };
+    properties.filters = {
+        u"*.mod"_s, u"*.m15"_s, u"*.nt"_s, u"*.flx"_s, u"*.wow"_s,
+        u"*.dbm"_s, u"*.digi"_s, u"*.emod"_s, u"*.med"_s, u"*.mtn"_s, u"*.okt"_s, u"*.sfx"_s,
+        u"*.dtm"_s, u"*.gtk"_s, u"*.mgt"_s,
+        u"*.669"_s, u"*.far"_s, u"*.fnk"_s, u"*.imf"_s, u"*.it"_s, u"*.liq"_s, u"*.mdl"_s,
+        u"*.mtm"_s, u"*.rtm"_s, u"*.s3m"_s, u"*.stm"_s, u"*.ult"_s, u"*.xm"_s,
+        u"*.amf"_s, u"*.gdm"_s, u"*.stx"_s,
+        u"*.abk"_s, u"*.amf"_s, u"*.psm"_s, u"*.j2b"_s, u"*.mfp"_s, u"*.smp"_s, u"*.stim"_s, u"*.umx"_s,
+        u"*.amd"_s, u"*.rad"_s, u"*.hsc"_s, u"*.s3m"_s,
+        u"*.xm"_s, u"*.s3z"_s, u"*.s3r"_s, u"*.s3gz"_s,
+        u"*.mdz"_s, u"*.mdr"_s, u"*.mdbz"_s, u"*.mdgz"_s,
+        u"*.itz"_s, u"*.itr"_s, u"*.itgz"_s,
+        u"*.xmr"_s, u"*.xmgz"_s, u"*.xmz"_s
+    };
     properties.description = tr("Module Files");
     //properties.contentType = ;
-    properties.shortName = "xmp";
+    properties.shortName = "xmp"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
-    properties.protocols << "file";
+    properties.protocols = { u"file"_s };
     return properties;
 }
 
@@ -99,19 +101,19 @@ MetaDataModel* DecoderXmpFactory::createMetaDataModel(const QString &path, bool 
 
 void DecoderXmpFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *d = new SettingsDialog(parent);
+    XmpSettingsDialog *d = new XmpSettingsDialog(parent);
     d->show();
 }
 
 void DecoderXmpFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About XMP Audio Plugin"),
-                        tr("Qmmp XMP Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Compiled against libxmp-%1").arg(XMP_VERSION));
+    QMessageBox::about(parent, tr("About XMP Audio Plugin"),
+                       tr("Qmmp XMP Audio Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
+                       tr("Compiled against libxmp-%1").arg(XMP_VERSION));
 }
 
 QString DecoderXmpFactory::translation() const
 {
-    return QString(":/xmp_plugin_");
+    return QLatin1String(":/xmp_plugin_");
 }

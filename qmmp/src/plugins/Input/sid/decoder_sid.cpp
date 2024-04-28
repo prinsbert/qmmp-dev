@@ -50,9 +50,9 @@ bool DecoderSID::initialize()
     m_length_in_bytes = 0;
     m_read_bytes = 0;
     QString path = m_url;
-    path.remove("sid://");
+    path.remove(u"sid://"_s);
     path.remove(QRegularExpression("#\\d+$"));
-    int track = m_url.section("#", -1).toInt();
+    int track = m_url.section(QChar('#'), -1).toInt();
 
     m_tune.load(qPrintable(path));
     if(!m_tune.getInfo())
@@ -82,15 +82,15 @@ bool DecoderSID::initialize()
     metadata.insert(Qmmp::TITLE,  tune_info->infoString(0));
     metadata.insert(Qmmp::ARTIST, tune_info->infoString(1));
     metadata.insert(Qmmp::COMMENT, tune_info->commentString(0));
-    metadata.insert(Qmmp::TRACK, QString("%1").arg(track));
+    metadata.insert(Qmmp::TRACK, QString::number(track));
     addMetaData(metadata);
 
     //read settings
     QSettings settings;
-    settings.beginGroup("SID");
-    if(settings.value("use_hvsc", false).toBool())
+    settings.beginGroup(u"SID"_s);
+    if(settings.value(u"use_hvsc"_s, false).toBool())
     {
-        char md5[SidTune::MD5_LENGTH+1];
+        char md5[SidTune::MD5_LENGTH + 1];
         m_tune.createMD5(md5);
         m_length = m_db->length(md5, track);
     }
@@ -101,7 +101,7 @@ bool DecoderSID::initialize()
     qDebug("DecoderSID: song length: %d", m_length);
 
     sidbuilder *rs = nullptr;
-    if(settings.value("engine", "residfp").toString() == "residfp")
+    if(settings.value(u"engine"_s, u"residfp"_s).toString() == "residfp"_L1)
     {
         rs = new ReSIDfpBuilder("ReSIDfp builder");
         qDebug("DecoderSID: using ReSIDfp emulation");
@@ -114,12 +114,12 @@ bool DecoderSID::initialize()
     rs->create(m_player->info().maxsids());
 
     SidConfig cfg = m_player->config();
-    cfg.frequency    = settings.value("sample_rate", 44100).toInt();
-    int sm = settings.value("resampling_method", SidConfig::INTERPOLATE).toInt();
+    cfg.frequency    = settings.value(u"sample_rate"_s, 44100).toInt();
+    int sm = settings.value(u"resampling_method"_s, SidConfig::INTERPOLATE).toInt();
     cfg.samplingMethod = (SidConfig::sampling_method_t) sm;
     cfg.playback     = SidConfig::STEREO;
     cfg.sidEmulation = rs;
-    cfg.fastSampling = settings.value("fast_resampling", false).toBool();
+    cfg.fastSampling = settings.value(u"fast_resampling"_s, false).toBool();
     settings.endGroup();
 
     if(!m_player->config(cfg))

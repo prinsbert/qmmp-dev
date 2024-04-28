@@ -50,14 +50,14 @@ DecoderFFmpegM4b::~DecoderFFmpegM4b()
 bool DecoderFFmpegM4b::initialize()
 {
     QString filePath = m_url;
-    if(!m_url.startsWith("m4b://"))
+    if(!m_url.startsWith(u"m4b://"_s))
     {
         qWarning("DecoderFFmpegM4b: invalid url.");
         return false;
     }
     filePath.remove("m4b://");
     filePath.remove(QRegularExpression("#\\d+$"));
-    m_track = m_url.section("#", -1).toInt();
+    m_track = m_url.section(QChar('#'), -1).toInt();
 
     AVFormatContext *in = nullptr;
 #ifdef Q_OS_WIN
@@ -102,7 +102,7 @@ bool DecoderFFmpegM4b::initialize()
             .info = tracks[i],
             .offset = chapter->start * chapter->time_base.num * 1000 / chapter->time_base.den,
             .duration = (chapter->end - chapter->start) * chapter->time_base.num * 1000 / chapter->time_base.den,
-            .url = QString("m4b://%1#%2").arg(filePath).arg(i + 1)
+            .url = QStringLiteral("m4b://%1#%2").arg(filePath).arg(i + 1)
         };
 
         m_chapters << chapterInfo;

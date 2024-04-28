@@ -5,16 +5,17 @@ TARGET = $$PLUGINS_PREFIX/Input/sid
 HEADERS += decodersidfactory.h \
     decoder_sid.h \
     sidhelper.h \
-    settingsdialog.h
+    sidsettingsdialog.h
 
 SOURCES += decoder_sid.cpp \
     decodersidfactory.cpp \
     sidhelper.cpp \
-    settingsdialog.cpp
+    sidsettingsdialog.cpp
 
 RESOURCES = translations/translations.qrc
 
-FORMS += settingsdialog.ui
+FORMS += \
+    sidsettingsdialog.ui
 
 unix{
     target.path = $$PLUGIN_DIR/Input

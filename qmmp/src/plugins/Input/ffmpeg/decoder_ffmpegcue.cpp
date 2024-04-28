@@ -45,14 +45,14 @@ DecoderFFmpegCue::~DecoderFFmpegCue()
 bool DecoderFFmpegCue::initialize()
 {
     QString filePath = m_url;
-    if(!m_url.startsWith("ffmpeg://"))
+    if(!m_url.startsWith(u"ffmpeg://"_s))
     {
         qWarning("DecoderFFmpegCue: invalid url.");
         return false;
     }
-    filePath.remove("ffmpeg://");
+    filePath.remove(u"ffmpeg://"_s);
     filePath.remove(QRegularExpression("#\\d+$"));
-    m_track = m_url.section("#", -1).toInt();
+    m_track = m_url.section(QChar('#'), -1).toInt();
 
     AVFormatContext *in = nullptr;
 #ifdef Q_OS_WIN
@@ -76,7 +76,7 @@ bool DecoderFFmpegCue::initialize()
 
     m_parser = new CueParser(cuesheet->value);
     m_parser->setDuration(in->duration * 1000 / AV_TIME_BASE);
-    m_parser->setUrl("ffmpeg", filePath);
+    m_parser->setUrl(u"ffmpeg"_s, filePath);
 
     avformat_close_input(&in);
 

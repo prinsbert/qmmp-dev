@@ -3,12 +3,12 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Input/mpeg
 
 HEADERS += decodermpegfactory.h \
-    settingsdialog.h \
+    mpegsettingsdialog.h \
     tagextractor.h \
     mpegmetadatamodel.h
 
 SOURCES += decodermpegfactory.cpp \
-    settingsdialog.cpp \
+    mpegsettingsdialog.cpp \
     tagextractor.cpp \
     mpegmetadatamodel.cpp
 
@@ -29,7 +29,8 @@ contains(CONFIG, WITH_LIBRCD){
     DEFINES += WITH_LIBRCD
 }
 
-FORMS += settingsdialog.ui
+FORMS += \
+    mpegsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

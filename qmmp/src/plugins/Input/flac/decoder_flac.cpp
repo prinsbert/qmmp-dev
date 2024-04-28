@@ -289,7 +289,7 @@ bool DecoderFLAC::initialize()
 {
     if (!m_data->input)
     {
-        if (m_path.startsWith("flac://")) //embeded cue track
+        if (m_path.startsWith(u"flac://"_s)) //embeded cue track
         {
             QString p = m_path;
             p.remove("flac://");
@@ -309,8 +309,8 @@ bool DecoderFLAC::initialize()
                 qDebug("DecoderFLAC: using cuesheet xiph comment.");
                 m_parser = new CueParser(tag->fieldListMap()["CUESHEET"].toString() .toCString(true));
                 m_parser->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
-                m_parser->setUrl("flac", p);
-                m_track = m_path.section("#", -1).toInt();
+                m_parser->setUrl(u"flac"_s, p);
+                m_track = m_path.section(QChar('#'), -1).toInt();
                 if(m_track < 1 || m_track > m_parser->count())
                 {
                     qWarning("DecoderFLAC: invalid cuesheet xiph comment");

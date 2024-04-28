@@ -22,7 +22,7 @@
 #include "decoder_cue.h"
 #include "cuemetadatamodel.h"
 #include "cuefile.h"
-#include "settingsdialog.h"
+#include "cuesettingsdialog.h"
 #include "decodercuefactory.h"
 
 // DecoderCUEFactory
@@ -36,10 +36,10 @@ DecoderProperties DecoderCUEFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("CUE Plugin");
-    properties.shortName = "cue";
-    properties.filters = QStringList { "*.cue" };
+    properties.shortName = "cue"_L1;
+    properties.filters = QStringList { u"*.cue"_s };
     properties.description = tr("CUE Files");
-    properties.protocols = QStringList { "cue" };
+    properties.protocols = QStringList { u"cue"_s };
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
@@ -56,9 +56,9 @@ QList<TrackInfo *> DecoderCUEFactory::createPlayList(const QString &path, TrackI
 {
     Q_UNUSED(parts);
     CueFile cueFile(path);
-    if(path.contains("://"))
+    if(path.contains(u"://"_s))
     {
-        int track = path.section("#", -1).toInt();
+        int track = path.section(QChar('#'), -1).toInt();
         return cueFile.createPlayList(track);
     }
 
@@ -68,23 +68,23 @@ QList<TrackInfo *> DecoderCUEFactory::createPlayList(const QString &path, TrackI
 
 MetaDataModel* DecoderCUEFactory::createMetaDataModel(const QString &path, bool readOnly)
 {
-    return path.startsWith("cue://") ? new CUEMetaDataModel(readOnly, path) : nullptr;
+    return path.startsWith(u"cue://"_s) ? new CUEMetaDataModel(readOnly, path) : nullptr;
 }
 
 void DecoderCUEFactory::showSettings(QWidget *parent)
 {
-     SettingsDialog *s = new SettingsDialog(parent);
+     CueSettingsDialog *s = new CueSettingsDialog(parent);
      s->show();
 }
 
 void DecoderCUEFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About CUE Audio Plugin"),
-                        tr("Qmmp CUE Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About CUE Audio Plugin"),
+                       tr("Qmmp CUE Audio Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderCUEFactory::translation() const
 {
-    return  QLatin1String(":/cue_plugin_");
+    return QLatin1String(":/cue_plugin_");
 }

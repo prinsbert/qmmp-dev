@@ -21,7 +21,7 @@
 #include <QMessageBox>
 #include "wildmidihelper.h"
 #include "decoder_wildmidi.h"
-#include "settingsdialog.h"
+#include "wildmidisettingsdialog.h"
 #include "decoderwildmidifactory.h"
 
 // DecoderWildMidiFactory
@@ -47,17 +47,17 @@ DecoderProperties DecoderWildMidiFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("WildMidi Plugin");
-    properties.filters = QStringList { "*.mid" };
+    properties.filters = QStringList { u"*.mid"_s };
 #if defined(LIBWILDMIDI_VERSION) && (LIBWILDMIDI_VERSION >= 0x000400)
-    properties.filters << QStringList { "*.mus", "*.xmi" };
+    properties.filters << QStringList { u"*.mus"_s, u"*.xmi"_s };
 #endif
     properties.description = tr("Midi Files");
     //properties.contentType = ;
-    properties.shortName = "wildmidi";
+    properties.shortName = "wildmidi"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
-    properties.protocols = QStringList { "file" };
+    properties.protocols = QStringList { u"file"_s };
     return properties;
 }
 
@@ -97,16 +97,16 @@ MetaDataModel* DecoderWildMidiFactory::createMetaDataModel(const QString &path, 
 
 void DecoderWildMidiFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *d = new SettingsDialog(parent);
+    WildMidiSettingsDialog *d = new WildMidiSettingsDialog(parent);
     d->show();
 }
 
 void DecoderWildMidiFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About WildMidi Audio Plugin"),
-                        tr("Qmmp WildMidi Audio Plugin")+"\n"+
-                        tr("This plugin uses WildMidi library to play midi files")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About WildMidi Audio Plugin"),
+                       tr("Qmmp WildMidi Audio Plugin") + QChar::LineFeed +
+                       tr("This plugin uses WildMidi library to play midi files") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderWildMidiFactory::translation() const

@@ -42,10 +42,10 @@ DecoderProperties DecoderVorbisFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Ogg Vorbis Plugin");
-    properties.shortName = "vorbis";
-    properties.filters = QStringList { "*.ogg" };
+    properties.shortName = "vorbis_L1";
+    properties.filters = QStringList { u"*.ogg"_s };
     properties.description = tr("Ogg Vorbis Files");
-    properties.contentTypes = QStringList { "application/ogg", "audio/x-vorbis+ogg" };
+    properties.contentTypes = QStringList { u"application/ogg"_s, u"audio/x-vorbis+ogg"_s };
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.noInput = false;
@@ -97,7 +97,7 @@ QList<TrackInfo *> DecoderVorbisFactory::createPlayList(const QString &path, Tra
         info->setValue(Qmmp::SAMPLERATE, fileRef.audioProperties()->sampleRate());
         info->setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
         info->setValue(Qmmp::BITS_PER_SAMPLE, 32);  //float
-        info->setValue(Qmmp::FORMAT_NAME, "Ogg Vorbis");
+        info->setValue(Qmmp::FORMAT_NAME, u"Ogg Vorbis"_s);
         info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
     }
 
@@ -123,11 +123,11 @@ void DecoderVorbisFactory::showSettings(QWidget *)
 
 void DecoderVorbisFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Ogg Vorbis Audio Plugin"),
-                        tr("Qmmp Ogg Vorbis Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Source code based on mq3 project")
-                        );
+    QMessageBox::about(parent, tr("About Ogg Vorbis Audio Plugin"),
+                       tr("Qmmp Ogg Vorbis Audio Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
+                       tr("Source code based on mq3 project")
+                       );
 }
 
 QString DecoderVorbisFactory::translation() const

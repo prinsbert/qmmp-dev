@@ -136,7 +136,7 @@ VorbisCommentModel::~VorbisCommentModel()
 
 QString VorbisCommentModel::name() const
 {
-    return "Vorbis Comment";
+    return u"Vorbis Comment"_s;
 }
 
 QString VorbisCommentModel::value(Qmmp::MetaData key) const

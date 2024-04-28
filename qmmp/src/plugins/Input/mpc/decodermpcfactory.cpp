@@ -45,10 +45,10 @@ DecoderProperties DecoderMPCFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Musepack Plugin");
-    properties.filters = QStringList { "*.mpc" };
+    properties.filters = QStringList { u"*.mpc"_s };
     properties.description = tr("Musepack Files");
     //properties.contentType = ;
-    properties.shortName = "mpc";
+    properties.shortName = "mpc"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     return properties;
@@ -92,7 +92,7 @@ QList<TrackInfo *> DecoderMPCFactory::createPlayList(const QString &path, TrackI
         info->setValue(Qmmp::SAMPLERATE, fileRef.audioProperties()->sampleRate());
         info->setValue(Qmmp::CHANNELS, fileRef.audioProperties()->channels());
         info->setValue(Qmmp::BITS_PER_SAMPLE, 16);
-        info->setValue(Qmmp::FORMAT_NAME, QString("Musepack SV%1").arg(fileRef.audioProperties()->mpcVersion()));
+        info->setValue(Qmmp::FORMAT_NAME, QStringLiteral("Musepack SV%1").arg(fileRef.audioProperties()->mpcVersion()));
         info->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
     }
 
@@ -109,9 +109,9 @@ void DecoderMPCFactory::showSettings(QWidget *)
 
 void DecoderMPCFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Musepack Audio Plugin"),
-                        tr("Qmmp Musepack Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Musepack Audio Plugin"),
+                       tr("Qmmp Musepack Audio Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderMPCFactory::translation() const

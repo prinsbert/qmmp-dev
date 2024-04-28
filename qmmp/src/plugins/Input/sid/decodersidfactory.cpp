@@ -25,7 +25,7 @@
 #include <sidplayfp/SidTuneInfo.h>
 #include "decoder_sid.h"
 #include "sidhelper.h"
-#include "settingsdialog.h"
+#include "sidsettingsdialog.h"
 #include "decodersidfactory.h"
 
 // DecoderSIDFactory
@@ -33,11 +33,11 @@
 DecoderSIDFactory::DecoderSIDFactory()
 {
     QSettings settings;
-    settings.beginGroup("SID");
-    if(settings.value("use_hvsc", false).toBool())
+    settings.beginGroup(u"SID"_s);
+    if(settings.value(u"use_hvsc"_s, false).toBool())
     {
-        QString default_path = Qmmp::configDir() + "/Songlengths.txt";
-        if(!m_db.open(qPrintable(settings.value("hvsc_path", default_path).toString())))
+        QString default_path = Qmmp::configDir() + u"/Songlengths.txt"_s;
+        if(!m_db.open(qPrintable(settings.value(u"hvsc_path"_s, default_path).toString())))
             qWarning("DecoderSIDFactory: %s", m_db.error());
     }
     settings.endGroup();
@@ -55,14 +55,14 @@ DecoderProperties DecoderSIDFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("SID Plugin");
-    properties.filters = QStringList { "*.sid", "*.mus", "*.str", "*.prg", "*.P00", "*.c64" };
+    properties.filters = QStringList { u"*.sid"_s, u"*.mus"_s, u"*.str"_s, u"*.prg"_s, u"*.P00"_s, u"*.c64"_s };
     properties.description = tr("SID Files");
     //properties.contentType = ;
-    properties.shortName = "sid";
+    properties.shortName = "sid"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
-    properties.protocols = QStringList { "sid" };
+    properties.protocols = QStringList { u"sid"_s };
     return properties;
 }
 
@@ -81,7 +81,7 @@ QList<TrackInfo *> DecoderSIDFactory::createPlayList(const QString &path, TrackI
         return list;
     if(path.contains("://")) //is it url?
     {
-        int track = path.section("#", -1).toInt();
+        int track = path.section(QChar('#'), -1).toInt();
         if(track > list.count() || track < 1)
         {
             qDeleteAll(list);
@@ -104,16 +104,16 @@ MetaDataModel* DecoderSIDFactory::createMetaDataModel(const QString &path, bool 
 
 void DecoderSIDFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *d = new SettingsDialog(&m_db, parent);
+    SidSettingsDialog *d = new SidSettingsDialog(&m_db, parent);
     d->show();
 }
 
 void DecoderSIDFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About SID Audio Plugin"),
-                        tr("Qmmp SID Audio Plugin")+"\n"+
-                        tr("This plugin plays Commodore 64 music files using libsidplayfp library")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About SID Audio Plugin"),
+                       tr("Qmmp SID Audio Plugin")+"\n"+
+                       tr("This plugin plays Commodore 64 music files using libsidplayfp library") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderSIDFactory::translation() const

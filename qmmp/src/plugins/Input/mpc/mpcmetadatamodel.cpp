@@ -69,8 +69,8 @@ MPCFileTagModel::~MPCFileTagModel()
 QString MPCFileTagModel::name() const
 {
     if (m_tagType == TagLib::MPC::File::ID3v1)
-        return "ID3v1";
-    return "APE";
+        return u"ID3v1"_s;
+    return u"APE"_s;
 }
 
 QList<Qmmp::MetaData> MPCFileTagModel::keys() const

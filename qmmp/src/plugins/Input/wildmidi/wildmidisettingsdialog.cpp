@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,42 +22,44 @@
 #include <QStringList>
 #include <qmmp/qmmp.h>
 #include "wildmidihelper.h"
-#include "settingsdialog.h"
+#include "ui_wildmidisettingsdialog.h"
+#include "wildmidisettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent)
-        : QDialog(parent)
+WildMidiSettingsDialog::WildMidiSettingsDialog(QWidget *parent)
+        : QDialog(parent), m_ui(new Ui::WildMidiSettingsDialog)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
     QSettings settings;
-    settings.beginGroup("Midi");
+    settings.beginGroup(u"Midi"_s);
     QStringList files = WildMidiHelper::instance()->configFiles();
     QString conf_path = files.isEmpty() ? QString() : files.constFirst();
-    m_ui.confPathComboBox->addItems(files);
-    m_ui.confPathComboBox->setEditText(settings.value("conf_path", conf_path).toString());
-    m_ui.sampleRateComboBox->addItem(tr("44100 Hz"), 44100);
-    m_ui.sampleRateComboBox->addItem(tr("48000 Hz"), 48000);
-    int i = m_ui.sampleRateComboBox->findData(settings.value("sample_rate", 44100).toInt());
-    m_ui.sampleRateComboBox->setCurrentIndex(i);
-    m_ui.enhancedResamplingCheckBox->setChecked(settings.value("enhanced_resampling", false).toBool());
-    m_ui.reverbCheckBox->setChecked(settings.value("reverberation", false).toBool());
+    m_ui->confPathComboBox->addItems(files);
+    m_ui->confPathComboBox->setEditText(settings.value(u"conf_path"_s, conf_path).toString());
+    m_ui->sampleRateComboBox->addItem(tr("44100 Hz"), 44100);
+    m_ui->sampleRateComboBox->addItem(tr("48000 Hz"), 48000);
+    int i = m_ui->sampleRateComboBox->findData(settings.value(u"sample_rate"_s, 44100).toInt());
+    m_ui->sampleRateComboBox->setCurrentIndex(i);
+    m_ui->enhancedResamplingCheckBox->setChecked(settings.value(u"enhanced_resampling"_s, false).toBool());
+    m_ui->reverbCheckBox->setChecked(settings.value(u"reverberation"_s, false).toBool());
     settings.endGroup();
 }
 
-SettingsDialog::~SettingsDialog()
+WildMidiSettingsDialog::~WildMidiSettingsDialog()
 {
+    delete m_ui;
 }
 
-void SettingsDialog::accept()
+void WildMidiSettingsDialog::accept()
 {
     QSettings settings;
-    settings.beginGroup("Midi");
-    settings.setValue("conf_path", m_ui.confPathComboBox->currentText());
-    settings.setValue("sample_rate",
-                      m_ui.sampleRateComboBox->itemData(m_ui.sampleRateComboBox->currentIndex()));
-    settings.setValue("enhanced_resampling", m_ui.enhancedResamplingCheckBox->isChecked());
-    settings.setValue("reverberation", m_ui.reverbCheckBox->isChecked());
+    settings.beginGroup(u"Midi"_s);
+    settings.setValue(u"conf_path"_s, m_ui->confPathComboBox->currentText());
+    settings.setValue(u"sample_rate"_s,
+                      m_ui->sampleRateComboBox->itemData(m_ui->sampleRateComboBox->currentIndex()));
+    settings.setValue(u"enhanced_resampling"_s, m_ui->enhancedResamplingCheckBox->isChecked());
+    settings.setValue(u"reverberation"_s, m_ui->reverbCheckBox->isChecked());
     settings.endGroup();
     WildMidiHelper::instance()->readSettings();
     QDialog::accept();

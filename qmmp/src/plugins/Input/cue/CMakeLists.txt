@@ -16,11 +16,11 @@ ENDIF(USE_ENCA AND ENCA_FOUND)
 SET(libcue_SRCS
   decoder_cue.cpp
   decodercuefactory.cpp
-  settingsdialog.cpp
+  cuesettingsdialog.cpp
   cuefile.cpp
   cuemetadatamodel.cpp
   translations/translations.qrc
-  settingsdialog.ui
+  cuesettingsdialog.ui
 )
 
 # Don't forget to include output directory, otherwise

@@ -63,7 +63,7 @@ bool DecoderXmp::initialize()
     m_totalTime = mi.seq_data[0].duration;
 
     QSettings settings;
-    m_srate = settings.value("Xmp/sample_rate", 44100).toInt();
+    m_srate = settings.value(u"Xmp/sample_rate"_s, 44100).toInt();
 
     xmp_start_player(m_ctx, m_srate, 0);
     readSettings();
@@ -115,18 +115,18 @@ void DecoderXmp::readSettings()
     if(m_ctx)
     {
         QSettings settings;
-        settings.beginGroup("Xmp");
-        xmp_set_player(m_ctx, XMP_PLAYER_AMP, settings.value("amp_factor", 1).toInt());
-        xmp_set_player(m_ctx, XMP_PLAYER_MIX, settings.value("stereo_mix", 70).toInt());
-        xmp_set_player(m_ctx, XMP_PLAYER_INTERP, settings.value("interpolation", XMP_INTERP_LINEAR).toInt());
+        settings.beginGroup(u"Xmp"_s);
+        xmp_set_player(m_ctx, XMP_PLAYER_AMP, settings.value(u"amp_factor"_s, 1).toInt());
+        xmp_set_player(m_ctx, XMP_PLAYER_MIX, settings.value(u"stereo_mix"_s, 70).toInt());
+        xmp_set_player(m_ctx, XMP_PLAYER_INTERP, settings.value(u"interpolation"_s, XMP_INTERP_LINEAR).toInt());
         int flags = 0;
-        if(settings.value("lowpass", false).toBool())
+        if(settings.value(u"lowpass"_s, false).toBool())
             flags |= XMP_DSP_LOWPASS;
         xmp_set_player(m_ctx, XMP_PLAYER_DSP, flags);
         flags = 0;
-        if(settings.value("vblank", false).toBool())
+        if(settings.value(u"vblank"_s, false).toBool())
             flags |= XMP_FLAGS_VBLANK;
-        if(settings.value("fx9bug", false).toBool())
+        if(settings.value(u"fx9bug"_s, false).toBool())
             flags |= XMP_FLAGS_FX9BUG;
         xmp_set_player(m_ctx, XMP_PLAYER_FLAGS, flags);
 

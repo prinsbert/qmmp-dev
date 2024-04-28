@@ -22,14 +22,14 @@
 
 #include <qmmp/decoderfactory.h>
 
-class DecoderMPEGFactory : public QObject, DecoderFactory
+class DecoderMpegFactory : public QObject, DecoderFactory
 {
 Q_OBJECT
 Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.DecoderFactoryInterface.1.0")
 Q_INTERFACES(DecoderFactory)
 
 public:
-    DecoderMPEGFactory();
+    DecoderMpegFactory();
     bool canDecode(QIODevice *input) const override;
     DecoderProperties properties() const override;
     Decoder *create(const QString &, QIODevice *input) override;

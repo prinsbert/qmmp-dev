@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2015-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,33 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef XMPSETTINGSDIALOG_H
+#define XMPSETTINGSDIALOG_H
 
 #include <QDialog>
-
 #include "ui_settingsdialog.h"
+
+namespace Ui {
+class XmpSettingsDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class XmpSettingsDialog : public QDialog
 {
-    Q_OBJECT
+Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit XmpSettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    ~XmpSettingsDialog();
 
-public slots:
-    virtual void accept() override;
+private slots:
+    void writeSettings();
+    void on_buttonBox_clicked(QAbstractButton *);
 
 private:
-    Ui::SettingsDialog m_ui;
+     Ui::XmpSettingsDialog *m_ui;
 
 };
 

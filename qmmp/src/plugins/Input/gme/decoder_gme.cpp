@@ -32,7 +32,7 @@ DecoderGme::~DecoderGme()
 
 bool DecoderGme::initialize()
 {
-    int track = m_path.section("#", -1).toInt();
+    int track = m_path.section(QChar('#'), -1).toInt();
     m_emu = m_helper.load(m_path);
     if(!m_emu)
         return false;
@@ -61,12 +61,13 @@ bool DecoderGme::initialize()
             track_info->length += m_helper.fadeLength();
         gme_set_fade(m_emu, track_info->length - m_helper.fadeLength());
     }
-    QMap<Qmmp::MetaData, QString> metadata;
-    metadata.insert(Qmmp::ALBUM, track_info->game);
-    metadata.insert(Qmmp::TITLE, track_info->song);
-    metadata.insert(Qmmp::ARTIST, track_info->author);
-    metadata.insert(Qmmp::COMMENT, track_info->comment);
-    metadata.insert(Qmmp::TRACK, QString("%1").arg(track));
+    QMap<Qmmp::MetaData, QString> metadata = {
+        { Qmmp::ALBUM, track_info->game },
+        { Qmmp::TITLE, track_info->song },
+        { Qmmp::ARTIST, track_info->author },
+        { Qmmp::COMMENT, track_info->comment },
+        { Qmmp::TRACK, QString::number(track) }
+    };
     addMetaData(metadata);
     m_totalTime = track_info->length;
     gme_free_info(track_info);

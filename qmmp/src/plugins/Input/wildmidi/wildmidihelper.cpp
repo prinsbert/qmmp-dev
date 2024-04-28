@@ -51,25 +51,25 @@ bool WildMidiHelper::initialize()
     }
 
     QSettings settings;
-    settings.beginGroup("Midi");
+    settings.beginGroup(u"Midi"_s);
     unsigned short int mixer_options = 0;
     QString conf_path = configFiles().isEmpty() ? QString() : configFiles().constFirst();
-    conf_path = settings.value("conf_path", conf_path).toString();
+    conf_path = settings.value(u"conf_path"_s, conf_path).toString();
     if(conf_path.isEmpty() || !QFile::exists(conf_path))
     {
         qWarning("WildMidiHelper: invalid config path: %s", qPrintable(conf_path));
         m_mutex.unlock();
         return false;
     }
-    unsigned short int sample_rate = settings.value("sample_rate", 44100).toInt();
-    if(settings.value("enhanced_resampling", false).toBool())
+    unsigned short int sample_rate = settings.value(u"sample_rate"_s, 44100).toInt();
+    if(settings.value(u"enhanced_resampling"_s, false).toBool())
         mixer_options |= WM_MO_ENHANCED_RESAMPLING;
-    if(settings.value("reverberation", false).toBool())
+    if(settings.value(u"reverberation"_s, false).toBool())
         mixer_options |= WM_MO_REVERB;
     settings.endGroup();
 
     m_sample_rate = sample_rate;
-    if (WildMidi_Init (qPrintable(conf_path), sample_rate, mixer_options) < 0)
+    if(WildMidi_Init(qPrintable(conf_path), sample_rate, mixer_options) < 0)
     {
         qWarning("WildMidiHelper: unable to initialize WildMidi library");
         m_mutex.unlock();
@@ -111,7 +111,11 @@ void WildMidiHelper::removePtr(void *t)
 
 QStringList WildMidiHelper::configFiles() const
 {
-    const QStringList paths = { "/etc/timidity.cfg", "/etc/timidity/timidity.cfg", "/etc/wildmidi/wildmidi.cfg" };
+    static const QStringList paths = {
+        u"/etc/timidity.cfg"_s,
+        u"/etc/timidity/timidity.cfg"_s,
+        u"/etc/wildmidi/wildmidi.cfg"_s
+    };
     QStringList filtered;
     for(const QString &path : qAsConst(paths))
     {

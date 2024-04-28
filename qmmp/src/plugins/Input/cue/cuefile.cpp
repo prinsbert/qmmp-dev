@@ -36,7 +36,7 @@ CueFile::CueFile(const QString &path) : CueParser()
 {
     m_filePath = path;
 
-    if(path.contains("://"))
+    if(path.contains(u"://"_s))
     {
         m_filePath.remove("cue://");
         m_filePath.remove(QRegularExpression("#\\d+$"));
@@ -52,14 +52,14 @@ CueFile::CueFile(const QString &path) : CueParser()
     file.close();
 
     QSettings settings;
-    settings.beginGroup("CUE");
-    m_dirty = settings.value("dirty_cue", false).toBool();
+    settings.beginGroup(u"CUE"_s);
+    m_dirty = settings.value(u"dirty_cue"_s, false).toBool();
     QmmpTextCodec *codec = nullptr;
 #ifdef WITH_ENCA
     EncaAnalyser analyser = nullptr;
-    if(settings.value("use_enca", false).toBool())
+    if(settings.value(u"use_enca"_s, false).toBool())
     {
-        analyser = enca_analyser_alloc(settings.value("enca_lang").toByteArray ().constData());
+        analyser = enca_analyser_alloc(settings.value(u"enca_lang"_s).toByteArray ().constData());
 
         if(analyser)
         {
@@ -76,12 +76,12 @@ CueFile::CueFile(const QString &path) : CueParser()
     }
 #endif
     if(!codec)
-        codec = new QmmpTextCodec(settings.value("encoding","UTF-8").toByteArray ());
+        codec = new QmmpTextCodec(settings.value(u"encoding"_s, u"UTF-8"_s).toByteArray ());
     settings.endGroup();
     //qDebug("CUEParser: using %s encoding", codec->name().constData());
     loadData(data, codec);
     delete codec;
-    setUrl("cue", m_filePath);
+    setUrl(u"cue"_s, m_filePath);
     for(const QString &dataFileName : files())
     {
         QString dataFilePath = getDirtyPath(m_filePath, QFileInfo(m_filePath).dir().filePath(dataFileName));
@@ -135,9 +135,9 @@ QStringList CueFile::splitLine(const QString &line)
     while (!buf.isEmpty())
     {
         //qDebug(qPrintable(buf));
-        if (buf.startsWith('"'))
+        if (buf.startsWith(QChar('"')))
         {
-            int end = buf.indexOf('"',1);
+            int end = buf.indexOf(QChar('"'), 1);
             if(end == -1) //ignore invalid line
             {
                 list.clear();
@@ -145,15 +145,15 @@ QStringList CueFile::splitLine(const QString &line)
                 return list;
             }
             list << buf.mid (1, end - 1);
-            buf.remove (0, end+1);
+            buf.remove (0, end + 1);
         }
         else
         {
-            int end = buf.indexOf(' ', 0);
+            int end = buf.indexOf(QChar::Space, 0);
             if (end < 0)
                 end = buf.size();
-            list << buf.mid (0, end);
-            buf.remove (0, end);
+            list << buf.mid(0, end);
+            buf.remove(0, end);
         }
         buf = buf.trimmed();
     }
@@ -189,7 +189,7 @@ QString CueFile::getDirtyPath(const QString &cue_path, const QString &path)
     int dot = cue_path.lastIndexOf('.');
     if (dot != -1)
     {
-        QRegularExpression r(QRegularExpression::escape(cue_path.left(dot)) + "\\.[^\\.]+$");
+        QRegularExpression r(QRegularExpression::escape(cue_path.left(dot)) + u"\\.[^\\.]+$"_s);
 
         int index = candidates.indexOf(r);
         int rindex = candidates.lastIndexOf(r);
@@ -200,7 +200,7 @@ QString CueFile::getDirtyPath(const QString &cue_path, const QString &path)
     dot = path.lastIndexOf('.');
     if (dot != -1)
     {
-        QRegularExpression r(QRegularExpression::escape(path.left(dot)) + "\\.[^\\.]+$");
+        QRegularExpression r(QRegularExpression::escape(path.left(dot)) + u"\\.[^\\.]+$"_s);
 
         int index = candidates.indexOf(r);
         int rindex = candidates.lastIndexOf(r);
