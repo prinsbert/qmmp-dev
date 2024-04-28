@@ -16,8 +16,8 @@ SET(libshout_SRCS
   shoutoutput.cpp
   outputshoutfactory.cpp
   shoutclient.cpp
-  settingsdialog.cpp
-  settingsdialog.ui
+  shoutsettingsdialog.cpp
+  shoutsettingsdialog.ui
   translations/translations.qrc
 )
 
