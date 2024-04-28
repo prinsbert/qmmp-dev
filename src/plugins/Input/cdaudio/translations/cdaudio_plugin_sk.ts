@@ -2,6 +2,59 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sk">
 <context>
+    <name>CDAudioSettingsDialog</name>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="14"/>
+        <source>CD Audio Plugin Settings</source>
+        <translation type="unfinished">Nastavenia CD Audio Plugin</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="29"/>
+        <source>Override device:</source>
+        <translation type="unfinished">Ovládanie zariadenia:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="42"/>
+        <source>Limit cd speed:</source>
+        <translation type="unfinished">Limituj rýchlosť cd:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="62"/>
+        <source>Use cd-text</source>
+        <translation type="unfinished">Použi cd-text</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="69"/>
+        <source>CDDB</source>
+        <translation type="unfinished">CDDB</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="78"/>
+        <source>Use HTTP instead of CDDBP</source>
+        <translation type="unfinished">Použi HTTP namiesto CDDBP</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="88"/>
+        <source>Server:</source>
+        <translation type="unfinished">Server:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="95"/>
+        <source>Path:</source>
+        <translation type="unfinished">Cesta:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="105"/>
+        <source>Port:</source>
+        <translation type="unfinished">Port:</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="117"/>
+        <source>Clear CDDB cache</source>
+        <translation type="unfinished">Vymazať CDDB cache</translation>
+    </message>
+</context>
+<context>
     <name>DecoderCDAudioFactory</name>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="50"/>
@@ -32,59 +85,6 @@
         <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>Použitie: otvoriť cdda:/// a to buď cez dialógové okno Pridať URL alebo cez príkazový riadok.</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>CD Audio Plugin Settings</source>
-        <translation>Nastavenia CD Audio Plugin</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Override device:</source>
-        <translation>Ovládanie zariadenia:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="42"/>
-        <source>Limit cd speed:</source>
-        <translation>Limituj rýchlosť cd:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="62"/>
-        <source>Use cd-text</source>
-        <translation>Použi cd-text</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="69"/>
-        <source>CDDB</source>
-        <translation>CDDB</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="78"/>
-        <source>Use HTTP instead of CDDBP</source>
-        <translation>Použi HTTP namiesto CDDBP</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="88"/>
-        <source>Server:</source>
-        <translation>Server:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>Path:</source>
-        <translation>Cesta:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="105"/>
-        <source>Port:</source>
-        <translation>Port:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="117"/>
-        <source>Clear CDDB cache</source>
-        <translation>Vymazať CDDB cache</translation>
     </message>
 </context>
 </TS>

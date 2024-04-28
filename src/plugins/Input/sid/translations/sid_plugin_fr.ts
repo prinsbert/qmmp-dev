@@ -35,56 +35,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SidSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation>Configuration du greffon SID</translation>
+        <translation type="unfinished">Configuration du greffon SID</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation>Ré-échantillonnage rapide</translation>
+        <translation type="unfinished">Ré-échantillonnage rapide</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation>Taux d’échantillonnage&#xa0;:</translation>
+        <translation type="unfinished">Taux d’échantillonnage&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="69"/>
+        <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation>Fichier de base HVSC&#xa0;:</translation>
+        <translation type="unfinished">Fichier de base HVSC&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="76"/>
+        <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation>Méthode de ré-échantillonnage&#xa0;:</translation>
+        <translation type="unfinished">Méthode de ré-échantillonnage&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="93"/>
+        <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation>Durée de musique par défaut, en secondes&#xa0;:</translation>
+        <translation type="unfinished">Durée de musique par défaut, en secondes&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="100"/>
+        <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation>Activer la base de durée des musiques HVSC&#xa0;:</translation>
+        <translation type="unfinished">Activer la base de durée des musiques HVSC&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="107"/>
+        <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation>Émulation&#xa0;:</translation>
+        <translation type="unfinished">Émulation&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="41"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>44100 Hz</source>
-        <translation>44&#xa0;100&#xa0;Hz</translation>
+        <translation type="unfinished">44&#xa0;100&#xa0;Hz</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="43"/>
         <source>48000 Hz</source>
-        <translation>48&#xa0;000&#xa0;Hz</translation>
+        <translation type="unfinished">48&#xa0;000&#xa0;Hz</translation>
     </message>
 </context>
 </TS>

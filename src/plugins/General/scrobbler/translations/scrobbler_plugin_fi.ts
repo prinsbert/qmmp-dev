@@ -25,99 +25,99 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>ScrobblerSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../scrobblersettingsdialog.ui" line="14"/>
         <source>Scrobbler Plugin Settings</source>
-        <translation>Asetukset Scrobbler Plugin</translation>
+        <translation type="unfinished">Asetukset Scrobbler Plugin</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="20"/>
+        <location filename="../scrobblersettingsdialog.ui" line="20"/>
         <source>Last.fm</source>
-        <translation>Last.fm</translation>
+        <translation type="unfinished">Last.fm</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="31"/>
-        <location filename="../settingsdialog.ui" line="104"/>
+        <location filename="../scrobblersettingsdialog.ui" line="31"/>
+        <location filename="../scrobblersettingsdialog.ui" line="104"/>
         <source>Session:</source>
-        <translation>Istunto:</translation>
+        <translation type="unfinished">Istunto:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="41"/>
-        <location filename="../settingsdialog.ui" line="117"/>
+        <location filename="../scrobblersettingsdialog.ui" line="41"/>
+        <location filename="../scrobblersettingsdialog.ui" line="117"/>
         <source>Check</source>
-        <translation>Tarkista</translation>
+        <translation type="unfinished">Tarkista</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="63"/>
-        <location filename="../settingsdialog.ui" line="95"/>
+        <location filename="../scrobblersettingsdialog.ui" line="63"/>
+        <location filename="../scrobblersettingsdialog.ui" line="95"/>
         <source>Register new session</source>
-        <translation>Rekisteröi uusi istunto</translation>
+        <translation type="unfinished">Rekisteröi uusi istunto</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="73"/>
+        <location filename="../scrobblersettingsdialog.ui" line="73"/>
         <source>Libre.fm</source>
-        <translation>Libre.fm</translation>
+        <translation type="unfinished">Libre.fm</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="106"/>
-        <location filename="../settingsdialog.cpp" line="132"/>
-        <location filename="../settingsdialog.cpp" line="183"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="110"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="136"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="187"/>
         <source>Message</source>
-        <translation>Viesti</translation>
+        <translation type="unfinished">Viesti</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="107"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="111"/>
         <source>1. Wait for browser startup</source>
-        <translation>1. Odota selaimen käynnistymistä</translation>
+        <translation type="unfinished">1. Odota selaimen käynnistymistä</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="108"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="112"/>
         <source>2. Allow Qmmp to scrobble tracks to your %1 account</source>
-        <translation>2. Salli Qmmp:n lähettää kuuntelutietosi (scrobblata) %1-tilillesi</translation>
+        <translation type="unfinished">2. Salli Qmmp:n lähettää kuuntelutietosi (scrobblata) %1-tilillesi</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="109"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="113"/>
         <source>3. Press &quot;OK&quot;</source>
-        <translation>3. Paina &quot;OK&quot;</translation>
+        <translation type="unfinished">3. Paina &quot;OK&quot;</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="114"/>
-        <location filename="../settingsdialog.cpp" line="118"/>
-        <location filename="../settingsdialog.cpp" line="147"/>
-        <location filename="../settingsdialog.cpp" line="151"/>
-        <location filename="../settingsdialog.cpp" line="191"/>
-        <location filename="../settingsdialog.cpp" line="195"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="118"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="122"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="151"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="155"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="195"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="unfinished">Virhe</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="114"/>
-        <location filename="../settingsdialog.cpp" line="147"/>
-        <location filename="../settingsdialog.cpp" line="191"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="118"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="151"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="195"/>
         <source>Network error</source>
-        <translation>Verkkovirhe</translation>
+        <translation type="unfinished">Verkkovirhe</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="118"/>
-        <location filename="../settingsdialog.cpp" line="151"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="122"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="155"/>
         <source>Unable to register new session</source>
-        <translation>Uuden istunnon rekisteröinti epäonnistui</translation>
+        <translation type="unfinished">Uuden istunnon rekisteröinti epäonnistui</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="132"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="136"/>
         <source>New session has been received successfully</source>
-        <translation>Uusi istunto on vastaanotettu onnistuneesti</translation>
+        <translation type="unfinished">Uusi istunto on vastaanotettu onnistuneesti</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="183"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="187"/>
         <source>Permission granted</source>
-        <translation>Lupa myönnetty</translation>
+        <translation type="unfinished">Lupa myönnetty</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="195"/>
+        <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Permission denied</source>
-        <translation>Lupa evätty</translation>
+        <translation type="unfinished">Lupa evätty</translation>
     </message>
 </context>
 </TS>

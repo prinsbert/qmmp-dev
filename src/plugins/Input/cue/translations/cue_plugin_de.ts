@@ -2,6 +2,44 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de">
 <context>
+    <name>CueSettingsDialog</name>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="14"/>
+        <source>CUE Plugin Settings</source>
+        <translation type="unfinished">Einstellungen CUE-Modul</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="29"/>
+        <source>Common settings</source>
+        <translation type="unfinished">Allgemeine Einstellungen</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="35"/>
+        <source>Load incorrect cue sheets if possible</source>
+        <translation type="unfinished">Falsche Cuesheets laden, wenn möglich</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="45"/>
+        <source>CUE encoding</source>
+        <translation type="unfinished">CUE-Kodierung</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="51"/>
+        <source>Automatic charset detection</source>
+        <translation type="unfinished">Automatisches Erkennen des Zeichensatzes</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="61"/>
+        <source>Language:</source>
+        <translation type="unfinished">Sprache:</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="81"/>
+        <source>Default encoding:</source>
+        <translation type="unfinished">Standardkodierung:</translation>
+    </message>
+</context>
+<context>
     <name>DecoderCUEFactory</name>
     <message>
         <location filename="../decodercuefactory.cpp" line="38"/>
@@ -27,44 +65,6 @@
         <location filename="../decodercuefactory.cpp" line="84"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>CUE Plugin Settings</source>
-        <translation>Einstellungen CUE-Modul</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Common settings</source>
-        <translation>Allgemeine Einstellungen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>Load incorrect cue sheets if possible</source>
-        <translation>Falsche Cuesheets laden, wenn möglich</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>CUE encoding</source>
-        <translation>CUE-Kodierung</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="51"/>
-        <source>Automatic charset detection</source>
-        <translation>Automatisches Erkennen des Zeichensatzes</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Language:</source>
-        <translation>Sprache:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="81"/>
-        <source>Default encoding:</source>
-        <translation>Standardkodierung:</translation>
     </message>
 </context>
 </TS>

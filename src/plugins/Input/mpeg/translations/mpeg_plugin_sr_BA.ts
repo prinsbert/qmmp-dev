@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sr_BA">
 <context>
-    <name>DecoderMPEGFactory</name>
+    <name>DecoderMpegFactory</name>
     <message>
         <location filename="../decodermpegfactory.cpp" line="179"/>
         <source>MPEG Plugin</source>
@@ -71,104 +71,104 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>MpegSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../mpegsettingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation>Поставке МПЕГ прикључка</translation>
+        <translation type="unfinished">Поставке МПЕГ прикључка</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="35"/>
+        <location filename="../mpegsettingsdialog.ui" line="35"/>
         <source>Decoder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="41"/>
+        <location filename="../mpegsettingsdialog.ui" line="41"/>
         <source>MAD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="48"/>
+        <location filename="../mpegsettingsdialog.ui" line="48"/>
         <source>MPG123</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="71"/>
+        <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="87"/>
+        <location filename="../mpegsettingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation>Приоритет ознака</translation>
+        <translation type="unfinished">Приоритет ознака</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="99"/>
+        <location filename="../mpegsettingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation>Прва:</translation>
+        <translation type="unfinished">Прва:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="119"/>
-        <location filename="../settingsdialog.ui" line="168"/>
-        <location filename="../settingsdialog.ui" line="217"/>
+        <location filename="../mpegsettingsdialog.ui" line="119"/>
+        <location filename="../mpegsettingsdialog.ui" line="168"/>
+        <location filename="../mpegsettingsdialog.ui" line="217"/>
         <source>ID3v1</source>
-        <translation>ИД3в1</translation>
+        <translation type="unfinished">ИД3в1</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="124"/>
-        <location filename="../settingsdialog.ui" line="173"/>
-        <location filename="../settingsdialog.ui" line="222"/>
+        <location filename="../mpegsettingsdialog.ui" line="124"/>
+        <location filename="../mpegsettingsdialog.ui" line="173"/>
+        <location filename="../mpegsettingsdialog.ui" line="222"/>
         <source>ID3v2</source>
-        <translation>ИД3в2</translation>
+        <translation type="unfinished">ИД3в2</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="129"/>
-        <location filename="../settingsdialog.ui" line="178"/>
-        <location filename="../settingsdialog.ui" line="227"/>
+        <location filename="../mpegsettingsdialog.ui" line="129"/>
+        <location filename="../mpegsettingsdialog.ui" line="178"/>
+        <location filename="../mpegsettingsdialog.ui" line="227"/>
         <source>APE</source>
-        <translation>ЕЈП</translation>
+        <translation type="unfinished">ЕЈП</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="134"/>
-        <location filename="../settingsdialog.ui" line="183"/>
-        <location filename="../settingsdialog.ui" line="232"/>
+        <location filename="../mpegsettingsdialog.ui" line="134"/>
+        <location filename="../mpegsettingsdialog.ui" line="183"/>
+        <location filename="../mpegsettingsdialog.ui" line="232"/>
         <source>Disabled</source>
-        <translation>онемогућена</translation>
+        <translation type="unfinished">онемогућена</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="148"/>
+        <location filename="../mpegsettingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation>Друга:</translation>
+        <translation type="unfinished">Друга:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="197"/>
+        <location filename="../mpegsettingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation>Трећа:</translation>
+        <translation type="unfinished">Трећа:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="253"/>
+        <location filename="../mpegsettingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="272"/>
+        <location filename="../mpegsettingsdialog.ui" line="272"/>
         <source>Encodings</source>
-        <translation>Кодирање</translation>
+        <translation type="unfinished">Кодирање</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="333"/>
+        <location filename="../mpegsettingsdialog.ui" line="294"/>
+        <source>ID3v2 encoding:</source>
+        <translation type="unfinished">ИД3в2 кодирање:</translation>
+    </message>
+    <message>
+        <location filename="../mpegsettingsdialog.ui" line="333"/>
         <source>ID3v1 encoding:</source>
-        <translation>ИД3в1 кодирање:</translation>
+        <translation type="unfinished">ИД3в1 кодирање:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="343"/>
+        <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="294"/>
-        <source>ID3v2 encoding:</source>
-        <translation>ИД3в2 кодирање:</translation>
     </message>
 </context>
 </TS>

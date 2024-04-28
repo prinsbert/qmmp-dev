@@ -2,75 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="id">
 <context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Status Icon Plugin Settings</source>
-        <translation>Setelan Plugin Icon Status</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Balloon message</source>
-        <translation>Pesan balloon</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="38"/>
-        <location filename="../settingsdialog.ui" line="105"/>
-        <source>Delay, ms:</source>
-        <translation>Tunda, md:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="79"/>
-        <source>Tooltip</source>
-        <translation>Tooltip</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="91"/>
-        <source>Try to split file name when no tag</source>
-        <translation>Coba untuk pisah nama file ketika tiada tag</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="98"/>
-        <source>Show progress bar</source>
-        <translation>Tampakkan bilah progres</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="131"/>
-        <source>Transparency:</source>
-        <translation>Transparan:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="165"/>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="174"/>
-        <source>Cover size:</source>
-        <translation>Ukuran sampul:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="214"/>
-        <source>32</source>
-        <translation>32</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="225"/>
-        <source>Edit template</source>
-        <translation>Edit template</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="250"/>
-        <source>Use standard icons</source>
-        <translation>Gunakan ikon standar</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="82"/>
-        <source>Tooltip Template</source>
-        <translation>Template Tooltip</translation>
-    </message>
-</context>
-<context>
     <name>StatusIcon</name>
     <message>
         <location filename="../statusicon.cpp" line="70"/>
@@ -144,6 +75,75 @@
         <location filename="../statusiconfactory.cpp" line="53"/>
         <source>Artur Guzik &lt;a.guzik88@gmail.com&gt;</source>
         <translation>Artur Guzik &lt;a.guzik88@gmail.com&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>StatusIconSettingsDialog</name>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="14"/>
+        <source>Status Icon Plugin Settings</source>
+        <translation type="unfinished">Setelan Plugin Icon Status</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="29"/>
+        <source>Balloon message</source>
+        <translation type="unfinished">Pesan balloon</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="38"/>
+        <location filename="../statusiconsettingsdialog.ui" line="105"/>
+        <source>Delay, ms:</source>
+        <translation type="unfinished">Tunda, md:</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="79"/>
+        <source>Tooltip</source>
+        <translation type="unfinished">Tooltip</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="91"/>
+        <source>Try to split file name when no tag</source>
+        <translation type="unfinished">Coba untuk pisah nama file ketika tiada tag</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="98"/>
+        <source>Show progress bar</source>
+        <translation type="unfinished">Tampakkan bilah progres</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="131"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">Transparan:</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="165"/>
+        <source>0</source>
+        <translation type="unfinished">0</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="174"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">Ukuran sampul:</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="214"/>
+        <source>32</source>
+        <translation type="unfinished">32</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="225"/>
+        <source>Edit template</source>
+        <translation type="unfinished">Edit template</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.ui" line="250"/>
+        <source>Use standard icons</source>
+        <translation type="unfinished">Gunakan ikon standar</translation>
+    </message>
+    <message>
+        <location filename="../statusiconsettingsdialog.cpp" line="85"/>
+        <source>Tooltip Template</source>
+        <translation type="unfinished">Template Tooltip</translation>
     </message>
 </context>
 </TS>

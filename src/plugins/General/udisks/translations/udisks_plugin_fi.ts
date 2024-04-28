@@ -2,44 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fi">
 <context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>UDisks Plugin Settings</source>
-        <translation>Asetukset UDisks Plugin</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>CD Audio Detection</source>
-        <translation>Audio CD:n tunnistus</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="38"/>
-        <source>Add tracks to playlist automatically</source>
-        <translation>Lisää kappaleet soittolistaan automaattisesti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Remove tracks from playlist automatically</source>
-        <translation>Poista kappaleet soittolistalta automaattisesti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Removable Device Detection</source>
-        <translation>Irrotettavan laitteen havaitseminen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="64"/>
-        <source>Add files to playlist automatically</source>
-        <translation>Lisää tiedostot soittolistaan automaattisesti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>Remove files from playlist automatically</source>
-        <translation>Poista tiedostot soittolistasta automaattisesti</translation>
-    </message>
-</context>
-<context>
     <name>UDisksFactory</name>
     <message>
         <location filename="../udisksfactory.cpp" line="30"/>
@@ -78,6 +40,44 @@
         <location filename="../udisksplugin.cpp" line="140"/>
         <source>Add Volume &quot;%1&quot;</source>
         <translation>Lisää asema &quot;%1&quot;</translation>
+    </message>
+</context>
+<context>
+    <name>UDisksSettingsDialog</name>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="14"/>
+        <source>UDisks Plugin Settings</source>
+        <translation type="unfinished">Asetukset UDisks Plugin</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="29"/>
+        <source>CD Audio Detection</source>
+        <translation type="unfinished">Audio CD:n tunnistus</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="38"/>
+        <source>Add tracks to playlist automatically</source>
+        <translation type="unfinished">Lisää kappaleet soittolistaan automaattisesti</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="45"/>
+        <source>Remove tracks from playlist automatically</source>
+        <translation type="unfinished">Poista kappaleet soittolistalta automaattisesti</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="55"/>
+        <source>Removable Device Detection</source>
+        <translation type="unfinished">Irrotettavan laitteen havaitseminen</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="64"/>
+        <source>Add files to playlist automatically</source>
+        <translation type="unfinished">Lisää tiedostot soittolistaan automaattisesti</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="71"/>
+        <source>Remove files from playlist automatically</source>
+        <translation type="unfinished">Poista tiedostot soittolistasta automaattisesti</translation>
     </message>
 </context>
 </TS>

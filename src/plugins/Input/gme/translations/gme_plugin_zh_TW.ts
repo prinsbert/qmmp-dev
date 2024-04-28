@@ -9,52 +9,52 @@
         <translation>GME 外掛</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="41"/>
+        <location filename="../decodergmefactory.cpp" line="43"/>
         <source>Game Music Files</source>
         <translation>Game 音頻文件</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="103"/>
+        <location filename="../decodergmefactory.cpp" line="105"/>
         <source>About GME Audio Plugin</source>
         <translation>關於 Game 音頻文件</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="104"/>
+        <location filename="../decodergmefactory.cpp" line="106"/>
         <source>Qmmp GME Audio Plugin</source>
         <translation>Qmmp Game 音頻文件</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="105"/>
+        <location filename="../decodergmefactory.cpp" line="107"/>
         <source>This plugin uses Game_Music_Emu library to play game music files</source>
         <translation>此插件使用 Game_Music_Emu 庫播放 Game 音頻文件</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="106"/>
+        <location filename="../decodergmefactory.cpp" line="108"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>GmeSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation>GME 外掛設定</translation>
+        <translation type="unfinished">GME 外掛設定</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="34"/>
+        <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation>音量淡出時間:</translation>
+        <translation type="unfinished">音量淡出時間:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="44"/>
+        <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation>毫秒</translation>
+        <translation type="unfinished">毫秒</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation>啟用音量淡出</translation>
+        <translation type="unfinished">啟用音量淡出</translation>
     </message>
 </context>
 </TS>

@@ -2,44 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="pt">
 <context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>UDisks Plugin Settings</source>
-        <translation>Definições</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>CD Audio Detection</source>
-        <translation>Deteção de CD áudio</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="38"/>
-        <source>Add tracks to playlist automatically</source>
-        <translation>Adicionar faixas à lista de reprodução</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Remove tracks from playlist automatically</source>
-        <translation>Remover faixas da lista de reprodução</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Removable Device Detection</source>
-        <translation>Deteção de discos amovíveis</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="64"/>
-        <source>Add files to playlist automatically</source>
-        <translation>Adicionar ficheiros à lista de reprodução</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>Remove files from playlist automatically</source>
-        <translation>Remover ficheiros da lista de reprodução</translation>
-    </message>
-</context>
-<context>
     <name>UDisksFactory</name>
     <message>
         <location filename="../udisksfactory.cpp" line="30"/>
@@ -78,6 +40,44 @@
         <location filename="../udisksplugin.cpp" line="140"/>
         <source>Add Volume &quot;%1&quot;</source>
         <translation>Adicionar volume %1</translation>
+    </message>
+</context>
+<context>
+    <name>UDisksSettingsDialog</name>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="14"/>
+        <source>UDisks Plugin Settings</source>
+        <translation type="unfinished">Definições</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="29"/>
+        <source>CD Audio Detection</source>
+        <translation type="unfinished">Deteção de CD áudio</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="38"/>
+        <source>Add tracks to playlist automatically</source>
+        <translation type="unfinished">Adicionar faixas à lista de reprodução</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="45"/>
+        <source>Remove tracks from playlist automatically</source>
+        <translation type="unfinished">Remover faixas da lista de reprodução</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="55"/>
+        <source>Removable Device Detection</source>
+        <translation type="unfinished">Deteção de discos amovíveis</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="64"/>
+        <source>Add files to playlist automatically</source>
+        <translation type="unfinished">Adicionar ficheiros à lista de reprodução</translation>
+    </message>
+    <message>
+        <location filename="../udiskssettingsdialog.ui" line="71"/>
+        <source>Remove files from playlist automatically</source>
+        <translation type="unfinished">Remover ficheiros da lista de reprodução</translation>
     </message>
 </context>
 </TS>

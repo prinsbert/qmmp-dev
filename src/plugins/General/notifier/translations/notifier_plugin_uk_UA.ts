@@ -25,105 +25,105 @@
     </message>
 </context>
 <context>
+    <name>NotifierSettingsDialog</name>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="14"/>
+        <source>Notifier Plugin Settings</source>
+        <translation type="unfinished">Налаштування модуля повідомлень</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="35"/>
+        <source>Desktop Notification</source>
+        <translation type="unfinished">Повідомлення на робочому столі</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="51"/>
+        <source>Font:</source>
+        <translation type="unfinished">Шрифт:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="71"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="78"/>
+        <location filename="../notifiersettingsdialog.ui" line="279"/>
+        <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="85"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">Прозорість:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="229"/>
+        <source>Position</source>
+        <translation type="unfinished">Позиція</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="251"/>
+        <source>Edit template</source>
+        <translation type="unfinished">Редагувати шаблон</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="299"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">Розмір обкладинки:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="325"/>
+        <source>Volume change notification</source>
+        <translation type="unfinished">Повідомлення зміни гучності</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="332"/>
+        <source>Delay (ms):</source>
+        <translation type="unfinished">Затримка (мс):</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="361"/>
+        <source>Playback resume notification</source>
+        <translation type="unfinished">Сповіщати про продовження відтворення</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="368"/>
+        <source>Song change notification</source>
+        <translation type="unfinished">Повідомлення зміни треку</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="375"/>
+        <source>Disable notifications when another application is in the Full Screen Mode</source>
+        <translation type="unfinished">Вимикає сповіщення, якщо виконується програма в повноекранному режимі</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="378"/>
+        <source>Disable for full screen windows</source>
+        <translation type="unfinished">Вимкнути для повноекранних вікон</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="388"/>
+        <source>Psi Notification</source>
+        <translation type="unfinished">Повідомлення Psi</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="400"/>
+        <source>Enable Psi notification</source>
+        <translation type="unfinished">Увімкнути повідомлення Psi</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.cpp" line="115"/>
+        <source>Notification Template</source>
+        <translation type="unfinished">Шаблон повідомлення</translation>
+    </message>
+</context>
+<context>
     <name>PopupWidget</name>
     <message>
         <location filename="../popupwidget.cpp" line="115"/>
         <source>Volume:</source>
         <translation>Гучність:</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Notifier Plugin Settings</source>
-        <translation>Налаштування модуля повідомлень</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="85"/>
-        <source>Transparency:</source>
-        <translation>Прозорість:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="112"/>
-        <source>Notification Template</source>
-        <translation>Шаблон повідомлення</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="388"/>
-        <source>Psi Notification</source>
-        <translation>Повідомлення Psi</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="400"/>
-        <source>Enable Psi notification</source>
-        <translation>Увімкнути повідомлення Psi</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>Desktop Notification</source>
-        <translation>Повідомлення на робочому столі</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="332"/>
-        <source>Delay (ms):</source>
-        <translation>Затримка (мс):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="229"/>
-        <source>Position</source>
-        <translation>Позиція</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="251"/>
-        <source>Edit template</source>
-        <translation>Редагувати шаблон</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="361"/>
-        <source>Playback resume notification</source>
-        <translation>Сповіщати про продовження відтворення</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="368"/>
-        <source>Song change notification</source>
-        <translation>Повідомлення зміни треку</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="375"/>
-        <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation>Вимикає сповіщення, якщо виконується програма в повноекранному режимі</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="378"/>
-        <source>Disable for full screen windows</source>
-        <translation>Вимкнути для повноекранних вікон</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="325"/>
-        <source>Volume change notification</source>
-        <translation>Повідомлення зміни гучності</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="78"/>
-        <location filename="../settingsdialog.ui" line="279"/>
-        <source>0</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="51"/>
-        <source>Font:</source>
-        <translation>Шрифт:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="299"/>
-        <source>Cover size:</source>
-        <translation>Розмір обкладинки:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>...</source>
-        <translation>...</translation>
     </message>
 </context>
 </TS>

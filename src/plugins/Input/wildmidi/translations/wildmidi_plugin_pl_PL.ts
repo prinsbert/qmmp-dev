@@ -35,41 +35,41 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>WildMidiSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../wildmidisettingsdialog.ui" line="14"/>
         <source>WildMidi Plugin Settings</source>
-        <translation>Ustawienia wtyczki WildMidi</translation>
+        <translation type="unfinished">Ustawienia wtyczki WildMidi</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../wildmidisettingsdialog.ui" line="29"/>
         <source>Instrument configuration: </source>
-        <translation>Konfiguracja instrumentów: </translation>
+        <translation type="unfinished">Konfiguracja instrumentów: </translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="43"/>
+        <location filename="../wildmidisettingsdialog.ui" line="43"/>
         <source>Sample rate:</source>
-        <translation>Próbkowanie:</translation>
+        <translation type="unfinished">Próbkowanie:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="50"/>
+        <location filename="../wildmidisettingsdialog.ui" line="50"/>
         <source>Enhanced resampling</source>
-        <translation>Rozszerzony resampling</translation>
+        <translation type="unfinished">Rozszerzony resampling</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../wildmidisettingsdialog.ui" line="57"/>
         <source>Reverberation</source>
-        <translation>Pogłos</translation>
+        <translation type="unfinished">Pogłos</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="39"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>44100 Hz</source>
-        <translation>44100 Hz</translation>
+        <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="40"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="41"/>
         <source>48000 Hz</source>
-        <translation>48000 Hz</translation>
+        <translation type="unfinished">48000 Hz</translation>
     </message>
 </context>
 </TS>

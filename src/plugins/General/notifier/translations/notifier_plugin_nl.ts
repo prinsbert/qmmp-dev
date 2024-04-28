@@ -25,105 +25,105 @@
     </message>
 </context>
 <context>
+    <name>NotifierSettingsDialog</name>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="14"/>
+        <source>Notifier Plugin Settings</source>
+        <translation type="unfinished">Instellingen</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="35"/>
+        <source>Desktop Notification</source>
+        <translation type="unfinished">Bureaubladmelding</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="51"/>
+        <source>Font:</source>
+        <translation type="unfinished">Lettertype:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="71"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="78"/>
+        <location filename="../notifiersettingsdialog.ui" line="279"/>
+        <source>0</source>
+        <translation type="unfinished">0</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="85"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">Doorzichtigheid:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="229"/>
+        <source>Position</source>
+        <translation type="unfinished">Positie</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="251"/>
+        <source>Edit template</source>
+        <translation type="unfinished">Sjabloon aanpassen</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="299"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">Hoesgrootte:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="325"/>
+        <source>Volume change notification</source>
+        <translation type="unfinished">Melding bij volume-aanpassingen</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="332"/>
+        <source>Delay (ms):</source>
+        <translation type="unfinished">Vertraging (ms):</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="361"/>
+        <source>Playback resume notification</source>
+        <translation type="unfinished">Melding bij voortzetten van afspelen</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="368"/>
+        <source>Song change notification</source>
+        <translation type="unfinished">Melding bij afspelen van ander nummer</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="375"/>
+        <source>Disable notifications when another application is in the Full Screen Mode</source>
+        <translation type="unfinished">Meldingen uitschakelen als een ander programma in volledig scherm-modus staat</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="378"/>
+        <source>Disable for full screen windows</source>
+        <translation type="unfinished">Uitschakelen bij volledig scherm-vensters</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="388"/>
+        <source>Psi Notification</source>
+        <translation type="unfinished">Psi-melding</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="400"/>
+        <source>Enable Psi notification</source>
+        <translation type="unfinished">Psi-melding inschakelen</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.cpp" line="115"/>
+        <source>Notification Template</source>
+        <translation type="unfinished">Meldingssjabloon</translation>
+    </message>
+</context>
+<context>
     <name>PopupWidget</name>
     <message>
         <location filename="../popupwidget.cpp" line="115"/>
         <source>Volume:</source>
         <translation>Volume:</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Notifier Plugin Settings</source>
-        <translation>Instellingen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>Desktop Notification</source>
-        <translation>Bureaubladmelding</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="51"/>
-        <source>Font:</source>
-        <translation>Lettertype:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="78"/>
-        <location filename="../settingsdialog.ui" line="279"/>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="85"/>
-        <source>Transparency:</source>
-        <translation>Doorzichtigheid:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="229"/>
-        <source>Position</source>
-        <translation>Positie</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="251"/>
-        <source>Edit template</source>
-        <translation>Sjabloon aanpassen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="299"/>
-        <source>Cover size:</source>
-        <translation>Hoesgrootte:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="325"/>
-        <source>Volume change notification</source>
-        <translation>Melding bij volume-aanpassingen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="332"/>
-        <source>Delay (ms):</source>
-        <translation>Vertraging (ms):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="361"/>
-        <source>Playback resume notification</source>
-        <translation>Melding bij voortzetten van afspelen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="368"/>
-        <source>Song change notification</source>
-        <translation>Melding bij afspelen van ander nummer</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="375"/>
-        <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation>Meldingen uitschakelen als een ander programma in volledig scherm-modus staat</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="378"/>
-        <source>Disable for full screen windows</source>
-        <translation>Uitschakelen bij volledig scherm-vensters</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="388"/>
-        <source>Psi Notification</source>
-        <translation>Psi-melding</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="400"/>
-        <source>Enable Psi notification</source>
-        <translation>Psi-melding inschakelen</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="112"/>
-        <source>Notification Template</source>
-        <translation>Meldingssjabloon</translation>
     </message>
 </context>
 </TS>

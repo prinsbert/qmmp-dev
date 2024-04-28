@@ -25,105 +25,105 @@
     </message>
 </context>
 <context>
+    <name>NotifierSettingsDialog</name>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="14"/>
+        <source>Notifier Plugin Settings</source>
+        <translation type="unfinished">Nastavení notifikačního modulu</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="35"/>
+        <source>Desktop Notification</source>
+        <translation type="unfinished">Notifikace na pracovní ploše</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="51"/>
+        <source>Font:</source>
+        <translation type="unfinished">Písmo:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="71"/>
+        <source>...</source>
+        <translation type="unfinished">…</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="78"/>
+        <location filename="../notifiersettingsdialog.ui" line="279"/>
+        <source>0</source>
+        <translation type="unfinished">0</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="85"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">Průhlednost:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="229"/>
+        <source>Position</source>
+        <translation type="unfinished">Umístění</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="251"/>
+        <source>Edit template</source>
+        <translation type="unfinished">Upravit šablonu</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="299"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">Velikost obalu:</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="325"/>
+        <source>Volume change notification</source>
+        <translation type="unfinished">Upozornění na změnu hlasitosti</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="332"/>
+        <source>Delay (ms):</source>
+        <translation type="unfinished">Prodleva (ms):</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="361"/>
+        <source>Playback resume notification</source>
+        <translation type="unfinished">Oznámení o pokračování přehrávání</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="368"/>
+        <source>Song change notification</source>
+        <translation type="unfinished">Upozornění na změnu skladby</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="375"/>
+        <source>Disable notifications when another application is in the Full Screen Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="378"/>
+        <source>Disable for full screen windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="388"/>
+        <source>Psi Notification</source>
+        <translation type="unfinished">Notifikace v Psi</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.ui" line="400"/>
+        <source>Enable Psi notification</source>
+        <translation type="unfinished">Povolit notifikaci v Psi</translation>
+    </message>
+    <message>
+        <location filename="../notifiersettingsdialog.cpp" line="115"/>
+        <source>Notification Template</source>
+        <translation type="unfinished">Šablona notifikace</translation>
+    </message>
+</context>
+<context>
     <name>PopupWidget</name>
     <message>
         <location filename="../popupwidget.cpp" line="115"/>
         <source>Volume:</source>
         <translation>Hlasitost:</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Notifier Plugin Settings</source>
-        <translation>Nastavení notifikačního modulu</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>Desktop Notification</source>
-        <translation>Notifikace na pracovní ploše</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="51"/>
-        <source>Font:</source>
-        <translation>Písmo:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>...</source>
-        <translation>…</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="78"/>
-        <location filename="../settingsdialog.ui" line="279"/>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="85"/>
-        <source>Transparency:</source>
-        <translation>Průhlednost:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="229"/>
-        <source>Position</source>
-        <translation>Umístění</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="251"/>
-        <source>Edit template</source>
-        <translation>Upravit šablonu</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="299"/>
-        <source>Cover size:</source>
-        <translation>Velikost obalu:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="325"/>
-        <source>Volume change notification</source>
-        <translation>Upozornění na změnu hlasitosti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="332"/>
-        <source>Delay (ms):</source>
-        <translation>Prodleva (ms):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="361"/>
-        <source>Playback resume notification</source>
-        <translation>Oznámení o pokračování přehrávání</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="368"/>
-        <source>Song change notification</source>
-        <translation>Upozornění na změnu skladby</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="375"/>
-        <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="378"/>
-        <source>Disable for full screen windows</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="388"/>
-        <source>Psi Notification</source>
-        <translation>Notifikace v Psi</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="400"/>
-        <source>Enable Psi notification</source>
-        <translation>Povolit notifikaci v Psi</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="112"/>
-        <source>Notification Template</source>
-        <translation>Šablona notifikace</translation>
     </message>
 </context>
 </TS>

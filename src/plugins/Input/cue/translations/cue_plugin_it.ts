@@ -2,6 +2,44 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="it">
 <context>
+    <name>CueSettingsDialog</name>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="14"/>
+        <source>CUE Plugin Settings</source>
+        <translation type="unfinished">Impostazioni dell&apos;estensione CUE</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="29"/>
+        <source>Common settings</source>
+        <translation type="unfinished">Impostazioni comuni</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="35"/>
+        <source>Load incorrect cue sheets if possible</source>
+        <translation type="unfinished">Carica file cue non corretti se possibile</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="45"/>
+        <source>CUE encoding</source>
+        <translation type="unfinished">Codifica CUE</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="51"/>
+        <source>Automatic charset detection</source>
+        <translation type="unfinished">Rilevamento automatico della codifica dei caratteri</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="61"/>
+        <source>Language:</source>
+        <translation type="unfinished">Lingua:</translation>
+    </message>
+    <message>
+        <location filename="../cuesettingsdialog.ui" line="81"/>
+        <source>Default encoding:</source>
+        <translation type="unfinished">Codifica predefinita:</translation>
+    </message>
+</context>
+<context>
     <name>DecoderCUEFactory</name>
     <message>
         <location filename="../decodercuefactory.cpp" line="38"/>
@@ -27,44 +65,6 @@
         <location filename="../decodercuefactory.cpp" line="84"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>CUE Plugin Settings</source>
-        <translation>Impostazioni dell&apos;estensione CUE</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Common settings</source>
-        <translation>Impostazioni comuni</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>Load incorrect cue sheets if possible</source>
-        <translation>Carica file cue non corretti se possibile</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>CUE encoding</source>
-        <translation>Codifica CUE</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="51"/>
-        <source>Automatic charset detection</source>
-        <translation>Rilevamento automatico della codifica dei caratteri</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Language:</source>
-        <translation>Lingua:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="81"/>
-        <source>Default encoding:</source>
-        <translation>Codifica predefinita:</translation>
     </message>
 </context>
 </TS>

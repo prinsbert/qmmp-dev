@@ -9,27 +9,27 @@
         <translation>Sndfile 插件</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="121"/>
+        <location filename="../decodersndfilefactory.cpp" line="123"/>
         <source>PCM Files</source>
         <translation>PCM 文件</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="224"/>
+        <location filename="../decodersndfilefactory.cpp" line="226"/>
         <source>About Sndfile Audio Plugin</source>
         <translation>关于 Sndfile 音频插件</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="225"/>
+        <location filename="../decodersndfilefactory.cpp" line="227"/>
         <source>Qmmp Sndfile Audio Plugin</source>
         <translation>Qmmp Sndfile 音频插件</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="226"/>
-        <source>Compiled against</source>
-        <translation>编译依赖</translation>
+        <location filename="../decodersndfilefactory.cpp" line="228"/>
+        <source>Compiled against %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="227"/>
+        <location filename="../decodersndfilefactory.cpp" line="229"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

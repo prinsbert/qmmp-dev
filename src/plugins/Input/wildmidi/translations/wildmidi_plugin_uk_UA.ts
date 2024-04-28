@@ -35,41 +35,41 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>WildMidiSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../wildmidisettingsdialog.ui" line="14"/>
         <source>WildMidi Plugin Settings</source>
-        <translation>Налаштування модуля WildMidi</translation>
+        <translation type="unfinished">Налаштування модуля WildMidi</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../wildmidisettingsdialog.ui" line="29"/>
         <source>Instrument configuration: </source>
-        <translation>Конфігурація інструменту: </translation>
+        <translation type="unfinished">Конфігурація інструменту: </translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="43"/>
+        <location filename="../wildmidisettingsdialog.ui" line="43"/>
         <source>Sample rate:</source>
-        <translation>Частота:</translation>
+        <translation type="unfinished">Частота:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="50"/>
+        <location filename="../wildmidisettingsdialog.ui" line="50"/>
         <source>Enhanced resampling</source>
-        <translation>Покращена передискретизація</translation>
+        <translation type="unfinished">Покращена передискретизація</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../wildmidisettingsdialog.ui" line="57"/>
         <source>Reverberation</source>
-        <translation>Реверберація</translation>
+        <translation type="unfinished">Реверберація</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="39"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>44100 Hz</source>
-        <translation>44100 Гц</translation>
+        <translation type="unfinished">44100 Гц</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="40"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="41"/>
         <source>48000 Hz</source>
-        <translation>48000 Гц</translation>
+        <translation type="unfinished">48000 Гц</translation>
     </message>
 </context>
 </TS>

@@ -9,52 +9,52 @@
         <translation>Greffon GME</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="41"/>
+        <location filename="../decodergmefactory.cpp" line="43"/>
         <source>Game Music Files</source>
         <translation>Fichiers de musiques de jeux</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="103"/>
+        <location filename="../decodergmefactory.cpp" line="105"/>
         <source>About GME Audio Plugin</source>
         <translation>À propos du greffon audio GME</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="104"/>
+        <location filename="../decodergmefactory.cpp" line="106"/>
         <source>Qmmp GME Audio Plugin</source>
         <translation>Greffon audio GME pour Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="105"/>
+        <location filename="../decodergmefactory.cpp" line="107"/>
         <source>This plugin uses Game_Music_Emu library to play game music files</source>
         <translation>Ce greffon utilise la bibliothèque Game_Music_Emu pour jouer les fichiers de musiques de jeux</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="106"/>
+        <location filename="../decodergmefactory.cpp" line="108"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>GmeSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation>Configuration du greffon GME</translation>
+        <translation type="unfinished">Configuration du greffon GME</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="34"/>
+        <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation>Délai du fondu&#xa0;:</translation>
+        <translation type="unfinished">Délai du fondu&#xa0;:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="44"/>
+        <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation>ms</translation>
+        <translation type="unfinished">ms</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation>Activer le fondu</translation>
+        <translation type="unfinished">Activer le fondu</translation>
     </message>
 </context>
 </TS>

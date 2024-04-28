@@ -9,52 +9,52 @@
         <translation>GME-plug-in</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="41"/>
+        <location filename="../decodergmefactory.cpp" line="43"/>
         <source>Game Music Files</source>
         <translation>Muziekbestanden van spellen</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="103"/>
+        <location filename="../decodergmefactory.cpp" line="105"/>
         <source>About GME Audio Plugin</source>
         <translation>Over de GME-audioplug-in</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="104"/>
+        <location filename="../decodergmefactory.cpp" line="106"/>
         <source>Qmmp GME Audio Plugin</source>
         <translation>GME-audioplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="105"/>
+        <location filename="../decodergmefactory.cpp" line="107"/>
         <source>This plugin uses Game_Music_Emu library to play game music files</source>
         <translation>Deze plug-in faciliteert in het afspelen van spelmuziek d.m.v. de Game_Music_Emu-bibliotheek</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="106"/>
+        <location filename="../decodergmefactory.cpp" line="108"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>GmeSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation>Instellingen</translation>
+        <translation type="unfinished">Instellingen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="34"/>
+        <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation>Uitvaagduur:</translation>
+        <translation type="unfinished">Uitvaagduur:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="44"/>
+        <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation>ms</translation>
+        <translation type="unfinished">ms</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation>Vervaging inschakelen</translation>
+        <translation type="unfinished">Vervaging inschakelen</translation>
     </message>
 </context>
 </TS>

@@ -9,52 +9,52 @@
         <translation>Wtyczka GME</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="41"/>
+        <location filename="../decodergmefactory.cpp" line="43"/>
         <source>Game Music Files</source>
         <translation>Pliki muzyczne z gier</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="103"/>
+        <location filename="../decodergmefactory.cpp" line="105"/>
         <source>About GME Audio Plugin</source>
         <translation>O wtyczce dźwiękowej GME</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="104"/>
+        <location filename="../decodergmefactory.cpp" line="106"/>
         <source>Qmmp GME Audio Plugin</source>
         <translation>Wtyczka dźwiękowa GME dla Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="105"/>
+        <location filename="../decodergmefactory.cpp" line="107"/>
         <source>This plugin uses Game_Music_Emu library to play game music files</source>
         <translation>Ta wtyczka używa biblioteki Game_Music_Emu do odtwarzania plików muzycznych z gier</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="106"/>
+        <location filename="../decodergmefactory.cpp" line="108"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>GmeSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation>Ustawienia wtyczki GME</translation>
+        <translation type="unfinished">Ustawienia wtyczki GME</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="34"/>
+        <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation>Długość ściszenia:</translation>
+        <translation type="unfinished">Długość ściszenia:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="44"/>
+        <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation>ms</translation>
+        <translation type="unfinished">ms</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation>Włącz ściszenie</translation>
+        <translation type="unfinished">Włącz ściszenie</translation>
     </message>
 </context>
 </TS>

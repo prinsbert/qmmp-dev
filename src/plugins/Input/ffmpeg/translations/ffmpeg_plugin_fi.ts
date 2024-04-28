@@ -35,86 +35,86 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>FFmpegSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="14"/>
         <source>FFmpeg Plugin Settings</source>
-        <translation>Asetukset FFmpeg Plugin</translation>
+        <translation type="unfinished">Asetukset FFmpeg Plugin</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="55"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="55"/>
         <source>Formats</source>
-        <translation>Formaatit</translation>
+        <translation type="unfinished">Formaatit</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="61"/>
         <source>Windows Media Audio</source>
-        <translation>Windows Media Audio</translation>
+        <translation type="unfinished">Windows Media Audio</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="68"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="68"/>
         <source>Monkey&apos;s Audio (APE)</source>
-        <translation>Monkey&apos;s Audio (APE)</translation>
+        <translation type="unfinished">Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="75"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="75"/>
         <source>True Audio</source>
-        <translation>True Audio</translation>
+        <translation type="unfinished">True Audio</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="82"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="82"/>
         <source>ADTS AAC</source>
-        <translation>ADTS AAC</translation>
+        <translation type="unfinished">ADTS AAC</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="89"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="89"/>
         <source>MP3 (MPEG audio layer 3)</source>
-        <translation>MP3 (MPEG audio layer 3)</translation>
+        <translation type="unfinished">MP3 (MPEG audio layer 3)</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="96"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="96"/>
         <source>MPEG-4 AAC/ALAC</source>
-        <translation>MPEG-4 AAC/ALAC</translation>
+        <translation type="unfinished">MPEG-4 AAC/ALAC</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="103"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="103"/>
         <source>RealAudio 1.0/2.0</source>
-        <translation>RealAudio 1.0/2.0</translation>
+        <translation type="unfinished">RealAudio 1.0/2.0</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="110"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="110"/>
         <source>Shorten</source>
-        <translation>Lyhennä</translation>
+        <translation type="unfinished">Lyhennä</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="117"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="117"/>
         <source>AC3/EAC</source>
-        <translation>AC3/EAC</translation>
+        <translation type="unfinished">AC3/EAC</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="124"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="124"/>
         <source>DTS/DTS-Core</source>
-        <translation>DTS/DTS-Core</translation>
+        <translation type="unfinished">DTS/DTS-Core</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="131"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="131"/>
         <source>Matroska Audio (Dolby TrueHD Lossless)</source>
-        <translation>Matroska Audio (Dolby TrueHD Lossless)</translation>
+        <translation type="unfinished">Matroska Audio (Dolby TrueHD Lossless)</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="138"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="138"/>
         <source>VQF</source>
-        <translation>VQF</translation>
+        <translation type="unfinished">VQF</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="145"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="145"/>
         <source>Tom&apos;s lossless Audio Kompressor (TAK)</source>
-        <translation>Tom&apos;s lossless Audio Kompressor (TAK)</translation>
+        <translation type="unfinished">Tom&apos;s lossless Audio Kompressor (TAK)</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="152"/>
+        <location filename="../ffmpegsettingsdialog.ui" line="152"/>
         <source>Direct Stream Digital (DSD)</source>
-        <translation>Direct Stream Digital (DSD)</translation>
+        <translation type="unfinished">Direct Stream Digital (DSD)</translation>
     </message>
 </context>
 </TS>

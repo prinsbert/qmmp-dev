@@ -2,6 +2,59 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
+    <name>CDAudioSettingsDialog</name>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="14"/>
+        <source>CD Audio Plugin Settings</source>
+        <translation type="unfinished">CD 音频插件设置</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="29"/>
+        <source>Override device:</source>
+        <translation type="unfinished">跳过设备：</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="42"/>
+        <source>Limit cd speed:</source>
+        <translation type="unfinished">限制 CD 速度：</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="62"/>
+        <source>Use cd-text</source>
+        <translation type="unfinished">使用 cd-text</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="69"/>
+        <source>CDDB</source>
+        <translation type="unfinished">CD数据库</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="78"/>
+        <source>Use HTTP instead of CDDBP</source>
+        <translation type="unfinished">使用 HTTP 而非 CDDBP</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="88"/>
+        <source>Server:</source>
+        <translation type="unfinished">服务器：</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="95"/>
+        <source>Path:</source>
+        <translation type="unfinished">路径：</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="105"/>
+        <source>Port:</source>
+        <translation type="unfinished">端口：</translation>
+    </message>
+    <message>
+        <location filename="../cdaudiosettingsdialog.ui" line="117"/>
+        <source>Clear CDDB cache</source>
+        <translation type="unfinished">清除 CDDB 缓存</translation>
+    </message>
+</context>
+<context>
     <name>DecoderCDAudioFactory</name>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="50"/>
@@ -32,59 +85,6 @@
         <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>用法：open cdda:/// 使用添加 URL 对话或命令行</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>CD Audio Plugin Settings</source>
-        <translation>CD 音频插件设置</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>Override device:</source>
-        <translation>跳过设备：</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="42"/>
-        <source>Limit cd speed:</source>
-        <translation>限制 CD 速度：</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="62"/>
-        <source>Use cd-text</source>
-        <translation>使用 cd-text</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="69"/>
-        <source>CDDB</source>
-        <translation>CD数据库</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="78"/>
-        <source>Use HTTP instead of CDDBP</source>
-        <translation>使用 HTTP 而非 CDDBP</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="88"/>
-        <source>Server:</source>
-        <translation>服务器：</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="95"/>
-        <source>Path:</source>
-        <translation>路径：</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="105"/>
-        <source>Port:</source>
-        <translation>端口：</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="117"/>
-        <source>Clear CDDB cache</source>
-        <translation>清除 CDDB 缓存</translation>
     </message>
 </context>
 </TS>
