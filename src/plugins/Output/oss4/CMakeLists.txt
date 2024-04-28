@@ -52,8 +52,8 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 SET(liboss4_SRCS
   outputoss4factory.cpp
   outputoss4.cpp
-  settingsdialog.cpp
-  settingsdialog.ui
+  oss4settingsdialog.cpp
+  oss4settingsdialog.ui
   translations/translations.qrc
 )
 
