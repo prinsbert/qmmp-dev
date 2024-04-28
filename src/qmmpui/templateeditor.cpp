@@ -28,6 +28,11 @@ TemplateEditor::TemplateEditor(QWidget *parent) : QDialog(parent), m_ui(new Ui::
     createMenu();
 }
 
+TemplateEditor::~TemplateEditor()
+{
+    delete m_ui;
+}
+
 QString TemplateEditor::currentTemplate() const
 {
     return m_ui->textEdit->toPlainText ();

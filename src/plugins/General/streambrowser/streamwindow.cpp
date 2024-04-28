@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2012-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2012-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -145,7 +145,9 @@ StreamWindow::StreamWindow(QWidget *parent)
 }
 
 StreamWindow::~StreamWindow()
-{}
+{
+    delete m_ui;
+}
 
 void StreamWindow::showText(QNetworkReply *reply)
 {
