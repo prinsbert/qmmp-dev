@@ -50,7 +50,6 @@ QStringList QmmpFileDialog::exec(QWidget *parent, const QString &dir, FileDialog
     QmmpFileDialogImpl *dialog = new QmmpFileDialogImpl(parent);
     dialog->setWindowTitle(caption);
     dialog->setModeAndMask(dir, mode, filter.split(";;", QString::SkipEmptyParts));
-    dialog->loadMountedVolumes();
     QStringList l;
     if (dialog->exec() == QDialog::Accepted)
         l = dialog->selectedFiles();
