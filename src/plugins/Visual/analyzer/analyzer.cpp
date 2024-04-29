@@ -31,12 +31,12 @@
 #include "inlines.h"
 #include "analyzer.h"
 
-Analyzer::Analyzer (QWidget *parent) : Visual (parent)
+Analyzer::Analyzer(QWidget *parent) : Visual (parent)
 {
     setWindowTitle (tr("Qmmp Analyzer"));
     setMinimumSize(2*300-30,105);
     m_timer = new QTimer (this);
-    connect(m_timer, SIGNAL (timeout()), this, SLOT (timeout()));
+    connect(m_timer, &QTimer::timeout, this, &Analyzer::timeout);
 
     clear();
     createMenu();
@@ -353,7 +353,7 @@ void Analyzer::createMenu()
         peaksFalloff->addAction(act);
     }
     m_menu->addSeparator();
-    QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), this, SLOT(toggleFullScreen()), tr("F"));
+    QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), tr("F"), this, &Analyzer::toggleFullScreen);
     addAction(fullScreenAction);
     update();
 }

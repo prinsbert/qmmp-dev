@@ -35,7 +35,7 @@ CoverWidget::CoverWidget(QWidget *parent)
     setWindowFlags(Qt::Window);
     setAttribute(Qt::WA_DeleteOnClose, true);
     m_menu = new QMenu(this);
-    m_menu->addAction(tr("&Save As..."), this, &CoverWidget::saveAs, tr("Ctrl+S"));
+    m_menu->addAction(tr("&Save As..."), tr("Ctrl+S"), this, &CoverWidget::saveAs);
     QMenu *sizeMenu = m_menu->addMenu(tr("Size"));
     QActionGroup *sizeGroup = new QActionGroup(this);
     sizeGroup->addAction(tr("Actual Size"))->setData(0);
@@ -45,7 +45,7 @@ CoverWidget::CoverWidget(QWidget *parent)
     sizeGroup->addAction(tr("1024x1024"))->setData(1024);
     sizeMenu->addActions(sizeGroup->actions());
     connect(sizeMenu, &QMenu::triggered, this, &CoverWidget::processResizeAction);
-    m_menu->addAction(tr("&Close"), this, &CoverWidget::close, tr("Alt+F4"));
+    m_menu->addAction(tr("&Close"),  tr("Alt+F4"), this, &CoverWidget::close);
     addActions(m_menu->actions());
     m_size = 0;
     //settings

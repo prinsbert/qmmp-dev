@@ -478,7 +478,7 @@ void QMMPStarter::printVersion()
     streambuf* old_stream = cout.rdbuf(tmp_stream.rdbuf());
 #endif
     cout << qPrintable(tr("QMMP version: %1").arg(Qmmp::strVersion())) << endl;
-    cout << qPrintable(tr("Compiled with Qt version: %1").arg(QStringLiteral(QT_VERSION_STR))) << endl;
+    cout << qPrintable(tr("Compiled with Qt version: %1").arg(QLatin1StringView(QT_VERSION_STR))) << endl;
     cout << qPrintable(tr("Using Qt version: %1").arg(QString::fromLatin1(qVersion()))) << endl;
 #ifdef Q_OS_WIN
     string text = tmp_stream.str();
