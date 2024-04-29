@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,39 +21,41 @@
 #include <QSettings>
 #include <QSize>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "ui_analyzersettingsdialog.h"
+#include "analyzersettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
+AnalyzerSettingsDialog::AnalyzerSettingsDialog(QWidget *parent) : QDialog(parent), m_ui(new Ui::AnalyzerSettingsDialog)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     QSettings settings;
     settings.beginGroup("Analyzer");
-    m_ui.colorWidget1->setColor(settings.value("color1", u"Green"_s).toString());
-    m_ui.colorWidget2->setColor(settings.value("color2", u"Yellow"_s).toString());
-    m_ui.colorWidget3->setColor(settings.value("color3", u"Red"_s).toString());
-    m_ui.bgColorWidget->setColor(settings.value("bg_color", u"Black"_s).toString());
-    m_ui.peakColorWidget->setColor(settings.value("peak_color", u"Cyan"_s).toString());
+    m_ui->colorWidget1->setColor(settings.value("color1", u"Green"_s).toString());
+    m_ui->colorWidget2->setColor(settings.value("color2", u"Yellow"_s).toString());
+    m_ui->colorWidget3->setColor(settings.value("color3", u"Red"_s).toString());
+    m_ui->bgColorWidget->setColor(settings.value("bg_color", u"Black"_s).toString());
+    m_ui->peakColorWidget->setColor(settings.value("peak_color", u"Cyan"_s).toString());
     QSize cells_size = settings.value("cells_size", QSize(15, 6)).toSize();
-    m_ui.cellWidthSpinBox->setValue(cells_size.width());
-    m_ui.cellHeightSpinBox->setValue(cells_size.height());
+    m_ui->cellWidthSpinBox->setValue(cells_size.width());
+    m_ui->cellHeightSpinBox->setValue(cells_size.height());
     settings.endGroup();
 }
 
-SettingsDialog::~SettingsDialog()
+AnalyzerSettingsDialog::~AnalyzerSettingsDialog()
 {
+    delete m_ui;
 }
 
-void SettingsDialog::accept()
+void AnalyzerSettingsDialog::accept()
 {
     QSettings settings;
     settings.beginGroup("Analyzer");
-    settings.setValue("color1", m_ui.colorWidget1->colorName());
-    settings.setValue("color2", m_ui.colorWidget2->colorName());
-    settings.setValue("color3", m_ui.colorWidget3->colorName());
-    settings.setValue("bg_color", m_ui.bgColorWidget->colorName());
-    settings.setValue("peak_color", m_ui.peakColorWidget->colorName());
-    settings.setValue("cells_size", QSize(m_ui.cellWidthSpinBox->value(),
-                                                   m_ui.cellHeightSpinBox->value()));
+    settings.setValue("color1", m_ui->colorWidget1->colorName());
+    settings.setValue("color2", m_ui->colorWidget2->colorName());
+    settings.setValue("color3", m_ui->colorWidget3->colorName());
+    settings.setValue("bg_color", m_ui->bgColorWidget->colorName());
+    settings.setValue("peak_color", m_ui->peakColorWidget->colorName());
+    settings.setValue("cells_size", QSize(m_ui->cellWidthSpinBox->value(),
+                                                   m_ui->cellHeightSpinBox->value()));
     settings.endGroup();
     QDialog::accept();
 }

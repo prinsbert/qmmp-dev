@@ -23,8 +23,8 @@ SET(libhttp_SRCS
     httpstreamreader.cpp
     httpinputfactory.cpp
     httpinputsource.cpp
-    settingsdialog.cpp
-    settingsdialog.ui
+    httpsettingsdialog.cpp
+    httpsettingsdialog.ui
     translations/translations.qrc
 )
 

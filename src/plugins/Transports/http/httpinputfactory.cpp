@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,7 +22,7 @@
 #include <QMessageBox>
 #include <curl/curlver.h>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "httpsettingsdialog.h"
 #include "httpinputsource.h"
 #include "httpinputfactory.h"
 
@@ -44,16 +44,16 @@ InputSource *HTTPInputFactory::create(const QString &url, QObject *parent)
 
 void HTTPInputFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
+    HttpSettingsDialog *s = new HttpSettingsDialog(parent);
     s->show();
 }
 
 void HTTPInputFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About HTTP Transport Plugin"),
-                        tr("Qmmp HTTP Transport Plugin") + QChar::LineFeed +
-                        tr("Compiled against libcurl-%1").arg(QString::fromLatin1(LIBCURL_VERSION)) + QChar::LineFeed +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About HTTP Transport Plugin"),
+                       tr("Qmmp HTTP Transport Plugin") + QChar::LineFeed +
+                       tr("Compiled against libcurl-%1").arg(QString::fromLatin1(LIBCURL_VERSION)) + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString HTTPInputFactory::translation() const

@@ -24,51 +24,54 @@
 #include <enca.h>
 #endif
 #include <qmmp/qmmptextcodec.h>
-#include "settingsdialog.h"
+#include "ui_httpsettingsdialog.h"
+#include "httpsettingsdialog.h"
 
-SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
+HttpSettingsDialog::HttpSettingsDialog(QWidget *parent) : QDialog(parent), m_ui(new Ui::HttpSettingsDialog)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
-    m_ui.icyEncodingComboBox->addItems(QmmpTextCodec::availableCharsets());
+    m_ui->icyEncodingComboBox->addItems(QmmpTextCodec::availableCharsets());
 #ifdef WITH_ENCA
     size_t n = 0;
     const char **langs = enca_get_languages(&n);
     for (size_t i = 0; i < n; ++i)
-        m_ui.encaAnalyserComboBox->addItem(QString::fromLatin1(langs[i]));
+        m_ui->encaAnalyserComboBox->addItem(QString::fromLatin1(langs[i]));
 #endif
     QSettings settings;
     settings.beginGroup("HTTP");
-    int pos = m_ui.icyEncodingComboBox->findText(settings.value("icy_encoding", u"UTF-8"_s).toString());
-    m_ui.icyEncodingComboBox->setCurrentIndex(pos);
-    m_ui.bufferSizeSpinBox->setValue(settings.value("buffer_size",384).toInt());
-    m_ui.userAgentCheckBox->setChecked(settings.value("override_user_agent",false).toBool());
-    m_ui.userAgentLineEdit->setText(settings.value("user_agent").toString());
+    int pos = m_ui->icyEncodingComboBox->findText(settings.value("icy_encoding", u"UTF-8"_s).toString());
+    m_ui->icyEncodingComboBox->setCurrentIndex(pos);
+    m_ui->bufferSizeSpinBox->setValue(settings.value("buffer_size", 384).toInt());
+    m_ui->userAgentCheckBox->setChecked(settings.value("override_user_agent",false).toBool());
+    m_ui->userAgentLineEdit->setText(settings.value("user_agent").toString());
 #ifdef WITH_ENCA
-    m_ui.autoCharsetCheckBox->setChecked(settings.value("use_enca", false).toBool());
-    pos = m_ui.encaAnalyserComboBox->findText(settings.value("enca_lang", QString::fromLatin1(langs[n - 1])).toString());
-    m_ui.encaAnalyserComboBox->setCurrentIndex(pos);
+    m_ui->autoCharsetCheckBox->setChecked(settings.value("use_enca", false).toBool());
+    pos = m_ui->encaAnalyserComboBox->findText(settings.value("enca_lang", QString::fromLatin1(langs[n - 1])).toString());
+    m_ui->encaAnalyserComboBox->setCurrentIndex(pos);
 #else
-    m_ui.autoCharsetCheckBox->setEnabled(false);
+    m_ui->autoCharsetCheckBox->setEnabled(false);
 #endif
     settings.endGroup();
 }
 
 
-SettingsDialog::~SettingsDialog()
-{}
+HttpSettingsDialog::~HttpSettingsDialog()
+{
+    delete m_ui;
+}
 
-void SettingsDialog::accept()
+void HttpSettingsDialog::accept()
 {
     QSettings settings;
     settings.beginGroup("HTTP");
-    settings.setValue("icy_encoding", m_ui.icyEncodingComboBox->currentText());
-    settings.setValue("buffer_size", m_ui.bufferSizeSpinBox->value());
-    settings.setValue("override_user_agent",m_ui.userAgentCheckBox->isChecked());
-    settings.setValue("user_agent",m_ui.userAgentLineEdit->text());
+    settings.setValue("icy_encoding", m_ui->icyEncodingComboBox->currentText());
+    settings.setValue("buffer_size", m_ui->bufferSizeSpinBox->value());
+    settings.setValue("override_user_agent",m_ui->userAgentCheckBox->isChecked());
+    settings.setValue("user_agent",m_ui->userAgentLineEdit->text());
 #ifdef WITH_ENCA
-    settings.setValue("use_enca", m_ui.autoCharsetCheckBox->isChecked());
-    settings.setValue("enca_lang", m_ui.encaAnalyserComboBox->currentText());
+    settings.setValue("use_enca", m_ui->autoCharsetCheckBox->isChecked());
+    settings.setValue("enca_lang", m_ui->encaAnalyserComboBox->currentText());
 #endif
     settings.endGroup();
     QDialog::accept();

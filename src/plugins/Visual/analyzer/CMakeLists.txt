@@ -9,10 +9,10 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 SET(libanalyzer_SRCS
     analyzer.cpp
     colorwidget.cpp
-    settingsdialog.cpp
+    analyzersettingsdialog.cpp
     visualanalyzerfactory.cpp
     fft.c
-    settingsdialog.ui
+    analyzersettingsdialog.ui
     translations/translations.qrc
 )
 

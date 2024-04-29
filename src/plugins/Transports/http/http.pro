@@ -5,16 +5,17 @@ TARGET = $$PLUGINS_PREFIX/Transports/http
 HEADERS += \
     httpinputfactory.h \
     httpinputsource.h \
-    settingsdialog.h \
+    httpsettingsdialog.h \
     httpstreamreader.h
 
 SOURCES += \
     httpinputfactory.cpp \
     httpinputsource.cpp \
-    settingsdialog.cpp \
+    httpsettingsdialog.cpp \
     httpstreamreader.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    httpsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 
