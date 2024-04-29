@@ -333,19 +333,18 @@ void QSUiListWidget::resizeEvent(QResizeEvent *e)
 
 void QSUiListWidget::wheelEvent(QWheelEvent *e)
 {
-    if(m_hslider->underMouse())
+    if(m_hslider->underMouse() || m_model->lineCount() <= m_row_count)
         return;
 
-    if (m_model->lineCount() <= m_row_count)
-        return;
-    if ((m_firstLine == 0 && e->angleDelta().y() > 0) ||
+    if((m_firstLine == 0 && e->angleDelta().y() > 0) ||
             ((m_firstLine == m_model->lineCount() - m_row_count) && e->angleDelta().y() < 0))
         return;
+
     m_firstLine -= e->angleDelta().y() / 40;  //40*3 TODO: add step to config
-    if (m_firstLine < 0)
+    if(m_firstLine < 0)
         m_firstLine = 0;
 
-    if (m_firstLine > m_model->lineCount() - m_row_count)
+    if(m_firstLine > m_model->lineCount() - m_row_count)
         m_firstLine = m_model->lineCount() - m_row_count;
 
     updateList(PlayListModel::STRUCTURE);
@@ -554,26 +553,27 @@ void QSUiListWidget::autoscroll()
     if(m_filterMode)
         return;
 
-    /*
-    SimpleSelection sel = m_model->getSelection(m_pressedLine);
-    if ((sel.m_top == 0 && m_scroll_direction == TOP && sel.count() > 1) ||
-        (sel.m_bottom == m_model->lineCount() - 1 && m_scroll_direction == DOWN && sel.count() > 1))
+    SimpleSelection sel = m_model->getSelection(m_model->trackIndexAtLine(m_pressedLine));
+    if((sel.top == 0 && m_scroll_direction == TOP && sel.count() > 1) ||
+            (sel.bottom == m_model->trackCount() - 1 && m_scroll_direction == DOWN && sel.count() > 1))
         return;
 
     if(m_scroll_direction == DOWN)
     {
-        int row = m_firstLine + m_row_count;
-        (m_firstLine + m_row_count < m_model->lineCount()) ? m_firstLine ++ : m_firstLine;
-        //m_model->moveItems(m_pressed_index,row);
-        m_pressedLine = row;
+        int line = m_firstLine + m_row_count;
+        if(line < m_model->lineCount())
+            m_firstLine++;
+        m_model->moveItems(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(line));
+        m_pressedLine = line;
     }
     else if(m_scroll_direction == TOP && m_firstLine > 0)
     {
         m_firstLine--;
-        //m_model->moveItems(m_pressed_index, m_first);
+        m_model->moveItems(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(m_firstLine));
         m_pressedLine = m_firstLine;
     }
-    */
+
+    updateList(PlayListModel::STRUCTURE);
 }
 
 void QSUiListWidget::updateRepeatIndicator()
@@ -583,7 +583,7 @@ void QSUiListWidget::updateRepeatIndicator()
 
 void QSUiListWidget::scrollTo(int index)
 {
-    if (m_row_count && !m_filterMode)
+    if(m_row_count && !m_filterMode)
     {
         recenterTo(index);
         updateList(PlayListModel::STRUCTURE);
