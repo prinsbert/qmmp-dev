@@ -90,59 +90,59 @@
     </message>
 </context>
 <context>
+    <name>AnalyzerSettingsDialog</name>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="14"/>
+        <source>Analyzer Plugin Settings</source>
+        <translation type="unfinished">Nastavení modulu frekvenčního analyzátoru</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="35"/>
+        <source>General</source>
+        <translation type="unfinished">Obecné</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="41"/>
+        <source>Cells size:</source>
+        <translation type="unfinished">Velikost polí:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="101"/>
+        <source>Colors</source>
+        <translation type="unfinished">Barvy</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="107"/>
+        <source>Peaks:</source>
+        <translation type="unfinished">Špičky:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="139"/>
+        <source>Analyzer #1:</source>
+        <translation type="unfinished">Analyzátor #1:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="171"/>
+        <source>Background:</source>
+        <translation type="unfinished">Pozadí:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="203"/>
+        <source>Analyzer #2:</source>
+        <translation type="unfinished">Analyzátor #2:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="248"/>
+        <source>Analyzer #3:</source>
+        <translation type="unfinished">Analyzátor #3:</translation>
+    </message>
+</context>
+<context>
     <name>ColorWidget</name>
     <message>
         <location filename="../colorwidget.cpp" line="37"/>
         <source>Select Color</source>
         <translation>Vyberte barvu</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Analyzer Plugin Settings</source>
-        <translation>Nastavení modulu frekvenčního analyzátoru</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>General</source>
-        <translation>Obecné</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="41"/>
-        <source>Cells size:</source>
-        <translation>Velikost polí:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="101"/>
-        <source>Colors</source>
-        <translation>Barvy</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="107"/>
-        <source>Peaks:</source>
-        <translation>Špičky:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="139"/>
-        <source>Analyzer #1:</source>
-        <translation>Analyzátor #1:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="171"/>
-        <source>Background:</source>
-        <translation>Pozadí:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="203"/>
-        <source>Analyzer #2:</source>
-        <translation>Analyzátor #2:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="248"/>
-        <source>Analyzer #3:</source>
-        <translation>Analyzátor #3:</translation>
     </message>
 </context>
 <context>

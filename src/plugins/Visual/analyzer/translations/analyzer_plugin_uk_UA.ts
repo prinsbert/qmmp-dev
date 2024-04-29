@@ -90,59 +90,59 @@
     </message>
 </context>
 <context>
+    <name>AnalyzerSettingsDialog</name>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="14"/>
+        <source>Analyzer Plugin Settings</source>
+        <translation type="unfinished">Налаштування аналізатора</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="35"/>
+        <source>General</source>
+        <translation type="unfinished">Загальні</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="41"/>
+        <source>Cells size:</source>
+        <translation type="unfinished">Розмір клітинок:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="101"/>
+        <source>Colors</source>
+        <translation type="unfinished">Кольори</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="107"/>
+        <source>Peaks:</source>
+        <translation type="unfinished">Піки:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="139"/>
+        <source>Analyzer #1:</source>
+        <translation type="unfinished">Аналізатор #1:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="171"/>
+        <source>Background:</source>
+        <translation type="unfinished">Тло:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="203"/>
+        <source>Analyzer #2:</source>
+        <translation type="unfinished">Аналізатор #2:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="248"/>
+        <source>Analyzer #3:</source>
+        <translation type="unfinished">Аналізатор #3:</translation>
+    </message>
+</context>
+<context>
     <name>ColorWidget</name>
     <message>
         <location filename="../colorwidget.cpp" line="37"/>
         <source>Select Color</source>
         <translation>Виберіть колір</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Analyzer Plugin Settings</source>
-        <translation>Налаштування аналізатора</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>General</source>
-        <translation>Загальні</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="41"/>
-        <source>Cells size:</source>
-        <translation>Розмір клітинок:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="101"/>
-        <source>Colors</source>
-        <translation>Кольори</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="107"/>
-        <source>Peaks:</source>
-        <translation>Піки:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="139"/>
-        <source>Analyzer #1:</source>
-        <translation>Аналізатор #1:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="171"/>
-        <source>Background:</source>
-        <translation>Тло:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="203"/>
-        <source>Analyzer #2:</source>
-        <translation>Аналізатор #2:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="248"/>
-        <source>Analyzer #3:</source>
-        <translation>Аналізатор #3:</translation>
     </message>
 </context>
 <context>

@@ -30,56 +30,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>ShoutSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../shoutsettingsdialog.ui" line="14"/>
         <source>Connection Settings</source>
-        <translation>Impostazioni di connessione</translation>
+        <translation type="unfinished">Impostazioni di connessione</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="32"/>
+        <location filename="../shoutsettingsdialog.ui" line="32"/>
         <source>Host:</source>
-        <translation>Host:</translation>
+        <translation type="unfinished">Host:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="42"/>
+        <location filename="../shoutsettingsdialog.ui" line="42"/>
         <source>Port:</source>
-        <translation>Porta:</translation>
+        <translation type="unfinished">Porta:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="56"/>
+        <location filename="../shoutsettingsdialog.ui" line="56"/>
         <source>Mount point:</source>
-        <translation>Punto di montaggio:</translation>
+        <translation type="unfinished">Punto di montaggio:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../shoutsettingsdialog.ui" line="66"/>
         <source>User:</source>
-        <translation>Utente:</translation>
+        <translation type="unfinished">Utente:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="76"/>
+        <location filename="../shoutsettingsdialog.ui" line="76"/>
         <source>Password:</source>
-        <translation>Password:</translation>
+        <translation type="unfinished">Password:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="86"/>
+        <location filename="../shoutsettingsdialog.ui" line="86"/>
         <source>Quality:</source>
-        <translation>Qualità:</translation>
+        <translation type="unfinished">Qualità:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="106"/>
+        <location filename="../shoutsettingsdialog.ui" line="106"/>
         <source>Sample rate:</source>
-        <translation>Campionamento</translation>
+        <translation type="unfinished">Campionamento</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="136"/>
+        <location filename="../shoutsettingsdialog.ui" line="136"/>
         <source>Public</source>
-        <translation>Pubblico</translation>
+        <translation type="unfinished">Pubblico</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="143"/>
+        <location filename="../shoutsettingsdialog.ui" line="143"/>
         <source>Hz</source>
-        <translation>Hz</translation>
+        <translation type="unfinished">Hz</translation>
     </message>
 </context>
 </TS>

@@ -30,51 +30,51 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HttpSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation>HTTP 플러그인 설정</translation>
+        <translation type="unfinished">HTTP 플러그인 설정</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../httpsettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>버퍼 크기:</translation>
+        <translation type="unfinished">버퍼 크기:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../httpsettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>KB</translation>
+        <translation type="unfinished">KB</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="78"/>
         <source>Metadata encoding</source>
-        <translation>메타데이터 인코딩</translation>
+        <translation type="unfinished">메타데이터 인코딩</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="84"/>
         <source>Automatic charset detection</source>
-        <translation>자동 문자셋 감지</translation>
+        <translation type="unfinished">자동 문자셋 감지</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="94"/>
         <source>Language:</source>
-        <translation>언어:</translation>
+        <translation type="unfinished">언어:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="114"/>
         <source>Default encoding:</source>
-        <translation>기본 인코딩:</translation>
+        <translation type="unfinished">기본 인코딩:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="137"/>
         <source>User Agent:</source>
-        <translation>사용자 에이전트:</translation>
+        <translation type="unfinished">사용자 에이전트:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Change User Agent</source>
-        <translation>사용자 에이전트 변경</translation>
+        <translation type="unfinished">사용자 에이전트 변경</translation>
     </message>
 </context>
 </TS>

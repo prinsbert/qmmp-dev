@@ -2,6 +2,69 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
+    <name>AlsaSettingsDialog</name>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="14"/>
+        <source>ALSA Plugin Settings</source>
+        <translation type="unfinished">ALSA プラグイン設定</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="33"/>
+        <source>Device Settings</source>
+        <translation type="unfinished">デバイス設定</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="54"/>
+        <source>Audio device</source>
+        <translation type="unfinished">音響デバイス</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="70"/>
+        <source>Mixer</source>
+        <translation type="unfinished">ミキサー</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="94"/>
+        <source>Mixer card:</source>
+        <translation type="unfinished">ミキサーカード:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="104"/>
+        <source>Mixer device:</source>
+        <translation type="unfinished">ミキサーデバイス:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="121"/>
+        <source>Advanced Settings</source>
+        <translation type="unfinished">上級設定</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="142"/>
+        <source>Soundcard</source>
+        <translation type="unfinished">サウンドカード</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="148"/>
+        <source>Buffer time (ms):</source>
+        <translation type="unfinished">バッファー時間 (ミリ秒):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="184"/>
+        <source>Period time (ms):</source>
+        <translation type="unfinished">割り込み間隔 (ミリ秒):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="220"/>
+        <source>Use mmap access</source>
+        <translation type="unfinished">メモリマップアクセスを利用</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="240"/>
+        <source>Use snd_pcm_pause function</source>
+        <translation type="unfinished">snd_pcm_pause 機能を利用</translation>
+    </message>
+</context>
+<context>
     <name>OutputALSAFactory</name>
     <message>
         <location filename="../outputalsafactory.cpp" line="31"/>
@@ -22,69 +85,6 @@
         <location filename="../outputalsafactory.cpp" line="58"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>ALSA Plugin Settings</source>
-        <translation>ALSA プラグイン設定</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="33"/>
-        <source>Device Settings</source>
-        <translation>デバイス設定</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Audio device</source>
-        <translation>音響デバイス</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Mixer</source>
-        <translation>ミキサー</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="76"/>
-        <source>Mixer card:</source>
-        <translation>ミキサーカード:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="86"/>
-        <source>Mixer device:</source>
-        <translation>ミキサーデバイス:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="103"/>
-        <source>Advanced Settings</source>
-        <translation>上級設定</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="115"/>
-        <source>Soundcard</source>
-        <translation>サウンドカード</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="121"/>
-        <source>Buffer time (ms):</source>
-        <translation>バッファー時間 (ミリ秒):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="157"/>
-        <source>Period time (ms):</source>
-        <translation>割り込み間隔 (ミリ秒):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="193"/>
-        <source>Use mmap access</source>
-        <translation>メモリマップアクセスを利用</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="213"/>
-        <source>Use snd_pcm_pause function</source>
-        <translation>snd_pcm_pause 機能を利用</translation>
     </message>
 </context>
 </TS>

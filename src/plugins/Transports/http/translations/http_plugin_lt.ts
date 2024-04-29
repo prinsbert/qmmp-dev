@@ -30,49 +30,49 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HttpSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation>HTTP įskiepio nustatymai</translation>
+        <translation type="unfinished">HTTP įskiepio nustatymai</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../httpsettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Buferio dydis:</translation>
+        <translation type="unfinished">Buferio dydis:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../httpsettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>КB</translation>
+        <translation type="unfinished">КB</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="78"/>
         <source>Metadata encoding</source>
-        <translation>Metaduomenų kodavimas</translation>
+        <translation type="unfinished">Metaduomenų kodavimas</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="84"/>
         <source>Automatic charset detection</source>
-        <translation>Automatinis kodavimo aptikimas</translation>
+        <translation type="unfinished">Automatinis kodavimo aptikimas</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="94"/>
         <source>Language:</source>
-        <translation>Kalba:</translation>
+        <translation type="unfinished">Kalba:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="114"/>
         <source>Default encoding:</source>
-        <translation>Kodavimas pagal nutylėjimą:</translation>
+        <translation type="unfinished">Kodavimas pagal nutylėjimą:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="137"/>
         <source>User Agent:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Change User Agent</source>
         <translation type="unfinished"></translation>
     </message>

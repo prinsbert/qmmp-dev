@@ -2,6 +2,69 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="he">
 <context>
+    <name>AlsaSettingsDialog</name>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="14"/>
+        <source>ALSA Plugin Settings</source>
+        <translation type="unfinished">הגדרות תוסף ALSA</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="33"/>
+        <source>Device Settings</source>
+        <translation type="unfinished">הגדרות התקן</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="54"/>
+        <source>Audio device</source>
+        <translation type="unfinished">התקן שמע</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="70"/>
+        <source>Mixer</source>
+        <translation type="unfinished">מערבל</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="94"/>
+        <source>Mixer card:</source>
+        <translation type="unfinished">כרטיס מערבל:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="104"/>
+        <source>Mixer device:</source>
+        <translation type="unfinished">התקן מערבל:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="121"/>
+        <source>Advanced Settings</source>
+        <translation type="unfinished">הגדרות מתקדמות</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="142"/>
+        <source>Soundcard</source>
+        <translation type="unfinished">כרטיס קול</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="148"/>
+        <source>Buffer time (ms):</source>
+        <translation type="unfinished">זמן אגירה (מ״ש):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="184"/>
+        <source>Period time (ms):</source>
+        <translation type="unfinished">זמן משך (מ״ש):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="220"/>
+        <source>Use mmap access</source>
+        <translation type="unfinished">השתמש בגישת mmap</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="240"/>
+        <source>Use snd_pcm_pause function</source>
+        <translation type="unfinished">השתמש בפונקציית snd_pcm_pause</translation>
+    </message>
+</context>
+<context>
     <name>OutputALSAFactory</name>
     <message>
         <location filename="../outputalsafactory.cpp" line="31"/>
@@ -22,69 +85,6 @@
         <location filename="../outputalsafactory.cpp" line="58"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>ALSA Plugin Settings</source>
-        <translation>הגדרות תוסף ALSA</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="33"/>
-        <source>Device Settings</source>
-        <translation>הגדרות התקן</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Audio device</source>
-        <translation>התקן שמע</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Mixer</source>
-        <translation>מערבל</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="76"/>
-        <source>Mixer card:</source>
-        <translation>כרטיס מערבל:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="86"/>
-        <source>Mixer device:</source>
-        <translation>התקן מערבל:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="103"/>
-        <source>Advanced Settings</source>
-        <translation>הגדרות מתקדמות</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="115"/>
-        <source>Soundcard</source>
-        <translation>כרטיס קול</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="121"/>
-        <source>Buffer time (ms):</source>
-        <translation>זמן אגירה (מ״ש):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="157"/>
-        <source>Period time (ms):</source>
-        <translation>זמן משך (מ״ש):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="193"/>
-        <source>Use mmap access</source>
-        <translation>השתמש בגישת mmap</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="213"/>
-        <source>Use snd_pcm_pause function</source>
-        <translation>השתמש בפונקציית snd_pcm_pause</translation>
     </message>
 </context>
 </TS>

@@ -30,56 +30,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>ShoutSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../shoutsettingsdialog.ui" line="14"/>
         <source>Connection Settings</source>
-        <translation>연결 설정</translation>
+        <translation type="unfinished">연결 설정</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="32"/>
+        <location filename="../shoutsettingsdialog.ui" line="32"/>
         <source>Host:</source>
-        <translation>호스트:</translation>
+        <translation type="unfinished">호스트:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="42"/>
+        <location filename="../shoutsettingsdialog.ui" line="42"/>
         <source>Port:</source>
-        <translation>포트:</translation>
+        <translation type="unfinished">포트:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="56"/>
+        <location filename="../shoutsettingsdialog.ui" line="56"/>
         <source>Mount point:</source>
-        <translation>마운트 포인트:</translation>
+        <translation type="unfinished">마운트 포인트:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../shoutsettingsdialog.ui" line="66"/>
         <source>User:</source>
-        <translation>사용자:</translation>
+        <translation type="unfinished">사용자:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="76"/>
+        <location filename="../shoutsettingsdialog.ui" line="76"/>
         <source>Password:</source>
-        <translation>암호:</translation>
+        <translation type="unfinished">암호:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="86"/>
+        <location filename="../shoutsettingsdialog.ui" line="86"/>
         <source>Quality:</source>
-        <translation>품질:</translation>
+        <translation type="unfinished">품질:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="106"/>
+        <location filename="../shoutsettingsdialog.ui" line="106"/>
         <source>Sample rate:</source>
-        <translation>샘플 레이트:</translation>
+        <translation type="unfinished">샘플 레이트:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="136"/>
+        <location filename="../shoutsettingsdialog.ui" line="136"/>
         <source>Public</source>
-        <translation>공개</translation>
+        <translation type="unfinished">공개</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="143"/>
+        <location filename="../shoutsettingsdialog.ui" line="143"/>
         <source>Hz</source>
-        <translation>Hz</translation>
+        <translation type="unfinished">Hz</translation>
     </message>
 </context>
 </TS>

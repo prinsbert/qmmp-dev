@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="uk">
 <context>
+    <name>Oss4SettingsDialog</name>
+    <message>
+        <location filename="../oss4settingsdialog.ui" line="14"/>
+        <source>OSS4 Plugin Settings</source>
+        <translation type="unfinished">Налаштування модуля OSS4</translation>
+    </message>
+    <message>
+        <location filename="../oss4settingsdialog.ui" line="61"/>
+        <source>Device:</source>
+        <translation type="unfinished">Пристрій:</translation>
+    </message>
+    <message>
+        <location filename="../oss4settingsdialog.cpp" line="70"/>
+        <source>Default (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>OutputOSS4Factory</name>
     <message>
         <location filename="../outputoss4factory.cpp" line="36"/>
@@ -22,24 +40,6 @@
         <location filename="../outputoss4factory.cpp" line="58"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>OSS4 Plugin Settings</source>
-        <translation>Налаштування модуля OSS4</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Device:</source>
-        <translation>Пристрій:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.cpp" line="71"/>
-        <source>Default</source>
-        <translation>За замовчанням</translation>
     </message>
 </context>
 </TS>

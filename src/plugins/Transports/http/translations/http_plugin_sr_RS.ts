@@ -30,49 +30,49 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HttpSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation>Поставке ХТТП прикључка</translation>
+        <translation type="unfinished">Поставке ХТТП прикључка</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../httpsettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Величина бафера:</translation>
+        <translation type="unfinished">Величина бафера:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../httpsettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>KB</translation>
+        <translation type="unfinished">KB</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="78"/>
         <source>Metadata encoding</source>
-        <translation>Кодирање метаподатака</translation>
+        <translation type="unfinished">Кодирање метаподатака</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="84"/>
         <source>Automatic charset detection</source>
-        <translation>Аутоматско откривање кодирања</translation>
+        <translation type="unfinished">Аутоматско откривање кодирања</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="94"/>
         <source>Language:</source>
-        <translation>Језик:</translation>
+        <translation type="unfinished">Језик:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="114"/>
         <source>Default encoding:</source>
-        <translation>Подразумевано кодирање:</translation>
+        <translation type="unfinished">Подразумевано кодирање:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="137"/>
         <source>User Agent:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Change User Agent</source>
         <translation type="unfinished"></translation>
     </message>

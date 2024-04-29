@@ -30,51 +30,51 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HttpSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation>Asetukset HTTP Plugin</translation>
+        <translation type="unfinished">Asetukset HTTP Plugin</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../httpsettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Puskurin koko:</translation>
+        <translation type="unfinished">Puskurin koko:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../httpsettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>kt</translation>
+        <translation type="unfinished">kt</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="78"/>
         <source>Metadata encoding</source>
-        <translation>Metatietojen koodaus</translation>
+        <translation type="unfinished">Metatietojen koodaus</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="84"/>
         <source>Automatic charset detection</source>
-        <translation>Automaattinen merkistön havaitseminen</translation>
+        <translation type="unfinished">Automaattinen merkistön havaitseminen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="94"/>
         <source>Language:</source>
-        <translation>Kieli:</translation>
+        <translation type="unfinished">Kieli:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="114"/>
         <source>Default encoding:</source>
-        <translation>Oletuksena koodaus:</translation>
+        <translation type="unfinished">Oletuksena koodaus:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="137"/>
         <source>User Agent:</source>
-        <translation>Käytön suoritin:</translation>
+        <translation type="unfinished">Käytön suoritin:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Change User Agent</source>
-        <translation>Vaihda käytön suoritin:</translation>
+        <translation type="unfinished">Vaihda käytön suoritin:</translation>
     </message>
 </context>
 </TS>

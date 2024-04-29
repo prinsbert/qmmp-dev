@@ -30,51 +30,51 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HttpSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation>Einstellungen HTTP-Modul</translation>
+        <translation type="unfinished">Einstellungen HTTP-Modul</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../httpsettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Puffer-Größe:</translation>
+        <translation type="unfinished">Puffer-Größe:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../httpsettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>KB</translation>
+        <translation type="unfinished">KB</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="78"/>
         <source>Metadata encoding</source>
-        <translation>Metadaten-Kodierung</translation>
+        <translation type="unfinished">Metadaten-Kodierung</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="84"/>
         <source>Automatic charset detection</source>
-        <translation>Automatisches Erkennen des Zeichensatzes</translation>
+        <translation type="unfinished">Automatisches Erkennen des Zeichensatzes</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="94"/>
         <source>Language:</source>
-        <translation>Sprache:</translation>
+        <translation type="unfinished">Sprache:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="114"/>
         <source>Default encoding:</source>
-        <translation>Standardkodierung:</translation>
+        <translation type="unfinished">Standardkodierung:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="137"/>
         <source>User Agent:</source>
-        <translation>Benutzer-Agent:</translation>
+        <translation type="unfinished">Benutzer-Agent:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Change User Agent</source>
-        <translation>Benutzer-Agent ändern</translation>
+        <translation type="unfinished">Benutzer-Agent ändern</translation>
     </message>
 </context>
 </TS>

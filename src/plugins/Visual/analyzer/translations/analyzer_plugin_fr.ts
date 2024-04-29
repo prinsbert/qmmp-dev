@@ -90,59 +90,59 @@
     </message>
 </context>
 <context>
+    <name>AnalyzerSettingsDialog</name>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="14"/>
+        <source>Analyzer Plugin Settings</source>
+        <translation type="unfinished">Configuration du greffon d&apos;analyse</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="35"/>
+        <source>General</source>
+        <translation type="unfinished">Général</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="41"/>
+        <source>Cells size:</source>
+        <translation type="unfinished">Taille des cellules&#xa0;:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="101"/>
+        <source>Colors</source>
+        <translation type="unfinished">Couleurs</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="107"/>
+        <source>Peaks:</source>
+        <translation type="unfinished">Pics&#xa0;:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="139"/>
+        <source>Analyzer #1:</source>
+        <translation type="unfinished">Analyseur n°1&#xa0;:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="171"/>
+        <source>Background:</source>
+        <translation type="unfinished">Arrière-plan&#xa0;:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="203"/>
+        <source>Analyzer #2:</source>
+        <translation type="unfinished">Analyseur n°2&#xa0;:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="248"/>
+        <source>Analyzer #3:</source>
+        <translation type="unfinished">Analyseur n°3&#xa0;:</translation>
+    </message>
+</context>
+<context>
     <name>ColorWidget</name>
     <message>
         <location filename="../colorwidget.cpp" line="37"/>
         <source>Select Color</source>
         <translation>Sélectionner couleur</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Analyzer Plugin Settings</source>
-        <translation>Configuration du greffon d&apos;analyse</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>General</source>
-        <translation>Général</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="41"/>
-        <source>Cells size:</source>
-        <translation>Taille des cellules&#xa0;:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="101"/>
-        <source>Colors</source>
-        <translation>Couleurs</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="107"/>
-        <source>Peaks:</source>
-        <translation>Pics&#xa0;:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="139"/>
-        <source>Analyzer #1:</source>
-        <translation>Analyseur n°1&#xa0;:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="171"/>
-        <source>Background:</source>
-        <translation>Arrière-plan&#xa0;:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="203"/>
-        <source>Analyzer #2:</source>
-        <translation>Analyseur n°2&#xa0;:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="248"/>
-        <source>Analyzer #3:</source>
-        <translation>Analyseur n°3&#xa0;:</translation>
     </message>
 </context>
 <context>

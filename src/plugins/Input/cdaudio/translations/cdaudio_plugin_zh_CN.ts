@@ -77,12 +77,12 @@
         <translation>编译依赖 libcdio-%1 和 libcddb-%2</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="100"/>
+        <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="101"/>
+        <location filename="../decodercdaudiofactory.cpp" line="102"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>用法：open cdda:/// 使用添加 URL 对话或命令行</translation>
     </message>

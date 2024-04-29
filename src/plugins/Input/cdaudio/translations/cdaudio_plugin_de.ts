@@ -77,12 +77,12 @@
         <translation>Kompiliert mit libcdio-%1 und libcddb-%2</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="100"/>
+        <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="101"/>
+        <location filename="../decodercdaudiofactory.cpp" line="102"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>Verwendung: Geben Sie cdda:/// in den „URL hinzufügen“-Dialog oder in die Befehlszeile ein</translation>
     </message>

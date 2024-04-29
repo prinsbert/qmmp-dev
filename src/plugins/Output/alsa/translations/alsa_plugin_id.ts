@@ -2,6 +2,69 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="id">
 <context>
+    <name>AlsaSettingsDialog</name>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="14"/>
+        <source>ALSA Plugin Settings</source>
+        <translation type="unfinished">Setelan Plugin ALSA</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="33"/>
+        <source>Device Settings</source>
+        <translation type="unfinished">Setelan Perangkat</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="54"/>
+        <source>Audio device</source>
+        <translation type="unfinished">Perangkat audio</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="70"/>
+        <source>Mixer</source>
+        <translation type="unfinished">Mixer</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="94"/>
+        <source>Mixer card:</source>
+        <translation type="unfinished">Kartu mixer:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="104"/>
+        <source>Mixer device:</source>
+        <translation type="unfinished">Perangkat mixer:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="121"/>
+        <source>Advanced Settings</source>
+        <translation type="unfinished">Setelan Lanjutan:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="142"/>
+        <source>Soundcard</source>
+        <translation type="unfinished">Soundcard</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="148"/>
+        <source>Buffer time (ms):</source>
+        <translation type="unfinished">Waktu buffer (md):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="184"/>
+        <source>Period time (ms):</source>
+        <translation type="unfinished">Waktu periode (md):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="220"/>
+        <source>Use mmap access</source>
+        <translation type="unfinished">Gunakan akses mmap</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="240"/>
+        <source>Use snd_pcm_pause function</source>
+        <translation type="unfinished">Gunakan fungsi snd_pcm_pause</translation>
+    </message>
+</context>
+<context>
     <name>OutputALSAFactory</name>
     <message>
         <location filename="../outputalsafactory.cpp" line="31"/>
@@ -22,69 +85,6 @@
         <location filename="../outputalsafactory.cpp" line="58"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>ALSA Plugin Settings</source>
-        <translation>Setelan Plugin ALSA</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="33"/>
-        <source>Device Settings</source>
-        <translation>Setelan Perangkat</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Audio device</source>
-        <translation>Perangkat audio</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Mixer</source>
-        <translation>Mixer</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="76"/>
-        <source>Mixer card:</source>
-        <translation>Kartu mixer:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="86"/>
-        <source>Mixer device:</source>
-        <translation>Perangkat mixer:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="103"/>
-        <source>Advanced Settings</source>
-        <translation>Setelan Lanjutan:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="115"/>
-        <source>Soundcard</source>
-        <translation>Soundcard</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="121"/>
-        <source>Buffer time (ms):</source>
-        <translation>Waktu buffer (md):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="157"/>
-        <source>Period time (ms):</source>
-        <translation>Waktu periode (md):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="193"/>
-        <source>Use mmap access</source>
-        <translation>Gunakan akses mmap</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="213"/>
-        <source>Use snd_pcm_pause function</source>
-        <translation>Gunakan fungsi snd_pcm_pause</translation>
     </message>
 </context>
 </TS>

@@ -30,56 +30,56 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>ShoutSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../shoutsettingsdialog.ui" line="14"/>
         <source>Connection Settings</source>
-        <translation>Налаштування з&apos;єднання</translation>
+        <translation type="unfinished">Налаштування з&apos;єднання</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="32"/>
+        <location filename="../shoutsettingsdialog.ui" line="32"/>
         <source>Host:</source>
-        <translation>Хост:</translation>
+        <translation type="unfinished">Хост:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="42"/>
+        <location filename="../shoutsettingsdialog.ui" line="42"/>
         <source>Port:</source>
-        <translation>Порт:</translation>
+        <translation type="unfinished">Порт:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="56"/>
+        <location filename="../shoutsettingsdialog.ui" line="56"/>
         <source>Mount point:</source>
-        <translation>Точка монтування:</translation>
+        <translation type="unfinished">Точка монтування:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="66"/>
+        <location filename="../shoutsettingsdialog.ui" line="66"/>
         <source>User:</source>
-        <translation>Користувач:</translation>
+        <translation type="unfinished">Користувач:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="76"/>
+        <location filename="../shoutsettingsdialog.ui" line="76"/>
         <source>Password:</source>
-        <translation>Пароль:</translation>
+        <translation type="unfinished">Пароль:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="86"/>
+        <location filename="../shoutsettingsdialog.ui" line="86"/>
         <source>Quality:</source>
-        <translation>Якість:</translation>
+        <translation type="unfinished">Якість:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="106"/>
+        <location filename="../shoutsettingsdialog.ui" line="106"/>
         <source>Sample rate:</source>
-        <translation>Частота дискретизації:</translation>
+        <translation type="unfinished">Частота дискретизації:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="136"/>
+        <location filename="../shoutsettingsdialog.ui" line="136"/>
         <source>Public</source>
-        <translation>Публічний</translation>
+        <translation type="unfinished">Публічний</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="143"/>
+        <location filename="../shoutsettingsdialog.ui" line="143"/>
         <source>Hz</source>
-        <translation>Гц</translation>
+        <translation type="unfinished">Гц</translation>
     </message>
 </context>
 </TS>
