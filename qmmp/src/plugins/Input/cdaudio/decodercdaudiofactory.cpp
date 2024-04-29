@@ -96,7 +96,8 @@ void DecoderCDAudioFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About CD Audio Plugin"),
                        tr("Qmmp CD Audio Plugin") + QChar::LineFeed +
-                       tr("Compiled against libcdio-%1 and libcddb-%2").arg(QStringLiteral(CDIO_VERSION), QStringLiteral(CDDB_VERSION)) + QChar::LineFeed +
+                       tr("Compiled against libcdio-%1 and libcddb-%2").arg(QLatin1StringView(CDIO_VERSION),
+                                                                            QLatin1StringView(CDDB_VERSION)) + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
                        tr("Usage: open cdda:/// using Add URL dialog or command line"));
 }

@@ -69,7 +69,7 @@ QString AboutDialog::loadAbout()
     text.append(u"<p>"_s + getStringFromResource(u":description"_s) + u"</p>"_s);
 
     text.append(u"<p><b>"_s + tr("Version: %1").arg(Qmmp::strVersion()) + u"</b><br>"_s);
-    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(QString::fromLatin1(qVersion()), QStringLiteral(QT_VERSION_STR)) + u"</p>"_s);
+    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(QString::fromLatin1(qVersion()), QLatin1StringView(QT_VERSION_STR)) + u"</p>"_s);
 
     text.append(u"<p>"_s);
     text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2024) + u"<br>"_s);

@@ -130,7 +130,7 @@ void FileWriterPlugin::init(const TrackInfo &info)
     int j = 1;
     while(m_file.exists())
     {
-        m_file.setFileName(outDir + QLatin1Char('/') + fileName.left(fileName.count() - 4) +
+        m_file.setFileName(outDir + QLatin1Char('/') + fileName.left(fileName.size() - 4) +
                            QStringLiteral("-%1.ogg").arg(j++));
     }
 

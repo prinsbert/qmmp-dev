@@ -140,17 +140,17 @@ void ProjectMWidget::mousePressEvent (QMouseEvent *event)
 
 void ProjectMWidget::createActions()
 {
-    m_menu->addAction(tr("&Help"), this, SLOT(showHelp()), tr("F1"))->setCheckable(true);
-    m_menu->addAction(tr("&Show Song Title"), this, SLOT(showTitle()), tr("F2"))->setCheckable(true);
-    m_menu->addAction(tr("&Show Preset Name"), this, SLOT(showPresetName()), tr("F3"))->setCheckable(true);
-    m_menu->addAction(tr("&Show Menu"), this, SIGNAL(showMenuToggled(bool)), tr("M"))->setCheckable(true);
+    m_menu->addAction(tr("&Help"), tr("F1"), this, &ProjectMWidget::showHelp)->setCheckable(true);
+    m_menu->addAction(tr("&Show Song Title"), tr("F2"), this, &ProjectMWidget::showTitle)->setCheckable(true);
+    m_menu->addAction(tr("&Show Preset Name"), tr("F3"), this, &ProjectMWidget::showPresetName)->setCheckable(true);
+    m_menu->addAction(tr("&Show Menu"), tr("M"), this, &ProjectMWidget::showMenuToggled)->setCheckable(true);
     m_menu->addSeparator();
-    m_menu->addAction(tr("&Next Preset"), this, SLOT(nextPreset()), tr("N"));
-    m_menu->addAction(tr("&Previous Preset"), this, SLOT(previousPreset()), tr("P"));
-    m_menu->addAction(tr("&Random Preset"), this, SLOT(randomPreset()), tr("R"));
-    m_menu->addAction(tr("&Lock Preset"), this, SLOT(lockPreset(bool)), tr("L"))->setCheckable(true);
+    m_menu->addAction(tr("&Next Preset"), tr("N"), this, &ProjectMWidget::nextPreset);
+    m_menu->addAction(tr("&Previous Preset"),  tr("P"), this, &ProjectMWidget::previousPreset);
+    m_menu->addAction(tr("&Random Preset"), tr("R"), this, &ProjectMWidget::randomPreset);
+    m_menu->addAction(tr("&Lock Preset"), tr("L"), this, &ProjectMWidget::lockPreset)->setCheckable(true);
     m_menu->addSeparator();
-    m_menu->addAction(tr("&Fullscreen"), this, SIGNAL(fullscreenToggled(bool)), tr("F"))->setCheckable(true);
+    m_menu->addAction(tr("&Fullscreen"), tr("F"), this, &ProjectMWidget::fullscreenToggled)->setCheckable(true);
     m_menu->addSeparator();
     addActions(m_menu->actions());
 }

@@ -420,11 +420,11 @@ void DecoderMpegFactory::showAbout(QWidget *parent)
                        tr("MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder") + QChar::LineFeed +
                        tr("Compiled against:") + QChar::LineFeed +
 #ifdef WITH_MAD
-                        QStringLiteral("libmad-%1.%2.%3%4")
-                        .arg(MAD_VERSION_MAJOR)
-                        .arg(MAD_VERSION_MINOR)
-                        .arg(MAD_VERSION_PATCH)
-                        .arg(QStringLiteral(MAD_VERSION_EXTRA)) + QChar::LineFeed +
+                       QStringLiteral("libmad-%1.%2.%3%4")
+                       .arg(MAD_VERSION_MAJOR)
+                       .arg(MAD_VERSION_MINOR)
+                       .arg(MAD_VERSION_PATCH)
+                       .arg(QLatin1StringView(MAD_VERSION_EXTRA)) + QChar::LineFeed +
 #endif
 #ifdef WITH_MPG123
                         tr("mpg123, API version: %1")
