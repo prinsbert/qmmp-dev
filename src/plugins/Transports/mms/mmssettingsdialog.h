@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2014 by Ilya Kotov                                 *
+ *   Copyright (C) 2010 by Ilya Kotov                                      *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,37 +17,31 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
+#ifndef MMSSETTINGSDIALOG_H
+#define MMSSETTINGSDIALOG_H
 
-#include <QColorDialog>
-#include <QPalette>
-#include "colorwidget.h"
+#include <QDialog>
 
-ColorWidget::ColorWidget(QWidget *parent) : QFrame(parent)
-{
-    setFrameShape(QFrame::Box);
-    setAutoFillBackground(true);
+namespace Ui {
+class MmsSettingsDialog;
 }
 
-ColorWidget::~ColorWidget()
-{}
-
-void ColorWidget::mousePressEvent(QMouseEvent *)
+/**
+	@author Ilya Kotov <forkotov02@ya.ru>
+*/
+class MmsSettingsDialog : public QDialog
 {
-    QColor color = QColorDialog::getColor(palette().color(backgroundRole()), parentWidget(),
-                                          tr("Select Color"));
-    if (color.isValid())
-    {
-        setColor(color.name());
-    }
-}
+Q_OBJECT
+public:
+    explicit MmsSettingsDialog(QWidget *parent = nullptr);
 
-void ColorWidget::setColor(QString c)
-{
-    m_colorName = c;
-    setStyleSheet(QStringLiteral("QFrame { background: %1 }").arg(m_colorName));
-}
+    ~MmsSettingsDialog();
 
-const QString ColorWidget::colorName() const
-{
-    return m_colorName;
-}
+private slots:
+    virtual void accept() override;
+
+private:
+    Ui::MmsSettingsDialog *m_ui;
+};
+
+#endif

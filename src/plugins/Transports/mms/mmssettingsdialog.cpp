@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Ilya Kotov                                      *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,28 +17,29 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#include <QSettings>
+#include <qmmp/qmmp.h>
+#include "ui_mmssettingsdialog.h"
+#include "mmssettingsdialog.h"
 
-#include <QDialog>
-#include "ui_settingsdialog.h"
-
-/**
-	@author Ilya Kotov <forkotov02@ya.ru>
-*/
-class SettingsDialog : public QDialog
+MmsSettingsDialog::MmsSettingsDialog(QWidget *parent)
+        : QDialog(parent), m_ui(new Ui::MmsSettingsDialog)
 {
-Q_OBJECT
-public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    m_ui->setupUi(this);
+    setAttribute(Qt::WA_DeleteOnClose);
+    QSettings settings;
+    m_ui->bufferSizeSpinBox->setValue(settings.value("MMS/buffer_size"_L1, 384).toInt());
+}
 
-    ~SettingsDialog();
 
-private slots:
-    virtual void accept() override;
+MmsSettingsDialog::~MmsSettingsDialog()
+{
+    delete m_ui;
+}
 
-private:
-    Ui::SettingsDialog ui;
-};
-
-#endif
+void MmsSettingsDialog::accept()
+{
+    QSettings settings;
+    settings.setValue("MMS/buffer_size"_L1, m_ui->bufferSizeSpinBox->value());
+    QDialog::accept();
+}

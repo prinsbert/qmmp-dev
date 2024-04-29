@@ -88,17 +88,17 @@ void Analyzer::toggleFullScreen()
 void Analyzer::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Analyzer");
-    m_peaks_falloff = settings.value("peak_falloff", 0.2).toDouble();
-    m_analyzer_falloff = settings.value("analyzer_falloff", 2.2).toDouble();
-    m_show_peaks = settings.value("show_peaks", true).toBool();
-    m_timer->setInterval(1000 / settings.value("refresh_rate", 25).toInt());
-    m_color1.setNamedColor(settings.value("color1", u"Green"_s).toString());
-    m_color2.setNamedColor(settings.value("color2", u"Yellow"_s).toString());
-    m_color3.setNamedColor(settings.value("color3", u"Red"_s).toString());
-    m_bgColor.setNamedColor(settings.value("bg_color", u"Black"_s).toString());
-    m_peakColor.setNamedColor(settings.value("peak_color", u"Cyan"_s).toString());
-    m_cell_size = settings.value("cells_size", QSize(15, 6)).toSize();
+    settings.beginGroup("Analyzer"_L1);
+    m_peaks_falloff = settings.value("peak_falloff"_L1, 0.2).toDouble();
+    m_analyzer_falloff = settings.value("analyzer_falloff"_L1, 2.2).toDouble();
+    m_show_peaks = settings.value("show_peaks"_L1, true).toBool();
+    m_timer->setInterval(1000 / settings.value("refresh_rate"_L1, 25).toInt());
+    m_color1.setNamedColor(settings.value("color1"_L1, u"Green"_s).toString());
+    m_color2.setNamedColor(settings.value("color2"_L1, u"Yellow"_s).toString());
+    m_color3.setNamedColor(settings.value("color3"_L1, u"Red"_s).toString());
+    m_bgColor.setNamedColor(settings.value("bg_color"_L1, u"Black"_s).toString());
+    m_peakColor.setNamedColor(settings.value("peak_color"_L1, u"Cyan"_s).toString());
+    m_cell_size = settings.value("cells_size"_L1, QSize(15, 6)).toSize();
 
 
     if(!m_update)
@@ -139,20 +139,20 @@ void Analyzer::readSettings()
             m_analyzer_falloff = 2.2;
         }
 
-        restoreGeometry(settings.value("geometry").toByteArray());
+        restoreGeometry(settings.value("geometry"_L1).toByteArray());
     }
 }
 
 void Analyzer::writeSettings()
 {
     QSettings settings;
-    settings.beginGroup("Analyzer");
-    QAction *act = m_fpsGroup->checkedAction ();
-    settings.setValue("refresh_rate", act ? act->data().toInt() : 25);
-    act = m_peaksFalloffGroup->checkedAction ();
-    settings.setValue("peak_falloff", act ? act->data().toDouble() : 0.2);
-    act = m_analyzerFalloffGroup->checkedAction ();
-    settings.setValue("analyzer_falloff", act ? act->data().toDouble() : 2.2);
+    settings.beginGroup("Analyzer"_L1);
+    QAction *act = m_fpsGroup->checkedAction();
+    settings.setValue("refresh_rate"_L1, act ? act->data().toInt() : 25);
+    act = m_peaksFalloffGroup->checkedAction();
+    settings.setValue("peak_falloff"_L1, act ? act->data().toDouble() : 0.2);
+    act = m_analyzerFalloffGroup->checkedAction();
+    settings.setValue("analyzer_falloff"_L1, act ? act->data().toDouble() : 2.2);
     settings.setValue("show_peaks", m_peaksAction->isChecked());
     settings.endGroup();
 }
@@ -172,7 +172,7 @@ void Analyzer::closeEvent (QCloseEvent *event)
 {
     //save geometry
     QSettings settings;
-    settings.setValue("Analyzer/geometry", saveGeometry());
+    settings.setValue("Analyzer/geometry"_L1, saveGeometry());
     Visual::closeEvent(event); //removes visualization object
 }
 

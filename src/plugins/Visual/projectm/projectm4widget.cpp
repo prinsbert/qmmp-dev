@@ -129,7 +129,7 @@ void ProjectM4Widget::initializeGL()
         projectm_playlist_set_shuffle(m_playlistHandle, false);
         projectm_playlist_set_preset_switched_event_callback(m_playlistHandle, &ProjectM4Widget::presetSwitchedEvent, this);
         findPresets(QStringLiteral(PROJECTM_PRESET_PATH));
-        connect(m_listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(selectPreset(int)));
+        connect(m_listWidget, &QListWidget::currentRowChanged, this, &ProjectM4Widget::selectPreset);
     }
 }
 

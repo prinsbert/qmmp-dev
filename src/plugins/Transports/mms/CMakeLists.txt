@@ -17,8 +17,8 @@ SET(libmms_SRCS
     mmsstreamreader.cpp
     mmsinputfactory.cpp
     mmsinputsource.cpp
-    settingsdialog.cpp
-    settingsdialog.ui
+    mmssettingsdialog.cpp
+    mmssettingsdialog.ui
     translations/translations.qrc
 )
 

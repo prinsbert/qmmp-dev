@@ -519,9 +519,9 @@ void HttpStreamReader::parseICYMetaData(char *data, qint64 size)
 void HttpStreamReader::sendStreamInfo(QmmpTextCodec *codec)
 {
     QHash<QString, QString> info;
-    for(const QString &key : m_stream.header.keys())
+    for(auto it = m_stream.header.cbegin(); it != m_stream.header.cend(); ++it)
     {
-        info.insert(key, codec->toUnicode(m_stream.header.value(key)));
+        info.insert(it.key(), codec->toUnicode(it.value()));
     }
     m_parent->addStreamInfo(info);
 }
