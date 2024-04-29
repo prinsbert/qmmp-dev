@@ -80,30 +80,30 @@ void QSUiListWidgetDrawer::readSettings()
         m_alternate.setNamedColor(settings.value(u"pl_bg2_color"_s, m_alternate.name()).toString());
         m_selected_bg.setNamedColor(settings.value(u"pl_highlight_color"_s, m_selected_bg.name()).toString());
         m_normal.setNamedColor(settings.value(u"pl_normal_text_color"_s, m_normal.name()).toString());
-        m_current.setNamedColor(settings.value(u"pl_current_text_color"_s, m_current.name()).toString());
         m_highlighted.setNamedColor(settings.value(u"pl_hl_text_color"_s ,m_highlighted.name()).toString());
         m_splitter.setNamedColor(settings.value(u"pl_splitter_color"_s, m_splitter).toString());
+
+        m_group_bg = m_normal_bg;
+        m_group_alt_bg = m_alternate;
+        m_group_text = m_normal;
+
+        m_current_bg = m_normal_bg;
+        m_current_alt_bg = m_alternate;
+        m_current = m_normal;
+    }
+
+    if(settings.value(u"pl_override_group_colors"_s, false).toBool())
+    {
+        m_group_bg.setNamedColor(settings.value(u"pl_group_bg"_s, m_normal_bg.name()).toString());
+        m_group_alt_bg = m_group_bg;
         m_group_text.setNamedColor(settings.value(u"pl_group_text"_s, m_group_text.name()).toString());
-        if(settings.value(u"pl_override_group_bg"_s, false).toBool())
-        {
-            m_group_bg.setNamedColor(settings.value(u"pl_group_bg"_s, m_normal_bg.name()).toString());
-            m_group_alt_bg = m_group_bg;
-        }
-        else
-        {
-            m_group_bg = m_normal_bg;
-            m_group_alt_bg = m_alternate;
-        }
-        if(settings.value(u"pl_override_current_bg"_s, false).toBool())
-        {
-            m_current_bg.setNamedColor(settings.value(u"pl_current_bg_color"_s, m_normal_bg.name()).toString());
-            m_current_alt_bg = m_current_bg;
-        }
-        else
-        {
-            m_current_bg = m_normal_bg;
-            m_current_alt_bg = m_alternate;
-        }
+    }
+
+    if(settings.value(u"pl_override_current_track_colors"_s, false).toBool())
+    {
+        m_current_bg.setNamedColor(settings.value(u"pl_current_bg_color"_s, m_normal_bg.name()).toString());
+        m_current_alt_bg = m_current_bg;
+        m_current.setNamedColor(settings.value(u"pl_current_text_color"_s, m_current.name()).toString());
     }
 
     for(int i = 0; i <= PL_GROUP_FONT_EXTRA; ++i)
