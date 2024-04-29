@@ -1,5 +1,5 @@
 /**************************************************************************
-*   Copyright (C) 2008-2019 by Ilya Kotov                                 *
+*   Copyright (C) 2008-2024 by Ilya Kotov                                 *
 *   forkotov02@ya.ru                                                      *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -50,6 +50,7 @@ QStringList QmmpFileDialog::exec(QWidget *parent, const QString &dir, FileDialog
     QmmpFileDialogImpl *dialog = new QmmpFileDialogImpl(parent);
     dialog->setWindowTitle(caption);
     dialog->setModeAndMask(dir, mode, filter.split(";;", QString::SkipEmptyParts));
+    dialog->loadMountedVolumes();
     QStringList l;
     if (dialog->exec() == QDialog::Accepted)
         l = dialog->selectedFiles();
