@@ -194,8 +194,8 @@ void QSUiSettings::readSettings()
     m_ui.plSplitterColor->setColor(settings.value(u"pl_splitter_color"_s, normal).toString());
     m_ui.plGrTextColor->setColor(settings.value(u"pl_group_text"_s, group_text).toString());
     m_ui.plCurrentTrackBgColor->setColor(settings.value(u"pl_current_bg_color"_s, normal_bg).toString());
-    m_ui.plOverrideGroupBgCheckBox->setChecked(settings.value(u"pl_override_group_bg"_s, false).toBool());
-    m_ui.plOverrideCurrentBgCheckBox->setChecked(settings.value(u"pl_override_current_bg"_s, false).toBool());
+    m_ui.plOverrideGroupColorsCheckBox->setChecked(settings.value(u"pl_override_group_colors"_s, false).toBool());
+    m_ui.plOverrideCurrentTrackColorsCheckBox->setChecked(settings.value(u"pl_override_current_track_colors"_s, false).toBool());
     //waveform seekbar colors
     m_ui.wfsbBgColor->setColor(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
     m_ui.wfsbRmsColor->setColor(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
@@ -241,8 +241,8 @@ void QSUiSettings::writeSettings()
     settings.setValue(u"pl_splitter_color"_s, m_ui.plSplitterColor->colorName());
     settings.setValue(u"pl_group_text"_s, m_ui.plGrTextColor->colorName());
     settings.setValue(u"pl_current_bg_color"_s, m_ui.plCurrentTrackBgColor->colorName());
-    settings.setValue(u"pl_override_group_bg"_s, m_ui.plOverrideGroupBgCheckBox->isChecked());
-    settings.setValue(u"pl_override_current_bg"_s, m_ui.plOverrideCurrentBgCheckBox->isChecked());
+    settings.setValue(u"pl_override_group_colors"_s, m_ui.plOverrideGroupColorsCheckBox->isChecked());
+    settings.setValue(u"pl_override_current_track_colors"_s, m_ui.plOverrideCurrentTrackColorsCheckBox->isChecked());
     settings.setValue(u"pl_font"_s, m_ui.plFontLabel->font().toString());
     settings.setValue(u"pl_group_font"_s, m_ui.groupFontLabel->font().toString());
     settings.setValue(u"pl_extra_row_font"_s, m_ui.extraRowFontLabel->font().toString());
