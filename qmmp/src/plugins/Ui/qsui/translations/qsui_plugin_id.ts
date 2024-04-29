@@ -183,38 +183,53 @@
         <translation>Reset warna</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="877"/>
+        <location filename="../forms/qsuisettings.ui" line="703"/>
+        <source>Override group colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="806"/>
+        <source>Override current track colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="816"/>
+        <source>Current track text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/qsuisettings.ui" line="915"/>
         <source>Waveform Seekbar Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="883"/>
+        <location filename="../forms/qsuisettings.ui" line="921"/>
         <source>Progress bar:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="972"/>
+        <location filename="../forms/qsuisettings.ui" line="1010"/>
         <source>RMS:</source>
         <extracomment>Root mean square</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1017"/>
+        <location filename="../forms/qsuisettings.ui" line="1055"/>
         <source>Waveform:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1058"/>
+        <location filename="../forms/qsuisettings.ui" line="1096"/>
         <source>Fonts</source>
         <translation>Fonta</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1064"/>
+        <location filename="../forms/qsuisettings.ui" line="1102"/>
         <source>Use system fonts</source>
         <translation>Gunakan fonta sistem</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1138"/>
+        <location filename="../forms/qsuisettings.ui" line="1176"/>
         <source>Playlist:</source>
         <translation>Daftarmain:</translation>
     </message>
@@ -274,22 +289,22 @@
         <translation>Edit template</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1205"/>
+        <location filename="../forms/qsuisettings.ui" line="1243"/>
         <source>Reset fonts</source>
         <translation>Setel ulang fonta</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1154"/>
+        <location filename="../forms/qsuisettings.ui" line="1192"/>
         <source>Column headers:</source>
         <translation>Header kolom:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1220"/>
+        <location filename="../forms/qsuisettings.ui" line="1258"/>
         <source>Tab names:</source>
         <translation>Nama tab:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1301"/>
+        <location filename="../forms/qsuisettings.ui" line="1339"/>
         <source>Miscellaneous</source>
         <translation>Lain-lain</translation>
     </message>
@@ -315,7 +330,7 @@
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="315"/>
-        <location filename="../forms/qsuisettings.ui" line="965"/>
+        <location filename="../forms/qsuisettings.ui" line="1003"/>
         <source>Background:</source>
         <translation>Background:</translation>
     </message>
@@ -330,72 +345,57 @@
         <translation>Background #1:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="502"/>
+        <location filename="../forms/qsuisettings.ui" line="601"/>
         <source>Normal text:</source>
         <translation>Teks normal:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="534"/>
+        <location filename="../forms/qsuisettings.ui" line="569"/>
         <source>Background #2:</source>
         <translation>Background #2:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="566"/>
-        <source>Current text:</source>
-        <translation>Teks saat ini:</translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuisettings.ui" line="598"/>
+        <location filename="../forms/qsuisettings.ui" line="633"/>
         <source>Highlighted background:</source>
         <translation>Background tersorot:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="630"/>
+        <location filename="../forms/qsuisettings.ui" line="665"/>
         <source>Highlighted text:</source>
         <translation>Teks tersorot:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="818"/>
-        <source>Override current track background</source>
-        <translation>Timpa latar belakang trek saat ini</translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuisettings.ui" line="773"/>
+        <location filename="../forms/qsuisettings.ui" line="867"/>
         <source>Current track background:</source>
         <translation>Latar belakang trek saat ini:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="864"/>
-        <source>Override group background</source>
-        <translation>Timpa latar belakang grup</translation>
-    </message>
-    <message>
-        <location filename="../forms/qsuisettings.ui" line="1230"/>
+        <location filename="../forms/qsuisettings.ui" line="1268"/>
         <source>Groups:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1237"/>
+        <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Extra group row:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1334"/>
+        <location filename="../forms/qsuisettings.ui" line="1372"/>
         <source>Tab position:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1371"/>
+        <location filename="../forms/qsuisettings.ui" line="1409"/>
         <source>Toolbars</source>
         <translation>BilahAlat</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1379"/>
+        <location filename="../forms/qsuisettings.ui" line="1417"/>
         <source>Icon size:</source>
         <translation>Ukuran ikon:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1404"/>
+        <location filename="../forms/qsuisettings.ui" line="1442"/>
         <source>Customize...</source>
         <translation>Kustomisasikan...</translation>
     </message>
@@ -405,37 +405,37 @@
         <translation>Gunakan warna sistem</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="738"/>
+        <location filename="../forms/qsuisettings.ui" line="761"/>
         <source>Group background:</source>
         <translation>Background kelompok:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="706"/>
+        <location filename="../forms/qsuisettings.ui" line="713"/>
         <source>Group text:</source>
         <translation>Teks kelompok:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="665"/>
+        <location filename="../forms/qsuisettings.ui" line="515"/>
         <source>Splitter:</source>
         <translation>Pembelah:</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1307"/>
+        <location filename="../forms/qsuisettings.ui" line="1345"/>
         <source>Tabs</source>
         <translation>Tab</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1313"/>
+        <location filename="../forms/qsuisettings.ui" line="1351"/>
         <source>Show close buttons</source>
         <translation>Tampakkan tombol tutup</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1320"/>
+        <location filename="../forms/qsuisettings.ui" line="1358"/>
         <source>Show tab list menu</source>
         <translation>Tampakkan menu daftar tab</translation>
     </message>
     <message>
-        <location filename="../forms/qsuisettings.ui" line="1327"/>
+        <location filename="../forms/qsuisettings.ui" line="1365"/>
         <source>Show &apos;New Playlist&apos; button</source>
         <translation>Tampakkan tombol &apos;Daftarmain Baru&apos;</translation>
     </message>
