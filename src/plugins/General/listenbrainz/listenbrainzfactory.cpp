@@ -40,7 +40,7 @@ QObject *ListenBrainzFactory::create(QObject *parent)
     return new ListenBrainz(parent);
 }
 
-QDialog *ListenBrainzFactory::createConfigDialog(QWidget *parent)
+QDialog *ListenBrainzFactory::createSettings(QWidget *parent)
 {
     return new ListenBrainzSettingsDialog(parent);
 }

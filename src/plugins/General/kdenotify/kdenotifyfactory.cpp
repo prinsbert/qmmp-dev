@@ -39,7 +39,7 @@ QObject *KdeNotifyFactory::create(QObject *parent)
     return new KdeNotify(parent);
 }
 
-QDialog *KdeNotifyFactory::createConfigDialog(QWidget *parent)
+QDialog *KdeNotifyFactory::createSettings(QWidget *parent)
 {
     return new KdeNotifySettingsDialog(parent);
 }

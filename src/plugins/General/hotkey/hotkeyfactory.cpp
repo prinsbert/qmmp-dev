@@ -41,7 +41,7 @@ QObject *HotkeyFactory::create(QObject *parent)
     return new HotkeyManager(parent);
 }
 
-QDialog *HotkeyFactory::createConfigDialog(QWidget *parent)
+QDialog *HotkeyFactory::createSettings(QWidget *parent)
 {
     HotkeySettingsDialog *dialog = new HotkeySettingsDialog(parent);
     if(General::isEnabled(this))

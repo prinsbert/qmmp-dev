@@ -39,7 +39,7 @@ QObject *NotifierFactory::create(QObject *parent)
     return new Notifier(parent);
 }
 
-QDialog *NotifierFactory::createConfigDialog(QWidget *parent)
+QDialog *NotifierFactory::createSettings(QWidget *parent)
 {
     return new NotifierSettingsDialog(parent);
 }

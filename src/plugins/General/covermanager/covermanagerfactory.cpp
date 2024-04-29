@@ -39,7 +39,7 @@ QObject *CoverManagerFactory::create(QObject *parent)
     return new CoverManager(parent);
 }
 
-QDialog *CoverManagerFactory::createConfigDialog(QWidget *)
+QDialog *CoverManagerFactory::createSettings(QWidget *)
 {
     return nullptr;
 }

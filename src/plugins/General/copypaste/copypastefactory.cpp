@@ -38,7 +38,7 @@ QObject *CopyPasteFactory::create(QObject *parent)
     return new CopyPaste(parent);
 }
 
-QDialog *CopyPasteFactory::createConfigDialog(QWidget *)
+QDialog *CopyPasteFactory::createSettings(QWidget *)
 {
     return nullptr;
 }

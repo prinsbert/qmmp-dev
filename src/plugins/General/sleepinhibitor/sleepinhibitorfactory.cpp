@@ -38,7 +38,7 @@ QObject *SleepInhibitFactory::create(QObject *parent)
     return new SleepInhibitor(parent);
 }
 
-QDialog *SleepInhibitFactory::createConfigDialog(QWidget *parent)
+QDialog *SleepInhibitFactory::createSettings(QWidget *parent)
 {
     Q_UNUSED(parent);
     return nullptr;

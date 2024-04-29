@@ -39,7 +39,7 @@ QObject *FileOpsFactory::create(QObject *parent)
     return new FileOps(parent);
 }
 
-QDialog *FileOpsFactory::createConfigDialog(QWidget *parent)
+QDialog *FileOpsFactory::createSettings(QWidget *parent)
 {
     return new FileOpsSettingsDialog(parent);
 }
