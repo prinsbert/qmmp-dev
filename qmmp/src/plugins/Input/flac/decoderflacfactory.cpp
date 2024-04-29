@@ -210,8 +210,10 @@ MetaDataModel* DecoderFLACFactory::createMetaDataModel(const QString &path, bool
     return nullptr;
 }
 
-void DecoderFLACFactory::showSettings(QWidget *)
-{}
+QDialog *DecoderFLACFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void DecoderFLACFactory::showAbout(QWidget *parent)
 {

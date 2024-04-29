@@ -29,7 +29,6 @@ Bs2bSettingsDialog::Bs2bSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::Bs2bSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
     m_ui->feedSlider->setRange(BS2B_MINFEED, BS2B_MAXFEED);
     m_ui->freqSlider->setRange(BS2B_MINFCUT, BS2B_MAXFCUT);
     QSettings settings;

@@ -28,7 +28,6 @@ GmeSettingsDialog::GmeSettingsDialog(QWidget *parent) :
     m_ui(new Ui::GmeSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
     QSettings settings;
     m_ui->fadeoutCheckBox->setChecked(settings.value(u"GME/fadeout"_s, false).toBool());
     m_ui->fadeoutSpinBox->setValue(settings.value(u"GME/fadeout_length"_s, 7000).toInt());

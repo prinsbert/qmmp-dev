@@ -34,7 +34,6 @@ FFmpegSettingsDialog::FFmpegSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::FFmpegSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
     QSettings settings;
     QStringList disabledFilters = { u"*.mp3"_s };
     disabledFilters = settings.value(u"FFMPEG/disabled_filters"_s, disabledFilters).toStringList();

@@ -171,19 +171,21 @@ void PluginItem::showAbout(QWidget *parent)
 
 void PluginItem::showSettings(QWidget *parent)
 {
+    QDialog *settingDialog = nullptr;
+
     switch(type())
     {
     case PluginItem::TRANSPORT:
-        static_cast<InputSourceFactory *>(m_factory)->showSettings(parent);
+        settingDialog = static_cast<InputSourceFactory *>(m_factory)->createSettings(parent);
         break;
     case PluginItem::DECODER:
-        static_cast<DecoderFactory *>(m_factory)->showSettings(parent);
+        settingDialog = static_cast<DecoderFactory *>(m_factory)->createSettings(parent);
         break;
     case PluginItem::ENGINE:
-        static_cast<EngineFactory *>(m_factory)->showSettings(parent);
+        settingDialog = static_cast<EngineFactory *>(m_factory)->createSettings(parent);
         break;
     case PluginItem::EFFECT:
-        static_cast<EffectFactory *>(m_factory)->showSettings(parent);
+        settingDialog = static_cast<EffectFactory *>(m_factory)->createSettings(parent);
         break;
     case PluginItem::VISUAL:
         Visual::showSettings(static_cast<VisualFactory *>(m_factory), parent);
@@ -192,10 +194,16 @@ void PluginItem::showSettings(QWidget *parent)
         General::showSettings(static_cast<GeneralFactory *>(m_factory), parent);
         break;
     case PluginItem::OUTPUT:
-        static_cast<OutputFactory *>(m_factory)->showSettings(parent);
+        settingDialog = static_cast<OutputFactory *>(m_factory)->createSettings(parent);
         break;
     default:
         ;
+    }
+
+    if(settingDialog)
+    {
+        settingDialog->exec();
+        settingDialog->deleteLater();
     }
 }
 

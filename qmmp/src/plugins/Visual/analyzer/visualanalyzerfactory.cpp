@@ -39,7 +39,7 @@ Visual *VisualAnalyzerFactory::create(QWidget *parent)
     return new Analyzer(parent);
 }
 
-QDialog *VisualAnalyzerFactory::createConfigDialog(QWidget *parent)
+QDialog *VisualAnalyzerFactory::createSettings(QWidget *parent)
 {
     return new AnalyzerSettingsDialog(parent);
 }

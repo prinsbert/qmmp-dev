@@ -44,8 +44,9 @@ Volume *OutputJACKFactory::createVolume()
     return nullptr;
 }
 
-void OutputJACKFactory::showSettings(QWidget*)
+QDialog *OutputJACKFactory::createSettings(QWidget*)
 {
+    return nullptr;
 }
 
 void OutputJACKFactory::showAbout(QWidget *parent)

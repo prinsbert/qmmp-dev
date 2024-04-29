@@ -33,8 +33,8 @@ public:
     DecoderProperties properties() const override;
     Decoder *create(const QString &, QIODevice *) override;
     QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *) override;
-    MetaDataModel* createMetaDataModel(const QString &path, bool readOnly) override;
-    void showSettings(QWidget *parent) override;
+    MetaDataModel *createMetaDataModel(const QString &path, bool readOnly) override;
+    QDialog *createSettings(QWidget *parent) override;
     void showAbout(QWidget *parent) override;
     QString translation() const override;
 };

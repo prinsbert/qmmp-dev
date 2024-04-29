@@ -118,8 +118,10 @@ QList<TrackInfo *> DecoderVorbisFactory::createPlayList(const QString &path, Tra
     return QList<TrackInfo*>() << info;
 }
 
-void DecoderVorbisFactory::showSettings(QWidget *)
-{}
+QDialog *DecoderVorbisFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void DecoderVorbisFactory::showAbout(QWidget *parent)
 {

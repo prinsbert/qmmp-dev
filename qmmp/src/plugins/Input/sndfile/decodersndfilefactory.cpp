@@ -216,8 +216,10 @@ MetaDataModel* DecoderSndFileFactory::createMetaDataModel(const QString&, bool)
     return nullptr;
 }
 
-void DecoderSndFileFactory::showSettings(QWidget *)
-{}
+QDialog *DecoderSndFileFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void DecoderSndFileFactory::showAbout(QWidget *parent)
 {

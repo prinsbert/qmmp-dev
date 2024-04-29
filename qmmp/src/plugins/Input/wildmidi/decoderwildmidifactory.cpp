@@ -95,10 +95,9 @@ MetaDataModel* DecoderWildMidiFactory::createMetaDataModel(const QString &path, 
     return nullptr;
 }
 
-void DecoderWildMidiFactory::showSettings(QWidget *parent)
+QDialog *DecoderWildMidiFactory::createSettings(QWidget *parent)
 {
-    WildMidiSettingsDialog *d = new WildMidiSettingsDialog(parent);
-    d->show();
+    return new WildMidiSettingsDialog(parent);
 }
 
 void DecoderWildMidiFactory::showAbout(QWidget *parent)

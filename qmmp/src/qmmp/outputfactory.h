@@ -27,6 +27,7 @@ class QObject;
 class QString;
 class QIODevice;
 class QWidget;
+class QDialog;
 class Volume;
 class Decoder;
 class Output;
@@ -65,10 +66,11 @@ public:
      */
     virtual Volume *createVolume() = 0;
     /*!
-     * Shows settings dialog.
+     * Creates settings dialog.
      * @param parent Parent widget.
+     * @return Settings dialog pointer.
      */
-    virtual void showSettings(QWidget *parent) = 0;
+    virtual QDialog *createSettings(QWidget *parent) = 0;
     /*!
      * Shows about dialog.
      * @param parent Parent widget.

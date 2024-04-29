@@ -71,10 +71,9 @@ MetaDataModel* DecoderCUEFactory::createMetaDataModel(const QString &path, bool 
     return path.startsWith(u"cue://"_s) ? new CUEMetaDataModel(readOnly, path) : nullptr;
 }
 
-void DecoderCUEFactory::showSettings(QWidget *parent)
+QDialog *DecoderCUEFactory::createSettings(QWidget *parent)
 {
-     CueSettingsDialog *s = new CueSettingsDialog(parent);
-     s->show();
+    return new CueSettingsDialog(parent);
 }
 
 void DecoderCUEFactory::showAbout(QWidget *parent)

@@ -115,8 +115,10 @@ QList<TrackInfo *> DecoderOpusFactory::createPlayList(const QString &path, Track
     return QList<TrackInfo*>() << info;
 }
 
-void DecoderOpusFactory::showSettings(QWidget *)
-{}
+QDialog *DecoderOpusFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void DecoderOpusFactory::showAbout(QWidget *parent)
 {

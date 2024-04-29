@@ -26,7 +26,6 @@ MmsSettingsDialog::MmsSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::MmsSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
     QSettings settings;
     m_ui->bufferSizeSpinBox->setValue(settings.value("MMS/buffer_size"_L1, 384).toInt());
 }

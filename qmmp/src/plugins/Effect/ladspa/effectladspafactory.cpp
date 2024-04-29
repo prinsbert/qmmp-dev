@@ -39,10 +39,9 @@ Effect *EffectLADSPAFactory::create()
     return new LADSPAHelper();
 }
 
-void EffectLADSPAFactory::showSettings(QWidget *parent)
+QDialog *EffectLADSPAFactory::createSettings(QWidget *parent)
 {
-    LADSPASettingsDialog *s = new LADSPASettingsDialog(parent);
-    s->show();
+    return new LADSPASettingsDialog(parent);
 }
 
 void EffectLADSPAFactory::showAbout(QWidget *parent)

@@ -44,9 +44,10 @@ Volume *OutputPipeWireFactory::createVolume()
     return new VolumePipeWire;
 }
 
-void OutputPipeWireFactory::showSettings(QWidget *parent)
+QDialog *OutputPipeWireFactory::createSettings(QWidget *parent)
 {
-   Q_UNUSED(parent);
+    Q_UNUSED(parent);
+    return nullptr;
 }
 
 void OutputPipeWireFactory::showAbout(QWidget *parent)

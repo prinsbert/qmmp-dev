@@ -28,7 +28,6 @@ ShoutSettingsDialog::ShoutSettingsDialog(QWidget *parent) :
     m_ui(new Ui::ShoutSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
     QSettings settings;
     settings.beginGroup(u"Shout"_s);
     m_ui->hostLineEdit->setText(settings.value(u"host"_s, u"127.0.0.1"_s).toString());

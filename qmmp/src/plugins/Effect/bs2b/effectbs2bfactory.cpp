@@ -40,10 +40,9 @@ Effect *EffectBs2bFactory::create()
     return new Bs2bPlugin();
 }
 
-void EffectBs2bFactory::showSettings(QWidget *parent)
+QDialog *EffectBs2bFactory::createSettings(QWidget *parent)
 {
-    Bs2bSettingsDialog *s = new Bs2bSettingsDialog(parent);
-    s->show();
+    return new Bs2bSettingsDialog(parent);
 }
 
 void EffectBs2bFactory::showAbout(QWidget *parent)
