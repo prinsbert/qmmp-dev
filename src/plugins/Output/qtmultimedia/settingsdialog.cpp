@@ -28,7 +28,6 @@
 SettingsDialog::SettingsDialog (QWidget *parent) : QDialog (parent)
 {
     ui.setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
 
 	const QSettings settings;
     const QByteArray default_device = settings.value("QTMULTIMEDIA/device").toByteArray();
