@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2005-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,29 +17,33 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#include <QSettings>
-#include <qmmp/qmmp.h>
-#ifdef WITH_ENCA
-#include <enca.h>
+#ifndef ANALYZERCOLORWIDGET_H
+#define ANALYZERCOLORWIDGET_H
+
+#include <QFrame>
+#include <QPaintEvent>
+
+/**
+@author Ilya Kotov
+*/
+class AnalyzerColorWidget : public QFrame
+{
+    Q_OBJECT
+public:
+    AnalyzerColorWidget(QWidget *parent = nullptr);
+
+    ~AnalyzerColorWidget();
+
+    const QString colorName() const;
+
+public slots:
+    void setColor (QString);
+
+private:
+    void mousePressEvent(QMouseEvent *) override;
+    QString m_colorName;
+
+
+};
+
 #endif
-#include "settingsdialog.h"
-
-SettingsDialog::SettingsDialog(QWidget *parent)
-        : QDialog(parent)
-{
-    ui.setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
-    QSettings settings;
-    ui.bufferSizeSpinBox->setValue(settings.value("MMS/buffer_size",384).toInt());
-}
-
-
-SettingsDialog::~SettingsDialog()
-{}
-
-void SettingsDialog::accept()
-{
-    QSettings settings;
-    settings.setValue("MMS/buffer_size", ui.bufferSizeSpinBox->value());
-    QDialog::accept();
-}

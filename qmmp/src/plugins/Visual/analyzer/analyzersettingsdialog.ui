@@ -112,7 +112,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="ColorWidget" name="peakColorWidget" native="true">
+       <widget class="AnalyzerColorWidget" name="peakColorWidget">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -144,7 +144,7 @@
        </widget>
       </item>
       <item row="0" column="4">
-       <widget class="ColorWidget" name="colorWidget1" native="true">
+       <widget class="AnalyzerColorWidget" name="colorWidget1">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -176,7 +176,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="ColorWidget" name="bgColorWidget" native="true">
+       <widget class="AnalyzerColorWidget" name="bgColorWidget">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -208,7 +208,7 @@
        </widget>
       </item>
       <item row="1" column="4">
-       <widget class="ColorWidget" name="colorWidget2" native="true">
+       <widget class="AnalyzerColorWidget" name="colorWidget2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -253,7 +253,7 @@
        </widget>
       </item>
       <item row="2" column="4">
-       <widget class="ColorWidget" name="colorWidget3" native="true">
+       <widget class="AnalyzerColorWidget" name="colorWidget3">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -314,9 +314,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ColorWidget</class>
-   <extends>QWidget</extends>
-   <header>colorwidget.h</header>
+   <class>AnalyzerColorWidget</class>
+   <extends>QFrame</extends>
+   <header>analyzercolorwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

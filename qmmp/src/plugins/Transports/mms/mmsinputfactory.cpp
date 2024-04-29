@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2013 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,7 +21,7 @@
 #include <QtPlugin>
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "mmssettingsdialog.h"
 #include "mmsinputsource.h"
 #include "mmsinputfactory.h"
 
@@ -43,7 +43,7 @@ InputSource *MMSInputFactory::create(const QString &url, QObject *parent)
 
 void MMSInputFactory::showSettings(QWidget *parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
+    MmsSettingsDialog *s = new MmsSettingsDialog(parent);
     s->show();
 }
 

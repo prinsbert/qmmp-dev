@@ -8,7 +8,7 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 SET(libanalyzer_SRCS
     analyzer.cpp
-    colorwidget.cpp
+    analyzercolorwidget.cpp
     analyzersettingsdialog.cpp
     visualanalyzerfactory.cpp
     fft.c

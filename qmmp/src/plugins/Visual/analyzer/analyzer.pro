@@ -3,16 +3,16 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Visual/analyzer
 
 HEADERS += analyzer.h \
+           analyzercolorwidget.h \
            analyzersettingsdialog.h \
            fft.h \
            visualanalyzerfactory.h \
-           inlines.h \
-           colorwidget.h
+           inlines.h
 SOURCES += analyzer.cpp \
+           analyzercolorwidget.cpp \
            analyzersettingsdialog.cpp \
            fft.c \
-           visualanalyzerfactory.cpp \
-           colorwidget.cpp
+           visualanalyzerfactory.cpp
 
 FORMS += \
     analyzersettingsdialog.ui

@@ -5,16 +5,17 @@ TARGET = $$PLUGINS_PREFIX/Transports/mms
 HEADERS += \
     mmsinputfactory.h \
     mmsinputsource.h \
-    settingsdialog.h \
+    mmssettingsdialog.h \
     mmsstreamreader.h
 
 SOURCES += \
     mmsinputfactory.cpp \
     mmsinputsource.cpp \
-    settingsdialog.cpp \
+    mmssettingsdialog.cpp \
     mmsstreamreader.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    mmssettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2014 by Ilya Kotov                                 *
+ *   Copyright (C) 2005-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,33 +17,37 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef COLORWIDGET_H
-#define COLORWIDGET_H
 
-#include <QFrame>
-#include <QPaintEvent>
+#include <QColorDialog>
+#include <QPalette>
+#include "analyzercolorwidget.h"
 
-/**
-@author Ilya Kotov
-*/
-class ColorWidget : public QFrame
+AnalyzerColorWidget::AnalyzerColorWidget(QWidget *parent) : QFrame(parent)
 {
-    Q_OBJECT
-public:
-    ColorWidget(QWidget *parent = nullptr);
+    setFrameShape(QFrame::Box);
+    setAutoFillBackground(true);
+}
 
-    ~ColorWidget();
+AnalyzerColorWidget::~AnalyzerColorWidget()
+{}
 
-    const QString colorName() const;
+void AnalyzerColorWidget::mousePressEvent(QMouseEvent *)
+{
+    QColor color = QColorDialog::getColor(palette().color(backgroundRole()), parentWidget(),
+                                          tr("Select Color"));
+    if (color.isValid())
+    {
+        setColor(color.name());
+    }
+}
 
-public slots:
-    void setColor (QString);
+void AnalyzerColorWidget::setColor(QString c)
+{
+    m_colorName = c;
+    setStyleSheet(QStringLiteral("QFrame { background: %1 }").arg(m_colorName));
+}
 
-private:
-    void mousePressEvent(QMouseEvent *) override;
-    QString m_colorName;
-
-
-};
-
-#endif
+const QString AnalyzerColorWidget::colorName() const
+{
+    return m_colorName;
+}
