@@ -383,7 +383,7 @@ void ConfigDialog::loadLanguages()
 
     for(auto it = l.cbegin(); it != l.cend(); ++it)
     {
-        QString title = it.key() != u"auto"_s ? QStringLiteral("%1 (%2)").arg(it.value(), it.key()) : it.key();
+        QString title = it.key() != "auto"_L1 ? QStringLiteral("%1 (%2)").arg(it.value(), it.key()) : it.value();
         m_ui->langComboBox->addItem(title, it.key());
     }
 
