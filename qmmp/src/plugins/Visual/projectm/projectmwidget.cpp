@@ -43,7 +43,7 @@ ProjectMWidget::ProjectMWidget(QListWidget *listWidget, QWidget *parent)
     setMouseTracking(true);
     m_listWidget = listWidget;
     m_menu = new QMenu(this);
-    connect(SoundCore::instance(), SIGNAL(trackInfoChanged()), SLOT(updateTitle()));
+    connect(SoundCore::instance(), &SoundCore::trackInfoChanged, this, &ProjectMWidget::updateTitle);
     createActions();
 }
 
@@ -95,9 +95,9 @@ void ProjectMWidget::initializeGL()
         settings.textureSize = 1024;
         settings.windowWidth = 512;
         settings.windowHeight = 512;
-        settings.presetURL = QString(qApp->applicationDirPath() + "/projectM/presets").toLocal8Bit().constData();
-        settings.titleFontURL = QString(qApp->applicationDirPath() + "/projectM/fonts/Vera.ttf").toLocal8Bit().constData();
-        settings.menuFontURL = QString(qApp->applicationDirPath() + "/projectM/fonts/VeraMono.ttf").toLocal8Bit().constData();
+        settings.presetURL = QString(qApp->applicationDirPath() + u"/projectM/presets"_s).toLocal8Bit().constData();
+        settings.titleFontURL = QString(qApp->applicationDirPath() + u"/projectM/fonts/Vera.ttf"_s).toLocal8Bit().constData();
+        settings.menuFontURL = QString(qApp->applicationDirPath() + u"/projectM/fonts/VeraMono.ttf"_s).toLocal8Bit().constData();
         settings.smoothPresetDuration = 5;
         settings.presetDuration = 30;
         settings.beatSensitivity = 1.0;
@@ -111,15 +111,15 @@ void ProjectMWidget::initializeGL()
 #endif
         findPresets(QString::fromLocal8Bit(m_projectM->settings().presetURL.c_str()));
 
-        connect(m_listWidget, SIGNAL(currentRowChanged(int)), m_projectM, SLOT(selectPreset(int)));
-        connect(m_projectM, SIGNAL(currentPresetChanged(int)), SLOT(setCurrentRow(int)));
+        connect(m_listWidget, &QListWidget::currentRowChanged, m_projectM, &ProjectMWrapper::selectPreset);
+        connect(m_projectM, &ProjectMWrapper::currentPresetChanged, this, &ProjectMWidget::setCurrentRow);
         updateTitle();
     }
 }
 
-void ProjectMWidget::resizeGL (int w, int h)
+void ProjectMWidget::resizeGL(int w, int h)
 {
-    if (m_projectM)
+    if(m_projectM)
     {
         m_projectM->projectM_resetGL(w, h);
         initializeGL();
@@ -128,13 +128,13 @@ void ProjectMWidget::resizeGL (int w, int h)
 
 void ProjectMWidget::paintGL()
 {
-    if (m_projectM)
+    if(m_projectM)
         m_projectM->renderFrame();
 }
 
 void ProjectMWidget::mousePressEvent (QMouseEvent *event)
 {
-    if (event->button () == Qt::RightButton)
+    if(event->button () == Qt::RightButton)
         m_menu->exec(event->globalPosition().toPoint());
 }
 

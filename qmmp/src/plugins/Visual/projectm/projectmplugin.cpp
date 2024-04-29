@@ -34,6 +34,8 @@
 #endif
 #include "projectmplugin.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 ProjectMPlugin::ProjectMPlugin (QWidget *parent)
         : Visual (parent, Qt::Window | Qt::MSWindowsOwnDC)
 {
@@ -58,18 +60,18 @@ ProjectMPlugin::ProjectMPlugin (QWidget *parent)
     layout->setContentsMargins(0,0,0,0);
     setLayout(layout);
     addActions(m_projectMWidget->actions());
-    connect(m_projectMWidget, SIGNAL(showMenuToggled(bool)), listWidget, SLOT(setVisible(bool)));
-    connect(m_projectMWidget, SIGNAL(fullscreenToggled(bool)), SLOT(setFullScreen(bool)));
+    connect(m_projectMWidget, &ProjectMWidget::showMenuToggled, listWidget, &QListWidget::setVisible);
+    connect(m_projectMWidget, &ProjectMWidget::fullscreenToggled, this, &ProjectMPlugin::setFullScreen);
     listWidget->hide();
     resize(600,400);
     QSettings settings;
-    restoreGeometry(settings.value("ProjectM/geometry").toByteArray());
+    restoreGeometry(settings.value("ProjectM/geometry"_L1).toByteArray());
     m_splitter->setSizes(QList<int>() << 300 << 300);
-    m_splitter->restoreState(settings.value("ProjectM/splitter_sizes").toByteArray());
+    m_splitter->restoreState(settings.value("ProjectM/splitter_sizes"_L1).toByteArray());
 
     m_timer = new QTimer(this);
     m_timer->setInterval(0);
-    connect(m_timer, SIGNAL(timeout()), SLOT(onTimeout()));
+    connect(m_timer, &QTimer::timeout, this, &ProjectMPlugin::onTimeout);
 }
 
 ProjectMPlugin::~ProjectMPlugin()
@@ -108,8 +110,8 @@ void ProjectMPlugin::closeEvent(QCloseEvent *event)
 {
     //save geometry
     QSettings settings;
-    settings.setValue("ProjectM/geometry", saveGeometry());
-    settings.setValue("ProjectM/splitter_sizes", m_splitter->saveState());
+    settings.setValue("ProjectM/geometry"_L1, saveGeometry());
+    settings.setValue("ProjectM/splitter_sizes"_L1, m_splitter->saveState());
     Visual::closeEvent(event); //removes visualization object
 }
 
