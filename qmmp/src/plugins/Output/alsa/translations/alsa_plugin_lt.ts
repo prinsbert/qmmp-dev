@@ -2,6 +2,69 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="lt">
 <context>
+    <name>AlsaSettingsDialog</name>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="14"/>
+        <source>ALSA Plugin Settings</source>
+        <translation type="unfinished">ALSA įskiepio nustatymai</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="33"/>
+        <source>Device Settings</source>
+        <translation type="unfinished">Įrangos nustatymai</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="54"/>
+        <source>Audio device</source>
+        <translation type="unfinished">Garso įranga</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="70"/>
+        <source>Mixer</source>
+        <translation type="unfinished">Glotintuvas</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="94"/>
+        <source>Mixer card:</source>
+        <translation type="unfinished">Glotintuvo plokštė :</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="104"/>
+        <source>Mixer device:</source>
+        <translation type="unfinished">Glotintuvo įranga:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="121"/>
+        <source>Advanced Settings</source>
+        <translation type="unfinished">Papildomi nustatymai</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="142"/>
+        <source>Soundcard</source>
+        <translation type="unfinished">Garso plokštė</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="148"/>
+        <source>Buffer time (ms):</source>
+        <translation type="unfinished">Buferio laikas (ms):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="184"/>
+        <source>Period time (ms):</source>
+        <translation type="unfinished">Periodo laikas (ms):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="220"/>
+        <source>Use mmap access</source>
+        <translation type="unfinished">Naudoti mmap prieigą</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="240"/>
+        <source>Use snd_pcm_pause function</source>
+        <translation type="unfinished">Naudoti snd_pcm_pause funciją</translation>
+    </message>
+</context>
+<context>
     <name>OutputALSAFactory</name>
     <message>
         <location filename="../outputalsafactory.cpp" line="31"/>
@@ -22,69 +85,6 @@
         <location filename="../outputalsafactory.cpp" line="58"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="33"/>
-        <source>Device Settings</source>
-        <translation>Įrangos nustatymai</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Audio device</source>
-        <translation>Garso įranga</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Mixer</source>
-        <translation>Glotintuvas</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="76"/>
-        <source>Mixer card:</source>
-        <translation>Glotintuvo plokštė :</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="86"/>
-        <source>Mixer device:</source>
-        <translation>Glotintuvo įranga:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="103"/>
-        <source>Advanced Settings</source>
-        <translation>Papildomi nustatymai</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="115"/>
-        <source>Soundcard</source>
-        <translation>Garso plokštė</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="121"/>
-        <source>Buffer time (ms):</source>
-        <translation>Buferio laikas (ms):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="157"/>
-        <source>Period time (ms):</source>
-        <translation>Periodo laikas (ms):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="213"/>
-        <source>Use snd_pcm_pause function</source>
-        <translation>Naudoti snd_pcm_pause funciją</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>ALSA Plugin Settings</source>
-        <translation>ALSA įskiepio nustatymai</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="193"/>
-        <source>Use mmap access</source>
-        <translation>Naudoti mmap prieigą</translation>
     </message>
 </context>
 </TS>

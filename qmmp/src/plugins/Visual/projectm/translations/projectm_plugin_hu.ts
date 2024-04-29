@@ -67,7 +67,7 @@
 <context>
     <name>ProjectMPlugin</name>
     <message>
-        <location filename="../projectmplugin.cpp" line="41"/>
+        <location filename="../projectmplugin.cpp" line="43"/>
         <source>ProjectM</source>
         <translation type="unfinished"></translation>
     </message>

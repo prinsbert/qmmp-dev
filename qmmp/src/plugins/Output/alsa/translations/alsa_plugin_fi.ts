@@ -2,6 +2,69 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fi">
 <context>
+    <name>AlsaSettingsDialog</name>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="14"/>
+        <source>ALSA Plugin Settings</source>
+        <translation type="unfinished">Asetukset ALSA Plugin</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="33"/>
+        <source>Device Settings</source>
+        <translation type="unfinished">Laiteasetukset</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="54"/>
+        <source>Audio device</source>
+        <translation type="unfinished">Ääniasetukset</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="70"/>
+        <source>Mixer</source>
+        <translation type="unfinished">Mikseri</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="94"/>
+        <source>Mixer card:</source>
+        <translation type="unfinished">Mikserikortti:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="104"/>
+        <source>Mixer device:</source>
+        <translation type="unfinished">Mikserilaite:</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="121"/>
+        <source>Advanced Settings</source>
+        <translation type="unfinished">Lisäasetukset</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="142"/>
+        <source>Soundcard</source>
+        <translation type="unfinished">Äänikortti</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="148"/>
+        <source>Buffer time (ms):</source>
+        <translation type="unfinished">Puskurin aika (ms):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="184"/>
+        <source>Period time (ms):</source>
+        <translation type="unfinished">Tarkastelujakso (ms):</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="220"/>
+        <source>Use mmap access</source>
+        <translation type="unfinished">Käytä mmap yhteyttä</translation>
+    </message>
+    <message>
+        <location filename="../alsasettingsdialog.ui" line="240"/>
+        <source>Use snd_pcm_pause function</source>
+        <translation type="unfinished">Käytä snd_pcm_pause-funktiota</translation>
+    </message>
+</context>
+<context>
     <name>OutputALSAFactory</name>
     <message>
         <location filename="../outputalsafactory.cpp" line="31"/>
@@ -22,69 +85,6 @@
         <location filename="../outputalsafactory.cpp" line="58"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>ALSA Plugin Settings</source>
-        <translation>Asetukset ALSA Plugin</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="33"/>
-        <source>Device Settings</source>
-        <translation>Laiteasetukset</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Audio device</source>
-        <translation>Ääniasetukset</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Mixer</source>
-        <translation>Mikseri</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="76"/>
-        <source>Mixer card:</source>
-        <translation>Mikserikortti:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="86"/>
-        <source>Mixer device:</source>
-        <translation>Mikserilaite:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="103"/>
-        <source>Advanced Settings</source>
-        <translation>Lisäasetukset</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="115"/>
-        <source>Soundcard</source>
-        <translation>Äänikortti</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="121"/>
-        <source>Buffer time (ms):</source>
-        <translation>Puskurin aika (ms):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="157"/>
-        <source>Period time (ms):</source>
-        <translation>Tarkastelujakso (ms):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="193"/>
-        <source>Use mmap access</source>
-        <translation>Käytä mmap yhteyttä</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="213"/>
-        <source>Use snd_pcm_pause function</source>
-        <translation>Käytä snd_pcm_pause-funktiota</translation>
     </message>
 </context>
 </TS>

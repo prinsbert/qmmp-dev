@@ -30,51 +30,51 @@
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>HttpSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation>Ρυθμίσεις πρόσθετου HTTP</translation>
+        <translation type="unfinished">Ρυθμίσεις πρόσθετου HTTP</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../httpsettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Μέγεθος ενδιάμεσης μνήμης:</translation>
+        <translation type="unfinished">Μέγεθος ενδιάμεσης μνήμης:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../httpsettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>KB</translation>
+        <translation type="unfinished">KB</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="78"/>
         <source>Metadata encoding</source>
-        <translation>Κωδικοποίηση μεταδεδομένων</translation>
+        <translation type="unfinished">Κωδικοποίηση μεταδεδομένων</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="84"/>
         <source>Automatic charset detection</source>
-        <translation>Αυτόματη ανίχνευση συνόλου χαρακτήρων</translation>
+        <translation type="unfinished">Αυτόματη ανίχνευση συνόλου χαρακτήρων</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="94"/>
         <source>Language:</source>
-        <translation>Γλώσσα:</translation>
+        <translation type="unfinished">Γλώσσα:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="114"/>
         <source>Default encoding:</source>
-        <translation>Εξ ορισμού κωδικοποίηση:</translation>
+        <translation type="unfinished">Εξ ορισμού κωδικοποίηση:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="137"/>
         <source>User Agent:</source>
-        <translation>Πράκτορας χρήστη:</translation>
+        <translation type="unfinished">Πράκτορας χρήστη:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Change User Agent</source>
-        <translation>Αλλαγή πράκτορα χρήστη</translation>
+        <translation type="unfinished">Αλλαγή πράκτορα χρήστη</translation>
     </message>
 </context>
 </TS>

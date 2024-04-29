@@ -2,6 +2,54 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
+    <name>OssSettingsDialog</name>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="14"/>
+        <source>OSS Plugin Settings</source>
+        <translation type="unfinished">Ustawienia wtyczki OSS</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="33"/>
+        <source>Device Settings</source>
+        <translation type="unfinished">Ustawienia urządzenia</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="54"/>
+        <source>Audio device</source>
+        <translation type="unfinished">Urządzenie dźwiękowe</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="70"/>
+        <source>Mixer device</source>
+        <translation type="unfinished">Urządzenie miksujące</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="102"/>
+        <source>Advanced Settings</source>
+        <translation type="unfinished">Ustawienia zaawansowane</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="123"/>
+        <source>Soundcard</source>
+        <translation type="unfinished">Karta dźwiękowa</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="196"/>
+        <source>Buffer time (ms):</source>
+        <translation type="unfinished">Czas bufora (ms):</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="206"/>
+        <source>Period time (ms):</source>
+        <translation type="unfinished">Długość cyklu (ms):</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="236"/>
+        <source>PCM over Master</source>
+        <translation type="unfinished">Użyj PCM nad Master</translation>
+    </message>
+</context>
+<context>
     <name>OutputOSSFactory</name>
     <message>
         <location filename="../outputossfactory.cpp" line="36"/>
@@ -27,54 +75,6 @@
         <location filename="../outputossfactory.cpp" line="59"/>
         <source>Based on code by: Brad Hughes &lt;bhughes@trolltech.com&gt;</source>
         <translation>Oparta na kodzie stworzonym przez Brada Hughesa &lt;bhughes@trolltech.com&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>OSS Plugin Settings</source>
-        <translation>Ustawienia wtyczki OSS</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="33"/>
-        <source>Device Settings</source>
-        <translation>Ustawienia urządzenia</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Audio device</source>
-        <translation>Urządzenie dźwiękowe</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Mixer device</source>
-        <translation>Urządzenie miksujące</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="84"/>
-        <source>Advanced Settings</source>
-        <translation>Ustawienia zaawansowane</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="96"/>
-        <source>Soundcard</source>
-        <translation>Karta dźwiękowa</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="160"/>
-        <source>Buffer time (ms):</source>
-        <translation>Czas bufora (ms):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="170"/>
-        <source>Period time (ms):</source>
-        <translation>Długość cyklu (ms):</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="200"/>
-        <source>PCM over Master</source>
-        <translation>Użyj PCM nad Master</translation>
     </message>
 </context>
 </TS>

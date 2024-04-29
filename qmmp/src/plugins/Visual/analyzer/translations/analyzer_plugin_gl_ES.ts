@@ -90,59 +90,59 @@
     </message>
 </context>
 <context>
+    <name>AnalyzerSettingsDialog</name>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="14"/>
+        <source>Analyzer Plugin Settings</source>
+        <translation type="unfinished">Preferencias do engadido Analizador</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="35"/>
+        <source>General</source>
+        <translation type="unfinished">Xeral</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="41"/>
+        <source>Cells size:</source>
+        <translation type="unfinished">Tamaño de celdas:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="101"/>
+        <source>Colors</source>
+        <translation type="unfinished">Cores</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="107"/>
+        <source>Peaks:</source>
+        <translation type="unfinished">Picos:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="139"/>
+        <source>Analyzer #1:</source>
+        <translation type="unfinished">Analizador #1:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="171"/>
+        <source>Background:</source>
+        <translation type="unfinished">Fondo:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="203"/>
+        <source>Analyzer #2:</source>
+        <translation type="unfinished">Analizador #2:</translation>
+    </message>
+    <message>
+        <location filename="../analyzersettingsdialog.ui" line="248"/>
+        <source>Analyzer #3:</source>
+        <translation type="unfinished">Analizador #3:</translation>
+    </message>
+</context>
+<context>
     <name>ColorWidget</name>
     <message>
         <location filename="../colorwidget.cpp" line="37"/>
         <source>Select Color</source>
         <translation>Seleccionar cor</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Analyzer Plugin Settings</source>
-        <translation>Preferencias do engadido Analizador</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="35"/>
-        <source>General</source>
-        <translation>Xeral</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="41"/>
-        <source>Cells size:</source>
-        <translation>Tamaño de celdas:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="101"/>
-        <source>Colors</source>
-        <translation>Cores</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="107"/>
-        <source>Peaks:</source>
-        <translation>Picos:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="139"/>
-        <source>Analyzer #1:</source>
-        <translation>Analizador #1:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="171"/>
-        <source>Background:</source>
-        <translation>Fondo:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="203"/>
-        <source>Analyzer #2:</source>
-        <translation>Analizador #2:</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="248"/>
-        <source>Analyzer #3:</source>
-        <translation>Analizador #3:</translation>
     </message>
 </context>
 <context>

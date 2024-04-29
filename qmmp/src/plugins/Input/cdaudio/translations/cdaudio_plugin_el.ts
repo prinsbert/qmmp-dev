@@ -77,12 +77,12 @@
         <translation>Μεταγλωττίστηκε χρησιμοποιώντας τις βιβλιοθήκες libcdio-%1 και libcddb-%2</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="100"/>
+        <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="101"/>
+        <location filename="../decodercdaudiofactory.cpp" line="102"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>Χρήση: ανοίξτε το cdda:/// χρησιμοποιώντας το διάλογο προσθήκης URL ή τη γραμμή εντολών</translation>
     </message>

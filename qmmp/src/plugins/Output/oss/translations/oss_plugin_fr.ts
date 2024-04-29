@@ -2,6 +2,54 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr">
 <context>
+    <name>OssSettingsDialog</name>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="14"/>
+        <source>OSS Plugin Settings</source>
+        <translation type="unfinished">Configuration du greffon OSS</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="33"/>
+        <source>Device Settings</source>
+        <translation type="unfinished">Configuration du périphérique</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="54"/>
+        <source>Audio device</source>
+        <translation type="unfinished">Périphérique audio</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="70"/>
+        <source>Mixer device</source>
+        <translation type="unfinished">Périphérique de mixage : </translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="102"/>
+        <source>Advanced Settings</source>
+        <translation type="unfinished">Configuration avancée</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="123"/>
+        <source>Soundcard</source>
+        <translation type="unfinished">Carte son</translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="196"/>
+        <source>Buffer time (ms):</source>
+        <translation type="unfinished">Taille du tampon (ms) : </translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="206"/>
+        <source>Period time (ms):</source>
+        <translation type="unfinished">Durée de la période (ms) : </translation>
+    </message>
+    <message>
+        <location filename="../osssettingsdialog.ui" line="236"/>
+        <source>PCM over Master</source>
+        <translation type="unfinished">PCM sur maître</translation>
+    </message>
+</context>
+<context>
     <name>OutputOSSFactory</name>
     <message>
         <location filename="../outputossfactory.cpp" line="36"/>
@@ -27,54 +75,6 @@
         <location filename="../outputossfactory.cpp" line="59"/>
         <source>Based on code by: Brad Hughes &lt;bhughes@trolltech.com&gt;</source>
         <translation>Basé sur du code par Brad Hughes &lt;bhughes@trolltech.com&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>OSS Plugin Settings</source>
-        <translation>Configuration du greffon OSS</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="33"/>
-        <source>Device Settings</source>
-        <translation>Configuration du périphérique</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Audio device</source>
-        <translation>Périphérique audio</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="61"/>
-        <source>Mixer device</source>
-        <translation>Périphérique de mixage : </translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="84"/>
-        <source>Advanced Settings</source>
-        <translation>Configuration avancée</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="96"/>
-        <source>Soundcard</source>
-        <translation>Carte son</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="160"/>
-        <source>Buffer time (ms):</source>
-        <translation>Taille du tampon (ms) : </translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="170"/>
-        <source>Period time (ms):</source>
-        <translation>Durée de la période (ms) : </translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="200"/>
-        <source>PCM over Master</source>
-        <translation>PCM sur maître</translation>
     </message>
 </context>
 </TS>
