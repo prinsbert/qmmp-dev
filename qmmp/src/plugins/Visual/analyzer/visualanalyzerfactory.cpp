@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,7 +20,7 @@
 
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "analyzersettingsdialog.h"
 #include "visualanalyzerfactory.h"
 #include "analyzer.h"
 
@@ -41,14 +41,14 @@ Visual *VisualAnalyzerFactory::create(QWidget *parent)
 
 QDialog *VisualAnalyzerFactory::createConfigDialog(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new AnalyzerSettingsDialog(parent);
 }
 
 void VisualAnalyzerFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About Analyzer Visual Plugin"),
-                        tr("Qmmp Analyzer Visual Plugin") + QChar::LineFeed +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Analyzer Visual Plugin"),
+                       tr("Qmmp Analyzer Visual Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString VisualAnalyzerFactory::translation() const
