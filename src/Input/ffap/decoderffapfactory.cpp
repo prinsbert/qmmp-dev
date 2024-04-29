@@ -142,16 +142,18 @@ MetaDataModel* DecoderFFapFactory::createMetaDataModel(const QString &path, bool
     return new FFapMetaDataModel(path, readOnly);
 }
 
-void DecoderFFapFactory::showSettings(QWidget *)
-{}
+QDialog *DecoderFFapFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void DecoderFFapFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About FFap Audio Plugin"),
-                        tr("Qmmp FFap Audio Plugin")+"\n"+
-                        tr("This plugin provides Monkey's Audio (APE) support") +"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")  +"\n"+
-                        tr("Based on code from deadbeef, FFmpeg and rockbox"));
+    QMessageBox::about(parent, tr("About FFap Audio Plugin"),
+                       tr("Qmmp FFap Audio Plugin")+"\n"+
+                       tr("This plugin provides Monkey's Audio (APE) support") +"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>")  +"\n"+
+                       tr("Based on code from deadbeef, FFmpeg and rockbox"));
 }
 
 QString DecoderFFapFactory::translation() const

@@ -30,7 +30,6 @@ SettingsDialog::SettingsDialog(QWidget *parent)
         : QDialog(parent)
 {
     m_ui.setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
 
     connect(m_ui.surDepthSlider, &QSlider::valueChanged, m_ui.label_11, qOverload<int>(&QLabel::setNum));
     connect(m_ui.surDelaySlider, &QSlider::valueChanged, m_ui.label_12, qOverload<int>(&QLabel::setNum));

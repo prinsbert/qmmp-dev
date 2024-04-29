@@ -36,7 +36,7 @@ Q_INTERFACES(InputSourceFactory)
 public:
     InputSourceProperties properties() const override;
     InputSource *create(const QString &url, QObject *parent = nullptr) override;
-    void showSettings(QWidget *parent) override;
+    QDialog *createSettings(QWidget *parent) override;
     void showAbout(QWidget *parent) override;
     QString translation() const override;
 };
