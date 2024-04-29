@@ -142,16 +142,16 @@ HttpStreamReader::HttpStreamReader(const QString &url, HTTPInputSource *parent) 
     curl_global_init(CURL_GLOBAL_ALL);
     m_thread = new DownloadThread(this);
     QSettings settings;
-    settings.beginGroup("HTTP");
-    m_codec = new QmmpTextCodec(settings.value("icy_encoding", u"UTF-8"_s).toByteArray ());
-    m_prebuffer_size = settings.value("buffer_size",384).toInt() * 1000;
+    settings.beginGroup("HTTP"_L1);
+    m_codec = new QmmpTextCodec(settings.value("icy_encoding"_L1, u"UTF-8"_s).toByteArray ());
+    m_prebuffer_size = settings.value("buffer_size"_L1, 384).toInt() * 1000;
     if(settings.value(u"override_user_agent"_s, false).toBool())
-        m_userAgent = settings.value("user_agent").toString();
+        m_userAgent = settings.value("user_agent"_L1).toString();
     if(m_userAgent.isEmpty())
         m_userAgent = QStringLiteral("qmmp/%1").arg(Qmmp::strVersion());;
 #ifdef WITH_ENCA
-    if(settings.value("use_enca", false).toBool())
-        m_analyser = enca_analyser_alloc(settings.value("enca_lang").toByteArray ().constData());
+    if(settings.value("use_enca"_L1, false).toBool())
+        m_analyser = enca_analyser_alloc(settings.value("enca_lang"_L1).toByteArray ().constData());
     if(m_analyser)
         enca_set_threshold(m_analyser, 1.38);
 #endif
@@ -176,23 +176,23 @@ HttpStreamReader::~HttpStreamReader()
     delete m_codec;
 }
 
-bool HttpStreamReader::atEnd () const
+bool HttpStreamReader::atEnd() const
 {
     return false;
 }
 
-qint64 HttpStreamReader::bytesToWrite () const
+qint64 HttpStreamReader::bytesToWrite() const
 {
     return -1;
 }
 
-void HttpStreamReader::close ()
+void HttpStreamReader::close()
 {
     abort();
     QIODevice::close();
 }
 
-bool HttpStreamReader::isSequential () const
+bool HttpStreamReader::isSequential() const
 {
     return true;
 }
