@@ -26,7 +26,6 @@ SettingsDialog::SettingsDialog(QWidget *parent)
  : QDialog(parent)
 {
     m_ui.setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
     QSettings settings;
     m_ui.srSpinBox->setValue(settings.value("SRC/sample_rate",48000).toInt());
     m_ui.engineComboBox->setCurrentIndex(settings.value("SRC/engine", 0).toInt());

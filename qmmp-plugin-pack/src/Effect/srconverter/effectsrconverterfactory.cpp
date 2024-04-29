@@ -40,17 +40,16 @@ Effect *EffectSRConverterFactory::create()
     return new SRConverter();
 }
 
-void EffectSRConverterFactory::showSettings(QWidget *parent)
+QDialog *EffectSRConverterFactory::createSettings(QWidget *parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
-    s ->show();
+    return new SettingsDialog(parent);
 }
 
 void EffectSRConverterFactory::showAbout(QWidget *parent)
 {
-     QMessageBox::about (parent, tr("About Sample Rate Converter Plugin"),
-                        tr("Qmmp Sample Rate Converter Plugin")+"\n"+
-                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About Sample Rate Converter Plugin"),
+                       tr("Qmmp Sample Rate Converter Plugin")+"\n"+
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString EffectSRConverterFactory::translation() const

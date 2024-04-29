@@ -45,9 +45,10 @@ InputSource *YtbInputFactory::create(const QString &url, QObject *parent)
     return new YtbInputSource(url, parent);
 }
 
-void YtbInputFactory::showSettings(QWidget *parent)
+QDialog *YtbInputFactory::createSettings(QWidget *parent)
 {
     Q_UNUSED(parent);
+    return nullptr;
 }
 
 void YtbInputFactory::showAbout(QWidget *parent)

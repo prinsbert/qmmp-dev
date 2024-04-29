@@ -151,8 +151,10 @@ MetaDataModel* FFVideoFactory::createMetaDataModel(const QString &path, bool rea
     return new FFVideoMetaDataModel(path);
 }
 
-void FFVideoFactory::showSettings(QWidget *)
-{}
+QDialog *FFVideoFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void FFVideoFactory::showAbout(QWidget *parent)
 {

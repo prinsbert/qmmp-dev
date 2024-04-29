@@ -39,7 +39,7 @@ Visual *VisualGoomFactory::create(QWidget *parent)
     return new GoomWidget(parent);
 }
 
-QDialog *VisualGoomFactory::createConfigDialog(QWidget *)
+QDialog *VisualGoomFactory::createSettings(QWidget *)
 {
     return nullptr;
 }

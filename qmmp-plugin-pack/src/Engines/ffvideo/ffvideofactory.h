@@ -35,7 +35,7 @@ public:
     AbstractEngine *create(QObject *parent = nullptr) override;
     QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *) override;
     MetaDataModel* createMetaDataModel(const QString &path, bool readOnly) override;
-    void showSettings(QWidget *) override;
+    QDialog *createSettings(QWidget *) override;
     void showAbout(QWidget *parent) override;
     QString translation() const override;
 };
