@@ -39,7 +39,7 @@ QObject *GnomeHotkeyFactory::create(QObject *parent)
     return new MediaKeys(parent);
 }
 
-QDialog *GnomeHotkeyFactory::createConfigDialog(QWidget *parent)
+QDialog *GnomeHotkeyFactory::createSettings(QWidget *parent)
 {
     Q_UNUSED(parent);
     return nullptr;

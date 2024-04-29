@@ -38,7 +38,7 @@ QObject *TaskbarFactory::create(QObject *parent)
     return new TaskbarHelper(parent);
 }
 
-QDialog *TaskbarFactory::createConfigDialog(QWidget *parent)
+QDialog *TaskbarFactory::createSettings(QWidget *parent)
 {
     Q_UNUSED(parent);
     return nullptr;

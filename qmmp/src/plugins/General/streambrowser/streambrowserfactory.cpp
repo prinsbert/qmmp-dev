@@ -39,7 +39,7 @@ QObject *StreamBrowserFactory::create(QObject *parent)
     return new StreamBrowser(parent);
 }
 
-QDialog *StreamBrowserFactory::createConfigDialog(QWidget *parent)
+QDialog *StreamBrowserFactory::createSettings(QWidget *parent)
 {
     Q_UNUSED(parent);
     return nullptr;

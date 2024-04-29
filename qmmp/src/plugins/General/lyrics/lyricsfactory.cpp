@@ -58,7 +58,7 @@ QWidget *LyricsFactory::createWidget(int id, QWidget *parent)
     return nullptr;
 }
 
-QDialog *LyricsFactory::createConfigDialog(QWidget *parent)
+QDialog *LyricsFactory::createSettings(QWidget *parent)
 {
     return new LyricsSettingsDialog(parent);
 }

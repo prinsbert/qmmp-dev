@@ -41,7 +41,7 @@ QObject *HistoryFactory::create(QObject *parent)
     return new History(parent);
 }
 
-QDialog *HistoryFactory::createConfigDialog(QWidget *parent)
+QDialog *HistoryFactory::createSettings(QWidget *parent)
 {
     return new HistorySettingsDialog(parent) ;
 }

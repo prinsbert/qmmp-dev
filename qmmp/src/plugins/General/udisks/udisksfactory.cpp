@@ -40,7 +40,7 @@ QObject *UDisksFactory::create(QObject *parent)
     return new UDisksPlugin(parent);
 }
 
-QDialog *UDisksFactory::createConfigDialog(QWidget *parent)
+QDialog *UDisksFactory::createSettings(QWidget *parent)
 {
     return new UDisksSettingsDialog(parent);
 }

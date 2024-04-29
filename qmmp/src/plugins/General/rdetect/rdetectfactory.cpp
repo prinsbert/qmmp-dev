@@ -40,7 +40,7 @@ QObject *RDetectFactory::create(QObject *parent)
     return new RemovableHelper(parent);
 }
 
-QDialog *RDetectFactory::createConfigDialog(QWidget *parent)
+QDialog *RDetectFactory::createSettings(QWidget *parent)
 {
     return new SettingsDialog(parent);
 }

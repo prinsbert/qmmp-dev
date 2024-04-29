@@ -74,7 +74,7 @@ QWidget *LibraryFactory::createWidget(int id, QWidget *parent)
     return nullptr;
 }
 
-QDialog *LibraryFactory::createConfigDialog(QWidget *parent)
+QDialog *LibraryFactory::createSettings(QWidget *parent)
 {
     return new LibrarySettingsDialog(parent);
 }

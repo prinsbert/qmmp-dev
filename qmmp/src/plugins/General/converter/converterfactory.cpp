@@ -38,7 +38,7 @@ QObject *ConverterFactory::create(QObject *parent)
     return new ConverterHelper(parent);
 }
 
-QDialog *ConverterFactory::createConfigDialog(QWidget *parent)
+QDialog *ConverterFactory::createSettings(QWidget *parent)
 {
     Q_UNUSED(parent);
     return nullptr;

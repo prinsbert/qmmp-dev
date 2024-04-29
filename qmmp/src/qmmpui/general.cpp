@@ -192,23 +192,20 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
 
 void General::showSettings(GeneralFactory *factory, QWidget *parentWidget)
 {
-    QDialog *dialog = factory->createConfigDialog(parentWidget);
+    QDialog *dialog = factory->createSettings(parentWidget);
     if(!dialog)
         return;
 
-    if(m_generals && dialog->exec() == QDialog::Accepted)
+    if(m_generals && dialog->exec() == QDialog::Accepted && m_generals->contains(factory))
     {
-        if(m_generals->contains(factory))
-        {
-            delete m_generals->take(factory);
+        delete m_generals->take(factory);
 
-            QObject *general = factory->create(m_parent);
-            if(general)
-                m_generals->insert(factory, general);
+        QObject *general = factory->create(m_parent);
+        if(general)
+            m_generals->insert(factory, general);
 
-            for(const WidgetDescription &d : factory->properties().widgets)
-                emit UiHelper::instance()->widgetUpdated(QStringLiteral("%1_%2").arg(factory->properties().shortName).arg(d.id));
-        }
+        for(const WidgetDescription &d : factory->properties().widgets)
+            emit UiHelper::instance()->widgetUpdated(QStringLiteral("%1_%2").arg(factory->properties().shortName).arg(d.id));
     }
     dialog->deleteLater();
 }

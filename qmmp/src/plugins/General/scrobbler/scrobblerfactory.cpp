@@ -41,7 +41,7 @@ QObject *ScrobblerFactory::create(QObject *parent)
     return new ScrobblerHandler(parent);
 }
 
-QDialog *ScrobblerFactory::createConfigDialog(QWidget *parent)
+QDialog *ScrobblerFactory::createSettings(QWidget *parent)
 {
     return new ScrobblerSettingsDialog(parent);
 }

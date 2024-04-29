@@ -39,7 +39,7 @@ QObject *StatusIconFactory::create(QObject *parent)
     return new StatusIcon(parent);
 }
 
-QDialog *StatusIconFactory::createConfigDialog(QWidget *parent)
+QDialog *StatusIconFactory::createSettings(QWidget *parent)
 {
     return new StatusIconSettingsDialog(parent);
 }

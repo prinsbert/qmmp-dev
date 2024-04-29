@@ -39,7 +39,7 @@ QObject *TrackChangeFactory::create(QObject *parent)
     return new TrackChange(parent);
 }
 
-QDialog *TrackChangeFactory::createConfigDialog(QWidget *parent)
+QDialog *TrackChangeFactory::createSettings(QWidget *parent)
 {
     return new TrackChangeSettingsDialog(parent);
 }
