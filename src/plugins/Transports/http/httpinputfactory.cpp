@@ -42,10 +42,9 @@ InputSource *HTTPInputFactory::create(const QString &url, QObject *parent)
     return new HTTPInputSource(url, parent);
 }
 
-void HTTPInputFactory::showSettings(QWidget *parent)
+QDialog *HTTPInputFactory::createSettings(QWidget *parent)
 {
-    HttpSettingsDialog *s = new HttpSettingsDialog(parent);
-    s->show();
+    return new HttpSettingsDialog(parent);
 }
 
 void HTTPInputFactory::showAbout(QWidget *parent)

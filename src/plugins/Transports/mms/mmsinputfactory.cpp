@@ -41,17 +41,16 @@ InputSource *MMSInputFactory::create(const QString &url, QObject *parent)
     return new MMSInputSource(url, parent);
 }
 
-void MMSInputFactory::showSettings(QWidget *parent)
+QDialog *MMSInputFactory::createSettings(QWidget *parent)
 {
-    MmsSettingsDialog *s = new MmsSettingsDialog(parent);
-    s->show();
+    return new MmsSettingsDialog(parent);
 }
 
 void MMSInputFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About MMS Transport Plugin"),
-                        tr("Qmmp MMS Transport Plugin") + QChar::LineFeed +
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
+    QMessageBox::about(parent, tr("About MMS Transport Plugin"),
+                       tr("Qmmp MMS Transport Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString MMSInputFactory::translation() const

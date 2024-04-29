@@ -29,7 +29,6 @@ AlsaSettingsDialog::AlsaSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::AlsaSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute (Qt::WA_DeleteOnClose);
     m_ui->deviceComboBox->setEditable (true);
     getCards();
     getSoftDevices();

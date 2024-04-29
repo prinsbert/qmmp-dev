@@ -29,7 +29,6 @@ XmpSettingsDialog::XmpSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::XmpSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
     //prepare combobox
     m_ui->srateComboBox->addItem(tr("22050 Hz"), 22050);
     m_ui->srateComboBox->addItem(tr("44100 Hz"), 44100);

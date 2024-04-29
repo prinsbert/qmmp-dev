@@ -104,8 +104,10 @@ MetaDataModel* DecoderMPCFactory::createMetaDataModel(const QString &path, bool 
     return new MPCMetaDataModel(path, readOnly);
 }
 
-void DecoderMPCFactory::showSettings(QWidget *)
-{}
+QDialog *DecoderMPCFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void DecoderMPCFactory::showAbout(QWidget *parent)
 {

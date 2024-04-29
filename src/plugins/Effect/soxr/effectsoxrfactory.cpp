@@ -40,10 +40,9 @@ Effect *EffectSoXRFactory::create()
     return new SoXResampler();
 }
 
-void EffectSoXRFactory::showSettings(QWidget *parent)
+QDialog *EffectSoXRFactory::createSettings(QWidget *parent)
 {
-    SoXRSettingsDialog *s = new SoXRSettingsDialog(parent);
-    s ->show();
+    return new SoXRSettingsDialog(parent);
 }
 
 void EffectSoXRFactory::showAbout(QWidget *parent)

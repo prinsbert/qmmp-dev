@@ -102,10 +102,9 @@ MetaDataModel* DecoderSIDFactory::createMetaDataModel(const QString &path, bool 
     return nullptr;
 }
 
-void DecoderSIDFactory::showSettings(QWidget *parent)
+QDialog *DecoderSIDFactory::createSettings(QWidget *parent)
 {
-    SidSettingsDialog *d = new SidSettingsDialog(&m_db, parent);
-    d->show();
+    return new SidSettingsDialog(&m_db, parent);
 }
 
 void DecoderSIDFactory::showAbout(QWidget *parent)

@@ -28,7 +28,6 @@ CDAudioSettingsDialog::CDAudioSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::CDAudioSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
     QSettings settings;
     settings.beginGroup(u"cdaudio"_s);
     m_ui->deviceLineEdit->setText(settings.value(u"device"_s).toString());

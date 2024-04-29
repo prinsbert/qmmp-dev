@@ -95,8 +95,10 @@ MetaDataModel* DecoderAACFactory::createMetaDataModel(const QString &path, bool 
     return nullptr;
 }
 
-void DecoderAACFactory::showSettings(QWidget *)
-{}
+QDialog *DecoderAACFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void DecoderAACFactory::showAbout(QWidget *parent)
 {

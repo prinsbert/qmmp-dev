@@ -94,10 +94,9 @@ MetaDataModel* DecoderGmeFactory::createMetaDataModel(const QString &path, bool 
     return nullptr;
 }
 
-void DecoderGmeFactory::showSettings(QWidget *parent)
+QDialog *DecoderGmeFactory::createSettings(QWidget *parent)
 {
-   GmeSettingsDialog *d = new GmeSettingsDialog(parent);
-   d->show();
+    return new GmeSettingsDialog(parent);
 }
 
 void DecoderGmeFactory::showAbout(QWidget *parent)

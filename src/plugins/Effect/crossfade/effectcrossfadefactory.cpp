@@ -40,10 +40,9 @@ Effect *EffectCrossfadeFactory::create()
     return new CrossfadePlugin();
 }
 
-void EffectCrossfadeFactory::showSettings(QWidget *parent)
+QDialog *EffectCrossfadeFactory::createSettings(QWidget *parent)
 {
-    CrossfadeSettingsDialog *dialog = new CrossfadeSettingsDialog(parent);
-    dialog->show();
+    return new CrossfadeSettingsDialog(parent);
 }
 
 void EffectCrossfadeFactory::showAbout(QWidget *parent)

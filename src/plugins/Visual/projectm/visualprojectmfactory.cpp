@@ -39,7 +39,7 @@ Visual *VisualProjectMFactory::create(QWidget *parent)
     return new ProjectMPlugin(parent);
 }
 
-QDialog *VisualProjectMFactory::createConfigDialog(QWidget *parent)
+QDialog *VisualProjectMFactory::createSettings(QWidget *parent)
 {
     Q_UNUSED(parent);
     return nullptr;

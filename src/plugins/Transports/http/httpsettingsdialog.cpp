@@ -30,7 +30,6 @@
 HttpSettingsDialog::HttpSettingsDialog(QWidget *parent) : QDialog(parent), m_ui(new Ui::HttpSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
     m_ui->icyEncodingComboBox->addItems(QmmpTextCodec::availableCharsets());
 #ifdef WITH_ENCA
     size_t n = 0;

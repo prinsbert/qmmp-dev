@@ -39,10 +39,9 @@ Effect *EffectStereoFactory::create()
     return new StereoPlugin();
 }
 
-void EffectStereoFactory::showSettings(QWidget *parent)
+QDialog *EffectStereoFactory::createSettings(QWidget *parent)
 {
-    StereoSettingsDialog *s = new StereoSettingsDialog(parent);
-    s->show();
+    return new StereoSettingsDialog(parent);
 }
 
 void EffectStereoFactory::showAbout(QWidget *parent)

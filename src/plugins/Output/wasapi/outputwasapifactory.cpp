@@ -43,7 +43,7 @@ Volume *OutputWASAPIFactory::createVolume()
     return new VolumeWASAPI;
 }
 
-void OutputWASAPIFactory::showSettings(QWidget* parent)
+void OutputWASAPIFactory::createSettings(QWidget* parent)
 {
     SettingsDialog *s = new SettingsDialog(parent);
     s->show();

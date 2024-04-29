@@ -29,7 +29,6 @@ SidSettingsDialog::SidSettingsDialog(SidDatabase *db, QWidget *parent) : QDialog
      m_ui(new Ui::SidSettingsDialog), m_db(db)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
 
     QSettings settings;
     settings.beginGroup(u"SID"_s);

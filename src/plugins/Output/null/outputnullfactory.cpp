@@ -44,9 +44,10 @@ Volume *OutputNullFactory::createVolume()
     return nullptr;
 }
 
-void OutputNullFactory::showSettings(QWidget* parent)
+QDialog *OutputNullFactory::createSettings(QWidget *parent)
 {
-   Q_UNUSED(parent);
+    Q_UNUSED(parent);
+    return nullptr;
 }
 
 void OutputNullFactory::showAbout(QWidget *parent)

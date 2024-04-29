@@ -27,7 +27,6 @@ CrossfadeSettingsDialog::CrossfadeSettingsDialog(QWidget *parent)
  : QDialog(parent), m_ui(new Ui::CrossfadeSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
     QSettings settings;
     m_ui->overlapSpinBox->setValue(settings.value(u"Crossfade/overlap"_s, 6000).toInt());
 }

@@ -27,7 +27,6 @@ OssSettingsDialog::OssSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::OssSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
     QSettings settings;
     settings.beginGroup(u"OSS"_s);
     m_ui->lineEdit->insert(settings.value(u"device"_s, u"/dev/dsp"_s).toString());

@@ -30,7 +30,6 @@ FileWriterSettingsDialog::FileWriterSettingsDialog(QWidget *parent)
  : QDialog(parent), m_ui(new Ui::FileWriterSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
 
     MetaDataFormatterMenu *fileNameMenu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui->fileNameButton->setMenu(fileNameMenu);

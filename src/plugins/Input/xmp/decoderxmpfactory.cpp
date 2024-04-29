@@ -99,10 +99,9 @@ MetaDataModel* DecoderXmpFactory::createMetaDataModel(const QString &path, bool 
     return new XmpMetaDataModel(path);
 }
 
-void DecoderXmpFactory::showSettings(QWidget *parent)
+QDialog *DecoderXmpFactory::createSettings(QWidget *parent)
 {
-    XmpSettingsDialog *d = new XmpSettingsDialog(parent);
-    d->show();
+    return new XmpSettingsDialog(parent);
 }
 
 void DecoderXmpFactory::showAbout(QWidget *parent)

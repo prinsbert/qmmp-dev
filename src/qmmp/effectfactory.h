@@ -25,6 +25,7 @@
 
 class QObject;
 class QWidget;
+class QDialog;
 class Effect;
 
 /*! @brief Structure to store effect plugin properties.
@@ -64,10 +65,11 @@ public:
      */
     virtual Effect *create() = 0;
     /*!
-     * Shows settings dialog.
+     * Creates settings dialog.
      * @param parent Parent widget.
+     * @return Settings dialog pointer.
      */
-    virtual void showSettings(QWidget *parent) = 0;
+    virtual QDialog *createSettings(QWidget *parent) = 0;
     /*!
      * Shows about dialog.
      * @param parent Parent widget.

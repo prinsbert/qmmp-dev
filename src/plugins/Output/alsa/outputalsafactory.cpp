@@ -45,10 +45,9 @@ Volume *OutputALSAFactory::createVolume()
     return new VolumeALSA();
 }
 
-void OutputALSAFactory::showSettings(QWidget* parent)
+QDialog *OutputALSAFactory::createSettings(QWidget *parent)
 {
-   AlsaSettingsDialog *s = new AlsaSettingsDialog(parent);
-   s -> show();
+    return new AlsaSettingsDialog(parent);
 }
 
 void OutputALSAFactory::showAbout(QWidget *parent)

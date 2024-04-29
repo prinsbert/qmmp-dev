@@ -38,7 +38,7 @@ public:
     Decoder *create(const QString &, QIODevice *input) override;
     MetaDataModel* createMetaDataModel(const QString &path, bool readOnly) override;
     QList<TrackInfo *> createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *) override;
-    void showSettings(QWidget *parent) override;
+    QDialog *createSettings(QWidget *parent) override;
     void showAbout(QWidget *parent) override;
     QString translation() const override;
 };

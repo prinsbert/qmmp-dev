@@ -63,7 +63,7 @@ public:
      * @param parent Parent widget.
      * @return Configuration dialog pointer.
      */
-    virtual QDialog *createConfigDialog(QWidget *parent) = 0;
+    virtual QDialog *createSettings(QWidget *parent) = 0;
     /*!
      * Shows about dialog.
      * @param parent Parent widget.

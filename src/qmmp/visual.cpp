@@ -187,7 +187,7 @@ QList<Visual*>* Visual::visuals()
 
 void Visual::showSettings(VisualFactory *factory, QWidget *parent)
 {
-    QDialog *dialog = factory->createConfigDialog(parent);
+    QDialog *dialog = factory->createSettings(parent);
     if (!dialog)
         return;
 

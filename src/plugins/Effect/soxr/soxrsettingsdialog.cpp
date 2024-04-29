@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,7 +28,6 @@ SoXRSettingsDialog::SoXRSettingsDialog(QWidget *parent)
  : QDialog(parent), m_ui(new Ui::SoXRSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
     QSettings settings;
     m_ui->srSpinBox->setValue(settings.value(u"SOXR/sample_rate"_s, 48000).toInt());
 

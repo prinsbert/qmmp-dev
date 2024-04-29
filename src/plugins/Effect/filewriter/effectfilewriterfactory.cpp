@@ -40,10 +40,9 @@ Effect *EffectFileWriterFactory::create()
     return new FileWriterPlugin();
 }
 
-void EffectFileWriterFactory::showSettings(QWidget *parent)
+QDialog *EffectFileWriterFactory::createSettings(QWidget *parent)
 {
-    FileWriterSettingsDialog *dialog = new FileWriterSettingsDialog(parent);
-    dialog->show();
+    return new FileWriterSettingsDialog(parent);
 }
 
 void EffectFileWriterFactory::showAbout(QWidget *parent)

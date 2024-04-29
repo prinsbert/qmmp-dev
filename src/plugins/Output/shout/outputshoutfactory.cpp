@@ -53,10 +53,9 @@ Volume *OutputShoutFactory::createVolume()
     return nullptr;
 }
 
-void OutputShoutFactory::showSettings(QWidget* parent)
+QDialog *OutputShoutFactory::createSettings(QWidget *parent)
 {
-    ShoutSettingsDialog *s = new ShoutSettingsDialog(parent);
-    s->show();
+    return new ShoutSettingsDialog(parent);
 }
 
 void OutputShoutFactory::showAbout(QWidget *parent)

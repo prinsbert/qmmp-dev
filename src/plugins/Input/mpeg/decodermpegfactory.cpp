@@ -408,10 +408,9 @@ MetaDataModel* DecoderMpegFactory::createMetaDataModel(const QString &path, bool
    return new MPEGMetaDataModel(m_using_rusxmms, path, readOnly);
 }
 
-void DecoderMpegFactory::showSettings(QWidget *parent)
+QDialog *DecoderMpegFactory::createSettings(QWidget *parent)
 {
-    MpegSettingsDialog *s = new MpegSettingsDialog(m_using_rusxmms, parent);
-    s->show();
+    return new MpegSettingsDialog(m_using_rusxmms, parent);
 }
 
 void DecoderMpegFactory::showAbout(QWidget *parent)

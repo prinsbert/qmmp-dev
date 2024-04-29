@@ -157,8 +157,10 @@ MetaDataModel* DecoderArchiveFactory::createMetaDataModel(const QString &path, b
     return nullptr;
 }
 
-void DecoderArchiveFactory::showSettings(QWidget *)
-{}
+QDialog *DecoderArchiveFactory::createSettings(QWidget *)
+{
+    return nullptr;
+}
 
 void DecoderArchiveFactory::showAbout(QWidget *parent)
 {

@@ -38,9 +38,10 @@ Effect *EffectMonoToStereoFactory::create()
     return new MonoToStereoPlugin();
 }
 
-void EffectMonoToStereoFactory::showSettings(QWidget *parent)
+QDialog *EffectMonoToStereoFactory::createSettings(QWidget *parent)
 {
-   Q_UNUSED(parent);
+    Q_UNUSED(parent);
+    return nullptr;
 }
 
 void EffectMonoToStereoFactory::showAbout(QWidget *parent)

@@ -45,10 +45,9 @@ Volume *OutputOSSFactory::createVolume()
     return new VolumeOSS;
 }
 
-void OutputOSSFactory::showSettings(QWidget* parent)
+QDialog *OutputOSSFactory::createSettings(QWidget *parent)
 {
-    OssSettingsDialog *s = new OssSettingsDialog(parent);
-    s->show();
+    return new OssSettingsDialog(parent);
 }
 
 void OutputOSSFactory::showAbout(QWidget *parent)

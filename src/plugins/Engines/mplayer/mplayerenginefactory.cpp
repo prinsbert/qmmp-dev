@@ -63,10 +63,9 @@ MetaDataModel* MplayerEngineFactory::createMetaDataModel(const QString &path, bo
     return new MplayerMetaDataModel(path);
 }
 
-void MplayerEngineFactory::showSettings(QWidget *parent)
+QDialog *MplayerEngineFactory::createSettings(QWidget *parent)
 {
-    MplayerSettingsDialog *s = new MplayerSettingsDialog(parent);
-    s->show();
+    return new MplayerSettingsDialog(parent);
 }
 
 void MplayerEngineFactory::showAbout(QWidget *parent)

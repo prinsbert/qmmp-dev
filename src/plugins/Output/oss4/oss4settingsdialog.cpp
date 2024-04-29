@@ -45,7 +45,6 @@ extern "C"
 Oss4SettingsDialog::Oss4SettingsDialog (QWidget *parent) : QDialog (parent), m_ui(new Ui::Oss4SettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute (Qt::WA_DeleteOnClose);
 
     int mixer_fd = -1;
     oss_sysinfo info;

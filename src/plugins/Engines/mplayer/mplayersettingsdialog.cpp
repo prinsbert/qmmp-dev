@@ -26,7 +26,6 @@ MplayerSettingsDialog::MplayerSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::MplayerSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
     m_ui->videoComboBox->addItem(tr("default"));
     m_ui->videoComboBox->addItems( { u"xv"_s, u"x11"_s, u"gl"_s, u"gl2"_s, u"dga"_s, u"sdl"_s, u"null"_s });
 

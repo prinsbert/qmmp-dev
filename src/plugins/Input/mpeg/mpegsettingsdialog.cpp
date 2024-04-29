@@ -28,7 +28,6 @@ MpegSettingsDialog::MpegSettingsDialog(bool using_rusxmms, QWidget *parent)
         : QDialog(parent), m_ui(new Ui::MpegSettingsDialog)
 {
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
 
     m_ui->id3v1EncComboBox->addItems(QmmpTextCodec::availableCharsets());
     m_ui->id3v2EncComboBox->addItems(QmmpTextCodec::availableCharsets());

@@ -36,7 +36,7 @@ Q_INTERFACES(EffectFactory)
 public:
     EffectProperties properties() const override;
     Effect *create() override;
-    void showSettings(QWidget *parent) override;
+    QDialog *createSettings(QWidget *parent) override;
     void showAbout(QWidget *parent) override;
     QString translation() const override;
 };

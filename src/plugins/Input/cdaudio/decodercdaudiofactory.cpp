@@ -86,10 +86,9 @@ MetaDataModel* DecoderCDAudioFactory::createMetaDataModel(const QString &path, b
     return nullptr;
 }
 
-void DecoderCDAudioFactory::showSettings(QWidget *parent)
+QDialog *DecoderCDAudioFactory::createSettings(QWidget *parent)
 {
-    CDAudioSettingsDialog *d = new CDAudioSettingsDialog(parent);
-    d->show();
+    return new CDAudioSettingsDialog(parent);
 }
 
 void DecoderCDAudioFactory::showAbout(QWidget *parent)

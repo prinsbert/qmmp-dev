@@ -38,7 +38,6 @@ LADSPASettingsDialog::LADSPASettingsDialog(QWidget *parent)
 {
     m_ui = new Ui::LADSPASettingsDialog;
     m_ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose, true);
     m_ui->loadButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowRight));
     m_ui->unloadButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowLeft));
     m_ui->configureButton->setIcon(QIcon::fromTheme(u"configure"_s));
