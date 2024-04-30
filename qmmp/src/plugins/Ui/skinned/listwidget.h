@@ -90,7 +90,7 @@ protected:
     void dragLeaveEvent(QDragLeaveEvent *) override;
     void dragMoveEvent(QDragMoveEvent *event) override;
     void contextMenuEvent (QContextMenuEvent * event) override;
-    bool event (QEvent *e) override;
+    bool event(QEvent *e) override;
 
 private slots:
     void updateSkin();
@@ -113,7 +113,7 @@ private:
     void restoreFirstVisible();
 
     bool m_update = false;
-    int m_pressed_index, m_anchor_index, m_drop_index;
+    int m_pressedLine = -1, m_anchorLine = -1, m_dropLine = -1;
     QMenu *m_menu;
     PlayListModel *m_model;
     int m_row_count = 0, m_first = 0, m_count = 0; //visible rows, first visible index, total item count

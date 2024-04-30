@@ -39,6 +39,7 @@
 #include <qmmpui/mediaplayer.h>
 #include <qmmpui/configdialog.h>
 #include <qmmpui/qmmpuisettings.h>
+#include <qmmpui/visualmenu.h>
 #include "hotkeyeditor.h"
 #include "skinnedsettings.h"
 #include "mainwindow.h"
@@ -48,7 +49,6 @@
 #include "eqwidget.h"
 #include "mainvisual.h"
 #include "listwidget.h"
-#include "visualmenu.h"
 #include "windowsystem.h"
 #include "actionmanager.h"
 
