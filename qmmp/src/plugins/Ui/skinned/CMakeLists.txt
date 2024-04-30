@@ -56,7 +56,6 @@ SET(skinned_SRCS
     windowsystem.cpp
     actionmanager.cpp
     shortcutitem.cpp
-    shortcutdialog.cpp
     skinnedfactory.cpp
     hotkeyeditor.cpp
     playlistheader.cpp
@@ -65,7 +64,6 @@ SET(skinned_SRCS
     forms/preseteditor.ui
     forms/playlistbrowser.ui
     forms/popupsettings.ui
-    forms/shortcutdialog.ui
     forms/hotkeyeditor.ui
     glare/glare.qrc
     resources/resources.qrc
