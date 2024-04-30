@@ -121,8 +121,6 @@ Equalizer::Equalizer(QWidget *parent) : QDialog(parent)
 Equalizer::~Equalizer()
 {
     savePresets();
-    qDeleteAll(m_presets);
-    m_presets.clear();
 }
 
 void Equalizer::readSettigs()
@@ -148,14 +146,14 @@ void Equalizer::loadPresets()
     while(eq_preset.contains(u"Presets/Preset"_s + QString::number(++i)))
     {
         QString name = eq_preset.value(QStringLiteral("Presets/Preset%1").arg(i), tr("preset")).toString();
-        EQPreset *preset = new EQPreset();
+        EqSettings preset(EqSettings::EQ_BANDS_15);
         //preset->setText(name);
         eq_preset.beginGroup(name);
         for (int j = 0; j < EqSettings::EQ_BANDS_15; ++j)
         {
-            preset->setGain(j,eq_preset.value(QStringLiteral("Band%1").arg(j), 0).toDouble());
+            preset.setGain(j,eq_preset.value(QStringLiteral("Band%1").arg(j), 0).toDouble());
         }
-        preset->setPreamp(eq_preset.value(u"Preamp"_s, 0).toDouble());
+        preset.setPreamp(eq_preset.value(u"Preamp"_s, 0).toDouble());
         m_presets.append(preset);
         m_presetComboBox->addItem(name);
         eq_preset.endGroup();
@@ -166,7 +164,7 @@ void Equalizer::loadPresets()
 void Equalizer::applySettings()
 {
     EqSettings settings = QmmpSettings::instance()->eqSettings();
-    settings.setPreamp(m_sliders.at(0)->value());
+    settings.setPreamp(m_sliders.constFirst()->value());
     settings.setEnabled(m_enableCheckBox->isChecked());
     for(int i = 0; i < EqSettings::EQ_BANDS_15; ++i)
     {
@@ -199,11 +197,11 @@ void Equalizer::updateLabel()
 
 void Equalizer::loadPreset(int index)
 {
-    EQPreset *preset = m_presets.at(index);
-    m_sliders.at(0)->setValue(preset->preamp());
+    EqSettings preset = m_presets.at(index);
+    m_sliders.at(0)->setValue(preset.preamp());
     for(int i = 0; i < EqSettings::EQ_BANDS_15; ++i)
     {
-        m_sliders.at(i+1)->setValue(preset->gain(i));
+        m_sliders.at(i+1)->setValue(preset.gain(i));
     }
     applySettings();
 }
@@ -221,20 +219,20 @@ void Equalizer::savePreset()
                                  tr("Preset '%1' already exists. Overwrite?").arg(name),
                                  QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
             return;
-        m_presets[index]->setPreamp(m_sliders.at(0)->value());
+        m_presets[index].setPreamp(m_sliders.at(0)->value());
         for(int i = 0; i < EqSettings::EQ_BANDS_15; ++i)
         {
-            m_presets[index]->setGain(i, m_sliders.at(i+1)->value());
+            m_presets[index].setGain(i, m_sliders.at(i+1)->value());
         }
     }
     else
     {
         m_presetComboBox->addItem(name);
-        EQPreset *preset = new EQPreset();
-        preset->setPreamp(m_sliders.at(0)->value());
+        EqSettings preset(EqSettings::EQ_BANDS_15);
+        preset.setPreamp(m_sliders.at(0)->value());
         for(int i = 0; i < EqSettings::EQ_BANDS_15; ++i)
         {
-            preset->setGain(i, m_sliders.at(i + 1)->value());
+            preset.setGain(i, m_sliders.at(i + 1)->value());
         }
         m_presets.append(preset);
     }
@@ -251,9 +249,9 @@ void Equalizer::savePresets()
         eq_preset.beginGroup(m_presetComboBox->itemText(i));
         for (int j = 0; j < EqSettings::EQ_BANDS_15; ++j)
         {
-            eq_preset.setValue(QStringLiteral("Band%1").arg(j),m_presets.at(i)->gain(j));
+            eq_preset.setValue(QStringLiteral("Band%1").arg(j),m_presets.at(i).gain(j));
         }
-        eq_preset.setValue(u"Preamp"_s, m_presets.at(i)->preamp());
+        eq_preset.setValue(u"Preamp"_s, m_presets.at(i).preamp());
         eq_preset.endGroup();
     }
 }
@@ -268,7 +266,6 @@ void Equalizer::deletePreset()
     if(index != -1)
     {
         m_presetComboBox->removeItem(index);
-        delete m_presets.takeAt(index);
     }
     m_presetComboBox->clearEditText();
 }

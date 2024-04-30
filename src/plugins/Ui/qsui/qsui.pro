@@ -23,7 +23,6 @@ SOURCES += \
     fft.c \
     qsuitabwidget.cpp \
     qsuitabbar.cpp \
-    eqpreset.cpp \
     filesystembrowser.cpp \
     elidinglabel.cpp \
     playlistbrowser.cpp \
@@ -56,7 +55,6 @@ HEADERS += \
     inlines.h \
     qsuitabwidget.h \
     qsuitabbar.h \
-    eqpreset.h \
     filesystembrowser.h \
     elidinglabel.h \
     playlistbrowser.h \
