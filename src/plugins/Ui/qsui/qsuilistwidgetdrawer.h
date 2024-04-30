@@ -102,14 +102,14 @@ private:
     };
     QFont m_fonts[PL_GROUP_FONT_EXTRA + 1];
     QFontMetrics *m_metrics[PL_GROUP_FONT_EXTRA + 1] = { nullptr };
-    QColor m_normal, m_current, m_normal_bg, m_selected_bg, m_alternate, m_highlighted, m_splitter;
+    QColor m_normal, m_current, m_normal_bg, m_selected_bg, m_alternate_bg, m_highlighted, m_splitter;
     QColor m_group_bg, m_group_alt_bg, m_group_text, m_current_bg, m_current_alt_bg;
     PlayListHeaderModel *m_header_model;
     QmmpUiSettings *m_ui_settings;
     QImage m_emptyCover;
-    bool m_show_number = false;
+    bool m_show_numbers = false;
     bool m_show_anchor = false;
-    bool m_align_numbres = false;
+    bool m_align_numbers = false;
     bool m_show_lengths = false;
     bool m_use_system_colors = false;
     bool m_single_column = true;
