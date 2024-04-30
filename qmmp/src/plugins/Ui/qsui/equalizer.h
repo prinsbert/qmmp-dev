@@ -23,7 +23,7 @@
 
 #include <QDialog>
 #include <QList>
-#include "eqpreset.h"
+#include <qmmp/eqsettings.h>
 
 class QVBoxLayout;
 class QCheckBox;
@@ -60,7 +60,7 @@ private:
     QComboBox *m_presetComboBox;
     QList<QSlider *> m_sliders;
     QList<QLabel *> m_labels;
-    QList<EQPreset *> m_presets;
+    QList<EqSettings> m_presets;
 
 };
 

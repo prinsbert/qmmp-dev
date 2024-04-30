@@ -11,7 +11,6 @@ SET(libqsui_SRCS
     qsuiactionmanager.cpp
     dockwidgetlist.cpp
     elidinglabel.cpp
-    eqpreset.cpp
     equalizer.cpp
     filesystembrowser.cpp
     qsuikeyboardmanager.cpp
