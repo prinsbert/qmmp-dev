@@ -107,7 +107,7 @@ int QSUiListWidget::visibleRows() const
     return m_row_count;
 }
 
-int QSUiListWidget::firstVisibleIndex() const
+int QSUiListWidget::firstVisibleLine() const
 {
     return m_firstLine;
 }

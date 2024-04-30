@@ -56,9 +56,9 @@ public:
      */
     int visibleRows() const;
     /*!
-     * Returns index of the first visible item.
+     * Returns index of the first visible line.
      */
-    int firstVisibleIndex() const;
+    int firstVisibleLine() const;
 
     int anchorIndex() const;
     void setAnchorIndex(int index);
@@ -97,7 +97,7 @@ protected:
     void dragLeaveEvent(QDragLeaveEvent *) override;
     void dragMoveEvent(QDragMoveEvent *event) override;
     void contextMenuEvent (QContextMenuEvent * event) override;
-    bool event (QEvent *e) override;
+    bool event(QEvent *e) override;
 
 private slots:
     void updateSkin();

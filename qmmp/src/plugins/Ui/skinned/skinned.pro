@@ -35,7 +35,6 @@ HEADERS += mainwindow.h \
     timeindicator.h \
     keyboardmanager.h \
     skinreader.h \
-    visualmenu.h \
     titlebarcontrol.h \
     shadedvisual.h \
     shadedbar.h \
@@ -113,7 +112,6 @@ FORMS += \
     forms/preseteditor.ui \
     forms/playlistbrowser.ui \
     forms/popupsettings.ui \
-    forms/shortcutdialog.ui \
     forms/skinnedsettings.ui \
     forms/hotkeyeditor.ui
 
