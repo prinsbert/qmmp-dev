@@ -131,6 +131,14 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     m_volumeSlider->setFocusPolicy(Qt::NoFocus);
     m_volumeSlider->setFixedWidth(100);
     m_volumeSlider->setRange(0, 100);
+    SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, &SoundCore::setMuted);
+    connect(m_volumeSlider, &QSlider::sliderMoved, m_core, &SoundCore::setVolume);
+    connect(m_core, &SoundCore::volumeChanged, m_volumeSlider, &VolumeSlider::setValue);
+    connect(m_core, &SoundCore::volumeChanged, this, &QSUiMainWindow::updateVolumeIcon);
+    connect(m_core, &SoundCore::mutedChanged, this, &QSUiMainWindow::updateVolumeIcon);
+    connect(m_core, &SoundCore::mutedChanged, ACTION(QSUiActionManager::VOL_MUTE), &QAction::setChecked);
+    m_volumeSlider->setValue(m_core->volume());
+    updateVolumeIcon();
     //balance
     m_balanceSlider = new VolumeSlider(this);
     m_balanceSlider->setFocusPolicy(Qt::NoFocus);
@@ -138,18 +146,8 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     m_balanceSlider->setRange(-100, 100);
     m_balanceSlider->setTickInterval(100);
     m_balanceSlider->setTickPosition(QSlider::TicksAbove);
-
-    SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, &SoundCore::setMuted);
-    connect(m_volumeSlider, &QSlider::sliderMoved, m_core, &SoundCore::setVolume);
-    connect(m_core, &SoundCore::volumeChanged, m_volumeSlider, &QSlider::setValue);
-    connect(m_core, &SoundCore::volumeChanged, this, &QSUiMainWindow::updateVolumeIcon);
-    connect(m_core, &SoundCore::mutedChanged, this, &QSUiMainWindow::updateVolumeIcon);
-    connect(m_core, &SoundCore::mutedChanged, ACTION(QSUiActionManager::VOL_MUTE), &QAction::setChecked);
-    m_volumeSlider->setValue(m_core->volume());
-    updateVolumeIcon();
-
     connect(m_balanceSlider, &QSlider::sliderMoved, m_core, &SoundCore::setBalance);
-    connect(m_core, &SoundCore::balanceChanged, m_balanceSlider, &QSlider::setValue);
+    connect(m_core, &SoundCore::balanceChanged, m_balanceSlider, &VolumeSlider::setValue);
     m_balanceSlider->setValue(m_core->balance());
 
     //quick search

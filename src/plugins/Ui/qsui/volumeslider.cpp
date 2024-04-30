@@ -31,6 +31,12 @@ VolumeSlider::VolumeSlider(QWidget *parent) : QSlider(Qt::Horizontal, parent)
     connect(this, &VolumeSlider::sliderMoved, this, &VolumeSlider::onSliderMoved);
 }
 
+void VolumeSlider::setValue(int value)
+{
+    if(!isSliderDown())
+        QSlider::setValue(value);
+}
+
 void VolumeSlider::mousePressEvent(QMouseEvent *event)
 {
     QStyleOptionSlider opt;
@@ -49,18 +55,27 @@ void VolumeSlider::mousePressEvent(QMouseEvent *event)
 
         setSliderDown(true);
 
-        if(invertedAppearance() == true)
+        if(invertedAppearance())
         {
             setValue(maximum() - val);
             onSliderMoved(maximum() - val);
         }
         else
         {
-            setValue(val);
+            QSlider::setValue(val);
             onSliderMoved(val);
         }
         event->accept();
     }
+    else if(event->button() == Qt::MiddleButton)
+    {
+        int val = (maximum() + minimum()) / 2;
+        QSlider::setValue(val);
+        onSliderMoved(val);
+        emit sliderMoved(val);
+        return;
+    }
+
     QSlider::mousePressEvent(event);
 }
 
