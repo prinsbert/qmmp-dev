@@ -36,6 +36,9 @@ public:
     explicit VolumeSlider(QWidget *parent = nullptr);
     virtual ~VolumeSlider(){}
 
+public slots:
+    void setValue(int value);
+
 protected:
     virtual void mousePressEvent(QMouseEvent *event) override;
     virtual void mouseReleaseEvent(QMouseEvent *event) override;
