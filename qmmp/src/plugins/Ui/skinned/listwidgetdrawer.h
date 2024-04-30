@@ -26,30 +26,26 @@
 #include <QColor>
 #include <QRect>
 #include <QFontMetrics>
+#include <QImage>
 
 class QPainter;
 class PlayListHeaderModel;
+class QmmpUiSettings;
 
 struct ListWidgetRow
 {
-    ListWidgetRow()
-    {
-        flags = NO_FLAGS;
-        numberColumnWidth = 0;
-        lengthColumnWidth = 0;
-        trackStateColumn = -1;
-        number = -1;
-        autoResize = false;
-    }
     QStringList titles;
     QList<int> sizes;
     QList<int> alignment;
+    QImage cover;
     QString length;
     QString extraString;
-    int number;
-    int numberColumnWidth;
-    int lengthColumnWidth;
-    int trackStateColumn;
+    int number = 0;
+    int numberColumnWidth = 0;
+    int lengthColumnWidth = 0;
+    int trackStateColumn = 0;
+    int subIndex = 0;
+    bool alternateColor = false;
     enum
     {
         NO_FLAGS = 0x00,
@@ -66,9 +62,9 @@ struct ListWidgetRow
         ALIGN_RIGHT,
     };
 
-    int flags;
+    int flags = NO_FLAGS;
     QRect rect; //geometry
-    bool autoResize;
+    bool autoResize = false;
 };
 
 /**
@@ -87,23 +83,35 @@ public:
     void setSingleColumnMode(int enabled);
     void prepareRow(ListWidgetRow *row);
     void fillBackground(QPainter *painter, int width, int height);
-    void drawBackground(QPainter *painter, ListWidgetRow *row, int index);
+    void drawBackground(QPainter *painter, ListWidgetRow *row);
     void drawSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
+    void drawMultiLineSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
     void drawTrack(QPainter *painter, ListWidgetRow *row, bool rtl);
     void drawDropLine(QPainter *painter, int row_number, int width, int header_height);
 
 private:
-    QColor m_normal, m_current, m_normal_bg, m_selected_bg, m_alternate_bg, m_selected_text, m_splitter;
+    enum Font
+    {
+        MAIN_FONT_NORMAL = 0,
+        MAIN_FONT_BOLD,
+        MAIN_FONT_EXTRA,
+        PL_GROUP_FONT,
+        PL_GROUP_FONT_EXTRA
+    };
+    QFont m_fonts[PL_GROUP_FONT_EXTRA + 1];
+    QFontMetrics *m_metrics[PL_GROUP_FONT_EXTRA + 1] = { nullptr };
+    QColor m_normal, m_current, m_normal_bg, m_selected_bg, m_alternate_bg, m_highlighted, m_splitter;
     QColor m_group_bg, m_group_alt_bg, m_group_text, m_current_bg, m_current_alt_bg;
-    QFontMetrics *m_metrics = nullptr;
-    QFontMetrics *m_extra_metrics = nullptr;
-    QFont m_font, m_extra_font;
+    PlayListHeaderModel *m_header_model;
+    QmmpUiSettings *m_ui_settings;
+    QImage m_emptyCover;
     bool m_show_numbers = false;
     bool m_show_anchor = false;
     bool m_align_numbers = false;
     bool m_show_lengths = false;
-    bool m_single_column = false;
-    bool m_show_splitters = false;
+    bool m_use_system_colors = false;
+    bool m_single_column = true;
+    bool m_show_splitters = true;
     int m_padding = 0;
     int m_number_width = 0;
     int m_row_height = 0;

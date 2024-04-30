@@ -231,7 +231,7 @@ void PlayListSelector::mousePressEvent (QMouseEvent *e)
     if(index != -1)
     {
         selected = true;
-        m_pl_manager->selectPlayList(index);
+        m_pl_manager->selectPlayListIndex(index);
     }
 
 

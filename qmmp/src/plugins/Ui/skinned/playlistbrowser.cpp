@@ -99,8 +99,8 @@ void PlayListBrowser::on_listView_activated(const QModelIndex &index)
     int row = m_proxyModel->mapToSource(index).row();
     if(row >= 0)
     {
-        m_pl_manager->activatePlayList(row);
-        m_pl_manager->selectPlayList(row);
+        m_pl_manager->activatePlayListIndex(row);
+        m_pl_manager->selectPlayListIndex(row);
     }
 }
 
@@ -115,7 +115,7 @@ void PlayListBrowser::updateCurrentRow(QModelIndex index, QModelIndex)
 {
     int row = m_proxyModel->mapToSource(index).row();
     if(row >= 0)
-        m_pl_manager->selectPlayList(row);
+        m_pl_manager->selectPlayListIndex(row);
 }
 
 void PlayListBrowser::rename()
@@ -135,7 +135,7 @@ void PlayListBrowser::on_deleteButton_clicked()
     }
     for(const QModelIndex &index : qAsConst(selectedIndexes))
     {
-        m_pl_manager->removePlayList(index.row());
+        m_pl_manager->removePlayListIndex(index.row());
     }
 }
 

@@ -120,11 +120,11 @@ void PopupWidget::loadCover()
 {
     if(m_url.isEmpty())
         return;
-    QPixmap pix = MetaDataManager::instance()->getCover(m_url);
-    if(pix.isNull())
-        pix = QPixmap(":/skinned/ui_no_cover.png");
+    QImage img = MetaDataManager::instance()->getCover(m_url);
+    if(img.isNull())
+        img = QImage(":/skinned/ui_no_cover.png");
     m_pixlabel->setFixedSize(m_coverSize,m_coverSize);
-    m_pixlabel->setPixmap(pix.scaled(m_coverSize,m_coverSize,Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    m_pixlabel->setPixmap(QPixmap::fromImage(img.scaled(m_coverSize, m_coverSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation)));
     qApp->processEvents();
     updateGeometry ();
     resize(sizeHint());

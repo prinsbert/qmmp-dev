@@ -20,9 +20,10 @@
 
 #include <QMessageBox>
 #include <QAction>
+#include <qmmpui/shortcutdialog.h>
 #include "actionmanager.h"
 #include "hotkeyeditor.h"
-#include "shortcutdialog.h"
+
 #include "shortcutitem.h"
 #include "ui_hotkeyeditor.h"
 

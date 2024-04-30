@@ -46,14 +46,12 @@ HEADERS += mainwindow.h \
     windowsystem.h \
     actionmanager.h \
     shortcutitem.h \
-    shortcutdialog.h \
     skinnedfactory.h \
     skinnedsettings.h \
     hotkeyeditor.h \
     listwidgetdrawer.h \
     playlistheader.h \
-    horizontalslider.h \
-    colorwidget.h
+    horizontalslider.h
 
 SOURCES += mainwindow.cpp \
     button.cpp \
@@ -87,7 +85,6 @@ SOURCES += mainwindow.cpp \
     timeindicator.cpp \
     keyboardmanager.cpp \
     skinreader.cpp \
-    visualmenu.cpp \
     titlebarcontrol.cpp \
     shadedvisual.cpp \
     shadedbar.cpp \
@@ -99,14 +96,12 @@ SOURCES += mainwindow.cpp \
     windowsystem.cpp \
     actionmanager.cpp \
     shortcutitem.cpp \
-    shortcutdialog.cpp \
     skinnedfactory.cpp \
     skinnedsettings.cpp \
     hotkeyeditor.cpp \
     listwidgetdrawer.cpp \
     playlistheader.cpp \
-    horizontalslider.cpp \
-    colorwidget.cpp
+    horizontalslider.cpp
 
 FORMS += \
     forms/preseteditor.ui \
