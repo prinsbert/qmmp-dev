@@ -34,6 +34,7 @@ class QTimer;
 class PlayListModel;
 class Skin;
 class PlayListItem;
+class PlayListTrack;
 class QmmpUiSettings;
 class PlayListHeader;
 class HorizontalSlider;
@@ -59,10 +60,10 @@ public:
     /*!
      * Returns index of the first visible item.
      */
-    int firstVisibleIndex() const;
+    int firstVisibleLine() const;
 
-    int anchorIndex() const;
-    void setAnchorIndex(int index);
+    int anchorLine() const;
+    void setAnchorLine(int line);
     QMenu *menu();
     PlayListModel *model();
 
@@ -84,7 +85,8 @@ protected:
     void mouseReleaseEvent(QMouseEvent *) override;
     void resizeEvent(QResizeEvent *) override;
     void wheelEvent(QWheelEvent *) override;
-    int indexAt(int)const;
+    int lineAt(int y) const;
+    PlayListTrack *trackAt(int y) const;
     void dragEnterEvent(QDragEnterEvent *event) override;
     void dropEvent(QDropEvent *event) override;
     void dragLeaveEvent(QDragLeaveEvent *) override;
@@ -101,22 +103,22 @@ private slots:
 private:
     enum ScrollDirection
     {
-        NONE = 0,TOP,DOWN
+        NONE = 0, TOP, DOWN
     };
 
     void recenterTo(int index);
     /*!
      * Returns string with queue number or(and) repeate flag for the item number \b i.
      */
-    const QString getExtraString(int i);
+    const QString getExtraString(PlayListItem *item);
     bool updateRowCount();
     void restoreFirstVisible();
 
     bool m_update = false;
-    int m_pressedLine = -1, m_anchorLine = -1, m_dropLine = -1;
-    QMenu *m_menu;
+    int m_pressedLine = -1, m_dropLine = -1, m_anchorLine = -1;
+    QMenu *m_menu = nullptr;
     PlayListModel *m_model;
-    int m_row_count = 0, m_first = 0, m_count = 0; //visible rows, first visible index, total item count
+    int m_row_count = 0, m_firstLine = 0, m_lineCount = 0; //visible rows, first visible index, total item count
     PlayListItem *m_firstItem = nullptr; //first visible item
     Skin *m_skin;
     /*!

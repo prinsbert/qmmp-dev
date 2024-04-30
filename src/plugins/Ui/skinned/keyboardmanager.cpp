@@ -71,222 +71,232 @@ bool KeyboardManager::handleKeyRelease (QKeyEvent*)
 
 void KeyboardManager::keyUp (QKeyEvent * ke)
 {
-    QList<int> rows = m_listWidget->model()->selectedIndexes();
+    QList<int> lines = m_listWidget->model()->selectedLines();
 
-    if(rows.isEmpty())
+    if(lines.isEmpty())
     {
-        m_listWidget->model()->setSelected(m_listWidget->firstVisibleIndex(), true);
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex());
+        m_listWidget->model()->setSelectedLine(m_listWidget->firstVisibleLine(), true);
+        m_listWidget->setAnchorLine(m_listWidget->firstVisibleLine());
         return;
     }
 
-    if (! (ke->modifiers() & Qt::ShiftModifier ||
-           ke->modifiers() & Qt::AltModifier ||
-           ke->modifiers() & Qt::ControlModifier))
-    {
-        m_listWidget->model()->clearSelection();
-        m_listWidget->setAnchorIndex(-1);
-    }
-
-    int first_visible = m_listWidget->firstVisibleIndex();
-    int last_visible = m_listWidget->visibleRows() + first_visible - 1;
-
-    int s = SELECT_NEXT;
-
-    if(rows.last() < first_visible)
-        s = SELECT_TOP;
-    else if(rows.first() > last_visible)
-        s = SELECT_BOTTOM;
-
-    if (ke->modifiers() == Qt::AltModifier)
-    {
-        if(rows.first() == 0)
-            return;
-        m_listWidget->model()->moveItems (rows.first(), rows.first() - 1);
-        m_listWidget->setAnchorIndex (rows.first() - 1);
-    }
-    else if(ke->modifiers() == Qt::ControlModifier)
-    {
-        m_listWidget->setAnchorIndex (qMax(m_listWidget->anchorIndex() - 1, 0));
-    }
-    else
-    {
-        if(s == SELECT_TOP)
-        {
-            m_listWidget->model()->setSelected (first_visible, true);
-            m_listWidget->setAnchorIndex(first_visible);
-        }
-        else if(s == SELECT_BOTTOM)
-        {
-            m_listWidget->model()->setSelected (last_visible, true);
-            m_listWidget->setAnchorIndex(last_visible);
-        }
-        else if(rows.first() == 0)
-        {
-            m_listWidget->model()->setSelected (rows.first(), true);
-            m_listWidget->setAnchorIndex(rows.first());
-        }
-        else if(rows.contains(m_listWidget->anchorIndex()) || m_listWidget->anchorIndex() < 0)
-        {
-            m_listWidget->model()->setSelected (rows.first() - 1, true);
-            m_listWidget->setAnchorIndex(rows.first() - 1);
-        }
-        else if(m_listWidget->anchorIndex() >= 0)
-        {
-            m_listWidget->model()->setSelected (m_listWidget->anchorIndex(), true);
-        }
-    }
-
-    if(m_listWidget->anchorIndex() < first_visible)
-    {
-        m_listWidget->setViewPosition (m_listWidget->firstVisibleIndex() - 1);
-    }
-}
-
-void KeyboardManager::keyDown (QKeyEvent * ke)
-{
-    QList<int> rows = m_listWidget->model()->selectedIndexes();
-
-    if(rows.isEmpty())
-    {
-        m_listWidget->model()->setSelected(m_listWidget->firstVisibleIndex(), true);
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex());
-        return;
-    }
-
-    if (!(ke->modifiers() & Qt::ShiftModifier ||
-          ke->modifiers() & Qt::AltModifier ||
+    if (!(ke->modifiers() & Qt::ShiftModifier || ke->modifiers() & Qt::AltModifier ||
           ke->modifiers() & Qt::ControlModifier))
     {
         m_listWidget->model()->clearSelection();
-        m_listWidget->setAnchorIndex(-1);
+        m_listWidget->setAnchorLine(-1);
     }
 
-    int first_visible = m_listWidget->firstVisibleIndex();
+    int first_visible = m_listWidget->firstVisibleLine();
     int last_visible = m_listWidget->visibleRows() + first_visible - 1;
 
-    int s = SELECT_NEXT;
+    SelectMode s = SELECT_NEXT;
 
-    if(rows.last() < first_visible)
+    if(lines.constLast() < first_visible)
         s = SELECT_TOP;
-    else if(rows.first() > last_visible)
+    else if(lines.constFirst() > last_visible)
         s = SELECT_BOTTOM;
 
-    if (ke->modifiers() == Qt::AltModifier)
+    if (ke->modifiers() & Qt::AltModifier)
     {
-        if(rows.last() == m_listWidget->model()->count() - 1)
+        if(lines.constFirst() == 0)
             return;
-        m_listWidget->model()->moveItems (rows.last(), rows.last() + 1);
-        m_listWidget->setAnchorIndex (rows.last() + 1);
+
+        int from = m_listWidget->model()->trackIndexAtLine(lines.constFirst());
+        int to = m_listWidget->model()->trackIndexAtLine(lines.constFirst() - 1);
+
+        if(from >= 0 && to >= 0)
+        {
+            m_listWidget->model()->moveItems(from, to);
+            m_listWidget->setAnchorLine(lines.constFirst() - 1);
+        }
     }
-    else if(ke->modifiers() == Qt::ControlModifier)
+    else if(ke->modifiers() & Qt::ControlModifier)
     {
-        m_listWidget->setAnchorIndex (qMin(m_listWidget->anchorIndex() + 1,
-                                           m_listWidget->model()->count() - 1));
+        m_listWidget->setAnchorLine(qMax(m_listWidget->anchorLine() - 1, 0));
     }
     else
     {
         if(s == SELECT_TOP)
         {
-            m_listWidget->model()->setSelected (first_visible, true);
-            m_listWidget->setAnchorIndex(first_visible);
+            m_listWidget->model()->setSelectedLine(first_visible, true);
+            m_listWidget->setAnchorLine(first_visible);
         }
         else if(s == SELECT_BOTTOM)
         {
-            m_listWidget->model()->setSelected (last_visible, true);
-            m_listWidget->setAnchorIndex(last_visible);
+            m_listWidget->model()->setSelectedLine(last_visible, true);
+            m_listWidget->setAnchorLine(last_visible);
         }
-        else if(rows.last() == m_listWidget->model()->count() - 1)
+        else if(lines.constFirst() == 0)
         {
-            m_listWidget->model()->setSelected (rows.last(), true);
-            m_listWidget->setAnchorIndex(rows.last());
+            m_listWidget->model()->setSelectedLine(lines.constFirst(), true);
+            m_listWidget->setAnchorLine(lines.constFirst());
         }
-        else if(rows.contains(m_listWidget->anchorIndex()) || m_listWidget->anchorIndex() < 0)
+        else if(lines.contains(m_listWidget->anchorLine()) || m_listWidget->anchorLine() < 0)
         {
-            m_listWidget->model()->setSelected (rows.last() + 1, true);
-            m_listWidget->setAnchorIndex(rows.last() + 1);
+            m_listWidget->model()->setSelectedLine(lines.constFirst() - 1, true);
+            m_listWidget->setAnchorLine(lines.constFirst() - 1);
         }
-        else if(m_listWidget->anchorIndex() >= 0)
+        else if(m_listWidget->anchorLine() >= 0)
         {
-            m_listWidget->model()->setSelected (m_listWidget->anchorIndex(), true);
+            m_listWidget->model()->setSelectedLine(m_listWidget->anchorLine(), true);
         }
     }
 
-    if(m_listWidget->anchorIndex() > last_visible)
+    if(m_listWidget->anchorLine() < first_visible)
     {
-        m_listWidget->setViewPosition (m_listWidget->firstVisibleIndex() + 1);
+        m_listWidget->setViewPosition(m_listWidget->firstVisibleLine() - 1);
     }
 }
 
-void KeyboardManager::keyPgUp (QKeyEvent *)
+void KeyboardManager::keyDown(QKeyEvent * ke)
 {
-    int page_size = m_listWidget->visibleRows();
-    int first = m_listWidget->firstVisibleIndex();
-    int offset = qMax(first - page_size, 0);
-    m_listWidget->setViewPosition (offset);
+    QList<int> lines = m_listWidget->model()->selectedLines();
+
+    if(lines.isEmpty())
+    {
+        m_listWidget->model()->setSelectedLine(m_listWidget->firstVisibleLine(), true);
+        m_listWidget->setAnchorLine(m_listWidget->firstVisibleLine());
+        return;
+    }
+
+    if(!(ke->modifiers() & Qt::ShiftModifier || ke->modifiers() & Qt::AltModifier || ke->modifiers() & Qt::ControlModifier))
+    {
+        m_listWidget->model()->clearSelection();
+        m_listWidget->setAnchorLine(-1);
+    }
+
+    int first_visible = m_listWidget->firstVisibleLine();
+    int last_visible = m_listWidget->visibleRows() + first_visible - 1;
+
+    SelectMode s = SELECT_NEXT;
+
+    if(lines.constLast() < first_visible)
+        s = SELECT_TOP;
+    else if(lines.constFirst() > last_visible)
+        s = SELECT_BOTTOM;
+
+    if (ke->modifiers() & Qt::AltModifier)
+    {
+        if(lines.constLast() == m_listWidget->model()->lineCount() - 1)
+            return;
+
+        int from = m_listWidget->model()->trackIndexAtLine(lines.constFirst());
+        int to = m_listWidget->model()->trackIndexAtLine(lines.constFirst() + 1);
+
+        if(from >= 0 && to >= 0)
+        {
+            m_listWidget->model()->moveItems(from, to);
+            m_listWidget->setAnchorLine(lines.constLast() + 1);
+        }
+    }
+    else if(ke->modifiers() & Qt::ControlModifier)
+    {
+        m_listWidget->setAnchorLine(qMin(m_listWidget->anchorLine() + 1,
+                                         m_listWidget->model()->lineCount() - 1));
+    }
+    else
+    {
+        if(s == SELECT_TOP)
+        {
+            m_listWidget->model()->setSelectedLine(first_visible, true);
+            m_listWidget->setAnchorLine(first_visible);
+        }
+        else if(s == SELECT_BOTTOM)
+        {
+            m_listWidget->model()->setSelectedLine(last_visible, true);
+            m_listWidget->setAnchorLine(last_visible);
+        }
+        else if(lines.constLast() == m_listWidget->model()->lineCount() - 1)
+        {
+            m_listWidget->model()->setSelectedLine(lines.constLast(), true);
+            m_listWidget->setAnchorLine(lines.constLast());
+        }
+        else if(lines.contains(m_listWidget->anchorLine()) || m_listWidget->anchorLine() < 0)
+        {
+            m_listWidget->model()->setSelectedLine(lines.constLast() + 1, true);
+            m_listWidget->setAnchorLine(lines.constLast() + 1);
+        }
+        else if(m_listWidget->anchorLine() >= 0)
+        {
+            m_listWidget->model()->setSelectedLine(m_listWidget->anchorLine(), true);
+        }
+    }
+
+    if(m_listWidget->anchorLine() > last_visible)
+    {
+        m_listWidget->setViewPosition (m_listWidget->firstVisibleLine() + 1);
+    }
+}
+
+void KeyboardManager::keyPgUp(QKeyEvent *)
+{
+    int first = m_listWidget->firstVisibleLine();
+    int offset = qMax(m_listWidget->firstVisibleLine() - m_listWidget->visibleRows(), 0);
+    m_listWidget->setViewPosition(offset);
 
     m_listWidget->model()->clearSelection();
-    if(m_listWidget->firstVisibleIndex() == first)
-        m_listWidget->setAnchorIndex(0);
+    if(m_listWidget->firstVisibleLine() == first)
+        m_listWidget->setAnchorLine(0);
     else
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex() + page_size/2);
-    m_listWidget->model()->setSelected(m_listWidget->anchorIndex(), true);
+        m_listWidget->setAnchorLine(m_listWidget->firstVisibleLine() + m_listWidget->visibleRows() / 2);
+    m_listWidget->model()->setSelectedLine(m_listWidget->anchorLine(), true);
 }
 
-void KeyboardManager::keyPgDown (QKeyEvent *)
+void KeyboardManager::keyPgDown(QKeyEvent *)
 {
-    int page_size = m_listWidget->visibleRows();
-    int first = m_listWidget->firstVisibleIndex();
-    int offset = qMin(first + page_size, m_listWidget->model()->count() - 1);
-    m_listWidget->setViewPosition (offset);
+    int first = m_listWidget->firstVisibleLine();
+    int offset = qMin(first + m_listWidget->visibleRows(), m_listWidget->model()->lineCount() - 1);
+    m_listWidget->setViewPosition(offset);
 
     m_listWidget->model()->clearSelection();
-    if(m_listWidget->firstVisibleIndex() == first)
-        m_listWidget->setAnchorIndex(m_listWidget->model()->count() - 1);
+    if(m_listWidget->firstVisibleLine() == first)
+        m_listWidget->setAnchorLine(m_listWidget->model()->lineCount() - 1);
     else
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex() + page_size/2);
-    m_listWidget->model()->setSelected(m_listWidget->anchorIndex(), true);
+        m_listWidget->setAnchorLine(m_listWidget->firstVisibleLine() + m_listWidget->visibleRows() / 2);
+    m_listWidget->model()->setSelectedLine(m_listWidget->anchorLine(), true);
 }
 
-void KeyboardManager::keyEnter (QKeyEvent *)
-{
-    QList<int> indexes = m_listWidget->model()->selectedIndexes();
-    if (indexes.count() > 0)
-    {
-        m_listWidget->model()->setCurrent (indexes.first());
-        MediaPlayer::instance()->stop();
-        PlayListManager::instance()->activatePlayList(m_listWidget->model());
-        MediaPlayer::instance()->play();
-    }
+void KeyboardManager::keyEnter(QKeyEvent *)
+{    
+    QList<int> rows = m_listWidget->model()->selectedIndexes();
+    if(rows.isEmpty())
+        return;
+    SoundCore::instance()->stop();
+    PlayListManager::instance()->activatePlayList(m_listWidget->model());
+    m_listWidget->model()->setCurrent(rows.constFirst());
+    MediaPlayer::instance()->play();
 }
 
 void KeyboardManager::keyHome(QKeyEvent *ke)
 {
-    m_listWidget->setViewPosition (0);
+    m_listWidget->setViewPosition(0);
     if(ke->modifiers() & Qt::ShiftModifier)
     {
-        m_listWidget->model()->setSelected (0, m_listWidget->anchorIndex(), true);
+        m_listWidget->model()->setSelectedLines(0, m_listWidget->anchorLine(), true);
     }
-    else if(m_listWidget->model()->count() != 0)
+    else if(!m_listWidget->model()->isEmpty())
     {
         m_listWidget->model()->clearSelection();
-        m_listWidget->setAnchorIndex(0);
-        m_listWidget->model()->setSelected(0, true);
+        m_listWidget->setAnchorLine(0);
+        m_listWidget->model()->setSelectedLine(0, true);
     }
 }
 
 void KeyboardManager::keyEnd(QKeyEvent *ke)
 {
-   int scroll_to = qMax(m_listWidget->model()->count() - m_listWidget->visibleRows(), 0);
-   m_listWidget->setViewPosition(scroll_to);
-   if(ke->modifiers() & Qt::ShiftModifier)
-   {
-       m_listWidget->model()->setSelected (m_listWidget->anchorIndex(), m_listWidget->model()->count() - 1, true);
-   }
-   else if(m_listWidget->model()->count() > 0)
-   {
-       m_listWidget->model()->clearSelection();
-       m_listWidget->setAnchorIndex(m_listWidget->model()->count() - 1);
-       m_listWidget->model()->setSelected(m_listWidget->anchorIndex(), true);
-   }
+    int scroll_to = m_listWidget->model()->lineCount() - m_listWidget->visibleRows();
+    if(scroll_to >= 0)
+        m_listWidget->setViewPosition(scroll_to);
+
+    if(ke->modifiers() & Qt::ShiftModifier)
+    {
+        m_listWidget->model()->setSelectedLines(m_listWidget->anchorLine(), m_listWidget->model()->lineCount() - 1, true);
+    }
+    else if(!m_listWidget->model()->isEmpty())
+    {
+        m_listWidget->model()->clearSelection();
+        m_listWidget->setAnchorLine(m_listWidget->model()->lineCount() - 1);
+        m_listWidget->model()->setSelectedLine(m_listWidget->anchorLine(), true);
+    }
 }
