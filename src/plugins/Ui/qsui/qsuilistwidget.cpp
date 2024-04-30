@@ -112,12 +112,12 @@ int QSUiListWidget::firstVisibleLine() const
     return m_firstLine;
 }
 
-int QSUiListWidget::anchorIndex() const
+int QSUiListWidget::anchorLine() const
 {
     return m_anchorLine;
 }
 
-void QSUiListWidget::setAnchorIndex(int index)
+void QSUiListWidget::setAnchorLine(int index)
 {
     m_anchorLine = index;
     updateList(PlayListModel::SELECTION);
@@ -213,9 +213,9 @@ void QSUiListWidget::paintEvent(QPaintEvent *)
         }
     }
     //draw drop line
-    if(m_drop_index >= 0)
+    if(m_dropLine >= 0)
     {
-        m_drawer.drawDropLine(&painter, m_drop_index - m_firstLine, width(),
+        m_drawer.drawDropLine(&painter, m_dropLine - m_firstLine, width(),
                               m_header->isVisible() ? m_header->height() : 0);
     }
 }
@@ -698,12 +698,12 @@ void QSUiListWidget::dropEvent(QDropEvent *event)
             m_model->insert(index, json);
         }
     }
-    m_drop_index = -1;
+    m_dropLine = -1;
 }
 
 void QSUiListWidget::dragLeaveEvent(QDragLeaveEvent *)
 {
-    m_drop_index = -1;
+    m_dropLine = -1;
     update();
 }
 
@@ -712,9 +712,9 @@ void QSUiListWidget::dragMoveEvent(QDragMoveEvent *event)
     int index = lineAt(event->position().y());
     if(index < 0)
         index = qMin(m_firstLine + m_row_count, m_model->lineCount());
-    if(index != m_drop_index)
+    if(index != m_dropLine)
     {
-        m_drop_index = index;
+        m_dropLine = index;
         update();
     }
     if (event->mimeData()->hasFormat(u"text/uri-list"_s))
