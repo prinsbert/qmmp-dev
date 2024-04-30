@@ -425,16 +425,13 @@ void MetaDataFormatter::parseText(QList<MetaDataFormatter::Node> *nodes, QString
     param.type = Param::TEXT;
     node.params.append(param);
 
-    forever
+    while((*i) != end &&  (**i) != QLatin1Char('%'))
     {
-        if((*i) == end || (**i) == QLatin1Char('%'))
-        {
-            (*i)--;
-            break;
-        }
         node.params[0].text.append(**i);
-        (*i)++;
+        ++(*i);
     }
+    (*i)--;
+
     if(!node.params[0].text.isEmpty())
         nodes->append(node);
 }

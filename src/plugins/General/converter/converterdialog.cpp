@@ -337,12 +337,9 @@ QString ConverterDialog::uniqueName(const QString &name)
 {
     QString unique_name = name;
     int i = 0;
-    forever
-    {
-        if(m_ui->presetComboBox->findText(unique_name) == -1)
-            break;
+    while (m_ui->presetComboBox->findText(unique_name) >= 0)
         unique_name = name + QStringLiteral("_%1").arg(++i);
-    }
+
     return unique_name;
 }
 
