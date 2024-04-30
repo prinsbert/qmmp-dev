@@ -67,8 +67,8 @@ void QSUiKeyboardManager::processUp()
 
     if(lines.isEmpty())
     {
-        m_listWidget->model()->setSelectedLine(m_listWidget->firstVisibleIndex(), true);
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex());
+        m_listWidget->model()->setSelectedLine(m_listWidget->firstVisibleLine(), true);
+        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleLine());
         return;
     }
 
@@ -79,7 +79,7 @@ void QSUiKeyboardManager::processUp()
         m_listWidget->setAnchorIndex(-1);
     }
 
-    int first_visible = m_listWidget->firstVisibleIndex();
+    int first_visible = m_listWidget->firstVisibleLine();
     int last_visible = m_listWidget->visibleRows() + first_visible - 1;
 
     SelectMode s = SELECT_NEXT;
@@ -137,7 +137,7 @@ void QSUiKeyboardManager::processUp()
 
     if(m_listWidget->anchorIndex() < first_visible)
     {
-        m_listWidget->setViewPosition(m_listWidget->firstVisibleIndex() - 1);
+        m_listWidget->setViewPosition(m_listWidget->firstVisibleLine() - 1);
     }
 }
 
@@ -152,8 +152,8 @@ void QSUiKeyboardManager::processDown()
 
     if(lines.isEmpty())
     {
-        m_listWidget->model()->setSelectedLine(m_listWidget->firstVisibleIndex(), true);
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex());
+        m_listWidget->model()->setSelectedLine(m_listWidget->firstVisibleLine(), true);
+        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleLine());
         return;
     }
 
@@ -164,7 +164,7 @@ void QSUiKeyboardManager::processDown()
         m_listWidget->setAnchorIndex(-1);
     }
 
-    int first_visible = m_listWidget->firstVisibleIndex();
+    int first_visible = m_listWidget->firstVisibleLine();
     int last_visible = m_listWidget->visibleRows() + first_visible - 1;
 
     SelectMode s = SELECT_NEXT;
@@ -223,7 +223,7 @@ void QSUiKeyboardManager::processDown()
 
     if(m_listWidget->anchorIndex() > last_visible)
     {
-        m_listWidget->setViewPosition (m_listWidget->firstVisibleIndex() + 1);
+        m_listWidget->setViewPosition (m_listWidget->firstVisibleLine() + 1);
     }
 }
 
@@ -250,15 +250,15 @@ void QSUiKeyboardManager::processPgUp()
     if(!m_listWidget || m_listWidget->filterMode())
         return;
 
-    int first = m_listWidget->firstVisibleIndex();
-    int offset = qMax(m_listWidget->firstVisibleIndex() - m_listWidget->visibleRows(), 0);
+    int first = m_listWidget->firstVisibleLine();
+    int offset = qMax(m_listWidget->firstVisibleLine() - m_listWidget->visibleRows(), 0);
     m_listWidget->setViewPosition(offset);
 
     m_listWidget->model()->clearSelection();
-    if(m_listWidget->firstVisibleIndex() == first)
+    if(m_listWidget->firstVisibleLine() == first)
         m_listWidget->setAnchorIndex(0);
     else
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex() + m_listWidget->visibleRows() / 2);
+        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleLine() + m_listWidget->visibleRows() / 2);
     m_listWidget->model()->setSelectedLine(m_listWidget->anchorIndex(), true);
 }
 
@@ -267,15 +267,15 @@ void QSUiKeyboardManager::processPgDown()
     if(!m_listWidget || m_listWidget->filterMode())
         return;
 
-    int first = m_listWidget->firstVisibleIndex();
+    int first = m_listWidget->firstVisibleLine();
     int offset = qMin(first + m_listWidget->visibleRows(), m_listWidget->model()->lineCount() - 1);
     m_listWidget->setViewPosition(offset);
 
     m_listWidget->model()->clearSelection();
-    if(m_listWidget->firstVisibleIndex() == first)
+    if(m_listWidget->firstVisibleLine() == first)
         m_listWidget->setAnchorIndex(m_listWidget->model()->lineCount() - 1);
     else
-        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleIndex() + m_listWidget->visibleRows() / 2);
+        m_listWidget->setAnchorIndex(m_listWidget->firstVisibleLine() + m_listWidget->visibleRows() / 2);
     m_listWidget->model()->setSelectedLine(m_listWidget->anchorIndex(), true);
 }
 
