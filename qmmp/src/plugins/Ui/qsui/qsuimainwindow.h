@@ -115,7 +115,7 @@ private:
     UiHelper *m_uiHelper;
     QMenu *m_pl_menu;
     QMenu *m_tab_menu;
-    QSlider *m_volumeSlider;
+    QSlider *m_volumeSlider, *m_balanceSlider;
     QSUiQuickSearch *m_quickSearch;
     QSUiKeyboardManager *m_key_manager;
     QSUIVisualization *m_analyzer;

@@ -112,6 +112,7 @@ public:
         //widgets
         UI_POS_SLIDER,            //external
         UI_VOL_SLIDER,            //external
+        UI_BAL_SLIDER,            //external
         UI_QUICK_SEARCH,          //external
         UI_SEPARATOR,
     };

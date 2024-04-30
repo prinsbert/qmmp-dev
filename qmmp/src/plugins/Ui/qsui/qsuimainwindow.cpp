@@ -131,6 +131,14 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     m_volumeSlider->setFocusPolicy(Qt::NoFocus);
     m_volumeSlider->setFixedWidth(100);
     m_volumeSlider->setRange(0, 100);
+    //balance
+    m_balanceSlider = new VolumeSlider(this);
+    m_balanceSlider->setFocusPolicy(Qt::NoFocus);
+    m_balanceSlider->setFixedWidth(100);
+    m_balanceSlider->setRange(-100, 100);
+    m_balanceSlider->setTickInterval(100);
+    m_balanceSlider->setTickPosition(QSlider::TicksAbove);
+
     SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, &SoundCore::setMuted);
     connect(m_volumeSlider, &QSlider::sliderMoved, m_core, &SoundCore::setVolume);
     connect(m_core, &SoundCore::volumeChanged, m_volumeSlider, &QSlider::setValue);
@@ -139,6 +147,11 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     connect(m_core, &SoundCore::mutedChanged, ACTION(QSUiActionManager::VOL_MUTE), &QAction::setChecked);
     m_volumeSlider->setValue(m_core->volume());
     updateVolumeIcon();
+
+    connect(m_balanceSlider, &QSlider::sliderMoved, m_core, &SoundCore::setBalance);
+    connect(m_core, &SoundCore::balanceChanged, m_balanceSlider, &QSlider::setValue);
+    m_balanceSlider->setValue(m_core->balance());
+
     //quick search
     m_quickSearch = new QSUiQuickSearch(m_listWidget, this);
     m_quickSearch->setMaximumWidth(250);
@@ -438,26 +451,29 @@ void QSUiMainWindow::createActions()
     connect(m_ui_settings, &QmmpUiSettings::playListTransitionChanged, ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS), &QAction::setChecked);
     //register external actions
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_ANALYZER,
-                                              m_ui.analyzerDockWidget->toggleViewAction(),
+                                                  m_ui.analyzerDockWidget->toggleViewAction(),
                                                   u"analyzer"_s);
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_FILEBROWSER,
-                                              m_ui.fileSystemDockWidget->toggleViewAction(),
-                                              u"file_browser"_s, tr("Ctrl+0"));
+                                                  m_ui.fileSystemDockWidget->toggleViewAction(),
+                                                  u"file_browser"_s, tr("Ctrl+0"));
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_COVER,
-                                              m_ui.coverDockWidget->toggleViewAction(),
-                                              u"cover"_s);
+                                                  m_ui.coverDockWidget->toggleViewAction(),
+                                                  u"cover"_s);
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_PLAYLIST_BROWSER,
-                                              m_ui.playlistsDockWidget->toggleViewAction(),
-                                              u"playlist_browser"_s, tr("P"));
+                                                  m_ui.playlistsDockWidget->toggleViewAction(),
+                                                  u"playlist_browser"_s, tr("P"));
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_WAVEFORM_SEEKBAR,
-                                              m_ui.waveformSeekBarDockWidget->toggleViewAction(),
-                                              u"waveform_seekbar"_s, QString());
+                                                  m_ui.waveformSeekBarDockWidget->toggleViewAction(),
+                                                  u"waveform_seekbar"_s, QString());
     QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_POS_SLIDER, m_positionSlider,
-                                              tr("Position"), u"position_slider"_s);
+                                                  tr("Position"), u"position_slider"_s);
     QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_VOL_SLIDER, m_volumeSlider,
-                                              tr("Volume"), u"volume_slider"_s);
+                                                  tr("Volume"), u"volume_slider"_s);
+    QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_BAL_SLIDER, m_balanceSlider,
+                                                  tr("Balance"), u"balance_slider"_s);
+
     QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_QUICK_SEARCH, m_quickSearch,
-                                              tr("Quick Search"), u"quick_search"_s);
+                                                  tr("Quick Search"), u"quick_search"_s);
     //playback
     SET_ACTION(QSUiActionManager::PREVIOUS, m_player, &MediaPlayer::previous);
     SET_ACTION(QSUiActionManager::PLAY, m_player, &MediaPlayer::play);

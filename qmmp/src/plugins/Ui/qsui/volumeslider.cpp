@@ -31,7 +31,7 @@ VolumeSlider::VolumeSlider(QWidget *parent) : QSlider(Qt::Horizontal, parent)
     connect(this, &VolumeSlider::sliderMoved, this, &VolumeSlider::onSliderMoved);
 }
 
-void VolumeSlider::mousePressEvent (QMouseEvent *event)
+void VolumeSlider::mousePressEvent(QMouseEvent *event)
 {
     QStyleOptionSlider opt;
     initStyleOption(&opt);
@@ -47,7 +47,7 @@ void VolumeSlider::mousePressEvent (QMouseEvent *event)
         else
             val = minimum() + ((maximum() - minimum()) * event->position().x()) / width();
 
-        setSliderDown (true);
+        setSliderDown(true);
 
         if(invertedAppearance() == true)
         {
@@ -66,7 +66,7 @@ void VolumeSlider::mousePressEvent (QMouseEvent *event)
 
 void VolumeSlider::mouseReleaseEvent(QMouseEvent *event)
 {
-    setSliderDown (false);
+    setSliderDown(false);
     QSlider::mouseReleaseEvent(event);
 }
 
@@ -86,7 +86,12 @@ void VolumeSlider::onSliderMoved(int pos)
         QRect rect = style()->subControlRect(QStyle::CC_Slider, &opt, QStyle::SC_SliderHandle, this);
         rect.moveTo(rect.x() - 10 , rect.y() - 45);
 
-        int level = (pos - minimum()) * 100 / (maximum() - minimum());
-        QToolTip::showText(mapToGlobal(rect.topLeft()), tr("%1%").arg(level), this, QRect());
+        int level = 0;
+        if(minimum() >= 0)
+            level = (pos - minimum()) * 100 / (maximum() - minimum());
+        else
+            level = pos * 100 * 2 / (maximum() - minimum());
+
+        QToolTip::showText(mapToGlobal(rect.topLeft()), tr("%1: %2%").arg(windowTitle()).arg(level), this, QRect());
     }
 }

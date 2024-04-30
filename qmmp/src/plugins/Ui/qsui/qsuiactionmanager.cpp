@@ -241,6 +241,7 @@ void QSUiActionManager::registerWidget(int id, QWidget *w, const QString &text, 
     action->setText(text);
     action->setObjectName(name);
     action->setDefaultWidget(w);
+    w->setWindowTitle(text);
     m_actions[id] = action;
 }
 
