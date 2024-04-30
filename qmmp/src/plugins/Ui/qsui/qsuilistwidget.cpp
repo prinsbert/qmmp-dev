@@ -592,7 +592,7 @@ void QSUiListWidget::scrollTo(int index)
 
 void QSUiListWidget::setViewPosition(int sc)
 {
-    if (m_model->lineCount() <= m_row_count)
+    if(m_model->lineCount() <= m_row_count)
         return;
     m_firstLine = sc;
     updateList(PlayListModel::STRUCTURE);

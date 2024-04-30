@@ -47,9 +47,9 @@ void QSUiListWidgetDrawer::readSettings()
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
     m_show_anchor = settings.value(u"pl_show_anchor"_s, false).toBool();
-    m_show_number = settings.value(u"pl_show_numbers"_s, true).toBool();
+    m_show_numbers = settings.value(u"pl_show_numbers"_s, true).toBool();
     m_show_lengths = settings.value(u"pl_show_lengths"_s, true).toBool();
-    m_align_numbres = settings.value(u"pl_align_numbers"_s, false).toBool();
+    m_align_numbers = settings.value(u"pl_align_numbers"_s, false).toBool();
     m_show_splitters = settings.value(u"pl_show_splitters"_s, true).toBool();
 
     QFont defaultFont = qApp->font("QAbstractItemView");
@@ -77,18 +77,18 @@ void QSUiListWidgetDrawer::readSettings()
     if(!m_use_system_colors)
     {
         m_normal_bg.setNamedColor(settings.value(u"pl_bg1_color"_s, m_normal_bg.name()).toString());
-        m_alternate.setNamedColor(settings.value(u"pl_bg2_color"_s, m_alternate.name()).toString());
+        m_alternate_bg.setNamedColor(settings.value(u"pl_bg2_color"_s, m_alternate_bg.name()).toString());
         m_selected_bg.setNamedColor(settings.value(u"pl_highlight_color"_s, m_selected_bg.name()).toString());
         m_normal.setNamedColor(settings.value(u"pl_normal_text_color"_s, m_normal.name()).toString());
         m_highlighted.setNamedColor(settings.value(u"pl_hl_text_color"_s ,m_highlighted.name()).toString());
         m_splitter.setNamedColor(settings.value(u"pl_splitter_color"_s, m_splitter).toString());
 
         m_group_bg = m_normal_bg;
-        m_group_alt_bg = m_alternate;
+        m_group_alt_bg = m_alternate_bg;
         m_group_text = m_normal;
 
         m_current_bg = m_normal_bg;
-        m_current_alt_bg = m_alternate;
+        m_current_alt_bg = m_alternate_bg;
         m_current = m_normal;
     }
 
@@ -105,6 +105,8 @@ void QSUiListWidgetDrawer::readSettings()
         m_current_alt_bg = m_current_bg;
         m_current.setNamedColor(settings.value(u"pl_current_text_color"_s, m_current.name()).toString());
     }
+    
+    settings.endGroup();
 
     for(int i = 0; i <= PL_GROUP_FONT_EXTRA; ++i)
     {
@@ -119,17 +121,17 @@ void QSUiListWidgetDrawer::readSettings()
 void QSUiListWidgetDrawer::loadSystemColors()
 {
     m_normal = qApp->palette().color(QPalette::Text);
-    m_alternate = qApp->palette().color(QPalette::AlternateBase);
+    m_alternate_bg = qApp->palette().color(QPalette::AlternateBase);
     m_current = qApp->palette().color(QPalette::Text);
     m_highlighted = qApp->palette().color(QPalette::HighlightedText);
     m_normal_bg = qApp->palette().color(QPalette::Base);
     m_selected_bg = qApp->palette().color(QPalette::Highlight);
     m_splitter = m_normal;
     m_group_bg = m_normal_bg;
-    m_group_alt_bg = m_alternate,
+    m_group_alt_bg = m_alternate_bg,
     m_group_text = m_normal;
     m_current_bg = m_normal_bg;
-    m_current_alt_bg = m_alternate;
+    m_current_alt_bg = m_alternate_bg;
 }
 
 int QSUiListWidgetDrawer::rowHeight() const
@@ -145,7 +147,7 @@ int QSUiListWidgetDrawer::numberWidth() const
 void QSUiListWidgetDrawer::calculateNumberWidth(int count)
 {
     //song numbers width
-    if(m_show_number && m_align_numbres && count)
+    if(m_show_numbers && m_align_numbers && count)
         m_number_width = m_metrics[MAIN_FONT_BOLD]->horizontalAdvance(u"9"_s) * QString::number(count).size();
     else
         m_number_width = 0;
@@ -174,7 +176,7 @@ void QSUiListWidgetDrawer::prepareRow(QSUiListWidgetRow *row)
 
     if(row->titles.count() == 1)
     {
-        if(m_show_number && !m_align_numbres)
+        if(m_show_numbers && !m_align_numbers)
             row->titles[0].prepend(QStringLiteral("%1. ").arg(row->number));
 
         if((m_show_lengths && !row->length.isEmpty()) || !row->extraString.isEmpty())
@@ -264,8 +266,8 @@ void QSUiListWidgetDrawer::drawBackground(QPainter *painter, QSUiListWidgetRow *
     {
         if(row->alternateColor)
         {
-            painter->setBrush(QBrush(m_alternate));
-            painter->setPen(m_alternate);
+            painter->setBrush(QBrush(m_alternate_bg));
+            painter->setPen(m_alternate_bg);
         }
         else
         {
