@@ -175,21 +175,15 @@ void PlayListManager::activateSelectedPlayList()
 PlayListModel *PlayListManager::createPlayList(const QString &name)
 {
     PlayListModel *model = new PlayListModel(name.isEmpty() ? tr("Playlist") : name, this);
-    QString pl_name = model->name();
-    if(playListNames().contains(pl_name))
-    {
-        int i = 0;
-        forever
-        {
-            i++;
-            if(!playListNames().contains(pl_name + QStringLiteral(" (%1)").arg(i)))
-            {
-                pl_name = pl_name + QStringLiteral(" (%1)").arg(i);
-                break;
-            }
-        }
-        model->setName(pl_name);
-    }
+    QStringList names = playListNames();
+    QString uniqueName = model->name();
+    int i = 0;
+
+    while(names.contains(uniqueName))
+        uniqueName = model->name() + QStringLiteral(" (%1)").arg(++i);
+
+    model->setName(uniqueName);
+
     m_models.append(model);
     connect(model, &PlayListModel::nameChanged, this, &PlayListManager::playListsChanged);
     connect(model, &PlayListModel::listChanged, this, &PlayListManager::onListChanged);
