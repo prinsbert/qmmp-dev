@@ -127,12 +127,12 @@ void MainVisual::mousePressEvent (QMouseEvent *e)
     m_pixmap = m_bg;
     if (!m_vis)
         setVisual(new mainvisual::Analyzer);
-    else if (m_vis->name() == "Analyzer")
+    else if (m_vis->name() == "Analyzer"_L1)
         setVisual(new mainvisual::Scope);
-    else if (m_vis->name() == "Scope")
+    else if (m_vis->name() == "Scope"_L1)
         setVisual(nullptr);
 
-    QString str = m_vis ? m_vis->name() : "Off";
+    QString str = m_vis ? m_vis->name() : "Off"_L1;
     for(QAction *act : m_visModeGroup->actions())
     {
         if (str == act->data().toString())
@@ -199,7 +199,7 @@ void MainVisual::writeSettings()
     settings.setValue("vis_transparent_bg", m_transparentAction->isChecked());
 
     act = m_visModeGroup->checkedAction ();
-    settings.setValue("vis_type", act ? act->data().toString() : "Off");
+    settings.setValue("vis_type", act ? act->data().toString() : u"Off"_s);
 
     act = m_fpsGroup->checkedAction();
     settings.setValue("vis_rate", act ? act->data().toInt() : 25);
@@ -213,9 +213,9 @@ void MainVisual::createMenu()
     QMenu *visMode = m_menu->addMenu(tr("Visualization Mode"));
     m_visModeGroup = new QActionGroup(this);
     m_visModeGroup->setExclusive(true);
-    m_visModeGroup->addAction(tr("Analyzer"))->setData("Analyzer");
-    m_visModeGroup->addAction(tr("Scope"))->setData("Scope");
-    m_visModeGroup->addAction(tr("Off"))->setData("Off");
+    m_visModeGroup->addAction(tr("Analyzer"))->setData(u"Analyzer"_s);
+    m_visModeGroup->addAction(tr("Scope"))->setData(u"Scope"_s);
+    m_visModeGroup->addAction(tr("Off"))->setData(u"Off"_s);
     for(QAction *act : m_visModeGroup->actions())
     {
         act->setCheckable(true);
@@ -297,7 +297,7 @@ void MainVisual::readSettings()
 {
     QSettings settings;
     settings.beginGroup("Skinned");
-    QString vis_name = settings.value("vis_type","Analyzer").toString();
+    QString vis_name = settings.value(u"vis_type"_s, u"Analyzer"_s).toString();
     if(!m_update)
     {
         m_update = true;
@@ -353,9 +353,9 @@ void MainVisual::readSettings()
     m_pixmap = m_bg;
     QAction *act = m_fpsGroup->checkedAction ();
     m_timer->setInterval (act ? 1000 / act->data().toInt() : 25);
-    if (vis_name == "Analyzer")
+    if (vis_name == "Analyzer"_L1)
         setVisual(new mainvisual::Analyzer);
-    else if (vis_name == "Scope")
+    else if (vis_name == "Scope"_L1)
         setVisual(new mainvisual::Scope);
     else
         setVisual(nullptr);
@@ -512,6 +512,11 @@ void Analyzer::draw (QPainter *p)
         }
 }
 
+const QString Analyzer::name()
+{
+    return u"Analyzer"_s;
+}
+
 Scope::Scope()
 {
     clear();
@@ -555,4 +560,9 @@ void Scope::draw(QPainter *p)
     }
     for (int i = 0; i< 76; ++i)
         m_intern_vis_data[i] = 0;
+}
+
+const QString Scope::name()
+{
+    return u"Scope"_s;
 }

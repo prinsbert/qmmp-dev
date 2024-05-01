@@ -61,7 +61,7 @@ public:
     const QPixmap getItem(uint n) const;
     const QPixmap &getVolumeBar(int n) const;
     const QPixmap &getBalanceBar(int n) const;
-    const QByteArray getPLValue(QByteArray c) const;
+    QString getPLValue(QByteArray c) const;
     const QColor getMainColor(int n) const;
     const QColor &getVisColor(int n) const;
     const QRegion getRegion(uint r) const;

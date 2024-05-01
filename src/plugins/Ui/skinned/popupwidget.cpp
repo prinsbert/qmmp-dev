@@ -51,7 +51,7 @@ PopupWidget::PopupWidget(QWidget *parent)
     settings.beginGroup("Skinned");
     setWindowOpacity(settings.value("popup_opacity", 1.0).toDouble());
     m_coverSize = settings.value("popup_cover_size", 48).toInt();
-    m_template = settings.value("popup_template",DEFAULT_TEMPLATE).toString();
+    m_template = settings.value("popup_template", DEFAULT_TEMPLATE).toString();
     m_formatter.setPattern(m_template);
     int delay = settings.value("popup_delay", 2500).toInt();
     bool show_cover = settings.value("popup_show_cover",true).toBool();
@@ -122,7 +122,7 @@ void PopupWidget::loadCover()
         return;
     QImage img = MetaDataManager::instance()->getCover(m_url);
     if(img.isNull())
-        img = QImage(":/skinned/ui_no_cover.png");
+        img = QImage(u":/skinned/ui_no_cover.png"_s);
     m_pixlabel->setFixedSize(m_coverSize,m_coverSize);
     m_pixlabel->setPixmap(QPixmap::fromImage(img.scaled(m_coverSize, m_coverSize, Qt::IgnoreAspectRatio, Qt::SmoothTransformation)));
     qApp->processEvents();

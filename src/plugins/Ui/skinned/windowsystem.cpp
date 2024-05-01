@@ -96,7 +96,7 @@ QString WindowSystem::netWindowManagerName()
     if (retValue2 == nullptr)
         return QString();
 
-    QString name = QString((char *)retValue2);
+    QString name = QString::fromLatin1((char *)retValue2);
     XFree(retValue2);
     return name;
 }

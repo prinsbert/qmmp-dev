@@ -534,7 +534,7 @@ void ListWidget::updateSkin()
 
 void ListWidget::dragEnterEvent(QDragEnterEvent *event)
 {
-    if(event->mimeData()->hasFormat("text/uri-list") || event->mimeData()->hasFormat("application/json"))
+    if(event->mimeData()->hasFormat(u"text/uri-list"_s) || event->mimeData()->hasFormat(u"application/json"_s))
         event->acceptProposedAction();
 }
 

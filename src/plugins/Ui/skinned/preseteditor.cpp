@@ -22,6 +22,8 @@
 #include "eqpreset.h"
 #include "preseteditor.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 PresetEditor::PresetEditor(QWidget *parent)
         : QDialog(parent)
 {
@@ -29,8 +31,8 @@ PresetEditor::PresetEditor(QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose);
     connect(m_ui.loadButton,SIGNAL(clicked()),SLOT(loadPreset()));
     connect(m_ui.deleteButton,SIGNAL(clicked()),SLOT(deletePreset()));
-    m_ui.loadButton->setIcon(QIcon::fromTheme("document-open"));
-    m_ui.deleteButton->setIcon(QIcon::fromTheme("edit-delete"));
+    m_ui.loadButton->setIcon(QIcon::fromTheme(u"document-open"_s));
+    m_ui.deleteButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
 }
 
 

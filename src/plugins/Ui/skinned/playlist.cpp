@@ -61,11 +61,11 @@ PlayList::PlayList (PlayListManager *manager, QWidget *parent)
 
 #ifdef QMMP_WS_X11
     QString wm_name = WindowSystem::netWindowManagerName();
-    m_compiz = wm_name.contains("compiz", Qt::CaseInsensitive);
-    if(wm_name.contains("openbox", Qt::CaseInsensitive) || wm_name.contains("xfwm4", Qt::CaseInsensitive))
+    m_compiz = wm_name.contains(u"compiz"_s, Qt::CaseInsensitive);
+    if(wm_name.contains(u"openbox"_s, Qt::CaseInsensitive) || wm_name.contains(u"xfwm4"_s, Qt::CaseInsensitive))
         setWindowFlags (Qt::Drawer | Qt::FramelessWindowHint);
-    else if(wm_name.contains("metacity", Qt::CaseInsensitive) ||
-            wm_name.contains("kwin", Qt::CaseInsensitive))
+    else if(wm_name.contains(u"metacity"_s, Qt::CaseInsensitive) ||
+            wm_name.contains(u"kwin"_s, Qt::CaseInsensitive))
         setWindowFlags (Qt::Tool | Qt::FramelessWindowHint);
     else
 #endif
@@ -195,7 +195,7 @@ void PlayList::createMenus()
     m_sortMenu = new QMenu (this);
     m_playlistMenu = new QMenu (this);
     m_copySelectedMenu = new QMenu (tr("&Copy Selection To"), m_listWidget->menu());
-    m_copySelectedMenu->setIcon(QIcon::fromTheme("edit-copy"));
+    m_copySelectedMenu->setIcon(QIcon::fromTheme(u"edit-copy"_s));
     connect(m_copySelectedMenu, SIGNAL(aboutToShow()),
             SLOT(generateCopySelectedMenu()));
     connect(m_copySelectedMenu, SIGNAL(triggered(QAction*)),
@@ -226,7 +226,7 @@ void PlayList::createActions()
     m_sortMenu->addSeparator();
 
     QMenu* sort_mode_menu = new QMenu (tr("Sort List"), this);
-    sort_mode_menu->setIcon(QIcon::fromTheme("view-sort-ascending"));
+    sort_mode_menu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
 
     QAction *titleAct = sort_mode_menu->addAction(tr ("By Title"));
     connect(titleAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::TITLE); } );
@@ -267,7 +267,7 @@ void PlayList::createActions()
     m_sortMenu->addMenu (sort_mode_menu);
 
     sort_mode_menu = new QMenu (tr("Sort Selection"), m_sortMenu);
-    sort_mode_menu->setIcon(QIcon::fromTheme("view-sort-ascending"));
+    sort_mode_menu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
     titleAct = sort_mode_menu->addAction(tr ("By Title"));
     connect(titleAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::TITLE); });
 
@@ -303,9 +303,9 @@ void PlayList::createActions()
 
     m_sortMenu->addMenu (sort_mode_menu);
     m_sortMenu->addSeparator();
-    m_sortMenu->addAction (QIcon::fromTheme("media-playlist-shuffle"), tr("Randomize List"),
+    m_sortMenu->addAction (QIcon::fromTheme(u"media-playlist-shuffle"_s), tr("Randomize List"),
                            m_pl_manager, SLOT(randomizeList()));
-    m_sortMenu->addAction (QIcon::fromTheme("view-sort-descending"), tr("Reverse List"),
+    m_sortMenu->addAction (QIcon::fromTheme(u"view-sort-descending"_s), tr("Reverse List"),
                            m_pl_manager, SLOT(reverseList()));
     //playlist context menu
     m_listWidget->menu()->addAction(ActionManager::instance()->action(ActionManager::PL_SHOW_INFO));
@@ -534,13 +534,13 @@ QString PlayList::formatTime (int sec)
 {
     if(sec >= 3600)
         sec /= 60;
-    return QString("%1:%2").arg(sec/60, 2, 10, QChar('0')).arg(sec%60, 2, 10, QChar('0'));
+    return QStringLiteral("%1:%2").arg(sec/60, 2, 10, QLatin1Char('0')).arg(sec%60, 2, 10, QLatin1Char('0'));
 }
 
 void PlayList::setTime(qint64 time)
 {
     if(time < 0)
-        m_current_time->display("--:--");
+        m_current_time->display(u"--:--"_s);
     else
         m_current_time->display(formatTime (time/1000));
     m_current_time->update();
@@ -548,11 +548,11 @@ void PlayList::setTime(qint64 time)
     SoundCore *core = SoundCore::instance();
     if(core)
     {
-        QString str_length = formatTime(m_pl_manager->currentPlayList()->totalDuration() / 1000) + "/";
+        QString str_length = formatTime(m_pl_manager->currentPlayList()->totalDuration() / 1000) + QLatin1Char('/');
         if(core->state() == Qmmp::Playing || core->state() == Qmmp::Paused)
             str_length.append(formatTime(core->duration() / 1000));
         else
-            str_length.append("--:--");
+            str_length.append(u"--:--"_s);
         m_length_totalLength->display(str_length);
         m_length_totalLength->update();
     }
@@ -609,12 +609,12 @@ void PlayList::generateCopySelectedMenu()
 {
     m_copySelectedMenu->clear();
     QAction* action = m_copySelectedMenu->addAction (tr("&New PlayList"));
-    action->setIcon(QIcon::fromTheme("document-new"));
+    action->setIcon(QIcon::fromTheme(u"document-new"_s));
     m_copySelectedMenu->addSeparator();
 
     for(QString name : m_pl_manager->playListNames())
     {
-        m_copySelectedMenu->addAction("&" + name.replace("&", "&&"));
+        m_copySelectedMenu->addAction(u"&"_s + name.replace(u"&"_s, u"&&"_s));
     }
 }
 
@@ -628,7 +628,7 @@ void PlayList::copySelectedMenuActionTriggered(QAction *action)
     }
     else
     {
-        actionText.remove(0,1).replace("&&", "&");
+        actionText.remove(0,1).replace(u"&&"_s, u"&"_s);
         for(PlayListModel *model : m_pl_manager->playLists())
         {
             //if("&" + model->name().replace("&", "&&") == actionText)

@@ -209,10 +209,10 @@ QString TitleBar::formatTime (int sec)
     QString str_minutes = QString::number (minutes);
     QString str_seconds = QString::number (seconds);
 
-    if (minutes < 10) str_minutes.prepend ("0");
-    if (seconds < 10) str_seconds.prepend ("0");
+    if (minutes < 10) str_minutes.prepend(QLatin1Char('0'));
+    if (seconds < 10) str_seconds.prepend(QLatin1Char('0'));
 
-    return (sign ? "-" : "") + str_minutes + ":" + str_seconds;
+    return (sign ? u"-"_s : QString()) + str_minutes + QLatin1Char(':') + str_seconds;
 }
 
 void TitleBar::onModelChanged()
@@ -222,11 +222,11 @@ void TitleBar::onModelChanged()
 
     if (!m_model->visible())
     {
-        m_currentTime->display("  :  ");
+        m_currentTime->display(u"  :  "_s);
     }
     else if (m_model->position() < 0)
     {
-        m_currentTime->display("--:--");
+        m_currentTime->display(u"--:--"_s);
     }
     else
     {

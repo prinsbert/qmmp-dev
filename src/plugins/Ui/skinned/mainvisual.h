@@ -106,10 +106,7 @@ public:
     void clear() override;
     bool process(float *l) override;
     void draw(QPainter *p) override;
-    const QString name() override
-    {
-        return "Analyzer";
-    }
+    const QString name() override;
 
 private:
     QSize m_size;
@@ -131,10 +128,7 @@ public:
     void clear() override;
     bool process(float *l) override;
     void draw(QPainter *p) override;
-    const QString name() override
-    {
-        return "Scope";
-    }
+    const QString name() override;
 
 private:
     int m_intern_vis_data[76];

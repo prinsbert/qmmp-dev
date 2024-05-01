@@ -64,7 +64,7 @@ void PlayListSelector::readSettings()
         m_metrics = nullptr;
     }
     m_metrics = new QFontMetrics(m_font);
-    m_pl_separator = settings.value("pl_separator", "::").toString();
+    m_pl_separator = settings.value("pl_separator", u"::"_s).toString();
     m_show_new_pl_button = settings.value("pl_show_create_button", false).toBool();
 
     if(settings.value("pl_use_skin_colors", true).toBool())
@@ -95,11 +95,11 @@ void PlayListSelector::readSettings()
     }
 
     settings.endGroup();
-    m_pl_button = "[+]";
-    m_pl_separator.append(" ");
-    m_pl_separator.prepend(" ");
+    m_pl_button = u"[+]"_s;
+    m_pl_separator.append(QChar::Space);
+    m_pl_separator.prepend(QChar::Space);
 
-    resize(width(), m_metrics->height () +1);
+    resize(width(), m_metrics->height() + 1);
     drawButtons();
     updateTabs();
 }
@@ -123,7 +123,7 @@ void PlayListSelector::updateTabs()
 
     if(m_show_new_pl_button)
     {
-        rect.setX(m_rects.last().x() + m_rects.last().width() + m_metrics->horizontalAdvance("  "));
+        rect.setX(m_rects.last().x() + m_rects.last().width() + m_metrics->horizontalAdvance(u"  "_s));
         rect.setY(0);
         rect.setWidth(m_metrics->horizontalAdvance(m_pl_button));
         rect.setHeight(m_metrics->ascent ());
@@ -392,7 +392,7 @@ QRect PlayListSelector::lastVisible()
 {
     for(int i = m_extra_rects.size() - 1; i >= 0; --i)
     {
-        if(m_extra_rects.at(i).x() - m_offset -  m_metrics->horizontalAdvance("  ") - 2 <= width() - 40)
+        if(m_extra_rects.at(i).x() - m_offset -  m_metrics->horizontalAdvance(u"  "_s) - 2 <= width() - 40)
             return m_extra_rects.at(i);
     }
     for(int i = m_rects.size() - 1; i >= 0; --i)

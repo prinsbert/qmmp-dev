@@ -35,11 +35,11 @@
 #include "textscroller.h"
 
 
-#define SCROLL_SEP "   *** "
-#define TITLE_FORMAT "%p%if(%p&%t, - ,)%t%if(%p,,%if(%t,,%f))%if(%l, - %l,)"
+#define SCROLL_SEP u"   *** "_s
+#define TITLE_FORMAT u"%p%if(%p&%t, - ,)%t%if(%p,,%if(%t,,%f))%if(%l, - %l,)"_s
 
 TextScroller::TextScroller (QWidget *parent) : QWidget (parent),
-    m_defautText(QString("Qmmp ") + Qmmp::strVersion())
+    m_defautText(QStringLiteral("Qmmp %1").arg(Qmmp::strVersion()))
 {
     m_formater.setPattern(TITLE_FORMAT);
     m_core = SoundCore::instance();
@@ -139,7 +139,7 @@ inline void drawBitmapText(int x, int y, const QString &text, QPainter *paint, S
     QString lowertext = text.toLower();
     int chwidth, ypix;
     {
-        QPixmap samplechar = skin->getLetter('a');
+        QPixmap samplechar = skin->getLetter(QLatin1Char('a'));
         chwidth = samplechar.width();
         ypix = y - samplechar.height();
     }

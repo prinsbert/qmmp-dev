@@ -77,10 +77,10 @@ EqWidget::EqWidget (QWidget *parent)
     updateMask();
 #ifdef QMMP_WS_X11
     QString wm_name = WindowSystem::netWindowManagerName();
-    if(wm_name.contains("openbox", Qt::CaseInsensitive) || wm_name.contains("xfwm4", Qt::CaseInsensitive))
+    if(wm_name.contains(u"openbox"_s, Qt::CaseInsensitive) || wm_name.contains(u"xfwm4"_s, Qt::CaseInsensitive))
         setWindowFlags (Qt::Drawer | Qt::FramelessWindowHint);
-    else if(wm_name.contains("metacity", Qt::CaseInsensitive) ||
-            wm_name.contains("kwin", Qt::CaseInsensitive))
+    else if(wm_name.contains(u"metacity"_s, Qt::CaseInsensitive) ||
+            wm_name.contains(u"kwin"_s, Qt::CaseInsensitive))
         setWindowFlags (Qt::Tool | Qt::FramelessWindowHint);
     else
 #endif
@@ -161,37 +161,37 @@ void EqWidget::readSettings()
     readEq();
     m_autoButton->setChecked(settings.value("Skinned/eq_auto", false).toBool());
     //equalizer presets
-    QString preset_path = Qmmp::configDir() + "/eq.preset";
+    QString preset_path = Qmmp::configDir() + u"/eq.preset"_s;
     if(!QFile::exists(preset_path))
-        preset_path = ":/skinned/eq.preset";
+        preset_path = u":/skinned/eq.preset"_s;
     QSettings eq_preset (preset_path, QSettings::IniFormat);
     int i = 0;
-    while(eq_preset.contains("Presets/Preset"+QString("%1").arg(++i)))
+    while(eq_preset.contains(QStringLiteral("Presets/Preset%1").arg(++i)))
     {
-        QString name = eq_preset.value(QString("Presets/Preset%1").arg(i), tr("preset")).toString();
+        QString name = eq_preset.value(QStringLiteral("Presets/Preset%1").arg(i), tr("preset")).toString();
         EQPreset *preset = new EQPreset();
         preset->setText(name);
         eq_preset.beginGroup(name);
         for (int j = 0; j < 10; ++j)
         {
-            preset->setGain(j,eq_preset.value(QString("Band%1").arg(j), 0).toDouble());
+            preset->setGain(j,eq_preset.value(QStringLiteral("Band%1").arg(j), 0).toDouble());
         }
         preset->setPreamp(eq_preset.value("Preamp",0).toDouble());
         m_presets.append(preset);
         eq_preset.endGroup();
     }
     //equalizer auto-load presets
-    QSettings eq_auto (Qmmp::configDir() + "/eq.auto_preset", QSettings::IniFormat);
+    QSettings eq_auto (Qmmp::configDir() + u"/eq.auto_preset"_s, QSettings::IniFormat);
     i = 0;
-    while(eq_auto.contains(QString("Presets/Preset%1").arg(++i)))
+    while(eq_auto.contains(QStringLiteral("Presets/Preset%1").arg(++i)))
     {
-        QString name = eq_auto.value(QString("Presets/Preset%1").arg(i), tr("preset")).toString();
+        QString name = eq_auto.value(QStringLiteral("Presets/Preset%1").arg(i), tr("preset")).toString();
         EQPreset *preset = new EQPreset();
         preset->setText(name);
         eq_auto.beginGroup(name);
         for (int j = 0; j < 10; ++j)
         {
-            preset->setGain(j,eq_auto.value(QString("Band%1").arg(j), 0).toDouble());
+            preset->setGain(j,eq_auto.value(QStringLiteral("Band%1").arg(j), 0).toDouble());
         }
         preset->setPreamp(eq_auto.value("Preamp",0).toDouble());
         m_autoPresets.append(preset);
@@ -205,30 +205,30 @@ void EqWidget::writeSettings()
     settings.setValue ("Skinned/eq_pos", this->pos()); //geometry
     settings.setValue ("Skinned/eq_auto", m_autoButton->isChecked());
     //equalizer presets
-    QSettings eq_preset (Qmmp::configDir() + "/eq.preset", QSettings::IniFormat);
+    QSettings eq_preset (Qmmp::configDir() + u"/eq.preset"_s, QSettings::IniFormat);
     eq_preset.clear ();
     for (int i = 0; i < m_presets.size(); ++i)
     {
-        eq_preset.setValue(QString("Presets/Preset%1").arg(i+1), m_presets.at(i)->text());
+        eq_preset.setValue(QStringLiteral("Presets/Preset%1").arg(i + 1), m_presets.at(i)->text());
         eq_preset.beginGroup(m_presets.at(i)->text());
         for (int j = 0; j < 10; ++j)
         {
-            eq_preset.setValue(QString("Band%1").arg(j),m_presets.at(i)->gain(j));
+            eq_preset.setValue(QStringLiteral("Band%1").arg(j),m_presets.at(i)->gain(j));
         }
         eq_preset.setValue("Preamp",m_presets.at(i)->preamp());
         eq_preset.endGroup();
     }
     //equalizer auto-load presets
-    QSettings eq_auto (Qmmp::configDir() + "/eq.auto_preset", QSettings::IniFormat);
+    QSettings eq_auto(Qmmp::configDir() + u"/eq.auto_preset"_s, QSettings::IniFormat);
     eq_auto.clear();
     for (int i = 0; i < m_autoPresets.size(); ++i)
     {
-        eq_auto.setValue("Presets/Preset"+QString("%1").arg(i+1),
+        eq_auto.setValue(QStringLiteral("Presets/Preset%1").arg(i+1),
                          m_autoPresets.at(i)->text());
         eq_auto.beginGroup(m_autoPresets.at(i)->text());
         for (int j = 0; j < 10; ++j)
         {
-            eq_auto.setValue(QString("Band%1").arg(j),m_autoPresets.at(i)->gain(j));
+            eq_auto.setValue(QStringLiteral("Band%1").arg(j),m_autoPresets.at(i)->gain(j));
         }
         eq_auto.setValue("Preamp",m_autoPresets.at(i)->preamp());
         eq_auto.endGroup();
@@ -271,14 +271,14 @@ void EqWidget::createActions()
 {
     m_presetsMenu->addAction(tr("&Load/Delete"),this, SLOT(showEditor()));
     m_presetsMenu->addSeparator();
-    m_presetsMenu->addAction(QIcon::fromTheme("document-save"), tr("&Save Preset"),
+    m_presetsMenu->addAction(QIcon::fromTheme(u"document-save"_s), tr("&Save Preset"),
                              this, SLOT(savePreset()));
-    m_presetsMenu->addAction(QIcon::fromTheme("document-save"), tr("&Save Auto-load Preset"),
+    m_presetsMenu->addAction(QIcon::fromTheme(u"document-save"_s), tr("&Save Auto-load Preset"),
                              this, SLOT(saveAutoPreset()));
-    m_presetsMenu->addAction(QIcon::fromTheme("document-open"), tr("&Import"),
+    m_presetsMenu->addAction(QIcon::fromTheme(u"document-open"_s), tr("&Import"),
                              this, SLOT(importWinampEQF()));
     m_presetsMenu->addSeparator();
-    m_presetsMenu->addAction(QIcon::fromTheme("edit-clear"), tr("&Clear"), this, SLOT(reset()));
+    m_presetsMenu->addAction(QIcon::fromTheme(u"edit-clear"_s), tr("&Clear"), this, SLOT(reset()));
 }
 
 void EqWidget::showPresetsMenu()
@@ -309,7 +309,7 @@ void EqWidget::savePreset()
     bool ok;
     QString text = QInputDialog::getText(this, tr("Saving Preset"),
                                          tr("Preset name:"), QLineEdit::Normal,
-                                         tr("preset #")+QString("%1").arg(m_presets.size()+1), &ok);
+                                         tr("preset #") + QString::number(m_presets.size() + 1), &ok);
     if (ok)
     {
         EQPreset* preset = new EQPreset;
@@ -340,12 +340,12 @@ void EqWidget::saveAutoPreset()
     if (!track)
         return;
     //delete preset if it already exists
-    EQPreset* preset = findPreset(track->path().section("/",-1));
+    EQPreset* preset = findPreset(track->path().section(QLatin1Char('/'), -1));
     if (preset)
         deletePreset(preset);
     //create new preset
     preset = new EQPreset();
-    preset->setText(track->path().section("/",-1));
+    preset->setText(track->path().section(QLatin1Char('/'), -1));
     preset->setPreamp(m_preamp->value());
     for (int i = 0; i<10; ++i)
     {
@@ -356,7 +356,7 @@ void EqWidget::saveAutoPreset()
 
 void EqWidget::setPreset(EQPreset* preset)
 {
-    for (int i = 0; i<10; ++i)
+    for (int i = 0; i < 10; ++i)
         m_sliders.at(i)->setValue(preset->gain(i));
     m_preamp->setValue(preset->preamp());
     writeEq();
@@ -402,12 +402,12 @@ void EqWidget::importWinampEQF()
 
     QString path = FileDialog::getOpenFileName(this, tr("Import Preset"),
                    QDir::homePath(),
-                   QString("Winamp EQF (*.q1)"));
+                   u"Winamp EQF (*.q1)"_s);
 
     QFile file(path);
     file.open(QIODevice::ReadOnly);
     file.read (header, 31);
-    if (QString::fromLatin1(header).contains("Winamp EQ library file v1.1"))
+    if (QString::fromLatin1(header).contains(u"Winamp EQ library file v1.1"_s))
     {
         char name[257];
         char bands[11];

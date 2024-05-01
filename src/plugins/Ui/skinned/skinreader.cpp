@@ -36,10 +36,10 @@ SkinReader::SkinReader(QObject *parent)
 {
     //create cache dir
     QDir dir(Qmmp::cacheDir());
-    dir.mkdir("skinned");
-    dir.cd("skinned");
-    dir.mkdir("thumbs");
-    dir.mkdir("skin");
+    dir.mkdir(u"skinned"_s);
+    dir.cd(u"skinned"_s);
+    dir.mkdir(u"thumbs"_s);
+    dir.mkdir(u"skin"_s);
 }
 
 SkinReader::~SkinReader()
@@ -86,13 +86,13 @@ void SkinReader::loadSkins(const QStringList &paths)
             {
                 QString name = info.fileName().toLower();
 
-                if(name.endsWith(".tgz") || name.endsWith(".tar.gz") || name.endsWith(".tar.bz2"))
+                if(name.endsWith(u".tgz"_s) || name.endsWith(u".tar.gz"_s) || name.endsWith(u".tar.bz2"_s))
                 {
                     untar(info.filePath(), cacheDir.absolutePath(), true);
                     m_skins << info.canonicalFilePath();
                     m_previewHash.insert(info.canonicalFilePath(), QString());
                 }
-                else if(name.endsWith(".zip") || name.endsWith(".wsz"))
+                else if(name.endsWith(u".zip"_s) || name.endsWith(u".wsz"_s))
                 {
                     unzip(info.filePath(), cacheDir.absolutePath(), true);
                     m_skins << info.canonicalFilePath();
@@ -167,9 +167,9 @@ void SkinReader::unpackSkin(const QString &path)
         QDir::root().mkpath(unpackedSkinPath());
     //unpack
     QString name = QFileInfo(path).fileName().toLower();
-    if (name.endsWith(".tgz") || name.endsWith(".tar.gz") || name.endsWith(".tar.bz2"))
+    if (name.endsWith(u".tgz"_s) || name.endsWith(u".tar.gz"_s) || name.endsWith(u".tar.bz2"_s))
         untar(path, unpackedSkinPath(), false);
-    else if (name.endsWith(".zip") || name.endsWith(".wsz"))
+    else if (name.endsWith(u".zip"_s) || name.endsWith(u".wsz"_s))
         unzip(path, unpackedSkinPath(), false);
 }
 
@@ -195,34 +195,34 @@ QString SkinReader::defaultSkinPath()
 void SkinReader::untar(const QString &from, const QString &to, bool preview)
 {
     QProcess process;
-    process.start("tar", { "tf", from }); //list archive
+    process.start(u"tar"_s, { u"tf"_s, from }); //list archive
     process.waitForFinished();
     QByteArray array = process.readAllStandardOutput ();
-    const QStringList outputList = QString(array).split("\n", Qt::SkipEmptyParts);
+    const QStringList outputList = QString::fromLocal8Bit(array).split(QChar::LineFeed, Qt::SkipEmptyParts);
 
     for(QString str : qAsConst(outputList))
     {
         str = str.trimmed();
 
-        if(str.endsWith("/"))
+        if(str.endsWith(QLatin1Char('/')))
             continue;
 
-        if (!preview || (str.contains("/main.", Qt::CaseInsensitive)
-                         || str.startsWith("main.", Qt::CaseInsensitive)))
+        if (!preview || (str.contains(u"/main."_s, Qt::CaseInsensitive)
+                         || str.startsWith(u"main."_s, Qt::CaseInsensitive)))
         {
-            QStringList args = { "xvfk" , from , "-O" , str };
-            process.start("tar", args);
+            QStringList args = { u"xvfk"_s , from , u"-O"_s , str };
+            process.start(u"tar"_s, args);
             process.waitForStarted();
             process.waitForFinished();
             array = process.readAllStandardOutput();
 
             QString name;
             if (preview)
-                name = from.section('/',-1) + (".") + str.section('.', -1);
+                name = from.section(QLatin1Char('/'), -1) + QLatin1Char('.') + str.section(QLatin1Char('.'), -1);
             else
-                name = str.contains('/') ? str.section('/',-1).toLower() : str.toLower();
+                name = str.contains(QLatin1Char('/')) ? str.section(QLatin1Char('/'), -1).toLower() : str.toLower();
 
-            QFile file(to+"/"+name);
+            QFile file(to + QLatin1Char('/') + name);
             file.open(QIODevice::WriteOnly);
             file.write(array);
             file.close();
@@ -234,23 +234,22 @@ void SkinReader::unzip(const QString &from, const QString &to, bool preview)
 {
     if (preview)
     {
-        QStringList args = { "-C", "-j", "-o", "-qq", "-d", to, from, "main.???", "*/main.???" };
-        QProcess::execute("unzip", args);
+        QStringList args = { u"-C"_s, u"-j"_s, u"-o"_s, u"-qq"_s, u"-d"_s, to, from, u"main.???"_s, u"*/main.???"_s };
+        QProcess::execute(u"unzip"_s, args);
         QDir dir(to);
         dir.setFilter(QDir::Files | QDir::Hidden);
         const QFileInfoList fileList = dir.entryInfoList();
         for(const QFileInfo &thumbInfo : qAsConst(fileList))
         {
-            if (thumbInfo.fileName().startsWith("main.", Qt::CaseInsensitive))
+            if (thumbInfo.fileName().startsWith(u"main."_s, Qt::CaseInsensitive))
             {
-                dir.rename(thumbInfo.fileName(), from.section('/', -1) +
-                           "." + thumbInfo.suffix ());
+                dir.rename(thumbInfo.fileName(), from.section(QLatin1Char('/'), -1) + QLatin1Char('.') + thumbInfo.suffix ());
             }
         }
     }
     else
     {
-        QStringList args = { "-j", "-o", "-qq", "-d", to, from };
-        QProcess::execute("unzip", args);
+        QStringList args = { u"-j"_s, u"-o"_s, u"-qq"_s, u"-d"_s, to, from };
+        QProcess::execute(u"unzip"_s, args);
     }
 }
