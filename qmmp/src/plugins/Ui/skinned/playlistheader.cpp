@@ -74,8 +74,8 @@ PlayListHeader::PlayListHeader(QWidget *parent) :
 
     //menus
     m_menu = new QMenu(this);
-    m_menu->addAction(QIcon::fromTheme("list-add"), tr("Add Column"), this, SLOT(addColumn()));
-    m_menu->addAction(QIcon::fromTheme("configure"), tr("Edit Column"), this, SLOT(editColumn()));
+    m_menu->addAction(QIcon::fromTheme(u"list-add"_s), tr("Add Column"), this, SLOT(addColumn()));
+    m_menu->addAction(QIcon::fromTheme(u"configure"_s), tr("Edit Column"), this, SLOT(editColumn()));
     m_trackStateAction = m_menu->addAction(tr("Show Queue/Protocol"), this, SLOT(showTrackState(bool)));
     m_trackStateAction->setCheckable(true);
     m_autoResizeAction = m_menu->addAction(tr("Auto-resize"), this, SLOT(setAutoResize(bool)));
@@ -94,7 +94,7 @@ PlayListHeader::PlayListHeader(QWidget *parent) :
     }
 
     m_menu->addSeparator();
-    m_menu->addAction(QIcon::fromTheme("list-remove"), tr("Remove Column"), this, SLOT(removeColumn()));
+    m_menu->addAction(QIcon::fromTheme(u"list-remove"_s), tr("Remove Column"), this, SLOT(removeColumn()));
 
     connect(m_model, SIGNAL(columnAdded(int)), SLOT(onColumnAdded(int)));
     connect(m_model, SIGNAL(columnRemoved(int)), SLOT(onColumnRemoved()));
@@ -123,11 +123,11 @@ void PlayListHeader::readSettings()
     }
 
     m_metrics = new QFontMetrics(m_font);
-    m_padding = m_metrics->horizontalAdvance("9")/2;
+    m_padding = m_metrics->horizontalAdvance(u"9"_s) / 2;
 
     QFont pl_font;
     pl_font.fromString(settings.value("pl_font", qApp->font().toString()).toString());
-    m_pl_padding = QFontMetrics(pl_font).horizontalAdvance("9")/2;
+    m_pl_padding = QFontMetrics(pl_font).horizontalAdvance(u"9"_s) / 2;
 
     if(!m_model->isSettingsLoaded())
     {
@@ -445,7 +445,7 @@ void PlayListHeader::mousePressEvent(QMouseEvent *e)
 
             if(rtl)
             {
-                if(m_pressed_pos.x() < m_model->data(m_pressed_column, RECT).toRect().x() + m_metrics->horizontalAdvance("9"))
+                if(m_pressed_pos.x() < m_model->data(m_pressed_column, RECT).toRect().x() + m_metrics->horizontalAdvance(u"9"_s))
                 {
                     m_old_size = size(m_pressed_column);
                     m_task = RESIZE;
@@ -458,7 +458,7 @@ void PlayListHeader::mousePressEvent(QMouseEvent *e)
             }
             else
             {
-                if(m_pressed_pos.x() > m_model->data(m_pressed_column, RECT).toRect().right() - m_metrics->horizontalAdvance("9"))
+                if(m_pressed_pos.x() > m_model->data(m_pressed_column, RECT).toRect().right() - m_metrics->horizontalAdvance(u"9"_s))
                 {
                     m_old_size = size(m_pressed_column);
                     m_task = RESIZE;
@@ -573,14 +573,14 @@ void PlayListHeader::mouseMoveEvent(QMouseEvent *e)
         {
             if(rtl)
             {
-                if(column >= 0 && x < m_model->data(column, RECT).toRect().x() + m_metrics->horizontalAdvance("9"))
+                if(column >= 0 && x < m_model->data(column, RECT).toRect().x() + m_metrics->horizontalAdvance(u"9"_s))
                     setCursor(Qt::SplitHCursor);
                 else
                     setCursor(Qt::ArrowCursor);
             }
             else
             {
-                if(column >= 0 && x > m_model->data(column, RECT).toRect().right() - m_metrics->horizontalAdvance("9"))
+                if(column >= 0 && x > m_model->data(column, RECT).toRect().right() - m_metrics->horizontalAdvance(u"9"_s))
                     setCursor(Qt::SplitHCursor);
                 else
                     setCursor(Qt::ArrowCursor);

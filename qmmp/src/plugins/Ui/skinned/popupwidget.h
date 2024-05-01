@@ -23,7 +23,7 @@
 #include <QWidget>
 #include <qmmpui/metadataformatter.h>
 
-#define DEFAULT_TEMPLATE "<b>%if(%t,%t,%f)</b>\n%if(%p,<br>%p,)\n%if(%a,<br>%a,)"
+#define DEFAULT_TEMPLATE u"<b>%if(%t,%t,%f)</b>\n%if(%p,<br>%p,)\n%if(%a,<br>%a,)"_s
 
 class QTimer;
 class QLabel;

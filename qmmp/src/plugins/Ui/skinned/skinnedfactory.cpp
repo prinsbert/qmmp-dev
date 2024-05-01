@@ -33,7 +33,7 @@ UiProperties SkinnedFactory::properties() const
     UiProperties props;
     props.hasAbout = true;
     props.name = tr("Skinned User Interface");
-    props.shortName = "skinned";
+    props.shortName = "skinned"_L1;
     return props;
 }
 
@@ -42,13 +42,13 @@ QObject *SkinnedFactory::SkinnedFactory::create()
 #ifdef QMMP_WS_X11
     if(qgetenv("XDG_CURRENT_DESKTOP") == "KDE")
     {
-        QString kwinScript = Qmmp::dataPath() + "/scripts/kwin.sh";
+        QString kwinScript = Qmmp::dataPath() + u"/scripts/kwin.sh"_s;
         if(!QFile::exists(kwinScript))
-            kwinScript = qApp->applicationDirPath() + "/../src/plugins/Ui/skinned/kwin.sh";
+            kwinScript = qApp->applicationDirPath() + u"/../src/plugins/Ui/skinned/kwin.sh"_s;
         if(QFile::exists(kwinScript))
         {
             qDebug("SkinnedFactory: adding kwin rules...");
-            QProcess::execute(QString("sh"), QStringList() << QFileInfo(kwinScript).canonicalFilePath());
+            QProcess::execute(QStringLiteral("sh"), QStringList() << QFileInfo(kwinScript).canonicalFilePath());
         }
     }
 #endif
@@ -59,13 +59,13 @@ QObject *SkinnedFactory::SkinnedFactory::create()
 void SkinnedFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About Qmmp Skinned User Interface"),
-                        tr("Qmmp Skinned User Interface")+"\n"+
-                        tr("Simple user interface with Winamp-2.x/XMMS skins support") + "\n" +
-                        tr("Written by:")+"\n"+
-                        tr("Vladimir Kuznetsov <vovanec@gmail.com>")+"\n"+
-                        tr("Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Artwork:")+"\n"+
-                        tr("Andrey Adreev <andreev00@gmail.com>")+"\n"+
+                        tr("Qmmp Skinned User Interface")+QChar::LineFeed+
+                        tr("Simple user interface with Winamp-2.x/XMMS skins support") + QChar::LineFeed +
+                        tr("Written by:")+QChar::LineFeed+
+                        tr("Vladimir Kuznetsov <vovanec@gmail.com>")+QChar::LineFeed+
+                        tr("Ilya Kotov <forkotov02@ya.ru>")+QChar::LineFeed+
+                        tr("Artwork:")+QChar::LineFeed+
+                        tr("Andrey Adreev <andreev00@gmail.com>")+QChar::LineFeed+
                         tr("sixsixfive <http://sixsixfive.deviantart.com/>"));
 
 }

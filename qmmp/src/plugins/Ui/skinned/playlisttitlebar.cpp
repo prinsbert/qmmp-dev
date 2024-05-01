@@ -29,7 +29,7 @@
 #include "playlisttitlebar.h"
 #include "skin.h"
 
-#define TITLE_FORMAT "%p%if(%p&%t, - ,)%t%if(%p,,%if(%t,,%f))%if(%l, %(%l%),)"
+#define TITLE_FORMAT u"%p%if(%p&%t, - ,)%t%if(%p,,%if(%t,,%f))%if(%l, %(%l%),)"_s
 
 // TODO {shademode, updateskin} -> do we have the shaded cursor
 PlayListTitleBar::PlayListTitleBar(QWidget *parent)
@@ -280,7 +280,7 @@ void PlayListTitleBar::showCurrent()
     {
         PlayListTrack* track = m_model->currentTrack();
         if (track)
-            m_text = QString("%1. %2").arg(track->trackIndex() + 1).arg(m_formatter.format(track));
+            m_text = QStringLiteral("%1. %2").arg(track->trackIndex() + 1).arg(m_formatter.format(track));
     }
     QFontMetrics metrics(m_font);
     m_truncatedText = metrics.elidedText (m_text, Qt::ElideRight, width() -  35*m_ratio);

@@ -40,7 +40,7 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QD
     connect(m_ui.newButton, SIGNAL(clicked()), m_pl_manager, SLOT(createPlayList()));
     //actions
     QAction *renameAct = new QAction(tr("Rename"), this);
-    QAction *removeAct = new QAction(QIcon::fromTheme("window-close"), tr("Delete"), this);
+    QAction *removeAct = new QAction(QIcon::fromTheme(u"window-close"_s), tr("Delete"), this);
     connect(renameAct,SIGNAL(triggered()), SLOT(rename()));
     connect(removeAct,SIGNAL(triggered()), SLOT(on_deleteButton_clicked()));
     m_ui.listView->setContextMenuPolicy(Qt::ActionsContextMenu);
@@ -54,8 +54,8 @@ PlayListBrowser::PlayListBrowser(PlayListManager *manager, QWidget *parent) : QD
     m_ui.listView->setModel(m_proxyModel);
     m_ui.downButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowDown));
     m_ui.upButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowUp));
-    m_ui.newButton->setIcon(QIcon::fromTheme("document-new"));
-    m_ui.deleteButton->setIcon(QIcon::fromTheme("edit-delete"));
+    m_ui.newButton->setIcon(QIcon::fromTheme(u"document-new"_s));
+    m_ui.deleteButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
     connect(m_listModel, SIGNAL(itemChanged(QStandardItem*)), SLOT(updatePlayListName(QStandardItem*)));
     connect(m_ui.listView->selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
             SLOT(updateCurrentRow(QModelIndex,QModelIndex)));

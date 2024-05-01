@@ -22,9 +22,10 @@
 #include "actionmanager.h"
 #include "shortcutitem.h"
 
-ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, int type) : QTreeWidgetItem(parent, QStringList()
-        << ActionManager::instance()->action(type)->text().remove("&")
-        << ActionManager::instance()->action(type)->shortcut().toString())
+ShortcutItem::ShortcutItem(QTreeWidgetItem *parent, int type) :
+    QTreeWidgetItem(parent, {
+                    ActionManager::instance()->action(type)->text().remove(QLatin1Char('&')),
+                    ActionManager::instance()->action(type)->shortcut().toString() })
 {
     m_action = ActionManager::instance()->action(type);
     setIcon(0, m_action->icon());

@@ -59,10 +59,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 #ifdef QMMP_WS_X11
     qDebug("MainWindow: detected wm: %s", qPrintable(WindowSystem::netWindowManagerName()));
     QString wm_name = WindowSystem::netWindowManagerName();
-    if(wm_name.contains("Marco", Qt::CaseInsensitive) ||
-            wm_name.contains("Metacity", Qt::CaseInsensitive) ||
-            wm_name.contains("Mutter", Qt::CaseInsensitive) ||
-            wm_name.contains("GNOME", Qt::CaseInsensitive))
+    if(wm_name.contains(u"Marco"_s, Qt::CaseInsensitive) ||
+            wm_name.contains(u"Metacity"_s, Qt::CaseInsensitive) ||
+            wm_name.contains(u"Mutter"_s, Qt::CaseInsensitive) ||
+            wm_name.contains(u"GNOME"_s, Qt::CaseInsensitive))
     {
         setWindowFlags(Qt::Window | Qt::FramelessWindowHint |
                        Qt::WindowCloseButtonHint | Qt::WindowSystemMenuHint);
@@ -74,7 +74,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     restoreWindowTitle();
 
-    m_titleFormatter.setPattern("%if(%p,%p - %t,%t)");
+    m_titleFormatter.setPattern(u"%if(%p,%p - %t,%t)"_s);
 
     new ActionManager(this);
 
@@ -185,7 +185,7 @@ void MainWindow::showState(Qmmp::State state)
     {
     case Qmmp::Playing:
         if (m_pl_manager->currentPlayList()->currentTrack())
-            m_equalizer->loadPreset(m_pl_manager->currentPlayList()->currentTrack()->path().section("/",-1));
+            m_equalizer->loadPreset(m_pl_manager->currentPlayList()->currentTrack()->path().section(QLatin1Char('/'), -1));
         break;
     case Qmmp::Paused:
         break;
@@ -249,7 +249,7 @@ void MainWindow::readSettings()
 {
     QSettings settings;
     settings.beginGroup("Skinned");
-    m_titleFormatter.setPattern(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
+    m_titleFormatter.setPattern(settings.value("window_title_format", u"%if(%p,%p - %t,%t)"_s).toString());
 
     if (m_update)
     {
@@ -356,8 +356,8 @@ void MainWindow::showSettings()
 {
     ConfigDialog *confDialog = new ConfigDialog(this);
     SkinnedSettings *skinnedSettings = new SkinnedSettings(this);
-    confDialog->addPage(tr("Appearance"), skinnedSettings, QIcon(":/skinned/interface.png"));
-    confDialog->addPage(tr("Shortcuts"), new HotkeyEditor(this), QIcon(":/skinned/shortcuts.png"));
+    confDialog->addPage(tr("Appearance"), skinnedSettings, QIcon(u":/skinned/interface.png"_s));
+    confDialog->addPage(tr("Shortcuts"), new HotkeyEditor(this), QIcon(u":/skinned/shortcuts.png"_s));
     confDialog->exec();
     skinnedSettings->writeSettings();
     confDialog->deleteLater();
@@ -375,7 +375,7 @@ void MainWindow::toggleVisibility()
         m_playlist->setVisible(m_display->isPlaylistVisible());
         m_equalizer->setVisible(m_display->isEqualizerVisible());
 #ifdef QMMP_WS_X11
-        if(WindowSystem::netWindowManagerName() == "Metacity")
+        if(WindowSystem::netWindowManagerName() == u"Metacity"_s)
         {
             m_playlist->activateWindow();
             m_equalizer->activateWindow();

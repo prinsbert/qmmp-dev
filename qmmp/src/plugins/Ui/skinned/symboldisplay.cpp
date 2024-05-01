@@ -59,7 +59,7 @@ void SymbolDisplay::display (const QString& str)
 void SymbolDisplay::draw()
 {
     QString str = m_text;
-    QPixmap bg = m_skin->getLetter (' ');
+    QPixmap bg = m_skin->getLetter(QChar::Space);
     int w = bg.size().width();
     int h = bg.size().height();
     QPixmap tmp (m_digits*w,h);
@@ -71,16 +71,16 @@ void SymbolDisplay::draw()
         {
             j = str.size() -1 - i;
             if (j >= 0)
-                paint.drawPixmap ((m_digits-1-i) *w,0,m_skin->getLetter (str.at (j)));
+                paint.drawPixmap ((m_digits-1-i) *w,0,m_skin->getLetter(str.at(j)));
             else
-                paint.drawPixmap ((m_digits-1-i) *w,0,m_skin->getLetter (' '));
+                paint.drawPixmap ((m_digits-1-i) *w,0,m_skin->getLetter(QChar::Space));
         }
         else
         {
             if (i < str.size())
-                paint.drawPixmap (i * w,0,m_skin->getLetter (str.at (i)));
+                paint.drawPixmap(i * w,0,m_skin->getLetter(str.at (i)));
             else
-                paint.drawPixmap (i * w,0,m_skin->getLetter (' '));
+                paint.drawPixmap(i * w,0,m_skin->getLetter(QChar::Space));
             ;
         }
     }
@@ -92,5 +92,5 @@ void SymbolDisplay::display(int val)
     if (val < m_max)
         display(QString::number(val));
     else
-        display(QString("%1h").arg(val/100));
+        display(QStringLiteral("%1h").arg(val / 100));
 }

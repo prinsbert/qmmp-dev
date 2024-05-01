@@ -30,7 +30,7 @@
 // |= number=|=row1=|=row2=|=extra= duration=|
 
 ListWidgetDrawer::ListWidgetDrawer() :
-    m_emptyCover(":/skinned/ui_no_cover.png")
+    m_emptyCover(u":/skinned/ui_no_cover.png"_s)
 
 {
     m_header_model = PlayListManager::instance()->headerModel();

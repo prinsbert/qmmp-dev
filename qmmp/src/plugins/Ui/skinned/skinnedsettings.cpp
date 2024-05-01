@@ -63,7 +63,7 @@ void SkinnedSettings::on_plFontButton_clicked()
     font = QFontDialog::getFont (&ok, font, this);
     if (ok)
     {
-        m_ui.plFontLabel->setText (font.family () + " " + QString::number(font.pointSize ()));
+        m_ui.plFontLabel->setText(font.family () + QChar::Space + QString::number(font.pointSize()));
         m_ui.plFontLabel->setFont(font);
     }
 }
@@ -75,7 +75,7 @@ void SkinnedSettings::on_headerFontButton_clicked()
     font = QFontDialog::getFont (&ok, font, this);
     if (ok)
     {
-        m_ui.headerFontLabel->setText (font.family () + " " + QString::number(font.pointSize ()));
+        m_ui.headerFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize()));
         m_ui.headerFontLabel->setFont(font);
     }
 }
@@ -87,7 +87,7 @@ void SkinnedSettings::on_mainFontButton_clicked()
     font = QFontDialog::getFont (&ok, font, this);
     if (ok)
     {
-        m_ui.mainFontLabel->setText (font.family () + " " + QString::number(font.pointSize ()));
+        m_ui.mainFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize()));
         m_ui.mainFontLabel->setFont(font);
     }
 }
@@ -104,11 +104,11 @@ void SkinnedSettings::on_resetFontsButton_clicked()
 void SkinnedSettings::on_skinInstallButton_clicked()
 {
     const QStringList files = FileDialog::getOpenFileNames(this,tr("Select Skin Files"), QDir::homePath(),
-                                                           tr("Skin files") + " (*.tar.gz *.tgz *.tar.bz2 *.zip *.wsz)");
+                                                           tr("Skin files") + u" (*.tar.gz *.tgz *.tar.bz2 *.zip *.wsz)"_s);
     for(const QString &path : qAsConst(files))
     {
         QFile file(path);
-        file.copy(Qmmp::configDir() + "/skins/" + QFileInfo(path).fileName());
+        file.copy(Qmmp::configDir() + u"/skins/"_s + QFileInfo(path).fileName());
     }
     loadSkins();
 }
@@ -126,17 +126,17 @@ void SkinnedSettings::loadFonts()
 
     QString fontname = settings.value ("Skinned/pl_font", qApp->font().toString()).toString();
     font.fromString(fontname);
-    m_ui.plFontLabel->setText (font.family () + " " + QString::number(font.pointSize ()));
+    m_ui.plFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize ()));
     m_ui.plFontLabel->setFont(font);
 
     fontname = settings.value ("Skinned/pl_header_font", qApp->font().toString()).toString();
     font.fromString(fontname);
-    m_ui.headerFontLabel->setText (font.family () + " " + QString::number(font.pointSize ()));
+    m_ui.headerFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize ()));
     m_ui.headerFontLabel->setFont(font);
 
     fontname = settings.value ("Skinned/mw_font", qApp->font().toString()).toString();
     font.fromString(fontname);
-    m_ui.mainFontLabel->setText (font.family () + " " + QString::number(font.pointSize ()));
+    m_ui.mainFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize ()));
     m_ui.mainFontLabel->setFont(font);
 
     m_ui.useBitmapCheckBox->setChecked(settings.value("Skinned/bitmap_font", false).toBool());
@@ -172,9 +172,9 @@ void SkinnedSettings::loadSkins()
     //default skin
     QFileInfo fileInfo(SkinReader::defaultSkinPath());
     QListWidgetItem *item = new QListWidgetItem(fileInfo.fileName());
-    item->setIcon(SkinReader::getPixmapFromDirectory("main", fileInfo.filePath()));
+    item->setIcon(SkinReader::getPixmapFromDirectory(u"main"_s, fileInfo.filePath()));
     item->setData(Qt::UserRole, fileInfo.filePath());
-    item->setToolTip("Default skin");
+    item->setToolTip(tr("Default skin"));
     m_ui.listWidget->addItem(item);
 
     for(const QString &path : qAsConst(m_reader->skins()))
@@ -211,7 +211,7 @@ void SkinnedSettings::addWindowTitleString(const QString &str)
     if (m_ui.windowTitleLineEdit->cursorPosition () < 1)
         m_ui.windowTitleLineEdit->insert(str);
     else
-        m_ui.windowTitleLineEdit->insert(" - " + str);
+        m_ui.windowTitleLineEdit->insert(u" - "_s + str);
 }
 
 void SkinnedSettings::readSettings()
@@ -227,7 +227,7 @@ void SkinnedSettings::readSettings()
     m_ui.showSplittersCheckBox->setChecked(settings.value("pl_show_splitters", true).toBool());
     m_ui.alternateSplitterColorCheckBox->setChecked(settings.value("pl_alt_splitter_color", false).toBool());
     m_ui.popupCheckBox->setChecked(settings.value("pl_show_popup", false).toBool());
-    m_ui.plSeplineEdit->setText(settings.value("pl_separator", "::").toString());
+    m_ui.plSeplineEdit->setText(settings.value("pl_separator", u"::"_s).toString());
     m_ui.showNewPLCheckBox->setChecked(settings.value("pl_show_create_button", false).toBool());
     //transparency
     m_ui.mwTransparencySlider->setValue(100 - settings.value("mw_opacity", 1.0).toDouble()*100);
@@ -240,19 +240,19 @@ void SkinnedSettings::readSettings()
         m_currentSkinPath = SkinReader::defaultSkinPath();
     m_ui.hiddenCheckBox->setChecked(settings.value("start_hidden", false).toBool());
     m_ui.hideOnCloseCheckBox->setChecked(settings.value("hide_on_close", false).toBool());
-    m_ui.windowTitleLineEdit->setText(settings.value("window_title_format","%if(%p,%p - %t,%t)").toString());
+    m_ui.windowTitleLineEdit->setText(settings.value("window_title_format", u"%if(%p,%p - %t,%t)"_s).toString());
     //playlist colors
     m_ui.plSkinColorsCheckBox->setChecked(settings.value("pl_use_skin_colors", true).toBool());
-    m_ui.plBg1Color->setColor(settings.value("pl_bg1_color", "#0d0d0d").toString());
-    m_ui.plBg2Color->setColor(settings.value("pl_bg2_color", "#0d0d0d").toString());
-    m_ui.plHlColor->setColor(settings.value("pl_highlight_color", "#2a2a2a").toString());
-    m_ui.plTextNormalColor->setColor(settings.value("pl_normal_text_color", "#5a5a5a").toString());
-    m_ui.plTextCurrentColor->setColor(settings.value("pl_current_text_color", "#407dec").toString());
-    m_ui.plTextHlColor->setColor(settings.value("pl_hl_text_color", "#5a5a5a").toString());
-    m_ui.plGrBgColor->setColor(settings.value("pl_group_bg", "#0d0d0d").toString());
-    m_ui.plSplitterColor->setColor(settings.value("pl_splitter_color", "#5a5a5a").toString());
-    m_ui.plGrTextColor->setColor(settings.value("pl_group_text", "#5a5a5a").toString());
-    m_ui.plCurrentTrackBgColor->setColor(settings.value("pl_current_bg_color", "#0d0d0d").toString());
+    m_ui.plBg1Color->setColor(settings.value("pl_bg1_color", u"#0d0d0d"_s).toString());
+    m_ui.plBg2Color->setColor(settings.value("pl_bg2_color", u"#0d0d0d"_s).toString());
+    m_ui.plHlColor->setColor(settings.value("pl_highlight_color", u"#2a2a2a"_s).toString());
+    m_ui.plTextNormalColor->setColor(settings.value("pl_normal_text_color", u"#5a5a5a"_s).toString());
+    m_ui.plTextCurrentColor->setColor(settings.value("pl_current_text_color", u"#407dec"_s).toString());
+    m_ui.plTextHlColor->setColor(settings.value("pl_hl_text_color", u"#5a5a5a"_s).toString());
+    m_ui.plGrBgColor->setColor(settings.value("pl_group_bg", u"#0d0d0d"_s).toString());
+    m_ui.plSplitterColor->setColor(settings.value("pl_splitter_color", u"#5a5a5a"_s).toString());
+    m_ui.plGrTextColor->setColor(settings.value("pl_group_text", u"#5a5a5a"_s).toString());
+    m_ui.plCurrentTrackBgColor->setColor(settings.value("pl_current_bg_color", u"#0d0d0d"_s).toString());
     m_ui.plOverrideGroupBgCheckBox->setChecked(settings.value("pl_override_group_bg", false).toBool());
     m_ui.plOverrideCurrentBgCheckBox->setChecked(settings.value("pl_override_current_bg", false).toBool());
     settings.endGroup();
