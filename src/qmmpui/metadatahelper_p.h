@@ -50,7 +50,7 @@ private:
 
     MetaDataFormatter *m_group_formatter;
     MetaDataFormatter *m_group_formatter2;
-    QList <MetaDataFormatter*> m_title_formatters;
+    QList<MetaDataFormatter*> m_title_formatters;
 
 
 };

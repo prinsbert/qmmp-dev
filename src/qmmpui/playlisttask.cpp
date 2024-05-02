@@ -38,7 +38,7 @@ struct TrackField
 
 struct GroupdField
 {
-    QList <TrackField *> fields;
+    QList<TrackField *> fields;
     QString groupName;
 };
 

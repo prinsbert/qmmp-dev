@@ -276,7 +276,7 @@ void ConverterDialog::readPresets(const QString &path)
     if(!file.open(QIODevice::ReadOnly))
         return;
 
-    QList <QVariantHash> dataList;
+    QList<QVariantHash> dataList;
     while(!file.atEnd())
     {
         QString line = QString::fromUtf8(file.readLine().trimmed());

@@ -649,7 +649,7 @@ void QmmpAudioEngine::prepareEffects(Decoder *d)
     }
     m_replayGain = nullptr;
     m_dithering = nullptr;
-    QList <Effect *> tmp_effects = m_effects;
+    QList<Effect *> tmp_effects = m_effects;
     m_effects.clear();
 
     //replay gain

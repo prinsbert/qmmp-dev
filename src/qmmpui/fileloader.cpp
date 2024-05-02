@@ -86,7 +86,7 @@ void FileLoader::insertPlayList(const QString &path, PlayListTrack *before)
         while(!tracks.isEmpty() && !m_finished)
         {
             PlayListTrack *t = tracks.takeFirst();
-            QList <TrackInfo *> infoList = MetaDataManager::instance()->createPlayList(t->path(), m_parts);
+            QList<TrackInfo *> infoList = MetaDataManager::instance()->createPlayList(t->path(), m_parts);
             if(infoList.count() != 1) //invalid or unsupported track
             {
                 qDeleteAll(infoList);

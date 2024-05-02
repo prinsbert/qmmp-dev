@@ -608,7 +608,7 @@ QString MetaDataFormatter::dumpNode(MetaDataFormatter::Node node) const
 
 QList<MetaDataFormatter::Node> MetaDataFormatter::compile(const QString &expr)
 {
-    QList <Node> nodes;
+    QList<Node> nodes;
     QString::const_iterator i = expr.constBegin();
 
     while (i != expr.constEnd())

@@ -262,7 +262,7 @@ void PlayListManager::readPlayLists()
     Qmmp::TrackProperty propKey;
     QString line, key, value;
     int current = 0, pl = 0;
-    QList <PlayListTrack *> tracks;
+    QList<PlayListTrack *> tracks;
     QFile file(Qmmp::configDir() + u"/playlist.txt"_s);
     file.open(QIODevice::ReadOnly);
     QByteArray array = file.readAll();

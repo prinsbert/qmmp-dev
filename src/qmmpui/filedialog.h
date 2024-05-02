@@ -40,7 +40,7 @@ public:
     /*!
      * Returns a list of registered file dialog factories.
      */
-    static QList <FileDialogFactory*> factories();
+    static QList<FileDialogFactory*> factories();
     /*!
      * Selects current file dialog factory.
      */

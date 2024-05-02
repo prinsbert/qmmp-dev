@@ -94,7 +94,7 @@ private:
     static xcb_screen_t *screenOfDisplay(xcb_connection_t *conn, int screen);
 #endif
     bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) override;
-    QList <Hotkey *> m_grabbedKeys;
+    QList<Hotkey *> m_grabbedKeys;
 };
 
 #endif

@@ -41,7 +41,7 @@ public:
 
 private:
     WavpackContext *m_ctx;
-    QList <TagModel *> m_tags;
+    QList<TagModel *> m_tags;
     QString m_path;
 };
 

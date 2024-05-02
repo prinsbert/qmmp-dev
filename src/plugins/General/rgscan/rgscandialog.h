@@ -64,7 +64,7 @@ class RGScanDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit RGScanDialog(QList <PlayListTrack *> tracks,  QWidget *parent = nullptr);
+    explicit RGScanDialog(QList<PlayListTrack *> tracks,  QWidget *parent = nullptr);
     virtual ~RGScanDialog();
 
 private slots:

@@ -39,7 +39,7 @@
 
 #include "decoder_cdaudio.h"
 
-QList <CDATrack> DecoderCDAudio::m_track_cache;
+QList<CDATrack> DecoderCDAudio::m_track_cache;
 
 static void log_handler (cdio_log_level_t level, const char *message)
 {
@@ -97,7 +97,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
     QSettings settings;
     int cd_speed = settings.value(u"cdaudio/speed"_s, 0).toInt();
     bool use_cd_text = settings.value(u"cdaudio/cdtext"_s, true).toBool();
-    QList <CDATrack> tracks;
+    QList<CDATrack> tracks;
     cdio_log_set_handler(log_handler); //setup cdio log handler
     CdIo_t *cdio = nullptr;
     QString device_path = device;
@@ -309,7 +309,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
     return tracks;
 }
 
-void DecoderCDAudio::saveToCache(QList <CDATrack> tracks,  uint disc_id)
+void DecoderCDAudio::saveToCache(QList<CDATrack> tracks,  uint disc_id)
 {
     QDir dir(Qmmp::cacheDir());
     if(!dir.exists(u"cddbcache"_s))
@@ -331,7 +331,7 @@ void DecoderCDAudio::saveToCache(QList <CDATrack> tracks,  uint disc_id)
     }
 }
 
-bool DecoderCDAudio::readFromCache(QList <CDATrack> *tracks, uint disc_id)
+bool DecoderCDAudio::readFromCache(QList<CDATrack> *tracks, uint disc_id)
 {
     QString path = Qmmp::configDir();
     path += QStringLiteral("/cddbcache/%1").arg(disc_id, 0, 16);
@@ -373,7 +373,7 @@ bool DecoderCDAudio::initialize()
     device_path.remove(QRegularExpression(u"#\\d+$"_s));
 
     track_number = qMax(track_number, 1);
-    QList <CDATrack> tracks = DecoderCDAudio::generateTrackList(device_path); //generate track list
+    QList<CDATrack> tracks = DecoderCDAudio::generateTrackList(device_path); //generate track list
     if (tracks.isEmpty())
     {
         qWarning("DecoderCDAudio: initialize failed");

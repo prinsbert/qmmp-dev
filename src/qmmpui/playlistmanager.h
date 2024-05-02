@@ -53,7 +53,7 @@ public:
     /*!
      * Returns a list of all playlists.
      */
-    QList <PlayListModel *> playLists() const;
+    QList<PlayListModel *> playLists() const;
     /*!
      * Returns a names of all playlists.
      */
@@ -274,7 +274,7 @@ private:
     static PlayListManager* m_instance;
     static const QHash<QString, Qmmp::MetaData> m_metaKeys;
     static const QHash<QString, Qmmp::TrackProperty> m_propKeys;
-    QList <PlayListModel *> m_models;
+    QList<PlayListModel *> m_models;
     PlayListModel *m_current = nullptr;
     PlayListModel *m_selected = nullptr;
     QTimer *m_timer;

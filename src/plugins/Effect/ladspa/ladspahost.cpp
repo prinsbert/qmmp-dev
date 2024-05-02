@@ -391,7 +391,7 @@ const QList<LADSPAPlugin *> &LADSPAHost::plugins() const
     return m_plugins;
 }
 
-const QList <LADSPAEffect *> &LADSPAHost::effects() const
+const QList<LADSPAEffect *> &LADSPAHost::effects() const
 {
     return m_effects;
 }
