@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QIcon>
-#include "eqpreset.h"
 #include "preseteditor.h"
 
 using namespace Qt::Literals::StringLiterals;
@@ -29,56 +28,46 @@ PresetEditor::PresetEditor(QWidget *parent)
 {
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
-    connect(m_ui.loadButton,SIGNAL(clicked()),SLOT(loadPreset()));
-    connect(m_ui.deleteButton,SIGNAL(clicked()),SLOT(deletePreset()));
+    connect(m_ui.loadButton, &QPushButton::clicked, this, &PresetEditor::loadPreset);
+    connect(m_ui.deleteButton, &QPushButton::clicked,this,  &PresetEditor::deletePreset);
     m_ui.loadButton->setIcon(QIcon::fromTheme(u"document-open"_s));
     m_ui.deleteButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
 }
 
-
-PresetEditor::~PresetEditor()
+void PresetEditor::addPresets(const QStringList &names)
 {
-    while (m_ui.presetListWidget->count () !=0)
-        m_ui.presetListWidget->takeItem (0);
-
-    while (m_ui.autoPresetListWidget->count () !=0)
-        m_ui.autoPresetListWidget->takeItem (0);
-}
-
-void PresetEditor::addPresets(const QList<EQPreset*> &presets)
-{
-    for(QListWidgetItem *item : qAsConst(presets))
+    for(const QString &name : qAsConst(names))
     {
-        m_ui.presetListWidget->addItem(item);
+        m_ui.presetListWidget->addItem(name);
     }
 }
 
-void PresetEditor::addAutoPresets(const QList<EQPreset*> &presets)
+void PresetEditor::addAutoPresets(const QStringList &names)
 {
-    for(QListWidgetItem *item : qAsConst(presets))
+    for(const QString &name : qAsConst(names))
     {
-        m_ui.autoPresetListWidget->addItem(item);
+        m_ui.autoPresetListWidget->addItem(name);
     }
 }
 
 void PresetEditor::loadPreset()
 {
-    EQPreset* preset = nullptr;
-    if (m_ui.tabWidget->currentIndex () == 0)
-        preset = static_cast<EQPreset *>(m_ui.presetListWidget->currentItem());
-    if (m_ui.tabWidget->currentIndex () == 1)
-        preset = static_cast<EQPreset *>(m_ui.autoPresetListWidget->currentItem());
-    if (preset)
-        emit presetLoaded(preset);
+    QListWidgetItem *item = nullptr;
+    if(m_ui.tabWidget->currentIndex() == 0)
+        item = m_ui.presetListWidget->currentItem();
+    if(m_ui.tabWidget->currentIndex () == 1)
+        item = m_ui.autoPresetListWidget->currentItem();
+    if(item)
+        emit presetLoaded(item->text());
 }
 
 void PresetEditor::deletePreset()
 {
-    EQPreset* preset = nullptr;
-    if (m_ui.tabWidget->currentIndex () == 0)
-        preset = static_cast<EQPreset *>(m_ui.presetListWidget->currentItem());
-    if (m_ui.tabWidget->currentIndex () == 1)
-        preset = static_cast<EQPreset *>(m_ui.autoPresetListWidget->currentItem());
-    if (preset)
-        emit presetDeleted(preset);
+    QListWidgetItem *item = nullptr;
+    if(m_ui.tabWidget->currentIndex() == 0)
+        item = m_ui.presetListWidget->currentItem();
+    if(m_ui.tabWidget->currentIndex () == 1)
+        item = m_ui.autoPresetListWidget->currentItem();
+    if(item)
+        emit presetDeleted(item->text());
 }

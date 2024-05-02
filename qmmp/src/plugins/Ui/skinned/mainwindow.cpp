@@ -184,8 +184,8 @@ void MainWindow::showState(Qmmp::State state)
     switch ((int) state)
     {
     case Qmmp::Playing:
-        if (m_pl_manager->currentPlayList()->currentTrack())
-            m_equalizer->loadPreset(m_pl_manager->currentPlayList()->currentTrack()->path().section(QLatin1Char('/'), -1));
+//        if (m_pl_manager->currentPlayList()->currentTrack())
+//            m_equalizer->loadPreset(m_pl_manager->currentPlayList()->currentTrack()->path().section(QLatin1Char('/'), -1));
         break;
     case Qmmp::Paused:
         break;

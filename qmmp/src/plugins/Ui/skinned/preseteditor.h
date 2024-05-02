@@ -21,14 +21,11 @@
 #define PRESETEDITOR_H
 
 #include <QDialog>
-
 #include "ui_preseteditor.h"
 
 /**
 	@author Ilya Kotov <forkotov02@ya.ru>
 */
-
-class EQPreset;
 
 class PresetEditor : public QDialog
 {
@@ -36,14 +33,12 @@ Q_OBJECT
 public:
     PresetEditor(QWidget *parent = nullptr);
 
-    ~PresetEditor();
-
-    void addPresets(const QList<EQPreset*>&);
-    void addAutoPresets(const QList<EQPreset*>&);
+    void addPresets(const QStringList &names);
+    void addAutoPresets(const QStringList &names);
 
 signals:
-    void presetLoaded(EQPreset*);
-    void presetDeleted(EQPreset*);
+    void presetLoaded(const QString &name);
+    void presetDeleted(const QString &name);
 
 private slots:
     void loadPreset();
