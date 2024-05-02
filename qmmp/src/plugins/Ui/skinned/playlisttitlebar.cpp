@@ -25,7 +25,7 @@
 #include <qmmpui/playlistmodel.h>
 #include "dock.h"
 #include "windowsystem.h"
-#include "button.h"
+#include "skinnedbutton.h"
 #include "playlisttitlebar.h"
 #include "skin.h"
 
@@ -42,10 +42,10 @@ PlayListTitleBar::PlayListTitleBar(QWidget *parent)
     m_pl = qobject_cast<PlayList*>(parent);
     m_mw = qobject_cast<MainWindow*>(m_pl->parent());
 
-    m_close = new Button(this,Skin::PL_BT_CLOSE_N, Skin::PL_BT_CLOSE_P, Skin::CUR_PCLOSE);
+    m_close = new SkinnedButton(this,Skin::PL_BT_CLOSE_N, Skin::PL_BT_CLOSE_P, Skin::CUR_PCLOSE);
     connect (m_close, SIGNAL(clicked()), m_pl, SIGNAL(closed()));
 
-    m_shade = new Button(this, Skin::PL_BT_SHADE1_N, Skin::PL_BT_SHADE1_P, Skin::CUR_PWINBUT);
+    m_shade = new SkinnedButton(this, Skin::PL_BT_SHADE1_N, Skin::PL_BT_SHADE1_P, Skin::CUR_PWINBUT);
     connect(m_shade, SIGNAL(clicked()), SLOT(shade()));
 
     resize(275*m_ratio,20*m_ratio);
@@ -248,7 +248,7 @@ void PlayListTitleBar::shade()
     {
         m_height = m_pl->height();
         m_shade->hide();
-        m_shade2 = new Button(this, Skin::PL_BT_SHADE2_N, Skin::PL_BT_SHADE2_P, Skin::CUR_PWSNORM);
+        m_shade2 = new SkinnedButton(this, Skin::PL_BT_SHADE2_N, Skin::PL_BT_SHADE2_P, Skin::CUR_PWSNORM);
         m_shade2->move(254,3);
         connect(m_shade2, SIGNAL(clicked()), SLOT(shade()));
         m_shade2->show();

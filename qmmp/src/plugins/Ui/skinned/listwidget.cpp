@@ -35,7 +35,7 @@
 #include <qmmpui/playlistmanager.h>
 #include "listwidget.h"
 #include "playlistheader.h"
-#include "actionmanager.h"
+#include "skinnedactionmanager.h"
 #include "skin.h"
 #include "popupwidget.h"
 #include "horizontalslider.h"
@@ -63,7 +63,7 @@ ListWidget::ListWidget(QWidget *parent) : QWidget(parent)
     connect(m_timer, SIGNAL(timeout()), SLOT(autoscroll()));
     connect(m_hslider, SIGNAL(sliderMoved(int)), m_header, SLOT(scroll(int)));
     connect(m_hslider, SIGNAL(sliderMoved(int)), this, SLOT(update()));
-    SET_ACTION(ActionManager::PL_SHOW_HEADER, this, SLOT(readSettings()));
+    SET_ACTION(SkinnedActionManager::PL_SHOW_HEADER, this, &ListWidget::readSettings);
 }
 
 ListWidget::~ListWidget()
@@ -80,7 +80,7 @@ void ListWidget::readSettings()
     bool show_popup = settings.value("pl_show_popup", false).toBool();
 
     m_header->readSettings();
-    m_header->setVisible(ACTION(ActionManager::PL_SHOW_HEADER)->isChecked());
+    m_header->setVisible(ACTION(SkinnedActionManager::PL_SHOW_HEADER)->isChecked());
     m_header->setGeometry(0,0,width(), m_header->requiredHeight());
 
     if (m_update)

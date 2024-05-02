@@ -38,7 +38,6 @@ public:
 
 public slots:
     void setChecked(bool);
-    void click();
 
 signals:
     void clicked(bool);

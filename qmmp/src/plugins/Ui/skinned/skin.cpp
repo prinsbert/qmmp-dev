@@ -33,7 +33,7 @@
 #include <QApplication>
 #endif
 #include <qmmp/qmmp.h>
-#include "actionmanager.h"
+#include "skinnedactionmanager.h"
 #include "skinreader.h"
 #include "skin.h"
 #include "cursorimage.h"
@@ -51,8 +51,8 @@ Skin::Skin(QObject *parent) : QObject (parent)
 #endif
     m_double_size = settings.value("Skinned/double_size", false).toBool();
     m_antialiasing = settings.value("Skinned/antialiasing", false).toBool();
-    ACTION(ActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
-    ACTION(ActionManager::WM_ANTIALIASING)->setChecked(m_antialiasing);
+    ACTION(SkinnedActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
+    ACTION(SkinnedActionManager::WM_ANTIALIASING)->setChecked(m_antialiasing);
     setSkin(QDir::cleanPath(path), false);
     /* skin directory */
     QDir skinDir(Qmmp::configDir());
@@ -178,8 +178,8 @@ void Skin::setSkin(const QString &path, bool force)
 {
     QSettings settings;
     m_use_cursors = settings.value("Skinned/skin_cursors", false).toBool();
-    m_double_size = ACTION(ActionManager::WM_DOUBLE_SIZE)->isChecked();
-    m_antialiasing = ACTION(ActionManager::WM_ANTIALIASING)->isChecked();
+    m_double_size = ACTION(SkinnedActionManager::WM_DOUBLE_SIZE)->isChecked();
+    m_antialiasing = ACTION(SkinnedActionManager::WM_ANTIALIASING)->isChecked();
 #ifdef Q_OS_WIN
     if(Qmmp::isPortable() && path.startsWith(QApplication::applicationDirPath()))
     {

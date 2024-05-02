@@ -50,7 +50,7 @@
 #include "mainvisual.h"
 #include "listwidget.h"
 #include "windowsystem.h"
-#include "actionmanager.h"
+#include "skinnedactionmanager.h"
 
 #define KEY_OFFSET 10000
 
@@ -76,7 +76,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     m_titleFormatter.setPattern(u"%if(%p,%p - %t,%t)"_s);
 
-    new ActionManager(this);
+    new SkinnedActionManager(this);
 
     m_player = MediaPlayer::instance();
     m_core = SoundCore::instance();
@@ -90,7 +90,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     Dock *dock = new Dock(this);
     dock->setMainWidget(this);
-    m_display = new MainDisplay(this);
+    m_display = new SkinnedDisplay(this);
     setCentralWidget(m_display);
     m_display->setFocus ();
 
@@ -253,7 +253,7 @@ void MainWindow::readSettings()
 
     if (m_update)
     {
-        if(ACTION(ActionManager::WM_ALLWAYS_ON_TOP)->isChecked())
+        if(ACTION(SkinnedActionManager::WM_ALLWAYS_ON_TOP)->isChecked())
         {
             setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
             m_playlist->setWindowFlags(m_playlist->windowFlags() | Qt::WindowStaysOnTopHint);
@@ -290,12 +290,12 @@ void MainWindow::readSettings()
         m_startHidden = settings.value("start_hidden", false).toBool();
         if(settings.value("always_on_top", false).toBool())
         {
-            ACTION(ActionManager::WM_ALLWAYS_ON_TOP)->setChecked(true);
+            ACTION(SkinnedActionManager::WM_ALLWAYS_ON_TOP)->setChecked(true);
             setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
             m_playlist->setWindowFlags(m_playlist->windowFlags() | Qt::WindowStaysOnTopHint);
             m_equalizer->setWindowFlags(m_equalizer->windowFlags() | Qt::WindowStaysOnTopHint);
         }
-        ACTION(ActionManager::WM_STICKY)->setChecked(settings.value("show_on_all_desktops",
+        ACTION(SkinnedActionManager::WM_STICKY)->setChecked(settings.value("show_on_all_desktops",
                                                                     false).toBool());
         show();
         qApp->processEvents();
@@ -307,15 +307,15 @@ void MainWindow::readSettings()
         // Repeat/Shuffle
         m_display->setIsRepeatable(m_ui_settings->isRepeatableList());
         m_display->setIsShuffle(m_ui_settings->isShuffle());
-        ACTION(ActionManager::REPEAT_ALL)->setChecked(m_ui_settings->isRepeatableList());
-        ACTION(ActionManager::SHUFFLE)->setChecked(m_ui_settings->isShuffle());
-        ACTION(ActionManager::REPEAT_TRACK)->setChecked(m_ui_settings->isRepeatableTrack());
-        ACTION(ActionManager::NO_PL_ADVANCE)->setChecked(m_ui_settings->isNoPlayListAdvance());
-        ACTION(ActionManager::TRANSIT_BETWEEN_PLAYLISTS)->setChecked(m_ui_settings->isPlayListTransitionEnabled());
+        ACTION(SkinnedActionManager::REPEAT_ALL)->setChecked(m_ui_settings->isRepeatableList());
+        ACTION(SkinnedActionManager::SHUFFLE)->setChecked(m_ui_settings->isShuffle());
+        ACTION(SkinnedActionManager::REPEAT_TRACK)->setChecked(m_ui_settings->isRepeatableTrack());
+        ACTION(SkinnedActionManager::NO_PL_ADVANCE)->setChecked(m_ui_settings->isNoPlayListAdvance());
+        ACTION(SkinnedActionManager::TRANSIT_BETWEEN_PLAYLISTS)->setChecked(m_ui_settings->isPlayListTransitionEnabled());
         m_update = true;
     }
 #ifdef QMMP_WS_X11
-    WindowSystem::changeWinSticky(winId(), ACTION(ActionManager::WM_STICKY)->isChecked());
+    WindowSystem::changeWinSticky(winId(), ACTION(SkinnedActionManager::WM_STICKY)->isChecked());
     WindowSystem::setWinHint(winId(), "player", "Qmmp");
 #endif
     //Call setWindowOpacity only if needed
@@ -345,10 +345,10 @@ void MainWindow::writeSettings()
     //geometry
     settings.setValue("mw_pos", this->pos());
     //look & feel
-    settings.setValue("double_size", ACTION(ActionManager::WM_DOUBLE_SIZE)->isChecked());
-    settings.setValue("always_on_top", ACTION(ActionManager::WM_ALLWAYS_ON_TOP)->isChecked());
-    settings.setValue("show_on_all_desktops", ACTION(ActionManager::WM_STICKY)->isChecked());
-    settings.setValue("antialiasing", ACTION(ActionManager::WM_ANTIALIASING)->isChecked());
+    settings.setValue("double_size", ACTION(SkinnedActionManager::WM_DOUBLE_SIZE)->isChecked());
+    settings.setValue("always_on_top", ACTION(SkinnedActionManager::WM_ALLWAYS_ON_TOP)->isChecked());
+    settings.setValue("show_on_all_desktops", ACTION(SkinnedActionManager::WM_STICKY)->isChecked());
+    settings.setValue("antialiasing", ACTION(SkinnedActionManager::WM_ANTIALIASING)->isChecked());
     settings.endGroup();
 }
 
@@ -362,7 +362,7 @@ void MainWindow::showSettings()
     skinnedSettings->writeSettings();
     confDialog->deleteLater();
     updateSettings();
-    ActionManager::instance()->saveActions();
+    SkinnedActionManager::instance()->saveActions();
 }
 
 void MainWindow::toggleVisibility()
@@ -388,7 +388,7 @@ void MainWindow::toggleVisibility()
             showNormal();
         }
 #ifdef QMMP_WS_X11
-        WindowSystem::changeWinSticky(winId(), ACTION(ActionManager::WM_STICKY)->isChecked());
+        WindowSystem::changeWinSticky(winId(), ACTION(SkinnedActionManager::WM_STICKY)->isChecked());
         WindowSystem::setWinHint(winId(), "player", "Qmmp");
         raise();
 #endif
@@ -417,69 +417,70 @@ void MainWindow::showAndRaise()
 
 void MainWindow::createActions()
 {
+    SET_ACTION(SkinnedActionManager::PL_ADD_FILE, this, &MainWindow::addFile);
+    SET_ACTION(SkinnedActionManager::PL_ADD_DIRECTORY, this, &MainWindow::addDir);
+    SET_ACTION(SkinnedActionManager::PL_ADD_URL, this, &MainWindow::addUrl);
+
     m_mainMenu = new QMenu(this);
-    m_mainMenu->addAction(SET_ACTION(ActionManager::PLAY, this, SLOT(play())));
-    m_mainMenu->addAction(SET_ACTION(ActionManager::PAUSE, this, SLOT(pause())));
-    m_mainMenu->addAction(SET_ACTION(ActionManager::STOP, this, SLOT(stop())));
-    m_mainMenu->addAction(SET_ACTION(ActionManager::PREVIOUS, this, SLOT(previous())));
-    m_mainMenu->addAction(SET_ACTION(ActionManager::NEXT, this, SLOT(next())));
-    m_mainMenu->addAction(SET_ACTION(ActionManager::PLAY_PAUSE, this, SLOT(playPause())));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PLAY, this, &MainWindow::play));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PAUSE, this, &MainWindow::pause));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::STOP, this, &MainWindow::stop));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PREVIOUS, this, &MainWindow::previous));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::NEXT, this, &MainWindow::next));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::PLAY_PAUSE, this, &MainWindow::playPause));
     m_mainMenu->addSeparator();
-    m_mainMenu->addAction(SET_ACTION(ActionManager::JUMP, this, SLOT(jumpToTrack())));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::JUMP, this, &MainWindow::jumpToTrack));
     m_mainMenu->addSeparator();
     QMenu *viewMenu = m_mainMenu->addMenu(tr("View"));
-    viewMenu->addAction(ACTION(ActionManager::SHOW_PLAYLIST));
-    viewMenu->addAction(ACTION(ActionManager::SHOW_EQUALIZER));
+    viewMenu->addAction(ACTION(SkinnedActionManager::SHOW_PLAYLIST));
+    viewMenu->addAction(ACTION(SkinnedActionManager::SHOW_EQUALIZER));
     viewMenu->addSeparator();
-    viewMenu->addAction(SET_ACTION(ActionManager::WM_ALLWAYS_ON_TOP, this, SLOT(updateSettings())));
-    viewMenu->addAction(SET_ACTION(ActionManager::WM_STICKY, this, SLOT(updateSettings())));
-    viewMenu->addAction(SET_ACTION(ActionManager::WM_DOUBLE_SIZE, this, SLOT(updateSettings())));
-    viewMenu->addAction(SET_ACTION(ActionManager::WM_ANTIALIASING, this, SLOT(updateSettings())));
+    viewMenu->addAction(SET_ACTION(SkinnedActionManager::WM_ALLWAYS_ON_TOP, this, &MainWindow::updateSettings));
+    viewMenu->addAction(SET_ACTION(SkinnedActionManager::WM_STICKY, this, &MainWindow::updateSettings));
+    viewMenu->addAction(SET_ACTION(SkinnedActionManager::WM_DOUBLE_SIZE, this, &MainWindow::updateSettings));
+    viewMenu->addAction(SET_ACTION(SkinnedActionManager::WM_ANTIALIASING, this, &MainWindow::updateSettings));
 
     QMenu *plMenu = m_mainMenu->addMenu(tr("Playlist"));
-    plMenu->addAction(SET_ACTION(ActionManager::REPEAT_ALL, m_ui_settings, SLOT(setRepeatableList(bool))));
-    plMenu->addAction(SET_ACTION(ActionManager::REPEAT_TRACK, m_ui_settings, SLOT(setRepeatableTrack(bool))));
-    plMenu->addAction(SET_ACTION(ActionManager::SHUFFLE, m_ui_settings, SLOT(setShuffle(bool))));
-    plMenu->addAction(SET_ACTION(ActionManager::NO_PL_ADVANCE, m_ui_settings,
-                                 SLOT(setNoPlayListAdvance(bool))));
-    plMenu->addAction(SET_ACTION(ActionManager::TRANSIT_BETWEEN_PLAYLISTS, m_ui_settings,
-                                 SLOT(setPlayListTransitionEnabled(bool))));
-    plMenu->addAction(SET_ACTION(ActionManager::STOP_AFTER_SELECTED, m_pl_manager,
-                                 SLOT(stopAfterSelected())));
-    plMenu->addAction(SET_ACTION(ActionManager::CLEAR_QUEUE, m_pl_manager, SLOT(clearQueue())));
+    plMenu->addAction(SET_ACTION(SkinnedActionManager::REPEAT_ALL, m_ui_settings, &QmmpUiSettings::setRepeatableList));
+    plMenu->addAction(SET_ACTION(SkinnedActionManager::REPEAT_TRACK, m_ui_settings, &QmmpUiSettings::setRepeatableTrack));
+    plMenu->addAction(SET_ACTION(SkinnedActionManager::SHUFFLE, m_ui_settings, &QmmpUiSettings::setShuffle));
+    plMenu->addAction(SET_ACTION(SkinnedActionManager::NO_PL_ADVANCE, m_ui_settings, &QmmpUiSettings::setNoPlayListAdvance));
+    plMenu->addAction(SET_ACTION(SkinnedActionManager::TRANSIT_BETWEEN_PLAYLISTS, m_ui_settings, &QmmpUiSettings::setPlayListTransitionEnabled));
+    plMenu->addAction(SET_ACTION(SkinnedActionManager::STOP_AFTER_SELECTED, m_pl_manager, &PlayListManager::stopAfterSelected));
+    plMenu->addAction(SET_ACTION(SkinnedActionManager::CLEAR_QUEUE, m_pl_manager, &PlayListManager::clearQueue));
     plMenu->addSeparator();
-    plMenu->addAction(ACTION(ActionManager::PL_SHOW_HEADER));
-    plMenu->addAction(ACTION(ActionManager::PL_SHOW_TABBAR));
-    plMenu->addAction(ACTION(ActionManager::PL_GROUP_TRACKS));
+    plMenu->addAction(ACTION(SkinnedActionManager::PL_SHOW_HEADER));
+    plMenu->addAction(ACTION(SkinnedActionManager::PL_SHOW_TABBAR));
+    plMenu->addAction(ACTION(SkinnedActionManager::PL_GROUP_TRACKS));
 
     connect(m_ui_settings, SIGNAL(repeatableListChanged(bool)),
-            ACTION(ActionManager::REPEAT_ALL), SLOT(setChecked(bool)));
+            ACTION(SkinnedActionManager::REPEAT_ALL), SLOT(setChecked(bool)));
     connect(m_ui_settings, SIGNAL (repeatableTrackChanged(bool)),
-            ACTION(ActionManager::REPEAT_TRACK), SLOT(setChecked(bool)));
+            ACTION(SkinnedActionManager::REPEAT_TRACK), SLOT(setChecked(bool)));
     connect(m_ui_settings, SIGNAL (noPlayListAdvanceChanged(bool)),
-            ACTION(ActionManager::NO_PL_ADVANCE), SLOT(setChecked(bool)));
+            ACTION(SkinnedActionManager::NO_PL_ADVANCE), SLOT(setChecked(bool)));
     connect(m_ui_settings, SIGNAL(shuffleChanged(bool)),
-            ACTION(ActionManager::SHUFFLE), SLOT(setChecked(bool)));
+            ACTION(SkinnedActionManager::SHUFFLE), SLOT(setChecked(bool)));
     connect(m_ui_settings, SIGNAL(playListTransitionChanged(bool)),
-            ACTION(ActionManager::TRANSIT_BETWEEN_PLAYLISTS), SLOT(setChecked(bool)));
+            ACTION(SkinnedActionManager::TRANSIT_BETWEEN_PLAYLISTS), SLOT(setChecked(bool)));
 
     QMenu *audioMenu = m_mainMenu->addMenu(tr("Audio"));
-    audioMenu->addAction(SET_ACTION(ActionManager::VOL_ENC, m_core, SLOT(volumeUp())));
-    audioMenu->addAction(SET_ACTION(ActionManager::VOL_DEC, m_core, SLOT(volumeDown())));
-    audioMenu->addAction(SET_ACTION(ActionManager::VOL_MUTE, m_core, SLOT(setMuted(bool))));
-    connect(m_core, SIGNAL(mutedChanged(bool)), ACTION(ActionManager::VOL_MUTE), SLOT(setChecked(bool)));
+    audioMenu->addAction(SET_ACTION(SkinnedActionManager::VOL_ENC, m_core, &SoundCore::volumeUp));
+    audioMenu->addAction(SET_ACTION(SkinnedActionManager::VOL_DEC, m_core, &SoundCore::volumeDown));
+    audioMenu->addAction(SET_ACTION(SkinnedActionManager::VOL_MUTE, m_core, &SoundCore::setMuted));
+    connect(m_core, SIGNAL(mutedChanged(bool)), ACTION(SkinnedActionManager::VOL_MUTE), SLOT(setChecked(bool)));
 
     m_visMenu = new VisualMenu(this);
     m_mainMenu->addMenu(m_visMenu);
     m_mainMenu->addMenu(m_uiHelper->createMenu(UiHelper::TOOLS_MENU, tr("Tools"), true, this));
 
     m_mainMenu->addSeparator();
-    m_mainMenu->addAction(SET_ACTION(ActionManager::SETTINGS, this, SLOT(showSettings())));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::SETTINGS, this, &MainWindow::showSettings));
     m_mainMenu->addSeparator();
-    m_mainMenu->addAction(SET_ACTION(ActionManager::ABOUT, this, SLOT(about())));
-    m_mainMenu->addAction(SET_ACTION(ActionManager::ABOUT_QT, qApp, SLOT(aboutQt())));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::ABOUT, this, &MainWindow::about));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::ABOUT_QT, qApp, &QApplication::aboutQt));
     m_mainMenu->addSeparator();
-    m_mainMenu->addAction(SET_ACTION(ActionManager::QUIT, m_uiHelper, SLOT(exit())));
+    m_mainMenu->addAction(SET_ACTION(SkinnedActionManager::QUIT, m_uiHelper, &UiHelper::exit));
 
     QAction* forward = new QAction(this);
     forward->setShortcut(QKeySequence(Qt::Key_Right));
@@ -489,7 +490,7 @@ void MainWindow::createActions()
     connect(backward,SIGNAL(triggered(bool)),this,SLOT(backward()));
 
     Dock::instance()->addActions(QList<QAction*>() << forward << backward);
-    Dock::instance()->addActions(ActionManager::instance()->actions());
+    Dock::instance()->addActions(SkinnedActionManager::instance()->actions());
 }
 
 void MainWindow::about()
@@ -539,7 +540,7 @@ void MainWindow::addUrl()
     m_uiHelper->addUrl(this);
 }
 
-MainDisplay * MainWindow::mainDisplay() const
+SkinnedDisplay * MainWindow::mainDisplay() const
 {
     return m_display;
 }

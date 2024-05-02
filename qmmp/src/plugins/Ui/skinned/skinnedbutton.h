@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef BUTTON_H
-#define BUTTON_H
+#ifndef SKINNEDBUTTON_H
+#define SKINNEDBUTTON_H
 
 #include "pixmapwidget.h"
 
@@ -27,12 +27,12 @@ class Skin;
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class Button : public PixmapWidget
+class SkinnedButton : public PixmapWidget
 {
 Q_OBJECT
 public:
-    Button(QWidget *parent, uint normal, uint pressed, uint cursor);
-    ~Button();
+    SkinnedButton(QWidget *parent, uint normal, uint pressed, uint cursor);
+    ~SkinnedButton();
 
 signals:
     void clicked();
@@ -41,16 +41,14 @@ private slots:
     void updateSkin();
 
 private:
-    Skin *m_skin;
-    //bool m_cursorin;
-    bool m_pressed = false;
-    void setON(bool);
-    uint m_name_normal, m_name_pressed, m_name_cursor;
-
-protected:
     void mousePressEvent(QMouseEvent*) override;
     void mouseReleaseEvent(QMouseEvent*) override;
     void mouseMoveEvent(QMouseEvent*) override;
+    void setON(bool);
+
+    Skin *m_skin;
+    bool m_pressed = false;
+    uint m_name_normal, m_name_pressed, m_name_cursor;
 };
 
 #endif

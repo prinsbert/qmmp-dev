@@ -41,7 +41,7 @@ public:
 
 public slots:
     void display(const QString&);
-    void display(int);
+    void displayNum(int);
 
 private slots:
     void draw();

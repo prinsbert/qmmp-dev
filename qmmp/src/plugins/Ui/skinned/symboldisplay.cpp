@@ -87,7 +87,7 @@ void SymbolDisplay::draw()
     setPixmap(tmp);
 }
 
-void SymbolDisplay::display(int val)
+void SymbolDisplay::displayNum(int val)
 {
     if (val < m_max)
         display(QString::number(val));

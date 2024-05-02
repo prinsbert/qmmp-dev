@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef BALANCEBAR_H
-#define BALANCEBAR_H
+#ifndef SKINNEDBALANCEBAR_H
+#define SKINNEDBALANCEBAR_H
 
 #include "pixmapwidget.h"
 
@@ -27,22 +27,22 @@ class Skin;
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class BalanceBar : public PixmapWidget
+class SkinnedBalanceBar : public PixmapWidget
 {
 Q_OBJECT
 public:
-    BalanceBar(QWidget *parent = nullptr);
+    SkinnedBalanceBar(QWidget *parent = nullptr);
 
-    ~BalanceBar();
+    ~SkinnedBalanceBar();
 
-    int value() {return m_value; }
+    int value() const;
 
 public slots:
     void setValue(int);
     void setMax(int);
 
 signals:
-    void sliderMoved (int);
+    void sliderMoved(int);
     void sliderPressed();
     void sliderReleased();
 
@@ -50,18 +50,17 @@ private slots:
     void updateSkin();
 
 private:
+    int convert(int);   // value = convert(position);
+    void draw(bool pressed = true);
+    void mousePressEvent(QMouseEvent*) override;
+    void mouseReleaseEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent*) override;
+
     Skin *m_skin;
     bool m_moving = false;
     int press_pos;
     int m_max = 100, m_min = -100, m_pos, m_value = 0, m_old = 0;
     QPixmap m_pixmap;
-    int convert(int);   // value = convert(position);
-    void draw(bool pressed = true);
-
-protected:
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
 };
 
 #endif

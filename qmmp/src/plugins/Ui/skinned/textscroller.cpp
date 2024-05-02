@@ -31,7 +31,7 @@
 #include <qmmpui/playlistmodel.h>
 #include <qmmpui/mediaplayer.h>
 #include "skin.h"
-#include "actionmanager.h"
+#include "skinnedactionmanager.h"
 #include "textscroller.h"
 
 

@@ -22,7 +22,7 @@
 #include <QPainter>
 #include <math.h>
 #include "skin.h"
-#include "button.h"
+#include "skinnedbutton.h"
 #include "mainwindow.h"
 #include "volumebar.h"
 

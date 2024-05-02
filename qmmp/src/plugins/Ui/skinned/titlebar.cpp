@@ -26,11 +26,11 @@
 
 #include "symboldisplay.h"
 #include "skin.h"
-#include "button.h"
+#include "skinnedbutton.h"
 #include "dock.h"
 #include "titlebarcontrol.h"
 #include "shadedvisual.h"
-#include "display.h"
+#include "skinneddisplay.h"
 #include "titlebar.h"
 #include "mainwindow.h"
 #include "timeindicator.h"
@@ -44,14 +44,14 @@ TitleBar::TitleBar(TimeIndicatorModel *model, QWidget *parent)
     setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_A));
     m_mw = qobject_cast<MainWindow*>(parent->parent());
     //buttons
-    m_menu = new Button(this,Skin::BT_MENU_N,Skin::BT_MENU_P, Skin::CUR_MAINMENU);
+    m_menu = new SkinnedButton(this,Skin::BT_MENU_N,Skin::BT_MENU_P, Skin::CUR_MAINMENU);
     connect(m_menu,SIGNAL(clicked()),this,SLOT(showMainMenu()));
     m_menu->move(6,3);
-    m_minimize = new Button(this,Skin::BT_MINIMIZE_N,Skin::BT_MINIMIZE_P, Skin::CUR_MIN);
+    m_minimize = new SkinnedButton(this,Skin::BT_MINIMIZE_N,Skin::BT_MINIMIZE_P, Skin::CUR_MIN);
     connect(m_minimize, SIGNAL(clicked()), m_mw, SLOT(showMinimized()));
-    m_shade = new Button(this,Skin::BT_SHADE1_N,Skin::BT_SHADE1_P, Skin::CUR_WINBUT);
+    m_shade = new SkinnedButton(this,Skin::BT_SHADE1_N,Skin::BT_SHADE1_P, Skin::CUR_WINBUT);
     connect(m_shade, SIGNAL(clicked()), SLOT(shade()));
-    m_close = new Button(this,Skin::BT_CLOSE_N,Skin::BT_CLOSE_P, Skin::CUR_CLOSE);
+    m_close = new SkinnedButton(this,Skin::BT_CLOSE_N,Skin::BT_CLOSE_P, Skin::CUR_CLOSE);
     connect(m_close, SIGNAL(clicked()), m_mw, SLOT(close()));
     setActive(false);
     connect(m_skin, SIGNAL(skinChanged()), this, SLOT(updateSkin()));
@@ -152,7 +152,7 @@ void TitleBar::shade()
     {
         setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_SHADED_A));
         m_shade->hide();
-        m_shade2 = new Button(this,Skin::BT_SHADE2_N, Skin::BT_SHADE2_P, Skin::CUR_WSNORMAL);
+        m_shade2 = new SkinnedButton(this,Skin::BT_SHADE2_N, Skin::BT_SHADE2_P, Skin::CUR_WSNORMAL);
         connect(m_shade2, SIGNAL(clicked()), SLOT(shade()));
         m_shade2->show();
         m_currentTime = new SymbolDisplay(this, 6);
@@ -184,7 +184,7 @@ void TitleBar::shade()
         m_visual = nullptr;
         m_shade->show();
     }
-    qobject_cast<MainDisplay *> (parent())->setMinimalMode(m_shaded);
+    qobject_cast<SkinnedDisplay *> (parent())->setMinimalMode(m_shaded);
     if (m_align)
         Dock::instance()->align(m_mw, m_shaded? -r*102: r*102);
     onModelChanged();

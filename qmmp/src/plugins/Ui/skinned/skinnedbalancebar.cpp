@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,25 +20,30 @@
 
 #include <QMouseEvent>
 #include <QPainter>
-#include <math.h>
+#include <cmath>
 #include "skin.h"
-#include "button.h"
+#include "skinnedbutton.h"
 #include "mainwindow.h"
-#include "balancebar.h"
+#include "skinnedbalancebar.h"
 
-BalanceBar::BalanceBar(QWidget *parent)
+SkinnedBalanceBar::SkinnedBalanceBar(QWidget *parent)
         : PixmapWidget(parent)
 {
     m_skin = Skin::instance();
-    connect(m_skin, SIGNAL(skinChanged()), this, SLOT(updateSkin()));
+    connect(m_skin, &Skin::skinChanged, this, &SkinnedBalanceBar::updateSkin);
     setPixmap(m_skin->getBalanceBar(0));
     draw(false);
 }
 
-BalanceBar::~BalanceBar()
+SkinnedBalanceBar::~SkinnedBalanceBar()
 {}
 
-void BalanceBar::mousePressEvent(QMouseEvent *e)
+int SkinnedBalanceBar::value() const
+{
+    return m_value;
+}
+
+void SkinnedBalanceBar::mousePressEvent(QMouseEvent *e)
 {
     m_moving = true;
     press_pos = e->position().x();
@@ -66,14 +71,14 @@ void BalanceBar::mousePressEvent(QMouseEvent *e)
     draw();
 }
 
-void BalanceBar::mouseMoveEvent (QMouseEvent *e)
+void SkinnedBalanceBar::mouseMoveEvent(QMouseEvent *e)
 {
     if(m_moving)
     {
         int po = e->position().x();
         po = po - press_pos;
 
-        if(0 <= po && po <= width()-13*m_skin->ratio())
+        if(0 <= po && po <= width() - 13 * m_skin->ratio())
         {
             m_value = convert(po);
             draw();
@@ -82,7 +87,7 @@ void BalanceBar::mouseMoveEvent (QMouseEvent *e)
     }
 }
 
-void BalanceBar::mouseReleaseEvent(QMouseEvent*)
+void SkinnedBalanceBar::mouseReleaseEvent(QMouseEvent*)
 {
     m_moving = false;
     draw(false);
@@ -90,7 +95,7 @@ void BalanceBar::mouseReleaseEvent(QMouseEvent*)
     emit sliderReleased();
 }
 
-void BalanceBar::setValue(int v)
+void SkinnedBalanceBar::setValue(int v)
 {
     if (m_moving || m_max == 0)
         return;
@@ -98,34 +103,34 @@ void BalanceBar::setValue(int v)
     draw(false);
 }
 
-void BalanceBar::setMax(int max)
+void SkinnedBalanceBar::setMax(int max)
 {
     m_max = max;
     draw(false);
 }
 
-void BalanceBar::updateSkin()
+void SkinnedBalanceBar::updateSkin()
 {
     resize(m_skin->getBalanceBar(0).size());
     draw(false);
 }
 
-void BalanceBar::draw(bool pressed)
+void SkinnedBalanceBar::draw(bool pressed)
 {
-    if(abs(m_value)<6)
+    if(std::abs(m_value) < 6)
         m_value = 0;
-    int p=int(ceil(double(m_value-m_min)*(width()-13*m_skin->ratio())/(m_max-m_min)));
-    m_pixmap = m_skin->getBalanceBar(abs(27*m_value/m_max));
+    int p=int(ceil(double(m_value - m_min) * (width() - 13 * m_skin->ratio()) / (m_max-m_min)));
+    m_pixmap = m_skin->getBalanceBar(std::abs(27 * m_value / m_max));
     QPainter paint(&m_pixmap);
     if(pressed)
-        paint.drawPixmap(p,m_skin->ratio(),m_skin->getButton(Skin::BT_BAL_P));
+        paint.drawPixmap(p, m_skin->ratio(), m_skin->getButton(Skin::BT_BAL_P));
     else
-        paint.drawPixmap(p,m_skin->ratio(),m_skin->getButton(Skin::BT_BAL_N));
+        paint.drawPixmap(p, m_skin->ratio(), m_skin->getButton(Skin::BT_BAL_N));
     setPixmap(m_pixmap);
     m_pos = p;
 }
 
-int BalanceBar::convert(int p)
+int SkinnedBalanceBar::convert(int p)
 {
-    return int(ceil(double(m_max-m_min)*(p)/(width()-13*m_skin->ratio())+m_min));
+    return int(ceil(double(m_max - m_min) * p / (width() - 13 * m_skin->ratio()) + m_min));
 }

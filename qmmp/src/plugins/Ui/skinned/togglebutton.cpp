@@ -50,13 +50,6 @@ void ToggleButton::updateSkin()
    setChecked(m_on);
 }
 
-void ToggleButton::click()
-{
-    m_on = !m_on;
-    setChecked (m_on);
-    emit clicked(m_on);
-}
-
 void ToggleButton::setChecked(bool on)
 {
    m_on = on;

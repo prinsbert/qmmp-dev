@@ -35,7 +35,7 @@
 #include "dock.h"
 #include "skin.h"
 #include "listwidget.h"
-#include "button.h"
+#include "skinnedbutton.h"
 #include "playlisttitlebar.h"
 #include "playlistslider.h"
 #include "pixmapwidget.h"
@@ -45,12 +45,11 @@
 #include "playlistbrowser.h"
 #include "playlistselector.h"
 #include "windowsystem.h"
-#include "actionmanager.h"
+#include "skinnedactionmanager.h"
 #include "playlistheader.h"
 #include "playlist.h"
 
-PlayList::PlayList (PlayListManager *manager, QWidget *parent)
-        : QWidget (parent)
+PlayList::PlayList(PlayListManager *manager, QWidget *parent) : QWidget(parent)
 {
     setAttribute(Qt::WA_AlwaysShowToolTips,true);
     setWindowTitle(tr("Playlist"));
@@ -86,11 +85,11 @@ PlayList::PlayList (PlayListManager *manager, QWidget *parent)
 
     m_listWidget = new ListWidget (this);
     m_plslider = new PlayListSlider (this);
-    m_buttonAdd = new Button (this,Skin::PL_BT_ADD,Skin::PL_BT_ADD, Skin::CUR_PNORMAL);
-    m_buttonSub = new Button (this,Skin::PL_BT_SUB,Skin::PL_BT_SUB, Skin::CUR_PNORMAL);
-    m_selectButton  = new Button (this,Skin::PL_BT_SEL,Skin::PL_BT_SEL, Skin::CUR_PNORMAL);
-    m_sortButton= new Button (this,Skin::PL_BT_SORT,Skin::PL_BT_SORT, Skin::CUR_PNORMAL);
-    m_playlistButton = new Button (this,Skin::PL_BT_LST,Skin::PL_BT_LST, Skin::CUR_PNORMAL);
+    m_buttonAdd = new SkinnedButton (this,Skin::PL_BT_ADD,Skin::PL_BT_ADD, Skin::CUR_PNORMAL);
+    m_buttonSub = new SkinnedButton (this,Skin::PL_BT_SUB,Skin::PL_BT_SUB, Skin::CUR_PNORMAL);
+    m_selectButton  = new SkinnedButton (this,Skin::PL_BT_SEL,Skin::PL_BT_SEL, Skin::CUR_PNORMAL);
+    m_sortButton= new SkinnedButton (this,Skin::PL_BT_SORT,Skin::PL_BT_SORT, Skin::CUR_PNORMAL);
+    m_playlistButton = new SkinnedButton (this,Skin::PL_BT_LST,Skin::PL_BT_LST, Skin::CUR_PNORMAL);
     m_resizeWidget = new QWidget(this);
     m_resizeWidget->resize(25,25);
     m_resizeWidget->setCursor(m_skin->getCursor (Skin::CUR_PSIZE));
@@ -189,12 +188,12 @@ void PlayList::updatePositions()
 
 void PlayList::createMenus()
 {
-    m_addMenu = new QMenu (this);
-    m_subMenu = new QMenu (this);
-    m_selectMenu = new QMenu (this);
-    m_sortMenu = new QMenu (this);
-    m_playlistMenu = new QMenu (this);
-    m_copySelectedMenu = new QMenu (tr("&Copy Selection To"), m_listWidget->menu());
+    m_addMenu = new QMenu(this);
+    m_subMenu = new QMenu(this);
+    m_selectMenu = new QMenu(this);
+    m_sortMenu = new QMenu(this);
+    m_playlistMenu = new QMenu(this);
+    m_copySelectedMenu = new QMenu(tr("&Copy Selection To"), m_listWidget->menu());
     m_copySelectedMenu->setIcon(QIcon::fromTheme(u"edit-copy"_s));
     connect(m_copySelectedMenu, SIGNAL(aboutToShow()),
             SLOT(generateCopySelectedMenu()));
@@ -205,48 +204,44 @@ void PlayList::createMenus()
 void PlayList::createActions()
 {
     //add menu
-    m_addMenu->addAction(SET_ACTION(ActionManager::PL_ADD_FILE, parent(), SLOT(addFile())));
-    m_addMenu->addAction(SET_ACTION(ActionManager::PL_ADD_DIRECTORY, parent(), SLOT(addDir())));
-    m_addMenu->addAction(SET_ACTION(ActionManager::PL_ADD_URL, parent(), SLOT(addUrl())));
+    m_addMenu->addAction(ACTION(SkinnedActionManager::PL_ADD_FILE));
+    m_addMenu->addAction(ACTION(SkinnedActionManager::PL_ADD_DIRECTORY));
+    m_addMenu->addAction(ACTION(SkinnedActionManager::PL_ADD_URL));
     UiHelper::instance()->registerMenu(UiHelper::ADD_MENU, m_addMenu, false);
     //sub menu
-    m_subMenu->addAction(SET_ACTION(ActionManager::PL_REMOVE_SELECTED, m_pl_manager, SLOT(removeSelected())));
-    m_subMenu->addAction(SET_ACTION(ActionManager::PL_REMOVE_ALL, m_pl_manager, SLOT(clear())));
-    m_subMenu->addAction(SET_ACTION(ActionManager::PL_REMOVE_UNSELECTED, m_pl_manager,
-                                SLOT(removeUnselected())));
+    m_subMenu->addAction(SET_ACTION(SkinnedActionManager::PL_REMOVE_SELECTED, m_pl_manager, &PlayListManager::removeSelected));
+    m_subMenu->addAction(SET_ACTION(SkinnedActionManager::PL_REMOVE_ALL, m_pl_manager, &PlayListManager::clear));
+    m_subMenu->addAction(SET_ACTION(SkinnedActionManager::PL_REMOVE_UNSELECTED, m_pl_manager, &PlayListManager::removeUnselected));
     m_subMenu->addSeparator();
-    m_subMenu->addAction(SET_ACTION(ActionManager::PL_REFRESH, m_pl_manager,
-                                SLOT(refresh())));
-    m_subMenu->addAction(SET_ACTION(ActionManager::PL_REMOVE_INVALID, m_pl_manager,
-                                SLOT(removeInvalidTracks())));
-    m_subMenu->addAction(SET_ACTION(ActionManager::PL_REMOVE_DUPLICATES, m_pl_manager,
-                                SLOT(removeDuplicates())));
+    m_subMenu->addAction(SET_ACTION(SkinnedActionManager::PL_REFRESH, m_pl_manager, &PlayListManager::refresh));
+    m_subMenu->addAction(SET_ACTION(SkinnedActionManager::PL_REMOVE_INVALID, m_pl_manager, &PlayListManager::removeInvalidTracks));
+    m_subMenu->addAction(SET_ACTION(SkinnedActionManager::PL_REMOVE_DUPLICATES, m_pl_manager, &PlayListManager::removeDuplicates));
     //sort menu
-    m_sortMenu->addAction(SET_ACTION(ActionManager::PL_SHOW_INFO, m_pl_manager, SLOT(showDetails ())));
+    m_sortMenu->addAction(SET_ACTION(SkinnedActionManager::PL_SHOW_INFO, m_pl_manager, &PlayListManager::showDetails));
     m_sortMenu->addSeparator();
 
-    QMenu* sort_mode_menu = new QMenu (tr("Sort List"), this);
+    QMenu* sort_mode_menu = new QMenu(tr("Sort List"), this);
     sort_mode_menu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
 
-    QAction *titleAct = sort_mode_menu->addAction(tr ("By Title"));
+    QAction *titleAct = sort_mode_menu->addAction(tr("By Title"));
     connect(titleAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::TITLE); } );
 
-    QAction *albumAct = sort_mode_menu->addAction(tr ("By Album"));
+    QAction *albumAct = sort_mode_menu->addAction(tr("By Album"));
     connect(albumAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::ALBUM); } );
 
-    QAction *artistAct = sort_mode_menu->addAction(tr ("By Artist"));
+    QAction *artistAct = sort_mode_menu->addAction(tr("By Artist"));
     connect(artistAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::ARTIST); } );
 
-    QAction *albumArtistAct = sort_mode_menu->addAction(tr ("By Album Artist"));
+    QAction *albumArtistAct = sort_mode_menu->addAction(tr("By Album Artist"));
     connect(albumArtistAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::ALBUMARTIST); } );
 
-    QAction *nameAct = sort_mode_menu->addAction(tr ("By Filename"));
+    QAction *nameAct = sort_mode_menu->addAction(tr("By Filename"));
     connect(nameAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::FILENAME); } );
 
-    QAction *pathnameAct = sort_mode_menu->addAction(tr ("By Path + Filename"));
+    QAction *pathnameAct = sort_mode_menu->addAction(tr("By Path + Filename"));
     connect(pathnameAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::PATH_AND_FILENAME); } );
 
-    QAction *dateAct = sort_mode_menu->addAction(tr ("By Date"));
+    QAction *dateAct = sort_mode_menu->addAction(tr("By Date"));
     connect(dateAct, &QAction::triggered, this, [this]{ m_pl_manager->sort(PlayListModel::DATE); } );
 
     QAction *trackAct = sort_mode_menu->addAction(tr("By Track Number"));
@@ -266,30 +261,30 @@ void PlayList::createActions()
 
     m_sortMenu->addMenu (sort_mode_menu);
 
-    sort_mode_menu = new QMenu (tr("Sort Selection"), m_sortMenu);
+    sort_mode_menu = new QMenu(tr("Sort Selection"), m_sortMenu);
     sort_mode_menu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
-    titleAct = sort_mode_menu->addAction(tr ("By Title"));
+    titleAct = sort_mode_menu->addAction(tr("By Title"));
     connect(titleAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::TITLE); });
 
-    albumAct = sort_mode_menu->addAction(tr ("By Album"));
+    albumAct = sort_mode_menu->addAction(tr("By Album"));
     connect(albumAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::ALBUM); });
 
-    artistAct = sort_mode_menu->addAction(tr ("By Artist"));
+    artistAct = sort_mode_menu->addAction(tr("By Artist"));
     connect(artistAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::ARTIST); });
 
-    albumArtistAct = sort_mode_menu->addAction(tr ("By Album Artist"));
+    albumArtistAct = sort_mode_menu->addAction(tr("By Album Artist"));
     connect(albumArtistAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::ALBUMARTIST); });
 
-    nameAct = sort_mode_menu->addAction(tr ("By Filename"));
+    nameAct = sort_mode_menu->addAction(tr("By Filename"));
     connect(nameAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::FILENAME); });
 
-    pathnameAct = sort_mode_menu->addAction(tr ("By Path + Filename"));
+    pathnameAct = sort_mode_menu->addAction(tr("By Path + Filename"));
     connect(pathnameAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::PATH_AND_FILENAME); });
 
-    dateAct = sort_mode_menu->addAction(tr ("By Date"));
+    dateAct = sort_mode_menu->addAction(tr("By Date"));
     connect(dateAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::DATE); });
 
-    trackAct = sort_mode_menu->addAction(tr ("By Track Number"));
+    trackAct = sort_mode_menu->addAction(tr("By Track Number"));
     connect(trackAct, &QAction::triggered, this, [this]{ m_pl_manager->sortSelection(PlayListModel::TRACK); });
 
     discAct = sort_mode_menu->addAction(tr("By Disc Number"));
@@ -308,38 +303,34 @@ void PlayList::createActions()
     m_sortMenu->addAction (QIcon::fromTheme(u"view-sort-descending"_s), tr("Reverse List"),
                            m_pl_manager, SLOT(reverseList()));
     //playlist context menu
-    m_listWidget->menu()->addAction(ActionManager::instance()->action(ActionManager::PL_SHOW_INFO));
+    m_listWidget->menu()->addAction(SkinnedActionManager::instance()->action(SkinnedActionManager::PL_SHOW_INFO));
     m_listWidget->menu()->addSeparator();
     m_listWidget->menu()->addActions (m_subMenu->actions().mid(0,3)); //use 3 first actions
     m_listWidget->menu()->addMenu(UiHelper::instance()->createMenu(UiHelper::PLAYLIST_MENU,
                                   tr("Actions"), true, this));
     m_listWidget->menu()->addSeparator();
-    m_listWidget->menu()->addAction(SET_ACTION(ActionManager::PL_ENQUEUE, m_pl_manager, SLOT(addToQueue())));
+    m_listWidget->menu()->addAction(SET_ACTION(SkinnedActionManager::PL_ENQUEUE, m_pl_manager, &PlayListManager::addToQueue));
     //select menu
-    m_selectMenu->addAction(SET_ACTION(ActionManager::PL_INVERT_SELECTION, m_pl_manager,
-                                   SLOT(invertSelection ())));
+    m_selectMenu->addAction(SET_ACTION(SkinnedActionManager::PL_INVERT_SELECTION, m_pl_manager, &PlayListManager::invertSelection));
     m_selectMenu->addSeparator();
-    m_selectMenu->addAction(SET_ACTION(ActionManager::PL_CLEAR_SELECTION, m_pl_manager,
-                                   SLOT(clearSelection ())));
-    m_selectMenu->addAction(SET_ACTION(ActionManager::PL_SELECT_ALL, m_pl_manager, SLOT(selectAll())));
+    m_selectMenu->addAction(SET_ACTION(SkinnedActionManager::PL_CLEAR_SELECTION, m_pl_manager, &PlayListManager::clearSelection));
+    m_selectMenu->addAction(SET_ACTION(SkinnedActionManager::PL_SELECT_ALL, m_pl_manager, &PlayListManager::selectAll));
     //Playlist Menu
-    m_playlistMenu->addAction(SET_ACTION(ActionManager::PL_NEW, m_pl_manager, SLOT(createPlayList())));
-    m_playlistMenu->addAction(SET_ACTION(ActionManager::PL_CLOSE, this, SLOT(deletePlaylist())));
-    m_playlistMenu->addAction(SET_ACTION(ActionManager::PL_RENAME, this, SLOT(renamePlaylist())));
+    m_playlistMenu->addAction(SET_ACTION(SkinnedActionManager::PL_NEW, m_pl_manager, [this] { m_pl_manager->createPlayList(); }));
+    m_playlistMenu->addAction(SET_ACTION(SkinnedActionManager::PL_CLOSE, this, &PlayList::deletePlaylist));
+    m_playlistMenu->addAction(SET_ACTION(SkinnedActionManager::PL_RENAME, this, &PlayList::renamePlaylist));
     m_playlistMenu->addSeparator();
-    m_playlistMenu->addAction(SET_ACTION(ActionManager::PL_LOAD, this, SIGNAL(loadPlaylist())));
-    m_playlistMenu->addAction(SET_ACTION(ActionManager::PL_SAVE, this, SIGNAL(savePlaylist())));
+    m_playlistMenu->addAction(SET_ACTION(SkinnedActionManager::PL_LOAD, this, &PlayList::loadPlaylist));
+    m_playlistMenu->addAction(SET_ACTION(SkinnedActionManager::PL_SAVE, this, &PlayList::savePlaylist));
     m_playlistMenu->addSeparator();
-    m_playlistMenu->addAction(SET_ACTION(ActionManager::PL_SELECT_NEXT, m_pl_manager,
-                                     SLOT(selectNextPlayList())));
-    m_playlistMenu->addAction(SET_ACTION(ActionManager::PL_SELECT_PREVIOUS, m_pl_manager,
-                                     SLOT(selectPreviousPlayList())));
-    m_playlistMenu->addAction(SET_ACTION(ActionManager::PL_SHOW_MANAGER, this, SLOT(showPlayLists())));
+    m_playlistMenu->addAction(SET_ACTION(SkinnedActionManager::PL_SELECT_NEXT, m_pl_manager, &PlayListManager::selectNextPlayList));
+    m_playlistMenu->addAction(SET_ACTION(SkinnedActionManager::PL_SELECT_PREVIOUS, m_pl_manager, &PlayListManager::selectPreviousPlayList));
+    m_playlistMenu->addAction(SET_ACTION(SkinnedActionManager::PL_SHOW_MANAGER, this, &PlayList::showPlayLists));
 
     //actions
-    SET_ACTION(ActionManager::PL_GROUP_TRACKS, m_ui_settings, SLOT(setGroupsEnabled(bool)));
-    ACTION(ActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
-    SET_ACTION(ActionManager::PL_SHOW_TABBAR, this, SLOT(readSettings()));
+    SET_ACTION(SkinnedActionManager::PL_GROUP_TRACKS, m_ui_settings, &QmmpUiSettings::setGroupsEnabled);
+    ACTION(SkinnedActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
+    SET_ACTION(SkinnedActionManager::PL_SHOW_TABBAR, this, &PlayList::readSettings);
 }
 
 void PlayList::closeEvent (QCloseEvent *e)
@@ -439,7 +430,7 @@ void PlayList::changeEvent (QEvent * event)
 
 void PlayList::readSettings()
 {
-    if(ACTION(ActionManager::PL_SHOW_TABBAR)->isChecked())
+    if(ACTION(SkinnedActionManager::PL_SHOW_TABBAR)->isChecked())
     {
         if(!m_pl_selector)
             m_pl_selector = new PlayListSelector(m_pl_manager, this);
@@ -622,7 +613,7 @@ void PlayList::copySelectedMenuActionTriggered(QAction *action)
 {
     PlayListModel *targetPlayList = nullptr;
     QString actionText=action->text();
-    if(action == m_copySelectedMenu->actions().at(0))//actionText == tr ("&New PlayList"))
+    if(action == m_copySelectedMenu->actions().at(0))//actionText == tr("&New PlayList"))
     {
         targetPlayList = m_pl_manager->createPlayList(m_pl_manager->selectedPlayList()->name());
     }
@@ -644,7 +635,7 @@ void PlayList::copySelectedMenuActionTriggered(QAction *action)
         qWarning("Error: Cannot find target playlist '%s'",qPrintable(actionText));
         return;
     }
-    QList <PlayListTrack *> theCopy;
+    QList<PlayListTrack *> theCopy;
     for(PlayListTrack *track : m_pl_manager->selectedPlayList()->selectedTracks())
     {
         PlayListTrack *newItem = new PlayListTrack(*track);

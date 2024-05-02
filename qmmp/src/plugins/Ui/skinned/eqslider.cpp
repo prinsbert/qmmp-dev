@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -20,41 +20,38 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QWheelEvent>
-#include <math.h>
+#include <cmath>
 #include "skin.h"
 #include "eqslider.h"
 
 EqSlider::EqSlider(QWidget *parent): PixmapWidget(parent)
 {
     m_skin = Skin::instance();
-    connect(m_skin, SIGNAL(skinChanged()), SLOT(updateSkin()));
+    connect(m_skin, &Skin::skinChanged, this, &EqSlider::updateSkin);
     setPixmap(m_skin->getEqSlider(0));
     draw(false);
     setCursor(m_skin->getCursor(Skin::CUR_EQSLID));
 }
 
-EqSlider::~EqSlider()
-{}
-
 void EqSlider::mousePressEvent(QMouseEvent *e)
 {
     m_moving = true;
     press_pos = e->position().y();
-    if (e->button() == Qt::MiddleButton)
+    if(e->button() == Qt::MiddleButton)
     {
         m_value = 0;
         emit sliderMoved(m_value);
         m_old = m_value;
     }
-    else if (m_pos<e->position().y() && e->position().y()<m_pos+11*m_skin->ratio())
+    else if(m_pos<e->position().y() && e->position().y() < m_pos + 11 * m_skin->ratio())
     {
-        press_pos = e->position().y()-m_pos;
+        press_pos = e->position().y() - m_pos;
     }
     else
     {
-        m_value = convert(qMax(qMin(height() - 12 * m_skin->ratio(), qRound(e->position().y()) - 6 * m_skin->ratio()),0));
-        press_pos = 6*m_skin->ratio();
-        if (m_value != m_old)
+        m_value = convert(qMax(qMin(height() - 12 * m_skin->ratio(), qRound(e->position().y()) - 6 * m_skin->ratio()), 0));
+        press_pos = 6 * m_skin->ratio();
+        if(m_value != m_old)
         {
             emit sliderMoved(m_value);
             m_old = m_value;
@@ -69,18 +66,17 @@ void EqSlider::mouseReleaseEvent(QMouseEvent*)
     draw(false);
 }
 
-void EqSlider::mouseMoveEvent(QMouseEvent* e)
+void EqSlider::mouseMoveEvent(QMouseEvent *e)
 {
-    if (m_moving)
+    if(m_moving)
     {
-        int po = e->position().y();
-        po = po - press_pos;
+        int po = e->position().y() - press_pos;
 
-        if (0<=po && po<=height()-12*m_skin->ratio())
+        if(0 <= po && po <= height() - 12 * m_skin->ratio())
         {
             m_value = convert(po);
             draw();
-            if (m_value!=m_old)
+            if(m_value!=m_old)
             {
 
                 m_old = m_value;
@@ -98,7 +94,7 @@ double EqSlider::value()
 
 void EqSlider::setValue(double p)
 {
-    if (m_moving)
+    if(m_moving)
         return;
     m_value = -p;
     draw(false);
@@ -119,20 +115,20 @@ void EqSlider::updateSkin()
 
 void EqSlider::draw(bool pressed)
 {
-    int p=int(ceil(double(m_value-m_min)*(height()-12*m_skin->ratio())/(m_max-m_min)));
-    m_pixmap = m_skin->getEqSlider(27-27*(m_value-m_min)/(m_max-m_min));
+    int p = int(std::ceil(double(m_value - m_min) * (height() - 12 * m_skin->ratio()) / (m_max-m_min)));
+    m_pixmap = m_skin->getEqSlider(27 - 27 * (m_value-m_min) / (m_max-m_min));
     QPainter paint(&m_pixmap);
-    if (pressed)
-        paint.drawPixmap(1,p,m_skin->getButton(Skin::EQ_BT_BAR_P));
+    if(pressed)
+        paint.drawPixmap(1, p, m_skin->getButton(Skin::EQ_BT_BAR_P));
     else
-        paint.drawPixmap(1,p,m_skin->getButton(Skin::EQ_BT_BAR_N));
+        paint.drawPixmap(1, p, m_skin->getButton(Skin::EQ_BT_BAR_N));
     setPixmap(m_pixmap);
     m_pos = p;
 }
 
 double EqSlider::convert(int p)
 {
-    return (m_max - m_min)*(p)/(height() - 12*m_skin->ratio()) + m_min;
+    return (m_max - m_min) * p / (height() - 12 * m_skin->ratio()) + m_min;
 }
 
 void EqSlider::wheelEvent(QWheelEvent *e)

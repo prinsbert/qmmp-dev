@@ -74,8 +74,8 @@ private:
     QFont m_font;
     QMenu *m_menu;
     bool m_scrollable = false;
-    QList <QRect> m_rects;
-    QList <QRect> m_extra_rects;
+    QList<QRect> m_rects;
+    QList<QRect> m_extra_rects;
     QColor m_normal, m_current, m_normal_bg, m_selected_bg, m_selected_text, m_current_bg;
     QPixmap m_pixmap;
     bool m_show_new_pl_button;

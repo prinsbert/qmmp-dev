@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -30,18 +30,18 @@ class EQGraph : public PixmapWidget
 {
    Q_OBJECT
 public:
-    explicit EQGraph (QWidget *parent = nullptr);
+    explicit EQGraph(QWidget *parent = nullptr);
 
    ~EQGraph();
 
-   void addValue (int);
+   void addValue(int);
    void clear();
 
 private slots:
    void updateSkin();
 
 private:
-   QList <int> m_values;
+   QList<int> m_values;
    Skin *m_skin;
    void init_spline (double * x, double * y, int n, double * y2);
    double eval_spline (double xa[], double ya[], double y2a[], int n, double x);
