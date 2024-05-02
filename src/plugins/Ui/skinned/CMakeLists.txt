@@ -12,13 +12,12 @@ ADD_DEFINITIONS(${X11_CFLAGS})
 
 SET(skinned_SRCS
     fft.c
-    balancebar.cpp
-    button.cpp
+    skinnedbalancebar.cpp
+    skinnedbutton.cpp
     skinnedsettings.cpp
-    display.cpp
+    skinneddisplay.cpp
     dock.cpp
     eqgraph.cpp
-    eqpreset.cpp
     eqslider.cpp
     eqtitlebar.cpp
     eqwidget.cpp
@@ -54,7 +53,7 @@ SET(skinned_SRCS
     popupwidget.cpp
     popupsettings.cpp
     windowsystem.cpp
-    actionmanager.cpp
+    skinnedactionmanager.cpp
     shortcutitem.cpp
     skinnedfactory.cpp
     hotkeyeditor.cpp
