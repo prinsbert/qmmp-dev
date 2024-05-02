@@ -30,7 +30,7 @@
 */
 class Skin;
 class MainWindow;
-class Button;
+class SkinnedButton;
 class PlayListModel;
 
 class PlayListTitleBar : public PixmapWidget
@@ -58,9 +58,9 @@ private:
     bool m_active = false;
     PlayList* m_pl;
     MainWindow* m_mw;
-    Button *m_close;
-    Button *m_shade = nullptr;
-    Button *m_shade2 = nullptr;
+    SkinnedButton *m_close;
+    SkinnedButton *m_shade = nullptr;
+    SkinnedButton *m_shade2 = nullptr;
     bool m_shaded = false;
     bool m_align = false, m_resize = false;
     int m_ratio;

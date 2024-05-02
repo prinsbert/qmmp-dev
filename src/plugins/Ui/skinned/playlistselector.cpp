@@ -30,7 +30,7 @@
 #include <QIcon>
 #include <qmmp/qmmp.h>
 #include <qmmpui/playlistmanager.h>
-#include "actionmanager.h"
+#include "skinnedactionmanager.h"
 #include "skin.h"
 #include "playlistselector.h"
 
@@ -40,11 +40,11 @@ PlayListSelector::PlayListSelector(PlayListManager *manager, QWidget *parent) : 
     connect(m_pl_manager, SIGNAL(playListsChanged()), SLOT(updateTabs()));
     readSettings();
     m_menu = new QMenu(this);
-    m_menu->addAction(ACTION(ActionManager::PL_LOAD));
-    m_menu->addAction(ACTION(ActionManager::PL_SAVE));
+    m_menu->addAction(ACTION(SkinnedActionManager::PL_LOAD));
+    m_menu->addAction(ACTION(SkinnedActionManager::PL_SAVE));
     m_menu->addSeparator();
-    m_menu->addAction(ACTION(ActionManager::PL_RENAME));
-    m_menu->addAction(ACTION(ActionManager::PL_CLOSE));
+    m_menu->addAction(ACTION(SkinnedActionManager::PL_RENAME));
+    m_menu->addAction(ACTION(SkinnedActionManager::PL_CLOSE));
 }
 
 PlayListSelector::~PlayListSelector()
@@ -291,7 +291,7 @@ void PlayListSelector::mouseReleaseEvent (QMouseEvent *e)
 void PlayListSelector::mouseDoubleClickEvent (QMouseEvent *e)
 {
     if(e->button() == Qt::LeftButton && !(m_scrollable && (e->position().x() > width() - 40)))
-        ACTION(ActionManager::PL_RENAME)->trigger();
+        ACTION(SkinnedActionManager::PL_RENAME)->trigger();
     else
         QWidget::mouseDoubleClickEvent(e);
 }

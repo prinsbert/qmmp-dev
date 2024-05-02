@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -24,11 +24,11 @@
 #include <QFile>
 #include <QApplication>
 #include <qmmp/qmmp.h>
-#include "actionmanager.h"
+#include "skinnedactionmanager.h"
 
-ActionManager *ActionManager::m_instance = nullptr;
+SkinnedActionManager *SkinnedActionManager::m_instance = nullptr;
 
-ActionManager::ActionManager(QObject *parent) :
+SkinnedActionManager::SkinnedActionManager(QObject *parent) :
     QObject(parent)
 {
     m_instance = this;
@@ -98,39 +98,32 @@ ActionManager::ActionManager(QObject *parent) :
     delete m_settings;
     m_settings = nullptr;
     m_actions[ABOUT]->setIcon(qApp->windowIcon());
-    connect(m_actions[WM_DOUBLE_SIZE], SIGNAL(toggled(bool)), m_actions[WM_ANTIALIASING], SLOT(setEnabled(bool)));
+    connect(m_actions[WM_DOUBLE_SIZE], &QAction::toggled, m_actions[WM_ANTIALIASING], &QAction::setEnabled);
     m_actions[WM_ANTIALIASING]->setEnabled(false);
 }
 
-ActionManager::~ActionManager()
+SkinnedActionManager::~SkinnedActionManager()
 {
     saveStates();
     m_instance = nullptr;
 }
 
-QAction *ActionManager::action(int type)
+QAction *SkinnedActionManager::action(int type) const
 {
     return m_actions[type];
 }
 
-QAction *ActionManager::use(int type, const QObject *receiver, const char *member)
-{
-    QAction *act = m_actions[type];
-    connect(act,SIGNAL(triggered(bool)), receiver, member);
-    return act;
-}
-
-QList<QAction *> ActionManager::actions()
+QList<QAction *> SkinnedActionManager::actions() const
 {
     return m_actions.values();
 }
 
-ActionManager* ActionManager::instance()
+SkinnedActionManager *SkinnedActionManager::instance()
 {
     return m_instance;
 }
 
-QAction *ActionManager::createAction(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
+QAction *SkinnedActionManager::createAction(const QString &name, const QString &confKey, const QString &key, const QString &iconName)
 {
     QAction *action = new QAction(name, this);
     action->setShortcutVisibleInContextMenu(true);
@@ -146,31 +139,31 @@ QAction *ActionManager::createAction(const QString &name, const QString &confKey
     return action;
 }
 
-QAction *ActionManager::createAction2(const QString &name, const QString &confKey, const QString &key)
+QAction *SkinnedActionManager::createAction2(const QString &name, const QString &confKey, const QString &key)
 {
     QAction *action = createAction(name, confKey, key);
     action->setCheckable(true);
     return action;
 }
 
-void ActionManager::readStates()
+void SkinnedActionManager::readStates()
 {
-    m_settings->beginGroup("Skinned");
-    m_actions[PL_SHOW_HEADER]->setChecked(m_settings->value("pl_show_header", false).toBool());
-    m_actions[PL_SHOW_TABBAR]->setChecked(m_settings->value("pl_show_tabbar", false).toBool());
+    m_settings->beginGroup("Skinned"_L1);
+    m_actions[PL_SHOW_HEADER]->setChecked(m_settings->value("pl_show_header"_L1, false).toBool());
+    m_actions[PL_SHOW_TABBAR]->setChecked(m_settings->value("pl_show_tabbar"_L1, false).toBool());
     m_settings->endGroup();
 }
 
-void ActionManager::saveStates()
+void SkinnedActionManager::saveStates()
 {
     QSettings settings;
-    settings.beginGroup("Skinned");
-    settings.setValue("pl_show_header", m_actions[PL_SHOW_HEADER]->isChecked());
-    settings.setValue("pl_show_tabbar", m_actions[PL_SHOW_TABBAR]->isChecked());
+    settings.beginGroup("Skinned"_L1);
+    settings.setValue("pl_show_header"_L1, m_actions[PL_SHOW_HEADER]->isChecked());
+    settings.setValue("pl_show_tabbar"_L1, m_actions[PL_SHOW_TABBAR]->isChecked());
     settings.endGroup();
 }
 
-void ActionManager::saveActions()
+void SkinnedActionManager::saveActions()
 {
     QSettings settings;
     for(const QAction *action : qAsConst(m_actions))
@@ -179,7 +172,7 @@ void ActionManager::saveActions()
     }
 }
 
-void ActionManager::resetShortcuts()
+void SkinnedActionManager::resetShortcuts()
 {
     for(QAction *action : qAsConst(m_actions))
     {

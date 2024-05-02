@@ -27,7 +27,7 @@
 #include <qmmp/decoderfactory.h>
 #include <qmmpui/playlistitem.h>
 #include <qmmpui/metadataformatter.h>
-#include "display.h"
+#include "skinneddisplay.h"
 #include "titlebar.h"
 
 class PlayList;
@@ -57,7 +57,7 @@ public:
     PlayList *playlist(){return m_playlist;}
 
     QMenu* menu();
-    MainDisplay* mainDisplay()const;
+    SkinnedDisplay* mainDisplay()const;
 
 public slots:
     void previous();
@@ -102,7 +102,7 @@ private:
     void createActions();
     SoundCore *m_core;
     QMenu *m_mainMenu;
-    MainDisplay *m_display;
+    SkinnedDisplay *m_display;
     PlayList *m_playlist;
     PlayListManager *m_pl_manager;
     EqWidget *m_equalizer;

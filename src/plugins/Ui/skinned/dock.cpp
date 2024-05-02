@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,9 +23,11 @@
 #include <QWindow>
 #include <QtDebug>
 #include <QApplication>
+#include <cmath>
 #include "dock.h"
 
 Dock *Dock::m_instance = nullptr;
+constexpr int snapThreshold = 13;
 
 Dock *Dock::instance()
 {
@@ -34,8 +36,7 @@ Dock *Dock::instance()
     return m_instance;
 }
 
-Dock::Dock (QObject *parent)
-        : QObject (parent)
+Dock::Dock(QObject *parent) : QObject (parent)
 {
     m_instance = this;
 }
@@ -45,11 +46,11 @@ Dock::~Dock()
     m_instance = nullptr;
 }
 
-void Dock::setMainWidget (QWidget *widget)
+void Dock::setMainWidget(QWidget *widget)
 {
     m_mainWidget = widget;
-    m_widgetList.prepend (widget);
-    m_dockedList.prepend (false);
+    m_widgetList.prepend(widget);
+    m_dockedList.prepend(false);
 }
 
 QPoint Dock::snapDesktop(QPoint npos, QWidget* mv)
@@ -58,86 +59,86 @@ QPoint Dock::snapDesktop(QPoint npos, QWidget* mv)
         return npos;
 
     QRect desktopRect = mv->window()->windowHandle()->screen()->availableGeometry();
-    int nx = abs (npos.x() - desktopRect.x()); //left-top
-    int ny = abs (npos.y() - desktopRect.y());
+    int nx = std::abs(npos.x() - desktopRect.x()); //left-top
+    int ny = std::abs(npos.y() - desktopRect.y());
 
-    if(nx < 13)
+    if(nx < snapThreshold)
         npos.rx() = desktopRect.x();
-    if(ny < 13)
+    if(ny < snapThreshold)
         npos.ry() = desktopRect.y();
 
-    nx = abs (npos.x() + mv->width() - desktopRect.width() - desktopRect.x()); //right-bottom
-    ny = abs (npos.y() + mv->height() - desktopRect.height() - desktopRect.y());
+    nx = std::abs(npos.x() + mv->width() - desktopRect.width() - desktopRect.x()); //right-bottom
+    ny = std::abs(npos.y() + mv->height() - desktopRect.height() - desktopRect.y());
 
-    if(nx < 13)
+    if(nx < snapThreshold)
         npos.rx() = desktopRect.width() - mv->width() + desktopRect.x();
-    if(ny < 13)
+    if(ny < snapThreshold)
         npos.ry() = desktopRect.height() - mv->height() + desktopRect.y();
 
     return npos;
 }
 
-QPoint Dock::snap (QPoint npos, QWidget* mv, QWidget* st)
+QPoint Dock::snap(QPoint npos, QWidget* mv, QWidget* st)
 {
     int nx = npos.x() - st->x();
-    int ny = abs (npos.y() - st->y() + mv->height());
+    int ny = std::abs(npos.y() - st->y() + mv->height());
 
-    if (abs (nx) < 13 && ny < 13) //above
+    if (std::abs(nx) < snapThreshold && ny < snapThreshold) //above
         npos.rx() = st->x();
-    if (ny < 13 && nx > -mv->width() && nx < st->width())
+    if (ny < snapThreshold && nx > -mv->width() && nx < st->width())
         npos.ry() = st->y() - mv->height();
-    nx = abs (npos.x() + mv->width() - st->x() - st->width());
-    if (nx < 13 && ny < 13)
+    nx = std::abs(npos.x() + mv->width() - st->x() - st->width());
+    if (nx < snapThreshold && ny < snapThreshold)
         npos.rx() = st->x() + st->width() - mv->width();
 
     /***********/
     nx = npos.x() - st->x();
-    ny = abs (npos.y() - st->y() - st->height());
+    ny = std::abs(npos.y() - st->y() - st->height());
 
-    if (abs (nx) < 13 && ny < 13) //near
+    if (std::abs(nx) < snapThreshold && ny < snapThreshold) //near
         npos.rx() = st->x();
-    if (ny < 13 && nx > -mv->width() && nx < st->width())
+    if (ny < snapThreshold && nx > -mv->width() && nx < st->width())
         npos.ry() = st->y() + st->height();
-    nx = abs (npos.x() + mv->width() - st->x() - st->width());
-    if (nx < 13 && ny < 13)
+    nx = std::abs(npos.x() + mv->width() - st->x() - st->width());
+    if (nx < snapThreshold && ny < snapThreshold)
         npos.rx() = st->x() + st->width() - mv->width();
     /**************/
-    nx = abs (npos.x() - st->x() + mv->width());
+    nx = std::abs(npos.x() - st->x() + mv->width());
     ny = npos.y() - st->y();
 
-    if (nx < 13 && abs (ny) < 13) //left
+    if (nx < snapThreshold && std::abs(ny) < snapThreshold) //left
         npos.ry() = st->y();
-    if (nx < 13 && ny > -mv->height() && ny < st->height())
+    if (nx < snapThreshold && ny > -mv->height() && ny < st->height())
         npos.rx() = st->x() - mv->width();
 
-    ny = abs (npos.y() + mv->height() - st->y() - st->height());
-    if (nx < 13 && ny < 13)
+    ny = std::abs(npos.y() + mv->height() - st->y() - st->height());
+    if (nx < snapThreshold && ny < snapThreshold)
         npos.ry() = st->y() + st->height() - mv->height();
     /*****************/
-    nx = abs (npos.x() - st->x() - st->width());
+    nx = std::abs(npos.x() - st->x() - st->width());
     ny = npos.y() - st->y();
 
-    if (nx < 13 && abs (ny) < 13) //right
+    if (nx < snapThreshold && std::abs(ny) < snapThreshold) //right
         npos.ry() = st->y();
-    if (nx < 13 && ny > -mv->height() && ny < st->height())
+    if (nx < snapThreshold && ny > -mv->height() && ny < st->height())
         npos.rx() = st->x() + st->width();
 
-    ny = abs (npos.y() + mv->height() - st->y() - st->height());
-    if (nx < 13 && ny < 13)
+    ny = std::abs(npos.y() + mv->height() - st->y() - st->height());
+    if (nx < snapThreshold && ny < snapThreshold)
         npos.ry() = st->y() + st->height() - mv->height();
 
     return (npos);
 }
 
-void Dock::addWidget (QWidget *widget)
+void Dock::addWidget(QWidget *widget)
 {
-    m_widgetList.append (widget);
-    m_dockedList.append (false);
+    m_widgetList.append(widget);
+    m_dockedList.append(false);
     if(m_mainWidget)
         widget->addActions(m_mainWidget->actions());
 }
 
-void Dock::move (QWidget* mv, QPoint npos)
+void Dock::move(QWidget *mv, QPoint npos)
 {
     //QRect desktopRect = QApplication::desktop()->availableGeometry(m_mainWidget);
 
@@ -147,34 +148,34 @@ void Dock::move (QWidget* mv, QPoint npos)
     if (mv == m_mainWidget)
     {
 
-        for (int i = 1; i<m_widgetList.size(); ++i)
+        for(int i = 1; i < m_widgetList.size(); ++i)
         {
-            if (!m_dockedList.at (i))
+            if (!m_dockedList.at(i))
             {
-                if (m_widgetList.at (i)->isVisible())
-                    npos = snap (npos, mv, m_widgetList.at (i));
+                if (m_widgetList.at(i)->isVisible())
+                    npos = snap (npos, mv, m_widgetList.at(i));
             }
             else
             {
                 QPoint pos = npos + m_delta_list.at(i);
-                for (int j = 1; j<m_widgetList.size(); ++j)
+                for(int j = 1; j < m_widgetList.size(); ++j)
                 {
-                    if (!m_dockedList.at (j) && m_widgetList.at (j)->isVisible())
+                    if (!m_dockedList.at(j) && m_widgetList.at(j)->isVisible())
                     {
-                        pos = snap (pos, m_widgetList.at (i), m_widgetList.at (j));
+                        pos = snap(pos, m_widgetList.at(i), m_widgetList.at(j));
                         npos = pos - m_delta_list.at(i);
                     }
                 }
             }
         }
         npos = snapDesktop(npos, mv);
-        for (int i = 1; i<m_widgetList.size(); ++i)
+        for(int i = 1; i<m_widgetList.size(); ++i)
         {
-            if (m_dockedList.at (i))
+            if (m_dockedList.at(i))
             {
                 QPoint pos = npos + m_delta_list.at(i);
                 pos = snapDesktop(pos, m_widgetList.at(i));
-                m_widgetList.at (i)->move(pos);
+                m_widgetList.at(i)->move(pos);
                 npos = pos - m_delta_list.at(i);
             }
         }
@@ -182,12 +183,12 @@ void Dock::move (QWidget* mv, QPoint npos)
     }
     else
     {
-        for (int i = 0; i<m_widgetList.size(); ++i)
+        for(int i = 0; i<m_widgetList.size(); ++i)
         {
             m_dockedList[i] = false;
-            if (mv != m_widgetList.at (i) && !m_dockedList.at (i) && m_widgetList.at (i)->isVisible())
+            if (mv != m_widgetList.at(i) && !m_dockedList.at(i) && m_widgetList.at(i)->isVisible())
             {
-                npos = snap (npos, mv, m_widgetList.at (i));
+                npos = snap (npos, mv, m_widgetList.at(i));
                 npos = snapDesktop(npos, mv);
             }
         }
@@ -209,76 +210,78 @@ void Dock::calculateDistances()
 
 void Dock::updateDock()
 {
-    QWidget *mv = m_widgetList.at (0);
-    for (int j = 1; j<m_widgetList.size(); ++j)
+    QWidget *mv = m_widgetList.at(0);
+    for(int j = 1; j < m_widgetList.size(); ++j)
     {
-        QWidget *st = m_widgetList.at (j);
+        QWidget *st = m_widgetList.at(j);
         m_dockedList[j] = isDocked (mv, st);
     }
-    for (int j = 1; j<m_widgetList.size(); ++j)
+    for(int j = 1; j < m_widgetList.size(); ++j)
     {
         if (m_dockedList[j])
-            for (int i = 1; i<m_widgetList.size(); ++i)
+        {
+            for(int i = 1; i < m_widgetList.size(); ++i)
             {
                 if (!m_dockedList[i])
                 {
-                    mv = m_widgetList.at (j);
-                    QWidget *st = m_widgetList.at (i);
-                    m_dockedList[i] = isDocked (mv, st);
+                    mv = m_widgetList.at(j);
+                    QWidget *st = m_widgetList.at(i);
+                    m_dockedList[i] = isDocked(mv, st);
                 }
             }
+        }
     }
 }
 
-bool Dock::isDocked (QWidget* mv, QWidget* st)
+bool Dock::isDocked(QWidget* mv, QWidget* st)
 {
     int nx = mv->x() - st->x();
-    int ny = abs (mv->y() - st->y() + mv->height());
+    int ny = std::abs(mv->y() - st->y() + mv->height());
     if (ny < 2 && nx > -mv->width() && nx < st->width()) //above
         return true;
 
     /***********/
     nx = mv->x() - st->x();
-    ny = abs (mv->y() - st->y() - st->height());
+    ny = std::abs(mv->y() - st->y() - st->height());
     if (ny < 2 && nx > -mv->width() && nx < st->width()) //near
         return true;
 
     /**************/
-    nx = abs (mv->x() - st->x() + mv->width());
+    nx = std::abs(mv->x() - st->x() + mv->width());
     ny = mv->y() - st->y();
     if (nx < 2 && ny > -mv->height() && ny < st->height())   //left
         return true;
 
     /*****************/
-    nx = abs (mv->x() - st->x() - st->width());
+    nx = std::abs(mv->x() - st->x() - st->width());
     ny = mv->y() - st->y();
     if (nx < 2 && ny > -mv->height() && ny < st->height())   //right
         return true;
     return false;
 }
 
-void Dock::addActions (QList<QAction *> actions)
+void Dock::addActions(QList<QAction *> actions)
 {
     if(!m_mainWidget)
     {
         qFatal("Dock: main widget is null");
     }
-    for (int i = 0; i<m_widgetList.size(); ++i)
-        m_widgetList.at (i)->addActions (actions);
+    for(int i = 0; i < m_widgetList.size(); ++i)
+        m_widgetList.at(i)->addActions (actions);
 }
 
-bool Dock::isUnder(QWidget* upper, QWidget* nether, int dy)
+bool Dock::isUnder(QWidget *upper, QWidget *nether, int dy)
 {
     int nx = upper->x() - nether->x();
-    return abs (upper->y() + upper->height() -dy - nether->y()) < 2 &&
+    return std::abs(upper->y() + upper->height() -dy - nether->y()) < 2 &&
            nx > -upper->width() && nx < nether->width();
 }
 
-void Dock::align(QWidget* w, int dy)
+void Dock::align(QWidget *w, int dy)
 {
-    for (int i = 0; i<m_dockedList.size(); ++i)
+    for(int i = 0; i < m_dockedList.size(); ++i)
     {
-        if (m_widgetList.at(i) != w && isUnder(w, m_widgetList.at(i), dy))
+        if(m_widgetList.at(i) != w && isUnder(w, m_widgetList.at(i), dy))
         {
             m_widgetList.at(i)->move(m_widgetList.at(i)->x(), m_widgetList.at(i)->y()+dy);
             align(m_widgetList.at(i), dy);

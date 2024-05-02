@@ -28,7 +28,7 @@
 class MainWindow;
 class QMouseEvent;
 class Skin;
-class Button;
+class SkinnedButton;
 class SymbolDisplay;
 class TitleBarControl;
 class ShadedVisual;
@@ -57,11 +57,11 @@ private:
     Skin *m_skin;
     QPoint m_pos;
     MainWindow *m_mw;
-    Button *m_menu;
-    Button *m_minimize;
-    Button *m_shade;
-    Button *m_shade2 = nullptr;
-    Button *m_close;
+    SkinnedButton *m_menu;
+    SkinnedButton *m_minimize;
+    SkinnedButton *m_shade;
+    SkinnedButton *m_shade2 = nullptr;
+    SkinnedButton *m_close;
     SymbolDisplay *m_currentTime = nullptr;
     QString formatTime (int);
     bool m_shaded = false;

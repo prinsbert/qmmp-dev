@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2010-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,28 +18,26 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef ACTIONMANAGER_H
-#define ACTIONMANAGER_H
+#ifndef SKINNEDACTIONMANAGER_H
+#define SKINNEDACTIONMANAGER_H
 
 #include <QObject>
 #include <QString>
 #include <QHash>
+#include <QAction>
 
 class QAction;
 class QSettings;
 
-#define SET_ACTION(type, receiver, member) ActionManager::instance()->use(type, receiver, member)
-#define ACTION(type) ActionManager::instance()->action(type)
-
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class ActionManager : public QObject
+class SkinnedActionManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit ActionManager(QObject *parent = nullptr);
-    ~ActionManager();
+    explicit SkinnedActionManager(QObject *parent = nullptr);
+    ~SkinnedActionManager();
 
     enum Type
     {
@@ -103,12 +101,11 @@ public:
         QUIT
     };
 
-    QAction *action(int type);
-    QAction *use(int type, const QObject *receiver, const char *member);
-    QList<QAction *> actions();
+    QAction *action(int type) const;
+    QList<QAction *> actions() const;
     void saveActions();
     void resetShortcuts();
-    static ActionManager* instance();
+    static SkinnedActionManager *instance();
 
 private:
     QAction *createAction(const QString &name, const QString &confKey, const QString &key = QString(),
@@ -119,8 +116,21 @@ private:
 
     QSettings *m_settings;
     QHash <int, QAction *> m_actions;
-    static ActionManager *m_instance;
+    static SkinnedActionManager *m_instance;
 
 };
 
-#endif // ACTIONMANAGER_H
+template <class Obj, typename Func1>
+inline QAction *SET_ACTION(int type, const Obj *object, Func1 slot)
+{
+    QAction *act = SkinnedActionManager::instance()->action(type);
+    QObject::connect(act, &QAction::triggered, object, slot);
+    return act;
+}
+
+inline QAction *ACTION(int type)
+{
+    return SkinnedActionManager::instance()->action(type);
+}
+
+#endif // SKINNEDACTIONMANAGER_H

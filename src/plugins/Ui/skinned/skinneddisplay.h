@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef DISPLAY_H
-#define DISPLAY_H
+#ifndef SKINNEDDISPLAY_H
+#define SKINNEDDISPLAY_H
 
 #include <QPixmap>
 #include <qmmp/statehandler.h>
@@ -36,31 +36,33 @@ class SymbolDisplay;
 class MonoStereo;
 class PlayStatus;
 class VolumeBar;
-class BalanceBar;
+class SkinnedBalanceBar;
 class MainWindow;
 class SoundCore;
-class Button;
+class SkinnedButton;
 class TextScroller;
 class MainVisual;
 class TitleBar;
+class EqWidget;
+class PlayList;
 
 /**
    @author Ilya Kotov <forkotov02@ya.ru>
 */
-class MainDisplay : public PixmapWidget
+class SkinnedDisplay : public PixmapWidget
 {
     Q_OBJECT
 public:
-    MainDisplay(MainWindow *parent = nullptr);
+    SkinnedDisplay(MainWindow *parent = nullptr);
 
-    ~MainDisplay();
+    ~SkinnedDisplay();
 
-    void setEQ(QWidget*);
-    void setPL(QWidget*);
-    bool isEqualizerVisible()const;
-    bool isPlaylistVisible()const;
-    bool isRepeatable()const;
-    bool isShuffle()const;
+    void setEQ(EqWidget *w);
+    void setPL(PlayList *w);
+    bool isEqualizerVisible() const;
+    bool isPlaylistVisible() const;
+    bool isRepeatable() const;
+    bool isShuffle() const;
     void setIsRepeatable(bool);
     void setIsShuffle(bool);
     void setMinimalMode(bool b = true);
@@ -73,10 +75,6 @@ signals:
     void repeatableToggled(bool);
     void shuffleToggled(bool);
 
-protected:
-    void wheelEvent(QWheelEvent *) override;
-    void mousePressEvent(QMouseEvent*) override;
-
 private slots:
     void updateSkin();
     void displayVolume();
@@ -87,19 +85,22 @@ private slots:
     void onAudioPatametersChanged(const AudioParameters &p);
 
 private:
+    void wheelEvent(QWheelEvent *) override;
+    void mousePressEvent(QMouseEvent*) override;
     void updatePositions();
     void updateMask();
-    QWidget* m_equlizer;
-    QWidget* m_playlist;
+
+    EqWidget *m_equlizer;
+    PlayList *m_playlist;
     bool m_shaded = false;
     Skin *m_skin;
     PositionBar *m_posbar;
-    Button *m_previous;
-    Button *m_play;
-    Button *m_pause;
-    Button *m_stop;
-    Button *m_next;
-    Button *m_eject;
+    SkinnedButton *m_previous;
+    SkinnedButton *m_play;
+    SkinnedButton *m_pause;
+    SkinnedButton *m_stop;
+    SkinnedButton *m_next;
+    SkinnedButton *m_eject;
     TextScroller *m_text;
     ToggleButton *m_eqButton;
     ToggleButton *m_plButton;
@@ -110,7 +111,7 @@ private:
     MonoStereo* m_monoster;
     PlayStatus* m_playstatus;
     VolumeBar* m_volumeBar;
-    BalanceBar* m_balanceBar;
+    SkinnedBalanceBar* m_balanceBar;
     MainWindow* m_mw;
     MainVisual* m_vis;
     TimeIndicatorModel* m_timeIndicatorModel;

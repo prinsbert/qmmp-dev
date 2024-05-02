@@ -21,7 +21,7 @@
 #include <QMessageBox>
 #include <QAction>
 #include <qmmpui/shortcutdialog.h>
-#include "actionmanager.h"
+#include "skinnedactionmanager.h"
 #include "hotkeyeditor.h"
 
 #include "shortcutitem.h"
@@ -56,31 +56,31 @@ void HotkeyEditor::loadShortcuts()
     m_ui->shortcutTreeWidget->clear();
     //playback
     QTreeWidgetItem *item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, QStringList() << tr("Playback"));
-    for(int i = ActionManager::PLAY; i <= ActionManager::CLEAR_QUEUE; ++i)
+    for(int i = SkinnedActionManager::PLAY; i <= SkinnedActionManager::CLEAR_QUEUE; ++i)
         new ShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //view
     item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, QStringList() << tr("View"));
-    for(int i = ActionManager::SHOW_PLAYLIST; i <= ActionManager::WM_DOUBLE_SIZE; ++i)
+    for(int i = SkinnedActionManager::SHOW_PLAYLIST; i <= SkinnedActionManager::WM_DOUBLE_SIZE; ++i)
         new ShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //volume
     item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, QStringList() << tr("Volume"));
-    for(int i = ActionManager::VOL_ENC; i <= ActionManager::VOL_MUTE; ++i)
+    for(int i = SkinnedActionManager::VOL_ENC; i <= SkinnedActionManager::VOL_MUTE; ++i)
         new ShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //playlist
     item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, QStringList() << tr("Playlist"));
-    for(int i = ActionManager::PL_ADD_FILE; i <= ActionManager::PL_SHOW_TABBAR; ++i)
+    for(int i = SkinnedActionManager::PL_ADD_FILE; i <= SkinnedActionManager::PL_SHOW_TABBAR; ++i)
         new ShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //misc
     item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, QStringList() << tr("Misc"));
-    for(int i = ActionManager::SETTINGS; i <= ActionManager::QUIT; ++i)
+    for(int i = SkinnedActionManager::SETTINGS; i <= SkinnedActionManager::QUIT; ++i)
         new ShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
@@ -95,7 +95,7 @@ void HotkeyEditor::on_resetShortcutsButton_clicked()
                              tr("Do you want to restore default shortcuts?"),
                              QMessageBox::Yes | QMessageBox::No) ==  QMessageBox::Yes)
     {
-        ActionManager::instance()->resetShortcuts();
+        SkinnedActionManager::instance()->resetShortcuts();
         loadShortcuts();
     }
 }

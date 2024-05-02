@@ -23,7 +23,7 @@
 #include <QTimer>
 #include <math.h>
 #include "skin.h"
-#include "button.h"
+#include "skinnedbutton.h"
 #include "positionbar.h"
 
 PositionBar::PositionBar(QWidget *parent) : PixmapWidget(parent)

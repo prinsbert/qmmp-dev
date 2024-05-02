@@ -1,0 +1,341 @@
+/***************************************************************************
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
+ *   forkotov02@ya.ru                                                      *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
+ ***************************************************************************/
+
+#include <QApplication>
+#include <QSettings>
+#include <QMenu>
+#include <qmmp/soundcore.h>
+#include <qmmpui/mediaplayer.h>
+#include <qmmpui/playlistmanager.h>
+#include <qmmpui/qmmpuisettings.h>
+#include "skin.h"
+#include "mainvisual.h"
+#include "skinnedbutton.h"
+#include "titlebar.h"
+#include "positionbar.h"
+#include "number.h"
+#include "togglebutton.h"
+#include "symboldisplay.h"
+#include "textscroller.h"
+#include "monostereo.h"
+#include "playstatus.h"
+#include "volumebar.h"
+#include "skinnedbalancebar.h"
+#include "mainwindow.h"
+#include "timeindicator.h"
+#include "skinnedactionmanager.h"
+#include "eqwidget.h"
+#include "playlist.h"
+#include "skinneddisplay.h"
+
+SkinnedDisplay::SkinnedDisplay(MainWindow *parent) : PixmapWidget (parent)
+{
+    m_skin = Skin::instance();
+    setPixmap(m_skin->getMain());
+    setCursor(m_skin->getCursor(Skin::CUR_NORMAL));
+    m_mw = parent;
+
+    m_timeIndicatorModel = new TimeIndicatorModel(this);
+    m_titlebar = new TitleBar(m_timeIndicatorModel, this);
+    m_titlebar->move(0, 0);
+    m_titlebar->setActive(true);
+    m_previous = new SkinnedButton (this, Skin::BT_PREVIOUS_N, Skin::BT_PREVIOUS_P, Skin::CUR_NORMAL);
+    m_previous->setToolTip(tr("Previous"));
+    connect(m_previous, &SkinnedButton::clicked, parent, &MainWindow::previous);
+
+    m_play = new SkinnedButton(this, Skin::BT_PLAY_N, Skin::BT_PLAY_P, Skin::CUR_NORMAL);
+    m_play->setToolTip(tr("Play"));
+    connect(m_play, &SkinnedButton::clicked, parent, &MainWindow::play);
+    m_pause = new SkinnedButton (this, Skin::BT_PAUSE_N,Skin::BT_PAUSE_P, Skin::CUR_NORMAL);
+    m_pause->setToolTip(tr("Pause"));
+    connect(m_pause,&SkinnedButton::clicked, parent, &MainWindow::pause);
+    m_stop = new SkinnedButton(this, Skin::BT_STOP_N, Skin::BT_STOP_P, Skin::CUR_NORMAL);
+    m_stop->setToolTip(tr("Stop"));
+    connect(m_stop,&SkinnedButton::clicked, parent, &MainWindow::stop);
+    m_next = new SkinnedButton(this, Skin::BT_NEXT_N, Skin::BT_NEXT_P, Skin::CUR_NORMAL);
+    m_next->setToolTip(tr("Next"));
+    connect(m_next,&SkinnedButton::clicked, parent, &MainWindow::next);
+    m_eject = new SkinnedButton(this, Skin::BT_EJECT_N, Skin::BT_EJECT_P, Skin::CUR_NORMAL);
+    m_eject->setToolTip(tr("Play files"));
+    connect(m_eject,&SkinnedButton::clicked, parent, &MainWindow::playFiles);
+    connect(m_skin, &Skin::skinChanged, this, &SkinnedDisplay::updateSkin);
+    m_vis = new MainVisual (this);
+
+    m_eqButton = new ToggleButton(this, Skin::BT_EQ_ON_N,Skin::BT_EQ_ON_P, Skin::BT_EQ_OFF_N,Skin::BT_EQ_OFF_P);
+    m_eqButton->setToolTip(tr("Equalizer"));
+    m_plButton = new ToggleButton(this, Skin::BT_PL_ON_N,Skin::BT_PL_ON_P, Skin::BT_PL_OFF_N,Skin::BT_PL_OFF_P);
+    m_plButton->setToolTip(tr("Playlist"));
+    m_repeatButton = new ToggleButton(this,Skin::REPEAT_ON_N,Skin::REPEAT_ON_P, Skin::REPEAT_OFF_N, Skin::REPEAT_OFF_P);
+    connect(m_repeatButton, &ToggleButton::clicked, this, &SkinnedDisplay::repeatableToggled);
+    m_repeatButton->setToolTip(tr("Repeat playlist"));
+    m_shuffleButton = new ToggleButton(this,Skin::SHUFFLE_ON_N, Skin::SHUFFLE_ON_P, Skin::SHUFFLE_OFF_N,Skin::SHUFFLE_OFF_P);
+    m_shuffleButton->setToolTip(tr("Shuffle"));
+    connect(m_shuffleButton, &ToggleButton::clicked, this, &SkinnedDisplay::shuffleToggled);
+
+    m_kbps = new SymbolDisplay(this, 3);
+    m_freq = new SymbolDisplay(this, 2);
+    m_text = new TextScroller(this);
+    m_monoster = new MonoStereo(this);
+    m_playstatus = new PlayStatus(this);
+
+    m_volumeBar = new VolumeBar(this);
+    m_volumeBar->setToolTip(tr("Volume"));
+    connect(m_volumeBar, &VolumeBar::sliderMoved, this, &SkinnedDisplay::displayVolume);
+    connect(m_volumeBar, &VolumeBar::sliderPressed, this, &SkinnedDisplay::displayVolume);
+    connect(m_volumeBar, &VolumeBar::sliderReleased, m_text, &TextScroller::clear);
+
+    m_balanceBar = new SkinnedBalanceBar(this);
+    m_balanceBar->setToolTip(tr("Balance"));
+    connect(m_balanceBar, &SkinnedBalanceBar::sliderMoved, this, &SkinnedDisplay::displayVolume);
+    connect(m_balanceBar, &SkinnedBalanceBar::sliderPressed, this, &SkinnedDisplay::displayVolume);
+    connect(m_balanceBar, &SkinnedBalanceBar::sliderReleased, m_text, &TextScroller::clear);
+
+    m_posbar = new PositionBar(this);
+    connect(m_posbar, &PositionBar::sliderPressed, this, &SkinnedDisplay::showPosition);
+    connect(m_posbar, &PositionBar::sliderMoved, this, &SkinnedDisplay::showPosition);
+    connect(m_posbar, &PositionBar::sliderReleased, this, &SkinnedDisplay::updatePosition);
+
+    m_timeIndicator = new TimeIndicator(m_timeIndicatorModel, this);
+    m_aboutWidget = new QWidget(this);
+    m_core = SoundCore::instance();
+    connect(m_core, &SoundCore::elapsedChanged, this, &SkinnedDisplay::setTime);
+    connect(m_core, &SoundCore::bitrateChanged, m_kbps, &SymbolDisplay::displayNum);
+    connect(m_core, &SoundCore::audioParametersChanged, this, &SkinnedDisplay::onAudioPatametersChanged);
+    connect(m_core, &SoundCore::stateChanged, this, &SkinnedDisplay::setState);
+    connect(m_core, &SoundCore::volumeChanged, m_volumeBar, &VolumeBar::setValue);
+    connect(m_core, &SoundCore::balanceChanged, m_balanceBar, &SkinnedBalanceBar::setValue);
+    connect(m_balanceBar, &SkinnedBalanceBar::sliderMoved, m_core, &SoundCore::setBalance);
+    connect(m_volumeBar, &VolumeBar::sliderMoved, m_core, &SoundCore::setVolume);
+    m_volumeBar->setValue(m_core->volume());
+    m_balanceBar->setValue(m_core->balance());
+
+    QmmpUiSettings *ui_settings = QmmpUiSettings::instance();
+    connect(ui_settings, &QmmpUiSettings::repeatableListChanged, m_repeatButton, &ToggleButton::setChecked);
+    connect(ui_settings, &QmmpUiSettings::shuffleChanged, m_shuffleButton, &ToggleButton::setChecked);
+    updatePositions();
+    updateMask();
+}
+
+SkinnedDisplay::~SkinnedDisplay()
+{
+    QSettings settings;
+    settings.setValue("Skinned/pl_visible"_L1, m_plButton->isChecked());
+    settings.setValue("Skinned/eq_visible"_L1, m_eqButton->isChecked());
+}
+
+void SkinnedDisplay::updatePositions()
+{
+    int r = m_skin->ratio();
+    m_previous->move(r * 16, r * 88);
+    m_play->move(r * 39, r * 88);
+    m_pause->move(r * 62,  r * 88);
+    m_vis->move(r * 24, r * 43);
+    m_stop->move(r * 85,  r * 88);
+    m_next->move(r * 108, r * 88);
+    m_eject->move(r*136, r * 89);
+    m_posbar->move(r * 16, r * 72);
+    m_eqButton->move(r * 219, r * 58);
+    m_plButton->move(r * 241, r * 58);
+    m_repeatButton->move(r * 210, r * 89);
+    m_shuffleButton->move(r * 164, r * 89);
+    m_kbps->move(r * 111, r * 43);
+    m_freq->move(r * 156, r * 43);
+    m_text->resize(r * 154, r * 14);
+    m_text->move(r * 110, r * 23);
+    m_monoster->move(r * 212, r * 41);
+    m_playstatus->move(r * 24, r * 28);
+    m_volumeBar->move(r * 107, r * 57);
+    m_balanceBar->move(r * 177, r * 57);
+    m_timeIndicator->move(r * 34, r * 26);
+    m_aboutWidget->setGeometry(r * 247, r * 83, r * 20, r * 25);
+}
+
+void SkinnedDisplay::setTime (qint64 t)
+{
+    m_posbar->setValue(t);
+    m_timeIndicatorModel->setPosition(t / 1000);
+}
+void SkinnedDisplay::setDuration(qint64 t)
+{
+    m_posbar->setMaximum(t);
+    m_timeIndicatorModel->setDuration(t / 1000);
+}
+
+void SkinnedDisplay::setState(Qmmp::State state)
+{
+    switch(state)
+    {
+    case Qmmp::Playing:
+        m_playstatus->setStatus(PlayStatus::PLAY);
+        m_timeIndicatorModel->setVisible(true);
+        setDuration(m_core->duration());
+        break;
+    case Qmmp::Paused:
+        m_playstatus->setStatus(PlayStatus::PAUSE);
+        break;
+    case Qmmp::Stopped:
+        m_playstatus->setStatus(PlayStatus::STOP);
+        m_monoster->setChannels (0);
+        m_timeIndicatorModel->setVisible(false);
+        m_posbar->setValue(0);
+        m_posbar->setMaximum(0);
+    default:
+        ;
+    }
+}
+
+void SkinnedDisplay::onAudioPatametersChanged(const AudioParameters &p)
+{
+    m_monoster->setChannels(p.channels());
+    m_freq->displayNum(int(p.sampleRate()) / 1000);
+}
+
+void SkinnedDisplay::updateSkin()
+{
+    setPixmap (m_skin->getMain());
+    m_mw->resize(size());
+    setCursor(m_skin->getCursor(Skin::CUR_NORMAL));
+    setMinimalMode(m_shaded);
+    updatePositions();
+}
+
+void SkinnedDisplay::updateMask()
+{
+    m_mw->clearMask();
+    m_mw->setMask(QRegion(0, 0, m_mw->width(), m_mw->height()));
+    QRegion region = m_skin->getRegion(m_shaded? Skin::WINDOW_SHADE : Skin::NORMAL);
+    if (!region.isEmpty())
+        m_mw->setMask(region);
+}
+
+void SkinnedDisplay::setMinimalMode(bool b)
+{
+    m_shaded = b;
+    int r = m_skin->ratio();
+
+    if(m_shaded)
+         m_mw->setFixedSize(r * 275,r*14);
+    else
+         m_mw->setFixedSize(r * 275, r * 116);
+    updateMask();
+}
+
+void SkinnedDisplay::setActive(bool b)
+{
+    m_titlebar->setActive(b);
+}
+
+void SkinnedDisplay::setEQ(EqWidget* w)
+{
+    m_equlizer = w;
+    m_eqButton->setChecked(m_equlizer->isVisible());
+    ACTION(SkinnedActionManager::SHOW_EQUALIZER)->setChecked(m_equlizer->isVisible());
+
+    connect(ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::triggered, m_equlizer, &QWidget::setVisible);
+    connect(ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::triggered, m_eqButton, &ToggleButton::setChecked);
+
+    connect(m_eqButton, &ToggleButton::clicked, ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::setChecked);
+    connect(m_eqButton, &ToggleButton::clicked, m_equlizer, &QWidget::setVisible);
+    connect(m_equlizer, &EqWidget::closed, m_eqButton, [this] { m_eqButton->setChecked(false); });
+}
+
+void SkinnedDisplay::setPL(PlayList *w)
+{
+    m_playlist = w;
+    m_plButton->setChecked(m_playlist->isVisible());
+    ACTION(SkinnedActionManager::SHOW_PLAYLIST)->setChecked(m_playlist->isVisible());
+
+    connect(ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::triggered, m_playlist, &QWidget::setVisible);
+    connect(ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::triggered, m_plButton, &ToggleButton::setChecked);
+
+    connect(m_plButton, &ToggleButton::clicked, ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::setChecked);
+    connect(m_plButton, &ToggleButton::clicked, m_playlist, &QWidget::setVisible);
+    connect(m_playlist, &PlayList::closed, m_plButton, [this] { m_plButton->setChecked(false); });
+}
+
+bool SkinnedDisplay::isPlaylistVisible() const
+{
+    return m_plButton->isChecked();
+}
+
+bool SkinnedDisplay::isEqualizerVisible() const
+{
+    return m_eqButton->isChecked();
+}
+
+void SkinnedDisplay::displayVolume()
+{
+    if(sender() == m_volumeBar)
+        m_text->setText(tr("Volume: %1%").arg(m_volumeBar->value()));
+    if(sender() == m_balanceBar)
+    {
+        if(m_balanceBar->value() > 0)
+            m_text->setText(tr("Balance: %1% right").arg(m_balanceBar->value()));
+        else if(m_balanceBar->value() < 0)
+            m_text->setText(tr("Balance: %1% left").arg(-m_balanceBar->value()));
+        else
+            m_text->setText(tr("Balance: center"));
+    }
+}
+
+void SkinnedDisplay::showPosition()
+{
+    m_text->setText(tr("Seek to: %1").arg(MetaDataFormatter::formatDuration(m_posbar->value(), false)));
+}
+
+void SkinnedDisplay::updatePosition()
+{
+    m_text->clear();
+    m_core->seek(m_posbar->value());
+}
+
+void SkinnedDisplay::wheelEvent(QWheelEvent *e)
+{
+    m_core->changeVolume(e->angleDelta().y() / 10);
+}
+
+bool SkinnedDisplay::isRepeatable() const
+{
+    return m_repeatButton->isChecked();
+}
+
+bool SkinnedDisplay::isShuffle() const
+{
+    return m_shuffleButton->isChecked();
+}
+
+void SkinnedDisplay::setIsRepeatable(bool yes)
+{
+    m_repeatButton->setChecked(yes);
+}
+
+void SkinnedDisplay::setIsShuffle(bool yes)
+{
+    m_shuffleButton->setChecked(yes);
+}
+
+void SkinnedDisplay::mousePressEvent(QMouseEvent *e)
+{
+    if(e->button() == Qt::RightButton)
+        m_mw->menu()->exec(e->globalPosition().toPoint());
+    else if(e->button() == Qt::LeftButton && m_aboutWidget->underMouse())
+        m_mw->about();
+    PixmapWidget::mousePressEvent(e);
+}

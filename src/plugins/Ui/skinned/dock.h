@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2012 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -52,9 +52,9 @@ private:
     bool isUnder(QWidget*, QWidget*, int);
     static Dock *m_instance;
     QWidget *m_mainWidget = nullptr;
-    QList <QWidget *> m_widgetList;
-    QList <bool> m_dockedList;
-    QList <QPoint> m_delta_list;
+    QList<QWidget *> m_widgetList;
+    QList<bool> m_dockedList;
+    QList<QPoint> m_delta_list;
 };
 
 #endif

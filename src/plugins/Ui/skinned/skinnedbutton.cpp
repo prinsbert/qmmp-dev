@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright(C) 2007-2023 by Ilya Kotov                                 *
+ *   Copyright(C) 2007-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Based on Promoe, an XMMS2 Client                                      *
@@ -21,51 +21,50 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include "button.h"
+#include "skinnedbutton.h"
 #include "skin.h"
 #include <QMouseEvent>
 
-Button::Button(QWidget *parent, uint normal, uint pressed, uint cursor)
+SkinnedButton::SkinnedButton(QWidget *parent, uint normal, uint pressed, uint cursor)
         : PixmapWidget(parent),
           m_name_normal(normal),
           m_name_pressed(pressed),
           m_name_cursor(cursor)
 {
     m_skin = Skin::instance();
-    setON (false);
-    setCursor(m_skin->getCursor (m_name_cursor));
-    connect(m_skin, SIGNAL (skinChanged()), SLOT(updateSkin()));
+    setON(false);
+    setCursor(m_skin->getCursor(m_name_cursor));
+    connect(m_skin, &Skin::skinChanged, this, &SkinnedButton::updateSkin);
 }
 
-Button::~Button()
+SkinnedButton::~SkinnedButton()
 {}
 
-void Button::updateSkin()
+void SkinnedButton::updateSkin()
 {
-    setPixmap (m_skin->getButton(m_name_normal));
-    setCursor (m_skin->getCursor(m_name_cursor));
+    setPixmap(m_skin->getButton(m_name_normal));
+    setCursor(m_skin->getCursor(m_name_cursor));
 }
 
-void Button::setON(bool on)
+void SkinnedButton::setON(bool on)
 {
-    if (on)
-        setPixmap(m_skin->getButton(m_name_pressed));
-    else
-        setPixmap(m_skin->getButton(m_name_normal));
+    setPixmap(m_skin->getButton(on ? m_name_pressed : m_name_normal));
 }
-void Button::mousePressEvent(QMouseEvent *e)
+void SkinnedButton::mousePressEvent(QMouseEvent *e)
 {
     if(e->button() != Qt::LeftButton)
         return;
+
     setON(true);
     m_pressed = true;
     QWidget::mousePressEvent(e);
 }
 
-void Button::mouseReleaseEvent(QMouseEvent *e)
+void SkinnedButton::mouseReleaseEvent(QMouseEvent *e)
 {
     if(!m_pressed)
         return;
+
     m_pressed = false;
     if(rect().contains(e->pos()))
     {
@@ -74,7 +73,7 @@ void Button::mouseReleaseEvent(QMouseEvent *e)
     }
 }
 
-void Button::mouseMoveEvent(QMouseEvent *e)
+void SkinnedButton::mouseMoveEvent(QMouseEvent *e)
 {
     setON(m_pressed && rect().contains(e->pos()));
 }

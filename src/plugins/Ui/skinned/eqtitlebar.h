@@ -25,7 +25,7 @@
 class QMouseEvent;
 class Skin;
 class MainWindow;
-class Button;
+class SkinnedButton;
 class ShadedBar;
 
 /**
@@ -53,9 +53,9 @@ private:
     QPoint m_pos;
     QWidget* m_eq;
     MainWindow* m_mw;
-    Button* m_close;
-    Button* m_shade;
-    Button* m_shade2 = nullptr;
+    SkinnedButton* m_close;
+    SkinnedButton* m_shade;
+    SkinnedButton* m_shade2 = nullptr;
     bool m_shaded = false, m_align = false;
     ShadedBar* m_volumeBar = nullptr;
     ShadedBar* m_balanceBar = nullptr;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,27 +22,26 @@
 #include "skin.h"
 #include "eqgraph.h"
 
-EQGraph::EQGraph (QWidget *parent)
-        : PixmapWidget (parent)
+EQGraph::EQGraph(QWidget *parent) : PixmapWidget (parent)
 {
     m_skin = Skin::instance();
-    setPixmap (m_skin->getEqPart (Skin::EQ_GRAPH));
+    setPixmap(m_skin->getEqPart (Skin::EQ_GRAPH));
     clear();
     m_ratio = m_skin->ratio();
     draw();
-    connect (m_skin, SIGNAL (skinChanged()), this, SLOT (updateSkin()));
+    connect(m_skin, &Skin::skinChanged, this, &EQGraph::updateSkin);
     setVisible(!m_skin->getEqPart (Skin::EQ_GRAPH).isNull());
 }
 
 EQGraph::~EQGraph()
 {}
 
-void EQGraph::addValue (int value)
+void EQGraph::addValue(int value)
 {
-    if (m_values.size() >= 10)
+    if(m_values.size() >= 10)
         return;
-    m_values.append (value);
-    if (m_values.size() == 10)
+    m_values.append(value);
+    if(m_values.size() == 10)
     {
         draw();
     }
@@ -54,7 +53,7 @@ void EQGraph::clear ()
     update();
 }
 
-void EQGraph::init_spline (double * x, double * y, int n, double * y2)
+void EQGraph::init_spline(double * x, double * y, int n, double * y2)
 {
     double qn, un;
     double *u = new double[n];
@@ -79,7 +78,7 @@ void EQGraph::init_spline (double * x, double * y, int n, double * y2)
     delete[] u;
 }
 
-double EQGraph::eval_spline (double xa[], double ya[], double y2a[], int n, double x)
+double EQGraph::eval_spline(double xa[], double ya[], double y2a[], int n, double x)
 {
     int klo = 0, khi = n - 1;
     while (khi - klo > 1)
@@ -101,8 +100,8 @@ double EQGraph::eval_spline (double xa[], double ya[], double y2a[], int n, doub
 void EQGraph::draw()
 {
     QPixmap pixmap = m_skin->getEqPart (Skin::EQ_GRAPH);
-    if (pixmap.isNull())
-        pixmap = QPixmap(113*m_ratio,19*m_ratio);
+    if(pixmap.isNull())
+        pixmap = QPixmap(113 * m_ratio, 19 * m_ratio);
 
     if (m_values.size()!=10)
     {
@@ -124,8 +123,8 @@ void EQGraph::draw()
         int y = 9 - (int) ((eval_spline (x, bands, yf, 10, i) * 9.0) / 20.0);
         y = qBound(0, y, 18);
 
-        QPainter paint (&pixmap);
-        paint.drawPixmap (i*m_ratio, y*m_ratio, m_skin->getEqSpline (y));
+        QPainter paint(&pixmap);
+        paint.drawPixmap(i * m_ratio, y * m_ratio, m_skin->getEqSpline(y));
     }
     setPixmap (pixmap);
     delete [] bands;
@@ -135,5 +134,5 @@ void EQGraph::updateSkin()
 {
     m_ratio = m_skin->ratio();
     draw();
-    setVisible(!m_skin->getEqPart (Skin::EQ_GRAPH).isNull());
+    setVisible(!m_skin->getEqPart(Skin::EQ_GRAPH).isNull());
 }

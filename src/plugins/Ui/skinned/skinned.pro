@@ -3,9 +3,11 @@ include(../../plugins.pri)
 TARGET = $$PLUGINS_PREFIX/Ui/skinned
 
 HEADERS += mainwindow.h \
-    button.h \
-    display.h \
     skin.h \
+    skinnedactionmanager.h \
+    skinnedbalancebar.h \
+    skinnedbutton.h \
+    skinneddisplay.h \
     titlebar.h \
     positionbar.h \
     number.h \
@@ -27,7 +29,6 @@ HEADERS += mainwindow.h \
     monostereo.h \
     playstatus.h \
     volumebar.h \
-    balancebar.h \
     symboldisplay.h \
     playlistcontrol.h \
     eqpreset.h \
@@ -44,7 +45,6 @@ HEADERS += mainwindow.h \
     popupwidget.h \
     popupsettings.h \
     windowsystem.h \
-    actionmanager.h \
     shortcutitem.h \
     skinnedfactory.h \
     skinnedsettings.h \
@@ -54,9 +54,11 @@ HEADERS += mainwindow.h \
     horizontalslider.h
 
 SOURCES += mainwindow.cpp \
-    button.cpp \
-    display.cpp \
     skin.cpp \
+    skinnedactionmanager.cpp \
+    skinnedbalancebar.cpp \
+    skinnedbutton.cpp \
+    skinneddisplay.cpp \
     titlebar.cpp \
     positionbar.cpp \
     number.cpp \
@@ -77,7 +79,6 @@ SOURCES += mainwindow.cpp \
     monostereo.cpp \
     playstatus.cpp \
     volumebar.cpp \
-    balancebar.cpp \
     symboldisplay.cpp \
     playlistcontrol.cpp \
     eqpreset.cpp \
@@ -94,7 +95,6 @@ SOURCES += mainwindow.cpp \
     popupwidget.cpp \
     popupsettings.cpp \
     windowsystem.cpp \
-    actionmanager.cpp \
     shortcutitem.cpp \
     skinnedfactory.cpp \
     skinnedsettings.cpp \

@@ -33,7 +33,7 @@
 #include "eqtitlebar.h"
 #include "togglebutton.h"
 #include "eqgraph.h"
-#include "button.h"
+#include "skinnedbutton.h"
 #include "eqpreset.h"
 #include "preseteditor.h"
 #include "mainwindow.h"
@@ -62,7 +62,7 @@ EqWidget::EqWidget (QWidget *parent)
                                     Skin::EQ_BT_AUTO_0_N, Skin::EQ_BT_AUTO_0_P);
     m_eqg = new EQGraph(this);
     m_presetsMenu = new QMenu(this);
-    m_presetButton = new Button (this, Skin::EQ_BT_PRESETS_N, Skin::EQ_BT_PRESETS_P, Skin::CUR_EQNORMAL);
+    m_presetButton = new SkinnedButton (this, Skin::EQ_BT_PRESETS_N, Skin::EQ_BT_PRESETS_P, Skin::CUR_EQNORMAL);
     connect(m_presetButton, SIGNAL(clicked()), SLOT(showPresetsMenu()));
     connect(SoundCore::instance(), SIGNAL(eqSettingsChanged()), SLOT(readEq()));
 

@@ -26,7 +26,7 @@
 #include "shadedbar.h"
 #include "dock.h"
 #include "mainwindow.h"
-#include "button.h"
+#include "skinnedbutton.h"
 #include "eqtitlebar.h"
 
 EqTitleBar::EqTitleBar(QWidget *parent)
@@ -35,9 +35,9 @@ EqTitleBar::EqTitleBar(QWidget *parent)
     m_skin = Skin::instance();
     m_eq = parentWidget();
     m_mw = qobject_cast<MainWindow*>(m_eq->parent());
-    m_close = new Button(this, Skin::EQ_BT_CLOSE_N, Skin::EQ_BT_CLOSE_P, Skin::CUR_EQCLOSE);
+    m_close = new SkinnedButton(this, Skin::EQ_BT_CLOSE_N, Skin::EQ_BT_CLOSE_P, Skin::CUR_EQCLOSE);
     connect(m_close, SIGNAL(clicked()),m_eq, SIGNAL(closed()));
-    m_shade = new Button(this, Skin::EQ_BT_SHADE1_N, Skin::EQ_BT_SHADE1_P, Skin::CUR_EQNORMAL);
+    m_shade = new SkinnedButton(this, Skin::EQ_BT_SHADE1_N, Skin::EQ_BT_SHADE1_P, Skin::CUR_EQNORMAL);
     connect(m_shade, SIGNAL(clicked()), SLOT(shade()));
     QSettings settings;
     if (settings.value("Skinned/eq_shaded", false).toBool())
@@ -127,7 +127,7 @@ void EqTitleBar::shade()
     {
         setPixmap(m_skin->getEqPart(Skin::EQ_TITLEBAR_SHADED_A));
         m_shade->hide();
-        m_shade2 = new Button(this, Skin::EQ_BT_SHADE2_N, Skin::EQ_BT_SHADE2_P, Skin::CUR_EQNORMAL);
+        m_shade2 = new SkinnedButton(this, Skin::EQ_BT_SHADE2_N, Skin::EQ_BT_SHADE2_P, Skin::CUR_EQNORMAL);
         m_shade2->move(r*254,r*3);
         connect(m_shade2, SIGNAL(clicked()), SLOT(shade()));
         m_shade2->show();

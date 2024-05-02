@@ -35,7 +35,7 @@ Q_OBJECT
 public:
     EqSlider(QWidget *parent = nullptr);
 
-    ~EqSlider();
+    ~EqSlider() = default;
 
     double value();
 
@@ -50,6 +50,11 @@ private slots:
     void updateSkin();
 
 private:
+    void mousePressEvent(QMouseEvent*) override;
+    void mouseReleaseEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent*) override;
+    void wheelEvent(QWheelEvent *) override;
+
     Skin *m_skin;
     bool m_moving = false;
     int press_pos;
@@ -57,14 +62,6 @@ private:
     QPixmap m_pixmap;
     double convert(int);   // value = convert(position);
     void draw(bool pressed = true);
-
-protected:
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void wheelEvent(QWheelEvent *) override;
-
-
 };
 
 #endif

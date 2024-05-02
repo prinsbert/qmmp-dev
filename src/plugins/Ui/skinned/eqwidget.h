@@ -33,7 +33,7 @@ class EqTitleBar;
 class EqSlider;
 class ToggleButton;
 class EQGraph;
-class Button;
+class SkinnedButton;
 class EQPreset;
 class PlayListTrack;
 class SoundCore;
@@ -87,7 +87,7 @@ private:
     Skin *m_skin;
     EqTitleBar *m_titleBar;
     EqSlider *m_preamp;
-    Button *m_presetButton;
+    SkinnedButton *m_presetButton;
     QList<EqSlider*> m_sliders;
     ToggleButton *m_on;
     ToggleButton *m_autoButton;
