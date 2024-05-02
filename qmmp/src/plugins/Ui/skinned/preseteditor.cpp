@@ -29,7 +29,7 @@ PresetEditor::PresetEditor(QWidget *parent)
     m_ui.setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     connect(m_ui.loadButton, &QPushButton::clicked, this, &PresetEditor::loadPreset);
-    connect(m_ui.deleteButton, &QPushButton::clicked,this,  &PresetEditor::deletePreset);
+    connect(m_ui.deleteButton, &QPushButton::clicked,this, &PresetEditor::removePreset);
     m_ui.loadButton->setIcon(QIcon::fromTheme(u"document-open"_s));
     m_ui.deleteButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
 }
@@ -58,10 +58,10 @@ void PresetEditor::loadPreset()
     if(m_ui.tabWidget->currentIndex () == 1)
         item = m_ui.autoPresetListWidget->currentItem();
     if(item)
-        emit presetLoaded(item->text());
+        emit presetLoaded(item->text(), m_ui.tabWidget->currentIndex () == 1);
 }
 
-void PresetEditor::deletePreset()
+void PresetEditor::removePreset()
 {
     QListWidgetItem *item = nullptr;
     if(m_ui.tabWidget->currentIndex() == 0)
@@ -69,5 +69,8 @@ void PresetEditor::deletePreset()
     if(m_ui.tabWidget->currentIndex () == 1)
         item = m_ui.autoPresetListWidget->currentItem();
     if(item)
-        emit presetDeleted(item->text());
+    {
+        emit presetRemoved(item->text(), m_ui.tabWidget->currentIndex () == 1);
+        delete item;
+    }
 }
