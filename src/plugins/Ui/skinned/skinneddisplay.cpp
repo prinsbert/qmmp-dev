@@ -253,7 +253,10 @@ void SkinnedDisplay::setEQ(EqWidget* w)
 
     connect(m_eqButton, &ToggleButton::clicked, ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::setChecked);
     connect(m_eqButton, &ToggleButton::clicked, m_equlizer, &QWidget::setVisible);
-    connect(m_equlizer, &EqWidget::closed, m_eqButton, [this] { m_eqButton->setChecked(false); });
+    connect(m_equlizer, &EqWidget::closed, m_eqButton, [this] {
+        m_eqButton->setChecked(false);
+        m_equlizer->setVisible(false);
+    });
 }
 
 void SkinnedDisplay::setPL(PlayList *w)
@@ -267,7 +270,10 @@ void SkinnedDisplay::setPL(PlayList *w)
 
     connect(m_plButton, &ToggleButton::clicked, ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::setChecked);
     connect(m_plButton, &ToggleButton::clicked, m_playlist, &QWidget::setVisible);
-    connect(m_playlist, &PlayList::closed, m_plButton, [this] { m_plButton->setChecked(false); });
+    connect(m_playlist, &PlayList::closed, m_plButton, [this] {
+        m_plButton->setChecked(false);
+        m_playlist->setVisible(false);
+    });
 }
 
 bool SkinnedDisplay::isPlaylistVisible() const
