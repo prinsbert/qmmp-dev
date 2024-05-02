@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -252,9 +252,9 @@ void EqWidget::writeEq()
     m_eqg->clear();
     EqSettings eqSettings = SoundCore::instance()->eqSettings();
     eqSettings.setPreamp(m_preamp->value());
-    for (int i=0; i<10; ++i)
+    for (int i = 0; i < 10; ++i)
     {
-        eqSettings.setGain(i,m_sliders.at(i)->value());
+        eqSettings.setGain(i, m_sliders.at(i)->value());
         m_eqg->addValue(m_sliders.at(i)->value());
     }
     eqSettings.setEnabled(m_on->isChecked());
@@ -293,8 +293,8 @@ void EqWidget::showEditor()
     PresetEditor *editor = new PresetEditor(this);
     editor->addPresets(m_presetNames);
     editor->addAutoPresets(m_autoPresetNames);
-    //connect (editor, SIGNAL(presetLoaded(EQPreset*)), SLOT(setPreset(EQPreset*)));
-    //connect (editor, SIGNAL(presetDeleted(EQPreset*)), SLOT(deletePreset(EQPreset*)));
+    connect(editor, &PresetEditor::presetLoaded, this, &EqWidget::setPresetByName);
+    connect(editor, &PresetEditor::presetRemoved, this, &EqWidget::removePresetByName);
     editor->show();
 }
 
@@ -353,47 +353,47 @@ void EqWidget::saveAutoPreset()
     m_autoPresets.append(preset);
 }
 
-//void EqWidget::setPreset(EQPreset* preset)
-//{
-//    for (int i = 0; i < 10; ++i)
-//        m_sliders.at(i)->setValue(preset->gain(i));
-//    m_preamp->setValue(preset->preamp());
-//    writeEq();
-//}
+void EqWidget::setPresetByName(const QString &name, bool autoPreset)
+{
+    int index = autoPreset ? m_autoPresetNames.indexOf(name) : m_presetNames.indexOf(name);
+    if(index >= 0)
+        setPreset(index, autoPreset);
+}
 
-//void EqWidget::deletePreset(EQPreset* preset)
-//{
-//    int p = m_presets.indexOf(preset);
-//    if (p != -1)
-//    {
-//        delete m_presets.takeAt(p);
-//        return;
-//    }
-//    p = m_autoPresets.indexOf(preset);
-//    if (p != -1)
-//    {
-//        delete m_autoPresets.takeAt(p);
-//        return;
-//    }
-//}
+void EqWidget::removePresetByName(const QString &name, bool autoPreset)
+{
+    if(autoPreset)
+    {
+        int index = m_autoPresetNames.indexOf(name);
+        if(index >= 0)
+        {
+            m_autoPresets.remove(index);
+            m_autoPresetNames.remove(index);
+        }
+    }
+    else
+    {
+        int index = m_presetNames.indexOf(name);
+        if(index >= 0)
+        {
+            m_presets.remove(index);
+            m_presetNames.remove(index);
+        }
+    }
+}
 
-//void EqWidget::loadPreset(const QString &name)
-//{
-//    if (m_autoButton->isChecked())
-//    {
-//        EQPreset *preset = findPreset(name);
-//        if (preset)
-//            setPreset(preset);
-//        else
-//            reset();
-//    }
-//}
+void EqWidget::loadPreset(const QString &name)
+{
+    if(m_autoButton->isChecked())
+    {
+        int index = m_autoPresetNames.indexOf(name);
 
-//EQPreset *EqWidget::findPreset(const QString &name)
-//{
-//    auto it = std::find_if(m_autoPresets.cbegin(), m_autoPresets.cend(), [name](EQPreset *preset){ return preset->text() == name; });
-//    return it == m_autoPresets.cend() ? nullptr : *it;
-//}
+        if(index >= 0)
+            setPreset(m_autoPresets.at(index));
+        else
+            reset();
+    }
+}
 
 void EqWidget::importWinampEQF()
 {
@@ -408,7 +408,7 @@ void EqWidget::importWinampEQF()
     {
         char name[257];
         char bands[11];
-        while(file.read (name, 257))
+        while(file.read(name, 257))
         {
             EqSettings preset(EqSettings::EQ_BANDS_10);
 
@@ -454,3 +454,18 @@ void EqWidget::updateMask()
     if (!region.isEmpty())
         setMask(region);
 }
+
+void EqWidget::setPreset(int index, bool autoPreset)
+{
+    EqSettings preset = autoPreset ? m_autoPresets.at(index) : m_presets.at(index);
+    setPreset(preset);
+}
+
+void EqWidget::setPreset(const EqSettings &preset)
+{
+    for (int i = 0; i < 10; ++i)
+        m_sliders.at(i)->setValue(preset.gain(i));
+    m_preamp->setValue(preset.preamp());
+    writeEq();
+}
+

@@ -37,12 +37,12 @@ public:
     void addAutoPresets(const QStringList &names);
 
 signals:
-    void presetLoaded(const QString &name);
-    void presetDeleted(const QString &name);
+    void presetLoaded(const QString &name, bool isAutoPreset);
+    void presetRemoved(const QString &name, bool isAutoPreset);
 
 private slots:
     void loadPreset();
-    void deletePreset();
+    void removePreset();
 
 private:
     Ui::PresetEditor m_ui;

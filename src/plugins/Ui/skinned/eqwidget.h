@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -35,7 +35,6 @@ class EqSlider;
 class ToggleButton;
 class EQGraph;
 class SkinnedButton;
-class EQPreset;
 class PlayListTrack;
 class SoundCore;
 
@@ -50,13 +49,15 @@ public:
     /*!
     * necessary for auto-load presets
     */
-    //void loadPreset(const QString &name);
+    void loadPreset(const QString &name);
     void setMimimalMode(bool b = true);
 
     void writeSettings();
 
 signals:
     void closed();
+
+public slots:
 
 private slots:
     void updateSkin();
@@ -67,8 +68,8 @@ private slots:
     void showEditor();
     void savePreset();
     void saveAutoPreset();
-    //void setPreset(EQPreset*);
-    //void deletePreset(EQPreset*);
+    void setPresetByName(const QString &name, bool autoPreset = true);
+    void removePresetByName(const QString &name, bool autoPreset = true);
     void importWinampEQF();
 
 private:
@@ -76,7 +77,9 @@ private:
     void readSettings();
     void createActions();
     void updateMask();
-    //EQPreset *findPreset(const QString &name);
+    void setPreset(int index, bool autoPreset = true);
+    void setPreset(const EqSettings &preset);
+
     //events
     void keyPressEvent (QKeyEvent *) override;
     void changeEvent(QEvent*) override;
