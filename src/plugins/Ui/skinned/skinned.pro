@@ -31,7 +31,6 @@ HEADERS += mainwindow.h \
     volumebar.h \
     symboldisplay.h \
     playlistcontrol.h \
-    eqpreset.h \
     preseteditor.h \
     timeindicator.h \
     keyboardmanager.h \
@@ -81,7 +80,6 @@ SOURCES += mainwindow.cpp \
     volumebar.cpp \
     symboldisplay.cpp \
     playlistcontrol.cpp \
-    eqpreset.cpp \
     preseteditor.cpp \
     timeindicator.cpp \
     keyboardmanager.cpp \

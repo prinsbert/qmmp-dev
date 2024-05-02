@@ -22,6 +22,7 @@
 
 #include "pixmapwidget.h"
 #include <qmmp/output.h>
+#include <qmmp/eqsettings.h>
 
 /**
    @author Ilya Kotov <forkotov02@ya.ru>
@@ -49,7 +50,7 @@ public:
     /*!
     * necessary for auto-load presets
     */
-    void loadPreset(const QString &name);
+    //void loadPreset(const QString &name);
     void setMimimalMode(bool b = true);
 
     void writeSettings();
@@ -66,8 +67,8 @@ private slots:
     void showEditor();
     void savePreset();
     void saveAutoPreset();
-    void setPreset(EQPreset*);
-    void deletePreset(EQPreset*);
+    //void setPreset(EQPreset*);
+    //void deletePreset(EQPreset*);
     void importWinampEQF();
 
 private:
@@ -75,13 +76,13 @@ private:
     void readSettings();
     void createActions();
     void updateMask();
-    EQPreset *findPreset(const QString &name);
+    //EQPreset *findPreset(const QString &name);
     //events
     void keyPressEvent (QKeyEvent *) override;
     void changeEvent(QEvent*) override;
     void closeEvent(QCloseEvent*) override;
 #ifdef QMMP_WS_X11
-    bool event (QEvent *event) override;
+    bool event(QEvent *event) override;
 #endif
 
     Skin *m_skin;
@@ -93,8 +94,8 @@ private:
     ToggleButton *m_autoButton;
     EQGraph *m_eqg;
     QMenu *m_presetsMenu;
-    QList<EQPreset*> m_presets;
-    QList<EQPreset*> m_autoPresets;
+    QList<EqSettings> m_presets, m_autoPresets;
+    QStringList m_presetNames, m_autoPresetNames;
     bool m_shaded = false;
 };
 
