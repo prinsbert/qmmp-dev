@@ -43,7 +43,7 @@ ConverterHelper::~ConverterHelper()
 void ConverterHelper::openConverter()
 {
     PlayListManager *pl_manager = MediaPlayer::instance()->playListManager();
-    QList <PlayListTrack *> tracks = pl_manager->selectedPlayList()->selectedTracks();
+    QList<PlayListTrack *> tracks = pl_manager->selectedPlayList()->selectedTracks();
     if(tracks.isEmpty())
         return;
 

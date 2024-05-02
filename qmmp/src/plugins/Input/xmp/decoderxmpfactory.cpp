@@ -69,7 +69,7 @@ Decoder *DecoderXmpFactory::create(const QString &path, QIODevice *input)
 
 QList<TrackInfo *> DecoderXmpFactory::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *)
 {
-    QList <TrackInfo*> list;
+    QList<TrackInfo*> list;
     TrackInfo *info = new TrackInfo(path);
     if(parts & (TrackInfo::MetaData | TrackInfo::Properties))
     {

@@ -52,7 +52,7 @@ private:
     void addPath(const QString &path);
     void removePath(const QString &path);
     UDisksManager *m_manager;
-    QList <UDisksDevice *> m_devices;
+    QList<UDisksDevice *> m_devices;
     QActionGroup *m_actions;
     bool m_detectCDA;
     bool m_addTracks;

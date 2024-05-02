@@ -55,7 +55,7 @@ public:
 
     void sort(QList<PlayListTrack *> tracks, PlayListModel::SortMode mode);
     void sortSelection(QList<PlayListTrack *> tracks, PlayListModel::SortMode mode);
-    void sortByColumn(QList <PlayListTrack *> tracks, int column);
+    void sortByColumn(QList<PlayListTrack *> tracks, int column);
     void removeInvalidTracks(QList<PlayListTrack *> tracks, PlayListTrack *current_track);
     void removeDuplicates(QList<PlayListTrack *> tracks, PlayListTrack *current_track);
     void refresh(QList<PlayListTrack *> tracks, PlayListTrack *current_track);
@@ -72,11 +72,11 @@ public:
 
 
 private:
-    QList <TrackField *> m_fields;
-    QList <PlayListTrack *> m_tracks;
-    QList <PlayListTrack *> m_input_tracks;
+    QList<TrackField *> m_fields;
+    QList<PlayListTrack *> m_tracks;
+    QList<PlayListTrack *> m_input_tracks;
     QList<int> m_indexes;
-    QList <PlayListTrack *> m_new_tracks;
+    QList<PlayListTrack *> m_new_tracks;
     PlayListTrack *m_current_track;
     int m_sort_mode = PlayListModel::TITLE;
     TaskType m_task = EMPTY;

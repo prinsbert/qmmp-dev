@@ -50,7 +50,7 @@ LADSPASettingsDialog::LADSPASettingsDialog(QWidget *parent)
     if(!LADSPAHost::instance())
         new LADSPAHost(qApp);
 
-    QList <LADSPAPlugin *> plugin_list = LADSPAHost::instance()->plugins();
+    QList<LADSPAPlugin *> plugin_list = LADSPAHost::instance()->plugins();
 
     for(int i = 0; i < plugin_list.size(); ++i)
     {

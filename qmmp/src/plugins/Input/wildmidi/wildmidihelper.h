@@ -43,7 +43,7 @@ private:
     static WildMidiHelper *m_instance;
     bool m_inited = false;
     QMutex m_mutex;
-    QList <void *> m_ptrs;
+    QList<void *> m_ptrs;
     quint32 m_sample_rate = 0;
 };
 

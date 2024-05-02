@@ -45,7 +45,7 @@ MetaDataManager::~MetaDataManager()
 
 QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInfo::Parts parts, QStringList *ignoredPaths) const
 {
-    QList <TrackInfo *> list;
+    QList<TrackInfo *> list;
     DecoderFactory *fact = nullptr;
     EngineFactory *efact = nullptr;
     QStringList dummyList;

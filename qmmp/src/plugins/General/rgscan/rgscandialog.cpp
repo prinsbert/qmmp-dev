@@ -51,7 +51,7 @@ struct ReplayGainInfoItem
     GainHandle_t *handle;
 };
 
-RGScanDialog::RGScanDialog(QList <PlayListTrack *> tracks,  QWidget *parent) : QDialog(parent),
+RGScanDialog::RGScanDialog(QList<PlayListTrack *> tracks,  QWidget *parent) : QDialog(parent),
     m_ui(new Ui::RGScanDialog)
 {
     m_ui->setupUi(this);

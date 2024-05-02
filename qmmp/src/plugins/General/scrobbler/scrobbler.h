@@ -71,7 +71,7 @@ private:
 
     void sendNotification(const SongInfo &info);
     SongInfo m_song;
-    QList <SongInfo> m_cachedSongs;
+    QList<SongInfo> m_cachedSongs;
     QByteArray m_ua;
     int m_submitedSongs = 0;
     QString m_session;

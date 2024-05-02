@@ -68,8 +68,8 @@ class LADSPAEffect
 public:
     LADSPAPlugin *plugin;
     QList<int> in_ports, out_ports;
-    QList <LADSPA_Handle> handles;
-    QList <LADSPAControl*> controls;
+    QList<LADSPA_Handle> handles;
+    QList<LADSPAControl*> controls;
 };
 
 
@@ -98,8 +98,8 @@ private:
     LADSPAControl *createControl(const LADSPA_Descriptor *desc, unsigned long port);
     void activateEffect(LADSPAEffect *e);
     void deactivateEffect(LADSPAEffect *e);
-    QList <LADSPAPlugin *> m_plugins;
-    QList <LADSPAEffect *> m_effects;
+    QList<LADSPAPlugin *> m_plugins;
+    QList<LADSPAEffect *> m_effects;
 
     static LADSPAHost *m_instance;
     int m_chan = 2;
