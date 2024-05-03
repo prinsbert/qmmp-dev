@@ -40,71 +40,6 @@
     </message>
 </context>
 <context>
-    <name>Equalizer</name>
-    <message>
-        <location filename="../equalizer.cpp" line="39"/>
-        <source>Equalizer</source>
-        <translation>Glotintuvas</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="48"/>
-        <source>Enable equalizer</source>
-        <translation>Įjungti glotintuvą</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="54"/>
-        <source>Preset:</source>
-        <translation>Išankstinis nustatymas:</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="62"/>
-        <source>Save</source>
-        <translation>išsaugoti</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="66"/>
-        <source>Delete</source>
-        <translation>Ištrinti</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="70"/>
-        <source>Reset</source>
-        <translation>Ištrinti</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="83"/>
-        <source>Preamp</source>
-        <translation>Stiprinimas</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="100"/>
-        <location filename="../equalizer.cpp" line="197"/>
-        <source>%1dB</source>
-        <translation>%1dB</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="102"/>
-        <location filename="../equalizer.cpp" line="195"/>
-        <source>+%1dB</source>
-        <translation>+%1dB</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="150"/>
-        <source>preset</source>
-        <translation>išankstinis nustatymas</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="220"/>
-        <source>Overwrite Request</source>
-        <translation type="unfinished">Prerrašyti užklausą</translation>
-    </message>
-    <message>
-        <location filename="../equalizer.cpp" line="221"/>
-        <source>Preset &apos;%1&apos; already exists. Overwrite?</source>
-        <translation>išankstinis nustatymas &apos;%1&apos; jau yra. Perrašyti? </translation>
-    </message>
-</context>
-<context>
     <name>FileSystemBrowser</name>
     <message>
         <location filename="../filesystembrowser.cpp" line="97"/>
@@ -130,14 +65,6 @@
         <location filename="../filesystembrowser.cpp" line="99"/>
         <source>Change Directory</source>
         <translation>Pakeisti aplanką</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListBrowser</name>
-    <message>
-        <location filename="../playlistbrowser.cpp" line="62"/>
-        <source>Quick Search</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1002,7 +929,7 @@
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../qsuiactionmanager.cpp" line="309"/>
+        <location filename="../qsuiactionmanager.cpp" line="310"/>
         <source>Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1023,6 +950,71 @@
         <location filename="../qsuicoverwidget.cpp" line="67"/>
         <source>Images</source>
         <translation type="unfinished">Paveikslėliai</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiEqualizer</name>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="39"/>
+        <source>Equalizer</source>
+        <translation type="unfinished">Glotintuvas</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="48"/>
+        <source>Enable equalizer</source>
+        <translation type="unfinished">Įjungti glotintuvą</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="54"/>
+        <source>Preset:</source>
+        <translation type="unfinished">Išankstinis nustatymas:</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="62"/>
+        <source>Save</source>
+        <translation type="unfinished">išsaugoti</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="66"/>
+        <source>Delete</source>
+        <translation type="unfinished">Ištrinti</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="70"/>
+        <source>Reset</source>
+        <translation type="unfinished">Ištrinti</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="83"/>
+        <source>Preamp</source>
+        <translation type="unfinished">Stiprinimas</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="100"/>
+        <location filename="../qsuiequalizer.cpp" line="195"/>
+        <source>%1dB</source>
+        <translation type="unfinished">%1dB</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="102"/>
+        <location filename="../qsuiequalizer.cpp" line="193"/>
+        <source>+%1dB</source>
+        <translation type="unfinished">+%1dB</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="148"/>
+        <source>preset</source>
+        <translation type="unfinished">išankstinis nustatymas</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="218"/>
+        <source>Overwrite Request</source>
+        <translation type="unfinished">Prerrašyti užklausą</translation>
+    </message>
+    <message>
+        <location filename="../qsuiequalizer.cpp" line="219"/>
+        <source>Preset &apos;%1&apos; already exists. Overwrite?</source>
+        <translation type="unfinished">išankstinis nustatymas &apos;%1&apos; jau yra. Perrašyti? </translation>
     </message>
 </context>
 <context>
@@ -1100,7 +1092,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="882"/>
+        <location filename="../qsuimainwindow.cpp" line="903"/>
         <source>Qmmp</source>
         <translation type="unfinished">Qmmp</translation>
     </message>
@@ -1247,165 +1239,178 @@
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
-        <location filename="../qsuimainwindow.cpp" line="273"/>
+        <location filename="../qsuimainwindow.cpp" line="291"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Pervadinti grojaraštį</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="273"/>
+        <location filename="../qsuimainwindow.cpp" line="291"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Grojąraščio pavadinimas:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="313"/>
+        <location filename="../qsuimainwindow.cpp" line="331"/>
         <source>Appearance</source>
         <translation type="unfinished">Išvaizda</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="314"/>
+        <location filename="../qsuimainwindow.cpp" line="332"/>
         <source>Shortcuts</source>
         <translation type="unfinished">Trumpiniai</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="393"/>
+        <location filename="../qsuimainwindow.cpp" line="411"/>
         <source>Menu Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="412"/>
+        <location filename="../qsuimainwindow.cpp" line="430"/>
         <source>Add new playlist</source>
         <translation type="unfinished">Pridėti naują grojąraštį</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="418"/>
+        <location filename="../qsuimainwindow.cpp" line="436"/>
         <source>Show all tabs</source>
         <translation type="unfinished">Rodyti visas korteles</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="445"/>
+        <location filename="../qsuimainwindow.cpp" line="463"/>
         <source>Ctrl+0</source>
         <translation type="unfinished">Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="451"/>
+        <location filename="../qsuimainwindow.cpp" line="469"/>
         <source>P</source>
         <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="456"/>
+        <location filename="../qsuimainwindow.cpp" line="474"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="458"/>
+        <location filename="../qsuimainwindow.cpp" line="476"/>
         <source>Volume</source>
         <translation type="unfinished">Garsumas</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="460"/>
+        <location filename="../qsuimainwindow.cpp" line="478"/>
+        <source>Balance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="481"/>
         <source>Quick Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="513"/>
+        <location filename="../qsuimainwindow.cpp" line="534"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="515"/>
+        <location filename="../qsuimainwindow.cpp" line="536"/>
         <source>Sort List</source>
         <translation type="unfinished">Rūšiuoti sąrašą</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="517"/>
-        <location filename="../qsuimainwindow.cpp" line="533"/>
+        <location filename="../qsuimainwindow.cpp" line="538"/>
+        <location filename="../qsuimainwindow.cpp" line="554"/>
         <source>By Title</source>
         <translation type="unfinished">Pagal dainos pavadinimą</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="518"/>
-        <location filename="../qsuimainwindow.cpp" line="534"/>
+        <location filename="../qsuimainwindow.cpp" line="539"/>
+        <location filename="../qsuimainwindow.cpp" line="555"/>
         <source>By Album</source>
         <translation type="unfinished">Pagal albumą</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="519"/>
-        <location filename="../qsuimainwindow.cpp" line="535"/>
+        <location filename="../qsuimainwindow.cpp" line="540"/>
+        <location filename="../qsuimainwindow.cpp" line="556"/>
         <source>By Artist</source>
         <translation type="unfinished">Pagal atlikėją</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="520"/>
-        <location filename="../qsuimainwindow.cpp" line="536"/>
+        <location filename="../qsuimainwindow.cpp" line="541"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
         <source>By Album Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="521"/>
-        <location filename="../qsuimainwindow.cpp" line="537"/>
+        <location filename="../qsuimainwindow.cpp" line="542"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
         <source>By Filename</source>
         <translation type="unfinished">Pagal bylos pavadinimą</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="522"/>
-        <location filename="../qsuimainwindow.cpp" line="538"/>
+        <location filename="../qsuimainwindow.cpp" line="543"/>
+        <location filename="../qsuimainwindow.cpp" line="559"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">Pagal kelią iki bylos ir pavadinimą</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="523"/>
-        <location filename="../qsuimainwindow.cpp" line="539"/>
+        <location filename="../qsuimainwindow.cpp" line="544"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>By Date</source>
         <translation type="unfinished">Pagal datą</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="524"/>
-        <location filename="../qsuimainwindow.cpp" line="540"/>
+        <location filename="../qsuimainwindow.cpp" line="545"/>
+        <location filename="../qsuimainwindow.cpp" line="561"/>
         <source>By Track Number</source>
         <translation type="unfinished">Pagal takelio numerį</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="525"/>
-        <location filename="../qsuimainwindow.cpp" line="541"/>
+        <location filename="../qsuimainwindow.cpp" line="546"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
         <source>By Disc Number</source>
         <translation type="unfinished">Pagal disko numerį</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="526"/>
-        <location filename="../qsuimainwindow.cpp" line="542"/>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">Pagal bylos sukūrimo laiką</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="527"/>
-        <location filename="../qsuimainwindow.cpp" line="543"/>
+        <location filename="../qsuimainwindow.cpp" line="548"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
         <source>By File Modification Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="528"/>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
         <source>By Group</source>
         <translation type="unfinished">Pagal grupę</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="531"/>
+        <location filename="../qsuimainwindow.cpp" line="552"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Rūšiuoti pasirinktus</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="547"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
         <source>Randomize List</source>
         <translation type="unfinished">Sumaišyti sąrašą</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>Reverse List</source>
         <translation type="unfinished">Apversti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="589"/>
+        <location filename="../qsuimainwindow.cpp" line="610"/>
         <source>Actions</source>
         <translation type="unfinished">Veiksmai</translation>
+    </message>
+</context>
+<context>
+    <name>QSUiPlayListBrowser</name>
+    <message>
+        <location filename="../qsuiplaylistbrowser.cpp" line="62"/>
+        <source>Quick Search</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1510,52 +1515,52 @@
 <context>
     <name>QSUiSettings</name>
     <message>
-        <location filename="../qsuisettings.cpp" line="40"/>
+        <location filename="../qsuisettings.cpp" line="41"/>
         <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="41"/>
+        <location filename="../qsuisettings.cpp" line="42"/>
         <source>16x16</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="42"/>
+        <location filename="../qsuisettings.cpp" line="43"/>
         <source>22x22</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="43"/>
+        <location filename="../qsuisettings.cpp" line="44"/>
         <source>32x32</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="44"/>
+        <location filename="../qsuisettings.cpp" line="45"/>
         <source>48x48</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="45"/>
+        <location filename="../qsuisettings.cpp" line="46"/>
         <source>64x64</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="47"/>
+        <location filename="../qsuisettings.cpp" line="48"/>
         <source>Top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="48"/>
+        <location filename="../qsuisettings.cpp" line="49"/>
         <source>Bottom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="49"/>
+        <location filename="../qsuisettings.cpp" line="50"/>
         <source>Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuisettings.cpp" line="50"/>
+        <location filename="../qsuisettings.cpp" line="51"/>
         <source>Right</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1713,8 +1718,8 @@
 <context>
     <name>VolumeSlider</name>
     <message>
-        <location filename="../volumeslider.cpp" line="90"/>
-        <source>%1%</source>
+        <location filename="../volumeslider.cpp" line="110"/>
+        <source>%1: %2%</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

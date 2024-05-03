@@ -9,17 +9,17 @@
         <translation>Engadido Null</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="54"/>
+        <location filename="../outputnullfactory.cpp" line="55"/>
         <source>About Null Output Plugin</source>
         <translation>Sobre o engadido Null</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="55"/>
+        <location filename="../outputnullfactory.cpp" line="56"/>
         <source>Qmmp Null Output Plugin</source>
         <translation>Engadido Null de Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="56"/>
+        <location filename="../outputnullfactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: LLya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

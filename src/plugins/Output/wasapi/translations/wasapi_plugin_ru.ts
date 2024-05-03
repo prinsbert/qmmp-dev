@@ -42,7 +42,7 @@
         <translation>Режим монопольного доступа</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="58"/>
+        <location filename="../settingsdialog.cpp" line="57"/>
         <source>Default</source>
         <translation>По умолчанию</translation>
     </message>

@@ -9,17 +9,17 @@
         <translation>Модуль нульового виведення</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="54"/>
+        <location filename="../outputnullfactory.cpp" line="55"/>
         <source>About Null Output Plugin</source>
         <translation>Про модуль нульового виведення</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="55"/>
+        <location filename="../outputnullfactory.cpp" line="56"/>
         <source>Qmmp Null Output Plugin</source>
         <translation>Модуль нульового виведення для Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="56"/>
+        <location filename="../outputnullfactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>

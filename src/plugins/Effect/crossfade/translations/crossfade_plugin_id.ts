@@ -27,17 +27,17 @@
         <translation>Plugin Crossfade</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="51"/>
+        <location filename="../effectcrossfadefactory.cpp" line="50"/>
         <source>About Crossfade Plugin</source>
         <translation>Tentang Plugin Crossfade</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="52"/>
+        <location filename="../effectcrossfadefactory.cpp" line="51"/>
         <source>Qmmp Crossfade Plugin</source>
         <translation>Plugin Crossfade Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="53"/>
+        <location filename="../effectcrossfadefactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

@@ -14,17 +14,17 @@
         <translation>Αρχεία FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="218"/>
+        <location filename="../decoderflacfactory.cpp" line="220"/>
         <source>About FLAC Audio Plugin</source>
         <translation>Σχετικά με το πρόσθετο ήχου FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="219"/>
+        <location filename="../decoderflacfactory.cpp" line="221"/>
         <source>Qmmp FLAC Audio Plugin</source>
         <translation>Qmmp πρόσθετο ήχου FLAC</translation>
     </message>
     <message>
-        <location filename="../decoderflacfactory.cpp" line="220"/>
+        <location filename="../decoderflacfactory.cpp" line="222"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

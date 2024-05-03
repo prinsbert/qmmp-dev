@@ -72,17 +72,17 @@
         <translation>Πρόσθετο ALSA</translation>
     </message>
     <message>
-        <location filename="../outputalsafactory.cpp" line="56"/>
+        <location filename="../outputalsafactory.cpp" line="55"/>
         <source>About ALSA Output Plugin</source>
         <translation>Σχετικά με το πρόσθετο εξόδου ALSA</translation>
     </message>
     <message>
-        <location filename="../outputalsafactory.cpp" line="57"/>
+        <location filename="../outputalsafactory.cpp" line="56"/>
         <source>Qmmp ALSA Output Plugin</source>
         <translation>Πρόσθετο εξόδου ALSA Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputalsafactory.cpp" line="58"/>
+        <location filename="../outputalsafactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

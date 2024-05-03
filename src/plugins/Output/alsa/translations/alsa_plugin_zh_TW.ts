@@ -72,17 +72,17 @@
         <translation>ALSA 外掛</translation>
     </message>
     <message>
-        <location filename="../outputalsafactory.cpp" line="56"/>
+        <location filename="../outputalsafactory.cpp" line="55"/>
         <source>About ALSA Output Plugin</source>
         <translation>關於 ALSA 匯出插件</translation>
     </message>
     <message>
-        <location filename="../outputalsafactory.cpp" line="57"/>
+        <location filename="../outputalsafactory.cpp" line="56"/>
         <source>Qmmp ALSA Output Plugin</source>
         <translation>Qmmp ALSA 匯出插件</translation>
     </message>
     <message>
-        <location filename="../outputalsafactory.cpp" line="58"/>
+        <location filename="../outputalsafactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

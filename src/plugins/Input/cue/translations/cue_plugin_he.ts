@@ -52,17 +52,17 @@
         <translation>קבצי CUE</translation>
     </message>
     <message>
-        <location filename="../decodercuefactory.cpp" line="82"/>
+        <location filename="../decodercuefactory.cpp" line="81"/>
         <source>About CUE Audio Plugin</source>
         <translation>אודות תוסף CUE שמע</translation>
     </message>
     <message>
-        <location filename="../decodercuefactory.cpp" line="83"/>
+        <location filename="../decodercuefactory.cpp" line="82"/>
         <source>Qmmp CUE Audio Plugin</source>
         <translation>תוסף CUE שמע של Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodercuefactory.cpp" line="84"/>
+        <location filename="../decodercuefactory.cpp" line="83"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

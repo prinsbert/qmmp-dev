@@ -2,1123 +2,608 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ko">
 <context>
-    <name>ActionManager</name>
+    <name>SkinnedActionManager</name>
     <message>
-        <location filename="../actionmanager.cpp" line="39"/>
+        <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation>재생(&amp;P)</translation>
+        <translation type="unfinished">재생(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="39"/>
+        <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>X</source>
-        <translation>X</translation>
+        <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="40"/>
+        <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>&amp;Pause</source>
-        <translation>일시중지(&amp;P)</translation>
+        <translation type="unfinished">일시중지(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="40"/>
+        <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>C</source>
-        <translation>C</translation>
+        <translation type="unfinished">C</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="41"/>
+        <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation>중지(&amp;S)</translation>
+        <translation type="unfinished">중지(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="41"/>
+        <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>V</source>
-        <translation>V</translation>
+        <translation type="unfinished">V</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="42"/>
+        <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation>이전(&amp;P)</translation>
+        <translation type="unfinished">이전(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="42"/>
+        <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>Z</source>
-        <translation>Z</translation>
+        <translation type="unfinished">Z</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="43"/>
+        <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
-        <translation>다음(&amp;N)</translation>
+        <translation type="unfinished">다음(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="43"/>
+        <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>B</source>
-        <translation>B</translation>
+        <translation type="unfinished">B</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="44"/>
+        <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
-        <translation>재생/일시중지(&amp;P)</translation>
+        <translation type="unfinished">재생/일시중지(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="44"/>
+        <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>Space</source>
-        <translation>스페이스 키</translation>
+        <translation type="unfinished">스페이스 키</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="45"/>
+        <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>&amp;Jump to Track</source>
-        <translation>트랙으로 이동(&amp;J)</translation>
+        <translation type="unfinished">트랙으로 이동(&amp;J)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="45"/>
+        <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="unfinished">J</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="46"/>
+        <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>&amp;Repeat Playlist</source>
-        <translation>재생목록 반복(&amp;R)</translation>
+        <translation type="unfinished">재생목록 반복(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="46"/>
+        <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>R</source>
-        <translation>R</translation>
+        <translation type="unfinished">R</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="47"/>
+        <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>&amp;Repeat Track</source>
-        <translation>트랙 반복(&amp;R)</translation>
+        <translation type="unfinished">트랙 반복(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="47"/>
+        <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>Ctrl+R</source>
-        <translation>Ctrl+R</translation>
+        <translation type="unfinished">Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="48"/>
+        <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
-        <translation>순서섞기(&amp;S)</translation>
+        <translation type="unfinished">순서섞기(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="48"/>
+        <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>S</source>
-        <translation>S</translation>
+        <translation type="unfinished">S</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="49"/>
+        <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>&amp;No Playlist Advance</source>
-        <translation>재생목록 사전 없음(&amp;N)</translation>
+        <translation type="unfinished">재생목록 사전 없음(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="49"/>
+        <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="50"/>
+        <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>&amp;Stop After Selected</source>
-        <translation>선택한 후 중지(&amp;S)</translation>
+        <translation type="unfinished">선택한 후 중지(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="50"/>
+        <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="unfinished">Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="51"/>
+        <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Transit between playlists</source>
-        <translation>재생목록 간 전송(&amp;T)</translation>
+        <translation type="unfinished">재생목록 간 전송(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="52"/>
+        <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Clear Queue</source>
-        <translation>대기열 지우기(&amp;C)</translation>
+        <translation type="unfinished">대기열 지우기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="52"/>
+        <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>Alt+Q</source>
-        <translation>Alt+Q</translation>
+        <translation type="unfinished">Alt+Q</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="54"/>
+        <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Show Playlist</source>
-        <translation>재생목록 표시</translation>
+        <translation type="unfinished">재생목록 표시</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="54"/>
+        <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Alt+E</source>
-        <translation>Alt+E</translation>
+        <translation type="unfinished">Alt+E</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="55"/>
+        <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Show Equalizer</source>
-        <translation>이퀄라이저 표시</translation>
+        <translation type="unfinished">이퀄라이저 표시</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="55"/>
+        <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Alt+G</source>
-        <translation>Alt+G</translation>
+        <translation type="unfinished">Alt+G</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="56"/>
+        <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>Always on Top</source>
-        <translation>항상 위에</translation>
+        <translation type="unfinished">항상 위에</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="57"/>
+        <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>Put on All Workspaces</source>
-        <translation>모든 작업공간에 배치</translation>
+        <translation type="unfinished">모든 작업공간에 배치</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="58"/>
+        <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Double Size</source>
-        <translation>두배 크기</translation>
+        <translation type="unfinished">두배 크기</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="58"/>
+        <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Meta+D</source>
-        <translation>Meta+D</translation>
+        <translation type="unfinished">Meta+D</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="59"/>
+        <location filename="../skinnedactionmanager.cpp" line="59"/>
         <source>Anti-aliasing</source>
-        <translation>안티 앨리어싱</translation>
+        <translation type="unfinished">안티 앨리어싱</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="61"/>
+        <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Volume &amp;+</source>
-        <translation>볼륨 &amp;+</translation>
+        <translation type="unfinished">볼륨 &amp;+</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="61"/>
+        <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>0</source>
-        <translation>0</translation>
+        <translation type="unfinished">0</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="62"/>
+        <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Volume &amp;-</source>
-        <translation>볼륨 &amp;-</translation>
+        <translation type="unfinished">볼륨 &amp;-</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="62"/>
+        <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>9</source>
-        <translation>9</translation>
+        <translation type="unfinished">9</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="63"/>
+        <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>&amp;Mute</source>
-        <translation>음소거(&amp;M)</translation>
+        <translation type="unfinished">음소거(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="63"/>
+        <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>M</source>
-        <translation>M</translation>
+        <translation type="unfinished">M</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="65"/>
+        <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>&amp;Add File</source>
-        <translation>파일 추가(&amp;A)</translation>
+        <translation type="unfinished">파일 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="65"/>
+        <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>F</source>
-        <translation>F</translation>
+        <translation type="unfinished">F</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="66"/>
+        <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>&amp;Add Directory</source>
-        <translation>디렉토리 추가(&amp;A)</translation>
+        <translation type="unfinished">디렉토리 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="66"/>
+        <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>D</source>
-        <translation>D</translation>
+        <translation type="unfinished">D</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="67"/>
+        <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>&amp;Add Url</source>
-        <translation>URL 추가(&amp;A)</translation>
+        <translation type="unfinished">URL 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="67"/>
+        <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>U</source>
-        <translation>U</translation>
+        <translation type="unfinished">U</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="68"/>
+        <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>&amp;Remove Selected</source>
-        <translation>선택한 항목 제거(&amp;R)</translation>
+        <translation type="unfinished">선택한 항목 제거(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="68"/>
+        <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>Del</source>
-        <translation>Del</translation>
+        <translation type="unfinished">Del</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="69"/>
+        <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>&amp;Remove All</source>
-        <translation>모두 제거(&amp;R)</translation>
+        <translation type="unfinished">모두 제거(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="70"/>
+        <location filename="../skinnedactionmanager.cpp" line="70"/>
         <source>&amp;Remove Unselected</source>
-        <translation>선택하지 않은 항목 제거(&amp;R)</translation>
+        <translation type="unfinished">선택하지 않은 항목 제거(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="71"/>
+        <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>Remove unavailable files</source>
-        <translation>사용할 수 없는 파일 제거</translation>
+        <translation type="unfinished">사용할 수 없는 파일 제거</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="72"/>
+        <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>Remove duplicates</source>
-        <translation>중복 제거</translation>
+        <translation type="unfinished">중복 제거</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="73"/>
+        <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>Refresh</source>
-        <translation>새로 고침</translation>
+        <translation type="unfinished">새로 고침</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="74"/>
+        <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Queue Toggle</source>
-        <translation>대기열 전환(&amp;Q)</translation>
+        <translation type="unfinished">대기열 전환(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="74"/>
+        <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>Q</source>
-        <translation>Q</translation>
+        <translation type="unfinished">Q</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="75"/>
+        <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>Invert Selection</source>
-        <translation>선택 항목 반전</translation>
+        <translation type="unfinished">선택 항목 반전</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="76"/>
+        <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Select None</source>
-        <translation>없음 선택(&amp;S)</translation>
+        <translation type="unfinished">없음 선택(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="77"/>
+        <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>&amp;Select All</source>
-        <translation>모두 선택(&amp;S)</translation>
+        <translation type="unfinished">모두 선택(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="77"/>
+        <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="unfinished">Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="78"/>
+        <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>&amp;View Track Details</source>
-        <translation>트랙 세부정보 보기(&amp;V)</translation>
+        <translation type="unfinished">트랙 세부정보 보기(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="78"/>
+        <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Alt+I</source>
-        <translation>Alt+I</translation>
+        <translation type="unfinished">Alt+I</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="79"/>
+        <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>&amp;New List</source>
-        <translation>새 목록(&amp;N)</translation>
+        <translation type="unfinished">새 목록(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="79"/>
+        <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Ctrl+T</source>
-        <translation>Ctrl+T</translation>
+        <translation type="unfinished">Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="80"/>
+        <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Delete List</source>
-        <translation>목록 삭제(&amp;D)</translation>
+        <translation type="unfinished">목록 삭제(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="80"/>
+        <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="81"/>
+        <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>&amp;Load List</source>
-        <translation>목록 불러오기(&amp;L)</translation>
+        <translation type="unfinished">목록 불러오기(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="81"/>
+        <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>O</source>
-        <translation>O</translation>
+        <translation type="unfinished">O</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="82"/>
+        <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Save List</source>
-        <translation>목록 저장하기(&amp;S)</translation>
+        <translation type="unfinished">목록 저장하기(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="82"/>
+        <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>Shift+S</source>
-        <translation>Shift+S</translation>
+        <translation type="unfinished">Shift+S</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="83"/>
+        <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Rename List</source>
-        <translation>목록 이름변경(&amp;R)</translation>
+        <translation type="unfinished">목록 이름변경(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="83"/>
+        <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>F2</source>
-        <translation>F2</translation>
+        <translation type="unfinished">F2</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="84"/>
+        <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;Select Next Playlist</source>
-        <translation>다음 재생목록 선택(&amp;S)</translation>
+        <translation type="unfinished">다음 재생목록 선택(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="84"/>
+        <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>Ctrl+PgDown</source>
-        <translation>Ctrl+PgDown</translation>
+        <translation type="unfinished">Ctrl+PgDown</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="85"/>
+        <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation>이전 재생목록 선택(&amp;S)</translation>
+        <translation type="unfinished">이전 재생목록 선택(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="85"/>
+        <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>Ctrl+PgUp</source>
-        <translation>Ctrl+PgUp</translation>
+        <translation type="unfinished">Ctrl+PgUp</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="86"/>
+        <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Show Playlists</source>
-        <translation>재생목록 표시(&amp;S)</translation>
+        <translation type="unfinished">재생목록 표시(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="86"/>
+        <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>P</source>
-        <translation>P</translation>
+        <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="87"/>
+        <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Group Tracks</source>
-        <translation>그룹 트랙(&amp;G)</translation>
+        <translation type="unfinished">그룹 트랙(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="87"/>
+        <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
+        <translation type="unfinished">Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
+        <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Show Column Headers</source>
-        <translation>열 헤더 표시(&amp;S)</translation>
+        <translation type="unfinished">열 헤더 표시(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="89"/>
+        <location filename="../skinnedactionmanager.cpp" line="88"/>
+        <source>Ctrl+H</source>
+        <translation type="unfinished">Ctrl+H</translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Show &amp;Tab Bar</source>
-        <translation>탭 표시줄 표시(&amp;T)</translation>
+        <translation type="unfinished">탭 표시줄 표시(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="89"/>
+        <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Alt+T</source>
-        <translation>Alt+T</translation>
+        <translation type="unfinished">Alt+T</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="91"/>
+        <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Settings</source>
-        <translation>설정(&amp;S)</translation>
+        <translation type="unfinished">설정(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="91"/>
+        <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
+        <translation type="unfinished">Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="92"/>
+        <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;About</source>
-        <translation>정보(&amp;A)</translation>
+        <translation type="unfinished">정보(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="93"/>
+        <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;About Qt</source>
-        <translation>Qt 정보(&amp;A)</translation>
+        <translation type="unfinished">Qt 정보(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="94"/>
+        <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Exit</source>
-        <translation>종료(&amp;E)</translation>
+        <translation type="unfinished">종료(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="94"/>
+        <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
 </context>
 <context>
-    <name>EqWidget</name>
+    <name>SkinnedDisplay</name>
     <message>
-        <location filename="../eqwidget.cpp" line="47"/>
-        <source>Equalizer</source>
-        <translation>이퀄라이저</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="171"/>
-        <location filename="../eqwidget.cpp" line="188"/>
-        <source>preset</source>
-        <translation>프리셋</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="272"/>
-        <source>&amp;Load/Delete</source>
-        <translation>불러오기/삭제(&amp;L)</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="274"/>
-        <source>&amp;Save Preset</source>
-        <translation>프리셋 저장하기(&amp;S)</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="276"/>
-        <source>&amp;Save Auto-load Preset</source>
-        <translation>자동 불러오기 프리셋 저장(&amp;S)</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="278"/>
-        <source>&amp;Import</source>
-        <translation>가져오기(&amp;I)</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="281"/>
-        <source>&amp;Clear</source>
-        <translation>지우기(&amp;C)</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="310"/>
-        <source>Saving Preset</source>
-        <translation>프리셋 저장 중</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="311"/>
-        <source>Preset name:</source>
-        <translation>프리셋 이름:</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="312"/>
-        <source>preset #</source>
-        <translation>프리셋 #</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="403"/>
-        <source>Import Preset</source>
-        <translation>프리셋 가져오기</translation>
-    </message>
-</context>
-<context>
-    <name>HotkeyEditor</name>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="43"/>
-        <source>Reset</source>
-        <translation>재설정</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="57"/>
-        <source>Action</source>
-        <translation>동작</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="62"/>
-        <source>Shortcut</source>
-        <translation>단축키</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="33"/>
-        <source>Change shortcut...</source>
-        <translation>단축키 변경...</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="57"/>
-        <source>Playback</source>
-        <translation>플레이백</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="63"/>
-        <source>View</source>
-        <translation>보기</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="69"/>
-        <source>Volume</source>
-        <translation>볼륨</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="75"/>
-        <source>Playlist</source>
-        <translation>재생목록</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="81"/>
-        <source>Misc</source>
-        <translation>기타</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="93"/>
-        <source>Reset Shortcuts</source>
-        <translation>단축키 재설정</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="94"/>
-        <source>Do you want to restore default shortcuts?</source>
-        <translation>기본 단축키를 복원하시겠습니까?</translation>
-    </message>
-</context>
-<context>
-    <name>MainDisplay</name>
-    <message>
-        <location filename="../display.cpp" line="59"/>
+        <location filename="../skinneddisplay.cpp" line="59"/>
         <source>Previous</source>
-        <translation>이전</translation>
+        <translation type="unfinished">이전</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="63"/>
+        <location filename="../skinneddisplay.cpp" line="63"/>
         <source>Play</source>
-        <translation>재생</translation>
+        <translation type="unfinished">재생</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="66"/>
+        <location filename="../skinneddisplay.cpp" line="66"/>
         <source>Pause</source>
-        <translation>일시중지</translation>
+        <translation type="unfinished">일시중지</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="69"/>
+        <location filename="../skinneddisplay.cpp" line="69"/>
         <source>Stop</source>
-        <translation>중지</translation>
+        <translation type="unfinished">중지</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="72"/>
+        <location filename="../skinneddisplay.cpp" line="72"/>
         <source>Next</source>
-        <translation>다음</translation>
+        <translation type="unfinished">다음</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="75"/>
+        <location filename="../skinneddisplay.cpp" line="75"/>
         <source>Play files</source>
-        <translation>파일 재생</translation>
+        <translation type="unfinished">파일 재생</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="82"/>
+        <location filename="../skinneddisplay.cpp" line="80"/>
         <source>Equalizer</source>
-        <translation>이퀄라이저</translation>
+        <translation type="unfinished">이퀄라이저</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="85"/>
+        <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Playlist</source>
-        <translation>재생목록</translation>
+        <translation type="unfinished">재생목록</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="90"/>
+        <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Repeat playlist</source>
-        <translation>재생목록 반복</translation>
+        <translation type="unfinished">재생목록 반복</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="93"/>
+        <location filename="../skinneddisplay.cpp" line="87"/>
         <source>Shuffle</source>
-        <translation>순서섞기</translation>
+        <translation type="unfinished">순서섞기</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="103"/>
+        <location filename="../skinneddisplay.cpp" line="97"/>
         <source>Volume</source>
-        <translation>볼륨</translation>
+        <translation type="unfinished">볼륨</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="109"/>
+        <location filename="../skinneddisplay.cpp" line="103"/>
         <source>Balance</source>
-        <translation>밸런스</translation>
+        <translation type="unfinished">밸런스</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="295"/>
+        <location filename="../skinneddisplay.cpp" line="290"/>
         <source>Volume: %1%</source>
-        <translation>볼륨: %1%</translation>
+        <translation type="unfinished">볼륨: %1%</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="299"/>
+        <location filename="../skinneddisplay.cpp" line="294"/>
         <source>Balance: %1% right</source>
-        <translation>밸런스: %1% 오른쪽</translation>
+        <translation type="unfinished">밸런스: %1% 오른쪽</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="301"/>
+        <location filename="../skinneddisplay.cpp" line="296"/>
         <source>Balance: %1% left</source>
-        <translation>밸런스: %1% 왼쪽</translation>
+        <translation type="unfinished">밸런스: %1% 왼쪽</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="303"/>
+        <location filename="../skinneddisplay.cpp" line="298"/>
         <source>Balance: center</source>
-        <translation>밸런스: 중앙</translation>
+        <translation type="unfinished">밸런스: 중앙</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="309"/>
+        <location filename="../skinneddisplay.cpp" line="304"/>
         <source>Seek to: %1</source>
-        <translation>찾기: %1</translation>
+        <translation type="unfinished">찾기: %1</translation>
     </message>
 </context>
 <context>
-    <name>MainVisual</name>
+    <name>SkinnedEqWidget</name>
     <message>
-        <location filename="../mainvisual.cpp" line="213"/>
-        <source>Visualization Mode</source>
-        <translation>시각화 모드</translation>
+        <location filename="../skinnedeqwidget.cpp" line="47"/>
+        <source>Equalizer</source>
+        <translation type="unfinished">이퀄라이저</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="216"/>
-        <source>Analyzer</source>
-        <translation>애널라이저</translation>
+        <location filename="../skinnedeqwidget.cpp" line="161"/>
+        <location filename="../skinnedeqwidget.cpp" line="178"/>
+        <source>preset</source>
+        <translation type="unfinished">프리셋</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="217"/>
-        <source>Scope</source>
-        <translation>범위</translation>
+        <location filename="../skinnedeqwidget.cpp" line="262"/>
+        <source>&amp;Load/Delete</source>
+        <translation type="unfinished">불러오기/삭제(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="218"/>
-        <source>Off</source>
-        <translation>끄기</translation>
+        <location filename="../skinnedeqwidget.cpp" line="264"/>
+        <source>&amp;Save Preset</source>
+        <translation type="unfinished">프리셋 저장하기(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="225"/>
-        <source>Analyzer Mode</source>
-        <translation>애널라이저 모드</translation>
+        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <source>&amp;Save Auto-load Preset</source>
+        <translation type="unfinished">자동 불러오기 프리셋 저장(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="228"/>
-        <source>Normal</source>
-        <translation>보통</translation>
+        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <source>&amp;Import</source>
+        <translation type="unfinished">가져오기(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="229"/>
-        <source>Fire</source>
-        <translation>불</translation>
+        <location filename="../skinnedeqwidget.cpp" line="271"/>
+        <source>&amp;Clear</source>
+        <translation type="unfinished">지우기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="230"/>
-        <source>Vertical Lines</source>
-        <translation>수직선</translation>
+        <location filename="../skinnedeqwidget.cpp" line="300"/>
+        <source>Saving Preset</source>
+        <translation type="unfinished">프리셋 저장 중</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="231"/>
-        <source>Lines</source>
-        <translation>선</translation>
+        <location filename="../skinnedeqwidget.cpp" line="301"/>
+        <source>Preset name:</source>
+        <translation type="unfinished">프리셋 이름:</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="232"/>
-        <source>Bars</source>
-        <translation>막대</translation>
+        <location filename="../skinnedeqwidget.cpp" line="302"/>
+        <source>preset #</source>
+        <translation type="unfinished">프리셋 #</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="245"/>
-        <source>Peaks</source>
-        <translation>피크</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="249"/>
-        <source>Refresh Rate</source>
-        <translation>리프레시 비율</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="252"/>
-        <source>50 fps</source>
-        <translation>50 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="253"/>
-        <source>25 fps</source>
-        <translation>25 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="254"/>
-        <source>10 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="255"/>
-        <source>5 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="262"/>
-        <source>Analyzer Falloff</source>
-        <translation>애널라이저 하락</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="265"/>
-        <location filename="../mainvisual.cpp" line="279"/>
-        <source>Slowest</source>
-        <translation>가장 느림</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="266"/>
-        <location filename="../mainvisual.cpp" line="280"/>
-        <source>Slow</source>
-        <translation>느림</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="267"/>
-        <location filename="../mainvisual.cpp" line="281"/>
-        <source>Medium</source>
-        <translation>중간</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="268"/>
-        <location filename="../mainvisual.cpp" line="282"/>
-        <source>Fast</source>
-        <translation>빠름</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="269"/>
-        <location filename="../mainvisual.cpp" line="283"/>
-        <source>Fastest</source>
-        <translation>가장 빠름</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="276"/>
-        <source>Peaks Falloff</source>
-        <translation>피크 하락</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="289"/>
-        <source>Background</source>
-        <translation>배경</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="290"/>
-        <source>Transparent</source>
-        <translation>투명</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="359"/>
-        <source>Appearance</source>
-        <translation>모양새</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="360"/>
-        <source>Shortcuts</source>
-        <translation>단축키</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="430"/>
-        <source>View</source>
-        <translation>보기</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="439"/>
-        <source>Playlist</source>
-        <translation>재생목록</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="466"/>
-        <source>Audio</source>
-        <translation>오디오</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="474"/>
-        <source>Tools</source>
-        <translation>도구</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="556"/>
-        <source>Qmmp</source>
-        <translation>Qmmp</translation>
-    </message>
-</context>
-<context>
-    <name>PlayList</name>
-    <message>
-        <location filename="../playlist.cpp" line="56"/>
-        <source>Playlist</source>
-        <translation>재생목록</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="197"/>
-        <source>&amp;Copy Selection To</source>
-        <translation>선택 영역 복사(&amp;C)</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="228"/>
-        <source>Sort List</source>
-        <translation>목록 정렬</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="231"/>
-        <location filename="../playlist.cpp" line="271"/>
-        <source>By Title</source>
-        <translation>제목별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="234"/>
-        <location filename="../playlist.cpp" line="274"/>
-        <source>By Album</source>
-        <translation>앨범별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="255"/>
-        <location filename="../playlist.cpp" line="295"/>
-        <source>By Disc Number</source>
-        <translation>CD 번호별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="237"/>
-        <location filename="../playlist.cpp" line="277"/>
-        <source>By Artist</source>
-        <translation>아티스트별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="240"/>
-        <location filename="../playlist.cpp" line="280"/>
-        <source>By Album Artist</source>
-        <translation>앨범 아티스트별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="243"/>
-        <location filename="../playlist.cpp" line="283"/>
-        <source>By Filename</source>
-        <translation>파일이름별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="246"/>
-        <location filename="../playlist.cpp" line="286"/>
-        <source>By Path + Filename</source>
-        <translation>경로 + 파일이름별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="249"/>
-        <location filename="../playlist.cpp" line="289"/>
-        <source>By Date</source>
-        <translation>날짜별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="252"/>
-        <location filename="../playlist.cpp" line="292"/>
-        <source>By Track Number</source>
-        <translation>트랙 번호별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="258"/>
-        <location filename="../playlist.cpp" line="298"/>
-        <source>By File Creation Date</source>
-        <translation>파일 생성 날짜별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="261"/>
-        <location filename="../playlist.cpp" line="301"/>
-        <source>By File Modification Date</source>
-        <translation>파일 수정 날짜별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="264"/>
-        <source>By Group</source>
-        <translation>그룹별</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="269"/>
-        <source>Sort Selection</source>
-        <translation>선택 항목 정렬</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="306"/>
-        <source>Randomize List</source>
-        <translation>목록 무작위화</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="308"/>
-        <source>Reverse List</source>
-        <translation>역방향 목록</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="315"/>
-        <source>Actions</source>
-        <translation>동작</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="590"/>
-        <source>Rename Playlist</source>
-        <translation>재생목록 이름변경</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="590"/>
-        <source>Playlist name:</source>
-        <translation>재생목록 이름:</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="611"/>
-        <source>&amp;New PlayList</source>
-        <translation>새 재생목록(&amp;N)</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListBrowser</name>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="14"/>
-        <source>Playlist Browser</source>
-        <translation>재생목록 브라우저</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="31"/>
-        <source>Filter:</source>
-        <translation>필터:</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="47"/>
-        <source>New</source>
-        <translation>새로 만들기</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="54"/>
-        <location filename="../playlistbrowser.cpp" line="43"/>
-        <source>Delete</source>
-        <translation>삭제</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="61"/>
-        <location filename="../forms/playlistbrowser.ui" line="71"/>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <location filename="../playlistbrowser.cpp" line="42"/>
-        <source>Rename</source>
-        <translation>이름변경</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListHeader</name>
-    <message>
-        <location filename="../playlistheader.cpp" line="77"/>
-        <source>Add Column</source>
-        <translation>열 추가</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="78"/>
-        <source>Edit Column</source>
-        <translation>열 편집</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="79"/>
-        <source>Show Queue/Protocol</source>
-        <translation>대기열/프로토콜 표시</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="81"/>
-        <source>Auto-resize</source>
-        <translation>자동 크기 조정</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="84"/>
-        <source>Alignment</source>
-        <translation>맞춤</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="85"/>
-        <source>Left</source>
-        <comment>alignment</comment>
-        <translation>왼쪽</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="86"/>
-        <source>Right</source>
-        <comment>alignment</comment>
-        <translation>오른쪽</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="87"/>
-        <source>Center</source>
-        <comment>alignment</comment>
-        <translation>가운데</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="97"/>
-        <source>Remove Column</source>
-        <translation>열 제거</translation>
-    </message>
-</context>
-<context>
-    <name>PopupSettings</name>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="14"/>
-        <source>Popup Information Settings</source>
-        <translation>팝업 정보 설정</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="29"/>
-        <source>Template</source>
-        <translation>템플릿</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="58"/>
-        <source>Reset</source>
-        <translation>재설정</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="65"/>
-        <source>Insert</source>
-        <translation>삽입</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="75"/>
-        <source>Show cover</source>
-        <translation>표지 표시</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="89"/>
-        <source>Cover size:</source>
-        <translation>표지 크기:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="115"/>
-        <source>Transparency:</source>
-        <translation>투명도:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="145"/>
-        <source>Delay:</source>
-        <translation>지연:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="178"/>
-        <source>ms</source>
-        <translation>ms</translation>
-    </message>
-</context>
-<context>
-    <name>PresetEditor</name>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="14"/>
-        <source>Preset Editor</source>
-        <translation>프리셋 편집기</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="36"/>
-        <source>Preset</source>
-        <translation>프리셋</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="52"/>
-        <source>Auto-preset</source>
-        <translation>자동 프리셋</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="77"/>
-        <source>Load</source>
-        <translation>불러오기</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="84"/>
-        <source>Delete</source>
-        <translation>삭제</translation>
+        <location filename="../skinnedeqwidget.cpp" line="398"/>
+        <source>Import Preset</source>
+        <translation type="unfinished">프리셋 가져오기</translation>
     </message>
 </context>
 <context>
@@ -1172,6 +657,388 @@
         <location filename="../skinnedfactory.cpp" line="69"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
         <translation>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedHotkeyEditor</name>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="33"/>
+        <source>Change shortcut...</source>
+        <translation type="unfinished">단축키 변경...</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
+        <source>Reset</source>
+        <translation type="unfinished">재설정</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
+        <source>Action</source>
+        <translation type="unfinished">동작</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="63"/>
+        <source>Shortcut</source>
+        <translation type="unfinished">단축키</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
+        <source>Playback</source>
+        <translation type="unfinished">플레이백</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
+        <source>View</source>
+        <translation type="unfinished">보기</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
+        <source>Volume</source>
+        <translation type="unfinished">볼륨</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
+        <source>Playlist</source>
+        <translation type="unfinished">재생목록</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
+        <source>Misc</source>
+        <translation type="unfinished">기타</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
+        <source>Reset Shortcuts</source>
+        <translation type="unfinished">단축키 재설정</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
+        <source>Do you want to restore default shortcuts?</source>
+        <translation type="unfinished">기본 단축키를 복원하시겠습니까?</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedMainWindow</name>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="358"/>
+        <source>Appearance</source>
+        <translation type="unfinished">모양새</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="359"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished">단축키</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="433"/>
+        <source>View</source>
+        <translation type="unfinished">보기</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="442"/>
+        <source>Playlist</source>
+        <translation type="unfinished">재생목록</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="461"/>
+        <source>Audio</source>
+        <translation type="unfinished">오디오</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="469"/>
+        <source>Tools</source>
+        <translation type="unfinished">도구</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="541"/>
+        <source>Qmmp</source>
+        <translation type="unfinished">Qmmp</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayList</name>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="56"/>
+        <source>Playlist</source>
+        <translation type="unfinished">재생목록</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="194"/>
+        <source>&amp;Copy Selection To</source>
+        <translation type="unfinished">선택 영역 복사(&amp;C)</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="219"/>
+        <source>Sort List</source>
+        <translation type="unfinished">목록 정렬</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="222"/>
+        <location filename="../skinnedplaylist.cpp" line="262"/>
+        <source>By Title</source>
+        <translation type="unfinished">제목별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="225"/>
+        <location filename="../skinnedplaylist.cpp" line="265"/>
+        <source>By Album</source>
+        <translation type="unfinished">앨범별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="228"/>
+        <location filename="../skinnedplaylist.cpp" line="268"/>
+        <source>By Artist</source>
+        <translation type="unfinished">아티스트별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="231"/>
+        <location filename="../skinnedplaylist.cpp" line="271"/>
+        <source>By Album Artist</source>
+        <translation type="unfinished">앨범 아티스트별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="234"/>
+        <location filename="../skinnedplaylist.cpp" line="274"/>
+        <source>By Filename</source>
+        <translation type="unfinished">파일이름별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="237"/>
+        <location filename="../skinnedplaylist.cpp" line="277"/>
+        <source>By Path + Filename</source>
+        <translation type="unfinished">경로 + 파일이름별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="240"/>
+        <location filename="../skinnedplaylist.cpp" line="280"/>
+        <source>By Date</source>
+        <translation type="unfinished">날짜별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="243"/>
+        <location filename="../skinnedplaylist.cpp" line="283"/>
+        <source>By Track Number</source>
+        <translation type="unfinished">트랙 번호별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="246"/>
+        <location filename="../skinnedplaylist.cpp" line="286"/>
+        <source>By Disc Number</source>
+        <translation type="unfinished">CD 번호별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="249"/>
+        <location filename="../skinnedplaylist.cpp" line="289"/>
+        <source>By File Creation Date</source>
+        <translation type="unfinished">파일 생성 날짜별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="252"/>
+        <location filename="../skinnedplaylist.cpp" line="292"/>
+        <source>By File Modification Date</source>
+        <translation type="unfinished">파일 수정 날짜별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="255"/>
+        <source>By Group</source>
+        <translation type="unfinished">그룹별</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="260"/>
+        <source>Sort Selection</source>
+        <translation type="unfinished">선택 항목 정렬</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="297"/>
+        <source>Randomize List</source>
+        <translation type="unfinished">목록 무작위화</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="299"/>
+        <source>Reverse List</source>
+        <translation type="unfinished">역방향 목록</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <source>Actions</source>
+        <translation type="unfinished">동작</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <source>Rename Playlist</source>
+        <translation type="unfinished">재생목록 이름변경</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <source>Playlist name:</source>
+        <translation type="unfinished">재생목록 이름:</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <source>&amp;New PlayList</source>
+        <translation type="unfinished">새 재생목록(&amp;N)</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayListBrowser</name>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="14"/>
+        <source>Playlist Browser</source>
+        <translation type="unfinished">재생목록 브라우저</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
+        <source>Filter:</source>
+        <translation type="unfinished">필터:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="47"/>
+        <source>New</source>
+        <translation type="unfinished">새로 만들기</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="54"/>
+        <location filename="../skinnedplaylistbrowser.cpp" line="45"/>
+        <source>Delete</source>
+        <translation type="unfinished">삭제</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="61"/>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="71"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistbrowser.cpp" line="44"/>
+        <source>Rename</source>
+        <translation type="unfinished">이름변경</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayListHeader</name>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="77"/>
+        <source>Add Column</source>
+        <translation type="unfinished">열 추가</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="78"/>
+        <source>Edit Column</source>
+        <translation type="unfinished">열 편집</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="79"/>
+        <source>Show Queue/Protocol</source>
+        <translation type="unfinished">대기열/프로토콜 표시</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="81"/>
+        <source>Auto-resize</source>
+        <translation type="unfinished">자동 크기 조정</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="84"/>
+        <source>Alignment</source>
+        <translation type="unfinished">맞춤</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="85"/>
+        <source>Left</source>
+        <comment>alignment</comment>
+        <translation type="unfinished">왼쪽</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="86"/>
+        <source>Right</source>
+        <comment>alignment</comment>
+        <translation type="unfinished">오른쪽</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="87"/>
+        <source>Center</source>
+        <comment>alignment</comment>
+        <translation type="unfinished">가운데</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="97"/>
+        <source>Remove Column</source>
+        <translation type="unfinished">열 제거</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPopupSettings</name>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="14"/>
+        <source>Popup Information Settings</source>
+        <translation type="unfinished">팝업 정보 설정</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="29"/>
+        <source>Template</source>
+        <translation type="unfinished">템플릿</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="58"/>
+        <source>Reset</source>
+        <translation type="unfinished">재설정</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="65"/>
+        <source>Insert</source>
+        <translation type="unfinished">삽입</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="75"/>
+        <source>Show cover</source>
+        <translation type="unfinished">표지 표시</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">표지 크기:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">투명도:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="145"/>
+        <source>Delay:</source>
+        <translation type="unfinished">지연:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="178"/>
+        <source>ms</source>
+        <translation type="unfinished">ms</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPresetEditor</name>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="14"/>
+        <source>Preset Editor</source>
+        <translation type="unfinished">프리셋 편집기</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="36"/>
+        <source>Preset</source>
+        <translation type="unfinished">프리셋</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="61"/>
+        <source>Auto-preset</source>
+        <translation type="unfinished">자동 프리셋</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="95"/>
+        <source>Load</source>
+        <translation type="unfinished">불러오기</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="102"/>
+        <source>Delete</source>
+        <translation type="unfinished">삭제</translation>
     </message>
 </context>
 <context>
@@ -1439,42 +1306,180 @@
         <translation>&apos;새 재생목록&apos; 버튼 표시</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="106"/>
+        <location filename="../skinnedsettings.cpp" line="109"/>
         <source>Select Skin Files</source>
         <translation>스킨 파일 선택</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="107"/>
+        <location filename="../skinnedsettings.cpp" line="110"/>
         <source>Skin files</source>
         <translation>스킨 파일</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="186"/>
+        <location filename="../skinnedsettings.cpp" line="180"/>
+        <source>Default skin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedsettings.cpp" line="189"/>
         <source>Unarchived skin %1</source>
         <translation>압축되지 않은 스킨 %1</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="186"/>
+        <location filename="../skinnedsettings.cpp" line="189"/>
         <source>Archived skin %1</source>
         <translation>압축된 스킨 %1</translation>
     </message>
 </context>
 <context>
-    <name>TextScroller</name>
+    <name>SkinnedTextScroller</name>
     <message>
-        <location filename="../textscroller.cpp" line="54"/>
+        <location filename="../skinnedtextscroller.cpp" line="54"/>
         <source>Autoscroll Songname</source>
-        <translation>자동 스크롤 곡 제목</translation>
+        <translation type="unfinished">자동 스크롤 곡 제목</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="55"/>
+        <location filename="../skinnedtextscroller.cpp" line="55"/>
         <source>Transparent Background</source>
-        <translation>투명 배경</translation>
+        <translation type="unfinished">투명 배경</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="122"/>
+        <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation>버퍼링: %1%</translation>
+        <translation type="unfinished">버퍼링: %1%</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedVisualization</name>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="211"/>
+        <source>Visualization Mode</source>
+        <translation type="unfinished">시각화 모드</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="214"/>
+        <source>Analyzer</source>
+        <translation type="unfinished">애널라이저</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="215"/>
+        <source>Scope</source>
+        <translation type="unfinished">범위</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="216"/>
+        <source>Off</source>
+        <translation type="unfinished">끄기</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="223"/>
+        <source>Analyzer Mode</source>
+        <translation type="unfinished">애널라이저 모드</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="226"/>
+        <source>Normal</source>
+        <translation type="unfinished">보통</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="227"/>
+        <source>Fire</source>
+        <translation type="unfinished">불</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="228"/>
+        <source>Vertical Lines</source>
+        <translation type="unfinished">수직선</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="229"/>
+        <source>Lines</source>
+        <translation type="unfinished">선</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="230"/>
+        <source>Bars</source>
+        <translation type="unfinished">막대</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="243"/>
+        <source>Peaks</source>
+        <translation type="unfinished">피크</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="247"/>
+        <source>Refresh Rate</source>
+        <translation type="unfinished">리프레시 비율</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="250"/>
+        <source>50 fps</source>
+        <translation type="unfinished">50 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="251"/>
+        <source>25 fps</source>
+        <translation type="unfinished">25 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="252"/>
+        <source>10 fps</source>
+        <translation type="unfinished">10 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="253"/>
+        <source>5 fps</source>
+        <translation type="unfinished">5 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="260"/>
+        <source>Analyzer Falloff</source>
+        <translation type="unfinished">애널라이저 하락</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="263"/>
+        <location filename="../skinnedvisualization.cpp" line="277"/>
+        <source>Slowest</source>
+        <translation type="unfinished">가장 느림</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="264"/>
+        <location filename="../skinnedvisualization.cpp" line="278"/>
+        <source>Slow</source>
+        <translation type="unfinished">느림</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="265"/>
+        <location filename="../skinnedvisualization.cpp" line="279"/>
+        <source>Medium</source>
+        <translation type="unfinished">중간</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="266"/>
+        <location filename="../skinnedvisualization.cpp" line="280"/>
+        <source>Fast</source>
+        <translation type="unfinished">빠름</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="267"/>
+        <location filename="../skinnedvisualization.cpp" line="281"/>
+        <source>Fastest</source>
+        <translation type="unfinished">가장 빠름</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="274"/>
+        <source>Peaks Falloff</source>
+        <translation type="unfinished">피크 하락</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="287"/>
+        <source>Background</source>
+        <translation type="unfinished">배경</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="288"/>
+        <source>Transparent</source>
+        <translation type="unfinished">투명</translation>
     </message>
 </context>
 </TS>

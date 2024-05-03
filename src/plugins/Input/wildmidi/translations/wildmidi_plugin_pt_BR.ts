@@ -14,22 +14,22 @@
         <translation>Arquivos Midi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="106"/>
+        <location filename="../decoderwildmidifactory.cpp" line="105"/>
         <source>About WildMidi Audio Plugin</source>
         <translation>Sobre o plugin WildMidi Audio</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="107"/>
+        <location filename="../decoderwildmidifactory.cpp" line="106"/>
         <source>Qmmp WildMidi Audio Plugin</source>
         <translation>Plugin Qmmp WildMidi Audio</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="108"/>
+        <location filename="../decoderwildmidifactory.cpp" line="107"/>
         <source>This plugin uses WildMidi library to play midi files</source>
         <translation>Este plugin utiliza a biblioteca WildMidi para a reprodução</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="109"/>
+        <location filename="../decoderwildmidifactory.cpp" line="108"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62,12 +62,12 @@
         <translation type="unfinished">Reverberação</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="41"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Hz</translation>
     </message>

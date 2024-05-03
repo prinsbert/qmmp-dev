@@ -9,17 +9,17 @@
         <translation>JACK 플러그인</translation>
     </message>
     <message>
-        <location filename="../outputjackfactory.cpp" line="53"/>
+        <location filename="../outputjackfactory.cpp" line="54"/>
         <source>About Jack Output Plugin</source>
         <translation>Jack 출력 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../outputjackfactory.cpp" line="54"/>
+        <location filename="../outputjackfactory.cpp" line="55"/>
         <source>Qmmp Jack Output Plugin</source>
         <translation>Qmmp Jack 출력 플러그인</translation>
     </message>
     <message>
-        <location filename="../outputjackfactory.cpp" line="55"/>
+        <location filename="../outputjackfactory.cpp" line="56"/>
         <source>Written by: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</source>
         <translation>작성자: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</translation>
     </message>

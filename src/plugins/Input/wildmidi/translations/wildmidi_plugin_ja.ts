@@ -14,22 +14,22 @@
         <translation>MIDI ファイル</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="106"/>
+        <location filename="../decoderwildmidifactory.cpp" line="105"/>
         <source>About WildMidi Audio Plugin</source>
         <translation>WildMidi 音響プラグインについて</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="107"/>
+        <location filename="../decoderwildmidifactory.cpp" line="106"/>
         <source>Qmmp WildMidi Audio Plugin</source>
         <translation>QMMP WildMidi 音響プラグイン</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="108"/>
+        <location filename="../decoderwildmidifactory.cpp" line="107"/>
         <source>This plugin uses WildMidi library to play midi files</source>
         <translation>このプラグインは MIDI ファイルの再生に WildMidi ライブラリを利用します</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="109"/>
+        <location filename="../decoderwildmidifactory.cpp" line="108"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -62,12 +62,12 @@
         <translation type="unfinished">反響効果 (リバーブ)</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="41"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Hz</translation>
     </message>

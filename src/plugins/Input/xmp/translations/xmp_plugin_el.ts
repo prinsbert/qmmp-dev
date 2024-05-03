@@ -14,22 +14,22 @@
         <translation>Αρχεία αρθρώματος</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="110"/>
+        <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
         <translation>Περί του πρόσθετο ήχου XMP</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>Qmmp πρόσθετο ήχου XMP</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="112"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="113"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
         <translation>Μεταγλωττίστηκε χρησιμοποιώντας την βιβλιοθήκη libxmp-%1</translation>
     </message>
@@ -140,32 +140,32 @@
         <translation type="unfinished">Ρυθμός δειγματοληψίας:</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="34"/>
+        <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
         <translation type="unfinished">22050 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="35"/>
+        <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="36"/>
+        <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="37"/>
+        <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
         <translation type="unfinished">Κοντινότερος γείτονας</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="38"/>
+        <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
         <translation type="unfinished">Γραμμικό</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="39"/>
+        <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
         <translation type="unfinished">Κυβική πολυωνυμική συνάρτηση (spline)</translation>
     </message>

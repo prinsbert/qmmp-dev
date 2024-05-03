@@ -14,22 +14,22 @@
         <translation>SID 파일</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="113"/>
+        <location filename="../decodersidfactory.cpp" line="112"/>
         <source>About SID Audio Plugin</source>
         <translation>SID 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="114"/>
+        <location filename="../decodersidfactory.cpp" line="113"/>
         <source>Qmmp SID Audio Plugin</source>
         <translation>Qmmp SID 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="115"/>
+        <location filename="../decodersidfactory.cpp" line="114"/>
         <source>This plugin plays Commodore 64 music files using libsidplayfp library</source>
         <translation>이 플러그인은 libsidplayfp 라이브러리를 사용하여 Commodore 64 음악 파일을 재생합니다</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="116"/>
+        <location filename="../decodersidfactory.cpp" line="115"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -77,12 +77,12 @@
         <translation type="unfinished">에뮬레이션:</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.cpp" line="43"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Hz</translation>
     </message>

@@ -9,17 +9,17 @@
         <translation>Mono-naar-stereoplug-in</translation>
     </message>
     <message>
-        <location filename="../effectmonotostereofactory.cpp" line="48"/>
+        <location filename="../effectmonotostereofactory.cpp" line="49"/>
         <source>About Mono to Stereo Converter Plugin</source>
         <translation>Over de Mono-naar-stereoplug-in</translation>
     </message>
     <message>
-        <location filename="../effectmonotostereofactory.cpp" line="49"/>
+        <location filename="../effectmonotostereofactory.cpp" line="50"/>
         <source>Qmmp Mono to Stereo Converter Plugin</source>
         <translation>Mono-naar-stereoplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectmonotostereofactory.cpp" line="50"/>
+        <location filename="../effectmonotostereofactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

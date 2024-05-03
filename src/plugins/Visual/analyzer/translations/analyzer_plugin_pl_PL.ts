@@ -90,6 +90,14 @@
     </message>
 </context>
 <context>
+    <name>AnalyzerColorWidget</name>
+    <message>
+        <location filename="../analyzercolorwidget.cpp" line="37"/>
+        <source>Select Color</source>
+        <translation type="unfinished">Wybierz kolor</translation>
+    </message>
+</context>
+<context>
     <name>AnalyzerSettingsDialog</name>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="14"/>
@@ -135,14 +143,6 @@
         <location filename="../analyzersettingsdialog.ui" line="248"/>
         <source>Analyzer #3:</source>
         <translation type="unfinished">Analizator #3:</translation>
-    </message>
-</context>
-<context>
-    <name>ColorWidget</name>
-    <message>
-        <location filename="../colorwidget.cpp" line="37"/>
-        <source>Select Color</source>
-        <translation>Wybierz kolor</translation>
     </message>
 </context>
 <context>

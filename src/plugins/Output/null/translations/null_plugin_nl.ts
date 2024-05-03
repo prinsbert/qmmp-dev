@@ -9,17 +9,17 @@
         <translation>Null-plug-in</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="54"/>
+        <location filename="../outputnullfactory.cpp" line="55"/>
         <source>About Null Output Plugin</source>
         <translation>Over de Null-uitvoerplug-in</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="55"/>
+        <location filename="../outputnullfactory.cpp" line="56"/>
         <source>Qmmp Null Output Plugin</source>
         <translation>Null-uitvoerplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="56"/>
+        <location filename="../outputnullfactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

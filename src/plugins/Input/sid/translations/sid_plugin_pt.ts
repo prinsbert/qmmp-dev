@@ -14,22 +14,22 @@
         <translation>Ficheiros SID</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="113"/>
+        <location filename="../decodersidfactory.cpp" line="112"/>
         <source>About SID Audio Plugin</source>
         <translation>Acerca de suplemento SID Audio</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="114"/>
+        <location filename="../decodersidfactory.cpp" line="113"/>
         <source>Qmmp SID Audio Plugin</source>
         <translation>Suplemento Qmmp SID Audio</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="115"/>
+        <location filename="../decodersidfactory.cpp" line="114"/>
         <source>This plugin plays Commodore 64 music files using libsidplayfp library</source>
         <translation>Este suplemento reproduz os ficheiros de som Commodore 64 com a biblioteca libsidplayfp</translation>
     </message>
     <message>
-        <location filename="../decodersidfactory.cpp" line="116"/>
+        <location filename="../decodersidfactory.cpp" line="115"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -77,12 +77,12 @@
         <translation type="unfinished">Emulação:</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.cpp" line="42"/>
+        <location filename="../sidsettingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../sidsettingsdialog.cpp" line="43"/>
+        <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Hz</translation>
     </message>

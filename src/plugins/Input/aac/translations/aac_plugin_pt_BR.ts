@@ -14,17 +14,17 @@
         <translation>Arquivos AAC</translation>
     </message>
     <message>
-        <location filename="../decoderaacfactory.cpp" line="103"/>
+        <location filename="../decoderaacfactory.cpp" line="105"/>
         <source>About AAC Audio Plugin</source>
         <translation>Sobre o plugin de áudio AAC</translation>
     </message>
     <message>
-        <location filename="../decoderaacfactory.cpp" line="104"/>
+        <location filename="../decoderaacfactory.cpp" line="106"/>
         <source>Qmmp AAC Audio Plugin</source>
         <translation>Plugin Qmmp AAC Audio</translation>
     </message>
     <message>
-        <location filename="../decoderaacfactory.cpp" line="105"/>
+        <location filename="../decoderaacfactory.cpp" line="107"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

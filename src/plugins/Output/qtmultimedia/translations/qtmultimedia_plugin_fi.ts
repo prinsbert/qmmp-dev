@@ -37,7 +37,7 @@
         <translation>Laite:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="37"/>
+        <location filename="../settingsdialog.cpp" line="36"/>
         <source>Default</source>
         <translation>Oletus</translation>
     </message>

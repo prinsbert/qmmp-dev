@@ -9,37 +9,37 @@
         <translation>Plugin MMS</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="52"/>
+        <location filename="../mmsinputfactory.cpp" line="51"/>
         <source>About MMS Transport Plugin</source>
         <translation>Tentang Plugin Transport MMS</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="53"/>
+        <location filename="../mmsinputfactory.cpp" line="52"/>
         <source>Qmmp MMS Transport Plugin</source>
         <translation>Plugin Transport MMS Qmmp</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="54"/>
+        <location filename="../mmsinputfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>MmsSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../mmssettingsdialog.ui" line="14"/>
         <source>MMS Plugin Settings</source>
-        <translation>Setelan Plugin MMS</translation>
+        <translation type="unfinished">Setelan Plugin MMS</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../mmssettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Ukuran buffer:</translation>
+        <translation type="unfinished">Ukuran buffer:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../mmssettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>KB</translation>
+        <translation type="unfinished">KB</translation>
     </message>
 </context>
 </TS>

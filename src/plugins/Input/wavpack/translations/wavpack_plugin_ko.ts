@@ -14,22 +14,22 @@
         <translation>WavPack 파일</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="182"/>
+        <location filename="../decoderwavpackfactory.cpp" line="184"/>
         <source>About WavPack Audio Plugin</source>
         <translation>WavPack 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="183"/>
+        <location filename="../decoderwavpackfactory.cpp" line="185"/>
         <source>Qmmp WavPack Audio Plugin</source>
         <translation>Qmmp WavPack 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="184"/>
+        <location filename="../decoderwavpackfactory.cpp" line="186"/>
         <source>WavPack library version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="186"/>
+        <location filename="../decoderwavpackfactory.cpp" line="188"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

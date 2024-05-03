@@ -14,22 +14,22 @@
         <translation>Fichiers Midi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="106"/>
+        <location filename="../decoderwildmidifactory.cpp" line="105"/>
         <source>About WildMidi Audio Plugin</source>
         <translation>À propos du greffon audio WildMidi</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="107"/>
+        <location filename="../decoderwildmidifactory.cpp" line="106"/>
         <source>Qmmp WildMidi Audio Plugin</source>
         <translation>Greffon audio WildMidi pour Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="108"/>
+        <location filename="../decoderwildmidifactory.cpp" line="107"/>
         <source>This plugin uses WildMidi library to play midi files</source>
         <translation>Ce greffon utilise WildMidi pour jouer les fichiers Midi.</translation>
     </message>
     <message>
-        <location filename="../decoderwildmidifactory.cpp" line="109"/>
+        <location filename="../decoderwildmidifactory.cpp" line="108"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -62,12 +62,12 @@
         <translation type="unfinished">Réverbération</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44&#xa0;100&#xa0;Hz</translation>
     </message>
     <message>
-        <location filename="../wildmidisettingsdialog.cpp" line="41"/>
+        <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48&#xa0;000&#xa0;Hz</translation>
     </message>

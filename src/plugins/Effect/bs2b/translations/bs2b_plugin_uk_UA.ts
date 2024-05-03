@@ -35,12 +35,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="62"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="61"/>
         <source>%1 Hz, %2 us</source>
         <translation type="unfinished">%1 Гц, %2 мкс</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="69"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="68"/>
         <source>%1 dB</source>
         <translation type="unfinished">%1 дБ</translation>
     </message>
@@ -53,37 +53,37 @@
         <translation>Модуль BS2B</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="51"/>
+        <location filename="../effectbs2bfactory.cpp" line="50"/>
         <source>About BS2B Effect Plugin</source>
         <translation>Про модуль ефектів BS2B</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="53"/>
+        <location filename="../effectbs2bfactory.cpp" line="52"/>
         <source>This is the Qmmp plugin version of Boris Mikhaylov&apos;s headphone DSP effect &quot;Bauer stereophonic-to-binaural&quot;, abbreviated bs2b.</source>
         <translation>Цей модуль додає ефект &quot;Bauer stereophonic-to-binaural&quot; (скорочено bs2b) Бориса Михайлова.</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="56"/>
+        <location filename="../effectbs2bfactory.cpp" line="55"/>
         <source>Visit %1 for more details</source>
         <translation>Для отримання інформації відвідайте %1</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="58"/>
+        <location filename="../effectbs2bfactory.cpp" line="57"/>
         <source>Compiled against libbs2b-%1</source>
         <translation>Зібрано з libbs2b-%1</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="60"/>
+        <location filename="../effectbs2bfactory.cpp" line="59"/>
         <source>Developers:</source>
         <translation>Розробники:</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="61"/>
+        <location filename="../effectbs2bfactory.cpp" line="60"/>
         <source>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
         <translation>Ілля Котов &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="62"/>
+        <location filename="../effectbs2bfactory.cpp" line="61"/>
         <source>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</source>
         <translation></translation>
     </message>

@@ -9,22 +9,22 @@
         <translation>Icecast 插件</translation>
     </message>
     <message>
-        <location filename="../outputshoutfactory.cpp" line="64"/>
+        <location filename="../outputshoutfactory.cpp" line="63"/>
         <source>About Icecast Output Plugin</source>
         <translation>关于 Icecast 输出插件</translation>
     </message>
     <message>
-        <location filename="../outputshoutfactory.cpp" line="65"/>
+        <location filename="../outputshoutfactory.cpp" line="64"/>
         <source>Qmmp Icecast Output Plugin</source>
         <translation>Qmmp Icecast 输出插件</translation>
     </message>
     <message>
-        <location filename="../outputshoutfactory.cpp" line="66"/>
+        <location filename="../outputshoutfactory.cpp" line="65"/>
         <source>Compiled against libshout-%1</source>
         <translation>编译依赖 libshout-%1</translation>
     </message>
     <message>
-        <location filename="../outputshoutfactory.cpp" line="67"/>
+        <location filename="../outputshoutfactory.cpp" line="66"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

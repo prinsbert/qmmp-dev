@@ -9,17 +9,17 @@
         <translation>Módulo de salida nula</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="54"/>
+        <location filename="../outputnullfactory.cpp" line="55"/>
         <source>About Null Output Plugin</source>
         <translation>Acerca del módulo de salida nula</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="55"/>
+        <location filename="../outputnullfactory.cpp" line="56"/>
         <source>Qmmp Null Output Plugin</source>
         <translation>Módulo de salida nula para Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputnullfactory.cpp" line="56"/>
+        <location filename="../outputnullfactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

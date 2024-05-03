@@ -9,22 +9,22 @@
         <translation>立体声扩展插件</translation>
     </message>
     <message>
-        <location filename="../effectstereofactory.cpp" line="50"/>
+        <location filename="../effectstereofactory.cpp" line="49"/>
         <source>About Extra Stereo Plugin</source>
         <translation>关于立体声扩展插件</translation>
     </message>
     <message>
-        <location filename="../effectstereofactory.cpp" line="51"/>
+        <location filename="../effectstereofactory.cpp" line="50"/>
         <source>Qmmp Extra Stereo Plugin</source>
         <translation>Qmmp 立体声扩展插件</translation>
     </message>
     <message>
-        <location filename="../effectstereofactory.cpp" line="52"/>
+        <location filename="../effectstereofactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../effectstereofactory.cpp" line="53"/>
+        <location filename="../effectstereofactory.cpp" line="52"/>
         <source>Based on the Extra Stereo Plugin for Xmms by Johan Levin</source>
         <translation>基于 Johan Levin 的 Xmms 立体声扩展插件</translation>
     </message>
@@ -45,11 +45,6 @@
         <location filename="../stereosettingsdialog.ui" line="54"/>
         <source>-</source>
         <translation type="unfinished">-</translation>
-    </message>
-    <message>
-        <location filename="../stereosettingsdialog.cpp" line="59"/>
-        <source>%1</source>
-        <translation type="unfinished">%1</translation>
     </message>
 </context>
 </TS>

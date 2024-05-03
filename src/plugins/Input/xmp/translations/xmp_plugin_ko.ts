@@ -14,22 +14,22 @@
         <translation>모듈 파일</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="110"/>
+        <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
         <translation>XMP 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>Qmmp XMP 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="112"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="113"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
         <translation>libxmp-%1에 대해 컴파일됨</translation>
     </message>
@@ -140,32 +140,32 @@
         <translation type="unfinished">샘플 레이트:</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="34"/>
+        <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
         <translation type="unfinished">22050 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="35"/>
+        <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="36"/>
+        <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="37"/>
+        <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
         <translation type="unfinished">최근접</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="38"/>
+        <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
         <translation type="unfinished">선형</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="39"/>
+        <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
         <translation type="unfinished">큐빅 스플라인</translation>
     </message>

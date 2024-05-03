@@ -9,17 +9,17 @@
         <translation>Модуль SoX Resampler</translation>
     </message>
     <message>
-        <location filename="../effectsoxrfactory.cpp" line="51"/>
+        <location filename="../effectsoxrfactory.cpp" line="50"/>
         <source>About SoX Resampler Plugin</source>
         <translation>О модуле SoX Resampler</translation>
     </message>
     <message>
-        <location filename="../effectsoxrfactory.cpp" line="52"/>
+        <location filename="../effectsoxrfactory.cpp" line="51"/>
         <source>Qmmp SoX Resampler Plugin</source>
         <translation>Преобразователь частоты SoX Resampler для Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectsoxrfactory.cpp" line="53"/>
+        <location filename="../effectsoxrfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -42,27 +42,27 @@
         <translation type="unfinished">Качество:</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="35"/>
+        <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
         <translation type="unfinished">Самое низкое (быстро)</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="36"/>
+        <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
         <translation type="unfinished">Низкое</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="37"/>
+        <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
         <translation type="unfinished">Среднее</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="38"/>
+        <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
         <translation type="unfinished">Высокое</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="39"/>
+        <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
         <translation type="unfinished">Очень высокое</translation>
     </message>
