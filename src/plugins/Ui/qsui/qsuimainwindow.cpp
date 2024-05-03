@@ -53,14 +53,14 @@
 #include "aboutqsuidialog.h"
 #include "qsuikeyboardmanager.h"
 #include "qsuicoverwidget.h"
-#include "playlistbrowser.h"
+#include "qsuiplaylistbrowser.h"
 #include "volumeslider.h"
 #include "qsuitabwidget.h"
 #include "qsuiquicksearch.h"
 #include "qsuiwaveformseekbar.h"
 #include "qsuistatusbar.h"
 #include "dockwidgetlist.h"
-#include "equalizer.h"
+#include "qsuiequalizer.h"
 
 #define KEY_OFFSET 10000
 
@@ -165,7 +165,7 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     //cover
     m_ui.coverDockWidget->setWidget(new QSUiCoverWidget(this));
     //playlists
-    m_ui.playlistsDockWidget->setWidget(new PlayListBrowser(m_pl_manager, this));
+    m_ui.playlistsDockWidget->setWidget(new QSUiPlayListBrowser(m_pl_manager, this));
     //dock widgets (plugins)
     m_dockWidgetList = new DockWidgetList(this);
     //other
@@ -809,7 +809,7 @@ void QSUiMainWindow::loadPlayList()
 
 void QSUiMainWindow::showEqualizer()
 {
-    Equalizer equalizer(this);
+    QSUiEqualizer equalizer(this);
     equalizer.exec();
 }
 

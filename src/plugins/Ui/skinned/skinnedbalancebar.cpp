@@ -23,7 +23,7 @@
 #include <cmath>
 #include "skin.h"
 #include "skinnedbutton.h"
-#include "mainwindow.h"
+#include "skinnedmainwindow.h"
 #include "skinnedbalancebar.h"
 
 SkinnedBalanceBar::SkinnedBalanceBar(QWidget *parent)

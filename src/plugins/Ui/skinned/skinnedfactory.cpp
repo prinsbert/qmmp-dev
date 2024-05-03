@@ -25,7 +25,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <qmmp/qmmpsettings.h>
-#include "mainwindow.h"
+#include "skinnedmainwindow.h"
 #include "skinnedfactory.h"
 
 UiProperties SkinnedFactory::properties() const
@@ -53,7 +53,7 @@ QObject *SkinnedFactory::SkinnedFactory::create()
     }
 #endif
     QmmpSettings::instance()->readEqSettings(EqSettings::EQ_BANDS_10);
-    return new MainWindow();
+    return new SkinnedMainWindow();
 }
 
 void SkinnedFactory::showAbout(QWidget *parent)

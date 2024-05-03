@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,21 +33,18 @@ Q_OBJECT
 public:
     PixmapWidget(QWidget *parent = nullptr);
 
-    virtual ~PixmapWidget();
-
+    virtual ~PixmapWidget() = default;
     virtual void setPixmap(const QPixmap &pixmap, bool fixed_size = false);
 
 protected:
-    void paintEvent ( QPaintEvent * event ) override;
-    virtual void mousePressEvent(QMouseEvent*) override;
+    virtual void paintEvent(QPaintEvent *event) override;
+    virtual void mousePressEvent(QMouseEvent *event) override;
 
 signals:
     void mouseClicked();
 
 private:
       QPixmap m_pixmap;
-
-
 
 };
 

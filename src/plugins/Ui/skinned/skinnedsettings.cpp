@@ -28,7 +28,7 @@
 #include <qmmpui/metadataformattermenu.h>
 #include "skinreader.h"
 #include "skin.h"
-#include "popupsettings.h"
+#include "skinnedpopupsettings.h"
 #include "skinnedsettings.h"
 
 SkinnedSettings::SkinnedSettings(QWidget *parent) : QWidget(parent)
@@ -201,7 +201,7 @@ void SkinnedSettings::loadSkins()
 
 void SkinnedSettings::on_popupTemplateButton_clicked()
 {
-    PopupSettings *p = new PopupSettings(this);
+    SkinnedPopupSettings *p = new SkinnedPopupSettings(this);
     p->exec();
     p->deleteLater();
 }

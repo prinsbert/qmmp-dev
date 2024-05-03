@@ -22,7 +22,7 @@
 #include <qmmpui/shortcutdialog.h>
 #include "qsuiactionmanager.h"
 #include "qsuihotkeyeditor.h"
-#include "shortcutitem.h"
+#include "qsuishortcutitem.h"
 #include "ui_qsuihotkeyeditor.h"
 
 using namespace Qt::Literals::StringLiterals;
@@ -41,7 +41,7 @@ QSUiHotkeyEditor::~QSUiHotkeyEditor()
 
 void QSUiHotkeyEditor::on_changeShortcutButton_clicked()
 {
-    ShortcutItem *item = dynamic_cast<ShortcutItem *> (m_ui->shortcutTreeWidget->currentItem());
+    QSUiShortcutItem *item = dynamic_cast<QSUiShortcutItem *> (m_ui->shortcutTreeWidget->currentItem());
     if(!item)
         return;
     ShortcutDialog editor(item->action()->shortcut().toString(), this);
@@ -69,31 +69,31 @@ void QSUiHotkeyEditor::loadShortcuts()
     //playback
     QTreeWidgetItem *item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Playback") });
     for(int i = QSUiActionManager::PLAY; i <= QSUiActionManager::CLEAR_QUEUE; ++i)
-        new ShortcutItem(item, i);
+        new QSUiShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //view
     item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("View") });
     for(int i = QSUiActionManager::WM_ALLWAYS_ON_TOP; i <= QSUiActionManager::UI_BLOCK_TOOLBARS; ++i)
-        new ShortcutItem(item, i);
+        new QSUiShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //volume
     item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Volume") });
     for(int i = QSUiActionManager::VOL_ENC; i <= QSUiActionManager::VOL_MUTE; ++i)
-        new ShortcutItem(item, i);
+        new QSUiShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //playlist
     item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Playlist") });
     for(int i = QSUiActionManager::PL_ADD_FILE; i <= QSUiActionManager::PL_SHOW_HEADER; ++i)
-        new ShortcutItem(item, i);
+        new QSUiShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //misc
     item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Misc") });
     for(int i = QSUiActionManager::EQUALIZER; i <= QSUiActionManager::QUIT; ++i)
-        new ShortcutItem(item, i);
+        new QSUiShortcutItem(item, i);
     item->setExpanded(true);
     m_ui->shortcutTreeWidget->addTopLevelItem(item);
     //tools
@@ -101,7 +101,7 @@ void QSUiHotkeyEditor::loadShortcuts()
     {
         item = new QTreeWidgetItem (m_ui->shortcutTreeWidget, { tr("Tools") });
         for(QDockWidget *w : QSUiActionManager::instance()->dockWidgtes())
-            new ShortcutItem(item, w);
+            new QSUiShortcutItem(item, w);
         item->setExpanded(true);
         m_ui->shortcutTreeWidget->addTopLevelItem(item);
     }
