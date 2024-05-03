@@ -26,45 +26,52 @@
 #include <QSortFilterProxyModel>
 #include <QIcon>
 #include <qmmpui/playlistmanager.h>
+#include "ui_skinnedplaylistbrowser.h"
 #include "skinnedplaylistbrowser.h"
 
-SkinnedPlayListBrowser::SkinnedPlayListBrowser(PlayListManager *manager, QWidget *parent) : QDialog(parent)
+SkinnedPlayListBrowser::SkinnedPlayListBrowser(PlayListManager *manager, QWidget *parent) : QDialog(parent),
+    m_ui(new Ui::SkinnedPlayListBrowser)
 {
     setAttribute(Qt::WA_DeleteOnClose, true);
     setAttribute(Qt::WA_QuitOnClose, false);
     setWindowModality(Qt::NonModal);
-    m_ui.setupUi(this);
-    m_ui.filterLineEdit->installEventFilter(this);
+    m_ui->setupUi(this);
+    m_ui->filterLineEdit->installEventFilter(this);
     m_pl_manager = manager;
     connect(m_pl_manager, &PlayListManager::playListsChanged, this, &SkinnedPlayListBrowser::updateList);
-    connect(m_ui.newButton, &QPushButton::clicked, this, [this] { m_pl_manager->createPlayList(); });
+    connect(m_ui->newButton, &QPushButton::clicked, this, [this] { m_pl_manager->createPlayList(); });
     //actions
     QAction *renameAct = new QAction(tr("Rename"), this);
     QAction *removeAct = new QAction(QIcon::fromTheme(u"window-close"_s), tr("Delete"), this);
     connect(renameAct, &QAction::triggered, this, &SkinnedPlayListBrowser::rename);
     connect(removeAct, &QAction::triggered, this, &SkinnedPlayListBrowser::on_deleteButton_clicked);
-    m_ui.listView->setContextMenuPolicy(Qt::ActionsContextMenu);
-    m_ui.listView->addAction(renameAct);
-    m_ui.listView->addAction(removeAct);
+    m_ui->listView->setContextMenuPolicy(Qt::ActionsContextMenu);
+    m_ui->listView->addAction(renameAct);
+    m_ui->listView->addAction(removeAct);
     m_listModel = new QStandardItemModel(this);
     m_proxyModel = new QSortFilterProxyModel(this);
     m_proxyModel->setDynamicSortFilter(true);
     m_proxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     m_proxyModel->setSourceModel(m_listModel);
-    m_ui.listView->setModel(m_proxyModel);
-    m_ui.downButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowDown));
-    m_ui.upButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowUp));
-    m_ui.newButton->setIcon(QIcon::fromTheme(u"document-new"_s));
-    m_ui.deleteButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
+    m_ui->listView->setModel(m_proxyModel);
+    m_ui->downButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowDown));
+    m_ui->upButton->setIcon(QApplication::style()->standardIcon(QStyle::SP_ArrowUp));
+    m_ui->newButton->setIcon(QIcon::fromTheme(u"document-new"_s));
+    m_ui->deleteButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
     connect(m_listModel, &QStandardItemModel::itemChanged, this, &SkinnedPlayListBrowser::updatePlayListName);
-    connect(m_ui.listView->selectionModel(), &QItemSelectionModel::currentRowChanged, this,
+    connect(m_ui->listView->selectionModel(), &QItemSelectionModel::currentRowChanged, this,
             &SkinnedPlayListBrowser::updateCurrentRow);
     updateList();
 }
 
+SkinnedPlayListBrowser::~SkinnedPlayListBrowser()
+{
+    delete m_ui;
+}
+
 void SkinnedPlayListBrowser::updateList()
 {
-    m_ui.listView->selectionModel()->blockSignals(true);
+    m_ui->listView->selectionModel()->blockSignals(true);
     m_listModel->clear();
     for(PlayListModel *model : m_pl_manager->playLists())
     {
@@ -78,17 +85,17 @@ void SkinnedPlayListBrowser::updateList()
         m_listModel->appendRow(item);
         if(m_pl_manager->selectedPlayList() == model)
         {
-            m_ui.listView->setCurrentIndex(m_proxyModel->mapFromSource(m_listModel->indexFromItem(item)));
+            m_ui->listView->setCurrentIndex(m_proxyModel->mapFromSource(m_listModel->indexFromItem(item)));
         }
     }
-    m_ui.listView->selectionModel()->blockSignals(false);
+    m_ui->listView->selectionModel()->blockSignals(false);
 }
 
 void SkinnedPlayListBrowser::on_filterLineEdit_textChanged(const QString &str)
 {
-    m_ui.listView->selectionModel()->blockSignals(true);
+    m_ui->listView->selectionModel()->blockSignals(true);
     m_proxyModel->setFilterFixedString(str);
-    m_ui.listView->selectionModel()->blockSignals(false);
+    m_ui->listView->selectionModel()->blockSignals(false);
 }
 
 void SkinnedPlayListBrowser::on_listView_activated(const QModelIndex &index)
@@ -108,7 +115,7 @@ void SkinnedPlayListBrowser::updatePlayListName(QStandardItem *item)
     connect(m_pl_manager, &PlayListManager::playListsChanged, this, &SkinnedPlayListBrowser::updateList);
 }
 
-void SkinnedPlayListBrowser::updateCurrentRow(QModelIndex index, QModelIndex)
+void SkinnedPlayListBrowser::updateCurrentRow(const QModelIndex &index, const QModelIndex &)
 {
     int row = m_proxyModel->mapToSource(index).row();
     if(row >= 0)
@@ -117,16 +124,16 @@ void SkinnedPlayListBrowser::updateCurrentRow(QModelIndex index, QModelIndex)
 
 void SkinnedPlayListBrowser::rename()
 {
-    QModelIndex index = m_ui.listView->currentIndex();
+    QModelIndex index = m_ui->listView->currentIndex();
     if(!index.isValid())
         return;
-    m_ui.listView->edit(index);
+    m_ui->listView->edit(index);
 }
 
 void SkinnedPlayListBrowser::on_deleteButton_clicked()
 {
     QModelIndexList selectedIndexes;
-    for(const QModelIndex &index : m_ui.listView->selectionModel()->selectedIndexes())
+    for(const QModelIndex &index : m_ui->listView->selectionModel()->selectedIndexes())
     {
         selectedIndexes << m_proxyModel->mapToSource(index);
     }
@@ -152,10 +159,10 @@ void SkinnedPlayListBrowser::on_upButton_clicked()
 
 bool SkinnedPlayListBrowser::eventFilter(QObject *o, QEvent *e)
 {
-    if(o == m_ui.filterLineEdit && e->type() == QEvent::KeyPress)
+    if(o == m_ui->filterLineEdit && e->type() == QEvent::KeyPress)
     {
         QKeyEvent *key_event = static_cast<QKeyEvent *>(e);
-        QModelIndex index = m_ui.listView->currentIndex();
+        QModelIndex index = m_ui->listView->currentIndex();
         bool select_first = false;
         if(!index.isValid() && m_proxyModel->rowCount())
         {
@@ -168,7 +175,7 @@ bool SkinnedPlayListBrowser::eventFilter(QObject *o, QEvent *e)
             if(!select_first)
                 index = m_proxyModel->index(index.row() - 1, index.column());
             if(index.isValid())
-                m_ui.listView->setCurrentIndex(index);
+                m_ui->listView->setCurrentIndex(index);
             return true;
         }
 
@@ -177,7 +184,7 @@ bool SkinnedPlayListBrowser::eventFilter(QObject *o, QEvent *e)
             if(!select_first)
                 index = m_proxyModel->index(index.row() + 1, index.column());
             if(index.isValid())
-                m_ui.listView->setCurrentIndex(index);
+                m_ui->listView->setCurrentIndex(index);
             return true;
         }
     }

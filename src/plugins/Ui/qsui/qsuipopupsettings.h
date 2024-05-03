@@ -22,7 +22,10 @@
 
 #include <QDialog>
 #include <QObject>
-#include "ui_qsuipopupsettings.h"
+
+namespace Ui {
+class QSUiPopupSettings;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -43,8 +46,7 @@ private slots:
 
 private:
     void createMenu();
-    Ui::QSUiPopupSettings m_ui;
-    QMap<uint, QPushButton*> m_buttons;
+    Ui::QSUiPopupSettings *m_ui;
 };
 
 #endif

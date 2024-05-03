@@ -26,6 +26,7 @@
 #include <QSettings>
 #include <QInputDialog>
 #include <QGridLayout>
+#include <QToolButton>
 #include <qmmp/soundcore.h>
 #include <qmmp/decoder.h>
 #include <qmmp/metadatamanager.h>
@@ -60,13 +61,14 @@
 #include "qsuiwaveformseekbar.h"
 #include "qsuistatusbar.h"
 #include "dockwidgetlist.h"
+#include "ui_qsuimainwindow.h"
 #include "qsuiequalizer.h"
 
 #define KEY_OFFSET 10000
 
-QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
+QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent), m_ui(new Ui::QSUiMainWindow)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     m_titleFormatter.setPattern(u"%if(%p,%p - %t,%t)"_s);
     //qmmp objects
     m_player = MediaPlayer::instance();
@@ -78,8 +80,8 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     connect(m_uiHelper, &UiHelper::toggleVisibilityCalled, this, &QSUiMainWindow::toggleVisibility);
     connect(m_uiHelper, &UiHelper::showMainWindowCalled, this, &QSUiMainWindow::showAndRaise);
     m_visMenu = new VisualMenu(this); //visual menu
-    m_ui.menuTools->addMenu(m_visMenu);
-    m_ui.menuTools->addSeparator();
+    m_ui->menuTools->addMenu(m_visMenu);
+    m_ui->menuTools->addSeparator();
     m_pl_menu = new QMenu(this); //playlist menu
     new QSUiActionManager(this); //action manager
     createWidgets(); //widgets
@@ -124,8 +126,8 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     m_tab_menu = new QMenu(m_tabWidget);
     //status bar
     m_statusBar = new QSUiStatusBar(this);
-    m_ui.statusbar->addPermanentWidget(m_statusBar, 1);
-    m_ui.statusbar->setStyleSheet(u"QStatusBar::item { border: 0px solid black; };"_s);
+    m_ui->statusbar->addPermanentWidget(m_statusBar, 1);
+    m_ui->statusbar->setStyleSheet(u"QStatusBar::item { border: 0px solid black; };"_s);
     //volume
     m_volumeSlider = new VolumeSlider(this);
     m_volumeSlider->setFocusPolicy(Qt::NoFocus);
@@ -155,23 +157,28 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent)
     m_quickSearch->setMaximumWidth(250);
     //visualization
     m_analyzer = new QSUIVisualization(this);
-    m_ui.analyzerDockWidget->setWidget(m_analyzer);
+    m_ui->analyzerDockWidget->setWidget(m_analyzer);
     Visual::add(m_analyzer);
     //waveform seek bar
     m_seekBar = new QSUiWaveformSeekBar(this);
-    m_ui.waveformSeekBarDockWidget->setWidget(m_seekBar);
+    m_ui->waveformSeekBarDockWidget->setWidget(m_seekBar);
     //filesystem browser
-    m_ui.fileSystemDockWidget->setWidget(new FileSystemBrowser(this));
+    m_ui->fileSystemDockWidget->setWidget(new FileSystemBrowser(this));
     //cover
-    m_ui.coverDockWidget->setWidget(new QSUiCoverWidget(this));
+    m_ui->coverDockWidget->setWidget(new QSUiCoverWidget(this));
     //playlists
-    m_ui.playlistsDockWidget->setWidget(new QSUiPlayListBrowser(m_pl_manager, this));
+    m_ui->playlistsDockWidget->setWidget(new QSUiPlayListBrowser(m_pl_manager, this));
     //dock widgets (plugins)
     m_dockWidgetList = new DockWidgetList(this);
     //other
     createActions();
     readSettings();
     restoreWindowTitle();
+}
+
+QSUiMainWindow::~QSUiMainWindow()
+{
+    delete m_ui;
 }
 
 void QSUiMainWindow::addDir()
@@ -225,7 +232,7 @@ void QSUiMainWindow::showState(Qmmp::State state)
     case Qmmp::Playing:
     {
         m_analyzer->setCover(MetaDataManager::instance()->getCover(m_core->path()));
-        QSUiCoverWidget *cw = qobject_cast<QSUiCoverWidget *>(m_ui.coverDockWidget->widget());
+        QSUiCoverWidget *cw = qobject_cast<QSUiCoverWidget *>(m_ui->coverDockWidget->widget());
         cw->setCover(MetaDataManager::instance()->getCover(m_core->path()));
         ACTION(QSUiActionManager::PLAY_PAUSE)->setIcon(QIcon::fromTheme(u"media-playback-pause"_s));
         break;
@@ -235,7 +242,7 @@ void QSUiMainWindow::showState(Qmmp::State state)
     case Qmmp::Stopped:
         m_positionSlider->setValue(0);
         m_analyzer->clearCover();
-        qobject_cast<QSUiCoverWidget *>(m_ui.coverDockWidget->widget())->clearCover();
+        qobject_cast<QSUiCoverWidget *>(m_ui->coverDockWidget->widget())->clearCover();
         break;
     default:
         ;
@@ -449,19 +456,19 @@ void QSUiMainWindow::createActions()
     connect(m_ui_settings, &QmmpUiSettings::playListTransitionChanged, ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS), &QAction::setChecked);
     //register external actions
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_ANALYZER,
-                                                  m_ui.analyzerDockWidget->toggleViewAction(),
+                                                  m_ui->analyzerDockWidget->toggleViewAction(),
                                                   u"analyzer"_s);
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_FILEBROWSER,
-                                                  m_ui.fileSystemDockWidget->toggleViewAction(),
+                                                  m_ui->fileSystemDockWidget->toggleViewAction(),
                                                   u"file_browser"_s, tr("Ctrl+0"));
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_COVER,
-                                                  m_ui.coverDockWidget->toggleViewAction(),
+                                                  m_ui->coverDockWidget->toggleViewAction(),
                                                   u"cover"_s);
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_PLAYLIST_BROWSER,
-                                                  m_ui.playlistsDockWidget->toggleViewAction(),
+                                                  m_ui->playlistsDockWidget->toggleViewAction(),
                                                   u"playlist_browser"_s, tr("P"));
     QSUiActionManager::instance()->registerAction(QSUiActionManager::UI_WAVEFORM_SEEKBAR,
-                                                  m_ui.waveformSeekBarDockWidget->toggleViewAction(),
+                                                  m_ui->waveformSeekBarDockWidget->toggleViewAction(),
                                                   u"waveform_seekbar"_s, QString());
     QSUiActionManager::instance()->registerWidget(QSUiActionManager::UI_POS_SLIDER, m_positionSlider,
                                                   tr("Position"), u"position_slider"_s);
@@ -482,49 +489,49 @@ void QSUiMainWindow::createActions()
     SET_ACTION(QSUiActionManager::RECORD, this, &QSUiMainWindow::record);
 
     //file menu
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_FILE, this, &QSUiMainWindow::addFiles));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_DIRECTORY, this, &QSUiMainWindow::addDir));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_URL, this, &QSUiMainWindow::addUrl));
-    QAction *sep = m_ui.menuFile->addSeparator();
-    UiHelper::instance()->registerMenu(UiHelper::ADD_MENU, m_ui.menuFile, false, sep);
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_NEW, m_pl_manager, [this] { m_pl_manager->createPlayList(); }));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_CLOSE, this, &QSUiMainWindow::removePlaylist));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_RENAME, this, &QSUiMainWindow::renameTab));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_NEXT, m_pl_manager, &PlayListManager::selectNextPlayList));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_PREVIOUS, m_pl_manager, &PlayListManager::selectPreviousPlayList));
-    m_ui.menuFile->addSeparator();
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_LOAD, this, &QSUiMainWindow::loadPlayList));
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SAVE, this, &QSUiMainWindow::savePlayList));
-    m_ui.menuFile->addSeparator();
-    m_ui.menuFile->addAction(SET_ACTION(QSUiActionManager::QUIT, m_uiHelper, &UiHelper::exit));
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_FILE, this, &QSUiMainWindow::addFiles));
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_DIRECTORY, this, &QSUiMainWindow::addDir));
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_ADD_URL, this, &QSUiMainWindow::addUrl));
+    QAction *sep = m_ui->menuFile->addSeparator();
+    UiHelper::instance()->registerMenu(UiHelper::ADD_MENU, m_ui->menuFile, false, sep);
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_NEW, m_pl_manager, [this] { m_pl_manager->createPlayList(); }));
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_CLOSE, this, &QSUiMainWindow::removePlaylist));
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_RENAME, this, &QSUiMainWindow::renameTab));
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_NEXT, m_pl_manager, &PlayListManager::selectNextPlayList));
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_PREVIOUS, m_pl_manager, &PlayListManager::selectPreviousPlayList));
+    m_ui->menuFile->addSeparator();
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_LOAD, this, &QSUiMainWindow::loadPlayList));
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::PL_SAVE, this, &QSUiMainWindow::savePlayList));
+    m_ui->menuFile->addSeparator();
+    m_ui->menuFile->addAction(SET_ACTION(QSUiActionManager::QUIT, m_uiHelper, &UiHelper::exit));
     //edit menu
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_ALL, m_pl_manager, &PlayListManager::selectAll));
-    m_ui.menuEdit->addSeparator();
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_SELECTED, m_listWidget, &QSUiListWidget::removeSelected));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_UNSELECTED, m_listWidget, &QSUiListWidget::removeUnselected));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_ALL, m_listWidget, &QSUiListWidget::clear));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_INVALID, m_pl_manager, &PlayListManager::removeInvalidTracks));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_DUPLICATES, m_pl_manager, &PlayListManager::removeDuplicates));
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REFRESH, m_pl_manager, &PlayListManager::refresh));
-    m_ui.menuEdit->addSeparator();
+    m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_SELECT_ALL, m_pl_manager, &PlayListManager::selectAll));
+    m_ui->menuEdit->addSeparator();
+    m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_SELECTED, m_listWidget, &QSUiListWidget::removeSelected));
+    m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_UNSELECTED, m_listWidget, &QSUiListWidget::removeUnselected));
+    m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_ALL, m_listWidget, &QSUiListWidget::clear));
+    m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_INVALID, m_pl_manager, &PlayListManager::removeInvalidTracks));
+    m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REMOVE_DUPLICATES, m_pl_manager, &PlayListManager::removeDuplicates));
+    m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REFRESH, m_pl_manager, &PlayListManager::refresh));
+    m_ui->menuEdit->addSeparator();
     //view menu
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP, this, &QSUiMainWindow::readSettings));
-    m_ui.menuView->addSeparator();
-    m_ui.menuView->addAction(m_ui.analyzerDockWidget->toggleViewAction());
-    m_ui.menuView->addAction(m_ui.waveformSeekBarDockWidget->toggleViewAction());
-    m_ui.menuView->addAction(m_ui.fileSystemDockWidget->toggleViewAction());
-    m_ui.menuView->addAction(m_ui.coverDockWidget->toggleViewAction());
-    m_ui.menuView->addAction(m_ui.playlistsDockWidget->toggleViewAction());
-    QAction *separator = m_ui.menuView->addSeparator();
-    m_dockWidgetList->registerMenu(m_ui.menuView, separator);
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), &QSUiTabBar::setVisible));
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TITLEBARS, this, &QSUiMainWindow::setTitleBarsVisible));
-    m_ui.menuView->addAction(ACTION(QSUiActionManager::PL_SHOW_HEADER));
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::PL_GROUP_TRACKS, m_ui_settings, &QmmpUiSettings::setGroupsEnabled));
+    m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP, this, &QSUiMainWindow::readSettings));
+    m_ui->menuView->addSeparator();
+    m_ui->menuView->addAction(m_ui->analyzerDockWidget->toggleViewAction());
+    m_ui->menuView->addAction(m_ui->waveformSeekBarDockWidget->toggleViewAction());
+    m_ui->menuView->addAction(m_ui->fileSystemDockWidget->toggleViewAction());
+    m_ui->menuView->addAction(m_ui->coverDockWidget->toggleViewAction());
+    m_ui->menuView->addAction(m_ui->playlistsDockWidget->toggleViewAction());
+    QAction *separator = m_ui->menuView->addSeparator();
+    m_dockWidgetList->registerMenu(m_ui->menuView, separator);
+    m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), &QSUiTabBar::setVisible));
+    m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TITLEBARS, this, &QSUiMainWindow::setTitleBarsVisible));
+    m_ui->menuView->addAction(ACTION(QSUiActionManager::PL_SHOW_HEADER));
+    m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::PL_GROUP_TRACKS, m_ui_settings, &QmmpUiSettings::setGroupsEnabled));
     ACTION(QSUiActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
-    m_ui.menuView->addSeparator();
-    m_ui.menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, &QSUiMainWindow::setToolBarsBlocked));
-    m_ui.menuView->addAction(tr("Edit Toolbars"), this, SLOT(editToolBar()));
+    m_ui->menuView->addSeparator();
+    m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, &QSUiMainWindow::setToolBarsBlocked));
+    m_ui->menuView->addAction(tr("Edit Toolbars"), this, SLOT(editToolBar()));
 
     QMenu *sortMenu = new QMenu(tr("Sort List"), this);
     sortMenu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
@@ -540,7 +547,7 @@ void QSUiMainWindow::createActions()
     sortMenu->addAction(tr("By File Creation Date"), this, [this]{ m_pl_manager->sort(PlayListModel::FILE_CREATION_DATE); });
     sortMenu->addAction(tr("By File Modification Date"), this, [this]{ m_pl_manager->sort(PlayListModel::FILE_MODIFICATION_DATE); });
     sortMenu->addAction(tr("By Group"), this, [this]{ m_pl_manager->sort(PlayListModel::GROUP); });
-    m_ui.menuEdit->addMenu(sortMenu);
+    m_ui->menuEdit->addMenu(sortMenu);
 
     QMenu *sortSelectionMenu = new QMenu (tr("Sort Selection"), this);
     sortSelectionMenu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
@@ -555,45 +562,45 @@ void QSUiMainWindow::createActions()
     sortSelectionMenu->addAction(tr("By Disc Number"), this, [this]{ m_pl_manager->sortSelection(PlayListModel::DISCNUMBER); });
     sortSelectionMenu->addAction(tr("By File Creation Date"), this, [this]{ m_pl_manager->sortSelection(PlayListModel::FILE_CREATION_DATE); });
     sortSelectionMenu->addAction(tr("By File Modification Date"), this, [this]{ m_pl_manager->sortSelection(PlayListModel::FILE_MODIFICATION_DATE ); });
-    m_ui.menuEdit->addMenu(sortSelectionMenu);
+    m_ui->menuEdit->addMenu(sortSelectionMenu);
 
-    m_ui.menuEdit->addSeparator();
-    m_ui.menuEdit->addAction(QIcon::fromTheme(u"media-playlist-shuffle"_s), tr("Randomize List"),
+    m_ui->menuEdit->addSeparator();
+    m_ui->menuEdit->addAction(QIcon::fromTheme(u"media-playlist-shuffle"_s), tr("Randomize List"),
                              m_pl_manager, &PlayListManager::randomizeList);
-    m_ui.menuEdit->addAction(QIcon::fromTheme(u"view-sort-descending"_s), tr("Reverse List"),
+    m_ui->menuEdit->addAction(QIcon::fromTheme(u"view-sort-descending"_s), tr("Reverse List"),
                               m_pl_manager, &PlayListManager::reverseList);
-    m_ui.menuEdit->addSeparator();
-    m_ui.menuEdit->addAction(SET_ACTION(QSUiActionManager::SETTINGS, this, &QSUiMainWindow::showSettings));
+    m_ui->menuEdit->addSeparator();
+    m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::SETTINGS, this, &QSUiMainWindow::showSettings));
 
     //playback menu
-    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PLAY));
-    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::STOP));
-    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PAUSE));
-    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::NEXT));
-    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PREVIOUS));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::PLAY_PAUSE, this, &QSUiMainWindow::playPause));
-    m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::JUMP, this, &QSUiMainWindow::jumpTo));
-    m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(ACTION(QSUiActionManager::PL_ENQUEUE));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::CLEAR_QUEUE, m_pl_manager, &PlayListManager::clearQueue));
-    m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_ALL, m_ui_settings, &QmmpUiSettings::setRepeatableList));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_TRACK, m_ui_settings, &QmmpUiSettings::setRepeatableTrack));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::SHUFFLE, m_ui_settings, &QmmpUiSettings::setShuffle));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::NO_PL_ADVANCE, m_ui_settings, &QmmpUiSettings::setNoPlayListAdvance));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS, m_ui_settings, &QmmpUiSettings::setPlayListTransitionEnabled));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::STOP_AFTER_SELECTED, m_pl_manager, &PlayListManager::stopAfterSelected));
-    m_ui.menuPlayback->addSeparator();
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_ENC, m_core, &SoundCore::volumeUp));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_DEC, m_core, &SoundCore::volumeDown));
-    m_ui.menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, &SoundCore::setMuted));
+    m_ui->menuPlayback->addAction(ACTION(QSUiActionManager::PLAY));
+    m_ui->menuPlayback->addAction(ACTION(QSUiActionManager::STOP));
+    m_ui->menuPlayback->addAction(ACTION(QSUiActionManager::PAUSE));
+    m_ui->menuPlayback->addAction(ACTION(QSUiActionManager::NEXT));
+    m_ui->menuPlayback->addAction(ACTION(QSUiActionManager::PREVIOUS));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::PLAY_PAUSE, this, &QSUiMainWindow::playPause));
+    m_ui->menuPlayback->addSeparator();
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::JUMP, this, &QSUiMainWindow::jumpTo));
+    m_ui->menuPlayback->addSeparator();
+    m_ui->menuPlayback->addAction(ACTION(QSUiActionManager::PL_ENQUEUE));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::CLEAR_QUEUE, m_pl_manager, &PlayListManager::clearQueue));
+    m_ui->menuPlayback->addSeparator();
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_ALL, m_ui_settings, &QmmpUiSettings::setRepeatableList));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::REPEAT_TRACK, m_ui_settings, &QmmpUiSettings::setRepeatableTrack));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::SHUFFLE, m_ui_settings, &QmmpUiSettings::setShuffle));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::NO_PL_ADVANCE, m_ui_settings, &QmmpUiSettings::setNoPlayListAdvance));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::TRANSIT_BETWEEN_PLAYLISTS, m_ui_settings, &QmmpUiSettings::setPlayListTransitionEnabled));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::STOP_AFTER_SELECTED, m_pl_manager, &PlayListManager::stopAfterSelected));
+    m_ui->menuPlayback->addSeparator();
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_ENC, m_core, &SoundCore::volumeUp));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_DEC, m_core, &SoundCore::volumeDown));
+    m_ui->menuPlayback->addAction(SET_ACTION(QSUiActionManager::VOL_MUTE, m_core, &SoundCore::setMuted));
     connect(m_core, &SoundCore::mutedChanged, ACTION(QSUiActionManager::VOL_MUTE), &QAction::setChecked);
 
     //help menu
-    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_UI, this, &QSUiMainWindow::aboutUi));
-    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT, this, &QSUiMainWindow::about));
-    m_ui.menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_QT, qApp, &QApplication::aboutQt));
+    m_ui->menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_UI, this, &QSUiMainWindow::aboutUi));
+    m_ui->menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT, this, &QSUiMainWindow::about));
+    m_ui->menuHelp->addAction(SET_ACTION(QSUiActionManager::ABOUT_QT, qApp, &QApplication::aboutQt));
     //playlist menu
     m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_SHOW_INFO, m_pl_manager, &PlayListManager::showDetails));
     m_pl_menu->addSeparator();
@@ -604,8 +611,8 @@ void QSUiMainWindow::createActions()
     m_pl_menu->addSeparator();
     m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_ENQUEUE, m_pl_manager, &PlayListManager::addToQueue));
     //tools menu
-    m_ui.menuTools->addAction(SET_ACTION(QSUiActionManager::EQUALIZER, this, &QSUiMainWindow::showEqualizer));
-    m_uiHelper->registerMenu(UiHelper::TOOLS_MENU, m_ui.menuTools, false, ACTION(QSUiActionManager::EQUALIZER));
+    m_ui->menuTools->addAction(SET_ACTION(QSUiActionManager::EQUALIZER, this, &QSUiMainWindow::showEqualizer));
+    m_uiHelper->registerMenu(UiHelper::TOOLS_MENU, m_ui->menuTools, false, ACTION(QSUiActionManager::EQUALIZER));
     //tab menu
     m_tab_menu->addAction(ACTION(QSUiActionManager::PL_LOAD));
     m_tab_menu->addAction(ACTION(QSUiActionManager::PL_SAVE));
@@ -671,7 +678,7 @@ void QSUiMainWindow::readSettings()
     if(m_update)
     {
         m_listWidget->readSettings();
-        qobject_cast<FileSystemBrowser *> (m_ui.fileSystemDockWidget->widget())->readSettings();
+        qobject_cast<FileSystemBrowser *> (m_ui->fileSystemDockWidget->widget())->readSettings();
 
         if(ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP)->isChecked())
             setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
@@ -693,10 +700,10 @@ void QSUiMainWindow::readSettings()
         QByteArray wstate = settings.value(u"mw_state"_s).toByteArray();
         if(wstate.isEmpty())
         {
-            m_ui.fileSystemDockWidget->hide();
-            m_ui.coverDockWidget->hide();
-            m_ui.playlistsDockWidget->hide();
-            m_ui.waveformSeekBarDockWidget->hide();
+            m_ui->fileSystemDockWidget->hide();
+            m_ui->coverDockWidget->hide();
+            m_ui->playlistsDockWidget->hide();
+            m_ui->waveformSeekBarDockWidget->hide();
         }
         else
             restoreState(settings.value(u"mw_state"_s).toByteArray());
@@ -838,11 +845,11 @@ void QSUiMainWindow::setTitleBarsVisible(bool visible)
     m_dockWidgetList->setTitleBarsVisible(visible);
 
     QList<QDockWidget *> widgetList = {
-        m_ui.analyzerDockWidget,
-        m_ui.fileSystemDockWidget,
-        m_ui.coverDockWidget,
-        m_ui.playlistsDockWidget,
-        m_ui.waveformSeekBarDockWidget
+        m_ui->analyzerDockWidget,
+        m_ui->fileSystemDockWidget,
+        m_ui->coverDockWidget,
+        m_ui->playlistsDockWidget,
+        m_ui->waveformSeekBarDockWidget
     };
 
     if(qApp->platformName() == QLatin1String("wayland"))

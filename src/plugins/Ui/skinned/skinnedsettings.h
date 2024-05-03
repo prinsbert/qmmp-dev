@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -23,10 +23,14 @@
 
 #include <QWidget>
 #include <QFileInfo>
-#include "ui_skinnedsettings.h"
 
+class QListWidgetItem;
 class SkinReader;
 class Skin;
+
+namespace Ui {
+class SkinnedSettings;
+}
 
 class SkinnedSettings : public QWidget
 {
@@ -54,7 +58,7 @@ private:
     void createActions();
     void readSettings();
 
-    Ui::SkinnedSettings m_ui;
+    Ui::SkinnedSettings *m_ui;
     QString m_currentSkinPath;
     Skin *m_skin;
     SkinReader *m_reader;
