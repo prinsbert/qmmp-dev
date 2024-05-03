@@ -114,7 +114,7 @@ SkinnedTimeIndicator::SkinnedTimeIndicator(SkinnedTimeIndicatorModel *model, QWi
     : PixmapWidget (parent)
     , m_model (model)
 {
-    updateSkin();
+    SkinnedTimeIndicator::updateSkin();
     connect(m_model, &SkinnedTimeIndicatorModel::changed, this, &SkinnedTimeIndicator::modelChanged);
 }
 

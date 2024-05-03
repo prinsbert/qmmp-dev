@@ -21,7 +21,6 @@
 #include <QMenu>
 #include <QSettings>
 #include <qmmp/soundcore.h>
-#include "skinnedeqwidget.h"
 #include "skin.h"
 #include "shadedbar.h"
 #include "dock.h"
