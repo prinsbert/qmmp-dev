@@ -24,7 +24,6 @@
 
 class QMouseEvent;
 class QWheelEvent;
-class Skin;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -48,14 +47,13 @@ signals:
     void sliderReleased();
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
 
 private:
     void mousePressEvent(QMouseEvent*) override;
     void mouseReleaseEvent(QMouseEvent*) override;
     void mouseMoveEvent(QMouseEvent*) override;
     void wheelEvent(QWheelEvent *e) override;
-    Skin *m_skin;
     bool m_moving = false;
     qint64 press_pos;
     qint64 m_max = 0, m_min = 0, m_pos, m_value = 0, m_old = 0;

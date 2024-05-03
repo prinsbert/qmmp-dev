@@ -21,11 +21,14 @@
 #include <QPainter>
 #include <QPaintEvent>
 #include <QStyle>
+#include "skin.h"
 #include "pixmapwidget.h"
 
 PixmapWidget::PixmapWidget(QWidget *parent)
-        : QWidget(parent)
-{}
+        : QWidget(parent), m_skin(Skin::instance())
+{
+    connect(m_skin, &Skin::skinChanged, this, &PixmapWidget::updateSkin);
+}
 
 void PixmapWidget::setPixmap(const QPixmap &pixmap, bool fixed_size)
 {

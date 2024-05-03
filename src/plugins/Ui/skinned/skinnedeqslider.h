@@ -24,7 +24,6 @@
 
 class QMouseEvent;
 class QWheelEvent;
-class Skin;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -47,7 +46,7 @@ signals:
     void sliderMoved (double);
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
 
 private:
     void mousePressEvent(QMouseEvent*) override;
@@ -55,7 +54,6 @@ private:
     void mouseMoveEvent(QMouseEvent*) override;
     void wheelEvent(QWheelEvent *) override;
 
-    Skin *m_skin;
     bool m_moving = false;
     int press_pos;
     double m_max = 20, m_min = -20, m_pos = 0, m_value = 0, m_old = 0;

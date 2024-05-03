@@ -24,8 +24,6 @@
 
 class QMouseEvent;
 
-class Skin;
-
 
 /** Class TimeIndicatorModel
  * @author Thomas Perl <m@thp.io>
@@ -82,7 +80,7 @@ public:
 
 private slots:
     void modelChanged();
-    void updateSkin();
+    void updateSkin() override;
 
 private:
     void mousePressEvent(QMouseEvent*) override;
@@ -91,7 +89,6 @@ private:
 
     SkinnedTimeIndicatorModel *m_model;
     QPixmap m_pixmap;
-    Skin *m_skin;
 };
 
 #endif

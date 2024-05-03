@@ -25,7 +25,6 @@
 #include "pixmapwidget.h"
 #include "skinnedmainwindow.h"
 
-class Skin;
 class SkinnedMainWindow;
 class SkinnedButton;
 class PlayListModel;
@@ -47,7 +46,7 @@ public slots:
     void setModel(PlayListModel *selected, PlayListModel *previous = nullptr);
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
     void shade();
 
 private:
@@ -59,7 +58,6 @@ private:
     void mouseMoveEvent(QMouseEvent*) override;
     void mouseDoubleClickEvent(QMouseEvent*) override;
 
-    Skin *m_skin;
     QPoint pos;
     bool m_active = false;
     SkinnedPlayList* m_pl;

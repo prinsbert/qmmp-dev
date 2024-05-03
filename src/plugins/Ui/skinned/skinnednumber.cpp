@@ -22,18 +22,15 @@
 
 SkinnedNumber::SkinnedNumber(QWidget *parent)
  : PixmapWidget(parent)
-{
-   m_skin = Skin::instance();
-   connect(m_skin, &Skin::skinChanged, this, &SkinnedNumber::updateSkin);
-}
+{}
 
 void SkinnedNumber::setValue(int n)
 {
-   setPixmap(m_skin->getNumber(n));
+   setPixmap(skin()->getNumber(n));
    m_value = n; 
 }
 
-void SkinnedNumber::updateSkin(void)
+void SkinnedNumber::updateSkin()
 {
    setValue(m_value);
 }

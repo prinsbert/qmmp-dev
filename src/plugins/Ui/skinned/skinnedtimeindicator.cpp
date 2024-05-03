@@ -114,9 +114,7 @@ SkinnedTimeIndicator::SkinnedTimeIndicator(SkinnedTimeIndicatorModel *model, QWi
     : PixmapWidget (parent)
     , m_model (model)
 {
-    m_skin = Skin::instance();
     updateSkin();
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedTimeIndicator::updateSkin);
     connect(m_model, &SkinnedTimeIndicatorModel::changed, this, &SkinnedTimeIndicator::modelChanged);
 }
 
@@ -125,20 +123,20 @@ void SkinnedTimeIndicator::modelChanged()
     m_pixmap.fill(Qt::transparent);
 
     if(m_model->visible()) {
-        int r = m_skin->ratio();
+        int r = skin()->ratio();
         QPainter paint(&m_pixmap);
 
         if(!m_model->elapsed())
         {
-            paint.drawPixmap(r * 2, 0, m_skin->getNumber(10));
+            paint.drawPixmap(r * 2, 0, skin()->getNumber(10));
         }
 
         int t = qAbs(m_model->displayTime());
 
-        paint.drawPixmap(r * 13, 0, m_skin->getNumber(t / 600 % 10));
-        paint.drawPixmap(r * 26, 0, m_skin->getNumber(t / 60 % 10));
-        paint.drawPixmap(r * 43, 0, m_skin->getNumber(t % 60 / 10));
-        paint.drawPixmap(r * 56, 0, m_skin->getNumber(t % 60 % 10));
+        paint.drawPixmap(r * 13, 0, skin()->getNumber(t / 600 % 10));
+        paint.drawPixmap(r * 26, 0, skin()->getNumber(t / 60 % 10));
+        paint.drawPixmap(r * 43, 0, skin()->getNumber(t % 60 / 10));
+        paint.drawPixmap(r * 56, 0, skin()->getNumber(t % 60 % 10));
     }
 
     setPixmap (m_pixmap);
@@ -155,7 +153,7 @@ void SkinnedTimeIndicator::mousePressEvent(QMouseEvent* e)
 
 void SkinnedTimeIndicator::updateSkin()
 {
-    m_pixmap = QPixmap(65 * m_skin->ratio(),13 * m_skin->ratio());
+    m_pixmap = QPixmap(65 * skin()->ratio(),13 * skin()->ratio());
     modelChanged();
 }
 

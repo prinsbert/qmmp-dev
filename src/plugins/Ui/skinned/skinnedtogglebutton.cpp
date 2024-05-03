@@ -31,9 +31,7 @@ SkinnedToggleButton::SkinnedToggleButton(QWidget *parent,uint on_n,uint on_p,uin
     m_off_n(off_n),
     m_off_p(off_p)
 {
-   m_skin = Skin::instance();
    setChecked(false);
-   connect(m_skin, &Skin::skinChanged, this, &SkinnedToggleButton::updateSkin);
 }
 
 bool SkinnedToggleButton::isChecked() const
@@ -51,18 +49,18 @@ void SkinnedToggleButton::setChecked(bool on)
 {
    m_on = on;
    if(on)
-      setPixmap(m_skin->getButton(m_on_n));
+      setPixmap(skin()->getButton(m_on_n));
    else
-      setPixmap(m_skin->getButton(m_off_n));
+      setPixmap(skin()->getButton(m_off_n));
 }
 void SkinnedToggleButton::mousePressEvent(QMouseEvent*)
 {
    m_cursorin = true;
    m_old_on = m_on;
    if(m_on)
-      setPixmap(m_skin->getButton(m_off_p));
+      setPixmap(skin()->getButton(m_off_p));
    else
-      setPixmap(m_skin->getButton(m_on_p));
+      setPixmap(skin()->getButton(m_on_p));
 }
 
 void SkinnedToggleButton::mouseReleaseEvent(QMouseEvent*)
@@ -82,14 +80,14 @@ void SkinnedToggleButton::mouseMoveEvent (QMouseEvent *e)
     if(!m_cursorin && rect().contains(e->pos())) {
         m_cursorin = true;
         if(m_old_on)
-            setPixmap(m_skin->getButton(m_off_p));
+            setPixmap(skin()->getButton(m_off_p));
         else
-            setPixmap(m_skin->getButton(m_on_p));
+            setPixmap(skin()->getButton(m_on_p));
     } else if(m_cursorin && !rect().contains(e->pos())) {
         m_cursorin = false;
         if(m_old_on)
-            setPixmap(m_skin->getButton(m_on_n));
+            setPixmap(skin()->getButton(m_on_n));
         else
-            setPixmap(m_skin->getButton(m_off_n));
+            setPixmap(skin()->getButton(m_off_n));
     }
 }

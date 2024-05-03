@@ -29,9 +29,7 @@
 
 SkinnedVolumeBar::SkinnedVolumeBar(QWidget *parent) : PixmapWidget(parent)
 {
-    m_skin = Skin::instance();
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedVolumeBar::updateSkin);
-    setPixmap(m_skin->getVolumeBar(0));
+    setPixmap(skin()->getVolumeBar(0));
     draw(false);
 }
 
@@ -39,15 +37,15 @@ void SkinnedVolumeBar::mousePressEvent(QMouseEvent *e)
 {
     m_moving = true;
     press_pos = e->position().x();
-    if(m_pos < e->position().x() && e->position().x() < m_pos + 11 * m_skin->ratio())
+    if(m_pos < e->position().x() && e->position().x() < m_pos + 11 * skin()->ratio())
     {
         press_pos = e->position().x() - m_pos;
         emit sliderPressed();
     }
     else
     {
-        m_value = convert(qMax(qMin(width() - 18 * m_skin->ratio(), qRound(e->position().x()) - 6 * m_skin->ratio()), 0));
-        press_pos = 6*m_skin->ratio();
+        m_value = convert(qMax(qMin(width() - 18 * skin()->ratio(), qRound(e->position().x()) - 6 * skin()->ratio()), 0));
+        press_pos = 6*skin()->ratio();
         emit sliderPressed();
         if (m_value != m_old)
             emit sliderMoved(m_value);
@@ -62,7 +60,7 @@ void SkinnedVolumeBar::mouseMoveEvent (QMouseEvent *e)
         int po = e->position().x();
         po = po - press_pos;
 
-        if(0 <= po && po <= width() - 18 * m_skin->ratio())
+        if(0 <= po && po <= width() - 18 * skin()->ratio())
         {
             m_value = convert(po);
             draw();
@@ -95,25 +93,25 @@ void SkinnedVolumeBar::setMax(int max)
 
 void SkinnedVolumeBar::updateSkin()
 {
-    resize(m_skin->getVolumeBar(0).size());
+    resize(skin()->getVolumeBar(0).size());
     draw(false);
-    setCursor(m_skin->getCursor(Skin::CUR_VOLBAL));
+    setCursor(skin()->getCursor(Skin::CUR_VOLBAL));
 }
 
 void SkinnedVolumeBar::draw(bool pressed)
 {
-    int p=int(ceil(double(m_value - m_min) * (width() - 18 * m_skin->ratio()) / (m_max-m_min)));
-    m_pixmap = m_skin->getVolumeBar(27 * (m_value-m_min) / (m_max-m_min));
+    int p=int(ceil(double(m_value - m_min) * (width() - 18 * skin()->ratio()) / (m_max-m_min)));
+    m_pixmap = skin()->getVolumeBar(27 * (m_value-m_min) / (m_max-m_min));
     QPainter paint(&m_pixmap);
     if(pressed)
-        paint.drawPixmap(p, 1 * m_skin->ratio(), m_skin->getButton(Skin::BT_VOL_P));
+        paint.drawPixmap(p, 1 * skin()->ratio(), skin()->getButton(Skin::BT_VOL_P));
     else
-        paint.drawPixmap(p, 1 * m_skin->ratio(), m_skin->getButton(Skin::BT_VOL_N));
+        paint.drawPixmap(p, 1 * skin()->ratio(), skin()->getButton(Skin::BT_VOL_N));
     setPixmap(m_pixmap);
     m_pos = p;
 }
 
 int SkinnedVolumeBar::convert(int p)
 {
-    return int(ceil(double(m_max - m_min) * p / (width() - 18 * m_skin->ratio()) + m_min));
+    return int(ceil(double(m_max - m_min) * p / (width() - 18 * skin()->ratio()) + m_min));
 }

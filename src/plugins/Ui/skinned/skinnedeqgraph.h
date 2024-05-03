@@ -22,7 +22,6 @@
 
 #include "pixmapwidget.h"
 
-class Skin;
 /**
    @author Ilya Kotov <forkotov02@ya.ru>
 */
@@ -38,11 +37,10 @@ public:
    void clear();
 
 private slots:
-   void updateSkin();
+   void updateSkin() override;
 
 private:
    QList<int> m_values;
-   Skin *m_skin;
    void init_spline(double * x, double * y, int n, double * y2);
    double eval_spline(double xa[], double ya[], double y2a[], int n, double x);
    void draw();

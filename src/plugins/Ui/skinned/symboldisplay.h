@@ -23,8 +23,6 @@
 #include <QPixmap>
 #include "pixmapwidget.h"
 
-class Skin;
-
 /**
    @author Vladimir Kuznetsov <vovanec@gmail.com>
  */
@@ -45,9 +43,9 @@ public slots:
 
 private slots:
     void draw();
+    void updateSkin() override;
 
 private:
-    Skin* m_skin;
     QString m_text;
     Qt::Alignment m_alignment = Qt::AlignRight;
     int m_digits;

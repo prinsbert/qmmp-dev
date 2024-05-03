@@ -22,8 +22,6 @@
 
 #include "pixmapwidget.h"
 
-class Skin;
-
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
@@ -39,10 +37,9 @@ public slots:
     void setChannels(int);
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
 
 private:
-   Skin *m_skin;
    QPixmap m_pixmap;
    int m_channels;
 

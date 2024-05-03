@@ -38,7 +38,7 @@ signals:
     void clicked();
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
 
 private:
     void mousePressEvent(QMouseEvent*) override;
@@ -46,7 +46,6 @@ private:
     void mouseMoveEvent(QMouseEvent*) override;
     void setON(bool);
 
-    Skin *m_skin;
     bool m_pressed = false;
     uint m_name_normal, m_name_pressed, m_name_cursor;
 };

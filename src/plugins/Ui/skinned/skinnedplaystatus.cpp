@@ -20,12 +20,9 @@
 #include "skin.h"
 #include "skinnedplaystatus.h"
 
-SkinnedPlayStatus::SkinnedPlayStatus ( QWidget *parent )
-      : PixmapWidget ( parent )
+SkinnedPlayStatus::SkinnedPlayStatus(QWidget *parent) : PixmapWidget(parent)
 {
-   m_skin = Skin::instance();
    setState(Qmmp::Stopped);
-   connect(m_skin, &Skin::skinChanged, this, [this] { setState(m_state); });
 }
 
 void SkinnedPlayStatus::setState(Qmmp::State state)
@@ -34,12 +31,17 @@ void SkinnedPlayStatus::setState(Qmmp::State state)
    switch(state)
    {
    case Qmmp::Playing:
-       setPixmap(m_skin->getItem(Skin::PLAY));
+       setPixmap(skin()->getItem(Skin::PLAY));
        break;
    case Qmmp::Paused:
-       setPixmap(m_skin->getItem(Skin::PAUSE));
+       setPixmap(skin()->getItem(Skin::PAUSE));
        break;
    default:
-       setPixmap(m_skin->getItem(Skin::STOP));
+       setPixmap(skin()->getItem(Skin::STOP));
    }
+}
+
+void SkinnedPlayStatus::updateSkin()
+{
+    setState(m_state);
 }

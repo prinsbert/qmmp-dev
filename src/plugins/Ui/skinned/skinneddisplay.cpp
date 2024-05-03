@@ -47,9 +47,8 @@
 
 SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent)
 {
-    m_skin = Skin::instance();
-    setPixmap(m_skin->getMain());
-    setCursor(m_skin->getCursor(Skin::CUR_NORMAL));
+    setPixmap(skin()->getMain());
+    setCursor(skin()->getCursor(Skin::CUR_NORMAL));
     m_mw = parent;
 
     m_timeIndicatorModel = new SkinnedTimeIndicatorModel(this);
@@ -75,7 +74,6 @@ SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent
     m_eject = new SkinnedButton(this, Skin::BT_EJECT_N, Skin::BT_EJECT_P, Skin::CUR_NORMAL);
     m_eject->setToolTip(tr("Play files"));
     connect(m_eject,&SkinnedButton::clicked, parent, &SkinnedMainWindow::playFiles);
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedDisplay::updateSkin);
     m_vis = new SkinnedVisualization (this);
 
     m_eqButton = new SkinnedToggleButton(this, Skin::BT_EQ_ON_N,Skin::BT_EQ_ON_P, Skin::BT_EQ_OFF_N,Skin::BT_EQ_OFF_P);
@@ -142,7 +140,7 @@ SkinnedDisplay::~SkinnedDisplay()
 
 void SkinnedDisplay::updatePositions()
 {
-    int r = m_skin->ratio();
+    int r = skin()->ratio();
     m_previous->move(r * 16, r * 88);
     m_play->move(r * 39, r * 88);
     m_pause->move(r * 62,  r * 88);
@@ -209,9 +207,9 @@ void SkinnedDisplay::onAudioPatametersChanged(const AudioParameters &p)
 
 void SkinnedDisplay::updateSkin()
 {
-    setPixmap (m_skin->getMain());
+    setPixmap(skin()->getMain());
     m_mw->resize(size());
-    setCursor(m_skin->getCursor(Skin::CUR_NORMAL));
+    setCursor(skin()->getCursor(Skin::CUR_NORMAL));
     setMinimalMode(m_shaded);
     updatePositions();
 }
@@ -220,7 +218,7 @@ void SkinnedDisplay::updateMask()
 {
     m_mw->clearMask();
     m_mw->setMask(QRegion(0, 0, m_mw->width(), m_mw->height()));
-    QRegion region = m_skin->getRegion(m_shaded? Skin::WINDOW_SHADE : Skin::NORMAL);
+    QRegion region = skin()->getRegion(m_shaded? Skin::WINDOW_SHADE : Skin::NORMAL);
     if (!region.isEmpty())
         m_mw->setMask(region);
 }
@@ -228,7 +226,7 @@ void SkinnedDisplay::updateMask()
 void SkinnedDisplay::setMinimalMode(bool b)
 {
     m_shaded = b;
-    int r = m_skin->ratio();
+    int r = skin()->ratio();
 
     if(m_shaded)
          m_mw->setFixedSize(r * 275,r*14);

@@ -23,7 +23,6 @@
 #include "pixmapwidget.h"
 
 class QMouseEvent;
-class Skin;
 class SkinnedMainWindow;
 class SkinnedButton;
 class ShadedBar;
@@ -44,7 +43,7 @@ public:
 
 private slots:
     void shade();
-    void updateSkin();
+    void updateSkin() override;
 
 private:
     void updatePositions();
@@ -53,7 +52,6 @@ private:
     void mouseMoveEvent(QMouseEvent*) override;
     void mouseDoubleClickEvent(QMouseEvent *) override;
 
-    Skin *m_skin;
     QPoint m_pos;
     SkinnedEqWidget *m_eq;
     SkinnedMainWindow *m_mw;

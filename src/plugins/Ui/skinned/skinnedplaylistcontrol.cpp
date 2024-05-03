@@ -27,10 +27,8 @@
 
 SkinnedPlaylistControl::SkinnedPlaylistControl(QWidget *parent) : PixmapWidget(parent)
 {
-	m_skin = Skin::instance();
-    setPixmap(m_skin->getPlPart(Skin::PL_CONTROL));
-    m_ratio = m_skin->ratio();
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedPlaylistControl::updateSkin);
+    setPixmap(skin()->getPlPart(Skin::PL_CONTROL));
+    m_ratio = skin()->ratio();
 }
 
 void SkinnedPlaylistControl::mouseReleaseEvent(QMouseEvent *me)
@@ -52,7 +50,7 @@ void SkinnedPlaylistControl::mouseReleaseEvent(QMouseEvent *me)
 
 void SkinnedPlaylistControl::updateSkin()
 {
-    setCursor(m_skin->getCursor(Skin::CUR_PNORMAL));
-    setPixmap(m_skin->getPlPart(Skin::PL_CONTROL));
-    m_ratio = m_skin->ratio();
+    setCursor(skin()->getCursor(Skin::CUR_PNORMAL));
+    setPixmap(skin()->getPlPart(Skin::PL_CONTROL));
+    m_ratio = skin()->ratio();
 }

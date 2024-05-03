@@ -28,7 +28,6 @@
 class SkinnedTimeIndicator;
 class SkinnedTimeIndicatorModel;
 class SkinnedPositionBar;
-class Skin;
 class SkinnedToggleButton;
 class SkinnedTitleBar;
 class NumberDisplay;
@@ -76,7 +75,7 @@ signals:
     void shuffleToggled(bool);
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
     void displayVolume();
     void showPosition();
     void updatePosition();
@@ -93,7 +92,6 @@ private:
     SkinnedEqWidget *m_equlizer;
     SkinnedPlayList *m_playlist;
     bool m_shaded = false;
-    Skin *m_skin;
     SkinnedPositionBar *m_posbar;
     SkinnedButton *m_previous;
     SkinnedButton *m_play;

@@ -33,7 +33,6 @@
 SkinnedEqTitleBar::SkinnedEqTitleBar(SkinnedEqWidget *parent)
         : PixmapWidget(parent)
 {
-    m_skin = Skin::instance();
     m_eq = parent;
     m_mw = qobject_cast<SkinnedMainWindow*>(m_eq->parent());
     m_close = new SkinnedButton(this, Skin::EQ_BT_CLOSE_N, Skin::EQ_BT_CLOSE_P, Skin::CUR_EQCLOSE);
@@ -45,8 +44,7 @@ SkinnedEqTitleBar::SkinnedEqTitleBar(SkinnedEqWidget *parent)
         shade();
     m_align = true;
     setActive(false);
-    setCursor(m_skin->getCursor(Skin::CUR_EQTITLE));
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedEqTitleBar::updateSkin);
+    setCursor(skin()->getCursor(Skin::CUR_EQTITLE));
     updatePositions();
 }
 
@@ -59,7 +57,7 @@ SkinnedEqTitleBar::~SkinnedEqTitleBar()
 
 void SkinnedEqTitleBar::updatePositions()
 {
-     int r = m_skin->ratio();
+     int r = skin()->ratio();
      m_close->move(r * 264, r * 3);
      m_shade->move(r * 254, r * 3);
      if(m_volumeBar)
@@ -75,16 +73,16 @@ void SkinnedEqTitleBar::setActive(bool active)
     if(active)
     {
         if(m_shaded)
-            setPixmap(m_skin->getEqPart(Skin::EQ_TITLEBAR_SHADED_A));
+            setPixmap(skin()->getEqPart(Skin::EQ_TITLEBAR_SHADED_A));
         else
-            setPixmap(m_skin->getEqPart(Skin::EQ_TITLEBAR_A));
+            setPixmap(skin()->getEqPart(Skin::EQ_TITLEBAR_A));
     }
     else
     {
         if(m_shaded)
-            setPixmap(m_skin->getEqPart(Skin::EQ_TITLEBAR_SHADED_I));
+            setPixmap(skin()->getEqPart(Skin::EQ_TITLEBAR_SHADED_I));
         else
-            setPixmap(m_skin->getEqPart(Skin::EQ_TITLEBAR_I));
+            setPixmap(skin()->getEqPart(Skin::EQ_TITLEBAR_I));
     }
 }
 
@@ -105,7 +103,7 @@ void SkinnedEqTitleBar::mousePressEvent(QMouseEvent *event)
 
 void SkinnedEqTitleBar::mouseMoveEvent(QMouseEvent* event)
 {
-    if(m_pos.x() < width() - 30 * m_skin->ratio())
+    if(m_pos.x() < width() - 30 * skin()->ratio())
     {
         QPoint npos = (event->globalPosition().toPoint() - m_pos);
         Dock::instance()->move(m_eq, npos);
@@ -125,11 +123,11 @@ void SkinnedEqTitleBar::mouseDoubleClickEvent(QMouseEvent *)
 void SkinnedEqTitleBar::shade()
 {
     m_shaded = !m_shaded;
-    int r = m_skin->ratio();
+    int r = skin()->ratio();
 
     if(m_shaded)
     {
-        setPixmap(m_skin->getEqPart(Skin::EQ_TITLEBAR_SHADED_A));
+        setPixmap(skin()->getEqPart(Skin::EQ_TITLEBAR_SHADED_A));
         m_shade->hide();
         m_shade2 = new SkinnedButton(this, Skin::EQ_BT_SHADE2_N, Skin::EQ_BT_SHADE2_P, Skin::CUR_EQNORMAL);
         m_shade2->move(r * 254, r * 3);
@@ -152,7 +150,7 @@ void SkinnedEqTitleBar::shade()
     }
     else
     {
-        setPixmap(m_skin->getEqPart(Skin::EQ_TITLEBAR_A));
+        setPixmap(skin()->getEqPart(Skin::EQ_TITLEBAR_A));
         m_shade2->deleteLater();
         m_volumeBar->deleteLater();
         m_balanceBar->deleteLater();
@@ -168,6 +166,6 @@ void SkinnedEqTitleBar::shade()
 
 void SkinnedEqTitleBar::updateSkin()
 {
-    setCursor(m_skin->getCursor(Skin::CUR_EQTITLE));
+    setCursor(skin()->getCursor(Skin::CUR_EQTITLE));
     updatePositions();
 }

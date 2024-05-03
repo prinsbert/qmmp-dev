@@ -26,11 +26,9 @@
 
 SkinnedEqSlider::SkinnedEqSlider(QWidget *parent): PixmapWidget(parent)
 {
-    m_skin = Skin::instance();
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedEqSlider::updateSkin);
-    setPixmap(m_skin->getEqSlider(0));
+    setPixmap(skin()->getEqSlider(0));
     draw(false);
-    setCursor(m_skin->getCursor(Skin::CUR_EQSLID));
+    setCursor(skin()->getCursor(Skin::CUR_EQSLID));
 }
 
 void SkinnedEqSlider::mousePressEvent(QMouseEvent *e)
@@ -43,14 +41,14 @@ void SkinnedEqSlider::mousePressEvent(QMouseEvent *e)
         emit sliderMoved(m_value);
         m_old = m_value;
     }
-    else if(m_pos<e->position().y() && e->position().y() < m_pos + 11 * m_skin->ratio())
+    else if(m_pos<e->position().y() && e->position().y() < m_pos + 11 * skin()->ratio())
     {
         press_pos = e->position().y() - m_pos;
     }
     else
     {
-        m_value = convert(qMax(qMin(height() - 12 * m_skin->ratio(), qRound(e->position().y()) - 6 * m_skin->ratio()), 0));
-        press_pos = 6 * m_skin->ratio();
+        m_value = convert(qMax(qMin(height() - 12 * skin()->ratio(), qRound(e->position().y()) - 6 * skin()->ratio()), 0));
+        press_pos = 6 * skin()->ratio();
         if(m_value != m_old)
         {
             emit sliderMoved(m_value);
@@ -72,7 +70,7 @@ void SkinnedEqSlider::mouseMoveEvent(QMouseEvent *e)
     {
         int po = e->position().y() - press_pos;
 
-        if(0 <= po && po <= height() - 12 * m_skin->ratio())
+        if(0 <= po && po <= height() - 12 * skin()->ratio())
         {
             m_value = convert(po);
             draw();
@@ -108,27 +106,27 @@ void SkinnedEqSlider::setMax(double m)
 
 void SkinnedEqSlider::updateSkin()
 {
-    resize(m_skin->getEqSlider(0).size());
+    resize(skin()->getEqSlider(0).size());
     draw(false);
-    setCursor(m_skin->getCursor(Skin::CUR_EQSLID));
+    setCursor(skin()->getCursor(Skin::CUR_EQSLID));
 }
 
 void SkinnedEqSlider::draw(bool pressed)
 {
-    int p = int(std::ceil(double(m_value - m_min) * (height() - 12 * m_skin->ratio()) / (m_max-m_min)));
-    m_pixmap = m_skin->getEqSlider(27 - 27 * (m_value-m_min) / (m_max-m_min));
+    int p = int(std::ceil(double(m_value - m_min) * (height() - 12 * skin()->ratio()) / (m_max-m_min)));
+    m_pixmap = skin()->getEqSlider(27 - 27 * (m_value-m_min) / (m_max-m_min));
     QPainter paint(&m_pixmap);
     if(pressed)
-        paint.drawPixmap(1, p, m_skin->getButton(Skin::EQ_BT_BAR_P));
+        paint.drawPixmap(1, p, skin()->getButton(Skin::EQ_BT_BAR_P));
     else
-        paint.drawPixmap(1, p, m_skin->getButton(Skin::EQ_BT_BAR_N));
+        paint.drawPixmap(1, p, skin()->getButton(Skin::EQ_BT_BAR_N));
     setPixmap(m_pixmap);
     m_pos = p;
 }
 
 double SkinnedEqSlider::convert(int p)
 {
-    return (m_max - m_min) * p / (height() - 12 * m_skin->ratio()) + m_min;
+    return (m_max - m_min) * p / (height() - 12 * skin()->ratio()) + m_min;
 }
 
 void SkinnedEqSlider::wheelEvent(QWheelEvent *e)

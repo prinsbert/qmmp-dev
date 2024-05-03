@@ -22,11 +22,12 @@
 
 #include <QWidget>
 
+class Skin;
+class QPixmap;
+
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class QPixmap;
-
 class PixmapWidget : public QWidget
 {
 Q_OBJECT
@@ -36,16 +37,20 @@ public:
     virtual ~PixmapWidget() = default;
     virtual void setPixmap(const QPixmap &pixmap, bool fixed_size = false);
 
+protected slots:
+    virtual void updateSkin() = 0;
+
 protected:
     virtual void paintEvent(QPaintEvent *event) override;
     virtual void mousePressEvent(QMouseEvent *event) override;
+    inline const Skin *skin() const { return m_skin; };
 
 signals:
     void mouseClicked();
 
 private:
-      QPixmap m_pixmap;
-
+    QPixmap m_pixmap;
+    Skin *m_skin;
 };
 
 #endif

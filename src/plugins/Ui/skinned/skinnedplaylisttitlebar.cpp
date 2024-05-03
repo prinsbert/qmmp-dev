@@ -36,9 +36,7 @@ SkinnedPlayListTitleBar::SkinnedPlayListTitleBar(QWidget *parent)
         : PixmapWidget(parent)
 {
     m_formatter.setPattern(TITLE_FORMAT);
-    m_skin = Skin::instance();
-    m_ratio = m_skin->ratio();
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedPlayListTitleBar::updateSkin);
+    m_ratio = skin()->ratio();
     m_pl = qobject_cast<SkinnedPlayList*>(parent);
     m_mw = qobject_cast<SkinnedMainWindow*>(m_pl->parent());
 
@@ -63,7 +61,7 @@ SkinnedPlayListTitleBar::SkinnedPlayListTitleBar(QWidget *parent)
         shade();
     resize(m_pl->width(),height());
     m_align = true;
-    setCursor(m_skin->getCursor(Skin::CUR_PTBAR));
+    setCursor(skin()->getCursor(Skin::CUR_PTBAR));
     updatePositions();
 }
 
@@ -77,7 +75,7 @@ SkinnedPlayListTitleBar::~SkinnedPlayListTitleBar()
 
 void SkinnedPlayListTitleBar::updatePositions()
 {
-    m_ratio = m_skin->ratio();
+    m_ratio = skin()->ratio();
     int sx = (width() - 275 * m_ratio) / 25;
     m_close->move(m_ratio * 264 + sx * 25, m_ratio * 3);
     m_shade->move(m_ratio * 255 + sx * 25, m_ratio * 3);
@@ -93,53 +91,53 @@ void SkinnedPlayListTitleBar::updatePixmap()
     paint.begin(&pixmap);
     if(m_shaded)
     {
-        paint.drawPixmap(0, 0, m_skin->getPlPart(Skin::PL_TITLEBAR_SHADED2));
+        paint.drawPixmap(0, 0, skin()->getPlPart(Skin::PL_TITLEBAR_SHADED2));
         for (int i = 1; i < sx + 9 * m_ratio; i++)
         {
-            paint.drawPixmap(25 * i, 0, m_skin->getPlPart(Skin::PL_TFILL_SHADED));
+            paint.drawPixmap(25 * i, 0, skin()->getPlPart(Skin::PL_TFILL_SHADED));
         }
     }
 
     if(m_active)
     {
         if(m_shaded)
-            paint.drawPixmap(225 * m_ratio +sx * 25, 0, m_skin->getPlPart(Skin::PL_TITLEBAR_SHADED1_A));
+            paint.drawPixmap(225 * m_ratio +sx * 25, 0, skin()->getPlPart(Skin::PL_TITLEBAR_SHADED1_A));
         else
         {
-            paint.drawPixmap(0, 0, m_skin->getPlPart(Skin::PL_CORNER_UL_A));
+            paint.drawPixmap(0, 0, skin()->getPlPart(Skin::PL_CORNER_UL_A));
             for (int i = 1; i < sx + 10 * m_ratio; i++)
             {
-                paint.drawPixmap(25 * i, 0, m_skin->getPlPart(Skin::PL_TFILL1_A));
+                paint.drawPixmap(25 * i, 0, skin()->getPlPart(Skin::PL_TFILL1_A));
             }
-            paint.drawPixmap((100 - 12) * m_ratio + 12 * sx, 0, m_skin->getPlPart(Skin::PL_TITLEBAR_A));
-            paint.drawPixmap(250 * m_ratio + sx * 25, 0, m_skin->getPlPart(Skin::PL_CORNER_UR_A));
+            paint.drawPixmap((100 - 12) * m_ratio + 12 * sx, 0, skin()->getPlPart(Skin::PL_TITLEBAR_A));
+            paint.drawPixmap(250 * m_ratio + sx * 25, 0, skin()->getPlPart(Skin::PL_CORNER_UR_A));
         }
     }
     else
     {
         if(m_shaded)
-            paint.drawPixmap(225 * m_ratio + sx * 25, 0, m_skin->getPlPart(Skin::PL_TITLEBAR_SHADED1_I));
+            paint.drawPixmap(225 * m_ratio + sx * 25, 0, skin()->getPlPart(Skin::PL_TITLEBAR_SHADED1_I));
         else
         {
-            paint.drawPixmap(0, 0, m_skin->getPlPart(Skin::PL_CORNER_UL_I));
+            paint.drawPixmap(0, 0, skin()->getPlPart(Skin::PL_CORNER_UL_I));
             for (int i = 1; i < sx + 10 * m_ratio; i++)
             {
-                paint.drawPixmap(25 * i, 0, m_skin->getPlPart(Skin::PL_TFILL1_I));
+                paint.drawPixmap(25 * i, 0, skin()->getPlPart(Skin::PL_TFILL1_I));
             }
-            paint.drawPixmap((100 - 12) * m_ratio + 12 * sx, 0, m_skin->getPlPart(Skin::PL_TITLEBAR_I));
-            paint.drawPixmap(250 * m_ratio + sx * 25, 0, m_skin->getPlPart(Skin::PL_CORNER_UR_I));
+            paint.drawPixmap((100 - 12) * m_ratio + 12 * sx, 0, skin()->getPlPart(Skin::PL_TITLEBAR_I));
+            paint.drawPixmap(250 * m_ratio + sx * 25, 0, skin()->getPlPart(Skin::PL_CORNER_UR_I));
         }
     }
     if(m_shaded)
     {
         QColor col;
-        col.setNamedColor(QString(m_skin->getPLValue("normalbg")));
+        col.setNamedColor(QString(skin()->getPLValue("normalbg")));
         paint.setBrush(QBrush(col));
         paint.setPen(col);
         paint.drawRect(8 * m_ratio, m_ratio, 235 * m_ratio + sx * 25, 11 * m_ratio);
         //draw text
         paint.setFont(m_font);
-        paint.setPen(QString(m_skin->getPLValue("normal")));
+        paint.setPen(QString(skin()->getPLValue("normal")));
         paint.drawText(9 * m_ratio, 11 * m_ratio, m_truncatedText);
     }
     paint.end();
@@ -178,7 +176,7 @@ void SkinnedPlayListTitleBar::mouseReleaseEvent(QMouseEvent*)
 {
     Dock::instance()->updateDock();
     m_resize = false;
-    setCursor(m_skin->getCursor(Skin::CUR_PTBAR));
+    setCursor(skin()->getCursor(Skin::CUR_PTBAR));
 }
 
 void SkinnedPlayListTitleBar::mouseMoveEvent(QMouseEvent* event)
@@ -233,10 +231,10 @@ void SkinnedPlayListTitleBar::readSettings()
 
 void SkinnedPlayListTitleBar::updateSkin()
 {
-    setCursor(m_skin->getCursor(Skin::CUR_PTBAR));
-    if(m_ratio != m_skin->ratio())
+    setCursor(skin()->getCursor(Skin::CUR_PTBAR));
+    if(m_ratio != skin()->ratio())
     {
-        m_ratio = m_skin->ratio();
+        m_ratio = skin()->ratio();
         m_font.setPixelSize(12 * m_ratio);
         setMinimumWidth(275 * m_ratio);
         updatePositions();
