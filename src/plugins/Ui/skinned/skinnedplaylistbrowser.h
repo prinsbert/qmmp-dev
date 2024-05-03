@@ -22,7 +22,7 @@
 #define SKINNEDPLAYLISTBROWSER_H
 
 #include <QDialog>
-#include "ui_playlistbrowser.h"
+#include "ui_skinnedplaylistbrowser.h"
 
 class PlayListManager;
 class QStandardItemModel;
@@ -52,7 +52,7 @@ private slots:
 
 private:
     bool eventFilter(QObject *o, QEvent *e) override;
-    Ui::PlayListBrowser m_ui;
+    Ui::SkinnedPlayListBrowser m_ui;
     PlayListManager *m_pl_manager;
     QStandardItemModel* m_listModel;
     QSortFilterProxyModel* m_proxyModel;
