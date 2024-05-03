@@ -11,10 +11,10 @@ SET(libqsui_SRCS
     qsuiactionmanager.cpp
     dockwidgetlist.cpp
     elidinglabel.cpp
-    equalizer.cpp
+    qsuiequalizer.cpp
     filesystembrowser.cpp
     qsuikeyboardmanager.cpp
-    playlistbrowser.cpp
+    qsuiplaylistbrowser.cpp
     qsuicoverwidget.cpp
     qsuifactory.cpp
     qsuihotkeyeditor.cpp
@@ -33,7 +33,7 @@ SET(libqsui_SRCS
     qsuitabwidget.cpp
     qsuivisualization.cpp
     qsuiwaveformseekbar.cpp
-    shortcutitem.cpp
+    qsuishortcutitem.cpp
     toolbareditor.cpp
     volumeslider.cpp
     fft.c

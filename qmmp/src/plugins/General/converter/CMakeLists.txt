@@ -18,9 +18,9 @@ SET(libconverter_SRCS
     converter.cpp
     converterhelper.cpp
     converterdialog.cpp
-    preseteditor.cpp
+    converterpreseteditor.cpp
     converterdialog.ui
-    preseteditor.ui
+    converterpreseteditor.ui
     translations/translations.qrc
     presets.qrc
 )
