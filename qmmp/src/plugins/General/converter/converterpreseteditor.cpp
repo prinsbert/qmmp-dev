@@ -19,13 +19,13 @@
  ***************************************************************************/
 
 #include <QMenu>
-#include "preseteditor.h"
-#include "ui_preseteditor.h"
+#include "converterpreseteditor.h"
+#include "ui_converterpreseteditor.h"
 
 using namespace Qt::Literals::StringLiterals;
 
 PresetEditor::PresetEditor(const QVariantHash &data, QWidget *parent) :
-    QDialog(parent), m_ui(new Ui::PresetEditor)
+    QDialog(parent), m_ui(new Ui::ConverterPresetEditor)
 {
     m_ui->setupUi(this);
     m_ui->nameLineEdit->setText(data.value(u"name"_s).toString());
@@ -54,7 +54,7 @@ PresetEditor::~PresetEditor()
     delete m_ui;
 }
 
-const QVariantHash PresetEditor::data() const
+QVariantHash PresetEditor::data() const
 {
     QVariantHash data;
     data.insert(u"name"_s, m_ui->nameLineEdit->text());

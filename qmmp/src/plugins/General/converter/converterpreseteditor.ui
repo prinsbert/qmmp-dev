@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PresetEditor</class>
- <widget class="QDialog" name="PresetEditor">
+ <class>ConverterPresetEditor</class>
+ <widget class="QDialog" name="ConverterPresetEditor">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>269</height>
+    <height>314</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -111,7 +111,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>PresetEditor</receiver>
+   <receiver>ConverterPresetEditor</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -127,7 +127,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>PresetEditor</receiver>
+   <receiver>ConverterPresetEditor</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

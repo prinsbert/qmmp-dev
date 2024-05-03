@@ -6,16 +6,16 @@ HEADERS += converterfactory.h \
     converterhelper.h \
     converterdialog.h \
     converter.h \
-    preseteditor.h
+    converterpreseteditor.h
 
 SOURCES += converterfactory.cpp \
     converterhelper.cpp \
     converterdialog.cpp \
     converter.cpp \
-    preseteditor.cpp
+    converterpreseteditor.cpp
 
 FORMS += converterdialog.ui \
-    preseteditor.ui
+    converterpreseteditor.ui
 
 RESOURCES = translations/translations.qrc presets.qrc
 

@@ -18,14 +18,14 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef PRESETEDITOR_H
-#define PRESETEDITOR_H
+#ifndef CONVERTERPRESETEDITOR_H
+#define CONVERTERPRESETEDITOR_H
 
 #include <QDialog>
 #include <QVariantHash>
 
 namespace Ui {
-    class PresetEditor;
+    class ConverterPresetEditor;
 }
 
 /**
@@ -34,19 +34,18 @@ namespace Ui {
 class PresetEditor : public QDialog
 {
     Q_OBJECT
-
 public:
     explicit PresetEditor(const QVariantHash &data, QWidget *parent = nullptr);
     virtual ~PresetEditor();
 
-    const QVariantHash data() const;
+    QVariantHash data() const;
 
 private slots:
     void addCommandString(QAction *);
 
 private:
     void createMenus();
-    Ui::PresetEditor *m_ui;
+    Ui::ConverterPresetEditor *m_ui;
 };
 
-#endif // PRESETEDITOR_H
+#endif // CONVERTERPRESETEDITOR_H
