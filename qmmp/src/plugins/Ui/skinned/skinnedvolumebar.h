@@ -22,8 +22,6 @@
 
 #include "pixmapwidget.h"
 
-class Skin;
-
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
@@ -46,7 +44,7 @@ signals:
     void sliderReleased();
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
 
 private:
     int convert(int);   // value = convert(position);
@@ -55,7 +53,6 @@ private:
     void mouseReleaseEvent(QMouseEvent*) override;
     void mouseMoveEvent(QMouseEvent*) override;
 
-    Skin *m_skin;
     bool m_moving = false;
     int press_pos = -1;
     int m_max = 100, m_min = 0, m_pos, m_value = 0, m_old = 0;

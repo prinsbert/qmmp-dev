@@ -25,7 +25,6 @@
 
 class QMouseEvent;
 class PaintEvent;
-class Skin;
 
  /**
     @author Vladimir Kuznetsov <vovanec@gmail.ru>
@@ -46,12 +45,11 @@ signals:
 	void ejectClicked();
 
 private slots:
-	void updateSkin();
+    void updateSkin() override;
 
 private:
     void mouseReleaseEvent(QMouseEvent*) override;
     int m_ratio;
-    Skin* m_skin;
 };
 
 #endif 

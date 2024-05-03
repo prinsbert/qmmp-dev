@@ -23,8 +23,6 @@
 #include <qmmp/qmmp.h>
 #include "pixmapwidget.h"
 
-class Skin;
-
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
@@ -36,8 +34,10 @@ public:
 
     void setState(Qmmp::State state);
 
+private slots:
+    void updateSkin() override;
+
 private:
-   Skin *m_skin;
    Qmmp::State m_state = Qmmp::Stopped;
 };
 

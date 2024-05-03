@@ -39,8 +39,7 @@ SkinnedTitleBar::SkinnedTitleBar(SkinnedTimeIndicatorModel *model, QWidget *pare
         : PixmapWidget(parent),
           m_model(model)
 {
-    m_skin = Skin::instance();
-    setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_A));
+    setPixmap(skin()->getTitleBar(Skin::TITLEBAR_A));
     m_mw = qobject_cast<SkinnedMainWindow*>(parent->parent());
     //buttons
     m_menu = new SkinnedButton(this,Skin::BT_MENU_N,Skin::BT_MENU_P, Skin::CUR_MAINMENU);
@@ -53,12 +52,11 @@ SkinnedTitleBar::SkinnedTitleBar(SkinnedTimeIndicatorModel *model, QWidget *pare
     m_close = new SkinnedButton(this,Skin::BT_CLOSE_N,Skin::BT_CLOSE_P, Skin::CUR_CLOSE);
     connect(m_close, &SkinnedButton::clicked, m_mw, &SkinnedMainWindow::close);
     setActive(false);
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedTitleBar::updateSkin);
     QSettings settings;
     if(settings.value("Skinned/disp_shaded"_L1, false).toBool())
         shade();
     m_align = true;
-    setCursor(m_skin->getCursor(Skin::CUR_TITLEBAR));
+    setCursor(skin()->getCursor(Skin::CUR_TITLEBAR));
     updatePositions();
     connect(m_model, &SkinnedTimeIndicatorModel::changed, this, &SkinnedTitleBar::onModelChanged);
 }
@@ -71,7 +69,7 @@ SkinnedTitleBar::~SkinnedTitleBar()
 
 void SkinnedTitleBar::updatePositions()
 {
-    int r = m_skin->ratio();
+    int r = skin()->ratio();
     m_menu->move(r * 6, r * 3);
     m_minimize->move(r * 244, r * 3);
     m_shade->move(r * 254, r*3);
@@ -106,7 +104,7 @@ void SkinnedTitleBar::mouseReleaseEvent(QMouseEvent*)
 }
 void SkinnedTitleBar::mouseMoveEvent(QMouseEvent* event)
 {
-    if(m_pos.x() < width() - m_skin->ratio() * 37)
+    if(m_pos.x() < width() - skin()->ratio() * 37)
     {
         QPoint npos = (event->globalPosition().toPoint() - m_pos);
         Dock::instance()->move(m_mw, npos);
@@ -118,23 +116,23 @@ void SkinnedTitleBar::setActive(bool a)
     if(a)
     {
         if(m_shaded)
-            setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_SHADED_A));
+            setPixmap(skin()->getTitleBar(Skin::TITLEBAR_SHADED_A));
         else
-            setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_A));
+            setPixmap(skin()->getTitleBar(Skin::TITLEBAR_A));
     }
     else
     {
         if(m_shaded)
-            setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_SHADED_I));
+            setPixmap(skin()->getTitleBar(Skin::TITLEBAR_SHADED_I));
         else
-            setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_I));
+            setPixmap(skin()->getTitleBar(Skin::TITLEBAR_I));
     }
 }
 
 void SkinnedTitleBar::updateSkin()
 {
     setActive(false);
-    setCursor(m_skin->getCursor(Skin::CUR_TITLEBAR));
+    setCursor(skin()->getCursor(Skin::CUR_TITLEBAR));
     updatePositions();
 }
 
@@ -146,10 +144,10 @@ void SkinnedTitleBar::showMainMenu()
 void SkinnedTitleBar::shade()
 {
     m_shaded = !m_shaded;
-    int r = m_skin->ratio();
+    int r = skin()->ratio();
     if(m_shaded)
     {
-        setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_SHADED_A));
+        setPixmap(skin()->getTitleBar(Skin::TITLEBAR_SHADED_A));
         m_shade->hide();
         m_shade2 = new SkinnedButton(this,Skin::BT_SHADE2_N, Skin::BT_SHADE2_P, Skin::CUR_WSNORMAL);
         connect(m_shade2, &SkinnedButton::clicked, this, &SkinnedTitleBar::shade);
@@ -171,7 +169,7 @@ void SkinnedTitleBar::shade()
     }
     else
     {
-        setPixmap(m_skin->getTitleBar(Skin::TITLEBAR_A));
+        setPixmap(skin()->getTitleBar(Skin::TITLEBAR_A));
         m_shade2->deleteLater();
         m_currentTime->deleteLater();
         m_control->deleteLater();

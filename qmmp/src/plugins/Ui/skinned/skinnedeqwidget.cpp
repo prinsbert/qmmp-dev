@@ -45,12 +45,10 @@ SkinnedEqWidget::SkinnedEqWidget (QWidget *parent)
         : PixmapWidget (parent)
 {
     setWindowTitle(tr("Equalizer"));
-    m_skin = Skin::instance();
-    setPixmap (m_skin->getEqPart(Skin::EQ_MAIN), true);
-    setCursor (m_skin->getCursor(Skin::CUR_EQNORMAL));
+    setPixmap(skin()->getEqPart(Skin::EQ_MAIN), true);
+    setCursor(skin()->getCursor(Skin::CUR_EQNORMAL));
     m_titleBar = new SkinnedEqTitleBar (this);
     m_titleBar->move (0,0);
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedEqWidget::updateSkin);
 
     m_preamp = new SkinnedEqSlider(this);
     connect(m_preamp, &SkinnedEqSlider::sliderMoved, this, &SkinnedEqWidget::writeEq);
@@ -89,7 +87,7 @@ SkinnedEqWidget::SkinnedEqWidget (QWidget *parent)
 
 void SkinnedEqWidget::updatePositions()
 {
-    int r = m_skin->ratio();
+    int r = skin()->ratio();
     m_preamp->move(21 * r, 38 * r);
     m_on->move(14 * r, 18 * r);
     m_autoButton->move(39 * r, 18 * r);
@@ -116,8 +114,8 @@ void SkinnedEqWidget::closeEvent (QCloseEvent* e)
 void SkinnedEqWidget::updateSkin()
 {
     m_titleBar->setActive (false);
-    setPixmap(m_skin->getEqPart(Skin::EQ_MAIN), true);
-    setCursor(m_skin->getCursor(Skin::CUR_EQNORMAL));
+    setPixmap(skin()->getEqPart(Skin::EQ_MAIN), true);
+    setCursor(skin()->getCursor(Skin::CUR_EQNORMAL));
     setMimimalMode(m_shaded);
     updatePositions();
 }
@@ -125,7 +123,7 @@ void SkinnedEqWidget::updateSkin()
 void SkinnedEqWidget::setMimimalMode(bool b)
 {
     m_shaded = b;
-    int r = m_skin->ratio();
+    int r = skin()->ratio();
 
     if(m_shaded)
         setFixedSize(r * 275, r * 14);
@@ -141,7 +139,7 @@ void SkinnedEqWidget::readSettings()
     QScreen *primaryScreen = QGuiApplication::primaryScreen();
     QRect availableGeometry = primaryScreen->availableGeometry();
     QPoint pos = settings.value("Skinned/eq_pos"_L1, QPoint(100, 216)).toPoint();
-    int r = m_skin->ratio();
+    int r = skin()->ratio();
     //TODO QGuiApplication::screenAt
     const QList<QScreen *> screens = QGuiApplication::screens();
     auto it = std::find_if(screens.cbegin(), screens.cend(), [pos](QScreen *screen){ return screen->availableGeometry().contains(pos); });
@@ -448,7 +446,7 @@ void SkinnedEqWidget::updateMask()
 {
     clearMask();
     setMask(QRegion(0,0,width(),height()));
-    QRegion region = m_skin->getRegion(m_shaded ? Skin::EQUALIZER_WS : Skin::EQUALIZER);
+    QRegion region = skin()->getRegion(m_shaded ? Skin::EQUALIZER_WS : Skin::EQUALIZER);
     if (!region.isEmpty())
         setMask(region);
 }

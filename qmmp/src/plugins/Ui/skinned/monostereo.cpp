@@ -24,10 +24,8 @@
 MonoStereo::MonoStereo(QWidget *parent)
       : PixmapWidget(parent)
 {
-   m_skin = Skin::instance();
-   m_pixmap = QPixmap(54 * m_skin->ratio(), 12 * m_skin->ratio());
+   m_pixmap = QPixmap(54 * skin()->ratio(), 12 * skin()->ratio());
    setChannels(0);
-   connect(m_skin, &Skin::skinChanged, this, &MonoStereo::updateSkin);
 }
 
 void MonoStereo::setChannels(int c)
@@ -36,24 +34,24 @@ void MonoStereo::setChannels(int c)
    QPainter paint(&m_pixmap);
    if(c == 0)
    {
-       paint.drawPixmap(0, 0, m_skin->getMSPart(Skin::MONO_I));
-       paint.drawPixmap(27 * m_skin->ratio(), 0, m_skin->getMSPart(Skin::STEREO_I));
+       paint.drawPixmap(0, 0, skin()->getMSPart(Skin::MONO_I));
+       paint.drawPixmap(27 * skin()->ratio(), 0, skin()->getMSPart(Skin::STEREO_I));
    }
    else if(c == 1)
    {
-       paint.drawPixmap(0, 0, m_skin->getMSPart(Skin::MONO_A));
-       paint.drawPixmap(27 * m_skin->ratio(), 0, m_skin->getMSPart(Skin::STEREO_I));
+       paint.drawPixmap(0, 0, skin()->getMSPart(Skin::MONO_A));
+       paint.drawPixmap(27 * skin()->ratio(), 0, skin()->getMSPart(Skin::STEREO_I));
    }
    else if (c > 1)
    {
-      paint.drawPixmap(0, 0, m_skin->getMSPart(Skin::MONO_I));
-      paint.drawPixmap(27 * m_skin->ratio(), 0, m_skin->getMSPart(Skin::STEREO_A));
+      paint.drawPixmap(0, 0, skin()->getMSPart(Skin::MONO_I));
+      paint.drawPixmap(27 * skin()->ratio(), 0, skin()->getMSPart(Skin::STEREO_A));
    }
    setPixmap(m_pixmap);
 }
 
 void MonoStereo::updateSkin()
 {
-   m_pixmap = QPixmap(54 * m_skin->ratio(), 12 * m_skin->ratio());
+   m_pixmap = QPixmap(54 * skin()->ratio(), 12 * skin()->ratio());
    setChannels(m_channels);
 }

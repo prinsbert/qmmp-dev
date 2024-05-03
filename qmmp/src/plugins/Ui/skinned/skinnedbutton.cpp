@@ -31,10 +31,8 @@ SkinnedButton::SkinnedButton(QWidget *parent, uint normal, uint pressed, uint cu
           m_name_pressed(pressed),
           m_name_cursor(cursor)
 {
-    m_skin = Skin::instance();
     setON(false);
-    setCursor(m_skin->getCursor(m_name_cursor));
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedButton::updateSkin);
+    setCursor(skin()->getCursor(m_name_cursor));
 }
 
 SkinnedButton::~SkinnedButton()
@@ -42,13 +40,13 @@ SkinnedButton::~SkinnedButton()
 
 void SkinnedButton::updateSkin()
 {
-    setPixmap(m_skin->getButton(m_name_normal));
-    setCursor(m_skin->getCursor(m_name_cursor));
+    setPixmap(skin()->getButton(m_name_normal));
+    setCursor(skin()->getCursor(m_name_cursor));
 }
 
 void SkinnedButton::setON(bool on)
 {
-    setPixmap(m_skin->getButton(on ? m_name_pressed : m_name_normal));
+    setPixmap(skin()->getButton(on ? m_name_pressed : m_name_normal));
 }
 void SkinnedButton::mousePressEvent(QMouseEvent *e)
 {

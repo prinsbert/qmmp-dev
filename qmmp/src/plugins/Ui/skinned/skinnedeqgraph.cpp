@@ -24,13 +24,11 @@
 
 SkinnedEqGraph::SkinnedEqGraph(QWidget *parent) : PixmapWidget (parent)
 {
-    m_skin = Skin::instance();
-    setPixmap(m_skin->getEqPart (Skin::EQ_GRAPH));
+    setPixmap(skin()->getEqPart (Skin::EQ_GRAPH));
     clear();
-    m_ratio = m_skin->ratio();
-    draw();
-    connect(m_skin, &Skin::skinChanged, this, &SkinnedEqGraph::updateSkin);
-    setVisible(!m_skin->getEqPart(Skin::EQ_GRAPH).isNull());
+    m_ratio = skin()->ratio();
+    draw();;
+    setVisible(!skin()->getEqPart(Skin::EQ_GRAPH).isNull());
 }
 
 SkinnedEqGraph::~SkinnedEqGraph()
@@ -99,7 +97,7 @@ double SkinnedEqGraph::eval_spline(double xa[], double ya[], double y2a[], int n
 
 void SkinnedEqGraph::draw()
 {
-    QPixmap pixmap = m_skin->getEqPart (Skin::EQ_GRAPH);
+    QPixmap pixmap = skin()->getEqPart (Skin::EQ_GRAPH);
     if(pixmap.isNull())
         pixmap = QPixmap(113 * m_ratio, 19 * m_ratio);
 
@@ -124,7 +122,7 @@ void SkinnedEqGraph::draw()
         y = qBound(0, y, 18);
 
         QPainter paint(&pixmap);
-        paint.drawPixmap(i * m_ratio, y * m_ratio, m_skin->getEqSpline(y));
+        paint.drawPixmap(i * m_ratio, y * m_ratio, skin()->getEqSpline(y));
     }
     setPixmap (pixmap);
     delete [] bands;
@@ -132,7 +130,7 @@ void SkinnedEqGraph::draw()
 
 void SkinnedEqGraph::updateSkin()
 {
-    m_ratio = m_skin->ratio();
+    m_ratio = skin()->ratio();
     draw();
-    setVisible(!m_skin->getEqPart(Skin::EQ_GRAPH).isNull());
+    setVisible(!skin()->getEqPart(Skin::EQ_GRAPH).isNull());
 }

@@ -29,7 +29,6 @@
 */
 
 class QMenu;
-class Skin;
 class SkinnedEqTitleBar;
 class SkinnedEqSlider;
 class SkinnedToggleButton;
@@ -58,7 +57,7 @@ signals:
     void closed();
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
     void readEq();
     void writeEq();
     void showPresetsMenu();
@@ -86,7 +85,6 @@ private:
     bool event(QEvent *event) override;
 #endif
 
-    Skin *m_skin;
     SkinnedEqTitleBar *m_titleBar;
     SkinnedEqSlider *m_preamp;
     SkinnedButton *m_presetButton;

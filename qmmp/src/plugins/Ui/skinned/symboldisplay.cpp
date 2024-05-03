@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,13 +22,11 @@
 #include "skin.h"
 #include "symboldisplay.h"
 
-SymbolDisplay::SymbolDisplay (QWidget *parent, int digits) : PixmapWidget (parent),
+SymbolDisplay::SymbolDisplay (QWidget *parent, int digits) : PixmapWidget(parent),
     m_digits(digits)
 {
-    m_skin = Skin::instance();
-    connect (m_skin, SIGNAL (skinChanged()), this, SLOT (draw()));
     draw();
-    for (int i = 0; i < m_digits; ++i)
+    for(int i = 0; i < m_digits; ++i)
 #if defined(Q_OS_LINUX)
         m_max += 9 * (int) exp10(i);
 #else
@@ -52,44 +50,49 @@ Qt::Alignment SymbolDisplay::alignment() const
 void SymbolDisplay::display (const QString& str)
 {
     m_text = str;
-    if (!str.isEmpty())
+    if(!str.isEmpty())
         draw();
 }
 
 void SymbolDisplay::draw()
 {
     QString str = m_text;
-    QPixmap bg = m_skin->getLetter(QChar::Space);
+    QPixmap bg = skin()->getLetter(QChar::Space);
     int w = bg.size().width();
     int h = bg.size().height();
     QPixmap tmp (m_digits*w,h);
     QPainter paint (&tmp);
     int j;
-    for (int i = 0; i < m_digits; ++i)
+    for(int i = 0; i < m_digits; ++i)
     {
-        if (m_alignment == Qt::AlignRight) // TODO: add align Center
+        if(m_alignment == Qt::AlignRight) // TODO: add align Center
         {
-            j = str.size() -1 - i;
-            if (j >= 0)
-                paint.drawPixmap ((m_digits-1-i) *w,0,m_skin->getLetter(str.at(j)));
+            j = str.size() - 1 - i;
+            if(j >= 0)
+                paint.drawPixmap((m_digits-1-i) *w, 0, skin()->getLetter(str.at(j)));
             else
-                paint.drawPixmap ((m_digits-1-i) *w,0,m_skin->getLetter(QChar::Space));
+                paint.drawPixmap((m_digits-1-i) *w, 0, skin()->getLetter(QChar::Space));
         }
         else
         {
-            if (i < str.size())
-                paint.drawPixmap(i * w,0,m_skin->getLetter(str.at (i)));
+            if(i < str.size())
+                paint.drawPixmap(i * w, 0, skin()->getLetter(str.at(i)));
             else
-                paint.drawPixmap(i * w,0,m_skin->getLetter(QChar::Space));
+                paint.drawPixmap(i * w, 0, skin()->getLetter(QChar::Space));
             ;
         }
     }
     setPixmap(tmp);
 }
 
+void SymbolDisplay::updateSkin()
+{
+    draw();
+}
+
 void SymbolDisplay::displayNum(int val)
 {
-    if (val < m_max)
+    if(val < m_max)
         display(QString::number(val));
     else
         display(QStringLiteral("%1h").arg(val / 100));

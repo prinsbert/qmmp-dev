@@ -25,8 +25,6 @@
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class Skin;
-
 class SkinnedToggleButton : public PixmapWidget
 {
 Q_OBJECT
@@ -42,14 +40,13 @@ signals:
     void clicked(bool);
 
 private slots:
-    void updateSkin();
+    void updateSkin() override;
 
 private:
     void mousePressEvent(QMouseEvent*) override;
     void mouseReleaseEvent(QMouseEvent*) override;
     void mouseMoveEvent(QMouseEvent*) override;
 
-    Skin *m_skin;
     bool m_cursorin, m_old_on;
     uint m_on_n, m_on_p, m_off_n, m_off_p;
     bool m_on = false;

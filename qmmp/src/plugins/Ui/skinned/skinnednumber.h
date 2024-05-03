@@ -25,7 +25,6 @@
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
 */
-class Skin;
 
 class SkinnedNumber : public PixmapWidget
 {
@@ -37,10 +36,9 @@ public:
     void setValue(int n);
 
 private slots:
-    void updateSkin(void);
+    void updateSkin() override;
 
 private:
-    Skin *m_skin;
     int m_value = 0;
 };
 

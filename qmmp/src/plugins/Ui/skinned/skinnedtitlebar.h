@@ -27,7 +27,6 @@
 
 class SkinnedMainWindow;
 class QMouseEvent;
-class Skin;
 class SkinnedButton;
 class SymbolDisplay;
 class SkinnedTitleBarControl;
@@ -49,7 +48,7 @@ public:
 
 private slots:
     void onModelChanged();
-    void updateSkin();
+    void updateSkin() override;
     void showMainMenu();
     void shade();
 
@@ -60,7 +59,6 @@ private:
     void mouseMoveEvent(QMouseEvent*) override;
     void mouseDoubleClickEvent(QMouseEvent*) override;
 
-    Skin *m_skin;
     QPoint m_pos;
     SkinnedMainWindow *m_mw;
     SkinnedButton *m_menu;
