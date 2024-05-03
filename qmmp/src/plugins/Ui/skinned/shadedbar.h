@@ -35,12 +35,11 @@ class ShadedBar : public QWidget
 public:
     ShadedBar(QWidget *parent = nullptr, uint slider1 = 0, uint slider2 = 0, uint slider3 = 0);
 
-    ~ShadedBar();
-    inline int value()
+    inline int value() const
     {
         return m_value;
     }
-    inline int isPressed()
+    inline int isPressed() const
     {
         return m_moving;
     }
@@ -56,21 +55,25 @@ private slots:
     void updateSkin();
 
 private:
+    int convert(int);   // value = convert(position);
+    void draw();
+
+    void mousePressEvent(QMouseEvent*) override;
+    void mouseReleaseEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent*) override;
+    void paintEvent(QPaintEvent*) override;
+
     Skin *m_skin;
     bool m_moving = false;
     int m_press_pos = 0;
     int m_max = 100, m_min = 0, m_pos = 0, m_value = 0, m_old;
     QPixmap m_pixmap;
-    int convert(int);   // value = convert(position);
-    void draw();
+
     uint m_slider1, m_slider2, m_slider3;
     int m_ratio;
 
 protected:
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void paintEvent(QPaintEvent*) override;
+
 };
 
 #endif

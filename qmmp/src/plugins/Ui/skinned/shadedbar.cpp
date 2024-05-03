@@ -32,15 +32,11 @@ ShadedBar::ShadedBar(QWidget *parent, uint slider1, uint slider2, uint slider3) 
     m_skin = Skin::instance();
     m_ratio = m_skin->ratio();
     if(slider1 == Skin::EQ_VOLUME1)
-        resize(m_ratio*97,m_ratio*7);
+        resize(m_ratio * 97, m_ratio * 7);
     else
-        resize(m_ratio*42,m_ratio*7);
-    connect(m_skin, SIGNAL(skinChanged()), this, SLOT(updateSkin()));
+        resize(m_ratio * 42, m_ratio * 7);
+    connect(m_skin, &Skin::skinChanged, this, &ShadedBar::updateSkin);
     draw();
-}
-
-ShadedBar::~ShadedBar()
-{
 }
 
 void ShadedBar::mousePressEvent(QMouseEvent *e)
@@ -105,31 +101,31 @@ void ShadedBar::updateSkin()
 {
     m_ratio = m_skin->ratio();
     if(m_slider1 == Skin::EQ_VOLUME1)
-        resize(m_ratio*97,m_ratio*7);
+        resize(m_ratio * 97, m_ratio * 7);
     else
-        resize(m_ratio*42,m_ratio*7);
+        resize(m_ratio * 42, m_ratio * 7);
     draw();
 }
 
 void ShadedBar::draw()
 {
-    if (m_value <= m_min + (m_max - m_min)/3)
+    if(m_value <= m_min + (m_max - m_min) / 3)
         m_pixmap = m_skin->getEqPart(m_slider1);
-    else if(m_min + (m_max - m_min)/3 < m_value && m_value <= m_min + 2*(m_max - m_min)/3)
+    else if(m_min + (m_max - m_min)/3 < m_value && m_value <= m_min + 2 * (m_max - m_min) / 3)
         m_pixmap = m_skin->getEqPart(m_slider2);
     else
         m_pixmap = m_skin->getEqPart(m_slider3);
-    m_pos = int(ceil(double(m_value-m_min)*(width()-3*m_ratio)/(m_max-m_min)));
+    m_pos = int(ceil(double(m_value-m_min) * (width() - 3 * m_ratio) / (m_max-m_min)));
     update();
 }
 
 int ShadedBar::convert(int p)
 {
-    return int(ceil(double(m_max-m_min)*(p)/(width()-3)+m_min));
+    return int(ceil(double(m_max - m_min) * (p) / (width() - 3) + m_min));
 }
 
 void ShadedBar::paintEvent(QPaintEvent*)
 {
     QPainter paint(this);
-    paint.drawPixmap(m_pos,0,m_pixmap);
+    paint.drawPixmap(m_pos, 0, m_pixmap);
 }

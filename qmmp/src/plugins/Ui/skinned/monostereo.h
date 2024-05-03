@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2009 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,7 +33,7 @@ Q_OBJECT
 public:
     MonoStereo(QWidget *parent = nullptr);
 
-    ~MonoStereo();
+    ~MonoStereo() = default;
 
 public slots:
     void setChannels(int);

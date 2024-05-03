@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2016 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -27,10 +27,6 @@ PixmapWidget::PixmapWidget(QWidget *parent)
         : QWidget(parent)
 {}
 
-
-PixmapWidget::~PixmapWidget()
-{}
-
 void PixmapWidget::setPixmap(const QPixmap &pixmap, bool fixed_size)
 {
     m_pixmap = pixmap;
@@ -41,16 +37,16 @@ void PixmapWidget::setPixmap(const QPixmap &pixmap, bool fixed_size)
     update();
 }
 
-void PixmapWidget::paintEvent (QPaintEvent *e)
+void PixmapWidget::paintEvent (QPaintEvent *event)
 {
-    Q_UNUSED(e);
+    Q_UNUSED(event);
     QPainter paint(this);
     style()->drawItemPixmap(&paint, rect(), Qt::AlignCenter, m_pixmap);
 }
 
-void PixmapWidget::mousePressEvent(QMouseEvent *e)
+void PixmapWidget::mousePressEvent(QMouseEvent *event)
 {
-    if (e->button() & Qt::LeftButton) {
+    Q_UNUSED(event);
+    if(event->button() & Qt::LeftButton)
         emit mouseClicked();
-    }
 }

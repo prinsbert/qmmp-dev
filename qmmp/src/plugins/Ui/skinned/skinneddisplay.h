@@ -25,26 +25,26 @@
 #include <qmmp/audioparameters.h>
 #include "pixmapwidget.h"
 
-class TimeIndicator;
-class TimeIndicatorModel;
-class PositionBar;
+class SkinnedTimeIndicator;
+class SkinnedTimeIndicatorModel;
+class SkinnedPositionBar;
 class Skin;
-class ToggleButton;
-class TitleBar;
+class SkinnedToggleButton;
+class SkinnedTitleBar;
 class NumberDisplay;
 class SymbolDisplay;
 class MonoStereo;
-class PlayStatus;
-class VolumeBar;
+class SkinnedPlayStatus;
+class SkinnedVolumeBar;
 class SkinnedBalanceBar;
-class MainWindow;
+class SkinnedMainWindow;
 class SoundCore;
 class SkinnedButton;
-class TextScroller;
-class MainVisual;
-class TitleBar;
-class EqWidget;
-class PlayList;
+class SkinnedTextScroller;
+class SkinnedVisualization;
+class SkinnedTitleBar;
+class SkinnedEqWidget;
+class SkinnedPlayList;
 
 /**
    @author Ilya Kotov <forkotov02@ya.ru>
@@ -53,12 +53,12 @@ class SkinnedDisplay : public PixmapWidget
 {
     Q_OBJECT
 public:
-    SkinnedDisplay(MainWindow *parent = nullptr);
+    SkinnedDisplay(SkinnedMainWindow *parent = nullptr);
 
     ~SkinnedDisplay();
 
-    void setEQ(EqWidget *w);
-    void setPL(PlayList *w);
+    void setEQ(SkinnedEqWidget *w);
+    void setPL(SkinnedPlayList *w);
     bool isEqualizerVisible() const;
     bool isPlaylistVisible() const;
     bool isRepeatable() const;
@@ -90,33 +90,33 @@ private:
     void updatePositions();
     void updateMask();
 
-    EqWidget *m_equlizer;
-    PlayList *m_playlist;
+    SkinnedEqWidget *m_equlizer;
+    SkinnedPlayList *m_playlist;
     bool m_shaded = false;
     Skin *m_skin;
-    PositionBar *m_posbar;
+    SkinnedPositionBar *m_posbar;
     SkinnedButton *m_previous;
     SkinnedButton *m_play;
     SkinnedButton *m_pause;
     SkinnedButton *m_stop;
     SkinnedButton *m_next;
     SkinnedButton *m_eject;
-    TextScroller *m_text;
-    ToggleButton *m_eqButton;
-    ToggleButton *m_plButton;
-    ToggleButton *m_shuffleButton;
-    ToggleButton *m_repeatButton;
+    SkinnedTextScroller *m_text;
+    SkinnedToggleButton *m_eqButton;
+    SkinnedToggleButton *m_plButton;
+    SkinnedToggleButton *m_shuffleButton;
+    SkinnedToggleButton *m_repeatButton;
     SymbolDisplay* m_kbps;
     SymbolDisplay* m_freq;
     MonoStereo* m_monoster;
-    PlayStatus* m_playstatus;
-    VolumeBar* m_volumeBar;
+    SkinnedPlayStatus* m_playstatus;
+    SkinnedVolumeBar* m_volumeBar;
     SkinnedBalanceBar* m_balanceBar;
-    MainWindow* m_mw;
-    MainVisual* m_vis;
-    TimeIndicatorModel* m_timeIndicatorModel;
-    TimeIndicator* m_timeIndicator;
-    TitleBar *m_titlebar;
+    SkinnedMainWindow* m_mw;
+    SkinnedVisualization* m_vis;
+    SkinnedTimeIndicatorModel* m_timeIndicatorModel;
+    SkinnedTimeIndicator* m_timeIndicator;
+    SkinnedTitleBar *m_titlebar;
     SoundCore *m_core;
     QWidget *m_aboutWidget;
 };

@@ -21,7 +21,7 @@
 #include <QTimer>
 #include <math.h>
 #include "skin.h"
-#include "mainvisual.h"
+#include "skinnedvisualization.h"
 #include "inlines.h"
 #include "shadedvisual.h"
 

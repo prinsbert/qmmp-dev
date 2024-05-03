@@ -26,109 +26,109 @@
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/qmmpuisettings.h>
 #include "skin.h"
-#include "mainvisual.h"
+#include "skinnedvisualization.h"
 #include "skinnedbutton.h"
-#include "titlebar.h"
-#include "positionbar.h"
-#include "number.h"
-#include "togglebutton.h"
+#include "skinnedtitlebar.h"
+#include "skinnedpositionbar.h"
+#include "skinnednumber.h"
+#include "skinnedtogglebutton.h"
 #include "symboldisplay.h"
-#include "textscroller.h"
+#include "skinnedtextscroller.h"
 #include "monostereo.h"
-#include "playstatus.h"
-#include "volumebar.h"
+#include "skinnedplaystatus.h"
+#include "skinnedvolumebar.h"
 #include "skinnedbalancebar.h"
-#include "mainwindow.h"
-#include "timeindicator.h"
+#include "skinnedmainwindow.h"
+#include "skinnedtimeindicator.h"
 #include "skinnedactionmanager.h"
-#include "eqwidget.h"
-#include "playlist.h"
+#include "skinnedeqwidget.h"
+#include "skinnedplaylist.h"
 #include "skinneddisplay.h"
 
-SkinnedDisplay::SkinnedDisplay(MainWindow *parent) : PixmapWidget (parent)
+SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent)
 {
     m_skin = Skin::instance();
     setPixmap(m_skin->getMain());
     setCursor(m_skin->getCursor(Skin::CUR_NORMAL));
     m_mw = parent;
 
-    m_timeIndicatorModel = new TimeIndicatorModel(this);
-    m_titlebar = new TitleBar(m_timeIndicatorModel, this);
+    m_timeIndicatorModel = new SkinnedTimeIndicatorModel(this);
+    m_titlebar = new SkinnedTitleBar(m_timeIndicatorModel, this);
     m_titlebar->move(0, 0);
     m_titlebar->setActive(true);
     m_previous = new SkinnedButton (this, Skin::BT_PREVIOUS_N, Skin::BT_PREVIOUS_P, Skin::CUR_NORMAL);
     m_previous->setToolTip(tr("Previous"));
-    connect(m_previous, &SkinnedButton::clicked, parent, &MainWindow::previous);
+    connect(m_previous, &SkinnedButton::clicked, parent, &SkinnedMainWindow::previous);
 
     m_play = new SkinnedButton(this, Skin::BT_PLAY_N, Skin::BT_PLAY_P, Skin::CUR_NORMAL);
     m_play->setToolTip(tr("Play"));
-    connect(m_play, &SkinnedButton::clicked, parent, &MainWindow::play);
+    connect(m_play, &SkinnedButton::clicked, parent, &SkinnedMainWindow::play);
     m_pause = new SkinnedButton (this, Skin::BT_PAUSE_N,Skin::BT_PAUSE_P, Skin::CUR_NORMAL);
     m_pause->setToolTip(tr("Pause"));
-    connect(m_pause,&SkinnedButton::clicked, parent, &MainWindow::pause);
+    connect(m_pause,&SkinnedButton::clicked, parent, &SkinnedMainWindow::pause);
     m_stop = new SkinnedButton(this, Skin::BT_STOP_N, Skin::BT_STOP_P, Skin::CUR_NORMAL);
     m_stop->setToolTip(tr("Stop"));
-    connect(m_stop,&SkinnedButton::clicked, parent, &MainWindow::stop);
+    connect(m_stop,&SkinnedButton::clicked, parent, &SkinnedMainWindow::stop);
     m_next = new SkinnedButton(this, Skin::BT_NEXT_N, Skin::BT_NEXT_P, Skin::CUR_NORMAL);
     m_next->setToolTip(tr("Next"));
-    connect(m_next,&SkinnedButton::clicked, parent, &MainWindow::next);
+    connect(m_next,&SkinnedButton::clicked, parent, &SkinnedMainWindow::next);
     m_eject = new SkinnedButton(this, Skin::BT_EJECT_N, Skin::BT_EJECT_P, Skin::CUR_NORMAL);
     m_eject->setToolTip(tr("Play files"));
-    connect(m_eject,&SkinnedButton::clicked, parent, &MainWindow::playFiles);
+    connect(m_eject,&SkinnedButton::clicked, parent, &SkinnedMainWindow::playFiles);
     connect(m_skin, &Skin::skinChanged, this, &SkinnedDisplay::updateSkin);
-    m_vis = new MainVisual (this);
+    m_vis = new SkinnedVisualization (this);
 
-    m_eqButton = new ToggleButton(this, Skin::BT_EQ_ON_N,Skin::BT_EQ_ON_P, Skin::BT_EQ_OFF_N,Skin::BT_EQ_OFF_P);
+    m_eqButton = new SkinnedToggleButton(this, Skin::BT_EQ_ON_N,Skin::BT_EQ_ON_P, Skin::BT_EQ_OFF_N,Skin::BT_EQ_OFF_P);
     m_eqButton->setToolTip(tr("Equalizer"));
-    m_plButton = new ToggleButton(this, Skin::BT_PL_ON_N,Skin::BT_PL_ON_P, Skin::BT_PL_OFF_N,Skin::BT_PL_OFF_P);
+    m_plButton = new SkinnedToggleButton(this, Skin::BT_PL_ON_N,Skin::BT_PL_ON_P, Skin::BT_PL_OFF_N,Skin::BT_PL_OFF_P);
     m_plButton->setToolTip(tr("Playlist"));
-    m_repeatButton = new ToggleButton(this,Skin::REPEAT_ON_N,Skin::REPEAT_ON_P, Skin::REPEAT_OFF_N, Skin::REPEAT_OFF_P);
-    connect(m_repeatButton, &ToggleButton::clicked, this, &SkinnedDisplay::repeatableToggled);
+    m_repeatButton = new SkinnedToggleButton(this,Skin::REPEAT_ON_N,Skin::REPEAT_ON_P, Skin::REPEAT_OFF_N, Skin::REPEAT_OFF_P);
+    connect(m_repeatButton, &SkinnedToggleButton::clicked, this, &SkinnedDisplay::repeatableToggled);
     m_repeatButton->setToolTip(tr("Repeat playlist"));
-    m_shuffleButton = new ToggleButton(this,Skin::SHUFFLE_ON_N, Skin::SHUFFLE_ON_P, Skin::SHUFFLE_OFF_N,Skin::SHUFFLE_OFF_P);
+    m_shuffleButton = new SkinnedToggleButton(this,Skin::SHUFFLE_ON_N, Skin::SHUFFLE_ON_P, Skin::SHUFFLE_OFF_N,Skin::SHUFFLE_OFF_P);
     m_shuffleButton->setToolTip(tr("Shuffle"));
-    connect(m_shuffleButton, &ToggleButton::clicked, this, &SkinnedDisplay::shuffleToggled);
+    connect(m_shuffleButton, &SkinnedToggleButton::clicked, this, &SkinnedDisplay::shuffleToggled);
 
     m_kbps = new SymbolDisplay(this, 3);
     m_freq = new SymbolDisplay(this, 2);
-    m_text = new TextScroller(this);
+    m_text = new SkinnedTextScroller(this);
     m_monoster = new MonoStereo(this);
-    m_playstatus = new PlayStatus(this);
+    m_playstatus = new SkinnedPlayStatus(this);
 
-    m_volumeBar = new VolumeBar(this);
+    m_volumeBar = new SkinnedVolumeBar(this);
     m_volumeBar->setToolTip(tr("Volume"));
-    connect(m_volumeBar, &VolumeBar::sliderMoved, this, &SkinnedDisplay::displayVolume);
-    connect(m_volumeBar, &VolumeBar::sliderPressed, this, &SkinnedDisplay::displayVolume);
-    connect(m_volumeBar, &VolumeBar::sliderReleased, m_text, &TextScroller::clear);
+    connect(m_volumeBar, &SkinnedVolumeBar::sliderMoved, this, &SkinnedDisplay::displayVolume);
+    connect(m_volumeBar, &SkinnedVolumeBar::sliderPressed, this, &SkinnedDisplay::displayVolume);
+    connect(m_volumeBar, &SkinnedVolumeBar::sliderReleased, m_text, &SkinnedTextScroller::clear);
 
     m_balanceBar = new SkinnedBalanceBar(this);
     m_balanceBar->setToolTip(tr("Balance"));
     connect(m_balanceBar, &SkinnedBalanceBar::sliderMoved, this, &SkinnedDisplay::displayVolume);
     connect(m_balanceBar, &SkinnedBalanceBar::sliderPressed, this, &SkinnedDisplay::displayVolume);
-    connect(m_balanceBar, &SkinnedBalanceBar::sliderReleased, m_text, &TextScroller::clear);
+    connect(m_balanceBar, &SkinnedBalanceBar::sliderReleased, m_text, &SkinnedTextScroller::clear);
 
-    m_posbar = new PositionBar(this);
-    connect(m_posbar, &PositionBar::sliderPressed, this, &SkinnedDisplay::showPosition);
-    connect(m_posbar, &PositionBar::sliderMoved, this, &SkinnedDisplay::showPosition);
-    connect(m_posbar, &PositionBar::sliderReleased, this, &SkinnedDisplay::updatePosition);
+    m_posbar = new SkinnedPositionBar(this);
+    connect(m_posbar, &SkinnedPositionBar::sliderPressed, this, &SkinnedDisplay::showPosition);
+    connect(m_posbar, &SkinnedPositionBar::sliderMoved, this, &SkinnedDisplay::showPosition);
+    connect(m_posbar, &SkinnedPositionBar::sliderReleased, this, &SkinnedDisplay::updatePosition);
 
-    m_timeIndicator = new TimeIndicator(m_timeIndicatorModel, this);
+    m_timeIndicator = new SkinnedTimeIndicator(m_timeIndicatorModel, this);
     m_aboutWidget = new QWidget(this);
     m_core = SoundCore::instance();
     connect(m_core, &SoundCore::elapsedChanged, this, &SkinnedDisplay::setTime);
     connect(m_core, &SoundCore::bitrateChanged, m_kbps, &SymbolDisplay::displayNum);
     connect(m_core, &SoundCore::audioParametersChanged, this, &SkinnedDisplay::onAudioPatametersChanged);
     connect(m_core, &SoundCore::stateChanged, this, &SkinnedDisplay::setState);
-    connect(m_core, &SoundCore::volumeChanged, m_volumeBar, &VolumeBar::setValue);
+    connect(m_core, &SoundCore::volumeChanged, m_volumeBar, &SkinnedVolumeBar::setValue);
     connect(m_core, &SoundCore::balanceChanged, m_balanceBar, &SkinnedBalanceBar::setValue);
     connect(m_balanceBar, &SkinnedBalanceBar::sliderMoved, m_core, &SoundCore::setBalance);
-    connect(m_volumeBar, &VolumeBar::sliderMoved, m_core, &SoundCore::setVolume);
+    connect(m_volumeBar, &SkinnedVolumeBar::sliderMoved, m_core, &SoundCore::setVolume);
     m_volumeBar->setValue(m_core->volume());
     m_balanceBar->setValue(m_core->balance());
 
     QmmpUiSettings *ui_settings = QmmpUiSettings::instance();
-    connect(ui_settings, &QmmpUiSettings::repeatableListChanged, m_repeatButton, &ToggleButton::setChecked);
-    connect(ui_settings, &QmmpUiSettings::shuffleChanged, m_shuffleButton, &ToggleButton::setChecked);
+    connect(ui_settings, &QmmpUiSettings::repeatableListChanged, m_repeatButton, &SkinnedToggleButton::setChecked);
+    connect(ui_settings, &QmmpUiSettings::shuffleChanged, m_shuffleButton, &SkinnedToggleButton::setChecked);
     updatePositions();
     updateMask();
 }
@@ -183,15 +183,15 @@ void SkinnedDisplay::setState(Qmmp::State state)
     switch(state)
     {
     case Qmmp::Playing:
-        m_playstatus->setStatus(PlayStatus::PLAY);
+        m_playstatus->setState(Qmmp::Playing);
         m_timeIndicatorModel->setVisible(true);
         setDuration(m_core->duration());
         break;
     case Qmmp::Paused:
-        m_playstatus->setStatus(PlayStatus::PAUSE);
+        m_playstatus->setState(Qmmp::Paused);
         break;
     case Qmmp::Stopped:
-        m_playstatus->setStatus(PlayStatus::STOP);
+        m_playstatus->setState(Qmmp::Stopped);
         m_monoster->setChannels (0);
         m_timeIndicatorModel->setVisible(false);
         m_posbar->setValue(0);
@@ -242,35 +242,35 @@ void SkinnedDisplay::setActive(bool b)
     m_titlebar->setActive(b);
 }
 
-void SkinnedDisplay::setEQ(EqWidget* w)
+void SkinnedDisplay::setEQ(SkinnedEqWidget* w)
 {
     m_equlizer = w;
     m_eqButton->setChecked(m_equlizer->isVisible());
     ACTION(SkinnedActionManager::SHOW_EQUALIZER)->setChecked(m_equlizer->isVisible());
 
     connect(ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::triggered, m_equlizer, &QWidget::setVisible);
-    connect(ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::triggered, m_eqButton, &ToggleButton::setChecked);
+    connect(ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::triggered, m_eqButton, &SkinnedToggleButton::setChecked);
 
-    connect(m_eqButton, &ToggleButton::clicked, ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::setChecked);
-    connect(m_eqButton, &ToggleButton::clicked, m_equlizer, &QWidget::setVisible);
-    connect(m_equlizer, &EqWidget::closed, m_eqButton, [this] {
+    connect(m_eqButton, &SkinnedToggleButton::clicked, ACTION(SkinnedActionManager::SHOW_EQUALIZER), &QAction::setChecked);
+    connect(m_eqButton, &SkinnedToggleButton::clicked, m_equlizer, &QWidget::setVisible);
+    connect(m_equlizer, &SkinnedEqWidget::closed, m_eqButton, [this] {
         m_eqButton->setChecked(false);
         m_equlizer->setVisible(false);
     });
 }
 
-void SkinnedDisplay::setPL(PlayList *w)
+void SkinnedDisplay::setPL(SkinnedPlayList *w)
 {
     m_playlist = w;
     m_plButton->setChecked(m_playlist->isVisible());
     ACTION(SkinnedActionManager::SHOW_PLAYLIST)->setChecked(m_playlist->isVisible());
 
     connect(ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::triggered, m_playlist, &QWidget::setVisible);
-    connect(ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::triggered, m_plButton, &ToggleButton::setChecked);
+    connect(ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::triggered, m_plButton, &SkinnedToggleButton::setChecked);
 
-    connect(m_plButton, &ToggleButton::clicked, ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::setChecked);
-    connect(m_plButton, &ToggleButton::clicked, m_playlist, &QWidget::setVisible);
-    connect(m_playlist, &PlayList::closed, m_plButton, [this] {
+    connect(m_plButton, &SkinnedToggleButton::clicked, ACTION(SkinnedActionManager::SHOW_PLAYLIST), &QAction::setChecked);
+    connect(m_plButton, &SkinnedToggleButton::clicked, m_playlist, &QWidget::setVisible);
+    connect(m_playlist, &SkinnedPlayList::closed, m_plButton, [this] {
         m_plButton->setChecked(false);
         m_playlist->setVisible(false);
     });

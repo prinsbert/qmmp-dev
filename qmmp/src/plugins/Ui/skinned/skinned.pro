@@ -2,111 +2,113 @@ include(../../plugins.pri)
 
 TARGET = $$PLUGINS_PREFIX/Ui/skinned
 
-HEADERS += mainwindow.h \
+HEADERS += \
     skin.h \
     skinnedactionmanager.h \
     skinnedbalancebar.h \
     skinnedbutton.h \
     skinneddisplay.h \
-    titlebar.h \
-    positionbar.h \
-    number.h \
-    playlist.h \
-    listwidget.h \
+    skinnedeqgraph.h \
+    skinnedeqslider.h \
+    skinnedeqtitlebar.h \
+    skinnedeqwidget.h \
+    skinnedhorizontalslider.h \
+    skinnedhotkeyeditor.h \
+    skinnedkeyboardmanager.h \
+    skinnedlistwidget.h \
+    skinnedlistwidgetdrawer.h \
+    skinnedmainwindow.h \
+    skinnednumber.h \
+    skinnedplaylist.h \
+    skinnedplaylistbrowser.h \
+    skinnedplaylistcontrol.h \
+    skinnedplaylistheader.h \
+    skinnedplaylistselector.h \
+    skinnedplaylistslider.h \
+    skinnedplaylisttitlebar.h \
+    skinnedplaystatus.h \
+    skinnedpopupsettings.h \
+    skinnedpopupwidget.h \
+    skinnedpositionbar.h \
+    skinnedpreseteditor.h \
+    skinnedshortcutitem.h \
+    skinnedtextscroller.h \
+    skinnedtimeindicator.h \
+    skinnedtitlebar.h \
+    skinnedtitlebarcontrol.h \
+    skinnedtogglebutton.h \
+    skinnedvisualization.h \
+    skinnedvolumebar.h \
     pixmapwidget.h \
-    playlisttitlebar.h \
-    playlistslider.h \
     dock.h \
-    eqwidget.h \
-    eqtitlebar.h \
-    eqslider.h \
-    togglebutton.h \
-    eqgraph.h \
-    mainvisual.h \
     inlines.h \
     fft.h \
-    textscroller.h \
     monostereo.h \
-    playstatus.h \
-    volumebar.h \
     symboldisplay.h \
-    playlistcontrol.h \
-    preseteditor.h \
-    timeindicator.h \
-    keyboardmanager.h \
     skinreader.h \
-    titlebarcontrol.h \
     shadedvisual.h \
     shadedbar.h \
     cursorimage.h \
-    playlistbrowser.h \
-    playlistselector.h \
-    popupwidget.h \
-    popupsettings.h \
     windowsystem.h \
-    shortcutitem.h \
     skinnedfactory.h \
-    skinnedsettings.h \
-    hotkeyeditor.h \
-    listwidgetdrawer.h \
-    playlistheader.h \
-    horizontalslider.h
+    skinnedsettings.h
 
-SOURCES += mainwindow.cpp \
+SOURCES += \
     skin.cpp \
     skinnedactionmanager.cpp \
     skinnedbalancebar.cpp \
     skinnedbutton.cpp \
     skinneddisplay.cpp \
-    titlebar.cpp \
-    positionbar.cpp \
-    number.cpp \
-    playlist.cpp \
-    listwidget.cpp \
+    skinnedeqgraph.cpp \
+    skinnedeqslider.cpp \
+    skinnedeqtitlebar.cpp \
+    skinnedeqwidget.cpp \
+    skinnedhorizontalslider.cpp \
+    skinnedhotkeyeditor.cpp \
+    skinnedkeyboardmanager.cpp \
+    skinnedlistwidget.cpp \
+    skinnedlistwidgetdrawer.cpp \
+    skinnedmainwindow.cpp \
+    skinnednumber.cpp \
+    skinnedplaylist.cpp \
+    skinnedplaylistbrowser.cpp \
+    skinnedplaylistcontrol.cpp \
+    skinnedplaylistheader.cpp \
+    skinnedplaylistselector.cpp \
+    skinnedplaylistslider.cpp \
+    skinnedplaylisttitlebar.cpp \
+    skinnedplaystatus.cpp \
+    skinnedpopupsettings.cpp \
+    skinnedpopupwidget.cpp \
+    skinnedpositionbar.cpp \
+    skinnedpreseteditor.cpp \
+    skinnedshortcutitem.cpp \
+    skinnedtextscroller.cpp \
+    skinnedtimeindicator.cpp \
+    skinnedtitlebar.cpp \
+    skinnedtitlebarcontrol.cpp \
+    skinnedtogglebutton.cpp \
+    skinnedvisualization.cpp \
+    skinnedvolumebar.cpp \
     pixmapwidget.cpp \
-    playlisttitlebar.cpp \
-    playlistslider.cpp \
     dock.cpp \
-    eqwidget.cpp \
-    eqtitlebar.cpp \
-    eqslider.cpp \
-    togglebutton.cpp \
-    eqgraph.cpp \
-    mainvisual.cpp \
     fft.c \
-    textscroller.cpp \
     monostereo.cpp \
-    playstatus.cpp \
-    volumebar.cpp \
     symboldisplay.cpp \
-    playlistcontrol.cpp \
-    preseteditor.cpp \
-    timeindicator.cpp \
-    keyboardmanager.cpp \
     skinreader.cpp \
-    titlebarcontrol.cpp \
     shadedvisual.cpp \
     shadedbar.cpp \
     cursorimage.cpp \
-    playlistbrowser.cpp \
-    playlistselector.cpp \
-    popupwidget.cpp \
-    popupsettings.cpp \
     windowsystem.cpp \
-    shortcutitem.cpp \
     skinnedfactory.cpp \
-    skinnedsettings.cpp \
-    hotkeyeditor.cpp \
-    listwidgetdrawer.cpp \
-    playlistheader.cpp \
-    horizontalslider.cpp
+    skinnedsettings.cpp
 
 FORMS += \
-    forms/preseteditor.ui \
-    forms/playlistbrowser.ui \
-    forms/popupsettings.ui \
-    forms/skinnedsettings.ui \
-    forms/hotkeyeditor.ui
+    forms/skinnedhotkeyeditor.ui \
+    forms/skinnedplaylistbrowser.ui \
+    forms/skinnedpopupsettings.ui \
+    forms/skinnedpreseteditor.ui \
+    forms/skinnedsettings.ui
 
 RESOURCES = resources/resources.qrc \
             glare/glare.qrc \
