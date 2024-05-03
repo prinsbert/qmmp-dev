@@ -22,9 +22,11 @@
 
 #include <QDialog>
 
-#include "ui_hotkeydialog.h"
-
 class QKeyEvent;
+
+namespace Ui {
+class HotkeyDialog;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -48,7 +50,7 @@ private:
     void keyPressEvent (QKeyEvent *event) override;
     void showEvent(QShowEvent *) override;
 
-    Ui::HotkeyDialog m_ui;
+    Ui::HotkeyDialog *m_ui;
     quint32 m_key, m_modifiers;
 };
 

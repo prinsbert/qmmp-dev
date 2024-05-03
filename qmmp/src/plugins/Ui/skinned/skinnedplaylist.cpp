@@ -25,6 +25,7 @@
 #include <QCloseEvent>
 #include <QInputDialog>
 #include <QScreen>
+#include <QStyle>
 #include <algorithm>
 #include <qmmpui/playlistitem.h>
 #include <qmmpui/playlistmodel.h>

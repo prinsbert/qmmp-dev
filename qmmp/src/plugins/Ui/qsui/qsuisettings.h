@@ -23,7 +23,12 @@
 
 #include <QWidget>
 #include <QFileInfo>
-#include "ui_qsuisettings.h"
+
+class QLabel;
+
+namespace Ui {
+class QSUISettings;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -51,7 +56,7 @@ private:
     void createActions();
     void readSettings();
 
-    Ui::QSUISettings m_ui;
+    Ui::QSUISettings *m_ui;
 };
 
 #endif // QSUISETTINGS_H

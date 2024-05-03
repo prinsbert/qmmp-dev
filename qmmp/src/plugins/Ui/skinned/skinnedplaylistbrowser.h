@@ -22,12 +22,15 @@
 #define SKINNEDPLAYLISTBROWSER_H
 
 #include <QDialog>
-#include "ui_skinnedplaylistbrowser.h"
 
 class PlayListManager;
 class QStandardItemModel;
 class QSortFilterProxyModel;
 class QStandardItem;
+
+namespace Ui {
+class SkinnedPlayListBrowser;
+}
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -37,14 +40,14 @@ class SkinnedPlayListBrowser : public QDialog
 Q_OBJECT
 public:
     explicit SkinnedPlayListBrowser(PlayListManager *manager, QWidget *parent = nullptr);
-    ~SkinnedPlayListBrowser() = default;
+    ~SkinnedPlayListBrowser();
 
 private slots:
     void updateList();
     void on_filterLineEdit_textChanged(const QString &str);
-    void on_listView_activated(const QModelIndex & index);
+    void on_listView_activated(const QModelIndex &index);
     void updatePlayListName(QStandardItem *item);
-    void updateCurrentRow(QModelIndex index, QModelIndex);
+    void updateCurrentRow(const QModelIndex &index, const QModelIndex &);
     void rename();
     void on_deleteButton_clicked();
     void on_downButton_clicked();
@@ -52,7 +55,7 @@ private slots:
 
 private:
     bool eventFilter(QObject *o, QEvent *e) override;
-    Ui::SkinnedPlayListBrowser m_ui;
+    Ui::SkinnedPlayListBrowser *m_ui;
     PlayListManager *m_pl_manager;
     QStandardItemModel* m_listModel;
     QSortFilterProxyModel* m_proxyModel;

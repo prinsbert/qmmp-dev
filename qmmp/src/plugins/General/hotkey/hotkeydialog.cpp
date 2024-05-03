@@ -20,19 +20,22 @@
 
 #include <QKeyEvent>
 #include "hotkeymanager.h"
+#include "ui_hotkeydialog.h"
 #include "hotkeydialog.h"
 
 HotkeyDialog::HotkeyDialog(quint32 key, quint32 mod, QWidget *parent)
-        : QDialog(parent)
+        : QDialog(parent), m_ui(new Ui::HotkeyDialog)
 {
-    m_ui.setupUi(this);
+    m_ui->setupUi(this);
     m_key = key;
     m_modifiers = mod;
-    m_ui.keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
+    m_ui->keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
 }
 
 HotkeyDialog::~HotkeyDialog()
-{}
+{
+    delete m_ui;
+}
 
 void HotkeyDialog::keyPressEvent (QKeyEvent *event)
 {
@@ -41,7 +44,7 @@ void HotkeyDialog::keyPressEvent (QKeyEvent *event)
     for(long mask_mod : HotkeyManager::ignModifiersList())
         m_modifiers &= ~mask_mod; //remove ignored modifiers (num lock, caps lock, etc)
 
-    m_ui.keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
+    m_ui->keyLineEdit->setText(HotkeyManager::getKeyString(m_key, m_modifiers));
     QDialog::keyPressEvent(event);
 }
 
@@ -62,7 +65,7 @@ quint32 HotkeyDialog::keySym () const
 
 void HotkeyDialog::accept()
 {
-    if (m_ui.keyLineEdit->text().isEmpty()) //clear key & modifiers
+    if (m_ui->keyLineEdit->text().isEmpty()) //clear key & modifiers
     {
         m_key = 0;
         m_modifiers = 0;

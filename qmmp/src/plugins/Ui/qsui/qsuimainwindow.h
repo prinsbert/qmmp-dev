@@ -23,7 +23,6 @@
 #include <QMainWindow>
 #include <qmmp/qmmp.h>
 #include <qmmpui/mediaplayer.h>
-#include "ui_qsuimainwindow.h"
 
 class QSlider;
 class QMenu;
@@ -47,6 +46,10 @@ class QSUiStatusBar;
 class DockWidgetList;
 class VolumeSlider;
 
+namespace Ui {
+class QSUiMainWindow;
+}
+
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -56,7 +59,7 @@ class QSUiMainWindow : public QMainWindow
 Q_OBJECT
 public:
     QSUiMainWindow(QWidget *parent = nullptr);
-    ~QSUiMainWindow() = default;
+    ~QSUiMainWindow();
 
 private slots:
     void addDir();
@@ -106,7 +109,7 @@ private:
     void writeSettings();
     bool m_wasMaximized = false;
     PlayListManager *m_pl_manager;
-    Ui::QSUiMainWindow m_ui;
+    Ui::QSUiMainWindow *m_ui;
     MediaPlayer *m_player;
     QmmpUiSettings *m_ui_settings;
     QSUiPositionSlider *m_positionSlider;
