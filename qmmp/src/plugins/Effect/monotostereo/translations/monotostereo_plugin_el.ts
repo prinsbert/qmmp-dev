@@ -9,17 +9,17 @@
         <translation>Πρόσθετο μετατροπής μονοφωνικού ήχου σε στερεοφωνικό</translation>
     </message>
     <message>
-        <location filename="../effectmonotostereofactory.cpp" line="48"/>
+        <location filename="../effectmonotostereofactory.cpp" line="49"/>
         <source>About Mono to Stereo Converter Plugin</source>
         <translation>Σχετικά με το πρόσθετο μετατροπής μονοφωνικού ήχου σε στερεοφωνικό</translation>
     </message>
     <message>
-        <location filename="../effectmonotostereofactory.cpp" line="49"/>
+        <location filename="../effectmonotostereofactory.cpp" line="50"/>
         <source>Qmmp Mono to Stereo Converter Plugin</source>
         <translation>Πρόσθετο μετατροπής μονοφωνικού ήχου σε στερεοφωνικό Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectmonotostereofactory.cpp" line="50"/>
+        <location filename="../effectmonotostereofactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

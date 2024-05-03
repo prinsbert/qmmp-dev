@@ -9,37 +9,37 @@
         <translation>MMS įskiepis</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="52"/>
+        <location filename="../mmsinputfactory.cpp" line="51"/>
         <source>About MMS Transport Plugin</source>
         <translation>Apie MMS transporto įskiepį</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="53"/>
+        <location filename="../mmsinputfactory.cpp" line="52"/>
         <source>Qmmp MMS Transport Plugin</source>
         <translation>Qmmp MMS transporto įskiepis</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="54"/>
+        <location filename="../mmsinputfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>MmsSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../mmssettingsdialog.ui" line="14"/>
         <source>MMS Plugin Settings</source>
-        <translation>MMS įskiepio nustatymai</translation>
+        <translation type="unfinished">MMS įskiepio nustatymai</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../mmssettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Buferio dydis:</translation>
+        <translation type="unfinished">Buferio dydis:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../mmssettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>КB</translation>
+        <translation type="unfinished">КB</translation>
     </message>
 </context>
 </TS>

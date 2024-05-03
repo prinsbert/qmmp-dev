@@ -14,22 +14,22 @@
         <translation>Трекерна музика</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="110"/>
+        <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
         <translation>Про аудіо-модуль XMP</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>Аудіо-модуль XMP для Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="112"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="113"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
         <translation>Зібрано з libxmp-%1</translation>
     </message>
@@ -140,32 +140,32 @@
         <translation type="unfinished">Частота дискретизації:</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="34"/>
+        <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
         <translation type="unfinished">22050 Гц</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="35"/>
+        <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Гц</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="36"/>
+        <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Гц</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="37"/>
+        <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
         <translation type="unfinished">Методом ближчогого сусіда</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="38"/>
+        <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
         <translation type="unfinished">Лінійна</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="39"/>
+        <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
         <translation type="unfinished">Кубічними сплайнами</translation>
     </message>

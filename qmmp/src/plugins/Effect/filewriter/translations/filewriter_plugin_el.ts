@@ -9,17 +9,17 @@
         <translation>Πρόσθετο εγγραφής αρχείων</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="51"/>
+        <location filename="../effectfilewriterfactory.cpp" line="50"/>
         <source>About File Writer Plugin</source>
         <translation>Σχετικά με το πρόσθετο εγγραφής αρχείων</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="52"/>
+        <location filename="../effectfilewriterfactory.cpp" line="51"/>
         <source>Qmmp File Writer Plugin</source>
         <translation>Πρόσθετο εγγραφής αρχείων Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="53"/>
+        <location filename="../effectfilewriterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
@@ -52,7 +52,7 @@
         <translation type="unfinished">Εγγραφή σε ένα αρχείο αν είναι εφικτό</translation>
     </message>
     <message>
-        <location filename="../filewritersettingsdialog.cpp" line="73"/>
+        <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
         <translation type="unfinished">Επιλογή ενός καταλόγου</translation>
     </message>

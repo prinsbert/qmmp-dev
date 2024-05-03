@@ -2,1123 +2,608 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="id">
 <context>
-    <name>ActionManager</name>
+    <name>SkinnedActionManager</name>
     <message>
-        <location filename="../actionmanager.cpp" line="39"/>
+        <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation>&amp;Main</translation>
+        <translation type="unfinished">&amp;Main</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="39"/>
+        <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>X</source>
-        <translation>X</translation>
+        <translation type="unfinished">X</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="40"/>
+        <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>&amp;Pause</source>
-        <translation>&amp;Jeda</translation>
+        <translation type="unfinished">&amp;Jeda</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="40"/>
+        <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>C</source>
-        <translation>C</translation>
+        <translation type="unfinished">C</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="41"/>
+        <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation>&amp;Henti</translation>
+        <translation type="unfinished">&amp;Henti</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="41"/>
+        <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>V</source>
-        <translation>V</translation>
+        <translation type="unfinished">V</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="42"/>
+        <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation>&amp;Sebelumnya</translation>
+        <translation type="unfinished">&amp;Sebelumnya</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="42"/>
+        <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>Z</source>
-        <translation>Z</translation>
+        <translation type="unfinished">Z</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="43"/>
+        <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
-        <translation>&amp;Selanjutnya</translation>
+        <translation type="unfinished">&amp;Selanjutnya</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="43"/>
+        <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>B</source>
-        <translation>B</translation>
+        <translation type="unfinished">B</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="44"/>
+        <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
-        <translation>&amp;Main/Jeda</translation>
+        <translation type="unfinished">&amp;Main/Jeda</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="44"/>
+        <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>Space</source>
-        <translation>Spasi</translation>
+        <translation type="unfinished">Spasi</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="45"/>
+        <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>&amp;Jump to Track</source>
-        <translation>&amp;Lompat ke Track</translation>
+        <translation type="unfinished">&amp;Lompat ke Track</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="45"/>
+        <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="unfinished">J</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="46"/>
+        <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>&amp;Repeat Playlist</source>
-        <translation>&amp;Ulangi Daftarmain</translation>
+        <translation type="unfinished">&amp;Ulangi Daftarmain</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="46"/>
+        <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>R</source>
-        <translation>R</translation>
+        <translation type="unfinished">R</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="47"/>
+        <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>&amp;Repeat Track</source>
-        <translation>&amp;Ulangi Track</translation>
+        <translation type="unfinished">&amp;Ulangi Track</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="47"/>
+        <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>Ctrl+R</source>
-        <translation>Ctrl+R</translation>
+        <translation type="unfinished">Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="48"/>
+        <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
-        <translation>&amp;Kocok</translation>
+        <translation type="unfinished">&amp;Kocok</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="48"/>
+        <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>S</source>
-        <translation>S</translation>
+        <translation type="unfinished">S</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="49"/>
+        <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>&amp;No Playlist Advance</source>
-        <translation>&amp;Tiada Daftarmain Lanjutan</translation>
+        <translation type="unfinished">&amp;Tiada Daftarmain Lanjutan</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="49"/>
+        <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="50"/>
+        <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>&amp;Stop After Selected</source>
-        <translation>&amp;Henti Setelah Dipilih</translation>
+        <translation type="unfinished">&amp;Henti Setelah Dipilih</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="50"/>
+        <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="unfinished">Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="51"/>
+        <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Transit between playlists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="52"/>
+        <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Clear Queue</source>
-        <translation>&amp;Bersihkan Antrian</translation>
+        <translation type="unfinished">&amp;Bersihkan Antrian</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="52"/>
+        <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>Alt+Q</source>
-        <translation>Alt+Q</translation>
+        <translation type="unfinished">Alt+Q</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="54"/>
+        <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Show Playlist</source>
-        <translation>Tampakkan Daftarmain</translation>
+        <translation type="unfinished">Tampakkan Daftarmain</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="54"/>
+        <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Alt+E</source>
-        <translation>Alt+E</translation>
+        <translation type="unfinished">Alt+E</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="55"/>
+        <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Show Equalizer</source>
-        <translation>Tampakkan Equalizer</translation>
+        <translation type="unfinished">Tampakkan Equalizer</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="55"/>
+        <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Alt+G</source>
-        <translation>Alt+G</translation>
+        <translation type="unfinished">Alt+G</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="56"/>
+        <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>Always on Top</source>
-        <translation>Selalu berada di Atas</translation>
+        <translation type="unfinished">Selalu berada di Atas</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="57"/>
+        <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>Put on All Workspaces</source>
-        <translation>Taruh pada Semua Workspaces</translation>
+        <translation type="unfinished">Taruh pada Semua Workspaces</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="58"/>
+        <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Double Size</source>
-        <translation>Ukuran Ganda</translation>
+        <translation type="unfinished">Ukuran Ganda</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="58"/>
+        <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Meta+D</source>
-        <translation>Meta+D</translation>
+        <translation type="unfinished">Meta+D</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="59"/>
+        <location filename="../skinnedactionmanager.cpp" line="59"/>
         <source>Anti-aliasing</source>
-        <translation>Anti-aliasing</translation>
+        <translation type="unfinished">Anti-aliasing</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="61"/>
+        <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Volume &amp;+</source>
-        <translation>Volume &amp;+</translation>
+        <translation type="unfinished">Volume &amp;+</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="61"/>
+        <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>0</source>
-        <translation>0</translation>
+        <translation type="unfinished">0</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="62"/>
+        <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Volume &amp;-</source>
-        <translation>Volume &amp;-</translation>
+        <translation type="unfinished">Volume &amp;-</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="62"/>
+        <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>9</source>
-        <translation>9</translation>
+        <translation type="unfinished">9</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="63"/>
+        <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>&amp;Mute</source>
-        <translation>&amp;Bungkam</translation>
+        <translation type="unfinished">&amp;Bungkam</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="63"/>
+        <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>M</source>
-        <translation>M</translation>
+        <translation type="unfinished">M</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="65"/>
+        <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>&amp;Add File</source>
-        <translation>&amp;Tambah File</translation>
+        <translation type="unfinished">&amp;Tambah File</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="65"/>
+        <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>F</source>
-        <translation>F</translation>
+        <translation type="unfinished">F</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="66"/>
+        <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>&amp;Add Directory</source>
-        <translation>&amp;Tambah Direktori</translation>
+        <translation type="unfinished">&amp;Tambah Direktori</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="66"/>
+        <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>D</source>
-        <translation>D</translation>
+        <translation type="unfinished">D</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="67"/>
+        <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>&amp;Add Url</source>
-        <translation>&amp;Tambah Url</translation>
+        <translation type="unfinished">&amp;Tambah Url</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="67"/>
+        <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>U</source>
-        <translation>U</translation>
+        <translation type="unfinished">U</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="68"/>
+        <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>&amp;Remove Selected</source>
-        <translation>&amp;Hapus Terpilih</translation>
+        <translation type="unfinished">&amp;Hapus Terpilih</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="68"/>
+        <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>Del</source>
-        <translation>Del</translation>
+        <translation type="unfinished">Del</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="69"/>
+        <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>&amp;Remove All</source>
-        <translation>&amp;Hapus Semua</translation>
+        <translation type="unfinished">&amp;Hapus Semua</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="70"/>
+        <location filename="../skinnedactionmanager.cpp" line="70"/>
         <source>&amp;Remove Unselected</source>
-        <translation>&amp;Hapus Tak Terpilih</translation>
+        <translation type="unfinished">&amp;Hapus Tak Terpilih</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="71"/>
+        <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>Remove unavailable files</source>
-        <translation>Hapus file yang tak bersedia</translation>
+        <translation type="unfinished">Hapus file yang tak bersedia</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="72"/>
+        <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>Remove duplicates</source>
-        <translation>Hapus duplikat</translation>
+        <translation type="unfinished">Hapus duplikat</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="73"/>
+        <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>Refresh</source>
-        <translation>Segarkan</translation>
+        <translation type="unfinished">Segarkan</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="74"/>
+        <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Queue Toggle</source>
-        <translation>&amp;Saklar Antrian</translation>
+        <translation type="unfinished">&amp;Saklar Antrian</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="74"/>
+        <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>Q</source>
-        <translation>Q</translation>
+        <translation type="unfinished">Q</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="75"/>
+        <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>Invert Selection</source>
-        <translation>Pemilihan Kebalikan</translation>
+        <translation type="unfinished">Pemilihan Kebalikan</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="76"/>
+        <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Select None</source>
-        <translation>&amp;Pilih Tak Satupun</translation>
+        <translation type="unfinished">&amp;Pilih Tak Satupun</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="77"/>
+        <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>&amp;Select All</source>
-        <translation>&amp;Pilih Semua</translation>
+        <translation type="unfinished">&amp;Pilih Semua</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="77"/>
+        <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="unfinished">Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="78"/>
+        <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>&amp;View Track Details</source>
-        <translation>&amp;Tinjau Rincian Track</translation>
+        <translation type="unfinished">&amp;Tinjau Rincian Track</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="78"/>
+        <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Alt+I</source>
-        <translation>Alt+I</translation>
+        <translation type="unfinished">Alt+I</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="79"/>
+        <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>&amp;New List</source>
-        <translation>&amp;Daftar Baru</translation>
+        <translation type="unfinished">&amp;Daftar Baru</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="79"/>
+        <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Ctrl+T</source>
-        <translation>Ctrl+T</translation>
+        <translation type="unfinished">Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="80"/>
+        <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Delete List</source>
-        <translation>&amp;Hapus Daftar</translation>
+        <translation type="unfinished">&amp;Hapus Daftar</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="80"/>
+        <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="81"/>
+        <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>&amp;Load List</source>
-        <translation>&amp;Muat Daftar</translation>
+        <translation type="unfinished">&amp;Muat Daftar</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="81"/>
+        <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>O</source>
-        <translation>O</translation>
+        <translation type="unfinished">O</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="82"/>
+        <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Save List</source>
-        <translation>&amp;Simpan Daftar</translation>
+        <translation type="unfinished">&amp;Simpan Daftar</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="82"/>
+        <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>Shift+S</source>
-        <translation>Shift+S</translation>
+        <translation type="unfinished">Shift+S</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="83"/>
+        <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Rename List</source>
-        <translation>&amp;Ubah-nama Daftar</translation>
+        <translation type="unfinished">&amp;Ubah-nama Daftar</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="83"/>
+        <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>F2</source>
-        <translation>F2</translation>
+        <translation type="unfinished">F2</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="84"/>
+        <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;Select Next Playlist</source>
-        <translation>&amp;Pilih Daftarmain Selanjutnya</translation>
+        <translation type="unfinished">&amp;Pilih Daftarmain Selanjutnya</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="84"/>
+        <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>Ctrl+PgDown</source>
-        <translation>Ctrl+PgDown</translation>
+        <translation type="unfinished">Ctrl+PgDown</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="85"/>
+        <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation>&amp;Pilih Daftarmain Sebelumnya</translation>
+        <translation type="unfinished">&amp;Pilih Daftarmain Sebelumnya</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="85"/>
+        <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>Ctrl+PgUp</source>
-        <translation>Ctrl+PgUp</translation>
+        <translation type="unfinished">Ctrl+PgUp</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="86"/>
+        <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Show Playlists</source>
-        <translation>&amp;Tampakkan Daftarmain</translation>
+        <translation type="unfinished">&amp;Tampakkan Daftarmain</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="86"/>
+        <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>P</source>
-        <translation>P</translation>
+        <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="87"/>
+        <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Group Tracks</source>
-        <translation>&amp;Kelompok Track</translation>
+        <translation type="unfinished">&amp;Kelompok Track</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="87"/>
+        <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
+        <translation type="unfinished">Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
+        <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Show Column Headers</source>
-        <translation>&amp;Tampakkan Kolom Headers</translation>
+        <translation type="unfinished">&amp;Tampakkan Kolom Headers</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="89"/>
+        <location filename="../skinnedactionmanager.cpp" line="88"/>
+        <source>Ctrl+H</source>
+        <translation type="unfinished">Ctrl+H</translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Show &amp;Tab Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="89"/>
+        <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Alt+T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="91"/>
+        <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Setelan</translation>
+        <translation type="unfinished">&amp;Setelan</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="91"/>
+        <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
+        <translation type="unfinished">Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="92"/>
+        <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;About</source>
-        <translation>&amp;Tentang</translation>
+        <translation type="unfinished">&amp;Tentang</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="93"/>
+        <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;About Qt</source>
-        <translation>&amp;Tentang Qt</translation>
+        <translation type="unfinished">&amp;Tentang Qt</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="94"/>
+        <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Exit</source>
-        <translation>&amp;Keluar</translation>
+        <translation type="unfinished">&amp;Keluar</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="94"/>
+        <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
 </context>
 <context>
-    <name>EqWidget</name>
+    <name>SkinnedDisplay</name>
     <message>
-        <location filename="../eqwidget.cpp" line="47"/>
-        <source>Equalizer</source>
-        <translation>Equalizer</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="171"/>
-        <location filename="../eqwidget.cpp" line="188"/>
-        <source>preset</source>
-        <translation>preset</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="272"/>
-        <source>&amp;Load/Delete</source>
-        <translation>&amp;Muat/Hapus</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="274"/>
-        <source>&amp;Save Preset</source>
-        <translation>&amp;Simpan Preset</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="276"/>
-        <source>&amp;Save Auto-load Preset</source>
-        <translation>&amp;Simpan Auto-muat Preset</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="278"/>
-        <source>&amp;Import</source>
-        <translation>&amp;Import</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="281"/>
-        <source>&amp;Clear</source>
-        <translation>&amp;Bersihkan</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="310"/>
-        <source>Saving Preset</source>
-        <translation>Menyimpan Preset</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="311"/>
-        <source>Preset name:</source>
-        <translation>Nama preset:</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="312"/>
-        <source>preset #</source>
-        <translation>preset #</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="403"/>
-        <source>Import Preset</source>
-        <translation>Import Preset</translation>
-    </message>
-</context>
-<context>
-    <name>HotkeyEditor</name>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="43"/>
-        <source>Reset</source>
-        <translation>Setel ulang</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="57"/>
-        <source>Action</source>
-        <translation>Tindakan</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="62"/>
-        <source>Shortcut</source>
-        <translation>Pintasan</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="33"/>
-        <source>Change shortcut...</source>
-        <translation>Ubah pintasan...</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="57"/>
-        <source>Playback</source>
-        <translation>Pemutaran</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="63"/>
-        <source>View</source>
-        <translation>Tinjau</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="69"/>
-        <source>Volume</source>
-        <translation>Volume</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="75"/>
-        <source>Playlist</source>
-        <translation>Daftarmain</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="81"/>
-        <source>Misc</source>
-        <translation>Lainnya</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="93"/>
-        <source>Reset Shortcuts</source>
-        <translation>Setel ulang Pintasan</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="94"/>
-        <source>Do you want to restore default shortcuts?</source>
-        <translation>Apakah kamu ingin memulihkan pintasan baku?</translation>
-    </message>
-</context>
-<context>
-    <name>MainDisplay</name>
-    <message>
-        <location filename="../display.cpp" line="59"/>
+        <location filename="../skinneddisplay.cpp" line="59"/>
         <source>Previous</source>
-        <translation>Sebelumnya</translation>
+        <translation type="unfinished">Sebelumnya</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="63"/>
+        <location filename="../skinneddisplay.cpp" line="63"/>
         <source>Play</source>
-        <translation>Mainkan</translation>
+        <translation type="unfinished">Mainkan</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="66"/>
+        <location filename="../skinneddisplay.cpp" line="66"/>
         <source>Pause</source>
-        <translation>Jeda</translation>
+        <translation type="unfinished">Jeda</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="69"/>
+        <location filename="../skinneddisplay.cpp" line="69"/>
         <source>Stop</source>
-        <translation>Henti</translation>
+        <translation type="unfinished">Henti</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="72"/>
+        <location filename="../skinneddisplay.cpp" line="72"/>
         <source>Next</source>
-        <translation>Selanjutnya</translation>
+        <translation type="unfinished">Selanjutnya</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="75"/>
+        <location filename="../skinneddisplay.cpp" line="75"/>
         <source>Play files</source>
-        <translation>Mainkan file</translation>
+        <translation type="unfinished">Mainkan file</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="82"/>
+        <location filename="../skinneddisplay.cpp" line="80"/>
         <source>Equalizer</source>
-        <translation>Equalizer</translation>
+        <translation type="unfinished">Equalizer</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="85"/>
+        <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Playlist</source>
-        <translation>Daftarmain</translation>
+        <translation type="unfinished">Daftarmain</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="90"/>
+        <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Repeat playlist</source>
-        <translation>Ulangi daftarmain</translation>
+        <translation type="unfinished">Ulangi daftarmain</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="93"/>
+        <location filename="../skinneddisplay.cpp" line="87"/>
         <source>Shuffle</source>
-        <translation>Kocok</translation>
+        <translation type="unfinished">Kocok</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="103"/>
+        <location filename="../skinneddisplay.cpp" line="97"/>
         <source>Volume</source>
-        <translation>Volume</translation>
+        <translation type="unfinished">Volume</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="109"/>
+        <location filename="../skinneddisplay.cpp" line="103"/>
         <source>Balance</source>
-        <translation>Imbang</translation>
+        <translation type="unfinished">Imbang</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="295"/>
+        <location filename="../skinneddisplay.cpp" line="290"/>
         <source>Volume: %1%</source>
-        <translation>Volume: %1%</translation>
+        <translation type="unfinished">Volume: %1%</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="299"/>
+        <location filename="../skinneddisplay.cpp" line="294"/>
         <source>Balance: %1% right</source>
-        <translation>Imbang: %1% kanan</translation>
+        <translation type="unfinished">Imbang: %1% kanan</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="301"/>
+        <location filename="../skinneddisplay.cpp" line="296"/>
         <source>Balance: %1% left</source>
-        <translation>Imbang: %1% kiri</translation>
+        <translation type="unfinished">Imbang: %1% kiri</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="303"/>
+        <location filename="../skinneddisplay.cpp" line="298"/>
         <source>Balance: center</source>
-        <translation>Imbang: pusat</translation>
+        <translation type="unfinished">Imbang: pusat</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="309"/>
+        <location filename="../skinneddisplay.cpp" line="304"/>
         <source>Seek to: %1</source>
-        <translation>Jangka ke: %1</translation>
+        <translation type="unfinished">Jangka ke: %1</translation>
     </message>
 </context>
 <context>
-    <name>MainVisual</name>
+    <name>SkinnedEqWidget</name>
     <message>
-        <location filename="../mainvisual.cpp" line="213"/>
-        <source>Visualization Mode</source>
-        <translation>Mode Visualisasi</translation>
+        <location filename="../skinnedeqwidget.cpp" line="47"/>
+        <source>Equalizer</source>
+        <translation type="unfinished">Equalizer</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="216"/>
-        <source>Analyzer</source>
-        <translation>Analyzer</translation>
+        <location filename="../skinnedeqwidget.cpp" line="161"/>
+        <location filename="../skinnedeqwidget.cpp" line="178"/>
+        <source>preset</source>
+        <translation type="unfinished">preset</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="217"/>
-        <source>Scope</source>
-        <translation>Scope</translation>
+        <location filename="../skinnedeqwidget.cpp" line="262"/>
+        <source>&amp;Load/Delete</source>
+        <translation type="unfinished">&amp;Muat/Hapus</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="218"/>
-        <source>Off</source>
-        <translation>Off</translation>
+        <location filename="../skinnedeqwidget.cpp" line="264"/>
+        <source>&amp;Save Preset</source>
+        <translation type="unfinished">&amp;Simpan Preset</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="225"/>
-        <source>Analyzer Mode</source>
-        <translation>Mode Analyzer</translation>
+        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <source>&amp;Save Auto-load Preset</source>
+        <translation type="unfinished">&amp;Simpan Auto-muat Preset</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="228"/>
-        <source>Normal</source>
-        <translation>Normal</translation>
+        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <source>&amp;Import</source>
+        <translation type="unfinished">&amp;Import</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="229"/>
-        <source>Fire</source>
-        <translation>Api</translation>
+        <location filename="../skinnedeqwidget.cpp" line="271"/>
+        <source>&amp;Clear</source>
+        <translation type="unfinished">&amp;Bersihkan</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="230"/>
-        <source>Vertical Lines</source>
-        <translation>Baris Vertikal</translation>
+        <location filename="../skinnedeqwidget.cpp" line="300"/>
+        <source>Saving Preset</source>
+        <translation type="unfinished">Menyimpan Preset</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="231"/>
-        <source>Lines</source>
-        <translation>Baris</translation>
+        <location filename="../skinnedeqwidget.cpp" line="301"/>
+        <source>Preset name:</source>
+        <translation type="unfinished">Nama preset:</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="232"/>
-        <source>Bars</source>
-        <translation>Bilah</translation>
+        <location filename="../skinnedeqwidget.cpp" line="302"/>
+        <source>preset #</source>
+        <translation type="unfinished">preset #</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="245"/>
-        <source>Peaks</source>
-        <translation>Puncak</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="249"/>
-        <source>Refresh Rate</source>
-        <translation>Segarkan Rate</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="252"/>
-        <source>50 fps</source>
-        <translation>50 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="253"/>
-        <source>25 fps</source>
-        <translation>25 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="254"/>
-        <source>10 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="255"/>
-        <source>5 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="262"/>
-        <source>Analyzer Falloff</source>
-        <translation>Analyzer Merosot</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="265"/>
-        <location filename="../mainvisual.cpp" line="279"/>
-        <source>Slowest</source>
-        <translation>Agak Lambat</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="266"/>
-        <location filename="../mainvisual.cpp" line="280"/>
-        <source>Slow</source>
-        <translation>Lambat</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="267"/>
-        <location filename="../mainvisual.cpp" line="281"/>
-        <source>Medium</source>
-        <translation>Sedang</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="268"/>
-        <location filename="../mainvisual.cpp" line="282"/>
-        <source>Fast</source>
-        <translation>Cepat</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="269"/>
-        <location filename="../mainvisual.cpp" line="283"/>
-        <source>Fastest</source>
-        <translation>Agak Cepat</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="276"/>
-        <source>Peaks Falloff</source>
-        <translation>Puncak Merosot</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="289"/>
-        <source>Background</source>
-        <translation>Background</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="290"/>
-        <source>Transparent</source>
-        <translation>Transparan</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="359"/>
-        <source>Appearance</source>
-        <translation>Tampilan</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="360"/>
-        <source>Shortcuts</source>
-        <translation>Pintasan</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="430"/>
-        <source>View</source>
-        <translation>Tinjau</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="439"/>
-        <source>Playlist</source>
-        <translation>Daftarmain</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="466"/>
-        <source>Audio</source>
-        <translation>Audio</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="474"/>
-        <source>Tools</source>
-        <translation>Alat</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="556"/>
-        <source>Qmmp</source>
-        <translation>Qmmp</translation>
-    </message>
-</context>
-<context>
-    <name>PlayList</name>
-    <message>
-        <location filename="../playlist.cpp" line="56"/>
-        <source>Playlist</source>
-        <translation>Daftarmain</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="197"/>
-        <source>&amp;Copy Selection To</source>
-        <translation>&amp;Salin Pilihan Ke</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="228"/>
-        <source>Sort List</source>
-        <translation>Daftar Surtir</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="231"/>
-        <location filename="../playlist.cpp" line="271"/>
-        <source>By Title</source>
-        <translation>Menurut Judul</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="234"/>
-        <location filename="../playlist.cpp" line="274"/>
-        <source>By Album</source>
-        <translation>Menurut Album</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="255"/>
-        <location filename="../playlist.cpp" line="295"/>
-        <source>By Disc Number</source>
-        <translation>Menurut Nomor Cakram</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="237"/>
-        <location filename="../playlist.cpp" line="277"/>
-        <source>By Artist</source>
-        <translation>Menurut Artist</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="240"/>
-        <location filename="../playlist.cpp" line="280"/>
-        <source>By Album Artist</source>
-        <translation>Menurut Album Artist</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="243"/>
-        <location filename="../playlist.cpp" line="283"/>
-        <source>By Filename</source>
-        <translation>Menurut Filename</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="246"/>
-        <location filename="../playlist.cpp" line="286"/>
-        <source>By Path + Filename</source>
-        <translation>Menurut Alur + Filename</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="249"/>
-        <location filename="../playlist.cpp" line="289"/>
-        <source>By Date</source>
-        <translation>Menurut Tanggal</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="252"/>
-        <location filename="../playlist.cpp" line="292"/>
-        <source>By Track Number</source>
-        <translation>Menurut Nomor Track</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="258"/>
-        <location filename="../playlist.cpp" line="298"/>
-        <source>By File Creation Date</source>
-        <translation>Menurut Tanggal Penciptaan File</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="261"/>
-        <location filename="../playlist.cpp" line="301"/>
-        <source>By File Modification Date</source>
-        <translation>Menurut Tanggal Modifikasi File</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="264"/>
-        <source>By Group</source>
-        <translation>Menurut Kelompok</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="269"/>
-        <source>Sort Selection</source>
-        <translation>Pilihan Surtir</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="306"/>
-        <source>Randomize List</source>
-        <translation>Daftar Acakan</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="308"/>
-        <source>Reverse List</source>
-        <translation>Daftar Mundur</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="315"/>
-        <source>Actions</source>
-        <translation>Tindakan</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="590"/>
-        <source>Rename Playlist</source>
-        <translation>Ubah-nama Daftarmain</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="590"/>
-        <source>Playlist name:</source>
-        <translation>Nama daftarmain:</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="611"/>
-        <source>&amp;New PlayList</source>
-        <translation>&amp;Daftarmain Baru</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListBrowser</name>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="14"/>
-        <source>Playlist Browser</source>
-        <translation>Browser Daftarmain</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="31"/>
-        <source>Filter:</source>
-        <translation>Filter:</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="47"/>
-        <source>New</source>
-        <translation>Baru</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="54"/>
-        <location filename="../playlistbrowser.cpp" line="43"/>
-        <source>Delete</source>
-        <translation>Hapus</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="61"/>
-        <location filename="../forms/playlistbrowser.ui" line="71"/>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <location filename="../playlistbrowser.cpp" line="42"/>
-        <source>Rename</source>
-        <translation>Ubah nama</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListHeader</name>
-    <message>
-        <location filename="../playlistheader.cpp" line="77"/>
-        <source>Add Column</source>
-        <translation>Tambah Kolom</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="78"/>
-        <source>Edit Column</source>
-        <translation>Edit Kolom</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="79"/>
-        <source>Show Queue/Protocol</source>
-        <translation>Tampakkan Antrian/Protokol</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="81"/>
-        <source>Auto-resize</source>
-        <translation>Ubah-ukuran otomatis</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="84"/>
-        <source>Alignment</source>
-        <translation>Kesejajaran</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="85"/>
-        <source>Left</source>
-        <comment>alignment</comment>
-        <translation>Kiri</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="86"/>
-        <source>Right</source>
-        <comment>alignment</comment>
-        <translation>Kanan</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="87"/>
-        <source>Center</source>
-        <comment>alignment</comment>
-        <translation>Pusat</translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="97"/>
-        <source>Remove Column</source>
-        <translation>Hapus Kolom</translation>
-    </message>
-</context>
-<context>
-    <name>PopupSettings</name>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="14"/>
-        <source>Popup Information Settings</source>
-        <translation>Setelan Tongol Informasi</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="29"/>
-        <source>Template</source>
-        <translation>Template</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="58"/>
-        <source>Reset</source>
-        <translation>Setel ulang</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="65"/>
-        <source>Insert</source>
-        <translation>Sisispkan</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="75"/>
-        <source>Show cover</source>
-        <translation>Tampakkan sampul</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="89"/>
-        <source>Cover size:</source>
-        <translation>Ukuran sampul:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="115"/>
-        <source>Transparency:</source>
-        <translation>Transparan:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="145"/>
-        <source>Delay:</source>
-        <translation>Tunda:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="178"/>
-        <source>ms</source>
-        <translation>md</translation>
-    </message>
-</context>
-<context>
-    <name>PresetEditor</name>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="14"/>
-        <source>Preset Editor</source>
-        <translation>Pengedit Preset</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="36"/>
-        <source>Preset</source>
-        <translation>Preset</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="52"/>
-        <source>Auto-preset</source>
-        <translation>Preset-oto</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="77"/>
-        <source>Load</source>
-        <translation>Muat</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="84"/>
-        <source>Delete</source>
-        <translation>Hapus</translation>
+        <location filename="../skinnedeqwidget.cpp" line="398"/>
+        <source>Import Preset</source>
+        <translation type="unfinished">Import Preset</translation>
     </message>
 </context>
 <context>
@@ -1172,6 +657,388 @@
         <location filename="../skinnedfactory.cpp" line="69"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
         <translation>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedHotkeyEditor</name>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="33"/>
+        <source>Change shortcut...</source>
+        <translation type="unfinished">Ubah pintasan...</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
+        <source>Reset</source>
+        <translation type="unfinished">Setel ulang</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
+        <source>Action</source>
+        <translation type="unfinished">Tindakan</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="63"/>
+        <source>Shortcut</source>
+        <translation type="unfinished">Pintasan</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
+        <source>Playback</source>
+        <translation type="unfinished">Pemutaran</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
+        <source>View</source>
+        <translation type="unfinished">Tinjau</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
+        <source>Volume</source>
+        <translation type="unfinished">Volume</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
+        <source>Playlist</source>
+        <translation type="unfinished">Daftarmain</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
+        <source>Misc</source>
+        <translation type="unfinished">Lainnya</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
+        <source>Reset Shortcuts</source>
+        <translation type="unfinished">Setel ulang Pintasan</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
+        <source>Do you want to restore default shortcuts?</source>
+        <translation type="unfinished">Apakah kamu ingin memulihkan pintasan baku?</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedMainWindow</name>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="358"/>
+        <source>Appearance</source>
+        <translation type="unfinished">Tampilan</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="359"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished">Pintasan</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="433"/>
+        <source>View</source>
+        <translation type="unfinished">Tinjau</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="442"/>
+        <source>Playlist</source>
+        <translation type="unfinished">Daftarmain</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="461"/>
+        <source>Audio</source>
+        <translation type="unfinished">Audio</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="469"/>
+        <source>Tools</source>
+        <translation type="unfinished">Alat</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="541"/>
+        <source>Qmmp</source>
+        <translation type="unfinished">Qmmp</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayList</name>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="56"/>
+        <source>Playlist</source>
+        <translation type="unfinished">Daftarmain</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="194"/>
+        <source>&amp;Copy Selection To</source>
+        <translation type="unfinished">&amp;Salin Pilihan Ke</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="219"/>
+        <source>Sort List</source>
+        <translation type="unfinished">Daftar Surtir</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="222"/>
+        <location filename="../skinnedplaylist.cpp" line="262"/>
+        <source>By Title</source>
+        <translation type="unfinished">Menurut Judul</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="225"/>
+        <location filename="../skinnedplaylist.cpp" line="265"/>
+        <source>By Album</source>
+        <translation type="unfinished">Menurut Album</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="228"/>
+        <location filename="../skinnedplaylist.cpp" line="268"/>
+        <source>By Artist</source>
+        <translation type="unfinished">Menurut Artist</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="231"/>
+        <location filename="../skinnedplaylist.cpp" line="271"/>
+        <source>By Album Artist</source>
+        <translation type="unfinished">Menurut Album Artist</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="234"/>
+        <location filename="../skinnedplaylist.cpp" line="274"/>
+        <source>By Filename</source>
+        <translation type="unfinished">Menurut Filename</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="237"/>
+        <location filename="../skinnedplaylist.cpp" line="277"/>
+        <source>By Path + Filename</source>
+        <translation type="unfinished">Menurut Alur + Filename</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="240"/>
+        <location filename="../skinnedplaylist.cpp" line="280"/>
+        <source>By Date</source>
+        <translation type="unfinished">Menurut Tanggal</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="243"/>
+        <location filename="../skinnedplaylist.cpp" line="283"/>
+        <source>By Track Number</source>
+        <translation type="unfinished">Menurut Nomor Track</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="246"/>
+        <location filename="../skinnedplaylist.cpp" line="286"/>
+        <source>By Disc Number</source>
+        <translation type="unfinished">Menurut Nomor Cakram</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="249"/>
+        <location filename="../skinnedplaylist.cpp" line="289"/>
+        <source>By File Creation Date</source>
+        <translation type="unfinished">Menurut Tanggal Penciptaan File</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="252"/>
+        <location filename="../skinnedplaylist.cpp" line="292"/>
+        <source>By File Modification Date</source>
+        <translation type="unfinished">Menurut Tanggal Modifikasi File</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="255"/>
+        <source>By Group</source>
+        <translation type="unfinished">Menurut Kelompok</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="260"/>
+        <source>Sort Selection</source>
+        <translation type="unfinished">Pilihan Surtir</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="297"/>
+        <source>Randomize List</source>
+        <translation type="unfinished">Daftar Acakan</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="299"/>
+        <source>Reverse List</source>
+        <translation type="unfinished">Daftar Mundur</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <source>Actions</source>
+        <translation type="unfinished">Tindakan</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <source>Rename Playlist</source>
+        <translation type="unfinished">Ubah-nama Daftarmain</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <source>Playlist name:</source>
+        <translation type="unfinished">Nama daftarmain:</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <source>&amp;New PlayList</source>
+        <translation type="unfinished">&amp;Daftarmain Baru</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayListBrowser</name>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="14"/>
+        <source>Playlist Browser</source>
+        <translation type="unfinished">Browser Daftarmain</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
+        <source>Filter:</source>
+        <translation type="unfinished">Filter:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="47"/>
+        <source>New</source>
+        <translation type="unfinished">Baru</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="54"/>
+        <location filename="../skinnedplaylistbrowser.cpp" line="45"/>
+        <source>Delete</source>
+        <translation type="unfinished">Hapus</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="61"/>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="71"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistbrowser.cpp" line="44"/>
+        <source>Rename</source>
+        <translation type="unfinished">Ubah nama</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayListHeader</name>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="77"/>
+        <source>Add Column</source>
+        <translation type="unfinished">Tambah Kolom</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="78"/>
+        <source>Edit Column</source>
+        <translation type="unfinished">Edit Kolom</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="79"/>
+        <source>Show Queue/Protocol</source>
+        <translation type="unfinished">Tampakkan Antrian/Protokol</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="81"/>
+        <source>Auto-resize</source>
+        <translation type="unfinished">Ubah-ukuran otomatis</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="84"/>
+        <source>Alignment</source>
+        <translation type="unfinished">Kesejajaran</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="85"/>
+        <source>Left</source>
+        <comment>alignment</comment>
+        <translation type="unfinished">Kiri</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="86"/>
+        <source>Right</source>
+        <comment>alignment</comment>
+        <translation type="unfinished">Kanan</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="87"/>
+        <source>Center</source>
+        <comment>alignment</comment>
+        <translation type="unfinished">Pusat</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="97"/>
+        <source>Remove Column</source>
+        <translation type="unfinished">Hapus Kolom</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPopupSettings</name>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="14"/>
+        <source>Popup Information Settings</source>
+        <translation type="unfinished">Setelan Tongol Informasi</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="29"/>
+        <source>Template</source>
+        <translation type="unfinished">Template</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="58"/>
+        <source>Reset</source>
+        <translation type="unfinished">Setel ulang</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="65"/>
+        <source>Insert</source>
+        <translation type="unfinished">Sisispkan</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="75"/>
+        <source>Show cover</source>
+        <translation type="unfinished">Tampakkan sampul</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">Ukuran sampul:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">Transparan:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="145"/>
+        <source>Delay:</source>
+        <translation type="unfinished">Tunda:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="178"/>
+        <source>ms</source>
+        <translation type="unfinished">md</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPresetEditor</name>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="14"/>
+        <source>Preset Editor</source>
+        <translation type="unfinished">Pengedit Preset</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="36"/>
+        <source>Preset</source>
+        <translation type="unfinished">Preset</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="61"/>
+        <source>Auto-preset</source>
+        <translation type="unfinished">Preset-oto</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="95"/>
+        <source>Load</source>
+        <translation type="unfinished">Muat</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="102"/>
+        <source>Delete</source>
+        <translation type="unfinished">Hapus</translation>
     </message>
 </context>
 <context>
@@ -1439,42 +1306,180 @@
         <translation>Tampakkan tombol &apos;Daftarmain Baru&apos;</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="106"/>
+        <location filename="../skinnedsettings.cpp" line="109"/>
         <source>Select Skin Files</source>
         <translation>Pilih File Skin</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="107"/>
+        <location filename="../skinnedsettings.cpp" line="110"/>
         <source>Skin files</source>
         <translation>File skin</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="186"/>
+        <location filename="../skinnedsettings.cpp" line="180"/>
+        <source>Default skin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedsettings.cpp" line="189"/>
         <source>Unarchived skin %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="186"/>
+        <location filename="../skinnedsettings.cpp" line="189"/>
         <source>Archived skin %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>TextScroller</name>
+    <name>SkinnedTextScroller</name>
     <message>
-        <location filename="../textscroller.cpp" line="54"/>
+        <location filename="../skinnedtextscroller.cpp" line="54"/>
         <source>Autoscroll Songname</source>
-        <translation>Gulir-oto Nama-lagu</translation>
+        <translation type="unfinished">Gulir-oto Nama-lagu</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="55"/>
+        <location filename="../skinnedtextscroller.cpp" line="55"/>
         <source>Transparent Background</source>
-        <translation>Background Transparan</translation>
+        <translation type="unfinished">Background Transparan</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="122"/>
+        <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation>Buffering: %1%</translation>
+        <translation type="unfinished">Buffering: %1%</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedVisualization</name>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="211"/>
+        <source>Visualization Mode</source>
+        <translation type="unfinished">Mode Visualisasi</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="214"/>
+        <source>Analyzer</source>
+        <translation type="unfinished">Analyzer</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="215"/>
+        <source>Scope</source>
+        <translation type="unfinished">Scope</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="216"/>
+        <source>Off</source>
+        <translation type="unfinished">Off</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="223"/>
+        <source>Analyzer Mode</source>
+        <translation type="unfinished">Mode Analyzer</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="226"/>
+        <source>Normal</source>
+        <translation type="unfinished">Normal</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="227"/>
+        <source>Fire</source>
+        <translation type="unfinished">Api</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="228"/>
+        <source>Vertical Lines</source>
+        <translation type="unfinished">Baris Vertikal</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="229"/>
+        <source>Lines</source>
+        <translation type="unfinished">Baris</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="230"/>
+        <source>Bars</source>
+        <translation type="unfinished">Bilah</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="243"/>
+        <source>Peaks</source>
+        <translation type="unfinished">Puncak</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="247"/>
+        <source>Refresh Rate</source>
+        <translation type="unfinished">Segarkan Rate</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="250"/>
+        <source>50 fps</source>
+        <translation type="unfinished">50 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="251"/>
+        <source>25 fps</source>
+        <translation type="unfinished">25 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="252"/>
+        <source>10 fps</source>
+        <translation type="unfinished">10 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="253"/>
+        <source>5 fps</source>
+        <translation type="unfinished">5 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="260"/>
+        <source>Analyzer Falloff</source>
+        <translation type="unfinished">Analyzer Merosot</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="263"/>
+        <location filename="../skinnedvisualization.cpp" line="277"/>
+        <source>Slowest</source>
+        <translation type="unfinished">Agak Lambat</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="264"/>
+        <location filename="../skinnedvisualization.cpp" line="278"/>
+        <source>Slow</source>
+        <translation type="unfinished">Lambat</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="265"/>
+        <location filename="../skinnedvisualization.cpp" line="279"/>
+        <source>Medium</source>
+        <translation type="unfinished">Sedang</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="266"/>
+        <location filename="../skinnedvisualization.cpp" line="280"/>
+        <source>Fast</source>
+        <translation type="unfinished">Cepat</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="267"/>
+        <location filename="../skinnedvisualization.cpp" line="281"/>
+        <source>Fastest</source>
+        <translation type="unfinished">Agak Cepat</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="274"/>
+        <source>Peaks Falloff</source>
+        <translation type="unfinished">Puncak Merosot</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="287"/>
+        <source>Background</source>
+        <translation type="unfinished">Background</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="288"/>
+        <source>Transparent</source>
+        <translation type="unfinished">Transparan</translation>
     </message>
 </context>
 </TS>

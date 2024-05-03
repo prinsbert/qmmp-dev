@@ -62,27 +62,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="97"/>
+        <location filename="../decodercdaudiofactory.cpp" line="96"/>
         <source>About CD Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="98"/>
+        <location filename="../decodercdaudiofactory.cpp" line="97"/>
         <source>Qmmp CD Audio Plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="99"/>
+        <location filename="../decodercdaudiofactory.cpp" line="98"/>
         <source>Compiled against libcdio-%1 and libcddb-%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="101"/>
+        <location filename="../decodercdaudiofactory.cpp" line="100"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="102"/>
+        <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation type="unfinished"></translation>
     </message>

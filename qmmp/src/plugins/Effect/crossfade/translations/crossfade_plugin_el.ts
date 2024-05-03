@@ -27,17 +27,17 @@
         <translation>Πρόσθετο ομαλής μετάβασης</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="51"/>
+        <location filename="../effectcrossfadefactory.cpp" line="50"/>
         <source>About Crossfade Plugin</source>
         <translation>Σχετικά με το πρόσθετο ομαλής μετάβασης</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="52"/>
+        <location filename="../effectcrossfadefactory.cpp" line="51"/>
         <source>Qmmp Crossfade Plugin</source>
         <translation>Qmmp πρόσθετο ομαλής μετάβασης</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="53"/>
+        <location filename="../effectcrossfadefactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>

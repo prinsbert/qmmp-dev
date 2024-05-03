@@ -14,7 +14,7 @@
         <translation type="unfinished">Устройство:</translation>
     </message>
     <message>
-        <location filename="../oss4settingsdialog.cpp" line="70"/>
+        <location filename="../oss4settingsdialog.cpp" line="69"/>
         <source>Default (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -27,17 +27,17 @@
         <translation>Модуль OSS4</translation>
     </message>
     <message>
-        <location filename="../outputoss4factory.cpp" line="56"/>
+        <location filename="../outputoss4factory.cpp" line="55"/>
         <source>About OSS4 Output Plugin</source>
         <translation>Модуль поддержки OSS4 для Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputoss4factory.cpp" line="57"/>
+        <location filename="../outputoss4factory.cpp" line="56"/>
         <source>Qmmp OSS4 Output Plugin</source>
         <translation>Модуль OSS4 для Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputoss4factory.cpp" line="58"/>
+        <location filename="../outputoss4factory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>

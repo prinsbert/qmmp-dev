@@ -9,37 +9,37 @@
         <translation>Estensione MMS</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="52"/>
+        <location filename="../mmsinputfactory.cpp" line="51"/>
         <source>About MMS Transport Plugin</source>
         <translation>Informazioni sull&apos;estensione transporto MMS</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="53"/>
+        <location filename="../mmsinputfactory.cpp" line="52"/>
         <source>Qmmp MMS Transport Plugin</source>
         <translation>Estensione transporto MMS per Qmmp</translation>
     </message>
     <message>
-        <location filename="../mmsinputfactory.cpp" line="54"/>
+        <location filename="../mmsinputfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>MmsSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../mmssettingsdialog.ui" line="14"/>
         <source>MMS Plugin Settings</source>
-        <translation>Impostazioni estensione MMS</translation>
+        <translation type="unfinished">Impostazioni estensione MMS</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="29"/>
+        <location filename="../mmssettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation>Dimensione buffer:</translation>
+        <translation type="unfinished">Dimensione buffer:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="64"/>
+        <location filename="../mmssettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation>KB</translation>
+        <translation type="unfinished">KB</translation>
     </message>
 </context>
 </TS>

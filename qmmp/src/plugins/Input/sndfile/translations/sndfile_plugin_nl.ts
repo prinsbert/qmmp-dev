@@ -14,22 +14,22 @@
         <translation>PCM-bestanden</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="226"/>
+        <location filename="../decodersndfilefactory.cpp" line="228"/>
         <source>About Sndfile Audio Plugin</source>
         <translation>Over de Sndfile-audioplug-in</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="227"/>
+        <location filename="../decodersndfilefactory.cpp" line="229"/>
         <source>Qmmp Sndfile Audio Plugin</source>
         <translation>Sndfile-audioplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="228"/>
+        <location filename="../decodersndfilefactory.cpp" line="230"/>
         <source>Compiled against %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decodersndfilefactory.cpp" line="229"/>
+        <location filename="../decodersndfilefactory.cpp" line="231"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

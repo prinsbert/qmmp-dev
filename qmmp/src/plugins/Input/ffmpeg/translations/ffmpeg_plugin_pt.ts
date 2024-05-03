@@ -14,22 +14,22 @@
         <translation>Formatos FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="346"/>
+        <location filename="../decoderffmpegfactory.cpp" line="345"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>Acerca de suplemento FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="347"/>
+        <location filename="../decoderffmpegfactory.cpp" line="346"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Suplemento Qmmp FFmpeg Audio</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="348"/>
+        <location filename="../decoderffmpegfactory.cpp" line="347"/>
         <source>Compiled against:</source>
         <translation>Compilado com:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="361"/>
+        <location filename="../decoderffmpegfactory.cpp" line="360"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

@@ -62,27 +62,27 @@
         <translation>CD 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="97"/>
+        <location filename="../decodercdaudiofactory.cpp" line="96"/>
         <source>About CD Audio Plugin</source>
         <translation>關於 CD 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="98"/>
+        <location filename="../decodercdaudiofactory.cpp" line="97"/>
         <source>Qmmp CD Audio Plugin</source>
         <translation>Qmmp CD 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="99"/>
+        <location filename="../decodercdaudiofactory.cpp" line="98"/>
         <source>Compiled against libcdio-%1 and libcddb-%2</source>
         <translation>編譯依賴 libcdio-%1 and libcddb-%2</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="101"/>
+        <location filename="../decodercdaudiofactory.cpp" line="100"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="102"/>
+        <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>用法：open cdda:/// 使用添加 URL會話或命令行</translation>
     </message>

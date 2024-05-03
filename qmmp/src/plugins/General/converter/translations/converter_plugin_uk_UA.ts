@@ -90,8 +90,8 @@
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="136"/>
-        <location filename="../converterdialog.cpp" line="361"/>
-        <location filename="../converterdialog.cpp" line="368"/>
+        <location filename="../converterdialog.cpp" line="358"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
@@ -121,12 +121,12 @@
         <translation>Видалити</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="361"/>
+        <location filename="../converterdialog.cpp" line="358"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>Неможливо запустити &quot;%1&quot;. Програму не найдено.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="368"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>Процес &quot;%1&quot; завершено з помилкою.</translation>
     </message>
@@ -173,60 +173,63 @@
     </message>
 </context>
 <context>
+    <name>ConverterPresetEditor</name>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="14"/>
+        <source>Preset Editor</source>
+        <translation type="unfinished">Редактор предвстановлень</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="29"/>
+        <source>General</source>
+        <translation type="unfinished">Головне</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="35"/>
+        <source>Name:</source>
+        <translation type="unfinished">Ім&apos;я:</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="45"/>
+        <source>Extension:</source>
+        <translation type="unfinished">Розширення:</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="58"/>
+        <source>Command</source>
+        <translation type="unfinished">Команда</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="77"/>
+        <source>Options</source>
+        <translation type="unfinished">Опції</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="83"/>
+        <source>Write tags</source>
+        <translation type="unfinished">Записати теги</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="90"/>
+        <source>Convert to 16 bit</source>
+        <translation type="unfinished">Конвертувати в 16 біт</translation>
+    </message>
+</context>
+<context>
     <name>PresetEditor</name>
     <message>
-        <location filename="../preseteditor.ui" line="14"/>
-        <source>Preset Editor</source>
-        <translation>Редактор предвстановлень</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="29"/>
-        <source>General</source>
-        <translation>Головне</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="35"/>
-        <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="45"/>
-        <source>Extension:</source>
-        <translation>Розширення:</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="58"/>
-        <source>Command</source>
-        <translation>Команда</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="77"/>
-        <source>Options</source>
-        <translation>Опції</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="83"/>
-        <source>Write tags</source>
-        <translation>Записати теги</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="90"/>
-        <source>Convert to 16 bit</source>
-        <translation>Конвертувати в 16 біт</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.cpp" line="39"/>
+        <location filename="../converterpreseteditor.cpp" line="39"/>
         <source>%1 (Read Only)</source>
         <translatorcomment>%1 (тільки читання)</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="72"/>
+        <location filename="../converterpreseteditor.cpp" line="72"/>
         <source>Output file</source>
         <translation>Вихідний файл</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="73"/>
+        <location filename="../converterpreseteditor.cpp" line="73"/>
         <source>Input file</source>
         <translation>Вхідний файл</translation>
     </message>

@@ -27,17 +27,17 @@
         <translation>Estensione dissolvenza incrociata</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="51"/>
+        <location filename="../effectcrossfadefactory.cpp" line="50"/>
         <source>About Crossfade Plugin</source>
         <translation>Informazioni sull&apos;estensione dissolvenza incrociata</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="52"/>
+        <location filename="../effectcrossfadefactory.cpp" line="51"/>
         <source>Qmmp Crossfade Plugin</source>
         <translation>Estensione dissolvenza incrociata per Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectcrossfadefactory.cpp" line="53"/>
+        <location filename="../effectcrossfadefactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

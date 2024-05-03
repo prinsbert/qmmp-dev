@@ -35,12 +35,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="62"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="61"/>
         <source>%1 Hz, %2 us</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="69"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="68"/>
         <source>%1 dB</source>
         <translation type="unfinished"></translation>
     </message>
@@ -53,37 +53,37 @@
         <translation>BS2B 外掛</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="51"/>
+        <location filename="../effectbs2bfactory.cpp" line="50"/>
         <source>About BS2B Effect Plugin</source>
         <translation>關於BS2B 特效插件</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="53"/>
+        <location filename="../effectbs2bfactory.cpp" line="52"/>
         <source>This is the Qmmp plugin version of Boris Mikhaylov&apos;s headphone DSP effect &quot;Bauer stereophonic-to-binaural&quot;, abbreviated bs2b.</source>
         <translation>此版本的 Qmmp 插件基於 Boris Mikhaylov 的耳機 DSP 特效 &quot;Bauer stereophonic-to-binaural&quot;, 簡單的 bs2b.</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="56"/>
+        <location filename="../effectbs2bfactory.cpp" line="55"/>
         <source>Visit %1 for more details</source>
         <translation>訪問 %1 了解更多內容</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="58"/>
+        <location filename="../effectbs2bfactory.cpp" line="57"/>
         <source>Compiled against libbs2b-%1</source>
         <translation>編譯依賴 libbs2b-%1</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="60"/>
+        <location filename="../effectbs2bfactory.cpp" line="59"/>
         <source>Developers:</source>
         <translation>開發者：</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="61"/>
+        <location filename="../effectbs2bfactory.cpp" line="60"/>
         <source>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="62"/>
+        <location filename="../effectbs2bfactory.cpp" line="61"/>
         <source>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</source>
         <translation type="unfinished"></translation>
     </message>

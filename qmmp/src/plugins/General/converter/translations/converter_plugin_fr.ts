@@ -96,8 +96,8 @@
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="136"/>
-        <location filename="../converterdialog.cpp" line="361"/>
-        <location filename="../converterdialog.cpp" line="368"/>
+        <location filename="../converterdialog.cpp" line="358"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
@@ -122,12 +122,12 @@
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="361"/>
+        <location filename="../converterdialog.cpp" line="358"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>Impossible d’exécuter &quot;%1&quot;. Le programme n&apos;a pas été trouvé.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="368"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>Le processus &quot;%1&quot; s&apos;est terminé par une erreur.</translation>
     </message>
@@ -174,59 +174,62 @@
     </message>
 </context>
 <context>
+    <name>ConverterPresetEditor</name>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="14"/>
+        <source>Preset Editor</source>
+        <translation type="unfinished">Éditeur de réglages</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="29"/>
+        <source>General</source>
+        <translation type="unfinished">Général</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="35"/>
+        <source>Name:</source>
+        <translation type="unfinished">Nom&#xa0;:</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="45"/>
+        <source>Extension:</source>
+        <translation type="unfinished">Extension&#xa0;:</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="58"/>
+        <source>Command</source>
+        <translation type="unfinished">Commande</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="77"/>
+        <source>Options</source>
+        <translation type="unfinished">Options</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="83"/>
+        <source>Write tags</source>
+        <translation type="unfinished">Écrire les étiquettes</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="90"/>
+        <source>Convert to 16 bit</source>
+        <translation type="unfinished">Convertir en 16 bits</translation>
+    </message>
+</context>
+<context>
     <name>PresetEditor</name>
     <message>
-        <location filename="../preseteditor.ui" line="14"/>
-        <source>Preset Editor</source>
-        <translation>Éditeur de réglages</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="29"/>
-        <source>General</source>
-        <translation>Général</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="35"/>
-        <source>Name:</source>
-        <translation>Nom&#xa0;:</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="45"/>
-        <source>Extension:</source>
-        <translation>Extension&#xa0;:</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="58"/>
-        <source>Command</source>
-        <translation>Commande</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="77"/>
-        <source>Options</source>
-        <translation>Options</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="83"/>
-        <source>Write tags</source>
-        <translation>Écrire les étiquettes</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="90"/>
-        <source>Convert to 16 bit</source>
-        <translation>Convertir en 16 bits</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.cpp" line="39"/>
+        <location filename="../converterpreseteditor.cpp" line="39"/>
         <source>%1 (Read Only)</source>
         <translation>%1 (lecture seule)</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="72"/>
+        <location filename="../converterpreseteditor.cpp" line="72"/>
         <source>Output file</source>
         <translation>Fichier de destination</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="73"/>
+        <location filename="../converterpreseteditor.cpp" line="73"/>
         <source>Input file</source>
         <translation>Fichier d&apos;entrée</translation>
     </message>

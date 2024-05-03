@@ -14,22 +14,22 @@
         <translation>Fichiers Module</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="110"/>
+        <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
         <translation>A propos du greffon audio XMP</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="111"/>
+        <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
         <translation>Greffon audio XMP Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="112"/>
+        <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decoderxmpfactory.cpp" line="113"/>
+        <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
         <translation>Compilé avec libxmp-%1</translation>
     </message>
@@ -140,32 +140,32 @@
         <translation type="unfinished">Taux du sample</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="34"/>
+        <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
         <translation type="unfinished">22050 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="35"/>
+        <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
         <translation type="unfinished">44100 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="36"/>
+        <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
         <translation type="unfinished">48000 Hz</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="37"/>
+        <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
         <translation type="unfinished">Voisin le plus proche</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="38"/>
+        <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
         <translation type="unfinished">Linéaire</translation>
     </message>
     <message>
-        <location filename="../xmpsettingsdialog.cpp" line="39"/>
+        <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
         <translation type="unfinished">Spline cubique</translation>
     </message>

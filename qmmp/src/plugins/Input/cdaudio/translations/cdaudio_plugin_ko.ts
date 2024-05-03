@@ -62,27 +62,27 @@
         <translation>CD 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="97"/>
+        <location filename="../decodercdaudiofactory.cpp" line="96"/>
         <source>About CD Audio Plugin</source>
         <translation>CD 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="98"/>
+        <location filename="../decodercdaudiofactory.cpp" line="97"/>
         <source>Qmmp CD Audio Plugin</source>
         <translation>Qmmp CD 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="99"/>
+        <location filename="../decodercdaudiofactory.cpp" line="98"/>
         <source>Compiled against libcdio-%1 and libcddb-%2</source>
         <translation>libcdio-%1 및 libcdb-%2에 대해 컴파일됨</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="101"/>
+        <location filename="../decodercdaudiofactory.cpp" line="100"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="102"/>
+        <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>사용법: URL 대화상자 또는 명령줄 추가를 사용하여 cdda:/// 열기</translation>
     </message>

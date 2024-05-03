@@ -1317,7 +1317,7 @@
     <name>PlayListManager</name>
     <message>
         <location filename="../playlistmanager.cpp" line="177"/>
-        <location filename="../playlistmanager.cpp" line="325"/>
+        <location filename="../playlistmanager.cpp" line="319"/>
         <source>Playlist</source>
         <translation>Lista de reproducción</translation>
     </message>

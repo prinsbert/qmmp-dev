@@ -52,17 +52,17 @@
         <translation>Fichiers .cue</translation>
     </message>
     <message>
-        <location filename="../decodercuefactory.cpp" line="82"/>
+        <location filename="../decodercuefactory.cpp" line="81"/>
         <source>About CUE Audio Plugin</source>
         <translation>À propos du greffon de fichiers .cue</translation>
     </message>
     <message>
-        <location filename="../decodercuefactory.cpp" line="83"/>
+        <location filename="../decodercuefactory.cpp" line="82"/>
         <source>Qmmp CUE Audio Plugin</source>
         <translation>Greffon de fichiers .cue pour Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodercuefactory.cpp" line="84"/>
+        <location filename="../decodercuefactory.cpp" line="83"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

@@ -95,8 +95,8 @@
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="136"/>
-        <location filename="../converterdialog.cpp" line="361"/>
-        <location filename="../converterdialog.cpp" line="368"/>
+        <location filename="../converterdialog.cpp" line="358"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
@@ -121,12 +121,12 @@
         <translation>삭제</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="361"/>
+        <location filename="../converterdialog.cpp" line="358"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
         <translation>%1을(를) 실행할 수 없습니다. 프로그램을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="368"/>
+        <location filename="../converterdialog.cpp" line="365"/>
         <source>Process &quot;%1&quot; finished with error.</source>
         <translation>&quot;%1&quot; 프로세스가 오류와 함께 완료되었습니다.</translation>
     </message>
@@ -173,59 +173,62 @@
     </message>
 </context>
 <context>
+    <name>ConverterPresetEditor</name>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="14"/>
+        <source>Preset Editor</source>
+        <translation type="unfinished">프리셋 편집기</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="29"/>
+        <source>General</source>
+        <translation type="unfinished">일반</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="35"/>
+        <source>Name:</source>
+        <translation type="unfinished">이름:</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="45"/>
+        <source>Extension:</source>
+        <translation type="unfinished">확장자:</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="58"/>
+        <source>Command</source>
+        <translation type="unfinished">명령</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="77"/>
+        <source>Options</source>
+        <translation type="unfinished">옵션</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="83"/>
+        <source>Write tags</source>
+        <translation type="unfinished">태그 쓰기</translation>
+    </message>
+    <message>
+        <location filename="../converterpreseteditor.ui" line="90"/>
+        <source>Convert to 16 bit</source>
+        <translation type="unfinished">16비트로 변환</translation>
+    </message>
+</context>
+<context>
     <name>PresetEditor</name>
     <message>
-        <location filename="../preseteditor.ui" line="14"/>
-        <source>Preset Editor</source>
-        <translation>프리셋 편집기</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="29"/>
-        <source>General</source>
-        <translation>일반</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="35"/>
-        <source>Name:</source>
-        <translation>이름:</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="45"/>
-        <source>Extension:</source>
-        <translation>확장자:</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="58"/>
-        <source>Command</source>
-        <translation>명령</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="77"/>
-        <source>Options</source>
-        <translation>옵션</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="83"/>
-        <source>Write tags</source>
-        <translation>태그 쓰기</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.ui" line="90"/>
-        <source>Convert to 16 bit</source>
-        <translation>16비트로 변환</translation>
-    </message>
-    <message>
-        <location filename="../preseteditor.cpp" line="39"/>
+        <location filename="../converterpreseteditor.cpp" line="39"/>
         <source>%1 (Read Only)</source>
         <translation>%1 (읽기 전용)</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="72"/>
+        <location filename="../converterpreseteditor.cpp" line="72"/>
         <source>Output file</source>
         <translation>출력 파일</translation>
     </message>
     <message>
-        <location filename="../preseteditor.cpp" line="73"/>
+        <location filename="../converterpreseteditor.cpp" line="73"/>
         <source>Input file</source>
         <translation>입력 파일</translation>
     </message>

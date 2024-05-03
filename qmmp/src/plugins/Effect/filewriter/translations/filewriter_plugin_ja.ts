@@ -9,17 +9,17 @@
         <translation>音声ファイル書き出しプラグイン</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="51"/>
+        <location filename="../effectfilewriterfactory.cpp" line="50"/>
         <source>About File Writer Plugin</source>
         <translation>音声ファイル書き出しプラグインについて</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="52"/>
+        <location filename="../effectfilewriterfactory.cpp" line="51"/>
         <source>Qmmp File Writer Plugin</source>
         <translation>QMMP 音声ファイル書き出しプラグイン</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="53"/>
+        <location filename="../effectfilewriterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>制作: Илья Котов (Ilya Kotov) &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -52,7 +52,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filewritersettingsdialog.cpp" line="73"/>
+        <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
         <translation type="unfinished">ディレクトリを選択</translation>
     </message>

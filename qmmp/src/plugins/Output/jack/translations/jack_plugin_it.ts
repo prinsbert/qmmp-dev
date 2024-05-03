@@ -9,17 +9,17 @@
         <translation>Estensione JACK</translation>
     </message>
     <message>
-        <location filename="../outputjackfactory.cpp" line="53"/>
+        <location filename="../outputjackfactory.cpp" line="54"/>
         <source>About Jack Output Plugin</source>
         <translation>Informazioni sull&apos;estensione d&apos;uscita JACK</translation>
     </message>
     <message>
-        <location filename="../outputjackfactory.cpp" line="54"/>
+        <location filename="../outputjackfactory.cpp" line="55"/>
         <source>Qmmp Jack Output Plugin</source>
         <translation>Estensione d&apos;uscita JACK per Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputjackfactory.cpp" line="55"/>
+        <location filename="../outputjackfactory.cpp" line="56"/>
         <source>Written by: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</source>
         <translation>Autori: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</translation>
     </message>

@@ -9,22 +9,22 @@
         <translation>HTTP 플러그인</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="53"/>
+        <location filename="../httpinputfactory.cpp" line="52"/>
         <source>About HTTP Transport Plugin</source>
         <translation>HTTP 트랜스포트 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="54"/>
+        <location filename="../httpinputfactory.cpp" line="53"/>
         <source>Qmmp HTTP Transport Plugin</source>
         <translation>Qmmp HTTP 트랜스포트 플러그인</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="55"/>
+        <location filename="../httpinputfactory.cpp" line="54"/>
         <source>Compiled against libcurl-%1</source>
         <translation>libcurl-%1에 대해 컴파일됨</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="56"/>
+        <location filename="../httpinputfactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

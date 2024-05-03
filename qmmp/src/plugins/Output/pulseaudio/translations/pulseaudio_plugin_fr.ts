@@ -9,17 +9,17 @@
         <translation>Greffon PulseAudio</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="54"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="55"/>
         <source>About PulseAudio Output Plugin</source>
         <translation>À propos du greffon de sortie PulseAudio</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="55"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="56"/>
         <source>Qmmp PulseAudio Output Plugin</source>
         <translation>Greffon de sortie PulseAudio pour Qmm</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="56"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Écrit par : Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

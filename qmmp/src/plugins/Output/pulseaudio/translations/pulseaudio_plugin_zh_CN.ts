@@ -9,17 +9,17 @@
         <translation>PulseAudio 插件</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="54"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="55"/>
         <source>About PulseAudio Output Plugin</source>
         <translation>关于 PulseAudio 输出插件</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="55"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="56"/>
         <source>Qmmp PulseAudio Output Plugin</source>
         <translation>Qmmp PulseAudio 输出插件</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="56"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

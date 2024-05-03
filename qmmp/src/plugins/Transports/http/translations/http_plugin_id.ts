@@ -9,22 +9,22 @@
         <translation>Plugin HTTP</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="53"/>
+        <location filename="../httpinputfactory.cpp" line="52"/>
         <source>About HTTP Transport Plugin</source>
         <translation>Tentang Plugin Transport HTTP</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="54"/>
+        <location filename="../httpinputfactory.cpp" line="53"/>
         <source>Qmmp HTTP Transport Plugin</source>
         <translation>Plugin Transport HTTP Qmmp</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="55"/>
+        <location filename="../httpinputfactory.cpp" line="54"/>
         <source>Compiled against libcurl-%1</source>
         <translation>Dikompilasi terhadap libcurl-%1</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="56"/>
+        <location filename="../httpinputfactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Ditulis oleh: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

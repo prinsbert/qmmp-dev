@@ -42,7 +42,7 @@
         <translation>전용 모드</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="58"/>
+        <location filename="../settingsdialog.cpp" line="57"/>
         <source>Default</source>
         <translation>기본값</translation>
     </message>

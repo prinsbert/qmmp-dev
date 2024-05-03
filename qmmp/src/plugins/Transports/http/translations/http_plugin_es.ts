@@ -9,22 +9,22 @@
         <translation>Modulo HTTP</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="53"/>
+        <location filename="../httpinputfactory.cpp" line="52"/>
         <source>About HTTP Transport Plugin</source>
         <translation>Acerca del módulo de transporte HTTP</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="54"/>
+        <location filename="../httpinputfactory.cpp" line="53"/>
         <source>Qmmp HTTP Transport Plugin</source>
         <translation>Módulo de transporte HTTP para QMMP</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="55"/>
+        <location filename="../httpinputfactory.cpp" line="54"/>
         <source>Compiled against libcurl-%1</source>
         <translation>Compilado con libcurl-%1</translation>
     </message>
     <message>
-        <location filename="../httpinputfactory.cpp" line="56"/>
+        <location filename="../httpinputfactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

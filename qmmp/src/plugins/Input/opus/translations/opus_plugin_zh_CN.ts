@@ -14,17 +14,17 @@
         <translation>Ogg Opus 文件</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="123"/>
+        <location filename="../decoderopusfactory.cpp" line="125"/>
         <source>About Opus Audio Plugin</source>
         <translation>关于Opus音频</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="124"/>
+        <location filename="../decoderopusfactory.cpp" line="126"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Qmmp Opus音频文件插件</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="125"/>
+        <location filename="../decoderopusfactory.cpp" line="127"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>

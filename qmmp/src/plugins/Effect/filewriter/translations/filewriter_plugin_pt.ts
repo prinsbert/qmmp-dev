@@ -9,17 +9,17 @@
         <translation>Suplemento File Writer</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="51"/>
+        <location filename="../effectfilewriterfactory.cpp" line="50"/>
         <source>About File Writer Plugin</source>
         <translation>Acerca de suplemento File Writer</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="52"/>
+        <location filename="../effectfilewriterfactory.cpp" line="51"/>
         <source>Qmmp File Writer Plugin</source>
         <translation>Suplemento Qmmp File Writer</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="53"/>
+        <location filename="../effectfilewriterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Desenvolvido por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -52,7 +52,7 @@
         <translation type="unfinished">Se possível, escrever para um único ficheiro.</translation>
     </message>
     <message>
-        <location filename="../filewritersettingsdialog.cpp" line="73"/>
+        <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
         <translation type="unfinished">Escolha um diretório</translation>
     </message>

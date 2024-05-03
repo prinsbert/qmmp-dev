@@ -9,17 +9,17 @@
         <translation>ПулсАудио прикључак</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="54"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="55"/>
         <source>About PulseAudio Output Plugin</source>
         <translation>О ПулсАудио прикључку излаза</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="55"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="56"/>
         <source>Qmmp PulseAudio Output Plugin</source>
         <translation>Кумп ПулсАудио прикључак излаза</translation>
     </message>
     <message>
-        <location filename="../outputpulseaudiofactory.cpp" line="56"/>
+        <location filename="../outputpulseaudiofactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Аутор: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

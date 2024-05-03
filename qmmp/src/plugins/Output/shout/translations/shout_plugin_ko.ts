@@ -9,22 +9,22 @@
         <translation>Icecast 플러그인</translation>
     </message>
     <message>
-        <location filename="../outputshoutfactory.cpp" line="64"/>
+        <location filename="../outputshoutfactory.cpp" line="63"/>
         <source>About Icecast Output Plugin</source>
         <translation>Icecast 출력 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../outputshoutfactory.cpp" line="65"/>
+        <location filename="../outputshoutfactory.cpp" line="64"/>
         <source>Qmmp Icecast Output Plugin</source>
         <translation>Qmmp Icecast 출력 플러그인</translation>
     </message>
     <message>
-        <location filename="../outputshoutfactory.cpp" line="66"/>
+        <location filename="../outputshoutfactory.cpp" line="65"/>
         <source>Compiled against libshout-%1</source>
         <translation>libshout-%1에 대해 컴파일됨</translation>
     </message>
     <message>
-        <location filename="../outputshoutfactory.cpp" line="67"/>
+        <location filename="../outputshoutfactory.cpp" line="66"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

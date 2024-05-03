@@ -35,12 +35,12 @@
         <translation type="unfinished">J. Meier</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="62"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="61"/>
         <source>%1 Hz, %2 us</source>
         <translation type="unfinished">%1 Hz, %2 us</translation>
     </message>
     <message>
-        <location filename="../bs2bsettingsdialog.cpp" line="69"/>
+        <location filename="../bs2bsettingsdialog.cpp" line="68"/>
         <source>%1 dB</source>
         <translation type="unfinished">%1 dB</translation>
     </message>
@@ -53,37 +53,37 @@
         <translation>BS2B 플러그인</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="51"/>
+        <location filename="../effectbs2bfactory.cpp" line="50"/>
         <source>About BS2B Effect Plugin</source>
         <translation>BS2B 효과 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="53"/>
+        <location filename="../effectbs2bfactory.cpp" line="52"/>
         <source>This is the Qmmp plugin version of Boris Mikhaylov&apos;s headphone DSP effect &quot;Bauer stereophonic-to-binaural&quot;, abbreviated bs2b.</source>
         <translation>이것은 Boris Mikhaylov의 헤드폰 DSP 효과 &quot;Bauer stereophonic-to-binanal&quot;의 Qmmp 플러그인 버전으로, 약칭 bs2b입니다.</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="56"/>
+        <location filename="../effectbs2bfactory.cpp" line="55"/>
         <source>Visit %1 for more details</source>
         <translation>자세한 내용은 %1을(를) 참조하십시오</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="58"/>
+        <location filename="../effectbs2bfactory.cpp" line="57"/>
         <source>Compiled against libbs2b-%1</source>
         <translation>libbs2b-%1에 대해 컴파일됨</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="60"/>
+        <location filename="../effectbs2bfactory.cpp" line="59"/>
         <source>Developers:</source>
         <translation>개발자:</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="61"/>
+        <location filename="../effectbs2bfactory.cpp" line="60"/>
         <source>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
         <translation>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
     <message>
-        <location filename="../effectbs2bfactory.cpp" line="62"/>
+        <location filename="../effectbs2bfactory.cpp" line="61"/>
         <source>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</source>
         <translation>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</translation>
     </message>

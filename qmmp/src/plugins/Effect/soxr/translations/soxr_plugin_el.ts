@@ -9,17 +9,17 @@
         <translation>Πρόσθετο επαναδειγματοληψίας SoX</translation>
     </message>
     <message>
-        <location filename="../effectsoxrfactory.cpp" line="51"/>
+        <location filename="../effectsoxrfactory.cpp" line="50"/>
         <source>About SoX Resampler Plugin</source>
         <translation>Περί του Πρόσθετου επαναδειγματοληψίας SoX</translation>
     </message>
     <message>
-        <location filename="../effectsoxrfactory.cpp" line="52"/>
+        <location filename="../effectsoxrfactory.cpp" line="51"/>
         <source>Qmmp SoX Resampler Plugin</source>
         <translation>Qmmp πρόσθετο επαναδειγματοληψίας SoX</translation>
     </message>
     <message>
-        <location filename="../effectsoxrfactory.cpp" line="53"/>
+        <location filename="../effectsoxrfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
@@ -42,27 +42,27 @@
         <translation type="unfinished">Ποιότητα:</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="35"/>
+        <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
         <translation type="unfinished">Γρήγορο</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="36"/>
+        <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
         <translation type="unfinished">Χαμηλό</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="37"/>
+        <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
         <translation type="unfinished">Μέσο</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="38"/>
+        <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
         <translation type="unfinished">Υψηλό</translation>
     </message>
     <message>
-        <location filename="../soxrsettingsdialog.cpp" line="39"/>
+        <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
         <translation type="unfinished">Πολύ υψηλός</translation>
     </message>

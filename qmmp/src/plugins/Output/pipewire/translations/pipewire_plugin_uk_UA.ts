@@ -9,17 +9,17 @@
         <translation>Модуль PipeWire</translation>
     </message>
     <message>
-        <location filename="../outputpipewirefactory.cpp" line="54"/>
+        <location filename="../outputpipewirefactory.cpp" line="55"/>
         <source>About PipeWire Output Plugin</source>
         <translation>Про модуль виводу PipeWire</translation>
     </message>
     <message>
-        <location filename="../outputpipewirefactory.cpp" line="55"/>
+        <location filename="../outputpipewirefactory.cpp" line="56"/>
         <source>Qmmp PipeWire Output Plugin</source>
         <translation>Модуль виводу PipeWire для Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputpipewirefactory.cpp" line="56"/>
+        <location filename="../outputpipewirefactory.cpp" line="57"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов  &lt;forkotov02@ya.ru&gt;</translation>
     </message>

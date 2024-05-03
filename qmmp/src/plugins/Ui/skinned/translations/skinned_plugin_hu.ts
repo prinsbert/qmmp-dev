@@ -2,1123 +2,608 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="hu">
 <context>
-    <name>ActionManager</name>
+    <name>SkinnedActionManager</name>
     <message>
-        <location filename="../actionmanager.cpp" line="39"/>
+        <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="39"/>
+        <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="40"/>
+        <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>&amp;Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="40"/>
+        <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="41"/>
+        <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="41"/>
+        <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="42"/>
+        <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="42"/>
+        <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>Z</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="43"/>
+        <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="43"/>
+        <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="44"/>
+        <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="44"/>
+        <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>Space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="45"/>
+        <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>&amp;Jump to Track</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="45"/>
+        <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>J</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="46"/>
+        <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>&amp;Repeat Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="46"/>
+        <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="47"/>
+        <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>&amp;Repeat Track</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="47"/>
+        <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>Ctrl+R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="48"/>
+        <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="48"/>
+        <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="49"/>
+        <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>&amp;No Playlist Advance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="49"/>
+        <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="50"/>
+        <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>&amp;Stop After Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="50"/>
+        <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>Ctrl+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="51"/>
+        <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Transit between playlists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="52"/>
+        <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Clear Queue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="52"/>
+        <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>Alt+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="54"/>
+        <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Show Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="54"/>
+        <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Alt+E</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="55"/>
+        <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Show Equalizer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="55"/>
+        <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Alt+G</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="56"/>
+        <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>Always on Top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="57"/>
+        <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>Put on All Workspaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="58"/>
+        <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Double Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="58"/>
+        <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Meta+D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="59"/>
+        <location filename="../skinnedactionmanager.cpp" line="59"/>
         <source>Anti-aliasing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="61"/>
+        <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Volume &amp;+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="61"/>
+        <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="62"/>
+        <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Volume &amp;-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="62"/>
+        <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="63"/>
+        <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>&amp;Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="63"/>
+        <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="65"/>
+        <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>&amp;Add File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="65"/>
+        <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>F</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="66"/>
+        <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>&amp;Add Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="66"/>
+        <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="67"/>
+        <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>&amp;Add Url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="67"/>
+        <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>U</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="68"/>
+        <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>&amp;Remove Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="68"/>
+        <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>Del</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="69"/>
+        <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>&amp;Remove All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="70"/>
+        <location filename="../skinnedactionmanager.cpp" line="70"/>
         <source>&amp;Remove Unselected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="71"/>
+        <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>Remove unavailable files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="72"/>
+        <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>Remove duplicates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="73"/>
+        <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="74"/>
+        <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Queue Toggle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="74"/>
+        <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="75"/>
+        <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>Invert Selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="76"/>
+        <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Select None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="77"/>
+        <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>&amp;Select All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="77"/>
+        <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Ctrl+A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="78"/>
+        <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>&amp;View Track Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="78"/>
+        <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Alt+I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="79"/>
+        <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>&amp;New List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="79"/>
+        <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Ctrl+T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="80"/>
+        <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Delete List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="80"/>
+        <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>Ctrl+W</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="81"/>
+        <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>&amp;Load List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="81"/>
+        <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="82"/>
+        <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Save List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="82"/>
+        <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>Shift+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="83"/>
+        <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Rename List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="83"/>
+        <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>F2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="84"/>
+        <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;Select Next Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="84"/>
+        <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>Ctrl+PgDown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="85"/>
+        <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;Select Previous Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="85"/>
+        <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>Ctrl+PgUp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="86"/>
+        <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Show Playlists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="86"/>
+        <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="87"/>
+        <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Group Tracks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="87"/>
+        <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>Ctrl+G</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="88"/>
-        <source>Ctrl+H</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../actionmanager.cpp" line="88"/>
+        <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Show Column Headers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="89"/>
+        <location filename="../skinnedactionmanager.cpp" line="88"/>
+        <source>Ctrl+H</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Show &amp;Tab Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="89"/>
+        <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Alt+T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="91"/>
+        <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="91"/>
+        <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>Ctrl+P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="92"/>
+        <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="93"/>
+        <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;About Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="94"/>
+        <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="94"/>
+        <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>EqWidget</name>
+    <name>SkinnedDisplay</name>
     <message>
-        <location filename="../eqwidget.cpp" line="47"/>
-        <source>Equalizer</source>
-        <translation>Hangszínszabályzó</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="171"/>
-        <location filename="../eqwidget.cpp" line="188"/>
-        <source>preset</source>
-        <translation>beállítás</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="272"/>
-        <source>&amp;Load/Delete</source>
-        <translation>&amp;Betölt/Töröl</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="274"/>
-        <source>&amp;Save Preset</source>
-        <translation>Beálítás  &amp;mentése</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="276"/>
-        <source>&amp;Save Auto-load Preset</source>
-        <translation>&amp;Automatikusan betöltödő beállítás mentése</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="278"/>
-        <source>&amp;Import</source>
-        <translation>&amp;Importálás</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="281"/>
-        <source>&amp;Clear</source>
-        <translation>&amp;Törlés</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="310"/>
-        <source>Saving Preset</source>
-        <translation>Beállítások mentése</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="311"/>
-        <source>Preset name:</source>
-        <translation>Beállítás neve:</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="312"/>
-        <source>preset #</source>
-        <translation>beállítás #</translation>
-    </message>
-    <message>
-        <location filename="../eqwidget.cpp" line="403"/>
-        <source>Import Preset</source>
-        <translation>Beállítás importálása</translation>
-    </message>
-</context>
-<context>
-    <name>HotkeyEditor</name>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="43"/>
-        <source>Reset</source>
-        <translation>Visszaállít</translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="57"/>
-        <source>Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="62"/>
-        <source>Shortcut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/hotkeyeditor.ui" line="33"/>
-        <source>Change shortcut...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="57"/>
-        <source>Playback</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="63"/>
-        <source>View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="69"/>
-        <source>Volume</source>
-        <translation>Hangerő</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="75"/>
-        <source>Playlist</source>
-        <translation>Lejátszási lista</translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="81"/>
-        <source>Misc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="93"/>
-        <source>Reset Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../hotkeyeditor.cpp" line="94"/>
-        <source>Do you want to restore default shortcuts?</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MainDisplay</name>
-    <message>
-        <location filename="../display.cpp" line="59"/>
+        <location filename="../skinneddisplay.cpp" line="59"/>
         <source>Previous</source>
-        <translation>Előző</translation>
+        <translation type="unfinished">Előző</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="63"/>
+        <location filename="../skinneddisplay.cpp" line="63"/>
         <source>Play</source>
-        <translation>Lejátszás</translation>
+        <translation type="unfinished">Lejátszás</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="66"/>
+        <location filename="../skinneddisplay.cpp" line="66"/>
         <source>Pause</source>
-        <translation>Szünet</translation>
+        <translation type="unfinished">Szünet</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="69"/>
+        <location filename="../skinneddisplay.cpp" line="69"/>
         <source>Stop</source>
-        <translation>Megállít</translation>
+        <translation type="unfinished">Megállít</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="72"/>
+        <location filename="../skinneddisplay.cpp" line="72"/>
         <source>Next</source>
-        <translation>Következő</translation>
+        <translation type="unfinished">Következő</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="75"/>
+        <location filename="../skinneddisplay.cpp" line="75"/>
         <source>Play files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="82"/>
+        <location filename="../skinneddisplay.cpp" line="80"/>
         <source>Equalizer</source>
-        <translation>Hangszínszabályzó</translation>
+        <translation type="unfinished">Hangszínszabályzó</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="85"/>
+        <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Playlist</source>
-        <translation>Lejátszási lista</translation>
+        <translation type="unfinished">Lejátszási lista</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="90"/>
+        <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Repeat playlist</source>
-        <translation>Lista ismétlése</translation>
+        <translation type="unfinished">Lista ismétlése</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="93"/>
+        <location filename="../skinneddisplay.cpp" line="87"/>
         <source>Shuffle</source>
-        <translation>Véletlenszerű</translation>
+        <translation type="unfinished">Véletlenszerű</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="103"/>
+        <location filename="../skinneddisplay.cpp" line="97"/>
         <source>Volume</source>
-        <translation>Hangerő</translation>
+        <translation type="unfinished">Hangerő</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="109"/>
+        <location filename="../skinneddisplay.cpp" line="103"/>
         <source>Balance</source>
-        <translation>Egyensúly</translation>
+        <translation type="unfinished">Egyensúly</translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="295"/>
+        <location filename="../skinneddisplay.cpp" line="290"/>
         <source>Volume: %1%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="299"/>
+        <location filename="../skinneddisplay.cpp" line="294"/>
         <source>Balance: %1% right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="301"/>
+        <location filename="../skinneddisplay.cpp" line="296"/>
         <source>Balance: %1% left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="303"/>
+        <location filename="../skinneddisplay.cpp" line="298"/>
         <source>Balance: center</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.cpp" line="309"/>
+        <location filename="../skinneddisplay.cpp" line="304"/>
         <source>Seek to: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>MainVisual</name>
+    <name>SkinnedEqWidget</name>
     <message>
-        <location filename="../mainvisual.cpp" line="213"/>
-        <source>Visualization Mode</source>
-        <translation>Vizualizációs mód</translation>
+        <location filename="../skinnedeqwidget.cpp" line="47"/>
+        <source>Equalizer</source>
+        <translation type="unfinished">Hangszínszabályzó</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="216"/>
-        <source>Analyzer</source>
-        <translation>Analyzer</translation>
+        <location filename="../skinnedeqwidget.cpp" line="161"/>
+        <location filename="../skinnedeqwidget.cpp" line="178"/>
+        <source>preset</source>
+        <translation type="unfinished">beállítás</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="217"/>
-        <source>Scope</source>
-        <translation>Scope</translation>
+        <location filename="../skinnedeqwidget.cpp" line="262"/>
+        <source>&amp;Load/Delete</source>
+        <translation type="unfinished">&amp;Betölt/Töröl</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="218"/>
-        <source>Off</source>
-        <translation>Ki</translation>
+        <location filename="../skinnedeqwidget.cpp" line="264"/>
+        <source>&amp;Save Preset</source>
+        <translation type="unfinished">Beálítás  &amp;mentése</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="225"/>
-        <source>Analyzer Mode</source>
-        <translation>Analyzer mód</translation>
+        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <source>&amp;Save Auto-load Preset</source>
+        <translation type="unfinished">&amp;Automatikusan betöltödő beállítás mentése</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="228"/>
-        <source>Normal</source>
-        <translation>Hagyományos</translation>
+        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <source>&amp;Import</source>
+        <translation type="unfinished">&amp;Importálás</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="229"/>
-        <source>Fire</source>
-        <translation>Tűz</translation>
+        <location filename="../skinnedeqwidget.cpp" line="271"/>
+        <source>&amp;Clear</source>
+        <translation type="unfinished">&amp;Törlés</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="230"/>
-        <source>Vertical Lines</source>
-        <translation>Függőleges vonalak</translation>
+        <location filename="../skinnedeqwidget.cpp" line="300"/>
+        <source>Saving Preset</source>
+        <translation type="unfinished">Beállítások mentése</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="231"/>
-        <source>Lines</source>
-        <translation>Vonalak</translation>
+        <location filename="../skinnedeqwidget.cpp" line="301"/>
+        <source>Preset name:</source>
+        <translation type="unfinished">Beállítás neve:</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="232"/>
-        <source>Bars</source>
-        <translation>Csíkok</translation>
+        <location filename="../skinnedeqwidget.cpp" line="302"/>
+        <source>preset #</source>
+        <translation type="unfinished">beállítás #</translation>
     </message>
     <message>
-        <location filename="../mainvisual.cpp" line="245"/>
-        <source>Peaks</source>
-        <translation>Csúcsok</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="249"/>
-        <source>Refresh Rate</source>
-        <translation>Ráta frissítése</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="252"/>
-        <source>50 fps</source>
-        <translation>50 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="253"/>
-        <source>25 fps</source>
-        <translation>25 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="254"/>
-        <source>10 fps</source>
-        <translation>10 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="255"/>
-        <source>5 fps</source>
-        <translation>5 fps</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="262"/>
-        <source>Analyzer Falloff</source>
-        <translation>Analízer esése</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="265"/>
-        <location filename="../mainvisual.cpp" line="279"/>
-        <source>Slowest</source>
-        <translation>Lassabb</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="266"/>
-        <location filename="../mainvisual.cpp" line="280"/>
-        <source>Slow</source>
-        <translation>Lassú</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="267"/>
-        <location filename="../mainvisual.cpp" line="281"/>
-        <source>Medium</source>
-        <translation>Közepes</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="268"/>
-        <location filename="../mainvisual.cpp" line="282"/>
-        <source>Fast</source>
-        <translation>Gyors</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="269"/>
-        <location filename="../mainvisual.cpp" line="283"/>
-        <source>Fastest</source>
-        <translation>Gyorsabb</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="276"/>
-        <source>Peaks Falloff</source>
-        <translation>Csúcsok esése</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="289"/>
-        <source>Background</source>
-        <translation>Háttér</translation>
-    </message>
-    <message>
-        <location filename="../mainvisual.cpp" line="290"/>
-        <source>Transparent</source>
-        <translation>Átlátszóság</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="359"/>
-        <source>Appearance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="360"/>
-        <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="430"/>
-        <source>View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="439"/>
-        <source>Playlist</source>
-        <translation>Lejátszási lista</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="466"/>
-        <source>Audio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="474"/>
-        <source>Tools</source>
-        <translation>Eszközök</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="556"/>
-        <source>Qmmp</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlayList</name>
-    <message>
-        <location filename="../playlist.cpp" line="56"/>
-        <source>Playlist</source>
-        <translation>Lejátszási lista</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="197"/>
-        <source>&amp;Copy Selection To</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="228"/>
-        <source>Sort List</source>
-        <translation>Lista rendezése</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="231"/>
-        <location filename="../playlist.cpp" line="271"/>
-        <source>By Title</source>
-        <translation>Cím szerint</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="234"/>
-        <location filename="../playlist.cpp" line="274"/>
-        <source>By Album</source>
-        <translation>Album szerint</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="255"/>
-        <location filename="../playlist.cpp" line="295"/>
-        <source>By Disc Number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="237"/>
-        <location filename="../playlist.cpp" line="277"/>
-        <source>By Artist</source>
-        <translation>Előadó szerint</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="240"/>
-        <location filename="../playlist.cpp" line="280"/>
-        <source>By Album Artist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="243"/>
-        <location filename="../playlist.cpp" line="283"/>
-        <source>By Filename</source>
-        <translation>Fájlnév szerint</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="246"/>
-        <location filename="../playlist.cpp" line="286"/>
-        <source>By Path + Filename</source>
-        <translation>Elérési út és fájlnév szerint</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="249"/>
-        <location filename="../playlist.cpp" line="289"/>
-        <source>By Date</source>
-        <translation>Dátum szerint</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="252"/>
-        <location filename="../playlist.cpp" line="292"/>
-        <source>By Track Number</source>
-        <translation>Zene sorszáma szerint</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="258"/>
-        <location filename="../playlist.cpp" line="298"/>
-        <source>By File Creation Date</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="261"/>
-        <location filename="../playlist.cpp" line="301"/>
-        <source>By File Modification Date</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="264"/>
-        <source>By Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="269"/>
-        <source>Sort Selection</source>
-        <translation>Jelöltek rendezése</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="306"/>
-        <source>Randomize List</source>
-        <translation>Lista összekeverése</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="308"/>
-        <source>Reverse List</source>
-        <translation>Fordított lista</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="315"/>
-        <source>Actions</source>
-        <translation>Tevékenységek</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="590"/>
-        <source>Rename Playlist</source>
-        <translation>Lista átnevezése</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="590"/>
-        <source>Playlist name:</source>
-        <translation>Lista neve:</translation>
-    </message>
-    <message>
-        <location filename="../playlist.cpp" line="611"/>
-        <source>&amp;New PlayList</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlayListBrowser</name>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="14"/>
-        <source>Playlist Browser</source>
-        <translation>Lejátszási lista böngésző</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="31"/>
-        <source>Filter:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="47"/>
-        <source>New</source>
-        <translation>Új</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="54"/>
-        <location filename="../playlistbrowser.cpp" line="43"/>
-        <source>Delete</source>
-        <translation>Törlés</translation>
-    </message>
-    <message>
-        <location filename="../forms/playlistbrowser.ui" line="61"/>
-        <location filename="../forms/playlistbrowser.ui" line="71"/>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <location filename="../playlistbrowser.cpp" line="42"/>
-        <source>Rename</source>
-        <translation>Átnevez</translation>
-    </message>
-</context>
-<context>
-    <name>PlayListHeader</name>
-    <message>
-        <location filename="../playlistheader.cpp" line="77"/>
-        <source>Add Column</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="78"/>
-        <source>Edit Column</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="79"/>
-        <source>Show Queue/Protocol</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="81"/>
-        <source>Auto-resize</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="84"/>
-        <source>Alignment</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="85"/>
-        <source>Left</source>
-        <comment>alignment</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="86"/>
-        <source>Right</source>
-        <comment>alignment</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="87"/>
-        <source>Center</source>
-        <comment>alignment</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../playlistheader.cpp" line="97"/>
-        <source>Remove Column</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PopupSettings</name>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="14"/>
-        <source>Popup Information Settings</source>
-        <translation>Popup Információs Beállítások</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="29"/>
-        <source>Template</source>
-        <translation>Sablon</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="58"/>
-        <source>Reset</source>
-        <translation>Visszaállít</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="65"/>
-        <source>Insert</source>
-        <translation>Beszúr</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="75"/>
-        <source>Show cover</source>
-        <translation>Borító mutatása</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="89"/>
-        <source>Cover size:</source>
-        <translation>Borító mérete:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="115"/>
-        <source>Transparency:</source>
-        <translation>Átlátszóság:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="145"/>
-        <source>Delay:</source>
-        <translation>Késleltetés:</translation>
-    </message>
-    <message>
-        <location filename="../forms/popupsettings.ui" line="178"/>
-        <source>ms</source>
-        <translation>ms</translation>
-    </message>
-</context>
-<context>
-    <name>PresetEditor</name>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="14"/>
-        <source>Preset Editor</source>
-        <translation>Beállítás szerkesztő</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="36"/>
-        <source>Preset</source>
-        <translation>Beállítás</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="52"/>
-        <source>Auto-preset</source>
-        <translation>Automatikus beállítás</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="77"/>
-        <source>Load</source>
-        <translation>Betölt</translation>
-    </message>
-    <message>
-        <location filename="../forms/preseteditor.ui" line="84"/>
-        <source>Delete</source>
-        <translation>Töröl</translation>
+        <location filename="../skinnedeqwidget.cpp" line="398"/>
+        <source>Import Preset</source>
+        <translation type="unfinished">Beállítás importálása</translation>
     </message>
 </context>
 <context>
@@ -1171,6 +656,388 @@
     <message>
         <location filename="../skinnedfactory.cpp" line="69"/>
         <source>sixsixfive &lt;http://sixsixfive.deviantart.com/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedHotkeyEditor</name>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="33"/>
+        <source>Change shortcut...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
+        <source>Reset</source>
+        <translation type="unfinished">Visszaállít</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
+        <source>Action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedhotkeyeditor.ui" line="63"/>
+        <source>Shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
+        <source>Playback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
+        <source>Volume</source>
+        <translation type="unfinished">Hangerő</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
+        <source>Playlist</source>
+        <translation type="unfinished">Lejátszási lista</translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
+        <source>Misc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
+        <source>Reset Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
+        <source>Do you want to restore default shortcuts?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedMainWindow</name>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="358"/>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="359"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="433"/>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="442"/>
+        <source>Playlist</source>
+        <translation type="unfinished">Lejátszási lista</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="461"/>
+        <source>Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="469"/>
+        <source>Tools</source>
+        <translation type="unfinished">Eszközök</translation>
+    </message>
+    <message>
+        <location filename="../skinnedmainwindow.cpp" line="541"/>
+        <source>Qmmp</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayList</name>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="56"/>
+        <source>Playlist</source>
+        <translation type="unfinished">Lejátszási lista</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="194"/>
+        <source>&amp;Copy Selection To</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="219"/>
+        <source>Sort List</source>
+        <translation type="unfinished">Lista rendezése</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="222"/>
+        <location filename="../skinnedplaylist.cpp" line="262"/>
+        <source>By Title</source>
+        <translation type="unfinished">Cím szerint</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="225"/>
+        <location filename="../skinnedplaylist.cpp" line="265"/>
+        <source>By Album</source>
+        <translation type="unfinished">Album szerint</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="228"/>
+        <location filename="../skinnedplaylist.cpp" line="268"/>
+        <source>By Artist</source>
+        <translation type="unfinished">Előadó szerint</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="231"/>
+        <location filename="../skinnedplaylist.cpp" line="271"/>
+        <source>By Album Artist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="234"/>
+        <location filename="../skinnedplaylist.cpp" line="274"/>
+        <source>By Filename</source>
+        <translation type="unfinished">Fájlnév szerint</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="237"/>
+        <location filename="../skinnedplaylist.cpp" line="277"/>
+        <source>By Path + Filename</source>
+        <translation type="unfinished">Elérési út és fájlnév szerint</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="240"/>
+        <location filename="../skinnedplaylist.cpp" line="280"/>
+        <source>By Date</source>
+        <translation type="unfinished">Dátum szerint</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="243"/>
+        <location filename="../skinnedplaylist.cpp" line="283"/>
+        <source>By Track Number</source>
+        <translation type="unfinished">Zene sorszáma szerint</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="246"/>
+        <location filename="../skinnedplaylist.cpp" line="286"/>
+        <source>By Disc Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="249"/>
+        <location filename="../skinnedplaylist.cpp" line="289"/>
+        <source>By File Creation Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="252"/>
+        <location filename="../skinnedplaylist.cpp" line="292"/>
+        <source>By File Modification Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="255"/>
+        <source>By Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="260"/>
+        <source>Sort Selection</source>
+        <translation type="unfinished">Jelöltek rendezése</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="297"/>
+        <source>Randomize List</source>
+        <translation type="unfinished">Lista összekeverése</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="299"/>
+        <source>Reverse List</source>
+        <translation type="unfinished">Fordított lista</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <source>Actions</source>
+        <translation type="unfinished">Tevékenységek</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <source>Rename Playlist</source>
+        <translation type="unfinished">Lista átnevezése</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <source>Playlist name:</source>
+        <translation type="unfinished">Lista neve:</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <source>&amp;New PlayList</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayListBrowser</name>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="14"/>
+        <source>Playlist Browser</source>
+        <translation type="unfinished">Lejátszási lista böngésző</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
+        <source>Filter:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="47"/>
+        <source>New</source>
+        <translation type="unfinished">Új</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="54"/>
+        <location filename="../skinnedplaylistbrowser.cpp" line="45"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="61"/>
+        <location filename="../forms/skinnedplaylistbrowser.ui" line="71"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistbrowser.cpp" line="44"/>
+        <source>Rename</source>
+        <translation type="unfinished">Átnevez</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPlayListHeader</name>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="77"/>
+        <source>Add Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="78"/>
+        <source>Edit Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="79"/>
+        <source>Show Queue/Protocol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="81"/>
+        <source>Auto-resize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="84"/>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="85"/>
+        <source>Left</source>
+        <comment>alignment</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="86"/>
+        <source>Right</source>
+        <comment>alignment</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="87"/>
+        <source>Center</source>
+        <comment>alignment</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedplaylistheader.cpp" line="97"/>
+        <source>Remove Column</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPopupSettings</name>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="14"/>
+        <source>Popup Information Settings</source>
+        <translation type="unfinished">Popup Információs Beállítások</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="29"/>
+        <source>Template</source>
+        <translation type="unfinished">Sablon</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="58"/>
+        <source>Reset</source>
+        <translation type="unfinished">Visszaállít</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="65"/>
+        <source>Insert</source>
+        <translation type="unfinished">Beszúr</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="75"/>
+        <source>Show cover</source>
+        <translation type="unfinished">Borító mutatása</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
+        <source>Cover size:</source>
+        <translation type="unfinished">Borító mérete:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
+        <source>Transparency:</source>
+        <translation type="unfinished">Átlátszóság:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="145"/>
+        <source>Delay:</source>
+        <translation type="unfinished">Késleltetés:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpopupsettings.ui" line="178"/>
+        <source>ms</source>
+        <translation type="unfinished">ms</translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedPresetEditor</name>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="14"/>
+        <source>Preset Editor</source>
+        <translation type="unfinished">Beállítás szerkesztő</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="36"/>
+        <source>Preset</source>
+        <translation type="unfinished">Beállítás</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="61"/>
+        <source>Auto-preset</source>
+        <translation type="unfinished">Automatikus beállítás</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="95"/>
+        <source>Load</source>
+        <translation type="unfinished">Betölt</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedpreseteditor.ui" line="102"/>
+        <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1439,42 +1306,180 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="106"/>
+        <location filename="../skinnedsettings.cpp" line="109"/>
         <source>Select Skin Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="107"/>
+        <location filename="../skinnedsettings.cpp" line="110"/>
         <source>Skin files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="186"/>
+        <location filename="../skinnedsettings.cpp" line="180"/>
+        <source>Default skin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../skinnedsettings.cpp" line="189"/>
         <source>Unarchived skin %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="186"/>
+        <location filename="../skinnedsettings.cpp" line="189"/>
         <source>Archived skin %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>TextScroller</name>
+    <name>SkinnedTextScroller</name>
     <message>
-        <location filename="../textscroller.cpp" line="54"/>
+        <location filename="../skinnedtextscroller.cpp" line="54"/>
         <source>Autoscroll Songname</source>
-        <translation>Számok címének görgetése</translation>
+        <translation type="unfinished">Számok címének görgetése</translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="55"/>
+        <location filename="../skinnedtextscroller.cpp" line="55"/>
         <source>Transparent Background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../textscroller.cpp" line="122"/>
+        <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SkinnedVisualization</name>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="211"/>
+        <source>Visualization Mode</source>
+        <translation type="unfinished">Vizualizációs mód</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="214"/>
+        <source>Analyzer</source>
+        <translation type="unfinished">Analyzer</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="215"/>
+        <source>Scope</source>
+        <translation type="unfinished">Scope</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="216"/>
+        <source>Off</source>
+        <translation type="unfinished">Ki</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="223"/>
+        <source>Analyzer Mode</source>
+        <translation type="unfinished">Analyzer mód</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="226"/>
+        <source>Normal</source>
+        <translation type="unfinished">Hagyományos</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="227"/>
+        <source>Fire</source>
+        <translation type="unfinished">Tűz</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="228"/>
+        <source>Vertical Lines</source>
+        <translation type="unfinished">Függőleges vonalak</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="229"/>
+        <source>Lines</source>
+        <translation type="unfinished">Vonalak</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="230"/>
+        <source>Bars</source>
+        <translation type="unfinished">Csíkok</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="243"/>
+        <source>Peaks</source>
+        <translation type="unfinished">Csúcsok</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="247"/>
+        <source>Refresh Rate</source>
+        <translation type="unfinished">Ráta frissítése</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="250"/>
+        <source>50 fps</source>
+        <translation type="unfinished">50 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="251"/>
+        <source>25 fps</source>
+        <translation type="unfinished">25 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="252"/>
+        <source>10 fps</source>
+        <translation type="unfinished">10 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="253"/>
+        <source>5 fps</source>
+        <translation type="unfinished">5 fps</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="260"/>
+        <source>Analyzer Falloff</source>
+        <translation type="unfinished">Analízer esése</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="263"/>
+        <location filename="../skinnedvisualization.cpp" line="277"/>
+        <source>Slowest</source>
+        <translation type="unfinished">Lassabb</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="264"/>
+        <location filename="../skinnedvisualization.cpp" line="278"/>
+        <source>Slow</source>
+        <translation type="unfinished">Lassú</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="265"/>
+        <location filename="../skinnedvisualization.cpp" line="279"/>
+        <source>Medium</source>
+        <translation type="unfinished">Közepes</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="266"/>
+        <location filename="../skinnedvisualization.cpp" line="280"/>
+        <source>Fast</source>
+        <translation type="unfinished">Gyors</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="267"/>
+        <location filename="../skinnedvisualization.cpp" line="281"/>
+        <source>Fastest</source>
+        <translation type="unfinished">Gyorsabb</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="274"/>
+        <source>Peaks Falloff</source>
+        <translation type="unfinished">Csúcsok esése</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="287"/>
+        <source>Background</source>
+        <translation type="unfinished">Háttér</translation>
+    </message>
+    <message>
+        <location filename="../skinnedvisualization.cpp" line="288"/>
+        <source>Transparent</source>
+        <translation type="unfinished">Átlátszóság</translation>
     </message>
 </context>
 </TS>

@@ -62,27 +62,27 @@
         <translation>Модуль CD Audio</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="97"/>
+        <location filename="../decodercdaudiofactory.cpp" line="96"/>
         <source>About CD Audio Plugin</source>
         <translation>О Модуле CD Audio</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="98"/>
+        <location filename="../decodercdaudiofactory.cpp" line="97"/>
         <source>Qmmp CD Audio Plugin</source>
         <translation>Модуль CD Audio для Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="99"/>
+        <location filename="../decodercdaudiofactory.cpp" line="98"/>
         <source>Compiled against libcdio-%1 and libcddb-%2</source>
         <translation>Собрано с libcdio-%1 и libcddb-%2</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="101"/>
+        <location filename="../decodercdaudiofactory.cpp" line="100"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="102"/>
+        <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>Использование: откройте cdda:/// с помощью диалога добавления URL или командной строки</translation>
     </message>

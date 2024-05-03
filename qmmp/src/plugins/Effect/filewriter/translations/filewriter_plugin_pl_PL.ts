@@ -9,17 +9,17 @@
         <translation>Wtyczka Zapis pliku</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="51"/>
+        <location filename="../effectfilewriterfactory.cpp" line="50"/>
         <source>About File Writer Plugin</source>
         <translation>O wtyczce Zapis pliku</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="52"/>
+        <location filename="../effectfilewriterfactory.cpp" line="51"/>
         <source>Qmmp File Writer Plugin</source>
         <translation>Wtyczka Zapis pliku dla Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="53"/>
+        <location filename="../effectfilewriterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -52,7 +52,7 @@
         <translation type="unfinished">Zapisz w jednym pliku, jeśli to możliwe.</translation>
     </message>
     <message>
-        <location filename="../filewritersettingsdialog.cpp" line="73"/>
+        <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
         <translation type="unfinished">Wybierz katalog</translation>
     </message>

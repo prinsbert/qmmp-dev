@@ -42,7 +42,7 @@
         <translation>Mode exclusif</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="58"/>
+        <location filename="../settingsdialog.cpp" line="57"/>
         <source>Default</source>
         <translation>Défaut</translation>
     </message>

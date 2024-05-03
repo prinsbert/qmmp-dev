@@ -14,32 +14,32 @@
         <translation type="unfinished">File MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="419"/>
+        <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>About MPEG Audio Plugin</source>
         <translation type="unfinished">Informazioni sull&apos;estensione audio MPEG</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="420"/>
+        <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation type="unfinished">Decodificatore per audio MPEG 1.0/2.0/2.5 layer 1/2/3</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="421"/>
+        <location filename="../decodermpegfactory.cpp" line="420"/>
         <source>Compiled against:</source>
         <translation type="unfinished">Compilato con:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="430"/>
+        <location filename="../decodermpegfactory.cpp" line="429"/>
         <source>mpg123, API version: %1</source>
         <translation type="unfinished">mpg123, versione API: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="434"/>
+        <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished">Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="435"/>
+        <location filename="../decodermpegfactory.cpp" line="434"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation type="unfinished">Codice sorgente basato sui progetti mq3 e madplay</translation>
     </message>

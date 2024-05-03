@@ -9,37 +9,37 @@
         <translation>LADSPA-Modul</translation>
     </message>
     <message>
-        <location filename="../effectladspafactory.cpp" line="50"/>
+        <location filename="../effectladspafactory.cpp" line="49"/>
         <source>About LADSPA Host for Qmmp</source>
         <translation>Über LADSPA-Host für Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectladspafactory.cpp" line="51"/>
+        <location filename="../effectladspafactory.cpp" line="50"/>
         <source>LADSPA Host for Qmmp</source>
         <translation>LADSPA-Host für Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectladspafactory.cpp" line="52"/>
+        <location filename="../effectladspafactory.cpp" line="51"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../effectladspafactory.cpp" line="53"/>
+        <location filename="../effectladspafactory.cpp" line="52"/>
         <source>Based on the LADSPA Host for BMP</source>
         <translation>Basierend auf dem LADSPA-Host für BMP</translation>
     </message>
     <message>
-        <location filename="../effectladspafactory.cpp" line="54"/>
+        <location filename="../effectladspafactory.cpp" line="53"/>
         <source>BMP-ladspa developers:</source>
         <translation>BMP-LADSPA-Entwickler:</translation>
     </message>
     <message>
-        <location filename="../effectladspafactory.cpp" line="55"/>
+        <location filename="../effectladspafactory.cpp" line="54"/>
         <source>Nick Lamb &lt;njl195@zepler.org.uk&gt;</source>
         <translation>Nick Lamb &lt;njl195@zepler.org.uk&gt;</translation>
     </message>
     <message>
-        <location filename="../effectladspafactory.cpp" line="56"/>
+        <location filename="../effectladspafactory.cpp" line="55"/>
         <source>Giacomo Lozito &lt;city_hunter@users.sf.net&gt;</source>
         <translation>Giacomo Lozito &lt;city_hunter@users.sf.net&gt;</translation>
     </message>
@@ -67,17 +67,17 @@
         <translation type="unfinished">Einrichten</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="47"/>
+        <location filename="../ladspasettingsdialog.cpp" line="46"/>
         <source>UID</source>
         <translation type="unfinished">UID</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="48"/>
+        <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>Name</source>
         <translation type="unfinished">Name</translation>
     </message>
     <message>
-        <location filename="../ladspasettingsdialog.cpp" line="132"/>
+        <location filename="../ladspasettingsdialog.cpp" line="131"/>
         <source>This LADSPA plugin has no user controls</source>
         <translation type="unfinished">Dieses LADSPA-Modul hat keine Einstellungsmöglichkeiten</translation>
     </message>

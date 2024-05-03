@@ -14,22 +14,22 @@
         <translation>게임 음악 파일</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="105"/>
+        <location filename="../decodergmefactory.cpp" line="104"/>
         <source>About GME Audio Plugin</source>
         <translation>GME 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="106"/>
+        <location filename="../decodergmefactory.cpp" line="105"/>
         <source>Qmmp GME Audio Plugin</source>
         <translation>Qmmp GME 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="107"/>
+        <location filename="../decodergmefactory.cpp" line="106"/>
         <source>This plugin uses Game_Music_Emu library to play game music files</source>
         <translation>이 플러그인은 Game_Music_Emu 라이브러리를 사용하여 게임 음악 파일을 재생합니다</translation>
     </message>
     <message>
-        <location filename="../decodergmefactory.cpp" line="108"/>
+        <location filename="../decodergmefactory.cpp" line="107"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

@@ -9,17 +9,17 @@
         <translation>Módulo Escritor de Archivos</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="51"/>
+        <location filename="../effectfilewriterfactory.cpp" line="50"/>
         <source>About File Writer Plugin</source>
         <translation>Acerca del Módulo Escritor de Archivos</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="52"/>
+        <location filename="../effectfilewriterfactory.cpp" line="51"/>
         <source>Qmmp File Writer Plugin</source>
         <translation>Módulo Escritor de Archivos de Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectfilewriterfactory.cpp" line="53"/>
+        <location filename="../effectfilewriterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Escrito por: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -52,7 +52,7 @@
         <translation type="unfinished">Escriba en un solo archivo si es posible.</translation>
     </message>
     <message>
-        <location filename="../filewritersettingsdialog.cpp" line="73"/>
+        <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
         <translation type="unfinished">Elija un directorio</translation>
     </message>

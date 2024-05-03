@@ -14,22 +14,22 @@
         <translation>Videobestanden</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="74"/>
+        <location filename="../mplayerenginefactory.cpp" line="73"/>
         <source>About MPlayer Plugin</source>
         <translation>Over de MPlayer-plug-in</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="75"/>
+        <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>Qmmp MPlayer Plugin</source>
         <translation>MPlayer-plug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="76"/>
+        <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>This plugin uses MPlayer as backend</source>
         <translation>Deze plug-in gebruikt MPlayer voor het afspelen van bestanden</translation>
     </message>
     <message>
-        <location filename="../mplayerenginefactory.cpp" line="77"/>
+        <location filename="../mplayerenginefactory.cpp" line="76"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Auteur: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -151,12 +151,12 @@
         <translation type="unfinished">Extra opdrachtregelopties</translation>
     </message>
     <message>
-        <location filename="../mplayersettingsdialog.cpp" line="30"/>
-        <location filename="../mplayersettingsdialog.cpp" line="34"/>
+        <location filename="../mplayersettingsdialog.cpp" line="29"/>
+        <location filename="../mplayersettingsdialog.cpp" line="33"/>
+        <location filename="../mplayersettingsdialog.cpp" line="37"/>
         <location filename="../mplayersettingsdialog.cpp" line="38"/>
-        <location filename="../mplayersettingsdialog.cpp" line="39"/>
+        <location filename="../mplayersettingsdialog.cpp" line="54"/>
         <location filename="../mplayersettingsdialog.cpp" line="55"/>
-        <location filename="../mplayersettingsdialog.cpp" line="56"/>
         <source>default</source>
         <translation type="unfinished">standaard</translation>
     </message>

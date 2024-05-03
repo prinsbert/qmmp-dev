@@ -57,22 +57,22 @@
         <translation>OSS-plug-in</translation>
     </message>
     <message>
-        <location filename="../outputossfactory.cpp" line="56"/>
+        <location filename="../outputossfactory.cpp" line="55"/>
         <source>About OSS Output Plugin</source>
         <translation>Over de OSS-uitvoerplug-in</translation>
     </message>
     <message>
-        <location filename="../outputossfactory.cpp" line="57"/>
+        <location filename="../outputossfactory.cpp" line="56"/>
         <source>Qmmp OSS Output Plugin</source>
         <translation>OSS-uitvoerplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputossfactory.cpp" line="58"/>
+        <location filename="../outputossfactory.cpp" line="57"/>
         <source>Written by: Yuriy Zhuravlev &lt;slalkerg@gmail.com&gt;</source>
         <translation>Auteur: Yuriy Žuravljov &lt;slalkerg@gmail.com&gt;</translation>
     </message>
     <message>
-        <location filename="../outputossfactory.cpp" line="59"/>
+        <location filename="../outputossfactory.cpp" line="58"/>
         <source>Based on code by: Brad Hughes &lt;bhughes@trolltech.com&gt;</source>
         <translation>Gebaseerd op code van Brada Hughese &lt;bhughes@trolltech.com&gt;</translation>
     </message>
