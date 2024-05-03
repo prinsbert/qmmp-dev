@@ -33,7 +33,7 @@
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/metadataformattermenu.h>
 #include "converter.h"
-#include "preseteditor.h"
+#include "converterpreseteditor.h"
 #include "ui_converterdialog.h"
 #include "converterdialog.h"
 
