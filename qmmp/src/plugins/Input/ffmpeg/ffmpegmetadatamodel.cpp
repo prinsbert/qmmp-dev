@@ -32,18 +32,7 @@ extern "C" {
 FFmpegMetaDataModel::FFmpegMetaDataModel(const QString &path, bool readOnly) : MetaDataModel(readOnly)
 {
     AVFormatContext *in = nullptr;
-    m_path = path;
-
-    if(path.startsWith(u"ffmpeg://"_s))
-    {
-        m_path.remove(u"ffmpeg://"_s);
-        m_path.remove(QRegularExpression(u"#\\d+$"_s));
-    }
-    else if(path.startsWith(u"m4b://"_s))
-    {
-        m_path.remove(u"m4b://"_s);
-        m_path.remove(QRegularExpression(u"#\\d+$"_s));
-    }
+    m_path = path.contains(u"://"_s) ? TrackInfo::pathFromUrl(path) : path;
 
 #ifdef Q_OS_WIN
     if (avformat_open_input(&in, m_path.toUtf8().constData(), nullptr, nullptr) < 0)

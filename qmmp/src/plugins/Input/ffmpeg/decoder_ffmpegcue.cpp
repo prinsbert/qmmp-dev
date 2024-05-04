@@ -20,7 +20,6 @@
 
 #include <QObject>
 #include <QFile>
-#include <QRegularExpression>
 #include <qmmp/cueparser.h>
 #include "decoder_ffmpeg.h"
 #include "decoder_ffmpegcue.h"
@@ -44,15 +43,12 @@ DecoderFFmpegCue::~DecoderFFmpegCue()
 
 bool DecoderFFmpegCue::initialize()
 {
-    QString filePath = m_url;
     if(!m_url.startsWith(u"ffmpeg://"_s))
     {
         qWarning("DecoderFFmpegCue: invalid url.");
         return false;
     }
-    filePath.remove(u"ffmpeg://"_s);
-    filePath.remove(QRegularExpression(u"#\\d+$"_s));
-    m_track = m_url.section(QLatin1Char('#'), -1).toInt();
+    QString filePath = TrackInfo::pathFromUrl(m_url, &m_track);
 
     AVFormatContext *in = nullptr;
 #ifdef Q_OS_WIN

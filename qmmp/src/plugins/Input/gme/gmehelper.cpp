@@ -18,7 +18,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QRegularExpression>
 #include <QSettings>
 #include <qmmp/qmmp.h>
 #include "gmehelper.h"
@@ -45,15 +44,10 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
     if(m_emu)
         gme_delete(m_emu);
     m_emu = nullptr;
-    QString path = url;
-    if(url.contains(u"://"_s))
-    {
-        path.remove(u"gme://"_s);
-        path.remove(QRegularExpression(u"#\\d+$"_s));
-    }
+    QString path = url.contains(u"://"_s) ? TrackInfo::pathFromUrl(url) : url;
     const char *err = nullptr;
     gme_type_t file_type;
-    if((err = gme_identify_file(qPrintable(path),&file_type)))
+    if((err = gme_identify_file(qPrintable(path), &file_type)))
     {
         qWarning("GmeHelper: %s", err);
         return nullptr;

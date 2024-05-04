@@ -231,9 +231,7 @@ void DetailsDialog::updatePage()
 
     if(m_info.path().contains(u"://"_s) && m_info.path().contains(QLatin1Char('#'))) //track of multi-track file
     {
-        QString filePath = m_info.path();
-        filePath.remove(QRegularExpression(u"#\\d+$"_s));
-        filePath.remove(QRegularExpression(u"^\\D+://"_s));
+        QString filePath = TrackInfo::pathFromUrl(m_info.path());
         if(QFileInfo(filePath).isFile())
             readOnly = !QFileInfo(filePath).isWritable() || !QFile::exists(filePath);
     }

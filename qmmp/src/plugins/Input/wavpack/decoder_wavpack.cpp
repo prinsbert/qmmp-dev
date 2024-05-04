@@ -21,7 +21,6 @@
 #include <QObject>
 #include <QIODevice>
 #include <QFile>
-#include <QRegularExpression>
 #include <math.h>
 #include <stdint.h>
 #include <qmmp/cueparser.h>
@@ -48,11 +47,10 @@ bool DecoderWavPack::initialize()
     m_totalTime = 0;
 
     char err[80] = { 0 };
-    if (m_path.startsWith(u"wvpack://"_s)) //embeded cue track
+    if(m_path.startsWith(u"wvpack://"_s)) //embeded cue track
     {
-        QString p = m_path;
-        p.remove(u"wvpack://"_s);
-        p.remove(QRegularExpression(u"#\\d+$"_s));
+        QString p = TrackInfo::pathFromUrl(m_path);
+
 #if defined(Q_OS_WIN) && defined(OPEN_FILE_UTF8)
         m_context = WavpackOpenFileInput (p.toUtf8().constData(),
                                           err, OPEN_WVC | OPEN_TAGS | OPEN_FILE_UTF8, 0);
@@ -64,10 +62,10 @@ bool DecoderWavPack::initialize()
             qWarning("DecoderWavPack: error: %s", err);
             return false;
         }
-        int cue_len = WavpackGetTagItem (m_context, "cuesheet", nullptr, 0);
+        int cue_len = WavpackGetTagItem(m_context, "cuesheet", nullptr, 0);
         if (cue_len > 0)
         {
-            char *value = (char*)malloc (cue_len * 2 + 1);
+            char *value = (char*)malloc(cue_len * 2 + 1);
             WavpackGetTagItem(m_context, "cuesheet", value, cue_len + 1);
             m_parser = new CueParser(value);
             free(value);

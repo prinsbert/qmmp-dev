@@ -20,7 +20,6 @@
 
 #include <QFileInfo>
 #include <QSettings>
-#include <QRegularExpression>
 #include <sidplayfp/sidplayfp.h>
 #include <sidplayfp/SidTune.h>
 #include <sidplayfp/sidbuilder.h>
@@ -30,6 +29,7 @@
 #include <sidplayfp/SidInfo.h>
 #include <sidplayfp/SidTuneInfo.h>
 #include <sidplayfp/SidDatabase.h>
+#include <qmmp/trackinfo.h>
 #include "decoder_sid.h"
 
 // Decoder class
@@ -49,10 +49,8 @@ bool DecoderSID::initialize()
 {
     m_length_in_bytes = 0;
     m_read_bytes = 0;
-    QString path = m_url;
-    path.remove(u"sid://"_s);
-    path.remove(QRegularExpression(u"#\\d+$"_s));
-    int track = m_url.section(QLatin1Char('#'), -1).toInt();
+    int track = -1;
+    QString path = TrackInfo::pathFromUrl(m_url, &track);
 
     m_tune.load(qPrintable(path));
     if(!m_tune.getInfo())
