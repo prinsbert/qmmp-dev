@@ -1,14 +1,14 @@
 #!/bin/sh
 
-LIB_NAMES+='pkg-config yasm taglib libmad mpg123 libogg libvorbis flac wavpack libsndfile opus opusfile '
+LIB_NAMES+='pkg-config yasm taglib libmad mpg123 libogg libvorbis flac libsndfile opus opusfile '
 LIB_NAMES+='libbs2b curl libcdio libcdio-paranoia libgnurx libcddb game-music-emu libxmp musepack '
 LIB_NAMES+='glew projectm xa enca soxr librcd '
 LIB_NAMES+='libbinio adplug ' #adplug
 
 if [ -n "`uname | grep 5.1`"  ]; then
-    LIB_NAMES+='ffmpeg-3.4 libsidplayfp-2.3'
+    LIB_NAMES+='ffmpeg-3.4 libsidplayfp-2.3 wavpack-5.6'
 else
-    LIB_NAMES+='ffmpeg libsidplayfp'
+    LIB_NAMES+='ffmpeg libsidplayfp wavpack'
 fi
 
 export DEV_PATH=/c/devel
