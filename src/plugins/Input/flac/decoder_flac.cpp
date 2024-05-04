@@ -34,7 +34,6 @@
 #include <QObject>
 #include <QFile>
 #include <QIODevice>
-#include <QRegularExpression>
 #include <FLAC/all.h>
 #include <stdint.h>
 #include <qmmp/cueparser.h>
@@ -287,13 +286,11 @@ DecoderFLAC::~DecoderFLAC()
 
 bool DecoderFLAC::initialize()
 {
-    if (!m_data->input)
+    if(!m_data->input)
     {
-        if (m_path.startsWith(u"flac://"_s)) //embeded cue track
+        if(m_path.startsWith(u"flac://"_s)) //embeded cue track
         {
-            QString p = m_path;
-            p.remove(u"flac://"_s);
-            p.remove(QRegularExpression(u"#\\d+$"_s));
+            QString p = TrackInfo::pathFromUrl(m_path);
             TagLib::FileStream stream(QStringToFileName(p), true);
 #if TAGLIB_MAJOR_VERSION >= 2
             TagLib::FLAC::File fileRef(&stream);

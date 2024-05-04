@@ -21,7 +21,6 @@
 #include <QSettings>
 #include <QMessageBox>
 #include <QFileInfo>
-#include <QRegularExpression>
 #include <QtDebug>
 #include <QSet>
 #include <qmmp/cueparser.h>
@@ -193,10 +192,7 @@ QList<TrackInfo *> DecoderFFmpegFactory::createPlayList(const QString &path, Tra
 
     if(path.contains(u"://"_s)) //is it cue track?
     {
-        filePath.remove(u"ffmpeg://"_s);
-        filePath.remove(u"m4b://"_s);
-        filePath.remove(QRegularExpression(u"#\\d+$"_s));
-        trackNumber = path.section(QLatin1Char('#'), -1).toInt();
+        filePath = TrackInfo::pathFromUrl(path, &trackNumber);
         parts = TrackInfo::AllParts; //extract all metadata for single cue/m4b track
     }
 

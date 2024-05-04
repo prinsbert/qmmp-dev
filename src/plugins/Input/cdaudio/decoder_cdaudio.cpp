@@ -20,7 +20,6 @@
 
 
 #include <QObject>
-#include <QRegularExpression>
 #include <QSettings>
 #include <QFileInfo>
 #include <QDir>
@@ -367,10 +366,8 @@ bool DecoderCDAudio::initialize()
     m_bitrate = 0;
     m_totalTime = 0;
     //extract track from url
-    int track_number = m_url.section(QLatin1Char('#'), -1).toInt();
-    QString device_path = m_url;
-    device_path.remove(u"cdda://"_s);
-    device_path.remove(QRegularExpression(u"#\\d+$"_s));
+    int track_number = -1;
+    QString device_path = TrackInfo::pathFromUrl(m_url, &track_number);
 
     track_number = qMax(track_number, 1);
     QList<CDATrack> tracks = DecoderCDAudio::generateTrackList(device_path); //generate track list

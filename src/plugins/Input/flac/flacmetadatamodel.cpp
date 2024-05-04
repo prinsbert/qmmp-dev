@@ -29,14 +29,9 @@
 #include "flacmetadatamodel.h"
 
 FLACMetaDataModel::FLACMetaDataModel(const QString &path, bool readOnly) :
-    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable),
-    m_path(path)
+    MetaDataModel(readOnly, MetaDataModel::IsCoverEditable)
 {
-    if(path.startsWith(u"flac://"_s))
-    {
-        m_path.remove(u"flac://"_s);
-        m_path.remove(QRegularExpression(u"#\\d+$"_s));
-    }
+    m_path = path.contains(u"://"_s) ? TrackInfo::pathFromUrl(m_path) : path;
 
     if(m_path.endsWith(u".flac"_s, Qt::CaseInsensitive))
     {

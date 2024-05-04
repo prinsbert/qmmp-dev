@@ -23,7 +23,6 @@
 #include <QDirIterator>
 #include <QSettings>
 #include <QTextStream>
-#include <QRegularExpression>
 #include <qmmp/decoder.h>
 #include <qmmp/metadatamanager.h>
 #include <qmmp/qmmptextcodec.h>
@@ -34,13 +33,7 @@
 
 CueFile::CueFile(const QString &path) : CueParser()
 {
-    m_filePath = path;
-
-    if(path.contains(u"://"_s))
-    {
-        m_filePath.remove(u"cue://"_s);
-        m_filePath.remove(QRegularExpression(u"#\\d+$"_s));
-    }
+    m_filePath = path.contains(u"://"_s) ? TrackInfo::pathFromUrl(path) : path;
 
     QFile file(m_filePath);
     if (!file.open(QIODevice::ReadOnly))

@@ -49,15 +49,12 @@ DecoderFFmpegM4b::~DecoderFFmpegM4b()
 
 bool DecoderFFmpegM4b::initialize()
 {
-    QString filePath = m_url;
     if(!m_url.startsWith(u"m4b://"_s))
     {
         qWarning("DecoderFFmpegM4b: invalid url.");
         return false;
     }
-    filePath.remove(u"m4b://"_s);
-    filePath.remove(QRegularExpression(u"#\\d+$"_s));
-    m_track = m_url.section(QLatin1Char('#'), -1).toInt();
+    QString filePath = TrackInfo::pathFromUrl(m_url, &m_track);
 
     AVFormatContext *in = nullptr;
 #ifdef Q_OS_WIN
