@@ -451,7 +451,7 @@ public slots:
     /*!
      * Removes track \b track from playlist.
      */
-    void removeTrack(PlayListItem *track);
+    void removeTrack(PlayListTrack *track);
     /*!
      * Removes tracks \b items from playlist.
      */

@@ -127,9 +127,9 @@ PlayListGroup *NormalContainer::group(int index) const
     return nullptr;
 }
 
-bool NormalContainer::contains(PlayListItem *item) const
+bool NormalContainer::contains(PlayListTrack *track) const
 {
-    return m_tracks.contains(item);
+    return m_tracks.contains(track);
 }
 
 void NormalContainer::removeTrack(PlayListTrack *track)

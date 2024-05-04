@@ -54,7 +54,7 @@ public:
     virtual int indexOf(PlayListItem *item) const = 0;
     virtual PlayListTrack *track(int index) const = 0;
     virtual PlayListGroup *group(int index) const = 0;
-    virtual bool contains(PlayListItem *item) const = 0;
+    virtual bool contains(PlayListTrack *track) const = 0;
     virtual void removeTrack(PlayListTrack *track) = 0;
     virtual void removeTracks(QList<PlayListTrack *> tracks) = 0;
     virtual bool move(const QList<int> &indexes, int from, int to) = 0;
