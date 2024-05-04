@@ -49,6 +49,9 @@ unix {
   isEmpty(PLUGIN_DIR): PLUGIN_DIR=$$LIB_DIR/qmmp-$${QMMP_VERSION_MAJOR}.$${QMMP_VERSION_MINOR}
 }
 
+#QMAKE_LFLAGS_DEBUG += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
+#QMAKE_LFLAGS += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
+
 #Comment/uncomment this if you want to change plugins list
 
 CONFIG += ARCHIVE_PLUGIN
