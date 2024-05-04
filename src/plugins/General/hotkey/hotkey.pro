@@ -23,6 +23,6 @@ LIBS += $$QMMPUI_LIB
 unix {
     target.path = $$PLUGIN_DIR/General
     INSTALLS += target
-    PKGCONFIG += x11
+    PKGCONFIG += x11 xcb
     QT += x11extras
 }

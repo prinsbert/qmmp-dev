@@ -13,7 +13,10 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 # xcb
-CHECK_INCLUDE_FILE(xcb/xcb.h XCB_H_FOUND)
+pkg_search_module(XCB xcb)
+
+include_directories(${XCB_INCLUDE_DIRS})
+link_directories(${XCB_LIBRARY_DIRS})
 
 SET(libhotkey_SRCS
     settingsdialog.cpp
@@ -42,10 +45,10 @@ QT5_WRAP_UI(libhotkey_UIS_H ${libhotkey_UIS})
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-IF(X11_FOUND AND XCB_H_FOUND)
+IF(X11_FOUND AND XCB_FOUND)
 set_property(SOURCE hotkeymanager_x11.cpp PROPERTY SKIP_AUTOMOC ON)
 ADD_LIBRARY(hotkey MODULE ${libhotkey_SRCS} ${libhotkey_UIS_H} ${libhotkey_RCC_SRCS})
 add_dependencies(hotkey libqmmpui)
-target_link_libraries(hotkey Qt5::Widgets Qt5::X11Extras libqmmpui libqmmp ${X11_LDFLAGS})
+target_link_libraries(hotkey Qt5::Widgets Qt5::X11Extras libqmmpui libqmmp ${X11_LDFLAGS} ${XCB_LDFLAGS})
 install(TARGETS hotkey DESTINATION ${PLUGIN_DIR}/General)
-ENDIF(X11_FOUND AND XCB_H_FOUND)
+ENDIF(X11_FOUND AND XCB_FOUND)
