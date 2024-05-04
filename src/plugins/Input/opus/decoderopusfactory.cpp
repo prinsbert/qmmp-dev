@@ -21,8 +21,7 @@
 #include <QMessageBox>
 #include <QtPlugin>
 #include <taglib/tag.h>
-#include <taglib/fileref.h>
-#include "opusfile.h"
+#include <taglib/opusfile.h>
 #include "decoder_opus.h"
 #include "opusmetadatamodel.h"
 #include "decoderopusfactory.h"
@@ -128,8 +127,7 @@ void DecoderOpusFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About Opus Audio Plugin"),
                         tr("Qmmp Opus Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("This plugin includes code from TagLib library"));
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString DecoderOpusFactory::translation() const

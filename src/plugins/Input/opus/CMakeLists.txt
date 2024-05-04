@@ -30,16 +30,10 @@ SET(libopus_SRCS
   decoder_opus.cpp
   decoderopusfactory.cpp
   opusmetadatamodel.cpp
-  opusfile.cpp
-  opusproperties.cpp
-  tdebug.cpp
 )
 
 SET(libopus_HDRS
   decoder_opus.h
-  opusfile.h
-  opusproperties.h
-  tdebug.h
 )
 
 SET(libopus_RCCS translations/translations.qrc)
