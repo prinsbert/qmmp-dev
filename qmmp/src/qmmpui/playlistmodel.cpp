@@ -618,7 +618,7 @@ void PlayListModel::removeTrack(int i)
     }
 }
 
-void PlayListModel::removeTrack(PlayListItem *track)
+void PlayListModel::removeTrack(PlayListTrack *track)
 {
     if(m_container->contains(track))
         removeTrack(m_container->indexOf(track));
@@ -1074,7 +1074,7 @@ void PlayListModel::onTaskFinished()
         if(prev_count != m_container->trackCount())
         {
             flags = STRUCTURE;
-            m_current = m_container->indexOf(m_current_track);
+            m_current = m_current_track ? m_container->indexOf(m_current_track) : -1;
             if(prev_current_track != m_current_track)
             {
                 flags |= CURRENT;

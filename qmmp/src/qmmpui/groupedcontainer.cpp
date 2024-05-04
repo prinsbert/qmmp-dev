@@ -181,9 +181,9 @@ PlayListGroup *GroupedContainer::group(int index) const
     return nullptr;
 }
 
-bool GroupedContainer::contains(PlayListItem *item) const
+bool GroupedContainer::contains(PlayListTrack *track) const
 {
-    return item->isGroup() ? m_groups.contains(item) : m_tracks.contains(item);
+    return m_tracks.contains(track);
 }
 
 void GroupedContainer::removeTrack(PlayListTrack *track)
@@ -296,7 +296,7 @@ QList<PlayListTrack *> GroupedContainer::takeAllTracks()
 
 void GroupedContainer::clear()
 {
-    //clearQueue();
+    clearQueue();
     while(!m_groups.isEmpty())
     {
         delete m_groups.takeFirst();

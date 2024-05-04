@@ -48,7 +48,7 @@ public:
     int indexOf(PlayListItem *item) const override;
     PlayListTrack *track(int index) const override;
     PlayListGroup *group(int index) const override;
-    bool contains(PlayListItem *item) const override;
+    bool contains(PlayListTrack *track) const override;
     void removeTrack(PlayListTrack *track) override;
     void removeTracks(QList<PlayListTrack *> tracks) override;
     bool move(const QList<int> &indexes, int from, int to) override;
