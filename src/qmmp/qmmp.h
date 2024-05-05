@@ -72,7 +72,6 @@ using QLatin1StringView = QLatin1String;
 
 using namespace Qt::Literals::StringLiterals;
 
-
 /*! @brief The Qmmp class stores global settings and enums.
  * @author Ilya Kotov <forkotov02@ya.ru>
  */
