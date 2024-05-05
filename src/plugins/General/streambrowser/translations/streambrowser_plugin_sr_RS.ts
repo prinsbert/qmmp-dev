@@ -152,28 +152,29 @@
         <translation>&amp;Уређивање</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="136"/>
+        <location filename="../streamwindow.cpp" line="137"/>
+        <location filename="../streamwindow.cpp" line="140"/>
         <source>&amp;Remove</source>
         <translation>&amp;Уклони</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="148"/>
+        <location filename="../streamwindow.cpp" line="153"/>
         <source>Done</source>
         <translation>Завршено</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="151"/>
-        <location filename="../streamwindow.cpp" line="152"/>
+        <location filename="../streamwindow.cpp" line="156"/>
+        <location filename="../streamwindow.cpp" line="157"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="171"/>
+        <location filename="../streamwindow.cpp" line="176"/>
         <source>Receiving</source>
         <translation>Примање</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="274"/>
+        <location filename="../streamwindow.cpp" line="279"/>
         <source>Edit Stream</source>
         <translation type="unfinished"></translation>
     </message>

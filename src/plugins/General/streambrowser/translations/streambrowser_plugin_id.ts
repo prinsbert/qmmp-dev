@@ -152,28 +152,29 @@
         <translation>&amp;Edit</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="136"/>
+        <location filename="../streamwindow.cpp" line="137"/>
+        <location filename="../streamwindow.cpp" line="140"/>
         <source>&amp;Remove</source>
         <translation>&amp;Buang</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="148"/>
+        <location filename="../streamwindow.cpp" line="153"/>
         <source>Done</source>
         <translation>Kelar</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="151"/>
-        <location filename="../streamwindow.cpp" line="152"/>
+        <location filename="../streamwindow.cpp" line="156"/>
+        <location filename="../streamwindow.cpp" line="157"/>
         <source>Error</source>
         <translation>Galat</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="171"/>
+        <location filename="../streamwindow.cpp" line="176"/>
         <source>Receiving</source>
         <translation>Menerima</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="274"/>
+        <location filename="../streamwindow.cpp" line="279"/>
         <source>Edit Stream</source>
         <translation>Sunting Stream</translation>
     </message>

@@ -4,32 +4,32 @@
 <context>
     <name>DecoderWavPackFactory</name>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="39"/>
+        <location filename="../decoderwavpackfactory.cpp" line="38"/>
         <source>WavPack Plugin</source>
         <translation>WavPack 外掛</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="41"/>
+        <location filename="../decoderwavpackfactory.cpp" line="40"/>
         <source>WavPack Files</source>
         <translation>WavPack 檔案</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="184"/>
+        <location filename="../decoderwavpackfactory.cpp" line="181"/>
         <source>About WavPack Audio Plugin</source>
         <translation>關於 WavPack 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="185"/>
+        <location filename="../decoderwavpackfactory.cpp" line="182"/>
         <source>Qmmp WavPack Audio Plugin</source>
         <translation>Qmmp WavPack 聲訊插件</translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="186"/>
+        <location filename="../decoderwavpackfactory.cpp" line="183"/>
         <source>WavPack library version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../decoderwavpackfactory.cpp" line="188"/>
+        <location filename="../decoderwavpackfactory.cpp" line="185"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -37,12 +37,12 @@
 <context>
     <name>WavPackMetaDataModel</name>
     <message>
-        <location filename="../wavpackmetadatamodel.cpp" line="72"/>
+        <location filename="../wavpackmetadatamodel.cpp" line="71"/>
         <source>Ratio</source>
         <translation>比值</translation>
     </message>
     <message>
-        <location filename="../wavpackmetadatamodel.cpp" line="73"/>
+        <location filename="../wavpackmetadatamodel.cpp" line="72"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>

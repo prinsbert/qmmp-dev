@@ -1048,42 +1048,42 @@
         <translation type="unfinished">Trumpinys</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="58"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="70"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation type="unfinished">Grojimas</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="76"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation type="unfinished">Rodyti</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="82"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation type="unfinished">Garsumas</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="88"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation type="unfinished">Grojaraštis</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="94"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation type="unfinished">Kiti</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="102"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="101"/>
         <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>

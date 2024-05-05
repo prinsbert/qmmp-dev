@@ -9,42 +9,42 @@
         <translation>תוסף WASAPI</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="54"/>
+        <location filename="../outputwasapifactory.cpp" line="53"/>
         <source>About WASAPI Output Plugin</source>
         <translation>אודות תוסף פלט WASAPI</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="55"/>
+        <location filename="../outputwasapifactory.cpp" line="54"/>
         <source>Qmmp WASAPI Output Plugin</source>
         <translation>תוסף פלט WASAPI של Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="56"/>
+        <location filename="../outputwasapifactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>WASAPISettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../wasapisettingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation>התקן:</translation>
+        <translation type="unfinished">התקן:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="68"/>
+        <location filename="../wasapisettingsdialog.ui" line="68"/>
         <source>Exclusive mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="57"/>
+        <location filename="../wasapisettingsdialog.cpp" line="63"/>
         <source>Default</source>
-        <translation>משתמט</translation>
+        <translation type="unfinished">משתמט</translation>
     </message>
 </context>
 </TS>

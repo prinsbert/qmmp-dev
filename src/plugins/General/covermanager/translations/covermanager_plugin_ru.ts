@@ -40,62 +40,66 @@
 <context>
     <name>CoverWidget</name>
     <message>
-        <location filename="../coverwidget.cpp" line="38"/>
+        <location filename="../coverwidget.cpp" line="39"/>
+        <location filename="../coverwidget.cpp" line="41"/>
         <source>&amp;Save As...</source>
         <translation>&amp;Сохранить как...</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="38"/>
+        <location filename="../coverwidget.cpp" line="39"/>
+        <location filename="../coverwidget.cpp" line="41"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="39"/>
+        <location filename="../coverwidget.cpp" line="43"/>
         <source>Size</source>
         <translation>Размер</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="41"/>
+        <location filename="../coverwidget.cpp" line="45"/>
         <source>Actual Size</source>
         <translation>Фактический размер</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="42"/>
+        <location filename="../coverwidget.cpp" line="46"/>
         <source>128x128</source>
         <translation>128x128</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="43"/>
+        <location filename="../coverwidget.cpp" line="47"/>
         <source>256x256</source>
         <translation>256x256</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="44"/>
+        <location filename="../coverwidget.cpp" line="48"/>
         <source>512x512</source>
         <translation>512x512</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="45"/>
+        <location filename="../coverwidget.cpp" line="49"/>
         <source>1024x1024</source>
         <translation>1024x1024</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="48"/>
+        <location filename="../coverwidget.cpp" line="53"/>
+        <location filename="../coverwidget.cpp" line="55"/>
         <source>&amp;Close</source>
         <translation>&amp;Закрыть</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="48"/>
+        <location filename="../coverwidget.cpp" line="53"/>
+        <location filename="../coverwidget.cpp" line="55"/>
         <source>Alt+F4</source>
         <translation>Alt+F4</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="88"/>
+        <location filename="../coverwidget.cpp" line="96"/>
         <source>Save Cover As</source>
         <translation>Сохранить обложку как</translation>
     </message>
     <message>
-        <location filename="../coverwidget.cpp" line="89"/>
+        <location filename="../coverwidget.cpp" line="97"/>
         <source>Images</source>
         <translation>Изображения</translation>
     </message>

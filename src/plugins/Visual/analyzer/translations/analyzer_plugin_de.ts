@@ -79,12 +79,14 @@
         <translation>Abfallen der Spitzenwerte</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="359"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Vollbild</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="359"/>
         <source>F</source>
         <translation>F</translation>
     </message>

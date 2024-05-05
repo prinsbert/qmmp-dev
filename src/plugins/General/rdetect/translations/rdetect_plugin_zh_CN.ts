@@ -30,6 +30,44 @@
     </message>
 </context>
 <context>
+    <name>RDetectSettingsDialog</name>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="14"/>
+        <source>Volume Detection Plugin Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="29"/>
+        <source>CD Audio Detection</source>
+        <translation type="unfinished">CD 音频检测</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="38"/>
+        <source>Add tracks to playlist automatically</source>
+        <translation type="unfinished">自动添加音轨到播放列表</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="45"/>
+        <source>Remove tracks from playlist automatically</source>
+        <translation type="unfinished">自动从播放列表删除音轨</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="55"/>
+        <source>Removable Device Detection</source>
+        <translation type="unfinished">可移动设备检测</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="64"/>
+        <source>Add files to playlist automatically</source>
+        <translation type="unfinished">自动添加文件到播放列表</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="71"/>
+        <source>Remove files from playlist automatically</source>
+        <translation type="unfinished">自动从播放列表删除文件</translation>
+    </message>
+</context>
+<context>
     <name>RemovableHelper</name>
     <message>
         <location filename="../removablehelper.cpp" line="134"/>
@@ -40,44 +78,6 @@
         <location filename="../removablehelper.cpp" line="138"/>
         <source>Add Volume &quot;%1&quot;</source>
         <translation>增加音量&quot;%1&quot;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>CD Audio Detection</source>
-        <translation>CD 音频检测</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="38"/>
-        <source>Add tracks to playlist automatically</source>
-        <translation>自动添加音轨到播放列表</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Remove tracks from playlist automatically</source>
-        <translation>自动从播放列表删除音轨</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Removable Device Detection</source>
-        <translation>可移动设备检测</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="64"/>
-        <source>Add files to playlist automatically</source>
-        <translation>自动添加文件到播放列表</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>Remove files from playlist automatically</source>
-        <translation>自动从播放列表删除文件</translation>
     </message>
 </context>
 </TS>

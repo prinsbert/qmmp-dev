@@ -981,7 +981,7 @@
     <message>
         <location filename="../qsuiequalizer.cpp" line="70"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Сброс</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="83"/>
@@ -1034,7 +1034,7 @@
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="40"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Сброс</translation>
     </message>
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="54"/>
@@ -1047,42 +1047,42 @@
         <translation type="unfinished">Сочетание клавиш</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished">Сбросить сочетания клавиш</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="58"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished">Восстановить сочетания клавиш поумолчанию?</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="70"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation type="unfinished">Воспроизведение</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="76"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation type="unfinished">Вид</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="82"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation type="unfinished">Громкость</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="88"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation type="unfinished">Список</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="94"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation type="unfinished">Другие</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="102"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="101"/>
         <source>Tools</source>
         <translation type="unfinished">Сервис</translation>
     </message>
@@ -1478,7 +1478,7 @@
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Сброс</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="65"/>

@@ -9,42 +9,42 @@
         <translation>WASAP&#x3000;I插件</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="54"/>
+        <location filename="../outputwasapifactory.cpp" line="53"/>
         <source>About WASAPI Output Plugin</source>
         <translation>关于WASAPI输出插件</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="55"/>
+        <location filename="../outputwasapifactory.cpp" line="54"/>
         <source>Qmmp WASAPI Output Plugin</source>
         <translation>Qmmp WASAPI输出插件</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="56"/>
+        <location filename="../outputwasapifactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>WASAPISettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../wasapisettingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation>设备：</translation>
+        <translation type="unfinished">设备：</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="68"/>
+        <location filename="../wasapisettingsdialog.ui" line="68"/>
         <source>Exclusive mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="57"/>
+        <location filename="../wasapisettingsdialog.cpp" line="63"/>
         <source>Default</source>
-        <translation>默认</translation>
+        <translation type="unfinished">默认</translation>
     </message>
 </context>
 </TS>

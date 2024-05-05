@@ -499,7 +499,7 @@
     <message>
         <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoznam skladieb</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="85"/>
@@ -699,7 +699,7 @@
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoznam skladieb</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
@@ -737,7 +737,7 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="442"/>
         <source>Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoznam skladieb</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="461"/>
@@ -760,7 +760,7 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="56"/>
         <source>Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoznam skladieb</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="194"/>

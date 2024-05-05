@@ -9,22 +9,22 @@
         <translation>WaveOut Eklentisi</translation>
     </message>
     <message>
-        <location filename="../outputwaveoutfactory.cpp" line="60"/>
+        <location filename="../outputwaveoutfactory.cpp" line="61"/>
         <source>About WaveOut Output Plugin</source>
         <translation>WaveOut Çıktı Eklentisi</translation>
     </message>
     <message>
-        <location filename="../outputwaveoutfactory.cpp" line="61"/>
+        <location filename="../outputwaveoutfactory.cpp" line="62"/>
         <source>Qmmp WaveOut Output Plugin</source>
         <translation>Qmmp WaveOut Çıktı Eklentisi</translation>
     </message>
     <message>
-        <location filename="../outputwaveoutfactory.cpp" line="62"/>
+        <location filename="../outputwaveoutfactory.cpp" line="63"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../outputwaveoutfactory.cpp" line="63"/>
+        <location filename="../outputwaveoutfactory.cpp" line="64"/>
         <source>Based on aacDECdrop player</source>
         <translation>aacDECdrop oynatıcısı temellidir</translation>
     </message>

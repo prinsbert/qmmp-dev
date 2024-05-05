@@ -30,6 +30,44 @@
     </message>
 </context>
 <context>
+    <name>RDetectSettingsDialog</name>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="14"/>
+        <source>Volume Detection Plugin Settings</source>
+        <translation type="unfinished">Paramètres du greffon de détection du volume</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="29"/>
+        <source>CD Audio Detection</source>
+        <translation type="unfinished">Détection de CD audio</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="38"/>
+        <source>Add tracks to playlist automatically</source>
+        <translation type="unfinished">Ajouter automatiquement les pistes à la liste</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="45"/>
+        <source>Remove tracks from playlist automatically</source>
+        <translation type="unfinished">Enlever automatiquement les pistes de la liste</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="55"/>
+        <source>Removable Device Detection</source>
+        <translation type="unfinished">Détection de périphérique amovible</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="64"/>
+        <source>Add files to playlist automatically</source>
+        <translation type="unfinished">Ajouter automatiquement les fichiers à la liste</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="71"/>
+        <source>Remove files from playlist automatically</source>
+        <translation type="unfinished">Enlever automatiquement les fichiers à la liste</translation>
+    </message>
+</context>
+<context>
     <name>RemovableHelper</name>
     <message>
         <location filename="../removablehelper.cpp" line="134"/>
@@ -40,44 +78,6 @@
         <location filename="../removablehelper.cpp" line="138"/>
         <source>Add Volume &quot;%1&quot;</source>
         <translation>Ajouter volume «&#xa0;%1&#xa0;»</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Volume Detection Plugin Settings</source>
-        <translation>Paramètres du greffon de détection du volume</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>CD Audio Detection</source>
-        <translation>Détection de CD audio</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="38"/>
-        <source>Add tracks to playlist automatically</source>
-        <translation>Ajouter automatiquement les pistes à la liste</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Remove tracks from playlist automatically</source>
-        <translation>Enlever automatiquement les pistes de la liste</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Removable Device Detection</source>
-        <translation>Détection de périphérique amovible</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="64"/>
-        <source>Add files to playlist automatically</source>
-        <translation>Ajouter automatiquement les fichiers à la liste</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>Remove files from playlist automatically</source>
-        <translation>Enlever automatiquement les fichiers à la liste</translation>
     </message>
 </context>
 </TS>

@@ -276,7 +276,7 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Поновити</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>

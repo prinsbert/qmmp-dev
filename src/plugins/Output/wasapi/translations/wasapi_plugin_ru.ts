@@ -9,42 +9,42 @@
         <translation>Модуль WASAPI</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="54"/>
+        <location filename="../outputwasapifactory.cpp" line="53"/>
         <source>About WASAPI Output Plugin</source>
         <translation>О модуле вывода WASAPI</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="55"/>
+        <location filename="../outputwasapifactory.cpp" line="54"/>
         <source>Qmmp WASAPI Output Plugin</source>
         <translation>Модуль вывода WASAPI для Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputwasapifactory.cpp" line="56"/>
+        <location filename="../outputwasapifactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Разработчик: Илья Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>WASAPISettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
-        <translation>Настройки модуля WASAPI</translation>
+        <translation type="unfinished">Настройки модуля WASAPI</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="61"/>
+        <location filename="../wasapisettingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation>Устройство:</translation>
+        <translation type="unfinished">Устройство:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="68"/>
+        <location filename="../wasapisettingsdialog.ui" line="68"/>
         <source>Exclusive mode</source>
-        <translation>Режим монопольного доступа</translation>
+        <translation type="unfinished">Режим монопольного доступа</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="57"/>
+        <location filename="../wasapisettingsdialog.cpp" line="63"/>
         <source>Default</source>
-        <translation>По умолчанию</translation>
+        <translation type="unfinished">По умолчанию</translation>
     </message>
 </context>
 </TS>
