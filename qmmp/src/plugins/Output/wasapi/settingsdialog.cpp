@@ -36,9 +36,9 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     enumDevices();
 
     QSettings settings;
-    QString id = settings.value("WASAPI/device", "default").toString();
+    QString id = settings.value("WASAPI/device"_L1, u"default"_s).toString();
     int index = m_ui.deviceComboBox->findData(id);
-    m_ui.exclusiveModeCheckBox->setChecked(settings.value("WASAPI/exclusive_mode", false).toBool());
+    m_ui.exclusiveModeCheckBox->setChecked(settings.value("WASAPI/exclusive_mode"_L1, false).toBool());
     m_ui.deviceComboBox->setCurrentIndex(qMax(index, 0));
 }
 
@@ -46,15 +46,15 @@ void SettingsDialog::accept()
 {
     QSettings settings;
     int index = m_ui.deviceComboBox->currentIndex();
-    settings.setValue("WASAPI/device", m_ui.deviceComboBox->itemData(index).toString());
-    settings.setValue("WASAPI/exclusive_mode", m_ui.exclusiveModeCheckBox->isChecked());
+    settings.setValue("WASAPI/device"_L1, m_ui.deviceComboBox->itemData(index).toString());
+    settings.setValue("WASAPI/exclusive_mode"_L1, m_ui.exclusiveModeCheckBox->isChecked());
     QDialog::accept();
 }
 
 void SettingsDialog::enumDevices()
 {
     m_ui.deviceComboBox->clear();
-    m_ui.deviceComboBox->addItem(tr("Default"), "default");
+    m_ui.deviceComboBox->addItem(tr("Default"), u"default"_s);
 
     IMMDeviceEnumerator *pEnumerator = nullptr;
     HRESULT result = CoCreateInstance(CLSID_MMDeviceEnumerator, nullptr, CLSCTX_ALL, IID_IMMDeviceEnumerator, (void**)&pEnumerator);

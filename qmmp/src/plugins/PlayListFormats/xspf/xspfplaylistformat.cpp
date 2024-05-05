@@ -92,7 +92,7 @@ QList<PlayListTrack*> XSPFPlaylistFormat::decode(const QByteArray &contents)
             {
                 out.last()->setValue(Qmmp::ALBUM, xml.text().toString());
             }
-            else if(currentTag == "meta"_L1 && xml.attributes().value("rel") == QLatin1String("year"))
+            else if(currentTag == "meta"_L1 && xml.attributes().value("rel"_L1) == QLatin1String("year"))
             {
                 out.last()->setValue(Qmmp::YEAR, xml.text().toString());
             }
@@ -118,16 +118,16 @@ QByteArray XSPFPlaylistFormat::encode(const QList<PlayListTrack*> &files, const 
     QXmlStreamWriter xml(&out);
     xml.setAutoFormatting(true);
     xml.writeStartDocument();
-    xml.writeStartElement("playlist");
-    xml.writeAttribute("version", "1");
-    xml.writeAttribute("xmlns", "http://xspf.org/ns/0/");
-    xml.writeTextElement("creator", u"qmmp-"_s + Qmmp::strVersion());
-    xml.writeStartElement("trackList");
+    xml.writeStartElement("playlist"_L1);
+    xml.writeAttribute("version"_L1, "1"_L1);
+    xml.writeAttribute("xmlns"_L1, u"http://xspf.org/ns/0/"_s);
+    xml.writeTextElement("creator"_L1, u"qmmp-"_s + Qmmp::strVersion());
+    xml.writeStartElement("trackList"_L1);
 
     int counter = 1;
     for(PlayListTrack *f : qAsConst(files))
     {
-        xml.writeStartElement("track");
+        xml.writeStartElement("track"_L1);
 
         QString url;
         if (f->path().contains(u"://"_s))
@@ -147,15 +147,15 @@ QByteArray XSPFPlaylistFormat::encode(const QList<PlayListTrack*> &files, const 
             url = QString::fromLatin1(QUrl::toPercentEncoding(u"file://"_s + f->path(), ":/"));
         }
 
-        xml.writeTextElement("location", url);
-        xml.writeTextElement("title", f->value(Qmmp::TITLE));
-        xml.writeTextElement("creator", f->value(Qmmp::ARTIST));
-        xml.writeTextElement("annotation", f->value(Qmmp::COMMENT));
-        xml.writeTextElement("album", f->value(Qmmp::ALBUM));
-        xml.writeTextElement("trackNum", QString::number(counter));
+        xml.writeTextElement("location"_L1, url);
+        xml.writeTextElement("title"_L1, f->value(Qmmp::TITLE));
+        xml.writeTextElement("creator"_L1, f->value(Qmmp::ARTIST));
+        xml.writeTextElement("annotation"_L1, f->value(Qmmp::COMMENT));
+        xml.writeTextElement("album"_L1, f->value(Qmmp::ALBUM));
+        xml.writeTextElement("trackNum"_L1, QString::number(counter));
 
-        xml.writeStartElement("meta");
-        xml.writeAttribute("rel", "year");
+        xml.writeStartElement("meta"_L1);
+        xml.writeAttribute("rel"_L1, u"year"_s);
         xml.writeCharacters(f->value(Qmmp::YEAR));
         xml.writeEndElement(); // meta
         xml.writeEndElement(); // track

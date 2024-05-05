@@ -19,10 +19,9 @@
  ***************************************************************************/
 
 #include <QIcon>
+#include <qmmp/qmmp.h>
 #include "ui_skinnedpreseteditor.h"
 #include "skinnedpreseteditor.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 SkinnedPresetEditor::SkinnedPresetEditor(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::SkinnedPresetEditor)

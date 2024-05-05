@@ -153,7 +153,7 @@ void Analyzer::writeSettings()
     settings.setValue("peak_falloff"_L1, act ? act->data().toDouble() : 0.2);
     act = m_analyzerFalloffGroup->checkedAction();
     settings.setValue("analyzer_falloff"_L1, act ? act->data().toDouble() : 2.2);
-    settings.setValue("show_peaks", m_peaksAction->isChecked());
+    settings.setValue("show_peaks"_L1, m_peaksAction->isChecked());
     settings.endGroup();
 }
 
@@ -353,7 +353,11 @@ void Analyzer::createMenu()
         peaksFalloff->addAction(act);
     }
     m_menu->addSeparator();
+#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
+    QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), this, &Analyzer::toggleFullScreen, tr("F"));
+#else
     QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), tr("F"), this, &Analyzer::toggleFullScreen);
+#endif
     addAction(fullScreenAction);
     update();
 }

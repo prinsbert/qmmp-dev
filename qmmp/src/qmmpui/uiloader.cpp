@@ -106,7 +106,7 @@ UiFactory *UiLoader::selected()
         defaultUi = u"qsui"_s;
     QString name = settings.value(u"Ui/current_plugin"_s, defaultUi).toString();
 #else
-    QString name = settings.value(u"Ui/current_plugin"_s, QMMP_DEFAULT_UI).toString();
+    QString name = settings.value(u"Ui/current_plugin"_s, QStringLiteral(QMMP_DEFAULT_UI)).toString();
 #endif
     for(QmmpUiPluginCache *item : qAsConst(*m_cache))
     {

@@ -18,9 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <qmmp/qmmp.h>
 #include "commandlinehandler.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 QStringList CommandLineHandler::helpString() const
 {

@@ -107,7 +107,7 @@ void SkinnedListWidgetDrawer::readSettings()
         m_normal.setNamedColor(settings.value("pl_normal_text_color"_L1, m_normal.name()).toString());
         m_current.setNamedColor(settings.value("pl_current_text_color"_L1, m_current.name()).toString());
         m_splitter.setNamedColor(settings.value("pl_splitter_color"_L1, m_splitter).toString());
-        m_group_text.setNamedColor(settings.value("pl_group_text", m_group_text.name()).toString());
+        m_group_text.setNamedColor(settings.value("pl_group_text"_L1, m_group_text.name()).toString());
         if(settings.value("pl_override_group_bg"_L1, false).toBool())
         {
             m_group_bg.setNamedColor(settings.value("pl_group_bg"_L1, m_normal_bg.name()).toString());

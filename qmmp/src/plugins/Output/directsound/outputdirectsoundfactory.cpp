@@ -42,9 +42,10 @@ Volume *OutputDirectSoundFactory::createVolume()
     return new VolumeDirectSound();
 }
 
-void OutputDirectSoundFactory::createSettings(QWidget* parent)
+QDialog *OutputDirectSoundFactory::createSettings(QWidget *parent)
 {
-   Q_UNUSED(parent);
+    Q_UNUSED(parent);
+    return nullptr;
 }
 
 void OutputDirectSoundFactory::showAbout(QWidget *parent)

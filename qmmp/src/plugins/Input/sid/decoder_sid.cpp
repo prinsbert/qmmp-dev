@@ -94,7 +94,7 @@ bool DecoderSID::initialize()
     }
 
     if(m_length <= 0)
-        m_length = settings.value("song_length", 180).toInt();
+        m_length = settings.value("song_length"_L1, 180).toInt();
 
     qDebug("DecoderSID: song length: %d", m_length);
 

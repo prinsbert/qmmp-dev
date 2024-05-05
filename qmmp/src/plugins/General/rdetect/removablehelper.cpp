@@ -36,18 +36,18 @@ RemovableHelper::RemovableHelper(QObject *parent): QObject(parent)
     connect(m_actions,SIGNAL(triggered(QAction *)), SLOT(processAction(QAction *)));
     //load settings
     QSettings settings;
-    settings.beginGroup("rdetect");
-    m_detectCDA = settings.value("cda", true).toBool();
-    m_detectRemovable = settings.value("removable", true).toBool();
+    settings.beginGroup("rdetect"_L1);
+    m_detectCDA = settings.value("cda"_L1, true).toBool();
+    m_detectRemovable = settings.value("removable"_L1, true).toBool();
     m_addTracks = false; //do not load tracks on startup
     m_addFiles = false;
     //find existing devices
     updateActions();
     //load remaining settings
-    m_addTracks = settings.value("add_tracks", false).toBool();
-    m_removeTracks = settings.value("remove_tracks", false).toBool();
-    m_addFiles = settings.value("add_files", false).toBool();
-    m_removeFiles = settings.value("remove_files", false).toBool();
+    m_addTracks = settings.value("add_tracks"_L1, false).toBool();
+    m_removeTracks = settings.value("remove_tracks"_L1, false).toBool();
+    m_addFiles = settings.value("add_files"_L1, false).toBool();
+    m_removeFiles = settings.value("remove_files"_L1, false).toBool();
     settings.endGroup();
 
 }
@@ -118,7 +118,7 @@ void RemovableHelper::updateActions()
             dev_path = storage.rootPath();
             if(isAudioCd(dev_path))
             {
-                dev_path = QString("cdda://%1").arg(dev_path);
+                dev_path = QStringLiteral("cdda://%1").arg(dev_path);
                 dev_path = dev_path.left(dev_path.size() - 1); //remove trailing '/'
             }
         }
@@ -129,13 +129,13 @@ void RemovableHelper::updateActions()
         {
             QAction *action = new QAction(this);
             QString actionText;
-            if (dev_path.startsWith("cdda"))
+            if(dev_path.startsWith("cdda"_L1))
             {
-                actionText = QString(tr("Add CD \"%1\"")).arg(storage.displayName());
+                actionText = tr("Add CD \"%1\"").arg(storage.displayName());
             }
             else
             {
-                actionText = QString(tr("Add Volume \"%1\"")).arg(storage.displayName());
+                actionText = tr("Add Volume \"%1\"").arg(storage.displayName());
             }
 
 
@@ -165,7 +165,7 @@ void RemovableHelper::updateActions()
             QString dev_path = storage.rootPath();
             if(isAudioCd(dev_path))
             {
-                dev_path = QString("cdda://%1").arg(dev_path);
+                dev_path = QStringLiteral("cdda://%1").arg(dev_path);
                 dev_path = dev_path.left(dev_path.size() - 1); //remove trailing '/'
             }
 
@@ -176,7 +176,7 @@ void RemovableHelper::updateActions()
             }
         }
 
-        if (!found)
+        if(!found)
         {
             qDebug("RemovableHelper: removed menu item: \"%s\"", qPrintable(action->data().toString()));
             m_actions->removeAction(action);
@@ -191,7 +191,7 @@ QAction *RemovableHelper::findAction(const QString &dev_path)
 {
     for(QAction *action : m_actions->actions())
     {
-        if (action->data().toString() == dev_path)
+        if(action->data().toString() == dev_path)
             return action;
     }
     return nullptr;
@@ -201,35 +201,33 @@ void RemovableHelper::addPath(const QString &path)
 {
     PlayListModel *model = PlayListManager::instance()->selectedPlayList();
 
-    for(PlayListItem *item : model->items()) // Is it already exist?
+    for(PlayListTrack *track : model->tracks()) // Is it already exist?
     {
-        if(item->isGroup())
-            continue;
-        if (dynamic_cast<PlayListTrack *>(item)->path().startsWith(path))
+        if(track->path().startsWith(path))
             return;
     }
 
-    if (path.startsWith("cdda://") && m_addTracks)
+    if(path.startsWith(u"cdda://"_s) && m_addTracks)
     {
         model->add(path);
         return;
     }
-    else if (!path.startsWith("cdda://") && m_addFiles)
+    else if(!path.startsWith(u"cdda://"_s) && m_addFiles)
         model->add(path);
 }
 
 void RemovableHelper::removePath(const QString &path)
 {
-    if ((path.startsWith("cdda://") && !m_removeTracks) ||
-            (!path.startsWith("cdda://") && !m_removeFiles)) //process settings
+    if((path.startsWith(u"cdda://"_s) && !m_removeTracks) ||
+            (!path.startsWith(u"cdda://"_s) && !m_removeFiles)) //process settings
         return;
 
     PlayListModel *model = PlayListManager::instance()->selectedPlayList();
 
     int i = 0;
-    while (model->count() > 0 && i < model->count())
+    while(model->trackCount() > 0 && i < model->trackCount())
     {
-        if (model->isTrack(i) && model->track(i)->path().startsWith(path))
+        if(model->track(i)->path().startsWith(path))
             model->removeTrack(i);
         else
             ++i;
@@ -239,6 +237,6 @@ void RemovableHelper::removePath(const QString &path)
 bool RemovableHelper::isAudioCd(const QString &path)
 {
     QDir dir(path);
-    return !dir.entryInfoList(QStringList() << "*.cda").isEmpty();
+    return !dir.entryInfoList({ u"*.cda"_s }).isEmpty();
 }
 

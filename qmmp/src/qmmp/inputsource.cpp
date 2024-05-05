@@ -251,7 +251,7 @@ void InputSource::setEnabled(InputSourceFactory *factory, bool enable)
 
     m_disabledNames.removeDuplicates();
     QSettings settings;
-    settings.setValue("Transports/disabled_plugins", m_disabledNames);
+    settings.setValue("Transports/disabled_plugins"_L1, m_disabledNames);
 }
 
 bool InputSource::isEnabled(const InputSourceFactory *factory)

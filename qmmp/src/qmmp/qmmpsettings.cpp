@@ -246,7 +246,7 @@ void QmmpSettings::sync()
         //replaygain settings
         settings.beginGroup(u"ReplayGain"_s);
         settings.setValue(u"mode"_s, m_rg_mode);
-        settings.setValue(u"preamp", m_rg_preamp);
+        settings.setValue(u"preamp"_s, m_rg_preamp);
         settings.setValue(u"default_gain"_s, m_rg_defaut_gain);
         settings.setValue(u"prevent_clipping"_s, m_rg_prevent_clipping);
         settings.endGroup();
