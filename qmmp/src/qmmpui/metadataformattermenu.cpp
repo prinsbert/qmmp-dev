@@ -58,7 +58,9 @@ MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
     else if(type == GROUP_EXTRA_ROW_MENU)
     {
         addAction(tr("Duration"))->setData(u"%l"_s);
-        addAction(tr("Year | Duration | Bitrate"))->setData(u"%y | %l | %{bitrate} kbps"_s);
+        addAction(tr("Duration | Format | Bitrate"))->setData(tr("%l | %{format} | %{bitrate} kbps"));
+        addAction(tr("Duration | Format | Bitrate | Sample rate "))->setData(tr("%l | %{format} | %{bitrate} kbps | %{samplerate} Hz"));
+        addAction(tr("Year | Duration | Bitrate"))->setData(tr("%y | %l | %{bitrate} kbps"));
     }
     addAction(tr("Parent Directory Name"))->setData(u"%dir(0)"_s);
     addAction(tr("Parent Directory Path"))->setData(u"%dir"_s);
