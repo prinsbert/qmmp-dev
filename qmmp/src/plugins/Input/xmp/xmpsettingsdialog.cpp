@@ -50,9 +50,10 @@ XmpSettingsDialog::XmpSettingsDialog(QWidget *parent)
     m_ui->lowPassCheckBox->setChecked(settings.value(u"lowpass"_s, false).toBool());
     m_ui->vblankCheckBox->setChecked(settings.value(u"vblank"_s, false).toBool());
     m_ui->fx9BugCheckBox->setChecked(settings.value(u"fx9bug"_s, false).toBool());
+    m_ui->fixLoopCheckBox->setChecked(settings.value(u"fixlopp"_s, false).toBool());
+    m_ui->a500CheckBox->setChecked(settings.value(u"a500"_s, false).toBool());
     settings.endGroup();
 }
-
 
 XmpSettingsDialog::~XmpSettingsDialog()
 {
@@ -65,15 +66,13 @@ void XmpSettingsDialog::writeSettings()
     settings.beginGroup(u"Xmp"_s);
     settings.setValue(u"amp_factor"_s, m_ui->ampFactorSpinBox->value());
     settings.setValue(u"stereo_mix"_s, m_ui->stereoMixingSpinBox->value());
-    int index = m_ui->intTypeComboBox->currentIndex();
-    if(index >= 0)
-        settings.setValue(u"interpolation"_s, m_ui->intTypeComboBox->itemData(index));
-    index = m_ui->srateComboBox->currentIndex();
-    if(index >= 0)
-        settings.setValue(u"sample_rate"_s, m_ui->srateComboBox->itemData(index));
+    settings.setValue(u"interpolation"_s, m_ui->intTypeComboBox->currentData());
+    settings.setValue(u"sample_rate"_s, m_ui->srateComboBox->currentData());
     settings.setValue(u"lowpass"_s, m_ui->lowPassCheckBox->isChecked());
     settings.setValue(u"vblank"_s, m_ui->vblankCheckBox->isChecked());
     settings.setValue(u"fx9bug"_s, m_ui->fx9BugCheckBox->isChecked());
+    settings.setValue(u"fixlopp"_s, m_ui->fixLoopCheckBox->isChecked());
+    settings.setValue(u"a500"_s, m_ui->a500CheckBox->isChecked());
     settings.endGroup();
     //apply settings for the created decoder
     if (DecoderXmp::instance())
