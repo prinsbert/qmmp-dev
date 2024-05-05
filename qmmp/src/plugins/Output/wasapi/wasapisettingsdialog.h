@@ -18,25 +18,29 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef WASAPISETTINGSDIALOG_H
+#define WASAPISETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
 
-class SettingsDialog : public QDialog
+namespace Ui {
+class WASAPISettingsDialog;
+}
+
+class WASAPISettingsDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit WASAPISettingsDialog(QWidget *parent = nullptr);
+    ~WASAPISettingsDialog();
 
 public slots:
     void accept() override;
 
 private:
     void enumDevices();
-    Ui::SettingsDialog m_ui;
+    Ui::WASAPISettingsDialog *m_ui;
 
 };
 
-#endif // SETTINGSDIALOG_H
+#endif // WASAPISETTINGSDIALOG_H

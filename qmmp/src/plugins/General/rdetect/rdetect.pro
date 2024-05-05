@@ -2,15 +2,16 @@ include(../../plugins.pri)
 
 TARGET = $$PLUGINS_PREFIX/General/rdetect
 
-HEADERS += rdetectfactory.h \ 
-           removablehelper.h \
-           settingsdialog.h
+HEADERS += rdetectfactory.h \
+    rdetectsettingsdialog.h \
+           removablehelper.h
 
-SOURCES += rdetectfactory.cpp \ 
-           removablehelper.cpp \
-           settingsdialog.cpp
+SOURCES += rdetectfactory.cpp \
+    rdetectsettingsdialog.cpp \
+           removablehelper.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    rdetectsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

@@ -4,11 +4,11 @@ TARGET = $$PLUGINS_PREFIX/Output/wasapi
 
 HEADERS += outputwasapifactory.h \
            outputwasapi.h \
-    settingsdialog.h
+           wasapisettingsdialog.h
 
 SOURCES += outputwasapifactory.cpp \
            outputwasapi.cpp \
-    settingsdialog.cpp
+           wasapisettingsdialog.cpp
 
 RESOURCES = translations/translations.qrc
 
@@ -18,4 +18,4 @@ target.path = $$PLUGIN_DIR/Output
 INSTALLS += target
 
 FORMS += \
-    settingsdialog.ui
+    wasapisettingsdialog.ui

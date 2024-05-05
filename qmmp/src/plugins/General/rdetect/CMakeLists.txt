@@ -10,8 +10,8 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 SET(librdetect_SRCS
     rdetectfactory.cpp
     removablehelper.cpp
-    settingsdialog.cpp
-    settingsdialog.ui
+    rdetectsettingsdialog.cpp
+    rdetectsettingsdialog.ui
     translations/translations.qrc
 )
 

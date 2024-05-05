@@ -19,8 +19,8 @@ CHECK_INCLUDE_FILE(Audioclient.h WASAPI_FOUND)
 SET(libwasapi_SRCS
   outputwasapi.cpp
   outputwasapifactory.cpp
-  settingsdialog.cpp
-  settingsdialog.ui
+  wasapisettingsdialog.cpp
+  wasapisettingsdialog.ui
   translations/translations.qrc
 )
 

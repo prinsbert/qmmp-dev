@@ -17,39 +17,32 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#include <QSettings>
-#include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#ifndef RDETECTSETTINGSDIALOG_H
+#define RDETECTSETTINGSDIALOG_H
 
-SettingsDialog::SettingsDialog(QWidget *parent)
-        : QDialog(parent)
-{
-    m_ui.setupUi(this);
-    QSettings settings;
-    settings.beginGroup("rdetect"_L1);
-    m_ui.cdGroupBox->setChecked(settings.value("cda"_L1, true).toBool());
-    m_ui.addTracksCheckBox->setChecked(settings.value("add_tracks"_L1, false).toBool());
-    m_ui.removeTracksCheckBox->setChecked(settings.value("remove_tracks"_L1, false).toBool());
-    m_ui.removableGroupBox->setChecked(settings.value("removable"_L1, true).toBool());
-    m_ui.addFilesCheckBox->setChecked(settings.value("add_files"_L1, false).toBool());
-    m_ui.removeFilesCheckBox->setChecked(settings.value("remove_files"_L1, false).toBool());
-    settings.endGroup();
+#include <QDialog>
+
+namespace Ui {
+class RDetectSettingsDialog;
 }
 
-
-SettingsDialog::~SettingsDialog()
-{}
-
-void SettingsDialog::accept()
+/**
+    @author Ilya Kotov <forkotov02@ya.ru>
+*/
+class RDetectSettingsDialog : public QDialog
 {
-    QSettings settings;
-    settings.beginGroup("rdetect"_L1);
-    settings.setValue("cda"_L1, m_ui.cdGroupBox->isChecked());
-    settings.setValue("add_tracks"_L1, m_ui.addTracksCheckBox->isChecked());
-    settings.setValue("remove_tracks"_L1, m_ui.removeTracksCheckBox->isChecked());
-    settings.setValue("removable"_L1, m_ui.removableGroupBox->isChecked());
-    settings.setValue("add_files"_L1, m_ui.addFilesCheckBox->isChecked());
-    settings.setValue("remove_files"_L1, m_ui.removeFilesCheckBox->isChecked());
-    settings.endGroup();
-    QDialog::accept();
-}
+Q_OBJECT
+public:
+    explicit RDetectSettingsDialog(QWidget *parent = nullptr);
+
+    ~RDetectSettingsDialog();
+
+
+public slots:
+    virtual void accept() override;
+
+private:
+    Ui::RDetectSettingsDialog *m_ui;
+};
+
+#endif
