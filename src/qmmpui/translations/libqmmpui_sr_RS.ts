@@ -1203,46 +1203,71 @@
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="61"/>
+        <source>Duration | Format | Bitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
+        <source>%l | %{format} | %{bitrate} kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <source>Duration | Format | Bitrate | Sample rate </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <source>%l | %{format} | %{bitrate} kbps | %{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Year | Duration | Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="64"/>
-        <source>Parent Directory Path</source>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>%y | %l | %{bitrate} kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="66"/>
-        <source>Bitrate</source>
-        <translation>Битски проток</translation>
-    </message>
-    <message>
-        <location filename="../metadataformattermenu.cpp" line="67"/>
-        <source>Sample Rate</source>
+        <source>Parent Directory Path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
-        <source>Number of Channels</source>
-        <translation type="unfinished"></translation>
+        <source>Bitrate</source>
+        <translation>Битски проток</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="69"/>
-        <source>Sample Size</source>
+        <source>Sample Rate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
+        <source>Number of Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="71"/>
+        <source>Sample Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Format</source>
         <translation>Формат</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="71"/>
+        <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Decoder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="74"/>
+        <location filename="../metadataformattermenu.cpp" line="76"/>
         <source>File Size</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1282,7 +1307,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Parent Directory Name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1337,6 +1362,11 @@
 </context>
 <context>
     <name>QmmpUiSettings</name>
+    <message>
+        <location filename="../qmmpuisettings.cpp" line="39"/>
+        <source>%l | %{format} | %{bitrate} kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
         <source>Playlist</source>
