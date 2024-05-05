@@ -152,28 +152,29 @@
         <translation>편집(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="136"/>
+        <location filename="../streamwindow.cpp" line="137"/>
+        <location filename="../streamwindow.cpp" line="140"/>
         <source>&amp;Remove</source>
         <translation>제거(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="148"/>
+        <location filename="../streamwindow.cpp" line="153"/>
         <source>Done</source>
         <translation>완료</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="151"/>
-        <location filename="../streamwindow.cpp" line="152"/>
+        <location filename="../streamwindow.cpp" line="156"/>
+        <location filename="../streamwindow.cpp" line="157"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="171"/>
+        <location filename="../streamwindow.cpp" line="176"/>
         <source>Receiving</source>
         <translation>받는 중</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="274"/>
+        <location filename="../streamwindow.cpp" line="279"/>
         <source>Edit Stream</source>
         <translation>스트림 편집</translation>
     </message>

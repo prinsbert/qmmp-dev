@@ -9,22 +9,22 @@
         <translation>WaveOut 플러그인</translation>
     </message>
     <message>
-        <location filename="../outputwaveoutfactory.cpp" line="60"/>
+        <location filename="../outputwaveoutfactory.cpp" line="61"/>
         <source>About WaveOut Output Plugin</source>
         <translation>WaveOut 출력 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../outputwaveoutfactory.cpp" line="61"/>
+        <location filename="../outputwaveoutfactory.cpp" line="62"/>
         <source>Qmmp WaveOut Output Plugin</source>
         <translation>Qmmp WaveOut 출력 플러그인</translation>
     </message>
     <message>
-        <location filename="../outputwaveoutfactory.cpp" line="62"/>
+        <location filename="../outputwaveoutfactory.cpp" line="63"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../outputwaveoutfactory.cpp" line="63"/>
+        <location filename="../outputwaveoutfactory.cpp" line="64"/>
         <source>Based on aacDECdrop player</source>
         <translation>aacDECdrop 재생기에 기반함</translation>
     </message>

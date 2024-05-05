@@ -9,17 +9,17 @@
         <translation>DirectSound Plugin</translation>
     </message>
     <message>
-        <location filename="../outputdirectsoundfactory.cpp" line="52"/>
+        <location filename="../outputdirectsoundfactory.cpp" line="53"/>
         <source>About DirectSound Output Plugin</source>
         <translation>Tietoja: DirectSound Output Plugin</translation>
     </message>
     <message>
-        <location filename="../outputdirectsoundfactory.cpp" line="53"/>
+        <location filename="../outputdirectsoundfactory.cpp" line="54"/>
         <source>Qmmp DirectSound Output Plugin</source>
         <translation>Qmmp DirectSound Output Plugin</translation>
     </message>
     <message>
-        <location filename="../outputdirectsoundfactory.cpp" line="54"/>
+        <location filename="../outputdirectsoundfactory.cpp" line="55"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Kirjoittanut: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

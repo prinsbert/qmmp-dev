@@ -1047,42 +1047,42 @@
         <translation type="unfinished">Kurzbefehl</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished">Kurzbefehle zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="58"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished">Möchten Sie die Standard-Kurzbefehle wiederherstellen?</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="70"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation type="unfinished">Wiedergabe</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="76"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation type="unfinished">Ansicht</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="82"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation type="unfinished">Lautstärke</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="88"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation type="unfinished">Wiedergabeliste</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="94"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation type="unfinished">Verschiedenes</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="102"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="101"/>
         <source>Tools</source>
         <translation type="unfinished">Werkzeuge</translation>
     </message>

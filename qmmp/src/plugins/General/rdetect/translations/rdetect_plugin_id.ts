@@ -30,6 +30,44 @@
     </message>
 </context>
 <context>
+    <name>RDetectSettingsDialog</name>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="14"/>
+        <source>Volume Detection Plugin Settings</source>
+        <translation type="unfinished">Pengaturan Plugin Deteksi Volume</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="29"/>
+        <source>CD Audio Detection</source>
+        <translation type="unfinished">Deteksi Audio CD</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="38"/>
+        <source>Add tracks to playlist automatically</source>
+        <translation type="unfinished">Tambah track ke daftarmain secara otomatis</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="45"/>
+        <source>Remove tracks from playlist automatically</source>
+        <translation type="unfinished">Buang track dari daftarmain secara otomatis</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="55"/>
+        <source>Removable Device Detection</source>
+        <translation type="unfinished">Deteksi Perangkat Dapat-dilepas</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="64"/>
+        <source>Add files to playlist automatically</source>
+        <translation type="unfinished">Tambah file ke daftarmain secara otomatis</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="71"/>
+        <source>Remove files from playlist automatically</source>
+        <translation type="unfinished">Buang file dari daftarmain secara otomatis</translation>
+    </message>
+</context>
+<context>
     <name>RemovableHelper</name>
     <message>
         <location filename="../removablehelper.cpp" line="134"/>
@@ -40,44 +78,6 @@
         <location filename="../removablehelper.cpp" line="138"/>
         <source>Add Volume &quot;%1&quot;</source>
         <translation>Tambah Volume &quot;%1&quot;</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Volume Detection Plugin Settings</source>
-        <translation>Pengaturan Plugin Deteksi Volume</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>CD Audio Detection</source>
-        <translation>Deteksi Audio CD</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="38"/>
-        <source>Add tracks to playlist automatically</source>
-        <translation>Tambah track ke daftarmain secara otomatis</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Remove tracks from playlist automatically</source>
-        <translation>Buang track dari daftarmain secara otomatis</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Removable Device Detection</source>
-        <translation>Deteksi Perangkat Dapat-dilepas</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="64"/>
-        <source>Add files to playlist automatically</source>
-        <translation>Tambah file ke daftarmain secara otomatis</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>Remove files from playlist automatically</source>
-        <translation>Buang file dari daftarmain secara otomatis</translation>
     </message>
 </context>
 </TS>

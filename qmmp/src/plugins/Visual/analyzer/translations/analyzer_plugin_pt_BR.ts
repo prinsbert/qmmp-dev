@@ -79,12 +79,14 @@
         <translation>Queda de picos</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="359"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Tela cheia</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="359"/>
         <source>F</source>
         <translation>F</translation>
     </message>

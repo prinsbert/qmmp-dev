@@ -1047,42 +1047,42 @@
         <translation type="unfinished">快捷键</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished">重置快捷键</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="58"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished">您希望将快捷键恢复到默认值吗？</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="70"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation type="unfinished">回放</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="76"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation type="unfinished">视图</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="82"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation type="unfinished">音量</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="88"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation type="unfinished">播放列表</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="94"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation type="unfinished">其他杂项</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="102"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="101"/>
         <source>Tools</source>
         <translation type="unfinished">工具</translation>
     </message>

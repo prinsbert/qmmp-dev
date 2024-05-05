@@ -1047,42 +1047,42 @@
         <translation type="unfinished">단축키</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="56"/>
         <source>Reset Shortcuts</source>
         <translation type="unfinished">단축키 재설정</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="58"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Do you want to restore default shortcuts?</source>
         <translation type="unfinished">기본 단축키를 복원하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="70"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
         <translation type="unfinished">플레이백</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="76"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="75"/>
         <source>View</source>
         <translation type="unfinished">보기</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="82"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
         <translation type="unfinished">볼륨</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="88"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
         <translation type="unfinished">재생목록</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="94"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
         <translation type="unfinished">기타</translation>
     </message>
     <message>
-        <location filename="../qsuihotkeyeditor.cpp" line="102"/>
+        <location filename="../qsuihotkeyeditor.cpp" line="101"/>
         <source>Tools</source>
         <translation type="unfinished">도구</translation>
     </message>

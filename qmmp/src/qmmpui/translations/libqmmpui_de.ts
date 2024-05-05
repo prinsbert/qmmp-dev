@@ -158,102 +158,102 @@
         <translation>Typ:</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="87"/>
+        <location filename="../columneditor.cpp" line="86"/>
         <source>Artist</source>
         <translation>Interpret</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="88"/>
+        <location filename="../columneditor.cpp" line="87"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="92"/>
+        <location filename="../columneditor.cpp" line="91"/>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="95"/>
+        <location filename="../columneditor.cpp" line="94"/>
         <source>Genre</source>
         <translation>Genre</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="96"/>
+        <location filename="../columneditor.cpp" line="95"/>
         <source>Comment</source>
         <translation>Kommentar</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="97"/>
+        <location filename="../columneditor.cpp" line="96"/>
         <source>Composer</source>
         <translation>Komponist</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="98"/>
+        <location filename="../columneditor.cpp" line="97"/>
         <source>Duration</source>
         <translation>Abspieldauer</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="103"/>
+        <location filename="../columneditor.cpp" line="102"/>
         <source>Year</source>
         <translation>Jahr</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="102"/>
+        <location filename="../columneditor.cpp" line="101"/>
         <source>Track Index</source>
         <translation>Titelindex</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="89"/>
+        <location filename="../columneditor.cpp" line="88"/>
         <source>Artist - Album</source>
         <translation>Interpret - Album</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="90"/>
+        <location filename="../columneditor.cpp" line="89"/>
         <source>Artist - Title</source>
         <translation>Interpret - Titel</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="91"/>
+        <location filename="../columneditor.cpp" line="90"/>
         <source>Album Artist</source>
         <translation>Albuminterpret</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="93"/>
+        <location filename="../columneditor.cpp" line="92"/>
         <source>Track Number</source>
         <translation>Titelnummer</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="94"/>
+        <location filename="../columneditor.cpp" line="93"/>
         <source>Two-digit Track Number</source>
         <translation>Zweistellige Titelnummer</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="99"/>
+        <location filename="../columneditor.cpp" line="98"/>
         <source>Disc Number</source>
         <translation>Disc-Nummer</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="100"/>
+        <location filename="../columneditor.cpp" line="99"/>
         <source>File Name</source>
         <translation>Dateiname</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="101"/>
+        <location filename="../columneditor.cpp" line="100"/>
         <source>File Path</source>
         <translation>Dateipfad</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="104"/>
+        <location filename="../columneditor.cpp" line="103"/>
         <source>Parent Directory Name</source>
         <translation>Übergeordneter Verzeichnisname</translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="105"/>
+        <location filename="../columneditor.cpp" line="104"/>
         <source>Parent Directory Path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../columneditor.cpp" line="106"/>
+        <location filename="../columneditor.cpp" line="105"/>
         <source>Custom</source>
         <translation>Benutzerdefiniert</translation>
     </message>
@@ -972,127 +972,127 @@
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="259"/>
+        <location filename="../detailsdialog.cpp" line="257"/>
         <source>Cover</source>
         <translation>Hülle</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="285"/>
+        <location filename="../detailsdialog.cpp" line="283"/>
         <source>Lyrics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="305"/>
+        <location filename="../detailsdialog.cpp" line="303"/>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="306"/>
+        <location filename="../detailsdialog.cpp" line="304"/>
         <source>Artist</source>
         <translation>Interpret</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="307"/>
+        <location filename="../detailsdialog.cpp" line="305"/>
         <source>Album artist</source>
         <translation>Albuminterpret</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="308"/>
+        <location filename="../detailsdialog.cpp" line="306"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="309"/>
+        <location filename="../detailsdialog.cpp" line="307"/>
         <source>Comment</source>
         <translation>Kommentar</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="310"/>
+        <location filename="../detailsdialog.cpp" line="308"/>
         <source>Genre</source>
         <translation>Genre</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="311"/>
+        <location filename="../detailsdialog.cpp" line="309"/>
         <source>Composer</source>
         <translation>Komponent</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="312"/>
+        <location filename="../detailsdialog.cpp" line="310"/>
         <source>Year</source>
         <translation>Jahr</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="313"/>
+        <location filename="../detailsdialog.cpp" line="311"/>
         <source>Track</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="314"/>
+        <location filename="../detailsdialog.cpp" line="312"/>
         <source>Disc number</source>
         <translation>CD-Nummer</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="333"/>
+        <location filename="../detailsdialog.cpp" line="331"/>
         <source>Duration</source>
         <translation>Abspieldauer</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="336"/>
+        <location filename="../detailsdialog.cpp" line="334"/>
         <source>Bitrate</source>
         <translation>Bitrate</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="336"/>
+        <location filename="../detailsdialog.cpp" line="334"/>
         <source>kbps</source>
         <translation>kbit/s</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Sample rate</source>
         <translation>Abtastrate</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="337"/>
+        <location filename="../detailsdialog.cpp" line="335"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="338"/>
+        <location filename="../detailsdialog.cpp" line="336"/>
         <source>Channels</source>
         <translation>Kanäle</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>Sample size</source>
         <translation>Abtastgröße</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="339"/>
+        <location filename="../detailsdialog.cpp" line="337"/>
         <source>bits</source>
         <translation>Bit</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="340"/>
+        <location filename="../detailsdialog.cpp" line="338"/>
         <source>Format name</source>
         <translation>Formatname</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="341"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>File size</source>
         <translation>Dateigröße</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="341"/>
+        <location filename="../detailsdialog.cpp" line="339"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="385"/>
+        <location filename="../detailsdialog.cpp" line="383"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../detailsdialog.cpp" line="385"/>
+        <location filename="../detailsdialog.cpp" line="383"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
@@ -1141,148 +1141,148 @@
 <context>
     <name>MetaDataFormatterMenu</name>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="28"/>
+        <location filename="../metadataformattermenu.cpp" line="27"/>
         <source>Artist</source>
         <translation>Interpret</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="29"/>
+        <location filename="../metadataformattermenu.cpp" line="28"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="30"/>
+        <location filename="../metadataformattermenu.cpp" line="29"/>
         <source>Album Artist</source>
         <translation>Albuminterpret</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="33"/>
+        <location filename="../metadataformattermenu.cpp" line="32"/>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="34"/>
+        <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Track Number</source>
         <translation>Titelnummer</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="35"/>
+        <location filename="../metadataformattermenu.cpp" line="34"/>
         <source>Two-digit Track Number</source>
         <translation>Zweistellige Titelnummer</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="39"/>
+        <location filename="../metadataformattermenu.cpp" line="38"/>
         <source>Track Index</source>
         <translation>Titelindex</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="41"/>
+        <location filename="../metadataformattermenu.cpp" line="40"/>
         <source>Genre</source>
         <translation>Genre</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="42"/>
+        <location filename="../metadataformattermenu.cpp" line="41"/>
         <source>Comment</source>
         <translation>Kommentar</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="43"/>
+        <location filename="../metadataformattermenu.cpp" line="42"/>
         <source>Composer</source>
         <translation>Komponist</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="48"/>
-        <location filename="../metadataformattermenu.cpp" line="61"/>
+        <location filename="../metadataformattermenu.cpp" line="47"/>
+        <location filename="../metadataformattermenu.cpp" line="60"/>
         <source>Duration</source>
         <translation>Abspieldauer</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="56"/>
+        <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - Album</source>
         <translation type="unfinished">Interpret - Album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Year | Duration | Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Parent Directory Path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="67"/>
+        <location filename="../metadataformattermenu.cpp" line="66"/>
         <source>Bitrate</source>
         <translation>Bitrate</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="68"/>
+        <location filename="../metadataformattermenu.cpp" line="67"/>
         <source>Sample Rate</source>
         <translation>Abtastrate</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="69"/>
+        <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Number of Channels</source>
         <translation>Anzahl der Kanäle</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="70"/>
+        <location filename="../metadataformattermenu.cpp" line="69"/>
         <source>Sample Size</source>
         <translation>Abtastgröße</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="71"/>
+        <location filename="../metadataformattermenu.cpp" line="70"/>
         <source>Format</source>
         <translation>Format</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="72"/>
+        <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Decoder</source>
         <translation>Dekoder</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="75"/>
+        <location filename="../metadataformattermenu.cpp" line="74"/>
         <source>File Size</source>
         <translation>Dateigröße</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="44"/>
+        <location filename="../metadataformattermenu.cpp" line="43"/>
         <source>Disc Number</source>
         <translation>Disc-Nummer</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="49"/>
+        <location filename="../metadataformattermenu.cpp" line="48"/>
         <source>File Name</source>
         <translation>Dateiname</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="50"/>
+        <location filename="../metadataformattermenu.cpp" line="49"/>
         <source>File Path</source>
         <translation>Dateipfad</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="45"/>
+        <location filename="../metadataformattermenu.cpp" line="44"/>
         <source>Year</source>
         <translation>Jahr</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="52"/>
+        <location filename="../metadataformattermenu.cpp" line="51"/>
         <source>Condition</source>
         <translation>Zustand</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="51"/>
+        <location filename="../metadataformattermenu.cpp" line="50"/>
         <source>Artist - Title</source>
         <translation>Interpret - Titel</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="57"/>
+        <location filename="../metadataformattermenu.cpp" line="56"/>
         <source>Artist - [Year] Album</source>
         <translation>Interpret - [Jahr] Album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="64"/>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Parent Directory Name</source>
         <translation>Übergeordneter Verzeichnisname</translation>
     </message>
@@ -1346,7 +1346,7 @@
 <context>
     <name>QtFileDialogFactory</name>
     <message>
-        <location filename="../qtfiledialog.cpp" line="36"/>
+        <location filename="../qtfiledialog.cpp" line="35"/>
         <source>Qt File Dialog</source>
         <translation>Qt Datei-Dialog</translation>
     </message>

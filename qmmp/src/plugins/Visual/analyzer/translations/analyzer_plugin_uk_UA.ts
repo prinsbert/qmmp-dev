@@ -79,12 +79,14 @@
         <translation>Падіння піків</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="359"/>
         <source>F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="356"/>
+        <location filename="../analyzer.cpp" line="357"/>
+        <location filename="../analyzer.cpp" line="359"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Повний екран</translation>
     </message>

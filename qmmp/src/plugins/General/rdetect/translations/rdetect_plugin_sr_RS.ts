@@ -30,6 +30,44 @@
     </message>
 </context>
 <context>
+    <name>RDetectSettingsDialog</name>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="14"/>
+        <source>Volume Detection Plugin Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="29"/>
+        <source>CD Audio Detection</source>
+        <translation type="unfinished">Откривање музичког диска</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="38"/>
+        <source>Add tracks to playlist automatically</source>
+        <translation type="unfinished">Аутоматски додај нумере на листу</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="45"/>
+        <source>Remove tracks from playlist automatically</source>
+        <translation type="unfinished">Аутоматски уклони нумере са листе</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="55"/>
+        <source>Removable Device Detection</source>
+        <translation type="unfinished">Откривање уклоњивих уређаја</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="64"/>
+        <source>Add files to playlist automatically</source>
+        <translation type="unfinished">Аутоматски додај фајлове на листу</translation>
+    </message>
+    <message>
+        <location filename="../rdetectsettingsdialog.ui" line="71"/>
+        <source>Remove files from playlist automatically</source>
+        <translation type="unfinished">Аутоматски уклони фајлове са листе</translation>
+    </message>
+</context>
+<context>
     <name>RemovableHelper</name>
     <message>
         <location filename="../removablehelper.cpp" line="134"/>
@@ -40,44 +78,6 @@
         <location filename="../removablehelper.cpp" line="138"/>
         <source>Add Volume &quot;%1&quot;</source>
         <translation>Додај складишни простор „%1“</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <location filename="../settingsdialog.ui" line="14"/>
-        <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="29"/>
-        <source>CD Audio Detection</source>
-        <translation>Откривање музичког диска</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="38"/>
-        <source>Add tracks to playlist automatically</source>
-        <translation>Аутоматски додај нумере на листу</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="45"/>
-        <source>Remove tracks from playlist automatically</source>
-        <translation>Аутоматски уклони нумере са листе</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="55"/>
-        <source>Removable Device Detection</source>
-        <translation>Откривање уклоњивих уређаја</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="64"/>
-        <source>Add files to playlist automatically</source>
-        <translation>Аутоматски додај фајлове на листу</translation>
-    </message>
-    <message>
-        <location filename="../settingsdialog.ui" line="71"/>
-        <source>Remove files from playlist automatically</source>
-        <translation>Аутоматски уклони фајлове са листе</translation>
     </message>
 </context>
 </TS>
