@@ -1203,46 +1203,71 @@
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="61"/>
+        <source>Duration | Format | Bitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
+        <source>%l | %{format} | %{bitrate} kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <source>Duration | Format | Bitrate | Sample rate </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <source>%l | %{format} | %{bitrate} kbps | %{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Year | Duration | Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="64"/>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>%y | %l | %{bitrate} kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="66"/>
         <source>Parent Directory Path</source>
         <translation>상위 디렉토리 경로</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="66"/>
+        <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Bitrate</source>
         <translation>비트레이트</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="67"/>
+        <location filename="../metadataformattermenu.cpp" line="69"/>
         <source>Sample Rate</source>
         <translation>샘플 레이트</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="68"/>
+        <location filename="../metadataformattermenu.cpp" line="70"/>
         <source>Number of Channels</source>
         <translation>채널 수</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="69"/>
+        <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Sample Size</source>
         <translation>샘플 크기</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="70"/>
+        <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Format</source>
         <translation>형식</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="71"/>
+        <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Decoder</source>
         <translation>디코더</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="74"/>
+        <location filename="../metadataformattermenu.cpp" line="76"/>
         <source>File Size</source>
         <translation>파일 크기</translation>
     </message>
@@ -1282,7 +1307,7 @@
         <translation>아티스트 - [연도] 앨범</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Parent Directory Name</source>
         <translation>상위 디렉토리 이름</translation>
     </message>
@@ -1337,6 +1362,11 @@
 </context>
 <context>
     <name>QmmpUiSettings</name>
+    <message>
+        <location filename="../qmmpuisettings.cpp" line="39"/>
+        <source>%l | %{format} | %{bitrate} kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
         <source>Playlist</source>

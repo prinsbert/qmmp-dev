@@ -140,6 +140,16 @@
         <translation type="unfinished">サンプルレート:</translation>
     </message>
     <message>
+        <location filename="../xmpsettingsdialog.ui" line="109"/>
+        <source>Emulate sample loop bug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../xmpsettingsdialog.ui" line="116"/>
+        <source>Use Paula mixer in Amiga modules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
         <translation type="unfinished">22050 Hz</translation>
