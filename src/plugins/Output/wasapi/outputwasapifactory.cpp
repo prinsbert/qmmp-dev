@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include <QMessageBox>
-#include "settingsdialog.h"
+#include "wasapisettingsdialog.h"
 #include "outputwasapi.h"
 #include "outputwasapifactory.h"
 
@@ -45,7 +45,7 @@ Volume *OutputWASAPIFactory::createVolume()
 
 QDialog *OutputWASAPIFactory::createSettings(QWidget* parent)
 {
-    return new SettingsDialog(parent);
+    return new WASAPISettingsDialog(parent);
 }
 
 void OutputWASAPIFactory::showAbout(QWidget *parent)
