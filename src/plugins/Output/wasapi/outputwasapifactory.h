@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -37,7 +37,7 @@ public:
     OutputProperties properties() const override;
     Output* create() override;
     Volume *createVolume() override;
-    void createSettings(QWidget* parent) override;
+    QDialog *createSettings(QWidget *parent) override;
     void showAbout(QWidget *parent) override;
     QString translation() const override;
 };

@@ -46,8 +46,8 @@ FileOps::FileOps(QObject *parent) : QObject(parent)
     separator2->setSeparator(true);
     //load settings
     QSettings settings;
-    settings.beginGroup("FileOps");
-    if(!settings.value("name_0").isNull())
+    settings.beginGroup("FileOps"_L1);
+    if(!settings.value("name_0"_L1).isNull())
         UiHelper::instance()->addAction(separator1, UiHelper::PLAYLIST_MENU);
     else
         return;
@@ -383,8 +383,8 @@ void FileOps::execute(const QList<PlayListTrack *> &tracks, const MetaDataFormat
         qDebug("FileOps: exec command: %s", qPrintable(command));
 
 #ifdef Q_OS_WIN
-        QStringList args = { "/C", command };
-        QProcess::startDetached("cmd.exe", args);
+        QStringList args = { u"/C"_s, command };
+        QProcess::startDetached(u"cmd.exe"_s, args);
 #else
         QStringList args = { u"-c"_s, command };
         QProcess::startDetached(u"sh"_s, args);

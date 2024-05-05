@@ -29,7 +29,7 @@ OutputProperties OutputWaveOutFactory::properties() const
     properties.name = tr("WaveOut Plugin");
     properties.hasAbout = true;
     properties.hasSettings = false;
-    properties.shortName = "waveout";
+    properties.shortName = "waveout"_L1;
     return properties;
 }
 
@@ -50,15 +50,16 @@ Volume *OutputWaveOutFactory::createVolume()
     return vol;
 }
 
-void OutputWaveOutFactory::createSettings(QWidget* parent)
+QDialog *OutputWaveOutFactory::createSettings(QWidget *parent)
 {
    Q_UNUSED(parent);
+    return nullptr;
 }
 
 void OutputWaveOutFactory::showAbout(QWidget *parent)
 {
    QMessageBox::about (parent, tr("About WaveOut Output Plugin"),
-                        tr("Qmmp WaveOut Output Plugin")+QChar::LineFeed+
+                        tr("Qmmp WaveOut Output Plugin") + QChar::LineFeed+
                         tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
                         tr("Based on aacDECdrop player"));
 }

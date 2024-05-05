@@ -29,7 +29,7 @@ OutputProperties OutputWASAPIFactory::properties() const
     properties.name = tr("WASAPI Plugin");
     properties.hasAbout = true;
     properties.hasSettings = true;
-    properties.shortName = "wasapi";
+    properties.shortName = "wasapi"_L1;
     return properties;
 }
 
@@ -43,16 +43,15 @@ Volume *OutputWASAPIFactory::createVolume()
     return new VolumeWASAPI;
 }
 
-void OutputWASAPIFactory::createSettings(QWidget* parent)
+QDialog *OutputWASAPIFactory::createSettings(QWidget* parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
-    s->show();
+    return new SettingsDialog(parent);
 }
 
 void OutputWASAPIFactory::showAbout(QWidget *parent)
 {
-   QMessageBox::about (parent, tr("About WASAPI Output Plugin"),
-                        tr("Qmmp WASAPI Output Plugin")+QChar::LineFeed+
+    QMessageBox::about(parent, tr("About WASAPI Output Plugin"),
+                       tr("Qmmp WASAPI Output Plugin") + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

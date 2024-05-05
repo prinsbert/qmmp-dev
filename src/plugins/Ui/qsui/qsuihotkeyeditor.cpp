@@ -20,12 +20,11 @@
 
 #include <QMessageBox>
 #include <qmmpui/shortcutdialog.h>
+#include <qmmp/qmmp.h>
 #include "qsuiactionmanager.h"
 #include "qsuihotkeyeditor.h"
 #include "qsuishortcutitem.h"
 #include "ui_qsuihotkeyeditor.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 QSUiHotkeyEditor::QSUiHotkeyEditor(QWidget *parent) : QWidget(parent), m_ui(new Ui::QSUiHotkeyEditor)
 {

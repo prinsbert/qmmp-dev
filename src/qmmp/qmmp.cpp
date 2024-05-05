@@ -44,9 +44,9 @@ QString Qmmp::configDir()
     if(m_configDir.isEmpty())
     {
         if(isPortable())
-            return m_appDir + "/.qmmp";
+            return m_appDir + u"/.qmmp"_s;
 
-        return  QDir::homePath() +"/.qmmp";
+        return  QDir::homePath() + u"/.qmmp"_s;
     }
 #else
     if(m_configDir.isEmpty())
@@ -99,7 +99,7 @@ QString Qmmp::pluginPath()
 #ifdef QMMP_PLUGIN_DIR
     QDir dir(QStringLiteral(QMMP_PLUGIN_DIR));
 #elif defined(Q_OS_WIN) && !defined(Q_OS_CYGWIN)
-    QDir dir(qApp->applicationDirPath() + "/plugins");
+    QDir dir(qApp->applicationDirPath() + u"/plugins"_s);
 #else
     QDir dir(fallbackPath);
 #endif

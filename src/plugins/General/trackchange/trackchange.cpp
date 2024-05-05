@@ -122,7 +122,7 @@ void TrackChange::onAppExit()
     if(!m_appExitCommand.isEmpty())
     {
 #ifdef Q_OS_WIN
-        QProcess::startDetached(QString("cmd.exe /C %1").arg(m_appExitCommand));
+        QProcess::startDetached(QStringLiteral("cmd.exe /C %1").arg(m_appExitCommand));
 #else
         QStringList args = { u"-c"_s, m_appExitCommand };
         QProcess::startDetached(u"sh"_s, args);

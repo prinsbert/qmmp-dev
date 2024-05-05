@@ -31,10 +31,10 @@ AnalyzerSettingsDialog::AnalyzerSettingsDialog(QWidget *parent) : QDialog(parent
     settings.beginGroup("Analyzer"_L1);
     m_ui->colorWidget1->setColor(settings.value("color1"_L1, u"Green"_s).toString());
     m_ui->colorWidget2->setColor(settings.value("color2"_L1, u"Yellow"_s).toString());
-    m_ui->colorWidget3->setColor(settings.value("color3", u"Red"_s).toString());
+    m_ui->colorWidget3->setColor(settings.value("color3"_L1, u"Red"_s).toString());
     m_ui->bgColorWidget->setColor(settings.value("bg_color"_L1, u"Black"_s).toString());
     m_ui->peakColorWidget->setColor(settings.value("peak_color"_L1, u"Cyan"_s).toString());
-    QSize cells_size = settings.value("cells_size", QSize(15, 6)).toSize();
+    QSize cells_size = settings.value("cells_size"_L1, QSize(15, 6)).toSize();
     m_ui->cellWidthSpinBox->setValue(cells_size.width());
     m_ui->cellHeightSpinBox->setValue(cells_size.height());
     settings.endGroup();

@@ -58,7 +58,7 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
     if(m_using_rusxmms || codecName.contains("UTF") || codecName.isEmpty())
         codecName = "UTF-8";
 
-    if(!m_using_rusxmms && settings.value("detect_encoding", false).toBool())
+    if(!m_using_rusxmms && settings.value("detect_encoding"_L1, false).toBool())
     {
         QByteArray detectedCharset = TagExtractor::detectCharset(&tag);
         if(!detectedCharset.isEmpty())

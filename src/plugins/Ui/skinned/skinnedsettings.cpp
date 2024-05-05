@@ -98,9 +98,9 @@ void SkinnedSettings::on_mainFontButton_clicked()
 void SkinnedSettings::on_resetFontsButton_clicked()
 {
     QSettings settings;
-    settings.remove("Skinned/pl_font");
-    settings.remove("Skinned/pl_header_font");
-    settings.remove("Skinned/mw_font");
+    settings.remove("Skinned/pl_font"_L1);
+    settings.remove("Skinned/pl_header_font"_L1);
+    settings.remove("Skinned/mw_font"_L1);
     loadFonts();
 }
 
@@ -127,22 +127,22 @@ void SkinnedSettings::loadFonts()
     QFont font;
     QSettings settings;
 
-    QString fontname = settings.value ("Skinned/pl_font", qApp->font().toString()).toString();
+    QString fontname = settings.value ("Skinned/pl_font"_L1, qApp->font().toString()).toString();
     font.fromString(fontname);
     m_ui->plFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize ()));
     m_ui->plFontLabel->setFont(font);
 
-    fontname = settings.value ("Skinned/pl_header_font", qApp->font().toString()).toString();
+    fontname = settings.value("Skinned/pl_header_font"_L1, qApp->font().toString()).toString();
     font.fromString(fontname);
     m_ui->headerFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize ()));
     m_ui->headerFontLabel->setFont(font);
 
-    fontname = settings.value ("Skinned/mw_font", qApp->font().toString()).toString();
+    fontname = settings.value("Skinned/mw_font"_L1, qApp->font().toString()).toString();
     font.fromString(fontname);
-    m_ui->mainFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize ()));
+    m_ui->mainFontLabel->setText (font.family() + QChar::Space + QString::number(font.pointSize ()));
     m_ui->mainFontLabel->setFont(font);
 
-    m_ui->useBitmapCheckBox->setChecked(settings.value("Skinned/bitmap_font", false).toBool());
+    m_ui->useBitmapCheckBox->setChecked(settings.value("Skinned/bitmap_font"_L1, false).toBool());
 }
 
 void SkinnedSettings::createActions()
@@ -220,87 +220,87 @@ void SkinnedSettings::addWindowTitleString(const QString &str)
 void SkinnedSettings::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Skinned");
+    settings.beginGroup("Skinned"_L1);
     //playlist
-    m_ui->protocolCheckBox->setChecked(settings.value ("pl_show_protocol", false).toBool());
-    m_ui->numbersCheckBox->setChecked(settings.value("pl_show_numbers", true).toBool());
-    m_ui->lengthsCheckBox->setChecked(settings.value("pl_show_lengths", true).toBool());
-    m_ui->alignCheckBox->setChecked(settings.value("pl_align_numbers", false).toBool());
-    m_ui->anchorCheckBox->setChecked(settings.value("pl_show_anchor", false).toBool());
-    m_ui->showSplittersCheckBox->setChecked(settings.value("pl_show_splitters", true).toBool());
-    m_ui->alternateSplitterColorCheckBox->setChecked(settings.value("pl_alt_splitter_color", false).toBool());
-    m_ui->popupCheckBox->setChecked(settings.value("pl_show_popup", false).toBool());
-    m_ui->plSeplineEdit->setText(settings.value("pl_separator", u"::"_s).toString());
-    m_ui->showNewPLCheckBox->setChecked(settings.value("pl_show_create_button", false).toBool());
+    m_ui->protocolCheckBox->setChecked(settings.value ("pl_show_protocol"_L1, false).toBool());
+    m_ui->numbersCheckBox->setChecked(settings.value("pl_show_numbers"_L1, true).toBool());
+    m_ui->lengthsCheckBox->setChecked(settings.value("pl_show_lengths"_L1, true).toBool());
+    m_ui->alignCheckBox->setChecked(settings.value("pl_align_numbers"_L1, false).toBool());
+    m_ui->anchorCheckBox->setChecked(settings.value("pl_show_anchor"_L1, false).toBool());
+    m_ui->showSplittersCheckBox->setChecked(settings.value("pl_show_splitters"_L1, true).toBool());
+    m_ui->alternateSplitterColorCheckBox->setChecked(settings.value("pl_alt_splitter_color"_L1, false).toBool());
+    m_ui->popupCheckBox->setChecked(settings.value("pl_show_popup"_L1, false).toBool());
+    m_ui->plSeplineEdit->setText(settings.value("pl_separator"_L1, u"::"_s).toString());
+    m_ui->showNewPLCheckBox->setChecked(settings.value("pl_show_create_button"_L1, false).toBool());
     //transparency
-    m_ui->mwTransparencySlider->setValue(100 - settings.value("mw_opacity", 1.0).toDouble()*100);
-    m_ui->eqTransparencySlider->setValue(100 - settings.value("eq_opacity", 1.0).toDouble()*100);
-    m_ui->plTransparencySlider->setValue(100 - settings.value("pl_opacity", 1.0).toDouble()*100);
+    m_ui->mwTransparencySlider->setValue(100 - settings.value("mw_opacity"_L1, 1.0).toDouble()*100);
+    m_ui->eqTransparencySlider->setValue(100 - settings.value("eq_opacity"_L1, 1.0).toDouble()*100);
+    m_ui->plTransparencySlider->setValue(100 - settings.value("pl_opacity"_L1, 1.0).toDouble()*100);
     //view
-    m_ui->skinCursorsCheckBox->setChecked(settings.value("skin_cursors", false).toBool());
-    m_currentSkinPath = settings.value("skin_path", SkinReader::defaultSkinPath()).toString();
+    m_ui->skinCursorsCheckBox->setChecked(settings.value("skin_cursors"_L1, false).toBool());
+    m_currentSkinPath = settings.value("skin_path"_L1, SkinReader::defaultSkinPath()).toString();
     if(!QFile::exists(m_currentSkinPath))
         m_currentSkinPath = SkinReader::defaultSkinPath();
-    m_ui->hiddenCheckBox->setChecked(settings.value("start_hidden", false).toBool());
-    m_ui->hideOnCloseCheckBox->setChecked(settings.value("hide_on_close", false).toBool());
-    m_ui->windowTitleLineEdit->setText(settings.value("window_title_format", u"%if(%p,%p - %t,%t)"_s).toString());
+    m_ui->hiddenCheckBox->setChecked(settings.value("start_hidden"_L1, false).toBool());
+    m_ui->hideOnCloseCheckBox->setChecked(settings.value("hide_on_close"_L1, false).toBool());
+    m_ui->windowTitleLineEdit->setText(settings.value("window_title_format"_L1, u"%if(%p,%p - %t,%t)"_s).toString());
     //playlist colors
-    m_ui->plSkinColorsCheckBox->setChecked(settings.value("pl_use_skin_colors", true).toBool());
-    m_ui->plBg1Color->setColor(settings.value("pl_bg1_color", u"#0d0d0d"_s).toString());
-    m_ui->plBg2Color->setColor(settings.value("pl_bg2_color", u"#0d0d0d"_s).toString());
-    m_ui->plHlColor->setColor(settings.value("pl_highlight_color", u"#2a2a2a"_s).toString());
-    m_ui->plTextNormalColor->setColor(settings.value("pl_normal_text_color", u"#5a5a5a"_s).toString());
-    m_ui->plTextCurrentColor->setColor(settings.value("pl_current_text_color", u"#407dec"_s).toString());
-    m_ui->plTextHlColor->setColor(settings.value("pl_hl_text_color", u"#5a5a5a"_s).toString());
-    m_ui->plGrBgColor->setColor(settings.value("pl_group_bg", u"#0d0d0d"_s).toString());
-    m_ui->plSplitterColor->setColor(settings.value("pl_splitter_color", u"#5a5a5a"_s).toString());
-    m_ui->plGrTextColor->setColor(settings.value("pl_group_text", u"#5a5a5a"_s).toString());
-    m_ui->plCurrentTrackBgColor->setColor(settings.value("pl_current_bg_color", u"#0d0d0d"_s).toString());
-    m_ui->plOverrideGroupBgCheckBox->setChecked(settings.value("pl_override_group_bg", false).toBool());
-    m_ui->plOverrideCurrentBgCheckBox->setChecked(settings.value("pl_override_current_bg", false).toBool());
+    m_ui->plSkinColorsCheckBox->setChecked(settings.value("pl_use_skin_colors"_L1, true).toBool());
+    m_ui->plBg1Color->setColor(settings.value("pl_bg1_color"_L1, u"#0d0d0d"_s).toString());
+    m_ui->plBg2Color->setColor(settings.value("pl_bg2_color"_L1, u"#0d0d0d"_s).toString());
+    m_ui->plHlColor->setColor(settings.value("pl_highlight_color"_L1, u"#2a2a2a"_s).toString());
+    m_ui->plTextNormalColor->setColor(settings.value("pl_normal_text_color"_L1, u"#5a5a5a"_s).toString());
+    m_ui->plTextCurrentColor->setColor(settings.value("pl_current_text_color"_L1, u"#407dec"_s).toString());
+    m_ui->plTextHlColor->setColor(settings.value("pl_hl_text_color"_L1, u"#5a5a5a"_s).toString());
+    m_ui->plGrBgColor->setColor(settings.value("pl_group_bg"_L1, u"#0d0d0d"_s).toString());
+    m_ui->plSplitterColor->setColor(settings.value("pl_splitter_color"_L1, u"#5a5a5a"_s).toString());
+    m_ui->plGrTextColor->setColor(settings.value("pl_group_text"_L1, u"#5a5a5a"_s).toString());
+    m_ui->plCurrentTrackBgColor->setColor(settings.value("pl_current_bg_color"_L1, u"#0d0d0d"_s).toString());
+    m_ui->plOverrideGroupBgCheckBox->setChecked(settings.value("pl_override_group_bg"_L1, false).toBool());
+    m_ui->plOverrideCurrentBgCheckBox->setChecked(settings.value("pl_override_current_bg"_L1, false).toBool());
     settings.endGroup();
 }
 
 void SkinnedSettings::writeSettings()
 {
     QSettings settings;
-    settings.beginGroup("Skinned");
-    settings.setValue("pl_show_protocol", m_ui->protocolCheckBox->isChecked());
-    settings.setValue("pl_show_numbers", m_ui->numbersCheckBox->isChecked());
-    settings.setValue("pl_show_lengths", m_ui->lengthsCheckBox->isChecked());
-    settings.setValue("pl_align_numbers", m_ui->alignCheckBox->isChecked());
-    settings.setValue("pl_show_anchor", m_ui->anchorCheckBox->isChecked());
-    settings.setValue("pl_show_splitters", m_ui->showSplittersCheckBox->isChecked());
-    settings.setValue("pl_alt_splitter_color", m_ui->alternateSplitterColorCheckBox->isChecked());
-    settings.setValue("pl_show_popup", m_ui->popupCheckBox->isChecked());
-    settings.setValue("pl_separator", m_ui->plSeplineEdit->text());
-    settings.setValue("pl_show_create_button", m_ui->showNewPLCheckBox->isChecked());
-    settings.setValue("mw_opacity", 1.0 - (double)m_ui->mwTransparencySlider->value()/100);
-    settings.setValue("eq_opacity", 1.0 - (double)m_ui->eqTransparencySlider->value()/100);
-    settings.setValue("pl_opacity", 1.0 - (double)m_ui->plTransparencySlider->value()/100);
-    settings.setValue("bitmap_font", m_ui->useBitmapCheckBox->isChecked());
-    settings.setValue("skin_cursors", m_ui->skinCursorsCheckBox->isChecked());
-    settings.setValue("skin_path", m_currentSkinPath);
-    settings.setValue("start_hidden", m_ui->hiddenCheckBox->isChecked());
-    settings.setValue("hide_on_close", m_ui->hideOnCloseCheckBox->isChecked());
-    settings.setValue("window_title_format", m_ui->windowTitleLineEdit->text());
-    settings.setValue("mw_font", m_ui->mainFontLabel->font().toString());
-    settings.setValue("pl_font", m_ui->plFontLabel->font().toString());
-    settings.setValue("pl_header_font", m_ui->headerFontLabel->font().toString());
+    settings.beginGroup("Skinned"_L1);
+    settings.setValue("pl_show_protocol"_L1, m_ui->protocolCheckBox->isChecked());
+    settings.setValue("pl_show_numbers"_L1, m_ui->numbersCheckBox->isChecked());
+    settings.setValue("pl_show_lengths"_L1, m_ui->lengthsCheckBox->isChecked());
+    settings.setValue("pl_align_numbers"_L1, m_ui->alignCheckBox->isChecked());
+    settings.setValue("pl_show_anchor"_L1, m_ui->anchorCheckBox->isChecked());
+    settings.setValue("pl_show_splitters"_L1, m_ui->showSplittersCheckBox->isChecked());
+    settings.setValue("pl_alt_splitter_color"_L1, m_ui->alternateSplitterColorCheckBox->isChecked());
+    settings.setValue("pl_show_popup"_L1, m_ui->popupCheckBox->isChecked());
+    settings.setValue("pl_separator"_L1, m_ui->plSeplineEdit->text());
+    settings.setValue("pl_show_create_button"_L1, m_ui->showNewPLCheckBox->isChecked());
+    settings.setValue("mw_opacity"_L1, 1.0 - (double)m_ui->mwTransparencySlider->value()/100);
+    settings.setValue("eq_opacity"_L1, 1.0 - (double)m_ui->eqTransparencySlider->value()/100);
+    settings.setValue("pl_opacity"_L1, 1.0 - (double)m_ui->plTransparencySlider->value()/100);
+    settings.setValue("bitmap_font"_L1, m_ui->useBitmapCheckBox->isChecked());
+    settings.setValue("skin_cursors"_L1, m_ui->skinCursorsCheckBox->isChecked());
+    settings.setValue("skin_path"_L1, m_currentSkinPath);
+    settings.setValue("start_hidden"_L1, m_ui->hiddenCheckBox->isChecked());
+    settings.setValue("hide_on_close"_L1, m_ui->hideOnCloseCheckBox->isChecked());
+    settings.setValue("window_title_format"_L1, m_ui->windowTitleLineEdit->text());
+    settings.setValue("mw_font"_L1, m_ui->mainFontLabel->font().toString());
+    settings.setValue("pl_font"_L1, m_ui->plFontLabel->font().toString());
+    settings.setValue("pl_header_font"_L1, m_ui->headerFontLabel->font().toString());
     //playlist colors
-    settings.setValue("pl_use_skin_colors", m_ui->plSkinColorsCheckBox->isChecked());
-    settings.setValue("pl_bg1_color", m_ui->plBg1Color->colorName());
-    settings.setValue("pl_bg2_color", m_ui->plBg2Color->colorName());
-    settings.setValue("pl_highlight_color", m_ui->plHlColor->colorName());
-    settings.setValue("pl_normal_text_color", m_ui->plTextNormalColor->colorName());
-    settings.setValue("pl_current_text_color", m_ui->plTextCurrentColor->colorName());
-    settings.setValue("pl_hl_text_color", m_ui->plTextHlColor->colorName());
-    settings.setValue("pl_group_bg", m_ui->plGrBgColor->colorName());
-    settings.setValue("pl_splitter_color", m_ui->plSplitterColor->colorName());
-    settings.setValue("pl_group_text", m_ui->plGrTextColor->colorName());
-    settings.setValue("pl_current_bg_color", m_ui->plCurrentTrackBgColor->colorName());
-    settings.setValue("pl_override_group_bg", m_ui->plOverrideGroupBgCheckBox->isChecked());
-    settings.setValue("pl_override_current_bg", m_ui->plOverrideCurrentBgCheckBox->isChecked());
+    settings.setValue("pl_use_skin_colors"_L1, m_ui->plSkinColorsCheckBox->isChecked());
+    settings.setValue("pl_bg1_color"_L1, m_ui->plBg1Color->colorName());
+    settings.setValue("pl_bg2_color"_L1, m_ui->plBg2Color->colorName());
+    settings.setValue("pl_highlight_color"_L1, m_ui->plHlColor->colorName());
+    settings.setValue("pl_normal_text_color"_L1, m_ui->plTextNormalColor->colorName());
+    settings.setValue("pl_current_text_color"_L1, m_ui->plTextCurrentColor->colorName());
+    settings.setValue("pl_hl_text_color"_L1, m_ui->plTextHlColor->colorName());
+    settings.setValue("pl_group_bg"_L1, m_ui->plGrBgColor->colorName());
+    settings.setValue("pl_splitter_color"_L1, m_ui->plSplitterColor->colorName());
+    settings.setValue("pl_group_text"_L1, m_ui->plGrTextColor->colorName());
+    settings.setValue("pl_current_bg_color"_L1, m_ui->plCurrentTrackBgColor->colorName());
+    settings.setValue("pl_override_group_bg"_L1, m_ui->plOverrideGroupBgCheckBox->isChecked());
+    settings.setValue("pl_override_current_bg"_L1, m_ui->plOverrideCurrentBgCheckBox->isChecked());
     settings.endGroup();
 }
 

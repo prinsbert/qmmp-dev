@@ -278,7 +278,7 @@ void QSUiActionManager::updateToolBar(QToolBar *toolBar, const ToolBarInfo &info
     {
         if(name == QLatin1String("separator"))
         {
-            toolBar->addSeparator()->setObjectName("separator");
+            toolBar->addSeparator()->setObjectName(u"separator"_s);
             continue;
         }
         QAction *action = findChild<QAction *>(name);

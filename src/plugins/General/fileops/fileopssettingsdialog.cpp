@@ -84,7 +84,7 @@ FileOpsSettingsDialog::~FileOpsSettingsDialog()
 void FileOpsSettingsDialog::accept()
 {
     QSettings settings;
-    settings.beginGroup("FileOps");
+    settings.beginGroup("FileOps"_L1);
     //remove all previous keys
     settings.remove(QString());
     //save actions

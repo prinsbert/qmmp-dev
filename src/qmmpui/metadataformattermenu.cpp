@@ -18,9 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <qmmp/qmmp.h>
 #include "metadataformattermenu.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
     QMenu(parent)

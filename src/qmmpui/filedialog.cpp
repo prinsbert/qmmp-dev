@@ -72,7 +72,7 @@ void FileDialog::setEnabled(const FileDialogFactory *factory)
 {
     loadPlugins();
     QSettings settings;
-    settings.setValue("FileDialog", factory->properties().shortName);
+    settings.setValue("FileDialog"_L1, factory->properties().shortName);
 }
 
 bool FileDialog::isEnabled(const FileDialogFactory *factory)

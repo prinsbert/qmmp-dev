@@ -229,7 +229,7 @@ QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, Track
     if (parts & TrackInfo::MetaData)
     {
         QSettings settings;
-        settings.beginGroup("MPEG");
+        settings.beginGroup("MPEG"_L1);
 
         QList< QMap<Qmmp::MetaData, QString> > metaData;
         uint tag_array[3];

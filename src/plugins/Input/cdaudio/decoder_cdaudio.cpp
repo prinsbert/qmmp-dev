@@ -393,7 +393,7 @@ bool DecoderCDAudio::initialize()
     if (device_path.isEmpty() || device_path == "/"_L1) //try default path from config
     {
         QSettings settings;
-        device_path = settings.value("cdaudio/device").toString();
+        device_path = settings.value("cdaudio/device"_L1).toString();
         m_url = QStringLiteral("cdda://%1#%2").arg(device_path).arg(track_number);
     }
 

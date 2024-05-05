@@ -21,6 +21,7 @@
 #define NOTIFIERSETTINGSDIALOG_H
 
 #include <QDialog>
+#include <QHash>
 
 class Action;
 
@@ -50,7 +51,7 @@ private slots:
 private:
     Ui::NotifierSettingsDialog *m_ui;
     QString m_template;
-    QMap<uint, QPushButton*> m_buttons;
+    QHash<uint, QPushButton*> m_buttons;
 
 };
 

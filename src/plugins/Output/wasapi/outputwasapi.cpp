@@ -58,8 +58,8 @@ OutputWASAPI::OutputWASAPI() : Output()
 {
     instance = this;
     QSettings settings;
-    m_id = settings.value("WASAPI/device", "default").toString();
-    m_exclusive = settings.value("WASAPI/exclusive_mode", false).toBool();
+    m_id = settings.value("WASAPI/device"_L1, u"default"_s).toString();
+    m_exclusive = settings.value("WASAPI/exclusive_mode"_L1, false).toBool();
 }
 
 OutputWASAPI::~OutputWASAPI()
@@ -78,7 +78,7 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
         return false;
     }
 
-    if(m_id != "default" && !m_id.isEmpty())
+    if(m_id != "default"_L1 && !m_id.isEmpty())
     {
         WCHAR id[m_id.length() + 1];
         m_id.toWCharArray(id);
@@ -315,16 +315,16 @@ VolumeWASAPI::VolumeWASAPI()
 {
     OutputWASAPI::volumeControl = this;
     QSettings settings;
-    m_volume.left = settings.value("WASAPI/left_volume", 100).toInt();
-    m_volume.right = settings.value("WASAPI/right_volume", 100).toInt();
+    m_volume.left = settings.value("WASAPI/left_volume"_L1, 100).toInt();
+    m_volume.right = settings.value("WASAPI/right_volume"_L1, 100).toInt();
 }
 
 VolumeWASAPI::~VolumeWASAPI()
 {
-    m_volume = volume();
+    m_volume = VolumeWASAPI::volume();
     QSettings settings;
-    settings.setValue("WASAPI/left_volume", m_volume.left);
-    settings.setValue("WASAPI/right_volume", m_volume.right);
+    settings.setValue("WASAPI/left_volume"_L1, m_volume.left);
+    settings.setValue("WASAPI/right_volume"_L1, m_volume.right);
     OutputWASAPI::volumeControl = nullptr;
 }
 

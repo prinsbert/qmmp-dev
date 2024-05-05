@@ -133,8 +133,13 @@ StreamWindow::StreamWindow(QWidget *parent)
     m_editAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"document-properties"_s), tr("&Edit"),
                                               this, &StreamWindow::editStream);
     m_favoritesMenu->addSeparator();
+#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
+    m_removeAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"edit-delete"_s), tr("&Remove"),
+                                                this, &StreamWindow::removeFromFavorites, QKeySequence::Delete);
+#else
     m_removeAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"edit-delete"_s), tr("&Remove"), QKeySequence::Delete,
                                                 this, &StreamWindow::removeFromFavorites);
+#endif
     addActions(m_favoritesMenu->actions());
 }
 
@@ -339,12 +344,12 @@ void StreamWindow::closeEvent(QCloseEvent *)
     writer.writeStartElement(u"directory"_s);
     for(int i = 0; i < m_iceCastModel->rowCount(); ++i)
     {
-        writer.writeStartElement("entry");
-        writer.writeTextElement("server_name", m_iceCastModel->item(i,0)->text());
-        writer.writeTextElement("listen_url", m_iceCastModel->item(i,0)->data().toString());
-        writer.writeTextElement("genre", m_iceCastModel->item(i,1)->text());
-        writer.writeTextElement("bitrate", m_iceCastModel->item(i,2)->text());
-        writer.writeTextElement("server_type", m_iceCastModel->item(i,3)->text());
+        writer.writeStartElement("entry"_L1);
+        writer.writeTextElement("server_name"_L1, m_iceCastModel->item(i,0)->text());
+        writer.writeTextElement("listen_url"_L1, m_iceCastModel->item(i,0)->data().toString());
+        writer.writeTextElement("genre"_L1, m_iceCastModel->item(i,1)->text());
+        writer.writeTextElement("bitrate"_L1, m_iceCastModel->item(i,2)->text());
+        writer.writeTextElement("server_type"_L1, m_iceCastModel->item(i,3)->text());
         writer.writeEndElement();
     }
     writer.writeEndElement();
@@ -356,15 +361,15 @@ void StreamWindow::closeEvent(QCloseEvent *)
     QXmlStreamWriter writer2(&file2);
     writer2.setAutoFormatting(true);
     writer2.writeStartDocument();
-    writer2.writeStartElement("directory");
+    writer2.writeStartElement("directory"_L1);
     for(int i = 0; i < m_favoritesModel->rowCount(); ++i)
     {
-        writer2.writeStartElement("entry");
-        writer2.writeTextElement("server_name", m_favoritesModel->item(i, 0)->text());
-        writer2.writeTextElement("listen_url", m_favoritesModel->item(i, 0)->data().toString());
-        writer2.writeTextElement("genre", m_favoritesModel->item(i, 1)->text());
-        writer2.writeTextElement("bitrate", m_favoritesModel->item(i, 2)->text());
-        writer2.writeTextElement("server_type", m_favoritesModel->item(i, 3)->text());
+        writer2.writeStartElement("entry"_L1);
+        writer2.writeTextElement("server_name"_L1, m_favoritesModel->item(i, 0)->text());
+        writer2.writeTextElement("listen_url"_L1, m_favoritesModel->item(i, 0)->data().toString());
+        writer2.writeTextElement("genre"_L1, m_favoritesModel->item(i, 1)->text());
+        writer2.writeTextElement("bitrate"_L1, m_favoritesModel->item(i, 2)->text());
+        writer2.writeTextElement("server_type"_L1, m_favoritesModel->item(i, 3)->text());
         writer2.writeEndElement();
     }
     writer2.writeEndElement();

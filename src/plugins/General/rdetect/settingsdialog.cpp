@@ -26,13 +26,13 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 {
     m_ui.setupUi(this);
     QSettings settings;
-    settings.beginGroup("rdetect");
-    m_ui.cdGroupBox->setChecked(settings.value("cda", true).toBool());
-    m_ui.addTracksCheckBox->setChecked(settings.value("add_tracks", false).toBool());
-    m_ui.removeTracksCheckBox->setChecked(settings.value("remove_tracks", false).toBool());
-    m_ui.removableGroupBox->setChecked(settings.value("removable", true).toBool());
-    m_ui.addFilesCheckBox->setChecked(settings.value("add_files", false).toBool());
-    m_ui.removeFilesCheckBox->setChecked(settings.value("remove_files", false).toBool());
+    settings.beginGroup("rdetect"_L1);
+    m_ui.cdGroupBox->setChecked(settings.value("cda"_L1, true).toBool());
+    m_ui.addTracksCheckBox->setChecked(settings.value("add_tracks"_L1, false).toBool());
+    m_ui.removeTracksCheckBox->setChecked(settings.value("remove_tracks"_L1, false).toBool());
+    m_ui.removableGroupBox->setChecked(settings.value("removable"_L1, true).toBool());
+    m_ui.addFilesCheckBox->setChecked(settings.value("add_files"_L1, false).toBool());
+    m_ui.removeFilesCheckBox->setChecked(settings.value("remove_files"_L1, false).toBool());
     settings.endGroup();
 }
 
@@ -43,13 +43,13 @@ SettingsDialog::~SettingsDialog()
 void SettingsDialog::accept()
 {
     QSettings settings;
-    settings.beginGroup("rdetect");
-    settings.setValue("cda", m_ui.cdGroupBox->isChecked());
-    settings.setValue("add_tracks", m_ui.addTracksCheckBox->isChecked());
-    settings.setValue("remove_tracks", m_ui.removeTracksCheckBox->isChecked());
-    settings.setValue("removable", m_ui.removableGroupBox->isChecked());
-    settings.setValue("add_files", m_ui.addFilesCheckBox->isChecked());
-    settings.setValue("remove_files", m_ui.removeFilesCheckBox->isChecked());
+    settings.beginGroup("rdetect"_L1);
+    settings.setValue("cda"_L1, m_ui.cdGroupBox->isChecked());
+    settings.setValue("add_tracks"_L1, m_ui.addTracksCheckBox->isChecked());
+    settings.setValue("remove_tracks"_L1, m_ui.removeTracksCheckBox->isChecked());
+    settings.setValue("removable"_L1, m_ui.removableGroupBox->isChecked());
+    settings.setValue("add_files"_L1, m_ui.addFilesCheckBox->isChecked());
+    settings.setValue("remove_files"_L1, m_ui.removeFilesCheckBox->isChecked());
     settings.endGroup();
     QDialog::accept();
 }

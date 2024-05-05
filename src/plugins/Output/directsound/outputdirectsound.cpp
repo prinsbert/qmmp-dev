@@ -25,6 +25,7 @@
 #include <iostream>
 #include <unistd.h>
 #include <qmmp/buffer.h>
+#include <qmmp/qmmp.h>
 #include <math.h>
 #include "outputdirectsound.h"
 
@@ -325,16 +326,16 @@ VolumeDirectSound::VolumeDirectSound()
 {
     OutputDirectSound::volumeControl = this;
     QSettings settings;
-    m_volume.left = settings.value("DirectSound/left_volume", 100).toInt();
-    m_volume.right = settings.value("DirectSound/right_volume", 100).toInt();
+    m_volume.left = settings.value("DirectSound/left_volume"_L1, 100).toInt();
+    m_volume.right = settings.value("DirectSound/right_volume"_L1, 100).toInt();
 }
 
 VolumeDirectSound::~VolumeDirectSound()
 {
     m_volume = volume();
     QSettings settings;
-    settings.setValue("DirectSound/left_volume", m_volume.left);
-    settings.setValue("DirectSound/right_volume", m_volume.right);
+    settings.setValue("DirectSound/left_volume"_L1, m_volume.left);
+    settings.setValue("DirectSound/right_volume"_L1, m_volume.right);
     OutputDirectSound::volumeControl = nullptr;
 }
 

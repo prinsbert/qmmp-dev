@@ -28,7 +28,7 @@ GeneralProperties RDetectFactory::properties() const
 {
     GeneralProperties properties;
     properties.name = tr("Volume Detection Plugin");
-    properties.shortName = "rdetect";
+    properties.shortName = "rdetect"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.visibilityControl = false;

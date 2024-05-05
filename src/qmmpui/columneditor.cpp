@@ -19,11 +19,10 @@
  ***************************************************************************/
 
 #include <QMenu>
+#include <qmmp/qmmp.h>
 #include "columneditor_p.h"
 #include "metadataformattermenu.h"
 #include "ui_columneditor.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 ColumnEditor::ColumnEditor(const QString &name, const QString &patt, QWidget *parent) :
     QDialog(parent),

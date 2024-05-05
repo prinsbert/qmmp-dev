@@ -44,13 +44,13 @@ Skin::Skin(QObject *parent) : QObject (parent)
 {
     m_instance = this;
     QSettings settings;
-    QString path = settings.value("Skinned/skin_path", SkinReader::defaultSkinPath()).toString();
+    QString path = settings.value("Skinned/skin_path"_L1, SkinReader::defaultSkinPath()).toString();
 #ifdef Q_OS_WIN
     if(Qmmp::isPortable())
-        path.prepend(QApplication::applicationDirPath() + "/");
+        path.prepend(QApplication::applicationDirPath() + QLatin1Char('/'));
 #endif
-    m_double_size = settings.value("Skinned/double_size", false).toBool();
-    m_antialiasing = settings.value("Skinned/antialiasing", false).toBool();
+    m_double_size = settings.value("Skinned/double_size"_L1, false).toBool();
+    m_antialiasing = settings.value("Skinned/antialiasing"_L1, false).toBool();
     ACTION(SkinnedActionManager::WM_DOUBLE_SIZE)->setChecked(m_double_size);
     ACTION(SkinnedActionManager::WM_ANTIALIASING)->setChecked(m_antialiasing);
     setSkin(QDir::cleanPath(path), false);
@@ -177,7 +177,7 @@ const QRegion Skin::getRegion(uint r) const
 void Skin::setSkin(const QString &path, bool force)
 {
     QSettings settings;
-    m_use_cursors = settings.value("Skinned/skin_cursors", false).toBool();
+    m_use_cursors = settings.value("Skinned/skin_cursors"_L1, false).toBool();
     m_double_size = ACTION(SkinnedActionManager::WM_DOUBLE_SIZE)->isChecked();
     m_antialiasing = ACTION(SkinnedActionManager::WM_ANTIALIASING)->isChecked();
 #ifdef Q_OS_WIN
@@ -185,13 +185,13 @@ void Skin::setSkin(const QString &path, bool force)
     {
         QString relativePath = path;
         relativePath.remove(QApplication::applicationDirPath(), Qt::CaseInsensitive);
-        if(relativePath.startsWith("/"))
+        if(relativePath.startsWith(QLatin1Char('/')))
             relativePath.remove(0, 1);
-        settings.setValue("Skinned/skin_path", relativePath);
+        settings.setValue("Skinned/skin_path"_L1, relativePath);
     }
     else
 #endif
-        settings.setValue("Skinned/skin_path", path);
+        settings.setValue("Skinned/skin_path"_L1, path);
     qDebug("Skin: using %s", qPrintable(path));
     QFileInfo info(path);
     if(!info.exists())
@@ -283,7 +283,7 @@ void Skin::setSkin(const QString &path, bool force)
 void Skin::reloadSkin()
 {
     QSettings settings;
-    setSkin(settings.value("Skinned/skin_path", SkinReader::defaultSkinPath()).toString(), false);
+    setSkin(settings.value("Skinned/skin_path"_L1, SkinReader::defaultSkinPath()).toString(), false);
 }
 
 void Skin::loadMain()

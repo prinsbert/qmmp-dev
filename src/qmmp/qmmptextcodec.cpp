@@ -21,9 +21,8 @@
 #include <iconv.h>
 #include <errno.h>
 #include <QtDebug>
+#include "qmmp.h"
 #include "qmmptextcodec.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 QmmpTextCodec::QmmpTextCodec(const QByteArray &charset) : m_name(charset.toUpper())
 {

@@ -20,9 +20,8 @@
 
 #include <QFileDialog>
 #include <QCoreApplication>
+#include <qmmp/qmmp.h>
 #include "qtfiledialog_p.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 FileDialog* QtFileDialogFactory::create()
 {

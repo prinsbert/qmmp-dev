@@ -33,7 +33,7 @@ SkinnedActionManager::SkinnedActionManager(QObject *parent) :
 {
     m_instance = this;
     m_settings = new QSettings;
-    m_settings->beginGroup("SkinnedShortcuts");
+    m_settings->beginGroup("SkinnedShortcuts"_L1);
     m_actions = {
         //playback
         { PLAY, createAction(tr("&Play"), u"play"_s, tr("X"), u"media-playback-start"_s) },

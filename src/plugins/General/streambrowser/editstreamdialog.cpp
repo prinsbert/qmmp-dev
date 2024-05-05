@@ -20,10 +20,9 @@
 
 #include <QPushButton>
 #include <QUrl>
+#include <qmmp/qmmp.h>
 #include "editstreamdialog.h"
 #include "ui_editstreamdialog.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 EditStreamDialog::EditStreamDialog(QWidget *parent) :
     QDialog(parent),

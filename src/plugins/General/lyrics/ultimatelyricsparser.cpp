@@ -25,9 +25,8 @@
 #include <QFile>
 #include <QtDebug>
 #include <algorithm>
+#include <qmmp/qmmp.h>
 #include "ultimatelyricsparser.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 UltimateLyricsParser::UltimateLyricsParser()
 {}
@@ -65,15 +64,15 @@ bool UltimateLyricsParser::load(const QString &path)
             {
                 LyricsProvider *provider = new LyricsProvider;
                 QXmlStreamAttributes attrs = reader.attributes();
-                provider->setName(attrs.value("name").toString());
-                provider->setTitle(attrs.value("title").toString());
-                provider->setUrl(attrs.value("url").toString());
+                provider->setName(attrs.value("name"_L1).toString());
+                provider->setTitle(attrs.value("title"_L1).toString());
+                provider->setUrl(attrs.value("url"_L1).toString());
                 m_providers << provider;
             }
             else if(reader.name() == QLatin1String("urlFormat") && !m_providers.isEmpty())
             {
-                m_providers.last()->addUrlFormat(reader.attributes().value("replace").toString(),
-                                                 reader.attributes().value("with").toString());
+                m_providers.last()->addUrlFormat(reader.attributes().value("replace"_L1).toString(),
+                                                 reader.attributes().value("with"_L1).toString());
             }
             else if(reader.name() == QLatin1String("extract") || reader.name() == QLatin1String("exclude"))
             {
@@ -81,24 +80,24 @@ bool UltimateLyricsParser::load(const QString &path)
             }
             else if(reader.name() == QLatin1String("invalidIndicator") && !m_providers.isEmpty())
             {
-                m_providers.last()->addInvalidIndicator(reader.attributes().value("value").toString());
+                m_providers.last()->addInvalidIndicator(reader.attributes().value("value"_L1).toString());
             }
             else if(reader.name() == QLatin1String("item"))
             {
                 QXmlStreamAttributes attrs = reader.attributes();
                 QString arg1, arg2;
-                if(attrs.hasAttribute("begin") && attrs.hasAttribute("end"))
+                if(attrs.hasAttribute("begin"_L1) && attrs.hasAttribute("end"_L1))
                 {
-                    arg1 = attrs.value("begin").toString();
-                    arg2 = attrs.value("end").toString();
+                    arg1 = attrs.value("begin"_L1).toString();
+                    arg2 = attrs.value("end"_L1).toString();
                 }
-                else if(attrs.hasAttribute("tag"))
+                else if(attrs.hasAttribute("tag"_L1))
                 {
-                    arg1 = attrs.value("tag").toString();
+                    arg1 = attrs.value("tag"_L1).toString();
                 }
-                else if(attrs.hasAttribute("url"))
+                else if(attrs.hasAttribute("url"_L1))
                 {
-                    arg1 = attrs.value("url").toString();
+                    arg1 = attrs.value("url"_L1).toString();
                 }
                 args << qMakePair(arg1, arg2);
             }

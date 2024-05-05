@@ -27,14 +27,13 @@
 #include <QListWidget>
 #include <stdlib.h>
 #include <locale.h>
+#include <qmmp/qmmp.h>
 #ifdef PROJECTM_4
 #include "projectm4widget.h"
 #else
 #include "projectmwidget.h"
 #endif
 #include "projectmplugin.h"
-
-using namespace Qt::Literals::StringLiterals;
 
 ProjectMPlugin::ProjectMPlugin (QWidget *parent)
         : Visual (parent, Qt::Window | Qt::MSWindowsOwnDC)

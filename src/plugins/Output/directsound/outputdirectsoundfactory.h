@@ -37,7 +37,7 @@ public:
     OutputProperties properties() const override;
     Output* create() override;
     Volume *createVolume() override;
-    void createSettings(QWidget* parent) override;
+    QDialog *createSettings(QWidget* parent) override;
     void showAbout(QWidget *parent) override;
     QString translation() const override;
 };
