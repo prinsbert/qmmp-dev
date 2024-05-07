@@ -7,4 +7,6 @@ configure.bat -prefix %PREFIX% ^
 -nomake examples ^
 -nomake tests  ^
 -no-dbus ^
--no-pch
+-no-pch ^
+-openssl-linked ^
+-- -D OPENSSL_ROOT_DIR="c:\devel\mingw32\opt"
