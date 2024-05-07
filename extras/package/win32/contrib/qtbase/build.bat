@@ -6,4 +6,6 @@ configure.bat -prefix %PREFIX% ^
 -shared ^
 -nomake examples ^
 -nomake tests  ^
--no-dbus
+-no-dbus ^
+-openssl-linked ^
+OPENSSL_PREFIX="c:\devel\mingw32\opt"

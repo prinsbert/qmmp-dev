@@ -9,6 +9,7 @@ export ZLIB_ROOT=${MINGW32_PATH}/i686-w64-mingw32
 export PREFIX=${DEV_PATH}/qt5
 
 export PATH=${PATH}:${MINGW32_PATH}/bin:${QT5_PATH}/bin:${PREFIX}/bin
+export OPENSSL_PATH=${DEV_PATH}/mingw32/opt
 
 export STRIP=false
 export JOBS=2
