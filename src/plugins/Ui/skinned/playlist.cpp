@@ -621,7 +621,9 @@ void PlayList::generateCopySelectedMenu()
 void PlayList::copySelectedMenuActionTriggered(QAction *action)
 {
     PlayListModel *targetPlayList = nullptr;
-    QString actionText=action->text();
+    QString actionText = action->text();
+    QList<PlayListTrack *> selectedTracks = m_pl_manager->selectedPlayList()->selectedTracks();
+    
     if(action == m_copySelectedMenu->actions().at(0))//actionText == tr ("&New PlayList"))
     {
         targetPlayList = m_pl_manager->createPlayList(m_pl_manager->selectedPlayList()->name());
@@ -644,8 +646,8 @@ void PlayList::copySelectedMenuActionTriggered(QAction *action)
         qWarning("Error: Cannot find target playlist '%s'",qPrintable(actionText));
         return;
     }
-    QList <PlayListTrack *> theCopy;
-    for(PlayListTrack *track : m_pl_manager->selectedPlayList()->selectedTracks())
+    QList<PlayListTrack *> theCopy;
+    for(PlayListTrack *track : qAsConst(selectedTracks))
     {
         PlayListTrack *newItem = new PlayListTrack(*track);
         theCopy << newItem;
