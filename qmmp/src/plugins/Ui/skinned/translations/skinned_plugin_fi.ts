@@ -859,22 +859,22 @@
         <translation type="unfinished">Käänteinen lista</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
         <translation type="unfinished">Toiminnot</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Nimeä soittolista uudelleen</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Soittolistan nimi:</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished">&amp;Uusi soittolista</translation>
     </message>

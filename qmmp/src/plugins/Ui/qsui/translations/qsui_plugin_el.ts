@@ -42,27 +42,52 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="97"/>
+        <location filename="../filesystembrowser.cpp" line="98"/>
         <source>Add to Playlist</source>
         <translation>Προσθήκη στη Λίστα Αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="99"/>
+        <location filename="../filesystembrowser.cpp" line="100"/>
         <source>Change Directory</source>
         <translation>Αλλαγή καταλόγου</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="104"/>
+        <location filename="../filesystembrowser.cpp" line="105"/>
         <source>Tree View Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="106"/>
+        <location filename="../filesystembrowser.cpp" line="107"/>
         <source>Quick Search</source>
         <translation>Γρήγορη αναζήτηση</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="184"/>
+        <location filename="../filesystembrowser.cpp" line="109"/>
+        <source>Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="111"/>
+        <source>By Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="112"/>
+        <source>By Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="113"/>
+        <source>By Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="114"/>
+        <source>By Date</source>
+        <translation type="unfinished">Ανά ημερομηνία</translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="191"/>
         <source>Select Directory</source>
         <translation>Επιλογή καταλόγου</translation>
     </message>
@@ -644,8 +669,8 @@
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="68"/>
-        <source>Show Title Bars</source>
-        <translation type="unfinished">Εμφάνιση γραμμών τίτλων</translation>
+        <source>Block Floating Panels</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="69"/>
@@ -1091,7 +1116,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="903"/>
+        <location filename="../qsuimainwindow.cpp" line="912"/>
         <source>Qmmp</source>
         <translation type="unfinished">Qmmp</translation>
     </message>
@@ -1238,170 +1263,180 @@
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
-        <location filename="../qsuimainwindow.cpp" line="291"/>
+        <location filename="../qsuimainwindow.cpp" line="295"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Μετονομασία της λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="291"/>
+        <location filename="../qsuimainwindow.cpp" line="86"/>
+        <source>&amp;Copy Selection To</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="295"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Όνομα λίστας αναπαραγωγής:</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="331"/>
+        <location filename="../qsuimainwindow.cpp" line="335"/>
         <source>Appearance</source>
         <translation type="unfinished">Εμφάνιση</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="332"/>
+        <location filename="../qsuimainwindow.cpp" line="336"/>
         <source>Shortcuts</source>
         <translation type="unfinished">Συντομεύσεις</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="411"/>
+        <location filename="../qsuimainwindow.cpp" line="415"/>
         <source>Menu Bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="430"/>
+        <location filename="../qsuimainwindow.cpp" line="434"/>
         <source>Add new playlist</source>
         <translation type="unfinished">Προσθήκη νέας λίστας αναπαραγωγής</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="436"/>
+        <location filename="../qsuimainwindow.cpp" line="440"/>
         <source>Show all tabs</source>
         <translation type="unfinished">Εμφάνιση όλων των καρτελών</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="463"/>
+        <location filename="../qsuimainwindow.cpp" line="467"/>
         <source>Ctrl+0</source>
         <translation type="unfinished">Ctrl+0</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="469"/>
+        <location filename="../qsuimainwindow.cpp" line="473"/>
         <source>P</source>
         <translation type="unfinished">P</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="474"/>
+        <location filename="../qsuimainwindow.cpp" line="478"/>
         <source>Position</source>
         <translation type="unfinished">Θέση</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="476"/>
+        <location filename="../qsuimainwindow.cpp" line="480"/>
         <source>Volume</source>
         <translation type="unfinished">Ένταση</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="478"/>
+        <location filename="../qsuimainwindow.cpp" line="482"/>
         <source>Balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="481"/>
+        <location filename="../qsuimainwindow.cpp" line="485"/>
         <source>Quick Search</source>
         <translation type="unfinished">Γρήγορη αναζήτηση</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="534"/>
+        <location filename="../qsuimainwindow.cpp" line="540"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished">Επεξεργασία γραμμών εργαλείων</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="536"/>
+        <location filename="../qsuimainwindow.cpp" line="542"/>
         <source>Sort List</source>
         <translation type="unfinished">Ταξινόμηση λίστας</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="538"/>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="544"/>
+        <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>By Title</source>
         <translation type="unfinished">Ανά τίτλο</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="539"/>
-        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="545"/>
+        <location filename="../qsuimainwindow.cpp" line="561"/>
         <source>By Album</source>
         <translation type="unfinished">Ανά άλμπουμ</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="540"/>
-        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="546"/>
+        <location filename="../qsuimainwindow.cpp" line="562"/>
         <source>By Artist</source>
         <translation type="unfinished">Ανά καλλιτέχνη</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="541"/>
-        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>By Album Artist</source>
         <translation type="unfinished">Ανά καλλιτέχνη άλμπουμ</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="542"/>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="548"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
         <source>By Filename</source>
         <translation type="unfinished">Ανά όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="543"/>
-        <location filename="../qsuimainwindow.cpp" line="559"/>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">Ανά διαδρομή + όνομα αρχείου</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="544"/>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <location filename="../qsuimainwindow.cpp" line="550"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
         <source>By Date</source>
         <translation type="unfinished">Ανά ημερομηνία</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="545"/>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="551"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
         <source>By Track Number</source>
         <translation type="unfinished">Ανά αριθμό κομματιού</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="546"/>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
         <source>By Disc Number</source>
         <translation type="unfinished">Ανά αριθμό δίσκου</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="547"/>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="553"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">Ανά ημερομηνία δημιουργίας του αρχείου </translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="548"/>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>By File Modification Date</source>
         <translation type="unfinished">Ανά ημερομηνία τροποποίησης του αρχείου </translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="555"/>
         <source>By Group</source>
         <translation type="unfinished">Ανά ομάδα</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Ταξινόμηση επιλογής</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="574"/>
         <source>Randomize List</source>
         <translation type="unfinished">Τυχαία ταξινόμηση της λίστας</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="576"/>
         <source>Reverse List</source>
         <translation type="unfinished">Αντιστροφή ταξινόμησης της λίστας</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="610"/>
+        <location filename="../qsuimainwindow.cpp" line="617"/>
         <source>Actions</source>
         <translation type="unfinished">Ενέργειες</translation>
+    </message>
+    <message>
+        <location filename="../qsuimainwindow.cpp" line="933"/>
+        <source>&amp;New PlayList</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
