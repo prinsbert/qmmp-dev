@@ -615,6 +615,11 @@ void SkinnedPlayList::copySelectedMenuActionTriggered(QAction *action)
 {
     PlayListModel *targetPlayList = nullptr;
     QString actionText = action->text();
+    QList<PlayListTrack *> selectedTracks = m_pl_manager->selectedPlayList()->selectedTracks();
+
+    if(selectedTracks.isEmpty())
+        return;
+
     if(action == m_newPlayListAction)
     {
         targetPlayList = m_pl_manager->createPlayList(m_pl_manager->selectedPlayList()->name());
@@ -636,8 +641,9 @@ void SkinnedPlayList::copySelectedMenuActionTriggered(QAction *action)
         qWarning("Error: Cannot find target playlist '%s'",qPrintable(actionText));
         return;
     }
+
     QList<PlayListTrack *> theCopy;
-    for(PlayListTrack *track : m_pl_manager->selectedPlayList()->selectedTracks())
+    for(PlayListTrack *track : qAsConst(selectedTracks))
     {
         PlayListTrack *newItem = new PlayListTrack(*track);
         theCopy << newItem;
