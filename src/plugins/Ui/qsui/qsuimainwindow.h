@@ -99,6 +99,8 @@ private slots:
     void restoreWindowTitle();
     void onListChanged(int flags);
     void onCurrentPlayListChanged(PlayListModel *current, PlayListModel *previous);
+    void generateCopySelectedMenu();
+    void copySelectedMenuActionTriggered(QAction *action);
 
 private:
     void closeEvent(QCloseEvent *) override;
@@ -119,6 +121,8 @@ private:
     UiHelper *m_uiHelper;
     QMenu *m_pl_menu;
     QMenu *m_tab_menu;
+    QMenu *m_copySelectedMenu;
+    QAction *m_newPlayListAction = nullptr;
     VolumeSlider *m_volumeSlider, *m_balanceSlider;
     QSUiQuickSearch *m_quickSearch;
     QSUiKeyboardManager *m_key_manager;

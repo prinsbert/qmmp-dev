@@ -83,6 +83,10 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent), m_ui(new 
     m_ui->menuTools->addMenu(m_visMenu);
     m_ui->menuTools->addSeparator();
     m_pl_menu = new QMenu(this); //playlist menu
+    m_copySelectedMenu = new QMenu(tr("&Copy Selection To"), m_pl_menu);
+    m_copySelectedMenu->setIcon(QIcon::fromTheme(u"edit-copy"_s));
+    connect(m_copySelectedMenu, &QMenu::aboutToShow, this, &QSUiMainWindow::generateCopySelectedMenu);
+    connect(m_copySelectedMenu, &QMenu::triggered, this, &QSUiMainWindow::copySelectedMenuActionTriggered);
     new QSUiActionManager(this); //action manager
     createWidgets(); //widgets
     //status
@@ -525,6 +529,7 @@ void QSUiMainWindow::createActions()
     QAction *separator = m_ui->menuView->addSeparator();
     m_dockWidgetList->registerMenu(m_ui->menuView, separator);
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), &QSUiTabBar::setVisible));
+    SET_ACTION(QSUiActionManager::UI_SHOW_TABS, m_copySelectedMenu->menuAction(), &QAction::setVisible);
 
     m_ui->menuView->addAction(ACTION(QSUiActionManager::PL_SHOW_HEADER));
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::PL_GROUP_TRACKS, m_ui_settings, &QmmpUiSettings::setGroupsEnabled));
@@ -605,6 +610,7 @@ void QSUiMainWindow::createActions()
     //playlist menu
     m_pl_menu->addAction(SET_ACTION(QSUiActionManager::PL_SHOW_INFO, m_pl_manager, &PlayListManager::showDetails));
     m_pl_menu->addSeparator();
+    m_pl_menu->addMenu(m_copySelectedMenu);
     m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_SELECTED));
     m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_ALL));
     m_pl_menu->addAction(ACTION(QSUiActionManager::PL_REMOVE_UNSELECTED));
@@ -729,6 +735,8 @@ void QSUiMainWindow::readSettings()
         state = settings.value(u"block_toolbars"_s, false).toBool();
         ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->setChecked(state);
         setToolBarsBlocked(state);
+
+        m_copySelectedMenu->menuAction()->setVisible(ACTION(QSUiActionManager::UI_SHOW_TABS)->isChecked());
 
         m_update = true;
     }
@@ -917,4 +925,63 @@ void QSUiMainWindow::onCurrentPlayListChanged(PlayListModel *current, PlayListMo
     connect(current, &PlayListModel::listChanged, this, &QSUiMainWindow::onListChanged);
     if(previous)
         disconnect(current, &PlayListModel::listChanged, this, &QSUiMainWindow::onListChanged);
+}
+
+void QSUiMainWindow::generateCopySelectedMenu()
+{
+    m_copySelectedMenu->clear();
+    m_newPlayListAction = m_copySelectedMenu->addAction(tr("&New PlayList"));
+    m_newPlayListAction->setIcon(QIcon::fromTheme(u"document-new"_s));
+    m_copySelectedMenu->addSeparator();
+
+    for(const QString &name : m_pl_manager->playListNames())
+    {
+        if(name == m_pl_manager->selectedPlayList()->name()) //skip selected playlist
+            continue;
+
+        QString actionText = name;
+        actionText.replace(u"&"_s, u"&&"_s);
+        actionText.prepend(QLatin1Char('&'));
+        m_copySelectedMenu->addAction(actionText);
+    }
+}
+
+void QSUiMainWindow::copySelectedMenuActionTriggered(QAction *action)
+{
+    PlayListModel *targetPlayList = nullptr;
+    QString actionText = action->text();
+    QList<PlayListTrack *> selectedTracks = m_pl_manager->selectedPlayList()->selectedTracks();
+
+    if(selectedTracks.isEmpty())
+        return;
+
+    if(action == m_newPlayListAction)
+    {
+        targetPlayList = m_pl_manager->createPlayList(m_pl_manager->selectedPlayList()->name());
+    }
+    else
+    {
+        actionText.remove(0, 1).replace(u"&&"_s, u"&"_s);
+        for(PlayListModel *model : m_pl_manager->playLists())
+        {
+            if(model->name() == actionText)
+            {
+                targetPlayList = model;
+                break;
+            }
+        }
+    }
+    if(!targetPlayList)
+    {
+        qWarning("Error: Cannot find target playlist '%s'",qPrintable(actionText));
+        return;
+    }
+
+    QList<PlayListTrack *> theCopy;
+    for(PlayListTrack *track : qAsConst(selectedTracks))
+    {
+        PlayListTrack *newItem = new PlayListTrack(*track);
+        theCopy << newItem;
+    }
+    targetPlayList->add(theCopy);
 }
