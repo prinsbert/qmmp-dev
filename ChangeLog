@@ -1853,3 +1853,13 @@ Version 1.6.7
 * fixed file type determination by content in the sndfile plugin
 * fixed memory leak in the hotkey plugin
 * fixed stream sample rate in the pipewire plugin
+
+Version 1.6.8
+* improved CUE parser
+* fixed memory leak
+* fixed issue with missing mount points in the qmmp file dialog
+* fixed unexpected startup of the disabled plugin when trying to change 
+  its settings
+* fixed linking with xcb
+* fixed crash when trying to remove queued track
+* fixed copying of the selected tracks to the new playlist
