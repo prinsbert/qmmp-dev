@@ -859,22 +859,22 @@
         <translation type="unfinished">Lijst omkeren</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
         <translation type="unfinished">Acties</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Afspeellijstnaam wijzigen</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Naam van de afspeellijst:</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished">&amp;Nieuwe afspeellijst</translation>
     </message>

@@ -859,22 +859,22 @@
         <translation type="unfinished">逆序列表</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
         <translation type="unfinished">动作</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">重命名播放列表</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
         <translation type="unfinished">播放列表名称：</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished">&amp;新播放列表</translation>
     </message>

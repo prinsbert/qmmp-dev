@@ -859,22 +859,22 @@
         <translation type="unfinished">Obrátit pořadí seznamu</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
         <translation type="unfinished">Činnosti</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Přejmenovat seznam skladeb</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Název seznamu skladeb:</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished">&amp;Nový seznam skladeb</translation>
     </message>

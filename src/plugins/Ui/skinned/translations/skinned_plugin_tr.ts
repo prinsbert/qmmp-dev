@@ -859,22 +859,22 @@
         <translation type="unfinished">Listeyi Ters Çevir</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="306"/>
+        <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
         <translation type="unfinished">Eylemler</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="576"/>
+        <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="597"/>
+        <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished"></translation>
     </message>
