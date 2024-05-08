@@ -28,6 +28,7 @@
 #include <QApplication>
 #include <QLineEdit>
 #include <QIcon>
+#include <QMenu>
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/filedialog.h>
@@ -105,7 +106,13 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     m_treeModeAction->setCheckable(true);
     addAction(m_showFilterAction = new QAction(tr("Quick Search"), this));
     m_showFilterAction->setCheckable(true);
-
+    addAction(m_sortAction = new QAction(QIcon::fromTheme(u"view-sort-ascending"_s), tr("Sort"), this));
+    QMenu *sortMenu = new QMenu(this);
+    sortMenu->addAction(tr("By Name"), this, [this]() { m_fileSystemModel->sort(0); } );
+    sortMenu->addAction(tr("By Size"), this, [this]() { m_fileSystemModel->sort(1); } );
+    sortMenu->addAction(tr("By Type"), this, [this]() { m_fileSystemModel->sort(2); } );
+    sortMenu->addAction(tr("By Date"), this, [this]() { m_fileSystemModel->sort(3); } );
+    m_sortAction->setMenu(sortMenu);
     connect(selectDirAction, &QAction::triggered, this, &FileSystemBrowser::selectDirectory);
     connect(addToPlaylistAction, &QAction::triggered, this, &FileSystemBrowser::addToPlayList);
     connect(m_treeModeAction, &QAction::triggered, this, &FileSystemBrowser::setTreeViewMode);
