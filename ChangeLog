@@ -1882,3 +1882,4 @@ Version 2.1.8
   its settings
 * fixed linking with xcb
 * fixed crash when trying to remove queued track
+* fixed copying of the selected tracks to the new playlist
