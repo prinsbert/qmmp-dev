@@ -301,6 +301,7 @@ void SkinnedPlayList::createActions()
     //playlist context menu
     m_listWidget->menu()->addAction(SkinnedActionManager::instance()->action(SkinnedActionManager::PL_SHOW_INFO));
     m_listWidget->menu()->addSeparator();
+    m_listWidget->menu()->addMenu(m_copySelectedMenu);
     m_listWidget->menu()->addActions(m_subMenu->actions().mid(0, 3)); //use 3 first actions
     m_listWidget->menu()->addMenu(UiHelper::instance()->createMenu(UiHelper::PLAYLIST_MENU,
                                   tr("Actions"), true, this));
@@ -420,7 +421,7 @@ void SkinnedPlayList::changeEvent(QEvent * event)
 {
     if(event->type() == QEvent::ActivationChange)
     {
-        m_titleBar->setActive (isActiveWindow());
+        m_titleBar->setActive(isActiveWindow());
     }
 }
 
@@ -431,16 +432,16 @@ void SkinnedPlayList::readSettings()
         if(!m_pl_selector)
             m_pl_selector = new SkinnedPlayListSelector(m_pl_manager, this);
         m_pl_selector->show();
-        m_listWidget->menu()->insertMenu(m_listWidget->menu()->actions().at(2),m_copySelectedMenu);
+        m_copySelectedMenu->menuAction()->setVisible(true);
     }
     else
     {
         if(m_pl_selector)
         {
             m_pl_selector->deleteLater();
-            m_listWidget->menu()->removeAction(m_copySelectedMenu->menuAction());
+            m_pl_selector = nullptr;
         }
-        m_pl_selector = nullptr;
+        m_copySelectedMenu->menuAction()->setVisible(false);
     }
 
     if(m_update)
@@ -594,13 +595,19 @@ void SkinnedPlayList::showPlayLists()
 void SkinnedPlayList::generateCopySelectedMenu()
 {
     m_copySelectedMenu->clear();
-    QAction* action = m_copySelectedMenu->addAction(tr("&New PlayList"));
-    action->setIcon(QIcon::fromTheme(u"document-new"_s));
+    m_newPlayListAction = m_copySelectedMenu->addAction(tr("&New PlayList"));
+    m_newPlayListAction->setIcon(QIcon::fromTheme(u"document-new"_s));
     m_copySelectedMenu->addSeparator();
 
-    for(QString name : m_pl_manager->playListNames())
+    for(const QString &name : m_pl_manager->playListNames())
     {
-        m_copySelectedMenu->addAction(u"&"_s + name.replace(u"&"_s, u"&&"_s));
+        if(name == m_pl_manager->selectedPlayList()->name()) //skip selected playlist
+            continue;
+
+        QString actionText = name;
+        actionText.replace(u"&"_s, u"&&"_s);
+        actionText.prepend(QLatin1Char('&'));
+        m_copySelectedMenu->addAction(actionText);
     }
 }
 
@@ -608,16 +615,15 @@ void SkinnedPlayList::copySelectedMenuActionTriggered(QAction *action)
 {
     PlayListModel *targetPlayList = nullptr;
     QString actionText = action->text();
-    if(action == m_copySelectedMenu->actions().constFirst())//actionText == tr("&New PlayList"))
+    if(action == m_newPlayListAction)
     {
         targetPlayList = m_pl_manager->createPlayList(m_pl_manager->selectedPlayList()->name());
     }
     else
     {
-        actionText.remove(0,1).replace(u"&&"_s, u"&"_s);
+        actionText.remove(0, 1).replace(u"&&"_s, u"&"_s);
         for(PlayListModel *model : m_pl_manager->playLists())
         {
-            //if("&" + model->name().replace("&", "&&") == actionText)
             if(model->name() == actionText)
             {
                 targetPlayList = model;
