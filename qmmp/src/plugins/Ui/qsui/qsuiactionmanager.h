@@ -70,7 +70,7 @@ public:
         UI_PLAYLIST_BROWSER,      //external
         UI_WAVEFORM_SEEKBAR,      //external
         UI_SHOW_TABS,
-        UI_SHOW_TITLEBARS,
+        UI_BLOCK_DOCKWIDGETS,
         UI_BLOCK_TOOLBARS,
 
         VOL_ENC,
