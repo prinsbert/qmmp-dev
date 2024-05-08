@@ -61,23 +61,23 @@
 <context>
     <name>TwoPanelFileDialogImpl</name>
     <message>
-        <location filename="../twopanelfiledialogimpl.cpp" line="326"/>
-        <location filename="../twopanelfiledialogimpl.cpp" line="342"/>
+        <location filename="../twopanelfiledialogimpl.cpp" line="341"/>
+        <location filename="../twopanelfiledialogimpl.cpp" line="357"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="../twopanelfiledialogimpl.cpp" line="344"/>
+        <location filename="../twopanelfiledialogimpl.cpp" line="359"/>
         <source>Directories</source>
         <translation>ディレクトリー</translation>
     </message>
     <message>
-        <location filename="../twopanelfiledialogimpl.cpp" line="356"/>
+        <location filename="../twopanelfiledialogimpl.cpp" line="371"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="../twopanelfiledialogimpl.cpp" line="463"/>
+        <location filename="../twopanelfiledialogimpl.cpp" line="478"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
         <translation>%1 が既にあります。

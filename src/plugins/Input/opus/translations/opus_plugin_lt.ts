@@ -4,34 +4,29 @@
 <context>
     <name>DecoderOpusFactory</name>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="43"/>
+        <location filename="../decoderopusfactory.cpp" line="42"/>
         <source>Opus Plugin</source>
         <translation>Opus Įskiepis</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="46"/>
+        <location filename="../decoderopusfactory.cpp" line="45"/>
         <source>Ogg Opus Files</source>
         <translation>Ogg Opus Bylos</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="129"/>
+        <location filename="../decoderopusfactory.cpp" line="128"/>
         <source>About Opus Audio Plugin</source>
         <translation>Apie Opus Audio Įskiepį</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="130"/>
+        <location filename="../decoderopusfactory.cpp" line="129"/>
         <source>Qmmp Opus Audio Plugin</source>
         <translation>Qmmp Opus Audio Įskiepis</translation>
     </message>
     <message>
-        <location filename="../decoderopusfactory.cpp" line="131"/>
+        <location filename="../decoderopusfactory.cpp" line="130"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Sukūrė: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
-    </message>
-    <message>
-        <location filename="../decoderopusfactory.cpp" line="132"/>
-        <source>This plugin includes code from TagLib library</source>
-        <translation>Įskiepyje yra kodo iš TagLib bibliotekos </translation>
     </message>
 </context>
 <context>

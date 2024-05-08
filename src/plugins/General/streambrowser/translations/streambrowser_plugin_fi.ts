@@ -157,23 +157,23 @@
         <translation>Poi&amp;sta</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="152"/>
+        <location filename="../streamwindow.cpp" line="154"/>
         <source>Done</source>
         <translation>Valmis</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="155"/>
-        <location filename="../streamwindow.cpp" line="156"/>
+        <location filename="../streamwindow.cpp" line="157"/>
+        <location filename="../streamwindow.cpp" line="158"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="175"/>
+        <location filename="../streamwindow.cpp" line="177"/>
         <source>Receiving</source>
         <translation>Vastaanotetaan</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="272"/>
+        <location filename="../streamwindow.cpp" line="274"/>
         <source>Edit Stream</source>
         <translation type="unfinished"></translation>
     </message>

@@ -157,23 +157,23 @@
         <translation>&amp;Buang</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="152"/>
+        <location filename="../streamwindow.cpp" line="154"/>
         <source>Done</source>
         <translation>Kelar</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="155"/>
-        <location filename="../streamwindow.cpp" line="156"/>
+        <location filename="../streamwindow.cpp" line="157"/>
+        <location filename="../streamwindow.cpp" line="158"/>
         <source>Error</source>
         <translation>Galat</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="175"/>
+        <location filename="../streamwindow.cpp" line="177"/>
         <source>Receiving</source>
         <translation>Menerima</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="272"/>
+        <location filename="../streamwindow.cpp" line="274"/>
         <source>Edit Stream</source>
         <translation>Sunting Stream</translation>
     </message>

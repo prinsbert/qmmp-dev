@@ -482,7 +482,7 @@
         <translation>Strg+Q</translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="283"/>
+        <location filename="../actionmanager.cpp" line="284"/>
         <source>Toolbar</source>
         <translation>Werkzeugleiste</translation>
     </message>

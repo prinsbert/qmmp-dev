@@ -157,23 +157,23 @@
         <translation>移除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="152"/>
+        <location filename="../streamwindow.cpp" line="154"/>
         <source>Done</source>
         <translation>完成</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="155"/>
-        <location filename="../streamwindow.cpp" line="156"/>
+        <location filename="../streamwindow.cpp" line="157"/>
+        <location filename="../streamwindow.cpp" line="158"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="175"/>
+        <location filename="../streamwindow.cpp" line="177"/>
         <source>Receiving</source>
         <translation>接收中</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="272"/>
+        <location filename="../streamwindow.cpp" line="274"/>
         <source>Edit Stream</source>
         <translation type="unfinished"></translation>
     </message>

@@ -482,7 +482,7 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="283"/>
+        <location filename="../actionmanager.cpp" line="284"/>
         <source>Toolbar</source>
         <translation>Панель інструментів</translation>
     </message>

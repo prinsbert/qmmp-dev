@@ -157,23 +157,23 @@
         <translation>Quita&amp;r</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="152"/>
+        <location filename="../streamwindow.cpp" line="154"/>
         <source>Done</source>
         <translation>Hecho</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="155"/>
-        <location filename="../streamwindow.cpp" line="156"/>
+        <location filename="../streamwindow.cpp" line="157"/>
+        <location filename="../streamwindow.cpp" line="158"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="175"/>
+        <location filename="../streamwindow.cpp" line="177"/>
         <source>Receiving</source>
         <translation>Recibiendo</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="272"/>
+        <location filename="../streamwindow.cpp" line="274"/>
         <source>Edit Stream</source>
         <translation>Editar flujo</translation>
     </message>

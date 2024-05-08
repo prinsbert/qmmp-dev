@@ -482,7 +482,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../actionmanager.cpp" line="283"/>
+        <location filename="../actionmanager.cpp" line="284"/>
         <source>Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
