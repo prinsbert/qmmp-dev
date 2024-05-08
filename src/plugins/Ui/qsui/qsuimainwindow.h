@@ -93,7 +93,7 @@ private slots:
     void forward();
     void backward();
     void showMetaData();
-    void setTitleBarsVisible(bool visible);
+    void setDockWidgetsBlocked(bool blocked);
     void setToolBarsBlocked(bool blocked);
     void editToolBar();
     void restoreWindowTitle();

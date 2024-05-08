@@ -525,11 +525,12 @@ void QSUiMainWindow::createActions()
     QAction *separator = m_ui->menuView->addSeparator();
     m_dockWidgetList->registerMenu(m_ui->menuView, separator);
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TABS, m_tabWidget->tabBar(), &QSUiTabBar::setVisible));
-    m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_SHOW_TITLEBARS, this, &QSUiMainWindow::setTitleBarsVisible));
+
     m_ui->menuView->addAction(ACTION(QSUiActionManager::PL_SHOW_HEADER));
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::PL_GROUP_TRACKS, m_ui_settings, &QmmpUiSettings::setGroupsEnabled));
     ACTION(QSUiActionManager::PL_GROUP_TRACKS)->setChecked(m_ui_settings->isGroupsEnabled());
     m_ui->menuView->addSeparator();
+    m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS, this, &QSUiMainWindow::setDockWidgetsBlocked));
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, &QSUiMainWindow::setToolBarsBlocked));
     m_ui->menuView->addAction(tr("Edit Toolbars"), this, SLOT(editToolBar()));
 
@@ -717,9 +718,9 @@ void QSUiMainWindow::readSettings()
         if(settings.value(u"start_hidden"_s).toBool())
             hide();
 
-        bool state = settings.value(u"show_titlebars"_s, true).toBool();
-        ACTION(QSUiActionManager::UI_SHOW_TITLEBARS)->setChecked(state);
-        setTitleBarsVisible(state);
+        bool state = settings.value(u"block_dockwidgets"_s, false).toBool();
+        ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS)->setChecked(state);
+        setDockWidgetsBlocked(state);
 
         state = settings.value(u"show_tabs"_s, true).toBool();
         ACTION(QSUiActionManager::UI_SHOW_TABS)->setChecked(state);
@@ -799,7 +800,7 @@ void QSUiMainWindow::writeSettings()
     settings.setValue(u"Simple/always_on_top"_s, ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP)->isChecked());
     settings.setValue(u"Simple/show_analyzer"_s, ACTION(QSUiActionManager::UI_ANALYZER)->isChecked());
     settings.setValue(u"Simple/show_tabs"_s, ACTION(QSUiActionManager::UI_SHOW_TABS)->isChecked());
-    settings.setValue(u"Simple/show_titlebars"_s, ACTION(QSUiActionManager::UI_SHOW_TITLEBARS)->isChecked());
+    settings.setValue(u"Simple/block_dockwidgets"_s, ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS)->isChecked());
     settings.setValue(u"Simple/block_toolbars"_s, ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->isChecked());
     settings.setValue(u"Simple/show_menubar"_s, menuBar()->isVisible());
 }
@@ -840,9 +841,9 @@ void QSUiMainWindow::showMetaData()
     }
 }
 
-void QSUiMainWindow::setTitleBarsVisible(bool visible)
+void QSUiMainWindow::setDockWidgetsBlocked(bool blocked)
 {
-    m_dockWidgetList->setTitleBarsVisible(visible);
+    m_dockWidgetList->setTitleBarsVisible(!blocked);
 
     QList<QDockWidget *> widgetList = {
         m_ui->analyzerDockWidget,
@@ -858,7 +859,15 @@ void QSUiMainWindow::setTitleBarsVisible(bool visible)
             w->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
     }
 
-    if(visible)
+    if(blocked)
+    {
+        for(QDockWidget *w : qAsConst(widgetList))
+        {
+            if(!w->titleBarWidget())
+                w->setTitleBarWidget(new QWidget());
+        }
+    }
+    else
     {
         for(QDockWidget *w : qAsConst(widgetList))
         {
@@ -868,14 +877,6 @@ void QSUiMainWindow::setTitleBarsVisible(bool visible)
                 w->setTitleBarWidget(nullptr);
                 delete widget;
             }
-        }
-    }
-    else
-    {
-        for(QDockWidget *w : qAsConst(widgetList))
-        {
-            if(!w->titleBarWidget())
-                w->setTitleBarWidget(new QWidget());
         }
     }
 }
