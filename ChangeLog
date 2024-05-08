@@ -1585,3 +1585,9 @@ Version 0.12.18
   - using UTF-8 for all lyrics providers
 * fixed memort leak in the hotkey plugin
 * fixed file type determination by content in the sndfile plugin
+
+Version 0.12.19
+* improved CUE parser
+* fixed memory leak
+* fixed copying of the selected tracks to the new playlist
+* fixed duration calculation in the opus plugin
