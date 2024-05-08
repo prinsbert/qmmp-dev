@@ -64,7 +64,7 @@ private:
     QLineEdit *m_filterLineEdit;
     QAction *m_showFilterAction;
     QAction *m_treeModeAction;
-
+    QAction *m_sortAction;
 };
 
 #endif // FILESYSTEMBROWSER_H
