@@ -4,13 +4,14 @@ TARGET = $$PLUGINS_PREFIX/Effect/srconverter
 
 HEADERS += srconverter.h \
  effectsrconverterfactory.h \
- settingsdialog.h
+ srconvertersettingsdialog.h
 
 SOURCES += srconverter.cpp \
  effectsrconverterfactory.cpp \
- settingsdialog.cpp
+ srconvertersettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    srconvertersettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

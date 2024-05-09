@@ -20,7 +20,7 @@
 
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
-#include "settingsdialog.h"
+#include "srconvertersettingsdialog.h"
 #include "srconverter.h"
 #include "effectsrconverterfactory.h"
 
@@ -42,7 +42,7 @@ Effect *EffectSRConverterFactory::create()
 
 QDialog *EffectSRConverterFactory::createSettings(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new SRConverterSettingsDialog(parent);
 }
 
 void EffectSRConverterFactory::showAbout(QWidget *parent)

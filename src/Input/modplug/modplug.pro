@@ -4,17 +4,18 @@ TARGET = $$PLUGINS_PREFIX/Input/modplug
 
 HEADERS += decodermodplugfactory.h \
     decoder_modplug.h \
-    settingsdialog.h \
     archivereader.h \
-    modplugmetadatamodel.h
+    modplugmetadatamodel.h \
+    modplugsettingsdialog.h
 
 SOURCES += decoder_modplug.cpp \
     decodermodplugfactory.cpp \
-    settingsdialog.cpp \
     archivereader.cpp \
-    modplugmetadatamodel.cpp
+    modplugmetadatamodel.cpp \
+    modplugsettingsdialog.cpp
 
-FORMS += settingsdialog.ui
+FORMS += \
+    modplugsettingsdialog.ui
 
 RESOURCES = translations/translations.qrc
 

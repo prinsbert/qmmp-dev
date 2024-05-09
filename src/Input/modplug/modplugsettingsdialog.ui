@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SettingsDialog</class>
- <widget class="QDialog" name="SettingsDialog">
+ <class>ModPlugSettingsDialog</class>
+ <widget class="QDialog" name="ModPlugSettingsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -811,7 +811,7 @@ too high may cause clipping!</string>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>SettingsDialog</receiver>
+   <receiver>ModPlugSettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

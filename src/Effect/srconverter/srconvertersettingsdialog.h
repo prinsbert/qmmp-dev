@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -17,30 +17,31 @@
  *   Free Software Foundation, Inc.,                                       *
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#ifndef SRCONVERTERSETTINGSDIALOG_H
+#define SRCONVERTERSETTINGSDIALOG_H
 
 #include <QDialog>
-#include "ui_settingsdialog.h"
+
+namespace Ui {
+class SRConverterSettingsDialog;
+}
 
 /**
 	@author Ilya Kotov <forkotov02@ya.ru>
 */
-class SettingsDialog : public QDialog
+class SRConverterSettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialog(QWidget *parent = nullptr);
+    explicit SRConverterSettingsDialog(QWidget *parent = nullptr);
 
-    ~SettingsDialog();
+    ~SRConverterSettingsDialog();
 
-private slots:
-    void writeSettings();
-    void setPreamp(int);
-    void on_buttonBox_clicked(QAbstractButton *);
+public slots:
+    virtual void accept() override;
 
-private: 
-     Ui::SettingsDialog m_ui;
+private:
+    Ui::SRConverterSettingsDialog *m_ui;
 
 };
 
