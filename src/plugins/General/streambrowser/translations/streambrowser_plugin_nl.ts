@@ -157,23 +157,23 @@
         <translation>Verwijde&amp;ren</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="154"/>
+        <location filename="../streamwindow.cpp" line="156"/>
         <source>Done</source>
         <translation>Klaar</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="157"/>
-        <location filename="../streamwindow.cpp" line="158"/>
+        <location filename="../streamwindow.cpp" line="159"/>
+        <location filename="../streamwindow.cpp" line="160"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="177"/>
+        <location filename="../streamwindow.cpp" line="179"/>
         <source>Receiving</source>
         <translation>Bezig met ontvangen...</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="280"/>
+        <location filename="../streamwindow.cpp" line="282"/>
         <source>Edit Stream</source>
         <translation>Stream bewerken</translation>
     </message>

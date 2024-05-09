@@ -157,23 +157,23 @@
         <translation>&amp;Αφαίρεση</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="154"/>
+        <location filename="../streamwindow.cpp" line="156"/>
         <source>Done</source>
         <translation>Έγινε</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="157"/>
-        <location filename="../streamwindow.cpp" line="158"/>
+        <location filename="../streamwindow.cpp" line="159"/>
+        <location filename="../streamwindow.cpp" line="160"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="177"/>
+        <location filename="../streamwindow.cpp" line="179"/>
         <source>Receiving</source>
         <translation>Γίνεται λήψη</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="280"/>
+        <location filename="../streamwindow.cpp" line="282"/>
         <source>Edit Stream</source>
         <translation>Επεξεργασία ροής</translation>
     </message>
