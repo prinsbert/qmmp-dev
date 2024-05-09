@@ -86,7 +86,7 @@ QList<MetaDataItem> ModPlugMetaDataModel::descriptions() const
     for(uint i = 0; i < m_soundFile->GetNumSamples(); i++)
     {
         m_soundFile->GetSampleName(i, lBuffer);
-        text += QString::fromUtf8(lBuffer) + '\n';
+        text += QString::fromUtf8(lBuffer) + QChar::LineFeed;
     }
     text = text.trimmed();
     if(!text.isEmpty())
@@ -95,7 +95,7 @@ QList<MetaDataItem> ModPlugMetaDataModel::descriptions() const
     for(uint i = 0; i < m_soundFile->GetNumInstruments(); i++)
     {
         m_soundFile->GetInstrumentName(i, lBuffer);
-        text += QString::fromUtf8(lBuffer) + '\n';
+        text += QString::fromUtf8(lBuffer) + QChar::LineFeed;
     }
     text = text.trimmed();
     if(!text.isEmpty())
@@ -112,49 +112,49 @@ QString ModPlugMetaDataModel::getTypeName(quint32 type)
 {
     switch (type) {
     case MOD_TYPE_MOD:
-        return "ProTracker";
+        return u"ProTracker"_s;
     case MOD_TYPE_S3M:
-        return "Scream Tracker 3";
+        return u"Scream Tracker 3"_s;
     case MOD_TYPE_XM:
-        return "Fast Tracker 2";
+        return u"Fast Tracker 2"_s;
     case MOD_TYPE_IT:
-        return "Impulse Tracker";
+        return u"Impulse Tracker"_s;
     case MOD_TYPE_MED:
-        return "OctaMed";
+        return u"OctaMed"_s;
     case MOD_TYPE_MTM:
-        return "MTM";
+        return u"MTM"_s;
     case MOD_TYPE_669:
-        return "669 Composer / UNIS 669";
+        return u"669 Composer / UNIS 669"_s;
     case MOD_TYPE_ULT:
-        return "ULT";
+        return u"ULT"_s;
     case MOD_TYPE_STM:
-        return "Scream Tracker";
+        return u"Scream Tracker"_s;
     case MOD_TYPE_FAR:
-        return "Farandole";
+        return u"Farandole"_s;
     case MOD_TYPE_AMF:
-        return "ASYLUM Music Format";
+        return u"ASYLUM Music Format"_s;
     case MOD_TYPE_AMS:
-        return "AMS module";
+        return u"AMS module"_s;
     case MOD_TYPE_DSM:
-        return "DSIK Internal Format";
+        return u"DSIK Internal Format"_s;
     case MOD_TYPE_MDL:
-        return "DigiTracker";
+        return u"DigiTracker"_s;
     case MOD_TYPE_OKT:
-        return "Oktalyzer";
+        return u"Oktalyzer"_s;
     case MOD_TYPE_DMF:
-        return "Delusion Digital Music Fileformat (X-Tracker)";
+        return u"Delusion Digital Music Fileformat (X-Tracker)"_s;
     case MOD_TYPE_PTM:
-        return "PolyTracker";
+        return u"PolyTracker"_s;
     case MOD_TYPE_DBM:
-        return "DigiBooster Pro";
+        return u"DigiBooster Pro"_s;
     case MOD_TYPE_MT2:
-        return "MT2";
+        return u"MT2"_s;
     case MOD_TYPE_AMF0:
-        return "AMF0";
+        return u"AMF0"_s;
     case MOD_TYPE_PSM:
-        return "PSM";
+        return u"PSM"_s;
     default:
         ;
     }
-    return "Unknown";
+    return u"Unknown"_s;
 }

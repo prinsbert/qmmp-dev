@@ -43,15 +43,13 @@ DecoderFFapCUE::~DecoderFFapCUE()
 
 bool DecoderFFapCUE::initialize()
 {
-    QString filePath = m_url;
-    if(!m_url.startsWith("ape://") || filePath.endsWith(".ape"))
+    if(!m_url.startsWith(u"ape://"_s, Qt::CaseInsensitive) || m_url.endsWith(u".ape"_s, Qt::CaseInsensitive))
     {
         qWarning("DecoderFFapCUE: invalid url.");
         return false;
     }
-    filePath.remove("ape://");
-    filePath.remove(QRegularExpression("#\\d+$"));
-    m_track = m_url.section("#", -1).toInt();
+
+    QString filePath = TrackInfo::pathFromUrl(m_url, &m_track);
 
     TagLib::FileStream stream(QStringToFileName(filePath), true);
     TagLib::APE::File file(&stream);
@@ -66,7 +64,7 @@ bool DecoderFFapCUE::initialize()
 
     m_parser = new CueParser(tag->itemListMap()["CUESHEET"].toString().toCString(true));
     m_parser->setDuration(file.audioProperties()->lengthInMilliseconds());
-    m_parser->setUrl("ape", filePath);
+    m_parser->setUrl(u"ape"_s, filePath);
 
     if(m_track > m_parser->count() || m_parser->isEmpty())
     {

@@ -41,21 +41,21 @@ DecoderProperties DecoderFFapFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("FFap Plugin");
-    properties.filters << "*.ape";
+    properties.filters << "*.ape"_L1;
     properties.description = tr("Monkey's Audio Files");
     //properties.contentType = ;
-    properties.shortName = "ffap";
+    properties.shortName = "ffap"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     properties.noInput = false;
-    properties.protocols << "ape";
+    properties.protocols << "ape"_L1;
     properties.priority = 9;
     return properties;
 }
 
 Decoder *DecoderFFapFactory::create(const QString &path, QIODevice *i)
 {
-    if(path.startsWith("ape://"))
+    if(path.startsWith(u"ape://"_s))
         return new DecoderFFapCUE(path);
 
     return new DecoderFFap(path, i);
@@ -66,11 +66,9 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
     int track = -1; //cue track
     QString filePath = path;
     //extract metadata of one cue track
-    if(path.contains("://"))
+    if(path.contains(u"://"_s))
     {
-        filePath.remove("ape://");
-        filePath.remove(QRegularExpression("#\\d+$"));
-        track = path.section("#", -1).toInt();
+        filePath = TrackInfo::pathFromUrl(path, &track);
         parts = TrackInfo::AllParts; //extract all metadata for single cue track
     }
 
@@ -90,7 +88,7 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
         info->setValue(Qmmp::SAMPLERATE, ap->sampleRate());
         info->setValue(Qmmp::CHANNELS, ap->channels());
         info->setValue(Qmmp::BITS_PER_SAMPLE, ap->bitsPerSample());
-        info->setValue(Qmmp::FORMAT_NAME, "Monkey's Audio");
+        info->setValue(Qmmp::FORMAT_NAME, u"Monkey's Audio"_s);
         info->setDuration(ap->lengthInMilliseconds());
     }
 
@@ -114,7 +112,7 @@ QList<TrackInfo *> DecoderFFapFactory::createPlayList(const QString &path, Track
             CueParser parser(tag->itemListMap()["CUESHEET"].toString().toCString(true));
             parser.setDuration(info->duration());
             parser.setProperties(info->properties());
-            parser.setUrl("ape", filePath);
+            parser.setUrl(u"ape"_s, filePath);
             delete info;
             return parser.createPlayList(track);
         }
@@ -150,13 +148,13 @@ QDialog *DecoderFFapFactory::createSettings(QWidget *)
 void DecoderFFapFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About FFap Audio Plugin"),
-                       tr("Qmmp FFap Audio Plugin")+"\n"+
-                       tr("This plugin provides Monkey's Audio (APE) support") +"\n"+
-                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>")  +"\n"+
+                       tr("Qmmp FFap Audio Plugin") + QChar::LineFeed +
+                       tr("This plugin provides Monkey's Audio (APE) support") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>")  + QChar::LineFeed +
                        tr("Based on code from deadbeef, FFmpeg and rockbox"));
 }
 
 QString DecoderFFapFactory::translation() const
 {
-    return QString(":/ffap_plugin_");
+    return QLatin1String(":/ffap_plugin_");
 }

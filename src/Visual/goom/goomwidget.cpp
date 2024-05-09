@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016-2023 by Ilya Kotov                                 *
+ *   Copyright (C) 2016-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -38,12 +38,12 @@ GoomWidget::GoomWidget(QWidget *parent) : Visual (parent)
     m_goom = nullptr;
     m_fps = 25;
     m_running = false;
-    connect(m_core, SIGNAL(trackInfoChanged()), SLOT(updateTitle()));
+    connect(m_core, &SoundCore::trackInfoChanged, this, &GoomWidget::updateTitle);
 
-    setWindowTitle ("Goom");
-    setMinimumSize(150,150);
+    setWindowTitle(u"Goom"_s);
+    setMinimumSize(150, 150);
     m_timer = new QTimer (this);
-    connect(m_timer, SIGNAL (timeout()), SLOT(timeout()));
+    connect(m_timer, &QTimer::timeout, this, &GoomWidget::timeout);
     clear();
     createMenu();
     readSettings();
@@ -102,8 +102,8 @@ void GoomWidget::toggleFullScreen()
 void GoomWidget::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Goom");
-    m_fps = settings.value("refresh_rate", 25).toInt();
+    settings.beginGroup("Goom"_L1);
+    m_fps = settings.value("refresh_rate"_L1, 25).toInt();
     m_timer->setInterval(1000 / m_fps);
     if(!m_update)
     {
@@ -116,18 +116,18 @@ void GoomWidget::readSettings()
                 break;
             }
         }
-        restoreGeometry(settings.value("geometry").toByteArray());
+        restoreGeometry(settings.value("geometry"_L1).toByteArray());
     }
-    m_showTitleAction->setChecked(settings.value("show_title", false).toBool());
+    m_showTitleAction->setChecked(settings.value("show_title"_L1, false).toBool());
 }
 
 void GoomWidget::writeSettings()
 {
     QSettings settings;
-    settings.beginGroup("Goom");
+    settings.beginGroup("Goom"_L1);
     QAction *act = m_fpsGroup->checkedAction ();
-    settings.setValue("refresh_rate", act ? act->data().toInt() : 25);
-    settings.setValue("show_title", m_showTitleAction->isChecked());
+    settings.setValue("refresh_rate"_L1, act ? act->data().toInt() : 25);
+    settings.setValue("show_title"_L1, m_showTitleAction->isChecked());
     settings.endGroup();
 }
 
@@ -156,14 +156,14 @@ void GoomWidget::closeEvent (QCloseEvent *event)
 {
     //save geometry
     QSettings settings;
-    settings.setValue("Goom/geometry", saveGeometry());
+    settings.setValue("Goom/geometry"_L1, saveGeometry());
     Visual::closeEvent(event); //removes visualization object
 }
 
 void GoomWidget::paintEvent (QPaintEvent *)
 {
-    QPainter painter (this);
-    painter.drawImage(0,0, m_image);
+    QPainter painter(this);
+    painter.drawImage(0, 0, m_image);
 }
 
 void GoomWidget::mousePressEvent(QMouseEvent *e)
@@ -181,8 +181,8 @@ void GoomWidget::clear()
 void GoomWidget::createMenu()
 {
     m_menu = new QMenu (this);
-    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(writeSettings()));
-    connect(m_menu, SIGNAL(triggered(QAction*)),SLOT(readSettings()));
+    connect(m_menu, &QMenu::triggered, this, &GoomWidget::writeSettings);
+    connect(m_menu, &QMenu::triggered, this, &GoomWidget::readSettings);
 
     QMenu *refreshRate = m_menu->addMenu(tr("Refresh Rate"));
     m_fpsGroup = new QActionGroup(this);
@@ -198,6 +198,10 @@ void GoomWidget::createMenu()
     m_showTitleAction = m_menu->addAction(tr("&Show Title"), this, SLOT(updateTitle()));
     m_showTitleAction->setCheckable(true);
     m_menu->addSeparator();
-    QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), this, SLOT(toggleFullScreen()), tr("F"));
+#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
+    QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), this, &GoomWidget::toggleFullScreen, tr("F"));
+#else
+    QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), tr("F"), this, &GoomWidget::toggleFullScreen);
+#endif
     addAction(fullScreenAction);
 }

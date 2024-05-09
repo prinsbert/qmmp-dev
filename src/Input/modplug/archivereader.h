@@ -36,7 +36,7 @@ public:
 
     ~ArchiveReader();
 
-    bool isSupported(const QString &path);
+    bool isSupported(const QString &path) const;
     QByteArray unpack(const QString &path);
 
 private:

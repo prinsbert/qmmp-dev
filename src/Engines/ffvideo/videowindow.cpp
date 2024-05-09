@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -39,22 +39,29 @@ VideoWindow::VideoWindow(QWidget *parent) :
     setMinimumSize(100, 100);
     setWindowTitle(tr("FFmpeg Video"));
     QSettings settings;
-    restoreGeometry(settings.value("FFVideo/geometry").toByteArray());
+    restoreGeometry(settings.value("FFVideo/geometry"_L1).toByteArray());
     m_core = SoundCore::instance();
     m_menu = new QMenu(this);
-    m_menu->addAction(QIcon::fromTheme("media-playback-pause"), tr("&Pause"), m_core, SLOT(pause()), tr("Space"));
-    m_menu->addAction(QIcon::fromTheme("media-playback-stop"), tr("&Stop"), m_core, SLOT(stop()), tr("V"));
+#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
+    m_menu->addAction(QIcon::fromTheme(u"media-playback-pause"_s), tr("&Pause"), m_core, &SoundCore::pause, tr("Space"));
+    m_menu->addAction(QIcon::fromTheme(u"media-playback-stop"_s), tr("&Stop"), m_core, &SoundCore::stop, tr("V"));
     m_menu->addSeparator();
-    m_menu->addAction(tr("&Fullscreen"), this, SLOT(setFullScreen(bool)), tr("F"))->setCheckable(true);
+    m_menu->addAction(tr("&Fullscreen"), this, &VideoWindow::setFullScreen, tr("F"))->setCheckable(true);
+#else
+    m_menu->addAction(QIcon::fromTheme(u"media-playback-pause"_s), tr("&Pause"), tr("Space"), m_core, &SoundCore::pause);
+    m_menu->addAction(QIcon::fromTheme(u"media-playback-stop"_s), tr("&Stop"), tr("V"), m_core, &SoundCore::stop);
+    m_menu->addSeparator();
+    m_menu->addAction(tr("&Fullscreen"), tr("F"), this, &VideoWindow::setFullScreen)->setCheckable(true);
+#endif
     addActions(m_menu->actions());
     //seeking
     QAction *forwardAction = new QAction(this);
     forwardAction->setShortcut(QKeySequence(Qt::Key_Right));
-    connect(forwardAction, SIGNAL(triggered(bool)), SLOT(forward()));
+    connect(forwardAction, &QAction::triggered, this, &VideoWindow::forward);
     QAction *backwardAction = new QAction(this);
     backwardAction->setShortcut(QKeySequence(Qt::Key_Left));
-    connect(backwardAction, SIGNAL(triggered(bool)), SLOT(backward()));
-    addActions(QList<QAction*>() << forwardAction << backwardAction);
+    connect(backwardAction, &QAction::triggered, this, &VideoWindow::backward);
+    addActions({ forwardAction, backwardAction });
 }
 
 void VideoWindow::addImage(const QImage &img)
@@ -108,7 +115,7 @@ bool VideoWindow::event(QEvent *e)
 void VideoWindow::closeEvent(QCloseEvent *)
 {
     QSettings settings;
-    settings.setValue("FFVideo/geometry", saveGeometry());
+    settings.setValue("FFVideo/geometry"_L1, saveGeometry());
 }
 
 void VideoWindow::contextMenuEvent(QContextMenuEvent *event)

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,7 +19,8 @@
  ***************************************************************************/
 
 #include <QProcess>
-
+#include <QSet>
+#include <qmmp/qmmp.h>
 #include "archivereader.h"
 
 ArchiveReader::ArchiveReader(QObject *parent)
@@ -32,39 +33,32 @@ ArchiveReader::ArchiveReader(QObject *parent)
 ArchiveReader::~ArchiveReader()
 {}
 
-bool ArchiveReader::isSupported(const QString &path)
+bool ArchiveReader::isSupported(const QString &path) const
 {
-    QString lPath = path.toLower();
-    return lPath.endsWith(".mdz") ||
-           lPath.endsWith(".s3z") ||
-           lPath.endsWith(".xmz") ||
-           lPath.endsWith(".itz") ||
-           lPath.endsWith(".mdgz") ||
-           lPath.endsWith(".s3gz") ||
-           lPath.endsWith(".xmgz") ||
-           lPath.endsWith(".itgz") ||
-           lPath.endsWith(".mdbz") ||
-           lPath.endsWith(".s3bz") ||
-           lPath.endsWith(".xmbz") ||
-           lPath.endsWith(".itbz");
+    static const QSet<QString> supportedExts = {
+        u".mdz"_s, u".s3z"_s, u".xmz"_s, u".itz"_s, u".mdgz"_s, u".s3gz"_s, u".xmgz"_s,
+        u".itgz"_s, u".mdbz"_s, u".s3bz"_s, u".xmbz"_s, u".itbz"_s,
+    };
+
+    return supportedExts.contains(path.toLower().section(QLatin1Char('.'), -1));
 }
 
 QByteArray ArchiveReader::unpack(const QString &path)
 {
     QString lPath = path.toLower();
-    if (path.endsWith(".mdz") ||
-            lPath.endsWith(".s3z") ||
-            lPath.endsWith(".xmz") ||
-            lPath.endsWith(".itz"))
+    if (path.endsWith(u".mdz"_s) ||
+            lPath.endsWith(u".s3z"_s) ||
+            lPath.endsWith(u".xmz"_s) ||
+            lPath.endsWith(u".itz"_s))
         return unzip(path);
 
-    if (lPath.endsWith(".mdgz") ||
-             lPath.endsWith(".s3gz") ||
-             lPath.endsWith(".xmgz") ||
-             lPath.endsWith(".itgz"))
+    if (lPath.endsWith(u".mdgz"_s) ||
+             lPath.endsWith(u".s3gz"_s) ||
+             lPath.endsWith(u".xmgz"_s) ||
+             lPath.endsWith(u".itgz"_s))
         return gunzip(path);
 
-    if (lPath.endsWith(".mdbz"))
+    if (lPath.endsWith(u".mdbz"_s))
         return bunzip2(path);
 
     return QByteArray();
@@ -72,27 +66,24 @@ QByteArray ArchiveReader::unpack(const QString &path)
 
 QByteArray ArchiveReader::unzip(const QString &path)
 {
-    QStringList args;
-    args << "-p" << path;
-    m_process->start("unzip", args);
+    QStringList args = { u"-p"_s, path };
+    m_process->start(u"unzip"_s, args);
     m_process->waitForFinished();
     return m_process->readAllStandardOutput ();
 }
 
 QByteArray ArchiveReader::gunzip(const QString &path)
 {
-    QStringList args;
-    args << "-c" << path;
-    m_process->start("gunzip", args);
+    QStringList args = { u"-c"_s, path };
+    m_process->start(u"gunzip"_s, args);
     m_process->waitForFinished();
     return m_process->readAllStandardOutput ();
 }
 
 QByteArray ArchiveReader::bunzip2(const QString &path)
 {
-    QStringList args;
-    args << "-c" << path;
-    m_process->start("bunzip2", args);
+    QStringList args = { u"-c"_s, path };
+    m_process->start(u"bunzip2"_s, args);
     m_process->waitForFinished();
     return m_process->readAllStandardOutput ();
 }

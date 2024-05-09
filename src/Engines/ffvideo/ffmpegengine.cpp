@@ -81,7 +81,7 @@ bool FFmpegEngine::play()
 
 bool FFmpegEngine::enqueue(InputSource *source)
 {
-    if(!QDir::match(m_factory->properties().filters, source->path().section(QChar('/'), -1)))
+    if(!QDir::match(m_factory->properties().filters, source->path().section(QLatin1Char('/'), -1)))
         return false;
 
     FFVideoDecoder *decoder = new FFVideoDecoder();

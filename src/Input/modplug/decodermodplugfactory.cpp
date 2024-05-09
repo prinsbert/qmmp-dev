@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -43,18 +43,18 @@ DecoderProperties DecoderModPlugFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("ModPlug Plugin");
-    properties.filters = QStringList { "*.amf" , "*.ams" , "*.dbm" , "*.dbf" , "*.dsm" , "*.far" , "*.mdl",
-            "*.stm" , "*.ult" , "*.j2b" , "*.mt2" , "*.mdz" , "*.mdr" , "*.mdgz",
-            "*.mdbz" , "*.mod" , "*.s3z" , "*.s3r" , "*.s3gz" , "*.s3m" , "*.xmz",
-            "*.xmr" , "*.xmgz" , "*.itz" , "*.itr" , "*.itgz" , "*.dmf" "*.umx",
-            "*.it" , "*.669" , "*.xm" , "*.mtm" , "*.psm" , "*.ft2" , "*.med" };
+    properties.filters = QStringList { u"*.amf"_s, u"*.ams"_s, u"*.dbm"_s, u"*.dbf"_s, u"*.dsm"_s, u"*.far"_s, u"*.mdl"_s,
+            u"*.stm"_s, u"*.ult"_s, u"*.j2b"_s, u"*.mt2"_s, u"*.mdz"_s, u"*.mdr"_s, u"*.mdgz"_s,
+            u"*.mdbz"_s, u"*.mod"_s, u"*.s3z"_s, u"*.s3r"_s, u"*.s3gz"_s, u"*.s3m"_s, u"*.xmz"_s,
+            u"*.xmr"_s, u"*.xmgz"_s, u"*.itz"_s, u"*.itr"_s, u"*.itgz"_s, u"*.dmf"_s, u"*.umx"_s,
+            u"*.it"_s, u"*.669"_s, u"*.xm"_s, u"*.mtm"_s, u"*.psm"_s, u"*.ft2"_s, u"*.med"_s };
     properties.description = tr("ModPlug Files");
     //properties.contentType = ;
-    properties.shortName = "modplug";
+    properties.shortName = "modplug"_L1;
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
-    properties.protocols = QStringList { "file" };
+    properties.protocols = QStringList { u"file"_s };
     properties.priority = 10;
     return properties;
 }
@@ -69,7 +69,7 @@ QList<TrackInfo *> DecoderModPlugFactory::createPlayList(const QString &path, Tr
 {
     QList <TrackInfo*> list;
     QSettings settings;
-    bool useFileName = settings.value("UseFileName", false).toBool();
+    bool useFileName = settings.value("UseFileName"_L1, false).toBool();
 
     QByteArray buffer;
 
@@ -99,7 +99,7 @@ QList<TrackInfo *> DecoderModPlugFactory::createPlayList(const QString &path, Tr
 
         if(parts & TrackInfo::MetaData)
         {
-            info->setValue(Qmmp::TITLE, useFileName ? path.section('/',-1) :
+            info->setValue(Qmmp::TITLE, useFileName ? path.section(QLatin1Char('/'), -1) :
                                                       QString::fromUtf8(soundFile->GetTitle()));
         }
 
@@ -132,14 +132,14 @@ QDialog *DecoderModPlugFactory::createSettings(QWidget *parent)
 
 void DecoderModPlugFactory::showAbout(QWidget *parent)
 {
-    QMessageBox::about (parent, tr("About ModPlug Audio Plugin"),
-                        tr("Qmmp ModPlug Audio Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Based on the Modplug Plugin for Xmms")+"\n"+
-                        tr("Modplug Plugin developers:")+"\n"+
-                        tr("Olivier Lapicque <olivierl@jps.net>")+"\n"+
-                        tr("Kenton Varda <temporal@gauge3d.org>")+"\n"+
-                        tr("Konstanty Bialkowski <konstanty@ieee.org>"));
+    QMessageBox::about(parent, tr("About ModPlug Audio Plugin"),
+                       tr("Qmmp ModPlug Audio Plugin") + QChar::LineFeed +
+                       tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
+                       tr("Based on the Modplug Plugin for Xmms") + QChar::LineFeed +
+                       tr("Modplug Plugin developers:") + QChar::LineFeed +
+                       tr("Olivier Lapicque <olivierl@jps.net>") + QChar::LineFeed +
+                       tr("Kenton Varda <temporal@gauge3d.org>") + QChar::LineFeed +
+                       tr("Konstanty Bialkowski <konstanty@ieee.org>"));
 }
 
 QString DecoderModPlugFactory::translation() const

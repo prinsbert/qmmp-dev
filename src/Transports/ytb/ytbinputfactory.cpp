@@ -28,13 +28,13 @@
 InputSourceProperties YtbInputFactory::properties() const
 {
     InputSourceProperties properties;
-    properties.protocols = QStringList { "ytb" };
+    properties.protocols = QStringList { u"ytb"_s };
     properties.regExps = QList<QRegularExpression> {
-            QRegularExpression("^https\\:\\/\\/www.youtube.com\\/.*"),
-            QRegularExpression("^https\\:\\/\\/youtu.be\\/.*")
+            QRegularExpression(u"^https\\:\\/\\/www.youtube.com\\/.*"_s),
+            QRegularExpression(u"^https\\:\\/\\/youtu.be\\/.*"_s)
     };
     properties.name = tr("Youtube Plugin");
-    properties.shortName = "ytb";
+    properties.shortName = "ytb"_L1;
     properties.hasAbout = true;
     properties.hasSettings = false;
     return properties;
@@ -55,7 +55,7 @@ void YtbInputFactory::showAbout(QWidget *parent)
 {
     QString version;
     QString backend = YtbInputSource::findBackend(&version);
-    QString backendName = QString("<b>%1</b>").arg(backend);
+    QString backendName = QStringLiteral("<b>%1</b>").arg(backend);
     if(backend.isEmpty() || version.isEmpty())
     {
         qWarning("YtbInputFactory: unable to find backend");
@@ -63,15 +63,15 @@ void YtbInputFactory::showAbout(QWidget *parent)
     }
 
     if(backend == QLatin1String("yt-dlp"))
-        backendName = QLatin1String("<a href=\"https://github.com/yt-dlp/yt-dlp\">yt-dlp</a>");
+        backendName = QStringLiteral("<a href=\"https://github.com/yt-dlp/yt-dlp\">yt-dlp</a>");
     else if(backend == QLatin1String("youtube-dl"))
-        backendName = QLatin1String("<a href=\"https://youtube-dl.org\">youtube-dl</a>");
+        backendName = QStringLiteral("<a href=\"https://youtube-dl.org\">youtube-dl</a>");
 
     QMessageBox::about(parent, tr("About Youtube Transport Plugin"),
-                       tr("Qmmp Youtube Transport Plugin") + "<br>" +
+                       tr("Qmmp Youtube Transport Plugin") + QChar::LineFeed +
                        tr("This plugin adds feature to play audio from Youtube using %1 "
-                          "utility").arg(backendName) + "<br>" +
-                       tr("%1 version: %2").arg(backend, version) + "<br>" +
+                          "utility").arg(backendName) + QChar::LineFeed +
+                       tr("%1 version: %2").arg(backend, version) + QChar::LineFeed +
                        tr("Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;"));
 }
 
