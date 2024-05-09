@@ -88,7 +88,7 @@ void VolumeSlider::mouseReleaseEvent(QMouseEvent *event)
 void VolumeSlider::wheelEvent(QWheelEvent *event)
 {
     setSliderDown(true);
-    setValue(value() + event->angleDelta().y() / 20);
+    QSlider::setValue(value() + event->angleDelta().y() / 20);
     setSliderDown(false);
 }
 
