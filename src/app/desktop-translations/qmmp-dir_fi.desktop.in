@@ -14,7 +14,7 @@ X-KDE-StartupNotify=false
 
 
 # Translations
-Icon[fi]=qmmp
-Name[fi]=Qmmp
 Comment[fi]=Qt-pohjainen multimediasoitin
 GenericName[fi]=Äänisoitin
+Name[fi]=Qmmp
+Icon[fi]=qmmp

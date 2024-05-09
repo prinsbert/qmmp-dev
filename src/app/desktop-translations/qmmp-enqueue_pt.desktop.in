@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[pt]=qmmp
-Name[pt]=Colocar na fila do Qmmp
 Comment[pt]=Adicionar ficheiro(s) à lista de reprodução do Qmmp
+Name[pt]=Colocar na fila do Qmmp
+Icon[pt]=qmmp

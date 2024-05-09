@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[it]=qmmp
-Name[it]=Accoda in Qmmp
 Comment[it]=Aggiungi file alla scaletta di Qmmp
+Name[it]=Accoda in Qmmp
+Icon[it]=qmmp
