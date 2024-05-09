@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Ilya Kotov                                      *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -155,7 +155,6 @@ void SettingsDialog::writeSettings()
     settings.setValue("BassRange", ui.bassRangeSlider->value());
     //preamp
     settings.setValue("PreAmp", ui.preampGroupBox->isChecked());
-    connect(ui.preampSlider, SIGNAL(valueChanged(int)), SLOT(setPreamp(int)));
     settings.setValue("PreAmpLevel", (double) ui.preampSlider->value()/10);
     //looping
     if (ui.dontLoopRadioButton->isChecked())
