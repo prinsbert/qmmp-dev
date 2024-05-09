@@ -159,7 +159,6 @@ void SettingsDialog::writeSettings()
     settings.setValue("BassRange", m_ui.bassRangeSlider->value());
     //preamp
     settings.setValue("PreAmp", m_ui.preampGroupBox->isChecked());
-    connect(m_ui.preampSlider, SIGNAL(valueChanged(int)), SLOT(setPreamp(int)));
     settings.setValue("PreAmpLevel", (double) m_ui.preampSlider->value()/10);
     //looping
     if (m_ui.dontLoopRadioButton->isChecked())
