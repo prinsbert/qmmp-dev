@@ -37,12 +37,12 @@ Q_PLUGIN_METADATA(IID "org.qmmp.qmmp.OutputFactoryInterface.1.0")
 Q_INTERFACES(OutputFactory)
 
 public:
-    virtual OutputProperties properties() const override;
-    virtual Output* create() override;
-    virtual Volume *createVolume() override;
-    virtual void showSettings(QWidget* parent) override;
-    virtual void showAbout(QWidget *parent) override;
-    virtual QString translation() const override;
+    OutputProperties properties() const override;
+    Output *create() override;
+    Volume *createVolume() override;
+    QDialog *createSettings(QWidget *parent) override;
+    void showAbout(QWidget *parent) override;
+    QString translation() const override;
 };
 
 #endif

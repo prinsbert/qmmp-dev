@@ -4,15 +4,16 @@ TARGET = $$PLUGINS_PREFIX/Output/qtmultimedia
 
 QT += multimedia
 
-FORMS += settingsdialog.ui
+FORMS += \
+    qtmultimediasettingsdialog.ui
 
 HEADERS += outputqtmultimediafactory.h \
            outputqtmultimedia.h \
-           settingsdialog.h
+           qtmultimediasettingsdialog.h
 
 SOURCES += outputqtmultimediafactory.cpp \
            outputqtmultimedia.cpp \
-           settingsdialog.cpp
+           qtmultimediasettingsdialog.cpp
 
 RESOURCES = translations/translations.qrc
 

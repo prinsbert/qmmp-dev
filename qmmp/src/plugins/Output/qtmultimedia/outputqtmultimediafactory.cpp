@@ -19,7 +19,7 @@
  ***************************************************************************/
 
 #include "outputqtmultimediafactory.h"
-#include "settingsdialog.h"
+#include "qtmultimediasettingsdialog.h"
 
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
@@ -32,11 +32,11 @@ OutputProperties OutputQtMultimediaFactory::properties() const
     properties.name = tr("Qt Multimedia Plugin");
     properties.hasAbout = true;
     properties.hasSettings = true;
-    properties.shortName = "qtmultimedia";
+    properties.shortName = "qtmultimedia"_L1;
     return properties;
 }
 
-Output* OutputQtMultimediaFactory::create()
+Output *OutputQtMultimediaFactory::create()
 {
     return new OutputQtMultimedia();
 }
@@ -46,17 +46,16 @@ Volume *OutputQtMultimediaFactory::createVolume()
     return nullptr;
 }
 
-void OutputQtMultimediaFactory::showSettings(QWidget* parent)
+QDialog *OutputQtMultimediaFactory::createSettings(QWidget* parent)
 {
-    SettingsDialog *s = new SettingsDialog(parent);
-    s->show();
+    return new QtMultimediaSettingsDialog(parent);
 }
 
 void OutputQtMultimediaFactory::showAbout(QWidget *parent)
 {
-   QMessageBox::about (parent, tr("About Qt Multimedia Output Plugin"),
-                        tr("Qmmp Qt Multimedia Output Plugin")+QChar::LineFeed+
-                       tr("Written by: Ivan Ponomarev <ivantrue@gmail.com>"));
+   QMessageBox::about(parent, tr("About Qt Multimedia Output Plugin"),
+                       tr("Qmmp Qt Multimedia Output Plugin") + QChar::LineFeed +
+                           tr("Written by: Ivan Ponomarev <ivantrue@gmail.com>"));
 }
 
 QString OutputQtMultimediaFactory::translation() const
