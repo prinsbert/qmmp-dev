@@ -157,23 +157,23 @@
         <translation>&amp;Enlever</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="154"/>
+        <location filename="../streamwindow.cpp" line="156"/>
         <source>Done</source>
         <translation>Fait</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="157"/>
-        <location filename="../streamwindow.cpp" line="158"/>
+        <location filename="../streamwindow.cpp" line="159"/>
+        <location filename="../streamwindow.cpp" line="160"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="177"/>
+        <location filename="../streamwindow.cpp" line="179"/>
         <source>Receiving</source>
         <translation>Réception</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="280"/>
+        <location filename="../streamwindow.cpp" line="282"/>
         <source>Edit Stream</source>
         <translation>Modifier le flux</translation>
     </message>
