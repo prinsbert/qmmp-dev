@@ -31,9 +31,9 @@ SET(libmodplug_SRCS
   decoder_modplug.cpp
   decodermodplugfactory.cpp
   modplugmetadatamodel.cpp
-  settingsdialog.cpp
+  modplugsettingsdialog.cpp
   archivereader.cpp
-  settingsdialog.ui
+  modplugsettingsdialog.ui
   translations/translations.qrc
 )
 

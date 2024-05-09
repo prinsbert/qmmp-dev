@@ -25,7 +25,7 @@
 #include <libmodplug/stdafx.h>
 #include <libmodplug/it_defs.h>
 #include <libmodplug/sndfile.h>
-#include "settingsdialog.h"
+#include "modplugsettingsdialog.h"
 #include "modplugmetadatamodel.h"
 #include "decoder_modplug.h"
 #include "archivereader.h"
@@ -127,7 +127,7 @@ MetaDataModel* DecoderModPlugFactory::createMetaDataModel(const QString &path, b
 
 QDialog *DecoderModPlugFactory::createSettings(QWidget *parent)
 {
-    return new SettingsDialog(parent);
+    return new ModPlugSettingsDialog(parent);
 }
 
 void DecoderModPlugFactory::showAbout(QWidget *parent)

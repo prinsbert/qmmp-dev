@@ -14,9 +14,9 @@ ADD_DEFINITIONS(${SAMPLERATE_CFLAGS})
 
 SET(libsrconverter_SRCS
     srconverter.cpp
-    settingsdialog.cpp
+    srconvertersettingsdialog.cpp
     effectsrconverterfactory.cpp
-    settingsdialog.ui
+    srconvertersettingsdialog.ui
     translations/translations.qrc
 )
 
