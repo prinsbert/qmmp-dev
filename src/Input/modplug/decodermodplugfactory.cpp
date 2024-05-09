@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2015 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -46,7 +46,7 @@ DecoderProperties DecoderModPlugFactory::properties() const
     properties.filters = QStringList { "*.amf" , "*.ams" , "*.dbm" , "*.dbf" , "*.dsm" , "*.far" , "*.mdl",
             "*.stm" , "*.ult" , "*.j2b" , "*.mt2" , "*.mdz" , "*.mdr" , "*.mdgz",
             "*.mdbz" , "*.mod" , "*.s3z" , "*.s3r" , "*.s3gz" , "*.s3m" , "*.xmz",
-            "*.xmr" , "*.xmgz" , "*.itz" , "*.itr" , "*.itgz" , "*.dmf" "*.umx",
+            "*.xmr" , "*.xmgz" , "*.itz" , "*.itr" , "*.itgz" , "*.dmf", "*.umx",
             "*.it" , "*.669" , "*.xm" , "*.mtm" , "*.psm" , "*.ft2" , "*.med" };
     properties.description = tr("ModPlug Files");
     //properties.contentType = ;
