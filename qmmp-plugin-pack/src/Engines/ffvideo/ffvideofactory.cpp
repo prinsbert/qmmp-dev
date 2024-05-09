@@ -39,12 +39,12 @@ EngineProperties FFVideoFactory::properties() const
 {
     EngineProperties properties;
     properties.name = tr("FFmpeg Video Plugin");
-    properties.shortName = "ffvideo";
-    properties.filters = QStringList { "*.avi", "*.mpg", "*.mpeg", "*.divx", "*.qt",
-            "*.mov", "*.wmv", "*.asf", "*.flv", "*.3gp", "*.mkv", "*.mp4", "*.webm" };
+    properties.shortName = "ffvideo"_L1;
+    properties.filters = QStringList { u"*.avi"_s, u"*.mpg"_s, u"*.mpeg"_s, u"*.divx"_s, u"*.qt"_s,
+            u"*.mov"_s, u"*.wmv"_s, u"*.asf"_s, u"*.flv"_s, u"*.3gp"_s, u"*.mkv"_s, u"*.mp4"_s, u"*.webm"_s };
     properties.description = tr("Video Files");
     //properties.contentType = "application/ogg;audio/x-vorbis+ogg";
-    properties.protocols = QStringList { "file" };
+    properties.protocols = QStringList { u"file"_s };
     properties.hasAbout = true;
     properties.hasSettings = false;
     return properties;
@@ -52,7 +52,7 @@ EngineProperties FFVideoFactory::properties() const
 
 bool FFVideoFactory::supports(const QString &source) const
 {
-    return QDir::match(properties().filters, source.section(QChar('/'), -1));
+    return QDir::match(properties().filters, source.section(QLatin1Char('/'), -1));
 }
 
 AbstractEngine *FFVideoFactory::create(QObject *parent)
@@ -159,17 +159,16 @@ QDialog *FFVideoFactory::createSettings(QWidget *)
 void FFVideoFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About FFVideo Plugin"),
-                       tr("FFmpeg-based video plugin for Qmmp")+"\n"+
-                       tr("Compiled against:") + "\n"+
-                       QString("libavformat-%1\n"
-                               "libavcodec-%2\n"
-                               "libavutil-%3\n"
-                               "libswscale-%4")
-                       .arg(AV_STRINGIFY(LIBAVFORMAT_VERSION),
-                            AV_STRINGIFY(LIBAVCODEC_VERSION),
-                            AV_STRINGIFY(LIBAVUTIL_VERSION),
-                            AV_STRINGIFY(LIBSWSCALE_VERSION))
-                       +"\n"+
+                       tr("FFmpeg-based video plugin for Qmmp") + QChar::LineFeed +
+                       tr("Compiled against:") + QChar::LineFeed +
+                       QStringLiteral("libavformat-%1\n"
+                                      "libavcodec-%2\n"
+                                      "libavutil-%3\n"
+                                      "libswscale-%4")
+                       .arg(QString::fromLatin1(AV_STRINGIFY(LIBAVFORMAT_VERSION)),
+                            QString::fromLatin1(AV_STRINGIFY(LIBAVCODEC_VERSION)),
+                            QString::fromLatin1(AV_STRINGIFY(LIBAVUTIL_VERSION)),
+                            QString::fromLatin1(AV_STRINGIFY(LIBSWSCALE_VERSION))) + QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 

@@ -74,12 +74,12 @@ YtbInputSource::~YtbInputSource()
 
 QString YtbInputSource::findBackend(QString *version)
 {
-    static const QStringList backends = { "yt-dlp", "youtube-dl" };
+    static const QStringList backends = { u"yt-dlp"_s, u"youtube-dl"_s };
 
     for(const QString &backend : qAsConst(backends))
     {
         QProcess p;
-        p.start(backend, { "--version" });
+        p.start(backend, { u"--version"_s });
         p.waitForFinished();
         if(p.exitCode() == EXIT_SUCCESS)
         {
@@ -109,14 +109,14 @@ bool YtbInputSource::initialize()
     qWarning("YtbInputSource: using %s", qPrintable(m_backend));
 
     QString id;
-    if(m_url.startsWith("ytb://"))
-        id = m_url.section("://", -1);
-    else if(m_url.startsWith("https://www.youtube.com/"))
-        id = QUrlQuery(QUrl(m_url)).queryItemValue("v");
-    else if(m_url.startsWith("https://youtu.be/"))
-        id = QUrl(m_url).path().remove("/");
+    if(m_url.startsWith(u"ytb://"_s))
+        id = m_url.section(u"://"_s, -1);
+    else if(m_url.startsWith(u"https://www.youtube.com/"_s))
+        id = QUrlQuery(QUrl(m_url)).queryItemValue(u"v"_s);
+    else if(m_url.startsWith(u"https://youtu.be/"_s))
+        id = QUrl(m_url).path().remove(QLatin1Char('/'));
 
-    QStringList args = { "-j", QString("https://www.youtube.com/watch?v=%1").arg(id) };
+    QStringList args = { u"-j"_s, QStringLiteral("https://www.youtube.com/watch?v=%1").arg(id) };
 
     if(QmmpSettings::instance()->isProxyEnabled())
         args << QStringLiteral("--proxy") << QmmpSettings::instance()->proxy().toString();
@@ -177,51 +177,52 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     //qDebug("%s", document.toJson(QJsonDocument::Indented).constData());
 
     QMap<Qmmp::MetaData, QString> metaData = {
-        { Qmmp::TITLE, json["fulltitle"].toString() }
+        { Qmmp::TITLE, json[u"fulltitle"_s].toString() }
     };
     addMetaData(metaData);
 
     QHash<QString, QString> streamInfo = {
-        { tr("Uploader"), json["uploader"].toString() },
-        { tr("Upload date"), json["upload_date"].toString() },
-        { tr("Duration"), QString("%1:%2").arg(json["duration"].toInt() / 60)
-          .arg(json["duration"].toInt() % 60, 2, 10, QChar('0')) },
+        { tr("Uploader"), json[u"uploader"_s].toString() },
+        { tr("Upload date"), json[u"upload_date"_s].toString() },
+        { tr("Duration"), QStringLiteral("%1:%2").arg(json[u"duration"_s].toInt() / 60)
+          .arg(json[u"duration"_s].toInt() % 60, 2, 10, QLatin1Char('0')) },
     };
     addStreamInfo(streamInfo);
 
     double bitrate = 0;
     QString url, codec;
     QJsonObject headers;
-    for(const QJsonValue &value : json["formats"].toArray())
+    for(const QJsonValue &value : json[u"formats"_s].toArray())
     {
         QJsonObject obj = value.toObject();
 
-        qDebug() << obj["acodec"].toString() << obj["vcodec"].toString() << obj["abr"].toDouble();
+        qDebug() << obj[u"acodec"_s].toString() << obj[u"vcodec"_s].toString() << obj[u"abr"_s].toDouble();
 
-        if(obj["abr"].toDouble() > bitrate && obj["acodec"].toString() == "opus" && obj["vcodec"].toString() == "none")
+        if(obj[u"abr"_s].toDouble() > bitrate && obj[u"acodec"_s].toString() == "opus"_L1 &&
+                obj[u"vcodec"_s].toString() == "none"_L1)
         {
-            url = obj.contains("fragment_base_url") ? obj["fragment_base_url"].toString() : obj["url"].toString();
-            bitrate = obj["abr"].toDouble();
-            headers = obj["http_headers"].toObject();
-            codec = obj["acodec"].toString();
-            m_fileSize = obj["filesize"].toInt();
+            url = obj.contains(u"fragment_base_url"_s) ? obj[u"fragment_base_url"_s].toString() : obj[u"url"_s].toString();
+            bitrate = obj[u"abr"_s].toDouble();
+            headers = obj[u"http_headers"_s].toObject();
+            codec = obj[u"acodec"_s].toString();
+            m_fileSize = obj[u"filesize"_s].toInt();
         }
     }
 
     //fallback
     if(url.isEmpty())
     {
-        for(const QJsonValue &value : json["formats"].toArray())
+        for(const QJsonValue &value : json[u"formats"_s].toArray())
         {
             QJsonObject obj = value.toObject();
 
-            if(obj["abr"].toDouble() > bitrate && obj["vcodec"].toString() == "none")
+            if(obj[u"abr"_s].toDouble() > bitrate && obj[u"vcodec"_s].toString() == "none"_L1)
             {
-                url = obj.contains("fragment_base_url") ? obj["fragment_base_url"].toString() : obj["url"].toString();
-                bitrate = obj["abr"].toDouble();
-                headers = obj["http_headers"].toObject();
-                codec = obj["acodec"].toString();
-                m_fileSize = obj["filesize"].toInt();
+                url = obj.contains(u"fragment_base_url"_s) ? obj[u"fragment_base_url"_s].toString() : obj[u"url"_s].toString();
+                bitrate = obj[u"abr"_s].toDouble();
+                headers = obj[u"http_headers"_s].toObject();
+                codec = obj[u"acodec"_s].toString();
+                m_fileSize = obj[u"filesize"_s].toInt();
             }
         }
     }
@@ -251,7 +252,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
     if(m_offset > 0)
     {
-        m_request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+        m_request.setRawHeader("Range", QStringLiteral("bytes=%1-").arg(m_offset).toLatin1());
         m_request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
         m_buffer->setOffset(m_offset);
     }
@@ -290,7 +291,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
         {
             qDebug("YtbInputSource: processing seek request...");
             m_buffer->clearRequestPos();
-            m_request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+            m_request.setRawHeader("Range", QStringLiteral("bytes=%1-").arg(m_offset).toLatin1());
             m_request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
             m_buffer->setOffset(m_offset);
             m_getStreamReply = m_manager->get(m_request);
@@ -337,7 +338,7 @@ void YtbInputSource::onSeekRequest()
     else
     {
         m_buffer->clearRequestPos();
-        m_request.setRawHeader("Range", QString("bytes=%1-").arg(m_offset).toLatin1());
+        m_request.setRawHeader("Range", QStringLiteral("bytes=%1-").arg(m_offset).toLatin1());
         m_request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
         m_buffer->setOffset(m_offset);
         m_getStreamReply = m_manager->get(m_request);

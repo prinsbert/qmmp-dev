@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2017-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2017-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -79,7 +79,7 @@ QList<MetaDataItem> FFVideoMetaDataModel::extraProperties() const
     if(videoIndex >= 0)
     {
          AVCodecParameters *c = m_in->streams[videoIndex]->codecpar;
-         ep << MetaDataItem(tr("Video size"), QString("%1x%2").arg(c->width).arg(c->height));
+         ep << MetaDataItem(tr("Video size"), QStringLiteral("%1x%2").arg(c->width).arg(c->height));
          ep << MetaDataItem(tr("Video bitrate"), qint64(c->bit_rate / 1000), tr("kbps"));
     }
     return ep;

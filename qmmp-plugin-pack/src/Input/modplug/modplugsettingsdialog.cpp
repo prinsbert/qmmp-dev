@@ -40,26 +40,26 @@ ModPlugSettingsDialog::ModPlugSettingsDialog(QWidget *parent)
     connect(m_ui->bassAmountSlider, &QSlider::valueChanged, m_ui->label_13, qOverload<int>(&QLabel::setNum));
 
     QSettings settings;
-    settings.beginGroup("ModPlug");
+    settings.beginGroup("ModPlug"_L1);
     //general
-    m_ui->noiseCheckBox->setChecked(settings.value("NoiseReduction", false).toBool());
-    m_ui->fileNameCheckBox->setChecked(settings.value("UseFileName", false).toBool());
-    m_ui->amigaCheckBox->setChecked(settings.value("GrabAmigaMOD", true).toBool());
+    m_ui->noiseCheckBox->setChecked(settings.value("NoiseReduction"_L1, false).toBool());
+    m_ui->fileNameCheckBox->setChecked(settings.value("UseFileName"_L1, false).toBool());
+    m_ui->amigaCheckBox->setChecked(settings.value("GrabAmigaMOD"_L1, true).toBool());
     //settings.value("Oversampling", true).toBool();
     //settings.value("VolumeRamp", true).toBool();
     //settings.value("FastInfo", true).toBool();
     //channels number
-    if (settings.value("Channels", 2).toInt() == 2)
+    if (settings.value("Channels"_L1, 2).toInt() == 2)
         m_ui->stereoRadioButton->setChecked(true);
     else
         m_ui->monoRadioButton->setChecked(true);
     //bits number
-    if (settings.value("Bits", 16).toInt() == 8)
+    if (settings.value("Bits"_L1, 16).toInt() == 8)
         m_ui->bit8RadioButton->setChecked(true);
     else
         m_ui->bit16RadioButton->setChecked(true);
     //resampling frequency
-    int freq = settings.value("Frequency", 44100).toInt();
+    int freq = settings.value("Frequency"_L1, 44100).toInt();
     if (freq == 48000)
         m_ui->khz48RadioButton->setChecked(true);
     else if (freq == 44100)
@@ -69,7 +69,7 @@ ModPlugSettingsDialog::ModPlugSettingsDialog(QWidget *parent)
     else
         m_ui->khz11RadioButton->setChecked(true);
     //resampling mode
-    int res = settings.value("ResamplineMode", SRCMODE_POLYPHASE).toInt();
+    int res = settings.value("ResamplineMode"_L1, SRCMODE_POLYPHASE).toInt();
     if (res == SRCMODE_NEAREST)
         m_ui->resampNearestRadioButton->setChecked(true);
     else if (res == SRCMODE_LINEAR)
@@ -79,23 +79,23 @@ ModPlugSettingsDialog::ModPlugSettingsDialog(QWidget *parent)
     else
         m_ui->resampPolyphaseRadioButton->setChecked(true);
     //reverberation
-    m_ui->reverbGroupBox->setChecked(settings.value("Reverb", false).toBool());
-    m_ui->reverbDepthSlider->setValue(settings.value("ReverbDepth", 30).toInt());
-    m_ui->reverbDelaySlider->setValue(settings.value("ReverbDelay", 100).toInt());
+    m_ui->reverbGroupBox->setChecked(settings.value("Reverb"_L1, false).toBool());
+    m_ui->reverbDepthSlider->setValue(settings.value("ReverbDepth"_L1, 30).toInt());
+    m_ui->reverbDelaySlider->setValue(settings.value("ReverbDelay"_L1, 100).toInt());
     //surround
-    m_ui->surGroupBox->setChecked(settings.value("Surround", true).toBool());
-    m_ui->surDepthSlider->setValue(settings.value("SurroundDepth", 20).toInt());
-    m_ui->surDelaySlider->setValue(settings.value("SurroundDelay", 20).toInt());
+    m_ui->surGroupBox->setChecked(settings.value("Surround"_L1, true).toBool());
+    m_ui->surDepthSlider->setValue(settings.value("SurroundDepth"_L1, 20).toInt());
+    m_ui->surDelaySlider->setValue(settings.value("SurroundDelay"_L1, 20).toInt());
     //bass
-    m_ui->bassGroupBox->setChecked(settings.value("Megabass", false).toBool());
-    m_ui->bassAmountSlider->setValue(settings.value("BassAmount", 40).toInt());
-    m_ui->bassRangeSlider->setValue(settings.value("BassRange", 30).toInt());
+    m_ui->bassGroupBox->setChecked(settings.value("Megabass"_L1, false).toBool());
+    m_ui->bassAmountSlider->setValue(settings.value("BassAmount"_L1, 40).toInt());
+    m_ui->bassRangeSlider->setValue(settings.value("BassRange"_L1, 30).toInt());
     //preamp
-    m_ui->preampGroupBox->setChecked(settings.value("PreAmp", false).toBool());
-    connect(m_ui->preampSlider, SIGNAL(valueChanged(int)), SLOT(setPreamp(int)));
-    m_ui->preampSlider->setValue(int(settings.value("PreAmpLevel", 0.0f).toDouble()*10));
+    m_ui->preampGroupBox->setChecked(settings.value("PreAmp"_L1, false).toBool());
+    connect(m_ui->preampSlider, &QSlider::valueChanged, this, &ModPlugSettingsDialog::setPreamp);
+    m_ui->preampSlider->setValue(int(settings.value("PreAmpLevel"_L1, 0.0f).toDouble() * 10));
     //looping
-    int l = settings.value("LoopCount", 0).toInt();
+    int l = settings.value("LoopCount"_L1, 0).toInt();
     if (l == 0)
         m_ui->dontLoopRadioButton->setChecked(true);
     else if (l < 0)
@@ -117,59 +117,58 @@ ModPlugSettingsDialog::~ModPlugSettingsDialog()
 void ModPlugSettingsDialog::writeSettings()
 {
     QSettings settings;
-    settings.beginGroup("ModPlug");
+    settings.beginGroup("ModPlug"_L1);
     //general
-    settings.setValue("NoiseReduction", m_ui->noiseCheckBox->isChecked());
-    settings.setValue("UseFileName", m_ui->fileNameCheckBox->isChecked());
-    settings.setValue("GrabAmigaMOD", m_ui->amigaCheckBox->isChecked());
+    settings.setValue("NoiseReduction"_L1, m_ui->noiseCheckBox->isChecked());
+    settings.setValue("UseFileName"_L1, m_ui->fileNameCheckBox->isChecked());
+    settings.setValue("GrabAmigaMOD"_L1, m_ui->amigaCheckBox->isChecked());
     //settings.value("Oversampling", true).toBool();
     //settings.value("VolumeRamp", true).toBool();
     //settings.value("FastInfo", true).toBool();
     //channels number
-    settings.setValue("Channels", m_ui->stereoRadioButton->isChecked() ? 2 : 1 );
+    settings.setValue("Channels"_L1, m_ui->stereoRadioButton->isChecked() ? 2 : 1 );
     //bits number
-    settings.setValue("Bits", m_ui->bit8RadioButton->isChecked() ? 8 : 16 );
+    settings.setValue("Bits"_L1, m_ui->bit8RadioButton->isChecked() ? 8 : 16 );
     //resampling frequency
     if (m_ui->khz48RadioButton->isChecked())
-        settings.setValue("Frequency", 48000);
+        settings.setValue("Frequency"_L1, 48000);
     else if (m_ui->khz44RadioButton->isChecked())
-        settings.setValue("Frequency", 44100);
+        settings.setValue("Frequency"_L1, 44100);
     else if (m_ui->khz22RadioButton->isChecked())
-        settings.setValue("Frequency", 22050);
+        settings.setValue("Frequency"_L1, 22050);
     else
-        settings.setValue("Frequency", 11025);
+        settings.setValue("Frequency"_L1, 11025);
     //resampling mode
     if (m_ui->resampNearestRadioButton->isChecked())
-        settings.setValue("ResamplineMode", SRCMODE_NEAREST);
+        settings.setValue("ResamplineMode"_L1, SRCMODE_NEAREST);
     else if (m_ui->resampLinearRadioButton->isChecked())
-        settings.setValue("ResamplineMode", SRCMODE_LINEAR);
+        settings.setValue("ResamplineMode"_L1, SRCMODE_LINEAR);
     else if (m_ui->resampSplineRadioButton->isChecked())
-        settings.setValue("ResamplineMode", SRCMODE_SPLINE);
+        settings.setValue("ResamplineMode"_L1, SRCMODE_SPLINE);
     else
-        settings.setValue("ResamplineMode", SRCMODE_POLYPHASE);
+        settings.setValue("ResamplineMode"_L1, SRCMODE_POLYPHASE);
     //reverberation
-    settings.setValue("Reverb",  m_ui->reverbGroupBox->isChecked());
-    settings.setValue("ReverbDepth", m_ui->reverbDepthSlider->value());
-    settings.setValue("ReverbDelay", m_ui->reverbDelaySlider->value());
+    settings.setValue("Reverb"_L1,  m_ui->reverbGroupBox->isChecked());
+    settings.setValue("ReverbDepth"_L1, m_ui->reverbDepthSlider->value());
+    settings.setValue("ReverbDelay"_L1, m_ui->reverbDelaySlider->value());
     //surround
-    settings.setValue("Surround", m_ui->surGroupBox->isChecked());
-    settings.setValue("SurroundDepth", m_ui->surDepthSlider->value());
-    settings.setValue("SurroundDelay", m_ui->surDelaySlider->value());
+    settings.setValue("Surround"_L1, m_ui->surGroupBox->isChecked());
+    settings.setValue("SurroundDepth"_L1, m_ui->surDepthSlider->value());
+    settings.setValue("SurroundDelay"_L1, m_ui->surDelaySlider->value());
     //bass
-    settings.setValue("Megabass", m_ui->bassGroupBox->isChecked());
-    settings.setValue("BassAmount", m_ui->bassAmountSlider->value());
-    settings.setValue("BassRange", m_ui->bassRangeSlider->value());
+    settings.setValue("Megabass"_L1, m_ui->bassGroupBox->isChecked());
+    settings.setValue("BassAmount"_L1, m_ui->bassAmountSlider->value());
+    settings.setValue("BassRange"_L1, m_ui->bassRangeSlider->value());
     //preamp
-    settings.setValue("PreAmp", m_ui->preampGroupBox->isChecked());
-    connect(m_ui->preampSlider, SIGNAL(valueChanged(int)), SLOT(setPreamp(int)));
-    settings.setValue("PreAmpLevel", (double) m_ui->preampSlider->value()/10);
+    settings.setValue("PreAmp"_L1, m_ui->preampGroupBox->isChecked());
+    settings.setValue("PreAmpLevel"_L1, (double) m_ui->preampSlider->value() / 10);
     //looping
     if (m_ui->dontLoopRadioButton->isChecked())
-        settings.setValue("LoopCount", 0);
+        settings.setValue("LoopCount"_L1, 0);
     else if (m_ui->loopForeverRadioButton->isChecked())
-        settings.setValue("LoopCount", -1);
+        settings.setValue("LoopCount"_L1, -1);
     else
-        settings.setValue("LoopCount", m_ui->loopSpinBox->value());
+        settings.setValue("LoopCount"_L1, m_ui->loopSpinBox->value());
     settings.endGroup();
     //apply settings for the created decoder
     if (DecoderModPlug::instance())
@@ -182,7 +181,7 @@ void ModPlugSettingsDialog::writeSettings()
 
 void ModPlugSettingsDialog::setPreamp(int preamp)
 {
-    m_ui->preampLabel->setText(QString("%1").arg((double) preamp/10));
+    m_ui->preampLabel->setText(QStringLiteral("%1").arg((double) preamp/10));
 }
 
 void ModPlugSettingsDialog::on_buttonBox_clicked(QAbstractButton *button)

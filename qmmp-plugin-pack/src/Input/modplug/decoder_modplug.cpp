@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2008-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -167,58 +167,58 @@ void DecoderModPlug::readSettings()
     if (!m_soundFile)
         return;
     QSettings settings;
-    settings.beginGroup("ModPlug");
+    settings.beginGroup("ModPlug"_L1);
     CSoundFile::SetWaveConfig
     (
-        m_freq = settings.value("Frequency", 44100).toInt(),
-        m_bps = settings.value("Bits", 16).toInt(),
-        m_chan = settings.value("Channels", 2).toInt()
+        m_freq = settings.value("Frequency"_L1, 44100).toInt(),
+        m_bps = settings.value("Bits"_L1, 16).toInt(),
+        m_chan = settings.value("Channels"_L1, 2).toInt()
     );
 
     CSoundFile::SetWaveConfigEx
     (
-        settings.value("Surround", true).toBool(),
+        settings.value("Surround"_L1, true).toBool(),
         true,
-        settings.value("Reverb", false).toBool(),
+        settings.value("Reverb"_L1, false).toBool(),
         true,
-        settings.value("Megabass", false).toBool(),
-        settings.value("NoiseReduction", false).toBool(),
+        settings.value("Megabass"_L1, false).toBool(),
+        settings.value("NoiseReduction"_L1, false).toBool(),
         false
     );
-    if (settings.value("Reverb", false).toBool())
+    if (settings.value("Reverb"_L1, false).toBool())
     {
         CSoundFile::SetReverbParameters
         (
-            settings.value("ReverbDepth", 30).toInt(),
-            settings.value("ReverbDelay", 100).toInt()
+            settings.value("ReverbDepth"_L1, 30).toInt(),
+            settings.value("ReverbDelay"_L1, 100).toInt()
         );
     }
     if (settings.value("Megabass", false).toBool())
     {
         CSoundFile::SetXBassParameters
         (
-            settings.value("BassAmount", 40).toInt(),
-            settings.value("BassRange", 30).toInt()
+            settings.value("BassAmount"_L1, 40).toInt(),
+            settings.value("BassRange"_L1, 30).toInt()
         );
     }
-    if (settings.value("Surround", true).toBool())
+    if (settings.value("Surround"_L1, true).toBool())
     {
         CSoundFile::SetSurroundParameters
         (
-            settings.value("SurroundDepth", 20).toInt(),
-            settings.value("SurroundDelay", 20).toInt()
+            settings.value("SurroundDepth"_L1, 20).toInt(),
+            settings.value("SurroundDelay"_L1, 20).toInt()
         );
     }
-    CSoundFile::SetResamplingMode(settings.value("ResamplineMode", SRCMODE_POLYPHASE).toInt());
-    m_soundFile->SetRepeatCount(settings.value("LoopCount", 0).toInt());
+    CSoundFile::SetResamplingMode(settings.value("ResamplineMode"_L1, SRCMODE_POLYPHASE).toInt());
+    m_soundFile->SetRepeatCount(settings.value("LoopCount"_L1, 0).toInt());
 
 
     //general
     /*
      settings.value("GrabAmigaMOD", true).toBool());*/
     //preamp
-    m_usePreamp = settings.value("PreAmp", false).toBool();
-    m_preampFactor = exp(settings.value("PreAmpLevel", 0.0f).toDouble());
+    m_usePreamp = settings.value("PreAmp"_L1, false).toBool();
+    m_preampFactor = exp(settings.value("PreAmpLevel"_L1, 0.0f).toDouble());
     settings.endGroup();
 }
 

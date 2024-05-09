@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -34,8 +34,8 @@ SRConverter::SRConverter() : Effect()
     m_src_data.data_in = nullptr;
     m_src_data.data_out = nullptr;
     QSettings settings;
-    m_overSamplingFs = settings.value("SRC/sample_rate",48000).toInt();
-    m_converter_type = converter_type_array[settings.value("SRC/engine", 0).toInt()];
+    m_overSamplingFs = settings.value("SRC/sample_rate"_L1, 48000).toInt();
+    m_converter_type = converter_type_array[settings.value("SRC/engine"_L1, 0).toInt()];
 }
 
 SRConverter::~SRConverter()
@@ -46,7 +46,7 @@ SRConverter::~SRConverter()
 
 void SRConverter::applyEffect(Buffer *b)
 {
-    if (m_src_state && b->samples > 0)
+    if(m_src_state && b->samples > 0)
     {
         m_src_data.end_of_input = 0;
         m_src_data.data_in = b->data;

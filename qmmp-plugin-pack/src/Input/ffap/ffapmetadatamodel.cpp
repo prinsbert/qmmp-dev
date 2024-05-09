@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2011-2022 by Ilya Kotov                                 *
+ *   Copyright (C) 2011-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,13 +28,10 @@
 
 FFapMetaDataModel::FFapMetaDataModel(const QString &path, bool readOnly) : MetaDataModel(true)
 {
-    if(path.contains("://"))
+    if(path.contains(u"://"_s))
     {
-        QString p = path;
-        p.remove("ape://");
-        p.remove(QRegularExpression("#\\d+$"));
-        m_path = p;
-        m_stream = new TagLib::FileStream(QStringToFileName(p), true);
+        m_path = TrackInfo::pathFromUrl(path);
+        m_stream = new TagLib::FileStream(QStringToFileName(m_path), true);
         m_file = new TagLib::APE::File(m_stream);
     }
     else
@@ -102,8 +99,8 @@ FFapFileTagModel::~FFapFileTagModel()
 QString FFapFileTagModel::name() const
 {
     if (m_tagType == TagLib::APE::File::ID3v1)
-        return "ID3v1";
-    return "APE";
+        return u"ID3v1"_s;
+    return u"APE"_s;
 }
 
 QList<Qmmp::MetaData> FFapFileTagModel::keys() const

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2016 by Ilya Kotov                                      *
+ *   Copyright (C) 2016-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,7 +28,7 @@ VisualProperties VisualGoomFactory::properties() const
 {
     VisualProperties properties;
     properties.name = tr("Goom");
-    properties.shortName = "goom";
+    properties.shortName = "goom"_L1;
     properties.hasSettings = false;
     properties.hasAbout = true;
     return properties;
@@ -47,15 +47,15 @@ QDialog *VisualGoomFactory::createSettings(QWidget *)
 void VisualGoomFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about (parent, tr("About Goom Visual Plugin"),
-                        tr("Qmmp Goom Visual Plugin")+"\n"+
-                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>")+"\n"+
-                        tr("Based on the source code from the Goom project")+"\n"+
-                        tr("Goom project developers:")+"\n"+
-                        tr("Jean-Christophe Hoelt <jeko@ios-software.com>") + "\n"+
+                        tr("Qmmp Goom Visual Plugin") + QChar::LineFeed +
+                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
+                        tr("Based on the source code from the Goom project") + QChar::LineFeed +
+                        tr("Goom project developers:") + QChar::LineFeed +
+                        tr("Jean-Christophe Hoelt <jeko@ios-software.com>") + QChar::LineFeed +
                         tr("Guillaume Borios <gyom@ios-software.com>"));
 }
 
 QString VisualGoomFactory::translation() const
 {
-    return QString(":/goom_plugin_");
+    return QLatin1String(":/goom_plugin_");
 }

@@ -28,8 +28,8 @@ SRConverterSettingsDialog::SRConverterSettingsDialog(QWidget *parent) : QDialog(
 {
     m_ui->setupUi(this);
     QSettings settings;
-    m_ui->srSpinBox->setValue(settings.value("SRC/sample_rate", 48000).toInt());
-    m_ui->engineComboBox->setCurrentIndex(settings.value("SRC/engine", 0).toInt());
+    m_ui->srSpinBox->setValue(settings.value("SRC/sample_rate"_L1, 48000).toInt());
+    m_ui->engineComboBox->setCurrentIndex(settings.value("SRC/engine"_L1, 0).toInt());
 }
 
 
@@ -41,7 +41,7 @@ SRConverterSettingsDialog::~SRConverterSettingsDialog()
 void SRConverterSettingsDialog::accept()
 {
     QSettings settings;
-    settings.setValue("SRC/sample_rate", m_ui->srSpinBox->value());
-    settings.setValue("SRC/engine", m_ui->engineComboBox->currentIndex());
+    settings.setValue("SRC/sample_rate"_L1, m_ui->srSpinBox->value());
+    settings.setValue("SRC/engine"_L1, m_ui->engineComboBox->currentIndex());
     QDialog::accept();
 }

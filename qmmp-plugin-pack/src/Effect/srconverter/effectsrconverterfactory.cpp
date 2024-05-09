@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2007-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2007-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -28,7 +28,7 @@ EffectProperties EffectSRConverterFactory::properties() const
 {
     EffectProperties properties;
     properties.name = tr("SRC Plugin");
-    properties.shortName = "SRC";
+    properties.shortName = "SRC"_L1;
     properties.hasSettings = true;
     properties.hasAbout = true;
     properties.priority = EffectProperties::EFFECT_PRIORITY_HIGH;
@@ -48,11 +48,11 @@ QDialog *EffectSRConverterFactory::createSettings(QWidget *parent)
 void EffectSRConverterFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About Sample Rate Converter Plugin"),
-                       tr("Qmmp Sample Rate Converter Plugin")+"\n"+
+                       tr("Qmmp Sample Rate Converter Plugin") +  QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>"));
 }
 
 QString EffectSRConverterFactory::translation() const
 {
-    return QString(":/srconverter_plugin_");
+    return QLatin1String(":/srconverter_plugin_");
 }
