@@ -1883,3 +1883,4 @@ Version 2.1.8
 * fixed linking with xcb
 * fixed crash when trying to remove queued track
 * fixed copying of the selected tracks to the new playlist
+* fixed Wayland compatibility on first startup
