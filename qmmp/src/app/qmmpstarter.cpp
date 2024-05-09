@@ -291,6 +291,12 @@ void QMMPStarter::startPlayer()
                 QFile::copy(QDir::homePath() + u"/.qmmp/"_s + name, Qmmp::configDir() + QLatin1Char('/') + name);
 
             QProcess::execute(QStringLiteral("cp"), { u"-r"_s, QDir::homePath() + u"/.qmmp/skins"_s, Qmmp::configDir() });
+            if(qApp->platformName() == QLatin1String("wayland"))
+            {
+                //force qsui by default for wayland
+                QSettings settings(QStringLiteral("qmmp"), QStringLiteral("qmmp"));
+                settings.remove("Ui/current_plugin"_L1);
+            }
         }
     }
 #endif
