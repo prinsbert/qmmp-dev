@@ -763,7 +763,7 @@ void PlayListModel::showDetails(QWidget *parent)
     {
         DetailsDialog *d = new DetailsDialog(selected_tracks, parent);
         d->setAttribute(Qt::WA_DeleteOnClose, true);
-        connect(d, SIGNAL(metadaChanged(QStringList)), this, SLOT(updateMetaData(QStringList)));
+        connect(d, &DetailsDialog::metaDataChanged, this, qOverload<const QStringList &>(&PlayListModel::updateMetaData));
         d->show();
     }
 }
@@ -772,9 +772,9 @@ void PlayListModel::showDetailsForCurrent(QWidget *parent)
 {
     if(m_current_track)
     {
-        QDialog *d = new DetailsDialog(QList<PlayListTrack *>() << m_current_track, parent);
+        DetailsDialog *d = new DetailsDialog(QList<PlayListTrack *>() << m_current_track, parent);
         d->setAttribute(Qt::WA_DeleteOnClose, true);
-        connect(d, SIGNAL(metadaChanged(QStringList)), this, SLOT(updateMetaData(QStringList)));
+        connect(d, &DetailsDialog::metaDataChanged, this, qOverload<const QStringList &>(&PlayListModel::updateMetaData));
         d->show();
     }
 }
