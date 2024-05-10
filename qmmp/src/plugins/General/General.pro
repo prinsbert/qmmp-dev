@@ -17,7 +17,8 @@ SUBDIRS += statusicon \
 unix:SUBDIRS += mpris \
                 kdenotify \
                 converter \
-                gnomehotkey
+                gnomehotkey \
+                xdghotkey
 
 contains(CONFIG, UDISKS_PLUGIN){
     unix:SUBDIRS += udisks
