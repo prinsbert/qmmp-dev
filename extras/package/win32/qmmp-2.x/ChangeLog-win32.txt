@@ -480,3 +480,7 @@ LEGEND
 [*] mpg123-1.32.6
 [*] opus-1.5.2
 [*] curl-8.7.1
+
+2.1.8
+[*] qmmp-2.1.8
+[-] fixed https support
