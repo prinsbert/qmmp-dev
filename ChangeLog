@@ -1858,7 +1858,7 @@ Version 1.6.8
 * improved CUE parser
 * fixed memory leak
 * fixed issue with missing mount points in the qmmp file dialog
-* fixed unexpected startup of the disabled plugin when trying to change 
+* fixed unexpected startup of the disabled plugin when trying to change
   it's settings
 * fixed linking with xcb
 * fixed crash when trying to remove queued track
