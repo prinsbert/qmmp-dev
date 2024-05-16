@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.6.7
+QMMP_VERSION=1.6.8
 UBUNTU_CODENAMES='bionic focal jammy mantic noble'
 BUILD_ROOT=build-root
 
