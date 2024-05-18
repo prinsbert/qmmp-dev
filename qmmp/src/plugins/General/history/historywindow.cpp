@@ -27,7 +27,6 @@
 #include <QTreeWidgetItem>
 #include <QFile>
 #include <QMenu>
-#include <QtDebug>
 #include <qmmp/qmmp.h>
 #include <qmmpui/mediaplayer.h>
 #include <qmmpui/playlistmanager.h>

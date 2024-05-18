@@ -21,7 +21,6 @@
 #include <QAction>
 #include <QScreen>
 #include <QWindow>
-#include <QtDebug>
 #include <QApplication>
 #include <cmath>
 #include "dock.h"

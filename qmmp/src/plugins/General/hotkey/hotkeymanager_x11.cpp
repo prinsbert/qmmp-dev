@@ -23,7 +23,6 @@
 #include <QtGlobal>
 #ifdef QMMP_WS_X11
 #include <QSettings>
-#include <QtDebug>
 #include <QEvent>
 #include <QKeyEvent>
 #include <QCoreApplication>

@@ -26,7 +26,6 @@
 #include <QShortcut>
 #include <QKeySequence>
 #include <QStyledItemDelegate>
-#include <QtDebug>
 #include <QPainter>
 #include <qmmp/soundcore.h>
 #include "playlistmanager.h"

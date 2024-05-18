@@ -21,7 +21,6 @@
 #include <QTimer>
 #include <QApplication>
 #include <QMainWindow>
-#include <QtDebug>
 #include <qmmp/soundcore.h>
 #include <qmmpui/uihelper.h>
 #include <qmmpui/playlistmanager.h>

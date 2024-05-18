@@ -25,7 +25,6 @@
 #include <QByteArray>
 #include <QFile>
 #include <QBitmap>
-#include <QtDebug>
 #include "cursorimage.h"
 
 QCursor createCursor(QString path)

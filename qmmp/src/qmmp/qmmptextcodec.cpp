@@ -20,7 +20,6 @@
 
 #include <iconv.h>
 #include <errno.h>
-#include <QtDebug>
 #include "qmmp.h"
 #include "qmmptextcodec.h"
 

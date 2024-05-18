@@ -22,7 +22,6 @@
 #include <QMessageBox>
 #include <QSettings>
 #include <QFile>
-#include <QtDebug>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/id3v1tag.h>

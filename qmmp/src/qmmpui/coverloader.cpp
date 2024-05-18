@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <qmmp/metadatamanager.h>
-#include <QtDebug>
 #include "coverloader_p.h"
 
 CoverLoader::CoverLoader(QObject *parent)
