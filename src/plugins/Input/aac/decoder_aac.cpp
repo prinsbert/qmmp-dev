@@ -55,7 +55,7 @@ bool DecoderAAC::initialize()
 
     if(!input())
     {
-        qWarning("cannot initialize.  No input.");
+        qCWarning(plugin, "cannot initialize.  No input.");
         return false;
     }
     if(!m_input_buf)
@@ -65,7 +65,7 @@ bool DecoderAAC::initialize()
     AACFile aac_file(input());
     if(!aac_file.isValid())
     {
-        qWarning("unsupported AAC file");
+        qCWarning(plugin, "unsupported AAC file");
         return false;
     }
 
@@ -108,12 +108,12 @@ bool DecoderAAC::initialize()
 
     if(res < 0)
     {
-        qWarning("NeAACDecInit() failed");
+        qCWarning(plugin, "NeAACDecInit() failed");
         return false;
     }
     if(!freq || !chan)
     {
-        qWarning("invalid sound parameters");
+        qCWarning(plugin, "invalid sound parameters");
         return false;
     }
 

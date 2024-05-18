@@ -99,7 +99,7 @@ void PlayListHeaderModel::insert(int index, const QString &name, const QString &
 {
     if(index < 0 || index > m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return;
     }
 
@@ -116,7 +116,7 @@ void PlayListHeaderModel::remove(int index)
 {
     if(index < 0 || index >= m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return;
     }
 
@@ -133,13 +133,13 @@ void PlayListHeaderModel::move(int from, int to)
 {
     if(from < 0 || from >= m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return;
     }
 
     if(to < 0 || to >= m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return;
     }
 
@@ -153,7 +153,7 @@ void PlayListHeaderModel::execEdit(int index, QWidget *parent)
 {
     if(index < 0 || index >= m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return;
     }
 
@@ -175,7 +175,7 @@ void PlayListHeaderModel::execInsert(int index, QWidget *parent)
 {
     if(index < 0 || index > m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return;
     }
 
@@ -197,7 +197,7 @@ const QString PlayListHeaderModel::name(int index) const
 {
     if(index < 0 || index >= m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return QString();
     }
     return m_columns[index].name;
@@ -206,7 +206,7 @@ const QString PlayListHeaderModel::pattern(int index) const
 {
     if(index < 0 || index >= m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return QString();
     }
     return m_columns[index].pattern;
@@ -216,7 +216,7 @@ void PlayListHeaderModel::setData(int index, int key, const QVariant &data)
 {
     if(index < 0 || index >= m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return;
     }
     m_columns[index].data.insert(key, data);
@@ -226,7 +226,7 @@ const QVariant PlayListHeaderModel::data(int index, int key) const
 {
     if(index < 0 || index >= m_columns.size())
     {
-        qWarning("ColumnManager: index is out of range");
+        qCWarning(core, "index is out of range");
         return QString();
     }
     return m_columns[index].data.value(key);

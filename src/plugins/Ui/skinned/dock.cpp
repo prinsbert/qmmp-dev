@@ -23,7 +23,7 @@
 #include <QWindow>
 #include <QApplication>
 #include <cmath>
-#include <qmmp.h>
+#include <qmmp/qmmp.h>
 #include "dock.h"
 
 Dock *Dock::m_instance = nullptr;

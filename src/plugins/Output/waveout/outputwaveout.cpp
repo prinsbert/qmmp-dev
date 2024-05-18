@@ -87,7 +87,7 @@ bool OutputWaveOut::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat f
     m_totalWritten = 0;
     if (!waveOutGetNumDevs ())
     {
-        qWarning("OutputWaveOut: no audio device found");
+        qCWarning(plugin, "no audio device found");
         return false;
     }
     WAVEFORMATEX fmt;
@@ -103,25 +103,25 @@ bool OutputWaveOut::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat f
     switch (waveOutOpen (&dev, deviceID, &fmt, (DWORD)wave_callback, 0, CALLBACK_FUNCTION))
     {
     case MMSYSERR_ALLOCATED:
-        qWarning("OutputWaveOut: Device is already open.");
+        qCWarning(plugin, "Device is already open.");
         return false;
     case MMSYSERR_BADDEVICEID:
-        qWarning("OutputWaveOut: The specified device is out of range.");
+        qCWarning(plugin, "The specified device is out of range.");
         return false;
     case MMSYSERR_NODRIVER:
-        qWarning("OutputWaveOut: There is no audio driver in this system.");
+        qCWarning(plugin, "There is no audio driver in this system.");
         return false;
     case MMSYSERR_NOMEM:
-        qWarning("OutputWaveOut: Unable to allocate sound memory.");
+        qCWarning(plugin, "Unable to allocate sound memory.");
         return false;
     case WAVERR_BADFORMAT:
-        qWarning("OutputWaveOut: This audio format is not supported.");
+        qCWarning(plugin, "This audio format is not supported.");
         return false;
     case WAVERR_SYNC:
-        qWarning("OutputWaveOut: The device is synchronous.");
+        qCWarning(plugin, "The device is synchronous.");
         return false;
     default:
-        qWarning("OutputWaveOut: Unknown media error.");
+        qCWarning(plugin, "Unknown media error.");
         return false;
     case MMSYSERR_NOERROR:
         break;
@@ -166,7 +166,7 @@ qint64 OutputWaveOut::writeAudio(unsigned char *data, qint64 len)
 
     if ((hg2 = GlobalAlloc (GMEM_MOVEABLE, len)) == nullptr)   // allocate some memory for a copy of the buffer
     {
-        qWarning("OutputWaveOut: GlobalAlloc failed");
+        qCWarning(plugin, "GlobalAlloc failed");
         return 0;
     }
 

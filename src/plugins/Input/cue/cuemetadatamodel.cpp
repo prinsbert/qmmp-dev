@@ -33,7 +33,7 @@ CUEMetaDataModel::CUEMetaDataModel(bool readOnly, const QString &url) : MetaData
     CueFile file(url);
     if(file.isEmpty())
     {
-        qWarning("CUEMetaDataModel: invalid cue file");
+        qCWarning(plugin, "invalid cue file");
         return;
     }
     int track = url.section(QLatin1Char('#'), -1).toInt();

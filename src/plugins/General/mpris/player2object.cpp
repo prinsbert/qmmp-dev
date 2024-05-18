@@ -271,7 +271,7 @@ void Player2Object::SetPosition(const QDBusObjectPath &TrackId, qlonglong Positi
     if(m_trackID == TrackId)
         m_core->seek(Position / 1000);
     else
-        qWarning("Player2Object: SetPosition() called with a invalid trackId");
+        qCWarning(plugin, "SetPosition() called with a invalid trackId");
 }
 
 void Player2Object::Stop()

@@ -50,18 +50,18 @@ Oss4SettingsDialog::Oss4SettingsDialog (QWidget *parent) : QDialog (parent), m_u
     oss_sysinfo info;
     if ((mixer_fd = ::open(DEFAULT_MIXER, O_RDWR)) < 0)
     {
-        qWarning("Oss4SettingsDialog: %s", strerror(errno));
+        qCWarning(plugin, "%s", strerror(errno));
         return;
     }
     if (ioctl(mixer_fd, SNDCTL_SYSINFO, &info) < 0)
     {
-        qWarning("Oss4SettingsDialog: ioctl SNDCTL_SYSINFO failed: %s", strerror(errno));
+        qCWarning(plugin, "ioctl SNDCTL_SYSINFO failed: %s", strerror(errno));
         return;
     }
 
     if (info.numaudios < 1)
     {
-        qWarning("Oss4SettingsDialog: no device found");
+        qCWarning(plugin, "no device found");
         return;
     }
 
@@ -75,7 +75,7 @@ Oss4SettingsDialog::Oss4SettingsDialog (QWidget *parent) : QDialog (parent), m_u
 
         if (ioctl(mixer_fd, SNDCTL_AUDIOINFO, &audio_info) < 0)
         {
-            qWarning("Oss4SettingsDialog: ioctl SNDCTL_AUDIOINFO failed: %s", strerror(errno));
+            qCWarning(plugin, "ioctl SNDCTL_AUDIOINFO failed: %s", strerror(errno));
             return;
         }
 

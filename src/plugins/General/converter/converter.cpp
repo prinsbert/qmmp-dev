@@ -58,7 +58,7 @@ bool Converter::prepare(const QString &url, int row, const QVariantHash &preset)
     if(!source->initialize())
     {
         delete source;
-        qWarning("Converter: Invalid url");
+        qCWarning(plugin, "invalid url");
         return false;
     }
 
@@ -67,7 +67,7 @@ bool Converter::prepare(const QString &url, int row, const QVariantHash &preset)
         if(!source->ioDevice()->open(QIODevice::ReadOnly))
         {
             source->deleteLater();
-            qWarning("Converter: cannot open input stream, error: %s",
+            qCWarning(plugin, "cannot open input stream, error: %s",
                      qPrintable(source->ioDevice()->errorString()));
             return false;
         }
@@ -85,7 +85,7 @@ bool Converter::prepare(const QString &url, int row, const QVariantHash &preset)
         factory = Decoder::findByProtocol(source->path().section(u"://"_s, 0, 0));
     if(!factory)
     {
-        qWarning("Converter: unsupported file format");
+        qCWarning(plugin, "unsupported file format");
         source->deleteLater();
         return false;
     }
@@ -95,7 +95,7 @@ bool Converter::prepare(const QString &url, int row, const QVariantHash &preset)
     Decoder *decoder = factory->create(source->path(), source->ioDevice());
     if(!decoder->initialize())
     {
-        qWarning("Converter: invalid file format");
+        qCWarning(plugin, "invalid file format");
         source->deleteLater();
         delete decoder;
         return false;
@@ -135,7 +135,7 @@ void Converter::run()
 
     if(list.isEmpty() || out_path.isEmpty() || pattern.isEmpty())
     {
-        qWarning("Converter: invalid parameters");
+        qCWarning(plugin, "invalid parameters");
         emit message(m_row, tr("Error"));
         return;
     }
@@ -205,7 +205,7 @@ void Converter::run()
     FILE *enc_pipe = use_file ? fopen(qPrintable(tmp_path), "w+b") : popen(qPrintable(command), "w");
     if(!enc_pipe)
     {
-        qWarning("Converter: unable to open pipe");
+        qCWarning(plugin, "unable to open pipe");
         emit message(m_row, tr("Error"));
         return;
 
@@ -213,7 +213,7 @@ void Converter::run()
     size_t to_write = sizeof(wave_header);
     if(to_write != fwrite(&wave_header, 1, to_write, enc_pipe))
     {
-        qWarning("Converter: output file write error");
+        qCWarning(plugin, "output file write error");
         use_file ? fclose(enc_pipe) : pclose(enc_pipe);
         return;
     }
@@ -239,7 +239,7 @@ void Converter::run()
         enc_pipe = popen(qPrintable(command), "w");
         if(!enc_pipe)
         {
-            qWarning("Converter: unable to start encoder");
+            qCWarning(plugin, "unable to start encoder");
             QFile::remove(tmp_path);
             return;
         }
@@ -330,7 +330,7 @@ bool Converter::convert(Decoder *decoder, FILE *file, bool use16bit)
                 len = fwrite(output_buffer, 1, output_at, file);
                 if(len == 0)
                 {
-                    qWarning("Converter: error");
+                    qCWarning(plugin, "error");
                     return false;
                 }
                 output_at -= len;
@@ -346,7 +346,7 @@ bool Converter::convert(Decoder *decoder, FILE *file, bool use16bit)
         else
         {
             emit progress(100);
-            qCDebug(plugin) << "Converter: total written:" << total << "bytes";
+            qCDebug(plugin) << "total written:" << total << "bytes";
             qCDebug(plugin) << "finished!";
             return true;
         }

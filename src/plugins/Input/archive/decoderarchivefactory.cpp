@@ -77,7 +77,7 @@ QList<TrackInfo *> DecoderArchiveFactory::createPlayList(const QString &path, Tr
 
     if(archive_read_open_filename(a, archivePath.toLocal8Bit().constData(), 10240) != ARCHIVE_OK)
     {
-        qWarning("DecoderArchiveFactory: unable to open archive; libarchive error: %s", archive_error_string(a));
+        qCWarning(plugin, "DecoderArchiveFactory: unable to open archive; libarchive error: %s", archive_error_string(a));
         return list;
     }
 

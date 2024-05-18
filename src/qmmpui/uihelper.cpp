@@ -171,7 +171,7 @@ void UiHelper::loadPlayList(QWidget *parent, PlayListModel *model)
 {
     if(PlayListParser::nameFilters().isEmpty())
     {
-        qWarning("UiHelper: There is no registered playlist parsers");
+        qCWarning(core, "There is no registered playlist parsers");
         return;
     }
 
@@ -194,7 +194,7 @@ void UiHelper::savePlayList(QWidget *parent, PlayListModel *model)
 {
     if(PlayListParser::nameFilters().isEmpty())
     {
-        qWarning("UiHelper: There is no registered playlist parsers");
+        qCWarning(core, "There is no registered playlist parsers");
         return;
     }
 

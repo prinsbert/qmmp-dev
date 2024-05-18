@@ -33,7 +33,7 @@ MediaKeys::MediaKeys(QObject *parent) : QObject(parent)
 {
     if(!QDBusConnection::sessionBus().interface()->isServiceRegistered(u"org.gnome.SettingsDaemon"_s))
     {
-        qWarning("MediaKeys: gnome settings daemon is not running");
+        qCWarning(plugin, "gnome settings daemon is not running");
         return;
     }
 
@@ -53,7 +53,7 @@ MediaKeys::~MediaKeys()
     {
         QDBusPendingReply<> reply = releaseMediaPlayerKeys(QCoreApplication::applicationName());
         reply.waitForFinished();
-        qWarning("MediaKeys: unregistered");
+        qCWarning(plugin, "unregistered");
     }
 }
 
@@ -76,7 +76,7 @@ void MediaKeys::onRegisterFinished(QDBusPendingCallWatcher *watcher)
 
     if(reply.type() == QDBusMessage::ErrorMessage)
     {
-        qWarning("MediaKeys: unable to grab media keys: [%s] - %s",
+        qCWarning(plugin, "unable to grab media keys: [%s] - %s",
                  qPrintable(reply.errorName()), qPrintable(reply.errorMessage()));
         return;
     }
@@ -113,5 +113,5 @@ void MediaKeys::onKeyPressed(const QString &in0, const QString &in1)
     else if(in1 == "Next"_L1)
         player->next();
     else
-        qWarning("MediaKeys: unknown media key pressed");
+        qCWarning(plugin, "unknown media key pressed");
 }

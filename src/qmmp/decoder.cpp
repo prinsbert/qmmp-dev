@@ -178,7 +178,7 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
         QFile file(path);
         if(!file.open(QIODevice::ReadOnly))
         {
-            qWarning("Decoder: file open error: %s", qPrintable(file.errorString()));
+            qCWarning(core, "file open error: %s", qPrintable(file.errorString()));
             return nullptr;
         }
 
@@ -212,7 +212,7 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
     QFile file(path);
     if(!file.open(QIODevice::ReadOnly))
     {
-        qWarning("Decoder: file open error: %s", qPrintable(file.errorString()));
+        qCWarning(core, "file open error: %s", qPrintable(file.errorString()));
         return nullptr;
     }
 

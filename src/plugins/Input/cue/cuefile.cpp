@@ -134,7 +134,7 @@ QStringList CueFile::splitLine(const QString &line)
             if(end == -1) //ignore invalid line
             {
                 list.clear();
-                qWarning("unable to parse line: %s",qPrintable(line));
+                qCWarning(plugin, "unable to parse line: %s",qPrintable(line));
                 return list;
             }
             list << buf.mid (1, end - 1);

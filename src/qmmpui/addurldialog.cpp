@@ -131,7 +131,7 @@ void AddUrlDialog::accept()
 
     if(!MetaDataManager::instance()->protocols().contains(QUrl(path).scheme()))
     {
-        qWarning("AddUrlDialog: unsupported protocol");
+        qCWarning(core, "unsupported protocol");
         QDialog::reject();
         return;
     }

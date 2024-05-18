@@ -70,7 +70,7 @@ LyricsWidget::LyricsWidget(bool dialog, QWidget *parent) : QWidget(parent),
 
     if(!m_parser.load(u":/ultimate_providers.xml"_s))
     {
-        qWarning("LyricsWindow: unable to load ultimate_providers.xml");
+        qCWarning(plugin, "unable to load ultimate_providers.xml");
         m_ui->textBrowser->setText(m_parser.errorString());
         return;
     }
@@ -85,7 +85,7 @@ LyricsWidget::LyricsWidget(bool dialog, QWidget *parent) : QWidget(parent),
     if(!cacheDir.exists())
     {
         if(!cacheDir.mkpath(cacheDir.absolutePath()))
-            qWarning("LyricsWindow: unable to create cache directory");
+            qCWarning(plugin, "unable to create cache directory");
     }
 }
 
@@ -248,7 +248,7 @@ bool LyricsWidget::loadFromCache()
 
     if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qWarning("LyricsWindow: unable to open cache file '%s', error: %s",
+        qCWarning(plugin, "unable to open cache file '%s', error: %s",
                  qPrintable(file.fileName()), qPrintable(file.errorString()));
         return false;
     }
@@ -263,7 +263,7 @@ void LyricsWidget::saveToCache(const QString &text)
     QFile file(cacheFilePath());
     if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
-        qWarning("LyricsWindow: unable to open cache file '%s', error: %s",
+        qCWarning(plugin, "unable to open cache file '%s', error: %s",
                  qPrintable(file.fileName()), qPrintable(file.errorString()));
         return;
     }

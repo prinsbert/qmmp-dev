@@ -32,7 +32,7 @@ TwoPanelFileDialog::TwoPanelFileDialog()
 
 TwoPanelFileDialog::~TwoPanelFileDialog()
 {
-    qWarning("%s", Q_FUNC_INFO);
+    qCWarning(plugin) << Q_FUNC_INFO;
     delete m_dialog;
 }
 void TwoPanelFileDialog::raise(const QString &dir, Mode mode, const QString &caption,

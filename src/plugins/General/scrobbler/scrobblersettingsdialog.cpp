@@ -103,7 +103,7 @@ void ScrobblerSettingsDialog::processTokenResponse(int error)
         }
         else
         {
-            qWarning("ScrobblerSettingsDialog: invalid sender");
+            qCWarning(plugin, "invalid sender");
             return;
         }
 

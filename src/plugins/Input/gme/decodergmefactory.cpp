@@ -78,7 +78,7 @@ QList<TrackInfo *> DecoderGmeFactory::createPlayList(const QString &path, TrackI
     Music_Emu *emu = helper.load(path);
     if(!emu)
     {
-        qWarning("DecoderGmeFactory: unable to open file");
+        qCWarning(plugin, "unable to open file");
         return QList<TrackInfo *>();
     }
     return helper.createPlayList(parts);

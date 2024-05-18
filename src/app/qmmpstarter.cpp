@@ -175,7 +175,7 @@ QMMPStarter::QMMPStarter() : QObject()
         m_socket->waitForConnected();
         if(!m_socket->isValid()) //invalid connection
         {
-            qWarning("QMMPStarter: unable to connect to server");
+            qCWarning(core, "unable to connect to server");
             m_exit_code = EXIT_FAILURE;
             m_finished = true;
             return;
@@ -198,12 +198,12 @@ QMMPStarter::QMMPStarter() : QObject()
         {
             if(!QLocalServer::removeServer(UDS_PATH))
             {
-                qWarning("QMMPStarter: unable to remove invalid socket file");
+                qCWarning(core, "unable to remove invalid socket file");
                 m_exit_code = EXIT_FAILURE;
                 m_finished = true;
                 return;
             }
-            qWarning("QMMPStarter: removed invalid socket file");
+            qCWarning(core, "removed invalid socket file");
             if(noStart)
             {
                 m_exit_code = EXIT_FAILURE;
@@ -220,7 +220,7 @@ QMMPStarter::QMMPStarter() : QObject()
             }
             else
             {
-                qWarning("QMMPStarter: server error: %s", qPrintable(m_server->errorString()));
+                qCWarning(core, "server error: %s", qPrintable(m_server->errorString()));
                 m_exit_code = EXIT_FAILURE;
                 m_finished = true;
                 return;
@@ -314,7 +314,7 @@ void QMMPStarter::startPlayer()
         m_ui = factory->create();
     else
     {
-        qWarning("QMMPStarter: no user interface found");
+        qCWarning(core, "no user interface found");
         m_finished = true;
         m_exit_code = EXIT_FAILURE;
         return;

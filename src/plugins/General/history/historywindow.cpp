@@ -99,7 +99,7 @@ void HistoryWindow::loadHistory()
 
     if(!query.exec())
     {
-        qWarning("HistoryWindow: query error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "query error: %s", qPrintable(query.lastError().text()));
         return;
     }
 
@@ -164,12 +164,12 @@ void HistoryWindow::loadDistribution()
     query.bindValue(u":to"_s, m_ui->toDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
     if(!query.exec())
     {
-        qWarning("HistoryWindow: query error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "query error: %s", qPrintable(query.lastError().text()));
         return;
     }
     if(!query.next())
     {
-        qWarning("HistoryWindow: empty result");
+        qCWarning(plugin, "empty result");
         return;
     }
     int maxCount = query.value(0).toInt();
@@ -181,7 +181,7 @@ void HistoryWindow::loadDistribution()
     query.bindValue(u":to"_s, m_ui->toDateEdit->dateTime().toUTC().toString(u"yyyy-MM-dd hh:mm:ss"_s));
     if(!query.exec())
     {
-        qWarning("HistoryWindow: query error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "query error: %s", qPrintable(query.lastError().text()));
         return;
     }
 
@@ -235,7 +235,7 @@ void HistoryWindow::loadTopSongs()
 
     if(!query.exec())
     {
-        qWarning("HistoryWindow: query error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "query error: %s", qPrintable(query.lastError().text()));
         return;
     }
 
@@ -288,7 +288,7 @@ void HistoryWindow::loadTopArtists()
 
     if(!query.exec())
     {
-        qWarning("HistoryWindow: query error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "query error: %s", qPrintable(query.lastError().text()));
         return;
     }
 
@@ -327,7 +327,7 @@ void HistoryWindow::loadTopGenres()
 
     if(!query.exec())
     {
-        qWarning("HistoryWindow: query error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "query error: %s", qPrintable(query.lastError().text()));
         return;
     }
 
@@ -377,7 +377,7 @@ void HistoryWindow::removeTrack(QTreeWidgetItem *item)
     if(query.exec())
         delete item;
     else
-        qWarning("HistoryWindow: query error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "query error: %s", qPrintable(query.lastError().text()));
 }
 
 void HistoryWindow::showInformation(QTreeWidgetItem *item)
@@ -395,7 +395,7 @@ void HistoryWindow::showInformation(QTreeWidgetItem *item)
 
     if(!query.exec())
     {
-        qWarning("HistoryWindow: query error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "query error: %s", qPrintable(query.lastError().text()));
         return;
     }
 

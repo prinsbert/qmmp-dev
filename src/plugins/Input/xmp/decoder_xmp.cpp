@@ -51,7 +51,7 @@ bool DecoderXmp::initialize()
     int err = xmp_load_module(m_ctx, m_path.toLocal8Bit().data());
     if(err != 0)
     {
-        qWarning("DecoderXmp: unable to load module file, error = %d", err);
+        qCWarning(plugin, "unable to load module file, error = %d", err);
         xmp_free_context(m_ctx);
         m_ctx = nullptr;
         return false;

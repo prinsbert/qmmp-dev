@@ -40,7 +40,7 @@ bool DecoderGme::initialize()
     int count = gme_track_count(m_emu);
     if(track > count + 1 || track < 0)
     {
-        qWarning("track number is out of range");
+        qCWarning(plugin, "track number is out of range");
         gme_delete(m_emu);
         m_emu = nullptr;
         return false;

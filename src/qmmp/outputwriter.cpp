@@ -51,13 +51,13 @@ bool OutputWriter::initialize(quint32 freq, ChannelMap map)
     m_output = Output::create();
     if(!m_output)
     {
-        qWarning("OutputWriter: unable to create output");
+        qCWarning(core, "unable to create output");
         return false;
     }
 
     if (!m_output->initialize(freq, map, m_settings->outputFormat()))
     {
-        qWarning("OutputWriter: unable to initialize output");
+        qCWarning(core, "unable to initialize output");
         delete m_output;
         m_output = nullptr;
         return false;
@@ -73,7 +73,7 @@ bool OutputWriter::initialize(quint32 freq, ChannelMap map)
 
     if(!prepareConverters())
     {
-        qWarning("OutputWriter: unable to convert audio");
+        qCWarning(core, "unable to convert audio");
         delete m_output;
         m_output = nullptr;
         return false;
@@ -160,7 +160,7 @@ bool OutputWriter::prepareConverters()
 
     if(m_channels != m_output->channels())
     {
-        qWarning("OutputWriter: unsupported channel number");
+        qCWarning(core, "unsupported channel number");
         return false;
     }
 
@@ -218,7 +218,7 @@ void OutputWriter::run()
     m_mutex.lock ();
     if (!m_bytesPerMillisecond)
     {
-        qWarning("OutputWriter: invalid audio parameters");
+        qCWarning(core, "invalid audio parameters");
         m_mutex.unlock ();
         return;
     }

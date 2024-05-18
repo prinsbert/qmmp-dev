@@ -73,7 +73,7 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
     HRESULT result = CoCreateInstance(CLSID_MMDeviceEnumerator, nullptr, CLSCTX_ALL, IID_IMMDeviceEnumerator, (void**)&m_pEnumerator);
     if(result != S_OK)
     {
-        qWarning("CoCreateInstance failed, error code = 0x%lx", result);
+        qCWarning(plugin, "CoCreateInstance failed, error code = 0x%lx", result);
         m_pEnumerator = nullptr;
         return false;
     }
@@ -86,7 +86,7 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
 
         if((result = m_pEnumerator->GetDevice(id, &m_pDevice)) != S_OK)
         {
-            qWarning("IMMDeviceEnumerator::GetDevice failed, error code = 0x%lx", result);
+            qCWarning(plugin, "IMMDeviceEnumerator::GetDevice failed, error code = 0x%lx", result);
             m_pDevice = nullptr;
         }
         else
@@ -97,7 +97,7 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
     {
         if((result = m_pEnumerator->GetDefaultAudioEndpoint(eRender, eConsole, &m_pDevice)) != S_OK)
         {
-            qWarning("IMMDeviceEnumerator::GetDefaultAudioEndpoint failed, error code = 0x%lx", result);
+            qCWarning(plugin, "IMMDeviceEnumerator::GetDefaultAudioEndpoint failed, error code = 0x%lx", result);
             m_pDevice = nullptr;
             return false;
         }
@@ -105,7 +105,7 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
 
     if((result = m_pDevice->Activate(IID_IAudioClient, CLSCTX_ALL, nullptr, (void**)&m_pAudioClient)) != S_OK)
     {
-        qWarning("IMMDevice::Activate failed, error code = 0x%lx", result);
+        qCWarning(plugin, "IMMDevice::Activate failed, error code = 0x%lx", result);
         m_pAudioClient = nullptr;
         return false;
     }
@@ -169,32 +169,32 @@ bool OutputWASAPI::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat fo
 
     if((result = m_pAudioClient->Initialize(mode, streamFlags, WASAPI_BUFSIZE, 0, (WAVEFORMATEX *)&wfex, nullptr)) != S_OK)
     {
-        qWarning("IAudioClient::Initialize failed, error code = 0x%lx", result);
+        qCWarning(plugin, "IAudioClient::Initialize failed, error code = 0x%lx", result);
         return false;
     }
 
     if((result = m_pAudioClient->GetBufferSize(&m_bufferFrames)) != S_OK)
     {
-        qWarning("IAudioClient::GetBufferSize failed, error code = 0x%lx", result);
+        qCWarning(plugin, "IAudioClient::GetBufferSize failed, error code = 0x%lx", result);
         return false;
     }
 
     if((result = m_pAudioClient->GetService(IID_IAudioRenderClient, (void**)&m_pRenderClient)) != S_OK)
     {
-        qWarning("IAudioClient::GetService failed, error code = 0x%lx", result);
+        qCWarning(plugin, "IAudioClient::GetService failed, error code = 0x%lx", result);
         return false;
     }
 
     if((result = m_pAudioClient->GetService(IID_ISimpleAudioVolume, (void**)&m_pSimpleAudioVolume)) != S_OK)
     {
-        qWarning("IAudioClient::GetService failed, error code = 0x%lx", result);
+        qCWarning(plugin, "IAudioClient::GetService failed, error code = 0x%lx", result);
         return false;
     }
 
 
     if((result = m_pAudioClient->Start()) != S_OK)
     {
-        qWarning("IAudioClient::Start failed, error code = 0x%lx", result);
+        qCWarning(plugin, "IAudioClient::Start failed, error code = 0x%lx", result);
         return false;
     }
 
@@ -243,7 +243,7 @@ qint64 OutputWASAPI::writeAudio(unsigned char *data, qint64 len)
 
     if((result = m_pRenderClient->GetBuffer(framesToWrite, &pData)) != S_OK)
     {
-        qWarning("IAudioClient::GetBuffer failed, error code = 0x%lx", result);
+        qCWarning(plugin, "IAudioClient::GetBuffer failed, error code = 0x%lx", result);
         return -1;
     }
     memcpy(pData, data, framesToWrite * m_frameSize);

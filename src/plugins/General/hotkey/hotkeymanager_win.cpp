@@ -129,7 +129,7 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
             else
             {
                 hotkey->id = 0;
-                qWarning("unable to register key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
+                qCWarning(plugin, "unable to register key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
             }
 
             m_grabbedKeys << hotkey;

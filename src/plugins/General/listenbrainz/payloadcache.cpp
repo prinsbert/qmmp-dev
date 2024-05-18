@@ -122,8 +122,8 @@ void PayloadCache::save(const QList<TrackMetaData> &songs)
     }
     if(!file.open(QIODevice::WriteOnly))
     {
-        qWarning("PayloadCache: unable to save file %s", qPrintable(m_filePath));
-        qWarning("PayloadCache: error %d: %s", file.error(), qPrintable(file.errorString()));
+        qCWarning(plugin, "unable to save file %s", qPrintable(m_filePath));
+        qCWarning(plugin, "error %d: %s", file.error(), qPrintable(file.errorString()));
         return;
     }
     for(const TrackMetaData &m : qAsConst(songs))

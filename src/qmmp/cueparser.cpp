@@ -134,7 +134,7 @@ void CueParser::loadData(const QByteArray &data, QmmpTextCodec *codec)
         }
     }
     if(m_tracks.isEmpty())
-        qWarning("CueParser: invalid cue data");
+        qCWarning(core, "invalid cue data");
 }
 
 QList<TrackInfo *> CueParser::createPlayList(int track) const
@@ -148,7 +148,7 @@ QList<TrackInfo *> CueParser::createPlayList(int track) const
     }
     else if(track > m_tracks.count())
     {
-        qWarning("CueParser: invalid track number: %d", track);
+        qCWarning(core, "invalid track number: %d", track);
         return out;
     }
     else
@@ -168,7 +168,7 @@ qint64 CueParser::offset(int track) const
 {
     if(track < 1 || track > m_tracks.count())
     {
-        qWarning("CueParser: invalid track number: %d", track);
+        qCWarning(core, "invalid track number: %d", track);
         return 0;
     }
     return m_tracks.at(track - 1)->offset;
@@ -178,7 +178,7 @@ qint64 CueParser::duration(int track) const
 {
     if(track < 1 || track > m_tracks.count())
     {
-        qWarning("CueParser: invalid track number: %d", track);
+        qCWarning(core, "invalid track number: %d", track);
         return 0;
     }
     return m_tracks.at(track - 1)->info.duration();
@@ -188,7 +188,7 @@ QString CueParser::file(int track) const
 {
     if(track < 1 || track > m_tracks.count())
     {
-        qWarning("CueParser: invalid track number: %d", track);
+        qCWarning(core, "invalid track number: %d", track);
         return QString();
     }
     return m_tracks.at(track - 1)->file;
@@ -198,7 +198,7 @@ QString CueParser::url(int track) const
 {
     if(track < 1 || track > m_tracks.count())
     {
-        qWarning("CueParser: invalid track number: %d", track);
+        qCWarning(core, "invalid track number: %d", track);
         return QString();
     }
     return m_tracks.at(track - 1)->info.path();
@@ -218,7 +218,7 @@ const TrackInfo *CueParser::info(int track) const
 {
     if(track < 1 || track > m_tracks.count())
     {
-        qWarning("CueParser: invalid track number: %d", track);
+        qCWarning(core, "invalid track number: %d", track);
         return nullptr;
     }
     return &m_tracks.at(track - 1)->info;
@@ -276,7 +276,7 @@ void CueParser::setProperties(const QMap<Qmmp::TrackProperty, QString> &properti
 void CueParser::setMetaData(int track, Qmmp::MetaData key, const QVariant &value)
 {
     if(track < 1 || track > m_tracks.count())
-        qWarning("CueParser: invalid track number: %d", track);
+        qCWarning(core, "invalid track number: %d", track);
 
     m_tracks.at(track - 1)->info.setValue(key, value);
 }
@@ -308,7 +308,7 @@ QStringList CueParser::splitLine(const QString &line)
             if(end == -1) //ignore invalid line
             {
                 list.clear();
-                qWarning("CueParser: unable to parse line: %s",qPrintable(line));
+                qCWarning(core, "unable to parse line: %s",qPrintable(line));
                 return list;
             }
             list << buf.mid (1, end - 1);

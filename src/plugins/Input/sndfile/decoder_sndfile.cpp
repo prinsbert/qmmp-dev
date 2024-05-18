@@ -102,7 +102,7 @@ bool DecoderSndFile::initialize()
 
     if (!m_sndfile)
     {
-        qWarning("unable to open");
+        qCWarning(plugin, "unable to open");
         return false;
     }
 

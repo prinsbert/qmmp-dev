@@ -154,6 +154,6 @@ bool TrackChange::executeCommand(const TrackInfo &info, const QString &format)
     bool ok = QProcess::startDetached(u"sh"_s, args);
 #endif
     if(!ok)
-        qWarning("TrackChange: unable to start command '%s'", qPrintable(command));
+        qCWarning(plugin, "unable to start command '%s'", qPrintable(command));
     return ok;
 }

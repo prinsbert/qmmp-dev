@@ -97,26 +97,26 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
 
     if(!(m_loop = pw_thread_loop_new("pipewire-main-loop", nullptr)))
     {
-        qWarning("unable to create main loop");
+        qCWarning(plugin, "unable to create main loop");
         return false;
     }
 
     if (!(m_context = pw_context_new(pw_thread_loop_get_loop(m_loop), nullptr, 0)))
     {
-        qWarning("unable to create context");
+        qCWarning(plugin, "unable to create context");
         return false;
     }
 
     if(!(m_core = pw_context_connect(m_context, nullptr, 0)))
     {
-        qWarning("unable to connect context");
+        qCWarning(plugin, "unable to connect context");
         return false;
     }
     pw_core_add_listener(m_core, &m_coreListener, &coreEvents, this);
 
     if(!(m_registry = pw_core_get_registry(m_core, PW_VERSION_REGISTRY, 0)))
     {
-        qWarning("unable to get registry interface");
+        qCWarning(plugin, "unable to get registry interface");
         return false;
     }
     pw_registry_add_listener(m_registry, &m_registryListener, &registryEvents, this);
@@ -125,7 +125,7 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
 
     if(pw_thread_loop_start(m_loop) != 0)
     {
-        qWarning("unable to start loop");
+        qCWarning(plugin, "unable to start loop");
         return false;
     }
 
@@ -139,7 +139,7 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
 
     if(!m_inited || !m_hasSinks)
     {
-        qWarning("unable to initialize loop");
+        qCWarning(plugin, "unable to initialize loop");
         return false;
     }
 
@@ -160,7 +160,7 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
 
     if (!(m_stream = pw_stream_new(m_core, "Playback", props)))
     {
-        qWarning("unable to create stream");
+        qCWarning(plugin, "unable to create stream");
         pw_thread_loop_unlock(m_loop);
         return false;
     }

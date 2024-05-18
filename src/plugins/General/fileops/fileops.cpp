@@ -197,7 +197,7 @@ void FileOps::copy(const QList<PlayListTrack *> &tracks, const QString &dest, co
         {
             if(!dir.mkpath(dir.absolutePath()))
             {
-                qWarning("FileOps: unable to create directory");
+                qCWarning(plugin, "unable to create directory");
                 continue;
             }
         }
@@ -209,12 +209,12 @@ void FileOps::copy(const QList<PlayListTrack *> &tracks, const QString &dest, co
         QFile out(path);
         if(!in.open(QIODevice::ReadOnly))
         {
-            qWarning("FileOps: %s", qPrintable(in.errorString ()));
+            qCWarning(plugin, "%s", qPrintable(in.errorString ()));
             continue;
         }
         if(!out.open(QIODevice::WriteOnly))
         {
-            qWarning("FileOps: %s", qPrintable(out.errorString ()));
+            qCWarning(plugin, "%s", qPrintable(out.errorString ()));
             continue;
         }
 
@@ -303,7 +303,7 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
         {
             if(!dir.mkpath(dir.absolutePath()))
             {
-                qWarning("FileOps: unable to create directory");
+                qCWarning(plugin, "unable to create directory");
                 continue;
             }
         }
@@ -331,12 +331,12 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
         QFile out(path);
         if(!in.open(QIODevice::ReadOnly))
         {
-            qWarning("FileOps: %s", qPrintable(in.errorString ()));
+            qCWarning(plugin, "%s", qPrintable(in.errorString ()));
             continue;
         }
         if(!out.open(QIODevice::WriteOnly))
         {
-            qWarning("FileOps: %s", qPrintable(out.errorString ()));
+            qCWarning(plugin, "%s", qPrintable(out.errorString ()));
             continue;
         }
 
@@ -358,7 +358,7 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
             continue;
 
         if(!QFile::remove(track->path()))
-            qWarning("FileOps: unable to remove file '%s'", qPrintable(track->path()));
+            qCWarning(plugin, "unable to remove file '%s'", qPrintable(track->path()));
 
         track->setPath(path);
         model->doCurrentVisibleRequest();

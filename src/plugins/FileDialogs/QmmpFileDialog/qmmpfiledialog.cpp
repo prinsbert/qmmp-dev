@@ -32,7 +32,7 @@ QmmpFileDialog::QmmpFileDialog()
 
 QmmpFileDialog::~QmmpFileDialog()
 {
-    qWarning("QmmpFileDialog::~QmmpFileDialog()");
+    qCWarning(plugin) << Q_FUNC_INFO;
     delete m_dialog;
 }
 void QmmpFileDialog::raise(const QString &dir, Mode mode, const QString &caption,

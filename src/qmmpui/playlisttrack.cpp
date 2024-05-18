@@ -55,7 +55,7 @@ PlayListTrack::PlayListTrack(const TrackInfo *info) : TrackInfo(*info),
 PlayListTrack::~PlayListTrack()
 {
     if(m_refCount != 0)
-        qWarning("PlayListTrack: deleting busy track");
+        qCWarning(core, "deleting busy track");
 }
 
 PlayListTrack &PlayListTrack::operator=(const PlayListTrack &other)
@@ -170,7 +170,7 @@ QString PlayListTrack::formattedTitle(int column) const
 
     if(column < 0 || column >= m_formattedTitles.size())
     {
-        qWarning("PlayListTrack: column number is out of range");
+        qCWarning(core, "column number is out of range");
         return QString();
     }
 

@@ -39,13 +39,13 @@ QList<PlayListTrack *> PLSPlaylistFormat::decode(const QByteArray &contents)
 
     if(splitted.isEmpty())
     {
-        qWarning("PLSPlaylistFormat: error parsing PLS format");
+        qCWarning(plugin, "error parsing PLS format");
         return out;
     }
 
     if(!splitted.takeFirst().toLower().startsWith(u"[playlist]"_s))
     {
-        qWarning("PLSPlaylistFormat: unknown playlist format");
+        qCWarning(plugin, "unknown playlist format");
         return out;
     }
 
@@ -109,7 +109,7 @@ QList<PlayListTrack *> PLSPlaylistFormat::decode(const QByteArray &contents)
 
         if(error)
         {
-            qWarning("PLSPlaylistFormat: error while parsing line: '%s'", qPrintable(line));
+            qCWarning(plugin, "error while parsing line: '%s'", qPrintable(line));
             qDeleteAll(out);
             out.clear();
             break;

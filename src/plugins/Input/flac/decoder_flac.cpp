@@ -310,7 +310,7 @@ bool DecoderFLAC::initialize()
                 m_track = m_path.section(QLatin1Char('#'), -1).toInt();
                 if(m_track < 1 || m_track > m_parser->count())
                 {
-                    qWarning("invalid cuesheet xiph comment");
+                    qCWarning(plugin, "invalid cuesheet xiph comment");
                     return false;
                 }
                 m_data->input = new QFile(p);
@@ -327,20 +327,20 @@ bool DecoderFLAC::initialize()
             }
             else
             {
-                qWarning("unable to find cuesheet comment.");
+                qCWarning(plugin, "unable to find cuesheet comment.");
                 return false;
             }
         }
         else
         {
-            qWarning("cannot initialize. No input.");
+            qCWarning(plugin, "cannot initialize. No input.");
             return false;
         }
     }
 
     if (!m_data->input->isOpen())
     {
-        qWarning("unable to open input file");
+        qCWarning(plugin, "unable to open input file");
         return false;
     }
 
@@ -373,7 +373,7 @@ bool DecoderFLAC::initialize()
     {
         if(!FLAC_API_SUPPORTS_OGG_FLAC)
         {
-            qWarning("unsupported format");
+            qCWarning(plugin, "unsupported format");
             return false;
         }
         if (FLAC__stream_decoder_init_ogg_stream(
@@ -414,7 +414,7 @@ bool DecoderFLAC::initialize()
     }
     else
     {
-        qWarning("unsupported format");
+        qCWarning(plugin, "unsupported format");
         return false;
     }
 
@@ -427,7 +427,7 @@ bool DecoderFLAC::initialize()
     ChannelMap chmap = findChannelMap(m_data->channels);
     if(chmap.isEmpty())
     {
-        qWarning("unsupported number of channels: %d", m_data->channels);
+        qCWarning(plugin, "unsupported number of channels: %d", m_data->channels);
         return false;
     }
 

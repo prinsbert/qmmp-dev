@@ -52,7 +52,7 @@ Library::Library(QPointer<LibraryWidget> *libraryWidget, QObject *parent) :
             if(createTables())
                 qCDebug(plugin, "database initialization finished");
             else
-                qWarning("Library: unable to create table");
+                qCWarning(plugin, "unable to create table");
         }
     }
     QSqlDatabase::removeDatabase(CONNECTION_NAME);
@@ -161,14 +161,14 @@ bool Library::createTables()
 
     if(!ok)
     {
-        qWarning("Library: unable to create table, error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "unable to create table, error: %s", qPrintable(query.lastError().text()));
         return false;
     }
 
     ok = query.exec(u"CREATE TABLE IF NOT EXISTS ignored_files(ID INTEGER PRIMARY KEY AUTOINCREMENT, FilePath TEXT UNIQUE)"_s);
 
     if(!ok)
-        qWarning("Library: unable to create ignored file list, error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "unable to create ignored file list, error: %s", qPrintable(query.lastError().text()));
 
     return ok;
 }
@@ -208,7 +208,7 @@ void Library::addTrack(TrackInfo *track, const QString &filePath)
     query.bindValue(u":filepath"_s, filePath);
     query.bindValue(u":searchstring"_s, QStringLiteral("%1|||%2|||%3").arg(artist, album, title).toLower());
     if(!query.exec())
-        qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
 }
 
 QByteArray Library::serializeAudioInfo(const QMap<Qmmp::TrackProperty, QString> &properties)
@@ -353,7 +353,7 @@ void Library::removeMissingFiles(const QStringList &paths)
     QSqlQuery query(db);
     if(!query.exec(u"SELECT FilePath,URL FROM track_library"_s))
     {
-        qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
         return;
     }
 
@@ -378,7 +378,7 @@ void Library::removeMissingFiles(const QStringList &paths)
             rmQuery.bindValue(u":filepath"_s, path);
             if(!rmQuery.exec())
             {
-                qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+                qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
                 return;
             }
         }
@@ -386,7 +386,7 @@ void Library::removeMissingFiles(const QStringList &paths)
 
     if(!query.exec(u"SELECT FilePath FROM ignored_files"_s))
     {
-        qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
         return;
     }
 
@@ -403,7 +403,7 @@ void Library::removeMissingFiles(const QStringList &paths)
             rmQuery.bindValue(u":filepath"_s, path);
             if(!rmQuery.exec())
             {
-                qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+                qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
                 return;
             }
         }
@@ -421,7 +421,7 @@ bool Library::checkFile(const QFileInfo &info)
     query.bindValue(u":filepath"_s, info.absoluteFilePath());
     if(!query.exec())
     {
-        qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
         return false;
     }
     if(!query.next())
@@ -463,7 +463,7 @@ void Library::updateIgnoredFiles(const QStringList &paths)
         query.bindValue(u":filepath"_s, path);
         if(!query.exec())
         {
-            qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+            qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
             break;
         }
     }
@@ -480,7 +480,7 @@ void Library::readIgnoredFiles()
     QSqlQuery query(db);
     if(!query.exec(u"SELECT FilePath FROM ignored_files"_s))
     {
-        qWarning("Library: exec error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
         return;
     }
 

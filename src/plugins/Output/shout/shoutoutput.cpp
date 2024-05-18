@@ -95,7 +95,7 @@ qint64 ShoutOutput::writeAudio(unsigned char *data, qint64 maxSize)
             m_soxr_buf = (float *)realloc(m_soxr_buf, m_soxr_buf_frames * sizeof(float) * chan);
             if(!m_soxr_buf)
             {
-                qWarning("ShoutOutput: unable to allocate %zu bytes", m_soxr_buf_frames * sizeof(float) * chan);
+                qCWarning(plugin, "ShoutOutput: unable to allocate %zu bytes", m_soxr_buf_frames * sizeof(float) * chan);
                 m_soxr_buf_frames = 0;
                 if(tmp)
                     free(tmp);
@@ -176,7 +176,7 @@ qint64 ShoutOutput::writeAudio(unsigned char *data, qint64 maxSize)
 
     if(!ok)
     {
-        qWarning("ShoutOutput: trying to reconnect...");
+        qCWarning(plugin, "ShoutOutput: trying to reconnect...");
         m_client->close();
         if(!m_client->open())
             return -1;

@@ -51,7 +51,7 @@ bool DecoderArchive::initialize()
 
     if(!QFile::exists(archivePath))
     {
-        qWarning("file '%s' not found", qPrintable(archivePath));
+        qCWarning(plugin, "file '%s' not found", qPrintable(archivePath));
         return false;
     }
 
@@ -65,7 +65,7 @@ bool DecoderArchive::initialize()
 
     if(filtered.isEmpty())
     {
-        qWarning("unable to find decoder");
+        qCWarning(plugin, "unable to find decoder");
         return false;
     }
 
@@ -73,7 +73,7 @@ bool DecoderArchive::initialize()
 
     if(!m_input->isOpen())
     {
-        qWarning("unable to open archive");
+        qCWarning(plugin, "unable to open archive");
         return false;
     }
 
@@ -95,7 +95,7 @@ bool DecoderArchive::initialize()
 
     if(!factory)
     {
-        qWarning("unable to find decoder factory");
+        qCWarning(plugin, "unable to find decoder factory");
         return false;
     }
 
@@ -108,7 +108,7 @@ bool DecoderArchive::initialize()
     m_decoder = factory->create(m_url, m_input);
     if(!m_decoder->initialize())
     {
-        qWarning("unable to initialize decoder");
+        qCWarning(plugin, "unable to initialize decoder");
         return false;
     }
     configure(m_decoder->audioParameters());

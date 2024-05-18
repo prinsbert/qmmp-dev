@@ -88,7 +88,7 @@ qint64 OutputJACK::writeAudio(unsigned char *data, qint64 maxSize)
 
     if(JACK_GetState(jack_device) != PLAYING && JACK_GetState(jack_device) != RESET)
     {
-        qWarning("OutputJACK: jack is not in PLAYING or RESET states");
+        qCWarning(plugin, "jack is not in PLAYING or RESET states");
         return -1;
     }
 
@@ -99,7 +99,7 @@ qint64 OutputJACK::writeAudio(unsigned char *data, qint64 maxSize)
 
         if(m_wait_time > JACK_TIMEOUT)
         {
-            qWarning("OutputJACK: jack timeout error");
+            qCWarning(plugin, "jack timeout error");
             return -1;
         }
     }

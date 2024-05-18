@@ -973,7 +973,7 @@ void QSUiMainWindow::copySelectedMenuActionTriggered(QAction *action)
     }
     if(!targetPlayList)
     {
-        qWarning("Error: Cannot find target playlist '%s'",qPrintable(actionText));
+        qCWarning(plugin, "Error: Cannot find target playlist '%s'",qPrintable(actionText));
         return;
     }
 

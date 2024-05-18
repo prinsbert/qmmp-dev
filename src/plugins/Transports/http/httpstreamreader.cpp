@@ -42,7 +42,7 @@ static size_t curl_write_data(void *data, size_t size, size_t nmemb,
 
     if(dl->stream()->buf_fill > MAX_BUFFER_SIZE)
     {
-        qWarning("buffer has reached the maximum size, disconnecting...");
+        qCWarning(plugin, "buffer has reached the maximum size, disconnecting...");
         dl->stream()->aborted = true;
         dl->mutex()->unlock();
         return 0;
@@ -55,7 +55,7 @@ static size_t curl_write_data(void *data, size_t size, size_t nmemb,
         dl->stream()->buf = (char *)realloc(dl->stream()->buf, dl->stream()->buf_fill + data_size);
         if(!dl->stream()->buf)
         {
-            qWarning("unable to allocate %zu bytes",  dl->stream()->buf_fill + data_size);
+            qCWarning(plugin, "unable to allocate %zu bytes",  dl->stream()->buf_fill + data_size);
             if(prev)
                 free(prev);
 
