@@ -55,7 +55,7 @@ bool DecoderAAC::initialize()
 
     if(!input())
     {
-        qWarning("DecoderAAC: cannot initialize.  No input.");
+        qWarning("cannot initialize.  No input.");
         return false;
     }
     if(!m_input_buf)
@@ -65,14 +65,14 @@ bool DecoderAAC::initialize()
     AACFile aac_file(input());
     if(!aac_file.isValid())
     {
-        qWarning("DecoderAAC: unsupported AAC file");
+        qWarning("unsupported AAC file");
         return false;
     }
 
     //skip id3 tag and partial frame
     if(aac_file.offset() > 0)
     {
-        qDebug("DecoderAAC: header offset = %d bytes", aac_file.offset());
+        qCDebug(plugin, "header offset = %d bytes", aac_file.offset());
 
         char data[aac_file.offset()];
         input()->read(data, aac_file.offset());
@@ -108,12 +108,12 @@ bool DecoderAAC::initialize()
 
     if(res < 0)
     {
-        qWarning("DecoderAAC: NeAACDecInit() failed");
+        qWarning("NeAACDecInit() failed");
         return false;
     }
     if(!freq || !chan)
     {
-        qWarning("DecoderAAC: invalid sound parameters");
+        qWarning("invalid sound parameters");
         return false;
     }
 
@@ -121,7 +121,7 @@ bool DecoderAAC::initialize()
     m_input_at -= res;
     setProperty(Qmmp::FORMAT_NAME, u"AAC"_s);
     configure(freq, chan, Qmmp::PCM_S16LE);
-    qDebug("DecoderAAC: initialize succes");
+    qCDebug(plugin, "initialize succes");
     return true;
 }
 
@@ -157,7 +157,7 @@ qint64 DecoderAAC::read(unsigned char *audio, qint64 maxSize)
         if(frame_info.error > 0)
         {
             m_input_at = 0;
-            qDebug("DecoderAAC: %s", NeAACDecGetErrorMessage(frame_info.error));
+            qCDebug(plugin, "%s", NeAACDecGetErrorMessage(frame_info.error));
             return -1;
         }
         if(frame_info.samples > 0)

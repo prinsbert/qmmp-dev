@@ -92,7 +92,7 @@ LyricsWidget::LyricsWidget(bool dialog, QWidget *parent) : QWidget(parent),
 LyricsWidget::~LyricsWidget()
 {
     delete m_ui;
-    qDebug("%s", Q_FUNC_INFO);
+    qCDebug(plugin, "%s", Q_FUNC_INFO);
 }
 
 void LyricsWidget::fetch(const TrackInfo *info)

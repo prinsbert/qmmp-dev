@@ -101,7 +101,7 @@ QStringList QmmpFileDialogImpl::selectedFiles() const
     if(m_mode == FileDialog::SaveFile)
     {
         l << m_model->filePath(m_ui->fileListView->rootIndex()) + QLatin1Char('/') + m_ui->fileNameLineEdit->text();
-        qDebug("%s",qPrintable(l[0]));
+        qCDebug(plugin) << l.constFirst();
     }
     else
     {
@@ -453,7 +453,7 @@ void QmmpFileDialogImpl::addFiles(const QStringList &list)
             if(!ext.isEmpty() && ext != "."_L1)
             {
                 f_name.append(ext);
-                qDebug("QmmpFileDialogImpl: added file extension");
+                qCDebug(plugin) << "added file extension";
                 m_ui->fileNameLineEdit->setText(f_name);
                 return;
             }

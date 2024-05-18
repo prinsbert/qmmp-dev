@@ -124,12 +124,12 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 
             if(RegisterHotKey(nullptr, hotkey->id,  hotkey->mods, hotkey->key))
             {
-                qDebug("HotkeyManager: registered key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
+                qCDebug(plugin, "registered key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
             }
             else
             {
                 hotkey->id = 0;
-                qWarning("HotkeyManager: unable to register key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
+                qWarning("unable to register key=0x%x, mod=0x%x", hotkey->key, hotkey->mods);
             }
 
             m_grabbedKeys << hotkey;
@@ -235,7 +235,7 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
             if(hotkey->id != m->wParam)
                 continue;
 
-            qDebug("KeyFilterWidget: [%s] pressed",
+            qCDebug(plugin, "[%s] pressed",
                    qPrintable(HotkeyManager::getKeyString(hotkey->key, hotkey->mod)));
 
             switch (hotkey->action)

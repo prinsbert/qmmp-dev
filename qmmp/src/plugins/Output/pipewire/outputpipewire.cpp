@@ -97,26 +97,26 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
 
     if(!(m_loop = pw_thread_loop_new("pipewire-main-loop", nullptr)))
     {
-        qWarning("OutputPipeWire: unable to create main loop");
+        qWarning("unable to create main loop");
         return false;
     }
 
     if (!(m_context = pw_context_new(pw_thread_loop_get_loop(m_loop), nullptr, 0)))
     {
-        qWarning("OutputPipeWire: unable to create context");
+        qWarning("unable to create context");
         return false;
     }
 
     if(!(m_core = pw_context_connect(m_context, nullptr, 0)))
     {
-        qWarning("OutputPipeWire: unable to connect context");
+        qWarning("unable to connect context");
         return false;
     }
     pw_core_add_listener(m_core, &m_coreListener, &coreEvents, this);
 
     if(!(m_registry = pw_core_get_registry(m_core, PW_VERSION_REGISTRY, 0)))
     {
-        qWarning("OutputPipeWire: unable to get registry interface");
+        qWarning("unable to get registry interface");
         return false;
     }
     pw_registry_add_listener(m_registry, &m_registryListener, &registryEvents, this);
@@ -125,7 +125,7 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
 
     if(pw_thread_loop_start(m_loop) != 0)
     {
-        qWarning("OutputPipeWire: unable to start loop");
+        qWarning("unable to start loop");
         return false;
     }
 
@@ -139,7 +139,7 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
 
     if(!m_inited || !m_hasSinks)
     {
-        qWarning("OutputPipeWire: unable to initialize loop");
+        qWarning("unable to initialize loop");
         return false;
     }
 
@@ -160,7 +160,7 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
 
     if (!(m_stream = pw_stream_new(m_core, "Playback", props)))
     {
-        qWarning("OutputPipeWire: unable to create stream");
+        qWarning("unable to create stream");
         pw_thread_loop_unlock(m_loop);
         return false;
     }
@@ -226,13 +226,13 @@ bool OutputPipeWire::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat 
     if(pw_stream_connect(m_stream, PW_DIRECTION_OUTPUT, PW_ID_ANY, streamFlags, params, 1) != 0)
     {
         pw_thread_loop_unlock(m_loop);
-        qDebug("OutputPipeWire: unable to connect stream");
+        qCDebug(plugin, "unable to connect stream");
         return false;
     }
 
     Output::configure(freq, map, format);
     pw_thread_loop_unlock(m_loop);
-    qDebug("OutputPipeWire: ready");
+    qCDebug(plugin, "ready");
     return true;
 }
 
@@ -401,7 +401,7 @@ void OutputPipeWire::onDrained(void *data)
 {
     OutputPipeWire *o = static_cast<OutputPipeWire *>(data);
     pw_thread_loop_signal(o->m_loop, false);
-    qDebug("drained");
+    qCDebug(plugin, "drained");
 }
 
 void OutputPipeWire::onCoreEventDone(void *data, uint32_t id, int seq)

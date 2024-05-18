@@ -58,7 +58,7 @@ DecoderMpegFactory::DecoderMpegFactory()
     TagLib::String tstr(str);
     if(codec.toUnicode(str) == QString::fromUtf8(tstr.toCString(true)))
     {
-        qDebug("DecoderMADFactory: found taglib with rusxmms patch");
+        qCDebug(plugin, "found taglib with rusxmms patch");
         m_using_rusxmms = true;
         TagExtractor::setForceUtf8(m_using_rusxmms);
     }
@@ -192,12 +192,12 @@ Decoder *DecoderMpegFactory::create(const QString &, QIODevice *input)
     QSettings settings;
     if(settings.value(u"MPEG/decoder"_s, u"mad"_s).toString() == "mpg123"_L1)
     {
-        qDebug("DecoderMPEGFactory: using mpg123 decoder");
+        qCDebug(plugin, "using mpg123 decoder");
         d = new DecoderMPG123(input);
     }
     else
     {
-        qDebug("DecoderMPEGFactory: using MAD decoder");
+        qCDebug(plugin, "using MAD decoder");
         bool crc = settings.value(u"MPEG/enable_crc"_s, false).toBool();
         d = new DecoderMAD(crc, input);
     }

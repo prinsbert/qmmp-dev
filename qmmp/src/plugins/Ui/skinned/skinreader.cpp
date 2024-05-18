@@ -125,7 +125,7 @@ void SkinReader::loadSkins(const QStringList &paths)
             QString thumbnailPath = thumbnailHash.value(info.baseName());
             if(!thumbnailPath.isEmpty())
             {
-                qDebug("SkinReader: adding %s to cache", qPrintable(info.fileName()));
+                qCDebug(plugin, "adding %s to cache", qPrintable(info.fileName()));
                 m_previewHash.insert(info.canonicalFilePath(), thumbnailPath);
             }
         }
@@ -138,7 +138,7 @@ void SkinReader::loadSkins(const QStringList &paths)
         if(!usedThumbnails.contains(i.canonicalFilePath()))
         {
             QFile::remove(i.canonicalFilePath());
-            qDebug("SkinReader: deleting %s from cache", qPrintable(i.fileName()));
+            qCDebug(plugin, "deleting %s from cache", qPrintable(i.fileName()));
         }
     }
 }

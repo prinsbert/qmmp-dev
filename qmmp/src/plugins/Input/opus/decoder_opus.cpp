@@ -77,13 +77,13 @@ DecoderOpus::~DecoderOpus()
 
 bool DecoderOpus::initialize()
 {
-    qDebug("DecoderOpus: initialize");
+    qCDebug(plugin, "initialize");
     m_chan = 0;
     m_totalTime = 0;
 
     if (!input())
     {
-        qDebug("DecoderOpus: cannot initialize.  No input");
+        qCDebug(plugin, "cannot initialize.  No input");
         return false;
     }
 
@@ -98,7 +98,7 @@ bool DecoderOpus::initialize()
 
     if (!m_opusfile)
     {
-        qWarning("DecoderOpus: cannot open stream");
+        qWarning("cannot open stream");
         return false;
     }
 
@@ -110,7 +110,7 @@ bool DecoderOpus::initialize()
     const OpusHead *head = op_head(m_opusfile, -1);
     if (!head)
     {
-        qWarning("DecoderOpus: unable to read header");
+        qWarning("unable to read header");
         return false;
     }
 
@@ -119,7 +119,7 @@ bool DecoderOpus::initialize()
     ChannelMap chmap = findChannelMap(m_chan);
     if(chmap.isEmpty())
     {
-        qWarning("DecoderOpus: unsupported number of channels: %d", m_chan);
+        qWarning("unsupported number of channels: %d", m_chan);
         return false;
     }
     setProperty(Qmmp::FORMAT_NAME, u"Ogg Opus"_s);

@@ -192,12 +192,12 @@ void Skin::setSkin(const QString &path, bool force)
     else
 #endif
         settings.setValue("Skinned/skin_path"_L1, path);
-    qDebug("Skin: using %s", qPrintable(path));
+    qCDebug(plugin, "using %s", qPrintable(path));
     QFileInfo info(path);
     if(!info.exists())
     {
         m_skin_dir = QDir(SkinReader::defaultSkinPath());
-        qDebug("Skin: unable find %s, using %s as fallback", qPrintable(path), qPrintable(SkinReader::defaultSkinPath()));
+        qCDebug(plugin, "unable find %s, using %s as fallback", qPrintable(path), qPrintable(SkinReader::defaultSkinPath()));
     }
     else if(info.isDir())
     {

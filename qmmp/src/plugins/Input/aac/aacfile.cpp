@@ -45,7 +45,7 @@ AACFile::AACFile(QIODevice *input, bool metaData, bool adts) : m_input(input)
         {
             if(header.tagSize() >= buf_at)
             {
-                qWarning("AACFile: unable to parse id3v2");
+                qWarning("unable to parse id3v2");
                 return;
             }
 
@@ -107,13 +107,13 @@ AACFile::AACFile(QIODevice *input, bool metaData, bool adts) : m_input(input)
 
         if(adts_frames > 1)
         {
-            qDebug("AACFile: ADTS header found");
+            qCDebug(plugin, "ADTS header found");
 
             if (!input->isSequential() && adts)
                 parseADTS();
             m_isValid = true;
             m_offset += adts_offset;
-            qDebug("ok");
+            qCDebug(plugin, "ok");
             return;
         }
 
@@ -122,7 +122,7 @@ AACFile::AACFile(QIODevice *input, bool metaData, bool adts) : m_input(input)
 
     if(memcmp(buf, "ADIF", 4) == 0)
     {
-        qDebug("AACFile: ADIF header found");
+        qCDebug(plugin, "ADIF header found");
         int skip_size = (buf[4] & 0x80) ? 9 : 0;
         m_bitrate = ((buf[4 + skip_size] & 0x0F) << 19) |
                 (buf[5 + skip_size] << 11) |
@@ -194,7 +194,7 @@ void AACFile::parseADTS()
     /* Read all frames to ensure correct time and bitrate */
     for (frames = 0; /* */; frames++)
     {
-        //qDebug("frame header = %d", buf[0]);
+        //qCDebug(plugin, "frame header = %d", buf[0]);
         buf_at += m_input->read((char *)buf + buf_at, FAAD_MIN_STREAMSIZE*MAX_CHANNELS - buf_at);
 
         if (buf_at > 7)

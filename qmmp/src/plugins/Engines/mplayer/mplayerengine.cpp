@@ -70,7 +70,7 @@ TrackInfo *MplayerInfo::createTrackInfo(const QString &path)
     info->setValue(Qmmp::DECODER, u"mplayer"_s);
     info->setValue(Qmmp::FILE_SIZE, QFileInfo(path).size());
 #ifdef MPLAYER_DEBUG
-    qDebug("%s",qPrintable(str));
+    qCDebug(plugin) << str;
 #endif
     return info;
 }
@@ -96,7 +96,7 @@ MplayerEngine::MplayerEngine(QObject *parent)
 
 MplayerEngine::~MplayerEngine()
 {
-    qDebug("%s",__FUNCTION__);
+    qCDebug(plugin) << Q_FUNC_INFO;
     if(m_process)
         m_process->kill();
     while(!m_sources.isEmpty())
@@ -254,7 +254,7 @@ void MplayerEngine::readStdOut()
         }
 #ifdef MPLAYER_DEBUG
         else
-            qDebug("%s",qPrintable(line));
+            qCDebug(plugin) << line;
 #endif
     }
 }

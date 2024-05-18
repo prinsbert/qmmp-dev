@@ -49,7 +49,7 @@ OutputJACK::~OutputJACK()
 
 bool OutputJACK::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat format)
 {
-    qDebug("OutputJACK: initialize");
+    qCDebug(plugin, "initialize");
     int bits = 0;
     unsigned long f = freq;
     Qmmp::AudioFormat input_format = Qmmp::PCM_S8;

@@ -102,7 +102,7 @@ bool DecoderSndFile::initialize()
 
     if (!m_sndfile)
     {
-        qWarning("DecoderSndFile: unable to open");
+        qWarning("unable to open");
         return false;
     }
 
@@ -112,8 +112,8 @@ bool DecoderSndFile::initialize()
     m_bitrate = input()->size () * 8.0 / m_totalTime + 0.5;
 
     configure(m_freq, chan, Qmmp::PCM_FLOAT);
-    qDebug("DecoderSndFile: detected format: %08X", snd_info.format);
-    qDebug("DecoderSndFile: initialize succes");
+    qCDebug(plugin, "detected format: %08X", snd_info.format);
+    qCDebug(plugin, "initialize succes");
     return true;
 }
 

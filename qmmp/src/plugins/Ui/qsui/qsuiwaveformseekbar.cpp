@@ -379,7 +379,7 @@ bool QSUiWaveformScanner::scan(const QString &path)
         source->deleteLater();
         return false;
     }
-    qDebug("QSUIWaveformScanner: selected decoder: %s",qPrintable(factory->properties().shortName));
+    qCDebug(plugin, "selected decoder: %s",qPrintable(factory->properties().shortName));
     if(factory->properties().noInput && source->ioDevice())
         source->ioDevice()->close();
     Decoder *decoder = factory->create(source->path(), source->ioDevice());

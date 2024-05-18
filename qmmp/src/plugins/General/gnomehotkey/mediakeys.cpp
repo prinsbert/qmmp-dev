@@ -86,7 +86,7 @@ void MediaKeys::onRegisterFinished(QDBusPendingCallWatcher *watcher)
                                       u"MediaPlayerKeyPressed"_s, this,
                                       SLOT(onKeyPressed(QString,QString)));
     m_isRegistered = true;
-    qDebug("MediaKeys: registered");
+    qCDebug(plugin, "registered");
 
 }
 
@@ -96,7 +96,7 @@ void MediaKeys::onKeyPressed(const QString &in0, const QString &in1)
         return;
     MediaPlayer *player = MediaPlayer::instance();
     SoundCore *core = SoundCore::instance();
-    qDebug("MediaKeys: [%s] pressed", qPrintable(in1));
+    qCDebug(plugin, "[%s] pressed", qPrintable(in1));
     if(in1 == "Play"_L1)
     {
         if (core->state() == Qmmp::Stopped)

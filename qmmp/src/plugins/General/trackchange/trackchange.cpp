@@ -74,7 +74,7 @@ void TrackChange::onTrackInfoChanged()
         {
             if(!m_titleChangeCommand.isEmpty())
             {
-                qDebug("TrackChange: starting title change command..");
+                qCDebug(plugin, "starting title change command..");
                 executeCommand(info, m_titleChangeCommand);
             }
         }
@@ -82,7 +82,7 @@ void TrackChange::onTrackInfoChanged()
         {
             if(!m_newTrackCommand.isEmpty())
             {
-                qDebug("TrackChange: starting new track command..");
+                qCDebug(plugin, "starting new track command..");
                 executeCommand(info, m_newTrackCommand);
             }
         }
@@ -94,12 +94,12 @@ void TrackChange::onFinised()
 {
     if(!m_endOfTrackCommand.isEmpty())
     {
-        qDebug("TrackChange: starting end of track command..");
+        qCDebug(plugin, "starting end of track command..");
         executeCommand(m_prevInfo, m_endOfTrackCommand);
     }
     if(!m_endOfPlCommand.isEmpty() && !m_plManager->currentPlayList()->nextTrack())
     {
-        qDebug("TrackChange: starting end of playlist command..");
+        qCDebug(plugin, "tarting end of playlist command..");
         executeCommand(m_prevInfo, m_endOfPlCommand);
     }
 }

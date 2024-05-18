@@ -226,7 +226,7 @@ static void flac_callback_metadata (const FLAC__StreamDecoder *,
 
     if (metadata->type == FLAC__METADATA_TYPE_STREAMINFO)
     {
-        qDebug ("DecoderFLAC: getting metadata info");
+        qDebug ("getting metadata info");
 
         data->total_samples =
             (unsigned)(metadata->data.stream_info.total_samples
@@ -303,14 +303,14 @@ bool DecoderFLAC::initialize()
 
             if (ap && tag && tag->fieldListMap().contains("CUESHEET"))
             {
-                qDebug("DecoderFLAC: using cuesheet xiph comment.");
+                qCDebug(plugin, "using cuesheet xiph comment.");
                 m_parser = new CueParser(tag->fieldListMap()["CUESHEET"].toString() .toCString(true));
                 m_parser->setDuration(fileRef.audioProperties()->lengthInMilliseconds());
                 m_parser->setUrl(u"flac"_s, p);
                 m_track = m_path.section(QLatin1Char('#'), -1).toInt();
                 if(m_track < 1 || m_track > m_parser->count())
                 {
-                    qWarning("DecoderFLAC: invalid cuesheet xiph comment");
+                    qWarning("invalid cuesheet xiph comment");
                     return false;
                 }
                 m_data->input = new QFile(p);
@@ -327,20 +327,20 @@ bool DecoderFLAC::initialize()
             }
             else
             {
-                qWarning("DecoderFLAC: unable to find cuesheet comment.");
+                qWarning("unable to find cuesheet comment.");
                 return false;
             }
         }
         else
         {
-            qWarning("DecoderFLAC: cannot initialize. No input.");
+            qWarning("cannot initialize. No input.");
             return false;
         }
     }
 
     if (!m_data->input->isOpen())
     {
-        qWarning("DecoderFLAC: unable to open input file");
+        qWarning("unable to open input file");
         return false;
     }
 
@@ -354,7 +354,7 @@ bool DecoderFLAC::initialize()
 
     if (!m_data->decoder)
     {
-        qDebug("DecoderFLAC: creating FLAC__StreamDecoder");
+        qCDebug(plugin, "creating FLAC__StreamDecoder");
         m_data->decoder = FLAC__stream_decoder_new ();
     }
     char buf[500];
@@ -363,17 +363,17 @@ bool DecoderFLAC::initialize()
     ulong id3v2_size = findID3v2(buf, sizeof(buf));
     if(id3v2_size)
     {
-        qDebug("DecoderFLAC: skipping id3v2 tag (%lu bytes)", id3v2_size);
+        qCDebug(plugin, "skipping id3v2 tag (%lu bytes)", id3v2_size);
         m_data->input->seek(id3v2_size);
     }
     m_data->input->peek(buf,sizeof(buf));
     m_data->input->seek(0);
-    qDebug("DecoderFLAC: setting callbacks");
+    qCDebug(plugin, "setting callbacks");
     if(!memcmp(buf, "OggS", 4))
     {
         if(!FLAC_API_SUPPORTS_OGG_FLAC)
         {
-            qWarning("DecoderFLAC: unsupported format");
+            qWarning("unsupported format");
             return false;
         }
         if (FLAC__stream_decoder_init_ogg_stream(
@@ -390,7 +390,7 @@ bool DecoderFLAC::initialize()
         {
             return false;
         }
-        qDebug("DecoderFLAC: Ogg FLAC stream found");
+        qCDebug(plugin, "Ogg FLAC stream found");
         setProperty(Qmmp::FORMAT_NAME, u"Ogg FLAC"_s);
     }
     else if (!memcmp(buf, "fLaC", 4))
@@ -409,12 +409,12 @@ bool DecoderFLAC::initialize()
         {
             return false;
         }
-        qDebug("DecoderFLAC: native FLAC stream found");
+        qCDebug(plugin, "native FLAC stream found");
         setProperty(Qmmp::FORMAT_NAME, u"FLAC"_s);
     }
     else
     {
-        qWarning("DecoderFLAC: unsupported format");
+        qWarning("unsupported format");
         return false;
     }
 
@@ -427,7 +427,7 @@ bool DecoderFLAC::initialize()
     ChannelMap chmap = findChannelMap(m_data->channels);
     if(chmap.isEmpty())
     {
-        qWarning("DecoderFLAC: unsupported number of channels: %d", m_data->channels);
+        qWarning("unsupported number of channels: %d", m_data->channels);
         return false;
     }
 
@@ -459,7 +459,7 @@ bool DecoderFLAC::initialize()
     m_totalBytes = 0;
     m_sz = audioParameters().frameSize();
 
-    qDebug("DecoderFLAC: initialize succes");
+    qCDebug(plugin, "initialize succes");
     return true;
 }
 

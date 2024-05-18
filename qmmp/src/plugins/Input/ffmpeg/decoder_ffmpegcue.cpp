@@ -45,7 +45,7 @@ bool DecoderFFmpegCue::initialize()
 {
     if(!m_url.startsWith(u"ffmpeg://"_s))
     {
-        qWarning("DecoderFFmpegCue: invalid url.");
+        qWarning("invalid url.");
         return false;
     }
     QString filePath = TrackInfo::pathFromUrl(m_url, &m_track);
@@ -57,7 +57,7 @@ bool DecoderFFmpegCue::initialize()
     if(avformat_open_input(&in, filePath.toLocal8Bit().constData(), nullptr, nullptr) < 0)
 #endif
     {
-        qDebug("DecoderFFmpegCue: unable to open file");
+        qCDebug(plugin, "unable to open file");
         return false;
     }
 
@@ -66,7 +66,7 @@ bool DecoderFFmpegCue::initialize()
     if(!cuesheet)
     {
         avformat_close_input(&in);
-        qWarning("DecoderFFmpegCue: unable to find cuesheet comment.");
+        qWarning("unable to find cuesheet comment.");
         return false;
     }
 
@@ -78,13 +78,13 @@ bool DecoderFFmpegCue::initialize()
 
     if(m_track > m_parser->count() || m_parser->isEmpty())
     {
-        qWarning("DecoderFFmpegCue: invalid cuesheet");
+        qWarning("invalid cuesheet");
         return false;
     }
     m_input = new QFile(filePath);
     if(!m_input->open(QIODevice::ReadOnly))
     {
-        qWarning("DecoderFFmpegCue: unable to open file; error: %s", qPrintable(m_input->errorString()));
+        qWarning("unable to open file; error: %s", qPrintable(m_input->errorString()));
         return false;
     }
 

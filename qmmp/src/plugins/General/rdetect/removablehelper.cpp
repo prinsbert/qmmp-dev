@@ -90,7 +90,7 @@ bool RemovableHelper::nativeEventFilter(const QByteArray &eventType, void *messa
 
 void RemovableHelper::processAction(QAction *action)
 {
-    qDebug("RemovableHelper: action triggered: %s", qPrintable(action->data().toString()));
+    qCDebug(plugin, "action triggered: %s", qPrintable(action->data().toString()));
     QString path = action->data().toString();
     PlayListManager::instance()->selectedPlayList()->add(path);
 }
@@ -145,7 +145,7 @@ void RemovableHelper::updateActions()
                 action->setIcon(qApp->style()->standardIcon(QStyle::SP_DriveDVDIcon));
             else
                 action->setIcon(qApp->style()->standardIcon(QStyle::SP_DriveHDIcon));
-            qDebug("RemovableHelper: added menu item: \"%s\"", qPrintable(dev_path));
+            qCDebug(plugin, "added menu item: \"%s\"", qPrintable(dev_path));
 
             action->setText(actionText);
             action->setData(dev_path);
@@ -178,7 +178,7 @@ void RemovableHelper::updateActions()
 
         if(!found)
         {
-            qDebug("RemovableHelper: removed menu item: \"%s\"", qPrintable(action->data().toString()));
+            qCDebug(plugin, "removed menu item: \"%s\"", qPrintable(action->data().toString()));
             m_actions->removeAction(action);
             UiHelper::instance()->removeAction(action);
             removePath(action->data().toString());

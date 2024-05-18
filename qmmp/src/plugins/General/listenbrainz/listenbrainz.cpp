@@ -81,13 +81,13 @@ void ListenBrainz::setState(Qmmp::State state)
 {
     if(state == Qmmp::Playing && m_previousState == Qmmp::Paused)
     {
-        qDebug("ListenBrainz: resuming from %d seconds played", int(m_elapsed / 1000));
+        qCDebug(plugin, "resuming from %d seconds played", int(m_elapsed / 1000));
         m_time->restart();
     }
     else if(state == Qmmp::Paused)
     {
         m_elapsed += m_time->elapsed();
-        qDebug("ListenBrainz: pausing after %d seconds played", int(m_elapsed / 1000));
+        qCDebug(plugin, "pausing after %d seconds played", int(m_elapsed / 1000));
     }
     else if(state == Qmmp::Stopped && !m_song.metaData().isEmpty())
     {
@@ -166,7 +166,7 @@ void ListenBrainz::processResponse(QNetworkReply *reply)
         m_submitReply = nullptr;
         if(status == "ok"_L1)
         {
-            qDebug("ListenBrainz: submited %d song(s)", m_submitedSongs);
+            qCDebug(plugin, "submited %d song(s)", m_submitedSongs);
             while (m_submitedSongs)
             {
                 m_submitedSongs--;
@@ -191,7 +191,7 @@ void ListenBrainz::processResponse(QNetworkReply *reply)
     {
         m_notificationReply = nullptr;
         if(status == "ok"_L1)
-            qDebug("ListenBrainz: Now-Playing notification done");
+            qCDebug(plugin, "Now-Playing notification done");
     }
     reply->deleteLater();
 }
@@ -220,7 +220,7 @@ void ListenBrainz::submit()
     if (m_cachedSongs.isEmpty() || m_token.isEmpty() || m_submitReply)
         return;
 
-    qDebug("ListenBrainz: submit request");
+    qCDebug(plugin, "submit request");
     m_submitedSongs = qMin(m_cachedSongs.size(), 20);
 
     QJsonArray payload;
@@ -276,7 +276,7 @@ void ListenBrainz::sendNotification(const TrackMetaData &metaData)
     if(m_token.isEmpty() || m_notificationReply)
         return;
 
-    qDebug("ListenBrainz: sending notification...");
+    qCDebug(plugin, "sending notification...");
 
     QJsonObject track_metadata
     {

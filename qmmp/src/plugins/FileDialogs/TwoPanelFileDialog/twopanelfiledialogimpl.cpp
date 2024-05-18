@@ -446,7 +446,7 @@ void TwoPanelFileDialogImpl::addFiles(const QStringList &list, bool play)
             if(!ext.isEmpty() && ext != u"."_s)
             {
                 f_name.append(ext);
-                qDebug("TwoPanelFileDialogImpl: added file extension");
+                qCDebug(plugin) << "added file extension";
                 m_ui->fileNameLineEdit->setText(f_name);
                 return;
             }

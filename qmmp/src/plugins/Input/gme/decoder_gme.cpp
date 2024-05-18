@@ -40,7 +40,7 @@ bool DecoderGme::initialize()
     int count = gme_track_count(m_emu);
     if(track > count + 1 || track < 0)
     {
-        qWarning("DecoderGme: track number is out of range");
+        qWarning("track number is out of range");
         gme_delete(m_emu);
         m_emu = nullptr;
         return false;
@@ -72,7 +72,7 @@ bool DecoderGme::initialize()
     m_totalTime = track_info->length;
     gme_free_info(track_info);
     configure(44100, 2);
-    qDebug("DecoderGme: initialize succes");
+    qCDebug(plugin, "initialize succes");
     return true;
 }
 

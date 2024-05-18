@@ -131,7 +131,7 @@ void RGScanDialog::on_calculateButton_clicked()
 
         if(m_ui->skipScannedCheckBox->isChecked() && !scanner->oldReplayGainInfo().isEmpty())
         {
-            qDebug("RGScanDialog: skipping scanned file..");
+            qCDebug(plugin, "skipping scanned file..");
             m_ui->tableWidget->item(i, 0)->setData(FILE_SKIPPED, true);
             QMap<Qmmp::ReplayGainKey, double> rg = scanner->oldReplayGainInfo();
             m_ui->tableWidget->setItem(i, 2, new QTableWidgetItem(tr("%1 dB").arg(rg.value(Qmmp::REPLAYGAIN_TRACK_GAIN))));
@@ -169,7 +169,7 @@ void RGScanDialog::onScanFinished(const QString &url)
 
     if(stopped)
     {
-        qDebug("RGScanDialog: all threads are finished");
+        qCDebug(plugin, "all threads are finished");
         QThreadPool::globalInstance()->waitForDone();
 
         QMultiMap<QString, ReplayGainInfoItem*> itemGroupMap; //items grouped  by album
@@ -387,7 +387,7 @@ void RGScanDialog::on_writeButton_clicked()
     if(m_replayGainItemList.isEmpty())
         return;
 
-    qDebug("RGScanDialog: writing ReplayGain values...");
+    qCDebug(plugin, "writing ReplayGain values...");
 
     for(ReplayGainInfoItem *item : qAsConst(m_replayGainItemList))
     {

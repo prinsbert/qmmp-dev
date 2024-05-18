@@ -43,7 +43,7 @@ OssSettingsDialog::~OssSettingsDialog()
 
 void OssSettingsDialog::accept()
 {
-    qDebug("OssSettingsDialog (OSS):: writeSettings()");
+    qCDebug(plugin) << Q_FUNC_INFO;
     QSettings settings;
     settings.beginGroup(u"OSS"_s);
     settings.setValue(u"device"_s, m_ui->lineEdit->text());

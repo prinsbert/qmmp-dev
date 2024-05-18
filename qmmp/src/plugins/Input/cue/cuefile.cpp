@@ -38,7 +38,7 @@ CueFile::CueFile(const QString &path) : CueParser()
     QFile file(m_filePath);
     if (!file.open(QIODevice::ReadOnly))
     {
-        qDebug("CueFile: error: %s", qPrintable(file.errorString()));
+        qCDebug(plugin, "error: %s", qPrintable(file.errorString()));
         return;
     }
     QByteArray data = file.readAll();
@@ -61,7 +61,7 @@ CueFile::CueFile(const QString &path) : CueParser()
             if(encoding.charset != ENCA_CS_UNKNOWN)
             {
                 codec = new QmmpTextCodec(enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
-                //qDebug("CUEParser: detected charset: %s",
+                //qCDebug(plugin, "detected charset: %s",
                 //       enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
             }
             enca_analyser_free(analyser);
@@ -71,7 +71,7 @@ CueFile::CueFile(const QString &path) : CueParser()
     if(!codec)
         codec = new QmmpTextCodec(settings.value(u"encoding"_s, u"UTF-8"_s).toByteArray ());
     settings.endGroup();
-    //qDebug("CUEParser: using %s encoding", codec->name().constData());
+    //qCDebug(plugin, "using %s encoding", codec->name().constData());
     loadData(data, codec);
     delete codec;
     setUrl(u"cue"_s, m_filePath);
@@ -93,7 +93,7 @@ CueFile::CueFile(const QString &path) : CueParser()
     {
         if(!QFile::exists(p))
         {
-            qDebug("CueFile: unable to find file: %s", qPrintable(p));
+            qCDebug(plugin, "unable to find file: %s", qPrintable(p));
             clear();
             return;
         }
@@ -120,7 +120,7 @@ QStringList CueFile::dataFilePaths() const
 
 QStringList CueFile::splitLine(const QString &line)
 {
-    //qDebug("raw string = %s",qPrintable(line));
+    //qCDebug(plugin, "raw string = %s",qPrintable(line));
     QStringList list;
     QString buf = line.trimmed();
     if (buf.isEmpty())
@@ -134,7 +134,7 @@ QStringList CueFile::splitLine(const QString &line)
             if(end == -1) //ignore invalid line
             {
                 list.clear();
-                qWarning("CUEParser: unable to parse line: %s",qPrintable(line));
+                qWarning("unable to parse line: %s",qPrintable(line));
                 return list;
             }
             list << buf.mid (1, end - 1);

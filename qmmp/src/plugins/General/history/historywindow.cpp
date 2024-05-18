@@ -505,7 +505,7 @@ void HistoryWindow::on_topSongsTreeWidget_itemDoubleClicked(QTreeWidgetItem *ite
     QString path = item->data(1, PathRole).toString();
     if(!path.contains(u"://"_s) && !QFile::exists(path))
     {
-        qDebug("HistoryWindow: unable to find file: %s", qPrintable(path));
+        qCDebug(plugin, "unable to find file: %s", qPrintable(path));
         return;
     }
 
