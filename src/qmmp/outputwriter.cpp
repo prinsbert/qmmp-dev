@@ -18,7 +18,6 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtDebug>
 #include <string.h>
 #include "statehandler.h"
 #include "visual.h"

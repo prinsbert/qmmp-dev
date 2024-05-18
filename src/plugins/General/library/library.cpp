@@ -29,8 +29,6 @@
 #include <QDateTime>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QHash>
-#include <QtDebug>
 #include <algorithm>
 #include <qmmp/qmmp.h>
 #include <qmmp/metadatamanager.h>

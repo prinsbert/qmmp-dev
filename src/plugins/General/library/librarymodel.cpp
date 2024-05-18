@@ -22,7 +22,6 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QSettings>
-#include <QtDebug>
 #include <QMimeData>
 #include <QHash>
 #include <QJsonDocument>

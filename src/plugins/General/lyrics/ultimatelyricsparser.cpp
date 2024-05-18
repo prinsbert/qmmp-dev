@@ -23,7 +23,6 @@
 
 #include <QXmlStreamReader>
 #include <QFile>
-#include <QtDebug>
 #include <algorithm>
 #include <qmmp/qmmp.h>
 #include "ultimatelyricsparser.h"

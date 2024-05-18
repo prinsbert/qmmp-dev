@@ -25,7 +25,6 @@
 #include <QByteArray>
 #include <QApplication>
 #include <QFile>
-#include <QtDebug>
 #include <QSet>
 #include <algorithm>
 #include <qmmp/qmmp.h>

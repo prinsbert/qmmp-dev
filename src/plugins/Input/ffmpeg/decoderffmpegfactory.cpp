@@ -21,7 +21,6 @@
 #include <QSettings>
 #include <QMessageBox>
 #include <QFileInfo>
-#include <QtDebug>
 #include <QSet>
 #include <qmmp/cueparser.h>
 extern "C"{

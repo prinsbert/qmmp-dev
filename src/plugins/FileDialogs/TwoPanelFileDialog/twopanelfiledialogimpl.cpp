@@ -263,8 +263,6 @@ void TwoPanelFileDialogImpl::on_playButton_clicked()
     }
 }
 
-#include <QtDebug>
-
 void TwoPanelFileDialogImpl::setModeAndMask(const QString &path, FileDialog::Mode m, const QStringList &mask)
 {
     m_mode = m;
