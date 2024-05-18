@@ -52,6 +52,7 @@
 #include <QPair>
 #include <dwmapi.h>
 #include <shobjidl.h>
+#include <qmmp/qmmp.h>
 
 QT_BEGIN_NAMESPACE
 
