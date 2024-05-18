@@ -60,6 +60,17 @@ using namespace std;
 
 QMMPStarter::QMMPStarter() : QObject()
 {
+    if(qApp->arguments().contains(u"--debug"_s))
+    {
+        qSetMessagePattern(u"[%{type}]: %{function}: %{message} (%{file}:%{line})"_s);
+        QLoggingCategory::defaultCategory()->setEnabled(QtWarningMsg, true);
+        QLoggingCategory::defaultCategory()->setEnabled(QtDebugMsg, true);
+    }
+    else
+    {
+        qSetMessagePattern(u"%{function}: %{message}"_s);
+    }
+
 #ifndef QT_NO_SESSIONMANAGER
     connect(qApp, SIGNAL(commitDataRequest(QSessionManager&)), SLOT(commitData(QSessionManager&)), Qt::DirectConnection);
 #endif
@@ -460,6 +471,7 @@ void QMMPStarter::printUsage()
     extraHelp << QStringLiteral("--ui <name>||") + tr("Start qmmp with the specified user interface");
     extraHelp << QStringLiteral("--ui-list||") + tr("List all available user interfaces");
     extraHelp << QStringLiteral("--no-start||") + tr("Don't start the application");
+    extraHelp << QStringLiteral("--debug||") + tr("Print debugging messages");
     extraHelp << QStringLiteral("-h, --help||") + tr("Display this text and exit");
     extraHelp << QStringLiteral("-v, --version||") + tr("Print version number and exit");
     extraHelp << QString();
