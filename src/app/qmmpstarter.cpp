@@ -79,7 +79,7 @@ QMMPStarter::QMMPStarter() : QObject()
     QString userConfig = Qmmp::configDir() + QStringLiteral("/qmmp.ini");
     if(!QFile::exists(userConfig) && QFile::exists(defaultConfig))
     {
-        qCDebug(core) << "creating initial config");
+        qCDebug(core) << "creating initial config";
         QFile::copy(defaultConfig, userConfig);
     }
 

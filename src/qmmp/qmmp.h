@@ -76,6 +76,10 @@ using namespace Qt::Literals::StringLiterals;
 QMMP_EXPORT Q_DECLARE_LOGGING_CATEGORY(core)
 QMMP_EXPORT Q_DECLARE_LOGGING_CATEGORY(plugin)
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 5, 0)
+#define qCFatal qCCritical
+#endif
+
 
 /*! @brief The Qmmp class stores global settings and enums.
  * @author Ilya Kotov <forkotov02@ya.ru>
