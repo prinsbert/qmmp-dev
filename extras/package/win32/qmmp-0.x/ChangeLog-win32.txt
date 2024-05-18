@@ -411,3 +411,8 @@ LEGEND
 [*] curl-8.7.1
 [*] libxmp-4.6.0
 [*] mpg123-1.32.6
+
+0.12.19
+[*] qmmp-0.12.19
+[-] reverted wavpack to 5.6.0
+[-] fixed https support

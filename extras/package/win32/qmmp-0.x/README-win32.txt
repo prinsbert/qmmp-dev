@@ -31,7 +31,7 @@ List of the third-party libraries.
   libogg              1.3.5      https://www.vorbis.com/
   libvorbis           1.3.7      https://www.vorbis.com/
   flac                1.4.3      https://xiph.org/flac/index.html
-  wavpack             5.7.0      https://www.wavpack.com/
+  wavpack             5.6.0      https://www.wavpack.com/
   libsndfile          1.2.2      https://github.com/libsndfile/libsndfile
   opus                1.5.2      https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
