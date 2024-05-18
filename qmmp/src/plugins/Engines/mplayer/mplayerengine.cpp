@@ -27,7 +27,6 @@
 #include <QRegularExpression>
 #include <QSettings>
 #include <QFileInfo>
-#include <QDebug>
 #include <QDir>
 #include <qmmp/trackinfo.h>
 #include <qmmp/inputsource.h>

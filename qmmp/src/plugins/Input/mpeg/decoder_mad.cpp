@@ -283,7 +283,7 @@ bool DecoderMAD::findHeader()
            if (m_stream.error == MAD_ERROR_BUFLEN || MAD_RECOVERABLE(m_stream.error))
                 continue;
 
-           qDebug ("Can't decode header: %s", mad_stream_errorstr(&m_stream));
+           qCDebug(plugin, "can't decode header: %s", mad_stream_errorstr(&m_stream));
            break;
         }
         result = true;
@@ -326,7 +326,7 @@ bool DecoderMAD::findHeader()
         {
             if (m_bitrate && header.bitrate != m_bitrate)
             {
-                qDebug ("VBR detected");
+                qCDebug(plugin) << "VBR detected";
                 is_vbr = true;
             }
             else
@@ -334,7 +334,7 @@ bool DecoderMAD::findHeader()
         }
         else if (!is_vbr)
         {
-            qDebug ("Fixed rate detected");
+            qCDebug(plugin) << "fixed rate detected";
             break;
         }
         mad_timer_add (&duration, header.duration);
@@ -356,7 +356,7 @@ bool DecoderMAD::findHeader()
     }
 
     m_totalTime = mad_timer_count(duration, MAD_UNITS_MILLISECONDS);
-    qDebug ("Total time: %ld", long(m_totalTime));
+    qCDebug(plugin, "total time: %ld", long(m_totalTime));
     m_freq = header.samplerate;
     m_channels = MAD_NCHANNELS(&header);
     m_bitrate = header.bitrate / 1000;

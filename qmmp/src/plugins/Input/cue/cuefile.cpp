@@ -127,7 +127,7 @@ QStringList CueFile::splitLine(const QString &line)
         return list;
     while (!buf.isEmpty())
     {
-        //qDebug(qPrintable(buf));
+        //qCDebug(plugin) << buf;
         if (buf.startsWith(QLatin1Char('"')))
         {
             int end = buf.indexOf(QLatin1Char('"'), 1);

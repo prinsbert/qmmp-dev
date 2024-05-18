@@ -20,7 +20,6 @@
 #include <QSettings>
 #include <QAudioDevice>
 #include <QMediaDevices>
-#include <QDebug>
 #include <qmmp/qmmp.h>
 #include "ui_qtmultimediasettingsdialog.h"
 #include "qtmultimediasettingsdialog.h"

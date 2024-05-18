@@ -68,7 +68,7 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
 
     if (snd_pcm_open(&pcm_handle, pcm_name, SND_PCM_STREAM_PLAYBACK, SND_PCM_NONBLOCK) < 0)
     {
-        qWarning ("Error opening PCM device %s", pcm_name);
+        qCWarning(plugin, "error opening PCM device %s", pcm_name);
         return false;
     }
 
@@ -354,12 +354,12 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
 #ifdef ESTRPIPE
     if (m == -ESTRPIPE)
     {
-        qDebug ("Suspend, trying to resume");
+        qCDebug(plugin) << "suspend, trying to resume";
         while((m = snd_pcm_resume(pcm_handle)) == -EAGAIN)
             sleep(1);
         if(m < 0)
         {
-            qDebug ("Failed, restarting");
+            qCDebug(plugin) << "failed, restarting";
             if((m = snd_pcm_prepare(pcm_handle)) < 0)
             {
                 qCDebug(plugin, "Failed to restart device: %s.",

@@ -217,7 +217,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
         cddb_disc_t *cddb_disc = nullptr;
         lba_t lba;
         if (!cddb_conn)
-            qWarning ("unable to create cddb connection");
+           qCWarning(plugin) << "unable to create cddb connection";
         else
         {
             cddb_cache_disable(cddb_conn); //disable libcddb cache, use own cache implementation instead
@@ -257,7 +257,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 
             cddb_disc_calc_discid (cddb_disc);
             uint id = cddb_disc_get_discid (cddb_disc);
-            qDebug ("disc id = %x", id);
+            qCDebug(plugin, "disc id = %x", id);
 
 
             if(readFromCache(&tracks, id))
@@ -272,7 +272,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
                 }
                 else if(matches == 0)
                 {
-                    qDebug ("no CDDB info found");
+                    qCDebug(plugin, "no CDDB info found");
                 }
                 else if(cddb_read(cddb_conn, cddb_disc))
                 {
@@ -290,8 +290,8 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
                 }
                 else
                 {
-                    qWarning ("unable to read the CDDB info: %s",
-                              cddb_error_str (cddb_errno(cddb_conn)));
+                    qCWarning(plugin, "unable to read the CDDB info: %s",
+                              cddb_error_str(cddb_errno(cddb_conn)));
                 }
             }
         }

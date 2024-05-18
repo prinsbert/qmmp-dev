@@ -1,7 +1,6 @@
 #include <QDockWidget>
 #include <QMenu>
 #include <QAction>
-#include <QDebug>
 #include <qmmpui/general.h>
 #include <qmmpui/uihelper.h>
 #include "qsuiactionmanager.h"

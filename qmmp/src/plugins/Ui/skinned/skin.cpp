@@ -703,7 +703,7 @@ void Skin::loadVisColor()
     }
     if (m_vis_colors.size() < 24)
     {
-        qWarning ("Skin: cannot parse viscolor.txt");
+        qCWarning(plugin) << "cannot parse viscolor.txt";
         while (m_vis_colors.size() < 24)
             m_vis_colors << QColor (0,0,0);
     }
@@ -894,7 +894,7 @@ void Skin::loadRegion()
 
     if (path.isEmpty())
     {
-        qDebug ("Skin: cannot find region.txt. Transparency disabled");
+        qCDebug(plugin) << "cannot find region.txt. Transparency disabled";
         return;
     }
     m_regions[NORMAL] = createRegion(path, u"Normal"_s);

@@ -167,11 +167,11 @@ void LyricsWidget::onRequestFinished(QNetworkReply *reply)
     else if(m_tasks.isEmpty() && m_ui->providerComboBox->count() == 0)
     {
         m_ui->textBrowser->setText(tr("Error: %1 - %2").arg(code).arg(reply->errorString()));
-        qWarning() << "error:" << reply->errorString();
+        qCWarning(plugin) << "error:" << reply->errorString();
     }
     else
     {
-        qWarning() << "error:" << reply->errorString();
+        qCWarning(plugin) << "error:" << reply->errorString();
     }
 
     reply->deleteLater();
