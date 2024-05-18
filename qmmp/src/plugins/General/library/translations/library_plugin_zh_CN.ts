@@ -4,23 +4,23 @@
 <context>
     <name>Library</name>
     <message>
-        <location filename="../library.cpp" line="65"/>
+        <location filename="../library.cpp" line="63"/>
         <source>Library</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../library.cpp" line="66"/>
+        <location filename="../library.cpp" line="64"/>
         <source>Alt+L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../library.cpp" line="72"/>
+        <location filename="../library.cpp" line="70"/>
         <source>Update library</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../library.cpp" line="193"/>
-        <location filename="../library.cpp" line="194"/>
+        <location filename="../library.cpp" line="191"/>
+        <location filename="../library.cpp" line="192"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -66,88 +66,88 @@
 <context>
     <name>LibraryModel</name>
     <message>
-        <location filename="../librarymodel.cpp" line="205"/>
+        <location filename="../librarymodel.cpp" line="204"/>
         <source>%1 - %2</source>
         <translation>%1 - %2</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="330"/>
+        <location filename="../librarymodel.cpp" line="329"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="330"/>
+        <location filename="../librarymodel.cpp" line="329"/>
         <source>Unable to connect to database</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="351"/>
+        <location filename="../librarymodel.cpp" line="350"/>
         <source>%n day(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="352"/>
+        <location filename="../librarymodel.cpp" line="351"/>
         <source>%n hour(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="353"/>
+        <location filename="../librarymodel.cpp" line="352"/>
         <source>%n minute(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="354"/>
+        <location filename="../librarymodel.cpp" line="353"/>
         <source>%n second(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="358"/>
+        <location filename="../librarymodel.cpp" line="357"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="360"/>
+        <location filename="../librarymodel.cpp" line="359"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="362"/>
+        <location filename="../librarymodel.cpp" line="361"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="365"/>
+        <location filename="../librarymodel.cpp" line="364"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="366"/>
+        <location filename="../librarymodel.cpp" line="365"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="367"/>
+        <location filename="../librarymodel.cpp" line="366"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="368"/>
+        <location filename="../librarymodel.cpp" line="367"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="371"/>
+        <location filename="../librarymodel.cpp" line="370"/>
         <source>Library Information</source>
         <translation type="unfinished"></translation>
     </message>

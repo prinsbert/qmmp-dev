@@ -4,23 +4,23 @@
 <context>
     <name>Library</name>
     <message>
-        <location filename="../library.cpp" line="65"/>
+        <location filename="../library.cpp" line="63"/>
         <source>Library</source>
         <translation>라이브러리</translation>
     </message>
     <message>
-        <location filename="../library.cpp" line="66"/>
+        <location filename="../library.cpp" line="64"/>
         <source>Alt+L</source>
         <translation>Alt+L</translation>
     </message>
     <message>
-        <location filename="../library.cpp" line="72"/>
+        <location filename="../library.cpp" line="70"/>
         <source>Update library</source>
         <translation>라이브러리 업데이트</translation>
     </message>
     <message>
-        <location filename="../library.cpp" line="193"/>
-        <location filename="../library.cpp" line="194"/>
+        <location filename="../library.cpp" line="191"/>
+        <location filename="../library.cpp" line="192"/>
         <source>Unknown</source>
         <translation>알 수 없음</translation>
     </message>
@@ -66,88 +66,88 @@
 <context>
     <name>LibraryModel</name>
     <message>
-        <location filename="../librarymodel.cpp" line="205"/>
+        <location filename="../librarymodel.cpp" line="204"/>
         <source>%1 - %2</source>
         <translation>%1 - %2</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="330"/>
+        <location filename="../librarymodel.cpp" line="329"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="330"/>
+        <location filename="../librarymodel.cpp" line="329"/>
         <source>Unable to connect to database</source>
         <translation>데이터베이스에 연결할 수 없습니다</translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="351"/>
+        <location filename="../librarymodel.cpp" line="350"/>
         <source>%n day(s)</source>
         <translation>
             <numerusform>%n 일</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="352"/>
+        <location filename="../librarymodel.cpp" line="351"/>
         <source>%n hour(s)</source>
         <translation>
             <numerusform>%n 시간</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="353"/>
+        <location filename="../librarymodel.cpp" line="352"/>
         <source>%n minute(s)</source>
         <translation>
             <numerusform>%n 분</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../librarymodel.cpp" line="354"/>
+        <location filename="../librarymodel.cpp" line="353"/>
         <source>%n second(s)</source>
         <translation>
             <numerusform>%n 초</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="358"/>
+        <location filename="../librarymodel.cpp" line="357"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
         <translation>%1 %2 %3 %4</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="360"/>
+        <location filename="../librarymodel.cpp" line="359"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
         <translation>%1 %2 %3</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="362"/>
+        <location filename="../librarymodel.cpp" line="361"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="365"/>
+        <location filename="../librarymodel.cpp" line="364"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>트랙 수: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="366"/>
+        <location filename="../librarymodel.cpp" line="365"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>앨범 수: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="367"/>
+        <location filename="../librarymodel.cpp" line="366"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>아티스트 수: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="368"/>
+        <location filename="../librarymodel.cpp" line="367"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
         <translation>총 재생시간: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../librarymodel.cpp" line="371"/>
+        <location filename="../librarymodel.cpp" line="370"/>
         <source>Library Information</source>
         <translation>라이브러리 정보</translation>
     </message>

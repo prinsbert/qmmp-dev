@@ -108,33 +108,33 @@
         <translation>Vuosi:</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="149"/>
-        <location filename="../lyricswidget.cpp" line="235"/>
+        <location filename="../lyricswidget.cpp" line="148"/>
+        <location filename="../lyricswidget.cpp" line="234"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="160"/>
+        <location filename="../lyricswidget.cpp" line="159"/>
         <source>Not found</source>
         <translation>Ei löytynyt</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="170"/>
+        <location filename="../lyricswidget.cpp" line="169"/>
         <source>Error: %1 - %2</source>
         <translation>Virhe: %1 - %2</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="183"/>
+        <location filename="../lyricswidget.cpp" line="182"/>
         <source>Receiving</source>
         <translation>Vastaanotetaan</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="237"/>
+        <location filename="../lyricswidget.cpp" line="236"/>
         <source>Tag</source>
         <translation>Tunniste</translation>
     </message>
     <message>
-        <location filename="../lyricswidget.cpp" line="258"/>
+        <location filename="../lyricswidget.cpp" line="257"/>
         <source>Cache</source>
         <translation>Välimuisti</translation>
     </message>
@@ -142,7 +142,7 @@
 <context>
     <name>UltimateLyricsParser</name>
     <message>
-        <location filename="../ultimatelyricsparser.cpp" line="117"/>
+        <location filename="../ultimatelyricsparser.cpp" line="116"/>
         <source>%1 (line: %2)</source>
         <translation>%1 (rivi: %2)</translation>
     </message>

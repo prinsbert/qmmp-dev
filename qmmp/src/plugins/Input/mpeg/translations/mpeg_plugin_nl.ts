@@ -4,42 +4,42 @@
 <context>
     <name>DecoderMpegFactory</name>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="179"/>
+        <location filename="../decodermpegfactory.cpp" line="178"/>
         <source>MPEG Plugin</source>
         <translation type="unfinished">MPEG-plug-in</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="182"/>
+        <location filename="../decodermpegfactory.cpp" line="181"/>
         <source>MPEG Files</source>
         <translation type="unfinished">MPEG-bestanden</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="418"/>
+        <location filename="../decodermpegfactory.cpp" line="417"/>
         <source>About MPEG Audio Plugin</source>
         <translation type="unfinished">Over de MPEG-audioplug-in</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="419"/>
+        <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
         <translation type="unfinished">MPEG 1.0/2.0/2.5 layer 1/2/3-audiodecoder</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="420"/>
+        <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>Compiled against:</source>
         <translation type="unfinished">Gebouwd met:</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="429"/>
+        <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
         <translation type="unfinished">mpg123, API-versie: %1</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="433"/>
+        <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished">Maker: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodermpegfactory.cpp" line="434"/>
+        <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Source code based on mq3 and madplay projects</source>
         <translation type="unfinished">De broncode is gebaseerd op de projecten &apos;mq3&apos; en &apos;madplay&apos;</translation>
     </message>
