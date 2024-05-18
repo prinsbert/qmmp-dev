@@ -111,8 +111,7 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
             values << m_contentTypes.join(QLatin1Char(';'));
             values << info.lastModified().toString(Qt::ISODate);
             settings->setValue(m_path, values);
-            qDebug("QmmpPluginCache: added cache item \"%s=%s\"",
-                   qPrintable(info.fileName()), qPrintable(values.join(QLatin1Char(','))));
+            qCDebug(core, "added cache item \"%s=%s\"", qPrintable(info.fileName()), qPrintable(values.join(QLatin1Char(','))));
         }
     }
     settings->endGroup();
@@ -217,7 +216,7 @@ QObject *QmmpPluginCache::instance()
     QPluginLoader loader(m_path);
     m_instance = loader.instance();
     if (loader.isLoaded())
-        qDebug("QmmpPluginCache: loaded plugin %s", qPrintable(QFileInfo(m_path).fileName()));
+        qCDebug(core) << "loaded plugin" << QFileInfo(m_path).fileName();
     else
     {
         m_error = true;
@@ -254,7 +253,7 @@ void QmmpPluginCache::cleanup(QSettings *settings)
 #endif
         {
             settings->remove(key);
-            qDebug("QmmpPluginCache: removed key %s", qPrintable(key));
+            qCDebug(core) << "removed key" << key;
         }
     }
     settings->endGroup();

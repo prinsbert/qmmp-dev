@@ -296,14 +296,12 @@ void CueParser::clear()
 
 QStringList CueParser::splitLine(const QString &line)
 {
-    //qDebug("raw string = %s",qPrintable(line));
     QStringList list;
     QString buf = line.trimmed();
     if(buf.isEmpty())
         return list;
     while (!buf.isEmpty())
     {
-        //qDebug(qPrintable(buf));
         if(buf.startsWith(QLatin1Char('"')))
         {
             int end = buf.indexOf(QLatin1Char('"'), 1);

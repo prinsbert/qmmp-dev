@@ -38,6 +38,15 @@ QString Qmmp::m_langID;
 QString Qmmp::m_appDir;
 #endif
 
+#ifdef QT_DEBUG
+Q_LOGGING_CATEGORY(core, "qmmp.core", QtDebugMsg)
+Q_LOGGING_CATEGORY(plugin, "qmmp.plugin", QtDebugMsg)
+#elif
+Q_LOGGING_CATEGORY(core, "qmmp.core", QtWarningMsg)
+Q_LOGGING_CATEGORY(plugin, "qmmp.plugin", QtWarningMsg)
+#endif
+
+
 QString Qmmp::configDir()
 {
 #ifdef Q_OS_WIN
@@ -122,7 +131,6 @@ QString Qmmp::systemLanguageID()
     if(m_langID.isEmpty())
     {
         m_langID = uiLanguageID();
-        //qDebug("Qmmp: setting ui language to '%s'", qPrintable(m_langID));
     }
 
     if(m_langID != "auto"_L1)

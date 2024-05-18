@@ -337,13 +337,13 @@ void PlayListManager::readPlayLists()
 
 void PlayListManager::writePlayLists()
 {
-    qDebug("PlayListManager: saving playlists...");
+    qCDebug(core) << "saving playlists...";
     QString value;
     QString plFilePath = Qmmp::configDir() + u"/playlist.txt"_s;
     QSaveFile plFile(plFilePath);
     if(!plFile.open(QIODevice::WriteOnly))
     {
-        qDebug("PlayListManager: error: %s", qPrintable(plFile.errorString()));
+        qCDebug(core) << "error: %s" << plFile.errorString();
         return;
     }
     plFile.write(QStringLiteral("current_playlist=%1\n").arg(m_models.indexOf(m_current)).toUtf8());

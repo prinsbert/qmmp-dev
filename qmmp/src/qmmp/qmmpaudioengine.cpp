@@ -136,7 +136,7 @@ bool QmmpAudioEngine::enqueue(InputSource *source)
         qWarning("QmmpAudioEngine: unsupported file format");
         return false;
     }
-    qDebug("QmmpAudioEngine: selected decoder: %s",qPrintable(factory->properties().shortName));
+    qCDebug(core) << "selected decoder:" << factory->properties().shortName;
     if(factory->properties().noInput && source->ioDevice())
         source->ioDevice()->close();
     Decoder *decoder = factory->create(source->path(), source->ioDevice());
@@ -181,7 +181,7 @@ void QmmpAudioEngine::addEffect(EffectFactory *factory)
         }
         else
         {
-            qDebug("QmmpAudioEngine: restart is required");
+            qCDebug(core) << "restart is required";
             delete effect;
         }
     }
@@ -204,7 +204,7 @@ void QmmpAudioEngine::removeEffect(EffectFactory *factory)
     {
         mutex()->lock();
         if(m_blockedEffects.contains(effect))
-            qDebug("QmmpAudioEngine: restart is required");
+            qCDebug(core) << "restart is required";
         else
             m_effects.removeAll(effect);
         mutex()->unlock();
@@ -417,7 +417,7 @@ void QmmpAudioEngine::run()
             if(m_next) //decoder can play next track without initialization
             {
                 m_next = false;
-                qDebug("QmmpAudioEngine: switching to the next track");
+                qCDebug(core) << "switching to the next track";
                 StateHandler::instance()->sendFinished();
                 StateHandler::instance()->dispatch(Qmmp::Stopped); //fake stop/start cycle
                 StateHandler::instance()->dispatch(Qmmp::Buffering);

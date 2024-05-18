@@ -251,7 +251,7 @@ void QmmpUiSettings::sync()
 {
     if(m_saveSettings)
     {
-        qDebug("QmmpUiSettings: saving settings...");
+        qCDebug(core) << "saving settings...";
         QSettings s;
         s.setValue(u"PlayList/group_format"_s, m_group_format);
         s.setValue(u"PlayList/group_extra_row_format"_s, m_group_extra_row_format);
@@ -284,7 +284,7 @@ void QmmpUiSettings::sync()
 
     if(m_rebuildGroups)
     {
-        qDebug("QmmpUiSettings: rebuilding groups...");
+        qCDebug(core) << "rebuilding groups...";
         PlayListManager::instance()->rebuildGroups();
         m_rebuildGroups = false; //protect from multiple calls
     }
