@@ -62,8 +62,8 @@ QMMPStarter::QMMPStarter() : QObject()
 {
     if(qApp->arguments().contains(u"--debug"_s))
     {
-        qSetMessagePattern(u"[%{type}]: %{function}: %{message} (%{file}:%{line})"_s);
-        QLoggingCategory::setFilterRules(u"core.*=true\nplugin.*=true"_s);
+        qSetMessagePattern(u"[%{type}]: %{function}: %{message}"_s);
+        QLoggingCategory::setFilterRules(u"qmmp.core.debug=true\nqmmp.plugin.debug=true"_s);
     }
     else
     {
