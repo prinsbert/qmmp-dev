@@ -104,7 +104,7 @@ QCursor createCursor(QString path)
 	int height = directory2.height;
 	QImage image;
 	image.loadFromData(bmpData);
-	//qDebug() << image.rect() << path;
+    //qCDebug(plugin) << image.rect() << path;
 	QPixmap pix = QPixmap::fromImage(image);
 	
 	// now we need the mask (transparency)

@@ -221,7 +221,7 @@ void QSUiActionManager::resetShortcuts()
 void QSUiActionManager::registerAction(int id, QAction *action, const QString &confKey, const QString &key)
 {
     if(m_actions.value(id))
-        qFatal("ActionManager: invalid action id");
+        qCFatal(plugin) << "invalid action id";
 
     QSettings settings;
     settings.beginGroup(u"SimpleUiShortcuts"_s);
@@ -236,7 +236,7 @@ void QSUiActionManager::registerAction(int id, QAction *action, const QString &c
 void QSUiActionManager::registerWidget(int id, QWidget *w, const QString &text, const QString &name)
 {
     if(m_actions.value(id))
-        qFatal("ActionManager: invalid action id");
+        qCFatal(plugin) << "invalid action id";
     QWidgetAction *action = new QWidgetAction(this);
     action->setText(text);
     action->setObjectName(name);

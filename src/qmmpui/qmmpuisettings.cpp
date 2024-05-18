@@ -30,7 +30,7 @@ QmmpUiSettings *QmmpUiSettings::m_instance = nullptr;
 QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
 {
     if(m_instance)
-        qFatal("QmmpUiSettings: only one instance is allowed");
+        qCFatal(core) << "only one instance is allowed";
     m_instance = this;
     m_helper = new MetaDataHelper;
     QSettings s;

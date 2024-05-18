@@ -33,7 +33,7 @@ MediaPlayer::MediaPlayer(QObject *parent)
         : QObject(parent)
 {
     if(m_instance)
-        qFatal("StateHandler: only one instance is allowed");
+        qCFatal(core) << "only one instance is allowed";
     m_instance = this;
 
     QTranslator *translator = new QTranslator(qApp);

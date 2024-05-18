@@ -159,7 +159,7 @@ void RGScanDialog::onScanFinished(const QString &url)
             continue;
         RGScanner *scanner = findScannerByUrl(url);
         if(!scanner)
-            qFatal("RGScanDialog: unable to find scanner by URL!");
+            qCFatal(plugin) << "unable to find scanner by URL!";
         m_ui->tableWidget->setItem(i, 2, new QTableWidgetItem(tr("%1 dB").arg(scanner->gain())));
         m_ui->tableWidget->setItem(i, 4, new QTableWidgetItem(QString::number(scanner->peak())));
         break;

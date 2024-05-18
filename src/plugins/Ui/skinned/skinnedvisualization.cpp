@@ -36,7 +36,7 @@ SkinnedVisualization *SkinnedVisualization::m_instance = nullptr;
 SkinnedVisualization *SkinnedVisualization::instance()
 {
     if(!m_instance)
-        qFatal("MainVisual: this object is not created!");
+         qCFatal(plugin) << "this object is not created!";
     return m_instance;
 }
 

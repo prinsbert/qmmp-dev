@@ -270,7 +270,6 @@ void TwoPanelFileDialogImpl::setModeAndMask(const QString &path, FileDialog::Mod
     m_ui->fileTypeComboBox->clear();
 
     QFileInfo info(path);
-    qDebug() << path;
     QString fileName;
 
     if(info.isFile())

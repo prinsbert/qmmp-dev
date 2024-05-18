@@ -190,7 +190,7 @@ void SkinnedSettings::loadSkins()
         m_ui->listWidget->addItem(item);
     }
 
-    qDebug() << m_currentSkinPath;
+    qCDebug(plugin) << m_currentSkinPath;
 
     for(int i = 0; i < m_ui->listWidget->count(); ++i)
     {

@@ -30,7 +30,7 @@ VolumeHandler *VolumeHandler::m_instance = nullptr;
 VolumeHandler::VolumeHandler(QObject *parent) : QObject(parent)
 {
     if(m_instance)
-        qFatal("VolumeHandler: only one instance is allowed!");
+        qCFatal(core) << "only one instance is allowed!";
 
     QSettings settings;
     m_settings.left = settings.value(u"Volume/left"_s, 80).toInt();

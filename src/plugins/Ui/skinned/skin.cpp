@@ -559,12 +559,12 @@ void Skin::loadPLEdit()
     QString path = findFile("pledit.txt"_L1);
 
     if (path.isEmpty())
-        qFatal("Skin: invalid default skin");
+        qCFatal(plugin) << "invalid default skin";
 
     QFile file(path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qFatal("Skin: unable to open %s", qPrintable(path));
+        qCFatal(plugin) << "unable to open" << path;
         return;
     }
 
@@ -670,11 +670,11 @@ void Skin::loadVisColor()
     QString path = findFile(u"viscolor.txt"_s);
 
     if (path.isEmpty())
-        qFatal("Skin: invalid default skin");
+         qCFatal(plugin) << "invalid default skin";
 
     QFile file(path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        qFatal("Skin: unable to open %s", qPrintable(path));
+         qCFatal(plugin) << "unable to open" << path;
 
     int j = 0;
     while (!file.atEnd () && j<24)
@@ -977,7 +977,7 @@ QPixmap * Skin::getDummyPixmap(const QString &name, const QString &fallback)
         }
     }
 
-    qFatal("Skin: default skin is corrupted");
+    qCFatal(plugin) << "default skin is corrupted";
     return nullptr;
 }
 

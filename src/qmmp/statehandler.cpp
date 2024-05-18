@@ -35,7 +35,7 @@ StateHandler::StateHandler(QObject *parent)
         : QObject(parent)
 {
     if(m_instance)
-        qFatal("StateHandler: only one instance is allowed");
+        qCFatal(core) << "only one instance is allowed";
     qRegisterMetaType<AudioParameters>("AudioParameters");
     m_instance = this;
 }

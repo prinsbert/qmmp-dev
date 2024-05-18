@@ -316,7 +316,7 @@ bool DecoderFFmpeg::initialize()
     if(m_codecContext->bit_rate)
         m_bitrate = m_codecContext->bit_rate/1000;
     qCDebug(plugin, "initialize succes");
-    qDebug() << "total time =" << m_totalTime;
+    qCDebug(plugin) << "total time =" << m_totalTime;
 
     return true;
 }

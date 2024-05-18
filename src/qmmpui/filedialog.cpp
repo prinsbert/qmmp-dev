@@ -134,7 +134,7 @@ void FileDialog::popup(QWidget *parent,
 
 {
     if(!dir)
-        qFatal("FileDialog: empty last dir pointer");
+        qCFatal(core) << "empty last dir pointer";
     FileDialog* inst = instance();
     inst->setParent(parent);
     inst->init(receiver, member, dir);

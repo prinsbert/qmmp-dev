@@ -105,7 +105,7 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
                     break;
                 }
                 else
-                    qDebug() << "OutputQtMultimedia: Output device: " << saved_device_name << " is not supported";
+                    qCDebug(plugin) << "Output device:" << saved_device_name << " is not supported";
             }
         }
     }
@@ -117,7 +117,7 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
             return false;
     }
 
-    qDebug() << "OutputQtMultimedia: Using output device: " << device_info.description();
+    qCDebug(plugin) << "using output device: " << device_info.description();
 
     m_output = new QAudioSink(device_info, qformat);
     m_output->setBufferSize(4096);
