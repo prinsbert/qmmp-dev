@@ -161,8 +161,7 @@ void StateHandler::dispatch(Qmmp::State state)
         static const QStringList states = {
             u"Playing"_s, u"Paused"_s, u"Stopped"_s, u"Buffering"_s, u"NormalError"_s, u"FatalError"_s
         };
-        qDebug("StateHandler: Current state: %s; previous state: %s",
-               qPrintable(states.at(state)), qPrintable(states.at(m_state)));
+        qCDebug(core) << "Current state:" << states.at(state) <<  "; previous state:" << states.at(m_state);
         Qmmp::State prevState = state;
         m_state = state;
         qApp->postEvent(parent(), new StateChangedEvent(m_state, prevState));

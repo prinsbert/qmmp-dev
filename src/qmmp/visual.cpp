@@ -42,7 +42,7 @@ Visual::Visual(QWidget *parent, Qt::WindowFlags f) : QWidget(parent, f)
 
 Visual::~Visual()
 {
-    qDebug("Visual::~Visual()");
+    qCDebug(core) << Q_FUNC_INFO;
 }
 
 void Visual::closeEvent (QCloseEvent *event)
@@ -233,7 +233,7 @@ void Visual::checkFactories()
             QPluginLoader loader(filePath);
             QObject *plugin = loader.instance();
             if (loader.isLoaded())
-                qDebug("Visual: loaded plugin %s", qPrintable(QFileInfo(filePath).fileName()));
+                qCDebug(core) << "loaded plugin" << QFileInfo(filePath).fileName();
             else
                 qWarning("Visual: %s", qPrintable(loader.errorString ()));
 
@@ -264,7 +264,7 @@ void Visual::createVisualization(VisualFactory *factory, QWidget *parent)
     if (m_receiver && m_member)
         connect(visual, SIGNAL(closedByUser()), m_receiver, m_member);
     visual->setWindowFlags(visual->windowFlags() | Qt::Window);
-    qDebug("Visual: added visualization: %s", qPrintable(factory->properties().shortName));
+    qCDebug(core) << "added visualization:" << factory->properties().shortName;
     m_vis_map.insert(factory, visual);
     add(visual);
     visual->show();

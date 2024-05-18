@@ -121,7 +121,7 @@ InputSource *InputSource::create(const QString &url, QObject *parent)
     loadPlugins();
     if(!url.contains(u"://"_s)) //local file path doesn't contain "://"
     {
-        qDebug("InputSource: using file transport");
+        qCDebug(core) << "using file transport";
         return new FileInputSource(url, parent);
     }
 
@@ -129,11 +129,11 @@ InputSource *InputSource::create(const QString &url, QObject *parent)
 
     if(factory)
     {
-        qDebug("InputSource: using %s transport", qPrintable(url.section(u"://"_s, 0, 0)));
+        qCDebug(core, "using %s transport", qPrintable(url.section(u"://"_s, 0, 0)));
         return factory->create(url, parent);
     }
 
-    qDebug("InputSource: using fake transport");
+    qCDebug(core) << "using fake transport";
     return new EmptyInputSource(url, parent);
 }
 

@@ -180,13 +180,13 @@ void MediaPlayer::updateNextUrl()
         if(ok)
         {
             m_nextUrl = track->path();
-            qDebug("MediaPlayer: next track state: received");
+            qCDebug(core) << "next track state: received";
         }
         else
-            qDebug("MediaPlayer: next track state: error");
+            qCDebug(core) << "next track state: error";
     }
     else
-        qDebug("MediaPlayer: next track state: unknown");
+        qCDebug(core) << "next track state: unknown";
 
 }
 
@@ -222,32 +222,32 @@ void MediaPlayer::processState(Qmmp::State state)
 void MediaPlayer::updateMetaData()
 {
     TrackInfo info = m_core->trackInfo();
-    qDebug("===== metadata ======");
-    qDebug("ARTIST = %s", qPrintable(info.value(Qmmp::ARTIST)));
-    qDebug("TITLE = %s", qPrintable(info.value(Qmmp::TITLE)));
-    qDebug("ALBUMARTIST = %s", qPrintable(info.value(Qmmp::ALBUMARTIST)));
-    qDebug("ALBUM = %s", qPrintable(info.value(Qmmp::ALBUM)));
-    qDebug("COMMENT = %s", qPrintable(info.value(Qmmp::COMMENT)));
-    qDebug("GENRE = %s", qPrintable(info.value(Qmmp::GENRE)));
-    qDebug("YEAR = %s", qPrintable(info.value(Qmmp::YEAR)));
-    qDebug("TRACK = %s", qPrintable(info.value(Qmmp::TRACK)));
-    qDebug("DISCNUMBER = %s", qPrintable(info.value(Qmmp::DISCNUMBER)));
-    qDebug("---------------------");
-    qDebug("BITRATE = %s", qPrintable(info.value(Qmmp::BITRATE)));
-    qDebug("SAMPLERATE = %s", qPrintable(info.value(Qmmp::SAMPLERATE)));
-    qDebug("CHANNELS = %s", qPrintable(info.value(Qmmp::CHANNELS)));
-    qDebug("BITS_PER_SAMPLE = %s", qPrintable(info.value(Qmmp::BITS_PER_SAMPLE)));
-    qDebug("FORMAT_NAME = %s", qPrintable(info.value(Qmmp::FORMAT_NAME)));
-    qDebug("DECODER = %s", qPrintable(info.value(Qmmp::DECODER)));
-    qDebug("FILE_SIZE = %s", qPrintable(info.value(Qmmp::FILE_SIZE)));
-    qDebug("---------------------");
-    qDebug("REPLAYGAIN_TRACK_GAIN = %f", info.value(Qmmp::REPLAYGAIN_TRACK_GAIN));
-    qDebug("REPLAYGAIN_TRACK_PEAK = %f", info.value(Qmmp::REPLAYGAIN_TRACK_PEAK));
-    qDebug("REPLAYGAIN_ALBUM_GAIN = %f", info.value(Qmmp::REPLAYGAIN_ALBUM_GAIN));
-    qDebug("REPLAYGAIN_ALBUM_PEAK = %f", info.value(Qmmp::REPLAYGAIN_ALBUM_PEAK));
-    qDebug("---------------------");
-    qDebug("DURATION = %lld", info.duration());
-    qDebug("== end of metadata ==");
+    qCDebug(core) << "===== metadata ======";
+    qCDebug(core) << "ARTIST =" << info.value(Qmmp::ARTIST);
+    qCDebug(core) << "TITLE =" << info.value(Qmmp::TITLE);
+    qCDebug(core) << "ALBUMARTIST =" << info.value(Qmmp::ALBUMARTIST);
+    qCDebug(core) << "ALBUM =" << info.value(Qmmp::ALBUM);
+    qCDebug(core) << "COMMENT =" << info.value(Qmmp::COMMENT);
+    qCDebug(core) << "GENRE =" << info.value(Qmmp::GENRE);
+    qCDebug(core) << "YEAR =" << info.value(Qmmp::YEAR);
+    qCDebug(core) << "TRACK =" << info.value(Qmmp::TRACK);
+    qCDebug(core) << "DISCNUMBER =" << info.value(Qmmp::DISCNUMBER);
+    qCDebug(core) << "---------------------";
+    qCDebug(core) << "BITRATE =" << info.value(Qmmp::BITRATE);
+    qCDebug(core) << "SAMPLERATE =" << info.value(Qmmp::SAMPLERATE);
+    qCDebug(core) << "CHANNELS =" << info.value(Qmmp::CHANNELS);
+    qCDebug(core) << "BITS_PER_SAMPLE =" << info.value(Qmmp::BITS_PER_SAMPLE);
+    qCDebug(core) << "FORMAT_NAME =" << info.value(Qmmp::FORMAT_NAME);
+    qCDebug(core) << "DECODER =" << info.value(Qmmp::DECODER);
+    qCDebug(core) << "FILE_SIZE =" << info.value(Qmmp::FILE_SIZE);
+    qCDebug(core) << "---------------------";
+    qCDebug(core) << "REPLAYGAIN_TRACK_GAIN =" << info.value(Qmmp::REPLAYGAIN_TRACK_GAIN);
+    qCDebug(core) << "REPLAYGAIN_TRACK_PEAK =" << info.value(Qmmp::REPLAYGAIN_TRACK_PEAK);
+    qCDebug(core) << "REPLAYGAIN_ALBUM_GAIN =" << info.value(Qmmp::REPLAYGAIN_ALBUM_GAIN);
+    qCDebug(core) << "REPLAYGAIN_ALBUM_PEAK =" << info.value(Qmmp::REPLAYGAIN_ALBUM_PEAK);
+    qCDebug(core) << "---------------------";
+    qCDebug(core) << "DURATION =" << info.duration();
+    qCDebug(core) << "== end of metadata ==";
 
     PlayListModel *pl = m_pl_manager->currentPlayList();
     if (pl->currentTrack() && pl->currentTrack()->path() == info.path())

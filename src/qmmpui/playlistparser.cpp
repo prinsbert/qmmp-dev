@@ -191,7 +191,7 @@ void PlayListParser::loadFormats()
         QPluginLoader loader(filePath);
         QObject *plugin = loader.instance();
         if (loader.isLoaded())
-            qDebug("PlayListParser: loaded plugin %s", qPrintable(QFileInfo(filePath).filePath()));
+            qCDebug(core) << "loaded plugin" << QFileInfo(filePath).filePath();
         else
             qWarning("PlayListParser: %s", qPrintable(loader.errorString ()));
 

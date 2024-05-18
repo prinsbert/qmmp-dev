@@ -34,15 +34,15 @@ void ReplayGain::setReplayGainInfo(const QMap<Qmmp::ReplayGainKey, double> &info
     updateScale();
     if(m_mode != QmmpSettings::REPLAYGAIN_DISABLED && !m_disabled)
     {
-        qDebug("ReplayGain: track: gain=%f dB, peak=%f; album: gain=%f dB, peak=%f",
+        qCDebug(core, "ReplayGain: track: gain=%f dB, peak=%f; album: gain=%f dB, peak=%f",
                m_info[Qmmp::REPLAYGAIN_TRACK_GAIN],
                m_info[Qmmp::REPLAYGAIN_TRACK_PEAK],
                m_info[Qmmp::REPLAYGAIN_ALBUM_GAIN],
                m_info[Qmmp::REPLAYGAIN_ALBUM_PEAK]);
-        qDebug("ReplayGain: scale=%f", m_scale);
+        qCDebug(core, "ReplayGain: scale=%f", m_scale);
     }
     else
-        qDebug("ReplayGain: disabled");
+        qCDebug(core, "ReplayGain: disabled");
 }
 
 void ReplayGain::applyEffect(Buffer *b)

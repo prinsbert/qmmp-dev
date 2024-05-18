@@ -60,7 +60,7 @@ void Dithering::setFormats(Qmmp::AudioFormat in, Qmmp::AudioFormat out)
             ;
         }
     }
-    (m_required && m_enabled) ? qDebug("Dithering: enabled") : qDebug("Dithering: disabled");
+     qCDebug(core) << ((m_required && m_enabled) ? "enabled" : "disabled");
 }
 
 void Dithering::applyEffect(Buffer *b)
@@ -75,7 +75,7 @@ void Dithering::applyEffect(Buffer *b)
 void Dithering::setEnabled(bool enabled)
 {
     m_enabled = enabled;
-    (m_required && m_enabled) ? qDebug("Dithering: enabled") : qDebug("Dithering: disabled");
+    qCDebug(core) << ((m_required && m_enabled) ? "enabled" : "disabled");
 }
 
 void Dithering::clearHistory()

@@ -97,16 +97,16 @@ void MetaDataFormatter::setPattern(const QString &pattern)
     m_nodes.clear();
 
 #ifdef DUMP_NODES
-    qDebug("MetaDataFormatter: pattern: %s", qPrintable(pattern));
+    qCDebug(core) << "pattern:" << pattern;
 #endif
     m_nodes = compile(pattern);
 #ifdef DUMP_NODES
-    qDebug("MetaDataFormatter: dump of nodes");
+    qCDebug(core) << "dump of nodes";
     for(const Node &n : qAsConst(m_nodes))
     {
-        qDebug("=>%s", qPrintable(dumpNode(n)));
+        qCDebug(core) << "=>" << dumpNode(n);
     }
-    qDebug("MetaDataFormatter: end of dump");
+    qCDebug(core)"MetaDataFormatter: end of dump");
 #endif
 }
 
@@ -680,7 +680,7 @@ QList<MetaDataFormatter::Node> MetaDataFormatter::compile(const QString &expr)
             if(j == 0 || j == nodes.count() - 1)
             {
                 nodes.clear();
-                qDebug("MetaDataFormatter: syntax error");
+                qCDebug(core) << "syntax error";
             }
 
             Param p1;

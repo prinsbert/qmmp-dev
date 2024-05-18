@@ -102,13 +102,13 @@ void PlayListDownloader::readResponse(QNetworkReply *reply)
         if(!url.isEmpty() && m_url != url)
         {
             reply->deleteLater();
-            qDebug("PlayListDownloader: redirect to %s", qPrintable(url.toString()));
+            qCDebug(core) << "redirect to" << url.toString();
             start(url, m_model);
             return;
         }
 
         QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
-        qDebug("PlayListDownloader: content type: %s", qPrintable(contentType));
+        qCDebug(core) << "content type:" << contentType;
         PlayListFormat *fmt = PlayListParser::findByMime(contentType);
         if(!fmt)
             fmt = PlayListParser::findByUrl(m_url);
@@ -141,13 +141,13 @@ void PlayListDownloader::readResponse(QNetworkReply *reply)
         if(!url.isEmpty() && m_url != url)
         {
             reply->deleteLater();
-            qDebug("PlayListDownloader: redirect to %s", qPrintable(url.toString()));
+            qCDebug(core) << "redirect to" << url.toString();
             start(url, m_model);
             return;
         }
 
         QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
-        qDebug("PlayListDownloader: content type: %s", qPrintable(contentType));
+        qCDebug(core) << "content type:" << contentType;
         PlayListFormat *fmt = PlayListParser::findByMime(contentType);
         if(!fmt)
             fmt = PlayListParser::findByUrl(m_url);

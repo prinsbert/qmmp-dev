@@ -88,8 +88,7 @@ QmmpUiPluginCache::QmmpUiPluginCache(const QString &file, QSettings *settings)
             values << QString::number(m_priority);
             values << info.lastModified().toString(Qt::ISODate);
             settings->setValue(m_path, values);
-            qDebug("QmmpUiPluginCache: added cache item \"%s=%s\"",
-                   qPrintable(info.fileName()), qPrintable(values.join(QLatin1Char(','))));
+            qCDebug(core, "added cache item \"%s=%s\"", qPrintable(info.fileName()), qPrintable(values.join(QLatin1Char(','))));
         }
     }
     settings->endGroup();
@@ -120,7 +119,7 @@ QmmpUiPluginCache::QmmpUiPluginCache(QObject *instance)
         m_error = true;
         return;
     }
-    qDebug("QmmpUiPluginCache: registered internal factory %s", qPrintable(m_shortName));
+    qCDebug(core) << "registered internal factory" << m_shortName;
 }
 
 const QString QmmpUiPluginCache::shortName() const
@@ -185,7 +184,7 @@ QObject *QmmpUiPluginCache::instance()
     QPluginLoader loader(m_path);
     m_instance = loader.instance();
     if (loader.isLoaded())
-        qDebug("QmmpUiPluginCache: loaded plugin %s", qPrintable(QFileInfo(m_path).fileName()));
+        qCDebug(core) << "loaded plugin" << QFileInfo(m_path).fileName();
     else
     {
         m_error = true;
@@ -219,7 +218,7 @@ void QmmpUiPluginCache::cleanup(QSettings *settings)
 #endif
         {
             settings->remove(key);
-            qDebug("QmmpUiPluginCache: removed key %s", qPrintable(key));
+            qCDebug(core) << "removed key" << key;
         }
     }
     settings->endGroup();

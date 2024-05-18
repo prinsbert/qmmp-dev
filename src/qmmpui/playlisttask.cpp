@@ -278,7 +278,7 @@ void PlayListTask::refresh(QList<PlayListTrack *> tracks, PlayListTrack *current
 
 void PlayListTask::run()
 {
-    qDebug("PlayListTask: started");
+    qCDebug(core) << "started";
 
     if(m_task == SORT || m_task == SORT_SELECTION || m_task == SORT_BY_COLUMN)
     {
@@ -480,7 +480,7 @@ void PlayListTask::run()
             }
         }
     }
-    qDebug("PlayListTask: finished");
+    qCDebug(core) << "finished";
 }
 
 PlayListTask::TaskType PlayListTask::type() const

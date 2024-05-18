@@ -68,9 +68,8 @@ bool OutputWriter::initialize(quint32 freq, ChannelMap map)
     m_format = m_output->format();
     m_abr = m_settings->averageBitrate();
 
-    qDebug("OutputWriter: [%s] %s ==> %s",
-           qPrintable(Output::currentFactory()->properties().shortName),
-           qPrintable(m_in_params.toString()), qPrintable(m_output->audioParameters().toString()));
+    qCDebug(core, "[%s] %s ==> %s", qPrintable(Output::currentFactory()->properties().shortName),
+            qPrintable(m_in_params.toString()), qPrintable(m_output->audioParameters().toString()));
 
     if(!prepareConverters())
     {
@@ -352,7 +351,7 @@ void OutputWriter::run()
     if(m_finish)
     {
         m_output->drain();
-        qDebug() << "OutputWriter: total written" << m_totalWritten;
+        qCDebug(core) << "total written" << m_totalWritten;
     }
     dispatch(Qmmp::Stopped);
     stopVisualization();

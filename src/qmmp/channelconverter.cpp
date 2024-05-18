@@ -18,6 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include "qmmp.h"
 #include "channelconverter_p.h"
 
 ChannelConverter::ChannelConverter(ChannelMap out_map)
@@ -69,8 +70,7 @@ void ChannelConverter::configure(quint32 srate, ChannelMap in_map)
         m_reorder_array[1] = 0;
     }
 
-    qDebug("ChannelConverter: {%s} ==> {%s}; {%s}", qPrintable(in_map.toString()),
-           qPrintable(m_out_map.toString()), qPrintable(reorderStringList.join(QLatin1Char(','))));
+    qCDebug(core) << "{%s} ==> {%s}; {%s}" << in_map.toString() << m_out_map.toString() << reorderStringList.join(QLatin1Char(','));
 }
 
 void ChannelConverter::applyEffect(Buffer *b)

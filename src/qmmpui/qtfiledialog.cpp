@@ -25,7 +25,7 @@
 
 FileDialog* QtFileDialogFactory::create()
 {
-    qDebug("QtFileDialogFactory::create()");
+    qCDebug(core) << Q_FUNC_INFO;
     return new QtFileDialog();
 }
 
@@ -48,7 +48,7 @@ QString QtFileDialogFactory::translation() const
 
 QtFileDialog::~QtFileDialog()
 {
-    qDebug() << Q_FUNC_INFO;
+    qCDebug(core) << Q_FUNC_INFO;
 }
 
 QStringList QtFileDialog::exec(QWidget *parent, const QString &dir, FileDialog::Mode mode,

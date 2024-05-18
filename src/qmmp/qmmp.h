@@ -21,6 +21,7 @@
 #define QMMP_H
 
 #include <QString>
+#include <QLoggingCategory>
 #include "qmmp_export.h"
 
 #define QMMP_VERSION_MAJOR 2
@@ -71,6 +72,10 @@ using QLatin1StringView = QLatin1String;
 #endif
 
 using namespace Qt::Literals::StringLiterals;
+
+QMMP_EXPORT Q_DECLARE_LOGGING_CATEGORY(core)
+QMMP_EXPORT Q_DECLARE_LOGGING_CATEGORY(plugin)
+
 
 /*! @brief The Qmmp class stores global settings and enums.
  * @author Ilya Kotov <forkotov02@ya.ru>

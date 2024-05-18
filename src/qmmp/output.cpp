@@ -98,7 +98,7 @@ Output *Output::create ()
     Output *output = nullptr;
     if (m_cache->isEmpty ())
     {
-        qDebug("Output: unable to find output plugins");
+        qCDebug(core) << "unable to find output plugins";
         return output;
     }
     OutputFactory *fact = Output::currentFactory();

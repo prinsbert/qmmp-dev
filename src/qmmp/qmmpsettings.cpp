@@ -241,7 +241,7 @@ void QmmpSettings::sync()
 {
     if(m_saveSettings)
     {
-        qDebug("QmmpSettings: saving settings...");
+        qCDebug(core) << "saving settings...";
         QSettings settings;
         //replaygain settings
         settings.beginGroup(u"ReplayGain"_s);

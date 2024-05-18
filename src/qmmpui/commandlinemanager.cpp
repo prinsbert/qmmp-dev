@@ -47,7 +47,7 @@ void CommandLineManager::checkOptions()
             QPluginLoader loader(filePath);
             QObject *plugin = loader.instance();
             if (loader.isLoaded())
-                /*qDebug("CommandLineManager: loaded plugin %s", qPrintable(QFileInfo(filePath).filePath()));*/;
+                /*qCDebug(core) << "loaded plugin" << QFileInfo(filePath).filePath();*/;
             else
                 qWarning("CommandLineManager: %s", qPrintable(loader.errorString ()));
 

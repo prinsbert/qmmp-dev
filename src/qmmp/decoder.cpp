@@ -37,7 +37,7 @@ void Decoder::configure(quint32 srate, const ChannelMap &map, Qmmp::AudioFormat 
 
 void Decoder::configure(quint32 srate, int channels, Qmmp::AudioFormat f)
 {
-    qDebug("Decoder: using internal channel order");
+    qCDebug(core) << "using internal channel order";
     configure(AudioParameters(srate, ChannelMap(channels), f));
 }
 
