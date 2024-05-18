@@ -70,7 +70,7 @@ void AlsaSettingsDialog::getCards()
     m_ui->deviceComboBox->addItem(u"Default PCM device (default)"_s);
 
     if((err = snd_card_next(&card)) !=0)
-        qWarning("AlsaSettingsDialog (ALSA): snd_next_card() failed: %s",
+        qWarning("snd_next_card() failed: %s",
                  snd_strerror(-err));
 
     while(card > -1)
@@ -79,7 +79,7 @@ void AlsaSettingsDialog::getCards()
         m_cards << QStringLiteral("hw:%1").arg(card);
         if ((err = snd_card_next(&card)) !=0)
         {
-            qWarning("AlsaSettingsDialog (ALSA): snd_next_card() failed: %s",
+            qWarning("snd_next_card() failed: %s",
                      snd_strerror(-err));
             break;
         }
@@ -104,7 +104,7 @@ void AlsaSettingsDialog::getSoftDevices()
 
             m_devices << QString::fromLatin1(device_name);
             QString str = QStringLiteral("%1 (%2)").arg(QString::fromLatin1(device_desc), QString::fromLatin1(device_name));
-            qDebug("%s", qPrintable(str));
+            qCDebug(plugin, "%s", qPrintable(str));
             m_ui->deviceComboBox->addItem(str);
             free (device_name);
             free (device_desc);
@@ -129,14 +129,14 @@ void AlsaSettingsDialog::getCardDevices(int card)
 
     if ((err = snd_ctl_open(&ctl, dev, 0)) < 0)
     {
-        qWarning("AlsaSettingsDialog (ALSA): snd_ctl_open() failed: %s",
+        qWarning("snd_ctl_open() failed: %s",
                  snd_strerror(-err));
         return;
     }
 
     if ((err = snd_card_get_name(card, &card_name)) != 0)
     {
-        qWarning("AlsaSettingsDialog (ALSA): snd_card_get_name() failed: %s",
+        qWarning("snd_card_get_name() failed: %s",
                  snd_strerror(-err));
         card_name = strdup("Unknown soundcard");
     }
@@ -144,14 +144,14 @@ void AlsaSettingsDialog::getCardDevices(int card)
 
     snd_pcm_info_alloca(&pcm_info);
 
-    qDebug("AlsaSettingsDialog (ALSA): detected sound cards:");
+    qCDebug(plugin, "detected sound cards:");
 
     for (;;)
     {
         QString device;
         if ((err = snd_ctl_pcm_next_device(ctl, &pcm_device)) < 0)
         {
-            qWarning("AlsaSettingsDialog (ALSA): snd_ctl_pcm_next_device() failed: %s",
+            qWarning("snd_ctl_pcm_next_device() failed: %s",
                      snd_strerror(-err));
             pcm_device = -1;
         }
@@ -165,7 +165,7 @@ void AlsaSettingsDialog::getCardDevices(int card)
         if ((err = snd_ctl_pcm_info(ctl, pcm_info)) < 0)
         {
             if (err != -ENOENT)
-                qWarning("AlsaSettingsDialog (ALSA): get_devices_for_card(): "
+                qWarning("get_devices_for_card(): "
                          "snd_ctl_pcm_info() "
                          "failed (%d:%d): %s.", card,
                          pcm_device, snd_strerror(-err));
@@ -173,7 +173,7 @@ void AlsaSettingsDialog::getCardDevices(int card)
         device = QStringLiteral("hw:%1,%2").arg(card).arg(pcm_device);
         m_devices << device;
         QString str = QStringLiteral("%1: %2 (%3)").arg(QString::fromLatin1(card_name), QString::fromLatin1(snd_pcm_info_get_name(pcm_info)), device);
-        qDebug("%s",qPrintable(str));
+        qCDebug(plugin, "%s",qPrintable(str));
         m_ui->deviceComboBox->addItem(str);
     }
 
@@ -209,7 +209,7 @@ void AlsaSettingsDialog::setText(int n)
 
 void AlsaSettingsDialog::accept()
 {
-    qDebug("AlsaSettingsDialog (ALSA):: writeSettings()");
+    qCDebug(plugin, "AlsaSettingsDialog (ALSA):: writeSettings()");
     QSettings settings;
     settings.beginGroup(u"ALSA"_s);
     settings.setValue(u"device"_s, m_ui->deviceComboBox->currentText ());
@@ -233,26 +233,26 @@ int AlsaSettingsDialog::getMixer(snd_mixer_t **mixer, QString card)
 
     if ((err = snd_mixer_open(mixer, 0)) < 0)
     {
-        qWarning("AlsaSettingsDialog (ALSA): alsa_get_mixer(): "
+        qWarning("alsa_get_mixer(): "
                  "Failed to open empty mixer: %s", snd_strerror(-err));
         mixer = nullptr;
         return -1;
     }
     if ((err = snd_mixer_attach(*mixer, card.toLatin1().constData())) < 0)
     {
-        qWarning("AlsaSettingsDialog (ALSA): alsa_get_mixer(): "
+        qWarning("alsa_get_mixer(): "
                  "Attaching to mixer %s failed: %s", qPrintable(card), snd_strerror(-err));
         return -1;
     }
     if ((err = snd_mixer_selem_register(*mixer, nullptr, nullptr)) < 0)
     {
-        qWarning("AlsaSettingsDialog (ALSA): alsa_get_mixer(): "
+        qWarning("alsa_get_mixer(): "
                  "Failed to register mixer: %s", snd_strerror(-err));
         return -1;
     }
     if ((err = snd_mixer_load(*mixer)) < 0)
     {
-        qWarning("AlsaSettingsDialog (ALSA): alsa_get_mixer(): Failed to load mixer: %s",
+        qWarning("alsa_get_mixer(): Failed to load mixer: %s",
                  snd_strerror(-err));
         return -1;
     }

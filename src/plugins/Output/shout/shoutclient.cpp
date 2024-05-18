@@ -73,11 +73,11 @@ bool ShoutClient::open()
     if(r == SHOUTERR_SUCCESS || r == SHOUTERR_CONNECTED)
     {
         shout_sync(m_shout_conn);
-        qDebug("ShoutClient: connected");
+        qCDebug(plugin, "connected");
         return true;
     }
 
-    qWarning("ShoutClient: unable to connect: %s", shout_get_error(m_shout_conn));
+    qWarning("unable to connect: %s", shout_get_error(m_shout_conn));
     return false;
 }
 
@@ -86,7 +86,7 @@ bool ShoutClient::send(const unsigned char *data, int len)
     shout_sync(m_shout_conn);
     if(shout_send(m_shout_conn, data, len) != SHOUTERR_SUCCESS)
     {
-        qWarning("ShoutClient: unable to send data: %s", shout_get_error(m_shout_conn));
+        qWarning("unable to send data: %s", shout_get_error(m_shout_conn));
         return false;
     }
     return true;
@@ -104,6 +104,6 @@ void ShoutClient::closeLater()
 
 void ShoutClient::close()
 {
-    qDebug("%s", Q_FUNC_INFO);
+    qCDebug(plugin, "%s", Q_FUNC_INFO);
     shout_close(m_shout_conn);
 }

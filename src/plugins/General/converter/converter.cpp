@@ -38,7 +38,7 @@ Converter::Converter(QObject *parent) : QObject(parent), QRunnable()
 
 Converter::~Converter()
 {
-    qDebug("%s", Q_FUNC_INFO);
+    qCDebug(plugin) << Q_FUNC_INFO;
     if(m_decoder)
     {
         delete m_decoder;
@@ -89,7 +89,7 @@ bool Converter::prepare(const QString &url, int row, const QVariantHash &preset)
         source->deleteLater();
         return false;
     }
-    qDebug("Converter: selected decoder: %s", qPrintable(factory->properties().shortName));
+    qCDebug(plugin, "selected decoder: %s", qPrintable(factory->properties().shortName));
     if(factory->properties().noInput && source->ioDevice())
         source->ioDevice()->close();
     Decoder *decoder = factory->create(source->path(), source->ioDevice());
@@ -118,7 +118,7 @@ void Converter::stop()
 
 void Converter::run()
 {
-    qDebug("Converter: staring thread");
+    qCDebug(plugin, "staring thread");
     if(m_user_stop)
     {
         emit message(m_row, tr("Cancelled"));
@@ -173,7 +173,7 @@ void Converter::run()
     bool use_file = command.contains(u"%i"_s);
     command.replace(u"%i"_s, QLatin1Char('"') + tmp_path + QLatin1Char('"'));
 
-    qDebug("Converter: starting task '%s'", qPrintable(m_preset[u"name"_s].toString()));
+    qCDebug(plugin) << "starting task" << m_preset[u"name"_s].toString();
     emit message(m_row, tr("Converting"));
 
     char wave_header[] = { 0x52, 0x49, 0x46, 0x46, //"RIFF"
@@ -223,18 +223,18 @@ void Converter::run()
     m_mutex.lock();
     if(m_user_stop)
     {
-        qDebug("Converter: task '%s' aborted", qPrintable(m_preset[u"name"_s].toString()));
+        qCDebug(plugin, "task '%s' aborted", qPrintable(m_preset[u"name"_s].toString()));
         emit message(m_row, tr("Cancelled"));
         m_mutex.unlock();
         return;
     }
 
-    qDebug("Converter: task '%s' finished with success", qPrintable(m_preset[u"name"_s].toString()));
+    qCDebug(plugin, "task '%s' finished with success", qPrintable(m_preset[u"name"_s].toString()));
     m_mutex.unlock();
 
     if(use_file)
     {
-        qDebug("Converter: starting file encoding...");
+        qCDebug(plugin) << "starting file encoding...";
         emit message(m_row, tr("Encoding"));
         enc_pipe = popen(qPrintable(command), "w");
         if(!enc_pipe)
@@ -244,13 +244,13 @@ void Converter::run()
             return;
         }
         pclose(enc_pipe);
-        qDebug("Converter: encoding finished");
+        qCDebug(plugin) << "encoding finished";
         QFile::remove(tmp_path);
     }
 
     if(m_preset[u"tags"_s].toBool())
     {
-        qDebug("Converter: writing tags");
+        qCDebug(plugin) << "writing tags";
         TagLib::FileRef file(qPrintable(full_path));
         if(file.tag())
         {
@@ -272,7 +272,7 @@ void Converter::run()
         }
     }
 
-    qDebug("Converter: thread finished");
+    qCDebug(plugin) << "thread finished";
     emit message(m_row, tr("Finished"));
     emit finished(this);
 }
@@ -346,8 +346,8 @@ bool Converter::convert(Decoder *decoder, FILE *file, bool use16bit)
         else
         {
             emit progress(100);
-            qDebug("Converter: total written: %lld bytes", total);
-            qDebug("finished!");
+            qCDebug(plugin) << "Converter: total written:" << total << "bytes";
+            qCDebug(plugin) << "finished!";
             return true;
         }
 

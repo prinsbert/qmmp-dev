@@ -55,7 +55,7 @@ QtMultimediaSettingsDialog::~QtMultimediaSettingsDialog()
 
 void QtMultimediaSettingsDialog::accept()
 {
-    qDebug("%s", Q_FUNC_INFO);
+    qCDebug(plugin) << Q_FUNC_INFO;
     QSettings settings;
     settings.setValue("QTMULTIMEDIA/device"_L1, m_ui->deviceComboBox->currentData().toByteArray());
     QDialog::accept();

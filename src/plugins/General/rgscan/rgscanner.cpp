@@ -68,11 +68,11 @@ bool RGScanner::prepare(const QString &url)
 
     if(!factory)
     {
-        qWarning("RGScanner: [%s] unable to find factory", qPrintable(name));
+        qWarning("[%s] unable to find factory", qPrintable(name));
         delete source;
         return false;
     }
-    qDebug("RGScanner: [%s] selected decoder: %s",qPrintable(name),
+    qCDebug(plugin, "[%s] selected decoder: %s",qPrintable(name),
            qPrintable(factory->properties().shortName));
 
     if(factory->properties().noInput && source->ioDevice())
@@ -161,7 +161,7 @@ void RGScanner::run()
         return;
     }
     QString name = m_url.section(QLatin1Char('/'), -1);
-    qDebug("RGScanner: [%s] staring thread", qPrintable(name));
+    qCDebug(plugin, "[%s] staring thread", qPrintable(name));
     m_is_running = true;
     m_is_pending = false;
     bool error = false;
@@ -243,15 +243,15 @@ void RGScanner::run()
     }
     else if(m_user_stop)
     {
-        qDebug("RGScanner: [%s] stopped by user", qPrintable(name));
+        qCDebug(plugin, "[%s] stopped by user", qPrintable(name));
     }
     else
     {
         m_gain = GetTitleGain(m_handle);
         m_peak = max / 32768.0;
         emit progress(100);
-        qDebug("RGScanner: [%s] peak=%f, gain=%f", qPrintable(name), m_peak, m_gain);
-        qDebug("RGScanner: [%s] finished with success ", qPrintable(name));
+        qCDebug(plugin, "[%s] peak=%f, gain=%f", qPrintable(name), m_peak, m_gain);
+        qCDebug(plugin, "[%s] finished with success ", qPrintable(name));
         m_has_values = true;
     }
     deinit();

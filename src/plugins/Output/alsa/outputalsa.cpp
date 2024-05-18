@@ -68,7 +68,7 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
 
     if (snd_pcm_open(&pcm_handle, pcm_name, SND_PCM_STREAM_PLAYBACK, SND_PCM_NONBLOCK) < 0)
     {
-        qWarning ("OutputALSA: Error opening PCM device %s", pcm_name);
+        qWarning ("Error opening PCM device %s", pcm_name);
         return false;
     }
 
@@ -93,14 +93,14 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
     snd_pcm_hw_params_alloca(&hwparams);
     if ((err = snd_pcm_hw_params_any(pcm_handle, hwparams)) < 0)
     {
-        qWarning("OutputALSA: Can not read configuration for PCM device: %s", snd_strerror(err));
+        qWarning("Can not read configuration for PCM device: %s", snd_strerror(err));
         return false;
     }
     if (m_use_mmap)
     {
         if ((err = snd_pcm_hw_params_set_access(pcm_handle, hwparams, SND_PCM_ACCESS_MMAP_INTERLEAVED)) < 0)
         {
-            qWarning("OutputALSA: Error setting mmap access: %s", snd_strerror(err));
+            qWarning("Error setting mmap access: %s", snd_strerror(err));
             m_use_mmap = false;
         }
     }
@@ -108,7 +108,7 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
     {
         if ((err = snd_pcm_hw_params_set_access(pcm_handle, hwparams, SND_PCM_ACCESS_RW_INTERLEAVED)) < 0)
         {
-            qWarning("OutputALSA: Error setting access: %s", snd_strerror(err));
+            qWarning("Error setting access: %s", snd_strerror(err));
             return false;
         }
     }
@@ -131,49 +131,49 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
         alsa_format = SND_PCM_FORMAT_FLOAT;
         break;
     default:
-        qWarning("OutputALSA: unsupported format detected");
+        qWarning("unsupported format detected");
         return false;
     }
     if ((err = snd_pcm_hw_params_set_format(pcm_handle, hwparams, alsa_format)) < 0)
     {
-        qDebug("OutputALSA: Error setting format: %s", snd_strerror(err));
+        qCDebug(plugin, "Error setting format: %s", snd_strerror(err));
         return false;
     }
     exact_rate = rate;
 
     if ((err = snd_pcm_hw_params_set_rate_near(pcm_handle, hwparams, &exact_rate, nullptr)) < 0)
     {
-        qWarning("OutputALSA: Error setting rate: %s", snd_strerror(err));
+        qWarning("Error setting rate: %s", snd_strerror(err));
         return false;
     }
     if (rate != exact_rate)
     {
-        qWarning("OutputALSA: The rate %d Hz is not supported by your hardware.\n==> Using %d Hz instead.", rate, exact_rate);
+        qWarning("The rate %d Hz is not supported by your hardware.\n==> Using %d Hz instead.", rate, exact_rate);
     }
     uint c = map.count();
     if ((err = snd_pcm_hw_params_set_channels_near(pcm_handle, hwparams, &c)) < 0)
     {
-        qWarning("OutputALSA: Error setting channels: %s", snd_strerror(err));
+        qWarning("Error setting channels: %s", snd_strerror(err));
         return false;
     }
     if (c != (uint)map.count())
     {
-        qWarning("OutputALSA: The channel number %lld is not supported by your hardware", map.count());
+        qWarning("The channel number %lld is not supported by your hardware", map.count());
         qWarning("==> Using %d instead.", c);
     }
     if ((err = snd_pcm_hw_params_set_period_time_near(pcm_handle, hwparams, &period_time, nullptr)) < 0)
     {
-        qWarning("OutputALSA: Error setting period time: %s", snd_strerror(err));
+        qWarning("Error setting period time: %s", snd_strerror(err));
         return false;
     }
     if ((err = snd_pcm_hw_params_set_buffer_time_near(pcm_handle, hwparams, &buffer_time, nullptr)) < 0)
     {
-        qWarning("OutputALSA: Error setting buffer time: %s", snd_strerror(err));
+        qWarning("Error setting buffer time: %s", snd_strerror(err));
         return false;
     }
     if ((err = snd_pcm_hw_params(pcm_handle, hwparams)) < 0)
     {
-        qWarning("OutputALSA: Error setting HW params: %s", snd_strerror(err));
+        qWarning("Error setting HW params: %s", snd_strerror(err));
         return false;
     }
     //read some alsa parameters
@@ -181,12 +181,12 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
     snd_pcm_uframes_t period_size = 0;
     if ((err = snd_pcm_hw_params_get_buffer_size(hwparams, &buffer_size)) < 0)
     {
-        qWarning("OutputALSA: Error reading buffer size: %s", snd_strerror(err));
+        qWarning("Error reading buffer size: %s", snd_strerror(err));
         return false;
     }
     if ((err = snd_pcm_hw_params_get_period_size(hwparams, &period_size, nullptr)) < 0)
     {
-        qWarning("OutputALSA: Error reading period size: %s", snd_strerror(err));
+        qWarning("Error reading period size: %s", snd_strerror(err));
         return false;
     }
     //swparams
@@ -194,16 +194,16 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
     snd_pcm_sw_params_current(pcm_handle, swparams);
     if ((err = snd_pcm_sw_params_set_start_threshold(pcm_handle, swparams,
                buffer_size - period_size)) < 0)
-        qWarning("OutputALSA: Error setting threshold: %s", snd_strerror(err));
+        qWarning("Error setting threshold: %s", snd_strerror(err));
     if ((err = snd_pcm_sw_params(pcm_handle, swparams)) < 0)
     {
-        qWarning("OutputALSA: Error setting SW params: %s", snd_strerror(err));
+        qWarning("Error setting SW params: %s", snd_strerror(err));
         return false;
     }
     //setup needed values
     m_chunk_size = period_size;
     m_can_pause = snd_pcm_hw_params_can_pause(hwparams) && use_pause;
-    qDebug("OutputALSA: can pause: %d", m_can_pause);
+    qCDebug(plugin, "can pause: %d", m_can_pause);
 
     ChannelMap out_map = map;
     //channel map configuration
@@ -214,7 +214,7 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
         char tmp[256];
         memset(tmp,0,256);
         snd_pcm_chmap_print(chmap, 256, tmp);
-        qDebug("OutputALSA: received channel map: %s",tmp);
+        qCDebug(plugin, "received channel map: %s",tmp);
 
         for(uint i = 0; i < chmap->channels; ++i)
         {
@@ -226,7 +226,7 @@ bool OutputALSA::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
         free(chmap);
     }
     else
-        qWarning("OutputALSA: Unable to receive current channel map");
+        qWarning("Unable to receive current channel map");
 
     configure(exact_rate, out_map, format); //apply configuration
     //create alsa prebuffer;
@@ -342,10 +342,10 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
     }
     if (m == -EPIPE)
     {
-        qDebug("OutputALSA: buffer underrun!");
+        qCDebug(plugin, "buffer underrun!");
         if ((m = snd_pcm_prepare(pcm_handle)) < 0)
         {
-            qDebug("OutputALSA: Can't recover after underrun: %s", snd_strerror(m));
+            qCDebug(plugin, "Can't recover after underrun: %s", snd_strerror(m));
             /* TODO: reopen the device */
             return -1;
         }
@@ -354,15 +354,15 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
 #ifdef ESTRPIPE
     if (m == -ESTRPIPE)
     {
-        qDebug ("OutputALSA: Suspend, trying to resume");
+        qDebug ("Suspend, trying to resume");
         while((m = snd_pcm_resume(pcm_handle)) == -EAGAIN)
             sleep(1);
         if(m < 0)
         {
-            qDebug ("OutputALSA: Failed, restarting");
+            qDebug ("Failed, restarting");
             if((m = snd_pcm_prepare(pcm_handle)) < 0)
             {
-                qDebug("OutputALSA: Failed to restart device: %s.",
+                qCDebug(plugin, "Failed to restart device: %s.",
                         snd_strerror(m));
                 return -1;
             }
@@ -370,7 +370,7 @@ long OutputALSA::alsa_write(unsigned char *data, long size)
         return 0;
     }
 #endif
-    qDebug("OutputALSA: error: %s", snd_strerror(m));
+    qCDebug(plugin, "error: %s", snd_strerror(m));
     return snd_pcm_prepare (pcm_handle);
 }
 
@@ -382,7 +382,7 @@ void OutputALSA::uninitialize()
     if (pcm_handle)
     {
         snd_pcm_drop(pcm_handle);
-        qDebug("OutputALSA: closing pcm_handle");
+        qCDebug(plugin, "closing pcm_handle");
         snd_pcm_close(pcm_handle);
         pcm_handle = nullptr;
     }
@@ -446,7 +446,7 @@ int VolumeALSA::setupMixer(QString card, QString device)
     int err, index;
     pcm_element = nullptr;
 
-    qDebug("OutputALSA: setupMixer()");
+    qCDebug(plugin, "setupMixer()");
 
     if ((err = getMixer(&m_mixer, card)) < 0)
         return err;
@@ -459,13 +459,13 @@ int VolumeALSA::setupMixer(QString card, QString device)
 
     if (!pcm_element)
     {
-        qWarning("OutputALSA: Failed to find mixer element");
+        qWarning("Failed to find mixer element");
         return -1;
     }
 
     if((err = snd_mixer_selem_set_playback_volume_range(pcm_element, 0, 100)) < 0)
     {
-        qWarning("OutputALSA: Unable to set volume range: %s", snd_strerror(-err));
+        qWarning("Unable to set volume range: %s", snd_strerror(-err));
         pcm_element = nullptr;
         return -1;
     }
@@ -485,7 +485,7 @@ int VolumeALSA::setupMixer(QString card, QString device)
         delete []fds;
     }
 
-    qDebug("OutputALSA: setupMixer() success");
+    qCDebug(plugin, "setupMixer() success");
     return 0;
 }
 
@@ -532,7 +532,7 @@ int VolumeALSA::getMixer(snd_mixer_t **mixer, QString card)
 
     if ((err = snd_mixer_open(mixer, 0)) < 0)
     {
-        qWarning("OutputALSA: Failed to open empty mixer: %s",
+        qWarning("Failed to open empty mixer: %s",
                  snd_strerror(-err));
         mixer = nullptr;
         return -1;
@@ -540,19 +540,19 @@ int VolumeALSA::getMixer(snd_mixer_t **mixer, QString card)
 
     if ((err = snd_mixer_attach(*mixer, card.toLatin1().constData())) < 0)
     {
-        qWarning("OutputALSA: Attaching to mixer %s failed: %s",
+        qWarning("Attaching to mixer %s failed: %s",
                  qPrintable(card), snd_strerror(-err));
         return -1;
     }
     if ((err = snd_mixer_selem_register(*mixer, nullptr, nullptr)) < 0)
     {
-        qWarning("OutputALSA: Failed to register mixer: %s",
+        qWarning("Failed to register mixer: %s",
                  snd_strerror(-err));
         return -1;
     }
     if ((err = snd_mixer_load(*mixer)) < 0)
     {
-        qWarning("OutputALSA: Failed to load mixer: %s",
+        qWarning("Failed to load mixer: %s",
                  snd_strerror(-err));
         return -1;
     }

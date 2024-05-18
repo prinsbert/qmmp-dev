@@ -45,7 +45,7 @@ History::History(QObject *parent) : QObject(parent)
             QSqlQuery query(db);
             query.exec(u"PRAGMA journal_mode = WAL"_s);
             query.exec(u"PRAGMA synchronous = NORMAL"_s);
-            qDebug("History: database initialization finished");
+            qCDebug(plugin, "database initialization finished");
         }
         else
         {
@@ -155,7 +155,7 @@ void History::saveTrack()
     if(!ok)
         qWarning("History: unable to save track, error: %s", qPrintable(query.lastError().text()));
     else
-        qDebug("History: track '%s' has been added to history",
+        qCDebug(plugin, "track '%s' has been added to history",
                qPrintable(m_trackInfo.value(Qmmp::ARTIST) + u" - "_s + m_trackInfo.value(Qmmp::TITLE)));
 
     m_trackInfo.clear();

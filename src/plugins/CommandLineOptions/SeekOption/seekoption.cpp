@@ -76,7 +76,7 @@ QString SeekOption::executeCommand(int id, const QStringList &args, const QStrin
         break;
     }
 
-    qDebug("SeekOption: position = %d", seek_pos);
+    qCDebug(plugin, "position = %d", seek_pos);
 
     if(seek_pos >= 0 && seek_pos < core->duration())
         core->seek(seek_pos * 1000);

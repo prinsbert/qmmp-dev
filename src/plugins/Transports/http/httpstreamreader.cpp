@@ -42,7 +42,7 @@ static size_t curl_write_data(void *data, size_t size, size_t nmemb,
 
     if(dl->stream()->buf_fill > MAX_BUFFER_SIZE)
     {
-        qWarning("HttpStreamReader: buffer has reached the maximum size, disconnecting...");
+        qWarning("buffer has reached the maximum size, disconnecting...");
         dl->stream()->aborted = true;
         dl->mutex()->unlock();
         return 0;
@@ -55,7 +55,7 @@ static size_t curl_write_data(void *data, size_t size, size_t nmemb,
         dl->stream()->buf = (char *)realloc(dl->stream()->buf, dl->stream()->buf_fill + data_size);
         if(!dl->stream()->buf)
         {
-            qWarning("HttpStreamReader: unable to allocate %zu bytes",  dl->stream()->buf_fill + data_size);
+            qWarning("unable to allocate %zu bytes",  dl->stream()->buf_fill + data_size);
             if(prev)
                 free(prev);
 
@@ -86,17 +86,17 @@ static size_t curl_header(void *data, size_t size, size_t nmemb,
         return data_size;
     }
 
-    //qDebug("header received: %s", (char*) data);
+    //qCDebug(plugin, "header received: %s", (char*) data);
     QByteArray header((char *) data, data_size);
     header = header.trimmed ();
     if (header.left(4).contains("HTTP"))
     {
-        qDebug("HttpStreamReader: header received");
+        qCDebug(plugin, "header received");
         //TODO open metadata socket
     }
     else if (header.left(4).contains("ICY"))
     {
-        qDebug("HttpStreamReader: shoutcast header received");
+        qCDebug(plugin, "shoutcast header received");
         //dl->stream()->icy_meta_data = true;
     }
     else
@@ -104,7 +104,7 @@ static size_t curl_header(void *data, size_t size, size_t nmemb,
         QString key = QString::fromLatin1(header.left(header.indexOf(":")).trimmed().toLower());
         QByteArray value = header.right(header.size() - header.indexOf(":") - 1).trimmed();
         dl->stream()->header.insert(key, value);
-        qDebug("HttpStreamReader: key=%s, value=%s",qPrintable(key), value.constData());
+        qCDebug(plugin, "key=%s, value=%s",qPrintable(key), value.constData());
 
         if (key == "icy-metaint"_L1)
         {
@@ -306,7 +306,7 @@ qint64 HttpStreamReader::bytesAvailable() const
 
 void HttpStreamReader::run()
 {
-    qDebug("HttpStreamReader: starting download thread");
+    qCDebug(plugin, "starting download thread");
     char errorBuffer[CURL_ERROR_SIZE];
     memset(errorBuffer, 0, sizeof(errorBuffer));
     m_handle = curl_easy_init();
@@ -379,10 +379,10 @@ void HttpStreamReader::run()
     m_stream.header.clear();
     m_ready  = false;
     int return_code;
-    qDebug("HttpStreamReader: starting libcurl");
+    qCDebug(plugin, "starting libcurl");
     m_mutex.unlock();
     return_code = curl_easy_perform(m_handle);
-    qDebug("HttpStreamReader: curl thread finished with code %d (%s)", return_code, errorBuffer);
+    qCDebug(plugin, "curl thread finished with code %d (%s)", return_code, errorBuffer);
     if(!m_stream.aborted && !m_ready)
     {
         setErrorString(QString::fromLocal8Bit(errorBuffer));
@@ -416,7 +416,7 @@ void HttpStreamReader::checkBuffer()
     if (m_stream.buf_fill > m_prebuffer_size)
     {
         m_ready  = true;
-        qDebug("HttpStreamReader: ready");
+        qCDebug(plugin, "ready");
         if(!m_meta_sent)
         {
             QMap<Qmmp::MetaData, QString> metaData;
@@ -462,7 +462,7 @@ void HttpStreamReader::readICYMetaData()
             m_mutex.lock();
         }
         qint64 l = readBuffer(packet, size);
-        qDebug("HttpStreamReader: ICY metadata: %s", packet);
+        qCDebug(plugin, "ICY metadata: %s", packet);
         parseICYMetaData(packet, l);
     }
     m_mutex.unlock();
@@ -478,7 +478,7 @@ void HttpStreamReader::parseICYMetaData(char *data, qint64 size)
         EncaEncoding encoding = enca_analyse(m_analyser, (uchar *) data, size);
         if(encoding.charset != ENCA_CS_UNKNOWN)
         {
-            qDebug("HttpStreamReader: detected charset: %s",
+            qCDebug(plugin, "detected charset: %s",
                    enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
             delete m_codec;
             m_codec = new QmmpTextCodec(enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));

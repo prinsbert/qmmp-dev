@@ -81,7 +81,7 @@ bool DecoderMPC::initialize()
 
     if (!input())
     {
-        qWarning("DecoderMPC: cannot initialize.  No input.");
+        qWarning("cannot initialize.  No input.");
         return false;
     }
 
@@ -90,7 +90,7 @@ bool DecoderMPC::initialize()
         m_data = new mpc_data;
     }
 
-    qDebug("DecoderMPC: setting callbacks");
+    qCDebug(plugin, "setting callbacks");
     m_data->reader.read = mpc_callback_read;
     m_data->reader.seek = mpc_callback_seek;
     m_data->reader.tell = mpc_callback_tell;
@@ -114,7 +114,7 @@ bool DecoderMPC::initialize()
     setReplayGainInfo(rg_info);
 
     m_totalTime = mpc_streaminfo_get_length(&data()->info) * 1000;
-    qDebug("DecoderMPC: initialize succes");
+    qCDebug(plugin, "initialize succes");
     return true;
 }
 
@@ -141,7 +141,7 @@ qint64 DecoderMPC::read(unsigned char *audio, qint64 maxSize)
         if (err != MPC_STATUS_OK || frame.bits == -1)
         {
             m_len = 0;
-            qDebug("finished");
+            qCDebug(plugin, "finished");
             return 0;
         }
 

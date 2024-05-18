@@ -103,7 +103,7 @@ QList<PlayListTrack*> XSPFPlaylistFormat::decode(const QByteArray &contents)
 
     if(xml.hasError())
     {
-        qDebug("XSPFPlaylistFormat: parse error: %s (row:%lld, col:%lld",
+        qCDebug(plugin, "parse error: %s (row:%lld, col:%lld",
                qPrintable(xml.errorString()), xml.lineNumber(), xml.columnNumber());
     }
     return out;

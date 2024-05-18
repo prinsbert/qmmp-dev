@@ -103,7 +103,7 @@ void Oss4SettingsDialog::setText(int n)
 
 void Oss4SettingsDialog::accept()
 {
-    qDebug("%s", Q_FUNC_INFO);
+    qCDebug(plugin) << Q_FUNC_INFO;
     QSettings settings;
     settings.setValue(u"OSS4/device"_s, m_ui->deviceComboBox->currentText());
     QDialog::accept();

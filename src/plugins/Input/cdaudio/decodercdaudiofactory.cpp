@@ -34,7 +34,7 @@ DecoderCDAudioFactory::DecoderCDAudioFactory()
     QSettings settings;
     if(settings.value("cdaudio/cddb_server"_L1).toByteArray() == "freedb.org")
     {
-        qDebug("DecoderCDAudioFactory: switching to gnudb.org");
+        qCDebug(plugin, "switching to gnudb.org");
         settings.setValue(u"cdaudio/cddb_server"_s, u"gnudb.org"_s);
     }
 }

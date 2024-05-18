@@ -79,12 +79,12 @@ DecoderVorbis::~DecoderVorbis()
 
 bool DecoderVorbis::initialize()
 {
-    qDebug("DecoderVorbis: initialize");
+    qCDebug(plugin, "initialize");
     m_inited = false;
     m_totalTime = 0;
     if (!input())
     {
-        qDebug("DecoderVorbis: cannot initialize.  No input");
+        qCDebug(plugin, "cannot initialize.  No input");
         return false;
     }
 
@@ -97,7 +97,7 @@ bool DecoderVorbis::initialize()
     };
     if (ov_open_callbacks(this, &oggfile, nullptr, 0, oggcb) < 0)
     {
-        qWarning("DecoderVorbis: cannot open stream");
+        qWarning("cannot open stream");
 
         return false;
     }
@@ -121,7 +121,7 @@ bool DecoderVorbis::initialize()
     ChannelMap chmap = findChannelMap(chan);
     if(chmap.isEmpty())
     {
-        qWarning("DecoderVorbis: unsupported number of channels: %d", chan);
+        qWarning("unsupported number of channels: %d", chan);
         return false;
     }
     configure(freq, chmap, Qmmp::PCM_FLOAT);

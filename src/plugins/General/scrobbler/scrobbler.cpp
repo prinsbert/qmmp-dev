@@ -123,13 +123,13 @@ void Scrobbler::setState(Qmmp::State state)
 {
     if(state == Qmmp::Playing && m_previousState == Qmmp::Paused)
     {
-        qDebug("Scrobbler[%s]: resuming from %d seconds played", qPrintable(m_name), int(m_elapsed / 1000));
+        qCDebug(plugin, "[%s]: resuming from %d seconds played", qPrintable(m_name), int(m_elapsed / 1000));
         m_time->restart();
     }
     else if(state == Qmmp::Paused)
     {
         m_elapsed += m_time->elapsed();
-        qDebug("Scrobbler[%s]: pausing after %d seconds played", qPrintable(m_name), int(m_elapsed / 1000));
+        qCDebug(plugin, "[%s]: pausing after %d seconds played", qPrintable(m_name), int(m_elapsed / 1000));
     }
     else if(state == Qmmp::Stopped && !m_song.metaData().isEmpty())
     {
@@ -208,7 +208,7 @@ void Scrobbler::processResponse(QNetworkReply *reply)
         m_submitReply = nullptr;
         if (response.status == "ok"_L1)
         {
-            qDebug("Scrobbler[%s]: submited %d song(s)", qPrintable(m_name), m_submitedSongs);
+            qCDebug(plugin, "[%s]: submited %d song(s)", qPrintable(m_name), m_submitedSongs);
             while (m_submitedSongs)
             {
                 m_submitedSongs--;
@@ -245,7 +245,7 @@ void Scrobbler::processResponse(QNetworkReply *reply)
         m_notificationReply = nullptr;
         if(response.status == "ok"_L1)
         {
-            qDebug("Scrobbler[%s]: Now-Playing notification done", qPrintable(m_name));
+            qCDebug(plugin, "[%s]: Now-Playing notification done", qPrintable(m_name));
         }
         else if(error_code == "9"_L1) //invalid session key
         {
@@ -280,7 +280,7 @@ void Scrobbler::submit()
     if (m_cachedSongs.isEmpty() || m_session.isEmpty() || m_submitReply)
         return;
 
-    qDebug("Scrobbler[%s]: submit request", qPrintable(m_name));
+    qCDebug(plugin, "[%s]: submit request", qPrintable(m_name));
     m_submitedSongs = qMin(m_cachedSongs.size(),25);
 
     QMap<QString, QString> params;
@@ -334,7 +334,7 @@ void Scrobbler::sendNotification(const SongInfo &info)
 {
     if(m_session.isEmpty() || m_notificationReply)
         return;
-    qDebug("Scrobbler[%s]: sending notification", qPrintable(m_name));
+    qCDebug(plugin, "[%s]: sending notification", qPrintable(m_name));
 
     QMap<QString, QString> params;
     params.insert(u"track"_s, info.value(Qmmp::TITLE));
@@ -409,7 +409,7 @@ ScrobblerAuth::ScrobblerAuth(const QString &scrobblerUrl, const QString &authUrl
 
 void ScrobblerAuth::getToken()
 {
-    qDebug("ScrobblerAuth[%s]: new token request", qPrintable(m_name));
+    qCDebug(plugin, "[%s]: new token request", qPrintable(m_name));
     m_session.clear();
     QUrl url(m_scrobblerUrl + QLatin1Char('?'));
     url.setPort(m_scrobblerUrl.startsWith(u"https"_s) ? 443 : 80);
@@ -433,7 +433,7 @@ void ScrobblerAuth::getToken()
 
 void ScrobblerAuth::getSession()
 {
-    qDebug("ScrobblerAuth[%s]: new session request", qPrintable(m_name));
+    qCDebug(plugin, "[%s]: new session request", qPrintable(m_name));
     QUrl url(m_scrobblerUrl + QLatin1Char('?'));
     url.setPort(m_scrobblerUrl.startsWith(u"https"_s) ? 443 : 80);
     QUrlQuery q;
@@ -458,7 +458,7 @@ void ScrobblerAuth::getSession()
 
 void ScrobblerAuth::checkSession(const QString &session)
 {
-    qDebug("ScrobblerAuth[%s]: checking session...", qPrintable(m_name));
+    qCDebug(plugin, "[%s]: checking session...", qPrintable(m_name));
     m_session = session;
     QMap<QString, QString> params;
     params.insert(u"api_key"_s, QStringLiteral(API_KEY));
@@ -523,7 +523,7 @@ void ScrobblerAuth::processResponse(QNetworkReply *reply)
         if(response.status == "ok"_L1)
         {
             m_token = response.token;
-            qDebug("ScrobblerAuth[%s]: token: %s", qPrintable(m_name), qPrintable(m_token));
+            qCDebug(plugin, "[%s]: token: %s", qPrintable(m_name), qPrintable(m_token));
             QDesktopServices::openUrl(m_authUrl + QStringLiteral("?api_key=" API_KEY "&token=") + m_token);
             emit tokenRequestFinished(NO_ERROR);
         }
@@ -550,9 +550,9 @@ void ScrobblerAuth::processResponse(QNetworkReply *reply)
         if(response.status == "ok"_L1)
         {
             m_session = response.key;
-            qDebug("ScrobblerAuth[%s]: name: %s", qPrintable(m_name), qPrintable(response.name));
-            qDebug("ScrobblerAuth[%s]: key: %s", qPrintable(m_name), qPrintable(m_session));
-            qDebug("ScrobblerAuth[%s]: subscriber: %s", qPrintable(m_name), qPrintable(response.subscriber));
+            qCDebug(plugin, "[%s]: name: %s", qPrintable(m_name), qPrintable(response.name));
+            qCDebug(plugin, "[%s]: key: %s", qPrintable(m_name), qPrintable(m_session));
+            qCDebug(plugin, "[%s]: subscriber: %s", qPrintable(m_name), qPrintable(response.subscriber));
             emit sessionRequestFinished(NO_ERROR);
         }
         else if(error_code == "4"_L1 || error_code == "15"_L1) //invalid token
@@ -586,12 +586,12 @@ void ScrobblerAuth::processResponse(QNetworkReply *reply)
         m_checkSessionReply = nullptr;
         if(response.status == "ok"_L1)
         {
-            qDebug("ScrobblerAuth[%s]: session ok", qPrintable(m_name));
+            qCDebug(plugin, "[%s]: session ok", qPrintable(m_name));
             emit checkSessionFinished(NO_ERROR);
         }
         else if(error_code.isEmpty())
         {
-            qWarning("ScrobblerAuth[%s]: network error", qPrintable(m_name));
+            qWarning("[%s]: network error", qPrintable(m_name));
             emit checkSessionFinished(NETWORK_ERROR);
         }
         else

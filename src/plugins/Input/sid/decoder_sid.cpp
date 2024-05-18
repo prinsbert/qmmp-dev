@@ -55,14 +55,14 @@ bool DecoderSID::initialize()
     m_tune.load(qPrintable(path));
     if(!m_tune.getInfo())
     {
-        qWarning("DecoderSID: unable to load tune, error: %s", m_tune.statusString());
+        qWarning("unable to load tune, error: %s", m_tune.statusString());
         return false;
     }
     int count = m_tune.getInfo()->songs();
 
     if(track > count || track < 1)
     {
-        qWarning("DecoderSID: track number is out of range");
+        qWarning("track number is out of range");
         return false;
     }
 
@@ -70,7 +70,7 @@ bool DecoderSID::initialize()
 
     if(!m_tune.getStatus())
     {
-        qWarning("DecoderSID: error: %s", m_tune.statusString());
+        qWarning("error: %s", m_tune.statusString());
         return false;
     }
 
@@ -96,18 +96,18 @@ bool DecoderSID::initialize()
     if(m_length <= 0)
         m_length = settings.value("song_length"_L1, 180).toInt();
 
-    qDebug("DecoderSID: song length: %d", m_length);
+    qCDebug(plugin, "song length: %d", m_length);
 
     sidbuilder *rs = nullptr;
     if(settings.value(u"engine"_s, u"residfp"_s).toString() == "residfp"_L1)
     {
         rs = new ReSIDfpBuilder("ReSIDfp builder");
-        qDebug("DecoderSID: using ReSIDfp emulation");
+        qCDebug(plugin, "using ReSIDfp emulation");
     }
     else
     {
         rs = new ReSIDBuilder("ReSID builder");
-        qDebug("DecoderSID: using ReSID emulation");
+        qCDebug(plugin, "using ReSID emulation");
     }
     rs->create(m_player->info().maxsids());
 
@@ -122,20 +122,20 @@ bool DecoderSID::initialize()
 
     if(!m_player->config(cfg))
     {
-        qWarning("DecoderSID: unable to load config, error: %s", m_player->error());
+        qWarning("unable to load config, error: %s", m_player->error());
         return false;
     }
 
     if(!m_player->load(&m_tune))
     {
-        qWarning("DecoderSID: unable to load tune, error: %s", m_player->error());
+        qWarning("unable to load tune, error: %s", m_player->error());
         return false;
     }
 
     configure(44100, 2);
     m_length_in_bytes = audioParameters().sampleRate() *
             audioParameters().frameSize() * m_length;
-    qDebug("DecoderSID: initialize succes");
+    qCDebug(plugin, "initialize succes");
     return true;
 }
 

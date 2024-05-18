@@ -41,7 +41,7 @@ DecoderMAD::~DecoderMAD()
     deinit();
     if (m_input_buf)
     {
-        qDebug("DecoderMAD: deleting input_buf");
+        qCDebug(plugin, "deleting input_buf");
         delete [] m_input_buf;
         m_input_buf = nullptr;
     }
@@ -59,7 +59,7 @@ bool DecoderMAD::initialize()
 
     if (!input())
     {
-        qWarning("DecoderMAD: cannot initialize.  No input.");
+        qWarning("cannot initialize.  No input.");
         return false;
     }
 
@@ -81,7 +81,7 @@ bool DecoderMAD::initialize()
 
     if (!findHeader())
     {
-        qDebug("DecoderMAD: Can't find a valid MPEG header.");
+        qCDebug(plugin, "Can't find a valid MPEG header.");
         return false;
     }
     mad_stream_buffer(&m_stream, (unsigned char *) m_input_buf, m_input_bytes);
@@ -163,7 +163,7 @@ bool DecoderMAD::findXingHeader(struct mad_bitptr ptr, unsigned int bitlen)
 
         if(!m_xing.frames)
         {
-            qDebug("DecoderMAD: invalid xing header (zero number of frames)");
+            qCDebug(plugin, "invalid xing header (zero number of frames)");
             return false;
         }
     }
@@ -178,7 +178,7 @@ bool DecoderMAD::findXingHeader(struct mad_bitptr ptr, unsigned int bitlen)
 
         if(!m_xing.bytes)
         {
-            qDebug("DecoderMAD: invalid xing header (zero number of bytes)");
+            qCDebug(plugin, "invalid xing header (zero number of bytes)");
             return false;
         }
     }
@@ -283,7 +283,7 @@ bool DecoderMAD::findHeader()
            if (m_stream.error == MAD_ERROR_BUFLEN || MAD_RECOVERABLE(m_stream.error))
                 continue;
 
-           qDebug ("DecoderMAD: Can't decode header: %s", mad_stream_errorstr(&m_stream));
+           qDebug ("Can't decode header: %s", mad_stream_errorstr(&m_stream));
            break;
         }
         result = true;
@@ -301,7 +301,7 @@ bool DecoderMAD::findHeader()
             {
                 is_vbr = true;
 
-                qDebug("DecoderMAD: Xing header found");
+                qCDebug(plugin, "Xing header found");
 
                 if (m_xing.flags & XING_FRAMES)
                 {
@@ -310,11 +310,11 @@ bool DecoderMAD::findHeader()
 
                     if(m_xing.lame)
                     {
-                        qDebug("DecoderMAD: LAME header found");
+                        qCDebug(plugin, "LAME header found");
                         m_skip_bytes = m_xing.lame->start_delay * sizeof(float) * MAD_NCHANNELS(&header);
                         m_play_bytes = (m_xing.frames * 1152 - m_xing.lame->start_delay - m_xing.lame->end_padding) *
                                 sizeof(float) * MAD_NCHANNELS(&header);
-                        qDebug("DecoderMAD: samples to skip: %d, padding: %d",
+                        qCDebug(plugin, "samples to skip: %d, padding: %d",
                                m_xing.lame->start_delay, m_xing.lame->end_padding);
                     }
                     break;
@@ -326,7 +326,7 @@ bool DecoderMAD::findHeader()
         {
             if (m_bitrate && header.bitrate != m_bitrate)
             {
-                qDebug ("DecoderMAD: VBR detected");
+                qDebug ("VBR detected");
                 is_vbr = true;
             }
             else
@@ -334,7 +334,7 @@ bool DecoderMAD::findHeader()
         }
         else if (!is_vbr)
         {
-            qDebug ("DecoderMAD: Fixed rate detected");
+            qDebug ("Fixed rate detected");
             break;
         }
         mad_timer_add (&duration, header.duration);
@@ -356,7 +356,7 @@ bool DecoderMAD::findHeader()
     }
 
     m_totalTime = mad_timer_count(duration, MAD_UNITS_MILLISECONDS);
-    qDebug ("DecoderMAD: Total time: %ld", long(m_totalTime));
+    qDebug ("Total time: %ld", long(m_totalTime));
     m_freq = header.samplerate;
     m_channels = MAD_NCHANNELS(&header);
     m_bitrate = header.bitrate / 1000;
@@ -461,13 +461,13 @@ bool DecoderMAD::fillBuffer()
     int len = input()->read((char *) m_input_buf + m_input_bytes, INPUT_BUFFER_SIZE - m_input_bytes);
     if(!len)
     {
-        qDebug("DecoderMAD: end of file");
+        qCDebug(plugin, "end of file");
         return false;
     }
 
     if(len < 0)
     {
-        qWarning("DecoderMAD: error");
+        qWarning("error");
         return false;
     }
     m_input_bytes += len;
@@ -512,7 +512,7 @@ bool DecoderMAD::decodeFrame()
                 if (tagSize > 0)
                 {
                     mad_stream_skip(&m_stream, tagSize);
-                    qDebug("DecoderMAD: %d bytes skipped", tagSize);
+                    qCDebug(plugin, "%d bytes skipped", tagSize);
                 }
                 continue;
             }
@@ -521,7 +521,7 @@ bool DecoderMAD::decodeFrame()
                     return false;
                 continue;
             case MAD_ERROR_BADCRC:
-                qDebug("DecoderMAD: CRC check error");
+                qCDebug(plugin, "CRC check error");
                 continue;
             default:
                 if (!MAD_RECOVERABLE(m_stream.error))
@@ -556,7 +556,7 @@ qint64 DecoderMAD::madOutputFloat(float *data, qint64 samples)
 
     if(samples_per_channel * channels > samples)
     {
-        qWarning("DecoderMad: input buffer is too small");
+        qWarning("input buffer is too small");
         samples_per_channel = samples / channels;
     }
 

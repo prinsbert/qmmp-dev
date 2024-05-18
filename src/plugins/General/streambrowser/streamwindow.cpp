@@ -445,7 +445,7 @@ void StreamWindow::createInitialConfig()
 
     if(!QFile::exists(config) && QFile::exists(defaultConfig))
     {
-        qDebug("StreamWindow: creating initial config");
+        qCDebug(plugin, "creating initial config");
         QFile::copy(defaultConfig, config);
     }
 }

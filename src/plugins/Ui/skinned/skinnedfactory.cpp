@@ -47,7 +47,7 @@ QObject *SkinnedFactory::SkinnedFactory::create()
             kwinScript = qApp->applicationDirPath() + u"/../src/plugins/Ui/skinned/kwin.sh"_s;
         if(QFile::exists(kwinScript))
         {
-            qDebug("SkinnedFactory: adding kwin rules...");
+            qCDebug(plugin, "adding kwin rules...");
             QProcess::execute(QStringLiteral("sh"), QStringList() << QFileInfo(kwinScript).canonicalFilePath());
         }
     }

@@ -40,7 +40,7 @@ MMSStreamReader::MMSStreamReader(const QString &url, MMSInputSource *parent) : Q
 
 MMSStreamReader::~MMSStreamReader()
 {
-    qDebug("%s", Q_FUNC_INFO);
+    qCDebug(plugin) << Q_FUNC_INFO;
     abort();
     free(m_buffer);
     m_buffer = nullptr;
@@ -149,7 +149,7 @@ void MMSStreamReader::run()
     if(m_aborted)
     {
         m_mutex.unlock();
-        qDebug("MMSStreamReader: aborted");
+        qCDebug(plugin, "aborted");
         return;
     }
     m_mutex.unlock();
@@ -207,7 +207,7 @@ void MMSStreamReader::checkBuffer()
     if (m_buffer_at > m_prebuf_size && !m_ready)
     {
         m_ready = true;
-        qDebug("MMSStreamReader: ready");
+        qCDebug(plugin, "ready");
         /*QMap<Qmmp::MetaData, QString> metaData;
         metaData.insert(Qmmp::URL, m_url);
         m_parent->addMetaData(metaData);*/

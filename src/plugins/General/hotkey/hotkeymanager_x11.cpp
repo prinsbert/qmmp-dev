@@ -170,7 +170,7 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
         {
             if (hotkey->key != key || hotkey->mod != mod)
                 continue;
-            qDebug("HotkeyManager: [%s] pressed", qPrintable(getKeyString(key, mod)));
+            qCDebug(plugin, "[%s] pressed", qPrintable(getKeyString(key, mod)));
 
             switch (hotkey->action)
             {

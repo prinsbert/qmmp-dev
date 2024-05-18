@@ -42,7 +42,7 @@ bool DecoderWildMidi::initialize()
 
     if(!WildMidiHelper::instance()->initialize())
     {
-        qWarning("DecoderWildMidi: initialization failed");
+        qWarning("initialization failed");
         return false;
     }
     WildMidiHelper::instance()->readSettings();
@@ -50,7 +50,7 @@ bool DecoderWildMidi::initialize()
 
     if(!midi_ptr)
     {
-        qWarning("DecoderWildMidi: unable to open file");
+        qWarning("unable to open file");
         return false;
     }
     WildMidiHelper::instance()->addPtr(midi_ptr);
@@ -60,7 +60,7 @@ bool DecoderWildMidi::initialize()
     _WM_Info *wm_info = WildMidi_GetInfo(midi_ptr);
     m_totalTime = (qint64)wm_info->approx_total_samples * 1000 / WildMidiHelper::instance()->sampleRate();
     configure(m_sample_rate, 2, Qmmp::PCM_S16LE);
-    qDebug("DecoderWildMidi: initialize succes");
+    qCDebug(plugin, "initialize succes");
     return true;
 }
 

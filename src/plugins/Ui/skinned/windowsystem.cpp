@@ -26,6 +26,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include <qmmp.h>
 #undef CursorShape
 
 void WindowSystem::ghostWindow(WId win)
@@ -106,7 +107,7 @@ void WindowSystem::changeWinSticky(WId win, bool stick)
     if(!WindowSystem::isPlatformX11())
         return;
 
-    qDebug("WindowSystem: setting sticky state of window 0x%lx to %s.",
+    qCDebug(plugin, "setting sticky state of window 0x%lx to %s.",
            static_cast<unsigned long>(win), stick ? "true" : "false");
     Display* dsp = WindowSystem::display();
     Window root  = DefaultRootWindow(dsp);

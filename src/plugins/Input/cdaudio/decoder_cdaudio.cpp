@@ -46,13 +46,13 @@ static void log_handler (cdio_log_level_t level, const char *message)
     switch (level)
     {
     case CDIO_LOG_DEBUG:
-        qDebug("DecoderCDAudio: cdio message: %s (level=debug)", qPrintable(str));
+        qCDebug(plugin, "cdio message: %s (level=debug)", qPrintable(str));
         return;
     case CDIO_LOG_INFO:
-        qDebug("DecoderCDAudio: cdio message: %s (level=info)", qPrintable(str));
+        qCDebug(plugin, "cdio message: %s (level=info)", qPrintable(str));
         return;
     default:
-        qWarning("DecoderCDAudio: cdio message: %s (level=error)", qPrintable(str));
+        qWarning("cdio message: %s (level=error)", qPrintable(str));
     }
 }
 
@@ -62,13 +62,13 @@ static void cddb_log_handler(cddb_log_level_t level, const char *message)
     switch (level)
     {
     case CDDB_LOG_DEBUG:
-        qDebug("DecoderCDAudio: cddb message: %s (level=debug)", qPrintable(str));
+        qCDebug(plugin, "cddb message: %s (level=debug)", qPrintable(str));
         return;
     case CDDB_LOG_INFO:
-        qDebug("DecoderCDAudio: cddb message: %s (level=info)", qPrintable(str));
+        qCDebug(plugin, "cddb message: %s (level=info)", qPrintable(str));
         return;
     default:
-        qWarning("DecoderCDAudio: cddb message: %s (level=error)", qPrintable(str));
+        qWarning("cddb message: %s (level=error)", qPrintable(str));
     }
 }
 
@@ -111,17 +111,17 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
             cdio = cdio_open_cd(*cd_drives);
             if (!cdio)
             {
-                qWarning("DecoderCDAudio: failed to open CD.");
+                qWarning("failed to open CD.");
                 cdio_free_device_list(cd_drives);
                 return tracks;
             }
-            qDebug("DecoderCDAudio: found cd audio capable drive \"%s\"", *cd_drives);
+            qCDebug(plugin, "found cd audio capable drive \"%s\"", *cd_drives);
             device_path = QString::fromLatin1(*cd_drives);
             cdio_free_device_list(cd_drives); //free device list
         }
         else
         {
-            qWarning("DecoderCDAudio: unable to find cd audio drive.");
+            qWarning("unable to find cd audio drive.");
             cdio_free_device_list(cd_drives);
             return tracks;
         }
@@ -131,24 +131,24 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
         cdio = cdio_open_cd(device_path.toLatin1().constData());
         if (!cdio)
         {
-            qWarning("DecoderCDAudio: failed to open CD.");
+            qWarning("failed to open CD.");
             return tracks;
         }
-        qDebug("DecoderCDAudio: using cd audio capable drive \"%s\"", qPrintable(device_path));
+        qCDebug(plugin, "using cd audio capable drive \"%s\"", qPrintable(device_path));
     }
 
     if(!m_track_cache.isEmpty() && !cdio_get_media_changed(cdio))
     {
-        qDebug("DecoderCDAudio: using track cache...");
+        qCDebug(plugin, "using track cache...");
         cdio_destroy(cdio);
         return m_track_cache;
     }
 
     if (cd_speed)
     {
-        qDebug("DecoderCDAudio: setting drive speed to %dX.", cd_speed);
+        qCDebug(plugin, "setting drive speed to %dX.", cd_speed);
         if (cdio_set_speed(cdio, 1) != DRIVER_OP_SUCCESS)
-            qWarning("DecoderCDAudio: unable to set drive speed to %dX.", cd_speed);
+            qWarning("unable to set drive speed to %dX.", cd_speed);
     }
 
     cdrom_drive_t *pcdrom_drive = cdio_cddap_identify_cdio(cdio, 1, nullptr); //create paranoya CD-ROM object
@@ -158,7 +158,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 
     if ((first_track_number == CDIO_INVALID_TRACK) || (last_track_number == CDIO_INVALID_TRACK))
     {
-        qWarning("DecoderCDAudio: invalid first (last) track number.");
+        qWarning("invalid first (last) track number.");
         cdio_destroy(cdio);
         cdio = nullptr;
         return tracks;
@@ -185,7 +185,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 
         if ((t.first_sector == CDIO_INVALID_LSN) || (t.last_sector== CDIO_INVALID_LSN))
         {
-            qWarning("DecoderCDAudio: invalid stard(end) lsn for the track %d.", i);
+            qWarning("invalid stard(end) lsn for the track %d.", i);
             tracks.clear();
             cdio_destroy(cdio);
             cdio = nullptr;
@@ -206,18 +206,18 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
             t.info.setValue(Qmmp::TITLE, QStringLiteral("CDA Track %1").arg(i, 2, 10, QLatin1Char('0')));
         tracks  << t;
     }
-    qDebug("DecoderCDAudio: found %lld audio tracks", tracks.size());
+    qCDebug(plugin, "found %lld audio tracks", tracks.size());
 
     use_cddb = use_cddb && settings.value(u"cdaudio/use_cddb"_s, false).toBool();
     if(use_cddb)
     {
-        qDebug("DecoderCDAudio: reading CDDB...");
+        qCDebug(plugin, "reading CDDB...");
         cddb_log_set_handler(cddb_log_handler);
         cddb_conn_t *cddb_conn = cddb_new ();
         cddb_disc_t *cddb_disc = nullptr;
         lba_t lba;
         if (!cddb_conn)
-            qWarning ("DecoderCDAudio: unable to create cddb connection");
+            qWarning ("unable to create cddb connection");
         else
         {
             cddb_cache_disable(cddb_conn); //disable libcddb cache, use own cache implementation instead
@@ -257,22 +257,22 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 
             cddb_disc_calc_discid (cddb_disc);
             uint id = cddb_disc_get_discid (cddb_disc);
-            qDebug ("DecoderCDAudio: disc id = %x", id);
+            qDebug ("disc id = %x", id);
 
 
             if(readFromCache(&tracks, id))
-                qDebug("DecoderCDAudio: using local cddb cache");
+                qCDebug(plugin, "using local cddb cache");
             else
             {
                 int matches = cddb_query (cddb_conn, cddb_disc);
                 if(matches == -1)
                 {
-                    qWarning("DecoderCDAudio: unable to query the CDDB server, error: %s",
+                    qWarning("unable to query the CDDB server, error: %s",
                              cddb_error_str (cddb_errno(cddb_conn)));
                 }
                 else if(matches == 0)
                 {
-                    qDebug ("DecoderCDAudio: no CDDB info found");
+                    qDebug ("no CDDB info found");
                 }
                 else if(cddb_read(cddb_conn, cddb_disc))
                 {
@@ -290,7 +290,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
                 }
                 else
                 {
-                    qWarning ("DecoderCDAudio: unable to read the CDDB info: %s",
+                    qWarning ("unable to read the CDDB info: %s",
                               cddb_error_str (cddb_errno(cddb_conn)));
                 }
             }
@@ -373,7 +373,7 @@ bool DecoderCDAudio::initialize()
     QList<CDATrack> tracks = DecoderCDAudio::generateTrackList(device_path); //generate track list
     if (tracks.isEmpty())
     {
-        qWarning("DecoderCDAudio: initialize failed");
+        qWarning("initialize failed");
         return false;
     }
     //find track by number
@@ -386,7 +386,7 @@ bool DecoderCDAudio::initialize()
         }
     if (track_at < 0)
     {
-        qWarning("DecoderCDAudio: invalid track number");
+        qWarning("invalid track number");
         return false;
     }
 
@@ -406,16 +406,16 @@ bool DecoderCDAudio::initialize()
             m_cdio = cdio_open_cd(*cd_drives);
             if (!m_cdio)
             {
-                qWarning("DecoderCDAudio: failed to open CD.");
+                qWarning("failed to open CD.");
                 cdio_free_device_list(cd_drives);
                 return false;
             }
-            qDebug("DecoderCDAudio: found cd audio capable drive \"%s\"", *cd_drives);
+            qCDebug(plugin, "found cd audio capable drive \"%s\"", *cd_drives);
             cdio_free_device_list(cd_drives);  //free device list
         }
         else
         {
-            qWarning("DecoderCDAudio: unable to find cd audio drive.");
+            qWarning("unable to find cd audio drive.");
             return false;
         }
     }
@@ -424,10 +424,10 @@ bool DecoderCDAudio::initialize()
         m_cdio = cdio_open_cd(device_path.toLatin1().constData());
         if (!m_cdio)
         {
-            qWarning("DecoderCDAudio: failed to open CD.");
+            qWarning("failed to open CD.");
             return false;
         }
-        qDebug("DecoderCDAudio: using cd audio capable drive \"%s\"", qPrintable(device_path));
+        qCDebug(plugin, "using cd audio capable drive \"%s\"", qPrintable(device_path));
     }
     configure(44100, 2, Qmmp::PCM_S16LE);
     m_bitrate = 1411;
@@ -438,7 +438,7 @@ bool DecoderCDAudio::initialize()
     addMetaData(tracks[track_at].info.metaData()); //send metadata
     setProperty(Qmmp::FORMAT_NAME, u"CDDA"_s);
     setProperty(Qmmp::BITRATE, m_bitrate);
-    qDebug("DecoderCDAudio: initialize succes");
+    qCDebug(plugin, "initialize succes");
     return true;
 }
 

@@ -109,7 +109,7 @@ void ProjectM4Widget::initializeGL()
         m_handle = projectm_create();
         if(!m_handle)
         {
-            qDebug("ProjectM4Widget: unable to initialize GL widget");
+            qCDebug(plugin, "unable to initialize GL widget");
             return;
         }
 

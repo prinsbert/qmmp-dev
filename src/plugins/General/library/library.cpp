@@ -50,7 +50,7 @@ Library::Library(QPointer<LibraryWidget> *libraryWidget, QObject *parent) :
             db.setDatabaseName(Qmmp::configDir() + u"/library.sqlite"_s);
             db.open();
             if(createTables())
-                qDebug("Library: database initialization finished");
+                qCDebug(plugin, "database initialization finished");
             else
                 qWarning("Library: unable to create table");
         }
@@ -281,7 +281,7 @@ bool Library::scanDirectories(const QStringList &paths)
     }
 
     QSqlDatabase::removeDatabase(CONNECTION_NAME);
-    qDebug("Library: directory scan finished");
+    qCDebug(plugin, "directory scan finished");
     return !m_stopped;
 }
 
@@ -372,7 +372,7 @@ void Library::removeMissingFiles(const QStringList &paths)
                 !std::any_of(paths.cbegin(), paths.cend(), [path](const QString &p){ return path.startsWith(p); } ) ||
                 (!url.contains(u"://"_s) && m_ignoredFiles.contains(url))) //remove ignored files
         {
-            qDebug("Library: removing '%s' from library", qPrintable(path));
+            qCDebug(plugin, "removing '%s' from library", qPrintable(path));
             QSqlQuery rmQuery(db);
             rmQuery.prepare(u"DELETE FROM track_library WHERE FilePath = :filepath"_s);
             rmQuery.bindValue(u":filepath"_s, path);
@@ -397,7 +397,7 @@ void Library::removeMissingFiles(const QStringList &paths)
         if(!QFile::exists(path) || //remove missing or disabled file paths
                 !std::any_of(paths.cbegin(), paths.cend(), [path](const QString &p){ return path.startsWith(p); } ))
         {
-            qDebug("Library: removing '%s' from ignored files", qPrintable(path));
+            qCDebug(plugin, "removing '%s' from ignored files", qPrintable(path));
             QSqlQuery rmQuery(db);
             rmQuery.prepare(u"DELETE FROM ignored_files WHERE FilePath = :filepath"_s);
             rmQuery.bindValue(u":filepath"_s, path);

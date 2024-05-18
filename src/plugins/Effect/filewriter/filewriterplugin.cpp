@@ -134,7 +134,7 @@ void FileWriterPlugin::init(const TrackInfo &info)
                            QStringLiteral("-%1.ogg").arg(j++));
     }
 
-    qDebug("FileWriterPlugin: writing file '%s'", qPrintable(m_file.fileName()));
+    qCDebug(plugin) << "writing file" << m_file.fileName();
 
     if(!m_file.open(QIODevice::WriteOnly))
     {

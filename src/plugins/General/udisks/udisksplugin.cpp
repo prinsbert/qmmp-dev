@@ -72,7 +72,7 @@ void UDisksPlugin::removeDevice(QDBusObjectPath o)
         {
             delete (*it);
             it = m_devices.erase(it);
-            qDebug("UDisksPlugin: removed device: \"%s\"", qPrintable(o.path()));
+            qCDebug(plugin, "removed device: \"%s\"", qPrintable(o.path()));
             updateActions();
             break;
         }
@@ -92,7 +92,7 @@ void UDisksPlugin::addDevice(QDBusObjectPath o)
 
     if(device->isRemovable()) //detect removable devices only
     {
-        qDebug("UDisksPlugin: added device: \"%s\"", qPrintable(o.path()));
+        qCDebug(plugin, "added device: \"%s\"", qPrintable(o.path()));
         m_devices << device;
         updateActions();
         connect(device, SIGNAL(changed()), SLOT(updateActions()));
@@ -150,7 +150,7 @@ void UDisksPlugin::updateActions()
             else
                 action->setIcon(qApp->style()->standardIcon(QStyle::SP_DriveHDIcon));
 
-            qDebug("UDisksPlugin: added menu item: \"%s\"", qPrintable(dev_path));
+            qCDebug(plugin, "added menu item: \"%s\"", qPrintable(dev_path));
 
             action->setText(actionText);
             action->setData(dev_path);
@@ -164,7 +164,7 @@ void UDisksPlugin::updateActions()
     {
         if (!findDevice(action))
         {
-            qDebug("UDisksPlugin: removed menu item: \"%s\"", qPrintable(action->data().toString()));
+            qCDebug(plugin, "removed menu item: \"%s\"", qPrintable(action->data().toString()));
             m_actions->removeAction(action);
             UiHelper::instance()->removeAction(action);
             removePath(action->data().toString());
@@ -175,7 +175,7 @@ void UDisksPlugin::updateActions()
 
 void UDisksPlugin::processAction(QAction *action)
 {
-    qDebug("UDisksPlugin: action triggered: %s", qPrintable(action->data().toString()));
+    qCDebug(plugin, "action triggered: %s", qPrintable(action->data().toString()));
     QString path = action->data().toString();
     PlayListManager::instance()->selectedPlayList()->add(path);
 }

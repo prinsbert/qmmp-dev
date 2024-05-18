@@ -101,7 +101,7 @@ void FileOps::execAction()
     {
     case COPY:
     {
-        qDebug("FileOps: copy");
+        qCDebug(plugin, "copy");
         if(!QDir(destination).exists ())
         {
             QMessageBox::critical (qApp->activeWindow (), tr("Error"),
@@ -113,13 +113,13 @@ void FileOps::execAction()
     }
     case RENAME:
     {
-        qDebug("FileOps: rename");
+        qCDebug(plugin, "rename");
         rename(tracks, &formatter, model);
         break;
     }
     case REMOVE:
     {
-        qDebug("FileOps: remove");
+        qCDebug(plugin, "remove");
         if(QMessageBox::question (qApp->activeWindow (), tr("Remove Files"),
                                    tr("Are you sure you want to remove %n file(s) from disk?",
                                       "",tracks.size()),
@@ -144,7 +144,7 @@ void FileOps::execAction()
     }
     case MOVE:
     {
-        qDebug("FileOps: move");
+        qCDebug(plugin, "move");
         if(!QDir(destination).exists ())
         {
             QMessageBox::critical (qApp->activeWindow (), tr("Error"),
@@ -163,7 +163,7 @@ void FileOps::execAction()
     }
     case EXECUTE:
     {
-        qDebug("FileOps: execute");
+        qCDebug(plugin, "execute");
         execute(tracks, &formatter, model);
         break;
     }
@@ -380,7 +380,7 @@ void FileOps::execute(const QList<PlayListTrack *> &tracks, const MetaDataFormat
             break;
 
         QString command = formatter->format(track); //generate file name
-        qDebug("FileOps: exec command: %s", qPrintable(command));
+        qCDebug(plugin, "exec command: %s", qPrintable(command));
 
 #ifdef Q_OS_WIN
         QStringList args = { u"/C"_s, command };

@@ -57,7 +57,7 @@
 SkinnedMainWindow::SkinnedMainWindow(QWidget *parent) : QMainWindow(parent)
 {
 #ifdef QMMP_WS_X11
-    qDebug("MainWindow: detected wm: %s", qPrintable(WindowSystem::netWindowManagerName()));
+    qCDebug(plugin, "detected wm: %s", qPrintable(WindowSystem::netWindowManagerName()));
     QString wm_name = WindowSystem::netWindowManagerName();
     if(wm_name.contains(u"Marco"_s, Qt::CaseInsensitive) ||
             wm_name.contains(u"Metacity"_s, Qt::CaseInsensitive) ||
