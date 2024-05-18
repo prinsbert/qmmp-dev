@@ -44,7 +44,7 @@ WavPackMetaDataModel::WavPackMetaDataModel(const QString &path, bool readOnly) :
 #endif
     if (!m_ctx)
     {
-        qWarning("WavPackMetaDataModel: error: %s", err);
+        qCWarning(plugin, "error: %s", err);
         setReadOnly(true);
         return;
     }

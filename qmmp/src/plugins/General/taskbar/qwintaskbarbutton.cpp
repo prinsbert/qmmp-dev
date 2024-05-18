@@ -116,11 +116,11 @@ QWinTaskbarButtonPrivate::QWinTaskbarButtonPrivate()
     HRESULT hresult = CoCreateInstance(CLSID_TaskbarList, nullptr, CLSCTX_INPROC_SERVER, IID_ITaskbarList4, reinterpret_cast<void **>(&pTbList));
     if (FAILED(hresult)) {
         pTbList = nullptr;
-        qWarning("QWinTaskbarButton: qIID_ITaskbarList4 was not created: %#010x.", unsigned(hresult));
+        qCWarning(plugin, "qIID_ITaskbarList4 was not created: %#010x.", unsigned(hresult));
     } else if (FAILED(pTbList->HrInit())) {
         pTbList->Release();
         pTbList = nullptr;
-        qWarning("QWinTaskbarButton: qIID_ITaskbarList4 was not initialized: %#010x.", unsigned(hresult));
+        qCWarning(plugin, "qIID_ITaskbarList4 was not initialized: %#010x.", unsigned(hresult));
     }
 }
 

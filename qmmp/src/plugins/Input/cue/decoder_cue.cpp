@@ -51,20 +51,20 @@ bool DecoderCUE::initialize()
     m_cueFile = new CueFile(m_path);
     if (m_cueFile->count() == 0)
     {
-        qWarning("DecoderCUE: invalid cue file");
+        qCWarning(plugin, "invalid cue file");
         return false;
     }
     m_track = m_path.section(QLatin1Char('#'), -1).toInt();
     m_path = m_cueFile->dataFilePath(m_track);
     if (!QFile::exists(m_path))
     {
-        qWarning("DecoderCUE: file \"%s\" doesn't exist", qPrintable(m_path));
+        qCWarning(plugin, "file \"%s\" doesn't exist", qPrintable(m_path));
         return false;
     }
     DecoderFactory *df = Decoder::findByFilePath(m_path);
     if (!df)
     {
-        qWarning("DecoderCUE: unsupported file format");
+        qCWarning(plugin, "unsupported file format");
         return false;
     }
     m_length = m_cueFile->duration(m_track);
@@ -74,14 +74,14 @@ bool DecoderCUE::initialize()
         m_input = new QFile(m_path);
         if(!m_input->open(QIODevice::ReadOnly))
         {
-            qWarning("DecoderCUE: error: %s", qPrintable(m_input->errorString()));
+            qCWarning(plugin, "error: %s", qPrintable(m_input->errorString()));
             return false;
         }
     }
     m_decoder = df->create(m_path, m_input);
     if(!m_decoder->initialize())
     {
-        qWarning("DecoderCUE: invalid audio file");
+        qCWarning(plugin, "invalid audio file");
         return false;
     }
     m_decoder->seek(m_offset);

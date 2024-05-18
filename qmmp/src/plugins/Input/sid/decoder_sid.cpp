@@ -55,14 +55,14 @@ bool DecoderSID::initialize()
     m_tune.load(qPrintable(path));
     if(!m_tune.getInfo())
     {
-        qWarning("unable to load tune, error: %s", m_tune.statusString());
+        qCWarning(plugin, "unable to load tune, error: %s", m_tune.statusString());
         return false;
     }
     int count = m_tune.getInfo()->songs();
 
     if(track > count || track < 1)
     {
-        qWarning("track number is out of range");
+        qCWarning(plugin, "track number is out of range");
         return false;
     }
 
@@ -70,7 +70,7 @@ bool DecoderSID::initialize()
 
     if(!m_tune.getStatus())
     {
-        qWarning("error: %s", m_tune.statusString());
+        qCWarning(plugin, "error: %s", m_tune.statusString());
         return false;
     }
 
@@ -122,13 +122,13 @@ bool DecoderSID::initialize()
 
     if(!m_player->config(cfg))
     {
-        qWarning("unable to load config, error: %s", m_player->error());
+        qCWarning(plugin, "unable to load config, error: %s", m_player->error());
         return false;
     }
 
     if(!m_player->load(&m_tune))
     {
-        qWarning("unable to load tune, error: %s", m_player->error());
+        qCWarning(plugin, "unable to load tune, error: %s", m_player->error());
         return false;
     }
 

@@ -59,7 +59,7 @@ bool DecoderWavPack::initialize()
 #endif
         if (!m_context)
         {
-            qWarning("error: %s", err);
+            qCWarning(plugin, "error: %s", err);
             return false;
         }
         int cue_len = WavpackGetTagItem(m_context, "cuesheet", nullptr, 0);
@@ -74,7 +74,7 @@ bool DecoderWavPack::initialize()
             m_track = m_path.section(QLatin1Char('#'), -1).toInt();
             if(m_track < 1 || m_track > m_parser->count())
             {
-                qWarning("invalid cuesheet comment");
+                qCWarning(plugin, "invalid cuesheet comment");
                 return false;
             }
             m_path = p;
@@ -93,7 +93,7 @@ bool DecoderWavPack::initialize()
 
     if (!m_context)
     {
-        qWarning("error: %s", err);
+        qCWarning(plugin, "error: %s", err);
         return false;
     }
 
@@ -104,7 +104,7 @@ bool DecoderWavPack::initialize()
     ChannelMap chmap = findChannelMap(m_chan);
     if(chmap.isEmpty())
     {
-        qWarning("unsupported number of channels: %d", m_chan);
+        qCWarning(plugin, "unsupported number of channels: %d", m_chan);
         return false;
     }
 
@@ -129,7 +129,7 @@ bool DecoderWavPack::initialize()
 #endif
         break;
     default:
-        qWarning("unsupported bit depth");
+        qCWarning(plugin, "unsupported bit depth");
         return false;
     }
     if(!m_parser)

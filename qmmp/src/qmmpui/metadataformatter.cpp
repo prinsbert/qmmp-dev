@@ -324,7 +324,7 @@ bool MetaDataFormatter::parseIf(QList<MetaDataFormatter::Node> *nodes, QString::
 
     if(state != FINISHED)
     {
-        qWarning("MetaDataFormatter: syntax error");
+        qCWarning(core, "syntax error");
         return false;
     }
 
@@ -404,7 +404,7 @@ bool MetaDataFormatter::parseDir(QList<MetaDataFormatter::Node> *nodes, QString:
 
     if(state != FINISHED)
     {
-        qWarning("MetaDataFormatter: syntax error");
+        qCWarning(core, "syntax error");
         return false;
     }
 

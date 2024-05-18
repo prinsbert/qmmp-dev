@@ -97,7 +97,7 @@ QmmpPluginCache::QmmpPluginCache(const QString &file, QSettings *settings)
         }
         else
         {
-            qWarning("QmmpPluginCache: unknown plugin type: %s", qPrintable(m_path));
+            qCWarning(core, "unknown plugin type: %s", qPrintable(m_path));
             m_error = true;
         }
 
@@ -223,7 +223,7 @@ QObject *QmmpPluginCache::instance()
         m_filters.clear();
         m_contentTypes.clear();
         m_protocols.clear();
-        qWarning("QmmpPluginCache: error: %s", qPrintable(loader.errorString ()));
+        qCWarning(core, "error: %s", qPrintable(loader.errorString ()));
     }
     return m_instance;
 }

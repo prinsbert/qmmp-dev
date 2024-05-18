@@ -81,7 +81,7 @@ QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, Tr
 #endif
     if (!ctx)
     {
-        qWarning("DecoderWavPackFactory: error: %s", err);
+        qCWarning(plugin, "error: %s", err);
         delete info;
         return QList<TrackInfo *>();
     }

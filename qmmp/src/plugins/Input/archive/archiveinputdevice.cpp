@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QRegularExpression>
+#include <qmmp/qmmp.h>
 #include "archiveinputdevice.h"
 
 using namespace Qt::Literals::StringLiterals;
@@ -37,7 +38,7 @@ ArchiveInputDevice::ArchiveInputDevice(const QString &url, QObject *parent)  : Q
     int r = archive_read_open_filename(m_archive, archivePath.toLocal8Bit().constData(), 10240);
     if (r != ARCHIVE_OK)
     {
-        qWarning("ArchiveInputDevice: unable to open file '%s', libarchive error: %s",
+        qCWarning(plugin, "unable to open file '%s', libarchive error: %s",
                  qPrintable(archivePath), archive_error_string(m_archive));
         return;
     }
@@ -101,7 +102,7 @@ bool ArchiveInputDevice::seek(qint64 pos)
 
             if(r < 0)
             {
-                qWarning("ArchiveInputDevice: seeking failed; libarchive error: %s", archive_error_string(m_archive));
+                qCWarning(plugin, "seeking failed; libarchive error: %s", archive_error_string(m_archive));
                 setErrorString(QString::fromLocal8Bit(archive_error_string(m_archive)));
                 close();
             }
@@ -131,7 +132,7 @@ qint64 ArchiveInputDevice::readData(char *data, qint64 maxSize)
             m_buffer.buffer().append(tmp, r);
         else if(r < 0)
         {
-            qWarning("ArchiveInputDevice: reading failed; libarchive error: %s", archive_error_string(m_archive));
+            qCWarning(plugin, "reading failed; libarchive error: %s", archive_error_string(m_archive));
             setErrorString(QString::fromLocal8Bit(archive_error_string(m_archive)));
             return -1;
         }

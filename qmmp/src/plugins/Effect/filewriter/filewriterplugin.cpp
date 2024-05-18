@@ -102,7 +102,7 @@ void FileWriterPlugin::applyEffect(Buffer *b)
 
     if(!ok)
     {
-        qWarning("FileWriterPlugin: unable to write file: output disabled");
+        qCWarning(plugin, "unable to write file: output disabled");
         deinit();
     }
 }
@@ -138,7 +138,7 @@ void FileWriterPlugin::init(const TrackInfo &info)
 
     if(!m_file.open(QIODevice::WriteOnly))
     {
-        qWarning("FileWriterPlugin: unable to create output file, error: %s",
+        qCWarning(plugin, "unable to create output file, error: %s",
                  qPrintable(m_file.errorString()));
         return;
     }

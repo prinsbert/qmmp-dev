@@ -122,8 +122,8 @@ void ListenCache::save(const QList<SongInfo> &songs)
     }
     if(!file.open(QIODevice::WriteOnly))
     {
-        qWarning("ScrobblerCache: unable to save file %s", qPrintable(m_filePath));
-        qWarning("ScrobblerCache: error %d: %s", file.error(), qPrintable(file.errorString()));
+        qCWarning(plugin, "unable to save file %s", qPrintable(m_filePath));
+        qCWarning(plugin, "error %d: %s", file.error(), qPrintable(file.errorString()));
         return;
     }
     for(const SongInfo &m : qAsConst(songs))

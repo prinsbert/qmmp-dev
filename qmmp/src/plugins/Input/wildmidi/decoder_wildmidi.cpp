@@ -42,7 +42,7 @@ bool DecoderWildMidi::initialize()
 
     if(!WildMidiHelper::instance()->initialize())
     {
-        qWarning("initialization failed");
+        qCWarning(plugin, "initialization failed");
         return false;
     }
     WildMidiHelper::instance()->readSettings();
@@ -50,7 +50,7 @@ bool DecoderWildMidi::initialize()
 
     if(!midi_ptr)
     {
-        qWarning("unable to open file");
+        qCWarning(plugin, "unable to open file");
         return false;
     }
     WildMidiHelper::instance()->addPtr(midi_ptr);

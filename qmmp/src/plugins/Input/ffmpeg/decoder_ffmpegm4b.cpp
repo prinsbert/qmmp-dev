@@ -51,7 +51,7 @@ bool DecoderFFmpegM4b::initialize()
 {
     if(!m_url.startsWith(u"m4b://"_s))
     {
-        qWarning("invalid url.");
+        qCWarning(plugin, "invalid url.");
         return false;
     }
     QString filePath = TrackInfo::pathFromUrl(m_url, &m_track);
@@ -72,14 +72,14 @@ bool DecoderFFmpegM4b::initialize()
     if(in->nb_chapters <= 1)
     {
         avformat_close_input(&in);
-        qWarning("unable to find chapters");
+        qCWarning(plugin, "unable to find chapters");
         return false;
     }
 
     if(m_track > int(in->nb_chapters) || m_track < 1)
     {
         avformat_close_input(&in);
-        qWarning("invalid track number");
+        qCWarning(plugin, "invalid track number");
         return false;
     }
 
@@ -88,7 +88,7 @@ bool DecoderFFmpegM4b::initialize()
     {
         qDeleteAll(tracks);
         avformat_close_input(&in);
-        qWarning("unable to find tracks");
+        qCWarning(plugin, "unable to find tracks");
         return false;
     }
 
@@ -111,7 +111,7 @@ bool DecoderFFmpegM4b::initialize()
     m_input = new QFile(filePath);
     if(!m_input->open(QIODevice::ReadOnly))
     {
-        qWarning("unable to open file; error: %s", qPrintable(m_input->errorString()));
+        qCWarning(plugin, "unable to open file; error: %s", qPrintable(m_input->errorString()));
         return false;
     }
 
@@ -121,7 +121,7 @@ bool DecoderFFmpegM4b::initialize()
     if(!m_decoder->initialize())
     {
         qDeleteAll(tracks);
-        qWarning("DecoderFFapCUE: invalid audio file");
+        qCWarning(plugin, "DecoderFFapCUE: invalid audio file");
         return false;
     }
     m_decoder->seek(m_offset);

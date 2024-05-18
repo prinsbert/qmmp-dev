@@ -350,14 +350,14 @@ bool QSUiWaveformScanner::scan(const QString &path)
     if(!source->initialize())
     {
         delete source;
-        qWarning("QSUIWaveformScanner: invalid path");
+        qCWarning(plugin, "invalid path");
         return false;
     }
 
     if(source->ioDevice() && !source->ioDevice()->open(QIODevice::ReadOnly))
     {
         source->deleteLater();
-        qWarning("QSUIWaveformScanner: cannot open input stream, error: %s",
+        qCWarning(plugin, "cannot open input stream, error: %s",
                  qPrintable(source->ioDevice()->errorString()));
         return false;
 
@@ -375,7 +375,7 @@ bool QSUiWaveformScanner::scan(const QString &path)
         factory = Decoder::findByProtocol(source->path().section(u"://"_s, 0, 0));
     if(!factory)
     {
-        qWarning("QSUIWaveformScanner: unsupported file format");
+        qCWarning(plugin, "unsupported file format");
         source->deleteLater();
         return false;
     }
@@ -385,7 +385,7 @@ bool QSUiWaveformScanner::scan(const QString &path)
     Decoder *decoder = factory->create(source->path(), source->ioDevice());
     if(!decoder->initialize())
     {
-        qWarning("QSUIWaveformScanner: invalid file format");
+        qCWarning(plugin, "invalid file format");
         source->deleteLater();
         delete decoder;
         return false;

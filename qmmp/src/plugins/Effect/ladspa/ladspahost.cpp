@@ -172,7 +172,7 @@ void LADSPAHost::findModules(const QString &path)
         {
             if(LADSPA_IS_INPLACE_BROKEN(descriptor->Properties))
             {
-                qWarning("LADSPAHost: plugin %s is ignored due to LADSPA_PROPERTY_INPLACE_BROKEN property", descriptor->Name);
+                qCWarning(plugin, "plugin %s is ignored due to LADSPA_PROPERTY_INPLACE_BROKEN property", descriptor->Name);
                 continue;
             }
             LADSPAPlugin *plugin = new LADSPAPlugin;
@@ -317,7 +317,7 @@ void LADSPAHost::activateEffect(LADSPAEffect *e)
 
     if(e->out_ports.isEmpty())
     {
-        qWarning("LADSPAHost: unsupported plugin: %s", desc->Name);
+        qCWarning(plugin, "unsupported plugin: %s", desc->Name);
         return;
     }
 
@@ -325,7 +325,7 @@ void LADSPAHost::activateEffect(LADSPAEffect *e)
     {
         if(m_chan % e->out_ports.count())
         {
-            qWarning("LADSPAHost: plugin %s does not support %d channels", desc->Name, m_chan);
+            qCWarning(plugin, "plugin %s does not support %d channels", desc->Name, m_chan);
             return;
         }
         instance_count = m_chan / e->out_ports.count();
@@ -334,14 +334,14 @@ void LADSPAHost::activateEffect(LADSPAEffect *e)
     {
         if(m_chan % e->in_ports.count())
         {
-            qWarning("LADSPAHost: plugin %s does not support %d channels", desc->Name, m_chan);
+            qCWarning(plugin, "plugin %s does not support %d channels", desc->Name, m_chan);
             return;
         }
         instance_count = m_chan / e->in_ports.count();
     }
     else
     {
-        qWarning("LADSPAHost: unsupported plugin: %s", desc->Name);
+        qCWarning(plugin, "unsupported plugin: %s", desc->Name);
         return;
     }
 
@@ -351,7 +351,7 @@ void LADSPAHost::activateEffect(LADSPAEffect *e)
         LADSPA_Handle handle = desc->instantiate(desc, m_freq);
         if(!handle)
         {
-            qWarning("LADSPAHost: failed to instantiate plugin: %s", desc->Name);
+            qCWarning(plugin, "failed to instantiate plugin: %s", desc->Name);
             continue;
         }
 

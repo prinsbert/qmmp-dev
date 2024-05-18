@@ -66,7 +66,7 @@ void WASAPISettingsDialog::enumDevices()
     HRESULT result = CoCreateInstance(CLSID_MMDeviceEnumerator, nullptr, CLSCTX_ALL, IID_IMMDeviceEnumerator, (void**)&pEnumerator);
     if(result != S_OK)
     {
-        qWarning("SettingsDialog: CoCreateInstance failed, error code = 0x%lx", result);
+        qCWarning(plugin, "CoCreateInstance failed, error code = 0x%lx", result);
         pEnumerator = nullptr;
     }
 
@@ -81,7 +81,7 @@ void WASAPISettingsDialog::enumDevices()
         result = pEnumerator->EnumAudioEndpoints(eRender, DEVICE_STATE_ACTIVE, &pEndpoints);
         if(result != S_OK)
         {
-            qWarning("SettingsDialog: IMMDeviceEnumerator::EnumAudioEndpoints failed, error code = 0x%lx", result);
+            qCWarning(plugin, "IMMDeviceEnumerator::EnumAudioEndpoints failed, error code = 0x%lx", result);
             pEndpoints = nullptr;
         }
     }
@@ -91,7 +91,7 @@ void WASAPISettingsDialog::enumDevices()
         pEndpoints->GetCount(&count);
         if(result != S_OK)
         {
-            qWarning("SettingsDialog: IMMDeviceCollection::GetCount failed, error code = 0x%lx", result);
+            qCWarning(plugin, "IMMDeviceCollection::GetCount failed, error code = 0x%lx", result);
             count = 0;
         }
 
@@ -100,7 +100,7 @@ void WASAPISettingsDialog::enumDevices()
             result = pEndpoints->Item(i, &pEndpoint);
             if(result != S_OK)
             {
-                qWarning("SettingsDialog: IMMDeviceCollection::Item failed, error code = 0x%lx", result);
+                qCWarning(plugin, "IMMDeviceCollection::Item failed, error code = 0x%lx", result);
                 pEndpoint = nullptr;
                 break;
             }
@@ -108,7 +108,7 @@ void WASAPISettingsDialog::enumDevices()
             result = pEndpoint->GetId(&pwszID);
             if(result != S_OK)
             {
-                qWarning("SettingsDialog: IMMDevice::GetId failed, error code = 0x%lx", result);
+                qCWarning(plugin, "IMMDevice::GetId failed, error code = 0x%lx", result);
                 pwszID = nullptr;
                 break;
             }
@@ -116,7 +116,7 @@ void WASAPISettingsDialog::enumDevices()
             result = pEndpoint->OpenPropertyStore(STGM_READ, &pProps);
             if(result != S_OK)
             {
-                qWarning("SettingsDialog: IMMDevice::GetId failed, error code = 0x%lx", result);
+                qCWarning(plugin, "IMMDevice::GetId failed, error code = 0x%lx", result);
                 pProps = nullptr;
                 break;
             }
@@ -126,7 +126,7 @@ void WASAPISettingsDialog::enumDevices()
             result = pProps->GetValue(PKEY_Device_FriendlyName, &varName);  // Get the endpoint's friendly-name property.
             if(result != S_OK)
             {
-                qWarning("SettingsDialog: IMMDevice::GetId failed, error code = 0x%lx", result);
+                qCWarning(plugin, "IMMDevice::GetId failed, error code = 0x%lx", result);
                 PropVariantClear(&varName);
                 break;
             }

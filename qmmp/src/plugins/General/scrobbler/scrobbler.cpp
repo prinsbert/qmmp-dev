@@ -184,7 +184,7 @@ void Scrobbler::processResponse(QNetworkReply *reply)
 {
     if (reply->error() != QNetworkReply::NoError)
     {
-        qWarning("Scrobbler[%s]: http error: %s", qPrintable(m_name), qPrintable(reply->errorString()));
+        qCWarning(plugin, "[%s]: http error: %s", qPrintable(m_name), qPrintable(reply->errorString()));
     }
 
     ScrobblerResponse response;
@@ -195,12 +195,12 @@ void Scrobbler::processResponse(QNetworkReply *reply)
     {
         if(!response.error.isEmpty())
         {
-            qWarning("Scrobbler[%s]: status=%s, %s-%s", qPrintable(m_name), qPrintable(response.status),
+            qCWarning(plugin, "[%s]: status=%s, %s-%s", qPrintable(m_name), qPrintable(response.status),
                      qPrintable(response.code), qPrintable(response.error));
             error_code = response.code;
         }
         else
-            qWarning("Scrobbler[%s]: invalid content", qPrintable(m_name));
+            qCWarning(plugin, "[%s]: invalid content", qPrintable(m_name));
     }
 
     if (reply == m_submitReply)
@@ -227,7 +227,7 @@ void Scrobbler::processResponse(QNetworkReply *reply)
         else if(error_code == "9"_L1) //invalid session key
         {
             m_session.clear();
-            qWarning("Scrobbler[%s]: invalid session key, scrobbling disabled", qPrintable(m_name));
+            qCWarning(plugin, "[%s]: invalid session key, scrobbling disabled", qPrintable(m_name));
         }
         else if(error_code == "11"_L1 || error_code == "16"_L1 || error_code.isEmpty()) //unavailable
         {
@@ -236,7 +236,7 @@ void Scrobbler::processResponse(QNetworkReply *reply)
         else
         {
             m_session.clear();
-            qWarning("Scrobbler[%s]: service returned unrecoverable error, scrobbling disabled",
+            qCWarning(plugin, "[%s]: service returned unrecoverable error, scrobbling disabled",
                      qPrintable(m_name));
         }
     }
@@ -250,7 +250,7 @@ void Scrobbler::processResponse(QNetworkReply *reply)
         else if(error_code == "9"_L1) //invalid session key
         {
             m_session.clear();
-            qWarning("Scrobbler[%s]: invalid session key, scrobbling has been disabled", qPrintable(m_name));
+            qCWarning(plugin, "[%s]: invalid session key, scrobbling has been disabled", qPrintable(m_name));
         }
     }
     reply->deleteLater();
@@ -498,7 +498,7 @@ void ScrobblerAuth::processResponse(QNetworkReply *reply)
 {
     if (reply->error() != QNetworkReply::NoError)
     {
-        qWarning("ScrobblerAuth[%s]: http error: %s", qPrintable(m_name), qPrintable(reply->errorString()));
+        qCWarning(plugin, "[%s]: http error: %s", qPrintable(m_name), qPrintable(reply->errorString()));
     }
 
     ScrobblerResponse response;
@@ -509,12 +509,12 @@ void ScrobblerAuth::processResponse(QNetworkReply *reply)
     {
         if(!response.error.isEmpty())
         {
-            qWarning("ScrobblerAuth[%s]: status=%s, %s-%s", qPrintable(m_name), qPrintable(response.status),
+            qCWarning(plugin, "[%s]: status=%s, %s-%s", qPrintable(m_name), qPrintable(response.status),
                      qPrintable(response.code), qPrintable(response.error));
             error_code = response.code;
         }
         else
-            qWarning("ScrobblerAuth[%s]: invalid content", qPrintable(m_name));
+            qCWarning(plugin, "[%s]: invalid content", qPrintable(m_name));
     }
 
     if (reply == m_getTokenReply)
@@ -591,12 +591,12 @@ void ScrobblerAuth::processResponse(QNetworkReply *reply)
         }
         else if(error_code.isEmpty())
         {
-            qWarning("[%s]: network error", qPrintable(m_name));
+            qCWarning(plugin, "[%s]: network error", qPrintable(m_name));
             emit checkSessionFinished(NETWORK_ERROR);
         }
         else
         {
-            qWarning("ScrobblerAuth[%s]: received last.fm error (code=%s)",
+            qCWarning(plugin, "[%s]: received last.fm error (code=%s)",
                      qPrintable(m_name), qPrintable(error_code));
             emit checkSessionFinished(LASTFM_ERROR);
         }

@@ -45,7 +45,7 @@ AACFile::AACFile(QIODevice *input, bool metaData, bool adts) : m_input(input)
         {
             if(header.tagSize() >= buf_at)
             {
-                qWarning("unable to parse id3v2");
+                qCWarning(plugin, "unable to parse id3v2");
                 return;
             }
 

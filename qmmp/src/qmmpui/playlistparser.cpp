@@ -129,7 +129,7 @@ void PlayListParser::savePlayList(QList<PlayListTrack *> tracks, const QString &
         file.close();
     }
     else
-        qWarning("PlayListParser: unable to save playlist, error: %s", qPrintable(file.errorString()));
+        qCWarning(core, "unable to save playlist, error: %s", qPrintable(file.errorString()));
 }
 
 QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
@@ -143,7 +143,7 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
     QFile file(f_name);
     if (!file.open(QIODevice::ReadOnly))
     {
-        qWarning("PlayListParser: unable to open playlist, error: %s", qPrintable(file.errorString()));
+        qCWarning(core, "unable to open playlist, error: %s", qPrintable(file.errorString()));
         return QList<PlayListTrack *>();
     }
 
@@ -151,7 +151,7 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
 
     if(tracks.isEmpty())
     {
-        qWarning("PlayListParser: error opening %s",qPrintable(f_name));
+        qCWarning(core, "error opening %s",qPrintable(f_name));
         return tracks;
     }
 
@@ -193,7 +193,7 @@ void PlayListParser::loadFormats()
         if (loader.isLoaded())
             qCDebug(core) << "loaded plugin" << QFileInfo(filePath).filePath();
         else
-            qWarning("PlayListParser: %s", qPrintable(loader.errorString ()));
+            qCWarning(core, "%s", qPrintable(loader.errorString ()));
 
         PlayListFormat *fmt = nullptr;
         if (plugin)
@@ -238,7 +238,7 @@ QList<PlayListTrack *> PlayListParser::deserialize(const QByteArray &json)
     QJsonDocument document = QJsonDocument::fromJson(json);
     if(!document.isArray())
     {
-        qWarning("PlayListParser: invalid JSON array");
+        qCWarning(core, "invalid JSON array");
         return out;
     }
 

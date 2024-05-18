@@ -111,7 +111,7 @@ bool OutputOSS4::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
 
     if (m_audio_fd < 0)
     {
-        qWarning("OSS4Output: unable to open output device '%s'; error: %s",
+        qCWarning(plugin, "unable to open output device '%s'; error: %s",
                  qPrintable(m_audio_device), strerror(errno));
         return false;
     }
@@ -140,27 +140,27 @@ bool OutputOSS4::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat form
         p = AFMT_S8;
         break;
     default:
-        qWarning("OutputOSS4: unsupported audio format");
+        qCWarning(plugin, "unsupported audio format");
         return false;
     }
 
     if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
-        qWarning("OutputOSS4: ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
+        qCWarning(plugin, "ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
 
     if(ioctl(m_audio_fd, SNDCTL_DSP_CHANNELS, &chan) == -1)
-        qWarning("OutputOSS4: ioctl SNDCTL_DSP_CHANNELS failed: %s", strerror(errno));
+        qCWarning(plugin, "ioctl SNDCTL_DSP_CHANNELS failed: %s", strerror(errno));
 
     if (ioctl(m_audio_fd, SNDCTL_DSP_SPEED, &freq) < 0)
-        qWarning("OutputOSS4: ioctl SNDCTL_DSP_SPEED failed: %s", strerror(errno));
+        qCWarning(plugin, "ioctl SNDCTL_DSP_SPEED failed: %s", strerror(errno));
 
     int enabled = 1;
     if(ioctl(m_audio_fd, SNDCTL_DSP_COOKEDMODE, &enabled) == -1)
-        qWarning("OutputOSS4: ioctl SNDCTL_DSP_COOKEDMODE: %s", strerror(errno));
+        qCWarning(plugin, "ioctl SNDCTL_DSP_COOKEDMODE: %s", strerror(errno));
 
     quint64 layout = 0;
     if (ioctl (m_audio_fd, SNDCTL_DSP_GET_CHNORDER, &layout) == -1)
     {
-        qWarning("OutputOSS4: couldn't query channel layout, assuming default");
+        qCWarning(plugin, "couldn't query channel layout, assuming default");
         layout = CHNORDER_NORMAL;
     }
     ChannelMap oss_map;

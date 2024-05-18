@@ -1,7 +1,7 @@
 /***************************************************************************
  *   Based on Licq                                                         *
  *   Copyright (C) 2006-2009 Licq developers                               *
- *   Copyright (C) 2011-2019 Ilya Kotov                                    *
+ *   Copyright (C) 2011-2024 Ilya Kotov                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -26,7 +26,7 @@
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
-#include <qmmp.h>
+#include <qmmp/qmmp.h>
 #undef CursorShape
 
 void WindowSystem::ghostWindow(WId win)
@@ -119,7 +119,7 @@ void WindowSystem::changeWinSticky(WId win, bool stick)
         unsigned char* tmp = getWindowProperty(root, "_NET_CURRENT_DESKTOP");
 
         if (tmp == nullptr)
-            qWarning("WindowSystem: error reading current desktop property.");
+            qCWarning(plugin, "WindowSystem: error reading current desktop property.");
         else
         {
             desktop = *(reinterpret_cast<unsigned long*>(tmp));

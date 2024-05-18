@@ -431,9 +431,9 @@ void StreamWindow::readXml(QIODevice *input, QStandardItemModel *model)
     if (xml.error() && xml.error() != QXmlStreamReader::PrematureEndOfDocumentError)
     {
 #ifdef Q_OS_WIN
-        qWarning("StreamWindow: xml error: %d: %s", (int)xml.lineNumber(), qPrintable(xml.errorString()));
+        qCWarning(plugin, "xml error: %d: %s", (int)xml.lineNumber(), qPrintable(xml.errorString()));
 #else
-        qWarning("StreamWindow: xml error: %lld: %s", xml.lineNumber(), qPrintable(xml.errorString()));
+        qCWarning(plugin, "xml error: %lld: %s", xml.lineNumber(), qPrintable(xml.errorString()));
 #endif
     }
 }

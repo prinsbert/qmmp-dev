@@ -142,7 +142,7 @@ void ListenBrainz::processResponse(QNetworkReply *reply)
 {
     if (reply->error() != QNetworkReply::NoError)
     {
-        qWarning("ListenBrainz: http error: %s", qPrintable(reply->errorString()));
+        qCWarning(plugin, "http error: %s", qPrintable(reply->errorString()));
     }
 
     QByteArray data = reply->readAll();
@@ -152,12 +152,12 @@ void ListenBrainz::processResponse(QNetworkReply *reply)
     if(status != "ok"_L1 || reply->error() != QNetworkReply::NoError)
     {
         status.clear();
-        qWarning("ListenBrainz: server reply: %s", data.constData());
+        qCWarning(plugin, "server reply: %s", data.constData());
 
         if(reply->error() == QNetworkReply::AuthenticationRequiredError)
         {
             m_token.clear();
-            qWarning("ListenBrainz: invalid user token, submitting has been disabled");
+            qCWarning(plugin, "invalid user token, submitting has been disabled");
         }
     }
 

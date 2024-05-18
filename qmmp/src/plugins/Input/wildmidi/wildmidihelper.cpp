@@ -57,7 +57,7 @@ bool WildMidiHelper::initialize()
     conf_path = settings.value(u"conf_path"_s, conf_path).toString();
     if(conf_path.isEmpty() || !QFile::exists(conf_path))
     {
-        qWarning("WildMidiHelper: invalid config path: %s", qPrintable(conf_path));
+        qCWarning(plugin, "invalid config path: %s", qPrintable(conf_path));
         m_mutex.unlock();
         return false;
     }
@@ -71,7 +71,7 @@ bool WildMidiHelper::initialize()
     m_sample_rate = sample_rate;
     if(WildMidi_Init(qPrintable(conf_path), sample_rate, mixer_options) < 0)
     {
-        qWarning("WildMidiHelper: unable to initialize WildMidi library");
+        qCWarning(plugin, "unable to initialize WildMidi library");
         m_mutex.unlock();
         return false;
     }

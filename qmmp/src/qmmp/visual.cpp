@@ -235,7 +235,7 @@ void Visual::checkFactories()
             if (loader.isLoaded())
                 qCDebug(core) << "loaded plugin" << QFileInfo(filePath).fileName();
             else
-                qWarning("Visual: %s", qPrintable(loader.errorString ()));
+                qCWarning(core) << loader.errorString();
 
             VisualFactory *factory = nullptr;
             if (plugin)

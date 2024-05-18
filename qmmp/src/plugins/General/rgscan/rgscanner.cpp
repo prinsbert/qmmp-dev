@@ -51,13 +51,13 @@ bool RGScanner::prepare(const QString &url)
     if(!source->initialize())
     {
         delete source;
-        qWarning("RGScanner: Invalid url");
+        qCWarning(plugin, "invalid url");
         return false;
     }
 
     if(source->ioDevice() && !source->ioDevice()->open(QIODevice::ReadOnly))
     {
-        qWarning("RGScanner: [%s] unable to open input stream, error: %s",
+        qCWarning(plugin, "[%s] unable to open input stream, error: %s",
                  qPrintable(name),
                  qPrintable(source->ioDevice()->errorString()));
         delete source;
@@ -68,7 +68,7 @@ bool RGScanner::prepare(const QString &url)
 
     if(!factory)
     {
-        qWarning("[%s] unable to find factory", qPrintable(name));
+        qCWarning(plugin, "[%s] unable to find factory", qPrintable(name));
         delete source;
         return false;
     }
@@ -81,14 +81,14 @@ bool RGScanner::prepare(const QString &url)
     Decoder *decoder = factory->create(source->path(), source->ioDevice());
     if(!decoder->initialize())
     {
-        qWarning("RGScanner: [%s] invalid file format", qPrintable(name));
+        qCWarning(plugin, "[%s] invalid file format", qPrintable(name));
         delete source;
         delete decoder;
         return false;
     }
     if(decoder->audioParameters().channels() > 2)
     {
-        qWarning("RGScanner: [%s] unsupported channel number: %d",
+        qCWarning(plugin, "[%s] unsupported channel number: %d",
                  qPrintable(name),
                  decoder->audioParameters().channels());
         delete source;
@@ -239,7 +239,7 @@ void RGScanner::run()
 
     if(error)
     {
-        qWarning("RGScanner: [%s] finished with error", qPrintable(name));
+        qCWarning(plugin, "[%s] finished with error", qPrintable(name));
     }
     else if(m_user_stop)
     {

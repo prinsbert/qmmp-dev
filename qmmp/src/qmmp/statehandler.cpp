@@ -92,12 +92,12 @@ bool StateHandler::dispatch(const TrackInfo &info)
     QMutexLocker locker(&m_mutex);
     if(info.isEmpty())
     {
-        qWarning("StateHandler: empty metadata");
+        qCWarning(core, "empty metadata");
         return false;
     }
     if(m_state != Qmmp::Playing && m_state != Qmmp::Paused)
     {
-        qWarning("StateHandler: metadata is ignored");
+        qCWarning(core, "metadata is ignored");
         return false;
     }
 

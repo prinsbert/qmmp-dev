@@ -49,7 +49,7 @@ void CommandLineManager::checkOptions()
             if (loader.isLoaded())
                 /*qCDebug(core) << "loaded plugin" << QFileInfo(filePath).filePath();*/;
             else
-                qWarning("CommandLineManager: %s", qPrintable(loader.errorString ()));
+                qCWarning(core) << loader.errorString();
 
             CommandLineHandler *option = nullptr;
             if(plugin)
@@ -87,7 +87,7 @@ QString CommandLineManager::executeCommand(const QString &name, const QStringLis
         if(started || (opt->flags(id) & CommandLineHandler::NoStart))
             return opt->executeCommand(id, args, currentWorkingDir);
 
-        qWarning("CommandLineManager: player objects are not created");
+        qCWarning(core, "player objects are not created");
         return QString();
     }
     return QString();

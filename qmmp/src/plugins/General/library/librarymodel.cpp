@@ -147,7 +147,7 @@ void LibraryModel::fetchMore(const QModelIndex &parent)
 
         if(!query.exec())
         {
-            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
+            qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
             return;
         }
 
@@ -179,7 +179,7 @@ void LibraryModel::fetchMore(const QModelIndex &parent)
 
         if(!query.exec())
         {
-            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
+            qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
             return;
         }
 
@@ -293,7 +293,7 @@ void LibraryModel::refresh()
     }
 
     if(!query.exec())
-        qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
 
     while(query.next())
     {
@@ -335,7 +335,7 @@ void LibraryModel::showLibraryInformation(QWidget *parent)
 
     if(!query.exec())
     {
-        qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
         return;
     }
     query.next();
@@ -404,7 +404,7 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
 
         if(!query.exec())
         {
-            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
+            qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
             return tracks;
         }
 
@@ -422,7 +422,7 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
 
         if(!query.exec())
         {
-            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
+            qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
             return tracks;
         }
 
@@ -439,7 +439,7 @@ QList<PlayListTrack *> LibraryModel::getTracks(const QModelIndex &index) const
 
         if(!query.exec())
         {
-            qWarning("LibraryModel: exec error: %s", qPrintable(query.lastError().text()));
+            qCWarning(plugin, "exec error: %s", qPrintable(query.lastError().text()));
             return tracks;
         }
 

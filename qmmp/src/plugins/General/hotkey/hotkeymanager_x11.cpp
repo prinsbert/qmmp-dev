@@ -80,7 +80,7 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 {
     if(!HotkeyManager::isPlatformX11())
     {
-        qWarning("HotkeyManager: X11 not found. Plugin disabled");
+        qCWarning(plugin, "X11 not found. Plugin disabled");
         return;
     }
 

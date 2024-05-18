@@ -315,7 +315,7 @@ void ConverterDialog::savePresets()
     QFile file(Qmmp::configDir() + u"/converter/presets.conf"_s);
     if(!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
     {
-        qWarning("ConverterDialog: unable to save presets; error %s", qPrintable(file.errorString()));
+        qCWarning(plugin, "unable to save presets; error %s", qPrintable(file.errorString()));
         return;
     }
 

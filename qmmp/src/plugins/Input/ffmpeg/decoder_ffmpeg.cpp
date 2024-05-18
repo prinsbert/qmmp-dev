@@ -128,7 +128,7 @@ bool DecoderFFmpeg::initialize()
     pd.buf = buf;
     if(pd.buf_size < PROBE_BUFFER_SIZE)
     {
-        qWarning("too small buffer size: %d bytes", pd.buf_size);
+        qCWarning(plugin, "too small buffer size: %d bytes", pd.buf_size);
         return false;
     }
 #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 0, 101)
@@ -138,7 +138,7 @@ bool DecoderFFmpeg::initialize()
 #endif
     if(!fmt)
     {
-        qWarning("usupported format");
+        qCWarning(plugin, "usupported format");
         return false;
     }
     qCDebug(plugin, "detected format: %s", fmt->long_name);
@@ -155,7 +155,7 @@ bool DecoderFFmpeg::initialize()
     {
         av_free(m_input_buf);
         m_input_buf = nullptr;
-        qWarning("unable to initialize I/O callbacks");
+        qCWarning(plugin, "unable to initialize I/O callbacks");
         return false;
     }
     m_stream->seekable = !input()->isSequential();
@@ -231,7 +231,7 @@ bool DecoderFFmpeg::initialize()
     m_audioIndex = av_find_best_stream(m_formatContext, AVMEDIA_TYPE_AUDIO, -1, -1, nullptr, 0);
     if(m_audioIndex < 0)
     {
-        qWarning("unable to find audio stream");
+        qCWarning(plugin, "unable to find audio stream");
         return false;
     }
 
@@ -267,13 +267,13 @@ bool DecoderFFmpeg::initialize()
 
     if (!codec)
     {
-        qWarning("unsupported codec for output stream");
+        qCWarning(plugin, "unsupported codec for output stream");
         return false;
     }
 
     if (avcodec_open2(m_codecContext, codec, nullptr) < 0)
     {
-        qWarning("error while opening codec for output stream");
+        qCWarning(plugin, "error while opening codec for output stream");
         return false;
     }
 
@@ -304,7 +304,7 @@ bool DecoderFFmpeg::initialize()
         format = Qmmp::PCM_FLOAT;
         break;
     default:
-        qWarning("unsupported audio format");
+        qCWarning(plugin, "unsupported audio format");
         return false;
     }
 
@@ -417,7 +417,7 @@ void DecoderFFmpeg::fillBuffer()
                 {
                     char errbuf[AV_ERROR_MAX_STRING_SIZE] = { 0 };
                     av_strerror(read_error, errbuf, sizeof(errbuf));
-                    qWarning("av_read_frame error: %s", errbuf);
+                    qCWarning(plugin, "av_read_frame error: %s", errbuf);
                 }
                 m_eof = true;
             }
@@ -448,9 +448,9 @@ void DecoderFFmpeg::fillBuffer()
             {
                 char errbuf[AV_ERROR_MAX_STRING_SIZE] = { 0 };
                 av_strerror(send_error, errbuf, sizeof(errbuf));
-                qWarning("avcodec_send_packet error: %s", errbuf);
+                qCWarning(plugin, "avcodec_send_packet error: %s", errbuf);
                 av_strerror(recv_error, errbuf, sizeof(errbuf));
-                qWarning("avcodec_receive_frame error: %s", errbuf);
+                qCWarning(plugin, "avcodec_receive_frame error: %s", errbuf);
             }
             else
             {

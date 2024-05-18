@@ -82,14 +82,14 @@ bool DecoderMPG123::initialize()
     int err = mpg123_init();
     if(err != MPG123_OK)
     {
-        qWarning("DecoderMPG123: basic setup goes wrong: %s", mpg123_plain_strerror(err));
+        qCWarning(plugin, "basic setup goes wrong: %s", mpg123_plain_strerror(err));
         return false;
     }
     int channels = 0;
 
     if(!(m_handle = mpg123_new(nullptr, &err)))
     {
-        qWarning("DecoderMPG123: basic setup goes wrong: %s", mpg123_plain_strerror(err));
+        qCWarning(plugin, "basic setup goes wrong: %s", mpg123_plain_strerror(err));
         return false;
     }
 
@@ -97,7 +97,7 @@ bool DecoderMPG123::initialize()
 
     if((err = mpg123_replace_reader_handle(m_handle, mpg123_read_cb, mpg123_seek_cb, nullptr)) != MPG123_OK)
     {
-        qWarning("DecoderMPG123: mpg123 error: %s", mpg123_plain_strerror(err));
+        qCWarning(plugin, "mpg123 error: %s", mpg123_plain_strerror(err));
         cleanup(m_handle);
         m_handle = nullptr;
         return false;
@@ -106,7 +106,7 @@ bool DecoderMPG123::initialize()
 
     if((err = mpg123_open_handle(m_handle, this)) != MPG123_OK)
     {
-        qWarning("DecoderMPG123: mpg123 error: %s", mpg123_plain_strerror(err));
+        qCWarning(plugin, "mpg123 error: %s", mpg123_plain_strerror(err));
         cleanup(m_handle);
         m_handle = nullptr;
         return false;
@@ -114,7 +114,7 @@ bool DecoderMPG123::initialize()
 
     if((err = mpg123_getformat(m_handle, &m_rate, &channels, &m_mpg123_encoding)) != MPG123_OK)
     {
-        qWarning("DecoderMPG123: mpg123 error: %s", mpg123_plain_strerror(err));
+        qCWarning(plugin, "mpg123 error: %s", mpg123_plain_strerror(err));
         cleanup(m_handle);
         m_handle = nullptr;
         return false;
@@ -123,7 +123,7 @@ bool DecoderMPG123::initialize()
     if(m_mpg123_encoding != MPG123_ENC_FLOAT_32)
     {
         cleanup(m_handle);
-        qWarning("DecoderMPG123: bad encoding: 0x%x!\n", m_mpg123_encoding);
+        qCWarning(plugin, "bad encoding: 0x%x!\n", m_mpg123_encoding);
         m_handle = nullptr;
         return false;
     }
@@ -131,14 +131,14 @@ bool DecoderMPG123::initialize()
     if(!input()->isSequential())
     {
         if((err = mpg123_scan(m_handle)) != MPG123_OK)
-            qWarning("DecoderMPG123: mpg123 error: %s", mpg123_plain_strerror(err));
+            qCWarning(plugin, "mpg123 error: %s", mpg123_plain_strerror(err));
         //duration
         m_totalTime = (qint64) mpg123_length(m_handle) * 1000 / m_rate;
     }
     else
     {
         if((err = mpg123_info(m_handle, &m_frame_info)) != MPG123_OK)
-            qWarning("DecoderMPG123: mpg123 error: %s", mpg123_plain_strerror(err));
+            qCWarning(plugin, "mpg123 error: %s", mpg123_plain_strerror(err));
 
         if(m_frame_info.version == MPG123_1_0)
             setProperty(Qmmp::FORMAT_NAME, QStringLiteral("MPEG-1 layer %1").arg(m_frame_info.layer));
@@ -172,7 +172,7 @@ qint64 DecoderMPG123::read(unsigned char *data, qint64 size)
     {
         err = mpg123_errcode(m_handle);
         if(!m_errors)
-            qWarning("DecoderMPG123: decoder error: %s", mpg123_plain_strerror(err));
+            qCWarning(plugin, "decoder error: %s", mpg123_plain_strerror(err));
 
         if(m_errors < 10)
         {
@@ -186,7 +186,7 @@ qint64 DecoderMPG123::read(unsigned char *data, qint64 size)
 
     if(err != MPG123_DONE && err != MPG123_OK)
     {
-        qWarning("DecoderMPG123: decoder error: %s", mpg123_plain_strerror(err));
+        qCWarning(plugin, "decoder error: %s", mpg123_plain_strerror(err));
         return -1;
     }
     m_errors = 0;

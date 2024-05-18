@@ -57,7 +57,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
 {
     if(!(m_loop = pa_mainloop_new()))
     {
-        qWarning("OutputPulseAudio: unable to allocate a new main loop object");
+        qCWarning(plugin, "unable to allocate a new main loop object");
         return false;
     }
 
@@ -67,7 +67,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
 
     if(!(m_ctx = pa_context_new_with_proplist(pa_mainloop_get_api(m_loop), "Qmmp", proplist)))
     {
-        qWarning("OutputPulseAudio: unable to instantiate a new connection context");
+        qCWarning(plugin, "unable to instantiate a new connection context");
         pa_proplist_free(proplist);
         return false;
     }
@@ -76,7 +76,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
 
     if(pa_context_connect(m_ctx, nullptr, PA_CONTEXT_NOFLAGS, nullptr) < 0)
     {
-        qWarning("OutputPulseAudio: unable to connect the context: %s", pa_strerror(pa_context_errno(m_ctx)));
+        qCWarning(plugin, "unable to connect the context: %s", pa_strerror(pa_context_errno(m_ctx)));
         return false;
     }
 
@@ -86,7 +86,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
     {
         if (context_state == PA_CONTEXT_TERMINATED || context_state == PA_CONTEXT_FAILED)
         {
-            qWarning("OutputPulseAudio: unable to connect the context: %s", pa_strerror(pa_context_errno(m_ctx)));
+            qCWarning(plugin, "unable to connect the context: %s", pa_strerror(pa_context_errno(m_ctx)));
             return false;
         }
         poll();
@@ -127,7 +127,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
 
     if(!(m_stream = pa_stream_new(m_ctx, "Qmmp", &ss, &pa_map)))
     {
-        qWarning("OutputPulseAudio: unable to create stream: %s", pa_strerror(pa_context_errno(m_ctx)));
+        qCWarning(plugin, "unable to create stream: %s", pa_strerror(pa_context_errno(m_ctx)));
         return false;
     }
 
@@ -148,7 +148,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
     }
     if(pa_stream_connect_playback(m_stream, nullptr, &attr, flags, pvol, nullptr) < 0)
     {
-        qWarning("OutputPulseAudio: unable to connect playback: %s", pa_strerror(pa_context_errno(m_ctx)));
+        qCWarning(plugin, "unable to connect playback: %s", pa_strerror(pa_context_errno(m_ctx)));
         return false;
     }
     //waiting for stream connection
@@ -157,7 +157,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
     {
         if (stream_state == PA_STREAM_FAILED || stream_state == PA_STREAM_TERMINATED)
         {
-            qWarning("OutputPulseAudio: unable to connect playback: %s", pa_strerror(pa_context_errno(m_ctx)));
+            qCWarning(plugin, "unable to connect playback: %s", pa_strerror(pa_context_errno(m_ctx)));
             return false;
         }
         poll();
@@ -169,7 +169,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
     pa_operation *op = pa_context_subscribe(m_ctx, PA_SUBSCRIPTION_MASK_SINK_INPUT, OutputPulseAudio::context_success_cb, &success);
     if(!process(op) || !success)
     {
-        qWarning("OutputPulseAudio: pa_context_subscribe failed: %s", pa_strerror(pa_context_errno(m_ctx)));
+        qCWarning(plugin, "pa_context_subscribe failed: %s", pa_strerror(pa_context_errno(m_ctx)));
         return false;
     }
     success = false;
@@ -178,7 +178,7 @@ bool OutputPulseAudio::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForma
     op = pa_context_get_sink_input_info(m_ctx, pa_stream_get_index(m_stream), OutputPulseAudio::info_cb, &success);
     if(!process(op) || !success)
     {
-        qWarning("OutputPulseAudio:pa_context_get_sink_input_info: %s", pa_strerror(pa_context_errno(m_ctx)));
+        qCWarning(plugin, "OutputPulseAudio:pa_context_get_sink_input_info: %s", pa_strerror(pa_context_errno(m_ctx)));
         return false;
     }
 
@@ -205,7 +205,7 @@ qint64 OutputPulseAudio::writeAudio(unsigned char *data, qint64 maxSize)
     size_t length = qMin(size_t(maxSize), pa_stream_writable_size(m_stream));
     if(pa_stream_write(m_stream, data, length, nullptr, 0, PA_SEEK_RELATIVE) < 0)
     {
-        qWarning("OutputPulseAudio: pa_stream_write failed: %s", pa_strerror(pa_context_errno(m_ctx)));
+        qCWarning(plugin, "pa_stream_write failed: %s", pa_strerror(pa_context_errno(m_ctx)));
         return -1;
     }
     return qint64(length);
@@ -312,7 +312,7 @@ void OutputPulseAudio::subscribe_cb(pa_context *ctx, pa_subscription_event_type 
 
     if(!(op = pa_context_get_sink_input_info (ctx, index, OutputPulseAudio::info_cb, nullptr)))
     {
-        qWarning("OutputPulseAudio: pa_context_get_sink_input_info failed: %s", pa_strerror(pa_context_errno(ctx)));
+        qCWarning(plugin, "pa_context_get_sink_input_info failed: %s", pa_strerror(pa_context_errno(ctx)));
         return;
     }
 

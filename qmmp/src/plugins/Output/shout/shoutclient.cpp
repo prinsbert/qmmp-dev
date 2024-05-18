@@ -77,7 +77,7 @@ bool ShoutClient::open()
         return true;
     }
 
-    qWarning("unable to connect: %s", shout_get_error(m_shout_conn));
+    qCWarning(plugin, "unable to connect: %s", shout_get_error(m_shout_conn));
     return false;
 }
 
@@ -86,7 +86,7 @@ bool ShoutClient::send(const unsigned char *data, int len)
     shout_sync(m_shout_conn);
     if(shout_send(m_shout_conn, data, len) != SHOUTERR_SUCCESS)
     {
-        qWarning("unable to send data: %s", shout_get_error(m_shout_conn));
+        qCWarning(plugin, "unable to send data: %s", shout_get_error(m_shout_conn));
         return false;
     }
     return true;

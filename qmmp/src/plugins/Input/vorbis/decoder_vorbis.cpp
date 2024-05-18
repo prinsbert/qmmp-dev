@@ -97,7 +97,7 @@ bool DecoderVorbis::initialize()
     };
     if (ov_open_callbacks(this, &oggfile, nullptr, 0, oggcb) < 0)
     {
-        qWarning("cannot open stream");
+        qCWarning(plugin, "cannot open stream");
 
         return false;
     }
@@ -121,7 +121,7 @@ bool DecoderVorbis::initialize()
     ChannelMap chmap = findChannelMap(chan);
     if(chmap.isEmpty())
     {
-        qWarning("unsupported number of channels: %d", chan);
+        qCWarning(plugin, "unsupported number of channels: %d", chan);
         return false;
     }
     configure(freq, chmap, Qmmp::PCM_FLOAT);

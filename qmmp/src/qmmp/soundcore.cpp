@@ -41,7 +41,7 @@ SoundCore::SoundCore(QObject *parent)
         : QObject(parent)
 {
     if(m_instance)
-        qCFatal(core) << "only one instance is allowed");
+        qCFatal(core) << "only one instance is allowed";
     qRegisterMetaType<Qmmp::State>("Qmmp::State");
     m_instance = this;
     m_handler = new StateHandler(this);
@@ -260,7 +260,7 @@ void SoundCore::startNextSource()
 
     if(s->ioDevice() && !s->ioDevice()->isOpen() && !s->ioDevice()->open(QIODevice::ReadOnly))
     {
-        qWarning("SoundCore: input error: %s", qPrintable(s->ioDevice()->errorString()));
+        qCWarning(core, "input error: %s", qPrintable(s->ioDevice()->errorString()));
         m_path.clear();
         s->deleteLater();
         m_nextState = INVALID_SOURCE;

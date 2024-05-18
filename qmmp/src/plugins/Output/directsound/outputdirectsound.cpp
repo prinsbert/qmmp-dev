@@ -66,14 +66,14 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
     HRESULT result = DirectSoundCreate8(nullptr, &m_ds, nullptr);
     if(result != DS_OK)
     {
-        qWarning("OutputDirectSound: DirectSoundCreate8 failed, error code = 0x%lx", result);
+        qCWarning(plugin, "DirectSoundCreate8 failed, error code = 0x%lx", result);
         m_ds = nullptr;
         return false;
     }
 
     if((result = m_ds->SetCooperativeLevel(GetDesktopWindow(), DSSCL_PRIORITY)) != DS_OK)
     {
-        qWarning("OutputDirectSound: SetCooperativeLevel failed, error code = 0x%lx", result);
+        qCWarning(plugin, "SetCooperativeLevel failed, error code = 0x%lx", result);
         return false;
     }
 
@@ -86,7 +86,7 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
     if((result = m_ds->CreateSoundBuffer(&bufferDesc, &m_primaryBuffer, nullptr)) != DS_OK)
     {
         m_primaryBuffer = nullptr;
-        qWarning("OutputDirectSound: CreateSoundBuffer failed, error code = 0x%lx", result);
+        qCWarning(plugin, "CreateSoundBuffer failed, error code = 0x%lx", result);
         return false;
     }
 
@@ -140,13 +140,13 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
 
     if((result = m_primaryBuffer->SetFormat((WAVEFORMATEX*)&wfex)) != DS_OK)
     {
-        qWarning("OutputDirectSound: SetFormat failed, error code = 0x%lx", result);
+        qCWarning(plugin, "SetFormat failed, error code = 0x%lx", result);
         return false;
     }
 
     if((result = m_primaryBuffer->Play(0, 0, DSBPLAY_LOOPING)) != DS_OK)
     {
-        qWarning("OutputDirectSound: Play failed, error code = 0x%lx", result);
+        qCWarning(plugin, "Play failed, error code = 0x%lx", result);
         return false;
     }
 
@@ -160,14 +160,14 @@ bool OutputDirectSound::initialize(quint32 freq, ChannelMap map, Qmmp::AudioForm
     IDirectSoundBuffer *pDSB;
     if((result = m_ds->CreateSoundBuffer(&bufferDesc, &pDSB, nullptr)) != DS_OK)
     {
-        qWarning("OutputDirectSound: CreateSoundBuffer failed, error code = 0x%lx", result);
+        qCWarning(plugin, "CreateSoundBuffer failed, error code = 0x%lx", result);
         return false;
     }
 
     if((result = pDSB->QueryInterface(IID_IDirectSoundBuffer8, (void**)&m_dsBuffer)) != DS_OK)
     {
         m_dsBuffer = nullptr;
-        qWarning("OutputDirectSound: QueryInterface failed, error code = 0x%lx", result);
+        qCWarning(plugin, "QueryInterface failed, error code = 0x%lx", result);
         pDSB->Release();
         return false;
     }
@@ -220,7 +220,7 @@ qint64 OutputDirectSound::writeAudio(unsigned char *data, qint64 len)
     }
     if(result != DS_OK)
     {
-        qWarning("OutputDirectSound: unable to lock buffer, error = 0x%lx", result);
+        qCWarning(plugin, "unable to lock buffer, error = 0x%lx", result);
         return -1;
     }
 

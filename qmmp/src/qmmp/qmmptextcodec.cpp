@@ -30,13 +30,13 @@ QmmpTextCodec::QmmpTextCodec(const QByteArray &charset) : m_name(charset.toUpper
 
     if((m_to = iconv_open(m_name.constData(), "UTF-16")) == (iconv_t)(-1))
     {
-        qWarning("QmmpTextCodec: error: %s", strerror(errno));
+        qCWarning(core, "error: %s", strerror(errno));
         m_to = nullptr;
     }
 
     if((m_from = iconv_open("UTF-16", m_name.constData())) == (iconv_t)(-1))
     {
-        qWarning("QmmpTextCodec: error: %s", strerror(errno));
+        qCWarning(core, "error: %s", strerror(errno));
         m_from = nullptr;
     }
 }

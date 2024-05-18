@@ -133,7 +133,7 @@ bool QmmpAudioEngine::enqueue(InputSource *source)
         factory = Decoder::findByProtocol(source->path().section(u"://"_s, 0, 0));
     if(!factory)
     {
-        qWarning("QmmpAudioEngine: unsupported file format");
+        qCWarning(core, "unsupported file format");
         return false;
     }
     qCDebug(core) << "selected decoder:" << factory->properties().shortName;
@@ -142,7 +142,7 @@ bool QmmpAudioEngine::enqueue(InputSource *source)
     Decoder *decoder = factory->create(source->path(), source->ioDevice());
     if(!decoder->initialize())
     {
-        qWarning("QmmpAudioEngine: invalid file format");
+        qCWarning(core, "invalid file format");
         delete decoder;
         return false;
     }
@@ -163,7 +163,7 @@ void QmmpAudioEngine::addEffect(EffectFactory *factory)
     {
         if(effect->factory() == factory)
         {
-            qWarning("QmmpAudioEngine: effect %s already exists", qPrintable(factory->properties().shortName));
+            qCWarning(core, "effect %s already exists", qPrintable(factory->properties().shortName));
             return;
         }
     }
@@ -391,7 +391,7 @@ void QmmpAudioEngine::run()
             m_done = m_user_stop.load();
             if(delay > TRANSPORT_TIMEOUT)
             {
-                qWarning("QmmpAudioEngine: unable to receive more data");
+                qCWarning(core, "unable to receive more data");
                 m_done = true;
                 StateHandler::instance()->dispatch(Qmmp::NormalError);
                 break;

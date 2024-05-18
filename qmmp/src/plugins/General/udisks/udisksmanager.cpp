@@ -24,6 +24,7 @@
 #include <QDBusArgument>
 #include <QDBusMetaType>
 #include <QXmlStreamReader>
+#include <qmmp/qmmp.h>
 #include "udisksmanager.h"
 
 using namespace Qt::Literals::StringLiterals;
@@ -61,7 +62,7 @@ QList<QDBusObjectPath> UDisksManager::findAllDevices()
 
     if (!reply.isValid())
     {
-        qWarning("UDisksManager: error: %s", qPrintable(reply.error().name()));
+        qCWarning(plugin, "error: %s", qPrintable(reply.error().name()));
         return paths;
     }
     QXmlStreamReader xml(reply.value());

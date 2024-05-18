@@ -189,7 +189,7 @@ void QmmpFileDialogImpl::on_fileListView_doubleClicked(const QModelIndex& index)
 
 void QmmpFileDialogImpl::on_fileNameLineEdit_returnPressed()
 {
-    qWarning("TODO: %s    %d", __FILE__, __LINE__);
+    qCWarning(plugin, "TODO: %s    %d", __FILE__, __LINE__);
 }
 
 void QmmpFileDialogImpl::on_fileNameLineEdit_textChanged (const QString &text)

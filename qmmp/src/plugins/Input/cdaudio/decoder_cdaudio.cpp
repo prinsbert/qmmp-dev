@@ -52,7 +52,7 @@ static void log_handler (cdio_log_level_t level, const char *message)
         qCDebug(plugin, "cdio message: %s (level=info)", qPrintable(str));
         return;
     default:
-        qWarning("cdio message: %s (level=error)", qPrintable(str));
+        qCWarning(plugin, "cdio message: %s (level=error)", qPrintable(str));
     }
 }
 
@@ -68,7 +68,7 @@ static void cddb_log_handler(cddb_log_level_t level, const char *message)
         qCDebug(plugin, "cddb message: %s (level=info)", qPrintable(str));
         return;
     default:
-        qWarning("cddb message: %s (level=error)", qPrintable(str));
+        qCWarning(plugin, "cddb message: %s (level=error)", qPrintable(str));
     }
 }
 
@@ -111,7 +111,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
             cdio = cdio_open_cd(*cd_drives);
             if (!cdio)
             {
-                qWarning("failed to open CD.");
+                qCWarning(plugin, "failed to open CD.");
                 cdio_free_device_list(cd_drives);
                 return tracks;
             }
@@ -121,7 +121,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
         }
         else
         {
-            qWarning("unable to find cd audio drive.");
+            qCWarning(plugin, "unable to find cd audio drive.");
             cdio_free_device_list(cd_drives);
             return tracks;
         }
@@ -131,7 +131,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
         cdio = cdio_open_cd(device_path.toLatin1().constData());
         if (!cdio)
         {
-            qWarning("failed to open CD.");
+            qCWarning(plugin, "failed to open CD.");
             return tracks;
         }
         qCDebug(plugin, "using cd audio capable drive \"%s\"", qPrintable(device_path));
@@ -148,7 +148,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
     {
         qCDebug(plugin, "setting drive speed to %dX.", cd_speed);
         if (cdio_set_speed(cdio, 1) != DRIVER_OP_SUCCESS)
-            qWarning("unable to set drive speed to %dX.", cd_speed);
+            qCWarning(plugin, "unable to set drive speed to %dX.", cd_speed);
     }
 
     cdrom_drive_t *pcdrom_drive = cdio_cddap_identify_cdio(cdio, 1, nullptr); //create paranoya CD-ROM object
@@ -158,7 +158,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 
     if ((first_track_number == CDIO_INVALID_TRACK) || (last_track_number == CDIO_INVALID_TRACK))
     {
-        qWarning("invalid first (last) track number.");
+        qCWarning(plugin, "invalid first (last) track number.");
         cdio_destroy(cdio);
         cdio = nullptr;
         return tracks;
@@ -185,7 +185,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
 
         if ((t.first_sector == CDIO_INVALID_LSN) || (t.last_sector== CDIO_INVALID_LSN))
         {
-            qWarning("invalid stard(end) lsn for the track %d.", i);
+            qCWarning(plugin, "invalid stard(end) lsn for the track %d.", i);
             tracks.clear();
             cdio_destroy(cdio);
             cdio = nullptr;
@@ -267,7 +267,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
                 int matches = cddb_query (cddb_conn, cddb_disc);
                 if(matches == -1)
                 {
-                    qWarning("unable to query the CDDB server, error: %s",
+                    qCWarning(plugin, "unable to query the CDDB server, error: %s",
                              cddb_error_str (cddb_errno(cddb_conn)));
                 }
                 else if(matches == 0)
@@ -373,7 +373,7 @@ bool DecoderCDAudio::initialize()
     QList<CDATrack> tracks = DecoderCDAudio::generateTrackList(device_path); //generate track list
     if (tracks.isEmpty())
     {
-        qWarning("initialize failed");
+        qCWarning(plugin, "initialize failed");
         return false;
     }
     //find track by number
@@ -386,7 +386,7 @@ bool DecoderCDAudio::initialize()
         }
     if (track_at < 0)
     {
-        qWarning("invalid track number");
+        qCWarning(plugin, "invalid track number");
         return false;
     }
 
@@ -406,7 +406,7 @@ bool DecoderCDAudio::initialize()
             m_cdio = cdio_open_cd(*cd_drives);
             if (!m_cdio)
             {
-                qWarning("failed to open CD.");
+                qCWarning(plugin, "failed to open CD.");
                 cdio_free_device_list(cd_drives);
                 return false;
             }
@@ -415,7 +415,7 @@ bool DecoderCDAudio::initialize()
         }
         else
         {
-            qWarning("unable to find cd audio drive.");
+            qCWarning(plugin, "unable to find cd audio drive.");
             return false;
         }
     }
@@ -424,7 +424,7 @@ bool DecoderCDAudio::initialize()
         m_cdio = cdio_open_cd(device_path.toLatin1().constData());
         if (!m_cdio)
         {
-            qWarning("failed to open CD.");
+            qCWarning(plugin, "failed to open CD.");
             return false;
         }
         qCDebug(plugin, "using cd audio capable drive \"%s\"", qPrintable(device_path));

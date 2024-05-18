@@ -50,7 +50,7 @@ History::History(QObject *parent) : QObject(parent)
         else
         {
             db.close();
-            qWarning("History: plugin is disabled");
+            qCWarning(plugin, "plugin is disabled");
         }
     }
 
@@ -124,7 +124,7 @@ bool History::createTables()
                          "Year INTEGER, Track INTEGER, DiscNumber TEXT, Duration INTEGER, URL BLOB)"_s);
 
     if(!ok)
-        qWarning("History: unable to create table, error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "unable to create table, error: %s", qPrintable(query.lastError().text()));
 
     return ok;
 }
@@ -153,7 +153,7 @@ void History::saveTrack()
     bool ok = query.exec();
 
     if(!ok)
-        qWarning("History: unable to save track, error: %s", qPrintable(query.lastError().text()));
+        qCWarning(plugin, "unable to save track, error: %s", qPrintable(query.lastError().text()));
     else
         qCDebug(plugin, "track '%s' has been added to history",
                qPrintable(m_trackInfo.value(Qmmp::ARTIST) + u" - "_s + m_trackInfo.value(Qmmp::TITLE)));

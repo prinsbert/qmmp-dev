@@ -59,7 +59,7 @@ bool DecoderMAD::initialize()
 
     if (!input())
     {
-        qWarning("cannot initialize.  No input.");
+        qCWarning(plugin, "cannot initialize.  No input.");
         return false;
     }
 
@@ -467,7 +467,7 @@ bool DecoderMAD::fillBuffer()
 
     if(len < 0)
     {
-        qWarning("error");
+        qCWarning(plugin, "error");
         return false;
     }
     m_input_bytes += len;
@@ -556,7 +556,7 @@ qint64 DecoderMAD::madOutputFloat(float *data, qint64 samples)
 
     if(samples_per_channel * channels > samples)
     {
-        qWarning("input buffer is too small");
+        qCWarning(plugin, "input buffer is too small");
         samples_per_channel = samples / channels;
     }
 

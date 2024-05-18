@@ -45,7 +45,7 @@ bool DecoderFFmpegCue::initialize()
 {
     if(!m_url.startsWith(u"ffmpeg://"_s))
     {
-        qWarning("invalid url.");
+        qCWarning(plugin, "invalid url.");
         return false;
     }
     QString filePath = TrackInfo::pathFromUrl(m_url, &m_track);
@@ -66,7 +66,7 @@ bool DecoderFFmpegCue::initialize()
     if(!cuesheet)
     {
         avformat_close_input(&in);
-        qWarning("unable to find cuesheet comment.");
+        qCWarning(plugin, "unable to find cuesheet comment.");
         return false;
     }
 
@@ -78,13 +78,13 @@ bool DecoderFFmpegCue::initialize()
 
     if(m_track > m_parser->count() || m_parser->isEmpty())
     {
-        qWarning("invalid cuesheet");
+        qCWarning(plugin, "invalid cuesheet");
         return false;
     }
     m_input = new QFile(filePath);
     if(!m_input->open(QIODevice::ReadOnly))
     {
-        qWarning("unable to open file; error: %s", qPrintable(m_input->errorString()));
+        qCWarning(plugin, "unable to open file; error: %s", qPrintable(m_input->errorString()));
         return false;
     }
 
@@ -94,7 +94,7 @@ bool DecoderFFmpegCue::initialize()
     m_decoder = new DecoderFFmpeg(filePath, m_input);
     if(!m_decoder->initialize())
     {
-        qWarning("DecoderFFapCUE: invalid audio file");
+        qCWarning(plugin, "DecoderFFapCUE: invalid audio file");
         return false;
     }
     m_decoder->seek(m_offset);

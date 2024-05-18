@@ -76,7 +76,7 @@ bool OutputOSS::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat forma
 
     if (m_audio_fd < 0)
     {
-        qWarning("OSSOutput: failed to open output device '%s'", qPrintable(m_audio_device));
+        qCWarning(plugin, "failed to open output device '%s'", qPrintable(m_audio_device));
         return false;
     }
 
@@ -97,28 +97,28 @@ bool OutputOSS::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat forma
         p = AFMT_S8;
         break;
     default:
-        qWarning("OutputOSS: unsupported audio format");
+        qCWarning(plugin, "unsupported audio format");
         return false;
     }
 
     if (ioctl(m_audio_fd, SNDCTL_DSP_SETFMT, &p) == -1)
-        qWarning("OutputOSS: ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
+        qCWarning(plugin, "ioctl SNDCTL_DSP_SETFMT failed: %s",strerror(errno));
 
 
     if(ioctl(m_audio_fd, SNDCTL_DSP_CHANNELS, &chan) == -1)
-        qWarning("OutputOSS: ioctl SNDCTL_DSP_CHANNELS failed: %s", strerror(errno));
+        qCWarning(plugin, "ioctl SNDCTL_DSP_CHANNELS failed: %s", strerror(errno));
 
     if(chan <= 2)
     {
         int param = chan - 1;
         if(ioctl(m_audio_fd, SNDCTL_DSP_STEREO, &param) == -1)
-            qWarning("OutputOSS: ioctl SNDCTL_DSP_STEREO failed: %s", strerror(errno));
+            qCWarning(plugin, "ioctl SNDCTL_DSP_STEREO failed: %s", strerror(errno));
         chan = param + 1;
     }
 
 
     if (ioctl(m_audio_fd, SNDCTL_DSP_SPEED, &freq) < 0)
-        qWarning("OutputOSS: ioctl SNDCTL_DSP_SPEED failed: %s", strerror(errno));
+        qCWarning(plugin, "ioctl SNDCTL_DSP_SPEED failed: %s", strerror(errno));
 
     ioctl(m_audio_fd, SNDCTL_DSP_RESET, 0);
 
@@ -216,7 +216,7 @@ void VolumeOSS::openMixer()
     m_mixer_fd = open(m_mixer_device.toLatin1().constData(), O_RDWR);
     if (m_mixer_fd < 0)
     {
-        qWarning("VolumeControlOSS: unable to open mixer device '%s'", qPrintable(m_mixer_device));
+        qCWarning(plugin, "VolumeControlOSS: unable to open mixer device '%s'", qPrintable(m_mixer_device));
         return;
     }
 }

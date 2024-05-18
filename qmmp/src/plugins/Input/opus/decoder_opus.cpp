@@ -98,7 +98,7 @@ bool DecoderOpus::initialize()
 
     if (!m_opusfile)
     {
-        qWarning("cannot open stream");
+        qCWarning(plugin, "cannot open stream");
         return false;
     }
 
@@ -110,7 +110,7 @@ bool DecoderOpus::initialize()
     const OpusHead *head = op_head(m_opusfile, -1);
     if (!head)
     {
-        qWarning("unable to read header");
+        qCWarning(plugin, "unable to read header");
         return false;
     }
 
@@ -119,7 +119,7 @@ bool DecoderOpus::initialize()
     ChannelMap chmap = findChannelMap(m_chan);
     if(chmap.isEmpty())
     {
-        qWarning("unsupported number of channels: %d", m_chan);
+        qCWarning(plugin, "unsupported number of channels: %d", m_chan);
         return false;
     }
     setProperty(Qmmp::FORMAT_NAME, u"Ogg Opus"_s);

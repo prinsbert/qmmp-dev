@@ -49,22 +49,22 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
     gme_type_t file_type;
     if((err = gme_identify_file(qPrintable(path), &file_type)))
     {
-        qWarning("GmeHelper: %s", err);
+        qCWarning(plugin, "%s", err);
         return nullptr;
     }
     if(!file_type)
     {
-        qWarning("DecoderGme: unsupported music type");
+        qCWarning(plugin, "unsupported music type");
         return nullptr;
     }
     if(!(m_emu = gme_new_emu(file_type, sample_rate)))
     {
-        qWarning("GmeHelper: out of memory");
+        qCWarning(plugin, "out of memory");
         return nullptr;
     }
     if((err = gme_load_file(m_emu, qPrintable(path))))
     {
-        qWarning("GmeHelper: %s", err);
+        qCWarning(plugin, "%s", err);
         return nullptr;
     }
     QString m3u_path = path.left(path.lastIndexOf(QLatin1Char('.')));
