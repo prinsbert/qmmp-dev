@@ -206,7 +206,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
             t.info.setValue(Qmmp::TITLE, QStringLiteral("CDA Track %1").arg(i, 2, 10, QLatin1Char('0')));
         tracks  << t;
     }
-    qCDebug(plugin, "found %lld audio tracks", tracks.size());
+    qCDebug(plugin) << "found" << tracks.size() << "audio tracks";
 
     use_cddb = use_cddb && settings.value(u"cdaudio/use_cddb"_s, false).toBool();
     if(use_cddb)
