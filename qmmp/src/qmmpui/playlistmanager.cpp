@@ -60,7 +60,7 @@ const QHash<QString, Qmmp::TrackProperty> PlayListManager::m_propKeys = {
 PlayListManager::PlayListManager(QObject *parent) : QObject(parent)
 {
     if(m_instance)
-        qFatal("PlayListManager: only one instance is allowed");
+        qCFatal(core) << "only one instance is allowed";
     qRegisterMetaType<PlayListModel::SortMode>();
     m_instance = this;
     m_ui_settings = QmmpUiSettings::instance();

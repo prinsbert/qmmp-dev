@@ -23,6 +23,7 @@
 #include <QWindow>
 #include <QApplication>
 #include <cmath>
+#include <qmmp.h>
 #include "dock.h"
 
 Dock *Dock::m_instance = nullptr;
@@ -263,7 +264,7 @@ void Dock::addActions(QList<QAction *> actions)
 {
     if(!m_mainWidget)
     {
-        qFatal("Dock: main widget is null");
+        qCFatal(plugin) << "main widget is null";
     }
     for(int i = 0; i < m_widgetList.size(); ++i)
         m_widgetList.at(i)->addActions (actions);

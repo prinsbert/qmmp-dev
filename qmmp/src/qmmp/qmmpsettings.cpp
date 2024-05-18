@@ -29,7 +29,7 @@ QmmpSettings *QmmpSettings::m_instance = nullptr;
 QmmpSettings::QmmpSettings(QObject *parent) : QObject(parent)
 {
     if(m_instance)
-        qFatal("QmmpSettings: only one instance is allowed");
+        qCFatal(core) << "only one instance is allowed";
     m_instance = this;
     QSettings settings;
     //replaygain settings
