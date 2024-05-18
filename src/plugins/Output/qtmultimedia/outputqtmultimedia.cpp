@@ -27,7 +27,6 @@
 #include <QAudioSink>
 #include <QMediaDevices>
 #include <QSettings>
-#include <QDebug>
 #include <unistd.h>
 
 

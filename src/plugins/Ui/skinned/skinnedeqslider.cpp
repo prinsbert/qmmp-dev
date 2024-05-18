@@ -78,7 +78,6 @@ void SkinnedEqSlider::mouseMoveEvent(QMouseEvent *e)
             {
 
                 m_old = m_value;
-                //qDebug ("%d",-m_value);
                 emit sliderMoved(-m_value);
             }
         }

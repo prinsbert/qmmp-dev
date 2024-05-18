@@ -19,7 +19,6 @@
  ***************************************************************************/
 
 #include <QPalette>
-#include <QDebug>
 #include "colorwidget.h"
 
 ColorWidget::ColorWidget(QWidget *parent) : QFrame(parent)

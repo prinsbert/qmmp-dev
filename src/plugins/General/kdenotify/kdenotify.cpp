@@ -24,7 +24,6 @@
 #include <QFileInfo>
 #include <QDir>
 #include <QSettings>
-#include <QDebug>
 #include <QTimer>
 #include <QImage>
 #include <QApplication>
@@ -45,11 +44,11 @@ KdeNotify::KdeNotify(QObject *parent) : QObject(parent)
                                     QDBusConnection::sessionBus(), this);
     if(m_notifier->lastError().type() != QDBusError::NoError)
     {
-        qWarning() << "KdeNotify: Unable to create interface:" << m_notifier->lastError().message();
+        qCWarning(plugin) << "KdeNotify: Unable to create interface:" << m_notifier->lastError().message();
         return;
     }
 
-    qWarning() << "KdeNotify: DBus interfece created successfully.";
+    qCWarning(plugin) << "KdeNotify: DBus interfece created successfully.";
     QDir dir(Qmmp::cacheDir());
     if(!dir.exists(u"kdenotifycache"_s))
         dir.mkdir(u"kdenotifycache"_s);

@@ -72,7 +72,6 @@ void SkinnedPlayListSlider::mousePressEvent(QMouseEvent *e)
         {
             emit sliderMoved(m_value);
             m_old = m_value;
-            //qDebug ("%d",m_value);
         }
     }
     update();

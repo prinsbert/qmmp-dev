@@ -23,7 +23,6 @@
 #include <QToolButton>
 #include <QStyle>
 #include <QEvent>
-#include <QDebug>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/playlistmodel.h>
 #include "qsuilistwidget.h"

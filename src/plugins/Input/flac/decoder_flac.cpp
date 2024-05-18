@@ -226,7 +226,7 @@ static void flac_callback_metadata (const FLAC__StreamDecoder *,
 
     if (metadata->type == FLAC__METADATA_TYPE_STREAMINFO)
     {
-        qDebug ("getting metadata info");
+        qCDebug(plugin) << "getting metadata info";
 
         data->total_samples =
             (unsigned)(metadata->data.stream_info.total_samples
