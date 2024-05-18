@@ -104,6 +104,6 @@ void ShoutClient::closeLater()
 
 void ShoutClient::close()
 {
-    qCDebug(plugin, "%s", Q_FUNC_INFO);
+    qCDebug(plugin) << Q_FUNC_INFO;
     shout_close(m_shout_conn);
 }

@@ -104,7 +104,7 @@ void AlsaSettingsDialog::getSoftDevices()
 
             m_devices << QString::fromLatin1(device_name);
             QString str = QStringLiteral("%1 (%2)").arg(QString::fromLatin1(device_desc), QString::fromLatin1(device_name));
-            qCDebug(plugin, "%s", qPrintable(str));
+            qCDebug(plugin) << str;
             m_ui->deviceComboBox->addItem(str);
             free (device_name);
             free (device_desc);
@@ -173,7 +173,7 @@ void AlsaSettingsDialog::getCardDevices(int card)
         device = QStringLiteral("hw:%1,%2").arg(card).arg(pcm_device);
         m_devices << device;
         QString str = QStringLiteral("%1: %2 (%3)").arg(QString::fromLatin1(card_name), QString::fromLatin1(snd_pcm_info_get_name(pcm_info)), device);
-        qCDebug(plugin, "%s",qPrintable(str));
+        qCDebug(plugin) << str;
         m_ui->deviceComboBox->addItem(str);
     }
 

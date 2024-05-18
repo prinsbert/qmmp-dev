@@ -82,7 +82,7 @@ void SidSettingsDialog::accept()
     if(m_ui->useHVSCCheckBox->isChecked())
     {
         if(!m_db->open(qPrintable(m_ui->hvscPathLineEdit->text())))
-            qCWarning(plugin, "%s", m_db->error());
+            qCWarning(plugin) << m_db->error();
     }
     settings.endGroup();
     QDialog::accept();

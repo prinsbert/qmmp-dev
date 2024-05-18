@@ -50,7 +50,7 @@ Oss4SettingsDialog::Oss4SettingsDialog (QWidget *parent) : QDialog (parent), m_u
     oss_sysinfo info;
     if ((mixer_fd = ::open(DEFAULT_MIXER, O_RDWR)) < 0)
     {
-        qCWarning(plugin, "%s", strerror(errno));
+        qCWarning(plugin) << strerror(errno);
         return;
     }
     if (ioctl(mixer_fd, SNDCTL_SYSINFO, &info) < 0)
