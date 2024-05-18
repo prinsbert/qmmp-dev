@@ -157,7 +157,7 @@ qint64 DecoderAAC::read(unsigned char *audio, qint64 maxSize)
         if(frame_info.error > 0)
         {
             m_input_at = 0;
-            qCDebug(plugin, "%s", NeAACDecGetErrorMessage(frame_info.error));
+            qCDebug(plugin) << NeAACDecGetErrorMessage(frame_info.error);
             return -1;
         }
         if(frame_info.samples > 0)

@@ -209,12 +209,12 @@ void FileOps::copy(const QList<PlayListTrack *> &tracks, const QString &dest, co
         QFile out(path);
         if(!in.open(QIODevice::ReadOnly))
         {
-            qCWarning(plugin, "%s", qPrintable(in.errorString ()));
+            qCWarning(plugin) << in.errorString();
             continue;
         }
         if(!out.open(QIODevice::WriteOnly))
         {
-            qCWarning(plugin, "%s", qPrintable(out.errorString ()));
+            qCWarning(plugin) << out.errorString();
             continue;
         }
 
@@ -331,12 +331,12 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
         QFile out(path);
         if(!in.open(QIODevice::ReadOnly))
         {
-            qCWarning(plugin, "%s", qPrintable(in.errorString ()));
+            qCWarning(plugin) << in.errorString();
             continue;
         }
         if(!out.open(QIODevice::WriteOnly))
         {
-            qCWarning(plugin, "%s", qPrintable(out.errorString ()));
+            qCWarning(plugin) << out.errorString();
             continue;
         }
 

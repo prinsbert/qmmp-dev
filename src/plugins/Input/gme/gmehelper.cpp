@@ -49,7 +49,7 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
     gme_type_t file_type;
     if((err = gme_identify_file(qPrintable(path), &file_type)))
     {
-        qCWarning(plugin, "%s", err);
+        qCWarning(plugin) << err;
         return nullptr;
     }
     if(!file_type)
@@ -64,7 +64,7 @@ Music_Emu *GmeHelper::load(const QString &url, int sample_rate)
     }
     if((err = gme_load_file(m_emu, qPrintable(path))))
     {
-        qCWarning(plugin, "%s", err);
+        qCWarning(plugin) << err;
         return nullptr;
     }
     QString m3u_path = path.left(path.lastIndexOf(QLatin1Char('.')));

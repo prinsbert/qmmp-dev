@@ -193,7 +193,7 @@ void PlayListParser::loadFormats()
         if (loader.isLoaded())
             qCDebug(core) << "loaded plugin" << QFileInfo(filePath).filePath();
         else
-            qCWarning(core, "%s", qPrintable(loader.errorString ()));
+            qCWarning(core) << loader.errorString();
 
         PlayListFormat *fmt = nullptr;
         if (plugin)
