@@ -41,7 +41,7 @@ QString Qmmp::m_appDir;
 #ifdef QT_DEBUG
 Q_LOGGING_CATEGORY(core, "qmmp.core", QtDebugMsg)
 Q_LOGGING_CATEGORY(plugin, "qmmp.plugin", QtDebugMsg)
-#elif
+#else
 Q_LOGGING_CATEGORY(core, "qmmp.core", QtWarningMsg)
 Q_LOGGING_CATEGORY(plugin, "qmmp.plugin", QtWarningMsg)
 #endif
