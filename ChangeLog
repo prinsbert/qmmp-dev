@@ -1591,3 +1591,4 @@ Version 0.12.19
 * fixed memory leak
 * fixed copying of the selected tracks to the new playlist
 * fixed duration calculation in the opus plugin
+* removed multiple signal/slot connections in the modplug plugin
