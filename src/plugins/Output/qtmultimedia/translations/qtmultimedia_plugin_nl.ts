@@ -9,37 +9,37 @@
         <translation>Qt-multimediaplug-in</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="57"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="56"/>
         <source>About Qt Multimedia Output Plugin</source>
         <translation>Over de Qt-multimedia-uitvoerplug-in</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="58"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="57"/>
         <source>Qmmp Qt Multimedia Output Plugin</source>
         <translation>Qt-multimedia-uitvoerplug-in voor Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="59"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="58"/>
         <source>Written by: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</source>
         <translation>Auteur: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>QtMultimediaSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation>Instellingen</translation>
+        <translation type="unfinished">Instellingen</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="46"/>
+        <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation>Apparaat:</translation>
+        <translation type="unfinished">Apparaat:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation>Standaard</translation>
+        <translation type="unfinished">Standaard</translation>
     </message>
 </context>
 </TS>

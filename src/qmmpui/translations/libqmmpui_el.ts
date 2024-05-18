@@ -125,7 +125,7 @@
 <context>
     <name>ColorWidget</name>
     <message>
-        <location filename="../colorwidget.cpp" line="46"/>
+        <location filename="../colorwidget.cpp" line="45"/>
         <source>Select Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1111,8 +1111,8 @@
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
-        <location filename="../jumptotrackdialog.cpp" line="121"/>
-        <location filename="../jumptotrackdialog.cpp" line="152"/>
+        <location filename="../jumptotrackdialog.cpp" line="120"/>
+        <location filename="../jumptotrackdialog.cpp" line="151"/>
         <source>Queue</source>
         <translation>Ουρά αναμονής</translation>
     </message>
@@ -1122,18 +1122,18 @@
         <translation>Μεταπήδηση σε</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="96"/>
+        <location filename="../jumptotrackdialog.cpp" line="95"/>
         <source>Q</source>
         <translation>Q</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="97"/>
+        <location filename="../jumptotrackdialog.cpp" line="96"/>
         <source>J</source>
         <translation>J</translation>
     </message>
     <message>
-        <location filename="../jumptotrackdialog.cpp" line="119"/>
-        <location filename="../jumptotrackdialog.cpp" line="150"/>
+        <location filename="../jumptotrackdialog.cpp" line="118"/>
+        <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Unqueue</source>
         <translation>Αφαίρεση από την ουρά αναμονής</translation>
     </message>

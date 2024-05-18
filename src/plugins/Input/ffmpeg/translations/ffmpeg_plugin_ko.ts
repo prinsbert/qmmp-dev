@@ -4,32 +4,32 @@
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="145"/>
+        <location filename="../decoderffmpegfactory.cpp" line="144"/>
         <source>FFmpeg Plugin</source>
         <translation>FFmpeg 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="147"/>
+        <location filename="../decoderffmpegfactory.cpp" line="146"/>
         <source>FFmpeg Formats</source>
         <translation>FFmpeg 형식</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="341"/>
+        <location filename="../decoderffmpegfactory.cpp" line="340"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>FFmpeg 오디오 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="342"/>
+        <location filename="../decoderffmpegfactory.cpp" line="341"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Qmmp FFmpeg 오디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="343"/>
+        <location filename="../decoderffmpegfactory.cpp" line="342"/>
         <source>Compiled against:</source>
         <translation>컴파일 대상:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="356"/>
+        <location filename="../decoderffmpegfactory.cpp" line="355"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

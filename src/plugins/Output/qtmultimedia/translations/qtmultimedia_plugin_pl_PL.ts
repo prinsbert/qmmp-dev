@@ -9,37 +9,37 @@
         <translation>Wtyczka Qt Multimedia</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="57"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="56"/>
         <source>About Qt Multimedia Output Plugin</source>
         <translation>O wtyczce wyjściowej Qt Multimedia</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="58"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="57"/>
         <source>Qmmp Qt Multimedia Output Plugin</source>
         <translation>Wtyczka wyjściowa Qt Multimedia dla Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="59"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="58"/>
         <source>Written by: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</source>
         <translation>Napisana przez: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>QtMultimediaSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation>Ustawienia wtyczki Qt Multimedia</translation>
+        <translation type="unfinished">Ustawienia wtyczki Qt Multimedia</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="46"/>
+        <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation>Urządzenie:</translation>
+        <translation type="unfinished">Urządzenie:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation type="unfinished">Domyślne</translation>
     </message>
 </context>
 </TS>

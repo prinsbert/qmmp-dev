@@ -9,37 +9,37 @@
         <translation>Qt 멀티미디어 플러그인</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="57"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="56"/>
         <source>About Qt Multimedia Output Plugin</source>
         <translation>Qt 멀티미디어 출력 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="58"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="57"/>
         <source>Qmmp Qt Multimedia Output Plugin</source>
         <translation>Qmmp Qt 멀티미디어 출력 플러그인</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="59"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="58"/>
         <source>Written by: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</source>
         <translation>작성자: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>QtMultimediaSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation>Qt 멀티미디어 플러그인 설정</translation>
+        <translation type="unfinished">Qt 멀티미디어 플러그인 설정</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="46"/>
+        <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation>장치:</translation>
+        <translation type="unfinished">장치:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation>기본값</translation>
+        <translation type="unfinished">기본값</translation>
     </message>
 </context>
 </TS>

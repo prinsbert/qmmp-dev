@@ -9,37 +9,37 @@
         <translation>Módulo multimedios Qt</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="57"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="56"/>
         <source>About Qt Multimedia Output Plugin</source>
         <translation>Acerca del Módulo de Salida de Multimedios Qt</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="58"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="57"/>
         <source>Qmmp Qt Multimedia Output Plugin</source>
         <translation>Módulo de Salida de Multimedios Qt de Qmmp</translation>
     </message>
     <message>
-        <location filename="../outputqtmultimediafactory.cpp" line="59"/>
+        <location filename="../outputqtmultimediafactory.cpp" line="58"/>
         <source>Written by: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</source>
         <translation>Escrito por: Ivan Ponomarev &lt;ivantrue@gmail.com&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>QtMultimediaSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="14"/>
+        <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation>Configuración de Módulo de Salida de Multimedios Qt</translation>
+        <translation type="unfinished">Configuración de Módulo de Salida de Multimedios Qt</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="46"/>
+        <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation>Dispositivo:</translation>
+        <translation type="unfinished">Dispositivo:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation>Predeterminado</translation>
+        <translation type="unfinished">Predeterminado</translation>
     </message>
 </context>
 </TS>
