@@ -39,8 +39,9 @@ WASAPISettingsDialog::WASAPISettingsDialog(QWidget *parent) :
     QSettings settings;
     QString id = settings.value("WASAPI/device"_L1, u"default"_s).toString();
     int index = m_ui->deviceComboBox->findData(id);
-    m_ui->exclusiveModeCheckBox->setChecked(settings.value("WASAPI/exclusive_mode"_L1, false).toBool());
     m_ui->deviceComboBox->setCurrentIndex(qMax(index, 0));
+    m_ui->bufferSizeSpinBox->setValue(settings.value("WASAPI/buffer_size"_L1, 1000).toInt());
+    m_ui->exclusiveModeCheckBox->setChecked(settings.value("WASAPI/exclusive_mode"_L1, false).toBool());
 }
 
 WASAPISettingsDialog::~WASAPISettingsDialog()
@@ -53,6 +54,7 @@ void WASAPISettingsDialog::accept()
     QSettings settings;
     int index = m_ui->deviceComboBox->currentIndex();
     settings.setValue("WASAPI/device"_L1, m_ui->deviceComboBox->itemData(index).toString());
+    settings.setValue("WASAPI/buffer_size"_L1, m_ui->bufferSizeSpinBox->value());
     settings.setValue("WASAPI/exclusive_mode"_L1, m_ui->exclusiveModeCheckBox->isChecked());
     QDialog::accept();
 }

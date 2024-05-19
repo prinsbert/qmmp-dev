@@ -70,6 +70,7 @@ private:
     int m_frameSize = 0;
     QString m_id;
     bool m_exclusive = false;
+    qint64 m_bufferSize = 1000000L; //microseconds
 
     typedef struct
     {
