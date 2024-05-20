@@ -54,13 +54,15 @@ MetaDataFormatterMenu::MetaDataFormatterMenu(Type type, QWidget *parent) :
     {
         addAction(tr("Artist - Album"))->setData(u"%if(%p,%p - %a,%a)"_s);
         addAction(tr("Artist - [Year] Album"))->setData(u"%p%if(%p&%a, - %if(%y,[%y] ,),)%a"_s);
+        addAction(tr("Condition"))->setData(u"%if(%p,%p - %a,%a)"_s);
     }
     else if(type == GROUP_EXTRA_ROW_MENU)
     {
         addAction(tr("Duration"))->setData(u"%l"_s);
-        addAction(tr("Duration | Format | Bitrate"))->setData(tr("%l | %{format} | %{bitrate} kbps"));
-        addAction(tr("Duration | Format | Bitrate | Sample rate "))->setData(tr("%l | %{format} | %{bitrate} kbps | %{samplerate} Hz"));
-        addAction(tr("Year | Duration | Bitrate"))->setData(tr("%y | %l | %{bitrate} kbps"));
+        addAction(tr("Duration | Format | Bitrate"))->setData(tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps"));
+        addAction(tr("Duration | Format | Bitrate | Sample rate "))->setData(tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz"));
+        addAction(tr("Year | Duration | Bitrate"))->setData(tr("%y | %if(%l,%l | ,)%{bitrate} kbps"));
+        addAction(tr("Condition"))->setData(u"%if(%p,%p - %a,%a)"_s);
     }
     addAction(tr("Parent Directory Name"))->setData(u"%dir(0)"_s);
     addAction(tr("Parent Directory Path"))->setData(u"%dir"_s);
