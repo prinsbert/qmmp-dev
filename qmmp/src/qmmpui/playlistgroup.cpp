@@ -62,10 +62,7 @@ QStringList PlayListGroup::formattedTitles() const
     if(m_title2.isEmpty())
         m_title2 = formatTitle2();
 
-    if(!m_title2.isEmpty())
-        return { m_title, m_title2 };
-
-    return { m_title };
+    return { m_title, m_title2 };
 }
 
 bool PlayListGroup::contains(PlayListTrack *track) const
@@ -121,7 +118,7 @@ void PlayListGroup::setCover(const QImage &cover)
 
 QString PlayListGroup::formatTitle2() const
 {
-    if(m_trackList.isEmpty())
+    if(m_trackList.isEmpty() || m_trackList.constFirst()->properties().isEmpty())
         return QString();
 
     qint64 duration = 0;
