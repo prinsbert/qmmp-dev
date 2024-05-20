@@ -1192,7 +1192,7 @@
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="47"/>
-        <location filename="../metadataformattermenu.cpp" line="60"/>
+        <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration</source>
         <translation>Długość</translation>
     </message>
@@ -1202,72 +1202,57 @@
         <translation type="unfinished">Artysta - Album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="61"/>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="61"/>
-        <source>%l | %{format} | %{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Bitrate | Sample rate </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="62"/>
-        <source>%l | %{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="63"/>
-        <source>%y | %l | %{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../metadataformattermenu.cpp" line="66"/>
+        <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Path</source>
         <translation>Ścieżka katalogu nadrzędnego</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="68"/>
+        <location filename="../metadataformattermenu.cpp" line="70"/>
         <source>Bitrate</source>
         <translation>Szybkość transmisji</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="69"/>
+        <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Sample Rate</source>
         <translation>Próbkowanie</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="70"/>
+        <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Number of Channels</source>
         <translation>Liczba kanałów</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="71"/>
+        <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Sample Size</source>
         <translation>Wielkość próbki</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="72"/>
+        <location filename="../metadataformattermenu.cpp" line="74"/>
         <source>Format</source>
         <translation>Format</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="73"/>
+        <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>Decoder</source>
         <translation>Dekoder</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="76"/>
+        <location filename="../metadataformattermenu.cpp" line="78"/>
         <source>File Size</source>
         <translation>Wilekość pliku</translation>
     </message>
@@ -1293,6 +1278,8 @@
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="51"/>
+        <location filename="../metadataformattermenu.cpp" line="57"/>
+        <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Condition</source>
         <translation>Warunek</translation>
     </message>
@@ -1307,7 +1294,22 @@
         <translation>Artysta - [Rok] Album</translation>
     </message>
     <message>
-        <location filename="../metadataformattermenu.cpp" line="65"/>
+        <location filename="../metadataformattermenu.cpp" line="62"/>
+        <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="63"/>
+        <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="64"/>
+        <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../metadataformattermenu.cpp" line="67"/>
         <source>Parent Directory Name</source>
         <translation>Nazwa katalogu nadrzędnego</translation>
     </message>
@@ -1364,7 +1366,7 @@
     <name>QmmpUiSettings</name>
     <message>
         <location filename="../qmmpuisettings.cpp" line="39"/>
-        <source>%l | %{format} | %{bitrate} kbps</source>
+        <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
