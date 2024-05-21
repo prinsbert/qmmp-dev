@@ -37,44 +37,64 @@
         <translation type="unfinished">Configuración del módulo HTTP</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="29"/>
-        <source>Buffer size:</source>
-        <translation type="unfinished">Tamaño del buffer:</translation>
-    </message>
-    <message>
-        <location filename="../httpsettingsdialog.ui" line="64"/>
-        <source>KB</source>
-        <translation type="unfinished">KB</translation>
-    </message>
-    <message>
-        <location filename="../httpsettingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
         <translation type="unfinished">Codificación de metainformación</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
         <translation type="unfinished">Detección automática del juego de caracteres</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
         <translation type="unfinished">Idioma:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
         <translation type="unfinished">Codificación predeterminada:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
         <translation type="unfinished">Agente de Usuario:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="34"/>
+        <source>Default buffer size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="50"/>
+        <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="53"/>
+        <source>KiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
         <translation type="unfinished">Cambiar Agente de Usuario</translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="90"/>
+        <source>Buffer duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="97"/>
+        <source>This value is used if information about bitrate is available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="100"/>
+        <source>ms</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

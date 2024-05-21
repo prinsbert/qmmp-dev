@@ -37,44 +37,64 @@
         <translation type="unfinished">HTTP 플러그인 설정</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="29"/>
-        <source>Buffer size:</source>
-        <translation type="unfinished">버퍼 크기:</translation>
-    </message>
-    <message>
-        <location filename="../httpsettingsdialog.ui" line="64"/>
-        <source>KB</source>
-        <translation type="unfinished">KB</translation>
-    </message>
-    <message>
-        <location filename="../httpsettingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
         <translation type="unfinished">메타데이터 인코딩</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
         <translation type="unfinished">자동 문자셋 감지</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
         <translation type="unfinished">언어:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
         <translation type="unfinished">기본 인코딩:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
         <translation type="unfinished">사용자 에이전트:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="34"/>
+        <source>Default buffer size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="50"/>
+        <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="53"/>
+        <source>KiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
         <translation type="unfinished">사용자 에이전트 변경</translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="90"/>
+        <source>Buffer duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="97"/>
+        <source>This value is used if information about bitrate is available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="100"/>
+        <source>ms</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
