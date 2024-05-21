@@ -37,44 +37,64 @@
         <translation type="unfinished">הגדרות תוסף HTTP</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="29"/>
-        <source>Buffer size:</source>
-        <translation type="unfinished">שיעור אגירה:</translation>
-    </message>
-    <message>
-        <location filename="../httpsettingsdialog.ui" line="64"/>
-        <source>KB</source>
-        <translation type="unfinished">ק״ב</translation>
-    </message>
-    <message>
-        <location filename="../httpsettingsdialog.ui" line="78"/>
+        <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
         <translation type="unfinished">קידוד מידע-מוצמד</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="84"/>
+        <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
         <translation type="unfinished">אתר אוטומטית מערך-תווים</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="94"/>
+        <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
         <translation type="unfinished">שפה:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="114"/>
+        <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
         <translation type="unfinished">קידוד משתמט:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="137"/>
+        <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
         <translation type="unfinished">סוכן משתמש:</translation>
     </message>
     <message>
-        <location filename="../httpsettingsdialog.ui" line="151"/>
+        <location filename="../httpsettingsdialog.ui" line="34"/>
+        <source>Default buffer size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="50"/>
+        <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="53"/>
+        <source>KiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
         <translation type="unfinished">החלף User Agent</translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="90"/>
+        <source>Buffer duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="97"/>
+        <source>This value is used if information about bitrate is available.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../httpsettingsdialog.ui" line="100"/>
+        <source>ms</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
