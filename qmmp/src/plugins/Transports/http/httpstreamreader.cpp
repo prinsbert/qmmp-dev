@@ -115,6 +115,10 @@ static size_t curl_header(void *data, size_t size, size_t nmemb,
         {
             dl->stream()->icy_meta_data = true;
         }
+        else if(key == "icy-br"_L1)
+        {
+            dl->stream()->icy_br = value.toInt();
+        }
     }
     dl->mutex()->unlock();
     return data_size;
@@ -144,7 +148,8 @@ HttpStreamReader::HttpStreamReader(const QString &url, HTTPInputSource *parent) 
     QSettings settings;
     settings.beginGroup("HTTP"_L1);
     m_codec = new QmmpTextCodec(settings.value("icy_encoding"_L1, u"UTF-8"_s).toByteArray ());
-    m_prebuffer_size = settings.value("buffer_size"_L1, 384).toInt() * 1000;
+    m_prebufferSize = settings.value("buffer_size"_L1, 384).toInt() * 1024;
+    m_bufferDuration = settings.value("buffer_duration"_L1, 10000).toInt();
     if(settings.value(u"override_user_agent"_s, false).toBool())
         m_userAgent = settings.value("user_agent"_L1).toString();
     if(m_userAgent.isEmpty())
@@ -226,7 +231,6 @@ void HttpStreamReader::downloadFile()
 
 qint64 HttpStreamReader::readData(char* data, qint64 maxlen)
 {
-
     qint64 len = 0;
     m_mutex.lock();
     if(m_stream.buf_fill == 0)
@@ -373,7 +377,7 @@ void HttpStreamReader::run()
         m_stream.buf = nullptr;
     }
     m_stream.buf_fill = 0;
-    m_stream.buf_size = m_prebuffer_size * 2;
+    m_stream.buf_size = m_prebufferSize * 2;
     m_stream.buf = (char *)malloc(m_stream.buf_size); //initial buffer
     m_stream.aborted = false;
     m_stream.header.clear();
@@ -413,7 +417,16 @@ void HttpStreamReader::checkBuffer()
     if(m_stream.aborted || m_ready)
         return;
 
-    if (m_stream.buf_fill > m_prebuffer_size)
+    if(m_stream.icy_br > 0)
+    {
+        m_prebufferSize = m_stream.icy_br * m_bufferDuration / 8;
+        qCDebug(plugin) << "buffer duration:" << m_bufferDuration << "ms";
+        qCDebug(plugin) << "buffer size:" << m_prebufferSize << "bytes";
+        m_stream.icy_br = 0;
+    }
+
+
+    if(m_stream.buf_fill > m_prebufferSize)
     {
         m_ready  = true;
         qCDebug(plugin, "ready");
@@ -433,7 +446,7 @@ void HttpStreamReader::checkBuffer()
     }
     else
     {
-        StateHandler::instance()->dispatchBuffer(100 * m_stream.buf_fill / m_prebuffer_size);
+        StateHandler::instance()->dispatchBuffer(100 * m_stream.buf_fill / m_prebufferSize);
         qApp->processEvents();
     }
 }

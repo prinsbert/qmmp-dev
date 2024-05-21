@@ -50,6 +50,7 @@ struct HttpStreamData
     QHash <QString, QByteArray> header;
     bool icy_meta_data = false;
     size_t icy_metaint = 0;
+    size_t icy_br = 0;
 };
 
 /*! @internal
@@ -106,7 +107,8 @@ private:
     QString m_title;
     bool m_ready = false;
     bool m_meta_sent = false;
-    size_t m_prebuffer_size;
+    size_t m_prebufferSize;
+    int m_bufferDuration;
     QmmpTextCodec *m_codec = nullptr;
     DownloadThread *m_thread;
     HTTPInputSource *m_parent;

@@ -42,6 +42,7 @@ HttpSettingsDialog::HttpSettingsDialog(QWidget *parent) : QDialog(parent), m_ui(
     int pos = m_ui->icyEncodingComboBox->findText(settings.value("icy_encoding"_L1, u"UTF-8"_s).toString());
     m_ui->icyEncodingComboBox->setCurrentIndex(pos);
     m_ui->bufferSizeSpinBox->setValue(settings.value("buffer_size"_L1, 384).toInt());
+    m_ui->bufferDurationSpinBox->setValue(settings.value("buffer_duration"_L1, 10000).toInt());
     m_ui->userAgentCheckBox->setChecked(settings.value("override_user_agent"_L1, false).toBool());
     m_ui->userAgentLineEdit->setText(settings.value("user_agent"_L1).toString());
 #ifdef WITH_ENCA
@@ -66,6 +67,7 @@ void HttpSettingsDialog::accept()
     settings.beginGroup("HTTP"_L1);
     settings.setValue("icy_encoding"_L1, m_ui->icyEncodingComboBox->currentText());
     settings.setValue("buffer_size"_L1, m_ui->bufferSizeSpinBox->value());
+    settings.setValue("buffer_duration"_L1, m_ui->bufferDurationSpinBox->value());
     settings.setValue("override_user_agent"_L1, m_ui->userAgentCheckBox->isChecked());
     settings.setValue("user_agent"_L1, m_ui->userAgentLineEdit->text());
 #ifdef WITH_ENCA
