@@ -24,6 +24,10 @@
 #include <spa/param/props.h>
 #include "outputpipewire.h"
 
+#if !PW_CHECK_VERSION(0, 3, 33)
+#define PW_KEY_NODE_RATE "node.rate"
+#endif
+
 OutputPipeWire *OutputPipeWire::instance = nullptr;
 VolumePipeWire *OutputPipeWire::volumeControl = nullptr;
 
