@@ -267,7 +267,7 @@ bool Library::scanDirectories(const QStringList &paths)
         query.exec(u"PRAGMA journal_mode = WAL"_s);
         query.exec(u"PRAGMA synchronous = NORMAL"_s);
 
-        for(const QString &path : qAsConst(paths))
+        for(const QString &path : std::as_const(paths))
         {
             addDirectory(path);
             if(m_stopped)
@@ -296,7 +296,7 @@ void Library::addDirectory(const QString &s)
     dir.setSorting(QDir::Name);
     QFileInfoList l = dir.entryInfoList(m_filters);
 
-    for(const QFileInfo &info : qAsConst(l))
+    for(const QFileInfo &info : std::as_const(l))
     {
         if(!checkFile(info) && !m_ignoredFiles.contains(info.filePath()))
         {
@@ -304,7 +304,7 @@ void Library::addDirectory(const QString &s)
             const QList<TrackInfo *> pl = MetaDataManager::instance()->createPlayList(info.absoluteFilePath(), TrackInfo::AllParts, &paths);
 
             //save local file path
-            for(const TrackInfo *t : qAsConst(pl))
+            for(const TrackInfo *t : std::as_const(pl))
                 filePathHash.insert(t, info.absoluteFilePath());
 
             tracks << pl;
@@ -322,7 +322,7 @@ void Library::addDirectory(const QString &s)
 
     removeIgnoredTracks(&tracks, ignoredPaths);
 
-    for(TrackInfo *info : qAsConst(tracks))    
+    for(TrackInfo *info : std::as_const(tracks))    
         addTrack(info, filePathHash.value(info));
 
     qDeleteAll(tracks);
@@ -336,7 +336,7 @@ void Library::addDirectory(const QString &s)
     l.clear();
     l = dir.entryInfoList();
 
-    for(const QFileInfo &i : qAsConst(l))
+    for(const QFileInfo &i : std::as_const(l))
     {
         addDirectory(i.absoluteFilePath());
         if (m_stopped)
@@ -456,7 +456,7 @@ void Library::updateIgnoredFiles(const QStringList &paths)
     if(!db.isOpen())
         return;
 
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         QSqlQuery query(db);
         query.prepare(u"INSERT OR REPLACE INTO ignored_files VALUES((SELECT ID FROM track_library WHERE FilePath = :filepath), :filepath)"_s);

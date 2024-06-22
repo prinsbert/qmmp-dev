@@ -166,7 +166,7 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
         quint32 mod = ke->state;
         SoundCore *core = SoundCore::instance();
         MediaPlayer *player = MediaPlayer::instance();
-        for(const Hotkey *hotkey : qAsConst(m_grabbedKeys))
+        for(const Hotkey *hotkey : std::as_const(m_grabbedKeys))
         {
             if (hotkey->key != key || hotkey->mod != mod)
                 continue;

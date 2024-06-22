@@ -138,7 +138,7 @@ void PlayListModel::add(const QList<PlayListTrack *> &tracks)
         m_current = m_container->indexOf(m_current_track);
     }
 
-    for(PlayListTrack *track : qAsConst(tracks))
+    for(PlayListTrack *track : std::as_const(tracks))
     {
         m_total_duration += track->duration();
         emit trackAdded(track);
@@ -205,7 +205,7 @@ void PlayListModel::insert(int index, const QList<PlayListTrack *> &tracks)
 
     int flags = 0;
 
-    for(PlayListTrack *track : qAsConst(tracks))
+    for(PlayListTrack *track : std::as_const(tracks))
     {
         index = m_container->insertTrack(index, track) + 1;
         m_total_duration += track->duration();
@@ -247,7 +247,7 @@ void PlayListModel::insert(PlayListTrack *before, const QList<PlayListTrack *> &
         }
 
         QList<PlayListTrack *> uniqueTracks;
-        for(PlayListTrack *track : qAsConst(tracks))
+        for(PlayListTrack *track : std::as_const(tracks))
         {
             if(!m_uniquePaths.contains(track->path()))
             {
@@ -289,7 +289,7 @@ void PlayListModel::insert(int index, const QStringList &paths)
 void PlayListModel::insert(int index, const QList<QUrl> &urls)
 {
     QStringList paths;
-    for(const QUrl &url : qAsConst(urls))
+    for(const QUrl &url : std::as_const(urls))
     {
         if(url.scheme() == "file"_L1)
             paths.append(QFileInfo(url.toLocalFile()).canonicalFilePath());
@@ -544,14 +544,14 @@ void PlayListModel::setSelected(PlayListItem *item, bool selected)
 
 void PlayListModel::setSelected(const QList<PlayListTrack *> &tracks, bool selected)
 {
-    for(PlayListTrack *t : qAsConst(tracks))
+    for(PlayListTrack *t : std::as_const(tracks))
         t->setSelected(selected);
     emit listChanged(SELECTION);
 }
 
 void PlayListModel::setSelected(const QList<PlayListItem *> &items, bool selected)
 {
-    for(PlayListItem *i : qAsConst(items))
+    for(PlayListItem *i : std::as_const(items))
         i->setSelected(selected);
     emit listChanged(SELECTION);
 }
@@ -593,7 +593,7 @@ void PlayListModel::setSelectedLines(int firstLine, int lastLine, bool selected)
 
 //void PlayListModel::setSelected(const QList<int> &indexes, bool selected)
 //{
-//    for(const int &idx : qAsConst(indexes))
+//    for(const int &idx : std::as_const(indexes))
 //        m_container->setSelected(idx, selected);
 //    emit listChanged(SELECTION);
 //}
@@ -924,7 +924,7 @@ void PlayListModel::addToQueue()
 {
     const QList<PlayListTrack*> selected_tracks = selectedTracks();
     blockSignals(true);
-    for(PlayListTrack *track : qAsConst(selected_tracks))
+    for(PlayListTrack *track : std::as_const(selected_tracks))
         setQueued(track);
     blockSignals(false);
     emit listChanged(QUEUE);
@@ -1120,7 +1120,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
     QHash<QString, TrackInfo *> cache; //cache for tracks
     QSet<QString> multiTrackFiles; //files with multiple tracks
 
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         bool missing = false; //track is missing
 
@@ -1138,7 +1138,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
                 else if(QFileInfo(filePath).isFile())
                 {
                     const QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(filePath);
-                    for(TrackInfo *info : qAsConst(list))
+                    for(TrackInfo *info : std::as_const(list))
                         cache.insert(info->path(), info);
 
                     multiTrackFiles << path;
@@ -1147,7 +1147,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
             else if(QFileInfo(path).isFile()) //is it local file?
             {
                 const QList<TrackInfo *> list = MetaDataManager::instance()->createPlayList(path);
-                for(TrackInfo *info : qAsConst(list))
+                for(TrackInfo *info : std::as_const(list))
                     cache.insert(info->path(), info);
             }
         }
@@ -1176,7 +1176,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
                 {
                     track->updateMetaData(list.constFirst()); //update existing track
                     delete list.takeFirst();
-                    for(const TrackInfo *info : qAsConst(list)) //add remaining tracks
+                    for(const TrackInfo *info : std::as_const(list)) //add remaining tracks
                         tracksToAdd << new PlayListTrack(info);
                 }
             }
@@ -1203,7 +1203,7 @@ void PlayListModel::startCoverLoader()
     {
         const QList<PlayListGroup *> groups = m_container->groups();
         QStringList paths;
-        for(const PlayListGroup *g : qAsConst(groups))
+        for(const PlayListGroup *g : std::as_const(groups))
         {
             if(!g->isCoverLoaded() && !g->firstTrackPath().isEmpty())
                 paths << g->firstTrackPath();

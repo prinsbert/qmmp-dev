@@ -300,7 +300,7 @@ void Scrobbler::submit()
     params.insert(u"sk"_s, m_session);
 
     const QStringList keys = params.keys();
-    for(const QString &key : qAsConst(keys)) //removes empty keys
+    for(const QString &key : std::as_const(keys)) //removes empty keys
     {
         if(params.value(key).isEmpty() || params.value(key) == "0"_L1)
             params.remove(key);
@@ -350,7 +350,7 @@ void Scrobbler::sendNotification(const SongInfo &info)
     params.insert(u"sk"_s, m_session);
 
     const QStringList keys = params.keys();
-    for(const QString &key : qAsConst(keys)) //removes empty keys
+    for(const QString &key : std::as_const(keys)) //removes empty keys
     {
         if(params.value(key).isEmpty())
             params.remove(key);

@@ -50,7 +50,7 @@ TrackInfo *MplayerInfo::createTrackInfo(const QString &path)
     QString str = QString::fromLocal8Bit(mplayer_process.readAll()).trimmed();
     TrackInfo *info = new TrackInfo(path);
     const QStringList lines = str.split(QChar::LineFeed);
-    for(const QString &line : qAsConst(lines))
+    for(const QString &line : std::as_const(lines))
     {
         QRegularExpressionMatch match;
 
@@ -193,7 +193,7 @@ void MplayerEngine::readStdOut()
     static const QRegularExpression rx_audio2(u"^AUDIO: *([0-9,.]+) *Hz.*([0-9,.]+) *ch.*([a-z]+).* ([0-9,.]+) *kbit.*"_s);
 
     const QStringList lines = QString::fromLocal8Bit(m_process->readAll()).trimmed().split(QChar::LineFeed);
-    for(const QString &line : qAsConst(lines))
+    for(const QString &line : std::as_const(lines))
     {
         QRegularExpressionMatch match;
 

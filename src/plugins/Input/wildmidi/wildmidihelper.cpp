@@ -117,7 +117,7 @@ QStringList WildMidiHelper::configFiles() const
         u"/etc/wildmidi/wildmidi.cfg"_s
     };
     QStringList filtered;
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         if(QFile::exists(path))
             filtered << path;

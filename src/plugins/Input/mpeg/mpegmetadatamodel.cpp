@@ -152,7 +152,7 @@ void MPEGMetaDataModel::removeCover()
 
 QString MPEGMetaDataModel::lyrics() const
 {
-    for(const TagModel *tag : qAsConst(m_tags))
+    for(const TagModel *tag : std::as_const(m_tags))
     {
         const MpegFileTagModel *mpegTag = static_cast<const MpegFileTagModel *>(tag);
         QString lyrics = mpegTag->lyrics();

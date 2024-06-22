@@ -652,10 +652,10 @@ void QSUiMainWindow::readSettings()
     QList<QToolBar *> toolBars = findChildren<QToolBar*>();
 
     //clear toolbars to avoid conflicts
-    for(QToolBar *toolBar : qAsConst(toolBars))
+    for(QToolBar *toolBar : std::as_const(toolBars))
         toolBar->clear();
 
-    for(const QSUiActionManager::ToolBarInfo &info : qAsConst(toolBarInfoList))
+    for(const QSUiActionManager::ToolBarInfo &info : std::as_const(toolBarInfoList))
     {
         bool found = false;
         QList<QToolBar *>::iterator it = toolBars.begin();
@@ -677,7 +677,7 @@ void QSUiMainWindow::readSettings()
         }
     }
 
-    for(QToolBar *toolBar : qAsConst(toolBars))
+    for(QToolBar *toolBar : std::as_const(toolBars))
         toolBar->deleteLater();
     toolBars.clear();
     setToolBarsBlocked(ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS)->isChecked());
@@ -863,13 +863,13 @@ void QSUiMainWindow::setDockWidgetsBlocked(bool blocked)
 
     if(qApp->platformName() == QLatin1String("wayland"))
     {
-        for(QDockWidget *w : qAsConst(widgetList))
+        for(QDockWidget *w : std::as_const(widgetList))
             w->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
     }
 
     if(blocked)
     {
-        for(QDockWidget *w : qAsConst(widgetList))
+        for(QDockWidget *w : std::as_const(widgetList))
         {
             if(!w->titleBarWidget())
                 w->setTitleBarWidget(new QWidget());
@@ -877,7 +877,7 @@ void QSUiMainWindow::setDockWidgetsBlocked(bool blocked)
     }
     else
     {
-        for(QDockWidget *w : qAsConst(widgetList))
+        for(QDockWidget *w : std::as_const(widgetList))
         {
             QWidget *widget = w->titleBarWidget();
             if(widget)
@@ -978,7 +978,7 @@ void QSUiMainWindow::copySelectedMenuActionTriggered(QAction *action)
     }
 
     QList<PlayListTrack *> theCopy;
-    for(PlayListTrack *track : qAsConst(selectedTracks))
+    for(PlayListTrack *track : std::as_const(selectedTracks))
     {
         PlayListTrack *newItem = new PlayListTrack(*track);
         theCopy << newItem;

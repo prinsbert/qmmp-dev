@@ -126,7 +126,7 @@ void PayloadCache::save(const QList<TrackMetaData> &songs)
         qCWarning(plugin, "error %d: %s", file.error(), qPrintable(file.errorString()));
         return;
     }
-    for(const TrackMetaData &m : qAsConst(songs))
+    for(const TrackMetaData &m : std::as_const(songs))
     {
         file.write(QStringLiteral("title=%1\n").arg(m.value(Qmmp::TITLE)).toUtf8());
         file.write(QStringLiteral("artist=%1\n").arg(m.value(Qmmp::ARTIST)).toUtf8());

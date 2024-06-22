@@ -125,7 +125,7 @@ QByteArray XSPFPlaylistFormat::encode(const QList<PlayListTrack*> &files, const 
     xml.writeStartElement("trackList"_L1);
 
     int counter = 1;
-    for(PlayListTrack *f : qAsConst(files))
+    for(PlayListTrack *f : std::as_const(files))
     {
         xml.writeStartElement("track"_L1);
 

@@ -89,7 +89,7 @@ CueFile::CueFile(const QString &path) : CueParser()
         }
     }
 
-    for(const QString &p : qAsConst(m_dataFiles))
+    for(const QString &p : std::as_const(m_dataFiles))
     {
         if(!QFile::exists(p))
         {

@@ -111,7 +111,7 @@ QList<PlayListModel *> PlayListManager::playLists() const
 QStringList PlayListManager::playListNames() const
 {
     QStringList names;
-    for(const PlayListModel *model : qAsConst(m_models))
+    for(const PlayListModel *model : std::as_const(m_models))
         names << model->name();
     return names;
 }
@@ -327,7 +327,7 @@ void PlayListManager::readPlayLists()
         pl = 0;
     m_selected = m_models.at(pl);
     m_current = m_models.at(pl);
-    for(const PlayListModel *model : qAsConst(m_models))
+    for(const PlayListModel *model : std::as_const(m_models))
     {
         connect(model, &PlayListModel::nameChanged, this, &PlayListManager::playListsChanged);
         connect(model, &PlayListModel::listChanged, this, &PlayListManager::onListChanged);
@@ -347,14 +347,14 @@ void PlayListManager::writePlayLists()
         return;
     }
     plFile.write(QStringLiteral("current_playlist=%1\n").arg(m_models.indexOf(m_current)).toUtf8());
-    for(const PlayListModel *model : qAsConst(m_models))
+    for(const PlayListModel *model : std::as_const(m_models))
     {
         plFile.write(QStringLiteral("playlist=%1\n").arg(model->name()).toUtf8());
         if(model->isEmpty())
             continue;
         const QList<PlayListTrack *> tracks = model->tracks();
         plFile.write(QStringLiteral("current=%1\n").arg(model->currentIndex()).toLatin1());
-        for(PlayListTrack *t : qAsConst(tracks))
+        for(PlayListTrack *t : std::as_const(tracks))
         {
             plFile.write(QStringLiteral("file=%1\n").arg(t->path()).toUtf8());
 
@@ -501,6 +501,6 @@ void PlayListManager::stopAfterSelected()
 
 void PlayListManager::rebuildGroups()
 {
-    for(PlayListModel *model : qAsConst(m_models))
+    for(PlayListModel *model : std::as_const(m_models))
         model->rebuildGroups();
 }

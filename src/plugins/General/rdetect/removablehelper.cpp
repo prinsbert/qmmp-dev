@@ -99,7 +99,7 @@ void RemovableHelper::updateActions()
 {
     const QList<QStorageInfo> volumes = QStorageInfo::mountedVolumes();
 
-    for(const QStorageInfo &storage : qAsConst(volumes))
+    for(const QStorageInfo &storage : std::as_const(volumes))
     {
         if(!storage.isValid() || !storage.isReady())
             continue;
@@ -156,11 +156,11 @@ void RemovableHelper::updateActions()
     }
     // remove action if device is unmounted/removed
     const QList<QAction *> actions = m_actions->actions();
-    for(QAction *action : qAsConst(actions))
+    for(QAction *action : std::as_const(actions))
     {
         bool found = false;
 
-        for(const QStorageInfo &storage : qAsConst(volumes))
+        for(const QStorageInfo &storage : std::as_const(volumes))
         {
             QString dev_path = storage.rootPath();
             if(isAudioCd(dev_path))

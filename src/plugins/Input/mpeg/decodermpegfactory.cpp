@@ -324,7 +324,7 @@ QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, Track
         }
         settings.endGroup();
 
-        for(const QMap<Qmmp::MetaData, QString> &tags : qAsConst(metaData))
+        for(const QMap<Qmmp::MetaData, QString> &tags : std::as_const(metaData))
         {
             for(int i = Qmmp::TITLE; i <= Qmmp::DISCNUMBER; ++i)
             {

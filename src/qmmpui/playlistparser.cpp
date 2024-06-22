@@ -66,7 +66,7 @@ QStringList PlayListParser::nameFilters()
 {
     loadFormats();
     QStringList filters;
-    for(const PlayListFormat *format : qAsConst(*m_formats))
+    for(const PlayListFormat *format : std::as_const(*m_formats))
     {
         filters << format->properties().filters;
     }
@@ -77,7 +77,7 @@ QStringList PlayListParser::filters()
 {
     loadFormats();
     QStringList filters;
-    for(const PlayListFormat *format : qAsConst(*m_formats))
+    for(const PlayListFormat *format : std::as_const(*m_formats))
     {
         if (!format->properties().filters.isEmpty())
             filters << QStringLiteral("%1 (%2)").arg(format->properties().shortName.toUpper(),  format->properties().filters.join(QChar::Space));
@@ -101,7 +101,7 @@ PlayListFormat *PlayListParser::findByMime(const QString &mime)
 PlayListFormat *PlayListParser::findByPath(const QString &filePath)
 {
     loadFormats();
-    for(PlayListFormat *format : qAsConst(*m_formats))
+    for(PlayListFormat *format : std::as_const(*m_formats))
     {
         if(QDir::match(format->properties().filters, filePath.section(QLatin1Char('/'), -1)))
             return format;
@@ -156,7 +156,7 @@ QList<PlayListTrack *> PlayListParser::loadPlaylist(const QString &f_name)
     }
 
     QString path;
-    for(PlayListTrack *t : qAsConst(tracks))
+    for(PlayListTrack *t : std::as_const(tracks))
     {
         path = t->path();
 
@@ -207,7 +207,7 @@ void PlayListParser::loadFormats()
 QByteArray PlayListParser::serialize(const QList<PlayListTrack *> &tracks)
 {
     QJsonArray array;
-    for(const PlayListTrack *t : qAsConst(tracks))
+    for(const PlayListTrack *t : std::as_const(tracks))
     {
         QJsonObject obj;
         QString value;

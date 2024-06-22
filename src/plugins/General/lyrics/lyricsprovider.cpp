@@ -51,7 +51,7 @@ void LyricsProvider::addUrlFormat(const QString &replace, const QString &with)
 void LyricsProvider::addRule(const QList<QPair<QString, QString> > &args, bool exclude)
 {
     Rule rule;
-    for(const QPair<QString, QString> &i : qAsConst(args))
+    for(const QPair<QString, QString> &i : std::as_const(args))
     {
         Item item;
         if(!i.first.isEmpty() && !i.second.isEmpty())
@@ -105,7 +105,7 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
     const QString content = QString::fromUtf8(data);
     QString out;
 
-    for(const QString &indicator : qAsConst(m_invalidIndicators))
+    for(const QString &indicator : std::as_const(m_invalidIndicators))
     {
         if(content.contains(indicator))
             return QString();
@@ -116,7 +116,7 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
 
     const QHash<QString, QString> replaceHash = generateReplaceHash(track);
 
-    for(const Rule &rule : qAsConst(m_extractRules))
+    for(const Rule &rule : std::as_const(m_extractRules))
     {
         Rule tmpRule = rule;
         QString tmpContent = content;
@@ -136,7 +136,7 @@ QString LyricsProvider::format(const QByteArray &data, const TrackInfo &track) c
 
         if(!tmpContent.isEmpty())
         {
-            for(const Rule &excludeRule : qAsConst(m_excludeRules))
+            for(const Rule &excludeRule : std::as_const(m_excludeRules))
                 tmpContent = exclude(tmpContent, excludeRule);
         }
         if(tmpContent.isEmpty())
@@ -221,7 +221,7 @@ QString LyricsProvider::extract(const QString &content, const Rule &rule) const
 {
     QString out = content;
 
-    for(const Item &item : qAsConst(rule))
+    for(const Item &item : std::as_const(rule))
     {
         if(!item.url.isEmpty())
         {
@@ -249,7 +249,7 @@ QString LyricsProvider::exclude(const QString &content, const LyricsProvider::Ru
 {
     QString out = content;
 
-    for(const Item &item : qAsConst(rule))
+    for(const Item &item : std::as_const(rule))
     {
         if(!item.tag.isEmpty())
         {

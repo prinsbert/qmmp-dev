@@ -144,7 +144,7 @@ void Decoder::loadPlugins()
 QString Decoder::file(const DecoderFactory *factory)
 {
     loadPlugins();
-    for(const QmmpPluginCache *item : qAsConst(*m_cache))
+    for(const QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(item->shortName() == factory->properties().shortName)
             return item->file();
@@ -157,7 +157,7 @@ QStringList Decoder::protocols()
     loadPlugins();
     QStringList protocolList;
 
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -182,7 +182,7 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
             return nullptr;
         }
 
-        for(QmmpPluginCache *item : qAsConst(*m_cache))
+        for(QmmpPluginCache *item : std::as_const(*m_cache))
         {
             if(m_disabledNames.contains(item->shortName()))
                 continue;
@@ -216,7 +216,7 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
         return nullptr;
     }
 
-    for(DecoderFactory *fact : qAsConst(filtered))
+    for(DecoderFactory *fact : std::as_const(filtered))
     {
         if(fact->canDecode(&file))
             return fact;
@@ -233,7 +233,7 @@ DecoderFactory *Decoder::findByMime(const QString& type)
     if(type.isEmpty())
         return nullptr;
     loadPlugins();
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -247,7 +247,7 @@ DecoderFactory *Decoder::findByMime(const QString& type)
 DecoderFactory *Decoder::findByContent(QIODevice *input)
 {
     loadPlugins();
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -261,7 +261,7 @@ DecoderFactory *Decoder::findByContent(QIODevice *input)
 DecoderFactory *Decoder::findByProtocol(const QString &p)
 {
     loadPlugins();
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -276,7 +276,7 @@ QList<DecoderFactory *> Decoder::findByFileExtension(const QString &path)
 {
     QList<DecoderFactory*> filtered;
     DecoderFactory *fact = nullptr;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -320,7 +320,7 @@ QList<DecoderFactory *> Decoder::factories()
 {
     loadPlugins();
     QList<DecoderFactory *> list;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(item->decoderFactory())
             list.append(item->decoderFactory());
@@ -332,7 +332,7 @@ QList<DecoderFactory *> Decoder::enabledFactories()
 {
     loadPlugins();
     QList<DecoderFactory *> list;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -346,7 +346,7 @@ QStringList Decoder::nameFilters()
 {
     loadPlugins();
     QStringList filters;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -360,7 +360,7 @@ QStringList Decoder::contentTypes()
 {
     loadPlugins();
     QStringList types;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;

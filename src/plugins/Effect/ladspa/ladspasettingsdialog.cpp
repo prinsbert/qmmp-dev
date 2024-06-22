@@ -105,7 +105,7 @@ void LADSPASettingsDialog::on_configureButton_clicked()
     LADSPASlider *slider = nullptr;
     QLabel *label = nullptr;
 
-    for(LADSPAControl *c : qAsConst(effect->controls))
+    for(LADSPAControl *c : std::as_const(effect->controls))
     {
         switch ((int) c->type)
         {

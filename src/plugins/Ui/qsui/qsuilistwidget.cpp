@@ -633,7 +633,7 @@ void QSUiListWidget::removeSelected()
     if(m_filterMode)
     {
         QList<PlayListItem *> items;
-        for(PlayListItem *item : qAsConst(m_filteredItems))
+        for(PlayListItem *item : std::as_const(m_filteredItems))
         {
             if(item->isSelected())
                 items << item;

@@ -144,7 +144,7 @@ void TwoPanelFileDialogImpl::updateFileSelection ()
 
     QStringList names;
 
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         QString name = QFileInfo(path).fileName();
         if(!names.contains(name))
@@ -170,7 +170,7 @@ void TwoPanelFileDialogImpl::updateFileSelection ()
     if(m_mode == FileDialog::AddFiles || m_mode == FileDialog::AddDirsFiles || m_mode == FileDialog::AddFile
             || m_mode == FileDialog::PlayDirsFiles)
     {
-        for(const QString &path : qAsConst(paths))
+        for(const QString &path : std::as_const(paths))
         {
             if(QFileInfo(path).isFile())
             {

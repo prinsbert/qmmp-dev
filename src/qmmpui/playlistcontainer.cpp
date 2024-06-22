@@ -56,7 +56,7 @@ void PlayListContainer::clearQueue()
 void PlayListContainer::restoreQueue(const QList<PlayListTrack *> &tracks)
 {
     m_queue.clear();
-    for(PlayListTrack *t : qAsConst(tracks))
+    for(PlayListTrack *t : std::as_const(tracks))
         m_queue.enqueue(t);
     updateQueueIndexes();
 }

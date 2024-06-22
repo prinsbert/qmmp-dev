@@ -49,7 +49,7 @@ UDisksPlugin::UDisksPlugin(QObject *parent) : QObject(parent)
     m_addFiles = false;
     //find existing devices
     const QList<QDBusObjectPath> devs = m_manager->findAllDevices();
-    for(const QDBusObjectPath &o : qAsConst(devs))
+    for(const QDBusObjectPath &o : std::as_const(devs))
         addDevice(o);
     //load remaining settings
     m_addTracks = settings.value(u"add_tracks"_s, false).toBool();
@@ -83,7 +83,7 @@ void UDisksPlugin::removeDevice(QDBusObjectPath o)
 
 void UDisksPlugin::addDevice(QDBusObjectPath o)
 {
-    for(const UDisksDevice *device : qAsConst(m_devices)) //is it already exists?
+    for(const UDisksDevice *device : std::as_const(m_devices)) //is it already exists?
     {
         if (device->objectPath() == o)
             return;
@@ -104,7 +104,7 @@ void UDisksPlugin::addDevice(QDBusObjectPath o)
 void UDisksPlugin::updateActions()
 {
     // add action for cd audio or mounted volume
-    for(const UDisksDevice *device : qAsConst(m_devices))
+    for(const UDisksDevice *device : std::as_const(m_devices))
     {
         QString dev_path;
         if (m_detectCDA && device->isAudio()) //cd audio
@@ -192,7 +192,7 @@ QAction *UDisksPlugin::findAction(const QString &dev_path)
 
 UDisksDevice *UDisksPlugin::findDevice(QAction *action)
 {
-    for(UDisksDevice *device : qAsConst(m_devices))
+    for(UDisksDevice *device : std::as_const(m_devices))
     {
         QString dev_path;
         if (device->isAudio())

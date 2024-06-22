@@ -89,7 +89,7 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
         if(args.isEmpty())
             return out;
         QStringList full_path_list, remote_pls_list;
-        for(const QString &s : qAsConst(args))
+        for(const QString &s : std::as_const(args))
         {
             QString path = s;
 #ifdef Q_OS_WIN
@@ -210,7 +210,7 @@ QHash<QString, QStringList> BuiltinCommandLineOption::splitArgs(const QStringLis
 {
     QHash <QString, QStringList> commands;
     QString lastCmd;
-    for(const QString &arg : qAsConst(args))
+    for(const QString &arg : std::as_const(args))
     {
         QString cmd = arg.trimmed();
         if(cmd.startsWith(QLatin1Char('-')) || cmd.startsWith(u"--"_s))

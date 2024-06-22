@@ -60,7 +60,7 @@ QList<FileDialogFactory *> FileDialog::factories()
 {
     loadPlugins();
     QList<FileDialogFactory *> list;
-    for(QmmpUiPluginCache *item : qAsConst(*m_cache))
+    for(QmmpUiPluginCache *item : std::as_const(*m_cache))
     {
         if(item->fileDialogFactory())
             list.append(item->fileDialogFactory());

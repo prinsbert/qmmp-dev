@@ -137,7 +137,7 @@ void SkinnedPlayListBrowser::on_deleteButton_clicked()
     {
         selectedIndexes << m_proxyModel->mapToSource(index);
     }
-    for(const QModelIndex &index : qAsConst(selectedIndexes))
+    for(const QModelIndex &index : std::as_const(selectedIndexes))
     {
         m_pl_manager->removePlayListIndex(index.row());
     }

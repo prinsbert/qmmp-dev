@@ -159,7 +159,7 @@ void QSUiLogo::processPreset2()
     QString str = QStringLiteral("..0000..");//.arg(Qmmp::strVersion().left(5));
     int at = m_value % str.size();
 
-    for(QString line : qAsConst(m_source_lines))
+    for(QString line : std::as_const(m_source_lines))
     {
         while(line.contains(QLatin1Char('X')))
         {
@@ -178,7 +178,7 @@ void QSUiLogo::processPreset3()
     QString str = QStringLiteral("...%1...").arg(Qmmp::strVersion().left(5));
     int at = m_value % str.size();
 
-    for(QString line : qAsConst(m_source_lines))
+    for(QString line : std::as_const(m_source_lines))
     {
         while(line.contains(QLatin1Char('X')))
         {
@@ -210,7 +210,7 @@ void QSUiLogo::processPreset4()
 
     int at = 0;
 
-    for(QString line : qAsConst(m_source_lines))
+    for(QString line : std::as_const(m_source_lines))
     {
         int count = line.count(QLatin1Char('X'));
         int k = 0;

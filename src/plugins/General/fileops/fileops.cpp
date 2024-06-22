@@ -129,7 +129,7 @@ void FileOps::execAction()
         if(PlayListManager::instance()->selectedPlayList() != model)
             break;
 
-        for(PlayListTrack *track : qAsConst(tracks))
+        for(PlayListTrack *track : std::as_const(tracks))
         {
             if(PlayListManager::instance()->selectedPlayList() != model)
                 break;
@@ -179,7 +179,7 @@ void FileOps::copy(const QList<PlayListTrack *> &tracks, const QString &dest, co
     progress.show();
     progress.setAutoClose(false);
     int i  = 0;
-    for(PlayListTrack *track : qAsConst(tracks))
+    for(PlayListTrack *track : std::as_const(tracks))
     {
         if(!isValid(track) || !QFile::exists(track->path()))
             continue;
@@ -237,7 +237,7 @@ void FileOps::copy(const QList<PlayListTrack *> &tracks, const QString &dest, co
 
 void FileOps::rename(const QList<PlayListTrack *> &tracks, const MetaDataFormatter *formatter, PlayListModel *model)
 {
-    for(PlayListTrack *track : qAsConst(tracks))
+    for(PlayListTrack *track : std::as_const(tracks))
     {
         if(!isValid(track) || !QFile::exists(track->path())) //is it file?
             continue;
@@ -276,7 +276,7 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
     progress.show();
     progress.setAutoClose (false);
     int i  = 0;
-    for(PlayListTrack *track : qAsConst(tracks))
+    for(PlayListTrack *track : std::as_const(tracks))
     {
         if(!isValid(track) || !QFile::exists(track->path()))
             continue;
@@ -371,7 +371,7 @@ void FileOps::move(const QList<PlayListTrack *> &tracks, const QString &dest, co
 
 void FileOps::execute(const QList<PlayListTrack *> &tracks, const MetaDataFormatter *formatter, PlayListModel *model)
 {
-    for(PlayListTrack *track : qAsConst(tracks))
+    for(PlayListTrack *track : std::as_const(tracks))
     {
         if(!isValid(track) || !QFile::exists(track->path())) //is it file?
             continue;

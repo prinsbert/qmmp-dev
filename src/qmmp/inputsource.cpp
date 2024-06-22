@@ -141,7 +141,7 @@ QList<InputSourceFactory *> InputSource::factories()
 {
     loadPlugins();
     QList<InputSourceFactory *> list;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(item->inputSourceFactory())
             list.append(item->inputSourceFactory());
@@ -153,7 +153,7 @@ QList<InputSourceFactory *> InputSource::enabledFactories()
 {
     loadPlugins();
     QList<InputSourceFactory *> list;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -176,7 +176,7 @@ QStringList InputSource::protocols()
     loadPlugins();
     QStringList protocolList;
 
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -192,7 +192,7 @@ QList<QRegularExpression> InputSource::regExps()
     loadPlugins();
     QList<QRegularExpression> regExpList;
 
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -205,7 +205,7 @@ QList<QRegularExpression> InputSource::regExps()
 InputSourceFactory *InputSource::findByUrl(const QString &url)
 {
     loadPlugins();
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;
@@ -221,7 +221,7 @@ InputSourceFactory *InputSource::findByUrl(const QString &url)
         }
     }
 
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_disabledNames.contains(item->shortName()))
             continue;

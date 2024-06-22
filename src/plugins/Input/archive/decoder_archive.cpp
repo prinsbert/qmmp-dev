@@ -83,7 +83,7 @@ bool DecoderArchive::initialize()
     else
     {
         //multiple factories, so trying to determine by content
-        for(DecoderFactory *fact : qAsConst(filtered))
+        for(DecoderFactory *fact : std::as_const(filtered))
         {
             if(fact->canDecode(m_input))
             {

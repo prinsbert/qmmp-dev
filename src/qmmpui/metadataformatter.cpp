@@ -102,7 +102,7 @@ void MetaDataFormatter::setPattern(const QString &pattern)
     m_nodes = compile(pattern);
 #ifdef DUMP_NODES
     qCDebug(core) << "dump of nodes";
-    for(const Node &n : qAsConst(m_nodes))
+    for(const Node &n : std::as_const(m_nodes))
     {
         qCDebug(core) << "=>" << dumpNode(n);
     }
@@ -581,7 +581,7 @@ QString MetaDataFormatter::dumpNode(MetaDataFormatter::Node node) const
     else if(node.command == Node::DIR_FUNCTION)
         str += u"DIR_FUNCTION"_s;
     str += QLatin1Char('(');
-    for(const Param &p : qAsConst(node.params))
+    for(const Param &p : std::as_const(node.params))
     {
         if(p.type == Param::FIELD)
             params.append(QStringLiteral("FIELD:%1").arg(p.field));
@@ -594,7 +594,7 @@ QString MetaDataFormatter::dumpNode(MetaDataFormatter::Node node) const
         else if(p.type == Param::NODES)
         {
             QStringList nodeStrList;
-            for(const Node &n : qAsConst(p.children))
+            for(const Node &n : std::as_const(p.children))
             {
                 nodeStrList.append(dumpNode(n));
             }

@@ -79,7 +79,7 @@ void NotifierSettingsDialog::accept()
     settings.beginGroup(u"Notifier"_s);
     settings.setValue(u"message_delay"_s, m_ui->messageDelaySpinBox->value());
     uint pos = PopupWidget::BOTTOMLEFT;
-    for(QPushButton *button : qAsConst(m_buttons))
+    for(QPushButton *button : std::as_const(m_buttons))
     {
         if(button->isChecked())
             pos = m_buttons.key(button);

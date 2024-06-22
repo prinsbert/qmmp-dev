@@ -77,7 +77,7 @@ void HotkeySettingsDialog::accept()
 {
     QSettings settings;
     settings.beginGroup(u"Hotkey"_s);
-    for(const Hotkey *k : qAsConst(m_hotkeys))
+    for(const Hotkey *k : std::as_const(m_hotkeys))
     {
         settings.setValue(QStringLiteral("key_%1").arg(k->action), k->key);
         settings.setValue(QStringLiteral("modifiers_%1").arg(k->action), k->mod);

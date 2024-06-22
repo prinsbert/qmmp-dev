@@ -46,7 +46,7 @@ QList<PlayListTrack *> M3UPlaylistFormat::decode(const QByteArray &contents)
     QString artist, title;
     bool hasExtInf = false;
 
-    for(const QString &line : qAsConst(splitted))
+    for(const QString &line : std::as_const(splitted))
     {
         QString str = line.trimmed();
         if(str.startsWith(u"#EXTM3U"_s) || str.isEmpty())
@@ -91,7 +91,7 @@ QByteArray M3UPlaylistFormat::encode(const QList<PlayListTrack*> &contents, cons
     MetaDataFormatter formatter(u"%if(%p,%p - %t,%t)%if(%p|%t,,%f)"_s);
     QString m3uDir = QFileInfo(path).canonicalPath();
 
-    for(const PlayListTrack *f : qAsConst(contents))
+    for(const PlayListTrack *f : std::as_const(contents))
     {
         QString info = u"#EXTINF:"_s + QString::number(f->duration() / 1000) + QLatin1Char(',') + formatter.format(f);
         out.append(info);

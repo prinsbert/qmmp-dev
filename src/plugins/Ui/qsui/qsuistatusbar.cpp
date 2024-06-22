@@ -73,10 +73,10 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
 {
     if(state == Qmmp::Playing || state == Qmmp::Paused)
     {        
-        for(QLabel *label : qAsConst(m_labels))
+        for(QLabel *label : std::as_const(m_labels))
             label->show();
 
-        for(QFrame *sep : qAsConst(m_separators))
+        for(QFrame *sep : std::as_const(m_separators))
             sep->show();
 
         m_labels[BitrateLabel]->setMinimumWidth(0);
@@ -95,7 +95,7 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
         for(int i = SampleRateLabel; i <= TimeLabel; ++i)
             m_labels[LabelType(i)]->hide();
 
-        for(QFrame *sep : qAsConst(m_separators))
+        for(QFrame *sep : std::as_const(m_separators))
             sep->hide();
 
         m_labels[StatusLabel]->show();
@@ -132,7 +132,7 @@ void QSUiStatusBar::onStateChanged(Qmmp::State state)
         for(int i = SampleRateLabel; i <= TimeLabel; ++i)
             m_labels[LabelType(i)]->hide();
 
-        for(QFrame *sep : qAsConst(m_separators))
+        for(QFrame *sep : std::as_const(m_separators))
             sep->hide();
 
         m_labels[StatusLabel]->show();

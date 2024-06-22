@@ -141,7 +141,7 @@ void FLACMetaDataModel::removeCover()
     if(flacFile)
     {
         const TagLib::List<TagLib::FLAC::Picture *> list = flacFile->pictureList(); //native flac
-        for(TagLib::FLAC::Picture *p : qAsConst(list))
+        for(TagLib::FLAC::Picture *p : std::as_const(list))
         {
             if(p->type() == TagLib::FLAC::Picture::FrontCover)
             {
@@ -153,7 +153,7 @@ void FLACMetaDataModel::removeCover()
     else if(m_tag && !m_tag->isEmpty())
     {
         const TagLib::List<TagLib::FLAC::Picture *> list = m_tag->pictureList(); //ogg flac
-        for(TagLib::FLAC::Picture *p : qAsConst(list))
+        for(TagLib::FLAC::Picture *p : std::as_const(list))
         {
             if(p->type() == TagLib::FLAC::Picture::FrontCover)
             {

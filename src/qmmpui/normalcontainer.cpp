@@ -37,7 +37,7 @@ void NormalContainer::addTracks(const QList<PlayListTrack *> &tracks)
 {
     m_tracks.reserve(m_tracks.count() + tracks.count());
 
-    for(PlayListTrack *track : qAsConst(tracks))
+    for(PlayListTrack *track : std::as_const(tracks))
     {
         m_tracks.append(track);
         track->m_queued_index = -1;
@@ -102,7 +102,7 @@ bool NormalContainer::isEmpty() const
 
 void NormalContainer::clearSelection()
 {
-    for(PlayListItem *item : qAsConst(m_tracks))
+    for(PlayListItem *item : std::as_const(m_tracks))
     {
         item->setSelected(false);
     }
@@ -139,7 +139,7 @@ void NormalContainer::removeTrack(PlayListTrack *track)
 
 void NormalContainer::removeTracks(QList<PlayListTrack *> tracks)
 {
-    for(PlayListTrack *t : qAsConst(tracks))
+    for(PlayListTrack *t : std::as_const(tracks))
     {
         m_tracks.removeAll(t);
         removeFromQueue(t);
@@ -153,7 +153,7 @@ bool NormalContainer::move(const QList<int> &indexes, int from, int to)
 {
     if (from > to)
     {
-        for(const int &i : qAsConst(indexes))
+        for(const int &i : std::as_const(indexes))
         {
             if (i + to - from < 0)
                 break;
@@ -226,7 +226,7 @@ QList<PlayListItem *> NormalContainer::itemsAtLines(int pos, int length) const
 {
     QList<PlayListTrack *> tracks = m_tracks.mid(pos, length);
     QList<PlayListItem *> items;
-    for(PlayListTrack *t : qAsConst(tracks))
+    for(PlayListTrack *t : std::as_const(tracks))
         items << t;
     return items;
 }

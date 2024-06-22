@@ -159,7 +159,7 @@ bool QmmpAudioEngine::enqueue(InputSource *source)
 
 void QmmpAudioEngine::addEffect(EffectFactory *factory)
 {
-    for(const Effect *effect : qAsConst(m_effects))
+    for(const Effect *effect : std::as_const(m_effects))
     {
         if(effect->factory() == factory)
         {
@@ -190,7 +190,7 @@ void QmmpAudioEngine::addEffect(EffectFactory *factory)
 void QmmpAudioEngine::removeEffect(EffectFactory *factory)
 {
     Effect *effect = nullptr;
-    for(Effect *e : qAsConst(m_effects))
+    for(Effect *e : std::as_const(m_effects))
     {
         if(e->factory() == factory)
         {
@@ -279,7 +279,7 @@ qint64 QmmpAudioEngine::produceSound(unsigned char *data, qint64 size, quint32 b
 
     b->samples = samples;
     b->rate = brate;
-    for(Effect *effect : qAsConst(m_effects))
+    for(Effect *effect : std::as_const(m_effects))
     {
         effect->applyEffect(b);
     }
@@ -639,7 +639,7 @@ void QmmpAudioEngine::prepareEffects(Decoder *d)
     m_ap = AudioParameters(m_ap.sampleRate(), m_ap.channelMap(), Qmmp::PCM_FLOAT);
     //remove disabled and external effects
     const QList<Effect *> tmp = m_effects;
-    for(Effect *e : qAsConst(tmp))
+    for(Effect *e : std::as_const(tmp))
     {
         if(!e->factory() || !Effect::isEnabled(e->factory()))
         {
@@ -680,7 +680,7 @@ void QmmpAudioEngine::prepareEffects(Decoder *d)
     for(EffectFactory *factory : Effect::enabledFactories())
     {
         Effect *effect = nullptr;
-        for(Effect *e : qAsConst(tmp_effects)) //find effect
+        for(Effect *e : std::as_const(tmp_effects)) //find effect
         {
             if(e->factory() == factory)
             {

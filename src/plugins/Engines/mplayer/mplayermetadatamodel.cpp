@@ -45,7 +45,7 @@ QList<MetaDataItem> MplayerMetaDataModel::extraProperties() const
     //mplayer std output parsing
     static const QRegularExpression rx_id(u"^(ID_.*)=(.*)"_s);
     QHash<QString, QString> params;
-    for(const QString &line : qAsConst(lines))
+    for(const QString &line : std::as_const(lines))
     {
         QRegularExpressionMatch match = rx_id.match(line.trimmed());
         if(match.hasMatch())

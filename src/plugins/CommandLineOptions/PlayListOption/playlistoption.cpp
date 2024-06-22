@@ -87,7 +87,7 @@ QString PlayListOption::executeCommand(int id, const QStringList &args, const QS
             helpString(PL_STATE)
         };
 
-        for(const QString &line : qAsConst(list))
+        for(const QString &line : std::as_const(list))
             out += CommandLineManager::formatHelpString(line) + QChar::LineFeed;
     }
         break;
