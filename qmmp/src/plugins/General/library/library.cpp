@@ -86,9 +86,10 @@ Library::Library(QPointer<LibraryWidget> *libraryWidget, QObject *parent) :
             QSqlDatabase db = QSqlDatabase::addDatabase(u"QSQLITE"_s, CONNECTION_NAME);
             db.setDatabaseName(Qmmp::configDir() + u"/library.sqlite"_s);
             db.open();
-            db.exec(u"DELETE FROM track_library"_s);
-            db.exec(u"REINDEX track_library"_s);
-            db.exec(u"VACUUM"_s);
+            QSqlQuery query(db);
+            query.exec(u"DELETE FROM track_library"_s);
+            query.exec(u"REINDEX track_library"_s);
+            query.exec(u"VACUUM"_s);
             db.close();
         }
         QSqlDatabase::removeDatabase(CONNECTION_NAME);
