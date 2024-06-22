@@ -131,7 +131,7 @@ void SkinnedPlayListTitleBar::updatePixmap()
     if(m_shaded)
     {
         QColor col;
-        col.setNamedColor(QString(skin()->getPLValue("normalbg")));
+        col = QColor::fromString(QString(skin()->getPLValue("normalbg")));
         paint.setBrush(QBrush(col));
         paint.setPen(col);
         paint.drawRect(8 * m_ratio, m_ratio, 235 * m_ratio + sx * 25, 11 * m_ratio);
