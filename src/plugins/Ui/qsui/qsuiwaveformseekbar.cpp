@@ -58,10 +58,10 @@ void QSUiWaveformSeekBar::readSettings()
 {
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
-    m_bgColor.setNamedColor(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
-    m_rmsColor.setNamedColor(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
-    m_waveFormColor.setNamedColor(settings.value(u"wfsb_waveform_color"_s, u"#BECBFF"_s).toString());
-    m_progressBar.setNamedColor(settings.value(u"wfsb_progressbar_color"_s, u"#9633CA10"_s).toString());
+    m_bgColor = QColor::fromString(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
+    m_rmsColor = QColor::fromString(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
+    m_waveFormColor = QColor::fromString(settings.value(u"wfsb_waveform_color"_s, u"#BECBFF"_s).toString());
+    m_progressBar = QColor::fromString(settings.value(u"wfsb_progressbar_color"_s, u"#9633CA10"_s).toString());
     if(!m_update)
     {
         m_update = true;

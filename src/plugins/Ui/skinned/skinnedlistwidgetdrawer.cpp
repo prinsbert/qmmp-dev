@@ -87,10 +87,10 @@ void SkinnedListWidgetDrawer::readSettings()
     {
         Skin *skin = Skin::instance();
         bool alternate_splitter_color = settings.value("pl_alt_splitter_color"_L1, false).toBool();
-        m_normal.setNamedColor(skin->getPLValue("normal"));
-        m_current.setNamedColor(skin->getPLValue("current"));
-        m_normal_bg.setNamedColor(skin->getPLValue("normalbg"));
-        m_selected_bg.setNamedColor(skin->getPLValue("selectedbg"));
+        m_normal = QColor::fromString(skin->getPLValue("normal"));
+        m_current = QColor::fromString(skin->getPLValue("current"));
+        m_normal_bg = QColor::fromString(skin->getPLValue("normalbg"));
+        m_selected_bg = QColor::fromString(skin->getPLValue("selectedbg"));
         m_alternate_bg = m_normal_bg;
         m_splitter = alternate_splitter_color ? m_current : m_normal;
         m_group_bg = m_normal_bg;
@@ -101,16 +101,16 @@ void SkinnedListWidgetDrawer::readSettings()
     }
     else
     {
-        m_normal_bg.setNamedColor(settings.value("pl_bg1_color"_L1, m_normal_bg.name()).toString());
-        m_alternate_bg.setNamedColor(settings.value("pl_bg2_color"_L1, m_alternate_bg.name()).toString());
-        m_selected_bg.setNamedColor(settings.value("pl_highlight_color"_L1, m_selected_bg.name()).toString());
-        m_normal.setNamedColor(settings.value("pl_normal_text_color"_L1, m_normal.name()).toString());
-        m_current.setNamedColor(settings.value("pl_current_text_color"_L1, m_current.name()).toString());
-        m_splitter.setNamedColor(settings.value("pl_splitter_color"_L1, m_splitter).toString());
-        m_group_text.setNamedColor(settings.value("pl_group_text"_L1, m_group_text.name()).toString());
+        m_normal_bg = QColor::fromString(settings.value("pl_bg1_color"_L1, m_normal_bg.name()).toString());
+        m_alternate_bg = QColor::fromString(settings.value("pl_bg2_color"_L1, m_alternate_bg.name()).toString());
+        m_selected_bg = QColor::fromString(settings.value("pl_highlight_color"_L1, m_selected_bg.name()).toString());
+        m_normal = QColor::fromString(settings.value("pl_normal_text_color"_L1, m_normal.name()).toString());
+        m_current = QColor::fromString(settings.value("pl_current_text_color"_L1, m_current.name()).toString());
+        m_splitter = QColor::fromString(settings.value("pl_splitter_color"_L1, m_splitter).toString());
+        m_group_text = QColor::fromString(settings.value("pl_group_text"_L1, m_group_text.name()).toString());
         if(settings.value("pl_override_group_bg"_L1, false).toBool())
         {
-            m_group_bg.setNamedColor(settings.value("pl_group_bg"_L1, m_normal_bg.name()).toString());
+            m_group_bg = QColor::fromString(settings.value("pl_group_bg"_L1, m_normal_bg.name()).toString());
             m_group_alt_bg = m_group_bg;
         }
         else
@@ -120,7 +120,7 @@ void SkinnedListWidgetDrawer::readSettings()
         }
         if(settings.value("pl_override_current_bg"_L1, false).toBool())
         {
-            m_current_bg.setNamedColor(settings.value("pl_current_bg_color"_L1, m_normal_bg.name()).toString());
+            m_current_bg = QColor::fromString(settings.value("pl_current_bg_color"_L1, m_normal_bg.name()).toString());
             m_current_alt_bg = m_current_bg;
         }
         else

@@ -159,15 +159,15 @@ void SkinnedPlayListHeader::readSettings()
     if(settings.value("pl_use_skin_colors"_L1, true).toBool())
     {
         Skin *skin = Skin::instance();
-        m_normal.setNamedColor(skin->getPLValue("normal"));
-        m_current.setNamedColor(skin->getPLValue("current"));
-        m_normal_bg.setNamedColor(skin->getPLValue("normalbg"));
+        m_normal = QColor::fromString(skin->getPLValue("normal"));
+        m_current = QColor::fromString(skin->getPLValue("current"));
+        m_normal_bg = QColor::fromString(skin->getPLValue("normalbg"));
     }
     else
     {
-        m_normal_bg.setNamedColor(settings.value("pl_bg1_color"_L1, m_normal_bg.name()).toString());
-        m_normal.setNamedColor(settings.value("pl_normal_text_color"_L1, m_normal.name()).toString());
-        m_current.setNamedColor(settings.value("pl_current_text_color"_L1,m_current.name()).toString());
+        m_normal_bg = QColor::fromString(settings.value("pl_bg1_color"_L1, m_normal_bg.name()).toString());
+        m_normal = QColor::fromString(settings.value("pl_normal_text_color"_L1, m_normal.name()).toString());
+        m_current = QColor::fromString(settings.value("pl_current_text_color"_L1,m_current.name()).toString());
     }
 
     QPixmap px1(skinned_arrow_up_xpm);
