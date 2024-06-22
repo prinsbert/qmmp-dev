@@ -122,7 +122,7 @@ void HistoryWindow::loadHistory()
         info.setPath(query.value(11).toString());
 
         QDateTime dateTime = QDateTime::fromString(query.value(0).toString(), u"yyyy-MM-dd hh:mm:ss"_s);
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
         QString dateStr = dateTime.toLocalTime().toString(tr("dd MMMM yyyy"));
         QString timeStr = dateTime.toLocalTime().toString(tr("hh:mm:ss"));
         int topLevelCount = m_ui->historyTreeWidget->topLevelItemCount();
