@@ -76,7 +76,7 @@ QString YtbInputSource::findBackend(QString *version)
 {
     static const QStringList backends = { u"yt-dlp"_s, u"youtube-dl"_s };
 
-    for(const QString &backend : qAsConst(backends))
+    for(const QString &backend : std::as_const(backends))
     {
         QProcess p;
         p.start(backend, { u"--version"_s });
