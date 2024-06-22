@@ -106,7 +106,7 @@ QStringList QmmpFileDialogImpl::selectedFiles() const
     else
     {
         const QModelIndexList ml = m_ui->fileListView->selectionModel()->selectedIndexes();
-        for(const QModelIndex &i : qAsConst(ml))
+        for(const QModelIndex &i : std::as_const(ml))
             l << m_model->filePath(i);
     }
     return l;
@@ -222,7 +222,7 @@ void QmmpFileDialogImpl::on_addPushButton_clicked()
             ml = m_ui->fileListView->selectionModel()->selectedIndexes();
         else
             ml = m_ui->treeView->selectionModel()->selectedIndexes();
-       for(const QModelIndex &i : qAsConst(ml))
+       for(const QModelIndex &i : std::as_const(ml))
         {
             if(!l.contains(m_model->filePath(i)))
                 l << m_model->filePath(i);
@@ -358,7 +358,7 @@ void QmmpFileDialogImpl::updateSelection ()
         ml = m_ui->treeView->selectionModel()->selectedIndexes();
     QStringList l;
     QStringList files;
-    for(const QModelIndex &i : qAsConst(ml))
+    for(const QModelIndex &i : std::as_const(ml))
     {
         if(!l.contains(m_model->filePath(i).section(QLatin1Char('/'), -1)))
         {
@@ -383,7 +383,7 @@ void QmmpFileDialogImpl::updateSelection ()
         if(m_mode == FileDialog::AddFiles || m_mode == FileDialog::AddFile/* || FileDialog::SaveFile*/)
         {
             m_ui->addPushButton->setEnabled(true);
-            for(const QString &file : qAsConst(files))
+            for(const QString &file : std::as_const(files))
             {
                 if(QFileInfo(file).isDir())
                 {

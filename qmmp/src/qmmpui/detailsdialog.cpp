@@ -47,7 +47,7 @@ DetailsDialog::DetailsDialog(const QList<PlayListTrack *> &tracks, QWidget *pare
     updatePage();
     on_tabWidget_currentChanged(0);
 
-    for(PlayListTrack *t : qAsConst(m_tracks))
+    for(PlayListTrack *t : std::as_const(m_tracks))
         t->beginUsage();
 }
 
@@ -56,7 +56,7 @@ DetailsDialog::DetailsDialog(PlayListTrack *track, QWidget *parent) : DetailsDia
 
 DetailsDialog::~DetailsDialog()
 {
-    for(PlayListTrack *t : qAsConst(m_tracks))
+    for(PlayListTrack *t : std::as_const(m_tracks))
     {
         t->endUsage();
         if (!t->isUsed() && t->isSheduledForDeletion())
@@ -340,7 +340,7 @@ void DetailsDialog::printInfo()
     }
     if(m_metaDataModel)
         items << m_metaDataModel->extraProperties();
-    for(const MetaDataItem &item : qAsConst(items))
+    for(const MetaDataItem &item : std::as_const(items))
         propertyRows += formatRow(item);
     propertyRows = propertyRows.trimmed();
     if(!propertyRows.isEmpty())

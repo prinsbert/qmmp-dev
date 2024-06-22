@@ -34,7 +34,7 @@ void DockWidgetList::registerMenu(QMenu *menu, QAction *before)
     m_menu = menu;
     m_beforeAction = before;
 
-    for(QDockWidget *dock : qAsConst(m_dockWidgetList))
+    for(QDockWidget *dock : std::as_const(m_dockWidgetList))
         menu->insertAction(m_beforeAction, dock->toggleViewAction());
 }
 
@@ -44,7 +44,7 @@ void DockWidgetList::setTitleBarsVisible(bool visible)
 
     if(visible)
     {
-        for(QDockWidget *w : qAsConst(m_dockWidgetList))
+        for(QDockWidget *w : std::as_const(m_dockWidgetList))
         {
             QWidget *widget = w->titleBarWidget();
             if(widget)
@@ -56,7 +56,7 @@ void DockWidgetList::setTitleBarsVisible(bool visible)
     }
     else
     {
-        for(QDockWidget *w : qAsConst(m_dockWidgetList))
+        for(QDockWidget *w : std::as_const(m_dockWidgetList))
         {
             if(!w->titleBarWidget())
                 w->setTitleBarWidget(new QWidget());

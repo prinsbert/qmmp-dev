@@ -73,7 +73,7 @@ void GroupedContainer::addTrack(PlayListTrack *track)
 void GroupedContainer::addTracks(const QList<PlayListTrack *> &tracks)
 {
     m_tracks.reserve(m_tracks.count() + tracks.count());
-    for(PlayListTrack *track : qAsConst(tracks))
+    for(PlayListTrack *track : std::as_const(tracks))
         addTrack(track);
 }
 
@@ -111,7 +111,7 @@ int GroupedContainer::insertTrack(int index, PlayListTrack *track)
 
 void GroupedContainer::replaceTracks(const QList<PlayListTrack *> &tracks)
 {
-    for(PlayListGroup *g : qAsConst(m_groups))
+    for(PlayListGroup *g : std::as_const(m_groups))
     {
         g->m_trackList.clear();
         g->m_title2.clear();
@@ -153,10 +153,10 @@ bool GroupedContainer::isEmpty() const
 
 void GroupedContainer::clearSelection()
 {
-    for(PlayListTrack *track : qAsConst(m_tracks))
+    for(PlayListTrack *track : std::as_const(m_tracks))
         track->setSelected(false);
 
-    for(PlayListGroup *group : qAsConst(m_groups))
+    for(PlayListGroup *group : std::as_const(m_groups))
         group->setSelected(false);
 }
 
@@ -213,7 +213,7 @@ void GroupedContainer::removeTrack(PlayListTrack *track)
 
 void GroupedContainer::removeTracks(QList<PlayListTrack *> tracks)
 {
-    for(PlayListTrack *t : qAsConst(tracks))
+    for(PlayListTrack *t : std::as_const(tracks))
         removeTrack(t);
 }
 
@@ -245,7 +245,7 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
     if(!group)
         return false;
 
-    for(int i : qAsConst(indexes))
+    for(int i : std::as_const(indexes))
     {
         if(i < firstIndex || i > lastIndex)
             return false;
@@ -257,7 +257,7 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 
     if (from > to)
     {
-        for(int i : qAsConst(indexes))
+        for(int i : std::as_const(indexes))
         {
             if (i + to - from < 0)
                 break;
@@ -286,7 +286,7 @@ bool GroupedContainer::move(const QList<int> &indexes, int from, int to)
 QList<PlayListTrack *> GroupedContainer::takeAllTracks()
 {
     QList<PlayListTrack *> tracks = m_tracks;
-    for(PlayListGroup *g : qAsConst(m_groups))
+    for(PlayListGroup *g : std::as_const(m_groups))
     {
         g->m_trackList.clear();
         g->m_title2.clear();
@@ -350,7 +350,7 @@ QList<PlayListItem *> GroupedContainer::itemsAtLines(int pos, int length) const
     updateCache();
     QList<PlayListLine> lines = m_lines.mid(pos, length);
     QList<PlayListItem *> out;
-    for(const PlayListLine &line : qAsConst(lines))
+    for(const PlayListLine &line : std::as_const(lines))
     {
         if(line.isGroup)
             out << m_groups.at(line.index);
@@ -413,7 +413,7 @@ void GroupedContainer::updateCache() const
 
         alternateColor = !alternateColor;
 
-        for(PlayListTrack *track : qAsConst(m_groups.at(g)->m_trackList))
+        for(PlayListTrack *track : std::as_const(m_groups.at(g)->m_trackList))
         {
             PlayListLine line = {
                 .isGroup = false,

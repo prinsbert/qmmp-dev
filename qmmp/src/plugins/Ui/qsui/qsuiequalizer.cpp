@@ -109,7 +109,7 @@ QSUiEqualizer::QSUiEqualizer(QWidget *parent) : QDialog(parent)
     m_layout->addItem(slidersLayout);
     m_layout->addItem(buttonsLayout);
     setMinimumHeight(300);
-    for(const QSlider *slider : qAsConst(m_sliders))
+    for(const QSlider *slider : std::as_const(m_sliders))
     {
         connect(slider, &QSlider::valueChanged, this, &QSUiEqualizer::applySettings);
     }
@@ -175,7 +175,7 @@ void QSUiEqualizer::applySettings()
 
 void QSUiEqualizer::resetSettings()
 {
-    for(QSlider *slider : qAsConst(m_sliders))
+    for(QSlider *slider : std::as_const(m_sliders))
     {
         slider->setValue(0);
     }

@@ -178,7 +178,7 @@ void ProjectM4Widget::findPresets(const QString &path)
     presetDir.setFilter(QDir::Files);
     const QFileInfoList files = presetDir.entryInfoList({ "*.prjm", "*.milk" }, QDir::Files);
 
-    for(const QFileInfo &info : qAsConst(files))
+    for(const QFileInfo &info : std::as_const(files))
     {
         projectm_playlist_add_preset(m_playlistHandle, qPrintable(info.canonicalFilePath()), false);
         m_listWidget->addItem(info.fileName());
@@ -186,7 +186,7 @@ void ProjectM4Widget::findPresets(const QString &path)
     }
 
     const QFileInfoList dirs = presetDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
-    for(const QFileInfo &info : qAsConst(dirs))
+    for(const QFileInfo &info : std::as_const(dirs))
         findPresets(info.canonicalFilePath());
 }
 

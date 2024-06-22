@@ -54,7 +54,7 @@ QList<UiFactory *> UiLoader::factories()
 {
     loadPlugins();
     QList<UiFactory *> list;
-    for(QmmpUiPluginCache *item : qAsConst(*m_cache))
+    for(QmmpUiPluginCache *item : std::as_const(*m_cache))
     {
         if(item->uiFactory())
             list.append(item->uiFactory());
@@ -66,7 +66,7 @@ QStringList UiLoader::names()
 {
     QStringList out;
     loadPlugins();
-    for(const QmmpUiPluginCache *item : qAsConst(*m_cache))
+    for(const QmmpUiPluginCache *item : std::as_const(*m_cache))
     {
         out << item->shortName();
     }
@@ -108,7 +108,7 @@ UiFactory *UiLoader::selected()
 #else
     QString name = settings.value(u"Ui/current_plugin"_s, QStringLiteral(QMMP_DEFAULT_UI)).toString();
 #endif
-    for(QmmpUiPluginCache *item : qAsConst(*m_cache))
+    for(QmmpUiPluginCache *item : std::as_const(*m_cache))
     {
         if(item->shortName() == name && item->uiFactory())
             return item->uiFactory();

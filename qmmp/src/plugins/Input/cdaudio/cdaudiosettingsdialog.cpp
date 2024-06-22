@@ -79,6 +79,6 @@ void CDAudioSettingsDialog::on_clearCacheButton_clicked()
     QDir dir(Qmmp::cacheDir());
     dir.cd(u"cddbcache"_s);
     const QStringList list = dir.entryList({ u"*"_s }, QDir::Files);
-    for(const QString &name : qAsConst(list))
+    for(const QString &name : std::as_const(list))
         dir.remove(name);
 }

@@ -269,7 +269,7 @@ void TrackListModel::onListChanged(int flags)
         m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
         changed.unite(m_queue);
 
-        for(PlayListTrack *t : qAsConst(changed))
+        for(PlayListTrack *t : std::as_const(changed))
             emit dataChanged(index(t->trackIndex() ,0), index(t->trackIndex(), 0), { JumpToTrackDialog::QueueRole } );
     }
 }

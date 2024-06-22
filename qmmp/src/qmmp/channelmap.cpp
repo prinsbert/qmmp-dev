@@ -40,7 +40,7 @@ ChannelMap::ChannelMap(int channels)
 int ChannelMap::mask() const
 {
     int mask = 0;
-    for(const Qmmp::ChannelPosition channel : qAsConst(*this))
+    for(const Qmmp::ChannelPosition channel : std::as_const(*this))
     {
         mask |= channel;
     }
@@ -78,7 +78,7 @@ const QString ChannelMap::toString() const
     };
 
     QStringList list;
-    for(const Qmmp::ChannelPosition channel : qAsConst(*this))
+    for(const Qmmp::ChannelPosition channel : std::as_const(*this))
        list << names.value(channel);
 
     return list.join(QLatin1Char(','));

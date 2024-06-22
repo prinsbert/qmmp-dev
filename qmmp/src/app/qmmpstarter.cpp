@@ -297,7 +297,7 @@ void QMMPStarter::startPlayer()
                 u"playlist.txt"_s, u"Songlengths.txt"_s, u"winamp_presets"_s
             };
 
-            for(const QString &name : qAsConst(filesToCopy))
+            for(const QString &name : std::as_const(filesToCopy))
                 QFile::copy(QDir::homePath() + u"/.qmmp/"_s + name, Qmmp::configDir() + QLatin1Char('/') + name);
 
             QProcess::execute(QStringLiteral("cp"), { u"-r"_s, QDir::homePath() + u"/.qmmp/skins"_s, Qmmp::configDir() });
@@ -421,7 +421,7 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
     if(slist.isEmpty())
         return QString();
     QStringList paths;
-    for(const QString &arg : qAsConst(slist)) //detect file/directory paths
+    for(const QString &arg : std::as_const(slist)) //detect file/directory paths
     {
         if(arg.startsWith(QLatin1Char('-')))
             break;
@@ -477,7 +477,7 @@ void QMMPStarter::printUsage()
     extraHelp << tr("Home page: %1").arg(u"https://qmmp.ylsoftware.com"_s);
     extraHelp << tr("Development page: %1").arg(u"https://sourceforge.net/p/qmmp-dev"_s);
     extraHelp << tr("Bug tracker: %1").arg(u"https://sourceforge.net/p/qmmp-dev/tickets"_s);
-    for(const QString &line : qAsConst(extraHelp))
+    for(const QString &line : std::as_const(extraHelp))
         cout << qPrintable(CommandLineManager::formatHelpString(line)) << endl;
 #ifdef Q_OS_WIN
     string text = tmp_stream.str();

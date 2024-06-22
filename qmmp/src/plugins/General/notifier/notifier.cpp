@@ -133,7 +133,7 @@ void Notifier::showMetaData()
     data.append(m_core->metaData(Qmmp::TRACK).toUtf8() + "\n");
     data.append(QString::number(m_core->duration() / 1000).toUtf8() + "\n");
 
-    for(const QString &path : qAsConst(m_psiTuneFiles))
+    for(const QString &path : std::as_const(m_psiTuneFiles))
     {
         QDir tuneDir = QFileInfo(path).absoluteDir();
         if(!tuneDir.exists())
@@ -164,7 +164,7 @@ void Notifier::removePsiTuneFiles()
 {
     if(m_psi) //clear psi notification
     {
-        for(const QString &path : qAsConst(m_psiTuneFiles))
+        for(const QString &path : std::as_const(m_psiTuneFiles))
             QFile::remove(path);
     }
 }

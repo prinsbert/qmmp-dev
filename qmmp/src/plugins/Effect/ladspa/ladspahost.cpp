@@ -58,7 +58,7 @@ LADSPAHost::LADSPAHost(QObject *parent) : QObject(parent)
 
         LADSPAPlugin *plugin = *it;
         LADSPAEffect *effect = createEffect(plugin);
-        for(LADSPAControl *c : qAsConst(effect->controls))
+        for(LADSPAControl *c : std::as_const(effect->controls))
             c->value = settings.value(QStringLiteral("port%1").arg(c->port), c->value).toFloat();
 
         m_effects.append(effect);
@@ -82,7 +82,7 @@ LADSPAHost::~LADSPAHost()
 
         settings.setValue(u"id"_s, (quint64)m_effects[i]->plugin->desc->UniqueID);
 
-        for(const LADSPAControl *c : qAsConst(m_effects[i]->controls))
+        for(const LADSPAControl *c : std::as_const(m_effects[i]->controls))
             settings.setValue(QStringLiteral("port%1").arg(c->port), c->value);
 
         settings.endGroup();
@@ -95,7 +95,7 @@ void LADSPAHost::configure(quint32 freq, int chan)
     m_chan = chan;
     m_freq = freq;
 
-    for(LADSPAEffect *e : qAsConst(m_effects))
+    for(LADSPAEffect *e : std::as_const(m_effects))
     {
         //deactivate effect
         deactivateEffect(e);
@@ -139,7 +139,7 @@ void LADSPAHost::loadModules()
     }
     else
         directories = ladspa_path.split(QLatin1Char(':'));
-    for(const QString &dir : qAsConst(directories))
+    for(const QString &dir : std::as_const(directories))
         findModules(dir);
 }
 
@@ -150,7 +150,7 @@ void LADSPAHost::findModules(const QString &path)
     dir.setSorting(QDir::Name);
     const QFileInfoList files = dir.entryInfoList({ u"*.so"_s });
 
-    for(const QFileInfo &file : qAsConst(files))
+    for(const QFileInfo &file : std::as_const(files))
     {
         void *library = dlopen(qPrintable(file.absoluteFilePath ()), RTLD_LAZY);
         if (!library)
@@ -355,15 +355,15 @@ void LADSPAHost::activateEffect(LADSPAEffect *e)
             continue;
         }
 
-        for(LADSPAControl *c : qAsConst(e->controls))
+        for(LADSPAControl *c : std::as_const(e->controls))
         {
             desc->connect_port(handle, c->port, &c->value);
         }
-        for(int port : qAsConst(e->in_ports))
+        for(int port : std::as_const(e->in_ports))
         {
             desc->connect_port(handle, port, m_buf[in_at++]);
         }
-        for(int port : qAsConst(e->out_ports))
+        for(int port : std::as_const(e->out_ports))
         {
             desc->connect_port(handle, port, m_buf[out_at++]);
         }
@@ -377,7 +377,7 @@ void LADSPAHost::activateEffect(LADSPAEffect *e)
 void LADSPAHost::deactivateEffect(LADSPAEffect *e)
 {
     const LADSPA_Descriptor *desc = e->plugin->desc;
-    for(const LADSPA_Handle &handle : qAsConst(e->handles))
+    for(const LADSPA_Handle &handle : std::as_const(e->handles))
     {
         if(desc->deactivate)
             desc->deactivate(handle);

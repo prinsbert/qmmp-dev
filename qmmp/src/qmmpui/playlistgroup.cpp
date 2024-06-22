@@ -122,7 +122,7 @@ QString PlayListGroup::formatTitle2() const
         return QString();
 
     qint64 duration = 0;
-    for(const PlayListTrack *t : qAsConst(m_trackList))
+    for(const PlayListTrack *t : std::as_const(m_trackList))
         duration += t->duration();
 
     TrackInfo info = *m_trackList.constFirst();

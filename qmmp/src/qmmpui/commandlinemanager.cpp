@@ -78,7 +78,7 @@ QString CommandLineManager::executeCommand(const QString &name, const QStringLis
     checkOptions();
     bool started = UiHelper::instance() && SoundCore::instance() && MediaPlayer::instance();
 
-    for(CommandLineHandler *opt : qAsConst(*m_options))
+    for(CommandLineHandler *opt : std::as_const(*m_options))
     {
         int id = opt->identify(name);
         if(id < 0)
@@ -98,7 +98,7 @@ bool CommandLineManager::hasOption(const QString &opt_str, CommandLineHandler::O
     checkOptions();
     if(flags)
         *flags = CommandLineHandler::OptionFlags();
-    for(const CommandLineHandler *opt : qAsConst(*m_options))
+    for(const CommandLineHandler *opt : std::as_const(*m_options))
     {
         int id = opt->identify(opt_str);
         if(id >= 0)
@@ -114,7 +114,7 @@ bool CommandLineManager::hasOption(const QString &opt_str, CommandLineHandler::O
 void CommandLineManager::printUsage()
 {
     checkOptions();
-    for(const CommandLineHandler *opt : qAsConst(*m_options))
+    for(const CommandLineHandler *opt : std::as_const(*m_options))
     {
         for(const QString &line : opt->helpString())
         {

@@ -102,7 +102,7 @@ DecoderProperties DecoderFFmpegFactory::properties() const
     };
     const QStringList disabledFilters = settings.value(u"FFMPEG/disabled_filters"_s, { u"*.mp3"_s }).toStringList();
 
-    for(const QString &filter : qAsConst(disabledFilters))
+    for(const QString &filter : std::as_const(disabledFilters))
         filters.remove(filter);
 
     if(!avcodec_find_decoder(AV_CODEC_ID_WMAV1))

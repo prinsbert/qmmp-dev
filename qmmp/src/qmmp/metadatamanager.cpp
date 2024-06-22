@@ -85,7 +85,7 @@ QList<TrackInfo *> MetaDataManager::createPlayList(const QString &path, TrackInf
     else if(efact)
         list = efact->createPlayList(path, parts, ignoredPaths);
 
-    for(TrackInfo *info : qAsConst(list))
+    for(TrackInfo *info : std::as_const(list))
     {
         if(info->value(Qmmp::DECODER).isEmpty() && (fact || efact))
             info->setValue(Qmmp::DECODER, fact ? fact->properties().shortName : efact->properties().shortName);
@@ -238,7 +238,7 @@ QFileInfoList MetaDataManager::findCoverFiles(QDir dir, int depth) const
     QFileInfoList file_list = dir.entryInfoList(m_settings->coverNameFilters());
 
     const auto fileListCopy = file_list; //avoid container modification
-    for(const QFileInfo &i : qAsConst(fileListCopy))
+    for(const QFileInfo &i : std::as_const(fileListCopy))
     {
         if(QDir::match(m_settings->coverNameFilters(false), i.fileName()))
             file_list.removeAll(i);
@@ -253,7 +253,7 @@ QFileInfoList MetaDataManager::findCoverFiles(QDir dir, int depth) const
     dir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
     dir.setSorting(QDir::Name);
     const QFileInfoList dir_info_list = dir.entryInfoList();
-    for(const QFileInfo &i : qAsConst(dir_info_list))
+    for(const QFileInfo &i : std::as_const(dir_info_list))
     {
         file_list << findCoverFiles(QDir(i.absoluteFilePath()), depth);
     }
@@ -304,7 +304,7 @@ void MetaDataManager::prepareForAnotherThread()
 
 bool MetaDataManager::hasMatch(const QList<QRegularExpression> &regExps, const QString &path)
 {
-    for(const QRegularExpression &re : qAsConst(regExps))
+    for(const QRegularExpression &re : std::as_const(regExps))
     {
         if(re.match(path).hasMatch())
             return true;

@@ -108,7 +108,7 @@ QList<EffectFactory *> Effect::factories()
 {
     loadPlugins();
     QList<EffectFactory *> list;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(item->effectFactory())
             list.append(item->effectFactory());
@@ -120,7 +120,7 @@ QList<EffectFactory *> Effect::enabledFactories()
 {
     loadPlugins();
     QList<EffectFactory *> list;
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(m_enabledNames.contains(item->shortName()) && item->effectFactory())
             list.append(item->effectFactory());
@@ -131,7 +131,7 @@ QList<EffectFactory *> Effect::enabledFactories()
 QString Effect::file(const EffectFactory *factory)
 {
     loadPlugins();
-    for(const QmmpPluginCache *item : qAsConst(*m_cache))
+    for(const QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(item->shortName() == factory->properties().shortName)
             return item->file();
@@ -177,7 +177,7 @@ bool Effect::isEnabled(const EffectFactory *factory)
 EffectFactory *Effect::findFactory(const QString &shortName)
 {
     loadPlugins();
-    for(QmmpPluginCache *item : qAsConst(*m_cache))
+    for(QmmpPluginCache *item : std::as_const(*m_cache))
     {
         if(item->shortName() == shortName)
             return item->effectFactory();

@@ -108,7 +108,7 @@ void SkinnedSettings::on_skinInstallButton_clicked()
 {
     const QStringList files = FileDialog::getOpenFileNames(this,tr("Select Skin Files"), QDir::homePath(),
                                                            tr("Skin files") + u" (*.tar.gz *.tgz *.tar.bz2 *.zip *.wsz)"_s);
-    for(const QString &path : qAsConst(files))
+    for(const QString &path : std::as_const(files))
     {
         QFile file(path);
         file.copy(Qmmp::configDir() + u"/skins/"_s + QFileInfo(path).fileName());
@@ -180,7 +180,7 @@ void SkinnedSettings::loadSkins()
     item->setToolTip(tr("Default skin"));
     m_ui->listWidget->addItem(item);
 
-    for(const QString &path : qAsConst(m_reader->skins()))
+    for(const QString &path : std::as_const(m_reader->skins()))
     {
         fileInfo.setFile(path);
         item = new QListWidgetItem(fileInfo.fileName());

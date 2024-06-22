@@ -40,7 +40,7 @@ QList<PlayListTrack *> FileLoader::processFile(const QString &path, QStringList 
     QList<PlayListTrack *> tracks;
     const QList<TrackInfo *> infoList = MetaDataManager::instance()->createPlayList(path, m_parts, ignoredPaths);
 
-    for(const TrackInfo *info : qAsConst(infoList))
+    for(const TrackInfo *info : std::as_const(infoList))
     {
         tracks.append(new PlayListTrack(info));
     }
@@ -167,7 +167,7 @@ void FileLoader::addDirectory(const QString& s, PlayListTrack *before)
     dir.setSorting(QDir::Name);
     QFileInfoList l = dir.entryInfoList(m_filters);
 
-    for(const QFileInfo &info : qAsConst(l))
+    for(const QFileInfo &info : std::as_const(l))
     {
         if(checkRestrictFilters(info) && checkExcludeFilters(info))
         {
@@ -307,7 +307,7 @@ void FileLoader::insert(PlayListTrack *before, const QString &path)
 void FileLoader::insert(PlayListTrack *before, const QStringList &paths)
 {
     m_mutex.lock();
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         LoaderTask task;
         task.before = before;

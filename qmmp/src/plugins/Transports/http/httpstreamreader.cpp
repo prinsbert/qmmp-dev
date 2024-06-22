@@ -500,7 +500,7 @@ void HttpStreamReader::parseICYMetaData(char *data, qint64 size)
 #endif
     QString str = m_codec->toUnicode(data).trimmed();
     const QStringList list(str.split(QLatin1Char(';'), Qt::SkipEmptyParts));
-    for(QString line : qAsConst(list))
+    for(QString line : std::as_const(list))
     {
         if (line.contains(u"StreamTitle="_s))
         {

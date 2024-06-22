@@ -643,7 +643,7 @@ void SkinnedPlayList::copySelectedMenuActionTriggered(QAction *action)
     }
 
     QList<PlayListTrack *> theCopy;
-    for(PlayListTrack *track : qAsConst(selectedTracks))
+    for(PlayListTrack *track : std::as_const(selectedTracks))
     {
         PlayListTrack *newItem = new PlayListTrack(*track);
         theCopy << newItem;

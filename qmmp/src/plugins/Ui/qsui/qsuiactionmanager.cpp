@@ -274,7 +274,7 @@ void QSUiActionManager::updateToolBar(QToolBar *toolBar, const ToolBarInfo &info
     toolBar->clear();
     toolBar->setIconSize(info.iconSize);
     toolBar->setWindowTitle(info.title);
-    for(const QString &name : qAsConst(info.actionNames))
+    for(const QString &name : std::as_const(info.actionNames))
     {
         if(name == QLatin1String("separator"))
         {
@@ -297,7 +297,7 @@ QSUiActionManager::ToolBarInfo QSUiActionManager::defaultToolBar() const
         UI_SEPARATOR, UI_POS_SLIDER, UI_SEPARATOR, UI_VOL_SLIDER, VOL_MUTE
     };
     QStringList names;
-    for(const Type &id : qAsConst(idList))
+    for(const Type &id : std::as_const(idList))
     {
         if(id == UI_SEPARATOR)
         {

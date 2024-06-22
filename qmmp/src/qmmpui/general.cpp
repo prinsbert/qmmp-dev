@@ -59,7 +59,7 @@ void General::create(QObject *parent)
     m_generals = new QHash<GeneralFactory*, QObject*>();
     m_parent = parent;
     loadPlugins();
-    for(QmmpUiPluginCache* item : qAsConst(*m_cache))
+    for(QmmpUiPluginCache* item : std::as_const(*m_cache))
     {
         if(!m_enabledNames.contains(item->shortName()))
             continue;
@@ -77,7 +77,7 @@ QList<GeneralFactory *> General::factories()
 {
     loadPlugins();
     QList<GeneralFactory *> list;
-    for(QmmpUiPluginCache *item : qAsConst(*m_cache))
+    for(QmmpUiPluginCache *item : std::as_const(*m_cache))
     {
         if(item->generalFactory())
             list.append(item->generalFactory());
@@ -89,7 +89,7 @@ QList<GeneralFactory *> General::enabledFactories()
 {
     loadPlugins();
     QList<GeneralFactory *> list;
-    for(QmmpUiPluginCache *item : qAsConst(*m_cache))
+    for(QmmpUiPluginCache *item : std::as_const(*m_cache))
     {
         if(!m_enabledNames.contains(item->shortName()))
             continue;

@@ -92,7 +92,7 @@ QStringList UDisksDevice::mountPoints() const
 
     const QList<QVariant> args = reply.arguments();
 
-    for(const QVariant &arg : qAsConst(args))
+    for(const QVariant &arg : std::as_const(args))
     {
         QByteArrayList list;
         QDBusArgument a = arg.value<QDBusVariant>().variant().value<QDBusArgument>();
@@ -100,7 +100,7 @@ QStringList UDisksDevice::mountPoints() const
             continue;
         a >> list;
 
-        for(const QByteArray &p : qAsConst(list))
+        for(const QByteArray &p : std::as_const(list))
             points.append(QString::fromLocal8Bit(p));
     }
     return points;

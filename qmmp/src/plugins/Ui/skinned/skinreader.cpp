@@ -50,7 +50,7 @@ void SkinReader::loadSkins(const QStringList &paths)
     m_previewHash.clear();
     QFileInfoList infoList;
     //find all file and directories
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         QDir dir(path);
         dir.setSorting(QDir::Name);
@@ -62,10 +62,10 @@ void SkinReader::loadSkins(const QStringList &paths)
     QHash<QString, QString> thumbnailHash; //base name, full path
     QFileInfoList thumbnailes = cacheDir.entryInfoList(QDir::Files | QDir::Hidden);
 
-    for(const QFileInfo &i : qAsConst(thumbnailes))
+    for(const QFileInfo &i : std::as_const(thumbnailes))
         thumbnailHash.insert(i.baseName(), i.canonicalFilePath());
 
-    for(const QFileInfo &info : qAsConst(infoList))
+    for(const QFileInfo &info : std::as_const(infoList))
     {
         if(info.isDir())
         {
@@ -112,10 +112,10 @@ void SkinReader::loadSkins(const QStringList &paths)
     thumbnailHash.clear();
     thumbnailes = cacheDir.entryInfoList(QDir::Files | QDir::Hidden);
 
-    for(const QFileInfo &i : qAsConst(thumbnailes))
+    for(const QFileInfo &i : std::as_const(thumbnailes))
         thumbnailHash.insert(i.baseName(), i.canonicalFilePath());
 
-    for(const QFileInfo &info : qAsConst(infoList))
+    for(const QFileInfo &info : std::as_const(infoList))
     {
         if(info.isDir())
             continue;
@@ -133,7 +133,7 @@ void SkinReader::loadSkins(const QStringList &paths)
 
     //clear removed skins from cache
     const QSet<QString> usedThumbnails(m_previewHash.constBegin(), m_previewHash.constEnd());
-    for(const QFileInfo &i : qAsConst(thumbnailes))
+    for(const QFileInfo &i : std::as_const(thumbnailes))
     {
         if(!usedThumbnails.contains(i.canonicalFilePath()))
         {
@@ -159,7 +159,7 @@ void SkinReader::unpackSkin(const QString &path)
     QDir dir(unpackedSkinPath());
     dir.setFilter(QDir::Files | QDir::Hidden);
     const QFileInfoList f = dir.entryInfoList();
-    for(const QFileInfo &file : qAsConst(f))
+    for(const QFileInfo &file : std::as_const(f))
         dir.remove(file.fileName());
     //create skin cache directory
     if(!QFile::exists(unpackedSkinPath()))
@@ -199,7 +199,7 @@ void SkinReader::untar(const QString &from, const QString &to, bool preview)
     QByteArray array = process.readAllStandardOutput ();
     const QStringList outputList = QString::fromLocal8Bit(array).split(QChar::LineFeed, Qt::SkipEmptyParts);
 
-    for(QString str : qAsConst(outputList))
+    for(QString str : std::as_const(outputList))
     {
         str = str.trimmed();
 
@@ -238,7 +238,7 @@ void SkinReader::unzip(const QString &from, const QString &to, bool preview)
         QDir dir(to);
         dir.setFilter(QDir::Files | QDir::Hidden);
         const QFileInfoList fileList = dir.entryInfoList();
-        for(const QFileInfo &thumbInfo : qAsConst(fileList))
+        for(const QFileInfo &thumbInfo : std::as_const(fileList))
         {
             if (thumbInfo.fileName().startsWith(u"main."_s, Qt::CaseInsensitive))
             {

@@ -33,7 +33,7 @@ void CoverLoader::add(const QStringList &paths)
 
     m_mutex.lock();
 
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
         m_paths.push(path);
 
     m_mutex.unlock();

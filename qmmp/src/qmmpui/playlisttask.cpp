@@ -138,7 +138,7 @@ void PlayListTask::sort(QList<PlayListTrack *> tracks, PlayListModel::SortMode m
 
     m_align_groups = QmmpUiSettings::instance()->isGroupsEnabled() && (mode != PlayListModel::GROUP);
 
-    for(PlayListTrack *t : qAsConst(tracks))
+    for(PlayListTrack *t : std::as_const(tracks))
     {
         TrackField *f = new TrackField;
         f->track = t;
@@ -423,7 +423,7 @@ void PlayListTask::run()
         }
         //find all files
         QFileInfoList l;
-        for(const QString &p : qAsConst(dirs))
+        for(const QString &p : std::as_const(dirs))
         {
             QDir dir(p);
             dir.setFilter(QDir::Files | QDir::Hidden);
@@ -433,7 +433,7 @@ void PlayListTask::run()
         //generate URLs for the current playlist
         QSet<QString> urls;
         urls.reserve(m_fields.count());
-        for(const TrackField *t : qAsConst(m_fields))
+        for(const TrackField *t : std::as_const(m_fields))
             urls.insert(t->value);
 
         //find files that have already been added
@@ -453,7 +453,7 @@ void PlayListTask::run()
         //create new playlist tracks
         QStringList ignoredFiles;
         TrackInfo::Parts parts = QmmpUiSettings::instance()->useMetaData() ? TrackInfo::AllParts : TrackInfo::Parts();
-        for(const QFileInfo &i : qAsConst(l))
+        for(const QFileInfo &i : std::as_const(l))
         {
             QStringList ignored;
             for(TrackInfo *info : mm->createPlayList(i.canonicalFilePath(), parts, &ignored))
@@ -500,7 +500,7 @@ QList<PlayListTrack *> PlayListTask::takeResults(PlayListTrack **current_track)
 {
     if(m_task == SORT || m_task == SORT_BY_COLUMN)
     {
-        for(const TrackField *f : qAsConst(m_fields))
+        for(const TrackField *f : std::as_const(m_fields))
             m_tracks.append(f->track);
     }
     else if(m_task == SORT_SELECTION)

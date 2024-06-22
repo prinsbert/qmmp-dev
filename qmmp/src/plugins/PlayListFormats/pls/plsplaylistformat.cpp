@@ -57,7 +57,7 @@ QList<PlayListTrack *> PLSPlaylistFormat::decode(const QByteArray &contents)
     int number = 0;
     bool error = false;
 
-    for(const QString &line : qAsConst(splitted))
+    for(const QString &line : std::as_const(splitted))
     {
         QRegularExpressionMatch match;
 
@@ -125,7 +125,7 @@ QByteArray PLSPlaylistFormat::encode(const QList<PlayListTrack *> &contents, con
     MetaDataFormatter formatter(u"%if(%p,%p - %t,%t)%if(%p|%t,,%f)"_s);
     QStringList out = { QStringLiteral("[playlist]") };
     int counter = 1;
-    for(const PlayListTrack *f : qAsConst(contents))
+    for(const PlayListTrack *f : std::as_const(contents))
     {
         out.append(QStringLiteral("File%1=%2").arg(counter).arg(f->path()));
         out.append(QStringLiteral("Title%1=%2").arg(counter).arg(formatter.format(f)));

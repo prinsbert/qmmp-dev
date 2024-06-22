@@ -85,7 +85,7 @@ void CopyPaste::copy()
 void CopyPaste::paste()
 {
     qCDebug(plugin) << Q_FUNC_INFO;
-    for(const PlayListTrack *track : qAsConst(m_buffer))
+    for(const PlayListTrack *track : std::as_const(m_buffer))
     {
         m_pl_manager->selectedPlayList()->add(new PlayListTrack(*track));
     }

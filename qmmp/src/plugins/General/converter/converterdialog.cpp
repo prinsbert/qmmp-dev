@@ -46,7 +46,7 @@ ConverterDialog::ConverterDialog(const QList<PlayListTrack *> &tracks,  QWidget 
 
     QStringList paths;
     MetaDataFormatter formatter(u"%if(%p&%t,%p - %t,%f) - %l"_s);
-    for(const PlayListTrack *track : qAsConst(tracks))
+    for(const PlayListTrack *track : std::as_const(tracks))
     {
         //skip streams
         if(track->duration() == 0 && track->path().contains(u"://"_s))
@@ -155,7 +155,7 @@ void ConverterDialog::on_stopButton_clicked()
     if(m_converters.isEmpty())
         return;
 
-    for(Converter *c : qAsConst(m_converters))
+    for(Converter *c : std::as_const(m_converters))
         c->stop();
     QThreadPool::globalInstance()->waitForDone();
     qDeleteAll(m_converters);
@@ -297,7 +297,7 @@ void ConverterDialog::readPresets(const QString &path)
             dataList.last()[key] = value;
     }
 
-    for(QVariantHash data : qAsConst(dataList))
+    for(QVariantHash data : std::as_const(dataList))
     {
         data[u"read_only"_s] = path.startsWith(u":/"_s);
         QString title = data[u"name"_s].toString();

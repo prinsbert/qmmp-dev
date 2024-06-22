@@ -176,7 +176,7 @@ void ProjectMWidget::findPresets(const QString &path)
     const QFileInfoList files = presetDir.entryInfoList({ u"*.prjm"_s, u"*.milk"_s }, QDir::Files);
 
     const RatingList list = { 3, 3 };
-    for(const QFileInfo &info : qAsConst(files))
+    for(const QFileInfo &info : std::as_const(files))
     {
         m_projectM->addPresetURL(info.absoluteFilePath().toStdString(), info.fileName().toStdString(), list);
         m_listWidget->addItem(info.fileName());
@@ -184,7 +184,7 @@ void ProjectMWidget::findPresets(const QString &path)
     }
 
     const QFileInfoList dirs = presetDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
-    for(const QFileInfo &info : qAsConst(dirs))
+    for(const QFileInfo &info : std::as_const(dirs))
         findPresets(info.canonicalFilePath());
 }
 

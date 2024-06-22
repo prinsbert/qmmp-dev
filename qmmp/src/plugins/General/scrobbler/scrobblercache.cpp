@@ -126,7 +126,7 @@ void ListenCache::save(const QList<SongInfo> &songs)
         qCWarning(plugin, "error %d: %s", file.error(), qPrintable(file.errorString()));
         return;
     }
-    for(const SongInfo &m : qAsConst(songs))
+    for(const SongInfo &m : std::as_const(songs))
     {
         file.write(QStringLiteral("title=%1\n").arg(m.value(Qmmp::TITLE)).toUtf8());
         file.write(QStringLiteral("artist=%1\n").arg(m.value(Qmmp::ARTIST)).toUtf8());

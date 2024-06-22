@@ -918,7 +918,7 @@ QRegion Skin::createRegion(const QString &path, const QString &group)
     }
     settings.endGroup();
     QStringList numbers;
-    for(const QString &str : qAsConst(value))
+    for(const QString &str : std::as_const(value))
         numbers << str.split(QChar::Space, Qt::SkipEmptyParts);
 
     QList<QString>::const_iterator n = numbers.constBegin();

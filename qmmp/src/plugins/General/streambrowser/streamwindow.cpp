@@ -183,7 +183,7 @@ void StreamWindow::on_addPushButton_clicked()
     if(m_ui->tabWidget->currentIndex() == 0)
     {
         const QModelIndexList indexes = m_ui->favoritesTableView->selectionModel()->selectedRows(0);
-        for(const QModelIndex &index : qAsConst(indexes))
+        for(const QModelIndex &index : std::as_const(indexes))
         {
             QModelIndex source_index = m_favoritesFilterModel->mapToSource(index);
             tracks << new PlayListTrack();
@@ -196,7 +196,7 @@ void StreamWindow::on_addPushButton_clicked()
     else
     {
         const QModelIndexList indexes = m_ui->icecastTableView->selectionModel()->selectedRows(0);
-        for(const QModelIndex &index : qAsConst(indexes))
+        for(const QModelIndex &index : std::as_const(indexes))
         {
             QModelIndex source_index = m_iceCastFilterModel->mapToSource(index);
             tracks << new PlayListTrack();
@@ -233,7 +233,7 @@ void StreamWindow::execFavoritesMenu(const QPoint &pos)
 void StreamWindow::addToFavorites()
 {
     const QModelIndexList indexes = m_ui->icecastTableView->selectionModel()->selectedRows(0);
-    for(const QModelIndex &index : qAsConst(indexes))
+    for(const QModelIndex &index : std::as_const(indexes))
     {
         QModelIndex source_index = m_iceCastFilterModel->mapToSource(index);
         int row = source_index.row();
@@ -308,7 +308,7 @@ void StreamWindow::removeFromFavorites()
         return;
     const QModelIndexList indexes = m_ui->favoritesTableView->selectionModel()->selectedRows(0);
     QList<int> rows_to_remove;
-    for(const QModelIndex &index : qAsConst(indexes))
+    for(const QModelIndex &index : std::as_const(indexes))
     {
         rows_to_remove.append(m_favoritesFilterModel->mapToSource(index).row());
     }

@@ -62,7 +62,7 @@ QString AboutQSUIDialog::getStringFromResource(const QString& res_file)
         paths << res_file + QLatin1Char('_') + Qmmp::systemLanguageID().split(QLatin1Char('_')).at(0) + u".txt"_s;
     paths << res_file + u".txt"_s << res_file;
 
-    for(const QString &path : qAsConst(paths))
+    for(const QString &path : std::as_const(paths))
     {
         QFile file(path);
         if (file.open(QIODevice::ReadOnly))

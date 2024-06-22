@@ -41,7 +41,7 @@ SkinnedPresetEditor::~SkinnedPresetEditor()
 
 void SkinnedPresetEditor::addPresets(const QStringList &names)
 {
-    for(const QString &name : qAsConst(names))
+    for(const QString &name : std::as_const(names))
     {
         m_ui->presetListWidget->addItem(name);
     }
@@ -49,7 +49,7 @@ void SkinnedPresetEditor::addPresets(const QStringList &names)
 
 void SkinnedPresetEditor::addAutoPresets(const QStringList &names)
 {
-    for(const QString &name : qAsConst(names))
+    for(const QString &name : std::as_const(names))
     {
         m_ui->autoPresetListWidget->addItem(name);
     }

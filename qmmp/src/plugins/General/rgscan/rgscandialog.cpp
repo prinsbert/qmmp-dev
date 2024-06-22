@@ -60,7 +60,7 @@ RGScanDialog::RGScanDialog(QList<PlayListTrack *> tracks,  QWidget *parent) : QD
 
     QStringList paths;
     MetaDataFormatter formatter(u"%if(%p&%t,%p - %t,%f) - %l"_s);
-    for(const PlayListTrack *track : qAsConst(tracks))
+    for(const PlayListTrack *track : std::as_const(tracks))
     {
         //skip streams
         if(track->duration() == 0 || track->path().contains(u"://"_s))
@@ -175,7 +175,7 @@ void RGScanDialog::onScanFinished(const QString &url)
         QMultiMap<QString, ReplayGainInfoItem*> itemGroupMap; //items grouped  by album
 
         //group by album name
-        for(RGScanner *scanner : qAsConst(m_scanners))
+        for(RGScanner *scanner : std::as_const(m_scanners))
         {
             if(!scanner->hasValues())
                 continue;
@@ -200,7 +200,7 @@ void RGScanDialog::onScanFinished(const QString &url)
             }
             double album_gain = GetAlbumGain(a, items.count());
             free(a);
-            for(ReplayGainInfoItem *item : qAsConst(items))
+            for(ReplayGainInfoItem *item : std::as_const(items))
             {
                 item->info[Qmmp::REPLAYGAIN_ALBUM_PEAK] = album_peak;
                 item->info[Qmmp::REPLAYGAIN_ALBUM_GAIN] = album_gain;
@@ -218,7 +218,7 @@ void RGScanDialog::onScanFinished(const QString &url)
         {
             QString itemUrl = m_ui->tableWidget->item(i, 0)->data(Qt::UserRole).toString();
             bool found = false;
-            for(const ReplayGainInfoItem *item : qAsConst(m_replayGainItemList))
+            for(const ReplayGainInfoItem *item : std::as_const(m_replayGainItemList))
             {
                 if(item->url == itemUrl)
                 {
@@ -254,7 +254,7 @@ void RGScanDialog::stop()
 {
     if(m_scanners.isEmpty())
         return;
-    for(RGScanner *scaner : qAsConst(m_scanners))
+    for(RGScanner *scaner : std::as_const(m_scanners))
     {
         scaner->stop();
     }
@@ -389,7 +389,7 @@ void RGScanDialog::on_writeButton_clicked()
 
     qCDebug(plugin, "writing ReplayGain values...");
 
-    for(ReplayGainInfoItem *item : qAsConst(m_replayGainItemList))
+    for(ReplayGainInfoItem *item : std::as_const(m_replayGainItemList))
     {
         QString ext = item->url.section(QLatin1Char('.'), -1).toLower();
 
