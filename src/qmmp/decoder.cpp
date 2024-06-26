@@ -171,44 +171,14 @@ QStringList Decoder::protocols()
 DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
 {
     loadPlugins();
-    DecoderFactory *fact = nullptr;
-    //detect by content if enabled
-    if(useContent)
-    {
-        QFile file(path);
-        if(!file.open(QIODevice::ReadOnly))
-        {
-            qCWarning(core, "file open error: %s", qPrintable(file.errorString()));
-            return nullptr;
-        }
 
-        for(QmmpPluginCache *item : std::as_const(*m_cache))
-        {
-            if(m_disabledNames.contains(item->shortName()))
-                continue;
-
-            if(!(fact = item->decoderFactory()))
-                continue;
-
-            if(fact->properties().noInput && !fact->properties().protocols.contains(u"file"_s))
-                continue;
-
-            if (fact->canDecode(&file))
-                return fact;
-        }
-        fact = nullptr;
-    }
-
-    const QList<DecoderFactory*> filtered = findByFileExtension(path);
+    //get list of available/supported factories
+    QList<DecoderFactory*> filtered = useContent ? enabledFactories() : findByFileExtension(path);
 
     if(filtered.isEmpty())
         return nullptr;
 
-    if(filtered.size() == 1)
-        return filtered.at(0);
-
-    //more than one factories with same filters
-    //try to determine by content
+    //try to find by content
     QFile file(path);
     if(!file.open(QIODevice::ReadOnly))
     {
@@ -222,7 +192,22 @@ DecoderFactory *Decoder::findByFilePath(const QString &path, bool useContent)
             return fact;
     }
 
-    if(!filtered.isEmpty() && !useContent) //fallback
+    //fallback: try to find by extension
+    if(useContent)
+        filtered = findByFileExtension(path);
+
+    for(DecoderFactory *fact : std::as_const(filtered))
+    {
+        if(fact->properties().noInput || fact->properties().protocols.contains(u"file"_s))
+            return fact;
+    }
+
+    //fallback: try to find by content
+    if(!useContent)
+        return findByContent(&file);
+
+    //fallback: use first available factory
+    if(!filtered.isEmpty() && !useContent)
         return filtered.constFirst();
 
     return nullptr;
