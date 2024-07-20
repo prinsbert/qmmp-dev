@@ -188,7 +188,7 @@ void QSUiActionManager::saveActions()
     QSettings settings;
     settings.beginGroup(u"SimpleUiShortcuts"_s);
 
-    for(const QAction *action : m_actions.values())
+    for(const QAction *action : std::as_const(m_actions))
     {
         settings.setValue(action->objectName(), action->shortcut());
     }
@@ -205,7 +205,7 @@ void QSUiActionManager::saveActions()
 
 void QSUiActionManager::resetShortcuts()
 {
-    for(QAction *action : m_actions.values())
+    for(QAction *action : std::as_const(m_actions))
     {
         action->setShortcut(action->property("defaultShortcut").toString());
     }
