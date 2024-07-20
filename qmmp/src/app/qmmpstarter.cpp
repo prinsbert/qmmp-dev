@@ -436,16 +436,17 @@ QString QMMPStarter::processCommandArgs(const QStringList &slist, const QString&
         return QString();
 
     QString out;
-    for(const QString &key : commands.keys())
+    for(auto it = commands.cbegin(); it != commands.cend(); ++it)
     {
-        if(key == "--no-start"_L1 || key == "--ui"_L1)
+        if(it.key() == "--no-start"_L1 || it.key() == "--ui"_L1)
             continue;
-        if (CommandLineManager::hasOption(key))
-            return CommandLineManager::executeCommand(key, commands.value(key), cwd);
 
-        int id = m_option_manager->identify(key);
+        if (CommandLineManager::hasOption(it.key()))
+            return CommandLineManager::executeCommand(it.key(), it.value(), cwd);
+
+        int id = m_option_manager->identify(it.key());
         if(id >= 0)
-            out += m_option_manager->executeCommand(id, commands.value(key), cwd);
+            out += m_option_manager->executeCommand(id, it.value(), cwd);
         else
             return QString();
     }
