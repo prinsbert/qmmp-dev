@@ -9,7 +9,7 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 #libqmmp
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
-SET(libcovermanager_SRCS
+set(libcovermanager_SRCS
     coverwidget.cpp
     covermanager.cpp
     covermanagerfactory.cpp
@@ -21,7 +21,7 @@ SET(libcovermanager_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-ADD_LIBRARY(covermanager MODULE ${libcovermanager_SRCS})
+add_library(covermanager MODULE ${libcovermanager_SRCS})
 add_dependencies(covermanager libqmmpui)
 target_link_libraries(covermanager PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS covermanager DESTINATION ${PLUGIN_DIR}/General)

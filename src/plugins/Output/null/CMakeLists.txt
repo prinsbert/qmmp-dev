@@ -6,7 +6,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
-SET(libnull_SRCS
+set(libnull_SRCS
   outputnull.cpp
   outputnullfactory.cpp
   translations/translations.qrc
@@ -17,7 +17,7 @@ SET(libnull_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 
-ADD_LIBRARY(null MODULE ${libnull_SRCS})
+add_library(null MODULE ${libnull_SRCS})
 add_dependencies(null libqmmp)
 target_link_libraries(null PRIVATE Qt6::Widgets libqmmp)
 install(TARGETS null DESTINATION ${PLUGIN_DIR}/Output)

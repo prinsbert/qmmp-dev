@@ -1,8 +1,6 @@
 project(libqmmpui)
 
-ADD_DEFINITIONS(-DQMMPUI_LIBRARY)
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+add_definitions(-DQMMPUI_LIBRARY)
 
 # libqmmp
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../)
@@ -10,14 +8,14 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../)
 link_directories(${CMAKE_INSTALL_PREFIX}/${LIB_DIR})
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../qmmp)
 
-SET(QMMP_DEFAULT_UI "" CACHE STRING "default user interface")
-IF(QMMP_DEFAULT_UI)
-    SET(libqmmpui_DEFINES ${libqmmpui_DEFINES} QMMP_DEFAULT_UI="${QMMP_DEFAULT_OUTPUT}")
-    MESSAGE(STATUS "Default user interface: ${QMMP_DEFAULT_UI}")
-ENDIF(QMMP_DEFAULT_UI)
+set(QMMP_DEFAULT_UI "" CACHE STRING "default user interface")
+if(QMMP_DEFAULT_UI)
+    set(libqmmpui_DEFINES ${libqmmpui_DEFINES} QMMP_DEFAULT_UI="${QMMP_DEFAULT_OUTPUT}")
+    message(STATUS "Default user interface: ${QMMP_DEFAULT_UI}")
+endif(QMMP_DEFAULT_UI)
 
 
-SET(libqmmpui_SRCS
+set(libqmmpui_SRCS
     general.cpp
     uihelper.cpp
     playlistparser.cpp
@@ -112,25 +110,25 @@ SET(libqmmpui_DEVEL_HDRS
 )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
-SET(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/forms)
+set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/forms)
 
-ADD_LIBRARY(libqmmpui SHARED ${libqmmpui_SRCS})
+add_library(libqmmpui SHARED ${libqmmpui_SRCS})
 target_link_libraries(libqmmpui PRIVATE Qt6::Widgets Qt6::Network libqmmp)
 add_dependencies(libqmmpui libqmmp)
-SET_TARGET_PROPERTIES(libqmmpui PROPERTIES VERSION ${QMMP_VERSION} SOVERSION ${QMMP_SOVERSION} OUTPUT_NAME qmmpui${APP_NAME_SUFFIX})
+set_target_properties(libqmmpui PROPERTIES VERSION ${QMMP_VERSION} SOVERSION ${QMMP_SOVERSION} OUTPUT_NAME qmmpui${APP_NAME_SUFFIX})
 target_compile_definitions(libqmmpui PRIVATE ${libqmmpui_DEFINES})
 install(TARGETS libqmmpui LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
                           RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
                           ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 
-IF(APP_NAME_SUFFIX)
+if(APP_NAME_SUFFIX)
     install(FILES ${libqmmpui_DEVEL_HDRS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qmmp${APP_NAME_SUFFIX}/qmmpui)
-    SET(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR}/qmmp${APP_NAME_SUFFIX})
-ELSE()
+    set(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR}/qmmp${APP_NAME_SUFFIX})
+else()
     install(FILES ${libqmmpui_DEVEL_HDRS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qmmpui)
-    SET(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR})
-ENDIF()
+    set(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+endif()
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/qmmpui.pc.in ${CMAKE_CURRENT_BINARY_DIR}/qmmpui${APP_NAME_SUFFIX}.pc @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmmpui${APP_NAME_SUFFIX}.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)

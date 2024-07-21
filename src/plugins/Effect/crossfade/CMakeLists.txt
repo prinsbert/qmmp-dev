@@ -18,8 +18,7 @@ SET(libcrossfade_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-
-ADD_LIBRARY(crossfade MODULE ${libcrossfade_SRCS})
+add_library(crossfade MODULE ${libcrossfade_SRCS})
 add_dependencies(crossfade libqmmp)
 target_link_libraries(crossfade PRIVATE Qt6::Widgets libqmmp)
 install(TARGETS crossfade DESTINATION ${PLUGIN_DIR}/Effect)
