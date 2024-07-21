@@ -15,7 +15,6 @@ SET(libwaveout_SRCS
 
 if(WINDOWS_H_FOUND)
     add_library(waveout MODULE ${libwaveout_SRCS} ${libwaveout_RCC_SRCS} ${libwaveout_HDRS})
-    add_dependencies(waveout libqmmp)
     target_link_libraries(waveout PRIVATE Qt6::Widgets libqmmp -lwinmm)
     install(TARGETS waveout DESTINATION ${PLUGIN_DIR}/Output)
 endif(WINDOWS_H_FOUND)

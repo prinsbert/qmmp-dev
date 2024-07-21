@@ -12,6 +12,5 @@ set(libtwopanelfiledialog_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(twopanelfiledialog MODULE ${libtwopanelfiledialog_SRCS})
-add_dependencies(twopanelfiledialog libqmmpui)
 target_link_libraries(twopanelfiledialog PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS twopanelfiledialog DESTINATION ${PLUGIN_DIR}/FileDialogs)

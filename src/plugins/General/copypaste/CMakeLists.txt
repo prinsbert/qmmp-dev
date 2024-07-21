@@ -11,6 +11,5 @@ set(libcopypaste_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(copypaste MODULE ${libcopypaste_SRCS})
-add_dependencies(copypaste libqmmpui)
 target_link_libraries(copypaste PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS copypaste DESTINATION ${PLUGIN_DIR}/General)

@@ -12,6 +12,5 @@ set(libqmmpfiledialog_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(qmmpfiledialog MODULE ${libqmmpfiledialog_SRCS})
-add_dependencies(qmmpfiledialog libqmmpui)
 target_link_libraries(qmmpfiledialog PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS qmmpfiledialog DESTINATION ${PLUGIN_DIR}/FileDialogs)

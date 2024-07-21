@@ -16,7 +16,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(SOXR_FOUND)
     add_library(soxr MODULE ${libsoxr_SRCS})
-    add_dependencies(soxr libqmmp)
     target_link_libraries(soxr PRIVATE Qt6::Widgets libqmmp PkgConfig::SOXR)
     install(TARGETS soxr DESTINATION ${PLUGIN_DIR}/Effect)
 endif(SOXR_FOUND)

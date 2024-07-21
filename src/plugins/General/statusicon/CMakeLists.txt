@@ -17,6 +17,5 @@ set(libstatusicon_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(statusicon MODULE ${libstatusicon_SRCS})
-add_dependencies(statusicon libqmmpui libqmmp)
 target_link_libraries(statusicon PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS statusicon DESTINATION ${PLUGIN_DIR}/General)

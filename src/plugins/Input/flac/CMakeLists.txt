@@ -16,7 +16,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(FLAC_FOUND)
     add_library(flac MODULE ${libflac_SRCS})
-    add_dependencies(flac libqmmp)
     target_link_libraries(flac PRIVATE Qt6::Widgets libqmmp PkgConfig::FLAC PkgConfig::TAGLIB)
     install(TARGETS flac DESTINATION ${PLUGIN_DIR}/Input)
 endif(FLAC_FOUND)

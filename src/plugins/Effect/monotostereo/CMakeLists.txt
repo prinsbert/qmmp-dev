@@ -11,6 +11,5 @@ set(libmonotostereo_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(monotostereo MODULE ${libmonotostereo_SRCS})
-add_dependencies(monotostereo libqmmp)
 target_link_libraries(monotostereo PRIVATE Qt6::Widgets libqmmp)
 install(TARGETS monotostereo DESTINATION ${PLUGIN_DIR}/Effect)

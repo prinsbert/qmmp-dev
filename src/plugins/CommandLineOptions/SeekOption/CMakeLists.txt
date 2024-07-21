@@ -8,6 +8,5 @@ SET(seekoption_SRCS
 )
 
 add_library(seekoption MODULE ${seekoption_SRCS})
-add_dependencies(seekoption libqmmpui)
 target_link_libraries(seekoption PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS seekoption DESTINATION ${PLUGIN_DIR}/CommandLineOptions)

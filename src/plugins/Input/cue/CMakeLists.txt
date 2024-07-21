@@ -19,7 +19,6 @@ SET(libcue_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(cue MODULE ${libcue_SRCS} ${libcue_RCC_SRCS})
-add_dependencies(cue libqmmp)
 if(USE_ENCA AND ENCA_FOUND)
     target_link_libraries(cue PRIVATE Qt6::Widgets libqmmp PkgConfig::ENCA)
 else(USE_ENCA AND ENCA_FOUND)

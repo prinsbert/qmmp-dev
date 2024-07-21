@@ -13,6 +13,5 @@ set(libfileops_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(fileops MODULE ${libfileops_SRCS})
-add_dependencies(fileops libqmmpui)
 target_link_libraries(fileops PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS fileops DESTINATION ${PLUGIN_DIR}/General)

@@ -15,7 +15,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(SNDFILE_FOUND)
     add_library(sndfile MODULE ${libsndfile_SRCS})
-    add_dependencies(sndfile libqmmp)
     target_link_libraries(sndfile PRIVATE Qt6::Widgets libqmmp PkgConfig::SNDFILE)
     install(TARGETS sndfile DESTINATION ${PLUGIN_DIR}/Input)
 endif(SNDFILE_FOUND)
