@@ -1,10 +1,5 @@
 project(libcopypaste)
 
-# libqmmpui & libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 set(libcopypaste_SRCS
     copypaste.cpp
     copypastefactory.cpp

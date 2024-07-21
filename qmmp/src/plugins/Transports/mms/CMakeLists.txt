@@ -1,9 +1,5 @@
 project(libmms)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libmms
 pkg_search_module(MMS libmms>=0.4 IMPORTED_TARGET)
 include_directories(${MMS_INCLUDE_DIRS})

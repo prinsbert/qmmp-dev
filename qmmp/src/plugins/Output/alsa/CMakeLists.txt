@@ -1,9 +1,5 @@
 project(libalsa)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # alsa
 pkg_search_module(ALSA alsa>=1.0.22 IMPORTED_TARGET)
 

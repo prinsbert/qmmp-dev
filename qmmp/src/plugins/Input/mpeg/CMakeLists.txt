@@ -2,10 +2,6 @@ project(libmpeg)
 
 include(CheckIncludeFileCXX)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libmad
 if(USE_MAD)
     pkg_search_module(MAD libmad mad IMPORTED_TARGET)

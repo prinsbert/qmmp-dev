@@ -3,10 +3,6 @@ project(libffmpeg)
 # fixes ffmpeg defines
 add_definitions(-D__STDC_CONSTANT_MACROS)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # minimal supported versions
 # ffmpeg-3.4: libavcodec-57.107.100, libavformat-57.83.100, libavutil-55.78.100
 pkg_check_modules(FFMPEG libavcodec>=57.107.0 libavformat>=57.83.0 libavutil>=55.78.0 IMPORTED_TARGET)

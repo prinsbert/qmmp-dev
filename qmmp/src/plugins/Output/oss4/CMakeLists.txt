@@ -42,12 +42,6 @@ if(OSS4_SUPPORT)
     set(OSS4_FOUND TRUE CACHE INTERNAL "oss4")
 endif(OSS4_SUPPORT)
 
-
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
-
 set(liboss4_SRCS
   outputoss4factory.cpp
   outputoss4.cpp

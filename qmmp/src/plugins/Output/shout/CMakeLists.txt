@@ -1,9 +1,5 @@
 project(libshout)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libshout and other required libraries
 pkg_check_modules(SHOUT ogg vorbis vorbisenc shout>=2.4.3 soxr IMPORTED_TARGET)
 

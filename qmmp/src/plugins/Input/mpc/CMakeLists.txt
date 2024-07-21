@@ -2,10 +2,6 @@ project(libmpc)
 
 include(CheckIncludeFileCXX)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libmpc
 check_include_file_cxx(mpc/mpcdec.h MPC_HEADER_NEW_FOUND)
 find_library(MPC_LIB NAME mpcdec PATHS /usr/lib /usr/lib32  /usr/local/lib /usr/local/lib32)

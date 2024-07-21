@@ -2,12 +2,6 @@ project(libqmmpui)
 
 add_definitions(-DQMMPUI_LIBRARY)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../)
-
-link_directories(${CMAKE_INSTALL_PREFIX}/${LIB_DIR})
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../qmmp)
-
 set(QMMP_DEFAULT_UI "" CACHE STRING "default user interface")
 if(QMMP_DEFAULT_UI)
     set(libqmmpui_DEFINES ${libqmmpui_DEFINES} QMMP_DEFAULT_UI="${QMMP_DEFAULT_OUTPUT}")

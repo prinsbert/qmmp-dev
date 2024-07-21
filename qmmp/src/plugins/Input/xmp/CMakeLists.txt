@@ -1,9 +1,5 @@
 project(libxmp)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # xmp
 pkg_search_module(XMP libxmp IMPORTED_TARGET)
 

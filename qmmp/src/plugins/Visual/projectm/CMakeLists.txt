@@ -1,9 +1,5 @@
 project(libprojectm)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # projectM
 if(QT_FEATURE_opengl)
     message(STATUS "Found desktop OpenGL implementation")

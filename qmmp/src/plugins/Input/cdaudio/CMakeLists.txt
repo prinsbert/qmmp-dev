@@ -1,9 +1,5 @@
 project(libcdaudio)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libcdaudio
 pkg_check_modules(CDIO libcdio>=1.0.0 libcdio_cdda libcdio_paranoia libcddb IMPORTED_TARGET)
 

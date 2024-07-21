@@ -1,9 +1,5 @@
 project(libpipewire)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # pipewire
 pkg_check_modules(PIPEWIRE libpipewire-0.3>=0.3.26 libspa-0.2>=0.2 IMPORTED_TARGET)
 

@@ -1,9 +1,5 @@
 project(libwavpack)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # wavpack
 pkg_search_module(WAVPACK wavpack IMPORTED_TARGET)
 

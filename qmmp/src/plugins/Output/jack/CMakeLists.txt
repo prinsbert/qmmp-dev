@@ -4,10 +4,6 @@ include(CheckCXXSourceCompiles)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libjack and libsoxr
 pkg_check_modules(JACK jack>=1.9.8 soxr IMPORTED_TARGET)
 

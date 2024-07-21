@@ -66,6 +66,7 @@ set(CMAKE_AUTOUIC ON)
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060200 -DQT_DEPRECATED_WARNINGS -DQT_MESSAGELOGCONTEXT)
 add_compile_options(-Wall -Wextra)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src) #libqmmp & libqmmpui
 
 find_package(Qt6 6.2 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
 find_package(Qt6 6.2 CONFIG OPTIONAL_COMPONENTS DBus OpenGLWidgets Sql Multimedia)
