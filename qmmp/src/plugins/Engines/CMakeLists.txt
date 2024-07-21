@@ -1,5 +1,5 @@
-SET(USE_MPLAYER TRUE CACHE BOOL "enable/disable mplayer support")
+set(USE_MPLAYER TRUE CACHE BOOL "enable/disable mplayer support")
 
-IF(USE_MPLAYER)
-add_subdirectory(mplayer)
-ENDIF(USE_MPLAYER)
+if(USE_MPLAYER)
+    add_subdirectory(mplayer)
+endif(USE_MPLAYER)

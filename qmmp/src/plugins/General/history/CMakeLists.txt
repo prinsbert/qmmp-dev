@@ -7,7 +7,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
-SET(libhistory_SRCS
+set(libhistory_SRCS
     dateinputdialog.cpp
     history.cpp
     historyfactory.cpp
@@ -24,6 +24,6 @@ SET(libhistory_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-ADD_LIBRARY(history MODULE ${libhistory_SRCS})
+add_library(history MODULE ${libhistory_SRCS})
 target_link_libraries(history PRIVATE Qt6::Widgets Qt6::Sql libqmmpui libqmmp)
 install(TARGETS history DESTINATION ${PLUGIN_DIR}/General)

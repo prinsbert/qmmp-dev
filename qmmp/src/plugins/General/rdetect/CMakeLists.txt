@@ -1,7 +1,5 @@
 project(librdetect)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 # libqmmpui & libqmmp
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
@@ -19,7 +17,7 @@ SET(librdetect_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-ADD_LIBRARY(rdetect MODULE ${librdetect_SRCS})
+add_library(rdetect MODULE ${librdetect_SRCS})
 add_dependencies(rdetect libqmmpui)
 target_link_libraries(rdetect PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS rdetect DESTINATION ${PLUGIN_DIR}/General)

@@ -5,17 +5,17 @@ INCLUDE(CheckIncludeFile)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 #OSS
-CHECK_INCLUDE_FILE(sys/soundcard.h SYS_SOUNDCARD_H_FOUND)
-IF(SYS_SOUNDCARD_H_FOUND)
-ADD_DEFINITIONS(-DHAVE_SYS_SOUNDCARD_H)
-ENDIF(SYS_SOUNDCARD_H_FOUND)
+check_include_file(sys/soundcard.h SYS_SOUNDCARD_H_FOUND)
+if(SYS_SOUNDCARD_H_FOUND)
+    add_definitions(-DHAVE_SYS_SOUNDCARD_H)
+endif(SYS_SOUNDCARD_H_FOUND)
 
 # libqmmp
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 
-SET(liboss_SRCS
+set(liboss_SRCS
   outputossfactory.cpp
   outputoss.cpp
   osssettingsdialog.cpp
@@ -23,7 +23,6 @@ SET(liboss_SRCS
   translations/translations.qrc
 )
 
-ADD_LIBRARY(oss MODULE ${liboss_SRCS})
-add_dependencies(oss libqmmp)
+add_library(oss MODULE ${liboss_SRCS})
 target_link_libraries(oss PRIVATE Qt6::Widgets libqmmp)
 install(TARGETS oss DESTINATION ${PLUGIN_DIR}/Output)

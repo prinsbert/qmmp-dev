@@ -6,7 +6,7 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 
-SET(libqsui_SRCS
+set(libqsui_SRCS
     aboutqsuidialog.cpp
     qsuiactionmanager.cpp
     dockwidgetlist.cpp
@@ -51,9 +51,9 @@ SET(libqsui_SRCS
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
-SET(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/forms)
+set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/forms)
 
-ADD_LIBRARY(qsui MODULE ${libqsui_SRCS})
+add_library(qsui MODULE ${libqsui_SRCS})
 add_dependencies(qsui libqmmpui libqmmp)
 target_link_libraries(qsui PRIVATE Qt6::Widgets libqmmpui libqmmp)
 install(TARGETS qsui DESTINATION ${PLUGIN_DIR}/Ui)

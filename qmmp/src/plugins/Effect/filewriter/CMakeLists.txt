@@ -8,13 +8,9 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 # libqmmpui
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 
-pkg_check_modules(VORBISENC vorbis ogg vorbisenc)
+pkg_check_modules(VORBISENC vorbis ogg vorbisenc IMPORTED_TARGET)
 
-include_directories(${VORBISENC_INCLUDE_DIRS})
-link_directories(${VORBISENC_LIBRARY_DIRS})
-ADD_DEFINITIONS(${VORBISENC_CFLAGS})
-
-SET(libfilewriter_SRCS
+set(libfilewriter_SRCS
     filewriterplugin.cpp
     filewritersettingsdialog.cpp
     effectfilewriterfactory.cpp
@@ -26,9 +22,9 @@ SET(libfilewriter_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-IF(VORBISENC_FOUND)
-    ADD_LIBRARY(filewriter MODULE ${libfilewriter_SRCS})
+if(VORBISENC_FOUND)
+    add_library(filewriter MODULE ${libfilewriter_SRCS})
     add_dependencies(filewriter libqmmp libqmmpui)
-    target_link_libraries(filewriter PRIVATE Qt6::Widgets libqmmp libqmmpui ${VORBISENC_LDFLAGS})
+    target_link_libraries(filewriter PRIVATE Qt6::Widgets libqmmp libqmmpui PkgConfig::VORBISENC)
     install(TARGETS filewriter DESTINATION ${PLUGIN_DIR}/Effect)
-ENDIF(VORBISENC_FOUND)
+endif(VORBISENC_FOUND)

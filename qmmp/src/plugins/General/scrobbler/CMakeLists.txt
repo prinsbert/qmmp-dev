@@ -1,14 +1,12 @@
 project(libscrobbler)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
 # libqmmpui
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
 #libqmmp
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
-SET(libscrobbler_SRCS
+set(libscrobbler_SRCS
     scrobblersettingsdialog.cpp
     scrobblerhandler.cpp
     scrobblerfactory.cpp
@@ -22,7 +20,7 @@ SET(libscrobbler_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-ADD_LIBRARY(scrobbler MODULE ${libscrobbler_SRCS})
+add_library(scrobbler MODULE ${libscrobbler_SRCS})
 add_dependencies(scrobbler libqmmpui)
 target_link_libraries(scrobbler PRIVATE Qt6::Widgets Qt6::Network libqmmpui libqmmp)
 install(TARGETS scrobbler DESTINATION ${PLUGIN_DIR}/General)

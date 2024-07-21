@@ -2,22 +2,13 @@ project(libsoxr)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-SET(QT_INCLUDES
-  ${QT_INCLUDES}
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../../
-)
-
 # libqmmp
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
-pkg_check_modules(SOXR soxr)
+pkg_check_modules(SOXR soxr IMPORTED_TARGET)
 
-include_directories(${SOXR_INCLUDE_DIRS})
-link_directories(${SOXR_LIBRARY_DIRS})
-ADD_DEFINITIONS(${SOXR_CFLAGS})
-
-SET(libsoxr_SRCS
+set(libsoxr_SRCS
     soxresampler.cpp
     soxrsettingsdialog.cpp
     effectsoxrfactory.cpp
@@ -29,9 +20,9 @@ SET(libsoxr_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-IF(SOXR_FOUND)
-ADD_LIBRARY(soxr MODULE ${libsoxr_SRCS})
-add_dependencies(soxr libqmmp)
-target_link_libraries(soxr PRIVATE Qt6::Widgets libqmmp ${SOXR_LDFLAGS})
-install(TARGETS soxr DESTINATION ${PLUGIN_DIR}/Effect)
-ENDIF(SOXR_FOUND)
+if(SOXR_FOUND)
+    add_library(soxr MODULE ${libsoxr_SRCS})
+    add_dependencies(soxr libqmmp)
+    target_link_libraries(soxr PRIVATE Qt6::Widgets libqmmp PkgConfig::SOXR)
+    install(TARGETS soxr DESTINATION ${PLUGIN_DIR}/Effect)
+endif(SOXR_FOUND)

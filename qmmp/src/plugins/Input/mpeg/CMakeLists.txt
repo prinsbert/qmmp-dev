@@ -1,41 +1,35 @@
 project(libmpeg)
 
-INCLUDE(CheckIncludeFileCXX)
-
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include(CheckIncludeFileCXX)
 
 # libqmmp
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
 link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
 
 # libmad
-IF(USE_MAD)
-pkg_search_module(MAD libmad mad)
-ENDIF(USE_MAD)
+if(USE_MAD)
+    pkg_search_module(MAD libmad mad IMPORTED_TARGET)
+endif(USE_MAD)
 
 # libmpg123
-IF(USE_MPG123)
-pkg_search_module(MPG123 libmpg123>=1.13.0)
-ENDIF(USE_MPG123)
+if(USE_MPG123)
+    pkg_search_module(MPG123 libmpg123>=1.13.0 IMPORTED_TARGET)
+endif(USE_MPG123)
 
-include_directories(${TAGLIB_INCLUDE_DIRS})
-link_directories(${TAGLIB_LIBRARY_DIRS})
-ADD_DEFINITIONS(${TAGLIB_CFLAGS})
+set(USE_LIBRCD FALSE CACHE BOOL "enable/disable charset detection for ID3v1/2 tags using librcd")
 
-SET(USE_LIBRCD FALSE CACHE BOOL "enable/disable charset detection for ID3v1/2 tags using librcd")
+if(USE_LIBRCD)
+    check_include_file_cxx(librcd.h LIBRCD_HEADER_FOUND)
+endif(USE_LIBRCD)
 
-IF(USE_LIBRCD)
-  CHECK_INCLUDE_FILE_CXX(librcd.h LIBRCD_HEADER_FOUND)
-ENDIF(USE_LIBRCD)
-
-IF(LIBRCD_HEADER_FOUND)
-  SET(LIBRCD_FOUND TRUE CACHE INTERNAL "rcd")
-  SET(LIBRCD_LDFLAGS -lrcd)
-  ADD_DEFINITIONS(-DWITH_LIBRCD)
-ENDIF(LIBRCD_HEADER_FOUND)
+if(LIBRCD_HEADER_FOUND)
+    set(LIBRCD_FOUND TRUE CACHE INTERNAL "rcd")
+    set(LIBRCD_LDFLAGS -lrcd)
+    add_definitions(-DWITH_LIBRCD)
+endif(LIBRCD_HEADER_FOUND)
 
 
-SET(libmpeg_SRCS
+set(libmpeg_SRCS
   decodermpegfactory.cpp
   mpegsettingsdialog.cpp
   tagextractor.cpp
@@ -44,27 +38,22 @@ SET(libmpeg_SRCS
   translations/translations.qrc
 )
 
-IF(MAD_FOUND)
-  include_directories(${MAD_INCLUDE_DIRS})
-  link_directories(${MAD_LIBRARY_DIRS})
-  ADD_DEFINITIONS(${MAD_CFLAGS} -DWITH_MAD)
-  SET(libmpeg_SRCS ${libmpeg_SRCS} decoder_mad.cpp)
-ENDIF(MAD_FOUND)
+if(MAD_FOUND)
+    add_definitions(-DWITH_MAD)
+    set(libmpeg_SRCS ${libmpeg_SRCS} decoder_mad.cpp)
+endif(MAD_FOUND)
 
-IF(MPG123_FOUND)
-  include_directories(${MPG123_INCLUDE_DIRS})
-  link_directories(${MPG123_LIBRARY_DIRS})
-  ADD_DEFINITIONS(${MPG123_CFLAGS} -DWITH_MPG123)
-  SET(libmpeg_SRCS ${libmpeg_SRCS} decoder_mpg123.cpp)
-ENDIF(MPG123_FOUND)
+if(MPG123_FOUND)
+    add_definitions(-DWITH_MPG123)
+    set(libmpeg_SRCS ${libmpeg_SRCS} decoder_mpg123.cpp)
+endif(MPG123_FOUND)
 
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-IF(MAD_FOUND OR MPG123_FOUND)
-ADD_LIBRARY(mpeg MODULE ${libmpeg_SRCS})
-add_dependencies(mpeg libqmmp)
-target_link_libraries(mpeg PRIVATE Qt6::Widgets libqmmp ${TAGLIB_LDFLAGS} ${MAD_LDFLAGS} ${MPG123_LDFLAGS} ${LIBRCD_LDFLAGS})
-install(TARGETS mpeg DESTINATION ${PLUGIN_DIR}/Input)
-ENDIF(MAD_FOUND OR MPG123_FOUND)
+if(MAD_FOUND OR MPG123_FOUND)
+    add_library(mpeg MODULE ${libmpeg_SRCS})
+    target_link_libraries(mpeg PRIVATE Qt6::Widgets libqmmp PkgConfig::TAGLIB PkgConfig::MAD PkgConfig::MPG123 ${LIBRCD_LDFLAGS})
+    install(TARGETS mpeg DESTINATION ${PLUGIN_DIR}/Input)
+endif(MAD_FOUND OR MPG123_FOUND)

@@ -1,6 +1,6 @@
 project(doc)
 
-CONFIGURE_FILE(
+configure_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile.cmake"
   IMMEDIATE @ONLY)

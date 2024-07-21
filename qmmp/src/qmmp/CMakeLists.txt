@@ -1,34 +1,34 @@
 project(libqmmp)
 
-ADD_DEFINITIONS(-DQMMP_LIBRARY)
-SET(libqmmp_DEFINES
+add_definitions(-DQMMP_LIBRARY)
+set(libqmmp_DEFINES
     LIB_DIR="/${LIB_DIR}"
     QMMP_INSTALL_PREFIX="${CMAKE_INSTALL_PREFIX}"
     APP_NAME_SUFFIX="${APP_NAME_SUFFIX}"
 )
 
-IF(NOT QMMP_VERSION_STABLE) #add svn revision
-execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/svn_revision.sh
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-                OUTPUT_VARIABLE SVN_REVISION
-                OUTPUT_STRIP_TRAILING_WHITESPACE)
-IF(SVN_REVISION)
-SET(libqmmp_DEFINES ${libqmmp_DEFINES} SVN_REVISION="${SVN_REVISION}")
-ENDIF(SVN_REVISION)
-ENDIF(NOT QMMP_VERSION_STABLE)
+if(NOT QMMP_VERSION_STABLE) #add svn revision
+    execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/svn_revision.sh
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                    OUTPUT_VARIABLE SVN_REVISION
+                   OUTPUT_STRIP_TRAILING_WHITESPACE)
+    if(SVN_REVISION)
+        set(libqmmp_DEFINES ${libqmmp_DEFINES} SVN_REVISION="${SVN_REVISION}")
+    endif(SVN_REVISION)
+endif(NOT QMMP_VERSION_STABLE)
 
-SET(libqmmp_DEFINES ${libqmmp_DEFINES} QMMP_PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/${PLUGIN_DIR}")
+set(libqmmp_DEFINES ${libqmmp_DEFINES} QMMP_PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/${PLUGIN_DIR}")
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-SET(QMMP_DEFAULT_OUTPUT "" CACHE STRING "default output plugin")
-IF(QMMP_DEFAULT_OUTPUT)
+set(QMMP_DEFAULT_OUTPUT "" CACHE STRING "default output plugin")
+if(QMMP_DEFAULT_OUTPUT)
     SET(libqmmp_DEFINES ${libqmmp_DEFINES} QMMP_DEFAULT_OUTPUT="${QMMP_DEFAULT_OUTPUT}")
     MESSAGE(STATUS "Default output: ${QMMP_DEFAULT_OUTPUT}")
-ENDIF(QMMP_DEFAULT_OUTPUT)
+endif(QMMP_DEFAULT_OUTPUT)
 
 
-SET(libqmmp_SRCS
+set(libqmmp_SRCS
     visual.cpp
     recycler.cpp
     decoder.cpp
@@ -105,27 +105,27 @@ SET(libqmmp_DEVEL_HDRS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-ADD_LIBRARY(libqmmp SHARED ${libqmmp_SRCS})
+add_library(libqmmp SHARED ${libqmmp_SRCS})
 target_link_libraries(libqmmp PRIVATE Qt6::Widgets)
-SET_TARGET_PROPERTIES(libqmmp PROPERTIES VERSION ${QMMP_VERSION} SOVERSION ${QMMP_SOVERSION} OUTPUT_NAME qmmp${APP_NAME_SUFFIX})
+set_target_properties(libqmmp PROPERTIES VERSION ${QMMP_VERSION} SOVERSION ${QMMP_SOVERSION} OUTPUT_NAME qmmp${APP_NAME_SUFFIX})
 target_compile_definitions(libqmmp PRIVATE ${libqmmp_DEFINES})
 install(TARGETS libqmmp LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
                         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
                         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 #freebsd support
-IF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
     target_link_directories(libqmmp PRIVATE /usr/local/lib)
     target_link_libraries(libqmmp PRIVATE iconv)
-ENDIF()
+endif()
 
-IF(APP_NAME_SUFFIX)
+if(APP_NAME_SUFFIX)
     install(FILES ${libqmmp_DEVEL_HDRS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qmmp${APP_NAME_SUFFIX}/qmmp)
     SET(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR}/qmmp${APP_NAME_SUFFIX})
-ELSE()
+else()
     install(FILES ${libqmmp_DEVEL_HDRS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qmmp)
     SET(QMMP_INCLUDE_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR})
-ENDIF()
+endif()
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/qmmp.pc.in ${CMAKE_CURRENT_BINARY_DIR}/qmmp${APP_NAME_SUFFIX}.pc @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qmmp${APP_NAME_SUFFIX}.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
