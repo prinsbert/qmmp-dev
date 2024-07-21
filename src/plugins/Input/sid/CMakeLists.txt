@@ -1,10 +1,6 @@
 project(libsid)
 
-INCLUDE(CheckIncludeFile)
-
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
+include(CheckIncludeFile)
 
 # libsidplayfp
 pkg_search_module(SIDPLAYFP libsidplayfp>=1.0.3 IMPORTED_TARGET)

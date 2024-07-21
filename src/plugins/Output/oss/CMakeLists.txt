@@ -1,6 +1,6 @@
 project(liboss)
 
-INCLUDE(CheckIncludeFile)
+include(CheckIncludeFile)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -9,11 +9,6 @@ check_include_file(sys/soundcard.h SYS_SOUNDCARD_H_FOUND)
 if(SYS_SOUNDCARD_H_FOUND)
     add_definitions(-DHAVE_SYS_SOUNDCARD_H)
 endif(SYS_SOUNDCARD_H_FOUND)
-
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 
 set(liboss_SRCS
   outputossfactory.cpp

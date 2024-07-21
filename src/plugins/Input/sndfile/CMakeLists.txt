@@ -1,9 +1,5 @@
 project(libsndfile)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libsndfile
 pkg_search_module(SNDFILE sndfile>=1.0.22 IMPORTED_TARGET)
 

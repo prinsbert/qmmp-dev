@@ -1,13 +1,8 @@
 project(libwildmidi)
 
-INCLUDE(CheckIncludeFile)
+include(CheckIncludeFile)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
-
-SET(libwildmidi_SRCS
+set(libwildmidi_SRCS
   decoder_wildmidi.cpp
   decoderwildmidifactory.cpp
   wildmidisettingsdialog.cpp
@@ -17,8 +12,8 @@ SET(libwildmidi_SRCS
 )
 
 # libwildmidi
-CHECK_INCLUDE_FILE(wildmidi_lib.h WILDMIDI_HEADER_FOUND)
-FIND_LIBRARY(WILDMIDI_LIB NAME WildMidi PATHS /usr/lib /usr/lib32  /usr/local/lib /usr/local/lib32)
+check_include_file(wildmidi_lib.h WILDMIDI_HEADER_FOUND)
+find_library(WILDMIDI_LIB NAME WildMidi PATHS /usr/lib /usr/lib32  /usr/local/lib /usr/local/lib32)
 
 if(WILDMIDI_HEADER_FOUND AND (NOT WILDMIDI_LIB MATCHES "^.*-NOTFOUND"))
     set(WILDMIDI_FOUND TRUE CACHE INTERNAL "wildmidi")

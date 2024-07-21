@@ -1,10 +1,5 @@
 project(libtwopanelfiledialog)
 
-# libqmmpui
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 set(libtwopanelfiledialog_SRCS
     twopanelfiledialogimpl.cpp
     twopanelfiledialog.cpp

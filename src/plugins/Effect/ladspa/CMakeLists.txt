@@ -1,9 +1,5 @@
 project(libladspa)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 set(libladspa_SRCS
     ladspahost.cpp
     ladspahelper.cpp

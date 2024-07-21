@@ -1,11 +1,5 @@
 project(liblistenbrainz)
 
-# libqmmpui
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
-#libqmmp
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 SET(liblistenbrainz_SRCS
     listenbrainzsettingsdialog.cpp
     listenbrainzfactory.cpp

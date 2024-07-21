@@ -1,10 +1,6 @@
 project(libwasapi)
 
-INCLUDE(CheckIncludeFile)
-
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
+include(CheckIncludeFile)
 
 # Windows Audio Session API
 check_include_file(Audioclient.h WASAPI_FOUND)

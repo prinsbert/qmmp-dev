@@ -1,9 +1,5 @@
 project(libbs2b)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 set(libbs2b_SRCS
     bs2bplugin.cpp
     bs2bsettingsdialog.cpp

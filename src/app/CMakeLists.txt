@@ -4,13 +4,6 @@ include(UsePkgConfig)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-# libqmmp & libqmmpui
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../)
-
-link_directories(${CMAKE_INSTALL_PREFIX}/${LIB_DIR})
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../qmmpui)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../qmmp)
-
 set(app_SRCS
     builtincommandlineoption.cpp
     main.cpp

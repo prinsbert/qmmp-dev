@@ -2,10 +2,6 @@ project(libm3uplaylistformat)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-# libqmmpui
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
-
 set(libm3uplaylistformat_SRCS
     m3uplaylistformat.cpp
 )

@@ -1,9 +1,5 @@
 project(libopus)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libopus and libopusfile
 pkg_check_modules(OPUS opus>=1.0.2 opusfile>=0.2 IMPORTED_TARGET)
 

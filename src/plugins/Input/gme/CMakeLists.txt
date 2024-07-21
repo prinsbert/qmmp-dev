@@ -2,10 +2,6 @@ project(libgme)
 
 include(CheckIncludeFileCXX)
 
-# libqmmp
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 # libgme
 check_include_file_cxx(gme/gme.h GME_HEADER_FOUND)
 find_library(GME_LIB NAME gme PATHS /usr/lib /usr/lib32  /usr/local/lib /usr/local/lib32)

@@ -2,12 +2,6 @@ project(libcovermanager)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-# libqmmpui
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../)
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmpui)
-#libqmmp
-link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../../qmmp)
-
 set(libcovermanager_SRCS
     coverwidget.cpp
     covermanager.cpp
