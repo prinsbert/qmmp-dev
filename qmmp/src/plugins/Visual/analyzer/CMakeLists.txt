@@ -15,6 +15,5 @@ SET(libanalyzer_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(analyzer MODULE ${libanalyzer_SRCS})
-add_dependencies(analyzer libqmmp)
 target_link_libraries(analyzer PRIVATE Qt6::Widgets libqmmp)
 install(TARGETS analyzer DESTINATION ${PLUGIN_DIR}/Visual)

@@ -18,6 +18,5 @@ set(liblyrics_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(lyrics MODULE ${liblyrics_SRCS})
-add_dependencies(lyrics libqmmpui)
 target_link_libraries(lyrics PRIVATE Qt6::Widgets Qt6::Network libqmmpui libqmmp)
 install(TARGETS lyrics DESTINATION ${PLUGIN_DIR}/General)

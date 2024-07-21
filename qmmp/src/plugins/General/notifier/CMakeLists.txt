@@ -15,7 +15,6 @@ set(libnotifier_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(notifier MODULE ${libnotifier_SRCS} ${libnotifier_UIS_H} ${libnotifier_RCC_SRCS})
-add_dependencies(notifier libqmmpui)
 if(X11_FOUND)
     add_definitions(-DX11_FOUND)
     target_link_libraries(notifier PRIVATE Qt6::Widgets PkgConfig::X11 libqmmpui libqmmp)

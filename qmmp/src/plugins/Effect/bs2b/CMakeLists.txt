@@ -16,7 +16,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(BS2B_FOUND)
     add_library(bs2b MODULE ${libbs2b_SRCS})
-    add_dependencies(bs2b libqmmp)
     target_link_libraries(bs2b PRIVATE Qt6::Widgets libqmmp PkgConfig::BS2B)
     install(TARGETS bs2b DESTINATION ${PLUGIN_DIR}/Effect)
 endif(BS2B_FOUND)

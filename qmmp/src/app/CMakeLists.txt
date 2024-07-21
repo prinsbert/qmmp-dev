@@ -19,7 +19,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 add_executable(qmmp ${app_SRCS})
 target_link_libraries(qmmp PRIVATE Qt6::Widgets Qt6::Network libqmmp libqmmpui)
 set_target_properties(qmmp PROPERTIES OUTPUT_NAME qmmp${APP_NAME_SUFFIX})
-add_dependencies(qmmp libqmmpui libqmmp)
 
 install(TARGETS qmmp DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES qmmp-opencda${APP_NAME_SUFFIX}.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/solid/actions)

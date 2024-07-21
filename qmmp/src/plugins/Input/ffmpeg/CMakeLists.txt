@@ -25,7 +25,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(FFMPEG_FOUND)
     add_library(ffmpeg MODULE ${libffmpeg_SRCS})
-    add_dependencies(ffmpeg libqmmp)
     target_link_libraries(ffmpeg PRIVATE Qt6::Widgets libqmmp PkgConfig::FFMPEG PkgConfig::TAGLIB)
     install(TARGETS ffmpeg DESTINATION ${PLUGIN_DIR}/Input)
 endif(FFMPEG_FOUND)

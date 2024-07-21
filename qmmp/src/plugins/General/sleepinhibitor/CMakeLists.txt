@@ -11,6 +11,5 @@ set(libsleepinhibitor_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(sleepinhibitor MODULE ${libsleepinhibitor_SRCS})
-add_dependencies(sleepinhibitor libqmmpui)
 target_link_libraries(sleepinhibitor PRIVATE Qt6::Widgets Qt6::DBus libqmmpui libqmmp)
 install(TARGETS sleepinhibitor DESTINATION ${PLUGIN_DIR}/General)

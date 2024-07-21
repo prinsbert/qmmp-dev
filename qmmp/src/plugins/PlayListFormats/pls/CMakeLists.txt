@@ -7,6 +7,5 @@ set(libplsplaylistformat_SRCS
 )
 
 add_library(plsplaylistformat MODULE ${libplsplaylistformat_SRCS})
-add_dependencies(plsplaylistformat libqmmpui)
 target_link_libraries(plsplaylistformat PRIVATE Qt6::Widgets libqmmpui)
 install(TARGETS plsplaylistformat DESTINATION ${PLUGIN_DIR}/PlayListFormats)

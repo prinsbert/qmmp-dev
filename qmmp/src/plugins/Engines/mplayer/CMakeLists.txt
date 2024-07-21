@@ -14,7 +14,6 @@ set(libmplayer_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(mplayer MODULE ${libmplayer_SRCS})
-add_dependencies(mplayer libqmmp)
 target_link_libraries(mplayer PRIVATE Qt6::Widgets libqmmp)
 install(TARGETS mplayer DESTINATION ${PLUGIN_DIR}/Engines)
 

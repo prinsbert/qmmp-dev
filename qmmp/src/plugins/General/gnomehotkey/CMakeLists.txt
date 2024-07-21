@@ -11,6 +11,5 @@ set(libgnomehotkey_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(gnomehotkey MODULE ${libgnomehotkey_SRCS} ${libgnomehotkey_RCC_SRCS})
-add_dependencies(gnomehotkey libqmmpui)
 target_link_libraries(gnomehotkey PRIVATE Qt6::Widgets Qt6::DBus libqmmpui libqmmp)
 install(TARGETS gnomehotkey DESTINATION ${PLUGIN_DIR}/General)

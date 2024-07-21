@@ -16,7 +16,6 @@ set(libladspa_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(ladspa MODULE ${libladspa_SRCS})
-add_dependencies(ladspa libqmmp)
 target_link_libraries(ladspa PRIVATE Qt6::Widgets libqmmp ${CMAKE_DL_LIBS})
 install(TARGETS ladspa DESTINATION ${PLUGIN_DIR}/Effect)
 

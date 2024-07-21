@@ -18,7 +18,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(SHOUT_FOUND)
     add_library(shout MODULE ${libshout_SRCS})
-    add_dependencies(shout libqmmp)
     target_link_libraries(shout PRIVATE Qt6::Widgets libqmmp PkgConfig::SHOUT)
     install(TARGETS shout DESTINATION ${PLUGIN_DIR}/Output)
 endif(SHOUT_FOUND)
