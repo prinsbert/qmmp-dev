@@ -690,12 +690,12 @@ void QSUiListWidget::dropEvent(QDropEvent *event)
         if(event->mimeData()->hasUrls())
         {
             QList<QUrl> list_urls = event->mimeData()->urls();
-            m_model->insert(index, list_urls);
+            m_model->insertUrls(index, list_urls);
         }
         else if(event->mimeData()->hasFormat(u"application/json"_s))
         {
             QByteArray json = event->mimeData()->data(u"application/json"_s);
-            m_model->insert(index, json);
+            m_model->insertJson(index, json);
         }
     }
     m_dropLine = -1;
