@@ -158,7 +158,7 @@ void UiHelper::playFiles(QWidget *parent, PlayListModel *model)
 void UiHelper::addDirectory(QWidget *parent, PlayListModel *model)
 {
     FileDialog::popup(parent, FileDialog::AddDirs, &m_lastDir,
-                      model, SLOT(add(QStringList)),
+                      model, SLOT(addPaths(QStringList)),
                       tr("Choose a directory"));
 }
 

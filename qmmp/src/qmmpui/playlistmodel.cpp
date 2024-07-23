@@ -54,9 +54,8 @@ PlayListModel::PlayListModel(const QString &name, QObject *parent)
     else
         m_play_state = new NormalPlayState(this);
     connect(m_ui_settings, &QmmpUiSettings::groupsChanged, this, &PlayListModel::prepareGroups);
-    connect(m_ui_settings, &QmmpUiSettings::shuffleChanged,this, &PlayListModel::prepareForShufflePlaying);
-    connect(m_loader, SIGNAL(newTracksToInsert(PlayListTrack *,QList<PlayListTrack *>)),
-            this, SLOT(insert(PlayListTrack *,QList<PlayListTrack *>)), Qt::QueuedConnection);
+    connect(m_ui_settings, &QmmpUiSettings::shuffleChanged, this, &PlayListModel::prepareForShufflePlaying);
+    connect(m_loader, &FileLoader::newTracksToInsert, this, &PlayListModel::insertTracksInternal, Qt::QueuedConnection);
     connect(m_loader, &FileLoader::finished, this, &PlayListModel::preparePlayState);
     connect(m_loader, &FileLoader::finished, this, &PlayListModel::loaderFinished);
     connect(m_loader, &FileLoader::finished, this, &PlayListModel::startCoverLoader);
@@ -223,43 +222,6 @@ void PlayListModel::insertTracks(int index, const QList<PlayListTrack *> &tracks
 void PlayListModel::insertJson(int index, const QByteArray &json)
 {
     insertTracks(index, PlayListParser::deserialize(json));
-}
-
-void PlayListModel::insert(PlayListTrack *before, const QList<PlayListTrack *> &tracks)
-{
-    if(m_ui_settings->skipExistingTracks() && sender() == m_loader)
-    {
-        if(m_uniquePaths.isEmpty())
-        {
-            m_uniquePaths.reserve(m_container->trackCount());
-            for(const PlayListTrack *track : m_container->tracks())
-            {
-                m_uniquePaths.insert(track->path());
-            }
-        }
-
-        QList<PlayListTrack *> uniqueTracks;
-        for(PlayListTrack *track : std::as_const(tracks))
-        {
-            if(!m_uniquePaths.contains(track->path()))
-            {
-                m_uniquePaths.insert(track->path());
-                uniqueTracks << track;
-            }
-        }
-
-        if(before)
-            insertTracks(m_container->indexOf(before), uniqueTracks);
-        else
-            addTracks(uniqueTracks);
-    }
-    else
-    {
-        if(before)
-            insertTracks(m_container->indexOf(before), tracks);
-        else
-            addTracks(tracks);
-    }
 }
 
 void PlayListModel::insertPath(int index, const QString &path)
@@ -1213,6 +1175,43 @@ void PlayListModel::setCover(const QString &path, const QImage &img)
             g->setCover(img);
     }
     emit listChanged(METADATA);
+}
+
+void PlayListModel::insertTracksInternal(PlayListTrack *before, const QList<PlayListTrack *> &tracks)
+{
+    if(m_ui_settings->skipExistingTracks() && sender() == m_loader)
+    {
+        if(m_uniquePaths.isEmpty())
+        {
+            m_uniquePaths.reserve(m_container->trackCount());
+            for(const PlayListTrack *track : m_container->tracks())
+            {
+                m_uniquePaths.insert(track->path());
+            }
+        }
+
+        QList<PlayListTrack *> uniqueTracks;
+        for(PlayListTrack *track : std::as_const(tracks))
+        {
+            if(!m_uniquePaths.contains(track->path()))
+            {
+                m_uniquePaths.insert(track->path());
+                uniqueTracks << track;
+            }
+        }
+
+        if(before)
+            insertTracks(m_container->indexOf(before), uniqueTracks);
+        else
+            addTracks(uniqueTracks);
+    }
+    else
+    {
+        if(before)
+            insertTracks(m_container->indexOf(before), tracks);
+        else
+            addTracks(tracks);
+    }
 }
 
 void PlayListModel::doCurrentVisibleRequest()

@@ -403,10 +403,6 @@ public slots:
      */
     void insertJson(int index, const QByteArray &json);
     /*!
-     * Inserts \b tracks after item \b before in the playlist.
-     */
-    void insert(PlayListTrack *before, const QList<PlayListTrack *> &tracks);
-    /*!
      * Inserts file or directory at index position \b index in the playlist.
      * @param path Full path of file or directory.
      * @param index Position in the playlist.
@@ -577,6 +573,7 @@ private slots:
 
     void startCoverLoader();
     void setCover(const QString &path, const QImage &img);
+    void insertTracksInternal(PlayListTrack *before, const QList<PlayListTrack *> &tracks);
 
 private:
     PlayListTrack *m_current_track = nullptr;
