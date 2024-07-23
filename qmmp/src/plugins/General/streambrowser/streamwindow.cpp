@@ -205,7 +205,7 @@ void StreamWindow::on_addPushButton_clicked()
             tracks.last()->setValue(Qmmp::GENRE, m_iceCastModel->item(source_index.row(),1)->text());
         }
     }
-    PlayListManager::instance()->add(tracks);
+    PlayListManager::instance()->addTracks(tracks);
 }
 
 void StreamWindow::on_filterLineEdit_textChanged(const QString &text)

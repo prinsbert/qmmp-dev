@@ -373,22 +373,22 @@ public slots:
     /*!
      * Adds \b track to the playlist.
      */
-    void add(PlayListTrack *track);
+    void addTrack(PlayListTrack *track);
     /*!
      * Adds a list of tracks to the playlist.
      * @param tracks List of tracks.
      */
-    void add(const QList<PlayListTrack *> &tracks);
+    void addTracks(const QList<PlayListTrack *> &tracks);
     /*!
      * Adds a list of files and directories to the playlist
      * @param path Full path of file or directory.
      */
-    void add(const QString &path);
+    void addPath(const QString &path);
     /*!
      * Adds a list of files and directories to the playlist
      * @param paths Full paths of files and directories.
      */
-    void add(const QStringList &paths);
+    void addPaths(const QStringList &paths);
     /*!
      * Inserts \b track at index position \b index in the playlist.
      */

@@ -232,7 +232,7 @@ void Player2Object::OpenUri(const QString &in0)
         connect(m_pl_manager->currentPlayList(), &PlayListModel::trackAdded, this, &Player2Object::playTrack);
         connect(m_pl_manager->currentPlayList(), &PlayListModel::loaderFinished, this, &Player2Object::disconnectPl);
     }
-    m_pl_manager->currentPlayList()->add(path);
+    m_pl_manager->currentPlayList()->addPath(path);
 }
 
 void Player2Object::Pause()

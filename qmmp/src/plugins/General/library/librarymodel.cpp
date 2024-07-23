@@ -308,7 +308,7 @@ void LibraryModel::refresh()
 
 void LibraryModel::add(const QModelIndexList &indexes)
 {
-    PlayListManager::instance()->add(getTracks(indexes));
+    PlayListManager::instance()->addTracks(getTracks(indexes));
 }
 
 void LibraryModel::showTrackInformation(const QModelIndexList &indexes, QWidget *parent)

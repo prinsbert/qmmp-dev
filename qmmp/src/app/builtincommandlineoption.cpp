@@ -130,7 +130,7 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
 #endif
         }
         else
-            m_model->add(full_path_list);
+            m_model->addPaths(full_path_list);
         if(!remote_pls_list.isEmpty())
         {
             PlayListDownloader *downloader = new PlayListDownloader(this);
@@ -256,6 +256,6 @@ void BuiltinCommandLineOption::addPendingPaths()
     connect(m_model, &PlayListModel::trackAdded, this, &BuiltinCommandLineOption::disconnectPl);
     connect(m_model, &PlayListModel::loaderFinished, this, &BuiltinCommandLineOption::disconnectPl);
 
-    m_model->add(m_pending_path_list);
+    m_model->addPaths(m_pending_path_list);
     m_pending_path_list.clear();
 }

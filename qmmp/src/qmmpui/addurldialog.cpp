@@ -105,7 +105,7 @@ void AddUrlDialog::accept()
 
     if(QFile::exists(path)) //is local file
     {
-        m_model->add(path);
+        m_model->addPath(path);
         addToHistory(path);
         QDialog::accept();
         return;
@@ -117,7 +117,7 @@ void AddUrlDialog::accept()
     if(MetaDataManager::hasMatch(MetaDataManager::instance()->regExps(), path))
     {
         addToHistory(path);
-        m_model->add(path);
+        m_model->addPath(path);
         QDialog::accept();
         return;
     }
@@ -137,7 +137,7 @@ void AddUrlDialog::accept()
     }
 
     addToHistory(path);
-    m_model->add(path);
+    m_model->addPath(path);
     QDialog::accept();
 }
 

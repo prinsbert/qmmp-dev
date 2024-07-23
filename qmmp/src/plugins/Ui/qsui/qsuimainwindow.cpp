@@ -983,5 +983,5 @@ void QSUiMainWindow::copySelectedMenuActionTriggered(QAction *action)
         PlayListTrack *newItem = new PlayListTrack(*track);
         theCopy << newItem;
     }
-    targetPlayList->add(theCopy);
+    targetPlayList->addTracks(theCopy);
 }

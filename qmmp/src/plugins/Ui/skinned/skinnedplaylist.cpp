@@ -648,7 +648,7 @@ void SkinnedPlayList::copySelectedMenuActionTriggered(QAction *action)
         PlayListTrack *newItem = new PlayListTrack(*track);
         theCopy << newItem;
     }
-    targetPlayList->add(theCopy);
+    targetPlayList->addTracks(theCopy);
 }
 
 void SkinnedPlayList::onCurrentPlayListChanged(PlayListModel *current, PlayListModel *previous)
