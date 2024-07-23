@@ -131,7 +131,7 @@ void PlayListDownloader::readResponse(QNetworkReply *reply)
 
         if(reply->error() != QNetworkReply::NoError) //playlist is not available, simply add URL
         {
-            m_model->add(m_url.toString());
+            m_model->addPath(m_url.toString());
             reply->deleteLater();
             emit finished(true);
             return;
@@ -159,7 +159,7 @@ void PlayListDownloader::readResponse(QNetworkReply *reply)
         }
         else
         {
-            m_model->add(m_url.toString());
+            m_model->addPath(m_url.toString());
             emit finished(true);
         }
 

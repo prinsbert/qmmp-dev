@@ -177,7 +177,7 @@ void UDisksPlugin::processAction(QAction *action)
 {
     qCDebug(plugin, "action triggered: %s", qPrintable(action->data().toString()));
     QString path = action->data().toString();
-    PlayListManager::instance()->selectedPlayList()->add(path);
+    PlayListManager::instance()->selectedPlayList()->addPath(path);
 }
 
 QAction *UDisksPlugin::findAction(const QString &dev_path)
@@ -215,31 +215,31 @@ void UDisksPlugin::addPath(const QString &path)
 {
     PlayListModel *model = PlayListManager::instance()->selectedPlayList();
 
-    if (model->contains(path))
+    if(model->contains(path))
         return;
 
-    if (path.startsWith(u"cdda://"_s) && m_addTracks)
+    if(path.startsWith(u"cdda://"_s) && m_addTracks)
     {
-        PlayListManager::instance()->selectedPlayList()->add(path);
+        PlayListManager::instance()->selectedPlayList()->addPath(path);
         return;
     }
 
-    if (!path.startsWith(u"cdda://"_s) && m_addFiles)
-        PlayListManager::instance()->selectedPlayList()->add(path);
+    if(!path.startsWith(u"cdda://"_s) && m_addFiles)
+        PlayListManager::instance()->selectedPlayList()->addPath(path);
 }
 
 void UDisksPlugin::removePath(const QString &path)
 {
-    if ((path.startsWith(u"cdda://"_s) && !m_removeTracks) ||
+    if((path.startsWith(u"cdda://"_s) && !m_removeTracks) ||
             (!path.startsWith(u"cdda://"_s) && !m_removeFiles)) //process settings
         return;
 
     PlayListModel *model = PlayListManager::instance()->selectedPlayList();
 
     int i = 0;
-    while (!model->isEmpty() && i < model->trackCount())
+    while(!model->isEmpty() && i < model->trackCount())
     {
-        if (model->track(i)->path().startsWith(path))
+        if(model->track(i)->path().startsWith(path))
             model->removeTrack(i);
         else
             ++i;

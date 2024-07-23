@@ -286,7 +286,7 @@ void PlayListManager::readPlayLists()
         {
             if(!m_models.isEmpty() && !tracks.isEmpty())
             {
-                m_models.last()->add(tracks);
+                m_models.last()->addTracks(tracks);
                 m_models.last()->setCurrent(tracks.at(qBound(0, current, tracks.count() - 1)));
             }
             tracks.clear();
@@ -320,7 +320,7 @@ void PlayListManager::readPlayLists()
     }
     else if(!tracks.isEmpty())
     {
-        m_models.last()->add(tracks);
+        m_models.last()->addTracks(tracks);
         m_models.last()->setCurrent(tracks.at(qBound(0, current, tracks.count() - 1)));
     }
     if(pl < 0 || pl >= m_models.count())
@@ -434,19 +434,19 @@ void PlayListManager::showDetails()
     m_selected->showDetails();
 }
 
-void PlayListManager::add(const QList<PlayListTrack *> &tracks)
+void PlayListManager::addTracks(const QList<PlayListTrack *> &tracks)
 {
-    m_selected->add(tracks);
+    m_selected->addTracks(tracks);
 }
 
-void PlayListManager::add(const QString &path)
+void PlayListManager::addPath(const QString &path)
 {
-    m_selected->add(path);
+    m_selected->addPath(path);
 }
 
-void PlayListManager::add(const QStringList &paths)
+void PlayListManager::addPaths(const QStringList &paths)
 {
-    m_selected->add(paths);
+    m_selected->addPaths(paths);
 }
 
 void PlayListManager::randomizeList()

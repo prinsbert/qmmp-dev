@@ -209,17 +209,17 @@ public slots:
      */
     void showDetails();
     /*!
-     * This is a convenience function and is the same as calling \b selectedPlayList()->add(tracks)
+     * This is a convenience function and is the same as calling \b selectedPlayList()->addTracks(tracks)
      */
-    void add(const QList<PlayListTrack *> &tracks);
+    void addTracks(const QList<PlayListTrack *> &tracks);
     /*!
-     * This is a convenience function and is the same as calling \b selectedPlayList()->add(path)
+     * This is a convenience function and is the same as calling \b selectedPlayList()->addPath(path)
      */
-    void add(const QString &path);
+    void addPath(const QString &path);
     /*!
-     * This is a convenience function and is the same as calling \b selectedPlayList()->add(paths)
+     * This is a convenience function and is the same as calling \b selectedPlayList()->addPaths(paths)
      */
-    void add(const QStringList &paths);
+    void addPaths(const QStringList &paths);
     /*!
      * This is a convenience function and is the same as calling \b selectedPlayList()->randomizeList()
      */

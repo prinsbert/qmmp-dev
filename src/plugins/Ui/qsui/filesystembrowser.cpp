@@ -181,7 +181,7 @@ void FileSystemBrowser::addToPlayList()
         QString name = m_fileSystemModel->fileName(sourceIndex);
         if(name == QLatin1String(".."))
             continue;
-        PlayListManager::instance()->selectedPlayList()->add(m_fileSystemModel->filePath(sourceIndex));
+        PlayListManager::instance()->selectedPlayList()->addPath(m_fileSystemModel->filePath(sourceIndex));
     }
 }
 

@@ -303,7 +303,7 @@ void UiHelper::addSelectedFiles(const QStringList &files, bool play)
     if(play)
         playSelectedFiles(files);
     else
-        m_model->add(files);
+        m_model->addPaths(files);
 }
 
 void UiHelper::playSelectedFiles(const QStringList &files)
@@ -314,7 +314,7 @@ void UiHelper::playSelectedFiles(const QStringList &files)
     PlayListManager::instance()->activatePlayList(m_model);
     connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
     connect(m_model, &PlayListModel::trackAdded, this, &UiHelper::disconnectPl);
-    m_model->add(files);
+    m_model->addPaths(files);
 }
 
 void UiHelper::disconnectPl()

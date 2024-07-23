@@ -89,7 +89,7 @@ void PlayListModel::setName(const QString &name)
     }
 }
 
-void PlayListModel::add(PlayListTrack *track)
+void PlayListModel::addTrack(PlayListTrack *track)
 {
     m_container->addTrack(track);
     m_total_duration += track->duration();
@@ -117,7 +117,7 @@ void PlayListModel::add(PlayListTrack *track)
     emit listChanged(flags);
 }
 
-void PlayListModel::add(const QList<PlayListTrack *> &tracks)
+void PlayListModel::addTracks(const QList<PlayListTrack *> &tracks)
 {
     if(tracks.isEmpty())
         return;
@@ -152,12 +152,12 @@ void PlayListModel::add(const QList<PlayListTrack *> &tracks)
     emit listChanged(flags);
 }
 
-void PlayListModel::add(const QString &path)
+void PlayListModel::addPath(const QString &path)
 {
     m_loader->add(path);
 }
 
-void PlayListModel::add(const QStringList &paths)
+void PlayListModel::addPaths(const QStringList &paths)
 {
     m_loader->add(paths);
 }
@@ -195,7 +195,7 @@ void PlayListModel::insert(PlayListItem *before, PlayListTrack *track)
      if(before)
          insert(m_container->indexOf(before), track);
      else
-         add(track);
+         addTrack(track);
 }
 
 void PlayListModel::insert(int index, const QList<PlayListTrack *> &tracks)
@@ -259,14 +259,14 @@ void PlayListModel::insert(PlayListTrack *before, const QList<PlayListTrack *> &
         if(before)
             insert(m_container->indexOf(before), uniqueTracks);
         else
-            add(uniqueTracks);
+            addTracks(uniqueTracks);
     }
     else
     {
         if(before)
             insert(m_container->indexOf(before), tracks);
         else
-            add(tracks);
+            addTracks(tracks);
     }
 }
 
@@ -278,7 +278,7 @@ void PlayListModel::insert(int index, const QString &path)
 void PlayListModel::insert(int index, const QStringList &paths)
 {
     if(index < 0 || index >= m_container->trackCount())
-        add(paths);
+        addPaths(paths);
     else
     {
         PlayListTrack *before = m_container->track(index);
@@ -1192,7 +1192,7 @@ void PlayListModel::updateMetaData(const QStringList &paths)
     if(!tracksToRemove.isEmpty())
         removeTracks(tracksToRemove);
     if(!tracksToAdd.isEmpty())
-        add(tracksToAdd);
+        addTracks(tracksToAdd);
 
     updateMetaData();
 }
