@@ -162,7 +162,7 @@ void PlayListModel::addPaths(const QStringList &paths)
     m_loader->add(paths);
 }
 
-void PlayListModel::insert(int index, PlayListTrack *track)
+void PlayListModel::insertTrack(int index, PlayListTrack *track)
 {
     m_container->insertTrack(index, track);
     m_total_duration += track->duration();
@@ -190,15 +190,7 @@ void PlayListModel::insert(int index, PlayListTrack *track)
     emit listChanged(flags);
 }
 
-void PlayListModel::insert(PlayListItem *before, PlayListTrack *track)
-{
-     if(before)
-         insert(m_container->indexOf(before), track);
-     else
-         addTrack(track);
-}
-
-void PlayListModel::insert(int index, const QList<PlayListTrack *> &tracks)
+void PlayListModel::insertTracks(int index, const QList<PlayListTrack *> &tracks)
 {
     if(tracks.isEmpty())
         return;
@@ -228,9 +220,9 @@ void PlayListModel::insert(int index, const QList<PlayListTrack *> &tracks)
     emit listChanged(flags);
 }
 
-void PlayListModel::insert(int index, const QByteArray &json)
+void PlayListModel::insertJson(int index, const QByteArray &json)
 {
-    insert(index, PlayListParser::deserialize(json));
+    insertTracks(index, PlayListParser::deserialize(json));
 }
 
 void PlayListModel::insert(PlayListTrack *before, const QList<PlayListTrack *> &tracks)
@@ -257,25 +249,25 @@ void PlayListModel::insert(PlayListTrack *before, const QList<PlayListTrack *> &
         }
 
         if(before)
-            insert(m_container->indexOf(before), uniqueTracks);
+            insertTracks(m_container->indexOf(before), uniqueTracks);
         else
             addTracks(uniqueTracks);
     }
     else
     {
         if(before)
-            insert(m_container->indexOf(before), tracks);
+            insertTracks(m_container->indexOf(before), tracks);
         else
             addTracks(tracks);
     }
 }
 
-void PlayListModel::insert(int index, const QString &path)
+void PlayListModel::insertPath(int index, const QString &path)
 {
-    insert(index, QStringList() << path);
+    insertPaths(index, QStringList() << path);
 }
 
-void PlayListModel::insert(int index, const QStringList &paths)
+void PlayListModel::insertPaths(int index, const QStringList &paths)
 {
     if(index < 0 || index >= m_container->trackCount())
         addPaths(paths);
@@ -286,7 +278,7 @@ void PlayListModel::insert(int index, const QStringList &paths)
     }
 }
 
-void PlayListModel::insert(int index, const QList<QUrl> &urls)
+void PlayListModel::insertUrls(int index, const QList<QUrl> &urls)
 {
     QStringList paths;
     for(const QUrl &url : std::as_const(urls))
@@ -296,7 +288,7 @@ void PlayListModel::insert(int index, const QList<QUrl> &urls)
         else
             paths.append(url.toString());
     }
-    insert(index, paths);
+    insertPaths(index, paths);
 }
 
 int PlayListModel::groupCount() const

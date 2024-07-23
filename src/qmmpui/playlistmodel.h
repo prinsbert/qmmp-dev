@@ -392,20 +392,16 @@ public slots:
     /*!
      * Inserts \b track at index position \b index in the playlist.
      */
-    void insert(int index, PlayListTrack *track);
-    /*!
-     * Inserts \b track before playlist item \b before.
-     */
-    void insert(PlayListItem *before, PlayListTrack *track);
+    void insertTrack(int index, PlayListTrack *track);
     /*!
      * Inserts \b tracks at index position \b index in the playlist.
      */
-    void insert(int index, const QList<PlayListTrack *> &tracks);
+    void insertTracks(int index, const QList<PlayListTrack *> &tracks);
     /*!
      * Inserts serialized content \b json at index position \b index in the playlist.
      * May be useful for fast drag-and-drop.
      */
-    void insert(int index, const QByteArray &json);
+    void insertJson(int index, const QByteArray &json);
     /*!
      * Inserts \b tracks after item \b before in the playlist.
      */
@@ -415,19 +411,19 @@ public slots:
      * @param path Full path of file or directory.
      * @param index Position in the playlist.
      */
-    void insert(int index, const QString &path);
+    void insertPath(int index, const QString &path);
     /*!
      * Adds a list of files and directories at index position \b index in the playlist.
      * @param paths Full paths of files and directories.
      * @param index Position in the playlist.
      */
-    void insert(int index, const QStringList &paths);
+    void insertPaths(int index, const QStringList &paths);
     /*!
      * Adds a list of URLs at index position \b index in the playlist.
      * @param urls A list of URLs.
      * @param index Position in the playlist.
      */
-    void insert(int index, const QList<QUrl> &urls);
+    void insertUrls(int index, const QList<QUrl> &urls);
     /*!
      * Removes all items.
      */
