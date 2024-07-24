@@ -51,8 +51,8 @@ SkinnedTextScroller::SkinnedTextScroller (QWidget *parent) : QWidget (parent),
     m_timer->start();
 
     m_menu = new QMenu(this);
-    m_scrollAction = m_menu->addAction(tr("Autoscroll Songname"), this, SLOT(updateText()));
-    m_transparencyAction = m_menu->addAction(tr("Transparent Background"), this, SLOT(updateText()));
+    m_scrollAction = m_menu->addAction(tr("Autoscroll Songname"), this, &SkinnedTextScroller::updateText);
+    m_transparencyAction = m_menu->addAction(tr("Transparent Background"), this, &SkinnedTextScroller::updateText);
     m_scrollAction->setCheckable(true);
     m_transparencyAction->setCheckable(true);
     connect(m_timer, &QTimer::timeout, this, &SkinnedTextScroller::addOffset);
@@ -223,12 +223,12 @@ void SkinnedTextScroller::processState(Qmmp::State state)
     {
     case Qmmp::Buffering:
     {
-        connect(m_core, SIGNAL(bufferingProgress(int)), SLOT(setProgress(int)));
+        connect(m_core, &SoundCore::bufferingProgress, this, &SkinnedTextScroller::setProgress);
         break;
     }
     case Qmmp::Playing:
     {
-        disconnect(m_core, SIGNAL(bufferingProgress(int)), this, nullptr);
+        disconnect(m_core, &SoundCore::bufferingProgress, this, &SkinnedTextScroller::setProgress);
         m_bufferText.clear();
         updateText();
         break;

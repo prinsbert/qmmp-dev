@@ -95,7 +95,7 @@ void UDisksPlugin::addDevice(QDBusObjectPath o)
         qCDebug(plugin, "added device: \"%s\"", qPrintable(o.path()));
         m_devices << device;
         updateActions();
-        connect(device, SIGNAL(changed()), SLOT(updateActions()));
+        connect(device, & UDisksDevice::changed, this, &UDisksPlugin::updateActions);
     }
     else
         delete device;

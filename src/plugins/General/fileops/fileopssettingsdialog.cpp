@@ -128,7 +128,7 @@ void FileOpsSettingsDialog::on_newButton_clicked()
     nameItem->setData(DestionationRole, QStandardPaths::writableLocation(QStandardPaths::MusicLocation));
     nameItem->setData(PatternRole, u"%p - %t"_s);
 
-    connect(comboBox, SIGNAL(activated(int)), SLOT(updateLineEdits()));
+    connect(comboBox, &QComboBox::activated, this, &FileOpsSettingsDialog::updateLineEdits);
 
     m_ui->tableWidget->setCellWidget(row, 0, checkBox);
     m_ui->tableWidget->setCellWidget(row, 1, comboBox);

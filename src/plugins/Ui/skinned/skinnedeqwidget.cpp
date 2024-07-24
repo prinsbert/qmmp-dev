@@ -259,16 +259,13 @@ void SkinnedEqWidget::writeEq()
 
 void SkinnedEqWidget::createActions()
 {
-    m_presetsMenu->addAction(tr("&Load/Delete"),this, SLOT(showEditor()));
+    m_presetsMenu->addAction(tr("&Load/Delete"), this, &SkinnedEqWidget::showEditor);
     m_presetsMenu->addSeparator();
-    m_presetsMenu->addAction(QIcon::fromTheme(u"document-save"_s), tr("&Save Preset"),
-                             this, &SkinnedEqWidget::savePreset);
-    m_presetsMenu->addAction(QIcon::fromTheme(u"document-save"_s), tr("&Save Auto-load Preset"),
-                             this, &SkinnedEqWidget::saveAutoPreset);
-    m_presetsMenu->addAction(QIcon::fromTheme(u"document-open"_s), tr("&Import"),
-                             this, &SkinnedEqWidget::importWinampEQF);
+    m_presetsMenu->addAction(QIcon::fromTheme(u"document-save"_s), tr("&Save Preset"), this, &SkinnedEqWidget::savePreset);
+    m_presetsMenu->addAction(QIcon::fromTheme(u"document-save"_s), tr("&Save Auto-load Preset"), this, &SkinnedEqWidget::saveAutoPreset);
+    m_presetsMenu->addAction(QIcon::fromTheme(u"document-open"_s), tr("&Import"), this, &SkinnedEqWidget::importWinampEQF);
     m_presetsMenu->addSeparator();
-    m_presetsMenu->addAction(QIcon::fromTheme(u"edit-clear"_s), tr("&Clear"), this, SLOT(reset()));
+    m_presetsMenu->addAction(QIcon::fromTheme(u"edit-clear"_s), tr("&Clear"), this, &SkinnedEqWidget::reset);
 }
 
 void SkinnedEqWidget::showPresetsMenu()

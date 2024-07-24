@@ -114,7 +114,7 @@ void QSUiSettings::createActions()
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui->windowTitleButton->setMenu(menu);
     m_ui->windowTitleButton->setPopupMode(QToolButton::InstantPopup);
-    connect(menu, SIGNAL(patternSelected(QString)), SLOT(addWindowTitleString(QString)));
+    connect(menu, &MetaDataFormatterMenu::patternSelected, this, &QSUiSettings::addWindowTitleString);
 }
 
 void QSUiSettings::on_popupTemplateButton_clicked()

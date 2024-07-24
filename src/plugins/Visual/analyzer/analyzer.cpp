@@ -306,8 +306,8 @@ void Analyzer::draw(QPainter *p)
 void Analyzer::createMenu()
 {
     m_menu = new QMenu (this);
-    connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(writeSettings()));
-    connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(readSettings()));
+    connect(m_menu, &QMenu::triggered, this, &Analyzer::writeSettings);
+    connect(m_menu, &QMenu::triggered, this, &Analyzer::readSettings);
 
     m_peaksAction = m_menu->addAction(tr("Peaks"));
     m_peaksAction->setCheckable(true);

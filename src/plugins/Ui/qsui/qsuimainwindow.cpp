@@ -126,7 +126,7 @@ QSUiMainWindow::QSUiMainWindow(QWidget *parent) : QMainWindow(parent), m_ui(new 
     connect(m_tabWidget, &QSUiTabWidget::createPlayListRequested, m_pl_manager, [this] { m_pl_manager->createPlayList(); });
 
     m_tabWidget->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(m_tabWidget, SIGNAL(customContextMenuRequested(QPoint)), SLOT(showTabMenu(QPoint)));
+    connect(m_tabWidget, &QSUiTabWidget::customContextMenuRequested, this, &QSUiMainWindow::showTabMenu);
     m_tab_menu = new QMenu(m_tabWidget);
     //status bar
     m_statusBar = new QSUiStatusBar(this);
@@ -537,7 +537,7 @@ void QSUiMainWindow::createActions()
     m_ui->menuView->addSeparator();
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_DOCKWIDGETS, this, &QSUiMainWindow::setDockWidgetsBlocked));
     m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::UI_BLOCK_TOOLBARS, this, &QSUiMainWindow::setToolBarsBlocked));
-    m_ui->menuView->addAction(tr("Edit Toolbars"), this, SLOT(editToolBar()));
+    m_ui->menuView->addAction(tr("Edit Toolbars"), this, &QSUiMainWindow::editToolBar);
 
     QMenu *sortMenu = new QMenu(tr("Sort List"), this);
     sortMenu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));

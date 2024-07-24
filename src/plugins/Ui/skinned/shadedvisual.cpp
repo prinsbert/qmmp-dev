@@ -30,10 +30,10 @@ ShadedVisual::ShadedVisual(QWidget *parent) : Visual(parent)
     m_skin = Skin::instance();
     m_ratio = m_skin->ratio();
     resize(m_ratio*38,m_ratio*5);
-    m_pixmap = QPixmap (m_ratio*38,m_ratio*5);
+    m_pixmap = QPixmap(m_ratio*38,m_ratio*5);
     m_timer = new QTimer(this);
-    connect(m_timer, SIGNAL (timeout()), this, SLOT (timeout()));
-    connect(m_skin, SIGNAL(skinChanged()), this, SLOT(updateSkin()));
+    connect(m_timer,  &QTimer::timeout, this, &ShadedVisual::timeout);
+    connect(m_skin, &Skin::skinChanged, this, &ShadedVisual::updateSkin);
     m_timer->setInterval(50);
     m_timer->start();
     clear();

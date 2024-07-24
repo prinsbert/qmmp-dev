@@ -66,7 +66,7 @@ LyricsWidget::LyricsWidget(bool dialog, QWidget *parent) : QWidget(parent),
         }
         m_http->setProxy(proxy);
     }
-    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(onRequestFinished(QNetworkReply*)));
+    connect(m_http, &QNetworkAccessManager::finished, this, &LyricsWidget::onRequestFinished);
 
     if(!m_parser.load(u":/ultimate_providers.xml"_s))
     {

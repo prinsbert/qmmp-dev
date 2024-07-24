@@ -71,7 +71,7 @@ QMMPStarter::QMMPStarter() : QObject()
     }
 
 #ifndef QT_NO_SESSIONMANAGER
-    connect(qApp, SIGNAL(commitDataRequest(QSessionManager&)), SLOT(commitData(QSessionManager&)), Qt::DirectConnection);
+    connect(qApp, &QApplication::commitDataRequest, this, &QMMPStarter::commitData, Qt::DirectConnection);
 #endif
     createPaths();
 #ifdef Q_OS_WIN
@@ -329,7 +329,7 @@ void QMMPStarter::startPlayer()
         m_exit_code = EXIT_FAILURE;
         return;
     }
-    connect(qApp, SIGNAL(aboutToQuit()), SLOT(savePosition()));
+    connect(qApp, &QApplication::aboutToQuit, this, &QMMPStarter::savePosition);
     processCommandArgs(args, QDir::currentPath());
     if(args.isEmpty())
     {

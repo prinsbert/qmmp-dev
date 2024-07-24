@@ -231,7 +231,7 @@ void Scrobbler::processResponse(QNetworkReply *reply)
         }
         else if(error_code == "11"_L1 || error_code == "16"_L1 || error_code.isEmpty()) //unavailable
         {
-            QTimer::singleShot(120000, this, SLOT(submit()));
+            QTimer::singleShot(120000, this, &Scrobbler::submit);
         }
         else
         {
@@ -388,7 +388,7 @@ ScrobblerAuth::ScrobblerAuth(const QString &scrobblerUrl, const QString &authUrl
     m_authUrl(authUrl),
     m_name(name)
 {
-    connect(m_http, SIGNAL(finished(QNetworkReply*)), SLOT(processResponse(QNetworkReply*)));
+    connect(m_http, &QNetworkAccessManager::finished, this, &ScrobblerAuth::processResponse);
 
     QmmpSettings *gs = QmmpSettings::instance();
     if (gs->isProxyEnabled())

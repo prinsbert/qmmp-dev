@@ -37,7 +37,7 @@ SkinnedEqTitleBar::SkinnedEqTitleBar(SkinnedEqWidget *parent)
     m_close = new SkinnedButton(this, Skin::EQ_BT_CLOSE_N, Skin::EQ_BT_CLOSE_P, Skin::CUR_EQCLOSE);
     connect(m_close, &SkinnedButton::clicked, m_eq, &SkinnedEqWidget::closed);
     m_shade = new SkinnedButton(this, Skin::EQ_BT_SHADE1_N, Skin::EQ_BT_SHADE1_P, Skin::CUR_EQNORMAL);
-    connect(m_shade, SIGNAL(clicked()), SLOT(shade()));
+    connect(m_shade, &SkinnedButton::clicked, this, &SkinnedEqTitleBar::shade);
     QSettings settings;
     if(settings.value("Skinned/eq_shaded"_L1, false).toBool())
         shade();

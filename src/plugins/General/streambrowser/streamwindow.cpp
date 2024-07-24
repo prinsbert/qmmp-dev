@@ -128,8 +128,7 @@ StreamWindow::StreamWindow(QWidget *parent)
                                            tr("&Add to playlist"), this, &StreamWindow::on_addPushButton_clicked);
     m_favoritesMenu = new QMenu(this);
     m_favoritesMenu->addAction(m_addAction);
-    m_favoritesMenu->addAction(QIcon::fromTheme(u"document-new"_s), tr("&Create"),
-                               this, SLOT(createStream()));
+    m_favoritesMenu->addAction(QIcon::fromTheme(u"document-new"_s), tr("&Create"), this, &StreamWindow::createStream);
     m_editAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"document-properties"_s), tr("&Edit"),
                                               this, &StreamWindow::editStream);
     m_favoritesMenu->addSeparator();

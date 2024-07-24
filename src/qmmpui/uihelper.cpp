@@ -67,7 +67,7 @@ bool UiHelper::visibilityControl()
 
 void UiHelper::addAction(QAction *action, MenuType type)
 {
-    connect(action, SIGNAL(destroyed(QObject*)), SLOT(removeAction(QObject*)));
+    connect(action, &QAction::destroyed, this, qOverload<QObject *>(&UiHelper::removeAction));
 
     if(!m_menus[type].actions.contains(action))
     {

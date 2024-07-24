@@ -197,7 +197,7 @@ void ConverterDialog::createMenus()
     MetaDataFormatterMenu *fileNameMenu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui->fileNameButton->setMenu(fileNameMenu);
     m_ui->fileNameButton->setPopupMode(QToolButton::InstantPopup);
-    connect(fileNameMenu, SIGNAL(patternSelected(QString)), SLOT(addTitleString(QString)));
+    connect(fileNameMenu, &MetaDataFormatterMenu::patternSelected, this, &ConverterDialog::addTitleString);
 
     QMenu *presetMenu = new QMenu(this);
     presetMenu->addAction(tr("Create"), this, &ConverterDialog::createPreset);

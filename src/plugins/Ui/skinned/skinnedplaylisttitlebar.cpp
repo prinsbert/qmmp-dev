@@ -218,7 +218,7 @@ void SkinnedPlayListTitleBar::setModel(PlayListModel *selected, PlayListModel *p
     if(previous)
         disconnect(previous, nullptr, this, nullptr); //disconnect previous model
     m_model = selected;
-    connect (m_model, SIGNAL(listChanged(int)), SLOT(showCurrent()));
+    connect(m_model, &PlayListModel::listChanged, this, &SkinnedPlayListTitleBar::showCurrent);
     showCurrent();
 }
 
@@ -251,7 +251,7 @@ void SkinnedPlayListTitleBar::shade()
         m_shade->hide();
         m_shade2 = new SkinnedButton(this, Skin::PL_BT_SHADE2_N, Skin::PL_BT_SHADE2_P, Skin::CUR_PWSNORM);
         m_shade2->move(254, 3);
-        connect(m_shade2, SIGNAL(clicked()), SLOT(shade()));
+        connect(m_shade2, &SkinnedButton::clicked, this, &SkinnedPlayListTitleBar::shade);
         m_shade2->show();
     }
     else
