@@ -33,7 +33,7 @@ RemovableHelper::RemovableHelper(QObject *parent): QObject(parent)
 {
     qApp->installNativeEventFilter(this);
     m_actions = new QActionGroup(this);
-    connect(m_actions,SIGNAL(triggered(QAction *)), SLOT(processAction(QAction *)));
+    connect(m_actions, &QActionGroup::triggered, this, &RemovableHelper::processAction);
     //load settings
     QSettings settings;
     settings.beginGroup("rdetect"_L1);

@@ -62,7 +62,7 @@ QSUiPlayListHeader::QSUiPlayListHeader(QWidget *parent) :
     m_alignmentMenu->addAction(tr("Left", "alignment"))->setData(QSUiListWidgetRow::ALIGN_LEFT);
     m_alignmentMenu->addAction(tr("Right", "alignment"))->setData(QSUiListWidgetRow::ALIGN_RIGHT);
     m_alignmentMenu->addAction(tr("Center", "alignment"))->setData(QSUiListWidgetRow::ALIGN_CENTER);
-    connect(m_alignmentMenu, SIGNAL(triggered(QAction*)), SLOT(setAlignment(QAction*)));
+    connect(m_alignmentMenu, &QMenu::triggered, this, &QSUiPlayListHeader::setAlignment);
     QActionGroup *alignmentGroup = new QActionGroup(this);
     for(QAction *a : m_alignmentMenu->actions())
     {

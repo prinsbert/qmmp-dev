@@ -38,7 +38,7 @@ SkinnedSettings::SkinnedSettings(QWidget *parent) : QWidget(parent), m_ui(new Ui
     m_ui->listWidget->setIconSize(QSize(105, 34));
     m_skin = Skin::instance();
     m_reader = new SkinReader(this);
-    connect(m_ui->skinReloadButton, SIGNAL (clicked()), SLOT(loadSkins()));
+    connect(m_ui->skinReloadButton, &QPushButton::clicked, this, &SkinnedSettings::loadSkins);
     connect(m_ui->plTransparencySlider, &QSlider::valueChanged, m_ui->plTransparencyLabel, qOverload<int>(&QLabel::setNum));
     connect(m_ui->mwTransparencySlider, &QSlider::valueChanged, m_ui->mwTransparencyLabel, qOverload<int>(&QLabel::setNum));
     connect(m_ui->eqTransparencySlider, &QSlider::valueChanged, m_ui->eqTransparencyLabel, qOverload<int>(&QLabel::setNum));
@@ -150,7 +150,7 @@ void SkinnedSettings::createActions()
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui->windowTitleButton->setMenu(menu);
     m_ui->windowTitleButton->setPopupMode(QToolButton::InstantPopup);
-    connect(menu, SIGNAL(patternSelected(QString)), SLOT(addWindowTitleString(QString)));
+    connect(menu, &MetaDataFormatterMenu::patternSelected, this, &SkinnedSettings::addWindowTitleString);
 }
 
 void SkinnedSettings::loadSkins()

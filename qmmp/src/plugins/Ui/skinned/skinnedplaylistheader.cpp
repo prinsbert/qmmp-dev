@@ -74,11 +74,11 @@ SkinnedPlayListHeader::SkinnedPlayListHeader(QWidget *parent) :
 
     //menus
     m_menu = new QMenu(this);
-    m_menu->addAction(QIcon::fromTheme(u"list-add"_s), tr("Add Column"), this, SLOT(addColumn()));
-    m_menu->addAction(QIcon::fromTheme(u"configure"_s), tr("Edit Column"), this, SLOT(editColumn()));
-    m_trackStateAction = m_menu->addAction(tr("Show Queue/Protocol"), this, SLOT(showTrackState(bool)));
+    m_menu->addAction(QIcon::fromTheme(u"list-add"_s), tr("Add Column"), this, &SkinnedPlayListHeader::addColumn);
+    m_menu->addAction(QIcon::fromTheme(u"configure"_s), tr("Edit Column"), this, &SkinnedPlayListHeader::editColumn);
+    m_trackStateAction = m_menu->addAction(tr("Show Queue/Protocol"), this, &SkinnedPlayListHeader::showTrackState);
     m_trackStateAction->setCheckable(true);
-    m_autoResizeAction = m_menu->addAction(tr("Auto-resize"), this, SLOT(setAutoResize(bool)));
+    m_autoResizeAction = m_menu->addAction(tr("Auto-resize"), this, &SkinnedPlayListHeader::setAutoResize);
     m_autoResizeAction->setCheckable(true);
 
     m_alignmentMenu = m_menu->addMenu(tr("Alignment"));

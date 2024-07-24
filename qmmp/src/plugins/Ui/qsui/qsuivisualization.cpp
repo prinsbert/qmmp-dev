@@ -36,8 +36,8 @@ QSUIVisualization::QSUIVisualization(QWidget *parent) : Visual (parent)
     m_pixLabel = new QLabel(this);
     createMenu();
 
-    m_timer = new QTimer (this);
-    connect(m_timer, SIGNAL (timeout()), this, SLOT (timeout()));
+    m_timer = new QTimer(this);
+    connect(m_timer, &QTimer::timeout, this, &QSUIVisualization::timeout);
 
     readSettings();
     clear();

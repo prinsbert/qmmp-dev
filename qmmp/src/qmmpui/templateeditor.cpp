@@ -52,7 +52,7 @@ void TemplateEditor::createMenu()
 {
     MetaDataFormatterMenu *menu = new MetaDataFormatterMenu(MetaDataFormatterMenu::TITLE_MENU, this);
     m_ui->insertButton->setMenu(menu);
-    connect(menu, SIGNAL(patternSelected(QString)), m_ui->textEdit, SLOT(insertPlainText(QString)));
+    connect(menu, &MetaDataFormatterMenu::patternSelected, m_ui->textEdit, &QPlainTextEdit::insertPlainText);
 }
 
 void TemplateEditor::on_resetButton_clicked()

@@ -48,8 +48,8 @@ LibraryWidget::LibraryWidget(bool dialog, QWidget *parent) :
     }
 
     m_menu = new QMenu(this);
-    m_menu->addAction(QIcon::fromTheme(u"list-add"_s), tr("&Add to Playlist"), this, SLOT(addSelected()));
-    m_menu->addAction(QIcon::fromTheme(u"dialog-information"_s), tr("&View Track Details"), this, SLOT(showTrackInformation()));
+    m_menu->addAction(QIcon::fromTheme(u"list-add"_s), tr("&Add to Playlist"), this, &LibraryWidget::addSelected);
+    m_menu->addAction(QIcon::fromTheme(u"dialog-information"_s), tr("&View Track Details"), this, &LibraryWidget::showTrackInformation);
     m_menu->addSeparator();
     m_filterAction = m_menu->addAction(tr("Quick Search"), m_ui->filterLineEdit, &QLineEdit::setVisible);
     m_menu->addAction(tr("&Library Information"), this, &LibraryWidget::showLibraryInformation);
