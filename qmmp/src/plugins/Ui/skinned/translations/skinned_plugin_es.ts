@@ -571,37 +571,37 @@
         <translation type="unfinished">&amp;Guardar preprogramado</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation type="unfinished">&amp;Guardar preprogramado autocargable</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <location filename="../skinnedeqwidget.cpp" line="266"/>
         <source>&amp;Import</source>
         <translation type="unfinished">&amp;Importar</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="271"/>
+        <location filename="../skinnedeqwidget.cpp" line="268"/>
         <source>&amp;Clear</source>
         <translation type="unfinished">&amp;Limpiar</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="300"/>
+        <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Saving Preset</source>
         <translation type="unfinished">Guardando preprogramado</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="301"/>
+        <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>Preset name:</source>
         <translation type="unfinished">Nombre del preprogramado:</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="302"/>
+        <location filename="../skinnedeqwidget.cpp" line="299"/>
         <source>preset #</source>
         <translation type="unfinished">Preprogramado nº</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="398"/>
+        <location filename="../skinnedeqwidget.cpp" line="395"/>
         <source>Import Preset</source>
         <translation type="unfinished">Importar preprogramado</translation>
     </message>
@@ -1109,112 +1109,112 @@
         <translation>Utilizar colores de piel</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="520"/>
+        <location filename="../forms/skinnedsettings.ui" line="545"/>
         <source>Background #2:</source>
         <translation>Fondo #2:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="584"/>
+        <location filename="../forms/skinnedsettings.ui" line="609"/>
         <source>Highlighted background:</source>
         <translation>Fondo resaltado:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="488"/>
+        <location filename="../forms/skinnedsettings.ui" line="500"/>
         <source>Normal text:</source>
         <translation>Texto normal:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="651"/>
+        <location filename="../forms/skinnedsettings.ui" line="763"/>
         <source>Splitter:</source>
         <translation>Divisor:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="552"/>
+        <location filename="../forms/skinnedsettings.ui" line="577"/>
         <source>Current text:</source>
         <translation>Texto actual:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="616"/>
+        <location filename="../forms/skinnedsettings.ui" line="641"/>
         <source>Highlighted text:</source>
         <translation>Texto resaltado:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="759"/>
+        <location filename="../forms/skinnedsettings.ui" line="813"/>
         <source>Current track background:</source>
         <translation>Fondo de la pista actual</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="861"/>
+        <location filename="../forms/skinnedsettings.ui" line="871"/>
         <source>Override current track background</source>
         <translation>Anular el fondo de la pista actual</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="724"/>
+        <location filename="../forms/skinnedsettings.ui" line="778"/>
         <source>Group background:</source>
         <translation>Fondo del Grupo:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="854"/>
+        <location filename="../forms/skinnedsettings.ui" line="878"/>
         <source>Override group background</source>
         <translation>Anular fondo de grupo</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="692"/>
+        <location filename="../forms/skinnedsettings.ui" line="700"/>
         <source>Group text:</source>
         <translation>Texto del Grupo:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="443"/>
+        <location filename="../forms/skinnedsettings.ui" line="455"/>
         <source>Background #1:</source>
         <translation>Fondo #1:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="819"/>
+        <location filename="../forms/skinnedsettings.ui" line="691"/>
         <source>Load skin colors</source>
         <translation>Cargar colores de piel</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="888"/>
+        <location filename="../forms/skinnedsettings.ui" line="904"/>
         <source>Fonts</source>
         <translation>Tipografías</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="942"/>
+        <location filename="../forms/skinnedsettings.ui" line="958"/>
         <source>Playlist:</source>
         <translation>Lista de Reproducción:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="978"/>
+        <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Column headers:</source>
         <translation>Cabeceras de columna:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="900"/>
+        <location filename="../forms/skinnedsettings.ui" line="916"/>
         <source>Player:</source>
         <translation>Reproductor</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="922"/>
-        <location filename="../forms/skinnedsettings.ui" line="964"/>
-        <location filename="../forms/skinnedsettings.ui" line="991"/>
+        <location filename="../forms/skinnedsettings.ui" line="938"/>
+        <location filename="../forms/skinnedsettings.ui" line="980"/>
+        <location filename="../forms/skinnedsettings.ui" line="1007"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="142"/>
-        <location filename="../forms/skinnedsettings.ui" line="929"/>
-        <location filename="../forms/skinnedsettings.ui" line="971"/>
-        <location filename="../forms/skinnedsettings.ui" line="998"/>
+        <location filename="../forms/skinnedsettings.ui" line="945"/>
+        <location filename="../forms/skinnedsettings.ui" line="987"/>
+        <location filename="../forms/skinnedsettings.ui" line="1014"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1020"/>
+        <location filename="../forms/skinnedsettings.ui" line="1036"/>
         <source>Reset fonts</source>
         <translation>Restaurar tipografías</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1029"/>
+        <location filename="../forms/skinnedsettings.ui" line="1045"/>
         <source>Use bitmap font if available</source>
         <translation>Usar tipografías de mapa de bits si es posible</translation>
     </message>
