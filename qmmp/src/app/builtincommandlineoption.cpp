@@ -228,7 +228,7 @@ void BuiltinCommandLineOption::disconnectPl()
 {
     if(m_model)
     {
-        disconnect(m_model, SIGNAL(trackAdded(PlayListTrack*)), MediaPlayer::instance(), SLOT(play()));
+        disconnect(m_model, &PlayListModel::trackAdded, MediaPlayer::instance(), &MediaPlayer::play);
         disconnect(m_model, &PlayListModel::trackAdded, this, &BuiltinCommandLineOption::disconnectPl);
         disconnect(m_model, &PlayListModel::loaderFinished, this, &BuiltinCommandLineOption::disconnectPl);
         m_model = nullptr;
@@ -252,7 +252,7 @@ void BuiltinCommandLineOption::addPendingPaths()
     m_model = pl_manager->selectedPlayList();
     m_model->clear();
 
-    connect(m_model, SIGNAL(trackAdded(PlayListTrack*)), player, SLOT(play()));
+    connect(m_model, &PlayListModel::trackAdded, player, &MediaPlayer::play);
     connect(m_model, &PlayListModel::trackAdded, this, &BuiltinCommandLineOption::disconnectPl);
     connect(m_model, &PlayListModel::loaderFinished, this, &BuiltinCommandLineOption::disconnectPl);
 

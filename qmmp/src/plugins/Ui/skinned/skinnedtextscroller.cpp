@@ -235,7 +235,7 @@ void SkinnedTextScroller::processState(Qmmp::State state)
     }
     case Qmmp::Stopped:
     {
-        disconnect(m_core, SIGNAL(bufferingProgress(int)), this, nullptr);
+        disconnect(m_core, &SoundCore::bufferingProgress, this, nullptr);
         break;
     }
     default:

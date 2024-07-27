@@ -65,7 +65,8 @@ public slots:
     /*!
      * Starts playback.
      */
-    void play(qint64 offset = -1);
+    void play();
+    void playFromPosition(qint64 offset);
     /*!
      * Stops playback.
      */
