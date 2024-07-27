@@ -117,7 +117,7 @@ void FFmpegEngine::seek(qint64 pos)
 
 void FFmpegEngine::stop()
 {
-    qDebug("%s", Q_FUNC_INFO);
+    qCDebug(plugin) << Q_FUNC_INFO;
     mutex()->lock ();
     m_user_stop = true;
     mutex()->unlock();
@@ -357,7 +357,7 @@ void FFmpegEngine::run()
     if(m_finish && !m_user_stop)
         StateHandler::instance()->sendFinished();
     StateHandler::instance()->dispatch(Qmmp::Stopped);
-    qDebug("FFmpegEngine: thread finished");
+    qCDebug(plugin) << "thread finished";
 }
 
 void FFmpegEngine::sendMetaData()

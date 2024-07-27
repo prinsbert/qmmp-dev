@@ -75,7 +75,7 @@ QList<TrackInfo *> FFVideoFactory::createPlayList(const QString &path, TrackInfo
     if(avformat_open_input(&in, path.toLocal8Bit().constData(), nullptr, nullptr) < 0)
 #endif
     {
-        qDebug("DecoderFFmpegFactory: unable to open file");
+        qCDebug(plugin) << "unable to open file";
         delete info;
         return  QList<TrackInfo*>();
     }

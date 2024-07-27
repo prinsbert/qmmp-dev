@@ -20,6 +20,7 @@
 
 #include <QImage>
 #include <QElapsedTimer>
+#include <qmmp/qmmp.h>
 #include "packetbuffer.h"
 #include "videowindow.h"
 #include "ffvideodecoder.h"
@@ -173,7 +174,7 @@ void VideoThread::run()
         {
             m_buffer->done();
             av_strerror(err, errbuf, sizeof(errbuf));
-            qWarning("VideoThread: avcodec_send_packet failed: %s", errbuf);
+            qCWarning(plugin) << "avcodec_send_packet failed:" << errbuf;
         }
 
         m_buffer->mutex()->unlock();
@@ -203,7 +204,7 @@ void VideoThread::run()
     if(frameRGB)
         av_frame_free(&frameRGB);
     sws_freeContext(sws);
-    qDebug("VideoThread: finished");
+    qCDebug(plugin) << "finished";
 }
 
 void VideoThread::setWindowSize(const QSize &windowSize)

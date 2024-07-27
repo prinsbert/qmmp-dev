@@ -42,7 +42,7 @@ ModPlugMetaDataModel::ModPlugMetaDataModel(const QString &path) : MetaDataModel(
         QFile file(m_path);
         if(!file.open(QIODevice::ReadOnly))
         {
-            qWarning("DetailsDialog: error: %s", qPrintable(file.errorString ()));
+            qCWarning(plugin) << "error:" << file.errorString();
             return;
         }
         m_buffer = file.readAll();

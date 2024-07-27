@@ -45,7 +45,7 @@ bool DecoderFFapCUE::initialize()
 {
     if(!m_url.startsWith(u"ape://"_s, Qt::CaseInsensitive) || m_url.endsWith(u".ape"_s, Qt::CaseInsensitive))
     {
-        qWarning("DecoderFFapCUE: invalid url.");
+        qCWarning(plugin) << "invalid url.";
         return false;
     }
 
@@ -58,7 +58,7 @@ bool DecoderFFapCUE::initialize()
 
     if(!tag || !tag->itemListMap().contains("CUESHEET"))
     {
-        qWarning("DecoderFFapCUE: unable to find cuesheet comment.");
+        qCWarning(plugin) << "unable to find cuesheet comment.";
         return false;
     }
 
@@ -68,13 +68,13 @@ bool DecoderFFapCUE::initialize()
 
     if(m_track > m_parser->count() || m_parser->isEmpty())
     {
-        qWarning("DecoderFFapCUE: invalid cuesheet");
+        qCWarning(plugin) << "invalid cuesheet";
         return false;
     }
     m_input = new QFile(filePath);
     if(!m_input->open(QIODevice::ReadOnly))
     {
-        qWarning("DecoderFFapCUE: %s", qPrintable(m_input->errorString()));
+        qCWarning(plugin) << "%s" << m_input->errorString();
         return false;
     }
     QMap<Qmmp::MetaData, QString> metaData = m_parser->info(m_track)->metaData();
@@ -86,7 +86,7 @@ bool DecoderFFapCUE::initialize()
     m_decoder = new DecoderFFap(filePath, m_input);
     if(!m_decoder->initialize())
     {
-        qWarning("DecoderFFapCUE: invalid audio file");
+        qCWarning(plugin) << "invalid audio file";
         return false;
     }
     m_decoder->seek(m_offset);

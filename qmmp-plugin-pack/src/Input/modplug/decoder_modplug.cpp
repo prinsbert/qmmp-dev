@@ -68,7 +68,7 @@ bool DecoderModPlug::initialize()
         QFile file(m_path);
         if (!file.open(QIODevice::ReadOnly))
         {
-            qWarning("DecoderModPlug: error: %s", qPrintable(file.errorString ()));
+            qCWarning(plugin) << "error:" << file.errorString();
             return false;
         }
         m_input_buf = file.readAll();
@@ -76,7 +76,7 @@ bool DecoderModPlug::initialize()
     }
     if (m_input_buf.isEmpty())
     {
-        qWarning("DecoderModPlug: error while reading module file");
+        qCWarning(plugin) << "error while reading module file";
         return false;
     }
     m_soundFile = new CSoundFile();

@@ -102,11 +102,11 @@ bool YtbInputSource::initialize()
     m_backend = findBackend();
     if(m_backend.isEmpty())
     {
-        qWarning("YtbInputSource: unable to find backend");
+        qCWarning(plugin) << "unable to find backend";
         return false;
     }
 
-    qWarning("YtbInputSource: using %s", qPrintable(m_backend));
+    qCWarning(plugin) << "using" << m_backend;
 
     QString id;
     if(m_url.startsWith(u"ytb://"_s))
@@ -124,7 +124,7 @@ bool YtbInputSource::initialize()
     m_ready = false;
     m_buffer->open(QIODevice::ReadOnly);
     m_process->start(m_backend, args);
-    qDebug("YtbInputSource: starting %s...", qPrintable(m_backend));
+    qCDebug(plugin) << "starting" << m_backend << "...";
     return true;
 }
 
@@ -151,7 +151,7 @@ void YtbInputSource::stop()
 
 void YtbInputSource::onProcessErrorOccurred(QProcess::ProcessError)
 {
-    qWarning("YtbInputSource: unable to start process '%s', error: %s", qPrintable(m_backend), qPrintable(m_process->errorString()));
+    qCWarning(plugin, "unable to start process '%s', error: %s", qPrintable(m_backend), qPrintable(m_process->errorString()));
     emit error();
 }
 
@@ -159,7 +159,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 {
     if(exitCode != EXIT_SUCCESS || status != QProcess::NormalExit)
     {
-        qWarning("YtbInputSource: %s finished with error:\n%s", qPrintable(m_backend), m_process->readAllStandardError().constData());
+        qCWarning(plugin, "%s finished with error:\n%s", qPrintable(m_backend), m_process->readAllStandardError().constData());
         emit error();
         return;
     }
@@ -167,7 +167,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     QJsonDocument document = QJsonDocument::fromJson(m_process->readAllStandardOutput());
     if(document.isEmpty())
     {
-        qWarning("YtbInputSource: unable to parse %s output", qPrintable(m_backend));
+        qCWarning(plugin, "unable to parse %s output", qPrintable(m_backend));
         emit error();
         return;
     }
@@ -196,7 +196,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     {
         QJsonObject obj = value.toObject();
 
-        qDebug() << obj[u"acodec"_s].toString() << obj[u"vcodec"_s].toString() << obj[u"abr"_s].toDouble();
+        qCDebug(plugin) << obj[u"acodec"_s].toString() << obj[u"vcodec"_s].toString() << obj[u"abr"_s].toDouble();
 
         if(obj[u"abr"_s].toDouble() > bitrate && obj[u"acodec"_s].toString() == "opus"_L1 &&
                 obj[u"vcodec"_s].toString() == "none"_L1)
@@ -229,7 +229,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
     if(url.isEmpty())
     {
-        qWarning("YtbInputSource: unable to find stream");
+        qCWarning(plugin) << "unable to find stream";
         emit error();
         return;
     }
@@ -238,8 +238,8 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
     setProperty(Qmmp::FILE_SIZE, m_fileSize);
     setProperty(Qmmp::FORMAT_NAME, codec);
 
-    qDebug() << "YtbInputSource: selected stream:" << codec << bitrate << "kb/s";
-    qDebug("YtbInputSource: downloading stream...");
+    qCDebug(plugin) << "selected stream:" << codec << bitrate << "kb/s";
+    qCDebug(plugin) << "downloading stream...";
 
     QUrl streamUrl(url);
     m_request.setUrl(streamUrl);
@@ -270,7 +270,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
     {
         if(reply->error() != QNetworkReply::NoError)
         {
-            qWarning("YtbInputSource: downloading finished with error: %s", qPrintable(reply->errorString()));
+            qCWarning(plugin, "downloading finished with error: %s", qPrintable(reply->errorString()));
             if(!m_ready)
             {
                 emit error();
@@ -280,7 +280,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
         else
         {
             m_buffer->addData(m_getStreamReply->readAll());
-            qDebug("YtbInputSource: downloading finished");
+            qCDebug(plugin) << "downloading finished";
         }
 
         m_getStreamReply = nullptr;
@@ -289,7 +289,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
     {
         if(reply->error() == QNetworkReply::OperationCanceledError && m_buffer->seekRequestPos() > 0)
         {
-            qDebug("YtbInputSource: processing seek request...");
+            qCDebug(plugin) << "processing seek request...";
             m_buffer->clearRequestPos();
             m_request.setRawHeader("Range", QStringLiteral("bytes=%1-").arg(m_offset).toLatin1());
             m_request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
@@ -309,7 +309,7 @@ void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 
     if(!m_ready && bytesReceived > PREBUFFER_SIZE)
     {
-        qDebug("YtbInputSource: ready");
+        qCDebug(plugin) << "ready";
         m_ready = true;
         m_buffer->open(QIODevice::ReadOnly);
         emit ready();
@@ -328,7 +328,7 @@ void YtbInputSource::onDownloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 void YtbInputSource::onSeekRequest()
 {
     m_offset = m_buffer->seekRequestPos();
-    qDebug("YtbInputSource: seek request position: %lld", m_offset);
+    qCDebug(plugin) << "seek request position:" << m_offset;
     if(m_getStreamReply)
     {
         QNetworkReply *prevReply = m_getStreamReply;

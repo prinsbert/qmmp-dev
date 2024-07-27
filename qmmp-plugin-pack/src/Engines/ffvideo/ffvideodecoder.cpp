@@ -18,6 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <qmmp/qmmp.h>
 #include "ffvideodecoder.h"
 
 FFVideoDecoder::FFVideoDecoder()
@@ -45,13 +46,13 @@ bool FFVideoDecoder::initialize(const QString &path)
 #endif
     {
         av_strerror(err, errbuf, sizeof(errbuf));
-        qWarning("FFVideoDecoder: avformat_open_input() failed: %s", errbuf);
+        qCWarning(plugin) << "avformat_open_input() failed:" << errbuf;
         return false;
     }
     if((err = avformat_find_stream_info(m_formatContext, nullptr)) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));
-        qWarning("FFVideoDecoder: avformat_find_stream_info() failed: %s", errbuf);
+        qCWarning(plugin) << "avformat_find_stream_info() failed:" << errbuf;
         return false;
     }
 
@@ -74,13 +75,13 @@ bool FFVideoDecoder::initialize(const QString &path)
     if((err = m_audioIndex) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));
-        qWarning("FFVideoDecoder: unable to find audio stream: %s", errbuf);
+        qCWarning(plugin) << "unable to find audio stream:" << errbuf;
         return false;
     }
     if((err = m_videoIndex) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));
-        qWarning("FFVideoDecoder: unable to find video stream: %s", errbuf);
+        qCWarning(plugin) << "unable to find video stream:" << errbuf;
         return false;
     }
 
@@ -89,7 +90,7 @@ bool FFVideoDecoder::initialize(const QString &path)
 
     if(!audioCodec || !videoCodec)
     {
-        qWarning("FFVideoDecoder: unable to find codec");
+        qCWarning(plugin) << "unable to find codec";
         return false;
     }
 
@@ -102,14 +103,14 @@ bool FFVideoDecoder::initialize(const QString &path)
     if ((err = avcodec_open2(m_audioCodecContext, audioCodec, nullptr)) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));
-        qWarning("FFVideoDecoder: avcodec_open2() failed: %s", errbuf);
+        qCWarning(plugin) << "avcodec_open2() failed:" << errbuf;
         return false;
     }
 
     if ((err = avcodec_open2(m_videoCodecContext, videoCodec, nullptr)) < 0)
     {
         av_strerror(err, errbuf, sizeof(errbuf));
-        qWarning("FFVideoDecoder: avcodec_open2() failed: %s", errbuf);
+        qCWarning(plugin) << "avcodec_open2() failed:" << errbuf;
         return false;
     }
 
