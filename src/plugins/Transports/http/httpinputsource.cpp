@@ -24,8 +24,8 @@
 HTTPInputSource::HTTPInputSource(const QString &url, QObject *parent) : InputSource(url,parent)
 {
     m_reader = new HttpStreamReader(url, this);
-    connect(m_reader, SIGNAL(ready()),SIGNAL(ready()));
-    connect(m_reader, SIGNAL(error()),SIGNAL(error()));
+    connect(m_reader, &HttpStreamReader::ready, this, &HTTPInputSource::ready);
+    connect(m_reader, &HttpStreamReader::error, this, &HTTPInputSource::error);
 }
 
 QIODevice *HTTPInputSource::ioDevice() const

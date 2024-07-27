@@ -24,8 +24,8 @@
 MMSInputSource::MMSInputSource(const QString &url, QObject *parent) : InputSource(url,parent)
 {
     m_reader = new MMSStreamReader(url, this);
-    connect(m_reader, SIGNAL(ready()),SIGNAL(ready()));
-    connect(m_reader, SIGNAL(error()),SIGNAL(error()));
+    connect(m_reader, &MMSStreamReader::ready, this, &MMSInputSource::ready);
+    connect(m_reader, &MMSStreamReader::error, this, &MMSInputSource::error);
 }
 
 QIODevice *MMSInputSource::ioDevice() const

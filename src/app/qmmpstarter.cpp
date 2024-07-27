@@ -338,7 +338,7 @@ void QMMPStarter::startPlayer()
         if(settings.value(u"resume_playback"_s, false).toBool())
         {
             qint64 pos =  settings.value(u"resume_playback_time"_s).toLongLong();
-            m_player->play(pos);
+            m_player->playFromPosition(pos);
         }
     }
 }

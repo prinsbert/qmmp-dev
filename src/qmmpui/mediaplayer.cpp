@@ -71,7 +71,12 @@ PlayListManager *MediaPlayer::playListManager()
     return m_pl_manager;
 }
 
-void MediaPlayer::play(qint64 offset)
+void MediaPlayer::play()
+{
+    playFromPosition(-1);
+}
+
+void MediaPlayer::playFromPosition(qint64 offset)
 {
     m_pl_manager->currentPlayList()->doCurrentVisibleRequest();
     if (m_core->state() == Qmmp::Paused)
