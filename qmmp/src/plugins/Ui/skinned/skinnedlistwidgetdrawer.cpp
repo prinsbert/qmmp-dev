@@ -53,9 +53,6 @@ void SkinnedListWidgetDrawer::readSettings()
     m_show_splitters = settings.value("pl_show_splitters"_L1, true).toBool();
     m_show_lengths = settings.value ("pl_show_lengths"_L1, true).toBool();
     m_align_numbers = settings.value ("pl_align_numbers"_L1, false).toBool();
-//    m_font.fromString(settings.value ("pl_font", qApp->font().toString()).toString());
-//    m_extra_font = m_font;
-//    m_extra_font.setPointSize(m_font.pointSize() - 1);
 
     QFont defaultFont = qApp->font();
     m_fonts[MAIN_FONT_NORMAL] = defaultFont;
@@ -75,20 +72,17 @@ void SkinnedListWidgetDrawer::readSettings()
     m_fonts[PL_GROUP_FONT_EXTRA] = m_fonts[MAIN_FONT_NORMAL];
     m_fonts[PL_GROUP_FONT_EXTRA].setPointSize(defaultFont.pointSize() - 1);
     m_fonts[PL_GROUP_FONT_EXTRA].setStyle(QFont::StyleItalic);
-    m_fonts[MAIN_FONT_BOLD] = m_fonts[MAIN_FONT_NORMAL];
-
 
     //m_fonts[MAIN_FONT_BOLD].setBold(true);
     m_fonts[MAIN_FONT_EXTRA] = m_fonts[MAIN_FONT_NORMAL];
     m_fonts[MAIN_FONT_EXTRA].setPointSize(m_fonts[MAIN_FONT_NORMAL].pointSize() - 1);
 
-
-    if(settings.value("pl_use_skin_colors"_L1, true).toBool())
     {
         Skin *skin = Skin::instance();
         bool alternate_splitter_color = settings.value("pl_alt_splitter_color"_L1, false).toBool();
         m_normal = QColor::fromString(skin->getPLValue("normal"));
         m_current = QColor::fromString(skin->getPLValue("current"));
+        m_highlighted = m_normal;
         m_normal_bg = QColor::fromString(skin->getPLValue("normalbg"));
         m_selected_bg = QColor::fromString(skin->getPLValue("selectedbg"));
         m_alternate_bg = m_normal_bg;
@@ -99,35 +93,33 @@ void SkinnedListWidgetDrawer::readSettings()
         m_current_bg = m_normal_bg;
         m_current_alt_bg = m_normal_bg;
     }
-    else
+
+    if(!settings.value("pl_use_skin_colors"_L1, true).toBool())
     {
         m_normal_bg = QColor::fromString(settings.value("pl_bg1_color"_L1, m_normal_bg.name()).toString());
         m_alternate_bg = QColor::fromString(settings.value("pl_bg2_color"_L1, m_alternate_bg.name()).toString());
         m_selected_bg = QColor::fromString(settings.value("pl_highlight_color"_L1, m_selected_bg.name()).toString());
         m_normal = QColor::fromString(settings.value("pl_normal_text_color"_L1, m_normal.name()).toString());
         m_current = QColor::fromString(settings.value("pl_current_text_color"_L1, m_current.name()).toString());
+        m_highlighted = QColor::fromString(settings.value(u"pl_hl_text_color"_s, m_highlighted.name()).toString());
         m_splitter = QColor::fromString(settings.value("pl_splitter_color"_L1, m_splitter).toString());
         m_group_text = QColor::fromString(settings.value("pl_group_text"_L1, m_group_text.name()).toString());
-        if(settings.value("pl_override_group_bg"_L1, false).toBool())
-        {
-            m_group_bg = QColor::fromString(settings.value("pl_group_bg"_L1, m_normal_bg.name()).toString());
-            m_group_alt_bg = m_group_bg;
-        }
-        else
-        {
-            m_group_bg = m_normal_bg;
-            m_group_alt_bg = m_alternate_bg;
-        }
-        if(settings.value("pl_override_current_bg"_L1, false).toBool())
-        {
-            m_current_bg = QColor::fromString(settings.value("pl_current_bg_color"_L1, m_normal_bg.name()).toString());
-            m_current_alt_bg = m_current_bg;
-        }
-        else
-        {
-            m_current_bg = m_normal_bg;
-            m_current_alt_bg = m_alternate_bg;
-        }
+        m_group_bg = m_normal_bg;
+        m_group_alt_bg = m_alternate_bg;
+        m_current_bg = m_normal_bg;
+        m_current_alt_bg = m_alternate_bg;
+    }
+
+    if(settings.value("pl_override_group_bg"_L1, false).toBool())
+    {
+        m_group_bg = QColor::fromString(settings.value("pl_group_bg"_L1, m_normal_bg.name()).toString());
+        m_group_alt_bg = m_group_bg;
+    }
+
+    if(settings.value("pl_override_current_bg"_L1, false).toBool())
+    {
+        m_current_bg = QColor::fromString(settings.value("pl_current_bg_color"_L1, m_normal_bg.name()).toString());
+        m_current_alt_bg = m_current_bg;
     }
 
     settings.endGroup();
@@ -156,7 +148,7 @@ void SkinnedListWidgetDrawer::calculateNumberWidth(int count)
 {
     //song numbers width
     if(m_show_numbers && m_align_numbers && count)
-        m_number_width = m_metrics[MAIN_FONT_BOLD]->horizontalAdvance(u"9"_s) * QString::number(count).size();
+        m_number_width = m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(u"9"_s) * QString::number(count).size();
     else
         m_number_width = 0;
 }
@@ -180,7 +172,7 @@ void SkinnedListWidgetDrawer::prepareRow(ListWidgetRow *row)
         return;
     }
 
-    QFontMetrics *metrics = (row->flags & ListWidgetRow::CURRENT) ? m_metrics[MAIN_FONT_BOLD] : m_metrics[MAIN_FONT_NORMAL];
+    QFontMetrics *metrics = m_metrics[MAIN_FONT_NORMAL];
 
     if(row->titles.count() == 1)
     {
@@ -303,7 +295,7 @@ void SkinnedListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *ro
     bool dividingLine = m_ui_settings->groupDividingLineVisible();
 
     painter->setFont(m_fonts[MAIN_FONT_NORMAL]);
-    painter->setPen(m_group_text);
+    painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
     painter->drawText(sx, sy, row->titles[0]);
 
     sy -= m_metrics[MAIN_FONT_NORMAL]->lineSpacing() / 2 - 2;
@@ -351,7 +343,7 @@ void SkinnedListWidgetDrawer::drawMultiLineSeparator(QPainter *painter, ListWidg
     int cy = row->rect.y() + row->rect.height() / 2; //center
 
     painter->setFont(m_fonts[PL_GROUP_FONT]);
-    painter->setPen(m_group_text);
+    painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
 
     if(coverVisible)
     {
@@ -413,20 +405,19 @@ void SkinnedListWidgetDrawer::drawTrack(QPainter *painter, ListWidgetRow *row, b
     QFontMetrics *metrics = nullptr;
     QColor textColor;
 
+    painter->setFont(m_fonts[MAIN_FONT_NORMAL]);
+    metrics = m_metrics[MAIN_FONT_NORMAL];
+
     if(row->flags & ListWidgetRow::CURRENT)
     {
-        painter->setFont(m_fonts[MAIN_FONT_BOLD]);
-        metrics = m_metrics[MAIN_FONT_BOLD];
         textColor = m_current;
     }
     else
     {
-        painter->setFont(m_fonts[MAIN_FONT_NORMAL]);
-        metrics = m_metrics[MAIN_FONT_NORMAL];
-        textColor = m_normal;
+        textColor = (row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_normal;
     }
 
-    painter->setPen(textColor);
+    //painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : textColor);
 
     if(rtl)
     {
@@ -546,7 +537,7 @@ void SkinnedListWidgetDrawer::drawTrack(QPainter *painter, ListWidgetRow *row, b
         {
             for(int i = 0; i < row->sizes.count(); i++)
             {
-                painter->setPen(/*(row->flags & ListWidgetRow::SELECTED) ? m_highlighted :*/ textColor);
+                painter->setPen(textColor);
                 draw_extra = (i == row->trackStateColumn && !row->extraString.isEmpty());
 
                 if(row->alignment[i] == ListWidgetRow::ALIGN_LEFT)
