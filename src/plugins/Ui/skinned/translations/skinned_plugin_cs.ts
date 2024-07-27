@@ -571,37 +571,37 @@
         <translation type="unfinished">&amp;Uložit předvolbu</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation type="unfinished">Uložit &amp;automatickou předvolbu</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <location filename="../skinnedeqwidget.cpp" line="266"/>
         <source>&amp;Import</source>
         <translation type="unfinished">&amp;Importovat</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="271"/>
+        <location filename="../skinnedeqwidget.cpp" line="268"/>
         <source>&amp;Clear</source>
         <translation type="unfinished">&amp;Vynulovat</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="300"/>
+        <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Saving Preset</source>
         <translation type="unfinished">Uložení předvolby</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="301"/>
+        <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>Preset name:</source>
         <translation type="unfinished">Název předvolby:</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="302"/>
+        <location filename="../skinnedeqwidget.cpp" line="299"/>
         <source>preset #</source>
         <translation type="unfinished">předvolba #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="398"/>
+        <location filename="../skinnedeqwidget.cpp" line="395"/>
         <source>Import Preset</source>
         <translation type="unfinished">Importovat předvolbu</translation>
     </message>
@@ -1109,112 +1109,112 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="520"/>
+        <location filename="../forms/skinnedsettings.ui" line="545"/>
         <source>Background #2:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="584"/>
+        <location filename="../forms/skinnedsettings.ui" line="609"/>
         <source>Highlighted background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="488"/>
+        <location filename="../forms/skinnedsettings.ui" line="500"/>
         <source>Normal text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="651"/>
+        <location filename="../forms/skinnedsettings.ui" line="763"/>
         <source>Splitter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="552"/>
+        <location filename="../forms/skinnedsettings.ui" line="577"/>
         <source>Current text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="616"/>
+        <location filename="../forms/skinnedsettings.ui" line="641"/>
         <source>Highlighted text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="759"/>
+        <location filename="../forms/skinnedsettings.ui" line="813"/>
         <source>Current track background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="861"/>
+        <location filename="../forms/skinnedsettings.ui" line="871"/>
         <source>Override current track background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="724"/>
+        <location filename="../forms/skinnedsettings.ui" line="778"/>
         <source>Group background:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="854"/>
+        <location filename="../forms/skinnedsettings.ui" line="878"/>
         <source>Override group background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="692"/>
+        <location filename="../forms/skinnedsettings.ui" line="700"/>
         <source>Group text:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="443"/>
+        <location filename="../forms/skinnedsettings.ui" line="455"/>
         <source>Background #1:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="819"/>
+        <location filename="../forms/skinnedsettings.ui" line="691"/>
         <source>Load skin colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="888"/>
+        <location filename="../forms/skinnedsettings.ui" line="904"/>
         <source>Fonts</source>
         <translation>Písma</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="942"/>
+        <location filename="../forms/skinnedsettings.ui" line="958"/>
         <source>Playlist:</source>
         <translation>Seznam skladeb:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="978"/>
+        <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Column headers:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="900"/>
+        <location filename="../forms/skinnedsettings.ui" line="916"/>
         <source>Player:</source>
         <translation>Přehrávač:</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="922"/>
-        <location filename="../forms/skinnedsettings.ui" line="964"/>
-        <location filename="../forms/skinnedsettings.ui" line="991"/>
+        <location filename="../forms/skinnedsettings.ui" line="938"/>
+        <location filename="../forms/skinnedsettings.ui" line="980"/>
+        <location filename="../forms/skinnedsettings.ui" line="1007"/>
         <source>???</source>
         <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="142"/>
-        <location filename="../forms/skinnedsettings.ui" line="929"/>
-        <location filename="../forms/skinnedsettings.ui" line="971"/>
-        <location filename="../forms/skinnedsettings.ui" line="998"/>
+        <location filename="../forms/skinnedsettings.ui" line="945"/>
+        <location filename="../forms/skinnedsettings.ui" line="987"/>
+        <location filename="../forms/skinnedsettings.ui" line="1014"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1020"/>
+        <location filename="../forms/skinnedsettings.ui" line="1036"/>
         <source>Reset fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1029"/>
+        <location filename="../forms/skinnedsettings.ui" line="1045"/>
         <source>Use bitmap font if available</source>
         <translation>Použít bitmapové písmo, je-li dostupné</translation>
     </message>

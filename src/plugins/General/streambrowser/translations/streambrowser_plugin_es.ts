@@ -147,34 +147,34 @@
         <translation>&amp;Crear</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="133"/>
+        <location filename="../streamwindow.cpp" line="132"/>
         <source>&amp;Edit</source>
         <translation>&amp;Editar</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="137"/>
-        <location filename="../streamwindow.cpp" line="140"/>
+        <location filename="../streamwindow.cpp" line="136"/>
+        <location filename="../streamwindow.cpp" line="139"/>
         <source>&amp;Remove</source>
         <translation>Quita&amp;r</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="153"/>
+        <location filename="../streamwindow.cpp" line="152"/>
         <source>Done</source>
         <translation>Hecho</translation>
     </message>
     <message>
+        <location filename="../streamwindow.cpp" line="155"/>
         <location filename="../streamwindow.cpp" line="156"/>
-        <location filename="../streamwindow.cpp" line="157"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="176"/>
+        <location filename="../streamwindow.cpp" line="175"/>
         <source>Receiving</source>
         <translation>Recibiendo</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="279"/>
+        <location filename="../streamwindow.cpp" line="278"/>
         <source>Edit Stream</source>
         <translation>Editar flujo</translation>
     </message>

@@ -19,8 +19,8 @@
         <translation>라이브러리 업데이트</translation>
     </message>
     <message>
-        <location filename="../library.cpp" line="191"/>
         <location filename="../library.cpp" line="192"/>
+        <location filename="../library.cpp" line="193"/>
         <source>Unknown</source>
         <translation>알 수 없음</translation>
     </message>

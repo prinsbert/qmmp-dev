@@ -19,8 +19,8 @@
         <translation>Оновити бібліотеку</translation>
     </message>
     <message>
-        <location filename="../library.cpp" line="191"/>
         <location filename="../library.cpp" line="192"/>
+        <location filename="../library.cpp" line="193"/>
         <source>Unknown</source>
         <translation>Невідомий</translation>
     </message>
