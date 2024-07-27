@@ -34,12 +34,14 @@
         <translation>&amp;Näytä nimike</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="201"/>
+        <location filename="../goomwidget.cpp" line="202"/>
+        <location filename="../goomwidget.cpp" line="204"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Koko näyttö</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="201"/>
+        <location filename="../goomwidget.cpp" line="202"/>
+        <location filename="../goomwidget.cpp" line="204"/>
         <source>F</source>
         <translation>F</translation>
     </message>

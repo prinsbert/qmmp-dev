@@ -42,12 +42,12 @@
 <context>
     <name>FFapMetaDataModel</name>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="65"/>
+        <location filename="../ffapmetadatamodel.cpp" line="62"/>
         <source>Samples</source>
         <translation>Abtastwerte</translation>
     </message>
     <message>
-        <location filename="../ffapmetadatamodel.cpp" line="66"/>
+        <location filename="../ffapmetadatamodel.cpp" line="63"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>

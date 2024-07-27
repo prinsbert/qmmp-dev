@@ -4,32 +4,32 @@
 <context>
     <name>FFVideoFactory</name>
     <message>
-        <location filename="../ffvideofactory.cpp" line="42"/>
+        <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
         <translation>FFmpeg 비디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="46"/>
+        <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
         <translation>비디오 파일</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="155"/>
+        <location filename="../ffvideofactory.cpp" line="161"/>
         <source>About FFVideo Plugin</source>
         <translation>FFVideo 플러그인 정보</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="156"/>
+        <location filename="../ffvideofactory.cpp" line="162"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Qmmp용 FFmpeg에 기반한 비디오 플러그인</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="157"/>
+        <location filename="../ffvideofactory.cpp" line="163"/>
         <source>Compiled against:</source>
         <translation>컴파일 대상:</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="167"/>
+        <location filename="../ffvideofactory.cpp" line="172"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>작성자: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
-        <location filename="../ffvideometadatamodel.cpp" line="79"/>
+        <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
@@ -74,17 +74,18 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="72"/>
+        <location filename="../ffvideometadatamodel.cpp" line="73"/>
+        <location filename="../ffvideometadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
         <translation>오디오 채널</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="78"/>
+        <location filename="../ffvideometadatamodel.cpp" line="82"/>
         <source>Video size</source>
         <translation>비디오 크기</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="79"/>
+        <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>Video bitrate</source>
         <translation>비디오 비트레이트</translation>
     </message>
@@ -97,32 +98,38 @@
         <translation>FFmpeg 비디오</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="45"/>
+        <location filename="../videowindow.cpp" line="46"/>
+        <location filename="../videowindow.cpp" line="51"/>
         <source>&amp;Pause</source>
         <translation>일시중지(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="45"/>
+        <location filename="../videowindow.cpp" line="46"/>
+        <location filename="../videowindow.cpp" line="51"/>
         <source>Space</source>
         <translation>스페이스 키</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
+        <location filename="../videowindow.cpp" line="47"/>
+        <location filename="../videowindow.cpp" line="52"/>
         <source>&amp;Stop</source>
         <translation>중지(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
+        <location filename="../videowindow.cpp" line="47"/>
+        <location filename="../videowindow.cpp" line="52"/>
         <source>V</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="48"/>
+        <location filename="../videowindow.cpp" line="49"/>
+        <location filename="../videowindow.cpp" line="54"/>
         <source>&amp;Fullscreen</source>
         <translation>전체화면(&amp;F))</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="48"/>
+        <location filename="../videowindow.cpp" line="49"/>
+        <location filename="../videowindow.cpp" line="54"/>
         <source>F</source>
         <translation>F</translation>
     </message>

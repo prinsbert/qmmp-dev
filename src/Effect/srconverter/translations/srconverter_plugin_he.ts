@@ -9,62 +9,62 @@
         <translation>תוספת SRC</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="51"/>
+        <location filename="../effectsrconverterfactory.cpp" line="50"/>
         <source>About Sample Rate Converter Plugin</source>
         <translation>אודות תוספת ממיר שיעור דגימה</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="52"/>
+        <location filename="../effectsrconverterfactory.cpp" line="51"/>
         <source>Qmmp Sample Rate Converter Plugin</source>
         <translation>תוספת ממיר שיעור דגימה של Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="53"/>
+        <location filename="../effectsrconverterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SRConverterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="13"/>
+        <location filename="../srconvertersettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>הגדרות תוספת ממיר שיעור דגימה</translation>
+        <translation type="unfinished">הגדרות תוספת ממיר שיעור דגימה</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="19"/>
+        <location filename="../srconvertersettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation>שיעור דגימה (הרץ):</translation>
+        <translation type="unfinished">שיעור דגימה (הרץ):</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="39"/>
+        <location filename="../srconvertersettingsdialog.ui" line="40"/>
         <source>Interpolation Engine:</source>
-        <translation>מנוע אינטרפולציה:</translation>
+        <translation type="unfinished">מנוע אינטרפולציה:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="47"/>
+        <location filename="../srconvertersettingsdialog.ui" line="48"/>
         <source>Best Sinc Interpolation</source>
-        <translation>אינטרפולציה Sinc הטובה ביותר</translation>
+        <translation type="unfinished">אינטרפולציה Sinc הטובה ביותר</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../srconvertersettingsdialog.ui" line="53"/>
         <source>Medium Sinc Interpolation</source>
-        <translation>אינטרפולציה Sinc בינונית</translation>
+        <translation type="unfinished">אינטרפולציה Sinc בינונית</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../srconvertersettingsdialog.ui" line="58"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation>אינטרפולציה Sinc הכי מהירה</translation>
+        <translation type="unfinished">אינטרפולציה Sinc הכי מהירה</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../srconvertersettingsdialog.ui" line="63"/>
         <source>ZOH Interpolation</source>
-        <translation>אינטרפולציית ZOH</translation>
+        <translation type="unfinished">אינטרפולציית ZOH</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="67"/>
+        <location filename="../srconvertersettingsdialog.ui" line="68"/>
         <source>Linear Interpolation</source>
-        <translation>אינטרפולציה לינארית</translation>
+        <translation type="unfinished">אינטרפולציה לינארית</translation>
     </message>
 </context>
 </TS>
