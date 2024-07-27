@@ -46,14 +46,14 @@ bool AudioThread::initialize(FFVideoDecoder *decoder)
 
     if(!m_output)
     {
-        qWarning("AudioThread: unable to create output");
+        qCWarning(plugin) << "unable to create output";
         return false;
     }
 
     if(!m_output->initialize(44100, ChannelMap(2), Qmmp::PCM_S16LE))
     {
         close();
-        qWarning("AudioThread: unable to initialize output");
+        qCWarning(plugin) << "unable to initialize output";
         return false;
     }
     return true;
@@ -86,7 +86,7 @@ void AudioThread::close()
 {
     if(isRunning())
     {
-        qWarning("AudioThread: unable to close active output");
+        qCWarning(plugin) << "unable to close active output";
         return;
     }
 
@@ -199,7 +199,7 @@ void AudioThread::run()
         {
             m_buffer->done();
             av_strerror(err, errbuf, sizeof(errbuf));
-            qWarning("AudioThread: avcodec_send_packet failed: %s", errbuf);
+            qCWarning(plugin) << "avcodec_send_packet failed:" << errbuf;
         }
 
         m_buffer->mutex()->unlock();
@@ -218,7 +218,7 @@ void AudioThread::run()
             if((err = swr_convert_frame(swr, oframe, frame)) != 0)
             {
                 av_strerror(err, errbuf, sizeof(errbuf));
-                qWarning("AudioThread: swr_convert_frame failed: %s", errbuf);
+                qCWarning(plugin) << "swr_convert_frame failed:" << errbuf;
                 continue;
             }
 
@@ -242,7 +242,7 @@ void AudioThread::run()
                     usleep(50);
                 else
                 {
-                    qWarning("error!");
+                    qCWarning(plugin) << "error!";
                     break;
                 }
             }
@@ -255,12 +255,12 @@ void AudioThread::run()
         {
             //err = AVERROR(EAGAIN);
             av_strerror(err, errbuf, sizeof(errbuf));
-            qWarning("AudioThread: avcodec_receive_frame failed: %s", errbuf);
+            qCWarning(plugin) << "avcodec_receive_frame failed:" << errbuf;
         }
     }
     m_buffer->cond()->wakeAll();
     av_frame_free(&frame);
     if(m_finish)
         m_output->drain();
-    qDebug("AudioThread: finished");
+    qCDebug(plugin) << "finished";
 }

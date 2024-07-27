@@ -81,7 +81,7 @@ bool DecoderFFap::initialize()
     if(ffap_init(m_ffap_decoder) == -1)
     {
         deinit();
-        qWarning("DecoderFFap: unable to initialize decoder");
+        qCWarning(plugin) << "unable to initialize decoder";
         return false;
     }
     Qmmp::AudioFormat format = Qmmp::PCM_UNKNOWN;
@@ -104,7 +104,7 @@ bool DecoderFFap::initialize()
         return false;
     }
     configure(m_ffap_decoder->samplerate, m_ffap_decoder->channels, format);
-    qDebug("DecoderFFap: initialize succes");
+    qCDebug(plugin) << "initialize succes";
     return true;
 }
 

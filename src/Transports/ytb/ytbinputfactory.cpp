@@ -58,7 +58,7 @@ void YtbInputFactory::showAbout(QWidget *parent)
     QString backendName = QStringLiteral("<b>%1</b>").arg(backend);
     if(backend.isEmpty() || version.isEmpty())
     {
-        qWarning("YtbInputFactory: unable to find backend");
+        qCWarning(plugin) << "unable to find backend";
         return;
     }
 

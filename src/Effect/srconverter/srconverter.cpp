@@ -55,7 +55,7 @@ void SRConverter::applyEffect(Buffer *b)
 
         if ((m_srcError = src_process(m_src_state, &m_src_data)) > 0)
         {
-            qWarning("SRConverter: src_process(): %s\n", src_strerror(m_srcError));
+            qCWarning(plugin) << "src_process():" << src_strerror(m_srcError);
         }
 
         b->samples = m_src_data.output_frames_gen * channels();
@@ -85,7 +85,7 @@ void SRConverter::configure(quint32 freq, ChannelMap map)
             src_set_ratio(m_src_state, m_src_data.src_ratio);
         }
         else
-            qDebug("SRConverter: src_new(): %s", src_strerror(m_srcError));
+            qCDebug(plugin) << "src_new(): " << src_strerror(m_srcError);
 
         m_sz = audioParameters().sampleSize();
         m_src_data.data_out = new float[int(m_src_data.src_ratio * QMMP_BLOCK_FRAMES * map.count() * 2 + 2)];
