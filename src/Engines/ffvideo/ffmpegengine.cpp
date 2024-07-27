@@ -49,8 +49,8 @@ FFmpegEngine::FFmpegEngine(EngineFactory *factory, QObject *parent)
     m_videoWindow = new VideoWindow(qApp->activeWindow());
     m_decoder = nullptr;
     reset();
-    connect(m_videoWindow, SIGNAL(resizeRequest(QSize)), m_videoThread, SLOT(setWindowSize(QSize)));
-    connect(m_videoWindow, SIGNAL(stopRequest()), SLOT(onStopRequest()));
+    connect(m_videoWindow, &VideoWindow::resizeRequest, m_videoThread, &VideoThread::setWindowSize);
+    connect(m_videoWindow, &VideoWindow::stopRequest, this, &FFmpegEngine::onStopRequest);
 }
 
 FFmpegEngine::~FFmpegEngine()
