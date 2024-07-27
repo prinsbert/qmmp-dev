@@ -9,27 +9,27 @@
         <translation>Suplemento Youtube</translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="69"/>
+        <location filename="../ytbinputfactory.cpp" line="70"/>
         <source>About Youtube Transport Plugin</source>
         <translation>Acerca de suplemento Youtube Transport</translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="70"/>
+        <location filename="../ytbinputfactory.cpp" line="71"/>
         <source>Qmmp Youtube Transport Plugin</source>
         <translation>Suplemento Qmmp Youtube Transport</translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="71"/>
+        <location filename="../ytbinputfactory.cpp" line="72"/>
         <source>This plugin adds feature to play audio from Youtube using %1 utility</source>
         <translation>Este suplemento adiciona a possibilidade de reproduzir áudio do Youtube com o utilitário %1</translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="73"/>
+        <location filename="../ytbinputfactory.cpp" line="74"/>
         <source>%1 version: %2</source>
         <translation>%1 versão: %2</translation>
     </message>
     <message>
-        <location filename="../ytbinputfactory.cpp" line="74"/>
+        <location filename="../ytbinputfactory.cpp" line="75"/>
         <source>Written by: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
         <translation>Desenvolvido: Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
@@ -37,17 +37,17 @@
 <context>
     <name>YtbInputSource</name>
     <message>
-        <location filename="../ytbinputsource.cpp" line="184"/>
+        <location filename="../ytbinputsource.cpp" line="185"/>
         <source>Uploader</source>
         <translation>Publicador</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="185"/>
+        <location filename="../ytbinputsource.cpp" line="186"/>
         <source>Upload date</source>
         <translation>Data de publicação</translation>
     </message>
     <message>
-        <location filename="../ytbinputsource.cpp" line="186"/>
+        <location filename="../ytbinputsource.cpp" line="187"/>
         <source>Duration</source>
         <translation>Duração</translation>
     </message>

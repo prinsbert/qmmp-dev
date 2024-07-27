@@ -9,62 +9,62 @@
         <translation>Modul SRC</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="51"/>
+        <location filename="../effectsrconverterfactory.cpp" line="50"/>
         <source>About Sample Rate Converter Plugin</source>
         <translation>O modulu SRC</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="52"/>
+        <location filename="../effectsrconverterfactory.cpp" line="51"/>
         <source>Qmmp Sample Rate Converter Plugin</source>
         <translation>Modul Qmmp pro konverzi vzorkovací frekvence</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="53"/>
+        <location filename="../effectsrconverterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SRConverterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="13"/>
+        <location filename="../srconvertersettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Nastavení modulu SRC</translation>
+        <translation type="unfinished">Nastavení modulu SRC</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="19"/>
+        <location filename="../srconvertersettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation>Vzorkovací frekvence (Hz):</translation>
+        <translation type="unfinished">Vzorkovací frekvence (Hz):</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="39"/>
+        <location filename="../srconvertersettingsdialog.ui" line="40"/>
         <source>Interpolation Engine:</source>
-        <translation>Způsob interpolace:</translation>
+        <translation type="unfinished">Způsob interpolace:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="47"/>
+        <location filename="../srconvertersettingsdialog.ui" line="48"/>
         <source>Best Sinc Interpolation</source>
-        <translation>Nejlepší interpolace pomocí sinc</translation>
+        <translation type="unfinished">Nejlepší interpolace pomocí sinc</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../srconvertersettingsdialog.ui" line="53"/>
         <source>Medium Sinc Interpolation</source>
-        <translation>Střední interpolace pomocí sinc</translation>
+        <translation type="unfinished">Střední interpolace pomocí sinc</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../srconvertersettingsdialog.ui" line="58"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation>Nejrychlejší interpolace pomocí sinc</translation>
+        <translation type="unfinished">Nejrychlejší interpolace pomocí sinc</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../srconvertersettingsdialog.ui" line="63"/>
         <source>ZOH Interpolation</source>
-        <translation>Interpolace ZOH</translation>
+        <translation type="unfinished">Interpolace ZOH</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="67"/>
+        <location filename="../srconvertersettingsdialog.ui" line="68"/>
         <source>Linear Interpolation</source>
-        <translation>Lineární interpolace</translation>
+        <translation type="unfinished">Lineární interpolace</translation>
     </message>
 </context>
 </TS>

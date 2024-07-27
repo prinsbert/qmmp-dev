@@ -9,62 +9,62 @@
         <translation>Wtyczka SRC</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="51"/>
+        <location filename="../effectsrconverterfactory.cpp" line="50"/>
         <source>About Sample Rate Converter Plugin</source>
         <translation>O wtyczce Sample Rate Converter</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="52"/>
+        <location filename="../effectsrconverterfactory.cpp" line="51"/>
         <source>Qmmp Sample Rate Converter Plugin</source>
         <translation>Wtyczka Sample Rate Converter dla Qmmp</translation>
     </message>
     <message>
-        <location filename="../effectsrconverterfactory.cpp" line="53"/>
+        <location filename="../effectsrconverterfactory.cpp" line="52"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SRConverterSettingsDialog</name>
     <message>
-        <location filename="../settingsdialog.ui" line="13"/>
+        <location filename="../srconvertersettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation>Ustawienia wtyczki Sample Rate Converter</translation>
+        <translation type="unfinished">Ustawienia wtyczki Sample Rate Converter</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="19"/>
+        <location filename="../srconvertersettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation>Próbkowanie (Hz):</translation>
+        <translation type="unfinished">Próbkowanie (Hz):</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="39"/>
+        <location filename="../srconvertersettingsdialog.ui" line="40"/>
         <source>Interpolation Engine:</source>
-        <translation>Rodzaj interpolacji:</translation>
+        <translation type="unfinished">Rodzaj interpolacji:</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="47"/>
+        <location filename="../srconvertersettingsdialog.ui" line="48"/>
         <source>Best Sinc Interpolation</source>
-        <translation>SINC (najlepsza jakość)</translation>
+        <translation type="unfinished">SINC (najlepsza jakość)</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="52"/>
+        <location filename="../srconvertersettingsdialog.ui" line="53"/>
         <source>Medium Sinc Interpolation</source>
-        <translation>SINC (średnia jakość)</translation>
+        <translation type="unfinished">SINC (średnia jakość)</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="57"/>
+        <location filename="../srconvertersettingsdialog.ui" line="58"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation>SINC (najszybsza)</translation>
+        <translation type="unfinished">SINC (najszybsza)</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="62"/>
+        <location filename="../srconvertersettingsdialog.ui" line="63"/>
         <source>ZOH Interpolation</source>
-        <translation>Interpolacja (ZOH)</translation>
+        <translation type="unfinished">Interpolacja (ZOH)</translation>
     </message>
     <message>
-        <location filename="../settingsdialog.ui" line="67"/>
+        <location filename="../srconvertersettingsdialog.ui" line="68"/>
         <source>Linear Interpolation</source>
-        <translation>Interpolacja liniowa</translation>
+        <translation type="unfinished">Interpolacja liniowa</translation>
     </message>
 </context>
 </TS>

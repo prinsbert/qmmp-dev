@@ -4,32 +4,32 @@
 <context>
     <name>FFVideoFactory</name>
     <message>
-        <location filename="../ffvideofactory.cpp" line="42"/>
+        <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
         <translation>Πρόσθετο βίντεο FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="46"/>
+        <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
         <translation>Αρχεία βίντεο</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="155"/>
+        <location filename="../ffvideofactory.cpp" line="161"/>
         <source>About FFVideo Plugin</source>
         <translation>Περί του πρόσθετου FFVideo</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="156"/>
+        <location filename="../ffvideofactory.cpp" line="162"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
         <translation>Πρόσθετο βίντεο FFmpeg για το Qmmp</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="157"/>
+        <location filename="../ffvideofactory.cpp" line="163"/>
         <source>Compiled against:</source>
         <translation>Μεταγλωττίστηκε χρησιμοποιώντας:</translation>
     </message>
     <message>
-        <location filename="../ffvideofactory.cpp" line="167"/>
+        <location filename="../ffvideofactory.cpp" line="172"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
-        <location filename="../ffvideometadatamodel.cpp" line="79"/>
+        <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>kbps</source>
         <translation>kbps</translation>
     </message>
@@ -74,17 +74,18 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="72"/>
+        <location filename="../ffvideometadatamodel.cpp" line="73"/>
+        <location filename="../ffvideometadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
         <translation>Κανάλια ήχου</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="78"/>
+        <location filename="../ffvideometadatamodel.cpp" line="82"/>
         <source>Video size</source>
         <translation>Μέγεθος βίντεο</translation>
     </message>
     <message>
-        <location filename="../ffvideometadatamodel.cpp" line="79"/>
+        <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>Video bitrate</source>
         <translation>Ρυθμός bit βίντεο</translation>
     </message>
@@ -97,32 +98,38 @@
         <translation>Βίντεο FFmpeg</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="45"/>
+        <location filename="../videowindow.cpp" line="46"/>
+        <location filename="../videowindow.cpp" line="51"/>
         <source>&amp;Pause</source>
         <translation>&amp;Παύση</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="45"/>
+        <location filename="../videowindow.cpp" line="46"/>
+        <location filename="../videowindow.cpp" line="51"/>
         <source>Space</source>
         <translation>Διάστημα</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
+        <location filename="../videowindow.cpp" line="47"/>
+        <location filename="../videowindow.cpp" line="52"/>
         <source>&amp;Stop</source>
         <translation>&amp;Διακοπή</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
+        <location filename="../videowindow.cpp" line="47"/>
+        <location filename="../videowindow.cpp" line="52"/>
         <source>V</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="48"/>
+        <location filename="../videowindow.cpp" line="49"/>
+        <location filename="../videowindow.cpp" line="54"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Πλήρης οθόνη</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="48"/>
+        <location filename="../videowindow.cpp" line="49"/>
+        <location filename="../videowindow.cpp" line="54"/>
         <source>F</source>
         <translation>F</translation>
     </message>
