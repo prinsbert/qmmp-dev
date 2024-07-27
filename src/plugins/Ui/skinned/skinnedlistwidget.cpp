@@ -393,6 +393,7 @@ void SkinnedListWidget::updateList(int flags)
         row->autoResize = m_header->hasAutoResizeColumn();
         row->trackStateColumn = trackStateColumn;
         row->subIndex = m_model->subIndexOfLine(m_firstLine + i);
+        row->alternateColor = m_model->alternateColor(m_firstLine + i);
 
         if(items[i]->isSelected())
             row->flags |= ListWidgetRow::SELECTED;
