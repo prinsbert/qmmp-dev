@@ -55,10 +55,10 @@ YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSourc
     else
         m_manager->setProxy(QNetworkProxy::NoProxy);
 
-    connect(m_process, SIGNAL(errorOccurred(QProcess::ProcessError)), SLOT(onProcessErrorOccurred(QProcess::ProcessError)));
-    connect(m_process, SIGNAL(finished(int,QProcess::ExitStatus)), SLOT(onProcessFinished(int,QProcess::ExitStatus)));
-    connect(m_manager, SIGNAL(finished(QNetworkReply*)), SLOT(onFinished(QNetworkReply*)));
-    connect(m_buffer, SIGNAL(seekRequest()), SLOT(onSeekRequest()));
+    connect(m_process, &QProcess::errorOccurred, this, &YtbInputSource::onProcessErrorOccurred);
+    connect(m_process, &QProcess::finished, this, &YtbInputSource::onProcessFinished);
+    connect(m_manager, &QNetworkAccessManager::finished, this, &YtbInputSource::onFinished);
+    connect(m_buffer, &BufferDevice::seekRequest, this, &YtbInputSource::onSeekRequest);
 }
 
 YtbInputSource::~YtbInputSource()
@@ -261,7 +261,7 @@ void YtbInputSource::onProcessFinished(int exitCode, QProcess::ExitStatus status
 
     m_getStreamReply = m_manager->get(m_request);
     m_getStreamReply->setReadBufferSize(0);
-    connect(m_getStreamReply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+    connect(m_getStreamReply, &QNetworkReply::downloadProgress, this, &YtbInputSource::onDownloadProgress);
 }
 
 void YtbInputSource::onFinished(QNetworkReply *reply)
@@ -296,7 +296,7 @@ void YtbInputSource::onFinished(QNetworkReply *reply)
             m_buffer->setOffset(m_offset);
             m_getStreamReply = m_manager->get(m_request);
             m_getStreamReply->setReadBufferSize(0);
-            connect(m_getStreamReply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+            connect(m_getStreamReply, &QNetworkReply::downloadProgress, this, &YtbInputSource::onDownloadProgress);
         }
     }
 
@@ -343,6 +343,6 @@ void YtbInputSource::onSeekRequest()
         m_buffer->setOffset(m_offset);
         m_getStreamReply = m_manager->get(m_request);
         m_getStreamReply->setReadBufferSize(0);
-        connect(m_getStreamReply, SIGNAL(downloadProgress(qint64,qint64)), SLOT(onDownloadProgress(qint64,qint64)));
+        connect(m_getStreamReply, &QNetworkReply::downloadProgress, this, &YtbInputSource::onDownloadProgress);
     }
 }

@@ -195,7 +195,7 @@ void GoomWidget::createMenu()
         act->setCheckable(true);
         refreshRate->addAction(act);
     }
-    m_showTitleAction = m_menu->addAction(tr("&Show Title"), this, SLOT(updateTitle()));
+    m_showTitleAction = m_menu->addAction(tr("&Show Title"), this, &GoomWidget::updateTitle);
     m_showTitleAction->setCheckable(true);
     m_menu->addSeparator();
 #if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
