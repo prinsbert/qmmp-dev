@@ -1,5 +1,5 @@
-SET(USE_SRC TRUE CACHE BOOL "enable/disable SRC plugin")
+set(USE_SRC TRUE CACHE BOOL "enable/disable SRC plugin")
 
-IF(USE_SRC)
-add_subdirectory(srconverter)
-ENDIF(USE_SRC)
+if(USE_SRC)
+    add_subdirectory(srconverter)
+endif(USE_SRC)

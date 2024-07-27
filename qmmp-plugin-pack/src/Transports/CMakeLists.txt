@@ -1,5 +1,5 @@
-SET(USE_YTB TRUE CACHE BOOL "enable/disable youtube plugin")
+set(USE_YTB TRUE CACHE BOOL "enable/disable youtube plugin")
 
-IF(USE_YTB)
-add_subdirectory(ytb)
-ENDIF(USE_YTB)
+if(USE_YTB)
+    add_subdirectory(ytb)
+endif(USE_YTB)

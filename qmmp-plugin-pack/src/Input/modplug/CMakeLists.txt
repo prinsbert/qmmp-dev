@@ -2,39 +2,28 @@ project(libmodplug)
 
 INCLUDE(CheckIncludeFile)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
-# libqmmp
-include_directories(${QMMP_INCLUDE_DIRS})
-link_directories( ${QMMP_LIBRARY_DIRS})
-
 # modplug
-pkg_search_module(MODPLUG libmodplug)
+pkg_search_module(MODPLUG libmodplug IMPORTED_TARGET)
 
 # add modplug defines
-CHECK_INCLUDE_FILE(stdint.h STDINT_FOUND)
-IF(STDINT_FOUND)
-ADD_DEFINITIONS(-DHAVE_STDINT_H)
-ENDIF(STDINT_FOUND)
+check_include_file(stdint.h STDINT_FOUND)
+if(STDINT_FOUND)
+    add_definitions(-DHAVE_STDINT_H)
+endif(STDINT_FOUND)
 
-CHECK_INCLUDE_FILE(inttypes.h INTTYPES_FOUND)
-IF(INTTYPES_FOUND)
-ADD_DEFINITIONS(-DHAVE_INTTYPES_H)
-ENDIF(INTTYPES_FOUND)
-
-
-include_directories(${MODPLUG_INCLUDE_DIRS})
-link_directories(${MODPLUG_LIBRARY_DIRS})
-ADD_DEFINITIONS(${MODPLUG_CFLAGS})
+check_include_file(inttypes.h INTTYPES_FOUND)
+if(INTTYPES_FOUND)
+    add_definitions(-DHAVE_INTTYPES_H)
+endif(INTTYPES_FOUND)
 
 SET(libmodplug_SRCS
-  decoder_modplug.cpp
-  decodermodplugfactory.cpp
-  modplugmetadatamodel.cpp
-  modplugsettingsdialog.cpp
-  archivereader.cpp
-  modplugsettingsdialog.ui
-  translations/translations.qrc
+    decoder_modplug.cpp
+    decodermodplugfactory.cpp
+    modplugmetadatamodel.cpp
+    modplugsettingsdialog.cpp
+    archivereader.cpp
+    modplugsettingsdialog.ui
+    translations/translations.qrc
 )
 
 
@@ -42,10 +31,10 @@ SET(libmodplug_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-IF(MODPLUG_FOUND)
-ADD_LIBRARY(modplug MODULE ${libmodplug_SRCS})
-target_link_libraries(modplug PRIVATE Qt6::Widgets ${QMMP_LDFLAGS} ${MODPLUG_LDFLAGS})
-install(TARGETS modplug DESTINATION ${PLUGIN_DIR}/Input)
-ENDIF(MODPLUG_FOUND)
+if(MODPLUG_FOUND)
+    add_library(modplug MODULE ${libmodplug_SRCS})
+    target_link_libraries(modplug PRIVATE Qt6::Widgets PkgConfig::QMMP PkgConfig::MODPLUG)
+    install(TARGETS modplug DESTINATION ${PLUGIN_DIR}/Input)
+endif(MODPLUG_FOUND)
 
 

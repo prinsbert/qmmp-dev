@@ -4,10 +4,6 @@ ADD_DEFINITIONS(-DYY_NO_INPUT)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-# libqmmp
-include_directories(${QMMP_INCLUDE_DIRS})
-link_directories( ${QMMP_LIBRARY_DIRS})
-
 SET(libgoom_SRCS
   config_param.c
   convolve_fx.c
@@ -36,25 +32,25 @@ SET(libgoom_SRCS
   translations/translations.qrc
 )
 
-IF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
-  ADD_DEFINITIONS(-DCPU_X86)
-  ADD_DEFINITIONS(-DARCH_X86_32)
-  message("-- Architecture: x86")
-  SET(GOOM_ASM TRUE CACHE INTERNAL "goom_asm")
-  SET(libgoom_HDRS ${libgoom_HDRS} mmx.h)
-  SET(libgoom_SRCS ${libgoom_SRCS} mmx.c xmmx.c)
-ELSEIF(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
-  ADD_DEFINITIONS(-DCPU_X86)
-  ADD_DEFINITIONS(-DARCH_X86_64)
-  message("-- Architecture: x86_64")
-  SET(GOOM_ASM TRUE CACHE INTERNAL "goom_asm")
-  SET(libgoom_HDRS ${libgoom_HDRS} mmx.h)
-  SET(libgoom_SRCS ${libgoom_SRCS} mmx.c xmmx.c)
-ELSE(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
-  message("-- Assembler optimizations are disabled")
-ENDIF(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
+    add_definitions(-DCPU_X86)
+    add_definitions(-DARCH_X86_32)
+    message("-- Architecture: x86")
+    set(GOOM_ASM TRUE CACHE INTERNAL "goom_asm")
+    set(libgoom_HDRS ${libgoom_HDRS} mmx.h)
+    set(libgoom_SRCS ${libgoom_SRCS} mmx.c xmmx.c)
+elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+    add_definitions(-DCPU_X86)
+    add_definitions(-DARCH_X86_64)
+    message("-- Architecture: x86_64")
+    set(GOOM_ASM TRUE CACHE INTERNAL "goom_asm")
+    set(libgoom_HDRS ${libgoom_HDRS} mmx.h)
+    set(libgoom_SRCS ${libgoom_SRCS} mmx.c xmmx.c)
+else(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
+    message("-- Assembler optimizations are disabled")
+endif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
 
 
-ADD_LIBRARY(goom MODULE ${libgoom_SRCS})
-target_link_libraries(goom Qt6::Widgets ${QMMP_LDFLAGS} ${goom_LDFLAGS})
+add_library(goom MODULE ${libgoom_SRCS})
+target_link_libraries(goom Qt6::Widgets PkgConfig::QMMP)
 install(TARGETS goom DESTINATION ${PLUGIN_DIR}/Visual)
