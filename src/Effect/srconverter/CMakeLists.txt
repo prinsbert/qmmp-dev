@@ -1,16 +1,6 @@
 project(libsrconverter)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-
-# libqmmp
-include_directories(${QMMP_INCLUDE_DIRS})
-link_directories( ${QMMP_LIBRARY_DIRS})
-
-pkg_check_modules(SAMPLERATE samplerate)
-
-include_directories(${SAMPLERATE_INCLUDE_DIRS})
-link_directories(${SAMPLERATE_LIBRARY_DIRS})
-ADD_DEFINITIONS(${SAMPLERATE_CFLAGS})
+pkg_check_modules(SAMPLERATE samplerate IMPORTED_TARGET)
 
 SET(libsrconverter_SRCS
     srconverter.cpp
@@ -24,8 +14,8 @@ SET(libsrconverter_SRCS
 # the UI file won't be wrapped!
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-IF(SAMPLERATE_FOUND)
-ADD_LIBRARY(srconverter MODULE ${libsrconverter_SRCS})
-target_link_libraries(srconverter PRIVATE Qt6::Widgets ${QMMP_LDFLAGS} ${SAMPLERATE_LDFLAGS})
-install(TARGETS srconverter DESTINATION ${PLUGIN_DIR}/Effect)
-ENDIF(SAMPLERATE_FOUND)
+if(SAMPLERATE_FOUND)
+    add_library(srconverter MODULE ${libsrconverter_SRCS})
+    target_link_libraries(srconverter PRIVATE Qt6::Widgets PkgConfig::QMMP PkgConfig::SAMPLERATE)
+    install(TARGETS srconverter DESTINATION ${PLUGIN_DIR}/Effect)
+endif(SAMPLERATE_FOUND)

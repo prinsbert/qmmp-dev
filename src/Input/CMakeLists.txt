@@ -1,13 +1,13 @@
-SET(USE_MODPLUG TRUE CACHE BOOL "enable/disable modplug plugin")
-SET(USE_FFAP    TRUE CACHE BOOL "enable/disable ffap plugin")
+set(USE_MODPLUG TRUE CACHE BOOL "enable/disable modplug plugin")
+set(USE_FFAP    TRUE CACHE BOOL "enable/disable ffap plugin")
 
-INCLUDE(FindPkgConfig)
-pkg_check_modules(TAGLIB taglib>=1.12)
+include(FindPkgConfig)
+pkg_check_modules(TAGLIB taglib>=1.12 IMPORTED_TARGET)
 
-IF(USE_MODPLUG)
-add_subdirectory(modplug)
+if(USE_MODPLUG)
+    add_subdirectory(modplug)
 ENDIF(USE_MODPLUG)
 
-IF(USE_FFAP AND TAGLIB_FOUND)
-add_subdirectory(ffap)
-ENDIF(USE_FFAP AND TAGLIB_FOUND)
+if(USE_FFAP AND TAGLIB_FOUND)
+    add_subdirectory(ffap)
+endif(USE_FFAP AND TAGLIB_FOUND)

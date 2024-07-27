@@ -1,5 +1,5 @@
-SET(USE_GOOM TRUE CACHE BOOL "enable/disable goom plugin")
+set(USE_GOOM TRUE CACHE BOOL "enable/disable goom plugin")
 
-IF(USE_GOOM)
-add_subdirectory(goom)
-ENDIF(USE_GOOM)
+if(USE_GOOM)
+    add_subdirectory(goom)
+endif(USE_GOOM)

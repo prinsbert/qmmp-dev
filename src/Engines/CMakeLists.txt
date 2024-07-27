@@ -1,5 +1,5 @@
-SET(USE_FFVIDEO TRUE CACHE BOOL "enable/disable FFmpeg video plugin")
+set(USE_FFVIDEO TRUE CACHE BOOL "enable/disable FFmpeg video plugin")
 
-IF(USE_FFVIDEO)
-add_subdirectory(ffvideo)
-ENDIF(USE_FFVIDEO)
+if(USE_FFVIDEO)
+    add_subdirectory(ffvideo)
+endif(USE_FFVIDEO)
