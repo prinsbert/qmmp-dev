@@ -82,9 +82,9 @@ SkinnedPlayListHeader::SkinnedPlayListHeader(QWidget *parent) :
     m_autoResizeAction->setCheckable(true);
 
     m_alignmentMenu = m_menu->addMenu(tr("Alignment"));
-    m_alignmentMenu->addAction(tr("Left", "alignment"))->setData(ListWidgetRow::ALIGN_LEFT);
-    m_alignmentMenu->addAction(tr("Right", "alignment"))->setData(ListWidgetRow::ALIGN_RIGHT);
-    m_alignmentMenu->addAction(tr("Center", "alignment"))->setData(ListWidgetRow::ALIGN_CENTER);
+    m_alignmentMenu->addAction(tr("Left", "alignment"))->setData(SkinnedListWidgetRow::ALIGN_LEFT);
+    m_alignmentMenu->addAction(tr("Right", "alignment"))->setData(SkinnedListWidgetRow::ALIGN_RIGHT);
+    m_alignmentMenu->addAction(tr("Center", "alignment"))->setData(SkinnedListWidgetRow::ALIGN_CENTER);
     connect(m_alignmentMenu, &QMenu::triggered, this, &SkinnedPlayListHeader::setAlignment);
     QActionGroup *alignmentGroup = new QActionGroup(this);
     for(QAction *a : m_alignmentMenu->actions())
@@ -140,7 +140,7 @@ void SkinnedPlayListHeader::readSettings()
         {
             m_model->setData(i, SIZE, INITAL_SIZE);
             m_model->setData(i, ALIGNMENT, (layoutDirection() == Qt::RightToLeft) ?
-                                 ListWidgetRow::ALIGN_RIGHT : ListWidgetRow::ALIGN_LEFT);
+                                 SkinnedListWidgetRow::ALIGN_RIGHT : SkinnedListWidgetRow::ALIGN_LEFT);
 
             if(i < sizes.count())
                 m_model->setData(i, SIZE, sizes.at(i).toInt());
@@ -411,7 +411,7 @@ void SkinnedPlayListHeader::onColumnAdded(int index)
 {
     m_model->setData(index, SIZE, INITAL_SIZE);
     m_model->setData(index, ALIGNMENT, (layoutDirection() == Qt::RightToLeft) ?
-                         ListWidgetRow::ALIGN_RIGHT : ListWidgetRow::ALIGN_LEFT);
+                         SkinnedListWidgetRow::ALIGN_RIGHT : SkinnedListWidgetRow::ALIGN_LEFT);
     if(m_auto_resize)
     {
         adjustColumn(autoResizeColumn());

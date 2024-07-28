@@ -32,7 +32,7 @@ class QPainter;
 class PlayListHeaderModel;
 class QmmpUiSettings;
 
-struct ListWidgetRow
+struct SkinnedListWidgetRow
 {
     QStringList titles;
     QList<int> sizes;
@@ -81,12 +81,12 @@ public:
     int numberWidth() const;
     void calculateNumberWidth(int count);
     void setSingleColumnMode(int enabled);
-    void prepareRow(ListWidgetRow *row);
+    void prepareRow(SkinnedListWidgetRow *row);
     void fillBackground(QPainter *painter, int width, int height);
-    void drawBackground(QPainter *painter, ListWidgetRow *row);
-    void drawSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
-    void drawMultiLineSeparator(QPainter *painter, ListWidgetRow *row, bool rtl);
-    void drawTrack(QPainter *painter, ListWidgetRow *row, bool rtl);
+    void drawBackground(QPainter *painter, SkinnedListWidgetRow *row);
+    void drawSeparator(QPainter *painter, SkinnedListWidgetRow *row, bool rtl);
+    void drawMultiLineSeparator(QPainter *painter, SkinnedListWidgetRow *row, bool rtl);
+    void drawTrack(QPainter *painter, SkinnedListWidgetRow *row, bool rtl);
     void drawDropLine(QPainter *painter, int row_number, int width, int header_height);
 
 private:

@@ -147,7 +147,7 @@ void SkinnedListWidget::paintEvent(QPaintEvent *)
 
     for(int i = 0; i < m_rows.size(); ++i)
     {
-        if(m_rows[i]->flags & ListWidgetRow::GROUP)
+        if(m_rows[i]->flags & SkinnedListWidgetRow::GROUP)
         {
             if(linesPerGroup == 1)
             {
@@ -362,7 +362,7 @@ void SkinnedListWidget::updateList(int flags)
         items = m_model->itemsAtLines(m_firstLine, m_row_count);
 
         while(m_rows.count() < qMin(m_row_count, items.count()))
-            m_rows << new ListWidgetRow;
+            m_rows << new SkinnedListWidgetRow;
         while(m_rows.count() > qMin(m_row_count, items.count()))
             delete m_rows.takeFirst();
     }
@@ -389,21 +389,21 @@ void SkinnedListWidget::updateList(int flags)
 
     for(int i = 0; i < items.count(); ++i)
     {
-        ListWidgetRow *row = m_rows[i];
+        SkinnedListWidgetRow *row = m_rows[i];
         row->autoResize = m_header->hasAutoResizeColumn();
         row->trackStateColumn = trackStateColumn;
         row->subIndex = m_model->subIndexOfLine(m_firstLine + i);
         row->alternateColor = m_model->alternateColor(m_firstLine + i);
 
         if(items[i]->isSelected())
-            row->flags |= ListWidgetRow::SELECTED;
+            row->flags |= SkinnedListWidgetRow::SELECTED;
         else
-            row->flags &= ~ListWidgetRow::SELECTED;
+            row->flags &= ~SkinnedListWidgetRow::SELECTED;
 
         if(i == (m_anchorLine - m_firstLine))
-            row->flags |= ListWidgetRow::ANCHOR;
+            row->flags |= SkinnedListWidgetRow::ANCHOR;
                 else
-            row->flags &= ~ListWidgetRow::ANCHOR;
+            row->flags &= ~SkinnedListWidgetRow::ANCHOR;
 
         if(flags == PlayListModel::SELECTION)
             continue;
@@ -414,21 +414,21 @@ void SkinnedListWidget::updateList(int flags)
         row->alignment = m_header->alignment();
 
         if(items[i] == m_model->currentTrack())
-            row->flags |= ListWidgetRow::CURRENT;
+            row->flags |= SkinnedListWidgetRow::CURRENT;
         else
-            row->flags &= ~ListWidgetRow::CURRENT;
+            row->flags &= ~SkinnedListWidgetRow::CURRENT;
 
 
         if(items[i]->isGroup())
         {
-            row->flags |= ListWidgetRow::GROUP;
+            row->flags |= SkinnedListWidgetRow::GROUP;
             row->number = -1;
             row->cover = items.at(i)->cover();
             row->length.clear();
         }
         else
         {
-            row->flags &= ~ListWidgetRow::GROUP;
+            row->flags &= ~SkinnedListWidgetRow::GROUP;
             row->number = items.at(i)->trackIndex() + 1;
             row->extraString = getExtraString(items.at(i));
         }
@@ -439,7 +439,7 @@ void SkinnedListWidget::updateList(int flags)
         int rect_y = (m_header->isVisibleTo(this) ? m_header->height() : 0) + i * m_drawer.rowHeight();
 
 
-        if((row->flags & ListWidgetRow::GROUP) && linesPerGroup > 1)
+        if((row->flags & SkinnedListWidgetRow::GROUP) && linesPerGroup > 1)
         {
             rect_h += (linesPerGroup - 1) * m_drawer.rowHeight();
             rect_y -= row->subIndex * m_drawer.rowHeight();
