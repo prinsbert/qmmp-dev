@@ -27,6 +27,8 @@
 
 #define VISUAL_BUFFER_SIZE 128 //number of nodes
 
+/*! @internal
+ */
 class VisualNode
 {
 public:
@@ -35,6 +37,8 @@ public:
     qint64 delta = 0;
 };
 
+/*! @internal
+ */
 class VisualBuffer
 {
 public:
@@ -52,7 +56,6 @@ private:
     int m_add_index = 0;
     QElapsedTimer m_time;
     QMutex m_mutex;
-
 };
 
 #endif // VISUALBUFFER_P_H
