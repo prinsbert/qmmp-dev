@@ -27,9 +27,6 @@ ColorWidget::ColorWidget(QWidget *parent) : QFrame(parent)
     setAutoFillBackground(true);
 }
 
-ColorWidget::~ColorWidget()
-{}
-
 QColorDialog::ColorDialogOptions ColorWidget::options() const
 {
     return m_options;
@@ -37,7 +34,11 @@ QColorDialog::ColorDialogOptions ColorWidget::options() const
 
 void ColorWidget::setOptions(QColorDialog::ColorDialogOptions options)
 {
-    m_options = options;
+    if(m_options != options)
+    {
+        m_options = options;
+        emit optionsChanged();
+    }
 }
 
 void ColorWidget::mousePressEvent(QMouseEvent *)

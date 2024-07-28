@@ -47,9 +47,12 @@ public:
     virtual ~PlayListGroup();
     /*!
      * Returns formatted title of the  group.
-     * @param column Number of column (unused).
+     * @param line Number of line (0 or 1).
      */
-    QString formattedTitle(int column = 0) const override;
+    QString formattedTitle(int line = 0) const override;
+    /*!
+     * Returns the list of the all avaibale formatted titles (1 or 2).
+     */
     QStringList formattedTitles() const override;
     /*!
      * Returns \b true if the group contains track \b track.
@@ -77,10 +80,21 @@ public:
      * Returns \b true.
      */
     bool isGroup() const override;
-
+    /*!
+     * Returns path or URL of the first track of the group.
+     */
     QString firstTrackPath() const;
+    /*!
+     * Returns \b true if the cover is available. Otherwise returns \b false.
+     */
     bool isCoverLoaded() const;
+    /*!
+     * Returns available cover image.
+     */
     QImage cover() const override;
+    /*!
+     * Sets cover image for all group.
+     */
     void setCover(const QImage &cover);
 
 private:

@@ -125,23 +125,24 @@ public:
     /*!
      * Returns the current track.
      */
-    PlayListTrack* currentTrack() const;
+    PlayListTrack *currentTrack() const;
     /*!
-     * Returns the next playing track or 0 if next track is unknown.
+     * Returns the next playing track or \b nullptr if next track is unknown.
      */
-    PlayListTrack* nextTrack() const;
+    PlayListTrack *nextTrack() const;
     /*!
-     * Returns the row of the \b item
+     * Returns index of track or group.
+     * @param item track or group pointer.
      */
-    int indexOf(PlayListItem* item) const;
+    int indexOf(PlayListItem *item) const;
     /*!
-     * Returns the track with the index \b index or 0 if track doesn't exist.
+     * Returns the track with the index \b index or \b nullptr if track doesn't exist.
      */
-    PlayListTrack* track(int index) const;
+    PlayListTrack *track(int index) const;
     /*!
-     * Returns the group with the index \b index or 0 if group doesn't exist.
+     * Returns the group with the index \b index or \b nullptr if group doesn't exist.
      */
-    PlayListGroup* group(int index) const;
+    PlayListGroup *group(int index) const;
     /*!
      * Returns index of the current track or -1 if model is empty.
      */
@@ -158,15 +159,10 @@ public:
      */
     bool setCurrent(PlayListTrack *track);
     /*!
-     * Returns \b true if track with \b index is selected, otherwise returns \b false
-     */
-    //bool isSelected(int index) const;
-    /*!
      * Sets the selected state of the item to \b select
-     * @param index Number of item.
+     * @param item Track or group pointer.
      * @param selected Selection state (\b true - select, \b false - unselect)
      */
-    //void setSelected(int index, bool selected = true);
     void setSelected(PlayListItem *item, bool selected = true);
     /*!
      * Sets the selected state of the list of tracks to \b select
@@ -182,18 +178,11 @@ public:
     void setSelected(const QList<PlayListItem *> &items, bool selected = true);
     /*!
      * Sets the selected state of the list of items range.
-     * @param first Firts item in the range.
-     * @param last Last item in the range.
+     * @param firstLine Firts line in the range.
+     * @param lastLine Last line in the range.
      * @param selected Selection state (\b true - select, \b false - unselect).
      */
-    //void setSelected(int first, int last, bool selected = true);
     void setSelectedLines(int firstLine, int lastLine, bool selected = true);
-    /*!
-     * Sets the selected state of the items with \b indexes to \b select
-     * @param indexes List of item \b indexes.
-     * @param selected Selection state (\b true - select, \b false - unselect)
-     */
-    //void setSelected(const QList<int> &indexes, bool selected = true);
     /*!
      * Advances to the next item. Returns \b false if next iten doesn't exist,
      * otherwise returns \b true
@@ -205,21 +194,46 @@ public:
      */
     bool previous();
     /*!
-     * Returns a list of the items, starting at position \b pos
-     * \param pos First item position.
-     * \param count A number of items. If \b count is -1 (the default), all items from pos are returned.
+     * Returns total line count.
      */
-    //QList<PlayListItem *> mid(int pos, int count = -1) const;
-
     int lineCount() const;
+    /*!
+     * Returns item at line \b lineIndex or \b nullptr if item at line \b lineIndex is not available.
+     */
     PlayListItem *itemAtLine(int lineIndex) const;
+    /*!
+     * Returns track at line \b lineIndex or \b nullptr if track at line \b lineIndex is not available.
+     */
     PlayListTrack *trackAtLine(int lineIndex) const;
+    /*!
+     * Returns a list of the items, starting at line \b pos
+     * @param pos First item line.
+     * @param count A number of items. If \b count is -1 (the default), all items from pos are returned.
+     */
     QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const;
+    /*!
+     * Finds line for item \b item. Returns -1 if line for this item is not available.
+     */
     int findLine(PlayListItem *item) const;
+    /*!
+     * Finds line for track with index \b trackIndex. Returns -1 if the line for this track is not available.
+     */
     int findLine(int trackIndex) const;
+    /*!
+     * Return sub-index of the line \b lineIndex.
+     */
     int subIndexOfLine(int lineIndex) const;
+    /*!
+     * Return track index of the line \b lineIndex. Returns -1 if the line does not contain track.
+     */
     int trackIndexAtLine(int lineIndex) const;
+    /*!
+     * Return \b true if the line \b lineIndex should be painted using alternate color. Otherwise returns \b false.
+     */
     bool alternateColor(int lineIndex) const;
+    /*!
+     * Returns the number of lines needed to draw the group.
+     */
     int linesPerGroup() const;
     /*!
      *  Moves the item at index position \b from to index position \b to.
@@ -246,7 +260,14 @@ public:
      * this method returns selection which \b row belongs to)
      */
     SimpleSelection getSelection(int row);
+    /*!
+     * Returns a list of the selected lines.
+     */
     QList<int> selectedLines() const;
+    /*!
+     * Selects or unselects group or track at line \b line.
+     * @param selected Selection state.
+     */
     void setSelectedLine(int line, bool selected = true);
     /*!
      * Returns list with selected items indexes.
@@ -257,9 +278,8 @@ public:
      */
     QList<PlayListTrack *> selectedTracks() const;
     /*!
-     * Returns list of all \b PlayListItem pointers.
+     * Returns list of all \b PlayListTrack pointers.
      */
-    //QList<PlayListItem*> items() const;
     QList<PlayListTrack *> tracks() const;
     /*!
      * Returns number of first item that selected upper the \b row item.
@@ -367,6 +387,9 @@ signals:
      * @param reverted Sort direction.
      */
     void sortingByColumnFinished(int column, bool reverted);
+    /*!
+     * Emitted when the current track is removed.
+     */
     void currentTrackRemoved();
 
 public slots:

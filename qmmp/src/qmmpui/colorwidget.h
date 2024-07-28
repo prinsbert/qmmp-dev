@@ -25,23 +25,49 @@
 #include <QColorDialog>
 #include "qmmpui_export.h"
 
-/**
-@author Ilya Kotov
-*/
+/*! @brief The ColorWidget class is used to display and select color.
+ * @author Ilya Kotov <forkotov02@ya.ru>
+ */
 class QMMPUI_EXPORT ColorWidget : public QFrame
 {
     Q_OBJECT
-    Q_PROPERTY(QColorDialog::ColorDialogOptions options READ options WRITE setOptions)
+    /*!
+     * Color selection dialog options.
+     */
+    Q_PROPERTY(QColorDialog::ColorDialogOptions options READ options WRITE setOptions NOTIFY optionsChanged)
 public:
+    /*!
+     * Constructor.
+     * @param parent Parent object.
+     */
     ColorWidget(QWidget *parent = nullptr);
-    ~ColorWidget();
-
+    /*!
+     * Destructor.
+     */
+    ~ColorWidget() = default;
+    /*!
+     * Returns color dialog options.
+     */
     QColorDialog::ColorDialogOptions options() const;
+    /*!
+     * Sets color dialog options.
+     */
     void setOptions(QColorDialog::ColorDialogOptions options);
-
+    /*!
+     * Returns color name.
+     */
     QString colorName() const;
 
+signals:
+    /*!
+     * Emitted when the dialog options is changed.
+     */
+    void optionsChanged();
+
 public slots:
+    /*!
+     * Sets color name.
+     */
     void setColor(const QString &name);
 
 private:

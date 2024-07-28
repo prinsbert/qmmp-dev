@@ -56,7 +56,7 @@ public:
     virtual QString formattedTitle(int column) const = 0;
     /*!
      * Returns the list of the formatted titles for all columns.
-     * Group separators contain only one title.
+     * Group separators contain only one or two titles.
      */
     virtual QStringList formattedTitles() const = 0;
     /*!
@@ -72,7 +72,9 @@ public:
      * Default implementation returns -1.
      */
     virtual int trackIndex() const;
-
+    /*!
+     * Returns available cover image.
+     */
     virtual QImage cover() const;
 
 private:
