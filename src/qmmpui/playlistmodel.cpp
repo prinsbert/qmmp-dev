@@ -273,7 +273,7 @@ int PlayListModel::columnCount() const
     return MetaDataHelper::instance()->columnCount();
 }
 
-PlayListTrack* PlayListModel::currentTrack() const
+PlayListTrack *PlayListModel::currentTrack() const
 {
     return m_container->isEmpty() ? nullptr : m_current_track;
 }
@@ -292,7 +292,7 @@ PlayListTrack *PlayListModel::nextTrack() const
     return m_container->track(index);
 }
 
-int PlayListModel::indexOf(PlayListItem* item) const
+int PlayListModel::indexOf(PlayListItem *item) const
 {
     return m_container->indexOf(item);
 }
@@ -438,16 +438,6 @@ void PlayListModel::clearSelection()
     emit listChanged(SELECTION);
 }
 
-//QList<PlayListItem *> PlayListModel::mid(int pos, int count) const
-//{
-//    return m_container->mid(pos, count);
-//}
-
-//bool PlayListModel::isSelected(int index) const
-//{
-//    return m_container->isSelected(index);
-//}
-
 bool PlayListModel::contains(const QString &url)
 {
     for(int i = 0; i < m_container->trackCount(); ++i)
@@ -527,30 +517,6 @@ void PlayListModel::setSelectedLines(int firstLine, int lastLine, bool selected)
 
     emit listChanged(SELECTION);
 }
-
-//void PlayListModel::setSelected(int first, int last, bool selected)
-//{
-//    if(first > last)
-//    {
-//        setSelected(last, first, selected);
-//        return;
-//    }
-//    for(int index = first; index <= last; ++index)
-//    {
-//        PlayListItem *i = item(index);
-//        if(!i)
-//            continue;
-//        i->setSelected(selected);
-//    }
-//    emit listChanged(SELECTION);
-//}
-
-//void PlayListModel::setSelected(const QList<int> &indexes, bool selected)
-//{
-//    for(const int &idx : std::as_const(indexes))
-//        m_container->setSelected(idx, selected);
-//    emit listChanged(SELECTION);
-//}
 
 void PlayListModel::removeSelected()
 {

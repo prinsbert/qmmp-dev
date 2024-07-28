@@ -66,6 +66,10 @@ public slots:
      * Starts playback.
      */
     void play();
+    /*!
+     * Starts playback from specified position.
+     * @param offset Start position in ms.
+     */
     void playFromPosition(qint64 offset);
     /*!
      * Stops playback.

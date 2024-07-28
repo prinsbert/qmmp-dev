@@ -41,12 +41,12 @@ PlayListGroup::~PlayListGroup()
     }
 }
 
-QString PlayListGroup::formattedTitle(int column) const
+QString PlayListGroup::formattedTitle(int line) const
 {
-    if(column == 0)
+    if(line == 0)
         return m_title;
 
-    if(column == 1)
+    if(line == 1)
     {
         if(m_title2.isEmpty())
             m_title2 = formatTitle2();
