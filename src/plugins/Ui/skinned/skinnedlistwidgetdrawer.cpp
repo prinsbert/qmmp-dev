@@ -158,14 +158,14 @@ void SkinnedListWidgetDrawer::setSingleColumnMode(int enabled)
     m_single_column = enabled;
 }
 
-void SkinnedListWidgetDrawer::prepareRow(ListWidgetRow *row)
+void SkinnedListWidgetDrawer::prepareRow(SkinnedListWidgetRow *row)
 {
     if(m_number_width && m_single_column)
         row->numberColumnWidth = m_number_width + 2 * m_padding;
     else
         row->numberColumnWidth = 0;
 
-    if(row->flags & ListWidgetRow::GROUP)
+    if(row->flags & SkinnedListWidgetRow::GROUP)
     {
         row->titles[0] = m_metrics[MAIN_FONT_NORMAL]->elidedText (row->titles[0], Qt::ElideRight,
                 row->rect.width() - m_number_width - 12 - 70);
@@ -230,13 +230,13 @@ void SkinnedListWidgetDrawer::fillBackground(QPainter *painter, int width, int h
     painter->drawRect(0, 0, width, height);
 }
 
-void SkinnedListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *row)
+void SkinnedListWidgetDrawer::drawBackground(QPainter *painter, SkinnedListWidgetRow *row)
 {
-    if(row->flags & ListWidgetRow::SELECTED)
+    if(row->flags & SkinnedListWidgetRow::SELECTED)
     {
         painter->setBrush(m_selected_bg);
     }
-    else if(row->flags & ListWidgetRow::GROUP)
+    else if(row->flags & SkinnedListWidgetRow::GROUP)
     {
         if(row->alternateColor)
         {
@@ -249,7 +249,7 @@ void SkinnedListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *r
             painter->setPen(m_group_bg);
         }
     }
-    else if(row->flags & ListWidgetRow::CURRENT)
+    else if(row->flags & SkinnedListWidgetRow::CURRENT)
     {
         if(row->alternateColor)
         {
@@ -276,18 +276,18 @@ void SkinnedListWidgetDrawer::drawBackground(QPainter *painter, ListWidgetRow *r
         }
     }
 
-    if(m_show_anchor && (row->flags & ListWidgetRow::ANCHOR))
+    if(m_show_anchor && (row->flags & SkinnedListWidgetRow::ANCHOR))
     {
         painter->setPen(m_normal);
     }
-    else if(row->flags & ListWidgetRow::SELECTED)
+    else if(row->flags & SkinnedListWidgetRow::SELECTED)
     {
         painter->setPen(m_selected_bg);
     }
     painter->drawRect(row->rect);
 }
 
-void SkinnedListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *row, bool rtl)
+void SkinnedListWidgetDrawer::drawSeparator(QPainter *painter, SkinnedListWidgetRow *row, bool rtl)
 {
     int sx = rtl ? (row->rect.right() - 50 - row->numberColumnWidth - m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0])) :
         (row->rect.x() + row->numberColumnWidth + 50);
@@ -295,7 +295,7 @@ void SkinnedListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *ro
     bool dividingLine = m_ui_settings->groupDividingLineVisible();
 
     painter->setFont(m_fonts[MAIN_FONT_NORMAL]);
-    painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
+    painter->setPen((row->flags & SkinnedListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
     painter->drawText(sx, sy, row->titles[0]);
 
     sy -= m_metrics[MAIN_FONT_NORMAL]->lineSpacing() / 2 - 2;
@@ -332,7 +332,7 @@ void SkinnedListWidgetDrawer::drawSeparator(QPainter *painter, ListWidgetRow *ro
     }
 }
 
-void SkinnedListWidgetDrawer::drawMultiLineSeparator(QPainter *painter, ListWidgetRow *row, bool rtl)
+void SkinnedListWidgetDrawer::drawMultiLineSeparator(QPainter *painter, SkinnedListWidgetRow *row, bool rtl)
 {
     int sx = rtl ? (row->rect.right() - row->numberColumnWidth - m_padding - m_metrics[MAIN_FONT_NORMAL]->horizontalAdvance(row->titles[0])) :
         (row->rect.x() + m_padding + row->numberColumnWidth);
@@ -343,7 +343,7 @@ void SkinnedListWidgetDrawer::drawMultiLineSeparator(QPainter *painter, ListWidg
     int cy = row->rect.y() + row->rect.height() / 2; //center
 
     painter->setFont(m_fonts[PL_GROUP_FONT]);
-    painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
+    painter->setPen((row->flags & SkinnedListWidgetRow::SELECTED) ? m_highlighted : m_group_text);
 
     if(coverVisible)
     {
@@ -395,7 +395,7 @@ void SkinnedListWidgetDrawer::drawMultiLineSeparator(QPainter *painter, ListWidg
     }
 }
 
-void SkinnedListWidgetDrawer::drawTrack(QPainter *painter, ListWidgetRow *row, bool rtl)
+void SkinnedListWidgetDrawer::drawTrack(QPainter *painter, SkinnedListWidgetRow *row, bool rtl)
 {
     int sy = row->rect.y() + m_metrics[MAIN_FONT_NORMAL]->overlinePos() - 1;
     int sx = rtl ? row->rect.right() : row->rect.x();
@@ -408,13 +408,13 @@ void SkinnedListWidgetDrawer::drawTrack(QPainter *painter, ListWidgetRow *row, b
     painter->setFont(m_fonts[MAIN_FONT_NORMAL]);
     metrics = m_metrics[MAIN_FONT_NORMAL];
 
-    if(row->flags & ListWidgetRow::CURRENT)
+    if(row->flags & SkinnedListWidgetRow::CURRENT)
     {
         textColor = m_current;
     }
     else
     {
-        textColor = (row->flags & ListWidgetRow::SELECTED) ? m_highlighted : m_normal;
+        textColor = (row->flags & SkinnedListWidgetRow::SELECTED) ? m_highlighted : m_normal;
     }
 
     //painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : textColor);
@@ -461,12 +461,12 @@ void SkinnedListWidgetDrawer::drawTrack(QPainter *painter, ListWidgetRow *row, b
                 painter->setPen(textColor);
                 draw_extra = (i == row->trackStateColumn && !row->extraString.isEmpty());
 
-                if(row->alignment[i] == ListWidgetRow::ALIGN_LEFT)
+                if(row->alignment[i] == SkinnedListWidgetRow::ALIGN_LEFT)
                 {
                     title_x = sx - row->sizes[i] + m_padding;
                     extra_x = draw_extra ? sx - m_padding - m_metrics[MAIN_FONT_EXTRA]->horizontalAdvance(row->extraString) : 0;
                 }
-                else if(row->alignment[i] == ListWidgetRow::ALIGN_RIGHT)
+                else if(row->alignment[i] == SkinnedListWidgetRow::ALIGN_RIGHT)
                 {
                     title_x = sx - m_padding - metrics->horizontalAdvance(row->titles[i]);
                     extra_x = draw_extra ? sx - row->sizes[i] + m_padding : 0;
@@ -540,12 +540,12 @@ void SkinnedListWidgetDrawer::drawTrack(QPainter *painter, ListWidgetRow *row, b
                 painter->setPen(textColor);
                 draw_extra = (i == row->trackStateColumn && !row->extraString.isEmpty());
 
-                if(row->alignment[i] == ListWidgetRow::ALIGN_LEFT)
+                if(row->alignment[i] == SkinnedListWidgetRow::ALIGN_LEFT)
                 {
                     title_x = sx + m_padding;
                     extra_x = draw_extra ? sx + row->sizes[i] - m_padding - m_metrics[MAIN_FONT_EXTRA]->horizontalAdvance(row->extraString) : 0;
                 }
-                else if(row->alignment[i] == ListWidgetRow::ALIGN_RIGHT)
+                else if(row->alignment[i] == SkinnedListWidgetRow::ALIGN_RIGHT)
                 {
                     title_x = sx + row->sizes[i] - m_padding - metrics->horizontalAdvance(row->titles[i]);
                     extra_x = draw_extra ? sx + m_padding : 0;

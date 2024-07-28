@@ -127,7 +127,7 @@ private:
     int m_prev_y = 0;
     bool m_select_on_release = false;
     bool m_show_protocol = false;
-    QList<ListWidgetRow *> m_rows;
+    QList<SkinnedListWidgetRow *> m_rows;
     QmmpUiSettings *m_ui_settings;
     SkinnedPopupWidget *m_popupWidget;
     QTimer *m_timer;
