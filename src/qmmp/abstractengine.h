@@ -50,7 +50,7 @@ public:
      */
     virtual ~AbstractEngine() = default;
     /*!
-     * Prepares decoder for usage.
+     * Adds \b source to the internal queue.
      * Subclass should reimplement this function.
      */
     virtual bool enqueue(InputSource *source) = 0;
@@ -81,11 +81,11 @@ public:
     /*!
      * Returns a list of engine factories.
      */
-    static QList<EngineFactory*> factories();
+    static QList<EngineFactory *> factories();
     /*!
      * Returns a list of enabled engine factories.
      */
-    static QList<EngineFactory*> enabledFactories();
+    static QList<EngineFactory *> enabledFactories();
     /*!
      * Returns a list of file name filters, i.e. "*.mp3 *.mpg".
      */

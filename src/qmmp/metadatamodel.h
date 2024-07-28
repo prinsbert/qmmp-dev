@@ -122,7 +122,7 @@ public:
     virtual QImage cover() const;
     /*!
      * Sets cover.
-     * @param pix Cover image.
+     * @param img Cover image.
      * Subclass should reimplement this function. Default implementation does nothing.
      */
     virtual void setCover(const QImage &img);

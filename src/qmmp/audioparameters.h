@@ -31,7 +31,6 @@
 class QMMP_EXPORT AudioParameters
 {
 public:
-
     /*!
      * Byte order of samples.
      */

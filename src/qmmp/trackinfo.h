@@ -175,7 +175,10 @@ public:
      * Removes all track information including path.
      */
     void clear();
-
+    /*!
+     * Extracts path and track number \b track from URL \b url.
+     * URL example: scheme:///path#track
+     */
     static QString pathFromUrl(const QString &url, int *track = nullptr);
 
 private:
