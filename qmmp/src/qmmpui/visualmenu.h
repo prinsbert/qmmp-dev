@@ -24,16 +24,23 @@
 #include <QAction>
 #include "qmmpui_export.h"
 
-/**
+/*! @brief The VisualMenu class provides menu with checkable visualizations.
     @author Ilya Kotov <forkotov02@ya.ru>
 */
 class QMMPUI_EXPORT VisualMenu : public QMenu
 {
     Q_OBJECT
 public:
+    /*!
+     * Object constructor.
+     * @param parent Parent object.
+     */
     explicit VisualMenu(QWidget *parent = nullptr);
 
 public slots:
+    /*!
+     * Updates visualization list.
+     */
     void updateActions();
 };
 

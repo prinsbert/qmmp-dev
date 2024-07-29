@@ -154,7 +154,7 @@ public:
      */
     bool setCurrent(int index);
     /*!
-     * Sets current item to \b item.
+     * Sets current track to \b track.
      * Returns \b true if success, otherwise returns \b false
      */
     bool setCurrent(PlayListTrack *track);
@@ -210,7 +210,7 @@ public:
      * @param pos First item line.
      * @param count A number of items. If \b count is -1 (the default), all items from pos are returned.
      */
-    QList<PlayListItem *> itemsAtLines(int pos, int length = -1) const;
+    QList<PlayListItem *> itemsAtLines(int pos, int count = -1) const;
     /*!
      * Finds line for item \b item. Returns -1 if line for this item is not available.
      */
@@ -236,43 +236,44 @@ public:
      */
     int linesPerGroup() const;
     /*!
-     *  Moves the item at index position \b from to index position \b to.
+     *  Moves the track at index position \b from to index position \b to.
      */
-    void moveItems(int from, int to);
+    void moveTracks(int from, int to);
     /*!
      * Returns a list of queued tracks.
      */
     const QList<PlayListTrack *> &queuedTracks() const;
     /*!
-     * Returns \b true if play queue is empty,otherwise returns - \b false.
+     * Returns \b true if play queue is empty, otherwise returns - \b false.
      */
     bool isEmptyQueue()const;
     /*!
-     * Returns the number of items in the queue
+     * Returns the number of tracks in the queue
      */
     int queueSize() const;
     /*!
-     * Returns \b true if playback stops after \b item, otherwise returns \b false.
+     * Returns \b true if playback stops after \b track, otherwise returns \b false.
      */
-    bool isStopAfter(const PlayListItem* item) const;
+    bool isStopAfter(const PlayListItem *track) const;
     /*!
      * Returns current selection(playlist can contain a lot of selections,
-     * this method returns selection which \b row belongs to)
+     * this method returns selection which \b trackIndex belongs to)
      */
-    SimpleSelection getSelection(int row);
+    SimpleSelection getSelection(int trackIndex);
     /*!
      * Returns a list of the selected lines.
      */
     QList<int> selectedLines() const;
     /*!
      * Selects or unselects group or track at line \b line.
+     * @param line Line number.
      * @param selected Selection state.
      */
     void setSelectedLine(int line, bool selected = true);
     /*!
-     * Returns list with selected items indexes.
+     * Returns list with selected track indexes.
      */
-    QList<int> selectedIndexes() const;
+    QList<int> selectedTrackIndexes() const;
     /*!
      * Returns list of \b PlayListTrack pointers that are selected.
      */
@@ -282,13 +283,13 @@ public:
      */
     QList<PlayListTrack *> tracks() const;
     /*!
-     * Returns number of first item that selected upper the \b row item.
+     * Returns number of first track index that selected upper the \b trackIndex track.
      */
-    int firstSelectedUpper(int row);
+    int firstSelectedUpper(int trackIndex);
     /*!
-     * Returns number of first item that selected lower the \b row item.
+     * Returns number of first track that selected lower the \b trackIndex track.
      */
-    int firstSelectedLower(int row);
+    int firstSelectedLower(int trackIndex);
     /*!
      * Returns total duration in milliseconds of all songs.
      */
@@ -334,10 +335,10 @@ public:
         GROUP                   /*!< by group name */
     };
     /*!
-     * Finds track with index \b track_index.
+     * Finds track with index \b trackIndex.
      * Returns null pointer if playlist does not contain track with index \b track_index.
      */
-    PlayListTrack *findTrack(int track_index) const;
+    PlayListTrack *findTrack(int trackIndex) const;
     /*!
      * Finds tracks by string \b str. The search is case insensitive.
      * Returns a list of \b PlayListItem pointers.
@@ -372,15 +373,15 @@ signals:
      * Emitted when playlist name has chanded.
      * @param name New playlist name.
      */
-    void nameChanged(const QString& name);
+    void nameChanged(const QString &name);
     /*!
      * Emitted when playlist loader thread has finished.
      */
     void loaderFinished();
     /*!
-     * Tells playlist widget to show item at index \b index.
+     * Tells playlist widget to show track at index \b trackIndex.
      */
-    void scrollToRequest(int index);
+    void scrollToRequest(int trackIndex);
     /*!
      * Emitted when sorting by column is finished.
      * @param column Column index.
@@ -498,15 +499,15 @@ public slots:
      */
     void doCurrentVisibleRequest();
     /*!
-     * Ensures that the playlist item at \b index is visible.
+     * Ensures that the playlist track at \b trackIndex is visible.
      */
-    void scrollTo(int index);
+    void scrollTo(int trackIndex);
     /*!
      * Randomly changes items order.
      */
     void randomizeList();
     /*!
-     * Reverces items order.
+     * Reverces tracks order.
      */
     void reverseList();
     /*!
@@ -528,7 +529,7 @@ public slots:
     /*!
      * Adds/removes track \b t to/from playback queue.
      */
-    void setQueued(PlayListTrack* t);
+    void setQueued(PlayListTrack *t);
     /*!
      * Removes invalid tracks from playlist
      */

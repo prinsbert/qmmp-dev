@@ -62,10 +62,25 @@ public:
      * Returns playlist group format.
      */
     QString groupFormat() const;
+    /*!
+     * Returns playlist group extra row format.
+     */
     QString groupExtraRowFormat() const;
+    /*!
+     * Returns the number of lines needed to draw the group.
+     */
     int linesPerGroup() const;
+    /*!
+     * Returns \b true if extra group row is visible. Otherwise returns \b false.
+     */
     bool groupExtraRowVisible() const;
+    /*!
+     * Returns \b true if group cover is visible. Otherwise returns \b false.
+     */
     bool groupCoverVisible() const;
+    /*!
+     * Returns \b true if group dividing line is visible. Otherwise returns \b false.
+     */
     bool groupDividingLineVisible() const;
     /*!
      * Returns state of "Repeat All" option.
@@ -106,10 +121,30 @@ public:
      * \param groupFormat group format. \sa MetaDataFormatter
      */
     void setGroupFormat(const QString &groupFormat);
+    /*!
+     * Sets group extra row format.
+     * \param extraRowFormat Extra row format. \sa MetaDataFormatter
+     */
     void setGroupExtraRowFormat(const QString &extraRowFormat);
+    /*!
+     * Sets group height in lines.
+     * \param lines Number of lines.
+     */
     void setLinesPerGroup(int lines);
+    /*!
+     * Sets group extra row visibility to \b enabled
+     * \param enabled Extra row visibility ((\b true - visible, \b false - hidden))
+     */
     void setGroupExtraRowVisible(bool enabled);
+    /*!
+     * Sets group cover visibility to \b enabled
+     * \param enabled Cover visibility ((\b true - visible, \b false - hidden))
+     */
     void setGroupCoverVisible(bool enabled);
+    /*!
+     * Sets group dividing line visibility to \b enabled
+     * \param enabled Dividing line visibility ((\b true - visible, \b false - hidden))
+     */
     void setGroupDividingLineVisible(bool enabled);
     /*!
      * Sets metadata usage option state to \b enabled
@@ -200,8 +235,15 @@ public:
      *         otherwise.
      */
     bool skipExistingTracks() const;
-
+    /*!
+     * Returns \b true if playback will be stopped after current track removal. Otherwise returns \b false.
+     */
     bool stopAfterRemovingOfCurrentTrack() const;
+    /*!
+     * Sets playback behavior after removal of current track.
+     * \param enabled New setting for this option (\b true - playback will be stopped after current track removal,
+     *                \b false - playback will be continued after current track removal).
+     */
     void setStopAfterRemovingOfCurrentTrack(bool enabled);
     /*!
      * Returns the current setting for the option to read tags when loading a playlist.
@@ -210,7 +252,7 @@ public:
     bool readMetaDataForPlayLists() const;
     /*!
      * Enable/disable tag reading when loading a playlist.
-     * @param enabled New setting for this option (\b true to enable)
+     * @param enabled New setting for this option (\b true to enable).
      */
     void setReadMetaDataForPlayLists(bool enabled);
     /*!
@@ -221,17 +263,17 @@ public:
 signals:
     /*!
      * Emitted when state of the "Repeat All" option has changed.
-     * @param state New state of the "Repeat All" option (\b true - enabled, \b false disabled)
+     * @param state New state of the "Repeat All" option (\b true - enabled, \b false - disabled)
      */
     void repeatableListChanged(bool state);
     /*!
      * Emitted when state of the "Shuffle" option has changed.
-     * @param state New state of the "Shuffle" option (\b true - enabled, \b false disabled)
+     * @param state New state of the "Shuffle" option (\b true - enabled, \b false - disabled)
      */
     void shuffleChanged(bool state);
     /*!
      * Emitted when state of the "Group tracks" option has changed.
-     * @param state New state of the "Group tracks" option (\b true - enabled, \b false disabled
+     * @param state New state of the "Group tracks" option (\b true - enabled, \b false - disabled
      */
     void groupsChanged(bool state);
     /*!
