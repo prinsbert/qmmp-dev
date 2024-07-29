@@ -121,6 +121,9 @@ signals:
      * Emitted when the list of playlists is changed.
      */
     void playListsChanged();
+    /*!
+     * Emitted when the current track of the current playlist is removed.
+     */
     void currentTrackRemoved();
 
 public slots:
@@ -260,7 +263,9 @@ public slots:
      * This is a convenience function and is the same as calling \b selectedPlayList()->stopAfterSelected()
      */
     void stopAfterSelected();
-
+    /*!
+     * Rebuilds groups for all playlists.
+     */
     void rebuildGroups();
 
 private slots:

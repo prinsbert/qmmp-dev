@@ -372,9 +372,9 @@ PlayListTrack *PlayListModel::trackAtLine(int lineIndex) const
     return l >= 0 ? m_container->track(l) : nullptr;
 }
 
-QList<PlayListItem *> PlayListModel::itemsAtLines(int pos, int length) const
+QList<PlayListItem *> PlayListModel::itemsAtLines(int pos, int count) const
 {
-    return m_container->itemsAtLines(pos, length);
+    return m_container->itemsAtLines(pos, count);
 }
 
 int PlayListModel::findLine(PlayListItem *item) const
@@ -449,9 +449,9 @@ bool PlayListModel::contains(const QString &url)
     return false;
 }
 
-PlayListTrack *PlayListModel::findTrack(int track_index) const
+PlayListTrack *PlayListModel::findTrack(int trackIndex) const
 {
-    return m_container->track(track_index);
+    return m_container->track(trackIndex);
 }
 
 QList<PlayListItem *> PlayListModel::findTracks(const QString &str) const
@@ -699,9 +699,9 @@ void PlayListModel::showDetailsForCurrent(QWidget *parent)
     }
 }
 
-int PlayListModel::firstSelectedUpper(int row)
+int PlayListModel::firstSelectedUpper(int trackIndex)
 {
-    for(int i = row - 1;i >= 0;i--)
+    for(int i = trackIndex - 1; i >= 0; i--)
     {
         if(m_container->track(i)->isSelected())
              return i;
@@ -709,9 +709,9 @@ int PlayListModel::firstSelectedUpper(int row)
     return -1;
 }
 
-int PlayListModel::firstSelectedLower(int row)
+int PlayListModel::firstSelectedLower(int trackIndex)
 {
-    for(int i = row + 1;i < trackCount() ;i++)
+    for(int i = trackIndex + 1; i < trackCount(); i++)
     {
         if(m_container->track(i)->isSelected())
              return i;
@@ -724,13 +724,13 @@ qint64 PlayListModel::totalDuration() const
     return m_total_duration;
 }
 
-void PlayListModel::moveItems(int from, int to)
+void PlayListModel::moveTracks(int from, int to)
 {
     // Get rid of useless work
     if(from == to || from < 0 || to < 0)
         return;
 
-    QList<int> selected_indexes = selectedIndexes();
+    QList<int> selected_indexes = selectedTrackIndexes();
     QList<PlayListGroup *> groups = m_container->groups();
 
     if(selected_indexes.isEmpty())
@@ -779,9 +779,9 @@ int PlayListModel::bottommostInSelection(int row)
     return trackCount() - 1;
 }
 
-SimpleSelection PlayListModel::getSelection(int row)
+SimpleSelection PlayListModel::getSelection(int trackIndex)
 {
-    SimpleSelection sel = { .top = topmostInSelection(row), .bottom = bottommostInSelection(row) };
+    SimpleSelection sel = { .top = topmostInSelection(trackIndex), .bottom = bottommostInSelection(trackIndex) };
     return sel;
 }
 
@@ -806,7 +806,7 @@ void PlayListModel::setSelectedLine(int line, bool selected)
     }
 }
 
-QList<int> PlayListModel::selectedIndexes() const
+QList<int> PlayListModel::selectedTrackIndexes() const
 {
     QList<int> selected_rows;
     for(int i = 0; i < m_container->trackCount(); i++)
@@ -874,9 +874,9 @@ int PlayListModel::queueSize() const
     return m_container->queuedTracks().count();
 }
 
-bool PlayListModel::isStopAfter(const PlayListItem *item) const
+bool PlayListModel::isStopAfter(const PlayListItem *track) const
 {
-    return m_stop_track == item;
+    return m_stop_track == track;
 }
 
 void PlayListModel::randomizeList()
@@ -1186,10 +1186,10 @@ void PlayListModel::doCurrentVisibleRequest()
         emit scrollToRequest(m_current);
 }
 
-void PlayListModel::scrollTo(int index)
+void PlayListModel::scrollTo(int trackIndex)
 {
-    if(index >= 0 && index < m_container->trackCount())
-        emit scrollToRequest(index);
+    if(trackIndex >= 0 && trackIndex < m_container->trackCount())
+        emit scrollToRequest(trackIndex);
 }
 
 void PlayListModel::loadPlaylist(const QString &f_name)

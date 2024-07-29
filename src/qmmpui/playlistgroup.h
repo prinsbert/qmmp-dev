@@ -47,7 +47,7 @@ public:
     virtual ~PlayListGroup();
     /*!
      * Returns formatted title of the  group.
-     * @param line Number of line (0 or 1).
+     * @param line Number of title (0 or 1).
      */
     QString formattedTitle(int line = 0) const override;
     /*!

@@ -563,13 +563,13 @@ void QSUiListWidget::autoscroll()
         int line = m_firstLine + m_row_count;
         if(line < m_model->lineCount())
             m_firstLine++;
-        m_model->moveItems(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(line));
+        m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(line));
         m_pressedLine = line;
     }
     else if(m_scroll_direction == TOP && m_firstLine > 0)
     {
         m_firstLine--;
-        m_model->moveItems(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(m_firstLine));
+        m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine), m_model->trackIndexAtLine(m_firstLine));
         m_pressedLine = m_firstLine;
     }
 
@@ -854,7 +854,7 @@ void QSUiListWidget::mouseMoveEvent(QMouseEvent *e)
                         sel.bottom == m_model->trackIndexAtLine(m_firstLine + m_row_count))
                     return;
             }
-            m_model->moveItems(m_model->trackIndexAtLine(m_pressedLine),
+            m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine),
                                m_model->trackIndexAtLine(index));
 
             m_prev_y = e->position().y();

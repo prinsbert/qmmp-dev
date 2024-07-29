@@ -107,7 +107,7 @@ void SkinnedKeyboardManager::keyUp (QKeyEvent * ke)
 
         if(from >= 0 && to >= 0)
         {
-            m_listWidget->model()->moveItems(from, to);
+            m_listWidget->model()->moveTracks(from, to);
             m_listWidget->setAnchorLine(lines.constFirst() - 1);
         }
     }
@@ -186,7 +186,7 @@ void SkinnedKeyboardManager::keyDown(QKeyEvent * ke)
 
         if(from >= 0 && to >= 0)
         {
-            m_listWidget->model()->moveItems(from, to);
+            m_listWidget->model()->moveTracks(from, to);
             m_listWidget->setAnchorLine(lines.constLast() + 1);
         }
     }
@@ -259,7 +259,7 @@ void SkinnedKeyboardManager::keyPgDown(QKeyEvent *)
 
 void SkinnedKeyboardManager::keyEnter(QKeyEvent *)
 {    
-    QList<int> rows = m_listWidget->model()->selectedIndexes();
+    QList<int> rows = m_listWidget->model()->selectedTrackIndexes();
     if(rows.isEmpty())
         return;
     SoundCore::instance()->stop();

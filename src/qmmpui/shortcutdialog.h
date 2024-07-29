@@ -29,19 +29,32 @@ namespace Ui {
 class ShortcutDialog;
 }
 
-/**
+/*! @brief The ShortcutDialog class provides simple hotkey editor dialog.
     @author Ilya Kotov <forkotov02@ya.ru>
 */
 class QMMPUI_EXPORT ShortcutDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     * Object constructor.
+     * \param key Initial shortcut string.
+     * \param parent Parent object.
+     */
     explicit ShortcutDialog(const QString &key, QWidget *parent = nullptr);
+    /*!
+     * Destructor
+     */
     virtual ~ShortcutDialog();
-
+    /*!
+     * Returns assigned shortcut.
+     */
     QString key() const;
 
 protected:
+    /*!
+     * Reimplements \b QWidget::keyPressEvent(QKeyEvent *event)
+     */
     virtual void keyPressEvent(QKeyEvent *event) override;
 
 private:
