@@ -122,7 +122,7 @@ void HistoryWindow::loadHistory()
         info.setPath(query.value(11).toString());
 
         QDateTime dateTime = QDateTime::fromString(query.value(0).toString(), u"yyyy-MM-dd hh:mm:ss"_s);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
         dateTime.setTimeZone(QTimeZone::UTC);
 #else
         dateTime.setTimeSpec(Qt::UTC);
