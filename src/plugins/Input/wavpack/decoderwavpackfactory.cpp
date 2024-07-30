@@ -88,7 +88,7 @@ QList<TrackInfo *> DecoderWavPackFactory::createPlayList(const QString &path, Tr
 
     if(parts & TrackInfo::Properties)
     {
-        info->setValue(Qmmp::BITRATE, WavpackGetAverageBitrate(ctx, 1));
+        info->setValue(Qmmp::BITRATE, int(WavpackGetAverageBitrate(ctx, 1) / 1000));
         info->setValue(Qmmp::SAMPLERATE, WavpackGetSampleRate(ctx));
         info->setValue(Qmmp::CHANNELS, WavpackGetNumChannels(ctx));
         info->setValue(Qmmp::BITS_PER_SAMPLE, WavpackGetBitsPerSample(ctx));
