@@ -50,7 +50,7 @@ private slots:
     void on_historyTreeWidget_customContextMenuRequested(const QPoint &pos);
     void on_topSongsTreeWidget_itemDoubleClicked(QTreeWidgetItem *item, int);
     void onSortIndicatorChanged(int index, Qt::SortOrder order);
-    void playTrack(PlayListTrack *item);
+    void playTrack(const QList<PlayListTrack *> &tracks);
     void disconnectPl();
 
 private:

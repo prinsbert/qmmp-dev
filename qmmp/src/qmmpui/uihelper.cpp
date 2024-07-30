@@ -312,8 +312,8 @@ void UiHelper::playSelectedFiles(const QStringList &files)
         return;
     m_model->clear();
     PlayListManager::instance()->activatePlayList(m_model);
-    connect(m_model, &PlayListModel::trackAdded, MediaPlayer::instance(), &MediaPlayer::play);
-    connect(m_model, &PlayListModel::trackAdded, this, &UiHelper::disconnectPl);
+    connect(m_model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
+    connect(m_model, &PlayListModel::tracksAdded, this, &UiHelper::disconnectPl);
     m_model->addPaths(files);
 }
 
@@ -322,7 +322,7 @@ void UiHelper::disconnectPl()
     PlayListModel *model = qobject_cast<PlayListModel*>(sender());
     if(model)
     {
-        disconnect(m_model, &PlayListModel::trackAdded, MediaPlayer::instance(), &MediaPlayer::play);
-        disconnect(m_model, &PlayListModel::trackAdded, this, &UiHelper::disconnectPl);
+        disconnect(m_model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
+        disconnect(m_model, &PlayListModel::tracksAdded, this, &UiHelper::disconnectPl);
     }
 }

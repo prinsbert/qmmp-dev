@@ -514,7 +514,7 @@ void HistoryWindow::on_topSongsTreeWidget_itemDoubleClicked(QTreeWidgetItem *ite
     if(!plManager->selectedPlayList()->isLoaderRunning())
     {
         plManager->activatePlayList(plManager->selectedPlayList());
-        connect(plManager->currentPlayList(), &PlayListModel::trackAdded, this, &HistoryWindow::playTrack);
+        connect(plManager->currentPlayList(), &PlayListModel::tracksAdded, this, &HistoryWindow::playTrack);
         connect(plManager->currentPlayList(), &PlayListModel::loaderFinished, this, &HistoryWindow::disconnectPl);
 
     }
@@ -535,14 +535,14 @@ void HistoryWindow::onSortIndicatorChanged(int index, Qt::SortOrder order)
     }
 }
 
-void HistoryWindow::playTrack(PlayListTrack *item)
+void HistoryWindow::playTrack(const QList<PlayListTrack *> &tracks)
 {
     PlayListManager *plManager = PlayListManager::instance();
     PlayListModel *model = qobject_cast<PlayListModel*>(sender());
     plManager->selectPlayList(model);
     plManager->activatePlayList(model);
-    disconnect(model, &PlayListModel::trackAdded, this, &HistoryWindow::playTrack);
-    if(plManager->currentPlayList()->setCurrent(item))
+    disconnect(model, &PlayListModel::tracksAdded, this, &HistoryWindow::playTrack);
+    if(plManager->currentPlayList()->setCurrent(tracks.constFirst()))
     {
         MediaPlayer::instance()->stop();
         MediaPlayer::instance()->play();
@@ -552,5 +552,5 @@ void HistoryWindow::playTrack(PlayListTrack *item)
 void HistoryWindow::disconnectPl()
 {
     PlayListModel *model = qobject_cast<PlayListModel*>(sender());
-    disconnect(model, &PlayListModel::trackAdded, this, &HistoryWindow::playTrack);
+    disconnect(model, &PlayListModel::tracksAdded, this, &HistoryWindow::playTrack);
 }

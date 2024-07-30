@@ -364,11 +364,10 @@ signals:
      */
     void listChanged(int flags);
     /*!
-     * Emitted when new track has added.
-     * @param track Pointer of the new playlist track.
+     * Emitted when new tracks have added.
+     * @param tracks A list of pointers of the new playlist tracks.
      */
-    //TODO rename to tracksAdded
-    void trackAdded(PlayListTrack *track);
+    void tracksAdded(const QList<PlayListTrack *> &tracks);
     /*!
      * Emitted when playlist name has chanded.
      * @param name New playlist name.
