@@ -112,7 +112,7 @@ void PlayListModel::addTrack(PlayListTrack *track)
         startCoverLoader();
     }
     flags |= STRUCTURE;
-    emit trackAdded(track);
+    emit tracksAdded({ track });
     emit listChanged(flags);
 }
 
@@ -140,8 +140,9 @@ void PlayListModel::addTracks(const QList<PlayListTrack *> &tracks)
     for(PlayListTrack *track : std::as_const(tracks))
     {
         m_total_duration += track->duration();
-        emit trackAdded(track);
     }
+    emit tracksAdded(tracks);
+
     if(sender() != m_loader)
     {
         preparePlayState();
@@ -184,7 +185,7 @@ void PlayListModel::insertTrack(int index, PlayListTrack *track)
         preparePlayState();
         startCoverLoader();
     }
-    emit trackAdded(track);
+    emit tracksAdded({ track });
     flags |= STRUCTURE;
     emit listChanged(flags);
 }
@@ -206,8 +207,9 @@ void PlayListModel::insertTracks(int index, const QList<PlayListTrack *> &tracks
             m_current = m_container->indexOf(track);
             flags |= CURRENT;
         }
-        emit trackAdded(track);
     }
+    emit tracksAdded(tracks);
+
     //update current index
     m_current = m_container->indexOf(m_current_track);
     if (sender() != m_loader)

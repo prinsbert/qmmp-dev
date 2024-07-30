@@ -229,7 +229,7 @@ void Player2Object::OpenUri(const QString &in0)
     if(!m_pl_manager->currentPlayList()->isLoaderRunning())
     {
         m_pl_manager->selectPlayList(m_pl_manager->currentPlayList());
-        connect(m_pl_manager->currentPlayList(), &PlayListModel::trackAdded, this, &Player2Object::playTrack);
+        connect(m_pl_manager->currentPlayList(), &PlayListModel::tracksAdded, this, &Player2Object::playTrack);
         connect(m_pl_manager->currentPlayList(), &PlayListModel::loaderFinished, this, &Player2Object::disconnectPl);
     }
     m_pl_manager->currentPlayList()->addPath(path);
@@ -331,13 +331,13 @@ void Player2Object::checkSeeking(qint64 elapsed)
     m_previous_pos = elapsed;
 }
 
-void Player2Object::playTrack(PlayListTrack *item)
+void Player2Object::playTrack(const QList<PlayListTrack *> &tracks)
 {
     PlayListModel *model = qobject_cast<PlayListModel*>(sender());
     m_pl_manager->selectPlayList(model);
     m_pl_manager->activatePlayList(model);
-    disconnect(m_pl_manager->currentPlayList(), &PlayListModel::trackAdded, this, &Player2Object::playTrack);
-    if(!m_pl_manager->currentPlayList()->setCurrent(item))
+    disconnect(m_pl_manager->currentPlayList(), &PlayListModel::tracksAdded, this, &Player2Object::playTrack);
+    if(!m_pl_manager->currentPlayList()->setCurrent(tracks.constFirst()))
         return;
     m_core->stop();
     m_player->play();
@@ -345,7 +345,7 @@ void Player2Object::playTrack(PlayListTrack *item)
 
 void Player2Object::disconnectPl()
 {
-    disconnect(qobject_cast<PlayListModel *>(sender()), &PlayListModel::trackAdded, this, &Player2Object::playTrack);
+    disconnect(qobject_cast<PlayListModel *>(sender()), &PlayListModel::tracksAdded, this, &Player2Object::playTrack);
 }
 
 void Player2Object::setModel(PlayListModel *selected, PlayListModel *previous)
