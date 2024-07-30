@@ -97,8 +97,13 @@ void SkinnedHorizontalSlider::setPos(int v, int max)
 
 void SkinnedHorizontalSlider::updateSkin()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
     m_normal = QColor::fromString(m_skin->getPLValue("normal"));
     m_normal_bg = QColor::fromString(m_skin->getPLValue("normalbg"));
+#else
+    m_normal.setNamedColor(m_skin->getPLValue("normal"));
+    m_normal_bg.setNamedColor(m_skin->getPLValue("normalbg"));
+#endif
     update();
 }
 
