@@ -92,7 +92,7 @@ void RemovableHelper::processAction(QAction *action)
 {
     qCDebug(plugin, "action triggered: %s", qPrintable(action->data().toString()));
     QString path = action->data().toString();
-    PlayListManager::instance()->selectedPlayList()->add(path);
+    PlayListManager::instance()->selectedPlayList()->addPath(path);
 }
 
 void RemovableHelper::updateActions()
@@ -209,11 +209,11 @@ void RemovableHelper::addPath(const QString &path)
 
     if(path.startsWith(u"cdda://"_s) && m_addTracks)
     {
-        model->add(path);
+        model->addPath(path);
         return;
     }
     else if(!path.startsWith(u"cdda://"_s) && m_addFiles)
-        model->add(path);
+        model->addPath(path);
 }
 
 void RemovableHelper::removePath(const QString &path)
