@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2009-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   Copyright (C) 2003-2007 by Justin Karneges and Michail Pishchagin     *
@@ -23,12 +23,13 @@
 #include <QtGlobal>
 #ifdef QMMP_WS_X11
 #include <QSettings>
+#include <QX11Info>
+#include <QtDebug>
 #include <QEvent>
 #include <QKeyEvent>
 #include <QCoreApplication>
 #include <QApplication>
 #include <QAbstractEventDispatcher>
-#include <QHash>
 #define Visual XVisual
 extern "C" {
 #include <X11/X.h>
@@ -58,36 +59,35 @@ quint32 Hotkey::defaultKey()
 quint32 Hotkey::defaultKey(int act)
 {
     //default key bindings
-    static const QHash<int, quint32> keyMap = {
-        { PLAY, 0 },
-        { STOP, XF86XK_AudioStop },
-        { PAUSE, XF86XK_AudioPause },
-        { PLAY_PAUSE, XF86XK_AudioPlay },
-        { NEXT, XF86XK_AudioNext },
-        { PREVIOUS, XF86XK_AudioPrev },
-        { SHOW_HIDE, 0 },
-        { VOLUME_UP, XF86XK_AudioRaiseVolume },
-        { VOLUME_DOWN, XF86XK_AudioLowerVolume },
-        { FORWARD, 0 },
-        { REWIND, 0 },
-        { JUMP_TO_TRACK, 0},
-        { VOLUME_MUTE, XF86XK_AudioMute }
-    };
-    return keyMap.value(act);
+    QMap<int, quint32> keyMap;
+    keyMap[PLAY] = 0;
+    keyMap[STOP] = XF86XK_AudioStop;
+    keyMap[PAUSE] = XF86XK_AudioPause;
+    keyMap[PLAY_PAUSE] = XF86XK_AudioPlay;
+    keyMap[NEXT] = XF86XK_AudioNext;
+    keyMap[PREVIOUS] = XF86XK_AudioPrev;
+    keyMap[SHOW_HIDE] = 0;
+    keyMap[VOLUME_UP] = XF86XK_AudioRaiseVolume;
+    keyMap[VOLUME_DOWN] = XF86XK_AudioLowerVolume;
+    keyMap[FORWARD] = 0;
+    keyMap[REWIND] = 0;
+    keyMap[JUMP_TO_TRACK] = 0;
+    keyMap[VOLUME_MUTE] = XF86XK_AudioMute;
+    return keyMap[act];
 }
 
 HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 {
-    if(!HotkeyManager::isPlatformX11())
+    if(!QX11Info::isPlatformX11())
     {
-        qCWarning(plugin, "X11 not found. Plugin disabled");
+        qWarning("HotkeyManager: X11 not found. Plugin disabled");
         return;
     }
 
     QCoreApplication::instance()->installEventFilter(this);
-    WId rootWindow = DefaultRootWindow(HotkeyManager::display());
+    WId rootWindow = DefaultRootWindow(QX11Info::display());
     QSettings settings; //load settings
-    settings.beginGroup(u"Hotkey"_s);
+    settings.beginGroup("Hotkey"_L1);
     for (int i = Hotkey::PLAY, j = 0; i <= Hotkey::VOLUME_MUTE; ++i, ++j)
     {
         quint32 key = settings.value(QStringLiteral("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
@@ -100,14 +100,14 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
                 Hotkey *hotkey = new Hotkey;
                 hotkey->action = i;
                 hotkey->key = key;
-                hotkey->code = XKeysymToKeycode(HotkeyManager::display(), hotkey->key);
+                hotkey->code = XKeysymToKeycode(QX11Info::display(), hotkey->key);
                 if(!hotkey->code)
                 {
                     delete hotkey;
                     continue;
                 }
 
-                XGrabKey(HotkeyManager::display(),  hotkey->code, mod | mask_mod, rootWindow, True,
+                XGrabKey(QX11Info::display(),  hotkey->code, mod | mask_mod, rootWindow, True,
                          GrabModeAsync, GrabModeAsync);
                 hotkey->mod = mod | mask_mod;
                 m_grabbedKeys << hotkey;
@@ -115,7 +115,7 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
         }
     }
     settings.endGroup();
-    XSync(HotkeyManager::display(), False);
+    XSync(QX11Info::display(), False);
     qApp->installNativeEventFilter(this);
 }
 
@@ -124,36 +124,28 @@ HotkeyManager::~HotkeyManager()
     qApp->removeNativeEventFilter(this);
     while(!m_grabbedKeys.isEmpty())
     {
-        Hotkey *key = m_grabbedKeys.takeFirst();
+        Hotkey *key = m_grabbedKeys.takeFirst ();
         if(key->code)
-            XUngrabKey(HotkeyManager::display(), key->code, key->mod, HotkeyManager::appRootWindow());
+            XUngrabKey(QX11Info::display(), key->code, key->mod, QX11Info::appRootWindow());
         delete key;
     }
 }
 
 const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
 {
-    static const QHash<quint32, QString> modList = {
-        { ControlMask, u"Control"_s },
-        { ShiftMask, u"Shift"_s },
-        { Mod1Mask, u"Alt"_s },
-        { Mod2Mask, u"Mod2"_s },
-        { Mod3Mask, u"Mod3"_s },
-        { Mod4Mask, u"Super"_s },
-        { Mod5Mask, u"Mod5"_s }
-    };
-
+    QString strModList[] = { "Control"_L1, "Shift"_L1, "Alt"_L1, "Mod2"_L1, "Mod3"_L1, "Super"_L1, "Mod5"_L1 };
+    quint32 modList[] = { ControlMask, ShiftMask, Mod1Mask, Mod2Mask, Mod3Mask, Mod4Mask, Mod5Mask };
     QString keyStr;
-    for(auto it = modList.cbegin(); it != modList.cend(); ++it)
+    for (int j = 0; j < 7; j++)
     {
-        if(modifiers & it.key())
-            keyStr.append(it.value() + QLatin1Char('+'));
+        if (modifiers & modList[j])
+            keyStr.append(strModList[j] + "+"_L1);
     }
     keyStr.append(QString::fromLatin1(XKeysymToString(key)));
     return keyStr;
 }
 
-bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
+bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message, long *result)
 {
     Q_UNUSED(eventType);
     Q_UNUSED(result);
@@ -166,11 +158,11 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
         quint32 mod = ke->state;
         SoundCore *core = SoundCore::instance();
         MediaPlayer *player = MediaPlayer::instance();
-        for(const Hotkey *hotkey : std::as_const(m_grabbedKeys))
+        for(const Hotkey *hotkey : qAsConst(m_grabbedKeys))
         {
             if (hotkey->key != key || hotkey->mod != mod)
                 continue;
-            qCDebug(plugin, "[%s] pressed", qPrintable(getKeyString(key, mod)));
+            qDebug("HotkeyManager: [%s] pressed", qPrintable(getKeyString(key, mod)));
 
             switch (hotkey->action)
             {
@@ -224,57 +216,13 @@ bool HotkeyManager::nativeEventFilter(const QByteArray &eventType, void *message
 
 QList<long> HotkeyManager::ignModifiersList()
 {
-    static const QList<long> ret = { 0, Mod2Mask, LockMask, (Mod2Mask | LockMask) };
+    QList<long> ret = { 0, Mod2Mask, LockMask, (Mod2Mask | LockMask) };
     return ret;
 }
 
 quint32 HotkeyManager::keycodeToKeysym(quint32 keycode)
 {
-    return XkbKeycodeToKeysym(HotkeyManager::display(), keycode, 0, 0);
-}
-
-Display *HotkeyManager::display()
-{
-    if(!qApp)
-        return nullptr;
-    QNativeInterface::QX11Application *app = qApp->nativeInterface<QNativeInterface::QX11Application>();
-    if(!app)
-        return nullptr;
-
-    return app->display();
-}
-
-bool HotkeyManager::isPlatformX11()
-{
-    return QGuiApplication::platformName() == QLatin1String("xcb");
-}
-
-quint32 HotkeyManager::appRootWindow()
-{
-    if(!qApp)
-        return 0;
-    QNativeInterface::QX11Application *app = qApp->nativeInterface<QNativeInterface::QX11Application>();
-    if(!app)
-        return 0;
-
-    xcb_connection_t *conn = app->connection();
-
-    if(!conn)
-        return 0;
-
-    xcb_screen_t *scr = HotkeyManager::screenOfDisplay(conn, 0);
-
-    return scr ? scr->root : 0;
-}
-
-xcb_screen_t *HotkeyManager::screenOfDisplay(xcb_connection_t *conn, int screen)
-{
-    xcb_screen_iterator_t iter = xcb_setup_roots_iterator(xcb_get_setup(conn));
-    for (; iter.rem; --screen, xcb_screen_next (&iter))
-        if (screen == 0)
-            return iter.data;
-
-    return nullptr;
+    return XkbKeycodeToKeysym(QX11Info::display(), keycode, 0, 0);
 }
 
 #include "moc_hotkeymanager.cpp"
