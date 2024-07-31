@@ -1715,12 +1715,10 @@ Version 1.5.0
 * updated German translation (Ettore Atalan)
 * updated Finnish translation (Jiri Grönroos, Kimmo Kujansuu)
 
-Version 2.0.0
-* switched to Qt6
+Version 1.5.1
 * added application startup optimization
 * added Korean translation (Jung Hee Lee)
 * enabled Matroska container by default in the ffmpeg plugin
-* using libiconv for charset conversion
 * removed mp3lyrics.org lyrics provider (service was closed)
 * improved qsui plugin:
   - added waveform seekbar optimization (Linearithmik)
@@ -1728,9 +1726,8 @@ Version 2.0.0
 * fixed plugin cache cleanup
 * fixed build without mpg123
 * fixed ladspa plugin regression (Linearithmik)
-* disabled unsupported plugins: taskbar, qtmultimedia
 
-Version 2.0.1
+Version 1.5.2
 * fixed default settings in the ffmpeg plugin
 * fixed build warnings
 * fixed transition between http tracks
@@ -1738,37 +1735,28 @@ Version 2.0.1
   - fixed toolbar renaming
   - fixed Wayland support
   - fixed tab bar context menu
-* enabled QtMultimedia support under Qt 6.2 or higher
-* removed private API usage Qt 6.2 or higher
 * updated Finnish translation (Kimmo Kujansuu, Jiri Grönroos)
 * updated Galician translation (Delio Docampo Cordeiro)
 * updated Italian translation (Luigi Toscano)
 
-Version 2.0.2
-* fixed out-of-source build
-
-Version 2.0.3
-* fixed build issues
+Version 1.5.3
 * fixed transport plugins loading
 * fixed volume bar draw in the double size mode
 * fixed symlinks support
 * fixed some issues in the two-panel file dialog
-* removed KDE4 notifications support
 * updated Turkish translation (abcmen)
 
-Version 2.0.4
+Version 1.5.4
 * fixed drag-and-dropped tracks order
 * fixed issue with empty content type
 * disabled waveform seekbar for the tracks with unknown duration
-* fixed taskbar plugin
 * updated Ukrainian translation (Gennady Motsyo)
 
-Version 2.1.0
+Version 1.6.0
 * added feature to extract lyrics from tags (id3v2 tag and Xiph Comment)
 * added queue display in the "jump to track" dialog
 * added feature to skip already existing tracks
 * added volume change notification in the KDE notification plugin
-* added XDG Base Directory Specification support
 * replaced modplug plugin by xmp plugin
 * improved qsui plugin:
   - added feature to hide playlist name filter
@@ -1795,3 +1783,83 @@ Version 2.1.0
 * updated Russian translation (Andrei Stepanov)
 * updated Korean translation (Jung Hee Lee)
 * updated Spanish translation (Joel Barrios)
+
+Version 1.6.1
+* fixed skin selection setting
+* fixed API documentation
+* fixed udisks plugin build
+* fixed build with MinGW-W64 5.0
+* fixed Windows 10 support
+* fixed AppStream metadata (Matthias Mailänder)
+* removed hal plugin
+* updated Dutch translation (Heimen Stoffels)
+* updated Galician translation (Delio Docampo Cordeiro)
+* updated Korean translation (Jung Hee Lee)
+* updated Polish transition (Marek Adamski)
+* updated Portuguese translation (Sérgio Marques)
+* updated Russian translation
+* updated Finnish translation (Kimmo Kujansuu)
+* updated Italian translation (Luigi Toscano)
+
+Version 1.6.2
+* added FFmpeg 5.1 support
+* added recursive search for presets in the projectm plugin
+* added application icon in the pulseaudio plugin
+* improved visualization synchronization
+* fixed title formatting in the KDE notification plugin
+* fixed "fact" chunks support in the sndfile plugin
+* fixed embedded cover art support in the flac plugin
+* fixed tag editor behavior
+* fixed Russian translation
+
+Version 1.6.3
+* fixed latest cURL API support
+* fixed crash in the ladspa plugin (Linearithmik)
+* fixed memory leak in the wavpack plugin
+* fixed ADTS header detection in the aac plugin
+* fixed error handling in the ffmpeg plugin
+* fixed text scroller geometry in the skinned plugin
+* hide empty plugin categories
+* added partial Swedish translation (Luna Jernberg)
+
+Version 1.6.4
+* added projectM 4.0 support (experimental)
+* fixed command execution under Windows in the file operations plugin
+* fixed removing of the current playing file in the file operations plugin
+* fixed crash on streams in the lyrics plugin
+* fixed issues with visualization windows on application startup
+
+Version 1.6.5
+* added waveform seekbar optimization (Linearithmik)
+* fixed visualization initialization in the simple user interface
+* fixed playlist geometry issues in the simple user interface
+* fixed playlist settings in the skinned user interface
+* fixed possible crash
+* fixed http version
+* fixed file type determination by content in the waveform seekbar
+
+Version 1.6.6
+* added TagLib 2.0 support
+* fixed settings form in the simple user interface
+* improved lyrics plugin:
+  - fixed issue with URL formatting
+  - updated lyrics providers
+  - using UTF-8 for all lyrics providers
+* updated Spanish translation (Darwin Toledo)
+
+Version 1.6.7
+* using XWayland for skinned user interface
+* using floating point output in the sndfile plugin
+* fixed file type determination by content in the sndfile plugin
+* fixed memory leak in the hotkey plugin
+* fixed stream sample rate in the pipewire plugin
+
+Version 1.6.8
+* improved CUE parser
+* fixed memory leak
+* fixed issue with missing mount points in the qmmp file dialog
+* fixed unexpected startup of the disabled plugin when trying to change
+  it's settings
+* fixed linking with xcb
+* fixed crash when trying to remove queued track
+* fixed copying of the selected tracks to the new playlist
