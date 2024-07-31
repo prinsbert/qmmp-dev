@@ -41,7 +41,6 @@ public slots:
     virtual void accept() override;
 
 private:
-    void findCodecs();
     Ui::CueSettingsDialog *m_ui;
 };
 
