@@ -381,7 +381,7 @@ QString DetailsDialog::formatRow(const MetaDataItem &item) const
     QString value;
     if(item.value().typeId() == QMetaType::Bool)
         value = item.value().toBool() ? tr("Yes") : tr("No");
-    else if(item.value().typeId() == QMetaType::Bool)
+    else if(item.value().typeId() == QMetaType::Double)
         value = QStringLiteral("%1").arg(item.value().toDouble(), 0, 'f', 4);
     else
         value = item.value().toString();
