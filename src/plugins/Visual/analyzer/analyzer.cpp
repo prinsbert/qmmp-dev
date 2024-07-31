@@ -194,7 +194,7 @@ void Analyzer::paintEvent (QPaintEvent * e)
 void Analyzer::mousePressEvent(QMouseEvent *e)
 {
     if (e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPosition().toPoint());
+        m_menu->exec(e->globalPos());
 }
 
 void Analyzer::process()

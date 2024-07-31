@@ -1,7 +1,5 @@
 include(../../plugins.pri)
 
-QT += openglwidgets
-
 TARGET = $$PLUGINS_PREFIX/Visual/projectm
 
 HEADERS += visualprojectmfactory.h \

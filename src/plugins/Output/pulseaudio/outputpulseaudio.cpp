@@ -348,15 +348,15 @@ VolumePulseAudio::VolumePulseAudio()
 {
     OutputPulseAudio::volumeControl = this;
     QSettings settings;
-    m_volume.left = settings.value("PulseAudio/left_volume", 100).toInt();
-    m_volume.right = settings.value("PulseAudio/right_volume", 100).toInt();
+    m_volume.left = settings.value("PulseAudio/left_volume"_L1, 100).toInt();
+    m_volume.right = settings.value("PulseAudio/right_volume"_L1, 100).toInt();
 }
 
 VolumePulseAudio::~VolumePulseAudio()
 {
     QSettings settings;
-    settings.setValue("PulseAudio/left_volume", m_volume.left);
-    settings.setValue("PulseAudio/right_volume", m_volume.right);
+    settings.setValue("PulseAudio/left_volume"_L1, m_volume.left);
+    settings.setValue("PulseAudio/right_volume"_L1, m_volume.right);
     OutputPulseAudio::volumeControl = nullptr;
 }
 

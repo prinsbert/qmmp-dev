@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 #include <QSettings>
-#include <QAudioDevice>
-#include <QMediaDevices>
+#include <QAudioDeviceInfo>
 #include <qmmp/qmmp.h>
 #include "ui_qtmultimediasettingsdialog.h"
 #include "qtmultimediasettingsdialog.h"
@@ -30,18 +29,18 @@ QtMultimediaSettingsDialog::QtMultimediaSettingsDialog (QWidget *parent) : QDial
     m_ui->setupUi(this);
 
 	const QSettings settings;
-    const QByteArray default_device = settings.value("QTMULTIMEDIA/device"_L1).toByteArray();
+    const QString default_device = settings.value("QTMULTIMEDIA/device"_L1).toString();
 
 	//Default item always has index = 0
     m_ui->deviceComboBox->addItem(tr("Default"));
     m_ui->deviceComboBox->setCurrentIndex(0);
 
-    const QList<QAudioDevice> devices = QMediaDevices::audioOutputs();
+    const QList<QAudioDeviceInfo> devices = QAudioDeviceInfo::availableDevices(QAudio::AudioOutput);
 	int index = 1;
-    for(const QAudioDevice &info : devices)
+    for(const QAudioDeviceInfo &info : devices)
 	{
-        m_ui->deviceComboBox->addItem(info.description(), info.id());
-        if (info.id() == default_device)
+        m_ui->deviceComboBox->addItem(info.deviceName());
+        if (info.deviceName() == default_device)
             m_ui->deviceComboBox->setCurrentIndex(index);
 		++index;
 	}
@@ -56,6 +55,7 @@ void QtMultimediaSettingsDialog::accept()
 {
     qCDebug(plugin) << Q_FUNC_INFO;
     QSettings settings;
-    settings.setValue("QTMULTIMEDIA/device"_L1, m_ui->deviceComboBox->currentData().toByteArray());
+    //0 index means default value, we save empty string for it.
+    settings.setValue("QTMULTIMEDIA/device"_L1, m_ui->deviceComboBox->currentIndex() ? m_ui->deviceComboBox->currentText() : QString());
     QDialog::accept();
 }

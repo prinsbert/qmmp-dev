@@ -19,18 +19,20 @@
  ***************************************************************************/
 #include <QSettings>
 #include <QRegularExpression>
+#include <QTextCodec>
 #include <qmmp/qmmp.h>
 #ifdef WITH_ENCA
 #include <enca.h>
 #endif
-#include <qmmp/qmmptextcodec.h>
 #include "ui_httpsettingsdialog.h"
 #include "httpsettingsdialog.h"
 
 HttpSettingsDialog::HttpSettingsDialog(QWidget *parent) : QDialog(parent), m_ui(new Ui::HttpSettingsDialog)
 {
     m_ui->setupUi(this);
-    m_ui->icyEncodingComboBox->addItems(QmmpTextCodec::availableCharsets());
+    findCodecs();
+    for(const QTextCodec *codec : qAsConst(m_codecs))
+        m_ui->icyEncodingComboBox->addItem(QString::fromLatin1(codec->name()));
 #ifdef WITH_ENCA
     size_t n = 0;
     const char **langs = enca_get_languages(&n);
@@ -76,4 +78,43 @@ void HttpSettingsDialog::accept()
 #endif
     settings.endGroup();
     QDialog::accept();
+}
+
+void HttpSettingsDialog::findCodecs()
+{
+    QMap<QString, QTextCodec *> codecMap;
+    static const QRegularExpression iso8859RegExp(u"ISO[- ]8859-([0-9]+).*"_s);
+
+    for(int mib : QTextCodec::availableMibs())
+    {
+        QTextCodec *codec = QTextCodec::codecForMib(mib);
+
+        QString sortKey = QString::fromLatin1(codec->name().toUpper());
+        int rank;
+        QRegularExpressionMatch match;
+
+        if (sortKey.startsWith(u"UTF-8"_s))
+        {
+            rank = 1;
+        }
+        else if (sortKey.startsWith(u"UTF-16"_s))
+        {
+            rank = 2;
+        }
+        else if ((match = iso8859RegExp.match(sortKey)).hasMatch())
+        {
+            if (match.captured(1).size() == 1)
+                rank = 3;
+            else
+                rank = 4;
+        }
+        else
+        {
+            rank = 5;
+        }
+        sortKey.prepend(QChar('0' + rank));
+
+        codecMap.insert(sortKey, codec);
+    }
+    m_codecs = codecMap.values();
 }

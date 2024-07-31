@@ -52,10 +52,7 @@ private slots:
 private:
     void removePsiTuneFiles();
     bool hasFullscreenWindow() const;
-#ifdef X11_FOUND
-    static Display* display();
-    static bool isPlatformX11();
-#endif
+
     QPointer<PopupWidget> m_popupWidget;
     bool m_desktop, m_showVolume;
     bool m_psi;

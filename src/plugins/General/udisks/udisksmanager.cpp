@@ -71,7 +71,7 @@ QList<QDBusObjectPath> UDisksManager::findAllDevices()
         xml.readNext();
         if (xml.tokenType() == QXmlStreamReader::StartElement && xml.name().toString() == "node"_L1 )
         {
-            QString name = xml.attributes().value("name").toString();
+            QString name = xml.attributes().value("name"_L1).toString();
             if(!name.isEmpty())
                 paths << QDBusObjectPath(u"/org/freedesktop/UDisks2/block_devices/"_s + name);
         }

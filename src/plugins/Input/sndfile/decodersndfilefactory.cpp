@@ -117,7 +117,7 @@ DecoderProperties DecoderSndFileFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("Sndfile Plugin");
-    properties.filters = {
+    properties.filters = QStringList {
         u"*.wav"_s, u"*.au"_s, u"*.snd"_s, u"*.aif"_s, u"*.aiff"_s, u"*.8svx"_s, u"*.sph"_s, u"*.sf"_s, u"*.voc"_s, u"*.w64"_s
     };
     properties.description = tr("PCM Files");

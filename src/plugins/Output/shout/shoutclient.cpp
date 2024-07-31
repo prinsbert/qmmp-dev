@@ -45,7 +45,7 @@ ShoutClient::~ShoutClient()
 void ShoutClient::readSettings()
 {
     QSettings settings;
-    settings.beginGroup("Shout");
+    settings.beginGroup("Shout"_L1);
     shout_set_host(m_shout_conn, settings.value(u"host"_s, u"127.0.0.1"_s).toString().toLatin1().constData());
     shout_set_port(m_shout_conn, settings.value(u"port"_s, 8000).toInt());
     shout_set_password(m_shout_conn, settings.value(u"passw"_s, u"hackme"_s).toString().toLatin1().constData());
@@ -53,7 +53,7 @@ void ShoutClient::readSettings()
                     toLatin1().constData());
     shout_set_meta(m_shout_conn, SHOUT_META_NAME, "qmmp");
     shout_set_user(m_shout_conn, settings.value(u"user"_s, u"source"_s).toString().toLatin1().constData());
-    shout_set_public(m_shout_conn, settings.value("public", false).toBool() ? 1 : 0);
+    shout_set_public(m_shout_conn, settings.value("public"_L1, false).toBool() ? 1 : 0);
     shout_set_content_format(m_shout_conn, SHOUT_FORMAT_OGG, SHOUT_USAGE_AUDIO, nullptr);
     shout_set_protocol(m_shout_conn, SHOUT_PROTOCOL_HTTP);
     shout_set_agent(m_shout_conn, "qmmp");

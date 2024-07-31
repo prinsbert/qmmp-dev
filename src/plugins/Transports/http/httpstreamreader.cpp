@@ -21,13 +21,13 @@
 #include <QStringList>
 #include <QDir>
 #include <QSettings>
+#include <QTextCodec>
 #include <stdint.h>
 #include <stdlib.h>
 #include <qmmp/qmmpsettings.h>
 #include <qmmp/qmmp.h>
 #include <qmmp/statehandler.h>
 #include <qmmp/inputsource.h>
-#include <qmmp/qmmptextcodec.h>
 #include "httpinputsource.h"
 #include "httpstreamreader.h"
 
@@ -147,13 +147,15 @@ HttpStreamReader::HttpStreamReader(const QString &url, HTTPInputSource *parent) 
     m_thread = new DownloadThread(this);
     QSettings settings;
     settings.beginGroup("HTTP"_L1);
-    m_codec = new QmmpTextCodec(settings.value("icy_encoding"_L1, u"UTF-8"_s).toByteArray ());
+    m_codec = QTextCodec::codecForName(settings.value("icy_encoding"_L1, "UTF-8"_ba).toByteArray());
     m_prebufferSize = settings.value("buffer_size"_L1, 384).toInt() * 1024;
     m_bufferDuration = settings.value("buffer_duration"_L1, 10000).toInt();
     if(settings.value(u"override_user_agent"_s, false).toBool())
         m_userAgent = settings.value("user_agent"_L1).toString();
     if(m_userAgent.isEmpty())
-        m_userAgent = QStringLiteral("qmmp/%1").arg(Qmmp::strVersion());;
+        m_userAgent = QStringLiteral("qmmp/%1").arg(Qmmp::strVersion());
+    if(!m_codec)
+        m_codec = QTextCodec::codecForName("UTF-8");
 #ifdef WITH_ENCA
     if(settings.value("use_enca"_L1, false).toBool())
         m_analyser = enca_analyser_alloc(settings.value("enca_lang"_L1).toByteArray ().constData());
@@ -178,7 +180,6 @@ HttpStreamReader::~HttpStreamReader()
     if(m_analyser)
         enca_analyser_free(m_analyser);
 #endif
-    delete m_codec;
 }
 
 bool HttpStreamReader::atEnd() const
@@ -489,13 +490,16 @@ void HttpStreamReader::parseICYMetaData(char *data, qint64 size)
     if(m_analyser)
     {
         EncaEncoding encoding = enca_analyse(m_analyser, (uchar *) data, size);
+        QTextCodec *prevCodec = m_codec;
+
         if(encoding.charset != ENCA_CS_UNKNOWN)
         {
-            qCDebug(plugin, "detected charset: %s",
-                   enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
-            delete m_codec;
-            m_codec = new QmmpTextCodec(enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
+            qCDebug(plugin, "detected charset: %s", enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
+            m_codec = QTextCodec::codecForName(enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
         }
+
+        if (!m_codec)
+            m_codec = prevCodec;
     }
 #endif
     QString str = m_codec->toUnicode(data).trimmed();
@@ -529,7 +533,7 @@ void HttpStreamReader::parseICYMetaData(char *data, qint64 size)
     }
 }
 
-void HttpStreamReader::sendStreamInfo(QmmpTextCodec *codec)
+void HttpStreamReader::sendStreamInfo(QTextCodec *codec)
 {
     QHash<QString, QString> info;
     for(auto it = m_stream.header.cbegin(); it != m_stream.header.cend(); ++it)

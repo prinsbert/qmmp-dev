@@ -88,7 +88,7 @@ void CoverWidget::paintEvent(QPaintEvent *p)
 void CoverWidget::mousePressEvent(QMouseEvent *e)
 {
     if(e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPosition().toPoint());
+        m_menu->exec(e->globalPos());
 }
 
 void CoverWidget::saveAs()

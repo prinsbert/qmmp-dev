@@ -22,7 +22,7 @@
 #define OUTPUTQTMULTIMEDIA_H
 
 #include <qmmp/output.h>
-#include <QAudioSink>
+#include <QScopedPointer>
 #include <QObject>
 
 /**
@@ -47,7 +47,7 @@ public:
     virtual void resume() override;
 
 private:
-    QAudioSink *m_output = nullptr;
+    QAudioOutput *m_output = nullptr;
     OutputControl *m_control = nullptr;
     QIODevice *m_buffer;
     qint64 m_bytes_per_second = 0;
@@ -58,7 +58,7 @@ class OutputControl : public QObject
     Q_OBJECT
 
 public:
-    explicit OutputControl(QAudioSink *o);
+    explicit OutputControl(QAudioOutput *o);
 
 public slots:
     void suspend();
@@ -66,7 +66,7 @@ public slots:
     void stop();
 
 private:
-    QAudioSink *m_output;
+    QAudioOutput *m_output;
 
 };
 

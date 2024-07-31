@@ -32,7 +32,7 @@
 #include <enca.h>
 #endif
 
-class QmmpTextCodec;
+class QTextCodec;
 class QFileInfo;
 class DownloadThread;
 class HTTPInputSource;
@@ -97,7 +97,7 @@ private:
     qint64 readBuffer(char* data, qint64 maxlen);
     void readICYMetaData();
     void parseICYMetaData(char *data, qint64 size);
-    void sendStreamInfo(QmmpTextCodec *codec);
+    void sendStreamInfo(QTextCodec *codec);
     CURL *m_handle = nullptr;
     QMutex m_mutex;
     HttpStreamData m_stream;
@@ -109,7 +109,7 @@ private:
     bool m_meta_sent = false;
     size_t m_prebufferSize;
     int m_bufferDuration;
-    QmmpTextCodec *m_codec = nullptr;
+    QTextCodec *m_codec = nullptr;
     DownloadThread *m_thread;
     HTTPInputSource *m_parent;
 #ifdef WITH_ENCA

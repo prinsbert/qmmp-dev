@@ -42,8 +42,10 @@ private slots:
     virtual void accept() override;
 
 private:
-    Ui::HttpSettingsDialog *m_ui;
+    void findCodecs();
 
+    Ui::HttpSettingsDialog *m_ui;
+    QList<QTextCodec *> m_codecs;
 };
 
 #endif

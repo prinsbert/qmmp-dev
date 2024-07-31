@@ -37,7 +37,7 @@ DecoderProperties DecoderXmpFactory::properties() const
 {
     DecoderProperties properties;
     properties.name = tr("XMP Plugin");
-    properties.filters = {
+    properties.filters = QStringList {
         u"*.mod"_s, u"*.m15"_s, u"*.nt"_s, u"*.flx"_s, u"*.wow"_s,
         u"*.dbm"_s, u"*.digi"_s, u"*.emod"_s, u"*.med"_s, u"*.mtn"_s, u"*.okt"_s, u"*.sfx"_s,
         u"*.dtm"_s, u"*.gtk"_s, u"*.mgt"_s,
@@ -57,7 +57,7 @@ DecoderProperties DecoderXmpFactory::properties() const
     properties.hasAbout = true;
     properties.hasSettings = true;
     properties.noInput = true;
-    properties.protocols = { u"file"_s };
+    properties.protocols = QStringList { u"file"_s };
     return properties;
 }
 
