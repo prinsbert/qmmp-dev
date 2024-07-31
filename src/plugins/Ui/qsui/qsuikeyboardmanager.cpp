@@ -61,7 +61,7 @@ void QSUiKeyboardManager::processUp()
     if(!m_listWidget || m_listWidget->filterMode())
         return;
 
-    QKeyCombination keys = qobject_cast<QAction *>(sender())->shortcut()[0];
+    int keys = qobject_cast<QAction *>(sender())->shortcut()[0];
 
     QList<int> lines = m_listWidget->model()->selectedLines();
 
@@ -72,8 +72,8 @@ void QSUiKeyboardManager::processUp()
         return;
     }
 
-    if (!(keys.keyboardModifiers() & Qt::ShiftModifier || keys.keyboardModifiers() & Qt::AltModifier ||
-          keys.keyboardModifiers() & Qt::ControlModifier))
+    if (!(keys & Qt::ShiftModifier || keys & Qt::AltModifier ||
+          keys & Qt::ControlModifier))
     {
         m_listWidget->model()->clearSelection();
         m_listWidget->setAnchorLine(-1);
@@ -89,7 +89,7 @@ void QSUiKeyboardManager::processUp()
     else if(lines.constFirst() > last_visible)
         s = SELECT_BOTTOM;
 
-    if (keys.keyboardModifiers() & Qt::AltModifier)
+    if (keys & Qt::AltModifier)
     {
         if(lines.constFirst() == 0)
             return;
@@ -103,7 +103,7 @@ void QSUiKeyboardManager::processUp()
             m_listWidget->setAnchorLine(lines.constFirst() - 1);
         }
     }
-    else if(keys.keyboardModifiers() & Qt::ControlModifier)
+    else if(keys & Qt::ControlModifier)
     {
         m_listWidget->setAnchorLine(qMax(m_listWidget->anchorLine() - 1, 0));
     }
@@ -146,7 +146,7 @@ void QSUiKeyboardManager::processDown()
     if(!m_listWidget || m_listWidget->filterMode())
         return;
 
-    QKeyCombination keys = qobject_cast<QAction *>(sender())->shortcut()[0];
+    int keys = qobject_cast<QAction *>(sender())->shortcut()[0];
 
     QList<int> lines = m_listWidget->model()->selectedLines();
 
@@ -157,8 +157,8 @@ void QSUiKeyboardManager::processDown()
         return;
     }
 
-    if(!(keys.keyboardModifiers() & Qt::ShiftModifier || keys.keyboardModifiers() & Qt::AltModifier ||
-         keys.keyboardModifiers() & Qt::ControlModifier))
+    if(!(keys & Qt::ShiftModifier || keys & Qt::AltModifier ||
+         keys & Qt::ControlModifier))
     {
         m_listWidget->model()->clearSelection();
         m_listWidget->setAnchorLine(-1);
@@ -174,7 +174,7 @@ void QSUiKeyboardManager::processDown()
     else if(lines.constFirst() > last_visible)
         s = SELECT_BOTTOM;
 
-    if (keys.keyboardModifiers() & Qt::AltModifier)
+    if (keys & Qt::AltModifier)
     {
         if(lines.constLast() == m_listWidget->model()->lineCount() - 1)
             return;
@@ -188,7 +188,7 @@ void QSUiKeyboardManager::processDown()
             m_listWidget->setAnchorLine(lines.constLast() + 1);
         }
     }
-    else if(keys.keyboardModifiers() & Qt::ControlModifier)
+    else if(keys & Qt::ControlModifier)
     {
         m_listWidget->setAnchorLine(qMin(m_listWidget->anchorLine() + 1,
                                           m_listWidget->model()->lineCount() - 1));
@@ -283,9 +283,9 @@ void QSUiKeyboardManager::processHome()
 {
     if(!m_listWidget || m_listWidget->filterMode())
         return;
-    QKeyCombination keys = qobject_cast<QAction *>(sender())->shortcut()[0];
+    int keys = qobject_cast<QAction *>(sender())->shortcut()[0];
     m_listWidget->setViewPosition(0);
-    if(keys.keyboardModifiers() & Qt::ShiftModifier)
+    if(keys & Qt::ShiftModifier)
     {
         m_listWidget->model()->setSelectedLines(0, m_listWidget->anchorLine(), true);
     }
@@ -302,12 +302,12 @@ void QSUiKeyboardManager::processEnd()
     if(!m_listWidget || m_listWidget->filterMode())
         return;
 
-    QKeyCombination keys = qobject_cast<QAction *>(sender())->shortcut()[0];
+    int keys = qobject_cast<QAction *>(sender())->shortcut()[0];
     int scroll_to = m_listWidget->model()->lineCount() - m_listWidget->visibleRows();
     if(scroll_to >= 0)
         m_listWidget->setViewPosition(scroll_to);
 
-    if(keys.keyboardModifiers() & Qt::ShiftModifier)
+    if(keys & Qt::ShiftModifier)
     {
         m_listWidget->model()->setSelectedLines(m_listWidget->anchorLine(), m_listWidget->model()->lineCount() - 1, true);
     }
@@ -320,7 +320,7 @@ void QSUiKeyboardManager::processEnd()
 }
 
 template <typename Func1>
-inline void QSUiKeyboardManager::addAction(QKeyCombination keys, Func1 slot)
+inline void QSUiKeyboardManager::addAction(QKeySequence keys, Func1 slot)
 {
     QAction *action = new QAction(this);
     action->setShortcut(QKeySequence(keys));

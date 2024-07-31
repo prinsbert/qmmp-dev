@@ -196,7 +196,7 @@ void QSUiWaveformSeekBar::mousePressEvent(QMouseEvent *e)
         update();
     }
     else if(e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPosition().toPoint());
+        m_menu->exec(e->globalPos());
 }
 
 void QSUiWaveformSeekBar::mouseReleaseEvent(QMouseEvent *)

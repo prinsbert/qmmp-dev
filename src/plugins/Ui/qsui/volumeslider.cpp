@@ -47,11 +47,11 @@ void VolumeSlider::mousePressEvent(QMouseEvent *event)
     {
         int val;
         if(orientation() == Qt::Vertical)
-            val = minimum() + ((maximum() - minimum()) * (height() - event->position().y())) / height();
+            val = minimum() + ((maximum() - minimum()) * (height() - event->pos().y())) / height();
         else if(layoutDirection() == Qt::RightToLeft)
-            val = maximum() - ((maximum() - minimum()) * event->position().x()) / width();
+            val = maximum() - ((maximum() - minimum()) * event->pos().x()) / width();
         else
-            val = minimum() + ((maximum() - minimum()) * event->position().x()) / width();
+            val = minimum() + ((maximum() - minimum()) * event->pos().x()) / width();
 
         setSliderDown(true);
 

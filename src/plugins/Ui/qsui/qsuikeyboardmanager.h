@@ -53,7 +53,7 @@ private:
     QSUiListWidget *m_listWidget = nullptr;
 
     template <typename Func1>
-    void addAction(QKeyCombination keys, Func1 slot);
+    void addAction(QKeySequence keys, Func1 slot);
 
     enum SelectMode
     {

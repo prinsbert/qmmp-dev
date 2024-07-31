@@ -7,8 +7,8 @@ SUBDIRS += \#Input \
            \#Transports \
            Effect \
            PlayListFormats \
-           \#FileDialogs \
-           \#Ui \
+           FileDialogs \
+           Ui \
            CommandLineOptions
 
 unix:SUBDIRS += Engines

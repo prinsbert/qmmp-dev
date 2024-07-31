@@ -351,7 +351,7 @@ void QSUiMainWindow::showAppMenu()
 
     QPoint menuPos = pos();
 
-    for(QObject *o : action->associatedObjects())
+    for(QWidget *o : action->associatedWidgets())
     {
         QToolButton *toolButton = qobject_cast<QToolButton *>(o);
         if(toolButton && toolButton->parentWidget())

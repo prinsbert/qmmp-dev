@@ -25,7 +25,7 @@
 #include <QMessageBox>
 #include <QHeaderView>
 #include <QRegularExpression>
-#include <QAbstractFileIconProvider>
+#include <QFileIconProvider>
 #include <qmmp/qmmp.h>
 #include "ui_twopanelfiledialog.h"
 #include "twopanelfiledialogimpl.h"

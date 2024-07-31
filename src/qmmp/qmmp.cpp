@@ -53,17 +53,15 @@ QString Qmmp::configDir()
     if(m_configDir.isEmpty())
     {
         if(isPortable())
-            return m_appDir + u"/.qmmp"_s;
-
-        return  QDir::homePath() + u"/.qmmp"_s;
+            return m_appDir + "/.qmmp";
+        else
+            return  QDir::homePath() +"/.qmmp";
     }
+    else
+        return m_configDir;
 #else
-    if(m_configDir.isEmpty())
-        return QStringLiteral("%1/%2").arg(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation),
-                                           QCoreApplication::organizationName());
-
+    return m_configDir.isEmpty() ? QDir::homePath() + u"/.qmmp"_s : m_configDir;
 #endif
-    return m_configDir;
 }
 
 void Qmmp::setConfigDir(const QString &path)
