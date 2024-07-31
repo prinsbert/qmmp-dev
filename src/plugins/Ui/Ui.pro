@@ -3,7 +3,7 @@ TEMPLATE = subdirs
 
 
 contains(CONFIG, WITH_SKINNED){
-#SUBDIRS += skinned
+SUBDIRS += skinned
 }
 
 contains(CONFIG, WITH_QSUI){

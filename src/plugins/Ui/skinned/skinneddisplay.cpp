@@ -338,7 +338,7 @@ void SkinnedDisplay::setIsShuffle(bool yes)
 void SkinnedDisplay::mousePressEvent(QMouseEvent *e)
 {
     if(e->button() == Qt::RightButton)
-        m_mw->menu()->exec(e->globalPosition().toPoint());
+        m_mw->menu()->exec(e->globalPos());
     else if(e->button() == Qt::LeftButton && m_aboutWidget->underMouse())
         m_mw->about();
     PixmapWidget::mousePressEvent(e);

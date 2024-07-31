@@ -304,8 +304,8 @@ void SkinnedEqWidget::savePreset()
         {
             if(m_presetNames.at(i) == name)
             {
-                m_presetNames.remove(i);
-                m_presets.remove(i);
+                m_presetNames.removeAt(i);
+                m_presets.removeAt(i);
             }
         }
 
@@ -332,8 +332,8 @@ void SkinnedEqWidget::saveAutoPreset()
     {
         if(m_autoPresetNames.at(i) == name)
         {
-            m_autoPresetNames.remove(i);
-            m_autoPresets.remove(i);
+            m_autoPresetNames.removeAt(i);
+            m_autoPresets.removeAt(i);
         }
     }
 
@@ -360,8 +360,8 @@ void SkinnedEqWidget::removePresetByName(const QString &name, bool autoPreset)
         int index = m_autoPresetNames.indexOf(name);
         if(index >= 0)
         {
-            m_autoPresets.remove(index);
-            m_autoPresetNames.remove(index);
+            m_autoPresets.removeAt(index);
+            m_autoPresetNames.removeAt(index);
         }
     }
     else
@@ -369,8 +369,8 @@ void SkinnedEqWidget::removePresetByName(const QString &name, bool autoPreset)
         int index = m_presetNames.indexOf(name);
         if(index >= 0)
         {
-            m_presets.remove(index);
-            m_presetNames.remove(index);
+            m_presets.removeAt(index);
+            m_presetNames.removeAt(index);
         }
     }
 }

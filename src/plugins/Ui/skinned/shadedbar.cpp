@@ -42,14 +42,14 @@ ShadedBar::ShadedBar(QWidget *parent, uint slider1, uint slider2, uint slider3) 
 void ShadedBar::mousePressEvent(QMouseEvent *e)
 {
     m_moving = true;
-    m_press_pos = e->position().x();
-    if(m_pos < e->position().x() && e->position().x() < m_pos+3)
+    m_press_pos = e->pos().x();
+    if(m_pos < e->pos().x() && e->pos().x() < m_pos+3)
     {
-        m_press_pos = e->position().x() - m_pos;
+        m_press_pos = e->pos().x() - m_pos;
     }
     else
     {
-        m_value = convert(qMax(qMin(width() - 3, qRound(e->position().x()) - 1), 0));
+        m_value = convert(qMax(qMin(width() - 3, e->pos().x() - 1), 0));
         m_press_pos = 1;
         if (m_value != m_old)
         {
@@ -63,7 +63,7 @@ void ShadedBar::mouseMoveEvent (QMouseEvent *e)
 {
     if(m_moving)
     {
-        int po = e->position().x();
+        int po = e->pos().x();
         po = po - m_press_pos;
 
         if(0 <= po && po <= width() - 3)

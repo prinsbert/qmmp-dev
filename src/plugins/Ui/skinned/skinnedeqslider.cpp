@@ -34,20 +34,20 @@ SkinnedEqSlider::SkinnedEqSlider(QWidget *parent): PixmapWidget(parent)
 void SkinnedEqSlider::mousePressEvent(QMouseEvent *e)
 {
     m_moving = true;
-    press_pos = e->position().y();
+    press_pos = e->pos().y();
     if(e->button() == Qt::MiddleButton)
     {
         m_value = 0;
         emit sliderMoved(m_value);
         m_old = m_value;
     }
-    else if(m_pos<e->position().y() && e->position().y() < m_pos + 11 * skin()->ratio())
+    else if(m_pos<e->pos().y() && e->pos().y() < m_pos + 11 * skin()->ratio())
     {
-        press_pos = e->position().y() - m_pos;
+        press_pos = e->pos().y() - m_pos;
     }
     else
     {
-        m_value = convert(qMax(qMin(height() - 12 * skin()->ratio(), qRound(e->position().y()) - 6 * skin()->ratio()), 0));
+        m_value = convert(qMax(qMin(height() - 12 * skin()->ratio(), e->pos().y() - 6 * skin()->ratio()), 0));
         press_pos = 6 * skin()->ratio();
         if(m_value != m_old)
         {
@@ -68,7 +68,7 @@ void SkinnedEqSlider::mouseMoveEvent(QMouseEvent *e)
 {
     if(m_moving)
     {
-        int po = e->position().y() - press_pos;
+        int po = e->pos().y() - press_pos;
 
         if(0 <= po && po <= height() - 12 * skin()->ratio())
         {

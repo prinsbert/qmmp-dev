@@ -1,7 +1,7 @@
 /***************************************************************************
  *   Based on Licq                                                         *
  *   Copyright (C) 2006-2009 Licq developers                               *
- *   Copyright (C) 2011-2024 Ilya Kotov                                    *
+ *   Copyright (C) 2011-2019 Ilya Kotov                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -20,21 +20,22 @@
  ***************************************************************************/
 
 #include "windowsystem.h"
-#include <QGuiApplication>
+#include <QCoreApplication>
 #ifdef QMMP_WS_X11
+#include <QX11Info>
 #include <X11/X.h>
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
-#include <qmmp/qmmp.h>
-#undef CursorShape
+#endif
 
+#ifdef QMMP_WS_X11
 void WindowSystem::ghostWindow(WId win)
 {
-    if(!WindowSystem::isPlatformX11())
+    if(!QX11Info::isPlatformX11())
         return;
 
-    Display* dsp = WindowSystem::display();
+    Display* dsp = QX11Info::display();
     Window root = DefaultRootWindow(dsp);
 
     Atom win_state = XInternAtom(dsp, "_NET_WM_STATE", False);
@@ -64,10 +65,10 @@ void WindowSystem::ghostWindow(WId win)
 
 QString WindowSystem::netWindowManagerName()
 {
-    if(!WindowSystem::isPlatformX11())
+    if(!QX11Info::isPlatformX11())
         return QString();
 
-    Display* dsp = WindowSystem::display();
+    Display* dsp = QX11Info::display();
     WId root = DefaultRootWindow(dsp);
 
     unsigned char* retValue1 = getWindowProperty(root, "_NET_SUPPORTING_WM_CHECK");
@@ -104,12 +105,12 @@ QString WindowSystem::netWindowManagerName()
 
 void WindowSystem::changeWinSticky(WId win, bool stick)
 {
-    if(!WindowSystem::isPlatformX11())
+    if(!QX11Info::isPlatformX11())
         return;
 
-    qCDebug(plugin, "setting sticky state of window 0x%lx to %s.",
+    qDebug("WindowSystem: setting sticky state of window 0x%lx to %s.",
            static_cast<unsigned long>(win), stick ? "true" : "false");
-    Display* dsp = WindowSystem::display();
+    Display* dsp = QX11Info::display();
     Window root  = DefaultRootWindow(dsp);
 
     unsigned long desktop = ~(0UL);
@@ -119,7 +120,7 @@ void WindowSystem::changeWinSticky(WId win, bool stick)
         unsigned char* tmp = getWindowProperty(root, "_NET_CURRENT_DESKTOP");
 
         if (tmp == nullptr)
-            qCWarning(plugin, "WindowSystem: error reading current desktop property.");
+            qWarning("WindowSystem: error reading current desktop property.");
         else
         {
             desktop = *(reinterpret_cast<unsigned long*>(tmp));
@@ -142,10 +143,10 @@ void WindowSystem::changeWinSticky(WId win, bool stick)
 
 void WindowSystem::setWinHint(WId win, const char *res_name, const char *res_class)
 {
-    if(!WindowSystem::isPlatformX11())
+    if(!QX11Info::isPlatformX11())
         return;
 
-    Display* dsp = WindowSystem::display();
+    Display* dsp = QX11Info::display();
     XClassHint hint;
     hint.res_name = strdup(res_name);
     hint.res_class = strdup(res_class);
@@ -156,7 +157,7 @@ void WindowSystem::setWinHint(WId win, const char *res_name, const char *res_cla
 
 unsigned char* WindowSystem::getWindowProperty(WId win, const char* prop)
 {
-    Display* dsp = WindowSystem::display();
+    Display* dsp = QX11Info::display();
 
     // We inhibit new Atom creation since if you request for it
     // then such Atom most probably exists already.
@@ -214,15 +215,14 @@ unsigned char* WindowSystem::getWindowProperty(WId win, const char* prop)
 
     return retValue;
 }
-
 //On RTL locales Qt sets flag NorthEastGravity for windows.
 //This function reverts these changes.
 void WindowSystem::revertGravity(WId win)
 {
-    if(!WindowSystem::isPlatformX11())
+    if(!QX11Info::isPlatformX11())
         return;
 
-    Display* dsp = WindowSystem::display();
+    Display* dsp = QX11Info::display();
     XSizeHints sh;
     memset(&sh, 0, sizeof(sh));
     long unused;
@@ -240,22 +240,6 @@ void WindowSystem::revertGravity(WId win)
     memset(&xs, 0, sizeof(xs));
     xs.bit_gravity = NorthWestGravity;
     XChangeWindowAttributes(dsp, win, CWBitGravity, &xs);
-}
-
-Display *WindowSystem::display()
-{
-    if(!qApp)
-        return nullptr;
-    QNativeInterface::QX11Application *app = qApp->nativeInterface<QNativeInterface::QX11Application>();
-    if(!app)
-        return nullptr;
-
-    return app->display();
-}
-
-bool WindowSystem::isPlatformX11()
-{
-    return QGuiApplication::platformName() == QLatin1String("xcb");
 }
 
 #endif

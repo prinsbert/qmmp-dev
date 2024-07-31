@@ -386,8 +386,8 @@ void SkinnedPlayList::mouseMoveEvent (QMouseEvent *e)
         int dx = m_ratio * 25;
         int dy = m_ratio * 29;
 
-        int sx = ((e->position().x() - 275 * m_ratio) + 14) / dx;
-        int sy = ((e->position().y() - 116 * m_ratio) + 14) / dy;
+        int sx = ((e->pos().x() - 275 * m_ratio) + 14) / dx;
+        int sy = ((e->pos().y() - 116 * m_ratio) + 14) / dy;
 
         sx = qMax(sx, 0);
         sy = qMax(sy, 0);

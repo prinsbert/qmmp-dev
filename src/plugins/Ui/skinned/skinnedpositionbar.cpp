@@ -38,15 +38,15 @@ void SkinnedPositionBar::mousePressEvent(QMouseEvent *e)
     if(m_max <= 0)
         return;
     m_moving = true;
-    press_pos = e->position().x();
-    if (m_pos < e->position().x() && e->position().x() < m_pos + 29 * skin()->ratio())
+    press_pos = e->pos().x();
+    if (m_pos < e->pos().x() && e->pos().x() < m_pos + 29 * skin()->ratio())
     {
-        press_pos = e->position().x() - m_pos;
+        press_pos = e->pos().x() - m_pos;
         emit sliderPressed();
     }
     else
     {
-        m_value = convert(qMax(qMin(width() - 30 * skin()->ratio(), qRound(e->position().x()) - 15 * skin()->ratio()), 0));
+        m_value = convert(qMax(qMin(width() - 30 * skin()->ratio(), e->pos().x() - 15 * skin()->ratio()), 0));
         press_pos = 15 * skin()->ratio();
         emit sliderPressed();
         if (m_value != m_old)
@@ -62,7 +62,7 @@ void SkinnedPositionBar::mouseMoveEvent(QMouseEvent *e)
 {
     if(m_moving)
     {
-        qint64 po = e->position().x();
+        qint64 po = e->pos().x();
         po = po - press_pos;
 
         if (0<=po && po <= width() - 30 * skin()->ratio())

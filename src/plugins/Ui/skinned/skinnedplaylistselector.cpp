@@ -260,7 +260,7 @@ void SkinnedPlayListSelector::mousePressEvent (QMouseEvent *e)
     if(e->button() == Qt::RightButton)
     {
         update();
-        m_menu->exec(e->globalPosition().toPoint());
+        m_menu->exec(e->globalPos());
         return;
     }
 
@@ -309,7 +309,7 @@ void SkinnedPlayListSelector::mouseReleaseEvent (QMouseEvent *e)
 
 void SkinnedPlayListSelector::mouseDoubleClickEvent (QMouseEvent *e)
 {
-    if(e->button() == Qt::LeftButton && !(m_scrollable && (e->position().x() > width() - 40)))
+    if(e->button() == Qt::LeftButton && !(m_scrollable && (e->pos().x() > width() - 40)))
         ACTION(SkinnedActionManager::PL_RENAME)->trigger();
     else
         QWidget::mouseDoubleClickEvent(e);

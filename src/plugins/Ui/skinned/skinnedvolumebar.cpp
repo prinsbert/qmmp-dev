@@ -36,15 +36,15 @@ SkinnedVolumeBar::SkinnedVolumeBar(QWidget *parent) : PixmapWidget(parent)
 void SkinnedVolumeBar::mousePressEvent(QMouseEvent *e)
 {
     m_moving = true;
-    press_pos = e->position().x();
-    if(m_pos < e->position().x() && e->position().x() < m_pos + 11 * skin()->ratio())
+    press_pos = e->pos().x();
+    if(m_pos < e->pos().x() && e->pos().x() < m_pos + 11 * skin()->ratio())
     {
-        press_pos = e->position().x() - m_pos;
+        press_pos = e->pos().x() - m_pos;
         emit sliderPressed();
     }
     else
     {
-        m_value = convert(qMax(qMin(width() - 18 * skin()->ratio(), qRound(e->position().x()) - 6 * skin()->ratio()), 0));
+        m_value = convert(qMax(qMin(width() - 18 * skin()->ratio(), e->pos().x() - 6 * skin()->ratio()), 0));
         press_pos = 6*skin()->ratio();
         emit sliderPressed();
         if (m_value != m_old)
@@ -57,7 +57,7 @@ void SkinnedVolumeBar::mouseMoveEvent (QMouseEvent *e)
 {
     if(m_moving)
     {
-        int po = e->position().x();
+        int po = e->pos().x();
         po = po - press_pos;
 
         if(0 <= po && po <= width() - 18 * skin()->ratio())

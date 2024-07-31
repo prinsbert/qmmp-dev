@@ -24,10 +24,6 @@
 
 #include <QWidget>
 
-#ifdef QMMP_WS_X11
-typedef struct _XDisplay Display;
-#endif
-
 class WindowSystem
 {
 public:
@@ -39,8 +35,6 @@ public:
     static void revertGravity(WId win);
 private:
     static unsigned char* getWindowProperty(WId win, const char* prop);
-    static Display* display();
-    static bool isPlatformX11();
 #endif
 };
 #endif // WINDOWSYSTEM_H

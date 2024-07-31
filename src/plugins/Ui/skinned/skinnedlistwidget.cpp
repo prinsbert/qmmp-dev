@@ -176,7 +176,7 @@ void SkinnedListWidget::paintEvent(QPaintEvent *)
 
 void SkinnedListWidget::mouseDoubleClickEvent (QMouseEvent *e)
 {
-    int y = e->position().y();
+    int y = e->pos().y();
     int lineIndex = lineAt(y);
 
     if(lineIndex >= 0)
@@ -206,7 +206,7 @@ void SkinnedListWidget::mousePressEvent(QMouseEvent *e)
     if(m_popupWidget)
         m_popupWidget->hide();
 
-    const int pressedLine = lineAt(e->position().y());
+    const int pressedLine = lineAt(e->pos().y());
 
     if(pressedLine >= 0 && pressedLine < m_model->lineCount())
     {
@@ -546,7 +546,7 @@ void SkinnedListWidget::dropEvent(QDropEvent *event)
         event->acceptProposedAction();
         QApplication::restoreOverrideCursor();
 
-        int index = lineAt(event->position().y());
+        int index = lineAt(event->pos().y());
         if(index < 0)
             index = qMin(m_firstLine + m_row_count, m_model->lineCount());
 
@@ -572,7 +572,7 @@ void SkinnedListWidget::dragLeaveEvent(QDragLeaveEvent *)
 
 void SkinnedListWidget::dragMoveEvent(QDragMoveEvent *event)
 {
-    int index = lineAt(event->position().y());
+    int index = lineAt(event->pos().y());
     if(index < 0)
         index = qMin(m_firstLine + m_row_count, m_model->lineCount());
     if(index != m_dropLine)
@@ -660,14 +660,14 @@ void SkinnedListWidget::mouseMoveEvent(QMouseEvent *e)
 {    
     if(e->buttons() == Qt::LeftButton)
     {
-        if (m_prev_y > e->position().y())
+        if (m_prev_y > e->pos().y())
             m_scroll_direction = TOP;
-        else if (m_prev_y < e->position().y())
+        else if (m_prev_y < e->pos().y())
             m_scroll_direction = DOWN;
         else
             m_scroll_direction = NONE;
 
-        if(e->position().y() < 0 || e->position().y() > height())
+        if(e->pos().y() < 0 || e->pos().y() > height())
         {
             if(!m_timer->isActive())
                 m_timer->start();
@@ -675,7 +675,7 @@ void SkinnedListWidget::mouseMoveEvent(QMouseEvent *e)
         }
         m_timer->stop();
 
-        int index = lineAt(e->position().y());
+        int index = lineAt(e->pos().y());
 
         if(index >= 0)
         {
@@ -695,13 +695,13 @@ void SkinnedListWidget::mouseMoveEvent(QMouseEvent *e)
             m_model->moveTracks(m_model->trackIndexAtLine(m_pressedLine),
                                m_model->trackIndexAtLine(index));
 
-            m_prev_y = e->position().y();
+            m_prev_y = e->pos().y();
             m_pressedLine = index;
         }
     }
     else if(m_popupWidget)
     {
-        PlayListTrack *track = trackAt(e->position().y());
+        PlayListTrack *track = trackAt(e->pos().y());
         if(!track || m_popupWidget->url() != track->path())
             m_popupWidget->deactivate();
     }

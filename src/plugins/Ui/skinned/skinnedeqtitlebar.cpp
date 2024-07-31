@@ -93,7 +93,7 @@ void SkinnedEqTitleBar::mousePressEvent(QMouseEvent *event)
         m_pos = event->pos();
         break;
     case Qt::RightButton:
-        m_mw->menu()->exec(event->globalPosition().toPoint());
+        m_mw->menu()->exec(event->globalPos());
         break;
     default:
         ;
@@ -104,7 +104,7 @@ void SkinnedEqTitleBar::mouseMoveEvent(QMouseEvent* event)
 {
     if(m_pos.x() < width() - 30 * skin()->ratio())
     {
-        QPoint npos = (event->globalPosition().toPoint() - m_pos);
+        QPoint npos = (event->globalPos() - m_pos);
         Dock::instance()->move(m_eq, npos);
     }
 }
