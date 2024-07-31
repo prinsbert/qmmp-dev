@@ -110,7 +110,7 @@ void NormalContainer::clearSelection()
 
 int NormalContainer::indexOf(PlayListItem *item) const
 {
-    return m_tracks.indexOf(item);
+    return m_tracks.indexOf(static_cast<PlayListTrack *>(item));
 }
 
 PlayListTrack *NormalContainer::track(int index) const

@@ -24,8 +24,8 @@
 #include <QLoggingCategory>
 #include "qmmp_export.h"
 
-#define QMMP_VERSION_MAJOR 2
-#define QMMP_VERSION_MINOR 2
+#define QMMP_VERSION_MAJOR 1
+#define QMMP_VERSION_MINOR 7
 #define QMMP_VERSION_PATCH 0
 #define QMMP_VERSION_STABLE 0
 
@@ -48,9 +48,20 @@ namespace Qt {
 inline namespace Literals {
 inline namespace StringLiterals {
 
+
+#define u(str)_s \
+    ([]() noexcept -> QString { \
+        enum { Size = sizeof(QT_UNICODE_LITERAL(str))/2 - 1 }; \
+        static const QStaticStringData<Size> qstring_literal = { \
+            Q_STATIC_STRING_DATA_HEADER_INITIALIZER(Size), \
+            QT_UNICODE_LITERAL(str) }; \
+        QStringDataPtr holder = { qstring_literal.data_ptr() }; \
+        return QString(holder); \
+    }()) \
+
 inline QString operator""_s(const char16_t *str, size_t size) noexcept
 {
-    return QString(QStringPrivate(nullptr, const_cast<char16_t *>(str), qsizetype(size)));
+    return QString::fromUtf16(str, size);
 }
 
 constexpr inline QLatin1String operator""_L1(const char *str, size_t size) noexcept
@@ -60,7 +71,7 @@ constexpr inline QLatin1String operator""_L1(const char *str, size_t size) noexc
 
 inline QByteArray operator""_ba(const char *str, size_t size) noexcept
 {
-    return QByteArray(QByteArrayData(nullptr, const_cast<char *>(str), qsizetype(size)));
+    return QByteArray(str, qsizetype(size));
 }
 
 } // StringLiterals

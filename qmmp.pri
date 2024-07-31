@@ -25,7 +25,7 @@ QT += widgets
 
 #Version
 
-QMMP_VERSION = 2.2.0
+QMMP_VERSION = 1.7.0
 
 #Install paths
 
@@ -42,7 +42,7 @@ QMAKE_CFLAGS += "-isystem $${EXTRA_INCDIR}"
 QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
 }
 
-#APP_NAME_SUFFIX = "-1"
+APP_NAME_SUFFIX = "-1"
 
 unix {
   isEmpty(PREFIX): PREFIX=/usr

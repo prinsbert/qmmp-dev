@@ -51,7 +51,7 @@ LADSPAHost::LADSPAHost(QObject *parent) : QObject(parent)
         QString section = QStringLiteral("LADSPA_%1/").arg(i);
         settings.beginGroup(section);
 
-        int id = settings.value("id").toInt();
+        int id = settings.value("id"_L1).toInt();
         auto it = std::find_if(m_plugins.cbegin(), m_plugins.cend(), [id](LADSPAPlugin *p){ return p->unique_id == id; });
         if(it == m_plugins.cend())
             continue;
@@ -74,7 +74,7 @@ LADSPAHost::~LADSPAHost()
     {
         settings.remove(QStringLiteral("LADSPA_%1/").arg(i));
     }
-    settings.setValue("LADSPA/plugin_number", m_effects.count());
+    settings.setValue("LADSPA/plugin_number"_L1, m_effects.count());
     for(int i = 0; i < m_effects.count(); ++i)
     {
         QString section = QStringLiteral("LADSPA_%1/").arg(i);

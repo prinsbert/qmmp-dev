@@ -24,7 +24,7 @@
 #include <QString>
 #include <QList>
 #include <QStringList>
-#include "qmmptextcodec.h"
+#include <QTextCodec>
 #include "trackinfo.h"
 #include "qmmp_export.h"
 
@@ -59,7 +59,7 @@ public:
      * \param data Content of CUE file.
      * \param codec Codec.
      */
-    void loadData(const QByteArray &data, QmmpTextCodec *codec);
+    void loadData(const QByteArray &data, QTextCodec *codec);
     /*!
      * Creates playlist using parsed CUE metadata.
      * \param track Track number to return (-1 for all playlist or 1..n for specific track)

@@ -35,18 +35,18 @@ CueParser::~CueParser()
 
 void CueParser::loadData(const QByteArray &data, const QByteArray &codecName)
 {
-    QmmpTextCodec codec(codecName);
-    loadData(data, &codec);
+    loadData(data, QTextCodec::codecForName(codecName));
 }
 
-void CueParser::loadData(const QByteArray &data, QmmpTextCodec *codec)
+void CueParser::loadData(const QByteArray &data, QTextCodec *codec)
 {
     clear();
 
     QString artist, album, genre, date, comment, file;
     double album_peak = 0.0, album_gain = 0.0;
-    QString str = codec->toUnicode(data);
-    QTextStream textStream(&str, QIODeviceBase::ReadOnly);
+    QTextStream textStream(data, QIODevice::ReadOnly);
+
+    textStream.setCodec(codec ? codec : QTextCodec::codecForName("UTF-8"));
 
     while (!textStream.atEnd())
     {

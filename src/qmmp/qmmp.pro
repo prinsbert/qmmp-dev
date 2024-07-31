@@ -42,8 +42,7 @@ HEADERS += \
     qmmp_export.h \
     trackinfo.h \
     volumehandler.h \
-    cueparser.h \
-    qmmptextcodec.h
+    cueparser.h
 SOURCES += recycler.cpp \
     decoder.cpp \
     output.cpp \
@@ -78,8 +77,7 @@ SOURCES += recycler.cpp \
     visualbuffer.cpp \
     trackinfo.cpp \
     volumehandler.cpp \
-    cueparser.cpp \
-    qmmptextcodec.cpp
+    cueparser.cpp
 
 unix:TARGET = ../../lib/qmmp$$APP_NAME_SUFFIX
 win32:TARGET = ../../../bin/qmmp
@@ -109,7 +107,6 @@ win32 {
   !isEmpty(SVN_REVISION) {
     DEFINES += SVN_REVISION=\\\"$$SVN_REVISION\\\"
   }
-  LIBS += -liconv
 }
 
 unix {
@@ -158,8 +155,6 @@ unix {
     DESTDIR = .
 }
 INCLUDEPATH += ./
-
-freebsd:LIBS += -liconv
 
 unix {
     CONFIG += create_pc create_prl no_install_prl

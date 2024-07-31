@@ -95,7 +95,7 @@ QMMPStarter::QMMPStarter() : QObject()
         qApp->installTranslator(translator);
 
     QTranslator *qt_translator = new QTranslator(qApp);
-    if(qt_translator->load(QLibraryInfo::path(QLibraryInfo::TranslationsPath) + u"/qtbase_"_s + locale))
+    if(qt_translator->load(QLibraryInfo::location(QLibraryInfo::TranslationsPath) + u"/qtbase_"_s + locale))
         qApp->installTranslator(qt_translator);
 
     m_option_manager = new BuiltinCommandLineOption(this);
