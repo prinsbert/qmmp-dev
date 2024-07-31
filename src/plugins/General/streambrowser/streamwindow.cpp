@@ -132,13 +132,8 @@ StreamWindow::StreamWindow(QWidget *parent)
     m_editAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"document-properties"_s), tr("&Edit"),
                                               this, &StreamWindow::editStream);
     m_favoritesMenu->addSeparator();
-#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
     m_removeAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"edit-delete"_s), tr("&Remove"),
                                                 this, &StreamWindow::removeFromFavorites, QKeySequence::Delete);
-#else
-    m_removeAction = m_favoritesMenu->addAction(QIcon::fromTheme(u"edit-delete"_s), tr("&Remove"), QKeySequence::Delete,
-                                                this, &StreamWindow::removeFromFavorites);
-#endif
     addActions(m_favoritesMenu->actions());
 }
 

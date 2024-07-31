@@ -223,11 +223,7 @@ void QSUIVisualization::readSettings()
     m_show_cover = settings.value(u"vis_show_cover"_s, true).toBool();
     m_timer->setInterval(1000 / settings.value(u"vis_refresh_rate"_s, 25).toInt());
     QString visName = settings.value(u"vis_type"_s, u"analyzer"_s).toString();
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    m_bgColor = QColor::fromString(settings.value(u"vis_bg_color"_s, u"Black"_s).toString());
-#else
     m_bgColor.setNamedColor(settings.value(u"vis_bg_color"_s, u"Black"_s).toString());
-#endif
     //analyzer settings
     double peaks_falloff = settings.value(u"vis_peaks_falloff"_s, 0.2).toDouble();
     double analyzer_falloff = settings.value(u"vis_analyzer_falloff"_s, 2.2).toDouble();
@@ -387,15 +383,9 @@ void QSUiScope::readSettings()
 {
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    m_color1 = QColor::fromString(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
-    m_color2 = QColor::fromString(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
-    m_color3 = QColor::fromString(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
-#else
     m_color1.setNamedColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
     m_color2.setNamedColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
     m_color3.setNamedColor(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
-#endif
     settings.endGroup();
 }
 
@@ -518,17 +508,10 @@ void QSUiAnalyzer::readSettings()
 {
     QSettings settings;
     settings.beginGroup(u"Simple"_s);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    m_color1 = QColor::fromString(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
-    m_color2 = QColor::fromString(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
-    m_color3 = QColor::fromString(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
-    m_peakColor = QColor::fromString(settings.value(u"vis_peak_color"_s, u"#DDDDDD"_s).toString());
-#else
     m_color1.setNamedColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
     m_color2.setNamedColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
     m_color3.setNamedColor(settings.value(u"vis_color3"_s, u"#BECBFF"_s).toString());
     m_peakColor.setNamedColor(settings.value(u"vis_peak_color"_s, u"#DDDDDD"_s).toString());
-#endif
     m_cell_size =  QSize(14, 8);
     m_peaks_falloff = settings.value(u"vis_peaks_falloff"_s, 0.2).toDouble();
     m_analyzer_falloff = settings.value(u"vis_analyzer_falloff"_s, 2.2).toDouble();

@@ -93,19 +93,11 @@ void Analyzer::readSettings()
     m_analyzer_falloff = settings.value("analyzer_falloff"_L1, 2.2).toDouble();
     m_show_peaks = settings.value("show_peaks"_L1, true).toBool();
     m_timer->setInterval(1000 / settings.value("refresh_rate"_L1, 25).toInt());
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    m_color1 = QColor::fromString(settings.value("color1"_L1, u"Green"_s).toString());
-    m_color2 = QColor::fromString(settings.value("color2"_L1, u"Yellow"_s).toString());
-    m_color3 = QColor::fromString(settings.value("color3"_L1, u"Red"_s).toString());
-    m_bgColor = QColor::fromString(settings.value("bg_color"_L1, u"Black"_s).toString());
-    m_peakColor = QColor::fromString(settings.value("peak_color"_L1, u"Cyan"_s).toString());
-#else
     m_color1.setNamedColor(settings.value("color1"_L1, u"Green"_s).toString());
     m_color2.setNamedColor(settings.value("color2"_L1, u"Yellow"_s).toString());
     m_color3.setNamedColor(settings.value("color3"_L1, u"Red"_s).toString());
     m_bgColor.setNamedColor(settings.value("bg_color"_L1, u"Black"_s).toString());
     m_peakColor.setNamedColor(settings.value("peak_color"_L1, u"Cyan"_s).toString());
-#endif
     m_cell_size = settings.value("cells_size"_L1, QSize(15, 6)).toSize();
 
 
@@ -361,11 +353,7 @@ void Analyzer::createMenu()
         peaksFalloff->addAction(act);
     }
     m_menu->addSeparator();
-#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
     QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), this, &Analyzer::toggleFullScreen, tr("F"));
-#else
-    QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), tr("F"), this, &Analyzer::toggleFullScreen);
-#endif
     addAction(fullScreenAction);
     update();
 }

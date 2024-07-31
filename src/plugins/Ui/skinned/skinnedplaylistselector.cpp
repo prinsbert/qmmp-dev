@@ -70,42 +70,24 @@ void SkinnedPlayListSelector::readSettings()
     if(settings.value("pl_use_skin_colors"_L1, true).toBool())
     {
         Skin *skin = Skin::instance();
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-        m_normal = QColor::fromString(skin->getPLValue("normal"));
-        m_current = QColor::fromString(skin->getPLValue("current"));
-        m_normal_bg = QColor::fromString(skin->getPLValue("normalbg"));
-        m_selected_bg = QColor::fromString(skin->getPLValue("selectedbg"));
-#else
         m_normal.setNamedColor(skin->getPLValue("normal"));
         m_current.setNamedColor(skin->getPLValue("current"));
         m_normal_bg.setNamedColor(skin->getPLValue("normalbg"));
         m_selected_bg.setNamedColor(skin->getPLValue("selectedbg"));
-#endif
         m_selected_text = m_normal;
         m_current_bg = m_normal_bg;
     }
     else
     {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-        m_normal_bg = QColor::fromString(settings.value("pl_bg1_color"_L1, m_normal_bg.name()).toString());
-        m_selected_bg = QColor::fromString(settings.value("pl_highlight_color"_L1, m_selected_bg.name()).toString());
-        m_normal = QColor::fromString(settings.value("pl_normal_text_color"_L1, m_normal.name()).toString());
-        m_current = QColor::fromString(settings.value("pl_current_text_color"_L1, m_current.name()).toString());
-        m_selected_text = QColor::fromString(settings.value("pl_hl_text_color"_L1, m_selected_text.name()).toString());
-#else
         m_normal_bg.setNamedColor(settings.value("pl_bg1_color"_L1, m_normal_bg.name()).toString());
         m_selected_bg.setNamedColor(settings.value("pl_highlight_color"_L1, m_selected_bg.name()).toString());
         m_normal.setNamedColor(settings.value("pl_normal_text_color"_L1, m_normal.name()).toString());
         m_current.setNamedColor(settings.value("pl_current_text_color"_L1, m_current.name()).toString());
         m_selected_text.setNamedColor(settings.value("pl_hl_text_color"_L1, m_selected_text.name()).toString());
-#endif
+
         if(settings.value("pl_override_current_bg"_L1, false).toBool())
         {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-            m_current_bg = QColor::fromString(settings.value("pl_current_bg_color"_L1, m_normal_bg.name()).toString());
-#else
             m_current_bg.setNamedColor(settings.value("pl_current_bg_color"_L1, m_normal_bg.name()).toString());
-#endif
         }
         else
         {

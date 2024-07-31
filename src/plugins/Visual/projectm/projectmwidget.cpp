@@ -140,7 +140,6 @@ void ProjectMWidget::mousePressEvent (QMouseEvent *event)
 
 void ProjectMWidget::createActions()
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
     m_menu->addAction(tr("&Help"), this, &ProjectMWidget::showHelp, tr("F1"))->setCheckable(true);
     m_menu->addAction(tr("&Show Song Title"), this, &ProjectMWidget::showTitle, tr("F2"))->setCheckable(true);
     m_menu->addAction(tr("&Show Preset Name"), this, &ProjectMWidget::showPresetName, tr("F3"))->setCheckable(true);
@@ -152,19 +151,6 @@ void ProjectMWidget::createActions()
     m_menu->addAction(tr("&Lock Preset"), this, &ProjectMWidget::lockPreset, tr("L"))->setCheckable(true);
     m_menu->addSeparator();
     m_menu->addAction(tr("&Fullscreen"), this, &ProjectMWidget::fullscreenToggled, tr("F"))->setCheckable(true);
-#else
-    m_menu->addAction(tr("&Help"), tr("F1"), this, &ProjectMWidget::showHelp)->setCheckable(true);
-    m_menu->addAction(tr("&Show Song Title"), tr("F2"), this, &ProjectMWidget::showTitle)->setCheckable(true);
-    m_menu->addAction(tr("&Show Preset Name"), tr("F3"), this, &ProjectMWidget::showPresetName)->setCheckable(true);
-    m_menu->addAction(tr("&Show Menu"), tr("M"), this, &ProjectMWidget::showMenuToggled)->setCheckable(true);
-    m_menu->addSeparator();
-    m_menu->addAction(tr("&Next Preset"), tr("N"), this, &ProjectMWidget::nextPreset);
-    m_menu->addAction(tr("&Previous Preset"),  tr("P"), this, &ProjectMWidget::previousPreset);
-    m_menu->addAction(tr("&Random Preset"), tr("R"), this, &ProjectMWidget::randomPreset);
-    m_menu->addAction(tr("&Lock Preset"), tr("L"), this, &ProjectMWidget::lockPreset)->setCheckable(true);
-    m_menu->addSeparator();
-    m_menu->addAction(tr("&Fullscreen"), tr("F"), this, &ProjectMWidget::fullscreenToggled)->setCheckable(true);
-#endif
     m_menu->addSeparator();
     addActions(m_menu->actions());
 }

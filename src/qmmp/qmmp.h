@@ -40,8 +40,6 @@
 #define QStringToFileName(s) s.toLocal8Bit().constData()
 #endif
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 4, 0)
-
 #include <QLatin1String>
 
 namespace Qt {
@@ -80,16 +78,12 @@ inline QByteArray operator""_ba(const char *str, size_t size) noexcept
 
 using QLatin1StringView = QLatin1String;
 
-#endif
-
 using namespace Qt::Literals::StringLiterals;
 
 QMMP_EXPORT Q_DECLARE_LOGGING_CATEGORY(core)
 QMMP_EXPORT Q_DECLARE_LOGGING_CATEGORY(plugin)
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 5, 0)
 #define qCFatal qCCritical
-#endif
 
 
 /*! @brief The Qmmp class stores global settings and enums.

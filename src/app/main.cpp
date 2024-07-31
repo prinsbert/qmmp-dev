@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setApplicationName(u"qmmp"_s);
     a.setOrganizationName(u"qmmp"_s);
-    QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, Qmmp::configDir());
 
     QIcon icon;
     icon.addFile(u":/16x16/qmmp.png"_s);

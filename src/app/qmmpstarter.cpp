@@ -87,6 +87,9 @@ QMMPStarter::QMMPStarter() : QObject()
     QCoreApplication::setOrganizationName(configDirInfo.fileName());
     QSettings::setDefaultFormat(QSettings::IniFormat);
     QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, configDirInfo.canonicalPath());
+#else
+    QSettings::setDefaultFormat(QSettings::IniFormat);
+    QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, Qmmp::configDir());
 #endif
 
     QTranslator *translator = new QTranslator(qApp);
@@ -280,35 +283,6 @@ void QMMPStarter::startPlayer()
     theme_paths << share_path + u"/icons"_s;
     theme_paths.removeDuplicates();
     QIcon::setThemeSearchPaths(theme_paths);
-
-    //copy config from previous version
-    QString configFile = Qmmp::configDir() + u"/qmmp.conf"_s;
-    if(!QFile::exists(configFile))
-    {
-        QString oldConfigFile = QDir::homePath() + u"/.qmmp/qmmp2rc"_s;
-        if(!QFile::exists(oldConfigFile))
-            oldConfigFile = QDir::homePath() + u"/.qmmp/qmmprc"_s;
-
-        if(QFile::exists(oldConfigFile))
-        {
-            QFile::copy(oldConfigFile, configFile);
-            static const QStringList filesToCopy = {
-                u"converterrc"_s,  u"eq.auto_preset"_s, u"history.sqlite"_s, u"library.sqlite"_s,
-                u"playlist.txt"_s, u"Songlengths.txt"_s, u"winamp_presets"_s
-            };
-
-            for(const QString &name : std::as_const(filesToCopy))
-                QFile::copy(QDir::homePath() + u"/.qmmp/"_s + name, Qmmp::configDir() + QLatin1Char('/') + name);
-
-            QProcess::execute(QStringLiteral("cp"), { u"-r"_s, QDir::homePath() + u"/.qmmp/skins"_s, Qmmp::configDir() });
-            if(qApp->platformName() == QLatin1String("wayland"))
-            {
-                //force qsui by default for wayland
-                QSettings settings(QStringLiteral("qmmp"), QStringLiteral("qmmp"));
-                settings.remove("Ui/current_plugin"_L1);
-            }
-        }
-    }
 #endif
 
     //prepare libqmmp and libqmmpui libraries for usage
