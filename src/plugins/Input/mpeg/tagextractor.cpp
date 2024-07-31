@@ -23,11 +23,11 @@
 #include <QByteArray>
 #include <QBuffer>
 #include <QSet>
+#include <QTextCodec>
 #include <stdlib.h>
 #ifdef WITH_LIBRCD
 #include <librcd.h>
 #endif
-#include <qmmp/qmmptextcodec.h>
 #include "tagextractor.h"
 
 #define CSTR_TO_QSTR(str,utf) codec->toUnicode(str.toCString(utf)).trimmed()
@@ -66,7 +66,10 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
     }
     settings.endGroup();
 
-    QmmpTextCodec *codec = new QmmpTextCodec(codecName);
+    QTextCodec *codec = QTextCodec::codecForName(codecName);
+
+    if(!codec)
+        codec = QTextCodec::codecForName("UTF-8");
 
     bool utf = codec->name().contains("UTF");
 
@@ -90,8 +93,6 @@ QMap<Qmmp::MetaData, QString> TagExtractor::id3v2tag() const
         TagLib::String disc = tag.frameListMap()["TPOS"].front()->toString();
         tags.insert(Qmmp::DISCNUMBER, QString::fromLatin1(disc.toCString()).trimmed());
     }
-
-    delete codec;
 
     return tags;
 }

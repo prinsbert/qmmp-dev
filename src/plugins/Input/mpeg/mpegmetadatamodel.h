@@ -25,7 +25,7 @@
 #include <taglib/mpegfile.h>
 #include <taglib/tfilestream.h>
 
-class QmmpTextCodec;
+class QTextCodec;
 
 class MPEGMetaDataModel : public MetaDataModel
 {
@@ -66,7 +66,7 @@ private:
     TagLib::MPEG::File *m_file;
     TagLib::Tag *m_tag;
     TagLib::MPEG::File::TagTypes m_type;
-    QmmpTextCodec *m_codec = nullptr;
+    QTextCodec *m_codec = nullptr;
 };
 
 #endif // MPEGMETADATAMODEL_H

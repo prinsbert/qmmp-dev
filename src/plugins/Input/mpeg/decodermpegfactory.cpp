@@ -22,6 +22,7 @@
 #include <QMessageBox>
 #include <QSettings>
 #include <QFile>
+#include <QTextCodec>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/id3v1tag.h>
@@ -33,7 +34,6 @@
 #include <taglib/id3v2header.h>
 #include <taglib/textidentificationframe.h>
 #include <taglib/id3v2framefactory.h>
-#include <qmmp/qmmptextcodec.h>
 #include "tagextractor.h"
 #include "mpegmetadatamodel.h"
 #include "mpegsettingsdialog.h"
@@ -54,9 +54,9 @@ DecoderMpegFactory::DecoderMpegFactory()
     //detecting rusxmms patch
     m_using_rusxmms = false;
     char str[] = { char(0xF2), char(0xE5), char(0xF1), char(0xF2), '\0'};
-    QmmpTextCodec codec("windows-1251");
+    QTextCodec *codec = QTextCodec::codecForName("windows-1251");
     TagLib::String tstr(str);
-    if(codec.toUnicode(str) == QString::fromUtf8(tstr.toCString(true)))
+    if(codec->toUnicode(str) == QString::fromUtf8(tstr.toCString(true)))
     {
         qCDebug(plugin, "found taglib with rusxmms patch");
         m_using_rusxmms = true;
@@ -273,7 +273,9 @@ QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, Track
                         codecName = detectedCharset;
                 }
 
-                QmmpTextCodec *codec = new QmmpTextCodec(codecName);
+                QTextCodec *codec = QTextCodec::codecForName(codecName);
+                if(!codec)
+                    codec = QTextCodec::codecForName("UTF-8");
 
                 bool utf = codec->name().contains("UTF");
 
@@ -315,8 +317,6 @@ QList<TrackInfo *> DecoderMpegFactory::createPlayList(const QString &path, Track
                 }
 
                 metaData << tags;
-
-                delete codec;
 
                 if(!merge)
                     break;

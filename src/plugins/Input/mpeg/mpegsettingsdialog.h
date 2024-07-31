@@ -43,7 +43,10 @@ public slots:
     void accept() override;
 
 private:
+    void findCodecs();
+
     Ui::MpegSettingsDialog *m_ui;
+    QList<QTextCodec *> m_codecs;
 };
 
 #endif

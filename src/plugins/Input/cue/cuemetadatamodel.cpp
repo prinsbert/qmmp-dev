@@ -20,8 +20,8 @@
 
 #include <QFileInfo>
 #include <QSettings>
+#include <QTextCodec>
 #include <qmmp/metadatamanager.h>
-#include <qmmp/qmmptextcodec.h>
 #ifdef WITH_ENCA
 #include <enca.h>
 #endif
@@ -42,13 +42,7 @@ CUEMetaDataModel::CUEMetaDataModel(bool readOnly, const QString &url) : MetaData
 }
 
 CUEMetaDataModel::~CUEMetaDataModel()
-{
-    if(m_codec)
-    {
-        delete m_codec;
-        m_codec = nullptr;
-    }
-}
+{}
 
 QList<MetaDataItem> CUEMetaDataModel::extraProperties() const
 {
@@ -71,7 +65,6 @@ QString CUEMetaDataModel::cue() const
 {
     if(m_codec)
     {
-        delete m_codec;
         m_codec = nullptr;
     }
 
@@ -93,14 +86,14 @@ QString CUEMetaDataModel::cue() const
             EncaEncoding encoding = enca_analyse(analyser, (uchar *)data.constData(), data.size());
             if(encoding.charset != ENCA_CS_UNKNOWN)
             {
-                m_codec = new QmmpTextCodec(enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
+                m_codec = QTextCodec::codecForName(enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
             }
             enca_analyser_free(analyser);
         }
     }
 #endif
     if(!m_codec)
-        m_codec = new QmmpTextCodec(settings.value(u"encoding"_s, u"UTF-8"_s).toByteArray());
+        m_codec = QTextCodec::codecForName(settings.value(u"encoding"_s, "UTF-8"_L1).toByteArray());
     settings.endGroup();
 
     return m_codec->toUnicode(data);
@@ -111,7 +104,7 @@ void CUEMetaDataModel::setCue(const QString &content)
     if(!m_codec)
     {
         QSettings settings;
-        m_codec = new QmmpTextCodec(settings.value(u"CUE/encoding"_s, u"UTF-8"_s).toByteArray());
+        m_codec = QTextCodec::codecForName(settings.value(u"CUE/encoding"_s, "UTF-8"_L1).toByteArray());
     }
 
     QFile file(m_cueFilePath);

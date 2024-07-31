@@ -23,9 +23,9 @@
 #include <QDirIterator>
 #include <QSettings>
 #include <QTextStream>
+#include <QTextCodec>
 #include <qmmp/decoder.h>
 #include <qmmp/metadatamanager.h>
-#include <qmmp/qmmptextcodec.h>
 #ifdef WITH_ENCA
 #include <enca.h>
 #endif
@@ -47,7 +47,7 @@ CueFile::CueFile(const QString &path) : CueParser()
     QSettings settings;
     settings.beginGroup(u"CUE"_s);
     m_dirty = settings.value(u"dirty_cue"_s, false).toBool();
-    QmmpTextCodec *codec = nullptr;
+    QTextCodec *codec = nullptr;
 #ifdef WITH_ENCA
     EncaAnalyser analyser = nullptr;
     if(settings.value(u"use_enca"_s, false).toBool())
@@ -60,7 +60,7 @@ CueFile::CueFile(const QString &path) : CueParser()
             EncaEncoding encoding = enca_analyse(analyser, (uchar *)data.constData(), data.size());
             if(encoding.charset != ENCA_CS_UNKNOWN)
             {
-                codec = new QmmpTextCodec(enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
+                codec = QTextCodec::codecForName(enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
                 //qCDebug(plugin, "detected charset: %s",
                 //       enca_charset_name(encoding.charset,ENCA_NAME_STYLE_ENCA));
             }
@@ -69,11 +69,12 @@ CueFile::CueFile(const QString &path) : CueParser()
     }
 #endif
     if(!codec)
-        codec = new QmmpTextCodec(settings.value(u"encoding"_s, u"UTF-8"_s).toByteArray ());
+        codec = QTextCodec::codecForName(settings.value(u"encoding"_s, u"UTF-8"_s).toByteArray ());
+    if(!codec)
+        codec = QTextCodec::codecForName("UTF-8");
     settings.endGroup();
     //qCDebug(plugin, "using %s encoding", codec->name().constData());
     loadData(data, codec);
-    delete codec;
     setUrl(u"cue"_s, m_filePath);
     for(const QString &dataFileName : files())
     {

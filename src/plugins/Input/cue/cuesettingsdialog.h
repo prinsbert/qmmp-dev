@@ -42,7 +42,9 @@ public slots:
 
 private:
     void findCodecs();
+
     Ui::CueSettingsDialog *m_ui;
+    QList<QTextCodec *> m_codecs;
 };
 
 #endif

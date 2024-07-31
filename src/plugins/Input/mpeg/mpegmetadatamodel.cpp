@@ -21,6 +21,7 @@
 #include <QSettings>
 #include <QByteArray>
 #include <QBuffer>
+#include <QTextCodec>
 #include <taglib/tag.h>
 #include <taglib/fileref.h>
 #include <taglib/id3v1tag.h>
@@ -33,7 +34,6 @@
 #include <taglib/textidentificationframe.h>
 #include <taglib/attachedpictureframe.h>
 #include <taglib/id3v2framefactory.h>
-#include <qmmp/qmmptextcodec.h>
 #include "tagextractor.h"
 #include "mpegmetadatamodel.h"
 
@@ -201,15 +201,16 @@ MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file,
             codecName = detectedCharset;
     }
 
-    m_codec = new QmmpTextCodec(codecName);
+    m_codec = QTextCodec::codecForName(codecName);
+
+    if(!m_codec)
+        m_codec = QTextCodec::codecForName("UTF-8");
 
     settings.endGroup();
 }
 
 MpegFileTagModel::~MpegFileTagModel()
-{
-    delete m_codec;
-}
+{}
 
 QString MpegFileTagModel::name() const
 {

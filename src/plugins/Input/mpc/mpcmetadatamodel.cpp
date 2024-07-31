@@ -18,10 +18,10 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include <QTextCodec>
 #include <taglib/tag.h>
 #include <taglib/id3v1tag.h>
 #include <taglib/apetag.h>
-#include <qmmp/qmmptextcodec.h>
 #include "mpcmetadatamodel.h"
 
 MPCMetaDataModel::MPCMetaDataModel(const QString &path, bool readOnly) : MetaDataModel(readOnly)
@@ -52,19 +52,17 @@ MPCFileTagModel::MPCFileTagModel(TagLib::MPC::File *file, TagLib::MPC::File::Tag
     if (m_tagType == TagLib::MPC::File::ID3v1)
     {
         m_tag = m_file->ID3v1Tag();
-        m_codec = new QmmpTextCodec("ISO-8859-1");
+        m_codec = QTextCodec::codecForName("ISO-8859-1");
     }
     else
     {
         m_tag = m_file->APETag();
-        m_codec = new QmmpTextCodec("UTF-8");
+        m_codec = QTextCodec::codecForName ("UTF-8");
     }
 }
 
 MPCFileTagModel::~MPCFileTagModel()
-{
-    delete m_codec;
-}
+{}
 
 QString MPCFileTagModel::name() const
 {
