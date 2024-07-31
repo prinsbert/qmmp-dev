@@ -37,7 +37,7 @@ KdeNotifySettingsDialog::KdeNotifySettingsDialog(QWidget *parent) :
     m_ui->showCoversCheckBox->setChecked(settings.value(u"show_covers"_s, true).toBool());
     m_ui->updateNotifyCheckBox->setChecked(settings.value(u"update_notify"_s, true).toBool());
     m_ui->volumeCheckBox->setChecked(settings.value(u"volume_notification"_s, false).toBool());
-    m_template = settings.value(u"template_s", DEFAULT_TEMPLATE).toString();
+    m_template = settings.value(u"template"_s, DEFAULT_TEMPLATE).toString();
     settings.endGroup();
 }
 
