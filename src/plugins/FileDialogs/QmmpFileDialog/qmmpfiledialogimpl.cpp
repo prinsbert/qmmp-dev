@@ -69,7 +69,7 @@ QmmpFileDialogImpl::QmmpFileDialogImpl(QWidget *parent, Qt::WindowFlags f) : QDi
     PathCompleter* completer = new PathCompleter(m_model, m_ui->fileListView, this);
     m_ui->fileNameLineEdit->setCompleter(completer);
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_ui->closeOnAddToolButton->setChecked(settings.value(u"QMMPFileDialog/close_on_add"_s, false).toBool());
     restoreGeometry(settings.value(u"QMMPFileDialog/geometry"_s).toByteArray());
     m_history = settings.value(u"QMMPFileDialog/history"_s).toStringList();
@@ -341,7 +341,7 @@ void QmmpFileDialogImpl::on_fileTypeComboBox_activated(int index)
 
 void QmmpFileDialogImpl::hideEvent (QHideEvent *event)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"QMMPFileDialog/close_on_add"_s, m_ui->closeOnAddToolButton->isChecked());
     settings.setValue(u"QMMPFileDialog/geometry"_s, saveGeometry());
     settings.setValue(u"QMMPFileDialog/history"_s, m_history);

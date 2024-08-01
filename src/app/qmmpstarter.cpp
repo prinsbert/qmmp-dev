@@ -87,9 +87,6 @@ QMMPStarter::QMMPStarter() : QObject()
     QCoreApplication::setOrganizationName(configDirInfo.fileName());
     QSettings::setDefaultFormat(QSettings::IniFormat);
     QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, configDirInfo.canonicalPath());
-#else
-    QSettings::setDefaultFormat(QSettings::IniFormat);
-    QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, Qmmp::configDir());
 #endif
 
     QTranslator *translator = new QTranslator(qApp);
@@ -307,7 +304,7 @@ void QMMPStarter::startPlayer()
     processCommandArgs(args, QDir::currentPath());
     if(args.isEmpty())
     {
-        QSettings settings;
+        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         settings.beginGroup(u"General"_s);
         if(settings.value(u"resume_playback"_s, false).toBool())
         {
@@ -325,7 +322,7 @@ void QMMPStarter::createPaths()
 
 void QMMPStarter::savePosition()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"General"_s);
     settings.setValue(u"resume_playback"_s, m_core->state() == Qmmp::Playing &&
                       QmmpUiSettings::instance()->resumeOnStartup());

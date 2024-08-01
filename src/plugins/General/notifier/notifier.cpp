@@ -42,7 +42,7 @@
 
 Notifier::Notifier(QObject *parent) : QObject(parent)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Notifier"_s);
     m_desktop = settings.value(u"song_notification"_s, true).toBool();
     m_resumeNotification = settings.value(u"resume_notification"_s, false).toBool();

@@ -28,7 +28,7 @@ CDAudioSettingsDialog::CDAudioSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::CDAudioSettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"cdaudio"_s);
     m_ui->deviceLineEdit->setText(settings.value(u"device"_s).toString());
     m_ui->deviceCheckBox->setChecked(!m_ui->deviceLineEdit->text().isEmpty());
@@ -51,7 +51,7 @@ CDAudioSettingsDialog::~CDAudioSettingsDialog()
 
 void CDAudioSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"cdaudio"_s);
     if(m_ui->deviceCheckBox->isChecked())
         settings.setValue(u"device"_s, m_ui->deviceLineEdit->text());

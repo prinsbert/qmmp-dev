@@ -26,7 +26,7 @@ RDetectSettingsDialog::RDetectSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::RDetectSettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("rdetect"_L1);
     m_ui->cdGroupBox->setChecked(settings.value("cda"_L1, true).toBool());
     m_ui->addTracksCheckBox->setChecked(settings.value("add_tracks"_L1, false).toBool());
@@ -44,7 +44,7 @@ RDetectSettingsDialog::~RDetectSettingsDialog()
 
 void RDetectSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("rdetect"_L1);
     settings.setValue("cda"_L1, m_ui->cdGroupBox->isChecked());
     settings.setValue("add_tracks"_L1, m_ui->addTracksCheckBox->isChecked());

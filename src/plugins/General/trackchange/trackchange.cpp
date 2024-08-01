@@ -37,7 +37,7 @@ TrackChange::TrackChange(QObject *parent) : QObject(parent)
     connect(m_core, &SoundCore::stateChanged, this, &TrackChange::onStateChanged);
     connect(m_core, &SoundCore::trackInfoChanged, this, &TrackChange::onTrackInfoChanged);
     connect(m_core, &SoundCore::finished, this, &TrackChange::onFinised);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"TrackChange"_s);
     m_newTrackCommand = settings.value(u"new_track_command"_s).toString();
     m_endOfTrackCommand = settings.value(u"end_of_track_command"_s).toString();

@@ -28,7 +28,7 @@ QtMultimediaSettingsDialog::QtMultimediaSettingsDialog (QWidget *parent) : QDial
 {
     m_ui->setupUi(this);
 
-	const QSettings settings;
+	const QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     const QString default_device = settings.value("QTMULTIMEDIA/device"_L1).toString();
 
 	//Default item always has index = 0
@@ -54,7 +54,7 @@ QtMultimediaSettingsDialog::~QtMultimediaSettingsDialog()
 void QtMultimediaSettingsDialog::accept()
 {
     qCDebug(plugin) << Q_FUNC_INFO;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     //0 index means default value, we save empty string for it.
     settings.setValue("QTMULTIMEDIA/device"_L1, m_ui->deviceComboBox->currentIndex() ? m_ui->deviceComboBox->currentText() : QString());
     QDialog::accept();

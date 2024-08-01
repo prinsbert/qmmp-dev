@@ -48,7 +48,7 @@ ListenBrainz::ListenBrainz(QObject *parent)
     m_ua = QStringLiteral("qmmp-plugins/%1").arg(Qmmp::strVersion().toLower()).toLatin1();
     m_http = new QNetworkAccessManager(this);
     m_core = SoundCore::instance();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_token = settings.value(u"ListenBrainz/user_token"_s).toString().trimmed();
 
     connect(m_http, &QNetworkAccessManager::finished, this, &ListenBrainz::processResponse);

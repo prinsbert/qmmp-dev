@@ -34,7 +34,7 @@ TrackChangeSettingsDialog::TrackChangeSettingsDialog(QWidget *parent) : QDialog(
     addMenu(m_ui->endOfPlayListButton);
     addMenu(m_ui->titleChangeButton);
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"TrackChange"_s);
     m_ui->newTrackLineEdit->setText(settings.value(u"new_track_command"_s).toString());
     m_ui->endOfTrackLineEdit->setText(settings.value(u"end_of_track_command"_s).toString());
@@ -52,7 +52,7 @@ TrackChangeSettingsDialog::~TrackChangeSettingsDialog()
 
 void TrackChangeSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"TrackChange"_s);
     settings.setValue(u"new_track_command"_s, m_ui->newTrackLineEdit->text());
     settings.setValue(u"end_of_track_command"_s,  m_ui->endOfTrackLineEdit->text());

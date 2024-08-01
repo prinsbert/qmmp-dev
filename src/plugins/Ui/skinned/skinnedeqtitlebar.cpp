@@ -38,7 +38,7 @@ SkinnedEqTitleBar::SkinnedEqTitleBar(SkinnedEqWidget *parent)
     connect(m_close, &SkinnedButton::clicked, m_eq, &SkinnedEqWidget::closed);
     m_shade = new SkinnedButton(this, Skin::EQ_BT_SHADE1_N, Skin::EQ_BT_SHADE1_P, Skin::CUR_EQNORMAL);
     connect(m_shade, &SkinnedButton::clicked, this, &SkinnedEqTitleBar::shade);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     if(settings.value("Skinned/eq_shaded"_L1, false).toBool())
         shade();
     m_align = true;
@@ -50,7 +50,7 @@ SkinnedEqTitleBar::SkinnedEqTitleBar(SkinnedEqWidget *parent)
 
 SkinnedEqTitleBar::~SkinnedEqTitleBar()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("Skinned/eq_shaded"_L1, m_shaded);
 }
 

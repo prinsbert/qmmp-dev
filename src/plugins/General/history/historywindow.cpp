@@ -351,7 +351,7 @@ void HistoryWindow::loadTopGenres()
 
 void HistoryWindow::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"History"_s);
     restoreGeometry(settings.value(u"geometry"_s).toByteArray());
     m_ui->historyTreeWidget->header()->restoreState(settings.value(u"history_state"_s).toByteArray());
@@ -421,7 +421,7 @@ void HistoryWindow::showInformation(QTreeWidgetItem *item)
 
 void HistoryWindow::closeEvent(QCloseEvent *)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"History"_s);
     settings.setValue(u"geometry"_s, saveGeometry());
     settings.setValue(u"history_state"_s, m_ui->historyTreeWidget->header()->saveState());

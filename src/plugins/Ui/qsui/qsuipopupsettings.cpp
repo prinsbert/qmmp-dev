@@ -32,7 +32,7 @@ QSUiPopupSettings::QSUiPopupSettings(QWidget *parent)
     connect(m_ui->transparencySlider, &QSlider::valueChanged, m_ui->transparencyLabel, qOverload<int>(&QLabel::setNum));
     connect(m_ui->coverSizeSlider, &QSlider::valueChanged, m_ui->coverSizeLabel, qOverload<int>(&QLabel::setNum));
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     m_ui->transparencySlider->setValue(100 - settings.value(u"popup_opacity"_s, 1.0).toDouble()*100);
     m_ui->coverSizeSlider->setValue(settings.value(u"popup_cover_size"_s, 48).toInt());
@@ -50,7 +50,7 @@ QSUiPopupSettings::~QSUiPopupSettings()
 
 void QSUiPopupSettings::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     settings.setValue(u"popup_opacity"_s, 1.0 -  (double)m_ui->transparencySlider->value()/100);
     settings.setValue(u"popup_cover_size"_s, m_ui->coverSizeSlider->value());

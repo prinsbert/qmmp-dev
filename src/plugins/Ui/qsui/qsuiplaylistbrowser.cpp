@@ -80,7 +80,7 @@ QSUiPlayListBrowser::QSUiPlayListBrowser(PlayListManager *manager, QWidget *pare
 
 QSUiPlayListBrowser::~QSUiPlayListBrowser()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     settings.setValue(u"pl_browser_quick_search"_s, m_showFilterAction->isChecked());
     settings.endGroup();
@@ -174,7 +174,7 @@ bool QSUiPlayListBrowser::eventFilter(QObject *o, QEvent *e)
 
 void QSUiPlayListBrowser::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     m_showFilterAction->setChecked(settings.value(u"pl_browser_quick_search"_s, true).toBool());
     settings.endGroup();

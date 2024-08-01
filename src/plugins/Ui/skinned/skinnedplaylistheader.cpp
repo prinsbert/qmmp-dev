@@ -112,7 +112,7 @@ SkinnedPlayListHeader::~SkinnedPlayListHeader()
 
 void SkinnedPlayListHeader::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     m_font.fromString(settings.value("pl_header_font"_L1, qApp->font().toString()).toString());
 
@@ -857,7 +857,7 @@ const QString SkinnedPlayListHeader::name(int index) const
 
 void SkinnedPlayListHeader::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     m_model->saveSettings(&settings);
     QList<QVariant> sizes, alignment;

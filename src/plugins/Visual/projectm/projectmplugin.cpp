@@ -63,7 +63,7 @@ ProjectMPlugin::ProjectMPlugin (QWidget *parent)
     connect(m_projectMWidget, &ProjectMWidget::fullscreenToggled, this, &ProjectMPlugin::setFullScreen);
     listWidget->hide();
     resize(600,400);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     restoreGeometry(settings.value("ProjectM/geometry"_L1).toByteArray());
     m_splitter->setSizes(QList<int>() << 300 << 300);
     m_splitter->restoreState(settings.value("ProjectM/splitter_sizes"_L1).toByteArray());
@@ -108,7 +108,7 @@ void ProjectMPlugin::setFullScreen(bool yes)
 void ProjectMPlugin::closeEvent(QCloseEvent *event)
 {
     //save geometry
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("ProjectM/geometry"_L1, saveGeometry());
     settings.setValue("ProjectM/splitter_sizes"_L1, m_splitter->saveState());
     Visual::closeEvent(event); //removes visualization object

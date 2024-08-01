@@ -59,7 +59,7 @@ TwoPanelFileDialogImpl::TwoPanelFileDialogImpl(QWidget *parent) : QDialog(parent
     connect(m_ui->dirListView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &TwoPanelFileDialogImpl::updateDirSelection);
     connect(m_ui->fileListWidget, &QListWidget::itemSelectionChanged, this, &TwoPanelFileDialogImpl::updateFileSelection);
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     restoreGeometry(settings.value(u"TwoPanelFileDialog/geometry"_s).toByteArray());
     m_history = settings.value(u"TwoPanelFileDialog/history"_s).toStringList();
     m_ui->lookInComboBox->addItems(m_history);
@@ -392,7 +392,7 @@ void TwoPanelFileDialogImpl::updateFileList(const QString &path)
 
 void TwoPanelFileDialogImpl::hideEvent (QHideEvent *event)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"TwoPanelFileDialog/geometry"_s, saveGeometry());
     settings.setValue(u"TwoPanelFileDialog/history"_s, m_history);
     QWidget::hideEvent(event);

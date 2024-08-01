@@ -181,7 +181,7 @@ void SkinnedVisualization::drawBackGround()
 
 void SkinnedVisualization::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     QAction *act = m_peaksFalloffGroup->checkedAction ();
     settings.setValue("vis_peaks_falloff"_L1, act ? act->data().toDouble() : 0.2);
@@ -293,7 +293,7 @@ void SkinnedVisualization::createMenu()
 
 void SkinnedVisualization::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     QString vis_name = settings.value(u"vis_type"_s, u"Analyzer"_s).toString();
     if(!m_update)
@@ -369,7 +369,7 @@ Analyzer::Analyzer()
     m_skin = Skin::instance();
     m_size = QSize(76 * m_skin->ratio(), 16 * m_skin->ratio());
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     m_peaks_falloff = settings.value("vis_peaks_falloff"_L1, 0.2).toDouble();
     m_analyzer_falloff = settings.value("vis_analyzer_falloff"_L1, 2.2).toDouble();

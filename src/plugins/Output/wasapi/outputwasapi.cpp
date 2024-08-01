@@ -56,7 +56,7 @@ OutputWASAPI::DWASAPIChannels OutputWASAPI::m_wasapi_pos[10]  = {
 OutputWASAPI::OutputWASAPI() : Output()
 {
     instance = this;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_id = settings.value("WASAPI/device"_L1, u"default"_s).toString();
     m_bufferSize = settings.value("WASAPI/buffer_size"_L1, 1000).toInt() * 1000LL;
     m_exclusive = settings.value("WASAPI/exclusive_mode"_L1, false).toBool();
@@ -314,7 +314,7 @@ void OutputWASAPI::uninitialize()
 VolumeWASAPI::VolumeWASAPI()
 {
     OutputWASAPI::volumeControl = this;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_volume.left = settings.value("WASAPI/left_volume"_L1, 100).toInt();
     m_volume.right = settings.value("WASAPI/right_volume"_L1, 100).toInt();
 }
@@ -322,7 +322,7 @@ VolumeWASAPI::VolumeWASAPI()
 VolumeWASAPI::~VolumeWASAPI()
 {
     m_volume = VolumeWASAPI::volume();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("WASAPI/left_volume"_L1, m_volume.left);
     settings.setValue("WASAPI/right_volume"_L1, m_volume.right);
     OutputWASAPI::volumeControl = nullptr;

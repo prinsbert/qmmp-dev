@@ -44,7 +44,7 @@ QSUiListWidgetDrawer::~QSUiListWidgetDrawer()
 
 void QSUiListWidgetDrawer::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     m_show_anchor = settings.value(u"pl_show_anchor"_s, false).toBool();
     m_show_numbers = settings.value(u"pl_show_numbers"_s, true).toBool();

@@ -77,7 +77,7 @@ bool OutputQtMultimedia::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFor
     if (!qformat.isValid())
         return false;
 
-    const QSettings settings;
+    const QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     const QString saved_device_name = settings.value("QTMULTIMEDIA/device"_L1).toString();
 
     m_bytes_per_second = bytes_per_sample * freq * qformat.channelCount();

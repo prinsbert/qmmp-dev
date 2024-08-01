@@ -43,7 +43,7 @@ void FileDialog::loadPlugins()
     m_cache = new QList<QmmpUiPluginCache*>;
     m_cache->append(new QmmpUiPluginCache(new QtFileDialogFactory));
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     for(const QString &filePath : Qmmp::findPlugins(u"FileDialogs"_s))
     {
         QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
@@ -71,14 +71,14 @@ QList<FileDialogFactory *> FileDialog::factories()
 void FileDialog::setEnabled(const FileDialogFactory *factory)
 {
     loadPlugins();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("FileDialog"_L1, factory->properties().shortName);
 }
 
 bool FileDialog::isEnabled(const FileDialogFactory *factory)
 {
     loadPlugins();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
     return factory->properties().shortName == name;
 }
@@ -163,7 +163,7 @@ FileDialog* FileDialog::instance()
     loadPlugins();
     FileDialogFactory *selected = nullptr;
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QString name = settings.value(u"FileDialog"_s, u"qt_dialog"_s).toString();
 
     auto it = std::find_if(m_cache->cbegin(), m_cache->cend(),

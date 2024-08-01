@@ -27,7 +27,7 @@ OssSettingsDialog::OssSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::OssSettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"OSS"_s);
     m_ui->lineEdit->insert(settings.value(u"device"_s, u"/dev/dsp"_s).toString());
     m_ui->lineEdit_2->insert(settings.value(u"mixer_device"_s, u"/dev/mixer"_s).toString());
@@ -44,7 +44,7 @@ OssSettingsDialog::~OssSettingsDialog()
 void OssSettingsDialog::accept()
 {
     qCDebug(plugin) << Q_FUNC_INFO;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"OSS"_s);
     settings.setValue(u"device"_s, m_ui->lineEdit->text());
     settings.setValue(u"buffer_time"_s, m_ui->bufferSpinBox->value());

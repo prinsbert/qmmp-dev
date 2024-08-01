@@ -168,7 +168,7 @@ void ConfigDialog::readSettings()
     //equalizer
     m_ui->twoPassEqCheckBox->setChecked(gs->eqSettings().twoPasses());
     //geometry
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     resize(settings.value(u"ConfigDialog/window_size"_s, QSize(700,470)).toSize());
     QList<QVariant> var_sizes = settings.value(u"ConfigDialog/splitter_sizes"_s).toList();
     if(var_sizes.count() != 2)
@@ -454,7 +454,7 @@ void ConfigDialog::saveSettings()
     eqs.setTwoPasses(m_ui->twoPassEqCheckBox->isChecked());
     gs->setEqSettings(eqs);
     QList<QVariant> var_sizes = { m_ui->splitter->sizes().constFirst(), m_ui->splitter->sizes().constLast() };
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"ConfigDialog/splitter_sizes"_s, var_sizes);
     settings.setValue(u"ConfigDialog/window_size"_s, size());
     //User interface language

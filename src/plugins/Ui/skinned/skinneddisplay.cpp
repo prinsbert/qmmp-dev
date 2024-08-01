@@ -133,7 +133,7 @@ SkinnedDisplay::SkinnedDisplay(SkinnedMainWindow *parent) : PixmapWidget (parent
 
 SkinnedDisplay::~SkinnedDisplay()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("Skinned/pl_visible"_L1, m_plButton->isChecked());
     settings.setValue("Skinned/eq_visible"_L1, m_eqButton->isChecked());
 }

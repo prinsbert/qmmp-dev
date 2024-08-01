@@ -87,7 +87,7 @@ void Analyzer::toggleFullScreen()
 
 void Analyzer::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Analyzer"_L1);
     m_peaks_falloff = settings.value("peak_falloff"_L1, 0.2).toDouble();
     m_analyzer_falloff = settings.value("analyzer_falloff"_L1, 2.2).toDouble();
@@ -145,7 +145,7 @@ void Analyzer::readSettings()
 
 void Analyzer::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Analyzer"_L1);
     QAction *act = m_fpsGroup->checkedAction();
     settings.setValue("refresh_rate"_L1, act ? act->data().toInt() : 25);
@@ -171,7 +171,7 @@ void Analyzer::showEvent (QShowEvent *)
 void Analyzer::closeEvent (QCloseEvent *event)
 {
     //save geometry
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("Analyzer/geometry"_L1, saveGeometry());
     Visual::closeEvent(event); //removes visualization object
 }

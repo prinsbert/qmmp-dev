@@ -28,7 +28,7 @@ ShoutSettingsDialog::ShoutSettingsDialog(QWidget *parent) :
     m_ui(new Ui::ShoutSettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Shout"_s);
     m_ui->hostLineEdit->setText(settings.value(u"host"_s, u"127.0.0.1"_s).toString());
     m_ui->portSpinBox->setValue(settings.value(u"port"_s, 8000).toInt());
@@ -48,7 +48,7 @@ ShoutSettingsDialog::~ShoutSettingsDialog()
 
 void ShoutSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Shout"_s);
     settings.setValue(u"host"_s,  m_ui->hostLineEdit->text());
     settings.setValue(u"port"_s, m_ui->portSpinBox->value());

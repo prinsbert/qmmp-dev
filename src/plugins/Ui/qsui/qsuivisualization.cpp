@@ -217,7 +217,7 @@ void QSUIVisualization::mousePressEvent (QMouseEvent *e)
 
 void QSUIVisualization::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     //general settings
     m_show_cover = settings.value(u"vis_show_cover"_s, true).toBool();
@@ -282,7 +282,7 @@ void QSUIVisualization::readSettings()
 
 void QSUIVisualization::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
 
     QAction *act = m_fpsGroup->checkedAction ();
@@ -381,7 +381,7 @@ void QSUiScope::clear()
 
 void QSUiScope::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     m_color1.setNamedColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
     m_color2.setNamedColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());
@@ -506,7 +506,7 @@ void QSUiAnalyzer::clear()
 
 void QSUiAnalyzer::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     m_color1.setNamedColor(settings.value(u"vis_color1"_s, u"#BECBFF"_s).toString());
     m_color2.setNamedColor(settings.value(u"vis_color2"_s, u"#BECBFF"_s).toString());

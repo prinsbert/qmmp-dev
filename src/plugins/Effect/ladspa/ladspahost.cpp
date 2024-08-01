@@ -44,7 +44,7 @@ LADSPAHost::LADSPAHost(QObject *parent) : QObject(parent)
     m_instance = this;
     loadModules();
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     int pluginNumber = settings.value(u"LADSPA/plugin_number"_s, 0).toInt();
     for(int i = 0; i < pluginNumber; ++i)
     {
@@ -69,7 +69,7 @@ LADSPAHost::LADSPAHost(QObject *parent) : QObject(parent)
 LADSPAHost::~LADSPAHost()
 {
     m_instance = nullptr;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     for(int i = 0; i < settings.value(u"LADSPA/plugin_number"_s, 0).toInt(); ++i)
     {
         settings.remove(QStringLiteral("LADSPA_%1/").arg(i));

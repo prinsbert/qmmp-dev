@@ -32,7 +32,7 @@ VolumeHandler::VolumeHandler(QObject *parent) : QObject(parent)
     if(m_instance)
         qCFatal(core) << "only one instance is allowed!";
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_settings.left = settings.value(u"Volume/left"_s, 80).toInt();
     m_settings.right = settings.value(u"Volume/right"_s, 80).toInt();
     m_timer = new QTimer(this);
@@ -46,7 +46,7 @@ VolumeHandler::~VolumeHandler()
     m_instance = nullptr;
     delete m_volume;
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"Volume/left"_s, m_settings.left);
     settings.setValue(u"Volume/right"_s, m_settings.right);
 }

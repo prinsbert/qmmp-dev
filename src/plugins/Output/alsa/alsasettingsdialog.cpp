@@ -34,7 +34,7 @@ AlsaSettingsDialog::AlsaSettingsDialog(QWidget *parent)
     getSoftDevices();
     connect(m_ui->deviceComboBox, &QComboBox::activated, this, &AlsaSettingsDialog::setText);
     connect(m_ui->mixerCardComboBox, &QComboBox::activated, this, &AlsaSettingsDialog::showMixerDevices);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"ALSA"_s);
     m_ui->deviceComboBox->setEditText(settings.value(u"device"_s, u"default"_s).toString());
     m_ui->bufferSpinBox->setValue(settings.value(u"buffer_time"_s, 500).toInt());
@@ -210,7 +210,7 @@ void AlsaSettingsDialog::setText(int n)
 void AlsaSettingsDialog::accept()
 {
     qCDebug(plugin, "AlsaSettingsDialog (ALSA):: writeSettings()");
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"ALSA"_s);
     settings.setValue(u"device"_s, m_ui->deviceComboBox->currentText ());
     settings.setValue(u"buffer_time"_s, m_ui->bufferSpinBox->value());

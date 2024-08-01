@@ -75,7 +75,7 @@ LyricsWidget::LyricsWidget(bool dialog, QWidget *parent) : QWidget(parent),
         return;
     }
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_enabledProviders = settings.value(u"Lyrics/enabled_providers"_s, m_parser.defaultProviders()).toStringList();
 
     if(dialog)
@@ -274,7 +274,7 @@ void LyricsWidget::closeEvent(QCloseEvent *)
 {
     if(windowFlags() & Qt::Dialog)
     {
-        QSettings settings;
+        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         settings.setValue(u"Lyrics/geometry"_s, saveGeometry());
     }
 }

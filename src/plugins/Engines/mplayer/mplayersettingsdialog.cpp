@@ -32,7 +32,7 @@ MplayerSettingsDialog::MplayerSettingsDialog(QWidget *parent)
 
     m_ui->audioComboBox->addItem(tr("default"));
     m_ui->audioComboBox->addItems( { u"oss"_s, u"alsa"_s, u"pulse"_s, u"jack"_s, u"nas"_s, u"null"_s });
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"mplayer"_s);
     m_ui->audioComboBox->setEditText(settings.value(u"ao"_s, u"default"_s).toString().replace(u"default"_s, tr("default")));
     m_ui->videoComboBox->setEditText(settings.value(u"vo"_s, u"default"_s).toString().replace(u"default"_s, tr("default")));
@@ -49,7 +49,7 @@ MplayerSettingsDialog::~MplayerSettingsDialog()
 
 void MplayerSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"mplayer"_s);
     settings.setValue(u"ao"_s, m_ui->audioComboBox->currentText().replace(tr("default"), u"default"_s));
     settings.setValue(u"vo"_s, m_ui->videoComboBox->currentText().replace(tr("default"), u"default"_s));

@@ -99,13 +99,13 @@ void SkinnedTimeIndicatorModel::toggleElapsed()
 
 void SkinnedTimeIndicatorModel::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_elapsed = settings.value("Skinned/disp_elapsed"_L1, true).toBool();
 }
 
 void SkinnedTimeIndicatorModel::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("Skinned/disp_elapsed"_L1, m_elapsed);
 }
 

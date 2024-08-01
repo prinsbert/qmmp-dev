@@ -74,7 +74,7 @@ QSUiListWidget::~QSUiListWidget()
 
 void QSUiListWidget::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     m_show_protocol = settings.value(u"pl_show_protocol"_s, false).toBool();
     bool show_popup = settings.value(u"pl_show_popup"_s, false).toBool();

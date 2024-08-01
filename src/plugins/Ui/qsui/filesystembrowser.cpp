@@ -125,7 +125,7 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
 
 FileSystemBrowser::~FileSystemBrowser()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     settings.setValue(u"fsbrowser_current_dir"_s, m_fileSystemModel->rootDirectory().canonicalPath());
     settings.setValue(u"fsbrowser_quick_search"_s, m_showFilterAction->isChecked());
@@ -135,7 +135,7 @@ FileSystemBrowser::~FileSystemBrowser()
 
 void FileSystemBrowser::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     if(!m_update)
     {

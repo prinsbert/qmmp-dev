@@ -325,7 +325,7 @@ DWORD OutputDirectSound::bytesToWrite()
 VolumeDirectSound::VolumeDirectSound()
 {
     OutputDirectSound::volumeControl = this;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_volume.left = settings.value("DirectSound/left_volume"_L1, 100).toInt();
     m_volume.right = settings.value("DirectSound/right_volume"_L1, 100).toInt();
 }
@@ -333,7 +333,7 @@ VolumeDirectSound::VolumeDirectSound()
 VolumeDirectSound::~VolumeDirectSound()
 {
     m_volume = volume();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("DirectSound/left_volume"_L1, m_volume.left);
     settings.setValue("DirectSound/right_volume"_L1, m_volume.right);
     OutputDirectSound::volumeControl = nullptr;

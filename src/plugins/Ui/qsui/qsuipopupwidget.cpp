@@ -43,7 +43,7 @@ QSUiPopupWidget::QSUiPopupWidget(QWidget *parent)
     hlayout->addWidget(m_label1);
 
     //settings
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     setWindowOpacity(settings.value(u"popup_opacity"_s, 1.0).toDouble());
     m_coverSize = settings.value(u"popup_cover_size"_s, 48).toInt();

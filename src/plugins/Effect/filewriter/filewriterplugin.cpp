@@ -111,7 +111,7 @@ void FileWriterPlugin::init(const TrackInfo &info)
 {
     deinit();
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     float quality = settings.value(u"FileWriter/vorbis_quality"_s, 0.8).toFloat();
     QString outDir = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
     outDir = settings.value(u"FileWriter/out_dir"_s, outDir).toString();

@@ -35,7 +35,7 @@ RemovableHelper::RemovableHelper(QObject *parent): QObject(parent)
     m_actions = new QActionGroup(this);
     connect(m_actions, &QActionGroup::triggered, this, &RemovableHelper::processAction);
     //load settings
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("rdetect"_L1);
     m_detectCDA = settings.value("cda"_L1, true).toBool();
     m_detectRemovable = settings.value("removable"_L1, true).toBool();

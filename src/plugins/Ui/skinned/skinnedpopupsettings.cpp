@@ -33,7 +33,7 @@ SkinnedPopupSettings::SkinnedPopupSettings(QWidget *parent)
     connect(m_ui->transparencySlider, &QSlider::valueChanged, m_ui->transparencyLabel, qOverload<int>(&QLabel::setNum));
     connect(m_ui->coverSizeSlider, &QSlider::valueChanged, m_ui->coverSizeLabel, qOverload<int>(&QLabel::setNum));
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     m_ui->transparencySlider->setValue(100 - settings.value("popup_opacity"_L1, 1.0).toDouble() * 100);
     m_ui->coverSizeSlider->setValue(settings.value ("popup_cover_size"_L1, 48).toInt());
@@ -52,7 +52,7 @@ SkinnedPopupSettings::~SkinnedPopupSettings()
 
 void SkinnedPopupSettings::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     settings.setValue("popup_opacity"_L1, 1.0 -  (double)m_ui->transparencySlider->value()/100);
     settings.setValue("popup_cover_size"_L1, m_ui->coverSizeSlider->value());

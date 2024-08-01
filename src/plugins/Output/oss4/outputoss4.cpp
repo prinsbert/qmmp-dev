@@ -69,7 +69,7 @@ Qmmp::ChannelPosition OutputOSS4::m_oss_pos[16] =
 
 OutputOSS4::OutputOSS4() : Output()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_audio_device = settings.value(u"OSS4/device"_s, QStringLiteral(DEFAULT_DEV)).toString();
     m_instance = this;
 }
@@ -204,7 +204,7 @@ void OutputOSS4::reset()
 /***** MIXER *****/
 VolumeOSS4::VolumeOSS4()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_volume = settings.value(u"OSS4/volume"_s, 0x3232).toInt();
     OutputOSS4::m_vc = this;
 }
@@ -214,7 +214,7 @@ VolumeOSS4::~VolumeOSS4()
     VolumeSettings vol = VolumeOSS4::volume();
     m_volume = (vol.right << 8) | vol.left;
     OutputOSS4::m_vc = nullptr;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"OSS4/volume"_s, m_volume);
 }
 

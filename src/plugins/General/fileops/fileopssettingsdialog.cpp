@@ -38,7 +38,7 @@ FileOpsSettingsDialog::FileOpsSettingsDialog(QWidget *parent)
     m_ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     m_ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"FileOps"_s);
     int i = 0;
     while(!settings.value(QStringLiteral("name_%1").arg(i)).isNull())
@@ -83,7 +83,7 @@ FileOpsSettingsDialog::~FileOpsSettingsDialog()
 
 void FileOpsSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("FileOps"_L1);
     //remove all previous keys
     settings.remove(QString());

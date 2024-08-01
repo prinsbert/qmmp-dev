@@ -36,7 +36,7 @@ FileWriterSettingsDialog::FileWriterSettingsDialog(QWidget *parent)
     m_ui->fileNameButton->setPopupMode(QToolButton::InstantPopup);
     connect(fileNameMenu, &MetaDataFormatterMenu::patternSelected, this, &FileWriterSettingsDialog::addTitleString);
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QString outDir = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
     m_ui->outDirEdit->setText(settings.value(u"FileWriter/out_dir"_s, outDir).toString());
     m_ui->outFileEdit->setText(settings.value(u"FileWriter/file_name"_s, u"%p%if(%p&%t, - ,)%t"_s).toString());
@@ -51,7 +51,7 @@ FileWriterSettingsDialog::~FileWriterSettingsDialog()
 
 void FileWriterSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"FileWriter/out_dir"_s, m_ui->outDirEdit->text());
     settings.setValue(u"FileWriter/file_name"_s, m_ui->outFileEdit->text());
     settings.setValue(u"FileWriter/vorbis_quality"_s, m_ui->qualitySpinBox->value());

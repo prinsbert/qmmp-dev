@@ -31,7 +31,7 @@ Bs2bSettingsDialog::Bs2bSettingsDialog(QWidget *parent)
     m_ui->setupUi(this);
     m_ui->feedSlider->setRange(BS2B_MINFEED, BS2B_MAXFEED);
     m_ui->freqSlider->setRange(BS2B_MINFCUT, BS2B_MAXFCUT);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_level = settings.value(u"bs2b/level"_s, BS2B_DEFAULT_CLEVEL).toUInt();
     m_ui->feedSlider->setValue(m_level >> 16);
     m_ui->freqSlider->setValue(m_level & 0xffff);
@@ -44,7 +44,7 @@ Bs2bSettingsDialog::~Bs2bSettingsDialog()
 
 void Bs2bSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"bs2b/level"_s, m_ui->feedSlider->value() << 16 | m_ui->freqSlider->value());
     QDialog::accept();
 }

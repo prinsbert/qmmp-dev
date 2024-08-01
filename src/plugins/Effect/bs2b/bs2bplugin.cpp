@@ -30,7 +30,7 @@ Bs2bPlugin::Bs2bPlugin() : Effect(),
     m_bs2b_handler(bs2b_open())
 {
     m_instance = this;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     bs2b_set_level(m_bs2b_handler, settings.value(u"bs2b/level"_s, BS2B_DEFAULT_CLEVEL).toUInt());
 }
 

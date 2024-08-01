@@ -62,7 +62,7 @@ bool DecoderXmp::initialize()
 
     m_totalTime = mi.seq_data[0].duration;
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_srate = settings.value(u"Xmp/sample_rate"_s, 44100).toInt();
 
     xmp_start_player(m_ctx, m_srate, 0);
@@ -114,7 +114,7 @@ void DecoderXmp::readSettings()
 {
     if(m_ctx)
     {
-        QSettings settings;
+        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         settings.beginGroup(u"Xmp"_s);
         xmp_set_player(m_ctx, XMP_PLAYER_AMP, settings.value(u"amp_factor"_s, 1).toInt());
         xmp_set_player(m_ctx, XMP_PLAYER_MIX, settings.value(u"stereo_mix"_s, 70).toInt());

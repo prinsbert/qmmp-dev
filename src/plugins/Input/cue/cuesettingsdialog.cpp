@@ -43,7 +43,7 @@ CueSettingsDialog::CueSettingsDialog(QWidget *parent)
     for (size_t i = 0; i < n; ++i)
         m_ui->encaAnalyserComboBox->addItem(QString::fromLatin1(langs[i]));
 #endif
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"CUE"_s);
     int pos = m_ui->cueEncComboBox->findText(settings.value(u"encoding"_s, u"UTF-8"_s).toString());
     m_ui->cueEncComboBox->setCurrentIndex(pos);
@@ -65,7 +65,7 @@ CueSettingsDialog::~CueSettingsDialog()
 
 void CueSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"CUE"_s);
     settings.setValue(u"encoding"_s, m_ui->cueEncComboBox->currentText());
 #ifdef WITH_ENCA

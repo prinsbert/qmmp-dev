@@ -33,7 +33,7 @@ QmmpUiSettings::QmmpUiSettings(QObject *parent) : QObject(parent)
         qCFatal(core) << "only one instance is allowed";
     m_instance = this;
     m_helper = new MetaDataHelper;
-    QSettings s;
+    QSettings s(Qmmp::configFile(), QSettings::IniFormat);
     s.beginGroup(u"PlayList"_s);
     m_group_format = s.value(u"group_format"_s, u"%p%if(%p&%a, - %if(%y,[%y] ,),)%a"_s).toString();
     m_group_extra_row_format = s.value(u"group_extra_row_format"_s, tr("%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz")).toString();
@@ -252,7 +252,7 @@ void QmmpUiSettings::sync()
     if(m_saveSettings)
     {
         qCDebug(core) << "saving settings...";
-        QSettings s;
+        QSettings s(Qmmp::configFile(), QSettings::IniFormat);
         s.setValue(u"PlayList/group_format"_s, m_group_format);
         s.setValue(u"PlayList/group_extra_row_format"_s, m_group_extra_row_format);
         s.setValue(u"PlayList/lines_per_group"_s, m_lines_per_group);

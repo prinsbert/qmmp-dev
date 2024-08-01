@@ -46,17 +46,6 @@ namespace Qt {
 inline namespace Literals {
 inline namespace StringLiterals {
 
-
-#define u(str)_s \
-    ([]() noexcept -> QString { \
-        enum { Size = sizeof(QT_UNICODE_LITERAL(str))/2 - 1 }; \
-        static const QStaticStringData<Size> qstring_literal = { \
-            Q_STATIC_STRING_DATA_HEADER_INITIALIZER(Size), \
-            QT_UNICODE_LITERAL(str) }; \
-        QStringDataPtr holder = { qstring_literal.data_ptr() }; \
-        return QString(holder); \
-    }()) \
-
 inline QString operator""_s(const char16_t *str, size_t size) noexcept
 {
     return QString::fromUtf16(str, size);
@@ -184,6 +173,10 @@ public:
         CHAN_SIDE_RIGHT   = 0x80,   /*!< Side right channel */
         CHAN_LFE          = 0x100,  /*!< Low-frequency effects channel */
     };
+    /*!
+         * Returns the configuration file name, including the path.
+         */
+    static QString configFile();
     /*!
      * Returns the configuration directory path.
      */

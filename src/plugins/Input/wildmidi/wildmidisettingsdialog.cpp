@@ -30,7 +30,7 @@ WildMidiSettingsDialog::WildMidiSettingsDialog(QWidget *parent)
 {
     m_ui->setupUi(this);
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Midi"_s);
     QStringList files = WildMidiHelper::instance()->configFiles();
     QString conf_path = files.isEmpty() ? QString() : files.constFirst();
@@ -52,7 +52,7 @@ WildMidiSettingsDialog::~WildMidiSettingsDialog()
 
 void WildMidiSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Midi"_s);
     settings.setValue(u"conf_path"_s, m_ui->confPathComboBox->currentText());
     settings.setValue(u"sample_rate"_s,

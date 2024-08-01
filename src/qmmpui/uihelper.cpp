@@ -48,13 +48,13 @@ UiHelper::UiHelper(QObject *parent)
 {
     m_instance = this;
     General::create(parent);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_lastDir = settings.value(u"General/last_dir"_s, QDir::homePath()).toString(); //last directory
 }
 
 UiHelper::~UiHelper()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"General/last_dir"_s, m_lastDir);
 }
 

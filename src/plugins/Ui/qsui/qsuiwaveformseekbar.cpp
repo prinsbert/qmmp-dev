@@ -56,7 +56,7 @@ QSize QSUiWaveformSeekBar::sizeHint() const
 
 void QSUiWaveformSeekBar::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     m_bgColor.setNamedColor(settings.value(u"wfsb_bg_color"_s, u"Black"_s).toString());
     m_rmsColor.setNamedColor(settings.value(u"wfsb_rms_color"_s, u"#DDDDDD"_s).toString());
@@ -142,7 +142,7 @@ void QSUiWaveformSeekBar::onElapsedChanged(qint64 elapsed)
 
 void QSUiWaveformSeekBar::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     settings.setValue(u"wfsb_show_two_channels"_s, m_showTwoChannelsAction->isChecked());
     settings.setValue(u"wfsb_show_rms"_s, m_showRmsAction->isChecked());

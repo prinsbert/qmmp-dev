@@ -31,7 +31,7 @@ QmmpSettings::QmmpSettings(QObject *parent) : QObject(parent)
     if(m_instance)
         qCFatal(core) << "only one instance is allowed";
     m_instance = this;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     //replaygain settings
     settings.beginGroup(u"ReplayGain"_s);
     m_rg_mode = (ReplayGainMode) settings.value(u"mode"_s, REPLAYGAIN_DISABLED).toInt();
@@ -194,7 +194,7 @@ void QmmpSettings::setEqSettings(const EqSettings &settings)
 void QmmpSettings::readEqSettings(EqSettings::Bands bands)
 {
     m_eq_settings = EqSettings(bands);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(QStringLiteral("Equalizer_%1").arg(bands));
     for (int i = 0; i < bands; ++i)
         m_eq_settings.setGain(i, settings.value(QStringLiteral("band_%1").arg(i), 0).toDouble());
@@ -242,7 +242,7 @@ void QmmpSettings::sync()
     if(m_saveSettings)
     {
         qCDebug(core) << "saving settings...";
-        QSettings settings;
+        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         //replaygain settings
         settings.beginGroup(u"ReplayGain"_s);
         settings.setValue(u"mode"_s, m_rg_mode);

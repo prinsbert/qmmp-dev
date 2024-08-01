@@ -56,7 +56,7 @@ KdeNotify::KdeNotify(QObject *parent) : QObject(parent)
     m_coverPath = dir.absolutePath() + u"/cover.jpg"_s;
     m_imagesDir = Qmmp::dataPath() + u"/images"_s;
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Kde_Notifier"_s);
     m_notifyDuration = settings.value(u"notify_duration"_s, 5000).toInt();
     m_showCovers = settings.value(u"show_covers"_s, true).toBool();

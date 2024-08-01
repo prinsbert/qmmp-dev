@@ -35,7 +35,7 @@ MpegSettingsDialog::MpegSettingsDialog(bool using_rusxmms, QWidget *parent)
         m_ui->id3v2EncComboBox->addItem(QString::fromLatin1(codec->name()));
     }
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"MPEG"_s);
 
 #if defined(WITH_MAD) && defined(WITH_MPG123)
@@ -79,7 +79,7 @@ MpegSettingsDialog::~MpegSettingsDialog()
 
 void MpegSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"MPEG"_s);
     settings.setValue(u"decoder"_s, m_ui->mpg123RadioButton->isChecked() ? u"mpg123"_s : u"mad"_s);
     settings.setValue(u"enable_crc"_s, m_ui->enableCrcCheckBox->isChecked());

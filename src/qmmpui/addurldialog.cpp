@@ -40,7 +40,7 @@ AddUrlDialog::AddUrlDialog(QWidget *parent) : QDialog(parent), m_ui(new Ui::AddU
     m_ui->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     setAttribute(Qt::WA_QuitOnClose, false);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_history = settings.value(u"URLDialog/history"_s).toStringList();
     m_ui->urlComboBox->addItems(m_history);
     m_downloader = new PlayListDownloader(this);
@@ -61,7 +61,7 @@ AddUrlDialog::~AddUrlDialog()
 {
     while (m_history.size() > HISTORY_SIZE)
         m_history.removeLast();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"URLDialog/history"_s, m_history);
     delete m_ui;
 }

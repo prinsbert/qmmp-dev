@@ -52,7 +52,7 @@ SkinnedTitleBar::SkinnedTitleBar(SkinnedTimeIndicatorModel *model, QWidget *pare
     m_close = new SkinnedButton(this,Skin::BT_CLOSE_N,Skin::BT_CLOSE_P, Skin::CUR_CLOSE);
     connect(m_close, &SkinnedButton::clicked, m_mw, &SkinnedMainWindow::close);
     setActive(false);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     if(settings.value("Skinned/disp_shaded"_L1, false).toBool())
         shade();
     m_align = true;
@@ -63,7 +63,7 @@ SkinnedTitleBar::SkinnedTitleBar(SkinnedTimeIndicatorModel *model, QWidget *pare
 
 SkinnedTitleBar::~SkinnedTitleBar()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("Skinned/disp_shaded"_L1, m_shaded);
 }
 

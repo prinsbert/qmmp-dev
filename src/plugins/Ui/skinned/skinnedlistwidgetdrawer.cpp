@@ -46,7 +46,7 @@ SkinnedListWidgetDrawer::~SkinnedListWidgetDrawer()
 
 void SkinnedListWidgetDrawer::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     m_show_anchor = settings.value("pl_show_anchor"_L1, false).toBool();
     m_show_numbers = settings.value ("pl_show_numbers"_L1, true).toBool();

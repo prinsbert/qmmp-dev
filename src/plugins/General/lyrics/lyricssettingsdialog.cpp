@@ -29,7 +29,7 @@ LyricsSettingsDialog::LyricsSettingsDialog(QWidget *parent) :
     m_ui(new Ui::LyricsSettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;  
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);  
     UltimateLyricsParser parser;
     parser.load(u":/ultimate_providers.xml"_s);
     QStringList enabledProviders = settings.value(u"Lyrics/enabled_providers"_s, parser.defaultProviders()).toStringList();
@@ -49,7 +49,7 @@ LyricsSettingsDialog::~LyricsSettingsDialog()
 
 void LyricsSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QStringList enabledProviders;
     for(int i = 0; i < m_ui->providersListWidget->count(); ++i)
     {

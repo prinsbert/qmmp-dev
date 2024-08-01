@@ -98,7 +98,7 @@ void QSUiSettings::loadFonts()
     extraRowDefaultFont.setPointSize(extraRowDefaultFont.pointSize() - 1);
     extraRowDefaultFont.setStyle(QFont::StyleItalic);
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     m_ui->systemFontsCheckBox->setChecked(settings.value(u"use_system_fonts"_s, true).toBool());
     setFont(m_ui->plFontLabel, settings.value(u"pl_font"_s, qApp->font("QAbstractItemView").toString()).toString());
@@ -132,7 +132,7 @@ void QSUiSettings::on_customizeToolBarButton_clicked()
 
 void QSUiSettings::on_resetFontsButton_clicked()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.remove(u"Simple/pl_font"_s);
     settings.remove(u"Simple/pl_group_font"_s);
     settings.remove(u"Simple/pl_extra_row_font"_s);
@@ -152,7 +152,7 @@ void QSUiSettings::on_resetColorsButton_clicked()
 
 void QSUiSettings::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     //playlist
     m_ui->protocolCheckBox->setChecked(settings.value(u"pl_show_protocol"_s, false).toBool());
@@ -212,7 +212,7 @@ void QSUiSettings::readSettings()
 
 void QSUiSettings::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     settings.setValue(u"pl_show_protocol"_s, m_ui->protocolCheckBox->isChecked());
     settings.setValue(u"pl_show_numbers"_s, m_ui->numbersCheckBox->isChecked());

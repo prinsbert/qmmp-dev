@@ -65,7 +65,7 @@ SkinnedTextScroller::SkinnedTextScroller (QWidget *parent) : QWidget (parent),
 
 SkinnedTextScroller::~SkinnedTextScroller()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("Skinned/autoscroll"_L1, m_scrollAction->isChecked());
     settings.setValue("Skinned/scroller_transparency"_L1, m_transparencyAction->isChecked());
     delete m_metrics;
@@ -102,7 +102,7 @@ void SkinnedTextScroller::updateSkin()
 {
     setCursor(m_skin->getCursor(Skin::CUR_SONGNAME));
     m_color = m_skin->getMainColor(Skin::MW_FOREGROUND);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_bitmap = settings.value("Skinned/bitmap_font"_L1, false).toBool();
     m_ratio = m_skin->ratio();
     QString fontname = settings.value("Skinned/mw_font"_L1, QApplication::font().toString()).toString();

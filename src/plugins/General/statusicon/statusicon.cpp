@@ -40,7 +40,7 @@ StatusIcon::StatusIcon(QObject *parent) : QObject(parent)
     //m_tray->show();
     m_core = SoundCore::instance();
     m_player = MediaPlayer::instance();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Tray"_s);
     m_showMessage = settings.value(u"show_message"_s, false).toBool();
     m_messageDelay = settings.value(u"message_delay"_s, 2000).toInt();

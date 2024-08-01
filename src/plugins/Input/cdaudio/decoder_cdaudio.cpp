@@ -93,7 +93,7 @@ DecoderCDAudio::~DecoderCDAudio()
 QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackInfo::Parts parts)
 {
     //read settings
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     int cd_speed = settings.value(u"cdaudio/speed"_s, 0).toInt();
     bool use_cd_text = settings.value(u"cdaudio/cdtext"_s, true).toBool();
     QList<CDATrack> tracks;
@@ -392,7 +392,7 @@ bool DecoderCDAudio::initialize()
 
     if (device_path.isEmpty() || device_path == "/"_L1) //try default path from config
     {
-        QSettings settings;
+        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         device_path = settings.value("cdaudio/device"_L1).toString();
         m_url = QStringLiteral("cdda://%1#%2").arg(device_path).arg(track_number);
     }

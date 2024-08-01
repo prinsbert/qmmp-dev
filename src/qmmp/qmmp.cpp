@@ -47,6 +47,11 @@ Q_LOGGING_CATEGORY(plugin, "qmmp.plugin", QtWarningMsg)
 #endif
 
 
+QString Qmmp::configFile()
+{
+    return configDir() + QStringLiteral("/qmmprc");
+}
+
 QString Qmmp::configDir()
 {
 #ifdef Q_OS_WIN
@@ -148,7 +153,7 @@ QString Qmmp::systemLanguageID()
 
 QString Qmmp::uiLanguageID()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QString langID = settings.value(u"General/locale"_s, u"auto"_s).toString();
     langID = langID.isEmpty() ? u"auto"_s : langID;
     return langID;
@@ -156,7 +161,7 @@ QString Qmmp::uiLanguageID()
 
 void Qmmp::setUiLanguageID(const QString &code)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"General/locale"_s, code);
     m_langID.clear();
 }

@@ -116,7 +116,7 @@ void Visual::setEnabled(VisualFactory *factory, bool enable)
         return;
 
     QString name = factory->properties().shortName;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QStringList visList = settings.value(u"Visualization/enabled_plugins"_s).toStringList();
 
     if (enable)
@@ -145,7 +145,7 @@ bool Visual::isEnabled(const VisualFactory *factory)
 {
     checkFactories();
     QString name = factory->properties().shortName;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     QStringList visList = settings.value(u"Visualization/enabled_plugins"_s).toStringList();
     return visList.contains(name);
 }

@@ -44,7 +44,7 @@ CueFile::CueFile(const QString &path) : CueParser()
     QByteArray data = file.readAll();
     file.close();
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"CUE"_s);
     m_dirty = settings.value(u"dirty_cue"_s, false).toBool();
     QTextCodec *codec = nullptr;

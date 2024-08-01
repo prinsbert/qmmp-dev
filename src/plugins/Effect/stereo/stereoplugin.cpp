@@ -31,7 +31,7 @@ StereoPlugin *StereoPlugin::m_instance = nullptr;
 StereoPlugin::StereoPlugin() : Effect()
 {
     m_instance = this;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_mul = settings.value(u"extra_stereo/intensity"_s, 1.0).toDouble();
 }
 

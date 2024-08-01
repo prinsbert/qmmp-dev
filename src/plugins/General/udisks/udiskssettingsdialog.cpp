@@ -26,7 +26,7 @@ UDisksSettingsDialog::UDisksSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::UDisksSettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"UDisks"_s);
     m_ui->cdGroupBox->setChecked(settings.value(u"cda"_s, true).toBool());
     m_ui->addTracksCheckBox->setChecked(settings.value(u"add_tracks"_s, false).toBool());
@@ -45,7 +45,7 @@ UDisksSettingsDialog::~UDisksSettingsDialog()
 
 void UDisksSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"UDisks"_s);
     settings.setValue(u"cda"_s, m_ui->cdGroupBox->isChecked());
     settings.setValue(u"add_tracks"_s, m_ui->addTracksCheckBox->isChecked());

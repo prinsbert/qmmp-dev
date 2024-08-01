@@ -28,7 +28,7 @@ StereoSettingsDialog::StereoSettingsDialog(QWidget *parent)
         : QDialog(parent), m_ui(new Ui::StereoSettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_level = settings.value(u"extra_stereo/intensity"_s, 1.0).toDouble();
     m_ui->intensitySlider->setValue(m_level * 100 / 10.0);
 }
@@ -40,7 +40,7 @@ StereoSettingsDialog::~StereoSettingsDialog()
 
 void StereoSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"extra_stereo/intensity"_s, m_ui->intensitySlider->value() * 10.0 / 100);
     QDialog::accept();
 }

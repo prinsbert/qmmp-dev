@@ -28,7 +28,7 @@ CrossfadePlugin::CrossfadePlugin() : Effect()
 {
     m_core = SoundCore::instance() ;
     m_handler = StateHandler::instance();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_overlap = settings.value(u"Crossfade/overlap"_s, 6000).toLongLong();
 }
 

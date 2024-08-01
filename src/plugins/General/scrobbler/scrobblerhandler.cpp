@@ -25,7 +25,7 @@
 
 ScrobblerHandler::ScrobblerHandler(QObject *parent) : QObject(parent)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Scrobbler"_s);
     if(settings.value(u"use_lastfm"_s, false).toBool())
         new Scrobbler(SCROBBLER_LASTFM_URL, u"lastfm"_s, this);

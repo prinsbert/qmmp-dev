@@ -177,7 +177,7 @@ void QSUiActionManager::readStates()
 
 void QSUiActionManager::saveStates()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Simple"_s);
     settings.setValue(u"pl_show_header"_s, m_actions[PL_SHOW_HEADER]->isChecked());
     settings.endGroup();
@@ -185,7 +185,7 @@ void QSUiActionManager::saveStates()
 
 void QSUiActionManager::saveActions()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"SimpleUiShortcuts"_s);
 
     for(const QAction *action : std::as_const(m_actions))
@@ -223,7 +223,7 @@ void QSUiActionManager::registerAction(int id, QAction *action, const QString &c
     if(m_actions.value(id))
         qCFatal(plugin) << "invalid action id";
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"SimpleUiShortcuts"_s);
     action->setShortcut(settings.value(confKey, key).toString());
     action->setProperty("defaultShortcut", key);
@@ -247,7 +247,7 @@ void QSUiActionManager::registerWidget(int id, QWidget *w, const QString &text, 
 
 void QSUiActionManager::registerDockWidget(QDockWidget *w, const QString &confKey, const QString &key)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"SimpleUiShortcuts"_s);
     w->toggleViewAction()->setShortcut(settings.value(confKey, key).toString());
     settings.endGroup();
@@ -316,7 +316,7 @@ QSUiActionManager::ToolBarInfo QSUiActionManager::defaultToolBar() const
 QList<QSUiActionManager::ToolBarInfo> QSUiActionManager::readToolBarSettings() const
 {
     QList<ToolBarInfo> list;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     int iconSize = settings.value(u"Simple/toolbar_icon_size"_s, -1).toInt();
     if(iconSize <= 0)
         iconSize = qApp->style()->pixelMetric(QStyle::PM_ToolBarIconSize);
@@ -342,7 +342,7 @@ QList<QSUiActionManager::ToolBarInfo> QSUiActionManager::readToolBarSettings() c
 
 void QSUiActionManager::writeToolBarSettings(const QList<ToolBarInfo> &l)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginWriteArray(u"SimpleUiToolbars"_s);
     for(int i = 0; i < l.size(); ++i)
     {

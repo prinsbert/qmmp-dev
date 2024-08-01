@@ -37,7 +37,7 @@ void General::loadPlugins()
         return;
 
     m_cache = new QList<QmmpUiPluginCache*>;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     for(const QString &filePath : Qmmp::findPlugins(u"General"_s))
     {
         QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
@@ -156,7 +156,7 @@ void General::setEnabled(GeneralFactory *factory, bool enable)
     if(enable == isEnabled(factory))
         return;
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
 
     if(enable)
         m_enabledNames << factory->properties().shortName;

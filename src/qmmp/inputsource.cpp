@@ -250,7 +250,7 @@ void InputSource::setEnabled(InputSourceFactory *factory, bool enable)
         m_disabledNames.append(factory->properties().shortName);
 
     m_disabledNames.removeDuplicates();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue("Transports/disabled_plugins"_L1, m_disabledNames);
 }
 
@@ -266,7 +266,7 @@ void InputSource::loadPlugins()
         return;
 
     m_cache = new QList<QmmpPluginCache*>;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     for(const QString &filePath : Qmmp::findPlugins(u"Transports"_s))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);

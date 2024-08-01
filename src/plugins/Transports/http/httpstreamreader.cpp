@@ -145,7 +145,7 @@ HttpStreamReader::HttpStreamReader(const QString &url, HTTPInputSource *parent) 
 {
     curl_global_init(CURL_GLOBAL_ALL);
     m_thread = new DownloadThread(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("HTTP"_L1);
     m_codec = QTextCodec::codecForName(settings.value("icy_encoding"_L1, "UTF-8"_ba).toByteArray());
     m_prebufferSize = settings.value("buffer_size"_L1, 384).toInt() * 1024;

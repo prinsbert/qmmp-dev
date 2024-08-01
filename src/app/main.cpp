@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     //using XWayland for skinned user interface
     if(qEnvironmentVariable("XDG_SESSION_TYPE") == QLatin1String("wayland") && !qEnvironmentVariableIsSet("QT_QPA_PLATFORM"))
     {
-        QSettings settings(QStringLiteral("qmmp"), QStringLiteral("qmmp"));
+        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         if(settings.value(QStringLiteral("Ui/current_plugin")).toString() == QLatin1String("skinned"))
             qputenv("QT_QPA_PLATFORM", "xcb");
     }
@@ -58,14 +58,14 @@ int main(int argc, char *argv[])
     a.setOrganizationName(u"qmmp"_s);
 
     QIcon icon;
-    icon.addFile(u":/16x16/qmmp.png"_s);
-    icon.addFile(u":/32x32/qmmp.png"_s);
-    icon.addFile(u":/48x48/qmmp.png"_s);
-    icon.addFile(u":/56x56/qmmp.png"_s);
-    icon.addFile(u":/64x64/qmmp.png"_s);
-    icon.addFile(u":/128x128/qmmp.png"_s);
-    icon.addFile(u":/256x256/qmmp.png"_s);
-    icon.addFile(u":/scalable/qmmp.svgz"_s);
+    icon.addFile(u":/16x16/qmmp-1.png"_s);
+    icon.addFile(u":/32x32/qmmp-1.png"_s);
+    icon.addFile(u":/48x48/qmmp-1.png"_s);
+    icon.addFile(u":/56x56/qmmp-1.png"_s);
+    icon.addFile(u":/64x64/qmmp-1.png"_s);
+    icon.addFile(u":/128x128/qmmp-1.png"_s);
+    icon.addFile(u":/256x256/qmmp-1.png"_s);
+    icon.addFile(u":/scalable/qmmp-1.svgz"_s);
     a.setWindowIcon(icon);
 
     QMMPStarter starter;

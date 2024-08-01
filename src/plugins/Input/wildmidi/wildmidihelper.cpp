@@ -50,7 +50,7 @@ bool WildMidiHelper::initialize()
         return true;
     }
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Midi"_s);
     unsigned short int mixer_options = 0;
     QString conf_path = configFiles().isEmpty() ? QString() : configFiles().constFirst();

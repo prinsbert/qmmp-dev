@@ -45,7 +45,7 @@ PlayListHeaderModel::~PlayListHeaderModel()
 
 void PlayListHeaderModel::restoreSettings(const QString &groupName)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(groupName);
     restoreSettings(&settings);
     settings.endGroup();
@@ -71,7 +71,7 @@ void PlayListHeaderModel::restoreSettings(QSettings *settings)
 
 void PlayListHeaderModel::saveSettings(const QString &groupName)
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(groupName);
     saveSettings(&settings);
     settings.endGroup();

@@ -125,7 +125,7 @@ void Decoder::loadPlugins()
         return;
 
     m_cache = new QList<QmmpPluginCache*>;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     for(const QString &filePath : Qmmp::findPlugins(u"Input"_s))
     {
         QmmpPluginCache *item = new QmmpPluginCache(filePath, &settings);
@@ -291,7 +291,7 @@ void Decoder::setEnabled(DecoderFactory *factory, bool enable)
         m_disabledNames.append(factory->properties().shortName);
 
     m_disabledNames.removeDuplicates();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"Decoder/disabled_plugins"_s, m_disabledNames);
 }
 

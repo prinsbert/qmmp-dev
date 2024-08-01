@@ -74,7 +74,7 @@ SkinnedListWidget::~SkinnedListWidget()
 
 void SkinnedListWidget::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     m_show_protocol = settings.value("pl_show_protocol"_L1, false).toBool();
     bool show_popup = settings.value("pl_show_popup"_L1, false).toBool();

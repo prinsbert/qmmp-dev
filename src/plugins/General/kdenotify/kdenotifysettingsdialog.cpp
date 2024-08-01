@@ -31,7 +31,7 @@ KdeNotifySettingsDialog::KdeNotifySettingsDialog(QWidget *parent) :
 {
     m_ui->setupUi(this);
 
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Kde_Notifier"_s);
     m_ui->notifyDelaySpinBox->setValue(settings.value(u"notify_duration"_s, 5000).toInt() / 1000);
     m_ui->showCoversCheckBox->setChecked(settings.value(u"show_covers"_s, true).toBool());
@@ -48,7 +48,7 @@ KdeNotifySettingsDialog::~KdeNotifySettingsDialog()
 
 void KdeNotifySettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Kde_Notifier"_s);
     settings.setValue(u"notify_duration"_s, m_ui->notifyDelaySpinBox->value() * 1000);
     settings.setValue(u"show_covers"_s, m_ui->showCoversCheckBox->isChecked());

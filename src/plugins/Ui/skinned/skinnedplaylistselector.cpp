@@ -55,7 +55,7 @@ SkinnedPlayListSelector::~SkinnedPlayListSelector()
 
 void SkinnedPlayListSelector::readSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     m_font.fromString(settings.value("pl_font"_L1, QApplication::font().toString()).toString());
     if (m_metrics)

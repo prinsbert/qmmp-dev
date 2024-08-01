@@ -37,7 +37,7 @@ void UiLoader::loadPlugins()
         return;
 
     m_cache = new QList<QmmpUiPluginCache*>;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     for(const QString &filePath : Qmmp::findPlugins(u"Ui"_s))
     {
         QmmpUiPluginCache *item = new QmmpUiPluginCache(filePath, &settings);
@@ -91,7 +91,7 @@ void UiLoader::select(const QString &name)
     loadPlugins();
     if(std::any_of(m_cache->cbegin(), m_cache->cend(), [name](QmmpUiPluginCache *item) { return item->shortName() == name; } ))
     {
-        QSettings settings;
+        QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
         settings.setValue (u"Ui/current_plugin"_s, name);
     }
 }
@@ -99,7 +99,7 @@ void UiLoader::select(const QString &name)
 UiFactory *UiLoader::selected()
 {
     loadPlugins();
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
 #ifdef Q_OS_UNIX
     QString defaultUi = QStringLiteral(QMMP_DEFAULT_UI);
     if(defaultUi == QLatin1String("skinned") && qApp->platformName() == QLatin1String("wayland"))

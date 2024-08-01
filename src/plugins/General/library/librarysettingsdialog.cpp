@@ -32,7 +32,7 @@ LibrarySettingsDialog::LibrarySettingsDialog(QWidget *parent) :
     m_ui(new Ui::LibrarySettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_lastPath = settings.value(u"Library/last_path"_s, QDir::homePath()).toString();
     QStringList dirs = settings.value(u"Library/dirs"_s).toStringList();
     m_ui->dirsListWidget->addItems(dirs);
@@ -47,7 +47,7 @@ LibrarySettingsDialog::~LibrarySettingsDialog()
 
 void LibrarySettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"Library/last_path"_s, m_lastPath);
 
     QStringList dirs;

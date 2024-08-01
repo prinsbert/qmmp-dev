@@ -28,7 +28,7 @@ GmeSettingsDialog::GmeSettingsDialog(QWidget *parent) :
     m_ui(new Ui::GmeSettingsDialog)
 {
     m_ui->setupUi(this);
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_ui->fadeoutCheckBox->setChecked(settings.value(u"GME/fadeout"_s, false).toBool());
     m_ui->fadeoutSpinBox->setValue(settings.value(u"GME/fadeout_length"_s, 7000).toInt());
 }
@@ -40,7 +40,7 @@ GmeSettingsDialog::~GmeSettingsDialog()
 
 void GmeSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"GME/fadeout"_s, m_ui->fadeoutCheckBox->isChecked());
     settings.setValue(u"GME/fadeout_length"_s, m_ui->fadeoutSpinBox->value());
     QDialog::accept();

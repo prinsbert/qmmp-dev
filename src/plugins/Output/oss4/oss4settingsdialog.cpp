@@ -86,7 +86,7 @@ Oss4SettingsDialog::Oss4SettingsDialog (QWidget *parent) : QDialog (parent), m_u
                                                                         QString::fromLatin1(audio_info.devnode)));
         }
     }
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_ui->deviceComboBox->setEditText(settings.value(u"OSS4/device"_s, QStringLiteral(DEFAULT_DEV)).toString());
     connect(m_ui->deviceComboBox, &QComboBox::activated, this, &Oss4SettingsDialog::setText);
 }
@@ -104,7 +104,7 @@ void Oss4SettingsDialog::setText(int n)
 void Oss4SettingsDialog::accept()
 {
     qCDebug(plugin) << Q_FUNC_INFO;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"OSS4/device"_s, m_ui->deviceComboBox->currentText());
     QDialog::accept();
 }

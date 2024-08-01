@@ -72,7 +72,7 @@ CueEditor::CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *paren
     m_ui->setupUi(this);
     m_ui->plainTextEdit->setPlainText(model->cue());
     m_parser.loadData(model->cue().toUtf8());
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_lastDir = settings.value(u"CueEditor/last_dir"_s,  QDir::homePath()).toString();
     if(!settings.value(u"CueEditor/use_system_font"_s, true).toBool())
     {
@@ -94,7 +94,7 @@ CueEditor::CueEditor(MetaDataModel *model, const TrackInfo &info, QWidget *paren
 
 CueEditor::~CueEditor()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.setValue(u"CueEditor/last_dir"_s, m_lastDir);
 
     delete m_ui;

@@ -32,7 +32,7 @@ StatusIconSettingsDialog::StatusIconSettingsDialog(QWidget *parent)
     m_ui->setupUi(this);
     connect(m_ui->transparencySlider, &QSlider::valueChanged, m_ui->niceTooltipOpacityValueLabel, qOverload<int>(&QLabel::setNum));
     connect(m_ui->coverSizeSlider, &QSlider::valueChanged, m_ui->niceTooltipOpacityValueLabel_2, qOverload<int>(&QLabel::setNum));
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Tray"_s);
     m_ui->messageGroupBox->setChecked(settings.value(u"show_message"_s, false).toBool());
     m_ui->messageDelaySpinBox->setValue(settings.value(u"message_delay"_s, 2000).toInt());
@@ -62,7 +62,7 @@ StatusIconSettingsDialog::~StatusIconSettingsDialog()
 
 void StatusIconSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Tray"_s);
     settings.setValue(u"show_message"_s, m_ui->messageGroupBox->isChecked());
     settings.setValue(u"message_delay"_s, m_ui->messageDelaySpinBox->value());

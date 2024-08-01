@@ -37,7 +37,7 @@ XmpSettingsDialog::XmpSettingsDialog(QWidget *parent)
     m_ui->intTypeComboBox->addItem(tr("Linear"), XMP_INTERP_LINEAR);
     m_ui->intTypeComboBox->addItem(tr("Cubic spline"), XMP_INTERP_SPLINE);
     //load settings
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Xmp"_s);
     m_ui->ampFactorSpinBox->setValue(settings.value(u"amp_factor"_s, 1).toInt());
     m_ui->stereoMixingSpinBox->setValue(settings.value(u"stereo_mix"_s, 70).toInt());
@@ -62,7 +62,7 @@ XmpSettingsDialog::~XmpSettingsDialog()
 
 void XmpSettingsDialog::writeSettings()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"Xmp"_s);
     settings.setValue(u"amp_factor"_s, m_ui->ampFactorSpinBox->value());
     settings.setValue(u"stereo_mix"_s, m_ui->stereoMixingSpinBox->value());

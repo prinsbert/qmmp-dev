@@ -170,7 +170,7 @@ MpegFileTagModel::MpegFileTagModel(bool using_rusxmms, TagLib::MPEG::File *file,
           m_type(type)
 {
     QByteArray codecName;
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"MPEG"_s);
     if(m_type == TagLib::MPEG::File::ID3v1)
     {

@@ -32,7 +32,7 @@ SkinnedActionManager::SkinnedActionManager(QObject *parent) :
     QObject(parent)
 {
     m_instance = this;
-    m_settings = new QSettings;
+    m_settings = new QSettings(Qmmp::configFile(), QSettings::IniFormat);
     m_settings->beginGroup("SkinnedShortcuts"_L1);
     m_actions = {
         //playback
@@ -156,7 +156,7 @@ void SkinnedActionManager::readStates()
 
 void SkinnedActionManager::saveStates()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("Skinned"_L1);
     settings.setValue("pl_show_header"_L1, m_actions[PL_SHOW_HEADER]->isChecked());
     settings.setValue("pl_show_tabbar"_L1, m_actions[PL_SHOW_TABBAR]->isChecked());
@@ -165,7 +165,7 @@ void SkinnedActionManager::saveStates()
 
 void SkinnedActionManager::saveActions()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     for(const QAction *action : std::as_const(m_actions))
     {
         settings.setValue(QStringLiteral("SkinnedShortcuts/") + action->objectName(), action->shortcut());

@@ -39,7 +39,7 @@ HttpSettingsDialog::HttpSettingsDialog(QWidget *parent) : QDialog(parent), m_ui(
     for (size_t i = 0; i < n; ++i)
         m_ui->encaAnalyserComboBox->addItem(QString::fromLatin1(langs[i]));
 #endif
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("HTTP"_L1);
     int pos = m_ui->icyEncodingComboBox->findText(settings.value("icy_encoding"_L1, u"UTF-8"_s).toString());
     m_ui->icyEncodingComboBox->setCurrentIndex(pos);
@@ -65,7 +65,7 @@ HttpSettingsDialog::~HttpSettingsDialog()
 
 void HttpSettingsDialog::accept()
 {
-    QSettings settings;
+    QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("HTTP"_L1);
     settings.setValue("icy_encoding"_L1, m_ui->icyEncodingComboBox->currentText());
     settings.setValue("buffer_size"_L1, m_ui->bufferSizeSpinBox->value());
