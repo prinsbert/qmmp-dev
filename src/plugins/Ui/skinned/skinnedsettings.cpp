@@ -42,6 +42,12 @@ SkinnedSettings::SkinnedSettings(QWidget *parent) : QWidget(parent), m_ui(new Ui
     connect(m_ui->plTransparencySlider, &QSlider::valueChanged, m_ui->plTransparencyLabel, qOverload<int>(&QLabel::setNum));
     connect(m_ui->mwTransparencySlider, &QSlider::valueChanged, m_ui->mwTransparencyLabel, qOverload<int>(&QLabel::setNum));
     connect(m_ui->eqTransparencySlider, &QSlider::valueChanged, m_ui->eqTransparencyLabel, qOverload<int>(&QLabel::setNum));
+    connect(m_ui->mainFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->mainFontLabel); });
+    connect(m_ui->plFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->plFontLabel); });
+    connect(m_ui->groupFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->groupFontLabel); });
+    connect(m_ui->extraRowFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->extraRowFontLabel); });
+    connect(m_ui->headerFontButton, &QToolButton::clicked, this, [this] { selectFont(m_ui->headerFontLabel); });
+
     readSettings();
     loadSkins();
     loadFonts();
@@ -59,48 +65,14 @@ void SkinnedSettings::on_listWidget_itemClicked(QListWidgetItem *item)
     m_skin->setSkin(m_currentSkinPath, true);
 }
 
-void SkinnedSettings::on_plFontButton_clicked()
-{
-    bool ok;
-    QFont font = m_ui->plFontLabel->font();
-    font = QFontDialog::getFont (&ok, font, this);
-    if(ok)
-    {
-        m_ui->plFontLabel->setText(font.family() + QChar::Space + QString::number(font.pointSize()));
-        m_ui->plFontLabel->setFont(font);
-    }
-}
-
-void SkinnedSettings::on_headerFontButton_clicked()
-{
-    bool ok;
-    QFont font = m_ui->plFontLabel->font();
-    font = QFontDialog::getFont(&ok, font, this);
-    if(ok)
-    {
-        m_ui->headerFontLabel->setText(font.family() + QChar::Space + QString::number(font.pointSize()));
-        m_ui->headerFontLabel->setFont(font);
-    }
-}
-
-void SkinnedSettings::on_mainFontButton_clicked()
-{
-    bool ok;
-    QFont font = m_ui->mainFontLabel->font();
-    font = QFontDialog::getFont (&ok, font, this);
-    if(ok)
-    {
-        m_ui->mainFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize()));
-        m_ui->mainFontLabel->setFont(font);
-    }
-}
-
 void SkinnedSettings::on_resetFontsButton_clicked()
 {
     QSettings settings;
-    settings.remove("Skinned/pl_font"_L1);
-    settings.remove("Skinned/pl_header_font"_L1);
     settings.remove("Skinned/mw_font"_L1);
+    settings.remove("Skinned/pl_font"_L1);
+    settings.remove("Skinned/pl_group_font"_L1);
+    settings.remove("Skinned/pl_extra_row_font"_L1);
+    settings.remove("Skinned/pl_header_font"_L1);
     loadFonts();
 }
 
@@ -122,27 +94,40 @@ void SkinnedSettings::showEvent(QShowEvent *)
     m_ui->hideOnCloseCheckBox->setEnabled(UiHelper::instance()->visibilityControl());
 }
 
-void SkinnedSettings::loadFonts()
+void SkinnedSettings::selectFont(QLabel *label)
+{
+    bool ok = false;
+    QFont font = QFontDialog::getFont(&ok, label->font(), this);
+    if(ok)
+    {
+        label->setText(font.family() + QChar::Space + QString::number(font.pointSize()));
+        label->setFont(font);
+    }
+}
+
+void SkinnedSettings::setFont(QLabel *label, const QString &fontName)
 {
     QFont font;
+    font.fromString(fontName);
+    label->setText(font.family() + QChar::Space + QString::number(font.pointSize()));
+    label->setFont(font);
+}
+
+void SkinnedSettings::loadFonts()
+{
+    QFont extraRowDefaultFont = qApp->font();
+    extraRowDefaultFont.setPointSize(extraRowDefaultFont.pointSize() - 1);
+    extraRowDefaultFont.setStyle(QFont::StyleItalic);
+
     QSettings settings;
-
-    QString fontname = settings.value ("Skinned/pl_font"_L1, qApp->font().toString()).toString();
-    font.fromString(fontname);
-    m_ui->plFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize ()));
-    m_ui->plFontLabel->setFont(font);
-
-    fontname = settings.value("Skinned/pl_header_font"_L1, qApp->font().toString()).toString();
-    font.fromString(fontname);
-    m_ui->headerFontLabel->setText (font.family () + QChar::Space + QString::number(font.pointSize ()));
-    m_ui->headerFontLabel->setFont(font);
-
-    fontname = settings.value("Skinned/mw_font"_L1, qApp->font().toString()).toString();
-    font.fromString(fontname);
-    m_ui->mainFontLabel->setText (font.family() + QChar::Space + QString::number(font.pointSize ()));
-    m_ui->mainFontLabel->setFont(font);
-
-    m_ui->useBitmapCheckBox->setChecked(settings.value("Skinned/bitmap_font"_L1, false).toBool());
+    settings.beginGroup("Skinned"_L1);
+    setFont(m_ui->mainFontLabel, settings.value("mw_font"_L1, qApp->font().toString()).toString());
+    setFont(m_ui->plFontLabel, settings.value("pl_font"_L1, qApp->font().toString()).toString());
+    setFont(m_ui->groupFontLabel, settings.value(u"pl_group_font"_s, qApp->font().toString()).toString());
+    setFont(m_ui->extraRowFontLabel, settings.value(u"pl_extra_row_font"_s, extraRowDefaultFont.toString()).toString());
+    setFont(m_ui->headerFontLabel, settings.value(u"pl_header_font"_s, qApp->font().toString()).toString());
+    m_ui->useBitmapCheckBox->setChecked(settings.value("bitmap_font"_L1, false).toBool());
+    settings.endGroup();
 }
 
 void SkinnedSettings::createActions()
@@ -286,7 +271,9 @@ void SkinnedSettings::writeSettings()
     settings.setValue("window_title_format"_L1, m_ui->windowTitleLineEdit->text());
     settings.setValue("mw_font"_L1, m_ui->mainFontLabel->font().toString());
     settings.setValue("pl_font"_L1, m_ui->plFontLabel->font().toString());
-    settings.setValue("pl_header_font"_L1, m_ui->headerFontLabel->font().toString());
+    settings.setValue("pl_group_font"_L1, m_ui->groupFontLabel->font().toString());
+    settings.setValue("pl_extra_row_font"_L1, m_ui->extraRowFontLabel->font().toString());
+    settings.setValue("pl_header_font"_L1,  m_ui->headerFontLabel->font().toString());
     //playlist colors
     settings.setValue("pl_use_skin_colors"_L1, m_ui->plSkinColorsCheckBox->isChecked());
     settings.setValue("pl_bg1_color"_L1, m_ui->plBg1Color->colorName());

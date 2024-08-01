@@ -25,6 +25,7 @@
 #include <QFileInfo>
 
 class QListWidgetItem;
+class QLabel;
 class SkinReader;
 class Skin;
 
@@ -42,9 +43,6 @@ public:
 
 private slots:
     void on_listWidget_itemClicked(QListWidgetItem *item);
-    void on_plFontButton_clicked();
-    void on_headerFontButton_clicked();
-    void on_mainFontButton_clicked();
     void on_resetFontsButton_clicked();
     void on_skinInstallButton_clicked();
     void loadSkins();
@@ -54,6 +52,8 @@ private slots:
 
 private:
     void showEvent(QShowEvent *) override;
+    void selectFont(QLabel *label);
+    void setFont(QLabel *label, const QString &fontName);
     void loadFonts();
     void createActions();
     void readSettings();
