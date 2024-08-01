@@ -68,11 +68,6 @@ void SkinnedListWidgetDrawer::readSettings()
         m_fonts[PL_GROUP_FONT_EXTRA].fromString(settings.value(u"pl_extra_row_font"_s, m_fonts[PL_GROUP_FONT_EXTRA].toString()).toString());
     }
 
-    m_fonts[PL_GROUP_FONT] = m_fonts[MAIN_FONT_NORMAL];
-    m_fonts[PL_GROUP_FONT_EXTRA] = m_fonts[MAIN_FONT_NORMAL];
-    m_fonts[PL_GROUP_FONT_EXTRA].setPointSize(defaultFont.pointSize() - 1);
-    m_fonts[PL_GROUP_FONT_EXTRA].setStyle(QFont::StyleItalic);
-
     //m_fonts[MAIN_FONT_BOLD].setBold(true);
     m_fonts[MAIN_FONT_EXTRA] = m_fonts[MAIN_FONT_NORMAL];
     m_fonts[MAIN_FONT_EXTRA].setPointSize(m_fonts[MAIN_FONT_NORMAL].pointSize() - 1);
