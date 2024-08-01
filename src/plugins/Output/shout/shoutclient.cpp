@@ -53,7 +53,7 @@ void ShoutClient::readSettings()
                     toLatin1().constData());
     shout_set_meta(m_shout_conn, SHOUT_META_NAME, "qmmp");
     shout_set_user(m_shout_conn, settings.value(u"user"_s, u"source"_s).toString().toLatin1().constData());
-    shout_set_public(m_shout_conn, settings.value("public", false).toBool() ? 1 : 0);
+    shout_set_public(m_shout_conn, settings.value("public"_L1, false).toBool() ? 1 : 0);
     shout_set_content_format(m_shout_conn, SHOUT_FORMAT_OGG, SHOUT_USAGE_AUDIO, nullptr);
     shout_set_protocol(m_shout_conn, SHOUT_PROTOCOL_HTTP);
     shout_set_agent(m_shout_conn, "qmmp");
