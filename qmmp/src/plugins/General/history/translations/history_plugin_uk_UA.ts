@@ -156,37 +156,37 @@
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="126"/>
+        <location filename="../historywindow.cpp" line="130"/>
         <source>dd MMMM yyyy</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="127"/>
+        <location filename="../historywindow.cpp" line="131"/>
         <source>hh:mm:ss</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="194"/>
+        <location filename="../historywindow.cpp" line="198"/>
         <source>MM-yyyy</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="195"/>
+        <location filename="../historywindow.cpp" line="199"/>
         <source>dd MMMM</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="495"/>
+        <location filename="../historywindow.cpp" line="499"/>
         <source>Add to Playlist</source>
         <translation>Додати до списку відтворення</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="496"/>
+        <location filename="../historywindow.cpp" line="500"/>
         <source>&amp;View Track Details</source>
         <translation>&amp;Інформація про трек</translation>
     </message>
     <message>
-        <location filename="../historywindow.cpp" line="498"/>
+        <location filename="../historywindow.cpp" line="502"/>
         <source>Remove from History</source>
         <translation>Видалити з історії</translation>
     </message>
