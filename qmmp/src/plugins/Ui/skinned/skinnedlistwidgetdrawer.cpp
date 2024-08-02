@@ -439,7 +439,7 @@ void SkinnedListWidgetDrawer::drawTrack(QPainter *painter, SkinnedListWidgetRow 
         textColor = (row->flags & SkinnedListWidgetRow::SELECTED) ? m_highlighted : m_normal;
     }
 
-    //painter->setPen((row->flags & ListWidgetRow::SELECTED) ? m_highlighted : textColor);
+    painter->setPen(textColor);
 
     if(rtl)
     {
