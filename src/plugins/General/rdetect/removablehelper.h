@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2018-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2018-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,7 +33,7 @@ public:
     explicit RemovableHelper(QObject *parent = nullptr);
     ~RemovableHelper();
 
-    bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) override;
+    bool nativeEventFilter(const QByteArray &eventType, void *message, long *result) override;
 
 private slots:
     void processAction(QAction *action);

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2018-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2018-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -33,7 +33,7 @@ RemovableHelper::RemovableHelper(QObject *parent): QObject(parent)
 {
     qApp->installNativeEventFilter(this);
     m_actions = new QActionGroup(this);
-    connect(m_actions, &QActionGroup::triggered, this, &RemovableHelper::processAction);
+    connect(m_actions,SIGNAL(triggered(QAction *)), SLOT(processAction(QAction *)));
     //load settings
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup("rdetect"_L1);
@@ -57,7 +57,7 @@ RemovableHelper::~RemovableHelper()
     qApp->removeNativeEventFilter(this);
 }
 
-bool RemovableHelper::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
+bool RemovableHelper::nativeEventFilter(const QByteArray &eventType, void *message, long *result)
 {
     Q_UNUSED(result);
 
@@ -90,7 +90,7 @@ bool RemovableHelper::nativeEventFilter(const QByteArray &eventType, void *messa
 
 void RemovableHelper::processAction(QAction *action)
 {
-    qCDebug(plugin, "action triggered: %s", qPrintable(action->data().toString()));
+    qDebug("RemovableHelper: action triggered: %s", qPrintable(action->data().toString()));
     QString path = action->data().toString();
     PlayListManager::instance()->selectedPlayList()->addPath(path);
 }
@@ -99,7 +99,7 @@ void RemovableHelper::updateActions()
 {
     const QList<QStorageInfo> volumes = QStorageInfo::mountedVolumes();
 
-    for(const QStorageInfo &storage : std::as_const(volumes))
+    for(const QStorageInfo &storage : qAsConst(volumes))
     {
         if(!storage.isValid() || !storage.isReady())
             continue;
@@ -129,7 +129,7 @@ void RemovableHelper::updateActions()
         {
             QAction *action = new QAction(this);
             QString actionText;
-            if(dev_path.startsWith("cdda"_L1))
+            if (dev_path.startsWith("cdda"_L1))
             {
                 actionText = tr("Add CD \"%1\"").arg(storage.displayName());
             }
@@ -145,7 +145,7 @@ void RemovableHelper::updateActions()
                 action->setIcon(qApp->style()->standardIcon(QStyle::SP_DriveDVDIcon));
             else
                 action->setIcon(qApp->style()->standardIcon(QStyle::SP_DriveHDIcon));
-            qCDebug(plugin, "added menu item: \"%s\"", qPrintable(dev_path));
+            qDebug("RemovableHelper: added menu item: \"%s\"", qPrintable(dev_path));
 
             action->setText(actionText);
             action->setData(dev_path);
@@ -156,11 +156,11 @@ void RemovableHelper::updateActions()
     }
     // remove action if device is unmounted/removed
     const QList<QAction *> actions = m_actions->actions();
-    for(QAction *action : std::as_const(actions))
+    for(QAction *action : qAsConst(actions))
     {
         bool found = false;
 
-        for(const QStorageInfo &storage : std::as_const(volumes))
+        for(const QStorageInfo &storage : qAsConst(volumes))
         {
             QString dev_path = storage.rootPath();
             if(isAudioCd(dev_path))
@@ -176,9 +176,9 @@ void RemovableHelper::updateActions()
             }
         }
 
-        if(!found)
+        if (!found)
         {
-            qCDebug(plugin, "removed menu item: \"%s\"", qPrintable(action->data().toString()));
+            qDebug("RemovableHelper: removed menu item: \"%s\"", qPrintable(action->data().toString()));
             m_actions->removeAction(action);
             UiHelper::instance()->removeAction(action);
             removePath(action->data().toString());
@@ -191,7 +191,7 @@ QAction *RemovableHelper::findAction(const QString &dev_path)
 {
     for(QAction *action : m_actions->actions())
     {
-        if(action->data().toString() == dev_path)
+        if (action->data().toString() == dev_path)
             return action;
     }
     return nullptr;

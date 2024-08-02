@@ -5,8 +5,8 @@ QMAKE_LIBDIR += ../../../../lib
 win32 {
     QMAKE_LIBDIR += ../../../../bin
     PLUGINS_PREFIX=../../../../../bin/plugins
-    LIBS += -lqmmp2
-    QMMPUI_LIB = -lqmmpui2
+    LIBS += -lqmmp1
+    QMMPUI_LIB = -lqmmpui1
 }
 
 unix {

@@ -37,35 +37,34 @@ static struct
     unsigned long code; //scan code
     QString name;
 } keyMap [] = {
-    { VK_LEFT,    0x14b, ""},
-    { VK_UP,      0x148, "" },
-    { VK_RIGHT,   0x14d, "" },
-    { VK_DOWN,    0x150, "" },
-    { VK_PRIOR,   0x149, "" },
-    { VK_NEXT,    0x151, "" },
-    { VK_END,     0x14F, "" },
-    { VK_HOME,    0x147, "" },
-    { VK_INSERT,  0x152, "" },
-    { VK_DELETE,  0x153, "" },
-    { VK_DIVIDE,  0x135, "" },
-    { VK_NUMLOCK, 0x145, "" },
-    { VK_NUMPAD0, 0x52,  "" },
-    { VK_NUMPAD1, 0x4F,  "" },
-    { VK_NUMPAD2, 0x50,  "" },
-    { VK_NUMPAD3, 0x51,  "" },
-    { VK_NUMPAD4, 0x4b,  "" },
-    { VK_NUMPAD6, 0x4d,  "" },
-    { VK_NUMPAD7, 0x47,  "" },
-    { VK_NUMPAD8, 0x48,  "" },
-    { VK_NUMPAD9, 0x49,  "" },
-    { VK_VOLUME_MUTE, 0x120,  "Volume Mute"},
-    { VK_VOLUME_DOWN, 0x12e,  "Volume Down"},
-    { VK_VOLUME_UP, 0x130,  "Volume Up"},
-    { VK_MEDIA_NEXT_TRACK, 0x119,  "Media Next Track"},
-    { VK_MEDIA_PREV_TRACK, 0x110,  "Media Previous Track"},
-    { VK_MEDIA_STOP, 0x124,  "Media Stop"},
-    { VK_MEDIA_PLAY_PAUSE, 0x122,  "Media Play/Pause"},
-{ 0, 0, nullptr }
+    { VK_LEFT,    0x14b, QString() },
+    { VK_UP,      0x148, QString() },
+    { VK_RIGHT,   0x14d, QString() },
+    { VK_DOWN,    0x150, QString() },
+    { VK_PRIOR,   0x149, QString() },
+    { VK_NEXT,    0x151, QString() },
+    { VK_END,     0x14F, QString() },
+    { VK_HOME,    0x147, QString() },
+    { VK_INSERT,  0x152, QString() },
+    { VK_DELETE,  0x153, QString() },
+    { VK_DIVIDE,  0x135, QString() },
+    { VK_NUMLOCK, 0x145, QString() },
+    { VK_NUMPAD0, 0x52,  QString() },
+    { VK_NUMPAD1, 0x4F,  QString() },
+    { VK_NUMPAD2, 0x50,  QString() },
+    { VK_NUMPAD3, 0x51,  QString() },
+    { VK_NUMPAD4, 0x4b,  QString() },
+    { VK_NUMPAD6, 0x4d,  QString() },
+    { VK_NUMPAD7, 0x47,  QString() },
+    { VK_NUMPAD8, 0x48,  QString() },
+    { VK_NUMPAD9, 0x49,  QString() },
+    { VK_VOLUME_MUTE, 0x120,  QStringLiteral("Volume Mute") },
+    { VK_VOLUME_DOWN, 0x12e,  QStringLiteral("Volume Down") },
+    { VK_VOLUME_UP, 0x130,  QStringLiteral("Volume Up") },
+    { VK_MEDIA_NEXT_TRACK, 0x119,  QStringLiteral("Media Next Track") },
+    { VK_MEDIA_PREV_TRACK, 0x110,  QStringLiteral("Media Previous Track") },
+    { VK_MEDIA_STOP, 0x124,  QStringLiteral("Media Stop") },
+    { VK_MEDIA_PLAY_PAUSE, 0x122,  QStringLiteral("Media Play/Pause") }
 };
 
 quint32 Hotkey::defaultKey()
@@ -98,11 +97,11 @@ HotkeyManager::HotkeyManager(QObject *parent) : QObject(parent)
 {
     qApp->installNativeEventFilter(this);
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat); //load settings
-    settings.beginGroup("Hotkey");
+    settings.beginGroup("Hotkey"_L1);
     for (int i = Hotkey::PLAY; i <= Hotkey::JUMP_TO_TRACK; ++i)
     {
-        quint32 key = settings.value(QString("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
-        quint32 mod = settings.value(QString("modifiers_%1").arg(i), 0).toUInt();
+        quint32 key = settings.value(QStringLiteral("key_%1").arg(i), Hotkey::defaultKey(i)).toUInt();
+        quint32 mod = settings.value(QStringLiteral("modifiers_%1").arg(i), 0).toUInt();
 
         if (key)
         {
@@ -153,14 +152,14 @@ HotkeyManager::~HotkeyManager()
 
 const QString HotkeyManager::getKeyString(quint32 key, quint32 modifiers)
 {
-    QString strModList[] = { "Ctrl", "Shift", "Alt", "Win"};
+    QString strModList[] = { u"Ctrl"_s, u"Shift"_s, u"Alt"_s, u"Win"_s };
     quint32 modList[] = { HOTKEYF_CONTROL, HOTKEYF_SHIFT, HOTKEYF_ALT, HOTKEYF_EXT};
 
     QString keyStr;
     for (int j = 0; j < 4; j++)
     {
         if (modifiers & modList[j])
-            keyStr.append(strModList[j] + "+");
+            keyStr.append(strModList[j] + QStringLiteral("+"));
     }
 
     if(key == VK_SHIFT || key == VK_CONTROL || key == VK_LWIN || key == VK_RWIN || key == VK_MENU)

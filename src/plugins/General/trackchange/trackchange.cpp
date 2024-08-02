@@ -109,7 +109,8 @@ void TrackChange::onAppStartup()
     if(QApplication::allWindows().count() == 1 && !m_appStartupCommand.isEmpty()) //detect startup
     {
 #ifdef Q_OS_WIN
-        QProcess::startDetached(QStringLiteral("cmd.exe /C %1").arg(m_appStartupCommand));
+        QStringList args = { u"/C"_s, m_appStartupCommand };
+        QProcess::startDetached(QStringLiteral("cmd.exe"), args);
 #else
         QStringList args = { u"-c"_s, m_appStartupCommand };
         QProcess::startDetached(u"sh"_s, args);
@@ -122,7 +123,8 @@ void TrackChange::onAppExit()
     if(!m_appExitCommand.isEmpty())
     {
 #ifdef Q_OS_WIN
-        QProcess::startDetached(QStringLiteral("cmd.exe /C %1").arg(m_appExitCommand));
+        QStringList args = { u"/C"_s, m_appExitCommand };
+        QProcess::startDetached(QStringLiteral("cmd.exe"), args);
 #else
         QStringList args = { u"-c"_s, m_appExitCommand };
         QProcess::startDetached(u"sh"_s, args);
@@ -148,7 +150,8 @@ bool TrackChange::executeCommand(const TrackInfo &info, const QString &format)
     MetaDataFormatter formatter(format);
     QString command = formatter.format(tmp);
 #ifdef Q_OS_WIN
-    bool ok = QProcess::startDetached(QStringLiteral("cmd.exe /C %1").arg(command));
+    QStringList args = { u"/C"_s, command };
+    bool ok = QProcess::startDetached(QStringLiteral("cmd.exe"), args);
 #else
     QStringList args = { u"-c"_s, command };
     bool ok = QProcess::startDetached(u"sh"_s, args);

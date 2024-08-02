@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2018-2024 by Ilya Kotov                                 *
+ *   Copyright (C) 2018-2022 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -21,13 +21,14 @@
 #include <QTimer>
 #include <QApplication>
 #include <QMainWindow>
+#include <QWinTaskbarButton>
+#include <QWinTaskbarProgress>
+#include <QtDebug>
 #include <qmmp/soundcore.h>
 #include <qmmpui/uihelper.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/playlistitem.h>
 #include <qmmpui/mediaplayer.h>
-#include "qwintaskbarbutton.h"
-#include "qwintaskbarprogress.h"
 #include "taskbarhelper.h"
 
 TaskbarHelper::TaskbarHelper(QObject *parent) : QObject(parent)

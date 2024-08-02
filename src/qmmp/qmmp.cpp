@@ -58,9 +58,9 @@ QString Qmmp::configDir()
     if(m_configDir.isEmpty())
     {
         if(isPortable())
-            return m_appDir + "/.qmmp";
+            return m_appDir + QStringLiteral("/.qmmp");
         else
-            return  QDir::homePath() +"/.qmmp";
+            return  QDir::homePath() + QStringLiteral("/.qmmp");
     }
     else
         return m_configDir;
