@@ -347,8 +347,13 @@ void QSUiListWidgetDrawer::drawMultiLineSeparator(QPainter *painter, QSUiListWid
 
     if(coverVisible)
     {
+        if(rtl && row->numberColumnWidth)
+            sx -= m_padding;
+        else if(row->numberColumnWidth)
+            sx += m_padding;
+
         QImage img = row->cover.isNull() ? m_emptyCover : row->cover;
-        painter->drawImage(QRect(row->rect.x() + m_padding, row->rect.y() + m_padding,
+        painter->drawImage(QRect(sx, row->rect.y() + m_padding,
                                  row->rect.height() - 2 * m_padding, row->rect.height() - 2 * m_padding), img);
         sx += row->rect.height();
     }
