@@ -26,7 +26,7 @@
 #include <taglib/apefile.h>
 #include <taglib/tfilestream.h>
 
-class QmmpTextCodec;
+class QTextCodec;
 
 /**
     @author Ilya Kotov <forkotov02@ya.ru>
@@ -63,7 +63,7 @@ public:
     void save() override;
 
 private:
-    QmmpTextCodec *m_codec;
+    QTextCodec *m_codec;
     TagLib::APE::File *m_file;
     TagLib::Tag *m_tag;
     TagLib::APE::File::TagTypes m_tagType;

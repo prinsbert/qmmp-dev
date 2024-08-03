@@ -19,11 +19,11 @@
  ***************************************************************************/
 
 #include <QRegularExpression>
+#include <QTextCodec>
 #include <taglib/tag.h>
 #include <taglib/id3v1tag.h>
 #include <taglib/apetag.h>
 #include <qmmp/metadatamanager.h>
-#include <qmmp/qmmptextcodec.h>
 #include "ffapmetadatamodel.h"
 
 FFapMetaDataModel::FFapMetaDataModel(const QString &path, bool readOnly) : MetaDataModel(true)
@@ -82,19 +82,17 @@ FFapFileTagModel::FFapFileTagModel(TagLib::APE::File *file, TagLib::APE::File::T
     if (m_tagType == TagLib::APE::File::ID3v1)
     {
         m_tag = m_file->ID3v1Tag();
-        m_codec = new QmmpTextCodec("ISO-8859-1");
+        m_codec = QTextCodec::codecForName("ISO-8859-1");
     }
     else
     {
         m_tag = m_file->APETag();
-        m_codec = new QmmpTextCodec("UTF-8");
+        m_codec = QTextCodec::codecForName("UTF-8");
     }
 }
 
 FFapFileTagModel::~FFapFileTagModel()
-{
-    delete m_codec;
-}
+{}
 
 QString FFapFileTagModel::name() const
 {

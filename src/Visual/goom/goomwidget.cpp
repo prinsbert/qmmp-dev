@@ -169,7 +169,7 @@ void GoomWidget::paintEvent (QPaintEvent *)
 void GoomWidget::mousePressEvent(QMouseEvent *e)
 {
     if (e->button() == Qt::RightButton)
-        m_menu->exec(e->globalPosition().toPoint());
+        m_menu->exec(e->globalPos());
 }
 
 void GoomWidget::clear()

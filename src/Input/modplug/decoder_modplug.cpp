@@ -193,7 +193,7 @@ void DecoderModPlug::readSettings()
             settings.value("ReverbDelay"_L1, 100).toInt()
         );
     }
-    if (settings.value("Megabass", false).toBool())
+    if (settings.value("Megabass"_L1, false).toBool())
     {
         CSoundFile::SetXBassParameters
         (
