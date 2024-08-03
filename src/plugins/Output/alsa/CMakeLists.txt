@@ -17,7 +17,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(ALSA_FOUND)
     add_library(alsa MODULE ${libalsa_SRCS})
-    target_link_libraries(alsa PRIVATE Qt6::Widgets libqmmp PkgConfig::ALSA)
+    target_link_libraries(alsa PRIVATE Qt5::Widgets libqmmp PkgConfig::ALSA)
     install(TARGETS alsa DESTINATION ${PLUGIN_DIR}/Output)
 endif(ALSA_FOUND)
 

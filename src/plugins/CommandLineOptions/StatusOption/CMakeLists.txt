@@ -8,5 +8,5 @@ set(statusoption_SRCS
 )
 
 add_library(statusoption MODULE ${statusoption_SRCS})
-target_link_libraries(statusoption Qt6::Widgets libqmmpui libqmmp)
+target_link_libraries(statusoption Qt5::Widgets libqmmpui libqmmp)
 install(TARGETS statusoption DESTINATION ${PLUGIN_DIR}/CommandLineOptions)

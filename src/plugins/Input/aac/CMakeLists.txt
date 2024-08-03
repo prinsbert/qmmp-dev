@@ -46,6 +46,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(FAAD_FOUND)
     add_library(aac MODULE ${libaac_SRCS} ${libaac_RCC_SRCS})
-    target_link_libraries(aac PRIVATE Qt6::Widgets libqmmp -lfaad PkgConfig::TAGLIB)
+    target_link_libraries(aac PRIVATE Qt5::Widgets libqmmp -lfaad PkgConfig::TAGLIB)
     install(TARGETS aac DESTINATION ${PLUGIN_DIR}/Input)
 endif(FAAD_FOUND)

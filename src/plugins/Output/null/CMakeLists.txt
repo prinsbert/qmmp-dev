@@ -12,5 +12,5 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 
 add_library(null MODULE ${libnull_SRCS})
-target_link_libraries(null PRIVATE Qt6::Widgets libqmmp)
+target_link_libraries(null PRIVATE Qt5::Widgets libqmmp)
 install(TARGETS null DESTINATION ${PLUGIN_DIR}/Output)

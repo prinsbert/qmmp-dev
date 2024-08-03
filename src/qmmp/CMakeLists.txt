@@ -62,7 +62,6 @@ set(libqmmp_SRCS
     dithering.cpp
     visualbuffer.cpp
     cueparser.cpp
-    qmmptextcodec.cpp
 )
 
 SET(libqmmp_DEVEL_HDRS
@@ -95,7 +94,6 @@ SET(libqmmp_DEVEL_HDRS
     volume.h
     volumehandler.h
     cueparser.h
-    qmmptextcodec.h
     qmmp_export.h
 )
 
@@ -104,7 +102,7 @@ SET(libqmmp_DEVEL_HDRS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(libqmmp SHARED ${libqmmp_SRCS})
-target_link_libraries(libqmmp PRIVATE Qt6::Widgets)
+target_link_libraries(libqmmp PRIVATE Qt5::Widgets)
 set_target_properties(libqmmp PROPERTIES VERSION ${QMMP_VERSION} SOVERSION ${QMMP_SOVERSION} OUTPUT_NAME qmmp${APP_NAME_SUFFIX})
 target_compile_definitions(libqmmp PRIVATE ${libqmmp_DEFINES})
 install(TARGETS libqmmp LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

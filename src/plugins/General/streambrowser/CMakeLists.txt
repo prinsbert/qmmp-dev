@@ -15,5 +15,5 @@ set(libstreambrowser_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(streambrowser MODULE ${libstreambrowser_SRCS})
-target_link_libraries(streambrowser PRIVATE Qt6::Widgets Qt6::Network libqmmpui libqmmp)
+target_link_libraries(streambrowser PRIVATE Qt5::Widgets Qt5::Network libqmmpui libqmmp)
 install(TARGETS streambrowser DESTINATION ${PLUGIN_DIR}/General)

@@ -19,6 +19,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(XMP_FOUND)
     add_library(xmp MODULE ${libxmp_SRCS} ${libxmp_UIS_H})
-    target_link_libraries(xmp PRIVATE Qt6::Widgets libqmmp PkgConfig::XMP)
+    target_link_libraries(xmp PRIVATE Qt5::Widgets libqmmp PkgConfig::XMP)
     install(TARGETS xmp DESTINATION ${PLUGIN_DIR}/Input)
 endif(XMP_FOUND)

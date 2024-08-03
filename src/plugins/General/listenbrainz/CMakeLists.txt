@@ -14,5 +14,5 @@ SET(liblistenbrainz_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(listenbrainz MODULE ${liblistenbrainz_SRCS})
-target_link_libraries(listenbrainz PRIVATE Qt6::Widgets Qt6::Network libqmmpui libqmmp)
+target_link_libraries(listenbrainz PRIVATE Qt5::Widgets Qt5::Network libqmmpui libqmmp)
 install(TARGETS listenbrainz DESTINATION ${PLUGIN_DIR}/General)

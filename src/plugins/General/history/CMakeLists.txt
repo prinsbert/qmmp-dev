@@ -18,5 +18,5 @@ set(libhistory_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(history MODULE ${libhistory_SRCS})
-target_link_libraries(history PRIVATE Qt6::Widgets Qt6::Sql libqmmpui libqmmp)
+target_link_libraries(history PRIVATE Qt5::Widgets Qt5::Sql libqmmpui libqmmp)
 install(TARGETS history DESTINATION ${PLUGIN_DIR}/General)

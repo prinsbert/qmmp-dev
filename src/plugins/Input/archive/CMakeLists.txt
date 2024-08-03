@@ -15,6 +15,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(LIBARCHIVE_FOUND)
     add_library(archive MODULE ${libarchive_SRCS})
-    target_link_libraries(archive PRIVATE Qt6::Widgets libqmmp PkgConfig::LIBARCHIVE PkgConfig::TAGLIB)
+    target_link_libraries(archive PRIVATE Qt5::Widgets libqmmp PkgConfig::LIBARCHIVE PkgConfig::TAGLIB)
     install(TARGETS archive DESTINATION ${PLUGIN_DIR}/Input)
 endif(LIBARCHIVE_FOUND)

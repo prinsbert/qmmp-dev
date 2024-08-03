@@ -19,5 +19,5 @@ set(liboss_SRCS
 )
 
 add_library(oss MODULE ${liboss_SRCS})
-target_link_libraries(oss PRIVATE Qt6::Widgets libqmmp)
+target_link_libraries(oss PRIVATE Qt5::Widgets libqmmp)
 install(TARGETS oss DESTINATION ${PLUGIN_DIR}/Output)

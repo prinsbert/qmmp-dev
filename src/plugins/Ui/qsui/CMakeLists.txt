@@ -48,5 +48,5 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/forms)
 
 add_library(qsui MODULE ${libqsui_SRCS})
-target_link_libraries(qsui PRIVATE Qt6::Widgets libqmmpui libqmmp)
+target_link_libraries(qsui PRIVATE Qt5::Widgets libqmmpui libqmmp)
 install(TARGETS qsui DESTINATION ${PLUGIN_DIR}/Ui)

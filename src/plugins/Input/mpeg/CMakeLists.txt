@@ -50,6 +50,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(MAD_FOUND OR MPG123_FOUND)
     add_library(mpeg MODULE ${libmpeg_SRCS})
-    target_link_libraries(mpeg PRIVATE Qt6::Widgets libqmmp PkgConfig::TAGLIB PkgConfig::MAD PkgConfig::MPG123 ${LIBRCD_LDFLAGS})
+    target_link_libraries(mpeg PRIVATE Qt5::Widgets libqmmp PkgConfig::TAGLIB PkgConfig::MAD PkgConfig::MPG123 ${LIBRCD_LDFLAGS})
     install(TARGETS mpeg DESTINATION ${PLUGIN_DIR}/Input)
 endif(MAD_FOUND OR MPG123_FOUND)

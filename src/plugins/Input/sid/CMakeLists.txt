@@ -20,6 +20,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(SIDPLAYFP_FOUND)
     add_library(sid MODULE ${libsid_SRCS})
-    target_link_libraries(sid PRIVATE Qt6::Widgets libqmmp PkgConfig::SIDPLAYFP)
+    target_link_libraries(sid PRIVATE Qt5::Widgets libqmmp PkgConfig::SIDPLAYFP)
     install(TARGETS sid DESTINATION ${PLUGIN_DIR}/Input)
 endif(SIDPLAYFP_FOUND)

@@ -54,6 +54,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(OSS4_FOUND)
     add_library(oss4 MODULE ${liboss4_SRCS})
-    target_link_libraries(oss4 PRIVATE Qt6::Widgets libqmmp)
+    target_link_libraries(oss4 PRIVATE Qt5::Widgets libqmmp)
     install(TARGETS oss4 DESTINATION ${PLUGIN_DIR}/Output)
 endif(OSS4_FOUND)

@@ -16,6 +16,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(OPUS_FOUND)
     add_library(opus MODULE ${libopus_SRCS})
-    target_link_libraries(opus PRIVATE Qt6::Widgets libqmmp PkgConfig::OPUS PkgConfig::TAGLIB)
+    target_link_libraries(opus PRIVATE Qt5::Widgets libqmmp PkgConfig::OPUS PkgConfig::TAGLIB)
     install(TARGETS opus DESTINATION ${PLUGIN_DIR}/Input)
 endif(OPUS_FOUND)

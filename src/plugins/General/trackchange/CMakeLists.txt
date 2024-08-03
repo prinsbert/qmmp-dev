@@ -13,5 +13,5 @@ set(libtrackchange_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(trackchange MODULE ${libtrackchange_SRCS})
-target_link_libraries(trackchange PRIVATE Qt6::Widgets libqmmpui libqmmp)
+target_link_libraries(trackchange PRIVATE Qt5::Widgets libqmmpui libqmmp)
 install(TARGETS trackchange DESTINATION ${PLUGIN_DIR}/General)

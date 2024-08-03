@@ -28,6 +28,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(WILDMIDI_FOUND)
     add_library(wildmidi MODULE ${libwildmidi_SRCS})
-    target_link_libraries(wildmidi Qt6::Widgets libqmmp ${WILDMIDI_LIB})
+    target_link_libraries(wildmidi Qt5::Widgets libqmmp ${WILDMIDI_LIB})
     install(TARGETS wildmidi DESTINATION ${PLUGIN_DIR}/Input)
 endif(WILDMIDI_FOUND)

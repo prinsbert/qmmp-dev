@@ -24,7 +24,7 @@ if(JACK_FOUND)
                                COMPILE_FLAGS -pthread
                                LINK_FLAGS -pthread
     )
-    target_link_libraries(jack PRIVATE Qt6::Widgets libqmmp PkgConfig::JACK)
+    target_link_libraries(jack PRIVATE Qt5::Widgets libqmmp PkgConfig::JACK)
     install(TARGETS jack DESTINATION ${PLUGIN_DIR}/Output)
 endif(JACK_FOUND)
 

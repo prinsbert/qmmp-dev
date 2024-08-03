@@ -15,7 +15,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(PULSE_FOUND)
     add_library(pulseaudio MODULE ${libpulseaudio_SRCS})
-    target_link_libraries(pulseaudio PRIVATE Qt6::Widgets libqmmp PkgConfig::PULSE)
+    target_link_libraries(pulseaudio PRIVATE Qt5::Widgets libqmmp PkgConfig::PULSE)
     install(TARGETS pulseaudio DESTINATION ${PLUGIN_DIR}/Output)
 endif(PULSE_FOUND)
 

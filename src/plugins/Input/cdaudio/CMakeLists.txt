@@ -17,6 +17,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(CDIO_FOUND)
     add_library(cdaudio MODULE ${libcdaudio_SRCS})
-    target_link_libraries(cdaudio PRIVATE Qt6::Widgets libqmmp PkgConfig::CDIO)
+    target_link_libraries(cdaudio PRIVATE Qt5::Widgets libqmmp PkgConfig::CDIO)
     install(TARGETS cdaudio DESTINATION ${PLUGIN_DIR}/Input)
 endif(CDIO_FOUND)

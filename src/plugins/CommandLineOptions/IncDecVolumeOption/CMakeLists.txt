@@ -8,5 +8,5 @@ set(libincdecvolumeoption_SRCS
 )
 
 add_library(incdecvolumeoption MODULE ${libincdecvolumeoption_SRCS})
-target_link_libraries(incdecvolumeoption PRIVATE Qt6::Widgets libqmmpui libqmmp)
+target_link_libraries(incdecvolumeoption PRIVATE Qt5::Widgets libqmmpui libqmmp)
 install(TARGETS incdecvolumeoption DESTINATION ${PLUGIN_DIR}/CommandLineOptions)

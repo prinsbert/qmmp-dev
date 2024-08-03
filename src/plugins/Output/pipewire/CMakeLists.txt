@@ -17,6 +17,6 @@ add_compile_options(-Wno-missing-field-initializers)
 
 if(PIPEWIRE_FOUND)
     add_library(pipewire MODULE ${libpipewire_SRCS})
-    target_link_libraries(pipewire PRIVATE Qt6::Widgets libqmmp PkgConfig::PIPEWIRE)
+    target_link_libraries(pipewire PRIVATE Qt5::Widgets libqmmp PkgConfig::PIPEWIRE)
     install(TARGETS pipewire DESTINATION ${PLUGIN_DIR}/Output)
 endif(PIPEWIRE_FOUND)

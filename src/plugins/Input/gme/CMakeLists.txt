@@ -29,6 +29,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(GME_FOUND)
     add_library(gme MODULE ${libgme_SRCS} ${libgme_RCC_SRCS})
-    target_link_libraries(gme PRIVATE Qt6::Widgets libqmmp ${GME_LIB})
+    target_link_libraries(gme PRIVATE Qt5::Widgets libqmmp ${GME_LIB})
     install(TARGETS gme DESTINATION ${PLUGIN_DIR}/Input)
 endif(GME_FOUND)

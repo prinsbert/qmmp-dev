@@ -13,5 +13,5 @@ set(libstereo_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(stereo MODULE ${libstereo_SRCS})
-target_link_libraries(stereo Qt6::Widgets libqmmp)
+target_link_libraries(stereo Qt5::Widgets libqmmp)
 install(TARGETS stereo DESTINATION ${PLUGIN_DIR}/Effect)

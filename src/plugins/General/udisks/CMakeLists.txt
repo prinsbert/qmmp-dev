@@ -15,5 +15,5 @@ set(libudisks_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(udisks MODULE ${libudisks_SRCS})
-target_link_libraries(udisks PRIVATE Qt6::Widgets Qt6::DBus libqmmpui libqmmp)
+target_link_libraries(udisks PRIVATE Qt5::Widgets Qt5::DBus libqmmpui libqmmp)
 install(TARGETS udisks DESTINATION ${PLUGIN_DIR}/General)

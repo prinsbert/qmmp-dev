@@ -18,9 +18,6 @@ if(POLICY CMP0063)
     cmake_policy(SET CMP0063 NEW)
 endif()
 
-#Qt6 modules
-set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /home/user/qt6)
-
 #installation paths
 include(GNUInstallDirs)
 include(FindPkgConfig)
@@ -68,10 +65,10 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060200 -DQT_DEPRECATED_WARNINGS
 add_compile_options(-Wall -Wextra)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src) #libqmmp & libqmmpui
 
-find_package(Qt6 6.2 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
-find_package(Qt6 6.2 CONFIG OPTIONAL_COMPONENTS DBus OpenGLWidgets Sql Multimedia)
+find_package(Qt5 5.15 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
+find_package(Qt5 5.15 CONFIG OPTIONAL_COMPONENTS DBus Sql Multimedia X11Extras WinExtras)
 
-get_target_property(QT_LRELEASE_EXECUTABLE Qt6::lrelease IMPORTED_LOCATION)
+get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
 if(QT_LRELEASE_EXECUTABLE)
     message(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
@@ -90,11 +87,12 @@ endif(SVN_VERSION)
 set(PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qmmp-${QMMP_VERSION_MAJOR}.${QMMP_VERSION_MINOR}" CACHE STRING "plugin path")
 set(USE_SKINNED TRUE CACHE BOOL "enable/disable standard skinned user interface")
 set(USE_DIR_ASSOC TRUE CACHE BOOL "enable/disable inode/directory mime type association")
-#set(APP_NAME_SUFFIX "-1")
+set(APP_NAME_SUFFIX "-1")
 
-get_target_property(QtGui_enabled_features Qt6::Gui QT_ENABLED_PUBLIC_FEATURES)
-if("xcb" IN_LIST QtGui_enabled_features)
-    pkg_search_module(X11 x11 IMPORTED_TARGET)
+pkg_search_module(X11 x11 IMPORTED_TARGET)
+
+if(X11_FOUND AND Qt5X11Extras_FOUND)
+    set(SKINNED_AVAILABLE YES)
     set(XCB_ENABLED YES)
     add_definitions(-DQMMP_WS_X11)
 endif()

@@ -17,7 +17,7 @@ set(app_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(qmmp ${app_SRCS})
-target_link_libraries(qmmp PRIVATE Qt6::Widgets Qt6::Network libqmmp libqmmpui)
+target_link_libraries(qmmp PRIVATE Qt5::Widgets Qt5::Network libqmmp libqmmpui)
 set_target_properties(qmmp PROPERTIES OUTPUT_NAME qmmp${APP_NAME_SUFFIX})
 
 install(TARGETS qmmp DESTINATION ${CMAKE_INSTALL_BINDIR})

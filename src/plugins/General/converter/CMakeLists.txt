@@ -17,5 +17,5 @@ set(libconverter_SRCS
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(converter MODULE ${libconverter_SRCS})
-target_link_libraries(converter PRIVATE Qt6::Widgets libqmmpui libqmmp PkgConfig::TAGLIB)
+target_link_libraries(converter PRIVATE Qt5::Widgets libqmmpui libqmmp PkgConfig::TAGLIB)
 install(TARGETS converter DESTINATION ${PLUGIN_DIR}/General)

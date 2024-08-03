@@ -22,6 +22,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(MPC_FOUND)
     add_library(mpc MODULE ${libmpc_SRCS})
-    target_link_libraries(mpc PRIVATE Qt6::Widgets libqmmp ${MPC_LIB} PkgConfig::TAGLIB)
+    target_link_libraries(mpc PRIVATE Qt5::Widgets libqmmp ${MPC_LIB} PkgConfig::TAGLIB)
     install(TARGETS mpc DESTINATION ${PLUGIN_DIR}/Input)
 endif(MPC_FOUND)

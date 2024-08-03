@@ -8,5 +8,5 @@ SET(seekoption_SRCS
 )
 
 add_library(seekoption MODULE ${seekoption_SRCS})
-target_link_libraries(seekoption PRIVATE Qt6::Widgets libqmmpui libqmmp)
+target_link_libraries(seekoption PRIVATE Qt5::Widgets libqmmpui libqmmp)
 install(TARGETS seekoption DESTINATION ${PLUGIN_DIR}/CommandLineOptions)
