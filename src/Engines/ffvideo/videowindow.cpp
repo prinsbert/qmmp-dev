@@ -42,17 +42,10 @@ VideoWindow::VideoWindow(QWidget *parent) :
     restoreGeometry(settings.value("FFVideo/geometry"_L1).toByteArray());
     m_core = SoundCore::instance();
     m_menu = new QMenu(this);
-#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
     m_menu->addAction(QIcon::fromTheme(u"media-playback-pause"_s), tr("&Pause"), m_core, &SoundCore::pause, tr("Space"));
     m_menu->addAction(QIcon::fromTheme(u"media-playback-stop"_s), tr("&Stop"), m_core, &SoundCore::stop, tr("V"));
     m_menu->addSeparator();
     m_menu->addAction(tr("&Fullscreen"), this, &VideoWindow::setFullScreen, tr("F"))->setCheckable(true);
-#else
-    m_menu->addAction(QIcon::fromTheme(u"media-playback-pause"_s), tr("&Pause"), tr("Space"), m_core, &SoundCore::pause);
-    m_menu->addAction(QIcon::fromTheme(u"media-playback-stop"_s), tr("&Stop"), tr("V"), m_core, &SoundCore::stop);
-    m_menu->addSeparator();
-    m_menu->addAction(tr("&Fullscreen"), tr("F"), this, &VideoWindow::setFullScreen)->setCheckable(true);
-#endif
     addActions(m_menu->actions());
     //seeking
     QAction *forwardAction = new QAction(this);

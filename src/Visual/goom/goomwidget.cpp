@@ -198,10 +198,6 @@ void GoomWidget::createMenu()
     m_showTitleAction = m_menu->addAction(tr("&Show Title"), this, &GoomWidget::updateTitle);
     m_showTitleAction->setCheckable(true);
     m_menu->addSeparator();
-#if QT_VERSION < QT_VERSION_CHECK(6, 3, 0)
     QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), this, &GoomWidget::toggleFullScreen, tr("F"));
-#else
-    QAction *fullScreenAction = m_menu->addAction(tr("&Full Screen"), tr("F"), this, &GoomWidget::toggleFullScreen);
-#endif
     addAction(fullScreenAction);
 }
