@@ -38,7 +38,7 @@ if(USE_STATICON)
 endif(USE_STATICON)
 
 if(USE_NOTIFIER)
-    #add_subdirectory(notifier)
+    add_subdirectory(notifier)
 endif(USE_NOTIFIER)
 
 if(USE_LYRICS)
@@ -50,7 +50,7 @@ if(USE_UDISKS AND Qt5DBus_FOUND)
 endif(USE_UDISKS AND Qt5DBus_FOUND)
 
 if(USE_HOTKEY AND X11_FOUND)
-    #add_subdirectory(hotkey)
+    add_subdirectory(hotkey)
 endif(USE_HOTKEY AND X11_FOUND)
 
 if(USE_FILEOPS)
