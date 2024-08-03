@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qtimageformats-everywhere-opensource-src
-VERSION=5.15.13
+VERSION=5.15.14
 BUILD_ROOT=qtimageformats-everywhere-src-$VERSION
 
 case $1 in

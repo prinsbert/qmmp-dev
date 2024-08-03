@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qttools-everywhere-opensource-src
-VERSION=5.15.13
+VERSION=5.15.14
 BUILD_ROOT=qttools-everywhere-src-$VERSION
 
 case $1 in
