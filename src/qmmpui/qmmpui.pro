@@ -159,34 +159,35 @@ TRANSLATIONS = translations/libqmmpui_ru.ts \
     translations/libqmmpui_sr_RS.ts
 unix {
     devel.files += \
+    colorwidget.h \
     commandlinehandler.h \
-    general.h \
-    generalfactory.h \
-    playlistformat.h \
-    playlistparser.h \
     commandlinemanager.h \
-    filedialog.h \
-    filedialogfactory.h \
-    playlistitem.h \
-    playlistmodel.h \
-    mediaplayer.h \
+    configdialog.h \
     detailsdialog.h \
+    filedialogfactory.h \
+    filedialog.h \
+    generalfactory.h \
+    general.h \
+    mediaplayer.h \
+    metadataformatter.h \
+    metadataformattermenu.h \
+    playlistdownloader.h \
+    playlistformat.h \
+    playlistgroup.h \
+    playlistheadermodel.h \
+    playlistitem.h \
     playlistmanager.h \
+    playlistmodel.h \
+    playlistparser.h \
+    playlisttrack.h \
+    qmmpui_export.h \
+    qmmpuisettings.h \
+    shortcutdialog.h \
     templateeditor.h \
     uifactory.h \
-    uiloader.h \
     uihelper.h \
-    configdialog.h \
-    qmmpuisettings.h \
-    playlistdownloader.h \
-    playlistgroup.h \
-    playlisttrack.h \
-    metadataformatter.h \
-    playlistheadermodel.h \
-    metadataformattermenu.h \
-    visualmenu.h \
-    shortcutdialog.h \
-    qmmpui_export.h
+    uiloader.h \
+    visualmenu.h
 
     isEmpty(APP_NAME_SUFFIX) {
         devel.path = $$PREFIX/include/qmmpui

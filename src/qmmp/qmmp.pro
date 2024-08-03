@@ -118,19 +118,20 @@ unix {
         audioparameters.h \
         buffer.h \
         channelmap.h \
+        cueparser.h \
         decoderfactory.h \
         decoder.h \
         effectfactory.h \
         effect.h \
         enginefactory.h \
         eqsettings.h \
-        fileinfo.h \
         inputsourcefactory.h \
         inputsource.h \
         metadatamanager.h \
         metadatamodel.h \
         outputfactory.h \
         output.h \
+        qmmp_export.h \
         qmmp.h \
         qmmpsettings.h \
         soundcore.h \
@@ -140,10 +141,7 @@ unix {
         visualfactory.h \
         visual.h \
         volume.h \
-        volumehandler.h \
-        cueparser.h \
-        qmmptextcodec.h \
-        qmmp_export.h
+        volumehandler.h
 
     isEmpty(APP_NAME_SUFFIX) {
         devel.path = $$PREFIX/include/qmmp
