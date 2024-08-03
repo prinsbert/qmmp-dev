@@ -71,21 +71,23 @@ SET(libqmmp_DEVEL_HDRS
     audioparameters.h
     buffer.h
     channelmap.h
+    cueparser.h
     decoderfactory.h
     decoder.h
     effectfactory.h
     effect.h
     enginefactory.h
     eqsettings.h
-    trackinfo.h
     inputsourcefactory.h
     inputsource.h
     metadatamanager.h
     metadatamodel.h
     outputfactory.h
     output.h
+    qmmp_export.h
     qmmp.h
     qmmpsettings.h
+    qmmptextcodec.h
     soundcore.h
     statehandler.h
     tagmodel.h
@@ -94,9 +96,6 @@ SET(libqmmp_DEVEL_HDRS
     visual.h
     volume.h
     volumehandler.h
-    cueparser.h
-    qmmptextcodec.h
-    qmmp_export.h
 )
 
 # Don't forget to include output directory, otherwise
