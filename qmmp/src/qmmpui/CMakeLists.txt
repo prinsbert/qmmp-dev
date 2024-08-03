@@ -72,8 +72,9 @@ set(libqmmpui_SRCS
 )
 
 SET(libqmmpui_DEVEL_HDRS
-    commandlinemanager.h
+    colorwidget.h
     commandlinehandler.h
+    commandlinemanager.h
     configdialog.h
     detailsdialog.h
     filedialogfactory.h
@@ -85,22 +86,21 @@ SET(libqmmpui_DEVEL_HDRS
     metadataformattermenu.h
     playlistdownloader.h
     playlistformat.h
-    playlistitem.h
     playlistgroup.h
-    playlisttrack.h
+    playlistheadermodel.h
+    playlistitem.h
     playlistmanager.h
     playlistmodel.h
     playlistparser.h
+    playlisttrack.h
+    qmmpui_export.h
     qmmpuisettings.h
+    shortcutdialog.h
     templateeditor.h
     uifactory.h
     uihelper.h
     uiloader.h
-    playlistheadermodel.h
     visualmenu.h
-    colorwidget.h
-    shortcutdialog.h
-    qmmpui_export.h
 )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
