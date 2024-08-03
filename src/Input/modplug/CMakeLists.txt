@@ -33,7 +33,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 if(MODPLUG_FOUND)
     add_library(modplug MODULE ${libmodplug_SRCS})
-    target_link_libraries(modplug PRIVATE Qt6::Widgets PkgConfig::QMMP PkgConfig::MODPLUG)
+    target_link_libraries(modplug PRIVATE Qt5::Widgets PkgConfig::QMMP PkgConfig::MODPLUG)
     install(TARGETS modplug DESTINATION ${PLUGIN_DIR}/Input)
 endif(MODPLUG_FOUND)
 

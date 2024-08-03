@@ -5,9 +5,6 @@ project(qmmp-plugin-pack)
 include_directories(SYSTEM /usr/local/include)
 set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/local/include)
 
-#Qt6 modules
-set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} /home/user/qt6)
-
 #installation paths
 include(GNUInstallDirs)
 include(FindPkgConfig)
@@ -44,9 +41,9 @@ set(CMAKE_AUTOUIC ON)
 ADD_DEFINITIONS(-DQMMP_WS_X11 -DQT_DISABLE_DEPRECATED_BEFORE=0x060200 -DQT_DEPRECATED_WARNINGS)
 ADD_COMPILE_OPTIONS(-Wall -Wextra)
 
-find_package(Qt6 6.2.0 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
+find_package(Qt5 5.15.0 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
 
-get_target_property(QT_LRELEASE_EXECUTABLE Qt6::lrelease IMPORTED_LOCATION)
+get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
 if(QT_LRELEASE_EXECUTABLE)
     MESSAGE(STATUS "Found lrelease executable: " ${QT_LRELEASE_EXECUTABLE})
@@ -62,10 +59,10 @@ else(SVN_VERSION)
 endif(SVN_VERSION)
 
 SET(PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qmmp-${QMMP_PLUGIN_PACK_VERSION_MAJOR}.${QMMP_PLUGIN_PACK_VERSION_MINOR}" CACHE STRING "plugin path")
-#SET(APP_NAME_SUFFIX "-1")
+SET(APP_NAME_SUFFIX "-1")
 
-pkg_check_modules(QMMP qmmp${APP_NAME_SUFFIX}>=2.1.0 REQUIRED IMPORTED_TARGET)
-pkg_check_modules(QMMPUI qmmpui${APP_NAME_SUFFIX}>=2.1.0 IMPORTED_TARGET)
+pkg_check_modules(QMMP qmmp${APP_NAME_SUFFIX}>=1.7.0 REQUIRED IMPORTED_TARGET)
+pkg_check_modules(QMMPUI qmmpui${APP_NAME_SUFFIX}>=1.7.0 IMPORTED_TARGET)
 
 if(QMMP_FOUND)
     add_subdirectory(src)

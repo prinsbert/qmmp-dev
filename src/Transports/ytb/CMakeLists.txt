@@ -8,5 +8,5 @@ SET(libytb_SRCS
 )
 
 ADD_LIBRARY(ytb MODULE ${libytb_SRCS})
-target_link_libraries(ytb PRIVATE Qt6::Widgets Qt6::Network PkgConfig::QMMP)
+target_link_libraries(ytb PRIVATE Qt5::Widgets Qt5::Network PkgConfig::QMMP)
 install(TARGETS ytb DESTINATION ${PLUGIN_DIR}/Transports)

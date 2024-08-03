@@ -52,5 +52,5 @@ endif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(i.86)$")
 
 
 add_library(goom MODULE ${libgoom_SRCS})
-target_link_libraries(goom Qt6::Widgets PkgConfig::QMMP)
+target_link_libraries(goom Qt5::Widgets PkgConfig::QMMP)
 install(TARGETS goom DESTINATION ${PLUGIN_DIR}/Visual)

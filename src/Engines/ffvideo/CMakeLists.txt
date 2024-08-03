@@ -27,6 +27,6 @@ add_compile_options(-Wno-missing-field-initializers)
 
 if(FFMPEG_FOUND)
     ADD_LIBRARY(ffvideo MODULE ${libffvideo_SRCS} ${libffvideo_RCC_SRCS} ${libffvideo_HDRS})
-    target_link_libraries(ffvideo PRIVATE Qt6::Widgets PkgConfig::QMMP PkgConfig::FFMPEG)
+    target_link_libraries(ffvideo PRIVATE Qt5::Widgets PkgConfig::QMMP PkgConfig::FFMPEG)
     install(TARGETS ffvideo DESTINATION ${PLUGIN_DIR}/Engines)
 endif(FFMPEG_FOUND)

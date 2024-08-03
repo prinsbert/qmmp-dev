@@ -10,5 +10,5 @@ SET(libffap_SRCS
 )
 
 add_library(ffap MODULE ${libffap_SRCS})
-target_link_libraries(ffap PRIVATE Qt6::Widgets PkgConfig::QMMP PkgConfig::TAGLIB)
+target_link_libraries(ffap PRIVATE Qt5::Widgets PkgConfig::QMMP PkgConfig::TAGLIB)
 install(TARGETS ffap DESTINATION ${PLUGIN_DIR}/Input)
