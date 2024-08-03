@@ -25,7 +25,7 @@ QT += widgets
 
 #Version
 
-QMMP_PLUGIN_PACK_VERSION = 2.2.0
+QMMP_PLUGIN_PACK_VERSION = 1.7.0
 
 #Install paths
 
@@ -34,7 +34,7 @@ VERSIONS = $$split(QMMP_PLUGIN_PACK_VERSION, ".")
 QMMP_PLUGIN_PACK_VERSION_MAJOR = $$member(VERSIONS, 0)
 QMMP_PLUGIN_PACK_VERSION_MINOR = $$member(VERSIONS, 1)
 
-#APP_NAME_SUFFIX = "-1"
+APP_NAME_SUFFIX = "-1"
 
 #QMAKE_LFLAGS_DEBUG += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"
 #QMAKE_LFLAGS += "-Wl,--as-needed -Wl,--no-undefined -Wl,-z,relro -Wl,--build-id -Wl,--enable-new-dtags"

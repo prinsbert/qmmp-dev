@@ -350,21 +350,24 @@ Version 1.5.0
 * updated German translation (Ettore Atalan)
 * updated Finnish translation (Jiri Grönroos, Kimmo Kujansuu)
 
-Version 2.0.0
-* switched to Qt6 and qmmp 2.0 API
+Version 1.5.1
 * added Korean translation (Jung Hee Lee)
 
-Version 2.0.1
+Version 1.5.2
 * added yt-dlp support
 * updated Finnish translation (Kimmo Kujansuu, Jiri Grönroos)
 * updated Galician translation (Delio Docampo Cordeiro)
 * updated Italian translation (Luigi Toscano)
 
-Version 2.0.2
+Version 1.5.3
 * updated Ukrainian translation (Gennady Motsyo)
 * updated Turkish translation (abcmen)
 
-Version 2.1.0
-* ported to qmmp 2.1 API
+Version 1.6.0
+* ported to qmmp 1.6 API
 * added modplug plugin
 * removed xmp plugin
+
+Version 1.6.1
+* added FFmpeg 5.1 support in the ffvideo plugin
+* fixed hang-up in the ytb plugin
