@@ -95,7 +95,6 @@ SET(libqmmp_DEVEL_HDRS
     volume.h
     volumehandler.h
 )
-)
 
 # Don't forget to include output directory, otherwise
 # the UI file won't be wrapped!
