@@ -373,7 +373,7 @@ bool QSUiWaveformScanner::scan(const QString &path)
         factory = Decoder::findByContent(source->ioDevice());
     if(!factory && source->path().contains(u"://"_s))
         factory = Decoder::findByProtocol(source->path().section(u"://"_s, 0, 0));
-    if(!factory)
+    if(!factory || source->path().startsWith(u"cdda://"_s))
     {
         qCWarning(plugin, "unsupported file format");
         source->deleteLater();
