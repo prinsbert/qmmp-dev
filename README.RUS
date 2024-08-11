@@ -149,6 +149,7 @@ cmake ./ -DUSE_JACK:BOOL=FALSE
 - USE_QSUI (простой интерфейс);
 - USE_DIR_ASSOC (привязка к mime-типу inode/directory);
 - USE_LIBRCD (использование библиотеки LibRCD для определения кодировок ID3v1/v2-тегов, по умолчанию отключено);
+- USE_LIBCDDB (использование библиотеки libcddb для получения информации о компакт-дисках, по умолчанию включено);
 - QMMP_DEFAULT_OUTPUT (модуль вывода по умолчанию, пример использования: -DQMMP_DEFAULT_OUTPUT=pulse);
 - QMMP_DEFAULT_UI (интерфейс пользователя по умолчанию, пример использования: -DQMMP_DEFAULT_UI=qsui).
 
