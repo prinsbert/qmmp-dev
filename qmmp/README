@@ -151,6 +151,7 @@ Available options:
 - USE_QSUI (simple UI);
 - USE_DIR_ASSOC (inode/directory mime type association);
 - USE_LIBRCD (using LibRCD library for charset detection of ID3v1/v2 tags, disabled by default);
+- USE_LIBCDDB (using libcddb library for looking for information about audio CDs, enabled by default);
 - QMMP_DEFAULT_OUTPUT (default output plugin, example: -DQMMP_DEFAULT_OUTPUT=pulse);
 - QMMP_DEFAULT_UI (default user interface, example: -DQMMP_DEFAULT_UI=qsui).
 
