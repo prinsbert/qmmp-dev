@@ -371,3 +371,7 @@ Version 1.6.0
 Version 1.6.1
 * added FFmpeg 5.1 support in the ffvideo plugin
 * fixed hang-up in the ytb plugin
+
+Version 1.6.2
+* fixed file name filters in the modplug plugin
+* fixed issue in the modplug plugin settings
