@@ -372,3 +372,8 @@ Version 2.1.0
 Version 2.1.1
 * added FFmpeg 5.1 support in the ffvideo plugin
 * fixed hang-up in the ytb plugin
+
+Version 2.1.2
+* fixed file name filters in the modplug plugin
+* fixed issue in the modplug plugin settings
+* disabled Qt 6.7 build warnings
