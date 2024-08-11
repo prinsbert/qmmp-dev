@@ -1863,3 +1863,8 @@ Version 1.6.8
 * fixed linking with xcb
 * fixed crash when trying to remove queued track
 * fixed copying of the selected tracks to the new playlist
+
+Version 1.6.9
+* fixed build with PipeWire version less than 0.3.33 (Thomas Lange)
+* fixed displaying bitrate in the wavpack plugin
+* disabled waveform seekbar for CD tracks in the simple user interface
