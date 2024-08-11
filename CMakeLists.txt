@@ -252,6 +252,7 @@ PRINT_SUMMARY ("Skinned user interface ................" USE_SKINNED SKINNED_AVA
 PRINT_SUMMARY ("Simple user interface (QSUI) .........." USE_QSUI 1)
 PRINT_SUMMARY ("Automatic charset detection ..........." USE_ENCA ENCA_FOUND)
 PRINT_SUMMARY ("MPEG plugin with LibRCD support ......." USE_LIBRCD LIBRCD_FOUND)
+PRINT_SUMMARY ("CD Audio plugin with CDDB support ....." USE_LIBCDDB CDDB_FOUND)
 PRINT_SUMMARY ("Directory association ................." USE_DIR_ASSOC 1)
 PRINT_SUMMARY ("Set RPATH in installed binaries ......." CMAKE_INSTALL_RPATH_USE_LINK_PATH 1)
 if(MPEG_DECODERS)
