@@ -36,11 +36,16 @@ CDAudioSettingsDialog::CDAudioSettingsDialog(QWidget *parent)
     m_ui->speedCheckBox->setChecked(speed > 0);
     m_ui->speedSpinBox->setValue(speed);
     m_ui->cdtextCheckBox->setChecked(settings.value(u"cdtext"_s, true).toBool());
+#ifdef WITH_LIBCDDB
     m_ui->cddbGroupBox->setChecked(settings.value(u"use_cddb"_s, false).toBool());
     m_ui->httpCheckBox->setChecked(settings.value(u"cddb_http"_s, false).toBool());
     m_ui->serverLineEdit->setText(settings.value(u"cddb_server"_s, u"gnudb.org"_s).toString());
     m_ui->pathLineEdit->setText(settings.value(u"cddb_path"_s).toString());
     m_ui->portLineEdit->setText(settings.value(u"cddb_port"_s, 8880).toString());
+#else
+    m_ui->cddbGroupBox->setVisible(false);
+    resize(width(), sizeHint().height());
+#endif
     settings.endGroup();
 }
 
@@ -63,11 +68,13 @@ void CDAudioSettingsDialog::accept()
         settings.setValue(u"speed"_s, 0);
     settings.setValue(u"cdtext"_s, m_ui->cdtextCheckBox->isChecked());
     settings.setValue(u"cdtext"_s, m_ui->cdtextCheckBox->isChecked());
+#ifdef WITH_LIBCDDB
     settings.setValue(u"use_cddb"_s, m_ui->cddbGroupBox->isChecked());
     settings.setValue(u"cddb_http"_s, m_ui->httpCheckBox->isChecked());
     settings.setValue(u"cddb_server"_s,  m_ui->serverLineEdit->text());
     settings.setValue(u"cddb_path"_s, m_ui->pathLineEdit->text());
     settings.setValue(u"cddb_port"_s, m_ui->portLineEdit->text());
+#endif
     settings.endGroup();
     settings.sync();
     DecoderCDAudio::clearTrackCache();

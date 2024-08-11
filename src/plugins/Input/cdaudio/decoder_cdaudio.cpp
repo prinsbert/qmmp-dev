@@ -28,7 +28,9 @@
 #include <cdio/audio.h>
 #include <cdio/cd_types.h>
 #include <cdio/logging.h>
+#ifdef WITH_LIBCDDB
 #include <cddb/cddb.h>
+#endif
 #include <qmmp/buffer.h>
 #include <qmmp/output.h>
 #include <qmmp/qmmpsettings.h>
@@ -56,6 +58,7 @@ static void log_handler (cdio_log_level_t level, const char *message)
     }
 }
 
+#ifdef WITH_LIBCDDB
 static void cddb_log_handler(cddb_log_level_t level, const char *message)
 {
     QString str = QString::fromLocal8Bit(message).trimmed();
@@ -71,6 +74,7 @@ static void cddb_log_handler(cddb_log_level_t level, const char *message)
         qCWarning(plugin, "cddb message: %s (level=error)", qPrintable(str));
     }
 }
+#endif
 
 // Decoder class
 
@@ -163,7 +167,9 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
         cdio = nullptr;
         return tracks;
     }
+#ifdef WITH_LIBCDDB
     bool use_cddb = true;
+#endif
     //fill track list
     for (int i = first_track_number; i <= last_track_number; ++i)
     {
@@ -200,7 +206,9 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
             t.info.setValue(Qmmp::GENRE, QString::fromUtf8(cdtext_get_const(cdtext,CDTEXT_FIELD_GENRE,i)));
             t.info.setValue(Qmmp::COMMENT, QString::fromUtf8(cdtext_get_const(cdtext,CDTEXT_FIELD_MESSAGE,i)));
             t.info.setValue(Qmmp::COMPOSER, QString::fromUtf8(cdtext_get_const(cdtext,CDTEXT_FIELD_COMPOSER,i)));
+#ifdef WITH_LIBCDDB
             use_cddb = false;
+#endif
         }
         else
             t.info.setValue(Qmmp::TITLE, QStringLiteral("CDA Track %1").arg(i, 2, 10, QLatin1Char('0')));
@@ -208,6 +216,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
     }
     qCDebug(plugin) << "found" << tracks.size() << "audio tracks";
 
+#ifdef WITH_LIBCDDB
     use_cddb = use_cddb && settings.value(u"cdaudio/use_cddb"_s, false).toBool();
     if(use_cddb)
     {
@@ -301,6 +310,7 @@ QList<CDATrack> DecoderCDAudio::generateTrackList(const QString &device, TrackIn
         if (cddb_conn)
             cddb_destroy (cddb_conn);
     }
+#endif
 
     cdio_destroy(cdio);
     cdio = nullptr;
