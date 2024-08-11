@@ -1884,3 +1884,9 @@ Version 2.1.8
 * fixed crash when trying to remove queued track
 * fixed copying of the selected tracks to the new playlist
 * fixed Wayland compatibility on first startup
+
+Version 2.1.9
+* fixed build with PipeWire version less than 0.3.33 (Thomas Lange)
+* fixed displaying bitrate in the wavpack plugin
+* disabled Qt 6.7 build warnings
+* disabled waveform seekbar for CD tracks in the simple user interface
