@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=mpg123
-VERSION=1.32.6
+VERSION=1.32.7
 
 case $1 in
   --download)

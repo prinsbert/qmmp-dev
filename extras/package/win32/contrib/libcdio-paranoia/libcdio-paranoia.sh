@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=libcdio-paranoia
-VERSION=10.2+2.0.1
+VERSION=10.2+2.0.2
 
 case $1 in
   --download)
