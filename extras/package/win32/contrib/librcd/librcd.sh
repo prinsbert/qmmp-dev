@@ -7,12 +7,12 @@ case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc http://darksoft.org/files/rusxmms/$NAME-$VERSION.tar.bz2
+    wget -nc https://github.com/RusXMMS/librcd/archive/refs/heads/master.zip
   ;;
   --install)
     cd temp
-    tar xvjf $NAME-$VERSION.tar.bz2
-    cd $NAME-$VERSION
+    unzip master.zip
+    cd $NAME-master
     cat ../../librcd-mingw32.patch | patch -p1
     ./autogen.sh
     ./configure --prefix=$PREFIX --enable-shared --disable-static
