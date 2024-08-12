@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=1.6.8
+QMMP_VERSION=1.6.9
 UBUNTU_CODENAMES='bionic focal jammy mantic noble'
 BUILD_ROOT=build-root
 
@@ -37,7 +37,7 @@ update ()
 
 upload ()
 {
-	dput ppa:forkotov02/ppa $1/*.changes
+	dput ssh-ppa:forkotov02/ppa $1/*.changes
 }
 
 clean ()
