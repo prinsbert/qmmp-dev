@@ -487,4 +487,13 @@ LEGEND
 1.6.8
 [*] qmmp-1.6.8
 [-] fixed https support
- 
+
+1.6.9
+[*] qmmp-1.6.9
+[*] qmmp-plugin-pack-1.6.2
+[*] qt-5.15.14
+[*] curl-8.9.1
+[*] libcdio-paranoia-10.0+2.0.2
+[*] ffmpeg-5.1.6
+[*] libsidplayfp-2.8.0
+[*] mpg123-1.32.7
