@@ -1,3 +1,9 @@
+qmmp-plugin-pack (1.6.2-1ubuntu1~xenial0) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Tue, 13 Aug 2024 09:43:04 +0300
+
 qmmp-plugin-pack (1.6.1-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
