@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=2.1.1
+PLUGIN_PACK_VERSION=2.1.2
 UBUNTU_CODENAMES='jammy noble'
 BUILD_ROOT=build-root
 
@@ -37,7 +37,7 @@ update ()
 
 upload ()
 {
-	dput ppa:forkotov02/ppa $1/*.changes
+	dput ssh-ppa:forkotov02/ppa $1/*.changes
 }
 
 clean ()
