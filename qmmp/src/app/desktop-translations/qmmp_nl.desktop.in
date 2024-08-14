@@ -35,7 +35,7 @@ Exec=qmmp --no-start --next
 
 
 # Translations
+Name[nl]=Qmmp
 Comment[nl]=Op Qt gebaseerde multimediaspeler
 GenericName[nl]=Audiospeler
-Name[nl]=Qmmp
 Icon[nl]=qmmp

@@ -34,12 +34,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="14"/>
         <source>Track Change Plugin Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="29"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation type="unfinished">Opdracht die moet worden uitgevoerd bij het starten van een nieuw nummer</translation>
+        <translation>Opdracht die moet worden uitgevoerd bij het starten van een nieuw nummer</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="39"/>
@@ -47,32 +47,32 @@
         <location filename="../trackchangesettingsdialog.ui" line="73"/>
         <location filename="../trackchangesettingsdialog.ui" line="90"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="46"/>
         <source>Command to run toward to end of a track</source>
-        <translation type="unfinished">Opdracht die moet worden uitgevoerd aan het eind van een nummer</translation>
+        <translation>Opdracht die moet worden uitgevoerd aan het eind van een nummer</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation type="unfinished">Opdracht die moet worden uitgevoerd aan het eind van de afspeellijst</translation>
+        <translation>Opdracht die moet worden uitgevoerd aan het eind van de afspeellijst</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation type="unfinished">Opdracht die moet worden uitgevoerd als de titel wijzigt (bijv. bij internetstreams)</translation>
+        <translation>Opdracht die moet worden uitgevoerd als de titel wijzigt (bijv. bij internetstreams)</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>
         <source>Command to run on application startup:</source>
-        <translation type="unfinished">Opdracht die moet worden uitgevoerd bij het opstarten:</translation>
+        <translation>Opdracht die moet worden uitgevoerd bij het opstarten:</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="104"/>
         <source>Command to run on application exit:</source>
-        <translation type="unfinished">Opdracht die moet worden uitgevoerd bij het afsluiten:</translation>
+        <translation>Opdracht die moet worden uitgevoerd bij het afsluiten:</translation>
     </message>
 </context>
 </TS>
