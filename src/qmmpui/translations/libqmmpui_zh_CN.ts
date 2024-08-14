@@ -125,7 +125,7 @@
 <context>
     <name>ColorWidget</name>
     <message>
-        <location filename="../colorwidget.cpp" line="45"/>
+        <location filename="../colorwidget.cpp" line="46"/>
         <source>Select Color</source>
         <translation type="unfinished"></translation>
     </message>

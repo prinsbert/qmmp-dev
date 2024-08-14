@@ -177,58 +177,58 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Edytor  presetów</translation>
+        <translation>Edytor profili</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation type="unfinished">Ogólne</translation>
+        <translation>Ogólne</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation type="unfinished">Nazwa:</translation>
+        <translation>Nazwa:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation type="unfinished">Rozszerzenie:</translation>
+        <translation>Rozszerzenie:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation type="unfinished">Polecenie</translation>
+        <translation>Polecenie</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="77"/>
         <source>Options</source>
-        <translation type="unfinished">Opcje</translation>
+        <translation>Opcje</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation type="unfinished">Zapisz tagi</translation>
+        <translation>Zapisz tagi</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation type="unfinished">Konwertuj do 16 bitów</translation>
+        <translation>Konwertuj do 16 bitów</translation>
     </message>
 </context>
 <context>
     <name>PresetEditor</name>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="39"/>
+        <location filename="../converterpreseteditor.cpp" line="40"/>
         <source>%1 (Read Only)</source>
         <translation>%1 (Tylko do odczytu)</translation>
     </message>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="72"/>
+        <location filename="../converterpreseteditor.cpp" line="73"/>
         <source>Output file</source>
         <translation>Plik wyjściowy</translation>
     </message>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="73"/>
+        <location filename="../converterpreseteditor.cpp" line="74"/>
         <source>Input file</source>
         <translation>Plik wejściowy</translation>
     </message>

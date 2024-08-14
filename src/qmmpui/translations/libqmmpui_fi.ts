@@ -125,9 +125,9 @@
 <context>
     <name>ColorWidget</name>
     <message>
-        <location filename="../colorwidget.cpp" line="45"/>
+        <location filename="../colorwidget.cpp" line="46"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse väri</translation>
     </message>
 </context>
 <context>
@@ -331,32 +331,32 @@
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
         <source>Group Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmätila</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
         <source>Group size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmän koko:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="219"/>
         <source>Show dividing line</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä jakoviiva</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="247"/>
         <source>Extra row format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisärivin muoto:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="268"/>
         <source>Show extra row</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä lisärivi</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="275"/>
         <source>Show cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä kansi</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="285"/>
@@ -615,22 +615,22 @@
     <message>
         <location filename="../configdialog.cpp" line="62"/>
         <source>1 row</source>
-        <translation type="unfinished"></translation>
+        <translation>1 rivi</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="63"/>
         <source>3 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>3 riviä</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="64"/>
         <source>4 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>4 riviä</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="65"/>
         <source>5 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>5 riviä</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="66"/>
@@ -1199,22 +1199,22 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - Album</source>
-        <translation type="unfinished">Artisti - Albumi</translation>
+        <translation>Artisti - Albumi</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>Duration | Format | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesto | Formaatti | Nopeus</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>Duration | Format | Bitrate | Sample rate </source>
-        <translation type="unfinished"></translation>
+        <translation>Kesto | Formaatti | Nopeus | Näyte</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuosi | Kesto | Nopeus</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
@@ -1296,17 +1296,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="63"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>%y | %if(%l,%l | ,)%{bitrate} kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>%y | %if(%l,%l | ,)%{bitrate} kbps</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="67"/>
@@ -1367,7 +1367,7 @@
     <message>
         <location filename="../qmmpuisettings.cpp" line="39"/>
         <source>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%if(%l,%l | ,)%{format} | %{bitrate} kbps | %{samplerate} Hz</translation>
     </message>
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
@@ -1388,17 +1388,17 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="14"/>
         <source>Change Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihda pikanäppäintä</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation type="unfinished"></translation>
+        <translation>Paina näppäinyhdistelmä, jonka haluat käyttöön</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjennä</translation>
     </message>
 </context>
 <context>
@@ -1542,7 +1542,7 @@ Haluatko korvata sen?</translation>
     <message>
         <location filename="../visualmenu.cpp" line="26"/>
         <source>Visualization</source>
-        <translation type="unfinished">Visualisointi</translation>
+        <translation>Visualisointi</translation>
     </message>
 </context>
 <context>

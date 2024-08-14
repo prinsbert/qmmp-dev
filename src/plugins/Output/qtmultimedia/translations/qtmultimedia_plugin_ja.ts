@@ -37,7 +37,7 @@
         <translation type="unfinished">デバイス:</translation>
     </message>
     <message>
-        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="35"/>
         <source>Default</source>
         <translation type="unfinished">初期設定</translation>
     </message>

@@ -29,17 +29,17 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki Qt Multimedia</translation>
+        <translation>Ustawienia wtyczki Qt Multimedia</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation type="unfinished">Urządzenie:</translation>
+        <translation>Urządzenie:</translation>
     </message>
     <message>
-        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="35"/>
         <source>Default</source>
-        <translation type="unfinished">Domyślne</translation>
+        <translation>Domyślne</translation>
     </message>
 </context>
 </TS>

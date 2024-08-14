@@ -34,37 +34,37 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">CD-audiodetectie</translation>
+        <translation>CD-audiodetectie</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Nummers automatisch toevoegen aan afspeellijst</translation>
+        <translation>Nummers automatisch toevoegen aan afspeellijst</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Nummers automatisch verwijderen van afspeellijst</translation>
+        <translation>Nummers automatisch verwijderen van afspeellijst</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Detectie van verwisselbare apparaten</translation>
+        <translation>Detectie van verwisselbare apparaten</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Bestanden automatisch toevoegen aan afspeellijst</translation>
+        <translation>Bestanden automatisch toevoegen aan afspeellijst</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Bestanden automatisch verwijderen van afspeellijst</translation>
+        <translation>Bestanden automatisch verwijderen van afspeellijst</translation>
     </message>
 </context>
 <context>

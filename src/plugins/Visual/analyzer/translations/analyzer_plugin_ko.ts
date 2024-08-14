@@ -79,14 +79,12 @@
         <translation>피크 하락</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="357"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>&amp;Full Screen</source>
         <translation>전체 화면(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="357"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>F</source>
         <translation>F</translation>
     </message>

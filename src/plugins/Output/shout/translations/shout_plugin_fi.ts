@@ -34,52 +34,52 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="14"/>
         <source>Connection Settings</source>
-        <translation type="unfinished">Yhteyden asetukset</translation>
+        <translation>Yhteyden asetukset</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="32"/>
         <source>Host:</source>
-        <translation type="unfinished">Palvelin:</translation>
+        <translation>Palvelin:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="42"/>
         <source>Port:</source>
-        <translation type="unfinished">Portti:</translation>
+        <translation>Portti:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="56"/>
         <source>Mount point:</source>
-        <translation type="unfinished">Liitospiste:</translation>
+        <translation>Liitospiste:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="66"/>
         <source>User:</source>
-        <translation type="unfinished">Käyttäjätunnus:</translation>
+        <translation>Käyttäjätunnus:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="76"/>
         <source>Password:</source>
-        <translation type="unfinished">Salasana:</translation>
+        <translation>Salasana:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="86"/>
         <source>Quality:</source>
-        <translation type="unfinished">Laatu:</translation>
+        <translation>Laatu:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="106"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Taajuus:</translation>
+        <translation>Taajuus:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="136"/>
         <source>Public</source>
-        <translation type="unfinished">Julkinen</translation>
+        <translation>Julkinen</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="143"/>
         <source>Hz</source>
-        <translation type="unfinished">Hz</translation>
+        <translation>Hz</translation>
     </message>
 </context>
 </TS>

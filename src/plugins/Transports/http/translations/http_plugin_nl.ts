@@ -34,67 +34,67 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation type="unfinished">Codering van metagegevens</translation>
+        <translation>Codering van metagegevens</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Automatische tekensetdetectie</translation>
+        <translation>Automatische tekensetdetectie</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation type="unfinished">Taal:</translation>
+        <translation>Taal:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Standaard codering:</translation>
+        <translation>Standaardcodering:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation type="unfinished">Gebruikersagent:</translation>
+        <translation>Gebruikersagent:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
         <source>Default buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaard bufferomvang:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
         <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze waarde wordt gebruikt als er &lt;b&gt;geen&lt;/b&gt; informatie over de bitsnelheid beschikbaar is.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation type="unfinished">Gebruikersagent aanpassen</translation>
+        <translation>Gebruikersagent aanpassen</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
         <source>Buffer duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bufferduur:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>
         <source>This value is used if information about bitrate is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze waarde wordt gebruikt als er informatie over de bitsnelheid beschikbaar is.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
 </context>
 </TS>

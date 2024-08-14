@@ -31,53 +31,53 @@
     <name>KdeNotifySettingsDialog</name>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="14"/>
-        <source>KDE 4 Notification Plugin Settings</source>
-        <translation type="unfinished">Asetukset KDE 4 Notification Plugin</translation>
+        <source>KDE Notification Plugin Settings</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="39"/>
         <source>Options</source>
-        <translation type="unfinished">Valinnat</translation>
+        <translation>Valinnat</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation type="unfinished">Ilmoituksen viive:</translation>
+        <translation>Ilmoituksen viive:</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="52"/>
         <source>Update visible notification instead create new</source>
-        <translation type="unfinished">Päivitä ilmoitus ja luo uusi</translation>
+        <translation>Päivitä ilmoitus ja luo uusi</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="72"/>
         <source>s</source>
-        <translation type="unfinished">s</translation>
+        <translation>s</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation type="unfinished">Ilmoitus voimakkuuden muutoksesta</translation>
+        <translation>Ilmoitus voimakkuuden muutoksesta</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="95"/>
         <source>Appearance</source>
-        <translation type="unfinished">Ulkoasu</translation>
+        <translation>Ulkoasu</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="101"/>
         <source>Show covers</source>
-        <translation type="unfinished">Näytä kannet</translation>
+        <translation>Näytä kannet</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="110"/>
         <source>Edit template</source>
-        <translation type="unfinished">Muokkaa mallia</translation>
+        <translation>Muokkaa mallia</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.cpp" line="76"/>
         <source>Notification Template</source>
-        <translation type="unfinished">Ilmoituksen malli</translation>
+        <translation>Ilmoituksen malli</translation>
     </message>
 </context>
 </TS>

@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[fi]=qmmp
 Name[fi]=Aseta jonoon Qmmp:ssä
 Comment[fi]=Lisää tiedosto/tiedostoja Qmmp:n soittolistaan
+Icon[fi]=qmmp

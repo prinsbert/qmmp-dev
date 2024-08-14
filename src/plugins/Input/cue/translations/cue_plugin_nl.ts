@@ -6,37 +6,37 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="14"/>
         <source>CUE Plugin Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="29"/>
         <source>Common settings</source>
-        <translation type="unfinished">Algemene instellingen</translation>
+        <translation>Algemene instellingen</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation type="unfinished">Onjuiste bladen laden (indien mogelijk)</translation>
+        <translation>Onjuiste bladen laden (indien mogelijk)</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation type="unfinished">CUE-codering</translation>
+        <translation>CUE-codering</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Automatische tekensetdetectie</translation>
+        <translation>Automatische tekensetdetectie</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation type="unfinished">Taal:</translation>
+        <translation>Taal:</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Standaardcodering:</translation>
+        <translation>Standaardcodering:</translation>
     </message>
 </context>
 <context>

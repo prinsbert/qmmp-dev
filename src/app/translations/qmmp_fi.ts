@@ -31,7 +31,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="51"/>
         <source>Display Jump to Track dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä &quot;Siirry raitaan&quot;-ikkuna</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="52"/>
@@ -97,88 +97,88 @@
         <translation>Tuntematon komento</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="464"/>
+        <location filename="../qmmpstarter.cpp" line="435"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Käyttö: qmmp [valinnat] [tiedostot]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="465"/>
+        <location filename="../qmmpstarter.cpp" line="436"/>
         <source>Options:</source>
         <translation>Valinnat:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="471"/>
+        <location filename="../qmmpstarter.cpp" line="442"/>
         <source>Start qmmp with the specified user interface</source>
         <translation>Käynnistä qmmp tietyllä käyttöliittymällä</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="472"/>
+        <location filename="../qmmpstarter.cpp" line="443"/>
         <source>List all available user interfaces</source>
         <translation>Listaa kaikki käytettävissä olevat käyttöliittymät</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="473"/>
+        <location filename="../qmmpstarter.cpp" line="444"/>
         <source>Don&apos;t start the application</source>
         <translation>Älä käynnistä sovellusta</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="474"/>
+        <location filename="../qmmpstarter.cpp" line="445"/>
         <source>Print debugging messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Tulosta vianetsintäviestejä</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="475"/>
+        <location filename="../qmmpstarter.cpp" line="446"/>
         <source>Display this text and exit</source>
         <translation>Näytä tämä teksti ja lopeta</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="476"/>
+        <location filename="../qmmpstarter.cpp" line="447"/>
         <source>Print version number and exit</source>
         <translation>Tulosta versionumero ja lopeta</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="478"/>
+        <location filename="../qmmpstarter.cpp" line="449"/>
         <source>Home page: %1</source>
         <translation>Sivusto: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="479"/>
+        <location filename="../qmmpstarter.cpp" line="450"/>
         <source>Development page: %1</source>
         <translation>Kehityssivusto: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="480"/>
+        <location filename="../qmmpstarter.cpp" line="451"/>
         <source>Bug tracker: %1</source>
         <translation>Vikaseuranta: %1</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="162"/>
-        <location filename="../qmmpstarter.cpp" line="485"/>
+        <location filename="../qmmpstarter.cpp" line="456"/>
         <source>Command Line Help</source>
         <translation>Komentorivin ohje</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="498"/>
+        <location filename="../qmmpstarter.cpp" line="469"/>
         <source>QMMP version: %1</source>
         <translation>QMMP-versio: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="499"/>
+        <location filename="../qmmpstarter.cpp" line="470"/>
         <source>Compiled with Qt version: %1</source>
         <translation>Käännetty käyttäen Qt-versiota: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="500"/>
+        <location filename="../qmmpstarter.cpp" line="471"/>
         <source>Using Qt version: %1</source>
         <translation>Käytössä Qt-versio: %1</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="503"/>
+        <location filename="../qmmpstarter.cpp" line="474"/>
         <source>Qmmp Version</source>
         <translation>Qmmp-versio</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="520"/>
+        <location filename="../qmmpstarter.cpp" line="491"/>
         <source>User Interfaces</source>
         <translation>Käyttöliittymät</translation>
     </message>

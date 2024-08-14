@@ -177,58 +177,58 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Редактор предустановок</translation>
+        <translation>Редактор предустановок</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation type="unfinished">Общие</translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation type="unfinished">Имя:</translation>
+        <translation>Имя:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation type="unfinished">Расширение:</translation>
+        <translation>Расширение:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation type="unfinished">Команда</translation>
+        <translation>Команда</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="77"/>
         <source>Options</source>
-        <translation type="unfinished">Параметры</translation>
+        <translation>Параметры</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation type="unfinished">Добавлять теги</translation>
+        <translation>Добавлять теги</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation type="unfinished">Преобразовать в 16 бит</translation>
+        <translation>Преобразовать в 16 бит</translation>
     </message>
 </context>
 <context>
     <name>PresetEditor</name>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="39"/>
+        <location filename="../converterpreseteditor.cpp" line="40"/>
         <source>%1 (Read Only)</source>
         <translation>%1 (только для чтения)</translation>
     </message>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="72"/>
+        <location filename="../converterpreseteditor.cpp" line="73"/>
         <source>Output file</source>
         <translation>Выходной файл</translation>
     </message>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="73"/>
+        <location filename="../converterpreseteditor.cpp" line="74"/>
         <source>Input file</source>
         <translation>Входной файл</translation>
     </message>

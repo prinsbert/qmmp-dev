@@ -97,88 +97,88 @@
         <translation>Ismeretlen parancs</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="464"/>
+        <location filename="../qmmpstarter.cpp" line="435"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Használat: qmmp [opciók] [fájlok]</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="465"/>
+        <location filename="../qmmpstarter.cpp" line="436"/>
         <source>Options:</source>
         <translation>Opciók:</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="471"/>
+        <location filename="../qmmpstarter.cpp" line="442"/>
         <source>Start qmmp with the specified user interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="472"/>
+        <location filename="../qmmpstarter.cpp" line="443"/>
         <source>List all available user interfaces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="473"/>
+        <location filename="../qmmpstarter.cpp" line="444"/>
         <source>Don&apos;t start the application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="474"/>
+        <location filename="../qmmpstarter.cpp" line="445"/>
         <source>Print debugging messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="475"/>
+        <location filename="../qmmpstarter.cpp" line="446"/>
         <source>Display this text and exit</source>
         <translation>Mutasd ezt a szöveget, majd lépj ki</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="476"/>
+        <location filename="../qmmpstarter.cpp" line="447"/>
         <source>Print version number and exit</source>
         <translation>Mutasd a verziószámot, majd lépj ki</translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="478"/>
+        <location filename="../qmmpstarter.cpp" line="449"/>
         <source>Home page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="479"/>
+        <location filename="../qmmpstarter.cpp" line="450"/>
         <source>Development page: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="480"/>
+        <location filename="../qmmpstarter.cpp" line="451"/>
         <source>Bug tracker: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="162"/>
-        <location filename="../qmmpstarter.cpp" line="485"/>
+        <location filename="../qmmpstarter.cpp" line="456"/>
         <source>Command Line Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="498"/>
+        <location filename="../qmmpstarter.cpp" line="469"/>
         <source>QMMP version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="499"/>
+        <location filename="../qmmpstarter.cpp" line="470"/>
         <source>Compiled with Qt version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="500"/>
+        <location filename="../qmmpstarter.cpp" line="471"/>
         <source>Using Qt version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="503"/>
+        <location filename="../qmmpstarter.cpp" line="474"/>
         <source>Qmmp Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qmmpstarter.cpp" line="520"/>
+        <location filename="../qmmpstarter.cpp" line="491"/>
         <source>User Interfaces</source>
         <translation type="unfinished"></translation>
     </message>

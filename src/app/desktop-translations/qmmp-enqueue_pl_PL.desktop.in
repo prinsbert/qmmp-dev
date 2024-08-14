@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[pl_PL]=qmmp
 Name[pl_PL]=Kolejkuj w Qmmp
 Comment[pl_PL]=Dodaj plik(i) do listy odtwarzania Qmmp
+Icon[pl_PL]=qmmp

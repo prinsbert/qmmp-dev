@@ -6,457 +6,457 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation type="unfinished">&amp;Toista</translation>
+        <translation>&amp;Toista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished">&amp;Keskeytä</translation>
+        <translation>&amp;Keskeytä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished">&amp;Pysäytä</translation>
+        <translation>&amp;Pysäytä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>V</source>
-        <translation type="unfinished">V</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished">&amp;Edellinen</translation>
+        <translation>&amp;Edellinen</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>Z</source>
-        <translation type="unfinished">Z</translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
-        <translation type="unfinished">&amp;Seuraava</translation>
+        <translation>&amp;Seuraava</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>B</source>
-        <translation type="unfinished">B</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
-        <translation type="unfinished">T&amp;oista/keskeytä</translation>
+        <translation>T&amp;oista/keskeytä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>Space</source>
-        <translation type="unfinished">Välilyötni</translation>
+        <translation>Välilyötni</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>&amp;Jump to Track</source>
-        <translation type="unfinished">&amp;Siirry kappaleeseen</translation>
+        <translation>&amp;Siirry kappaleeseen</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>J</source>
-        <translation type="unfinished">J</translation>
+        <translation>J</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>&amp;Repeat Playlist</source>
-        <translation type="unfinished">&amp;Kertaa soittolista</translation>
+        <translation>&amp;Kertaa soittolista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>&amp;Repeat Track</source>
-        <translation type="unfinished">&amp;Kertaa kappale</translation>
+        <translation>&amp;Kertaa kappale</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished">&amp;Sekoita</translation>
+        <translation>&amp;Sekoita</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>S</source>
-        <translation type="unfinished">S</translation>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>&amp;No Playlist Advance</source>
-        <translation type="unfinished">&amp;Ei soittolistoja etukäteen</translation>
+        <translation>&amp;Ei soittolistoja etukäteen</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+N</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>&amp;Stop After Selected</source>
-        <translation type="unfinished">Pys&amp;äytä valitun jälkeen</translation>
+        <translation>Pys&amp;äytä valitun jälkeen</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished">&amp;Siirtyminen soittolistojen välillä</translation>
+        <translation>&amp;Siirtyminen soittolistojen välillä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Clear Queue</source>
-        <translation type="unfinished">T&amp;yhjennä jono</translation>
+        <translation>T&amp;yhjennä jono</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>Alt+Q</source>
-        <translation type="unfinished">Alt+Q</translation>
+        <translation>Alt+Q</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Show Playlist</source>
-        <translation type="unfinished">Näytä soittolista</translation>
+        <translation>Näytä soittolista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Alt+E</source>
-        <translation type="unfinished">Alt+E</translation>
+        <translation>Alt+E</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Show Equalizer</source>
-        <translation type="unfinished">Näytä taajuuskorjain</translation>
+        <translation>Näytä taajuuskorjain</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Alt+G</source>
-        <translation type="unfinished">Alt+G</translation>
+        <translation>Alt+G</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>Always on Top</source>
-        <translation type="unfinished">Aina päällimmäisenä</translation>
+        <translation>Aina päällimmäisenä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>Put on All Workspaces</source>
-        <translation type="unfinished">Aseta kaikkiin työtiloihin</translation>
+        <translation>Aseta kaikkiin työtiloihin</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Double Size</source>
-        <translation type="unfinished">Tuplakoko</translation>
+        <translation>Tuplakoko</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Meta+D</source>
-        <translation type="unfinished">Meta+D</translation>
+        <translation>Meta+D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="59"/>
         <source>Anti-aliasing</source>
-        <translation type="unfinished">Sahalaitaisuuden poisto</translation>
+        <translation>Sahalaitaisuuden poisto</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Volume &amp;+</source>
-        <translation type="unfinished">Voimakkuus &amp;+</translation>
+        <translation>Voimakkuus &amp;+</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Volume &amp;-</source>
-        <translation type="unfinished">Voimakkuus &amp;-</translation>
+        <translation>Voimakkuus &amp;-</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>&amp;Mute</source>
-        <translation type="unfinished">&amp;Mykistä</translation>
+        <translation>&amp;Mykistä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">Li&amp;sää tiedosto</translation>
+        <translation>Li&amp;sää tiedosto</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">Lis&amp;ää kansio</translation>
+        <translation>Lis&amp;ää kansio</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>D</source>
-        <translation type="unfinished">D</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>&amp;Add Url</source>
-        <translation type="unfinished">&amp;Lisää verkko-osoite</translation>
+        <translation>&amp;Lisää verkko-osoite</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>U</source>
-        <translation type="unfinished">U</translation>
+        <translation>U</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">&amp;Poista valitut</translation>
+        <translation>&amp;Poista valitut</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">Poi&amp;sta kaikki</translation>
+        <translation>Poi&amp;sta kaikki</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="70"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">&amp;Poista valitsematon</translation>
+        <translation>&amp;Poista valitsematon</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>Remove unavailable files</source>
-        <translation type="unfinished">Poista tiedostot, jotka eivät ole käytettävissä</translation>
+        <translation>Poista tiedostot, jotka eivät ole käytettävissä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>Remove duplicates</source>
-        <translation type="unfinished">Poista kaksoiskappaleet</translation>
+        <translation>Poista kaksoiskappaleet</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>Refresh</source>
-        <translation type="unfinished">Päivitä</translation>
+        <translation>Päivitä</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Queue Toggle</source>
-        <translation type="unfinished">&amp;Vaihda jono</translation>
+        <translation>&amp;Vaihda jono</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>Q</source>
-        <translation type="unfinished">Q</translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>Invert Selection</source>
-        <translation type="unfinished">Käänteinen valinta</translation>
+        <translation>Käänteinen valinta</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Select None</source>
-        <translation type="unfinished">&amp;Älä valitse mitään</translation>
+        <translation>&amp;Älä valitse mitään</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;Valitse kaikki</translation>
+        <translation>&amp;Valitse kaikki</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">Ctrl+A</translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished">Näy&amp;tä kappaleen tiedot</translation>
+        <translation>Näy&amp;tä kappaleen tiedot</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Alt+I</source>
-        <translation type="unfinished">Alt+I</translation>
+        <translation>Alt+I</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>&amp;New List</source>
-        <translation type="unfinished">&amp;Uusi lista</translation>
+        <translation>&amp;Uusi lista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Ctrl+T</source>
-        <translation type="unfinished">Ctrl+T</translation>
+        <translation>Ctrl+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Delete List</source>
-        <translation type="unfinished">&amp;Poista lista</translation>
+        <translation>&amp;Poista lista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>&amp;Load List</source>
-        <translation type="unfinished">&amp;Lataa lista</translation>
+        <translation>&amp;Lataa lista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>O</source>
-        <translation type="unfinished">O</translation>
+        <translation>O</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Save List</source>
-        <translation type="unfinished">&amp;Tallenna lista</translation>
+        <translation>&amp;Tallenna lista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>Shift+S</source>
-        <translation type="unfinished">Shift+S</translation>
+        <translation>Shift+S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Rename List</source>
-        <translation type="unfinished">&amp;Nimeä lista uudelleen</translation>
+        <translation>&amp;Nimeä lista uudelleen</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>F2</source>
-        <translation type="unfinished">F2</translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;Select Next Playlist</source>
-        <translation type="unfinished">&amp;Valitse seuraava soittolista</translation>
+        <translation>&amp;Valitse seuraava soittolista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>Ctrl+PgDown</source>
-        <translation type="unfinished">Ctrl+PgDown</translation>
+        <translation>Ctrl+PgDown</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation type="unfinished">V&amp;alitse edellinen soittolista</translation>
+        <translation>V&amp;alitse edellinen soittolista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>Ctrl+PgUp</source>
-        <translation type="unfinished">Ctrl+PgUp</translation>
+        <translation>Ctrl+PgUp</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Show Playlists</source>
-        <translation type="unfinished">&amp;Näytä soittolistat</translation>
+        <translation>&amp;Näytä soittolistat</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Group Tracks</source>
-        <translation type="unfinished">&amp;Ryhmitä kappaleet</translation>
+        <translation>&amp;Ryhmitä kappaleet</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+G</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Show Column Headers</source>
-        <translation type="unfinished">&amp;Näytä sarakkeiden otsikot</translation>
+        <translation>&amp;Näytä sarakkeiden otsikot</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>Ctrl+H</source>
-        <translation type="unfinished">Ctrl+H</translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Show &amp;Tab Bar</source>
-        <translation type="unfinished">Näytä &amp;Välilehtipalkki</translation>
+        <translation>Näytä &amp;Välilehtipalkki</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Alt+T</source>
-        <translation type="unfinished">Alt+T</translation>
+        <translation>Alt+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished">&amp;Asetukset</translation>
+        <translation>&amp;Asetukset</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished">Ctrl+P</translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;Tietoja</translation>
+        <translation>&amp;Tietoja</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;About Qt</source>
-        <translation type="unfinished">&amp;Tietoja Qt:stä</translation>
+        <translation>&amp;Tietoja Qt</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">&amp;Lopeta</translation>
+        <translation>&amp;Lopeta</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
 </context>
 <context>
@@ -464,87 +464,87 @@
     <message>
         <location filename="../skinneddisplay.cpp" line="59"/>
         <source>Previous</source>
-        <translation type="unfinished">Edellinen</translation>
+        <translation>Edellinen</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="63"/>
         <source>Play</source>
-        <translation type="unfinished">Toista</translation>
+        <translation>Toista</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="66"/>
         <source>Pause</source>
-        <translation type="unfinished">Keskeytä</translation>
+        <translation>Keskeytä</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="69"/>
         <source>Stop</source>
-        <translation type="unfinished">Lopeta</translation>
+        <translation>Lopeta</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="72"/>
         <source>Next</source>
-        <translation type="unfinished">Seuraava</translation>
+        <translation>Seuraava</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="75"/>
         <source>Play files</source>
-        <translation type="unfinished">Toista tiedostot</translation>
+        <translation>Toista tiedostot</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="80"/>
         <source>Equalizer</source>
-        <translation type="unfinished">Taajuuskorjain</translation>
+        <translation>Taajuuskorjain</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Playlist</source>
-        <translation type="unfinished">Soittolista</translation>
+        <translation>Soittolista</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Repeat playlist</source>
-        <translation type="unfinished">Kertaa soittolista</translation>
+        <translation>Kertaa soittolista</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="87"/>
         <source>Shuffle</source>
-        <translation type="unfinished">Sekoita</translation>
+        <translation>Sekoita</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="97"/>
         <source>Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Voimakkuus:</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="103"/>
         <source>Balance</source>
-        <translation type="unfinished">Tasapaino</translation>
+        <translation>Tasapaino</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="290"/>
         <source>Volume: %1%</source>
-        <translation type="unfinished">Voimakkuus: %1%</translation>
+        <translation>Voimakkuus: %1%</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="294"/>
         <source>Balance: %1% right</source>
-        <translation type="unfinished">Tasapaino: %1 % oikea</translation>
+        <translation>Tasapaino: %1 % oikea</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="296"/>
         <source>Balance: %1% left</source>
-        <translation type="unfinished">Tasapaino: %1 % vasen</translation>
+        <translation>Tasapaino: %1 % vasen</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="298"/>
         <source>Balance: center</source>
-        <translation type="unfinished">Tasapaino: keski</translation>
+        <translation>Tasapaino: keski</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="304"/>
         <source>Seek to: %1</source>
-        <translation type="unfinished">Siirry: %1</translation>
+        <translation>Siirry: %1</translation>
     </message>
 </context>
 <context>
@@ -552,58 +552,58 @@
     <message>
         <location filename="../skinnedeqwidget.cpp" line="47"/>
         <source>Equalizer</source>
-        <translation type="unfinished">Taajuuskorjain</translation>
+        <translation>Taajuuskorjain</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="161"/>
         <location filename="../skinnedeqwidget.cpp" line="178"/>
         <source>preset</source>
-        <translation type="unfinished">esiasetus</translation>
+        <translation>esiasetus</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="262"/>
         <source>&amp;Load/Delete</source>
-        <translation type="unfinished">L&amp;ataa/poista</translation>
+        <translation>L&amp;ataa/poista</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Preset</source>
-        <translation type="unfinished">&amp;Tallenna esiasetus</translation>
+        <translation>&amp;Tallenna esiasetus</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Save Auto-load Preset</source>
-        <translation type="unfinished">&amp;Tallenna latauksen esiasetus </translation>
+        <translation>&amp;Tallenna latauksen esiasetus </translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="266"/>
         <source>&amp;Import</source>
-        <translation type="unfinished">&amp;Tuo</translation>
+        <translation>&amp;Tuo</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="268"/>
         <source>&amp;Clear</source>
-        <translation type="unfinished">T&amp;yhjennä</translation>
+        <translation>T&amp;yhjennä</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Saving Preset</source>
-        <translation type="unfinished">Tallentaa esiasetuksen</translation>
+        <translation>Tallentaa esiasetuksen</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>Preset name:</source>
-        <translation type="unfinished">Esiasetuksen nimi:</translation>
+        <translation>Esiasetuksen nimi:</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="299"/>
         <source>preset #</source>
-        <translation type="unfinished">esiasetus #</translation>
+        <translation>esiasetus #</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="395"/>
         <source>Import Preset</source>
-        <translation type="unfinished">Tuo esiasetus</translation>
+        <translation>Tuo esiasetus</translation>
     </message>
 </context>
 <context>
@@ -664,57 +664,57 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="33"/>
         <source>Change shortcut...</source>
-        <translation type="unfinished">Vaihda pikanäppäintä...</translation>
+        <translation>Vaihda pikanäppäintä...</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Reset</source>
-        <translation type="unfinished">Tyhjennä</translation>
+        <translation>Tyhjennä</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
         <source>Action</source>
-        <translation type="unfinished">Toiminto</translation>
+        <translation>Toiminto</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="63"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Pikanäppäin</translation>
+        <translation>Pikanäppäin</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
         <source>Playback</source>
-        <translation type="unfinished">Toisto</translation>
+        <translation>Toisto</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
         <source>View</source>
-        <translation type="unfinished">Näytä</translation>
+        <translation>Näytä</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
         <source>Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Voimakkuus:</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>Playlist</source>
-        <translation type="unfinished">Soittolista</translation>
+        <translation>Soittolista</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
         <source>Misc</source>
-        <translation type="unfinished">Muut</translation>
+        <translation>Muut</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Reset Shortcuts</source>
-        <translation type="unfinished">Palauta pikanäppäimet</translation>
+        <translation>Palauta pikanäppäimet</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
         <source>Do you want to restore default shortcuts?</source>
-        <translation type="unfinished">Haluatko palauttaa oletusarvoiset pikanäppäimet?</translation>
+        <translation>Haluatko palauttaa oletusarvoiset pikanäppäimet?</translation>
     </message>
 </context>
 <context>
@@ -722,37 +722,37 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="358"/>
         <source>Appearance</source>
-        <translation type="unfinished">Ulkoasu</translation>
+        <translation>Ulkoasu</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="359"/>
         <source>Shortcuts</source>
-        <translation type="unfinished">Pikanäppäimet</translation>
+        <translation>Pikanäppäimet</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="433"/>
         <source>View</source>
-        <translation type="unfinished">Näytä</translation>
+        <translation>Näytä</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="442"/>
         <source>Playlist</source>
-        <translation type="unfinished">Soittolista</translation>
+        <translation>Soittolista</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="461"/>
         <source>Audio</source>
-        <translation type="unfinished">Ääni</translation>
+        <translation>Ääni</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="469"/>
         <source>Tools</source>
-        <translation type="unfinished">Työkalut</translation>
+        <translation>Työkalut</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="541"/>
         <source>Qmmp</source>
-        <translation type="unfinished">Qmmp</translation>
+        <translation>Qmmp</translation>
     </message>
 </context>
 <context>
@@ -760,123 +760,123 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="56"/>
         <source>Playlist</source>
-        <translation type="unfinished">Soittolista</translation>
+        <translation>Soittolista</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="194"/>
         <source>&amp;Copy Selection To</source>
-        <translation type="unfinished">&amp;Kopioi valinta kohteeseen</translation>
+        <translation>&amp;Kopioi valinta kohteeseen</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="219"/>
         <source>Sort List</source>
-        <translation type="unfinished">Listaa</translation>
+        <translation>Järjestä lista</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="222"/>
         <location filename="../skinnedplaylist.cpp" line="262"/>
         <source>By Title</source>
-        <translation type="unfinished">Nimen mukaan</translation>
+        <translation>Nimi</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="225"/>
         <location filename="../skinnedplaylist.cpp" line="265"/>
         <source>By Album</source>
-        <translation type="unfinished">Albumin mukaan</translation>
+        <translation>Albumi</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="228"/>
         <location filename="../skinnedplaylist.cpp" line="268"/>
         <source>By Artist</source>
-        <translation type="unfinished">Artistin mukaan</translation>
+        <translation>Artisti</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="231"/>
         <location filename="../skinnedplaylist.cpp" line="271"/>
         <source>By Album Artist</source>
-        <translation type="unfinished">Albumin artistin mukaan</translation>
+        <translation>Albumin artisti</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="234"/>
         <location filename="../skinnedplaylist.cpp" line="274"/>
         <source>By Filename</source>
-        <translation type="unfinished">Tiedostonimen mukaan</translation>
+        <translation>Tiedostonimellä</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="237"/>
         <location filename="../skinnedplaylist.cpp" line="277"/>
         <source>By Path + Filename</source>
-        <translation type="unfinished">Polku + tiedoston mukaan</translation>
+        <translation>Polku + tiedostonimi</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="240"/>
         <location filename="../skinnedplaylist.cpp" line="280"/>
         <source>By Date</source>
-        <translation type="unfinished">Päivän mukaan</translation>
+        <translation>Päivä</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="243"/>
         <location filename="../skinnedplaylist.cpp" line="283"/>
         <source>By Track Number</source>
-        <translation type="unfinished">Kappalenumeron mukaan</translation>
+        <translation>Raidan numero</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="246"/>
         <location filename="../skinnedplaylist.cpp" line="286"/>
         <source>By Disc Number</source>
-        <translation type="unfinished">Levyn numeron mukaan</translation>
+        <translation>Levyn numero</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="249"/>
         <location filename="../skinnedplaylist.cpp" line="289"/>
         <source>By File Creation Date</source>
-        <translation type="unfinished">Tiedoston luontipäivä</translation>
+        <translation>Tiedoston luontipäivä</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="252"/>
         <location filename="../skinnedplaylist.cpp" line="292"/>
         <source>By File Modification Date</source>
-        <translation type="unfinished">Tiedoston muutospäivä</translation>
+        <translation>Tiedoston muutospäivä</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="255"/>
         <source>By Group</source>
-        <translation type="unfinished">Ryhmä</translation>
+        <translation>Ryhmä</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="260"/>
         <source>Sort Selection</source>
-        <translation type="unfinished">Järjestä valinta</translation>
+        <translation>Järjestä valinta</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="297"/>
         <source>Randomize List</source>
-        <translation type="unfinished">Sekoita lista</translation>
+        <translation>Sekoita lista</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="299"/>
         <source>Reverse List</source>
-        <translation type="unfinished">Käänteinen lista</translation>
+        <translation>Käänteinen lista</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
-        <translation type="unfinished">Toiminnot</translation>
+        <translation>Toiminnot</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
-        <translation type="unfinished">Nimeä soittolista uudelleen</translation>
+        <translation>Nimeä soittolista uudelleen</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
-        <translation type="unfinished">Soittolistan nimi:</translation>
+        <translation>Soittolistan nimi:</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
-        <translation type="unfinished">&amp;Uusi soittolista</translation>
+        <translation>&amp;Uusi soittolista</translation>
     </message>
 </context>
 <context>
@@ -884,34 +884,34 @@
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="14"/>
         <source>Playlist Browser</source>
-        <translation type="unfinished">Soittolistaselain</translation>
+        <translation>Soittolistaselain</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
         <source>Filter:</source>
-        <translation type="unfinished">Suodata:</translation>
+        <translation>Suodata:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="47"/>
         <source>New</source>
-        <translation type="unfinished">Uusi</translation>
+        <translation>Uusi</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="54"/>
         <location filename="../skinnedplaylistbrowser.cpp" line="45"/>
         <source>Delete</source>
-        <translation type="unfinished">Poista</translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="61"/>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistbrowser.cpp" line="44"/>
         <source>Rename</source>
-        <translation type="unfinished">Nimeä uudelleen</translation>
+        <translation>Nimeä uudelleen</translation>
     </message>
 </context>
 <context>
@@ -919,50 +919,50 @@
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="77"/>
         <source>Add Column</source>
-        <translation type="unfinished">Lisää sarake</translation>
+        <translation>Lisää sarake</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="78"/>
         <source>Edit Column</source>
-        <translation type="unfinished">Muokkaa saraketta</translation>
+        <translation>Muokkaa saraketta</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="79"/>
         <source>Show Queue/Protocol</source>
-        <translation type="unfinished">Näytä jono/protokolla</translation>
+        <translation>Näytä jono/protokolla</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="81"/>
         <source>Auto-resize</source>
-        <translation type="unfinished">Automaattinen koko</translation>
+        <translation>Automaattinen koko</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="84"/>
         <source>Alignment</source>
-        <translation type="unfinished">Tasaus</translation>
+        <translation>Kohdistus</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="85"/>
         <source>Left</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Vasen</translation>
+        <translation>Vasen</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="86"/>
         <source>Right</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Oikea</translation>
+        <translation>Oikea</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="87"/>
         <source>Center</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Keskelle</translation>
+        <translation>Keskelle</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="97"/>
         <source>Remove Column</source>
-        <translation type="unfinished">Poista sarake</translation>
+        <translation>Poista sarake</translation>
     </message>
 </context>
 <context>
@@ -970,47 +970,47 @@
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="14"/>
         <source>Popup Information Settings</source>
-        <translation type="unfinished">Ponnahdusikkunan asetukset</translation>
+        <translation>Ponnahdusikkunan asetukset</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="29"/>
         <source>Template</source>
-        <translation type="unfinished">Malli</translation>
+        <translation>Malli</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished">Tyhjennä</translation>
+        <translation>Tyhjennä</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="65"/>
         <source>Insert</source>
-        <translation type="unfinished">Lisää</translation>
+        <translation>Lisää</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation type="unfinished">Näytä kansi</translation>
+        <translation>Näytä kansi</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Kannen koko:</translation>
+        <translation>Kannen koko:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Läpinäkyvyys:</translation>
+        <translation>Läpinäkyvyys:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation type="unfinished">Viive:</translation>
+        <translation>Viive:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="178"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
 </context>
 <context>
@@ -1018,27 +1018,27 @@
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Asetettu editori</translation>
+        <translation>Asetettu editori</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="36"/>
         <source>Preset</source>
-        <translation type="unfinished">Esiasetus</translation>
+        <translation>Esiasetus</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="61"/>
         <source>Auto-preset</source>
-        <translation type="unfinished">Automaattinen esiasetus</translation>
+        <translation>Automaattinen esiasetus</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="95"/>
         <source>Load</source>
-        <translation type="unfinished">Lataa</translation>
+        <translation>Lataa</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="102"/>
         <source>Delete</source>
-        <translation type="unfinished">Poista</translation>
+        <translation>Poista</translation>
     </message>
 </context>
 <context>
@@ -1185,6 +1185,16 @@
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
+        <source>Groups:</source>
+        <translation>Ryhmät:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="1021"/>
+        <source>Extra group row:</source>
+        <translation>Lisäryhmärivi:</translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="1048"/>
         <source>Column headers:</source>
         <translation>Sarakkeiden otsikot:</translation>
     </message>
@@ -1196,7 +1206,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
         <location filename="../forms/skinnedsettings.ui" line="980"/>
-        <location filename="../forms/skinnedsettings.ui" line="1007"/>
+        <location filename="../forms/skinnedsettings.ui" line="1061"/>
         <source>???</source>
         <translation>???</translation>
     </message>
@@ -1204,17 +1214,17 @@
         <location filename="../forms/skinnedsettings.ui" line="142"/>
         <location filename="../forms/skinnedsettings.ui" line="945"/>
         <location filename="../forms/skinnedsettings.ui" line="987"/>
-        <location filename="../forms/skinnedsettings.ui" line="1014"/>
+        <location filename="../forms/skinnedsettings.ui" line="1068"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1036"/>
+        <location filename="../forms/skinnedsettings.ui" line="1103"/>
         <source>Reset fonts</source>
         <translation>Tyhjennä fontit</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1045"/>
+        <location filename="../forms/skinnedsettings.ui" line="1112"/>
         <source>Use bitmap font if available</source>
         <translation>Käytä bittifonttia, jos käytettävissä</translation>
     </message>
@@ -1306,27 +1316,27 @@
         <translation>Näytä &apos;Uusi soittolista&apos;-painike</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="109"/>
+        <location filename="../skinnedsettings.cpp" line="81"/>
         <source>Select Skin Files</source>
         <translation>Valitse skinitiedostot</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="110"/>
+        <location filename="../skinnedsettings.cpp" line="82"/>
         <source>Skin files</source>
         <translation>Skinitiedostot</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="180"/>
+        <location filename="../skinnedsettings.cpp" line="165"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletus ulkoasu</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="189"/>
+        <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Unarchived skin %1</source>
         <translation>Arkistoimaton ulkoasu %1</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="189"/>
+        <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Archived skin %1</source>
         <translation>Arkistoitu ulkoasu %1</translation>
     </message>
@@ -1336,17 +1346,17 @@
     <message>
         <location filename="../skinnedtextscroller.cpp" line="54"/>
         <source>Autoscroll Songname</source>
-        <translation type="unfinished">Vieritä kappaleen nimeen</translation>
+        <translation>Vieritä kappaleen nimeen</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="55"/>
         <source>Transparent Background</source>
-        <translation type="unfinished">Läpinäkyvä tausta</translation>
+        <translation>Läpinäkyvä tausta</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation type="unfinished">Puskuroidaan: %1 %</translation>
+        <translation>Puskuroidaan: %1 %</translation>
     </message>
 </context>
 <context>
@@ -1354,132 +1364,132 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="211"/>
         <source>Visualization Mode</source>
-        <translation type="unfinished">Visualisointitila</translation>
+        <translation>Visualisointitila</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="214"/>
         <source>Analyzer</source>
-        <translation type="unfinished">Analysaattori</translation>
+        <translation>Analysaattori</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="215"/>
         <source>Scope</source>
-        <translation type="unfinished">Laajuus</translation>
+        <translation>Laajuus</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="216"/>
         <source>Off</source>
-        <translation type="unfinished">pois</translation>
+        <translation>pois</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="223"/>
         <source>Analyzer Mode</source>
-        <translation type="unfinished">Analysaattoritila</translation>
+        <translation>Analysaattoritila</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="226"/>
         <source>Normal</source>
-        <translation type="unfinished">Normaali</translation>
+        <translation>Normaali</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="227"/>
         <source>Fire</source>
-        <translation type="unfinished">Tuli</translation>
+        <translation>Tuli</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="228"/>
         <source>Vertical Lines</source>
-        <translation type="unfinished">Pystyviivat</translation>
+        <translation>Pystyviivat</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="229"/>
         <source>Lines</source>
-        <translation type="unfinished">Viivat</translation>
+        <translation>Viivat</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="230"/>
         <source>Bars</source>
-        <translation type="unfinished">Palkit</translation>
+        <translation>Palkit</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="243"/>
         <source>Peaks</source>
-        <translation type="unfinished">Piikki</translation>
+        <translation>Piikki</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="247"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished">Virkistystaajuus</translation>
+        <translation>Virkistystaajuus</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="250"/>
         <source>50 fps</source>
-        <translation type="unfinished">50 fps</translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="251"/>
         <source>25 fps</source>
-        <translation type="unfinished">25 fps</translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="252"/>
         <source>10 fps</source>
-        <translation type="unfinished">10 fps</translation>
+        <translation>10 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="253"/>
         <source>5 fps</source>
-        <translation type="unfinished">5 fps</translation>
+        <translation>5 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="260"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished">Analysaattorin pudotus</translation>
+        <translation>Analysaattorin pudotus</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="263"/>
         <location filename="../skinnedvisualization.cpp" line="277"/>
         <source>Slowest</source>
-        <translation type="unfinished">Hitain</translation>
+        <translation>Hitain</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="264"/>
         <location filename="../skinnedvisualization.cpp" line="278"/>
         <source>Slow</source>
-        <translation type="unfinished">Hidas</translation>
+        <translation>Hidas</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="265"/>
         <location filename="../skinnedvisualization.cpp" line="279"/>
         <source>Medium</source>
-        <translation type="unfinished">Keskitaso</translation>
+        <translation>Keskitaso</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="266"/>
         <location filename="../skinnedvisualization.cpp" line="280"/>
         <source>Fast</source>
-        <translation type="unfinished">Nopea</translation>
+        <translation>Nopea</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="267"/>
         <location filename="../skinnedvisualization.cpp" line="281"/>
         <source>Fastest</source>
-        <translation type="unfinished">Nopein</translation>
+        <translation>Nopein</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="274"/>
         <source>Peaks Falloff</source>
-        <translation type="unfinished">Huipun pudotus</translation>
+        <translation>Huipun pudotus</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="287"/>
         <source>Background</source>
-        <translation type="unfinished">Tausta</translation>
+        <translation>Tausta</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="288"/>
         <source>Transparent</source>
-        <translation type="unfinished">Läpinäkyvä</translation>
+        <translation>Läpinäkyvä</translation>
     </message>
 </context>
 </TS>

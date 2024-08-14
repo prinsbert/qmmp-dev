@@ -34,17 +34,17 @@
     <message>
         <location filename="../stereosettingsdialog.ui" line="14"/>
         <source>Extra Stereo Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki Ekstra Stereo</translation>
+        <translation>Ustawienia wtyczki Ekstra Stereo</translation>
     </message>
     <message>
         <location filename="../stereosettingsdialog.ui" line="31"/>
         <source>Effect intensity:</source>
-        <translation type="unfinished">Intensywność efektu:</translation>
+        <translation>Intensywność efektu:</translation>
     </message>
     <message>
         <location filename="../stereosettingsdialog.ui" line="54"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
 </context>
 </TS>

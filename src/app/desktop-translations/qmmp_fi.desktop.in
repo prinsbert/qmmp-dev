@@ -35,7 +35,7 @@ Exec=qmmp --no-start --next
 
 
 # Translations
+Name[fi]=Qmmp
 Comment[fi]=Qt-pohjainen multimediasoitin
 GenericName[fi]=Äänisoitin
-Name[fi]=Qmmp
 Icon[fi]=qmmp

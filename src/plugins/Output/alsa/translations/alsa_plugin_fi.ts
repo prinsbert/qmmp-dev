@@ -6,62 +6,62 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="14"/>
         <source>ALSA Plugin Settings</source>
-        <translation type="unfinished">Asetukset ALSA Plugin</translation>
+        <translation>Asetukset ALSA Plugin</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Laiteasetukset</translation>
+        <translation>Laiteasetukset</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Ääniasetukset</translation>
+        <translation>Ääniasetukset</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="70"/>
         <source>Mixer</source>
-        <translation type="unfinished">Mikseri</translation>
+        <translation>Mikseri</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="94"/>
         <source>Mixer card:</source>
-        <translation type="unfinished">Mikserikortti:</translation>
+        <translation>Mikserikortti:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="104"/>
         <source>Mixer device:</source>
-        <translation type="unfinished">Mikserilaite:</translation>
+        <translation>Mikserilaite:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Lisäasetukset</translation>
+        <translation>Lisäasetukset</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="142"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Äänikortti</translation>
+        <translation>Äänikortti</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="148"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Puskurin aika (ms):</translation>
+        <translation>Puskurin aika (ms):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="184"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Tarkastelujakso (ms):</translation>
+        <translation>Tarkastelujakso (ms):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="220"/>
         <source>Use mmap access</source>
-        <translation type="unfinished">Käytä mmap yhteyttä</translation>
+        <translation>Käytä mmap yhteyttä</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="240"/>
         <source>Use snd_pcm_pause function</source>
-        <translation type="unfinished">Käytä snd_pcm_pause-funktiota</translation>
+        <translation>Käytä snd_pcm_pause-funktiota</translation>
     </message>
 </context>
 <context>

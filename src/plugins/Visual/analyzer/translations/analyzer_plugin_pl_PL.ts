@@ -79,14 +79,12 @@
         <translation>Opadanie szczytów</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="357"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Pełny ekran</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="357"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>F</source>
         <translation>F</translation>
     </message>
@@ -96,7 +94,7 @@
     <message>
         <location filename="../analyzercolorwidget.cpp" line="37"/>
         <source>Select Color</source>
-        <translation type="unfinished">Wybierz kolor</translation>
+        <translation>Wybierz kolor</translation>
     </message>
 </context>
 <context>
@@ -104,47 +102,47 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="14"/>
         <source>Analyzer Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki Analizator</translation>
+        <translation>Ustawienia wtyczki Analizator</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="35"/>
         <source>General</source>
-        <translation type="unfinished">Ogólne</translation>
+        <translation>Ogólne</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="41"/>
         <source>Cells size:</source>
-        <translation type="unfinished">Rozmiar komórek:</translation>
+        <translation>Rozmiar komórek:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="101"/>
         <source>Colors</source>
-        <translation type="unfinished">Kolory</translation>
+        <translation>Kolory</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="107"/>
         <source>Peaks:</source>
-        <translation type="unfinished">Szczyty:</translation>
+        <translation>Szczyty:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="139"/>
         <source>Analyzer #1:</source>
-        <translation type="unfinished">Analizator #1:</translation>
+        <translation>Analizator #1:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="171"/>
         <source>Background:</source>
-        <translation type="unfinished">Tło:</translation>
+        <translation>Tło:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="203"/>
         <source>Analyzer #2:</source>
-        <translation type="unfinished">Analizator #2:</translation>
+        <translation>Analizator #2:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="248"/>
         <source>Analyzer #3:</source>
-        <translation type="unfinished">Analizator #3:</translation>
+        <translation>Analizator #3:</translation>
     </message>
 </context>
 <context>

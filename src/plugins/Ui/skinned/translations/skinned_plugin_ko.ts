@@ -1185,6 +1185,16 @@
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
+        <source>Groups:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="1021"/>
+        <source>Extra group row:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../forms/skinnedsettings.ui" line="1048"/>
         <source>Column headers:</source>
         <translation>열 헤더:</translation>
     </message>
@@ -1196,7 +1206,7 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="938"/>
         <location filename="../forms/skinnedsettings.ui" line="980"/>
-        <location filename="../forms/skinnedsettings.ui" line="1007"/>
+        <location filename="../forms/skinnedsettings.ui" line="1061"/>
         <source>???</source>
         <translation>???</translation>
     </message>
@@ -1204,17 +1214,17 @@
         <location filename="../forms/skinnedsettings.ui" line="142"/>
         <location filename="../forms/skinnedsettings.ui" line="945"/>
         <location filename="../forms/skinnedsettings.ui" line="987"/>
-        <location filename="../forms/skinnedsettings.ui" line="1014"/>
+        <location filename="../forms/skinnedsettings.ui" line="1068"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1036"/>
+        <location filename="../forms/skinnedsettings.ui" line="1103"/>
         <source>Reset fonts</source>
         <translation>글꼴 재설정</translation>
     </message>
     <message>
-        <location filename="../forms/skinnedsettings.ui" line="1045"/>
+        <location filename="../forms/skinnedsettings.ui" line="1112"/>
         <source>Use bitmap font if available</source>
         <translation>사용 가능한 경우 비트맵 글꼴 사용</translation>
     </message>
@@ -1306,27 +1316,27 @@
         <translation>&apos;새 재생목록&apos; 버튼 표시</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="109"/>
+        <location filename="../skinnedsettings.cpp" line="81"/>
         <source>Select Skin Files</source>
         <translation>스킨 파일 선택</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="110"/>
+        <location filename="../skinnedsettings.cpp" line="82"/>
         <source>Skin files</source>
         <translation>스킨 파일</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="180"/>
+        <location filename="../skinnedsettings.cpp" line="165"/>
         <source>Default skin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="189"/>
+        <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Unarchived skin %1</source>
         <translation>압축되지 않은 스킨 %1</translation>
     </message>
     <message>
-        <location filename="../skinnedsettings.cpp" line="189"/>
+        <location filename="../skinnedsettings.cpp" line="174"/>
         <source>Archived skin %1</source>
         <translation>압축된 스킨 %1</translation>
     </message>

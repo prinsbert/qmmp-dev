@@ -79,14 +79,12 @@
         <translation>Huipun pudotus</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="357"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Koko näyttö</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="357"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>F</source>
         <translation>F</translation>
     </message>
@@ -96,7 +94,7 @@
     <message>
         <location filename="../analyzercolorwidget.cpp" line="37"/>
         <source>Select Color</source>
-        <translation type="unfinished">Valitse väri</translation>
+        <translation>Valitse väri</translation>
     </message>
 </context>
 <context>
@@ -104,47 +102,47 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="14"/>
         <source>Analyzer Plugin Settings</source>
-        <translation type="unfinished">Asetukset Analyzer Plugin</translation>
+        <translation>Asetukset Analyzer Plugin</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="35"/>
         <source>General</source>
-        <translation type="unfinished">Yleiset</translation>
+        <translation>Yleiset</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="41"/>
         <source>Cells size:</source>
-        <translation type="unfinished">Solujen koko:</translation>
+        <translation>Solujen koko:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="101"/>
         <source>Colors</source>
-        <translation type="unfinished">Värit</translation>
+        <translation>Värit</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="107"/>
         <source>Peaks:</source>
-        <translation type="unfinished">Piikki:</translation>
+        <translation>Piikki:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="139"/>
         <source>Analyzer #1:</source>
-        <translation type="unfinished">Analysaattori #1:</translation>
+        <translation>Analysaattori #1:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="171"/>
         <source>Background:</source>
-        <translation type="unfinished">Tausta:</translation>
+        <translation>Tausta:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="203"/>
         <source>Analyzer #2:</source>
-        <translation type="unfinished">Analysaattori #2:</translation>
+        <translation>Analysaattori #2:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="248"/>
         <source>Analyzer #3:</source>
-        <translation type="unfinished">Analysaattori #3:</translation>
+        <translation>Analysaattori #3:</translation>
     </message>
 </context>
 <context>

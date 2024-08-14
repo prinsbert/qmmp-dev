@@ -37,7 +37,7 @@
         <translation type="unfinished">Уређај:</translation>
     </message>
     <message>
-        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="35"/>
         <source>Default</source>
         <translation type="unfinished">Подразумеван</translation>
     </message>

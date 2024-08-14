@@ -152,29 +152,28 @@
         <translation>&amp;Edycja</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="136"/>
-        <location filename="../streamwindow.cpp" line="139"/>
+        <location filename="../streamwindow.cpp" line="135"/>
         <source>&amp;Remove</source>
         <translation>&amp;Usuń</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="152"/>
+        <location filename="../streamwindow.cpp" line="147"/>
         <source>Done</source>
         <translation>Gotowe</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="155"/>
-        <location filename="../streamwindow.cpp" line="156"/>
+        <location filename="../streamwindow.cpp" line="150"/>
+        <location filename="../streamwindow.cpp" line="151"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="175"/>
+        <location filename="../streamwindow.cpp" line="170"/>
         <source>Receiving</source>
         <translation>Pobieranie</translation>
     </message>
     <message>
-        <location filename="../streamwindow.cpp" line="278"/>
+        <location filename="../streamwindow.cpp" line="273"/>
         <source>Edit Stream</source>
         <translation>Edytuj strumień</translation>
     </message>

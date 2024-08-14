@@ -37,7 +37,7 @@
         <translation type="unfinished">장치:</translation>
     </message>
     <message>
-        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="35"/>
         <source>Default</source>
         <translation type="unfinished">기본값</translation>
     </message>

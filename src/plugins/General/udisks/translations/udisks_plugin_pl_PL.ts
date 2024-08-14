@@ -47,37 +47,37 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="14"/>
         <source>UDisks Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki UDisks</translation>
+        <translation>Ustawienia wtyczki UDisks</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Detekcja płyt CD Audio</translation>
+        <translation>Detekcja płyt CD Audio</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Automatycznie dodaj utwory do listy</translation>
+        <translation>Automatycznie dodaj utwory do listy</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Automatycznie usuń utwory z listy</translation>
+        <translation>Automatycznie usuń utwory z listy</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Detekcja urządzeń przenośnych</translation>
+        <translation>Detekcja urządzeń przenośnych</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Automatycznie dodaj pliki do listy</translation>
+        <translation>Automatycznie dodaj pliki do listy</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Automatycznie usuń pliki z listy</translation>
+        <translation>Automatycznie usuń pliki z listy</translation>
     </message>
 </context>
 </TS>

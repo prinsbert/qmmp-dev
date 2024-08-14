@@ -64,27 +64,27 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="109"/>
         <source>Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="111"/>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation>По имени</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="112"/>
         <source>By Size</source>
-        <translation type="unfinished"></translation>
+        <translation>По размеру</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="113"/>
         <source>By Type</source>
-        <translation type="unfinished"></translation>
+        <translation>По типу</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="114"/>
         <source>By Date</source>
-        <translation type="unfinished">По дате</translation>
+        <translation>По дате</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="191"/>
@@ -137,17 +137,17 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="703"/>
         <source>Override group colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Переопределить цвета группы</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="806"/>
         <source>Override current track colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Переопределить цвета текущей дорожки</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="816"/>
         <source>Current track text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст текущей дорожки:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="915"/>
@@ -324,12 +324,12 @@
     <message>
         <location filename="../forms/qsuisettings.ui" line="1268"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Группы:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1275"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дополнительная строка группы:</translation>
     </message>
     <message>
         <location filename="../forms/qsuisettings.ui" line="1372"/>
@@ -505,457 +505,457 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="43"/>
         <source>&amp;Play</source>
-        <translation type="unfinished">&amp;Воспроизвести</translation>
+        <translation>&amp;Воспроизвести</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="43"/>
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="44"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished">&amp;Приостановить</translation>
+        <translation>&amp;Приостановить</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="44"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="45"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished">&amp;Стоп</translation>
+        <translation>&amp;Стоп</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="45"/>
         <source>V</source>
-        <translation type="unfinished">V</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="46"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished">&amp;Предыдущий фрагмент</translation>
+        <translation>&amp;Предыдущий фрагмент</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="46"/>
         <source>Z</source>
-        <translation type="unfinished">Z</translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="47"/>
         <source>&amp;Next</source>
-        <translation type="unfinished">&amp;Следующий фрагмент</translation>
+        <translation>&amp;Следующий фрагмент</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="47"/>
         <source>B</source>
-        <translation type="unfinished">B</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="48"/>
         <source>&amp;Play/Pause</source>
-        <translation type="unfinished">&amp;Воспр/приост</translation>
+        <translation>&amp;Воспр/приост</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="48"/>
         <source>Space</source>
-        <translation type="unfinished">Пробел</translation>
+        <translation>Пробел</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>&amp;Jump to Track</source>
-        <translation type="unfinished">&amp;Перейти к треку</translation>
+        <translation>&amp;Перейти к треку</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>J</source>
-        <translation type="unfinished">J</translation>
+        <translation>J</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>&amp;Play Files</source>
-        <translation type="unfinished">&amp;Воспроизвести файлы</translation>
+        <translation>&amp;Воспроизвести файлы</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>E</source>
-        <translation type="unfinished">E</translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
         <source>&amp;Record</source>
-        <translation type="unfinished">&amp;Записать</translation>
+        <translation>&amp;Записать</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>&amp;Repeat Playlist</source>
-        <translation type="unfinished">&amp;Повторять список</translation>
+        <translation>&amp;Повторять список</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>&amp;Repeat Track</source>
-        <translation type="unfinished">&amp;Повторять трек</translation>
+        <translation>&amp;Повторять трек</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished">&amp;В случайном порядке</translation>
+        <translation>&amp;В случайном порядке</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>
         <source>S</source>
-        <translation type="unfinished">S</translation>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
         <source>&amp;No Playlist Advance</source>
-        <translation type="unfinished">&amp;Не продвигаться по списку</translation>
+        <translation>&amp;Не продвигаться по списку</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+N</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="56"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished">&amp;Переход между списками</translation>
+        <translation>&amp;Переход между списками</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="57"/>
         <source>&amp;Stop After Selected</source>
-        <translation type="unfinished">&amp;Остановить после выделенного</translation>
+        <translation>&amp;Остановить после выделенного</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="57"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="58"/>
         <source>&amp;Clear Queue</source>
-        <translation type="unfinished">&amp;Очистить очередь</translation>
+        <translation>&amp;Очистить очередь</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="58"/>
         <source>Alt+Q</source>
-        <translation type="unfinished">Alt+Q</translation>
+        <translation>Alt+Q</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="60"/>
         <source>Always on Top</source>
-        <translation type="unfinished">Поверх всех окон</translation>
+        <translation>Поверх всех окон</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="61"/>
         <source>Put on All Workspaces</source>
-        <translation type="unfinished">Разместить на всех рабочих столах</translation>
+        <translation>Разместить на всех рабочих столах</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="67"/>
         <source>Show Tabs</source>
-        <translation type="unfinished">Показывать вкладки</translation>
+        <translation>Показывать вкладки</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="68"/>
         <source>Block Floating Panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Заблокировать плавающие панели</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="69"/>
         <source>Block Toolbars</source>
-        <translation type="unfinished">Заблокировать панели инструментов</translation>
+        <translation>Заблокировать панели инструментов</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="71"/>
         <source>Volume &amp;+</source>
-        <translation type="unfinished">Громкость &amp;+</translation>
+        <translation>Громкость &amp;+</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="71"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="72"/>
         <source>Volume &amp;-</source>
-        <translation type="unfinished">Громкость &amp;-</translation>
+        <translation>Громкость &amp;-</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="72"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="73"/>
         <source>&amp;Mute</source>
-        <translation type="unfinished">&amp;Выключить звук</translation>
+        <translation>&amp;Заглушить звук</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="73"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="75"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">&amp;Добавить файл</translation>
+        <translation>&amp;Добавить файл</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="75"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">&amp;Добавить каталог</translation>
+        <translation>&amp;Добавить каталог</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>D</source>
-        <translation type="unfinished">D</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>&amp;Add Url</source>
-        <translation type="unfinished">&amp;Добавить URL</translation>
+        <translation>&amp;Добавить URL</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>U</source>
-        <translation type="unfinished">U</translation>
+        <translation>U</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="78"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">&amp;Удалить выделенное</translation>
+        <translation>&amp;Удалить выделенное</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="78"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="79"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">&amp;Удалить всё</translation>
+        <translation>&amp;Удалить всё</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="80"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">&amp;Удалить невыделенное</translation>
+        <translation>&amp;Удалить невыделенное</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="81"/>
         <source>Remove unavailable files</source>
-        <translation type="unfinished">Удалить недоступные файлы</translation>
+        <translation>Удалить недоступные файлы</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="82"/>
         <source>Remove duplicates</source>
-        <translation type="unfinished">Удалить дубликаты</translation>
+        <translation>Удалить дубликаты</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="83"/>
         <source>Refresh</source>
-        <translation type="unfinished">Обновить</translation>
+        <translation>Обновить</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>&amp;Queue Toggle</source>
-        <translation type="unfinished">&amp;В очередь</translation>
+        <translation>&amp;В очередь</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>Q</source>
-        <translation type="unfinished">Q</translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="85"/>
         <source>Invert Selection</source>
-        <translation type="unfinished">Инвертировать выделение</translation>
+        <translation>Инвертировать выделение</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="86"/>
         <source>&amp;Select None</source>
-        <translation type="unfinished">&amp;Снять выделение</translation>
+        <translation>&amp;Снять выделение</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;Выделить всё</translation>
+        <translation>&amp;Выделить всё</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">Ctrl+A</translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="88"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished">&amp;Информация</translation>
+        <translation>&amp;Информация</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="88"/>
         <source>Alt+I</source>
-        <translation type="unfinished">Alt+I</translation>
+        <translation>Alt+I</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>&amp;New List</source>
-        <translation type="unfinished">&amp;Новый список</translation>
+        <translation>&amp;Новый список</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>Ctrl+T</source>
-        <translation type="unfinished">Ctrl+T</translation>
+        <translation>Ctrl+T</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>&amp;Delete List</source>
-        <translation type="unfinished">&amp;Удалить список</translation>
+        <translation>&amp;Удалить список</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="91"/>
         <source>&amp;Load List</source>
-        <translation type="unfinished">&amp;Загрузить список</translation>
+        <translation>&amp;Загрузить список</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="91"/>
         <source>O</source>
-        <translation type="unfinished">O</translation>
+        <translation>O</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>&amp;Save List</source>
-        <translation type="unfinished">&amp;Сохранить список</translation>
+        <translation>&amp;Сохранить список</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>Shift+S</source>
-        <translation type="unfinished">Shift+S</translation>
+        <translation>Shift+S</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>&amp;Rename List</source>
-        <translation type="unfinished">&amp;Переименовать список</translation>
+        <translation>&amp;Переименовать список</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>F2</source>
-        <translation type="unfinished">F2</translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>&amp;Select Next Playlist</source>
-        <translation type="unfinished">&amp;Следующий список</translation>
+        <translation>&amp;Cледующий список</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>Ctrl+PgDown</source>
-        <translation type="unfinished">Ctrl+PgDown</translation>
+        <translation>Ctrl+PgDown</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation type="unfinished">&amp;Предыдущий список</translation>
+        <translation>&amp;Предыдущий список</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>Ctrl+PgUp</source>
-        <translation type="unfinished">Ctrl+PgUp</translation>
+        <translation>Ctrl+PgUp</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>&amp;Group Tracks</source>
-        <translation type="unfinished">&amp;Группировать треки</translation>
+        <translation>&amp;Группировать треки</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+G</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>&amp;Show Column Headers</source>
-        <translation type="unfinished">&amp;Показывать названия колонок</translation>
+        <translation>&amp;Показывать названия колонок</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>Ctrl+H</source>
-        <translation type="unfinished">Ctrl+H</translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>&amp;Equalizer</source>
-        <translation type="unfinished">&amp;Эквалайзер</translation>
+        <translation>&amp;Эквалайзер</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>Ctrl+E</source>
-        <translation type="unfinished">Ctrl+E</translation>
+        <translation>Ctrl+E</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished">&amp;Настройки</translation>
+        <translation>&amp;Настройки</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished">Ctrl+P</translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="101"/>
         <source>Application Menu</source>
-        <translation type="unfinished">Меню приложения</translation>
+        <translation>Меню приложения</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="102"/>
         <source>&amp;About Ui</source>
-        <translation type="unfinished">&amp;Об интерфейсе</translation>
+        <translation>&amp;Об интерфейсе</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="103"/>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;О программе</translation>
+        <translation>&amp;О программе</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="104"/>
         <source>&amp;About Qt</source>
-        <translation type="unfinished">&amp;О библиотеке Qt</translation>
+        <translation>&amp;О библиотеке Qt</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">&amp;Выход</translation>
+        <translation>&amp;Выход</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="310"/>
         <source>Toolbar</source>
-        <translation type="unfinished">Панель инструментов</translation>
+        <translation>Панель инструментов</translation>
     </message>
 </context>
 <context>
@@ -963,17 +963,17 @@
     <message>
         <location filename="../qsuicoverwidget.cpp" line="32"/>
         <source>&amp;Save As...</source>
-        <translation type="unfinished">&amp;Сохранить как...</translation>
+        <translation>&amp;Сохранить как...</translation>
     </message>
     <message>
         <location filename="../qsuicoverwidget.cpp" line="65"/>
         <source>Save Cover As</source>
-        <translation type="unfinished">Сохранить обложку как</translation>
+        <translation>Сохранить обложку как</translation>
     </message>
     <message>
         <location filename="../qsuicoverwidget.cpp" line="67"/>
         <source>Images</source>
-        <translation type="unfinished">Изображения</translation>
+        <translation>Изображения</translation>
     </message>
 </context>
 <context>
@@ -981,64 +981,64 @@
     <message>
         <location filename="../qsuiequalizer.cpp" line="39"/>
         <source>Equalizer</source>
-        <translation type="unfinished">Эквалайзер</translation>
+        <translation>Эквалайзер</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="48"/>
         <source>Enable equalizer</source>
-        <translation type="unfinished">Включить эквалайзер</translation>
+        <translation>Включить эквалайзер</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="54"/>
         <source>Preset:</source>
-        <translation type="unfinished">Предустановка:</translation>
+        <translation>Предустановка:</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="62"/>
         <source>Save</source>
-        <translation type="unfinished">Сохранить</translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="66"/>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="70"/>
         <source>Reset</source>
-        <translation type="unfinished">Сброс</translation>
+        <translation>Сбросить</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="83"/>
         <source>Preamp</source>
-        <translation type="unfinished">Усиление</translation>
+        <translation>Усиление</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="100"/>
         <location filename="../qsuiequalizer.cpp" line="195"/>
         <source>%1dB</source>
-        <translation type="unfinished">%1дБ</translation>
+        <translation>%1 дБ</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="102"/>
         <location filename="../qsuiequalizer.cpp" line="193"/>
         <source>+%1dB</source>
-        <translation type="unfinished">+%1дБ</translation>
+        <translation>+%1 дБ</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="148"/>
         <source>preset</source>
-        <translation type="unfinished">предустановка</translation>
+        <translation>предустановка</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="218"/>
         <source>Overwrite Request</source>
-        <translation type="unfinished">Запрос на перезапись</translation>
+        <translation>Запрос на перезапись</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="219"/>
         <source>Preset &apos;%1&apos; already exists. Overwrite?</source>
-        <translation type="unfinished">Предустановка &apos;%1&apos; уже существует. Перезаписать?</translation>
+        <translation>Предустановка «%1» уже существует. Перезаписать?</translation>
     </message>
 </context>
 <context>
@@ -1054,62 +1054,62 @@
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="33"/>
         <source>Change shortcut...</source>
-        <translation type="unfinished">Изменить сочетание клавиш...</translation>
+        <translation>Изменить сочетание клавиш...</translation>
     </message>
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="40"/>
         <source>Reset</source>
-        <translation type="unfinished">Сброс</translation>
+        <translation>Сбросить</translation>
     </message>
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="54"/>
         <source>Action</source>
-        <translation type="unfinished">Действие</translation>
+        <translation>Действие</translation>
     </message>
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="59"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Сочетание клавиш</translation>
+        <translation>Сочетание клавиш</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="56"/>
         <source>Reset Shortcuts</source>
-        <translation type="unfinished">Сбросить сочетания клавиш</translation>
+        <translation>Сбросить сочетания клавиш</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Do you want to restore default shortcuts?</source>
-        <translation type="unfinished">Восстановить сочетания клавиш поумолчанию?</translation>
+        <translation>Восстановить сочетания клавиш по умолчанию?</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
-        <translation type="unfinished">Воспроизведение</translation>
+        <translation>Воспроизведение</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="75"/>
         <source>View</source>
-        <translation type="unfinished">Вид</translation>
+        <translation>Вид</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
-        <translation type="unfinished">Громкость</translation>
+        <translation>Громкость</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
-        <translation type="unfinished">Список</translation>
+        <translation>Список</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
-        <translation type="unfinished">Другие</translation>
+        <translation>Другие</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="101"/>
         <source>Tools</source>
-        <translation type="unfinished">Сервис</translation>
+        <translation>Сервис</translation>
     </message>
 </context>
 <context>
@@ -1118,325 +1118,325 @@
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
         <location filename="../qsuimainwindow.cpp" line="912"/>
         <source>Qmmp</source>
-        <translation type="unfinished">Qmmp</translation>
+        <translation>Qmmp</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="35"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Файл</translation>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="40"/>
         <source>&amp;Tools</source>
-        <translation type="unfinished">&amp;Инструменты</translation>
+        <translation>&amp;Инструменты</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="45"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Справка</translation>
+        <translation>&amp;Справка</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="50"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished">&amp;Правка</translation>
+        <translation>&amp;Правка</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="55"/>
         <source>&amp;Playback</source>
-        <translation type="unfinished">&amp;Воспроизведение</translation>
+        <translation>&amp;Воспроизведение</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="60"/>
         <source>&amp;View</source>
-        <translation type="unfinished">&amp;Вид</translation>
+        <translation>&amp;Вид</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="84"/>
         <location filename="../forms/qsuimainwindow.ui" line="249"/>
         <source>Visualization</source>
-        <translation type="unfinished">Визуализация</translation>
+        <translation>Визуализация</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="99"/>
         <source>Files</source>
-        <translation type="unfinished">Файлы</translation>
+        <translation>Файлы</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="114"/>
         <source>Cover</source>
-        <translation type="unfinished">Обложка</translation>
+        <translation>Обложка</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="123"/>
         <source>Playlists</source>
-        <translation type="unfinished">Списки</translation>
+        <translation>Списки</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="135"/>
         <source>Waveform Seek Bar</source>
-        <translation type="unfinished">Полоса прокрутки с формой волны</translation>
+        <translation>Полоса прокрутки с формой волны</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="149"/>
         <source>Previous</source>
-        <translation type="unfinished">Предыдущий фрагмент</translation>
+        <translation>Предыдущий фрагмент</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="159"/>
         <source>Play</source>
-        <translation type="unfinished">Воспроизвести</translation>
+        <translation>Воспроизвести</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="169"/>
         <source>Pause</source>
-        <translation type="unfinished">Приостановить</translation>
+        <translation>Приостановить</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="179"/>
         <source>Next</source>
-        <translation type="unfinished">Следующий фрагмент</translation>
+        <translation>Следующий фрагмент</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="189"/>
         <source>Stop</source>
-        <translation type="unfinished">Остановить</translation>
+        <translation>Остановить</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="194"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">&amp;Добавить файл</translation>
+        <translation>&amp;Добавить файл</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="199"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">&amp;Удалить всё</translation>
+        <translation>&amp;Удалить всё</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="204"/>
         <source>New Playlist</source>
-        <translation type="unfinished">Создать список</translation>
+        <translation>Создать список</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="209"/>
         <source>Remove Playlist</source>
-        <translation type="unfinished">Удалить список</translation>
+        <translation>Удалить список</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="214"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">&amp;Добавить каталог</translation>
+        <translation>&amp;Добавить каталог</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="219"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">&amp;Выход</translation>
+        <translation>&amp;Выход</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="224"/>
         <source>About</source>
-        <translation type="unfinished">О программе</translation>
+        <translation>О программе</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="229"/>
         <source>About Qt</source>
-        <translation type="unfinished">О Qt</translation>
+        <translation>О Qt</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="234"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;Выделить всё</translation>
+        <translation>&amp;Выделить всё</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="239"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">&amp;Удалить выделенное</translation>
+        <translation>&amp;Удалить выделенное</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="244"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">&amp;Удалить невыделенное</translation>
+        <translation>&amp;Удалить невыделенное</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="254"/>
         <source>Settings</source>
-        <translation type="unfinished">Настройки</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
         <location filename="../qsuimainwindow.cpp" line="295"/>
         <source>Rename Playlist</source>
-        <translation type="unfinished">Переименовать список</translation>
+        <translation>Переименовать список</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="86"/>
         <source>&amp;Copy Selection To</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Копировать выделенное в</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="295"/>
         <source>Playlist name:</source>
-        <translation type="unfinished">Имя списка:</translation>
+        <translation>Имя списка:</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="335"/>
         <source>Appearance</source>
-        <translation type="unfinished">Внешний вид</translation>
+        <translation>Внешний вид</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="336"/>
         <source>Shortcuts</source>
-        <translation type="unfinished">Сочетания клавиш</translation>
+        <translation>Сочетания клавиш</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="415"/>
         <source>Menu Bar</source>
-        <translation type="unfinished">Панель меню</translation>
+        <translation>Панель меню</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="434"/>
         <source>Add new playlist</source>
-        <translation type="unfinished">Добавить новый список воспроизведения</translation>
+        <translation>Добавить новый список воспроизведения</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="440"/>
         <source>Show all tabs</source>
-        <translation type="unfinished">Показать все вкладки</translation>
+        <translation>Показать все вкладки</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="467"/>
         <source>Ctrl+0</source>
-        <translation type="unfinished">Ctrl+0</translation>
+        <translation>Ctrl+0</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="473"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="478"/>
         <source>Position</source>
-        <translation type="unfinished">Позиция</translation>
+        <translation>Позиция</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="480"/>
         <source>Volume</source>
-        <translation type="unfinished">Громкость</translation>
+        <translation>Громкость</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="482"/>
         <source>Balance</source>
-        <translation type="unfinished"></translation>
+        <translation>Баланс</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="485"/>
         <source>Quick Search</source>
-        <translation type="unfinished">Быстрый поиск</translation>
+        <translation>Быстрый поиск</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="540"/>
         <source>Edit Toolbars</source>
-        <translation type="unfinished">Изменить панели инструментов</translation>
+        <translation>Изменить панели инструментов</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="542"/>
         <source>Sort List</source>
-        <translation type="unfinished">Сортировать</translation>
+        <translation>Сортировать</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="544"/>
         <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>By Title</source>
-        <translation type="unfinished">По названию</translation>
+        <translation>По названию</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="545"/>
         <location filename="../qsuimainwindow.cpp" line="561"/>
         <source>By Album</source>
-        <translation type="unfinished">По альбому</translation>
+        <translation>По альбому</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="546"/>
         <location filename="../qsuimainwindow.cpp" line="562"/>
         <source>By Artist</source>
-        <translation type="unfinished">По исполнителю</translation>
+        <translation>По исполнителю</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="547"/>
         <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>By Album Artist</source>
-        <translation type="unfinished">По исполнителю альбома</translation>
+        <translation>По исполнителю альбома</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="548"/>
         <location filename="../qsuimainwindow.cpp" line="564"/>
         <source>By Filename</source>
-        <translation type="unfinished">По имени файла</translation>
+        <translation>По имени файла</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="549"/>
         <location filename="../qsuimainwindow.cpp" line="565"/>
         <source>By Path + Filename</source>
-        <translation type="unfinished">По пути и файлу</translation>
+        <translation>По пути и файлу</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="550"/>
         <location filename="../qsuimainwindow.cpp" line="566"/>
         <source>By Date</source>
-        <translation type="unfinished">По дате</translation>
+        <translation>По дате</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="551"/>
         <location filename="../qsuimainwindow.cpp" line="567"/>
         <source>By Track Number</source>
-        <translation type="unfinished">По номеру трека</translation>
+        <translation>По номеру трека</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="552"/>
         <location filename="../qsuimainwindow.cpp" line="568"/>
         <source>By Disc Number</source>
-        <translation type="unfinished">По номеру диска</translation>
+        <translation>По номеру диска</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="553"/>
         <location filename="../qsuimainwindow.cpp" line="569"/>
         <source>By File Creation Date</source>
-        <translation type="unfinished">По дате создания файла</translation>
+        <translation>По дате создания файла</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="554"/>
         <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>By File Modification Date</source>
-        <translation type="unfinished">По дате изменения файла</translation>
+        <translation>По дате изменения файла</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="555"/>
         <source>By Group</source>
-        <translation type="unfinished">По группе</translation>
+        <translation>По группе</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="558"/>
         <source>Sort Selection</source>
-        <translation type="unfinished">Сортировать выделенное</translation>
+        <translation>Сортировать выделенное</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="574"/>
         <source>Randomize List</source>
-        <translation type="unfinished">Перемешать</translation>
+        <translation>Перемешать</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="576"/>
         <source>Reverse List</source>
-        <translation type="unfinished">Перевернуть</translation>
+        <translation>Перевернуть</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="617"/>
         <source>Actions</source>
-        <translation type="unfinished">Действия</translation>
+        <translation>Действия</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="933"/>
         <source>&amp;New PlayList</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Новый список</translation>
     </message>
 </context>
 <context>
@@ -1444,7 +1444,7 @@
     <message>
         <location filename="../qsuiplaylistbrowser.cpp" line="62"/>
         <source>Quick Search</source>
-        <translation type="unfinished">Быстрый поиск</translation>
+        <translation>Быстрый поиск</translation>
     </message>
 </context>
 <context>
@@ -1452,50 +1452,50 @@
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="54"/>
         <source>Add Column</source>
-        <translation type="unfinished">Добавить колонку</translation>
+        <translation>Добавить колонку</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="55"/>
         <source>Edit Column</source>
-        <translation type="unfinished">Изменить колонку</translation>
+        <translation>Изменить колонку</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="56"/>
         <source>Show Queue/Protocol</source>
-        <translation type="unfinished">Показывать очередь/протокол</translation>
+        <translation>Показывать очередь/протокол</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="58"/>
         <source>Auto-resize</source>
-        <translation type="unfinished">Авто-размер</translation>
+        <translation>Авто-размер</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="61"/>
         <source>Alignment</source>
-        <translation type="unfinished">Выравнивание</translation>
+        <translation>Выравнивание</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="62"/>
         <source>Left</source>
         <comment>alignment</comment>
-        <translation type="unfinished">По левому краю</translation>
+        <translation>По левому краю</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="63"/>
         <source>Right</source>
         <comment>alignment</comment>
-        <translation type="unfinished">По правому краю</translation>
+        <translation>По правому краю</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="64"/>
         <source>Center</source>
         <comment>alignment</comment>
-        <translation type="unfinished">По центру</translation>
+        <translation>По центру</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="74"/>
         <source>Remove Column</source>
-        <translation type="unfinished">Удалить колонку</translation>
+        <translation>Удалить колонку</translation>
     </message>
 </context>
 <context>
@@ -1503,47 +1503,47 @@
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="14"/>
         <source>Popup Information Settings</source>
-        <translation type="unfinished">Настройки всплывающей информации</translation>
+        <translation>Настройки всплывающей информации</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="29"/>
         <source>Template</source>
-        <translation type="unfinished">Шаблон</translation>
+        <translation>Шаблон</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished">Сброс</translation>
+        <translation>Сбросить</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="65"/>
         <source>Insert</source>
-        <translation type="unfinished">Вставить</translation>
+        <translation>Вставить</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation type="unfinished">Показывать обложку</translation>
+        <translation>Показывать обложку</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Размер обложки:</translation>
+        <translation>Размер обложки:</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="115"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Прозрачность:</translation>
+        <translation>Прозрачность:</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation type="unfinished">Задержка:</translation>
+        <translation>Задержка:</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="165"/>
         <source>ms</source>
-        <translation type="unfinished">мс</translation>
+        <translation>мс</translation>
     </message>
 </context>
 <context>
@@ -1754,7 +1754,7 @@
     <message>
         <location filename="../volumeslider.cpp" line="110"/>
         <source>%1: %2%</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2%</translation>
     </message>
 </context>
 </TS>

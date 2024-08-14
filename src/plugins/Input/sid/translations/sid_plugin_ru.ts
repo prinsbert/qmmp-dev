@@ -39,52 +39,52 @@
     <message>
         <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation type="unfinished">Настройки модуля SID</translation>
+        <translation>Настройки модуля SID</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation type="unfinished">Быстрая передискретизация</translation>
+        <translation>Быстрая передискретизация</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Частота дискретизации:</translation>
+        <translation>Частота дискретизации:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation type="unfinished">База данных HVSC:</translation>
+        <translation>База данных HVSC:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation type="unfinished">Метод передискретизации:</translation>
+        <translation>Метод передискретизации:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation type="unfinished">Длительность по умолчанию, сек:</translation>
+        <translation>Длительность по умолчанию, сек:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation type="unfinished">Включить базу данных длительности фрагментов (HVSC)</translation>
+        <translation>Включить базу данных длительности фрагментов (HVSC)</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation type="unfinished">Эмуляция:</translation>
+        <translation>Эмуляция:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Гц</translation>
+        <translation>44100 Гц</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Гц</translation>
+        <translation>48000 Гц</translation>
     </message>
 </context>
 </TS>

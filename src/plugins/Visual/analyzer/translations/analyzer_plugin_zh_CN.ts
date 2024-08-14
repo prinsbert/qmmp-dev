@@ -79,14 +79,12 @@
         <translation>顶峰坠落</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="357"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>&amp;Full Screen</source>
         <translation>全屏(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../analyzer.cpp" line="357"/>
-        <location filename="../analyzer.cpp" line="359"/>
+        <location filename="../analyzer.cpp" line="356"/>
         <source>F</source>
         <translation>F</translation>
     </message>

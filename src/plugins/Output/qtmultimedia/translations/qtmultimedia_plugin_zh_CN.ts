@@ -37,7 +37,7 @@
         <translation type="unfinished">设备：</translation>
     </message>
     <message>
-        <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
+        <location filename="../qtmultimediasettingsdialog.cpp" line="35"/>
         <source>Default</source>
         <translation type="unfinished">默认</translation>
     </message>

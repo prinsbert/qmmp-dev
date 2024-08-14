@@ -47,37 +47,37 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="14"/>
         <source>UDisks Plugin Settings</source>
-        <translation type="unfinished">Настройки модуля UDisks</translation>
+        <translation>Настройки модуля UDisks</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Автоопределение аудио-CD</translation>
+        <translation>Автоопределение аудио-CD</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Автоматически добавлять треки в список</translation>
+        <translation>Автоматически добавлять треки в список</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Автоматически удалять треки из списка</translation>
+        <translation>Автоматически удалять треки из списка</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Автоопределение съёмных устройств</translation>
+        <translation>Автоопределение съёмных устройств</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Автоматически добавлять треки в список</translation>
+        <translation>Автоматически добавлять треки в список</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Автоматически удалять треки из списка </translation>
+        <translation>Автоматически удалять треки из списка </translation>
     </message>
 </context>
 </TS>
