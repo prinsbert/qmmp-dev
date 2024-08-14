@@ -1,4 +1,4 @@
 include(../../../qmmp.pri)
 
-SUBDIRS += mplayer #mpv
+SUBDIRS += mplayer
 TEMPLATE = subdirs
