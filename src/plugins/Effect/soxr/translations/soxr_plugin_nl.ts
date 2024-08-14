@@ -29,42 +29,42 @@
     <message>
         <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Samplesnelheid (Hz):</translation>
+        <translation>Samplesnelheid (Hz):</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished">Kwaliteit:</translation>
+        <translation>Kwaliteit:</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished">Snel</translation>
+        <translation>Snel</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished">Laag</translation>
+        <translation>Laag</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished">Normaal</translation>
+        <translation>Normaal</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished">Hoog</translation>
+        <translation>Hoog</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished">Erg hoog</translation>
+        <translation>Erg hoog</translation>
     </message>
 </context>
 </TS>

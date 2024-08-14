@@ -102,82 +102,82 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versterkingsfactor:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished">Stereo mixen:</translation>
+        <translation>Stereo mixen:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished">Soort interpolatie:</translation>
+        <translation>Soort interpolatie:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished">Lowpass-filtereffect</translation>
+        <translation>Lowpass-filtereffect</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished">vblank-timer gebruiken</translation>
+        <translation>vblank-timer gebruiken</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished">Protracker 2.x FX9-bug nabootsen</translation>
+        <translation>Protracker 2.x FX9-bug nabootsen</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Samplefrequentie:</translation>
+        <translation>Samplesnelheid:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Sample-herhaalbug emuleren</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Paula-mixer gebruiken in Amiga-modules</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Hz</translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished">Nabije buur</translation>
+        <translation>Nabije buur</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished">Lineair</translation>
+        <translation>Lineair</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished">Cubic spline</translation>
+        <translation>Cubic spline</translation>
     </message>
 </context>
 </TS>

@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[nl]=qmmp
 Name[nl]=Toevoegen aan Qmmp-wachtrij
 Comment[nl]=Bestand(en) toevoegen aan Qmmp-afspeellijst
+Icon[nl]=qmmp

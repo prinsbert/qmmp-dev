@@ -29,17 +29,17 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation type="unfinished">Apparaat:</translation>
+        <translation>Apparaat:</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation type="unfinished">Standaard</translation>
+        <translation>Standaard</translation>
     </message>
 </context>
 </TS>

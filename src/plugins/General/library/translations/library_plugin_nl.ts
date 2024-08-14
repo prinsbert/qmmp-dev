@@ -161,37 +161,37 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation type="unfinished">Verzamelingsinstellingen</translation>
+        <translation>Verzamelingsinstellingen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
         <source>Recreate database</source>
-        <translation type="unfinished">Databank opnieuw aanmaken</translation>
+        <translation>Databank opnieuw aanmaken</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="46"/>
         <source>Show album year</source>
-        <translation type="unfinished">Albumjaar tonen</translation>
+        <translation>Albumjaar tonen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished">Toevoegen</translation>
+        <translation>Toevoegen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
         <source>List of directories for scanning:</source>
-        <translation type="unfinished">Lijst met te doorzoeken mappen:</translation>
+        <translation>Lijst met te doorzoeken mappen:</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
         <source>Select Directories for Scanning</source>
-        <translation type="unfinished">Selecteer de te doorzoeken mappen</translation>
+        <translation>Selecteer de te doorzoeken mappen</translation>
     </message>
 </context>
 <context>
