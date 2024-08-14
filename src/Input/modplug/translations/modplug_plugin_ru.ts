@@ -99,108 +99,108 @@
     <message>
         <location filename="../modplugsettingsdialog.ui" line="14"/>
         <source>ModPlug Plugin Settings</source>
-        <translation type="unfinished">Настройки модуля ModPlug</translation>
+        <translation>Настройки модуля ModPlug</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="33"/>
         <source>Quality</source>
-        <translation type="unfinished">Качество</translation>
+        <translation>Качество</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="45"/>
         <source>Resolution</source>
-        <translation type="unfinished">Разрешение</translation>
+        <translation>Разрешение</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="51"/>
         <source>16 bit</source>
-        <translation type="unfinished">16 бит</translation>
+        <translation>16 бит</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="58"/>
         <source>8 bit</source>
-        <translation type="unfinished">8 бит</translation>
+        <translation>8 бит</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="74"/>
         <source>Channels</source>
-        <translation type="unfinished">Каналов</translation>
+        <translation>Каналов</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="80"/>
         <source>Stereo</source>
-        <translation type="unfinished">Стерео</translation>
+        <translation>Стерео</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="87"/>
         <source>Mono (downmix)</source>
-        <translation type="unfinished">Моно</translation>
+        <translation>Моно</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="103"/>
         <source>Resampling</source>
-        <translation type="unfinished">Передискретизация</translation>
+        <translation>Передискретизация</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="109"/>
         <source>Nearest (fastest)</source>
-        <translation type="unfinished">Nearest (самый быстрый)</translation>
+        <translation>Nearest (самый быстрый)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="116"/>
         <source>Linear (fast)</source>
-        <translation type="unfinished">Linear (быстрый)</translation>
+        <translation>Linear (быстрый)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="123"/>
         <source>Spline (good quality)</source>
-        <translation type="unfinished">Spline (хорошее качество)</translation>
+        <translation>Spline (хорошее качество)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="130"/>
         <source>8-tap Fir (extremely high quality)</source>
-        <translation type="unfinished">8-tap Fir (самое выскокое качество)</translation>
+        <translation>8-tap Fir (самое выскокое качество)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="146"/>
         <source>Sampling Rate</source>
-        <translation type="unfinished">Дискретизация</translation>
+        <translation>Дискретизация</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="152"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Гц</translation>
+        <translation>48000 Гц</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="159"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Гц</translation>
+        <translation>44100 Гц</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="166"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Гц</translation>
+        <translation>22050 Гц</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="173"/>
         <source>11025 Hz</source>
-        <translation type="unfinished">11025 Гц</translation>
+        <translation>11025 Гц</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="184"/>
         <source>Effects</source>
-        <translation type="unfinished">Эффекты</translation>
+        <translation>Эффекты</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="190"/>
         <source>Reverb</source>
-        <translation type="unfinished">Затухание</translation>
+        <translation>Затухание</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="202"/>
         <location filename="../modplugsettingsdialog.ui" line="467"/>
         <source>Depth (%)</source>
-        <translation type="unfinished">Интенсивность (%)</translation>
+        <translation>Интенсивность (%)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="234"/>
@@ -208,120 +208,120 @@
         <location filename="../modplugsettingsdialog.ui" line="499"/>
         <location filename="../modplugsettingsdialog.ui" line="618"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="260"/>
         <location filename="../modplugsettingsdialog.ui" line="519"/>
         <source>Delay (ms)</source>
-        <translation type="unfinished">Задержка (мс)</translation>
+        <translation>Задержка (мс)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="292"/>
         <source>40</source>
-        <translation type="unfinished">40</translation>
+        <translation>40</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="324"/>
         <source>Bass Boost</source>
-        <translation type="unfinished">Усиление басов</translation>
+        <translation>Усиление басов</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="336"/>
         <source>Amount (%)</source>
-        <translation type="unfinished">Уровень (%)</translation>
+        <translation>Уровень (%)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="394"/>
         <source>Range (Hz)</source>
-        <translation type="unfinished">Диапазон (Гц)</translation>
+        <translation>Диапазон (Гц)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="426"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="458"/>
         <source>Surround</source>
-        <translation type="unfinished">Эффект Surround (объёмное звучание)</translation>
+        <translation>Эффект Surround (объёмное звучание)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="551"/>
         <source>5</source>
-        <translation type="unfinished">5</translation>
+        <translation>5</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="577"/>
         <source>Preamp</source>
-        <translation type="unfinished">Усиление</translation>
+        <translation>Усиление</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="586"/>
         <source>Volume</source>
-        <translation type="unfinished">Громкость</translation>
+        <translation>Громкость</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="656"/>
         <source>Note: Setting the preamp
 too high may cause clipping!</source>
-        <translation type="unfinished">Замечание: установка слишком высокого
+        <translation>Замечание: установка слишком высокого
 усиления может вызвать срезание!</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="671"/>
         <source>Misc</source>
-        <translation type="unfinished">Другие</translation>
+        <translation>Другие</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="677"/>
         <source>General</source>
-        <translation type="unfinished">Общие</translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="683"/>
         <source>Use filename as song title</source>
-        <translation type="unfinished">Использовать имя файла в качестве имени фрагмента</translation>
+        <translation>Использовать имя файла в качестве имени фрагмента</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="690"/>
         <source>Noise reduction</source>
-        <translation type="unfinished">Шумоподавление</translation>
+        <translation>Шумоподавление</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="700"/>
         <source>Fast playlist info</source>
-        <translation type="unfinished">Быстрое чтение информации</translation>
+        <translation>Быстрое чтение информации</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="710"/>
         <source>Play Amiga MOD</source>
-        <translation type="unfinished">Воспроизводить Amiga MOD</translation>
+        <translation>Воспроизводить Amiga MOD</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="720"/>
         <source>Looping</source>
-        <translation type="unfinished">Повтор</translation>
+        <translation>Повтор</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="726"/>
         <source>Don&apos;t loop</source>
-        <translation type="unfinished">Не повторять</translation>
+        <translation>Не повторять</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="733"/>
         <source>Loop</source>
-        <translation type="unfinished">Повторять</translation>
+        <translation>Повторять</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="750"/>
         <source>time(s)</source>
-        <translation type="unfinished">раз</translation>
+        <translation>раз</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="770"/>
         <source>Loop forever</source>
-        <translation type="unfinished">Повторять всегда</translation>
+        <translation>Повторять всегда</translation>
     </message>
 </context>
 </TS>
