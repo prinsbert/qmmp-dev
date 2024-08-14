@@ -31,7 +31,7 @@
     <name>KdeNotifySettingsDialog</name>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="14"/>
-        <source>KDE 4 Notification Plugin Settings</source>
+        <source>KDE Notification Plugin Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
