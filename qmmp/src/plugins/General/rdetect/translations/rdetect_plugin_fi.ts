@@ -34,37 +34,37 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished">Asetukset Volume Detection Plugin</translation>
+        <translation>Asetukset Volume Detection Plugin</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Audio CD:n tunnistus</translation>
+        <translation>Audio CD:n tunnistus</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Lisää kappaleet soittolistaan automaattisesti</translation>
+        <translation>Lisää kappaleet soittolistaan automaattisesti</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Poista kappaleet soittolistalta automaattisesti</translation>
+        <translation>Poista kappaleet soittolistalta automaattisesti</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Irrotettavan aseman havaitseminen</translation>
+        <translation>Irrotettavan aseman havaitseminen</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Lisää tiedostot soittolistaan automaattisesti</translation>
+        <translation>Lisää tiedostot soittolistaan automaattisesti</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Poista tiedostot soittolistasta automaattisesti</translation>
+        <translation>Poista tiedostot soittolistasta automaattisesti</translation>
     </message>
 </context>
 <context>

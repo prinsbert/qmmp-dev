@@ -6,52 +6,52 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="14"/>
         <source>CD Audio Plugin Settings</source>
-        <translation type="unfinished">Asetukset CD Audio Plugin</translation>
+        <translation>Asetukset CD Audio Plugin</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
-        <translation type="unfinished">Ohita laite:</translation>
+        <translation>Ohita laite:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
-        <translation type="unfinished">Rajoita cd:n nopeutta:</translation>
+        <translation>Rajoita cd:n nopeutta:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="122"/>
         <source>Use cd-text</source>
-        <translation type="unfinished">Käytä cd-tekstiä</translation>
+        <translation>Käytä cd-tekstiä</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
-        <translation type="unfinished">CDDB</translation>
+        <translation>CDDB</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="48"/>
         <source>Use HTTP instead of CDDBP</source>
-        <translation type="unfinished">Käytä HTTP:tä CDDBP:n sijaan</translation>
+        <translation>Käytä HTTP:tä CDDBP:n sijaan</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
-        <translation type="unfinished">Palvelin:</translation>
+        <translation>Palvelin:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
-        <translation type="unfinished">Polku:</translation>
+        <translation>Polku:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
-        <translation type="unfinished">Portti:</translation>
+        <translation>Portti:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="87"/>
         <source>Clear CDDB cache</source>
-        <translation type="unfinished">Tyhjennä CDDB-välimuisti</translation>
+        <translation>Tyhjennä CDDB-välimuisti</translation>
     </message>
 </context>
 <context>

@@ -6,47 +6,47 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">Asetukset OSS Plugin</translation>
+        <translation>Asetukset OSS Plugin</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Laiteasetukset</translation>
+        <translation>Laiteasetukset</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Ääniasetukset</translation>
+        <translation>Ääniasetukset</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">Mikserilaite</translation>
+        <translation>Mikserilaite</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Lisäasetukset</translation>
+        <translation>Lisäasetukset</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Äänikortti</translation>
+        <translation>Äänikortti</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Puskurin aika (ms):</translation>
+        <translation>Puskurin aika (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Tarkastelujakso (ms):</translation>
+        <translation>Tarkastelujakso (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished">PCM masterin yli</translation>
+        <translation>PCM masterin yli</translation>
     </message>
 </context>
 <context>

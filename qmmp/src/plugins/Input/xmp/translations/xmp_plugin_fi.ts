@@ -102,82 +102,82 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished">Asetukset XMP Plugin</translation>
+        <translation>Asetukset XMP Plugin</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vahvistuskerroin:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished">Stereomiksaus:</translation>
+        <translation>Stereomiksaus:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished">Interpolointi tyyppi:</translation>
+        <translation>Interpolointi tyyppi:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished">Lowpass suotimen efekti</translation>
+        <translation>Lowpass suotimen efekti</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished">Käytä ajoitukseen vblank</translation>
+        <translation>Käytä ajoitukseen vblank</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished">Jäljittele Protracker 2.x FX9 vikaa</translation>
+        <translation>Jäljittele Protracker 2.x FX9 vikaa</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Taajuus:</translation>
+        <translation>Taajuus:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Emuloi näytesilmukan virheen</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä Amiga moduuleissa Paula mikseriä</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Hz</translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished">Lähin naapuri</translation>
+        <translation>Lähin naapuri</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished">Lineaarinen</translation>
+        <translation>Lineaarinen</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished">Kuutio spline</translation>
+        <translation>Kuutio spline</translation>
     </message>
 </context>
 </TS>

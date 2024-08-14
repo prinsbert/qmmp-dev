@@ -34,17 +34,17 @@
     <message>
         <location filename="../stereosettingsdialog.ui" line="14"/>
         <source>Extra Stereo Plugin Settings</source>
-        <translation type="unfinished">Asetukset Extra Stereo Plugin</translation>
+        <translation>Asetukset Extra Stereo Plugin</translation>
     </message>
     <message>
         <location filename="../stereosettingsdialog.ui" line="31"/>
         <source>Effect intensity:</source>
-        <translation type="unfinished">Efektin voimakkuus:</translation>
+        <translation>Efektin voimakkuus:</translation>
     </message>
     <message>
         <location filename="../stereosettingsdialog.ui" line="54"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
 </context>
 </TS>

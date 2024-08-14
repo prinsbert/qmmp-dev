@@ -34,67 +34,67 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation type="unfinished">Asetukset HTTP Plugin</translation>
+        <translation>Asetukset HTTP Plugin</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation type="unfinished">Metatietojen koodaus</translation>
+        <translation>Metatietojen koodaus</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Automaattinen merkistön havaitseminen</translation>
+        <translation>Automaattinen merkistön havaitseminen</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation type="unfinished">Kieli:</translation>
+        <translation>Kieli:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Oletuksena koodaus:</translation>
+        <translation>Oletuksena koodaus:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation type="unfinished">Käytön suoritin:</translation>
+        <translation>Käytön suoritin:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
         <source>Default buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puskurin oletuskoko:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
         <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tätä arvoa käytetään, jos bittinopeudesta &lt;b&gt;ei ole&lt;/b&gt; tietoa saatavilla.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation type="unfinished">Vaihda käytön suoritin:</translation>
+        <translation>Vaihda käytön suoritin:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
         <source>Buffer duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puskurin kesto:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>
         <source>This value is used if information about bitrate is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tätä arvoa käytetään, jos tietoa bittinopeudesta on saatavilla.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
 </context>
 </TS>

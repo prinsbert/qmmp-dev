@@ -177,42 +177,42 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Asetettu editori</translation>
+        <translation>Asetettu editori</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation type="unfinished">Yleiset</translation>
+        <translation>Yleiset</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation type="unfinished">Nimi:</translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation type="unfinished">Laajennus:</translation>
+        <translation>Laajennus:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation type="unfinished">Komento</translation>
+        <translation>Komento</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="77"/>
         <source>Options</source>
-        <translation type="unfinished">Valinnat</translation>
+        <translation>Valinnat</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation type="unfinished">Kirjoita hakusanat</translation>
+        <translation>Kirjoita hakusanat</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation type="unfinished">Muunna 16-bittiseksi</translation>
+        <translation>Muunna 16-bittiseksi</translation>
     </message>
 </context>
 <context>
