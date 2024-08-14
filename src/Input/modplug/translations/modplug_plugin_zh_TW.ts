@@ -124,7 +124,7 @@
     <message>
         <location filename="../modplugsettingsdialog.ui" line="74"/>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">聲音通道</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="80"/>
