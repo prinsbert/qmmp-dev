@@ -165,37 +165,37 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation type="unfinished">Ustawienia Biblioteki multimediów</translation>
+        <translation>Ustawienia Biblioteki multimediów</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
         <source>Recreate database</source>
-        <translation type="unfinished">Odtwórz bazę danych</translation>
+        <translation>Odtwórz bazę danych</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="46"/>
         <source>Show album year</source>
-        <translation type="unfinished">Pokaż rok albumu</translation>
+        <translation>Pokaż rok albumu</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished">Dodaj</translation>
+        <translation>Dodaj</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished">Usuń</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
         <source>List of directories for scanning:</source>
-        <translation type="unfinished">Lista katalogów do skanowania:</translation>
+        <translation>Lista katalogów do skanowania:</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
         <source>Select Directories for Scanning</source>
-        <translation type="unfinished">Wybierz katalogi do skanowania</translation>
+        <translation>Wybierz katalogi do skanowania</translation>
     </message>
 </context>
 <context>

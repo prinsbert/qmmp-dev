@@ -6,37 +6,37 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="14"/>
         <source>CUE Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki CUE</translation>
+        <translation>Ustawienia wtyczki CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="29"/>
         <source>Common settings</source>
-        <translation type="unfinished">Ogólne opcje</translation>
+        <translation>Ogólne opcje</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation type="unfinished">Załaduj niewłaściwy plik CUE, jeśli możliwe</translation>
+        <translation>Załaduj niewłaściwy plik CUE, jeśli możliwe</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation type="unfinished">Kodowanie CUE</translation>
+        <translation>Kodowanie CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Automatyczne wykrywanie kodowania</translation>
+        <translation>Automatycznie wykryj kodowanie</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation type="unfinished">Język:</translation>
+        <translation>Język:</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Domyślne kodowanie:</translation>
+        <translation>Domyślne kodowanie:</translation>
     </message>
 </context>
 <context>

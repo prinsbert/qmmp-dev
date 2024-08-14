@@ -39,52 +39,52 @@
     <message>
         <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki SID</translation>
+        <translation>Ustawienia wtyczki SID</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation type="unfinished">Szybkie przepróbkowanie</translation>
+        <translation>Szybkie przepróbkowanie</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Próbkowanie:</translation>
+        <translation>Próbkowanie:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation type="unfinished">Plik bazy HVSC:</translation>
+        <translation>Plik bazy HVSC:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation type="unfinished">Metoda próbkowania:</translation>
+        <translation>Metoda próbkowania:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation type="unfinished">Domyślna długość utworu, s:</translation>
+        <translation>Domyślna długość utworu, s:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation type="unfinished">Ustaw długość utworu z bazy HVSC</translation>
+        <translation>Ustaw długość utworu z bazy HVSC</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation type="unfinished">Emulacja:</translation>
+        <translation>Emulacja:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

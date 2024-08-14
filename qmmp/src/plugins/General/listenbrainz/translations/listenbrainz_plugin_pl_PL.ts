@@ -34,12 +34,12 @@
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="14"/>
         <source>ListenBrainz Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki ListenBrainz</translation>
+        <translation>Ustawienia wtyczki ListenBrainz</translation>
     </message>
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="29"/>
         <source>ListenBrainz user token:</source>
-        <translation type="unfinished">Token użytkownika ListenBrainz:</translation>
+        <translation>Token użytkownika ListenBrainz:</translation>
     </message>
 </context>
 </TS>

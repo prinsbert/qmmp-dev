@@ -6,52 +6,52 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="14"/>
         <source>CD Audio Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki dźwiękowej CD Audio</translation>
+        <translation>Ustawienia wtyczki dźwiękowej CD Audio</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
-        <translation type="unfinished">Wymuś urządzenie:</translation>
+        <translation>Wymuś urządzenie:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
-        <translation type="unfinished">Limit prędkości cd:</translation>
+        <translation>Limit prędkości CD</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="122"/>
         <source>Use cd-text</source>
-        <translation type="unfinished">Użyj cd-text</translation>
+        <translation>Użyj CD-Text</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
-        <translation type="unfinished">CDDB</translation>
+        <translation>CDDB</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="48"/>
         <source>Use HTTP instead of CDDBP</source>
-        <translation type="unfinished">Użyj HTTP zamiast CDDBP</translation>
+        <translation>Użyj HTTP zamiast CDDBP</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
-        <translation type="unfinished">Serwer:</translation>
+        <translation>Serwer:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
-        <translation type="unfinished">Ścieżka:</translation>
+        <translation>Ścieżka:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
-        <translation type="unfinished">Port:</translation>
+        <translation>Port:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="87"/>
         <source>Clear CDDB cache</source>
-        <translation type="unfinished">Wyczyść bufor CDDB</translation>
+        <translation>Wyczyść bufor CDDB</translation>
     </message>
 </context>
 <context>

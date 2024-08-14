@@ -34,67 +34,67 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki HTTP</translation>
+        <translation>Ustawienia wtyczki HTTP</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation type="unfinished">Kodowanie metadanych</translation>
+        <translation>Kodowanie metadanych</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Automatycznie wykryj kodowanie</translation>
+        <translation>Automatycznie wykryj kodowanie</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation type="unfinished">Język:</translation>
+        <translation>Język:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Domyślne kodowanie:</translation>
+        <translation>Domyślne kodowanie:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation type="unfinished">Nagłówek identyfikujący:</translation>
+        <translation>Nagłówek identyfikujący:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
         <source>Default buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Domyślny rozmiar bufora:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="50"/>
         <source>This value is used if information about bitrate is &lt;b&gt;not&lt;/b&gt; available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta wartość jest używana, jeśli informacja o przepływności &lt;b&gt;nie&lt;/b&gt; jest dostępna.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation type="unfinished">Zmień nagłówek identyfikujący</translation>
+        <translation>Zmień nagłówek identyfikujący</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
         <source>Buffer duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Czas trwania bufora:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="97"/>
         <source>This value is used if information about bitrate is available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta wartość jest używana, jeśli dostępna jest informacja o przepływności.</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
 </context>
 </TS>

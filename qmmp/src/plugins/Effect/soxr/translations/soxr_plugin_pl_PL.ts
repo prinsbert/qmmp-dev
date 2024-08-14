@@ -29,42 +29,42 @@
     <message>
         <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki Sample Rate Converter</translation>
+        <translation>Ustawienia wtyczki Sample Rate Converter</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Próbkowanie (Hz):</translation>
+        <translation>Próbkowanie (Hz):</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished">Jakość:</translation>
+        <translation>Jakość:</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished">Szybka</translation>
+        <translation>Szybka</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished">Niska</translation>
+        <translation>Niska</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished">Średnia</translation>
+        <translation>Średnia</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished">Wysoka</translation>
+        <translation>Wysoka</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished">Bardzo wysoka</translation>
+        <translation>Bardzo wysoka</translation>
     </message>
 </context>
 </TS>

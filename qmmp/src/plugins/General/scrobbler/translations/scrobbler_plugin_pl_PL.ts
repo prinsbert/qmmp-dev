@@ -29,57 +29,57 @@
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="14"/>
         <source>Scrobbler Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki Scrobbler</translation>
+        <translation>Ustawienia wtyczki Scrobbler</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="20"/>
         <source>Last.fm</source>
-        <translation type="unfinished">Last.fm</translation>
+        <translation>Last.fm</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="31"/>
         <location filename="../scrobblersettingsdialog.ui" line="104"/>
         <source>Session:</source>
-        <translation type="unfinished">Sesja:</translation>
+        <translation>Sesja:</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="41"/>
         <location filename="../scrobblersettingsdialog.ui" line="117"/>
         <source>Check</source>
-        <translation type="unfinished">Sprawdź</translation>
+        <translation>Sprawdź</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="63"/>
         <location filename="../scrobblersettingsdialog.ui" line="95"/>
         <source>Register new session</source>
-        <translation type="unfinished">Zarejestruj nową sesję</translation>
+        <translation>Zarejestruj nową sesję</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="73"/>
         <source>Libre.fm</source>
-        <translation type="unfinished">Libre.fm</translation>
+        <translation>Libre.fm</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="110"/>
         <location filename="../scrobblersettingsdialog.cpp" line="136"/>
         <location filename="../scrobblersettingsdialog.cpp" line="187"/>
         <source>Message</source>
-        <translation type="unfinished">Wiadomość</translation>
+        <translation>Komunikat</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="111"/>
         <source>1. Wait for browser startup</source>
-        <translation type="unfinished">1. Czekaj na uruchomienie przeglądarki</translation>
+        <translation>1. Czekaj na uruchomienie przeglądarki</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="112"/>
         <source>2. Allow Qmmp to scrobble tracks to your %1 account</source>
-        <translation type="unfinished">2. Pozwól Qmmp scrobblować utwory do twojego konta %1</translation>
+        <translation>2. Pozwól Qmmp scrobblować utwory na Twoim koncie %1</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="113"/>
         <source>3. Press &quot;OK&quot;</source>
-        <translation type="unfinished">3. Wciśnij &quot;OK&quot;</translation>
+        <translation>3. Wciśnij &quot;OK&quot;</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="118"/>
@@ -89,35 +89,35 @@
         <location filename="../scrobblersettingsdialog.cpp" line="195"/>
         <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Error</source>
-        <translation type="unfinished">Błąd</translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="118"/>
         <location filename="../scrobblersettingsdialog.cpp" line="151"/>
         <location filename="../scrobblersettingsdialog.cpp" line="195"/>
         <source>Network error</source>
-        <translation type="unfinished">Błąd sieci</translation>
+        <translation>Błąd sieci</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="122"/>
         <location filename="../scrobblersettingsdialog.cpp" line="155"/>
         <source>Unable to register new session</source>
-        <translation type="unfinished">Nie można zarejestrować nowej sesji</translation>
+        <translation>Nie można zarejestrować nowej sesji</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="136"/>
         <source>New session has been received successfully</source>
-        <translation type="unfinished">Nowa sesja została pomyślnie uruchomiona</translation>
+        <translation>Nowa sesja została pomyślnie uruchomiona</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="187"/>
         <source>Permission granted</source>
-        <translation type="unfinished">Przyznano dostęp</translation>
+        <translation>Przyznano dostęp</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Permission denied</source>
-        <translation type="unfinished">Dostęp nie został przyznany</translation>
+        <translation>Dostęp nie został przyznany</translation>
     </message>
 </context>
 </TS>
