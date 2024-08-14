@@ -1,14 +1,14 @@
 #!/bin/sh
 
-NAME=qttranslations-everywhere-opensource-src
-VERSION=6.2.9
-BUILD_ROOT=qttranslations-everywhere-src-$VERSION
+NAME=qttranslations-everywhere-src
+VERSION=6.7.2
+BUILD_ROOT=$NAME-$VERSION
 
 case $1 in
   --download)
     mkdir -p temp
     cd temp
-    wget -nc https://mirror.accum.se/mirror/qt.io/qtproject/archive/qt/6.2/$VERSION/submodules/$NAME-$VERSION.tar.xz
+    wget -nc https://mirror.accum.se/mirror/qt.io/qtproject/archive/qt/6.7/$VERSION/submodules/$NAME-$VERSION.tar.xz
   ;;
   --install)
     cd temp
