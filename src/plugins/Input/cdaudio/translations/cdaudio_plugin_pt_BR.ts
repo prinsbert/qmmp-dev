@@ -9,47 +9,47 @@
         <translation type="unfinished">Preferências do plugin CD Audio</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="29"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
         <translation type="unfinished">Substituir dispositivo:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="42"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
         <translation type="unfinished">Limite de velocidade:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="62"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="122"/>
         <source>Use cd-text</source>
         <translation type="unfinished">Utilizar cd-text</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="69"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
         <translation type="unfinished">CDDB</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="78"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="48"/>
         <source>Use HTTP instead of CDDBP</source>
         <translation type="unfinished">Utilizar HTTP em vez de CDDBP</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="88"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
         <translation type="unfinished">Servidor:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="95"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
         <translation type="unfinished">Caminho:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="105"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
         <translation type="unfinished">Porta:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="117"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="87"/>
         <source>Clear CDDB cache</source>
         <translation type="unfinished">Limpar cache CDDB</translation>
     </message>

@@ -9,47 +9,47 @@
         <translation type="unfinished">Настройки модуля CD Audio</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="29"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
         <translation type="unfinished">Переопределить устройство:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="42"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
         <translation type="unfinished">Ограничить скорость cd:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="62"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="122"/>
         <source>Use cd-text</source>
         <translation type="unfinished">Использовать cd-text</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="69"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
         <translation type="unfinished">CDDB</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="78"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="48"/>
         <source>Use HTTP instead of CDDBP</source>
         <translation type="unfinished">Использовать HTTP вместо CDDBP</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="88"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
         <translation type="unfinished">Сервер:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="95"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
         <translation type="unfinished">Путь:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="105"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
         <translation type="unfinished">Порт:</translation>
     </message>
     <message>
-        <location filename="../cdaudiosettingsdialog.ui" line="117"/>
+        <location filename="../cdaudiosettingsdialog.ui" line="87"/>
         <source>Clear CDDB cache</source>
         <translation type="unfinished">Очистить кэш CDDB</translation>
     </message>
