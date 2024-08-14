@@ -39,52 +39,52 @@
     <message>
         <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation type="unfinished">Asetukset SID Plugin</translation>
+        <translation>Asetukset SID Plugin</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation type="unfinished">Nopea sampleri</translation>
+        <translation>Nopea sampleri</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Taajuus:</translation>
+        <translation>Taajuus:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation type="unfinished">Tietokanta HVSC-tiedosto:</translation>
+        <translation>Tietokanta HVSC-tiedosto:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation type="unfinished">Samplerin menetelmä:</translation>
+        <translation>Samplerin menetelmä:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation type="unfinished">Kappaleen oletuspituus, sekuntia:</translation>
+        <translation>Kappaleen oletuspituus, sekuntia:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation type="unfinished">Käytä kappaleen HVSC pituustietokantaa</translation>
+        <translation>Käytä kappaleen HVSC pituustietokantaa</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation type="unfinished">Emulointi:</translation>
+        <translation>Emulointi:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

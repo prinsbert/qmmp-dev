@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished">Asetukset Lyrics Plugin</translation>
+        <translation>Asetukset Lyrics Plugin</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished">Sanoitusten tarjoaja:</translation>
+        <translation>Sanoitusten tarjoaja:</translation>
     </message>
 </context>
 <context>

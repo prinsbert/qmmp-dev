@@ -96,90 +96,90 @@
     <message>
         <location filename="../fileopssettingsdialog.ui" line="14"/>
         <source>File Operations Settings</source>
-        <translation type="unfinished">Asetukset File Operations</translation>
+        <translation>Asetukset File Operations</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="51"/>
         <source>Enabled</source>
-        <translation type="unfinished">Käytössä</translation>
+        <translation>Käytössä</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="56"/>
         <source>Operation</source>
-        <translation type="unfinished">Toiminta</translation>
+        <translation>Toiminta</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="61"/>
         <source>Menu text</source>
-        <translation type="unfinished">Valikon teksti</translation>
+        <translation>Valikon teksti</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="66"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Pikanäppäin</translation>
+        <translation>Pikanäppäin</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="82"/>
         <source>Add</source>
-        <translation type="unfinished">Lisää</translation>
+        <translation>Lisää</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="99"/>
         <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Remove</source>
-        <translation type="unfinished">Poista</translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="127"/>
         <source>Destination:</source>
-        <translation type="unfinished">Kohde:</translation>
+        <translation>Kohde:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="137"/>
         <location filename="../fileopssettingsdialog.ui" line="154"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="144"/>
         <location filename="../fileopssettingsdialog.cpp" line="155"/>
         <source>File name pattern:</source>
-        <translation type="unfinished">Tiedostonimen malli:</translation>
+        <translation>Tiedostonimen malli:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="127"/>
         <source>New action</source>
-        <translation type="unfinished">Uusi toiminto</translation>
+        <translation>Uusi toiminto</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="184"/>
         <source>Command:</source>
-        <translation type="unfinished">Komento:</translation>
+        <translation>Komento:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="219"/>
         <source>Copy</source>
-        <translation type="unfinished">Kopioi</translation>
+        <translation>Kopioi</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="220"/>
         <source>Rename</source>
-        <translation type="unfinished">Nimeä uudelleen</translation>
+        <translation>Nimeä uudelleen</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="221"/>
         <source>Move</source>
-        <translation type="unfinished">Siirrä</translation>
+        <translation>Siirrä</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Execute</source>
-        <translation type="unfinished">Suorita</translation>
+        <translation>Suorita</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="235"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Valitse kansio</translation>
+        <translation>Valitse kansio</translation>
     </message>
 </context>
 </TS>

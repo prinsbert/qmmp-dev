@@ -82,68 +82,68 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="14"/>
         <source>Status Icon Plugin Settings</source>
-        <translation type="unfinished">Asetukset Status Icon Plugin</translation>
+        <translation>Asetukset Status Icon Plugin</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="29"/>
         <source>Balloon message</source>
-        <translation type="unfinished">Ilmoituskupla</translation>
+        <translation>Ilmoituskupla</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="38"/>
         <location filename="../statusiconsettingsdialog.ui" line="105"/>
         <source>Delay, ms:</source>
-        <translation type="unfinished">Viive, ms:</translation>
+        <translation>Viive, ms:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="79"/>
         <source>Tooltip</source>
-        <translation type="unfinished">Työkaluvihje</translation>
+        <translation>Työkaluvihje</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="91"/>
         <source>Try to split file name when no tag</source>
-        <translation type="unfinished">Yritä jakaa tiedoston nimi, kun päätettä ei ole</translation>
+        <translation>Yritä jakaa tiedoston nimi, kun päätettä ei ole</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="98"/>
         <source>Show progress bar</source>
-        <translation type="unfinished">Näytä edistymispalkki:</translation>
+        <translation>Näytä edistymispalkki:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="131"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Läpinäkyvyys:</translation>
+        <translation>Läpinäkyvyys:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="165"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="174"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Kannen koko:</translation>
+        <translation>Kannen koko:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="214"/>
         <source>32</source>
-        <translation type="unfinished">32</translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="225"/>
         <source>Edit template</source>
-        <translation type="unfinished">Muokkaa mallia</translation>
+        <translation>Muokkaa mallia</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="250"/>
         <source>Use standard icons</source>
-        <translation type="unfinished">Käytä vakiokuvakkeita</translation>
+        <translation>Käytä vakiokuvakkeita</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.cpp" line="85"/>
         <source>Tooltip Template</source>
-        <translation type="unfinished">Työkaluvihjeen malli</translation>
+        <translation>Työkaluvihjeen malli</translation>
     </message>
 </context>
 </TS>
