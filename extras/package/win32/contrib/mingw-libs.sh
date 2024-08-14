@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LIB_NAMES+='pkg-config yasm taglib libmad mpg123 libogg libvorbis flac libsndfile opus opusfile '
+LIB_NAMES+='pkg-config yasm utf8cpp taglib libmad mpg123 libogg libvorbis flac libsndfile opus opusfile '
 LIB_NAMES+='libbs2b curl libcdio libcdio-paranoia libgnurx libcddb game-music-emu libxmp musepack '
 LIB_NAMES+='glew projectm xa enca soxr librcd '
 LIB_NAMES+='libbinio adplug ' #adplug
