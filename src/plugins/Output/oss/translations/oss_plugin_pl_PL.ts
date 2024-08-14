@@ -6,47 +6,47 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki OSS</translation>
+        <translation>Ustawienia wtyczki OSS</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Ustawienia urządzenia</translation>
+        <translation>Ustawienia urządzenia</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Urządzenie dźwiękowe</translation>
+        <translation>Urządzenie dźwiękowe</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">Urządzenie miksujące</translation>
+        <translation>Urządzenie miksujące</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Ustawienia zaawansowane</translation>
+        <translation>Ustawienia zaawansowane</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Karta dźwiękowa</translation>
+        <translation>Karta dźwiękowa</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Czas bufora (ms):</translation>
+        <translation>Wielkość buforu (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Długość cyklu (ms):</translation>
+        <translation>Czas cyklu (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished">Użyj PCM nad Master</translation>
+        <translation>Użyj PCM nad Master</translation>
     </message>
 </context>
 <context>

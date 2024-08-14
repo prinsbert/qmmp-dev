@@ -39,22 +39,22 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki GME</translation>
+        <translation>Ustawienia wtyczki GME</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation type="unfinished">Długość ściszenia:</translation>
+        <translation>Długość ściszenia:</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation type="unfinished">Włącz ściszenie</translation>
+        <translation>Włącz ściszenie</translation>
     </message>
 </context>
 </TS>

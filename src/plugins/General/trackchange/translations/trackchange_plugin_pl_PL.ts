@@ -34,12 +34,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="14"/>
         <source>Track Change Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki Zmiana utworu</translation>
+        <translation>Ustawienia wtyczki Zmiana utworu</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="29"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation type="unfinished">Polecenie do uruchomienia, gdy Qmmp rozpoczyna nową utwór</translation>
+        <translation>Polecenie do uruchomienia, gdy Qmmp rozpoczyna nową utwór</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="39"/>
@@ -47,32 +47,32 @@
         <location filename="../trackchangesettingsdialog.ui" line="73"/>
         <location filename="../trackchangesettingsdialog.ui" line="90"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="46"/>
         <source>Command to run toward to end of a track</source>
-        <translation type="unfinished">Polecenie do uruchomienia przy końcu utworu</translation>
+        <translation>Polecenie do uruchomienia przy końcu utworu</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation type="unfinished">Polecenie do uruchomienia, gdy Qmmp kończy listę odtwarzania</translation>
+        <translation>Polecenie do uruchomienia, gdy Qmmp kończy listę odtwarzania</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation type="unfinished">Polecenie do uruchomienia, gdy zmienia się tytuł (tj. tytuł strumieni sieciowych)</translation>
+        <translation>Polecenie do uruchomienia, gdy zmienia się tytuł (tj. tytuł strumieni sieciowych)</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>
         <source>Command to run on application startup:</source>
-        <translation type="unfinished">Polecenie do wykonania podczas uruchamiania aplikacji:</translation>
+        <translation>Polecenie do wykonania podczas uruchamiania aplikacji:</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="104"/>
         <source>Command to run on application exit:</source>
-        <translation type="unfinished">Polecenie do wykonania podczas zamykania aplikacji:</translation>
+        <translation>Polecenie do wykonania podczas zamykania aplikacji:</translation>
     </message>
 </context>
 </TS>

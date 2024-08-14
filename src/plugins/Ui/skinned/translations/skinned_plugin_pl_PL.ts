@@ -6,457 +6,457 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation type="unfinished">&amp;Odtwarzaj</translation>
+        <translation>&amp;Odtwarzaj</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished">&amp;Wstrzymaj</translation>
+        <translation>&amp;Wstrzymaj</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished">&amp;Zatrzymaj</translation>
+        <translation>&amp;Zatrzymaj</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>V</source>
-        <translation type="unfinished">V</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished">&amp;Poprzedni</translation>
+        <translation>&amp;Poprzedni</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>Z</source>
-        <translation type="unfinished">Z</translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
-        <translation type="unfinished">&amp;Następny</translation>
+        <translation>&amp;Następny</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>B</source>
-        <translation type="unfinished">B</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
-        <translation type="unfinished">&amp;Odtwarzaj/Wstrzymaj</translation>
+        <translation>&amp;Odtwarzaj/Wstrzymaj</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>Space</source>
-        <translation type="unfinished">Spacja</translation>
+        <translation>Spacja</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>&amp;Jump to Track</source>
-        <translation type="unfinished">&amp;Skocz do utworu</translation>
+        <translation>&amp;Skocz do utworu</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>J</source>
-        <translation type="unfinished">J</translation>
+        <translation>J</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>&amp;Repeat Playlist</source>
-        <translation type="unfinished">Powtó&amp;rz listę odtwarzania</translation>
+        <translation>Powtó&amp;rz listę odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>&amp;Repeat Track</source>
-        <translation type="unfinished">&amp;Powtórz utwór</translation>
+        <translation>&amp;Powtórz utwór</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished">&amp;Losowo</translation>
+        <translation>&amp;Losowo</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>S</source>
-        <translation type="unfinished">S</translation>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>&amp;No Playlist Advance</source>
-        <translation type="unfinished">&amp;Brak listy odtwarzania</translation>
+        <translation>&amp;Brak listy odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+N</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>&amp;Stop After Selected</source>
-        <translation type="unfinished">Za&amp;trzymaj po aktualnie odtwarzanym utworze</translation>
+        <translation>Za&amp;trzymaj po aktualnie odtwarzanym utworze</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
         <source>&amp;Transit between playlists</source>
-        <translation type="unfinished">Przejście między listami &amp;odtwarzania</translation>
+        <translation>Przejście między listami &amp;odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Clear Queue</source>
-        <translation type="unfinished">Wy&amp;czyść kolejkę</translation>
+        <translation>Wy&amp;czyść kolejkę</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>Alt+Q</source>
-        <translation type="unfinished">Alt+Q</translation>
+        <translation>Alt+Q</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Show Playlist</source>
-        <translation type="unfinished">Pokaż listę odtwarzania</translation>
+        <translation>Pokaż listę odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Alt+E</source>
-        <translation type="unfinished">Alt+E</translation>
+        <translation>Alt+E</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Show Equalizer</source>
-        <translation type="unfinished">Pokaż korektor</translation>
+        <translation>Pokaż korektor</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Alt+G</source>
-        <translation type="unfinished">Alt+G</translation>
+        <translation>Alt+G</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>Always on Top</source>
-        <translation type="unfinished">Zawsze na wierzchu</translation>
+        <translation>Zawsze na wierzchu</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>Put on All Workspaces</source>
-        <translation type="unfinished">Na wszystkie pulpity</translation>
+        <translation>Na wszystkie pulpity</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Double Size</source>
-        <translation type="unfinished">Podwójny rozmiar</translation>
+        <translation>Podwójny rozmiar</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Meta+D</source>
-        <translation type="unfinished">Meta+D</translation>
+        <translation>Meta+D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="59"/>
         <source>Anti-aliasing</source>
-        <translation type="unfinished">Wygładzanie krawędzi</translation>
+        <translation>Wygładzanie krawędzi</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Volume &amp;+</source>
-        <translation type="unfinished">Głośność &amp;+</translation>
+        <translation>Głośność &amp;+</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Volume &amp;-</source>
-        <translation type="unfinished">Głośność &amp;-</translation>
+        <translation>Głośność &amp;-</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>&amp;Mute</source>
-        <translation type="unfinished">Wycisz</translation>
+        <translation>Wycisz</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">&amp;Dodaj plik</translation>
+        <translation>&amp;Dodaj plik</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">Dodaj &amp;katalog</translation>
+        <translation>Dodaj &amp;katalog</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>D</source>
-        <translation type="unfinished">D</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>&amp;Add Url</source>
-        <translation type="unfinished">Dod&amp;aj Url</translation>
+        <translation>Dod&amp;aj URL</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>U</source>
-        <translation type="unfinished">U</translation>
+        <translation>U</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">&amp;Usuń zaznaczone</translation>
+        <translation>&amp;Usuń zaznaczone</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">Usuń &amp;wszystkie</translation>
+        <translation>Usuń &amp;wszystkie</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="70"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">Usuń &amp;niezaznaczone</translation>
+        <translation>Usuń &amp;niezaznaczone</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>Remove unavailable files</source>
-        <translation type="unfinished">Usuń niedostępne pliki</translation>
+        <translation>Usuń niedostępne pliki</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>Remove duplicates</source>
-        <translation type="unfinished">Usuń duplikaty</translation>
+        <translation>Usuń duplikaty</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>Refresh</source>
-        <translation type="unfinished">Odśwież</translation>
+        <translation>Odśwież</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Queue Toggle</source>
-        <translation type="unfinished">Dodaj do/Usuń z kolejki</translation>
+        <translation>Doda&amp;j do/Usuń z kolejki</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>Q</source>
-        <translation type="unfinished">Q</translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>Invert Selection</source>
-        <translation type="unfinished">Odwróć zaznaczenie</translation>
+        <translation>Odwróć zaznaczenie</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Select None</source>
-        <translation type="unfinished">&amp;Odznacz wszystkie</translation>
+        <translation>&amp;Odznacz wszystkie</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;Zaznacz wszystkie</translation>
+        <translation>&amp;Zaznacz wszystkie</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">Ctrl+A</translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished">&amp;Pokaż informacje o pliku</translation>
+        <translation>&amp;Pokaż informacje o pliku</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Alt+I</source>
-        <translation type="unfinished">Alt+I</translation>
+        <translation>Alt+I</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>&amp;New List</source>
-        <translation type="unfinished">&amp;Nowa lista</translation>
+        <translation>&amp;Nowa lista</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Ctrl+T</source>
-        <translation type="unfinished">Ctrl+T</translation>
+        <translation>Ctrl+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Delete List</source>
-        <translation type="unfinished">Usuń listę o&amp;dtwarzania</translation>
+        <translation>Usuń listę o&amp;dtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>&amp;Load List</source>
-        <translation type="unfinished">&amp;Ładuj listę</translation>
+        <translation>&amp;Ładuj listę</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>O</source>
-        <translation type="unfinished">O</translation>
+        <translation>O</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Save List</source>
-        <translation type="unfinished">&amp;Zapisz listę</translation>
+        <translation>&amp;Zapisz listę</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>Shift+S</source>
-        <translation type="unfinished">Shift+S</translation>
+        <translation>Shift+S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Rename List</source>
-        <translation type="unfinished">&amp;Zmień nazwę listy</translation>
+        <translation>&amp;Zmień nazwę listy</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>F2</source>
-        <translation type="unfinished">F2</translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;Select Next Playlist</source>
-        <translation type="unfinished">Wybierz na&amp;stępną listę</translation>
+        <translation>Wybierz na&amp;stępną listę</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>Ctrl+PgDown</source>
-        <translation type="unfinished">Ctrl+PgDown</translation>
+        <translation>Ctrl+PgDown</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation type="unfinished">Wybierz poprzednią li&amp;stę</translation>
+        <translation>Wybierz poprzednią li&amp;stę</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>Ctrl+PgUp</source>
-        <translation type="unfinished">Ctrl+PgUp</translation>
+        <translation>Ctrl+PgUp</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Show Playlists</source>
-        <translation type="unfinished">Pokaż li&amp;sty odtwarzania</translation>
+        <translation>Pokaż li&amp;sty odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Group Tracks</source>
-        <translation type="unfinished">&amp;Grupuj utwory</translation>
+        <translation>&amp;Grupuj utwory</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+G</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Show Column Headers</source>
-        <translation type="unfinished">&amp;Pokaż nagłówki kolumn</translation>
+        <translation>&amp;Pokaż nagłówki kolumn</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>Ctrl+H</source>
-        <translation type="unfinished">Ctrl+H</translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Show &amp;Tab Bar</source>
-        <translation type="unfinished">Pokaż pasek &amp;kart</translation>
+        <translation>Pokaż pasek &amp;kart</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
         <source>Alt+T</source>
-        <translation type="unfinished">Alt+T</translation>
+        <translation>Alt+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished">&amp;Ustawienia</translation>
+        <translation>&amp;Ustawienia</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished">Ctrl+P</translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;O programie</translation>
+        <translation>&amp;O programie</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;About Qt</source>
-        <translation type="unfinished">&amp;O Qt</translation>
+        <translation>&amp;O Qt</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">&amp;Wyjście</translation>
+        <translation>&amp;Wyjście</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
 </context>
 <context>
@@ -464,87 +464,87 @@
     <message>
         <location filename="../skinneddisplay.cpp" line="59"/>
         <source>Previous</source>
-        <translation type="unfinished">Poprzedni</translation>
+        <translation>Poprzedni</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="63"/>
         <source>Play</source>
-        <translation type="unfinished">Odtwarzaj</translation>
+        <translation>Odtwarzaj</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="66"/>
         <source>Pause</source>
-        <translation type="unfinished">Pauza</translation>
+        <translation>Pauza</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="69"/>
         <source>Stop</source>
-        <translation type="unfinished">Zatrzymaj</translation>
+        <translation>Zatrzymaj</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="72"/>
         <source>Next</source>
-        <translation type="unfinished">Następny</translation>
+        <translation>Następny</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="75"/>
         <source>Play files</source>
-        <translation type="unfinished">Odtwarzaj pliki</translation>
+        <translation>Odtwarzaj pliki</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="80"/>
         <source>Equalizer</source>
-        <translation type="unfinished">Korektor</translation>
+        <translation>Korektor</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Playlist</source>
-        <translation type="unfinished">Lista odtwarzania</translation>
+        <translation>Lista odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Repeat playlist</source>
-        <translation type="unfinished">Powtórz listę odtwarzania</translation>
+        <translation>Powtórz listę odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="87"/>
         <source>Shuffle</source>
-        <translation type="unfinished">Losowo</translation>
+        <translation>Losowo</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="97"/>
         <source>Volume</source>
-        <translation type="unfinished">Głośność</translation>
+        <translation>Głośność</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="103"/>
         <source>Balance</source>
-        <translation type="unfinished">Balans</translation>
+        <translation>Balans</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="290"/>
         <source>Volume: %1%</source>
-        <translation type="unfinished">Głośność: %1%</translation>
+        <translation>Głośność: %1%</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="294"/>
         <source>Balance: %1% right</source>
-        <translation type="unfinished">Balans: %1% prawy</translation>
+        <translation>Balans: %1% prawy</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="296"/>
         <source>Balance: %1% left</source>
-        <translation type="unfinished">Balans: %1% lewy</translation>
+        <translation>Balans: %1% lewy</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="298"/>
         <source>Balance: center</source>
-        <translation type="unfinished">Balans: środek</translation>
+        <translation>Balans: środek</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="304"/>
         <source>Seek to: %1</source>
-        <translation type="unfinished">Przewijanie: %1</translation>
+        <translation>Przewijanie: %1</translation>
     </message>
 </context>
 <context>
@@ -552,58 +552,58 @@
     <message>
         <location filename="../skinnedeqwidget.cpp" line="47"/>
         <source>Equalizer</source>
-        <translation type="unfinished">Korektor</translation>
+        <translation>Korektor</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="161"/>
         <location filename="../skinnedeqwidget.cpp" line="178"/>
         <source>preset</source>
-        <translation type="unfinished">profil</translation>
+        <translation>profil</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="262"/>
         <source>&amp;Load/Delete</source>
-        <translation type="unfinished">Wczytaj/&amp;Usuń</translation>
+        <translation>Wczytaj/&amp;Usuń</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Preset</source>
-        <translation type="unfinished">Zapi&amp;sz profil</translation>
+        <translation>Zapi&amp;sz profil</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Save Auto-load Preset</source>
-        <translation type="unfinished">Zapi&amp;sz autoładowanie profilu</translation>
+        <translation>Zapi&amp;sz autoładowanie profilu</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="266"/>
         <source>&amp;Import</source>
-        <translation type="unfinished">&amp;Importuj</translation>
+        <translation>&amp;Importuj</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="268"/>
         <source>&amp;Clear</source>
-        <translation type="unfinished">&amp;Wyczyść</translation>
+        <translation>&amp;Wyczyść</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Saving Preset</source>
-        <translation type="unfinished">Zapisywanie profilu</translation>
+        <translation>Zapisywanie profilu</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>Preset name:</source>
-        <translation type="unfinished">Nazwa profilu:</translation>
+        <translation>Nazwa profilu:</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="299"/>
         <source>preset #</source>
-        <translation type="unfinished">profil #</translation>
+        <translation>profil #</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="395"/>
         <source>Import Preset</source>
-        <translation type="unfinished">Importuj profil</translation>
+        <translation>Importuj profil</translation>
     </message>
 </context>
 <context>
@@ -664,57 +664,57 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="33"/>
         <source>Change shortcut...</source>
-        <translation type="unfinished">Zmień skrót...</translation>
+        <translation>Zmień skrót...</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetuj</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
         <source>Action</source>
-        <translation type="unfinished">Akcje</translation>
+        <translation>Akcja</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="63"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Skrót</translation>
+        <translation>Skrót klawiszowy</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
         <source>Playback</source>
-        <translation type="unfinished">Odtwarzanie</translation>
+        <translation>Odtwarzanie</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
         <source>View</source>
-        <translation type="unfinished">Wygląd</translation>
+        <translation>Wygląd</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
         <source>Volume</source>
-        <translation type="unfinished">Głośność</translation>
+        <translation>Głośność</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>Playlist</source>
-        <translation type="unfinished">Lista odtwarzania</translation>
+        <translation>Lista odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
         <source>Misc</source>
-        <translation type="unfinished">Inne</translation>
+        <translation>Różne</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Reset Shortcuts</source>
-        <translation type="unfinished">Resetuj skróty klawiszowe</translation>
+        <translation>Resetuj skróty klawiszowe</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
         <source>Do you want to restore default shortcuts?</source>
-        <translation type="unfinished">Czy chcesz przywrócić domyślne skróty?</translation>
+        <translation>Czy chcesz przywrócić domyślne skróty?</translation>
     </message>
 </context>
 <context>
@@ -722,37 +722,37 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="358"/>
         <source>Appearance</source>
-        <translation type="unfinished">Wygląd</translation>
+        <translation>Wygląd</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="359"/>
         <source>Shortcuts</source>
-        <translation type="unfinished">Skróty klawiszowe</translation>
+        <translation>Skróty klawiszowe</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="433"/>
         <source>View</source>
-        <translation type="unfinished">Wygląd</translation>
+        <translation>Wygląd</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="442"/>
         <source>Playlist</source>
-        <translation type="unfinished">Lista odtwarzania</translation>
+        <translation>Lista odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="461"/>
         <source>Audio</source>
-        <translation type="unfinished">Dźwięk</translation>
+        <translation>Dźwięk</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="469"/>
         <source>Tools</source>
-        <translation type="unfinished">Narzędzia</translation>
+        <translation>Narzędzia</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="541"/>
         <source>Qmmp</source>
-        <translation type="unfinished">Qmmp</translation>
+        <translation>Qmmp</translation>
     </message>
 </context>
 <context>
@@ -760,123 +760,123 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="56"/>
         <source>Playlist</source>
-        <translation type="unfinished">Lista odtwarzania</translation>
+        <translation>Lista odtwarzania</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="194"/>
         <source>&amp;Copy Selection To</source>
-        <translation type="unfinished">Kopiuj zazna&amp;czenie do</translation>
+        <translation>Kopiuj zazna&amp;czenie do</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="219"/>
         <source>Sort List</source>
-        <translation type="unfinished">Sortuj listę</translation>
+        <translation>Sortuj listę</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="222"/>
         <location filename="../skinnedplaylist.cpp" line="262"/>
         <source>By Title</source>
-        <translation type="unfinished">Według nazwy</translation>
+        <translation>Według nazwy</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="225"/>
         <location filename="../skinnedplaylist.cpp" line="265"/>
         <source>By Album</source>
-        <translation type="unfinished">Według nazwy albumu</translation>
+        <translation>Według nazwy albumu</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="228"/>
         <location filename="../skinnedplaylist.cpp" line="268"/>
         <source>By Artist</source>
-        <translation type="unfinished">Według artysty</translation>
+        <translation>Według artysty</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="231"/>
         <location filename="../skinnedplaylist.cpp" line="271"/>
         <source>By Album Artist</source>
-        <translation type="unfinished">Według artysty albumu</translation>
+        <translation>Według artysty albumu</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="234"/>
         <location filename="../skinnedplaylist.cpp" line="274"/>
         <source>By Filename</source>
-        <translation type="unfinished">Według nazwy pliku</translation>
+        <translation>Według nazwy pliku</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="237"/>
         <location filename="../skinnedplaylist.cpp" line="277"/>
         <source>By Path + Filename</source>
-        <translation type="unfinished">Według ścieżki + nazwy pliku</translation>
+        <translation>Według ścieżki + nazwy pliku</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="240"/>
         <location filename="../skinnedplaylist.cpp" line="280"/>
         <source>By Date</source>
-        <translation type="unfinished">Według daty</translation>
+        <translation>Według daty</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="243"/>
         <location filename="../skinnedplaylist.cpp" line="283"/>
         <source>By Track Number</source>
-        <translation type="unfinished">Według numeru utworu</translation>
+        <translation>Według numeru utworu</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="246"/>
         <location filename="../skinnedplaylist.cpp" line="286"/>
         <source>By Disc Number</source>
-        <translation type="unfinished">Według numeru płyty</translation>
+        <translation>Według numeru płyty</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="249"/>
         <location filename="../skinnedplaylist.cpp" line="289"/>
         <source>By File Creation Date</source>
-        <translation type="unfinished">Według daty utworzenia pliku</translation>
+        <translation>Według daty utworzenia pliku</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="252"/>
         <location filename="../skinnedplaylist.cpp" line="292"/>
         <source>By File Modification Date</source>
-        <translation type="unfinished">Według daty modyfikacji pliku</translation>
+        <translation>Według daty modyfikacji pliku</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="255"/>
         <source>By Group</source>
-        <translation type="unfinished">Według grupy</translation>
+        <translation>Według grupy</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="260"/>
         <source>Sort Selection</source>
-        <translation type="unfinished">Sortuj zaznaczone</translation>
+        <translation>Sortuj zaznaczone</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="297"/>
         <source>Randomize List</source>
-        <translation type="unfinished">Tasuj listę</translation>
+        <translation>Tasuj listę</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="299"/>
         <source>Reverse List</source>
-        <translation type="unfinished">Odwróć listę</translation>
+        <translation>Odwróć listę</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
-        <translation type="unfinished">Akcje</translation>
+        <translation>Akcje</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
-        <translation type="unfinished">Zmień nazwę listy</translation>
+        <translation>Zmień nazwę listy</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
-        <translation type="unfinished">Nazwa listy odtwarzania:</translation>
+        <translation>Nazwa listy odtwarzania:</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
-        <translation type="unfinished">&amp;Nowa lista odtwarzania</translation>
+        <translation>&amp;Nowa lista odtwarzania</translation>
     </message>
 </context>
 <context>
@@ -884,34 +884,34 @@
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="14"/>
         <source>Playlist Browser</source>
-        <translation type="unfinished">Menedżer list odtwarzania</translation>
+        <translation>Menedżer list odtwarzania</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
         <source>Filter:</source>
-        <translation type="unfinished">Filtr:</translation>
+        <translation>Filtr:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="47"/>
         <source>New</source>
-        <translation type="unfinished">Nowa</translation>
+        <translation>Nowa</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="54"/>
         <location filename="../skinnedplaylistbrowser.cpp" line="45"/>
         <source>Delete</source>
-        <translation type="unfinished">Usuń</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="61"/>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistbrowser.cpp" line="44"/>
         <source>Rename</source>
-        <translation type="unfinished">Zmień nazwę</translation>
+        <translation>Zmień nazwę</translation>
     </message>
 </context>
 <context>
@@ -919,50 +919,50 @@
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="77"/>
         <source>Add Column</source>
-        <translation type="unfinished">Dodaj kolumnę</translation>
+        <translation>Dodaj kolumnę</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="78"/>
         <source>Edit Column</source>
-        <translation type="unfinished">Edytuj kolumnę</translation>
+        <translation>Edytuj kolumnę</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="79"/>
         <source>Show Queue/Protocol</source>
-        <translation type="unfinished">Pokaż kolejkę/protokół</translation>
+        <translation>Pokaż kolejkę/protokół</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="81"/>
         <source>Auto-resize</source>
-        <translation type="unfinished">Automatyczna zmiana rozmiaru</translation>
+        <translation>Automatyczna zmiana rozmiaru</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="84"/>
         <source>Alignment</source>
-        <translation type="unfinished">Wyrównanie</translation>
+        <translation>Wyrównanie</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="85"/>
         <source>Left</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Lewo</translation>
+        <translation>Lewo</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="86"/>
         <source>Right</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Prawo</translation>
+        <translation>Prawo</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="87"/>
         <source>Center</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Środek</translation>
+        <translation>Środek</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="97"/>
         <source>Remove Column</source>
-        <translation type="unfinished">Usuń kolumnę</translation>
+        <translation>Usuń kolumnę</translation>
     </message>
 </context>
 <context>
@@ -970,47 +970,47 @@
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="14"/>
         <source>Popup Information Settings</source>
-        <translation type="unfinished">Ustawienia inforamcji popup</translation>
+        <translation>Ustawienia informacji popup</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="29"/>
         <source>Template</source>
-        <translation type="unfinished">Szablon</translation>
+        <translation>Szablon</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetuj</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="65"/>
         <source>Insert</source>
-        <translation type="unfinished">Wstaw</translation>
+        <translation>Wstaw</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation type="unfinished">Pokaż okładkę</translation>
+        <translation>Pokaż okładkę</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Rozmiar okładki:</translation>
+        <translation>Rozmiar okładki:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Przezroczystość:</translation>
+        <translation>Przezroczystość:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation type="unfinished">Opóźnienie:</translation>
+        <translation>Opóźnienie:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="178"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
 </context>
 <context>
@@ -1018,27 +1018,27 @@
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Edytor profili</translation>
+        <translation>Edytor profili</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="36"/>
         <source>Preset</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="61"/>
         <source>Auto-preset</source>
-        <translation type="unfinished">Autoprofil</translation>
+        <translation>Autoprofil</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="95"/>
         <source>Load</source>
-        <translation type="unfinished">Ładuj</translation>
+        <translation>Ładuj</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="102"/>
         <source>Delete</source>
-        <translation type="unfinished">Usuń</translation>
+        <translation>Usuń</translation>
     </message>
 </context>
 <context>
@@ -1186,12 +1186,12 @@
     <message>
         <location filename="../forms/skinnedsettings.ui" line="994"/>
         <source>Groups:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupy:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1021"/>
         <source>Extra group row:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodatkowy wiersz grupy:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedsettings.ui" line="1048"/>
@@ -1328,7 +1328,7 @@
     <message>
         <location filename="../skinnedsettings.cpp" line="165"/>
         <source>Default skin</source>
-        <translation type="unfinished"></translation>
+        <translation>Domyślna skórka</translation>
     </message>
     <message>
         <location filename="../skinnedsettings.cpp" line="174"/>
@@ -1346,17 +1346,17 @@
     <message>
         <location filename="../skinnedtextscroller.cpp" line="54"/>
         <source>Autoscroll Songname</source>
-        <translation type="unfinished">Automatyczne przewijanie tytułu utworu</translation>
+        <translation>Automatyczne przewijanie tytułu utworu</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="55"/>
         <source>Transparent Background</source>
-        <translation type="unfinished">Przeźroczyste tło</translation>
+        <translation>Przeźroczyste tło</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation type="unfinished">Buforowanie: : %1%</translation>
+        <translation>Buforowanie: %1%</translation>
     </message>
 </context>
 <context>
@@ -1364,132 +1364,132 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="211"/>
         <source>Visualization Mode</source>
-        <translation type="unfinished">Tryb wizualizacji</translation>
+        <translation>Tryb wizualizacji</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="214"/>
         <source>Analyzer</source>
-        <translation type="unfinished">Analizator</translation>
+        <translation>Analizator</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="215"/>
         <source>Scope</source>
-        <translation type="unfinished">Zakres</translation>
+        <translation>Zakres</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="216"/>
         <source>Off</source>
-        <translation type="unfinished">Wyłączone</translation>
+        <translation>Wyłączone</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="223"/>
         <source>Analyzer Mode</source>
-        <translation type="unfinished">Tryb Analizatora</translation>
+        <translation>Tryb analizatora</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="226"/>
         <source>Normal</source>
-        <translation type="unfinished">Normalny</translation>
+        <translation>Normalny</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="227"/>
         <source>Fire</source>
-        <translation type="unfinished">Ogień</translation>
+        <translation>Ogień</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="228"/>
         <source>Vertical Lines</source>
-        <translation type="unfinished">Pionowe linie</translation>
+        <translation>Pionowe linie</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="229"/>
         <source>Lines</source>
-        <translation type="unfinished">Linie</translation>
+        <translation>Linie</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="230"/>
         <source>Bars</source>
-        <translation type="unfinished">Słupki</translation>
+        <translation>Słupki</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="243"/>
         <source>Peaks</source>
-        <translation type="unfinished">Szczyty</translation>
+        <translation>Szczyty</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="247"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished">Odświeżanie</translation>
+        <translation>Odświeżanie</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="250"/>
         <source>50 fps</source>
-        <translation type="unfinished">50 kl./s</translation>
+        <translation>50 kl./s</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="251"/>
         <source>25 fps</source>
-        <translation type="unfinished">25 kl./s</translation>
+        <translation>25 kl./s</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="252"/>
         <source>10 fps</source>
-        <translation type="unfinished">10 kl./s</translation>
+        <translation>10 kl./s</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="253"/>
         <source>5 fps</source>
-        <translation type="unfinished">5 kl./s</translation>
+        <translation>5 kl./s</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="260"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished">Prędkość Analizatora</translation>
+        <translation>Opadanie analizatora</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="263"/>
         <location filename="../skinnedvisualization.cpp" line="277"/>
         <source>Slowest</source>
-        <translation type="unfinished">Najwolniej</translation>
+        <translation>Najwolniej</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="264"/>
         <location filename="../skinnedvisualization.cpp" line="278"/>
         <source>Slow</source>
-        <translation type="unfinished">Wolno</translation>
+        <translation>Wolno</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="265"/>
         <location filename="../skinnedvisualization.cpp" line="279"/>
         <source>Medium</source>
-        <translation type="unfinished">Średnio</translation>
+        <translation>Średnia</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="266"/>
         <location filename="../skinnedvisualization.cpp" line="280"/>
         <source>Fast</source>
-        <translation type="unfinished">Szybko</translation>
+        <translation>Szybko</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="267"/>
         <location filename="../skinnedvisualization.cpp" line="281"/>
         <source>Fastest</source>
-        <translation type="unfinished">Najszybciej</translation>
+        <translation>Najszybciej</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="274"/>
         <source>Peaks Falloff</source>
-        <translation type="unfinished">Opadanie szczytów</translation>
+        <translation>Opadanie szczytów</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="287"/>
         <source>Background</source>
-        <translation type="unfinished">Tło</translation>
+        <translation>Tło</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="288"/>
         <source>Transparent</source>
-        <translation type="unfinished">Przezroczystość</translation>
+        <translation>Przezroczystość</translation>
     </message>
 </context>
 </TS>

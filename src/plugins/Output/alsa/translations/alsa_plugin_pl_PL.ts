@@ -6,62 +6,62 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="14"/>
         <source>ALSA Plugin Settings</source>
-        <translation type="unfinished">Ustawienia wtyczki ALSA</translation>
+        <translation>Ustawienia wtyczki ALSA</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Ustawienia urządzenia</translation>
+        <translation>Ustawienia urządzenia</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Urządzenie dźwiękowe</translation>
+        <translation>Urządzenie dźwiękowe</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="70"/>
         <source>Mixer</source>
-        <translation type="unfinished">Mikser</translation>
+        <translation>Mikser</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="94"/>
         <source>Mixer card:</source>
-        <translation type="unfinished">Karta miksująca:</translation>
+        <translation>Karta miksująca:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="104"/>
         <source>Mixer device:</source>
-        <translation type="unfinished">Urządzenie miksujące:</translation>
+        <translation>Urządzenie miksujące:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Zaawansowane ustawienia</translation>
+        <translation>Ustawienia zaawansowane</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="142"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Karta dźwiękowa</translation>
+        <translation>Karta dźwiękowa</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="148"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Wielkość buforu (ms):</translation>
+        <translation>Wielkość buforu (ms):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="184"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Czas cyklu (ms):</translation>
+        <translation>Czas cyklu (ms):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="220"/>
         <source>Use mmap access</source>
-        <translation type="unfinished">Użyj dostępu mmap</translation>
+        <translation>Użyj dostępu mmap</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="240"/>
         <source>Use snd_pcm_pause function</source>
-        <translation type="unfinished">Użyj funkcji snd_pcm_pause</translation>
+        <translation>Użyj funkcji snd_pcm_pause</translation>
     </message>
 </context>
 <context>
