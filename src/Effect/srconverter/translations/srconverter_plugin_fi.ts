@@ -29,42 +29,42 @@
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Asetukset Sample Rate Converter Plugin</translation>
+        <translation>Asetukset Sample Rate Converter Plugin</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Taajuus (Hz):</translation>
+        <translation>Taajuus (Hz):</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="40"/>
         <source>Interpolation Engine:</source>
-        <translation type="unfinished">Interpolointi moottori:</translation>
+        <translation>Interpolointi moottori:</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="48"/>
         <source>Best Sinc Interpolation</source>
-        <translation type="unfinished">Paras Sinc-interpolointi</translation>
+        <translation>Paras Sinc-interpolointi</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="53"/>
         <source>Medium Sinc Interpolation</source>
-        <translation type="unfinished">Keskitaso Sinc-interpolointi</translation>
+        <translation>Keskitaso Sinc-interpolointi</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="58"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation type="unfinished">Nopea Sinc-interpolointi</translation>
+        <translation>Nopea Sinc-interpolointi</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="63"/>
         <source>ZOH Interpolation</source>
-        <translation type="unfinished">ZOH-interpolointi</translation>
+        <translation>ZOH-interpolointi</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="68"/>
         <source>Linear Interpolation</source>
-        <translation type="unfinished">Suora interpolointi</translation>
+        <translation>Suora interpolointi</translation>
     </message>
 </context>
 </TS>
