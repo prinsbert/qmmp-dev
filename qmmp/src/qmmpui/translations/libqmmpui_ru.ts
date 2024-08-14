@@ -331,7 +331,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
         <source>Group Mode</source>
-        <translation>Групповой режим</translation>
+        <translation>Режим группировки</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
