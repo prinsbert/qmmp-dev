@@ -102,82 +102,82 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished">Настройки модуля XMP</translation>
+        <translation>Настройки модуля XMP</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Усиление:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished">Смешивание каналов:</translation>
+        <translation>Смешивание каналов:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished">Тип интерполяции:</translation>
+        <translation>Тип интерполяции:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished">Низкочастотный фильтр</translation>
+        <translation>Низкочастотный фильтр</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished">Использовать кадровый гасящий импульс</translation>
+        <translation>Использовать кадровый гасящий импульс</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished">Эмулировать ошибку Protracker 2.x FX9</translation>
+        <translation>Эмулировать ошибку Protracker 2.x FX9</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Частота дискретизации:</translation>
+        <translation>Частота дискретизации:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
         <source>Emulate sample loop bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Эмуляция ошибки зацикливания сэмпла</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать микшер Paula в модулях Amiga</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Гц</translation>
+        <translation>22050 Гц</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Гц</translation>
+        <translation>44100 Гц</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Гц</translation>
+        <translation>48000 Гц</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished">Методом ближайшего соседа</translation>
+        <translation>Методом ближайшего соседа</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished">Линейная</translation>
+        <translation>Линейная</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished">Кубическими сплайнами</translation>
+        <translation>Кубическими сплайнами</translation>
     </message>
 </context>
 </TS>

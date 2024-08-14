@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[ru]=qmmp
 Name[ru]=Проиграть в Qmmp
 Comment[ru]=Добавить файл(ы) в список воспроизведения Qmmp
+Icon[ru]=qmmp

@@ -29,32 +29,32 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
-        <translation type="unfinished">Настройки модуля WASAPI</translation>
+        <translation>Настройки модуля WASAPI</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
         <source>Device:</source>
-        <translation type="unfinished">Устройство:</translation>
+        <translation>Устройство:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер буфера:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>мс</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished">Режим монопольного доступа</translation>
+        <translation>Режим монопольного доступа</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">По умолчанию</translation>
+        <translation>По умолчанию</translation>
     </message>
 </context>
 </TS>

@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished">Настройка модуля текстов песен</translation>
+        <translation>Настройка модуля текстов песен</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished">Провайдеры текстов песен:</translation>
+        <translation>Провайдеры текстов песен:</translation>
     </message>
 </context>
 <context>

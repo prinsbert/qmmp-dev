@@ -29,42 +29,42 @@
     <message>
         <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Настройки модуля передискретизации</translation>
+        <translation>Настройки модуля передискретизации</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Частота дискретизации (Гц):</translation>
+        <translation>Частота дискретизации (Гц):</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished">Качество:</translation>
+        <translation>Качество:</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished">Самое низкое (быстро)</translation>
+        <translation>Самое низкое (быстро)</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished">Низкое</translation>
+        <translation>Низкое</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished">Среднее</translation>
+        <translation>Среднее</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished">Высокое</translation>
+        <translation>Высокое</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished">Очень высокое</translation>
+        <translation>Очень высокое</translation>
     </message>
 </context>
 </TS>

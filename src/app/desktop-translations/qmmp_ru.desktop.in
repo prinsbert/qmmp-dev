@@ -35,7 +35,7 @@ Exec=qmmp --no-start --next
 
 
 # Translations
+Name[ru]=Qmmp
 Comment[ru]=Мультимедиа плеер на основе Qt
 GenericName[ru]=Аудио-плеер
-Name[ru]=Qmmp
 Icon[ru]=qmmp

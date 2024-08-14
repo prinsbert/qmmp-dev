@@ -165,37 +165,37 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation type="unfinished">Настройка музыкальной библиотеки</translation>
+        <translation>Настройка музыкальной библиотеки</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
         <source>Recreate database</source>
-        <translation type="unfinished">Пересоздать базу данных</translation>
+        <translation>Пересоздать базу данных</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="46"/>
         <source>Show album year</source>
-        <translation type="unfinished">Показывать год альбома</translation>
+        <translation>Показывать год альбома</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished">Добавить</translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
         <source>List of directories for scanning:</source>
-        <translation type="unfinished">Список каталогов для сканирования:</translation>
+        <translation>Список каталогов для сканирования:</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
         <source>Select Directories for Scanning</source>
-        <translation type="unfinished">Выберите каталоги для сканирования</translation>
+        <translation>Выберите каталоги для сканирования</translation>
     </message>
 </context>
 <context>

@@ -118,37 +118,37 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation type="unfinished">Настройки MPlayer</translation>
+        <translation>Настройки MPlayer</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="34"/>
         <source>Video:</source>
-        <translation type="unfinished">Видео:</translation>
+        <translation>Видео:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="48"/>
         <source>Audio:</source>
-        <translation type="unfinished">Аудио:</translation>
+        <translation>Аудио:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="62"/>
         <source>Audio/video auto synchronization</source>
-        <translation type="unfinished">Автоматическая синхронизация аудио/видео</translation>
+        <translation>Автоматическая синхронизация аудио/видео</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation type="unfinished">Фактор синхронизации:</translation>
+        <translation>Фактор синхронизации:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation type="unfinished">Дополнительные настройки:</translation>
+        <translation>Дополнительные настройки:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation type="unfinished">Дополнительные опции командной строки</translation>
+        <translation>Дополнительные опции командной строки</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>
@@ -158,7 +158,7 @@
         <location filename="../mplayersettingsdialog.cpp" line="54"/>
         <location filename="../mplayersettingsdialog.cpp" line="55"/>
         <source>default</source>
-        <translation type="unfinished">по умолчанию</translation>
+        <translation>по умолчанию</translation>
     </message>
 </context>
 </TS>

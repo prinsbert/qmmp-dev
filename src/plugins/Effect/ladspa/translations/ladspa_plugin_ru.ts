@@ -49,37 +49,37 @@
     <message>
         <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation type="unfinished">Каталог модулей LADSPA</translation>
+        <translation>Каталог модулей LADSPA</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation type="unfinished">&gt;</translation>
+        <translation>&gt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation type="unfinished">&lt;</translation>
+        <translation>&lt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation type="unfinished">Настроить</translation>
+        <translation>Настроить</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="46"/>
         <source>UID</source>
-        <translation type="unfinished">UID</translation>
+        <translation>UID</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>Name</source>
-        <translation type="unfinished">Имя</translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="131"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation type="unfinished">Этот модуль не содержит настроек</translation>
+        <translation>Этот модуль не содержит настроек</translation>
     </message>
 </context>
 </TS>
