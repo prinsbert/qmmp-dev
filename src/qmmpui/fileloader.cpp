@@ -158,10 +158,10 @@ void FileLoader::insertPlayList(const QString &path, PlayListTrack *before)
     tracks.clear();
 }
 
-void FileLoader::addDirectory(const QString& s, PlayListTrack *before)
+void FileLoader::addDirectory(const QString &s, PlayListTrack *before)
 {
     QList<PlayListTrack *> tracks;
-    QStringList ignoredPaths;
+    QSet<QString> ignoredPaths;
     QDir dir(s);
     dir.setFilter(QDir::Files | QDir::Hidden);
     dir.setSorting(QDir::Name);
@@ -173,7 +173,7 @@ void FileLoader::addDirectory(const QString& s, PlayListTrack *before)
         {
             QStringList paths;
             tracks.append(processFile(info.absoluteFilePath (), &paths));
-            ignoredPaths.append(paths);
+            ignoredPaths.unite(QSet<QString>(paths.cbegin(), paths.cend()));
         }
 
         if (m_finished)
@@ -185,18 +185,16 @@ void FileLoader::addDirectory(const QString& s, PlayListTrack *before)
 
         if(tracks.count() > 30) //do not send more than 30 tracks at once
         {
-            removeIgnoredTracks(&tracks, ignoredPaths);
+            removeIgnoredTracks(&tracks, &ignoredPaths);
             emit newTracksToInsert(before, tracks);
             tracks.clear();
-            ignoredPaths.clear();
         }
     }
 
     if(!tracks.isEmpty())
     {
-        removeIgnoredTracks(&tracks, ignoredPaths);
+        removeIgnoredTracks(&tracks, &ignoredPaths);
         emit newTracksToInsert(before, tracks);
-        ignoredPaths.clear();
     }
 
     dir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
@@ -349,18 +347,23 @@ bool FileLoader::checkExcludeFilters(const QFileInfo &info)
     return !QDir::match(m_settings->excludeFilters() , info.fileName());
 }
 
-void FileLoader::removeIgnoredTracks(QList<PlayListTrack *> *tracks, const QStringList &ignoredPaths)
+void FileLoader::removeIgnoredTracks(QList<PlayListTrack *> *tracks, QSet<QString> *ignoredPaths)
 {
-    if(ignoredPaths.isEmpty())
+    qDebug() << Q_FUNC_INFO << ignoredPaths->count();
+    if(ignoredPaths->isEmpty())
         return;
 
     QList<PlayListTrack *>::iterator it = tracks->begin();
     while(it != tracks->end())
     {
-        if(ignoredPaths.contains((*it)->path()))
+        QString path = (*it)->path();
+
+        if(ignoredPaths->contains(path))
         {
             delete (*it);
             it = tracks->erase(it);
+            qDebug() << "!!" << path;
+            ignoredPaths->remove(path); //exclude ignored path from checking
         }
         else
         {

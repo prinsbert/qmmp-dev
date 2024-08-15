@@ -23,6 +23,7 @@
 #include <QObject>
 #include <QQueue>
 #include <QStringList>
+#include <QSet>
 #include <QFileInfo>
 #include <QMutex>
 #include <QThread>
@@ -85,7 +86,7 @@ private:
     void addDirectory(const QString &s, PlayListTrack *before = nullptr);
     bool checkRestrictFilters(const QFileInfo &info);
     bool checkExcludeFilters(const QFileInfo &info);
-    void removeIgnoredTracks(QList<PlayListTrack *> *tracks, const QStringList &ignoredPaths);
+    void removeIgnoredTracks(QList<PlayListTrack *> *tracks, QSet<QString> *ignoredPaths);
     struct LoaderTask
     {
         QString path;
