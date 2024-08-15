@@ -98,38 +98,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
-        <location filename="../videowindow.cpp" line="51"/>
+        <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
         <translation>П&amp;аузирај</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
-        <location filename="../videowindow.cpp" line="51"/>
+        <location filename="../videowindow.cpp" line="45"/>
         <source>Space</source>
         <translation>Размак</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="47"/>
-        <location filename="../videowindow.cpp" line="52"/>
+        <location filename="../videowindow.cpp" line="46"/>
         <source>&amp;Stop</source>
         <translation>&amp;Заустави</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="47"/>
-        <location filename="../videowindow.cpp" line="52"/>
+        <location filename="../videowindow.cpp" line="46"/>
         <source>V</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="49"/>
-        <location filename="../videowindow.cpp" line="54"/>
+        <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Цео екран</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="49"/>
-        <location filename="../videowindow.cpp" line="54"/>
+        <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
         <translation>F</translation>
     </message>

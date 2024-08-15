@@ -98,38 +98,32 @@
         <translation>Vidéo FFmpeg</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
-        <location filename="../videowindow.cpp" line="51"/>
+        <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
         <translation>&amp;Pause</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
-        <location filename="../videowindow.cpp" line="51"/>
+        <location filename="../videowindow.cpp" line="45"/>
         <source>Space</source>
         <translation>Espace</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="47"/>
-        <location filename="../videowindow.cpp" line="52"/>
+        <location filename="../videowindow.cpp" line="46"/>
         <source>&amp;Stop</source>
         <translation>&amp;Arrêter</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="47"/>
-        <location filename="../videowindow.cpp" line="52"/>
+        <location filename="../videowindow.cpp" line="46"/>
         <source>V</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="49"/>
-        <location filename="../videowindow.cpp" line="54"/>
+        <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Plein écran</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="49"/>
-        <location filename="../videowindow.cpp" line="54"/>
+        <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
         <translation>F</translation>
     </message>

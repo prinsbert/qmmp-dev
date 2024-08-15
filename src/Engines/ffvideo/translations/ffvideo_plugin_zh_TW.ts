@@ -98,38 +98,32 @@
         <translation>FFmpeg 視訊</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
-        <location filename="../videowindow.cpp" line="51"/>
+        <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
         <translation>貼上(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
-        <location filename="../videowindow.cpp" line="51"/>
+        <location filename="../videowindow.cpp" line="45"/>
         <source>Space</source>
         <translation>空白鍵</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="47"/>
-        <location filename="../videowindow.cpp" line="52"/>
+        <location filename="../videowindow.cpp" line="46"/>
         <source>&amp;Stop</source>
         <translation>停止（&amp;S）</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="47"/>
-        <location filename="../videowindow.cpp" line="52"/>
+        <location filename="../videowindow.cpp" line="46"/>
         <source>V</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="49"/>
-        <location filename="../videowindow.cpp" line="54"/>
+        <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
         <translation>全屏(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="49"/>
-        <location filename="../videowindow.cpp" line="54"/>
+        <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
         <translation>F</translation>
     </message>

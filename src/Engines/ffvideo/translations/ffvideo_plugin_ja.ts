@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>FFVideoFactory</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
-        <translation>映像ファイル</translation>
+        <translation>ビデオファイル</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="161"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation>ファイルサイズ</translation>
+        <translation>ファイルの大きさ</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
@@ -49,7 +49,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>音声ビットレート</translation>
+        <translation>音響のビットレート</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
@@ -66,12 +66,12 @@
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="73"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>Video bitrate</source>
-        <translation>映像ビットレート</translation>
+        <translation>映像のビットレート</translation>
     </message>
 </context>
 <context>
@@ -98,40 +98,34 @@
         <translation>FFmpeg 映像</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="46"/>
-        <location filename="../videowindow.cpp" line="51"/>
+        <location filename="../videowindow.cpp" line="45"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>一時停止(&amp;P)</translation>
+    </message>
+    <message>
+        <location filename="../videowindow.cpp" line="45"/>
+        <source>Space</source>
+        <translation>Space</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
-        <location filename="../videowindow.cpp" line="51"/>
-        <source>Space</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../videowindow.cpp" line="47"/>
-        <location filename="../videowindow.cpp" line="52"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>終止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="47"/>
-        <location filename="../videowindow.cpp" line="52"/>
+        <location filename="../videowindow.cpp" line="46"/>
         <source>V</source>
-        <translation type="unfinished"></translation>
+        <translation>V</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="49"/>
-        <location filename="../videowindow.cpp" line="54"/>
+        <location filename="../videowindow.cpp" line="48"/>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>フルスクリーン(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../videowindow.cpp" line="49"/>
-        <location filename="../videowindow.cpp" line="54"/>
+        <location filename="../videowindow.cpp" line="48"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation>F</translation>
     </message>
 </context>
 </TS>

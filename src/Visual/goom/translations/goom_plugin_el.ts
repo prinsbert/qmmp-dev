@@ -34,14 +34,12 @@
         <translation>&amp;Εμφάνιση τίτλου</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="202"/>
-        <location filename="../goomwidget.cpp" line="204"/>
+        <location filename="../goomwidget.cpp" line="201"/>
         <source>&amp;Full Screen</source>
         <translation>&amp;Πλήρης οθόνη</translation>
     </message>
     <message>
-        <location filename="../goomwidget.cpp" line="202"/>
-        <location filename="../goomwidget.cpp" line="204"/>
+        <location filename="../goomwidget.cpp" line="201"/>
         <source>F</source>
         <translation>F</translation>
     </message>

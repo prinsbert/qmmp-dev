@@ -29,42 +29,42 @@
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Настройки модуля передискретизации</translation>
+        <translation>Настройки модуля передискретизации</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Частота дискретизации (Гц):</translation>
+        <translation>Частота дискретизации (Гц):</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="40"/>
         <source>Interpolation Engine:</source>
-        <translation type="unfinished">Алгоритм интерполяции:</translation>
+        <translation>Алгоритм интерполяции:</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="48"/>
         <source>Best Sinc Interpolation</source>
-        <translation type="unfinished">Лучшая sinc-интерполяция</translation>
+        <translation>Лучшая sinc-интерполяция</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="53"/>
         <source>Medium Sinc Interpolation</source>
-        <translation type="unfinished">Средняя sinc-интерполяция</translation>
+        <translation>Средняя sinc-интерполяция</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="58"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation type="unfinished">Быстрая sinc-интерполяция</translation>
+        <translation>Быстрая sinc-интерполяция</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="63"/>
         <source>ZOH Interpolation</source>
-        <translation type="unfinished">Интерполяция нулевого порядка</translation>
+        <translation>Интерполяция нулевого порядка</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="68"/>
         <source>Linear Interpolation</source>
-        <translation type="unfinished">Линейная интерполяция</translation>
+        <translation>Линейная интерполяция</translation>
     </message>
 </context>
 </TS>
