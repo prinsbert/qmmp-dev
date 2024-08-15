@@ -32,7 +32,7 @@
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="14"/>
         <source>KDE Notification Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>KDE Notification Plugin asetukset</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="39"/>
