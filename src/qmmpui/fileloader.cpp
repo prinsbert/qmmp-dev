@@ -349,7 +349,6 @@ bool FileLoader::checkExcludeFilters(const QFileInfo &info)
 
 void FileLoader::removeIgnoredTracks(QList<PlayListTrack *> *tracks, QSet<QString> *ignoredPaths)
 {
-    qDebug() << Q_FUNC_INFO << ignoredPaths->count();
     if(ignoredPaths->isEmpty())
         return;
 
@@ -362,7 +361,6 @@ void FileLoader::removeIgnoredTracks(QList<PlayListTrack *> *tracks, QSet<QStrin
         {
             delete (*it);
             it = tracks->erase(it);
-            qDebug() << "!!" << path;
             ignoredPaths->remove(path); //exclude ignored path from checking
         }
         else
