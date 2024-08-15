@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2006-2019 by Ilya Kotov                                 *
+ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
  *   forkotov02@ya.ru                                                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -191,7 +191,7 @@ void FileLoader::addDirectory(const QString& s, PlayListItem *before)
         {
             QStringList paths;
             tracks.append(processFile(info.absoluteFilePath (), &paths));
-            ignoredPaths.unite(QSet<QString>(paths.cbegin(), paths.cend()));
+            ignoredPaths.unite(QSet<QString>::fromList(paths));
         }
 
         if (m_finished)
@@ -379,19 +379,17 @@ bool FileLoader::checkExcludeFilters(const QFileInfo &info)
 
 void FileLoader::removeIgnoredTracks(QList<PlayListTrack *> *tracks, QSet<QString> *ignoredPaths)
 {
-    qDebug() << Q_FUNC_INFO << ignoredPaths->count();
     if(ignoredPaths->isEmpty())
         return;
 
     foreach(PlayListTrack *track, *tracks)
     {
-        QString path = (*it)->path();
+        QString path = track->path();
 
         if(ignoredPaths->contains(path))
         {
             tracks->removeAll(track);
             delete track;
-            qDebug() << "!!" << path;
             ignoredPaths->remove(path); //exclude ignored path from checking
         }
     }
