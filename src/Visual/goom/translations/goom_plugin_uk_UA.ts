@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>GoomWidget</name>
     <message>
@@ -21,29 +21,29 @@
     <message>
         <location filename="../goomwidget.cpp" line="191"/>
         <source>50 fps</source>
-        <translation>50 гц</translation>
+        <translation>50 кадр/с</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="192"/>
         <source>25 fps</source>
-        <translation>25 гц</translation>
+        <translation>25 кадр/с</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="198"/>
         <source>&amp;Show Title</source>
-        <translation>&amp;Відображати назву</translation>
+        <translation>&amp;Показувати назву</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="202"/>
         <location filename="../goomwidget.cpp" line="204"/>
         <source>&amp;Full Screen</source>
-        <translation>&amp;Повноекранний режим</translation>
+        <translation>&amp;Повний екран</translation>
     </message>
     <message>
         <location filename="../goomwidget.cpp" line="202"/>
         <location filename="../goomwidget.cpp" line="204"/>
         <source>F</source>
-        <translation></translation>
+        <translation>F</translation>
     </message>
 </context>
 <context>
@@ -56,12 +56,12 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="49"/>
         <source>About Goom Visual Plugin</source>
-        <translation>Про модуль візуалізації Goom</translation>
+        <translation>Про втулок візуалізації Goom</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="50"/>
         <source>Qmmp Goom Visual Plugin</source>
-        <translation>Модуль візуалізації Goom для Qmmp</translation>
+        <translation>Втулок візуалізації Goom для Qmmp</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="51"/>
@@ -71,22 +71,22 @@
     <message>
         <location filename="../visualgoomfactory.cpp" line="52"/>
         <source>Based on the source code from the Goom project</source>
-        <translation>Базується на вихідному коді проекта Goom</translation>
+        <translation>Базується на програмному коді проєкту Goom</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="53"/>
         <source>Goom project developers:</source>
-        <translation>Розробники проекта Goom:</translation>
+        <translation>Розробники проєкту Goom:</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="54"/>
         <source>Jean-Christophe Hoelt &lt;jeko@ios-software.com&gt;</source>
-        <translation></translation>
+        <translation>Жан-Крістоф Гоельт &lt;jeko@ios-software.com&gt;</translation>
     </message>
     <message>
         <location filename="../visualgoomfactory.cpp" line="55"/>
         <source>Guillaume Borios &lt;gyom@ios-software.com&gt;</source>
-        <translation></translation>
+        <translation>Ґійом Боріос &lt;gyom@ios-software.com&gt;</translation>
     </message>
 </context>
 </TS>

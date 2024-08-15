@@ -6,27 +6,27 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>FFap Eklentisi</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
         <source>Monkey&apos;s Audio Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Monkey&apos;s Ses Dosyaları</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>About FFap Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>FFap Ses Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp FFap Ses Eklentisi</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu eklenti Monkey&apos;s Audio (APE) desteği sağlar</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="153"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="154"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
-        <translation type="unfinished"></translation>
+        <translation>Deadbeef, FFmpeg ve rockbox koduna dayanarak</translation>
     </message>
 </context>
 <context>
@@ -44,12 +44,12 @@
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="62"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnekler</translation>
     </message>
     <message>
         <location filename="../ffapmetadatamodel.cpp" line="63"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarlama</translation>
     </message>
 </context>
 </TS>

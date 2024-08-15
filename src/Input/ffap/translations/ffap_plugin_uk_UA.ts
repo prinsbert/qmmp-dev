@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderFFapFactory</name>
     <message>
         <location filename="../decoderffapfactory.cpp" line="43"/>
         <source>FFap Plugin</source>
-        <translation>Модуль FFap</translation>
+        <translation>Втулок FFap</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="45"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="150"/>
         <source>About FFap Audio Plugin</source>
-        <translation>Про аудіо-модуль FFap для Qmmp</translation>
+        <translation>Про авдіовтулок FFap для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="151"/>
         <source>Qmmp FFap Audio Plugin</source>
-        <translation>Аудіо-модуль FFap для Qmmp</translation>
+        <translation>Авдіовтулок FFap для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="152"/>
         <source>This plugin provides Monkey&apos;s Audio (APE) support</source>
-        <translation>Цей модуль додає підтримку Monkey&apos;s Audio (APE)</translation>
+        <translation>Цей втулок додає підтримку Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
         <location filename="../decoderffapfactory.cpp" line="153"/>
@@ -36,7 +36,7 @@
     <message>
         <location filename="../decoderffapfactory.cpp" line="154"/>
         <source>Based on code from deadbeef, FFmpeg and rockbox</source>
-        <translation>Засновано на вихідному коді проектів deadbeef, FFmpeg та rockbox</translation>
+        <translation>Засновано на джерельному коді проєктів deadbeef, FFmpeg і rockbox</translation>
     </message>
 </context>
 <context>

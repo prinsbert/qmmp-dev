@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>FFVideoFactory</name>
     <message>
         <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
-        <translation>Плагін відео FFmpeg</translation>
+        <translation>Втулок відео FFmpeg</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
-        <translation>Файли відео</translation>
+        <translation>Відеофайли</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="161"/>
         <source>About FFVideo Plugin</source>
-        <translation>Про плагін відео FFmpeg</translation>
+        <translation>Про втулок відео FFmpeg</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="162"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
-        <translation>Плагін відео на базі FFmpeg для Qmmp</translation>
+        <translation>Втулок відео на базі FFmpeg для Qmmp</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="163"/>
         <source>Compiled against:</source>
-        <translation>Зібрано з:</translation>
+        <translation>Зібрано з бібліотеками:</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="172"/>
@@ -39,17 +39,17 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>File size</source>
-        <translation>Розмір файла</translation>
+        <translation>Розмір файлу</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
         <source>Bitrate</source>
-        <translation>Бітрейт</translation>
+        <translation>Швидкість потоку</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation>Бітрейт звуку</translation>
+        <translation>Авдіобітрейт</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
@@ -66,7 +66,7 @@
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>kbps</source>
-        <translation>кбіт/с</translation>
+        <translation>кб/с</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
@@ -77,7 +77,7 @@
         <location filename="../ffvideometadatamodel.cpp" line="73"/>
         <location filename="../ffvideometadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
-        <translation>Аудіоканали</translation>
+        <translation>Звукові канали</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="82"/>
@@ -87,7 +87,7 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>Video bitrate</source>
-        <translation>Бітрейт відео</translation>
+        <translation>Відеобітрейт</translation>
     </message>
 </context>
 <context>
@@ -101,7 +101,7 @@
         <location filename="../videowindow.cpp" line="46"/>
         <location filename="../videowindow.cpp" line="51"/>
         <source>&amp;Pause</source>
-        <translation>&amp;Пауза</translation>
+        <translation>&amp;Павза</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
@@ -113,25 +113,25 @@
         <location filename="../videowindow.cpp" line="47"/>
         <location filename="../videowindow.cpp" line="52"/>
         <source>&amp;Stop</source>
-        <translation>&amp;Стоп</translation>
+        <translation>&amp;Зупинити</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="47"/>
         <location filename="../videowindow.cpp" line="52"/>
         <source>V</source>
-        <translation></translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="49"/>
         <location filename="../videowindow.cpp" line="54"/>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;Повноекранний режим</translation>
+        <translation>&amp;Повноекранно</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="49"/>
         <location filename="../videowindow.cpp" line="54"/>
         <source>F</source>
-        <translation></translation>
+        <translation>F</translation>
     </message>
 </context>
 </TS>
