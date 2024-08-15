@@ -34,37 +34,37 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished">Configuración de Módulo de Detección de Volumen</translation>
+        <translation>Configuración de Módulo de Detección de Volumen</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Detección de audio CD</translation>
+        <translation>Detección de audio CD</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Añadir pistas a la lista de reproducción automáticamente</translation>
+        <translation>Añadir pistas a la lista de reproducción automáticamente</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Eliminar pistas de la lista de reproducción automáticamente</translation>
+        <translation>Eliminar pistas de la lista de reproducción automáticamente</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Detectar dispositivos extraibles</translation>
+        <translation>Detectar dispositivos extraibles</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Añadir archivos a la lista de reproducción automáticamente</translation>
+        <translation>Añadir archivos a la lista de reproducción automáticamente</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Eliminar archivos de la lista de reproducción automáticamente</translation>
+        <translation>Eliminar archivos de la lista de reproducción automáticamente</translation>
     </message>
 </context>
 <context>

@@ -49,37 +49,37 @@
     <message>
         <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation type="unfinished">LADSPA 플러그인 카탈로그</translation>
+        <translation>LADSPA 플러그인 카탈로그</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation type="unfinished">&gt;</translation>
+        <translation>&gt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation type="unfinished">&lt;</translation>
+        <translation>&lt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation type="unfinished">구성하기</translation>
+        <translation>구성하기</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="46"/>
         <source>UID</source>
-        <translation type="unfinished">UID</translation>
+        <translation>UID</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>Name</source>
-        <translation type="unfinished">이름</translation>
+        <translation>이름</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="131"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation type="unfinished">이 LADSPA 플러그인에는 사용자 컨트롤이 없습니다</translation>
+        <translation>이 LADSPA 플러그인에는 사용자 컨트롤이 없습니다</translation>
     </message>
 </context>
 </TS>

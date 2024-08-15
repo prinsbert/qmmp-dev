@@ -6,52 +6,52 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="14"/>
         <source>CD Audio Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon CD audio</translation>
+        <translation>Configuration du greffon CD audio</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
-        <translation type="unfinished">Surcharger le périphérique&#xa0;:</translation>
+        <translation>Surcharger le périphérique&#xa0;:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
-        <translation type="unfinished">Limiter la vitesse du CD&#xa0;:</translation>
+        <translation>Limiter la vitesse du CD&#xa0;:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="122"/>
         <source>Use cd-text</source>
-        <translation type="unfinished">Utiliser CD-Text&#xa0;:</translation>
+        <translation>Utiliser CD-Text&#xa0;:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
-        <translation type="unfinished">CDDB</translation>
+        <translation>CDDB</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="48"/>
         <source>Use HTTP instead of CDDBP</source>
-        <translation type="unfinished">Utiliser HTTP au lieu de CDDBP</translation>
+        <translation>Utiliser HTTP au lieu de CDDBP</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
-        <translation type="unfinished">Serveur&#xa0;:</translation>
+        <translation>Serveur&#xa0;:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
-        <translation type="unfinished">Chemin&#xa0;:</translation>
+        <translation>Chemin&#xa0;:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
-        <translation type="unfinished">Port&#xa0;:</translation>
+        <translation>Port&#xa0;:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="87"/>
         <source>Clear CDDB cache</source>
-        <translation type="unfinished">Effacer le cache CDDB</translation>
+        <translation>Effacer le cache CDDB</translation>
     </message>
 </context>
 <context>

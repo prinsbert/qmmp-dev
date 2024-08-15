@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>AlsaSettingsDialog</name>
     <message>
         <location filename="../alsasettingsdialog.ui" line="14"/>
         <source>ALSA Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля ALSA</translation>
+        <translation>Налаштування втулка ALSA</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Параметри пристроїв</translation>
+        <translation>Параметри пристроїв</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Аудіо пристрій</translation>
+        <translation>Авдіопристрій</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="70"/>
         <source>Mixer</source>
-        <translation type="unfinished">Мікшер</translation>
+        <translation>Мікшер</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="94"/>
         <source>Mixer card:</source>
-        <translation type="unfinished">Карта мікшера:</translation>
+        <translation>Карта мікшера:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="104"/>
         <source>Mixer device:</source>
-        <translation type="unfinished">Пристрій мікшера:</translation>
+        <translation>Пристрій мікшера:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Додаткові налаштування</translation>
+        <translation>Додаткові налаштування</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="142"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Звукова карта</translation>
+        <translation>Звукова карта</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="148"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Час буферизації (мс):</translation>
+        <translation>Час буферування (мс):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="184"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Час періоду (мс):</translation>
+        <translation>Час періоду (мс):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="220"/>
         <source>Use mmap access</source>
-        <translation type="unfinished">Використовувати доступ mmap</translation>
+        <translation>Використовувати доступ mmap</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="240"/>
         <source>Use snd_pcm_pause function</source>
-        <translation type="unfinished">Використовувати функцію snd_pcm_pause</translation>
+        <translation>Використовувати функцію snd_pcm_pause</translation>
     </message>
 </context>
 <context>
@@ -69,17 +69,17 @@
     <message>
         <location filename="../outputalsafactory.cpp" line="31"/>
         <source>ALSA Plugin</source>
-        <translation>Модуль ALSA</translation>
+        <translation>Втулок ALSA</translation>
     </message>
     <message>
         <location filename="../outputalsafactory.cpp" line="55"/>
         <source>About ALSA Output Plugin</source>
-        <translation>Про модуль виводу ALSA</translation>
+        <translation>Про втулок виводу ALSA</translation>
     </message>
     <message>
         <location filename="../outputalsafactory.cpp" line="56"/>
         <source>Qmmp ALSA Output Plugin</source>
-        <translation>Модуль виводу ALSA для Qmmp</translation>
+        <translation>Втулок виводу ALSA для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputalsafactory.cpp" line="57"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderArchiveFactory</name>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="39"/>
         <source>Archive Plugin</source>
-        <translation>Мордуль архівів</translation>
+        <translation>Втулок архівів</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="41"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderarchivefactory.cpp" line="167"/>
         <source>About Archive Reader Plugin</source>
-        <translation>Про модуль читання архівів</translation>
+        <translation>Про втулок читання архівів</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="168"/>
         <source>Qmmp Archive Reader Plugin</source>
-        <translation>Модуль читання архівів для Qmmp</translation>
+        <translation>Втулок читання архівів для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderarchivefactory.cpp" line="169"/>

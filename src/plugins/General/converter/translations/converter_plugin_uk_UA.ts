@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>Converter</name>
     <message>
@@ -18,7 +18,7 @@
     <message>
         <location filename="../converter.cpp" line="177"/>
         <source>Converting</source>
-        <translation>Конвертування</translation>
+        <translation>Перетворення</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="238"/>
@@ -36,12 +36,12 @@
     <message>
         <location filename="../converterdialog.ui" line="14"/>
         <source>Audio Converter</source>
-        <translation>Конвертер аудіо</translation>
+        <translation>Конвертер авдіо</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="44"/>
         <source>Progress</source>
-        <translation>Виконано</translation>
+        <translation>Поступ</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="49"/>
@@ -61,32 +61,37 @@
     <message>
         <location filename="../converterdialog.ui" line="97"/>
         <source>Preset:</source>
-        <translation>Предвстановлення:</translation>
+        <translation>Пресет:</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="114"/>
         <source>Overwrite existing files</source>
-        <translation>Переписати існуючі файли</translation>
+        <translation>Переписати наявні файли</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="124"/>
         <source>Convert</source>
-        <translation>Конвертувати</translation>
+        <translation>Перетворити</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="131"/>
         <source>Stop</source>
-        <translation>Стоп</translation>
+        <translation>Зупинити</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="116"/>
         <source>Choose a directory</source>
-        <translation>Виберіть теку</translation>
+        <translation>Оберіть теку</translation>
     </message>
     <message>
         <location filename="../converterdialog.ui" line="39"/>
         <source>Title</source>
         <translation>Назва</translation>
+    </message>
+    <message>
+        <location filename="../converterdialog.cpp" line="205"/>
+        <source>Create a Copy</source>
+        <translation>Створити копію</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="136"/>
@@ -111,19 +116,14 @@
         <translation>Редагувати</translation>
     </message>
     <message>
-        <location filename="../converterdialog.cpp" line="205"/>
-        <source>Create a Copy</source>
-        <translation>Створити копію</translation>
-    </message>
-    <message>
         <location filename="../converterdialog.cpp" line="206"/>
         <source>Delete</source>
-        <translation>Видалити</translation>
+        <translation>Вилучити</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="358"/>
         <source>Unable to execute &quot;%1&quot;. Program not found.</source>
-        <translation>Неможливо запустити &quot;%1&quot;. Програму не найдено.</translation>
+        <translation>Неможливо запустити &quot;%1&quot;. Програми не найдено.</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="365"/>
@@ -136,22 +136,22 @@
     <message>
         <location filename="../converterfactory.cpp" line="28"/>
         <source>Converter Plugin</source>
-        <translation>Модуль конвертера</translation>
+        <translation>Втулок перетворювача</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="49"/>
         <source>About Converter Plugin</source>
-        <translation>Про модуль конвертера</translation>
+        <translation>Про втулок перетворювача</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="50"/>
         <source>Qmmp Converter Plugin</source>
-        <translation>Модуль конвертера для Qmmp</translation>
+        <translation>Втулок перетворювача для Qmmp</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="51"/>
         <source>This plugin converts supported audio files to other file formats using external command-line encoders</source>
-        <translation>Цей модуль призначений для конвертування аудіофайлів, що підтримуються, в інший формат з використанням зовнішніх консольних програм</translation>
+        <translation>Цей втулок покликано для перетворення підтримуваних авдіофайлів на инший формат з використанням зовнішніх консольних програм</translation>
     </message>
     <message>
         <location filename="../converterfactory.cpp" line="53"/>
@@ -164,12 +164,12 @@
     <message>
         <location filename="../converterhelper.cpp" line="33"/>
         <source>Convert</source>
-        <translation>Конвертувати</translation>
+        <translation>Перетворити</translation>
     </message>
     <message>
         <location filename="../converterhelper.cpp" line="34"/>
         <source>Meta+C</source>
-        <translation></translation>
+        <translation>Meta+C</translation>
     </message>
 </context>
 <context>
@@ -177,42 +177,42 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Редактор предвстановлень</translation>
+        <translation>Редагувач пресету</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation type="unfinished">Головне</translation>
+        <translation>Загальне</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation type="unfinished">Ім&apos;я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation type="unfinished">Розширення:</translation>
+        <translation>Розширення:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation type="unfinished">Команда</translation>
+        <translation>Команда</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="77"/>
         <source>Options</source>
-        <translation type="unfinished">Опції</translation>
+        <translation>Параметри</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation type="unfinished">Записати теги</translation>
+        <translation>Записати теґи</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation type="unfinished">Конвертувати в 16 біт</translation>
+        <translation>Перетворити на 16 біт</translation>
     </message>
 </context>
 <context>
@@ -220,8 +220,7 @@
     <message>
         <location filename="../converterpreseteditor.cpp" line="40"/>
         <source>%1 (Read Only)</source>
-        <translatorcomment>%1 (тільки читання)</translatorcomment>
-        <translation></translation>
+        <translation>%1 (Лише для читання)</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.cpp" line="73"/>

@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>OssSettingsDialog</name>
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">OSS プラグイン設定</translation>
+        <translation>OSS プラグイン設定</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">デバイス設定</translation>
+        <translation>デバイス設定</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">音響デバイス</translation>
+        <translation>音響デバイス</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">ミキサーデバイス</translation>
+        <translation>ミキサーデバイス</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">上級設定</translation>
+        <translation>上級設定</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">サウンドカード</translation>
+        <translation>サウンドカード</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">バッファー時間 (ミリ秒):</translation>
+        <translation>バッファー時間 (ミリ秒):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">割り込み間隔 (ミリ秒):</translation>
+        <translation>割り込み間隔 (ミリ秒):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>

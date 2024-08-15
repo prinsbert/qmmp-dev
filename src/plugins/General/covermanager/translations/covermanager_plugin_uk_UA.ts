@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>CoverManager</name>
     <message>
         <location filename="../covermanager.cpp" line="35"/>
         <source>Show Cover</source>
-        <translation>Показати обкладинку</translation>
+        <translation>Показати шкурку</translation>
     </message>
     <message>
         <location filename="../covermanager.cpp" line="36"/>
         <source>Ctrl+M</source>
-        <translation></translation>
+        <translation>Ctrl+M</translation>
     </message>
 </context>
 <context>
@@ -19,17 +19,17 @@
     <message>
         <location filename="../covermanagerfactory.cpp" line="29"/>
         <source>Cover Manager Plugin</source>
-        <translation>Модуль керування обкладинками</translation>
+        <translation>Втулок керування шкурками</translation>
     </message>
     <message>
         <location filename="../covermanagerfactory.cpp" line="49"/>
         <source>About Cover Manager Plugin</source>
-        <translation>Про модуль керування обкладинками</translation>
+        <translation>Про втулок керування шкурками</translation>
     </message>
     <message>
         <location filename="../covermanagerfactory.cpp" line="50"/>
         <source>Qmmp Cover Manager Plugin</source>
-        <translation>Модуль керування обкладинками для Qmmp</translation>
+        <translation>Втулок керування шкурками для Qmmp</translation>
     </message>
     <message>
         <location filename="../covermanagerfactory.cpp" line="51"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../coverwidget.cpp" line="38"/>
         <source>Ctrl+S</source>
-        <translation></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="39"/>
@@ -62,22 +62,22 @@
     <message>
         <location filename="../coverwidget.cpp" line="42"/>
         <source>128x128</source>
-        <translation></translation>
+        <translation>128x128</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="43"/>
         <source>256x256</source>
-        <translation></translation>
+        <translation>256x256</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="44"/>
         <source>512x512</source>
-        <translation></translation>
+        <translation>512x512</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="45"/>
         <source>1024x1024</source>
-        <translation></translation>
+        <translation>1024x1024</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="48"/>
@@ -87,12 +87,12 @@
     <message>
         <location filename="../coverwidget.cpp" line="48"/>
         <source>Alt+F4</source>
-        <translation></translation>
+        <translation>Alt+F4</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="88"/>
         <source>Save Cover As</source>
-        <translation>Зберегти обкладинку як</translation>
+        <translation>Зберегти шкурку як</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="89"/>

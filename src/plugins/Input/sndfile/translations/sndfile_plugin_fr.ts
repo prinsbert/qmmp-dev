@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodersndfilefactory.cpp" line="230"/>
         <source>Compiled against %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Compilé avec la mauvaise version %1</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="231"/>

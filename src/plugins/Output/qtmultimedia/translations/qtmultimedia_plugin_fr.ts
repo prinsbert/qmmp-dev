@@ -29,17 +29,17 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation type="unfinished">Paramètres du Plugin Multimédia Qt</translation>
+        <translation>Paramètres du Plugin Multimédia Qt</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation type="unfinished">Périphérique</translation>
+        <translation>Périphérique :</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.cpp" line="35"/>
         <source>Default</source>
-        <translation type="unfinished">Défaut</translation>
+        <translation>Défaut</translation>
     </message>
 </context>
 </TS>

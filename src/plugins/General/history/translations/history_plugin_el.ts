@@ -178,12 +178,12 @@
     <message>
         <location filename="../historywindow.cpp" line="495"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη στη Λίστα Αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="496"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Προβολή λεπτομερειών κομματιού</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="498"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>SeekOption</name>
     <message>
         <location filename="../seekoption.cpp" line="29"/>
         <source>Seek to position in the current track</source>
-        <translation>Перейти до позиції всередині поточного трека</translation>
+        <translation>Перейти до позиції всередині поточної доріжки</translation>
     </message>
     <message>
         <location filename="../seekoption.cpp" line="30"/>

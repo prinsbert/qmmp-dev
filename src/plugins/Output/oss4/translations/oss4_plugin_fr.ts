@@ -6,12 +6,12 @@
     <message>
         <location filename="../oss4settingsdialog.ui" line="14"/>
         <source>OSS4 Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon OSS4</translation>
+        <translation>Configuration du greffon OSS4</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation type="unfinished">Périphérique : </translation>
+        <translation>Périphérique :</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>

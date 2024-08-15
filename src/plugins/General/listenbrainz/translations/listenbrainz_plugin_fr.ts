@@ -34,12 +34,12 @@
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="14"/>
         <source>ListenBrainz Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon ListenBrainz</translation>
+        <translation>Configuration du greffon ListenBrainz</translation>
     </message>
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="29"/>
         <source>ListenBrainz user token:</source>
-        <translation type="unfinished">Token utilisateur ListenBrainz:</translation>
+        <translation>Token utilisateur ListenBrainz:</translation>
     </message>
 </context>
 </TS>

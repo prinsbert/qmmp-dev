@@ -6,37 +6,37 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="14"/>
         <source>CUE Plugin Settings</source>
-        <translation type="unfinished">Impostazioni dell&apos;estensione CUE</translation>
+        <translation>Impostazioni dell&apos;estensione CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="29"/>
         <source>Common settings</source>
-        <translation type="unfinished">Impostazioni comuni</translation>
+        <translation>Impostazioni comuni</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation type="unfinished">Carica file cue non corretti se possibile</translation>
+        <translation>Carica file cue non corretti se possibile</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation type="unfinished">Codifica CUE</translation>
+        <translation>Codifica CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Rilevamento automatico della codifica dei caratteri</translation>
+        <translation>Rilevamento automatico della codifica dei caratteri</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation type="unfinished">Lingua:</translation>
+        <translation>Lingua:</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Codifica predefinita:</translation>
+        <translation>Codifica predefinita:</translation>
     </message>
 </context>
 <context>

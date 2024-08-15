@@ -178,12 +178,12 @@
     <message>
         <location filename="../historywindow.cpp" line="495"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>添加到播放列表中</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="496"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;查看曲目详细内容</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="498"/>

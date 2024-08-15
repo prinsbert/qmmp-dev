@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>OssSettingsDialog</name>
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля OSS</translation>
+        <translation>Налаштування втулка OSS</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Налаштування пристрою</translation>
+        <translation>Параметри пристроїв</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Пристрій звуку</translation>
+        <translation>Авдіопристрій</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">Пристрій мікшеру</translation>
+        <translation>Пристрій мікшера</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Додаткові налаштування</translation>
+        <translation>Додаткові налаштування</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Звукова карта</translation>
+        <translation>Звукова карта</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Час буферу (мс):</translation>
+        <translation>Час буферування (мс):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Час периоду (мс):</translation>
+        <translation>Час періоду (мс):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished">PCM замість Master</translation>
+        <translation>PCM замість Master</translation>
     </message>
 </context>
 <context>
@@ -54,17 +54,17 @@
     <message>
         <location filename="../outputossfactory.cpp" line="36"/>
         <source>OSS Plugin</source>
-        <translation>Модуль OSS</translation>
+        <translation>Втулок OSS</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="55"/>
         <source>About OSS Output Plugin</source>
-        <translation>Про модуль виведення OSS</translation>
+        <translation>Про втулок виведення OSS</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="56"/>
         <source>Qmmp OSS Output Plugin</source>
-        <translation>Модуль виведення OSS для Qmmp</translation>
+        <translation>Втулок виведення OSS для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputossfactory.cpp" line="57"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../outputossfactory.cpp" line="58"/>
         <source>Based on code by: Brad Hughes &lt;bhughes@trolltech.com&gt;</source>
-        <translation>На базі коду: Brad Hughes &lt;bhughes@trolltech.com&gt;</translation>
+        <translation>На базі коду: Бред Гьюз &lt;bhughes@trolltech.com&gt;</translation>
     </message>
 </context>
 </TS>

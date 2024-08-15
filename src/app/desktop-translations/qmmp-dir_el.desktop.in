@@ -14,7 +14,7 @@ X-KDE-StartupNotify=false
 
 
 # Translations
-Icon[el]=qmmp
 Name[el]=Qmmp
 Comment[el]=Αναπαραγωγέας πολυμέσων βασισμένος στην Qt
 GenericName[el]=Αναπαραγωγέας ήχου
+Icon[el]=qmmp

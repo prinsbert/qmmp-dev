@@ -6,27 +6,27 @@
     <message>
         <location filename="../udisksfactory.cpp" line="30"/>
         <source>UDisks Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>UDisks-Modul</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="50"/>
         <source>About UDisks Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Über UDisks-Modul</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="51"/>
         <source>Qmmp UDisks Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp UDisks-Modul</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="52"/>
         <source>This plugin provides removable devices detection using UDisks</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Modul bietet Wechsellaufwerkerkennung unter Verwendung von UDisks</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished">Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../udisksplugin.cpp" line="132"/>
         <source>Add CD &quot;%1&quot;</source>
-        <translation type="unfinished">CD „%1“ hinzufügen</translation>
+        <translation>CD „%1“ hinzufügen</translation>
     </message>
     <message>
         <location filename="../udisksplugin.cpp" line="140"/>
         <source>Add Volume &quot;%1&quot;</source>
-        <translation type="unfinished">Datenträger „%1“ hinzufügen</translation>
+        <translation>Datenträger „%1“ hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -47,37 +47,37 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="14"/>
         <source>UDisks Plugin Settings</source>
-        <translation type="unfinished">Einstellungen UDisks-Modul</translation>
+        <translation>Einstellungen UDisks-Modul</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">CD-Audio-Erkennung</translation>
+        <translation>CD-Audio-Erkennung</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Titel automatisch zur Wiedergabeliste hinzufügen</translation>
+        <translation>Titel automatisch zur Wiedergabeliste hinzufügen</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Titel automatisch von der Wiedergabeliste entfernen</translation>
+        <translation>Titel automatisch von der Wiedergabeliste entfernen</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Wechsellaufwerkerkennung</translation>
+        <translation>Wechsellaufwerkerkennung</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Dateien automatisch zur Wiedergabeliste hinzufügen</translation>
+        <translation>Dateien automatisch zur Wiedergabeliste hinzufügen</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Dateien automatisch von der Wiedergabeliste entfernen</translation>
+        <translation>Dateien automatisch von der Wiedergabeliste entfernen</translation>
     </message>
 </context>
 </TS>

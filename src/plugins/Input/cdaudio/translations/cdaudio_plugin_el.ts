@@ -6,52 +6,52 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="14"/>
         <source>CD Audio Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου CD ήχου</translation>
+        <translation>Ρυθμίσεις πρόσθετου CD ήχου</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
-        <translation type="unfinished">Παράκαμψη συσκευής:</translation>
+        <translation>Παράκαμψη συσκευής:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
-        <translation type="unfinished">Περιορισμός ταχύτητας cd:</translation>
+        <translation>Περιορισμός ταχύτητας cd:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="122"/>
         <source>Use cd-text</source>
-        <translation type="unfinished">Χρήση πληροφοριών κομματιών:</translation>
+        <translation>Χρήση πληροφοριών κομματιών:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
-        <translation type="unfinished">CDDB</translation>
+        <translation>CDDB</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="48"/>
         <source>Use HTTP instead of CDDBP</source>
-        <translation type="unfinished">Χρήση του HTTP αντί του CDDBP</translation>
+        <translation>Χρήση του HTTP αντί του CDDBP</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
-        <translation type="unfinished">Εξυπηρετητής:</translation>
+        <translation>Εξυπηρετητής:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
-        <translation type="unfinished">Διαδρομή:</translation>
+        <translation>Διαδρομή:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
-        <translation type="unfinished">Θύρα:</translation>
+        <translation>Θύρα:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="87"/>
         <source>Clear CDDB cache</source>
-        <translation type="unfinished">Καθαρισμός λανθάνουσας μνήμης CDDB</translation>
+        <translation>Καθαρισμός λανθάνουσας μνήμης CDDB</translation>
     </message>
 </context>
 <context>

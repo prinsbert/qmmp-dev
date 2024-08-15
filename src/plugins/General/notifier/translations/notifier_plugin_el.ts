@@ -32,94 +32,94 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="14"/>
         <source>Notifier Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου ειδοποιήσεων
+        <translation>Ρυθμίσεις πρόσθετου ειδοποιήσεων
 </translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="35"/>
         <source>Desktop Notification</source>
-        <translation type="unfinished">Ειδοποιήσεις επιφάνειας εργασίας</translation>
+        <translation>Ειδοποιήσεις επιφάνειας εργασίας</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="51"/>
         <source>Font:</source>
-        <translation type="unfinished">Γραμματοσειρά:</translation>
+        <translation>Γραμματοσειρά:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="78"/>
         <location filename="../notifiersettingsdialog.ui" line="279"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="85"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Διαφάνεια:</translation>
+        <translation>Διαφάνεια:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="229"/>
         <source>Position</source>
-        <translation type="unfinished">Θέση</translation>
+        <translation>Θέση</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="251"/>
         <source>Edit template</source>
-        <translation type="unfinished">Επεξεργασία πρότυπου</translation>
+        <translation>Επεξεργασία πρότυπου</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="299"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Μέγεθος εξώφυλλου:</translation>
+        <translation>Μέγεθος εξώφυλλου:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="325"/>
         <source>Volume change notification</source>
-        <translation type="unfinished">Ειδοποίηση αλλαγής έντασης</translation>
+        <translation>Ειδοποίηση αλλαγής έντασης</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="332"/>
         <source>Delay (ms):</source>
-        <translation type="unfinished">Καθυστέρηση(ms):</translation>
+        <translation>Καθυστέρηση(ms):</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
-        <translation type="unfinished">Ειδοποίηση επαναφοράς αναπαραγωγής</translation>
+        <translation>Ειδοποίηση επαναφοράς αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>
         <source>Song change notification</source>
-        <translation type="unfinished">Ειδοποίηση αλλαγής τραγουδιού</translation>
+        <translation>Ειδοποίηση αλλαγής τραγουδιού</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="375"/>
         <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation type="unfinished">Απενεργοποίηση των ειδοποιήσεων όταν μια άλλη εφαρμογή εκτελείται σε λειτουργία πλήρους οθόνης</translation>
+        <translation>Απενεργοποίηση των ειδοποιήσεων όταν μια άλλη εφαρμογή εκτελείται σε λειτουργία πλήρους οθόνης</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="378"/>
         <source>Disable for full screen windows</source>
-        <translation type="unfinished">Απενεργοποίηση για παράθυρα πλήρους οθόνης</translation>
+        <translation>Απενεργοποίηση για παράθυρα πλήρους οθόνης</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="388"/>
         <source>Psi Notification</source>
-        <translation type="unfinished">Ειδοποίηση Psi</translation>
+        <translation>Ειδοποίηση Psi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="400"/>
         <source>Enable Psi notification</source>
-        <translation type="unfinished">Ενεργοποίηση ειδοποιήσεων Psi</translation>
+        <translation>Ενεργοποίηση ειδοποιήσεων Psi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.cpp" line="115"/>
         <source>Notification Template</source>
-        <translation type="unfinished">Πρότυπο ειδοποιήσεων</translation>
+        <translation>Πρότυπο ειδοποιήσεων</translation>
     </message>
 </context>
 <context>

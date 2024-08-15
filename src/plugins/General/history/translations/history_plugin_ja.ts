@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>DateInputDialog</name>
     <message>
@@ -178,12 +178,12 @@
     <message>
         <location filename="../historywindow.cpp" line="495"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>プレイリストに追加</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="496"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>トラックの詳細を表示(&amp;D)</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="498"/>

@@ -82,68 +82,68 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="14"/>
         <source>Status Icon Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου εικονιδίου κατάστασης</translation>
+        <translation>Ρυθμίσεις πρόσθετου εικονιδίου κατάστασης</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="29"/>
         <source>Balloon message</source>
-        <translation type="unfinished">Μήνυμα φούσκας</translation>
+        <translation>Μήνυμα φούσκας</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="38"/>
         <location filename="../statusiconsettingsdialog.ui" line="105"/>
         <source>Delay, ms:</source>
-        <translation type="unfinished">Delay, ms:</translation>
+        <translation>Delay, ms:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="79"/>
         <source>Tooltip</source>
-        <translation type="unfinished">Υπόδειξη</translation>
+        <translation>Υπόδειξη</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="91"/>
         <source>Try to split file name when no tag</source>
-        <translation type="unfinished">Προσπάθεια διαχωρισμού του ονόματος αρχείου όταν δεν υπάρχει ετικέτα</translation>
+        <translation>Προσπάθεια διαχωρισμού του ονόματος αρχείου όταν δεν υπάρχει ετικέτα</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="98"/>
         <source>Show progress bar</source>
-        <translation type="unfinished">Εμφάνισης γραμμής προόδου</translation>
+        <translation>Εμφάνισης γραμμής προόδου</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="131"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Διαφάνεια:</translation>
+        <translation>Διαφάνεια:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="165"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="174"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Μέγεθος εξώφυλλου:</translation>
+        <translation>Μέγεθος εξώφυλλου:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="214"/>
         <source>32</source>
-        <translation type="unfinished">32</translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="225"/>
         <source>Edit template</source>
-        <translation type="unfinished">Επεξεργασία πρότυπου</translation>
+        <translation>Επεξεργασία πρότυπου</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="250"/>
         <source>Use standard icons</source>
-        <translation type="unfinished">Χρήση τυπικών εικονιδίων</translation>
+        <translation>Χρήση τυπικών εικονιδίων</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.cpp" line="85"/>
         <source>Tooltip Template</source>
-        <translation type="unfinished">Πρότυπο υπόδειξης</translation>
+        <translation>Πρότυπο υπόδειξης</translation>
     </message>
 </context>
 </TS>

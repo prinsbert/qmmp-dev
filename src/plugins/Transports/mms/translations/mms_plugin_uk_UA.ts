@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>MMSInputFactory</name>
     <message>
         <location filename="../mmsinputfactory.cpp" line="32"/>
         <source>MMS Plugin</source>
-        <translation>Модуль MMS</translation>
+        <translation>Втулок MMS</translation>
     </message>
     <message>
         <location filename="../mmsinputfactory.cpp" line="51"/>
         <source>About MMS Transport Plugin</source>
-        <translation>Про модуль MMS</translation>
+        <translation>Про втулок MMS</translation>
     </message>
     <message>
         <location filename="../mmsinputfactory.cpp" line="52"/>
         <source>Qmmp MMS Transport Plugin</source>
-        <translation>Транспортний модуль MMS для Qmmp</translation>
+        <translation>Транспортний втулок MMS для Qmmp</translation>
     </message>
     <message>
         <location filename="../mmsinputfactory.cpp" line="53"/>
@@ -29,17 +29,17 @@
     <message>
         <location filename="../mmssettingsdialog.ui" line="14"/>
         <source>MMS Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля MMS</translation>
+        <translation>Налаштування втулка MMS</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation type="unfinished">Розмір буфера:</translation>
+        <translation>Розмір буферу:</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation type="unfinished">Кб</translation>
+        <translation>КБ</translation>
     </message>
 </context>
 </TS>

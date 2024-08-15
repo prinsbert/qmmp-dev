@@ -6,62 +6,62 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="14"/>
         <source>ALSA Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon ALSA</translation>
+        <translation>Configuration du greffon ALSA</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Configuration du périphérique</translation>
+        <translation>Configuration du périphérique</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Périphérique audio</translation>
+        <translation>Périphérique audio</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="70"/>
         <source>Mixer</source>
-        <translation type="unfinished">Mixeur</translation>
+        <translation>Mixeur</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="94"/>
         <source>Mixer card:</source>
-        <translation type="unfinished">Carte de mixage : </translation>
+        <translation>Carte de mixage : </translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="104"/>
         <source>Mixer device:</source>
-        <translation type="unfinished">Périphérique de mixage : </translation>
+        <translation>Périphérique de mixage : </translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Configuration avancée</translation>
+        <translation>Configuration avancée</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="142"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Carte son</translation>
+        <translation>Carte son</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="148"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Taille du tampon (ms) : </translation>
+        <translation>Taille du tampon (ms) : </translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="184"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Durée de la période (ms) : </translation>
+        <translation>Durée de la période (ms) : </translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="220"/>
         <source>Use mmap access</source>
-        <translation type="unfinished">Utiliser l&apos;accès mmap</translation>
+        <translation>Utiliser l&apos;accès mmap</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="240"/>
         <source>Use snd_pcm_pause function</source>
-        <translation type="unfinished">Utiliser la fonction snd_pcm_pause</translation>
+        <translation>Utiliser la fonction snd_pcm_pause</translation>
     </message>
 </context>
 <context>

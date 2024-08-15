@@ -49,7 +49,7 @@
     <message>
         <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation type="unfinished">LADSPA 插件目錄</translation>
+        <translation>LADSPA 插件目錄</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="52"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation type="unfinished">配置</translation>
+        <translation>配置</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="46"/>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>Name</source>
-        <translation type="unfinished">名稱</translation>
+        <translation>名稱</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="131"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation type="unfinished">LADSPA 插件用戶設定</translation>
+        <translation>LADSPA 插件用戶設定</translation>
     </message>
 </context>
 </TS>

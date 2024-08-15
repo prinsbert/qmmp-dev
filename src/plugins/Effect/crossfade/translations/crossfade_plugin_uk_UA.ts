@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>CrossfadeSettingsDialog</name>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="14"/>
         <source>Crossfade Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля crossfade</translation>
+        <translation>Налаштування втулка crossfade</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="29"/>
         <source>Overlap:</source>
-        <translation type="unfinished">Перекриття:</translation>
+        <translation>Перекриття:</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="42"/>
         <source>ms</source>
-        <translation type="unfinished">мс</translation>
+        <translation>мс</translation>
     </message>
 </context>
 <context>
@@ -24,17 +24,17 @@
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="30"/>
         <source>Crossfade Plugin</source>
-        <translation>Модуль Crossfade</translation>
+        <translation>Втулок Crossfade</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="50"/>
         <source>About Crossfade Plugin</source>
-        <translation>Про модуль crossfade</translation>
+        <translation>Про втулок crossfade</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="51"/>
         <source>Qmmp Crossfade Plugin</source>
-        <translation>Модуль crossfade для Qmmp</translation>
+        <translation>Втулок crossfade для Qmmp</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="52"/>

@@ -35,7 +35,7 @@ Exec=qmmp --no-start --next
 
 
 # Translations
+Name[ko]=Qmmp
 Comment[ko]=Qt 기반 멀티미디어 재생기
 GenericName[ko]=오디오 재생기
-Name[ko]=Qmmp
 Icon[ko]=qmmp

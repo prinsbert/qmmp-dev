@@ -6,43 +6,43 @@
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="14"/>
         <source>BS2B Plugin Settings</source>
-        <translation type="unfinished">BS2B Eklenti Ayarları</translation>
+        <translation>BS2B Eklenti Ayarları</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="32"/>
         <source>Crossfeed level</source>
-        <translation type="unfinished">Crossfeed seviyesi</translation>
+        <translation>Crossfeed seviyesi</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="45"/>
         <location filename="../bs2bsettingsdialog.ui" line="59"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="71"/>
         <source>Default</source>
-        <translation type="unfinished">Öntanımlı</translation>
+        <translation>Öntanımlı</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="78"/>
         <source>C.Moy</source>
-        <translation type="unfinished">C.Moy</translation>
+        <translation>C.Moy</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="85"/>
         <source>J. Meier</source>
-        <translation type="unfinished">J. Meier</translation>
+        <translation>J. Meier</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.cpp" line="61"/>
         <source>%1 Hz, %2 us</source>
-        <translation type="unfinished">%1 Hz, %2 us</translation>
+        <translation>%1 Hz, %2 us</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.cpp" line="68"/>
         <source>%1 dB</source>
-        <translation type="unfinished">%1 dB</translation>
+        <translation>%1 dB</translation>
     </message>
 </context>
 <context>
@@ -70,7 +70,7 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="57"/>
         <source>Compiled against libbs2b-%1</source>
-        <translation>libbs2b-%1 ile derlenmiştir</translation>
+        <translation>libbs2b-%1&apos;e  dayanarak derlendi</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="59"/>
@@ -80,12 +80,12 @@
     <message>
         <location filename="../effectbs2bfactory.cpp" line="60"/>
         <source>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ilya Kotov &amp;lt;forkotov02@ya.ru&amp;gt;</translation>
     </message>
     <message>
         <location filename="../effectbs2bfactory.cpp" line="61"/>
         <source>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Sebastian Pipping &amp;lt;sebastian@pipping.org&amp;gt;</translation>
     </message>
 </context>
 </TS>

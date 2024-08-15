@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>EffectFileWriterFactory</name>
     <message>
@@ -29,22 +29,22 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation type="unfinished">音声ファイル書き出しプラグインの設定</translation>
+        <translation>音声ファイル書き出しプラグインの設定</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation type="unfinished">保存先ディレクトリ:</translation>
+        <translation>保存先ディレクトリ:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation type="unfinished">音質:</translation>
+        <translation>音質:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation type="unfinished">書き出すファイルの名前:</translation>
+        <translation>書き出すファイルの名前:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">ディレクトリを選択</translation>
+        <translation>ディレクトリを選択</translation>
     </message>
 </context>
 </TS>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>Oss4SettingsDialog</name>
     <message>
         <location filename="../oss4settingsdialog.ui" line="14"/>
         <source>OSS4 Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля OSS4</translation>
+        <translation>Налаштування втулка OSS4</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation type="unfinished">Пристрій:</translation>
+        <translation>Пристрій:</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>
@@ -24,17 +24,17 @@
     <message>
         <location filename="../outputoss4factory.cpp" line="36"/>
         <source>OSS4 Plugin</source>
-        <translation>Модуль OSS4</translation>
+        <translation>Втулок OSS4</translation>
     </message>
     <message>
         <location filename="../outputoss4factory.cpp" line="55"/>
         <source>About OSS4 Output Plugin</source>
-        <translation>Модуль підтримки OSS4 для Qmmp</translation>
+        <translation>Втулок підтримки OSS4 для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputoss4factory.cpp" line="56"/>
         <source>Qmmp OSS4 Output Plugin</source>
-        <translation>Модуль OSS4 для Qmmp</translation>
+        <translation>Втулок OSS4 для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputoss4factory.cpp" line="57"/>

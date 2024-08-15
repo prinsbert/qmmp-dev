@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>Converter</name>
     <message>
@@ -13,7 +13,7 @@
         <location filename="../converter.cpp" line="139"/>
         <location filename="../converter.cpp" line="209"/>
         <source>Error</source>
-        <translation>エラーです</translation>
+        <translation>事故発生</translation>
     </message>
     <message>
         <location filename="../converter.cpp" line="177"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../converterdialog.ui" line="131"/>
         <source>Stop</source>
-        <translation>停止</translation>
+        <translation>終止</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="116"/>
@@ -89,11 +89,16 @@
         <translation>タイトル</translation>
     </message>
     <message>
+        <location filename="../converterdialog.cpp" line="205"/>
+        <source>Create a Copy</source>
+        <translation>複製を作成</translation>
+    </message>
+    <message>
         <location filename="../converterdialog.cpp" line="136"/>
         <location filename="../converterdialog.cpp" line="358"/>
         <location filename="../converterdialog.cpp" line="365"/>
         <source>Error</source>
-        <translation>エラーです</translation>
+        <translation>事故発生</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="141"/>
@@ -109,11 +114,6 @@
         <location filename="../converterdialog.cpp" line="204"/>
         <source>Edit</source>
         <translation>編集</translation>
-    </message>
-    <message>
-        <location filename="../converterdialog.cpp" line="205"/>
-        <source>Create a Copy</source>
-        <translation>複製を作成</translation>
     </message>
     <message>
         <location filename="../converterdialog.cpp" line="206"/>
@@ -177,42 +177,42 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">プリセットエディター</translation>
+        <translation>プリセットエディター</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation type="unfinished">一般</translation>
+        <translation>総合</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation type="unfinished">名前:</translation>
+        <translation>名称:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation type="unfinished">拡張:</translation>
+        <translation>拡張:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation type="unfinished">コマンド</translation>
+        <translation>コマンド</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="77"/>
         <source>Options</source>
-        <translation type="unfinished">オプション</translation>
+        <translation>オプション</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation type="unfinished">タグを書き込む</translation>
+        <translation>タグを書き込む</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation type="unfinished">16ビットに変換</translation>
+        <translation>16ビットに変換</translation>
     </message>
 </context>
 <context>

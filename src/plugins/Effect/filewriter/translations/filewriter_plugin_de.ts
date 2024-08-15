@@ -34,17 +34,17 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation type="unfinished">Ausgabeverzeichnis:</translation>
+        <translation>Ausgabeverzeichnis:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation type="unfinished">Qualität:</translation>
+        <translation>Qualität:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation type="unfinished">Ausgabedateiname:</translation>
+        <translation>Ausgabedateiname:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Ein Verzeichnis wählen</translation>
+        <translation>Ein Verzeichnis wählen</translation>
     </message>
 </context>
 </TS>

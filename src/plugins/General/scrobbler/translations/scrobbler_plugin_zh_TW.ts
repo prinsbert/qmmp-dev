@@ -29,18 +29,18 @@
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="14"/>
         <source>Scrobbler Plugin Settings</source>
-        <translation type="unfinished">Scrobbler 插件設定</translation>
+        <translation>Scrobbler 插件設定</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="20"/>
         <source>Last.fm</source>
-        <translation type="unfinished">Last.fm</translation>
+        <translation>Last.fm</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="31"/>
         <location filename="../scrobblersettingsdialog.ui" line="104"/>
         <source>Session:</source>
-        <translation type="unfinished">會議：</translation>
+        <translation>會議：</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="41"/>
@@ -52,12 +52,12 @@
         <location filename="../scrobblersettingsdialog.ui" line="63"/>
         <location filename="../scrobblersettingsdialog.ui" line="95"/>
         <source>Register new session</source>
-        <translation type="unfinished">註冊新會議</translation>
+        <translation>註冊新會議</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.ui" line="73"/>
         <source>Libre.fm</source>
-        <translation type="unfinished">Libre.fm</translation>
+        <translation>Libre.fm</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="110"/>
@@ -89,7 +89,7 @@
         <location filename="../scrobblersettingsdialog.cpp" line="195"/>
         <location filename="../scrobblersettingsdialog.cpp" line="199"/>
         <source>Error</source>
-        <translation type="unfinished">錯誤</translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="../scrobblersettingsdialog.cpp" line="118"/>

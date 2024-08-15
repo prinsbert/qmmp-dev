@@ -16,7 +16,7 @@
     <message>
         <location filename="../outputpipewirefactory.cpp" line="56"/>
         <source>Qmmp PipeWire Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp PipeWire-Ausgabemodul</translation>
     </message>
     <message>
         <location filename="../outputpipewirefactory.cpp" line="57"/>

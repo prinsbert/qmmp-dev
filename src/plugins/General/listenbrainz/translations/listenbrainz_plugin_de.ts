@@ -6,17 +6,17 @@
     <message>
         <location filename="../listenbrainzfactory.cpp" line="30"/>
         <source>ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>ListenBrainz-Modul</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="50"/>
         <source>About ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Über ListenBrainz-Modul</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="51"/>
         <source>Qmmp ListenBrainz Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp ListenBrainz-Modul</translation>
     </message>
     <message>
         <location filename="../listenbrainzfactory.cpp" line="52"/>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="14"/>
         <source>ListenBrainz Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen ListenBrainz-Modul</translation>
     </message>
     <message>
         <location filename="../listenbrainzsettingsdialog.ui" line="29"/>

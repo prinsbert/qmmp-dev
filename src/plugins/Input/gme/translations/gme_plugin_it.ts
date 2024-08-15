@@ -39,22 +39,22 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation type="unfinished">Impostazioni dell&apos;estensione GME</translation>
+        <translation>Impostazioni dell&apos;estensione GME</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation type="unfinished">Lunghezza dissolvenza in uscita:</translation>
+        <translation>Lunghezza dissolvenza in uscita:</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation type="unfinished">Abilita dissolvenza in uscita</translation>
+        <translation>Abilita dissolvenza in uscita</translation>
     </message>
 </context>
 </TS>

@@ -6,22 +6,22 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="39"/>
         <source>XMP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>XMP Eklentisi</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="54"/>
         <source>Module Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Modül Dosyaları</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="109"/>
         <source>About XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>XMP Ses Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="110"/>
         <source>Qmmp XMP Audio Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp XMP Ses Eklentisi</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
         <source>Compiled against libxmp-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>libxmp-%1&apos;e  dayanarak derlendi</translation>
     </message>
 </context>
 <context>
@@ -39,57 +39,57 @@
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="51"/>
         <source>Volume scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses ölçeği</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="52"/>
         <source>Number of patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenlerin sayısı</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="53"/>
         <source>Number of tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçaların sayısı</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="54"/>
         <source>Tracks per pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Desen başına parçalar</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="55"/>
         <source>Number of instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Müzik aletlerinin sayısı</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="56"/>
         <source>Number of samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Örneklerin sayısı</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="57"/>
         <source>Initial speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlangıç hızı</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="58"/>
         <source>Initial BPM</source>
-        <translation type="unfinished"></translation>
+        <translation>İlk BPM</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="59"/>
         <source>Module length in patterns</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenlerde modül uzunluğu</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="79"/>
         <source>Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnekler</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="87"/>
         <source>Instruments</source>
-        <translation type="unfinished"></translation>
+        <translation>Müzik aletleri</translation>
     </message>
     <message>
         <location filename="../xmpmetadatamodel.cpp" line="92"/>
@@ -102,42 +102,42 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>XMP Eklenti Ayarları</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yükseltme etmeni:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Steryo karıştırma:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished"></translation>
+        <translation>İnterpolasyon türü:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Düşük Geçişli filtre etkisi</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Vblank zamanlamasını kullan</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Protracker 2.x FX9 hatasını taklit et</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnekleme oranı:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
@@ -152,32 +152,32 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Hz</translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished"></translation>
+        <translation>Yakınındaki komşu</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Doğrusal</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Kübik kama</translation>
     </message>
 </context>
 </TS>

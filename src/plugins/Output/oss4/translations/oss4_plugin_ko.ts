@@ -6,12 +6,12 @@
     <message>
         <location filename="../oss4settingsdialog.ui" line="14"/>
         <source>OSS4 Plugin Settings</source>
-        <translation type="unfinished">OSS4 플러그인 설정</translation>
+        <translation>OSS4 플러그인 설정</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation type="unfinished">장치:</translation>
+        <translation>장치:</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>

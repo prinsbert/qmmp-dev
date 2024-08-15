@@ -29,32 +29,32 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις του πρόσθετου εγγραφής αρχείων</translation>
+        <translation>Ρυθμίσεις του πρόσθετου εγγραφής αρχείων</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation type="unfinished">Κατάλογος εξόδου:</translation>
+        <translation>Κατάλογος εξόδου:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation type="unfinished">Ποιότητα:</translation>
+        <translation>Ποιότητα:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation type="unfinished">Όνομα αρχείου εξόδου</translation>
+        <translation>Όνομα αρχείου εξόδου</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
         <source>Write to single file if possible.</source>
-        <translation type="unfinished">Εγγραφή σε ένα αρχείο αν είναι εφικτό</translation>
+        <translation>Εγγραφή σε ένα αρχείο αν είναι εφικτό</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Επιλογή ενός καταλόγου</translation>
+        <translation>Επιλογή ενός καταλόγου</translation>
     </message>
 </context>
 </TS>

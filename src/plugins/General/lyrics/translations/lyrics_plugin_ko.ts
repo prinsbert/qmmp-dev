@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished">가사 플러그인 설정</translation>
+        <translation>가사 플러그인 설정</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished">가사 제공자:</translation>
+        <translation>가사 제공자:</translation>
     </message>
 </context>
 <context>

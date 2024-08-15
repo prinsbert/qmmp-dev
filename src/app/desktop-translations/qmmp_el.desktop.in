@@ -35,7 +35,7 @@ Exec=qmmp --no-start --next
 
 
 # Translations
+Name[el]=Qmmp
 Comment[el]=Αναπαραγωγέας πολυμέσων βασισμένος στην Qt
 GenericName[el]=Αναπαραγωγέας ήχου
-Name[el]=Qmmp
 Icon[el]=qmmp

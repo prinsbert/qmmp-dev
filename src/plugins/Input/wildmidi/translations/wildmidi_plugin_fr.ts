@@ -39,37 +39,37 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="14"/>
         <source>WildMidi Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon WildMidi</translation>
+        <translation>Configuration du greffon WildMidi</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="29"/>
         <source>Instrument configuration: </source>
-        <translation type="unfinished">Configuration d&apos;instrument&#xa0;:</translation>
+        <translation>Configuration d&apos;instrument&#xa0;:</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="43"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Taux d&apos;échantillonage</translation>
+        <translation>Taux du sample</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="50"/>
         <source>Enhanced resampling</source>
-        <translation type="unfinished">Ré-échantillonnage amélioré</translation>
+        <translation>Ré-échantillonnage amélioré</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="57"/>
         <source>Reverberation</source>
-        <translation type="unfinished">Réverbération</translation>
+        <translation>Réverbération</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44&#xa0;100&#xa0;Hz</translation>
+        <translation>44 100 Hz</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48&#xa0;000&#xa0;Hz</translation>
+        <translation>48 000 Hz</translation>
     </message>
 </context>
 </TS>

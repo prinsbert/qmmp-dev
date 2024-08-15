@@ -34,12 +34,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="14"/>
         <source>Track Change Plugin Settings</source>
-        <translation type="unfinished">Einstellungen Titeländerungsmodul</translation>
+        <translation>Einstellungen Titeländerungsmodul</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="29"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation type="unfinished">Auszuführender Befehl, wenn Qmmp einen neuen Titel startet</translation>
+        <translation>Auszuführender Befehl, wenn Qmmp einen neuen Titel startet</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="39"/>
@@ -47,22 +47,22 @@
         <location filename="../trackchangesettingsdialog.ui" line="73"/>
         <location filename="../trackchangesettingsdialog.ui" line="90"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="46"/>
         <source>Command to run toward to end of a track</source>
-        <translation type="unfinished">Gegen Ende des Titels auszuführender Befehl</translation>
+        <translation>Gegen Ende des Titels auszuführender Befehl</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation type="unfinished">Auszuführender Befehl, wenn Qmmp das Ende der Wiedergabeliste erreicht</translation>
+        <translation>Auszuführender Befehl, wenn Qmmp das Ende der Wiedergabeliste erreicht</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation type="unfinished">Auszuführender Befehl, wenn sich der Titel ändert (z.B. der Titel von Netzwerkstreams)</translation>
+        <translation>Auszuführender Befehl, wenn sich der Titel ändert (z.B. der Titel von Netzwerkstreams)</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>

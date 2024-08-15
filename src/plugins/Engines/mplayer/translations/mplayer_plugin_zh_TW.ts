@@ -118,27 +118,27 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation type="unfinished">Mplayer 設置</translation>
+        <translation>Mplayer 設置</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="34"/>
         <source>Video:</source>
-        <translation type="unfinished">視頻：</translation>
+        <translation>視頻：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="48"/>
         <source>Audio:</source>
-        <translation type="unfinished">音頻：</translation>
+        <translation>音頻：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="62"/>
         <source>Audio/video auto synchronization</source>
-        <translation type="unfinished">音頻/視頻自動同步</translation>
+        <translation>音頻/視頻自動同步</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation type="unfinished">同步數系數：</translation>
+        <translation>同步數系數：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
@@ -158,7 +158,7 @@
         <location filename="../mplayersettingsdialog.cpp" line="54"/>
         <location filename="../mplayersettingsdialog.cpp" line="55"/>
         <source>default</source>
-        <translation type="unfinished">預設</translation>
+        <translation>預設</translation>
     </message>
 </context>
 </TS>

@@ -94,7 +94,7 @@
     <message>
         <location filename="../analyzercolorwidget.cpp" line="37"/>
         <source>Select Color</source>
-        <translation type="unfinished">选择颜色</translation>
+        <translation>选择颜色</translation>
     </message>
 </context>
 <context>
@@ -102,47 +102,47 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="14"/>
         <source>Analyzer Plugin Settings</source>
-        <translation type="unfinished">可视化分析器插件设置</translation>
+        <translation>可视化分析器插件设置</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="35"/>
         <source>General</source>
-        <translation type="unfinished">常规</translation>
+        <translation>总的</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="41"/>
         <source>Cells size:</source>
-        <translation type="unfinished">单块儿尺寸</translation>
+        <translation>单块儿尺寸</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="101"/>
         <source>Colors</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="107"/>
         <source>Peaks:</source>
-        <translation type="unfinished">峰值：</translation>
+        <translation>峰值：</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="139"/>
         <source>Analyzer #1:</source>
-        <translation type="unfinished">分析 #1：</translation>
+        <translation>分析器#1：</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="171"/>
         <source>Background:</source>
-        <translation type="unfinished">背景：</translation>
+        <translation>背景：</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="203"/>
         <source>Analyzer #2:</source>
-        <translation type="unfinished">分析 #2：</translation>
+        <translation>分析器#2：</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="248"/>
         <source>Analyzer #3:</source>
-        <translation type="unfinished">分析 #3：</translation>
+        <translation>分析器#3：</translation>
     </message>
 </context>
 <context>
