@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>MMSInputFactory</name>
     <message>
@@ -29,17 +29,17 @@
     <message>
         <location filename="../mmssettingsdialog.ui" line="14"/>
         <source>MMS Plugin Settings</source>
-        <translation type="unfinished">MMS プラグイン設定</translation>
+        <translation>MMS プラグイン設定</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation type="unfinished">バッファー容量:</translation>
+        <translation>バッファーの大きさ:</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation type="unfinished">KiB</translation>
+        <translation>KiB</translation>
     </message>
 </context>
 </TS>

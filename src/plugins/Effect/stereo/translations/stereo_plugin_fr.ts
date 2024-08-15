@@ -34,17 +34,17 @@
     <message>
         <location filename="../stereosettingsdialog.ui" line="14"/>
         <source>Extra Stereo Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon de stéréo augmentée</translation>
+        <translation>Configuration du greffon de stéréo augmentée</translation>
     </message>
     <message>
         <location filename="../stereosettingsdialog.ui" line="31"/>
         <source>Effect intensity:</source>
-        <translation type="unfinished">Intensité de l&apos;effet : </translation>
+        <translation>Intensité de l&apos;effet : </translation>
     </message>
     <message>
         <location filename="../stereosettingsdialog.ui" line="54"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
 </context>
 </TS>

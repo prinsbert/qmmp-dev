@@ -6,122 +6,122 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation type="unfinished">&amp;Αναπαραγωγή</translation>
+        <translation>&amp;Αναπαραγωγή</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished">&amp;Παύση</translation>
+        <translation>&amp;Παύση</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished">&amp;Διακοπή</translation>
+        <translation>&amp;Διακοπή</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>V</source>
-        <translation type="unfinished">V</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished">&amp;Προηγούμενο</translation>
+        <translation>&amp;Προηγούμενο</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>Z</source>
-        <translation type="unfinished">Z</translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
-        <translation type="unfinished">&amp;Επόμενο</translation>
+        <translation>&amp;Επόμενο</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>B</source>
-        <translation type="unfinished">B</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
-        <translation type="unfinished">&amp;Αναπαραγωγή/Παύση</translation>
+        <translation>&amp;Αναπαραγωγή/Παύση</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>Space</source>
-        <translation type="unfinished">Διάστημα</translation>
+        <translation>Διάστημα</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>&amp;Jump to Track</source>
-        <translation type="unfinished">&amp;Μεταπήδηση σε κομμάτι</translation>
+        <translation>&amp;Μεταπήδηση σε κομμάτι</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>J</source>
-        <translation type="unfinished">J</translation>
+        <translation>J</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>&amp;Repeat Playlist</source>
-        <translation type="unfinished">&amp;Επανάληψη λίστας αναπαραγωγής</translation>
+        <translation>&amp;Επανάληψη λίστας αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>&amp;Repeat Track</source>
-        <translation type="unfinished">&amp;Επανάληψη κομματιού</translation>
+        <translation>&amp;Επανάληψη κομματιού</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished">&amp;Ανακάτεμα</translation>
+        <translation>&amp;Ανακάτεμα</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>S</source>
-        <translation type="unfinished">S</translation>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>&amp;No Playlist Advance</source>
-        <translation type="unfinished">&amp;Χωρίς προχώρηση της λίστας αναπαραγωγής </translation>
+        <translation>&amp;Χωρίς προχώρηση της λίστας αναπαραγωγής </translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+N</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>&amp;Stop After Selected</source>
-        <translation type="unfinished">&amp;Διακοπή μετά το επιλεγμένο</translation>
+        <translation>&amp;Διακοπή μετά το επιλεγμένο</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -131,292 +131,292 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Clear Queue</source>
-        <translation type="unfinished">&amp;Καθαρισμός ουράς αναμονής</translation>
+        <translation>&amp;Καθαρισμός ουράς αναμονής</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>Alt+Q</source>
-        <translation type="unfinished">Alt+Q</translation>
+        <translation>Alt+Q</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Show Playlist</source>
-        <translation type="unfinished">Εμφάνιση της λίστας αναπαραγωγής</translation>
+        <translation>Εμφάνιση της λίστας αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Alt+E</source>
-        <translation type="unfinished">Alt+E</translation>
+        <translation>Alt+E</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Show Equalizer</source>
-        <translation type="unfinished">Εμφάνιση ισοσταθμιστή</translation>
+        <translation>Εμφάνιση ισοσταθμιστή</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Alt+G</source>
-        <translation type="unfinished">Alt+G</translation>
+        <translation>Alt+G</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>Always on Top</source>
-        <translation type="unfinished">Πάντα στο προσκήνιο</translation>
+        <translation>Πάντα στο προσκήνιο</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>Put on All Workspaces</source>
-        <translation type="unfinished">Τοποθέτηση σε όλες τις επιφάνειες εργασίας</translation>
+        <translation>Τοποθέτηση σε όλες τις επιφάνειες εργασίας</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Double Size</source>
-        <translation type="unfinished">Διπλασιασμός μεγέθους</translation>
+        <translation>Διπλασιασμός μεγέθους</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Meta+D</source>
-        <translation type="unfinished">Meta+D</translation>
+        <translation>Meta+D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="59"/>
         <source>Anti-aliasing</source>
-        <translation type="unfinished">Εξομάλυνση για γραμματοσειρές</translation>
+        <translation>Εξομάλυνση για γραμματοσειρές</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Volume &amp;+</source>
-        <translation type="unfinished">Ένταση &amp;+</translation>
+        <translation>Ένταση &amp;+</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Volume &amp;-</source>
-        <translation type="unfinished">Ένταση &amp;-</translation>
+        <translation>Ένταση &amp;-</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>&amp;Mute</source>
-        <translation type="unfinished">&amp;Σίγαση</translation>
+        <translation>&amp;Σίγαση</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">&amp;Προσθήκη αρχείου</translation>
+        <translation>&amp;Προσθήκη αρχείου</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">&amp;Προσθήκη καταλόγου</translation>
+        <translation>&amp;Προσθήκη καταλόγου</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>D</source>
-        <translation type="unfinished">D</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>&amp;Add Url</source>
-        <translation type="unfinished">&amp;Προσθήκη Url</translation>
+        <translation>&amp;Προσθήκη Url</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>U</source>
-        <translation type="unfinished">U</translation>
+        <translation>U</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">&amp;Αφαίρεση επιλεγμένων</translation>
+        <translation>&amp;Αφαίρεση επιλεγμένων</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">&amp;Αφαίρεση όλων</translation>
+        <translation>&amp;Αφαίρεση όλων</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="70"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">&amp;Αφαίρεση των μη επιλεγμένων</translation>
+        <translation>&amp;Αφαίρεση των μη επιλεγμένων</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>Remove unavailable files</source>
-        <translation type="unfinished">Αφαίρεση των μη διαθέσιμων αρχείων</translation>
+        <translation>Αφαίρεση των μη διαθέσιμων αρχείων</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>Remove duplicates</source>
-        <translation type="unfinished">Αφαίρεση διπλότυπων</translation>
+        <translation>Αφαίρεση διπλότυπων</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>Refresh</source>
-        <translation type="unfinished">Ανανέωση</translation>
+        <translation>Ανανέωση</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Queue Toggle</source>
-        <translation type="unfinished">&amp;Εναλλαγή ουράς αναμονής</translation>
+        <translation>&amp;Εναλλαγή ουράς αναμονής</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>Q</source>
-        <translation type="unfinished">Q</translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>Invert Selection</source>
-        <translation type="unfinished">Αντιστροφή επιλογής</translation>
+        <translation>Αντιστροφή επιλογής</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Select None</source>
-        <translation type="unfinished">&amp;Επιλογή κανενός</translation>
+        <translation>&amp;Επιλογή κανενός</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;Επιλογή όλων</translation>
+        <translation>&amp;Επιλογή όλων</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">Ctrl+A</translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished">&amp;Προβολή λεπτομερειών κομματιού</translation>
+        <translation>&amp;Προβολή λεπτομερειών κομματιού</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Alt+I</source>
-        <translation type="unfinished">Alt+I</translation>
+        <translation>Alt+I</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>&amp;New List</source>
-        <translation type="unfinished">&amp;Νέα λίστα</translation>
+        <translation>&amp;Νέα λίστα</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Ctrl+T</source>
-        <translation type="unfinished">Ctrl+T</translation>
+        <translation>Ctrl+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Delete List</source>
-        <translation type="unfinished">&amp;Διαγραφή λίστας</translation>
+        <translation>&amp;Διαγραφή λίστας</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>&amp;Load List</source>
-        <translation type="unfinished">&amp;Φόρτωση λίστας</translation>
+        <translation>&amp;Φόρτωση λίστας</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>O</source>
-        <translation type="unfinished">O</translation>
+        <translation>O</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Save List</source>
-        <translation type="unfinished">&amp;Αποθήκευση λίστας</translation>
+        <translation>&amp;Αποθήκευση λίστας</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>Shift+S</source>
-        <translation type="unfinished">Shift+S</translation>
+        <translation>Shift+S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Rename List</source>
-        <translation type="unfinished">&amp;Μετονομασία λίστας</translation>
+        <translation>&amp;Μετονομασία λίστας</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>F2</source>
-        <translation type="unfinished">F2</translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;Select Next Playlist</source>
-        <translation type="unfinished">&amp;Επιλογή επόμενης λίστας αναπαραγωγής</translation>
+        <translation>&amp;Επιλογή επόμενης λίστας αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>Ctrl+PgDown</source>
-        <translation type="unfinished">Ctrl+PgDown</translation>
+        <translation>Ctrl+PgDown</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation type="unfinished">&amp;Επιλογή προηγούμενης λίστας αναπαραγωγής</translation>
+        <translation>&amp;Επιλογή προηγούμενης λίστας αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>Ctrl+PgUp</source>
-        <translation type="unfinished">Ctrl+PgUp</translation>
+        <translation>Ctrl+PgUp</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Show Playlists</source>
-        <translation type="unfinished">&amp;Εμφάνιση λιστών αναπαραγωγής</translation>
+        <translation>&amp;Εμφάνιση λιστών αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Group Tracks</source>
-        <translation type="unfinished">&amp;Ομαδοποίηση κομματιών</translation>
+        <translation>&amp;Ομαδοποίηση κομματιών</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+G</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Show Column Headers</source>
-        <translation type="unfinished">&amp;Εμφάνιση επικεφαλίδων στηλών</translation>
+        <translation>&amp;Εμφάνιση επικεφαλίδων στηλών</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>Ctrl+H</source>
-        <translation type="unfinished">Ctrl+H</translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
@@ -431,32 +431,32 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished">&amp;Ρυθμίσεις</translation>
+        <translation>&amp;Ρυθμίσεις</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished">Ctrl+P</translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;Σχετικά</translation>
+        <translation>&amp;Σχετικά</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;About Qt</source>
-        <translation type="unfinished">&amp;Σχετικά με την Qt</translation>
+        <translation>&amp;Σχετικά με την Qt</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">&amp;Έξοδος</translation>
+        <translation>&amp;Έξοδος</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
 </context>
 <context>
@@ -464,87 +464,87 @@
     <message>
         <location filename="../skinneddisplay.cpp" line="59"/>
         <source>Previous</source>
-        <translation type="unfinished">Προηγούμενο</translation>
+        <translation>Προηγούμενο</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="63"/>
         <source>Play</source>
-        <translation type="unfinished">Αναπαραγωγή</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="66"/>
         <source>Pause</source>
-        <translation type="unfinished">Παύση</translation>
+        <translation>Παύση</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="69"/>
         <source>Stop</source>
-        <translation type="unfinished">Διακοπή</translation>
+        <translation>Διακοπή</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="72"/>
         <source>Next</source>
-        <translation type="unfinished">Επόμενο</translation>
+        <translation>Επόμενο</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="75"/>
         <source>Play files</source>
-        <translation type="unfinished">Αναπαραγωγή αρχείων</translation>
+        <translation>Αναπαραγωγή αρχείων</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="80"/>
         <source>Equalizer</source>
-        <translation type="unfinished">Ισοσταθμιστής</translation>
+        <translation>Ισοσταθμιστής</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Playlist</source>
-        <translation type="unfinished">Λίστα αναπαραγωγής</translation>
+        <translation>Λίστα αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Repeat playlist</source>
-        <translation type="unfinished">Επανάληψη λίστας αναπαραγωγής</translation>
+        <translation>Επανάληψη λίστας αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="87"/>
         <source>Shuffle</source>
-        <translation type="unfinished">Ανακάτεμα</translation>
+        <translation>Ανακάτεμα</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="97"/>
         <source>Volume</source>
-        <translation type="unfinished">Ένταση</translation>
+        <translation>Ένταση</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="103"/>
         <source>Balance</source>
-        <translation type="unfinished">Ισορροπία</translation>
+        <translation>Ισορροπία</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="290"/>
         <source>Volume: %1%</source>
-        <translation type="unfinished">Ένταση: %1%</translation>
+        <translation>Ένταση: %1%</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="294"/>
         <source>Balance: %1% right</source>
-        <translation type="unfinished">Ισορροπία: %1 % δεξιά</translation>
+        <translation>Ισορροπία: %1 % δεξιά</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="296"/>
         <source>Balance: %1% left</source>
-        <translation type="unfinished">Ισορροπία: %1 % αριστερά</translation>
+        <translation>Ισορροπία: %1 % αριστερά</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="298"/>
         <source>Balance: center</source>
-        <translation type="unfinished">Ισορροπία: κέντρο</translation>
+        <translation>Ισορροπία: κέντρο</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="304"/>
         <source>Seek to: %1</source>
-        <translation type="unfinished">Αναζήτηση σε: %1</translation>
+        <translation>Αναζήτηση σε: %1</translation>
     </message>
 </context>
 <context>
@@ -552,58 +552,58 @@
     <message>
         <location filename="../skinnedeqwidget.cpp" line="47"/>
         <source>Equalizer</source>
-        <translation type="unfinished">Ισοσταθμιστής</translation>
+        <translation>Ισοσταθμιστής</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="161"/>
         <location filename="../skinnedeqwidget.cpp" line="178"/>
         <source>preset</source>
-        <translation type="unfinished">προρύθμιση</translation>
+        <translation>προρύθμιση</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="262"/>
         <source>&amp;Load/Delete</source>
-        <translation type="unfinished">&amp;Φόρτωση/Διαγραφή</translation>
+        <translation>&amp;Φόρτωση/Διαγραφή</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Preset</source>
-        <translation type="unfinished">&amp;Αποθήκευση προρύθμισης</translation>
+        <translation>&amp;Αποθήκευση προρύθμισης</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Save Auto-load Preset</source>
-        <translation type="unfinished">&amp;Αποθήκευσης αυτόματης φόρτωσης προρύθμισης</translation>
+        <translation>&amp;Αποθήκευσης αυτόματης φόρτωσης προρύθμισης</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="266"/>
         <source>&amp;Import</source>
-        <translation type="unfinished">&amp;Εισαγωγή</translation>
+        <translation>&amp;Εισαγωγή</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="268"/>
         <source>&amp;Clear</source>
-        <translation type="unfinished">&amp;Καθαρισμός</translation>
+        <translation>&amp;Καθαρισμός</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Saving Preset</source>
-        <translation type="unfinished">Αποθήκευση προρύθμισης</translation>
+        <translation>Αποθήκευση προρύθμισης</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>Preset name:</source>
-        <translation type="unfinished">Όνομα προρύθμισης:</translation>
+        <translation>Όνομα προρύθμισης:</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="299"/>
         <source>preset #</source>
-        <translation type="unfinished">προρύθμιση #</translation>
+        <translation>προρύθμιση #</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="395"/>
         <source>Import Preset</source>
-        <translation type="unfinished">Εισαγωγή προρύθμισης</translation>
+        <translation>Εισαγωγή προρύθμισης</translation>
     </message>
 </context>
 <context>
@@ -664,57 +664,57 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="33"/>
         <source>Change shortcut...</source>
-        <translation type="unfinished">Αλλαγή συντόμευσης...</translation>
+        <translation>Αλλαγή συντόμευσης...</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Reset</source>
-        <translation type="unfinished">Επαναφορά</translation>
+        <translation>Επαναφορά</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
         <source>Action</source>
-        <translation type="unfinished">Ενέργεια</translation>
+        <translation>Ενέργεια</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="63"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Συντόμευση</translation>
+        <translation>Συντόμευση</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
         <source>Playback</source>
-        <translation type="unfinished">Αναπαραγωγή</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
         <source>View</source>
-        <translation type="unfinished">Προβολή</translation>
+        <translation>Προβολή</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
         <source>Volume</source>
-        <translation type="unfinished">Ένταση</translation>
+        <translation>Ένταση</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>Playlist</source>
-        <translation type="unfinished">Λίστα αναπαραγωγής</translation>
+        <translation>Λίστα αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
         <source>Misc</source>
-        <translation type="unfinished">Διάφορα</translation>
+        <translation>Διάφορα</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Reset Shortcuts</source>
-        <translation type="unfinished">Επαναφορά συντομεύσεων</translation>
+        <translation>Επαναφορά συντομεύσεων</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
         <source>Do you want to restore default shortcuts?</source>
-        <translation type="unfinished">Επιθυμείτε την επαναφορά των εξ ορισμού συντομεύσεων</translation>
+        <translation>Επιθυμείτε την επαναφορά των εξ ορισμού συντομεύσεων</translation>
     </message>
 </context>
 <context>
@@ -722,37 +722,37 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="358"/>
         <source>Appearance</source>
-        <translation type="unfinished">Εμφάνιση</translation>
+        <translation>Εμφάνιση</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="359"/>
         <source>Shortcuts</source>
-        <translation type="unfinished">Συντομεύσεις</translation>
+        <translation>Συντομεύσεις</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="433"/>
         <source>View</source>
-        <translation type="unfinished">Προβολή</translation>
+        <translation>Προβολή</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="442"/>
         <source>Playlist</source>
-        <translation type="unfinished">Λίστα αναπαραγωγής</translation>
+        <translation>Λίστα αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="461"/>
         <source>Audio</source>
-        <translation type="unfinished">Ήχος</translation>
+        <translation>Ήχος</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="469"/>
         <source>Tools</source>
-        <translation type="unfinished">Εργαλεία</translation>
+        <translation>Εργαλεία</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="541"/>
         <source>Qmmp</source>
-        <translation type="unfinished">Qmmp</translation>
+        <translation>Qmmp</translation>
     </message>
 </context>
 <context>
@@ -760,123 +760,123 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="56"/>
         <source>Playlist</source>
-        <translation type="unfinished">Λίστα αναπαραγωγής</translation>
+        <translation>Λίστα αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="194"/>
         <source>&amp;Copy Selection To</source>
-        <translation type="unfinished">&amp;Αντιγραφή επιλογής σε</translation>
+        <translation>&amp;Αντιγραφή επιλογής σε</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="219"/>
         <source>Sort List</source>
-        <translation type="unfinished">Ταξινόμηση λίστας</translation>
+        <translation>Ταξινόμηση λίστας</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="222"/>
         <location filename="../skinnedplaylist.cpp" line="262"/>
         <source>By Title</source>
-        <translation type="unfinished">Ανά τίτλο</translation>
+        <translation>Ανά τίτλο</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="225"/>
         <location filename="../skinnedplaylist.cpp" line="265"/>
         <source>By Album</source>
-        <translation type="unfinished">Ανά άλμπουμ</translation>
+        <translation>Ανά άλμπουμ</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="228"/>
         <location filename="../skinnedplaylist.cpp" line="268"/>
         <source>By Artist</source>
-        <translation type="unfinished">Ανά καλλιτέχνη</translation>
+        <translation>Ανά καλλιτέχνη</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="231"/>
         <location filename="../skinnedplaylist.cpp" line="271"/>
         <source>By Album Artist</source>
-        <translation type="unfinished">Ανά καλλιτέχνη άλμπουμ</translation>
+        <translation>Ανά καλλιτέχνη άλμπουμ</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="234"/>
         <location filename="../skinnedplaylist.cpp" line="274"/>
         <source>By Filename</source>
-        <translation type="unfinished">Ανά όνομα αρχείου</translation>
+        <translation>Ανά όνομα αρχείου</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="237"/>
         <location filename="../skinnedplaylist.cpp" line="277"/>
         <source>By Path + Filename</source>
-        <translation type="unfinished">Ανά διαδρομή + όνομα αρχείου</translation>
+        <translation>Ανά διαδρομή + όνομα αρχείου</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="240"/>
         <location filename="../skinnedplaylist.cpp" line="280"/>
         <source>By Date</source>
-        <translation type="unfinished">Ανά ημερομηνία</translation>
+        <translation>Ανά ημερομηνία</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="243"/>
         <location filename="../skinnedplaylist.cpp" line="283"/>
         <source>By Track Number</source>
-        <translation type="unfinished">Ανά αριθμό κομματιού</translation>
+        <translation>Ανά αριθμό κομματιού</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="246"/>
         <location filename="../skinnedplaylist.cpp" line="286"/>
         <source>By Disc Number</source>
-        <translation type="unfinished">Ανά αριθμό δίσκου</translation>
+        <translation>Ανά αριθμό δίσκου</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="249"/>
         <location filename="../skinnedplaylist.cpp" line="289"/>
         <source>By File Creation Date</source>
-        <translation type="unfinished">Ανά ημερομηνία δημιουργίας του αρχείου </translation>
+        <translation>Ανά ημερομηνία δημιουργίας του αρχείου </translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="252"/>
         <location filename="../skinnedplaylist.cpp" line="292"/>
         <source>By File Modification Date</source>
-        <translation type="unfinished">Ανά ημερομηνία τροποποίησης του αρχείου </translation>
+        <translation>Ανά ημερομηνία τροποποίησης του αρχείου </translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="255"/>
         <source>By Group</source>
-        <translation type="unfinished">Ανά ομάδα</translation>
+        <translation>Ανά ομάδα</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="260"/>
         <source>Sort Selection</source>
-        <translation type="unfinished">Ταξινόμηση επιλογής</translation>
+        <translation>Ταξινόμηση επιλογής</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="297"/>
         <source>Randomize List</source>
-        <translation type="unfinished">Τυχαία ταξινόμηση της λίστας</translation>
+        <translation>Τυχαία ταξινόμηση της λίστας</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="299"/>
         <source>Reverse List</source>
-        <translation type="unfinished">Αντιστροφή ταξινόμησης της λίστας</translation>
+        <translation>Αντιστροφή ταξινόμησης της λίστας</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
-        <translation type="unfinished">Ενέργειες</translation>
+        <translation>Ενέργειες</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
-        <translation type="unfinished">Μετονομασία της λίστας αναπαραγωγής</translation>
+        <translation>Μετονομασία της λίστας αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
-        <translation type="unfinished">Όνομα λίστας αναπαραγωγής:</translation>
+        <translation>Όνομα λίστας αναπαραγωγής:</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
-        <translation type="unfinished">&amp;Νέα λίστα αναπαραγωγής</translation>
+        <translation>&amp;Νέα λίστα αναπαραγωγής</translation>
     </message>
 </context>
 <context>
@@ -884,34 +884,34 @@
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="14"/>
         <source>Playlist Browser</source>
-        <translation type="unfinished">Περιηγητής λίστας αναπαραγωγής</translation>
+        <translation>Περιηγητής λίστας αναπαραγωγής</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
         <source>Filter:</source>
-        <translation type="unfinished">Φίλτρο:</translation>
+        <translation>Φίλτρο:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="47"/>
         <source>New</source>
-        <translation type="unfinished">Νέο</translation>
+        <translation>Νέο</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="54"/>
         <location filename="../skinnedplaylistbrowser.cpp" line="45"/>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="61"/>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistbrowser.cpp" line="44"/>
         <source>Rename</source>
-        <translation type="unfinished">Μετονομασία</translation>
+        <translation>Μετονομασία</translation>
     </message>
 </context>
 <context>
@@ -919,50 +919,50 @@
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="77"/>
         <source>Add Column</source>
-        <translation type="unfinished">Προσθήκη στήλης</translation>
+        <translation>Προσθήκη στήλης</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="78"/>
         <source>Edit Column</source>
-        <translation type="unfinished">Επεξεργασία στήλης</translation>
+        <translation>Επεξεργασία στήλης</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="79"/>
         <source>Show Queue/Protocol</source>
-        <translation type="unfinished">Εμφάνιση Ουράς αναμονής/πρωτοκόλλου</translation>
+        <translation>Εμφάνιση Ουράς αναμονής/πρωτοκόλλου</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="81"/>
         <source>Auto-resize</source>
-        <translation type="unfinished">Αυτόματη κλιμάκωση</translation>
+        <translation>Αυτόματη κλιμάκωση</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="84"/>
         <source>Alignment</source>
-        <translation type="unfinished">Στοίχιση</translation>
+        <translation>Στοίχιση</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="85"/>
         <source>Left</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Αριστερά</translation>
+        <translation>Αριστερά</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="86"/>
         <source>Right</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Δεξιά</translation>
+        <translation>Δεξιά</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="87"/>
         <source>Center</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Κέντρο</translation>
+        <translation>Κέντρο</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="97"/>
         <source>Remove Column</source>
-        <translation type="unfinished">Αφαίρεση στήλης</translation>
+        <translation>Αφαίρεση στήλης</translation>
     </message>
 </context>
 <context>
@@ -970,47 +970,47 @@
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="14"/>
         <source>Popup Information Settings</source>
-        <translation type="unfinished">Ρυθμίσεις αναδυόμενων πληροφοριών</translation>
+        <translation>Ρυθμίσεις αναδυόμενων πληροφοριών</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="29"/>
         <source>Template</source>
-        <translation type="unfinished">Πρότυπο</translation>
+        <translation>Πρότυπο</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished">Επαναφορά</translation>
+        <translation>Επαναφορά</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="65"/>
         <source>Insert</source>
-        <translation type="unfinished">Εισαγωγή</translation>
+        <translation>Εισαγωγή</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation type="unfinished">Εμφάνιση εξώφυλλου</translation>
+        <translation>Εμφάνιση εξώφυλλου</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Μέγεθος εξώφυλλου:</translation>
+        <translation>Μέγεθος εξώφυλλου:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Διαφάνεια:</translation>
+        <translation>Διαφάνεια:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation type="unfinished">Καθυστέρηση:</translation>
+        <translation>Καθυστέρηση:</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="178"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
 </context>
 <context>
@@ -1018,27 +1018,27 @@
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Επεξεργαστής προρυθμίσεων</translation>
+        <translation>Επεξεργαστής προεπιλογών</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="36"/>
         <source>Preset</source>
-        <translation type="unfinished">Προρύθμιση</translation>
+        <translation>Προρύθμιση</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="61"/>
         <source>Auto-preset</source>
-        <translation type="unfinished">Αυτόματη προρύθμιση</translation>
+        <translation>Αυτόματη προρύθμιση</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="95"/>
         <source>Load</source>
-        <translation type="unfinished">Φόρτωση</translation>
+        <translation>Φόρτωση</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="102"/>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
 </context>
 <context>
@@ -1346,17 +1346,17 @@
     <message>
         <location filename="../skinnedtextscroller.cpp" line="54"/>
         <source>Autoscroll Songname</source>
-        <translation type="unfinished">Αυτόματη κύλιση του τίτλου του τραγουδιού</translation>
+        <translation>Αυτόματη κύλιση του τίτλου του τραγουδιού</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="55"/>
         <source>Transparent Background</source>
-        <translation type="unfinished">Διαφανές παρασκήνιο</translation>
+        <translation>Διαφανές παρασκήνιο</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation type="unfinished">Πλήρωση ενδιάμεσης μνήμης: %1%</translation>
+        <translation>Πλήρωση ενδιάμεσης μνήμης: %1%</translation>
     </message>
 </context>
 <context>
@@ -1364,132 +1364,132 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="211"/>
         <source>Visualization Mode</source>
-        <translation type="unfinished">Λειτουργία οπτικοποίησης</translation>
+        <translation>Λειτουργία οπτικοποίησης</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="214"/>
         <source>Analyzer</source>
-        <translation type="unfinished">Αναλυτής</translation>
+        <translation>Αναλυτής</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="215"/>
         <source>Scope</source>
-        <translation type="unfinished">Εμβέλεια</translation>
+        <translation>Εμβέλεια</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="216"/>
         <source>Off</source>
-        <translation type="unfinished">Ανενεργό</translation>
+        <translation>Ανενεργό</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="223"/>
         <source>Analyzer Mode</source>
-        <translation type="unfinished">Λειτουργία αναλυτή</translation>
+        <translation>Λειτουργία αναλυτή</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="226"/>
         <source>Normal</source>
-        <translation type="unfinished">Τυπική</translation>
+        <translation>Τυπική</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="227"/>
         <source>Fire</source>
-        <translation type="unfinished">Φωτιά</translation>
+        <translation>Φωτιά</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="228"/>
         <source>Vertical Lines</source>
-        <translation type="unfinished">Κατακόρυφες γραμμές</translation>
+        <translation>Κατακόρυφες γραμμές</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="229"/>
         <source>Lines</source>
-        <translation type="unfinished">Γραμμές</translation>
+        <translation>Γραμμές</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="230"/>
         <source>Bars</source>
-        <translation type="unfinished">Ράβδοι</translation>
+        <translation>Ράβδοι</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="243"/>
         <source>Peaks</source>
-        <translation type="unfinished">Αιχμές</translation>
+        <translation>Αιχμές</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="247"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished">Ρυθμός ανανέωσης</translation>
+        <translation>Ρυθμός ανανέωσης</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="250"/>
         <source>50 fps</source>
-        <translation type="unfinished">50 fps</translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="251"/>
         <source>25 fps</source>
-        <translation type="unfinished">25 fps</translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="252"/>
         <source>10 fps</source>
-        <translation type="unfinished">10 fps</translation>
+        <translation>10 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="253"/>
         <source>5 fps</source>
-        <translation type="unfinished">5 fps</translation>
+        <translation>5 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="260"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished">Πτώση Αναλυτή</translation>
+        <translation>Πτώση Αναλυτή</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="263"/>
         <location filename="../skinnedvisualization.cpp" line="277"/>
         <source>Slowest</source>
-        <translation type="unfinished">Βραδύτατη</translation>
+        <translation>Βραδύτατη</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="264"/>
         <location filename="../skinnedvisualization.cpp" line="278"/>
         <source>Slow</source>
-        <translation type="unfinished">Αργή</translation>
+        <translation>Αργή</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="265"/>
         <location filename="../skinnedvisualization.cpp" line="279"/>
         <source>Medium</source>
-        <translation type="unfinished">Μέση</translation>
+        <translation>Μέσο</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="266"/>
         <location filename="../skinnedvisualization.cpp" line="280"/>
         <source>Fast</source>
-        <translation type="unfinished">Γρήγορη</translation>
+        <translation>Γρήγορη</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="267"/>
         <location filename="../skinnedvisualization.cpp" line="281"/>
         <source>Fastest</source>
-        <translation type="unfinished">Τάχιστη</translation>
+        <translation>Τάχιστη</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="274"/>
         <source>Peaks Falloff</source>
-        <translation type="unfinished">Πτώση αιχμών</translation>
+        <translation>Πτώση αιχμών</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="287"/>
         <source>Background</source>
-        <translation type="unfinished">Παρασκήνιο</translation>
+        <translation>Παρασκήνιο</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="288"/>
         <source>Transparent</source>
-        <translation type="unfinished">Διαφανές</translation>
+        <translation>Διαφανές</translation>
     </message>
 </context>
 </TS>

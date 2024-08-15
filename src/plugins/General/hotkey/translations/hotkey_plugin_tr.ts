@@ -52,97 +52,97 @@
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="14"/>
         <source>Global Hotkey Plugin Settings</source>
-        <translation type="unfinished">Genel Kısayol Eklentisi Ayarları</translation>
+        <translation>Küresel Kısayol Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="42"/>
         <source>Action</source>
-        <translation type="unfinished">Eylem</translation>
+        <translation>Eylem</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="47"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Kısayol</translation>
+        <translation>Kısayol</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="55"/>
         <source>Reset</source>
-        <translation type="unfinished">Sıfırla</translation>
+        <translation>Sıfırla</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="39"/>
         <source>Play</source>
-        <translation type="unfinished">Oynat</translation>
+        <translation>Oynat</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="40"/>
         <source>Stop</source>
-        <translation type="unfinished">Dur</translation>
+        <translation>Durdur</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="41"/>
         <source>Pause</source>
-        <translation type="unfinished">Duraklat</translation>
+        <translation>Duraklat</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="42"/>
         <source>Play/Pause</source>
-        <translation type="unfinished">Oynat/Duraklat</translation>
+        <translation>Oynat/Duraklat</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="43"/>
         <source>Next</source>
-        <translation type="unfinished">Sonraki</translation>
+        <translation>Sonraki</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Previous</source>
-        <translation type="unfinished">Önceki</translation>
+        <translation>Önceki</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="45"/>
         <source>Show/Hide</source>
-        <translation type="unfinished">Göster/Gizle</translation>
+        <translation>Göster/Gizle</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Volume +</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses +</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume -</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses -</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Forward 5 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>5 saniye ileri sar</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Rewind 5 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>5 saniye geri sar</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Jump to track</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçaya atla</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Mute</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesi Kısık</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Anahtar dizilimi &apos;% 1&apos; zaten kullanılmış</translation>
     </message>
 </context>
 </TS>

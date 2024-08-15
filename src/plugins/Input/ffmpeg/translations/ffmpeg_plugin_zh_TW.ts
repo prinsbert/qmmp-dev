@@ -39,12 +39,12 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="14"/>
         <source>FFmpeg Plugin Settings</source>
-        <translation type="unfinished">FFmpeg 插件設置</translation>
+        <translation>FFmpeg 插件設置</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="55"/>
         <source>Formats</source>
-        <translation type="unfinished">格式</translation>
+        <translation>格式</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="61"/>

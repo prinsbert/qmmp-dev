@@ -39,37 +39,37 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="14"/>
         <source>WildMidi Plugin Settings</source>
-        <translation type="unfinished">WildMidi 插件設定</translation>
+        <translation>WildMidi 插件設定</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="29"/>
         <source>Instrument configuration: </source>
-        <translation type="unfinished">樂器配置：</translation>
+        <translation>樂器配置：</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="43"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">取樣率</translation>
+        <translation>取樣率</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="50"/>
         <source>Enhanced resampling</source>
-        <translation type="unfinished">提高再取樣</translation>
+        <translation>提高再取樣</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="57"/>
         <source>Reverberation</source>
-        <translation type="unfinished">混響</translation>
+        <translation>混響</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

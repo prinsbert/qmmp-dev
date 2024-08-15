@@ -73,7 +73,7 @@
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
@@ -172,12 +172,12 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished">添加</translation>
+        <translation>添加</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>

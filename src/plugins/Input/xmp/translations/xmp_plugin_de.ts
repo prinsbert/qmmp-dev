@@ -102,42 +102,42 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished">XMP-Moduleinstellungen</translation>
+        <translation>XMP-Moduleinstellungen</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verstärkungsfaktor:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished">Stereoabmischung:</translation>
+        <translation>Stereoabmischung:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished"> Interpolationstyp:</translation>
+        <translation> Interpolationstyp:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished">Tiefpassfiltereffekt</translation>
+        <translation>Tiefpassfiltereffekt</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished">Vertikale Austastlückenabstimmung verwenden</translation>
+        <translation>Vertikale Austastlückenabstimmung verwenden</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished">Protracker 2.x FX9-Fehler emulieren</translation>
+        <translation>Protracker 2.x FX9-Fehler emulieren</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Abtastrate:</translation>
+        <translation>Abtastrate:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
@@ -152,32 +152,32 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Hz</translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished">Nächster Nachbar</translation>
+        <translation>Nächster Nachbar</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished">Linear</translation>
+        <translation>Linear</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished">Kubischer Spline</translation>
+        <translation>Kubischer Spline</translation>
     </message>
 </context>
 </TS>

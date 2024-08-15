@@ -6,47 +6,47 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">OSS Eklenti Ayarları</translation>
+        <translation>OSS Eklenti Ayarları</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Aygıt Ayarları</translation>
+        <translation>Aygıt Ayarları</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Ses aygıtı</translation>
+        <translation>Ses aygıtı</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">Karıştırıcı aygıtı</translation>
+        <translation>Karıştırıcı aygıtı</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Gelişmiş Ayarlar</translation>
+        <translation>Gelişmiş Ayarlar</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Ses kartı</translation>
+        <translation>Ses kartı</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Arabellek süresi (ms):</translation>
+        <translation>Arabellek süresi (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Periyot süresi (ms):</translation>
+        <translation>Periyot süresi (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished">Master üzeri PCM</translation>
+        <translation>Master üzeri PCM</translation>
     </message>
 </context>
 <context>

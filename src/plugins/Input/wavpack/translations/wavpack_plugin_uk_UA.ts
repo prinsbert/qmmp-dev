@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderWavPackFactory</name>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="38"/>
         <source>WavPack Plugin</source>
-        <translation>Модуль WavPack</translation>
+        <translation>Втулок WavPack</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="40"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="181"/>
         <source>About WavPack Audio Plugin</source>
-        <translation>Про аудіо-модуль WavPack</translation>
+        <translation>Про авдіовтулок WavPack</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="182"/>
         <source>Qmmp WavPack Audio Plugin</source>
-        <translation>Аудіо-модуль WavPack для Qmmp</translation>
+        <translation>Авдіовтулок WavPack для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderwavpackfactory.cpp" line="183"/>

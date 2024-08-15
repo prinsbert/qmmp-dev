@@ -34,37 +34,37 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished">Impostazioni dell&apos;estensione di rilevamento del volume</translation>
+        <translation>Impostazioni dell&apos;estensione di rilevamento del volume</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Rilevamento CD Audio</translation>
+        <translation>Rilevamento CD Audio</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Aggiungi automaticamente le tracce alla scaletta</translation>
+        <translation>Aggiungi automaticamente le tracce alla scaletta</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Rimuovi automaticamente i titoli dalla scaletta</translation>
+        <translation>Rimuovi automaticamente i titoli dalla scaletta</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Rilevamento dispositivi rimovibili</translation>
+        <translation>Rilevamento dispositivi rimovibili</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Aggiungi automaticamente i file alla scaletta</translation>
+        <translation>Aggiungi automaticamente i file alla scaletta</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Rimuovi automaticamente i file dalla scaletta</translation>
+        <translation>Rimuovi automaticamente i file dalla scaletta</translation>
     </message>
 </context>
 <context>

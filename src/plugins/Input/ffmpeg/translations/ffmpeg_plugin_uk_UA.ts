@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
+        <location filename="../decoderffmpegfactory.cpp" line="144"/>
+        <source>FFmpeg Plugin</source>
+        <translation>Втулок FFmpeg</translation>
+    </message>
+    <message>
+        <location filename="../decoderffmpegfactory.cpp" line="146"/>
+        <source>FFmpeg Formats</source>
+        <translation>Формати FFmpeg</translation>
+    </message>
+    <message>
         <location filename="../decoderffmpegfactory.cpp" line="340"/>
         <source>About FFmpeg Audio Plugin</source>
-        <translation>Про аудіо-модуль FFmpeg</translation>
+        <translation>Про авдіовтулок FFmpeg</translation>
     </message>
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="341"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
-        <translation>Аудіо-модуль FFmpeg для Qmmp</translation>
+        <translation>Авдіовтулок FFmpeg для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderffmpegfactory.cpp" line="342"/>
@@ -23,98 +33,88 @@
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
     </message>
-    <message>
-        <location filename="../decoderffmpegfactory.cpp" line="144"/>
-        <source>FFmpeg Plugin</source>
-        <translation>Модуль FFmpeg</translation>
-    </message>
-    <message>
-        <location filename="../decoderffmpegfactory.cpp" line="146"/>
-        <source>FFmpeg Formats</source>
-        <translation>Формати FFmpeg</translation>
-    </message>
 </context>
 <context>
     <name>FFmpegSettingsDialog</name>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="14"/>
         <source>FFmpeg Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля FFmpeg</translation>
+        <translation>Налаштування втулка FFmpeg</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="55"/>
         <source>Formats</source>
-        <translation type="unfinished">Формати</translation>
+        <translation>Формати</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="61"/>
         <source>Windows Media Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows Media Audio</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="68"/>
         <source>Monkey&apos;s Audio (APE)</source>
-        <translation type="unfinished"></translation>
+        <translation>Monkey&apos;s Audio (APE)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="75"/>
         <source>True Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>True Audio</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="82"/>
         <source>ADTS AAC</source>
-        <translation type="unfinished"></translation>
+        <translation>ADTS AAC</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="89"/>
         <source>MP3 (MPEG audio layer 3)</source>
-        <translation type="unfinished"></translation>
+        <translation>MP3 (MPEG audio layer 3)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="96"/>
         <source>MPEG-4 AAC/ALAC</source>
-        <translation type="unfinished"></translation>
+        <translation>MPEG-4 AAC/ALAC</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="103"/>
         <source>RealAudio 1.0/2.0</source>
-        <translation type="unfinished"></translation>
+        <translation>RealAudio 1.0/2.0</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="110"/>
         <source>Shorten</source>
-        <translation type="unfinished"></translation>
+        <translation>Shorten</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="117"/>
         <source>AC3/EAC</source>
-        <translation type="unfinished"></translation>
+        <translation>AC3/EAC</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="124"/>
         <source>DTS/DTS-Core</source>
-        <translation type="unfinished"></translation>
+        <translation>DTS/DTS-Core</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="131"/>
         <source>Matroska Audio (Dolby TrueHD Lossless)</source>
-        <translation type="unfinished"></translation>
+        <translation>Matroska Audio (Dolby TrueHD Lossless)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="138"/>
         <source>VQF</source>
-        <translation type="unfinished"></translation>
+        <translation>VQF</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="145"/>
         <source>Tom&apos;s lossless Audio Kompressor (TAK)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tom&apos;s lossless Audio Kompressor (TAK)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="152"/>
         <source>Direct Stream Digital (DSD)</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct Stream Digital (DSD)</translation>
     </message>
 </context>
 </TS>

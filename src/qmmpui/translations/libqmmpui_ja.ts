@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="46"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>色を選択</translation>
     </message>
 </context>
 <context>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../columneditor.cpp" line="103"/>
         <source>Parent Directory Name</source>
-        <translation type="unfinished">親ディレクトリー名</translation>
+        <translation>親ディレクトリー名</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="104"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="275"/>
         <source>Show cover</source>
-        <translation type="unfinished"></translation>
+        <translation>表紙画像を表示</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="285"/>
@@ -489,12 +489,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="657"/>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>書体:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="682"/>
         <source>???</source>
-        <translation type="unfinished"></translation>
+        <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="721"/>
@@ -863,12 +863,12 @@
     <message>
         <location filename="../forms/covereditor.ui" line="76"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>読込</translation>
     </message>
     <message>
         <location filename="../forms/covereditor.ui" line="83"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>削除</translation>
     </message>
     <message>
         <location filename="../forms/covereditor.ui" line="90"/>
@@ -896,7 +896,7 @@
     <message>
         <location filename="../coverviewer.cpp" line="68"/>
         <source>Save Cover As</source>
-        <translation>カバー画像に名前を付けて保存</translation>
+        <translation>名前を付けて表紙画像を保存</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="70"/>
@@ -915,12 +915,12 @@
     <message>
         <location filename="../forms/cueeditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>読込</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>削除</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="54"/>
@@ -936,7 +936,7 @@
         <location filename="../cueeditor.cpp" line="131"/>
         <location filename="../cueeditor.cpp" line="150"/>
         <source>CUE Files</source>
-        <translation type="unfinished"></translation>
+        <translation>CUE ファイル</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="148"/>
@@ -974,7 +974,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="257"/>
         <source>Cover</source>
-        <translation>カバー画像</translation>
+        <translation>表紙画像</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="283"/>
@@ -1034,32 +1034,32 @@
     <message>
         <location filename="../detailsdialog.cpp" line="331"/>
         <source>Duration</source>
-        <translation type="unfinished">演奏時間</translation>
+        <translation>演奏時間</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="334"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>ビットレート</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="334"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="335"/>
         <source>Sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>サンプルレート</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="335"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="336"/>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>チャンネル数</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
@@ -1079,7 +1079,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="339"/>
         <source>File size</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイル容量</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="339"/>
@@ -1089,12 +1089,12 @@
     <message>
         <location filename="../detailsdialog.cpp" line="383"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>する</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="383"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>しない</translation>
     </message>
 </context>
 <context>
@@ -1173,7 +1173,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="38"/>
         <source>Track Index</source>
-        <translation type="unfinished">曲番号</translation>
+        <translation>曲番号</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="40"/>
@@ -1194,12 +1194,12 @@
         <location filename="../metadataformattermenu.cpp" line="47"/>
         <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration</source>
-        <translation>演奏時間</translation>
+        <translation>再生時間</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - Album</source>
-        <translation type="unfinished">アーティスト - アルバム名</translation>
+        <translation>アーティスト - アルバム名</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
@@ -1224,7 +1224,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>ビットレート</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="71"/>
@@ -1244,7 +1244,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="74"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="75"/>
@@ -1388,17 +1388,17 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="14"/>
         <source>Change Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>ショートカットを変更</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation type="unfinished"></translation>
+        <translation>割り当てたいキーの組み合わせを押します</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>消去</translation>
     </message>
 </context>
 <context>
@@ -1533,7 +1533,8 @@
         <location filename="../uihelper.cpp" line="224"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 が既にあります。
+上書きしますがよろしいですか。</translation>
     </message>
 </context>
 <context>
@@ -1541,7 +1542,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../visualmenu.cpp" line="26"/>
         <source>Visualization</source>
-        <translation type="unfinished">視覚効果</translation>
+        <translation>視覚効果</translation>
     </message>
 </context>
 <context>

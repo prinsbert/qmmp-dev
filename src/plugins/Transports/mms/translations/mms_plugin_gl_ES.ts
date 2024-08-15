@@ -29,17 +29,17 @@
     <message>
         <location filename="../mmssettingsdialog.ui" line="14"/>
         <source>MMS Plugin Settings</source>
-        <translation type="unfinished">Preferencias do engadido MMS</translation>
+        <translation>Preferencias do engadido MMS</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation type="unfinished">Tamaño de buffer:</translation>
+        <translation>Tamaño do buffer:</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation type="unfinished">KB</translation>
+        <translation>KB</translation>
     </message>
 </context>
 </TS>

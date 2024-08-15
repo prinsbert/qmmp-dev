@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>HTTPInputFactory</name>
     <message>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../httpinputfactory.cpp" line="54"/>
         <source>Compiled against libcurl-%1</source>
-        <translation>libcurl-%1 を使用してコンパイル</translation>
+        <translation>libcurl-%1 対応でコンパイル</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="55"/>
@@ -34,27 +34,27 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation type="unfinished">HTTP プラグイン設定</translation>
+        <translation>HTTP プラグイン設定</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation type="unfinished">メタデータの文字符号化形式</translation>
+        <translation>メタデータの文字符号化形式</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">文字符号セットの自動検出</translation>
+        <translation>文字符号セットの自動検出</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation type="unfinished">言語:</translation>
+        <translation>言語:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">文字符号化形式(初期設定値):</translation>
+        <translation>文字符号化形式(初期設定値):</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation type="unfinished">User Agent を変更</translation>
+        <translation>User Agent を変更</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ミリ秒</translation>
     </message>
 </context>
 </TS>

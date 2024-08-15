@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished">Configuración del complemento de letras</translation>
+        <translation>Configuración del complemento de letras</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished">Proveedores de letras:</translation>
+        <translation>Proveedores de letras:</translation>
     </message>
 </context>
 <context>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>
         <source>Cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Caché</translation>
     </message>
 </context>
 <context>

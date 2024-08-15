@@ -29,32 +29,32 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation type="unfinished">Impostazioni dell&apos;estensione scrittura file</translation>
+        <translation>Impostazioni dell&apos;estensione scrittura file</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation type="unfinished">Cartella di uscita:</translation>
+        <translation>Cartella di uscita:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation type="unfinished">Qualità:</translation>
+        <translation>Qualità:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation type="unfinished">Nome file d&apos;uscita:</translation>
+        <translation>Nome file d&apos;uscita:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
         <source>Write to single file if possible.</source>
-        <translation type="unfinished">Scrivi in un unico file se possibile.</translation>
+        <translation>Scrivi in un unico file se possibile.</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Scegli una cartella</translation>
+        <translation>Scegli una cartella</translation>
     </message>
 </context>
 </TS>

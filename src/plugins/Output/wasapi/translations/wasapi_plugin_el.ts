@@ -29,32 +29,32 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου WASAPI</translation>
+        <translation>Ρυθμίσεις πρόσθετου WASAPI</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
         <source>Device:</source>
-        <translation type="unfinished">Συσκευή:</translation>
+        <translation>Συσκευή:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος ενδιάμεσης μνήμης:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished">Αποκλειστική λειτουργία</translation>
+        <translation>Αποκλειστική λειτουργία</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">Εξ ορισμού</translation>
+        <translation>Εξ ορισμού</translation>
     </message>
 </context>
 </TS>

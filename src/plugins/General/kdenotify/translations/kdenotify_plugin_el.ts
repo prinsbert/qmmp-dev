@@ -37,47 +37,47 @@
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="39"/>
         <source>Options</source>
-        <translation type="unfinished">Επιλογές</translation>
+        <translation>Επιλογές</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation type="unfinished">Καθυστέρηση ειδοποίησης:</translation>
+        <translation>Καθυστέρηση ειδοποίησης:</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="52"/>
         <source>Update visible notification instead create new</source>
-        <translation type="unfinished">Ενημέρωση της ορατής ειδοποίησης αντί τη δημιουργία νέας</translation>
+        <translation>Ενημέρωση της ορατής ειδοποίησης αντί τη δημιουργία νέας</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="72"/>
         <source>s</source>
-        <translation type="unfinished">s</translation>
+        <translation>s</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Ειδοποίηση αλλαγής έντασης</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="95"/>
         <source>Appearance</source>
-        <translation type="unfinished">Εμφάνιση</translation>
+        <translation>Εμφάνιση</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="101"/>
         <source>Show covers</source>
-        <translation type="unfinished">Εμφάνιση εξώφυλλων</translation>
+        <translation>Εμφάνιση εξώφυλλων</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="110"/>
         <source>Edit template</source>
-        <translation type="unfinished">Επεξεργασία πρότυπου</translation>
+        <translation>Επεξεργασία πρότυπου</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.cpp" line="76"/>
         <source>Notification Template</source>
-        <translation type="unfinished">Πρότυπο ειδοποιήσεων</translation>
+        <translation>Πρότυπο ειδοποιήσεων</translation>
     </message>
 </context>
 </TS>

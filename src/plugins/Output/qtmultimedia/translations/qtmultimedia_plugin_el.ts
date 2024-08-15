@@ -29,17 +29,17 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου πολυμέσων Qt</translation>
+        <translation>Ρυθμίσεις πρόσθετου πολυμέσων Qt</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation type="unfinished">Συσκευή:</translation>
+        <translation>Συσκευή:</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation type="unfinished">Εξ ορισμού</translation>
+        <translation>Εξ ορισμού</translation>
     </message>
 </context>
 </TS>

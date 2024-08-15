@@ -34,32 +34,32 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation type="unfinished">HTTP 插件设置</translation>
+        <translation>HTTP 插件设置</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation type="unfinished">元数据编码</translation>
+        <translation>元数据编码</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">自动检测字符集</translation>
+        <translation>自动检测字符集</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation type="unfinished">语言：</translation>
+        <translation>语言：</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">默认编码：</translation>
+        <translation>默认编码：</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation type="unfinished">用户代理：</translation>
+        <translation>用户代理：</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation type="unfinished">更改用户代理</translation>
+        <translation>更改用户代理</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>毫秒</translation>
     </message>
 </context>
 </TS>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DateInputDialog</name>
     <message>
         <location filename="../dateinputdialog.ui" line="14"/>
         <source>Select Date</source>
-        <translation>Виберіть дату</translation>
+        <translation>Оберіть дату</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../history.cpp" line="57"/>
         <source>History</source>
-        <translation>Журнал</translation>
+        <translation>Дієпис</translation>
     </message>
     <message>
         <location filename="../history.cpp" line="58"/>
         <source>Alt+H</source>
-        <translation></translation>
+        <translation>Alt+H</translation>
     </message>
 </context>
 <context>
@@ -27,27 +27,27 @@
     <message>
         <location filename="../historyfactory.cpp" line="31"/>
         <source>Listening History Plugin</source>
-        <translation>Модуль журнала</translation>
+        <translation>Втулок дієпису</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="51"/>
         <source>About Listening History Plugin</source>
-        <translation>Про модуль  журнала прослуховування</translation>
+        <translation>Про втулок  дієпису прослуховування</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="52"/>
         <source>Qmmp Listening History Plugin</source>
-        <translation>Модуль  журнала прослуховування для Qmmp</translation>
+        <translation>Втулок дієпису прослуховування для Qmmp</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="53"/>
         <source>This plugin collects information about listened tracks</source>
-        <translation>Цей модуль збирає інформацію про прослухані треки</translation>
+        <translation>Цей втулок збирає відомості про прослухані доріжки</translation>
     </message>
     <message>
         <location filename="../historyfactory.cpp" line="54"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Розробник: Ілля Котов  &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../historysettingsdialog.ui" line="14"/>
         <source>Listening History Plugin Settings</source>
-        <translation>Налаштування модуля журнала</translation>
+        <translation>Налаштування втулка дієпису</translation>
     </message>
     <message>
         <location filename="../historysettingsdialog.ui" line="31"/>
@@ -69,7 +69,7 @@
         <location filename="../historywindow.ui" line="14"/>
         <location filename="../historywindow.ui" line="110"/>
         <source>History</source>
-        <translation>Журнал</translation>
+        <translation>Дієпис</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="29"/>
@@ -89,12 +89,12 @@
     <message>
         <location filename="../historywindow.ui" line="69"/>
         <source>Last week</source>
-        <translation>Крайній тиждень</translation>
+        <translation>Минулий тиждень</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="76"/>
         <source>Last month</source>
-        <translation>Крайній місяць</translation>
+        <translation>Минулий місяць</translation>
     </message>
     <message>
         <location filename="../historywindow.ui" line="83"/>
@@ -158,22 +158,22 @@
     <message>
         <location filename="../historywindow.cpp" line="130"/>
         <source>dd MMMM yyyy</source>
-        <translation></translation>
+        <translation>dd MMMM yyyy</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="131"/>
         <source>hh:mm:ss</source>
-        <translation></translation>
+        <translation>hh:mm:ss</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="198"/>
         <source>MM-yyyy</source>
-        <translation></translation>
+        <translation>MM-yyyy</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="199"/>
         <source>dd MMMM</source>
-        <translation></translation>
+        <translation>dd MMMM</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="499"/>

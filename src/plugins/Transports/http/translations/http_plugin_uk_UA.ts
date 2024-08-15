@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>HTTPInputFactory</name>
     <message>
         <location filename="../httpinputfactory.cpp" line="33"/>
         <source>HTTP Plugin</source>
-        <translation>Модуль HTTP</translation>
+        <translation>Втулок HTTP</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="52"/>
         <source>About HTTP Transport Plugin</source>
-        <translation>Про модуль HTTP</translation>
+        <translation>Про втулок HTTP</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="53"/>
         <source>Qmmp HTTP Transport Plugin</source>
-        <translation>Транспортний модуль HTTP для Qmmp</translation>
+        <translation>Транспортний втулок HTTP для Qmmp</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="54"/>
@@ -34,32 +34,32 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля HTTP</translation>
+        <translation>Налаштування втулка HTTP</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation type="unfinished">Кодування метаданих</translation>
+        <translation>Кодування метаданих</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Автоматичне визначення кодування</translation>
+        <translation>Автоматичне визначення кодування</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation type="unfinished">Мова:</translation>
+        <translation>Мова:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Кодування за умовчанням:</translation>
+        <translation>Усталене кодування:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation type="unfinished">User Agent:</translation>
+        <translation>User Agent:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>КіБ</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation type="unfinished">Змінити User Agent</translation>
+        <translation>Змінити User Agent</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>мс</translation>
     </message>
 </context>
 </TS>

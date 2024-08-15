@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderSndFileFactory</name>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="119"/>
         <source>Sndfile Plugin</source>
-        <translation>Модуль Sndfile</translation>
+        <translation>Втулок Sndfile</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="123"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../decodersndfilefactory.cpp" line="228"/>
         <source>About Sndfile Audio Plugin</source>
-        <translation>Про аудіо-модуль Sndfile</translation>
+        <translation>Про авдіовтулок Sndfile</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="229"/>
         <source>Qmmp Sndfile Audio Plugin</source>
-        <translation>Модуль SndFile для Qmmp</translation>
+        <translation>Втулок SndFile для Qmmp</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="230"/>
         <source>Compiled against %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Зібрано з %1</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="231"/>

@@ -161,37 +161,37 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation type="unfinished">Definições</translation>
+        <translation>Definições</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
         <source>Recreate database</source>
-        <translation type="unfinished">Recriar base de dados</translation>
+        <translation>Recriar base de dados</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="46"/>
         <source>Show album year</source>
-        <translation type="unfinished">Mostrar ano do álbum</translation>
+        <translation>Mostrar ano do álbum</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished">Adicionar</translation>
+        <translation>Adicionar</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished">Remover</translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
         <source>List of directories for scanning:</source>
-        <translation type="unfinished">Lista de diretórios a analisar:</translation>
+        <translation>Lista de diretórios a analisar:</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
         <source>Select Directories for Scanning</source>
-        <translation type="unfinished">Selecione os diretórios a analisar</translation>
+        <translation>Selecione os diretórios a analisar</translation>
     </message>
 </context>
 <context>

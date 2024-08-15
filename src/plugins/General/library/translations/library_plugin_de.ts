@@ -6,23 +6,23 @@
     <message>
         <location filename="../library.cpp" line="63"/>
         <source>Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliothek</translation>
     </message>
     <message>
         <location filename="../library.cpp" line="64"/>
         <source>Alt+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+L</translation>
     </message>
     <message>
         <location filename="../library.cpp" line="70"/>
         <source>Update library</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliothek aktualisieren</translation>
     </message>
     <message>
         <location filename="../library.cpp" line="192"/>
         <location filename="../library.cpp" line="193"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannt</translation>
     </message>
 </context>
 <context>
@@ -30,27 +30,27 @@
     <message>
         <location filename="../libraryfactory.cpp" line="33"/>
         <source>Media Library Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Medienbibliothek-Modul</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="38"/>
         <source>Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliothek</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="38"/>
         <source>Ctrl+1</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+1</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="84"/>
         <source>About Media Library Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Über Medienbibliothek-Modul</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="85"/>
         <source>Qmmp Media Library Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Medienbibliothek-Modul</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="86"/>
@@ -73,7 +73,7 @@
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
@@ -161,27 +161,27 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Medienbibliothek-Einstellungen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
         <source>Recreate database</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenbank neu erstellen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="46"/>
         <source>Show album year</source>
-        <translation type="unfinished"></translation>
+        <translation>Albumjahr anzeigen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished">Hinzufügen</translation>
+        <translation>Hinzufügen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished">Entfernen</translation>
+        <translation>Entfernen</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="51"/>
         <source>&amp;Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Zur Wiederg&amp;abeliste hinzufügen</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="52"/>
@@ -224,7 +224,7 @@
     <message>
         <location filename="../librarywidget.ui" line="14"/>
         <source>Media Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Medienbibliothek</translation>
     </message>
 </context>
 </TS>

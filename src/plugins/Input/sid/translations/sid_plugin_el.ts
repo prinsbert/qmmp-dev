@@ -39,52 +39,52 @@
     <message>
         <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου SID</translation>
+        <translation>Ρυθμίσεις πρόσθετου SID</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation type="unfinished">Ταχεία επαναδειγματοληψία</translation>
+        <translation>Ταχεία επαναδειγματοληψία</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Ρυθμός δειγματοληψίας:</translation>
+        <translation>Ρυθμός δειγματοληψίας:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation type="unfinished">Αρχείο βάσης δεδομένων HVSC:</translation>
+        <translation>Αρχείο βάσης δεδομένων HVSC:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation type="unfinished">Μέθοδος επαναδειγματοληψίας:</translation>
+        <translation>Μέθοδος επαναδειγματοληψίας:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation type="unfinished">Εξ ορισμού διάρκεια τραγουδιού, δευτ:</translation>
+        <translation>Εξ ορισμού διάρκεια τραγουδιού, δευτ:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation type="unfinished">Ενεργοποίηση βάσης δεδομένων διάρκειας τραγουδιού HVSC</translation>
+        <translation>Ενεργοποίηση βάσης δεδομένων διάρκειας τραγουδιού HVSC</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation type="unfinished">Εξομοίωση:</translation>
+        <translation>Εξομοίωση:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

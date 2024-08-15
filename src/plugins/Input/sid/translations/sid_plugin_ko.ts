@@ -39,52 +39,52 @@
     <message>
         <location filename="../sidsettingsdialog.ui" line="14"/>
         <source>SID Plugin Settings</source>
-        <translation type="unfinished">SID 플러그인 설정</translation>
+        <translation>SID 플러그인 설정</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="55"/>
         <source>Fast resampling</source>
-        <translation type="unfinished">빠른 리샘플링</translation>
+        <translation>빠른 리샘플링</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="62"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">샘플 레이트:</translation>
+        <translation>샘플 레이트:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="69"/>
         <source>HVSC database file:</source>
-        <translation type="unfinished">HVSC 데이터베이스 파일:</translation>
+        <translation>HVSC 데이터베이스 파일:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="76"/>
         <source>Resampling method:</source>
-        <translation type="unfinished">리샘플링 방법:</translation>
+        <translation>리샘플링 방법:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="93"/>
         <source>Defaults song length, sec:</source>
-        <translation type="unfinished">기본 곡 길이, 초:</translation>
+        <translation>기본 곡 길이, 초:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="100"/>
         <source>Enable HVSC song length database</source>
-        <translation type="unfinished">HVSC 곡 길이 데이터베이스 활성화</translation>
+        <translation>HVSC 곡 길이 데이터베이스 활성화</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.ui" line="107"/>
         <source>Emulation:</source>
-        <translation type="unfinished">에뮬레이션:</translation>
+        <translation>에뮬레이션:</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="41"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../sidsettingsdialog.cpp" line="42"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

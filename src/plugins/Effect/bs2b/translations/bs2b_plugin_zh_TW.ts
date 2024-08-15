@@ -6,12 +6,12 @@
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="14"/>
         <source>BS2B Plugin Settings</source>
-        <translation type="unfinished">BS2B 插件設置</translation>
+        <translation>BS2B 插件設置</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="32"/>
         <source>Crossfeed level</source>
-        <translation type="unfinished">串擾水平</translation>
+        <translation>串擾水平</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="45"/>
@@ -22,7 +22,7 @@
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="71"/>
         <source>Default</source>
-        <translation type="unfinished">預設</translation>
+        <translation>默認</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="78"/>

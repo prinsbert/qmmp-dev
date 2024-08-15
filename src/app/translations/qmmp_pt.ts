@@ -31,7 +31,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="51"/>
         <source>Display Jump to Track dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar diálogo Ir para a faixa</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="52"/>

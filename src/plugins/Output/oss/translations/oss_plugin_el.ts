@@ -6,47 +6,47 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου OSS</translation>
+        <translation>Ρυθμίσεις πρόσθετου OSS</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Ρυθμίσεις συσκευής</translation>
+        <translation>Ρυθμίσεις συσκευής</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Συσκευή ήχου</translation>
+        <translation>Συσκευή ήχου</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">Συσκευή μίκτη</translation>
+        <translation>Συσκευή μίκτη</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Προηγμένες ρυθμίσεις</translation>
+        <translation>Προηγμένες ρυθμίσεις</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Κάρτα ήχου</translation>
+        <translation>Κάρτα ήχου</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Χρόνος ενδιάμεσης μνήμης (ms):</translation>
+        <translation>Χρόνος ενδιάμεσης μνήμης (ms)</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Χρόνος περιόδου (ms):</translation>
+        <translation>Χρόνος περιόδου (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished">PCM πάνω από Master</translation>
+        <translation>PCM πάνω από Master</translation>
     </message>
 </context>
 <context>

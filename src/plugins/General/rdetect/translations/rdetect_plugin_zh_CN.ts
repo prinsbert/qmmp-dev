@@ -39,32 +39,32 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">CD 音频检测</translation>
+        <translation>CD 音频检测</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">自动添加音轨到播放列表</translation>
+        <translation>自动添加音轨到播放列表</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">自动从播放列表删除音轨</translation>
+        <translation>自动从播放列表删除音轨</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">可移动设备检测</translation>
+        <translation>可移动设备检测</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">自动添加文件到播放列表</translation>
+        <translation>自动添加文件到播放列表</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">自动从播放列表删除文件</translation>
+        <translation>自动从播放列表删除文件</translation>
     </message>
 </context>
 <context>

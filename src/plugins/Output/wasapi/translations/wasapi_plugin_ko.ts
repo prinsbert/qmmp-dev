@@ -29,32 +29,32 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
-        <translation type="unfinished">WASAPI 플러그인 설정</translation>
+        <translation>WASAPI 플러그인 설정</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
         <source>Device:</source>
-        <translation type="unfinished">장치:</translation>
+        <translation>장치:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>버퍼 크기:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished">전용 모드</translation>
+        <translation>전용 모드</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">기본값</translation>
+        <translation>기본값</translation>
     </message>
 </context>
 </TS>

@@ -6,47 +6,47 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">Preferencias do engadido OSS</translation>
+        <translation>Preferencias do engadido OSS</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Preferencias de dispositivo</translation>
+        <translation>Preferencias de dispositivo</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Dispositivo de audio</translation>
+        <translation>Dispositivo de audio</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">Dispositivo mesturador</translation>
+        <translation>Dispositivo mesturador</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Opcións avanzadas</translation>
+        <translation>Opcións avanzadas</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Tarxeta de son</translation>
+        <translation>Tarxeta de son</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Tempo de búfer (ms):</translation>
+        <translation>Tempo de búfer (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Tempo de periodo (ms):</translation>
+        <translation>Tempo de periodo (ms):</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished">PCM sobre Master</translation>
+        <translation>PCM sobre Master</translation>
     </message>
 </context>
 <context>

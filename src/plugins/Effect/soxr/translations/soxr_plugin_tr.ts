@@ -6,17 +6,17 @@
     <message>
         <location filename="../effectsoxrfactory.cpp" line="30"/>
         <source>SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>SoX Yeniden Örnekleyici Eklentisi</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="50"/>
         <source>About SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>SoX Örnekleyici Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="51"/>
         <source>Qmmp SoX Resampler Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp SoX Örnekleyici Eklentisi</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="52"/>
@@ -29,42 +29,42 @@
     <message>
         <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnekleme Oranı Dönüştürücü Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Örnekleme Oranı (Hz):</translation>
+        <translation>Örnekleme Oranı (Hz):</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nitelik:</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished"></translation>
+        <translation>Çabuk</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Alçak</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished">Orta</translation>
+        <translation>Orta</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished"></translation>
+        <translation>Yüksek</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished"></translation>
+        <translation>Çok Yüksek</translation>
     </message>
 </context>
 </TS>

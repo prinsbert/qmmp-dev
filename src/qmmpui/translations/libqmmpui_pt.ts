@@ -127,7 +127,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="46"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar cor</translation>
     </message>
 </context>
 <context>
@@ -331,32 +331,32 @@
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
         <source>Group Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo de agrupamento</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="202"/>
         <source>Group size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamanho do grupo:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="219"/>
         <source>Show dividing line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar linha divisória</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="247"/>
         <source>Extra row format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato da linha extra:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="268"/>
         <source>Show extra row</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar linha extra</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="275"/>
         <source>Show cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar capa de álbum</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="285"/>
@@ -615,22 +615,22 @@
     <message>
         <location filename="../configdialog.cpp" line="62"/>
         <source>1 row</source>
-        <translation type="unfinished"></translation>
+        <translation>1 linha</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="63"/>
         <source>3 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>3 linhas</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="64"/>
         <source>4 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>4 linhas</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="65"/>
         <source>5 rows</source>
-        <translation type="unfinished"></translation>
+        <translation>5 linhas</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="66"/>
@@ -1199,7 +1199,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - Album</source>
-        <translation type="unfinished">Artista - Álbum</translation>
+        <translation>Artista - Álbum</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
@@ -1214,7 +1214,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="64"/>
         <source>Year | Duration | Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ano | Duração | Taxa de dados</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
@@ -1388,17 +1388,17 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="14"/>
         <source>Change Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudar atalho</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation type="unfinished"></translation>
+        <translation>Prima a combinação de teclas que pretende atribuir</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpar</translation>
     </message>
 </context>
 <context>
@@ -1542,7 +1542,7 @@ Gostaria de o substituir?</translation>
     <message>
         <location filename="../visualmenu.cpp" line="26"/>
         <source>Visualization</source>
-        <translation type="unfinished">Visualização</translation>
+        <translation>Visualização</translation>
     </message>
 </context>
 <context>

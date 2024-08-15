@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderAACFactory</name>
     <message>
         <location filename="../decoderaacfactory.cpp" line="39"/>
         <source>AAC Plugin</source>
-        <translation>Модуль AAC</translation>
+        <translation>Втулок AAC</translation>
     </message>
     <message>
         <location filename="../decoderaacfactory.cpp" line="41"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderaacfactory.cpp" line="105"/>
         <source>About AAC Audio Plugin</source>
-        <translation>Про аудіо-модуль AAC</translation>
+        <translation>Про авдіовтулок AAC</translation>
     </message>
     <message>
         <location filename="../decoderaacfactory.cpp" line="106"/>
         <source>Qmmp AAC Audio Plugin</source>
-        <translation>Модуль AAC для Qmmp</translation>
+        <translation>Втулок AAC для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderaacfactory.cpp" line="107"/>

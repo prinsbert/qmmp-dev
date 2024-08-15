@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>Oss4SettingsDialog</name>
     <message>
         <location filename="../oss4settingsdialog.ui" line="14"/>
         <source>OSS4 Plugin Settings</source>
-        <translation type="unfinished">OSS4 プラグイン設定</translation>
+        <translation>OSS4 プラグイン設定</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation type="unfinished">デバイス:</translation>
+        <translation>出力デバイス:</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>

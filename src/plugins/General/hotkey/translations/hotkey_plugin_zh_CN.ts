@@ -52,97 +52,97 @@
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="14"/>
         <source>Global Hotkey Plugin Settings</source>
-        <translation type="unfinished">全局快捷键设置</translation>
+        <translation>全局快捷键设置</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="42"/>
         <source>Action</source>
-        <translation type="unfinished">动作</translation>
+        <translation>行动</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="47"/>
         <source>Shortcut</source>
-        <translation type="unfinished">快捷键</translation>
+        <translation>快捷键</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.ui" line="55"/>
         <source>Reset</source>
-        <translation type="unfinished">重置</translation>
+        <translation>重置</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="39"/>
         <source>Play</source>
-        <translation type="unfinished">播放</translation>
+        <translation>播放</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="40"/>
         <source>Stop</source>
-        <translation type="unfinished">停止</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="41"/>
         <source>Pause</source>
-        <translation type="unfinished">暂停</translation>
+        <translation>暂停</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="42"/>
         <source>Play/Pause</source>
-        <translation type="unfinished">播放/暂停</translation>
+        <translation>播放/暂停</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="43"/>
         <source>Next</source>
-        <translation type="unfinished">下一曲</translation>
+        <translation>下一首</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="44"/>
         <source>Previous</source>
-        <translation type="unfinished">上一曲</translation>
+        <translation>上一个</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="45"/>
         <source>Show/Hide</source>
-        <translation type="unfinished">显示/隐藏</translation>
+        <translation>显示/隐藏</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="46"/>
         <source>Volume +</source>
-        <translation type="unfinished">音量 +</translation>
+        <translation>音量 +</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="47"/>
         <source>Volume -</source>
-        <translation type="unfinished">音量 -</translation>
+        <translation>音量 -</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="48"/>
         <source>Forward 5 seconds</source>
-        <translation type="unfinished">向前5秒</translation>
+        <translation>向前5秒</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="49"/>
         <source>Rewind 5 seconds</source>
-        <translation type="unfinished">倒退5秒</translation>
+        <translation>倒退5秒</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="50"/>
         <source>Jump to track</source>
-        <translation type="unfinished">跳至单曲</translation>
+        <translation>跳至单曲</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="51"/>
         <source>Mute</source>
-        <translation type="unfinished">静音</translation>
+        <translation>静音</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../hotkeysettingsdialog.cpp" line="108"/>
         <source>Key sequence &apos;%1&apos; is already used</source>
-        <translation type="unfinished">热键组合&apos;%1&apos;已经被使用了</translation>
+        <translation>热键组合&apos;%1&apos;已经被使用了</translation>
     </message>
 </context>
 </TS>

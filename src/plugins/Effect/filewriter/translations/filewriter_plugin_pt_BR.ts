@@ -34,17 +34,17 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation type="unfinished">Pasta de destino:</translation>
+        <translation>Pasta de destino:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation type="unfinished">Qualidade:</translation>
+        <translation>Qualidade:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation type="unfinished">Nome do arquivo de destino:</translation>
+        <translation>Nome do arquivo de destino:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Escolha uma pasta</translation>
+        <translation>Escolha a pasta</translation>
     </message>
 </context>
 </TS>

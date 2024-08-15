@@ -6,17 +6,17 @@
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="29"/>
         <source>Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekili Çoğula Dönüştürücü Eklenti</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="49"/>
         <source>About Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekkanallıyı Çokkanallıya Dönüştürücü Eklenti Hakkında</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="50"/>
         <source>Qmmp Mono to Stereo Converter Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Tekkanallıyı Çiftkanallıya Dönüştürücü Eklentisi</translation>
     </message>
     <message>
         <location filename="../effectmonotostereofactory.cpp" line="51"/>

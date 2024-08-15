@@ -6,22 +6,22 @@
     <message>
         <location filename="../rdetectfactory.cpp" line="30"/>
         <source>Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses Algılama Eklentisi</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="50"/>
         <source>About Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses Algılama Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="51"/>
         <source>Qmmp Removable Volume Detection Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Kaldırılabilir Ses Algılama Eklentisi </translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="52"/>
         <source>This plugin provides removable volume detection</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu eklenti kaldırılabilir ses algılamasını sağlar </translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="53"/>
@@ -34,37 +34,37 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses Algılama Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">CD Ses Algılama</translation>
+        <translation>CD Ses Algılama</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Parçaları listeye otomatik olarka ekle</translation>
+        <translation>Parçaları listeye otomatik olarka ekle</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Parçaları listeden otomatik olarak kaldır</translation>
+        <translation>Parçaları listeden otomatik olarak kaldır</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Çıkarılabilir Aygıt Algılama</translation>
+        <translation>Çıkarılabilir Aygıt Algılama</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Dosyaları listeye otomatik olarak ekle</translation>
+        <translation>Dosyaları listeye otomatik olarak ekle</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Dosyaları listeden otomatik olarak kaldır</translation>
+        <translation>Dosyaları listeden otomatik olarak kaldır</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>DecoderSndFileFactory</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodersndfilefactory.cpp" line="230"/>
         <source>Compiled against %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 を使用してコンパイル</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="231"/>

@@ -118,37 +118,37 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation type="unfinished">Configuration de MPlayer</translation>
+        <translation>Configuration de MPlayer</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="34"/>
         <source>Video:</source>
-        <translation type="unfinished">Vidéo&#xa0;:</translation>
+        <translation>Vidéo&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="48"/>
         <source>Audio:</source>
-        <translation type="unfinished">Audio&#xa0;:</translation>
+        <translation>Audio&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="62"/>
         <source>Audio/video auto synchronization</source>
-        <translation type="unfinished">Synchronisation audio/vidéo auto&#xa0;:</translation>
+        <translation>Synchronisation audio/vidéo auto&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation type="unfinished">Facteur de synchronisation&#xa0;:</translation>
+        <translation>Facteur de synchronisation&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation type="unfinished">Options additionnelles&#xa0;:</translation>
+        <translation>Options additionnelles&#xa0;:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation type="unfinished">Options additionnelles pour la ligne de commande :</translation>
+        <translation>Options additionnelles pour la ligne de commande :</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>
@@ -158,7 +158,7 @@
         <location filename="../mplayersettingsdialog.cpp" line="54"/>
         <location filename="../mplayersettingsdialog.cpp" line="55"/>
         <source>default</source>
-        <translation type="unfinished">par défaut</translation>
+        <translation>par défaut</translation>
     </message>
 </context>
 </TS>

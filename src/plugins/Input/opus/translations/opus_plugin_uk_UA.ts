@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderOpusFactory</name>
     <message>
         <location filename="../decoderopusfactory.cpp" line="42"/>
         <source>Opus Plugin</source>
-        <translation>Модуль Opus</translation>
+        <translation>Втулок Opus</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="45"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decoderopusfactory.cpp" line="125"/>
         <source>About Opus Audio Plugin</source>
-        <translation>Про модуль аудіо Opus</translation>
+        <translation>Про втулок авдіо Opus</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="126"/>
         <source>Qmmp Opus Audio Plugin</source>
-        <translation>Модуль Opus для Qmmp</translation>
+        <translation>Втулок Opus для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderopusfactory.cpp" line="127"/>

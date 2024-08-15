@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[gl_ES]=qmmp
 Name[gl_ES]=Engadir a Qmmp
 Comment[gl_ES]=Engadir arquivo(s) a lista de reproducción de Qmmp
+Icon[gl_ES]=qmmp

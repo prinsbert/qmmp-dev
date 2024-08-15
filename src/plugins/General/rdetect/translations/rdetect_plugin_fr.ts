@@ -34,37 +34,37 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished">Paramètres du greffon de détection du volume</translation>
+        <translation>Paramètres du greffon de détection du volume</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Détection de CD audio</translation>
+        <translation>Détection de CD audio</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Ajouter automatiquement les pistes à la liste</translation>
+        <translation>Ajouter automatiquement les pistes à la liste</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Enlever automatiquement les pistes de la liste</translation>
+        <translation>Enlever automatiquement les pistes de la liste</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Détection de périphérique amovible</translation>
+        <translation>Détection de périphérique amovible</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Ajouter automatiquement les fichiers à la liste</translation>
+        <translation>Ajouter automatiquement les fichiers à la liste</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Enlever automatiquement les fichiers à la liste</translation>
+        <translation>Enlever automatiquement les fichiers à la liste</translation>
     </message>
 </context>
 <context>

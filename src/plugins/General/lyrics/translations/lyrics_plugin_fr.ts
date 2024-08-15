@@ -63,12 +63,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon Paroles</translation>
+        <translation>Configuration du greffon Paroles</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished">Fournisseurs de Paroles:</translation>
+        <translation>Fournisseurs de Paroles:</translation>
     </message>
 </context>
 <context>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Tag</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>

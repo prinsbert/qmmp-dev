@@ -39,22 +39,22 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου GME</translation>
+        <translation>Ρυθμίσεις πρόσθετου GME</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation type="unfinished">Διάρκεια ομαλής εξασθένισης ήχου</translation>
+        <translation>Διάρκεια ομαλής εξασθένισης ήχου</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation type="unfinished">Ενεργοποίηση της ομαλής εξασθένησης ήχου</translation>
+        <translation>Ενεργοποίηση της ομαλής εξασθένησης ήχου</translation>
     </message>
 </context>
 </TS>

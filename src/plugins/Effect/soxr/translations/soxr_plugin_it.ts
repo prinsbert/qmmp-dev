@@ -29,42 +29,42 @@
     <message>
         <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Impostazioni dell&apos;estensione di conversione campionamento</translation>
+        <translation>Impostazioni dell&apos;estensione di conversione campionamento</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Campionamento (Hz):</translation>
+        <translation>Campionamento (Hz):</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished">Qualità:</translation>
+        <translation>Qualità:</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished">Veloce</translation>
+        <translation>Veloce</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished">Bassa</translation>
+        <translation>Bassa</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished">Media</translation>
+        <translation>Media</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished">Alta</translation>
+        <translation>Alta</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished">Molto alta</translation>
+        <translation>Molto alta</translation>
     </message>
 </context>
 </TS>

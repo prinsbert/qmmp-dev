@@ -6,62 +6,62 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="14"/>
         <source>ALSA Plugin Settings</source>
-        <translation type="unfinished">Einstellungen ALSA-Modul</translation>
+        <translation>Einstellungen ALSA-Modul</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Geräteinstellungen</translation>
+        <translation>Geräteinstellungen</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Audiogerät</translation>
+        <translation>Audiogerät</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="70"/>
         <source>Mixer</source>
-        <translation type="unfinished">Mixer</translation>
+        <translation>Mixer</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="94"/>
         <source>Mixer card:</source>
-        <translation type="unfinished">Mixerkarte:</translation>
+        <translation>Mixerkarte:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="104"/>
         <source>Mixer device:</source>
-        <translation type="unfinished">Mixergerät:</translation>
+        <translation>Mixergerät:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Erweiterte Einstellungen</translation>
+        <translation>Erweiterte Einstellungen</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="142"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Soundkarte</translation>
+        <translation>Soundkarte</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="148"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Pufferzeit (ms):</translation>
+        <translation>Pufferzeit (ms):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="184"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Zeitraster (ms):</translation>
+        <translation>Zeitraster (ms):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="220"/>
         <source>Use mmap access</source>
-        <translation type="unfinished">Mmap-Unterstützung aktivieren</translation>
+        <translation>Mmap-Unterstützung aktivieren</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="240"/>
         <source>Use snd_pcm_pause function</source>
-        <translation type="unfinished">„snd_pcm_pause“-Funktion verwenden</translation>
+        <translation>„snd_pcm_pause“-Funktion verwenden</translation>
     </message>
 </context>
 <context>

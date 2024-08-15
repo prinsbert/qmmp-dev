@@ -34,32 +34,32 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation type="unfinished">Configuración del módulo HTTP</translation>
+        <translation>Configuración del módulo HTTP</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation type="unfinished">Codificación de metainformación</translation>
+        <translation>Codificación de metainformación</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Detección automática del juego de caracteres</translation>
+        <translation>Detección automática del juego de caracteres</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation type="unfinished">Idioma:</translation>
+        <translation>Idioma:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Codificación predeterminada:</translation>
+        <translation>Codificación predeterminada:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation type="unfinished">Agente de Usuario:</translation>
+        <translation>Agente de Usuario:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation type="unfinished">Cambiar Agente de Usuario</translation>
+        <translation>Cambiar Agente de Usuario</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
 </context>
 </TS>

@@ -6,17 +6,17 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="178"/>
         <source>MPEG Plugin</source>
-        <translation type="unfinished">Plugin MPEG</translation>
+        <translation>Plugin MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="181"/>
         <source>MPEG Files</source>
-        <translation type="unfinished">Arquivos MPEG</translation>
+        <translation>Arquivos MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="417"/>
         <source>About MPEG Audio Plugin</source>
-        <translation type="unfinished">Sobre o plugin MPEG Audio</translation>
+        <translation>Sobre o plugin MPEG Audio</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="418"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>Compiled against:</source>
-        <translation type="unfinished">Compilado com:</translation>
+        <translation>Compilado com:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="428"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation type="unfinished">Baseado no código fonte dos projetos mq3 e madplay</translation>
+        <translation>Baseado no código fonte dos projetos mq3 e madplay</translation>
     </message>
 </context>
 <context>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation type="unfinished">Preferências do plugin MPEG </translation>
+        <translation>Preferências do plugin MPEG </translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="35"/>
@@ -100,50 +100,50 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation type="unfinished">Prioridade das etiquetas</translation>
+        <translation>Prioridade das etiquetas</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation type="unfinished">Primeiro:</translation>
+        <translation>Primeiro:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="119"/>
         <location filename="../mpegsettingsdialog.ui" line="168"/>
         <location filename="../mpegsettingsdialog.ui" line="217"/>
         <source>ID3v1</source>
-        <translation type="unfinished">ID3v1</translation>
+        <translation>ID3v1</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="124"/>
         <location filename="../mpegsettingsdialog.ui" line="173"/>
         <location filename="../mpegsettingsdialog.ui" line="222"/>
         <source>ID3v2</source>
-        <translation type="unfinished">ID3v2</translation>
+        <translation>ID3v2</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="129"/>
         <location filename="../mpegsettingsdialog.ui" line="178"/>
         <location filename="../mpegsettingsdialog.ui" line="227"/>
         <source>APE</source>
-        <translation type="unfinished">APE</translation>
+        <translation>APE</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="134"/>
         <location filename="../mpegsettingsdialog.ui" line="183"/>
         <location filename="../mpegsettingsdialog.ui" line="232"/>
         <source>Disabled</source>
-        <translation type="unfinished">Desativada</translation>
+        <translation>Desativada</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation type="unfinished">Segundo:</translation>
+        <translation>Segundo:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation type="unfinished">Terceiro:</translation>
+        <translation>Terceiro:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="253"/>
@@ -153,17 +153,17 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="272"/>
         <source>Encodings</source>
-        <translation type="unfinished">Codificação</translation>
+        <translation>Codificação</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="294"/>
         <source>ID3v2 encoding:</source>
-        <translation type="unfinished">Codificação ID3v2:</translation>
+        <translation>Codificação ID3v2:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="333"/>
         <source>ID3v1 encoding:</source>
-        <translation type="unfinished">Codificação ID3v1:</translation>
+        <translation>Codificação ID3v1:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>

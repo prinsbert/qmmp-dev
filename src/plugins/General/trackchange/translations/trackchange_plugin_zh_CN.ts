@@ -34,12 +34,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="14"/>
         <source>Track Change Plugin Settings</source>
-        <translation type="unfinished">曲目变更插件设置</translation>
+        <translation>曲目变更插件设置</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="29"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation type="unfinished">当Qmmp开始播放新曲目时运行的命令</translation>
+        <translation>当Qmmp开始播放新曲目时运行的命令</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="39"/>
@@ -47,22 +47,22 @@
         <location filename="../trackchangesettingsdialog.ui" line="73"/>
         <location filename="../trackchangesettingsdialog.ui" line="90"/>
         <source>...</source>
-        <translation type="unfinished">…</translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="46"/>
         <source>Command to run toward to end of a track</source>
-        <translation type="unfinished">当一个曲目即将结束是运行的命令</translation>
+        <translation>当一个曲目即将结束是运行的命令</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation type="unfinished">当Qmmp中的播放列表结束时运行的命令</translation>
+        <translation>当Qmmp中的播放列表结束时运行的命令</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation type="unfinished">当曲目名称(比如，网络媒体流曲目名称)变化时运行的命令</translation>
+        <translation>当曲目名称(比如，网络媒体流曲目名称)变化时运行的命令</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>

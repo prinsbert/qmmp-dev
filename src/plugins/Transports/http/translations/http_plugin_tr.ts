@@ -6,22 +6,22 @@
     <message>
         <location filename="../httpinputfactory.cpp" line="33"/>
         <source>HTTP Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP Eklentisi</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="52"/>
         <source>About HTTP Transport Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP Taşıma Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="53"/>
         <source>Qmmp HTTP Transport Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp HTTP Taşıma Eklentisi</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="54"/>
         <source>Compiled against libcurl-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>libcurl-%1&apos;e  dayanarak derlendi</translation>
     </message>
     <message>
         <location filename="../httpinputfactory.cpp" line="55"/>
@@ -34,32 +34,32 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="14"/>
         <source>HTTP Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP Eklenti Ayarları</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="115"/>
         <source>Metadata encoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Meta veri kodlama</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="121"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished"></translation>
+        <translation>Otomatik karakter seti algılama</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="131"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dil:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="151"/>
         <source>Default encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılan kodlama:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="76"/>
         <source>User Agent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı Aracısı:</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="34"/>
@@ -74,12 +74,12 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="53"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="69"/>
         <source>Change User Agent</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı Aracısını Değiştir</translation>
     </message>
     <message>
         <location filename="../httpsettingsdialog.ui" line="90"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../httpsettingsdialog.ui" line="100"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
 </context>
 </TS>

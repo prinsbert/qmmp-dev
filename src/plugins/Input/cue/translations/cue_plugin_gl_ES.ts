@@ -6,37 +6,37 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="14"/>
         <source>CUE Plugin Settings</source>
-        <translation type="unfinished">Preferencias do engadido CUE</translation>
+        <translation>Preferencias do engadido CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="29"/>
         <source>Common settings</source>
-        <translation type="unfinished">Opcións comúns</translation>
+        <translation>Opcións comúns</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation type="unfinished">Cargar follas cue incorrectas se é posible</translation>
+        <translation>Cargar follas cue incorrectas se é posible</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation type="unfinished">Codificación CUE</translation>
+        <translation>Codificación CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Detección automática de conxunto de caracteres</translation>
+        <translation>Detección do conxunto de caracteres automática</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation type="unfinished">Idioma:</translation>
+        <translation>Lingua:</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Codificación por defecto:</translation>
+        <translation>Codificación predeterminada:</translation>
     </message>
 </context>
 <context>

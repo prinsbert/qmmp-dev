@@ -6,12 +6,12 @@
     <message>
         <location filename="../oss4settingsdialog.ui" line="14"/>
         <source>OSS4 Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>OSS4 Eklenti Ayarları</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aygıt:</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>
@@ -24,17 +24,17 @@
     <message>
         <location filename="../outputoss4factory.cpp" line="36"/>
         <source>OSS4 Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>OSS4 Eklentisi</translation>
     </message>
     <message>
         <location filename="../outputoss4factory.cpp" line="55"/>
         <source>About OSS4 Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>OSS4 Çıktı Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../outputoss4factory.cpp" line="56"/>
         <source>Qmmp OSS4 Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp OSS4 Çıktı Eklentisi</translation>
     </message>
     <message>
         <location filename="../outputoss4factory.cpp" line="57"/>

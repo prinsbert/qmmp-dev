@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[el]=qmmp
 Name[el]=Στην ουρά αναμονής του Qmmp
 Comment[el]=Προσθήκη αρχείου(ων) στη λίστα αναπαραγωγής Qmmp
+Icon[el]=qmmp

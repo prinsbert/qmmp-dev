@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>AlsaSettingsDialog</name>
     <message>
         <location filename="../alsasettingsdialog.ui" line="14"/>
         <source>ALSA Plugin Settings</source>
-        <translation type="unfinished">ALSA プラグイン設定</translation>
+        <translation>ALSA プラグイン設定</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">デバイス設定</translation>
+        <translation>デバイス設定</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">音響デバイス</translation>
+        <translation>音響デバイス</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="70"/>
         <source>Mixer</source>
-        <translation type="unfinished">ミキサー</translation>
+        <translation>ミキサー</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="94"/>
         <source>Mixer card:</source>
-        <translation type="unfinished">ミキサーカード:</translation>
+        <translation>ミキサーカード:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="104"/>
         <source>Mixer device:</source>
-        <translation type="unfinished">ミキサーデバイス:</translation>
+        <translation>ミキサーデバイス:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">上級設定</translation>
+        <translation>上級設定</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="142"/>
         <source>Soundcard</source>
-        <translation type="unfinished">サウンドカード</translation>
+        <translation>サウンドカード</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="148"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">バッファー時間 (ミリ秒):</translation>
+        <translation>バッファー時間 (ミリ秒):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="184"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">割り込み間隔 (ミリ秒):</translation>
+        <translation>割り込み間隔 (ミリ秒):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="220"/>
         <source>Use mmap access</source>
-        <translation type="unfinished">メモリマップアクセスを利用</translation>
+        <translation>メモリマップアクセスを利用</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="240"/>
         <source>Use snd_pcm_pause function</source>
-        <translation type="unfinished">snd_pcm_pause 機能を利用</translation>
+        <translation>snd_pcm_pause 機能を利用</translation>
     </message>
 </context>
 <context>

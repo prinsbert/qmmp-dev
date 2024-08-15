@@ -26,7 +26,7 @@
     <message>
         <location filename="../decoderxmpfactory.cpp" line="111"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Γράφτηκε από τον: Ilya Kotov &lt;forkotov02@hotmail.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decoderxmpfactory.cpp" line="112"/>
@@ -102,42 +102,42 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="14"/>
         <source>XMP Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου XMP</translation>
+        <translation>Ρυθμίσεις πρόσθετου XMP</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation> Συντελεστής ενίσχυσης:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
         <source>Stereo mixing:</source>
-        <translation type="unfinished">Στερεοφωνική μίξη:</translation>
+        <translation>Στερεοφωνική μίξη:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="68"/>
         <source> Interpolation type:</source>
-        <translation type="unfinished"> Τύπος παρεμβολής:</translation>
+        <translation> Τύπος παρεμβολής:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="78"/>
         <source>Lowpass filter effect</source>
-        <translation type="unfinished">Τέχνασμα φίλτρου χαμηλών συχνοτήτων</translation>
+        <translation>Τέχνασμα φίλτρου χαμηλών συχνοτήτων</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="85"/>
         <source>Use vblank timing</source>
-        <translation type="unfinished">Χρήση χρονισμού vblank</translation>
+        <translation>Χρήση χρονισμού vblank</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="92"/>
         <source>Emulate Protracker 2.x FX9 bug</source>
-        <translation type="unfinished">Σφάλμα προσομοίωσης Protracker 2.x FX9</translation>
+        <translation>Σφάλμα προσομοίωσης Protracker 2.x FX9</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="99"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Ρυθμός δειγματοληψίας:</translation>
+        <translation>Ρυθμός δειγματοληψίας:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="109"/>
@@ -152,32 +152,32 @@
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Hz</translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="34"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="35"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="36"/>
         <source>Nearest neighbor</source>
-        <translation type="unfinished">Κοντινότερος γείτονας</translation>
+        <translation>Κοντινότερος γείτονας</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="37"/>
         <source>Linear</source>
-        <translation type="unfinished">Γραμμικό</translation>
+        <translation>Γραμμικό</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="38"/>
         <source>Cubic spline</source>
-        <translation type="unfinished">Κυβική πολυωνυμική συνάρτηση (spline)</translation>
+        <translation>Κυβική πολυωνυμική συνάρτηση (spline)</translation>
     </message>
 </context>
 </TS>

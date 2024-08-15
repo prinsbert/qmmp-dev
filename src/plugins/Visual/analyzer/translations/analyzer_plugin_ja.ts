@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>Analyzer</name>
     <message>
@@ -81,14 +81,14 @@
     <message>
         <location filename="../analyzer.cpp" line="365"/>
         <location filename="../analyzer.cpp" line="367"/>
-        <source>F</source>
-        <translation>F</translation>
+        <source>&amp;Full Screen</source>
+        <translation>フルスクリーン(&amp;F)</translation>
     </message>
     <message>
         <location filename="../analyzer.cpp" line="365"/>
         <location filename="../analyzer.cpp" line="367"/>
-        <source>&amp;Full Screen</source>
-        <translation>フルスクリーン(&amp;F)</translation>
+        <source>F</source>
+        <translation>F</translation>
     </message>
 </context>
 <context>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../analyzercolorwidget.cpp" line="37"/>
         <source>Select Color</source>
-        <translation type="unfinished">色を選択</translation>
+        <translation>色を選択</translation>
     </message>
 </context>
 <context>
@@ -104,47 +104,47 @@
     <message>
         <location filename="../analyzersettingsdialog.ui" line="14"/>
         <source>Analyzer Plugin Settings</source>
-        <translation type="unfinished">アナライザープラグイン設定</translation>
+        <translation>アナライザープラグイン設定</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="35"/>
         <source>General</source>
-        <translation type="unfinished">一般</translation>
+        <translation>総合</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="41"/>
         <source>Cells size:</source>
-        <translation type="unfinished">セルサイズ:</translation>
+        <translation>セルサイズ:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="101"/>
         <source>Colors</source>
-        <translation type="unfinished">色</translation>
+        <translation>色</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="107"/>
         <source>Peaks:</source>
-        <translation type="unfinished">峰:</translation>
+        <translation>峰:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="139"/>
         <source>Analyzer #1:</source>
-        <translation type="unfinished">第一アナライザー:</translation>
+        <translation>第一アナライザー:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="171"/>
         <source>Background:</source>
-        <translation type="unfinished">背景:</translation>
+        <translation>背景:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="203"/>
         <source>Analyzer #2:</source>
-        <translation type="unfinished">第二アナライザー:</translation>
+        <translation>第二アナライザー:</translation>
     </message>
     <message>
         <location filename="../analyzersettingsdialog.ui" line="248"/>
         <source>Analyzer #3:</source>
-        <translation type="unfinished">第三アナライザー:</translation>
+        <translation>第三アナライザー:</translation>
     </message>
 </context>
 <context>

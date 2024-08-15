@@ -6,17 +6,17 @@
     <message>
         <location filename="../outputshoutfactory.cpp" line="39"/>
         <source>Icecast Plugin</source>
-        <translation>Модуль Icecast</translation>
+        <translation>Втулок Icecast</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="63"/>
         <source>About Icecast Output Plugin</source>
-        <translation>Про модуль виведення Icecast</translation>
+        <translation>Про втулок виведення Icecast</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="64"/>
         <source>Qmmp Icecast Output Plugin</source>
-        <translation>Модуль виведення Icecast для Qmmp</translation>
+        <translation>Втулок виведення Icecast для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputshoutfactory.cpp" line="65"/>
@@ -34,52 +34,52 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="14"/>
         <source>Connection Settings</source>
-        <translation type="unfinished">Налаштування з&apos;єднання</translation>
+        <translation>Налаштування з&apos;єднання</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="32"/>
         <source>Host:</source>
-        <translation type="unfinished">Хост:</translation>
+        <translation>Хост:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="42"/>
         <source>Port:</source>
-        <translation type="unfinished">Порт:</translation>
+        <translation>Порт:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="56"/>
         <source>Mount point:</source>
-        <translation type="unfinished">Точка монтування:</translation>
+        <translation>Точка монтування:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="66"/>
         <source>User:</source>
-        <translation type="unfinished">Користувач:</translation>
+        <translation>Користувач:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="76"/>
         <source>Password:</source>
-        <translation type="unfinished">Пароль:</translation>
+        <translation>Пароль:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="86"/>
         <source>Quality:</source>
-        <translation type="unfinished">Якість:</translation>
+        <translation>Якість:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="106"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Частота дискретизації:</translation>
+        <translation>Частота дискретизації:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="136"/>
         <source>Public</source>
-        <translation type="unfinished">Публічний</translation>
+        <translation>Публічний</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="143"/>
         <source>Hz</source>
-        <translation type="unfinished">Гц</translation>
+        <translation>Гц</translation>
     </message>
 </context>
 </TS>

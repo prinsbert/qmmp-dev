@@ -14,7 +14,7 @@ X-KDE-StartupNotify=false
 
 
 # Translations
-Icon[pt]=qmmp
 Name[pt]=Qmmp
 Comment[pt]=Reprodutor multimédia Qt-based
 GenericName[pt]=Reprodutor áudio
+Icon[pt]=qmmp

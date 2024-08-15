@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[fr]=qmmp
 Name[fr]=Mettre en queue dans Qmmp
 Comment[fr]=Ajouter un ou des fichiers à la liste de Qmmp
+Icon[fr]=qmmp

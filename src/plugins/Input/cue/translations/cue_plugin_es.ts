@@ -6,37 +6,37 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="14"/>
         <source>CUE Plugin Settings</source>
-        <translation type="unfinished">Configuración del módulo CUE</translation>
+        <translation>Configuración del módulo CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="29"/>
         <source>Common settings</source>
-        <translation type="unfinished">Opciones comunes</translation>
+        <translation>Opciones comunes</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation type="unfinished">Cargar referencias incorrectas si es posible</translation>
+        <translation>Cargar referencias incorrectas si es posible</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation type="unfinished">Codificación CUE</translation>
+        <translation>Codificación CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Detección automática del juego de caracteres</translation>
+        <translation>Detección automática del juego de caracteres</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation type="unfinished">Idioma:</translation>
+        <translation>Idioma:</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Codificación predeterminada</translation>
+        <translation>Codificación predeterminada:</translation>
     </message>
 </context>
 <context>

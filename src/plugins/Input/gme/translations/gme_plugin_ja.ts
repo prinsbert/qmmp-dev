@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>DecoderGmeFactory</name>
     <message>
@@ -39,22 +39,22 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation type="unfinished">GMP プラグイン設定</translation>
+        <translation>GMP プラグイン設定</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation type="unfinished">フェイドアウト時間幅:</translation>
+        <translation>フェイドアウト時間幅:</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation type="unfinished">ミリ秒</translation>
+        <translation>ミリ秒</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation type="unfinished">フェイドアウトさせる</translation>
+        <translation>フェイドアウトさせる</translation>
     </message>
 </context>
 </TS>

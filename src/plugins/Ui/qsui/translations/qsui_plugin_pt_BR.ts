@@ -84,7 +84,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="114"/>
         <source>By Date</source>
-        <translation type="unfinished">Por data</translation>
+        <translation>Por data</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="191"/>
@@ -397,27 +397,27 @@
     <message>
         <location filename="../qsuivisualization.cpp" line="125"/>
         <source>Cover</source>
-        <translation type="unfinished">Capa de álbum</translation>
+        <translation>Capa de álbum</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="128"/>
         <source>Visualization Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo de visualização</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="131"/>
         <source>Analyzer</source>
-        <translation type="unfinished"></translation>
+        <translation>Analisador</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="132"/>
         <source>Scope</source>
-        <translation type="unfinished"></translation>
+        <translation>Scope</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="139"/>
         <source>Analyzer Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo de analisador</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="141"/>
@@ -427,77 +427,77 @@
     <message>
         <location filename="../qsuivisualization.cpp" line="142"/>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Linhas</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="150"/>
         <source>Peaks</source>
-        <translation type="unfinished">Picos</translation>
+        <translation>Picos</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="153"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished">Taxa de atualização</translation>
+        <translation>Taxa de atualização</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="156"/>
         <source>50 fps</source>
-        <translation type="unfinished">50 fps</translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="157"/>
         <source>25 fps</source>
-        <translation type="unfinished">25 fps</translation>
+        <translation>25 fps</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="158"/>
         <source>10 fps</source>
-        <translation type="unfinished">10 fps</translation>
+        <translation>10 fps</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="159"/>
         <source>5 fps</source>
-        <translation type="unfinished">5 fps</translation>
+        <translation>5 fps</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="166"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished">Queda do analisador</translation>
+        <translation>Queda do analisador</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="169"/>
         <location filename="../qsuivisualization.cpp" line="183"/>
         <source>Slowest</source>
-        <translation type="unfinished">Mais lenta</translation>
+        <translation>Mais lenta</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="170"/>
         <location filename="../qsuivisualization.cpp" line="184"/>
         <source>Slow</source>
-        <translation type="unfinished">Lenta</translation>
+        <translation>Lenta</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="171"/>
         <location filename="../qsuivisualization.cpp" line="185"/>
         <source>Medium</source>
-        <translation type="unfinished">Média</translation>
+        <translation>Média</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="172"/>
         <location filename="../qsuivisualization.cpp" line="186"/>
         <source>Fast</source>
-        <translation type="unfinished">Rápida</translation>
+        <translation>Rápida</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="173"/>
         <location filename="../qsuivisualization.cpp" line="187"/>
         <source>Fastest</source>
-        <translation type="unfinished">Mais rápida</translation>
+        <translation>Mais rápida</translation>
     </message>
     <message>
         <location filename="../qsuivisualization.cpp" line="180"/>
         <source>Peaks Falloff</source>
-        <translation type="unfinished">Queda de picos</translation>
+        <translation>Solução para picos</translation>
     </message>
 </context>
 <context>
@@ -505,82 +505,82 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="43"/>
         <source>&amp;Play</source>
-        <translation type="unfinished">Re&amp;produzir</translation>
+        <translation>Re&amp;produzir</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="43"/>
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="44"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished">P&amp;ausa</translation>
+        <translation>P&amp;ausa</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="44"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="45"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished">Pa&amp;rar</translation>
+        <translation>Pa&amp;rar</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="45"/>
         <source>V</source>
-        <translation type="unfinished">V</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="46"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished">An&amp;terior</translation>
+        <translation>An&amp;terior</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="46"/>
         <source>Z</source>
-        <translation type="unfinished">Z</translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="47"/>
         <source>&amp;Next</source>
-        <translation type="unfinished">Próxi&amp;mo</translation>
+        <translation>Próxi&amp;mo</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="47"/>
         <source>B</source>
-        <translation type="unfinished">B</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="48"/>
         <source>&amp;Play/Pause</source>
-        <translation type="unfinished">Re&amp;produzir/pausa</translation>
+        <translation>Re&amp;produzir/pausa</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="48"/>
         <source>Space</source>
-        <translation type="unfinished">Espaço</translation>
+        <translation>Espaço</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>&amp;Jump to Track</source>
-        <translation type="unfinished">&amp;Ir para faixa</translation>
+        <translation>&amp;Ir para faixa</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="49"/>
         <source>J</source>
-        <translation type="unfinished">J</translation>
+        <translation>J</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>&amp;Play Files</source>
-        <translation type="unfinished">Re&amp;produzir arquivos</translation>
+        <translation>Re&amp;produzir arquivos</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="50"/>
         <source>E</source>
-        <translation type="unfinished">E</translation>
+        <translation>E</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="51"/>
@@ -590,42 +590,42 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>&amp;Repeat Playlist</source>
-        <translation type="unfinished">Repetir &amp;lista de reprodução</translation>
+        <translation>Repetir &amp;lista de reprodução</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="52"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>&amp;Repeat Track</source>
-        <translation type="unfinished">&amp;Repetir faixa</translation>
+        <translation>&amp;Repetir faixa</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="53"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished">&amp;Embaralhar</translation>
+        <translation>&amp;Embaralhar</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="54"/>
         <source>S</source>
-        <translation type="unfinished">S</translation>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
         <source>&amp;No Playlist Advance</source>
-        <translation type="unfinished">Sem avanço &amp;na lista de reprodução</translation>
+        <translation>Sem avanço &amp;na lista de reprodução</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="55"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+N</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="56"/>
@@ -635,37 +635,37 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="57"/>
         <source>&amp;Stop After Selected</source>
-        <translation type="unfinished">Parar após a &amp;seleção</translation>
+        <translation>Parar após a &amp;seleção</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="57"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="58"/>
         <source>&amp;Clear Queue</source>
-        <translation type="unfinished">Limpar fila de reproduçã&amp;o</translation>
+        <translation>Limpar fila de reproduçã&amp;o</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="58"/>
         <source>Alt+Q</source>
-        <translation type="unfinished">Alt+Q</translation>
+        <translation>Alt+Q</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="60"/>
         <source>Always on Top</source>
-        <translation type="unfinished">Sempre na frente</translation>
+        <translation>Sempre na frente</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="61"/>
         <source>Put on All Workspaces</source>
-        <translation type="unfinished">Mostrar em todas as áreas de trabalho</translation>
+        <translation>Mostrar em todas as áreas de trabalho</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="67"/>
         <source>Show Tabs</source>
-        <translation type="unfinished">Mostrar abas</translation>
+        <translation>Mostrar abas</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="68"/>
@@ -675,252 +675,252 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="69"/>
         <source>Block Toolbars</source>
-        <translation type="unfinished">Bloquear barra de ferramentas</translation>
+        <translation>Bloquear barra de ferramentas</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="71"/>
         <source>Volume &amp;+</source>
-        <translation type="unfinished">Volume &amp;+</translation>
+        <translation>Volume &amp;+</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="71"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="72"/>
         <source>Volume &amp;-</source>
-        <translation type="unfinished">Volume &amp;-</translation>
+        <translation>Volume &amp;-</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="72"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="73"/>
         <source>&amp;Mute</source>
-        <translation type="unfinished">&amp;Silenciar</translation>
+        <translation>&amp;Silenciar</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="73"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="75"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">&amp;Adicionar arquivo</translation>
+        <translation>&amp;Adicionar arquivo</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="75"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">A&amp;dicionar pasta</translation>
+        <translation>A&amp;dicionar pasta</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="76"/>
         <source>D</source>
-        <translation type="unfinished">D</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>&amp;Add Url</source>
-        <translation type="unfinished">Adicionar &amp;URL</translation>
+        <translation>Adicionar &amp;URL</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="77"/>
         <source>U</source>
-        <translation type="unfinished">U</translation>
+        <translation>U</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="78"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">&amp;Remover selecionados</translation>
+        <translation>&amp;Remover selecionados</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="78"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="79"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">&amp;Remover tudo</translation>
+        <translation>&amp;Remover tudo</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="80"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">Remover &amp;não selecionados</translation>
+        <translation>Remover &amp;não selecionados</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="81"/>
         <source>Remove unavailable files</source>
-        <translation type="unfinished">Remover arquivos indisponíveis</translation>
+        <translation>Remover arquivos indisponíveis</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="82"/>
         <source>Remove duplicates</source>
-        <translation type="unfinished">Remover duplicados</translation>
+        <translation>Remover duplicados</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="83"/>
         <source>Refresh</source>
-        <translation type="unfinished">Atualizar</translation>
+        <translation>Atualizar</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>&amp;Queue Toggle</source>
-        <translation type="unfinished">A&amp;lternar fila de reprodução</translation>
+        <translation>A&amp;lternar fila de reprodução</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="84"/>
         <source>Q</source>
-        <translation type="unfinished">Q</translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="85"/>
         <source>Invert Selection</source>
-        <translation type="unfinished">Inverter seleção</translation>
+        <translation>Inverter seleção</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="86"/>
         <source>&amp;Select None</source>
-        <translation type="unfinished">De&amp;smarcar tudo</translation>
+        <translation>De&amp;smarcar tudo</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;Selecionar todos</translation>
+        <translation>&amp;Selecionar tudo</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="87"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">Ctrl+A</translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="88"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished">&amp;Ver detalhes da faixa</translation>
+        <translation>&amp;Ver detalhes da faixa</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="88"/>
         <source>Alt+I</source>
-        <translation type="unfinished">Alt+I</translation>
+        <translation>Alt+I</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>&amp;New List</source>
-        <translation type="unfinished">&amp;Nova lista</translation>
+        <translation>&amp;Nova lista</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="89"/>
         <source>Ctrl+T</source>
-        <translation type="unfinished">Ctrl+T</translation>
+        <translation>Ctrl+T</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>&amp;Delete List</source>
-        <translation type="unfinished">&amp;Apagar lista</translation>
+        <translation>&amp;Apagar lista</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="90"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="91"/>
         <source>&amp;Load List</source>
-        <translation type="unfinished">Carregar &amp;lista</translation>
+        <translation>Carregar &amp;lista</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="91"/>
         <source>O</source>
-        <translation type="unfinished">O</translation>
+        <translation>O</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>&amp;Save List</source>
-        <translation type="unfinished">Salvar li&amp;sta</translation>
+        <translation>Salvar li&amp;sta</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="92"/>
         <source>Shift+S</source>
-        <translation type="unfinished">Shift+S</translation>
+        <translation>Shift+S</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>&amp;Rename List</source>
-        <translation type="unfinished">&amp;Renomear lista</translation>
+        <translation>&amp;Renomear lista</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="93"/>
         <source>F2</source>
-        <translation type="unfinished">F2</translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>&amp;Select Next Playlist</source>
-        <translation type="unfinished">&amp;Selecionar próxima lista de reprodução</translation>
+        <translation>&amp;Selecionar próxima lista de reprodução</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="94"/>
         <source>Ctrl+PgDown</source>
-        <translation type="unfinished">Ctrl+PgDown</translation>
+        <translation>Ctrl+PgDown</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation type="unfinished">Selecionar lista de reprodução a&amp;nterior</translation>
+        <translation>Selecionar lista de reprodução a&amp;nterior</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="95"/>
         <source>Ctrl+PgUp</source>
-        <translation type="unfinished">Ctrl+PgUp</translation>
+        <translation>Ctrl+PgUp</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>&amp;Group Tracks</source>
-        <translation type="unfinished">A&amp;grupar faixas</translation>
+        <translation>A&amp;grupar faixas</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="96"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+G</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>&amp;Show Column Headers</source>
-        <translation type="unfinished">Mo&amp;strar cabeçalhos de colunas</translation>
+        <translation>Mo&amp;strar cabeçalhos de colunas</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="97"/>
         <source>Ctrl+H</source>
-        <translation type="unfinished">Ctrl+H</translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>&amp;Equalizer</source>
-        <translation type="unfinished">&amp;Equalizador</translation>
+        <translation>&amp;Equalizador</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="99"/>
         <source>Ctrl+E</source>
-        <translation type="unfinished">Ctrl+E</translation>
+        <translation>Ctrl+E</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished">Preferência&amp;s</translation>
+        <translation>Preferência&amp;s</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="100"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished">Ctrl+P</translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="101"/>
@@ -930,32 +930,32 @@
     <message>
         <location filename="../qsuiactionmanager.cpp" line="102"/>
         <source>&amp;About Ui</source>
-        <translation type="unfinished">Sobre &amp;UI</translation>
+        <translation>Sobre &amp;UI</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="103"/>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;Sobre</translation>
+        <translation>&amp;Sobre</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="104"/>
         <source>&amp;About Qt</source>
-        <translation type="unfinished">Sobre &amp;Qt</translation>
+        <translation>Sobre &amp;Qt</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">S&amp;air</translation>
+        <translation>S&amp;air</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="105"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../qsuiactionmanager.cpp" line="310"/>
         <source>Toolbar</source>
-        <translation type="unfinished">Barra de ferramentas</translation>
+        <translation>Barra de ferramentas</translation>
     </message>
 </context>
 <context>
@@ -963,17 +963,17 @@
     <message>
         <location filename="../qsuicoverwidget.cpp" line="32"/>
         <source>&amp;Save As...</source>
-        <translation type="unfinished">Salvar &amp;como...</translation>
+        <translation>&amp;Salvar como...</translation>
     </message>
     <message>
         <location filename="../qsuicoverwidget.cpp" line="65"/>
         <source>Save Cover As</source>
-        <translation type="unfinished">Salvar capa como</translation>
+        <translation>Salvar capa como</translation>
     </message>
     <message>
         <location filename="../qsuicoverwidget.cpp" line="67"/>
         <source>Images</source>
-        <translation type="unfinished">Imagens</translation>
+        <translation>Imagens</translation>
     </message>
 </context>
 <context>
@@ -981,64 +981,64 @@
     <message>
         <location filename="../qsuiequalizer.cpp" line="39"/>
         <source>Equalizer</source>
-        <translation type="unfinished">Equalizador</translation>
+        <translation>Equalizador</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="48"/>
         <source>Enable equalizer</source>
-        <translation type="unfinished">Ativar equalizador</translation>
+        <translation>Ativar equalizador</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="54"/>
         <source>Preset:</source>
-        <translation type="unfinished">Pré-ajuste:</translation>
+        <translation>Pré-ajuste:</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="62"/>
         <source>Save</source>
-        <translation type="unfinished">Salvar</translation>
+        <translation>Salvar</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="66"/>
         <source>Delete</source>
-        <translation type="unfinished">Apagar</translation>
+        <translation>Apagar</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="70"/>
         <source>Reset</source>
-        <translation type="unfinished">Restaurar</translation>
+        <translation>Restaurar</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="83"/>
         <source>Preamp</source>
-        <translation type="unfinished">Amplificador</translation>
+        <translation>Amplificador</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="100"/>
         <location filename="../qsuiequalizer.cpp" line="195"/>
         <source>%1dB</source>
-        <translation type="unfinished">%1dB</translation>
+        <translation>%1dB</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="102"/>
         <location filename="../qsuiequalizer.cpp" line="193"/>
         <source>+%1dB</source>
-        <translation type="unfinished">+%1dB</translation>
+        <translation>+%1dB</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="148"/>
         <source>preset</source>
-        <translation type="unfinished">pré-ajuste</translation>
+        <translation>pré-ajuste</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="218"/>
         <source>Overwrite Request</source>
-        <translation type="unfinished">Substituição</translation>
+        <translation>Substituição</translation>
     </message>
     <message>
         <location filename="../qsuiequalizer.cpp" line="219"/>
         <source>Preset &apos;%1&apos; already exists. Overwrite?</source>
-        <translation type="unfinished">O pré-ajuste %1 já existe. Substituir?</translation>
+        <translation>O pré-ajuste %1 já existe. Substituir?</translation>
     </message>
 </context>
 <context>
@@ -1046,7 +1046,7 @@
     <message>
         <location filename="../qsuifactory.cpp" line="32"/>
         <source>Simple User Interface</source>
-        <translation type="unfinished">Interface de usuário simples</translation>
+        <translation>Interface de usuário simples</translation>
     </message>
 </context>
 <context>
@@ -1054,62 +1054,62 @@
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="33"/>
         <source>Change shortcut...</source>
-        <translation type="unfinished">Mudar atalho...</translation>
+        <translation>Mudar atalho...</translation>
     </message>
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="40"/>
         <source>Reset</source>
-        <translation type="unfinished">Restaurar</translation>
+        <translation>Restaurar</translation>
     </message>
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="54"/>
         <source>Action</source>
-        <translation type="unfinished">Ação</translation>
+        <translation>Ação</translation>
     </message>
     <message>
         <location filename="../forms/qsuihotkeyeditor.ui" line="59"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Atalho</translation>
+        <translation>Atalho</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="56"/>
         <source>Reset Shortcuts</source>
-        <translation type="unfinished">Restaurar atalhos</translation>
+        <translation>Restaurar atalhos</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="57"/>
         <source>Do you want to restore default shortcuts?</source>
-        <translation type="unfinished">Gostaria de restaurar os atalhos originais?</translation>
+        <translation>Gostaria de restaurar os atalhos originais?</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="69"/>
         <source>Playback</source>
-        <translation type="unfinished">Reprodução</translation>
+        <translation>Reprodução</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="75"/>
         <source>View</source>
-        <translation type="unfinished">Ver</translation>
+        <translation>Ver</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="81"/>
         <source>Volume</source>
-        <translation type="unfinished">Volume</translation>
+        <translation>Volume</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="87"/>
         <source>Playlist</source>
-        <translation type="unfinished">Lista de reprodução</translation>
+        <translation>Lista de reprodução</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="93"/>
         <source>Misc</source>
-        <translation type="unfinished">Diversos</translation>
+        <translation>Diversos</translation>
     </message>
     <message>
         <location filename="../qsuihotkeyeditor.cpp" line="101"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Ferramentas</translation>
     </message>
 </context>
 <context>
@@ -1118,58 +1118,58 @@
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
         <location filename="../qsuimainwindow.cpp" line="912"/>
         <source>Qmmp</source>
-        <translation type="unfinished">Qmmp</translation>
+        <translation>Qmmp</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="35"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Arquivo</translation>
+        <translation>&amp;Arquivo</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="40"/>
         <source>&amp;Tools</source>
-        <translation type="unfinished">Ferramen&amp;tas</translation>
+        <translation>Ferramen&amp;tas</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="45"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">Aj&amp;uda</translation>
+        <translation>Aj&amp;uda</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="50"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished">&amp;Editar</translation>
+        <translation>&amp;Editar</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="55"/>
         <source>&amp;Playback</source>
-        <translation type="unfinished">Re&amp;produção</translation>
+        <translation>Re&amp;produção</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="60"/>
         <source>&amp;View</source>
-        <translation type="unfinished">&amp;Ver</translation>
+        <translation>&amp;Ver</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="84"/>
         <location filename="../forms/qsuimainwindow.ui" line="249"/>
         <source>Visualization</source>
-        <translation type="unfinished">Visualização</translation>
+        <translation>Visualização</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="99"/>
         <source>Files</source>
-        <translation type="unfinished">Arquivos</translation>
+        <translation>Arquivos</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="114"/>
         <source>Cover</source>
-        <translation type="unfinished">Capa de álbum</translation>
+        <translation>Capa de álbum</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="123"/>
         <source>Playlists</source>
-        <translation type="unfinished">Listas de reprodução</translation>
+        <translation>Listas de reprodução</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="135"/>
@@ -1179,113 +1179,113 @@
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="149"/>
         <source>Previous</source>
-        <translation type="unfinished">Anterior</translation>
+        <translation>Anterior</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="159"/>
         <source>Play</source>
-        <translation type="unfinished">Reproduzir</translation>
+        <translation>Reproduzir</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="169"/>
         <source>Pause</source>
-        <translation type="unfinished">Pausa</translation>
+        <translation>Pausa</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="179"/>
         <source>Next</source>
-        <translation type="unfinished">Próximo</translation>
+        <translation>Próximo</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="189"/>
         <source>Stop</source>
-        <translation type="unfinished">Parar</translation>
+        <translation>Parar</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="194"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">&amp;Adicionar arquivo</translation>
+        <translation>&amp;Adicionar arquivo</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="199"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">&amp;Remover tudo</translation>
+        <translation>&amp;Remover tudo</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="204"/>
         <source>New Playlist</source>
-        <translation type="unfinished">Nova lista de reprodução</translation>
+        <translation>Nova lista de reprodução</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="209"/>
         <source>Remove Playlist</source>
-        <translation type="unfinished">Remover lista de reprodução</translation>
+        <translation>Remover lista de reprodução</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="214"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">A&amp;dicionar pasta</translation>
+        <translation>A&amp;dicionar pasta</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="219"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">S&amp;air</translation>
+        <translation>S&amp;air</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="224"/>
         <source>About</source>
-        <translation type="unfinished">Sobre</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="229"/>
         <source>About Qt</source>
-        <translation type="unfinished">Sobre Qt</translation>
+        <translation>Sobre Qt</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="234"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;Selecionar todos</translation>
+        <translation>&amp;Selecionar tudo</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="239"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">&amp;Remover selecionados</translation>
+        <translation>&amp;Remover selecionados</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="244"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">Remover &amp;não selecionados</translation>
+        <translation>Remover &amp;não selecionados</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="254"/>
         <source>Settings</source>
-        <translation type="unfinished">Preferências</translation>
+        <translation>Preferências</translation>
     </message>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="259"/>
         <location filename="../qsuimainwindow.cpp" line="295"/>
         <source>Rename Playlist</source>
-        <translation type="unfinished">Renomear lista de reprodução</translation>
+        <translation>Renomear lista de reprodução</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="86"/>
         <source>&amp;Copy Selection To</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Copiar selecionados para</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="295"/>
         <source>Playlist name:</source>
-        <translation type="unfinished">Nome da lista de reprodução:</translation>
+        <translation>Nome da lista de reprodução:</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="335"/>
         <source>Appearance</source>
-        <translation type="unfinished">Aparência</translation>
+        <translation>Aparência</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="336"/>
         <source>Shortcuts</source>
-        <translation type="unfinished">Atalhos</translation>
+        <translation>Atalhos</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="415"/>
@@ -1295,37 +1295,37 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="434"/>
         <source>Add new playlist</source>
-        <translation type="unfinished">Adicionar nova lista de reprodução</translation>
+        <translation>Adicionar nova lista de reprodução</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="440"/>
         <source>Show all tabs</source>
-        <translation type="unfinished">Mostrar todos as abas</translation>
+        <translation>Mostrar todos as abas</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="467"/>
         <source>Ctrl+0</source>
-        <translation type="unfinished">Ctrl+0</translation>
+        <translation>Ctrl+0</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="473"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="478"/>
         <source>Position</source>
-        <translation type="unfinished">Posição</translation>
+        <translation>Posição</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="480"/>
         <source>Volume</source>
-        <translation type="unfinished">Volume</translation>
+        <translation>Volume</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="482"/>
         <source>Balance</source>
-        <translation type="unfinished"></translation>
+        <translation>Balanço</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="485"/>
@@ -1335,108 +1335,108 @@
     <message>
         <location filename="../qsuimainwindow.cpp" line="540"/>
         <source>Edit Toolbars</source>
-        <translation type="unfinished">Editar barras de ferramentas</translation>
+        <translation>Editar barras de ferramentas</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="542"/>
         <source>Sort List</source>
-        <translation type="unfinished">Organizar lista</translation>
+        <translation>Organizar lista</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="544"/>
         <location filename="../qsuimainwindow.cpp" line="560"/>
         <source>By Title</source>
-        <translation type="unfinished">Por título</translation>
+        <translation>Por título</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="545"/>
         <location filename="../qsuimainwindow.cpp" line="561"/>
         <source>By Album</source>
-        <translation type="unfinished">Por álbum</translation>
+        <translation>Por álbum</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="546"/>
         <location filename="../qsuimainwindow.cpp" line="562"/>
         <source>By Artist</source>
-        <translation type="unfinished">Por artista</translation>
+        <translation>Por artista</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="547"/>
         <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>By Album Artist</source>
-        <translation type="unfinished">Por artista do álbum</translation>
+        <translation>Por artista do álbum</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="548"/>
         <location filename="../qsuimainwindow.cpp" line="564"/>
         <source>By Filename</source>
-        <translation type="unfinished">Por nome de arquivo</translation>
+        <translation>Por nome de arquivo</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="549"/>
         <location filename="../qsuimainwindow.cpp" line="565"/>
         <source>By Path + Filename</source>
-        <translation type="unfinished">Por caminho e nome de arquivo</translation>
+        <translation>Por caminho e nome de arquivo</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="550"/>
         <location filename="../qsuimainwindow.cpp" line="566"/>
         <source>By Date</source>
-        <translation type="unfinished">Por data</translation>
+        <translation>Por data</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="551"/>
         <location filename="../qsuimainwindow.cpp" line="567"/>
         <source>By Track Number</source>
-        <translation type="unfinished">Por número de faixa</translation>
+        <translation>Por número de faixa</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="552"/>
         <location filename="../qsuimainwindow.cpp" line="568"/>
         <source>By Disc Number</source>
-        <translation type="unfinished">Por número de disco</translation>
+        <translation>Por número de disco</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="553"/>
         <location filename="../qsuimainwindow.cpp" line="569"/>
         <source>By File Creation Date</source>
-        <translation type="unfinished">Por data de criação do arquivo</translation>
+        <translation>Por data de criação do arquivo</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="554"/>
         <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>By File Modification Date</source>
-        <translation type="unfinished">Por data de modificação do arquivo</translation>
+        <translation>Por data de modificação do arquivo</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="555"/>
         <source>By Group</source>
-        <translation type="unfinished">Por grupo</translation>
+        <translation>Por grupo</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="558"/>
         <source>Sort Selection</source>
-        <translation type="unfinished">Organizar seleção</translation>
+        <translation>Organizar seleção</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="574"/>
         <source>Randomize List</source>
-        <translation type="unfinished">Lista aleatória</translation>
+        <translation>Lista aleatória</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="576"/>
         <source>Reverse List</source>
-        <translation type="unfinished">Inverter lista</translation>
+        <translation>Inverter lista</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="617"/>
         <source>Actions</source>
-        <translation type="unfinished">Ações</translation>
+        <translation>Ações</translation>
     </message>
     <message>
         <location filename="../qsuimainwindow.cpp" line="933"/>
         <source>&amp;New PlayList</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nova lista de reprodução</translation>
     </message>
 </context>
 <context>
@@ -1452,50 +1452,50 @@
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="54"/>
         <source>Add Column</source>
-        <translation type="unfinished">Adicionar coluna</translation>
+        <translation>Adicionar coluna</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="55"/>
         <source>Edit Column</source>
-        <translation type="unfinished">Editar coluna</translation>
+        <translation>Editar coluna</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="56"/>
         <source>Show Queue/Protocol</source>
-        <translation type="unfinished">Mostrar fila/protocolo</translation>
+        <translation>Mostrar fila/protocolo</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="58"/>
         <source>Auto-resize</source>
-        <translation type="unfinished">Ajuste automático</translation>
+        <translation>Ajuste automático</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="61"/>
         <source>Alignment</source>
-        <translation type="unfinished">Alinhamento</translation>
+        <translation>Alinhamento</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="62"/>
         <source>Left</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Esquerda</translation>
+        <translation>Esquerda</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="63"/>
         <source>Right</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Direita</translation>
+        <translation>Direita</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="64"/>
         <source>Center</source>
         <comment>alignment</comment>
-        <translation type="unfinished">Centro</translation>
+        <translation>Centro</translation>
     </message>
     <message>
         <location filename="../qsuiplaylistheader.cpp" line="74"/>
         <source>Remove Column</source>
-        <translation type="unfinished">Remover coluna</translation>
+        <translation>Remover coluna</translation>
     </message>
 </context>
 <context>
@@ -1503,47 +1503,47 @@
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="14"/>
         <source>Popup Information Settings</source>
-        <translation type="unfinished">Definições do alerta de informações</translation>
+        <translation>Definições do alerta de informações</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="29"/>
         <source>Template</source>
-        <translation type="unfinished">Modelo</translation>
+        <translation>Modelo</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished">Restaurar</translation>
+        <translation>Restaurar</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="65"/>
         <source>Insert</source>
-        <translation type="unfinished">Inserir</translation>
+        <translation>Inserir</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation type="unfinished">Mostrar capa de álbum</translation>
+        <translation>Mostrar capa de álbum</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Tamanho:</translation>
+        <translation>Tamanho:</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="115"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Transparência:</translation>
+        <translation>Transparência:</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation type="unfinished">Atraso:</translation>
+        <translation>Atraso:</translation>
     </message>
     <message>
         <location filename="../forms/qsuipopupsettings.ui" line="165"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
 </context>
 <context>
@@ -1551,7 +1551,7 @@
     <message>
         <location filename="../qsuisettings.cpp" line="41"/>
         <source>Default</source>
-        <translation type="unfinished">Pré-definido</translation>
+        <translation>Pré-definido</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="42"/>
@@ -1591,12 +1591,12 @@
     <message>
         <location filename="../qsuisettings.cpp" line="50"/>
         <source>Left</source>
-        <translation type="unfinished">Esquerda</translation>
+        <translation>Esquerda</translation>
     </message>
     <message>
         <location filename="../qsuisettings.cpp" line="51"/>
         <source>Right</source>
-        <translation type="unfinished">Direita</translation>
+        <translation>Direita</translation>
     </message>
 </context>
 <context>
@@ -1614,12 +1614,12 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="87"/>
         <source>Playing</source>
-        <translation type="unfinished">Reprodução</translation>
+        <translation>Reprodução</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="87"/>
         <source>Paused</source>
-        <translation type="unfinished">Pausado</translation>
+        <translation>Pausado</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="102"/>
@@ -1629,17 +1629,17 @@
     <message>
         <location filename="../qsuistatusbar.cpp" line="127"/>
         <source>Stopped</source>
-        <translation type="unfinished">Parado</translation>
+        <translation>Parado</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="139"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="147"/>
         <source>Buffering: %1%</source>
-        <translation type="unfinished">Processamento: %1%</translation>
+        <translation>Processamento: %1%</translation>
     </message>
     <message>
         <location filename="../qsuistatusbar.cpp" line="152"/>

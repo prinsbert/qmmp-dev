@@ -34,12 +34,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="14"/>
         <source>Track Change Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon de suivi de changements</translation>
+        <translation>Configuration du greffon de suivi de changements</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="29"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation type="unfinished">Commande à exécuter quand Qmmp commence un nouveau morceau</translation>
+        <translation>Commande à exécuter quand Qmmp commence un nouveau morceau</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="39"/>
@@ -47,22 +47,22 @@
         <location filename="../trackchangesettingsdialog.ui" line="73"/>
         <location filename="../trackchangesettingsdialog.ui" line="90"/>
         <source>...</source>
-        <translation type="unfinished">…</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="46"/>
         <source>Command to run toward to end of a track</source>
-        <translation type="unfinished">Commande à exécuter à la fin d&apos;un morceau</translation>
+        <translation>Commande à exécuter à la fin d&apos;un morceau</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation type="unfinished">Commande à exécuter quand Qmmp atteint la fin de la liste</translation>
+        <translation>Commande à exécuter quand Qmmp atteint la fin de la liste</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation type="unfinished">Commande à exécuter quand le titre change (par exemple, le titre d&apos;un flux réseau)</translation>
+        <translation>Commande à exécuter quand le titre change (par exemple, le titre d&apos;un flux réseau)</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>

@@ -39,37 +39,37 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="14"/>
         <source>WildMidi Plugin Settings</source>
-        <translation type="unfinished">Einstellungen WildMidi-Modul</translation>
+        <translation>Einstellungen WildMidi-Modul</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="29"/>
         <source>Instrument configuration: </source>
-        <translation type="unfinished">Instrumenteneinrichtung:</translation>
+        <translation>Instrumenteneinrichtung:</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="43"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Abtastrate:</translation>
+        <translation>Abtastrate:</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="50"/>
         <source>Enhanced resampling</source>
-        <translation type="unfinished">Verbesserte Abtastratenkonvertierung</translation>
+        <translation>Verbesserte Abtastratenkonvertierung</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="57"/>
         <source>Reverberation</source>
-        <translation type="unfinished">Nachhall</translation>
+        <translation>Nachhall</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

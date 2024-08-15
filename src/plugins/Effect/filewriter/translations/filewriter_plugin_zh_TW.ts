@@ -29,22 +29,22 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation type="unfinished">檔案寫入外掛設定</translation>
+        <translation>檔案寫入外掛設定</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation type="unfinished">檔案輸出目錄:</translation>
+        <translation>檔案輸出目錄:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation type="unfinished">音質:</translation>
+        <translation>音質:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation type="unfinished">輸入檔案名稱:</translation>
+        <translation>輸入檔案名稱:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">選取一個目錄</translation>
+        <translation>選取一個目錄</translation>
     </message>
 </context>
 </TS>

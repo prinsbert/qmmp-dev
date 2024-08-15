@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>OutputJACKFactory</name>
     <message>
         <location filename="../outputjackfactory.cpp" line="30"/>
         <source>JACK Plugin</source>
-        <translation>Модуль JACK</translation>
+        <translation>Втулок JACK</translation>
     </message>
     <message>
         <location filename="../outputjackfactory.cpp" line="54"/>
         <source>About Jack Output Plugin</source>
-        <translation>Про модуль виводу Jack</translation>
+        <translation>Про втулок виводу Jack</translation>
     </message>
     <message>
         <location filename="../outputjackfactory.cpp" line="55"/>
         <source>Qmmp Jack Output Plugin</source>
-        <translation>Модуль виводу Jack для Qmmp</translation>
+        <translation>Втулок виводу Jack для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputjackfactory.cpp" line="56"/>

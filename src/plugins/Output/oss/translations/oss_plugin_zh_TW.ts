@@ -6,42 +6,42 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">OSS 插件設定</translation>
+        <translation>OSS 插件設定</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">裝置設定</translation>
+        <translation>裝置設定</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">聲訊裝置</translation>
+        <translation>聲訊裝置</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">混頻裝置</translation>
+        <translation>混頻裝置</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">進階設定</translation>
+        <translation>進階設定</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">音效卡</translation>
+        <translation>音效卡</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">緩衝時間(ms)：</translation>
+        <translation>緩衝時間(ms)：</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">周期時間(ms)：</translation>
+        <translation>周期時間(ms)：</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>

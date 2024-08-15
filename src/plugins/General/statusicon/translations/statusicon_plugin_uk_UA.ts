@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>StatusIcon</name>
     <message>
@@ -11,17 +11,17 @@
     <message>
         <location filename="../statusicon.cpp" line="71"/>
         <source>Pause</source>
-        <translation>Пауза</translation>
+        <translation>Павза</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="72"/>
         <source>Stop</source>
-        <translation>Стоп</translation>
+        <translation>Зупинити</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="74"/>
         <source>Next</source>
-        <translation>Вперед</translation>
+        <translation>Уперед</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="75"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../statusicon.cpp" line="77"/>
         <source>Exit</source>
-        <translation>Вихід</translation>
+        <translation>Вийти</translation>
     </message>
     <message>
         <location filename="../statusicon.cpp" line="119"/>
@@ -49,17 +49,17 @@
     <message>
         <location filename="../statusiconfactory.cpp" line="29"/>
         <source>Status Icon Plugin</source>
-        <translation>Модуль Status Icon</translation>
+        <translation>Втулок Status Icon</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="49"/>
         <source>About Status Icon Plugin</source>
-        <translation>Про модуль Status Icon</translation>
+        <translation>Про втулок Status Icon</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="50"/>
         <source>Qmmp Status Icon Plugin</source>
-        <translation>Модуль Status Icon для Qmmp</translation>
+        <translation>Втулок Status Icon для Qmmp</translation>
     </message>
     <message>
         <location filename="../statusiconfactory.cpp" line="51"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../statusiconfactory.cpp" line="53"/>
         <source>Artur Guzik &lt;a.guzik88@gmail.com&gt;</source>
-        <translation></translation>
+        <translation>Артур Ґузік &lt;a.guzik88@gmail.com&gt;</translation>
     </message>
 </context>
 <context>
@@ -82,68 +82,68 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="14"/>
         <source>Status Icon Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля Status Icon</translation>
+        <translation>Налаштування втулка Status Icon</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="29"/>
         <source>Balloon message</source>
-        <translation type="unfinished">Спливаюче повідомлення</translation>
+        <translation>Виринне повідомлення</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="38"/>
         <location filename="../statusiconsettingsdialog.ui" line="105"/>
         <source>Delay, ms:</source>
-        <translation type="unfinished">Затримка, мс:</translation>
+        <translation>Затримка, мс:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="79"/>
         <source>Tooltip</source>
-        <translation type="unfinished">Підказка</translation>
+        <translation>Підказка</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="91"/>
         <source>Try to split file name when no tag</source>
-        <translation type="unfinished">Розділити ім&apos;я файла, якщо немає тегів</translation>
+        <translation>Розділити ім&apos;я файлу, якщо нема теґів</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="98"/>
         <source>Show progress bar</source>
-        <translation type="unfinished">Показувати полосу завершення</translation>
+        <translation>Показувати смугу поступу</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="131"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Прозорість:</translation>
+        <translation>Прозорість:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="165"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="174"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Розмір обкладинки:</translation>
+        <translation>Розмір обкладинки:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="214"/>
         <source>32</source>
-        <translation type="unfinished"></translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="225"/>
         <source>Edit template</source>
-        <translation type="unfinished">Редагувати шаблон</translation>
+        <translation>Змінити шаблон</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="250"/>
         <source>Use standard icons</source>
-        <translation type="unfinished">Використовувати стандартні іконки</translation>
+        <translation>Використовувати стандартні піктограми</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.cpp" line="85"/>
         <source>Tooltip Template</source>
-        <translation type="unfinished">Шаблон спливаючої підказки</translation>
+        <translation>Шаблон виринної підказки</translation>
     </message>
 </context>
 </TS>

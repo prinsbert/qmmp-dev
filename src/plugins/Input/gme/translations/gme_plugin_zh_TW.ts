@@ -39,22 +39,22 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation type="unfinished">GME 外掛設定</translation>
+        <translation>GME 外掛設定</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation type="unfinished">音量淡出時間:</translation>
+        <translation>音量淡出時間:</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation type="unfinished">毫秒</translation>
+        <translation>毫秒</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation type="unfinished">啟用音量淡出</translation>
+        <translation>啟用音量淡出</translation>
     </message>
 </context>
 </TS>

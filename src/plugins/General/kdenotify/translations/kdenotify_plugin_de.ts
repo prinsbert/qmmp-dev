@@ -14,7 +14,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="29"/>
         <source>KDE notification plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>KDE-Benachrichtigungsmodul</translation>
     </message>
     <message>
         <location filename="../kdenotifyfactory.cpp" line="49"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../kdenotifyfactory.cpp" line="50"/>
         <source>KDE notification plugin for Qmmp</source>
-        <translation type="unfinished"></translation>
+        <translation>KDE-Benachrichtigungsmodul für Qmmp</translation>
     </message>
 </context>
 <context>
@@ -37,47 +37,47 @@
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="39"/>
         <source>Options</source>
-        <translation type="unfinished">Optionen</translation>
+        <translation>Optionen</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation type="unfinished">Benachrichtigungsverzögerung:</translation>
+        <translation>Benachrichtigungsverzögerung:</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="52"/>
         <source>Update visible notification instead create new</source>
-        <translation type="unfinished">Angezeigte Benachrichtigung aktualisieren anstatt neue zu erstellen</translation>
+        <translation>Angezeigte Benachrichtigung aktualisieren anstatt neue zu erstellen</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="72"/>
         <source>s</source>
-        <translation type="unfinished">s</translation>
+        <translation>s</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Lautstärkeänderungsbenachrichtigung</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="95"/>
         <source>Appearance</source>
-        <translation type="unfinished">Erscheinungsbild</translation>
+        <translation>Erscheinungsbild</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="101"/>
         <source>Show covers</source>
-        <translation type="unfinished">Cover anzeigen</translation>
+        <translation>Cover anzeigen</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="110"/>
         <source>Edit template</source>
-        <translation type="unfinished">Vorlage bearbeiten</translation>
+        <translation>Vorlage bearbeiten</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.cpp" line="76"/>
         <source>Notification Template</source>
-        <translation type="unfinished">Benachrichtigungsvorlage</translation>
+        <translation>Benachrichtigungsvorlage</translation>
     </message>
 </context>
 </TS>

@@ -6,17 +6,17 @@
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="14"/>
         <source>Crossfade Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Crossfade Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="29"/>
         <source>Overlap:</source>
-        <translation type="unfinished"></translation>
+        <translation>Üst üste çakışma:</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="42"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
 </context>
 <context>
@@ -24,17 +24,17 @@
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="30"/>
         <source>Crossfade Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Crossfade Eklentisi</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="50"/>
         <source>About Crossfade Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Crossfade Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="51"/>
         <source>Qmmp Crossfade Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Crossfade Eklentisi</translation>
     </message>
     <message>
         <location filename="../effectcrossfadefactory.cpp" line="52"/>

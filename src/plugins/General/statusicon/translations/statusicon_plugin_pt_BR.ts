@@ -82,68 +82,68 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="14"/>
         <source>Status Icon Plugin Settings</source>
-        <translation type="unfinished">Preferências do plugin Status Icon</translation>
+        <translation>Preferências do plugin Status Icon</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="29"/>
         <source>Balloon message</source>
-        <translation type="unfinished">Mensagem em balão</translation>
+        <translation>Mensagem em balão</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="38"/>
         <location filename="../statusiconsettingsdialog.ui" line="105"/>
         <source>Delay, ms:</source>
-        <translation type="unfinished">Atraso (ms):</translation>
+        <translation>Atraso (ms):</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="79"/>
         <source>Tooltip</source>
-        <translation type="unfinished">Dica</translation>
+        <translation>Dica</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="91"/>
         <source>Try to split file name when no tag</source>
-        <translation type="unfinished">Tentar separar o nome se não existir etiqueta</translation>
+        <translation>Tentar separar o nome se não existir etiqueta</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="98"/>
         <source>Show progress bar</source>
-        <translation type="unfinished">Mostrar barra de progresso</translation>
+        <translation>Mostrar barra de progresso</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="131"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Transparência:</translation>
+        <translation>Transparência:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="165"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="174"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Tamanho da capa:</translation>
+        <translation>Tamanho:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="214"/>
         <source>32</source>
-        <translation type="unfinished">32</translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="225"/>
         <source>Edit template</source>
-        <translation type="unfinished">Editar modelo</translation>
+        <translation>Editar modelo</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="250"/>
         <source>Use standard icons</source>
-        <translation type="unfinished">Utilizar ícones padrão</translation>
+        <translation>Utilizar ícones padrão</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.cpp" line="85"/>
         <source>Tooltip Template</source>
-        <translation type="unfinished">Modelo das dicas</translation>
+        <translation>Modelo das dicas</translation>
     </message>
 </context>
 </TS>

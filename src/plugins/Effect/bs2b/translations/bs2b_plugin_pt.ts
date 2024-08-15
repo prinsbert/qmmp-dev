@@ -6,43 +6,43 @@
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="14"/>
         <source>BS2B Plugin Settings</source>
-        <translation type="unfinished">Definições</translation>
+        <translation>Definições</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="32"/>
         <source>Crossfeed level</source>
-        <translation type="unfinished">Nível de sobreposição</translation>
+        <translation>Nível de sobreposição</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="45"/>
         <location filename="../bs2bsettingsdialog.ui" line="59"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="71"/>
         <source>Default</source>
-        <translation type="unfinished">Padrão</translation>
+        <translation>Padrão</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="78"/>
         <source>C.Moy</source>
-        <translation type="unfinished">C. Moy</translation>
+        <translation>C. Moy</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.ui" line="85"/>
         <source>J. Meier</source>
-        <translation type="unfinished">J. Meier</translation>
+        <translation>J. Meier</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.cpp" line="61"/>
         <source>%1 Hz, %2 us</source>
-        <translation type="unfinished">%1 Hz, %2 us</translation>
+        <translation>%1 Hz, %2 us</translation>
     </message>
     <message>
         <location filename="../bs2bsettingsdialog.cpp" line="68"/>
         <source>%1 dB</source>
-        <translation type="unfinished">%1 dB</translation>
+        <translation>%1 dB</translation>
     </message>
 </context>
 <context>

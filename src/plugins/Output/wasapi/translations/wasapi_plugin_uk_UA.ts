@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>OutputWASAPIFactory</name>
     <message>
         <location filename="../outputwasapifactory.cpp" line="29"/>
         <source>WASAPI Plugin</source>
-        <translation>Модуль WASAPI</translation>
+        <translation>Втулок WASAPI</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="53"/>
         <source>About WASAPI Output Plugin</source>
-        <translation>Про модуль виведення WASAPI</translation>
+        <translation>Про втулок виведення WASAPI</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="54"/>
         <source>Qmmp WASAPI Output Plugin</source>
-        <translation>Модуль виведення WASAPI для Qmmp</translation>
+        <translation>Втулок виведення WASAPI для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="55"/>
@@ -29,32 +29,32 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля WASAPI</translation>
+        <translation>Налаштування втулка WASAPI</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
         <source>Device:</source>
-        <translation type="unfinished">Пристрій:</translation>
+        <translation>Пристрій:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір буферу:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>мс</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished">Режим монопольного доступу</translation>
+        <translation>Режим монопольного доступу</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">За замовчанням</translation>
+        <translation>Усталено</translation>
     </message>
 </context>
 </TS>

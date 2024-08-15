@@ -39,22 +39,22 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation type="unfinished">Einstellungen GME-Modul</translation>
+        <translation>Einstellungen GME-Modul</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation type="unfinished">Ausblendlänge:</translation>
+        <translation>Ausblendlänge:</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation type="unfinished">Ausblendung aktivieren</translation>
+        <translation>Ausblendung aktivieren</translation>
     </message>
 </context>
 </TS>

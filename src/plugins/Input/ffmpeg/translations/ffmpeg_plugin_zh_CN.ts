@@ -39,72 +39,72 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="14"/>
         <source>FFmpeg Plugin Settings</source>
-        <translation type="unfinished">FFmpeg 插件设置</translation>
+        <translation>FFmpeg 插件设置</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="55"/>
         <source>Formats</source>
-        <translation type="unfinished">格式</translation>
+        <translation>格式</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="61"/>
         <source>Windows Media Audio</source>
-        <translation type="unfinished">Windows媒体音频文件</translation>
+        <translation>Windows媒体音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="68"/>
         <source>Monkey&apos;s Audio (APE)</source>
-        <translation type="unfinished">Monkey‘s 音频文件(APE)</translation>
+        <translation>Monkey‘s 音频文件(APE)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="75"/>
         <source>True Audio</source>
-        <translation type="unfinished">True音频文件</translation>
+        <translation>True音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="82"/>
         <source>ADTS AAC</source>
-        <translation type="unfinished">ADTS AAC音频文件</translation>
+        <translation>ADTS AAC音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="89"/>
         <source>MP3 (MPEG audio layer 3)</source>
-        <translation type="unfinished">MP3(MPEG音频层3)音频文件</translation>
+        <translation>MP3(MPEG音频层3)音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="96"/>
         <source>MPEG-4 AAC/ALAC</source>
-        <translation type="unfinished">MPEG-4 AAC/ALAC音频文件</translation>
+        <translation>MPEG-4 AAC/ALAC音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="103"/>
         <source>RealAudio 1.0/2.0</source>
-        <translation type="unfinished">Real1.0/2.0音频文件</translation>
+        <translation>Real1.0/2.0音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="110"/>
         <source>Shorten</source>
-        <translation type="unfinished">Shorten音频文件</translation>
+        <translation>Shorten音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="117"/>
         <source>AC3/EAC</source>
-        <translation type="unfinished">AC3/EAC音频文件</translation>
+        <translation>AC3/EAC音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="124"/>
         <source>DTS/DTS-Core</source>
-        <translation type="unfinished">DTS/DTS-Core音频文件</translation>
+        <translation>DTS/DTS-Core音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="131"/>
         <source>Matroska Audio (Dolby TrueHD Lossless)</source>
-        <translation type="unfinished">Mastroska音频文件(杜比真高清无损)</translation>
+        <translation>Mastroska音频文件(杜比真高清无损)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="138"/>
         <source>VQF</source>
-        <translation type="unfinished">VQF音频文件</translation>
+        <translation>VQF音频文件</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="145"/>

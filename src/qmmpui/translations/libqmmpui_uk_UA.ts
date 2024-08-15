@@ -11,7 +11,7 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="49"/>
         <source>About</source>
-        <translation>Про програму</translation>
+        <translation>Про застосунок</translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="63"/>
@@ -86,17 +86,17 @@
     <message>
         <location filename="../aboutdialog.cpp" line="122"/>
         <source>Output plugins:</source>
-        <translation>Модулі виведення:</translation>
+        <translation>Втулки виведення:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="109"/>
         <source>Visual plugins:</source>
-        <translation>Модулі візуалізації:</translation>
+        <translation>Втулки унаочнення:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="116"/>
         <source>General plugins:</source>
-        <translation>Загальні модулі:</translation>
+        <translation>Загальні втулки:</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../forms/addurldialog.ui" line="14"/>
         <source>Enter URL to add</source>
-        <translation>Введіть адресу для додавання</translation>
+        <translation>Уведіть адресу для додавання</translation>
     </message>
     <message>
         <location filename="../forms/addurldialog.ui" line="55"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../forms/addurldialog.ui" line="62"/>
         <source>&amp;Cancel</source>
-        <translation>&amp;Відміна</translation>
+        <translation>&amp;Скасувати</translation>
     </message>
     <message>
         <location filename="../addurldialog.cpp" line="90"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="46"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Оберіть колір</translation>
     </message>
 </context>
 <context>
@@ -200,7 +200,7 @@
     <message>
         <location filename="../columneditor.cpp" line="101"/>
         <source>Track Index</source>
-        <translation>Індекс трека</translation>
+        <translation>Індекс доріжки</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="88"/>
@@ -220,12 +220,12 @@
     <message>
         <location filename="../columneditor.cpp" line="92"/>
         <source>Track Number</source>
-        <translation>Номер трека</translation>
+        <translation>Номер доріжки</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="93"/>
         <source>Two-digit Track Number</source>
-        <translation>Подвійний номер трека</translation>
+        <translation>Подвійний номер доріжки</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="98"/>
@@ -299,7 +299,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="183"/>
         <source>Convert %20 to blanks</source>
-        <translation>Конвертувати %20 в пробіл</translation>
+        <translation>Перетворити %20 на пробіл</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="159"/>
@@ -309,7 +309,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="176"/>
         <source>Convert underscores to blanks</source>
-        <translation>Конвертувати підкреслювання в пробіл</translation>
+        <translation>Перетворити підкреслювання на пробіл</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="226"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="169"/>
         <source>Read tags while loading a playlist</source>
-        <translation>Читати теги при завантаженні списка</translation>
+        <translation>Читати доріжки при завантаженні грайлиста</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
@@ -356,12 +356,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="275"/>
         <source>Show cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати обкладинку</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="285"/>
         <source>Directory Scanning Options</source>
-        <translation>Опції сканування тек</translation>
+        <translation>Параметри сканування тек</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="291"/>
@@ -424,7 +424,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="497"/>
         <source>Display average bitrate</source>
-        <translation>Відображати середній бітрейт</translation>
+        <translation>Показувати середню бітову частоту</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="507"/>
@@ -444,12 +444,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="527"/>
         <source>Add files from command line to this playlist:</source>
-        <translation>Додавати файли з командного рядка в цей список:</translation>
+        <translation>Додавати файли з командного рядка до цього переліку:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="544"/>
         <source>Cover Image Retrieve</source>
-        <translation>Пошук обладинки альбома</translation>
+        <translation>Пошук обкладинки альбому</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="550"/>
@@ -474,7 +474,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="620"/>
         <source>Auto-paste URL from clipboard</source>
-        <translation>Автоматично додавати URL з буферу обміну</translation>
+        <translation>Автоматично додавати URL із буфера обміну</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="630"/>
@@ -494,7 +494,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="682"/>
         <source>???</source>
-        <translation></translation>
+        <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="721"/>
@@ -539,12 +539,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="833"/>
         <source>Replay Gain</source>
-        <translation>Нормалізація гучності</translation>
+        <translation>Нормалізація гучности</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="839"/>
         <source>Replay Gain mode:</source>
-        <translation>Режим нормалізації гучності:</translation>
+        <translation>Режим нормалізації гучности:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="856"/>
@@ -560,7 +560,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="901"/>
         <source>Default gain:</source>
-        <translation>Нормалізація за умовчанням:</translation>
+        <translation>Усталена підсилення:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="953"/>
@@ -580,17 +580,17 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1028"/>
         <source>Use software volume control</source>
-        <translation>Використовувати програмний контроль гучності</translation>
+        <translation>Використовувати програмний контроль гучности</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1068"/>
         <source>Use two passes for equalizer</source>
-        <translation>Два прохода для еквалайзера</translation>
+        <translation>Використовувати два проходи для еквалайзера</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1011"/>
         <source>Volume adjustment step:</source>
-        <translation>Крок регулювання гучності:</translation>
+        <translation>Крок регулювання гучности:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="334"/>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../configdialog.cpp" line="66"/>
         <source>Track</source>
-        <translation>Трек</translation>
+        <translation>Доріжка</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="67"/>
@@ -650,12 +650,12 @@
     <message>
         <location filename="../configdialog.cpp" line="75"/>
         <source>HTTP</source>
-        <translation></translation>
+        <translation>HTTP</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="76"/>
         <source>SOCKS5</source>
-        <translation></translation>
+        <translation>SOCKS5</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="202"/>
@@ -665,7 +665,7 @@
     <message>
         <location filename="../configdialog.cpp" line="213"/>
         <source>Decoders</source>
-        <translation>Декодери</translation>
+        <translation>Декодувальники</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="224"/>
@@ -680,7 +680,7 @@
     <message>
         <location filename="../configdialog.cpp" line="247"/>
         <source>Visualization</source>
-        <translation>Візуалізація</translation>
+        <translation>Унаочнення</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="259"/>
@@ -710,7 +710,7 @@
     <message>
         <location filename="../configdialog.cpp" line="353"/>
         <source>Brazilian Portuguese</source>
-        <translation>Бразильська португальська</translation>
+        <translation>Бразильська портуґальська</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="354"/>
@@ -730,7 +730,7 @@
     <message>
         <location filename="../configdialog.cpp" line="357"/>
         <source>Dutch</source>
-        <translation>Голландська</translation>
+        <translation>Нідерландська</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="358"/>
@@ -805,7 +805,7 @@
     <message>
         <location filename="../configdialog.cpp" line="372"/>
         <source>Portuguese</source>
-        <translation>Португальська</translation>
+        <translation>Портуґальська</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="373"/>
@@ -830,7 +830,7 @@
     <message>
         <location filename="../configdialog.cpp" line="377"/>
         <source>Spanish</source>
-        <translation>Іспанська</translation>
+        <translation>Еспанська</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="378"/>
@@ -868,7 +868,7 @@
     <message>
         <location filename="../forms/covereditor.ui" line="83"/>
         <source>Delete</source>
-        <translation>Видалити</translation>
+        <translation>Вилучити</translation>
     </message>
     <message>
         <location filename="../forms/covereditor.ui" line="90"/>
@@ -883,7 +883,7 @@
     <message>
         <location filename="../covereditor.cpp" line="35"/>
         <source>Tag</source>
-        <translation>Тег</translation>
+        <translation>Теґ</translation>
     </message>
 </context>
 <context>
@@ -920,7 +920,7 @@
     <message>
         <location filename="../forms/cueeditor.ui" line="47"/>
         <source>Delete</source>
-        <translation>Видалити</translation>
+        <translation>Вилучити</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="54"/>
@@ -949,7 +949,7 @@
     <message>
         <location filename="../forms/detailsdialog.ui" line="14"/>
         <source>Details</source>
-        <translation>Подробиці</translation>
+        <translation>Докладно</translation>
     </message>
     <message>
         <location filename="../forms/detailsdialog.ui" line="44"/>
@@ -969,7 +969,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="207"/>
         <source>%1/%2</source>
-        <translation></translation>
+        <translation>%1/%2</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="257"/>
@@ -979,7 +979,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="283"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст пісні</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="303"/>
@@ -1039,7 +1039,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="334"/>
         <source>Bitrate</source>
-        <translation>Бітрейт</translation>
+        <translation>Швидкість потоку</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="334"/>
@@ -1049,7 +1049,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="335"/>
         <source>Sample rate</source>
-        <translation>Частота дискретизації</translation>
+        <translation>Дискретизація</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="335"/>
@@ -1059,27 +1059,27 @@
     <message>
         <location filename="../detailsdialog.cpp" line="336"/>
         <source>Channels</source>
-        <translation>Канали</translation>
+        <translation>Каналів</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
         <source>Sample size</source>
-        <translation>Розмір семпла</translation>
+        <translation>Розрядність</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
         <source>bits</source>
-        <translation>біт</translation>
+        <translation>бітів</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="338"/>
         <source>Format name</source>
-        <translation>Назва формату</translation>
+        <translation>Формат</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="339"/>
         <source>File size</source>
-        <translation>Розмір файла</translation>
+        <translation>Розмір файлу</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="339"/>
@@ -1102,7 +1102,7 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="14"/>
         <source>Jump To Track</source>
-        <translation>Перейти до треку</translation>
+        <translation>Перейти на доріжку</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
@@ -1114,7 +1114,7 @@
         <location filename="../jumptotrackdialog.cpp" line="120"/>
         <location filename="../jumptotrackdialog.cpp" line="151"/>
         <source>Queue</source>
-        <translation>В чергу</translation>
+        <translation>У чергу</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="105"/>
@@ -1124,18 +1124,18 @@
     <message>
         <location filename="../jumptotrackdialog.cpp" line="95"/>
         <source>Q</source>
-        <translation></translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../jumptotrackdialog.cpp" line="96"/>
         <source>J</source>
-        <translation></translation>
+        <translation>J</translation>
     </message>
     <message>
         <location filename="../jumptotrackdialog.cpp" line="118"/>
         <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Unqueue</source>
-        <translation>Видалити з черги</translation>
+        <translation>Вилучити з черги</translation>
     </message>
 </context>
 <context>
@@ -1163,17 +1163,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Track Number</source>
-        <translation>Номер трека</translation>
+        <translation>Номер доріжки</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="34"/>
         <source>Two-digit Track Number</source>
-        <translation>Подвійний номер трека</translation>
+        <translation>Подвійний номер доріжки</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="38"/>
         <source>Track Index</source>
-        <translation>Індекс трека</translation>
+        <translation>Індекс доріжки</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="40"/>
@@ -1199,7 +1199,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - Album</source>
-        <translation type="unfinished">Виконавець - Альбом</translation>
+        <translation>Виконавець — Альбом</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
@@ -1224,7 +1224,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
         <source>Bitrate</source>
-        <translation>Бітрейт</translation>
+        <translation>Швидкість потоку</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="71"/>
@@ -1234,12 +1234,12 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Number of Channels</source>
-        <translation>Кількість каналів</translation>
+        <translation>Частота каналів</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Sample Size</source>
-        <translation>Розмір семпла</translation>
+        <translation>Розрядність</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="74"/>
@@ -1249,17 +1249,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>Decoder</source>
-        <translation>Декодер</translation>
+        <translation>Декодувальник</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="78"/>
         <source>File Size</source>
-        <translation>Розмір файла</translation>
+        <translation>Розмір файлу</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="43"/>
         <source>Disc Number</source>
-        <translation>Номер диску</translation>
+        <translation>Номер диска</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="48"/>
@@ -1269,7 +1269,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="49"/>
         <source>File Path</source>
-        <translation>Ім&apos;я файлу</translation>
+        <translation>Шлях файлу</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="44"/>
@@ -1319,7 +1319,7 @@
     <message>
         <location filename="../playlistdownloader.cpp" line="123"/>
         <source>Unsupported playlist format</source>
-        <translation>Формат списку не підтримується</translation>
+        <translation>Формат грайлиста не підтримується</translation>
     </message>
 </context>
 <context>
@@ -1346,7 +1346,7 @@
         <location filename="../playlistmanager.cpp" line="177"/>
         <location filename="../playlistmanager.cpp" line="319"/>
         <source>Playlist</source>
-        <translation>Список</translation>
+        <translation>Грайлист</translation>
     </message>
 </context>
 <context>
@@ -1354,12 +1354,12 @@
     <message>
         <location filename="../playlisttrack.cpp" line="245"/>
         <source>Streams</source>
-        <translation>Онлайн-потоки</translation>
+        <translation>Мережеві-потоки</translation>
     </message>
     <message>
         <location filename="../playlisttrack.cpp" line="250"/>
         <source>Empty group</source>
-        <translation>Пуста група</translation>
+        <translation>Порожня група</translation>
     </message>
 </context>
 <context>
@@ -1372,7 +1372,7 @@
     <message>
         <location filename="../qmmpuisettings.cpp" line="64"/>
         <source>Playlist</source>
-        <translation>Список</translation>
+        <translation>Грайлист</translation>
     </message>
 </context>
 <context>
@@ -1388,17 +1388,17 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="14"/>
         <source>Change Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити сполучення клавішів</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation type="unfinished"></translation>
+        <translation>Натисніть клавіші, комбінації яких ви бажаєте використовувати</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистити</translation>
     </message>
 </context>
 <context>
@@ -1406,7 +1406,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="14"/>
         <source>Tag Editor</source>
-        <translation>Редактор тегів</translation>
+        <translation>Редактор теґів</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="38"/>
@@ -1458,7 +1458,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="250"/>
         <source>Disc number:</source>
-        <translation>Номер диску:</translation>
+        <translation>Номер диска:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="275"/>
@@ -1468,7 +1468,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="311"/>
         <source>Include selected tag in file</source>
-        <translation>Включити вибраний тег у файл</translation>
+        <translation>Включити вибраний теґ у файл</translation>
     </message>
 </context>
 <context>
@@ -1500,34 +1500,34 @@
     <message>
         <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
-        <translation>Виберіть один чи декілька файлів для відкриття</translation>
+        <translation>Оберіть один або декілька файлів для відкриття</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="154"/>
         <source>Select one or more files to play</source>
-        <translation>Виберіть один чи декілька файлів для відтвореня</translation>
+        <translation>Оберіть один або декілька файлів для відтворення</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="162"/>
         <source>Choose a directory</source>
-        <translation>Виберіть теку</translation>
+        <translation>Оберіть теку</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="178"/>
         <location filename="../uihelper.cpp" line="202"/>
         <source>Playlist Files</source>
-        <translation>Файли списків</translation>
+        <translation>Файли грайлистів</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="180"/>
         <source>Open Playlist</source>
-        <translation>Відкрити список</translation>
+        <translation>Відкрити грайлист</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="205"/>
         <location filename="../uihelper.cpp" line="224"/>
         <source>Save Playlist</source>
-        <translation>Зберегти список</translation>
+        <translation>Зберегти грайлист</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="224"/>
@@ -1542,7 +1542,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../visualmenu.cpp" line="26"/>
         <source>Visualization</source>
-        <translation type="unfinished">Візуалізація</translation>
+        <translation>Візуалізація</translation>
     </message>
 </context>
 <context>
@@ -1550,7 +1550,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
-        <translation>Медіа-файли, асоційовані з Qmmp:</translation>
+        <translation>Медіяфайли, асоційовані з Qmmp:</translation>
     </message>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="17"/>

@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished">Definições</translation>
+        <translation>Definições</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished">Serviços disponíveis:</translation>
+        <translation>Serviços disponíveis:</translation>
     </message>
 </context>
 <context>

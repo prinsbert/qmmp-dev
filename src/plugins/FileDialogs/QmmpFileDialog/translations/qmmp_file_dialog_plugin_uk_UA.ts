@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>QmmpFileDialog</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="198"/>
         <source>Up</source>
-        <translation>Вгору</translation>
+        <translation>Угору</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="201"/>
@@ -24,7 +24,7 @@
     <message>
         <location filename="../qmmpfiledialog.ui" line="211"/>
         <source>List view</source>
-        <translation>Перегляд списком</translation>
+        <translation>Перегляд переліком</translation>
     </message>
     <message>
         <location filename="../qmmpfiledialog.ui" line="230"/>

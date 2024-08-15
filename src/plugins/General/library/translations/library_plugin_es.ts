@@ -30,7 +30,7 @@
     <message>
         <location filename="../libraryfactory.cpp" line="33"/>
         <source>Media Library Plugin</source>
-        <translation>Módulo Biblioteca de Medios</translation>
+        <translation>Módulo Biblioteca Multimedia</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="38"/>
@@ -45,12 +45,12 @@
     <message>
         <location filename="../libraryfactory.cpp" line="84"/>
         <source>About Media Library Plugin</source>
-        <translation>Acerca del Módulo Biblioteca de Medios</translation>
+        <translation>Acerca del Módulo Biblioteca Multimedia</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="85"/>
         <source>Qmmp Media Library Plugin</source>
-        <translation>Módulo Biblioteca de Medios de Qmmp</translation>
+        <translation>Módulo Biblioteca Multimedia de Qmmp</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="86"/>
@@ -73,12 +73,12 @@
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
         <source>Unable to connect to database</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposible conectarse a la base de datos</translation>
     </message>
     <message numerus="yes">
         <location filename="../librarymodel.cpp" line="350"/>
@@ -116,44 +116,44 @@
         <location filename="../librarymodel.cpp" line="357"/>
         <source>%1 %2 %3 %4</source>
         <comment>days hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3 %4</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="359"/>
         <source>%1 %2 %3</source>
         <comment>hours minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 %3</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="361"/>
         <source>%1 %2</source>
         <comment>minutes seconds</comment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="364"/>
         <source>Number of tracks: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de pistas: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="365"/>
         <source>Number of albums: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de álbumes: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="366"/>
         <source>Number of artists: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de artistas: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="367"/>
         <source>Total duration: &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Duración total: &lt;b&gt;%1&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="370"/>
         <source>Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información de la Biblioteca</translation>
     </message>
 </context>
 <context>
@@ -161,37 +161,37 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation type="unfinished">Configuración de Biblioteca de Medios</translation>
+        <translation>Configuración de la Biblioteca Multimedia</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
         <source>Recreate database</source>
-        <translation type="unfinished">Recrear base de datos</translation>
+        <translation>Recrear base de datos</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="46"/>
         <source>Show album year</source>
-        <translation type="unfinished">Mostrar año del álbum</translation>
+        <translation>Mostrar año del álbum</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished">Añadir</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished">Eliminar</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
         <source>List of directories for scanning:</source>
-        <translation type="unfinished">Lista de directorios para examinar:</translation>
+        <translation>Lista de directorios para examinar:</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
         <source>Select Directories for Scanning</source>
-        <translation type="unfinished">Seleccionar Directorios para Examinar</translation>
+        <translation>Seleccionar Directorios para Examinar</translation>
     </message>
 </context>
 <context>
@@ -214,7 +214,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="55"/>
         <source>&amp;Library Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información de &amp;la Biblioteca</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="89"/>
@@ -224,7 +224,7 @@
     <message>
         <location filename="../librarywidget.ui" line="14"/>
         <source>Media Library</source>
-        <translation>Biblioteca de Medios</translation>
+        <translation>Biblioteca Multimedia</translation>
     </message>
 </context>
 </TS>

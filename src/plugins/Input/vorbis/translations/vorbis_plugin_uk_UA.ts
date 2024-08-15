@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderVorbisFactory</name>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="44"/>
         <source>Ogg Vorbis Plugin</source>
-        <translation>Модуль Ogg Vorbis</translation>
+        <translation>Втулок Ogg Vorbis</translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="47"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decodervorbisfactory.cpp" line="128"/>
         <source>About Ogg Vorbis Audio Plugin</source>
-        <translation>Про аудіо-модуль Ogg Vorbis</translation>
+        <translation>Про авдіовтулок Ogg Vorbis</translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="129"/>
         <source>Qmmp Ogg Vorbis Audio Plugin</source>
-        <translation>Аудіо-модуль Ogg Vorbis для Qmmp</translation>
+        <translation>Авдіовтулок Ogg Vorbis для Qmmp</translation>
     </message>
     <message>
         <location filename="../decodervorbisfactory.cpp" line="130"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="../decodervorbisfactory.cpp" line="131"/>
         <source>Source code based on mq3 project</source>
-        <translation>Вихідний код базується на проекті mq3</translation>
+        <translation>Джерельний код базується на проекті mq3</translation>
     </message>
 </context>
 </TS>

@@ -34,52 +34,52 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="14"/>
         <source>Connection Settings</source>
-        <translation type="unfinished">连接设置</translation>
+        <translation>连接设置</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="32"/>
         <source>Host:</source>
-        <translation type="unfinished">主机：</translation>
+        <translation>主机：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="42"/>
         <source>Port:</source>
-        <translation type="unfinished">端口：</translation>
+        <translation>端口：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="56"/>
         <source>Mount point:</source>
-        <translation type="unfinished">挂载点：</translation>
+        <translation>挂载点：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="66"/>
         <source>User:</source>
-        <translation type="unfinished">用户：</translation>
+        <translation>用户：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="76"/>
         <source>Password:</source>
-        <translation type="unfinished">密码：</translation>
+        <translation>密码：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="86"/>
         <source>Quality:</source>
-        <translation type="unfinished">质量：</translation>
+        <translation>质量：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="106"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">取样率：</translation>
+        <translation>取样率：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="136"/>
         <source>Public</source>
-        <translation type="unfinished">公用</translation>
+        <translation>公用</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="143"/>
         <source>Hz</source>
-        <translation type="unfinished">赫兹</translation>
+        <translation>赫兹</translation>
     </message>
 </context>
 </TS>

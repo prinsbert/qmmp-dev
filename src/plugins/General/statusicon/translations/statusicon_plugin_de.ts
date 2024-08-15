@@ -82,68 +82,68 @@
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="14"/>
         <source>Status Icon Plugin Settings</source>
-        <translation type="unfinished">Einstellungen Statussymbolmodul</translation>
+        <translation>Einstellungen Statussymbolmodul</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="29"/>
         <source>Balloon message</source>
-        <translation type="unfinished">Ballon-Nachricht</translation>
+        <translation>Ballon-Nachricht</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="38"/>
         <location filename="../statusiconsettingsdialog.ui" line="105"/>
         <source>Delay, ms:</source>
-        <translation type="unfinished">Anzeigedauer (ms):</translation>
+        <translation>Anzeigedauer (ms):</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="79"/>
         <source>Tooltip</source>
-        <translation type="unfinished">Kurzinfo</translation>
+        <translation>Kurzinfo</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="91"/>
         <source>Try to split file name when no tag</source>
-        <translation type="unfinished">Bei keinem Schlagwort versuchen Dateinamen zu trennen</translation>
+        <translation>Bei keinem Schlagwort versuchen Dateinamen zu trennen</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="98"/>
         <source>Show progress bar</source>
-        <translation type="unfinished">Fortschrittsbalken anzeigen</translation>
+        <translation>Fortschrittsbalken anzeigen</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="131"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Transparenz:</translation>
+        <translation>Transparenz:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="165"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="174"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Cover-Größe:</translation>
+        <translation>Hüllengröße:</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="214"/>
         <source>32</source>
-        <translation type="unfinished">32</translation>
+        <translation>32</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="225"/>
         <source>Edit template</source>
-        <translation type="unfinished">Vorlage bearbeiten</translation>
+        <translation>Vorlage bearbeiten</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.ui" line="250"/>
         <source>Use standard icons</source>
-        <translation type="unfinished">System-Symbole benutzen</translation>
+        <translation>System-Symbole benutzen</translation>
     </message>
     <message>
         <location filename="../statusiconsettingsdialog.cpp" line="85"/>
         <source>Tooltip Template</source>
-        <translation type="unfinished">Kurzinfo-Vorlage</translation>
+        <translation>Kurzinfo-Vorlage</translation>
     </message>
 </context>
 </TS>

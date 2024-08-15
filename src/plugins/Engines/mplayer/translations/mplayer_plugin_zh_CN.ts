@@ -118,37 +118,37 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation type="unfinished">Mplayer 设置</translation>
+        <translation>Mplayer 设置</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="34"/>
         <source>Video:</source>
-        <translation type="unfinished">视频：</translation>
+        <translation>视频：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="48"/>
         <source>Audio:</source>
-        <translation type="unfinished">音频：</translation>
+        <translation>音频：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="62"/>
         <source>Audio/video auto synchronization</source>
-        <translation type="unfinished">音频/视频自动同步</translation>
+        <translation>音频/视频自动同步</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation type="unfinished">同步系数：</translation>
+        <translation>同步系数：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation type="unfinished">其他选项：</translation>
+        <translation>其他选项：</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation type="unfinished">其他命令行选项</translation>
+        <translation>其他命令行选项</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>
@@ -158,7 +158,7 @@
         <location filename="../mplayersettingsdialog.cpp" line="54"/>
         <location filename="../mplayersettingsdialog.cpp" line="55"/>
         <source>default</source>
-        <translation type="unfinished">默认</translation>
+        <translation>默认</translation>
     </message>
 </context>
 </TS>

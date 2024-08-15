@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου στίχων</translation>
+        <translation>Ρυθμίσεις πρόσθετου στίχων</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished">Πάροχοι στίχων</translation>
+        <translation>Πάροχοι στίχων</translation>
     </message>
 </context>
 <context>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Ετικέτα</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>

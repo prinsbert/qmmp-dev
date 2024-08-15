@@ -34,17 +34,17 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
         <source>Device:</source>
-        <translation type="unfinished">設備：</translation>
+        <translation>設備：</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>緩沖大小：</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>毫秒</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">默認</translation>
+        <translation>默認</translation>
     </message>
 </context>
 </TS>

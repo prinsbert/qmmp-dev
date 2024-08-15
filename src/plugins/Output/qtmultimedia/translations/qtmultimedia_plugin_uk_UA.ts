@@ -6,17 +6,17 @@
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="32"/>
         <source>Qt Multimedia Plugin</source>
-        <translation>Модуль Qt Multimedia</translation>
+        <translation>Втулок Qt Multimedia</translation>
     </message>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="56"/>
         <source>About Qt Multimedia Output Plugin</source>
-        <translation>Про модуль виведення Qt Multimedia</translation>
+        <translation>Про втулок виведення Qt Multimedia</translation>
     </message>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="57"/>
         <source>Qmmp Qt Multimedia Output Plugin</source>
-        <translation>Модуль виведення Qt Multimedia для Qmmp</translation>
+        <translation>Втулок виведення Qt Multimedia для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputqtmultimediafactory.cpp" line="58"/>
@@ -29,17 +29,17 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="14"/>
         <source>Qt Multimedia Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля Qt Multimedia</translation>
+        <translation>Налаштування втулка Qt Multimedia</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation type="unfinished">Пристрій:</translation>
+        <translation>Пристрій:</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation type="unfinished">За замовчанням</translation>
+        <translation>Усталено</translation>
     </message>
 </context>
 </TS>

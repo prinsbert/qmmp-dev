@@ -6,52 +6,52 @@
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="14"/>
         <source>CD Audio Plugin Settings</source>
-        <translation type="unfinished">CD Ses Eklentisi Ayarları</translation>
+        <translation>CD Ses Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cihazı geçersiz kıl:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
-        <translation type="unfinished">CD hızını sınırla:</translation>
+        <translation>CD hızını sınırla:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="122"/>
         <source>Use cd-text</source>
-        <translation type="unfinished"></translation>
+        <translation>Cd-text kullan</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
-        <translation type="unfinished"></translation>
+        <translation>CDDB</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="48"/>
         <source>Use HTTP instead of CDDBP</source>
-        <translation type="unfinished"></translation>
+        <translation>CDDBP yerine HTTP kullanın</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunucu:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yol:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Giriş kapısı:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="87"/>
         <source>Clear CDDB cache</source>
-        <translation type="unfinished"></translation>
+        <translation>CDDB önbelleğini temizle</translation>
     </message>
 </context>
 <context>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="98"/>
         <source>Compiled against libcdio-%1 and libcddb-%2</source>
-        <translation type="unfinished"></translation>
+        <translation> libcdio-%1 ve libcddb-%2&apos;e dayanarak derlendi</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="100"/>

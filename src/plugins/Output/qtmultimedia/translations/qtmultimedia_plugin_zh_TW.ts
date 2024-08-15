@@ -34,12 +34,12 @@
     <message>
         <location filename="../qtmultimediasettingsdialog.ui" line="46"/>
         <source>Device:</source>
-        <translation type="unfinished">設備：</translation>
+        <translation>設備：</translation>
     </message>
     <message>
         <location filename="../qtmultimediasettingsdialog.cpp" line="36"/>
         <source>Default</source>
-        <translation type="unfinished">默認</translation>
+        <translation>默認</translation>
     </message>
 </context>
 </TS>

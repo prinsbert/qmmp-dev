@@ -68,12 +68,12 @@
     <message>
         <location filename="../librarymodel.cpp" line="204"/>
         <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
@@ -176,12 +176,12 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="52"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ver detalhes da faixa</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="54"/>

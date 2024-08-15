@@ -75,7 +75,7 @@
     <message>
         <location filename="../lyricswidget.ui" line="14"/>
         <source>Lyrics Plugin</source>
-        <translation type="unfinished">Plugin Lyrics</translation>
+        <translation>Plugin Lyrics</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="31"/>
@@ -85,27 +85,27 @@
     <message>
         <location filename="../lyricswidget.ui" line="115"/>
         <source>Title:</source>
-        <translation type="unfinished">Título:</translation>
+        <translation>Título:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="132"/>
         <source>Album:</source>
-        <translation type="unfinished"></translation>
+        <translation>Álbum:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="142"/>
         <source>Artist:</source>
-        <translation type="unfinished">Artista:</translation>
+        <translation>Artista:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="159"/>
         <source>Track:</source>
-        <translation type="unfinished"></translation>
+        <translation>Faixa:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="171"/>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ano:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="148"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="159"/>
         <source>Not found</source>
-        <translation type="unfinished">Não encontrado</translation>
+        <translation>Não encontrado</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="169"/>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="182"/>
         <source>Receiving</source>
-        <translation type="unfinished">Recebendo</translation>
+        <translation>Recebendo</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>
