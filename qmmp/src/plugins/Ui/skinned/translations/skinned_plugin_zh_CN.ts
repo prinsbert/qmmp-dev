@@ -6,122 +6,122 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>&amp;Play</source>
-        <translation type="unfinished">播放(&amp;P)</translation>
+        <translation>播放(&amp;P)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="39"/>
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished">暂停(&amp;P)</translation>
+        <translation>暂停(&amp;P)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="40"/>
         <source>C</source>
-        <translation type="unfinished">C</translation>
+        <translation>C</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished">停止(&amp;S)</translation>
+        <translation>停止(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="41"/>
         <source>V</source>
-        <translation type="unfinished">V</translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>&amp;Previous</source>
-        <translation type="unfinished">上一首(&amp;P)</translation>
+        <translation>上一首(&amp;P)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="42"/>
         <source>Z</source>
-        <translation type="unfinished">Z</translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>&amp;Next</source>
-        <translation type="unfinished">下一曲(&amp;N)</translation>
+        <translation>下一曲(&amp;N)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="43"/>
         <source>B</source>
-        <translation type="unfinished">B</translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>&amp;Play/Pause</source>
-        <translation type="unfinished">播放/暂停(&amp;P)</translation>
+        <translation>播放/暂停(&amp;P)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="44"/>
         <source>Space</source>
-        <translation type="unfinished">空格键</translation>
+        <translation>空格键</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>&amp;Jump to Track</source>
-        <translation type="unfinished">跳至单曲(&amp;J)</translation>
+        <translation>跳至单曲(&amp;J)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="45"/>
         <source>J</source>
-        <translation type="unfinished">J</translation>
+        <translation>J</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>&amp;Repeat Playlist</source>
-        <translation type="unfinished">重复播放列表(&amp;R)</translation>
+        <translation>重复播放列表(&amp;R)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="46"/>
         <source>R</source>
-        <translation type="unfinished">R</translation>
+        <translation>R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>&amp;Repeat Track</source>
-        <translation type="unfinished">重复单曲(&amp;R)</translation>
+        <translation>重复单曲(&amp;R)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="47"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished">Ctrl+R</translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>&amp;Shuffle</source>
-        <translation type="unfinished">乱序(&amp;S)</translation>
+        <translation>乱序(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="48"/>
         <source>S</source>
-        <translation type="unfinished">S</translation>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>&amp;No Playlist Advance</source>
-        <translation type="unfinished">播放列表中播放的曲目不自动前进(&amp;N)</translation>
+        <translation>播放列表中播放的曲目不自动前进(&amp;N)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="49"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl + N</translation>
+        <translation>Ctrl + N</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>&amp;Stop After Selected</source>
-        <translation type="unfinished">&amp;播完选定的曲目后停止播放</translation>
+        <translation>&amp;播完选定的曲目后停止播放</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="50"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="51"/>
@@ -131,292 +131,292 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>&amp;Clear Queue</source>
-        <translation type="unfinished">&amp;清除正在排队中的所有曲目</translation>
+        <translation>&amp;清除正在排队中的所有曲目</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="52"/>
         <source>Alt+Q</source>
-        <translation type="unfinished">Alt+Q</translation>
+        <translation>Alt+Q</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Show Playlist</source>
-        <translation type="unfinished">显示播放列表</translation>
+        <translation>显示播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="54"/>
         <source>Alt+E</source>
-        <translation type="unfinished">Alt+E</translation>
+        <translation>Alt+E</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Show Equalizer</source>
-        <translation type="unfinished">显示均衡器</translation>
+        <translation>显示均衡器</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="55"/>
         <source>Alt+G</source>
-        <translation type="unfinished">Alt+G</translation>
+        <translation>Alt+G</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="56"/>
         <source>Always on Top</source>
-        <translation type="unfinished">总是在顶部显示</translation>
+        <translation>总是在顶部显示</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="57"/>
         <source>Put on All Workspaces</source>
-        <translation type="unfinished">在所有工作空间中显示</translation>
+        <translation>在所有工作空间中显示</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Double Size</source>
-        <translation type="unfinished">两倍尺寸</translation>
+        <translation>两倍尺寸</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="58"/>
         <source>Meta+D</source>
-        <translation type="unfinished">Meta+D</translation>
+        <translation>Meta+D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="59"/>
         <source>Anti-aliasing</source>
-        <translation type="unfinished">抗锯齿图形保真</translation>
+        <translation>抗锯齿图形保真</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>Volume &amp;+</source>
-        <translation type="unfinished">音量 &amp;+</translation>
+        <translation>音量 &amp;+</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="61"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>Volume &amp;-</source>
-        <translation type="unfinished">音量 &amp;-</translation>
+        <translation>音量 &amp;-</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="62"/>
         <source>9</source>
-        <translation type="unfinished">9</translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>&amp;Mute</source>
-        <translation type="unfinished">&amp;静音</translation>
+        <translation>&amp;静音</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="63"/>
         <source>M</source>
-        <translation type="unfinished">M</translation>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>&amp;Add File</source>
-        <translation type="unfinished">&amp;添加文件</translation>
+        <translation>&amp;添加文件</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="65"/>
         <source>F</source>
-        <translation type="unfinished">F</translation>
+        <translation>F</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>&amp;Add Directory</source>
-        <translation type="unfinished">&amp;添加文件夹</translation>
+        <translation>&amp;添加文件夹</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="66"/>
         <source>D</source>
-        <translation type="unfinished">D</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>&amp;Add Url</source>
-        <translation type="unfinished">&amp;添加Url</translation>
+        <translation>&amp;添加Url</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="67"/>
         <source>U</source>
-        <translation type="unfinished">U</translation>
+        <translation>U</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>&amp;Remove Selected</source>
-        <translation type="unfinished">&amp;移除所选项</translation>
+        <translation>&amp;移除所选项</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="68"/>
         <source>Del</source>
-        <translation type="unfinished">Del</translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="69"/>
         <source>&amp;Remove All</source>
-        <translation type="unfinished">&amp;移除所有文件</translation>
+        <translation>&amp;移除所有文件</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="70"/>
         <source>&amp;Remove Unselected</source>
-        <translation type="unfinished">&amp;移除未被选中项</translation>
+        <translation>&amp;移除未被选中项</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="71"/>
         <source>Remove unavailable files</source>
-        <translation type="unfinished">移除已不存在的文件</translation>
+        <translation>移除已不存在的文件</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="72"/>
         <source>Remove duplicates</source>
-        <translation type="unfinished">移除多余副本</translation>
+        <translation>移除多余副本</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="73"/>
         <source>Refresh</source>
-        <translation type="unfinished">刷新</translation>
+        <translation>刷新</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>&amp;Queue Toggle</source>
-        <translation type="unfinished">&amp;排队状态切换</translation>
+        <translation>&amp;排队状态切换</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="74"/>
         <source>Q</source>
-        <translation type="unfinished">Q</translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="75"/>
         <source>Invert Selection</source>
-        <translation type="unfinished">反选</translation>
+        <translation>反选</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="76"/>
         <source>&amp;Select None</source>
-        <translation type="unfinished">&amp;什么也不选</translation>
+        <translation>&amp;什么也不选</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>&amp;Select All</source>
-        <translation type="unfinished">&amp;选择所有文件</translation>
+        <translation>&amp;选择所有文件</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="77"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">Ctrl+A</translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished">&amp;查看曲目详细内容</translation>
+        <translation>&amp;查看曲目详细内容</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="78"/>
         <source>Alt+I</source>
-        <translation type="unfinished">Alt+I</translation>
+        <translation>Alt+I</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>&amp;New List</source>
-        <translation type="unfinished">&amp;新的列表</translation>
+        <translation>&amp;新的列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="79"/>
         <source>Ctrl+T</source>
-        <translation type="unfinished">Ctrl+T</translation>
+        <translation>Ctrl+T</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>&amp;Delete List</source>
-        <translation type="unfinished">&amp;删除列表</translation>
+        <translation>&amp;删除列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="80"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>&amp;Load List</source>
-        <translation type="unfinished">&amp;载入列表</translation>
+        <translation>&amp;载入列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="81"/>
         <source>O</source>
-        <translation type="unfinished">O</translation>
+        <translation>O</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>&amp;Save List</source>
-        <translation type="unfinished">&amp;保存列表</translation>
+        <translation>&amp;保存列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="82"/>
         <source>Shift+S</source>
-        <translation type="unfinished">Shift+S</translation>
+        <translation>Shift+S</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>&amp;Rename List</source>
-        <translation type="unfinished">&amp;重命名列表</translation>
+        <translation>&amp;重命名列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="83"/>
         <source>F2</source>
-        <translation type="unfinished">F2</translation>
+        <translation>F2</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>&amp;Select Next Playlist</source>
-        <translation type="unfinished">&amp;选择下一个播放列表</translation>
+        <translation>&amp;选择下一个播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="84"/>
         <source>Ctrl+PgDown</source>
-        <translation type="unfinished">Ctrl+PgDown</translation>
+        <translation>Ctrl+PgDown</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>&amp;Select Previous Playlist</source>
-        <translation type="unfinished">&amp;选择上一个播放列表</translation>
+        <translation>&amp;选择上一个播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="85"/>
         <source>Ctrl+PgUp</source>
-        <translation type="unfinished">Ctrl+PgUp</translation>
+        <translation>Ctrl+PgUp</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>&amp;Show Playlists</source>
-        <translation type="unfinished">&amp;显示播放列表</translation>
+        <translation>&amp;显示播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="86"/>
         <source>P</source>
-        <translation type="unfinished">P</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>&amp;Group Tracks</source>
-        <translation type="unfinished">&amp;对曲目分组</translation>
+        <translation>&amp;对曲目分组</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="87"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+G</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>&amp;Show Column Headers</source>
-        <translation type="unfinished">&amp;显示n列题眉</translation>
+        <translation>&amp;显示n列题眉</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="88"/>
         <source>Ctrl+H</source>
-        <translation type="unfinished">Ctrl+H</translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="89"/>
@@ -431,32 +431,32 @@
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished">设置(&amp;S)</translation>
+        <translation>设置(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="91"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished">Ctrl+P</translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="92"/>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;关于</translation>
+        <translation>&amp;关于</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="93"/>
         <source>&amp;About Qt</source>
-        <translation type="unfinished">&amp;关于Qt</translation>
+        <translation>&amp;关于Qt</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>&amp;Exit</source>
-        <translation type="unfinished">&amp;退出</translation>
+        <translation>&amp;退出</translation>
     </message>
     <message>
         <location filename="../skinnedactionmanager.cpp" line="94"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
 </context>
 <context>
@@ -464,87 +464,87 @@
     <message>
         <location filename="../skinneddisplay.cpp" line="59"/>
         <source>Previous</source>
-        <translation type="unfinished">上一曲</translation>
+        <translation>上一个</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="63"/>
         <source>Play</source>
-        <translation type="unfinished">播放</translation>
+        <translation>播放</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="66"/>
         <source>Pause</source>
-        <translation type="unfinished">暂停</translation>
+        <translation>暂停</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="69"/>
         <source>Stop</source>
-        <translation type="unfinished">停止</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="72"/>
         <source>Next</source>
-        <translation type="unfinished">下一曲</translation>
+        <translation>下一首</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="75"/>
         <source>Play files</source>
-        <translation type="unfinished">播放文件</translation>
+        <translation>播放文件</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="80"/>
         <source>Equalizer</source>
-        <translation type="unfinished">均衡器</translation>
+        <translation>均衡器</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="82"/>
         <source>Playlist</source>
-        <translation type="unfinished">播放列表</translation>
+        <translation>播放列表</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="85"/>
         <source>Repeat playlist</source>
-        <translation type="unfinished">重复播放列表</translation>
+        <translation>重复播放列表</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="87"/>
         <source>Shuffle</source>
-        <translation type="unfinished">乱序</translation>
+        <translation>乱序</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="97"/>
         <source>Volume</source>
-        <translation type="unfinished">音量</translation>
+        <translation>音量</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="103"/>
         <source>Balance</source>
-        <translation type="unfinished">平衡</translation>
+        <translation>平衡</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="290"/>
         <source>Volume: %1%</source>
-        <translation type="unfinished">音量：%1%</translation>
+        <translation>音量：%1%</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="294"/>
         <source>Balance: %1% right</source>
-        <translation type="unfinished">平衡：%1% 右</translation>
+        <translation>平衡：%1% 右</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="296"/>
         <source>Balance: %1% left</source>
-        <translation type="unfinished">平衡：%1% 左</translation>
+        <translation>平衡：%1% 左</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="298"/>
         <source>Balance: center</source>
-        <translation type="unfinished">平衡：居中</translation>
+        <translation>平衡：居中</translation>
     </message>
     <message>
         <location filename="../skinneddisplay.cpp" line="304"/>
         <source>Seek to: %1</source>
-        <translation type="unfinished">搜寻到：%1</translation>
+        <translation>搜寻到：%1</translation>
     </message>
 </context>
 <context>
@@ -552,58 +552,58 @@
     <message>
         <location filename="../skinnedeqwidget.cpp" line="47"/>
         <source>Equalizer</source>
-        <translation type="unfinished">均衡器</translation>
+        <translation>均衡器</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="161"/>
         <location filename="../skinnedeqwidget.cpp" line="178"/>
         <source>preset</source>
-        <translation type="unfinished">预设</translation>
+        <translation>预设</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="262"/>
         <source>&amp;Load/Delete</source>
-        <translation type="unfinished">载入/删除(&amp;L)</translation>
+        <translation>载入/删除(&amp;L)</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Preset</source>
-        <translation type="unfinished">保存预设(&amp;S)</translation>
+        <translation>保存预设(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Save Auto-load Preset</source>
-        <translation type="unfinished">保存自动载入预设(&amp;S)</translation>
+        <translation>保存自动载入预设(&amp;S)</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="266"/>
         <source>&amp;Import</source>
-        <translation type="unfinished">导入(&amp;I)</translation>
+        <translation>导入(&amp;I)</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="268"/>
         <source>&amp;Clear</source>
-        <translation type="unfinished">清除(&amp;C)</translation>
+        <translation>清除(&amp;C)</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Saving Preset</source>
-        <translation type="unfinished">保存预设</translation>
+        <translation>保存预设</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>Preset name:</source>
-        <translation type="unfinished">预设名称：</translation>
+        <translation>预设名称：</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="299"/>
         <source>preset #</source>
-        <translation type="unfinished">预设 #</translation>
+        <translation>预设 #</translation>
     </message>
     <message>
         <location filename="../skinnedeqwidget.cpp" line="395"/>
         <source>Import Preset</source>
-        <translation type="unfinished">导入预设</translation>
+        <translation>导入预设</translation>
     </message>
 </context>
 <context>
@@ -664,57 +664,57 @@
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="33"/>
         <source>Change shortcut...</source>
-        <translation type="unfinished">更改快捷键</translation>
+        <translation>更改快捷键</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="44"/>
         <source>Reset</source>
-        <translation type="unfinished">重置</translation>
+        <translation>重置</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="58"/>
         <source>Action</source>
-        <translation type="unfinished">行动</translation>
+        <translation>行动</translation>
     </message>
     <message>
         <location filename="../forms/skinnedhotkeyeditor.ui" line="63"/>
         <source>Shortcut</source>
-        <translation type="unfinished">快捷键</translation>
+        <translation>快捷键</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="57"/>
         <source>Playback</source>
-        <translation type="unfinished">回放</translation>
+        <translation>回放</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="63"/>
         <source>View</source>
-        <translation type="unfinished">视图</translation>
+        <translation>视图</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="69"/>
         <source>Volume</source>
-        <translation type="unfinished">音量</translation>
+        <translation>音量</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="75"/>
         <source>Playlist</source>
-        <translation type="unfinished">播放列表</translation>
+        <translation>播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="81"/>
         <source>Misc</source>
-        <translation type="unfinished">其他杂项</translation>
+        <translation>其他杂项</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="93"/>
         <source>Reset Shortcuts</source>
-        <translation type="unfinished">重置快捷键</translation>
+        <translation>重置快捷键</translation>
     </message>
     <message>
         <location filename="../skinnedhotkeyeditor.cpp" line="94"/>
         <source>Do you want to restore default shortcuts?</source>
-        <translation type="unfinished">您希望将快捷键恢复到默认值吗？</translation>
+        <translation>您希望将快捷键恢复到默认值吗？</translation>
     </message>
 </context>
 <context>
@@ -722,37 +722,37 @@
     <message>
         <location filename="../skinnedmainwindow.cpp" line="358"/>
         <source>Appearance</source>
-        <translation type="unfinished">外观</translation>
+        <translation>外观</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="359"/>
         <source>Shortcuts</source>
-        <translation type="unfinished">热键</translation>
+        <translation>热键</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="433"/>
         <source>View</source>
-        <translation type="unfinished">视图</translation>
+        <translation>视图</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="442"/>
         <source>Playlist</source>
-        <translation type="unfinished">播放列表</translation>
+        <translation>播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="461"/>
         <source>Audio</source>
-        <translation type="unfinished">音频</translation>
+        <translation>音频</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="469"/>
         <source>Tools</source>
-        <translation type="unfinished">工具</translation>
+        <translation>工具</translation>
     </message>
     <message>
         <location filename="../skinnedmainwindow.cpp" line="541"/>
         <source>Qmmp</source>
-        <translation type="unfinished">Qmmp</translation>
+        <translation>Qmmp</translation>
     </message>
 </context>
 <context>
@@ -760,123 +760,123 @@
     <message>
         <location filename="../skinnedplaylist.cpp" line="56"/>
         <source>Playlist</source>
-        <translation type="unfinished">播放列表</translation>
+        <translation>播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="194"/>
         <source>&amp;Copy Selection To</source>
-        <translation type="unfinished">&amp;复制选项到</translation>
+        <translation>&amp;复制选项到</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="219"/>
         <source>Sort List</source>
-        <translation type="unfinished">列表排序</translation>
+        <translation>清单排序</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="222"/>
         <location filename="../skinnedplaylist.cpp" line="262"/>
         <source>By Title</source>
-        <translation type="unfinished">按标题</translation>
+        <translation>按标题</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="225"/>
         <location filename="../skinnedplaylist.cpp" line="265"/>
         <source>By Album</source>
-        <translation type="unfinished">按专辑</translation>
+        <translation>按专辑</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="228"/>
         <location filename="../skinnedplaylist.cpp" line="268"/>
         <source>By Artist</source>
-        <translation type="unfinished">按艺术家</translation>
+        <translation>按艺术家</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="231"/>
         <location filename="../skinnedplaylist.cpp" line="271"/>
         <source>By Album Artist</source>
-        <translation type="unfinished">按专辑 艺术家</translation>
+        <translation>按专辑 艺术家</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="234"/>
         <location filename="../skinnedplaylist.cpp" line="274"/>
         <source>By Filename</source>
-        <translation type="unfinished">按文件名</translation>
+        <translation>按文件名称</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="237"/>
         <location filename="../skinnedplaylist.cpp" line="277"/>
         <source>By Path + Filename</source>
-        <translation type="unfinished">按路径+文件名</translation>
+        <translation>按路径+文件名称</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="240"/>
         <location filename="../skinnedplaylist.cpp" line="280"/>
         <source>By Date</source>
-        <translation type="unfinished">按日期</translation>
+        <translation>按日期</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="243"/>
         <location filename="../skinnedplaylist.cpp" line="283"/>
         <source>By Track Number</source>
-        <translation type="unfinished">按音轨</translation>
+        <translation>按单曲号</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="246"/>
         <location filename="../skinnedplaylist.cpp" line="286"/>
         <source>By Disc Number</source>
-        <translation type="unfinished">按光盘号</translation>
+        <translation>按光盘号</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="249"/>
         <location filename="../skinnedplaylist.cpp" line="289"/>
         <source>By File Creation Date</source>
-        <translation type="unfinished">按文件的创建日期</translation>
+        <translation>按文件的创建日期</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="252"/>
         <location filename="../skinnedplaylist.cpp" line="292"/>
         <source>By File Modification Date</source>
-        <translation type="unfinished">按文件的修改日期</translation>
+        <translation>按文件的修改日期</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="255"/>
         <source>By Group</source>
-        <translation type="unfinished">按组</translation>
+        <translation>按组</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="260"/>
         <source>Sort Selection</source>
-        <translation type="unfinished">选择排序</translation>
+        <translation>排序选择</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="297"/>
         <source>Randomize List</source>
-        <translation type="unfinished">随机产生列表</translation>
+        <translation>随机列表</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="299"/>
         <source>Reverse List</source>
-        <translation type="unfinished">逆序列表</translation>
+        <translation>反序列表</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="307"/>
         <source>Actions</source>
-        <translation type="unfinished">动作</translation>
+        <translation>行动</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Rename Playlist</source>
-        <translation type="unfinished">重命名播放列表</translation>
+        <translation>重命名播放列表</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="577"/>
         <source>Playlist name:</source>
-        <translation type="unfinished">播放列表名称：</translation>
+        <translation>播放列表名称：</translation>
     </message>
     <message>
         <location filename="../skinnedplaylist.cpp" line="598"/>
         <source>&amp;New PlayList</source>
-        <translation type="unfinished">&amp;新播放列表</translation>
+        <translation>&amp;新播放列表</translation>
     </message>
 </context>
 <context>
@@ -884,34 +884,34 @@
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="14"/>
         <source>Playlist Browser</source>
-        <translation type="unfinished">播放列表浏览器</translation>
+        <translation>播放列表浏览器</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="31"/>
         <source>Filter:</source>
-        <translation type="unfinished">筛选器：</translation>
+        <translation>筛选器：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="47"/>
         <source>New</source>
-        <translation type="unfinished">新的</translation>
+        <translation>新的</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="54"/>
         <location filename="../skinnedplaylistbrowser.cpp" line="45"/>
         <source>Delete</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="61"/>
         <location filename="../forms/skinnedplaylistbrowser.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished">…</translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistbrowser.cpp" line="44"/>
         <source>Rename</source>
-        <translation type="unfinished">重命名</translation>
+        <translation>重命名</translation>
     </message>
 </context>
 <context>
@@ -919,50 +919,50 @@
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="77"/>
         <source>Add Column</source>
-        <translation type="unfinished">增加n列</translation>
+        <translation>增加n列</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="78"/>
         <source>Edit Column</source>
-        <translation type="unfinished">编辑n列</translation>
+        <translation>编辑n列</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="79"/>
         <source>Show Queue/Protocol</source>
-        <translation type="unfinished">显示排队/协议</translation>
+        <translation>显示排队/协议</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="81"/>
         <source>Auto-resize</source>
-        <translation type="unfinished">自动调整大小</translation>
+        <translation>自动调整大小</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="84"/>
         <source>Alignment</source>
-        <translation type="unfinished">对齐</translation>
+        <translation>对齐</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="85"/>
         <source>Left</source>
         <comment>alignment</comment>
-        <translation type="unfinished">左</translation>
+        <translation>左</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="86"/>
         <source>Right</source>
         <comment>alignment</comment>
-        <translation type="unfinished">右</translation>
+        <translation>右</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="87"/>
         <source>Center</source>
         <comment>alignment</comment>
-        <translation type="unfinished">居中</translation>
+        <translation>居中</translation>
     </message>
     <message>
         <location filename="../skinnedplaylistheader.cpp" line="97"/>
         <source>Remove Column</source>
-        <translation type="unfinished">移除n列</translation>
+        <translation>移除n列</translation>
     </message>
 </context>
 <context>
@@ -970,47 +970,47 @@
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="14"/>
         <source>Popup Information Settings</source>
-        <translation type="unfinished">弹出信息设置</translation>
+        <translation>弹出信息设置</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="29"/>
         <source>Template</source>
-        <translation type="unfinished">模板</translation>
+        <translation>模板</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="58"/>
         <source>Reset</source>
-        <translation type="unfinished">重置</translation>
+        <translation>重置</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="65"/>
         <source>Insert</source>
-        <translation type="unfinished">插入</translation>
+        <translation>插入</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="75"/>
         <source>Show cover</source>
-        <translation type="unfinished">显示封面</translation>
+        <translation>显示封面</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="89"/>
         <source>Cover size:</source>
-        <translation type="unfinished">封面尺寸：</translation>
+        <translation>封面尺寸：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="115"/>
         <source>Transparency:</source>
-        <translation type="unfinished">透明：</translation>
+        <translation>透明：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="145"/>
         <source>Delay:</source>
-        <translation type="unfinished">延迟：</translation>
+        <translation>延迟：</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpopupsettings.ui" line="178"/>
         <source>ms</source>
-        <translation type="unfinished">毫秒</translation>
+        <translation>毫秒</translation>
     </message>
 </context>
 <context>
@@ -1018,27 +1018,27 @@
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">预设编辑器</translation>
+        <translation>预设编辑器</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="36"/>
         <source>Preset</source>
-        <translation type="unfinished">预设</translation>
+        <translation>预设</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="61"/>
         <source>Auto-preset</source>
-        <translation type="unfinished">自动预设</translation>
+        <translation>自动预设</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="95"/>
         <source>Load</source>
-        <translation type="unfinished">载入</translation>
+        <translation>载入</translation>
     </message>
     <message>
         <location filename="../forms/skinnedpreseteditor.ui" line="102"/>
         <source>Delete</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
 </context>
 <context>
@@ -1346,17 +1346,17 @@
     <message>
         <location filename="../skinnedtextscroller.cpp" line="54"/>
         <source>Autoscroll Songname</source>
-        <translation type="unfinished">自动滚动曲目名</translation>
+        <translation>自动滚动曲目名</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="55"/>
         <source>Transparent Background</source>
-        <translation type="unfinished">透明的背景</translation>
+        <translation>透明的背景</translation>
     </message>
     <message>
         <location filename="../skinnedtextscroller.cpp" line="122"/>
         <source>Buffering: %1%</source>
-        <translation type="unfinished">缓冲中：%1%</translation>
+        <translation>缓冲中：%1%</translation>
     </message>
 </context>
 <context>
@@ -1364,132 +1364,132 @@
     <message>
         <location filename="../skinnedvisualization.cpp" line="211"/>
         <source>Visualization Mode</source>
-        <translation type="unfinished">可视化模式</translation>
+        <translation>可视化模式</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="214"/>
         <source>Analyzer</source>
-        <translation type="unfinished">分析器</translation>
+        <translation>分析器</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="215"/>
         <source>Scope</source>
-        <translation type="unfinished">示波器</translation>
+        <translation>示波器</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="216"/>
         <source>Off</source>
-        <translation type="unfinished">关闭</translation>
+        <translation>关闭</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="223"/>
         <source>Analyzer Mode</source>
-        <translation type="unfinished">分析模式</translation>
+        <translation>分析模式</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="226"/>
         <source>Normal</source>
-        <translation type="unfinished">标准</translation>
+        <translation>标准</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="227"/>
         <source>Fire</source>
-        <translation type="unfinished">火花</translation>
+        <translation>火花</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="228"/>
         <source>Vertical Lines</source>
-        <translation type="unfinished">垂直线</translation>
+        <translation>垂直线</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="229"/>
         <source>Lines</source>
-        <translation type="unfinished">线形</translation>
+        <translation>线形</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="230"/>
         <source>Bars</source>
-        <translation type="unfinished">条形</translation>
+        <translation>条形</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="243"/>
         <source>Peaks</source>
-        <translation type="unfinished">峰值</translation>
+        <translation>峰</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="247"/>
         <source>Refresh Rate</source>
-        <translation type="unfinished">刷新率</translation>
+        <translation>刷新率</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="250"/>
         <source>50 fps</source>
-        <translation type="unfinished">50 fps</translation>
+        <translation>50 fps</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="251"/>
         <source>25 fps</source>
-        <translation type="unfinished">25 fps</translation>
+        <translation>25 帧每秒</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="252"/>
         <source>10 fps</source>
-        <translation type="unfinished">10 fps</translation>
+        <translation>10 帧每秒</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="253"/>
         <source>5 fps</source>
-        <translation type="unfinished">5 fps</translation>
+        <translation>5 帧每秒</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="260"/>
         <source>Analyzer Falloff</source>
-        <translation type="unfinished">分析器下降速度</translation>
+        <translation>分析器坠落</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="263"/>
         <location filename="../skinnedvisualization.cpp" line="277"/>
         <source>Slowest</source>
-        <translation type="unfinished">最慢</translation>
+        <translation>最慢</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="264"/>
         <location filename="../skinnedvisualization.cpp" line="278"/>
         <source>Slow</source>
-        <translation type="unfinished">慢</translation>
+        <translation>慢</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="265"/>
         <location filename="../skinnedvisualization.cpp" line="279"/>
         <source>Medium</source>
-        <translation type="unfinished">中</translation>
+        <translation>中等</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="266"/>
         <location filename="../skinnedvisualization.cpp" line="280"/>
         <source>Fast</source>
-        <translation type="unfinished">快</translation>
+        <translation>快</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="267"/>
         <location filename="../skinnedvisualization.cpp" line="281"/>
         <source>Fastest</source>
-        <translation type="unfinished">最快</translation>
+        <translation>最快</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="274"/>
         <source>Peaks Falloff</source>
-        <translation type="unfinished">峰值下降速度</translation>
+        <translation>顶峰坠落</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="287"/>
         <source>Background</source>
-        <translation type="unfinished">背景</translation>
+        <translation>背景</translation>
     </message>
     <message>
         <location filename="../skinnedvisualization.cpp" line="288"/>
         <source>Transparent</source>
-        <translation type="unfinished">透明</translation>
+        <translation>透明</translation>
     </message>
 </context>
 </TS>

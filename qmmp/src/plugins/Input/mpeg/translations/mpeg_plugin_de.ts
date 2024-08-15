@@ -6,17 +6,17 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="178"/>
         <source>MPEG Plugin</source>
-        <translation type="unfinished">MPEG-Modul</translation>
+        <translation>MPEG-Modul</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="181"/>
         <source>MPEG Files</source>
-        <translation type="unfinished">MPEG-Dateien</translation>
+        <translation>MPEG-Dateien</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="417"/>
         <source>About MPEG Audio Plugin</source>
-        <translation type="unfinished">Über MPEG-Audiomodul</translation>
+        <translation>Über MPEG-Audiomodul</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="418"/>
@@ -26,22 +26,22 @@
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>Compiled against:</source>
-        <translation type="unfinished">Kompiliert gegen:</translation>
+        <translation>Kompiliert gegen:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>mpg123, API-Version: %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished">Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Geschrieben von: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation type="unfinished">Basiert auf Code von den mq3- und madplay-Projekten</translation>
+        <translation>Basiert auf Code von den mq3- und madplay-Projekten</translation>
     </message>
 </context>
 <context>
@@ -75,75 +75,75 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation type="unfinished">Einstellungen MPEG-Modul</translation>
+        <translation>Einstellungen MPEG-Modul</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="35"/>
         <source>Decoder</source>
-        <translation type="unfinished">Dekoder</translation>
+        <translation>Dekoder</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="41"/>
         <source>MAD</source>
-        <translation type="unfinished">MAD</translation>
+        <translation>MAD</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="48"/>
         <source>MPG123</source>
-        <translation type="unfinished">MPG123</translation>
+        <translation>MPG123</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
-        <translation type="unfinished"></translation>
+        <translation>CRC-Prüfung aktivieren</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation type="unfinished">Schlagwortpriorität</translation>
+        <translation>Schlagwortpriorität</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation type="unfinished">Erster:</translation>
+        <translation>Erster:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="119"/>
         <location filename="../mpegsettingsdialog.ui" line="168"/>
         <location filename="../mpegsettingsdialog.ui" line="217"/>
         <source>ID3v1</source>
-        <translation type="unfinished">ID3v1</translation>
+        <translation>ID3v1</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="124"/>
         <location filename="../mpegsettingsdialog.ui" line="173"/>
         <location filename="../mpegsettingsdialog.ui" line="222"/>
         <source>ID3v2</source>
-        <translation type="unfinished">ID3v2</translation>
+        <translation>ID3v2</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="129"/>
         <location filename="../mpegsettingsdialog.ui" line="178"/>
         <location filename="../mpegsettingsdialog.ui" line="227"/>
         <source>APE</source>
-        <translation type="unfinished">APE</translation>
+        <translation>APE</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="134"/>
         <location filename="../mpegsettingsdialog.ui" line="183"/>
         <location filename="../mpegsettingsdialog.ui" line="232"/>
         <source>Disabled</source>
-        <translation type="unfinished">Deaktiviert</translation>
+        <translation>Deaktiviert</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation type="unfinished">Zweiter:</translation>
+        <translation>Zweiter:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation type="unfinished">Dritter:</translation>
+        <translation>Dritter:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="253"/>
@@ -153,17 +153,17 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="272"/>
         <source>Encodings</source>
-        <translation type="unfinished">Kodierungen</translation>
+        <translation>Kodierungen</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="294"/>
         <source>ID3v2 encoding:</source>
-        <translation type="unfinished">ID3v2-Kodierung:</translation>
+        <translation>ID3v2-Kodierung:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="333"/>
         <source>ID3v1 encoding:</source>
-        <translation type="unfinished">ID3v1-Kodierung:</translation>
+        <translation>ID3v1-Kodierung:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>

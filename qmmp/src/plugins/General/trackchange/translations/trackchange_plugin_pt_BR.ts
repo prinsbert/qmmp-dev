@@ -34,12 +34,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="14"/>
         <source>Track Change Plugin Settings</source>
-        <translation type="unfinished">Preferências do plugin Track Change</translation>
+        <translation>Preferências do plugin Track Change</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="29"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation type="unfinished">Comando a executar ao iniciar uma nova faixa</translation>
+        <translation>Comando a executar ao iniciar uma nova faixa</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="39"/>
@@ -47,22 +47,22 @@
         <location filename="../trackchangesettingsdialog.ui" line="73"/>
         <location filename="../trackchangesettingsdialog.ui" line="90"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="46"/>
         <source>Command to run toward to end of a track</source>
-        <translation type="unfinished">Comando a executar ao terminar a faixa</translation>
+        <translation>Comando a executar ao terminar a faixa</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation type="unfinished">Comando a executar ao atingir o fim da lista de reprodução</translation>
+        <translation>Comando a executar ao atingir o fim da lista de reprodução</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation type="unfinished">Comando a ser executado ao mudar o título (exemplo: emissões web)</translation>
+        <translation>Comando a ser executado ao mudar o título (exemplo: emissões web)</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>

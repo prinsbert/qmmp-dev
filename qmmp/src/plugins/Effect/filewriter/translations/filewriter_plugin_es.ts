@@ -29,32 +29,32 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation type="unfinished">Configuración de Módulo Escritor de Archivos</translation>
+        <translation>Configuración de Módulo Escritor de Archivos</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation type="unfinished">Directorio de salida:</translation>
+        <translation>Directorio de salida:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation type="unfinished">Calidad:</translation>
+        <translation>Calidad:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation type="unfinished">Nombre de archivo de salida:</translation>
+        <translation>Nombre de archivo de salida:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
         <source>Write to single file if possible.</source>
-        <translation type="unfinished">Escriba en un solo archivo si es posible.</translation>
+        <translation>Escriba en un solo archivo si es posible.</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Elija un directorio</translation>
+        <translation>Elija un directorio</translation>
     </message>
 </context>
 </TS>

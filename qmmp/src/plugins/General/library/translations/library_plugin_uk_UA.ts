@@ -11,7 +11,7 @@
     <message>
         <location filename="../library.cpp" line="64"/>
         <source>Alt+L</source>
-        <translation></translation>
+        <translation>Alt+L</translation>
     </message>
     <message>
         <location filename="../library.cpp" line="70"/>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../libraryfactory.cpp" line="38"/>
         <source>Ctrl+1</source>
-        <translation></translation>
+        <translation>Ctrl+1</translation>
     </message>
     <message>
         <location filename="../libraryfactory.cpp" line="84"/>
@@ -68,12 +68,12 @@
     <message>
         <location filename="../librarymodel.cpp" line="204"/>
         <source>%1 - %2</source>
-        <translation></translation>
+        <translation>%1 - %2</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <location filename="../librarymodel.cpp" line="329"/>
@@ -165,37 +165,37 @@
     <message>
         <location filename="../librarysettingsdialog.ui" line="14"/>
         <source>Media Library Settings</source>
-        <translation type="unfinished">Налаштування музичної бібліотеки</translation>
+        <translation>Налаштування музичної бібліотеки</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="39"/>
         <source>Recreate database</source>
-        <translation type="unfinished">Перестворити базу даних</translation>
+        <translation>Перестворити базу даних</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="46"/>
         <source>Show album year</source>
-        <translation type="unfinished">Показувати рік альбому</translation>
+        <translation>Показувати рік альбому</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="55"/>
         <source>Add</source>
-        <translation type="unfinished">Додати</translation>
+        <translation>Додати</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="66"/>
         <source>Remove</source>
-        <translation type="unfinished">Вилучити</translation>
+        <translation>Вилучити</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.ui" line="95"/>
         <source>List of directories for scanning:</source>
-        <translation type="unfinished">Перелік тек для сканування:</translation>
+        <translation>Перелік тек для сканування:</translation>
     </message>
     <message>
         <location filename="../librarysettingsdialog.cpp" line="65"/>
         <source>Select Directories for Scanning</source>
-        <translation type="unfinished">Оберіть теки для сканування</translation>
+        <translation>Оберіть теки для сканування</translation>
     </message>
 </context>
 <context>

@@ -29,93 +29,93 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="14"/>
         <source>Notifier Plugin Settings</source>
-        <translation type="unfinished">Bildirim Eklentisi Ayarları</translation>
+        <translation>Bildirim Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="35"/>
         <source>Desktop Notification</source>
-        <translation type="unfinished">Masaüstü Bildirimi</translation>
+        <translation>Masaüstü Bildirimi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="51"/>
         <source>Font:</source>
-        <translation type="unfinished">Шрифт:</translation>
+        <translation>Yazı tipi:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="78"/>
         <location filename="../notifiersettingsdialog.ui" line="279"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="85"/>
         <source>Transparency:</source>
-        <translation type="unfinished"></translation>
+        <translation>Saydamlık:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="229"/>
         <source>Position</source>
-        <translation type="unfinished">Konum</translation>
+        <translation>Konum</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="251"/>
         <source>Edit template</source>
-        <translation type="unfinished"></translation>
+        <translation>Şablonu düzenle</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="299"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Размер обложки:</translation>
+        <translation>Размер обложки:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="325"/>
         <source>Volume change notification</source>
-        <translation type="unfinished">Ses değişimi bildirimi</translation>
+        <translation>Ses değişimi bildirimi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="332"/>
         <source>Delay (ms):</source>
-        <translation type="unfinished">Задержка (мс):</translation>
+        <translation>Задержка (мс):</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Kayıttan oynatma devam bildirimi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>
         <source>Song change notification</source>
-        <translation type="unfinished">Şarkı değişimi bildirimi</translation>
+        <translation>Şarkı değişimi bildirimi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="375"/>
         <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Başka bir uygulama Tam Ekran Modunda olduğu zaman bildirimleri devre dışı bırak</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="378"/>
         <source>Disable for full screen windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Tam ekran pencereler için devre dışı</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="388"/>
         <source>Psi Notification</source>
-        <translation type="unfinished">Psi Bildirimi</translation>
+        <translation>Psi Bildirimi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="400"/>
         <source>Enable Psi notification</source>
-        <translation type="unfinished">Psi bildirimi etkinleştir</translation>
+        <translation>Psi bildirimi etkinleştir</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.cpp" line="115"/>
         <source>Notification Template</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildirim Şablonu</translation>
     </message>
 </context>
 <context>

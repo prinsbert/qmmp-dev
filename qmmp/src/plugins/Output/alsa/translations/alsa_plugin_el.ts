@@ -6,62 +6,62 @@
     <message>
         <location filename="../alsasettingsdialog.ui" line="14"/>
         <source>ALSA Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου ALSA</translation>
+        <translation>Ρυθμίσεις πρόσθετου ALSA</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Ρυθμίσεις συσκευής</translation>
+        <translation>Ρυθμίσεις συσκευής</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Συσκευή ήχου</translation>
+        <translation>Συσκευή ήχου</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="70"/>
         <source>Mixer</source>
-        <translation type="unfinished">Μίκτης</translation>
+        <translation>Μίκτης</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="94"/>
         <source>Mixer card:</source>
-        <translation type="unfinished">Κάρτα μίκτη:</translation>
+        <translation>Κάρτα μίκτη:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="104"/>
         <source>Mixer device:</source>
-        <translation type="unfinished">Συσκευής μίκτη:</translation>
+        <translation>Συσκευής μίκτη:</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="121"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Προηγμένες ρυθμίσεις</translation>
+        <translation>Προηγμένες ρυθμίσεις</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="142"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Κάρτα ήχου</translation>
+        <translation>Κάρτα ήχου</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="148"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Χρόνος ενδιάμεσης μνήμης (ms)</translation>
+        <translation>Χρόνος ενδιάμεσης μνήμης (ms)</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="184"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Χρόνος περιόδου (ms):</translation>
+        <translation>Χρόνος περιόδου (ms):</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="220"/>
         <source>Use mmap access</source>
-        <translation type="unfinished">Χρήση προσπέλασης mmap</translation>
+        <translation>Χρήση προσπέλασης mmap</translation>
     </message>
     <message>
         <location filename="../alsasettingsdialog.ui" line="240"/>
         <source>Use snd_pcm_pause function</source>
-        <translation type="unfinished">Χρήση της λειτουργίας snd_pcm_pause</translation>
+        <translation>Χρήση της λειτουργίας snd_pcm_pause</translation>
     </message>
 </context>
 <context>

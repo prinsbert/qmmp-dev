@@ -177,42 +177,42 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Editor de pré-ajustes</translation>
+        <translation>Editor de pré-ajustes</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation type="unfinished">Geral</translation>
+        <translation>Geral</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation type="unfinished">Nome:</translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation type="unfinished">Extensão:</translation>
+        <translation>Extensão:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation type="unfinished">Comando</translation>
+        <translation>Comando</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="77"/>
         <source>Options</source>
-        <translation type="unfinished">Opções</translation>
+        <translation>Opções</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation type="unfinished">Gravar tags</translation>
+        <translation>Gravar tags</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation type="unfinished">Converter para 16 bits</translation>
+        <translation>Converter para 16 bits</translation>
     </message>
 </context>
 <context>

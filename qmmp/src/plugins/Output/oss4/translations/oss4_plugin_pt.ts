@@ -6,17 +6,17 @@
     <message>
         <location filename="../oss4settingsdialog.ui" line="14"/>
         <source>OSS4 Plugin Settings</source>
-        <translation type="unfinished">Definições</translation>
+        <translation>Definições</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.ui" line="61"/>
         <source>Device:</source>
-        <translation type="unfinished">Dispositivo:</translation>
+        <translation>Dispositivo:</translation>
     </message>
     <message>
         <location filename="../oss4settingsdialog.cpp" line="69"/>
         <source>Default (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Padrão (%1)</translation>
     </message>
 </context>
 <context>

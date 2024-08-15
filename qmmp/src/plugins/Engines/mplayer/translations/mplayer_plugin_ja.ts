@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>MplayerEngineFactory</name>
     <message>
@@ -80,7 +80,7 @@
         <location filename="../mplayermetadatamodel.cpp" line="64"/>
         <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>kbps</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="66"/>
@@ -95,7 +95,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="67"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="68"/>
@@ -118,37 +118,37 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation type="unfinished">MPlayer 設定</translation>
+        <translation>MPlayer 設定</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="34"/>
         <source>Video:</source>
-        <translation type="unfinished">映像:</translation>
+        <translation>映像:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="48"/>
         <source>Audio:</source>
-        <translation type="unfinished">音響:</translation>
+        <translation>音響:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="62"/>
         <source>Audio/video auto synchronization</source>
-        <translation type="unfinished">音響と映像の自動同期</translation>
+        <translation>音響と映像の自動同期</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation type="unfinished">同期因子:</translation>
+        <translation>同期因子:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation type="unfinished">追加オプション:</translation>
+        <translation>追加オプション:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation type="unfinished">コマンド行で追加するオプション</translation>
+        <translation>コマンド行で追加するオプション</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>
@@ -158,7 +158,7 @@
         <location filename="../mplayersettingsdialog.cpp" line="54"/>
         <location filename="../mplayersettingsdialog.cpp" line="55"/>
         <source>default</source>
-        <translation type="unfinished">初期設定値</translation>
+        <translation>初期設定値</translation>
     </message>
 </context>
 </TS>

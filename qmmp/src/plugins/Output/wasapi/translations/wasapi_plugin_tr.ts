@@ -6,17 +6,17 @@
     <message>
         <location filename="../outputwasapifactory.cpp" line="29"/>
         <source>WASAPI Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>WASAPI Eklentisi</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="53"/>
         <source>About WASAPI Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>WASAPI Çıktı Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="54"/>
         <source>Qmmp WASAPI Output Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp WASAPI Çıktı Eklentisi</translation>
     </message>
     <message>
         <location filename="../outputwasapifactory.cpp" line="55"/>
@@ -29,32 +29,32 @@
     <message>
         <location filename="../wasapisettingsdialog.ui" line="14"/>
         <source>WASAPI Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>WASAPI Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="35"/>
         <source>Device:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aygıt:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="55"/>
         <source>Buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampon boyutu:</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="62"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.ui" line="78"/>
         <source>Exclusive mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapalı kip</translation>
     </message>
     <message>
         <location filename="../wasapisettingsdialog.cpp" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">Öntanımlı</translation>
+        <translation>Öntanımlı</translation>
     </message>
 </context>
 </TS>

@@ -6,17 +6,17 @@
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="14"/>
         <source>Crossfade Plugin Settings</source>
-        <translation type="unfinished">Definições</translation>
+        <translation>Definições</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="29"/>
         <source>Overlap:</source>
-        <translation type="unfinished">Sobreposição:</translation>
+        <translation>Sobreposição:</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="42"/>
         <source>ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
 </context>
 <context>

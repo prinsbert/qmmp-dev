@@ -37,47 +37,47 @@
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="39"/>
         <source>Options</source>
-        <translation type="unfinished">Opcións</translation>
+        <translation>Opcións</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="45"/>
         <source>Notification delay:</source>
-        <translation type="unfinished">Atraso na notificación:</translation>
+        <translation>Atraso na notificación:</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="52"/>
         <source>Update visible notification instead create new</source>
-        <translation type="unfinished">Actualizar a notificación visible en lugar de crear unha nova</translation>
+        <translation>Actualizar a notificación visible en lugar de crear unha nova</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="72"/>
         <source>s</source>
-        <translation type="unfinished">s</translation>
+        <translation>s</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="85"/>
         <source>Volume change notification</source>
-        <translation type="unfinished">Notificación de cambio de volume</translation>
+        <translation>Notificación de cambio de volume</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="95"/>
         <source>Appearance</source>
-        <translation type="unfinished">Apariencia</translation>
+        <translation>Apariencia</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="101"/>
         <source>Show covers</source>
-        <translation type="unfinished">Mostrar cubertas</translation>
+        <translation>Mostrar cubertas</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.ui" line="110"/>
         <source>Edit template</source>
-        <translation type="unfinished">Editar plantilla</translation>
+        <translation>Editar plantilla</translation>
     </message>
     <message>
         <location filename="../kdenotifysettingsdialog.cpp" line="76"/>
         <source>Notification Template</source>
-        <translation type="unfinished">Plantilla de notificación</translation>
+        <translation>Plantilla de notificación</translation>
     </message>
 </context>
 </TS>

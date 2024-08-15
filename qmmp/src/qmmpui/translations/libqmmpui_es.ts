@@ -56,32 +56,32 @@
     <message>
         <location filename="../aboutdialog.cpp" line="80"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transportes:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="86"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>Decodificadores:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="94"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>Motores:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="101"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Efectos:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="130"/>
         <source>File dialogs:</source>
-        <translation type="unfinished"></translation>
+        <translation>Diálogos de archivo:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="139"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>Interfaces de usuario:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="122"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="46"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Selector de color</translation>
     </message>
 </context>
 <context>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../columneditor.cpp" line="87"/>
         <source>Album</source>
-        <translation>Album</translation>
+        <translation>Álbum</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="91"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="275"/>
         <source>Show cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar carátula</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="285"/>
@@ -595,12 +595,12 @@
     <message>
         <location filename="../forms/configdialog.ui" line="334"/>
         <source>Skip already existing tracks when adding</source>
-        <translation type="unfinished"></translation>
+        <translation>Saltar pistas existentes al agregar</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="341"/>
         <source>Stop playback after removing of current track</source>
-        <translation type="unfinished"></translation>
+        <translation>Detener la reproducción al eliminar la pista actual</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1035"/>
@@ -825,7 +825,7 @@
     <message>
         <location filename="../configdialog.cpp" line="376"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Sueco</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="377"/>
@@ -1107,7 +1107,7 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
@@ -1199,7 +1199,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - Album</source>
-        <translation type="unfinished">Artista - Álbum</translation>
+        <translation>Artista - Álbum</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
@@ -1388,17 +1388,17 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="14"/>
         <source>Change Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar atajo</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulse la combinación de teclas que quiere asignar</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar</translation>
     </message>
 </context>
 <context>
@@ -1542,7 +1542,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../visualmenu.cpp" line="26"/>
         <source>Visualization</source>
-        <translation type="unfinished">Visualización</translation>
+        <translation>Visualización</translation>
     </message>
 </context>
 <context>

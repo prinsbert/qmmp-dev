@@ -44,7 +44,7 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="42"/>
         <source>Port:</source>
-        <translation type="unfinished">端口：</translation>
+        <translation>端口：</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="56"/>
@@ -64,12 +64,12 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="86"/>
         <source>Quality:</source>
-        <translation type="unfinished">音質:</translation>
+        <translation>音質:</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="106"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">取樣率</translation>
+        <translation>取樣率</translation>
     </message>
     <message>
         <location filename="../shoutsettingsdialog.ui" line="136"/>
@@ -79,7 +79,7 @@
     <message>
         <location filename="../shoutsettingsdialog.ui" line="143"/>
         <source>Hz</source>
-        <translation type="unfinished">Hz</translation>
+        <translation>Hz</translation>
     </message>
 </context>
 </TS>

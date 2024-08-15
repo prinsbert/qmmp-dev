@@ -6,27 +6,27 @@
     <message>
         <location filename="../ffvideofactory.cpp" line="41"/>
         <source>FFmpeg Video Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg Vidyo Eklentisi</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="45"/>
         <source>Video Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidyo Dosyaları</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="161"/>
         <source>About FFVideo Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg Vidyo Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="162"/>
         <source>FFmpeg-based video plugin for Qmmp</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp için FFmpeg tabanlı vidyo eklentisi</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="163"/>
         <source>Compiled against:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dayanarak derlendi</translation>
     </message>
     <message>
         <location filename="../ffvideofactory.cpp" line="172"/>
@@ -49,17 +49,17 @@
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="70"/>
         <source>Audio bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses bit hızı</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="71"/>
         <source>Audio sample rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses örnekleme oranı</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="50"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="51"/>
@@ -77,17 +77,17 @@
         <location filename="../ffvideometadatamodel.cpp" line="73"/>
         <location filename="../ffvideometadatamodel.cpp" line="75"/>
         <source>Audio channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses kanalları</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="82"/>
         <source>Video size</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidyo Boyutu</translation>
     </message>
     <message>
         <location filename="../ffvideometadatamodel.cpp" line="83"/>
         <source>Video bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidyo bit hızı</translation>
     </message>
 </context>
 <context>
@@ -95,31 +95,31 @@
     <message>
         <location filename="../videowindow.cpp" line="40"/>
         <source>FFmpeg Video</source>
-        <translation type="unfinished"></translation>
+        <translation>FFmpeg Vidyo</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <location filename="../videowindow.cpp" line="51"/>
         <source>&amp;Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Duraklat</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="46"/>
         <location filename="../videowindow.cpp" line="51"/>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Boşluk</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="47"/>
         <location filename="../videowindow.cpp" line="52"/>
         <source>&amp;Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Durdur</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="47"/>
         <location filename="../videowindow.cpp" line="52"/>
         <source>V</source>
-        <translation type="unfinished"></translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../videowindow.cpp" line="49"/>

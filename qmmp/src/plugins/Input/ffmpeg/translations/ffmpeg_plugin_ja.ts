@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>DecoderFFmpegFactory</name>
     <message>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="14"/>
         <source>FFmpeg Plugin Settings</source>
-        <translation type="unfinished">FFmpeg プラグイン設定</translation>
+        <translation>FFmpeg プラグイン設定</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="55"/>
         <source>Formats</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="61"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="89"/>
         <source>MP3 (MPEG audio layer 3)</source>
-        <translation type="unfinished">MP3 (MPEG オーディオ レイヤー3)</translation>
+        <translation>MP3 (MPEG オーディオ レイヤー3)</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="96"/>
@@ -79,12 +79,12 @@
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="103"/>
         <source>RealAudio 1.0/2.0</source>
-        <translation type="unfinished">RealAudio 1.0/2.0</translation>
+        <translation>RealAudio 1.0/2.0</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="110"/>
         <source>Shorten</source>
-        <translation type="unfinished">短縮</translation>
+        <translation>短縮</translation>
     </message>
     <message>
         <location filename="../ffmpegsettingsdialog.ui" line="117"/>

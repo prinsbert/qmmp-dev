@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodersndfilefactory.cpp" line="230"/>
         <source>Compiled against %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1에 대해 컴파일됨</translation>
     </message>
     <message>
         <location filename="../decodersndfilefactory.cpp" line="231"/>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>OutputWaveOutFactory</name>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="29"/>
         <source>WaveOut Plugin</source>
-        <translation>Модуль WaveOut</translation>
+        <translation>Втулок WaveOut</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="61"/>
         <source>About WaveOut Output Plugin</source>
-        <translation>Про модуль виведення WaveOut</translation>
+        <translation>Про втулок виведення WaveOut</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="62"/>
         <source>Qmmp WaveOut Output Plugin</source>
-        <translation>Модуль виведення WaveOut для Qmmp</translation>
+        <translation>Втулок виведення WaveOut для Qmmp</translation>
     </message>
     <message>
         <location filename="../outputwaveoutfactory.cpp" line="63"/>

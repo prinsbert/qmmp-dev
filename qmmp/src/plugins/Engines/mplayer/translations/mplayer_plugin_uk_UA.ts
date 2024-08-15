@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>MplayerEngineFactory</name>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="33"/>
         <source>Mplayer Plugin</source>
-        <translation>Модуль Mplayer</translation>
+        <translation>Втулок Mplayer</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="36"/>
         <source>Video Files</source>
-        <translation>Відео файли</translation>
+        <translation>Відеофайли</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="73"/>
         <source>About MPlayer Plugin</source>
-        <translation>Про модуль Mplayer</translation>
+        <translation>Про втулок Mplayer</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="74"/>
         <source>Qmmp MPlayer Plugin</source>
-        <translation>Модуль Mplayer для Qmmp</translation>
+        <translation>Втулок Mplayer для Qmmp</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="75"/>
         <source>This plugin uses MPlayer as backend</source>
-        <translation>Цей модуль використовує MPlayer як бекенд</translation>
+        <translation>Цей втулок використовує MPlayer як бекенд</translation>
     </message>
     <message>
         <location filename="../mplayerenginefactory.cpp" line="76"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="61"/>
         <source>FPS</source>
-        <translation>Кадрів в секунду</translation>
+        <translation>Кадрів на секунду</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="62"/>
@@ -80,12 +80,12 @@
         <location filename="../mplayermetadatamodel.cpp" line="64"/>
         <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>kbps</source>
-        <translation>кбіт/с</translation>
+        <translation>кб/с</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="66"/>
         <source>Audio codec</source>
-        <translation>Аудіокодек</translation>
+        <translation>Авдіокодек</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="67"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="68"/>
         <source>Audio bitrate</source>
-        <translation>Аудіобітрейт</translation>
+        <translation>Авдіобітрейт</translation>
     </message>
     <message>
         <location filename="../mplayermetadatamodel.cpp" line="69"/>
@@ -118,37 +118,37 @@
     <message>
         <location filename="../mplayersettingsdialog.ui" line="14"/>
         <source>MPlayer Settings</source>
-        <translation type="unfinished">Налаштування MPlayer</translation>
+        <translation>Налаштування MPlayer</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="34"/>
         <source>Video:</source>
-        <translation type="unfinished">Відео:</translation>
+        <translation>Відео:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="48"/>
         <source>Audio:</source>
-        <translation type="unfinished">Аудіо:</translation>
+        <translation>Авдіо:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="62"/>
         <source>Audio/video auto synchronization</source>
-        <translation type="unfinished">Автоматична синхронізація аудіо/відео</translation>
+        <translation>Автоматична синхронізація авдіо/відео</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="72"/>
         <source>Synchronization factor:</source>
-        <translation type="unfinished">Фактор синхронізації:</translation>
+        <translation>Чинник синхронізації:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="89"/>
         <source>Extra options:</source>
-        <translation type="unfinished">Додаткові опції:</translation>
+        <translation>Додаткові параметри:</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.ui" line="96"/>
         <source>Extra command line options</source>
-        <translation type="unfinished">Додаткові команди командного рядка</translation>
+        <translation>Додаткові команди командного рядка</translation>
     </message>
     <message>
         <location filename="../mplayersettingsdialog.cpp" line="29"/>
@@ -158,7 +158,7 @@
         <location filename="../mplayersettingsdialog.cpp" line="54"/>
         <location filename="../mplayersettingsdialog.cpp" line="55"/>
         <source>default</source>
-        <translation type="unfinished">за умовчанням</translation>
+        <translation>усталено</translation>
     </message>
 </context>
 </TS>

@@ -127,7 +127,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="46"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇色彩</translation>
     </message>
 </context>
 <context>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../columneditor.cpp" line="103"/>
         <source>Parent Directory Name</source>
-        <translation type="unfinished">上層目錄名稱</translation>
+        <translation>上層目錄名稱</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="104"/>
@@ -489,7 +489,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="657"/>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>字體：</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="682"/>
@@ -915,12 +915,12 @@
     <message>
         <location filename="../forms/cueeditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished">載入</translation>
+        <translation>載入</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished">移除</translation>
+        <translation>移除</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="54"/>
@@ -936,7 +936,7 @@
         <location filename="../cueeditor.cpp" line="131"/>
         <location filename="../cueeditor.cpp" line="150"/>
         <source>CUE Files</source>
-        <translation type="unfinished"></translation>
+        <translation>CUE 檔案</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="148"/>
@@ -1199,7 +1199,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - Album</source>
-        <translation type="unfinished">演作家 - 專輯</translation>
+        <translation>演作家 - 專輯</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
@@ -1393,12 +1393,12 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation type="unfinished"></translation>
+        <translation>請按您想指定的組合鍵</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>清除</translation>
     </message>
 </context>
 <context>
@@ -1533,7 +1533,8 @@
         <location filename="../uihelper.cpp" line="224"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation type="unfinished"></translation>
+        <translation>％1早已存在。
+你想要替換它嗎？</translation>
     </message>
 </context>
 <context>
@@ -1541,7 +1542,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../visualmenu.cpp" line="26"/>
         <source>Visualization</source>
-        <translation type="unfinished">可視化</translation>
+        <translation>可視化</translation>
     </message>
 </context>
 <context>

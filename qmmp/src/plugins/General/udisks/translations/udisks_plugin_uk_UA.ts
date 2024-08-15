@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>UDisksFactory</name>
     <message>
@@ -47,37 +47,37 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="14"/>
         <source>UDisks Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля UDisks</translation>
+        <translation>Налаштування втулка UDisks</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Автовизначення аудіо-CD</translation>
+        <translation>Автовизначення авдіо-КД</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Автоматично додавати треки до списку</translation>
+        <translation>Автоматично додавати доріжки до списку</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Автоматично видаляти треки зі списку</translation>
+        <translation>Автоматично вилучати доріжки зі списку</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Виявлення змінних пристроїв</translation>
+        <translation>Виявлення змінних пристроїв</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Автоматично додавати файли до списку</translation>
+        <translation>Автоматично додавати файли до списку</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Автоматично видаляти файли зі списку</translation>
+        <translation>Автоматично вилучати файли зі списку</translation>
     </message>
 </context>
 </TS>

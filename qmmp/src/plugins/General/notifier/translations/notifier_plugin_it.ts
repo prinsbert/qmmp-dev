@@ -29,93 +29,93 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="14"/>
         <source>Notifier Plugin Settings</source>
-        <translation type="unfinished">Impostazioni estensione notifica</translation>
+        <translation>Impostazioni estensione notifica</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="35"/>
         <source>Desktop Notification</source>
-        <translation type="unfinished">Notifica sul desktop</translation>
+        <translation>Notifica sul desktop</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="51"/>
         <source>Font:</source>
-        <translation type="unfinished">Carattere;</translation>
+        <translation>Carattere;</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="78"/>
         <location filename="../notifiersettingsdialog.ui" line="279"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="85"/>
         <source>Transparency:</source>
-        <translation type="unfinished">Trasparenza:</translation>
+        <translation>Trasparenza:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="229"/>
         <source>Position</source>
-        <translation type="unfinished">Posizione</translation>
+        <translation>Posizione</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="251"/>
         <source>Edit template</source>
-        <translation type="unfinished">Modifica modello</translation>
+        <translation>Modifica modello</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="299"/>
         <source>Cover size:</source>
-        <translation type="unfinished">Dimensione copertina:</translation>
+        <translation>Dimensione copertina:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="325"/>
         <source>Volume change notification</source>
-        <translation type="unfinished">Notifica di modifica volume</translation>
+        <translation>Notifica di modifica volume</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="332"/>
         <source>Delay (ms):</source>
-        <translation type="unfinished">Ritardo (ms):</translation>
+        <translation>Ritardo (ms):</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
-        <translation type="unfinished">Notifica di ripresa della riproduzione</translation>
+        <translation>Notifica di ripresa della riproduzione</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>
         <source>Song change notification</source>
-        <translation type="unfinished">Notifica di cambio brano</translation>
+        <translation>Notifica di cambio brano</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="375"/>
         <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation type="unfinished">Disabilita le notifiche quando un&apos;altra applicazione è in modalità a schermo intero</translation>
+        <translation>Disabilita le notifiche quando un&apos;altra applicazione è in modalità a schermo intero</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="378"/>
         <source>Disable for full screen windows</source>
-        <translation type="unfinished">Disabilita per finestre a schermo intero</translation>
+        <translation>Disabilita per finestre a schermo intero</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="388"/>
         <source>Psi Notification</source>
-        <translation type="unfinished">Notifica Psi</translation>
+        <translation>Notifica Psi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="400"/>
         <source>Enable Psi notification</source>
-        <translation type="unfinished">Abilita notifica Psi</translation>
+        <translation>Abilita notifica Psi</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.cpp" line="115"/>
         <source>Notification Template</source>
-        <translation type="unfinished">Modello di notifica</translation>
+        <translation>Modello di notifica</translation>
     </message>
 </context>
 <context>

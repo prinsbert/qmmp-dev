@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>RDetectFactory</name>
     <message>
         <location filename="../rdetectfactory.cpp" line="30"/>
         <source>Volume Detection Plugin</source>
-        <translation>Модуль виявлення томів</translation>
+        <translation>Втулок визначення томів</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="50"/>
         <source>About Volume Detection Plugin</source>
-        <translation>Про модуль виявлення томів</translation>
+        <translation>Про втулок визначення томів</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="51"/>
         <source>Qmmp Removable Volume Detection Plugin</source>
-        <translation>Модуль виявлення з&apos;ємних томів для Qmmp</translation>
+        <translation>Втулок визначення знімних томів для Qmmp</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="52"/>
         <source>This plugin provides removable volume detection</source>
-        <translation>Цей модуль відслідковує з&apos;ємні томи</translation>
+        <translation>Цей втулок відстежує знімні томи</translation>
     </message>
     <message>
         <location filename="../rdetectfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Розробник: Ілля Котов  &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -34,37 +34,37 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="14"/>
         <source>Volume Detection Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля виявлення томів</translation>
+        <translation>Налаштування втулка визначення томів</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Автовиявлення аудіо-CD</translation>
+        <translation>Автовизначення авдіо-КД</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Автоматично додавати треки до списку</translation>
+        <translation>Автоматично додавати доріжки до списку</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Автоматично видаляти треки зі списку</translation>
+        <translation>Автоматично вилучати доріжки зі списку</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Автовиявлення з&apos;ємних пристроїв</translation>
+        <translation>Виявлення змінних пристроїв</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Автоматично додавати файли до списку</translation>
+        <translation>Автоматично додавати файли до списку</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Автоматично видаляти файли зі списку</translation>
+        <translation>Автоматично вилучати файли зі списку</translation>
     </message>
 </context>
 <context>

@@ -29,17 +29,17 @@
     <message>
         <location filename="../mmssettingsdialog.ui" line="14"/>
         <source>MMS Plugin Settings</source>
-        <translation type="unfinished">MMS 插件設定</translation>
+        <translation>MMS 插件設定</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="29"/>
         <source>Buffer size:</source>
-        <translation type="unfinished">緩沖大小：</translation>
+        <translation>緩沖大小：</translation>
     </message>
     <message>
         <location filename="../mmssettingsdialog.ui" line="64"/>
         <source>KB</source>
-        <translation type="unfinished">KB</translation>
+        <translation>KB</translation>
     </message>
 </context>
 </TS>

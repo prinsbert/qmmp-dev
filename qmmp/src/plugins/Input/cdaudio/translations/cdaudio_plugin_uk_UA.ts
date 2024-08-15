@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>CDAudioSettingsDialog</name>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="14"/>
         <source>CD Audio Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля AudioCD</translation>
+        <translation>Налаштування втулка AudioCD</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="139"/>
         <source>Override device:</source>
-        <translation type="unfinished">Перевизначити пристрій:</translation>
+        <translation>Перевизначити пристрій:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="129"/>
         <source>Limit cd speed:</source>
-        <translation type="unfinished">Обмежити швидкість CD:</translation>
+        <translation>Обмежити швидкість КД:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="122"/>
         <source>Use cd-text</source>
-        <translation type="unfinished">Використовувати cd-text</translation>
+        <translation>Використовувати cd-text</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="39"/>
         <source>CDDB</source>
-        <translation type="unfinished"></translation>
+        <translation>CDDB</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="48"/>
         <source>Use HTTP instead of CDDBP</source>
-        <translation type="unfinished">Використовувати HTTP замість CDDBP</translation>
+        <translation>Використовувати HTTP замість CDDBP</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="58"/>
         <source>Server:</source>
-        <translation type="unfinished">Сервер:</translation>
+        <translation>Сервер:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="65"/>
         <source>Path:</source>
-        <translation type="unfinished">Шлях:</translation>
+        <translation>Шлях:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="75"/>
         <source>Port:</source>
-        <translation type="unfinished">Порт:</translation>
+        <translation>Порт:</translation>
     </message>
     <message>
         <location filename="../cdaudiosettingsdialog.ui" line="87"/>
         <source>Clear CDDB cache</source>
-        <translation type="unfinished">Очистити кеш CDDB</translation>
+        <translation>Очистити кеш CDDB</translation>
     </message>
 </context>
 <context>
@@ -59,17 +59,17 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="50"/>
         <source>CD Audio Plugin</source>
-        <translation>Модуль AudioCD</translation>
+        <translation>Втулок AudioCD</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="96"/>
         <source>About CD Audio Plugin</source>
-        <translation>Про модуль AudioCD</translation>
+        <translation>Про втулок AudioCD</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="97"/>
         <source>Qmmp CD Audio Plugin</source>
-        <translation>Модуль AudioCD для Qmmp</translation>
+        <translation>Втулок AudioCD для Qmmp</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="98"/>

@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>CueSettingsDialog</name>
     <message>
         <location filename="../cuesettingsdialog.ui" line="14"/>
         <source>CUE Plugin Settings</source>
-        <translation type="unfinished">CUE プラグイン設定</translation>
+        <translation>CUE プラグイン設定</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="29"/>
         <source>Common settings</source>
-        <translation type="unfinished">共通設定</translation>
+        <translation>共通設定</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation type="unfinished">CUE シートに間違いがあってもできるだけ読み込む</translation>
+        <translation>CUE シートに間違いがあってもできるだけ読み込む</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation type="unfinished">CUE 文字符号化形式</translation>
+        <translation>CUE 文字符号化形式</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">文字セット自動検知</translation>
+        <translation>文字符号セットの自動検出</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation type="unfinished">言語:</translation>
+        <translation>言語:</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">文字符号化形式(初期設定値):</translation>
+        <translation>文字符号化形式(初期設定値):</translation>
     </message>
 </context>
 <context>

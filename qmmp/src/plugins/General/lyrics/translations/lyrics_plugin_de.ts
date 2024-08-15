@@ -24,12 +24,12 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Liedtext</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Ctrl+2</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+2</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="68"/>
@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen Liedtext-Modul</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anbieter von Liedtexten:</translation>
     </message>
 </context>
 <context>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Schlagwort</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>

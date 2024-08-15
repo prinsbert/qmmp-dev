@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>TwoPanelFileDialog</name>
     <message>
         <location filename="../twopanelfiledialog.ui" line="14"/>
         <source>Add Files</source>
-        <translation>ファイルの追加</translation>
+        <translation>ファイルを追加</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="70"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../twopanelfiledialog.ui" line="80"/>
         <source>Files of type:</source>
-        <translation>ファイル形式:</translation>
+        <translation>この種のファイル:</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="117"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../twopanelfiledialogimpl.cpp" line="339"/>
         <source>Directories</source>
-        <translation>ディレクトリー</translation>
+        <translation>ディレクトリ</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialogimpl.cpp" line="351"/>
@@ -80,8 +80,8 @@
         <location filename="../twopanelfiledialogimpl.cpp" line="457"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation>%1 が既にあります。
-上書きしますがよろしいですか。</translation>
+        <translation>%1 は既にあります。
+置き換えますか。</translation>
     </message>
 </context>
 </TS>

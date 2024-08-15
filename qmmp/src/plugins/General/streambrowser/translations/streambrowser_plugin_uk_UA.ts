@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>EditStreamDialog</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../editstreamdialog.ui" line="64"/>
         <source>Bitrate:</source>
-        <translation>Бітрейт:</translation>
+        <translation>Швидкість потоку:</translation>
     </message>
     <message>
         <location filename="../editstreamdialog.ui" line="74"/>
@@ -44,7 +44,7 @@
     <message>
         <location filename="../streambrowser.cpp" line="34"/>
         <source>Ctrl+U</source>
-        <translation></translation>
+        <translation>Ctrl+U</translation>
     </message>
 </context>
 <context>
@@ -52,22 +52,22 @@
     <message>
         <location filename="../streambrowserfactory.cpp" line="29"/>
         <source>Stream Browser Plugin</source>
-        <translation>Модуль огляду потоків</translation>
+        <translation>Втулок огляду потоків</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="50"/>
         <source>About Stream Browser Plugin</source>
-        <translation>Про модуль огляду потоків</translation>
+        <translation>Про втулок огляду потоків</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="51"/>
         <source>Qmmp Stream Browser Plugin</source>
-        <translation>Модуль огляду потоків для Qmmp</translation>
+        <translation>Втулок огляду потоків для Qmmp</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="52"/>
         <source>This plugin allows one to add stream from IceCast stream directory</source>
-        <translation>Цей модуль дозволяє додавати потоки з каталогу IceCast</translation>
+        <translation>Цей втулок дозволяє додавати потоки з каталогу IceCast</translation>
     </message>
     <message>
         <location filename="../streambrowserfactory.cpp" line="53"/>
@@ -90,12 +90,12 @@
     <message>
         <location filename="../streamwindow.ui" line="47"/>
         <source>Favorites</source>
-        <translation>Вибране</translation>
+        <translation>Обране</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="73"/>
         <source>IceCast</source>
-        <translation></translation>
+        <translation>IceCast</translation>
     </message>
     <message>
         <location filename="../streamwindow.ui" line="102"/>
@@ -123,7 +123,7 @@
         <location filename="../streamwindow.cpp" line="55"/>
         <location filename="../streamwindow.cpp" line="69"/>
         <source>Bitrate</source>
-        <translation>Бітрейт</translation>
+        <translation>Швидкість потоку</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="55"/>
@@ -139,7 +139,7 @@
     <message>
         <location filename="../streamwindow.cpp" line="128"/>
         <source>&amp;Add to playlist</source>
-        <translation>&amp;Додати до списку</translation>
+        <translation>&amp;Додати до грайлиста</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="131"/>
@@ -149,13 +149,13 @@
     <message>
         <location filename="../streamwindow.cpp" line="132"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Змінити</translation>
+        <translation>&amp;Зміни</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="136"/>
         <location filename="../streamwindow.cpp" line="139"/>
         <source>&amp;Remove</source>
-        <translation>&amp;Видалити</translation>
+        <translation>&amp;Вилучити</translation>
     </message>
     <message>
         <location filename="../streamwindow.cpp" line="152"/>

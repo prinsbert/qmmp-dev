@@ -6,37 +6,37 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="14"/>
         <source>CUE Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon de fichiers .cue</translation>
+        <translation>Configuration du greffon de fichiers .cue</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="29"/>
         <source>Common settings</source>
-        <translation type="unfinished">Réglages communs</translation>
+        <translation>Réglages communs</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation type="unfinished">Charger les fichiers .cue incorrects si possible</translation>
+        <translation>Charger les fichiers .cue incorrects si possible</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation type="unfinished">Encodage des fichiers .cue</translation>
+        <translation>Encodage des fichiers .cue</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Détection automatique de l&apos;encodage des caractères.</translation>
+        <translation>Détection automatique de l&apos;encodage</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation type="unfinished">Langue&#xa0;:</translation>
+        <translation>Langage:</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Encodage par défaut&#xa0;:</translation>
+        <translation>Encodage par défaut :</translation>
     </message>
 </context>
 <context>

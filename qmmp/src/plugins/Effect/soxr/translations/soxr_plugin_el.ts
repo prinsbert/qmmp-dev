@@ -29,42 +29,42 @@
     <message>
         <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου μετατροπής ρυθμού δειγματοληψίας</translation>
+        <translation>Ρυθμίσεις πρόσθετου μετατροπής ρυθμού δειγματοληψίας</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Ρυθμός δειγματοληψίας (Hz):</translation>
+        <translation>Ρυθμός δειγματοληψίας (Hz):</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished">Ποιότητα:</translation>
+        <translation>Ποιότητα:</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished">Γρήγορο</translation>
+        <translation>Γρήγορο</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished">Χαμηλό</translation>
+        <translation>Χαμηλό</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished">Μέσο</translation>
+        <translation>Μέσο</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished">Υψηλό</translation>
+        <translation>Υψηλό</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished">Πολύ υψηλός</translation>
+        <translation>Πολύ υψηλός</translation>
     </message>
 </context>
 </TS>

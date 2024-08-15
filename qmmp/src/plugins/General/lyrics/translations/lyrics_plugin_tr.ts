@@ -24,12 +24,12 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Şarkı Sözleri</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Ctrl+2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+2</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="68"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="72"/>
         <source>Based on Ultimate Lyrics script by Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Vladimir Brkic&apos;in Ultimate Lyrics tabanlı betiği &lt;vladimir_brkic@yahoo.com&gt;</translation>
     </message>
 </context>
 <context>
@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Lyrics Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lyrics sağlayıcıları:</translation>
     </message>
 </context>
 <context>
@@ -75,68 +75,68 @@
     <message>
         <location filename="../lyricswidget.ui" line="14"/>
         <source>Lyrics Plugin</source>
-        <translation type="unfinished">Şarkı Sözü Eklentisi</translation>
+        <translation>Şarkı Sözü Eklentisi</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="31"/>
         <source>Provider:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sağlayıcı:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="115"/>
         <source>Title:</source>
-        <translation type="unfinished">Başlık:</translation>
+        <translation>Başlık:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="132"/>
         <source>Album:</source>
-        <translation type="unfinished"></translation>
+        <translation>Albüm:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="142"/>
         <source>Artist:</source>
-        <translation type="unfinished">Artist:</translation>
+        <translation>Artist:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="159"/>
         <source>Track:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="171"/>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yıl:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="148"/>
         <location filename="../lyricswidget.cpp" line="234"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="159"/>
         <source>Not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulunamadı</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="169"/>
         <source>Error: %1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata: %1 - %2</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="182"/>
         <source>Receiving</source>
-        <translation type="unfinished">Alınıyor</translation>
+        <translation>Alınıyor</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>
         <source>Cache</source>
-        <translation type="unfinished"></translation>
+        <translation>Önbellek</translation>
     </message>
 </context>
 <context>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../ultimatelyricsparser.cpp" line="116"/>
         <source>%1 (line: %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (satır: %2)</translation>
     </message>
 </context>
 </TS>

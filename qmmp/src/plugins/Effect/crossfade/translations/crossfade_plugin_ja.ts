@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>CrossfadeSettingsDialog</name>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="14"/>
         <source>Crossfade Plugin Settings</source>
-        <translation type="unfinished">Crossfade プラグイン設定</translation>
+        <translation>Crossfade プラグイン設定</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="29"/>
         <source>Overlap:</source>
-        <translation type="unfinished">オーバーラップ:</translation>
+        <translation>オーバーラップ:</translation>
     </message>
     <message>
         <location filename="../crossfadesettingsdialog.ui" line="42"/>
         <source>ms</source>
-        <translation type="unfinished">ミリ秒</translation>
+        <translation>ミリ秒</translation>
     </message>
 </context>
 <context>

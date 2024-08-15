@@ -41,37 +41,37 @@
     <message>
         <location filename="../aboutdialog.cpp" line="71"/>
         <source>Version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarlama: %1</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="72"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt %1 kullanılıyor (Qt %2 ile derlenmiş)</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="75"/>
         <source>(c) %1-%2 Qmmp Development Team</source>
-        <translation type="unfinished"></translation>
+        <translation>(c) %1-%2 Qmmp Geliştirme Takımı</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="80"/>
         <source>Transports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taşımalar:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="86"/>
         <source>Decoders:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodlayıcılar:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="94"/>
         <source>Engines:</source>
-        <translation type="unfinished"></translation>
+        <translation>Motorlar:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="101"/>
         <source>Effects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Efektler:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="130"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../aboutdialog.cpp" line="139"/>
         <source>User interfaces:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı arabirimleri:</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="122"/>
@@ -104,17 +104,17 @@
     <message>
         <location filename="../forms/addurldialog.ui" line="14"/>
         <source>Enter URL to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Eklenecek URL&apos;yi girin</translation>
     </message>
     <message>
         <location filename="../forms/addurldialog.ui" line="55"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ekle</translation>
     </message>
     <message>
         <location filename="../forms/addurldialog.ui" line="62"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;İptal</translation>
     </message>
     <message>
         <location filename="../addurldialog.cpp" line="90"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../colorwidget.cpp" line="46"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Seçin</translation>
     </message>
 </context>
 <context>
@@ -135,17 +135,17 @@
     <message>
         <location filename="../forms/columneditor.ui" line="14"/>
         <source>Edit Column</source>
-        <translation type="unfinished"></translation>
+        <translation>Sütun Düzenle</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="36"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ad:</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="76"/>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim:</translation>
     </message>
     <message>
         <location filename="../forms/columneditor.ui" line="64"/>
@@ -155,7 +155,7 @@
     <message>
         <location filename="../forms/columneditor.ui" line="29"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tür:</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="86"/>
@@ -185,12 +185,12 @@
     <message>
         <location filename="../columneditor.cpp" line="96"/>
         <source>Composer</source>
-        <translation type="unfinished"></translation>
+        <translation>Besteci</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="97"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Süre</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="102"/>
@@ -200,62 +200,62 @@
     <message>
         <location filename="../columneditor.cpp" line="101"/>
         <source>Track Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça Fihristi</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="88"/>
         <source>Artist - Album</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanatçı - Albüm</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="89"/>
         <source>Artist - Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanatçı - Başlık</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="90"/>
         <source>Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Albüm Sanatçısı</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="92"/>
         <source>Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça Numarası</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="93"/>
         <source>Two-digit Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>İki-rakam Parça Numarası</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="98"/>
         <source>Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk Numarası</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="99"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya Adı</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="100"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya Yolu</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="103"/>
         <source>Parent Directory Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Dizin Adı</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="104"/>
         <source>Parent Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Dizin Yolu</translation>
     </message>
     <message>
         <location filename="../columneditor.cpp" line="105"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel</translation>
     </message>
 </context>
 <context>
@@ -314,7 +314,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="226"/>
         <source>Group format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grup biçimi:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="238"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="169"/>
         <source>Read tags while loading a playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir çalma listesi yüklerken etiketleri oku</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="193"/>
@@ -356,38 +356,38 @@
     <message>
         <location filename="../forms/configdialog.ui" line="275"/>
         <source>Show cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapağı göster</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="285"/>
         <source>Directory Scanning Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Dizin Tarama Seçenekleri</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="291"/>
         <source>Restrict files to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyaları kısıtla:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="301"/>
         <location filename="../forms/configdialog.ui" line="570"/>
         <source>Exclude files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyaları hariç tut:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="314"/>
         <source>Miscellaneous</source>
-        <translation type="unfinished"></translation>
+        <translation>Çeşitli</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="320"/>
         <source>Auto-save playlist when modified</source>
-        <translation type="unfinished"></translation>
+        <translation>Değiştirildiği zaman çalma listesini otomatik kaydet</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="327"/>
         <source>Clear previous playlist when opening new one</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni birini açarken önceki çalma listesini temizle</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="380"/>
@@ -414,57 +414,57 @@
     <message>
         <location filename="../forms/configdialog.ui" line="458"/>
         <source>Look and Feel</source>
-        <translation type="unfinished"></translation>
+        <translation>Bak ve Hisset</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="464"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dil:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="497"/>
         <source>Display average bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ortalama bit hızını sergile</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="507"/>
         <source>Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Kayıttan Çal</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="513"/>
         <source>Continue playback on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlangıçta kayıttan çalmaya devam ettir</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="520"/>
         <source>Determine file type by content</source>
-        <translation type="unfinished"></translation>
+        <translation>İçeriğe göre dosya türünü belirleyin</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="527"/>
         <source>Add files from command line to this playlist:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu çalma listesine komut satırından dosya ekleyin:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="544"/>
         <source>Cover Image Retrieve</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapak Resmini Al</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="550"/>
         <source>Use separate image files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayrıştırılmış görüntü dosyaları kullanın</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="560"/>
         <source>Include files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyaları dahil et:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="582"/>
         <source>Recursive search depth:</source>
-        <translation type="unfinished"></translation>
+        <translation>Özyinelemeli arama derinliği:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="614"/>
@@ -474,27 +474,27 @@
     <message>
         <location filename="../forms/configdialog.ui" line="620"/>
         <source>Auto-paste URL from clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>URL&apos;yi panodan otomatik yapıştır</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="630"/>
         <source>CUE Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>CUE Düzenleyici</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="636"/>
         <source>Use system font</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem yazı tipini kullan</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="657"/>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="682"/>
         <source>???</source>
-        <translation type="unfinished"></translation>
+        <translation>???</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="721"/>
@@ -509,7 +509,7 @@
     <message>
         <location filename="../forms/configdialog.ui" line="740"/>
         <source>Proxy type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vekil sunucu türü:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="750"/>
@@ -549,13 +549,13 @@
     <message>
         <location filename="../forms/configdialog.ui" line="856"/>
         <source>Preamp:</source>
-        <translation type="unfinished"></translation>
+        <translation>Önamfi:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="888"/>
         <location filename="../forms/configdialog.ui" line="933"/>
         <source>dB</source>
-        <translation type="unfinished"></translation>
+        <translation>dB</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="901"/>
@@ -565,17 +565,17 @@
     <message>
         <location filename="../forms/configdialog.ui" line="953"/>
         <source>Use  peak info to prevent clipping</source>
-        <translation type="unfinished"></translation>
+        <translation>Kırpmayı önlemek için en yüksek bilgiyi kullanın</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="969"/>
         <source>Buffer size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampon boyutu:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="995"/>
         <source>ms</source>
-        <translation type="unfinished"></translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1028"/>
@@ -585,32 +585,32 @@
     <message>
         <location filename="../forms/configdialog.ui" line="1068"/>
         <source>Use two passes for equalizer</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekolayzır için iki geçiş kullanın</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1011"/>
         <source>Volume adjustment step:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses ayarlama adımı:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="334"/>
         <source>Skip already existing tracks when adding</source>
-        <translation type="unfinished"></translation>
+        <translation>Eklerken zaten var olan parçaları atla</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="341"/>
         <source>Stop playback after removing of current track</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçerli parçayı kaldırdıktan sonra oynatmayı durdur</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="1035"/>
         <source>Output bit depth:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıkış bit derinliği:</translation>
     </message>
     <message>
         <location filename="../forms/configdialog.ui" line="976"/>
         <source>Use dithering</source>
-        <translation type="unfinished"></translation>
+        <translation>Titreme kullanın</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="62"/>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../configdialog.cpp" line="66"/>
         <source>Track</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="67"/>
@@ -650,27 +650,27 @@
     <message>
         <location filename="../configdialog.cpp" line="75"/>
         <source>HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="76"/>
         <source>SOCKS5</source>
-        <translation type="unfinished"></translation>
+        <translation>SOCKS5</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="202"/>
         <source>Transports</source>
-        <translation type="unfinished"></translation>
+        <translation>Taşımalar</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="213"/>
         <source>Decoders</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodlayıcılar</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="224"/>
         <source>Engines</source>
-        <translation type="unfinished"></translation>
+        <translation>Motorlar</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="236"/>
@@ -690,7 +690,7 @@
     <message>
         <location filename="../configdialog.cpp" line="270"/>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıktı</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="281"/>
@@ -700,157 +700,157 @@
     <message>
         <location filename="../configdialog.cpp" line="293"/>
         <source>User Interfaces</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı Arayüzleri</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="352"/>
         <source>&lt;Autodetect&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Autodetect&gt;</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="353"/>
         <source>Brazilian Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Brezilya Portekizcesi</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="354"/>
         <source>Chinese Simplified</source>
-        <translation type="unfinished"></translation>
+        <translation>Çince Basitleştirilmiş</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="355"/>
         <source>Chinese Traditional</source>
-        <translation type="unfinished"></translation>
+        <translation>Çince Ticari</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="356"/>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Çekçe</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="357"/>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Flamanca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="358"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>İngilizce</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="359"/>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Fransızca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="360"/>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Galiçyaca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="361"/>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Almanca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="362"/>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Yunanca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="363"/>
         <source>Hebrew</source>
-        <translation type="unfinished"></translation>
+        <translation>İbranice</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="364"/>
         <source>Hungarian</source>
-        <translation type="unfinished"></translation>
+        <translation>Macarca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="365"/>
         <source>Indonesian</source>
-        <translation type="unfinished"></translation>
+        <translation>Endonezyaca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="366"/>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>İtalyanca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="367"/>
         <source>Japanese</source>
-        <translation type="unfinished"></translation>
+        <translation>Japonca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="368"/>
         <source>Kazakh</source>
-        <translation type="unfinished"></translation>
+        <translation>Kazakça</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="369"/>
         <source>Korean</source>
-        <translation type="unfinished"></translation>
+        <translation>Korece</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="370"/>
         <source>Lithuanian</source>
-        <translation type="unfinished"></translation>
+        <translation>Litvanyaca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="371"/>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>Lehçe</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="372"/>
         <source>Portuguese</source>
-        <translation type="unfinished"></translation>
+        <translation>Portekizce</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="373"/>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>Rusça</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="374"/>
         <source>Serbian</source>
-        <translation type="unfinished"></translation>
+        <translation>Sırpça</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="375"/>
         <source>Slovak</source>
-        <translation type="unfinished"></translation>
+        <translation>Slovakça</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="376"/>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>İsveçce</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="377"/>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>İspanyolca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="378"/>
         <source>Turkish</source>
-        <translation type="unfinished"></translation>
+        <translation>Türkçe</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="379"/>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukraynaca</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="380"/>
         <source>Serbian (Ijekavian)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sırpça (Ijekavian)</translation>
     </message>
     <message>
         <location filename="../configdialog.cpp" line="381"/>
         <source>Serbian (Ekavian)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sırpça (Ekavian)</translation>
     </message>
 </context>
 <context>
@@ -858,7 +858,7 @@
     <message>
         <location filename="../forms/covereditor.ui" line="22"/>
         <source>Image source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüntü kaynağı:</translation>
     </message>
     <message>
         <location filename="../forms/covereditor.ui" line="76"/>
@@ -873,17 +873,17 @@
     <message>
         <location filename="../forms/covereditor.ui" line="90"/>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Olarak kaydet...</translation>
     </message>
     <message>
         <location filename="../covereditor.cpp" line="34"/>
         <source>External file</source>
-        <translation type="unfinished"></translation>
+        <translation>Harici dosya</translation>
     </message>
     <message>
         <location filename="../covereditor.cpp" line="35"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket</translation>
     </message>
 </context>
 <context>
@@ -891,23 +891,23 @@
     <message>
         <location filename="../coverviewer.cpp" line="35"/>
         <source>&amp;Save As...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Olarak Kaydet...</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="68"/>
         <source>Save Cover As</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapağı Farklı Kaydet</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="70"/>
         <location filename="../coverviewer.cpp" line="83"/>
         <source>Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüntüler</translation>
     </message>
     <message>
         <location filename="../coverviewer.cpp" line="81"/>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüntü Açın</translation>
     </message>
 </context>
 <context>
@@ -915,33 +915,33 @@
     <message>
         <location filename="../forms/cueeditor.ui" line="40"/>
         <source>Load</source>
-        <translation type="unfinished">Yükle</translation>
+        <translation>Yükle</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished">Sil</translation>
+        <translation>Sil</translation>
     </message>
     <message>
         <location filename="../forms/cueeditor.ui" line="54"/>
         <source>Save as...</source>
-        <translation type="unfinished"></translation>
+        <translation>Olarak kaydet...</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
         <source>Open CUE File</source>
-        <translation type="unfinished"></translation>
+        <translation>CUE Dosyası Aç</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="131"/>
         <location filename="../cueeditor.cpp" line="150"/>
         <source>CUE Files</source>
-        <translation type="unfinished"></translation>
+        <translation>CUE Dosyaları</translation>
     </message>
     <message>
         <location filename="../cueeditor.cpp" line="148"/>
         <source>Save CUE File</source>
-        <translation type="unfinished"></translation>
+        <translation>CUE Dosyası Kaydet</translation>
     </message>
 </context>
 <context>
@@ -949,12 +949,12 @@
     <message>
         <location filename="../forms/detailsdialog.ui" line="14"/>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayrıntılar</translation>
     </message>
     <message>
         <location filename="../forms/detailsdialog.ui" line="44"/>
         <source>Open the directory containing this file</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu dosyayı içeren dizini açın</translation>
     </message>
     <message>
         <location filename="../forms/detailsdialog.ui" line="47"/>
@@ -964,22 +964,22 @@
     <message>
         <location filename="../forms/detailsdialog.ui" line="63"/>
         <source>Summary</source>
-        <translation type="unfinished"></translation>
+        <translation>Özet</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="207"/>
         <source>%1/%2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1/%2</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="257"/>
         <source>Cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapak</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="283"/>
         <source>Lyrics</source>
-        <translation type="unfinished"></translation>
+        <translation>Şarkı Sözleri</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="303"/>
@@ -994,7 +994,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="305"/>
         <source>Album artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Albüm sanatçısı</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="306"/>
@@ -1014,7 +1014,7 @@
     <message>
         <location filename="../detailsdialog.cpp" line="309"/>
         <source>Composer</source>
-        <translation type="unfinished"></translation>
+        <translation>Besteci</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="310"/>
@@ -1024,17 +1024,17 @@
     <message>
         <location filename="../detailsdialog.cpp" line="311"/>
         <source>Track</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="312"/>
         <source>Disc number</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk numarası</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="331"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Süre</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="334"/>
@@ -1064,17 +1064,17 @@
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
         <source>Sample size</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnekleme boyutu</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="337"/>
         <source>bits</source>
-        <translation type="unfinished"></translation>
+        <translation>bitler</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="338"/>
         <source>Format name</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim adı</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="339"/>
@@ -1084,17 +1084,17 @@
     <message>
         <location filename="../detailsdialog.cpp" line="339"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="383"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Evet</translation>
     </message>
     <message>
         <location filename="../detailsdialog.cpp" line="383"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Hayır</translation>
     </message>
 </context>
 <context>
@@ -1102,40 +1102,40 @@
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="14"/>
         <source>Jump To Track</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçaya Atla</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="46"/>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Süzgeç</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="85"/>
         <location filename="../jumptotrackdialog.cpp" line="120"/>
         <location filename="../jumptotrackdialog.cpp" line="151"/>
         <source>Queue</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuyruk</translation>
     </message>
     <message>
         <location filename="../forms/jumptotrackdialog.ui" line="105"/>
         <source>Jump To</source>
-        <translation type="unfinished"></translation>
+        <translation>Atla</translation>
     </message>
     <message>
         <location filename="../jumptotrackdialog.cpp" line="95"/>
         <source>Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Q</translation>
     </message>
     <message>
         <location filename="../jumptotrackdialog.cpp" line="96"/>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <location filename="../jumptotrackdialog.cpp" line="118"/>
         <location filename="../jumptotrackdialog.cpp" line="149"/>
         <source>Unqueue</source>
-        <translation type="unfinished"></translation>
+        <translation>Sırayı kaldır</translation>
     </message>
 </context>
 <context>
@@ -1153,7 +1153,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="29"/>
         <source>Album Artist</source>
-        <translation type="unfinished"></translation>
+        <translation>Albüm Sanatçısı</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="32"/>
@@ -1163,17 +1163,17 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="33"/>
         <source>Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça Numarası</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="34"/>
         <source>Two-digit Track Number</source>
-        <translation type="unfinished"></translation>
+        <translation>İki-rakam Parça Numarası</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="38"/>
         <source>Track Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça Fihristi</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="40"/>
@@ -1188,18 +1188,18 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="42"/>
         <source>Composer</source>
-        <translation type="unfinished"></translation>
+        <translation>Besteci</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="47"/>
         <location filename="../metadataformattermenu.cpp" line="61"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Süre</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="55"/>
         <source>Artist - Album</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanatçı - Albüm</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
@@ -1219,7 +1219,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="68"/>
         <source>Parent Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Dizin Yolu</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="70"/>
@@ -1229,47 +1229,47 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="71"/>
         <source>Sample Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnekleme Oranı</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="72"/>
         <source>Number of Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanalların sayısı</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="73"/>
         <source>Sample Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnekleme Boyutu</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="74"/>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="75"/>
         <source>Decoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodlayıcı</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="78"/>
         <source>File Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya Boyutu</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="43"/>
         <source>Disc Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk Numarası</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="48"/>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya Adı</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="49"/>
         <source>File Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya Yolu</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="44"/>
@@ -1281,17 +1281,17 @@
         <location filename="../metadataformattermenu.cpp" line="57"/>
         <location filename="../metadataformattermenu.cpp" line="65"/>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Koşul</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="50"/>
         <source>Artist - Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanatçı - Başlık</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="56"/>
         <source>Artist - [Year] Album</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanatçı - [Yıl] Albüm</translation>
     </message>
     <message>
         <location filename="../metadataformattermenu.cpp" line="62"/>
@@ -1311,7 +1311,7 @@
     <message>
         <location filename="../metadataformattermenu.cpp" line="67"/>
         <source>Parent Directory Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Dizin Adı</translation>
     </message>
 </context>
 <context>
@@ -1319,7 +1319,7 @@
     <message>
         <location filename="../playlistdownloader.cpp" line="123"/>
         <source>Unsupported playlist format</source>
-        <translation type="unfinished"></translation>
+        <translation>Desteklenmeyen çalma listesi biçimi</translation>
     </message>
 </context>
 <context>
@@ -1327,7 +1327,7 @@
     <message>
         <location filename="../playlistheadermodel.cpp" line="35"/>
         <source>Artist - Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Sanatçı - Başlık</translation>
     </message>
     <message>
         <location filename="../playlistheadermodel.cpp" line="185"/>
@@ -1337,7 +1337,7 @@
     <message>
         <location filename="../playlistheadermodel.cpp" line="186"/>
         <source>Add Column</source>
-        <translation type="unfinished"></translation>
+        <translation>Sütun Ekle</translation>
     </message>
 </context>
 <context>
@@ -1354,12 +1354,12 @@
     <message>
         <location filename="../playlisttrack.cpp" line="245"/>
         <source>Streams</source>
-        <translation type="unfinished"></translation>
+        <translation>Akışlar</translation>
     </message>
     <message>
         <location filename="../playlisttrack.cpp" line="250"/>
         <source>Empty group</source>
-        <translation type="unfinished"></translation>
+        <translation>Boş grup</translation>
     </message>
 </context>
 <context>
@@ -1388,17 +1388,17 @@
     <message>
         <location filename="../forms/shortcutdialog.ui" line="14"/>
         <source>Change Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Kısayolu Değiştir</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="29"/>
         <source>Press the key combination you want to assign</source>
-        <translation type="unfinished"></translation>
+        <translation>Atamak istediğiniz tuş kombinasyonuna basın</translation>
     </message>
     <message>
         <location filename="../forms/shortcutdialog.ui" line="52"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Temizle</translation>
     </message>
 </context>
 <context>
@@ -1406,7 +1406,7 @@
     <message>
         <location filename="../forms/tageditor.ui" line="14"/>
         <source>Tag Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket Düzenleyici</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="38"/>
@@ -1421,54 +1421,54 @@
     <message>
         <location filename="../forms/tageditor.ui" line="90"/>
         <source>Album:</source>
-        <translation type="unfinished"></translation>
+        <translation>Albüm:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="113"/>
         <source>Album artist:</source>
-        <translation type="unfinished"></translation>
+        <translation>Albüm sanatçısı:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="123"/>
         <source>Composer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Besteci:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="143"/>
         <source>Genre:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarz:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="169"/>
         <source>Track:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parça:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="190"/>
         <location filename="../forms/tageditor.ui" line="228"/>
         <location filename="../forms/tageditor.ui" line="260"/>
         <source>?</source>
-        <translation type="unfinished"></translation>
+        <translation>?</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="203"/>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yıl:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="250"/>
         <source>Disc number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk numarası:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="275"/>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yorum:</translation>
     </message>
     <message>
         <location filename="../forms/tageditor.ui" line="311"/>
         <source>Include selected tag in file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili etiketi dosyaya dahil et</translation>
     </message>
 </context>
 <context>
@@ -1476,7 +1476,7 @@
     <message>
         <location filename="../forms/templateeditor.ui" line="14"/>
         <source>Template Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Şablon Düzenleyici</translation>
     </message>
     <message>
         <location filename="../forms/templateeditor.ui" line="39"/>
@@ -1486,7 +1486,7 @@
     <message>
         <location filename="../forms/templateeditor.ui" line="46"/>
         <source>Insert</source>
-        <translation type="unfinished"></translation>
+        <translation>Araya Ekle</translation>
     </message>
 </context>
 <context>
@@ -1495,17 +1495,18 @@
         <location filename="../uihelper.cpp" line="136"/>
         <location filename="../uihelper.cpp" line="148"/>
         <source>All Supported Bitstreams</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm Desteklenen Bit akışları</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="142"/>
         <source>Select one or more files to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Açmak için bir veya daha fazla dosya seçin
+</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="154"/>
         <source>Select one or more files to play</source>
-        <translation type="unfinished"></translation>
+        <translation>Oynatmak için bir veya daha fazla dosya seçin</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="162"/>
@@ -1516,24 +1517,25 @@
         <location filename="../uihelper.cpp" line="178"/>
         <location filename="../uihelper.cpp" line="202"/>
         <source>Playlist Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalma Listesi Dosyaları</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="180"/>
         <source>Open Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalma Listesini Aç</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="205"/>
         <location filename="../uihelper.cpp" line="224"/>
         <source>Save Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalma Listesini Kaydet</translation>
     </message>
     <message>
         <location filename="../uihelper.cpp" line="224"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 zaten var.
+Bunu değiştirmek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -1541,7 +1543,7 @@ Do you want to replace it?</source>
     <message>
         <location filename="../visualmenu.cpp" line="26"/>
         <source>Visualization</source>
-        <translation type="unfinished">Görsellik</translation>
+        <translation>Görüntüleme</translation>
     </message>
 </context>
 <context>
@@ -1549,12 +1551,12 @@ Do you want to replace it?</source>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="43"/>
         <source>Media files handled by Qmmp:</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp tarafından ele alınan medya dosyaları:</translation>
     </message>
     <message>
         <location filename="../forms/winfileassocpage.ui" line="17"/>
         <source>Select All</source>
-        <translation type="unfinished"></translation>
+        <translation>Hepsini seçin</translation>
     </message>
 </context>
 </TS>

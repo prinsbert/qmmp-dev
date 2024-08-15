@@ -29,42 +29,42 @@
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Örnekleme Oranı Dönüştürücü Eklentisi Ayarları</translation>
+        <translation>Örnekleme Oranı Dönüştürücü Eklentisi Ayarları</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Örnekleme Oranı (Hz):</translation>
+        <translation>Örnekleme Oranı (Hz):</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="40"/>
         <source>Interpolation Engine:</source>
-        <translation type="unfinished">İnterpolasyon Motoru:</translation>
+        <translation>İnterpolasyon Motoru:</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="48"/>
         <source>Best Sinc Interpolation</source>
-        <translation type="unfinished">Best Sinc İnterpolasyonu</translation>
+        <translation>Best Sinc İnterpolasyonu</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="53"/>
         <source>Medium Sinc Interpolation</source>
-        <translation type="unfinished">Medium Sinc İnterpolasyonu</translation>
+        <translation>Medium Sinc İnterpolasyonu</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="58"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation type="unfinished">Fastest Sinc İnterpolasyonu</translation>
+        <translation>Fastest Sinc İnterpolasyonu</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="63"/>
         <source>ZOH Interpolation</source>
-        <translation type="unfinished">ZOH İnterpolasyonu</translation>
+        <translation>ZOH İnterpolasyonu</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="68"/>
         <source>Linear Interpolation</source>
-        <translation type="unfinished">Doğrusal İnterpolasyon</translation>
+        <translation>Doğrusal İnterpolasyon</translation>
     </message>
 </context>
 </TS>

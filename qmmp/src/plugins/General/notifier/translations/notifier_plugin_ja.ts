@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>NotifierFactory</name>
     <message>
@@ -29,93 +29,93 @@
     <message>
         <location filename="../notifiersettingsdialog.ui" line="14"/>
         <source>Notifier Plugin Settings</source>
-        <translation type="unfinished">通知プラグイン設定</translation>
+        <translation>通知プラグイン設定</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="35"/>
         <source>Desktop Notification</source>
-        <translation type="unfinished">デスクトップ通知</translation>
+        <translation>デスクトップ通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="51"/>
         <source>Font:</source>
-        <translation type="unfinished">書体:</translation>
+        <translation>書体:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="71"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="78"/>
         <location filename="../notifiersettingsdialog.ui" line="279"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="85"/>
         <source>Transparency:</source>
-        <translation type="unfinished">透明度:</translation>
+        <translation>透明度:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="229"/>
         <source>Position</source>
-        <translation type="unfinished">位置</translation>
+        <translation>配置</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="251"/>
         <source>Edit template</source>
-        <translation type="unfinished">ひな型を編集</translation>
+        <translation>ひな型を編集</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="299"/>
         <source>Cover size:</source>
-        <translation type="unfinished">表紙画像の大きさ:</translation>
+        <translation>表紙画像の大きさ:</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="325"/>
         <source>Volume change notification</source>
-        <translation type="unfinished">音量変化通知</translation>
+        <translation>音量変化通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="332"/>
         <source>Delay (ms):</source>
-        <translation type="unfinished">待ち時間 (ミリ秒):</translation>
+        <translation>待ち時間 (ミリ秒):</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="361"/>
         <source>Playback resume notification</source>
-        <translation type="unfinished">一時停止トラックの中途再生でも再度通知</translation>
+        <translation>一時停止トラックの中途再生でも再度通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="368"/>
         <source>Song change notification</source>
-        <translation type="unfinished">曲名通知</translation>
+        <translation>曲名通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="375"/>
         <source>Disable notifications when another application is in the Full Screen Mode</source>
-        <translation type="unfinished">他のアプリケーションが全画面表示モードのときは通知をしません</translation>
+        <translation>他のアプリケーションが全画面表示モードのときは通知をしません</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="378"/>
         <source>Disable for full screen windows</source>
-        <translation type="unfinished">全画面表示中は抑止</translation>
+        <translation>全画面表示中は抑止</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="388"/>
         <source>Psi Notification</source>
-        <translation type="unfinished">PSI 通知</translation>
+        <translation>PSI 通知</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.ui" line="400"/>
         <source>Enable Psi notification</source>
-        <translation type="unfinished">PSI 通知を有効にする</translation>
+        <translation>PSI 通知を有効にする</translation>
     </message>
     <message>
         <location filename="../notifiersettingsdialog.cpp" line="115"/>
         <source>Notification Template</source>
-        <translation type="unfinished">通知のひな形</translation>
+        <translation>通知のひな形</translation>
     </message>
 </context>
 <context>

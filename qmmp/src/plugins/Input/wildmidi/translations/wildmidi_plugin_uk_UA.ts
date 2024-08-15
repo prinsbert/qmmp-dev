@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderWildMidiFactory</name>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="49"/>
         <source>WildMidi Plugin</source>
-        <translation>Модуль WildMidi</translation>
+        <translation>Втулок WildMidi</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="54"/>
@@ -16,17 +16,17 @@
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="105"/>
         <source>About WildMidi Audio Plugin</source>
-        <translation>Про аудіо модуль WildMidi</translation>
+        <translation>Про авдіовтулок WildMidi</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="106"/>
         <source>Qmmp WildMidi Audio Plugin</source>
-        <translation>Аудіо-модуль WildMidi для Qmmp</translation>
+        <translation>Авдіовтулок WildMidi для Qmmp</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="107"/>
         <source>This plugin uses WildMidi library to play midi files</source>
-        <translation>Цей модуль використовує бібліотеку WildMidi для програвання файлів midi</translation>
+        <translation>Цей втулок використовує бібліотеку WildMidi для програвання файлів midi</translation>
     </message>
     <message>
         <location filename="../decoderwildmidifactory.cpp" line="108"/>
@@ -39,37 +39,37 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="14"/>
         <source>WildMidi Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля WildMidi</translation>
+        <translation>Налаштування втулка WildMidi</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="29"/>
         <source>Instrument configuration: </source>
-        <translation type="unfinished">Конфігурація інструменту: </translation>
+        <translation>Конфігурація знадобу: </translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="43"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">Частота:</translation>
+        <translation>Частота дискретизації:</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="50"/>
         <source>Enhanced resampling</source>
-        <translation type="unfinished">Покращена передискретизація</translation>
+        <translation>Покращена передискретизація</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="57"/>
         <source>Reverberation</source>
-        <translation type="unfinished">Реверберація</translation>
+        <translation>Реверберація</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Гц</translation>
+        <translation>44100 Гц</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Гц</translation>
+        <translation>48000 Гц</translation>
     </message>
 </context>
 </TS>

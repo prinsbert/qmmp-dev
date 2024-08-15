@@ -39,37 +39,37 @@
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="14"/>
         <source>WildMidi Plugin Settings</source>
-        <translation type="unfinished">WildMidi 플러그인 설정</translation>
+        <translation>WildMidi 플러그인 설정</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="29"/>
         <source>Instrument configuration: </source>
-        <translation type="unfinished">악기 구성:</translation>
+        <translation>악기 구성:</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="43"/>
         <source>Sample rate:</source>
-        <translation type="unfinished">샘플 레이트:</translation>
+        <translation>샘플 레이트:</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="50"/>
         <source>Enhanced resampling</source>
-        <translation type="unfinished">향상된 리샘플링</translation>
+        <translation>향상된 리샘플링</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.ui" line="57"/>
         <source>Reverberation</source>
-        <translation type="unfinished">잔향</translation>
+        <translation>잔향</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="39"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../wildmidisettingsdialog.cpp" line="40"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
 </context>
 </TS>

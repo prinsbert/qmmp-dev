@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.1" language="ja">
 <context>
     <name>Lyrics</name>
     <message>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../lyricswidget.ui" line="14"/>
         <source>Lyrics Plugin</source>
-        <translation type="unfinished">歌詞プラグイン</translation>
+        <translation>歌詞プラグイン</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="31"/>
@@ -85,27 +85,27 @@
     <message>
         <location filename="../lyricswidget.ui" line="115"/>
         <source>Title:</source>
-        <translation type="unfinished">タイトル:</translation>
+        <translation>タイトル:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="132"/>
         <source>Album:</source>
-        <translation type="unfinished"></translation>
+        <translation>アルバム:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="142"/>
         <source>Artist:</source>
-        <translation type="unfinished">アーティスト:</translation>
+        <translation>アーティスト:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="159"/>
         <source>Track:</source>
-        <translation type="unfinished"></translation>
+        <translation>トラック:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="171"/>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>年:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="148"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="159"/>
         <source>Not found</source>
-        <translation type="unfinished">見付かりません</translation>
+        <translation>見付かりません</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="169"/>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="182"/>
         <source>Receiving</source>
-        <translation type="unfinished">取得中</translation>
+        <translation>取得中</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>

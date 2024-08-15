@@ -34,12 +34,12 @@
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="14"/>
         <source>Track Change Plugin Settings</source>
-        <translation type="unfinished">Configuración de Módulo Cambio de Pista</translation>
+        <translation>Configuración de Módulo Cambio de Pista</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="29"/>
         <source>Command to run when Qmmp starts new track</source>
-        <translation type="unfinished">Programa a ejecutar cuando Qmmp comienza una nueva pista</translation>
+        <translation>Programa a ejecutar cuando Qmmp comienza una nueva pista</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="39"/>
@@ -47,32 +47,32 @@
         <location filename="../trackchangesettingsdialog.ui" line="73"/>
         <location filename="../trackchangesettingsdialog.ui" line="90"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="46"/>
         <source>Command to run toward to end of a track</source>
-        <translation type="unfinished">Programa a ejecutar hacia el final de una pista</translation>
+        <translation>Programa a ejecutar hacia el final de una pista</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="63"/>
         <source>Command to run when Qmmp reaches the end of the playlist</source>
-        <translation type="unfinished">Programa a ejecutar cuando Qmmp alcanza el final de la lista de reproducción</translation>
+        <translation>Programa a ejecutar cuando Qmmp alcanza el final de la lista de reproducción</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="80"/>
         <source>Command to run when title changes (i.e. network streams title)</source>
-        <translation type="unfinished">Programa a ejecutar cuanto el título cambia (ej. título de flujos de red)</translation>
+        <translation>Programa a ejecutar cuanto el título cambia (ej. título de flujos de red)</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="97"/>
         <source>Command to run on application startup:</source>
-        <translation type="unfinished">Programa a ejecutar al iniciar la aplicación:</translation>
+        <translation>Programa a ejecutar al iniciar la aplicación:</translation>
     </message>
     <message>
         <location filename="../trackchangesettingsdialog.ui" line="104"/>
         <source>Command to run on application exit:</source>
-        <translation type="unfinished">Programa a ejecutar al salir de la aplicación:</translation>
+        <translation>Programa a ejecutar al salir de la aplicación:</translation>
     </message>
 </context>
 </TS>

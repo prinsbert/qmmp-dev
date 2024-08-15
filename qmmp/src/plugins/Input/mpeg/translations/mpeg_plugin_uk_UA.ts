@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderMpegFactory</name>
     <message>
         <location filename="../decodermpegfactory.cpp" line="178"/>
         <source>MPEG Plugin</source>
-        <translation type="unfinished">Модуль MPEG</translation>
+        <translation>Модуль MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="181"/>
         <source>MPEG Files</source>
-        <translation type="unfinished">Файли MPEG</translation>
+        <translation>Файли MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="417"/>
         <source>About MPEG Audio Plugin</source>
-        <translation type="unfinished">Про аудіо-модуль MPEG</translation>
+        <translation>Про аудіо-модуль MPEG</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="418"/>
         <source>MPEG 1.0/2.0/2.5 layer 1/2/3 audio decoder</source>
-        <translation type="unfinished">MPEG 1.0/2.0/2.5 layer 1/2/3 аудіо декодер</translation>
+        <translation>MPEG 1.0/2.0/2.5 layer 1/2/3 аудіо декодер</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="419"/>
         <source>Compiled against:</source>
-        <translation type="unfinished">Зібрано з:</translation>
+        <translation>Зібрано з:</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="428"/>
         <source>mpg123, API version: %1</source>
-        <translation type="unfinished">mpg123, версія API: %1</translation>
+        <translation>mpg123, API версія: %1</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="432"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished">Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Розробник: Ілля Котов  &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermpegfactory.cpp" line="433"/>
         <source>Source code based on mq3 and madplay projects</source>
-        <translation type="unfinished">Вихідний код базується на проєктах mq3 і madplay</translation>
+        <translation>Вихідний код базується на проєктах mq3 і madplay</translation>
     </message>
 </context>
 <context>
@@ -75,100 +75,100 @@
     <message>
         <location filename="../mpegsettingsdialog.ui" line="14"/>
         <source>MPEG Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля MPEG</translation>
+        <translation>Налаштування модуля MPEG</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="35"/>
         <source>Decoder</source>
-        <translation type="unfinished">Декодер</translation>
+        <translation>Декодувальник</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="41"/>
         <source>MAD</source>
-        <translation type="unfinished"></translation>
+        <translation>MAD</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="48"/>
         <source>MPG123</source>
-        <translation type="unfinished"></translation>
+        <translation>MPG123</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="71"/>
         <source>Enable CRC checking</source>
-        <translation type="unfinished">Увімкнути перевірку CRC</translation>
+        <translation>Увімкнути перевірку CRC</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="87"/>
         <source>Tag Priority</source>
-        <translation type="unfinished">Пріоритет тегу</translation>
+        <translation>Пріоритет теґу</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="99"/>
         <source>First:</source>
-        <translation type="unfinished">Перший:</translation>
+        <translation>Перший:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="119"/>
         <location filename="../mpegsettingsdialog.ui" line="168"/>
         <location filename="../mpegsettingsdialog.ui" line="217"/>
         <source>ID3v1</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v1</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="124"/>
         <location filename="../mpegsettingsdialog.ui" line="173"/>
         <location filename="../mpegsettingsdialog.ui" line="222"/>
         <source>ID3v2</source>
-        <translation type="unfinished"></translation>
+        <translation>ID3v2</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="129"/>
         <location filename="../mpegsettingsdialog.ui" line="178"/>
         <location filename="../mpegsettingsdialog.ui" line="227"/>
         <source>APE</source>
-        <translation type="unfinished">APE</translation>
+        <translation>APE</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="134"/>
         <location filename="../mpegsettingsdialog.ui" line="183"/>
         <location filename="../mpegsettingsdialog.ui" line="232"/>
         <source>Disabled</source>
-        <translation type="unfinished">Вимкнути</translation>
+        <translation>Вимкнути</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="148"/>
         <source>Second:</source>
-        <translation type="unfinished">Другий:</translation>
+        <translation>Другий:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="197"/>
         <source>Third:</source>
-        <translation type="unfinished">Третій:</translation>
+        <translation>Третій:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="253"/>
         <source>Merge selected tag types</source>
-        <translation type="unfinished">Об&apos;єднувати вибрані типи тегів</translation>
+        <translation>Об&apos;єднувати вибрані типи теґів</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="272"/>
         <source>Encodings</source>
-        <translation type="unfinished">Кодування</translation>
+        <translation>Кодування</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="294"/>
         <source>ID3v2 encoding:</source>
-        <translation type="unfinished">Кодування ID3v2:</translation>
+        <translation>Кодування ID3v2:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="333"/>
         <source>ID3v1 encoding:</source>
-        <translation type="unfinished">Кодування ID3v1:</translation>
+        <translation>Кодування ID3v1:</translation>
     </message>
     <message>
         <location filename="../mpegsettingsdialog.ui" line="343"/>
         <source>Try to detect encoding</source>
-        <translation type="unfinished">Спробувати визначити кодування</translation>
+        <translation>Спробувати визначити кодування</translation>
     </message>
 </context>
 </TS>

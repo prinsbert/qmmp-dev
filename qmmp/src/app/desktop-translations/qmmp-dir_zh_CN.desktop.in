@@ -14,7 +14,7 @@ X-KDE-StartupNotify=false
 
 
 # Translations
-Icon[zh_CN]=qmmp
 Name[zh_CN]=Qmmp
 Comment[zh_CN]=基于 Qt 的多媒体播放器
 GenericName[zh_CN]=音频播放器
+Icon[zh_CN]=qmmp

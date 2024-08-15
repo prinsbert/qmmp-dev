@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>DecoderGmeFactory</name>
     <message>
         <location filename="../decodergmefactory.cpp" line="37"/>
         <source>GME Plugin</source>
-        <translation>Модуль GME</translation>
+        <translation>Втулок GME</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="42"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../decodergmefactory.cpp" line="101"/>
         <source>About GME Audio Plugin</source>
-        <translation>Про аудіо-модуль GME</translation>
+        <translation>Про авдіовтулок GME</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="102"/>
         <source>Qmmp GME Audio Plugin</source>
-        <translation>Аудіо-модуль GME для Qmmp</translation>
+        <translation>Авдіодіовтулок GME для Qmmp</translation>
     </message>
     <message>
         <location filename="../decodergmefactory.cpp" line="103"/>
@@ -39,22 +39,22 @@
     <message>
         <location filename="../gmesettingsdialog.ui" line="14"/>
         <source>GME Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля GME</translation>
+        <translation>Налаштування втулка GME</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="34"/>
         <source>Fadeout length:</source>
-        <translation type="unfinished">Тривалість затухання:</translation>
+        <translation>Тривалість затухання:</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="44"/>
         <source>ms</source>
-        <translation type="unfinished">мс</translation>
+        <translation>мс</translation>
     </message>
     <message>
         <location filename="../gmesettingsdialog.ui" line="57"/>
         <source>Enable fadeout</source>
-        <translation type="unfinished">Увімкнути затухання</translation>
+        <translation>Увімкнути затухання</translation>
     </message>
 </context>
 </TS>

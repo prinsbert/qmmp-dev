@@ -6,27 +6,27 @@
     <message>
         <location filename="../udisksfactory.cpp" line="30"/>
         <source>UDisks Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>UDisks Eklentisi</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="50"/>
         <source>About UDisks Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>UDisks Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="51"/>
         <source>Qmmp UDisks Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp UDisks Eklentisi</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="52"/>
         <source>This plugin provides removable devices detection using UDisks</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu eklenti UDisks kullanarak çıkarılabilir aygıt algılama sağlar</translation>
     </message>
     <message>
         <location filename="../udisksfactory.cpp" line="53"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation type="unfinished">Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>Yazan: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
 </context>
 <context>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../udisksplugin.cpp" line="132"/>
         <source>Add CD &quot;%1&quot;</source>
-        <translation type="unfinished">CD &quot;%1&quot; Ekle</translation>
+        <translation>CD &quot;%1&quot; Ekle</translation>
     </message>
     <message>
         <location filename="../udisksplugin.cpp" line="140"/>
         <source>Add Volume &quot;%1&quot;</source>
-        <translation type="unfinished">&quot;%1&quot; Aygıtını Ekle</translation>
+        <translation>&quot;%1&quot; Aygıtını Ekle</translation>
     </message>
 </context>
 <context>
@@ -47,37 +47,37 @@
     <message>
         <location filename="../udiskssettingsdialog.ui" line="14"/>
         <source>UDisks Plugin Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>UDisks Eklenti Ayarları</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">CD Ses Algılama</translation>
+        <translation>CD Ses Algılama</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Parçaları listeye otomatik olarka ekle</translation>
+        <translation>Parçaları listeye otomatik olarka ekle</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Parçaları listeden otomatik olarak kaldır</translation>
+        <translation>Parçaları listeden otomatik olarak kaldır</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Çıkarılabilir Aygıt Algılama</translation>
+        <translation>Çıkarılabilir Aygıt Algılama</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Dosyaları listeye otomatik olarak ekle</translation>
+        <translation>Dosyaları listeye otomatik olarak ekle</translation>
     </message>
     <message>
         <location filename="../udiskssettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Dosyaları listeden otomatik olarak kaldır</translation>
+        <translation>Dosyaları listeden otomatik olarak kaldır</translation>
     </message>
 </context>
 </TS>

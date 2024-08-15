@@ -49,37 +49,37 @@
     <message>
         <location filename="../ladspasettingsdialog.ui" line="14"/>
         <source>LADSPA Plugin Catalog</source>
-        <translation type="unfinished">LADSPA 插件目录</translation>
+        <translation>LADSPA 插件目录</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="52"/>
         <source>&gt;</source>
-        <translation type="unfinished">&gt;</translation>
+        <translation>&gt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="59"/>
         <source>&lt;</source>
-        <translation type="unfinished">&lt;</translation>
+        <translation>&lt;</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.ui" line="94"/>
         <source>Configure</source>
-        <translation type="unfinished">配置</translation>
+        <translation>配置</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="46"/>
         <source>UID</source>
-        <translation type="unfinished">用户ID</translation>
+        <translation>用户ID</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="47"/>
         <source>Name</source>
-        <translation type="unfinished">名称</translation>
+        <translation>名称</translation>
     </message>
     <message>
         <location filename="../ladspasettingsdialog.cpp" line="131"/>
         <source>This LADSPA plugin has no user controls</source>
-        <translation type="unfinished">LADSPA 插件用户设置</translation>
+        <translation>LADSPA 插件用户设置</translation>
     </message>
 </context>
 </TS>

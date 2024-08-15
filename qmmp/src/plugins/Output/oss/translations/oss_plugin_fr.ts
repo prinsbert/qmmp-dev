@@ -6,47 +6,47 @@
     <message>
         <location filename="../osssettingsdialog.ui" line="14"/>
         <source>OSS Plugin Settings</source>
-        <translation type="unfinished">Configuration du greffon OSS</translation>
+        <translation>Configuration du greffon OSS</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="33"/>
         <source>Device Settings</source>
-        <translation type="unfinished">Configuration du périphérique</translation>
+        <translation>Configuration du périphérique</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="54"/>
         <source>Audio device</source>
-        <translation type="unfinished">Périphérique audio</translation>
+        <translation>Périphérique audio</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="70"/>
         <source>Mixer device</source>
-        <translation type="unfinished">Périphérique de mixage : </translation>
+        <translation>Périphérique de mixage : </translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="102"/>
         <source>Advanced Settings</source>
-        <translation type="unfinished">Configuration avancée</translation>
+        <translation>Configuration avancée</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="123"/>
         <source>Soundcard</source>
-        <translation type="unfinished">Carte son</translation>
+        <translation>Carte son</translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="196"/>
         <source>Buffer time (ms):</source>
-        <translation type="unfinished">Taille du tampon (ms) : </translation>
+        <translation>Taille du tampon (ms) : </translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="206"/>
         <source>Period time (ms):</source>
-        <translation type="unfinished">Durée de la période (ms) : </translation>
+        <translation>Durée de la période (ms) : </translation>
     </message>
     <message>
         <location filename="../osssettingsdialog.ui" line="236"/>
         <source>PCM over Master</source>
-        <translation type="unfinished">PCM sur maître</translation>
+        <translation>PCM sur maître</translation>
     </message>
 </context>
 <context>

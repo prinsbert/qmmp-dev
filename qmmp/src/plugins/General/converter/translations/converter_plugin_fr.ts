@@ -178,42 +178,42 @@
     <message>
         <location filename="../converterpreseteditor.ui" line="14"/>
         <source>Preset Editor</source>
-        <translation type="unfinished">Éditeur de réglages</translation>
+        <translation>Éditeur de réglages</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="29"/>
         <source>General</source>
-        <translation type="unfinished">Général</translation>
+        <translation>Général</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="35"/>
         <source>Name:</source>
-        <translation type="unfinished">Nom&#xa0;:</translation>
+        <translation>Nom&#xa0;:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="45"/>
         <source>Extension:</source>
-        <translation type="unfinished">Extension&#xa0;:</translation>
+        <translation>Extension&#xa0;:</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="58"/>
         <source>Command</source>
-        <translation type="unfinished">Commande</translation>
+        <translation>Commande</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="77"/>
         <source>Options</source>
-        <translation type="unfinished">Options</translation>
+        <translation>Options</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="83"/>
         <source>Write tags</source>
-        <translation type="unfinished">Écrire les étiquettes</translation>
+        <translation>Écrire les étiquettes</translation>
     </message>
     <message>
         <location filename="../converterpreseteditor.ui" line="90"/>
         <source>Convert to 16 bit</source>
-        <translation type="unfinished">Convertir en 16 bits</translation>
+        <translation>Convertir en 16 bits</translation>
     </message>
 </context>
 <context>

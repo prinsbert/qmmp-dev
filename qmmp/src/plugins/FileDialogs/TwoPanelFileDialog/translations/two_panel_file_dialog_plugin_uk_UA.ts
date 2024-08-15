@@ -16,7 +16,7 @@
     <message>
         <location filename="../twopanelfiledialog.ui" line="80"/>
         <source>Files of type:</source>
-        <translation>Тип файлу:</translation>
+        <translation>Типи файлів:</translation>
     </message>
     <message>
         <location filename="../twopanelfiledialog.ui" line="117"/>
@@ -80,8 +80,8 @@
         <location filename="../twopanelfiledialogimpl.cpp" line="457"/>
         <source>%1 already exists.
 Do you want to replace it?</source>
-        <translation>%1 вже існує.
-Бажаєте замінити?</translation>
+        <translation>%1 існує.
+Ви бажаєте замінити?</translation>
     </message>
 </context>
 </TS>

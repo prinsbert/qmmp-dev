@@ -39,32 +39,32 @@
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="29"/>
         <source>CD Audio Detection</source>
-        <translation type="unfinished">Detecção de áudio de CD</translation>
+        <translation>Detecção de áudio de CD</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="38"/>
         <source>Add tracks to playlist automatically</source>
-        <translation type="unfinished">Adicionar faixas à lista de reprodução</translation>
+        <translation>Adicionar faixas à lista de reprodução</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="45"/>
         <source>Remove tracks from playlist automatically</source>
-        <translation type="unfinished">Remover faixas da lista de reprodução</translation>
+        <translation>Remover faixas da lista de reprodução</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="55"/>
         <source>Removable Device Detection</source>
-        <translation type="unfinished">Detecção de dispositivos removíveis</translation>
+        <translation>Detecção de dispositivos removíveis</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="64"/>
         <source>Add files to playlist automatically</source>
-        <translation type="unfinished">Adicionar arquivos à lista de reprodução</translation>
+        <translation>Adicionar arquivos à lista de reprodução</translation>
     </message>
     <message>
         <location filename="../rdetectsettingsdialog.ui" line="71"/>
         <source>Remove files from playlist automatically</source>
-        <translation type="unfinished">Remover arquivos da lista de reprodução</translation>
+        <translation>Remover arquivos da lista de reprodução</translation>
     </message>
 </context>
 <context>

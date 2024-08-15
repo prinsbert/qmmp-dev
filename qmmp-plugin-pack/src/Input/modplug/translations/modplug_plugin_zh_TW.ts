@@ -26,7 +26,7 @@
     <message>
         <location filename="../decodermodplugfactory.cpp" line="137"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
-        <translation>撰寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
+        <translation>程式編寫：Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
         <location filename="../decodermodplugfactory.cpp" line="138"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="75"/>
         <source>Channels</source>
-        <translation>聲音通道</translation>
+        <translation>音頻通道</translation>
     </message>
     <message>
         <location filename="../modplugmetadatamodel.cpp" line="107"/>
@@ -99,108 +99,108 @@
     <message>
         <location filename="../modplugsettingsdialog.ui" line="14"/>
         <source>ModPlug Plugin Settings</source>
-        <translation type="unfinished">ModPlug 插件設定</translation>
+        <translation>ModPlug 插件設定</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="33"/>
         <source>Quality</source>
-        <translation type="unfinished">品質</translation>
+        <translation>品質</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="45"/>
         <source>Resolution</source>
-        <translation type="unfinished">解析度</translation>
+        <translation>分辨率</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="51"/>
         <source>16 bit</source>
-        <translation type="unfinished">16 位</translation>
+        <translation>16 位</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="58"/>
         <source>8 bit</source>
-        <translation type="unfinished">8 位</translation>
+        <translation>8 位</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="74"/>
         <source>Channels</source>
-        <translation type="unfinished">聲音通道</translation>
+        <translation>音頻通道</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="80"/>
         <source>Stereo</source>
-        <translation type="unfinished">立體聲</translation>
+        <translation>立體聲</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="87"/>
         <source>Mono (downmix)</source>
-        <translation type="unfinished">單聲道</translation>
+        <translation>單聲道</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="103"/>
         <source>Resampling</source>
-        <translation type="unfinished">重取樣</translation>
+        <translation>重取樣</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="109"/>
         <source>Nearest (fastest)</source>
-        <translation type="unfinished">最近(最快)</translation>
+        <translation>最近(最快)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="116"/>
         <source>Linear (fast)</source>
-        <translation type="unfinished">直線(快)</translation>
+        <translation>直線(快)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="123"/>
         <source>Spline (good quality)</source>
-        <translation type="unfinished">曲線（好品質）</translation>
+        <translation>曲線（好品質）</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="130"/>
         <source>8-tap Fir (extremely high quality)</source>
-        <translation type="unfinished">8-Tap FIR (最高品質)</translation>
+        <translation>8-Tap FIR (最高品質)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="146"/>
         <source>Sampling Rate</source>
-        <translation type="unfinished">取樣率</translation>
+        <translation>取樣率</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="152"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="159"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="166"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Hz</translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="173"/>
         <source>11025 Hz</source>
-        <translation type="unfinished">11025 Hz</translation>
+        <translation>11025 Hz</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="184"/>
         <source>Effects</source>
-        <translation type="unfinished">特效</translation>
+        <translation>特效</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="190"/>
         <source>Reverb</source>
-        <translation type="unfinished">餘響</translation>
+        <translation>餘響</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="202"/>
         <location filename="../modplugsettingsdialog.ui" line="467"/>
         <source>Depth (%)</source>
-        <translation type="unfinished">深度 (%)</translation>
+        <translation>深度 (%)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="234"/>
@@ -208,120 +208,120 @@
         <location filename="../modplugsettingsdialog.ui" line="499"/>
         <location filename="../modplugsettingsdialog.ui" line="618"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="260"/>
         <location filename="../modplugsettingsdialog.ui" line="519"/>
         <source>Delay (ms)</source>
-        <translation type="unfinished">延遲 (ms)</translation>
+        <translation>延遲 (ms)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="292"/>
         <source>40</source>
-        <translation type="unfinished">40</translation>
+        <translation>40</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="324"/>
         <source>Bass Boost</source>
-        <translation type="unfinished">低音提升</translation>
+        <translation>低音提升</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="336"/>
         <source>Amount (%)</source>
-        <translation type="unfinished">總計 (%)</translation>
+        <translation>總計 (%)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="394"/>
         <source>Range (Hz)</source>
-        <translation type="unfinished">範圍 (Hz)</translation>
+        <translation>範圍 (Hz)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="426"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="458"/>
         <source>Surround</source>
-        <translation type="unfinished">自動換行</translation>
+        <translation>自動換行</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="551"/>
         <source>5</source>
-        <translation type="unfinished">5</translation>
+        <translation>5</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="577"/>
         <source>Preamp</source>
-        <translation type="unfinished">前置放大器</translation>
+        <translation>前置放大器</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="586"/>
         <source>Volume</source>
-        <translation type="unfinished">音量</translation>
+        <translation>音量</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="656"/>
         <source>Note: Setting the preamp
 too high may cause clipping!</source>
-        <translation type="unfinished">註釋：設定前置放大器
+        <translation>註釋：設定前置放大器
 太高可能會產生削波現象！</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="671"/>
         <source>Misc</source>
-        <translation type="unfinished">雜項</translation>
+        <translation>雜項</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="677"/>
         <source>General</source>
-        <translation type="unfinished">常規</translation>
+        <translation>常規</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="683"/>
         <source>Use filename as song title</source>
-        <translation type="unfinished">使用檔名為曲目標題</translation>
+        <translation>使用檔名為曲目標題</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="690"/>
         <source>Noise reduction</source>
-        <translation type="unfinished">聲音雜訊抑制</translation>
+        <translation>聲音雜訊抑制</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="700"/>
         <source>Fast playlist info</source>
-        <translation type="unfinished">快速播放清單資訊</translation>
+        <translation>快速播放清單資訊</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="710"/>
         <source>Play Amiga MOD</source>
-        <translation type="unfinished">播放 Amiga MOD</translation>
+        <translation>播放 Amiga MOD</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="720"/>
         <source>Looping</source>
-        <translation type="unfinished">循環</translation>
+        <translation>循環</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="726"/>
         <source>Don&apos;t loop</source>
-        <translation type="unfinished">不循環</translation>
+        <translation>不循環</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="733"/>
         <source>Loop</source>
-        <translation type="unfinished">循環</translation>
+        <translation>循環</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="750"/>
         <source>time(s)</source>
-        <translation type="unfinished">(秒) 時間</translation>
+        <translation>(秒) 時間</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="770"/>
         <source>Loop forever</source>
-        <translation type="unfinished">永遠循環</translation>
+        <translation>永遠循環</translation>
     </message>
 </context>
 </TS>

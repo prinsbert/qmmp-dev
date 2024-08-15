@@ -18,13 +18,13 @@
     <message>
         <location filename="../fileops.cpp" line="154"/>
         <source>Move Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyaları Taşı</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="155"/>
         <source>Are you sure you want to move %n file(s)?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n Dosya(ları) taşımak istediğine emin misin?</numerusform>
         </translation>
     </message>
     <message>
@@ -36,7 +36,7 @@
         <location filename="../fileops.cpp" line="178"/>
         <location filename="../fileops.cpp" line="275"/>
         <source>Stop</source>
-        <translation>Dur</translation>
+        <translation>Durdur</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="223"/>
@@ -46,23 +46,23 @@
     <message>
         <location filename="../fileops.cpp" line="274"/>
         <source>Moving</source>
-        <translation type="unfinished"></translation>
+        <translation>Taşınıyor</translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="313"/>
         <source>Moving file %1/%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya taşınıyor %1/%2 </translation>
     </message>
     <message>
         <location filename="../fileops.cpp" line="123"/>
         <source>Remove Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyaları Kaldır</translation>
     </message>
     <message numerus="yes">
         <location filename="../fileops.cpp" line="124"/>
         <source>Are you sure you want to remove %n file(s) from disk?</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform> %n Dosya(larını) diskten kaldırmak istediğine emin misin?</numerusform>
         </translation>
     </message>
 </context>
@@ -94,90 +94,90 @@
     <message>
         <location filename="../fileopssettingsdialog.ui" line="14"/>
         <source>File Operations Settings</source>
-        <translation type="unfinished">Dosya İşlemleri Ayarları</translation>
+        <translation>Dosya İşlemleri Ayarları</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="51"/>
         <source>Enabled</source>
-        <translation type="unfinished">Etkinleştirildi</translation>
+        <translation>Etkinleştirildi</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="56"/>
         <source>Operation</source>
-        <translation type="unfinished">İşlem</translation>
+        <translation>İşlem</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="61"/>
         <source>Menu text</source>
-        <translation type="unfinished">Menü metni</translation>
+        <translation>Menü metni</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="66"/>
         <source>Shortcut</source>
-        <translation type="unfinished">Kısayol</translation>
+        <translation>Kısayol</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="82"/>
         <source>Add</source>
-        <translation type="unfinished">Ekle</translation>
+        <translation>Ekle</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="99"/>
         <location filename="../fileopssettingsdialog.cpp" line="222"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaldır</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="127"/>
         <source>Destination:</source>
-        <translation type="unfinished">Hedef:</translation>
+        <translation>Hedef:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="137"/>
         <location filename="../fileopssettingsdialog.ui" line="154"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.ui" line="144"/>
         <location filename="../fileopssettingsdialog.cpp" line="155"/>
         <source>File name pattern:</source>
-        <translation type="unfinished">Dosya adı deseni:</translation>
+        <translation>Dosya adı deseni:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="127"/>
         <source>New action</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni eylem</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="184"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
+        <translation>Komut:</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="219"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopyala</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="220"/>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeniden adlandır</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="221"/>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Taşı</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="223"/>
         <source>Execute</source>
-        <translation type="unfinished"></translation>
+        <translation>Yürüt</translation>
     </message>
     <message>
         <location filename="../fileopssettingsdialog.cpp" line="235"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Dizin seç</translation>
+        <translation>Dizin seç</translation>
     </message>
 </context>
 </TS>

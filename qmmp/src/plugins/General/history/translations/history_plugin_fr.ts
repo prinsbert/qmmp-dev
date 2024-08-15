@@ -178,12 +178,12 @@
     <message>
         <location filename="../historywindow.cpp" line="499"/>
         <source>Add to Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter à la liste</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="500"/>
         <source>&amp;View Track Details</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Voir les détails du morceau</translation>
     </message>
     <message>
         <location filename="../historywindow.cpp" line="502"/>

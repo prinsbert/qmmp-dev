@@ -29,22 +29,22 @@
     <message>
         <location filename="../filewritersettingsdialog.ui" line="14"/>
         <source>File Writer Plugin Settings</source>
-        <translation type="unfinished">Paramètres du plugin d&apos;écriture des fichiers</translation>
+        <translation>Paramètres du plugin d&apos;écriture des fichiers</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="29"/>
         <source>Output directory:</source>
-        <translation type="unfinished">Répertoire destination&#xa0;:</translation>
+        <translation>Répertoire destination&#xa0;:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="36"/>
         <source>Quality:</source>
-        <translation type="unfinished">Qualité:</translation>
+        <translation>Qualité:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="95"/>
         <source>Output file name:</source>
-        <translation type="unfinished">Fichier destination&#xa0;:</translation>
+        <translation>Fichier destination&#xa0;:</translation>
     </message>
     <message>
         <location filename="../filewritersettingsdialog.ui" line="109"/>
@@ -54,7 +54,7 @@
     <message>
         <location filename="../filewritersettingsdialog.cpp" line="72"/>
         <source>Choose a directory</source>
-        <translation type="unfinished">Choisissez un répertoire</translation>
+        <translation>Choisissez un répertoire</translation>
     </message>
 </context>
 </TS>

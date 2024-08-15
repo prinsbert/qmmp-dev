@@ -6,12 +6,12 @@
     <message>
         <location filename="../covermanager.cpp" line="35"/>
         <source>Show Cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapağı göster</translation>
     </message>
     <message>
         <location filename="../covermanager.cpp" line="36"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+M</translation>
     </message>
 </context>
 <context>
@@ -19,17 +19,17 @@
     <message>
         <location filename="../covermanagerfactory.cpp" line="29"/>
         <source>Cover Manager Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapak Yöneticisi Eklentisi</translation>
     </message>
     <message>
         <location filename="../covermanagerfactory.cpp" line="49"/>
         <source>About Cover Manager Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapak Yöneticisi Eklentisi Hakkında</translation>
     </message>
     <message>
         <location filename="../covermanagerfactory.cpp" line="50"/>
         <source>Qmmp Cover Manager Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Qmmp Kapak Yöneticisi Eklentisi</translation>
     </message>
     <message>
         <location filename="../covermanagerfactory.cpp" line="51"/>
@@ -43,65 +43,65 @@
         <location filename="../coverwidget.cpp" line="39"/>
         <location filename="../coverwidget.cpp" line="41"/>
         <source>&amp;Save As...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Olarak Kaydet</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="39"/>
         <location filename="../coverwidget.cpp" line="41"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="43"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Boyut</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="45"/>
         <source>Actual Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerçek Boyutu</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="46"/>
         <source>128x128</source>
-        <translation type="unfinished"></translation>
+        <translation>128x128</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="47"/>
         <source>256x256</source>
-        <translation type="unfinished"></translation>
+        <translation>256x256</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="48"/>
         <source>512x512</source>
-        <translation type="unfinished"></translation>
+        <translation>512x512</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="49"/>
         <source>1024x1024</source>
-        <translation type="unfinished"></translation>
+        <translation>1024x1024</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="53"/>
         <location filename="../coverwidget.cpp" line="55"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kapat</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="53"/>
         <location filename="../coverwidget.cpp" line="55"/>
         <source>Alt+F4</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+F4</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="96"/>
         <source>Save Cover As</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapağı Farklı Kaydet</translation>
     </message>
     <message>
         <location filename="../coverwidget.cpp" line="97"/>
         <source>Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüntüler</translation>
     </message>
 </context>
 </TS>

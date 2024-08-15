@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>EffectSoXRFactory</name>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="30"/>
         <source>SoX Resampler Plugin</source>
-        <translation>Модуль SoX Resampler</translation>
+        <translation>Втулок SoX Resampler</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="50"/>
         <source>About SoX Resampler Plugin</source>
-        <translation>Про модуль SoX Resampler</translation>
+        <translation>Про втулок SoX Resampler</translation>
     </message>
     <message>
         <location filename="../effectsoxrfactory.cpp" line="51"/>
@@ -29,42 +29,42 @@
     <message>
         <location filename="../soxrsettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля перетворювача частоти</translation>
+        <translation>Налаштування втулка Sample Rate Converter</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Дискретизація семпла (Гц):</translation>
+        <translation>Дискретизація семплу (Гц):</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.ui" line="40"/>
         <source>Quality:</source>
-        <translation type="unfinished">Якість:</translation>
+        <translation>Якість:</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="34"/>
         <source>Quick</source>
-        <translation type="unfinished">Швидко (найнижча якість)</translation>
+        <translation>Швидко (найнижча якість)</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="35"/>
         <source>Low</source>
-        <translation type="unfinished">Низька</translation>
+        <translation>Низька</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="36"/>
         <source>Medium</source>
-        <translation type="unfinished">Посередня</translation>
+        <translation>Посереднє</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="37"/>
         <source>High</source>
-        <translation type="unfinished">Висока</translation>
+        <translation>Висока</translation>
     </message>
     <message>
         <location filename="../soxrsettingsdialog.cpp" line="38"/>
         <source>Very High</source>
-        <translation type="unfinished">Найвища</translation>
+        <translation>Найвища</translation>
     </message>
 </context>
 </TS>

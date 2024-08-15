@@ -6,37 +6,37 @@
     <message>
         <location filename="../cuesettingsdialog.ui" line="14"/>
         <source>CUE Plugin Settings</source>
-        <translation type="unfinished">Ρυθμίσεις πρόσθετου CUE</translation>
+        <translation>Ρυθμίσεις πρόσθετου CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="29"/>
         <source>Common settings</source>
-        <translation type="unfinished">Κοινές ρυθμίσεις</translation>
+        <translation>Κοινές ρυθμίσεις</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="35"/>
         <source>Load incorrect cue sheets if possible</source>
-        <translation type="unfinished">Φόρτωση εσφαλμένων φύλλων cue αν είναι εφικτό</translation>
+        <translation>Φόρτωση εσφαλμένων φύλλων cue αν είναι εφικτό</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="45"/>
         <source>CUE encoding</source>
-        <translation type="unfinished">Κωδικοποίηση CUE</translation>
+        <translation>Κωδικοποίηση CUE</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="51"/>
         <source>Automatic charset detection</source>
-        <translation type="unfinished">Αυτόματη ανίχνευση συνόλου χαρακτήρων</translation>
+        <translation>Αυτόματη ανίχνευση συνόλου χαρακτήρων</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="61"/>
         <source>Language:</source>
-        <translation type="unfinished">Γλώσσα:</translation>
+        <translation>Γλώσσα:</translation>
     </message>
     <message>
         <location filename="../cuesettingsdialog.ui" line="81"/>
         <source>Default encoding:</source>
-        <translation type="unfinished">Εξ ορισμού κωδικοποίηση:</translation>
+        <translation>Εξ ορισμού κωδικοποίηση:</translation>
     </message>
 </context>
 <context>

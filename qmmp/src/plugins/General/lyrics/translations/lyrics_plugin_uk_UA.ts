@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>Lyrics</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../lyrics.cpp" line="35"/>
         <source>Ctrl+L</source>
-        <translation></translation>
+        <translation>Ctrl+L</translation>
     </message>
 </context>
 <context>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="36"/>
         <source>Ctrl+2</source>
-        <translation></translation>
+        <translation>Ctrl+2</translation>
     </message>
     <message>
         <location filename="../lyricsfactory.cpp" line="68"/>
@@ -42,6 +42,11 @@
         <translation>Модуль текстів для Qmmp</translation>
     </message>
     <message>
+        <location filename="../lyricsfactory.cpp" line="70"/>
+        <source>This plugin retrieves lyrics from LyricWiki</source>
+        <translation>Цей втулок отримує тексти з LyricWiki</translation>
+    </message>
+    <message>
         <location filename="../lyricsfactory.cpp" line="71"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Розробник: Ілля Котов &lt;forkotov02@ya.ru&gt;</translation>
@@ -49,12 +54,7 @@
     <message>
         <location filename="../lyricsfactory.cpp" line="72"/>
         <source>Based on Ultimate Lyrics script by Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</source>
-        <translation>Базується на Ultimate Lyrics script від Vladimir Brkic &lt;vladimir_brkic@yahoo.com&gt;</translation>
-    </message>
-    <message>
-        <location filename="../lyricsfactory.cpp" line="70"/>
-        <source>This plugin retrieves lyrics from LyricWiki</source>
-        <translation>Цей модуль отримує тексти з LyricWiki</translation>
+        <translation>Базується на сценарії Ultimate Lyrics від Володимира Бркича &lt;vladimir_brkic@yahoo.com&gt;</translation>
     </message>
 </context>
 <context>
@@ -62,12 +62,12 @@
     <message>
         <location filename="../lyricssettingsdialog.ui" line="14"/>
         <source>Lyrics Plugin Settings</source>
-        <translation type="unfinished">Налаштування модуля текстів</translation>
+        <translation>Налаштування втулка текстів пісень</translation>
     </message>
     <message>
         <location filename="../lyricssettingsdialog.ui" line="29"/>
         <source>Lyrics providers:</source>
-        <translation type="unfinished">Постачальники текстів:</translation>
+        <translation>Постачальники текстів пісень:</translation>
     </message>
 </context>
 <context>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../lyricswidget.ui" line="159"/>
         <source>Track:</source>
-        <translation>Трек:</translation>
+        <translation>Доріжка:</translation>
     </message>
     <message>
         <location filename="../lyricswidget.ui" line="171"/>
@@ -111,7 +111,7 @@
         <location filename="../lyricswidget.cpp" line="148"/>
         <location filename="../lyricswidget.cpp" line="234"/>
         <source>&lt;h2&gt;%1 - %2&lt;/h2&gt;</source>
-        <translation></translation>
+        <translation>&lt;h2&gt;%1 - %2&lt;/h2&gt;</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="159"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../lyricswidget.cpp" line="236"/>
         <source>Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Теґ</translation>
     </message>
     <message>
         <location filename="../lyricswidget.cpp" line="257"/>

@@ -29,42 +29,42 @@
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="14"/>
         <source>Sample Rate Converter Plugin Settings</source>
-        <translation type="unfinished">Configuración del módulo de conversión de frecuencia</translation>
+        <translation>Configuración del módulo de conversión de frecuencia</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="20"/>
         <source>Sample Rate (Hz):</source>
-        <translation type="unfinished">Frecuencia (Hz):</translation>
+        <translation>Frecuencia (Hz):</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="40"/>
         <source>Interpolation Engine:</source>
-        <translation type="unfinished">Motor de interpolación:</translation>
+        <translation>Motor de interpolación:</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="48"/>
         <source>Best Sinc Interpolation</source>
-        <translation type="unfinished">Interpolación sinc mejor</translation>
+        <translation>Interpolación sinc mejor</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="53"/>
         <source>Medium Sinc Interpolation</source>
-        <translation type="unfinished">Interpolación sinc media</translation>
+        <translation>Interpolación sinc media</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="58"/>
         <source>Fastest Sinc Interpolation</source>
-        <translation type="unfinished">Interpolación sinc rápida</translation>
+        <translation>Interpolación sinc rápida</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="63"/>
         <source>ZOH Interpolation</source>
-        <translation type="unfinished">Interpolación ZOH</translation>
+        <translation>Interpolación ZOH</translation>
     </message>
     <message>
         <location filename="../srconvertersettingsdialog.ui" line="68"/>
         <source>Linear Interpolation</source>
-        <translation type="unfinished">Interpolación linear</translation>
+        <translation>Interpolación linear</translation>
     </message>
 </context>
 </TS>

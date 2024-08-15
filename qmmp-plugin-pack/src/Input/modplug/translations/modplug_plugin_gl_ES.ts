@@ -99,108 +99,108 @@
     <message>
         <location filename="../modplugsettingsdialog.ui" line="14"/>
         <source>ModPlug Plugin Settings</source>
-        <translation type="unfinished">Preferencias do engadido ModPlug</translation>
+        <translation>Preferencias do engadido ModPlug</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="33"/>
         <source>Quality</source>
-        <translation type="unfinished">Calidade</translation>
+        <translation>Calidade</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="45"/>
         <source>Resolution</source>
-        <translation type="unfinished">Resolución</translation>
+        <translation>Resolución</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="51"/>
         <source>16 bit</source>
-        <translation type="unfinished">16 bit</translation>
+        <translation>16 bit</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="58"/>
         <source>8 bit</source>
-        <translation type="unfinished">8 bit</translation>
+        <translation>8 bit</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="74"/>
         <source>Channels</source>
-        <translation type="unfinished">Canais</translation>
+        <translation>Canais</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="80"/>
         <source>Stereo</source>
-        <translation type="unfinished">Estéreo</translation>
+        <translation>Estéreo</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="87"/>
         <source>Mono (downmix)</source>
-        <translation type="unfinished">Mono (downmix)</translation>
+        <translation>Mono (downmix)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="103"/>
         <source>Resampling</source>
-        <translation type="unfinished">Remostrar</translation>
+        <translation>Remostrar</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="109"/>
         <source>Nearest (fastest)</source>
-        <translation type="unfinished">O máis próximo (o máis rápido)</translation>
+        <translation>O máis próximo (o máis rápido)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="116"/>
         <source>Linear (fast)</source>
-        <translation type="unfinished">Linear (rápido)</translation>
+        <translation>Linear (rápido)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="123"/>
         <source>Spline (good quality)</source>
-        <translation type="unfinished">Estriado (calidade boa)</translation>
+        <translation>Estriado (calidade boa)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="130"/>
         <source>8-tap Fir (extremely high quality)</source>
-        <translation type="unfinished">8-tap-Fir (calidade moi boa)</translation>
+        <translation>8-tap-Fir (calidade moi boa)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="146"/>
         <source>Sampling Rate</source>
-        <translation type="unfinished">Taxa de mostra</translation>
+        <translation>Taxa de mostra</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="152"/>
         <source>48000 Hz</source>
-        <translation type="unfinished">48000 Hz</translation>
+        <translation>48000 Hz</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="159"/>
         <source>44100 Hz</source>
-        <translation type="unfinished">44100 Hz</translation>
+        <translation>44100 Hz</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="166"/>
         <source>22050 Hz</source>
-        <translation type="unfinished">22050 Hz</translation>
+        <translation>22050 Hz</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="173"/>
         <source>11025 Hz</source>
-        <translation type="unfinished">11025 Hz</translation>
+        <translation>11025 Hz</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="184"/>
         <source>Effects</source>
-        <translation type="unfinished">Efectos</translation>
+        <translation>Efectos</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="190"/>
         <source>Reverb</source>
-        <translation type="unfinished">Reverberación</translation>
+        <translation>Reverberación</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="202"/>
         <location filename="../modplugsettingsdialog.ui" line="467"/>
         <source>Depth (%)</source>
-        <translation type="unfinished">Profundidade (%)</translation>
+        <translation>Profundidade (%)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="234"/>
@@ -208,119 +208,119 @@
         <location filename="../modplugsettingsdialog.ui" line="499"/>
         <location filename="../modplugsettingsdialog.ui" line="618"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="260"/>
         <location filename="../modplugsettingsdialog.ui" line="519"/>
         <source>Delay (ms)</source>
-        <translation type="unfinished">Duración (ms)</translation>
+        <translation>Duración (ms)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="292"/>
         <source>40</source>
-        <translation type="unfinished">40</translation>
+        <translation>40</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="324"/>
         <source>Bass Boost</source>
-        <translation type="unfinished">Bass Boost</translation>
+        <translation>Bass Boost</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="336"/>
         <source>Amount (%)</source>
-        <translation type="unfinished">Cantidade (%)</translation>
+        <translation>Cantidade (%)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="394"/>
         <source>Range (Hz)</source>
-        <translation type="unfinished">Rango (HZ)</translation>
+        <translation>Rango (HZ)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="426"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="458"/>
         <source>Surround</source>
-        <translation type="unfinished">Surround</translation>
+        <translation>Surround</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="551"/>
         <source>5</source>
-        <translation type="unfinished">5</translation>
+        <translation>5</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="577"/>
         <source>Preamp</source>
-        <translation type="unfinished">Preamplificación</translation>
+        <translation>Preamplificación</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="586"/>
         <source>Volume</source>
-        <translation type="unfinished">Volume</translation>
+        <translation>Volume</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="656"/>
         <source>Note: Setting the preamp
 too high may cause clipping!</source>
-        <translation type="unfinished">Nota: Establecer o preamplificador demasiado algo pode causar recorte do son!</translation>
+        <translation>Nota: Establecer o preamplificador demasiado algo pode causar recorte do son!</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="671"/>
         <source>Misc</source>
-        <translation type="unfinished">Miscelánea</translation>
+        <translation>Miscelánea</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="677"/>
         <source>General</source>
-        <translation type="unfinished">Xeral</translation>
+        <translation>Xeral</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="683"/>
         <source>Use filename as song title</source>
-        <translation type="unfinished">Usar título da canción como nome do ficheiro</translation>
+        <translation>Usar título da canción como nome do ficheiro</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="690"/>
         <source>Noise reduction</source>
-        <translation type="unfinished">Redución de ruído</translation>
+        <translation>Redución de ruído</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="700"/>
         <source>Fast playlist info</source>
-        <translation type="unfinished">Información rápida de pista de reprodución</translation>
+        <translation>Información rápida de pista de reprodución</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="710"/>
         <source>Play Amiga MOD</source>
-        <translation type="unfinished">MOD Play Amiga</translation>
+        <translation>MOD Play Amiga</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="720"/>
         <source>Looping</source>
-        <translation type="unfinished">Repetir</translation>
+        <translation>Repetir</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="726"/>
         <source>Don&apos;t loop</source>
-        <translation type="unfinished">Non repetir</translation>
+        <translation>Non repetir</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="733"/>
         <source>Loop</source>
-        <translation type="unfinished">Repetición</translation>
+        <translation>Repetición</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="750"/>
         <source>time(s)</source>
-        <translation type="unfinished">tempo(s)</translation>
+        <translation>tempo(s)</translation>
     </message>
     <message>
         <location filename="../modplugsettingsdialog.ui" line="770"/>
         <source>Loop forever</source>
-        <translation type="unfinished">Repetir indefinidamente</translation>
+        <translation>Repetir indefinidamente</translation>
     </message>
 </context>
 </TS>

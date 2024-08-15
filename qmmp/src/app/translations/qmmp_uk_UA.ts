@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>BuiltinCommandLineOption</name>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="57"/>
-        <source>Skip forward in playlist</source>
-        <translation>Перейти до наступного фрагменту</translation>
-    </message>
-    <message>
-        <location filename="../builtincommandlineoption.cpp" line="58"/>
-        <source>Skip backwards in playlist</source>
-        <translation>Перейти до попереднього фрагменту</translation>
+        <location filename="../builtincommandlineoption.cpp" line="46"/>
+        <source>Don&apos;t clear the playlist</source>
+        <translation>Не очищувати грайлист</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="47"/>
@@ -19,14 +14,9 @@
         <translation>Грати поточну пісню</translation>
     </message>
     <message>
-        <location filename="../builtincommandlineoption.cpp" line="46"/>
-        <source>Don&apos;t clear the playlist</source>
-        <translation>Не очищати список</translation>
-    </message>
-    <message>
         <location filename="../builtincommandlineoption.cpp" line="48"/>
         <source>Pause current song</source>
-        <translation>Призупитини поточну пісню</translation>
+        <translation>Призупинити поточну пісню</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="49"/>
@@ -56,7 +46,7 @@
     <message>
         <location filename="../builtincommandlineoption.cpp" line="54"/>
         <source>Print volume level</source>
-        <translation>Вивести рівень гучності</translation>
+        <translation>Вивести рівень гучности</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="55"/>
@@ -67,6 +57,16 @@
         <location filename="../builtincommandlineoption.cpp" line="56"/>
         <source>Print mute status</source>
         <translation>Вивести статус приглушення</translation>
+    </message>
+    <message>
+        <location filename="../builtincommandlineoption.cpp" line="57"/>
+        <source>Skip forward in playlist</source>
+        <translation>Перейти до наступного фрагменту</translation>
+    </message>
+    <message>
+        <location filename="../builtincommandlineoption.cpp" line="58"/>
+        <source>Skip backwards in playlist</source>
+        <translation>Перейти до попереднього фрагменту</translation>
     </message>
     <message>
         <location filename="../builtincommandlineoption.cpp" line="59"/>
@@ -92,6 +92,11 @@
 <context>
     <name>QMMPStarter</name>
     <message>
+        <location filename="../qmmpstarter.cpp" line="140"/>
+        <source>Unknown command</source>
+        <translation>Невідома команда</translation>
+    </message>
+    <message>
         <location filename="../qmmpstarter.cpp" line="464"/>
         <source>Usage: qmmp [options] [files]</source>
         <translation>Використання: qmmp [options] [files]</translation>
@@ -99,7 +104,7 @@
     <message>
         <location filename="../qmmpstarter.cpp" line="465"/>
         <source>Options:</source>
-        <translation>Опції:</translation>
+        <translation>Параметри:</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="471"/>
@@ -120,6 +125,11 @@
         <location filename="../qmmpstarter.cpp" line="474"/>
         <source>Print debugging messages</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qmmpstarter.cpp" line="475"/>
+        <source>Display this text and exit</source>
+        <translation>Показати цей текст і вийти</translation>
     </message>
     <message>
         <location filename="../qmmpstarter.cpp" line="476"/>
@@ -171,16 +181,6 @@
         <location filename="../qmmpstarter.cpp" line="520"/>
         <source>User Interfaces</source>
         <translation>Інтерфейси користувача</translation>
-    </message>
-    <message>
-        <location filename="../qmmpstarter.cpp" line="475"/>
-        <source>Display this text and exit</source>
-        <translation>Показати цей текст та вийти</translation>
-    </message>
-    <message>
-        <location filename="../qmmpstarter.cpp" line="140"/>
-        <source>Unknown command</source>
-        <translation>Невідома команда</translation>
     </message>
 </context>
 </TS>

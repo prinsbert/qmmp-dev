@@ -13,6 +13,6 @@ Terminal=false
 
 
 # Translations
-Icon[de]=qmmp
 Name[de]=In die Warteschlange von Qmmp einreihen
 Comment[de]=Datei(en) zur Qmmp-Wiedergabeliste hinzufügen
+Icon[de]=qmmp
