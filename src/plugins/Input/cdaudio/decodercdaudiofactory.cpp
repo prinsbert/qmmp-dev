@@ -21,7 +21,9 @@
 #include <QMessageBox>
 #include <QSettings>
 #include <cdio/version.h>
+#ifdef WITH_LIBCDDB
 #include <cddb/version.h>
+#endif
 #include "cdaudiosettingsdialog.h"
 #include "decoder_cdaudio.h"
 #include "decodercdaudiofactory.h"
@@ -95,8 +97,13 @@ void DecoderCDAudioFactory::showAbout(QWidget *parent)
 {
     QMessageBox::about(parent, tr("About CD Audio Plugin"),
                        tr("Qmmp CD Audio Plugin") + QChar::LineFeed +
+#ifdef WITH_LIBCDDB
                        tr("Compiled against libcdio-%1 and libcddb-%2").arg(QLatin1StringView(CDIO_VERSION),
-                                                                            QLatin1StringView(CDDB_VERSION)) + QChar::LineFeed +
+                                                                            QLatin1StringView(CDDB_VERSION)) +
+#else
+                       tr("Compiled against libcdio-%1").arg(QLatin1StringView(CDIO_VERSION)) +
+#endif
+                       QChar::LineFeed +
                        tr("Written by: Ilya Kotov <forkotov02@ya.ru>") + QChar::LineFeed +
                        tr("Usage: open cdda:/// using Add URL dialog or command line"));
 }
