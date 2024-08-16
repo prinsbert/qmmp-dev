@@ -57,32 +57,37 @@
 <context>
     <name>DecoderCDAudioFactory</name>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="50"/>
+        <location filename="../decodercdaudiofactory.cpp" line="52"/>
         <source>CD Audio Plugin</source>
         <translation>Estensione CD Audio</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="96"/>
+        <location filename="../decodercdaudiofactory.cpp" line="98"/>
         <source>About CD Audio Plugin</source>
         <translation>Informazioni sull&apos;estensione CD Audio</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="97"/>
+        <location filename="../decodercdaudiofactory.cpp" line="99"/>
         <source>Qmmp CD Audio Plugin</source>
         <translation>Estensione CD Audio per Qmmp</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="98"/>
+        <location filename="../decodercdaudiofactory.cpp" line="101"/>
         <source>Compiled against libcdio-%1 and libcddb-%2</source>
         <translation>Compilato con libcdio-%1 e libcddb-%2</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="100"/>
+        <location filename="../decodercdaudiofactory.cpp" line="104"/>
+        <source>Compiled against libcdio-%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../decodercdaudiofactory.cpp" line="107"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Autori: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>
     <message>
-        <location filename="../decodercdaudiofactory.cpp" line="101"/>
+        <location filename="../decodercdaudiofactory.cpp" line="108"/>
         <source>Usage: open cdda:/// using Add URL dialog or command line</source>
         <translation>Uso: aprire cdda:/// dalla finestra di dialogo di aggiunta URL, o via riga di comando</translation>
     </message>
