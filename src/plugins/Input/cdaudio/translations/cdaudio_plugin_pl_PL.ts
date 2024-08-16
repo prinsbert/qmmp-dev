@@ -79,7 +79,7 @@
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="104"/>
         <source>Compiled against libcdio-%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Skompilowana z biblioteką libcdio-%1</translation>
     </message>
     <message>
         <location filename="../decodercdaudiofactory.cpp" line="107"/>
