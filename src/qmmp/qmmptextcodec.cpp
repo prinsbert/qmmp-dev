@@ -23,49 +23,66 @@
 #include "qmmp.h"
 #include "qmmptextcodec.h"
 
-QmmpTextCodec::QmmpTextCodec(const QByteArray &charset) : m_name(charset.toUpper())
+class QmmpTextCodecPrivate
 {
+public:
+    ~QmmpTextCodecPrivate()
+    {
+        if(to)
+            iconv_close(to);
+        if(from)
+            iconv_close(from);
+    }
+
+    iconv_t to = nullptr, from = nullptr;
+};
+
+QmmpTextCodec::QmmpTextCodec(const QByteArray &charset) : d_ptr(new QmmpTextCodecPrivate),
+    m_name(charset.toUpper())
+
+{
+    Q_D(QmmpTextCodec);
+
     if(m_name == "UTF-8"_ba || m_name == "UTF-16"_ba)
         return;
 
-    if((m_to = iconv_open(m_name.constData(), "UTF-16")) == (iconv_t)(-1))
+    if((d->to = iconv_open(m_name.constData(), "UTF-16")) == (iconv_t)(-1))
     {
         qCWarning(core, "error: %s", strerror(errno));
-        m_to = nullptr;
+        d->to = nullptr;
     }
 
-    if((m_from = iconv_open("UTF-16", m_name.constData())) == (iconv_t)(-1))
+    if((d->from = iconv_open("UTF-16", m_name.constData())) == (iconv_t)(-1))
     {
         qCWarning(core, "error: %s", strerror(errno));
-        m_from = nullptr;
+        d->from = nullptr;
     }
 }
 
 QmmpTextCodec::~QmmpTextCodec()
 {
-    if(m_to)
-        iconv_close(m_to);
-    if(m_from)
-        iconv_close(m_from);
+    delete d_ptr;
 }
 
-const QByteArray &QmmpTextCodec::name() const
+QByteArray QmmpTextCodec::name() const
 {
     return m_name;
 }
 
 QString QmmpTextCodec::toUnicode(const QByteArray &a) const
 {
+    Q_D(const QmmpTextCodec);
+
     if(m_name == "UTF-16"_ba)
         return QString::fromUtf16(reinterpret_cast<const char16_t *>(a.data()), a.size() / 2);
-    if(!m_from || m_name == "UTF-8"_ba)
+    if(!d->from || m_name == "UTF-8"_ba)
         return QString::fromUtf8(a);
 
     size_t inBytesLeft = 0;
     size_t outBytesLeft = 0;
 
     // reset state
-    iconv(m_from, nullptr, &inBytesLeft, nullptr, &outBytesLeft);
+    iconv(d->from, nullptr, &inBytesLeft, nullptr, &outBytesLeft);
 
     char *inBytes = const_cast<char *>(a.data());
     inBytesLeft = a.size();
@@ -76,7 +93,7 @@ QString QmmpTextCodec::toUnicode(const QByteArray &a) const
 
     while(inBytesLeft > 0)
     {
-        size_t ret = iconv(m_from,  &inBytes, &inBytesLeft, &outBytes, &outBytesLeft);
+        size_t ret = iconv(d->from,  &inBytes, &inBytesLeft, &outBytes, &outBytesLeft);
 
         if(ret == (size_t) -1)
         {
@@ -115,16 +132,18 @@ QString QmmpTextCodec::toUnicode(const char *chars) const
 
 QByteArray QmmpTextCodec::fromUnicode(const QString &str) const
 {
+    Q_D(const QmmpTextCodec);
+
     if(m_name == "UTF-16"_ba)
         return QByteArray(reinterpret_cast<const char*>(str.utf16()), str.size() * 2);
-    if(!m_from || m_name == "UTF-8"_ba)
+    if(!d->from || m_name == "UTF-8"_ba)
         return str.toUtf8();
 
     size_t inBytesLeft = 0;
     size_t outBytesLeft = 0;
 
     // reset state
-    iconv(m_to, nullptr, &inBytesLeft, nullptr, &outBytesLeft);
+    iconv(d->to, nullptr, &inBytesLeft, nullptr, &outBytesLeft);
 
     char *inBytes =  const_cast<char *>(reinterpret_cast<const char*>(str.utf16()));
     inBytesLeft = str.size() * 2;
@@ -136,7 +155,7 @@ QByteArray QmmpTextCodec::fromUnicode(const QString &str) const
 
     while(inBytesLeft > 0)
     {
-        size_t ret = iconv(m_to,  &inBytes, &inBytesLeft, &outBytes, &outBytesLeft);
+        size_t ret = iconv(d->to,  &inBytes, &inBytesLeft, &outBytes, &outBytesLeft);
 
         if(ret == (size_t) -1)
         {
@@ -170,7 +189,7 @@ QByteArray QmmpTextCodec::fromUnicode(const QString &str) const
     return ba;
 }
 
-const QStringList &QmmpTextCodec::availableCharsets()
+QStringList QmmpTextCodec::availableCharsets()
 {
     static const QStringList charsets = {
         u"BIG5"_s,
