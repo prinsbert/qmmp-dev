@@ -27,16 +27,43 @@
 
 class QmmpTextCodecPrivate;
 
+/*! @brief The QmmpTextCodec class provides text encoding conversion.
+ * @author Ilya Kotov <forkotov02@ya.ru>
+ */
 class QMMP_EXPORT QmmpTextCodec
 {
 public:
+    /*!
+     * Constructor.
+     * @param charset Conversion charset.
+     */
     QmmpTextCodec(const QByteArray &charset);
+    /*!
+     * Destructor.
+     */
     ~QmmpTextCodec();
-
+    /*!
+     * This function returns coversion charset.
+     */
     QByteArray name() const;
+    /*!
+     * This function converts text encoding from coversion charset to unicode.
+     * @param a Text array.
+     */
     QString toUnicode(const QByteArray &a) const;
+    /*!
+     * This function converts text encoding from coversion charset to unicode.
+     * @param chars Text array.
+     */
     QString toUnicode(const char *chars) const;
+    /*!
+     * This function converts text encoding from unicode to conversion charset.
+     * @param str Input string.
+     */
     QByteArray fromUnicode(const QString &str) const;
+    /*!
+     * This function returns a list of the supported charsets.
+     */
     static QStringList availableCharsets();
 
 private:
