@@ -96,15 +96,9 @@ bool DecoderAAC::initialize()
     NeAACDecSetConfiguration(data()->handle, conf);
 
     m_input_at = input()->read((char *)m_input_buf, AAC_BUFFER_SIZE);
-
-#ifdef FAAD_MODIFIED
-    uint32_t freq = 0;
-    uint8_t chan = 0;
-#else
     unsigned long freq = 0;
     unsigned char chan = 0;
-#endif
-    int res = NeAACDecInit (data()->handle, (unsigned char*) m_input_buf, m_input_at, &freq, &chan);
+    int res = NeAACDecInit(data()->handle, (unsigned char*) m_input_buf, m_input_at, &freq, &chan);
 
     if(res < 0)
     {

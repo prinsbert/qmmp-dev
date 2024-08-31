@@ -11,10 +11,7 @@ SOURCES += decoder_aac.cpp \
 
 RESOURCES = translations/translations.qrc
 
-LIBS += -lfaad \
-    -L/usr/lib \
-    -I/usr/include
-PKGCONFIG += taglib
+PKGCONFIG += taglib faad2
 
 target.path = $$PLUGIN_DIR/Input
 INSTALLS += target
