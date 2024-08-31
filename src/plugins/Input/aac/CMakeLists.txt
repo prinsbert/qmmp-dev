@@ -1,7 +1,7 @@
 project(libaac)
 
 # libfaad
-pkg_search_module(FAAD faad2>=2.9 IMPORTED_TARGET)
+pkg_search_module(FAAD faad2>=2.9.2 IMPORTED_TARGET)
 
 set(libaac_SRCS
   decoder_aac.cpp
