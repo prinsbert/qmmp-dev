@@ -134,7 +134,7 @@ qint64 MMSStreamReader::bytesAvailable() const
 
 void MMSStreamReader::run()
 {
-    int to_read = 1024;
+    constexpr int to_read = 1024;
     char prebuf[to_read];
     m_handle = mmsx_connect (nullptr, nullptr, m_url.toLocal8Bit().constData(), 128 * 1024);
     if(!m_handle)
