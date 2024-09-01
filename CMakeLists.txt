@@ -2,8 +2,11 @@ cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
 project(qmmp)
 
 #freebsd support
-include_directories(SYSTEM /usr/local/include)
-set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/local/include)
+if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+    include_directories(SYSTEM /usr/local/include)
+    link_directories(AFTER /usr/local/lib)
+    set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} /usr/local/include)
+endif()
 
 #macports support
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")

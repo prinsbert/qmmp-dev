@@ -38,7 +38,7 @@ unix {
     target.path = $$PLUGIN_DIR/Input
     INSTALLS += target
     PKGCONFIG += taglib
-    contains(CONFIG, WITH_MAD):freebsd { PKGCONFIG += libmad } else { PKGCONFIG += mad }
+    contains(CONFIG, WITH_MAD):PKGCONFIG += mad
     contains(CONFIG, WITH_MPG123):PKGCONFIG += libmpg123
 }
 
