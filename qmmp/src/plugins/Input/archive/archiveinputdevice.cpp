@@ -126,7 +126,7 @@ qint64 ArchiveInputDevice::readData(char *data, qint64 maxSize)
     if(m_buffer.pos() + maxSize > m_buffer.size())
     {
         qint64 l = m_buffer.pos() + maxSize - m_buffer.size();
-        char tmp[l];
+        char *tmp = new char[l];
         int r = archive_read_data(m_archive, tmp, l);
         if(r > 0)
             m_buffer.buffer().append(tmp, r);
@@ -134,8 +134,10 @@ qint64 ArchiveInputDevice::readData(char *data, qint64 maxSize)
         {
             qCWarning(plugin, "reading failed; libarchive error: %s", archive_error_string(m_archive));
             setErrorString(QString::fromLocal8Bit(archive_error_string(m_archive)));
+            delete [] tmp;
             return -1;
         }
+        delete [] tmp;
     }
     return m_buffer.read(data, maxSize);
 }

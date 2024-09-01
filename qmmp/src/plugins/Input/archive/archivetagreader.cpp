@@ -48,14 +48,15 @@ public:
     virtual TagLib::ByteVector readBlock(unsigned long length) override
 #endif
     {
-        char data[length];
-        qint64 l = m_input->read(data, length);
+        TagLib::ByteVector data(length, 0);
+        qint64 l = m_input->read(data.data(), length);
         if(l < 0)
         {
             m_input->close();
             return TagLib::ByteVector();
         }
-        return TagLib::ByteVector(data, l);
+        data.resize(l);
+        return data;
     }
     virtual void writeBlock(const TagLib::ByteVector &) override
     {}

@@ -74,8 +74,9 @@ bool DecoderAAC::initialize()
     {
         qCDebug(plugin, "header offset = %d bytes", aac_file.offset());
 
-        char data[aac_file.offset()];
+        char *data = new char[aac_file.offset()];
         input()->read(data, aac_file.offset());
+        delete [] data;
     }
 
     m_totalTime = aac_file.duration();
