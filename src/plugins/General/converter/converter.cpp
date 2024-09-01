@@ -21,6 +21,7 @@
 #include <stdio.h>
 #include <QStringList>
 #include <QStandardPaths>
+#include <QScopeGuard>
 #include <qmmp/inputsourcefactory.h>
 #include <qmmp/decoderfactory.h>
 #include <qmmp/metadatamanager.h>
@@ -304,16 +305,23 @@ bool Converter::convert(Decoder *decoder, FILE *file, bool use16bit)
 
     int outSampleSize = AudioParameters::sampleSize(outFormat);
 
-    unsigned char input_buffer[QMMP_BLOCK_FRAMES * ap.frameSize() * 4];
-    float converter_buffer[QMMP_BLOCK_FRAMES * ap.channels() * sizeof(float)];
-    unsigned char output_buffer[QMMP_BLOCK_FRAMES * outSampleSize * ap.channels() * 4];
+    unsigned char *input_buffer = new unsigned char[QMMP_BLOCK_FRAMES * ap.frameSize()];
+    float *converter_buffer = new float[QMMP_BLOCK_FRAMES * ap.channels()];
+    unsigned char *output_buffer = new unsigned char[QMMP_BLOCK_FRAMES * outSampleSize * ap.channels()];
+
+    auto cleanup = qScopeGuard([=] {
+        delete [] input_buffer;
+        delete [] converter_buffer;
+        delete [] output_buffer;
+
+    });
 
     emit progress(0);
 
     forever
     {
         // decode
-        len = decoder->read(input_buffer, sizeof(input_buffer));
+        len = decoder->read(input_buffer, QMMP_BLOCK_FRAMES * ap.frameSize());
 
         if (len > 0)
         {

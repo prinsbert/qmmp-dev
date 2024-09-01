@@ -108,7 +108,6 @@ private:
     bool m_show_anchor = false;
     bool m_align_numbers = false;
     bool m_show_lengths = false;
-    bool m_use_system_colors = false;
     bool m_single_column = true;
     bool m_show_splitters = true;
     int m_padding = 0;

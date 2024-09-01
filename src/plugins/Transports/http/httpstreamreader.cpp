@@ -467,7 +467,7 @@ void HttpStreamReader::readICYMetaData()
     if (packet_size != 0)
     {
         size_t size = packet_size * 16;
-        char packet[size];
+        char *packet = new char[size];
         while (m_stream.buf_fill < size && m_thread->isRunning())
         {
             m_mutex.unlock();
@@ -477,6 +477,7 @@ void HttpStreamReader::readICYMetaData()
         qint64 l = readBuffer(packet, size);
         qCDebug(plugin, "ICY metadata: %s", packet);
         parseICYMetaData(packet, l);
+        delete [] packet;
     }
     m_mutex.unlock();
 }
