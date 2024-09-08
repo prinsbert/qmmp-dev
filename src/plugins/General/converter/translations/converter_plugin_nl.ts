@@ -4,29 +4,29 @@
 <context>
     <name>Converter</name>
     <message>
-        <location filename="../converter.cpp" line="124"/>
-        <location filename="../converter.cpp" line="227"/>
+        <location filename="../converter.cpp" line="125"/>
+        <location filename="../converter.cpp" line="228"/>
         <source>Cancelled</source>
         <translation>Afgebroken</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="139"/>
-        <location filename="../converter.cpp" line="209"/>
+        <location filename="../converter.cpp" line="140"/>
+        <location filename="../converter.cpp" line="210"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="177"/>
+        <location filename="../converter.cpp" line="178"/>
         <source>Converting</source>
         <translation>Bezig met converteren</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="238"/>
+        <location filename="../converter.cpp" line="239"/>
         <source>Encoding</source>
         <translation>Bezig met omzetten</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="276"/>
+        <location filename="../converter.cpp" line="277"/>
         <source>Finished</source>
         <translation>Afgerond</translation>
     </message>

@@ -4,29 +4,29 @@
 <context>
     <name>Converter</name>
     <message>
-        <location filename="../converter.cpp" line="124"/>
-        <location filename="../converter.cpp" line="227"/>
+        <location filename="../converter.cpp" line="125"/>
+        <location filename="../converter.cpp" line="228"/>
         <source>Cancelled</source>
         <translation>취소됨</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="139"/>
-        <location filename="../converter.cpp" line="209"/>
+        <location filename="../converter.cpp" line="140"/>
+        <location filename="../converter.cpp" line="210"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="177"/>
+        <location filename="../converter.cpp" line="178"/>
         <source>Converting</source>
         <translation>변환 중</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="238"/>
+        <location filename="../converter.cpp" line="239"/>
         <source>Encoding</source>
         <translation>인코딩</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="276"/>
+        <location filename="../converter.cpp" line="277"/>
         <source>Finished</source>
         <translation>완료됨</translation>
     </message>
