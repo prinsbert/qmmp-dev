@@ -55,7 +55,6 @@ private slots:
     void selectDirectory();
     void onFilterLineEditTextChanged(const QString &str);
     void setTreeViewMode(bool enabled);
-    void disconnectPl();
 
 private:
     QStringList selectedPaths() const;
@@ -64,7 +63,7 @@ private:
     Utils::ElidingLabel *m_label;
     QFileSystemModel *m_fileSystemModel;
     QTreeView *m_treeView;
-    FileSystemFilterProxyModel  *m_proxyModel;
+    FileSystemFilterProxyModel *m_proxyModel;
     QLineEdit *m_filterLineEdit;
     QAction *m_showFilterAction;
     QAction *m_treeModeAction;

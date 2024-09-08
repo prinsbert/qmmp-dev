@@ -115,11 +115,11 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
             pl_manager->selectPlayListName(settings->defaultPlayListName());
         }
         pl_manager->activatePlayList(pl_manager->selectedPlayList());
-        m_model = pl_manager->selectedPlayList();
+        PlayListModel *model = pl_manager->selectedPlayList();
 
         if(id == OPEN)
         {
-            m_model->clear(); //clear playlist if option is empty
+            model->clear(); //clear playlist if option is empty
             m_pending_path_list << full_path_list;
 #ifdef Q_OS_WIN
             //windows starts instance for each selected file,
@@ -130,12 +130,12 @@ QString BuiltinCommandLineOption::executeCommand(int id, const QStringList &args
 #endif
         }
         else
-            m_model->addPaths(full_path_list);
+            model->addPaths(full_path_list);
         if(!remote_pls_list.isEmpty())
         {
             PlayListDownloader *downloader = new PlayListDownloader(this);
             connect(downloader, &PlayListDownloader::finished, downloader, &PlayListDownloader::deleteLater);
-            downloader->start(remote_pls_list.constFirst(), m_model);
+            downloader->start(remote_pls_list.constFirst(), model);
         }
         break;
     }
@@ -224,38 +224,19 @@ QHash<QString, QStringList> BuiltinCommandLineOption::splitArgs(const QStringLis
     return commands;
 }
 
-void BuiltinCommandLineOption::disconnectPl()
-{
-    if(m_model)
-    {
-        disconnect(m_model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
-        disconnect(m_model, &PlayListModel::tracksAdded, this, &BuiltinCommandLineOption::disconnectPl);
-        disconnect(m_model, &PlayListModel::loaderFinished, this, &BuiltinCommandLineOption::disconnectPl);
-        m_model = nullptr;
-    }
-}
-
 void BuiltinCommandLineOption::addPendingPaths()
 {
     if(m_pending_path_list.isEmpty())
         return;
 
     SoundCore *core = SoundCore::instance();
-    MediaPlayer *player = MediaPlayer::instance();
-    PlayListManager *pl_manager = PlayListManager::instance();
 
     if(core->state() != Qmmp::Stopped)
     {
         core->stop();
         qApp->processEvents(); //receive stop signal
     }
-    m_model = pl_manager->selectedPlayList();
-    m_model->clear();
 
-    connect(m_model, &PlayListModel::tracksAdded, player, &MediaPlayer::play);
-    connect(m_model, &PlayListModel::tracksAdded, this, &BuiltinCommandLineOption::disconnectPl);
-    connect(m_model, &PlayListModel::loaderFinished, this, &BuiltinCommandLineOption::disconnectPl);
-
-    m_model->addPaths(m_pending_path_list);
+    UiHelper::instance()->replaceAndPlay(m_pending_path_list);
     m_pending_path_list.clear();
 }

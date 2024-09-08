@@ -71,11 +71,9 @@ public:
     };
 
 private slots:
-    void disconnectPl();
     void addPendingPaths();
 
 private:
-    PlayListModel *m_model = nullptr;
     QStringList m_pending_path_list;
 #ifdef Q_OS_WIN
     QTimer *m_timer;
