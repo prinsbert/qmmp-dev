@@ -52,6 +52,7 @@ public:
     void setFilter(const QString &filter);
     void refresh();
     void add(const QModelIndexList &indexes);
+    void replace(const QModelIndexList &indexes);
     void showTrackInformation(const QModelIndexList &indexes, QWidget *parent = nullptr);
     void showLibraryInformation(QWidget *parent = nullptr);
 

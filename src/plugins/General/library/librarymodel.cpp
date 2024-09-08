@@ -29,9 +29,11 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <qmmp/qmmp.h>
+#include <qmmp/soundcore.h>
 #include <qmmpui/playlistparser.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/detailsdialog.h>
+#include <qmmpui/mediaplayer.h>
 #include "librarymodel.h"
 
 #define CONNECTION_NAME u"qmmp_library_view"_s
@@ -309,6 +311,29 @@ void LibraryModel::refresh()
 void LibraryModel::add(const QModelIndexList &indexes)
 {
     PlayListManager::instance()->addTracks(getTracks(indexes));
+}
+
+void LibraryModel::replace(const QModelIndexList &indexes)
+{
+    QList<PlayListTrack *> tracks = getTracks(indexes);
+    if(tracks.isEmpty())
+        return;
+
+    SoundCore *core = SoundCore::instance();
+    PlayListManager *manager = PlayListManager::instance();
+    PlayListModel *model = PlayListManager::instance()->selectedPlayList();
+
+    bool play = (core->state() == Qmmp::Playing || core->state() == Qmmp::Paused || core->state() == Qmmp::Buffering) &&
+            model == manager->currentPlayList();
+
+    model->clear();
+    model->addTracks(tracks);
+
+    if(play)
+    {
+        core->stop();
+        MediaPlayer::instance()->play();
+    }
 }
 
 void LibraryModel::showTrackInformation(const QModelIndexList &indexes, QWidget *parent)
