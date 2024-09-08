@@ -49,6 +49,7 @@ LibraryWidget::LibraryWidget(bool dialog, QWidget *parent) :
 
     m_menu = new QMenu(this);
     m_menu->addAction(QIcon::fromTheme(u"list-add"_s), tr("&Add to Playlist"), this, &LibraryWidget::addSelected);
+    m_menu->addAction(QIcon::fromTheme(u"media-eject"_s), tr("Replace Playlist"), this, &LibraryWidget::replaceSelected);
     m_menu->addAction(QIcon::fromTheme(u"dialog-information"_s), tr("&View Track Details"), this, &LibraryWidget::showTrackInformation);
     m_menu->addSeparator();
     m_filterAction = m_menu->addAction(tr("Quick Search"), m_ui->filterLineEdit, &QLineEdit::setVisible);
@@ -128,6 +129,11 @@ void LibraryWidget::on_filterLineEdit_textChanged(const QString &text)
 void LibraryWidget::addSelected()
 {
     m_model->add(m_ui->treeView->selectionModel()->selectedIndexes());
+}
+
+void LibraryWidget::replaceSelected()
+{
+    m_model->replace(m_ui->treeView->selectionModel()->selectedIndexes());
 }
 
 void LibraryWidget::showTrackInformation()
