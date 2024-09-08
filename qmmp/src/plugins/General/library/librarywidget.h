@@ -51,6 +51,7 @@ private:
 private slots:
     void on_filterLineEdit_textChanged(const QString &text);
     void addSelected();
+    void replaceSelected();
     void showTrackInformation();
     void showLibraryInformation();
 
