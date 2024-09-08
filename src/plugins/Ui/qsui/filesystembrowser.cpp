@@ -32,6 +32,8 @@
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/filedialog.h>
+#include <qmmpui/mediaplayer.h>
+#include <qmmp/soundcore.h>
 #include <qmmp/qmmp.h>
 #include "elidinglabel.h"
 #include "filesystembrowser.h"
@@ -95,26 +97,32 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     m_treeView->setRootIsDecorated(false);
 
     setContextMenuPolicy(Qt::ActionsContextMenu);
-    QAction *addToPlaylistAction = new QAction(QIcon::fromTheme(u"list-add"_s), tr("Add to Playlist"), this);
-    addAction(addToPlaylistAction);
+    QAction *addToPlayListAction = new QAction(QIcon::fromTheme(u"list-add"_s), tr("Add to Playlist"), this);
+    QAction *replacePlayListAction = new QAction(QIcon::fromTheme(u"media-eject"_s), tr("Replace Playlist"), this);
     QAction *selectDirAction = new QAction(QIcon::fromTheme(u"folder"_s), tr("Change Directory"), this);
-    addAction(selectDirAction);
     QAction *separatorAction = new QAction(this);
     separatorAction->setSeparator(true);
-    addAction(separatorAction);
-    addAction(m_treeModeAction = new QAction(tr("Tree View Mode"), this));
+    m_treeModeAction = new QAction(tr("Tree View Mode"), this);
     m_treeModeAction->setCheckable(true);
-    addAction(m_showFilterAction = new QAction(tr("Quick Search"), this));
+    m_showFilterAction = new QAction(tr("Quick Search"), this);
     m_showFilterAction->setCheckable(true);
-    addAction(m_sortAction = new QAction(QIcon::fromTheme(u"view-sort-ascending"_s), tr("Sort"), this));
+    m_sortAction = new QAction(QIcon::fromTheme(u"view-sort-ascending"_s), tr("Sort"), this);
+
+    const QList<QAction *> contextMenuActions = {
+        addToPlayListAction, replacePlayListAction, selectDirAction, separatorAction,
+        m_treeModeAction, m_showFilterAction, m_sortAction
+    };
+
+    addActions(contextMenuActions);
     QMenu *sortMenu = new QMenu(this);
     sortMenu->addAction(tr("By Name"), this, [this]() { m_fileSystemModel->sort(0); } );
     sortMenu->addAction(tr("By Size"), this, [this]() { m_fileSystemModel->sort(1); } );
     sortMenu->addAction(tr("By Type"), this, [this]() { m_fileSystemModel->sort(2); } );
     sortMenu->addAction(tr("By Date"), this, [this]() { m_fileSystemModel->sort(3); } );
     m_sortAction->setMenu(sortMenu);
+    connect(addToPlayListAction, &QAction::triggered, this, &FileSystemBrowser::addToPlayList);
+    connect(replacePlayListAction, &QAction::triggered, this, &FileSystemBrowser::replacePlayList);
     connect(selectDirAction, &QAction::triggered, this, &FileSystemBrowser::selectDirectory);
-    connect(addToPlaylistAction, &QAction::triggered, this, &FileSystemBrowser::addToPlayList);
     connect(m_treeModeAction, &QAction::triggered, this, &FileSystemBrowser::setTreeViewMode);
     connect(m_showFilterAction, &QAction::toggled, m_filterLineEdit, &QLineEdit::setVisible);
     connect(m_showFilterAction, &QAction::triggered, m_filterLineEdit, &QLineEdit::clear);
@@ -172,17 +180,34 @@ void FileSystemBrowser::onListViewActivated(const QModelIndex &index)
 
 void FileSystemBrowser::addToPlayList()
 {
-    for(const QModelIndex &index : m_treeView->selectionModel()->selectedIndexes())
-    {
-        if(!index.isValid())
-            continue;
+     PlayListManager::instance()->selectedPlayList()->addPaths(selectedPaths());
+}
 
-        QModelIndex sourceIndex = m_proxyModel->mapToSource(index);
-        QString name = m_fileSystemModel->fileName(sourceIndex);
-        if(name == QLatin1String(".."))
-            continue;
-        PlayListManager::instance()->selectedPlayList()->addPath(m_fileSystemModel->filePath(sourceIndex));
+void FileSystemBrowser::replacePlayList()
+{
+    QStringList paths = selectedPaths();
+
+    if(paths.isEmpty())
+        return;
+
+    SoundCore *core = SoundCore::instance();
+    PlayListManager *manager = PlayListManager::instance();
+    PlayListModel *model = PlayListManager::instance()->selectedPlayList();
+    MediaPlayer *player = MediaPlayer::instance();
+
+    bool play = (core->state() == Qmmp::Playing || core->state() == Qmmp::Paused || core->state() == Qmmp::Buffering) &&
+            model == manager->currentPlayList();
+    manager->selectedPlayList()->clear();
+
+    if(play)
+    {
+        core->stop();
+        connect(model, &PlayListModel::tracksAdded, player, &MediaPlayer::play);
+        connect(model, &PlayListModel::tracksAdded, this, &FileSystemBrowser::disconnectPl);
+        connect(model, &PlayListModel::loaderFinished, this, &FileSystemBrowser::disconnectPl);
     }
+
+    manager->selectedPlayList()->addPaths(paths);
 }
 
 void FileSystemBrowser::selectDirectory()
@@ -208,6 +233,34 @@ void FileSystemBrowser::setTreeViewMode(bool enabled)
 
     int s = style()->pixelMetric(enabled ? QStyle::PM_SmallIconSize : QStyle::PM_ListViewIconSize);
     m_treeView->setIconSize(QSize(s, s));
+}
+
+void FileSystemBrowser::disconnectPl()
+{
+    PlayListModel *model = qobject_cast<PlayListModel *>(sender());
+    disconnect(model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
+    disconnect(model, &PlayListModel::tracksAdded, this, &FileSystemBrowser::disconnectPl);
+    disconnect(model, &PlayListModel::loaderFinished, this, &FileSystemBrowser::disconnectPl);
+}
+
+QStringList FileSystemBrowser::selectedPaths() const
+{
+    QStringList paths;
+
+    for(const QModelIndex &index : m_treeView->selectionModel()->selectedIndexes())
+    {
+        if(!index.isValid() || index.column() != 0)
+            continue;
+
+        QModelIndex sourceIndex = m_proxyModel->mapToSource(index);
+        QString name = m_fileSystemModel->fileName(sourceIndex);
+        if(name == QLatin1String(".."))
+            continue;
+
+        paths << m_fileSystemModel->filePath(sourceIndex);
+    }
+
+    return paths;
 }
 
 void FileSystemBrowser::setCurrentDirectory(const QString &path)
