@@ -49,7 +49,7 @@
     <message>
         <location filename="../filesystembrowser.cpp" line="101"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Заменить список воспроизведения</translation>
     </message>
     <message>
         <location filename="../filesystembrowser.cpp" line="102"/>
