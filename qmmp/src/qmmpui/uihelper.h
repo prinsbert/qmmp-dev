@@ -169,6 +169,16 @@ public slots:
      * Tells the player to exit.
      */
     void exit();
+    /*!
+     * This function does several tasks:
+     * 1) stops playback;
+     * 2) activates selected playlist;
+     * 3) clears selected playlist;
+     * 4) loads tracks for specified paths to the selected playlist;
+     * 5) starts playback from the first added track.
+     * \param paths A list of files or/and directories.
+     */
+    void replaceAndPlay(const QStringList &paths);
 
 signals:
     /*!
@@ -200,7 +210,6 @@ signals:
 private slots:
     void removeAction(QObject *action);
     void addSelectedFiles(const QStringList &files, bool play);
-    void playSelectedFiles(const QStringList &files);
     void disconnectPl();
 
 private:
