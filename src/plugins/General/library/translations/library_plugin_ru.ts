@@ -208,7 +208,7 @@
     <message>
         <location filename="../librarywidget.cpp" line="52"/>
         <source>Replace Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Заменить список воспроизведения</translation>
     </message>
     <message>
         <location filename="../librarywidget.cpp" line="53"/>
