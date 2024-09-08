@@ -29,6 +29,7 @@ class QTreeView;
 class QAction;
 class QLineEdit;
 class FileSystemFilterProxyModel;
+class PlayListModel;
 
 namespace Utils {
    class ElidingLabel;
@@ -50,11 +51,14 @@ public:
 private slots:
     void onListViewActivated(const QModelIndex &index);
     void addToPlayList();
+    void replacePlayList();
     void selectDirectory();
     void onFilterLineEditTextChanged(const QString &str);
     void setTreeViewMode(bool enabled);
+    void disconnectPl();
 
 private:
+    QStringList selectedPaths() const;
     void setCurrentDirectory(const QString &path);
     bool m_update = false;
     Utils::ElidingLabel *m_label;
