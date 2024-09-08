@@ -42,12 +42,17 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="98"/>
+        <location filename="../filesystembrowser.cpp" line="100"/>
         <source>Add to Playlist</source>
         <translation>Lisää soittolistaan</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="100"/>
+        <location filename="../filesystembrowser.cpp" line="101"/>
+        <source>Replace Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="102"/>
         <source>Change Directory</source>
         <translation>Vaihda kansio</translation>
     </message>
@@ -67,27 +72,27 @@
         <translation>Järjestä</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="111"/>
+        <location filename="../filesystembrowser.cpp" line="118"/>
         <source>By Name</source>
         <translation>Nimellä</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="112"/>
+        <location filename="../filesystembrowser.cpp" line="119"/>
         <source>By Size</source>
         <translation>Koolla</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="113"/>
+        <location filename="../filesystembrowser.cpp" line="120"/>
         <source>By Type</source>
         <translation>Tyypillä</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="114"/>
+        <location filename="../filesystembrowser.cpp" line="121"/>
         <source>By Date</source>
         <translation>Päivä</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="191"/>
+        <location filename="../filesystembrowser.cpp" line="215"/>
         <source>Select Directory</source>
         <translation>Valitse kansio</translation>
     </message>
