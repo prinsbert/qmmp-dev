@@ -32,7 +32,7 @@
 #include <qmmp/metadatamanager.h>
 #include <qmmpui/playlistmanager.h>
 #include <qmmpui/filedialog.h>
-#include <qmmpui/mediaplayer.h>
+#include <qmmpui/uihelper.h>
 #include <qmmp/soundcore.h>
 #include <qmmp/qmmp.h>
 #include "elidinglabel.h"
@@ -193,21 +193,20 @@ void FileSystemBrowser::replacePlayList()
     SoundCore *core = SoundCore::instance();
     PlayListManager *manager = PlayListManager::instance();
     PlayListModel *model = PlayListManager::instance()->selectedPlayList();
-    MediaPlayer *player = MediaPlayer::instance();
 
     bool play = (core->state() == Qmmp::Playing || core->state() == Qmmp::Paused || core->state() == Qmmp::Buffering) &&
             model == manager->currentPlayList();
-    manager->selectedPlayList()->clear();
+
 
     if(play)
     {
-        core->stop();
-        connect(model, &PlayListModel::tracksAdded, player, &MediaPlayer::play);
-        connect(model, &PlayListModel::tracksAdded, this, &FileSystemBrowser::disconnectPl);
-        connect(model, &PlayListModel::loaderFinished, this, &FileSystemBrowser::disconnectPl);
+        UiHelper::instance()->replaceAndPlay(paths);
     }
-
-    manager->selectedPlayList()->addPaths(paths);
+    else
+    {
+        manager->selectedPlayList()->clear();
+        manager->selectedPlayList()->addPaths(paths);
+    }
 }
 
 void FileSystemBrowser::selectDirectory()
@@ -233,14 +232,6 @@ void FileSystemBrowser::setTreeViewMode(bool enabled)
 
     int s = style()->pixelMetric(enabled ? QStyle::PM_SmallIconSize : QStyle::PM_ListViewIconSize);
     m_treeView->setIconSize(QSize(s, s));
-}
-
-void FileSystemBrowser::disconnectPl()
-{
-    PlayListModel *model = qobject_cast<PlayListModel *>(sender());
-    disconnect(model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
-    disconnect(model, &PlayListModel::tracksAdded, this, &FileSystemBrowser::disconnectPl);
-    disconnect(model, &PlayListModel::loaderFinished, this, &FileSystemBrowser::disconnectPl);
 }
 
 QStringList FileSystemBrowser::selectedPaths() const
