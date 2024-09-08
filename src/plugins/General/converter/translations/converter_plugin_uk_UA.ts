@@ -4,29 +4,29 @@
 <context>
     <name>Converter</name>
     <message>
-        <location filename="../converter.cpp" line="124"/>
-        <location filename="../converter.cpp" line="227"/>
+        <location filename="../converter.cpp" line="125"/>
+        <location filename="../converter.cpp" line="228"/>
         <source>Cancelled</source>
         <translation>Скасовано</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="139"/>
-        <location filename="../converter.cpp" line="209"/>
+        <location filename="../converter.cpp" line="140"/>
+        <location filename="../converter.cpp" line="210"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="177"/>
+        <location filename="../converter.cpp" line="178"/>
         <source>Converting</source>
         <translation>Перетворення</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="238"/>
+        <location filename="../converter.cpp" line="239"/>
         <source>Encoding</source>
         <translation>Кодування</translation>
     </message>
     <message>
-        <location filename="../converter.cpp" line="276"/>
+        <location filename="../converter.cpp" line="281"/>
         <source>Finished</source>
         <translation>Завершено</translation>
     </message>

@@ -42,12 +42,17 @@
 <context>
     <name>FileSystemBrowser</name>
     <message>
-        <location filename="../filesystembrowser.cpp" line="98"/>
+        <location filename="../filesystembrowser.cpp" line="100"/>
         <source>Add to Playlist</source>
         <translation>Dodaj do listy odtwarzania</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="100"/>
+        <location filename="../filesystembrowser.cpp" line="101"/>
+        <source>Replace Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filesystembrowser.cpp" line="102"/>
         <source>Change Directory</source>
         <translation>Zmień katalog</translation>
     </message>
@@ -67,27 +72,27 @@
         <translation>Sortuj</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="111"/>
+        <location filename="../filesystembrowser.cpp" line="118"/>
         <source>By Name</source>
         <translation>Według nazwy</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="112"/>
+        <location filename="../filesystembrowser.cpp" line="119"/>
         <source>By Size</source>
         <translation>Według rozmiaru</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="113"/>
+        <location filename="../filesystembrowser.cpp" line="120"/>
         <source>By Type</source>
         <translation>Według typu</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="114"/>
+        <location filename="../filesystembrowser.cpp" line="121"/>
         <source>By Date</source>
         <translation>Według daty</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="191"/>
+        <location filename="../filesystembrowser.cpp" line="215"/>
         <source>Select Directory</source>
         <translation>Wybierz katalog</translation>
     </message>
