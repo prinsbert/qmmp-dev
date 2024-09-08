@@ -275,6 +275,22 @@ void UiHelper::exit()
     qApp->quit();
 }
 
+void UiHelper::replaceAndPlay(const QStringList &paths)
+{
+    if(paths.isEmpty())
+        return;
+
+    SoundCore::instance()->stop();
+    PlayListModel *pl = PlayListManager::instance()->selectedPlayList();
+    PlayListManager::instance()->activatePlayList(pl);
+    pl->clear();
+
+    connect(pl, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
+    connect(pl, &PlayListModel::tracksAdded, this, &UiHelper::disconnectPl);
+    connect(pl, &PlayListModel::loaderFinished, this, &UiHelper::disconnectPl);
+    pl->addPaths(paths);
+}
+
 UiHelper* UiHelper::instance()
 {
     return m_instance;
@@ -301,20 +317,14 @@ void UiHelper::addSelectedFiles(const QStringList &files, bool play)
     if(files.isEmpty() || !PlayListManager::instance()->playLists().contains(m_model))
         return;
     if(play)
-        playSelectedFiles(files);
+    {
+        PlayListManager::instance()->selectPlayList(m_model);
+        replaceAndPlay(files);
+    }
     else
+    {
         m_model->addPaths(files);
-}
-
-void UiHelper::playSelectedFiles(const QStringList &files)
-{
-    if(files.isEmpty() || !PlayListManager::instance()->playLists().contains(m_model))
-        return;
-    m_model->clear();
-    PlayListManager::instance()->activatePlayList(m_model);
-    connect(m_model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
-    connect(m_model, &PlayListModel::tracksAdded, this, &UiHelper::disconnectPl);
-    m_model->addPaths(files);
+    }
 }
 
 void UiHelper::disconnectPl()
@@ -322,7 +332,8 @@ void UiHelper::disconnectPl()
     PlayListModel *model = qobject_cast<PlayListModel*>(sender());
     if(model)
     {
-        disconnect(m_model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
-        disconnect(m_model, &PlayListModel::tracksAdded, this, &UiHelper::disconnectPl);
+        disconnect(model, &PlayListModel::tracksAdded, MediaPlayer::instance(), &MediaPlayer::play);
+        disconnect(model, &PlayListModel::tracksAdded, this, &UiHelper::disconnectPl);
+        disconnect(model, &PlayListModel::loaderFinished, this, &UiHelper::disconnectPl);
     }
 }
