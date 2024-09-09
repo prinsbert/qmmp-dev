@@ -1903,6 +1903,7 @@ Version 2.2.0
   - added feature to show extra information in the group
   - added feature to copy tracks between playlists
   - added tree view mode in the file browser
+  - added feature to replace selected playlist from the file browser
   - allow to override group and current track colors when using system palette
   - renamed "Show Title Bars" action to "Block Floating Panels"
 * improved skinned user interface:
@@ -1913,6 +1914,7 @@ Version 2.2.0
 * improved xmp plugin:
   - added "Emulate sample loop bug" option
   - added "Use Paula mixer in Amiga modules" option
+* added feature to replace selected playlist in the library plugin
 * added feature to set buffer size in ms in the http plugin
 * added buffer size setting in the WASAPI plugin
 * added "--debug" command-line option
@@ -1920,4 +1922,5 @@ Version 2.2.0
 * disabled debug output by default
 * fixed file type detection by content
 * fixed ignoring of data file for large cue sheets
+* fixed build under FreeBSD
 
