@@ -377,3 +377,7 @@ Version 2.1.2
 * fixed file name filters in the modplug plugin
 * fixed issue in the modplug plugin settings
 * disabled Qt 6.7 build warnings
+
+Version 2.2.0
+* ported to qmmp 2.2 API
+* improved codebase
