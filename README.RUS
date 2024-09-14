@@ -179,9 +179,6 @@ make
 Установка:
 make install
 
-Исполняемый файл:
-./bin/qmmp
-
 Если какой-либо модуль не собирается или не нужен, в файле qmmp.pri можно его отключить.
 Для отключения необходимо закомментировать соответствующую строчку (символ "#").
 Кроме того, отключить модуль можно из командной строки:
@@ -196,8 +193,33 @@ qmake LIB_DIR=/usr/lib64
 или
 cmake ./ -DCMAKE_INSTALL_LIBDIR=lib64
 
+Основные файлы и каталоги (могут отличаться в зависимости от дистрибутива и архитектуры):
 
-Патчи, багрепорты, идеи и т.п.: https://sourceforge.net/p/qmmp-dev/tickets/ или forkotov02@ya.ru
+/usr/bin/qmmp-1 - исполняемый файл
+/usr/share/qmmp-1 - общие файлы и каталоги
+/usr/lib/qmmp-1.7/CommandLineOptions - расширения командной строки
+/usr/lib/qmmp-1.7/Effect - модули эффектов
+/usr/lib/qmmp-1.7/FileDialogs - файловые диалоги
+/usr/lib/qmmp-1.7/General - модули общего назначения
+/usr/lib/qmmp-1.7/Input - входные модули (декодеры)
+/usr/lib/qmmp-1.7/Output - модули вывода
+/usr/lib/qmmp-1.7/PlayListFormats - форматы плейлистов
+/usr/lib/qmmp-1.7/Transports - транспортные модули
+/usr/lib/qmmp-1.7/Ui - интерфейсы пользователя
+/usr/lib/qmmp-1.7/Visual - модули визуализации
+/usr/lib/libqmmp-1.so* - библиотека ядра плеера
+/usr/lib/libqmmpui-1.so* - библиотека пользовательского интерфейса
+/usr/include/qmmp-1/qmmp - заголовочные файлы для ядра плеера
+/usr/include/qmmp-1/qmmpui - заголовочные файлы для пользовательского интерфейса
+~/.qmmp - пользовательская конфигурация
+
+Пути для поиска обложек:
+~/.local/share/qmmp/skins
+~/.qmmp/skins
+/usr/share/qmmp/skins
+/usr/share/qmmp-1/skins
+
+Патчи, багрепорты, идеи и т.п.: https://sourceforge.net/p/qmmp-dev/tickets/
 
 Автор выражает благодарность Вадиму Калинникову (www.ylsoftware.com) за предоставленный
 хостинг и тестирование программы.

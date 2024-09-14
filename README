@@ -181,9 +181,6 @@ make
 Installation:
 make install
 
-Executable:
-./bin/qmmp
-
 If someone module doesn't build or doesn't needed you can disable it in qmmp.pri file - just comment corresponding
 line( symbol '#') or execute qmake with special parameters:
 qmake DISABLED_PLUGINS+=JACK_PLUGIN DISABLED_PLUGINS+=OSS_PLUGIN
@@ -197,6 +194,30 @@ qmake LIB_DIR=/usr/lib64
 or
 cmake ./ -DCMAKE_INSTALL_LIBDIR=lib64
 
+Basic file and directories (may differ depending on distribution and architecture):
 
-All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets/ or
-forkotov02@ya.ru
+/usr/bin/qmmp-1 - executable file
+/usr/share/qmmp-1 - shared files and directories
+/usr/lib/qmmp-1.7/CommandLineOptions - command-line extensions
+/usr/lib/qmmp-1.7/Effect - effect plugin
+/usr/lib/qmmp-1.7/FileDialogs - file dialogs
+/usr/lib/qmmp-1.7/General - general plugins
+/usr/lib/qmmp-1.7/Input - input plugins (decoders)
+/usr/lib/qmmp-1.7/Output - output plugins
+/usr/lib/qmmp-1.7/PlayListFormats - playlist formats
+/usr/lib/qmmp-1.7/Transports - transports
+/usr/lib/qmmp-1.7/Ui - user interfaces
+/usr/lib/qmmp-1.7/Visual - visualization plugins
+/usr/lib/libqmmp-1.so* - player core library
+/usr/lib/libqmmpui-1.so* - user interface library
+/usr/include/qmmp-1/qmmp - headers for core library
+/usr/include/qmmp-1/qmmpui - headers for user interface library
+~/.qmmp - user configuration
+
+Skin search paths:
+~/.local/share/qmmp/skins
+~/.config/qmmp/skins
+/usr/share/qmmp/skins
+/usr/share/qmmp-1/skins
+
+All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets/
