@@ -1915,7 +1915,7 @@ Version 2.2.0
   - added "Emulate sample loop bug" option
   - added "Use Paula mixer in Amiga modules" option
 * added feature to replace selected playlist in the library plugin
-* added feature to set buffer size in ms in the http plugin
+* added feature to set buffer size in milliseconds in the http plugin
 * added buffer size setting in the WASAPI plugin
 * added "--debug" command-line option
 * added feature to build cdaudio plugin without libcddb library
