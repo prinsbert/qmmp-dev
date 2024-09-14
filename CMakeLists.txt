@@ -254,9 +254,12 @@ PRINT_SUMMARY ("QMMP File Dialog ......................" USE_QMMP_DIALOG 1)
 PRINT_SUMMARY ("Two-panel File File Dialog ............" USE_TWO_PANEL_DIALOG 1)
 
 message("")
-message("Advanced:")
+message("User Interfaces:")
 PRINT_SUMMARY ("Skinned user interface ................" USE_SKINNED SKINNED_AVAILABLE)
 PRINT_SUMMARY ("Simple user interface (QSUI) .........." USE_QSUI 1)
+
+message("")
+message("Advanced:")
 PRINT_SUMMARY ("Automatic charset detection ..........." USE_ENCA ENCA_FOUND)
 PRINT_SUMMARY ("MPEG plugin with LibRCD support ......." USE_LIBRCD LIBRCD_FOUND)
 PRINT_SUMMARY ("CD Audio plugin with CDDB support ....." USE_LIBCDDB CDDB_FOUND)
