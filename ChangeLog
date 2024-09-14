@@ -375,3 +375,7 @@ Version 1.6.1
 Version 1.6.2
 * fixed file name filters in the modplug plugin
 * fixed issue in the modplug plugin settings
+
+Version 1.7.0
+* ported to qmmp 1.7 API
+* improved codebase
