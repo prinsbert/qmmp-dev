@@ -1911,6 +1911,7 @@ Version 2.2.0
   - added feature to print cover art in the group
   - added feature to show extra information in the group
   - improved color and font settings
+  - fixed skin installation path
 * improved xmp plugin:
   - added "Emulate sample loop bug" option
   - added "Use Paula mixer in Amiga modules" option
