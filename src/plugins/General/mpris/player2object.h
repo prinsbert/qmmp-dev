@@ -26,11 +26,11 @@
 #include <QMap>
 #include <QUuid>
 #include <qmmp/qmmp.h>
+#include <qmmpui/playlisttrack.h>
 
 class SoundCore;
 class MediaPlayer;
 class PlayListManager;
-class PlayListTrack;
 class PlayListModel;
 class QmmpUiSettings;
 
