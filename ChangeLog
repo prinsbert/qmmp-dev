@@ -1868,3 +1868,36 @@ Version 1.6.9
 * fixed build with PipeWire version less than 0.3.33 (Thomas Lange)
 * fixed displaying bitrate in the wavpack plugin
 * disabled waveform seekbar for CD tracks in the simple user interface
+
+Version 1.7.0
+* added feature to stop playback after removing of current track
+* reworked playlist container
+* reworked command-line parser
+* improved codebase
+* moved some duplicated code to the libqmmpui library
+* improved simple user interface:
+  - added feature to change group height
+  - added feature to print cover art in the group
+  - added feature to show extra information in the group
+  - added feature to copy tracks between playlists
+  - added tree view mode in the file browser
+  - added feature to replace selected playlist from the file browser
+  - allow to override group and current track colors when using system palette
+  - renamed "Show Title Bars" action to "Block Floating Panels"
+* improved skinned user interface:
+  - added feature to change group height
+  - added feature to print cover art in the group
+  - added feature to show extra information in the group
+  - improved color and font settings
+* improved xmp plugin:
+  - added "Emulate sample loop bug" option
+  - added "Use Paula mixer in Amiga modules" option
+* added feature to replace selected playlist in the library plugin
+* added feature to set buffer size in milliseconds in the http plugin
+* added buffer size setting in the WASAPI plugin
+* added "--debug" command-line option
+* added feature to build cdaudio plugin without libcddb library
+* disabled debug output by default
+* fixed file type detection by content
+* fixed ignoring of data file for large cue sheets
+* fixed build under FreeBSD
