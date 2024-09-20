@@ -216,8 +216,8 @@ Section "-General Section"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "DisplayVersion" "${QMMP_VERSION}"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "Publisher" "Qmmp Development Team"
 	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "InstallLocation" "$INSTDIR"
-	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLInfoAbout" "http://qmmp.ylsoftware.com"
-	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLUpdateInfo" "http://qmmp.ylsoftware.com"  
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLInfoAbout" "https://qmmp.ylsoftware.com"
+	WriteRegStr HKLM ${QMMP_UNINSTALL_KEY} "URLUpdateInfo" "https://qmmp.ylsoftware.com"
 	WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "NoModify" 1
 	WriteRegDWORD HKLM ${QMMP_UNINSTALL_KEY} "NoRepair" 1
   
