@@ -894,7 +894,7 @@ int QSUiListWidget::lineAt(int y) const
         for(int i = 0; i < qMin(m_row_count, m_filteredItems.count() - m_firstLine); ++i)
         {
             if ((y >= i * m_drawer.rowHeight()) && (y <= (i+1) * m_drawer.rowHeight()))
-                return m_model->indexOf(m_filteredItems.at(m_firstLine + i));
+                return m_model->findLine(m_filteredItems.at(m_firstLine + i));
         }
     }
     else
