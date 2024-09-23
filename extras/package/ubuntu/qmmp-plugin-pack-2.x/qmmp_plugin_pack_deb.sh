@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=2.1.2
-UBUNTU_CODENAMES='jammy noble'
+UBUNTU_CODENAMES='jammy noble oracular'
 BUILD_ROOT=build-root
 
 
