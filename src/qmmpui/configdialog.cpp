@@ -75,8 +75,7 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
 #endif
     m_ui->proxyTypeComboBox->addItem(tr("HTTP"), QmmpSettings::HTTP_PROXY);
     m_ui->proxyTypeComboBox->addItem(tr("SOCKS5"), QmmpSettings::SOCKS5_PROXY);
-    QIntValidator *portValidator = new QIntValidator(0, 65535, this);
-    m_ui->portLineEdit->setValidator(portValidator);
+    m_ui->portLineEdit->setValidator(new QIntValidator(0, 65535, this));
     readSettings();
     loadPluginsInfo();
     loadLanguages();
