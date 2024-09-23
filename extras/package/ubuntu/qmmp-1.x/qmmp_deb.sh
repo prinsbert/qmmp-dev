@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=1.6.9
-UBUNTU_CODENAMES='bionic focal jammy noble'
+UBUNTU_CODENAMES='bionic focal jammy noble oracular'
 BUILD_ROOT=build-root
 
 
