@@ -21,6 +21,7 @@
 #include <QSettings>
 #include <QFontDialog>
 #include <QTreeWidgetItem>
+#include <QIntValidator>
 #include <qmmp/decoder.h>
 #include <qmmp/output.h>
 #include <qmmp/decoderfactory.h>
@@ -51,7 +52,7 @@
 ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
 {
     m_ui = new Ui::ConfigDialog;
-    m_ui->setupUi (this);
+    m_ui->setupUi(this);
     setAttribute(Qt::WA_QuitOnClose, false);
     setAttribute(Qt::WA_DeleteOnClose, false);
     m_ui->preferencesButton->setEnabled(false);
@@ -74,6 +75,8 @@ ConfigDialog::ConfigDialog (QWidget *parent) : QDialog (parent)
 #endif
     m_ui->proxyTypeComboBox->addItem(tr("HTTP"), QmmpSettings::HTTP_PROXY);
     m_ui->proxyTypeComboBox->addItem(tr("SOCKS5"), QmmpSettings::SOCKS5_PROXY);
+    QIntValidator *portValidator = new QIntValidator(0, 65535, this);
+    m_ui->portLineEdit->setValidator(portValidator);
     readSettings();
     loadPluginsInfo();
     loadLanguages();
@@ -424,7 +427,7 @@ void ConfigDialog::saveSettings()
     //proxy
     QUrl proxyUrl;
     proxyUrl.setHost(m_ui->hostLineEdit->text());
-    proxyUrl.setPort(m_ui->portLineEdit->text().toUInt());
+    proxyUrl.setPort(m_ui->portLineEdit->text().toInt());
     proxyUrl.setUserName(m_ui->proxyUserLineEdit->text());
     proxyUrl.setPassword(m_ui->proxyPasswLineEdit->text());
     gs->setNetworkSettings(m_ui->enableProxyCheckBox->isChecked(),
