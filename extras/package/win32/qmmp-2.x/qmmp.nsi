@@ -3,6 +3,10 @@
 ;Tested/Developed with Unicode NSIS 2.46.5
 
 ;--------------------------------
+;Translations
+
+ 
+;--------------------------------
 ;Disable description area
 
   !define MUI_COMPONENTSPAGE_NODESC
@@ -13,7 +17,7 @@
    !define QMMP_VERSION "2.1.9"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
    !define QMMP_UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Qmmp"
-   !define APP_DESCRIPTION "Qt-based multimedia player with support of many formats"
+   !define APP_DESCRIPTION $(text_app_desc)
    
      
 ;--------------------------------
@@ -55,14 +59,18 @@
   !insertmacro MUI_PAGE_INSTFILES
   !insertmacro MUI_UNPAGE_CONFIRM
   !insertmacro MUI_UNPAGE_INSTFILES
-  
+
 ;--------------------------------
 ;Languages
  
-  !insertmacro MUI_LANGUAGE "English"
+  !insertmacro MUI_LANGUAGE "English"  
   !insertmacro MUI_LANGUAGE "Ukrainian"
   !insertmacro MUI_LANGUAGE "Russian"
+  
+  !include "nsis-translations\english.nsh"
+  !include "nsis-translations\russian.nsh"
 
+  
 ;--------------------------------
 ;Macros
 
@@ -155,7 +163,7 @@
 
 Function .onInit
   ${IfNot} ${AtLeastWin10}
-    MessageBox MB_OK "Windows 10 or above is required"
+    MessageBox MB_OK "$(TEXT_WIN10_WARNING)"
     Quit
   ${EndIf}
 FunctionEnd
@@ -168,7 +176,7 @@ Function RegisterDefaultPrograms
   WriteRegStr HKCR "QmmpFileAudio\DefaultIcon" "" '"$INSTDIR\qmmp.exe",1'
   WriteRegStr HKCR "QmmpFileAudio\shell\enqueue" "" "Enqueue in Qmmp"
   WriteRegStr HKCR "QmmpFileAudio\shell\enqueue\command" "" '"$INSTDIR\qmmp.exe" --enqueue "%1"'
-  WriteRegStr HKCR "QmmpFileAudio\shell\open" "FriendlyAppName" "Qt-based Multimedia Player"
+  WriteRegStr HKCR "QmmpFileAudio\shell\open" "FriendlyAppName" $(text_app_full_name)
   WriteRegStr HKCR "QmmpFileAudio\shell\open\command" "" '"$INSTDIR\qmmp.exe" "%1"'
   ;Modify the list of extensions added in the MacroAllExtensions macro
   WriteRegStr HKLM "${QMMP_DEF_PROGS_KEY}" "" "Qmmp"
@@ -181,7 +189,7 @@ FunctionEnd
 
 ;Installer Sections
 
-Section /o "Portable configuration" PORTABLE
+Section /o $(text_portable_configuration) PORTABLE
 SectionEnd
 
 Section "-General Section"
@@ -192,7 +200,7 @@ Section "-General Section"
   
   ${If} ${SectionIsSelected} ${PORTABLE}
      FileOpen $0 "qmmp_portable.txt" w
-     FileWrite $0 "Remove this file to disable portable mode"
+     FileWrite $0 $(text_portable_warning)
      FileClose $0
   ${EndIf}
   
@@ -240,12 +248,12 @@ Section "-General Section"
 	
 SectionEnd
 
-Section "Extra skins"
+Section $(text_extra_skins)
   SetOutPath "$INSTDIR\skins"
   File /r skins\*.txt skins\*.png skins\*.cur
 SectionEnd
 
-Section /o "Use Simple UI by default"
+Section /o $(text_default_simple_ui)
   SetOutPath "$INSTDIR"
   FileOpen $1 qmmp-default.ini a
   FileSeek $1 0 END
@@ -254,7 +262,7 @@ Section /o "Use Simple UI by default"
   FileClose $1
 SectionEnd
 
-Section /o "Use libRCD for ID3v1/ID3v2 charset detection"
+Section /o $(text_enable_librcd)
   SetOutPath "$INSTDIR"
   FileOpen $2 qmmp-default.ini a
   FileSeek $2 0 END
@@ -264,14 +272,14 @@ Section /o "Use libRCD for ID3v1/ID3v2 charset detection"
   FileClose $2
 SectionEnd
 
-Section /o "AdLib formats support (AdPlug)"
+Section /o $(text_enable_adlib)
   SetOutPath "$INSTDIR"
   File adplug\libbinio*.dll
   File adplug\libadplug*.dll
   File /oname=plugins\Input\cas-adplug.dll adplug\cas-adplug.dll
 SectionEnd
 
-Section "Start Menu Shortcuts" SHORTCUTS
+Section $(text_startmenu_shortcuts) SHORTCUTS
   ${IfNot} ${SectionIsSelected} ${PORTABLE}
     SetShellVarContext all
     CreateDirectory "$SMPROGRAMS\Qt-based Multimedia Player"
@@ -323,3 +331,4 @@ Section "Uninstall"
     DeleteRegKey HKCR "QmmpFileAudio"
     DeleteRegValue HKLM "Software\RegisteredApplications" "Qmmp"
 SectionEnd
+
