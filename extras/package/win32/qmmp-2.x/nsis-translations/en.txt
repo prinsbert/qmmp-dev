@@ -1,0 +1,11 @@
+Qt-based multimedia player with support of many formats
+Windows 10 or above is required
+Windows 7 or above is required
+Qt-based Multimedia Player
+Portable configuration
+Remove this file to disable portable mode
+Extra skins
+Use Simple UI by default
+Automatic ID3v1/ID3v2 charset detection (libRCD)
+AdLib formats support (AdPlug)
+Start Menu Shortcuts

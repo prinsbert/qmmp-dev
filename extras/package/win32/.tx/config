@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[o:qmmp-development-team:p:qmmp:r:installer]
+file_filter = qmmp-2.x/nsis-translations/<lang>.txt
+source_lang = en
+source_file = qmmp-2.x/nsis-translations/en.txt
+resource_name = installer
+type = TXT
