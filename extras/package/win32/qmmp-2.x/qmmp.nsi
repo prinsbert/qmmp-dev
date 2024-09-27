@@ -60,12 +60,13 @@
 ;Languages
  
   !insertmacro MUI_LANGUAGE "English"  
-  !insertmacro MUI_LANGUAGE "Ukrainian"
   !insertmacro MUI_LANGUAGE "Russian"
+  !insertmacro MUI_LANGUAGE "Ukrainian"
+  
   
   !include "nsis-translations\english.nsh"
   !include "nsis-translations\russian.nsh"
-
+  !include "nsis-translations\ukrainian.nsh"
   
 ;--------------------------------
 ;Macros
