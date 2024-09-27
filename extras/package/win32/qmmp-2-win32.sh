@@ -1,7 +1,7 @@
 #!/bin/sh
 
-QMMP_VERSION=2.1.9
-QMMP_PLUGIN_PACK_VERSION=2.1.2
+QMMP_VERSION=2.2.0
+QMMP_PLUGIN_PACK_VERSION=2.2.0
 
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
@@ -21,7 +21,7 @@ download_qmmp_tarball()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  wget -nc http://qmmp.ylsoftware.com/files/qmmp/2.1/qmmp-${QMMP_VERSION}.tar.bz2
+  wget -nc http://qmmp.ylsoftware.com/files/qmmp/2.2/qmmp-${QMMP_VERSION}.tar.bz2
   tar xvjf qmmp-${QMMP_VERSION}.tar.bz2
   cd ..
 }
@@ -31,7 +31,7 @@ download_plugins_tarball()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-plugin-pack...'
-  wget -nc http://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.1/qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
+  wget -nc http://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.2/qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
   tar xvjf qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}.tar.bz2
   cd ..
 }
@@ -51,8 +51,8 @@ download_qmmp_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp...'
-  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-2.1 qmmp-${QMMP_VERSION}
+  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp qmmp-${QMMP_VERSION}
+  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-2.1 qmmp-${QMMP_VERSION}
   cd ..
 }
 
@@ -61,8 +61,8 @@ download_plugins_svn()
   mkdir -p tmp
   cd tmp
   echo 'downloading qmmp-plugin-pack...'
-  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp-plugin-pack qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
-  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-2.1 qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
+  svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/trunk/qmmp-plugin-pack qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
+  #svn checkout svn://svn.code.sf.net/p/qmmp-dev/code/branches/qmmp-plugin-pack-2.1 qmmp-plugin-pack-${QMMP_PLUGIN_PACK_VERSION}
   cd ..
 }
 
@@ -173,10 +173,10 @@ create_distr ()
 
 case $1 in
   --download)
-    download_qmmp_tarball
-    download_plugins_tarball
-    #download_qmmp_svn
-    #download_plugins_svn
+    #download_qmmp_tarball
+    #download_plugins_tarball
+    download_qmmp_svn
+    download_plugins_svn
     download_qmmp_adplug_archive
   ;;
   --install)
