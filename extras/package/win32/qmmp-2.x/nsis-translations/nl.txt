@@ -1,0 +1,11 @@
+Een op Qt gebaseerde mediaspeler die veel bestandsformaten ondersteunt
+Windows 10 of nieuwer vereist
+Windows 7 of nieuwer vereist
+Op Qt gebaseerde multimediaspeler
+Meeneembare instellingen
+Verwijder dit bestand om de meeneemmodus uit te schakelen
+Extra thema's
+Altijd eenvoudige vormgeving gebruiken
+Automatische ID3v1-/ID3v2-tekensetdetectie (libRCD)
+AdLib-formaatondersteuning (AdPlug)
+Startmenusneltoetsen
