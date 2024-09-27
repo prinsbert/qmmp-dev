@@ -87,10 +87,11 @@ create_distr ()
 {
   mkdir -p qmmp-distr
   cd qmmp-distr
-  mkdir -p translations
+  mkdir -p translations nsis-translations
   cp -v ../../*.txt ./
   cp -v ../../qmmp-2.x/*.txt ./
   cp -v ../../qmmp-2.x/*.nsi ./
+  cp -v ../../qmmp-2.x/nsis-translations/*.nsh ./nsis-translations
   cp -v ../../qmmp-2.x/*.conf ./
   cp -v ../../qmmp-2.x/*.default ./
   cp -v ../../unzip.exe ./
