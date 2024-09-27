@@ -1,18 +1,14 @@
 ;Installer script for Qmmp
 ;Based on script written by redxii (redxii@users.sourceforge.net)
 ;Tested/Developed with Unicode NSIS 2.46.5
-
-;--------------------------------
-;Translations
-
  
 ;--------------------------------
 ;Disable description area
 
   !define MUI_COMPONENTSPAGE_NODESC
   
- ;-------------------------------
- ;Defines
+;-------------------------------
+;Defines
  
    !define QMMP_VERSION "2.1.9"
    !define QMMP_DEF_PROGS_KEY "Software\Clients\Media\Qmmp"
@@ -25,8 +21,8 @@
 
   !include "MUI2.nsh"
   
- ;-------------------------------
- ;Includes
+;-------------------------------
+;Includes
  
   !include WinVer.nsh
 
@@ -163,7 +159,7 @@
 
 Function .onInit
   ${IfNot} ${AtLeastWin10}
-    MessageBox MB_OK "$(TEXT_WIN10_WARNING)"
+    MessageBox MB_OK "$(text_win10_warning)"
     Quit
   ${EndIf}
 FunctionEnd
