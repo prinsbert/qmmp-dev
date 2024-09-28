@@ -1,0 +1,11 @@
+Odtwarzacz multimedialny oparty na Qt z obsługą wielu formatów
+Wymagany jest Windows 10 lub nowszy
+Wymagany jest Windows 7 lub nowszy
+Odtwarzacz multimedialny oparty na Qt
+Konfiguracja przenośna
+Usuń ten plik, aby wyłączyć tryb przenośny
+Dodatkowe skórki
+Domyślnie używaj prostego interfejsu użytkownika
+Automatycznie wykrywaj kodowanie ID3v1/ID3v2 (libRCD)
+Obsługuj formaty AdLib (AdPlug)
+Skróty w menu Start
