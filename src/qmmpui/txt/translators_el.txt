@@ -68,13 +68,16 @@
 Καζακικά
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>
 
+Korean:
+   Jung Hee Lee <daemul72@gmail.com>
+
 Λιθουανικά
     Algirdas Butkus <butkus.algirdas@gmail.com>
 
 Πολωνικά
+    Marek Adamski
     Daniel Krawczyk
     Grzegorz Gibas <amigib@gmail.com>
-    mrerexx
 
 Πορτογαλικά
     Sérgio Marques <smarquespt@gmail.com>
@@ -82,6 +85,7 @@
 Ρωσικά
     Alexey Loginov <loginov.alex.valer.gmail.com>
     Ilya Kotov <forkotov02@ya.ru>
+    Andrei Stepanov
     Viktor Eruhin
 
 Σέρβικα
@@ -94,6 +98,9 @@
     Bohdan Shuba
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
+
+Swedish:
+    Luna Jernberg <droidbittin@gmail.com>
 
 Τουρκικά
     Mustafa GUNAY <mustafagunay@pgmail.com>
