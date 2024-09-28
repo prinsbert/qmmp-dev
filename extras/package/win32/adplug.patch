@@ -1,0 +1,26 @@
+diff -U3 -r ./qmmp-adplug-master/decoderfactory.cpp ./qmmp-adplug-master-new/decoderfactory.cpp
+--- ./qmmp-adplug-master/decoderfactory.cpp	2024-02-26 16:46:42 +0300
++++ ./qmmp-adplug-master-new/decoderfactory.cpp	2024-09-28 19:12:30 +0300
+@@ -114,8 +114,9 @@
+   return new AdplugMetaDataModel(path);
+ }
+ 
+-void AdplugDecoderFactory::showSettings(QWidget *)
++QDialog *AdplugDecoderFactory::createSettings(QWidget *)
+ {
++  return nullptr;
+ }
+ 
+ void AdplugDecoderFactory::showAbout(QWidget *parent)
+diff -U3 -r ./qmmp-adplug-master/decoderfactory.h ./qmmp-adplug-master-new/decoderfactory.h
+--- ./qmmp-adplug-master/decoderfactory.h	2024-02-26 16:46:42 +0300
++++ ./qmmp-adplug-master-new/decoderfactory.h	2024-09-28 19:11:53 +0300
+@@ -43,7 +43,7 @@
+     Decoder *create(const QString &, QIODevice *) override;
+     QList<TrackInfo *> createPlayList(const QString &, TrackInfo::Parts, QStringList *) override;
+     MetaDataModel *createMetaDataModel(const QString &, bool) override;
+-    void showSettings(QWidget *) override;
++    QDialog *createSettings(QWidget *) override;
+     void showAbout(QWidget *) override;
+     QString translation() const override;
+ };
