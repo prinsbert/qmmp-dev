@@ -1,90 +1,111 @@
-イタリア語:
-    Gian Paolo Renello <emmerkar@gmail.com>
+Brazilian Portuguese:
+    Bruno Gonçalves
+    Klaos Lacerda
+    Heitor Thury Barreiros Barbosa <hthury@gmail.com>
+    Vitor Pereira
 
-インドネシア語:
-    Wantoyo <wantoyek@gmail.com>
+Bulgarian:
+    Kiril Kirilov
+    Miroslav Mihov
 
-ウクライナ語:
-    Геннадій Моцьо (Gennadi Motsyo) <drool@altlinux.ru>
+Chinese Traditional:
+    Cosmos Chen
+    lon <lon83129@126.com>
+    Jeff Huang
 
-オランダ語:
+Chinese Simplified:
+    lon <lon83129@126.com>
+    mabier
+    Mingcong Bai
+    Mingye Wang
+
+Czech:
+    Jaroslav Lichtblau
+    Karel Volný <kvolny@redhat.com>
+
+Dutch:
+    Heimen Stoffels
     Ronald Uitermark <ronald645@gmail.com>
 
-カザフ語:
-    Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+Finnish:
+    Jiri Grönroos
+    Kimmo Kujansuu
 
-ギリシャ語:
-    Δημήτριος Γλενταδάκης (Dimitrios Glentadakis)
-
-スペイン語:
-    Félix Medrano <xukosky@yahoo.es>
-    Joel Barrios <darkshram@gmail.com>
-
-ガリシア語 (スペイン北西部):
-    Óscar Pereira <oscarpereira1989@gmail.com>
-
-スロバキア語:
-    Ján Ďanovský <dagsoftware@yahoo.com>
-
-セルビア語:
-    Mladen Pejaković <pejakm@autistici.org>
-
-チェコ語:
-    Karel Volný <kvolny@redhat.com>
-    Jaroslav Lichtblau
-
-ドイツ語:
-    Ettore Atalan
-    Stefan Koelling <stefankoelling.ext@googlemail.com>
-    Panagiotis Papadopoulos <pano_90@gmx.net>
-
-トルコ語:
-    Mustafa GUNAY <mustafagunay@pgmail.com>
-    Bilgesu Güngör <bilgesugungor@gmail.com>
-    Uğur KUYU
-
-ハンガリー語:
-    Németh Gábor <sutee84@freemail.hu>
-
-フランス語:
+French:
     Adrien Vigneron - VRad <adrienvigneron@ml1.net>
     Sébastien Aperghis-Tramoni (maddingue)
     Stanislas Zeller <uncensored.assault@gmail.com>
 
-ブルガリア語:
-    Kiril Kirilov
+Galician:
+    Delio Docampo Cordeiro
+    Óscar Pereira <oscarpereira1989@gmail.com>
 
-ヘブライ語:
+German:
+    Ettore Atalan
+    Stefan Koelling <stefankoelling.ext@googlemail.com>
+    Panagiotis Papadopoulos <pano_90@gmx.net>
+
+Greek:
+    Dimitrios Glentadakis
+
+Hebrew:
     Genghis Khan <genghiskhan@gmx.ca>
 
-ポーランド語:
+Hungarian:
+    Németh Gábor <sutee84@freemail.hu>
+
+Indonesian:
+    Andika Triwidada
+    Wantoyo <wantoyek@gmail.com>
+
+Italian:
+    Gian Paolo Renello <emmerkar@gmail.com>
+    Luigi Toscano
+
+Japanese:
+    Ryota Shimamoto <liangtai.s16@gmail.com>
+
+Kazakh:
+    Baurzhan Muftakhidinov <baurthefirst@gmail.com>
+
+Korean:
+   Jung Hee Lee <daemul72@gmail.com>
+
+Lithuanian:
+    Algirdas Butkus <butkus.algirdas@gmail.com>
+
+Polish:
+    Marek Adamski
     Daniel Krawczyk
     Grzegorz Gibas <amigib@gmail.com>
 
-ポルトガル語:
+Portuguese:
     Sérgio Marques <smarquespt@gmail.com>
 
-ポルトガル語 (ブラジル):
-    Vitor Pereira
-    Klaos Lacerda
-    Bruno Gonçalves
-    Heitor Thury Barreiros Barbosa <hthury@gmail.com>
-
-リトアニア語:
-    Algirdas Butkus <butkus.algirdas@gmail.com>
-
-ロシア語:
+Russian:
+    Alexey Loginov <loginov.alex.valer.gmail.com>
     Илья Котов (Ilya Kotov) <forkotov02@ya.ru>
+    Andrei Stepanov
+    Viktor Eruhin
 
-簡体字中国語:
-    艾昂<Ion83129@126.com>
-    马兵儿 (mabier)
-    Mingcong Bai
-    Mingye Wang
+Serbian:
+    Mladen Pejaković <pejakm@autistici.org>
 
-繁体字中国語:
-    艾昂<Ion83129@126.com>
-    杰夫.黄 (Jeff Huang)
+Slovak:
+    Ján Ďanovský <dagsoftware@yahoo.com>
 
-日本語:
-    島本良太 <liangtai.s16@gmail.com>
+Spanish:
+    Bohdan Shuba
+    Félix Medrano <xukosky@yahoo.es>
+    Joel Barrios <darkshram@gmail.com>
+
+Swedish:
+    Luna Jernberg <droidbittin@gmail.com>
+
+Turkish:
+    Mustafa GUNAY <mustafagunay@pgmail.com>
+    Bilgesu Güngör <h.ibrahim.gungor@gmail.com>
+    Uğur KUYU
+
+Ukrainian:
+    Gennadi Motsyo <drool@altlinux.ru>

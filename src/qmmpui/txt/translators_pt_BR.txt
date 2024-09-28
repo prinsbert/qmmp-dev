@@ -6,8 +6,10 @@ Português do Brasil
 
 Búlgaro:
     Kiril Kirilov
+    Miroslav Mihov
 
 Mandarim tradicional:
+    Cosmos Chen
     lon <lon83129@126.com>
     Jeff Huang
 
@@ -22,10 +24,12 @@ Tcheco:
     Karel Volný <kvolny@redhat.com>
 
 Holandês:
+    Heimen Stoffels
     Ronald Uitermark <ronald645@gmail.com>
 
 Finnish:
     Jiri Grönroos
+    Kimmo Kujansuu
 
 Francês:
     Adrien Vigneron - VRad <adrienvigneron@ml1.net>
@@ -51,6 +55,7 @@ Húngaro:
     Németh Gábor <sutee84@freemail.hu>
 
 Indonésio:
+    Andika Triwidada
     Wantoyo <wantoyek@gmail.com>
 
 Italiano:
@@ -63,10 +68,14 @@ Japonês:
 Cazaque:
     Baurzhan Muftakhidinov <baurthefirst@gmail.com>
 
+Korean:
+   Jung Hee Lee <daemul72@gmail.com>
+
 Lituano:
     Algirdas Butkus <butkus.algirdas@gmail.com>
 
 Polaco:
+    Marek Adamski
     Daniel Krawczyk
     Grzegorz Gibas <amigib@gmail.com>
 
@@ -76,6 +85,8 @@ Português:
 Russo:
     Alexey Loginov <loginov.alex.valer.gmail.com>
     Ilya Kotov <forkotov02@ya.ru>
+    Andrei Stepanov
+    Viktor Eruhin
 
 Sérvio:
     Mladen Pejaković <pejakm@autistici.org>
@@ -87,6 +98,9 @@ Espanhol:
     Bohdan Shuba
     Félix Medrano <xukosky@yahoo.es>
     Joel Barrios <darkshram@gmail.com>
+
+Swedish:
+    Luna Jernberg <droidbittin@gmail.com>
 
 Turco:
     Mustafa GUNAY <mustafagunay@pgmail.com>
