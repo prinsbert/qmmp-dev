@@ -1,16 +1,14 @@
 Розробники ядра:
 
     Володимир Кузнєцов <vovanec@gmail.com> (зовнішній вигляд і безліч поліпшень)
-    Ілля Котов <forkotov02@ya.ru> (ідея і основний код)
 
-Розробники модулів:
+Ілля Котов <forkotov02@hotmail.ru> (ідея й основний код)
 
-    Юрій Журавльов <stalkerg@gmail.com> (модулі jack, oss)
-
-Український переклад: 
-
-    Моцьо Геннадій <drool@altlinux.ru>
+    Artur Guzik <aguzik88@gmail.com> - втулок сповіщень kde4, поліпшення у втулці системної таці
+    Володимир Кузнєцов <vovanec@gmail.com> - зовнішній вигляд і багато поліпшень
+    Юрій Журавльов <stalkerg@gmail.com> - втулки JACK і OSS
 
 Графіка:
 
-   Андрій Андрєєв <andreev00@gmail.com>
+    Андрій Андрєєв <andreev00@gmail.com> - піктограми та усталені шкурки (для версій з 0.2 по 0.8)
+    sixsixfive <http://sixsixfive.deviantart.com/> - усталена шкурка
