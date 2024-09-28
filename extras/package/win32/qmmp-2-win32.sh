@@ -127,7 +127,7 @@ create_distr ()
   do
     cp -v ${QT6_PATH}/plugins/sqldrivers/${LIB_NAME} ./plugins/sqldrivers
   done
-  for LIB_NAME in qwindowsvistastyle.dll
+  for LIB_NAME in qmodernwindowsstyle.dll
   do
     cp -v ${QT6_PATH}/plugins/styles/${LIB_NAME} ./plugins/styles
   done
