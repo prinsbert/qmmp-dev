@@ -1,0 +1,177 @@
+From fe5cdb5c3e031014aec6215ad85cf51a8e6c663b Mon Sep 17 00:00:00 2001
+From: Kai Köhne <kai.koehne@qt.io>
+Date: Mon, 30 Sep 2024 12:30:27 +0000
+Subject: [PATCH] Revert "QTranslator: fix loading order when loading from locale"
+
+This reverts commit 9a11273b745a30cebb5cd648c89eb224e9704492.
+
+Reason for revert: The fix tried to find a sensible order if
+the same language is listed multiple times in QLocale::uiLanguages().
+Anyhow, it breaks for lists where entirely different languages are listed. This needs more thought.
+
+Fixes: QTBUG-129434
+Reopens: QTBUG-124898
+Pick-to: 6.5 6.7 6.8 dev
+Change-Id: I8c074cbf1ddc2ddf223ec09aef38dfc1ef7fc85f
+---
+
+diff --git a/src/corelib/kernel/qtranslator.cpp b/src/corelib/kernel/qtranslator.cpp
+index 5c4ebfe..ec92404 100644
+--- a/src/corelib/kernel/qtranslator.cpp
++++ b/src/corelib/kernel/qtranslator.cpp
+@@ -638,43 +638,27 @@
+             languages.insert(i + 1, lowerLang);
+     }
+ 
+-    QStringList candidates;
+-    // assume 3 segments for each entry
+-    candidates.reserve(languages.size() * 3);
+-    for (QStringView language : std::as_const(languages)) {
+-        // for each language, add versions without territory and script
++    for (QString localeName : std::as_const(languages)) {
++        // try the complete locale name first and progressively truncate from
++        // the end until a matching language tag is found (with or without suffix)
+         for (;;) {
+-            candidates += language.toString();
+-            int rightmost = language.lastIndexOf(u'_');
++            realname += localeName + suffixOrDotQM;
++            if (is_readable_file(realname))
++                return realname;
++
++            realname.truncate(realNameBaseSize + localeName.size());
++            if (is_readable_file(realname))
++                return realname;
++
++            realname.truncate(realNameBaseSize);
++
++            int rightmost = localeName.lastIndexOf(u'_');
+             if (rightmost <= 0)
+-                break;
+-            language.truncate(rightmost);
++                break; // no truncations anymore, break
++            localeName.truncate(rightmost);
+         }
+     }
+ 
+-    // now sort the list of candidates
+-    std::sort(candidates.begin(), candidates.end(), [](const auto &lhs, const auto &rhs){
+-        const auto rhsSegments = rhs.count(u'_');
+-        const auto lhsSegments = lhs.count(u'_');
+-        // candidates with more segments come first
+-        if (rhsSegments != lhsSegments)
+-            return rhsSegments < lhsSegments;
+-        // candidates with same number of segments are sorted alphanumerically
+-        return lhs < rhs;
+-    });
+-
+-    for (const QString &localeName : std::as_const(candidates)) {
+-        realname += localeName + suffixOrDotQM;
+-        if (is_readable_file(realname))
+-            return realname;
+-
+-        realname.truncate(realNameBaseSize + localeName.size());
+-        if (is_readable_file(realname))
+-            return realname;
+-
+-        realname.truncate(realNameBaseSize);
+-    }
+-
+     const int realNameBaseSizeFallbacks = path.size() + filename.size();
+ 
+     // realname == path + filename + prefix;
+diff --git a/tests/auto/corelib/kernel/qtranslator/tst_qtranslator.cpp b/tests/auto/corelib/kernel/qtranslator/tst_qtranslator.cpp
+index f214572..c76500e 100644
+--- a/tests/auto/corelib/kernel/qtranslator/tst_qtranslator.cpp
++++ b/tests/auto/corelib/kernel/qtranslator/tst_qtranslator.cpp
+@@ -27,7 +27,6 @@
+ 
+     void load_data();
+     void load();
+-    void loadLocale_data();
+     void loadLocale();
+     void threadLoad();
+     void testLanguageChange();
+@@ -117,23 +116,12 @@
+     }
+ }
+ 
+-void tst_QTranslator::loadLocale_data()
+-{
+-    QTest::addColumn<QString>("localeName");
+-    QTest::addColumn<QStringList>("fileNames");
+-
+-    QTest::addRow("US English")
+-                            << "en_US"
+-                            << QStringList{"en_US.qm", "en_US", "en.qm", "en"};
+-    QTest::addRow("Australia")
+-                            << "en_AU"
+-                            << QStringList{"en_Latn_AU.qm", "en_AU.qm", "en.qm"};
+-}
+-
+ void tst_QTranslator::loadLocale()
+ {
+-    QFETCH(const QString, localeName);
+-    QFETCH(const QStringList, fileNames);
++    QLocale locale;
++    auto localeName = locale.uiLanguages(QLocale::TagSeparator::Underscore).value(0);
++    if (localeName.isEmpty())
++        QSKIP("This test requires at least one available UI language.");
+ 
+     QByteArray ba;
+     {
+@@ -146,16 +134,36 @@
+     QTemporaryDir dir;
+     QVERIFY(dir.isValid());
+ 
+-    const auto path = dir.path();
++    auto path = dir.path();
+     QFile file(path + "/dummy");
+     QVERIFY2(file.open(QFile::WriteOnly), qPrintable(file.errorString()));
+     QCOMPARE(file.write(ba), ba.size());
+     file.close();
+ 
++    /*
++        Test the following order:
++
++        /tmp/tmpDir/foo-en_US.qm
++        /tmp/tmpDir/foo-en_US
++        /tmp/tmpDir/foo-en.qm
++        /tmp/tmpDir/foo-en
++        /tmp/tmpDir/foo.qm
++        /tmp/tmpDir/foo-
++        /tmp/tmpDir/foo
++    */
++
+     QStringList files;
+-    for (const auto &fileName : fileNames) {
+-        files.append(path + "/foo-" + fileName);
++    while (true) {
++        files.append(path + "/foo-" + localeName + ".qm");
+         QVERIFY2(file.copy(files.last()), qPrintable(file.errorString()));
++
++        files.append(path + "/foo-" + localeName);
++        QVERIFY2(file.copy(files.last()), qPrintable(file.errorString()));
++
++        int rightmost = localeName.lastIndexOf(QLatin1Char('_'));
++        if (rightmost <= 0)
++            break;
++        localeName.truncate(rightmost);
+     }
+ 
+     files.append(path + "/foo.qm");
+@@ -167,14 +175,10 @@
+     files.append(path + "/foo");
+     QVERIFY2(file.rename(files.last()), qPrintable(file.errorString()));
+ 
+-    QLocale locale(localeName);
+     QTranslator tor;
+     for (const auto &filePath : files) {
+         QVERIFY(tor.load(locale, "foo", "-", path, ".qm"));
+-        // As the file system might be case insensitive, we can't guarantee that
+-        // the casing of the file name is preserved. The order of loading
+-        // en_AU vs en_au if both exist is undefined anyway.
+-        QCOMPARE(tor.filePath().toLower(), filePath.toLower());
++        QCOMPARE(tor.filePath(), filePath);
+         QVERIFY2(file.remove(filePath), qPrintable(file.errorString()));
+     }
+ }
