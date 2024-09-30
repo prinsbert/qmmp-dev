@@ -1,0 +1,21 @@
+LangString text_app_desc               ${LANG_Finnish} "Qt-pohjainen multimediasoitin, joka tukee monia formaatteja"
+LangString text_win10_warning          ${LANG_Finnish} "Windows 10 tai uudempi vaaditaan"
+LangString text_win7_warning           ${LANG_Finnish} "Windows 7 tai uudempi vaaditaan"
+LangString text_app_full_name          ${LANG_Finnish} "Qt-pohjainen multimediasoitin"
+LangString text_portable_configuration ${LANG_Finnish} "Kannettava määritykset"
+LangString text_portable_warning       ${LANG_Finnish} "Poista tämä tiedosto poistaaksesi kannettava tila käytöstä"
+LangString text_extra_skins            ${LANG_Finnish} "Extra ulkoasut"
+LangString text_default_simple_ui      ${LANG_Finnish} "Käytä Simple UI oletuksena"
+LangString text_enable_librcd          ${LANG_Finnish} "Automaattinen ID3v1/ID3v2 tunnistus (libRCD)"
+LangString text_enable_adlib           ${LANG_Finnish} "AdLib formaattien tuki (AdPlug)"
+LangString text_startmenu_shortcuts    ${LANG_Finnish} "Käynnistä-valikon pikakuvakkeet"
+
+
+
+
+
+
+
+
+
+
