@@ -1882,6 +1882,7 @@ Version 1.7.0
   - added feature to copy tracks between playlists
   - added tree view mode in the file browser
   - added feature to replace selected playlist from the file browser
+  - added balance slider
   - allow to override group and current track colors when using system palette
   - renamed "Show Title Bars" action to "Block Floating Panels"
 * improved skinned user interface:
