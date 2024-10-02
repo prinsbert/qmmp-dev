@@ -1892,7 +1892,7 @@ Version 2.1.9
 * disabled waveform seekbar for CD tracks in the simple user interface
 
 Version 2.2.0
-* added feature to stop playback after removing of current track
+* added feature to stop playback after removing of the current track
 * reworked playlist container
 * reworked command-line parser
 * improved codebase
