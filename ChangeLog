@@ -1902,6 +1902,7 @@ Version 1.7.0
 * fixed file type detection by content
 * fixed ignoring of data file for large cue sheets
 * fixed build under FreeBSD
+* removed file association settings page
 * updated Dutch translation (Heimen Stoffels)
 * updated Finnish translation (Kimmo Kujansuu)
 * updated Polish translation (Marek Adamski)
