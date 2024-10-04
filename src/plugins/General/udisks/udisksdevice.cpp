@@ -22,6 +22,7 @@
 #include <QDBusConnection>
 #include <QByteArray>
 #include <QDBusMetaType>
+#include <qmmp/qmmp.h>
 #include "udisksdevice.h"
 
 using namespace Qt::Literals::StringLiterals;
