@@ -24,3 +24,27 @@ Index: qmmp-qt6-2.2.0/src/plugins/General/udisks/udisksplugin.cpp
      m_detectRemovable = settings.value(u"removable"_s, true).toBool();
      m_addTracks = false; //do not load tracks on startup
      m_addFiles = false;
+Index: qmmp-qt6-2.2.0/src/plugins/General/udisks/udisksdevice.cpp
+===================================================================
+--- qmmp-qt6-2.2.0.orig/src/plugins/General/udisks/udisksdevice.cpp
++++ qmmp-qt6-2.2.0/src/plugins/General/udisks/udisksdevice.cpp
+@@ -22,6 +22,7 @@
+ #include <QDBusConnection>
+ #include <QByteArray>
+ #include <QDBusMetaType>
++#include <qmmp/qmmp.h>
+ #include "udisksdevice.h"
+ 
+ using namespace Qt::Literals::StringLiterals;
+Index: qmmp-qt6-2.2.0/src/plugins/General/converter/converterpreseteditor.cpp
+===================================================================
+--- qmmp-qt6-2.2.0.orig/src/plugins/General/converter/converterpreseteditor.cpp
++++ qmmp-qt6-2.2.0/src/plugins/General/converter/converterpreseteditor.cpp
+@@ -19,6 +19,7 @@
+  ***************************************************************************/
+ 
+ #include <QMenu>
++#include <qmmp/qmmp.h>
+ #include "converterpreseteditor.h"
+ #include "ui_converterpreseteditor.h"
+ 
