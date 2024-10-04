@@ -43,7 +43,7 @@ UDisksPlugin::UDisksPlugin(QObject *parent) : QObject(parent)
     //load settings
     QSettings settings;
     settings.beginGroup(u"UDisks"_s);
-    m_detectCDA = settings.value(u"cda", true).toBool();
+    m_detectCDA = settings.value(u"cda"_s, true).toBool();
     m_detectRemovable = settings.value(u"removable"_s, true).toBool();
     m_addTracks = false; //do not load tracks on startup
     m_addFiles = false;
