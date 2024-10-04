@@ -497,3 +497,13 @@ LEGEND
 [*] ffmpeg-5.1.6
 [*] libsidplayfp-2.8.0
 [*] mpg123-1.32.7
+
+1.7.0
+[*] qmmp-1.7.0
+[*] qmmp-plugin-pack-1.7.0
+[*] qt-5.15.15
+[*] taglib-2.0.2
+[*] curl-8.10.1
+[*] ffmpeg-7.0.2
+[*] libsidplayfp-2.9.0
+[!] added installer translations

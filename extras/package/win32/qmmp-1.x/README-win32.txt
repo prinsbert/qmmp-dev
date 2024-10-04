@@ -26,9 +26,9 @@ List of the third-party libraries.
   Name                Version    Web page
 
   MinGW-w64           5.0.0      https://mingw-w64.sourceforge.net/
-  Qt                  5.15.14    https://qt.io/
+  Qt                  5.15.15    https://qt.io/
   unzip               5.51       https://www.info-zip.org/pub/infozip/UnZip.html
-  taglib              1.13.1     https://taglib.github.io/
+  taglib              2.0.2      https://taglib.github.io/
   libmad              0.15.1b    https://www.underbit.com/products/mad/
   libogg              1.3.5      https://www.vorbis.com/
   libvorbis           1.3.7      https://www.vorbis.com/
@@ -38,18 +38,18 @@ List of the third-party libraries.
   opus                1.5.2      https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
-  curl                8.9.1      https://curl.haxx.se/
+  curl                8.10.1     https://curl.haxx.se/
   libcdio             2.1.0      https://www.gnu.org/software/libcdio/
   libcdio-paranoia    10.2+2.0.2 https://www.gnu.org/software/libcdio/  
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
   libcddb             1.3.2      https://libcddb.sourceforge.net/
-  ffmpeg              5.1.6      https://ffmpeg.org/
+  ffmpeg              7.0.2      https://ffmpeg.org/
   libxmp              4.6.0      https://github.com/libxmp/libxmp
   game-music-emu      0.6.3      https://bitbucket.org/mpyne/game-music-emu
   musepack            r475       https://www.musepack.net/
   glew                2.2.0      https://glew.sourceforge.net/
   projectm            2.1.0      https://projectm.sourceforge.net/
-  libsidplayfp        2.8.0      https://sourceforge.net/projects/sidplay-residfp/
+  libsidplayfp        2.9.0      https://sourceforge.net/projects/sidplay-residfp/
   enca                1.19       https://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd
