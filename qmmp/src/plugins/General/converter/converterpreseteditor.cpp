@@ -19,6 +19,7 @@
  ***************************************************************************/
 
 #include <QMenu>
+#include <qmmp/qmmp.h>
 #include "converterpreseteditor.h"
 #include "ui_converterpreseteditor.h"
 
