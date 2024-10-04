@@ -37,7 +37,7 @@ update ()
 
 upload ()
 {
-	dput ssh-ppa:forkotov02/ppa $1/*.changes
+	dput ppa:forkotov02/ppa $1/*.changes
 }
 
 clean ()
