@@ -21,7 +21,7 @@ configure_file(
 add_custom_target(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
-set(QMMP_PLUGIN_PACK_VERSION 1.7.0)
+set(QMMP_PLUGIN_PACK_VERSION 1.7.1)
 set(SVN_VERSION TRUE)
 
 string(REPLACE "." ";" VERSIONS ${QMMP_PLUGIN_PACK_VERSION})
