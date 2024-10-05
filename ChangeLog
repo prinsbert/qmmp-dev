@@ -1929,3 +1929,7 @@ Version 2.2.0
 * updated Finnish translation (Kimmo Kujansuu)
 * updated Polish translation (Marek Adamski)
 * updated Russian translation (Andrei Stepanov)
+
+Version 2.2.1
+* fixed build regression
+* fixed compatibility with Qt 6.2
