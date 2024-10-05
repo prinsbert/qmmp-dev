@@ -106,7 +106,14 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     m_treeModeAction->setCheckable(true);
     m_showFilterAction = new QAction(tr("Quick Search"), this);
     m_showFilterAction->setCheckable(true);
-    m_sortAction = new QAction(QIcon::fromTheme(u"view-sort-ascending"_s), tr("Sort"), this);
+    QMenu *sortMenu = new QMenu(this);
+    sortMenu->addAction(tr("By Name"), this, [this]() { m_fileSystemModel->sort(0); } );
+    sortMenu->addAction(tr("By Size"), this, [this]() { m_fileSystemModel->sort(1); } );
+    sortMenu->addAction(tr("By Type"), this, [this]() { m_fileSystemModel->sort(2); } );
+    sortMenu->addAction(tr("By Date"), this, [this]() { m_fileSystemModel->sort(3); } );
+    m_sortAction = sortMenu->menuAction();
+    m_sortAction->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
+    m_sortAction->setText(tr("Sort"));
 
     const QList<QAction *> contextMenuActions = {
         addToPlayListAction, replacePlayListAction, selectDirAction, separatorAction,
@@ -114,12 +121,6 @@ FileSystemBrowser::FileSystemBrowser(QWidget *parent) :
     };
 
     addActions(contextMenuActions);
-    QMenu *sortMenu = new QMenu(this);
-    sortMenu->addAction(tr("By Name"), this, [this]() { m_fileSystemModel->sort(0); } );
-    sortMenu->addAction(tr("By Size"), this, [this]() { m_fileSystemModel->sort(1); } );
-    sortMenu->addAction(tr("By Type"), this, [this]() { m_fileSystemModel->sort(2); } );
-    sortMenu->addAction(tr("By Date"), this, [this]() { m_fileSystemModel->sort(3); } );
-    m_sortAction->setMenu(sortMenu);
     connect(addToPlayListAction, &QAction::triggered, this, &FileSystemBrowser::addToPlayList);
     connect(replacePlayListAction, &QAction::triggered, this, &FileSystemBrowser::replacePlayList);
     connect(selectDirAction, &QAction::triggered, this, &FileSystemBrowser::selectDirectory);
