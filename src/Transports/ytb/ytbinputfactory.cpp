@@ -68,10 +68,10 @@ void YtbInputFactory::showAbout(QWidget *parent)
         backendName = QStringLiteral("<a href=\"https://youtube-dl.org\">youtube-dl</a>");
 
     QMessageBox::about(parent, tr("About Youtube Transport Plugin"),
-                       tr("Qmmp Youtube Transport Plugin") + QChar::LineFeed +
+                       tr("Qmmp Youtube Transport Plugin") + QStringLiteral("<br>") +
                        tr("This plugin adds feature to play audio from Youtube using %1 "
-                          "utility").arg(backendName) + QChar::LineFeed +
-                       tr("%1 version: %2").arg(backend, version) + QChar::LineFeed +
+                          "utility").arg(backendName) + QStringLiteral("<br>") +
+                       tr("%1 version: %2").arg(backend, version) + QStringLiteral("<br>") +
                        tr("Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;"));
 }
 
