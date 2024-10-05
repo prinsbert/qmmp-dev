@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-PROJECT_NAME=qmmp
+PROJECT_NAME=qmmp-stable
 PROJECT_ORGANIZATION=qmmp-development-team
 TX_CONFIG="../.tx/config"
 
