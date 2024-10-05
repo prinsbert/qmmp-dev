@@ -1,0 +1,24 @@
+Index: qmmp-qt6-2.2.0/src/qmmp/qmmp.pc.in
+===================================================================
+--- qmmp-qt6-2.2.0.orig/src/qmmp/qmmp.pc.in
++++ qmmp-qt6-2.2.0/src/qmmp/qmmp.pc.in
+@@ -7,6 +7,5 @@ plugindir=@CMAKE_INSTALL_PREFIX@/@CMAKE_
+ Name: qmmp@APP_NAME_SUFFIX@
+ Description: qmmp core library
+ Version: @QMMP_VERSION@
+-Requires: Qt6Core Qt6Gui Qt6Widgets
+ Libs: -L${libdir} -lqmmp@APP_NAME_SUFFIX@
+ Cflags: -I${includedir}
+Index: qmmp-qt6-2.2.0/src/qmmpui/qmmpui.pc.in
+===================================================================
+--- qmmp-qt6-2.2.0.orig/src/qmmpui/qmmpui.pc.in
++++ qmmp-qt6-2.2.0/src/qmmpui/qmmpui.pc.in
+@@ -6,6 +6,6 @@ includedir=@QMMP_INCLUDE_DIR@
+ Name: qmmpui@APP_NAME_SUFFIX@
+ Description: qmmp user interface library
+ Version: @QMMP_VERSION@
+-Requires: qmmp@APP_NAME_SUFFIX@ Qt6Core Qt6Gui Qt6Widgets Qt6Network
+-Libs: -L${libdir} -lqmmpui@APP_NAME_SUFFIX@ 
++Requires: qmmp@APP_NAME_SUFFIX@
++Libs: -L${libdir} -lqmmpui@APP_NAME_SUFFIX@
+ Cflags: -I${includedir}
