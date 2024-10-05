@@ -67,32 +67,32 @@
         <translation>絞り込み検索</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="109"/>
+        <location filename="../filesystembrowser.cpp" line="116"/>
         <source>Sort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="118"/>
+        <location filename="../filesystembrowser.cpp" line="110"/>
         <source>By Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="119"/>
+        <location filename="../filesystembrowser.cpp" line="111"/>
         <source>By Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="120"/>
+        <location filename="../filesystembrowser.cpp" line="112"/>
         <source>By Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="121"/>
+        <location filename="../filesystembrowser.cpp" line="113"/>
         <source>By Date</source>
         <translation>日付順に</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="215"/>
+        <location filename="../filesystembrowser.cpp" line="216"/>
         <source>Select Directory</source>
         <translation>ディレクトリーを選択</translation>
     </message>
