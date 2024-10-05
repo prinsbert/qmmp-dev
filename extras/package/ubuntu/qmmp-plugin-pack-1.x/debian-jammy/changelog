@@ -1,3 +1,9 @@
+qmmp-plugin-pack (1.7.0-1ubuntu1~jammy1) jammy; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Sat, 05 Oct 2024 09:48:59 +0300
+
 qmmp-plugin-pack (1.6.2-1ubuntu1~jammy0) jammy; urgency=medium
 
   * New upstream release.

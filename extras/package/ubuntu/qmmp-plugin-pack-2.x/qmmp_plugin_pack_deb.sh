@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=2.1.2
+PLUGIN_PACK_VERSION=2.2.0
 UBUNTU_CODENAMES='jammy noble oracular'
 BUILD_ROOT=build-root
 
@@ -37,7 +37,7 @@ update ()
 
 upload ()
 {
-	dput ppa:forkotov02/ppa $1/*.changes
+	dput ssh-ppa:forkotov02/ppa $1/*.changes
 }
 
 clean ()
@@ -48,7 +48,7 @@ clean ()
 
 case $1 in
     --download)
-		wget https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.1/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.2/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES

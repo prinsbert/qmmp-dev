@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PLUGIN_PACK_VERSION=1.6.2
-UBUNTU_CODENAMES='bionic focal jammy noble oracular'
+PLUGIN_PACK_VERSION=1.7.0
+UBUNTU_CODENAMES='jammy noble oracular'
 BUILD_ROOT=build-root
 
 
@@ -21,7 +21,7 @@ build ()
     cp -rv ../../debian-$1/* -t qmmp-plugin-pack-$PLUGIN_PACK_VERSION/debian/
     cp ../qmmp-plugin-pack_$PLUGIN_PACK_VERSION.orig.tar.bz2 ./
     cd qmmp-plugin-pack-$PLUGIN_PACK_VERSION
-    if [ "$1" = "bionic" ] ; then
+    if [ "$1" = "jammy" ] ; then
         debuild -S -sa -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
     else
         debuild -S -sd -d -k763ED1C9CDE288BC6423D9613C69B71AF594F6B4
@@ -48,7 +48,7 @@ clean ()
 
 case $1 in
     --download)
-		wget https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/1.6/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
+		wget https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/1.7/qmmp-plugin-pack-$PLUGIN_PACK_VERSION.tar.bz2
     ;;
     --update)
 		for CODENAME in $UBUNTU_CODENAMES
