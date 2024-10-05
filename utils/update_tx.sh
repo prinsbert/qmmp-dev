@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROJECT_NAME=qmmp-plugin-pack
+PROJECT_NAME=qmmp-plugin-pack-stable
 PROJECT_ORGANIZATION=qmmp-development-team
 TX_CONFIG="../.tx/config"
 
