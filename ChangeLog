@@ -1907,3 +1907,6 @@ Version 1.7.0
 * updated Finnish translation (Kimmo Kujansuu)
 * updated Polish translation (Marek Adamski)
 * updated Russian translation (Andrei Stepanov)
+
+Version 1.7.1
+* fixed build regression
