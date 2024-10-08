@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 project(qmmp)
 
 #freebsd support
@@ -68,8 +68,8 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060200 -DQT_DEPRECATED_WARNINGS
 add_compile_options(-Wall -Wextra)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src) #libqmmp & libqmmpui
 
-find_package(Qt5 5.15 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
-find_package(Qt5 5.15 CONFIG OPTIONAL_COMPONENTS DBus Sql Multimedia X11Extras WinExtras)
+find_package(Qt5 5.12 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
+find_package(Qt5 5.12 CONFIG OPTIONAL_COMPONENTS DBus Sql Multimedia X11Extras WinExtras)
 
 get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
