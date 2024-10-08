@@ -68,7 +68,7 @@ Qmmp - Qt-based multimedia player
 - сканер ReplayGain
 
 Вимоги:
-- Qt 5.15.x (qtbase, qtx11extras/qtwinextras та qttools для компіляції)
+- Qt >= 5.12 (qtbase, qtx11extras/qtwinextras та qttools для компіляції)
 - tar, unzip, bzip2, gzip
 - libmad
 - libvorbis
@@ -101,7 +101,7 @@ Qmmp - Qt-based multimedia player
 - libenca >= 1.9 (Опціонально)
 - mplayer (Опціонально)
 - libx11, libxcb, xorgproto (Опціонально)
-- cmake >= 3.5.0 (тільки для компіляції)
+- cmake >= 3.16.0 (тільки для компіляції)
 
 Увага! Для компіляції Qmmp потрібна утиліта lrelease. Дуже часто вона знаходиться в пакеті libqt4-devel.
 
