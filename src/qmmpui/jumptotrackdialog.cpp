@@ -92,8 +92,13 @@ JumpToTrackDialog::JumpToTrackDialog(PlayListModel *model, QWidget* parent)
 
     connect(m_model, &PlayListModel::destroyed, this, &JumpToTrackDialog::close);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
     new QShortcut(tr("Q"), this, this, &JumpToTrackDialog::on_queuePushButton_clicked);
     new QShortcut(tr("J"), this, this, &JumpToTrackDialog::on_jumpToPushButton_clicked);
+#else
+    new QShortcut(tr("Q"), this, SLOT(on_queuePushButton_clicked()));
+    new QShortcut(tr("J"), this, SLOT(on_jumpToPushButton_clicked()));
+#endif
 
     m_ui->filterLineEdit->installEventFilter(this);
     m_ui->songsListView->installEventFilter(this);
@@ -211,7 +216,11 @@ bool JumpToTrackDialog::eventFilter(QObject *o, QEvent *e)
 ///TrackListModel
 TrackListModel::TrackListModel(PlayListModel *model, QObject *parent) : QAbstractListModel(parent), m_model(model)
 {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
+#else
+    m_queue = QSet<PlayListTrack *>::fromList(m_model->queuedTracks());
+#endif
     connect(m_model, &PlayListModel::listChanged, this, &TrackListModel::onListChanged);
 }
 
@@ -260,13 +269,21 @@ void TrackListModel::onListChanged(int flags)
     if(flags & PlayListModel::STRUCTURE)
     {
         beginResetModel();
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
         m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
+#else
+        m_queue = QSet<PlayListTrack *>::fromList(m_model->queuedTracks());
+#endif
         endResetModel();
     }
     else if(flags & PlayListModel::QUEUE)
     {
         QSet<PlayListTrack *> changed = m_queue;
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
         m_queue = QSet<PlayListTrack *>(m_model->queuedTracks().cbegin(), m_model->queuedTracks().cend());
+#else
+        m_queue = QSet<PlayListTrack *>::fromList(m_model->queuedTracks());
+#endif
         changed.unite(m_queue);
 
         for(PlayListTrack *t : std::as_const(changed))

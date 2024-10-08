@@ -88,7 +88,7 @@ Oss4SettingsDialog::Oss4SettingsDialog (QWidget *parent) : QDialog (parent), m_u
     }
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     m_ui->deviceComboBox->setEditText(settings.value(u"OSS4/device"_s, QStringLiteral(DEFAULT_DEV)).toString());
-    connect(m_ui->deviceComboBox, &QComboBox::activated, this, &Oss4SettingsDialog::setText);
+    connect(m_ui->deviceComboBox, qOverload<int>(&QComboBox::activated), this, &Oss4SettingsDialog::setText);
 }
 
 Oss4SettingsDialog::~Oss4SettingsDialog()

@@ -43,6 +43,12 @@
 #include <QLatin1String>
 
 namespace Qt {
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
+constexpr auto SkipEmptyParts = QString::SkipEmptyParts;
+constexpr auto KeepEmptyParts = QString::KeepEmptyParts;
+#endif
+
 inline namespace Literals {
 inline namespace StringLiterals {
 

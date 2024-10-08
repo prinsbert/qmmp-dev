@@ -98,7 +98,11 @@ void ShufflePlayState::prepare()
     }
 
     for (int i = 0; i < m_shuffled_indexes.count(); i++)
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 13, 0))
         m_shuffled_indexes.swapItemsAt(i, rg->generate() % m_shuffled_indexes.size());
+#else
+        m_shuffled_indexes.swap(i, rg->generate() % m_shuffled_indexes.size());
+#endif
 
     m_shuffled_indexes.prepend(m_model->currentIndex());
 }

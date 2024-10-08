@@ -117,8 +117,13 @@ WidgetDescription General::widgetDescription(const QString &id)
     {
         for(const WidgetDescription &desc : f->properties().widgets)
         {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
             if(id == QLatin1String("%1_%2").arg(f->properties().shortName).arg(desc.id))
-              return desc;
+                return desc;
+#else
+            if(id == QStringLiteral("%1_%2").arg(f->properties().shortName).arg(desc.id))
+                return desc;
+#endif
         }
     }
 
@@ -131,8 +136,13 @@ QWidget *General::createWidget(const QString &id, QWidget *parent)
     {
         for(const WidgetDescription &desc : f->properties().widgets)
         {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
             if(id == QLatin1String("%1_%2").arg(f->properties().shortName).arg(desc.id))
-              return f->createWidget(desc.id, parent);
+                return f->createWidget(desc.id, parent);
+#else
+            if(id == QStringLiteral("%1_%2").arg(f->properties().shortName).arg(desc.id))
+                return f->createWidget(desc.id, parent);
+#endif
         }
     }
 

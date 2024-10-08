@@ -132,7 +132,11 @@ void SkinReader::loadSkins(const QStringList &paths)
     }
 
     //clear removed skins from cache
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     const QSet<QString> usedThumbnails(m_previewHash.constBegin(), m_previewHash.constEnd());
+#else
+    const QSet<QString> usedThumbnails = QSet<QString>::fromList(m_previewHash.values());
+#endif
     for(const QFileInfo &i : std::as_const(thumbnailes))
     {
         if(!usedThumbnails.contains(i.canonicalFilePath()))

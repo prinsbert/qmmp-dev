@@ -56,7 +56,7 @@ QSUiEqualizer::QSUiEqualizer(QWidget *parent) : QDialog(parent)
 
     m_presetComboBox = new QComboBox(this);
     m_presetComboBox->setEditable(true);
-    connect(m_presetComboBox, &QComboBox::activated, this, &QSUiEqualizer::loadPreset);
+    connect(m_presetComboBox, qOverload<int>(&QComboBox::activated), this, &QSUiEqualizer::loadPreset);
     buttonsLayout->addWidget(m_presetComboBox);
 
     QPushButton *saveButton = new QPushButton(tr("Save"), this);

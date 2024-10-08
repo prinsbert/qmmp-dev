@@ -32,8 +32,8 @@ AlsaSettingsDialog::AlsaSettingsDialog(QWidget *parent)
     m_ui->deviceComboBox->setEditable (true);
     getCards();
     getSoftDevices();
-    connect(m_ui->deviceComboBox, &QComboBox::activated, this, &AlsaSettingsDialog::setText);
-    connect(m_ui->mixerCardComboBox, &QComboBox::activated, this, &AlsaSettingsDialog::showMixerDevices);
+    connect(m_ui->deviceComboBox, qOverload<int>(&QComboBox::activated), this, &AlsaSettingsDialog::setText);
+    connect(m_ui->mixerCardComboBox, qOverload<int>(&QComboBox::activated), this, &AlsaSettingsDialog::showMixerDevices);
     QSettings settings(Qmmp::configFile(), QSettings::IniFormat);
     settings.beginGroup(u"ALSA"_s);
     m_ui->deviceComboBox->setEditText(settings.value(u"device"_s, u"default"_s).toString());

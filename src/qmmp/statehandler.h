@@ -23,7 +23,11 @@
 #include <QObject>
 #include <QMap>
 #include <QHash>
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
 #include <QRecursiveMutex>
+#else
+#include <QMutex>
+#endif
 #include "abstractengine.h"
 #include "audioparameters.h"
 #include "qmmp.h"
@@ -144,7 +148,11 @@ private:
     QHash <QString, QString> m_streamInfo;
     Qmmp::State m_state = Qmmp::Stopped;
     AudioParameters m_audioParameters;
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     mutable QRecursiveMutex m_mutex;
+#else
+    mutable QMutex m_mutex = QMutex(QMutex::Recursive);
+#endif
 };
 
 #endif

@@ -173,7 +173,11 @@ void FileLoader::addDirectory(const QString &s, PlayListTrack *before)
         {
             QStringList paths;
             tracks.append(processFile(info.absoluteFilePath (), &paths));
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
             ignoredPaths.unite(QSet<QString>(paths.cbegin(), paths.cend()));
+#else
+            ignoredPaths.unite(QSet<QString>::fromList(paths));
+#endif
         }
 
         if (m_finished)

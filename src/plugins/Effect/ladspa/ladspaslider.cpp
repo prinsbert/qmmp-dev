@@ -48,7 +48,7 @@ LADSPASlider::LADSPASlider(double min, double max, double step,
     m_slider->setPageStep(10);
     m_slider->setValue((*value - min) / step);
 
-    connect(m_spinBox, &QDoubleSpinBox::valueChanged, this, &LADSPASlider::setDoubleValue);
+    connect(m_spinBox, qOverload<double>(&QDoubleSpinBox::valueChanged), this, &LADSPASlider::setDoubleValue);
     connect(m_slider, &QSlider::valueChanged, this, &LADSPASlider::setIntValue);
 }
 
