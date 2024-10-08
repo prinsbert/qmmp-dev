@@ -1,0 +1,11 @@
+Riproduttore audio basato su Qt che supporta molti formati
+È richiesto Windows 10 o superiore
+È richiesto Windows 7 o superiore
+Riproduttore audio basato su Qt (Qt-based Multimedia Player)
+Configurazione portabile
+Rimuovi questo file per disabilitare la modalità portabile
+Temi aggiuntivi
+Usa l'interfaccia semplice come scelta predefinita
+Rilevamento automatico codifica ID3v1/ID3v2 (libRCD)
+Supporto formati AdLib (AdPlug)
+Scorciatoia del menu di avvio

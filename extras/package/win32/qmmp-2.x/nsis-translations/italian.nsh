@@ -1,0 +1,12 @@
+LangString text_app_desc               ${LANG_Italian} "Riproduttore audio basato su Qt che supporta molti formati"
+LangString text_win10_warning          ${LANG_Italian} "È richiesto Windows 10 o superiore"
+LangString text_win7_warning           ${LANG_Italian} "È richiesto Windows 7 o superiore"
+LangString text_app_full_name          ${LANG_Italian} "Riproduttore audio basato su Qt (Qt-based Multimedia Player)"
+LangString text_portable_configuration ${LANG_Italian} "Configurazione portabile"
+LangString text_portable_warning       ${LANG_Italian} "Rimuovi questo file per disabilitare la modalità portabile"
+LangString text_extra_skins            ${LANG_Italian} "Temi aggiuntivi"
+LangString text_default_simple_ui      ${LANG_Italian} "Usa l'interfaccia semplice come scelta predefinita"
+LangString text_enable_librcd          ${LANG_Italian} "Rilevamento automatico codifica ID3v1/ID3v2 (libRCD)"
+LangString text_enable_adlib           ${LANG_Italian} "Supporto formati AdLib (AdPlug)"
+LangString text_startmenu_shortcuts    ${LANG_Italian} "Scorciatoia del menu di avvio"
+
