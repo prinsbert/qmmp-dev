@@ -56,7 +56,7 @@ YtbInputSource::YtbInputSource(const QString &url, QObject *parent) : InputSourc
         m_manager->setProxy(QNetworkProxy::NoProxy);
 
     connect(m_process, &QProcess::errorOccurred, this, &YtbInputSource::onProcessErrorOccurred);
-    connect(m_process, &QProcess::finished, this, &YtbInputSource::onProcessFinished);
+    connect(m_process, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, &YtbInputSource::onProcessFinished);
     connect(m_manager, &QNetworkAccessManager::finished, this, &YtbInputSource::onFinished);
     connect(m_buffer, &BufferDevice::seekRequest, this, &YtbInputSource::onSeekRequest);
 }

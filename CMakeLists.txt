@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 project(qmmp-plugin-pack)
 
 #freebsd support
@@ -41,7 +41,7 @@ set(CMAKE_AUTOUIC ON)
 ADD_DEFINITIONS(-DQMMP_WS_X11 -DQT_DISABLE_DEPRECATED_BEFORE=0x060200 -DQT_DEPRECATED_WARNINGS)
 ADD_COMPILE_OPTIONS(-Wall -Wextra)
 
-find_package(Qt5 5.15.0 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
+find_package(Qt5 5.12.0 CONFIG REQUIRED COMPONENTS Widgets LinguistTools Network)
 
 get_target_property(QT_LRELEASE_EXECUTABLE Qt5::lrelease IMPORTED_LOCATION)
 
