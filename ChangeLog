@@ -1910,3 +1910,5 @@ Version 1.7.0
 
 Version 1.7.1
 * fixed build regression
+* changed minimal Qt version to 5.12
+* changed minimal cmake version to 3.16
