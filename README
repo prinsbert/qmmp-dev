@@ -14,14 +14,14 @@ Description:
 - Ytb - audio playback from YouTube (uses yt-dlp)
 
 Requirements:
-- Qt 5.15.x (qtbase and qttools for build)
+- Qt >= 5.12 (qtbase and qttools for build)
 - qmmp 1.7.x
-- taglib >= 1.12
+- taglib >= 1.11
 - libmodplug >= 0.8.4 (optional)
 - libsamplerate >= 0.1.2 (optional)
 - ffmpeg >= 3.4 (optional)
 - yt-dlp (latest version, optional)
-- cmake >= 3.18.0 (for build only)
+- cmake >= 3.16.0 (for build only)
 
 Attention! Plugin Pack build needs lrelease installed.
 
