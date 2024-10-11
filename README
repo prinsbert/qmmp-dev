@@ -193,5 +193,4 @@ or
 cmake ./ -DCMAKE_INSTALL_LIBDIR=lib64
 
 
-All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets/ or
-forkotov02@ya.ru
+All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets/

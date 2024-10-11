@@ -192,7 +192,7 @@ qmake LIB_DIR=/usr/lib64
 cmake ./ -DCMAKE_INSTALL_LIBDIR=lib64
 
 
-Патчи, багрепорты, идеи и т.п.: https://sourceforge.net/p/qmmp-dev/tickets/ или forkotov02@ya.ru
+Патчи, багрепорты, идеи и т.п.: https://sourceforge.net/p/qmmp-dev/tickets/
 
 Автор выражает благодарность Вадиму Калинникову (www.ylsoftware.com) за предоставленный
 хостинг и тестирование программы.
