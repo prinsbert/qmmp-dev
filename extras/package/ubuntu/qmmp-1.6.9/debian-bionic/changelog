@@ -1,4 +1,4 @@
-qmmp (1.6.9-1ubuntu1~bionic1) bionic; urgency=medium
+qmmp (1.6.9-1ubuntu1~bionic3) bionic; urgency=medium
 
   * Fixed issue with large CUE files.
 

@@ -1,4 +1,4 @@
-qmmp (1.6.9-1ubuntu1~xenial1) xenial; urgency=medium
+qmmp (1.6.9-1ubuntu1~xenial3) xenial; urgency=medium
 
   * Fixed issue with large CUE files.
 

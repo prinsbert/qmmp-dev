@@ -32,7 +32,7 @@ build ()
 
 update ()
 {
-    dch -m --newversion ${QMMP_VERSION}-1ubuntu1~${1}0 -D ${1} -c debian-$1/changelog "New upstream release."
+	dch -m --newversion ${QMMP_VERSION}-1ubuntu1~${1}3 -D ${1} -c debian-$1/changelog "Fixed issue with large CUE files."
 }
 
 upload ()

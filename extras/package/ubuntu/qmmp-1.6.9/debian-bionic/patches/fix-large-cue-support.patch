@@ -23,6 +23,13 @@ Index: qmmp-1.6.9/src/qmmpui/fileloader.cpp
 ===================================================================
 --- qmmp-1.6.9.orig/src/qmmpui/fileloader.cpp
 +++ qmmp-1.6.9/src/qmmpui/fileloader.cpp
+@@ -1,5 +1,5 @@
+ /***************************************************************************
+- *   Copyright (C) 2006-2022 by Ilya Kotov                                 *
++ *   Copyright (C) 2006-2024 by Ilya Kotov                                 *
+  *   forkotov02@ya.ru                                                      *
+  *                                                                         *
+  *   This program is free software; you can redistribute it and/or modify  *
 @@ -167,10 +167,10 @@ void FileLoader::insertPlayList(const QS
      tracks.clear();
  }
@@ -41,7 +48,7 @@ Index: qmmp-1.6.9/src/qmmpui/fileloader.cpp
              QStringList paths;
              tracks.append(processFile(info.absoluteFilePath (), &paths));
 -            ignoredPaths.append(paths);
-+            ignoredPaths.unite(QSet<QString>(paths.cbegin(), paths.cend()));
++            ignoredPaths.unite(QSet<QString>::fromList(paths));
          }
  
          if (m_finished)
