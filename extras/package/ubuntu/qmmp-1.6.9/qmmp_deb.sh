@@ -1,7 +1,7 @@
 #!/bin/sh
 
 QMMP_VERSION=1.6.9
-UBUNTU_CODENAMES='xenial'
+UBUNTU_CODENAMES='xenial bionic'
 BUILD_ROOT=build-root
 
 

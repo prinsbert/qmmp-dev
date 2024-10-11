@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PLUGIN_PACK_VERSION=1.6.2
-UBUNTU_CODENAMES='xenial'
+UBUNTU_CODENAMES='xenial bionic'
 BUILD_ROOT=build-root
 
 
