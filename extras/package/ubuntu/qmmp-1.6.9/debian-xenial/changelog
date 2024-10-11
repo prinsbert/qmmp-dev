@@ -1,3 +1,9 @@
+qmmp (1.6.9-1ubuntu1~xenial1) xenial; urgency=medium
+
+  * Fixed issue with large CUE files.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Fri, 11 Oct 2024 19:30:36 +0300
+
 qmmp (1.6.9-1ubuntu1~xenial0) xenial; urgency=medium
 
   * New upstream release.
