@@ -19,8 +19,11 @@ DockWidgetList::DockWidgetList(QMainWindow *parent) : QObject(parent), m_mw(pare
         dockWidget->toggleViewAction()->setShortcut(desc.shortcut);
         dockWidget->setObjectName(id);
         dockWidget->setAllowedAreas(desc.allowedAreas);
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 7, 0))
         if(qApp->platformName() == QLatin1String("wayland"))
             dockWidget->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
+#endif
         m_mw->addDockWidget(desc.area, dockWidget);
         connect(dockWidget->toggleViewAction(), &QAction::triggered, this, &DockWidgetList::onViewActionTriggered);
         connect(dockWidget, &QDockWidget::visibilityChanged, this, &DockWidgetList::onVisibilityChanged);
@@ -123,8 +126,10 @@ void DockWidgetList::onWidgetAdded(const QString &id)
     QDockWidget *dockWidget = new QDockWidget(desc.name, m_mw);
     dockWidget->setObjectName(id);
     dockWidget->setAllowedAreas(desc.allowedAreas);
+#if (QT_VERSION < QT_VERSION_CHECK(5, 7, 0))
     if(qApp->platformName() == QLatin1String("wayland"))
         dockWidget->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
+#endif
     if(m_menu && m_beforeAction)
         m_menu->insertAction(m_beforeAction, dockWidget->toggleViewAction());
     m_mw->addDockWidget(desc.area, dockWidget);
