@@ -77,8 +77,7 @@ SkinnedEqWidget::SkinnedEqWidget (QWidget *parent)
     QString wm_name = WindowSystem::netWindowManagerName();
     if(wm_name.contains(u"openbox"_s, Qt::CaseInsensitive) || wm_name.contains(u"xfwm4"_s, Qt::CaseInsensitive))
         setWindowFlags (Qt::Drawer | Qt::FramelessWindowHint);
-    else if(wm_name.contains(u"metacity"_s, Qt::CaseInsensitive) ||
-            wm_name.contains(u"kwin"_s, Qt::CaseInsensitive))
+    else if(wm_name.contains(u"metacity"_s, Qt::CaseInsensitive))
         setWindowFlags (Qt::Tool | Qt::FramelessWindowHint);
     else
 #endif
