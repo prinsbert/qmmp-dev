@@ -519,8 +519,11 @@ void QSUiMainWindow::createActions()
     m_ui->menuEdit->addAction(SET_ACTION(QSUiActionManager::PL_REFRESH, m_pl_manager, &PlayListManager::refresh));
     m_ui->menuEdit->addSeparator();
     //view menu
-    m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP, this, &QSUiMainWindow::readSettings));
-    m_ui->menuView->addSeparator();
+    if(qApp->platformName() != QLatin1String("wayland"))
+    {
+        m_ui->menuView->addAction(SET_ACTION(QSUiActionManager::WM_ALLWAYS_ON_TOP, this, &QSUiMainWindow::readSettings));
+        m_ui->menuView->addSeparator();
+    }
     m_ui->menuView->addAction(m_ui->analyzerDockWidget->toggleViewAction());
     m_ui->menuView->addAction(m_ui->waveformSeekBarDockWidget->toggleViewAction());
     m_ui->menuView->addAction(m_ui->fileSystemDockWidget->toggleViewAction());
