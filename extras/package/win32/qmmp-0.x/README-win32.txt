@@ -36,7 +36,7 @@ List of the third-party libraries.
   opus                1.5.2      https://www.opus-codec.org/
   opusfile            0.12       https://www.opus-codec.org/
   libbs2b             3.1.0      https://bs2b.sourceforge.net/
-  curl                8.7.1      https://curl.haxx.se/
+  curl                8.10.1     https://curl.haxx.se/
   libcdio             2.1.0      https://www.gnu.org/software/libcdio/
   libcdio-paranoia    10.2+2.0.1 https://www.gnu.org/software/libcdio/
   mingw-libgnurx      2.5.1      https://sourceforge.net/projects/mingw/files/Other/UserContributed/regex/
@@ -51,7 +51,7 @@ List of the third-party libraries.
   enca                1.19       https://cihar.com/software/enca/
   soxr                0.1.3      https://sourceforge.net/projects/soxr/
   librcd              0.1.14     https://github.com/RusXMMS/librcd  
-  mpg123              1.32.6     https://www.mpg123.de/
+  mpg123              1.32.7     https://www.mpg123.de/
 
 List of the third-party artwork.
 
