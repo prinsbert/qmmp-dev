@@ -861,11 +861,13 @@ void QSUiMainWindow::setDockWidgetsBlocked(bool blocked)
         m_ui->waveformSeekBarDockWidget
     };
 
+#if (QT_VERSION < QT_VERSION_CHECK(5, 7, 0))
     if(qApp->platformName() == QLatin1String("wayland"))
     {
         for(QDockWidget *w : std::as_const(widgetList))
             w->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
     }
+#endif
 
     if(blocked)
     {
