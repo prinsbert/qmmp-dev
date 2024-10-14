@@ -507,3 +507,7 @@ LEGEND
 [*] ffmpeg-7.0.2
 [*] libsidplayfp-2.9.0
 [!] added installer translations
+
+1.7.1
+[*] qmmp-1.7.1
+[*] qmmp-plugin-pack-1.7.1
