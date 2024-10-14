@@ -1,3 +1,9 @@
+qmmp-plugin-pack (1.7.1-1ubuntu1~oracular0) oracular; urgency=medium
+
+  * New upstream release.
+
+ -- Ilya Kotov <iokotov@astralinux.ru>  Mon, 14 Oct 2024 23:43:51 +0300
+
 qmmp-plugin-pack (1.7.0-1ubuntu1~oracular1) oracular; urgency=medium
 
   * New upstream release.
