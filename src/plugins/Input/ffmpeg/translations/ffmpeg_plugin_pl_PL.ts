@@ -9,27 +9,27 @@
         <translation>Wtyczka FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="146"/>
+        <location filename="../decoderffmpegfactory.cpp" line="150"/>
         <source>FFmpeg Formats</source>
         <translation>Formaty FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="340"/>
+        <location filename="../decoderffmpegfactory.cpp" line="344"/>
         <source>About FFmpeg Audio Plugin</source>
         <translation>O wtyczce dźwiękowej FFmpeg</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="341"/>
+        <location filename="../decoderffmpegfactory.cpp" line="345"/>
         <source>Qmmp FFmpeg Audio Plugin</source>
         <translation>Wtyczka dźwiękowa FFmpeg dla Qmmp</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="342"/>
+        <location filename="../decoderffmpegfactory.cpp" line="346"/>
         <source>Compiled against:</source>
         <translation>Skompilowana z biblioteką:</translation>
     </message>
     <message>
-        <location filename="../decoderffmpegfactory.cpp" line="355"/>
+        <location filename="../decoderffmpegfactory.cpp" line="359"/>
         <source>Written by: Ilya Kotov &lt;forkotov02@ya.ru&gt;</source>
         <translation>Napisana przez: Ilya Kotov &lt;forkotov02@ya.ru&gt;</translation>
     </message>

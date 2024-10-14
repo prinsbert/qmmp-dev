@@ -555,53 +555,53 @@
         <translation>Еквалайзер</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="161"/>
-        <location filename="../skinnedeqwidget.cpp" line="178"/>
+        <location filename="../skinnedeqwidget.cpp" line="160"/>
+        <location filename="../skinnedeqwidget.cpp" line="177"/>
         <source>preset</source>
         <translation>пресет</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="262"/>
+        <location filename="../skinnedeqwidget.cpp" line="261"/>
         <source>&amp;Load/Delete</source>
         <translation>&amp;Завантажити/Вилучити</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="264"/>
+        <location filename="../skinnedeqwidget.cpp" line="263"/>
         <source>&amp;Save Preset</source>
         <translation>&amp;Зберегти пресет</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="265"/>
+        <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>&amp;Зберегти автопресет</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Import</source>
         <translation>&amp;Імпортувати</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <location filename="../skinnedeqwidget.cpp" line="267"/>
         <source>&amp;Clear</source>
         <translation>&amp;Очистити</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="297"/>
+        <location filename="../skinnedeqwidget.cpp" line="296"/>
         <source>Saving Preset</source>
         <translation>Збережені пресети</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="298"/>
+        <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Preset name:</source>
         <translation>Ім&apos;я пресету:</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="299"/>
+        <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>preset #</source>
         <translation>пресет #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="395"/>
+        <location filename="../skinnedeqwidget.cpp" line="394"/>
         <source>Import Preset</source>
         <translation>Імпорт пресету</translation>
     </message>
@@ -763,118 +763,118 @@
         <translation>Список</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="194"/>
+        <location filename="../skinnedplaylist.cpp" line="193"/>
         <source>&amp;Copy Selection To</source>
         <translation>&amp;Копіювати вибране у</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="219"/>
+        <location filename="../skinnedplaylist.cpp" line="218"/>
         <source>Sort List</source>
         <translation>Відсортувати</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="222"/>
-        <location filename="../skinnedplaylist.cpp" line="262"/>
+        <location filename="../skinnedplaylist.cpp" line="221"/>
+        <location filename="../skinnedplaylist.cpp" line="261"/>
         <source>By Title</source>
         <translation>За назвою</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="225"/>
-        <location filename="../skinnedplaylist.cpp" line="265"/>
+        <location filename="../skinnedplaylist.cpp" line="224"/>
+        <location filename="../skinnedplaylist.cpp" line="264"/>
         <source>By Album</source>
         <translation>За альбомом</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="228"/>
-        <location filename="../skinnedplaylist.cpp" line="268"/>
+        <location filename="../skinnedplaylist.cpp" line="227"/>
+        <location filename="../skinnedplaylist.cpp" line="267"/>
         <source>By Artist</source>
         <translation>За виконавцем</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="231"/>
-        <location filename="../skinnedplaylist.cpp" line="271"/>
+        <location filename="../skinnedplaylist.cpp" line="230"/>
+        <location filename="../skinnedplaylist.cpp" line="270"/>
         <source>By Album Artist</source>
         <translation>За альбомом виконавця</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="234"/>
-        <location filename="../skinnedplaylist.cpp" line="274"/>
+        <location filename="../skinnedplaylist.cpp" line="233"/>
+        <location filename="../skinnedplaylist.cpp" line="273"/>
         <source>By Filename</source>
         <translation>За ім&apos;ям файлу</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="237"/>
-        <location filename="../skinnedplaylist.cpp" line="277"/>
+        <location filename="../skinnedplaylist.cpp" line="236"/>
+        <location filename="../skinnedplaylist.cpp" line="276"/>
         <source>By Path + Filename</source>
         <translation>За шляхом і файлом</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="240"/>
-        <location filename="../skinnedplaylist.cpp" line="280"/>
+        <location filename="../skinnedplaylist.cpp" line="239"/>
+        <location filename="../skinnedplaylist.cpp" line="279"/>
         <source>By Date</source>
         <translation>За датою</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="243"/>
-        <location filename="../skinnedplaylist.cpp" line="283"/>
+        <location filename="../skinnedplaylist.cpp" line="242"/>
+        <location filename="../skinnedplaylist.cpp" line="282"/>
         <source>By Track Number</source>
         <translation>За номером доріжки</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="246"/>
-        <location filename="../skinnedplaylist.cpp" line="286"/>
+        <location filename="../skinnedplaylist.cpp" line="245"/>
+        <location filename="../skinnedplaylist.cpp" line="285"/>
         <source>By Disc Number</source>
         <translation>За номером диску</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="249"/>
-        <location filename="../skinnedplaylist.cpp" line="289"/>
+        <location filename="../skinnedplaylist.cpp" line="248"/>
+        <location filename="../skinnedplaylist.cpp" line="288"/>
         <source>By File Creation Date</source>
         <translation>За датою створення файлу</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="252"/>
-        <location filename="../skinnedplaylist.cpp" line="292"/>
+        <location filename="../skinnedplaylist.cpp" line="251"/>
+        <location filename="../skinnedplaylist.cpp" line="291"/>
         <source>By File Modification Date</source>
         <translation>За датою модифікації файлу</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="255"/>
+        <location filename="../skinnedplaylist.cpp" line="254"/>
         <source>By Group</source>
         <translation>За групою</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="260"/>
+        <location filename="../skinnedplaylist.cpp" line="259"/>
         <source>Sort Selection</source>
         <translation>Відсортувати вибране</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="297"/>
+        <location filename="../skinnedplaylist.cpp" line="296"/>
         <source>Randomize List</source>
         <translation>Перемішати</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="299"/>
+        <location filename="../skinnedplaylist.cpp" line="298"/>
         <source>Reverse List</source>
         <translation>Обернути</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="307"/>
+        <location filename="../skinnedplaylist.cpp" line="306"/>
         <source>Actions</source>
         <translation>Дії</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Rename Playlist</source>
         <translation>Перейменувати список</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Playlist name:</source>
         <translation>Назва списку:</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="598"/>
+        <location filename="../skinnedplaylist.cpp" line="597"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;Новий грайлист</translation>
     </message>

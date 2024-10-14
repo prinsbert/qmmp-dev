@@ -1121,7 +1121,7 @@
     <name>QSUiMainWindow</name>
     <message>
         <location filename="../forms/qsuimainwindow.ui" line="14"/>
-        <location filename="../qsuimainwindow.cpp" line="912"/>
+        <location filename="../qsuimainwindow.cpp" line="915"/>
         <source>Qmmp</source>
         <translation type="unfinished">Qmmp</translation>
     </message>
@@ -1338,108 +1338,108 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="540"/>
+        <location filename="../qsuimainwindow.cpp" line="543"/>
         <source>Edit Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="542"/>
+        <location filename="../qsuimainwindow.cpp" line="545"/>
         <source>Sort List</source>
         <translation type="unfinished">Triediť zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="544"/>
-        <location filename="../qsuimainwindow.cpp" line="560"/>
+        <location filename="../qsuimainwindow.cpp" line="547"/>
+        <location filename="../qsuimainwindow.cpp" line="563"/>
         <source>By Title</source>
         <translation type="unfinished">Podľa názvu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="545"/>
-        <location filename="../qsuimainwindow.cpp" line="561"/>
+        <location filename="../qsuimainwindow.cpp" line="548"/>
+        <location filename="../qsuimainwindow.cpp" line="564"/>
         <source>By Album</source>
         <translation type="unfinished">Podľa albumu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="546"/>
-        <location filename="../qsuimainwindow.cpp" line="562"/>
+        <location filename="../qsuimainwindow.cpp" line="549"/>
+        <location filename="../qsuimainwindow.cpp" line="565"/>
         <source>By Artist</source>
         <translation type="unfinished">Podľa interpréta</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="547"/>
-        <location filename="../qsuimainwindow.cpp" line="563"/>
+        <location filename="../qsuimainwindow.cpp" line="550"/>
+        <location filename="../qsuimainwindow.cpp" line="566"/>
         <source>By Album Artist</source>
         <translation type="unfinished">Podľa interpréta albumu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="548"/>
-        <location filename="../qsuimainwindow.cpp" line="564"/>
+        <location filename="../qsuimainwindow.cpp" line="551"/>
+        <location filename="../qsuimainwindow.cpp" line="567"/>
         <source>By Filename</source>
         <translation type="unfinished">Podľa názvu súboru</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="549"/>
-        <location filename="../qsuimainwindow.cpp" line="565"/>
+        <location filename="../qsuimainwindow.cpp" line="552"/>
+        <location filename="../qsuimainwindow.cpp" line="568"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">Podľa cesty a názvu súboru</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="550"/>
-        <location filename="../qsuimainwindow.cpp" line="566"/>
+        <location filename="../qsuimainwindow.cpp" line="553"/>
+        <location filename="../qsuimainwindow.cpp" line="569"/>
         <source>By Date</source>
         <translation type="unfinished">Podľa dátumu</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="551"/>
-        <location filename="../qsuimainwindow.cpp" line="567"/>
+        <location filename="../qsuimainwindow.cpp" line="554"/>
+        <location filename="../qsuimainwindow.cpp" line="570"/>
         <source>By Track Number</source>
         <translation type="unfinished">Podľa čísla skladby</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="552"/>
-        <location filename="../qsuimainwindow.cpp" line="568"/>
+        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="571"/>
         <source>By Disc Number</source>
         <translation type="unfinished">Podľa čísla disku</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="553"/>
-        <location filename="../qsuimainwindow.cpp" line="569"/>
+        <location filename="../qsuimainwindow.cpp" line="556"/>
+        <location filename="../qsuimainwindow.cpp" line="572"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">Podľa dátumu vytvorenia súboru</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="554"/>
-        <location filename="../qsuimainwindow.cpp" line="570"/>
+        <location filename="../qsuimainwindow.cpp" line="557"/>
+        <location filename="../qsuimainwindow.cpp" line="573"/>
         <source>By File Modification Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="555"/>
+        <location filename="../qsuimainwindow.cpp" line="558"/>
         <source>By Group</source>
         <translation type="unfinished">Podľa skupiny</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="558"/>
+        <location filename="../qsuimainwindow.cpp" line="561"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Potriediť výber</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="574"/>
+        <location filename="../qsuimainwindow.cpp" line="577"/>
         <source>Randomize List</source>
         <translation type="unfinished">Zamiešať zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="576"/>
+        <location filename="../qsuimainwindow.cpp" line="579"/>
         <source>Reverse List</source>
         <translation type="unfinished">Otočiť zoznam</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="617"/>
+        <location filename="../qsuimainwindow.cpp" line="620"/>
         <source>Actions</source>
         <translation type="unfinished">Činnosti</translation>
     </message>
     <message>
-        <location filename="../qsuimainwindow.cpp" line="933"/>
+        <location filename="../qsuimainwindow.cpp" line="936"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished"></translation>
     </message>

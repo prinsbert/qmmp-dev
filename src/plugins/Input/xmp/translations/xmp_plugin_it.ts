@@ -107,7 +107,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="34"/>
         <source>Amplification factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fattore di amplificazione:</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.ui" line="51"/>
@@ -147,7 +147,7 @@
     <message>
         <location filename="../xmpsettingsdialog.ui" line="116"/>
         <source>Use Paula mixer in Amiga modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa il mixer Paula nei moduli Amiga</translation>
     </message>
     <message>
         <location filename="../xmpsettingsdialog.cpp" line="33"/>

@@ -555,53 +555,53 @@
         <translation>均衡器</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="161"/>
-        <location filename="../skinnedeqwidget.cpp" line="178"/>
+        <location filename="../skinnedeqwidget.cpp" line="160"/>
+        <location filename="../skinnedeqwidget.cpp" line="177"/>
         <source>preset</source>
         <translation>预设</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="262"/>
+        <location filename="../skinnedeqwidget.cpp" line="261"/>
         <source>&amp;Load/Delete</source>
         <translation>载入/删除(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="264"/>
+        <location filename="../skinnedeqwidget.cpp" line="263"/>
         <source>&amp;Save Preset</source>
         <translation>保存预设(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="265"/>
+        <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>保存自动载入预设(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Import</source>
         <translation>导入(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <location filename="../skinnedeqwidget.cpp" line="267"/>
         <source>&amp;Clear</source>
         <translation>清除(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="297"/>
+        <location filename="../skinnedeqwidget.cpp" line="296"/>
         <source>Saving Preset</source>
         <translation>保存预设</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="298"/>
+        <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Preset name:</source>
         <translation>预设名称：</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="299"/>
+        <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>preset #</source>
         <translation>预设 #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="395"/>
+        <location filename="../skinnedeqwidget.cpp" line="394"/>
         <source>Import Preset</source>
         <translation>导入预设</translation>
     </message>
@@ -763,118 +763,118 @@
         <translation>播放列表</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="194"/>
+        <location filename="../skinnedplaylist.cpp" line="193"/>
         <source>&amp;Copy Selection To</source>
         <translation>&amp;复制选项到</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="219"/>
+        <location filename="../skinnedplaylist.cpp" line="218"/>
         <source>Sort List</source>
         <translation>清单排序</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="222"/>
-        <location filename="../skinnedplaylist.cpp" line="262"/>
+        <location filename="../skinnedplaylist.cpp" line="221"/>
+        <location filename="../skinnedplaylist.cpp" line="261"/>
         <source>By Title</source>
         <translation>按标题</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="225"/>
-        <location filename="../skinnedplaylist.cpp" line="265"/>
+        <location filename="../skinnedplaylist.cpp" line="224"/>
+        <location filename="../skinnedplaylist.cpp" line="264"/>
         <source>By Album</source>
         <translation>按专辑</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="228"/>
-        <location filename="../skinnedplaylist.cpp" line="268"/>
+        <location filename="../skinnedplaylist.cpp" line="227"/>
+        <location filename="../skinnedplaylist.cpp" line="267"/>
         <source>By Artist</source>
         <translation>按艺术家</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="231"/>
-        <location filename="../skinnedplaylist.cpp" line="271"/>
+        <location filename="../skinnedplaylist.cpp" line="230"/>
+        <location filename="../skinnedplaylist.cpp" line="270"/>
         <source>By Album Artist</source>
         <translation>按专辑 艺术家</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="234"/>
-        <location filename="../skinnedplaylist.cpp" line="274"/>
+        <location filename="../skinnedplaylist.cpp" line="233"/>
+        <location filename="../skinnedplaylist.cpp" line="273"/>
         <source>By Filename</source>
         <translation>按文件名称</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="237"/>
-        <location filename="../skinnedplaylist.cpp" line="277"/>
+        <location filename="../skinnedplaylist.cpp" line="236"/>
+        <location filename="../skinnedplaylist.cpp" line="276"/>
         <source>By Path + Filename</source>
         <translation>按路径+文件名称</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="240"/>
-        <location filename="../skinnedplaylist.cpp" line="280"/>
+        <location filename="../skinnedplaylist.cpp" line="239"/>
+        <location filename="../skinnedplaylist.cpp" line="279"/>
         <source>By Date</source>
         <translation>按日期</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="243"/>
-        <location filename="../skinnedplaylist.cpp" line="283"/>
+        <location filename="../skinnedplaylist.cpp" line="242"/>
+        <location filename="../skinnedplaylist.cpp" line="282"/>
         <source>By Track Number</source>
         <translation>按单曲号</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="246"/>
-        <location filename="../skinnedplaylist.cpp" line="286"/>
+        <location filename="../skinnedplaylist.cpp" line="245"/>
+        <location filename="../skinnedplaylist.cpp" line="285"/>
         <source>By Disc Number</source>
         <translation>按光盘号</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="249"/>
-        <location filename="../skinnedplaylist.cpp" line="289"/>
+        <location filename="../skinnedplaylist.cpp" line="248"/>
+        <location filename="../skinnedplaylist.cpp" line="288"/>
         <source>By File Creation Date</source>
         <translation>按文件的创建日期</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="252"/>
-        <location filename="../skinnedplaylist.cpp" line="292"/>
+        <location filename="../skinnedplaylist.cpp" line="251"/>
+        <location filename="../skinnedplaylist.cpp" line="291"/>
         <source>By File Modification Date</source>
         <translation>按文件的修改日期</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="255"/>
+        <location filename="../skinnedplaylist.cpp" line="254"/>
         <source>By Group</source>
         <translation>按组</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="260"/>
+        <location filename="../skinnedplaylist.cpp" line="259"/>
         <source>Sort Selection</source>
         <translation>排序选择</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="297"/>
+        <location filename="../skinnedplaylist.cpp" line="296"/>
         <source>Randomize List</source>
         <translation>随机列表</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="299"/>
+        <location filename="../skinnedplaylist.cpp" line="298"/>
         <source>Reverse List</source>
         <translation>反序列表</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="307"/>
+        <location filename="../skinnedplaylist.cpp" line="306"/>
         <source>Actions</source>
         <translation>行动</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Rename Playlist</source>
         <translation>重命名播放列表</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Playlist name:</source>
         <translation>播放列表名称：</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="598"/>
+        <location filename="../skinnedplaylist.cpp" line="597"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;新播放列表</translation>
     </message>
