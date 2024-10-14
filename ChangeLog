@@ -384,3 +384,4 @@ Version 2.2.0
 
 Version 2.2.1
 * fixed "about" dialog in the ytb plugin
+* fixed minimal qmmp version checking
