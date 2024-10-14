@@ -555,53 +555,53 @@
         <translation type="unfinished">Glotintuvas</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="161"/>
-        <location filename="../skinnedeqwidget.cpp" line="178"/>
+        <location filename="../skinnedeqwidget.cpp" line="160"/>
+        <location filename="../skinnedeqwidget.cpp" line="177"/>
         <source>preset</source>
         <translation type="unfinished">Nustatymas</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="262"/>
+        <location filename="../skinnedeqwidget.cpp" line="261"/>
         <source>&amp;Load/Delete</source>
         <translation type="unfinished">&amp;Įkelti/Pašalinti</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="264"/>
+        <location filename="../skinnedeqwidget.cpp" line="263"/>
         <source>&amp;Save Preset</source>
         <translation type="unfinished">&amp;Išsaugoti nustatymus</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="265"/>
+        <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation type="unfinished">&amp;Išsaugoti auto-nustatymą</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Import</source>
         <translation type="unfinished">&amp;Importuoti</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <location filename="../skinnedeqwidget.cpp" line="267"/>
         <source>&amp;Clear</source>
         <translation type="unfinished">&amp;išvalyti</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="297"/>
+        <location filename="../skinnedeqwidget.cpp" line="296"/>
         <source>Saving Preset</source>
         <translation type="unfinished">Išsaugojamas nustatymas</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="298"/>
+        <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Preset name:</source>
         <translation type="unfinished">Nustatymo pavadinimas:</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="299"/>
+        <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>preset #</source>
         <translation type="unfinished">Nustatymas #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="395"/>
+        <location filename="../skinnedeqwidget.cpp" line="394"/>
         <source>Import Preset</source>
         <translation type="unfinished">Importuoti nustatymus</translation>
     </message>
@@ -763,118 +763,118 @@
         <translation type="unfinished">Grojaraštis</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="194"/>
+        <location filename="../skinnedplaylist.cpp" line="193"/>
         <source>&amp;Copy Selection To</source>
         <translation type="unfinished">&amp;Kopijuoti pasirinkimą į</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="219"/>
+        <location filename="../skinnedplaylist.cpp" line="218"/>
         <source>Sort List</source>
         <translation type="unfinished">Rūšiuoti</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="222"/>
-        <location filename="../skinnedplaylist.cpp" line="262"/>
+        <location filename="../skinnedplaylist.cpp" line="221"/>
+        <location filename="../skinnedplaylist.cpp" line="261"/>
         <source>By Title</source>
         <translation type="unfinished">Pagal dainos pavadinimą</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="225"/>
-        <location filename="../skinnedplaylist.cpp" line="265"/>
+        <location filename="../skinnedplaylist.cpp" line="224"/>
+        <location filename="../skinnedplaylist.cpp" line="264"/>
         <source>By Album</source>
         <translation type="unfinished">Pagal albumą</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="228"/>
-        <location filename="../skinnedplaylist.cpp" line="268"/>
+        <location filename="../skinnedplaylist.cpp" line="227"/>
+        <location filename="../skinnedplaylist.cpp" line="267"/>
         <source>By Artist</source>
         <translation type="unfinished">Pagal atlikėją</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="231"/>
-        <location filename="../skinnedplaylist.cpp" line="271"/>
+        <location filename="../skinnedplaylist.cpp" line="230"/>
+        <location filename="../skinnedplaylist.cpp" line="270"/>
         <source>By Album Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="234"/>
-        <location filename="../skinnedplaylist.cpp" line="274"/>
+        <location filename="../skinnedplaylist.cpp" line="233"/>
+        <location filename="../skinnedplaylist.cpp" line="273"/>
         <source>By Filename</source>
         <translation type="unfinished">Pagal bylos pavadinimą</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="237"/>
-        <location filename="../skinnedplaylist.cpp" line="277"/>
+        <location filename="../skinnedplaylist.cpp" line="236"/>
+        <location filename="../skinnedplaylist.cpp" line="276"/>
         <source>By Path + Filename</source>
         <translation type="unfinished">Pagal kelią iki bylos</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="240"/>
-        <location filename="../skinnedplaylist.cpp" line="280"/>
+        <location filename="../skinnedplaylist.cpp" line="239"/>
+        <location filename="../skinnedplaylist.cpp" line="279"/>
         <source>By Date</source>
         <translation type="unfinished">Pagal datą</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="243"/>
-        <location filename="../skinnedplaylist.cpp" line="283"/>
+        <location filename="../skinnedplaylist.cpp" line="242"/>
+        <location filename="../skinnedplaylist.cpp" line="282"/>
         <source>By Track Number</source>
         <translation type="unfinished">Pagal takelio numerį</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="246"/>
-        <location filename="../skinnedplaylist.cpp" line="286"/>
+        <location filename="../skinnedplaylist.cpp" line="245"/>
+        <location filename="../skinnedplaylist.cpp" line="285"/>
         <source>By Disc Number</source>
         <translation type="unfinished">Pagal disko numerį</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="249"/>
-        <location filename="../skinnedplaylist.cpp" line="289"/>
+        <location filename="../skinnedplaylist.cpp" line="248"/>
+        <location filename="../skinnedplaylist.cpp" line="288"/>
         <source>By File Creation Date</source>
         <translation type="unfinished">Pagal bylų sukūrimo laiką</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="252"/>
-        <location filename="../skinnedplaylist.cpp" line="292"/>
+        <location filename="../skinnedplaylist.cpp" line="251"/>
+        <location filename="../skinnedplaylist.cpp" line="291"/>
         <source>By File Modification Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="255"/>
+        <location filename="../skinnedplaylist.cpp" line="254"/>
         <source>By Group</source>
         <translation type="unfinished">Pagal grupę</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="260"/>
+        <location filename="../skinnedplaylist.cpp" line="259"/>
         <source>Sort Selection</source>
         <translation type="unfinished">Rūšiuoti pasirinktus</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="297"/>
+        <location filename="../skinnedplaylist.cpp" line="296"/>
         <source>Randomize List</source>
         <translation type="unfinished">Sumaišyti sąrašą</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="299"/>
+        <location filename="../skinnedplaylist.cpp" line="298"/>
         <source>Reverse List</source>
         <translation type="unfinished">Apversti</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="307"/>
+        <location filename="../skinnedplaylist.cpp" line="306"/>
         <source>Actions</source>
         <translation type="unfinished">Veiksmai</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Rename Playlist</source>
         <translation type="unfinished">Pervadinti grojaraštį</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Playlist name:</source>
         <translation type="unfinished">Grojaraščio pavadinimas:</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="598"/>
+        <location filename="../skinnedplaylist.cpp" line="597"/>
         <source>&amp;New PlayList</source>
         <translation type="unfinished">&amp;Naujas grojaraštis</translation>
     </message>
