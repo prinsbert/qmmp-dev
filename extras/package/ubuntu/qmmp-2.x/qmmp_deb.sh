@@ -1,6 +1,6 @@
 #!/bin/sh
 
-QMMP_VERSION=2.2.0
+QMMP_VERSION=2.2.1
 UBUNTU_CODENAMES='jammy noble oracular'
 BUILD_ROOT=build-root
 
