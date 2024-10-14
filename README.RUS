@@ -86,4 +86,4 @@ cmake ./  -DCMAKE_INSTALL_LIBDIR=lib64
 Как включить модуль FFVideo.
 Перейдите в "настройки"->"модули" и отключите модуль MPlayer.
 
-Патчи, багрепорты, идеи и т.п.: https://sourceforge.net/p/qmmp-dev/tickets/ или forkotov02@ya.ru
+Патчи, багрепорты, идеи и т.п.: https://sourceforge.net/p/qmmp-dev/tickets/

@@ -86,5 +86,4 @@ Go to the FFmpeg plugin settings and disable Monkey's Audio support.
 How to enable FFVideo plugin.
 Go to the "settings"->"plugins" and disable MPlayer plugin.
 
-All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets or
-forkotov02@ya.ru
+All patches, bug reports, ideas etc. send to bug tracker https://sourceforge.net/p/qmmp-dev/tickets

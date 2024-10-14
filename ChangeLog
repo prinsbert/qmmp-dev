@@ -379,3 +379,9 @@ Version 1.6.2
 Version 1.7.0
 * ported to qmmp 1.7 API
 * improved codebase
+
+Version 1.7.1
+* fixed "about" dialog in the ytb plugin
+* changed minimal Qt version to 5.12
+* changed minimal cmake version to 3.16
+* changed minimal TagLib version to 1.11
