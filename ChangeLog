@@ -1909,6 +1909,10 @@ Version 1.7.0
 * updated Russian translation (Andrei Stepanov)
 
 Version 1.7.1
-* fixed build regression
 * changed minimal Qt version to 5.12
 * changed minimal cmake version to 3.16
+* fixed build regression
+* fixed "Always On Top" option for KDE/KWin in the skinned user interface
+* disabled "Always on Top" option under Wayland in the simple user
+  interface
+* updated Italian translation (Luigi Toscano)
