@@ -1933,3 +1933,8 @@ Version 2.2.0
 Version 2.2.1
 * fixed build regression
 * fixed compatibility with Qt 6.2
+* fixed "Always On Top" option for KDE/KWin in the skinned user interface
+* improved simple user interface:
+  - enabled floatable dock widgets under Wayland
+  - disabled "Always on Top" option under Wayland
+* updated Italian translation (Luigi Toscano)
