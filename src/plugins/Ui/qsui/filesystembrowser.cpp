@@ -167,15 +167,18 @@ void FileSystemBrowser::onListViewActivated(const QModelIndex &index)
 
     QString name = m_fileSystemModel->fileName(sourceIndex);
 
-    if(name == QLatin1String(".."))
+    if(!m_treeView->rootIsDecorated())
     {
-        setCurrentDirectory(m_fileSystemModel->fileInfo(sourceIndex).absoluteFilePath());
-    }
-    else if(m_fileSystemModel->isDir(sourceIndex))
-    {
-        QFileInfo info = m_fileSystemModel->fileInfo(sourceIndex);
-        if(info.isExecutable() && info.isReadable())
-            setCurrentDirectory(m_fileSystemModel->filePath(sourceIndex));
+        if(name == QLatin1String(".."))
+        {
+            setCurrentDirectory(m_fileSystemModel->fileInfo(sourceIndex).absoluteFilePath());
+        }
+        else if(m_fileSystemModel->isDir(sourceIndex))
+        {
+            QFileInfo info = m_fileSystemModel->fileInfo(sourceIndex);
+            if(info.isExecutable() && info.isReadable())
+                setCurrentDirectory(m_fileSystemModel->filePath(sourceIndex));
+        }
     }
 }
 
