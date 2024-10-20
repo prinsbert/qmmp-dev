@@ -34,6 +34,10 @@ class QLocalSocket;
 class MediaPlayer;
 class SoundCore;
 class BuiltinCommandLineOption;
+#ifdef Q_OS_UNIX
+class QSocketNotifier;
+#endif
+
 
 /*!
  *  QMMPStarter represents wrapper object that is responsible
@@ -50,7 +54,9 @@ public:
 
     bool isFinished() const;
     int exitCode() const;
-
+#ifdef Q_OS_UNIX
+    static void termSignalHandler(int);
+#endif
 
 private slots:
     /*!
@@ -59,7 +65,10 @@ private slots:
     void writeCommand();
     void readCommand();
     void savePosition();
-    void commitData(QSessionManager& manager);
+    void commitData(QSessionManager &manager);
+#ifdef Q_OS_UNIX
+    void handleSigTerm();
+#endif
 
 private:
     QString processCommandArgs(const QStringList &list,const QString& cwd);
@@ -88,6 +97,12 @@ private:
 #ifdef Q_OS_WIN
     HANDLE m_named_mutex = nullptr;
 #endif
+
+#ifdef Q_OS_UNIX
+    QSocketNotifier *m_snTerm;
+    static int m_sigtermFd[2];
+#endif
+
 };
 
 #endif

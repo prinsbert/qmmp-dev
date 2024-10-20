@@ -33,7 +33,25 @@
 
 #ifdef Q_OS_UNIX
 #include <QSettings>
+#include <signal.h>
 #endif
+
+#ifdef Q_OS_UNIX
+static int setupUnixSignalHandlers()
+{
+    struct sigaction term;
+
+    term.sa_handler = QMMPStarter::termSignalHandler;
+    sigemptyset(&term.sa_mask);
+    term.sa_flags |= SA_RESTART;
+
+    if (sigaction(SIGTERM, &term, 0))
+        return 2;
+
+    return 0;
+}
+#endif
+
 
 int main(int argc, char *argv[])
 {
@@ -51,6 +69,7 @@ int main(int argc, char *argv[])
         if(settings.value(QStringLiteral("Ui/current_plugin")).toString() == QLatin1String("skinned"))
             qputenv("QT_QPA_PLATFORM", "xcb");
     }
+    setupUnixSignalHandlers();
 #endif
 
     QApplication a(argc, argv);
