@@ -33,6 +33,10 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <string.h>
+#ifdef Q_OS_UNIX
+#include <QSocketNotifier>
+#include <sys/socket.h>
+#endif
 #include <qmmp/qmmp.h>
 #include <qmmpui/commandlinemanager.h>
 #include <qmmpui/mediaplayer.h>
@@ -55,6 +59,11 @@
 #else
 #define UDS_PATH QStringLiteral("/tmp/qmmp.sock.%1").arg(getuid())
 #endif
+
+#ifdef Q_OS_UNIX
+int QMMPStarter::m_sigtermFd[2];
+#endif
+
 
 using namespace std;
 
@@ -263,6 +272,15 @@ int QMMPStarter::exitCode() const
     return m_exit_code;
 }
 
+#ifdef Q_OS_UNIX
+void QMMPStarter::termSignalHandler(int)
+{
+    char a = 1;
+    size_t len = ::write(m_sigtermFd[0], &a, sizeof(a));
+    Q_UNUSED(len);
+}
+#endif
+
 void QMMPStarter::startPlayer()
 {
     connect(m_server, &QLocalServer::newConnection, this, &QMMPStarter::readCommand);
@@ -300,6 +318,19 @@ void QMMPStarter::startPlayer()
         m_exit_code = EXIT_FAILURE;
         return;
     }
+
+#ifdef Q_OS_UNIX
+    if(::socketpair(AF_UNIX, SOCK_STREAM, 0, m_sigtermFd))
+    {
+        qCWarning(core, "couldn't create TERM socketpair");
+        m_finished = true;
+        m_exit_code = EXIT_FAILURE;
+        return;
+    }
+    m_snTerm = new QSocketNotifier(m_sigtermFd[1], QSocketNotifier::Read, this);
+    connect(m_snTerm, SIGNAL(activated(int)), SLOT(handleSigTerm()));
+#endif
+
     connect(qApp, &QApplication::aboutToQuit, this, &QMMPStarter::savePosition);
     processCommandArgs(args, QDir::currentPath());
     if(args.isEmpty())
@@ -339,6 +370,19 @@ void QMMPStarter::commitData(QSessionManager &manager)
     manager.release();
 #endif
 }
+
+#ifdef Q_OS_UNIX
+void QMMPStarter::handleSigTerm()
+{
+    qCWarning(core, "processing SIGTERM signal...");
+    m_snTerm->setEnabled(false);
+    char tmp;
+    size_t len = ::read(m_sigtermFd[1], &tmp, sizeof(tmp));
+    Q_UNUSED(len);
+    UiHelper::instance()->exit();
+    m_snTerm->setEnabled(true);
+}
+#endif
 
 void QMMPStarter::writeCommand()
 {
