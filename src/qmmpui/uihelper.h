@@ -210,6 +210,7 @@ signals:
 private slots:
     void removeAction(QObject *action);
     void addSelectedFiles(const QStringList &files, bool play);
+    void playSelectedFiles(const QStringList &files);
     void disconnectPl();
 
 private:

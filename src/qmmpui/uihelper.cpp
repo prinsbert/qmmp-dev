@@ -327,6 +327,11 @@ void UiHelper::addSelectedFiles(const QStringList &files, bool play)
     }
 }
 
+void UiHelper::playSelectedFiles(const QStringList &files)
+{
+    addSelectedFiles(files, true);
+}
+
 void UiHelper::disconnectPl()
 {
     PlayListModel *model = qobject_cast<PlayListModel*>(sender());
