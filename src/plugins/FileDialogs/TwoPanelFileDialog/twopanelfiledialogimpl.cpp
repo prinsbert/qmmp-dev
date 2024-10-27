@@ -44,7 +44,8 @@ static QStringList qt_clean_filter_list(const QString &filter)
     return f.split(QChar::Space, Qt::SkipEmptyParts);
 }
 
-TwoPanelFileDialogImpl::TwoPanelFileDialogImpl(QWidget *parent) : QDialog(parent)
+TwoPanelFileDialogImpl::TwoPanelFileDialogImpl(QWidget *parent) : QDialog(parent),
+    m_ui(new Ui::TwoPanelFileDialog)
 {
     m_ui->setupUi(this);
     setAttribute(Qt::WA_QuitOnClose, false);
