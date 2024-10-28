@@ -1916,3 +1916,10 @@ Version 1.7.1
 * disabled "Always on Top" option under Wayland in the simple user
   interface
 * updated Italian translation (Luigi Toscano)
+
+Version 1.7.2
+* added SIGTERM signal support
+* fixed double-click behavior of the file system viewer in the simple
+  user interface
+* fixed crash in the two-panel file dialog
+* fixed playback starting from the file dialog (thanks to cybersnow_2001)
