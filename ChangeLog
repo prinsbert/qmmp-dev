@@ -1938,3 +1938,10 @@ Version 2.2.1
   - enabled floatable dock widgets under Wayland
   - disabled "Always on Top" option under Wayland
 * updated Italian translation (Luigi Toscano)
+
+Version 2.2.2
+* added SIGTERM signal support
+* fixed double-click behavior of the file system viewer in the simple
+  user interface
+* fixed crash in the two-panel file dialog
+* fixed playback starting from the file dialog (thanks to cybersnow_2001)
