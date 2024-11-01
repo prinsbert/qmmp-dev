@@ -12,12 +12,22 @@ else
 fi
 
 export DEV_PATH=/c/devel
-export MINGW32_PATH=${DEV_PATH}/mingw32:${DEV_PATH}/mingw32/opt
-export ZLIB_ROOT=${DEV_PATH}/mingw32/i686-w64-mingw32
-export PREFIX=${DEV_PATH}/mingw32-libs
-export OPENSSL_ROOT_DIR=${DEV_PATH}/mingw32/opt
 
-export PATH=${PATH}:${DEV_PATH}/mingw32/bin:${DEV_PATH}/mingw32/opt/bin:${PREFIX}/bin:${DEV_PATH}/msys/bin
+if [ "$1" == "--install-win64" ]; then
+    export MINGW64_PATH=${DEV_PATH}/mingw64:${DEV_PATH}/mingw64/opt
+    export ZLIB_ROOT=${DEV_PATH}/mingw64/x86_64-w64-mingw32
+    export PREFIX=${DEV_PATH}/mingw64-libs
+    export OPENSSL_ROOT_DIR=${DEV_PATH}/mingw64/opt
+    export PATH=${PATH}:${DEV_PATH}/mingw64/bin:${DEV_PATH}/mingw64/opt/bin:${PREFIX}/bin:${DEV_PATH}/msys/bin
+    export MINGW_HOST=x86_64-w64-mingw32
+else
+    export MINGW32_PATH=${DEV_PATH}/mingw32:${DEV_PATH}/mingw32/opt
+    export ZLIB_ROOT=${DEV_PATH}/mingw32/i686-w64-mingw32
+    export PREFIX=${DEV_PATH}/mingw32-libs
+    export OPENSSL_ROOT_DIR=${DEV_PATH}/mingw32/opt
+    export PATH=${PATH}:${DEV_PATH}/mingw32/bin:${DEV_PATH}/mingw32/opt/bin:${PREFIX}/bin:${DEV_PATH}/msys/bin
+    export MINGW_HOST=i686-w64-mingw32
+fi
 
 export LDFLAGS="-lssp"
 export STRIP=false
@@ -37,7 +47,7 @@ case $1 in
         cd ..
     done
   ;;
-  --install)
+  --install|--install-win64)
     if [ -n "$2" ]; then
         LIB_NAMES=$2
     fi
@@ -94,6 +104,7 @@ case $1 in
     echo "Commands:"
     echo "--download"
     echo "--install <name>"
+    echo "--install-win64 <name>"
     echo "--clean"
     echo "--clean-src"
     echo "--print-versions"

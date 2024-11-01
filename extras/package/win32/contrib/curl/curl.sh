@@ -32,12 +32,6 @@ case $1 in
     mingw32-make -j${JOBS}
     mingw32-make install
 
-#CC=i686-w64-mingw32-gcc mingw32-make mingw32-ssl-zlib
-    #mkdir -p ${PREFIX}/include/curl
-    #cp -v include/curl/*.h ${PREFIX}/include/curl
-    #cp -v lib/libcurl.dll ${PREFIX}/bin
-    #cp -v lib/libcurl.dll.a ${PREFIX}/lib
-
   ;;
   --clean)
     cd temp

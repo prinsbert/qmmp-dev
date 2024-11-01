@@ -1,0 +1,12 @@
+configure.bat -prefix %PREFIX% ^
+-opensource ^
+-confirm-license ^
+-release ^
+-opengl desktop ^
+-shared ^
+-nomake examples ^
+-nomake tests  ^
+-no-dbus ^
+-no-pch ^
+-openssl-linked ^
+-- -D OPENSSL_ROOT_DIR="c:\devel\mingw64\opt"

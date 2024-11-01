@@ -14,9 +14,14 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz -C $DEV_PATH
     cp ../build.bat $DEV_PATH/$BUILD_ROOT
+    cp ../build-win64.bat $DEV_PATH/$BUILD_ROOT
     cat ../QTBUG-129434.patch | patch -p1 -d $DEV_PATH/$BUILD_ROOT
     cd $DEV_PATH/$BUILD_ROOT
-    cmd /c build.bat
+    if [ ${MINGW64_PATH} ]; then
+        cmd /c build-win64.bat
+    else
+        cmd /c build.bat
+    fi
     cmake --build . --parallel ${JOBS}
     cmake --install .
   ;;

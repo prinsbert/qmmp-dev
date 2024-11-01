@@ -13,7 +13,7 @@ case $1 in
     cd temp
     tar xvJf $NAME-$VERSION.tar.xz
     cd $NAME-$VERSION
-    ./configure --prefix=$PREFIX --enable-shared --disable-static
+    ./configure --prefix=$PREFIX --enable-shared --disable-static --host=${MINGW_HOST}
     make -j${JOBS}
     make install
 
