@@ -2,6 +2,7 @@
 
 LIB_NAMES+='qtbase qttools qttranslations qtwinextras qtimageformats'
 
+export QT_VERSION=5.15.15
 export DEV_PATH=/c/devel
 export MINGW32_PATH=${DEV_PATH}/mingw32
 export QT5_PATH=${DEV_PATH}/qt5

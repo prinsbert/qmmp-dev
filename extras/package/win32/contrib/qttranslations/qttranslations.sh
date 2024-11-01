@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME=qttranslations-everywhere-opensource-src
-VERSION=5.15.15
+VERSION=${QT_VERSION}
 BUILD_ROOT=qttranslations-everywhere-src-$VERSION
 
 case $1 in
