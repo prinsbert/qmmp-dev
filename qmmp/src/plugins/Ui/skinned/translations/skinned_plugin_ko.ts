@@ -555,53 +555,53 @@
         <translation>이퀄라이저</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="161"/>
-        <location filename="../skinnedeqwidget.cpp" line="178"/>
+        <location filename="../skinnedeqwidget.cpp" line="160"/>
+        <location filename="../skinnedeqwidget.cpp" line="177"/>
         <source>preset</source>
         <translation>프리셋</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="262"/>
+        <location filename="../skinnedeqwidget.cpp" line="261"/>
         <source>&amp;Load/Delete</source>
         <translation>불러오기/삭제(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="264"/>
+        <location filename="../skinnedeqwidget.cpp" line="263"/>
         <source>&amp;Save Preset</source>
         <translation>프리셋 저장하기(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="265"/>
+        <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>자동 불러오기 프리셋 저장(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Import</source>
         <translation>가져오기(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <location filename="../skinnedeqwidget.cpp" line="267"/>
         <source>&amp;Clear</source>
         <translation>지우기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="297"/>
+        <location filename="../skinnedeqwidget.cpp" line="296"/>
         <source>Saving Preset</source>
         <translation>프리셋 저장 중</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="298"/>
+        <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Preset name:</source>
         <translation>프리셋 이름:</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="299"/>
+        <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>preset #</source>
         <translation>프리셋 #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="395"/>
+        <location filename="../skinnedeqwidget.cpp" line="394"/>
         <source>Import Preset</source>
         <translation>프리셋 가져오기</translation>
     </message>
@@ -763,118 +763,118 @@
         <translation>재생목록</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="194"/>
+        <location filename="../skinnedplaylist.cpp" line="193"/>
         <source>&amp;Copy Selection To</source>
         <translation>선택 영역 복사(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="219"/>
+        <location filename="../skinnedplaylist.cpp" line="218"/>
         <source>Sort List</source>
         <translation>목록 정렬</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="222"/>
-        <location filename="../skinnedplaylist.cpp" line="262"/>
+        <location filename="../skinnedplaylist.cpp" line="221"/>
+        <location filename="../skinnedplaylist.cpp" line="261"/>
         <source>By Title</source>
         <translation>제목별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="225"/>
-        <location filename="../skinnedplaylist.cpp" line="265"/>
+        <location filename="../skinnedplaylist.cpp" line="224"/>
+        <location filename="../skinnedplaylist.cpp" line="264"/>
         <source>By Album</source>
         <translation>앨범별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="228"/>
-        <location filename="../skinnedplaylist.cpp" line="268"/>
+        <location filename="../skinnedplaylist.cpp" line="227"/>
+        <location filename="../skinnedplaylist.cpp" line="267"/>
         <source>By Artist</source>
         <translation>아티스트별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="231"/>
-        <location filename="../skinnedplaylist.cpp" line="271"/>
+        <location filename="../skinnedplaylist.cpp" line="230"/>
+        <location filename="../skinnedplaylist.cpp" line="270"/>
         <source>By Album Artist</source>
         <translation>앨범 아티스트별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="234"/>
-        <location filename="../skinnedplaylist.cpp" line="274"/>
+        <location filename="../skinnedplaylist.cpp" line="233"/>
+        <location filename="../skinnedplaylist.cpp" line="273"/>
         <source>By Filename</source>
         <translation>파일이름별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="237"/>
-        <location filename="../skinnedplaylist.cpp" line="277"/>
+        <location filename="../skinnedplaylist.cpp" line="236"/>
+        <location filename="../skinnedplaylist.cpp" line="276"/>
         <source>By Path + Filename</source>
         <translation>경로 + 파일이름별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="240"/>
-        <location filename="../skinnedplaylist.cpp" line="280"/>
+        <location filename="../skinnedplaylist.cpp" line="239"/>
+        <location filename="../skinnedplaylist.cpp" line="279"/>
         <source>By Date</source>
         <translation>날짜별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="243"/>
-        <location filename="../skinnedplaylist.cpp" line="283"/>
+        <location filename="../skinnedplaylist.cpp" line="242"/>
+        <location filename="../skinnedplaylist.cpp" line="282"/>
         <source>By Track Number</source>
         <translation>트랙 번호별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="246"/>
-        <location filename="../skinnedplaylist.cpp" line="286"/>
+        <location filename="../skinnedplaylist.cpp" line="245"/>
+        <location filename="../skinnedplaylist.cpp" line="285"/>
         <source>By Disc Number</source>
         <translation>CD 번호별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="249"/>
-        <location filename="../skinnedplaylist.cpp" line="289"/>
+        <location filename="../skinnedplaylist.cpp" line="248"/>
+        <location filename="../skinnedplaylist.cpp" line="288"/>
         <source>By File Creation Date</source>
         <translation>파일 생성 날짜별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="252"/>
-        <location filename="../skinnedplaylist.cpp" line="292"/>
+        <location filename="../skinnedplaylist.cpp" line="251"/>
+        <location filename="../skinnedplaylist.cpp" line="291"/>
         <source>By File Modification Date</source>
         <translation>파일 수정 날짜별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="255"/>
+        <location filename="../skinnedplaylist.cpp" line="254"/>
         <source>By Group</source>
         <translation>그룹별</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="260"/>
+        <location filename="../skinnedplaylist.cpp" line="259"/>
         <source>Sort Selection</source>
         <translation>선택 항목 정렬</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="297"/>
+        <location filename="../skinnedplaylist.cpp" line="296"/>
         <source>Randomize List</source>
         <translation>목록 무작위화</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="299"/>
+        <location filename="../skinnedplaylist.cpp" line="298"/>
         <source>Reverse List</source>
         <translation>역방향 목록</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="307"/>
+        <location filename="../skinnedplaylist.cpp" line="306"/>
         <source>Actions</source>
         <translation>동작</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Rename Playlist</source>
         <translation>재생목록 이름변경</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Playlist name:</source>
         <translation>재생목록 이름:</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="598"/>
+        <location filename="../skinnedplaylist.cpp" line="597"/>
         <source>&amp;New PlayList</source>
         <translation>새 재생목록(&amp;N)</translation>
     </message>

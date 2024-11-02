@@ -555,53 +555,53 @@
         <translation>Taajuuskorjain</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="161"/>
-        <location filename="../skinnedeqwidget.cpp" line="178"/>
+        <location filename="../skinnedeqwidget.cpp" line="160"/>
+        <location filename="../skinnedeqwidget.cpp" line="177"/>
         <source>preset</source>
         <translation>esiasetus</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="262"/>
+        <location filename="../skinnedeqwidget.cpp" line="261"/>
         <source>&amp;Load/Delete</source>
         <translation>L&amp;ataa/poista</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="264"/>
+        <location filename="../skinnedeqwidget.cpp" line="263"/>
         <source>&amp;Save Preset</source>
         <translation>&amp;Tallenna esiasetus</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="265"/>
+        <location filename="../skinnedeqwidget.cpp" line="264"/>
         <source>&amp;Save Auto-load Preset</source>
         <translation>&amp;Tallenna latauksen esiasetus </translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="266"/>
+        <location filename="../skinnedeqwidget.cpp" line="265"/>
         <source>&amp;Import</source>
         <translation>&amp;Tuo</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="268"/>
+        <location filename="../skinnedeqwidget.cpp" line="267"/>
         <source>&amp;Clear</source>
         <translation>T&amp;yhjennä</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="297"/>
+        <location filename="../skinnedeqwidget.cpp" line="296"/>
         <source>Saving Preset</source>
         <translation>Tallentaa esiasetuksen</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="298"/>
+        <location filename="../skinnedeqwidget.cpp" line="297"/>
         <source>Preset name:</source>
         <translation>Esiasetuksen nimi:</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="299"/>
+        <location filename="../skinnedeqwidget.cpp" line="298"/>
         <source>preset #</source>
         <translation>esiasetus #</translation>
     </message>
     <message>
-        <location filename="../skinnedeqwidget.cpp" line="395"/>
+        <location filename="../skinnedeqwidget.cpp" line="394"/>
         <source>Import Preset</source>
         <translation>Tuo esiasetus</translation>
     </message>
@@ -763,118 +763,118 @@
         <translation>Soittolista</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="194"/>
+        <location filename="../skinnedplaylist.cpp" line="193"/>
         <source>&amp;Copy Selection To</source>
         <translation>&amp;Kopioi valinta kohteeseen</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="219"/>
+        <location filename="../skinnedplaylist.cpp" line="218"/>
         <source>Sort List</source>
         <translation>Järjestä lista</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="222"/>
-        <location filename="../skinnedplaylist.cpp" line="262"/>
+        <location filename="../skinnedplaylist.cpp" line="221"/>
+        <location filename="../skinnedplaylist.cpp" line="261"/>
         <source>By Title</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="225"/>
-        <location filename="../skinnedplaylist.cpp" line="265"/>
+        <location filename="../skinnedplaylist.cpp" line="224"/>
+        <location filename="../skinnedplaylist.cpp" line="264"/>
         <source>By Album</source>
         <translation>Albumi</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="228"/>
-        <location filename="../skinnedplaylist.cpp" line="268"/>
+        <location filename="../skinnedplaylist.cpp" line="227"/>
+        <location filename="../skinnedplaylist.cpp" line="267"/>
         <source>By Artist</source>
         <translation>Artisti</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="231"/>
-        <location filename="../skinnedplaylist.cpp" line="271"/>
+        <location filename="../skinnedplaylist.cpp" line="230"/>
+        <location filename="../skinnedplaylist.cpp" line="270"/>
         <source>By Album Artist</source>
         <translation>Albumin artisti</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="234"/>
-        <location filename="../skinnedplaylist.cpp" line="274"/>
+        <location filename="../skinnedplaylist.cpp" line="233"/>
+        <location filename="../skinnedplaylist.cpp" line="273"/>
         <source>By Filename</source>
         <translation>Tiedostonimellä</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="237"/>
-        <location filename="../skinnedplaylist.cpp" line="277"/>
+        <location filename="../skinnedplaylist.cpp" line="236"/>
+        <location filename="../skinnedplaylist.cpp" line="276"/>
         <source>By Path + Filename</source>
         <translation>Polku + tiedostonimi</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="240"/>
-        <location filename="../skinnedplaylist.cpp" line="280"/>
+        <location filename="../skinnedplaylist.cpp" line="239"/>
+        <location filename="../skinnedplaylist.cpp" line="279"/>
         <source>By Date</source>
         <translation>Päivä</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="243"/>
-        <location filename="../skinnedplaylist.cpp" line="283"/>
+        <location filename="../skinnedplaylist.cpp" line="242"/>
+        <location filename="../skinnedplaylist.cpp" line="282"/>
         <source>By Track Number</source>
         <translation>Raidan numero</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="246"/>
-        <location filename="../skinnedplaylist.cpp" line="286"/>
+        <location filename="../skinnedplaylist.cpp" line="245"/>
+        <location filename="../skinnedplaylist.cpp" line="285"/>
         <source>By Disc Number</source>
         <translation>Levyn numero</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="249"/>
-        <location filename="../skinnedplaylist.cpp" line="289"/>
+        <location filename="../skinnedplaylist.cpp" line="248"/>
+        <location filename="../skinnedplaylist.cpp" line="288"/>
         <source>By File Creation Date</source>
         <translation>Tiedoston luontipäivä</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="252"/>
-        <location filename="../skinnedplaylist.cpp" line="292"/>
+        <location filename="../skinnedplaylist.cpp" line="251"/>
+        <location filename="../skinnedplaylist.cpp" line="291"/>
         <source>By File Modification Date</source>
         <translation>Tiedoston muutospäivä</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="255"/>
+        <location filename="../skinnedplaylist.cpp" line="254"/>
         <source>By Group</source>
         <translation>Ryhmä</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="260"/>
+        <location filename="../skinnedplaylist.cpp" line="259"/>
         <source>Sort Selection</source>
         <translation>Järjestä valinta</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="297"/>
+        <location filename="../skinnedplaylist.cpp" line="296"/>
         <source>Randomize List</source>
         <translation>Sekoita lista</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="299"/>
+        <location filename="../skinnedplaylist.cpp" line="298"/>
         <source>Reverse List</source>
         <translation>Käänteinen lista</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="307"/>
+        <location filename="../skinnedplaylist.cpp" line="306"/>
         <source>Actions</source>
         <translation>Toiminnot</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Rename Playlist</source>
         <translation>Nimeä soittolista uudelleen</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="577"/>
+        <location filename="../skinnedplaylist.cpp" line="576"/>
         <source>Playlist name:</source>
         <translation>Soittolistan nimi:</translation>
     </message>
     <message>
-        <location filename="../skinnedplaylist.cpp" line="598"/>
+        <location filename="../skinnedplaylist.cpp" line="597"/>
         <source>&amp;New PlayList</source>
         <translation>&amp;Uusi soittolista</translation>
     </message>
