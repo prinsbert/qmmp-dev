@@ -36,10 +36,15 @@ QMMP_VERSION_MINOR = $$member(VERSIONS, 1)
 
 #Include and link paths
 win32 {
-EXTRA_INCDIR = C:/devel/mingw32-libs/include
-QMAKE_CXXFLAGS += "-isystem $${EXTRA_INCDIR}"
-QMAKE_CFLAGS += "-isystem $${EXTRA_INCDIR}"
-QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
+  contains(QT_ARCH, x86_64) {
+    EXTRA_INCDIR = C:/devel/mingw64-libs/include
+    QMAKE_LIBDIR +=  C:/devel/mingw64-libs/lib 
+  } else {
+    EXTRA_INCDIR = C:/devel/mingw32-libs/include 
+    QMAKE_LIBDIR +=  C:/devel/mingw32-libs/lib
+  }
+  QMAKE_CXXFLAGS += "-isystem $${EXTRA_INCDIR}"
+  QMAKE_CFLAGS += "-isystem $${EXTRA_INCDIR}"
 }
 
 #APP_NAME_SUFFIX = "-1"
