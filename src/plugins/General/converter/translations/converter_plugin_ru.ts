@@ -218,17 +218,17 @@
 <context>
     <name>PresetEditor</name>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="39"/>
+        <location filename="../converterpreseteditor.cpp" line="40"/>
         <source>%1 (Read Only)</source>
         <translation>%1 (только для чтения)</translation>
     </message>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="72"/>
+        <location filename="../converterpreseteditor.cpp" line="73"/>
         <source>Output file</source>
         <translation>Выходной файл</translation>
     </message>
     <message>
-        <location filename="../converterpreseteditor.cpp" line="73"/>
+        <location filename="../converterpreseteditor.cpp" line="74"/>
         <source>Input file</source>
         <translation>Входной файл</translation>
     </message>
