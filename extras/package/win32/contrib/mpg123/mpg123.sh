@@ -15,7 +15,7 @@ case $1 in
     cd $NAME-$VERSION
     
     autoreconf -i
-    ./configure --prefix=$PREFIX --disable-debugging --enable-shared --disable-static
+    ./configure --prefix=$PREFIX --disable-debugging --enable-shared --disable-static --host=${MINGW_HOST}
     make -j${JOBS}
     make install
 

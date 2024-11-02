@@ -17,7 +17,7 @@ case $1 in
     cat ../../libmad-01-force-mem.patch | patch -p0 --verbose
     touch NEWS AUTHORS ChangeLog
     autoreconf -i
-    ./configure --prefix=$PREFIX --enable-accuracy --disable-debugging --enable-shared --disable-static
+    ./configure --prefix=$PREFIX --enable-accuracy --disable-debugging --enable-shared --disable-static --host=${MINGW_HOST}
     make -j${JOBS}
     make install
 

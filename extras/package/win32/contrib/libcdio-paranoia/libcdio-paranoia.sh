@@ -14,7 +14,7 @@ case $1 in
     tar xvjf $NAME-$VERSION.tar.bz2
     cd $NAME-$VERSION
     autoreconf -fi
-    CFLAGS="-march=i686" ./configure --prefix=$PREFIX --enable-shared --disable-static --disable-cxx --disable-example-progs
+    ./configure --prefix=$PREFIX --enable-shared --disable-static --disable-cxx --disable-example-progs --build=${MINGW_HOST} --host=${MINGW_HOST}
     make -j${JOBS}
     make install
 
