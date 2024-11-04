@@ -100,7 +100,7 @@ bool OutputWaveOut::initialize(quint32 freq, ChannelMap map, Qmmp::AudioFormat f
     fmt.nBlockAlign     = fmt.nChannels * fmt.wBitsPerSample/8;
     fmt.nAvgBytesPerSec = fmt.nSamplesPerSec * fmt.nChannels * fmt.wBitsPerSample/8;
 
-    switch (waveOutOpen (&dev, deviceID, &fmt, (DWORD)wave_callback, 0, CALLBACK_FUNCTION))
+    switch (waveOutOpen (&dev, deviceID, &fmt, (DWORD_PTR)wave_callback, 0, CALLBACK_FUNCTION))
     {
     case MMSYSERR_ALLOCATED:
         qCWarning(plugin, "Device is already open.");
