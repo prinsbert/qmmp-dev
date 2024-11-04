@@ -19,6 +19,7 @@
 ***************************************************************************/
 
 #include <QFile>
+#include <QSysInfo>
 #include <qmmp/decoder.h>
 #include <qmmp/decoderfactory.h>
 #include <qmmp/output.h>
@@ -69,7 +70,10 @@ QString AboutDialog::loadAbout()
     text.append(u"<p>"_s + getStringFromResource(u":description"_s) + u"</p>"_s);
 
     text.append(u"<p><b>"_s + tr("Version: %1").arg(Qmmp::strVersion()) + u"</b><br>"_s);
-    text.append(tr("Using Qt %1 (compiled with Qt %2)" ).arg(QString::fromLatin1(qVersion()), QLatin1StringView(QT_VERSION_STR)) + u"</p>"_s);
+    text.append(tr("Qt version: %1 (compiled with %2)").arg(QString::fromLatin1(qVersion()), QLatin1StringView(QT_VERSION_STR)) + u"<br>"_s);
+    text.append(tr("Qt platform: %1").arg(QGuiApplication::platformName()) + u"<br>"_s);
+    text.append(tr("System: %1").arg(QSysInfo::prettyProductName()) + u"<br>"_s);
+    text.append(tr("Build ABI: %1").arg(QSysInfo::buildAbi()) + u"</p>"_s);
 
     text.append(u"<p>"_s);
     text.append(tr("(c) %1-%2 Qmmp Development Team").arg(2006).arg(2024) + u"<br>"_s);
