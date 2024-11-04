@@ -92,7 +92,7 @@
         <translation>Ανά ημερομηνία</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="215"/>
+        <location filename="../filesystembrowser.cpp" line="218"/>
         <source>Select Directory</source>
         <translation>Επιλογή καταλόγου</translation>
     </message>

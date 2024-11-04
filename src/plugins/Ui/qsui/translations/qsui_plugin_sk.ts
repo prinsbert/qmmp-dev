@@ -92,7 +92,7 @@
         <translation type="unfinished">Podľa dátumu</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="215"/>
+        <location filename="../filesystembrowser.cpp" line="218"/>
         <source>Select Directory</source>
         <translation type="unfinished"></translation>
     </message>
