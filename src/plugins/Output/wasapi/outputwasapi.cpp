@@ -317,6 +317,7 @@ VolumeWASAPI::VolumeWASAPI()
     QSettings settings;
     m_volume.left = settings.value("WASAPI/left_volume"_L1, 100).toInt();
     m_volume.right = settings.value("WASAPI/right_volume"_L1, 100).toInt();
+    m_muted = settings.value("WASAPI/muted"_L1, false).toBool();
 }
 
 VolumeWASAPI::~VolumeWASAPI()
@@ -325,7 +326,13 @@ VolumeWASAPI::~VolumeWASAPI()
     QSettings settings;
     settings.setValue("WASAPI/left_volume"_L1, m_volume.left);
     settings.setValue("WASAPI/right_volume"_L1, m_volume.right);
+    settings.setValue("WASAPI/muted"_L1, m_muted);
     OutputWASAPI::volumeControl = nullptr;
+}
+
+Volume::VolumeFlags VolumeWASAPI::flags() const
+{
+    return Volume::IsMuteSupported;
 }
 
 void VolumeWASAPI::setVolume(const VolumeSettings &vol)
@@ -351,7 +358,29 @@ VolumeSettings VolumeWASAPI::volume() const
     return m_volume;
 }
 
+void VolumeWASAPI::setMuted(bool mute)
+{
+    if(OutputWASAPI::instance && OutputWASAPI::instance->simpleAudioVolume())
+    {
+        OutputWASAPI::instance->simpleAudioVolume()->SetMute(mute, nullptr);
+    }
+    m_muted = mute;
+}
+
+bool VolumeWASAPI::isMuted() const
+{
+    if(OutputWASAPI::instance && OutputWASAPI::instance->simpleAudioVolume())
+    {
+        WINBOOL muted = false;
+        OutputWASAPI::instance->simpleAudioVolume()->GetMute(&muted);
+        return muted;
+    }
+
+    return m_muted;
+}
+
 void VolumeWASAPI::restore()
 {
     setVolume(m_volume);
+    setMuted(m_muted);
 }

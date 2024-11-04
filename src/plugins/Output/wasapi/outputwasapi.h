@@ -90,12 +90,16 @@ public:
     VolumeWASAPI();
     ~VolumeWASAPI();
 
+    Volume::VolumeFlags flags() const override;
     void setVolume(const VolumeSettings &vol) override;
     VolumeSettings volume() const override;
+    void setMuted(bool mute) override;
+    bool isMuted() const override;
     void restore();
 
 private:
     VolumeSettings m_volume;
+    bool m_muted;
 };
 
 
