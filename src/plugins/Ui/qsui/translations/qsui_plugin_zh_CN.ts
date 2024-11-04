@@ -92,7 +92,7 @@
         <translation>按日期</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="216"/>
+        <location filename="../filesystembrowser.cpp" line="219"/>
         <source>Select Directory</source>
         <translation>选择文件夹</translation>
     </message>

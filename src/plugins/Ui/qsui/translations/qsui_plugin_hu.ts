@@ -92,7 +92,7 @@
         <translation type="unfinished">Dátum szerint</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="216"/>
+        <location filename="../filesystembrowser.cpp" line="219"/>
         <source>Select Directory</source>
         <translation type="unfinished"></translation>
     </message>

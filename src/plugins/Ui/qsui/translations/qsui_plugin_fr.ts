@@ -92,7 +92,7 @@
         <translation>par date</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="216"/>
+        <location filename="../filesystembrowser.cpp" line="219"/>
         <source>Select Directory</source>
         <translation>Sélectionner le répertoire</translation>
     </message>

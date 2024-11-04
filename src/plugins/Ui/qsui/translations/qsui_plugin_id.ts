@@ -92,7 +92,7 @@
         <translation type="unfinished">Menurut Tanggal</translation>
     </message>
     <message>
-        <location filename="../filesystembrowser.cpp" line="216"/>
+        <location filename="../filesystembrowser.cpp" line="219"/>
         <source>Select Directory</source>
         <translation>Pilih Direktori</translation>
     </message>
