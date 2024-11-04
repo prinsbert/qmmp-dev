@@ -88,12 +88,16 @@ public:
     VolumeDirectSound();
     ~VolumeDirectSound();
 
+    Volume::VolumeFlags flags() const override;
     void setVolume(const VolumeSettings &vol) override;
     VolumeSettings volume() const override;
+    bool isMuted() const override;
+    void setMuted(bool muted) override;
     void restore();
 
 private:
     VolumeSettings m_volume;
+    bool m_muted;
 };
 
 
