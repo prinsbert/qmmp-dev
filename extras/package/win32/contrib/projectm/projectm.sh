@@ -17,8 +17,9 @@ case $1 in
     cat ../../projectm-win32.patch | patch -p1
     cat ../../fix-fbo-crash.patch | patch -p1
     cat ../../01_fix-gcc6-build.patch | patch -p1
+    cat ../../native-glew.patch | patch -p1
     cd src    
-    cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MSYS Makefiles" \
+    cmake ./ -DCMAKE_INSTALL_PREFIX=${PREFIX} -G "MinGW Makefiles" \
     -DCMAKE_COLOR_MAKEFILE:BOOL=OFF \
     -DINCLUDE-PROJECTM-LIBVISUAL:BOOL=OFF \
     -DDISABLE_NATIVE_PRESETS:BOOL=ON \
@@ -29,8 +30,8 @@ case $1 in
     -DCMAKE_CXX_FLAGS="-I${PREFIX}/include" \
     -DINCLUDE-NATIVE-PRESETS:BOOL=OFF \
     -DCMAKE_SHARED_LINKER_FLAGS="-L${PREFIX}/lib"
-    make -j${JOBS}
-    make install
+    mingw32-make -j${JOBS}
+    mingw32-make install
 
   ;;
   --clean)

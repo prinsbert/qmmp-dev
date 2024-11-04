@@ -21,7 +21,7 @@ case $1 in
   ;;
   --clean)
     cd temp
-    rm -rf $NAME-$VERSION
+    rm -rf $NAME-$VERSION-Source
     cd ..
   ;;
 esac
