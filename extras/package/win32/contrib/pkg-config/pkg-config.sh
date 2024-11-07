@@ -1,7 +1,6 @@
 #!/bin/sh
 
 NAME=pkg-config
-NAME=pkg-config
 VERSION=0.23
 
 case $1 in
